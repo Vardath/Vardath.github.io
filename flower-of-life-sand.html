@@ -52,13 +52,13 @@ section.explain p{margin:7px 0}
 <main>
 <header>
 <nav><a href="/">← Vardath home</a><span>Interactive experiments</span></nav>
-<h1>Flower of Life · Sand on rotating discs</h1>
-<p>Live numerical particle simulation · Each disc spins clockwise independently · Sand falls continuously from above</p>
+<h1>Flower of Life · Sediment and continental-form experiment</h1>
+<p>Research model · full overlapping clockwise rotors · sediment transport, deposition and emergent accumulation regions</p>
 </header>
 <div class="layout"><div>
 <div class="viewport"><canvas id="sim" width="1080" height="680" aria-label="Animated grain-density distribution over rotating discs">This experiment needs a browser that supports the canvas element.</canvas>
 <div class="viewlabels"><span id="geomlabel">Flower of Life · full overlapping discs</span><span id="state">RUNNING</span></div></div>
-<div class="stats"><span>Elapsed: <b id="elapsed">0.0 s</b></span><span>Grains on surfaces: <b id="count">0</b></span><span>Visible rotors: <b id="discs">0</b></span><span>Max relative accumulation: <b id="pile">0</b></span></div>
+<div class="stats"><span>Elapsed: <b id="elapsed">0.0 s</b></span><span>Grains on surfaces: <b id="count">0</b></span><span>Visible rotors: <b id="discs">0</b></span><span>Maximum height: <b id="pile">0</b></span><span>Largest connected deposit: <b id="largest">0%</b></span><span>Regions: <b id="regions">0</b></span></div>
 <div class="legend"></div><div class="legendlabels"><span>no sand</span><span>thin dusting</span><span>high grain density</span></div>
 </div>
 <aside class="side">
@@ -69,225 +69,233 @@ section.explain p{margin:7px 0}
 <label for="rain">Sand deposition · grains/s <output id="rainValue">4500</output></label><input id="rain" type="range" min="0" max="12000" step="250" value="4500">
 <label for="friction">Grain/surface drag · 1/s <output id="frictionValue">3.5</output></label><input id="friction" type="range" min="0.5" max="12" step="0.5" value="3.5">
 <label for="agitation">Random grain agitation <output id="agitationValue">0.5</output></label><input id="agitation" type="range" min="0" max="4" step="0.25" value="0.5">
-<label for="feed">Sand entry</label><select id="feed"><option value="uniform">Uniform rain over entire grid</option><option value="central">Single overhead sand stream</option></select>
+<label for="view">Scientific display</label><select id="view"><option value="coast">Sediment contours / connected regions</option><option value="height">Sediment height map</option><option value="flow">Rotational motion and transport</option></select><label for="threshold">Contour threshold · % of max <output id="thresholdValue">58</output></label><input id="threshold" type="range" min="10" max="95" step="1" value="58"><label for="feed">Sand entry</label><select id="feed"><option value="uniform">Uniform rain over entire grid</option><option value="central">Single overhead sand stream</option></select>
 <label for="rim">Physical disc edge</label><select id="rim"><option value="retain">Raised rim (grains retained)</option><option value="spill">Open edge (grains spill off)</option></select>
 </fieldset>
 <div class="buttons"><button id="play" class="primary" type="button">Pause</button><button id="reset" type="button">Reset</button><button id="advance" type="button">+5 simulated sec</button><button id="record" type="button">Record 10 s</button></div>
 <div class="details">
 <p id="modehelp"><strong>Geometry:</strong> Each full-sized circular disc has independent clockwise surface motion. In overlapping regions the discs are modeled as conceptual superposed layers, not as interpenetrating solid hardware.</p>
-<p><strong>Physics:</strong> Grains receive tangential acceleration from substrate drag, retain inertia, undergo centrifugal migration and random agitation. Density is calculated from <em>actual simulated particle positions</em>, not an image of a sand pattern.</p>
-<p><strong>Limit:</strong> Simplified two-dimensional granular transport. Individual grain collisions and three-dimensional piles are not modelled.</p>
+<p><strong>Hypothesis:</strong> Can repeated overlapping clockwise motion concentrate randomly supplied sediment into large, contiguous regions, rather than only local circular patterns?</p>
+<p><strong>How to read this:</strong> Gold shows accumulated sediment mass; the bright contour marks a user-chosen height threshold. The largest connected deposit is measured on the thresholded map, not assumed to be a continent.</p>
+<p><strong>Controls:</strong> Set RPM to zero for a control experiment. Vary the threshold and try extended simulation times using +5 simulated seconds.</p>
+<p><strong>Limits:</strong> This is a 2D, idealized transport/deposition experiment. The overlapping discs are mathematically superposed rotating surfaces, not possible solid hardware. This is not a calibrated DEM, erosion model, or evidence of geographic continent formation.</p>
 </div>
 </aside>
 </div>
-<section class="explain"><h2>About the experiment</h2>
-<p>This model keeps every disc as a complete circle, including its overlapping portions. Solid discs cannot occupy the same plane, so the configuration is a conceptual superposition of independently moving surfaces. With uniform sand rain onto featureless horizontal spinning discs, rotation alone does not guarantee spiral ridges. Depending on friction, particle inertia and edge confinement, sand can remain broadly distributed, migrate to edges, or collect along shear and convergence regions.</p>
-<p>Choose <strong>Single overhead sand stream</strong> to trace grain motion, or switch to <strong>Tangent discs</strong> for a physically realizable hexagonal array. Pause, reset, advance the simulation and record a 10-second WebM video from the controls.</p>
-</section>
+<section class="explain"><h2>Continental-form hypothesis</h2><p>The question is whether a hexagonal lattice of full overlapping clockwise rotations can spontaneously redistribute uniformly supplied sediment into persistent, broad, interconnected patches with irregular boundaries. No continents, coastline shapes, or target outcome are programmed into the initial sand distribution.</p><p><strong>Interpretation:</strong> A contour is a thresholded sand-height map, not an actual shoreline. The system is spatially periodic, so repeated flower motifs may be the genuine outcome. Compare with a stationary (0 RPM) control before attributing any large-scale structure to rotation. This simplified coupled-field numerical experiment omits grain collisions, topography, gravity-driven avalanches and 3D granular mechanics.</p></section>
 </main>
 <script>
+
 (()=>{'use strict';
-const W=1080,H=680,R=76,SQRT3=Math.sqrt(3),CY=SQRT3/2;
-const canvas=document.getElementById('sim'),ctx=canvas.getContext('2d',{alpha:false});
-const densityCanvas=document.createElement('canvas'),DCW=540,DCH=340;densityCanvas.width=DCW;densityCanvas.height=DCH;
-const dctx=densityCanvas.getContext('2d'),pix=dctx.createImageData(DCW,DCH),dens=new Float32Array(DCW*DCH);
-const ui={layout:document.getElementById('layout'),rpm:document.getElementById('rpm'),rain:document.getElementById('rain'),friction:document.getElementById('friction'),agitation:document.getElementById('agitation'),feed:document.getElementById('feed'),rim:document.getElementById('rim')};
-let running=true,t=0,last=0,acc=0,spawnPartial=0,p=[],rotors=[],seed=238572,maxDensity=0,fastForwarding=false;
-const MAX=window.matchMedia('(max-width:620px)').matches?48000:112000,DT=1/45,ADVANCE_STEPS=225;
-let spacing=R,omega=12*Math.PI/30;
-const randy=()=>{seed=(Math.imul(1664525,seed)+1013904223)|0;return (seed>>>0)/4294967296};
-function chooseGeometry(){
- spacing=ui.layout.value==='flower'?R:2.07*R;rotors=[];
- let cols=Math.ceil(W/spacing)+4,rows=Math.ceil(H/(CY*spacing))+4;
- for(let row=-rows;row<=rows;row++)for(let col=-cols;col<=cols;col++){
-  let x=col*spacing+row*spacing/2+W/2,y=row*spacing*CY+H/2;
-  if(x>-R&&x<W+R&&y>-R&&y<H+R)rotors.push({x,y});
+const W=1080,H=680,GW=216,GH=136,N=GW*GH,CELL=5,R=86,PI=Math.PI,RT3=Math.sqrt(3),CY=RT3/2,DT=1/30;
+const cv=document.getElementById('sim'),cx=cv.getContext('2d',{alpha:false});
+const mini=document.createElement('canvas');mini.width=GW;mini.height=GH;const mc=mini.getContext('2d');
+const rgba=mc.createImageData(GW,GH);
+const ids=['layout','rpm','rain','friction','agitation','feed','rim','view','threshold'];
+const ui={};ids.forEach(k=>ui[k]=document.getElementById(k));
+const val=k=>Number(ui[k].value);
+const flowX=new Float32Array(N),flowY=new Float32Array(N),speed=new Float32Array(N);
+const height=new Float32Array(N),mobile=new Float32Array(N),next=new Float32Array(N);
+const owner=new Int32Array(N),present=new Uint8Array(N);
+const regionsStat=document.getElementById('regions'),largestStat=document.getElementById('largest');
+const offsets=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
+let running=true,steps=0,time=0,drained=0,last=0,acc=0,rand=1337147;
+let spacing=R,discs=[],peak=0,thresholdAbs=0,lastRegions=0,lastLargest=0,advancing=false;
+function rng(){rand=(Math.imul(rand,1664525)+1013904223)|0;return (rand>>>0)/4294967296;}
+function center(q,r){return[W/2+spacing*(q+r*.5),H/2+spacing*CY*r];}
+function nearest(x,y){
+ const fq=(x-W/2)/spacing-(y-H/2)/(RT3*spacing),fr=(y-H/2)/(CY*spacing),fs=-fq-fr;
+ let q=Math.round(fq),r=Math.round(fr),s=Math.round(fs);
+ const dq=Math.abs(q-fq),dr=Math.abs(r-fr),ds=Math.abs(s-fs);
+ if(dq>dr&&dq>ds)q=-r-s;else if(dr>ds)r=-q-s;
+ return[q,r];
+}
+function rebuild(){
+ spacing=ui.layout.value==='flower'?R:R*2.04;
+ discs=[];
+ let nrows=Math.ceil(H/(spacing*CY))+4,ncols=Math.ceil(W/spacing)+4;
+ for(let row=-nrows;row<=nrows;row++)for(let col=-ncols;col<=ncols;col++){
+  let c=center(col,row);
+  if(c[0]>-R&&c[0]<W+R&&c[1]>-R&&c[1]<H+R)discs.push(c);
  }
- document.getElementById('discs').textContent=rotors.length;
- document.getElementById('modehelp').innerHTML=ui.layout.value==='flower'?
- '<strong>Geometry:</strong> Every disc is a complete circle and rotates independently, including across overlap regions. Because solid discs cannot occupy the same plane, overlapping surfaces are idealized independent layers in this simulation.':
- '<strong>Geometry:</strong> Physical round discs in hexagonal packing with small gaps. Each disc spins clockwise independently without intersecting another disc.';
- document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Flower of Life · full discs, independent rotation':'Physical discs · hexagonal close packing';
+ const omega=val('rpm')*PI/30;
+ const traction=val('friction')/(val('friction')+1.5);
+ let i=0;
+ for(let y=0;y<GH;y++)for(let x=0;x<GW;x++,i++){
+  let px=(x+.5)*CELL,py=(y+.5)*CELL,near=nearest(px,py);
+  let sx=0,sy=0,w=0,own=near[0]*10000+near[1],covered=0;
+  for(const [dq,dr] of offsets){
+   if(ui.layout.value==='physical'&&(dq||dr))continue;
+   let c=center(near[0]+dq,near[1]+dr),dx=px-c[0],dy=py-c[1],d2=dx*dx+dy*dy;
+   if(d2>R*R)continue;
+   // Each entire circle contributes its independently rotating local tangent.
+   // Average multiple contacts where full circles overlap; no clipping to hex cells.
+   const weight=1; sx+=-dy*omega*weight;sy+=dx*omega*weight;w+=weight;covered++;
+  }
+  present[i]=covered?1:0;owner[i]=own;
+  flowX[i]=w?sx/w*traction:0;flowY[i]=w?sy/w*traction:0;
+  speed[i]=Math.hypot(flowX[i],flowY[i]);
+ }
+ document.getElementById('discs').textContent=discs.length;
+ document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Full circles · overlapping independent rotations':'Full discs · tangent arrangement';
+ document.getElementById('modehelp').innerHTML=ui.layout.value==='flower'
+ ?'<strong>Geometry:</strong> Each entire circle contributes a clockwise velocity field, including all overlap regions. Transport follows the combined contact field. This is an idealized mathematical coupling of independent discs.'
+ :'<strong>Geometry:</strong> Discs are separated. Grains are prevented from crossing into neighbouring disc footprints.';
 }
-function hexNearest(x,y){
- let q=(x-W/2)/spacing-(y-H/2)/(SQRT3*spacing),r=(y-H/2)/(CY*spacing),c=-q-r;
- let rq=Math.round(q),rr=Math.round(r),rc=Math.round(c);
- let dq=Math.abs(rq-q),dr=Math.abs(rr-r),dc=Math.abs(rc-c);
- if(dq>dr&&dq>dc)rq=-rr-rc;else if(dr>dc)rr=-rq-rc;
- return[rq,rr];
+function reset(){
+ rand=1337147;time=0;steps=0;drained=0;peak=0;thresholdAbs=0;acc=0;
+ height.fill(0);mobile.fill(0);next.fill(0);rebuild();measure();draw();
 }
-function center(q,r){return[W/2+spacing*(q+r/2),H/2+spacing*CY*r];}
-function newParticle(){
- let x,y;
- if(ui.feed.value==='central'){
-  let theta=randy()*2*Math.PI,rad=Math.sqrt(-2*Math.log(Math.max(1e-6,randy())))*15;
-  x=W/2+Math.cos(theta)*rad;y=H/2+Math.sin(theta)*rad;
- }else{x=randy()*W;y=randy()*H;}
- let loc=hexNearest(x,y),q=loc[0],r=loc[1],choices=[];
- if(ui.layout.value==='flower'){
-  const offsets=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
-  for(let k=0;k<offsets.length;k++){
-   let c=center(q+offsets[k][0],r+offsets[k][1]);
-   let dx=x-c[0],dy=y-c[1];
-   if(dx*dx+dy*dy<=R*R)choices.push(c);
+function permitted(src,dst){return dst>=0&&dst<N&&present[dst]&&(ui.layout.value==='flower'||owner[src]===owner[dst]);}
+function step(){
+ next.fill(0);
+ const injection=val('rain')/N*DT;
+ const turbulent=Math.min(.16,val('agitation')*.016);
+ const central=ui.feed.value==='central';
+ let seedIndex=Math.floor(GH*.5)*GW+Math.floor(GW*.5);
+ for(let i=0;i<N;i++){
+  if(!present[i])continue;
+  let incoming=central?(i===seedIndex?val('rain')*DT:0):injection*(.75+.5*rng());
+  let m=mobile[i]+incoming,h=height[i],v=speed[i];
+  // Surface scour: higher velocity re-entrains a small fraction of sediment.
+  let erode=Math.min(h,h*DT*.034*(v/(v+35)));
+  h-=erode;m+=erode;
+  // Sedimentation in slower regions; accumulated deposits can retain more sand.
+  let trap=.022+.43/(1+(v/42)*(v/42))+.02*Math.min(1,h/6);
+  let settled=m*(1-Math.exp(-trap*DT));
+  h+=settled;m-=settled;height[i]=h;
+  const xx=i%GW,yy=(i/GW)|0;
+  const fx=flowX[i]*DT/CELL,fy=flowY[i]*DT/CELL;
+  let ax=Math.abs(fx),ay=Math.abs(fy),sum=ax+ay;
+  let limiter=sum>.88?.88/sum:1;
+  ax*=limiter;ay*=limiter;
+  let diffuse=Math.min(.14,turbulent*DT*10);
+  let remain=m*(1-ax-ay-diffuse);
+  next[i]+=remain;
+  let toX=fx>=0?(xx<GW-1?i+1:-1):(xx>0?i-1:-1);
+  let toY=fy>=0?(yy<GH-1?i+GW:-1):(yy>0?i-GW:-1);
+  if(permitted(i,toX))next[toX]+=m*ax;else if(ui.rim.value==='retain')next[i]+=m*ax;else drained+=m*ax;
+  if(permitted(i,toY))next[toY]+=m*ay;else if(ui.rim.value==='retain')next[i]+=m*ay;else drained+=m*ay;
+  let q=m*diffuse*.25;
+  for(const j of [xx>0?i-1:-1,xx<GW-1?i+1:-1,yy>0?i-GW:-1,yy<GH-1?i+GW:-1]){
+   if(permitted(i,j))next[j]+=q;else next[i]+=q;
   }
  }
- let c=choices.length?choices[Math.floor(randy()*choices.length)]:center(q,r);
- let dx=x-c[0],dy=y-c[1],d=Math.hypot(dx,dy);
- if(d>R-1.5){
-  let a=Math.atan2(dy,dx);
-  if(d<0.01)a=randy()*2*Math.PI;
-  let radius=Math.min(R-3,Math.max(0,d-2));
-  x=c[0]+Math.cos(a)*radius;y=c[1]+Math.sin(a)*radius;
- }
- return{x,y,vx:0,vy:0,age:0,cx:c[0],cy:c[1]};
+ mobile.set(next);time+=DT;steps++;
+ if(steps%15===0)measure();
 }
-function addSand(h){
- spawnPartial+=Number(ui.rain.value)*h;
- let n=Math.min(Math.floor(spawnPartial),MAX-p.length);
- spawnPartial-=Math.floor(spawnPartial);
- for(let i=0;i<n;i++)p.push(newParticle());
+function threshold(){
+ let max=0;for(let i=0;i<N;i++)if(height[i]>max)max=height[i];
+ peak=max;thresholdAbs=max*val('threshold')/100;
+ return thresholdAbs;
 }
-// Each grain belongs to one whole circular disc. Neighbouring discs never
-// cancel each other's motion; their footprints may overlap in projection.
-function velocity(b){
- return[omega*(b.cy-b.y),omega*(b.x-b.cx)];
+function measure(){
+ const cut=threshold();let seen=new Uint8Array(N),queue=new Int32Array(N),count=0,largest=0,total=0;
+ if(peak<.035){lastRegions=0;lastLargest=0;return;}
+ for(let i=0;i<N;i++){
+  if(!present[i]||seen[i]||height[i]<cut)continue;
+  let start=0,end=1,area=0;queue[0]=i;seen[i]=1;
+  while(start<end){
+   let k=queue[start++],x=k%GW,y=(k/GW)|0;area++;
+   const neighbors=[x? k-1:-1,x<GW-1?k+1:-1,y?k-GW:-1,y<GH-1?k+GW:-1];
+   for(const j of neighbors)if(j>=0&&present[j]&&!seen[j]&&height[j]>=cut){seen[j]=1;queue[end++]=j;}
+  }
+  if(area>=3){count++;total+=area;if(area>largest)largest=area;}
+ }
+ lastRegions=count;lastLargest=total?100*largest/total:0;
 }
-function physicsStep(h){
- omega=Number(ui.rpm.value)*Math.PI/30;
- let drag=Number(ui.friction.value),agitation=Number(ui.agitation.value);
- addSand(h);
- let damp=1-Math.exp(-drag*h);
- for(let i=0;i<p.length;i++){
-  let b=p[i],a=velocity(b);
-  b.vx+=(a[0]-b.vx)*damp;b.vy+=(a[1]-b.vy)*damp;
-  if(agitation){
-   let f=agitation*Math.sqrt(h)*6;
-   b.vx+=(randy()+randy()+randy()-1.5)*f;
-   b.vy+=(randy()+randy()+randy()-1.5)*f;
-  }
-  b.x+=b.vx*h;b.y+=b.vy*h;b.age+=h;
-  // Rims are enforced for every complete disc in either arrangement.
-  // The Flower mode represents overlapping independent layers, not one shared surface.
-  {
-   let dx=b.x-b.cx,dy=b.y-b.cy,d=Math.hypot(dx,dy);
-   if(d>R-1.5){
-    if(ui.rim.value==='spill'){p[i]=p[p.length-1];p.pop();i--;continue;}
-    let nx=dx/(d||1),ny=dy/(d||1);
-    b.x=b.cx+nx*(R-1.5);b.y=b.cy+ny*(R-1.5);
-    let out=b.vx*nx+b.vy*ny;
-    if(out>0){b.vx-=out*nx*1.4;b.vy-=out*ny*1.4;}
-   }
-  }
-  if(b.x<0||b.x>=W||b.y<0||b.y>=H||b.age>160){
-   p[i]=p[p.length-1];p.pop();i--;
-  }
- }
- t+=h;
-}
-function drawDiscs(){
- ctx.fillStyle='#08101b';ctx.fillRect(0,0,W,H);
- if(ui.layout.value==='physical'){
-  for(const c of rotors){
-   ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.fillStyle='#1b2932';ctx.fill();
-   ctx.lineWidth=1;ctx.strokeStyle='#547080';ctx.stroke();
-   ctx.beginPath();ctx.arc(c.x,c.y,3,0,Math.PI*2);ctx.fillStyle='#7e9ba3';ctx.fill();
-  }
- }else{
-  ctx.lineWidth=1.6;ctx.strokeStyle='rgba(110,184,215,.55)';
-  for(const c of rotors){ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.stroke();}
-  for(const c of rotors){
-   ctx.beginPath();ctx.arc(c.x,c.y,1.6,0,Math.PI*2);
-   ctx.fillStyle='rgba(115,161,182,.5)';ctx.fill();
-  }
- }
-}
-function drawSand(){
- dens.fill(0);
- for(const a of p){
-  let xx=a.x*.5,yy=a.y*.5,ix=xx|0,iy=yy|0,fx=xx-ix,fy=yy-iy;
-  if(ix>=0&&iy>=0&&ix<DCW-1&&iy<DCH-1){
-   let idx=iy*DCW+ix;
-   dens[idx]+=(1-fx)*(1-fy);dens[idx+1]+=fx*(1-fy);
-   dens[idx+DCW]+=(1-fx)*fy;dens[idx+DCW+1]+=fx*fy;
-  }
- }
- let data=pix.data,mx=0;
- for(let j=0;j<dens.length;j++){
-  let v=dens[j];if(v>mx)mx=v;
-  let z=1-Math.exp(-v*.84),o=j*4;
-  data[o]=249;data[o+1]=190+Math.min(55,Math.round(z*62));
-  data[o+2]=109+Math.min(70,Math.round(z*80));
-  data[o+3]=Math.min(255,Math.round(255*z));
- }
- maxDensity=Math.max(maxDensity*.99,mx);
- dctx.putImageData(pix,0,0);ctx.imageSmoothingEnabled=true;
- ctx.drawImage(densityCanvas,0,0,W,H);
- let stride=p.length>70000?5:p.length>35000?3:2;
- ctx.fillStyle='rgba(255,229,168,.50)';
- for(let k=0;k<p.length;k+=stride){let a=p[k];ctx.fillRect(a.x,a.y,1.15,1.15);}
+function outline(){
+ cx.save();cx.lineWidth=1.15;cx.strokeStyle='rgba(117,181,216,.48)';
+ for(const c of discs){cx.beginPath();cx.arc(c[0],c[1],R,0,2*PI);cx.stroke();}
+ cx.restore();
 }
 function draw(){
- drawDiscs();drawSand();
- // Show each FULL circumference above sand, even where discs overlap.
- if(ui.layout.value==='flower'){
-  ctx.save();ctx.strokeStyle='rgba(128,195,224,.85)';ctx.lineWidth=1.35;
-  for(const c of rotors){ctx.beginPath();ctx.arc(c.x,c.y,R,0,2*Math.PI);ctx.stroke();}
-  ctx.restore();
+ let mx=peak;if(!mx)mx=threshold();
+ const data=rgba.data,cut=mx*val('threshold')/100,view=ui.view.value;
+ for(let i=0;i<N;i++){
+  let o=i*4,h=height[i],z=mx?Math.pow(Math.log1p(h*2.5)/Math.log1p(mx*2.5),.9):0;
+  let r=10,g=23,b=39;
+  if(!present[i]){r=7;g=13;b=22;}
+  else if(view==='flow'){const v=speed[i],s=Math.min(1,v/85);r=15+s*40;g=37+s*93;b=58+s*105;}
+  else{
+   const a=Math.min(1,z*1.18);
+   r=16+220*a;g=35+161*a;b=53+61*a;
+   if(view==='coast'&&h>=cut&&peak>.035){r=66+190*z;g=86+159*z;b=52+110*z;}
+  }
+  data[o]=r|0;data[o+1]=g|0;data[o+2]=b|0;data[o+3]=255;
  }
- document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
- document.getElementById('count').textContent=p.length.toLocaleString();
- document.getElementById('pile').textContent=maxDensity.toFixed(1)+' grains/cell';
+ mc.putImageData(rgba,0,0);
+ cx.imageSmoothingEnabled=true;cx.drawImage(mini,0,0,W,H);
+ if(view==='coast'&&peak>.035){
+  // Contours are calculated from sediment thickness, not pre-drawn coastlines.
+  cx.save();cx.strokeStyle='rgba(245,244,197,.82)';cx.lineWidth=1;
+  cx.beginPath();
+  for(let y=0;y<GH-1;y++)for(let x=0;x<GW-1;x++){
+   let i=y*GW+x,a=height[i]>=cut;
+   if(!present[i])continue;
+   if(a!==(height[i+1]>=cut)){let px=(x+1)*CELL,py=y*CELL;cx.moveTo(px,py);cx.lineTo(px,py+CELL);}
+   if(a!==(height[i+GW]>=cut)){let px=x*CELL,py=(y+1)*CELL;cx.moveTo(px,py);cx.lineTo(px+CELL,py);}
+  }
+  cx.stroke();cx.restore();
+ }
+ outline();
+ if(view==='flow'){
+  cx.save();cx.lineWidth=1.4;cx.strokeStyle='#f4c77b';
+  for(let y=6;y<GH-6;y+=8)for(let x=6;x<GW-6;x+=8){
+   let i=y*GW+x,v=speed[i];if(v<.2||!present[i])continue;
+   let d=Math.min(22,6+v*.1),a=Math.atan2(flowY[i],flowX[i]),px=(x+.5)*CELL,py=(y+.5)*CELL;
+   cx.beginPath();cx.moveTo(px-Math.cos(a)*d*.4,py-Math.sin(a)*d*.4);
+   cx.lineTo(px+Math.cos(a)*d*.6,py+Math.sin(a)*d*.6);cx.stroke();
+  }cx.restore();
+ }
+ document.getElementById('elapsed').textContent=time.toFixed(1)+' s';
+ let mass=0;for(let i=0;i<N;i++)mass+=height[i]+mobile[i];
+ document.getElementById('count').textContent=Math.round(mass).toLocaleString();
+ document.getElementById('pile').textContent=peak.toFixed(2);
+ regionsStat.textContent=String(lastRegions);
+ largestStat.textContent=lastLargest.toFixed(1)+'%';
  document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
 }
-function reset(){t=0;p.length=0;spawnPartial=0;seed=238572;maxDensity=0;chooseGeometry();draw();}
-function tick(time){
- if(!last)last=time;
- let elapsed=Math.min(.1,(time-last)/1000);last=time;
- if(running&&!fastForwarding){
-  acc+=elapsed;let n=0;
-  while(acc>=DT&&n<3){physicsStep(DT);acc-=DT;n++;}
+function play(b){running=b;document.getElementById('play').textContent=running?'Pause':'Play';draw();}
+function tick(ms){
+ if(!last)last=ms;
+ let elapsed=Math.min(.10,(ms-last)/1000);last=ms;
+ if(running&&!advancing){
+  acc+=elapsed;let n=0;while(acc>=DT&&n<2){step();acc-=DT;n++;}
   if(n)draw();
  }
  requestAnimationFrame(tick);
 }
-function pause(b){running=b;document.getElementById('play').textContent=running?'Pause':'Play';draw();}
-document.getElementById('play').onclick=()=>pause(!running);
+document.getElementById('play').onclick=()=>play(!running);
 document.getElementById('reset').onclick=reset;
 document.getElementById('advance').onclick=()=>{
- let was=running;running=false;fastForwarding=true;let total=0;
- function batch(){
-  for(let i=0;i<45&&total<ADVANCE_STEPS;i++,total++)physicsStep(DT);
-  draw();
-  if(total<ADVANCE_STEPS)setTimeout(batch,0);
-  else{fastForwarding=false;pause(was);}
- }batch();
+ if(advancing)return;advancing=true;let was=running;running=false;
+ let todo=Math.round(5/DT);
+ const batch=()=>{let n=Math.min(25,todo);for(let k=0;k<n;k++)step();todo-=n;measure();draw();
+  if(todo>0)setTimeout(batch,0);else{advancing=false;play(was);}
+ };batch();
 };
-ui.layout.addEventListener('change',reset);
-for(const[k,input]of Object.entries(ui)){
- if(input.type==='range'){
-  let out=document.getElementById(k+'Value');
-  const update=()=>{out.textContent=input.value;};
-  input.addEventListener('input',update);update();
- }
+for(const k of ['rpm','friction','layout'])ui[k].addEventListener('change',reset);
+for(const k of ['view','threshold'])ui[k].addEventListener('change',()=>{measure();draw();});
+for(const [k,input] of Object.entries(ui))if(input.type==='range'){
+ const output=document.getElementById(k+'Value');
+ const update=()=>{if(output)output.textContent=input.value;};
+ input.addEventListener('input',()=>{update();if(k==='threshold'){measure();draw();}});
+ update();
 }
 const record=document.getElementById('record');
 record.onclick=()=>{
- if(!canvas.captureStream||typeof MediaRecorder==='undefined'){
-  alert('Recording is not supported by this browser. The live simulation still works.');return;
- }
- let stream=canvas.captureStream(24);
- let mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm';
- let rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:3800000}),chunks=[];
- rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
- rec.onstop=()=>{
-  let u=URL.createObjectURL(new Blob(chunks,{type:mime})),a=document.createElement('a');
-  a.href=u;a.download='flower-of-life-granular-simulation.webm';a.click();
-  setTimeout(()=>URL.revokeObjectURL(u),10000);
-  record.disabled=false;record.textContent='Record 10 s';
+ if(!cv.captureStream||typeof MediaRecorder==='undefined'){alert('Your browser does not support canvas video recording.');return;}
+ const stream=cv.captureStream(24),mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp8')?'video/webm;codecs=vp8':'video/webm';
+ const recorder=new MediaRecorder(stream,{mimeType:mime}),chunks=[];
+ recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+ recorder.onstop=()=>{
+  const url=URL.createObjectURL(new Blob(chunks,{type:mime})),a=document.createElement('a');
+  a.href=url;a.download='flower-lattice-sediment-experiment.webm';a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),15000);record.disabled=false;record.textContent='Record 10 s';
  };
- record.disabled=true;record.textContent='Recording…';pause(true);rec.start();
- setTimeout(()=>{if(rec.state!=='inactive')rec.stop();},10000);
+ record.disabled=true;record.textContent='Recording…';play(true);recorder.start();
+ setTimeout(()=>{if(recorder.state==='recording')recorder.stop();},10000);
 };
 document.addEventListener('visibilitychange',()=>{last=0;acc=0;});
 reset();requestAnimationFrame(tick);
