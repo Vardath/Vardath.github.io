@@ -53,7 +53,7 @@ code{background:#0b1420;padding:2px 5px;border-radius:5px}
       <span>Elapsed <b id="elapsed">0.0 s</b></span>
       <span>Total sediment <b id="mass">0</b></span>
       <span>Visible circles <b id="circles">0</b></span>
-      <span>Peak height <b id="peak">0</b></span>
+      <span>Peak height <b id="peak">0</b></span><span>Mobile grains <b id="mobilemass">0</b></span>
       <span>Largest land region <b id="largest">0%</b></span>
       <span>Land regions <b id="regions">0</b></span>
     </div>
@@ -62,7 +62,7 @@ code{background:#0b1420;padding:2px 5px;border-radius:5px}
   </div>
   <aside class="panel">
     <h2>Controls</h2>
-    <div class="control"><div class="row"><label for="view">Display</label></div><select id="view"><option value="coast">Waterline / landmasses</option><option value="height">Topographic height</option><option value="flow">Weaving force lines</option></select></div>
+    <div class="control"><div class="row"><label for="view">Display</label></div><select id="view"><option value="sand">Visible sand: moving grains + deposits</option><option value="coast">Waterline / landmasses</option><option value="height">Topographic height</option><option value="flow">Weaving force lines</option></select></div>
     <div class="control"><div class="row"><label for="rpm">Arc-force speed</label><output id="rpmValue">11</output></div><input id="rpm" type="range" min="0" max="30" step="1" value="11"></div>
     <div class="control"><div class="row"><label for="rain">Sediment input</label><output id="rainValue">3800</output></div><input id="rain" type="range" min="0" max="12000" step="100" value="3800"></div>
     <div class="control"><div class="row"><label for="scale">Lattice size</label><output id="scaleValue">50</output></div><input id="scale" type="range" min="34" max="86" step="2" value="50"></div>
@@ -76,7 +76,7 @@ code{background:#0b1420;padding:2px 5px;border-radius:5px}
     <div class="help">
       <p><strong>Main change:</strong> each circle now acts primarily through its <em>rim / edge path</em>. The strongest force is on the Flower of Life arcs, not at the centre.</p>
       <p><strong>3D-ish weave:</strong> where circles overlap, each circle has an alternating over/under height along its rim. The locally highest rim segment dominates the force direction, like woven snakes crossing.</p>
-      <p><strong>Waterline:</strong> in the default view, the water slider floods low terrain to help judge whether broad continent-like land regions emerge.</p>
+      <p><strong>Sand visibility:</strong> golden pixels are simulated moving sediment; warmer deposits are settled sediment. Waterline is an optional view, not a filter hiding all your sand.</p><p><strong>Waterline:</strong> colour scaling uses a robust high percentile of sediment height rather than a single extreme peak, so one pile cannot make the entire lattice disappear under water.</p>
     </div>
   </aside>
 </div>
@@ -96,7 +96,7 @@ const ui={}; for(const id of ['view','rpm','rain','scale','edgeWidth','weave','d
 const outputs={}; for(const id of ['rpm','rain','scale','edgeWidth','weave','drag','diffusion','water']) outputs[id]=document.getElementById(id+'Value');
 const flowX=new Float32Array(N), flowY=new Float32Array(N), speed=new Float32Array(N), present=new Uint8Array(N);
 const bed=new Float32Array(N), mobile=new Float32Array(N), nextMobile=new Float32Array(N), grainNoise=new Float32Array(N);
-let circles=[], running=true, advancing=false, last=0, acc=0, t=0, peak=0, largestPct=0, regionCount=0, seed=8731, radius=50, spacing=50;
+let circles=[], running=true, advancing=false, last=0, acc=0, t=0, peak=0, robustPeak=0.01, movingPeak=0.01, largestPct=0, regionCount=0, seed=8731, radius=50, spacing=50, frames=0;
 function rand(){ seed=(Math.imul(seed,1664525)+1013904223)|0; return (seed>>>0)/4294967296; }
 function center(q,r){ return [W/2+spacing*(q+r*0.5), H/2+spacing*CY*r, q, r]; }
 function nearest(x,y){ const fq=(x-W/2)/spacing-(y-H/2)/(RT3*spacing), fr=(y-H/2)/(CY*spacing), fs=-fq-fr; let q=Math.round(fq), r=Math.round(fr), s=Math.round(fs); const dq=Math.abs(q-fq), dr=Math.abs(r-fr), ds=Math.abs(s-fs); if(dq>dr&&dq>ds) q=-r-s; else if(dr>ds) r=-q-s; return [q,r]; }
@@ -178,17 +178,36 @@ function step(){
   t+=DT;
 }
 function measureRegions(){
-  let max=0; for(let i=0;i<N;i++) if(bed[i]>max) max=bed[i]; peak=max;
-  const waterline=max*(Number(ui.water.value)/100); if(max<1e-9){ largestPct=0; regionCount=0; return; }
-  const seen=new Uint8Array(N), queue=new Int32Array(N); let totalLand=0, largest=0, regions=0;
-  for(let i=0;i<N;i++) if(present[i] && bed[i]>=waterline) totalLand++;
-  for(let i=0;i<N;i++){
-    if(!present[i] || seen[i] || bed[i]<waterline) continue;
-    let head=0, tail=1, area=0; queue[0]=i; seen[i]=1;
-    while(head<tail){ const k=queue[head++],x=k%GW,y=(k/GW)|0; area++; const nbr=[x? k-1:-1, x<GW-1? k+1:-1, y? k-GW:-1, y<GH-1? k+GW:-1]; for(const j of nbr){ if(j>=0 && present[j] && !seen[j] && bed[j]>=waterline){ seen[j]=1; queue[tail++]=j; } } }
-    if(area>=3){ regions++; if(area>largest) largest=area; }
+ let max=0;const samples=[],movingSamples=[];
+ for(let i=0;i<N;i+=2){
+  if(!present[i])continue;
+  if(bed[i]>max)max=bed[i];
+  if(bed[i]>0.000001)samples.push(bed[i]);
+  if(mobile[i]>0.000001)movingSamples.push(mobile[i]);
+ }
+ // Robust 95th percentile: a single pile is not representative of the landscape.
+ samples.sort((a,b)=>a-b);movingSamples.sort((a,b)=>a-b);
+ peak=max;
+ robustPeak=Math.max(.0001,samples.length?samples[Math.floor((samples.length-1)*.95)]:0);
+ movingPeak=Math.max(.0001,movingSamples.length?movingSamples[Math.floor((movingSamples.length-1)*.90)]:0);
+ const waterline=robustPeak*(Number(ui.water.value)/100);
+ if(max<1e-9){largestPct=0;regionCount=0;return;}
+ const seen=new Uint8Array(N),queue=new Int32Array(N);
+ let totalLand=0,largest=0,regions=0;
+ for(let i=0;i<N;i++)if(present[i]&&bed[i]>=waterline)totalLand++;
+ for(let i=0;i<N;i++){
+  if(!present[i]||seen[i]||bed[i]<waterline)continue;
+  let head=0,tail=1,area=0;queue[0]=i;seen[i]=1;
+  while(head<tail){
+   const k=queue[head++],x=k%GW,y=(k/GW)|0;area++;
+   const nbr=[x?k-1:-1,x<GW-1?k+1:-1,y?k-GW:-1,y<GH-1?k+GW:-1];
+   for(const j of nbr)if(j>=0&&present[j]&&!seen[j]&&bed[j]>=waterline){
+    seen[j]=1;queue[tail++]=j;
+   }
   }
-  regionCount=regions; largestPct=totalLand? (100*largest/totalLand) : 0;
+  if(area>=3){regions++;if(area>largest)largest=area;}
+ }
+ regionCount=regions;largestPct=totalLand?100*largest/totalLand:0;
 }
 function drawBase(){
   ctx.fillStyle='#07101a'; ctx.fillRect(0,0,W,H);
@@ -196,66 +215,99 @@ function drawBase(){
   for(const c of circles){ ctx.beginPath(); ctx.arc(c[0],c[1],radius,0,TAU); ctx.stroke(); }
 }
 function draw(){
-  drawBase();
-  const max=peak||1e-9, waterline=max*(Number(ui.water.value)/100), view=ui.view.value;
+ // Sediment is rendered in all terrain modes, not silently concealed by water.
+ const displayPeak=Math.max(robustPeak,.0001),
+       waterline=displayPeak*(Number(ui.water.value)/100),
+       view=ui.view.value;
+ const den=Math.log1p(displayPeak*3.0),
+       movingDen=Math.log1p(movingPeak*1.8);
+ for(let i=0;i<N;i++){
+  const o=i*4;
+  let r=7,g=17,b=27;
+  if(present[i]){
+   const bedRel=Math.min(1,Math.log1p(bed[i]*3.0)/Math.max(.00001,den));
+   const movingRel=Math.min(1,Math.log1p(mobile[i]*1.8)/Math.max(.00001,movingDen));
+   if(view==='flow'){
+    const speedRel=Math.min(1,speed[i]/65);
+    r=9+30*speedRel;g=26+110*speedRel;b=43+124*speedRel;
+   }else if(view==='coast'){
+    if(bed[i]<waterline){
+     const sub=waterline>0?Math.min(1,bed[i]/waterline):0;
+     r=10+22*sub;g=28+64*sub;b=53+122*sub;
+    }else{
+     const rel=Math.min(1,(bed[i]-waterline)/Math.max(.00001,displayPeak-waterline));
+     r=94+151*rel;g=103+132*rel;b=62+72*rel;
+    }
+   }else{
+    // Sand mode is gold over a dark plate; height mode emphasizes relief.
+    const fac=view==='sand'?bedRel:Math.pow(bedRel,.7);
+    r=13+215*fac;g=22+160*fac;b=32+76*fac;
+   }
+   if(view!=='flow'){
+    // Separate MOVING sediment from deposited bed sediment in every view.
+    const glow=Math.min(.92,movingRel*.72);
+    r=r*(1-glow)+255*glow;
+    g=g*(1-glow)+218*glow;
+    b=b*(1-glow)+145*glow;
+   }
+  }
+  pixels[o]=r|0;pixels[o+1]=g|0;pixels[o+2]=b|0;pixels[o+3]=255;
+ }
+ mctx.putImageData(image,0,0);
+ ctx.imageSmoothingEnabled=true;
+ ctx.drawImage(mini,0,0,W,H);
+
+ // Individual fine grain markers, sampled from actual local mobile mass.
+ // Sampling probability is mass dependent; dots do not invent sediments in empty cells.
+ if(view!=='flow'){
+  ctx.save();ctx.fillStyle='rgba(255,231,177,.82)';
   for(let i=0;i<N;i++){
-    const o=i*4;
-    let r=6,g=14,b=24;
-    if(present[i]){
-      if(view==='flow'){
-        const s=Math.min(1,speed[i]/65);
-        r=10+34*s; g=28+110*s; b=42+135*s;
-      }else{
-        const z=Math.min(1, Math.log1p(bed[i]*2.6)/Math.log1p(max*2.6));
-        if(view==='height'){
-          r=18+208*z; g=32+162*z; b=44+88*z;
-        }else{
-          if(bed[i] < waterline){
-            const w=waterline>0 ? bed[i]/waterline : 0;
-            r=14+40*w; g=35+95*w; b=62+155*w;
-          }else{
-            const l=(bed[i]-waterline)/Math.max(1e-6,max-waterline);
-            r=92+158*l; g=106+132*l; b=57+74*l;
-          }
-        }
-      }
-    }
-    pixels[o]=r|0; pixels[o+1]=g|0; pixels[o+2]=b|0; pixels[o+3]=255;
+   const m=mobile[i];if(m<.0001||!present[i])continue;
+   const rel=Math.min(.92,m/(m+Math.max(.002,movingPeak*.23)));
+   const phase=(grainNoise[i]+frames*.033*speed[i]/(speed[i]+20))%1;
+   if(phase>rel)continue;
+   const x=i%GW,y=(i/GW)|0;
+   const ox=(grainNoise[i]*13.371)%1,oy=(grainNoise[i]*7.927)%1;
+   ctx.fillRect(x*CELL+ox*CELL,y*CELL+oy*CELL,1.45,1.45);
   }
-  mctx.putImageData(image,0,0);
-  ctx.imageSmoothingEnabled=true;
-  ctx.drawImage(mini,0,0,W,H);
-  // fine grain speckle from mobile sediment to make grains appear smaller and more numerous
-  ctx.save(); ctx.fillStyle='rgba(250,228,183,0.30)';
-  for(let y=0;y<GH;y+=1) for(let x=0;x<GW;x+=1){ const i=y*GW+x; if(!present[i]) continue; const m=mobile[i]; if(m>0.015 && grainNoise[i] < Math.min(0.20,m*0.004)){ ctx.fillRect(x*CELL+((i*37)%3)*0.3, y*CELL+((i*53)%3)*0.3, 1, 1); } }
   ctx.restore();
-  if(view==='coast' && peak>0){
-    ctx.save(); ctx.strokeStyle='rgba(245,241,196,.88)'; ctx.lineWidth=1.0; ctx.beginPath();
-    for(let y=0;y<GH-1;y++) for(let x=0;x<GW-1;x++){
-      const i=y*GW+x; if(!present[i]) continue; const a=bed[i]>=waterline;
-      if(a !== (bed[i+1]>=waterline)){ const px=(x+1)*CELL, py=y*CELL; ctx.moveTo(px,py); ctx.lineTo(px,py+CELL); }
-      if(a !== (bed[i+GW]>=waterline)){ const px=x*CELL, py=(y+1)*CELL; ctx.moveTo(px,py); ctx.lineTo(px+CELL,py); }
-    }
-    ctx.stroke(); ctx.restore();
+ }
+ if(view==='coast'&&peak>0){
+  ctx.save();ctx.strokeStyle='rgba(255,246,185,.70)';ctx.lineWidth=.9;ctx.beginPath();
+  for(let y=0;y<GH-1;y++)for(let x=0;x<GW-1;x++){
+   const i=y*GW+x;if(!present[i])continue;
+   const a=bed[i]>=waterline;
+   if(a!==(bed[i+1]>=waterline)){const px=(x+1)*CELL,py=y*CELL;ctx.moveTo(px,py);ctx.lineTo(px,py+CELL);}
+   if(a!==(bed[i+GW]>=waterline)){const px=x*CELL,py=(y+1)*CELL;ctx.moveTo(px,py);ctx.lineTo(px+CELL,py);}
   }
-  if(view==='flow'){
-    ctx.save(); ctx.strokeStyle='rgba(242,197,119,.94)'; ctx.lineWidth=1.2;
-    for(let y=5;y<GH-5;y+=6) for(let x=5;x<GW-5;x+=6){ const i=y*GW+x; if(!present[i]||speed[i]<0.4) continue; const a=Math.atan2(flowY[i],flowX[i]), d=Math.min(16,4+speed[i]*0.08), px=(x+0.5)*CELL, py=(y+0.5)*CELL; ctx.beginPath(); ctx.moveTo(px-Math.cos(a)*d*0.35, py-Math.sin(a)*d*0.35); ctx.lineTo(px+Math.cos(a)*d*0.65, py+Math.sin(a)*d*0.65); ctx.stroke(); }
-    ctx.restore();
+  ctx.stroke();ctx.restore();
+ }
+ if(view==='flow'){
+  ctx.save();ctx.strokeStyle='rgba(242,197,119,.9)';ctx.lineWidth=1.1;
+  for(let y=5;y<GH-5;y+=6)for(let x=5;x<GW-5;x+=6){
+   const i=y*GW+x;if(!present[i]||speed[i]<.4)continue;
+   const a=Math.atan2(flowY[i],flowX[i]),d=Math.min(16,4+speed[i]*.08),px=(x+.5)*CELL,py=(y+.5)*CELL;
+   ctx.beginPath();ctx.moveTo(px-Math.cos(a)*d*.35,py-Math.sin(a)*d*.35);
+   ctx.lineTo(px+Math.cos(a)*d*.65,py+Math.sin(a)*d*.65);ctx.stroke();
   }
-  // lattice redrawn on top for clarity
-  ctx.strokeStyle='rgba(124,187,226,.76)'; ctx.lineWidth=1.0;
-  for(const c of circles){ ctx.beginPath(); ctx.arc(c[0],c[1],radius,0,TAU); ctx.stroke(); }
-  let total=0; for(let i=0;i<N;i++) total += bed[i]+mobile[i];
-  document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
-  document.getElementById('mass').textContent=Math.round(total).toLocaleString();
-  document.getElementById('peak').textContent=peak.toFixed(2);
-  document.getElementById('largest').textContent=largestPct.toFixed(1)+'%';
-  document.getElementById('regions').textContent=String(regionCount);
-  document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
+  ctx.restore();
+ }
+ // Subdued lattice: it is a guide, not a layer obscuring the sand.
+ ctx.strokeStyle='rgba(111,165,202,.38)';ctx.lineWidth=.72;
+ for(const c of circles){ctx.beginPath();ctx.arc(c[0],c[1],radius,0,TAU);ctx.stroke();}
+ let total=0,movingTotal=0;
+ for(let i=0;i<N;i++){total+=bed[i]+mobile[i];movingTotal+=mobile[i];}
+ document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
+ document.getElementById('mass').textContent=Math.round(total).toLocaleString();
+ document.getElementById('mobilemass').textContent=Math.round(movingTotal).toLocaleString();
+ document.getElementById('peak').textContent=peak.toFixed(2);
+ document.getElementById('largest').textContent=largestPct.toFixed(1)+'%';
+ document.getElementById('regions').textContent=String(regionCount);
+ document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
+ frames++;
 }
-function reset(){ seed=8731; t=0; last=0; acc=0; peak=0; largestPct=0; regionCount=0; bed.fill(0); mobile.fill(0); nextMobile.fill(0); rebuildField(); measureRegions(); draw(); }
-function tick(ms){ if(!last) last=ms; const elapsed=Math.min(0.1,(ms-last)/1000); last=ms; if(running && !advancing){ acc+=elapsed; let n=0; while(acc>=DT && n<2){ step(); acc-=DT; n++; } if(n){ measureRegions(); draw(); } } requestAnimationFrame(tick); }
+function reset(){ seed=8731; t=0; last=0; acc=0; peak=0; robustPeak=.01; movingPeak=.01; frames=0; largestPct=0; regionCount=0; bed.fill(0); mobile.fill(0); nextMobile.fill(0); rebuildField(); measureRegions(); draw(); }
+function tick(ms){ if(!last) last=ms; const elapsed=Math.min(0.1,(ms-last)/1000); last=ms; if(running && !advancing){ acc+=elapsed; let n=0; while(acc>=DT && n<2){ step(); acc-=DT; n++; } if(n){ if(frames%8===0)measureRegions(); draw(); } } requestAnimationFrame(tick); }
 for(const id in outputs){ const input=ui[id], out=outputs[id]; const update=()=>{ out.textContent=input.value; if(id==='scale'||id==='rpm'||id==='edgeWidth'||id==='weave') reset(); else if(id==='water'){ measureRegions(); draw(); } }; input.addEventListener('input',update); update(); }
 ui.view.addEventListener('change',draw); ui.feed.addEventListener('change',reset); ui.drag.addEventListener('input',()=>{}); ui.diffusion.addEventListener('input',()=>{}); ui.rain.addEventListener('input',()=>{});
 document.getElementById('play').onclick=()=>{ running=!running; document.getElementById('play').textContent=running?'Pause':'Play'; draw(); };
