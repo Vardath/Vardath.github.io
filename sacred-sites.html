@@ -142,7 +142,7 @@ function showSite(site){
  box.appendChild(htmlNode('h2','',site.name));
  box.appendChild(htmlNode('div','field',categories[site.cat].label+' · '+site.form));
  box.appendChild(htmlNode('div','coords',coordsText(site)));
- var quality=site.isArea?'Mapped feature centre (not necessarily the entrance or sacred focal point)':'Mapped point location';
+ var quality=site.isArea?'Approximate feature reference or article coordinate (not necessarily the entrance or sacred focal point)':'Mapped point location';
  box.appendChild(htmlNode('div','field',quality));
  if(site.info){box.appendChild(htmlNode('div','field',site.info));}
  var row=htmlNode('div','minirow');var link=document.createElement('a');link.href=site.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Inspect source ↗';row.appendChild(link);
@@ -176,7 +176,7 @@ function markerFor(site){var color=categories[site.cat].color;var icon=L.divIcon
 function redraw(){clusters.clearLayers();siteMarkers.clear();var layers=[];allSites.forEach(function(site){if(filtered(site)){var marker=markerFor(site);siteMarkers.set(site.id,marker);layers.push(marker);}});clusters.addLayers(layers);updateList();}
 function refreshCounts(){redraw();}
 function fromWiki(title,cat,form,lat,lon){
- return {id:'wp:'+title,name:title.replace(/_/g,' '),cat:cat,form:form,lat:lat,lon:lon,url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(title.replace(/ /g,'_')),source:'Wikipedia coordinates',isWorship:false,isArea:false};
+ return {id:'wp:'+title,name:title.replace(/_/g,' '),cat:cat,form:form,lat:lat,lon:lon,url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(title.replace(/ /g,'_')),source:'Wikipedia article coordinate (approximate reference point)',isWorship:false,isArea:true};
 }
 // Curated discovery index. Coordinates are fetched at runtime from each cited Wikipedia article.
 // Entries without source coordinates are skipped, never assigned invented coordinates.
