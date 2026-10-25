@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090e16">
+<meta name="description" content="A living world atlas of documented sacred and ceremonial places, with source-linked coordinates and regional OpenStreetMap discovery.">
+<title>Sacred Earth Atlas | Vardath</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<style>
+:root{--bg:#090d15;--panel:#111a27;--panel2:#182335;--edge:#304057;--text:#eaf1fa;--muted:#a4b2c8;--cyan:#67dadd;--gold:#e4c689;--left:344px}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit}button{cursor:pointer}a{color:var(--cyan)}
+header{height:64px;display:flex;gap:16px;justify-content:space-between;align-items:center;padding:0 22px;border-bottom:1px solid #2c3a50;background:#0a1019}
+.brand{font-size:16px;letter-spacing:.15em;font-weight:900;color:white;text-decoration:none;white-space:nowrap}
+.headernav{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.headernav a{font-size:12px;color:#c1cfdd;text-decoration:none;padding:8px 11px;border-radius:16px;border:1px solid #2e3a4b}
+.headernav a:hover{border-color:var(--cyan)}
+h1{font-size:18px;margin:0;font-weight:800;letter-spacing:.03em}
+.subhead{color:var(--muted);font-size:11px;line-height:1.4}
+.workspace{height:calc(100dvh - 64px);min-height:420px;display:grid;grid-template-columns:var(--left) minmax(0,1fr)}
+aside{z-index:450;background:var(--panel);border-right:1px solid var(--edge);display:flex;flex-direction:column;min-height:0}
+.aside-head{padding:18px 17px 14px;border-bottom:1px solid var(--edge)}
+.kicker{font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:.17em;color:var(--cyan);margin-bottom:7px}
+.section{padding:14px 16px;border-bottom:1px solid #27364c}
+input[type=search],select{width:100%;min-height:39px;border-radius:8px;background:#0b1420;color:var(--text);border:1px solid #3a4a60;padding:8px 10px;outline-offset:2px}
+input:focus,select:focus{outline:1px solid var(--cyan)}
+.searchline{display:flex;gap:7px}.searchline input{min-width:0;flex:1}
+.primary,.outline{border:1px solid #3e5b70;background:#1d3344;border-radius:8px;padding:9px 13px;color:#eefbff;font-weight:700}
+.primary:hover,.outline:hover{border-color:var(--cyan)}.outline{background:#151f2f}
+.minirow{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.small{font-size:11px;line-height:1.55;color:var(--muted)}
+.small strong{color:#dce7f8}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.pill{font-size:11px;border:1px solid #40506a;border-radius:999px;padding:5px 9px;background:#182435;color:#e4eaf4}
+.pill[aria-pressed=true]{border-color:var(--cyan);background:#184154;color:#fff}
+#count{font-variant-numeric:tabular-nums}
+.scroll{overflow:auto;flex:1;min-height:0}
+#detail{padding:14px 16px;border-bottom:1px solid #26374d;background:#101d2a}
+#detail h2{font-size:15px;margin:2px 0 9px;line-height:1.3}
+#detail a{overflow-wrap:anywhere}.coords{font-family:Consolas,monospace;font-size:12px}
+.field{margin:8px 0;color:#bccbdd;line-height:1.4;font-size:12px}.field strong{color:#f1f5fc}
+#results{padding:8px 10px 18px}.listhead{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;padding:9px 7px}
+.result{width:100%;display:flex;text-align:left;align-items:flex-start;gap:9px;border:1px solid transparent;border-bottom-color:#26374d;background:transparent;color:var(--text);padding:10px 7px}
+.result:hover,.result:focus-visible{background:#1b2a3b;border-color:#39536a;border-radius:7px}
+.dot{display:inline-block;flex:none;width:9px;height:9px;margin-top:4px;border-radius:50%;background:var(--gold)}
+.result .name{font-weight:700;font-size:12px;line-height:1.35}.result .meta{color:#9daec1;font-size:10px;line-height:1.5;margin-top:3px}
+.mapframe{position:relative;min-height:0;overflow:hidden}#map{height:100%;width:100%;background:#0b1925}
+.leaflet-container{font:13px Arial,Helvetica,sans-serif}.leaflet-control-attribution{font-size:10px!important}
+.mapbanner{z-index:401;position:absolute;top:15px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 120px);border:1px solid #4a5667;background:rgba(12,22,34,.95);border-radius:11px;box-shadow:0 8px 25px #0006;padding:9px 14px;color:#eaf3fa;font-size:12px;pointer-events:none;text-align:center}
+.mapbuttons{position:absolute;z-index:402;right:13px;top:14px;display:flex;flex-direction:column;gap:7px}.mapbuttons button{height:37px;min-width:39px;background:#142437;border:1px solid #50627a;color:white;border-radius:9px;font-size:19px}
+.maplegend{position:absolute;bottom:26px;left:14px;z-index:401;background:#0d1723ee;border:1px solid #3c4b5c;border-radius:9px;padding:9px 11px;font-size:10px;color:#c2d1df;max-width:280px;line-height:1.6}
+.marker-bubble{border:2px solid #0f1928;box-shadow:0 0 0 1px #cde7ff88,0 1px 7px #0008;border-radius:50%}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#132130;color:#eff7ff}.leaflet-popup-content{line-height:1.55}
+.popup-title{font-weight:800;margin-bottom:4px;font-size:14px}.popup-meta{font-size:11px;color:#b5c6d7;margin-bottom:7px}.popup-btn{background:#204257;color:white;border:1px solid #577489;border-radius:7px;padding:6px 9px}
+.err{color:#ffd0b0}.success{color:#98e3cc}.footnote{font-size:11px;line-height:1.6}
+#togglePanel{display:none}
+@media(max-width:850px){
+ header{height:58px;padding:0 11px}.headernav a{padding:6px;font-size:11px}.headernav a:nth-child(n+3){display:none}
+ .workspace{height:calc(100dvh - 58px);grid-template-columns:1fr;position:relative}
+ aside{position:absolute;left:0;right:0;bottom:0;height:min(47dvh,430px);border-right:none;border-top:1px solid #4b607a;box-shadow:0 -10px 30px #0008;border-radius:12px 12px 0 0;transition:height .2s;z-index:450}
+ aside.collapsed{height:57px;overflow:hidden}
+ .aside-head{padding:10px 14px}
+ .aside-head .subhead{display:none}
+ #togglePanel{display:inline-block;float:right;border:1px solid #47647c;background:#24364b;color:white;border-radius:6px;padding:4px 9px;font-size:11px}
+ .mapbanner{left:12px;right:58px;transform:none;max-width:none;width:auto;text-align:left;top:12px}
+ .maplegend{bottom:calc(min(47dvh,430px) + 7px);max-width:245px;font-size:9px}
+ .mapframe{height:100%}
+}
+@media(max-width:480px){.headernav a:nth-child(n+2){display:none}.maplegend{display:none}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">VARDATH</a><div><div class="kicker" style="margin:0 0 3px">Research Atlas</div><h1>Sacred Earth</h1></div><nav class="headernav" aria-label="Site navigation"><a href="index.html">Home</a><a href="vardath-cosmology.html">Cosmology</a><a href="flower-of-life-sand.html">Flower of Life</a><a href="art.html">Art Archive</a></nav></header>
+<div class="workspace">
+<aside id="panel">
+ <div class="aside-head"><button id="togglePanel" type="button">Collapse</button><div class="kicker">World sacred geography explorer</div><div class="subhead">Documented locations, not a claim that all sacred places are known or mapped. Sources and coordinate methods are shown per record.</div></div>
+ <div class="section">
+  <form id="searchForm"><label for="search" class="kicker">Search site or location</label><div class="searchline"><input id="search" type="search" placeholder="e.g. Kyoto, Kailash, Stonehenge" autocomplete="off"><button class="primary" type="submit">Find</button></div></form>
+  <div class="minirow"><button type="button" class="outline" id="world">Whole world</button><button type="button" class="outline" id="reload">Refresh this area</button><button type="button" class="outline" id="export">Export visible CSV</button><button type="button" class="outline" id="share">Copy view URL</button></div>
+  <div class="small" style="margin-top:9px"><span id="count">Preparing atlas…</span></div>
+ </div>
+ <div class="section" style="padding-top:9px;padding-bottom:11px">
+  <div class="kicker">Tradition / classification</div>
+  <div class="pills" id="filters" aria-label="Filter mapped sites"></div>
+  <div class="small" style="margin-top:9px"><label><input type="checkbox" id="showWorship" checked> Include active places of worship</label></div>
+ </div>
+ <div class="scroll" id="scroll">
+  <section id="detail" hidden aria-live="polite"></section>
+  <div id="results"><div class="listhead"><span>Places currently in view</span><span id="shown">0</span></div><div id="list"></div></div>
+  <div class="section footnote">
+   <strong>Scope and accuracy.</strong> This is an evolving geographic index. The global landmark layer retrieves coordinates from Wikipedia; regional markers use OpenStreetMap/Overpass. These sources are not complete inventories, and coordinates of large areas can represent a feature centre rather than a ritual focal point. Ancient monuments are candidates for comparative study, not automatic evidence of sacred use.
+   <p>Sensitive or undisclosed Indigenous places should not be exposed without custodians' consent. Respect site access restrictions.</p>
+   <p><strong>Sources:</strong> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors (ODbL)</a> · <a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia / Wikidata</a> · <a href="https://wiki.openstreetmap.org/wiki/Overpass_API" target="_blank" rel="noopener">Overpass API</a>. The number shown is only the records loaded in this browser session; never a worldwide total.</p>
+  </div>
+ </div>
+</aside>
+<main class="mapframe"><div id="map" aria-label="Interactive world map of documented sacred places"></div><div id="status" class="mapbanner" role="status">Loading landmark coordinates…</div><div class="mapbuttons"><button id="plus" title="Zoom in" aria-label="Zoom in">+</button><button id="minus" title="Zoom out" aria-label="Zoom out">−</button></div><div class="maplegend"><strong>Global layer:</strong> curated landmark list with source coordinates.<br><strong>Local layer:</strong> zoom to level 9+ to discover mapped sites in the current view. Clusters expand when zoomed.<br><span style="color:#f1cb83">●</span> Established traditions <span style="color:#94b7db">●</span> Archaeological candidates</div></main>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(function(){
+'use strict';
+var groupDefs=[
+ ['all','All','#c4d8df'],['christian','Christian','#b39ff0'],['muslim','Islamic','#5de2bc'],['hindu','Hindu','#e8a675'],['buddhist','Buddhist','#e8cb80'],
+ ['jewish','Jewish','#72b2ff'],['sikh','Sikh','#efae63'],['shinto','Shinto','#f0a2b4'],['indigenous','Indigenous / traditional','#d6d18c'],
+ ['ancient','Ancient / archaeological','#91b9d9'],['other','Other / unclassified','#c1cfdb']
+];
+var categories=Object.fromEntries(groupDefs.map(function(x){return [x[0],{label:x[1],color:x[2]}];}));
+var currentFilter='all',showWorship=true,allSites=new Map(),siteMarkers=new Map(),regionCache=new Set(),activeFetch=null,selected=null,regionTimer=null;
+var status=document.getElementById('status'),countEl=document.getElementById('count'),listEl=document.getElementById('list'),shownEl=document.getElementById('shown');
+if(!window.L || !L.markerClusterGroup){status.textContent='Map libraries could not load. Check your internet connection, then reload.';return;}
+var initialHash=window.location.hash.match(/^#map=([0-9.]+)\/(-?[0-9.]+)\/(-?[0-9.]+)$/);
+var map=L.map('map',{worldCopyJump:true,zoomControl:false,zoomSnap:0.5,minZoom:2,maxZoom:19,preferCanvas:true});
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'}).addTo(map);
+map.setView(initialHash?[+initialHash[2],+initialHash[3]]:[17,13],initialHash?+initialHash[1]:2.5);
+var clusters=L.markerClusterGroup({maxClusterRadius:43,chunkedLoading:true,showCoverageOnHover:false,disableClusteringAtZoom:16});
+map.addLayer(clusters);
+var filters=document.getElementById('filters');
+groupDefs.forEach(function(d){var b=document.createElement('button');b.type='button';b.className='pill';b.textContent=d[1];b.dataset.category=d[0];b.setAttribute('aria-pressed',d[0]==='all'?'true':'false');b.onclick=function(){currentFilter=d[0];Array.from(filters.children).forEach(function(e){e.setAttribute('aria-pressed',String(e.dataset.category===currentFilter));});redraw();};filters.appendChild(b);});
+function htmlNode(tag,className,txt){var el=document.createElement(tag);if(className)el.className=className;if(txt!==undefined)el.textContent=txt;return el;}
+function note(text,error){status.textContent=text;status.classList.toggle('err',!!error);}
+function coordsText(site){return Number(site.lat).toFixed(6)+', '+Number(site.lon).toFixed(6);}
+function mapLink(){var c=map.getCenter();return location.origin+location.pathname+'#map='+map.getZoom().toFixed(1)+'/'+c.lat.toFixed(5)+'/'+c.lng.toFixed(5);}
+function classify(tags){
+ var v=(tags.religion||'').toLowerCase();var denomination=(tags.denomination||'').toLowerCase();
+ if(v.includes('christian'))return 'christian';if(v.includes('muslim')||v.includes('islam'))return 'muslim';
+ if(v.includes('hindu'))return 'hindu';if(v.includes('buddh'))return 'buddhist';if(v.includes('jew'))return 'jewish';
+ if(v.includes('sikh'))return 'sikh';if(v.includes('shinto'))return 'shinto';
+ if(/animis|shaman|traditional|aboriginal|indigenous|vodou|yoruba|tengri|native/.test(v+' '+denomination))return 'indigenous';
+ if(tags.archaeological_site||tags.historic==='archaeological_site')return 'ancient';
+ return 'other';
+}
+function showSite(site){
+ selected=site.id;var box=document.getElementById('detail');box.hidden=false;box.replaceChildren();
+ box.appendChild(htmlNode('div','kicker','Site details'));
+ box.appendChild(htmlNode('h2','',site.name));
+ box.appendChild(htmlNode('div','field',categories[site.cat].label+' · '+site.form));
+ box.appendChild(htmlNode('div','coords',coordsText(site)));
+ var quality=site.isArea?'Mapped feature centre (not necessarily the entrance or sacred focal point)':'Mapped point location';
+ box.appendChild(htmlNode('div','field',quality));
+ if(site.info){box.appendChild(htmlNode('div','field',site.info));}
+ var row=htmlNode('div','minirow');var link=document.createElement('a');link.href=site.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Inspect source ↗';row.appendChild(link);
+ var maps=document.createElement('a');maps.href='https://www.openstreetmap.org/?mlat='+site.lat+'&mlon='+site.lon+'#map=16/'+site.lat+'/'+site.lon;maps.target='_blank';maps.rel='noopener noreferrer';maps.textContent='Open in OSM ↗';row.appendChild(maps);
+ box.appendChild(row);
+ box.appendChild(htmlNode('div','small','Source: '+site.source+'. Location accuracy depends on the source feature.'));
+ var marker=siteMarkers.get(site.id);if(marker){map.flyTo([site.lat,site.lon],Math.max(map.getZoom(),12),{duration:.7});setTimeout(function(){if(clusters.hasLayer(marker))clusters.zoomToShowLayer(marker,function(){marker.openPopup();});},750);}
+ var scroll=document.getElementById('scroll');scroll.scrollTop=0;
+}
+function valid(s){return Number.isFinite(s.lat)&&Number.isFinite(s.lon)&&Math.abs(s.lat)<=90&&Math.abs(s.lon)<=180;}
+function addSite(site){if(!site||!valid(site)||allSites.has(site.id))return;allSites.set(site.id,site);}
+function filtered(site){if(currentFilter!=='all'&&site.cat!==currentFilter)return false;if(!showWorship&&site.isWorship)return false;return true;}
+function inView(site){return map.getBounds().pad(.02).contains([site.lat,site.lon]);}
+function updateList(){
+ var visible=Array.from(allSites.values()).filter(function(s){return filtered(s)&&inView(s);});
+ visible.sort(function(a,b){if(a.id===selected)return -1;if(b.id===selected)return 1;return a.name.localeCompare(b.name);});
+ shownEl.textContent=visible.length.toLocaleString();listEl.replaceChildren();
+ if(!visible.length){listEl.appendChild(htmlNode('div','small','No currently loaded matches in this view. Pan, zoom in, or change your filters.'));}
+ visible.slice(0,100).forEach(function(site){var btn=htmlNode('button','result');btn.type='button';var dot=htmlNode('span','dot');dot.style.background=categories[site.cat].color;btn.appendChild(dot);
+ var wrap=htmlNode('span','');wrap.appendChild(htmlNode('div','name',site.name));wrap.appendChild(htmlNode('div','meta',categories[site.cat].label+' · '+site.form+' · '+site.source));btn.appendChild(wrap);btn.onclick=function(){showSite(site);};listEl.appendChild(btn);});
+ if(visible.length>100)listEl.appendChild(htmlNode('div','small','Showing the first 100 alphabetically. Zoom in to narrow the view.'));
+ countEl.textContent=allSites.size.toLocaleString()+' unique records loaded in session · '+visible.length.toLocaleString()+' displayed in current view';
+}
+function markerFor(site){var color=categories[site.cat].color;var icon=L.divIcon({className:'',html:'<div class="marker-bubble" style="background:'+color+';width:13px;height:13px"></div>',iconSize:[14,14],iconAnchor:[7,7]});
+ var m=L.marker([site.lat,site.lon],{icon:icon,title:site.name});
+ var popup=document.createElement('div');popup.appendChild(htmlNode('div','popup-title',site.name));popup.appendChild(htmlNode('div','popup-meta',categories[site.cat].label+' · '+site.form));
+ var button=htmlNode('button','popup-btn','Full details');button.type='button';button.onclick=function(){showSite(site);};popup.appendChild(button);m.bindPopup(popup,{maxWidth:260});
+ return m;
+}
+function redraw(){clusters.clearLayers();siteMarkers.clear();var layers=[];allSites.forEach(function(site){if(filtered(site)){var marker=markerFor(site);siteMarkers.set(site.id,marker);layers.push(marker);}});clusters.addLayers(layers);updateList();}
+function refreshCounts(){redraw();}
+function fromWiki(title,cat,form,lat,lon){
+ return {id:'wp:'+title,name:title.replace(/_/g,' '),cat:cat,form:form,lat:lat,lon:lon,url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(title.replace(/ /g,'_')),source:'Wikipedia coordinates',isWorship:false,isArea:false};
+}
+// Curated discovery index. Coordinates are fetched at runtime from each cited Wikipedia article.
+// Entries without source coordinates are skipped, never assigned invented coordinates.
+var seeds=[
+['Stonehenge','ancient','Megalithic monument'],['Avebury','ancient','Stone circle'],['Newgrange','ancient','Passage tomb'],['Knowth','ancient','Passage tomb'],['Dowth','ancient','Passage tomb'],['Ring of Brodgar','ancient','Stone circle'],['Callanish Stones','ancient','Standing stones'],['Maeshowe','ancient','Chambered cairn'],['Skara Brae','ancient','Prehistoric settlement'],['Glastonbury Tor','christian','Sacred landscape'],
+['Santiago de Compostela Cathedral','christian','Pilgrimage cathedral'],['Lourdes','christian','Pilgrimage town'],['Basilica of Our Lady of Fátima','christian','Marian sanctuary'],['Chartres Cathedral','christian','Cathedral'],['Mont-Saint-Michel','christian','Abbey'],['Canterbury Cathedral','christian','Cathedral'],['Cologne Cathedral','christian','Cathedral'],['Aachen Cathedral','christian','Cathedral'],['St. Peter\'s Basilica','christian','Basilica'],['Basilica of Saint Francis of Assisi','christian','Basilica'],
+['Parthenon','ancient','Classical temple'],['Delphi','ancient','Oracle and sanctuary'],['Dodona','ancient','Oracle'],['Eleusis','ancient','Ancient sanctuary'],['Olympia, Greece','ancient','Ancient sanctuary'],['Mount Olympus','ancient','Mythic mountain'],['Knossos','ancient','Minoan ceremonial complex'],['Meteora','christian','Monasteries'],['Mount Athos','christian','Monastic peninsula'],['Sarmizegetusa Regia','ancient','Dacian sanctuaries'],
+['Göbekli Tepe','ancient','Prehistoric ceremonial complex'],['Çatalhöyük','ancient','Neolithic settlement'],['Hagia Sophia','other','Historic religious monument'],['Sultan Ahmed Mosque','muslim','Mosque'],['Süleymaniye Mosque','muslim','Mosque'],['Mevlana Museum','muslim','Sufi pilgrimage site'],['Dome of the Rock','muslim','Islamic shrine'],['Al-Aqsa Mosque','muslim','Mosque'],['Western Wall','jewish','Holy wall'],['Church of the Holy Sepulchre','christian','Pilgrimage church'],['Church of the Nativity','christian','Pilgrimage church'],['Mount of Olives','other','Shared sacred landscape'],
+['Kaaba','muslim','Islamic holy sanctuary'],['Masjid al-Haram','muslim','Grand mosque'],['Al-Masjid an-Nabawi','muslim','Prophet\'s Mosque'],['Quba Mosque','muslim','Mosque'],['Mount Sinai','other','Sacred mountain'],['Saint Catherine\'s Monastery','christian','Monastery'],['Mount Nebo','christian','Pilgrimage mountain'],['Shrine of the Báb','other','Bahá\'í shrine'],['Shrine of Bahá\'u\'lláh','other','Bahá\'í shrine'],['Cave of the Patriarchs','other','Shared sacred site'],
+['Imam Husayn Shrine','muslim','Shi\'a shrine'],['Al-Abbas Shrine','muslim','Shi\'a shrine'],['Imam Ali Shrine','muslim','Shi\'a shrine'],['Al-Askari Shrine','muslim','Shi\'a shrine'],['Imam Reza Shrine','muslim','Shi\'a shrine'],['Shah Cheragh','muslim','Shi\'a shrine'],['Jamkaran Mosque','muslim','Mosque'],['Chak Chak','other','Zoroastrian shrine'],['Yazd Atash Behram','other','Zoroastrian fire temple'],['Persepolis','ancient','Ancient ceremonial capital'],['Naqsh-e Rostam','ancient','Royal necropolis'],['Ziggurat of Ur','ancient','Ancient temple platform'],['Baalbek','ancient','Roman temple complex'],['Palmyra','ancient','Ancient temple ruins'],
+['Great Pyramid of Giza','ancient','Ancient funerary complex'],['Karnak','ancient','Ancient temple complex'],['Luxor Temple','ancient','Ancient temple'],['Valley of the Kings','ancient','Royal necropolis'],['Philae','ancient','Temple island'],['Abu Simbel','ancient','Rock-cut temples'],['Temple of Edfu','ancient','Temple'],['Temple of Kom Ombo','ancient','Temple'],['Pyramid of Djoser','ancient','Step pyramid'],['Serapeum of Saqqara','ancient','Ancient necropolis'],['Al-Azhar Mosque','muslim','Mosque'],['Great Mosque of Kairouan','muslim','Mosque'],['Al-Qarawiyyin','muslim','Mosque and university'],['Hassan II Mosque','muslim','Mosque'],
+['Lalibela','christian','Rock-hewn churches'],['Church of Our Lady Mary of Zion','christian','Ethiopian Orthodox church'],['Debre Damo','christian','Monastery'],['Great Mosque of Djenné','muslim','Mosque'],['Djinguereber Mosque','muslim','Mosque'],['Osun-Osogbo Sacred Grove','indigenous','Sacred grove'],['Great Zimbabwe','ancient','Ancient monumental complex'],['Kaya (Mijikenda)','indigenous','Sacred forest settlements'],['Mount Kilimanjaro','indigenous','Sacred mountain traditions'],
+['Kashi Vishwanath Temple','hindu','Shiva temple'],['Dashashwamedh Ghat','hindu','Sacred bathing ghat'],['Sarnath','buddhist','Buddhist pilgrimage landscape'],['Mahabodhi Temple','buddhist','Buddha enlightenment site'],['Sanchi','buddhist','Buddhist stupas'],['Ajanta Caves','buddhist','Rock-cut monasteries'],['Ellora Caves','other','Multitradition cave temples'],['Kailasa Temple, Ellora','hindu','Rock-cut temple'],['Konark Sun Temple','hindu','Sun temple'],['Jagannath Temple, Puri','hindu','Vishnu temple'],['Meenakshi Temple','hindu','Goddess temple'],['Brihadisvara Temple','hindu','Shiva temple'],['Ramanathaswamy Temple','hindu','Pilgrimage temple'],['Tirumala Venkateswara Temple','hindu','Vishnu temple'],['Kedarnath Temple','hindu','Shiva temple'],['Badrinath Temple','hindu','Vishnu temple'],['Amarnath Temple','hindu','Cave shrine'],['Vaishno Devi Temple','hindu','Cave pilgrimage shrine'],
+['Golden Temple','sikh','Gurdwara'],['Anandpur Sahib','sikh','Sikh sacred town'],['Gurdwara Janam Asthan','sikh','Gurdwara'],['Palitana temples','other','Jain pilgrimage temples'],['Shravanabelagola','other','Jain pilgrimage centre'],['Dilwara Temples','other','Jain temples'],['Akshardham (Delhi)','hindu','Temple'],['Mount Kailash','other','Multitradition sacred mountain'],['Lake Manasarovar','other','Sacred lake'],['Pashupatinath Temple','hindu','Shiva temple'],['Boudhanath','buddhist','Stupa'],['Swayambhunath','buddhist','Stupa'],['Lumbini','buddhist','Buddha birthplace'],['Muktinath','other','Hindu–Buddhist pilgrimage place'],
+['Angkor Wat','hindu','Khmer Hindu–Buddhist temple'],['Bayon','buddhist','Khmer temple'],['Ta Prohm','buddhist','Khmer temple'],['Preah Vihear Temple','hindu','Khmer temple'],['Vat Phou','hindu','Khmer temple'],['Shwedagon Pagoda','buddhist','Pagoda'],['Kyaiktiyo Pagoda','buddhist','Golden rock shrine'],['Bagan','buddhist','Ancient temple plain'],['Ananda Temple','buddhist','Temple'],['Wat Phra Kaew','buddhist','Temple'],['Wat Arun','buddhist','Temple'],['Wat Pho','buddhist','Temple'],['Wat Phra That Doi Suthep','buddhist','Temple'],['Borobudur','buddhist','Temple monument'],['Prambanan','hindu','Temple complex'],['Besakih Temple','hindu','Balinese Hindu temple'],['Tanah Lot','hindu','Balinese Hindu temple'],['Uluwatu Temple','hindu','Balinese Hindu temple'],['Pura Ulun Danu Bratan','hindu','Balinese Hindu temple'],['Batu Caves','hindu','Cave temples'],['Gunung Padang Megalithic Site','ancient','Megalithic site'],
+['Temple of Heaven','other','Chinese imperial ceremonial temple'],['Mount Tai','other','Chinese sacred mountain'],['Mount Hua','other','Daoist sacred mountain'],['Mount Emei','buddhist','Buddhist sacred mountain'],['Mount Wutai','buddhist','Buddhist sacred mountain'],['Mount Putuo','buddhist','Buddhist sacred mountain'],['Shaolin Monastery','buddhist','Monastery'],['Longmen Grottoes','buddhist','Buddhist caves'],['Mogao Caves','buddhist','Buddhist caves'],['Leshan Giant Buddha','buddhist','Rock-cut Buddha'],['Potala Palace','buddhist','Tibetan Buddhist palace'],['Jokhang','buddhist','Temple'],['Drepung Monastery','buddhist','Monastery'],['Tashilhunpo Monastery','buddhist','Monastery'],['Erdene Zuu Monastery','buddhist','Monastery'],['Gandantegchinlen Monastery','buddhist','Monastery'],['Burkhan Khaldun','indigenous','Sacred mountain'],
+['Mount Fuji','shinto','Sacred mountain'],['Fushimi Inari-taisha','shinto','Shinto shrine'],['Itsukushima Shrine','shinto','Shinto shrine'],['Ise Grand Shrine','shinto','Shinto shrine'],['Izumo-taisha','shinto','Shinto shrine'],['Meiji Shrine','shinto','Shinto shrine'],['Yasukuni Shrine','shinto','Shinto shrine'],['Kiyomizu-dera','buddhist','Temple'],['Tōdai-ji','buddhist','Temple'],['Kinkaku-ji','buddhist','Temple'],['Nikkō Tōshō-gū','shinto','Shinto shrine'],['Kumano Nachi Taisha','shinto','Shinto shrine'],['Mount Kōya','buddhist','Sacred monastic mountain'],['Seokguram','buddhist','Grotto shrine'],['Bulguksa','buddhist','Temple'],['Jongmyo','other','Confucian shrine'],
+['Uluru','indigenous','Anangu sacred landscape'],['Kata Tjuta','indigenous','Anangu sacred landscape'],['Ubirr','indigenous','Aboriginal rock art landscape'],['Nourlangie Rock','indigenous','Aboriginal rock art landscape'],['Lake Mungo','indigenous','Aboriginal cultural landscape'],['Murujuga','indigenous','Aboriginal petroglyph landscape'],['Wilpena Pound','indigenous','Adnyamathanha cultural landscape'],['Mount Yengo','indigenous','Aboriginal sacred mountain'],['Mount Taranaki','indigenous','Māori sacred mountain'],['Cape Reinga','indigenous','Māori spiritual landmark'],['Mount Tongariro','indigenous','Māori sacred mountain'],['Mauna Kea','indigenous','Hawaiian sacred mountain'],['Haleakalā','indigenous','Hawaiian sacred mountain'],['Puʻuhonua o Hōnaunau National Historical Park','indigenous','Hawaiian sanctuary'],['Nan Madol','ancient','Micronesian ceremonial city'],['Ahu Tongariki','ancient','Rapa Nui ceremonial platform'],['Rano Raraku','ancient','Rapa Nui ceremonial quarry'],['Orongo','ancient','Rapa Nui ceremonial village'],
+['Chichén Itzá','ancient','Maya ceremonial centre'],['Uxmal','ancient','Maya ceremonial city'],['Palenque','ancient','Maya ceremonial city'],['Tikal','ancient','Maya ceremonial centre'],['Teotihuacan','ancient','Ancient ceremonial city'],['Great Pyramid of Cholula','ancient','Ancient ceremonial pyramid'],['El Tajín','ancient','Ancient ceremonial city'],['Monte Albán','ancient','Zapotec ceremonial centre'],['Templo Mayor','ancient','Aztec temple complex'],['Copán','ancient','Maya ceremonial centre'],['Tulum','ancient','Maya ceremonial site'],['Chaco Culture National Historical Park','ancient','Ancestral Puebloan ceremonial landscape'],['Mesa Verde National Park','ancient','Ancestral Puebloan archaeological landscape'],['Cahokia','ancient','Mississippian ceremonial complex'],['Serpent Mound','ancient','Effigy earthwork'],['Bighorn Medicine Wheel','indigenous','Indigenous medicine wheel'],['Devils Tower','indigenous','Sacred rock formation'],['Shiprock','indigenous','Diné sacred rock formation'],['Mount Shasta','indigenous','Mountain sacred to multiple traditions'],
+['Machu Picchu','ancient','Inca ceremonial complex'],['Sacsayhuamán','ancient','Inca ceremonial complex'],['Coricancha','ancient','Inca sun temple'],['Nazca Lines','ancient','Geoglyph landscape'],['Caral','ancient','Ancient ceremonial city'],['Tiwanaku','ancient','Andean ceremonial centre'],['Puma Punku','ancient','Andean ceremonial complex'],['Lake Titicaca','indigenous','Andean sacred lake'],['Isla del Sol','indigenous','Andean sacred island'],['Kuelap','ancient','Chachapoya monumental site'],['Chan Chan','ancient','Chimú ceremonial city']
+];
+var fetchedWiki=0;
+async function wikiBatch(batch){
+ var titles=batch.map(function(v){return v[0];}).join('|');
+ var url='https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=coordinates&colimit=max&titles='+encodeURIComponent(titles);
+ var response=await fetch(url,{signal:AbortSignal.timeout(18000)});
+ if(!response.ok)throw new Error('HTTP '+response.status);
+ var data=await response.json();var pages=(data.query&&data.query.pages)||{},look=new Map();
+ Object.keys(pages).forEach(function(k){var p=pages[k];if(p.coordinates&&p.coordinates.length){look.set(p.title.toLowerCase(),p.coordinates[0]);}});
+ var redirects=(data.query&&data.query.redirects)||[];redirects.forEach(function(r){var coordinate=look.get(r.to.toLowerCase());if(coordinate)look.set(r.from.toLowerCase(),coordinate);});
+ batch.forEach(function(seed){var c=look.get(seed[0].toLowerCase());if(c){addSite(fromWiki(seed[0],seed[1],seed[2],Number(c.lat),Number(c.lon)));fetchedWiki++;}});
+}
+async function loadWorld(){
+ var chunks=[];for(var i=0;i<seeds.length;i+=35)chunks.push(seeds.slice(i,i+35));
+ var failures=0;
+ for(var j=0;j<chunks.length;j+=3){var next=await Promise.allSettled(chunks.slice(j,j+3).map(wikiBatch));next.forEach(function(r){if(r.status==='rejected')failures++;});refreshCounts();note('Worldwide atlas: '+fetchedWiki+' confirmed coordinates loaded; '+Math.min((j+3)*35,seeds.length)+' / '+seeds.length+' candidate articles checked.');}
+ if(fetchedWiki){note(fetchedWiki+' source-positioned world landmarks loaded. Zoom to 9+ for local site coverage.');}
+ else{note('Wikipedia landmark feed unavailable. Zoom to 9+ for live OSM site records, then use Refresh this area.',true);}
+ if(failures)document.querySelector('.subhead').textContent+=' Some landmark batches failed to load; reload to retry.';
+ if(map.getZoom()>=9)loadRegion(false);
+}
+function osmSite(e){
+ var t=e.tags||{},c=e.type==='node'?e:e.center;if(!c)return null;
+ var religion=classify(t);
+ var form=t.amenity==='place_of_worship'?(t.building||'place of worship'):(t.historic||t.natural||t.archaeological_site||t.building||'site');
+ form=form.replace(/_/g,' ');
+ var name=t.name||t['name:en']||'Unnamed '+form;
+ var link='https://www.openstreetmap.org/'+e.type+'/'+e.id;
+ var locationType=(e.type!=='node');
+ return {id:'osm:'+e.type+':'+e.id,name:name,cat:religion,form:form,lat:Number(c.lat),lon:Number(c.lon),url:link,source:'OpenStreetMap feature',isArea:locationType,isWorship:t.amenity==='place_of_worship',info:t.description||t['description:en']||''};
+}
+function overpassQuery(b){
+ var bbox=[b.getSouth().toFixed(5),b.getWest().toFixed(5),b.getNorth().toFixed(5),b.getEast().toFixed(5)].join(',');
+ return '[out:json][timeout:27];('+
+ 'nwr["amenity"="place_of_worship"]('+bbox+');'+
+ 'nwr["building"~"^(temple|mosque|synagogue|cathedral|church|chapel|shrine)$"]('+bbox+');'+
+ 'nwr["historic"~"^(wayside_shrine|wayside_cross|temple|monastery|church|mosque|synagogue|shrine)$"]('+bbox+');'+
+ 'nwr["sacred"="yes"]('+bbox+');'+
+ 'nwr["archaeological_site"~"^(megalithic|stone_circle|menhir|dolmen)$"]('+bbox+');'+
+ 'nwr["historic"="archaeological_site"]["religion"]('+bbox+');'+
+ 'nwr["natural"]["religion"]('+bbox+');'+
+ ');out center qt 5000;';
+}
+async function loadRegion(force){
+ if(map.getZoom()<9){if(fetchedWiki)note('Worldwide landmarks shown. Zoom in to level 9+ for detailed OpenStreetMap records.');return;}
+ var bounds=map.getBounds().pad(.12);
+ var west=Math.max(-179.99,bounds.getWest()),east=Math.min(179.99,bounds.getEast()),south=Math.max(-85,bounds.getSouth()),north=Math.min(85,bounds.getNorth());
+ if(east<=west||east-west>10||north-south>10){note('Zoom in further to request a manageable local area.');return;}
+ bounds=L.latLngBounds([south,west],[north,east]);
+ var center=map.getCenter(),key=Math.floor(center.lat*5)+'|'+Math.floor(center.lng*5)+'|'+Math.floor(map.getZoom()*2);
+ if(!force&&regionCache.has(key)){updateList();note('Showing cached mapped places for this area.');return;}
+ if(activeFetch)activeFetch.abort();
+ var controller=new AbortController();activeFetch=controller;
+ note('Querying mapped sacred and religious places in this region…');
+ var query=overpassQuery(bounds),endpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
+ var lastError=null;
+ for(var i=0;i<endpoints.length;i++){
+  try{
+   var timer=setTimeout(function(){controller.abort();},36000);
+   var res=await fetch(endpoints[i],{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:'data='+encodeURIComponent(query),signal:controller.signal});
+   clearTimeout(timer);
+   if(!res.ok)throw new Error('HTTP '+res.status);
+   var data=await res.json();
+   if(activeFetch!==controller)return;
+   var before=allSites.size;data.elements.forEach(function(e){addSite(osmSite(e));});
+   regionCache.add(key);refreshCounts();
+   var added=allSites.size-before;
+   note('Regional query complete: '+added.toLocaleString()+' new records. '+(data.elements.length>=5000?'Result cap reached; zoom in for better coverage.':'Zoom or pan to examine more.'));
+   return;
+  }catch(err){
+   clearTimeout(timer);if(controller.signal.aborted)return;lastError=err;
+  }
+ }
+ if(activeFetch===controller)note('Regional data unavailable ('+(lastError?lastError.message:'request failed')+'). Try Refresh this area or zoom closer.',true);
+}
+function requestRegion(){clearTimeout(regionTimer);regionTimer=setTimeout(function(){loadRegion(false);updateList();},850);}
+map.on('moveend',function(){updateList();requestRegion();});
+document.getElementById('showWorship').onchange=function(e){showWorship=e.target.checked;redraw();};
+document.getElementById('reload').onclick=function(){loadRegion(true);};
+document.getElementById('world').onclick=function(){map.setView([17,13],2.5);};
+document.getElementById('plus').onclick=function(){map.zoomIn();};
+document.getElementById('minus').onclick=function(){map.zoomOut();};
+document.getElementById('togglePanel').onclick=function(){
+ var p=document.getElementById('panel');p.classList.toggle('collapsed');this.textContent=p.classList.contains('collapsed')?'Expand':'Collapse';setTimeout(function(){map.invalidateSize();},300);
+};
+document.getElementById('share').onclick=async function(){try{await navigator.clipboard.writeText(mapLink());note('Link copied to clipboard.');}catch(e){window.prompt('Copy map URL',mapLink());}};
+document.getElementById('export').onclick=function(){
+ var view=Array.from(allSites.values()).filter(function(s){return filtered(s)&&inView(s);});
+ var q=function(s){return '"'+String(s||'').replace(/"/g,'""')+'"';};
+ var csv='Name,Tradition,Type,Latitude,Longitude,Source,Source URL\n'+view.map(function(s){return [s.name,categories[s.cat].label,s.form,s.lat,s.lon,s.source,s.url].map(q).join(',');}).join('\n');
+ var blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vardath-sacred-earth-visible.csv';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1500);
+ note('Exported '+view.length+' currently visible records (not the whole world).');
+};
+document.getElementById('searchForm').onsubmit=async function(e){
+ e.preventDefault();var query=document.getElementById('search').value.trim();if(!query)return;
+ var matches=Array.from(allSites.values()).filter(function(s){return s.name.toLowerCase().includes(query.toLowerCase());}).sort(function(a,b){return a.name.length-b.name.length;});
+ if(matches.length){showSite(matches[0]);return;}
+ note('Finding place or site: '+query+'…');
+ try{
+  var url='https://nominatim.openstreetmap.org/search?format=json&limit=5&q='+encodeURIComponent(query);
+  var res=await fetch(url,{signal:AbortSignal.timeout(14000)});if(!res.ok)throw new Error('HTTP '+res.status);
+  var items=await res.json();if(!items.length){note('No matching place found. Try a different spelling.',true);return;}
+  map.flyTo([Number(items[0].lat),Number(items[0].lon)],11,{duration:1.0});
+  note('Located '+items[0].display_name+'. Loading nearby religious and sacred sites…');
+ }catch(err){note('Search is unavailable: '+err.message,true);}
+};
+if(matchMedia('(max-width:850px)').matches){document.getElementById('panel').classList.add('collapsed');document.getElementById('togglePanel').textContent='Expand';}
+refreshCounts();loadWorld();
+})();
+</script>
+</body>
+</html>
