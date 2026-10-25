@@ -295,18 +295,46 @@ document.getElementById('export').onclick=function(){
  var blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vardath-sacred-earth-visible.csv';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1500);
  note('Exported '+view.length+' currently visible records (not the whole world).');
 };
+async function locatePlace(query){
+ var nom='https://nominatim.openstreetmap.org/search?format=json&limit=5&addressdetails=1&q='+encodeURIComponent(query);
+ try{
+  var r=await fetch(nom,{signal:AbortSignal.timeout(12000)});
+  if(r.ok){
+   var items=await r.json();
+   if(Array.isArray(items)){
+    for(var i=0;i<items.length;i++){
+     var lat=parseFloat(items[i].lat),lon=parseFloat(items[i].lon);
+     if(Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180)return {lat:lat,lon:lon,name:items[i].display_name||query,source:'OpenStreetMap Nominatim'};
+    }
+   }
+  }
+ }catch(e){}
+ // Wikipedia source coordinate as a second route when an OSM geocoder response is invalid.
+ var title=query.split(',')[0].trim();
+ var wiki='https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=coordinates&titles='+encodeURIComponent(title);
+ var resp=await fetch(wiki,{signal:AbortSignal.timeout(12000)});
+ if(!resp.ok)throw new Error('Place lookup HTTP '+resp.status);
+ var data=await resp.json(),pages=(data.query&&data.query.pages)||{};
+ for(var id in pages){
+  var p=pages[id];
+  if(p.coordinates&&p.coordinates[0]){
+   var x=Number(p.coordinates[0].lat),y=Number(p.coordinates[0].lon);
+   if(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x)<=90&&Math.abs(y)<=180)return {lat:x,lon:y,name:p.title,source:'Wikipedia coordinates'};
+  }
+ }
+ throw new Error('No validated location coordinates available for '+query);
+}
 document.getElementById('searchForm').onsubmit=async function(e){
  e.preventDefault();var query=document.getElementById('search').value.trim();if(!query)return;
  var matches=Array.from(allSites.values()).filter(function(s){return s.name.toLowerCase().includes(query.toLowerCase());}).sort(function(a,b){return a.name.length-b.name.length;});
  if(matches.length){showSite(matches[0]);return;}
  note('Finding place or site: '+query+'…');
  try{
-  var url='https://nominatim.openstreetmap.org/search?format=json&limit=5&q='+encodeURIComponent(query);
-  var res=await fetch(url,{signal:AbortSignal.timeout(14000)});if(!res.ok)throw new Error('HTTP '+res.status);
-  var items=await res.json();if(!items.length){note('No matching place found. Try a different spelling.',true);return;}
-  map.flyTo([Number(items[0].lat),Number(items[0].lon)],11,{duration:1.0});
-  note('Located '+items[0].display_name+'. Loading nearby religious and sacred sites…');
- }catch(err){note('Search is unavailable: '+err.message,true);}
+  var result=await locatePlace(query);
+  if(!Number.isFinite(result.lat)||!Number.isFinite(result.lon))throw new Error('Invalid coordinates returned');
+  map.flyTo([result.lat,result.lon],11,{duration:1.0});
+  note('Located '+result.name+' ('+result.source+'). Regional sacred sites will load as the map settles.');
+ }catch(err){note('Location search unavailable: '+err.message+'. You can still pan or select a world landmark.',true);}
 };
 if(matchMedia('(max-width:850px)').matches){document.getElementById('panel').classList.add('collapsed');document.getElementById('togglePanel').textContent='Expand';}
 refreshCounts();loadWorld();
