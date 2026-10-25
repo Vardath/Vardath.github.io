@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#090e16">
-<meta name="description" content="A living world atlas of documented sacred and ceremonial places, with source-linked coordinates and regional OpenStreetMap discovery.">
+<meta name="description" content="A growing world atlas of source-located sacred, ceremonial and pilgrimage places, with community research leads and regional OpenStreetMap discovery.">
 <title>Sacred Earth Atlas | Vardath</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -91,8 +91,9 @@ input:focus,select:focus{outline:1px solid var(--cyan)}
   <section id="detail" hidden aria-live="polite"></section>
   <div id="results"><div class="listhead"><span>Places currently in view</span><span id="shown">0</span></div><div id="list"></div></div>
   <div class="section footnote">
-   <strong>Scope and accuracy.</strong> This is an evolving geographic index. The global landmark layer retrieves coordinates from Wikipedia; regional markers use OpenStreetMap/Overpass. These sources are not complete inventories, and coordinates of large areas can represent a feature centre rather than a ritual focal point. Ancient monuments are candidates for comparative study, not automatic evidence of sacred use.
+   <strong>Scope and accuracy.</strong> This is an evolving geographic index. The expanded landmark list draws on public religious and archaeological reference sources and selected community research leads. Candidates without a Wikipedia coordinate are not pinned. Traveller recollections are not archaeological verification.  The global landmark layer retrieves coordinates from Wikipedia; regional markers use OpenStreetMap/Overpass. These sources are not complete inventories, and coordinates of large areas can represent a feature centre rather than a ritual focal point. Ancient monuments are candidates for comparative study, not automatic evidence of sacred use.
    <p>Sensitive or undisclosed Indigenous places should not be exposed without custodians' consent. Respect site access restrictions.</p>
+   <p><strong>Research leads:</strong> <a href="https://www.reddit.com/r/travel/comments/1rk81if/best_place_in_the_world_for_ruins/" target="_blank" rel="noopener">Traveller discussions</a> · <a href="https://aardvark-reed-mdp3.squarespace.com/maps" target="_blank" rel="noopener">Shared Sacred Sites</a> · <a href="https://sacrednaturalsites.org/pt/sites/map/" target="_blank" rel="noopener">Sacred Natural Sites Initiative</a> · <a href="https://whc.unesco.org/en/list/" target="_blank" rel="noopener">UNESCO World Heritage</a>. Only public, source-located candidates appear on the atlas.</p>
    <p><strong>Sources:</strong> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors (ODbL)</a> · <a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia / Wikidata</a> · <a href="https://wiki.openstreetmap.org/wiki/Overpass_API" target="_blank" rel="noopener">Overpass API</a>. The number shown is only the records loaded in this browser session; never a worldwide total.</p>
   </div>
  </div>
@@ -101,6 +102,7 @@ input:focus,select:focus{outline:1px solid var(--cyan)}
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="sacred-sites-expanded.js"></script>
 <script>
 (function(){
 'use strict';
@@ -146,7 +148,8 @@ function showSite(site){
  var row=htmlNode('div','minirow');var link=document.createElement('a');link.href=site.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Inspect source ↗';row.appendChild(link);
  var maps=document.createElement('a');maps.href='https://www.openstreetmap.org/?mlat='+site.lat+'&mlon='+site.lon+'#map=16/'+site.lat+'/'+site.lon;maps.target='_blank';maps.rel='noopener noreferrer';maps.textContent='Open in OSM ↗';row.appendChild(maps);
  box.appendChild(row);
- box.appendChild(htmlNode('div','small','Source: '+site.source+'. Location accuracy depends on the source feature.'));
+ if(site.researchUrl){var research=document.createElement('div');research.className='field';research.appendChild(htmlNode('span','','Discovery lead: '+site.researchNote+' · '));var rlink=document.createElement('a');rlink.href=site.researchUrl;rlink.textContent='Read discussion or research ↗';rlink.target='_blank';rlink.rel='noopener noreferrer';research.appendChild(rlink);box.appendChild(research);}
+ box.appendChild(htmlNode('div','small','Coordinate source: '+site.source+'. A community reference is a lead, not verification of location or access.'));
  var marker=siteMarkers.get(site.id);if(marker){map.flyTo([site.lat,site.lon],Math.max(map.getZoom(),12),{duration:.7});setTimeout(function(){if(clusters.hasLayer(marker))clusters.zoomToShowLayer(marker,function(){marker.openPopup();});},750);}
  var scroll=document.getElementById('scroll');scroll.scrollTop=0;
 }
@@ -195,7 +198,12 @@ var seeds=[
 ['Chichén Itzá','ancient','Maya ceremonial centre'],['Uxmal','ancient','Maya ceremonial city'],['Palenque','ancient','Maya ceremonial city'],['Tikal','ancient','Maya ceremonial centre'],['Teotihuacan','ancient','Ancient ceremonial city'],['Great Pyramid of Cholula','ancient','Ancient ceremonial pyramid'],['El Tajín','ancient','Ancient ceremonial city'],['Monte Albán','ancient','Zapotec ceremonial centre'],['Templo Mayor','ancient','Aztec temple complex'],['Copán','ancient','Maya ceremonial centre'],['Tulum','ancient','Maya ceremonial site'],['Chaco Culture National Historical Park','ancient','Ancestral Puebloan ceremonial landscape'],['Mesa Verde National Park','ancient','Ancestral Puebloan archaeological landscape'],['Cahokia','ancient','Mississippian ceremonial complex'],['Serpent Mound','ancient','Effigy earthwork'],['Bighorn Medicine Wheel','indigenous','Indigenous medicine wheel'],['Devils Tower','indigenous','Sacred rock formation'],['Shiprock','indigenous','Diné sacred rock formation'],['Mount Shasta','indigenous','Mountain sacred to multiple traditions'],
 ['Machu Picchu','ancient','Inca ceremonial complex'],['Sacsayhuamán','ancient','Inca ceremonial complex'],['Coricancha','ancient','Inca sun temple'],['Nazca Lines','ancient','Geoglyph landscape'],['Caral','ancient','Ancient ceremonial city'],['Tiwanaku','ancient','Andean ceremonial centre'],['Puma Punku','ancient','Andean ceremonial complex'],['Lake Titicaca','indigenous','Andean sacred lake'],['Isla del Sol','indigenous','Andean sacred island'],['Kuelap','ancient','Chachapoya monumental site'],['Chan Chan','ancient','Chimú ceremonial city']
 ];
-var fetchedWiki=0;
+// Supplementary catalogue: publicly documented candidates with optional research leads.
+var expandedCandidates=(Array.isArray(window.VARDATH_EXPANDED_SITES)?window.VARDATH_EXPANDED_SITES:[]);
+var seenSeedTitles=new Set(seeds.map(function(s){return s[0].toLocaleLowerCase();}));
+var supplementaryAdded=0;
+expandedCandidates.forEach(function(s){var key=String(s[0]).toLocaleLowerCase();if(!seenSeedTitles.has(key)){seeds.push(s);seenSeedTitles.add(key);supplementaryAdded++;}});
+var fetchedWiki=0,unresolvedCandidates=[];
 async function wikiBatch(batch){
  var titles=batch.map(function(v){return v[0];}).join('|');
  var url='https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=coordinates&colimit=max&titles='+encodeURIComponent(titles);
@@ -204,13 +212,19 @@ async function wikiBatch(batch){
  var data=await response.json();var pages=(data.query&&data.query.pages)||{},look=new Map();
  Object.keys(pages).forEach(function(k){var p=pages[k];if(p.coordinates&&p.coordinates.length){look.set(p.title.toLowerCase(),p.coordinates[0]);}});
  var redirects=(data.query&&data.query.redirects)||[];redirects.forEach(function(r){var coordinate=look.get(r.to.toLowerCase());if(coordinate)look.set(r.from.toLowerCase(),coordinate);});
- batch.forEach(function(seed){var c=look.get(seed[0].toLowerCase());if(c){addSite(fromWiki(seed[0],seed[1],seed[2],Number(c.lat),Number(c.lon)));fetchedWiki++;}});
+ batch.forEach(function(seed){
+  var c=look.get(seed[0].toLowerCase());
+  if(!c){unresolvedCandidates.push(seed[0]);return;}
+  var site=fromWiki(seed[0],seed[1],seed[2],Number(c.lat),Number(c.lon));
+  if(seed[3]&&/^https:\/\//.test(seed[3])){site.researchUrl=seed[3];site.researchNote=seed[4]||'Published research lead (not independent location verification)';}
+  if(valid(site)){addSite(site);fetchedWiki++;}else{unresolvedCandidates.push(seed[0]);}
+ });
 }
 async function loadWorld(){
  var chunks=[];for(var i=0;i<seeds.length;i+=35)chunks.push(seeds.slice(i,i+35));
  var failures=0;
- for(var j=0;j<chunks.length;j+=3){var next=await Promise.allSettled(chunks.slice(j,j+3).map(wikiBatch));next.forEach(function(r){if(r.status==='rejected')failures++;});refreshCounts();note('Worldwide atlas: '+fetchedWiki+' confirmed coordinates loaded; '+Math.min((j+3)*35,seeds.length)+' / '+seeds.length+' candidate articles checked.');}
- if(fetchedWiki){note(fetchedWiki+' source-positioned world landmarks loaded. Zoom to 9+ for local site coverage.');}
+ for(var j=0;j<chunks.length;j+=5){var next=await Promise.allSettled(chunks.slice(j,j+5).map(wikiBatch));next.forEach(function(r){if(r.status==='rejected')failures++;});refreshCounts();note('Worldwide atlas: '+fetchedWiki+' source coordinates resolved; '+Math.min((j+5)*35,seeds.length)+' / '+seeds.length+' candidate articles checked.');}
+ if(fetchedWiki){note(fetchedWiki+' source-positioned world landmarks loaded from '+seeds.length+' published-title candidates. Zoom to 9+ for local site coverage.');}
  else{note('Wikipedia landmark feed unavailable. Zoom to 9+ for live OSM site records, then use Refresh this area.',true);}
  if(failures)document.querySelector('.subhead').textContent+=' Some landmark batches failed to load; reload to retry.';
  if(map.getZoom()>=9)loadRegion(false);
