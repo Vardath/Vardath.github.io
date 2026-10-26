@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "status": "Pass 04: Cairnhold world panorama and eight canonical settlement plates published as provisional vector studies; painterly artwork and character continuity pending",
+  "worldId": "WORLD-02",
+  "world": "Cairnhold",
+  "productionMethod": "Canon-driven vector-render WebP at 1120x656; visual studies only, not final painterly artwork",
+  "assets": [
+    {
+      "id": "SITE-02-01",
+      "file": "site-02-01-iron-hearth.webp",
+      "alt": "Iron Hearth winter longhouse with two opposing chimneys, blue fumarole draft and workers guarding a furnace",
+      "caption": "Cairnhold · Iron Hearth",
+      "sections": [
+        137,
+        138,
+        139,
+        140,
+        141,
+        142
+      ],
+      "gitBlob": "aec11855fef442c86f2ea21c42329e6544656f0e",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-02",
+      "file": "site-02-02-hollow-orchard.webp",
+      "alt": "Hollow Orchard apples in clear ice sleeves above mineral-warmed roots and a working winter fruit store",
+      "caption": "Cairnhold · Hollow Orchard",
+      "sections": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "gitBlob": "c7f873f506641867128f951512a3a79c48fe1946",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-03",
+      "file": "site-02-03-aurora-forge.webp",
+      "alt": "Aurora Forge's pale blue furnace and clockstone quenching works beneath the reversed blue aurora",
+      "caption": "Cairnhold · Aurora Forge",
+      "sections": [
+        149,
+        150,
+        151,
+        152,
+        153,
+        154
+      ],
+      "gitBlob": "5b77dac612bc3898cf7646c593f0420b5900370a",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-04",
+      "file": "site-02-04-high-cairn.webp",
+      "alt": "High Cairn stones with eight carved marks; working mountain porters, ropes and mule supply",
+      "caption": "Cairnhold · High Cairn",
+      "sections": [
+        155,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "gitBlob": "8b70d3377b9f337564aeb9e428f44afe689da3b0",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-05",
+      "file": "site-02-05-flint-choir.webp",
+      "alt": "Flint Choir chapel with two opposed groups rehearsing a divided funeral hymn outside double-faced doors",
+      "caption": "Cairnhold · Flint Choir",
+      "sections": [
+        161,
+        162,
+        163,
+        164,
+        165,
+        166
+      ],
+      "gitBlob": "1460f2815f6aa4bd3c949c03795035096fd27b75",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-06",
+      "file": "site-02-06-clock-quarry.webp",
+      "alt": "Clock Quarry's terraced pale crystals, graded grilles, falling powder and upper shift bell",
+      "caption": "Cairnhold · Clock Quarry",
+      "sections": [
+        167,
+        168,
+        169,
+        170,
+        171,
+        172
+      ],
+      "gitBlob": "10ac756d1a9a1946eebc43247684c16deec7fa3d",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-07",
+      "file": "site-02-07-hunger-valley.webp",
+      "alt": "Hunger Valley families at a ration hut, loaded winter wagon, black snow pines and waiting ravens",
+      "caption": "Cairnhold · Hunger Valley",
+      "sections": [
+        173,
+        174,
+        175,
+        176,
+        177,
+        178
+      ],
+      "gitBlob": "5239f40dc7ae9ac0f7c86345b48244dd09f8161e",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "SITE-02-08",
+      "file": "site-02-08-mirror-shaft.webp",
+      "alt": "Mirror Shaft suspended mining cage above darkness, returned bell, keepers and an unsettling second reflection",
+      "caption": "Cairnhold · Mirror Shaft",
+      "sections": [
+        179,
+        180,
+        181,
+        182,
+        183,
+        184
+      ],
+      "gitBlob": "b2eaaeaaa4d300f542ce034cd64cbe4aa7c0d0b4",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    },
+    {
+      "id": "WORLD-02",
+      "file": "world-02-cairnhold.webp",
+      "alt": "Cairnhold snowbound industrial mountain valleys under a reversed aurora and unequal sky halos",
+      "caption": "Cairnhold · Cairnhold mountains",
+      "sections": [
+        582,
+        604
+      ],
+      "gitBlob": "4cfc06eb4a30239b6246e154734e97e46551e230",
+      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+    }
+  ]
+}
