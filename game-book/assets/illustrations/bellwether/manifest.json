@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "generator": "OpenAI ImageGen (ten-panel art contact sheet separated into standalone WebP illustrations)",
+  "status": "first production pass—provisional art; review and upscale planned",
+  "assets": [
+    {
+      "id": "WORLD-04",
+      "file": "world-04-bellwether.webp",
+      "alt": "Bellwether river town panorama showing markets, bridges and workshops",
+      "caption": "Bellwether · a living town",
+      "sections": [
+        6
+      ],
+      "gitBlob": "7feef4e8ff7b74a39ef0fc4d1b7317d3cfd0aa28"
+    },
+    {
+      "id": "SITE-04-01",
+      "file": "site-04-01-old-market.webp",
+      "alt": "Busy Bellwether market with stalls, traders and stone town halls",
+      "caption": "Bellwether · Old Market",
+      "sections": [
+        7,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238
+      ],
+      "gitBlob": "fd7a8e74e26ae20c7a87afb7685429621ac93bdd"
+    },
+    {
+      "id": "ARC-BELL-FORGE",
+      "file": "arc-bell-forge.webp",
+      "alt": "Bellwether blacksmith working a glowing iron workpiece at the forge",
+      "caption": "Bellwether · working forge",
+      "sections": [
+        9,
+        12,
+        17,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250
+      ],
+      "gitBlob": "9137b6167c823e41856f0004ad8bcf8554519aae"
+    },
+    {
+      "id": "SITE-04-04",
+      "file": "site-04-04-morrowfen.webp",
+      "alt": "Morrowfen stilted village beneath enormous glowing mushrooms at dusk",
+      "caption": "Morrowfen · the mushroom country",
+      "sections": [
+        18,
+        23,
+        24,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256
+      ],
+      "gitBlob": "74a12ed806df453535a8a77e4f1cb16398329aee"
+    },
+    {
+      "id": "SITE-04-05",
+      "file": "site-04-05-ink-foundry.webp",
+      "alt": "Observatory with scholars, brass instruments, maps and ledgers",
+      "caption": "Bellwether · observatory and ink works",
+      "sections": [
+        5,
+        54,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262
+      ],
+      "gitBlob": "e32c3bbf93087473788e9e1e377380b770eb1b47"
+    },
+    {
+      "id": "CHAR-HESK",
+      "file": "char-hesk.webp",
+      "alt": "Portrait of Hesk, an experienced Bellwether blacksmith",
+      "caption": "Hesk · smith of Bellwether",
+      "sections": [
+        13
+      ],
+      "gitBlob": "176931d04465e6d184e67d7a2cbd7ee60fa9cf3d"
+    },
+    {
+      "id": "CHAR-MIRA",
+      "file": "char-mira.webp",
+      "alt": "Portrait of Mira, a young apprentice with soot-streaked work clothes",
+      "caption": "Mira · forge apprentice",
+      "sections": [
+        15,
+        19,
+        25,
+        26
+      ],
+      "gitBlob": "7653a67c98cd00d66e2c205fa4502cad554d8bc6"
+    },
+    {
+      "id": "CHAR-OSSA",
+      "file": "char-ossa.webp",
+      "alt": "Portrait of Magistrate Ossa at her desk among civic records",
+      "caption": "Ossa · Bellwether magistrate",
+      "sections": [
+        10,
+        14,
+        35,
+        36
+      ],
+      "gitBlob": "8d3499bae4cbcd7ca12bf271e9dc8c51c0525406"
+    },
+    {
+      "id": "ARC-BELL-01",
+      "file": "arc-bell-01-opening.webp",
+      "alt": "Mysterious bell glowing beneath the floor while flour floats over a tabletop",
+      "caption": "The bell beneath the floor",
+      "sections": [
+        1
+      ],
+      "gitBlob": "51fb9cee8f7a90054fbe5f31287eb17c6b5ea94a"
+    },
+    {
+      "id": "ARC-BELL-04",
+      "file": "arc-bell-04-blue-house.webp",
+      "alt": "An old house with a blue lintel, municipal clerk and waiting neighbours",
+      "caption": "The house with the blue lintel",
+      "sections": [
+        8,
+        11,
+        16,
+        21,
+        483
+      ],
+      "gitBlob": "18778c14cb040230df9c8a7cb1f07f42388980d9"
+    }
+  ]
+}
