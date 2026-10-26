@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "OpenAI ImageGen (ten-panel art contact sheet separated into standalone WebP illustrations)",
-  "status": "Two Bellwether draft batches; visual review and higher-resolution replacement pending",
+  "status": "Pass 03: revised five Bellwether scene artworks; all 15 images published as drafts; final aesthetic review pending",
   "assets": [
     {
       "id": "WORLD-04",
@@ -146,7 +146,7 @@
     {
       "file": "site-04-06-remembrance-house.webp",
       "id": "SITE-04-06",
-      "alt": "Candlelit Remembrance House where mourners gather in a shared memorial room",
+      "alt": "Working memorial kitchen at Remembrance House with lit oven, cooling bread, inscribed urns, apprentices and mourners",
       "caption": "Bellwether · Remembrance House",
       "sections": [
         263,
@@ -156,12 +156,13 @@
         267,
         268
       ],
-      "gitBlob": "396b5294453f14549b049c680aae1eb3f2294392"
+      "gitBlob": "490b57b0b5662947afb0389f7e2abcbbb7a42f61",
+      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
     },
     {
       "file": "site-04-07-paired-caves.webp",
       "id": "SITE-04-07",
-      "alt": "Limestone caverns with narrow timber bridges suspended above a deep ravine",
+      "alt": "Virtue and Antivirtue limestone entrances face across a ravine, connected by a rope bridge under repair",
       "caption": "Bellwether · Paired Caves",
       "sections": [
         269,
@@ -171,12 +172,13 @@
         273,
         274
       ],
-      "gitBlob": "a0ccb1572da8efe63c3e05848c1f239f77563446"
+      "gitBlob": "20544838549f47716655be82ca19826b6f61316c",
+      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
     },
     {
       "file": "site-04-08-silent-culvert.webp",
       "id": "SITE-04-08",
-      "alt": "A lantern-lit vaulted culvert with a quiet water crossing and ferry boat",
+      "alt": "Low living-reed canopy at the Silent Culvert, bread cart, waterhorse, ferry cradle and marked flood-gauge pole",
       "caption": "Bellwether · Silent Culvert",
       "sections": [
         275,
@@ -186,7 +188,40 @@
         279,
         280
       ],
-      "gitBlob": "0fa62b93cbb968b99a2d297eb9850651d09d8d5c"
+      "gitBlob": "02dbce2eb5373035a859b7ba5899f3f42546394f",
+      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+    },
+    {
+      "id": "SITE-04-02",
+      "file": "site-04-02-thornfields.webp",
+      "alt": "Reedgrain farms of Thornfields with shared irrigation stones and failed sluice",
+      "caption": "Bellwether · Thornfields",
+      "sections": [
+        239,
+        240,
+        241,
+        242,
+        243,
+        244
+      ],
+      "gitBlob": "051d4e4b6f72417ea6e44ba2a904c3945c224b1a",
+      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+    },
+    {
+      "id": "SITE-04-03",
+      "file": "site-04-03-kestrel-foundry.webp",
+      "alt": "Kestrel Foundry charcoal furnace and iron carts on makeshift planks across a collapsed bridge",
+      "caption": "Bellwether · Kestrel Foundry",
+      "sections": [
+        245,
+        246,
+        247,
+        248,
+        249,
+        250
+      ],
+      "gitBlob": "fa8b352d0313af7a38a39d1c99ef3b22b290e429",
+      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
     }
   ]
 }
