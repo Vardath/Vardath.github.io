@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "world": "Nacre",
+  "worldId": "WORLD-03",
+  "period": "-1",
+  "language": "Nelan",
+  "status": "Pass 05: original canon-specific vector-rendered scene studies, pending final painterly quality review",
+  "assets": [
+    {
+      "id": "WORLD-03",
+      "file": "world-03-nacre.webp",
+      "gitBlob": "5f9797b6ff44bee14ca22a6b8f930e562303e25e",
+      "alt": "Nacre — Nacre river world establishing illustration",
+      "caption": "Nacre · Nacre river world",
+      "sections": [
+        70
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-01",
+      "file": "site-03-01-reed-assembly.webp",
+      "gitBlob": "8bd683dd0ff751740249dfab25570ca3072f74e3",
+      "alt": "Nacre — Reed Assembly establishing illustration",
+      "caption": "Nacre · Reed Assembly",
+      "sections": [
+        185,
+        186,
+        187,
+        188,
+        189,
+        190
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-02",
+      "file": "site-03-02-tide-schools.webp",
+      "gitBlob": "4348cf6d020158d75cdbcb4fbe688f6507e180e7",
+      "alt": "Nacre — Tide Schools establishing illustration",
+      "caption": "Nacre · Tide Schools",
+      "sections": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        196
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-03",
+      "file": "site-03-03-glass-eel-docks.webp",
+      "gitBlob": "cd1913f49534c9cd02290ed76eaf0aa08f43df04",
+      "alt": "Nacre — Glass Eel Docks establishing illustration",
+      "caption": "Nacre · Glass Eel Docks",
+      "sections": [
+        197,
+        198,
+        199,
+        200,
+        201,
+        202
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-04",
+      "file": "site-03-04-cedar-floodplain.webp",
+      "gitBlob": "80caef099c611eadac5e658c15d58479456c31d8",
+      "alt": "Nacre — Cedar Floodplain establishing illustration",
+      "caption": "Nacre · Cedar Floodplain",
+      "sections": [
+        203,
+        204,
+        205,
+        206,
+        207,
+        208
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-05",
+      "file": "site-03-05-house-of-names.webp",
+      "gitBlob": "661c8d3463e3b174be214a699673fdf42fb79f4c",
+      "alt": "Nacre — House of Names establishing illustration",
+      "caption": "Nacre · House of Names",
+      "sections": [
+        209,
+        210,
+        211,
+        212,
+        213,
+        214
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-06",
+      "file": "site-03-06-long-shoal.webp",
+      "gitBlob": "ed096f29fe8137311e3013e4f5f5036634915d74",
+      "alt": "Nacre — Long Shoal establishing illustration",
+      "caption": "Nacre · Long Shoal",
+      "sections": [
+        215,
+        216,
+        217,
+        218,
+        219,
+        220
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-07",
+      "file": "site-03-07-blue-ice-cavern.webp",
+      "gitBlob": "f5333875c9e9240264a564077daecf683cc42e81",
+      "alt": "Nacre — Blue-Ice Cavern establishing illustration",
+      "caption": "Nacre · Blue-Ice Cavern",
+      "sections": [
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "reviewStatus": "provisional visual study"
+    },
+    {
+      "id": "SITE-03-08",
+      "file": "site-03-08-spiral-ferry.webp",
+      "gitBlob": "fb139e7e65d01b50af3f40fff809d841ac3663bd",
+      "alt": "Nacre — Spiral Ferry establishing illustration",
+      "caption": "Nacre · Spiral Ferry",
+      "sections": [
+        227,
+        228,
+        229,
+        230,
+        231,
+        232
+      ],
+      "reviewStatus": "provisional visual study"
+    }
+  ]
+}
