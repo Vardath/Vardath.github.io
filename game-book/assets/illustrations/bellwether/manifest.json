@@ -2,7 +2,7 @@
   "version": 1,
   "source": "Vardath The Worlds Between.md",
   "generator": "OpenAI ImageGen (ten-panel art contact sheet separated into standalone WebP illustrations)",
-  "status": "first production pass—provisional art; review and upscale planned",
+  "status": "Two Bellwether draft batches; visual review and higher-resolution replacement pending",
   "assets": [
     {
       "id": "WORLD-04",
@@ -142,6 +142,51 @@
         483
       ],
       "gitBlob": "18778c14cb040230df9c8a7cb1f07f42388980d9"
+    },
+    {
+      "file": "site-04-06-remembrance-house.webp",
+      "id": "SITE-04-06",
+      "alt": "Candlelit Remembrance House where mourners gather in a shared memorial room",
+      "caption": "Bellwether · Remembrance House",
+      "sections": [
+        263,
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "gitBlob": "396b5294453f14549b049c680aae1eb3f2294392"
+    },
+    {
+      "file": "site-04-07-paired-caves.webp",
+      "id": "SITE-04-07",
+      "alt": "Limestone caverns with narrow timber bridges suspended above a deep ravine",
+      "caption": "Bellwether · Paired Caves",
+      "sections": [
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "gitBlob": "a0ccb1572da8efe63c3e05848c1f239f77563446"
+    },
+    {
+      "file": "site-04-08-silent-culvert.webp",
+      "id": "SITE-04-08",
+      "alt": "A lantern-lit vaulted culvert with a quiet water crossing and ferry boat",
+      "caption": "Bellwether · Silent Culvert",
+      "sections": [
+        275,
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "gitBlob": "0fa62b93cbb968b99a2d297eb9850651d09d8d5c"
     }
   ]
 }
