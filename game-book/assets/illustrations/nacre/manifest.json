@@ -5,18 +5,18 @@
   "worldId": "WORLD-03",
   "period": "-1",
   "language": "Nelan",
-  "status": "Pass 05: original canon-specific vector-rendered scene studies, pending final painterly quality review",
+  "status": "Pass 19 preliminary world panorama replaced; eight settlement studies unchanged",
   "assets": [
     {
       "id": "WORLD-03",
       "file": "world-03-nacre.webp",
-      "gitBlob": "5f9797b6ff44bee14ca22a6b8f930e562303e25e",
+      "gitBlob": "88ad5d830141a258f93fb8416a8ff6908b497b3f",
       "alt": "Nacre — Nacre river world establishing illustration",
       "caption": "Nacre · Nacre river world",
       "sections": [
         70
       ],
-      "reviewStatus": "provisional visual study"
+      "reviewStatus": "Pass 19 preliminary painterly world panorama, remaining site art unchanged"
     },
     {
       "id": "SITE-03-01",
