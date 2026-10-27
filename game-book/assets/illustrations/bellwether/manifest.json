@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 15: exterior painterly Paired Caves refinement committed as provisional; other Bellwether sites retain prior provisional statuses; none final-approved",
+  "status": "Pass 16: one event illustration added at Bellwether §35, image and character-likeness still provisional; 16 Bellwether assets",
   "assets": [
     {
       "id": "WORLD-04",
@@ -217,6 +217,17 @@
       ],
       "gitBlob": "fa8b352d0313af7a38a39d1c99ef3b22b290e429",
       "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+    },
+    {
+      "id": "ARC-BELL-35",
+      "file": "arc-bell-35-hidden-manifest.webp",
+      "alt": "The bridge keeper's assistant retrieves the original cargo manifest from a loose floorboard beside a stove in the old ferry hut",
+      "caption": "Bellwether · The missing manifest",
+      "sections": [
+        35
+      ],
+      "gitBlob": "f3423a0eb8ac7a1297269c7e34a9414906dab3e6",
+      "reviewStatus": "Pass 16 provisional incident illustration; location and concealed record grounded in §35, Jori's facial appearance not approved and ledger details not exactly legible"
     }
   ]
 }
