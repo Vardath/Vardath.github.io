@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "worldId": "WORLD-06",
+  "world": "Glassreach",
+  "period": "2",
+  "language": "Ishari",
+  "status": "Pass 07: nine scene-specific Glassreach provisional graphic studies; painterly final art and portrait QC pending",
+  "productionMethod": "Canon-driven layered vector WebP 1120×656, provisional not final paintings",
+  "assets": [
+    {
+      "id": "WORLD-06",
+      "file": "world-06-glassreach.webp",
+      "gitBlob": "df4697d6e2eb52c5bb4171c2cb3db6826216b7c2",
+      "alt": "Glassreach desert highland setting with twin pale sky lights, fused glass cliffs, salt quays and guarded water supplies",
+      "caption": "Glassreach · desert and memory-glass country",
+      "sections": [
+        586
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-01",
+      "file": "site-06-01-furnace-harbour.webp",
+      "gitBlob": "4f6b16b26f5cf82e33360c4a24a1a96167b8eb8a",
+      "alt": "Furnace Harbour hot fused-glass cliff, shaded dock berths, sailcloth mist catchers and guarded freshwater cargo",
+      "caption": "Glassreach · Furnace Harbour",
+      "sections": [
+        329,
+        330,
+        331,
+        332,
+        333,
+        334
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-02",
+      "file": "site-06-02-saltwood-village.webp",
+      "gitBlob": "598fe63b81c4b0e4cda0455bd695c15c0e1430e6",
+      "alt": "Saltwood Village glass-grey oasis trees, dried fruit racks, protective seedling screens and a well above a narrow spring",
+      "caption": "Glassreach · Saltwood Village",
+      "sections": [
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-03",
+      "file": "site-06-03-copper-salt-mine.webp",
+      "gitBlob": "52e4f79bd3565fc35b53fb814eb8bb7fe71b67de",
+      "alt": "Copper Salt Mine descending white salt steps, red copper seams, workers, haulage cart and essential ventilation wheel",
+      "caption": "Glassreach · Copper Salt Mine",
+      "sections": [
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-04",
+      "file": "site-06-04-twelve-rain-gardens.webp",
+      "gitBlob": "63ac52e30d0d36e8a23c1989f892cff002be34c1",
+      "alt": "Twelve Rain Gardens behind stone walls, twelve water plots with different growth, mist catchers and sealed valves",
+      "caption": "Glassreach · Twelve Rain Gardens",
+      "sections": [
+        347,
+        348,
+        349,
+        350,
+        351,
+        352
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-05",
+      "file": "site-06-05-unfinished-suns-library.webp",
+      "gitBlob": "ef1c633f58600c282206ad595bbbea24f19f20ce",
+      "alt": "Unfinished Suns Library indexed memory-glass panels upright in felt slots, shaded desks and working cataloguers",
+      "caption": "Glassreach · Unfinished Suns Library",
+      "sections": [
+        353,
+        354,
+        355,
+        356,
+        357,
+        358
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-06",
+      "file": "site-06-06-mirror-court.webp",
+      "gitBlob": "c010f3534362ea3e62fc16b2d3de572922f044f6",
+      "alt": "Mirror Court public hearing space behind mismatched angled memory-glass panes with a public notice board and witnesses",
+      "caption": "Glassreach · Mirror Court",
+      "sections": [
+        359,
+        360,
+        361,
+        362,
+        363,
+        364
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-07",
+      "file": "site-06-07-bonebright-mesa.webp",
+      "gitBlob": "b5fa9a594468191cab00c321a55619eff66a2837",
+      "alt": "Bonebright Mesa blinding white mineral cliffs, low route cairns, desert guide and pack mule beside a guarded cistern",
+      "caption": "Glassreach · Bonebright Mesa",
+      "sections": [
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    },
+    {
+      "id": "SITE-06-08",
+      "file": "site-06-08-prism-transit.webp",
+      "gitBlob": "90a39f606d476a8546c6db52ad117359fe4124ae",
+      "alt": "Prism Transit standing glass prisms, cargo weighing equipment, workers with water barrels and calibration safety lines",
+      "caption": "Glassreach · Prism Transit",
+      "sections": [
+        371,
+        372,
+        373,
+        374,
+        375,
+        376
+      ],
+      "reviewStatus": "Provisional vector/graphic study; artistically unapproved pending painterly refinement"
+    }
+  ]
+}
