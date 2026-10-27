@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 12: Remembrance House painterly refinement committed as provisional; all 15 Bellwether assets remain unapproved final art",
+  "status": "Pass 13 semantic routing correction: Ossa portrait removed from §§35–36; 78 provisional images, 416 mapped story passages; pending new scene-specific illustrations.",
   "assets": [
     {
       "id": "WORLD-04",
@@ -107,11 +107,10 @@
       "caption": "Ossa · Bellwether magistrate",
       "sections": [
         10,
-        14,
-        35,
-        36
+        14
       ],
-      "gitBlob": "8d3499bae4cbcd7ca12bf271e9dc8c51c0525406"
+      "gitBlob": "8d3499bae4cbcd7ca12bf271e9dc8c51c0525406",
+      "reviewStatus": "Provisional draft character image; only §§10 and 14 depict magistrate Ossa present. §§35–36 references were removed in Pass 13 because Ossa is absent from those scenes."
     },
     {
       "id": "ARC-BELL-01",
