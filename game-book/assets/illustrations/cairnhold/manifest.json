@@ -17,10 +17,11 @@
         139,
         140,
         141,
-        142
+        142,
+        604
       ],
       "gitBlob": "aec11855fef442c86f2ea21c42329e6544656f0e",
-      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+      "reviewStatus": "Provisional settlement study; §§137–142 and Iron Hearth case §604 after Pass 14 source-aware routing review. Painterly upgrade outstanding"
     },
     {
       "id": "SITE-02-02",
@@ -140,11 +141,10 @@
       "alt": "Cairnhold snowbound industrial mountain valleys under a reversed aurora and unequal sky halos",
       "caption": "Cairnhold · Cairnhold mountains",
       "sections": [
-        582,
-        604
+        582
       ],
       "gitBlob": "4cfc06eb4a30239b6246e154734e97e46551e230",
-      "reviewStatus": "Provisional canon-specific illustrated study; high-resolution painterly replacement pending"
+      "reviewStatus": "Provisional landscape study; assigned to Cairnhold transition §582 only after Pass 14 source-aware routing check"
     }
   ]
 }
