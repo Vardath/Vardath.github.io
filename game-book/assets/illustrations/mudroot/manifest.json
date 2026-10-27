@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "worldId": "WORLD-01",
+  "world": "Mudroot",
+  "period": "-3",
+  "language": "Tesh",
+  "status": "Pass 10 provisional Mudroot panorama and eight canon-grounded site plates, not final painterly artwork",
+  "productionMethod": "Independent original SVG scene studies rasterized to 1120×656 WebP with subtle print texture",
+  "assets": [
+    {
+      "id": "WORLD-01",
+      "file": "world-01-mudroot.webp",
+      "gitBlob": "1cf7fd1cb36b066ea4d6035a002435b5c7fe56f4",
+      "alt": "Mudroot wetland settlement overview with stilt houses, working reed banks, household ferries and changing shoreline",
+      "caption": "Mudroot · River communities",
+      "sections": [
+        581
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-01",
+      "file": "site-01-01-mire-first-boats.webp",
+      "gitBlob": "b7f0401e4310528814b5384d9ecbe5de036323af",
+      "alt": "Mire of First Boats upright six-keel working boat built into peat, boatwrights repairing its ribs, children learning return knots",
+      "caption": "Mudroot · Mire of First Boats",
+      "sections": [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-02",
+      "file": "site-01-02-silt-crown.webp",
+      "gitBlob": "5f9f4c7301bd5068d124f0f791d20d9c55b175fe",
+      "alt": "Silt Crown floating courthouse on two shore moorings, riverbank petitioners and strained rope requiring a worker's repair",
+      "caption": "Mudroot · Silt Crown",
+      "sections": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-03",
+      "file": "site-01-03-mother-reed.webp",
+      "gitBlob": "1d5407d116403f30841ac70b4931ff58ecf1b9ba",
+      "alt": "Mother Reed sloped planting terraces, tiered water sluices, reedgrain workers and a clay jar for sluice beetles",
+      "caption": "Mudroot · Mother Reed",
+      "sections": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-04",
+      "file": "site-01-04-ashbank-kilns.webp",
+      "gitBlob": "13be0ade278efe81269aabfae6031cc2afe699cd",
+      "alt": "Ashbank Kilns working row of clay chimneys with smoke moving in opposed directions, workers and a chalked safety boundary",
+      "caption": "Mudroot · Ashbank Kilns",
+      "sections": [
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-05",
+      "file": "site-01-05-salt-womb.webp",
+      "gitBlob": "0c7f4e4106b1e96cfa0e98427499f89ea8f48315",
+      "alt": "Salt Womb working salt dock nested within a colossal dry whale rib shell, unloading barges and families tying memorial strips",
+      "caption": "Mudroot · Salt Womb",
+      "sections": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-06",
+      "file": "site-01-06-black-lotus-library.webp",
+      "gitBlob": "00839e3ae4d62f75b301f03644ac1b672d8cb9c3",
+      "alt": "Black Lotus Library floating chained archive pontoons surrounding the steeple of a drowned belfry, with working archivists",
+      "caption": "Mudroot · Black Lotus Library",
+      "sections": [
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-07",
+      "file": "site-01-07-bone-sands.webp",
+      "gitBlob": "31bb027b6b100d5a1921adb9f48551dcfa6aba2e",
+      "alt": "Bone Sands pale tidal flats and fossil rib shoals with stone grave markers, safe route poles and surveying workers",
+      "caption": "Mudroot · Bone Sands",
+      "sections": [
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    },
+    {
+      "id": "SITE-01-08",
+      "file": "site-01-08-undergate.webp",
+      "gitBlob": "5c1940c1e32acba51f5d857cdbb44ca227e40e74",
+      "alt": "Undergate stilt houses surrounding a deep vertical well reflecting an opposite-moving sky, with reed safety barrier and bucket",
+      "caption": "Mudroot · Undergate",
+      "sections": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "reviewStatus": "Provisional vector/graphic scene study; final painterly rendering, face consistency and passage-state QA pending"
+    }
+  ]
+}
