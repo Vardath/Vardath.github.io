@@ -5,7 +5,7 @@
   "worldId": "WORLD-03",
   "period": "-1",
   "language": "Nelan",
-  "status": "Pass 19 preliminary world panorama replaced; eight settlement studies unchanged",
+  "status": "Pass 20: Nacre panorama and Reed Assembly upgraded to provisional painterly artwork; seven other settlement images remain earlier vector studies",
   "assets": [
     {
       "id": "WORLD-03",
@@ -21,8 +21,8 @@
     {
       "id": "SITE-03-01",
       "file": "site-03-01-reed-assembly.webp",
-      "gitBlob": "8bd683dd0ff751740249dfab25570ca3072f74e3",
-      "alt": "Nacre — Reed Assembly establishing illustration",
+      "gitBlob": "5173af79ec2a1d486f25e19d364316f75d96bdf9",
+      "alt": "Timber river council sheltered beneath roofs made of overturned retired ferryboat hulls; witnesses discuss a disputed record while fishers mend nets, a neighbour carries food and a waterwheel is repaired under a clouded ice sky",
       "caption": "Nacre · Reed Assembly",
       "sections": [
         185,
@@ -32,7 +32,7 @@
         189,
         190
       ],
-      "reviewStatus": "provisional visual study"
+      "reviewStatus": "Pass 20: provisional painterly scene replacement, 1600 × 900; retired-ferry roofs, river hearing and working harbour depicted; scratched keel names and exact named identities not legible, not final approved"
     },
     {
       "id": "SITE-03-02",
