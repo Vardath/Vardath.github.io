@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 11: Silent Culvert painterly replacement committed as a provisional refinement; the other 14 Bellwether studies remain provisional and none is final-approved",
+  "status": "Pass 12: Remembrance House painterly refinement committed as provisional; all 15 Bellwether assets remain unapproved final art",
   "assets": [
     {
       "id": "WORLD-04",
@@ -150,8 +150,8 @@
         267,
         268
       ],
-      "gitBlob": "490b57b0b5662947afb0389f7e2abcbbb7a42f61",
-      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+      "gitBlob": "defe452dc460373128f799ea10c7f4baa1fc59aa",
+      "reviewStatus": "Pass 12 provisional painterly interior refinement: ovens, bread, working ledger, mourners and memorial pottery visible; urn labels, singer depiction, Edda's canonical identity and final painterly approval remain to be checked"
     },
     {
       "file": "site-04-07-paired-caves.webp",
