@@ -88,22 +88,24 @@ function valid(s){return !!(s&&SECTIONS[Number(s.at)]&&
 function readSave(){try{const raw=localStorage.getItem(SAVE_KEY);if(!raw)return null;const item=JSON.parse(raw);return item.version===3&&valid(item.state)?item:null}catch(e){return null}}
 function hasSave(){return !!readSave()}
 function setStatus(t){document.getElementById('saveStatus').textContent=t}
-function saveProgress(){
- if(!valid(state)){setStatus('Cannot save: current ledger is invalid.');return}
+function saveProgress(automatic=false){
+ if(!valid(state)){setStatus('Cannot save: current ledger is invalid.');return false}
  try{
-  localStorage.setItem(SAVE_KEY,JSON.stringify({version:3,savedAt:Date.now(),state}));
-  const marker={v:3,at:state.at,savedAt:Date.now()};
+  const now=Date.now();
+  localStorage.setItem(SAVE_KEY,JSON.stringify({version:3,savedAt:now,state}));
+  const marker={v:3,at:state.at,savedAt:now};
   document.cookie=COOKIE_KEY+'='+encodeURIComponent(JSON.stringify(marker))+'; Max-Age=31536000; Path=/game-book/; SameSite=Lax; Secure';
-  setStatus('Saved passage '+state.at+' and your full ledger on this device.'+(!cookieValue()?' Cookie unavailable; device storage still holds the save.':''));
+  setStatus((automatic===true?'Automatically saved passage ':'Saved passage ')+state.at+' and your full ledger on this device.'+(!cookieValue()?' Cookie unavailable; device storage still holds the save.':''));
   updateSaveButton();
- }catch(e){setStatus('Saving is blocked by this browser. Try Export Save.');}
+  return true;
+ }catch(e){setStatus('Saving is blocked by this browser. Try Export Save.');return false}
 }
 function reloadGame(){const item=readSave();if(!item){setStatus('No valid saved game on this device.');openIntro();return}state=JSON.parse(JSON.stringify(item.state));setStatus('Loaded passage '+state.at+'.');render()}
 function restartGame(){
  if((state.history.length>1||hasSave())&&!confirm('Restart the game? This clears the saved journey, resources and Marks on this device.'))return;
  try{localStorage.removeItem(SAVE_KEY)}catch(e){}
  document.cookie=COOKIE_KEY+'=; Max-Age=0; Path=/game-book/; SameSite=Lax; Secure';
- state=fresh();setStatus('New journey started.');render();window.scrollTo(0,0);
+ state=fresh();saveProgress(true);render();window.scrollTo(0,0);
 }
 function enough(req){
  if(!req)return true;
@@ -129,14 +131,14 @@ function apply(effect){
   else if(!state.flags.includes(v))state.flags.push(v);
  }
 }
-function go(n){n=Number(n);if(!SECTIONS[n])return;state.at=n;state.history.push(n);if(state.history.length>9500)state.history=state.history.slice(-8000);render();window.scrollTo(0,0)}
+function go(n){n=Number(n);if(!SECTIONS[n])return;state.at=n;state.history.push(n);if(state.history.length>9500)state.history=state.history.slice(-8000);saveProgress(true);render();window.scrollTo(0,0)}
 function choose(n,i){
  if(Number(n)!==state.at)return;
  const c=SECTIONS[n]&&SECTIONS[n].choices[i];if(!c)return;
  const key=n+':'+i;
  if(!enough(c.req)||!canPay(c.effect)||(c.effect&&state.used.includes(key)))return;
  if(c.effect){apply(c.effect);if(!isRepeatableSetter(n,c.effect))state.used.push(key)}
- setStatus('Unsaved progress · Save Progress to keep this journey.');go(c.to);
+ go(c.to);
 }
 function updateSaveButton(){document.getElementById('reloadBtn').disabled=!hasSave()}
 function redrawLedger(){document.getElementById("ledger-quick").textContent="C "+state.C+" · R "+state.R+" · K "+state.K+" · B "+state.B+" · F "+state.F;
@@ -168,7 +170,7 @@ function render(){
 }
 function openIntro(){
  redrawLedger();const marker=cookieValue(),resume=readSave();
- document.getElementById('content').innerHTML='<div class="over">A playable branching novel · 1,151 passages</div><h1>Vardath<br>The Worlds Between</h1>'+passageArt(1)+'<p class="lede">Eight Roads · Eight inhabited periods · Every decision carries consequences.</p><p class="savehint">The artwork appears on illustrated story passages. Additional scenes are still being illustrated.</p><p>Start a new journey at passage 1, or press <strong>Reload Game</strong> to return to your deliberately saved passage and ledger on this device.</p><div class="choices"><button class="primary" id="startBtn">Begin New Game</button><button class="choice" id="resumeBtn" '+(!resume?'disabled':'')+'>Reload Game'+(resume?' — Passage '+resume.state.at:'')+'</button></div><p class="savehint">Save Progress stores a checkpoint cookie and your full ledger in this browser’s device-local storage. Clearing site data can delete your save. Export Save provides a portable backup.</p><div class="choices"><button class="secondary" id="rulesBtn">Read Game Rules &amp; Atlas</button></div>';
+ document.getElementById('content').innerHTML='<div class="over">A playable branching novel · 1,151 passages</div><h1>Vardath<br>The Worlds Between</h1>'+passageArt(1)+'<p class="lede">Eight Roads · Eight inhabited periods · Every decision carries consequences.</p><p class="savehint">The artwork appears on illustrated story passages. Additional scenes are still being illustrated.</p><p>Start a new journey at passage 1, or press <strong>Reload Game</strong> to return to your deliberately saved passage and ledger on this device.</p><div class="choices"><button class="primary" id="startBtn">Begin New Game</button><button class="choice" id="resumeBtn" '+(!resume?'disabled':'')+'>Reload Game'+(resume?' — Passage '+resume.state.at:'')+'</button></div><p class="savehint">Progress saves automatically after every move or choice, including a new game. Save Progress remains available for a manual checkpoint. Saves are device-local; clearing site data can delete them. Export Save provides a portable backup.</p><div class="choices"><button class="secondary" id="rulesBtn">Read Game Rules &amp; Atlas</button></div>';
  document.getElementById('startBtn').addEventListener('click',restartGame);
  document.getElementById('resumeBtn').addEventListener('click',reloadGame);
  document.getElementById('rulesBtn').addEventListener('click',openRules);
