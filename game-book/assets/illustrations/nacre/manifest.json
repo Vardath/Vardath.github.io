@@ -5,7 +5,7 @@
   "worldId": "WORLD-03",
   "period": "-1",
   "language": "Nelan",
-  "status": "Pass 20: Nacre panorama and Reed Assembly upgraded to provisional painterly artwork; seven other settlement images remain earlier vector studies",
+  "status": "Pass 21: Nacre world panorama and first two settlement images painterly provisional; six remaining settlement studies unchanged",
   "assets": [
     {
       "id": "WORLD-03",
@@ -37,8 +37,8 @@
     {
       "id": "SITE-03-02",
       "file": "site-03-02-tide-schools.webp",
-      "gitBlob": "4348cf6d020158d75cdbcb4fbe688f6507e180e7",
-      "alt": "Nacre — Tide Schools establishing illustration",
+      "gitBlob": "943c13baf9dd6956d95d04dc56fc4286dd91788a",
+      "alt": "Seven timber classroom barges moored to stone posts across a brackish estuary, connected by crooked plank gangways; pupils carry slates, teachers work by lamplight and a caretaker checks the return boats beneath Nacre's ice-cloud canopy",
       "caption": "Nacre · Tide Schools",
       "sections": [
         191,
@@ -48,7 +48,7 @@
         195,
         196
       ],
-      "reviewStatus": "provisional visual study"
+      "reviewStatus": "Pass 21 provisional painterly scene, 1600×900; seven floating school barges, active lessons, gangways, stone moorings and ice canopy; human likenesses, exact school-bell mechanism and lantern-flea species not final-approved"
     },
     {
       "id": "SITE-03-03",
