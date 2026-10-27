@@ -1,8 +1,8 @@
 {
   "version": 2,
   "source": "Vardath The Worlds Between.md",
-  "generator": "OpenAI ImageGen (ten-panel art contact sheet separated into standalone WebP illustrations)",
-  "status": "Pass 03: revised five Bellwether scene artworks; all 15 images published as drafts; final aesthetic review pending",
+  "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
+  "status": "Pass 11: Silent Culvert painterly replacement committed as a provisional refinement; the other 14 Bellwether studies remain provisional and none is final-approved",
   "assets": [
     {
       "id": "WORLD-04",
@@ -182,8 +182,10 @@
         279,
         280
       ],
-      "gitBlob": "02dbce2eb5373035a859b7ba5899f3f42546394f",
-      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+      "gitBlob": "95f272bc7d7c87867991d1dccbc41ecb3473a6fa",
+      "reviewStatus": "Pass 11 painterly single-scene refined WebP, visually checked for living-reed roof, bread carts, depth gauge, sluice, ferry and keepers; provisional, not final character/species or state-continuity approval",
+      "renderSize": "1440 × 813",
+      "renderMethod": "Standalone painterly image generation, locally resized and optimized as WebP"
     },
     {
       "id": "SITE-04-02",
