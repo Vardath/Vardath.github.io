@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 16: one event illustration added at Bellwether §35, image and character-likeness still provisional; 16 Bellwether assets",
+  "status": "Pass 17: Bellwether will-dispute §26 scene study added; 17 Bellwether assets, 80 total, 417 mapped passages; no final art approval",
   "assets": [
     {
       "id": "WORLD-04",
@@ -95,8 +95,7 @@
       "sections": [
         15,
         19,
-        25,
-        26
+        25
       ],
       "gitBlob": "7653a67c98cd00d66e2c205fa4502cad554d8bc6"
     },
@@ -228,6 +227,17 @@
       ],
       "gitBlob": "f3423a0eb8ac7a1297269c7e34a9414906dab3e6",
       "reviewStatus": "Pass 16 provisional incident illustration; location and concealed record grounded in §35, Jori's facial appearance not approved and ledger details not exactly legible"
+    },
+    {
+      "id": "ARC-BELL-26",
+      "file": "arc-bell-26-disputed-will.webp",
+      "alt": "At a candlelit table a clerk studies historical handwritten will documents, pointing to a disputed passage while family and workers consider the evidence",
+      "caption": "Bellwether · A will with two witnesses",
+      "sections": [
+        26
+      ],
+      "gitBlob": "51588b3091b46c11a35380c3d3f7ccdd5c551335",
+      "reviewStatus": "Pass 17 provisional legal-translation event plate; documents and concerned witnesses are evocative only; clerk's invented likeness not established in source; no court ruling or identity is asserted; §36 Elian remains unfinished"
     }
   ]
 }
