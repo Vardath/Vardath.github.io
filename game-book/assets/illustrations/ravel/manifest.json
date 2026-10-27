@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "source": "Vardath The Worlds Between.md",
+  "worldId": "WORLD-08",
+  "world": "Ravel",
+  "period": "4",
+  "language": "Raveli",
+  "status": "Pass 09 provisional scene illustrations; not painterly final artwork",
+  "productionMethod": "Canon-grounded layered SVG visual studies rendered as 1120×656 WebP; final painterly production and character-model QA remain",
+  "assets": [
+    {
+      "id": "WORLD-08",
+      "file": "world-08-ravel.webp",
+      "gitBlob": "9e012c074577fbd6a6bc0ceb53f0428b0aab66b0",
+      "alt": "Working timber harbour, threadwood trees, living workshops and distant shifting woven boundary",
+      "caption": "Ravel · Ravel world panorama",
+      "sections": [
+        588
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-01",
+      "file": "site-08-01-thread-quay.webp",
+      "gitBlob": "6871fd9191e0c0a8c7373b5789768312257c1c08",
+      "alt": "Harbour paper markets, bent threadwood maps, public landing and two reception ledgers",
+      "caption": "Ravel · Thread Quay",
+      "sections": [
+        425,
+        426,
+        427,
+        428,
+        429,
+        430
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-02",
+      "file": "site-08-02-fifth-harvest.webp",
+      "gitBlob": "65a9894d48a00924a44421b405179661405d9ac4",
+      "alt": "Orchard with concurrent harvest and replanted seed rows, contrasting fruit baskets and labourers",
+      "caption": "Ravel · Fifth Harvest",
+      "sections": [
+        431,
+        432,
+        433,
+        434,
+        435,
+        436
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-03",
+      "file": "site-08-03-spiralworks.webp",
+      "gitBlob": "06a8367b5a8ec0e29bb59b692bcbfad2113d3320",
+      "alt": "Threadwood workshop with slender spool, woven cloth tension test and craft workers",
+      "caption": "Ravel · Spiralworks",
+      "sections": [
+        437,
+        438,
+        439,
+        440,
+        441,
+        442
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-04",
+      "file": "site-08-04-night-orchard.webp",
+      "gitBlob": "413c571744659607f6977d748ee6a9d71f8936b9",
+      "alt": "Cool-dark orchard with softly luminous low fruit, bat pollinators and divided seed basket",
+      "caption": "Ravel · Night Orchard",
+      "sections": [
+        443,
+        444,
+        445,
+        446,
+        447,
+        448
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-05",
+      "file": "site-08-05-returning-names-institute.webp",
+      "gitBlob": "0e30ab81c196deb880f77be90a8d19bff94b715f",
+      "alt": "Shaded school records hall, name registers in different hands and paper-moths by shutters",
+      "caption": "Ravel · Returning Names Institute",
+      "sections": [
+        449,
+        450,
+        451,
+        452,
+        453,
+        454
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-06",
+      "file": "site-08-06-ashen-mercy-house.webp",
+      "gitBlob": "d19fc67bd5b4e62ef12d235ff27be08e8bdcc7f2",
+      "alt": "Two clean ward rooms, fresh water, drying bellleaf and voluntary patient care",
+      "caption": "Ravel · Ashen Mercy House",
+      "sections": [
+        455,
+        456,
+        457,
+        458,
+        459,
+        460
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-07",
+      "file": "site-08-07-quenched-axis.webp",
+      "gitBlob": "d191feacd4a1b8286f5d3253cdb01c25ff23dd66",
+      "alt": "Black current-control pillar, engineers at access panel and safety shrubs with numbered boundary stones",
+      "caption": "Ravel · Quenched Axis",
+      "sections": [
+        461,
+        462,
+        463,
+        464,
+        465,
+        466
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    },
+    {
+      "id": "SITE-08-08",
+      "file": "site-08-08-edge-atlas.webp",
+      "gitBlob": "d7dfc7c790c070a4d216568c702155871903de1b",
+      "alt": "Cartographers' work table, observer-dependent thread compasses, fishing quay and moving woven brightness",
+      "caption": "Ravel · Edge of the Atlas",
+      "sections": [
+        467,
+        468,
+        469,
+        470,
+        471,
+        472
+      ],
+      "reviewStatus": "Provisional scene-specific vector/graphic study; painterly refinement and event-state QA required"
+    }
+  ]
+}
