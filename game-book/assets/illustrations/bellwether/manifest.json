@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 17: Bellwether will-dispute §26 scene study added; 17 Bellwether assets, 80 total, 417 mapped passages; no final art approval",
+  "status": "Pass 18: Bellwether §36 Elian testimony provisional art added, 18 Bellwether images, 81 images total, 418 mapped sections.",
   "assets": [
     {
       "id": "WORLD-04",
@@ -238,6 +238,17 @@
       ],
       "gitBlob": "51588b3091b46c11a35380c3d3f7ccdd5c551335",
       "reviewStatus": "Pass 17 provisional legal-translation event plate; documents and concerned witnesses are evocative only; clerk's invented likeness not established in source; no court ruling or identity is asserted; §36 Elian remains unfinished"
+    },
+    {
+      "id": "ARC-BELL-36",
+      "file": "arc-bell-36-elians-testimony.webp",
+      "alt": "An older river singer signs an old reed-language interpretation with Maels will and funeral hymn side by side",
+      "caption": "Bellwether · Elians testimony",
+      "sections": [
+        36
+      ],
+      "gitBlob": "d8c00cacfd879a97f0de81f1423f4049c7350213",
+      "reviewStatus": "Pass 18 provisional narrative illustration, senior female Elian comparing two documents and writing; character appearance and exact script are interpretive, no court verdict shown."
     }
   ]
 }
