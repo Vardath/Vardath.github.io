@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "worldId": "WORLD-07",
+  "world": "Lumenfold",
+  "period": "3",
+  "language": "Aural",
+  "source": "Vardath The Worlds Between.md",
+  "productionMethod": "Manuscript-guided layered SVG graphic compositions rasterized to 1120×656 WebP. Provisional studies, not painterly final artworks.",
+  "status": "Pass 08: nine scene-specific Lumenfold graphical studies committed. Painterly production and character/choice-state QA remain pending.",
+  "assets": [
+    {
+      "id": "WORLD-07",
+      "file": "world-07-lumenfold.webp",
+      "gitBlob": "8972e8203227a0a939a9e8712251db3e8bb75d36",
+      "alt": "World overview: inhabited floating stone-and-root islands, working suspension bridges, sky orchards, homes and deep cloud banks",
+      "caption": "Lumenfold · Sky archipelago",
+      "sections": [
+        587
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-01",
+      "file": "site-07-01-lantern-city.webp",
+      "gitBlob": "3b4791cb430c6472c20992fe45f5ff78af9b6e77",
+      "alt": "Lantern City bakery's cable-carried bread tray, rope-watched hanging markets, bridge anchors and mist-fed orchard rafts",
+      "caption": "Lumenfold · Lantern City",
+      "sections": [
+        377,
+        378,
+        379,
+        380,
+        381,
+        382
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-02",
+      "file": "site-07-02-windmilk-downs.webp",
+      "gitBlob": "27b62132169f21e842a83aae144703fa635f35c6",
+      "alt": "Windmilk Downs drifting pasture islands with grazing animals, audible bells, closed rope bridge and dairy workers",
+      "caption": "Lumenfold · Windmilk Downs",
+      "sections": [
+        383,
+        384,
+        385,
+        386,
+        387,
+        388
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-03",
+      "file": "site-07-03-feather-forge.webp",
+      "gitBlob": "00825a7b8cd0f417b4b71c34f558f8d90ead3102",
+      "alt": "Feather Forge smiths passing a glowing metal sheet across a hot shaft, with a neglected cracked safety chain",
+      "caption": "Lumenfold · Feather Forge",
+      "sections": [
+        389,
+        390,
+        391,
+        392,
+        393,
+        394
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-04",
+      "file": "site-07-04-whale-cloud.webp",
+      "gitBlob": "aee53000c39a66ea583cbbe8833b006a94ae5ab4",
+      "alt": "Whale Cloud mistland settlement attached by three great support lines, net fishers and a freely swimming skywhale feeding on glider shrimp",
+      "caption": "Lumenfold · Whale Cloud",
+      "sections": [
+        395,
+        396,
+        397,
+        398,
+        399,
+        400
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-05",
+      "file": "site-07-05-sky-psalter-conservatory.webp",
+      "gitBlob": "cc4e5b9b3c8bd2a7514de2400c4c332dab822751",
+      "alt": "Sky-Psalter Conservatory's wind-pipe organ, damaged reed, ladder repair and musicians with work ledger",
+      "caption": "Lumenfold · Sky-Psalter Conservatory",
+      "sections": [
+        401,
+        402,
+        403,
+        404,
+        405,
+        406
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-06",
+      "file": "site-07-06-counting-shadows.webp",
+      "gitBlob": "9b63a1d1328c00ffe4d8db580522b3bfba2874b4",
+      "alt": "Counting Shadows plaza lit from two directions, with festival lamps, numbered stabilizing weights and children painting their shadows",
+      "caption": "Lumenfold · Counting Shadows",
+      "sections": [
+        407,
+        408,
+        409,
+        410,
+        411,
+        412
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-07",
+      "file": "site-07-07-riftwood-reaches.webp",
+      "gitBlob": "6c56b876147b90d930909500744aedf2a6fde987",
+      "alt": "Riftwood Reaches wet bending timber, anchor cables, worker-inspected suspended ladder and deadwood raft groves",
+      "caption": "Lumenfold · Riftwood Reaches",
+      "sections": [
+        413,
+        414,
+        415,
+        416,
+        417,
+        418
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    },
+    {
+      "id": "SITE-07-08",
+      "file": "site-07-08-hanging-ford.webp",
+      "gitBlob": "1840da1ed3c758113f39594db3d93434ceaa59d0",
+      "alt": "Hanging Ford's waterless river of air, wary untethered waterhorse with handler and a guarded sky crossing",
+      "caption": "Lumenfold · Hanging Ford",
+      "sections": [
+        419,
+        420,
+        421,
+        422,
+        423,
+        424
+      ],
+      "reviewStatus": "Provisional graphic scene study: subject checked against manuscript, high-resolution painterly art and character-continuity QA outstanding"
+    }
+  ]
+}
