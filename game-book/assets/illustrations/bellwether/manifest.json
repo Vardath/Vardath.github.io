@@ -2,7 +2,7 @@
   "version": 2,
   "source": "Vardath The Worlds Between.md",
   "generator": "Mixed methods: first-generation image contact sheet, graphic site studies and Pass 11 standalone painterly Silent Culvert refinement",
-  "status": "Pass 13 semantic routing correction: Ossa portrait removed from §§35–36; 78 provisional images, 416 mapped story passages; pending new scene-specific illustrations.",
+  "status": "Pass 15: exterior painterly Paired Caves refinement committed as provisional; other Bellwether sites retain prior provisional statuses; none final-approved",
   "assets": [
     {
       "id": "WORLD-04",
@@ -155,7 +155,7 @@
     {
       "file": "site-04-07-paired-caves.webp",
       "id": "SITE-04-07",
-      "alt": "Virtue and Antivirtue limestone entrances face across a ravine, connected by a rope bridge under repair",
+      "alt": "Two opposing limestone cave entrances painted Virtue and Antivirtue above a ravine, joined by a rope suspension bridge with travelling villagers and a ticket awning",
       "caption": "Bellwether · Paired Caves",
       "sections": [
         269,
@@ -165,8 +165,8 @@
         273,
         274
       ],
-      "gitBlob": "20544838549f47716655be82ca19826b6f61316c",
-      "reviewStatus": "Provisional canon-specific vector study; final painterly artwork pending"
+      "gitBlob": "7950259c9e265f84ef8c8425274c49bd5843fafa",
+      "reviewStatus": "Pass 15 provisional painterly exterior improvement (1600 × 727): two cave mouths and rope bridge correctly depicted, painted entrance names and human-scale visitors; does NOT clearly show active rope splicing, Yorin, lower-shelter flooding or evacuation; final scene refinement outstanding"
     },
     {
       "file": "site-04-08-silent-culvert.webp",
