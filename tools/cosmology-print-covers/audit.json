@@ -1,0 +1,46 @@
+{
+  "paperback": {
+    "file_sha256": "b8d804b0e77ff305c572d4214f2d976671ba605b1f69e04fda839502b88b4fff",
+    "pdf_pages": 1109,
+    "trim_sizes_inches": [
+      [
+        7.0,
+        10.0
+      ]
+    ],
+    "last_page_has_content": true,
+    "expected_production_pages": 1110,
+    "normalized_text_sha256": "aaf3d4417eb58b55bba604a5fa8ff235a440627edf245564c1337579a3f0f29a",
+    "normalized_text_characters": 1309218
+  },
+  "hardcover": {
+    "file_sha256": "1e81a9982743718e6265012bbf63143f0378f68333124e85c2f8caa43b3e83b5",
+    "pdf_pages": 1120,
+    "trim_sizes_inches": [
+      [
+        7.0,
+        10.0
+      ]
+    ],
+    "last_page_has_content": true,
+    "expected_production_pages": 1122,
+    "normalized_text_sha256": "aaf3d4417eb58b55bba604a5fa8ff235a440627edf245564c1337579a3f0f29a",
+    "normalized_text_characters": 1309218
+  },
+  "text_matches_ignoring_layout_references": true,
+  "artwork": {
+    "pixels": [
+      1536,
+      909
+    ],
+    "sha256": "7bd5fb3c51d72830bc5e35ef59622c9ffd4103be87b2ffec99718c0d532dcd86",
+    "note": "1536x909 supplied wrap. Original text/detail is about 91 pixels per vertical printed inch at 10 inches high; upsampling cannot recover original detail."
+  },
+  "status": "WAITING_FOR_OFFICIAL_EDITION_TEMPLATES",
+  "required_inputs": [
+    "Paperback and hardcover ISBNs",
+    "Email for official template delivery",
+    "Confirm B&W 50lb white paper and case laminate hardcover",
+    "Official template PDF for each edition, including measured panel/spine/barcode bounds"
+  ]
+}
