@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathKopisMobileForge"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- All resource generation uses real ship cargo; no parallel virtual
+         warehouse. An auto-saved MD cue reset repeats every 10 game minutes. -->
+    <cue name="ProduceResources" instantiate="true" checkinterval="10min">
+      <conditions><check_value value="player.age ge 10min"/></conditions>
+      <actions>
+        <find_ship name="$Ships" owner="faction.player" class="class.ship_s"
+                   space="player.galaxy" multiple="true"/>
+        <do_for_each name="$Ship" in="$Ships">
+          <do_if value="$Ship.exists and $Ship.macro == macro.ship_vardath_kopis_factory_macro">
+            <!-- One unit of each tradeable container, liquid and solid ware
+                 per 10 in-game minutes, not instant unlimited cargo. -->
+            <do_for_each name="$Ware" in="lookup.ware.list">
+              <do_if value="$Ware.iscargo and ($Ware.waretransport == waretransport.container or $Ware.waretransport == waretransport.solid or $Ware.waretransport == waretransport.liquid)">
+                <add_cargo object="$Ship" ware="$Ware" exact="1"/>
+              </do_if>
+            </do_for_each>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+    <!-- A CHEAT tender, not a native XL constructor. Cargo-drone-equivalent
+         logistics are simulated by capped actual cargo transfers from this
+         Kopis to a nearby station BUILD STORAGE.
+         A cargo-drone animation cannot be invoked by ordinary MD cargo transfer.
+         Requires manually moving ship within 4 km of recipient station. -->
+    <cue name="DeliverBuildStorage" instantiate="true" checkinterval="2min">
+      <conditions><check_value value="player.age ge 2min"/></conditions>
+      <actions>
+        <find_ship name="$Ships" owner="faction.player" class="class.ship_s"
+                   space="player.galaxy" multiple="true"/>
+        <set_value name="$BuildWares" exact="[ware.energycells, ware.hullparts, ware.claytronics, ware.computronicsubstrate, ware.metallicmicrolattice, ware.siliconcarbide, ware.fieldcoils, ware.advancedcomposites, ware.smartchips, ware.turretcomponents, ware.shieldcomponents, ware.weaponcomponents]"/>
+        <do_for_each name="$Ship" in="$Ships">
+          <do_if value="$Ship.exists and $Ship.macro == macro.ship_vardath_kopis_factory_macro and $Ship.sector.exists">
+            <find_station name="$Stations" space="$Ship.sector" multiple="true"/>
+            <set_value name="$DeliveredThisTick" exact="false"/>
+            <do_for_each name="$Station" in="$Stations">
+              <do_if value="not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 4km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
+                <do_for_each name="$Ware" in="$BuildWares">
+                  <do_if value="$Ship.cargo.{$Ware}.count gt 0">
+                    <set_value name="$Requested" exact="[$Ship.cargo.{$Ware}.count, 25].min"/>
+                    <!-- Remove first, then add actual units to real
+                         station buildstorage. If capacity rejects them,
+                         refund the difference to avoid losses. -->
+                    <set_value name="$Removed" exact="0"/>
+                    <remove_cargo object="$Ship" ware="$Ware" exact="$Requested" result="$Removed"/>
+                    <do_if value="$Removed gt 0">
+                      <set_value name="$Added" exact="0"/>
+                      <add_cargo object="$Station.buildstorage" ware="$Ware" exact="$Removed" result="$Added"/>
+                      <do_if value="$Added lt $Removed">
+                        <add_cargo object="$Ship" ware="$Ware" exact="$Removed - $Added"/>
+                      </do_if>
+                    </do_if>
+                  </do_if>
+                </do_for_each>
+                <set_value name="$DeliveredThisTick" exact="true"/>
+              </do_if>
+            </do_for_each>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+    <!-- One-off blueprint unlock in existing save or new game. -->
+    <cue name="GrantBlueprints" instantiate="true" checkinterval="10s">
+      <conditions><check_value value="player.age ge 10s"/></conditions>
+      <actions>
+        <add_blueprints wares="[ware.ship_vardath_kopis_factory, ware.weapon_vardath_kopis_laser]"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
