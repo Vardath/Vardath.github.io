@@ -1,0 +1,14 @@
+name: Validate X4 Kopis Mobile Forge
+on:
+  push:
+    paths:
+      - "downloads/x4-kopis-production-cheat/**"
+      - ".github/workflows/validate-x4-kopis-production-cheat.yml"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate standalone Kopis Mobile Forge
+        run: python downloads/x4-kopis-production-cheat/validate.py
