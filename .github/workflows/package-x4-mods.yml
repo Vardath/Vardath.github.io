@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - '.github/workflows/package-x4-mods.yml'
+      - 'downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/**'
+      - 'downloads/x4-living-factions-builders/vardath_living_factions_builders/**'
+      - 'downloads/x4-yaki-terran-habs/vardath_yaki_terran_habs/**'
   workflow_dispatch:
 permissions:
   contents: write
