@@ -15,7 +15,7 @@ A **standalone X4: Foundations 9.00** cheat logistics ship extension. Requires *
 | Liquid hold | **1,000,000 m³** |
 | Crew | **250 total seats** across captain, service and marines; X4 allocates the crew categories, not independent 250-person caps |
 | Drone capacity | **512 units** total, including cargo, building and repair drones |
-| Deployables/missiles | **5,000** missile/storage capacity units, depending on engine-defined deployable restrictions |
+| Deployables/missiles | **5,000 deployables**, **500 countermeasures** and **5,000 missiles** (subject to game equipment restrictions) |
 | Hull | **20,000** |
 | Main gun | New **Kopis Forge Laser Mk2+**; same Terran S Mk2 laser projectile/effects but **90 damage vs. 80** (+10, not 10×) |
 | Turret | **One experimental dorsal M turret attachment**; small X4 ships don't normally carry M turrets, so availability/rotation/collision require in-game testing |
