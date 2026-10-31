@@ -22,7 +22,7 @@
         <strafe value="0.6" />
         <angular value="0.7" />
       </jerk>
-      <storage missile="5000" unit="512" />
+      <storage missile="5000" unit="512" deployable="5000" countermeasure="500" />
       <hull max="20000" />
       <glow engine="1" />
       <secrecy level="2" />
