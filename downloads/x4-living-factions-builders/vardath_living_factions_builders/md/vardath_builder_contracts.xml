@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Vardath_BuilderContracts"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- The contract ledger is global MD savegame state, NOT a temporary cue var.
+         Resetting this tick after each run must never reset this ledger. -->
+    <cue name="ContractBilling" instantiate="true" checkinterval="1min">
+      <conditions>
+        <check_value value="player.age ge 1min"/>
+      </conditions>
+      <actions>
+        <do_if value="not md.$VardathBuilderContracts?">
+          <set_value name="md.$VardathBuilderContracts" exact="table[]"/>
+        </do_if>
+
+        <!-- First settle already registered contracts. Only active contract ships
+             are sampled: no galaxy station search, no free/idle-ship wage. -->
+        <do_for_each name="$Builder" in="md.$VardathBuilderContracts.keys.list">
+          <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
+          <do_if value="not $Contract.$Closing">
+            <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$BuildModule.constructionvessel == $Builder and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
+              <!-- Cap sample gap at 2 minutes. Paused/unloaded/mod-disabled
+                   time cannot turn into an unbounded back-payment windfall. -->
+              <set_value name="$Delta" exact="[player.age - $Contract.$LastSample, 2min].min"/>
+              <do_if value="$Delta gt 0s">
+                <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta"/>
+                <do_if value="$Contract.$BuildModule.isbuilding">
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ($Delta / 1h) * 100000Cr"/>
+                </do_if>
+                <do_else>
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ($Delta / 1h) * 25000Cr"/>
+                </do_else>
+              </do_if>
+              <set_value name="$Contract.$LastSample" exact="player.age"/>
+              <!-- Billing is posted once per accrued in-game hour, not once per
+                   periodic tick. The ledger remains in the save across reloads. -->
+              <do_if value="$Contract.$Elapsed ge 1h">
+                <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned"/>
+                <set_value name="$Contract.$Earned" exact="0Cr"/>
+                <set_value name="$Contract.$Elapsed" exact="0s"/>
+              </do_if>
+            </do_if>
+            <do_else>
+              <!-- The assigned job ended or changed. Settle the remaining
+                   fractional hour, close, and never accrue on that job again. -->
+              <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned"/>
+              <set_value name="$Contract.$Earned" exact="0Cr"/>
+              <set_value name="$Contract.$Elapsed" exact="0s"/>
+              <set_value name="$Contract.$Closing" exact="true"/>
+            </do_else>
+          </do_if>
+
+          <!-- A failed or partial faction transfer leaves a recoverable debt
+               rather than marking an unpaid hour as paid. -->
+          <do_if value="$Contract.$Owed gt 0Cr">
+            <set_value name="$Paid" exact="0Cr"/>
+            <transfer_money from="$Contract.$Faction"
+                            to="faction.player"
+                            amount="$Contract.$Owed"
+                            result="$Paid"/>
+            <do_if value="$Paid lt 0Cr">
+              <set_value name="$Paid" exact="-$Paid"/>
+            </do_if>
+            <do_if value="$Paid gt 0Cr">
+              <set_value name="$Contract.$Owed" exact="[0Cr, $Contract.$Owed - $Paid].max"/>
+            </do_if>
+          </do_if>
+          <do_if value="$Contract.$Closing and $Contract.$Owed le 0Cr">
+            <remove_value name="md.$VardathBuilderContracts.{$Builder}"/>
+          </do_if>
+        </do_for_each>
+
+        <!-- Discover contracts through the ship's actual assigned buildmodule.
+             The player must own the ship; the station must be owned by an NPC
+             faction and have a real queued/in-progress construction project. -->
+        <find_ship name="$Builders"
+                   owner="faction.player"
+                   primarypurpose="purpose.build"
+                   class="class.ship_xl"
+                   checkoperational="true"
+                   space="player.galaxy"
+                   multiple="true"/>
+        <do_for_each name="$Builder" in="$Builders">
+          <do_if value="not md.$VardathBuilderContracts.{$Builder}? and $Builder.constructionmodule.exists">
+            <set_value name="$BuildModule" exact="$Builder.constructionmodule"/>
+            <set_value name="$Station" exact="$BuildModule.buildstorage.base"/>
+            <do_if value="$Station.exists and not $Station.isplayerowned and $BuildModule.constructionvessel == $Builder and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
+              <set_value name="md.$VardathBuilderContracts.{$Builder}" exact="table[]"/>
+              <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
+              <set_value name="$Contract.$BuildModule" exact="$BuildModule"/>
+              <set_value name="$Contract.$Station" exact="$Station"/>
+              <set_value name="$Contract.$Faction" exact="$Station.trueowner"/>
+              <set_value name="$Contract.$LastSample" exact="player.age"/>
+              <set_value name="$Contract.$Elapsed" exact="0s"/>
+              <set_value name="$Contract.$Earned" exact="0Cr"/>
+              <set_value name="$Contract.$Owed" exact="200000Cr"/>
+              <set_value name="$Contract.$Closing" exact="false"/>
+              <!-- One hiring fee per unique assignment. No AI-script fee also
+                   fires: the MD ledger is the sole money authority. -->
+              <set_value name="$Paid" exact="0Cr"/>
+              <transfer_money from="$Contract.$Faction"
+                              to="faction.player"
+                              amount="$Contract.$Owed"
+                              result="$Paid"/>
+              <do_if value="$Paid lt 0Cr">
+                <set_value name="$Paid" exact="-$Paid"/>
+              </do_if>
+              <do_if value="$Paid gt 0Cr">
+                <set_value name="$Contract.$Owed" exact="[0Cr, $Contract.$Owed - $Paid].max"/>
+              </do_if>
+            </do_if>
+          </do_if>
+        </do_for_each>
+
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
