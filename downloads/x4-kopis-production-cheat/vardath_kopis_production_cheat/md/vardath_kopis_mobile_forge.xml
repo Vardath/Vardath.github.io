@@ -28,7 +28,7 @@
          logistics are simulated by capped actual cargo transfers from this
          Kopis to a nearby station BUILD STORAGE.
          A cargo-drone animation cannot be invoked by ordinary MD cargo transfer.
-         Requires manually moving ship within 4 km of recipient station. -->
+         Requires manually moving ship within 35 km of recipient station. -->
     <cue name="DeliverBuildStorage" instantiate="true" checkinterval="2min">
       <conditions><check_value value="player.age ge 2min"/></conditions>
       <actions>
@@ -40,7 +40,7 @@
             <find_station name="$Stations" space="$Ship.sector" multiple="true"/>
             <set_value name="$DeliveredThisTick" exact="false"/>
             <do_for_each name="$Station" in="$Stations">
-              <do_if value="not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 4km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
+              <do_if value="not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 35km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
                 <do_for_each name="$Ware" in="$BuildWares">
                   <do_if value="$Ship.cargo.{$Ware}.count gt 0">
                     <set_value name="$Requested" exact="[$Ship.cargo.{$Ware}.count, 25].min"/>
