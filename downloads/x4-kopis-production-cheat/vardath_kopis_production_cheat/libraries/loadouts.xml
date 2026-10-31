@@ -8,7 +8,7 @@
         <weapon macro="weapon_vardath_kopis_laser_macro" path="../con_weapon_01"/>
       </macros>
       <groups>
-        <turrets macro="turret_ter_m_laser_02_mk1_macro" group="group_vardath_dorsal" exact="1"/>
+        <turrets macro="turret_vardath_kopis_beam_macro" group="group_vardath_dorsal" exact="1"/>
       </groups>
       <ammunition>
         <ammunition macro="countermeasure_flares_01_macro" exact="100"/>
