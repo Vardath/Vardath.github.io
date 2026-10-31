@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathYakiFactionHabitats"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- Vanilla Yaki is not an economic expansion faction. Existing saves
+         already have a built wharf from the original construction plan, so
+         the constructionplans.xml patch cannot change that station.
+         This narrow retrofit queues ONE Yaki S habitat at an existing Yaki
+         wharf using normal station expansion, without changing plot bases,
+         adding ships, spawning materials or resetting the wharf. -->
+    <cue name="RetrofitYakiWharfHabitats" instantiate="true" checkinterval="10min">
+      <conditions>
+        <check_value value="player.age ge 10min"/>
+      </conditions>
+      <actions>
+        <do_if value="not md.$VardathYakiHabitatRetrofitted?">
+          <set_value name="md.$VardathYakiHabitatRetrofitted" exact="table[]"/>
+        </do_if>
+        <find_station name="$YakiStations" owner="faction.yaki" space="player.galaxy" multiple="true"/>
+        <do_for_each name="$Station" in="$YakiStations">
+          <do_if value="$Station.exists and $Station.iswharf and $Station.trueowner == faction.yaki and $Station.buildstorage.exists and not md.$VardathYakiHabitatRetrofitted.{$Station}?">
+            <set_value name="$CurrentPlan" exact="$Station.plannedconstruction.sequence"/>
+            <set_value name="$HasYakiHabitat" exact="false"/>
+            <!-- Do not queue another if one is already in the plan. This
+                 includes built, queued and currently constructing modules. -->
+            <do_for_each name="$Entry" in="$CurrentPlan">
+              <do_if value="$Entry.macro == macro.vardath_yaki_hab_s_macro or $Entry.macro == macro.vardath_yaki_hab_m_macro or $Entry.macro == macro.vardath_yaki_hab_l_macro">
+                <set_value name="$HasYakiHabitat" exact="true"/>
+              </do_if>
+            </do_for_each>
+            <do_if value="$HasYakiHabitat">
+              <set_value name="md.$VardathYakiHabitatRetrofitted.{$Station}" exact="true"/>
+            </do_if>
+            <do_elseif value="$CurrentPlan.count gt 0 and $Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count == 0">
+              <!-- Faction-owned Argon/Paranid connector definitions are not
+                   guaranteed for pirate Yaki. Supply vanilla structural
+                   connector macros used in the existing Yaki wharf layout. -->
+              <create_construction_sequence station="$Station" base="$CurrentPlan"
+                                            macros="[macro.vardath_yaki_hab_s_macro]"
+                                            connectors="[macro.struct_par_cross_01_macro, macro.struct_arg_cross_01_macro, macro.struct_arg_base_01_macro]">
+                <immediate result="$NewSequence"/>
+              </create_construction_sequence>
+              <do_if value="$NewSequence">
+                <add_build_to_expand_station result="$BuildTask"
+                                             buildobject="$Station"
+                                             object="$Station.buildstorage"
+                                             constructionplan="$NewSequence"/>
+                <do_if value="$BuildTask">
+                  <set_value name="md.$VardathYakiHabitatRetrofitted.{$Station}" exact="true"/>
+                </do_if>
+              </do_if>
+            </do_elseif>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
