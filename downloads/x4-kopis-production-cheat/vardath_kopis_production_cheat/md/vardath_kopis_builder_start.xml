@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VardathKopisBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <!-- Spawn the two bonus ships once for every new game, independent of
+    <!-- Spawn the two bonus ships once per save, independent of
          which game start was selected.  A saved cue does not repeat on load. -->
-    <cue name="AddKopisEscort" instantiate="true" checkinterval="5s">
+    <cue name="AddKopisEscort" checkinterval="5s">
       <conditions>
-        <check_value value="player.age ge 5s and player.primaryship.exists"/>
+        <check_value value="player.age ge 5s and player.zone.exists"/>
       </conditions>
       <actions>
-        <set_value name="$StartShip" exact="player.primaryship"/>
-        <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartShip.zone">
+        <set_value name="$StartZone" exact="player.zone"/>
+        <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>
           <loadout ref="vardath_kopis_factory_kit"/>
           <pilot faction="yaki" tags="fighterpilot"/>
@@ -17,7 +17,7 @@
         </create_ship>
         <!-- Astrid requires Tides of Avarice; omit it when unavailable. -->
         <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
-          <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$StartShip.zone">
+          <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$StartZone">
             <owner exact="faction.player"/>
             <pilot faction="yaki" tags="fighterpilot"/>
             <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
