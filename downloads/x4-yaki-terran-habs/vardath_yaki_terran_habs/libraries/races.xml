@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Vanilla Yaki is a faction, not an independent workforce race.
+       A race with workforce tag makes the module's workforce race valid.
+       Do not replace Yaki faction settings or alter Terran workforce. -->
+  <add sel="/races">
+    <race id="yaki" name="{20203,2801}" description="{20203,2802}"
+          shortname="{20203,2803}" spacename="{20203,2805}"
+          homespacename="{20203,2806}" names="20301" tags="workforce">
+      <character height="1.78">
+        <speed slowwalk="0.8" walk="1.15" run="2.6" acceleration="4"/>
+        <eventmonitor adjusty="0.1" adjustz="-0.25" facecutscenekey="ShowNPCFaceArgon"/>
+        <spacesuit ref="ship_arg_xs_spacesuit_01_a_macro"/>
+      </character>
+      <icon active="race_terran" inactive="race_terran"/>
+      <trail brightness="1" contrast="1" saturation="0.6" hue="8"/>
+    </race>
+  </add>
+</diff>
