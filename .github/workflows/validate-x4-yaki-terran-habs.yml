@@ -1,0 +1,14 @@
+name: Validate X4 Yaki Terran Habitats
+on:
+  push:
+    paths:
+      - "downloads/x4-yaki-terran-habs/**"
+      - ".github/workflows/validate-x4-yaki-terran-habs.yml"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check standalone Yaki habitat ZIP and source
+        run: python downloads/x4-yaki-terran-habs/validate.py
