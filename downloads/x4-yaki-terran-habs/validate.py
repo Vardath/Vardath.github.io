@@ -10,10 +10,12 @@ import struct
 
 root = Path(__file__).resolve().parent
 mod = root / "vardath_yaki_terran_habs"
-archive = root / "vardath_yaki_terran_habs_v1.0.zip"
+archive = root / "vardath_yaki_terran_habs_v1.1.zip"
 expected = {"content.xml", "README.md", "libraries/material_library.xml",
             "libraries/wares.xml", "libraries/races.xml",
             "libraries/modules.xml", "libraries/modulegroups.xml",
+            "libraries/constructionplans.xml", "libraries/characters.xml",
+            "md/vardath_yaki_faction_habitats.xml",
             "md/vardath_yaki_habitats.xml", "t/0001-l044.xml",
             "assets/textures/yaki_black.dds", "assets/textures/yaki_red.dds"}
 for size in "sml":
@@ -32,6 +34,7 @@ with zipfile.ZipFile(archive) as z:
 
 manifest = ET.parse(mod/"content.xml").getroot()
 assert manifest.tag == "content"
+assert manifest.get("version") == "110"
 assert manifest.get("id") == "vardath_yaki_terran_habs"
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 assert manifest.find("./dependency").get("version") == "900"
@@ -91,5 +94,41 @@ for name in ("yaki_red.dds","yaki_black.dds"):
     assert len(d) == 8320 and d[:4] == b"DDS "
     assert struct.unpack_from("<III", d, 4) == (124,0x81007,128)
     assert d[84:88] == b"DXT1"
+
+# Target only the vanilla Yaki wharf. Avoid patching emergency story plans.
+plans = ET.parse(mod/"libraries/constructionplans.xml").getroot()
+repl = plans.findall("./replace")
+assert len(repl) == 2
+assert all("plan[@id='yak_wharf']" in x.get("sel", "") for x in repl)
+assert {x.text for x in repl} == {"vardath_yaki_hab_m_macro", "vardath_yaki_hab_l_macro"}
+assert all("story_yaki_emergency_station" not in x.get("sel", "") for x in repl)
+assert not any(x.get("sel","").startswith("/factions") for x in plans)
+npc = ET.parse(mod/"md/vardath_yaki_faction_habitats.xml").getroot()
+assert npc.get("name") == "VardathYakiFactionHabitats"
+cue = npc.find(".//cue[@name='RetrofitYakiWharfHabitats']")
+assert cue is not None and cue.get("checkinterval") == "10min"
+assert cue.find("./actions/reset_cue") is not None
+find = cue.find(".//find_station")
+assert find is not None and find.get("owner") == "faction.yaki"
+checks = [x.get("value","") for x in cue.findall(".//do_if")]
+assert any("$Station.iswharf" in x and "trueowner == faction.yaki" in x for x in checks)
+assert any("$HasYakiHabitat" in x for x in checks)
+assert cue.find(".//create_construction_sequence/immediate") is not None
+assert cue.find(".//add_build_to_expand_station") is not None
+assert any(x.get("name", "").startswith("md.$VardathYakiHabitatRetrofitted.")
+           for x in cue.findall(".//set_value"))
+assert not any(x.tag == "create_ship" for x in npc.iter()), "Do not spawn free construction ships"
+
+# Match race='yaki' with real Yaki category clones, without mutating originals.
+actors = ET.parse(mod/"libraries/characters.xml").getroot()
+characters = actors.findall(".//character")
+assert len(characters) >= 16
+assert len({c.get("id") for c in characters}) == len(characters)
+assert all(c.get("id","").startswith("vardath_") for c in characters)
+assert all(c.find("./category").get("race") == "yaki"
+           and "yaki" in c.find("./category").get("faction","")
+           for c in characters)
+assert any("service" in c.find("./category").get("tags","") for c in characters)
+assert any("marine" in c.find("./category").get("tags","") for c in characters)
 
 print(f"PASS: {len(expected)} files; ZIP CRC and exact source; well-formed XML; separate Terran geometry, dark/red materials; DXT1 textures; Yaki workforce, recipes, S/M/L blueprints")
