@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- The Yaki are human. Match Terran workforce provisioning:
+       Terran MRE + Medical Supplies; distinct workforce race from Terran. -->
+  <add sel="/wares/production">
+    <method id="vardath_yaki" name="{995504,1}">
+      <default race="yaki"/>
+    </method>
+  </add>
+  <add sel="/wares/ware[@id='workunit_busy']">
+    <production time="600" amount="200" method="vardath_yaki" name="{995504,1}">
+      <primary>
+        <ware ware="medicalsupplies" amount="45"/>
+        <ware ware="terranmre" amount="43"/>
+      </primary>
+    </production>
+  </add>
+  <add sel="/wares/ware[@id='workunit_idle']">
+    <production time="600" amount="200" method="vardath_yaki" name="{995504,1}">
+      <primary>
+        <ware ware="medicalsupplies" amount="30"/>
+        <ware ware="terranmre" amount="28"/>
+      </primary>
+    </production>
+  </add>
+  <!-- Original Terran recipe, component price and build time for each size. -->
+  <add sel="/wares">
+<ware id="module_vardath_yaki_hab_s" name="{995504,100}" description="{995504,2}" transport="container" volume="1" tags="module">
+      <price min="6164853" average="7252768" max="8340683" />
+      <production time="581" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="40" />
+          <ware ware="energycells" amount="296" />
+          <ware ware="siliconcarbide" amount="83" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_habitation" />
+        </research>
+      </research>
+      <component ref="vardath_yaki_hab_s_macro" />
+      <restriction licence="station_gen_basic" />
+      
+      <owner faction="yaki" />
+    </ware>
+<ware id="module_vardath_yaki_hab_m" name="{995504,110}" description="{995504,2}" transport="container" volume="1" tags="module">
+      <price min="8759787" average="10305632" max="11851477" />
+      <production time="822" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="57" />
+          <ware ware="energycells" amount="419" />
+          <ware ware="siliconcarbide" amount="117" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_habitation" />
+        </research>
+      </research>
+      <component ref="vardath_yaki_hab_m_macro" />
+      <restriction licence="station_gen_intermediate" />
+      
+      <owner faction="yaki" />
+    </ware>
+<ware id="module_vardath_yaki_hab_l" name="{995504,120}" description="{995504,2}" transport="container" volume="1" tags="module">
+      <price min="12310693" average="14483168" max="16655643" />
+      <production time="1162" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="80" />
+          <ware ware="energycells" amount="593" />
+          <ware ware="siliconcarbide" amount="165" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_habitation" />
+        </research>
+      </research>
+      <component ref="vardath_yaki_hab_l_macro" />
+      <restriction licence="station_gen_advanced" />
+      
+      <owner faction="yaki" />
+    </ware>
+  </add>
+</diff>
