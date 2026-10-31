@@ -13,13 +13,6 @@
         <check_value value="not event.param2.isplayerowned or this.ship.gatedistance.{event.param2}.{$blacklistgroup}.{this.ship} ge 0"/>
     </add>
 
-    <!-- Fee is paid only once, by the ship which actually received the station
-         assignment. Payment is an experimental feature pending an X4 runtime test. -->
-    <add sel="//handler[@comment='Requested for build']/actions/assign_construction_vessel" pos="after">
-        <do_if value="this.ship.isplayerowned and not event.param2.isplayerowned and event.param2.constructionvessel == this.ship">
-            <transfer_money from="event.param2.container.owner"
-                            to="faction.player"
-                            amount="50000Cr"/>
-        </do_if>
-    </add>
+    <!-- Contract fees and hourly wages are settled by the separate persistent
+         md/Vardath_BuilderContracts ledger. No money is transferred here. -->
 </diff>
