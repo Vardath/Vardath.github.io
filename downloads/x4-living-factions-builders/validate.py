@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify X4 v1.3 ZIP/source and static payment-ledger invariants.
+"""Verify X4 v1.4 ZIP/source and static payment-ledger invariants.
 
 These are structural, NOT an X4 runtime or engine-XSD conformance test.
 """
@@ -9,7 +9,7 @@ import zipfile
 
 root = Path(__file__).resolve().parent
 mod = root / "vardath_living_factions_builders"
-archive = root / "vardath_living_factions_builders_v1.3.zip"
+archive = root / "vardath_living_factions_builders_v1.4.zip"
 expected = {
     "content.xml",
     "aiscripts/order.build.find.task.xml",
@@ -27,7 +27,7 @@ expected = {
     "ATTRIBUTION.md",
     "README.md",
 }
-assert archive.is_file(), "Missing v1.3 release ZIP"
+assert archive.is_file(), "Missing v1.4 release ZIP"
 with zipfile.ZipFile(archive) as zf:
     assert zf.testzip() is None, "ZIP CRC mismatch"
     members = set(zf.namelist())
@@ -47,7 +47,7 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert manifest.get("version") == "130"
+assert manifest.get("version") == "140"
 assert manifest.find("./dependency").get("version") == "900"
 
 broker = ET.parse(mod / "md/vardath_faction_build_requests.xml").getroot()
@@ -72,13 +72,17 @@ assert signal.get("object") == "$Builder"
 conditions = [n.get("value") or "" for n in cue.findall(".//do_if")]
 assert any("iswaitingforconstructionvessel" in x and "constructionvessel" in x for x in conditions)
 assert any("FindBuildTasks" in x and "not $Builder.nextorder" in x for x in conditions)
-assert any("not $Station.isplayerowned" in x for x in conditions)
+assert any("not $Station.isplayerowned" in x and
+           "$Station.trueowner.hasrelation.dock.{faction.player}" in x
+           for x in conditions), "Hostile NPC stations must be refused at dispatch"
 
 ai = ET.parse(mod / "aiscripts/order.build.find.task.xml").getroot()
 selectors = [x.get("sel") for x in ai if x.get("sel")]
 assert len(selectors) == len(set(selectors)), "Duplicate XPath selectors"
 assert any("or this.ship.isplayerowned" in (x.text or "") for x in ai.findall("./replace"))
 assert ai.findall(".//transfer_money") == [], "Payment must have exactly one MD authority"
+assert any("event.param2.buildstorage.base.trueowner.hasrelation.dock.{faction.player}" in (x.get("value") or "")
+           for x in ai.findall(".//check_value")), "Native requests must reject hostile employers"
 
 billing = ET.parse(mod / "md/vardath_builder_contracts.xml").getroot()
 assert billing.get("name") == "Vardath_BuilderContracts"
@@ -105,6 +109,26 @@ assert all(x.get("from") == "$Contract.$Faction" and
            x.get("result") == "$Paid" and x.get("amount") == "$Contract.$Owed"
            for x in transfers)
 assert all(x.get("value") != "true" for x in pay.findall(".//check_value"))
+# Reputation is awarded only once, on observed completed NPC construction.
+# The saved persistent contract survives save/reload and carries two flags.
+assert ("$Contract.$SawConstruction", "false") in sets
+assert ("$Contract.$SawConstruction", "true") in sets
+assert ("$Contract.$RepGranted", "false") in sets
+assert ("$Contract.$RepGranted", "true") in sets
+guards = [x.get("value","") for x in pay.findall(".//do_if")]
+assert any("$Contract.$SawConstruction" in x and "not $Contract.$RepGranted" in x
+           and "builds.queued.count" in x and "builds.inprogress.count == 0" in x
+           and "$Contract.$Faction.hasrelation.dock.{faction.player}" in x
+           for x in guards), "Reputation completion gate must exclude hostility and canceled queued builds"
+rewards = pay.findall(".//add_faction_relation")
+assert len(rewards) == 1, "Only one reputation authority"
+reward = rewards[0]
+assert reward.get("faction") == "faction.player"
+assert reward.get("otherfaction") == "$Contract.$Faction"
+assert reward.get("value") == "0.00064"
+assert reward.get("reason") == "relationchangereason.missioncompleted"
+assert any("$Station.trueowner.hasrelation.dock.{faction.player}" in v for v in guards)
+assert any("$Contract.$Faction.hasrelation.dock.{faction.player}" in v for v in guards)
 # The optional-free game mode now requires the Cradle of Humanity DLC.
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 gs = ET.parse(mod / "libraries/gamestarts.xml").getroot()
@@ -131,4 +155,4 @@ assert any(x.get("macro") == "ship_gen_xs_buildingdrone_01_a_macro"
            and int(x.get("exact")) >= 30 for x in fit.findall("./ammunition/unit"))
 english = ET.parse(mod / "t/0001-l044.xml").getroot()
 assert english.get("id") == "44" and english.find("./page[@id='995503']") is not None
-print(f"PASS: {len(expected)} matching ZIP/source files; XML; recurring request broker; persisted fee/hourly/final settlement design")
+print(f"PASS: {len(expected)} matching ZIP/source files; XML; recurring request broker; persistent billing, hostile-faction safeguards and once-per-completion reputation logic")
