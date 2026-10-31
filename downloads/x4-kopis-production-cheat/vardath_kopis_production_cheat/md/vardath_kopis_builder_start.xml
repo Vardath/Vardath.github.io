@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathKopisBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- The module is defined only when Living Factions & Builders is installed.
+         Fires only on its Yaki Kyushu new-game start, never on save load. -->
+    <cue name="AddKopisEscort" module="vardath_gamestart_terran_yaki_builder">
+      <conditions>
+        <event_cue_signalled cue="md.Setup.GameStart"/>
+      </conditions>
+      <actions>
+        <set_value name="$Builder" exact="player.primaryship"/>
+        <do_if value="$Builder.exists and $Builder.macro == macro.ship_ter_xl_builder_01_a_macro and $Builder.owner == faction.player">
+          <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$Builder.zone">
+            <owner exact="faction.player"/>
+            <loadout ref="vardath_kopis_factory_kit"/>
+            <pilot faction="player"/>
+          </create_ship>
+          <do_if value="$Forge.exists">
+            <set_object_commander object="$Forge" commander="$Builder" assignment="defence"/>
+          </do_if>
+        </do_if>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
