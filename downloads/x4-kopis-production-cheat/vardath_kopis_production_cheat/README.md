@@ -33,7 +33,7 @@ Ship production applies automatically, whether piloted or AI-controlled. It is l
 
 ## Deliver to nearby build storage
 
-Every **2 in-game minutes**, a player-owned Forge within **4 km** of an existing player/friendly NPC station with a genuine queued or active construction project automatically supplies up to **25 units of each recognized construction material** from its own cargo into the **real station build storage**:
+Every **2 in-game minutes**, a player-owned Forge within **35 km** of an existing player/friendly NPC station with a genuine queued or active construction project automatically supplies up to **25 units of each recognized construction material** from its own cargo into the **real station build storage**:
 
 - Energy cells, hull parts and claytronics
 - Computronic substrate, metallic microlattice and silicon carbide
@@ -50,7 +50,7 @@ It only processes the **first eligible nearby station per ship per tick**, to li
 2. Extract the single `vardath_kopis_production_cheat` directory into your X4 `extensions` directory, **not into either existing Vardath mod**.
 3. Restart the game, enable the extension and keep a backup save.
 4. Look at a Terran/Pioneer **S ship dealer** for **Kopis Mobile Forge**; the blueprint is also granted to you for later wharf ownership.
-5. Order the ship with your preferred S engine, shield and experimental turret, then park it within 4 km of a station that is building modules. Check the ship's hold after 10 minutes and the station's build storage after 2 minutes.
+5. Order the ship with your preferred S engine, shield and experimental turret, then park it within 35 km of a station that is building modules. Check the ship's hold after 10 minutes and the station's build storage after 2 minutes.
 
 Typical Steam location:
 
