@@ -72,6 +72,6 @@ assert producer.find(".//do_for_each[@in='lookup.ware.list']") is not None
 assert producer.find(".//add_cargo[@object='$Ship']") is not None
 assert supplier.find(".//remove_cargo[@object='$Ship']") is not None
 assert supplier.find(".//add_cargo[@object='$Station.buildstorage']") is not None
-assert supplier.find(".//do_if[@value='not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 4km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)']") is not None
+assert supplier.find(".//do_if[@value='not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 35km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)']") is not None
 assert md.find(".//add_blueprints") is not None
 print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew/weapon/turret, resource factory and build supply static invariants")
