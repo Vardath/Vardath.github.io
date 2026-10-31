@@ -6,7 +6,7 @@
         <!-- Re-offer NPC construction work that the native five-gate search misses.
              This searches only when the player owns a working XL builder.
              No jobs, stations, construction materials or free builders are created. -->
-        <cue name="DispatchFactionConstruction" instantiate="true" checkinterval="5min">
+        <cue name="DispatchFactionConstruction_v12" instantiate="true" checkinterval="5min">
             <conditions>
                 <check_value value="player.age ge 5min"/>
             </conditions>
@@ -18,14 +18,22 @@
                            checkoperational="true"
                            space="player.galaxy"
                            multiple="true"/>
-                <do_if value="$PlayerBuilders.count gt 0">
+                <!-- Build a compact candidate list before querying any stations.
+                     Busy, unavailable and manually ordered ships cause no scan. -->
+                <set_value name="$AvailableBuilders" exact="[]"/>
+                <do_for_each name="$Builder" in="$PlayerBuilders">
+                    <do_if value="$Builder.exists and $Builder.pilot.exists and not $Builder.constructionmodule.exists and $Builder.order.id == 'FindBuildTasks' and not $Builder.nextorder">
+                        <append_to_list name="$AvailableBuilders" exact="$Builder"/>
+                    </do_if>
+                </do_for_each>
+                <do_if value="$AvailableBuilders.count gt 0">
                     <find_station name="$FactionStations" space="player.galaxy" multiple="true"/>
                     <do_for_each name="$Station" in="$FactionStations">
                         <do_if value="$Station.exists and not $Station.isplayerowned and $Station.buildstorage.exists">
                             <set_value name="$BuildModule" exact="$Station.buildstorage.buildmodule"/>
                             <!-- Must be ready for a CV with no CV already attached. -->
                             <do_if value="$BuildModule.exists and $BuildModule.iswaitingforconstructionvessel and not $BuildModule.constructionvessel.exists and $Station.tradenpc.exists">
-                                <do_for_each name="$Builder" in="$PlayerBuilders">
+                                <do_for_each name="$Builder" in="$AvailableBuilders">
                                     <do_if value="$Builder.exists and $Builder.pilot.exists and not $Builder.constructionmodule.exists and $Builder.order.id == 'FindBuildTasks' and not $Builder.nextorder and $BuildModule.hasrelation.dock.{$Builder}">
                                         <!-- The receiving FindBuildTasks script checks its range,
                                              blacklists, assignment guard and faction relations.
@@ -39,6 +47,8 @@
                         </do_if>
                     </do_for_each>
                 </do_if>
+                <!-- A completed MD cue does not run again without a reset. -->
+                <reset_cue cue="this"/>
             </actions>
         </cue>
     </cues>
