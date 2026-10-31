@@ -1,52 +1,59 @@
-# Vardath - Living Factions and Builders for X4: Foundations
+# Vardath — Living Factions & Builders, v1.2
 
-**v1.1 experimental — X4 9.00. Automated ZIP/XML checks pass when the associated GitHub Actions workflow is green; no in-game verification has been performed.**
+**Experimental X4: Foundations 9.00 extension.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.2 payment logic has **not been run in X4 itself**; use a backup save.
 
-## What the mod does
+## Features
 
-### NPC faction build requests to YOUR construction ships
+- **NPC construction contracts for player builders:** faction construction sites issue native `request construction vessel` signals to eligible player-owned XL builders that have **Find Build Tasks** active. This includes standard-economy DLC factions, subject to travel, blacklists, station materials, relations and job availability. The special scripts used by Xenon/Kha'ak and some other factions are not necessarily integrated.
+- **Active request broker:** an MD cue repeats at five-in-game-minute intervals. It **skips the galaxy-wide station query altogether** if there are no available player construction ships on Find Build Tasks. The native short-range requests still operate in parallel.
+- **NPC station economic growth:** vanilla shortage-driven expansion may add additional production modules and construct larger factories; stock economic conditions and build queues are still respected.
+- **Player construction jobs:** player stations can send requests to player-owned builders without authorizing NPC ships to accept them automatically.
+- **New contract payroll, v1.2:** one **200,000 Cr hiring fee**, then **100,000 Cr per in-game hour** while the assigned buildmodule reports actively building, or **25,000 Cr per in-game hour** while assigned but not actively building (including transit, build-storage delays and resource waits). **No maximum duration/cap** on an active assignment.
 
-Every **five in-game minutes**, `md/vardath_faction_build_requests.xml` scans stations across the galaxy, including those owned by installed DLC factions, and looks for a genuine construction project that is **already waiting for a construction vessel**. It then reissues X4's own `request construction vessel` signal to suitable player-owned XL construction ships whose current order is **Find Build Tasks**.
+## Contract billing and save/reload rules
 
-This supplements the vanilla construction site's short-range request search, so a player builder does not have to be within the native five-gate scan at the precise time a request first occurs. On receipt, the **unchanged vanilla handler's normal range, permitted-route, relation, and availability checks** still apply, so the builder may decline distant or restricted work. The mod does not forcibly take control of idle/manual-command ships.
+The new separate `md/vardath_builder_contracts.xml` handles **all payments**. The earlier 50,000 Cr AI-script payment has been removed, so there is no competing fee.
 
-The NPC station must have a real queued construction job and be ready to construct. A project lacking necessary resources will not recruit a builder prematurely. The first builder that accepts receives the existing assignment, preventing duplicate bookings. The AI-script patch attempts to transfer **50,000 Cr** from the requesting NPC faction to the player after successful assignment; this payment still needs confirmation in game.
+- Every **one in-game minute**, the payroll script inspects player construction ships and the **actual game-assigned construction module**. It registers a new contract only if that module belongs to an NPC station and has real queued/in-progress building.
+- The first tick detecting an assignment creates a **persistent Mission Director table** indexed by the player ship. The 200,000 Cr fee is invoiced once. If updating a save where a ship is **already on a job**, that existing assignment counts as a new v1.2 contract; you may also have received the older 50,000 Cr in v1.1.
+- The table stores station, assigned module, employing faction, last accrued game time, unbilled earnings, billable time and outstanding debt. It is **not reset** by the billing timer or when the game loads.
+- Each sampled minute is classified by `$BuildModule.isbuilding`: 100,000 Cr/hour when constructing; 25,000 Cr/hour otherwise. The accumulated amount is invoiced **after one hour of combined billable time**. If a contract ends earlier, its accrued **fractional hour is also invoiced**, including upon normal completion/cancellation or changed assignment.
+- A money transfer records its actual result; only the credits actually transferred reduce outstanding debt. Unpaid balances remain in saved ledger state for retry; no re-invoicing an hour already billed, and reopening a saved game does not create another hiring fee for the same live contract.
+- A per-sample upper bound of **two minutes** prevents a long game-time jump or an interrupted/disabled mod from generating arbitrarily large back-pay. Because billing samples at one-minute intervals, at most roughly the final minute of a suddenly ended contract may be missed before the departure is observed; accounting is designed to favour avoiding overpayment.
+- A builder moved to a **new station** begins a new contract, with a new hiring fee, after its old balance has been settled. No player-owned station contracts are billed.
 
-### Station growth
+**Caution:** Save/reload persistence is based on X4's saved MD variables and a saved ledger; this design has not yet been confirmed by repeated in-game save/load tests. This version is ready for testing, but not certified bug-free.
 
-Vanilla shortage-driven faction economy logic requests additional production expansion and creates larger initial factories, within module compatibility limits. This covers factions using the standard economy manager, including DLC factions added to the same system. Xenon, Kha'ak, scripted/custom construction systems, plot-only stations and factions not using that manager are not guaranteed to grow.
+## Install or update
 
-### Player stations
+Download the **[v1.2 ZIP](../vardath_living_factions_builders_v1.2.zip)** and extract the **single** `vardath_living_factions_builders` folder into your X4 `extensions` directory.
 
-A player station can also broadcast a construction request to player builders. NPC builders cannot automatically take those player requests without the normal hiring flow.
+Example default Steam path:
 
-## Installation
+`C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\vardath_living_factions_builders\content.xml`
 
-Download **[v1.1 ZIP](../vardath_living_factions_builders_v1.1.zip)** and extract the **`vardath_living_factions_builders`** directory to your game's extension directory, usually:
+When updating, **replace the existing mod directory**; do not install it beside v1.1. Enable the extension in the X4 Extensions menu, then restart the game. The extension declares no required DLC. Keep a backup save before trying new mod versions.
 
-`C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\vardath_living_factions_builders\`
+## Test checklist
 
-Check that `content.xml` is immediately inside this directory (not doubly nested). Restart X4; enable the extension under Extensions. No DLC is required, but the mod's minimum game version is 9.00.
+1. With the v1.2 extension enabled, save, buy/use a player-owned XL builder and set **Find Build Tasks** as its current default behaviour.
+2. Watch a friendly NPC station with a real queued build hire your ship. The hiring fee should be **200,000 Cr** (after the payroll tick, no more than about a minute of game time).
+3. Leave it working for more than one in-game hour. Check for **100,000 Cr per active hour**; if it waits for resources, those minutes accrue at **25,000 Cr/hour**. Mixed hours yield a weighted amount.
+4. **Save while it is working**, remember the player cash balance, reload and confirm that the hiring fee is not duplicated. Let the next hourly settlement occur exactly once.
+5. End the job before an hour is complete and verify the last fractional accrual is paid; change ship assignments and ensure payments stop.
+6. Test a save where two builders are on different NPC jobs. A periodic payroll scan should not interfere with the faction request broker.
 
-## In-game check
+If wages are absent or credits duplicate, capture your X4 script/debug log and builder/station state. The source may still need X4 runtime/XSD or payment-result adjustments.
 
-1. Back up your save; start the game with at least one player-owned XL construction ship with a pilot, construction drones and **Find Build Tasks** as its active default order.
-2. Check that its travel blacklist and maximum gate range allow routes to friendly NPC faction stations.
-3. Find a non-player station with a queued build, adequate build resources and no construction vessel assigned. The extra broker checks the galaxy every five in-game minutes.
-4. Verify that your builder receives a real deployment order, attaches to that NPC project, travels and begins building. Verify the transfer of 50,000 Cr **once**, not every periodic scan.
-5. If it does not work, capture the X4 debug log (`-debug scripts`) and the source station/ship details. Structural validation alone does not test X4's live Mission Director event or AI handler.
+## Performance / compatibility
 
-**Status:** The request broker and the existing AI changes have not yet been run against an installed X4 game, so any schema-runtime errors, unreachable jobs, and the payment need in-game verification. The mod is source-complete as an initial implementation, not a proven stable release.
+- The payroll scan looks at **player builder ships and a small active-contract ledger** only. It does not scan every station each minute.
+- The job request broker checks faction stations every five in-game minutes **only while an available idle builder exists**.
+- Avoid other builder dispatcher mods that patch `aiscripts/order.build.find.task.xml` and `aiscripts/build.buildstorage.xml`, notably **Player Builder Autodispatch**.
+- Major faction economy overhaul mods may conflict with `md/factionlogic_economy.xml`, `libraries/parameters.xml` and `libraries/modules.xml`.
+- No construction materials are fabricated, no fictitious build jobs are created, and faction bankruptcy/payment edge cases still need testing.
+- The extension is a folder of unpacked XML; X4 loads it directly. No C++ compilation or DLL is needed.
 
-## Compatibility, performance, known limits
+## Attribution and licensing
 
-- Target: X4 9.00. Source uses vanilla-derived 9.00 patterns and contemporary X4 community examples. The 9.00 game's exact installed files and XSDs were unavailable for direct replay validation.
-- NPC jobs are **requested**; the normal order's range, sector blacklist, docking relations and pilot availability still decide whether they are accepted. No new jobs are invented when faction stations have no build queued.
-- Every five minutes, a single galactic station query runs **only if the player owns a functioning XL builder**. The inner dispatch loop is restricted to NPC stations actually waiting for a CV and to player builders with the proper FindBuildTasks order.
-- Disable **Player Builder Autodispatch** while testing: it also patches `aiscripts/order.build.find.task.xml` and `aiscripts/build.buildstorage.xml`.
-- Avoid other faction economy overhauls such as DeadAir Eco during the first test because of overlapping XML patches.
-- No free station modules, no creation of additional construction ships, no bypass of building materials, and no changes to manual builder orders. Any construction already completed remains part of a save after uninstalling.
-
-## Credits / licensing
-
-Made for Vardath in 2026; GPL-3.0-or-later. Dispatch guard and player build-storage request based on drjele/Player Builder Autodispatch (MIT); economy hook patterns based on DeadAir Eco (GPL-3.0) and later 8.x migration. See LICENSE and ATTRIBUTION.md. X4 is owned by Egosoft GmbH.
+See `ATTRIBUTION.md` and `LICENSE`. GPL-3.0-or-later (economy portions are based on DeadAir Eco). Player build-storage dispatch uses patterns adapted from drjele/Player Builder Autodispatch (MIT). X4: Foundations is owned by Egosoft GmbH; this is an independent community mod.
