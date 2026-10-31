@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <!-- Let vanilla shortage-driven faction logic schedule one more module per eligible expansion. -->
+    <!-- The 9.00 staged-plan branch remains under vanilla control; do not replace the plan. -->
+    <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Production_Module']/actions/do_else/do_elseif[@value='$Station']/do_else/do_if[@value='$ProductionMacro']">
+        <do_if value="$WantedProductions.count lt 2">
+            <append_to_list name="$WantedProductions" exact="$ProductionMacro"/>
+        </do_if>
+    </add>
+    <!-- More production capacity for newly requested factories; keep recycling at its vanilla 3. -->
+    <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/do_else/set_value[@exact='if $Ware.hastag.recycling then 3 else 1'][@name='$ProductionLimit']/@exact">if $Ware.hastag.recycling then 3 else 3</replace>
+</diff>

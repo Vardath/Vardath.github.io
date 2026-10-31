@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="vardath_living_factions_builders"
+         name="Vardath - Living Factions and Builders"
+         description="Allows player-owned builders running Find Build Tasks to respond to eligible NPC faction construction requests and attempts to pay a standard 50000-credit hire fee. Enables automatic requests from player build storages. Increases faction economy-driven station module growth, subject to vanilla construction resources, budgets and station plans. Experimental for X4 9.00; back up saves."
+         author="Vardath"
+         version="100"
+         date="2026-10-31"
+         save="0">
+    <dependency version="900"/>
+</content>

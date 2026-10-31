@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <!-- Permit player stations to broadcast for a builder when resources are ready. -->
+    <replace sel="//do_if[@value='not $buildmodule.isplayerowned and $buildmodule.iswaitingforconstructionvessel and not $buildmodule.constructionvessel']/@value">$buildmodule.iswaitingforconstructionvessel and not $buildmodule.constructionvessel</replace>
+    <replace sel="//do_if[@value='not $buildmodule.isplayerowned and $buildmodule.requiresconstructionvessel and not $buildmodule.constructionvessel']/@value">$buildmodule.requiresconstructionvessel and not $buildmodule.constructionvessel</replace>
+</diff>

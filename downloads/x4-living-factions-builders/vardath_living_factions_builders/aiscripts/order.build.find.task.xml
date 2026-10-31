@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <!-- Vanilla limits player-owned builders to player station requests. Allow NPC requests too. -->
+    <replace sel="//handler[@comment='Requested for build']/conditions/check_value[@value='not $playeronly or event.param2.isplayerowned']/@value">not $playeronly or event.param2.isplayerowned or this.ship.isplayerowned</replace>
+
+    <!-- Ensure player station requests cannot be taken by NPC builders for free. -->
+    <!-- Keep blacklist path checks on player requests; use the ship's normal blacklist group. -->
+    <add sel="//init/set_command_action[@commandaction='commandaction.searchingtrades']" pos="after">
+        <include_interrupt_actions ref="GetBlacklistgroup"/>
+    </add>
+    <add sel="//handler[@comment='Requested for build']/conditions/check_value[@value='not $playeronly or event.param2.isplayerowned or this.ship.isplayerowned']" pos="after">
+        <check_value value="not event.param2.isplayerowned or this.ship.isplayerowned"/>
+        <check_value value="not event.param2.isplayerowned or this.ship.gatedistance.{event.param2}.{$blacklistgroup}.{this.ship} ge 0"/>
+    </add>
+
+    <!-- NPC->player builder: charge the faction once when the vanilla assignment succeeds. -->
+    <!-- X4's ordinary builder hire fee is 50000 credits. No fee for the player's own stations. -->
+    <add sel="//handler[@comment='Requested for build']/actions/assign_construction_vessel" pos="after">
+        <do_if value="this.ship.isplayerowned and not event.param2.isplayerowned and (event.param2.constructionvessel == this.ship)">
+            <transfer_money from="event.param2.container.owner" to="faction.player" amount="50000"/>
+        </do_if>
+    </add>
+</diff>
