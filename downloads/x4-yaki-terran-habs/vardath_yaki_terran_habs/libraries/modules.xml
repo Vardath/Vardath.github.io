@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/modules">
+    <module id="hab_vardath_yaki" group="hab_vardath_yaki">
+      <category tags="[habitation, module]" race="yaki" faction="yaki"/>
+    </module>
+  </add>
+</diff>
