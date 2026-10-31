@@ -14,12 +14,14 @@
           <pilot faction="yaki" tags="fighterpilot"/>
           <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
         </create_ship>
-        <!-- Astrid requires Tides of Avarice. Try creation directly; a macro existence test is not a reliable MD guard. -->
+        <!-- Astrid is optional; keep an invalid/unavailable DLC macro from blocking Forge. -->
+        <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
           <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$StartZone">
             <owner exact="faction.player"/>
             <pilot faction="yaki" tags="fighterpilot"/>
             <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
           </create_ship>
+        </do_if>
       </actions>
     </cue>
   </cues>
