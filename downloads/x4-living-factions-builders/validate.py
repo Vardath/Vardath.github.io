@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify X4 v1.2 ZIP/source and static payment-ledger invariants.
+"""Verify X4 v1.3 ZIP/source and static payment-ledger invariants.
 
 These are structural, NOT an X4 runtime or engine-XSD conformance test.
 """
@@ -9,7 +9,7 @@ import zipfile
 
 root = Path(__file__).resolve().parent
 mod = root / "vardath_living_factions_builders"
-archive = root / "vardath_living_factions_builders_v1.2.zip"
+archive = root / "vardath_living_factions_builders_v1.3.zip"
 expected = {
     "content.xml",
     "aiscripts/order.build.find.task.xml",
@@ -17,13 +17,17 @@ expected = {
     "md/factionlogic_economy.xml",
     "md/vardath_faction_build_requests.xml",
     "md/vardath_builder_contracts.xml",
+    "libraries/gamestarts.xml",
+    "libraries/loadouts.xml",
+    "libraries/character_macros.xml",
+    "t/0001-l044.xml",
     "libraries/parameters.xml",
     "libraries/modules.xml",
     "LICENSE",
     "ATTRIBUTION.md",
     "README.md",
 }
-assert archive.is_file(), "Missing v1.2 release ZIP"
+assert archive.is_file(), "Missing v1.3 release ZIP"
 with zipfile.ZipFile(archive) as zf:
     assert zf.testzip() is None, "ZIP CRC mismatch"
     members = set(zf.namelist())
@@ -34,7 +38,8 @@ with zipfile.ZipFile(archive) as zf:
         assert embedded == disk, f"ZIP differs from GitHub source: {rel}"
         if rel.endswith(".xml"):
             node = ET.fromstring(disk)
-            root_name = ("content" if rel == "content.xml" else
+            root_name = ("language" if rel.startswith("t/") else
+                         "content" if rel == "content.xml" else
                          "mdscript" if rel.startswith("md/vardath_") else "diff")
             assert node.tag == root_name, rel
             if node.tag == "diff":
@@ -42,7 +47,7 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert manifest.get("version") == "120"
+assert manifest.get("version") == "130"
 assert manifest.find("./dependency").get("version") == "900"
 
 broker = ET.parse(mod / "md/vardath_faction_build_requests.xml").getroot()
@@ -100,4 +105,30 @@ assert all(x.get("from") == "$Contract.$Faction" and
            x.get("result") == "$Paid" and x.get("amount") == "$Contract.$Owed"
            for x in transfers)
 assert all(x.get("value") != "true" for x in pay.findall(".//check_value"))
+# The optional-free game mode now requires the Cradle of Humanity DLC.
+assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
+gs = ET.parse(mod / "libraries/gamestarts.xml").getroot()
+start = gs.find(".//gamestart[@id='vardath_gamestart_terran_yaki_builder']")
+assert start is not None and start.get("group") == "6"
+player = start.find("./player")
+assert player is not None and player.get("female") == "true"
+assert player.get("macro") == "vardath_terran_female_white_dress_macro"
+ship = player.find("./ship")
+assert ship is not None and ship.get("macro") == "ship_ter_xl_builder_01_a_macro"
+assert ship.find("./pilot").get("faction") == "yaki"
+assert ship.find("./people").get("people") == "player_yaki_veteran_freighter_crew"
+assert ship.find("./loadout").get("ref") == "vardath_kyushu_yaki_start"
+macros = ET.parse(mod / "libraries/character_macros.xml").getroot()
+char = macros.find(".//macro[@name='vardath_terran_female_white_dress_macro']")
+assert char is not None and char.get("class") == "player"
+assert char.find("./component").get("ref") == "character_player_terran_female_01"
+assert any("char_ter_f_crew_uniform_01" in x.get("ref", "")
+           for x in char.findall("./properties/models/model"))
+lo = ET.parse(mod / "libraries/loadouts.xml").getroot()
+fit = lo.find(".//loadout[@id='vardath_kyushu_yaki_start']")
+assert fit is not None and fit.get("macro") == ship.get("macro")
+assert any(x.get("macro") == "ship_gen_xs_buildingdrone_01_a_macro"
+           and int(x.get("exact")) >= 30 for x in fit.findall("./ammunition/unit"))
+english = ET.parse(mod / "t/0001-l044.xml").getroot()
+assert english.get("id") == "44" and english.find("./page[@id='995503']") is not None
 print(f"PASS: {len(expected)} matching ZIP/source files; XML; recurring request broker; persisted fee/hourly/final settlement design")
