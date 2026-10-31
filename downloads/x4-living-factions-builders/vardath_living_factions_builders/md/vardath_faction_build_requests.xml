@@ -29,14 +29,14 @@
                 <do_if value="$AvailableBuilders.count gt 0">
                     <find_station name="$FactionStations" space="player.galaxy" multiple="true"/>
                     <do_for_each name="$Station" in="$FactionStations">
-                        <do_if value="$Station.exists and not $Station.isplayerowned and $Station.buildstorage.exists">
+                        <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner.exists and $Station.trueowner.hasrelation.dock.{faction.player} and $Station.buildstorage.exists">
                             <set_value name="$BuildModule" exact="$Station.buildstorage.buildmodule"/>
                             <!-- Must be ready for a CV with no CV already attached. -->
                             <do_if value="$BuildModule.exists and $BuildModule.iswaitingforconstructionvessel and not $BuildModule.constructionvessel.exists and $Station.tradenpc.exists">
                                 <do_for_each name="$Builder" in="$AvailableBuilders">
                                     <do_if value="$Builder.exists and $Builder.pilot.exists and not $Builder.constructionmodule.exists and $Builder.order.id == 'FindBuildTasks' and not $Builder.nextorder and $BuildModule.hasrelation.dock.{$Builder}">
                                         <!-- The receiving FindBuildTasks script checks its range,
-                                             blacklists, assignment guard and faction relations.
+                                             blacklists, assignment guard and faction relations; enemy factions are filtered before signalling.
                                              This is the exact native request signal and parameter. -->
                                         <signal_objects object="$Builder"
                                                         param="'request construction vessel'"
