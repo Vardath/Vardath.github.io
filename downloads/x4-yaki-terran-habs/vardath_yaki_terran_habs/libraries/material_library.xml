@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/materiallibrary" pos="prepend">
+    <collection name="vardathyaki">
+<material name="black_hull" shader="p1_complex_surface" blendmode="NONE" preview="none">
+        <properties>
+          <property type="BitMap" name="smooth_map" value="extensions\ego_dlc_terran\assets\textures\terran\ter_p1_recreational_01_smooth" />
+          <property type="BitMap" name="diffuse_map" value="extensions\vardath_yaki_terran_habs\assets\textures\yaki_black" />
+          <property type="BitMap" name="normal_map" value="extensions\ego_dlc_terran\assets\textures\terran\ter_p1_recreational_01_normal" />
+          <property type="BitMap" name="color_glow_map" value="extensions\ego_dlc_terran\assets\textures\terran\ter_p1_recreational_01_glow" />
+          <property type="BitMap" name="diffuse_detail_map" value="assets\textures\generic\generic_p1_detail_02_diff" />
+          <property type="BitMap" name="normal_detail_map" value="assets\textures\generic\gen_p2_detail_01_normal" />
+          <property type="BitMap" name="diffuse_paint_map" value="assets\textures\generic\generic_p1_dirt_01_diff" />
+          <property type="BitMap" name="color_dirt_map" value="assets\textures\generic\generic_p1_dirt_02_diff" />
+          <property type="Float" name="diffuseStr" value="1.0" />
+          <property type="Float" name="diffuse_detail_tiling" value="3.0" />
+          <property type="Float" name="diffuse_detail_tiling_v" value="3.0" />
+          <property type="Float" name="diffuse_detailStr" value="1.0" />
+          <property type="Float" name="diffuse_paintStr" value="1.0" />
+          <property type="Float" name="normalStr" value="1.0" />
+          <property type="Float" name="normal_detail_tiling" value="3.0" />
+          <property type="Float" name="normal_detail_tiling_v" value="3.0" />
+          <property type="Float" name="normal_detailStr" value="0.1" />
+          <property type="Float" name="color_glowStr" value="1.0" />
+          <property type="Float" name="color_dirt_tiling" value="5.0" />
+          <property type="Float" name="color_dirt_tiling_v" value="5.0" />
+          <property type="Float" name="color_dirtStr" value="1.0" />
+          <property type="Float" name="environmentStr" value="1.0" />
+          <property type="Float" name="Smoothness" value="1.0" />
+          <property type="Float" name="Metallness" value="0.0" />
+        </properties>
+      </material>
+<material name="red_panels" shader="p2_complex_surface" blendmode="NONE" preview="none">
+        <properties>
+          <property type="BitMap" name="smooth_map" value="assets\textures\terran\ter_p2_hullpattern_01_smooth" />
+          <property type="BitMap" name="diffuse_map" value="extensions\vardath_yaki_terran_habs\assets\textures\yaki_red" />
+          <property type="BitMap" name="normal_map" value="assets\textures\terran\ter_p2_hullpattern_01_normal" />
+          <property type="BitMap" name="metal_map" value="assets\textures\terran\ter_p2_hullpattern_01_metal" />
+          <!--property type="BitMap" name="color_glow_map" value="assets\textures\terran\ter_p2_hullpattern_01_glow" /-->
+          <property type="BitMap" name="height_map" value="assets\textures\terran\ter_p2_hullpattern_01_height" />
+          <property type="BitMap" name="diffuse_detail_map" value="assets\textures\generic\generic_p1_detail_02_diff" />
+          <property type="BitMap" name="normal_detail_map" value="assets\textures\generic\gen_p2_detail_01_normal" />
+          <property type="BitMap" name="diffuse_paint_map" value="assets\textures\generic\generic_p1_dirt_01_diff" />
+          <property type="BitMap" name="color_dirt_map" value="assets\textures\generic\generic_p1_dirt_02_diff" />
+          <property type="Float" name="diffuseStr" value="1.0" />
+          <property type="Float" name="diffuse_detail_tiling" value="3.0" />
+          <property type="Float" name="diffuse_detail_tiling_v" value="3.0" />
+          <property type="Float" name="diffuse_detailStr" value="1.0" />
+          <property type="Float" name="diffuse_paintStr" value="1.0" />
+          <property type="Float" name="normalStr" value="1.0" />
+          <property type="Float" name="normal_detail_tiling" value="20.0" />
+          <property type="Float" name="normal_detail_tiling_v" value="20.0" />
+          <property type="Float" name="normal_detailStr" value="0.3" />
+          <property type="Float" name="color_glowStr" value="0.0" />
+          <property type="Float" name="color_dirt_tiling" value="5.0" />
+          <property type="Float" name="color_dirt_tiling_v" value="5.0" />
+          <property type="Float" name="color_dirtStr" value="1.0" />
+          <property type="Float" name="environmentStr" value="1.0" />
+          <property type="Float" name="Smoothness" value="1.0" />
+          <property type="Float" name="Metallness" value="1.0" />
+          <property type="Float" name="glow_hue" value="0.5" />
+          <property type="Float" name="glow_saturation" value="1.0" />
+          <property type="Float" name="heightStr" value="1" />
+          <property type="Float" name="midlevel" value="1" />
+          <property type="Float" name="aspectratio" value="1.0" />
+        </properties>
+      </material>
+<material name="red_fx" shader="p2_complex_surface" blendmode="NONE" preview="none">
+        <properties>
+          <property type="BitMap" name="diffuse_map" value="extensions\vardath_yaki_terran_habs\assets\textures\yaki_red" />
+          <property type="BitMap" name="normal_map" value="assets\textures\terran\ter_p2_fx_01_normal" />
+          <property type="BitMap" name="metal_map" value="assets\textures\terran\ter_p2_fx_01_metal" />
+          <property type="BitMap" name="smooth_map" value="assets\textures\terran\ter_p2_fx_01_smooth" />
+          <property type="BitMap" name="color_glow_map" value="assets\textures\terran\ter_p2_fx_01_glowhq" />
+          <property type="BitMap" name="height_map" value="assets\textures\terran\ter_p2_fx_01_height" />
+          <property type="BitMap" name="diffuse_detail_map" value="assets\textures\generic\generic_p1_detail_02_diff" />
+          <!--property type="BitMap" name="normal_detail_map" value="assets\textures\generic\gen_p2_detail_01_normal" /-->
+          <property type="BitMap" name="diffuse_paint_map" value="assets\textures\generic\generic_p1_dirt_01_diff" />
+          <property type="BitMap" name="color_dirt_map" value="assets\textures\generic\generic_p1_dirt_02_diff" />
+          <property type="Float" name="diffuseStr" value="1.0" />
+          <property type="Float" name="diffuse_detail_tiling" value="3.0" />
+          <property type="Float" name="diffuse_detail_tiling_v" value="3.0" />
+          <property type="Float" name="diffuse_detailStr" value="1.0" />
+          <property type="Float" name="diffuse_paintStr" value="1.0" />
+          <property type="Float" name="normalStr" value="1.0" />
+          <property type="Float" name="normal_detail_tiling" value="6.0" />
+          <property type="Float" name="normal_detail_tiling_v" value="6.0" />
+          <property type="Float" name="normal_detailStr" value="0.1" />
+          <property type="Float" name="color_glowStr" value="1.0" />
+          <property type="Float" name="Smoothness" value="1.0" />
+          <property type="Float" name="Metallness" value="1.0" />
+          <property type="Float" name="color_dirt_tiling" value="5.0" />
+          <property type="Float" name="color_dirt_tiling_v" value="5.0" />
+          <property type="Float" name="color_dirtStr" value="1.0" />
+          <property type="Float" name="environmentStr" value="1.0" />
+          <property type="Float" name="glow_hue" value="0.5" />
+          <property type="Float" name="glow_saturation" value="1.0" />
+          <property type="Float" name="heightStr" value="3" />
+          <property type="Float" name="midlevel" value="0.5" />
+          <property type="Float" name="aspectratio" value="1.0" />
+        </properties>
+      </material>
+    </collection>
+  </add>
+</diff>
