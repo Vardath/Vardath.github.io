@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Extra selectable Terran start; it does not replace Project Genesis
+       or alter other starts. DLC dependency is in content.xml. -->
+  <add sel="/gamestarts">
+    <gamestart id="vardath_gamestart_terran_yaki_builder"
+               name="{995503,1}"
+               description="{995503,2}"
+               image="gamestart_terran2"
+               group="6">
+      <info>
+        <item name="{1021,8}" value="{995503,3}"/>
+        <item name="{1021,13}" value="{1021,1013}"/>
+        <item name="{1021,9}" value="{1021,52}"/>
+        <item/>
+        <item name="{1021,1}" value="{995503,5}"/>
+        <item name="{1021,2}" value="{995503,4}"/>
+        <item name="{1021,3}" value="{995503,6}"/>
+      </info>
+      <type name="{1021,92}" description="{1021,93}"/>
+      <!-- Same verified Terran-sector reference as the vanilla Terran Cadet.
+           Spawn player aboard her initial XL ship, not on a station. -->
+      <location galaxy="xu_ep2_universe_macro" sector="cluster_101_sector001_macro">
+        <position x="100000" z="50000"/>
+        <rotation yaw="0" pitch="0" roll="0"/>
+      </location>
+      <player macro="vardath_terran_female_white_dress_macro"
+              female="true"
+              money="250000"
+              name="{995503,3}">
+        <ship macro="ship_ter_xl_builder_01_a_macro" name="{995503,4}">
+          <loadout ref="vardath_kyushu_yaki_start"/>
+          <pilot faction="yaki" tags="fighterpilot">
+            <skills>
+              <skill type="piloting" value="10"/>
+              <skill type="morale" value="10"/>
+            </skills>
+          </pilot>
+          <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
+        </ship>
+        <inventory>
+          <ware ware="weapon_gen_spacesuit_repairlaser_01_mk1" amount="1"/>
+          <ware ware="software_scannerobjectmk3" amount="1"/>
+        </inventory>
+        <theme paint="painttheme_player_01"/>
+      </player>
+      <universe>
+        <factions>
+          <relations>
+            <relation faction="terran" otherfaction="player" relation="0.003201"/>
+            <relation faction="pioneers" otherfaction="player" relation="0.003201"/>
+            <relation faction="yaki" otherfaction="player" relation="0.003201"/>
+          </relations>
+        </factions>
+      </universe>
+    </gamestart>
+  </add>
+</diff>
