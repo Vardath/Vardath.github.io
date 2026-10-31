@@ -1,9 +1,11 @@
-# X4: Foundations - Living Factions and Builders
+# X4: Foundations — Vardath Living Factions & Builders
 
-Installable mod folder: `vardath_living_factions_builders/`.
+**Latest version: 1.1 (experimental, targeted at X4 9.00)**
 
-**Download:** [Living Factions & Builders ZIP](./vardath_living_factions_builders_v1.0.zip)
+**[Download v1.1 ZIP](./vardath_living_factions_builders_v1.1.zip)** — extract the `vardath_living_factions_builders` directory to your X4 game's `extensions` folder.
 
-See [installation, features and current testing limitations](./vardath_living_factions_builders/README.md).
+**[Full install instructions, functionality and test limitations](./vardath_living_factions_builders/README.md)**
 
-This folder is a standalone download/source section of the Vardath website repository. It does not modify any existing website pages.
+Version 1.1 adds **active NPC faction construction requests**: a periodic Mission Director broker scans faction stations already waiting for a construction ship and sends native requests to player-owned construction ships running **Find Build Tasks**. Version 1.0's original dispatch and station growth remain, with a small credit denomination fix.
+
+The 1.0 ZIP is retained for historical comparison, but use 1.1 when testing NPC contracts.
