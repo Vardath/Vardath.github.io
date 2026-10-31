@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Clone Najia's Terran female PLAYER macro and substitute the existing
+       white Terran formal uniform / skirt. No edits to any vanilla character. -->
+  <add sel="/macros">
+<macro name="vardath_terran_female_white_dress_macro" class="player">
+    <component ref="character_player_terran_female_01" />
+    <properties>
+      <identification name="{995503,3}" race="terran" faction="player" female="true" image="briefing_najia_takio_01" />
+      <eyepositions lefteye="eye_position_dummy_l" righteye="eye_position_dummy_r">
+        <eyeposition type="x"  exact="0"/>
+        <!--vertical "+" is up-->
+        <eyeposition type="y"  exact="0"/>
+        <!--horizontal "+" is wide-->
+        <eyeposition type="z"  exact="0"/>
+      </eyepositions>
+      <!--Note: when changing facemods here, also change them for character_pioneer_female_plot_pioneer_gamestart_actor_macro-->
+      <facemods>
+        <facemod type="race_cau"           name="Ter_f_cau.mt_race_cau"              exact="0"/>
+        <facemod type="race_afr"           name="Ter_f_cau.mt_race_afr"              exact="0"/>
+        <facemod type="race_asi"           name="Ter_f_cau.mt_race_asi"              exact="1"/>
+        <facemod type="age"                name="Ter_f_cau.mt_age"                   exact="0"/>
+        <facemod type="therica"            name="Ter_f_cau.mt_therica"               exact="0"/>
+
+        <facemod type="brow_inner"         name="Ter_f_cau.mt_brow_inner"            exact="0" />
+        <facemod type="brow_outer"         name="Ter_f_cau.mt_brow_outer"            exact="0" />
+        <facemod type="brow_height"        name="Ter_f_cau.mt_brow_height"           exact="0"  />
+
+        <facemod type="eye_rotation"       name="Ter_f_cau.mt_eye_rotation"          exact="0"  />
+        <facemod type="eye_roundness"      name="Ter_f_cau.mt_eye_roundness"         exact="0"  />
+        <facemod type="eyelid_arch"        name="Ter_f_cau.mt_eyelid_arch"           exact="0"  />
+        <facemod type="eye_corner_inner"   name="Ter_f_cau.mt_eye_corner_inner+"     exact="0"  />
+        <facemod type="eye_corner_outer"   name="Ter_f_cau.mt_eye_corner_outer"      exact="0"  />
+        <facemod type="eyelid_height"      name="Ter_f_cau.mt_eyelid_height"         exact="0"  />
+
+        <facemod type="nose_size"          name="Ter_f_cau.mt_nose_size"             exact="0"  />
+        <facemod type="nose_height"        name="Ter_f_cau.mt_nose_height"           exact="0"  />
+        <facemod type="nose_bridge_width"  name="Ter_f_cau.mt_nose_bridge_width+"    exact="0"  />
+        <facemod type="nose_bridge_size"   name="Ter_f_cau.mt_nose_bridge+"          exact="0"  />
+        <facemod type="nostril_angle"      name="Ter_f_cau.mt_nostril_angle"         exact="0"  />
+        <facemod type="nostril_size"       name="Ter_f_cau.mt_nostril_width"         exact="0"  />
+        <facemod type="nostril_length"     name="Ter_f_cau.mt_nostril_length"        exact="0"  />
+        <facemod type="nose_tip_size"      name="Ter_f_cau.mt_nose_tip_sharpness"    exact="0"  />
+        <facemod type="nose_length"        name="Ter_f_cau.mt_nose_length"           exact="0"  />
+        <facemod type="nose_roll"          name="Ter_f_cau.mt_nose_roll"             exact="0"  />
+        <facemod type="nose_2"             name="Ter_f_cau.mt_nose_2+"               exact="0" />
+
+        <facemod type="cheek_height"               name="Ter_f_cau.mt_cheek_height"                             exact="0"  />
+        <facemod type="cheek_width"                name="Ter_f_cau.mt_cheek_width"                              exact="0.1"  />
+        <facemod type="cheek_rotation"             name="Ter_f_cau.mt_cheek_rotation"                           exact="0.1"  />
+        <facemod type="cheek_roll"                 name="Ter_f_cau.mt_cheek_roll"                               exact="0"  />
+        <facemod type="cheek_round"                name="Ter_f_cau.mt_cheek_round"                              exact="0"  />
+        <facemod type="cheek_size"                name="Ter_f_cau.mt_cheek_size"                                exact="0.2"  />
+
+
+        <facemod type="lip_shape"                name="Ter_f_cau.mt_lip_shape"                                  exact="-0.1"  />
+        <facemod type="lip_lower_thick"          name="Ter_f_cau.mt_lip_lower_thick"                            exact="0.1"  />
+        <facemod type="lip_upper_thick"          name="Ter_f_cau.mt_lip_upper_thick"                            exact="0"  />
+        <facemod type="mouth_size"               name="Ter_f_cau.mt_mouth_size"                                 exact="0.3"  />
+        <facemod type="mouth_width"              name="Ter_f_cau.mt_mouth_width"                                exact="-0.2"  />
+        <facemod type="fulcrum_width"            name="Ter_f_cau.mt_fulcrum_width"                              exact="0"  />
+        <facemod type="mouth_pos_vert"           name="Ter_f_cau.mt_mouth_pos_vert"                             exact="0"  />
+        <facemod type="mouth_roll"               name="Ter_f_cau.mt_mouth_roll"                                 exact="0"  />
+
+
+        <facemod type="jaw_square"             name="Ter_f_cau.mt_jaw_square"                                   exact="-0.1" />
+        <facemod type="jaw_width"              name="Ter_f_cau.mt_jaw_width"                                    exact="-0.3" />
+        <facemod type="jawline"             name="Ter_f_cau.mt_jawline"                                         exact="0.2" />
+        <facemod type="jaw_pos_hor"           name="Ter_f_cau.mt_jaw_pos_hor"                                   exact="0"  />
+
+
+        <facemod type="chin_width"             name="Ter_f_cau.mt_chin_width"                                   exact="-0.2" />
+        <facemod type="chin_square"             name="Ter_f_cau.mt_chin_square"                                 exact="0.2" />
+        <facemod type="chin_height"             name="Ter_f_cau.mt_chin_height"                                 exact="0.2"  />
+
+
+
+        <facemod type="ear_size"       name="Ter_f_cau.mt_ear_size"               exact="0"/>
+        <facemod type="ear_flare"      name="Ter_f_cau.mt_ear_flare"              exact="0"/>
+        <facemod type="ear_angle"       name="Ter_f_cau.mt_ear_angle"             exact="0"/>
+      </facemods>
+      <bonemods>
+        <bonemod type="Legs" exact="1.0">
+          <bones>
+            <bone name="Bip01 Pelvis"/>
+          </bones>
+        </bonemod>
+      </bonemods>
+      <spacesuit macro="ship_arg_xs_spacesuit_01_a_macro" />
+      <models>
+        <model type="head"  ref="assets/characters/argon/heads/char_arg_f_dyn_blend_head" />
+        <model type="torso" ref="extensions/ego_dlc_terran/assets/characters/terran/bodies/char_ter_f_crew_uniform_01" />
+        <model type="props" ref="extensions/ego_dlc_terran/assets/characters/terran/props/Ter_f_hair_short_black_01" />
+      </models>
+    </properties>
+    <connections>
+      <connection ref="computer">
+        <macro ref="entity_betty_macro" connection="player" />
+      </connection>
+    </connections>
+  </macro>
+  </add>
+</diff>
