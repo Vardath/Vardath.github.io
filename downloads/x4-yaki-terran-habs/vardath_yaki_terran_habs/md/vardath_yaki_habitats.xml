@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathYakiHabitats"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- Works on an existing save as well as a new game; the cue completes
+         once and is persisted in the save, preventing repeated grants. -->
+    <cue name="UnlockYakiHabitats" instantiate="true" checkinterval="10s">
+      <conditions>
+        <check_value value="player.age ge 10s"/>
+      </conditions>
+      <actions>
+        <add_blueprints wares="[ware.module_vardath_yaki_hab_s,
+                                ware.module_vardath_yaki_hab_m,
+                                ware.module_vardath_yaki_hab_l]"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
