@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="vardath_living_factions_builders"
          name="Vardath - Living Factions and Builders"
-         description="NPC construction requests for player XL builders, 200000-credit hiring fees, 100000Cr/h active and 25000Cr/h standby, save-persistent payroll ledger. Faction economy-driven station expansion. Experimental X4 9.00."
+         description="NPC construction requests for player XL builders, 200000-credit hiring fees, 100000Cr/h active and 25000Cr/h standby, save-persistent payroll ledger. Faction economy-driven station expansion. Experimental X4 9.00; now includes Terran female white dress and Yaki-crewed Kyushu game start (Cradle of Humanity DLC required)."
          author="Vardath"
-         version="120"
+         version="130"
          date="2026-10-31"
          save="0">
     <dependency version="900"/>
+    <dependency id="ego_dlc_terran" optional="false" name="Cradle of Humanity"/>
 </content>
