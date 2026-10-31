@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Fully fitted Kyushu builder; every XL/M connection group is present
+       in the Cradle of Humanity ship_ter_xl_builder_01 component. -->
+  <add sel="/loadouts">
+    <loadout id="vardath_kyushu_yaki_start" macro="ship_ter_xl_builder_01_a_macro">
+      <macros>
+        <engine macro="engine_ter_xl_travel_01_mk1_macro" path="../con_engine_01"/>
+        <shield macro="shield_ter_xl_standard_01_mk2_macro" path="../con_shieldgen_xl_01"/>
+        <shield macro="shield_ter_xl_standard_01_mk2_macro" path="../con_shieldgen_xl_02"/>
+      </macros>
+      <groups>
+        <shields macro="shield_ter_m_standard_02_mk2_macro" group="group_back_up_mid"/>
+        <shields macro="shield_ter_m_standard_02_mk2_macro" group="group_back_up_left"/>
+        <shields macro="shield_ter_m_standard_02_mk2_macro" group="group_back_up_right"/>
+        <shields macro="shield_ter_m_standard_02_mk2_macro" group="group_back_down_left"/>
+        <shields macro="shield_ter_m_standard_02_mk2_macro" group="group_back_down_right"/>
+        <turrets macro="turret_ter_m_gatling_02_mk1_macro" group="group_back_up_left" exact="2"/>
+        <turrets macro="turret_ter_m_gatling_02_mk1_macro" group="group_back_up_right" exact="2"/>
+        <turrets macro="turret_ter_m_gatling_02_mk1_macro" group="group_back_down_left" exact="2"/>
+        <turrets macro="turret_ter_m_gatling_02_mk1_macro" group="group_back_down_right" exact="2"/>
+      </groups>
+      <ammunition>
+        <ammunition macro="countermeasure_flares_01_macro" exact="20"/>
+        <unit macro="ship_gen_xs_buildingdrone_01_a_macro" exact="36"/>
+        <unit macro="ship_gen_xs_repairdrone_01_a_macro" exact="8"/>
+        <unit macro="ship_gen_xs_cargodrone_equipment_01_a_macro" exact="8"/>
+      </ammunition>
+      <software>
+        <software ware="software_dockmk2"/>
+        <software ware="software_flightassistmk1"/>
+        <software ware="software_scannerlongrangemk2"/>
+        <software ware="software_scannerobjectmk2"/>
+        <software ware="software_targetmk1"/>
+        <software ware="software_trademk1"/>
+      </software>
+      <virtualmacros>
+        <thruster macro="thruster_gen_xl_allround_01_mk2_macro"/>
+      </virtualmacros>
+    </loadout>
+  </add>
+</diff>
