@@ -14,9 +14,9 @@
           <pilot faction="yaki" tags="fighterpilot"/>
           <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
         </create_ship>
-        <!-- Astrid is optional; keep an invalid/unavailable DLC macro from blocking Forge. -->
-        <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
-          <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$StartZone">
+        <!-- Correct Astrid macro, independently guarded to preserve Forge spawning when DLC is absent. -->
+        <do_if value="macro.ship_gen_m_yacht_01_a_macro.exists">
+          <create_ship name="$Astrid" macro="macro.ship_gen_m_yacht_01_a_macro" zone="$StartZone">
             <owner exact="faction.player"/>
             <pilot faction="yaki" tags="fighterpilot"/>
             <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
