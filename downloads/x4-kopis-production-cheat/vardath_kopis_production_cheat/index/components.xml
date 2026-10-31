@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff><add sel="/index">
+  <entry name="ship_vardath_kopis_factory" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\ship_vardath_kopis_factory" />
+</add></diff>
