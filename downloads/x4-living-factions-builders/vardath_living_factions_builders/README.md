@@ -1,6 +1,6 @@
-# Vardath — Living Factions & Builders, v1.2
+# Vardath — Living Factions & Builders, v1.3
 
-**Experimental X4: Foundations 9.00 extension.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.2 payment logic has **not been run in X4 itself**; use a backup save.
+**Experimental X4: Foundations 9.00 extension; X4: Cradle of Humanity DLC is now REQUIRED for the bundled custom gamestart.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.2 payment logic has **not been run in X4 itself**; use a backup save.
 
 ## Features
 
@@ -26,13 +26,13 @@ The new separate `md/vardath_builder_contracts.xml` handles **all payments**. Th
 
 ## Install or update
 
-Download the **[v1.2 ZIP](../vardath_living_factions_builders_v1.2.zip)** and extract the **single** `vardath_living_factions_builders` folder into your X4 `extensions` directory.
+Download the **[v1.3 ZIP](../vardath_living_factions_builders_v1.3.zip)** and extract the **single** `vardath_living_factions_builders` folder into your X4 `extensions` directory.
 
 Example default Steam path:
 
 `C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\vardath_living_factions_builders\content.xml`
 
-When updating, **replace the existing mod directory**; do not install it beside v1.1. Enable the extension in the X4 Extensions menu, then restart the game. The extension declares no required DLC. Keep a backup save before trying new mod versions.
+When updating, **replace the existing mod directory**; do not install it beside v1.2. Enable the extension in the X4 Extensions menu, then restart the game. The extension declares no required DLC. Keep a backup save before trying new mod versions.
 
 ## Test checklist
 
@@ -53,6 +53,23 @@ If wages are absent or credits duplicate, capture your X4 script/debug log and b
 - Major faction economy overhaul mods may conflict with `md/factionlogic_economy.xml`, `libraries/parameters.xml` and `libraries/modules.xml`.
 - No construction materials are fabricated, no fictitious build jobs are created, and faction bankruptcy/payment edge cases still need testing.
 - The extension is a folder of unpacked XML; X4 loads it directly. No C++ compilation or DLL is needed.
+
+## New custom game start (v1.3)
+
+Under **New Game → Terran**, choose **Terran Shipwright — Yaki Company**.
+
+- **Player:** Terran human female with an independent character macro copied from the vanilla female Project Genesis character, wearing the base-game-DLC **white Terran formal dress/skirt** (`char_ter_f_crew_uniform_01`). The original Project Genesis character and all other starts are unchanged.
+- **Initial player-owned ship:** **Kyushu — Yaki Company**, the Terran **Kyushu XL construction ship** (`ship_ter_xl_builder_01_a_macro`).
+- **Equipment:** Terran XL travel engine, two XL shields, five M shields, eight M defensive turrets, Mk2 XL thrusters, standard software and **36 construction drones**, plus repair/cargo drones.
+- **Captain and crew:** Yaki pilot and 85% complement drawn from **Yaki veteran freighter crew**, primarily service crew with a small marine contingent. You are the player character aboard the ship.
+- **Location:** Terran space, using the Terran Cadet's valid starting sector. **Starting credits: 250,000 Cr.**
+- **Diplomacy:** Friendly starting relations with Terran Protectorate, Segaris Pioneers and Yaki. Standard universe and story systems remain enabled.
+
+This is a **fixed additional start**, not the game's configurable Creative Custom Game editor. It appears when you choose *New Game*, not when loading an existing save. The `ego_dlc_terran` dependency is now **required** by this combined mod package. If you do not own Cradle of Humanity, do not install v1.3; instead use the v1.2 package without this start.
+
+Files: `libraries/gamestarts.xml`, `libraries/character_macros.xml`, `libraries/loadouts.xml`, and English text `t/0001-l044.xml`. The start is XML-based and does not require a separate start-up script.
+
+**Unverified in game:** This game's exact modified 9.00 XSD/runtime and rendering are not available in CI. Confirm the start displays in the New Game list, the ship has a working Yaki captain and build drones, the crew is Yaki, and the white skirt renders correctly. Keep a backup save.
 
 ## Attribution and licensing
 
