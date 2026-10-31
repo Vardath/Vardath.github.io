@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Michael (192.168.3.51) at 17.06.2021_17-16-22-->
+<macros>
+  <macro name="vardath_yaki_hab_l_macro" class="habitation">
+    <component ref="vardath_yaki_hab_l" />
+    <properties>
+      <identification name="{995504,120}" shortname="{995504,1}" makerrace="terran" size="large" description="{995504,2}" />
+      <build>
+        <sets>
+          <set ref="factory" />
+          <set ref="headquarters_player" />
+          <set ref="piratebase" />
+        </sets>
+      </build>
+      <explosiondamage value="1000" shield="5000" />
+      <hull max="1200000" />
+      <secrecy level="3" />
+      <workforce race="yaki" capacity="500" />
+    </properties>
+  </macro>
+</macros>
