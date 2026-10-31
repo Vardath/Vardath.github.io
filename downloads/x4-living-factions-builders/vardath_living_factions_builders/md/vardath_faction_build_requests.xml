@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Vardath_FactionBuildRequests"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+    <cues>
+        <!-- Re-offer NPC construction work that the native five-gate search misses.
+             This searches only when the player owns a working XL builder.
+             No jobs, stations, construction materials or free builders are created. -->
+        <cue name="DispatchFactionConstruction" instantiate="true" checkinterval="5min">
+            <conditions>
+                <check_value value="player.age ge 5min"/>
+            </conditions>
+            <actions>
+                <find_ship name="$PlayerBuilders"
+                           owner="faction.player"
+                           primarypurpose="purpose.build"
+                           class="class.ship_xl"
+                           functional="true"
+                           space="player.galaxy"
+                           multiple="true"/>
+                <do_if value="$PlayerBuilders.count gt 0">
+                    <find_station name="$FactionStations" space="player.galaxy" multiple="true"/>
+                    <do_for_each name="$Station" in="$FactionStations">
+                        <do_if value="$Station.exists and not $Station.isplayerowned and $Station.buildstorage.exists">
+                            <set_value name="$BuildModule" exact="$Station.buildstorage.buildmodule"/>
+                            <!-- Must be ready for a CV with no CV already attached. -->
+                            <do_if value="$BuildModule.exists and $BuildModule.iswaitingforconstructionvessel and not $BuildModule.constructionvessel.exists and $Station.tradenpc.exists">
+                                <do_for_each name="$Builder" in="$PlayerBuilders">
+                                    <do_if value="$Builder.exists and $Builder.pilot.exists and not $Builder.constructionmodule.exists and $Builder.order.id == 'FindBuildTasks' and not $Builder.nextorder and $BuildModule.hasrelation.dock.{$Builder}">
+                                        <!-- The receiving FindBuildTasks script checks its range,
+                                             blacklists, assignment guard and faction relations.
+                                             This is the exact native request signal and parameter. -->
+                                        <signal_objects object="$Builder"
+                                                        param="'request construction vessel'"
+                                                        param2="$BuildModule"/>
+                                    </do_if>
+                                </do_for_each>
+                            </do_if>
+                        </do_if>
+                    </do_for_each>
+                </do_if>
+            </actions>
+        </cue>
+    </cues>
+</mdscript>
