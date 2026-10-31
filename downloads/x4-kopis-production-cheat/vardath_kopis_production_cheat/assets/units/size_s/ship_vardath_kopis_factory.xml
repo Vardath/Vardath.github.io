@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported on 2026-05-05 15:35:47-->
+<components>
+  <component name="ship_vardath_kopis_factory" class="ship_s">
+    <source geometry="extensions\ego_dlc_terran\assets\units\size_s\ship_ter_s_miner_solid_01_data" />
+    <layers>
+      <layer>
+        <lights>
+          <omni name="xu_omni_03_01" shadow="0" r="131" g="233" b="255" intensity="0.5999999" specularintensity="1" range="2" shadowrange="2" lighteffect="1" trigger="0">
+            <offset>
+              <position x="0" y="1.355278" z="-3.003967" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_03_02" shadow="0" r="131" g="233" b="255" intensity="0.5999999" specularintensity="1" range="2" shadowrange="2" lighteffect="1" trigger="0">
+            <offset>
+              <position x="-0.03404677" y="1.891099" z="-5.278704" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_06" shadow="0" r="255" g="157" b="123" intensity="2" specularintensity="1" range="2" shadowrange="2" lighteffect="1" trigger="0">
+            <offset>
+              <position x="0.4539505" y="-0.8083017" z="-5.89816" />
+              <quaternion qx="-0.0002062201" qy="0.6755902" qz="-0.0001896126" qw="-0.7372773" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_06_tmp_09" shadow="0" r="131" g="233" b="255" intensity="1.2" specularintensity="1" range="1.2" shadowrange="1.2" lighteffect="1" trigger="0">
+            <offset>
+              <position x="0" y="2.801649" z="-6.676543" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_07" shadow="0" r="55" g="126" b="255" intensity="1" specularintensity="1" range="2.5" shadowrange="2.5" lighteffect="1" trigger="0">
+            <offset>
+              <position x="0.01373938" y="0.3827093" z="-2.301284" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_08" shadow="0" r="255" g="169" b="105" intensity="0.75" specularintensity="1" range="1.85" shadowrange="1.85" lighteffect="1" trigger="0">
+            <offset>
+              <position x="-0.5759151" y="-0.4869997" z="-5.396935" />
+            </offset>
+          </omni>
+          <omni name="xu_omni_mode_light_01" shadow="0" r="210" g="234" b="255" intensity="3" specularintensity="1" range="1.4" shadowrange="1.4" lighteffect="1" lenseffect="modelight" trigger="0">
+            <offset>
+              <position x="-0.0003187112" y="2.739948" z="-1.44533" />
+            </offset>
+          </omni>
+          <spot name="xu_spot_04" angle="81.5" gradientindex="7" shadow="1" r="255" g="218" b="196" intensity="2" specularintensity="1" range="3.5" shadowrange="3.5" lighteffect="1" lenseffect="none" trigger="0">
+            <offset>
+              <position x="-0.4513984" y="0.9732737" z="-5.83603" />
+              <quaternion qx="-0.09226232" qy="-0.5711685" qz="-0.05750724" qw="-0.8136013" />
+            </offset>
+          </spot>
+          <spot name="xu_spot_05" angle="160" gradientindex="2" shadow="1" r="140" g="181" b="255" intensity="3" specularintensity="1" range="3.2" shadowrange="3.2" lighteffect="1" lenseffect="none" trigger="0">
+            <offset>
+              <position x="-0.01512247" y="0.4915526" z="-0.5052996" />
+              <quaternion qx="-0.4867025" qy="-0.4658931" qz="-0.3353867" qw="-0.658468" />
+            </offset>
+          </spot>
+          <arealight name="xu_arealight_02_01" areax="0" areay="0.8" radius="0" spotattenuation="0.648333" shadow="1" r="0" g="198" b="255" intensity="0.2999999" specularintensity="1" range="0.9" shadowrange="0.9" lighteffect="1" lenseffect="none" trigger="0">
+            <offset>
+              <position x="-0.5562096" y="1.670902" z="-2.01435" />
+            </offset>
+          </arealight>
+          <arealight name="xu_arealight_02_02" areax="0" areay="0.8" radius="0" spotattenuation="0.648333" shadow="1" r="0" g="198" b="255" intensity="0.2999999" specularintensity="1" range="0.9" shadowrange="0.9" lighteffect="1" lenseffect="none" trigger="0">
+            <offset>
+              <position x="0.5559999" y="1.670902" z="-2.01435" />
+            </offset>
+          </arealight>
+        </lights>
+        <effectemitters>
+          <emitter name="trail_engine_s_distortion" type="trail_engine_s_distortion">
+            <offset>
+              <position x="0" y="-0.7647955" z="-15.91974" />
+              <quaternion qx="0.7071069" qy="0" qz="0" qw="-0.7071066" />
+            </offset>
+          </emitter>
+        </effectemitters>
+        <trailemitters>
+          <emitter name="trail_ship_s_01" type="trail_ship_s_01">
+            <offset>
+              <position x="0" y="-0.7481397" z="-15.29194" />
+            </offset>
+          </emitter>
+          <emitter name="wingtip_vortex_ship_s_01" type="wingtip_vortex_ship_s_01">
+            <offset>
+              <position x="-3.690376" y="1.626392" z="-11.26217" />
+            </offset>
+          </emitter>
+          <emitter name="wingtip_vortex_ship_s_01001" type="wingtip_vortex_ship_s_01">
+            <offset>
+              <position x="3.697176" y="1.626392" z="-11.26217" />
+            </offset>
+          </emitter>
+        </trailemitters>
+        <sounds>
+          <sound name="x4_cockpit_sound_spl_s_fighter_01" ref="x4_cockpit_sound_arg_s_fighter_02">
+            <offset>
+              <position x="-0.0003187112" y="2.834876" z="-2.157402" />
+            </offset>
+          </sound>
+        </sounds>
+      </layer>
+    </layers>
+    <connections>
+      <connection name="space" tags="ship_s ship" />
+      <connection name="con_npc_teleport" group="cabin_01" tags="npctransport npc_waypoint stand ">
+        <offset>
+          <position x="0.5918564" y="-2.046735" z="-5.871591" />
+          <quaternion qx="0" qy="0.6755902" qz="0" qw="-0.7372774" />
+        </offset>
+      </connection>
+      <connection name="con_tochair" group="pilotcontrol" tags="tochair ">
+        <offset>
+          <position x="-0.0003187112" y="1.15913" z="-2.850929" />
+        </offset>
+      </connection>
+      <connection name="con_dockpos" tags="dockpos ">
+        <offset>
+          <position x="0" y="-2.872711" z="18.44394" />
+        </offset>
+      </connection>
+      <connection name="con_playercontrol" tags="playercontrol ">
+        <offset>
+          <position x="0" y="6.517262" z="12.05439" />
+        </offset>
+      </connection>
+      <connection name="con_scanner_01" tags="small ">
+        <offset>
+          <position x="0" y="6.517262" z="9.753902" />
+          <quaternion qx="0" qy="0.7071068" qz="0" qw="-0.7071067" />
+        </offset>
+      </connection>
+      <connection name="con_shield_01" tags="advanced shield small ">
+        <offset>
+          <position x="0.0295105" y="-1.850444" z="1.607237" />
+          <quaternion qx="1" qy="8.74e-08" qz="0" qw="-1.947e-07" />
+        </offset>
+      </connection>
+      <connection name="con_engine_01" tags="advanced engine platformcollision small ">
+        <offset>
+          <position x="0" y="-0.7647955" z="-11.63336" />
+        </offset>
+      </connection>
+      <connection name="con_storage02" tags="storage ">
+        <offset><position x="-3.5" y="5.0" z="10"/></offset>
+      </connection>
+      <connection name="con_storage03" tags="storage ">
+        <offset><position x="3.5" y="5.0" z="10"/></offset>
+      </connection>
+      <!-- New dorsal M turret connector, physically separate from the nose gun. -->
+      <connection name="con_vardath_turret_01" group="group_vardath_dorsal" tags="turret medium standard missile hittable combat ">
+        <offset>
+          <position x="0" y="3.5" z="-7"/>
+        </offset>
+      </connection>
+      <connection name="con_storage01" tags="storage ">
+        <offset>
+          <position x="0" y="6.517262" z="14.28796" />
+        </offset>
+      </connection>
+      <connection name="con_cargotube" tags="cargotube ">
+        <offset>
+          <position x="0.0295105" y="-1.827294" z="-1.615069" />
+          <quaternion qx="1" qy="0" qz="0" qw="-7.55e-08" />
+        </offset>
+      </connection>
+      <connection name="con_countermeasures_01" tags="countermeasures ">
+        <offset>
+          <position x="0" y="2.271275" z="-12.68094" />
+          <quaternion qx="-0.9634914" qy="0" qz="0" qw="-0.2677392" />
+        </offset>
+      </connection>
+      <connection name="con_betty01" tags="computer " value="-1">
+        <offset>
+          <position x="0" y="6.517262" z="16.47233" />
+        </offset>
+      </connection>
+      <connection name="con_dock_xs" tags="dock_xs ">
+        <offset>
+          <position x="0" y="0.2277174" z="1.231298" />
+          <quaternion qx="0.7071066" qy="0" qz="0" qw="-0.7071069" />
+        </offset>
+      </connection>
+      <connection name="con_cockpit" tags="cockpit cockpit_visible ">
+        <offset>
+          <position x="-0.0003187112" y="2.381292" z="-2.289222" />
+        </offset>
+      </connection>
+      <connection name="con_uianchor" group="pilotcontrol" tags="uianchor ">
+        <offset>
+          <position x="-0.0003187112" y="2.310642" z="-2.050865" />
+        </offset>
+      </connection>
+      <connection name="con_player" tags="player " value="-1">
+        <offset>
+          <position x="-0.0003187112" y="2.316023" z="-2.088012" />
+          <quaternion qx="0.5" qy="-0.5" qz="-0.5" qw="-0.5" />
+        </offset>
+      </connection>
+      <connection name="con_shipstorage_xs_01" tags="dockingbay ">
+        <offset>
+          <position x="0" y="6.517262" z="7.499165" />
+        </offset>
+      </connection>
+      <connection name="con_npc_ladder_bottom01" tags="ladder_bottom npc_waypoint ">
+        <offset>
+          <position x="0.5098931" y="-0.9438193" z="-4.104787" />
+          <quaternion qx="0" qy="1" qz="0" qw="-7.55e-08" />
+        </offset>
+      </connection>
+      <connection name="con_npc_ladder_top01" tags="ladder_top npc_waypoint ">
+        <offset>
+          <position x="0.5297332" y="1.2" z="-4.826385" />
+          <quaternion qx="0" qy="1" qz="0" qw="-7.55e-08" />
+        </offset>
+      </connection>
+      <connection name="con_pickup" tags="pickup ">
+        <offset>
+          <position x="0" y="-1.348155" z="19.35947" />
+        </offset>
+      </connection>
+      <connection name="con_weapon_01" tags="advanced combat mining platformcollision small weapon symmetry symmetry_right ">
+        <offset>
+          <position x="0" y="1.176422" z="13.22747" />
+        </offset>
+      </connection>
+      <connection name="position" tags="position" value="1" />
+      <connection name="Connection01" group=" pilotcontrol" tags="envmap_cockpit part ">
+        <offset>
+          <position x="-0.003194993" y="1.152653" z="-1.93663" />
+          <quaternion qx="2.19e-08" qy="0" qz="0" qw="-1" />
+        </offset>
+        <parts>
+          <part name="part_chair_01" ref="interiors_gen_chair_01.part_chair_01">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.1321258" y="0.09806079" z="0.2841194" />
+              <center x="-1.63266e-05" y="0.09806037" z="0.2426819" />
+            </size>
+            <offset>
+              <position x="0" y="-3.46e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="con_control" group="pilotcontrol" tags="pilot npc sit_pilot sit_terminal_left sit_terminal_right " value="-1" parent="part_chair_01">
+        <offset>
+          <position x="-0.02240068" y="0.01906999" z="-0.0009820461" />
+          <quaternion qx="0" qy="1" qz="-2.19e-08" qw="-4.37e-08" />
+        </offset>
+      </connection>
+      <connection name="Connection02" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_01">
+        <offset>
+          <position x="-0.002760329" y="0.2860189" z="0.2292097" />
+          <quaternion qx="0" qy="1" qz="4.37e-08" qw="-7.55e-08" />
+        </offset>
+        <parts>
+          <part name="part_chair_02" ref="interiors_gen_chair_01.part_chair_02">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2generic.gen_p2_decal_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3631344" y="0.1845014" z="0.741739" />
+              <center x="-0.1274687" y="-0.07716954" z="-0.09674609" />
+            </size>
+            <offset>
+              <position x="0" y="4.46e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection03" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_02">
+        <offset>
+          <position x="-0.002760656" y="0.021357" z="-0.2675585" />
+        </offset>
+        <parts>
+          <part name="part_chair_03" ref="interiors_gen_chair_01.part_chair_03">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3000307" y="0.0694837" z="0.7325997" />
+              <center x="-0.166541" y="-0.001736403" z="-0.3705008" />
+            </size>
+            <offset>
+              <position x="0" y="5.63e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection04" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_03">
+        <offset>
+          <position x="2.426e-07" y="-0.007305819" z="0.3341105" />
+        </offset>
+        <parts>
+          <part name="part_chair_04" ref="interiors_gen_chair_01.part_chair_04">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                  <material id="2" ref="p2generic.gen_p2_decal_01" />
+                  <material id="3" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3497635" y="0.3103207" z="0.462293" />
+              <center x="-0.1365366" y="0.2489382" z="-0.1353518" />
+            </size>
+            <offset>
+              <position x="0" y="4.17e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection05" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_04">
+        <offset>
+          <position x="-1.465e-07" y="0.1074176" z="-0.2239382" />
+          <quaternion qx="0" qy="3.18e-08" qz="0" qw="-1" />
+        </offset>
+        <parts>
+          <part name="part_chair_05" ref="interiors_gen_chair_01.part_chair_05">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.2629063" y="0.4033043" z="0.4792835" />
+              <center x="-0.1253342" y="0.3447011" z="-0.4210559" />
+            </size>
+            <offset>
+              <position x="0" y="5.15e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection06" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_05">
+        <offset>
+          <position x="-7.33e-08" y="0.213999" z="-0.06664062" />
+          <quaternion qx="-5.6e-09" qy="-2.702e-07" qz="0" qw="-1" />
+        </offset>
+        <parts>
+          <part name="part_chair_06" ref="interiors_gen_chair_01.part_chair_06">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                  <material id="2" ref="p2generic.gen_p2_decal_01" />
+                  <material id="3" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="4" ref="p2generic.gen_p2_fx_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.357233" y="0.6074902" z="0.5852606" />
+              <center x="-0.1559955" y="0.5373551" z="-0.3964391" />
+            </size>
+            <offset>
+              <position x="0" y="-4.83e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection07" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_04">
+        <offset>
+          <position x="-6.321e-07" y="0.0956835" z="-0.06022692" />
+          <quaternion qx="1.66e-08" qy="0" qz="0" qw="-1" />
+        </offset>
+        <parts>
+          <part name="part_chair_07" ref="interiors_gen_chair_01.part_chair_07">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="3" ref="p2interior.int_p2_lights_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.4431838" y="0.2522296" z="0.4890422" />
+              <center x="-0.1046457" y="0.1442389" z="-0.03946114" />
+            </size>
+            <offset>
+              <position x="0" y="-1.28e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection08" group=" pilotcontrol" tags="envmap_cockpit part " parent="part_chair_07">
+        <offset>
+          <position x="7.632e-07" y="-0.4541749" z="-0.004853368" />
+          <quaternion qx="-0.258819" qy="-1.378e-07" qz="-5.36e-08" qw="-0.9659258" />
+        </offset>
+        <parts>
+          <part name="part_trackball" ref="interiors_gen_chair_01.part_trackball">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_hudframework_01_a" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.4727064" y="0.2270691" z="0.3052148" />
+              <center x="-0.0003084622" y="0.7513134" z="0.02824008" />
+            </size>
+            <offset>
+              <position x="-2e-10" y="0" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection09" tags="detail_xl forceoutline fx nocollision part ">
+        <offset>
+          <position x="-0.01214021" y="-0.1045933" z="9.158327" />
+        </offset>
+        <parts>
+          <part name="fx_licence">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2paint.pnt_p2_tailnumber_01" />
+                  <material id="2" ref="p2paint.pnt_p2_logo_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="2.12935" y="0.8061121" z="5.109327" />
+              <center x="0.01589084" y="2.425162" z="-11.6766" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection10" group=" " tags="animation part ">
+        <offset>
+          <position x="1.738635" y="-2.187833" z="17.41811" />
+          <quaternion qx="-0.5000004" qy="0.5000002" qz="0.4999996" qw="-0.4999998" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="1.001e-07" y="0" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection11" group=" " tags="animation part ">
+        <offset>
+          <position x="-1.739" y="-2.187833" z="17.41811" />
+          <quaternion qx="0.4999998" qy="-0.4999998" qz="0.5000002" qw="-0.5000002" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001001" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="1.071e-07" y="0" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection12" group=" " tags="animation part ">
+        <offset>
+          <position x="1.483412" y="-2.006257" z="17.26983" />
+          <quaternion qx="1.068e-07" qy="-0.7071064" qz="0.7071072" qw="0" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001002" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="0" z="2.92e-08" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection13" group=" " tags="animation part ">
+        <offset>
+          <position x="1.483412" y="-2.430355" z="17.26983" />
+          <quaternion qx="8.43e-08" qy="0.7071071" qz="0.7071064" qw="-1.911e-07" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001003" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="0" z="1.222e-07" />
+              <quaternion qx="5.96e-08" qy="0" qz="0" qw="-1" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection14" group=" " tags="animation part ">
+        <offset>
+          <position x="0" y="-2.224843" z="-6.951923" />
+          <quaternion qx="8.43e-08" qy="0.7071071" qz="0.7071064" qw="-1.911e-07" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001004" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="0" z="2.2e-09" />
+              <quaternion qx="5.96e-08" qy="0" qz="0" qw="-1" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection15" group=" " tags="animation part ">
+        <offset>
+          <position x="0" y="3.249607" z="-7.403555" />
+          <quaternion qx="-1.911e-07" qy="0.7071064" qz="-0.7071072" qw="-8.43e-08" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001005" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="0" z="8.1e-08" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection16" group=" " tags="animation part ">
+        <offset>
+          <position x="-1.435963" y="0.2003399" z="-6.987414" />
+          <quaternion qx="0.5" qy="-0.5" qz="0.5" qw="-0.5000001" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001006" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="-4.1e-09" y="0" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection17" group=" " tags="animation part ">
+        <offset>
+          <position x="1.436029" y="0.2003399" z="-6.987414" />
+          <quaternion qx="-0.5000002" qy="0.5000001" qz="0.4999998" qw="-0.4999999" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001007" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="-3.5e-09" y="0" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection18" tags="detail_l envmap_cockpit part walk_stairway ">
+        <offset>
+          <position x="0.5098929" y="1.15618" z="-4.793457" />
+          <quaternion qx="0" qy="-0.7071066" qz="0" qw="-0.7071069" />
+        </offset>
+        <parts>
+          <part name="detail_l_ladder">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.5255249" y="1.078872" z="0.2881713" />
+              <center x="-0.2376456" y="-1.033103" z="1.192e-07" />
+            </size>
+            <offset>
+              <quaternion qx="0" qy="-5.96e-08" qz="0" qw="-1" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection19" group=" " tags="animation part ">
+        <offset>
+          <position x="-1.498217" y="-2.006257" z="17.26983" />
+          <quaternion qx="1.068e-07" qy="-0.7071064" qz="0.7071072" qw="0" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001008" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="0" z="5.58e-08" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection20" group=" " tags="animation part ">
+        <offset>
+          <position x="-1.498217" y="-2.430355" z="17.26983" />
+          <quaternion qx="8.43e-08" qy="0.7071071" qz="0.7071064" qw="-1.911e-07" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001009" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="-1.9073e-06" z="9.56e-08" />
+              <quaternion qx="5.96e-08" qy="0" qz="0" qw="-1" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection21" tags="detail_s forceoutline nocollision part ">
+        <parts>
+          <part name="detail_s_main">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="3.107891" y="3.174314" z="17.43311" />
+              <center x="0" y="0.6437641" z="1.277049" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection22" tags="animation part ">
+        <offset>
+          <position x="0" y="0.2308422" z="1.330969" />
+        </offset>
+        <animations>
+          <animation name="landinggears_inactive" start="1" end="2" />
+          <animation name="landinggears_activating" start="3" end="63" />
+          <animation name="landinggears_active" start="64" end="65" />
+          <animation name="landinggears_deactivating" start="66" end="126" />
+        </animations>
+        <parts>
+          <part name="anim_main" wreck="anim_main_wreck">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                  <material id="3" ref="p2terran.ter_p2_fx_01" />
+                  <material id="4" ref="p2generic.gen_p2_fx_01" />
+                </materials>
+              </lod>
+              <lod index="1">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                  <material id="3" ref="p2terran.ter_p2_fx_01" />
+                  <material id="4" ref="p2generic.gen_p2_fx_01" />
+                </materials>
+              </lod>
+              <lod index="2">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                  <material id="3" ref="p2terran.ter_p2_fx_01" />
+                  <material id="4" ref="p2generic.gen_p2_fx_01" />
+                </materials>
+              </lod>
+              <lod index="3">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="4.503073" y="3.049817" z="16.88557" />
+              <center x="0" y="1.788e-07" z="-3.576e-07" />
+            </size>
+            <lights>
+              <arealight name="xu_arealight_10_02" areax="0.1" areay="0.1" radius="0" spotattenuation="0.888889" shadow="1" r="208" g="240" b="255" intensity="10.82334" specularintensity="1" range="200" shadowrange="200" lighteffect="1" lenseffect="none" trigger="0">
+                <offset>
+                  <position x="1.175916" y="-0.5310232" z="16.21564" />
+                  <quaternion qx="0.5000002" qy="-0.4999999" qz="0.4999998" qw="-0.5000001" />
+                </offset>
+                <lightanimations>
+                  <lightanimation name="intensity" controller="linear_float">
+                    <key frame="1" value="94.57416" />
+                    <key frame="2" value="94.57416" />
+                    <key frame="3" value="94.57416" />
+                    <key frame="63" value="0" />
+                    <key frame="64" value="0" />
+                    <key frame="65" value="0" />
+                    <key frame="66" value="0" />
+                    <key frame="126" value="94.57416" />
+                  </lightanimation>
+                </lightanimations>
+              </arealight>
+              <arealight name="xu_arealight_10_01" areax="0.1" areay="0.1" radius="0" spotattenuation="0.888889" shadow="1" r="208" g="240" b="255" intensity="10.82334" specularintensity="1" range="200" shadowrange="200" lighteffect="1" lenseffect="none" trigger="0">
+                <offset>
+                  <position x="-1.131404" y="-0.5310232" z="16.21564" />
+                  <quaternion qx="0.5000002" qy="-0.4999999" qz="0.4999998" qw="-0.5000001" />
+                </offset>
+                <lightanimations>
+                  <lightanimation name="intensity" controller="linear_float">
+                    <key frame="1" value="94.57416" />
+                    <key frame="2" value="94.57416" />
+                    <key frame="3" value="94.57416" />
+                    <key frame="63" value="0" />
+                    <key frame="64" value="0" />
+                    <key frame="65" value="0" />
+                    <key frame="66" value="0" />
+                    <key frame="126" value="94.57416" />
+                  </lightanimation>
+                </lightanimations>
+              </arealight>
+            </lights>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection23" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_main">
+        <offset>
+          <position x="-1.690554" y="-2.784535" z="6.153169" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_f_l">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3784791" y="0.324113" z="2.488632" />
+              <center x="-0.04222119" y="-0.05613995" z="-0.006635666" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection24" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_main">
+        <offset>
+          <position x="1.690554" y="-2.784535" z="6.153169" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_f_r">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3784791" y="0.3242928" z="2.488632" />
+              <center x="0.04222119" y="-0.05631971" z="-0.006635666" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection25" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_main">
+        <offset>
+          <position x="-0.01276088" y="-1.876147" z="-8.299648" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_b_l">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.229287" y="0.3131957" z="0.1372058" />
+              <center x="-1.229287" y="-0.04835796" z="-4.768e-07" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection26" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_landinggear_b_l">
+        <offset>
+          <position x="-1.465308" y="-0.5054662" z="7.82013e-05" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_rear_l">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.8591937" y="0.986281" z="0.1516366" />
+              <center x="-0.2776414" y="0.2564211" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection27" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_main">
+        <offset>
+          <position x="-0.01179373" y="-1.944914" z="-8.299648" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_b_r">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.241523" y="0.2789279" z="0.1372058" />
+              <center x="1.241523" y="-0.01409018" z="-4.768e-07" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection28" tags="animation detail_xl forceoutline iklink part platformcollision " parent="anim_landinggear_b_r">
+        <offset>
+          <position x="1.465308" y="-0.4215221" z="7.53403e-05" />
+        </offset>
+        <parts>
+          <part name="anim_landinggear_rear_r">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.8714294" y="0.9938439" z="0.1516366" />
+              <center x="0.2898774" y="0.2488582" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection29" group=" " tags="animation part ">
+        <offset>
+          <position x="-1.498217" y="-2.188045" z="18.02068" />
+          <quaternion qx="-7.55e-08" qy="1" qz="-4.768e-07" qw="-1.947e-07" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001010" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="-3.19e-08" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection30" group=" " tags="animation part ">
+        <offset>
+          <position x="1.478263" y="-2.188045" z="18.02068" />
+          <quaternion qx="-7.55e-08" qy="1" qz="-4.768e-07" qw="-1.947e-07" />
+        </offset>
+        <parts>
+          <part name="anim_thruster_001011" ref="thruster_ship_s_01.anim_thruster_001">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.3540822" y="0.3540823" z="1.476679" />
+              <center x="4.47e-08" y="9.537e-07" z="-0.02693087" />
+            </size>
+            <offset>
+              <position x="0" y="-4.5e-09" z="0" />
+            </offset>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection31" tags="anim_dockdoor animation detail_xl forceoutline nocollision part ">
+        <offset>
+          <position x="0" y="1.791126" z="2.730242" />
+        </offset>
+        <animations>
+          <animation name="dockingbay_closed" start="1" end="2" />
+          <animation name="dockingbay_opening" start="3" end="63" />
+          <animation name="dockingbay_open" start="64" end="65" />
+          <animation name="dockingbay_closing" start="66" end="126" />
+        </animations>
+        <parts>
+          <part name="anim_hatch">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_hullpattern_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.500007" y="1.660362" z="1.616024" />
+              <center x="0" y="-1.322991" z="-1.381088" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection32" tags="detail_s forceoutline nocollision part ">
+        <parts>
+          <part name="fx_decals">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2paint.pnt_p2_logo_01" />
+                  <material id="2" ref="p2generic.gen_p2_decal_01" />
+                  <material id="3" ref="p2argon.arg_p2_decal_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="2.360885" y="2.720624" z="12.64306" />
+              <center x="6.0201e-06" y="0.04495752" z="1.536715" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection33" tags="detail_xl noshadowcaster part ">
+        <offset>
+          <position x="-1.9073e-06" y="2.915591" z="-3.488109" />
+        </offset>
+        <parts>
+          <part name="cockpit_glass_outside">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_cockpitglassoutside_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.002243" y="0.7181742" z="3.162527" />
+              <center x="1.9372e-06" y="-0.3381193" z="-0.50377" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection34" tags="detail_xl envmap_cockpit noshadowcaster part ">
+        <offset>
+          <position x="0" y="2.914554" z="-3.488123" />
+        </offset>
+        <parts>
+          <part name="cockpit_glass_inside">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_cockpitglassinside_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.9978208" y="0.7172041" z="3.158128" />
+              <center x="-4.47e-08" y="-0.3379812" z="-0.5038147" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection35" tags="anim_cockpit animation envmap_cockpit forceoutline part platformcollision ">
+        <offset>
+          <position x="-0.05336962" y="0.5224608" z="-3.716584" />
+        </offset>
+        <animations>
+          <animation name="cockpit_closed" start="1" end="2" />
+          <animation name="cockpit_opening" start="3" end="63" startsound="1" />
+          <animation name="cockpit_open" start="64" end="65" />
+          <animation name="cockpit_closing" start="66" end="126" starteffect="1" />
+        </animations>
+        <parts>
+          <part name="anim_cockpit">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2generic.gen_p2_carbonfiber_01" />
+                  <material id="4" ref="p2terran.ter_p2_fx_01" />
+                  <material id="5" ref="p2interior.int_p2_lights_01" />
+                </materials>
+              </lod>
+              <lod index="1">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2generic.gen_p2_carbonfiber_01" />
+                  <material id="4" ref="p2terran.ter_p2_fx_01" />
+                  <material id="5" ref="p2interior.int_p2_lights_01" />
+                </materials>
+              </lod>
+              <lod index="2">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2generic.gen_p2_carbonfiber_01" />
+                  <material id="4" ref="p2terran.ter_p2_fx_01" />
+                  <material id="5" ref="p2interior.int_p2_lights_01" />
+                </materials>
+              </lod>
+              <lod index="3">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.06635" y="2.745386" z="3.441031" />
+              <center x="-2.61e-08" y="-5.96e-08" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection36" tags="anim_cockpit animation detail_xl forceoutline iklink part walk_ignoreanimation " parent="anim_cockpit">
+        <offset>
+          <position x="-1.146691" y="-1.426111" z="-1.982848" />
+        </offset>
+        <parts>
+          <part name="anim_door">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="3" ref="p2generic.gen_p2_carbonfiber_01" />
+                  <material id="4" ref="p2interior.int_p2_lights_01" />
+                  <material id="5" ref="p2terran.ter_p2_hullpattern_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.1244717" y="1.008396" z="1.091323" />
+              <center x="0.03658557" y="-0.09793192" z="-0.4811139" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection37" tags="anim_cockpit animation detail_xl forceoutline iklink part platformcollision walk_ignoreanimation " parent="anim_cockpit">
+        <offset>
+          <position x="0.9988548" y="-2.6732" z="-1.914554" />
+        </offset>
+        <parts>
+          <part name="anim_ramp">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2multimat.p2_multimat_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="3" ref="p2terran.ter_p2_fx_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="2.060228" y="0.1117182" z="0.4955173" />
+              <center x="-2.05821" y="0.06453371" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection38" tags="detail_s envmap_cockpit forceoutline nocollision part ">
+        <offset>
+          <position x="0" y="0.02482128" z="2.191895" />
+        </offset>
+        <parts>
+          <part name="anim_cockpit_detail_xs">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2generic.gen_p2_carbonfiber_01" />
+                  <material id="3" ref="p2generic.gen_p2_glassinterior_01" />
+                  <material id="4" ref="p2fx.fx_p2_hudframework_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.032831" y="2.52515" z="2.83853" />
+              <center x="-0.06680623" y="0.3682472" z="-6.216504" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection39" tags="detail_xl noshadowcaster part ">
+        <offset>
+          <position x="0" y="2.583511" z="-4.006536" />
+        </offset>
+        <parts>
+          <part name="window_border_trim">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_windowtrim_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.9801186" y="0.7064391" z="3.132585" />
+              <center x="-1.49e-08" y="-0.0002228916" z="-0.0002496243" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection40" tags="detail_xl noshadowcaster part ">
+        <offset>
+          <position x="0" y="2.583684" z="-4.006332" />
+        </offset>
+        <parts>
+          <part name="window_mode_trim">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_modetrim_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.9812847" y="0.7072019" z="3.133171" />
+              <center x="-1.49e-08" y="-6.557e-07" z="-1.192e-07" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection41" tags="animation detail_m forceoutline nocollision part textureanimation ">
+        <animations>
+          <animation name="loop" start="1" end="100" />
+        </animations>
+        <parts>
+          <part name="anim_poslights">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_gradientcolour_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="4.488498" y="2.737665" z="14.14693" />
+              <center x="-0.001691341" y="0.4082692" z="2.712174" />
+            </size>
+            <uv_animations>
+              <uv_animation rotaroundcenter="1" mapchannel="1">
+                <uv_property name="u_offset" controller="linear_float">
+                  <key frame="1" value="0" />
+                  <key frame="4" value="0" />
+                  <key frame="5" value="-0.4" />
+                  <key frame="9" value="-0.4" />
+                  <key frame="10" value="0" />
+                  <key frame="14" value="0" />
+                  <key frame="15" value="-0.4" />
+                  <key frame="64" value="-0.4" />
+                  <key frame="65" value="0" />
+                  <key frame="69" value="0" />
+                  <key frame="70" value="-0.4" />
+                  <key frame="99" value="-0.4" />
+                  <key frame="100" value="-0.4" />
+                </uv_property>
+              </uv_animation>
+            </uv_animations>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection42" group=" " tags="envmap_cockpit part ">
+        <offset>
+          <position x="0.5949371" y="-0.836807" z="-5.872094" />
+          <quaternion qx="0" qy="0.6755902" qz="0" qw="-0.7372773" />
+        </offset>
+        <parts>
+          <part name="detail_l_airlock" ref="interiors_arg_airlock_02.detail_l_airlock">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2generic.gen_p2_fx_01" />
+                  <material id="4" ref="p2generic.gen_p2_decal_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.618134" y="1.168217" z="0.618134" />
+              <center x="0" y="-0.1182174" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection43" group=" " tags="envmap_cockpit part ">
+        <offset>
+          <position x="0.9446989" y="-0.7954385" z="-5.902411" />
+          <quaternion qx="0" qy="0.6755902" qz="0" qw="-0.7372773" />
+        </offset>
+        <parts>
+          <part name="detail_xl_switch" ref="interiors_arg_airlock_02.detail_xl_switch">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2interior.int_p2_lights_01" />
+                  <material id="3" ref="p2fx.fx_p2_hudframework_02_a" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.1155996" y="0.2735191" z="0.04358803" />
+              <center x="-5.77e-08" y="1.49e-08" z="1.043e-07" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="Connection44" group=" cabin_01" tags="envmap_cockpit part ">
+        <offset>
+          <position x="0.5949373" y="-0.836807" z="-5.872095" />
+          <quaternion qx="0" qy="-0.2164398" qz="0" qw="-0.9762959" />
+        </offset>
+        <parts>
+          <part name="detail_l_door" ref="interiors_arg_airlock_02.detail_l_door">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2multimat.p2_multimat_01" />
+                  <material id="3" ref="p2argon.arg_p2_decal_01" />
+                  <material id="4" ref="p2generic.gen_p2_decal_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.4593886" y="1.069761" z="0.1318675" />
+              <center x="0" y="-0.14906" z="0.4201804" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="ConnectionForanim_flame_01" tags="animation detail_l engineeffect fx nocollision part speedscale_forward textureanimation useobjectrotation ">
+        <offset>
+          <position x="-0.3654941" y="-0.7647955" z="-11.2073" />
+        </offset>
+        <animations>
+          <animation name="loop" start="1" end="10" />
+        </animations>
+        <restrictions>
+          <restriction type="rotation_x">
+            <limits>
+              <min value="-15" />
+              <max value="15" />
+            </limits>
+          </restriction>
+        </restrictions>
+        <parts>
+          <part name="anim_flame_01">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2fx.fx_p2_thruster_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="0.924648" y="1.388833" z="6.907539" />
+              <center x="0.3850102" y="0.01780635" z="-6.15907" />
+            </size>
+            <uv_animations>
+              <uv_animation rotaroundcenter="1" mapchannel="1">
+                <uv_property name="u_offset" controller="linear_float">
+                  <key frame="1" value="0.3" />
+                  <key frame="10" value="3" />
+                </uv_property>
+              </uv_animation>
+            </uv_animations>
+          </part>
+        </parts>
+      </connection>
+      <connection name="ConnectionForpart_engine" tags="engineeffect forceoutline part platformcollision ">
+        <offset>
+          <position x="0" y="-0.7647955" z="-7.346999" />
+        </offset>
+        <parts>
+          <part name="part_engine" wreck="part_engine_wreck">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_02" />
+                  <material id="3" ref="p2terran.ter_p2_enginetrim_01" />
+                </materials>
+              </lod>
+              <lod index="1">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_02" />
+                  <material id="3" ref="p2terran.ter_p2_enginetrim_01" />
+                </materials>
+              </lod>
+              <lod index="2">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_02" />
+                  <material id="3" ref="p2terran.ter_p2_enginetrim_01" />
+                </materials>
+              </lod>
+              <lod index="3">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="2" ref="p2terran.ter_p2_enginetrim_01" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.326945" y="1.658918" z="2.704435" />
+              <center x="0" y="0.03550363" z="-2.662331" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="enginealign" tags="enginealign ">
+        <offset>
+          <position x="0" y="0" z="-15" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFordetail_l_merged" tags="detail_l detail_m nocollision part ">
+        <offset>
+          <position x="0.01103968" y="-0.04474509" z="8.481855" />
+        </offset>
+        <parts>
+          <part name="detail_l_merged">
+            <lods>
+              <lod index="0">
+                <materials>
+                  <material id="1" ref="p2generic.gen_p2_hulltexture_02" />
+                  <material id="2" ref="p2generic.gen_p2_hulltexture_01" />
+                  <material id="3" ref="p2terran.ter_p2_fx_01" />
+                  <material id="4" ref="p2terran.ter_p2_hullpattern_01" />
+                  <material id="5" ref="p2terran.ter_p2_hullpattern_01_b" />
+                </materials>
+              </lod>
+            </lods>
+            <size>
+              <max x="1.185673" y="2.235003" z="6.824307" />
+              <center x="-0.01103973" y="-0.5130523" z="-2.078692" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+    </connections>
+  </component>
+</components>
