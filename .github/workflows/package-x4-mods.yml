@@ -1,0 +1,52 @@
+name: Package three X4 mods
+on:
+  push:
+    paths:
+      - '.github/workflows/package-x4-mods.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate and package three extensions
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile, xml.etree.ElementTree as ET
+          root=Path("downloads")
+          mods=[
+            ("x4-living-factions-builders","vardath_living_factions_builders","vardath_living_factions_builders_TEST.zip"),
+            ("x4-yaki-terran-habs","vardath_yaki_terran_habs","vardath_yaki_terran_habs_TEST.zip"),
+            ("x4-kopis-production-cheat","vardath_kopis_production_cheat","vardath_kopis_production_cheat_TEST.zip")
+          ]
+          for folder,mod,archive in mods:
+            source=root/folder/mod
+            assert (source/"content.xml").is_file(), source
+            paths=sorted(p for p in source.rglob("*") if p.is_file())
+            for p in paths:
+              if p.suffix.lower()==".xml":
+                ET.parse(p)
+            target=root/folder/archive
+            with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED) as z:
+              for p in paths: z.write(p,p.relative_to(source.parent))
+            with zipfile.ZipFile(target) as z:
+              assert z.testzip() is None
+              assert len(z.namelist())==len(paths)
+            print(target,len(paths),"files")
+          PY
+      - name: Commit installable ZIPs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-living-factions-builders/*_TEST.zip downloads/x4-yaki-terran-habs/*_TEST.zip downloads/x4-kopis-production-cheat/*_TEST.zip
+          git diff --cached --quiet || (git commit -m "Package three X4 test extensions" && git push)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Vardath-X4-three-mods-test
+          path: |
+            downloads/x4-living-factions-builders/*_TEST.zip
+            downloads/x4-yaki-terran-habs/*_TEST.zip
+            downloads/x4-kopis-production-cheat/*_TEST.zip
