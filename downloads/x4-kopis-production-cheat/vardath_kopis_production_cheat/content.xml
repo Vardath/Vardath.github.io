@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="vardath_kopis_production_cheat"
+         name="Vardath - Kopis Production Cheat"
+         description="Standalone superfast Kopis mobile resource factory and station build-storage feeder. Huge 3-way cargo and drone/crew capacities, custom laser and dorsal M turret."
+         author="Vardath" version="100" date="2026-10-31" save="1" enabled="1">
+  <dependency version="900"/>
+  <dependency id="ego_dlc_terran" optional="false" name="Cradle of Humanity"/>
+</content>
