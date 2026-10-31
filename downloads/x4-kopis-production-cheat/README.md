@@ -4,7 +4,7 @@
 
 [Download the ready-to-install ZIP](./vardath_kopis_production_cheat_v1.0.zip)
 
-Creates a **new Kopis Mobile Forge** (does not overwrite Kopis), with Dart-inspired ~540 m/s target normal speed, **1 million m³ each** of container, solid and liquid cargo space, **250 crew**, **512 drone slots**, huge deployables capacity, an enhanced Terran laser (+10 damage), and an experimental M turret hardpoint.
+Creates a **new Kopis Mobile Forge** (does not overwrite Kopis), with Dart-inspired ~540 m/s target normal speed, **1 million m³ each** of container, solid and liquid cargo space, **250 crew**, **512 drone slots**, 5,000 deployables, 500 countermeasures, an enhanced Terran laser (+10 damage), and an experimental M turret hardpoint.
 
 Every ten in-game minutes, it attempts to generate **one unit of each cargo resource** into its own real hold. Within four kilometres of a station building modules, it feeds up to 25 units of common construction wares into that station's real build storage every two in-game minutes.
 
