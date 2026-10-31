@@ -15,6 +15,13 @@
             <loadout ref="vardath_kopis_factory_kit"/>
             <pilot faction="player"/>
           </create_ship>
+          <!-- Optional Tides of Avarice yacht; player-owned and independently piloted. -->
+          <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
+            <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$Builder.zone">
+              <owner exact="faction.player"/>
+              <pilot faction="player"/>
+            </create_ship>
+          </do_if>
           <do_if value="$Forge.exists">
             <set_object_commander object="$Forge" commander="$Builder" assignment="defence"/>
           </do_if>
