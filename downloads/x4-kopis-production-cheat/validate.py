@@ -36,6 +36,8 @@ assert ship is not None
 assert ship.find("./component").get("ref")=="ship_vardath_kopis_factory"
 assert ship.find("./properties/storage").get("unit")=="512"
 assert ship.find("./properties/storage").get("missile")=="5000"
+assert ship.find("./properties/storage").get("deployable")=="5000"
+assert ship.find("./properties/storage").get("countermeasure")=="500"
 assert ship.find("./properties/people").get("capacity")=="250"
 assert ship.find("./properties/physics").get("mass")=="1.6"
 assert ship.find("./properties/physics/drag").get("forward")=="0.6"
