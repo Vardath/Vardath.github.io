@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="vardath_yaki_terran_habs" name="Vardath - Yaki Terran Habitats"
-    description="Standalone S/M/L Terran habitation variants with black/red materials, Yaki workforce and unlocked blueprints."
-    author="Vardath" version="100" date="2026-10-31" save="1" enabled="1">
+    description="Standalone S/M/L Terran habitation variants, black/red materials, Yaki workforce, NPC wharf integration and unlocked blueprints."
+    author="Vardath" version="110" date="2026-10-31" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ego_dlc_terran" optional="false" name="Cradle of Humanity"/>
   <text language="44" name="Vardath - Yaki Terran Habitats" description="Standalone red-and-black Terran habitation for Yaki workforce." author="Vardath"/>
