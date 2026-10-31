@@ -15,7 +15,7 @@
                            owner="faction.player"
                            primarypurpose="purpose.build"
                            class="class.ship_xl"
-                           functional="true"
+                           checkoperational="true"
                            space="player.galaxy"
                            multiple="true"/>
                 <do_if value="$PlayerBuilders.count gt 0">
