@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VardathKopisBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <!-- The module is defined only when Living Factions & Builders is installed.
-         Fires only on its Yaki Kyushu new-game start, never on save load. -->
-    <cue name="AddKopisEscort" module="vardath_gamestart_terran_yaki_builder">
+    <!-- Spawn the two bonus ships once for every new game, independent of
+         which game start was selected.  A saved cue does not repeat on load. -->
+    <cue name="AddKopisEscort" instantiate="true" checkinterval="5s">
       <conditions>
-        <event_cue_signalled cue="md.Setup.GameStart"/>
+        <check_value value="player.age ge 5s and player.primaryship.exists"/>
       </conditions>
       <actions>
-        <set_value name="$Builder" exact="player.primaryship"/>
-        <do_if value="$Builder.exists and $Builder.macro == macro.ship_ter_xl_builder_01_a_macro and $Builder.owner == faction.player">
-          <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$Builder.zone">
+        <set_value name="$StartShip" exact="player.primaryship"/>
+        <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartShip.zone">
+          <owner exact="faction.player"/>
+          <loadout ref="vardath_kopis_factory_kit"/>
+          <pilot faction="yaki" tags="fighterpilot"/>
+          <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
+        </create_ship>
+        <!-- Astrid requires Tides of Avarice; omit it when unavailable. -->
+        <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
+          <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$StartShip.zone">
             <owner exact="faction.player"/>
-            <loadout ref="vardath_kopis_factory_kit"/>
             <pilot faction="yaki" tags="fighterpilot"/>
             <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
           </create_ship>
-          <!-- Optional Tides of Avarice yacht; player-owned and independently piloted. -->
-          <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
-            <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$Builder.zone">
-              <owner exact="faction.player"/>
-              <pilot faction="yaki" tags="fighterpilot"/>
-            <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
-            </create_ship>
-          </do_if>
-          <do_if value="$Forge.exists">
-            <set_object_commander object="$Forge" commander="$Builder" assignment="defence"/>
-          </do_if>
         </do_if>
       </actions>
     </cue>
