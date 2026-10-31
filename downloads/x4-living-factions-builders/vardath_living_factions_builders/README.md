@@ -1,38 +1,52 @@
 # Vardath - Living Factions and Builders for X4: Foundations
 
-**Status: X4 9.00 experimental release 1.0. Source XML validated, in-game behavior untested.**
+**v1.1 experimental — X4 9.00. Automated ZIP/XML checks pass when the associated GitHub Actions workflow is green; no in-game verification has been performed.**
 
-This is one standalone extension in two parts:
+## What the mod does
 
-1. **NPC contracts for player builders (priority):** a player-owned construction ship with **Find Build Tasks** can respond to eligible requests from NPC build storages, if the vanilla script's search range, relations, availability and travel checks permit. After a successful assignment, the mod **attempts** to transfer the normal 50,000-credit hire fee from the requesting faction to the player. Actual payment must be verified in game; do not assume the fee succeeds until tested.
-2. **Growing NPC stations:** the vanilla economy manager can request an additional production module during eligible shortage-driven expansions, and request up to three production modules in a newly created factory where formerly it requested one. Common production-module preferred/hard caps are increased to 3/5. Resource supply, builder availability, station designs and faction economy decisions still control whether projects happen.
-3. **Player station support:** player-owned stations can broadcast available builder tasks to player builders. NPC builders cannot automatically take a player request outside the normal manual-hire process.
+### NPC faction build requests to YOUR construction ships
 
-The extension uses **no hard-coded faction IDs**, so it applies to factions that call the vanilla faction economy manager, including supported DLC economies. It does NOT promise that specialized Xenon/Kha'ak or custom faction AI will use standard growth routines; a faction lacking a regular economy manager needs dedicated integration. The extension does not forcibly upgrade every defensive platform or shipyard. The 9.00 staged construction-plan branch remains untouched.
+Every **five in-game minutes**, `md/vardath_faction_build_requests.xml` scans stations across the galaxy, including those owned by installed DLC factions, and looks for a genuine construction project that is **already waiting for a construction vessel**. It then reissues X4's own `request construction vessel` signal to suitable player-owned XL construction ships whose current order is **Find Build Tasks**.
 
-## Installation on Windows
+This supplements the vanilla construction site's short-range request search, so a player builder does not have to be within the native five-gate scan at the precise time a request first occurs. On receipt, the **unchanged vanilla handler's normal range, permitted-route, relation, and availability checks** still apply, so the builder may decline distant or restricted work. The mod does not forcibly take control of idle/manual-command ships.
 
-Download the ZIP from the project folder and extract the ONE folder `vardath_living_factions_builders` into:
+The NPC station must have a real queued construction job and be ready to construct. A project lacking necessary resources will not recruit a builder prematurely. The first builder that accepts receives the existing assignment, preventing duplicate bookings. The AI-script patch attempts to transfer **50,000 Cr** from the requesting NPC faction to the player after successful assignment; this payment still needs confirmation in game.
 
-`C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\`
+### Station growth
 
-The resulting file must be `...\extensions\vardath_living_factions_builders\content.xml` (no extra nested folder). Enable **Vardath - Living Factions and Builders** in X4's Extensions menu, then restart X4. No DLC is required.
+Vanilla shortage-driven faction economy logic requests additional production expansion and creates larger initial factories, within module compatibility limits. This covers factions using the standard economy manager, including DLC factions added to the same system. Xenon, Kha'ak, scripted/custom construction systems, plot-only stations and factions not using that manager are not guaranteed to grow.
 
-## Use
+### Player stations
 
-Give each player builder the **Find Build Tasks** default behavior. Ensure it has construction drones, crew and an unrestricted route to NPC factions with which you can dock. Look for an NPC station already waiting for a builder and with materials in build storage. A contractor ship will respond to the vanilla build request; it will NOT spontaneously select every idle builder or build without materials.
+A player station can also broadcast a construction request to player builders. NPC builders cannot automatically take those player requests without the normal hiring flow.
 
-**Important:** take a separate backup save before enabling. Wait for a requesting NPC station, then verify (a) its builder slot is filled by your ship, (b) the ship arrives, (c) construction actually begins, (d) 50,000 credits transfer exactly once. Report any failure with X4 9.00 version and debug log. Station growth can take hours of game time and is triggered by economic conditions.
+## Installation
 
-## Compatibility and limits
+Download **[v1.1 ZIP](../vardath_living_factions_builders_v1.1.zip)** and extract the **`vardath_living_factions_builders`** directory to your game's extension directory, usually:
 
-- X4 9.00 targeted; untested against later releases.
-- The file `aiscripts/order.build.find.task.xml` overlaps other builder dispatch mods such as **Player Builder Autodispatch**. **Disable that mod** while using this extension to avoid duplicated selectors/commands.
-- `md/factionlogic_economy.xml`, `libraries/parameters.xml` and `libraries/modules.xml` overlap major economy overhauls such as DeadAir Eco. Avoid combining them until compatibility is validated.
-- Does not change construction resources, create builders out of thin air, create unlimited station modules or override all faction build queues.
-- The XPath selectors use known 8.x/9.00 modding references but have NOT been checked against an extracted local copy of the latest installed game. If an XPath does not match the exact current game, its feature will not apply. This is a testable initial build, not a claim of completed in-game verification.
-- Removing the mod later stops new boosted development; existing physical modules built during play remain in the save.
+`C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\vardath_living_factions_builders\`
 
-## Source, credits and licence
+Check that `content.xml` is immediately inside this directory (not doubly nested). Restart X4; enable the extension under Extensions. No DLC is required, but the mod's minimum game version is 9.00.
 
-Source is in the `vardath_living_factions_builders` folder beside this README. Original adaptation by Vardath, 2026. The player station dispatch and path guard are adapted from **drjele / Player Builder Autodispatch** (MIT). Economic growth hooks are adapted from **DeadAirRT / deadair_eco** and later community adaptations (GPL-3.0). See `ATTRIBUTION.md` and `LICENSE`. Distributed as GPL-3.0-or-later because of the economy hook lineage. X4: Foundations is owned by Egosoft GmbH; no affiliation.
+## In-game check
+
+1. Back up your save; start the game with at least one player-owned XL construction ship with a pilot, construction drones and **Find Build Tasks** as its active default order.
+2. Check that its travel blacklist and maximum gate range allow routes to friendly NPC faction stations.
+3. Find a non-player station with a queued build, adequate build resources and no construction vessel assigned. The extra broker checks the galaxy every five in-game minutes.
+4. Verify that your builder receives a real deployment order, attaches to that NPC project, travels and begins building. Verify the transfer of 50,000 Cr **once**, not every periodic scan.
+5. If it does not work, capture the X4 debug log (`-debug scripts`) and the source station/ship details. Structural validation alone does not test X4's live Mission Director event or AI handler.
+
+**Status:** The request broker and the existing AI changes have not yet been run against an installed X4 game, so any schema-runtime errors, unreachable jobs, and the payment need in-game verification. The mod is source-complete as an initial implementation, not a proven stable release.
+
+## Compatibility, performance, known limits
+
+- Target: X4 9.00. Source uses vanilla-derived 9.00 patterns and contemporary X4 community examples. The 9.00 game's exact installed files and XSDs were unavailable for direct replay validation.
+- NPC jobs are **requested**; the normal order's range, sector blacklist, docking relations and pilot availability still decide whether they are accepted. No new jobs are invented when faction stations have no build queued.
+- Every five minutes, a single galactic station query runs **only if the player owns a functioning XL builder**. The inner dispatch loop is restricted to NPC stations actually waiting for a CV and to player builders with the proper FindBuildTasks order.
+- Disable **Player Builder Autodispatch** while testing: it also patches `aiscripts/order.build.find.task.xml` and `aiscripts/build.buildstorage.xml`.
+- Avoid other faction economy overhauls such as DeadAir Eco during the first test because of overlapping XML patches.
+- No free station modules, no creation of additional construction ships, no bypass of building materials, and no changes to manual builder orders. Any construction already completed remains part of a save after uninstalling.
+
+## Credits / licensing
+
+Made for Vardath in 2026; GPL-3.0-or-later. Dispatch guard and player build-storage request based on drjele/Player Builder Autodispatch (MIT); economy hook patterns based on DeadAir Eco (GPL-3.0) and later 8.x migration. See LICENSE and ATTRIBUTION.md. X4 is owned by Egosoft GmbH.
