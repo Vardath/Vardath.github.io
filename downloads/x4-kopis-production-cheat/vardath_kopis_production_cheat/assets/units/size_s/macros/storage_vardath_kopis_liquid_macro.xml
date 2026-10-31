@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <macro name="storage_vardath_kopis_liquid_macro" class="storage">
+    <component ref="generic_storage"/>
+    <properties>
+      <identification makerrace="terran"/>
+      <cargo max="1000000" tags="liquid"/>
+      <hull integrated="1"/>
+    </properties>
+  </macro>
+</macros>
