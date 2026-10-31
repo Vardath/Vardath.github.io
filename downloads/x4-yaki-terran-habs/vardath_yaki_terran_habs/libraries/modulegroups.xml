@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/groups">
+    <group name="hab_vardath_yaki">
+      <select macro="vardath_yaki_hab_s_macro"/>
+      <select macro="vardath_yaki_hab_m_macro"/>
+      <select macro="vardath_yaki_hab_l_macro"/>
+    </group>
+  </add>
+</diff>
