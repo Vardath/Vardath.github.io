@@ -1,0 +1,14 @@
+name: Validate X4 Living Factions extension
+on:
+  push:
+    paths:
+      - "downloads/x4-living-factions-builders/**"
+      - ".github/workflows/validate-x4-living-factions.yml"
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check extension and ZIP
+        run: python downloads/x4-living-factions-builders/validate.py
