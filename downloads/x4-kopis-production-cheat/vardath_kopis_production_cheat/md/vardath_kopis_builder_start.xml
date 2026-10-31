@@ -13,13 +13,15 @@
           <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$Builder.zone">
             <owner exact="faction.player"/>
             <loadout ref="vardath_kopis_factory_kit"/>
-            <pilot faction="player"/>
+            <pilot faction="yaki" tags="fighterpilot"/>
+            <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
           </create_ship>
           <!-- Optional Tides of Avarice yacht; player-owned and independently piloted. -->
           <do_if value="macro.ship_pir_m_yacht_01_a_macro.exists">
             <create_ship name="$Astrid" macro="macro.ship_pir_m_yacht_01_a_macro" zone="$Builder.zone">
               <owner exact="faction.player"/>
-              <pilot faction="player"/>
+              <pilot faction="yaki" tags="fighterpilot"/>
+            <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
             </create_ship>
           </do_if>
           <do_if value="$Forge.exists">
