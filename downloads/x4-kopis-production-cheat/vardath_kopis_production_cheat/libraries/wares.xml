@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/wares">
+    <!-- Ship is sold by Terran/Pioneer S shipyards, not spawned for free. -->
+    <ware id="ship_vardath_kopis_factory" name="{995506,1}" description="{995506,2}" transport="ship" volume="1" tags="ship">
+      <price min="7400000" average="8500000" max="9800000"/>
+      <production time="5" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="150"/>
+          <ware ware="energycells" amount="1000"/>
+          <ware ware="metallicmicrolattice" amount="400"/>
+          <ware ware="siliconcarbide" amount="50"/>
+        </primary>
+      </production>
+      <component ref="ship_vardath_kopis_factory_macro"/>
+      <restriction licence="generaluseship"/>
+      <owner faction="pioneers"/>
+      <owner faction="terran"/>
+    </ware>
+    <ware id="weapon_vardath_kopis_laser" name="{995506,3}" description="{995506,4}"
+          group="weapons" transport="equipment" volume="1" tags="equipment weapon">
+      <price min="350000" average="390000" max="450000"/>
+      <production time="10" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="17"/>
+          <ware ware="energycells" amount="585"/>
+          <ware ware="metallicmicrolattice" amount="187"/>
+          <ware ware="siliconcarbide" amount="20"/>
+        </primary>
+      </production>
+      <component ref="weapon_vardath_kopis_laser_macro"/>
+      <restriction licence="generaluseequipment"/>
+      <owner faction="pioneers"/>
+      <owner faction="terran"/>
+    </ware>
+  </add>
+</diff>
