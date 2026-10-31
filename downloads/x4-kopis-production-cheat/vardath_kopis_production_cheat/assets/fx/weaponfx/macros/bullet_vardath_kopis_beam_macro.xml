@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<diff>
+<macros>
   <!-- Copy Terran Meson Stream beam projectile, preserving all beam mechanics. -->
-  <add sel="/macros">
-    <macro name="bullet_vardath_kopis_beam_macro" class="bullet">
+  <macro name="bullet_vardath_kopis_beam_macro" class="bullet">
       <component ref="bullet_ter_m_beam_01_mk1"/>
       <properties>
         <bullet speed="2.997925e+08" lifetime="1.75" range="6800" amount="1" barrelamount="1" icon="weapon_beam_mk1" maxhits="3" ricochet="0" scale="1" attach="1" mass="0.01"/>
@@ -12,5 +11,4 @@
         <weapon system="weapon_standard"/>
       </properties>
     </macro>
-  </add>
-</diff>
+</macros>
