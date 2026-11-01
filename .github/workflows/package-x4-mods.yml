@@ -70,6 +70,8 @@ jobs:
         run: python downloads/x4-living-factions-builders/validate.py
       - name: Validate exactly three Yaki Terran rings, snap points and packaged ZIP
         run: python downloads/x4-yaki-terran-habs/validate.py
+      - name: Validate Kopis and repeating player-owned Astrid replacement
+        run: python downloads/x4-kopis-production-cheat/validate.py
       - name: Commit installable ZIPs
         run: |
           git config user.name "github-actions[bot]"
