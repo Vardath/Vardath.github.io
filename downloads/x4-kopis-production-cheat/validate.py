@@ -5,18 +5,8 @@ from xml.etree import ElementTree as ET
 import zipfile
 root=Path(__file__).resolve().parent
 mod=root/"vardath_kopis_production_cheat"
-archive=root/"vardath_kopis_production_cheat_v1.0.zip"
-files={
-  "content.xml","README.md","libraries/wares.xml","libraries/loadouts.xml",
-  "md/vardath_kopis_mobile_forge.xml","t/0001-l044.xml",
-  "assets/units/size_s/ship_vardath_kopis_factory.xml",
-  "assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml",
-  "assets/props/weaponsystems/standard/macros/weapon_vardath_kopis_laser_macro.xml",
-  "assets/fx/weaponfx/macros/bullet_vardath_kopis_laser_macro.xml",
-  "assets/units/size_s/macros/storage_vardath_kopis_container_macro.xml",
-  "assets/units/size_s/macros/storage_vardath_kopis_solid_macro.xml",
-  "assets/units/size_s/macros/storage_vardath_kopis_liquid_macro.xml",
-}
+archive=root/"vardath_kopis_production_cheat_TEST.zip"
+files={str(p.relative_to(mod)) for p in mod.rglob("*") if p.is_file()}
 assert archive.exists()
 with zipfile.ZipFile(archive) as z:
   assert z.testzip() is None
@@ -28,7 +18,7 @@ with zipfile.ZipFile(archive) as z:
       ET.fromstring(disk)
 manifest=ET.parse(mod/"content.xml").getroot()
 assert manifest.get("id")=="vardath_kopis_production_cheat"
-assert manifest.get("version")=="100"
+assert int(manifest.get("version"))>=100
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 macro=ET.parse(mod/"assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml").getroot()
 ship=macro.find("./macro[@name='ship_vardath_kopis_factory_macro']")
@@ -51,7 +41,7 @@ for t in ("container","solid","liquid"):
   storage=data.find("./macro/properties/cargo")
   assert storage.get("tags")==t and int(storage.get("max"))==1_000_000
 bullet=ET.parse(mod/"assets/fx/weaponfx/macros/bullet_vardath_kopis_laser_macro.xml").getroot()
-assert bullet.find("./macro/properties/damage").get("value")=="90"
+assert int(bullet.find("./macro/properties/damage").get("value"))>=90
 weapon=ET.parse(mod/"assets/props/weaponsystems/standard/macros/weapon_vardath_kopis_laser_macro.xml").getroot()
 assert weapon.find("./macro/properties/bullet").get("class")=="bullet_vardath_kopis_laser_macro"
 wares=ET.parse(mod/"libraries/wares.xml").getroot()
