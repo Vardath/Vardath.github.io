@@ -19,7 +19,10 @@
         <do_for_each name="$Builder" in="md.$VardathBuilderContracts.keys.list">
           <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
           <do_if value="not $Contract.$Closing">
-            <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$BuildModule.constructionvessel == $Builder and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction.exists and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
+            <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction.exists and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
+              <!-- X4 only sets buildmodule.constructionvessel once the builder
+                   has deployed. Ship.constructionmodule is the actual assigned
+                   build module, including transit and material waiting. -->
               <!-- Bill the FULL game-time interval since the preceding sample.
                    SETA advances player.age, so delayed payroll ticks must not
                    discard elapsed minutes. The existing $Delta gt 0s guard
@@ -87,11 +90,12 @@
         </do_for_each>
 
         <!-- Discover contracts through the ship's actual assigned buildmodule.
+             Do not require a deployed constructionvessel or primarypurpose filter:
+             those can suppress genuine paid assignments. -->
              The player must own the ship; the station must be owned by an NPC
              faction and have a real queued/in-progress construction project. -->
         <find_ship name="$Builders"
                    owner="faction.player"
-                   primarypurpose="purpose.build"
                    class="class.ship_xl"
                    space="player.galaxy"
                    multiple="true"/>
@@ -99,7 +103,7 @@
           <do_if value="not md.$VardathBuilderContracts.{$Builder}? and $Builder.constructionmodule.exists">
             <set_value name="$BuildModule" exact="$Builder.constructionmodule"/>
             <set_value name="$Station" exact="$BuildModule.buildstorage.base"/>
-            <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner.exists and $Station.trueowner.hasrelation.dock.{faction.player} and $BuildModule.constructionvessel == $Builder and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
+            <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner.exists and $Station.trueowner.hasrelation.dock.{faction.player} and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
               <set_value name="md.$VardathBuilderContracts.{$Builder}" exact="table[]"/>
               <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
               <set_value name="$Contract.$BuildModule" exact="$BuildModule"/>
