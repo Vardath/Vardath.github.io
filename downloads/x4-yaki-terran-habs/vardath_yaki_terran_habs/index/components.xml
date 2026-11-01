@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/index">
+    <entry name="vardath_yaki_hab_s" value="extensions\vardath_yaki_terran_habs\assets\structures\habitat\vardath_yaki_hab_s"/>
+    <entry name="vardath_yaki_hab_m" value="extensions\vardath_yaki_terran_habs\assets\structures\habitat\vardath_yaki_hab_m"/>
+    <entry name="vardath_yaki_hab_l" value="extensions\vardath_yaki_terran_habs\assets\structures\habitat\vardath_yaki_hab_l"/>
+  </add>
+</diff>
