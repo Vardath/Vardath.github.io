@@ -18,7 +18,7 @@ with zipfile.ZipFile(archive) as z:
       ET.fromstring(disk)
 manifest=ET.parse(mod/"content.xml").getroot()
 assert manifest.get("id")=="vardath_kopis_production_cheat"
-assert int(manifest.get("version"))>=102
+assert int(manifest.get("version"))>=103
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 macro=ET.parse(mod/"assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml").getroot()
 ship=macro.find("./macro[@name='ship_vardath_kopis_factory_macro']")
@@ -102,6 +102,33 @@ assert spawn is not None and spawn.get("counter")=="$ForgeIndex"
 assert len(spawn.findall("./create_ship"))==1
 assert spawn.find("./create_ship[@macro='macro.ship_vardath_kopis_factory_macro']/owner[@exact='faction.player']") is not None
 assert spawn.find("./create_ship/loadout[@ref='vardath_kopis_factory_kit']") is not None
+# Astrid ownership watch runs on existing saves and every minute thereafter.
+# Check true ownership galaxy-wide, INCLUDING docked/off-sector ships, and
+# keep creation inside the zero-owned branch: no duplicate rewards.
+astrid_root=ET.parse(mod/"md/vardath_astrid_builder_start.xml").getroot()
+assert astrid_root.get("name")=="VardathAstridBuilderStart"
+watch=astrid_root.find("./cues/cue[@name='MaintainPlayerAstrid_v103']")
+assert watch is not None, "New cue name reactivates the watch on existing saves"
+assert watch.get("instantiate")=="true" and watch.get("checkinterval")=="1min"
+assert watch.find("./actions/reset_cue[@cue='this']") is not None
+search=watch.find("./actions/find_ship_by_true_owner")
+assert search is not None and search.get("faction")=="faction.player"
+assert search.get("macro")=="macro.ship_gen_m_yacht_01_a_macro"
+assert search.get("space")=="player.galaxy" and search.get("multiple")=="true"
+assert search.get("recursive")=="true", "Count player Astrids even when docked"
+missing=watch.find("./actions/do_if[@value='$PlayerAstrids.count == 0']")
+assert missing is not None
+assert len(watch.findall(".//create_ship"))==1, "Exactly one spawn per missing-Astrid check"
+astrid=missing.find("./create_ship[@macro='macro.ship_gen_m_yacht_01_a_macro'][@sector='player.sector']")
+assert astrid is not None and astrid.get("name")=="$Astrid"
+assert astrid.find("./owner[@exact='faction.player']") is not None
+assert astrid.find("./pilot/select[@faction='faction.yaki']") is not None
+assert astrid.find("./people[@ref='player_yaki_veteran_freighter_crew']/fillpercent") is not None
+assert astrid.find("./safepos[@object='player.ship'][@exact='3km']") is not None
+assert watch.find("./actions/create_ship") is None, "Do not grant a ship unless player owns zero"
+# No ownership-based creation happens from a startup-only cue.
+assert astrid_root.find(".//cue[@name='AddAstridEscort']") is None
+
 assert md.find(".//add_blueprints") is not None
 assert "ware.turret_vardath_kopis_beam" in md.find(".//add_blueprints").get("wares")
-print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew, 10-start spawn, vanilla-compatible weapon socket, S turret template, owner equipment wares and build supply static invariants")
+print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew, 10-start spawn, persistent owned-Astrid replacement, vanilla-compatible weapon socket, S turret template, owner equipment wares and build supply static invariants")
