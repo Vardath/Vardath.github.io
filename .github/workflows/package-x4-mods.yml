@@ -68,6 +68,8 @@ jobs:
           PY
       - name: Validate builder payroll and packaged ZIP
         run: python downloads/x4-living-factions-builders/validate.py
+      - name: Validate exactly three Yaki Terran rings, snap points and packaged ZIP
+        run: python downloads/x4-yaki-terran-habs/validate.py
       - name: Commit installable ZIPs
         run: |
           git config user.name "github-actions[bot]"
