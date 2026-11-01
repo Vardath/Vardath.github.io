@@ -20,9 +20,12 @@
           <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
           <do_if value="not $Contract.$Closing">
             <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$BuildModule.constructionvessel == $Builder and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction.exists and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
-              <!-- Cap sample gap at 2 minutes. Paused/unloaded/mod-disabled
-                   time cannot turn into an unbounded back-payment windfall. -->
-              <set_value name="$Delta" exact="[player.age - $Contract.$LastSample, 2min].min"/>
+              <!-- Bill the FULL game-time interval since the preceding sample.
+                   SETA advances player.age, so delayed payroll ticks must not
+                   discard elapsed minutes. The existing $Delta gt 0s guard
+                   rejects zero or negative intervals after a clock discontinuity.
+                   Payment remains restricted to a still-valid NPC build contract. -->
+              <set_value name="$Delta" exact="player.age - $Contract.$LastSample"/>
               <do_if value="$Delta gt 0s">
                 <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta"/>
                 <do_if value="$Contract.$BuildModule.isbuilding">
