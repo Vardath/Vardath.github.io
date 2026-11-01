@@ -146,7 +146,7 @@
         <offset><position x="3.5" y="5.0" z="10"/></offset>
       </connection>
       <!-- New dorsal M turret connector, physically separate from the nose gun. -->
-      <connection name="con_weapon_02" tags="weapon small standard combat platformcollision ">
+      <connection name="con_vardath_turret_01" group="group_vardath_dorsal" tags="turret small standard missile hittable combat ">
         <offset>
           <position x="0" y="3.5" z="-7"/>
         </offset>
