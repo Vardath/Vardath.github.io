@@ -217,7 +217,7 @@
           <position x="0" y="-1.348155" z="19.35947" />
         </offset>
       </connection>
-      <connection name="con_weapon_01" tags="advanced combat mining platformcollision small weapon symmetry symmetry_right ">
+      <connection name="con_weapon_01" tags="weapon small platformcollision standard mining symmetry symmetry_right combat ">
         <offset>
           <position x="0" y="1.176422" z="13.22747" />
         </offset>
