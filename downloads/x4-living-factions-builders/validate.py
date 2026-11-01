@@ -47,7 +47,7 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert int(manifest.get("version")) >= 160
+assert int(manifest.get("version")) >= 170
 assert manifest.get("save") == "1"
 assert manifest.find("./dependency").get("version") == "900"
 
@@ -121,7 +121,11 @@ rewards = pay.findall(".//reward_player")
 assert len(rewards) == 2 and all(x.get("money") == "$Payout" for x in rewards), "Both hire and recurring pay must reach player credits via native reward_player"
 assert len(pay.findall(".//set_value[@name='$Contract.$Owed'][@exact='0Cr']")) >= 2, "Debt must be cleared before each reward to prevent duplicate payments on reload"
 assert len(pay.findall(".//debug_text")) >= 2, "Log both hire and wage transactions"
-assert pay.find(".//find_ship[@primarypurpose='purpose.build'][@class='class.ship_xl']") is not None
+assert pay.find(".//find_ship[@class='class.ship_xl'][@owner='faction.player']") is not None
+assert all(x.get("primarypurpose") is None for x in pay.findall(".//find_ship")), "Payroll must find any player XL assigned to construction, regardless of ship purpose classification"
+assert not any("constructionvessel == $Builder" in (x.get("value") or "") for x in pay.findall(".//do_if")), "Do not require ship to be deployed before paying an assigned construction job"
+assert any("$Builder.constructionmodule.exists" in (x.get("value") or "") for x in pay.findall(".//do_if")), "Registration requires an actual construction assignment"
+assert any("$Builder.constructionmodule == $Contract.$BuildModule" in (x.get("value") or "") for x in pay.findall(".//do_if")), "Ongoing contract must remain assigned to its original build module"
 assert all(x.get("checkoperational") is None for x in pay.findall(".//find_ship")), "Do not filter out deployed builders"
 
 assert all(x.get("value") != "true" for x in pay.findall(".//check_value"))
