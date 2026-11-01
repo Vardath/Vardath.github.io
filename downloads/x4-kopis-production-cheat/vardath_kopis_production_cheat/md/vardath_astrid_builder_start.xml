@@ -10,8 +10,13 @@
         <debug_text text="\'Vardath Astrid startup cue reached\'" filter="general"/>
         <create_ship name="$Astrid" macro="macro.ship_gen_m_yacht_01_a_macro" zone="player.zone">
           <owner exact="faction.player"/>
-          <pilot><select faction="yaki" tags="fighterpilot"/></pilot>
-          <people ref="player_yaki_veteran_freighter_crew"><fillpercent exact="85"/></people>
+          <pilot faction="yaki" tags="fighterpilot">
+            <skills>
+              <skill type="piloting" value="10"/>
+              <skill type="morale" value="10"/>
+            </skills>
+          </pilot>
+          <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
         </create_ship>
       </actions>
     </cue>
