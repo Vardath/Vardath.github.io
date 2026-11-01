@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components>
+  <component name="turret_vardath_kopis_s" class="turret">
+    <source geometry="assets\\props\\WeaponSystems\\standard\\weapon_ter_s_laser_01_mk2_data"/>
+    <connections>
+      <connection name="container" tags="contents" value="0"/>
+      <connection name="position" tags="position" value="1"/>
+      <connection name="con_weapon" tags="weapon small" value="0"/>
+    </connections>
+  </component>
+</components>
