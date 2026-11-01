@@ -1,14 +1,16 @@
 name: Validate X4 Yaki Terran Habitats
 on:
-  push:
-    paths:
-      - "downloads/x4-yaki-terran-habs/**"
-      - ".github/workflows/validate-x4-yaki-terran-habs.yml"
+  workflow_run:
+    workflows: ["Package three X4 mods"]
+    types: [completed]
   workflow_dispatch:
 jobs:
   validate:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check standalone Yaki habitat ZIP and source
+        with:
+          ref: main
+      - name: Validate Yaki rings, workforce, faction retrofit and current ZIP
         run: python downloads/x4-yaki-terran-habs/validate.py
