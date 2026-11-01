@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <!-- Small-class fixed dorsal beam, replacing the incompatible M turret. -->
+  <macro name="weapon_vardath_kopis_beam_macro" class="weapon">
+    <component ref="weapon_ter_s_laser_01_mk2"/>
+    <properties>
+      <identification name="{995506,5}" basename="{20105,1471}" shortname="{20105,1475}" makerrace="terran" description="{995506,6}" mk="2"/>
+      <bullet class="bullet_vardath_kopis_beam_macro"/>
+      <heat overheat="10000" cooldelay="1" overheatcooldelay="2" coolrate="2200" reenable="8000"/>
+      <rotationspeed max="160"/>
+      <rotationacceleration max="320"/>
+      <hull max="500" hittable="0"/>
+    </properties>
+  </macro>
+</macros>
