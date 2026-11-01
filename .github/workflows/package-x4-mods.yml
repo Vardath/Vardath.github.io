@@ -10,11 +10,16 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: vardath-x4-package-zips
+  cancel-in-progress: false
 jobs:
   package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Validate and package three extensions
         run: |
           python3 - <<'PY'
