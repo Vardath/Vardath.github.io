@@ -101,6 +101,7 @@
     </layers>
     <connections>
       <connection name="space" tags="ship_s ship" />
+      <connection name="defencenpc" tags="defence" value="-1" />
       <connection name="con_npc_teleport" group="cabin_01" tags="npctransport npc_waypoint stand ">
         <offset>
           <position x="0.5918564" y="-2.046735" z="-5.871591" />
@@ -145,8 +146,8 @@
       <connection name="con_storage03" tags="storage ">
         <offset><position x="3.5" y="5.0" z="10"/></offset>
       </connection>
-      <!-- New dorsal M turret connector, physically separate from the nose gun. -->
-      <connection name="con_vardath_turret_01" group="group_vardath_dorsal" tags="turret small standard missile hittable combat ">
+      <!-- Dorsal S turret; matches the custom turret component compatibility tags. -->
+      <connection name="con_vardath_turret_01" group="group_vardath_dorsal" tags="advanced combat small turret unhittable ">
         <offset>
           <position x="0" y="3.5" z="-7"/>
         </offset>
