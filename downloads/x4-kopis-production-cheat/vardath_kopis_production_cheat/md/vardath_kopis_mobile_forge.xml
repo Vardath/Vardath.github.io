@@ -103,7 +103,7 @@
     <cue name="GrantBlueprints" instantiate="true" checkinterval="10s">
       <conditions><check_value value="player.age ge 10s"/></conditions>
       <actions>
-        <add_blueprints wares="[ware.ship_vardath_kopis_factory, ware.weapon_vardath_kopis_laser, ware.turret_vardath_kopis_beam]"/>
+        <add_blueprints wares="[ware.ship_vardath_kopis_factory, ware.weapon_vardath_kopis_laser, ware.weapon_vardath_kopis_beam]"/>
       </actions>
     </cue>
   </cues>
