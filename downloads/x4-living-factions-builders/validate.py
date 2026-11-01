@@ -47,7 +47,7 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert int(manifest.get("version")) >= 150
+assert int(manifest.get("version")) >= 160
 assert manifest.get("save") == "1"
 assert manifest.find("./dependency").get("version") == "900"
 
@@ -93,6 +93,17 @@ assert pay.find("./actions/reset_cue").get("cue") == "this"
 assert any(s.get("name") == "md.$VardathBuilderContracts" and s.get("exact") == "table[]"
            for s in pay.findall(".//set_value"))
 sets = {(s.get("name"), s.get("exact")) for s in pay.findall(".//set_value")}
+# SETA and delayed checks must settle every actual in-game minute.
+assert ("$Delta", "player.age - $Contract.$LastSample") in sets
+assert not any(s.get("name")=="$Delta" and "2min" in (s.get("exact") or "")
+               for s in pay.findall(".//set_value")), "A two-minute clamp would underpay SETA-delayed checks"
+assert any(n.get("value") == "$Delta gt 0s" for n in pay.findall(".//do_if")), "Reject nonpositive elapsed intervals"
+# Arithmetic check: 3, 10 and 60 in-game minutes must not be clamped to two.
+for game_minutes in (1, 3, 10, 60):
+    for hourly_credits in (100000, 25000):
+        actual_credits = (game_minutes / 60) * hourly_credits
+        if game_minutes > 2:
+            assert actual_credits > (2 / 60) * hourly_credits
 assert ("$Contract.$Owed", "200000Cr") in sets
 assert ("$Contract.$Earned", "$Contract.$Earned + ($Delta / 1h) * 100000Cr") in sets
 assert ("$Contract.$Earned", "$Contract.$Earned + ($Delta / 1h) * 25000Cr") in sets
@@ -160,4 +171,4 @@ assert any(x.get("macro") == "ship_gen_xs_buildingdrone_01_a_macro"
            and int(x.get("exact")) >= 30 for x in fit.findall("./ammunition/unit"))
 english = ET.parse(mod / "t/0001-l044.xml").getroot()
 assert english.get("id") == "44" and english.find("./page[@id='995503']") is not None
-print(f"PASS: {len(expected)} matching ZIP/source files; XML; request broker; immediate 200k hire and per-minute native credit payouts, persisted ledger, hostile guards and completion reputation")
+print(f"PASS: {len(expected)} matching ZIP/source files; XML; request broker; immediate 200k hire and uncapped SETA-safe full game-time payouts, persisted ledger, hostile guards and completion reputation")
