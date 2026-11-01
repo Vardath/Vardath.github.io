@@ -1,71 +1,65 @@
-# Vardath — Yaki Terran Habitats
+# Vardath — Yaki Terran Ring Habitats (v1.2)
 
-**Separate and independent extension for X4: Foundations 9.00.** Requires **Cradle of Humanity**. Does not require Living Factions & Builders. This is an experimental v1.1 release; tested by static XML/ZIP validation, not inside X4.
+Three habitation modules, **and only three**: exact S, M, and L copies of the Cradle of Humanity Terran circular ring habitats, recoloured red and black and configured for a distinct Yaki workforce.
 
-## What it adds
+Requires **X4: Foundations 9.00** and **Cradle of Humanity**. No dependency on Living Factions & Builders. The original Terran and Argon modules are not modified. Source and ZIP are statically validated; no claim of successful X4 in-game rendering or NPC construction is made until tested in the game.
 
-Three **new** station modules using the original **Terran** habitation shapes and connection points, with isolated copies of each Terran component XML and geometry references to the installed Terran DLC:
+## The three modules
 
-| Module | Yaki workforce | Original Terran size |
-| --- | ---: | --- |
-| Yaki S Living Quarters | 100 | Small |
-| Yaki M Living Quarters | 250 | Medium |
-| Yaki L Living Quarters | 500 | Large |
+| Build-plan name | Original Terran component and geometry | Yaki crew/workforce places |
+| --- | --- | ---: |
+| Yaki S Living Quarters | `hab_ter_s_01` / `hab_ter_s_01_data` | 100 |
+| Yaki M Living Quarters | `hab_ter_m_01` / `hab_ter_m_01_data` | 250 |
+| Yaki L Living Quarters | `hab_ter_l_01` / `hab_ter_l_01_data` | 500 |
 
-**Red-and-black visuals:** independently cloned, non-vanilla component IDs use **dark custom hull material**, **red panel and FX materials**, and red exterior light colours. Two small bundled DXT1 DDS maps supply the dark and red material colours. Vanilla Terran modules and existing station builds are untouched. The shape, animation, attachment points, dock/waypoint data, original normal/smooth maps and Terran construction-resource recipes are preserved. Appearance is contingent on X4 loading the custom material and DDS assets correctly and must be checked in-game.
+Each component is a full clone of the original Terran ring, not a generic station piece. It retains its **four original snap connections**, original attachment positions and orientations, lighting/animation structure and waypoints. The size-dependent ring snap offsets are ±400m (S), ±600m (M), and ±800m (L) on the X/Z axes. Original meshes stay in the Terran DLC; none are redistributed.
 
-**Yaki workforce:** adds a new `yaki` *workforce race* (not a new faction), the matching production method and busy/idle food recipes. Residents consume **Terran MRE and Medical Supplies**, matching standard Terran per-employee amounts. Recruiting from a station with this workforce is intended to generate Yaki personnel. This is separate from Terran workers or any original Yaki factions.
+Visual differences are limited to **black/dark hull, red surfaces and red lighting**. The mod includes separate material definitions and small dark/red DDS textures. Rendering remains subject to the X4 renderer.
 
-**Blueprints:** all three are automatically unlocked on starting or loading a game with this extension enabled, without paying the Yaki representative. They are selectable in the station build planner if the engine accepts the new module group.
+Each housing module provides `workforce race="yaki"` with Terran MRE and medical-supplies provisioning. A custom Yaki workforce race and independent Yaki actor categories preserve vanilla Yaki story characters and let recruits use Yaki-appropriate characters. It takes time, supplies and available employees for a station to fill its workforce; the modules do not instantly create free marines or service crew aboard ships.
 
-## NPC Yaki faction integration (new in v1.1)
+## Why the old modules looked disconnected
 
-**New games:** The vanilla Yaki wharf's `yak_wharf` construction plan uses two Argon habitats in positions 13 and 15. This mod patches ONLY those two Yaki wharf entries to the new **Yaki M and Yaki L** equivalents, retaining the existing plan position and predecessor links. The original Terran and other Argon habitats are untouched. X4 must resolve the Terran macro attachment geometry in that fixed plan; this needs in-game visual testing.
+The old extension had copied the Terran meshes and snap coordinates, but it **did not register the custom components/macros in the asset indexes**. It also hard-replaced two Argon habitats in the existing Yaki wharf's fixed construction plan with Terran ring macros, without adjusting the geometry-dependent placement. The replacement layout was unsafe.
 
-**Existing saves:** the vanilla Yaki wharf was already generated before the new plan was installed. A narrow 10-in-game-minute MD check identifies a Yaki-owned operational wharf, checks its current planned module sequence, and—in the absence of an existing Yaki habitat—**queues a single Yaki S habitation** using X4's normal `create_construction_sequence` / `add_build_to_expand_station` workflow. It never expands story-only pirate bases, other factions, or player stations. It records successful scheduling in persistent MD save data to avoid duplicate queues after save/reload. If a new Yaki habitat is already present, the MD script records that instead of duplicating it.
+**v1.2 fixes both:**
 
-**Important:** vanilla Yaki are not a normal expanding economic faction. This mod does not automatically make them colonise sectors, create factories, or buy construction ships. A queued retrofit needs construction materials and a construction vessel to finish; if no builder responds, it will remain pending. This also means future Yaki buildings not based on `yak_wharf` plans won't automatically add Yaki habitats. The Yaki emergency story plan is deliberately unchanged to avoid interfering with its mission scripting.
+- `index/components.xml` and `index/macros.xml` register the **three** independent component/macro pairs correctly.
+- The unsafe `libraries/constructionplans.xml` override has been **deleted**. Vanilla Yaki station pieces and their original placement are preserved.
+- New and existing games use one narrowly scoped Yaki-wharf retrofit script. Every ten in-game minutes, it checks an actual **Yaki-owned wharf**. When idle with no outstanding construction tasks, it requests whichever Yaki S/M/L rings are missing and uses X4's **native construction-sequence generator** with real Terran structural connector macros to find viable attachments. It queues normal faction-owned station construction, not free instant buildings.
+- It checks the current station plan before requesting more rings, so it will not duplicate already planned S, M or L modules. A save upgraded from v1.1 with only the S ring can receive the M and L as normal construction work.
+- Other factions' stations, Yaki story emergency bases and vanilla Terran habitats are left untouched.
 
-**Actual Yaki NPCs:** in vanilla, the Yaki faction's characters are internally assigned race `argon`. A new `libraries/characters.xml` provides independent, cloned Yaki actor categories using `race="yaki"` so the separate workforce race can select appropriately dressed/cybernetic Yaki characters. All vanilla actor IDs and Yaki story characters remain unchanged. Whether the new workforce actor pool recruits correctly still requires an in-game test.
+**Limitations:** X4's sequence generator must find sufficient space and valid snap/connector geometry on the existing Yaki wharf. If it cannot, no new modules can be safely queued; the mod does not force overlapping modules. Yaki are not an ordinary sector-expansion faction, so this focuses on their actual wharf instead of promising that the faction will found new factories.
 
-### NPC tests
+## Installation — important when replacing v1.1
 
-1. Begin a **new** game with this mod enabled and inspect the Yaki wharf: the M and L habitat positions should be occupied by black-and-red Yaki living quarters, not vanilla Argon modules. Check physical attachment, materials, and workforce.
-2. Load a **backup of an existing** save that had the Yaki wharf before installing this mod; after ten in-game minutes inspect the station's construction plan. One S Yaki habitat should be queued, provided it can be connected safely. Supply build materials and an available NPC/player construction vessel so it can finish.
-3. Save and reload before/during construction and check there is **only one** added S habitat. Confirm that missions involving Yaki story/emergency stations still behave normally.
-4. Once built, verify Yaki workforce, Terran MRE and Medical Supplies, and Yaki-character recruitability.
+1. Quit X4. Make a backup save.
+2. **Delete** the existing `extensions/vardath_yaki_terran_habs` directory before extraction. Do not merge the new files into the old directory: doing that would leave the obsolete, unsafe `libraries/constructionplans.xml` override in place.
+3. Extract `vardath_yaki_terran_habs_TEST.zip` so the installed path is:
+   `X4 Foundations/extensions/vardath_yaki_terran_habs/content.xml`
+4. Start the game and verify the extension is enabled.
 
-## Install
+## In-game tests
 
-Extract the ZIP so your game contains:
+1. In a player station's Build Planner, locate exactly **Yaki S, M, and L Living Quarters**, one of each size. Each should preview as the correct Terran ring, recoloured dark red and black.
+2. Preview each module and move it toward a compatible station snap location. Verify the ring shows **all four original connection options** and can attach where the vanilla Terran ring can.
+3. Build one of each. In Logical Station Overview, confirm the Yaki workforce and its Terran MRE/medical-supplies demand. Verify that recruitable residents appear as Yaki when workforce grows.
+4. Inspect a Yaki-owned wharf after it has no outstanding build tasks and an additional ten in-game minutes have passed. The faction should have queued some or all of the missing three Yaki ring variants through the ordinary construction system, provided the station plan has available attachment space. Deliver supplies and allow a construction vessel to work.
+5. Reload a save and check neither duplicated construction nor broken vanilla Yaki wharf geometry.
 
-`X4 Foundations/extensions/vardath_yaki_terran_habs/content.xml`
-
-Use **only one** copy of this mod. It can coexist with **Vardath Living Factions & Builders v1.3**, but compatibility with existing Yaki habitat packs (which may also define a `yaki` workforce race) is **not** assured.
-
-This mod needs the **Cradle of Humanity** DLC to display the base Terran models and to supply MRE. Do not use it without the DLC.
-
-## Verify in X4
-
-1. Enable the extension and load or create a **backup save**.
-2. After about 10 in-game seconds, open a station build planner. Look for the three newly named Yaki living quarters.
-3. Preview each size; check that the dark hull material, crimson panels and red navigation lighting appear. X4's proprietary texture/material pipeline is not available in automated tests.
-4. Build an S module on a player station. In Logical Station Overview confirm **Yaki workforce** and demand for **Terran MRE and Medical Supplies**.
-5. Recruit a worker from the station and confirm the crew is **Yaki**. Check no other Terran habitats changed.
-6. Save, reload and check that both habitat modules and workforce survive.
-
-This mod does not create Yaki production factories or a new food ware. The Terran construction material costs are kept equivalent to the vanilla modules.
+**Older save caution:** If v1.1 already physically generated broken ring replacements in a wharf's build plan, simply updating the mod cannot safely reconstruct the wharf's already-saved station geometry. A backup taken before the earlier modification is the reliable comparison.
 
 ## Implementation
 
-- `libraries/constructionplans.xml`, `md/vardath_yaki_faction_habitats.xml`: wharf plan replacement and existing-save retrofit. 
-- `libraries/characters.xml`: native-Yaki-character clones selectable for the distinct Yaki workforce race.
-- `libraries/wares.xml`: separate purchasable module wares and Yaki workunit recipes.
-- `libraries/races.xml`: Yaki workforce race, modeled on the human workforce race definition.
-- `libraries/modules.xml`, `libraries/modulegroups.xml`: separate build planner class.
-- `assets/structures/habitat/macros/`: new S/M/L habitation macros with `workforce race="yaki"`.
-- `assets/structures/habitat/`: copied/modified *component XML* and original DLC geometry references, no proprietary mesh files.
-- `libraries/material_library.xml`, `assets/textures/`: custom DXT1 colour textures/materials; other original texture layers and shader properties are retained.
-- `md/vardath_yaki_habitats.xml`: one-time blueprint unlock for newly loaded or existing save games.
+The three assets are:
+`assets/structures/habitat/vardath_yaki_hab_{s,m,l}.xml` and `assets/structures/habitat/macros/vardath_yaki_hab_{s,m,l}_macro.xml`.
 
-Copyright: X4 and Terran DLC assets are Egosoft GmbH property. This mod references existing game geometry and adapts component metadata and materials; it does not redistribute the game's geometry.
+Their asset index registrations are in `index/components.xml` and `index/macros.xml`.
+`libraries/races.xml`, `libraries/characters.xml`, and `libraries/wares.xml` provide Yaki workforce personnel and upkeep.
+`libraries/modules.xml`, `libraries/modulegroups.xml` and the three wares expose the exact three build-plan items.
+`md/vardath_yaki_habitats.xml` grants the three player blueprints.
+`md/vardath_yaki_faction_habitats.xml` handles ordinary Yaki wharf expansion.
+`libraries/material_library.xml` and `assets/textures/` provide colour materials.
+
+X4 and Cradle of Humanity are Egosoft products. This mod references existing Terran DLC geometry without redistributing proprietary meshes.
