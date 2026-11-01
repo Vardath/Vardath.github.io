@@ -68,5 +68,9 @@ assert crew is not None and crew.get("checkinterval")=="10min"
 assert crew.find(".//get_character_definition[@faction='faction.yaki'][@tags='tag.service']") is not None
 assert crew.find(".//create_npc_template[@role='entityrole.service'][@macro='$YakiCrewMacro']") is not None
 assert crew.find(".//set_skill[@type='skilltype.engineering']") is not None
+start=ET.parse(mod/"md/vardath_kopis_builder_start.xml").getroot()
+spawn=start.find(".//cue[@name='AddKopisEscort']//do_all[@exact='10']")
+assert spawn is not None and spawn.find("./create_ship[@macro='macro.ship_vardath_kopis_factory_macro']/owner[@exact='faction.player']") is not None
 assert md.find(".//add_blueprints") is not None
+assert "ware.turret_vardath_kopis_beam" in md.find(".//add_blueprints").get("wares")
 print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew/weapon/turret, resource factory and build supply static invariants")
