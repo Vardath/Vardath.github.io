@@ -1,6 +1,6 @@
-# Vardath — Living Factions & Builders, v1.4
+# Vardath — Living Factions & Builders, v1.5
 
-**Experimental X4: Foundations 9.00 extension; X4: Cradle of Humanity DLC is now REQUIRED for the bundled custom gamestart.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.2 payment logic has **not been run in X4 itself**; use a backup save.
+**Experimental X4: Foundations 9.00 extension; X4: Cradle of Humanity DLC is now REQUIRED for the bundled custom gamestart.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.5 direct-pay code has **not been run in X4 itself**; use a backup save.
 
 ## Features
 
@@ -8,9 +8,9 @@
 - **Active request broker:** an MD cue repeats at five-in-game-minute intervals. It **skips the galaxy-wide station query altogether** if there are no available player construction ships on Find Build Tasks. The native short-range requests still operate in parallel.
 - **NPC station economic growth:** vanilla shortage-driven expansion may add additional production modules and construct larger factories; stock economic conditions and build queues are still respected.
 - **Player construction jobs:** player stations can send requests to player-owned builders without authorizing NPC ships to accept them automatically.
-- **New contract payroll, v1.2:** one **200,000 Cr hiring fee**, then **100,000 Cr per in-game hour** while the assigned buildmodule reports actively building, or **25,000 Cr per in-game hour** while assigned but not actively building (including transit, build-storage delays and resource waits). **No maximum duration/cap** on an active assignment.
+- **Contract payroll, v1.5:** one **200,000 Cr hiring fee**, then **100,000 Cr per in-game hour** while the assigned buildmodule reports actively building, or **25,000 Cr per in-game hour** while assigned but not actively building (including transit, build-storage delays and resource waits). **No maximum duration/cap** on an active assignment.
 
-## Contract diplomacy (v1.4)
+## Contract diplomacy (v1.5)
 
 - **Non-hostile employer filter:** NPC faction must allow player docking (normally -9 reputation or better). The five-minute dispatcher will not signal hostile NPC stations. The `Find Build Tasks` request handler independently rejects hostile employer stations, including native requests. Registration/payment likewise requires a non-hostile employing faction. Player-owned construction projects are unaffected.
 - **Diplomacy changes mid-contract:** If the faction turns hostile, no more paid construction time is accrued after the next payroll tick and no reputation is awarded. Already invoiced debt remains in the persistent contract ledger for settlement; the builder's in-game order is not forcibly cancelled.
@@ -19,36 +19,36 @@
 
 **Test:** A neutral NPC station should offer builder contracts and pay as before; a hostile faction should never dispatch a new request, and a job completed after actual building should improve reputation once. Save immediately before completion and reload to confirm no duplicate reputation, then confirm a cancelled or reassigned project with unfinished queued modules gives no reputation.
 
-## Contract billing and save/reload rules
+## Contract billing and save/reload rules (v1.5)
 
-The new separate `md/vardath_builder_contracts.xml` handles **all payments**. The earlier 50,000 Cr AI-script payment has been removed, so there is no competing fee.
+The separate `md/vardath_builder_contracts.xml` handles **all payments**. As of v1.5 it credits the player through X4's normal `<reward_player>` mission-reward action rather than relying on faction-to-player account transfers. NPC faction bankruptcy therefore cannot silently prevent payment. The earlier 50,000 Cr AI-script payment has been removed, so there is no competing fee.
 
 - Every **one in-game minute**, the payroll script inspects player construction ships and the **actual game-assigned construction module**. It registers a new contract only if that module belongs to an NPC station and has real queued/in-progress building.
-- The first tick detecting an assignment creates a **persistent Mission Director table** indexed by the player ship. The 200,000 Cr fee is invoiced once. If updating a save where a ship is **already on a job**, that existing assignment counts as a new v1.2 contract; you may also have received the older 50,000 Cr in v1.1.
-- The table stores station, assigned module, employing faction, last accrued game time, unbilled earnings, billable time and outstanding debt. It is **not reset** by the billing timer or when the game loads.
-- Each sampled minute is classified by `$BuildModule.isbuilding`: 100,000 Cr/hour when constructing; 25,000 Cr/hour otherwise. The accumulated amount is invoiced **after one hour of combined billable time**. If a contract ends earlier, its accrued **fractional hour is also invoiced**, including upon normal completion/cancellation or changed assignment.
-- A money transfer records its actual result; only the credits actually transferred reduce outstanding debt. Unpaid balances remain in saved ledger state for retry; no re-invoicing an hour already billed, and reopening a saved game does not create another hiring fee for the same live contract.
-- A per-sample upper bound of **two minutes** prevents a long game-time jump or an interrupted/disabled mod from generating arbitrarily large back-pay. Because billing samples at one-minute intervals, at most roughly the final minute of a suddenly ended contract may be missed before the departure is observed; accounting is designed to favour avoiding overpayment.
+- The first tick detecting an assignment creates a **persistent Mission Director table** indexed by the player ship. The 200,000 Cr fee is credited immediately on registration. If updating a save where a ship is **already on a job**, that existing assignment counts as a new v1.2 contract; you may also have received the older 50,000 Cr in v1.1.
+- The table stores station, assigned module, employing faction, last accrued game time, earnings, billable time and outstanding debt. It is **not reset** by the billing timer or when the game loads.
+- Each sampled minute is classified by `$BuildModule.isbuilding`: **100,000 Cr/hour when constructing**, and **25,000 Cr/hour otherwise**. **Wages are paid every in-game minute** as incremental credit rewards (about 1,667 Cr/min active and 417 Cr/min waiting), without requiring a full hour to elapse. Outstanding accrual is also settled when the contract closes.
+- Rewards clear the persisted owed amount before X4's normal player-credit action, preventing duplicated payouts on a saved running contract. The extension manifest now uses `save=1` because it carries a persistent Mission Director ledger. A completed job does not trigger another signing bonus.
+- A per-sample upper bound of **two minutes** prevents a long game-time jump from generating arbitrary back-pay. **Important:** a contract is detected only when X4 has actually assigned the XL builder to an NPC station build module; simply enabling Find Build Tasks while idle does not earn a fee or wages. Removing the operational-state filter allows deployed construction vessels to remain visible to the payroll scan.
 - A builder moved to a **new station** begins a new contract, with a new hiring fee, after its old balance has been settled. No player-owned station contracts are billed.
 
 **Caution:** Save/reload persistence is based on X4's saved MD variables and a saved ledger; this design has not yet been confirmed by repeated in-game save/load tests. This version is ready for testing, but not certified bug-free.
 
 ## Install or update
 
-Download the **[v1.4 ZIP](../vardath_living_factions_builders_v1.4.zip)** and extract the **single** `vardath_living_factions_builders` folder into your X4 `extensions` directory.
+Download the **[current TEST ZIP](../vardath_living_factions_builders_TEST.zip)** and extract the **single** `vardath_living_factions_builders` folder into your X4 `extensions` directory.
 
 Example default Steam path:
 
 `C:\Program Files (x86)\Steam\steamapps\common\X4 Foundations\extensions\vardath_living_factions_builders\content.xml`
 
-When updating, **replace the existing mod directory**; do not install it beside v1.3. Enable the extension in the X4 Extensions menu, then restart the game. Cradle of Humanity is required for the bundled new game start. Keep a backup save before trying new mod versions.
+When updating, **replace the existing mod directory**; do not install it beside an earlier version. Enable the extension in the X4 Extensions menu, then restart the game. Cradle of Humanity is required for the bundled new game start. Keep a backup save before trying new mod versions.
 
 ## Test checklist
 
-1. With the v1.4 extension enabled, save, buy/use a player-owned XL builder and set **Find Build Tasks** as its current default behaviour.
-2. Watch a friendly NPC station with a real queued build hire your ship. The hiring fee should be **200,000 Cr** (after the payroll tick, no more than about a minute of game time).
-3. Leave it working for more than one in-game hour. Check for **100,000 Cr per active hour**; if it waits for resources, those minutes accrue at **25,000 Cr/hour**. Mixed hours yield a weighted amount.
-4. **Save while it is working**, remember the player cash balance, reload and confirm that the hiring fee is not duplicated. Let the next hourly settlement occur exactly once.
+1. With the v1.5 extension enabled, save, buy/use a player-owned XL builder and set **Find Build Tasks** as its current default behaviour.
+2. Watch a friendly NPC station with a real queued build hire your ship. The hiring fee should be **200,000 Cr** once the NPC job is assigned and the next payroll scan registers it (typically within one game minute).
+3. Watch the money balance over the next few in-game minutes: active work should add roughly **1,667 Cr/minute**, waiting for materials roughly **417 Cr/minute**. Mixed rates are proportional to the time sampled.
+4. **Save while it is working**, remember the player cash balance, reload and confirm that the hiring fee is not duplicated. Let the next one-minute payment occur exactly once.
 5. End the job before an hour is complete and verify the last fractional accrual is paid; change ship assignments and ensure payments stop.
 6. Test a save where two builders are on different NPC jobs. A periodic payroll scan should not interfere with the faction request broker.
 
@@ -56,7 +56,7 @@ If wages are absent or credits duplicate, capture your X4 script/debug log and b
 
 ## Performance / compatibility
 
-- The payroll scan looks at **player builder ships and a small active-contract ledger** only. It does not scan every station each minute.
+- The payroll scan looks at **player XL construction ships, including deployed ones, and a small active-contract ledger** only. It does not scan every station each minute.
 - The job request broker checks faction stations every five in-game minutes **only while an available idle builder exists**.
 - Avoid other builder dispatcher mods that patch `aiscripts/order.build.find.task.xml` and `aiscripts/build.buildstorage.xml`, notably **Player Builder Autodispatch**.
 - Major faction economy overhaul mods may conflict with `md/factionlogic_economy.xml`, `libraries/parameters.xml` and `libraries/modules.xml`.
