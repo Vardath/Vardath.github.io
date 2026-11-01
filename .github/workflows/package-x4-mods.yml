@@ -66,6 +66,8 @@ jobs:
                 assert z.read(f"{mod}/md/vardath_kopis_builder_start.xml").decode()==forge_text
             print(target,len(paths),"files")
           PY
+      - name: Validate builder payroll and packaged ZIP
+        run: python downloads/x4-living-factions-builders/validate.py
       - name: Commit installable ZIPs
         run: |
           git config user.name "github-actions[bot]"
