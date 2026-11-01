@@ -1,6 +1,6 @@
-# Vardath — Kopis Mobile Forge (v1.0, experimental)
+# Vardath — Kopis Mobile Forge (v1.02, experimental)
 
-A **standalone X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of Humanity**. Does not change vanilla Kopis or require Living Factions & Builders or Yaki Habitats. This ZIP's structure/XML are tested by GitHub; engine runtime, shipyard availability, movement and cargo behaviour remain unverified. **Back up your save**.
+An **X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of Humanity**, **Tides of Avarice** and the **Vardath Living Factions & Builders** extension (as declared in `content.xml`). Does not modify the vanilla Kopis or require Yaki Habitats. This ZIP's structure/XML are tested by GitHub; engine runtime, shipyard availability, movement and cargo behaviour remain unverified. **Back up your save**.
 
 ## What the ship is
 
@@ -18,12 +18,12 @@ A **standalone X4: Foundations 9.00** cheat logistics ship extension. Requires *
 | Deployables/missiles | **5,000 deployables**, **500 countermeasures** and **5,000 missiles** (subject to game equipment restrictions) |
 | Hull | **20,000** |
 | Main gun | New **Kopis Forge Laser Mk2+**; same Terran S Mk2 laser projectile/effects but **90 damage vs. 80** (+10, not 10×) |
-| Turret | **One experimental dorsal M turret attachment**; small X4 ships don't normally carry M turrets, so availability/rotation/collision require in-game testing |
+| Turret | **One experimental dorsal S turret attachment**; modified S-class turret attachment with an added defence control; in-game appearance, firing and collision still require testing |
 | Standard ship | Original Kopis remains unchanged |
 | Purchase | New ship ware is offered to **Terran/Pioneer** factions via wares owner entries, average base ship price **8,500,000 Cr**, plus fitted equipment |
-| Blueprint | Ship and unique laser blueprint automatically granted to player; no free ship spawned |
+| Blueprint | Ship, laser, beam and turret blueprints automatically granted; the startup cue spawns **10 player-owned Kopis Forges** on first activation |
 
-The mod includes a `vardath_kopis_factory_kit` named loadout in its `libraries/loadouts.xml`, with a Terran S engine and shield, Forge Laser, one M turret, 120 building drones, 120 cargo drones and 30 repair drones. Whether the high equipment preset actually selects this loadout automatically is unverified; equipment can be selected at a ship dealer if the game exposes it.
+The mod includes a `vardath_kopis_factory_kit` named loadout in its `libraries/loadouts.xml`, with a Terran S engine and shield, Forge Laser, one S turret, 120 building drones, 120 cargo drones and 30 repair drones. Whether the high equipment preset actually selects this loadout automatically is unverified; equipment can be selected at a ship dealer if the game exposes it.
 
 ## Built-in slow production
 
@@ -46,11 +46,11 @@ It only processes the **first eligible nearby station per ship per tick**, to li
 
 ## Installation
 
-1. Download `vardath_kopis_production_cheat_v1.0.zip`.
+1. Download `vardath_kopis_production_cheat_TEST.zip`.
 2. Extract the single `vardath_kopis_production_cheat` directory into your X4 `extensions` directory, **not into either existing Vardath mod**.
 3. Restart the game, enable the extension and keep a backup save.
-4. Look at a Terran/Pioneer **S ship dealer** for **Kopis Mobile Forge**; the blueprint is also granted to you for later wharf ownership.
-5. Order the ship with your preferred S engine, shield and experimental turret, then park it within 35 km of a station that is building modules. Check the ship's hold after 10 minutes and the station's build storage after 2 minutes.
+4. For the intended **10-ship startup spawn**, begin a **new game**: the startup cue runs once, around 10 game seconds after the player enters a zone. Upgrading an existing save does not replay a completed startup cue. The Forge is also registered as a Terran/Pioneer S ship ware.
+5. Visit a Terran/Pioneer wharf and check the restored **advanced S weapon socket** for Terran weapons; the custom S turret also uses matching compatibility tags. To test resource production, park a Forge within 35 km of a station building modules and inspect cargo after 10 minutes.
 
 Typical Steam location:
 
@@ -58,7 +58,7 @@ Typical Steam location:
 
 ## Engine testing / troubleshooting
 
-Test normal speed using a **Terran S all-round Mk1** to compare with the stock Kopis's baseline. The Dart reference is ~540.8 m/s using an Argon S all-round Mk1, so the physics estimate may need iteration. Test how cargo holds combine, cargo drone equipping, crew seats, custom weapon appearance/damage, and whether X4 accepts the additional M turret on a class S model. Test a save/reload during slow production and auto-transfer: the repeat cues use in-game time and do not retroactively credit time missed while unloaded.
+Test normal speed using a **Terran S all-round Mk1** to compare with the stock Kopis's baseline. The Dart reference is ~540.8 m/s using an Argon S all-round Mk1, so the physics estimate may need iteration. Test how cargo holds combine, cargo drone equipping, crew seats, custom weapon appearance/damage, and whether X4 accepts the additional S turret on a class S model. Test a save/reload during slow production and auto-transfer: the repeat cues use in-game time and do not retroactively credit time missed while unloaded.
 
 Monitor X4's debug log for invalid XML properties or MD expressions and inspect station build storage to verify actual delivery. The XML parser does not validate X4's custom engine semantics.
 
