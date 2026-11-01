@@ -1,5 +1,5 @@
 name: Package three X4 mods
-# Validation runs after this workflow completes, against the committed ZIP. Updated current TEST archive checks.
+# Package then validate current TEST ZIPs; builder v1.6 checks full SETA-elapsed time without a two-minute cap.
 on:
   push:
     paths:
