@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VardathKopisBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <!-- Startup cue: avoid unreliable primaryship and gamestart comparisons. -->
+    <!-- Spawn exactly ten player-owned Kopis Forges when the startup cue first fires. -->
     <cue name="AddKopisEscort" checkinterval="5s">
       <conditions>
         <check_value value="player.age ge 10s and player.zone.exists"/>
@@ -9,12 +9,14 @@
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
         <debug_text text="\'Vardath Kopis startup cue reached\'" filter="general"/>
-        <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
+        <do_all exact="10" counter="$ForgeIndex">
+          <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>
           <loadout ref="vardath_kopis_factory_kit"/>
           <pilot><select faction="faction.yaki" tags="tag.fighterpilot"/></pilot>
           <people ref="player_yaki_veteran_freighter_crew"><fillpercent exact="4"/></people>
-        </create_ship>
+          </create_ship>
+        </do_all>
       </actions>
     </cue>
   </cues>
