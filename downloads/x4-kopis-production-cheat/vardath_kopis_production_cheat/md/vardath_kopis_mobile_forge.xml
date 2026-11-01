@@ -82,6 +82,23 @@
         <reset_cue cue="this"/>
       </actions>
     </cue>
+    <!-- Replenish real deployable ammunition inventory every ten game minutes. -->
+    <cue name="ProduceDeployables" instantiate="true" checkinterval="10min">
+      <conditions><check_value value="player.age ge 10min"/></conditions>
+      <actions>
+        <find_ship name="$DeployableForges" owner="faction.player" class="class.ship_s"
+                   space="player.galaxy" multiple="true"/>
+        <do_for_each name="$DeployableForge" in="$DeployableForges">
+          <do_if value="$DeployableForge.exists and $DeployableForge.macro == macro.ship_vardath_kopis_factory_macro">
+            <add_ammo object="$DeployableForge" macro="macro.eq_arg_satellite_01_macro" amount="5"/>
+            <add_ammo object="$DeployableForge" macro="macro.eq_arg_satellite_02_macro" amount="5"/>
+            <add_ammo object="$DeployableForge" macro="macro.eq_arg_resourceprobe_01_macro" amount="5"/>
+            <add_ammo object="$DeployableForge" macro="macro.env_deco_nav_beacon_t1_macro" amount="5"/>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
     <!-- One-off blueprint unlock in existing save or new game. -->
     <cue name="GrantBlueprints" instantiate="true" checkinterval="10s">
       <conditions><check_value value="player.age ge 10s"/></conditions>
