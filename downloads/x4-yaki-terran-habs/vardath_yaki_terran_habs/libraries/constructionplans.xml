@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<diff>
-  <!-- The vanilla Cradle of Humanity Yaki wharf uses Argon M/L habitats.
-       New-world Yaki wharfs now use the equivalent new Yaki workforce macros.
-       Changing ONLY the Yaki plan leaves all other faction stations alone.
-       The emergency story plan deliberately remains untouched. -->
-  <replace sel="/plans/plan[@id='yak_wharf']/entry[@index='13'][@macro='hab_arg_m_01_macro']/@macro">vardath_yaki_hab_m_macro</replace>
-  <replace sel="/plans/plan[@id='yak_wharf']/entry[@index='15'][@macro='hab_arg_l_01_macro']/@macro">vardath_yaki_hab_l_macro</replace>
-</diff>
