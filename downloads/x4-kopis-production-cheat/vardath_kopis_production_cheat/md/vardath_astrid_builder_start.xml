@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathAstridBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- Independent Astrid startup: cannot prevent the Kopis Forge cue from loading. -->
+    <cue name="AddAstridEscort" checkinterval="5s">
+      <conditions>
+        <check_value value="player.age ge 5s and player.zone.exists and player.primaryship.exists and player.primaryship.macro == macro.ship_ter_xl_builder_01_a_macro and player.galaxy.gamestart == 'vardath_gamestart_terran_yaki_builder'"/>
+      </conditions>
+      <actions>
+        <create_ship name="$Astrid" macro="macro.ship_gen_m_yacht_01_a_macro" zone="player.zone">
+          <owner exact="faction.player"/>
+          <pilot faction="yaki" tags="fighterpilot"/>
+          <people people="player_yaki_veteran_freighter_crew" fillpercent="85"/>
+        </create_ship>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
