@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify X4 v1.4 ZIP/source and static payment-ledger invariants.
+"""Verify current Kopis-adjacent Living Factions & Builders ZIP/source and static payment invariants.
 
 These are structural, NOT an X4 runtime or engine-XSD conformance test.
 """
@@ -9,7 +9,7 @@ import zipfile
 
 root = Path(__file__).resolve().parent
 mod = root / "vardath_living_factions_builders"
-archive = root / "vardath_living_factions_builders_v1.4.zip"
+archive = root / "vardath_living_factions_builders_TEST.zip"
 expected = {
     "content.xml",
     "aiscripts/order.build.find.task.xml",
@@ -27,7 +27,7 @@ expected = {
     "ATTRIBUTION.md",
     "README.md",
 }
-assert archive.is_file(), "Missing v1.4 release ZIP"
+assert archive.is_file(), "Missing current TEST ZIP"
 with zipfile.ZipFile(archive) as zf:
     assert zf.testzip() is None, "ZIP CRC mismatch"
     members = set(zf.namelist())
@@ -47,7 +47,8 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert manifest.get("version") == "140"
+assert int(manifest.get("version")) >= 150
+assert manifest.get("save") == "1"
 assert manifest.find("./dependency").get("version") == "900"
 
 broker = ET.parse(mod / "md/vardath_faction_build_requests.xml").getroot()
@@ -96,18 +97,22 @@ assert ("$Contract.$Owed", "200000Cr") in sets
 assert ("$Contract.$Earned", "$Contract.$Earned + ($Delta / 1h) * 100000Cr") in sets
 assert ("$Contract.$Earned", "$Contract.$Earned + ($Delta / 1h) * 25000Cr") in sets
 assert ("$Contract.$Elapsed", "0s") in sets
+assert ("$Contract.$Owed", "$Contract.$Owed + $Contract.$Earned") in sets
+assert not any(s.get("value") == "$Contract.$Elapsed ge 1h" for s in pay.findall(".//do_if")), "Wages must settle every minute, not after one full game hour"
 assert any(s.get("name") == "$Contract.$LastSample" and s.get("exact") == "player.age"
            for s in pay.findall(".//set_value"))
 assert any(x.get("name") == "md.$VardathBuilderContracts.{$Builder}"
            for x in pay.findall(".//remove_value"))
 assert any(x.get("value") == "$Contract.$Closing and $Contract.$Owed le 0Cr"
            for x in pay.findall(".//do_if"))
-transfers = pay.findall(".//transfer_money")
-assert len(transfers) == 2, "Single initial and recurring debt-settlement payment paths"
-assert all(x.get("from") == "$Contract.$Faction" and
-           x.get("to") == "faction.player" and
-           x.get("result") == "$Paid" and x.get("amount") == "$Contract.$Owed"
-           for x in transfers)
+assert not pay.findall(".//transfer_money"), "Do not gate payroll on faction treasury transfers"
+rewards = pay.findall(".//reward_player")
+assert len(rewards) == 2 and all(x.get("money") == "$Payout" for x in rewards), "Both hire and recurring pay must reach player credits via native reward_player"
+assert len(pay.findall(".//set_value[@name='$Contract.$Owed'][@exact='0Cr']")) >= 2, "Debt must be cleared before each reward to prevent duplicate payments on reload"
+assert len(pay.findall(".//debug_text")) >= 2, "Log both hire and wage transactions"
+assert pay.find(".//find_ship[@primarypurpose='purpose.build'][@class='class.ship_xl']") is not None
+assert all(x.get("checkoperational") is None for x in pay.findall(".//find_ship")), "Do not filter out deployed builders"
+
 assert all(x.get("value") != "true" for x in pay.findall(".//check_value"))
 # Reputation is awarded only once, on observed completed NPC construction.
 # The saved persistent contract survives save/reload and carries two flags.
@@ -155,4 +160,4 @@ assert any(x.get("macro") == "ship_gen_xs_buildingdrone_01_a_macro"
            and int(x.get("exact")) >= 30 for x in fit.findall("./ammunition/unit"))
 english = ET.parse(mod / "t/0001-l044.xml").getroot()
 assert english.get("id") == "44" and english.find("./page[@id='995503']") is not None
-print(f"PASS: {len(expected)} matching ZIP/source files; XML; recurring request broker; persistent billing, hostile-faction safeguards and once-per-completion reputation logic")
+print(f"PASS: {len(expected)} matching ZIP/source files; XML; request broker; immediate 200k hire and per-minute native credit payouts, persisted ledger, hostile guards and completion reputation")
