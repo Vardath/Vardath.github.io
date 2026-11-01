@@ -35,9 +35,11 @@
                 </do_else>
               </do_if>
               <set_value name="$Contract.$LastSample" exact="player.age"/>
-              <!-- Billing is posted once per accrued in-game hour, not once per
-                   periodic tick. The ledger remains in the save across reloads. -->
-              <do_if value="$Contract.$Elapsed ge 1h">
+              <!-- Pay earned wages every minute, not after an entire hour.
+                   Hourly rates remain unchanged; this is real-time settlement
+                   of the sampled interval. The saved ledger prevents duplicate
+                   payment on save/reload. -->
+              <do_if value="$Contract.$Earned gt 0Cr">
                 <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned"/>
                 <set_value name="$Contract.$Earned" exact="0Cr"/>
                 <set_value name="$Contract.$Elapsed" exact="0s"/>
@@ -65,20 +67,16 @@
             </do_else>
           </do_if>
 
-          <!-- A failed or partial faction transfer leaves a recoverable debt
-               rather than marking an unpaid hour as paid. -->
+          <!-- Mission rewards are paid directly to the player, as in the
+               base game's mission reward code. An NPC faction's treasury
+               cannot silently block earned construction fees. Clear the
+               recorded debt before awarding it, so a saved ledger can never
+               pay this credit twice. -->
           <do_if value="$Contract.$Owed gt 0Cr">
-            <set_value name="$Paid" exact="0Cr"/>
-            <transfer_money from="$Contract.$Faction"
-                            to="faction.player"
-                            amount="$Contract.$Owed"
-                            result="$Paid"/>
-            <do_if value="$Paid lt 0Cr">
-              <set_value name="$Paid" exact="-$Paid"/>
-            </do_if>
-            <do_if value="$Paid gt 0Cr">
-              <set_value name="$Contract.$Owed" exact="[0Cr, $Contract.$Owed - $Paid].max"/>
-            </do_if>
+            <set_value name="$Payout" exact="$Contract.$Owed"/>
+            <set_value name="$Contract.$Owed" exact="0Cr"/>
+            <reward_player money="$Payout"/>
+            <debug_text text="'Vardath builder payroll: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general"/>
           </do_if>
           <do_if value="$Contract.$Closing and $Contract.$Owed le 0Cr">
             <remove_value name="md.$VardathBuilderContracts.{$Builder}"/>
@@ -92,7 +90,6 @@
                    owner="faction.player"
                    primarypurpose="purpose.build"
                    class="class.ship_xl"
-                   checkoperational="true"
                    space="player.galaxy"
                    multiple="true"/>
         <do_for_each name="$Builder" in="$Builders">
@@ -112,19 +109,13 @@
               <set_value name="$Contract.$Closing" exact="false"/>
               <set_value name="$Contract.$SawConstruction" exact="false"/>
               <set_value name="$Contract.$RepGranted" exact="false"/>
-              <!-- One hiring fee per unique assignment. No AI-script fee also
-                   fires: the MD ledger is the sole money authority. -->
-              <set_value name="$Paid" exact="0Cr"/>
-              <transfer_money from="$Contract.$Faction"
-                              to="faction.player"
-                              amount="$Contract.$Owed"
-                              result="$Paid"/>
-              <do_if value="$Paid lt 0Cr">
-                <set_value name="$Paid" exact="-$Paid"/>
-              </do_if>
-              <do_if value="$Paid gt 0Cr">
-                <set_value name="$Contract.$Owed" exact="[0Cr, $Contract.$Owed - $Paid].max"/>
-              </do_if>
+              <!-- Pay the one-time hire fee immediately on contract
+                   registration, not after the ship arrives or the faction
+                   treasury allows a transfer. -->
+              <set_value name="$Payout" exact="$Contract.$Owed"/>
+              <set_value name="$Contract.$Owed" exact="0Cr"/>
+              <reward_player money="$Payout"/>
+              <debug_text text="'Vardath builder hire fee: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general"/>
             </do_if>
           </do_if>
         </do_for_each>
