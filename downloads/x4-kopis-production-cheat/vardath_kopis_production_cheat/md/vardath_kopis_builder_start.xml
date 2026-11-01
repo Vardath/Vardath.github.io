@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VardathKopisBuilderStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <!-- Only spawn bonus ships for the Living Factions & Builders custom Terran Yaki builder start. -->
+    <!-- Startup cue: avoid unreliable primaryship and gamestart comparisons. -->
     <cue name="AddKopisEscort" checkinterval="5s">
       <conditions>
-        <check_value value="player.age ge 5s and player.zone.exists and player.primaryship.exists and player.primaryship.macro == macro.ship_ter_xl_builder_01_a_macro"/>
+        <check_value value="player.age ge 10s and player.zone.exists"/>
       </conditions>
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
+        <debug_text text="\'Vardath Kopis startup cue reached\'" filter="general"/>
         <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>
           <loadout ref="vardath_kopis_factory_kit"/>
