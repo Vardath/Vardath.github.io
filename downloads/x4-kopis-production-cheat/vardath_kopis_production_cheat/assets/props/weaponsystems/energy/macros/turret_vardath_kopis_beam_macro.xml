@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <macros>
   <macro name="turret_vardath_kopis_beam_macro" class="turret">
-      <component ref="turret_ter_m_beam_01_mk1"/>
+      <component ref="turret_gen_m_beam_01_mk1"/>
       <properties>
         <identification name="{995506,5}" makerrace="terran" description="{995506,6}"/>
         <bullet class="bullet_vardath_kopis_beam_macro"/>
