@@ -3,7 +3,7 @@
   <!-- Rebuilt custom turret using the vanilla Terran M Meson turret component,
        retaining the original cheated projectile and damage. -->
   <macro name="turret_vardath_kopis_beam_macro" class="turret">
-    <component ref="turret_ter_m_beam_01_mk1"/>
+    <component ref="turret_vardath_kopis_s"/>
     <properties>
       <identification name="{995506,5}" basename="{20105,7121}" shortname="{20105,7125}" makerrace="terran" description="{995506,6}" mk="1"/>
       <bullet class="bullet_vardath_kopis_beam_macro"/>
