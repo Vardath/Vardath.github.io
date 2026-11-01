@@ -1,5 +1,5 @@
 name: Package three X4 mods
-# Validation runs after this workflow completes, against the committed ZIP.
+# Validation runs after this workflow completes, against the committed ZIP. Updated current TEST archive checks.
 on:
   push:
     paths:
