@@ -1,5 +1,5 @@
 name: Package three X4 mods
-# Package then validate current TEST ZIPs; builder v1.6 checks full SETA-elapsed time without a two-minute cap.
+# Package then validate current TEST ZIPs; builder v1.7 checks actual pre-deployment construction assignments and uncapped SETA wages.
 on:
   push:
     paths:
