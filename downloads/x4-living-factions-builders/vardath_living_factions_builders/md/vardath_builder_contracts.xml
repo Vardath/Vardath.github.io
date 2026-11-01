@@ -91,7 +91,7 @@
 
         <!-- Discover contracts through the ship's actual assigned buildmodule.
              Do not require a deployed constructionvessel or primarypurpose filter:
-             those can suppress genuine paid assignments. -->
+             those can suppress genuine paid assignments.
              The player must own the ship; the station must be owned by an NPC
              faction and have a real queued/in-progress construction project. -->
         <find_ship name="$Builders"
