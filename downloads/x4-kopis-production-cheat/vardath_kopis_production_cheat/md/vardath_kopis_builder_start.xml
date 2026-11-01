@@ -4,7 +4,7 @@
     <!-- Only spawn bonus ships for the Living Factions & Builders custom Terran Yaki builder start. -->
     <cue name="AddKopisEscort" checkinterval="5s">
       <conditions>
-        <check_value value="player.age ge 5s and player.zone.exists and player.primaryship.exists and player.primaryship.macro == macro.ship_ter_xl_builder_01_a_macro and player.galaxy.gamestart == 'vardath_gamestart_terran_yaki_builder'"/>
+        <check_value value="player.age ge 5s and player.zone.exists and player.primaryship.exists and player.primaryship.macro == macro.ship_ter_xl_builder_01_a_macro"/>
       </conditions>
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
