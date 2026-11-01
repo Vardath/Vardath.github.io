@@ -66,6 +66,22 @@
         <reset_cue cue="this"/>
       </actions>
     </cue>
+    <!-- Adds one Yaki service crew template per ten minutes, until capacity. -->
+    <cue name="GrowYakiCrew" instantiate="true" checkinterval="10min">
+      <conditions><check_value value="player.age ge 10min"/></conditions>
+      <actions>
+        <find_ship name="$ForgeShips" owner="faction.player" class="class.ship_s"
+                   space="player.galaxy" multiple="true"/>
+        <do_for_each name="$ForgeShip" in="$ForgeShips">
+          <do_if value="$ForgeShip.exists and $ForgeShip.macro == macro.ship_vardath_kopis_factory_macro and $ForgeShip.people.free gt 0">
+            <create_npc_template name="$YakiRecruit" object="$ForgeShip" role="entityrole.service">
+              <select faction="faction.yaki" tags="[tag.service, tag.veteran]"/>
+            </create_npc_template>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
     <!-- One-off blueprint unlock in existing save or new game. -->
     <cue name="GrantBlueprints" instantiate="true" checkinterval="10s">
       <conditions><check_value value="player.age ge 10s"/></conditions>
