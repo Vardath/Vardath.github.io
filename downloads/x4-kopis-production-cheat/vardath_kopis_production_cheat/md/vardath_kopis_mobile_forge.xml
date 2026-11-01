@@ -74,9 +74,14 @@
                    space="player.galaxy" multiple="true"/>
         <do_for_each name="$ForgeShip" in="$ForgeShips">
           <do_if value="$ForgeShip.exists and $ForgeShip.macro == macro.ship_vardath_kopis_factory_macro and $ForgeShip.people.free gt 0">
-            <create_npc_template name="$YakiRecruit" object="$ForgeShip" role="entityrole.service">
-              <select faction="faction.yaki" tags="[tag.service, tag.veteran]"/>
-            </create_npc_template>
+            <get_character_definition macro="$YakiCrewMacro" faction="faction.yaki" tags="tag.service"/>
+            <do_if value="$YakiCrewMacro">
+              <create_npc_template name="$YakiRecruit" object="$ForgeShip" macro="$YakiCrewMacro" role="entityrole.service"/>
+              <do_if value="$YakiRecruit">
+                <set_skill object="$ForgeShip" template="$YakiRecruit" type="skilltype.engineering" min="9" max="15"/>
+                <set_skill object="$ForgeShip" template="$YakiRecruit" type="skilltype.morale" min="9" max="15"/>
+              </do_if>
+            </do_if>
           </do_if>
         </do_for_each>
         <reset_cue cue="this"/>
