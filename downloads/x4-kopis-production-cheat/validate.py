@@ -63,5 +63,10 @@ assert producer.find(".//add_cargo[@object='$Ship']") is not None
 assert supplier.find(".//remove_cargo[@object='$Ship']") is not None
 assert supplier.find(".//add_cargo[@object='$Station.buildstorage']") is not None
 assert supplier.find(".//do_if[@value='not $DeliveredThisTick and $Station.exists and $Station.buildstorage.exists and $Ship.distanceto.{$Station} le 35km and ($Station.isplayerowned or $Station.trueowner.hasrelation.dock.{faction.player}) and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)']") is not None
+crew=md.find(".//cue[@name='GrowYakiCrew']")
+assert crew is not None and crew.get("checkinterval")=="10min"
+assert crew.find(".//get_character_definition[@faction='faction.yaki'][@tags='tag.service']") is not None
+assert crew.find(".//create_npc_template[@role='entityrole.service'][@macro='$YakiCrewMacro']") is not None
+assert crew.find(".//set_skill[@type='skilltype.engineering']") is not None
 assert md.find(".//add_blueprints") is not None
 print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew/weapon/turret, resource factory and build supply static invariants")
