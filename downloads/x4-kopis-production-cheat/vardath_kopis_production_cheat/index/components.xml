@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff><add sel="/index">
   <entry name="ship_vardath_kopis_factory" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\ship_vardath_kopis_factory" />
+  <entry name="turret_vardath_kopis_s" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\energy\turret_vardath_kopis_s" />
 </add></diff>
