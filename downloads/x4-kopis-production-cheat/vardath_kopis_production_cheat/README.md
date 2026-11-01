@@ -1,4 +1,4 @@
-# Vardath — Kopis Mobile Forge (v1.02, experimental)
+# Vardath — Kopis Mobile Forge (v1.03, experimental)
 
 An **X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of Humanity**, **Tides of Avarice** and the **Vardath Living Factions & Builders** extension (as declared in `content.xml`). Does not modify the vanilla Kopis or require Yaki Habitats. This ZIP's structure/XML are tested by GitHub; engine runtime, shipyard availability, movement and cargo behaviour remain unverified. **Back up your save**.
 
@@ -25,6 +25,14 @@ An **X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of
 
 The mod includes a `vardath_kopis_factory_kit` named loadout in its `libraries/loadouts.xml`, with a Terran S engine and shield, Forge Laser, one S turret, 120 building drones, 120 cargo drones and 30 repair drones. Whether the high equipment preset actually selects this loadout automatically is unverified; equipment can be selected at a ship dealer if the game exposes it.
 
+## Automatic Astrid replacement (v1.03)
+
+The Astrid cue now **checks continuously every one in-game minute** on new games **and existing saved games** (approximately every 10 real seconds with 6× SETA). It searches the **entire galaxy** for *any* Astrid whose true owner is the player, including an Astrid away from your current sector. If one is found, it creates nothing. If none remains—for example because it was **destroyed, sold, transferred or otherwise lost**—the script creates exactly **one** vanilla Astrid (ship_gen_m_yacht_01_a_macro) owned by the player, **around 3 km from the player's current ship**, with a Yaki pilot and an 85%-filled Yaki crew template. The next poll sees the new ship and stops spawning replacements until the player owns no Astrid again.
+
+The periodic monitor uses a **new Mission Director cue name** so it activates when upgrading an existing save even if the earlier one-time startup Astrid cue already finished. The previous one-time cue has been replaced, not supplemented. It does **not** remove existing Astrids or change their crews, and it does not produce one per minute when an Astrid is already owned. A player ship and valid sector must exist before a replacement is created. The Astrid model requires *Tides of Avarice*, already a mandatory DLC for this mod.
+
+**Static checks verify the XML structure and intended safeguards. X4 runtime behaviour, including the spawn placement, needs an in-game test.** Back up an existing save before upgrading.
+
 ## Built-in slow production
 
 An X4 Mission Director cue scans **player-owned** Kopis Mobile Forge ships every **10 in-game minutes**. It attempts to add **one unit of every available ware** categorized as container, solid or liquid cargo from `lookup.ware.list`. That covers known economic resources from enabled DLC and third-party wares that use these transports. Cargo is **real inventory** and limited by each hold's actual free capacity; no continuously accrued currency and no instant filling. Some ware types (equipment, deployables and inventory items) do not qualify. This is deliberately very slow: **six units of each eligible ware per in-game hour**.
@@ -49,7 +57,7 @@ It only processes the **first eligible nearby station per ship per tick**, to li
 1. Download `vardath_kopis_production_cheat_TEST.zip`.
 2. Extract the single `vardath_kopis_production_cheat` directory into your X4 `extensions` directory, **not into either existing Vardath mod**.
 3. Restart the game, enable the extension and keep a backup save.
-4. For the intended **10-ship startup spawn**, begin a **new game**: the startup cue runs once, around 10 game seconds after the player enters a zone. Upgrading an existing save does not replay a completed startup cue. The Forge is also registered as a Terran/Pioneer S ship ware.
+4. For the intended **10-ship Kopis Forge startup spawn**, begin a **new game**: the Kopis startup cue runs once, around 10 game seconds after the player enters a zone. Upgrading an existing save does not replay that completed Kopis cue. **The Astrid replacement monitor is separate and runs on existing saves**, checking every one in-game minute. The Forge is also registered as a Terran/Pioneer S ship ware.
 5. Visit a Terran/Pioneer wharf and check the restored **advanced S weapon socket** for Terran weapons; the custom S turret also uses matching compatibility tags. To test resource production, park a Forge within 35 km of a station building modules and inspect cargo after 10 minutes.
 
 Typical Steam location:
