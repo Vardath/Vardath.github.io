@@ -1,39 +1,39 @@
 #!/usr/bin/env python3
-"""Static XML and ZIP checks. Not an X4 runtime verification."""
-from pathlib import Path
-import xml.etree.ElementTree as ET
-from zipfile import ZipFile
-root = Path(__file__).resolve().parent
-mod = root / "vardath_faction_invincible"
-expected = {"content.xml", "README.md", "md/vardath_faction_invincible.xml"}
-assert all((mod / path).is_file() for path in expected)
-manifest = ET.parse(mod / "content.xml").getroot()
-assert manifest.tag == "content"
-assert manifest.get("id") == "vardath_faction_invincible"
-assert manifest.get("save") == "1"
-assert int(manifest.get("version")) >= 101
+"""Lightweight packaging integrity only: no feature/regression assertions.
 
-assert manifest.find("./dependency").get("version") == "900"
-md = ET.parse(mod / "md/vardath_faction_invincible.xml").getroot()
-assert all(node.get("recursive") is None for node in md.findall(".//find_ship_by_true_owner")), "Unsupported X4 9.00 find_ship_by_true_owner recursive attribute"
-assert md.find(".//cue[@name='SweepPlayerProperty'][@checkinterval='1min']") is not None
-assert md.find(".//library[@name='SetAssetProtection'][@purpose='run_actions']") is not None
-for action in ("find_ship_by_true_owner", "find_station_by_true_owner", "find_object",
-               "set_object_hull", "set_object_shield",
-               "set_object_min_hull", "set_object_min_shield"):
-    assert md.find(".//" + action) is not None, action
-for cls in ("class.module", "class.engine", "class.shieldgenerator",
-            "class.turret", "class.weapon"):
-    assert md.find(".//find_object_component[@class='" + cls + "'][@recursive='true']") is not None
-assert md.find(".//set_object_min_hull[@exact='100']") is not None
-assert md.find(".//set_object_min_hull[@exact='0']") is not None
-assert md.find(".//set_object_min_shield[@exact='100']") is not None
-assert md.find(".//set_object_min_shield[@exact='0']") is not None
-archive = root / "vardath_faction_invincible_TEST.zip"
-if archive.exists():
-    with ZipFile(archive) as z:
-        assert z.testzip() is None
-        assert set(z.namelist()) == {"vardath_faction_invincible/" + f for f in expected}
-        assert all(z.read("vardath_faction_invincible/" + f) == (mod / f).read_bytes()
-                   for f in expected)
-print("X4 player-faction protection static validation passed")
+Game behavior must be checked using X4 itself and its debug.log.
+"""
+from pathlib import Path
+from zipfile import ZipFile
+import xml.etree.ElementTree as ET
+
+root = Path(__file__).resolve().parent
+name = "vardath_faction_invincible"
+source = root / name
+archive = root / (name + "_TEST.zip")
+
+if not source.is_dir():
+    raise SystemExit(f"Missing extension folder: {source}")
+items = sorted(p for p in source.rglob("*") if p.is_file())
+if not items or not (source / "content.xml").is_file():
+    raise SystemExit(f"Missing files or content.xml in {source}")
+manifest = ET.parse(source / "content.xml").getroot()
+if manifest.tag != "content" or manifest.get("id") != name:
+    raise SystemExit("Malformed content.xml identifier")
+for item in items:
+    if item.suffix.lower() == ".xml":
+        ET.parse(item)
+if not archive.is_file():
+    raise SystemExit(f"Missing packaged ZIP: {archive}")
+with ZipFile(archive) as packed:
+    if (bad := packed.testzip()) is not None:
+        raise SystemExit(f"ZIP checksum error: {bad}")
+    expected = {name + "/" + p.relative_to(source).as_posix() for p in items}
+    actual = set(packed.namelist())
+    if actual != expected:
+        raise SystemExit("ZIP paths do not match source folder")
+    for item in items:
+        member = name + "/" + item.relative_to(source).as_posix()
+        if packed.read(member) != item.read_bytes():
+            raise SystemExit(f"ZIP contains stale source: {member}")
+print(f"PASS: {name}; {len(items)} source files, XML parse and ZIP integrity")

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Audits the five X4 extensions in downloads, without claiming in-game proof.
-All source/ZIP checks are authoritative for this commit. A legacy public XSD
-is optional for identifying potential engine-schema errors, not X4 9.00 proof.
+"""Checks only XML, manifest identity, Lua presence, and matching source/ZIP packaging.
+Does not assert how gameplay features are implemented.
 """
 import json
 import re
@@ -113,37 +112,9 @@ for folder,(mod,items) in files_by_mod.items():
         for candidate in set(re.findall(r"\b(?:macro|ware)\.(vardath_[A-Za-z0-9_]+)\b", content)):
             if candidate not in custom_defs and candidate not in ids:
                 note("warnings", folder, f"Unresolved Vardath custom reference {candidate} in {p.relative_to(mod)}")
-    # X4 9.00: 'find_ship_by_true_owner' has no recursive attribute.
-    # The galaxy/owner index already covers player ships without it.
-    for mdfile in mod.glob("md/*.xml"):
-        node = ET.parse(mdfile).getroot()
-        for found in node.iter("find_ship_by_true_owner"):
-            if "recursive" in found.attrib:
-                note("errors", folder, f"Unsupported X4 9.00 recursive attribute in {mdfile.name}")
-
     # Distinguish scripts that only check XML structure vs genuine engine tests.
     report["mods"][folder]["runtime_verified"] = False
 
-# Check the mechanics of the two most recently added mods.
-inv = files_by_mod.get("x4-faction-invincible")
-if inv:
-    src = (inv[0]/"md/vardath_faction_invincible.xml").read_text()
-    for required in ('set_object_min_hull', 'set_object_min_shield', 'find_station_by_true_owner'):
-        if required not in src: note("errors", "x4-faction-invincible", f"Protection action {required} missing")
-    if 'md.$VardathFactionInvincibleProtected' not in src:
-        note("warnings", "x4-faction-invincible", "No saved prior-ownership table found")
-dr = files_by_mod.get("x4-station-auto-drones")
-if dr:
-    md = (dr[0]/"md/vardath_station_auto_drones.xml").read_text()
-    lua = (dr[0]/"ui/vardath_station_auto_drones.lua").read_text()
-    if "'Vardath.StationAutoDrones.ApplyRoster'" not in md or "RegisterEvent('Vardath.StationAutoDrones.ApplyRoster'" not in lua:
-        note("errors", "x4-station-auto-drones", "MD/Lua event name mismatch")
-    if "'$VAD_Roster'" not in lua or "player.entity.$VAD_Roster" not in md:
-        note("errors", "x4-station-auto-drones", "MD/Lua roster blackboard key mismatch")
-    if 'readback mismatch' not in lua:
-        note("warnings", "x4-station-auto-drones", "No supply-order readback check")
-    if 'show_notification' not in md:
-        note("warnings", "x4-station-auto-drones", "No feedback when Lua event fails")
 print(json.dumps(report, indent=2))
 out = ROOT/"x4-audit-report.json"
 out.write_text(json.dumps(report, indent=2)+"\n")

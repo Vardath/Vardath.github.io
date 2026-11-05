@@ -1,5 +1,5 @@
 name: Audit all five X4 mods
-# Full post-packaging regression audit: builder 1.71, Kopis 1.05, Yaki habs 1.21.
+# XML, Lua syntax, and packaging checks only; no feature regression assertions.
 on:
   push:
     paths:
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify all five ZIPs, all XML, references and release validators
+      - name: Verify five ZIPs, XML, and package integrity
         run: python3 tools/audit-x4-mods.py
       - name: Check LuaJIT syntax
         run: |

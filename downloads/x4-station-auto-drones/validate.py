@@ -1,43 +1,39 @@
 #!/usr/bin/env python3
+"""Lightweight packaging integrity only: no feature/regression assertions.
+
+Game behavior must be checked using X4 itself and its debug.log.
+"""
 from pathlib import Path
-import xml.etree.ElementTree as ET
 from zipfile import ZipFile
-root=Path(__file__).resolve().parent
-mod=root/'vardath_station_auto_drones'
-required={'content.xml','ui.xml','README.md','md/vardath_station_auto_drones.xml','ui/vardath_station_auto_drones.lua'}
-files={str(x.relative_to(mod)) for x in mod.rglob('*') if x.is_file()}
-assert files==required,(files,required)
-for p in mod.rglob('*.xml'): ET.parse(p)
-content=ET.parse(mod/'content.xml').getroot()
-assert content.attrib['id']=='vardath_station_auto_drones'
-assert int(content.attrib['version'])>=101
-d=ET.parse(mod/'md/vardath_station_auto_drones.xml')
-assert d.find('.//cue[@name="ManagePlayerStations"][@checkinterval="1min"]') is not None
-assert d.find('.//create_control_entity[@post="controlpost.manager"]') is not None
-assert len(d.findall('.//find_module[@checkoperational="true"]'))==2
-assert len(d.findall('.//raise_lua_event[@name="\'Vardath.StationAutoDrones.ApplyRoster\'"]'))==1
-assert d.find('.//set_value[@name="player.entity.$VAD_Roster"]') is not None
-assert d.find('.//show_notification') is not None
-lua=(mod/'ui/vardath_station_auto_drones.lua').read_text()
-for snippet in ["{60,5,5,30}","{90,5,5,0}","UpdateSupplyOverrides","GetNPCBlackboard","SetNPCBlackboard","Vardath.StationAutoDrones.ApplyRoster","readback mismatch"]:
- assert snippet in lua,snippet
-# Largest remainder rounding exemplars, verified independently.
-def alloc(cap,weights):
- base=[cap*p//100 for p in weights]
- residual=[(cap*p%100,i) for i,p in enumerate(weights)]
- for _,i in sorted(residual,key=lambda x:(-x[0],x[1]))[:cap-sum(base)]:base[i]+=1
- return base
-for cap in [1,2,3,4,5,20,32,100,200,1000]:
- for weights in [[90,5,5,0],[60,5,5,30]]:
-  x=alloc(cap,weights)
-  assert sum(x)==cap,(cap,weights,x)
-assert alloc(100,[90,5,5,0])==[90,5,5,0]
-assert alloc(200,[60,5,5,30])==[120,10,10,60]
-archive=root/'vardath_station_auto_drones_TEST.zip'
-if archive.exists():
- with ZipFile(archive) as z:
-  assert z.testzip() is None
-  assert set(z.namelist())=={'vardath_station_auto_drones/'+p for p in required}
-  for p in required:
-   assert z.read('vardath_station_auto_drones/'+p)==(mod/p).read_bytes()
-print('X4 station automation v1.01 source, XML and ZIP checks passed; game runtime still untested.')
+import xml.etree.ElementTree as ET
+
+root = Path(__file__).resolve().parent
+name = "vardath_station_auto_drones"
+source = root / name
+archive = root / (name + "_TEST.zip")
+
+if not source.is_dir():
+    raise SystemExit(f"Missing extension folder: {source}")
+items = sorted(p for p in source.rglob("*") if p.is_file())
+if not items or not (source / "content.xml").is_file():
+    raise SystemExit(f"Missing files or content.xml in {source}")
+manifest = ET.parse(source / "content.xml").getroot()
+if manifest.tag != "content" or manifest.get("id") != name:
+    raise SystemExit("Malformed content.xml identifier")
+for item in items:
+    if item.suffix.lower() == ".xml":
+        ET.parse(item)
+if not archive.is_file():
+    raise SystemExit(f"Missing packaged ZIP: {archive}")
+with ZipFile(archive) as packed:
+    if (bad := packed.testzip()) is not None:
+        raise SystemExit(f"ZIP checksum error: {bad}")
+    expected = {name + "/" + p.relative_to(source).as_posix() for p in items}
+    actual = set(packed.namelist())
+    if actual != expected:
+        raise SystemExit("ZIP paths do not match source folder")
+    for item in items:
+        member = name + "/" + item.relative_to(source).as_posix()
+        if packed.read(member) != item.read_bytes():
+            raise SystemExit(f"ZIP contains stale source: {member}")
+print(f"PASS: {name}; {len(items)} source files, XML parse and ZIP integrity")

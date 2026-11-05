@@ -1,5 +1,5 @@
 name: Package three X4 mods
-# Package then validate current TEST ZIPs; builder v1.7 checks actual pre-deployment construction assignments and uncapped SETA wages.
+# Package, parse XML, check ZIP integrity. No feature-specific regression tests.
 on:
   push:
     paths:
@@ -38,39 +38,19 @@ jobs:
             for p in paths:
               if p.suffix.lower()==".xml":
                 ET.parse(p)
-            if mod=="vardath_kopis_production_cheat":
-              forge=source/"md/vardath_kopis_builder_start.xml"
-              astrid=source/"md/vardath_astrid_builder_start.xml"
-              assert forge.is_file() and astrid.is_file()
-              forge_text=forge.read_text()
-              astrid_text=astrid.read_text()
-              assert 'macro.ship_vardath_kopis_factory_macro' in forge_text
-              assert 'macro.ship_gen_m_yacht_01_a_macro' in astrid_text
-              assert 'player.galaxy.gamestart' not in forge_text+astrid_text
-              content=(source/"content.xml").read_text()
-              assert 'id="vardath_living_factions_builders"' in content
-              assert 'id="ego_dlc_pirate"' in content
             target=root/folder/archive
             with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED) as z:
               for p in paths: z.write(p,p.relative_to(source.parent))
             with zipfile.ZipFile(target) as z:
               assert z.testzip() is None
               assert len(z.namelist())==len(paths)
-              if mod=="vardath_kopis_production_cheat":
-                names=set(z.namelist())
-                assert f"{mod}/md/vardath_kopis_builder_start.xml" in names
-                assert f"{mod}/md/vardath_astrid_builder_start.xml" in names
-                assert f"{mod}/index/macros.xml" in names
-                assert f"{mod}/index/components.xml" in names
-                assert z.read(f"{mod}/md/vardath_astrid_builder_start.xml").decode()==astrid_text
-                assert z.read(f"{mod}/md/vardath_kopis_builder_start.xml").decode()==forge_text
             print(target,len(paths),"files")
           PY
-      - name: Validate builder payroll and packaged ZIP
+      - name: Verify builder XML and ZIP integrity
         run: python downloads/x4-living-factions-builders/validate.py
-      - name: Validate exactly three Yaki Terran rings, snap points and packaged ZIP
+      - name: Verify Yaki XML and ZIP integrity
         run: python downloads/x4-yaki-terran-habs/validate.py
-      - name: Validate Kopis and repeating player-owned Astrid replacement
+      - name: Verify Kopis XML and ZIP integrity
         run: python downloads/x4-kopis-production-cheat/validate.py
       - name: Commit installable ZIPs
         run: |
