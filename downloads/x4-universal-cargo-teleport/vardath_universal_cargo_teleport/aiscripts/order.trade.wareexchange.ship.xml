@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Do not demand cargo drones for an exchange handled by the
+       player-owned wireless-transfer path. Non-player exchanges are left
+       unchanged, including their native checks and failure behaviour. -->
+  <replace sel="/aiscript/attention/actions/do_if[contains(@value, '$targetobject.iscapitalship and not $targetobject.units')]/@value">this.assignedcontrolled.iscapitalship and not this.assignedcontrolled.units.{unitcategory.transport}.count and $targetobject.iscapitalship and not $targetobject.units.{unitcategory.transport}.count and not (this.assignedcontrolled.isplayerowned and $targetobject.isplayerowned and $tradedeal.iswareexchange)</replace>
+
+  <!-- All player-owned sizes use the original trade engine, not cargo
+       crates, drones, docking or Lua. The passive partner keeps the native
+       wait-and-notification state; only the active partner approaches. -->
+  <add sel="/aiscript/attention/actions/do_if[@value='$targetobject.isclass.ship and not $targetobject.buildanchor.exists']" pos="before">
+    <do_if value="this.assignedcontrolled.isplayerowned and $targetobject.isplayerowned and $targetobject.isclass.ship and $targetobject.isoperational and $tradedeal.iswareexchange">
+      <do_if value="$ispassive">
+        <resume label="passive_trade"/>
+      </do_if>
+      <do_else>
+        <do_if value="this.assignedcontrolled.zone != $targetobject.zone or this.assignedcontrolled.distanceto.{$targetobject} gt 30km">
+          <run_script name="'move.generic'" result="$VardathTeleportApproached">
+            <param name="destination" value="$targetobject"/>
+            <param name="pursuedistance" value="15km"/>
+            <param name="debugchance" value="$debugchance"/>
+          </run_script>
+        </do_if>
+        <do_if value="this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km">
+          <resume label="check_trade"/>
+        </do_if>
+      </do_else>
+    </do_if>
+  </add>
+</diff>

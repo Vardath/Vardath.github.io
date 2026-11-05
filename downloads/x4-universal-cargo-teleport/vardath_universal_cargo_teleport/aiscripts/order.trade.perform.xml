@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Disable the capital-ship cargo-drone prerequisite only for the
+       player-owned ship's normal TradePerform order, where our ship is
+       able to travel to the partner and carry out a dockless transaction. -->
+  <replace sel="/aiscript/attention/actions/do_if[contains(@value, 'not this.assignedcontrolled.units')]/@value">this.assignedcontrolled.iscapitalship and not this.assignedcontrolled.units.{unitcategory.transport}.count and not $targetobject.units.{unitcategory.transport}.count and not (this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship))</replace>
+
+  <!-- Near the target already: bypass the entire docking order. All sizes. -->
+  <add sel="/aiscript/attention/actions/label[@name='move_to_targetobject']" pos="after">
+    <do_if value="this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship) and this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km">
+      <resume label="perform_trade"/>
+    </do_if>
+  </add>
+
+  <!-- Before issuing DockAndWait, approach for a 30 km wireless transfer.
+       Execute X4's original trade transaction and payment logic. If the
+       target remains out of reach, leave the original dock flow alone. -->
+  <add sel="/aiscript/attention/actions/do_if[@value='not $cannotdock']" pos="before">
+    <do_if value="this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship)">
+      <do_if value="this.assignedcontrolled.zone != $targetobject.zone or this.assignedcontrolled.distanceto.{$targetobject} gt 30km">
+        <run_script name="'move.generic'" result="$VardathTeleportApproached">
+          <param name="destination" value="$targetobject"/>
+          <param name="pursuedistance" value="15km"/>
+          <param name="debugchance" value="$debugchance"/>
+        </run_script>
+      </do_if>
+      <do_if value="this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km">
+        <resume label="perform_trade"/>
+      </do_if>
+    </do_if>
+  </add>
+</diff>

@@ -1,0 +1,54 @@
+name: Package X4 Universal Cargo Teleport
+on:
+  push:
+    paths:
+      - '.github/workflows/package-x4-universal-cargo-teleport.yml'
+      - 'downloads/x4-universal-cargo-teleport/vardath_universal_cargo_teleport/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vardath-x4-universal-cargo-package
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Parse XML and package single extension
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import xml.etree.ElementTree as ET
+          folder=Path('downloads/x4-universal-cargo-teleport')
+          mod='vardath_universal_cargo_teleport'
+          src=folder/mod
+          files=sorted(p for p in src.rglob('*') if p.is_file())
+          assert (src/'content.xml').exists()
+          for p in files:
+              if p.suffix=='.xml':
+                  ET.parse(p)
+          target=folder/(mod+'_TEST.zip')
+          with ZipFile(target,'w',ZIP_DEFLATED) as z:
+              for p in files: z.write(p,p.relative_to(folder))
+          with ZipFile(target) as z:
+              assert z.testzip() is None
+              assert len(z.namelist())==len(files)
+          print('Packaged',target)
+          PY
+      - name: Publish ready-to-install ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-universal-cargo-teleport/*_TEST.zip
+          git diff --cached --quiet || git commit -m "Package X4 universal cargo teleport extension"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
