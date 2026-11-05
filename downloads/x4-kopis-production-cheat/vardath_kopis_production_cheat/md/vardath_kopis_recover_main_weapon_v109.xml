@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathKopisRecoverPrimaryWeaponV109"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- New cue name on v109 deliberately allows migration on existing saves;
+         neither the initial 10-ship spawn nor ship/cargo data is reset. -->
+    <cue name="RecoverMissingKopisPrimaryV109" instantiate="true" checkinterval="1min">
+      <conditions>
+        <check_value value="player.age ge 10s"/>
+      </conditions>
+      <actions>
+        <find_ship name="$VardathForgesV109" owner="faction.player" class="class.ship_s"
+                   space="player.galaxy" multiple="true"/>
+        <do_for_each name="$ForgeV109" in="$VardathForgesV109">
+          <do_if value="$ForgeV109.exists and $ForgeV109.macro == macro.ship_vardath_kopis_factory_macro">
+            <!-- Unlike prior cues, explicitly count MAIN guns, excluding turrets. -->
+            <do_if value="$ForgeV109.weapons.all.count - $ForgeV109.turrets.all.count le 0">
+              <!-- Normal X4 9.00 equipment fitting: force the registered custom
+                   8000-damage weapon as the selected candidate on this exact hull. -->
+              <generate_loadout result="$VardathGunCandidatesV109"
+                                macro="macro.ship_vardath_kopis_factory_macro"
+                                macros="[macro.weapon_vardath_kopis_laser_macro]" flags="weapons">
+                <quantity level="1" variation="0"/>
+                <quality level="1" variation="0"/>
+              </generate_loadout>
+              <do_if value="@$VardathGunCandidatesV109.count gt 0">
+                <apply_loadout object="$ForgeV109"
+                               loadout="$VardathGunCandidatesV109.{1}" flags="add weapons"/>
+              </do_if>
+
+              <!-- Named-loadout fallback if a dynamic candidate is unavailable. -->
+              <do_if value="$ForgeV109.weapons.all.count - $ForgeV109.turrets.all.count le 0">
+                <get_loadout result="$VardathNamedWeaponKitV109"
+                             loadout="'vardath_kopis_factory_kit'"
+                             macro="macro.ship_vardath_kopis_factory_macro"/>
+                <do_if value="$VardathNamedWeaponKitV109?">
+                  <apply_loadout object="$ForgeV109"
+                                 loadout="$VardathNamedWeaponKitV109" flags="add weapons"/>
+                </do_if>
+              </do_if>
+
+              <!-- The old cue logged success unconditionally even with zero guns.
+                   Log confirmed results only; failure lists actual slot capacity. -->
+              <do_if value="$ForgeV109.weapons.all.count - $ForgeV109.turrets.all.count gt 0">
+                <debug_text text="'Kopis V109 PRIMARY WEAPON CONFIRMED: %1, guns=%2'.[$ForgeV109.knownname, $ForgeV109.weapons.all.count - $ForgeV109.turrets.all.count]"
+                            filter="general"/>
+              </do_if>
+              <do_else>
+                <debug_text text="'Kopis V109 PRIMARY WEAPON STILL MISSING: %1, available weapon slots=%2, dynamic fitting candidates=%3; check equipment compatibility and ware import'.[$ForgeV109.knownname, $ForgeV109.weapons.numslots, @$VardathGunCandidatesV109.count]"
+                            filter="error"/>
+              </do_else>
+            </do_if>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

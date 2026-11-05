@@ -1,3 +1,13 @@
+# v1.09 — Weapon-ware ordering and verified existing-save gun recovery (2026-11-06)
+
+The **existing Kopis Mobile Forge is preserved**. This update does not restore the removed dorsal turret or undo cargo storage, production, Astrid replacement, crew, build storage, drones, or the existing game save.
+
+Root-cause isolation: v1.05 changed the custom weapon ware metadata alongside removal of the turret connection. The current laser and beam ware definitions placed `<use>` BEFORE `<restriction>` unlike the vanilla 9.00 Terran Pulse Laser Mk2 equipment definition. The equipment import previously logged missing use data. v1.09 places `<use threshold="0"/>` AFTER `<restriction>` for all three retained weapon/turret equipment wares, matching the 9.00 base-game sequence.
+
+A **new named v1.09 recovery cue** operates on existing player-owned Forges and uses X4's `generate_loadout` + `apply_loadout flags="add weapons"` path (with the original named-loadout fallback). It checks the actual number of main weapons afterwards, and reports **CONFIRMED** only if the gun appeared, otherwise **STILL MISSING** with slot count and fitting candidate count in the debug log. It does not create or replace ships, and does not touch equipped ships or other equipment.
+
+The custom laser's projectile remains **8,000 damage per hit (100× vanilla 80)**. A live game test is still required; verify the Weapons tab after loading the updated mod. In-game failure now has actionable logging instead of false-success logging.
+
 # v1.08 — Main gun equipment-definition fix (2026-11-06)
 
 **Fixes the confirmed X4 9.00 runtime error:** both `weapon_vardath_kopis_laser` and `weapon_vardath_kopis_beam` lacked required `<use threshold="0"/>` metadata in `libraries/wares.xml`. The game logged `WareDB::Import(): ware ... is tagged as equipment but does not have ware use information!`; an equipment recovery script cannot reliably mount an improperly imported gun.
