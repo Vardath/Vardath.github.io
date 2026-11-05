@@ -10,6 +10,15 @@
    <actions>
     <find_station_by_true_owner name="$Stations" faction="faction.player"
       space="player.galaxy" checkoperational="false" multiple="true"/>
+    <!-- A second, conventional ownership lookup covers stations for which
+         the true-owner-specific lookup is unavailable in a save/game state. -->
+    <do_if value="$Stations.count == 0">
+     <find_station name="$Stations" owner="faction.player"
+       space="player.galaxy" checkoperational="false" multiple="true"/>
+     <do_if value="$Stations.count gt 0">
+      <debug_text text="'[VAD] Conventional station lookup recovered ' + $Stations.count + ' stations.'" filter="error"/>
+     </do_if>
+    </do_if>
     <do_if value="not md.$VAD_ScanCount?">
      <set_value name="md.$VAD_ScanCount" exact="0"/>
     </do_if>
