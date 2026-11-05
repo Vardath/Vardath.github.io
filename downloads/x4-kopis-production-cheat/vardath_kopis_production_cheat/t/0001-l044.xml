@@ -2,9 +2,9 @@
 <language id="44">
   <page id="995506" title="Vardath Kopis Production Cheat" descr="" voice="no">
     <t id="1">Kopis Mobile Forge</t>
-    <t id="2">Experimental Terran Kopis conversion: massive universal freight, Dart-like agility, a slowly self-producing economy cargo supply and nearby station build-storage logistics. Can carry building and cargo drones and 250 people. Weapons include an enhanced Terran Mk2 laser and an experimental dorsal turret connection.</t>
+    <t id="2">Experimental Terran Kopis conversion: massive universal freight, Dart-like agility, a slowly self-producing economy cargo supply and nearby station build-storage logistics. Can carry building and cargo drones and 250 people. Its primary weapon is a 100-times-damage Terran Mk2-derived Forge laser. The experimental dorsal turret socket was removed; all logistics features remain.</t>
     <t id="3">Kopis Forge Laser Mk2+</t>
-    <t id="4">Terran Mk2 laser derivative with 900 base damage per shot (custom Forge laser, 10 times its previous 90).</t>
+    <t id="4">Terran Mk2 laser derivative with 8,000 damage per hit (100 times the original 80).</t>
     <t id="5">Kopis Forge Beam Turret Mk1 X10</t>
     <t id="6">Custom Terran Meson Stream beam turret with 35,900 base beam damage, ten times the 3,590 original.</t>
   </page>
