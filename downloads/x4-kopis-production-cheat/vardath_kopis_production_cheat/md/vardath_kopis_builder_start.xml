@@ -9,6 +9,9 @@
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
         <debug_text text="'Vardath Kopis startup cue reached'" filter="general"/>
+        <!-- Resolve the exact custom kit once; this is only used as a
+             weapon-only fallback if X4 rejects the spawn weapon. -->
+        <get_loadout result="$VardathWeaponKit" loadout="'vardath_kopis_factory_kit'" macro="macro.ship_vardath_kopis_factory_macro"/>
         <do_all exact="10" counter="$ForgeIndex">
           <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>
@@ -16,6 +19,12 @@
           <pilot><select faction="faction.yaki" tags="tag.fighterpilot"/></pilot>
           <people ref="player_yaki_veteran_freighter_crew"><fillpercent exact="4"/></people>
           </create_ship>
+          <find_object_component name="$VardathStartWeapons" object="$Forge" class="class.weapon" multiple="true"/>
+          <do_if value="$Forge.exists and $VardathStartWeapons.count == 0 and $VardathWeaponKit?">
+            <!-- Add only the missing main weapon. Do not touch cargo, engines,
+                 shields, crew, drones, or any other equipped objects. -->
+            <apply_loadout object="$Forge" loadout="$VardathWeaponKit" flags="add weapons"/>
+          </do_if>
         </do_all>
       </actions>
     </cue>

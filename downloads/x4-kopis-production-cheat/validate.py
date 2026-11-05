@@ -18,7 +18,7 @@ with zipfile.ZipFile(archive) as z:
       ET.fromstring(disk)
 manifest=ET.parse(mod/"content.xml").getroot()
 assert manifest.get("id")=="vardath_kopis_production_cheat"
-assert int(manifest.get("version"))>=105
+assert int(manifest.get("version"))>=106
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 macro=ET.parse(mod/"assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml").getroot()
 ship=macro.find("./macro[@name='ship_vardath_kopis_factory_macro']")
@@ -63,7 +63,8 @@ for wareid, group in [('weapon_vardath_kopis_laser','weapons'),('weapon_vardath_
   assert ware is not None and ware.get("group")==group
   assert ware.find("./component").get("ref")==wareid+"_macro"
   assert {o.get("faction") for o in ware.findall("./owner")} >= {"terran","pioneers"}
-  assert ware.find("./use[@threshold='0']") is not None
+  if wareid in ("weapon_vardath_kopis_laser","weapon_vardath_kopis_beam"):
+    assert ware.find("./use") is None, "Restore original pre-v1.05 weapon equipment-ware definition"
 load=ET.parse(mod/"libraries/loadouts.xml").getroot()
 kit=load.find(".//loadout[@id='vardath_kopis_factory_kit']")
 assert kit is not None and kit.get("macro")=="ship_vardath_kopis_factory_macro"
@@ -131,3 +132,17 @@ assert "blacklisttype.sectoractivity" in check.text
 assert manifest.find("./dependency[@id='ws_2074838459'][@optional='true']") is not None
 assert "Vardath Kopis startup cue reached" in (mod/"md/vardath_kopis_builder_start.xml").read_text()
 assert "\\'Vardath Kopis startup" not in (mod/"md/vardath_kopis_builder_start.xml").read_text()
+
+# Regression checks for spawned AND saved unarmed Forges.
+starter = ET.parse(mod/"md/vardath_kopis_builder_start.xml").getroot()
+assert starter.find(".//get_loadout[@loadout=\"'vardath_kopis_factory_kit'\"]") is not None
+assert starter.find(".//apply_loadout[@flags='add weapons']") is not None
+assert kit.find("./macros/weapon[@macro='weapon_vardath_kopis_laser_macro'][@path='../con_weapon_01']") is not None
+repair = ET.parse(mod/"md/vardath_kopis_restore_main_weapon.xml").getroot()
+assert repair.get("name")=="VardathKopisRestoreMainWeapon"
+cue = repair.find(".//cue[@name='RestoreUnarmedForges_v106']")
+assert cue is not None and cue.get("instantiate")=="true"
+assert cue.find(".//get_loadout[@loadout=\"'vardath_kopis_factory_kit'\"]") is not None
+assert cue.find(".//apply_loadout[@flags='add weapons']") is not None
+assert cue.find(".//find_object_component[@class='class.weapon']") is not None
+assert cue.find(".//reset_cue") is None, "Restoration must be one-shot for old saves"

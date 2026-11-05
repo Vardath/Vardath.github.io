@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathKopisRestoreMainWeapon" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- One-time recovery for EXISTING saved player-owned Forges that lost
+         the primary gun following the v1.05 equipment-ware regression.
+         The new cue completes only once; it never keeps forcing weapons
+         onto intentionally unarmed ships after that first repair. -->
+    <cue name="RestoreUnarmedForges_v106" instantiate="true" checkinterval="30s">
+      <conditions>
+        <check_value value="player.age ge 10s"/>
+      </conditions>
+      <actions>
+        <get_loadout result="$VardathRestoreKit" loadout="'vardath_kopis_factory_kit'" macro="macro.ship_vardath_kopis_factory_macro"/>
+        <do_if value="$VardathRestoreKit?">
+          <find_ship name="$VardathForges" owner="faction.player" class="class.ship_s" space="player.galaxy" multiple="true"/>
+          <do_for_each name="$Forge" in="$VardathForges">
+            <do_if value="$Forge.exists and $Forge.macro == macro.ship_vardath_kopis_factory_macro">
+              <find_object_component name="$VardathExistingGuns" object="$Forge" class="class.weapon" multiple="true"/>
+              <do_if value="$VardathExistingGuns.count == 0">
+                <apply_loadout object="$Forge" loadout="$VardathRestoreKit" flags="add weapons"/>
+                <debug_text text="'Vardath Kopis gun recovery applied to %1'.[$Forge.knownname]" filter="general"/>
+              </do_if>
+            </do_if>
+          </do_for_each>
+        </do_if>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

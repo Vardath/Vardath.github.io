@@ -1,3 +1,13 @@
+# v1.06 — Primary weapon restoration (2026-11-06)
+
+**Fix for the v1.05 unarmed Forge regression.** Restores the pre-v1.05 equipment-ware setup for the original Forge Laser and Forge Beam. The v1.05 update added `<use threshold="0"/>` to these two weapon wares; this change has been reversed without reverting the turret removal, the Builder fixes or the Sector Explorer patch.
+
+- Retains the actual Terran-compatible `con_weapon_01` main gun mount and the original `weapon_vardath_kopis_laser_macro` in the saved starter loadout.
+- The startup script now checks whether each newly spawned Forge has a gun; if missing, it retries the original loadout with `apply_loadout flags="add weapons"` (no other equipment or cargo changes).
+- A **new, one-time savegame cue** finds player-owned Forges left unarmed by the previous update and applies only the missing weapon. It does **not** overwrite equipped main guns or alter shields, cargo, drones, engines, crew or other equipment.
+- The broken dorsal turret socket remains removed. Legacy turret definitions remain available for older saves.
+- Static packaging and XML verification are not substitutes for an X4 in-game test; check existing ships after restart.
+
 # v1.05 — repairs and optional Sector Explorer compatibility
 
 - Removed the Kopis Forge's nonfunctional experimental dorsal turret SOCKET and initial turret loadout; the ship continues to use its main gun.
