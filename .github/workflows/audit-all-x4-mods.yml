@@ -4,11 +4,13 @@ on:
     paths:
       - '.github/workflows/audit-all-x4-mods.yml'
       - 'tools/audit-x4-mods.py'
-      - 'downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/**'
-      - 'downloads/x4-faction-invincible/vardath_faction_invincible/**'
-      - 'downloads/x4-station-auto-drones/vardath_station_auto_drones/**'
-      - 'downloads/x4-living-factions-builders/vardath_living_factions_builders/**'
-      - 'downloads/x4-yaki-terran-habs/vardath_yaki_terran_habs/**'
+      # Audit the committed installable packages, only AFTER their packagers run.
+      # Source changes trigger the respective packagers independently.
+      - 'downloads/x4-kopis-production-cheat/*_TEST.zip'
+      - 'downloads/x4-faction-invincible/*_TEST.zip'
+      - 'downloads/x4-station-auto-drones/*_TEST.zip'
+      - 'downloads/x4-living-factions-builders/*_TEST.zip'
+      - 'downloads/x4-yaki-terran-habs/*_TEST.zip'
   workflow_dispatch:
 permissions:
   contents: read
