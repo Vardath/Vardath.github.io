@@ -1,17 +1,13 @@
-# X4 — Vardath Kopis Mobile Forge
+# X4 — Vardath Kopis Mobile Forge (v1.08)
 
-**Cheat logistics ship, experimental v1.03 (X4 9.00).** Requires **Cradle of Humanity**, **Tides of Avarice**, and **Vardath Living Factions & Builders**.
+[Current packaged ZIP](./vardath_kopis_production_cheat_TEST.zip) (GitHub Actions repackages on a source change). Install by replacing the complete `vardath_kopis_production_cheat` extension folder. Restart X4; **continue your existing save**.
 
-[Download the current ready-to-install ZIP](./vardath_kopis_production_cheat_TEST.zip)
+**Kopis main gun:** fixed the missing equipment-use data logged by X4. The Forge Laser is **8,000 damage per hit (100x the vanilla Terran S Laser Mk2's 80)**. Existing player-owned Forges are scanned every game minute for missing primary weapons, with a weapon-only repair attempt. The experimental turret slot is not present.
 
-Creates a **new Kopis Mobile Forge** (does not overwrite Kopis), with Dart-inspired ~540 m/s target normal speed, **1 million m³ each** of container, solid and liquid cargo space, **250 crew**, **512 drone slots**, 5,000 deployables, 500 countermeasures, an enhanced Terran laser (+10 damage), and an experimental M turret hardpoint.
+**Other features:** 1 million m³ each container/solid/liquid storage, 250 crew seats, 512 drones, automatic slow resources, construction storage transfers, 10 starter Forges, and continual player-owned Astrid replacement.
 
-Every ten in-game minutes, it attempts to generate **one unit of each cargo resource** into its own real hold. Within 35 kilometres of a station building modules, it feeds up to 25 units of common construction wares into that station's real build storage every two in-game minutes.
+**Sector Explorer:** The old optional script override has been **removed** because X4 rejected its `<diff>` root. The actual `fs_exp` script needs to use `blacklisttype.sectortravel`, not obsolete `blacklisttype.travel`. To correct an installed loose XML copy, run `fix-sector-explorer.ps1` with `-ExtensionsPath` pointing to the actual X4 `extensions` directory holding `fs_exp`. If Sector Explorer is only present in packaged CAT/DAT files, use an updated copy from its author or disable it; this helper does not edit packages. The helper backs up the original XML and changes only the obsolete token.
 
-**Note:** It is an S-class **mobile supply cheat ship**, not a native XL builder, and deliveries are scripted transfers rather than animated cargo drones. Speed and turret functionality require in-game verification.
+**Requirements:** X4 9.00, Cradle of Humanity, Tides of Avarice, and Vardath Living Factions & Builders. This is a resource-supply cheat ship, not a native XL builder. Runtime weapon mounting still requires an in-game check.
 
-**Permanent Astrid guarantee (v1.03):** once per in-game minute, the mod looks across the galaxy for a player-owned Astrid. If none exists, it generates one nearby with a Yaki pilot and crew; losing or selling that replacement triggers another. The watch also activates in existing saves and does not create duplicates when you still own an Astrid.
-
-[Full installation and test documentation](./vardath_kopis_production_cheat/README.md)
-
-Extract `vardath_kopis_production_cheat` alongside your existing extensions.
+[Full extension documentation](./vardath_kopis_production_cheat/README.md)

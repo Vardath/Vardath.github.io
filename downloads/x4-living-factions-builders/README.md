@@ -1,3 +1,7 @@
+# v1.72 — Builder payroll numeric-type correction (2026-11-06)
+
+X4 treats `$Delta / 1h` as **time**, not a dimensionless float. Multiplication by `100000Cr` or `25000Cr` caused the logged `Invalid data types for arithmetic operation` errors and prevented accrued hourly payments. The expressions now explicitly cast the duration ratio to float using X4's `(... )f` syntax, preserving existing save ledgers, 200,000Cr hire fees, 100,000Cr/h active work, 25,000Cr/h standby, and SETA elapsed-time accounting. This is a source fix; confirm actual payout in game.
+
 # X4: Foundations — Vardath Living Factions & Builders
 
 **Latest version: 1.4 — experimental X4 9.00**

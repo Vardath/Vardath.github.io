@@ -30,7 +30,7 @@
         </primary>
       </production>
       <component ref="weapon_vardath_kopis_laser_macro"/>
-      <restriction licence="generaluseequipment"/>
+      <use threshold="0"/><restriction licence="generaluseequipment"/>
       <owner faction="pioneers"/>
       <owner faction="terran"/>
       
@@ -39,7 +39,7 @@
       <price min="1500000" average="1800000" max="2100000"/>
       <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="computronicsubstrate" amount="35"/><ware ware="energycells" amount="600"/></primary></production>
       <component ref="weapon_vardath_kopis_beam_macro"/>
-      <restriction licence="generaluseequipment"/><owner faction="pioneers"/>
+      <use threshold="0"/><restriction licence="generaluseequipment"/><owner faction="pioneers"/>
       <owner faction="terran"/>
     </ware>
     <ware id="turret_vardath_kopis_beam" name="{995506,5}" description="{995506,6}" group="turrets" transport="equipment" volume="1" tags="equipment turret">

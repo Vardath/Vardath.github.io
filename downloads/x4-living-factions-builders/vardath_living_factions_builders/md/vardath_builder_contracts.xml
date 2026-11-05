@@ -34,10 +34,10 @@
                 <do_if value="$Contract.$BuildModule.isbuilding">
                   <!-- Actual construction is required for a completion reputation award. -->
                   <set_value name="$Contract.$SawConstruction" exact="true"/>
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ($Delta / 1h) * 100000Cr"/>
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 100000Cr)"/>
                 </do_if>
                 <do_else>
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ($Delta / 1h) * 25000Cr"/>
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 25000Cr)"/>
                 </do_else>
               </do_if>
               <set_value name="$Contract.$LastSample" exact="player.age"/>

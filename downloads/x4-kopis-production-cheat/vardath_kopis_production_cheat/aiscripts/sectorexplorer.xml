@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<diff>
-  <!-- Optional Sector Explorer v1.52 compatibility: replace the exact
-       null-type blacklist check from the supplied debug.log. Only applies
-       if that version of the third-party script is loaded. -->
-  <replace sel="//do_if[contains(@value,' and not $fs_target.isblacklisted.{blacklisttype.sectoractivity}')]/@value">not $fs_target.isblacklisted.{blacklisttype.sectoractivity}.{blacklistgroup.civilian}.{this.assignedcontrolled}</replace>
-</diff>

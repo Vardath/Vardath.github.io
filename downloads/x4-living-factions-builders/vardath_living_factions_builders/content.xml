@@ -3,7 +3,7 @@
          name="Vardath - Living Factions and Builders"
          description="Non-hostile NPC construction requests for player XL builders, 200000-credit hiring fees, 100000Cr/h active and 25000Cr/h standby, save-persistent SETA-aware assigned-builder payroll, including transit before deployment and one-time construction completion reputation rewards. Faction economy-driven station expansion. Experimental X4 9.00; now includes Terran female white dress and Yaki-crewed Kyushu game start (Cradle of Humanity DLC required)."
          author="Vardath"
-         version="171"
+         version="172"
          date="2026-11-01"
          save="1">
     <dependency version="900"/>

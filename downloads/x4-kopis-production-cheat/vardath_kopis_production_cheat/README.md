@@ -1,3 +1,11 @@
+# v1.08 — Main gun equipment-definition fix (2026-11-06)
+
+**Fixes the confirmed X4 9.00 runtime error:** both `weapon_vardath_kopis_laser` and `weapon_vardath_kopis_beam` lacked required `<use threshold="0"/>` metadata in `libraries/wares.xml`. The game logged `WareDB::Import(): ware ... is tagged as equipment but does not have ware use information!`; an equipment recovery script cannot reliably mount an improperly imported gun.
+
+The custom laser remains **8,000 damage per hit (100x the nominal 80-damage Terran S Laser Mk2)**. The existing per-minute V1.07 recovery script still checks **previously spawned player-owned Forges** and attempts to equip the missing main gun without changing their cargo, drones or other equipment. The v1.06 recovery cue remains for save compatibility. No new game or replacement ship is required. **In-game confirmation of the result is still necessary.**
+
+The previous `aiscripts/sectorexplorer.xml` was an invalid diff file in the AI scripts loading directory; X4 ignored it. It is removed. An optional one-time PowerShell helper, `../fix-sector-explorer.ps1`, can patch the installed third-party `fs_exp` file from the obsolete `blacklisttype.travel` to `blacklisttype.sectortravel`. This avoids overriding the complete Sector Explorer script from this mod. Details: `../README.md`.
+
 # v1.07 — Automatic main weapon restoration (2026-11-06)
 
 The main gun is now **8000 damage per hit**, exactly **100× the vanilla Terran S Laser Mk2's 80 damage** (not an additional multiplication of the previous Forge damage).
