@@ -3,7 +3,7 @@
          name="Vardath - Player Faction Invincible"
          description="Always-on full hull and shield protection for player-owned ships, stations, station modules, subsystems and deployables. Sweeps the galaxy every game minute; refills damage and removes protection on ownership loss. No toggle."
          author="Vardath"
-         version="100"
+         version="101"
          date="2026-11-05"
          save="1">
     <dependency version="900"/>

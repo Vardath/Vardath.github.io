@@ -11,8 +11,11 @@ manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.tag == "content"
 assert manifest.get("id") == "vardath_faction_invincible"
 assert manifest.get("save") == "1"
+assert int(manifest.get("version")) >= 101
+
 assert manifest.find("./dependency").get("version") == "900"
 md = ET.parse(mod / "md/vardath_faction_invincible.xml").getroot()
+assert all(node.get("recursive") is None for node in md.findall(".//find_ship_by_true_owner")), "Unsupported X4 9.00 find_ship_by_true_owner recursive attribute"
 assert md.find(".//cue[@name='SweepPlayerProperty'][@checkinterval='1min']") is not None
 assert md.find(".//library[@name='SetAssetProtection'][@purpose='run_actions']") is not None
 for action in ("find_ship_by_true_owner", "find_station_by_true_owner", "find_object",

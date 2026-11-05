@@ -18,7 +18,7 @@ with zipfile.ZipFile(archive) as z:
       ET.fromstring(disk)
 manifest=ET.parse(mod/"content.xml").getroot()
 assert manifest.get("id")=="vardath_kopis_production_cheat"
-assert int(manifest.get("version"))>=103
+assert int(manifest.get("version"))>=104
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 macro=ET.parse(mod/"assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml").getroot()
 ship=macro.find("./macro[@name='ship_vardath_kopis_factory_macro']")
@@ -115,7 +115,7 @@ search=watch.find("./actions/find_ship_by_true_owner")
 assert search is not None and search.get("faction")=="faction.player"
 assert search.get("macro")=="macro.ship_gen_m_yacht_01_a_macro"
 assert search.get("space")=="player.galaxy" and search.get("multiple")=="true"
-assert search.get("recursive")=="true", "Count player Astrids even when docked"
+assert search.get("recursive") is None, "find_ship_by_true_owner in X4 9.00 does not accept recursive"
 missing=watch.find("./actions/do_if[@value='$PlayerAstrids.count == 0']")
 assert missing is not None
 assert len(watch.findall(".//create_ship"))==1, "Exactly one spawn per missing-Astrid check"

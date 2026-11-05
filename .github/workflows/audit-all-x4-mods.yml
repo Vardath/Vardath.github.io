@@ -4,6 +4,11 @@ on:
     paths:
       - '.github/workflows/audit-all-x4-mods.yml'
       - 'tools/audit-x4-mods.py'
+      - 'downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/**'
+      - 'downloads/x4-faction-invincible/vardath_faction_invincible/**'
+      - 'downloads/x4-station-auto-drones/vardath_station_auto_drones/**'
+      - 'downloads/x4-living-factions-builders/vardath_living_factions_builders/**'
+      - 'downloads/x4-yaki-terran-habs/vardath_yaki_terran_habs/**'
   workflow_dispatch:
 permissions:
   contents: read

@@ -113,6 +113,14 @@ for folder,(mod,items) in files_by_mod.items():
         for candidate in set(re.findall(r"\b(?:macro|ware)\.(vardath_[A-Za-z0-9_]+)\b", content)):
             if candidate not in custom_defs and candidate not in ids:
                 note("warnings", folder, f"Unresolved Vardath custom reference {candidate} in {p.relative_to(mod)}")
+    # X4 9.00: 'find_ship_by_true_owner' has no recursive attribute.
+    # The galaxy/owner index already covers player ships without it.
+    for mdfile in mod.glob("md/*.xml"):
+        node = ET.parse(mdfile).getroot()
+        for found in node.iter("find_ship_by_true_owner"):
+            if "recursive" in found.attrib:
+                note("errors", folder, f"Unsupported X4 9.00 recursive attribute in {mdfile.name}")
+
     # Distinguish scripts that only check XML structure vs genuine engine tests.
     report["mods"][folder]["runtime_verified"] = False
 

@@ -31,8 +31,7 @@
              controlled through another faction, or protect borrowed ships. -->
         <find_ship_by_true_owner name="$Ships"
                                  faction="faction.player"
-                                 space="player.galaxy"
-                                 recursive="true" multiple="true"/>
+                                 space="player.galaxy" multiple="true"/>
         <find_station_by_true_owner name="$Stations"
                                     faction="faction.player"
                                     space="player.galaxy" multiple="true"/>

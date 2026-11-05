@@ -17,7 +17,6 @@
                                  faction="faction.player"
                                  macro="macro.ship_gen_m_yacht_01_a_macro"
                                  space="player.galaxy"
-                                 recursive="true"
                                  multiple="true"/>
         <!-- No Astrid in player ownership: issue exactly ONE replacement.
              A subsequent pass will find the new ship, preventing duplicates.
