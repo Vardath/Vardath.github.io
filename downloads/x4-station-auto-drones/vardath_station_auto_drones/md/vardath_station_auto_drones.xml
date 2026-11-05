@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Vardath_StationAutoDrones"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="md.xsd">
+ <cues>
+  <!-- Scan old and new player stations. Retry incomplete stations every minute. -->
+  <cue name="ManagePlayerStations" instantiate="true" checkinterval="1min">
+   <conditions><check_value value="player.age ge 1s"/></conditions>
+   <actions>
+    <find_station_by_true_owner name="$Stations" faction="faction.player"
+      space="player.galaxy" checkoperational="false" multiple="true"/>
+    <do_for_each name="$Station" in="$Stations">
+     <do_if value="$Station.exists and $Station.trueowner == faction.player">
+      <get_control_entities object="$Station" name="$Personnel"/>
+      <set_value name="$HasManager" exact="false"/>
+      <do_for_each name="$Person" in="$Personnel">
+       <do_if value="$Person.exists and $Person.controlpost == controlpost.manager">
+        <set_value name="$HasManager" exact="true"/>
+       </do_if>
+      </do_for_each>
+      <do_if value="not $HasManager">
+       <!-- Operational ONLY: a planned/unbuilt docking module is not enough. -->
+       <find_module name="$Dock" object="$Station" class="class.dockarea" checkoperational="true"/>
+       <do_if value="not $Dock.exists">
+        <find_module name="$Dock" object="$Station" class="class.pier" checkoperational="true"/>
+       </do_if>
+       <do_if value="$Dock.exists">
+        <create_control_entity object="$Station" post="controlpost.manager">
+         <select faction="faction.player" tags="controlpost.manager.tag"/>
+         <owner exact="faction.player"/>
+        </create_control_entity>
+       </do_if>
+      </do_if>
+      <raise_lua_event name="'Vardath.StationAutoDrones.Apply'" param="$Station"/>
+     </do_if>
+    </do_for_each>
+    <reset_cue cue="this"/>
+   </actions>
+  </cue>
+ </cues>
+</mdscript>

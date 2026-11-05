@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="vardath_station_auto_drones" name="Vardath - Automatic Station Drones and Managers"
+ description="Automatically sets player station drone requirements and assigns a manager after the first dock is complete."
+ author="Vardath" version="100" date="2026-11-05" save="0" enabled="1">
+ <dependency version="900"/>
+</content>

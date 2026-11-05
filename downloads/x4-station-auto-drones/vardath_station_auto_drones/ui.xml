@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon name="vardath_station_auto_drones"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../../ui/core/addon.xsd">
+ <environment type="menus">
+  <file name="ui/vardath_station_auto_drones.lua"/>
+ </environment>
+</addon>

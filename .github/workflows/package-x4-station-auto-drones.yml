@@ -1,0 +1,48 @@
+name: Package X4 station drones and managers
+on:
+  push:
+    paths:
+      - '.github/workflows/package-x4-station-auto-drones.yml'
+      - 'downloads/x4-station-auto-drones/vardath_station_auto_drones/**'
+      - 'downloads/x4-station-auto-drones/validate.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vardath-x4-station-auto-drones
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate and build installable ZIP
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          root=Path('downloads/x4-station-auto-drones')
+          with ZipFile(root/'vardath_station_auto_drones_TEST.zip','w',ZIP_DEFLATED) as z:
+            for file in sorted((root/'vardath_station_auto_drones').rglob('*')):
+              if file.is_file(): z.write(file,file.relative_to(root))
+          PY
+          python3 downloads/x4-station-auto-drones/validate.py
+      - name: Commit installable ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-station-auto-drones/vardath_station_auto_drones_TEST.zip
+          git diff --cached --quiet || git commit -m "Package X4 station drones and managers"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Vardath-X4-station-drones-managers-TEST
+          path: downloads/x4-station-auto-drones/vardath_station_auto_drones_TEST.zip
