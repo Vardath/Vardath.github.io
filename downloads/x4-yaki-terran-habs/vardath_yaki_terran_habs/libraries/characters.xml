@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-  <!-- Native Yaki are Argon race. Provide independent race=yaki actor
+  <!-- v1.21: include player faction in Yaki-only generators so player-owned\n       habitat/wharf recruiting does not fall back to generic non-Yaki actors.\n       Native Yaki are Argon race. Provide independent race=yaki actor
        definitions with the exact same Yaki models, faction and skill tables.
        Workforce recruitment can now select matching Yaki appearances
        without changing any original Yaki story/plot or crew definitions. -->
   <add sel="/characters">
 <character id="vardath_trader_yaki_random" group="yaki.trader">
-      <category tags="[crew, pilot, aipilot, traderpilot, masstraffic]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, pilot, aipilot, traderpilot, masstraffic]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="piloting" min="5" max="12"/>
         <skill type="morale" max="12"/>
@@ -19,7 +19,7 @@
     </character>
 
 <character id="vardath_fighter_yaki_random" group="yaki.pilot">
-      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, regular]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, regular]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="piloting" min="4" max="15"/>
         <skill type="morale" max="12"/>
@@ -32,7 +32,7 @@
     </character>
 
 <character id="vardath_manager_yaki_random" group="yaki.manager">
-      <category tags="[crew, officer, manager]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, officer, manager]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="management" min="5" max="9"/>
         <skill type="morale" max="12"/>
@@ -45,7 +45,7 @@
     </character>
 
 <character id="vardath_service_yaki_random_dlc_terran" group="yaki.service">
-      <category tags="[crew, service, regular, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, service, regular, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="engineering" min="2" max="4"/>
         <skill type="morale" min="2" max="4"/>
@@ -57,7 +57,7 @@
     </character>
 
 <character id="vardath_marine_yaki_random_dlc_terran" group="yaki.marine">
-      <category tags="[crew, marine, regular, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, marine, regular, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="boarding" min="2" max="4"/>
         <skill type="morale" min="2" max="4"/>
@@ -69,7 +69,7 @@
     </character>
 
 <character id="vardath_fighter_yaki_regular_random" group="yaki.pilot">
-      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, regular, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, regular, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="piloting" min="5" max="7"/>
         <skill type="morale" exact="7"/>
@@ -82,7 +82,7 @@
     </character>
 
 <character id="vardath_manager_yaki_regular_random" group="yaki.manager">
-      <category tags="[crew, officer, manager, regular, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, officer, manager, regular, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="management" min="5" max="6"/>
         <skill type="morale" max="5"/>
@@ -95,7 +95,7 @@
     </character>
 
 <character id="vardath_passenger_yaki_random_dlc_terran" group="yaki.passenger">
-      <category tags="[crew, passenger]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, passenger]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="boarding" exact="0"/>
         <skill type="engineering" exact="0"/>
@@ -107,7 +107,7 @@
     </character>
 
 <character id="vardath_service_yaki_random_rookie_dlc_terran" group="yaki.service">
-      <category tags="[crew, service, rookie, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, service, rookie, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="engineering" min="1" max="2"/>
         <skill type="morale" min="1" max="4"/>
@@ -119,7 +119,7 @@
     </character>
 
 <character id="vardath_marine_yaki_random_rookie_dlc_terran" group="yaki.marine">
-      <category tags="[crew, marine, rookie, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, marine, rookie, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="boarding" min="1" max="2"/>
         <skill type="morale" min="1" max="3"/>
@@ -131,7 +131,7 @@
     </character>
 
 <character id="vardath_fighter_yaki_random_rookie" group="yaki.pilot">
-      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, rookie, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, officer, pilot, aipilot, fighterpilot, commander, masstraffic, watchdog, rookie, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="piloting" min="1" max="5"/>
         <skill type="morale" min="4" max="5"/>
@@ -144,7 +144,7 @@
     </character>
 
 <character id="vardath_service_yaki_random_veteran_dlc_terran" group="yaki.service">
-      <category tags="[crew, service, veteran, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, service, veteran, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="engineering" min="6" max="9"/>
         <skill type="morale" min="6" max="9"/>
@@ -156,7 +156,7 @@
     </character>
 
 <character id="vardath_marine_yaki_random_veteran_dlc_terran" group="yaki.marine">
-      <category tags="[crew, marine, veteran, recruitable]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, marine, veteran, recruitable]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="boarding" min="6" max="9"/>
         <skill type="morale" min="6" max="9"/>
@@ -168,7 +168,7 @@
     </character>
 
 <character id="vardath_service_yaki_random_elite_dlc_terran" group="yaki.service">
-      <category tags="[crew, service, elite]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, service, elite]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="engineering" min="10" max="12"/>
         <skill type="morale" min="10" max="12"/>
@@ -180,7 +180,7 @@
     </character>
 
 <character id="vardath_marine_yaki_random_elite_dlc_terran" group="yaki.marine">
-      <category tags="[crew, marine, elite]" faction="[yaki]" race="yaki"/>
+      <category tags="[crew, marine, elite]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="boarding" min="10" max="12"/>
         <skill type="morale" min="10" max="12"/>
@@ -192,7 +192,7 @@
     </character>
 
 <character id="vardath_platform_trader_yaki_random_dlc_terran" group="yaki.trader">
-      <category tags="[trader, licencetrader]" faction="[yaki]" race="yaki"/>
+      <category tags="[trader, licencetrader]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="management" min="9" max="12"/>
         <skill type="morale" max="12"/>
@@ -206,7 +206,7 @@
     </character>
 
 <character id="vardath_ship_trader_yaki_random_dlc_terran" group="yaki.shiptrader">
-      <category tags="[trader, shiptrader]" faction="[yaki]" race="yaki" />
+      <category tags="[trader, shiptrader]" faction="[yaki, faction.player]" race="yaki" />
       <skills>
         <skill type="management" min="9" max="12"/>
         <skill type="morale" max="12"/>
@@ -220,7 +220,7 @@
     </character>
 
 <character id="vardath_shadyguy_yaki_random_dlc_terran" group="yaki.shadyguy">
-      <category tags="[shadyguy]" faction="[yaki]" race="yaki" />
+      <category tags="[shadyguy]" faction="[yaki, faction.player]" race="yaki" />
       <skills>
         <skill type="piloting" min="5" max="12"/>
         <skill type="morale" max="12"/>
@@ -234,7 +234,7 @@
     </character>
 
 <character id="vardath_yaki_casual_dlc_terran" group="yaki.civilian">
-      <category tags="[casual]" faction="[yaki]" race="yaki"/>
+      <category tags="[casual]" faction="[yaki, faction.player]" race="yaki"/>
       <skills>
         <skill type="morale" max="1"/>
 

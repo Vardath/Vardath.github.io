@@ -34,7 +34,7 @@ with zipfile.ZipFile(archive) as z:
 
 manifest = ET.parse(mod/"content.xml").getroot()
 assert manifest.tag == "content"
-assert int(manifest.get("version")) >= 120
+assert int(manifest.get("version")) >= 121
 assert manifest.get("id") == "vardath_yaki_terran_habs"
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 assert manifest.find("./dependency").get("version") == "900"
@@ -158,8 +158,14 @@ assert len({c.get("id") for c in characters}) == len(characters)
 assert all(c.get("id","").startswith("vardath_") for c in characters)
 assert all(c.find("./category").get("race") == "yaki"
            and "yaki" in c.find("./category").get("faction","")
+           and "faction.player" in c.find("./category").get("faction","")
            for c in characters)
 assert any("service" in c.find("./category").get("tags","") for c in characters)
 assert any("marine" in c.find("./category").get("tags","") for c in characters)
 
 print(f"PASS: {len(expected)} files; ZIP CRC and exact source; S/M/L Terran four-snap geometry, six asset index entries, red-black materials, Yaki workforce, three-only blueprints and adaptive Yaki wharf integration")
+
+# Regression: worker/NPC definitions must be available at player stations.
+assert all(c.find("./category").get("race")=="yaki" and
+           c.find("./category").get("faction")=="[yaki, faction.player]" and
+           c.find("./owner").get("exact")=="yaki" for c in characters)

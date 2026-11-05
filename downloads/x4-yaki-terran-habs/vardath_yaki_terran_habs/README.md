@@ -1,3 +1,9 @@
+# v1.21 – Yaki workforce and recruiting fix
+
+The Yaki S/M/L habitation macros already specified `workforce race="yaki"`. However, the associated custom Yaki character generators were limited to `faction="[yaki]"`, so player-owned facilities could not select those actors. All Yaki-only character templates now accept both `yaki` and `faction.player`, while retaining `race="yaki"` and `owner exact="yaki"`. This is intended to avoid the generic mixed-race fallback on player-owned installations. Ordinary Terran habitat definitions are unchanged.
+
+This affects new recruitment/workforce changes after reloading; it does not forcibly replace already hired workers or overwrite workforce supplied by other racial habitat modules on the same station. X4 runtime testing is still needed.
+
 # Vardath — Yaki Terran Ring Habitats (v1.2)
 
 Three habitation modules, **and only three**: exact S, M, and L copies of the Cradle of Humanity Terran circular ring habitats, recoloured red and black and configured for a distinct Yaki workforce.
