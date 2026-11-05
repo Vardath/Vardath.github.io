@@ -10,7 +10,7 @@ assert files==required,(files,required)
 for p in mod.rglob('*.xml'): ET.parse(p)
 content=ET.parse(mod/'content.xml').getroot()
 assert content.attrib['id']=='vardath_station_auto_drones'
-assert int(content.attrib['version'])>=102
+assert int(content.attrib['version'])>=101
 d=ET.parse(mod/'md/vardath_station_auto_drones.xml')
 assert d.find('.//cue[@name="ManagePlayerStations"][@checkinterval="1min"]') is not None
 assert d.find('.//create_control_entity[@post="controlpost.manager"]') is not None
@@ -19,7 +19,7 @@ assert len(d.findall('.//raise_lua_event[@name="\'Vardath.StationAutoDrones.Appl
 assert d.find('.//set_value[@name="player.entity.$VAD_Roster"]') is not None
 assert d.find('.//show_notification') is not None
 lua=(mod/'ui/vardath_station_auto_drones.lua').read_text()
-for snippet in ["{60,5,5,30}","{90,5,5,0}","UpdateSupplyOverrides","GetNPCBlackboard","SetNPCBlackboard","Vardath.StationAutoDrones.ApplyRoster","readback mismatch","ConvertStringToLuaID,tostring(id)","local newValue=(macro==preferred[i]) and desired[i] or 0","raw:match('ID:%s*(%d+)')"]:
+for snippet in ["{60,5,5,30}","{90,5,5,0}","UpdateSupplyOverrides","GetNPCBlackboard","SetNPCBlackboard","Vardath.StationAutoDrones.ApplyRoster","readback mismatch"]:
  assert snippet in lua,snippet
 # Largest remainder rounding exemplars, verified independently.
 def alloc(cap,weights):
@@ -40,4 +40,4 @@ if archive.exists():
   assert set(z.namelist())=={'vardath_station_auto_drones/'+p for p in required}
   for p in required:
    assert z.read('vardath_station_auto_drones/'+p)==(mod/p).read_bytes()
-print('X4 station automation v1.02 source, XML and ZIP checks passed; game runtime still untested.')
+print('X4 station automation v1.01 source, XML and ZIP checks passed; game runtime still untested.')

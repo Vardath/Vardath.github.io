@@ -1,4 +1,4 @@
--- Vardath Automatic Station Drones v1.02
+-- Vardath Automatic Station Drones v1.01
 -- The MD cue sends ONE station roster via player.entity's blackboard.
 -- Set the Logical Overview's auto drone supply-order targets; no spawned drones.
 -- The one-roster bridge also supports old saves and detects missing Lua callbacks.
@@ -27,11 +27,7 @@ end
 local function b(x) return x==true or x==1 or x=='true' end
 local function get64(luaID)
  if luaID==nil then return nil end
- -- MD -> Lua references can arrive as IDs, userdata, or "ID: <digits>".
- -- Passing "ID: <digits>" unmodified is not a valid numeric conversion.
- local raw=tostring(luaID)
- local numeric=raw:match('ID:%s*(%d+)') or raw:match('^%s*(%d+)')
- local ok,id=pcall(ConvertStringTo64Bit,numeric or raw)
+ local ok,id=pcall(ConvertStringTo64Bit,tostring(luaID))
  if ok and id and tostring(id)~='0' then return id end
  return nil
 end
@@ -130,20 +126,24 @@ local function apply(station)
  if #missing>0 then
   return 'error','no available drone macro(s) for '..table.concat(missing,', ')..' station '..tostring(id)
  end
- -- Requirements, not inventory: Logical Overview's auto-mode overrides
- -- express the target total even when the station is physically full of an
- -- old (unbalanced) drone mix. Never cap the CONFIGURED targets by free
- -- space or existing stock. X4 itself does not spawn, discard or transfer
- -- any physical drones when supply-order targets are changed.
+ -- Preserve all physical drones already stored, including alternative macros.
+ -- Put any remaining open slots toward deficits, repair/defence/build before cargo.
+ local free=math.max(0,cap-totalStored)
+ local order=shipBuilder and {4,3,2,1} or {3,2,1,4}
+ local incoming={0,0,0,0}
+ for _,i in ipairs(order) do
+  incoming[i]=math.min(math.max(0,desired[i]-stocks[i]),free)
+  free=free-incoming[i]
+ end
  local changed=false
  local touched={}
  for i,t in ipairs(TYPES) do
   for _,row in ipairs(lists[i]) do
    local macro=row.macro
    if type(macro)=='string' and macro~='' then
-    -- Auto supply mode uses requested absolute totals (manual uses inbound).
-    -- Non-preferred variants get no new orders, but existing units remain.
-    local newValue=(macro==preferred[i]) and desired[i] or 0
+    local stored=math.max(0,math.floor(tonumber(row.amount) or 0))
+    -- In auto supply mode, the override is a projected TOTAL, not inbound.
+    local newValue=stored+((macro==preferred[i]) and incoming[i] or 0)
     if after[macro]~=newValue then changed=true end
     after[macro]=newValue
     touched[macro]=newValue
@@ -176,16 +176,10 @@ local function apply(station)
  return 'changed','target updated'
 end
 local function onRoster(_,seq)
- -- GetNPCBlackboard/SetNPCBlackboard take a LUA component ID, not the
- -- UniverseID cdata used by C's supply-order functions. This distinction
- -- matters: a 64-bit ID here silently prevents the roster from being read.
- local ok,id=pcall(C.GetPlayerID)
- local idOk,playerID
- if ok and id and id~=0 then idOk,playerID=pcall(ConvertStringToLuaID,tostring(id)) end
- if not idOk or not playerID or playerID==0 then
-  log('ERROR cannot convert X4 player ID to Lua component ID')
-  return
- end
+ local playerID
+ local idOk,id=pcall(C.GetPlayerID)
+ if idOk then playerID=get64(tostring(id)) end
+ if not playerID then log('ERROR cannot determine player ID');return end
  local roster=GetNPCBlackboard(playerID,'$VAD_Roster')
  local request=tonumber(GetNPCBlackboard(playerID,'$VAD_Seq')) or tonumber(seq) or 0
  local stats={seq=request,seen=0,changed=0,unchanged=0,skipped=0,errors=0}
