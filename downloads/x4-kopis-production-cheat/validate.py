@@ -126,7 +126,7 @@ print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew, 10-start sp
 compat=ET.parse(mod/"aiscripts/sectorexplorer.xml").getroot()
 assert compat.tag=="diff"
 check=compat.find("./replace")
-assert check is not None and "isblacklisted.{null}" in check.get("sel")
+assert check is not None and " and not $fs_target.isblacklisted.{blacklisttype.sectoractivity}" in check.get("sel")
 assert "blacklisttype.sectoractivity" in check.text
 assert manifest.find("./dependency[@id='ws_2074838459'][@optional='true']") is not None
 assert "Vardath Kopis startup cue reached" in (mod/"md/vardath_kopis_builder_start.xml").read_text()

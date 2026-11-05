@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="vardath_kopis_production_cheat"
          name="Vardath - Kopis Production Cheat"
-         description="Standalone superfast Kopis mobile resource factory and station build-storage feeder. Huge 3-way cargo and drone/crew capacities, custom laser and dorsal S turret. Maintains one player-owned Yaki-crewed Astrid, automatically replacing it near the player when lost or sold."
+         description="Standalone superfast Kopis mobile resource factory and station build-storage feeder. Huge 3-way cargo and drone/crew capacities, custom laser without experimental turret socket. Maintains one player-owned Yaki-crewed Astrid, automatically replacing it near the player when lost or sold."
          author="Vardath" version="105" date="2026-11-02" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ego_dlc_terran" optional="false" name="Cradle of Humanity"/>
