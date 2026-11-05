@@ -18,7 +18,7 @@ with zipfile.ZipFile(archive) as z:
       ET.fromstring(disk)
 manifest=ET.parse(mod/"content.xml").getroot()
 assert manifest.get("id")=="vardath_kopis_production_cheat"
-assert int(manifest.get("version"))>=104
+assert int(manifest.get("version"))>=105
 assert manifest.find("./dependency[@id='ego_dlc_terran']") is not None
 macro=ET.parse(mod/"assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml").getroot()
 ship=macro.find("./macro[@name='ship_vardath_kopis_factory_macro']")
@@ -34,7 +34,7 @@ assert ship.find("./properties/physics/drag").get("forward")=="0.6"
 assert {c.get("ref") for c in ship.findall("./connections/connection")} >= {"con_storage01","con_storage02","con_storage03"}
 component=ET.parse(mod/"assets/units/size_s/ship_vardath_kopis_factory.xml").getroot()
 assert component.find("./component[@name='ship_vardath_kopis_factory']") is not None
-assert component.find(".//connection[@name='con_vardath_turret_01']") is not None
+assert component.find(".//connection[@name='con_vardath_turret_01']") is None
 assert component.find(".//connection[@name='con_storage02']") is not None
 # Regression: the copied 9.00 Terran Kopis uses ADVANCED, not STANDARD.
 # A mismatched socket makes even valid Terran weapons vanish at the wharf.
@@ -42,21 +42,9 @@ gun_socket=component.find(".//connection[@name='con_weapon_01']")
 assert gun_socket is not None
 assert gun_socket.get("tags").split()==["advanced","combat","mining","platformcollision","small","weapon","symmetry","symmetry_right"]
 assert component.find(".//connection[@name='defencenpc'][@tags='defence']") is not None
-turret_socket=component.find(".//connection[@name='con_vardath_turret_01']")
-assert turret_socket is not None and turret_socket.get("group")=="group_vardath_dorsal"
-turret_component=ET.parse(mod/"assets/props/weaponsystems/energy/turret_vardath_kopis_s.xml").getroot()
-turret=turret_component.find("./component[@name='turret_vardath_kopis_s'][@class='turret']")
-assert turret is not None
-turret_mount=turret.find("./connections/connection[@name='con_beam_turret_01']")
-assert turret_mount is not None
-for tag in ["advanced","combat","small","turret","unhittable"]:
-  assert tag in turret_socket.get("tags").split(), tag
-  assert tag in turret_mount.get("tags").split(), tag
-assert "component" in turret_mount.get("tags").split()
-assert turret.find("./connections/connection[@name='con_aimtarget_01']") is not None
-turret_macro=ET.parse(mod/"assets/props/weaponsystems/energy/macros/turret_vardath_kopis_beam_macro.xml").getroot()
-assert turret_macro.find("./macro/component").get("ref")=="turret_vardath_kopis_s"
-assert turret_macro.find("./macro/properties/weapon") is not None
+# No dorsal turret socket, but keep legacy macro/equipment files for save compatibility.
+assert component.find(".//connection[@name='con_vardath_turret_01']") is None
+assert (mod/"assets/props/weaponsystems/energy/turret_vardath_kopis_s.xml").exists()
 
 for t in ("container","solid","liquid"):
   data=ET.parse(mod/f"assets/units/size_s/macros/storage_vardath_kopis_{t}_macro.xml").getroot()
@@ -75,11 +63,12 @@ for wareid, group in [('weapon_vardath_kopis_laser','weapons'),('weapon_vardath_
   assert ware is not None and ware.get("group")==group
   assert ware.find("./component").get("ref")==wareid+"_macro"
   assert {o.get("faction") for o in ware.findall("./owner")} >= {"terran","pioneers"}
+  assert ware.find("./use[@threshold='0']") is not None
 load=ET.parse(mod/"libraries/loadouts.xml").getroot()
 kit=load.find(".//loadout[@id='vardath_kopis_factory_kit']")
 assert kit is not None and kit.get("macro")=="ship_vardath_kopis_factory_macro"
 assert len(kit.findall("./ammunition/unit"))>=3
-assert kit.find("./groups/turrets").get("group")=="group_vardath_dorsal"
+assert kit.find("./groups/turrets") is None
 md=ET.parse(mod/"md/vardath_kopis_mobile_forge.xml").getroot()
 assert md.get("name")=="VardathKopisMobileForge"
 producer=md.find(".//cue[@name='ProduceResources']")
@@ -132,3 +121,13 @@ assert astrid_root.find(".//cue[@name='AddAstridEscort']") is None
 assert md.find(".//add_blueprints") is not None
 assert "ware.turret_vardath_kopis_beam" in md.find(".//add_blueprints").get("wares")
 print(f"PASS: {len(files)} source/ZIP file matches, XML, cargo/crew, 10-start spawn, persistent owned-Astrid replacement, vanilla-compatible weapon socket, S turret template, owner equipment wares and build supply static invariants")
+
+# Optional Sector Explorer compatibility patch and startup syntax regression.
+compat=ET.parse(mod/"aiscripts/sectorexplorer.xml").getroot()
+assert compat.tag=="diff"
+check=compat.find("./replace")
+assert check is not None and "isblacklisted.{null}" in check.get("sel")
+assert "blacklisttype.sectoractivity" in check.text
+assert manifest.find("./dependency[@id='ws_2074838459'][@optional='true']") is not None
+assert "Vardath Kopis startup cue reached" in (mod/"md/vardath_kopis_builder_start.xml").read_text()
+assert "\\'Vardath Kopis startup" not in (mod/"md/vardath_kopis_builder_start.xml").read_text()

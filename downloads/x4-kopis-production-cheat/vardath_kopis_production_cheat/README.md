@@ -1,3 +1,11 @@
+# v1.05 — repairs and optional Sector Explorer compatibility
+
+- Removed the Kopis Forge's nonfunctional experimental dorsal turret SOCKET and initial turret loadout; the ship continues to use its main gun.
+- Kept the older optional turret macro/equipment ware as legacy compatibility data so existing saves with it fitted are not forced to load an unknown macro. New Kopis Forges have no turret connection.
+- Corrected the invalid startup cue quote and added missing `use` metadata to all three custom equipment wares.
+- Optional compatibility patch for Sector Explorer (`ws_2074838459`): rewrites the old blacklist lookup whose type resolves to null (log: `sectorexplorer` line 86) to use explicit `blacklisttype.sectoractivity`. This is version-specific, not a copy of the entire third-party script, and loads after the dependent mod when present.
+- Requires restart; back up saves. Static validation cannot guarantee that X4 applies another mod's script override. If Sector Explorer's logging persists, its installed script may have a different version.
+
 # Vardath — Kopis Mobile Forge (v1.03, experimental)
 
 An **X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of Humanity**, **Tides of Avarice** and the **Vardath Living Factions & Builders** extension (as declared in `content.xml`). Does not modify the vanilla Kopis or require Yaki Habitats. This ZIP's structure/XML are tested by GitHub; engine runtime, shipyard availability, movement and cargo behaviour remain unverified. **Back up your save**.
@@ -18,12 +26,12 @@ An **X4: Foundations 9.00** cheat logistics ship extension. Requires **Cradle of
 | Deployables/missiles | **5,000 deployables**, **500 countermeasures** and **5,000 missiles** (subject to game equipment restrictions) |
 | Hull | **20,000** |
 | Main gun | New **Kopis Forge Laser Mk2+**; same Terran S Mk2 laser projectile/effects but **90 damage vs. 80** (+10, not 10×) |
-| Turret | **One experimental dorsal S turret attachment**; modified S-class turret attachment with an added defence control; in-game appearance, firing and collision still require testing |
+| Turret | No physical turret slot (removed in v1.05); legacy custom turret definition retained solely for older saves |
 | Standard ship | Original Kopis remains unchanged |
 | Purchase | New ship ware is offered to **Terran/Pioneer** factions via wares owner entries, average base ship price **8,500,000 Cr**, plus fitted equipment |
 | Blueprint | Ship, laser, beam and turret blueprints automatically granted; the startup cue spawns **10 player-owned Kopis Forges** on first activation |
 
-The mod includes a `vardath_kopis_factory_kit` named loadout in its `libraries/loadouts.xml`, with a Terran S engine and shield, Forge Laser, one S turret, 120 building drones, 120 cargo drones and 30 repair drones. Whether the high equipment preset actually selects this loadout automatically is unverified; equipment can be selected at a ship dealer if the game exposes it.
+The mod includes a `vardath_kopis_factory_kit` named loadout in its `libraries/loadouts.xml`, with a Terran S engine and shield, Forge Laser, no turret, 120 building drones, 120 cargo drones and 30 repair drones. Whether the high equipment preset actually selects this loadout automatically is unverified; equipment can be selected at a ship dealer if the game exposes it.
 
 ## Automatic Astrid replacement (v1.03)
 

@@ -8,7 +8,7 @@
       </conditions>
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
-        <debug_text text="\'Vardath Kopis startup cue reached\'" filter="general"/>
+        <debug_text text="'Vardath Kopis startup cue reached'" filter="general"/>
         <do_all exact="10" counter="$ForgeIndex">
           <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>
