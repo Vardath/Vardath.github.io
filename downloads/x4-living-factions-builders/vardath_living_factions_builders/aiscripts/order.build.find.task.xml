@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-    <!-- Player ships may answer NPC construction requests, even though vanilla's
-         internal playeronly param defaults to true for player construction ships. -->
-    <replace sel="//handler[@comment='Requested for build']/conditions/check_value[@value='not $playeronly or event.param2.isplayerowned']/@value">not $playeronly or event.param2.isplayerowned or this.ship.isplayerowned</replace>
-
-    <!-- Explicitly preserve private player-station requests and routing safety. -->
-    <add sel="//init/set_command_action[@commandaction='commandaction.searchingtrades']" pos="after">
-        <include_interrupt_actions ref="GetBlacklistgroup"/>
-    </add>
-    <add sel="//handler[@comment='Requested for build']/conditions/check_value[@value='not $playeronly or event.param2.isplayerowned or this.ship.isplayerowned']" pos="after">
-        <check_value value="not event.param2.isplayerowned or this.ship.isplayerowned"/>
-        <check_value value="not event.param2.isplayerowned or this.ship.gatedistance.{event.param2}.{$blacklistgroup}.{this.ship} ge 0"/>
-        <!-- Player stations retain their existing rules. NPC requests are
-             accepted only if the actual employer faction permits docking. -->
-        <check_value value="event.param2.isplayerowned or (event.param2.buildstorage.base.exists and event.param2.buildstorage.base.trueowner.hasrelation.dock.{faction.player})"/>
-    </add>
-
-    <!-- Contract fees and hourly wages are settled by the separate persistent
-         md/Vardath_BuilderContracts ledger. No money is transferred here. -->
+  <!-- X4 9.00 native FindBuildTasks accepts default=false; unlike a mutable
+       check_value XPath this selector is stable with other builder extensions. -->
+  <replace sel="//param[@name='playeronly']/@default">false</replace>
+  <!-- Reject NPC employers without player docking permissions. -->
+  <add sel="//handler[@comment='Requested for build']/conditions/event_object_signalled" pos="after">
+    <check_value value="not this.ship.isplayerowned or event.param2.isplayerowned or (event.param2.container.exists and event.param2.container.trueowner.hasrelation.dock.{faction.player})"/>
+  </add>
 </diff>

@@ -47,7 +47,7 @@ with zipfile.ZipFile(archive) as zf:
 
 manifest = ET.parse(mod / "content.xml").getroot()
 assert manifest.get("id") == "vardath_living_factions_builders"
-assert int(manifest.get("version")) >= 170
+assert int(manifest.get("version")) >= 171
 assert manifest.get("save") == "1"
 assert manifest.find("./dependency").get("version") == "900"
 
@@ -80,9 +80,11 @@ assert any("not $Station.isplayerowned" in x and
 ai = ET.parse(mod / "aiscripts/order.build.find.task.xml").getroot()
 selectors = [x.get("sel") for x in ai if x.get("sel")]
 assert len(selectors) == len(set(selectors)), "Duplicate XPath selectors"
-assert any("or this.ship.isplayerowned" in (x.text or "") for x in ai.findall("./replace"))
+assert ai.find("./replace").get("sel")=="//param[@name='playeronly']/@default"
+assert ai.find("./replace").text.strip()=="false"
+assert ai.find("./add").get("sel")=="//handler[@comment='Requested for build']/conditions/event_object_signalled"
 assert ai.findall(".//transfer_money") == [], "Payment must have exactly one MD authority"
-assert any("event.param2.buildstorage.base.trueowner.hasrelation.dock.{faction.player}" in (x.get("value") or "")
+assert any("event.param2.container.trueowner.hasrelation.dock.{faction.player}" in (x.get("value") or "")
            for x in ai.findall(".//check_value")), "Native requests must reject hostile employers"
 
 billing = ET.parse(mod / "md/vardath_builder_contracts.xml").getroot()
@@ -176,3 +178,7 @@ assert any(x.get("macro") == "ship_gen_xs_buildingdrone_01_a_macro"
 english = ET.parse(mod / "t/0001-l044.xml").getroot()
 assert english.get("id") == "44" and english.find("./page[@id='995503']") is not None
 print(f"PASS: {len(expected)} matching ZIP/source files; XML; request broker; immediate 200k hire and uncapped SETA-safe full game-time payouts, persisted ledger, hostile guards and completion reputation")
+
+assert ".trueowner.exists" not in (mod/"md/vardath_builder_contracts.xml").read_text()
+assert ".trueowner.exists" not in (mod/"md/vardath_faction_build_requests.xml").read_text()
+assert "$Contract.$Faction.exists" not in (mod/"md/vardath_builder_contracts.xml").read_text()

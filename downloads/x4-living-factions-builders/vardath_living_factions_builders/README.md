@@ -1,3 +1,7 @@
+# v1.71 fixes
+
+The previous `faction.exists` expressions in builder contracts and request dispatch were invalid and generated repeated runtime errors; these now compare with `faction.ownerless`. The two previously failing XPath selectors were replaced with one stable parameter patch and a request-specific docking permission guard, without changing payroll amounts or persisted contract logic. Static QA only; check in X4 with a backed-up save.
+
 # Vardath — Living Factions & Builders, v1.7
 
 **Experimental X4: Foundations 9.00 extension; X4: Cradle of Humanity DLC is now REQUIRED for the bundled custom gamestart.** The distributed XML is well-formed and archive/source matched in GitHub Actions. The v1.7 direct-pay code has **not been run in X4 itself**; use a backup save.

@@ -19,7 +19,7 @@
         <do_for_each name="$Builder" in="md.$VardathBuilderContracts.keys.list">
           <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
           <do_if value="not $Contract.$Closing">
-            <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction.exists and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
+            <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction != faction.ownerless and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
               <!-- X4 only sets buildmodule.constructionvessel once the builder
                    has deployed. Ship.constructionmodule is the actual assigned
                    build module, including transit and material waiting. -->
@@ -62,7 +62,7 @@
                    accepting a job, travel-only work, cancellations with
                    queued work, player stations, or now-hostile employers.
                    Mark inside persisted ledger before applying reputation. -->
-              <do_if value="$Contract.$SawConstruction and not $Contract.$RepGranted and $Contract.$Station.exists and $Contract.$Station.buildstorage.exists and $Contract.$Faction.exists and $Contract.$Station.trueowner == $Contract.$Faction and $Contract.$Faction.hasrelation.dock.{faction.player} and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count == 0)">
+              <do_if value="$Contract.$SawConstruction and not $Contract.$RepGranted and $Contract.$Station.exists and $Contract.$Station.buildstorage.exists and $Contract.$Faction != faction.ownerless and $Contract.$Station.trueowner == $Contract.$Faction and $Contract.$Faction.hasrelation.dock.{faction.player} and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count == 0)">
                 <set_value name="$Contract.$RepGranted" exact="true"/>
                 <add_faction_relation faction="faction.player"
                                       otherfaction="$Contract.$Faction"
@@ -103,7 +103,7 @@
           <do_if value="not md.$VardathBuilderContracts.{$Builder}? and $Builder.constructionmodule.exists">
             <set_value name="$BuildModule" exact="$Builder.constructionmodule"/>
             <set_value name="$Station" exact="$BuildModule.buildstorage.base"/>
-            <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner.exists and $Station.trueowner.hasrelation.dock.{faction.player} and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
+            <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner != faction.ownerless and $Station.trueowner.hasrelation.dock.{faction.player} and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
               <set_value name="md.$VardathBuilderContracts.{$Builder}" exact="table[]"/>
               <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
               <set_value name="$Contract.$BuildModule" exact="$BuildModule"/>
