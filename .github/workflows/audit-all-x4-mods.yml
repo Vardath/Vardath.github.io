@@ -1,4 +1,5 @@
 name: Audit all five X4 mods
+# Full post-packaging regression audit: builder 1.71, Kopis 1.05, Yaki habs 1.21.
 on:
   push:
     paths:
