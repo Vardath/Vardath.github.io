@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="Vardath_StationAutoDrones"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="md.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="md.xsd">
  <cues>
-  <!-- Scan old and new player stations. Retry incomplete stations every minute. -->
+  <!-- MD owns discovery and manager assignment. LUA owns supply orders.
+       One roster event per sweep; not a burst of one event per station. -->
   <cue name="ManagePlayerStations" instantiate="true" checkinterval="1min">
    <conditions><check_value value="player.age ge 1s"/></conditions>
    <actions>
     <find_station_by_true_owner name="$Stations" faction="faction.player"
       space="player.galaxy" checkoperational="false" multiple="true"/>
+    <do_if value="not md.$VAD_ScanCount?">
+     <set_value name="md.$VAD_ScanCount" exact="0"/>
+    </do_if>
+    <set_value name="md.$VAD_ScanCount" exact="md.$VAD_ScanCount + 1"/>
+    <set_value name="$PreviousSeq" exact="if player.entity.$VAD_Seq? then player.entity.$VAD_Seq else 0"/>
+    <!-- Diagnostics: ack MUST equal last request. Report a dead Lua bridge once,
+         rather than silently pretending that the station supply update succeeded. -->
+    <do_if value="$PreviousSeq ge 2 and (not player.entity.$VAD_Ack? or player.entity.$VAD_Ack lt $PreviousSeq) and not md.$VAD_MissingBridgeWarned?">
+     <debug_text text="'[VAD] ERROR: Lua did not acknowledge a station roster. Check UI Lua load and Protected UI Mode.'" filter="error"/>
+     <show_notification text="'Vardath Station Drones: drone script not responding. Check Extensions / Protected UI Mode and restart X4.'"/>
+     <set_value name="md.$VAD_MissingBridgeWarned" exact="true"/>
+    </do_if>
+    <do_if value="player.entity.$VAD_Stats? and player.entity.$VAD_Stats.$errors gt 0 and not md.$VAD_DroneErrorWarned?">
+     <debug_text text="'[VAD] ERROR: station drone update reported ' + player.entity.$VAD_Stats.$errors + ' failure(s). Check debuglog for Vardath Auto Drones.'" filter="error"/>
+     <show_notification text="'Vardath Station Drones: a supply update failed. Check the X4 debug log for Vardath Auto Drones.'"/>
+     <set_value name="md.$VAD_DroneErrorWarned" exact="true"/>
+    </do_if>
     <do_for_each name="$Station" in="$Stations">
      <do_if value="$Station.exists and $Station.trueowner == faction.player">
       <get_control_entities object="$Station" name="$Personnel"/>
@@ -19,7 +37,7 @@
        </do_if>
       </do_for_each>
       <do_if value="not $HasManager">
-       <!-- Operational ONLY: a planned/unbuilt docking module is not enough. -->
+       <!-- The FIRST completed dock/pier enables a manager, never planned ones. -->
        <find_module name="$Dock" object="$Station" class="class.dockarea" checkoperational="true"/>
        <do_if value="not $Dock.exists">
         <find_module name="$Dock" object="$Station" class="class.pier" checkoperational="true"/>
@@ -29,11 +47,19 @@
          <select faction="faction.player" tags="controlpost.manager.tag"/>
          <owner exact="faction.player"/>
         </create_control_entity>
+        <debug_text text="'[VAD] Manager assignment attempted: ' + $Station.knownname" filter="general"/>
        </do_if>
       </do_if>
-      <raise_lua_event name="'Vardath.StationAutoDrones.Apply'" param="$Station"/>
      </do_if>
     </do_for_each>
+    <!-- A single atomic snapshot, stored on the game's documented
+         player.entity blackboard, avoids lost per-station UI events. -->
+    <set_value name="player.entity.$VAD_Roster" exact="$Stations"/>
+    <set_value name="player.entity.$VAD_Seq" exact="$PreviousSeq + 1"/>
+    <do_if value="md.$VAD_ScanCount == 1">
+     <debug_text text="'[VAD] First scan: found ' + $Stations.count + ' player stations; sent to Lua.'" filter="error"/>
+    </do_if>
+    <raise_lua_event name="'Vardath.StationAutoDrones.ApplyRoster'" param="$PreviousSeq + 1"/>
     <reset_cue cue="this"/>
    </actions>
   </cue>

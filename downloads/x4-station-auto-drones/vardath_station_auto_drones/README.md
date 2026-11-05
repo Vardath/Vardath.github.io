@@ -1,18 +1,31 @@
-# Vardath – Automatic Station Drones and Managers (X4: Foundations 9.00)
+# Vardath – Automatic Station Drones and Managers v1.01
 
-This is a standalone, always-on X4 extension. It has no toggles, no DLC requirements and does not modify any existing Vardath X4 mod.
+Automatic, no-toggle X4: Foundations 9.00 extension. Works with existing saves and new construction, applying requirements to **all player-owned stations every in-game minute**. Does not modify any other Vardath extension.
 
-**Normal stations:** 90% cargo/transport drones, 5% defence drones, 5% repair drones.  
-**Shipyards and wharves:** 60% cargo, 5% defence, 5% repair, 30% build drones.
+| Station | Cargo drones | Defence | Repair | Build |
+| --- | ---: | ---: | ---: | ---: |
+| Normal | 90% | 5% | 5% | 0% |
+| Wharf or shipyard | 60% | 5% | 5% | 30% |
 
-All percentages are shares of the *shared unit/drone capacity* (not cargo ware storage). Rounding is to whole drones and allocation never deliberately exceeds the station's total capacity. Existing drones are not destroyed to achieve the mix, so the desired numbers can differ temporarily from current inventory. Missing drone types are reallocated to cargo when available. This sets the Logical Overview supply-order targets, not physical drone units; the normal game supply mechanics must buy/build the units.
+The percentages represent *shared drone/unit storage capacity*, NOT freight ware storage. The game rounds to whole drones. It does **not** spawn free drones: it sets the supply requirements shown in Logical Overview. The station must have enough funds/resources and access to supply to restock. Existing drones are preserved, so physical inventory may temporarily differ from target distribution. If a required category has no available compatible drone macro, the mod reports a diagnostic rather than silently claiming success.
 
-A Mission Director cue scans the player's old and new stations across the galaxy **every in-game minute**. A Lua event applies/reapplies targets to stations with drone storage. The Lua routine keeps unrelated supply-order entries, including missiles. Manual edits to targets will be reset by the next scan. When station capacity or build-ship capability changes, requirements are recalculated.
+**Managers:** once the first dock or pier is actually built and operational, create a player-owned manager if the manager post is vacant. Existing managers are never replaced. If a manager is dismissed, a new one is assigned on a subsequent pass.
 
-Once a player station has a **completed operational dock or pier**, the scan also creates and assigns a manager to its vacant manager post. It checks the actual control-entity list, preserving any existing manager. If you dismiss a manager while a dock remains, the routine creates a replacement on the next scan. It does not automatically hire a ship dealer, create drones or fund station accounts.
+## Fixes since v1.00
 
-## Install
+- One Mission Director-to-Lua event per galaxy-wide station roster, instead of potentially losing a burst of per-station events.
+- Uses the supported player blackboard to transfer complete rosters.
+- Adds an acknowledgement and explicit errors for inaccessible Lua, zero-capacity stations, missing drone macros, FFI failures and mismatched post-write requirements.
+- Preserves unrelated supply orders (including missile overrides), existing drones and both automatic/manual quantity semantics.
+- Reads the modified supply orders back from the engine to verify them; static success alone is not treated as proof.
 
-Download `vardath_station_auto_drones_TEST.zip` and extract the single `vardath_station_auto_drones` folder into `X4 Foundations/extensions`. Ensure `extensions/vardath_station_auto_drones/content.xml` exists. Enable in X4's Extensions menu and restart.
+## Installation / upgrade
 
-**Validation status:** static XML/ZIP and allocation checks passed in development. X4 9.00 runtime has not been run here. Back up a save and confirm manager assignment and drone requirements on an old station, a new dock, and a wharf/shipyard.
+1. Delete or replace the old **`vardath_station_auto_drones`** folder (do not install two copies).
+2. Extract `vardath_station_auto_drones_TEST.zip` into the game's `extensions` directory. The installed file must be `extensions/vardath_station_auto_drones/content.xml`.
+3. Enable the extension and fully restart X4. Load your existing save and allow at least two **in-game minutes** for the periodic scan.
+4. Check Logical Overview on an existing station and then a wharf/shipyard.
+
+If the UI/Lua bridge is not responding, an in-game notification appears after repeated unanswered sweeps. If an engine update fails, an error notification appears and the debug log explains which operation failed. Search the X4 debug log for **`[Vardath Auto Drones]`** or **`[VAD]`**. This is particularly relevant if **Protected UI Mode** is preventing a custom Lua module from loading. X4 9.00 has different Lua UI conditions depending on mod setup; do not change Protected UI Mode unless the diagnostic indicates a failure, and restart X4 after any change.
+
+**Testing:** GitHub packaging, source checks and XML validation are automated. Full in-game execution cannot be verified remotely. Keep a backup save for this version.

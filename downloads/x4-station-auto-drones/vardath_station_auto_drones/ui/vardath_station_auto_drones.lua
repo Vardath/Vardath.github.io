@@ -1,10 +1,12 @@
--- Vardath automatic station drones. Works through X4's Logical Overview supply orders.
--- No menu, free physical drones, or changes to non-player stations.
-local ffi=require('ffi')
-local C=ffi.C
--- Use the same SupplyOverride ABI as the base-game UI and other X4 UI mods.
+-- Vardath Automatic Station Drones v1.01
+-- The MD cue sends ONE station roster via player.entity's blackboard.
+-- Set the Logical Overview's auto drone supply-order targets; no spawned drones.
+-- The one-roster bridge also supports old saves and detects missing Lua callbacks.
+local ffi = require('ffi')
+local C = ffi.C
 ffi.cdef[[
  typedef uint64_t UniverseID;
+ UniverseID GetPlayerID(void);
  typedef struct { const char* macro; int amount; } SupplyOverride;
  uint32_t GetNumSupplyOrders(UniverseID containerid, bool defaultorders);
  uint32_t GetSupplyOrders(SupplyOverride* result, uint32_t resultlen, UniverseID containerid, bool defaultorders);
@@ -14,137 +16,205 @@ ffi.cdef[[
  void UpdateProductionTradeOffers(UniverseID containerid);
 ]]
 local TYPES={
- {storage='transport',manual='units_trade'},
- {storage='defence',manual='units_defence'},
- {storage='repair',manual='units_repair'},
- {storage='build',manual='units_build'}
+ {storage='transport', manual='units_trade'},
+ {storage='defence',   manual='units_defence'},
+ {storage='repair',    manual='units_repair'},
+ {storage='build',     manual='units_build'},
 }
-local function id64(x)
- if x==nil then return nil end
- local str=tostring(x)
- local n=str:match('ID:%s*(%d+)') or str:match('^(%d+)$')
- local ok,v=pcall(ConvertStringTo64Bit,n or str)
- if ok and v and tostring(v)~='0' then return v end
+local function log(s)
+ if type(DebugError)=='function' then DebugError('[Vardath Auto Drones] '..tostring(s)) end
 end
-local function units(id,category)
- local ok,data
- if category then ok,data=pcall(GetUnitStorageData,id,category)
- else ok,data=pcall(GetUnitStorageData,id) end
- if ok and type(data)=='table' then return data end
+local function b(x) return x==true or x==1 or x=='true' end
+local function get64(luaID)
+ if luaID==nil then return nil end
+ local ok,id=pcall(ConvertStringTo64Bit,tostring(luaID))
+ if ok and id and tostring(id)~='0' then return id end
+ return nil
 end
-local function read(id)
+local function getUnits(id,kind)
+ local ok,res
+ if kind then ok,res=pcall(GetUnitStorageData,id,kind)
+ else ok,res=pcall(GetUnitStorageData,id) end
+ if ok and type(res)=='table' then return res end
+ return nil
+end
+local function readOrders(id)
  local ok,n=pcall(C.GetNumSupplyOrders,id,false)
- if not ok then return nil end
+ if not ok or not n then return nil,'GetNumSupplyOrders failed' end
  n=tonumber(n)
- if not n or n<0 or n>5000 then return nil end
- local out={}
- if n==0 then return out end
- local buffer=ffi.new('SupplyOverride[?]',n)
- local success,got=pcall(C.GetSupplyOrders,buffer,n,id,false)
- if not success or tonumber(got)~=n then return nil end
+ if not n or n<0 or n>5000 then return nil,'invalid supply order count' end
+ local map={}
+ if n==0 then return map end
+ local buf=ffi.new('SupplyOverride[?]',n)
+ local success,got=pcall(C.GetSupplyOrders,buf,n,id,false)
+ if not success or tonumber(got)~=n then return nil,'GetSupplyOrders incomplete' end
  for i=0,n-1 do
-  if buffer[i].macro==nil then return nil end
-  out[ffi.string(buffer[i].macro)]=tonumber(buffer[i].amount) or 0
+  if buf[i].macro==nil then return nil,'null supply macro' end
+  map[ffi.string(buf[i].macro)]=tonumber(buf[i].amount) or 0
  end
- return out
+ return map
 end
-local function write(id,orders)
+local function writeOrders(id,map)
  local keys={}
- for k in pairs(orders) do keys[#keys+1]=k end
+ for macro in pairs(map) do keys[#keys+1]=macro end
  table.sort(keys)
  local buf=ffi.new('SupplyOverride[?]',#keys)
  local keep={}
- for i,k in ipairs(keys) do
-  local str=ffi.new('char[?]',#k+1)
-  ffi.copy(str,k)
+ for i,macro in ipairs(keys) do
+  local str=ffi.new('char[?]',#macro+1)
+  ffi.copy(str,macro)
   keep[#keep+1]=str
   buf[i-1].macro=str
-  buf[i-1].amount=math.max(0,math.floor(orders[k]))
+  buf[i-1].amount=math.max(0,math.floor(tonumber(map[macro]) or 0))
  end
  return pcall(C.UpdateSupplyOverrides,id,buf,#keys)
 end
-local function distribute(total,percent)
- local values,remainders,sum={},{},0
- for i,p in ipairs(percent) do
-  local float=total*p/100
-  values[i]=math.floor(float)
-  sum=sum+values[i]
-  remainders[#remainders+1]={i=i,f=float-values[i]}
+local function allocation(cap,weights)
+ local a,f,used={},{},0
+ for i,w in ipairs(weights) do
+  local raw=cap*w/100
+  a[i]=math.floor(raw)
+  f[#f+1]={i=i,remainder=raw-a[i]}
+  used=used+a[i]
  end
- table.sort(remainders,function(a,b)
-  if a.f==b.f then return a.i<b.i end
-  return a.f>b.f
+ table.sort(f,function(x,y)
+  if x.remainder==y.remainder then return x.i<y.i end
+  return x.remainder>y.remainder
  end)
- for j=1,total-sum do
-  local i=remainders[(j-1)%#remainders+1].i
-  values[i]=values[i]+1
+ for j=1,cap-used do
+  local k=f[(j-1)%#f+1].i
+  a[k]=a[k]+1
  end
- return values
+ return a
 end
 local function apply(station)
- local id=id64(station)
- if not id then return end
- local isShipBuilder=GetComponentData(ConvertStringToLuaID(tostring(id)),'canbuildships')
- local shared=units(id)
- if not shared then return end
- local capacity=math.floor(tonumber(shared.capacity) or 0)
- if capacity<=0 then return end
- local targets=distribute(capacity,(isShipBuilder==true or isShipBuilder==1) and {60,5,5,30} or {90,5,5,0})
- local overrides=read(id)
- if not overrides then return end -- UpdateSupplyOverrides is a FULL replacement: preserve unrelated missile entries.
- local storage,choice,stock={}, {}, {}
- local totalStock=0
+ local id=get64(station)
+ if not id then return 'error','station ID could not be converted: '..tostring(station) end
+ local luaID=ConvertStringToLuaID(tostring(id))
+ -- A wharf and a shipyard may have different ship-building flags, so check all.
+ local canBuild,isWharf,isShipyard=GetComponentData(luaID,'canbuildships','iswharf','isshipyard')
+ local shipBuilder=b(canBuild) or b(isWharf) or b(isShipyard)
+ local shared=getUnits(id)
+ if not shared then return 'error','GetUnitStorageData failed for station '..tostring(id) end
+ local cap=math.floor(tonumber(shared.capacity) or 0)
+ if cap<=0 then return 'skipped','no drone storage yet' end
+ local desired=allocation(cap,shipBuilder and {60,5,5,30} or {90,5,5,0})
+ local before,readErr=readOrders(id)
+ if not before then return 'error',readErr end
+ local after={}
+ for macro,n in pairs(before) do after[macro]=n end -- preserve missile orders and all unrelated types
+ local lists,stocks,preferred={}, {}, {}
+ local totalStored=0
+ local missing={}
  for i,t in ipairs(TYPES) do
-  local list=units(id,t.storage) or {}
-  storage[i]=list
-  local bestScore=-1
-  stock[i]=0
-  for _,e in ipairs(list) do
-   local amount=math.max(0,tonumber(e.amount) or 0)
-   stock[i]=stock[i]+amount
-   if type(e.macro)=='string' and e.macro~='' then
-    local score=amount+(((overrides[e.macro] or 0)>0) and 100000 or 0)
-    if score>bestScore then bestScore=score;choice[i]=e.macro end
+  local rows=getUnits(id,t.storage) or {}
+  lists[i]=rows
+  local current=0
+  local maxScore=-1
+  for _,row in ipairs(rows) do
+   local num=math.max(0,math.floor(tonumber(row.amount) or 0))
+   current=current+num
+   if type(row.macro)=='string' and row.macro~='' then
+    local score=num+(((before[row.macro] or 0)>0) and 100000 or 0)
+    if score>maxScore then preferred[i]=row.macro;maxScore=score end
    end
   end
-  totalStock=totalStock+stock[i]
+  stocks[i]=current
+  totalStored=totalStored+current
+  if not preferred[i] and desired[i]>0 then missing[#missing+1]=t.storage end
  end
- -- Unsupported categories relinquish their allocation to cargo.
- for i=2,4 do
-  if not choice[i] then targets[1]=targets[1]+targets[i];targets[i]=0 end
+ if #missing>0 then
+  return 'error','no available drone macro(s) for '..table.concat(missing,', ')..' station '..tostring(id)
  end
- if not choice[1] then
-  for i=2,4 do if choice[i] then targets[i]=targets[i]+targets[1];break end end
-  targets[1]=0
- end
- local remaining=math.max(0,capacity-totalStock)
- local inbound={}
- for i=1,4 do
-  inbound[i]=math.min(math.max(0,targets[i]-stock[i]),remaining)
-  remaining=remaining-inbound[i]
+ -- Preserve all physical drones already stored, including alternative macros.
+ -- Put any remaining open slots toward deficits, repair/defence/build before cargo.
+ local free=math.max(0,cap-totalStored)
+ local order=shipBuilder and {4,3,2,1} or {3,2,1,4}
+ local incoming={0,0,0,0}
+ for _,i in ipairs(order) do
+  incoming[i]=math.min(math.max(0,desired[i]-stocks[i]),free)
+  free=free-incoming[i]
  end
  local changed=false
+ local touched={}
  for i,t in ipairs(TYPES) do
-  for _,e in ipairs(storage[i]) do
-   if type(e.macro)=='string' then
-    local desired=(e.macro==choice[i]) and (stock[i]+inbound[i]) or 0
-    if overrides[e.macro]~=desired then overrides[e.macro]=desired;changed=true end
+  for _,row in ipairs(lists[i]) do
+   local macro=row.macro
+   if type(macro)=='string' and macro~='' then
+    local stored=math.max(0,math.floor(tonumber(row.amount) or 0))
+    -- In auto supply mode, the override is a projected TOTAL, not inbound.
+    local newValue=stored+((macro==preferred[i]) and incoming[i] or 0)
+    if after[macro]~=newValue then changed=true end
+    after[macro]=newValue
+    touched[macro]=newValue
    end
   end
  end
- local resetManual=false
+ local needsAuto=false
  for _,t in ipairs(TYPES) do
   local ok,manual=pcall(C.IsSupplyManual,id,t.manual)
-  if ok and manual then resetManual=true end
+  if not ok then return 'error','IsSupplyManual failed: '..t.manual end
+  if manual then needsAuto=true end
  end
- if not changed and not resetManual then return end
- for _,t in ipairs(TYPES) do pcall(C.SetSupplyManual,id,t.manual,false) end
- if changed and not write(id,overrides) then return end
+ if not changed and not needsAuto then return 'unchanged','already at target' end
+ -- Toggle auto THEN write the full override map; otherwise a prior manual
+ -- inbound-quantity may be incorrectly interpreted as an automatic target.
+ for _,t in ipairs(TYPES) do
+  local ok=pcall(C.SetSupplyManual,id,t.manual,false)
+  if not ok then return 'error','SetSupplyManual failed: '..t.manual end
+ end
+ if not writeOrders(id,after) then return 'error','UpdateSupplyOverrides failed' end
  pcall(C.UpdateProductionTradeOffers,id)
-end
-RegisterEvent('Vardath.StationAutoDrones.Apply',function(_,station)
- local ok,err=pcall(apply,station)
- if not ok and type(DebugError)=='function' then
-  DebugError('[Vardath Auto Drones] '..tostring(err))
+ -- Read back from the engine rather than trusting the successful FFI call.
+ local actual,err=readOrders(id)
+ if not actual then return 'error','readback: '..tostring(err) end
+ for macro,value in pairs(touched) do
+  if (actual[macro] or 0)~=value then
+   return 'error',string.format('readback mismatch for %s: wanted %s, got %s',macro,value,tostring(actual[macro]))
+  end
  end
+ return 'changed','target updated'
+end
+local function onRoster(_,seq)
+ local playerID
+ local idOk,id=pcall(C.GetPlayerID)
+ if idOk then playerID=get64(tostring(id)) end
+ if not playerID then log('ERROR cannot determine player ID');return end
+ local roster=GetNPCBlackboard(playerID,'$VAD_Roster')
+ local request=tonumber(GetNPCBlackboard(playerID,'$VAD_Seq')) or tonumber(seq) or 0
+ local stats={seq=request,seen=0,changed=0,unchanged=0,skipped=0,errors=0}
+ if type(roster)~='table' then
+  stats.errors=1
+  log('ERROR MD station roster missing or not a Lua table')
+ else
+  for _,station in ipairs(roster) do
+   stats.seen=stats.seen+1
+   local ok,status,detail=pcall(apply,station)
+   if not ok then
+    stats.errors=stats.errors+1
+    log('ERROR station '..tostring(station)..': '..tostring(status))
+   elseif status=='error' then
+    stats.errors=stats.errors+1
+    log('ERROR station '..tostring(station)..': '..tostring(detail))
+   elseif status=='changed' then
+    stats.changed=stats.changed+1
+   elseif status=='unchanged' then
+    stats.unchanged=stats.unchanged+1
+   else
+    stats.skipped=stats.skipped+1
+   end
+  end
+ end
+ -- The MD cue can alert the player on a missing bridge or engine readback
+ -- mismatch, and the status is inspectable in saved player blackboard.
+ SetNPCBlackboard(playerID,'$VAD_Stats',stats)
+ SetNPCBlackboard(playerID,'$VAD_Ack',request)
+ if stats.changed>0 or stats.errors>0 then
+  log(string.format('Scan %d: stations=%d, updated=%d, unchanged=%d, skipped=%d, errors=%d',
+   request,stats.seen,stats.changed,stats.unchanged,stats.skipped,stats.errors))
+ end
+end
+RegisterEvent('Vardath.StationAutoDrones.ApplyRoster',function(_,seq)
+ local ok,err=pcall(onRoster,nil,seq)
+ if not ok then log('ERROR unhandled roster failure: '..tostring(err)) end
 end)
