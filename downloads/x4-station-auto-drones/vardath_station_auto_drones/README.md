@@ -1,4 +1,4 @@
-# Vardath – Automatic Station Drones and Managers v1.01
+# Vardath – Automatic Station Drones and Managers v1.02
 
 Automatic, no-toggle X4: Foundations 9.00 extension. Works with existing saves and new construction, applying requirements to **all player-owned stations every in-game minute**. Does not modify any other Vardath extension.
 
@@ -11,7 +11,13 @@ The percentages represent *shared drone/unit storage capacity*, NOT freight ware
 
 **Managers:** once the first dock or pier is actually built and operational, create a player-owned manager if the manager post is vacant. Existing managers are never replaced. If a manager is dismissed, a new one is assigned on a subsequent pass.
 
-## Fixes since v1.00
+## Fixes in v1.02
+- Fixed **player blackboard calls** to use X4's Lua component ID rather than a 64-bit UniverseID. This was inconsistent with working X4 MD-to-Lua bridges and could suppress every station update.
+- Fixed **requirements versus physical drone count**: percentages now set the intended Logical Overview auto requirements EVEN when the station's existing drone pool is full or unbalanced. No drones are destroyed, and the game cannot add replacements until actual slots become available.
+- Accepts X4's alternate `ID: 12345` component reference format.
+- Retains readback verification; if X4 rejects a requirement below already stored units, the mod reports the discrepancy instead of hiding it.
+
+## Earlier fixes since v1.00
 
 - One Mission Director-to-Lua event per galaxy-wide station roster, instead of potentially losing a burst of per-station events.
 - Uses the supported player blackboard to transfer complete rosters.
