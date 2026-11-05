@@ -1,0 +1,51 @@
+name: Package X4 player faction invincibility
+on:
+  push:
+    paths:
+      - '.github/workflows/package-x4-invincible.yml'
+      - 'downloads/x4-faction-invincible/vardath_faction_invincible/**'
+      - 'downloads/x4-faction-invincible/validate.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vardath-x4-invincible-package
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate XML and build installable ZIP
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path("downloads/x4-faction-invincible")
+          source = root / "vardath_faction_invincible"
+          output = root / "vardath_faction_invincible_TEST.zip"
+          with ZipFile(output, "w", ZIP_DEFLATED) as z:
+              for f in sorted(source.rglob("*")):
+                  if f.is_file():
+                      z.write(f, f.relative_to(root))
+          PY
+          python3 downloads/x4-faction-invincible/validate.py
+      - name: Commit downloadable ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-faction-invincible/vardath_faction_invincible_TEST.zip
+          git diff --cached --quiet || git commit -m "Package X4 invincibility extension"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Vardath-X4-invincibility-TEST
+          path: downloads/x4-faction-invincible/vardath_faction_invincible_TEST.zip

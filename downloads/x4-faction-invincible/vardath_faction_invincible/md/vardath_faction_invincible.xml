@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Vardath_FactionInvincible"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- A saved table tracks the objects WE protected. On transfer, remove our
+         min-hull/min-shield limits rather than making NPC property immortal. -->
+    <cue name="SweepPlayerProperty" instantiate="true" checkinterval="1min">
+      <conditions>
+        <check_value value="player.age ge 1s"/>
+      </conditions>
+      <actions>
+        <do_if value="not md.$VardathFactionInvincibleProtected?">
+          <set_value name="md.$VardathFactionInvincibleProtected" exact="table[]"/>
+        </do_if>
+        <!-- Release assets sold, captured, abandoned or transferred out of the
+             player faction. The keys list is a snapshot, safe to modify. -->
+        <do_for_each name="$FormerAsset" in="md.$VardathFactionInvincibleProtected.keys.list">
+          <do_if value="not $FormerAsset.exists">
+            <remove_value name="md.$VardathFactionInvincibleProtected.{$FormerAsset}"/>
+          </do_if>
+          <do_elseif value="$FormerAsset.trueowner != faction.player">
+            <run_actions ref="SetAssetProtection">
+              <param name="Asset" value="$FormerAsset"/>
+              <param name="Enabled" value="false"/>
+            </run_actions>
+            <remove_value name="md.$VardathFactionInvincibleProtected.{$FormerAsset}"/>
+          </do_elseif>
+        </do_for_each>
+        <!-- True ownership matters: don't miss ships docked inside stations or
+             controlled through another faction, or protect borrowed ships. -->
+        <find_ship_by_true_owner name="$Ships"
+                                 faction="faction.player"
+                                 space="player.galaxy"
+                                 recursive="true" multiple="true"/>
+        <find_station_by_true_owner name="$Stations"
+                                    faction="faction.player"
+                                    space="player.galaxy" multiple="true"/>
+        <!-- Also cover player-owned satellites, mines, laser towers, beacons
+             and other deployables, not just ships/stations. -->
+        <find_object name="$Deployables" owner="faction.player"
+                     deployable="true" space="player.galaxy" multiple="true"/>
+        <set_value name="$Assets" exact="[]"/>
+        <append_list_elements name="$Assets" other="$Ships"/>
+        <append_list_elements name="$Assets" other="$Stations"/>
+        <append_list_elements name="$Assets" other="$Deployables"/>
+        <do_for_each name="$Asset" in="$Assets">
+          <do_if value="$Asset.exists and $Asset.trueowner == faction.player">
+            <!-- Reapply every minute: newly built station modules and new ship
+                 equipment are protected even on an already-protected asset. -->
+            <run_actions ref="SetAssetProtection">
+              <param name="Asset" value="$Asset"/>
+              <param name="Enabled" value="true"/>
+            </run_actions>
+            <set_value name="md.$VardathFactionInvincibleProtected.{$Asset}" exact="true"/>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+    <library name="SetAssetProtection" purpose="run_actions">
+      <params>
+        <param name="Asset"/>
+        <param name="Enabled"/>
+      </params>
+      <actions>
+        <do_if value="$Asset.exists">
+          <do_if value="$Enabled">
+            <!-- Full restoration backs up the 100% minimums against damage. -->
+            <set_object_hull object="$Asset" exact="100"/>
+            <set_object_shield object="$Asset" exact="100"/>
+            <set_object_min_hull object="$Asset" exact="100"/>
+            <set_object_min_shield object="$Asset" exact="100"/>
+          </do_if>
+          <do_else>
+            <set_object_min_hull object="$Asset" exact="0"/>
+            <set_object_min_shield object="$Asset" exact="0"/>
+          </do_else>
+          <set_value name="$Parts" exact="[]"/>
+          <find_object_component name="$Parts" object="$Asset"
+                                 class="class.module" recursive="true"
+                                 multiple="true" append="true"/>
+          <find_object_component name="$Parts" object="$Asset"
+                                 class="class.engine" recursive="true"
+                                 multiple="true" append="true"/>
+          <find_object_component name="$Parts" object="$Asset"
+                                 class="class.shieldgenerator" recursive="true"
+                                 multiple="true" append="true"/>
+          <find_object_component name="$Parts" object="$Asset"
+                                 class="class.turret" recursive="true"
+                                 multiple="true" append="true"/>
+          <find_object_component name="$Parts" object="$Asset"
+                                 class="class.weapon" recursive="true"
+                                 multiple="true" append="true"/>
+          <do_for_each name="$Part" in="$Parts">
+            <do_if value="$Part.exists">
+              <do_if value="$Enabled">
+                <set_object_hull object="$Part" exact="100"/>
+                <set_object_shield object="$Part" exact="100"/>
+                <set_object_min_hull object="$Part" exact="100"/>
+                <set_object_min_shield object="$Part" exact="100"/>
+              </do_if>
+              <do_else>
+                <set_object_min_hull object="$Part" exact="0"/>
+                <set_object_min_shield object="$Part" exact="0"/>
+              </do_else>
+            </do_if>
+          </do_for_each>
+        </do_if>
+      </actions>
+    </library>
+  </cues>
+</mdscript>
