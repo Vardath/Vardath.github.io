@@ -9,9 +9,13 @@
       <actions>
         <set_value name="$StartZone" exact="player.zone"/>
         <debug_text text="'Vardath Kopis startup cue reached'" filter="general"/>
-        <!-- Resolve the exact custom kit once; this is only used as a
-             weapon-only fallback if X4 rejects the spawn weapon. -->
-        <get_loadout result="$VardathWeaponKit" loadout="'vardath_kopis_factory_kit'" macro="macro.ship_vardath_kopis_factory_macro"/>
+        <!-- Independent weapon-only equipment preset avoids reliance on
+             any full loadout lookup during ship construction. -->
+        <create_loadout result="$VardathWeaponKit">
+          <macros>
+            <weapon macro="weapon_vardath_kopis_laser_macro" path="../con_weapon_01"/>
+          </macros>
+        </create_loadout>
         <do_all exact="10" counter="$ForgeIndex">
           <create_ship name="$Forge" macro="macro.ship_vardath_kopis_factory_macro" zone="$StartZone">
           <owner exact="faction.player"/>

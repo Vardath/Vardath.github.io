@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VardathKopisAutoMainWeapon"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!-- This cue is NEW (v107), so it activates on existing saves even when
+         the one-shot v106 recovery cue has already completed. It repeats
+         indefinitely, repairing only player-owned Kopis Forges without a
+         main weapon; it does not replace guns intentionally fitted later. -->
+    <cue name="MaintainForgePrimaryWeapon_v107" instantiate="true" checkinterval="1min">
+      <conditions>
+        <check_value value="player.age ge 10s"/>
+      </conditions>
+      <actions>
+        <!-- Use an explicit single-gun template rather than a whole ship
+             loadout; never alter cargo, crew, engines, shields, drones. -->
+        <create_loadout result="$MainGunOnly">
+          <macros>
+            <weapon macro="weapon_vardath_kopis_laser_macro" path="../con_weapon_01"/>
+          </macros>
+        </create_loadout>
+        <find_ship_by_true_owner name="$OwnedShips" faction="faction.player"
+                                 space="player.galaxy" multiple="true"/>
+        <do_for_each name="$Forge" in="$OwnedShips">
+          <do_if value="$Forge.exists and $Forge.macro == macro.ship_vardath_kopis_factory_macro">
+            <find_object_component name="$ExistingMainGuns" object="$Forge"
+                                   class="class.weapon" multiple="true"/>
+            <do_if value="$ExistingMainGuns.count == 0">
+              <apply_loadout object="$Forge" loadout="$MainGunOnly"
+                             flags="add weapons"/>
+            </do_if>
+          </do_if>
+        </do_for_each>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

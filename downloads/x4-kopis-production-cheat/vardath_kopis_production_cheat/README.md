@@ -1,3 +1,11 @@
+# v1.07 — Automatic main weapon restoration (2026-11-06)
+
+The main gun is now **8000 damage per hit**, exactly **100× the vanilla Terran S Laser Mk2's 80 damage** (not an additional multiplication of the previous Forge damage).
+
+**Existing saves and ships:** the new `VardathKopisAutoMainWeapon` Mission Director script runs once per in-game minute. It discovers all player-owned ships across the galaxy (true owner, including off-sector ships), checks each Kopis Mobile Forge, and if it has *zero main weapons*, uses a weapon-only `create_loadout` to equip the exact `weapon_vardath_kopis_laser_macro` on its standard `con_weapon_01` mount. The action uses `flags="add weapons"`, leaving other equipment and cargo untouched. It then repeats, so a lost gun is replaced again without a new game. Already fitted primary weapons are not overwritten.
+
+The startup spawn fallback now uses the same explicit weapon-only template. The earlier v1.06 one-shot repair script remains solely for save compatibility; v1.07 is independent of it. The nonfunctional dorsal turret socket remains removed. **Restart X4 after updating the extension; do not start a new game.** In-game verification is still required.
+
 # v1.06 — Primary weapon restoration (2026-11-06)
 
 **Fix for the v1.05 unarmed Forge regression.** Restores the pre-v1.05 equipment-ware setup for the original Forge Laser and Forge Beam. The v1.05 update added `<use threshold="0"/>` to these two weapon wares; this change has been reversed without reverting the turret removal, the Builder fixes or the Sector Explorer patch.
