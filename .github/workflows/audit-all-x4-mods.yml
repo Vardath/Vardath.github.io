@@ -1,0 +1,29 @@
+name: Audit all five X4 mods
+on:
+  push:
+    paths:
+      - '.github/workflows/audit-all-x4-mods.yml'
+      - 'tools/audit-x4-mods.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all five ZIPs, all XML, references and release validators
+        run: python3 tools/audit-x4-mods.py
+      - name: Check LuaJIT syntax
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq luajit
+          luajit -b downloads/x4-station-auto-drones/vardath_station_auto_drones/ui/vardath_station_auto_drones.lua /tmp/vardath_station_auto_drones.ljbc
+          echo "X4 Lua syntax: PASS"
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vardath-X4-audit-report
+          path: x4-audit-report.json
+          if-no-files-found: warn

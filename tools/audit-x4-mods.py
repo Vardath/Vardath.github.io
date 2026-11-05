@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""Audits the five X4 extensions in downloads, without claiming in-game proof.
+All source/ZIP checks are authoritative for this commit. A legacy public XSD
+is optional for identifying potential engine-schema errors, not X4 9.00 proof.
+"""
+import json
+import re
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
+from zipfile import ZipFile, BadZipFile
+
+ROOT = Path(__file__).resolve().parents[1]
+DROOT = ROOT / "downloads"
+EXTS = (
+    "x4-living-factions-builders",
+    "x4-yaki-terran-habs",
+    "x4-kopis-production-cheat",
+    "x4-faction-invincible",
+    "x4-station-auto-drones",
+)
+report = {"commit": None, "mods": {}, "errors": [], "warnings": [], "caveats": [
+    "Static tests cannot establish that the game executes MD cues, Lua events, or overrides.",
+    "No installed 9.00 vanilla/DLC catalogs or actual mod load-order are available to resolve XPath patches against the effective merged game.",
+    "Historical XSDs, when available, may not match the player's current X4 build."
+]}
+
+def note(level, mod, issue):
+    report[level].append({"mod": mod, "issue": issue})
+
+ids, scripts, custom_defs = {}, {}, set()
+files_by_mod = {}
+
+for folder in EXTS:
+    top = DROOT / folder
+    mods = [p for p in top.iterdir() if p.is_dir() and (p/"content.xml").exists()]
+    if len(mods) != 1:
+        note("errors", folder, f"Expected one extension source folder, got {len(mods)}")
+        continue
+    mod = mods[0]
+    items = sorted(p for p in mod.rglob("*") if p.is_file())
+    files_by_mod[folder] = (mod, items)
+    status = report["mods"][folder] = {"id": mod.name, "files": len(items), "xml": 0, "diffs": 0, "md": 0, "aiscripts": 0, "lua": 0, "zip": "not checked"}
+    try:
+        manifest = ET.parse(mod / "content.xml").getroot()
+        ident = manifest.attrib.get("id")
+        if manifest.tag != "content" or ident != mod.name: note("errors", folder, "Bad content.xml manifest identifier")
+        if ident in ids: note("errors", folder, "Duplicate extension ID with " + ids[ident])
+        ids[ident] = folder
+        if manifest.find("./dependency[@version]") is None:
+            note("warnings", folder, "No X4 version dependency declared")
+    except Exception as e:
+        note("errors", folder, f"Bad content.xml: {e}")
+    for p in items:
+        rel = str(p.relative_to(mod))
+        if p.suffix.lower() == ".xml":
+            status["xml"] += 1
+            try: root = ET.parse(p).getroot()
+            except Exception as e:
+                note("errors", folder, f"XML parse failed {rel}: {e}")
+                continue
+            if root.tag == "diff":
+                status["diffs"] += 1
+                for op in root:
+                    if op.tag not in ("add", "remove", "replace"):
+                        note("errors", folder, f"Unexpected XML diff operation {op.tag} in {rel}")
+                    sel = op.attrib.get("sel")
+                    if not sel: note("errors", folder, f"Missing selector in {rel}")
+                    if sel and "\n" in sel: note("warnings", folder, f"Multiline XPath sel in {rel}")
+            elif root.tag == "mdscript":
+                status["md"] += 1
+                name = root.attrib.get("name")
+                if name in scripts: note("errors", folder, f"Duplicate MD name {name}, first in {scripts[name]}")
+                scripts[name] = f"{folder}/{rel}"
+            elif root.tag == "aiscript": status["aiscripts"] += 1
+            for node in root.iter():
+                if node.tag in ("macro", "component") and "name" in node.attrib:
+                    custom_defs.add(node.attrib["name"])
+                if node.tag == "ware" and "id" in node.attrib:
+                    custom_defs.add(node.attrib["id"])
+        elif p.suffix.lower() == ".lua":
+            status["lua"] += 1
+            if not p.read_text().strip(): note("errors", folder, f"Empty Lua file: {rel}")
+            if p.read_text().count("RegisterEvent(") < 1:
+                note("warnings", folder, f"Lua file has no RegisterEvent hook: {rel}")
+    archive = top / f"{mod.name}_TEST.zip"
+    try:
+        with ZipFile(archive) as z:
+            bad = z.testzip()
+            want = {f"{mod.name}/{p.relative_to(mod).as_posix()}" for p in items}
+            got = set(z.namelist())
+            if bad: note("errors", folder, f"ZIP checksum failed: {bad}")
+            if want != got: note("errors", folder, f"ZIP paths differ: missing={sorted(want-got)}, extra={sorted(got-want)}")
+            for p in items:
+                key=f"{mod.name}/{p.relative_to(mod).as_posix()}"
+                if key in got and z.read(key) != p.read_bytes():
+                    note("errors", folder, f"ZIP is STALE, differs from source: {p.relative_to(mod)}")
+            status["zip"]="byte-for-byte checked"
+    except (BadZipFile, FileNotFoundError) as e:
+        note("errors", folder, f"ZIP unreadable: {e}")
+    validator = top / "validate.py"
+    run = subprocess.run([sys.executable, str(validator)], capture_output=True, text=True)
+    status["validator"] = {"returncode":run.returncode, "output":(run.stdout + run.stderr)[-1200:]}
+    if run.returncode:
+        note("errors", folder, f"Validator failed: {run.stderr[-900:] or run.stdout[-900:]}")
+
+# Cross-mod ID collisions and custom source-ref checks.
+for folder,(mod,items) in files_by_mod.items():
+    for p in items:
+        if p.suffix.lower() != ".xml": continue
+        content=p.read_text()
+        for candidate in set(re.findall(r"\b(?:macro|ware)\.(vardath_[A-Za-z0-9_]+)\b", content)):
+            if candidate not in custom_defs and candidate not in ids:
+                note("warnings", folder, f"Unresolved Vardath custom reference {candidate} in {p.relative_to(mod)}")
+    # Distinguish scripts that only check XML structure vs genuine engine tests.
+    report["mods"][folder]["runtime_verified"] = False
+
+# Check the mechanics of the two most recently added mods.
+inv = files_by_mod.get("x4-faction-invincible")
+if inv:
+    src = (inv[0]/"md/vardath_faction_invincible.xml").read_text()
+    for required in ('set_object_min_hull', 'set_object_min_shield', 'find_station_by_true_owner'):
+        if required not in src: note("errors", "x4-faction-invincible", f"Protection action {required} missing")
+    if 'md.$VardathFactionInvincibleProtected' not in src:
+        note("warnings", "x4-faction-invincible", "No saved prior-ownership table found")
+dr = files_by_mod.get("x4-station-auto-drones")
+if dr:
+    md = (dr[0]/"md/vardath_station_auto_drones.xml").read_text()
+    lua = (dr[0]/"ui/vardath_station_auto_drones.lua").read_text()
+    if "'Vardath.StationAutoDrones.ApplyRoster'" not in md or "RegisterEvent('Vardath.StationAutoDrones.ApplyRoster'" not in lua:
+        note("errors", "x4-station-auto-drones", "MD/Lua event name mismatch")
+    if "'$VAD_Roster'" not in lua or "player.entity.$VAD_Roster" not in md:
+        note("errors", "x4-station-auto-drones", "MD/Lua roster blackboard key mismatch")
+    if 'readback mismatch' not in lua:
+        note("warnings", "x4-station-auto-drones", "No supply-order readback check")
+    if 'show_notification' not in md:
+        note("warnings", "x4-station-auto-drones", "No feedback when Lua event fails")
+print(json.dumps(report, indent=2))
+out = ROOT/"x4-audit-report.json"
+out.write_text(json.dumps(report, indent=2)+"\n")
+sys.exit(1 if report["errors"] else 0)
