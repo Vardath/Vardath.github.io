@@ -1,30 +1,34 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-  <params>
-    <param name="target"/>
-  </params>
-  <attention min="unknown">
-    <actions>
-      <run_script name="'vardath.go.approach'" result="$ok">
-        <param name="target" value="$target"/>
-        <param name="distance" value="5km"/>
-      </run_script>
-      <do_if value="not $ok">
-        <return value="false"/>
-      </do_if>
-      <set_value name="this.ship.$vgo_status" exact="'Viewing ' + $target.knownname"/>
-      <set_command_action commandaction="commandaction.investigating" param="$target"/>
-      <wait exact="this.ship.$vgo_viewtime"/>
-      <do_if value="not $target.exists or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 8km + $target.size / 2">
-        <return value="false"/>
-      </do_if>
-      <do_if value="not this.ship.$vgo_tour?">
-        <set_value name="this.ship.$vgo_tour" exact="[]"/>
-      </do_if>
-      <append_to_list name="this.ship.$vgo_tour" exact="$target"/>
-      <set_known object="$target" known="true"/>
-      <write_to_logbook category="general" title="'Galactic Occupations: sightseeing'" text="'%s visited %s in %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname]" interaction="showonmap" object="$target"/>
-      <return value="true"/>
-    </actions>
-  </attention>
-</aiscript>
+<?xml version="1.0" encoding="utf-8"?>
+<aiscript name="vardath.go.task.tour" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aiscripts.xsd"><params><param name="target"/></params><attention min="unknown"><actions>
+  <do_if value="@this.ship.$vgo_taxi_delivered and @this.ship.$vgo_taxi_completed_service == 5 and @this.ship.$vgo_taxi_completed_id != @this.ship.$vgo_taxi_paid_id"><set_value name="this.ship.$vgo_verified" exact="true"/><set_value name="this.ship.$vgo_reward" exact="this.ship.$vgo_tour_booked_fee * this.ship.$vgo_taxi_delivered_count"/><set_value name="this.ship.$vgo_rewardfaction" exact="this.ship.$vgo_taxi_faction"/><return value="true"/></do_if>
+  <do_if value="@this.ship.$vgo_passengers.count and @this.ship.$vgo_passenger_service != 5"><set_value name="this.ship.$vgo_status" exact="'Complete the existing taxi journey before taking tour passengers'"/><return value="false"/></do_if>
+  <do_if value="not @this.ship.$vgo_taxi_boarded">
+    <do_if value="not @this.ship.$vgo_passengers.count">
+      <run_script name="'vardath.go.tourcatalogue'" result="$catalogue"/>
+      <do_if value="$catalogue.count lt this.ship.$vgo_tour_stops"><set_value name="this.ship.$vgo_status" exact="'Luxury tour needs ' + this.ship.$vgo_tour_stops + ' distinct sites in the operating range; increase range'"/><return value="false"/></do_if>
+      <set_value name="this.ship.$vgo_tour_trip" exact="[]"/><set_value name="this.ship.$vgo_tour_sectors" exact="[]"/><set_value name="$sectors" exact="[]"/>
+      <do_for_each name="$poi" in="$catalogue"><do_if value="not $sectors.indexof.{$poi.sector}"><append_to_list name="$sectors" exact="$poi.sector"/></do_if></do_for_each>
+      <set_value name="this.ship.$vgo_tour_minsectors" exact="[3, $sectors.count].min"/>
+      <set_value name="this.ship.$vgo_tour_booked_stops" exact="this.ship.$vgo_tour_stops"/><set_value name="this.ship.$vgo_tour_booked_fee" exact="this.ship.$vgo_tour_ticketfee"/>
+      <set_value name="this.ship.$vgo_taxi_pickup" exact="$target"/><set_value name="this.ship.$vgo_taxi_dest" exact="$target"/>
+    </do_if>
+    <run_script name="'vardath.go.passengers.board'" result="$boarded"><param name="target" value="$target"/></run_script>
+    <return value="false"/>
+  </do_if>
+  <do_if value="this.ship.$vgo_tour_trip.count ge this.ship.$vgo_tour_booked_stops and this.ship.$vgo_tour_sectors.count ge this.ship.$vgo_tour_minsectors">
+    <run_script name="'vardath.go.passengers.deliver'" result="$delivered"/>
+    <do_if value="$delivered gt 0"><set_value name="this.ship.$vgo_verified" exact="true"/><set_value name="this.ship.$vgo_reward" exact="this.ship.$vgo_tour_booked_fee * $delivered"/><set_value name="this.ship.$vgo_rewardfaction" exact="this.ship.$vgo_taxi_faction"/><return value="true"/></do_if><return value="false"/>
+  </do_if>
+  <do_if value="not $target.exists or @this.ship.$vgo_tour_trip.indexof.{$target}"><return value="false"/></do_if>
+  <run_script name="'vardath.go.approach'" result="$ok"><param name="target" value="$target"/><param name="distance" value="5km"/></run_script>
+  <do_if value="not $ok"><return value="false"/></do_if>
+  <set_value name="this.ship.$vgo_status" exact="'Luxury tour: viewing ' + $target.knownname + ' (' + this.ship.$vgo_tour_trip.count + '/' + this.ship.$vgo_tour_booked_stops + ')'"/>
+  <set_command_action commandaction="commandaction.investigating" param="$target"/><wait exact="this.ship.$vgo_viewtime"/>
+  <do_if value="not $target.exists or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 8km + $target.size / 2"><return value="false"/></do_if>
+  <do_if value="not this.ship.$vgo_tour?"><set_value name="this.ship.$vgo_tour" exact="[]"/></do_if>
+  <append_to_list name="this.ship.$vgo_tour" exact="$target"/><append_to_list name="this.ship.$vgo_tour_trip" exact="$target"/>
+  <do_if value="not this.ship.$vgo_tour_sectors.indexof.{$target.sector}"><append_to_list name="this.ship.$vgo_tour_sectors" exact="$target.sector"/></do_if>
+  <set_known object="$target" known="true"/><write_to_logbook category="general" title="'Galactic Occupations: luxury sightseeing'" text="'%s: stop %s/%s, %s in %s; %s passengers aboard.'.[this.ship.knownname,this.ship.$vgo_tour_trip.count,this.ship.$vgo_tour_booked_stops,$target.knownname,$target.sector.knownname,this.ship.$vgo_passengers.count]" interaction="showonmap" object="$target"/>
+  <!-- Intermediate visits are persistent route progress, not a paid service completion. -->
+  <return value="false"/>
+</actions></attention></aiscript>

@@ -1,10 +1,11 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 37,
-    "commands": 752,
-    "script_calls": 55,
-    "behaviours": 12
+    "xml_files": 45,
+    "commands": 1304,
+    "script_calls": 70,
+    "behaviours": 12,
+    "ui_addons": 1
   },
   "installed_schema_validation": "NOT RUN: installed X4 schemas unavailable",
   "reference_provenance": {

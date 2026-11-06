@@ -13,10 +13,10 @@ Start with one ship per occupation and Home/Range = local sector/0. Increase to 
 | Occupation | Setup and first action | Required observed effect and completion | Status |
 |---|---|---|---|
 | Escort | Choose a non-player friendly freighter with an active station voyage. Assign Galactic Escort Service. | Escort follows the actual freighter; attackers provoke defence without a long abandonment. Freighter docks at the recorded destination after meaningful escort proximity. Exactly one 12,000 Cr custom fee; next voyage is selected. | UNVERIFIED |
-| Taxi | Use an S/M ship with a free person slot and two friendly dockable stations. Assign Galactic Taxi Service. | Ship physically docks at pickup; passenger appears in people/passenger data, not cargo. It docks at the recorded destination and only that passenger leaves. Exactly one 8,000 Cr custom fee. It finds another pickup. | UNVERIFIED |
-| Scanner | Find a partly known station. Install scanner software supporting at least the player's maximum scan level. | Ship approaches individual modules, remains within survey range/LOS for ten seconds, and only surveyed module information changes. Unvisited modules are not bulk-unlocked. It moves to other modules/stations. | UNVERIFIED |
+| Taxi | Use an S/M ship with a free person slot and two friendly dockable stations. Assign Galactic Taxi Service. | Ship docks at pickup; 1–10 actual NPCs walk from the docking module into the ship. Every accepted actor must enter before departure. The reserved count never exceeds free crew space. At destination, only those passengers disembark; one 8,000 Cr fee per delivered NPC. It finds another pickup. | UNVERIFIED |
+| Scanner | Find a partly known station. Install normal scanner software; specifically test the common case where the AI scanner level is below the player's active level. | Ship approaches individual modules, remains within survey range/LOS for ten seconds, and only surveyed module information changes. Unvisited modules are not bulk-unlocked. It moves to other modules/stations. | UNVERIFIED |
 | Mapper | Use a scout in a sector with an anomaly or gate. Initially leave transit fallback off. | Ship approaches and surveys; logbook contains the actual anomaly exit set or a separate ordinary gate entry. Same connection is not endlessly selected. Verify map-linked catalogue location. | UNVERIFIED |
-| Tour | Use a sector containing a classified landmark/data vault/headquarters or curated object. | Ship approaches at viewing distance, remains for configured dwell, logs the visit and visits other destinations. Recent itinerary is retained across save/load and completes a search cycle before resetting. | UNVERIFIED |
+| Tour | Use a sector containing a classified landmark/data vault/headquarters or curated object. | Up to ten actual NPCs board first. Ten distinct global sites and at least three sectors where available are recorded with dwell. Drop-off follows the route, then exactly 500,000 Cr per passenger at default settings. No early fare; route/batch survives reload. | UNVERIFIED |
 | Crystal miner | Use an M ship with operational deployed beam turrets; keep player nearby in a crystal-bearing field. Assign Autonomous Crystal Miner, beam-only on, selling off first. | Logged/observed target is the crystal component itself. A turret aims, emits real shots, damages the deposit, stops on loss, and physical crystal drops appear. Native collection removes actual drops and increases pilot inventory. Next deposit is selected. See dedicated checks below. | UNVERIFIED |
 | Lure | Use a fast armed ship, a manageable hostile and a friendly defender with greater firepower. | Short provocation attracts actual pursuit. Ship retreats toward the defender; no pursuit is treated as a failed attempt. It escapes or breaks off when appropriate and finds another target. | UNVERIFIED |
 | Demolition | Use an armed S/M ship near destructible asteroids with player present. | Real weapons damage and destroy a chosen asteroid. Indestructible scenery is excluded; no-damage attempts time out. Next rock is selected. Optional collection picks up real released drops. | UNVERIFIED |
@@ -39,6 +39,7 @@ For **each row**, also verify all ten requested lifecycle checks: menu presence,
 
 ## Dedicated crystal-controller tests
 
+- First confirm Mine Crystals appears in Map → Information → Loadout for all/individual/group turrets and existing-ship outfitter controls. Select it, reload, and verify the selected flag persists. Select Attack, Missile Defence or Mining and verify the native callback/mode still works. Also test the standalone mode near a real crystal without changing ship orders.
 - First use ordinary beam turrets and an exposed crystal on a large asteroid. Confirm aim points at the attached crystal rather than the asteroid center. If aim/fire calls do not visibly control turrets, record that as a failure; command availability is not a runtime pass.
 - Test deposits on the opposite side of the asteroid, behind the ship, outside turret arcs, beyond firing range and beside a friendly ship/station. No-damage attempts must release; unsafe line of sight must withhold fire. Never count damage to the parent rock as a crystal harvest.
 - Test a ship with no turrets, missile-only turrets, retracted/disarmed turrets, a capital ship and unsuitable weapons. It should explain/wait or be unavailable for assignment, without installing or changing equipment.
@@ -64,7 +65,7 @@ From `downloads/x4-galactic-occupations`:
 ```sh
 python tools/validate.py
 python tools/package.py
-python tools/validate.py --zip Galactic_Occupations_0.1.0_DEV.zip
+python tools/validate.py --zip Galactic_Occupations_0.2.0_DEV.zip
 ```
 
 For official schema and installed native-signature checking, extract the matching game catalogs with Egosoft's X Catalog Tool, preserving `libraries` and `aiscripts` paths, install `lxml` and run:
@@ -74,3 +75,23 @@ python tools/validate.py --reference /path/to/extracted/X4 --report installed-sc
 ```
 
 Schemas may take several minutes to compile. This validates XML structure and signatures, not X4 expression semantics or game effects. Record the runtime matrix, game log excerpts and exact build separately before promoting this development package to a stable release.
+
+## 0.2.0 targeted acceptance cases
+
+- Galaxy: assign each occupation at range 99 in a sector with abundant local work. After an assignment, observe another sector being selected. Test 0 and 2 as boundaries, inaccessible gates and blacklisted routes. For tours, inspect targets in distant sectors before local sights are exhausted.
+- Boarding: test 0, 1, 5, 9, 10 and more than 10 free crew berths. The manifest must be min(10, free). Fill space between assignment and docking. Save while 0/5/9 NPCs are aboard and while walking through the hatch. No actor/template duplication or unrelated crew removal. Disable interior streaming by leaving the area: the ship must wait rather than treat seats as boarded. Return and observe real boarding.
+- Tours: record actual site identities and sector identities. Stops 0–9 must not award fares. Required sites without drop-off must not pay. Test one passenger (500,000 Cr) and ten passengers (5,000,000 Cr); changing fare after booking must preserve the booked amount. Destroy a route target/drop-off station and test recovery. A range with fewer than ten unique sights should reject a new booking with an explanatory status.
+- Surveys: use a basic AI scanner with a stronger active player scanner; it must no longer skip every module. Test a large station with more than eighty components, obstructed first viewing angles, ten-second interruption, destroyed modules and OOS collision geometry. Compare actual component scan levels and station discovery before/after. No success when data remains unchanged.
+- Main ledger: open the player's Transaction Log. Verify the income section under the account graph, per-payment game time/ship/amount/description, filters, pagination and lifetime totals. Native transactions/graph must remain usable. Test each addon alone and both together; there must be one section. Payments before this update are not reconstructed.
+- Builder: observe the 200,000 Cr hire entry, active payroll at 100,000 Cr/hour and standby at 25,000 Cr/hour, including SETA and final settlement. Compare each displayed amount to actual account movement. Save/reload around payout and confirm neither money nor journal rows duplicate. Lost ships/stations should retain a useful recorded label.
+
+Additional developer checks (no X4 runtime):
+
+```sh
+python tools/tests/source_contracts.py
+lua5.1 tools/tests/ui_contracts.lua vardath_galactic_occupations
+```
+
+The 36 UI checks mock menu/widget data and execute the addon Lua; they do not create real game menus or fire weapons.
+
+Vanilla-ledger follow-up: payment labels and verified receipts now appear directly in the existing transaction list, with native search/time-window/pagination. The separate income preview is retained at the user's request. Native IDs, amounts and account graph data are preserved; internal engine database metadata is not fabricated.

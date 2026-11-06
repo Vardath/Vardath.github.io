@@ -17,7 +17,7 @@
       <hull max="9200"/>
       <secrecy level="2"/>
       <purpose primary="trade"/>
-      <people capacity="16"/>
+      <people capacity="32"/>
       <physics mass="0.2">
         <inertia pitch="1.722" yaw="1.722" roll="1.3775"/>
         <drag forward="3.155" reverse="8.833" horizontal="10.55" vertical="10.55" pitch="5.121" yaw="5.121" roll="5.121"/>

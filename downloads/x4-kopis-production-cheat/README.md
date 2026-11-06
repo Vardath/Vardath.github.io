@@ -1,3 +1,7 @@
+# v1.13 — Astrid Tours passenger space
+
+Astrid Tours now has 32 berths, and newly spawned copies use 50% Yaki crew fill so a ten-passenger tour can fit. Existing crew and equipment are retained. The special Forge weapon and its recovery scripts are unchanged.
+
 # X4 — Vardath Kopis Mobile Forge (v1.08)
 
 [Current packaged ZIP](./vardath_kopis_production_cheat_TEST.zip) (GitHub Actions repackages on a source change). Install by replacing the complete `vardath_kopis_production_cheat` extension folder. Restart X4; **continue your existing save**.

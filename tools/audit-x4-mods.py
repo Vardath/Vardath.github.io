@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Checks only XML, manifest identity, Lua presence, and matching source/ZIP packaging.
+"""Checks XML, documented command attributes, manifest identity, UI files, and source/ZIP packaging.
 Does not assert how gameplay features are implemented.
 """
 import json
@@ -18,6 +18,8 @@ EXTS = (
     "x4-kopis-production-cheat",
     "x4-faction-invincible",
     "x4-station-auto-drones",
+    "x4-universal-cargo-teleport",
+    "x4-galactic-occupations",
 )
 report = {"commit": None, "mods": {}, "errors": [], "warnings": [], "caveats": [
     "Static tests cannot establish that the game executes MD cues, Lua events, or overrides.",
@@ -30,6 +32,7 @@ def note(level, mod, issue):
 
 ids, scripts, custom_defs = {}, {}, set()
 files_by_mod = {}
+api=json.loads((DROOT/'x4-galactic-occupations/tools/api_contracts.json').read_text())
 
 for folder in EXTS:
     top = DROOT / folder
@@ -74,6 +77,17 @@ for folder in EXTS:
                 scripts[name] = f"{folder}/{rel}"
             elif root.tag == "aiscript": status["aiscripts"] += 1
             for node in root.iter():
+                if ('md' in p.relative_to(mod).parts or 'aiscripts' in p.relative_to(mod).parts) and node.tag in api['commands']:
+                    definition=api['commands'][node.tag]
+                    context='aiscripts' if 'aiscripts' in p.relative_to(mod).parts else 'md'
+                    status['api_commands']=status.get('api_commands',0)+1
+                    if context not in definition['contexts']: note('errors',folder,f'{rel}: {node.tag} invalid in {context}')
+                    extra=set(node.attrib)-set(definition['attributes'])
+                    if extra: note('errors',folder,f'{rel}: {node.tag} unknown attributes {sorted(extra)}')
+                    missing=[key for key,value in definition['attributes'].items() if value.get('required') and key not in node.attrib]
+                    if missing: note('errors',folder,f'{rel}: {node.tag} missing required {missing}')
+                if root.tag=='addon' and node.tag=='file':
+                    if not (mod/node.get('name','')).is_file(): note('errors',folder,f'{rel}: missing UI Lua {node.get("name")}')
                 if node.tag in ("macro", "component") and "name" in node.attrib:
                     custom_defs.add(node.attrib["name"])
                 if node.tag == "ware" and "id" in node.attrib:
@@ -84,21 +98,29 @@ for folder in EXTS:
             if p.read_text().count("RegisterEvent(") < 1:
                 note("warnings", folder, f"Lua file has no RegisterEvent hook: {rel}")
     archive = top / f"{mod.name}_TEST.zip"
+    archive_prefix = f"{mod.name}/"
+    if folder == 'x4-galactic-occupations':
+        archive=top/'Galactic_Occupations_0.2.0_DEV.zip'
+        archive_prefix='extensions/'+archive_prefix
     try:
         with ZipFile(archive) as z:
             bad = z.testzip()
-            want = {f"{mod.name}/{p.relative_to(mod).as_posix()}" for p in items}
+            want = {archive_prefix+p.relative_to(mod).as_posix() for p in items}
             got = set(z.namelist())
             if bad: note("errors", folder, f"ZIP checksum failed: {bad}")
             if want != got: note("errors", folder, f"ZIP paths differ: missing={sorted(want-got)}, extra={sorted(got-want)}")
             for p in items:
-                key=f"{mod.name}/{p.relative_to(mod).as_posix()}"
+                key=archive_prefix+p.relative_to(mod).as_posix()
                 if key in got and z.read(key) != p.read_bytes():
                     note("errors", folder, f"ZIP is STALE, differs from source: {p.relative_to(mod)}")
             status["zip"]="byte-for-byte checked"
     except (BadZipFile, FileNotFoundError) as e:
         note("errors", folder, f"ZIP unreadable: {e}")
     validator = top / "validate.py"
+    if folder == 'x4-galactic-occupations': validator=top/'tools/validate.py'
+    if not validator.exists():
+        status['validator']={'returncode':0,'output':'Generic archive, XML and API checks above; no extension-local validator'}
+        continue
     run = subprocess.run([sys.executable, str(validator)], capture_output=True, text=True)
     status["validator"] = {"returncode":run.returncode, "output":(run.stdout + run.stderr)[-1200:]}
     if run.returncode:
@@ -115,6 +137,11 @@ for folder,(mod,items) in files_by_mod.items():
     # Distinguish scripts that only check XML structure vs genuine engine tests.
     report["mods"][folder]["runtime_verified"] = False
 
+bundle=subprocess.run([sys.executable,str(ROOT/'tools/package-x4-update.py'),'--check'],capture_output=True,text=True)
+report['update_bundle']={'returncode':bundle.returncode,'output':bundle.stdout+bundle.stderr}
+if bundle.returncode: note('errors','update-bundle','Combined update ZIP failed integrity checks')
+report['command_provenance']=api['provenance']
+report['reviewed_source']='Current worktree; X4 runtime unavailable'
 print(json.dumps(report, indent=2))
 out = ROOT/"x4-audit-report.json"
 out.write_text(json.dumps(report, indent=2)+"\n")

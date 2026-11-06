@@ -17,7 +17,7 @@ parser.add_argument('--report', type=Path)
 parser.add_argument('--zip', type=Path, help='Also compare archive contents byte-for-byte with installed source')
 args = parser.parse_args()
 api = json.loads((BASE / 'tools/api_contracts.json').read_text())
-errors, counts = [], {'xml_files': 0, 'commands': 0, 'script_calls': 0, 'behaviours': 0}
+errors, counts = [], {'xml_files': 0, 'commands': 0, 'script_calls': 0, 'behaviours': 0, 'ui_addons': 0}
 trees, scripts = {}, {}
 
 def error(path, message):
@@ -41,6 +41,18 @@ for path in sorted(MOD.rglob('*.xml')):
 structural = {'aiscript','order','params','param','requires','location','interrupts','handler','actions','attention','init',
               'mdscript','cues','cue','conditions','language','page','t','content','dependency','input_param'}
 for path, root in trees.items():
+    if root.tag == 'addon':
+        counts['ui_addons'] += 1
+        if root.get('name') != MOD.name:
+            error(path, 'UI addon name must match extension ID')
+        for env in root.findall('./environment'):
+            if env.get('type') != 'menus':
+                error(path, 'unsupported UI environment')
+            for node in env.findall('./file'):
+                target = MOD / node.get('name', '')
+                if not target.is_file() or target.suffix != '.lua' or not target.resolve().is_relative_to(MOD.resolve()):
+                    error(path, 'missing or unsafe UI script path')
+        continue
     context = 'aiscripts' if root.tag == 'aiscript' else 'md'
     for node in root.iter():
         spec = api['commands'].get(node.tag)

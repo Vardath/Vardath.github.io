@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.taxi" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.taxi" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_taxi" name="{191180,102}" description="{191180,202}" category="trade" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}"/>
@@ -31,8 +31,10 @@
       <match class="class.spacesuit" negate="true"/>
       <match shiptype="shiptype.lasertower" negate="true"/>
       <match unit="false"/>
+      <match class="[class.ship_s, class.ship_m]"/>
     </requires>
-    <location object="this.ship.$vgo_destination" condition="@this.ship.$vgo_destination.exists"/><location object="this.ship.$vgo_target" condition="@this.ship.$vgo_target.exists and not @this.ship.$vgo_destination.exists"/>
+    <location object="this.ship.$vgo_destination" condition="@this.ship.$vgo_destination.exists"/>
+    <location object="this.ship.$vgo_target" condition="@this.ship.$vgo_target.exists and not @this.ship.$vgo_destination.exists"/>
   </order>
   <interrupts>
     <handler ref="AttackHandler"/>

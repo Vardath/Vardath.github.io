@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.board" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="@this.ship.people.{this.ship.$vgo_passenger}.exists and this.ship.$vgo_job != 2">
+        <set_value name="this.ship.$vgo_status" exact="'Resume Galactic Taxi Service to deliver the saved passenger first'"/>
+        <return value="false"/>
+      </do_if>
+      <do_if value="@this.ship.$vgo_passengers.count and @this.ship.$vgo_passenger_service != @this.ship.$vgo_job">
+        <set_value name="this.ship.$vgo_status" exact="'Passengers belong to another service; resume it to complete their journey'"/>
+        <return value="false"/>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_taxi_pickup.exists">
+        <set_value name="this.ship.$vgo_taxi_pickup" exact="$target"/>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_taxi_boarded">
+        <set_value name="$pickup" exact="this.ship.$vgo_taxi_pickup"/>
+        <do_if value="not $pickup.isoperational">
+          <return value="false"/>
+        </do_if>
+        <set_value name="this.ship.$vgo_status" exact="'Passenger service: docking for passenger at ' + $pickup.knownname"/>
+        <set_value name="this.ship.$vgo_destination" exact="$pickup"/>
+        <set_value name="this.ship.$vgo_deadline" exact="player.age + 30min"/>
+        <do_if value="this.ship.sector != $pickup.sector">
+          <run_script name="'move.generic'">
+            <param name="destination" value="$pickup.sector"/>
+            <param name="endintargetsector" value="true"/>
+            <param name="strictblacklist" value="true"/>
+            <param name="useknownpath" value="false"/>
+          </run_script>
+        </do_if>
+        <run_script name="'order.dock'">
+          <param name="destination" value="$pickup"/>
+          <param name="waittime" value="5min"/>
+          <param name="internalorder" value="true"/>
+        </run_script>
+        <do_if value="@this.ship.dock.container != $pickup">
+          <return value="false"/>
+        </do_if>
+        <do_if value="not @this.ship.$vgo_passengers.count and not @this.ship.people.{this.ship.$vgo_passenger}.exists and not this.ship.people.free">
+          <return value="false"/>
+        </do_if>
+        <set_value name="this.ship.$vgo_taxi_phase" exact="'boarding'"/>
+        <set_value name="this.ship.$vgo_taxi_phase_started" exact="player.age"/>
+        <set_value name="this.ship.$vgo_taxi_progress" exact="player.age"/>
+        <set_value name="this.ship.$vgo_status" exact="'Passenger service: docked, waiting for passenger to board'"/>
+        <set_value name="this.ship.$vgo_deadline" exact="player.age + 6min"/>
+        <do_while value="@this.ship.dock.container == $pickup and not @this.ship.$vgo_taxi_boarded and @this.ship.$vgo_taxi_phase == 'boarding'">
+          <wait exact="2s"/>
+          <set_value name="this.ship.$vgo_deadline" exact="player.age + 6min"/>
+          <do_if value="not @this.ship.$vgo_taxi_waiting_interiors and player.age gt @this.ship.$vgo_taxi_progress + 5min">
+            <break/>
+          </do_if>
+        </do_while>
+        <do_if value="not @this.ship.$vgo_taxi_boarded">
+          <set_value name="this.ship.$vgo_taxi_phase" exact="'cancel'"/>
+          <set_value name="this.ship.$vgo_status" exact="'Passenger service: boarding failed or interrupted; no fare awarded'"/>
+          <return value="false"/>
+        </do_if>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_passengers.count or not @this.ship.$vgo_taxi_boarded">
+        <return value="false"/>
+      </do_if>
+      <do_for_each name="$entry" in="this.ship.$vgo_passengers">
+        <do_if value="not $entry.$delivered and (not $entry.$boarded or not @this.ship.people.{$entry.$template}.exists or @this.ship.people.{$entry.$template}.isintransit)">
+          <return value="false"/>
+        </do_if>
+      </do_for_each>
+      <return value="true"/>
+    </actions>
+  </attention>
+</aiscript>

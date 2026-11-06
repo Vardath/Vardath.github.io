@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<addon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath_galactic_occupations" xsi:noNamespaceSchemaLocation="../../ui/core/addon.xsd">
+  <environment type="menus">
+    <file name="ui/vgo_turret_modes.lua"/>
+    <file name="ui/vardath_income_ledger.lua"/>
+  </environment>
+</addon>

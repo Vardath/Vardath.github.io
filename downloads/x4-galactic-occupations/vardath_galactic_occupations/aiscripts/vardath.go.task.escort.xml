@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.escort" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.escort" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target"/>
   </params>
@@ -8,7 +8,7 @@
       <run_script name="'vardath.go.destination'" result="$destination">
         <param name="ship" value="$target"/>
       </run_script>
-      <do_if value="not $destination.exists or $target.isplayerowned or 12000Cr lt this.ship.$vgo_minreward or $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} gt this.ship.$vgo_range or $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} lt 0">
+      <do_if value="not $destination.exists or $target.isplayerowned or 12000Cr lt this.ship.$vgo_minreward or (this.ship.$vgo_range lt 99 and $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} gt this.ship.$vgo_range) or $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} lt 0">
         <return value="false"/>
       </do_if>
       <set_value name="this.ship.$vgo_destination" exact="$destination"/><set_value name="$start" exact="player.age"/>

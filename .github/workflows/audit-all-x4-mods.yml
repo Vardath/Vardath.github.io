@@ -1,10 +1,14 @@
-name: Audit all five X4 mods
+name: Audit all seven X4 mods
 # XML, Lua syntax, and packaging checks only; no feature regression assertions.
 on:
   push:
     paths:
       - '.github/workflows/audit-all-x4-mods.yml'
       - 'tools/audit-x4-mods.py'
+      - 'tools/package-x4-update.py'
+      - 'downloads/x4-updates/*.zip'
+      - 'downloads/x4-universal-cargo-teleport/*_TEST.zip'
+      - 'downloads/x4-galactic-occupations/*_DEV.zip'
       # Audit the committed installable packages, only AFTER their packagers run.
       # Source changes trigger the respective packagers independently.
       - 'downloads/x4-kopis-production-cheat/*_TEST.zip'
@@ -20,14 +24,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify five ZIPs, XML, and package integrity
+      - name: Verify seven extensions, API contracts and update bundle
         run: python3 tools/audit-x4-mods.py
       - name: Check LuaJIT syntax
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq luajit
-          luajit -b downloads/x4-station-auto-drones/vardath_station_auto_drones/ui/vardath_station_auto_drones.lua /tmp/vardath_station_auto_drones.ljbc
-          echo "X4 Lua syntax: PASS"
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess
+          for path in Path('downloads').glob('x4-*/*/ui/*.lua'):
+              subprocess.run(['luajit','-b',str(path),'/tmp/vardath-ui.ljbc'],check=True)
+              print('LuaJIT syntax PASS:',path)
+          PY
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v4

@@ -1,4 +1,4 @@
-# Astrid Tours — Kopis extension v1.12
+# Astrid Tours — Kopis extension v1.13
 
 Adds a separate Astrid-derived yacht named **Astrid Tours**. It does not replace an ordinary Astrid, alter the Forge's special weapon or refit existing ships.
 
@@ -24,3 +24,5 @@ The Astrid component/layout and base macro were inspected from the unmodified na
 Checked: XML parsing; documented MD command attributes; new macro/index/loadout links; all equipment paths; separate 3× thrust and 1,000× damage values; ZIP/source consistency. Original Forge weapon assets, its hull/component and weapon-recovery MD scripts remain byte-for-byte unchanged.
 
 Unverified: actual game loading, mount installation, damage, measured speed/handling, stop timing, respawn, crew selection, save/load and interaction with the installed DLC/mod set. Test in an existing manual-save copy: inspect the spawn's two guns/six turrets, attain full travel speed, release controls with flight assist on, time the stop, save/reload, then sell the Tours and wait for replacement. Confirm unrelated ships and the Forge weapon remain as before.
+
+Version 1.13: Astrid Tours has 32 people berths. New replacements use 50% crew fill, leaving room for a ten-passenger tour. Existing crew are retained; the expanded capacity also gives existing copies free passenger space. The Forge hull, its special weapon and weapon-recovery scripts are unchanged.

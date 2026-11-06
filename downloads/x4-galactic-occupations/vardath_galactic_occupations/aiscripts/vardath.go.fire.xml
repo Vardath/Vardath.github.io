@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target"/>
     <param name="crystal" default="true"/>
@@ -17,12 +17,12 @@
       <set_value name="this.ship.$vgo_turrets" exact="[]"/>
       <find_object_component name="$allturrets" object="this.ship" class="class.turret" multiple="true" checkoperational="true"/>
       <do_for_each name="$turret" in="$allturrets">
-        <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing and (not $crystal or not this.ship.$vgo_beamonly or $turret.isbeam)">
+        <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing and (not $crystal or not this.ship.$vgo_beamonly or $turret.isbeam) and (not $crystal or @this.ship.$vgo_crystal_configured != true or @$turret.$vgo_minecrystals)">
           <append_to_list name="this.ship.$vgo_turrets" exact="$turret"/>
         </do_if>
       </do_for_each>
       <do_if value="$crystal and not this.ship.$vgo_turrets.count">
-        <set_value name="this.ship.$vgo_status" exact="'Mine Crystals needs a compatible deployed beam turret (or disable beam-only)'"/>
+        <set_value name="this.ship.$vgo_status" exact="'Select Mine Crystals on a compatible deployed beam turret (or disable beam-only)'"/>
         <return value="false"/>
       </do_if>
       <set_value name="$range" exact="[this.ship.maxcombatrange.lasers.all * 0.65, 2km].min"/>
@@ -73,7 +73,7 @@
         <set_value name="this.ship.$vgo_fireuntil" exact="player.age + 3s"/>
         <set_value name="$canfire" exact="false"/>
         <do_for_each name="$turret" in="this.ship.$vgo_turrets">
-          <do_if value="$turret.isoperational and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9">
+          <do_if value="$turret.isoperational and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @$turret.$vgo_minecrystals)">
             <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true"/>
             <do_if value="$los">
               <aim_turret turret="$turret" target="$target"/>
@@ -89,7 +89,7 @@
           <break/>
         </do_if>
         <do_for_each name="$turret" in="this.ship.$vgo_turrets">
-          <do_if value="$turret.isoperational and $turret.isreadytofire and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9">
+          <do_if value="$turret.isoperational and $turret.isreadytofire and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @$turret.$vgo_minecrystals)">
             <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true"/>
             <do_if value="$los">
               <fire_turret turret="$turret"/>

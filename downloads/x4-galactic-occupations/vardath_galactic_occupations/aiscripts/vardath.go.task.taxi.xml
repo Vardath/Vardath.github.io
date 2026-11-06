@@ -1,76 +1,76 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target"/>
   </params>
   <attention min="unknown">
     <actions>
-      <!-- Resume the exact saved passenger contract after interruption; never convert a passenger into cargo. -->
-      <do_if value="not @this.ship.people.{this.ship.$vgo_passenger}.exists">
-        <do_if value="8000Cr lt this.ship.$vgo_minreward">
-          <return value="false"/>
-        </do_if>
-        <find_station name="$stations" space="this.ship.sector" multiple="true" excluded="$target"/>
+      <do_if value="@this.ship.$vgo_taxi_delivered and @this.ship.$vgo_taxi_completed_service == 2 and @this.ship.$vgo_taxi_completed_id != @this.ship.$vgo_taxi_paid_id">
+        <set_value name="this.ship.$vgo_verified" exact="true"/>
+        <set_value name="this.ship.$vgo_reward" exact="8000Cr * this.ship.$vgo_taxi_delivered_count"/>
+        <set_value name="this.ship.$vgo_rewardfaction" exact="this.ship.$vgo_taxi_faction"/>
+        <return value="true"/>
+      </do_if>
+      <do_if value="@this.ship.$vgo_passengers.count and @this.ship.$vgo_passenger_service != 2">
+        <set_value name="this.ship.$vgo_status" exact="'Finish the existing passenger service before starting a taxi journey'"/>
+        <return value="false"/>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_taxi_pickup.exists and not @this.ship.$vgo_taxi_boarded">
+        <set_value name="this.ship.$vgo_taxi_pickup" exact="$target"/>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_passengers.count and not @this.ship.people.{this.ship.$vgo_passenger}.exists and not this.ship.people.free">
+        <set_value name="this.ship.$vgo_status" exact="'Taxi waiting for a free crew berth'"/>
+        <return value="false"/>
+      </do_if>
+      <do_if value="8000Cr * [10, this.ship.people.free + @this.ship.$vgo_passengers.count].min lt this.ship.$vgo_minreward and not @this.ship.$vgo_taxi_boarded">
+        <return value="false"/>
+      </do_if>
+      <do_if value="not @this.ship.$vgo_taxi_dest.isoperational or not @this.ship.$vgo_taxi_dest.dockingallowed.{this.ship}">
+        <set_value name="$sectors" exact="this.ship.$vgo_scope.clone"/>
         <set_value name="$destination" exact="null"/>
-        <do_for_each name="$station" in="$stations">
-          <do_if value="$station.dockingallowed.{this.ship} and $station.dock.{this.ship.docksize}.exists and not $station.ishostileto.{this.ship} and $station.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} le this.ship.$vgo_range and $station.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} ge 0">
-            <set_value name="$destination" exact="$station"/>
-            <break/>
-          </do_if>
-        </do_for_each>
-        <do_if value="not $destination.exists">
-          <find_sector_in_range name="$sectors" object="this.ship" maxdistance="[3, this.ship.$vgo_range].min" multiple="true" known="true"/>
-          <do_for_each name="$sector" in="$sectors">
-            <find_station name="$station" space="$sector" excluded="$target" reachablefrom="this.ship">
+        <do_all exact="2" counter="$pass">
+          <set_value name="$remaining" exact="$sectors.clone"/>
+          <do_while value="$remaining.count">
+            <set_value name="$sector" exact="$remaining.random"/>
+            <remove_value name="$remaining.{$remaining.indexof.{$sector}}"/>
+            <do_if value="$pass == 1 and $sector == @this.ship.$vgo_taxi_pickup.sector">
+              <continue/>
+            </do_if>
+            <find_station name="$stations" space="$sector" multiple="true" excluded="@this.ship.$vgo_taxi_pickup" reachablefrom="this.ship">
               <match_dock size="this.ship.docksize"/>
             </find_station>
-            <do_if value="$station.exists and $station.dockingallowed.{this.ship} and not $station.ishostileto.{this.ship} and $station.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} le this.ship.$vgo_range and $station.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} ge 0">
-              <set_value name="$destination" exact="$station"/>
+            <do_while value="$stations.count">
+              <set_value name="$station" exact="$stations.random"/>
+              <remove_value name="$stations.{$stations.indexof.{$station}}"/>
+              <do_if value="$station.isoperational and $station.dockingallowed.{this.ship} and not $station.ishostileto.{this.ship} and (this.ship.$vgo_risk == 2 or not $station.sector.owner.hasrelation.enemy.{faction.player})">
+                <set_value name="$destination" exact="$station"/>
+                <break/>
+              </do_if>
+            </do_while>
+            <do_if value="$destination.exists">
               <break/>
             </do_if>
-          </do_for_each>
-        </do_if>
+            <wait exact="100ms"/>
+          </do_while>
+          <do_if value="$destination.exists">
+            <break/>
+          </do_if>
+        </do_all>
         <do_if value="not $destination.exists">
           <return value="false"/>
         </do_if>
-        <set_value name="this.ship.$vgo_taxi_pickup" exact="$target"/>
         <set_value name="this.ship.$vgo_taxi_dest" exact="$destination"/>
-        <set_value name="this.ship.$vgo_deadline" exact="player.age + 10min"/>
-        <set_value name="this.ship.$vgo_status" exact="'Docking to pick up passenger at ' + $target.knownname"/>
-        <set_value name="this.ship.$vgo_destination" exact="$target"/><run_script name="'order.dock'">
-          <param name="destination" value="$target"/>
-          <param name="waittime" value="2min"/>
-          <param name="internalorder" value="true"/>
-        </run_script>
-        <do_if value="@this.ship.dock.container != $target or not this.ship.people.free">
-          <return value="false"/>
-        </do_if>
-        <signal_objects object="player.entity" param="'vardath.go.passenger.pickup'" param2="this.ship"/>
-        <wait exact="2s"/>
-        <do_if value="not @this.ship.people.{this.ship.$vgo_passenger}.exists">
-          <return value="false"/>
-        </do_if>
       </do_if>
-      <set_value name="$destination" exact="this.ship.$vgo_taxi_dest"/>
-      <do_if value="not $destination.isoperational or not $destination.dockingallowed.{this.ship}">
-        <return value="false"/>
-      </do_if>
-      <set_value name="this.ship.$vgo_status" exact="'Transporting passenger to ' + $destination.knownname"/>
-      <set_value name="this.ship.$vgo_deadline" exact="player.age + 20min"/>
-      <set_value name="this.ship.$vgo_destination" exact="$destination"/><run_script name="'order.dock'">
-        <param name="destination" value="$destination"/>
-        <param name="waittime" value="2min"/>
-        <param name="internalorder" value="true"/>
+      <run_script name="'vardath.go.passengers.board'" result="$boarded">
+        <param name="target" value="$target"/>
       </run_script>
-      <do_if value="@this.ship.dock.container != $destination or not @this.ship.people.{this.ship.$vgo_passenger}.exists">
+      <do_if value="not $boarded">
         <return value="false"/>
       </do_if>
-      <set_value name="this.ship.$vgo_taxi_delivered" exact="false"/>
-      <signal_objects object="player.entity" param="'vardath.go.passenger.deliver'" param2="this.ship"/>
-      <wait exact="2s"/>
-      <do_if value="@this.ship.$vgo_taxi_delivered">
+      <run_script name="'vardath.go.passengers.deliver'" result="$delivered"/>
+      <do_if value="$delivered gt 0">
         <set_value name="this.ship.$vgo_verified" exact="true"/>
-        <set_value name="this.ship.$vgo_reward" exact="8000Cr"/>
+        <set_value name="this.ship.$vgo_reward" exact="8000Cr * $delivered"/>
         <set_value name="this.ship.$vgo_rewardfaction" exact="this.ship.$vgo_taxi_faction"/>
         <return value="true"/>
       </do_if>

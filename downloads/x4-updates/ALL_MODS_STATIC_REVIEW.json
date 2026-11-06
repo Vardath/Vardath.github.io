@@ -1,0 +1,140 @@
+{
+  "commit": null,
+  "mods": {
+    "x4-living-factions-builders": {
+      "id": "vardath_living_factions_builders",
+      "files": 17,
+      "xml": 13,
+      "diffs": 8,
+      "md": 2,
+      "aiscripts": 0,
+      "lua": 1,
+      "zip": "byte-for-byte checked",
+      "api_commands": 119,
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_living_factions_builders; 17 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-yaki-terran-habs": {
+      "id": "vardath_yaki_terran_habs",
+      "files": 21,
+      "xml": 18,
+      "diffs": 8,
+      "md": 2,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "api_commands": 31,
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_yaki_terran_habs; 21 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-kopis-production-cheat": {
+      "id": "vardath_kopis_production_cheat",
+      "files": 33,
+      "xml": 31,
+      "diffs": 5,
+      "md": 7,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "api_commands": 126,
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_kopis_production_cheat; 33 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-faction-invincible": {
+      "id": "vardath_faction_invincible",
+      "files": 3,
+      "xml": 2,
+      "diffs": 0,
+      "md": 1,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "api_commands": 46,
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_faction_invincible; 3 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-station-auto-drones": {
+      "id": "vardath_station_auto_drones",
+      "files": 5,
+      "xml": 3,
+      "diffs": 0,
+      "md": 1,
+      "aiscripts": 0,
+      "lua": 1,
+      "zip": "byte-for-byte checked",
+      "api_commands": 38,
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_station_auto_drones; 5 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-universal-cargo-teleport": {
+      "id": "vardath_universal_cargo_teleport",
+      "files": 4,
+      "xml": 3,
+      "diffs": 2,
+      "md": 0,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "api_commands": 15,
+      "validator": {
+        "returncode": 0,
+        "output": "Generic archive, XML and API checks above; no extension-local validator"
+      },
+      "runtime_verified": false
+    },
+    "x4-galactic-occupations": {
+      "id": "vardath_galactic_occupations",
+      "files": 51,
+      "xml": 45,
+      "diffs": 0,
+      "md": 3,
+      "aiscripts": 39,
+      "lua": 2,
+      "zip": "byte-for-byte checked",
+      "api_commands": 1304,
+      "validator": {
+        "returncode": 0,
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 45,\n    \"commands\": 1304,\n    \"script_calls\": 70,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable, save or live debug log available\",\n  \"errors\": []\n}\n"
+      },
+      "runtime_verified": false
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "caveats": [
+    "Static tests cannot establish that the game executes MD cues, Lua events, or overrides.",
+    "No installed 9.00 vanilla/DLC catalogs or actual mod load-order are available to resolve XPath patches against the effective merged game.",
+    "Historical XSDs, when available, may not match the player's current X4 build."
+  ],
+  "update_bundle": {
+    "returncode": 0,
+    "output": "PASS: X4_Updated_Mods_2026-11-07.zip; 3 extensions, 101 byte-matched files\n"
+  },
+  "command_provenance": {
+    "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
+    "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
+    "not_installed_game_build": true,
+    "schema_metadata_date": "2026-08-28",
+    "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
+    "schema_versions": [
+      "8.00",
+      "9.00"
+    ]
+  },
+  "reviewed_source": "Current worktree; X4 runtime unavailable"
+}

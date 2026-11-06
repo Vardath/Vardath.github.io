@@ -1,10 +1,20 @@
+# v1.73 — Main Transaction Log income details (2026-11-07)
+
+**Current download: [ready-to-install TEST ZIP](./vardath_living_factions_builders_TEST.zip).** Extract its mod folder into X4's `extensions` directory and replace the existing copy. Existing saves and contract ledgers are retained.
+
+The existing vanilla transaction list now displays verified builder payment labels/receipts through its normal search and page controls. The requested preview panel is retained too. Open the player Transaction Log for the new **Occupation & builder income** section under the graph. It records each new hiring fee, active-construction wage, standby wage and final settlement with ship, employer, station, game time and the actual credited amount. Switch to lifetime totals or filter individual payment history. Detailed history retains the latest 5,000 shared records; lifetime totals persist. Pre-update payments are not reconstructed.
+
+The 200,000 Cr hiring fee, 100,000 Cr/hour active rate, 25,000 Cr/hour standby rate, SETA billing and existing reputation rules are unchanged. Either this extension or Galactic Occupations can supply the UI; enabling both creates one shared section. No new dependency or game is required. Menu behavior still needs in-game verification.
+
+Earlier version notes follow.
+
 # v1.72 — Builder payroll numeric-type correction (2026-11-06)
 
 X4 treats `$Delta / 1h` as **time**, not a dimensionless float. Multiplication by `100000Cr` or `25000Cr` caused the logged `Invalid data types for arithmetic operation` errors and prevented accrued hourly payments. The expressions now explicitly cast the duration ratio to float using X4's `(... )f` syntax, preserving existing save ledgers, 200,000Cr hire fees, 100,000Cr/h active work, 25,000Cr/h standby, and SETA elapsed-time accounting. This is a source fix; confirm actual payout in game.
 
 # X4: Foundations — Vardath Living Factions & Builders
 
-**Latest version: 1.4 — experimental X4 9.00**
+**Historical v1.4 — experimental X4 9.00**
 
 **[Download v1.4 ready-to-install ZIP](./vardath_living_factions_builders_v1.4.zip)**
 

@@ -13,7 +13,7 @@ Reviewed the source currently in Vardath/Vardath.github.io, plus the separately 
 
 The existing five-mod audit returned zero errors and zero warnings before the Astrid addition. A command-interface pass over all locally available existing MD/AI files found no missing required or unknown documented command attributes. These checks cannot resolve every patch against absent 9.00/DLC files, validate every expression, prove UI FFI calls, test geometry, or confirm save/load behavior.
 
-Galactic Occupations adds only its own namespaced AI/MD/order definitions and no vanilla diffs. It does not depend on removed mods or replace Inventory Collector. The only existing extension intentionally changed by this work is Kopis, for the requested independent Astrid Tours copy. Its existing normal Astrid maintenance cue remains separate.
+Galactic Occupations adds only its own namespaced AI/MD/order definitions and no vanilla diffs. It does not depend on removed mods or replace Inventory Collector. The initial delivery changed Kopis for the requested independent Astrid Tours copy. The 0.2.0 follow-up also updates Builders to 1.73 for the requested main Transaction Log payment descriptions and earnings section. Its payroll rates/timing and existing contract state remain intact. Its existing normal Astrid maintenance cue remains separate.
 
 Appropriate reputation rewards are implemented for verified custom escort/taxi completion, actual morale improvement, completed commercial-route escort, genuine contraband reports and accounted crystal broker sales. A shared faction cooldown prevents stacking. Sightseeing, discovery, demolition and ownership transfer do not reward mere proximity.
 

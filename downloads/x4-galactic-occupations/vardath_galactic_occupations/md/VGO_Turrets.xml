@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_Turrets" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Ships" exact="[]"/>
+      </actions>
+    </cue>
+    <!-- Repeats after loading an existing save and after UI/menu reloads. No global ship searches. -->
+    <cue name="InstallUI" instantiate="true" checkinterval="10s">
+      <conditions>
+        <check_value value="player.age ge 0s"/>
+      </conditions>
+      <actions>
+        <raise_lua_event name="'VGO.Install'"/>
+        <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f"/>
+        <raise_lua_event name="'Vardath.IncomeLedger.Install'" param="player.entity"/>
+      </actions>
+    </cue>
+    <cue name="Selection" instantiate="true">
+      <conditions>
+        <event_ui_triggered screen="'VGO'" control="'turretmode'"/>
+      </conditions>
+      <actions>
+        <set_value name="$ship" exact="event.param3.{1}"/>
+        <set_value name="$representative" exact="event.param3.{2}"/>
+        <set_value name="$scope" exact="event.param3.{3}"/>
+        <set_value name="$on" exact="event.param3.{4}"/>
+        <do_if value="$ship.isplayerowned and $ship.isclass.[class.ship_s, class.ship_m] and ($scope == 'all' or ($representative.isclass.turret and $representative.hascontext.{$ship}))">
+          <set_value name="$ship.$vgo_crystal_configured" exact="true"/>
+          <find_object_component name="$turrets" object="$ship" class="class.turret" multiple="true"/>
+          <do_for_each name="$turret" in="$turrets">
+            <do_if value="$scope == 'all' or ($scope == 'turret' and $turret == $representative) or ($scope == 'group' and $turret.grouptag == $representative.grouptag and $turret.parent == $representative.parent)">
+              <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing">
+                <set_value name="$turret.$vgo_minecrystals" exact="$on"/>
+                <do_if value="not $on">
+                  <reset_turret turret="$turret"/>
+                </do_if>
+              </do_if>
+            </do_if>
+          </do_for_each>
+          <set_value name="$all" exact="true"/>
+          <set_value name="$any" exact="false"/>
+          <do_for_each name="$turret" in="$turrets">
+            <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing">
+              <do_if value="@$turret.$vgo_minecrystals">
+                <set_value name="$any" exact="true"/>
+              </do_if>
+              <do_else>
+                <set_value name="$all" exact="false"/>
+              </do_else>
+            </do_if>
+          </do_for_each>
+          <set_value name="$ship.$vgo_crystal_all" exact="$any and $all"/>
+          <do_if value="$any and not Init.$Ships.indexof.{$ship}">
+            <append_to_list name="Init.$Ships" exact="$ship"/>
+          </do_if>
+        </do_if>
+      </actions>
+    </cue>
+    <cue name="Controller" instantiate="true" checkinterval="1s">
+      <conditions>
+        <check_value value="Init.$Ships.count gt 0"/>
+      </conditions>
+      <actions>
+        <do_for_each name="$ship" in="Init.$Ships" counter="$i" reverse="true">
+          <do_if value="not $ship.exists">
+            <remove_value name="Init.$Ships.{$i}"/>
+            <continue/>
+          </do_if>
+          <!-- Autonomous miner has its own movement, firing and collection loop. Never run both. -->
+          <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_crystal'">
+            <continue/>
+          </do_if>
+          <find_object_component name="$turrets" object="$ship" class="class.turret" multiple="true"/>
+          <set_value name="$selected" exact="[]"/>
+          <do_for_each name="$turret" in="$turrets">
+            <do_if value="@$turret.$vgo_mode_aimed and (not $ship.isplayerowned or $ship.attention lt attention.visible or not @$turret.$vgo_minecrystals or not @$ship.$vgo_mode_target.isoperational or @$ship.$vgo_mode_target.sector != $ship.sector or @$ship.$vgo_mode_target_until lt player.age or (@$ship.defaultorder.id == 'VGO_crystal' and @$ship.order.id != 'VGO_crystal'))">
+              <reset_turret turret="$turret"/>
+              <remove_value name="$turret.$vgo_mode_aimed"/>
+            </do_if>
+            <do_if value="@$turret.$vgo_minecrystals and not $turret.isclass.missileturret and not $turret.isrepairing">
+              <append_to_list name="$selected" exact="$turret"/>
+            </do_if>
+          </do_for_each>
+          <do_if value="not $ship.isplayerowned or not $selected.count">
+            <remove_value name="Init.$Ships.{$i}"/>
+            <continue/>
+          </do_if>
+          <!-- Preserve direct-order priority when this is a temporarily interrupted miner. -->
+          <do_if value="$ship.attention lt attention.visible or $ship.iscapitalship or (@$ship.defaultorder.id == 'VGO_crystal' and @$ship.order.id != 'VGO_crystal')">
+            <continue/>
+          </do_if>
+          <do_if value="$ship.hullpercentage lt 65 or ($ship.maxshield gt 0 and $ship.shieldpercentage lt 25)">
+            <do_for_each name="$turret" in="$selected">
+              <do_if value="@$turret.$vgo_mode_aimed">
+                <reset_turret turret="$turret"/>
+                <remove_value name="$turret.$vgo_mode_aimed"/>
+              </do_if>
+            </do_for_each>
+            <continue/>
+          </do_if>
+          <set_value name="$target" exact="@$ship.$vgo_mode_target"/>
+          <do_if value="not $target.exists or $target.hull le 0 or $target.sector != $ship.sector or player.age gt @$ship.$vgo_mode_target_until">
+            <do_if value="@$ship.$vgo_mode_search gt player.age">
+              <continue/>
+            </do_if>
+            <set_value name="$ship.$vgo_mode_search" exact="player.age + 8s"/>
+            <find_object name="$rocks" space="$ship.sector" class="class.asteroid" multiple="true" sortlimit="48" sortbydistanceto="$ship">
+              <match_distance object="$ship" max="10km"/>
+            </find_object>
+            <find_object_component name="$deposits" object="$rocks" class="class.crystal" multiple="true" sortlimit="32"/>
+            <set_value name="$target" exact="null"/>
+            <do_for_each name="$deposit" in="$deposits">
+              <do_if value="not $deposit.isoperational or $deposit.hull le 0 or @$deposit.$vgo_mode_cooldown gt player.age or (@$deposit.$vgo_owner.exists and $deposit.$vgo_owner != $ship and @$deposit.$vgo_expires gt player.age)">
+                <continue/>
+              </do_if>
+              <do_for_each name="$turret" in="$selected">
+                <do_if value="$turret.isoperational and $turret.distanceto.{$deposit} le $turret.maxfirerange * 0.9">
+                  <set_value name="$target" exact="$deposit"/>
+                  <break/>
+                </do_if>
+              </do_for_each>
+              <do_if value="$target.exists">
+                <break/>
+              </do_if>
+            </do_for_each>
+            <set_value name="$ship.$vgo_mode_target" exact="$target"/>
+            <do_if value="not $target.exists">
+              <continue/>
+            </do_if>
+            <set_value name="$ship.$vgo_mode_target_until" exact="player.age + 30s"/>
+            <set_value name="$target.$vgo_mode_cooldown" exact="player.age + 60s"/>
+            <set_value name="$target.$vgo_owner" exact="$ship"/>
+            <set_value name="$target.$vgo_expires" exact="player.age + 35s"/>
+          </do_if>
+          <find_ship name="$traffic" space="$ship.sector" multiple="true" excluded="$ship">
+            <match_distance object="$target" max="1500m"/>
+          </find_ship>
+          <set_value name="$unsafe" exact="false"/>
+          <do_for_each name="$other" in="$traffic">
+            <do_if value="not $other.ishostileto.{$ship}">
+              <set_value name="$unsafe" exact="true"/>
+              <break/>
+            </do_if>
+          </do_for_each>
+          <find_station name="$station" space="$ship.sector">
+            <match_distance object="$target" max="5km"/>
+          </find_station>
+          <do_if value="$unsafe or $station.exists">
+            <do_for_each name="$turret" in="$selected">
+              <do_if value="@$turret.$vgo_mode_aimed">
+                <reset_turret turret="$turret"/>
+                <remove_value name="$turret.$vgo_mode_aimed"/>
+              </do_if>
+            </do_for_each>
+            <continue/>
+          </do_if>
+          <do_for_each name="$turret" in="$selected">
+            <do_if value="$target.isoperational and $turret.isoperational and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9">
+              <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true"/>
+              <do_if value="$los">
+                <aim_turret turret="$turret" target="$target"/>
+                <set_value name="$turret.$vgo_mode_aimed" exact="true"/>
+                <do_if value="$turret.isreadytofire and @$turret.$vgo_mode_lasttarget == $target and @$turret.$vgo_mode_aimtime le player.age - 500ms">
+                  <fire_turret turret="$turret"/>
+                </do_if>
+                <do_if value="@$turret.$vgo_mode_lasttarget != $target">
+                  <set_value name="$turret.$vgo_mode_aimtime" exact="player.age"/>
+                </do_if>
+                <set_value name="$turret.$vgo_mode_lasttarget" exact="$target"/>
+              </do_if>
+            </do_if>
+          </do_for_each>
+        </do_for_each>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>
