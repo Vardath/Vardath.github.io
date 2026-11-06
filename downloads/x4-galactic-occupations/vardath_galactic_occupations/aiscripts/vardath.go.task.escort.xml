@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.escort" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <run_script name="'vardath.go.destination'" result="$destination">
+        <param name="ship" value="$target"/>
+      </run_script>
+      <do_if value="not $destination.exists or $target.isplayerowned or 12000Cr lt this.ship.$vgo_minreward or $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} gt this.ship.$vgo_range or $destination.sector.gatedistance.{this.ship.$vgo_home}.{this.ship} lt 0">
+        <return value="false"/>
+      </do_if>
+      <set_value name="this.ship.$vgo_destination" exact="$destination"/><set_value name="$start" exact="player.age"/>
+      <set_value name="$near" exact="0"/>
+      <set_value name="$samples" exact="0"/>
+      <set_value name="this.ship.$vgo_status" exact="'Escorting ' + $target.knownname + ' to ' + $destination.knownname"/>
+      <do_while value="$target.isoperational and $destination.isoperational and player.age lt $start + 20min">
+        <do_if value="$target.ishostileto.{this.ship}">
+          <return value="false"/>
+        </do_if>
+        <do_if value="@$target.dock.container == $destination">
+          <do_if value="$samples ge 2 and $near * 2 ge $samples and player.age ge $start + 30s">
+            <set_value name="this.ship.$vgo_verified" exact="true"/>
+            <set_value name="this.ship.$vgo_reward" exact="12000Cr"/>
+            <set_value name="this.ship.$vgo_rewardfaction" exact="$target.owner"/>
+            <return value="true"/>
+          </do_if>
+          <return value="false"/>
+        </do_if>
+        <run_script name="'order.fight.escort'">
+          <param name="target" value="$target"/>
+          <param name="timeout" value="20s"/>
+          <param name="pursuedistance" value="5km"/>
+        </run_script>
+        <set_value name="$samples" exact="$samples + 1"/>
+        <do_if value="$target.exists and this.ship.sector == $target.sector and this.ship.distanceto.{$target} lt 12km">
+          <set_value name="$near" exact="$near + 1"/>
+        </do_if>
+        <do_if value="this.ship.hullpercentage lt 50">
+          <return value="false"/>
+        </do_if>
+        <wait exact="1s"/>
+      </do_while>
+      <return value="false"/>
+    </actions>
+  </attention>
+</aiscript>

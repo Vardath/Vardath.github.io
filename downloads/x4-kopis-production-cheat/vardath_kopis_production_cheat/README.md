@@ -145,3 +145,8 @@ Test normal speed using a **Terran S all-round Mk1** to compare with the stock K
 Monitor X4's debug log for invalid XML properties or MD expressions and inspect station build storage to verify actual delivery. The XML parser does not validate X4's custom engine semantics.
 
 **Limitations and cautions:** This is a cheat ship: the high cargo storage and resource production will affect the economy. The factory loop visits all matching game wares every 10 minutes per Forge, and the delivery loop examines stations in the ship's sector every two minutes. Keep the number of Forge ships modest if the galaxy is already mod-heavy. The build transfer is an instant scripted action, not physical drone AI. Extra turret geometry/crew on a small hull is experimental.
+
+
+## v1.12 — Astrid Tours
+
+Added a separate player-owned Yaki-crewed Astrid Tours cheat yacht: 3× nominal speed, stronger handling, dedicated 1,000× weapons/turrets and a scoped 2.5-second stop-deadline controller targeting a stop within three game seconds. It is maintained independently of ordinary Astrids. Existing Forge main-weapon assets and recovery scripts are unchanged. See [ASTRID_TOURS.md](ASTRID_TOURS.md) for exact behavior, source evidence and runtime limitations.

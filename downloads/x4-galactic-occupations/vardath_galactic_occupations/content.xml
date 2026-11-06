@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Twelve autonomous ship occupations. Development build: runtime verification pending. Mine Crystals uses scoped direct turret control, not a new native turret-mode enum." author="Vardath" version="10" date="2026-11-06" save="1" enabled="1">
+  <dependency version="900"/>
+</content>

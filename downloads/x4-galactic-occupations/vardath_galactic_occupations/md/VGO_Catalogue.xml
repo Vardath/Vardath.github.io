@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_Catalogue" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Macros" exact="[macro.landmarks_gen_old_ringstation_macro,macro.landmarks_par_monument_01_macro,macro.landmarks_tel_tradestation_01_macro,macro.landmarks_player_hq_01_research_macro,macro.landmarks_xen_aqueduct_01_macro,macro.landmarks_xen_aqueduct_02_macro,macro.landmarks_vault_01_macro,macro.landmarks_vault_02_macro,macro.landmarks_vault_03_macro]"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.destination" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="ship"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <!-- Native order exposes declared parameters as order.$parameter, not an invented mission API. -->
+      <set_value name="$orders" exact="$ship.orders"/>
+      <do_for_each name="$order" in="$orders">
+        <set_value name="$trade" exact="@$order.trade"/>
+        <do_if value="$trade.exists">
+          <set_value name="$dest" exact="if $trade.buyer == $ship then $trade.seller else $trade.buyer"/>
+          <do_if value="$dest.isclass.station and $dest.isoperational and @$ship.dock.container != $dest">
+            <return value="$dest"/>
+          </do_if>
+        </do_if>
+        <do_for_each name="$dest" in="[@$order.$destination, @$order.$targetobject]">
+          <do_if value="@$dest.isclass.station and $dest.isoperational and @$ship.dock.container != $dest">
+            <return value="$dest"/>
+          </do_if>
+        </do_for_each>
+      </do_for_each>
+      <return value="null"/>
+    </actions>
+  </attention>
+</aiscript>

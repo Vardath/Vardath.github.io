@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<diff><add sel="/index">
-  <entry name="ship_vardath_kopis_factory_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\ship_vardath_kopis_factory_macro" />
-  <entry name="storage_vardath_kopis_container_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_container_macro" />
-  <entry name="storage_vardath_kopis_liquid_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_liquid_macro" />
-  <entry name="storage_vardath_kopis_solid_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_solid_macro" />
-  <entry name="weapon_vardath_kopis_laser_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\weapon_vardath_kopis_laser_macro" />
-  <entry name="weapon_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\weapon_vardath_kopis_beam_macro" />
-  <entry name="turret_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\energy\macros\turret_vardath_kopis_beam_macro" />
-  <entry name="bullet_vardath_kopis_laser_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_kopis_laser_macro" />
-  <entry name="bullet_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_kopis_beam_macro" />
-</add></diff>
+<?xml version='1.0' encoding='UTF-8'?>
+<diff>
+  <add sel="/index">
+  <entry name="ship_vardath_kopis_factory_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\ship_vardath_kopis_factory_macro"/>
+  <entry name="storage_vardath_kopis_container_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_container_macro"/>
+  <entry name="storage_vardath_kopis_liquid_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_liquid_macro"/>
+  <entry name="storage_vardath_kopis_solid_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_s\macros\storage_vardath_kopis_solid_macro"/>
+  <entry name="weapon_vardath_kopis_laser_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\weapon_vardath_kopis_laser_macro"/>
+  <entry name="weapon_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\weapon_vardath_kopis_beam_macro"/>
+  <entry name="turret_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\energy\macros\turret_vardath_kopis_beam_macro"/>
+  <entry name="bullet_vardath_kopis_laser_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_kopis_laser_macro"/>
+  <entry name="bullet_vardath_kopis_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_kopis_beam_macro"/>
+<entry name="ship_vardath_astrid_tours_macro" value="extensions\vardath_kopis_production_cheat\assets\units\size_m\macros\ship_vardath_astrid_tours_macro"/><entry name="engine_vardath_astrid_tours_macro" value="extensions\vardath_kopis_production_cheat\assets\props\engines\macros\engine_vardath_astrid_tours_macro"/><entry name="weapon_vardath_astrid_tours_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\weapon_vardath_astrid_tours_macro"/><entry name="turret_vardath_astrid_tours_macro" value="extensions\vardath_kopis_production_cheat\assets\props\weaponsystems\standard\macros\turret_vardath_astrid_tours_macro"/><entry name="bullet_vardath_astrid_tours_laser_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_astrid_tours_laser_macro"/><entry name="bullet_vardath_astrid_tours_beam_macro" value="extensions\vardath_kopis_production_cheat\assets\fx\weaponfx\macros\bullet_vardath_astrid_tours_beam_macro"/></add>
+</diff>

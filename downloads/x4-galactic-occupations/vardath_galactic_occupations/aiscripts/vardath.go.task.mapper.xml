@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.mapper" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <run_script name="'vardath.go.approach'" result="$ok">
+        <param name="target" value="$target"/>
+        <param name="distance" value="2km"/>
+      </run_script>
+      <do_if value="not $ok or not $target.exists">
+        <return value="false"/>
+      </do_if>
+      <set_command_action commandaction="commandaction.investigating" param="$target"/>
+      <set_value name="this.ship.$vgo_status" exact="'Surveying spatial connection'"/>
+      <wait exact="15s"/>
+      <do_if value="not $target.exists or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 3km + $target.size / 2">
+        <return value="false"/>
+      </do_if>
+      <set_known object="$target" known="true"/>
+      <do_if value="$target.isclass.anomaly">
+        <set_value name="$destinations" exact="$target.destinations"/>
+        <set_value name="$target.$vgo_destinations" exact="$destinations"/>
+        <write_to_logbook category="general" title="'Galactic Occupations: anomaly surveyed'" text="'%s in %s: %s possible destinations. Destinations are a set, not a guaranteed fixed route.'.[this.ship.knownname,$target.sector.knownname,$destinations.count]" interaction="showonmap" object="$target"/>
+        <do_for_each name="$exit" in="$destinations">
+          <write_to_logbook category="general" title="'Anomaly destination catalogue'" text="'%s: destination in %s'.[$target.knownname,$exit.sector.knownname]"/>
+        </do_for_each>
+        <do_if value="this.ship.$vgo_transit and not $target.ismission and $target.istransitionsource and $destinations.count and not this.ship.iscapitalship">
+          <set_value name="$exit" exact="$destinations.random"/>
+          <do_if value="$exit.isoperational and $exit.istransitiondestination and not $exit.ismission and not $exit.sector.owner.hasrelation.enemy.{faction.player}">
+            <set_value name="$originsector" exact="this.ship.sector"/>
+            <move_to object="this.ship" destination="$target" forceposition="true" forcesteering="true">
+              <position x="0m" y="0m" z="0m"/>
+              <interrupt_after_time time="15s"/>
+            </move_to>
+            <do_if value="this.ship.sector == $originsector and this.ship.distanceto.{$target} lt 1km">
+              <!-- Opt-in fallback: selects only a real allowed destination and warps the existing ship, never recreates it. -->
+              <get_safe_pos result="$pos" sector="$exit.sector" object="$exit" min="2km" max="3km" radius="this.ship.size"/>
+              <warp object="this.ship" sector="$exit.sector">
+                <position value="$pos"/>
+              </warp>
+            </do_if>
+          </do_if>
+        </do_if>
+      </do_if>
+      <do_else>
+        <write_to_logbook category="general" title="'Galactic Occupations: normal transit catalogue'" text="'%s surveyed gate/accelerator %s in %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname]" interaction="showonmap" object="$target"/>
+      </do_else>
+      <set_value name="$target.$vgo_mapped" exact="true"/>
+      <return value="true"/>
+    </actions>
+  </attention>
+</aiscript>

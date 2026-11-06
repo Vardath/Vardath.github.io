@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <language id="44">
   <page id="995506" title="Vardath Kopis Production Cheat" descr="" voice="no">
     <t id="1">Kopis Mobile Forge</t>
@@ -7,5 +7,5 @@
     <t id="4">Terran Mk2 laser derivative with 8,000 damage per hit (100 times the original 80).</t>
     <t id="5">Kopis Forge Beam Turret Mk1 X10</t>
     <t id="6">Custom Terran Meson Stream beam turret with 35,900 base beam damage, ten times the 3,590 original.</t>
-  </page>
+  <t id="10">Astrid Tours</t><t id="11">A player-owned Yaki-crewed Astrid tour yacht with triple nominal speed, increased handling and a dedicated rapid-stop flight-assist controller. Its own weapons and turrets deliver one thousand times native Astrid damage.</t><t id="12">Astrid Tours Engine</t><t id="13">Dedicated triple-forward-thrust yacht engine with strong reverse thrust and rapid travel release.</t><t id="14">Astrid Tours Primary Weapon X1000</t><t id="15">Dedicated Astrid-derived primary weapon: 82,000 damage per hit, one thousand times native 82.</t><t id="16">Astrid Tours Beam Turret X1000</t><t id="17">Dedicated Astrid-derived beam turret: 160,000 damage value, one thousand times native 160.</t></page>
 </language>

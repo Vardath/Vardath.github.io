@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <order id="VGO_crystal" name="{191180,106}" description="{191180,206}" category="mining" infinite="true" allowinloop="false">
+    <params>
+      <param name="home" type="sector" default="this.ship.sector" text="{191180,2}"/>
+      <param name="range" type="number" default="99" text="{191180,3}">
+        <input_param name="min" value="0"/>
+        <input_param name="max" value="99"/>
+        <input_param name="step" value="1"/>
+      </param>
+      <param name="risk" type="number" default="1" text="{191180,4}">
+        <input_param name="min" value="0"/>
+        <input_param name="max" value="2"/>
+        <input_param name="step" value="1"/>
+      </param>
+      <param name="repeat" type="bool" default="true" text="{191180,6}"/>
+      <param name="debugchance" type="bool" default="0" text="{191180,8}" advanced="true">
+        <input_param name="truevalue" value="100"/>
+      </param>
+      <param name="sell" type="bool" default="true" text="{191180,11}" advanced="true"/>
+      <param name="sellthreshold" type="number" default="100" text="{191180,12}" advanced="true">
+        <input_param name="min" value="1"/>
+        <input_param name="max" value="1000"/>
+        <input_param name="step" value="10"/>
+      </param>
+      <param name="beamonly" type="bool" default="true" text="{191180,13}" advanced="true"/>
+      <param name="collectionlimit" type="number" default="500" text="{191180,18}" advanced="true">
+        <input_param name="min" value="50"/>
+        <input_param name="max" value="5000"/>
+        <input_param name="step" value="50"/>
+      </param>
+    </params>
+    <requires>
+      <match owner="faction.player"/>
+      <match class="class.spacesuit" negate="true"/>
+      <match shiptype="shiptype.lasertower" negate="true"/>
+      <match unit="false"/>
+      <match class="[class.ship_s, class.ship_m]"/>
+    </requires>
+    <location object="this.ship.$vgo_destination" condition="@this.ship.$vgo_destination.exists"/><location object="this.ship.$vgo_target" condition="@this.ship.$vgo_target.exists and not @this.ship.$vgo_destination.exists"/>
+  </order>
+  <interrupts>
+    <handler ref="AttackHandler"/>
+    <handler ref="MissileLockHandler"/>
+    <handler ref="ScannedHandler"/>
+    <handler ref="InspectedHandler"/>
+    <handler ref="TideHandler"/>
+  </interrupts>
+  <attention min="unknown">
+    <actions>
+      <set_order_syncpoint_reached order="this.ship.order"/>
+      <run_script name="'vardath.go.worker'">
+        <param name="job" value="6"/>
+        <param name="home" value="$home"/>
+        <param name="range" value="$range"/>
+        <param name="risk" value="$risk"/>
+        <param name="repeat" value="$repeat"/>
+        <param name="debugchance" value="$debugchance"/>
+        <param name="sell" value="$sell"/>
+        <param name="sellthreshold" value="$sellthreshold"/>
+        <param name="beamonly" value="$beamonly"/>
+        <param name="collectionlimit" value="$collectionlimit"/>
+      </run_script>
+    </actions>
+  </attention>
+</aiscript>

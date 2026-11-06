@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<language id="44">
+  <page id="191180" title="Galactic Occupations" descr="Ship occupations" voice="no">
+    <t id="1">Galactic Occupations</t>
+    <t id="2">Home sector</t>
+    <t id="3">Range in gate jumps (0 sector, 2 nearby, 99 galaxy)</t>
+    <t id="4">Risk (0 cautious, 1 balanced, 2 aggressive)</t>
+    <t id="5">Preferred faction: select one of its ships/stations</t>
+    <t id="6">Repeat assignments</t>
+    <t id="7">Minimum contract reward</t>
+    <t id="8">Diagnostics</t>
+    <t id="9">Recruitment base chance (%)</t>
+    <t id="10">Morale cooldown per ship</t>
+    <t id="11">Sell harvested crystals</t>
+    <t id="12">Crystal selling threshold</t>
+    <t id="13">Mine Crystals: beam turrets only</t>
+    <t id="14">Allow surveyed anomaly transit fallback</t>
+    <t id="15">Collect demolition drops</t>
+    <t id="16">Viewing time</t>
+    <t id="17">Demolition: resource asteroids only</t>
+    <t id="101">Galactic Escort Service</t>
+    <t id="102">Galactic Taxi Service</t>
+    <t id="103">Station and Component Scanner</t>
+    <t id="104">Wormhole and Anomaly Mapper</t>
+    <t id="105">Galactic Sightseeing Tour</t>
+    <t id="106">Autonomous Crystal Miner</t>
+    <t id="107">Hostile Lure and Interception</t>
+    <t id="108">Asteroid Demolition</t>
+    <t id="109">Fleet Morale Booster</t>
+    <t id="110">Traffic Control and Cargo Inspection</t>
+    <t id="111">Emergency Ship Recruitment</t>
+    <t id="112">Trade Route Patrol</t>
+    <t id="201">Escort an active commercial voyage to its actual destination. Custom service contract.</t>
+    <t id="202">Carry a real passenger template between dockable stations. Custom transport contract.</t>
+    <t id="203">Survey individual modules at close range; publish scanner-limited information after a sustained survey.</t>
+    <t id="204">Explore connections, catalogue anomalies and their actual destination lists.</t>
+    <t id="205">Visit landmarks, data vaults, headquarters, derelicts and anomalies, without recent repeats.</t>
+    <t id="206">Mine Crystals: scoped direct turret controller targeting class.crystal components and collecting real drops. High attention required.</t>
+    <t id="207">Provoke a manageable hostile and retreat to a stronger friendly force. Detect pursuit and abandon failed attempts.</t>
+    <t id="208">Shoot actual destructible asteroids. High attention required for physical firing.</t>
+    <t id="209">Improve eligible crew morale, with ship and faction cooldowns. Reputation requires actual improvement.</t>
+    <t id="210">Perform the timed NPC cargo-inspection equivalent under local jurisdiction. Report contraband without forcing hostility.</t>
+    <t id="211">Attempt surrender of capturable, non-mission hostile ships below 25 percent hull; preserve hull, equipment and crew.</t>
+    <t id="212">Follow real trader destinations, escort traffic and intercept manageable threats along its route.</t>
+    <t id="18">Crystal inventory collection limit</t>
+  </page>
+</language>

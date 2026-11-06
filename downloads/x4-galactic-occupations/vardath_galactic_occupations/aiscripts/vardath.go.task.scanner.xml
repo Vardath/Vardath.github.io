@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <!-- Documented survey equivalent: range + repeated line-of-sight + dwell, then scanner-limited reveal of this one component. -->
+      <do_if value="not $target.isoperational or this.ship.iscapitalship or this.ship.maxscanlevel le 0">
+        <return value="false"/>
+      </do_if>
+      <find_object_component name="$modules" object="$target" module="true" multiple="true" sortbydistanceto="this.ship" sortlimit="80"/>
+      <set_value name="$count" exact="0"/>
+      <do_for_each name="$module" in="$modules">
+        <do_if value="not $module.isoperational or $module.scannedlevel ge player.maxscanlevel or $module.secrecylevel gt this.ship.maxscanlevel or this.ship.maxscanlevel lt player.maxscanlevel">
+          <continue/>
+        </do_if>
+        <run_script name="'vardath.go.approach'" result="$ok">
+          <param name="target" value="$module"/>
+          <param name="distance" value="500m"/>
+        </run_script>
+        <do_if value="not $ok">
+          <continue/>
+        </do_if>
+        <set_command_action commandaction="commandaction.scanningto" param="$module"/>
+        <set_value name="this.ship.$vgo_status" exact="'Surveying module on ' + $target.knownname"/>
+        <set_value name="$valid" exact="true"/>
+        <do_all exact="10" counter="$sample">
+          <do_if value="not $module.isoperational or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 750m + $module.size / 2 or $target.ishostileto.{this.ship}">
+            <set_value name="$valid" exact="false"/>
+            <break/>
+          </do_if>
+          <check_line_of_sight name="$los" object="this.ship" target="$module" useaimtarget="true"/>
+          <do_if value="not $los">
+            <set_value name="$valid" exact="false"/>
+            <break/>
+          </do_if>
+          <wait exact="1s"/>
+        </do_all>
+        <do_if value="$valid and $module.exists">
+          <set_value name="$before" exact="$module.revealedpercentage"/>
+          <set_object_scanned object="$module"/>
+          <do_if value="$module.revealedpercentage gt $before or $module.scannedlevel ge player.maxscanlevel">
+            <set_value name="$count" exact="$count + 1"/>
+          </do_if>
+        </do_if>
+        <do_if value="$count ge 8">
+          <break/>
+        </do_if>
+      </do_for_each>
+      <return value="$count gt 0"/>
+    </actions>
+  </attention>
+</aiscript>

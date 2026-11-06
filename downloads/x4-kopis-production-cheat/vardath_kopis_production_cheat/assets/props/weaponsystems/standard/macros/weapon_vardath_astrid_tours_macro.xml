@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<macros>
+  <macro name="weapon_vardath_astrid_tours_macro" class="weapon">
+    <component ref="weapon_gen_m_yacht_01_mk1"/>
+    <properties>
+      <identification name="{995506,14}" basename="{995506,14}" shortname="{995506,14}" makerrace="argon" description="{995506,15}" mk="1"/>
+      <bullet class="bullet_vardath_astrid_tours_laser_macro"/>
+      <heat overheat="10000" cooldelay="1" overheatcooldelay="2" coolrate="1250" reenable="8000"/>
+      <rotationspeed max="100"/>
+      <rotationacceleration max="160"/>
+      <hull integrated="1"/>
+    </properties>
+  </macro>
+</macros>

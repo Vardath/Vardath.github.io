@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystalcount" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <attention min="unknown">
+    <actions>
+      <set_value name="$count" exact="0"/>
+      <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+        <set_value name="$count" exact="$count + this.ship.pilot.inventory.{$ware}.count"/>
+      </do_for_each>
+      <return value="$count"/>
+    </actions>
+  </attention>
+</aiscript>

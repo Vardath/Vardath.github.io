@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_State" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Ships" exact="[]"/>
+        <set_value name="$Orders" exact="['VGO_escort','VGO_taxi','VGO_scanner','VGO_mapper','VGO_tour','VGO_crystal','VGO_lure','VGO_demolition','VGO_morale','VGO_inspection','VGO_recruit','VGO_patrol']"/>
+        <set_value name="$Version" exact="10"/>
+      </actions>
+    </cue>
+    <cue name="Register" instantiate="true">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.register'"/>
+      </conditions>
+      <actions>
+        <do_if value="event.param2.isplayerowned and not Init.$Ships.indexof.{event.param2}">
+          <append_to_list name="Init.$Ships" exact="event.param2"/>
+        </do_if>
+      </actions>
+    </cue>
+    <cue name="Watchdog" instantiate="true" checkinterval="2s">
+      <conditions>
+        <check_value value="Init.$Ships.count gt 0"/>
+      </conditions>
+      <actions>
+        <!-- O(assigned ships), never a galaxy-wide ship search. -->
+        <do_for_each name="$ship" in="Init.$Ships" counter="$i" reverse="true">
+          <do_if value="not $ship.exists">
+            <remove_value name="Init.$Ships.{$i}"/>
+            <continue/>
+          </do_if>
+          <set_value name="$active" exact="$ship.isplayerowned and $ship != player.occupiedship and @$ship.order == @$ship.$vgo_order and Init.$Orders.indexof.{@$ship.order.id}"/>
+          <do_if value="(not $active or (@$ship.$vgo_fireuntil and $ship.$vgo_fireuntil lt player.age)) and @$ship.$vgo_turrets.count">
+            <do_for_each name="$turret" in="$ship.$vgo_turrets">
+              <do_if value="$turret.exists">
+                <reset_turret turret="$turret"/>
+              </do_if>
+            </do_for_each>
+            <remove_value name="$ship.$vgo_turrets"/>
+          </do_if>
+          <do_if value="(not $active or (@$ship.$vgo_fireuntil and $ship.$vgo_fireuntil lt player.age)) and @$ship.$vgo_firing">
+            <stop_shooting object="$ship"/>
+            <remove_value name="$ship.$vgo_firing"/>
+            <remove_value name="$ship.$vgo_fireuntil"/>
+          </do_if>
+          <do_if value="not $active">
+            <do_if value="@$ship.$vgo_target.exists and @$ship.$vgo_target.$vgo_owner == $ship">
+              <remove_value name="$ship.$vgo_target.$vgo_owner"/>
+              <remove_value name="$ship.$vgo_target.$vgo_expires"/>
+            </do_if>
+            <remove_value name="$ship.$vgo_target"/>
+            <remove_value name="$ship.$vgo_deadline"/>
+          </do_if>
+          <do_elseif value="@$ship.$vgo_deadline and $ship.$vgo_deadline lt player.age">
+            <remove_value name="$ship.$vgo_deadline"/>
+            <signal_objects object="$ship" param="'vardath.go.timeout'"/>
+          </do_elseif>
+          <do_if value="not $ship.isplayerowned or not Init.$Orders.indexof.{@$ship.defaultorder.id}">
+            <remove_value name="Init.$Ships.{$i}"/>
+          </do_if>
+        <do_if value="$ship.isplayerowned and @$ship.$vgo_debug gt 0 and @$ship.$vgo_status != @$ship.$vgo_loggedstatus"><debug_text text="'GO: %s occupation %s status %s'.[$ship.debugname,@$ship.$vgo_job,@$ship.$vgo_status]"/><set_value name="$ship.$vgo_loggedstatus" exact="@$ship.$vgo_status"/></do_if></do_for_each>
+      </actions>
+    </cue>
+    <cue name="CrystalDrops" instantiate="true">
+      <conditions>
+        <event_object_dropped_objects/>
+        <check_value value="event.object.isclass.crystal"/>
+      </conditions>
+      <actions>
+        <do_for_each name="$ship" in="Init.$Ships">
+          <do_if value="$ship.exists and @$ship.$vgo_crystal_target == event.object and @$ship.order == @$ship.$vgo_order">
+            <do_for_each name="$drop" in="event.param">
+              <do_if value="$drop.exists and $drop.isclass.drop and not $ship.$vgo_crystal_drops.indexof.{$drop}">
+                <append_to_list name="$ship.$vgo_crystal_drops" exact="$drop"/>
+              </do_if>
+            </do_for_each>
+          </do_if>
+        </do_for_each>
+      </actions>
+    </cue>
+    <cue name="PassengerPickup" instantiate="true">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.passenger.pickup'"/>
+      </conditions>
+      <actions>
+        <set_value name="$ship" exact="event.param2"/>
+        <set_value name="$station" exact="@$ship.$vgo_taxi_pickup"/>
+        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and $ship.people.free and not @$ship.people.{$ship.$vgo_passenger}.exists">
+          <create_cue_actor cue="Init" name="$passenger">
+            <select faction="$station.owner" tags="tag.crew"/>
+            <owner exact="$station.owner"/>
+          </create_cue_actor>
+          <create_npc_template object="$ship" entity="$passenger" role="entityrole.passenger" name="$template"/>
+          <do_if value="$template">
+            <set_value name="$ship.$vgo_passenger" exact="$template"/>
+            <set_value name="$ship.$vgo_passenger_actor" exact="$passenger"/>
+            <set_value name="$ship.$vgo_taxi_faction" exact="$station.owner"/>
+            <set_value name="$ship.$vgo_taxi_embarked" exact="player.age"/>
+          </do_if>
+        </do_if>
+      </actions>
+    </cue>
+    <cue name="PassengerDelivery" instantiate="true">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.passenger.deliver'"/>
+      </conditions>
+      <actions>
+        <set_value name="$ship" exact="event.param2"/>
+        <set_value name="$station" exact="@$ship.$vgo_taxi_dest"/>
+        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and @$ship.people.{$ship.$vgo_passenger}.exists">
+          <!-- A mission passenger disembarks by removal of its passenger template; other crew are untouched. -->
+          <remove_npc_template object="$ship" template="$ship.$vgo_passenger"/>
+          <do_if value="@$ship.$vgo_passenger_actor.exists">
+            <remove_actor_from_room actor="$ship.$vgo_passenger_actor" destroy="true"/>
+          </do_if>
+          <remove_value name="$ship.$vgo_passenger"/>
+          <remove_value name="$ship.$vgo_passenger_actor"/>
+          <set_value name="$ship.$vgo_taxi_delivered" exact="true"/>
+        </do_if>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

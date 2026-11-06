@@ -1,0 +1,37 @@
+{
+  "static_result": "PASS",
+  "counts": {
+    "xml_files": 37,
+    "commands": 752,
+    "script_calls": 55,
+    "behaviours": 12
+  },
+  "installed_schema_validation": "NOT RUN: installed X4 schemas unavailable",
+  "reference_provenance": {
+    "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
+    "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
+    "not_installed_game_build": true,
+    "schema_metadata_date": "2026-08-28",
+    "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
+    "schema_versions": [
+      "8.00",
+      "9.00"
+    ]
+  },
+  "runtime": "NOT RUN: no X4 installation, executable, save or live debug log available",
+  "runtime_jobs": {
+    "escort": "UNVERIFIED",
+    "taxi": "UNVERIFIED",
+    "scanner": "UNVERIFIED",
+    "mapper": "UNVERIFIED",
+    "tour": "UNVERIFIED",
+    "crystal": "UNVERIFIED",
+    "lure": "UNVERIFIED",
+    "demolition": "UNVERIFIED",
+    "morale": "UNVERIFIED",
+    "inspection": "UNVERIFIED",
+    "recruit": "UNVERIFIED",
+    "patrol": "UNVERIFIED"
+  },
+  "errors": []
+}

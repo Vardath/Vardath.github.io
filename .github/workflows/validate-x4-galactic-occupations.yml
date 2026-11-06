@@ -1,0 +1,28 @@
+name: Galactic Occupations static validation
+on:
+  push:
+    paths:
+      - 'downloads/x4-galactic-occupations/**'
+      - '.github/workflows/validate-x4-galactic-occupations.yml'
+  pull_request:
+    paths:
+      - 'downloads/x4-galactic-occupations/**'
+      - '.github/workflows/validate-x4-galactic-occupations.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: XML, commands, references and installable ZIP (no X4 runtime)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.1.0_DEV.zip --report /tmp/galactic-occupations-static-results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Galactic-Occupations-static-validation
+          path: /tmp/galactic-occupations-static-results.json

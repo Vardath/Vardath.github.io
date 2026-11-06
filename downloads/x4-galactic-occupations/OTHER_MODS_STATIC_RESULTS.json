@@ -1,0 +1,87 @@
+{
+  "commit": null,
+  "mods": {
+    "x4-living-factions-builders": {
+      "id": "vardath_living_factions_builders",
+      "files": 15,
+      "xml": 12,
+      "diffs": 8,
+      "md": 2,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_living_factions_builders; 15 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-yaki-terran-habs": {
+      "id": "vardath_yaki_terran_habs",
+      "files": 21,
+      "xml": 18,
+      "diffs": 8,
+      "md": 2,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_yaki_terran_habs; 21 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-kopis-production-cheat": {
+      "id": "vardath_kopis_production_cheat",
+      "files": 33,
+      "xml": 31,
+      "diffs": 5,
+      "md": 7,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_kopis_production_cheat; 33 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-faction-invincible": {
+      "id": "vardath_faction_invincible",
+      "files": 3,
+      "xml": 2,
+      "diffs": 0,
+      "md": 1,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_faction_invincible; 3 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-station-auto-drones": {
+      "id": "vardath_station_auto_drones",
+      "files": 5,
+      "xml": 3,
+      "diffs": 0,
+      "md": 1,
+      "aiscripts": 0,
+      "lua": 1,
+      "zip": "byte-for-byte checked",
+      "validator": {
+        "returncode": 0,
+        "output": "PASS: vardath_station_auto_drones; 5 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "caveats": [
+    "Static tests cannot establish that the game executes MD cues, Lua events, or overrides.",
+    "No installed 9.00 vanilla/DLC catalogs or actual mod load-order are available to resolve XPath patches against the effective merged game.",
+    "Historical XSDs, when available, may not match the player's current X4 build."
+  ]
+}

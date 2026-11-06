@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <run_script name="'vardath.go.approach'" result="$ok">
+        <param name="target" value="$target"/>
+        <param name="distance" value="5km"/>
+      </run_script>
+      <do_if value="not $ok">
+        <return value="false"/>
+      </do_if>
+      <set_value name="this.ship.$vgo_status" exact="'Viewing ' + $target.knownname"/>
+      <set_command_action commandaction="commandaction.investigating" param="$target"/>
+      <wait exact="this.ship.$vgo_viewtime"/>
+      <do_if value="not $target.exists or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 8km + $target.size / 2">
+        <return value="false"/>
+      </do_if>
+      <do_if value="not this.ship.$vgo_tour?">
+        <set_value name="this.ship.$vgo_tour" exact="[]"/>
+      </do_if>
+      <append_to_list name="this.ship.$vgo_tour" exact="$target"/>
+      <set_known object="$target" known="true"/>
+      <write_to_logbook category="general" title="'Galactic Occupations: sightseeing'" text="'%s visited %s in %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname]" interaction="showonmap" object="$target"/>
+      <return value="true"/>
+    </actions>
+  </attention>
+</aiscript>

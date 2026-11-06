@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.release" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params/>
+  <attention min="unknown">
+    <actions>
+      <do_if value="@this.ship.$vgo_turrets.count">
+        <do_for_each name="$turret" in="this.ship.$vgo_turrets">
+          <do_if value="$turret.exists">
+            <reset_turret turret="$turret"/>
+          </do_if>
+        </do_for_each>
+      </do_if>
+      <do_if value="@this.ship.$vgo_firing">
+        <stop_shooting object="this.ship"/>
+      </do_if>
+      <remove_value name="this.ship.$vgo_turrets"/>
+      <remove_value name="this.ship.$vgo_firing"/>
+      <remove_value name="this.ship.$vgo_fireuntil"/>
+    </actions>
+  </attention>
+</aiscript>

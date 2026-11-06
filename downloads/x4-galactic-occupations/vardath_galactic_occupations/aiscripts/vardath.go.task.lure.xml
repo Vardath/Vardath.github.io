@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.lure" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <find_ship name="$defenders" space="this.ship.sector" primarypurpose="purpose.fight" multiple="true" excluded="[this.ship,$target]"/>
+      <find_station name="$defenders" space="this.ship.sector" defencestation="true" multiple="true" append="true"/>
+      <set_value name="$anchor" exact="null"/>
+      <do_for_each name="$defender" in="$defenders">
+        <do_if value="not $defender.ishostileto.{this.ship} and $defender.ishostileto.{$target} and $defender.dps.all gt $target.dps.all * 2">
+          <set_value name="$anchor" exact="$defender"/>
+          <break/>
+        </do_if>
+      </do_for_each>
+      <do_if value="not $anchor.exists or this.ship.hullpercentage lt 85">
+        <return value="false"/>
+      </do_if>
+      <run_script name="'vardath.go.approach'" result="$ok">
+        <param name="target" value="$target"/>
+        <param name="distance" value="[this.ship.maxcombatrange.lasers.primary * 0.9,4km].min"/>
+      </run_script>
+      <do_if value="not $ok or not $target.exists">
+        <return value="false"/>
+      </do_if>
+      <check_line_of_sight name="$los" object="this.ship" target="$target" useaimtarget="true"/>
+      <do_if value="not $los">
+        <return value="false"/>
+      </do_if>
+      <set_value name="this.ship.$vgo_firing" exact="true"/>
+      <set_value name="this.ship.$vgo_fireuntil" exact="player.age + 2s"/>
+      <shoot_at object="this.ship" target="$target" missiles="false" fixedtarget="true"/>
+      <wait exact="1s"/>
+      <stop_shooting object="this.ship"/>
+      <remove_value name="this.ship.$vgo_firing"/>
+      <set_value name="$pursuing" exact="false"/>
+      <do_all exact="10" counter="$attempt">
+        <do_if value="not $target.isoperational or this.ship.hullpercentage lt 70 or (this.ship.maxshield gt 0 and this.ship.shieldpercentage lt 20)">
+          <break/>
+        </do_if>
+        <do_if value="@$target.order.$primarytarget == this.ship or @$target.pilot.command.param == this.ship">
+          <set_value name="$pursuing" exact="true"/>
+          <break/>
+        </do_if>
+        <wait exact="2s"/>
+      </do_all>
+      <set_value name="this.ship.$vgo_status" exact="if $pursuing then 'Leading hostile to friendly defences' else 'Hostile did not pursue; disengaging'"/>
+      <run_script name="'vardath.go.approach'" result="$arrived">
+        <param name="target" value="$anchor"/>
+        <param name="distance" value="5km"/>
+      </run_script>
+      <return value="$pursuing and $arrived and $target.exists and $target.sector == $anchor.sector and $target.distanceto.{$anchor} lt 15km + $anchor.size / 2"/>
+    </actions>
+  </attention>
+</aiscript>

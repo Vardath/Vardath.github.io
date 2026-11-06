@@ -1,0 +1,7722 @@
+{
+  "children": {
+    "actions": [],
+    "aiscript": [],
+    "attention": [],
+    "conditions": [
+      {
+        "attributes": {}
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "ref": {
+            "type": "interrupt_conditionsref"
+          }
+        }
+      }
+    ],
+    "content": [],
+    "cue": [],
+    "cues": [],
+    "dependency": [],
+    "handler": [],
+    "input_param": [],
+    "interrupt_after_time": [
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "time": {
+            "required": true,
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "interrupts": [],
+    "language": [],
+    "location": [],
+    "match": [
+      {
+        "attributes": {
+          "accelerator": {
+            "type": "booleanexpression"
+          },
+          "accessgrantedto": {
+            "type": "factionexprlookup"
+          },
+          "accessrestrictedto": {
+            "type": "factionexprlookup"
+          },
+          "active": {
+            "type": "booleanexpression"
+          },
+          "alwaysnormalzone": {
+            "type": "booleanexpression"
+          },
+          "building": {
+            "type": "booleanexpression"
+          },
+          "busy": {
+            "type": "booleanexpression"
+          },
+          "canbebuiltby": {
+            "type": "expression"
+          },
+          "canbebuiltbyany": {
+            "type": "expression"
+          },
+          "canbedismantled": {
+            "type": "booleanexpression"
+          },
+          "canbelivestreamed": {
+            "type": "booleanexpression"
+          },
+          "canbepickedup": {
+            "type": "booleanexpression"
+          },
+          "canbetowed": {
+            "type": "booleanexpression"
+          },
+          "canbuildclass": {
+            "type": "expression"
+          },
+          "canbuildequipment": {
+            "type": "expression"
+          },
+          "canbuildfor": {
+            "type": "factionexprlookup"
+          },
+          "canbuildmacro": {
+            "type": "expression"
+          },
+          "canbuildships": {
+            "type": "booleanexpression"
+          },
+          "canclaimownership": {
+            "type": "booleanexpression"
+          },
+          "canequipclass": {
+            "type": "expression"
+          },
+          "canequipships": {
+            "type": "expression"
+          },
+          "canhavedynamicinterior": {
+            "type": "booleanexpression"
+          },
+          "canhaveofferlocation": {
+            "type": "expression"
+          },
+          "cansupplyclass": {
+            "type": "expression"
+          },
+          "cansupplyships": {
+            "type": "expression"
+          },
+          "capturable": {
+            "type": "booleanexpression"
+          },
+          "checkoperational": {
+            "type": "booleanexpression"
+          },
+          "class": {
+            "type": "classlookup"
+          },
+          "coalition": {
+            "type": "expression"
+          },
+          "commandeerable": {
+            "type": "booleanexpression"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "condition": {
+            "type": "expression"
+          },
+          "contested": {
+            "type": "booleanexpression"
+          },
+          "contestedby": {
+            "type": "factionexprlookup"
+          },
+          "controlentity": {
+            "type": "booleanexpression"
+          },
+          "controlpost": {
+            "type": "controlpost"
+          },
+          "covered": {
+            "type": "booleanexpression"
+          },
+          "coverowner": {
+            "type": "owners"
+          },
+          "datavault": {
+            "type": "booleanexpression"
+          },
+          "defencestation": {
+            "type": "booleanexpression"
+          },
+          "deployable": {
+            "type": "booleanexpression"
+          },
+          "deployablecategory": {
+            "type": "deployablecategorylookup"
+          },
+          "destination": {
+            "type": "expression"
+          },
+          "diplomat": {
+            "type": "booleanexpression"
+          },
+          "docked": {
+            "type": "docked"
+          },
+          "encounterid": {
+            "type": "expression"
+          },
+          "encountership": {
+            "type": "booleanexpression"
+          },
+          "entityrole": {
+            "type": "entityrole"
+          },
+          "entitytype": {
+            "type": "entitytype"
+          },
+          "equipmentdock": {
+            "type": "booleanexpression"
+          },
+          "exactclass": {
+            "type": "classlookup"
+          },
+          "excluded": {
+            "type": "expression"
+          },
+          "extension": {
+            "type": "expression"
+          },
+          "factionheadquarters": {
+            "type": "booleanexpression"
+          },
+          "freemissionactorslot": {
+            "type": "freemissionactorslot"
+          },
+          "freemissionofferslot": {
+            "type": "booleanexpression"
+          },
+          "freesignalleakslot": {
+            "type": "booleanexpression"
+          },
+          "functional": {
+            "type": "booleanexpression"
+          },
+          "grouptag": {
+            "type": "expression"
+          },
+          "hasbuildingtask": {
+            "type": "booleanexpression"
+          },
+          "hascommander": {
+            "type": "booleanexpression"
+          },
+          "hascontrolentity": {
+            "type": "controlpost"
+          },
+          "hascontrolpanel": {
+            "type": "controlpaneltypelookup"
+          },
+          "hasfixedconstruction": {
+            "type": "booleanexpression"
+          },
+          "hasgravidarobscuringregion": {
+            "type": "booleanexpression"
+          },
+          "hashazardousregion": {
+            "type": "booleanexpression"
+          },
+          "hasjob": {
+            "type": "booleanexpression"
+          },
+          "hasmasstraffic": {
+            "type": "hasmasstraffic"
+          },
+          "hasstagedconstruction": {
+            "type": "booleanexpression"
+          },
+          "hastradeoffer": {
+            "type": "booleanexpression"
+          },
+          "haswalkableroom": {
+            "type": "booleanexpression"
+          },
+          "headquarters": {
+            "type": "booleanexpression"
+          },
+          "hullinvulnerable": {
+            "type": "booleanexpression"
+          },
+          "indestructible": {
+            "type": "booleanexpression"
+          },
+          "integrated": {
+            "type": "booleanexpression"
+          },
+          "internallystored": {
+            "type": "booleanexpression"
+          },
+          "invulnerable": {
+            "type": "booleanexpression"
+          },
+          "ishostileto": {
+            "type": "expression"
+          },
+          "isinliveview": {
+            "type": "booleanexpression"
+          },
+          "job": {
+            "type": "expression"
+          },
+          "jobspacefor": {
+            "type": "expression"
+          },
+          "jobtags": {
+            "type": "expression"
+          },
+          "known": {
+            "type": "booleanexpression"
+          },
+          "knownto": {
+            "type": "factionexprlookup"
+          },
+          "landmark": {
+            "type": "booleanexpression"
+          },
+          "locationtag": {
+            "type": "expression"
+          },
+          "locationtagany": {
+            "type": "expression"
+          },
+          "locked": {
+            "type": "booleanexpression"
+          },
+          "macro": {
+            "type": "expression"
+          },
+          "masstraffic": {
+            "type": "booleanexpression"
+          },
+          "mayattack": {
+            "type": "expression"
+          },
+          "maybeattackedby": {
+            "type": "expression"
+          },
+          "missionactor": {
+            "type": "booleanexpression"
+          },
+          "module": {
+            "type": "booleanexpression"
+          },
+          "needsrepair": {
+            "type": "booleanexpression"
+          },
+          "negate": {
+            "type": "negatefilter"
+          },
+          "negateownerfilter": {
+            "type": "booleanexpression"
+          },
+          "normalcluster": {
+            "type": "booleanexpression"
+          },
+          "normalzone": {
+            "type": "booleanexpression"
+          },
+          "npctemplate": {
+            "type": "expression"
+          },
+          "numfreeactorslots": {
+            "type": "expression"
+          },
+          "onlineobject": {
+            "type": "booleanexpression"
+          },
+          "owner": {
+            "type": "owners"
+          },
+          "paused": {
+            "type": "booleanexpression"
+          },
+          "pausedmanually": {
+            "type": "booleanexpression"
+          },
+          "personalextension": {
+            "type": "expression"
+          },
+          "physicsareready": {
+            "type": "booleanexpression"
+          },
+          "piratebase": {
+            "type": "booleanexpression"
+          },
+          "planneddefencestation": {
+            "type": "booleanexpression"
+          },
+          "plannedequipmentdock": {
+            "type": "booleanexpression"
+          },
+          "plannedfactionheadquarters": {
+            "type": "booleanexpression"
+          },
+          "plannedheadquarters": {
+            "type": "booleanexpression"
+          },
+          "plannedpiratebase": {
+            "type": "booleanexpression"
+          },
+          "plannedrecyclingfacility": {
+            "type": "booleanexpression"
+          },
+          "plannedshipyard": {
+            "type": "booleanexpression"
+          },
+          "plannedtradestation": {
+            "type": "booleanexpression"
+          },
+          "plannedwharf": {
+            "type": "booleanexpression"
+          },
+          "policefaction": {
+            "type": "owners"
+          },
+          "primarypurpose": {
+            "type": "purposelookup"
+          },
+          "race": {
+            "type": "race"
+          },
+          "reachablefrom": {
+            "type": "expression"
+          },
+          "recyclingfacility": {
+            "type": "booleanexpression"
+          },
+          "regionobject": {
+            "type": "booleanexpression"
+          },
+          "repairable": {
+            "type": "booleanexpression"
+          },
+          "representative": {
+            "type": "booleanexpression"
+          },
+          "requestedjobship": {
+            "type": "booleanexpression"
+          },
+          "restorable": {
+            "type": "booleanexpression"
+          },
+          "roompopulationtype": {
+            "type": "roompopulationtypeexprlookup"
+          },
+          "roomtype": {
+            "type": "roomtypeexprlookup"
+          },
+          "shieldgrouptag": {
+            "type": "expression"
+          },
+          "shieldinvulnerable": {
+            "type": "booleanexpression"
+          },
+          "shiptype": {
+            "type": "shiptypeexprlookup"
+          },
+          "shipyard": {
+            "type": "booleanexpression"
+          },
+          "signalleaktype": {
+            "type": "signalleaktypelookup"
+          },
+          "state": {
+            "type": "componentstateexprlookup"
+          },
+          "stationtype": {
+            "type": "stationtypeexprlookup"
+          },
+          "subordinatejobship": {
+            "type": "booleanexpression"
+          },
+          "superhighwaygate": {
+            "type": "booleanexpression"
+          },
+          "surfaceelement": {
+            "type": "booleanexpression"
+          },
+          "suspicious": {
+            "type": "booleanexpression"
+          },
+          "tag": {
+            "type": "expression"
+          },
+          "temporaryentity": {
+            "type": "booleanexpression"
+          },
+          "tempzone": {
+            "type": "booleanexpression"
+          },
+          "tradesknownto": {
+            "type": "factionexprlookup"
+          },
+          "tradestation": {
+            "type": "booleanexpression"
+          },
+          "truecoalition": {
+            "type": "expression"
+          },
+          "trueowner": {
+            "type": "owners"
+          },
+          "unit": {
+            "type": "booleanexpression"
+          },
+          "validjobship": {
+            "type": "booleanexpression"
+          },
+          "venture": {
+            "type": "expression"
+          },
+          "visitor": {
+            "type": "booleanexpression"
+          },
+          "walkable": {
+            "type": "booleanexpression"
+          },
+          "waretransport": {
+            "type": "waretransportlookup"
+          },
+          "weaponmode": {
+            "type": "weaponmodelookup"
+          },
+          "weapontype": {
+            "type": "weapontypelookup"
+          },
+          "wharf": {
+            "type": "booleanexpression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "accelerator": {
+            "type": "booleanexpression"
+          },
+          "accessgrantedto": {
+            "type": "factionexprlookup"
+          },
+          "accessrestrictedto": {
+            "type": "factionexprlookup"
+          },
+          "active": {
+            "type": "booleanexpression"
+          },
+          "alwaysnormalzone": {
+            "type": "booleanexpression"
+          },
+          "building": {
+            "type": "booleanexpression"
+          },
+          "busy": {
+            "type": "booleanexpression"
+          },
+          "canbebuiltby": {
+            "type": "expression"
+          },
+          "canbebuiltbyany": {
+            "type": "expression"
+          },
+          "canbedismantled": {
+            "type": "booleanexpression"
+          },
+          "canbelivestreamed": {
+            "type": "booleanexpression"
+          },
+          "canbepickedup": {
+            "type": "booleanexpression"
+          },
+          "canbetowed": {
+            "type": "booleanexpression"
+          },
+          "canbuildclass": {
+            "type": "expression"
+          },
+          "canbuildequipment": {
+            "type": "expression"
+          },
+          "canbuildfor": {
+            "type": "factionexprlookup"
+          },
+          "canbuildmacro": {
+            "type": "expression"
+          },
+          "canbuildships": {
+            "type": "booleanexpression"
+          },
+          "canclaimownership": {
+            "type": "booleanexpression"
+          },
+          "canequipclass": {
+            "type": "expression"
+          },
+          "canequipships": {
+            "type": "expression"
+          },
+          "canhavedynamicinterior": {
+            "type": "booleanexpression"
+          },
+          "canhaveofferlocation": {
+            "type": "expression"
+          },
+          "cansupplyclass": {
+            "type": "expression"
+          },
+          "cansupplyships": {
+            "type": "expression"
+          },
+          "capturable": {
+            "type": "booleanexpression"
+          },
+          "checkoperational": {
+            "type": "booleanexpression"
+          },
+          "class": {
+            "type": "classlookup"
+          },
+          "coalition": {
+            "type": "expression"
+          },
+          "commandeerable": {
+            "type": "booleanexpression"
+          },
+          "contested": {
+            "type": "booleanexpression"
+          },
+          "contestedby": {
+            "type": "factionexprlookup"
+          },
+          "controlentity": {
+            "type": "booleanexpression"
+          },
+          "controlpost": {
+            "type": "controlpost"
+          },
+          "covered": {
+            "type": "booleanexpression"
+          },
+          "coverowner": {
+            "type": "owners"
+          },
+          "datavault": {
+            "type": "booleanexpression"
+          },
+          "defencestation": {
+            "type": "booleanexpression"
+          },
+          "deployable": {
+            "type": "booleanexpression"
+          },
+          "deployablecategory": {
+            "type": "deployablecategorylookup"
+          },
+          "destination": {
+            "type": "expression"
+          },
+          "diplomat": {
+            "type": "booleanexpression"
+          },
+          "docked": {
+            "type": "docked"
+          },
+          "encounterid": {
+            "type": "expression"
+          },
+          "encountership": {
+            "type": "booleanexpression"
+          },
+          "entityrole": {
+            "type": "entityrole"
+          },
+          "entitytype": {
+            "type": "entitytype"
+          },
+          "equipmentdock": {
+            "type": "booleanexpression"
+          },
+          "exactclass": {
+            "type": "classlookup"
+          },
+          "excluded": {
+            "type": "expression"
+          },
+          "extension": {
+            "type": "expression"
+          },
+          "factionheadquarters": {
+            "type": "booleanexpression"
+          },
+          "freemissionactorslot": {
+            "type": "freemissionactorslot"
+          },
+          "freemissionofferslot": {
+            "type": "booleanexpression"
+          },
+          "freesignalleakslot": {
+            "type": "booleanexpression"
+          },
+          "functional": {
+            "type": "booleanexpression"
+          },
+          "grouptag": {
+            "type": "expression"
+          },
+          "hasbuildingtask": {
+            "type": "booleanexpression"
+          },
+          "hascommander": {
+            "type": "booleanexpression"
+          },
+          "hascontrolentity": {
+            "type": "controlpost"
+          },
+          "hascontrolpanel": {
+            "type": "controlpaneltypelookup"
+          },
+          "hasfixedconstruction": {
+            "type": "booleanexpression"
+          },
+          "hasgravidarobscuringregion": {
+            "type": "booleanexpression"
+          },
+          "hashazardousregion": {
+            "type": "booleanexpression"
+          },
+          "hasjob": {
+            "type": "booleanexpression"
+          },
+          "hasmasstraffic": {
+            "type": "hasmasstraffic"
+          },
+          "hasstagedconstruction": {
+            "type": "booleanexpression"
+          },
+          "hastradeoffer": {
+            "type": "booleanexpression"
+          },
+          "haswalkableroom": {
+            "type": "booleanexpression"
+          },
+          "headquarters": {
+            "type": "booleanexpression"
+          },
+          "hullinvulnerable": {
+            "type": "booleanexpression"
+          },
+          "indestructible": {
+            "type": "booleanexpression"
+          },
+          "integrated": {
+            "type": "booleanexpression"
+          },
+          "internallystored": {
+            "type": "booleanexpression"
+          },
+          "invulnerable": {
+            "type": "booleanexpression"
+          },
+          "ishostileto": {
+            "type": "expression"
+          },
+          "isinliveview": {
+            "type": "booleanexpression"
+          },
+          "job": {
+            "type": "expression"
+          },
+          "jobspacefor": {
+            "type": "expression"
+          },
+          "jobtags": {
+            "type": "expression"
+          },
+          "known": {
+            "type": "booleanexpression"
+          },
+          "knownto": {
+            "type": "factionexprlookup"
+          },
+          "landmark": {
+            "type": "booleanexpression"
+          },
+          "locationtag": {
+            "type": "expression"
+          },
+          "locationtagany": {
+            "type": "expression"
+          },
+          "locked": {
+            "type": "booleanexpression"
+          },
+          "macro": {
+            "type": "expression"
+          },
+          "masstraffic": {
+            "type": "booleanexpression"
+          },
+          "mayattack": {
+            "type": "expression"
+          },
+          "maybeattackedby": {
+            "type": "expression"
+          },
+          "missionactor": {
+            "type": "booleanexpression"
+          },
+          "module": {
+            "type": "booleanexpression"
+          },
+          "needsrepair": {
+            "type": "booleanexpression"
+          },
+          "negateownerfilter": {
+            "type": "booleanexpression"
+          },
+          "normalcluster": {
+            "type": "booleanexpression"
+          },
+          "normalzone": {
+            "type": "booleanexpression"
+          },
+          "npctemplate": {
+            "type": "expression"
+          },
+          "numfreeactorslots": {
+            "type": "expression"
+          },
+          "onlineobject": {
+            "type": "booleanexpression"
+          },
+          "owner": {
+            "type": "owners"
+          },
+          "paused": {
+            "type": "booleanexpression"
+          },
+          "pausedmanually": {
+            "type": "booleanexpression"
+          },
+          "personalextension": {
+            "type": "expression"
+          },
+          "physicsareready": {
+            "type": "booleanexpression"
+          },
+          "piratebase": {
+            "type": "booleanexpression"
+          },
+          "planneddefencestation": {
+            "type": "booleanexpression"
+          },
+          "plannedequipmentdock": {
+            "type": "booleanexpression"
+          },
+          "plannedfactionheadquarters": {
+            "type": "booleanexpression"
+          },
+          "plannedheadquarters": {
+            "type": "booleanexpression"
+          },
+          "plannedpiratebase": {
+            "type": "booleanexpression"
+          },
+          "plannedrecyclingfacility": {
+            "type": "booleanexpression"
+          },
+          "plannedshipyard": {
+            "type": "booleanexpression"
+          },
+          "plannedtradestation": {
+            "type": "booleanexpression"
+          },
+          "plannedwharf": {
+            "type": "booleanexpression"
+          },
+          "policefaction": {
+            "type": "owners"
+          },
+          "primarypurpose": {
+            "type": "purposelookup"
+          },
+          "race": {
+            "type": "race"
+          },
+          "reachablefrom": {
+            "type": "expression"
+          },
+          "recyclingfacility": {
+            "type": "booleanexpression"
+          },
+          "regionobject": {
+            "type": "booleanexpression"
+          },
+          "repairable": {
+            "type": "booleanexpression"
+          },
+          "representative": {
+            "type": "booleanexpression"
+          },
+          "requestedjobship": {
+            "type": "booleanexpression"
+          },
+          "restorable": {
+            "type": "booleanexpression"
+          },
+          "roompopulationtype": {
+            "type": "roompopulationtypeexprlookup"
+          },
+          "roomtype": {
+            "type": "roomtypeexprlookup"
+          },
+          "shieldgrouptag": {
+            "type": "expression"
+          },
+          "shieldinvulnerable": {
+            "type": "booleanexpression"
+          },
+          "shiptype": {
+            "type": "shiptypeexprlookup"
+          },
+          "shipyard": {
+            "type": "booleanexpression"
+          },
+          "signalleaktype": {
+            "type": "signalleaktypelookup"
+          },
+          "state": {
+            "type": "componentstateexprlookup"
+          },
+          "stationtype": {
+            "type": "stationtypeexprlookup"
+          },
+          "subordinatejobship": {
+            "type": "booleanexpression"
+          },
+          "superhighwaygate": {
+            "type": "booleanexpression"
+          },
+          "surfaceelement": {
+            "type": "booleanexpression"
+          },
+          "suspicious": {
+            "type": "booleanexpression"
+          },
+          "tag": {
+            "type": "expression"
+          },
+          "temporaryentity": {
+            "type": "booleanexpression"
+          },
+          "tempzone": {
+            "type": "booleanexpression"
+          },
+          "tradesknownto": {
+            "type": "factionexprlookup"
+          },
+          "tradestation": {
+            "type": "booleanexpression"
+          },
+          "truecoalition": {
+            "type": "expression"
+          },
+          "trueowner": {
+            "type": "owners"
+          },
+          "unit": {
+            "type": "booleanexpression"
+          },
+          "validjobship": {
+            "type": "booleanexpression"
+          },
+          "venture": {
+            "type": "expression"
+          },
+          "visitor": {
+            "type": "booleanexpression"
+          },
+          "walkable": {
+            "type": "booleanexpression"
+          },
+          "waretransport": {
+            "type": "waretransportlookup"
+          },
+          "weaponmode": {
+            "type": "weaponmodelookup"
+          },
+          "weapontype": {
+            "type": "weapontypelookup"
+          },
+          "wharf": {
+            "type": "booleanexpression"
+          }
+        }
+      }
+    ],
+    "match_distance": [
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "condition": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "negate": {
+            "type": "negatefilter"
+          },
+          "object": {
+            "type": "expression"
+          },
+          "space": {
+            "type": "expression"
+          },
+          "value": {
+            "type": "expression"
+          },
+          "x": {
+            "type": "expression"
+          },
+          "y": {
+            "type": "expression"
+          },
+          "z": {
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "match_dock": [
+      {
+        "attributes": {
+          "allowplayeronly": {
+            "type": "booleanexpression"
+          },
+          "building": {
+            "type": "booleanexpression"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "condition": {
+            "type": "expression"
+          },
+          "free": {
+            "type": "booleanexpression"
+          },
+          "hidden": {
+            "type": "booleanexpression"
+          },
+          "locked": {
+            "type": "booleanexpression"
+          },
+          "negate": {
+            "type": "negatefilter"
+          },
+          "showroom": {
+            "type": "booleanexpression"
+          },
+          "size": {
+            "type": "expression"
+          },
+          "storage": {
+            "type": "booleanexpression"
+          },
+          "trading": {
+            "type": "booleanexpression"
+          },
+          "ventureplatform": {
+            "type": "expression"
+          },
+          "ventureronly": {
+            "type": "booleanexpression"
+          },
+          "walkable": {
+            "type": "booleanexpression"
+          }
+        }
+      }
+    ],
+    "mdscript": [],
+    "order": [],
+    "owner": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "overridenpc": {
+            "type": "booleanexpression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "selection": {
+            "type": "selectionlookup"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "selection": {
+            "type": "selectionlookup"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "licence": {
+            "type": "expression"
+          },
+          "licencefaction": {
+            "type": "faction"
+          },
+          "type": {
+            "type": "licencelookup"
+          }
+        }
+      }
+    ],
+    "page": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "tags": {
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "param": [
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "name": {
+            "required": true,
+            "type": "paramname"
+          },
+          "value": {
+            "required": true,
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "name": {
+            "required": true,
+            "type": "namestring"
+          },
+          "number": {
+            "type": "expression"
+          },
+          "object": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "name": {
+            "required": true,
+            "type": "paramname"
+          },
+          "value": {
+            "required": true,
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "name": {
+            "required": true,
+            "type": "paramname"
+          },
+          "value": {
+            "required": true,
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "name": {
+            "required": true,
+            "type": "paramname"
+          },
+          "value": {
+            "required": true,
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "params": [],
+    "position": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "object": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "type": "expression"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "type": "expression"
+          },
+          "value": {
+            "type": "expression"
+          },
+          "x": {
+            "type": "expression"
+          },
+          "y": {
+            "type": "expression"
+          },
+          "z": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "object": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "type": "expression"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "type": "expression"
+          },
+          "value": {
+            "type": "expression"
+          },
+          "x": {
+            "type": "expression"
+          },
+          "y": {
+            "type": "expression"
+          },
+          "z": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "object": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "type": "expression"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "type": "expression"
+          },
+          "value": {
+            "type": "expression"
+          },
+          "x": {
+            "type": "expression"
+          },
+          "y": {
+            "type": "expression"
+          },
+          "z": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "object": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "type": "expression"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "type": "expression"
+          },
+          "value": {
+            "type": "expression"
+          },
+          "x": {
+            "type": "expression"
+          },
+          "y": {
+            "type": "expression"
+          },
+          "z": {
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "requires": [],
+    "select": [
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "faction": {
+            "type": "factionexprlookup"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "shipsizeclasslookup"
+          },
+          "tags": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "type": "expression"
+          },
+          "list": {
+            "type": "expression"
+          },
+          "max": {
+            "type": "expression"
+          },
+          "min": {
+            "type": "expression"
+          },
+          "profile": {
+            "type": "profilelookup"
+          },
+          "scale": {
+            "type": null
+          },
+          "seed": {
+            "type": "fixedrandomseed"
+          },
+          "weight": {
+            "type": "selectionweight"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "faction": {
+            "type": "factionexprlookup"
+          },
+          "race": {
+            "type": "raceexprlookup"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "expression"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "comment": {
+            "type": "comment"
+          },
+          "faction": {
+            "type": "factionexprlookup"
+          },
+          "race": {
+            "type": "raceexprlookup"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "expression"
+          },
+          "ware": {
+            "type": "expression"
+          }
+        }
+      }
+    ],
+    "t": []
+  },
+  "commands": {
+    "abort_called_scripts": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "resume": {
+          "type": "labelname"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "add_faction_relation": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "faction": {
+          "required": true,
+          "type": "faction"
+        },
+        "otherfaction": {
+          "required": true,
+          "type": "faction"
+        },
+        "reason": {
+          "required": true,
+          "type": "relationchangereasonlookup"
+        },
+        "value": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "add_inventory": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "entity": {
+          "type": "entity"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "ware": {
+          "required": true,
+          "type": "ware"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "add_skill": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "entity": {
+          "type": "entity"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "object": {
+          "type": "object"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "template": {
+          "type": "expression"
+        },
+        "type": {
+          "required": true,
+          "type": "skilltype"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "aim_turret": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "target": {
+          "required": true,
+          "type": "targetcomponent"
+        },
+        "turret": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "append_to_list": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "create": {
+          "type": "boolean"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "name": {
+          "required": true,
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "unique": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "break": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "cancel_all_orders": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "cancel_order": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "keepinloop": {
+          "type": "booleanexpression"
+        },
+        "order": {
+          "required": true,
+          "type": "order"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "cease_fire": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "excludedweaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "staydeployed": {
+          "type": "booleanexpression"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "check_line_of_sight": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "excludeself": {
+          "type": "booleanexpression"
+        },
+        "name": {
+          "required": true,
+          "type": "lvaluename"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "objectoffset": {
+          "type": "expression"
+        },
+        "target": {
+          "required": true,
+          "type": "object"
+        },
+        "targetoffset": {
+          "type": "expression"
+        },
+        "useaimtarget": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "check_value": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "negate": {
+          "type": "negatecondition"
+        },
+        "value": {
+          "required": true,
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "condition"
+    },
+    "continue": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "create_cue_actor": {
+      "attributes": {
+        "actor": {
+          "type": "expression"
+        },
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "cue": {
+          "required": true,
+          "type": "cuename"
+        },
+        "group": {
+          "type": "namestring"
+        },
+        "macro": {
+          "type": "macroname"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "ref": {
+          "type": "expression"
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "kind": "action"
+    },
+    "create_npc_template": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "entity": {
+          "type": "expression"
+        },
+        "force": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "otherobject": {
+          "type": "expression"
+        },
+        "role": {
+          "type": "entityroleexprlookup"
+        },
+        "template": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "create_order": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "default": {
+          "type": "booleanexpression"
+        },
+        "id": {
+          "required": true,
+          "type": "expression"
+        },
+        "immediate": {
+          "type": "immediateorder"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "override": {
+          "type": "booleanexpression"
+        },
+        "priority": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "debug_text": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "context": {
+          "type": "booleanexpression"
+        },
+        "filter": {
+          "type": "enumeration"
+        },
+        "text": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "do_all": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "counter": {
+          "type": "lvalueexpression"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "reverse": {
+          "type": "boolean"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "do_else": {
+      "attributes": {
+        "comment": {
+          "type": "comment"
+        },
+        "value": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "kind": "branch"
+    },
+    "do_elseif": {
+      "attributes": {
+        "comment": {
+          "type": "comment"
+        },
+        "value": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "kind": "branch"
+    },
+    "do_for_each": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "counter": {
+          "type": "lvalueexpression"
+        },
+        "in": {
+          "type": "expression"
+        },
+        "name": {
+          "type": "lvalueexpression"
+        },
+        "reverse": {
+          "type": "boolean"
+        },
+        "valuename": {
+          "type": "lvalueexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "do_if": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "negate": {
+          "type": "negatecondition"
+        },
+        "value": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "do_while": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "negate": {
+          "type": "negatecondition"
+        },
+        "value": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "event_object_dropped_objects": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "check": {
+          "type": "checkeventsource"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "group": {
+          "type": "groupeventsource"
+        },
+        "object": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "condition"
+    },
+    "event_object_signalled": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "check": {
+          "type": "checkeventsource"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "group": {
+          "type": "groupeventsource"
+        },
+        "object": {
+          "type": "expression"
+        },
+        "param": {
+          "type": "expression"
+        },
+        "param2": {
+          "type": "expression"
+        },
+        "param3": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "condition"
+    },
+    "find_object": {
+      "attributes": {
+        "accelerator": {
+          "type": "booleanexpression"
+        },
+        "active": {
+          "type": "booleanexpression"
+        },
+        "append": {
+          "type": "findappend"
+        },
+        "building": {
+          "type": "booleanexpression"
+        },
+        "busy": {
+          "type": "booleanexpression"
+        },
+        "canbebuiltby": {
+          "type": "expression"
+        },
+        "canbebuiltbyany": {
+          "type": "expression"
+        },
+        "canbedismantled": {
+          "type": "booleanexpression"
+        },
+        "canbelivestreamed": {
+          "type": "booleanexpression"
+        },
+        "canbepickedup": {
+          "type": "booleanexpression"
+        },
+        "canbetowed": {
+          "type": "booleanexpression"
+        },
+        "canbuildclass": {
+          "type": "expression"
+        },
+        "canbuildequipment": {
+          "type": "expression"
+        },
+        "canbuildfor": {
+          "type": "factionexprlookup"
+        },
+        "canbuildmacro": {
+          "type": "expression"
+        },
+        "canbuildships": {
+          "type": "booleanexpression"
+        },
+        "canclaimownership": {
+          "type": "booleanexpression"
+        },
+        "canequipclass": {
+          "type": "expression"
+        },
+        "canequipships": {
+          "type": "expression"
+        },
+        "canhavedynamicinterior": {
+          "type": "booleanexpression"
+        },
+        "canhaveofferlocation": {
+          "type": "expression"
+        },
+        "cansupplyclass": {
+          "type": "expression"
+        },
+        "cansupplyships": {
+          "type": "expression"
+        },
+        "capturable": {
+          "type": "booleanexpression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "checkoperational": {
+          "type": "booleanexpression"
+        },
+        "class": {
+          "type": "objectclasslookup"
+        },
+        "coalition": {
+          "type": "expression"
+        },
+        "commandeerable": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "covered": {
+          "type": "booleanexpression"
+        },
+        "coverowner": {
+          "type": "owners"
+        },
+        "datavault": {
+          "type": "booleanexpression"
+        },
+        "defencestation": {
+          "type": "booleanexpression"
+        },
+        "deployable": {
+          "type": "booleanexpression"
+        },
+        "deployablecategory": {
+          "type": "deployablecategorylookup"
+        },
+        "destination": {
+          "type": "expression"
+        },
+        "docked": {
+          "type": "docked"
+        },
+        "encounterid": {
+          "type": "expression"
+        },
+        "encountership": {
+          "type": "booleanexpression"
+        },
+        "equipmentdock": {
+          "type": "booleanexpression"
+        },
+        "exactclass": {
+          "type": "objectclasslookup"
+        },
+        "excluded": {
+          "type": "expression"
+        },
+        "explorationcluster": {
+          "type": "booleanexpression"
+        },
+        "extension": {
+          "type": "expression"
+        },
+        "factionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "freemissionactorslot": {
+          "type": "freemissionactorslot"
+        },
+        "freemissionofferslot": {
+          "type": "booleanexpression"
+        },
+        "freesignalleakslot": {
+          "type": "booleanexpression"
+        },
+        "functional": {
+          "type": "booleanexpression"
+        },
+        "godentrytags": {
+          "type": "expression"
+        },
+        "godobjectentry": {
+          "type": "expression"
+        },
+        "groupname": {
+          "type": "groupname"
+        },
+        "grouptag": {
+          "type": "expression"
+        },
+        "hasbuildingtask": {
+          "type": "booleanexpression"
+        },
+        "hascommander": {
+          "type": "booleanexpression"
+        },
+        "hascontrolentity": {
+          "type": "controlpost"
+        },
+        "hasfixedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hasjob": {
+          "type": "booleanexpression"
+        },
+        "hasmasstraffic": {
+          "type": "hasmasstraffic"
+        },
+        "hasstagedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hastradeoffer": {
+          "type": "booleanexpression"
+        },
+        "haswalkableroom": {
+          "type": "booleanexpression"
+        },
+        "headquarters": {
+          "type": "booleanexpression"
+        },
+        "hullinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "indestructible": {
+          "type": "booleanexpression"
+        },
+        "integrated": {
+          "type": "booleanexpression"
+        },
+        "internallystored": {
+          "type": "booleanexpression"
+        },
+        "invulnerable": {
+          "type": "booleanexpression"
+        },
+        "ishostileto": {
+          "type": "expression"
+        },
+        "isinliveview": {
+          "type": "booleanexpression"
+        },
+        "job": {
+          "type": "expression"
+        },
+        "jobtags": {
+          "type": "expression"
+        },
+        "known": {
+          "type": "booleanexpression"
+        },
+        "knownto": {
+          "type": "factionexprlookup"
+        },
+        "landmark": {
+          "type": "booleanexpression"
+        },
+        "locked": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "masstraffic": {
+          "type": "booleanexpression"
+        },
+        "mayattack": {
+          "type": "expression"
+        },
+        "maybeattackedby": {
+          "type": "expression"
+        },
+        "module": {
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "type": "findmultiple"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "negateownerfilter": {
+          "type": "booleanexpression"
+        },
+        "normalcluster": {
+          "type": "booleanexpression"
+        },
+        "numfreeactorslots": {
+          "type": "expression"
+        },
+        "onlineobject": {
+          "type": "booleanexpression"
+        },
+        "owner": {
+          "type": "owners"
+        },
+        "paused": {
+          "type": "booleanexpression"
+        },
+        "pausedmanually": {
+          "type": "booleanexpression"
+        },
+        "personalextension": {
+          "type": "expression"
+        },
+        "physicsareready": {
+          "type": "booleanexpression"
+        },
+        "piratebase": {
+          "type": "booleanexpression"
+        },
+        "planneddefencestation": {
+          "type": "booleanexpression"
+        },
+        "plannedequipmentdock": {
+          "type": "booleanexpression"
+        },
+        "plannedfactionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedpiratebase": {
+          "type": "booleanexpression"
+        },
+        "plannedrecyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "plannedshipyard": {
+          "type": "booleanexpression"
+        },
+        "plannedtradestation": {
+          "type": "booleanexpression"
+        },
+        "plannedwharf": {
+          "type": "booleanexpression"
+        },
+        "policefaction": {
+          "type": "owners"
+        },
+        "presentationcluster": {
+          "type": "booleanexpression"
+        },
+        "primarypurpose": {
+          "type": "purposelookup"
+        },
+        "reachablefrom": {
+          "type": "expression"
+        },
+        "recursive": {
+          "type": "findrecursive"
+        },
+        "recyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "regionobject": {
+          "type": "booleanexpression"
+        },
+        "requestedjobship": {
+          "type": "booleanexpression"
+        },
+        "required": {
+          "type": "findrequired"
+        },
+        "roompopulationtype": {
+          "type": "roompopulationtypeexprlookup"
+        },
+        "shieldgrouptag": {
+          "type": "expression"
+        },
+        "shieldinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "shiptype": {
+          "type": "shiptypeexprlookup"
+        },
+        "shipyard": {
+          "type": "booleanexpression"
+        },
+        "signalleaktype": {
+          "type": "signalleaktypelookup"
+        },
+        "sortbydistanceto": {
+          "type": "expression"
+        },
+        "sortbygatedistancefrom": {
+          "type": "expression"
+        },
+        "sortbygatedistanceto": {
+          "type": "expression"
+        },
+        "sortbyvalue": {
+          "type": "expression"
+        },
+        "sortdescending": {
+          "type": "booleanexpression"
+        },
+        "sortlimit": {
+          "type": "expression"
+        },
+        "space": {
+          "required": true,
+          "type": "spacelist"
+        },
+        "state": {
+          "type": "componentstateexprlookup"
+        },
+        "stationtype": {
+          "type": "stationtypeexprlookup"
+        },
+        "subordinatejobship": {
+          "type": "booleanexpression"
+        },
+        "superhighwaygate": {
+          "type": "booleanexpression"
+        },
+        "surfaceelement": {
+          "type": "booleanexpression"
+        },
+        "suspicious": {
+          "type": "booleanexpression"
+        },
+        "tag": {
+          "type": "expression"
+        },
+        "tradesknownto": {
+          "type": "factionexprlookup"
+        },
+        "tradestation": {
+          "type": "booleanexpression"
+        },
+        "truecoalition": {
+          "type": "expression"
+        },
+        "trueowner": {
+          "type": "owners"
+        },
+        "unit": {
+          "type": "booleanexpression"
+        },
+        "validjobship": {
+          "type": "booleanexpression"
+        },
+        "venture": {
+          "type": "expression"
+        },
+        "venturercluster": {
+          "type": "booleanexpression"
+        },
+        "visitor": {
+          "type": "booleanexpression"
+        },
+        "walkable": {
+          "type": "booleanexpression"
+        },
+        "waretransport": {
+          "type": "waretransportlookup"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weapontype": {
+          "type": "weapontypelookup"
+        },
+        "weight": {
+          "type": "expression"
+        },
+        "wharf": {
+          "type": "booleanexpression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "find_object_component": {
+      "attributes": {
+        "accelerator": {
+          "type": "booleanexpression"
+        },
+        "accessgrantedto": {
+          "type": "factionexprlookup"
+        },
+        "accessrestrictedto": {
+          "type": "factionexprlookup"
+        },
+        "active": {
+          "type": "booleanexpression"
+        },
+        "alwaysnormalzone": {
+          "type": "booleanexpression"
+        },
+        "append": {
+          "type": "findappend"
+        },
+        "building": {
+          "type": "booleanexpression"
+        },
+        "busy": {
+          "type": "booleanexpression"
+        },
+        "canbebuiltby": {
+          "type": "expression"
+        },
+        "canbebuiltbyany": {
+          "type": "expression"
+        },
+        "canbedismantled": {
+          "type": "booleanexpression"
+        },
+        "canbelivestreamed": {
+          "type": "booleanexpression"
+        },
+        "canbepickedup": {
+          "type": "booleanexpression"
+        },
+        "canbetowed": {
+          "type": "booleanexpression"
+        },
+        "canbuildclass": {
+          "type": "expression"
+        },
+        "canbuildequipment": {
+          "type": "expression"
+        },
+        "canbuildfor": {
+          "type": "factionexprlookup"
+        },
+        "canbuildmacro": {
+          "type": "expression"
+        },
+        "canbuildships": {
+          "type": "booleanexpression"
+        },
+        "canclaimownership": {
+          "type": "booleanexpression"
+        },
+        "canequipclass": {
+          "type": "expression"
+        },
+        "canequipships": {
+          "type": "expression"
+        },
+        "canhavedynamicinterior": {
+          "type": "booleanexpression"
+        },
+        "canhaveofferlocation": {
+          "type": "expression"
+        },
+        "cansupplyclass": {
+          "type": "expression"
+        },
+        "cansupplyships": {
+          "type": "expression"
+        },
+        "capturable": {
+          "type": "booleanexpression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "checkoperational": {
+          "type": "booleanexpression"
+        },
+        "class": {
+          "type": "classlookup"
+        },
+        "coalition": {
+          "type": "expression"
+        },
+        "commandeerable": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "contested": {
+          "type": "booleanexpression"
+        },
+        "contestedby": {
+          "type": "factionexprlookup"
+        },
+        "controlentity": {
+          "type": "booleanexpression"
+        },
+        "controlpost": {
+          "type": "controlpost"
+        },
+        "covered": {
+          "type": "booleanexpression"
+        },
+        "coverowner": {
+          "type": "owners"
+        },
+        "datavault": {
+          "type": "booleanexpression"
+        },
+        "defencestation": {
+          "type": "booleanexpression"
+        },
+        "deployable": {
+          "type": "booleanexpression"
+        },
+        "deployablecategory": {
+          "type": "deployablecategorylookup"
+        },
+        "destination": {
+          "type": "expression"
+        },
+        "diplomat": {
+          "type": "booleanexpression"
+        },
+        "docked": {
+          "type": "docked"
+        },
+        "encounterid": {
+          "type": "expression"
+        },
+        "encountership": {
+          "type": "booleanexpression"
+        },
+        "entityrole": {
+          "type": "entityrole"
+        },
+        "entitytype": {
+          "type": "entitytype"
+        },
+        "equipmentdock": {
+          "type": "booleanexpression"
+        },
+        "exactclass": {
+          "type": "classlookup"
+        },
+        "excluded": {
+          "type": "expression"
+        },
+        "explorationcluster": {
+          "type": "booleanexpression"
+        },
+        "extension": {
+          "type": "expression"
+        },
+        "factionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "freemissionactorslot": {
+          "type": "freemissionactorslot"
+        },
+        "freemissionofferslot": {
+          "type": "booleanexpression"
+        },
+        "freesignalleakslot": {
+          "type": "booleanexpression"
+        },
+        "functional": {
+          "type": "booleanexpression"
+        },
+        "groupname": {
+          "type": "groupname"
+        },
+        "grouptag": {
+          "type": "expression"
+        },
+        "hasbuildingtask": {
+          "type": "booleanexpression"
+        },
+        "hascommander": {
+          "type": "booleanexpression"
+        },
+        "hascontrolentity": {
+          "type": "controlpost"
+        },
+        "hascontrolpanel": {
+          "type": "controlpaneltypelookup"
+        },
+        "hasfixedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hasgravidarobscuringregion": {
+          "type": "booleanexpression"
+        },
+        "hashazardousregion": {
+          "type": "booleanexpression"
+        },
+        "hasjob": {
+          "type": "booleanexpression"
+        },
+        "hasmasstraffic": {
+          "type": "hasmasstraffic"
+        },
+        "hasstagedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hastradeoffer": {
+          "type": "booleanexpression"
+        },
+        "haswalkableroom": {
+          "type": "booleanexpression"
+        },
+        "headquarters": {
+          "type": "booleanexpression"
+        },
+        "hullinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "includeobjects": {
+          "type": "findincludeobjects"
+        },
+        "indestructible": {
+          "type": "booleanexpression"
+        },
+        "integrated": {
+          "type": "booleanexpression"
+        },
+        "internallystored": {
+          "type": "booleanexpression"
+        },
+        "invulnerable": {
+          "type": "booleanexpression"
+        },
+        "ishostileto": {
+          "type": "expression"
+        },
+        "isinliveview": {
+          "type": "booleanexpression"
+        },
+        "job": {
+          "type": "expression"
+        },
+        "jobspacefor": {
+          "type": "expression"
+        },
+        "jobtags": {
+          "type": "expression"
+        },
+        "known": {
+          "type": "booleanexpression"
+        },
+        "knownto": {
+          "type": "factionexprlookup"
+        },
+        "landmark": {
+          "type": "booleanexpression"
+        },
+        "locationtag": {
+          "type": "expression"
+        },
+        "locationtagany": {
+          "type": "expression"
+        },
+        "locked": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "masstraffic": {
+          "type": "booleanexpression"
+        },
+        "mayattack": {
+          "type": "expression"
+        },
+        "maybeattackedby": {
+          "type": "expression"
+        },
+        "missionactor": {
+          "type": "booleanexpression"
+        },
+        "module": {
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "type": "findmultiple"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "needsrepair": {
+          "type": "booleanexpression"
+        },
+        "negateownerfilter": {
+          "type": "booleanexpression"
+        },
+        "normalcluster": {
+          "type": "booleanexpression"
+        },
+        "normalzone": {
+          "type": "booleanexpression"
+        },
+        "npctemplate": {
+          "type": "expression"
+        },
+        "numfreeactorslots": {
+          "type": "expression"
+        },
+        "object": {
+          "required": true,
+          "type": "expression"
+        },
+        "onlineobject": {
+          "type": "booleanexpression"
+        },
+        "owner": {
+          "type": "owners"
+        },
+        "paused": {
+          "type": "booleanexpression"
+        },
+        "pausedmanually": {
+          "type": "booleanexpression"
+        },
+        "personalextension": {
+          "type": "expression"
+        },
+        "physicsareready": {
+          "type": "booleanexpression"
+        },
+        "piratebase": {
+          "type": "booleanexpression"
+        },
+        "planneddefencestation": {
+          "type": "booleanexpression"
+        },
+        "plannedequipmentdock": {
+          "type": "booleanexpression"
+        },
+        "plannedfactionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedpiratebase": {
+          "type": "booleanexpression"
+        },
+        "plannedrecyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "plannedshipyard": {
+          "type": "booleanexpression"
+        },
+        "plannedtradestation": {
+          "type": "booleanexpression"
+        },
+        "plannedwharf": {
+          "type": "booleanexpression"
+        },
+        "policefaction": {
+          "type": "owners"
+        },
+        "presentationcluster": {
+          "type": "booleanexpression"
+        },
+        "primarypurpose": {
+          "type": "purposelookup"
+        },
+        "race": {
+          "type": "race"
+        },
+        "reachablefrom": {
+          "type": "expression"
+        },
+        "recursive": {
+          "type": "findrecursive"
+        },
+        "recyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "regionobject": {
+          "type": "booleanexpression"
+        },
+        "repairable": {
+          "type": "booleanexpression"
+        },
+        "representative": {
+          "type": "booleanexpression"
+        },
+        "requestedjobship": {
+          "type": "booleanexpression"
+        },
+        "required": {
+          "type": "findrequired"
+        },
+        "restorable": {
+          "type": "booleanexpression"
+        },
+        "roompopulationtype": {
+          "type": "roompopulationtypeexprlookup"
+        },
+        "roomtype": {
+          "type": "roomtypeexprlookup"
+        },
+        "shieldgrouptag": {
+          "type": "expression"
+        },
+        "shieldinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "shiptype": {
+          "type": "shiptypeexprlookup"
+        },
+        "shipyard": {
+          "type": "booleanexpression"
+        },
+        "signalleaktype": {
+          "type": "signalleaktypelookup"
+        },
+        "sortbydistanceto": {
+          "type": "expression"
+        },
+        "sortbygatedistancefrom": {
+          "type": "expression"
+        },
+        "sortbygatedistanceto": {
+          "type": "expression"
+        },
+        "sortbyvalue": {
+          "type": "expression"
+        },
+        "sortdescending": {
+          "type": "booleanexpression"
+        },
+        "sortlimit": {
+          "type": "expression"
+        },
+        "state": {
+          "type": "componentstateexprlookup"
+        },
+        "stationtype": {
+          "type": "stationtypeexprlookup"
+        },
+        "subordinatejobship": {
+          "type": "booleanexpression"
+        },
+        "superhighwaygate": {
+          "type": "booleanexpression"
+        },
+        "surfaceelement": {
+          "type": "booleanexpression"
+        },
+        "suspicious": {
+          "type": "booleanexpression"
+        },
+        "tag": {
+          "type": "expression"
+        },
+        "temporaryentity": {
+          "type": "booleanexpression"
+        },
+        "tempzone": {
+          "type": "booleanexpression"
+        },
+        "tradesknownto": {
+          "type": "factionexprlookup"
+        },
+        "tradestation": {
+          "type": "booleanexpression"
+        },
+        "truecoalition": {
+          "type": "expression"
+        },
+        "trueowner": {
+          "type": "owners"
+        },
+        "unit": {
+          "type": "booleanexpression"
+        },
+        "validjobship": {
+          "type": "booleanexpression"
+        },
+        "venture": {
+          "type": "expression"
+        },
+        "venturercluster": {
+          "type": "booleanexpression"
+        },
+        "visitor": {
+          "type": "booleanexpression"
+        },
+        "walkable": {
+          "type": "booleanexpression"
+        },
+        "waretransport": {
+          "type": "waretransportlookup"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weapontype": {
+          "type": "weapontypelookup"
+        },
+        "weight": {
+          "type": "expression"
+        },
+        "wharf": {
+          "type": "booleanexpression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "find_sector_in_range": {
+      "attributes": {
+        "accelerator": {
+          "type": "booleanexpression"
+        },
+        "accessgrantedto": {
+          "type": "factionexprlookup"
+        },
+        "accessrestrictedto": {
+          "type": "factionexprlookup"
+        },
+        "active": {
+          "type": "booleanexpression"
+        },
+        "append": {
+          "type": "findsectorappend"
+        },
+        "building": {
+          "type": "booleanexpression"
+        },
+        "busy": {
+          "type": "booleanexpression"
+        },
+        "canbebuiltby": {
+          "type": "expression"
+        },
+        "canbebuiltbyany": {
+          "type": "expression"
+        },
+        "canbedismantled": {
+          "type": "booleanexpression"
+        },
+        "canbelivestreamed": {
+          "type": "booleanexpression"
+        },
+        "canbepickedup": {
+          "type": "booleanexpression"
+        },
+        "canbetowed": {
+          "type": "booleanexpression"
+        },
+        "canbuildclass": {
+          "type": "expression"
+        },
+        "canbuildequipment": {
+          "type": "expression"
+        },
+        "canbuildfor": {
+          "type": "factionexprlookup"
+        },
+        "canbuildmacro": {
+          "type": "expression"
+        },
+        "canbuildships": {
+          "type": "booleanexpression"
+        },
+        "canequipclass": {
+          "type": "expression"
+        },
+        "canequipships": {
+          "type": "expression"
+        },
+        "canhavedynamicinterior": {
+          "type": "booleanexpression"
+        },
+        "canhaveofferlocation": {
+          "type": "expression"
+        },
+        "cansupplyclass": {
+          "type": "expression"
+        },
+        "cansupplyships": {
+          "type": "expression"
+        },
+        "capturable": {
+          "type": "booleanexpression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "checkoperational": {
+          "type": "booleanexpression"
+        },
+        "coalition": {
+          "type": "expression"
+        },
+        "commandeerable": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "contested": {
+          "type": "booleanexpression"
+        },
+        "contestedby": {
+          "type": "factionexprlookup"
+        },
+        "covered": {
+          "type": "booleanexpression"
+        },
+        "coverowner": {
+          "type": "owners"
+        },
+        "datavault": {
+          "type": "booleanexpression"
+        },
+        "deployable": {
+          "type": "booleanexpression"
+        },
+        "deployablecategory": {
+          "type": "deployablecategorylookup"
+        },
+        "destination": {
+          "type": "expression"
+        },
+        "distances": {
+          "type": "lvalueexpression"
+        },
+        "excluded": {
+          "type": "expression"
+        },
+        "extension": {
+          "type": "expression"
+        },
+        "freemissionactorslot": {
+          "type": "freemissionactorslot"
+        },
+        "freemissionofferslot": {
+          "type": "booleanexpression"
+        },
+        "freesignalleakslot": {
+          "type": "booleanexpression"
+        },
+        "functional": {
+          "type": "booleanexpression"
+        },
+        "groupname": {
+          "type": "groupname"
+        },
+        "grouptag": {
+          "type": "expression"
+        },
+        "hasbuildingtask": {
+          "type": "booleanexpression"
+        },
+        "hascommander": {
+          "type": "booleanexpression"
+        },
+        "hascontrolentity": {
+          "type": "controlpost"
+        },
+        "hasfixedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hasgravidarobscuringregion": {
+          "type": "booleanexpression"
+        },
+        "hashazardousregion": {
+          "type": "booleanexpression"
+        },
+        "hasstagedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hastradeoffer": {
+          "type": "booleanexpression"
+        },
+        "haswalkableroom": {
+          "type": "booleanexpression"
+        },
+        "hullinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "indestructible": {
+          "type": "booleanexpression"
+        },
+        "integrated": {
+          "type": "booleanexpression"
+        },
+        "internallystored": {
+          "type": "booleanexpression"
+        },
+        "invulnerable": {
+          "type": "booleanexpression"
+        },
+        "ishostileto": {
+          "type": "expression"
+        },
+        "isinliveview": {
+          "type": "booleanexpression"
+        },
+        "jobspacefor": {
+          "type": "expression"
+        },
+        "known": {
+          "type": "booleanexpression"
+        },
+        "knownto": {
+          "type": "factionexprlookup"
+        },
+        "landmark": {
+          "type": "booleanexpression"
+        },
+        "locationtag": {
+          "type": "expression"
+        },
+        "locationtagany": {
+          "type": "expression"
+        },
+        "locked": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "masstraffic": {
+          "type": "booleanexpression"
+        },
+        "maxdistance": {
+          "type": "expression"
+        },
+        "mayattack": {
+          "type": "expression"
+        },
+        "maybeattackedby": {
+          "type": "expression"
+        },
+        "mindistance": {
+          "type": "expression"
+        },
+        "module": {
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "type": "findmultiple"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "negateownerfilter": {
+          "type": "booleanexpression"
+        },
+        "numfreeactorslots": {
+          "type": "expression"
+        },
+        "object": {
+          "required": true,
+          "type": "expression"
+        },
+        "onlineobject": {
+          "type": "booleanexpression"
+        },
+        "owner": {
+          "type": "owners"
+        },
+        "paused": {
+          "type": "booleanexpression"
+        },
+        "pausedmanually": {
+          "type": "booleanexpression"
+        },
+        "personalextension": {
+          "type": "expression"
+        },
+        "physicsareready": {
+          "type": "booleanexpression"
+        },
+        "policefaction": {
+          "type": "owners"
+        },
+        "primarypurpose": {
+          "type": "purposelookup"
+        },
+        "reachablefrom": {
+          "type": "expression"
+        },
+        "regionobject": {
+          "type": "booleanexpression"
+        },
+        "roompopulationtype": {
+          "type": "roompopulationtypeexprlookup"
+        },
+        "shieldgrouptag": {
+          "type": "expression"
+        },
+        "shieldinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "signalleaktype": {
+          "type": "signalleaktypelookup"
+        },
+        "state": {
+          "type": "componentstateexprlookup"
+        },
+        "superhighwaygate": {
+          "type": "booleanexpression"
+        },
+        "surfaceelement": {
+          "type": "booleanexpression"
+        },
+        "suspicious": {
+          "type": "booleanexpression"
+        },
+        "tag": {
+          "type": "expression"
+        },
+        "tradesknownto": {
+          "type": "factionexprlookup"
+        },
+        "truecoalition": {
+          "type": "expression"
+        },
+        "trueowner": {
+          "type": "owners"
+        },
+        "unit": {
+          "type": "booleanexpression"
+        },
+        "venture": {
+          "type": "expression"
+        },
+        "visitor": {
+          "type": "booleanexpression"
+        },
+        "walkable": {
+          "type": "booleanexpression"
+        },
+        "waretransport": {
+          "type": "waretransportlookup"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weapontype": {
+          "type": "weapontypelookup"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "find_ship": {
+      "attributes": {
+        "accelerator": {
+          "type": "booleanexpression"
+        },
+        "active": {
+          "type": "booleanexpression"
+        },
+        "append": {
+          "type": "findappend"
+        },
+        "building": {
+          "type": "booleanexpression"
+        },
+        "busy": {
+          "type": "booleanexpression"
+        },
+        "canbebuiltby": {
+          "type": "expression"
+        },
+        "canbebuiltbyany": {
+          "type": "expression"
+        },
+        "canbedismantled": {
+          "type": "booleanexpression"
+        },
+        "canbelivestreamed": {
+          "type": "booleanexpression"
+        },
+        "canbepickedup": {
+          "type": "booleanexpression"
+        },
+        "canbetowed": {
+          "type": "booleanexpression"
+        },
+        "canbuildclass": {
+          "type": "expression"
+        },
+        "canbuildequipment": {
+          "type": "expression"
+        },
+        "canbuildfor": {
+          "type": "factionexprlookup"
+        },
+        "canbuildmacro": {
+          "type": "expression"
+        },
+        "canbuildships": {
+          "type": "booleanexpression"
+        },
+        "canequipclass": {
+          "type": "expression"
+        },
+        "canequipships": {
+          "type": "expression"
+        },
+        "canhavedynamicinterior": {
+          "type": "booleanexpression"
+        },
+        "canhaveofferlocation": {
+          "type": "expression"
+        },
+        "cansupplyclass": {
+          "type": "expression"
+        },
+        "cansupplyships": {
+          "type": "expression"
+        },
+        "capturable": {
+          "type": "booleanexpression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "checkoperational": {
+          "type": "booleanexpression"
+        },
+        "class": {
+          "type": "shipclasslookup"
+        },
+        "coalition": {
+          "type": "expression"
+        },
+        "commandeerable": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "covered": {
+          "type": "booleanexpression"
+        },
+        "coverowner": {
+          "type": "owners"
+        },
+        "datavault": {
+          "type": "booleanexpression"
+        },
+        "deployable": {
+          "type": "booleanexpression"
+        },
+        "deployablecategory": {
+          "type": "deployablecategorylookup"
+        },
+        "destination": {
+          "type": "expression"
+        },
+        "docked": {
+          "type": "docked"
+        },
+        "encounterid": {
+          "type": "expression"
+        },
+        "encountership": {
+          "type": "booleanexpression"
+        },
+        "excluded": {
+          "type": "expression"
+        },
+        "explorationcluster": {
+          "type": "booleanexpression"
+        },
+        "extension": {
+          "type": "expression"
+        },
+        "freemissionactorslot": {
+          "type": "freemissionactorslot"
+        },
+        "freemissionofferslot": {
+          "type": "booleanexpression"
+        },
+        "freesignalleakslot": {
+          "type": "booleanexpression"
+        },
+        "functional": {
+          "type": "booleanexpression"
+        },
+        "godshipentry": {
+          "type": "expression"
+        },
+        "groupname": {
+          "type": "groupname"
+        },
+        "grouptag": {
+          "type": "expression"
+        },
+        "hasbuildingtask": {
+          "type": "booleanexpression"
+        },
+        "hascommander": {
+          "type": "booleanexpression"
+        },
+        "hascontrolentity": {
+          "type": "controlpost"
+        },
+        "hasfixedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hasjob": {
+          "type": "booleanexpression"
+        },
+        "hasstagedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hastradeoffer": {
+          "type": "booleanexpression"
+        },
+        "haswalkableroom": {
+          "type": "booleanexpression"
+        },
+        "hullinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "indestructible": {
+          "type": "booleanexpression"
+        },
+        "integrated": {
+          "type": "booleanexpression"
+        },
+        "internallystored": {
+          "type": "booleanexpression"
+        },
+        "invulnerable": {
+          "type": "booleanexpression"
+        },
+        "ishostileto": {
+          "type": "expression"
+        },
+        "isinliveview": {
+          "type": "booleanexpression"
+        },
+        "job": {
+          "type": "expression"
+        },
+        "jobtags": {
+          "type": "expression"
+        },
+        "known": {
+          "type": "booleanexpression"
+        },
+        "knownto": {
+          "type": "factionexprlookup"
+        },
+        "landmark": {
+          "type": "booleanexpression"
+        },
+        "locked": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "masstraffic": {
+          "type": "booleanexpression"
+        },
+        "mayattack": {
+          "type": "expression"
+        },
+        "maybeattackedby": {
+          "type": "expression"
+        },
+        "module": {
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "type": "findmultiple"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "negateownerfilter": {
+          "type": "booleanexpression"
+        },
+        "normalcluster": {
+          "type": "booleanexpression"
+        },
+        "numfreeactorslots": {
+          "type": "expression"
+        },
+        "onlineobject": {
+          "type": "booleanexpression"
+        },
+        "owner": {
+          "type": "owners"
+        },
+        "paused": {
+          "type": "booleanexpression"
+        },
+        "pausedmanually": {
+          "type": "booleanexpression"
+        },
+        "personalextension": {
+          "type": "expression"
+        },
+        "physicsareready": {
+          "type": "booleanexpression"
+        },
+        "policefaction": {
+          "type": "owners"
+        },
+        "presentationcluster": {
+          "type": "booleanexpression"
+        },
+        "primarypurpose": {
+          "type": "purposelookup"
+        },
+        "reachablefrom": {
+          "type": "expression"
+        },
+        "recursive": {
+          "type": "findrecursive"
+        },
+        "regionobject": {
+          "type": "booleanexpression"
+        },
+        "requestedjobship": {
+          "type": "booleanexpression"
+        },
+        "required": {
+          "type": "findrequired"
+        },
+        "roompopulationtype": {
+          "type": "roompopulationtypeexprlookup"
+        },
+        "shieldgrouptag": {
+          "type": "expression"
+        },
+        "shieldinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "shiptype": {
+          "type": "shiptypeexprlookup"
+        },
+        "signalleaktype": {
+          "type": "signalleaktypelookup"
+        },
+        "sortbydistanceto": {
+          "type": "expression"
+        },
+        "sortbygatedistancefrom": {
+          "type": "expression"
+        },
+        "sortbygatedistanceto": {
+          "type": "expression"
+        },
+        "sortbyvalue": {
+          "type": "expression"
+        },
+        "sortdescending": {
+          "type": "booleanexpression"
+        },
+        "sortlimit": {
+          "type": "expression"
+        },
+        "space": {
+          "required": true,
+          "type": "spacelist"
+        },
+        "state": {
+          "type": "componentstateexprlookup"
+        },
+        "subordinatejobship": {
+          "type": "booleanexpression"
+        },
+        "superhighwaygate": {
+          "type": "booleanexpression"
+        },
+        "surfaceelement": {
+          "type": "booleanexpression"
+        },
+        "suspicious": {
+          "type": "booleanexpression"
+        },
+        "tag": {
+          "type": "expression"
+        },
+        "tradesknownto": {
+          "type": "factionexprlookup"
+        },
+        "truecoalition": {
+          "type": "expression"
+        },
+        "trueowner": {
+          "type": "owners"
+        },
+        "unit": {
+          "type": "booleanexpression"
+        },
+        "validjobship": {
+          "type": "booleanexpression"
+        },
+        "venture": {
+          "type": "expression"
+        },
+        "venturercluster": {
+          "type": "booleanexpression"
+        },
+        "visitor": {
+          "type": "booleanexpression"
+        },
+        "walkable": {
+          "type": "booleanexpression"
+        },
+        "waretransport": {
+          "type": "waretransportlookup"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weapontype": {
+          "type": "weapontypelookup"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "find_station": {
+      "attributes": {
+        "accelerator": {
+          "type": "booleanexpression"
+        },
+        "active": {
+          "type": "booleanexpression"
+        },
+        "append": {
+          "type": "findappend"
+        },
+        "building": {
+          "type": "booleanexpression"
+        },
+        "busy": {
+          "type": "booleanexpression"
+        },
+        "canbebuiltby": {
+          "type": "expression"
+        },
+        "canbebuiltbyany": {
+          "type": "expression"
+        },
+        "canbedismantled": {
+          "type": "booleanexpression"
+        },
+        "canbelivestreamed": {
+          "type": "booleanexpression"
+        },
+        "canbepickedup": {
+          "type": "booleanexpression"
+        },
+        "canbetowed": {
+          "type": "booleanexpression"
+        },
+        "canbuildclass": {
+          "type": "expression"
+        },
+        "canbuildequipment": {
+          "type": "expression"
+        },
+        "canbuildfor": {
+          "type": "factionexprlookup"
+        },
+        "canbuildmacro": {
+          "type": "expression"
+        },
+        "canbuildships": {
+          "type": "booleanexpression"
+        },
+        "canclaimownership": {
+          "type": "booleanexpression"
+        },
+        "canequipclass": {
+          "type": "expression"
+        },
+        "canequipships": {
+          "type": "expression"
+        },
+        "canhavedynamicinterior": {
+          "type": "booleanexpression"
+        },
+        "canhaveofferlocation": {
+          "type": "expression"
+        },
+        "cansupplyclass": {
+          "type": "expression"
+        },
+        "cansupplyships": {
+          "type": "expression"
+        },
+        "capturable": {
+          "type": "booleanexpression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "checkoperational": {
+          "type": "booleanexpression"
+        },
+        "class": {
+          "type": "stationclasslookup"
+        },
+        "coalition": {
+          "type": "expression"
+        },
+        "commandeerable": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "covered": {
+          "type": "booleanexpression"
+        },
+        "coverowner": {
+          "type": "owners"
+        },
+        "datavault": {
+          "type": "booleanexpression"
+        },
+        "defencestation": {
+          "type": "booleanexpression"
+        },
+        "deployable": {
+          "type": "booleanexpression"
+        },
+        "deployablecategory": {
+          "type": "deployablecategorylookup"
+        },
+        "destination": {
+          "type": "expression"
+        },
+        "equipmentdock": {
+          "type": "booleanexpression"
+        },
+        "excluded": {
+          "type": "expression"
+        },
+        "explorationcluster": {
+          "type": "booleanexpression"
+        },
+        "extension": {
+          "type": "expression"
+        },
+        "factionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "freemissionactorslot": {
+          "type": "freemissionactorslot"
+        },
+        "freemissionofferslot": {
+          "type": "booleanexpression"
+        },
+        "freesignalleakslot": {
+          "type": "booleanexpression"
+        },
+        "functional": {
+          "type": "booleanexpression"
+        },
+        "godproductionentry": {
+          "type": "expression"
+        },
+        "godstationentry": {
+          "type": "expression"
+        },
+        "groupname": {
+          "type": "groupname"
+        },
+        "grouptag": {
+          "type": "expression"
+        },
+        "hasbuildingtask": {
+          "type": "booleanexpression"
+        },
+        "hascommander": {
+          "type": "booleanexpression"
+        },
+        "hascontrolentity": {
+          "type": "controlpost"
+        },
+        "hasfixedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hasmasstraffic": {
+          "type": "hasmasstraffic"
+        },
+        "hasstagedconstruction": {
+          "type": "booleanexpression"
+        },
+        "hastradeoffer": {
+          "type": "booleanexpression"
+        },
+        "haswalkableroom": {
+          "type": "booleanexpression"
+        },
+        "headquarters": {
+          "type": "booleanexpression"
+        },
+        "hullinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "indestructible": {
+          "type": "booleanexpression"
+        },
+        "integrated": {
+          "type": "booleanexpression"
+        },
+        "internallystored": {
+          "type": "booleanexpression"
+        },
+        "invulnerable": {
+          "type": "booleanexpression"
+        },
+        "ishostileto": {
+          "type": "expression"
+        },
+        "isinliveview": {
+          "type": "booleanexpression"
+        },
+        "known": {
+          "type": "booleanexpression"
+        },
+        "knownto": {
+          "type": "factionexprlookup"
+        },
+        "landmark": {
+          "type": "booleanexpression"
+        },
+        "locked": {
+          "type": "booleanexpression"
+        },
+        "macro": {
+          "type": "expression"
+        },
+        "masstraffic": {
+          "type": "booleanexpression"
+        },
+        "mayattack": {
+          "type": "expression"
+        },
+        "maybeattackedby": {
+          "type": "expression"
+        },
+        "module": {
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "type": "findmultiple"
+        },
+        "name": {
+          "type": "lvaluename"
+        },
+        "negateownerfilter": {
+          "type": "booleanexpression"
+        },
+        "normalcluster": {
+          "type": "booleanexpression"
+        },
+        "numfreeactorslots": {
+          "type": "expression"
+        },
+        "onlineobject": {
+          "type": "booleanexpression"
+        },
+        "owner": {
+          "type": "owners"
+        },
+        "paused": {
+          "type": "booleanexpression"
+        },
+        "pausedmanually": {
+          "type": "booleanexpression"
+        },
+        "personalextension": {
+          "type": "expression"
+        },
+        "physicsareready": {
+          "type": "booleanexpression"
+        },
+        "piratebase": {
+          "type": "booleanexpression"
+        },
+        "planneddefencestation": {
+          "type": "booleanexpression"
+        },
+        "plannedequipmentdock": {
+          "type": "booleanexpression"
+        },
+        "plannedfactionheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedheadquarters": {
+          "type": "booleanexpression"
+        },
+        "plannedpiratebase": {
+          "type": "booleanexpression"
+        },
+        "plannedrecyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "plannedshipyard": {
+          "type": "booleanexpression"
+        },
+        "plannedtradestation": {
+          "type": "booleanexpression"
+        },
+        "plannedwharf": {
+          "type": "booleanexpression"
+        },
+        "policefaction": {
+          "type": "owners"
+        },
+        "presentationcluster": {
+          "type": "booleanexpression"
+        },
+        "primarypurpose": {
+          "type": "purposelookup"
+        },
+        "reachablefrom": {
+          "type": "expression"
+        },
+        "recyclingfacility": {
+          "type": "booleanexpression"
+        },
+        "regionobject": {
+          "type": "booleanexpression"
+        },
+        "required": {
+          "type": "findrequired"
+        },
+        "roompopulationtype": {
+          "type": "roompopulationtypeexprlookup"
+        },
+        "shieldgrouptag": {
+          "type": "expression"
+        },
+        "shieldinvulnerable": {
+          "type": "booleanexpression"
+        },
+        "shipyard": {
+          "type": "booleanexpression"
+        },
+        "signalleaktype": {
+          "type": "signalleaktypelookup"
+        },
+        "sortbydistanceto": {
+          "type": "expression"
+        },
+        "sortbygatedistancefrom": {
+          "type": "expression"
+        },
+        "sortbygatedistanceto": {
+          "type": "expression"
+        },
+        "sortbyvalue": {
+          "type": "expression"
+        },
+        "sortdescending": {
+          "type": "booleanexpression"
+        },
+        "sortlimit": {
+          "type": "expression"
+        },
+        "space": {
+          "required": true,
+          "type": "spacelist"
+        },
+        "state": {
+          "type": "componentstateexprlookup"
+        },
+        "stationtype": {
+          "type": "stationtypeexprlookup"
+        },
+        "superhighwaygate": {
+          "type": "booleanexpression"
+        },
+        "surfaceelement": {
+          "type": "booleanexpression"
+        },
+        "suspicious": {
+          "type": "booleanexpression"
+        },
+        "tag": {
+          "type": "expression"
+        },
+        "tradesknownto": {
+          "type": "factionexprlookup"
+        },
+        "tradestation": {
+          "type": "booleanexpression"
+        },
+        "truecoalition": {
+          "type": "expression"
+        },
+        "trueowner": {
+          "type": "owners"
+        },
+        "unit": {
+          "type": "booleanexpression"
+        },
+        "venture": {
+          "type": "expression"
+        },
+        "venturercluster": {
+          "type": "booleanexpression"
+        },
+        "visitor": {
+          "type": "booleanexpression"
+        },
+        "walkable": {
+          "type": "booleanexpression"
+        },
+        "waretransport": {
+          "type": "waretransportlookup"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weapontype": {
+          "type": "weapontypelookup"
+        },
+        "weight": {
+          "type": "expression"
+        },
+        "wharf": {
+          "type": "booleanexpression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "fire_turret": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "turret": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "get_safe_pos": {
+      "attributes": {
+        "allowyaxis": {
+          "type": "boolean"
+        },
+        "angle": {
+          "type": "expression"
+        },
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "direction": {
+          "type": "quadrantlookup"
+        },
+        "direction2": {
+          "type": "quadrantlookup"
+        },
+        "directionobject": {
+          "type": "expression"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "ignored": {
+          "type": "object"
+        },
+        "ignoredangerousregions": {
+          "type": "booleanexpression"
+        },
+        "includefiringrange": {
+          "type": "booleanexpression"
+        },
+        "includeplotbox": {
+          "type": "booleanexpression"
+        },
+        "includereservations": {
+          "type": "booleanexpression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "object": {
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "radius": {
+          "type": "expression"
+        },
+        "randomoffset": {
+          "type": "expression"
+        },
+        "result": {
+          "required": true,
+          "type": "lvaluename"
+        },
+        "scale": {
+          "type": null
+        },
+        "sector": {
+          "type": "sector"
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "space": {
+          "type": "expression"
+        },
+        "value": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        },
+        "x": {
+          "type": "expression"
+        },
+        "y": {
+          "type": "expression"
+        },
+        "z": {
+          "type": "expression"
+        },
+        "zone": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "label": {
+      "attributes": {
+        "name": {
+          "required": true,
+          "type": "labelname"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "move_to": {
+      "attributes": {
+        "abortpath": {
+          "type": "booleanexpression"
+        },
+        "avoid": {
+          "type": "booleanexpression"
+        },
+        "avoidtargetturretrange": {
+          "type": "booleanexpression"
+        },
+        "boost": {
+          "type": "expression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "commandaction": {
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "destination": {
+          "required": true,
+          "type": "expression"
+        },
+        "endzone": {
+          "type": "lvalueexpression"
+        },
+        "finishonapproach": {
+          "type": "booleanexpression"
+        },
+        "flightbehaviour": {
+          "type": "fbehaviourlookup"
+        },
+        "forceposition": {
+          "type": "booleanexpression"
+        },
+        "forcerotation": {
+          "type": "booleanexpression"
+        },
+        "forcesteering": {
+          "type": "booleanexpression"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "radius": {
+          "type": "expression"
+        },
+        "relativemovement": {
+          "type": "booleanexpression"
+        },
+        "reverse": {
+          "type": "booleanexpression"
+        },
+        "rollintoturns": {
+          "type": "booleanexpression"
+        },
+        "sinceversion": {
+          "type": "xs:nonNegativeInteger"
+        },
+        "torelativemovement": {
+          "type": "booleanexpression"
+        },
+        "travel": {
+          "type": "expression"
+        },
+        "useblacklist": {
+          "type": "blacklistgrouplookup"
+        },
+        "useknownpath": {
+          "type": "booleanexpression"
+        },
+        "uselocalhighways": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "reinitialise_control_entities": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "remove_actor_from_room": {
+      "attributes": {
+        "actor": {
+          "required": true,
+          "type": "actor"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "destroy": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "remove_inventory": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "entity": {
+          "type": "entity"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "ware": {
+          "required": true,
+          "type": "ware"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "remove_npc_template": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "template": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "remove_object_commander": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "remove_value": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "name": {
+          "required": true,
+          "type": "lvaluename"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "reset_relation_boost": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "faction": {
+          "type": "factionexprlookup"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "otherobject": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "reset_turret": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "turret": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "resume": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "label": {
+          "required": true,
+          "type": "labelname"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "return": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "value": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "run_script": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "name": {
+          "required": true,
+          "type": "expression"
+        },
+        "result": {
+          "type": "lvaluename"
+        },
+        "sinceversion": {
+          "type": "xs:nonNegativeInteger"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "set_command_action": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "commandaction": {
+          "required": true,
+          "type": "commandactionlookup"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "param": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "set_known": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "known": {
+          "required": true,
+          "type": "booleanexpression"
+        },
+        "object": {
+          "required": true,
+          "type": "expression"
+        },
+        "updatesnapshot": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "set_object_scanned": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "set_order_syncpoint_reached": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "order": {
+          "required": true,
+          "type": "order"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "set_owner": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "faction": {
+          "required": true,
+          "type": "owner"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "overridenpc": {
+          "type": "booleanexpression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "set_region_object_persistence": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "persistent": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "set_value": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "name": {
+          "required": true,
+          "type": "lvaluename"
+        },
+        "operation": {
+          "type": "setoperationlookup"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "shoot_at": {
+      "attributes": {
+        "additional_targets": {
+          "type": "expression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "fixedtarget": {
+          "type": "expression"
+        },
+        "largetarget": {
+          "type": "expression"
+        },
+        "missiles": {
+          "type": "expression"
+        },
+        "object": {
+          "required": true,
+          "type": "attacker"
+        },
+        "primary": {
+          "type": "expression"
+        },
+        "secondary": {
+          "type": "expression"
+        },
+        "target": {
+          "required": true,
+          "type": "targetobject"
+        },
+        "tolerance": {
+          "type": "expression"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "signal_objects": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "check": {
+          "type": "checkeventsource"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "delay": {
+          "type": "expression"
+        },
+        "group": {
+          "type": "groupeventsource"
+        },
+        "object": {
+          "type": "expression"
+        },
+        "param": {
+          "type": "expression"
+        },
+        "param2": {
+          "type": "expression"
+        },
+        "param3": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "stop_shooting": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "missiles": {
+          "type": "expression"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "primary": {
+          "type": "expression"
+        },
+        "secondary": {
+          "type": "expression"
+        },
+        "turrets": {
+          "type": "booleanexpression"
+        },
+        "weaponmode": {
+          "type": "weaponmodelookup"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "transfer_money": {
+      "attributes": {
+        "amount": {
+          "required": true,
+          "type": "expression"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "from": {
+          "required": true,
+          "type": "factionorobject"
+        },
+        "result": {
+          "type": "lvalueexpression"
+        },
+        "to": {
+          "required": true,
+          "type": "factionorobject"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "wait": {
+      "attributes": {
+        "autoadvanceseed": {
+          "type": "autoadvancerandomseed"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "exact": {
+          "type": "expression"
+        },
+        "list": {
+          "type": "expression"
+        },
+        "max": {
+          "type": "expression"
+        },
+        "min": {
+          "type": "expression"
+        },
+        "profile": {
+          "type": "profilelookup"
+        },
+        "resume": {
+          "type": "resumeflag"
+        },
+        "scale": {
+          "type": null
+        },
+        "seed": {
+          "type": "fixedrandomseed"
+        },
+        "sinceversion": {
+          "type": "xs:nonNegativeInteger"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts"
+      ],
+      "kind": "action"
+    },
+    "warp": {
+      "attributes": {
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "object": {
+          "required": true,
+          "type": "object"
+        },
+        "sector": {
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        },
+        "zone": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "write_to_logbook": {
+      "attributes": {
+        "bonus": {
+          "type": "expression"
+        },
+        "category": {
+          "required": true,
+          "type": "logcategorylookup"
+        },
+        "chance": {
+          "type": "expression"
+        },
+        "comment": {
+          "type": "comment"
+        },
+        "entity": {
+          "type": "expression"
+        },
+        "faction": {
+          "type": "expression"
+        },
+        "highlighted": {
+          "type": "booleanexpression"
+        },
+        "interaction": {
+          "type": "loginteractionlookup"
+        },
+        "money": {
+          "type": "expression"
+        },
+        "object": {
+          "type": "expression"
+        },
+        "position": {
+          "type": "expression"
+        },
+        "separator": {
+          "type": "expression"
+        },
+        "text": {
+          "type": "expression"
+        },
+        "title": {
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    }
+  },
+  "enum_types": {
+    "blacklistgrouplookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "blacklistgroup.civilian"
+        },
+        {
+          "v": "blacklistgroup.military"
+        }
+      ]
+    },
+    "classlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "class.component"
+        },
+        {
+          "v": "class.buildprocessor"
+        },
+        {
+          "v": "class.accessory"
+        },
+        {
+          "v": "class.bullet"
+        },
+        {
+          "v": "class.countermeasure"
+        },
+        {
+          "v": "class.crate"
+        },
+        {
+          "v": "class.positional"
+        },
+        {
+          "v": "class.adsign"
+        },
+        {
+          "v": "class.buildmodule"
+        },
+        {
+          "v": "class.cargobay"
+        },
+        {
+          "v": "class.construction"
+        },
+        {
+          "v": "class.controlpanel"
+        },
+        {
+          "v": "class.destructible"
+        },
+        {
+          "v": "class.dockarea"
+        },
+        {
+          "v": "class.engine"
+        },
+        {
+          "v": "class.habitation"
+        },
+        {
+          "v": "class.interior"
+        },
+        {
+          "v": "class.launcher"
+        },
+        {
+          "v": "class.lock"
+        },
+        {
+          "v": "class.module"
+        },
+        {
+          "v": "class.navcontext"
+        },
+        {
+          "v": "class.pier"
+        },
+        {
+          "v": "class.processingmodule"
+        },
+        {
+          "v": "class.production"
+        },
+        {
+          "v": "class.radar"
+        },
+        {
+          "v": "class.scanner"
+        },
+        {
+          "v": "class.shieldgenerator"
+        },
+        {
+          "v": "class.storage"
+        },
+        {
+          "v": "class.turret"
+        },
+        {
+          "v": "class.ventureplatform"
+        },
+        {
+          "v": "class.walkablemodule"
+        },
+        {
+          "v": "class.welfaremodule"
+        },
+        {
+          "v": "class.weapon"
+        },
+        {
+          "v": "class.adsignobject"
+        },
+        {
+          "v": "class.asteroid"
+        },
+        {
+          "v": "class.bomb"
+        },
+        {
+          "v": "class.checkpoint"
+        },
+        {
+          "v": "class.collectable"
+        },
+        {
+          "v": "class.container"
+        },
+        {
+          "v": "class.controllable"
+        },
+        {
+          "v": "class.datavault"
+        },
+        {
+          "v": "class.defensible"
+        },
+        {
+          "v": "class.drop"
+        },
+        {
+          "v": "class.explosive"
+        },
+        {
+          "v": "class.gate"
+        },
+        {
+          "v": "class.highwayentrygate"
+        },
+        {
+          "v": "class.highwayexitgate"
+        },
+        {
+          "v": "class.lockbox"
+        },
+        {
+          "v": "class.mine"
+        },
+        {
+          "v": "class.missile"
+        },
+        {
+          "v": "class.navbeacon"
+        },
+        {
+          "v": "class.nebula"
+        },
+        {
+          "v": "class.object"
+        },
+        {
+          "v": "class.recyclable"
+        },
+        {
+          "v": "class.resourceprobe"
+        },
+        {
+          "v": "class.satellite"
+        },
+        {
+          "v": "class.ship"
+        },
+        {
+          "v": "class.spacesuit"
+        },
+        {
+          "v": "class.ship_xs"
+        },
+        {
+          "v": "class.ship_s"
+        },
+        {
+          "v": "class.ship_m"
+        },
+        {
+          "v": "class.ship_l"
+        },
+        {
+          "v": "class.ship_xl"
+        },
+        {
+          "v": "class.station"
+        },
+        {
+          "v": "class.entity"
+        },
+        {
+          "v": "class.player"
+        },
+        {
+          "v": "class.nonplayer"
+        },
+        {
+          "v": "class.computer"
+        },
+        {
+          "v": "class.npc"
+        },
+        {
+          "v": "class.area"
+        },
+        {
+          "v": "class.cluster"
+        },
+        {
+          "v": "class.galaxy"
+        },
+        {
+          "v": "class.highway"
+        },
+        {
+          "v": "class.sector"
+        },
+        {
+          "v": "class.zone"
+        },
+        {
+          "v": "class.room"
+        },
+        {
+          "v": "class.cockpit"
+        },
+        {
+          "v": "class.controlroom"
+        },
+        {
+          "v": "class.dockingbay"
+        },
+        {
+          "v": "class.transporterroom"
+        }
+      ]
+    },
+    "commandactionlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "commandaction.standingby"
+        },
+        {
+          "v": "commandaction.calculating"
+        },
+        {
+          "v": "commandaction.repairingto"
+        },
+        {
+          "v": "commandaction.repairchecking"
+        },
+        {
+          "v": "commandaction.scanningto"
+        },
+        {
+          "v": "commandaction.searchingresources"
+        },
+        {
+          "v": "commandaction.executingtrade"
+        },
+        {
+          "v": "commandaction.docking"
+        },
+        {
+          "v": "commandaction.undocking"
+        },
+        {
+          "v": "commandaction.waitingtodock"
+        },
+        {
+          "v": "commandaction.attacking"
+        },
+        {
+          "v": "commandaction.attackingto"
+        },
+        {
+          "v": "commandaction.flying"
+        },
+        {
+          "v": "commandaction.flyingto"
+        },
+        {
+          "v": "commandaction.jumping"
+        },
+        {
+          "v": "commandaction.searchingtrades"
+        },
+        {
+          "v": "commandaction.waitingdrones"
+        },
+        {
+          "v": "commandaction.investigating"
+        },
+        {
+          "v": "commandaction.building"
+        },
+        {
+          "v": "commandaction.buildingto"
+        },
+        {
+          "v": "commandaction.orderfailed"
+        }
+      ]
+    },
+    "componentstateexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "componentstate.construction"
+        },
+        {
+          "v": "componentstate.operational"
+        },
+        {
+          "v": "componentstate.wreck"
+        }
+      ]
+    },
+    "controlpaneltypelookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "controlpaneltype.hack_all_turrets"
+        },
+        {
+          "v": "controlpaneltype.hack_buildmodules"
+        },
+        {
+          "v": "controlpaneltype.hack_discount"
+        },
+        {
+          "v": "controlpaneltype.hack_engineer"
+        },
+        {
+          "v": "controlpaneltype.hack_production"
+        },
+        {
+          "v": "controlpaneltype.hack_shieldgenerators"
+        },
+        {
+          "v": "controlpaneltype.hack_storage"
+        },
+        {
+          "v": "controlpaneltype.hack_watchdogs"
+        },
+        {
+          "v": "controlpaneltype.hack_hiringdiscount"
+        },
+        {
+          "v": "controlpaneltype.hack_moddingdiscount"
+        },
+        {
+          "v": "controlpaneltype.hack_repairdiscount"
+        },
+        {
+          "v": "controlpaneltype.hack_traderdiscount"
+        },
+        {
+          "v": "controlpaneltype.hack_radar"
+        },
+        {
+          "v": "controlpaneltype.access_scanner"
+        },
+        {
+          "v": "controlpaneltype.access_jukebox"
+        },
+        {
+          "v": "controlpaneltype.access_dockcamera"
+        },
+        {
+          "v": "controlpaneltype.access_externalcamera"
+        },
+        {
+          "v": "controlpaneltype.access_peoplelist"
+        }
+      ]
+    },
+    "controlpost": {
+      "base": "controlpostexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "controlpost.aipilot"
+        },
+        {
+          "v": "controlpost.defence"
+        },
+        {
+          "v": "controlpost.manager"
+        },
+        {
+          "v": "controlpost.engineer"
+        },
+        {
+          "v": "controlpost.shadyguy"
+        },
+        {
+          "v": "controlpost.shiptrader"
+        },
+        {
+          "v": "controlpost.trainee_individual"
+        }
+      ]
+    },
+    "deployablecategorylookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "deployablecategory.lasertower"
+        },
+        {
+          "v": "deployablecategory.mine"
+        },
+        {
+          "v": "deployablecategory.navbeacon"
+        },
+        {
+          "v": "deployablecategory.resourceprobe"
+        },
+        {
+          "v": "deployablecategory.satellite"
+        }
+      ]
+    },
+    "entityrole": {
+      "base": "entityroleexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "entityrole.service"
+        },
+        {
+          "v": "entityrole.marine"
+        },
+        {
+          "v": "entityrole.passenger"
+        },
+        {
+          "v": "entityrole.prisoner"
+        },
+        {
+          "v": "entityrole.trainee_group"
+        },
+        {
+          "v": "entityrole.worker"
+        },
+        {
+          "v": "entityrole.unassigned"
+        }
+      ]
+    },
+    "entityroleexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "entityrole.service"
+        },
+        {
+          "v": "entityrole.marine"
+        },
+        {
+          "v": "entityrole.passenger"
+        },
+        {
+          "v": "entityrole.prisoner"
+        },
+        {
+          "v": "entityrole.trainee_group"
+        },
+        {
+          "v": "entityrole.worker"
+        },
+        {
+          "v": "entityrole.unassigned"
+        }
+      ]
+    },
+    "entitytype": {
+      "base": "entitytypeexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "entitytype.officer"
+        },
+        {
+          "v": "entitytype.trader"
+        },
+        {
+          "v": "entitytype.factionrepresentative"
+        },
+        {
+          "v": "entitytype.shadyguy"
+        },
+        {
+          "v": "entitytype.crowd"
+        },
+        {
+          "v": "entitytype.agent"
+        }
+      ]
+    },
+    "enumeration": {
+      "kind": "enum",
+      "values": [
+        {
+          "v": "activate_chair"
+        },
+        {
+          "v": "deactivate_chair"
+        },
+        {
+          "v": "invalid"
+        }
+      ]
+    },
+    "faction": {
+      "base": "factionexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "faction.alliance"
+        },
+        {
+          "v": "faction.antigone"
+        },
+        {
+          "v": "faction.argon"
+        },
+        {
+          "v": "faction.boron"
+        },
+        {
+          "v": "faction.buccaneers"
+        },
+        {
+          "v": "faction.court"
+        },
+        {
+          "v": "faction.civilian"
+        },
+        {
+          "v": "faction.criminal"
+        },
+        {
+          "v": "faction.outlaw"
+        },
+        {
+          "v": "faction.freesplit"
+        },
+        {
+          "v": "faction.hatikvah"
+        },
+        {
+          "v": "faction.holyorder"
+        },
+        {
+          "v": "faction.holyorderfanatic"
+        },
+        {
+          "v": "faction.kaori"
+        },
+        {
+          "v": "faction.khaak"
+        },
+        {
+          "v": "faction.loanshark"
+        },
+        {
+          "v": "faction.ministry"
+        },
+        {
+          "v": "faction.ownerless"
+        },
+        {
+          "v": "faction.paranid"
+        },
+        {
+          "v": "faction.pioneers"
+        },
+        {
+          "v": "faction.player"
+        },
+        {
+          "v": "faction.scaleplate"
+        },
+        {
+          "v": "faction.scavenger"
+        },
+        {
+          "v": "faction.smuggler"
+        },
+        {
+          "v": "faction.split"
+        },
+        {
+          "v": "faction.teladi"
+        },
+        {
+          "v": "faction.terran"
+        },
+        {
+          "v": "faction.trinity"
+        },
+        {
+          "v": "faction.yaki"
+        },
+        {
+          "v": "faction.xenon"
+        }
+      ]
+    },
+    "factionexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "faction.alliance"
+        },
+        {
+          "v": "faction.antigone"
+        },
+        {
+          "v": "faction.argon"
+        },
+        {
+          "v": "faction.boron"
+        },
+        {
+          "v": "faction.buccaneers"
+        },
+        {
+          "v": "faction.court"
+        },
+        {
+          "v": "faction.civilian"
+        },
+        {
+          "v": "faction.criminal"
+        },
+        {
+          "v": "faction.outlaw"
+        },
+        {
+          "v": "faction.freesplit"
+        },
+        {
+          "v": "faction.hatikvah"
+        },
+        {
+          "v": "faction.holyorder"
+        },
+        {
+          "v": "faction.holyorderfanatic"
+        },
+        {
+          "v": "faction.kaori"
+        },
+        {
+          "v": "faction.khaak"
+        },
+        {
+          "v": "faction.loanshark"
+        },
+        {
+          "v": "faction.ministry"
+        },
+        {
+          "v": "faction.ownerless"
+        },
+        {
+          "v": "faction.paranid"
+        },
+        {
+          "v": "faction.pioneers"
+        },
+        {
+          "v": "faction.player"
+        },
+        {
+          "v": "faction.scaleplate"
+        },
+        {
+          "v": "faction.scavenger"
+        },
+        {
+          "v": "faction.smuggler"
+        },
+        {
+          "v": "faction.split"
+        },
+        {
+          "v": "faction.teladi"
+        },
+        {
+          "v": "faction.terran"
+        },
+        {
+          "v": "faction.trinity"
+        },
+        {
+          "v": "faction.yaki"
+        },
+        {
+          "v": "faction.xenon"
+        }
+      ]
+    },
+    "fbehaviourlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "flightbehaviour.default"
+        },
+        {
+          "v": "flightbehaviour.generic"
+        },
+        {
+          "v": "flightbehaviour.none"
+        },
+        {
+          "v": "flightbehaviour.attackrun"
+        },
+        {
+          "v": "flightbehaviour.bigfight"
+        },
+        {
+          "v": "flightbehaviour.boardingpod"
+        },
+        {
+          "v": "flightbehaviour.chase"
+        },
+        {
+          "v": "flightbehaviour.crazyivan"
+        },
+        {
+          "v": "flightbehaviour.dock"
+        },
+        {
+          "v": "flightbehaviour.dockpath"
+        },
+        {
+          "v": "flightbehaviour.dock_highspeed"
+        },
+        {
+          "v": "flightbehaviour.dogfight1"
+        },
+        {
+          "v": "flightbehaviour.dogfight2"
+        },
+        {
+          "v": "flightbehaviour.evasive_loop"
+        },
+        {
+          "v": "flightbehaviour.evasive_random"
+        },
+        {
+          "v": "flightbehaviour.evasive_roll"
+        },
+        {
+          "v": "flightbehaviour.evasive_simple"
+        },
+        {
+          "v": "flightbehaviour.evasive_spiral"
+        },
+        {
+          "v": "flightbehaviour.gaindistance"
+        },
+        {
+          "v": "flightbehaviour.guidedmissile"
+        },
+        {
+          "v": "flightbehaviour.halfloop"
+        },
+        {
+          "v": "flightbehaviour.hardbrake"
+        },
+        {
+          "v": "flightbehaviour.lasertower"
+        },
+        {
+          "v": "flightbehaviour.loop"
+        },
+        {
+          "v": "flightbehaviour.mining"
+        },
+        {
+          "v": "flightbehaviour.observe"
+        },
+        {
+          "v": "flightbehaviour.pickup"
+        },
+        {
+          "v": "flightbehaviour.racing"
+        },
+        {
+          "v": "flightbehaviour.roll_cw"
+        },
+        {
+          "v": "flightbehaviour.roll_ccw"
+        },
+        {
+          "v": "flightbehaviour.spiral"
+        },
+        {
+          "v": "flightbehaviour.steerclear"
+        },
+        {
+          "v": "flightbehaviour.swarmdrone"
+        },
+        {
+          "v": "flightbehaviour.undock"
+        },
+        {
+          "v": "flightbehaviour.undockpath"
+        }
+      ]
+    },
+    "logcategorylookup": {
+      "base": "xs:string",
+      "kind": "enum",
+      "values": [
+        {
+          "v": "general"
+        },
+        {
+          "v": "missions"
+        },
+        {
+          "v": "news"
+        },
+        {
+          "v": "upkeep"
+        },
+        {
+          "v": "diplomacy"
+        },
+        {
+          "v": "alerts"
+        },
+        {
+          "v": "tips"
+        }
+      ]
+    },
+    "loginteractionlookup": {
+      "base": "xs:string",
+      "kind": "enum",
+      "values": [
+        {
+          "v": "guidance"
+        },
+        {
+          "v": "showonmap"
+        },
+        {
+          "v": "showlocationonmap"
+        }
+      ]
+    },
+    "objectclasslookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "class.adsignobject"
+        },
+        {
+          "v": "class.asteroid"
+        },
+        {
+          "v": "class.bomb"
+        },
+        {
+          "v": "class.checkpoint"
+        },
+        {
+          "v": "class.collectable"
+        },
+        {
+          "v": "class.container"
+        },
+        {
+          "v": "class.controllable"
+        },
+        {
+          "v": "class.datavault"
+        },
+        {
+          "v": "class.defensible"
+        },
+        {
+          "v": "class.drop"
+        },
+        {
+          "v": "class.explosive"
+        },
+        {
+          "v": "class.gate"
+        },
+        {
+          "v": "class.highwayentrygate"
+        },
+        {
+          "v": "class.highwayexitgate"
+        },
+        {
+          "v": "class.lockbox"
+        },
+        {
+          "v": "class.mine"
+        },
+        {
+          "v": "class.missile"
+        },
+        {
+          "v": "class.navbeacon"
+        },
+        {
+          "v": "class.nebula"
+        },
+        {
+          "v": "class.object"
+        },
+        {
+          "v": "class.recyclable"
+        },
+        {
+          "v": "class.resourceprobe"
+        },
+        {
+          "v": "class.satellite"
+        },
+        {
+          "v": "class.ship"
+        },
+        {
+          "v": "class.spacesuit"
+        },
+        {
+          "v": "class.ship_xs"
+        },
+        {
+          "v": "class.ship_s"
+        },
+        {
+          "v": "class.ship_m"
+        },
+        {
+          "v": "class.ship_l"
+        },
+        {
+          "v": "class.ship_xl"
+        },
+        {
+          "v": "class.station"
+        }
+      ]
+    },
+    "owner": {
+      "base": "factionexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "faction.alliance"
+        },
+        {
+          "v": "faction.antigone"
+        },
+        {
+          "v": "faction.argon"
+        },
+        {
+          "v": "faction.boron"
+        },
+        {
+          "v": "faction.buccaneers"
+        },
+        {
+          "v": "faction.court"
+        },
+        {
+          "v": "faction.civilian"
+        },
+        {
+          "v": "faction.criminal"
+        },
+        {
+          "v": "faction.outlaw"
+        },
+        {
+          "v": "faction.freesplit"
+        },
+        {
+          "v": "faction.hatikvah"
+        },
+        {
+          "v": "faction.holyorder"
+        },
+        {
+          "v": "faction.holyorderfanatic"
+        },
+        {
+          "v": "faction.kaori"
+        },
+        {
+          "v": "faction.khaak"
+        },
+        {
+          "v": "faction.loanshark"
+        },
+        {
+          "v": "faction.ministry"
+        },
+        {
+          "v": "faction.ownerless"
+        },
+        {
+          "v": "faction.paranid"
+        },
+        {
+          "v": "faction.pioneers"
+        },
+        {
+          "v": "faction.player"
+        },
+        {
+          "v": "faction.scaleplate"
+        },
+        {
+          "v": "faction.scavenger"
+        },
+        {
+          "v": "faction.smuggler"
+        },
+        {
+          "v": "faction.split"
+        },
+        {
+          "v": "faction.teladi"
+        },
+        {
+          "v": "faction.terran"
+        },
+        {
+          "v": "faction.trinity"
+        },
+        {
+          "v": "faction.yaki"
+        },
+        {
+          "v": "faction.xenon"
+        }
+      ]
+    },
+    "owners": {
+      "base": "factionexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "faction.alliance"
+        },
+        {
+          "v": "faction.antigone"
+        },
+        {
+          "v": "faction.argon"
+        },
+        {
+          "v": "faction.boron"
+        },
+        {
+          "v": "faction.buccaneers"
+        },
+        {
+          "v": "faction.court"
+        },
+        {
+          "v": "faction.civilian"
+        },
+        {
+          "v": "faction.criminal"
+        },
+        {
+          "v": "faction.outlaw"
+        },
+        {
+          "v": "faction.freesplit"
+        },
+        {
+          "v": "faction.hatikvah"
+        },
+        {
+          "v": "faction.holyorder"
+        },
+        {
+          "v": "faction.holyorderfanatic"
+        },
+        {
+          "v": "faction.kaori"
+        },
+        {
+          "v": "faction.khaak"
+        },
+        {
+          "v": "faction.loanshark"
+        },
+        {
+          "v": "faction.ministry"
+        },
+        {
+          "v": "faction.ownerless"
+        },
+        {
+          "v": "faction.paranid"
+        },
+        {
+          "v": "faction.pioneers"
+        },
+        {
+          "v": "faction.player"
+        },
+        {
+          "v": "faction.scaleplate"
+        },
+        {
+          "v": "faction.scavenger"
+        },
+        {
+          "v": "faction.smuggler"
+        },
+        {
+          "v": "faction.split"
+        },
+        {
+          "v": "faction.teladi"
+        },
+        {
+          "v": "faction.terran"
+        },
+        {
+          "v": "faction.trinity"
+        },
+        {
+          "v": "faction.yaki"
+        },
+        {
+          "v": "faction.xenon"
+        }
+      ]
+    },
+    "profilelookup": {
+      "base": "xs:string",
+      "kind": "enum",
+      "values": [
+        {
+          "v": "flat"
+        },
+        {
+          "v": "increasing"
+        },
+        {
+          "v": "decreasing"
+        },
+        {
+          "v": "bell"
+        },
+        {
+          "v": "inversebell"
+        }
+      ]
+    },
+    "purposelookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "purpose.trade"
+        },
+        {
+          "v": "purpose.fight"
+        },
+        {
+          "v": "purpose.build"
+        },
+        {
+          "v": "purpose.mine"
+        },
+        {
+          "v": "purpose.auxiliary"
+        },
+        {
+          "v": "purpose.hack"
+        },
+        {
+          "v": "purpose.scan"
+        },
+        {
+          "v": "purpose.production"
+        },
+        {
+          "v": "purpose.storage"
+        },
+        {
+          "v": "purpose.connection"
+        },
+        {
+          "v": "purpose.habitation"
+        },
+        {
+          "v": "purpose.defence"
+        },
+        {
+          "v": "purpose.docking"
+        },
+        {
+          "v": "purpose.venture"
+        },
+        {
+          "v": "purpose.welfare"
+        },
+        {
+          "v": "purpose.processing"
+        },
+        {
+          "v": "purpose.salvage"
+        },
+        {
+          "v": "purpose.dismantling"
+        },
+        {
+          "v": "purpose.rig"
+        }
+      ]
+    },
+    "quadrantlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "quadrant.none"
+        },
+        {
+          "v": "quadrant.front"
+        },
+        {
+          "v": "quadrant.back"
+        },
+        {
+          "v": "quadrant.left"
+        },
+        {
+          "v": "quadrant.right"
+        },
+        {
+          "v": "quadrant.up"
+        },
+        {
+          "v": "quadrant.down"
+        }
+      ]
+    },
+    "race": {
+      "base": "raceexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "race.argon"
+        },
+        {
+          "v": "race.boron"
+        },
+        {
+          "v": "race.drone"
+        },
+        {
+          "v": "race.khaak"
+        },
+        {
+          "v": "race.split"
+        },
+        {
+          "v": "race.paranid"
+        },
+        {
+          "v": "race.teladi"
+        },
+        {
+          "v": "race.terran"
+        },
+        {
+          "v": "race.xenon"
+        }
+      ]
+    },
+    "relationchangereasonlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "relationchangereason.missioncompleted"
+        },
+        {
+          "v": "relationchangereason.destroyedfactionenemy"
+        },
+        {
+          "v": "relationchangereason.smalltalkreward"
+        },
+        {
+          "v": "relationchangereason.attackedobject"
+        },
+        {
+          "v": "relationchangereason.boardedobject"
+        },
+        {
+          "v": "relationchangereason.killedobject"
+        },
+        {
+          "v": "relationchangereason.hackingdiscovered"
+        },
+        {
+          "v": "relationchangereason.scanningdiscovered"
+        },
+        {
+          "v": "relationchangereason.illegalcargo"
+        },
+        {
+          "v": "relationchangereason.missionfailed"
+        },
+        {
+          "v": "relationchangereason.tradecompleted"
+        },
+        {
+          "v": "relationchangereason.illegalplot"
+        }
+      ]
+    },
+    "roompopulationtypeexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "roompopulationtype.build"
+        },
+        {
+          "v": "roompopulationtype.trade"
+        },
+        {
+          "v": "roompopulationtype.drones"
+        },
+        {
+          "v": "roompopulationtype.ships"
+        },
+        {
+          "v": "roompopulationtype.repair"
+        },
+        {
+          "v": "roompopulationtype.ammo"
+        },
+        {
+          "v": "roompopulationtype.bar"
+        },
+        {
+          "v": "roompopulationtype.administrative"
+        }
+      ]
+    },
+    "roomtypeexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "roomtype.bar"
+        },
+        {
+          "v": "roomtype.casino"
+        },
+        {
+          "v": "roomtype.corridor"
+        },
+        {
+          "v": "roomtype.crewquarters"
+        },
+        {
+          "v": "roomtype.embassy"
+        },
+        {
+          "v": "roomtype.factionrep"
+        },
+        {
+          "v": "roomtype.generatorroom"
+        },
+        {
+          "v": "roomtype.infrastructure"
+        },
+        {
+          "v": "roomtype.intelligenceoffice"
+        },
+        {
+          "v": "roomtype.livingroom"
+        },
+        {
+          "v": "roomtype.manager"
+        },
+        {
+          "v": "roomtype.office"
+        },
+        {
+          "v": "roomtype.playeroffice"
+        },
+        {
+          "v": "roomtype.prison"
+        },
+        {
+          "v": "roomtype.security"
+        },
+        {
+          "v": "roomtype.serverroom"
+        },
+        {
+          "v": "roomtype.serviceroom"
+        },
+        {
+          "v": "roomtype.trafficcontrol"
+        },
+        {
+          "v": "roomtype.warroom"
+        }
+      ]
+    },
+    "setoperationlookup": {
+      "base": "xs:string",
+      "kind": "enum",
+      "values": [
+        {
+          "v": "set"
+        },
+        {
+          "v": "add"
+        },
+        {
+          "v": "subtract"
+        },
+        {
+          "v": "insert"
+        }
+      ]
+    },
+    "shipclasslookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "class.ship"
+        },
+        {
+          "v": "class.spacesuit"
+        },
+        {
+          "v": "class.ship_xs"
+        },
+        {
+          "v": "class.ship_s"
+        },
+        {
+          "v": "class.ship_m"
+        },
+        {
+          "v": "class.ship_l"
+        },
+        {
+          "v": "class.ship_xl"
+        }
+      ]
+    },
+    "shiptypeexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "shiptype.personalvehicle"
+        },
+        {
+          "v": "shiptype.police"
+        },
+        {
+          "v": "shiptype.xsdrone"
+        },
+        {
+          "v": "shiptype.escapepod"
+        },
+        {
+          "v": "shiptype.distressdrone"
+        },
+        {
+          "v": "shiptype.lasertower"
+        },
+        {
+          "v": "shiptype.scout"
+        },
+        {
+          "v": "shiptype.fighter"
+        },
+        {
+          "v": "shiptype.heavyfighter"
+        },
+        {
+          "v": "shiptype.interceptor"
+        },
+        {
+          "v": "shiptype.courier"
+        },
+        {
+          "v": "shiptype.smalldrone"
+        },
+        {
+          "v": "shiptype.bomber"
+        },
+        {
+          "v": "shiptype.frigate"
+        },
+        {
+          "v": "shiptype.corvette"
+        },
+        {
+          "v": "shiptype.gunboat"
+        },
+        {
+          "v": "shiptype.transporter"
+        },
+        {
+          "v": "shiptype.miner"
+        },
+        {
+          "v": "shiptype.personnelcarrier"
+        },
+        {
+          "v": "shiptype.scavenger"
+        },
+        {
+          "v": "shiptype.destroyer"
+        },
+        {
+          "v": "shiptype.freighter"
+        },
+        {
+          "v": "shiptype.largeminer"
+        },
+        {
+          "v": "shiptype.carrier"
+        },
+        {
+          "v": "shiptype.resupplier"
+        },
+        {
+          "v": "shiptype.builder"
+        },
+        {
+          "v": "shiptype.battleship"
+        },
+        {
+          "v": "shiptype.tug"
+        },
+        {
+          "v": "shiptype.compactor"
+        },
+        {
+          "v": "shiptype.explorer"
+        },
+        {
+          "v": "shiptype.miningrig"
+        },
+        {
+          "v": "shiptype.expeditionary"
+        },
+        {
+          "v": "shiptype.envoy"
+        }
+      ]
+    },
+    "signalleaktypelookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "signalleaktype.claim"
+        },
+        {
+          "v": "signalleaktype.data"
+        },
+        {
+          "v": "signalleaktype.mission"
+        },
+        {
+          "v": "signalleaktype.voice"
+        }
+      ]
+    },
+    "skilltype": {
+      "base": "skilltypeexprlookup",
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "skilltype.boarding"
+        },
+        {
+          "v": "skilltype.engineering"
+        },
+        {
+          "v": "skilltype.management"
+        },
+        {
+          "v": "skilltype.morale"
+        },
+        {
+          "v": "skilltype.piloting"
+        }
+      ]
+    },
+    "stationclasslookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "class.station"
+        }
+      ]
+    },
+    "stationtypeexprlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "stationtype.defence"
+        },
+        {
+          "v": "stationtype.equipmentdock"
+        },
+        {
+          "v": "stationtype.factory"
+        },
+        {
+          "v": "stationtype.tradingstation"
+        },
+        {
+          "v": "stationtype.shipyard"
+        },
+        {
+          "v": "stationtype.wharf"
+        },
+        {
+          "v": "stationtype.headquarters"
+        },
+        {
+          "v": "stationtype.piratebase"
+        },
+        {
+          "v": "stationtype.recyclingfacility"
+        },
+        {
+          "v": "stationtype.factionheadquarters"
+        }
+      ]
+    },
+    "waretransportlookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "waretransport.container"
+        },
+        {
+          "v": "waretransport.solid"
+        },
+        {
+          "v": "waretransport.liquid"
+        },
+        {
+          "v": "waretransport.passenger"
+        },
+        {
+          "v": "waretransport.equipment"
+        },
+        {
+          "v": "waretransport.inventory"
+        },
+        {
+          "v": "waretransport.software"
+        },
+        {
+          "v": "waretransport.ship"
+        },
+        {
+          "v": "waretransport.workunit"
+        },
+        {
+          "v": "waretransport.research"
+        }
+      ]
+    },
+    "weaponmodelookup": {
+      "kind": "enum",
+      "patterns": [
+        " *([A-Za-z0-9_$@+\\-({\\[]|(#?'([^'\\\\]|\\\\.)*'))([A-Za-z0-9_$!?@=<>,.+\\-*/%\\^(){}\\[\\] ]|(#?'([^'\\\\]|\\\\.)*'))*"
+      ],
+      "values": [
+        {
+          "v": "weaponmode.any"
+        },
+        {
+          "v": "weaponmode.attackenemies"
+        },
+        {
+          "v": "weaponmode.attackcapital"
+        },
+        {
+          "v": "weaponmode.attackfighters"
+        },
+        {
+          "v": "weaponmode.defend"
+        },
+        {
+          "v": "weaponmode.mining"
+        },
+        {
+          "v": "weaponmode.missiledefence"
+        },
+        {
+          "v": "weaponmode.prefercapital"
+        },
+        {
+          "v": "weaponmode.preferfighters"
+        },
+        {
+          "v": "weaponmode.prefermissiles"
+        },
+        {
+          "v": "weaponmode.towing"
+        }
+      ]
+    },
+    "weapontypelookup": {
+      "base": "xs:string",
+      "kind": "enum",
+      "values": [
+        {
+          "v": "all"
+        },
+        {
+          "v": "combat"
+        },
+        {
+          "v": "mining"
+        },
+        {
+          "v": "repair"
+        }
+      ]
+    }
+  },
+  "native_scripts": {
+    "move.generic": {
+      "parameters": {
+        "abortpath": {
+          "default": "true"
+        },
+        "activepatrol": {
+          "default": "false"
+        },
+        "allowwreck": {
+          "default": "false"
+        },
+        "changecommandaction": {
+          "default": "true"
+        },
+        "debugchance": {
+          "default": "0"
+        },
+        "destination": {},
+        "disablecollisionavoidance": {
+          "default": "false"
+        },
+        "endintargetsector": {
+          "default": "false"
+        },
+        "endintargetzone": {
+          "default": "false"
+        },
+        "enforceradius": {
+          "default": "this.ship.isplayerowned"
+        },
+        "escort": {
+          "default": "null"
+        },
+        "forcesteering": {
+          "default": "false"
+        },
+        "lookat": {
+          "default": "null"
+        },
+        "noboost": {
+          "default": "false"
+        },
+        "playerprecise": {
+          "default": "false"
+        },
+        "position": {
+          "default": "null"
+        },
+        "precise": {
+          "default": "false"
+        },
+        "pursuedistance": {
+          "default": "this.assignedcontrolled.maxradarrange"
+        },
+        "pursuetargets": {
+          "default": "true"
+        },
+        "radius": {
+          "default": "null"
+        },
+        "radiusanchorpos": {
+          "default": "null"
+        },
+        "radiusanchorspace": {
+          "default": "null"
+        },
+        "recallsubordinates": {
+          "default": "true"
+        },
+        "relativemovement": {
+          "default": "false"
+        },
+        "rotation": {
+          "default": "null"
+        },
+        "stayatrelativemovement": {
+          "default": "false"
+        },
+        "stopondetect": {
+          "default": "null"
+        },
+        "strictblacklist": {
+          "default": "false"
+        },
+        "targetclasses": {
+          "default": "[]"
+        },
+        "traveltoend": {
+          "default": "false"
+        },
+        "useknownpath": {
+          "default": "this.ship.isplayerowned"
+        },
+        "uselocalhighways": {
+          "default": "not this.ship.iscapitalship"
+        },
+        "waitforatgate": {
+          "default": "null"
+        }
+      },
+      "source": "08/aiscripts/move.generic.xml",
+      "version": "23"
+    },
+    "order.collect.ship": {
+      "parameters": {
+        "debugchance": {
+          "default": "0"
+        },
+        "noattackresponse": {
+          "default": "false"
+        },
+        "targetlist": {
+          "default": "[]"
+        }
+      },
+      "source": "08/aiscripts/order.collect.ship.xml",
+      "version": "1"
+    },
+    "order.dock": {
+      "parameters": {
+        "abouttofinish": {
+          "default": "false"
+        },
+        "allowplayeronly": {
+          "default": "false"
+        },
+        "building": {
+          "default": "false"
+        },
+        "callerid": {
+          "default": "null"
+        },
+        "debugchance": {
+          "default": "0"
+        },
+        "destination": {
+          "default": "@this.ship.assigneddock.container"
+        },
+        "dockandwaitid": {
+          "default": "null"
+        },
+        "dockfollowers": {
+          "default": "this.ship.isunit"
+        },
+        "internalorder": {
+          "default": "false"
+        },
+        "isdockfollower": {
+          "default": "false"
+        },
+        "noattackresponse": {
+          "default": "false"
+        },
+        "noboost": {
+          "default": "false"
+        },
+        "recallsubordinates": {
+          "default": "true"
+        },
+        "spacesuittransfer": {
+          "default": "this.ship.isplayerowned"
+        },
+        "store": {
+          "default": "false"
+        },
+        "trading": {
+          "default": "false"
+        },
+        "untilplayerleaves": {
+          "default": "false"
+        },
+        "useentrypos": {
+          "default": "true"
+        },
+        "uselocalhighways": {
+          "default": "not this.ship.iscapitalship"
+        },
+        "ventureplatform": {
+          "default": "null"
+        },
+        "waittime": {
+          "default": "if this.ship.isclass.spacesuit then this.ship.oxygentimeremaining else 10min"
+        }
+      },
+      "source": "08/aiscripts/order.dock.xml",
+      "version": "27"
+    },
+    "order.fight.attack.object": {
+      "parameters": {
+        "allowboost": {
+          "default": "true"
+        },
+        "allowothertargets": {
+          "default": "if this.ship.isplayerowned then false else true"
+        },
+        "behaviortargetclasses": {
+          "default": "[]"
+        },
+        "boardingbehavior": {
+          "default": "null"
+        },
+        "checkrelation": {
+          "default": "if ($primarytarget and this.ship.isplayerowned) then this.ship.mayattack.{$primarytarget} else true"
+        },
+        "debugchance": {
+          "default": "0"
+        },
+        "disable": {
+          "default": "false"
+        },
+        "disablehullpercentagethreshold": {
+          "default": "20"
+        },
+        "disabletargets": {
+          "default": "[]"
+        },
+        "enforceradius": {
+          "default": "if this.ship.isplayerowned then true else false"
+        },
+        "escort": {
+          "default": "null"
+        },
+        "forceprimarytarget": {
+          "default": "false"
+        },
+        "internalorder": {
+          "default": "false"
+        },
+        "maintaindistance": {
+          "default": "true"
+        },
+        "maxrange": {
+          "default": "this.ship.maxcombatrange.all * 0.9"
+        },
+        "minrange": {
+          "default": "this.ship.maxcombatrange.all * 0.6"
+        },
+        "primarytarget": {
+          "required": "true"
+        },
+        "pursuedistance": {
+          "default": "[this.ship.maxradarrange, 1km].max"
+        },
+        "pursuetargets": {
+          "default": "if this.ship.isplayerowned then true else false"
+        },
+        "radius": {
+          "default": "null"
+        },
+        "radiusanchorpos": {
+          "default": "null"
+        },
+        "radiusanchorspace": {
+          "default": "null"
+        },
+        "secondarytargets": {
+          "default": "null"
+        },
+        "squad_attack": {
+          "default": "false"
+        },
+        "targetclasses": {
+          "default": "[]"
+        },
+        "uncover": {
+          "default": "true"
+        }
+      },
+      "source": "08/aiscripts/order.fight.attack.object.xml",
+      "version": "25"
+    },
+    "order.fight.escort": {
+      "parameters": {
+        "cannotdock": {
+          "default": "false"
+        },
+        "debugchance": {
+          "default": "0"
+        },
+        "endontargetdeath": {
+          "default": "false"
+        },
+        "formation": {
+          "default": "if (not @$target.formationshape) then param.formation.shape else @$target.formationshape"
+        },
+        "formationparam": {
+          "default": "[[@$target.formationradius, this.ship.defaultformationradius.{@$target}].max, 5km].min"
+        },
+        "maxshipsperline": {
+          "default": "if (not @$target.formationshape) then param.formation.maxshipsperline else @$target.formationmaxshipsperline"
+        },
+        "overrideformationskill": {
+          "default": "false"
+        },
+        "pursuedistance": {
+          "default": "if ((this.ship.assignment == assignment.defence) and this.ship.isplayerowned) then 20km else [@$target.maxradarrange, this.ship.maxradarrange, 1km].max"
+        },
+        "releasesignal": {
+          "default": "null"
+        },
+        "rollformation": {
+          "default": "if (not @$target.formationshape) then param.formation.rollformation else @$target.isformationrolling"
+        },
+        "rollmembers": {
+          "default": "if (not @$target.formationshape) then param.formation.rollmembers else @$target.isformationrollmembers"
+        },
+        "subordinateorders": {
+          "default": "[]"
+        },
+        "target": {
+          "default": "this.ship.commander",
+          "required": "true"
+        },
+        "thresholdbreak": {
+          "default": "100.0f"
+        },
+        "timeout": {
+          "default": "0s"
+        }
+      },
+      "source": "08/aiscripts/order.fight.escort.xml",
+      "version": "34"
+    }
+  },
+  "provenance": {
+    "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
+    "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
+    "not_installed_game_build": true,
+    "schema_metadata_date": "2026-08-28",
+    "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
+    "schema_versions": [
+      "8.00",
+      "9.00"
+    ]
+  }
+}
