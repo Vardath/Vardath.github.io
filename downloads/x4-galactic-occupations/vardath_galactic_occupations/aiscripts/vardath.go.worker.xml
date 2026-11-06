@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -49,6 +49,40 @@
     <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_scope" />
     <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" />
   </patch>
+  <patch sinceversion="4">
+    <do_if value="not player.entity.$vgo_objects?">
+      <set_value name="player.entity.$vgo_objects" exact="table[]" />
+    </do_if>
+    <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+      <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+    </do_if>
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$collectionlimit" />
+    <!-- Runs only as the active native order. No MD order injection and no queue replacement. -->
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_job" exact="$job" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="this.ship.order" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_risk" exact="$risk" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_minreward" exact="$minreward" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_preferred" exact="if $preferred.exists then $preferred.owner else null" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_debug" exact="$debugchance" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_basechance" exact="$basechance" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_cooldown" exact="$cooldown" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_sell" exact="$sell" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_sellthreshold" exact="$sellthreshold" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_beamonly" exact="$beamonly" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_transit" exact="$transit" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collect" exact="$collect" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly" exact="$resourceonly" />
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_viewtime" exact="$viewtime" />
+    <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_serial?">
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="0" />
+    </do_if>
+    <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="0" />
+    <set_value name="$sectors" exact="[]" />
+    <set_value name="$target" exact="null" />
+    <set_value name="$done" exact="false" />
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -57,7 +91,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="21" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="22" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$collectionlimit" />
@@ -131,6 +165,25 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_configured" exact="true" />
       </do_if>
       <do_if value="$job == 6">
+        <find_object_component name="$crystal_turrets" object="this.ship" class="class.turret" multiple="true" />
+        <set_value name="$compatible_turrets" exact="0" />
+        <do_for_each name="$turret" in="$crystal_turrets">
+          <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing and (not player.entity.$vgo_objects.{this.ship}.$vgo_beamonly or $turret.isbeam) and @player.entity.$vgo_objects.{$turret}.$vgo_minecrystals">
+            <set_value name="$compatible_turrets" exact="$compatible_turrets + 1" />
+          </do_if>
+        </do_for_each>
+        <do_if value="$compatible_turrets == 0">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_beamonly then 'Crystal miner waiting: select a compatible deployed beam turret, or disable beam-only' else 'Crystal miner waiting: select a compatible deployed non-missile turret'" />
+          <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_lastwarning != player.entity.$vgo_objects.{this.ship}.$vgo_status">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_lastwarning" exact="player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+            <write_to_logbook category="general" title="'Galactic Occupations: crystal miner waiting'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+          </do_if>
+          <set_command_action commandaction="commandaction.standingby" />
+          <wait min="25s" max="35s" />
+          <resume label="start" />
+        </do_if>
+      </do_if>
+      <do_if value="$job == 6">
         <run_script name="'vardath.go.crystalcount'" result="$count" />
         <do_if value="$count ge $collectionlimit">
           <do_if value="$sell">
@@ -162,6 +215,10 @@
         <param name="job" value="$job" />
       </run_script>
       <label name="nextsector" />
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope?">
+        <run_script name="'vardath.go.scope'" />
+        <set_value name="$sectors" exact="[]" />
+      </do_if>
       <do_if value="not $target.exists or ($job != 5 and @player.entity.$vgo_objects.{this.ship}.$vgo_rotate and not ($job == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists))">
         <do_if value="$job == 5">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'No unvisited accessible tour destination; checking again shortly'" />
@@ -169,7 +226,7 @@
           <resume label="start" />
         </do_if>
         <do_if value="not $sectors.count">
-          <set_value name="$sectors" exact="player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone" />
+          <set_value name="$sectors" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_scope? then player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone else []" />
         </do_if>
         <do_if value="$sectors.count gt 1 and $sectors.indexof.{this.ship.sector}">
           <remove_value name="$sectors.{$sectors.indexof.{this.ship.sector}}" />
@@ -277,6 +334,7 @@
       <do_if value="$success">
         <set_value name="$done" exact="true" />
         <run_script name="'vardath.go.reward'" />
+        <write_to_logbook category="general" title="'Galactic Occupations: work completed'" text="'%1 completed %2; %3'.[this.ship.knownname, readtext.{191180}.{100 + $job}, @player.entity.$vgo_objects.{this.ship}.$vgo_status]" />
       </do_if>
       <label name="cleanup" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="true" />

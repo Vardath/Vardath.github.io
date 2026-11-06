@@ -55,7 +55,11 @@ for path, root in trees.items():
             if conditions is not None and len(conditions) and not node.get('checkinterval'):
                 if not any(isinstance(c.tag,str) and c.tag.startswith('event_') for c in conditions.iter()):
                     error(path, f"cue {node.get('name')} needs a polling interval for non-event conditions")
+        if node.tag == 'location' and node.get('object','').startswith('player.entity.$vgo_objects'):
+            error(path, 'order location must have a valid component fallback before worker initialization')
         for value in node.attrib.values():
+            if re.search(r'@[\w.$]+(?:\.\{[^{}]*\})?[\w.$]*\?', value):
+                error(path, 'X4 expressions cannot combine @ optional lookup with ? presence testing')
             if re.search(r'(this\.ship|\$(?:ship|turret|target|candidate|module|station|deposit|poi|component))\.\$vgo_', value):
                 error(path, 'Only entities have blackboards; component state belongs in the persistent player table')
     if root.tag == 'addon':
@@ -197,7 +201,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log reviewed for reported errors',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log and debug(3).log reviewed for actual failures',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

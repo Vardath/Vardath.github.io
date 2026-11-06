@@ -20,10 +20,13 @@ class SourceContracts(unittest.TestCase):
             r=ET.parse(path).getroot()
             self.assertEqual(r.find("./order/params/param[@name='range']").get('default'),'99')
             self.assertIsNotNone(r.find(".//run_script[@name=\"'vardath.go.worker'\"]"))
-    def test_99_is_unlimited_not_fixed_jump_ceiling(self):
-        find=xml('aiscripts/vardath.go.scope.xml').find('.//find_sector_in_range')
-        self.assertIn('ge 99 then 2147483647',find.get('maxdistance'))
-        self.assertNotIn('known',find.attrib)
+    def test_99_uses_native_unlimited_search(self):
+        root=xml('aiscripts/vardath.go.scope.xml')
+        unlimited=root.find(".//do_if[@value='this.ship.$vgo_range ge 99']/find_sector_in_range")
+        self.assertIsNotNone(unlimited)
+        self.assertNotIn('maxdistance',unlimited.attrib)
+        limited=root.find('.//do_else/find_sector_in_range')
+        self.assertEqual(limited.get('maxdistance'),'this.ship.$vgo_range')
     def test_local_work_cannot_prevent_sector_rotation(self):
         a=xml('aiscripts/vardath.go.worker.xml').find('./attention/actions')
         early=next(i for i,n in enumerate(a) if any(x.get('label')=='nextsector' for x in n.findall('.//resume')))
@@ -109,6 +112,35 @@ class SourceContracts(unittest.TestCase):
                 if attention.find('.//shoot_at') is not None:self.assertEqual(attention.get('min'),'visible')
         self.assertIn('player.entity.$vgo_objects',(MOD/'aiscripts/vardath.go.worker.xml').read_text())
 
+    def test_logbook_reads_only_actual_paid_journal_and_shares_a_cursor(self):
+        for path in [MOD/'md/VGO_State.xml',BUILDER/'md/vardath_builder_contracts.xml']:
+            root=ET.parse(path).getroot()
+            cue=root.find(".//cue[@name='PaymentReceiptsV22']")
+            self.assertIsNotNone(cue)
+            self.assertEqual(cue.get('checkinterval'),'5s')
+            self.assertIsNotNone(cue.find('.//write_to_logbook'))
+            self.assertIn('vardath_income_logged_seq',ET.tostring(cue,encoding='unicode'))
+            self.assertEqual(len(list(cue.iter('reward_player'))),0)
+            self.assertEqual(len(list(cue.iter('transfer_money'))),0)
+    def test_default_wrappers_retry_and_always_have_valid_locations(self):
+        for path in (MOD/'aiscripts').glob('order.vardath.go.*.xml'):
+            root=ET.parse(path).getroot()
+            self.assertTrue(root.find('order/location').get('object').endswith('else this.ship)'))
+            self.assertIsNotNone(root.find(".//resume[@label='work']"))
+            self.assertIsNotNone(root.find('.//patch//edit_order_param'))
+    def test_crystal_prerequisite_wait_does_not_create_hold_or_income(self):
+        root=xml('aiscripts/vardath.go.worker.xml')
+        branch=root.find(".//do_if[@value='$compatible_turrets == 0']")
+        self.assertIsNotNone(branch.find("resume[@label='start']"))
+        self.assertIsNotNone(branch.find('wait'))
+        self.assertIsNotNone(branch.find('.//write_to_logbook'))
+        for tag in ['create_order','reward_player','transfer_money']:
+            self.assertEqual(len(list(branch.iter(tag))),0)
+    def test_yaki_plan_uses_supported_numeric_iteration(self):
+        path=BASE.parent/'x4-yaki-terran-habs/vardath_yaki_terran_habs/md/vardath_yaki_faction_habitats.xml'
+        root=ET.parse(path).getroot()
+        self.assertIsNone(root.find(".//do_for_each[@in='$CurrentPlan']"))
+        self.assertIsNotNone(root.find(".//do_all[@exact='$CurrentPlan.count']/set_value[@exact='$CurrentPlan.{$PlanIndex}']"))
     def test_builder_rates_and_payment_guards_are_preserved(self):
         r=ET.parse(BUILDER/'md/vardath_builder_contracts.xml').getroot()
         self.assertEqual(len(list(r.iter('reward_player'))),2)

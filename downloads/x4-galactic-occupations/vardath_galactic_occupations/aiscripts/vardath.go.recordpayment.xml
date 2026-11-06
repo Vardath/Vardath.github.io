@@ -46,7 +46,6 @@
       <do_if value="not $found">
         <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]" />
       </do_if>
-      <write_to_logbook category="general" title="$IncomeName + ' - ' + $IncomeShipName" text="$IncomeDetails" money="$IncomePaid" />
       <raise_lua_event name="'Vardath.NativeIncome.Payment'" param="player.entity" />
     </actions>
   </attention>

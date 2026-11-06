@@ -8,6 +8,17 @@
         <set_value name="$Version" exact="10" />
       </actions>
     </cue>
+    <cue name="BootstrapV22">
+      <actions>
+        <do_if value="not Init.$Ships?">
+          <set_value name="Init.$Ships" exact="[]" />
+        </do_if>
+        <do_if value="not player.entity.$vgo_objects?">
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        </do_if>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.2.2 loaded'" text="'Occupation recovery is queued. Reassign ships already on Hold Position. New verified payments are recorded as Vardath Payment in General Logbook.'" />
+      </actions>
+    </cue>
     <cue name="RuntimeV21">
       <actions>
         <do_if value="not player.entity.$vgo_objects?">
@@ -63,6 +74,11 @@
       <actions>
         <do_if value="event.param2.isplayerowned and not Init.$Ships.indexof.{event.param2}">
           <append_to_list name="Init.$Ships" exact="event.param2" />
+        </do_if>
+        <set_value name="$ship" exact="event.param2" />
+        <do_if value="$ship.isplayerowned and player.entity.$vgo_objects.{$ship}? and @player.entity.$vgo_objects.{$ship}.$vgo_reported_order != $ship.order">
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_reported_order" exact="$ship.order" />
+          <write_to_logbook category="general" title="'Galactic Occupations: behaviour active'" text="'%1 is running %2. This confirms the order started; completion and payment are recorded separately.'.[$ship.knownname, $ship.order.name]" />
         </do_if>
       </actions>
     </cue>
@@ -157,7 +173,7 @@
         </do_if>
         <set_value name="$ship" exact="event.param2" />
         <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup" />
-        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and $ship.people.free and not @$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists">
+        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and $ship.people.free and not (player.entity.$vgo_objects.{$ship}.$vgo_passenger? and @$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists)">
           <create_cue_actor cue="Init" name="$passenger">
             <select faction="$station.owner" tags="tag.crew" />
             <owner exact="$station.owner" />
@@ -194,7 +210,7 @@
         </do_if>
         <set_value name="$ship" exact="event.param2" />
         <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_taxi_dest" />
-        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and @$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists">
+        <do_if value="$ship.isplayerowned and @$ship.order.id == 'VGO_taxi' and $station.isoperational and @$ship.dock.container == $station and (player.entity.$vgo_objects.{$ship}.$vgo_passenger? and @$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists)">
           <!-- A mission passenger disembarks by removal of its passenger template; other crew are untouched. -->
           <remove_npc_template object="$ship" template="player.entity.$vgo_objects.{$ship}.$vgo_passenger" />
           <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passenger_actor.exists">
@@ -305,7 +321,7 @@
               </do_if>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers" exact="[]" />
             </do_if>
-            <do_if value="@$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists">
+            <do_if value="(player.entity.$vgo_objects.{$ship}.$vgo_passenger? and @$ship.people.{player.entity.$vgo_objects.{$ship}.$vgo_passenger}.exists)">
               <!-- Adopt the exact passenger and actor from 0.1.0, then require physical boarding. -->
               <do_if value="not player.entity.$vgo_objects.{$ship}?">
                 <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
@@ -572,7 +588,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV21" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV22" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -581,11 +597,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 21">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 22">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="21" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="22" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
           </do_if>
         </do_for_each>
@@ -598,13 +614,13 @@
       <actions>
         <set_value name="$rows" exact="[]" />
         <set_value name="$ships" exact="Init.$Ships.clone" />
-        <do_for_each name="$ship" in="md.VGO_Turrets.Init.$Ships">
+        <do_for_each name="$ship" in="if md.VGO_Turrets.Init.$Ships? then md.VGO_Turrets.Init.$Ships else []">
           <do_if value="not $ships.indexof.{$ship}">
             <append_to_list name="$ships" exact="$ship" />
           </do_if>
         </do_for_each>
         <do_for_each name="$ship" in="$ships">
-          <do_if value="$ship.isplayerowned and @player.entity.$vgo_objects.{$ship}?">
+          <do_if value="$ship.isplayerowned and player.entity.$vgo_objects.{$ship}?">
             <set_value name="$turretrows" exact="[]" />
             <find_object_component name="$turrets" object="$ship" class="class.turret" multiple="true" />
             <do_for_each name="$turret" in="$turrets">
@@ -624,6 +640,27 @@
         <do_for_each name="$object" in="player.entity.$vgo_objects.keys.list">
           <do_if value="not $object.exists">
             <remove_value name="player.entity.$vgo_objects.{$object}" />
+          </do_if>
+        </do_for_each>
+      </actions>
+    </cue>
+    <cue name="PaymentReceiptsV22" instantiate="true" checkinterval="5s">
+      <conditions>
+        <check_value value="player.entity.$vardath_income? and player.entity.$vardath_income.count gt 0 and (not player.entity.$vardath_income_logged_seq? or @player.entity.$vardath_income_seq gt player.entity.$vardath_income_logged_seq)" />
+      </conditions>
+      <actions>
+        <do_if value="not player.entity.$vardath_income_logged_seq?">
+          <set_value name="player.entity.$vardath_income_logged_seq" exact="[@player.entity.$vardath_income_seq - 20, 0].max" />
+        </do_if>
+        <set_value name="$written" exact="0" />
+        <do_for_each name="$receipt" in="player.entity.$vardath_income">
+          <do_if value="$receipt.{1} gt player.entity.$vardath_income_logged_seq and $receipt.{5} gt 0">
+            <set_value name="player.entity.$vardath_income_logged_seq" exact="$receipt.{1}" />
+            <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" entity="$receipt.{7}" />
+            <set_value name="$written" exact="$written + 1" />
+            <do_if value="$written ge 5">
+              <break />
+            </do_if>
           </do_if>
         </do_for_each>
       </actions>

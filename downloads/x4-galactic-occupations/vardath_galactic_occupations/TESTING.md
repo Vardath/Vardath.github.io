@@ -65,7 +65,7 @@ From `downloads/x4-galactic-occupations`:
 ```sh
 python tools/validate.py
 python tools/package.py
-python tools/validate.py --zip Galactic_Occupations_0.2.1_DEV.zip
+python tools/validate.py --zip Galactic_Occupations_0.2.2_DEV.zip
 ```
 
 For official schema and installed native-signature checking, extract the matching game catalogs with Egosoft's X Catalog Tool, preserving `libraries` and `aiscripts` paths, install `lxml` and run:
@@ -107,3 +107,15 @@ The 36 UI checks mock menu/widget data and execute the addon Lua; they do not cr
 8. Resume the previously registered occupation ships. Check that defaults restart once when editable, that direct orders finish first, and that no `Failed to set component...$vgo_*`, missing event-source or visible-attention parser errors recur. Re-select an occupation once if an older imported stack cannot recover.
 9. Re-run the individual occupation tests above, especially physical boarding, crystal deposits/drops, module scanning and failed/destroyed targets. These effects remain runtime-unverified until performed in X4.
 10. With the player walking on a station or outside an occupied ship, confirm Astrid brake polling no longer logs a null `player.occupiedship.isplayerowned` lookup. Check the Forge's special main gun still mounts and fires.
+
+## 0.2.2 priority acceptance: Hold Position and missing receipts
+
+1. Fully exit X4 and install the four-mod recovery bundle. Keep Protected UI enabled. Start/load the existing save; clear Logbook search/category filters, select General or All, and find the one-time loaded-version entries. Their absence means even MD startup/Logbook visibility needs investigation; it is not proof of a paid job.
+2. Reassign each intended occupation to ships already on Hold Position. For an unoccupied player ship with a captain, check `behaviour active` and retained occupation selection after the first target search, including empty sectors. Direct orders must remain ahead of default work.
+3. Confirm no recurring null location, `@ cannot be combined with ?`, absent passenger template or no-police relation errors. Saved-stack import warnings may precede recovery; recurring failures after the fresh default starts are failures.
+4. Crystal Miner requires a separate startup test and harvesting test. With a suitable S/M beam-turret ship, verify active-order acknowledgment and a real target. With no suitable turret, verify a waiting explanation and retained Crystal Miner behaviour, not Hold. A front gun alone is insufficient.
+5. In physically simulated space, observe actual deposit damage, harvested drops and native collection into pilot inventory. Compare before/after item counts; no items may be generated for waiting. Test normal turret-mode recovery, blocked arcs, save/load and player interruption. Do not report the crystal job as working until these succeed in X4.
+6. Complete a real paid delivery/service or builder invoice. Within the bounded receipt interval, check General Logbook for one `Vardath Payment` receipt with job, ship, details, amount and original time. Native account balance must change only once. With both mods active, check receipt numbers do not repeat. Previously recorded newest twenty receipts can appear without any new credit.
+7. A successful unpaid task produces `work completed`, not a fictitious financial transaction. Ordinary trade income does not become an occupation receipt without a corresponding paid mod-journal record.
+8. On a Yaki wharf already planning all three habitat sizes, wait beyond the retrofit interval and verify no duplicate habitat task. Test a missing-size plan without moving/removing existing modules. No foreach-on-constructionsequence errors should recur.
+9. Revisit the heavy sector and retain a post-fix log/crash dump if it still crashes. This update removes known script-error flooding and repeat-habitat risk; it does not establish the original crash cause or remove existing station modules.

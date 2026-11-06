@@ -10,7 +10,7 @@
       "aiscripts": 0,
       "lua": 1,
       "zip": "byte-for-byte checked",
-      "api_commands": 119,
+      "api_commands": 130,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_living_factions_builders; 17 source files, XML parse and ZIP integrity\n"
@@ -26,7 +26,7 @@
       "aiscripts": 0,
       "lua": 0,
       "zip": "byte-for-byte checked",
-      "api_commands": 31,
+      "api_commands": 32,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_yaki_terran_habs; 21 source files, XML parse and ZIP integrity\n"
@@ -106,10 +106,10 @@
       "aiscripts": 39,
       "lua": 2,
       "zip": "byte-for-byte checked",
-      "api_commands": 1679,
+      "api_commands": 1828,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 45,\n    \"commands\": 1679,\n    \"script_calls\": 70,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log reviewed for reported errors\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 45,\n    \"commands\": 1828,\n    \"script_calls\": 71,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log and debug(3).log reviewed for actual failures\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,13 +123,13 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Updated_Mods_2026-11-07.zip; 3 extensions, 101 byte-matched files\n"
+    "output": "PASS: X4_Job_Recovery_2026-11-07.zip; 4 extensions, 122 byte-matched files\n"
   },
   "command_provenance": {
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2).log: missing object/group sources at VGO_State.xml:71/349 and visible-only shoot_at at vardath.go.fire.xml:102 / task.lure.xml:33; 2026-11-07 review.",
+    "runtime_evidence": "debug(2).log and debug(3).log; the latter confirms rejected @/? combination, unsafe order locations, absent legacy passengers/police factions, saved-stack failures and constructionsequence iteration; reviewed 2026-11-07.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [
@@ -137,5 +137,5 @@
       "9.00"
     ]
   },
-  "reviewed_source": "Native transaction repair; supplied debug(2).log reviewed; post-fix runtime unavailable"
+  "reviewed_source": "Current worktree; X4 runtime unavailable"
 }

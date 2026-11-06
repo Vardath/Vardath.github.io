@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.2.1_DEV.zip --report /tmp/galactic-occupations-static-results.json
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.2.2_DEV.zip --report /tmp/galactic-occupations-static-results.json
       - name: Reported scope, boarding, survey and payment source guards
         run: python downloads/x4-galactic-occupations/tools/tests/source_contracts.py
       - name: Install Lua 5.1 for X4-compatible syntax checks

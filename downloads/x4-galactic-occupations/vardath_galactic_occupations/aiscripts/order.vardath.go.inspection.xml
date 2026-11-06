@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.inspection" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.inspection" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_inspection" name="{191180,110}" description="{191180,210}" category="combat" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
@@ -27,8 +27,7 @@
       <match shiptype="shiptype.lasertower" negate="true" />
       <match unit="false" />
     </requires>
-    <location object="player.entity.$vgo_objects.{this.ship}.$vgo_destination" condition="@player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists" />
-    <location object="player.entity.$vgo_objects.{this.ship}.$vgo_target" condition="@player.entity.$vgo_objects.{this.ship}.$vgo_target.exists and not @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists" />
+    <location object="if @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists then player.entity.$vgo_objects.{this.ship}.$vgo_destination else (if @player.entity.$vgo_objects.{this.ship}.$vgo_target.exists then player.entity.$vgo_objects.{this.ship}.$vgo_target else this.ship)" />
   </order>
   <interrupts>
     <handler ref="AttackHandler" />
@@ -37,8 +36,14 @@
     <handler ref="InspectedHandler" />
     <handler ref="TideHandler" />
   </interrupts>
+  <patch sinceversion="4">
+    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_inspection' and this.ship.order.isparameditable.home">
+      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
+    </do_if>
+  </patch>
   <attention min="unknown">
     <actions>
+      <label name="work" />
       <set_order_syncpoint_reached order="this.ship.order" />
       <run_script name="'vardath.go.worker'">
         <param name="job" value="10" />
@@ -49,6 +54,10 @@
         <param name="repeat" value="$repeat" />
         <param name="debugchance" value="$debugchance" />
       </run_script>
+      <wait exact="15s" />
+      <do_if value="this.ship.isplayerowned and this.ship.order.id == 'VGO_inspection'">
+        <resume label="work" />
+      </do_if>
     </actions>
   </attention>
 </aiscript>

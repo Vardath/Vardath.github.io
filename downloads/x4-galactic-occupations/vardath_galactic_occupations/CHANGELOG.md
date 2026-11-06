@@ -1,5 +1,16 @@
 # Version history
 
+## 0.2.2 development — failures from debug(3).log
+
+- Safe non-null order-location fallback for all twelve behaviours, including Crystal Miner; explicit retry after an unexpected worker return.
+- Native version patches/default-order recovery, missing scope/loop initialization and preserved direct-order priority. Existing Hold commands are not overwritten.
+- Removed the rejected `@... ?` expression; guarded legacy passenger template arguments, missing turret registries and ownerless police jurisdictions. Staggered finder calls to avoid immediate-return wake loops.
+- Native unlimited sector search omits maxdistance, as documented.
+- Independent shared-cursor MD receipts for actual paid journal records; recover the latest twenty once without transferring money. General Logbook now distinguishes active orders, missing crystal equipment, actual work completion and paid receipts.
+- Crystal turret preflight reports waiting and retains the behaviour. Harvesting, hits and collection remain runtime-unverified.
+- Companion fixes: Builders 1.75 receipt consumer; Kopis 1.15 Astrid equipment-use/licence fields only; Yaki Habitats 1.22 indexes constructionsequence entries instead of invalid foreach, preventing mistaken missing-habitat decisions. No station/module deletion or Forge gun changes.
+- No crash-cause assertion: the supplied log ends during asset loading without a fatal stack/dump.
+
 ## 0.2.1 development — native transaction screen repair
 
 - Removed the preview income panel and all transaction renderer/table/graph/search/paging overrides from both Occupations and Builders. The supplied log confirmed the 0.2.0 frame/menu mismatch crashed the native transaction screen.

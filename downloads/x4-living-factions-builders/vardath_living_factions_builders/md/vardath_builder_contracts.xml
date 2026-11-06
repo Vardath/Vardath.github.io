@@ -5,16 +5,16 @@
          Resetting this tick after each run must never reset this ledger. -->
     <cue name="ContractBilling" instantiate="true" checkinterval="1min">
       <conditions>
-        <check_value value="player.age ge 1min"/>
+        <check_value value="player.age ge 1min" />
       </conditions>
       <actions>
         <do_if value="not md.$VardathBuilderContracts?">
-          <set_value name="md.$VardathBuilderContracts" exact="table[]"/>
+          <set_value name="md.$VardathBuilderContracts" exact="table[]" />
         </do_if>
         <!-- First settle already registered contracts. Only active contract ships
              are sampled: no galaxy station search, no free/idle-ship wage. -->
         <do_for_each name="$Builder" in="md.$VardathBuilderContracts.keys.list">
-          <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
+          <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}" />
           <do_if value="not $Contract.$Closing">
             <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction != faction.ownerless and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
               <!-- X4 only sets buildmodule.constructionvessel once the builder
@@ -25,45 +25,45 @@
                    discard elapsed minutes. The existing $Delta gt 0s guard
                    rejects zero or negative intervals after a clock discontinuity.
                    Payment remains restricted to a still-valid NPC build contract. -->
-              <set_value name="$Delta" exact="player.age - $Contract.$LastSample"/>
+              <set_value name="$Delta" exact="player.age - $Contract.$LastSample" />
               <do_if value="$Delta gt 0s">
-                <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta"/>
+                <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta" />
                 <do_if value="$Contract.$BuildModule.isbuilding">
                   <!-- Actual construction is required for a completion reputation award. -->
-                  <set_value name="$Contract.$SawConstruction" exact="true"/>
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 100000Cr)"/>
+                  <set_value name="$Contract.$SawConstruction" exact="true" />
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 100000Cr)" />
                 </do_if>
                 <do_else>
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 25000Cr)"/>
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 25000Cr)" />
                 </do_else>
               </do_if>
-              <set_value name="$Contract.$LastSample" exact="player.age"/>
+              <set_value name="$Contract.$LastSample" exact="player.age" />
               <!-- Pay earned wages every minute, not after an entire hour.
                    Hourly rates remain unchanged; this is real-time settlement
                    of the sampled interval. The saved ledger prevents duplicate
                    payment on save/reload. -->
               <do_if value="$Contract.$Earned gt 0Cr">
-                <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned"/>
-                <set_value name="$Contract.$Earned" exact="0Cr"/>
-                <set_value name="$Contract.$Elapsed" exact="0s"/>
+                <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned" />
+                <set_value name="$Contract.$Earned" exact="0Cr" />
+                <set_value name="$Contract.$Elapsed" exact="0s" />
               </do_if>
             </do_if>
             <do_else>
               <!-- The assigned job ended or changed. Settle the remaining
                    fractional hour, close, and never accrue on that job again. -->
-              <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned"/>
-              <set_value name="$Contract.$Earned" exact="0Cr"/>
-              <set_value name="$Contract.$Elapsed" exact="0s"/>
+              <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned" />
+              <set_value name="$Contract.$Earned" exact="0Cr" />
+              <set_value name="$Contract.$Elapsed" exact="0s" />
               <!-- A completed station build, with real sampled construction,
                    earns a small, ONE-TIME reputation reward. No reward for
                    accepting a job, travel-only work, cancellations with
                    queued work, player stations, or now-hostile employers.
                    Mark inside persisted ledger before applying reputation. -->
               <do_if value="$Contract.$SawConstruction and not $Contract.$RepGranted and $Contract.$Station.exists and $Contract.$Station.buildstorage.exists and $Contract.$Faction != faction.ownerless and $Contract.$Station.trueowner == $Contract.$Faction and $Contract.$Faction.hasrelation.dock.{faction.player} and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count == 0)">
-                <set_value name="$Contract.$RepGranted" exact="true"/>
-                <add_faction_relation faction="faction.player" otherfaction="$Contract.$Faction" value="0.00064" reason="relationchangereason.missioncompleted"/>
+                <set_value name="$Contract.$RepGranted" exact="true" />
+                <add_faction_relation faction="faction.player" otherfaction="$Contract.$Faction" value="0.00064" reason="relationchangereason.missioncompleted" />
               </do_if>
-              <set_value name="$Contract.$Closing" exact="true"/>
+              <set_value name="$Contract.$Closing" exact="true" />
             </do_else>
           </do_if>
           <!-- Mission rewards are paid directly to the player, as in the
@@ -72,23 +72,23 @@
                recorded debt before awarding it, so a saved ledger can never
                pay this credit twice. -->
           <do_if value="$Contract.$Owed gt 0Cr">
-            <set_value name="$Payout" exact="$Contract.$Owed"/>
-            <set_value name="$Contract.$Owed" exact="0Cr"/>
-            <set_value name="$MoneyBefore" exact="player.money"/>
-            <set_value name="$Contract.$BuilderName" exact="if $Builder.exists then $Builder.knownname else @$Contract.$BuilderName"/>
-            <set_value name="$Contract.$StationName" exact="if $Contract.$Station.exists then $Contract.$Station.knownname else @$Contract.$StationName"/>
-            <reward_player money="$Payout"/>
-            <set_value name="$IncomePaid" exact="[player.money - $MoneyBefore, 0Cr].max"/>
-            <set_value name="$IncomeKey" exact="if $Contract.$Closing then 'builder_settlement' else (if $Contract.$BuildModule.isbuilding then 'builder_active' else 'builder_standby')"/>
-            <set_value name="$IncomeName" exact="if $Contract.$Closing then 'Builder final settlement' else (if $Contract.$BuildModule.isbuilding then 'Builder construction wages' else 'Builder standby wages')"/>
-            <set_value name="$IncomeShip" exact="$Builder"/>
-            <set_value name="$IncomeShipName" exact="if $Builder.exists then $Builder.knownname else (if $Contract.$BuilderName? then $Contract.$BuilderName else 'Lost builder')"/>
-            <set_value name="$IncomeDetails" exact="$Contract.$Faction.name + ': ' + (if $Contract.$Station.exists then $Contract.$Station.knownname else (if $Contract.$StationName? then $Contract.$StationName else 'Lost station'))"/>
-            <include_actions ref="RecordIncome"/>
-            <debug_text text="'Vardath builder payroll: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general"/>
+            <set_value name="$Payout" exact="$Contract.$Owed" />
+            <set_value name="$Contract.$Owed" exact="0Cr" />
+            <set_value name="$MoneyBefore" exact="player.money" />
+            <set_value name="$Contract.$BuilderName" exact="if $Builder.exists then $Builder.knownname else @$Contract.$BuilderName" />
+            <set_value name="$Contract.$StationName" exact="if $Contract.$Station.exists then $Contract.$Station.knownname else @$Contract.$StationName" />
+            <reward_player money="$Payout" />
+            <set_value name="$IncomePaid" exact="[player.money - $MoneyBefore, 0Cr].max" />
+            <set_value name="$IncomeKey" exact="if $Contract.$Closing then 'builder_settlement' else (if $Contract.$BuildModule.isbuilding then 'builder_active' else 'builder_standby')" />
+            <set_value name="$IncomeName" exact="if $Contract.$Closing then 'Builder final settlement' else (if $Contract.$BuildModule.isbuilding then 'Builder construction wages' else 'Builder standby wages')" />
+            <set_value name="$IncomeShip" exact="$Builder" />
+            <set_value name="$IncomeShipName" exact="if $Builder.exists then $Builder.knownname else (if $Contract.$BuilderName? then $Contract.$BuilderName else 'Lost builder')" />
+            <set_value name="$IncomeDetails" exact="$Contract.$Faction.name + ': ' + (if $Contract.$Station.exists then $Contract.$Station.knownname else (if $Contract.$StationName? then $Contract.$StationName else 'Lost station'))" />
+            <include_actions ref="RecordIncome" />
+            <debug_text text="'Vardath builder payroll: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general" />
           </do_if>
           <do_if value="$Contract.$Closing and $Contract.$Owed le 0Cr">
-            <remove_value name="md.$VardathBuilderContracts.{$Builder}"/>
+            <remove_value name="md.$VardathBuilderContracts.{$Builder}" />
           </do_if>
         </do_for_each>
         <!-- Discover contracts through the ship's actual assigned buildmodule.
@@ -96,84 +96,109 @@
              those can suppress genuine paid assignments.
              The player must own the ship; the station must be owned by an NPC
              faction and have a real queued/in-progress construction project. -->
-        <find_ship name="$Builders" owner="faction.player" class="class.ship_xl" space="player.galaxy" multiple="true"/>
+        <find_ship name="$Builders" owner="faction.player" class="class.ship_xl" space="player.galaxy" multiple="true" />
         <do_for_each name="$Builder" in="$Builders">
           <do_if value="not md.$VardathBuilderContracts.{$Builder}? and $Builder.constructionmodule.exists">
-            <set_value name="$BuildModule" exact="$Builder.constructionmodule"/>
-            <set_value name="$Station" exact="$BuildModule.buildstorage.base"/>
+            <set_value name="$BuildModule" exact="$Builder.constructionmodule" />
+            <set_value name="$Station" exact="$BuildModule.buildstorage.base" />
             <do_if value="$Station.exists and not $Station.isplayerowned and $Station.trueowner != faction.ownerless and $Station.trueowner.hasrelation.dock.{faction.player} and ($Station.buildstorage.builds.queued.count + $Station.buildstorage.builds.inprogress.count gt 0)">
-              <set_value name="md.$VardathBuilderContracts.{$Builder}" exact="table[]"/>
-              <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}"/>
-              <set_value name="$Contract.$BuildModule" exact="$BuildModule"/>
-              <set_value name="$Contract.$Station" exact="$Station"/>
-              <set_value name="$Contract.$Faction" exact="$Station.trueowner"/>
-              <set_value name="$Contract.$LastSample" exact="player.age"/>
-              <set_value name="$Contract.$Elapsed" exact="0s"/>
-              <set_value name="$Contract.$Earned" exact="0Cr"/>
-              <set_value name="$Contract.$Owed" exact="200000Cr"/>
-              <set_value name="$Contract.$Closing" exact="false"/>
-              <set_value name="$Contract.$SawConstruction" exact="false"/>
-              <set_value name="$Contract.$RepGranted" exact="false"/>
+              <set_value name="md.$VardathBuilderContracts.{$Builder}" exact="table[]" />
+              <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}" />
+              <set_value name="$Contract.$BuildModule" exact="$BuildModule" />
+              <set_value name="$Contract.$Station" exact="$Station" />
+              <set_value name="$Contract.$Faction" exact="$Station.trueowner" />
+              <set_value name="$Contract.$LastSample" exact="player.age" />
+              <set_value name="$Contract.$Elapsed" exact="0s" />
+              <set_value name="$Contract.$Earned" exact="0Cr" />
+              <set_value name="$Contract.$Owed" exact="200000Cr" />
+              <set_value name="$Contract.$Closing" exact="false" />
+              <set_value name="$Contract.$SawConstruction" exact="false" />
+              <set_value name="$Contract.$RepGranted" exact="false" />
               <!-- Pay the one-time hire fee immediately on contract
                    registration, not after the ship arrives or the faction
                    treasury allows a transfer. -->
-              <set_value name="$Payout" exact="$Contract.$Owed"/>
-              <set_value name="$Contract.$Owed" exact="0Cr"/>
-              <set_value name="$MoneyBefore" exact="player.money"/>
-              <set_value name="$Contract.$BuilderName" exact="if $Builder.exists then $Builder.knownname else @$Contract.$BuilderName"/>
-              <set_value name="$Contract.$StationName" exact="if $Contract.$Station.exists then $Contract.$Station.knownname else @$Contract.$StationName"/>
-              <reward_player money="$Payout"/>
-              <set_value name="$IncomePaid" exact="[player.money - $MoneyBefore, 0Cr].max"/>
-              <set_value name="$IncomeKey" exact="'builder_hire'"/>
-              <set_value name="$IncomeName" exact="'Builder hiring fee'"/>
-              <set_value name="$IncomeShip" exact="$Builder"/>
-              <set_value name="$IncomeShipName" exact="if $Builder.exists then $Builder.knownname else (if $Contract.$BuilderName? then $Contract.$BuilderName else 'Lost builder')"/>
-              <set_value name="$IncomeDetails" exact="$Contract.$Faction.name + ': ' + (if $Contract.$Station.exists then $Contract.$Station.knownname else (if $Contract.$StationName? then $Contract.$StationName else 'Lost station'))"/>
-              <include_actions ref="RecordIncome"/>
-              <debug_text text="'Vardath builder hire fee: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general"/>
+              <set_value name="$Payout" exact="$Contract.$Owed" />
+              <set_value name="$Contract.$Owed" exact="0Cr" />
+              <set_value name="$MoneyBefore" exact="player.money" />
+              <set_value name="$Contract.$BuilderName" exact="if $Builder.exists then $Builder.knownname else @$Contract.$BuilderName" />
+              <set_value name="$Contract.$StationName" exact="if $Contract.$Station.exists then $Contract.$Station.knownname else @$Contract.$StationName" />
+              <reward_player money="$Payout" />
+              <set_value name="$IncomePaid" exact="[player.money - $MoneyBefore, 0Cr].max" />
+              <set_value name="$IncomeKey" exact="'builder_hire'" />
+              <set_value name="$IncomeName" exact="'Builder hiring fee'" />
+              <set_value name="$IncomeShip" exact="$Builder" />
+              <set_value name="$IncomeShipName" exact="if $Builder.exists then $Builder.knownname else (if $Contract.$BuilderName? then $Contract.$BuilderName else 'Lost builder')" />
+              <set_value name="$IncomeDetails" exact="$Contract.$Faction.name + ': ' + (if $Contract.$Station.exists then $Contract.$Station.knownname else (if $Contract.$StationName? then $Contract.$StationName else 'Lost station'))" />
+              <include_actions ref="RecordIncome" />
+              <debug_text text="'Vardath builder hire fee: %1 paid for %2 by %3'.[$Payout, $Builder.knownname, $Contract.$Faction.name]" filter="general" />
             </do_if>
           </do_if>
         </do_for_each>
-        <reset_cue cue="this"/>
+        <reset_cue cue="this" />
       </actions>
     </cue>
     <library name="RecordIncome">
       <actions>
         <do_if value="$IncomePaid gt 0Cr">
           <do_if value="not player.entity.$vardath_income?">
-            <set_value name="player.entity.$vardath_income" exact="[]"/>
+            <set_value name="player.entity.$vardath_income" exact="[]" />
           </do_if>
           <do_if value="not player.entity.$vardath_income_totals?">
-            <set_value name="player.entity.$vardath_income_totals" exact="[]"/>
+            <set_value name="player.entity.$vardath_income_totals" exact="[]" />
           </do_if>
-          <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1"/>
-            <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, 'script_add']"/>
+          <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1" />
+          <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, 'script_add']" />
           <do_while value="player.entity.$vardath_income.count gt 5000">
-            <remove_value name="player.entity.$vardath_income.{1}"/>
+            <remove_value name="player.entity.$vardath_income.{1}" />
           </do_while>
-          <set_value name="$found" exact="false"/>
+          <set_value name="$found" exact="false" />
           <do_for_each name="$entry" in="player.entity.$vardath_income_totals" counter="$i">
             <do_if value="$entry.{1} == $IncomeKey">
-              <set_value name="player.entity.$vardath_income_totals.{$i}.{3}" exact="$entry.{3} + (($IncomePaid / 1Cr)f)"/>
-              <set_value name="player.entity.$vardath_income_totals.{$i}.{4}" exact="$entry.{4} + 1"/>
-              <set_value name="$found" exact="true"/>
-              <break/>
+              <set_value name="player.entity.$vardath_income_totals.{$i}.{3}" exact="$entry.{3} + (($IncomePaid / 1Cr)f)" />
+              <set_value name="player.entity.$vardath_income_totals.{$i}.{4}" exact="$entry.{4} + 1" />
+              <set_value name="$found" exact="true" />
+              <break />
             </do_if>
           </do_for_each>
           <do_if value="not $found">
-            <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]"/>
+            <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]" />
           </do_if>
-          <write_to_logbook category="general" title="$IncomeName + ' - ' + $IncomeShipName" text="$IncomeDetails" money="$IncomePaid"/>
-          <raise_lua_event name="'Vardath.NativeIncome.Payment'" param="player.entity"/>
+          <raise_lua_event name="'Vardath.NativeIncome.Payment'" param="player.entity" />
         </do_if>
       </actions>
     </library>
     <cue name="InstallIncomeUI" instantiate="true" checkinterval="10s">
       <conditions>
-        <check_value value="player.age ge 0s"/>
+        <check_value value="player.age ge 0s" />
       </conditions>
       <actions>
-        <raise_lua_event name="'Vardath.NativeIncome.Install'" param="player.entity"/>
+        <raise_lua_event name="'Vardath.NativeIncome.Install'" param="player.entity" />
+      </actions>
+    </cue>
+    <cue name="PaymentReceiptsV22" instantiate="true" checkinterval="5s">
+      <conditions>
+        <check_value value="player.entity.$vardath_income? and player.entity.$vardath_income.count gt 0 and (not player.entity.$vardath_income_logged_seq? or @player.entity.$vardath_income_seq gt player.entity.$vardath_income_logged_seq)" />
+      </conditions>
+      <actions>
+        <do_if value="not player.entity.$vardath_income_logged_seq?">
+          <set_value name="player.entity.$vardath_income_logged_seq" exact="[@player.entity.$vardath_income_seq - 20, 0].max" />
+        </do_if>
+        <set_value name="$written" exact="0" />
+        <do_for_each name="$receipt" in="player.entity.$vardath_income">
+          <do_if value="$receipt.{1} gt player.entity.$vardath_income_logged_seq and $receipt.{5} gt 0">
+            <set_value name="player.entity.$vardath_income_logged_seq" exact="$receipt.{1}" />
+            <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" entity="$receipt.{7}" />
+            <set_value name="$written" exact="$written + 1" />
+            <do_if value="$written ge 5">
+              <break />
+            </do_if>
+          </do_if>
+        </do_for_each>
+      </actions>
+    </cue>
+    <cue name="LogbookReady175">
+      <actions>
+        <write_to_logbook category="general" title="'Vardath Builders 1.75 loaded'" text="'Verified payment receipts appear in General Logbook as Vardath Payment. The latest recorded receipts are recovered without transferring money again.'" />
       </actions>
     </cue>
   </cues>

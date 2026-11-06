@@ -1,3 +1,7 @@
+# v1.15 — Astrid equipment metadata
+
+The supplied log flagged missing equipment-use and blueprint-licence fields on Astrid Tours wares. Added the supported metadata for those four wares only. Existing Forge ware definitions, special weapon assets and weapon recovery scripts are preserved. No equipment, crew or ownership is reset. In-game availability/equipment acceptance remains pending.
+
 # v1.14 — Astrid braking null guard
 
 The supplied log showed repeated brake polling errors while no ship was occupied. The controller now checks that the occupied ship exists before reading ownership or macro. Astrid Tours equipment, crew, speed and berth changes are retained. The Forge hull, special main gun and weapon recovery scripts are unchanged.

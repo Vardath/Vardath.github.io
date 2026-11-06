@@ -1,12 +1,12 @@
 # Galactic Occupations
 
-Version 0.2.1 development build, 7 November 2026. Author: Vardath.
+Version 0.2.2 development build, 7 November 2026. Author: Vardath.
 
 **Runtime verification is pending for all twelve occupations.** This extension contains executable AI orders, MD state/passenger handling, and Lua menu integration. The build environment cannot run X4. Source checks and mocked UI tests do not establish gameplay success.
 
 ## Install and assign
 
-1. Close X4. Extract `Galactic_Occupations_0.2.1_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
+1. Close X4. Extract `Galactic_Occupations_0.2.2_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
 2. Enable Galactic Occupations and load your existing save. No new game is required by the implementation.
 3. Select an eligible player-owned ship with an AI captain, open Behaviour, and select a Default Behaviour below.
 4. Use range **99 for the whole connected galaxy**, 0 for the home sector, or 1–98 for a jump radius. Risk 0/1 avoids hostile destinations; 2 permits them. Normal travel blacklists remain enforced.
@@ -31,7 +31,7 @@ Version 0.2.1 development build, 7 November 2026. Author: Vardath.
 
 ## Galaxy coverage
 
-Jobs use a cached native connected-sector graph and rotate sectors after an assignment instead of consuming local work indefinitely. The tour catalogue queries the entire operating scope and records distinct visits. Range 99 is an unlimited sentinel, rather than a literal 99-jump ceiling. Travel may discover paths and respects native travel blacklists/access restrictions. Disconnected or story-locked spaces are not fabricated as reachable.
+Jobs use a cached native connected-sector graph and rotate sectors after an assignment instead of consuming local work indefinitely. The tour catalogue queries the entire operating scope and records distinct visits. Range 99 uses the native unlimited search form (omitting maxdistance), rather than a literal 99-jump ceiling. Travel may discover paths and respects native travel blacklists/access restrictions. Disconnected or story-locked spaces are not fabricated as reachable.
 
 Galaxy coverage describes target discovery and travel. Physical effects still depend on engine simulation: crystal harvesting and demolition need high attention; module surface raycasts need loaded collision geometry; real NPC boarding needs loaded, walkable docking/ship interiors. The taxi stays docked and reports this dependency until it can place and board the actual NPCs. It does not substitute a passenger template for physical boarding. Full unattended/OOS physical boarding and harvesting are not delivered.
 
@@ -57,7 +57,7 @@ Open the player's main **Transaction Log**. The extra income panel and every tra
 
 Each unambiguously identified payment shows the occupation or builder payment type and ship in the normal transaction label. Its description includes the service, employer/station where relevant and lifetime earned total/payment count for that job. Use the native search box and time range; native filtered totals remain based on actual transactions. Builder hire, construction, standby and final-settlement payments are distinct labels. Crystal brokerage labels actual inventory-sale transfers.
 
-**Keep Protected UI Mode enabled.** This extension does not change that setting or replace protected game UI files. It imports only the native `ffi` module and uses functions already declared by the vanilla helper. The optional callback is supplied by UI Extensions and HUD; availability in the actual Protected UI/load-order combination still needs an in-game check. If that callback is unavailable, the vanilla ledger retains its normal generic payment labels. Every new verified payment also receives a detailed native Logbook receipt with its amount. The Logbook is a separate vanilla screen, not a substitute claim that custom financial labels work without the callback.
+**Keep Protected UI Mode enabled.** This extension does not change that setting or replace protected game UI files. It imports only the native `ffi` module and uses functions already declared by the vanilla helper. The optional callback is supplied by UI Extensions and HUD; availability in the actual Protected UI/load-order combination still needs an in-game check. If that callback is unavailable, the vanilla ledger retains its normal generic payment labels. Every new verified payment also receives a detailed native Logbook receipt with its amount. The Logbook is a separate vanilla screen, not a substitute claim that custom financial labels work without the callback. In 0.2.2 a shared saved cursor writes paid-journal receipts from MD independently of ship AI, at up to five receipts per five-second batch. It recovers at most the newest twenty prior records on first use, includes their original game time, and never re-pays them. Clear the Logbook search and select General/All; search for `Vardath Payment`.
 
 Service fees use native `reward_player` only after verified work. The journal records the observed account increase; crystal sales record the successful native transfer. Each new receipt is bound to an actual engine transaction ID, amount, event type and timestamp. Equal simultaneous payments are bound at payout time; ambiguous historical payments and condensed/deleted engine records remain vanilla. No historical income is replayed or added to totals a second time. The existing 5,000-payment journal and lifetime per-job counters are retained on the player entity, without the removed preview UI. In the new adapter, the financial ledger's engine retention/condensation rules still apply.
 
@@ -74,3 +74,13 @@ Job, reservation, scan, passenger and turret state now lives in persistent table
 The income callback never wraps `Helper.createTransactionLog` or `Helper.transactionLogSearchHelper`. The crystal addon still delegates native mode selections to existing handlers. Existing-ship turret integration under Protected UI is unverified; this update neither disables protection nor changes third-party UI mods.
 
 See `IMPLEMENTATION.md`, `TESTING.md`, and `CHANGELOG.md`. Development checks pass separately from all still-pending in-game lifecycle and failure tests.
+
+## 0.2.2 startup recovery and crystal acceptance
+
+Fully exit X4 before replacing files. Load the existing save, open the vanilla Logbook with all categories/search cleared, and check for the one-time `Galactic Occupations 0.2.2 loaded` entry. Assign an occupation again to any ship already on Hold Position. New running order objects produce `behaviour active`; this acknowledges the running AI, not task success. Retained current default occupations receive a one-time native editable-parameter restart; direct orders keep priority. Previously damaged imported call stacks may still report an initial import warning before recovery. This has not been tested in X4 here.
+
+The twelve order location expressions now always return a valid component, including before state is initialized. Missing legacy passengers are guarded inside the template lookup, no-police sectors are skipped, restored navigation has a safe empty list, and candidate searches yield between candidates. A helper returning early does not intentionally end its default behaviour: wrappers wait and retry.
+
+For crystal mining, use a player-owned S/M ship with an AI captain and at least one operational compatible deployed turret. With the conservative beam-only option enabled, it must be a beam turret. Select Mine Crystals for that turret if manually configured. A missing compatible selection leaves the occupation running with a Logbook/status explanation; it does not equip anything or select Hold Position. Main guns alone do not satisfy this turret-control implementation.
+
+Test startup separately from harvesting. After the `behaviour active` acknowledgment, remain near a real asteroid field so the engine loads crystals. Verify the selected target is a real deposit, a turret aims and actually damages it, the deposit's drop event supplies real objects, native collection removes those drops and increases the pilot's inventory, and any later sale produces exactly one native payment/receipt. Try a blocked arc, no beams, a destroyed deposit and an interruption/save/reload. Until these have been observed in the game, crystal harvesting remains UNVERIFIED. The turret preflight and parser corrections alone do not establish a working harvest cycle.

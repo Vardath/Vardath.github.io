@@ -1,17 +1,18 @@
-# Native transaction screen repair — three changed mods
+# Job startup and Logbook recovery — 7 November 2026
 
-[Download all three changed mods](X4_Updated_Mods_2026-11-07.zip).
+[Download all four changed mods](X4_Job_Recovery_2026-11-07.zip).
 
-**Fully exit X4 before updating.** Extract into the X4 installation directory and replace the three existing extension folders. Restart and load the existing save. Keep Protected UI Mode enabled and other extensions installed. The updated Lua overwrites the broken old income code at its existing path; a full restart clears its already-loaded wrappers.
+Fully exit X4, extract into the X4 installation directory, overwrite the four included extension folders, restart and load the existing save. Keep Protected UI enabled and other extensions installed. Reassign occupations to ships already switched to Hold Position; intentional Hold/direct orders are preserved.
 
-| Extension | Version | Current fix |
+| Extension | Version | Actual-log repair |
 |---|---|---|
-| Galactic Occupations | 0.2.1 development | Removed the extra income panels and all native transaction rendering overrides; optional text-only callback labels actual monetary rows. Fixed rejected component-state writes, event sources, migration polling and visible-only firing. |
-| Living Factions & Builders | 1.74 | Removed the income UI; labels actual native hire/wage/settlement payments through the same optional callback. Rates, debts, SETA and reputation rules retained. |
-| Kopis Production Cheat | 1.14 | Guarded Astrid braking when no player ship is occupied. Forge special weapon/assets/recovery and Astrid Tours equipment/crew retained. |
+| Galactic Occupations | 0.2.2 DEV | Safe location evaluation, saved-order recovery/retry, guarded optional passengers/police/registries, bounded candidate searches and independent paid receipts in General Logbook. Crystal prerequisites report waiting; actual harvesting remains unverified. |
+| Living Factions & Builders | 1.75 | Independent shared-cursor paid receipt writer, bounded recovery of latest twenty actual records, no duplicate money and unchanged rates/SETA/debts. |
+| Kopis Production Cheat | 1.15 | Astrid-only equipment-use/licence metadata warnings. Forge special weapon, original Forge wares, all weapon assets and existing crew/equipment remain. |
+| Yaki Terran Habitats | 1.22 | Supported indexed construction-plan inspection instead of invalid foreach; detects already planned habitats before additions. Existing modules are untouched. |
 
-The normal transaction screen keeps its list, graph, controls, account selection and monetary totals. Descriptions are attached only to actual, unambiguous native payment IDs; no synthetic financial rows or re-paid history. With the optional UIX callback, normal search can find jobs and ships; the description shows the service/employer and lifetime earned total for that job. If Protected UI or the installed callback does not permit labels, native labels remain generic. Detailed new payment receipts also appear in the ordinary Logbook, which is a separate vanilla screen.
+Clear vanilla Logbook filters, select General/All and search for **Vardath Payment**. New loaded-version and active-order entries help distinguish a running behaviour from completed work; paid receipts require actual journaled money. Ordinary vanilla trade income without a matching mod record is not relabeled as completed work. Native transaction controls remain untouched and no custom income panel returns.
 
-The connected-galaxy range, ten-capacity actual passenger system, ten-stop luxury tour and crystal/scanning mechanics remain included, with the documented physical-simulation limits. This repair does not turn pending gameplay tests into verified features.
+**Crystal mining has not been verified in game.** Fixing the failing start is separate from observing real deposit targeting, hits, drops, collection and sales. Dedicated acceptance instructions are included. The supplied crash log ends during asset loading without identifying a fatal cause; sector density is not established as the cause.
 
-The supplied `debug(2).log` was reviewed for actual failures. Static XML/API/reference/archive checks, seventeen source guards and thirty-one mocked Lua contracts are available; real X4 execution and post-fix logs are still needed. See [review](REVIEW.md), [static results](ALL_MODS_STATIC_REVIEW.json) and the included occupation acceptance instructions.
+See [review](REVIEW.md) and [seven-mod static report](ALL_MODS_STATIC_REVIEW.json). Source/XML/Lua/package checks cannot demonstrate gameplay, Protected UI runtime behavior or crash resolution.

@@ -6,6 +6,16 @@
         <set_value name="$Ships" exact="[]" />
       </actions>
     </cue>
+    <cue name="BootstrapV22">
+      <actions>
+        <do_if value="not Init.$Ships?">
+          <set_value name="Init.$Ships" exact="[]" />
+        </do_if>
+        <do_if value="not player.entity.$vgo_objects?">
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        </do_if>
+      </actions>
+    </cue>
     <!-- Repeats after loading an existing save and after UI/menu reloads. No global ship searches. -->
     <cue name="InstallUI" instantiate="true" checkinterval="10s">
       <conditions>

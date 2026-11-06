@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -88,6 +88,7 @@
       </do_elseif>
       <!-- Random selection without replacement avoids starving less-near targets. -->
       <do_while value="$candidates.count">
+        <wait exact="100ms" />
         <set_value name="$candidate" exact="if $job == 6 then $candidates.{1} else $candidates.random" />
         <remove_value name="$candidates.{$candidates.indexof.{$candidate}}" />
         <do_if value="not $candidate.exists or $candidate == this.ship">
@@ -119,7 +120,7 @@
             <continue />
           </do_if>
         </do_if>
-        <do_if value="($job == 2 or ($job == 5 and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded)) and (not $candidate.dockingallowed.{this.ship} or not $candidate.dock.{this.ship.docksize}.exists or (not this.ship.people.free and not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists))">
+        <do_if value="($job == 2 or ($job == 5 and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded)) and (not $candidate.dockingallowed.{this.ship} or not $candidate.dock.{this.ship.docksize}.exists or (not this.ship.people.free and not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not (player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists)))">
           <continue />
         </do_if>
         <do_if value="$job == 3">
@@ -153,7 +154,7 @@
         <do_if value="$job == 9 and (not $candidate.pilot.exists or not $candidate.pilot.iscommable or not $candidate.owner.hasrelation.dock.{faction.player})">
           <continue />
         </do_if>
-        <do_if value="$job == 10 and ($candidate.primarypurpose != purpose.trade or $candidate.isplayerowned or not this.ship.sector.policefaction.hasrelation.dock.{faction.player})">
+        <do_if value="$job == 10 and ($candidate.primarypurpose != purpose.trade or $candidate.isplayerowned or not this.ship.sector.policefaction or not @this.ship.sector.policefaction.hasrelation.dock.{faction.player})">
           <continue />
         </do_if>
         <do_if value="$job == 11 and (not $candidate.iscapturable or $candidate.ismission or $candidate.isinvulnerable or $candidate.hullpercentage ge 25 or not $candidate.pilot.iscommable or $candidate.isplayerowned)">

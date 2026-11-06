@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Build/check the three changed extensions as one correctly nested installation ZIP."""
+"""Build/check the four changed extensions as one correctly nested installation ZIP."""
 from pathlib import Path
 from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'downloads/x4-updates/X4_Updated_Mods_2026-11-07.zip'
+OUT=ROOT/'downloads/x4-updates/X4_Job_Recovery_2026-11-07.zip'
 SOURCES=[ROOT/'downloads'/folder/name for folder,name in [
  ('x4-galactic-occupations','vardath_galactic_occupations'),
  ('x4-living-factions-builders','vardath_living_factions_builders'),
- ('x4-kopis-production-cheat','vardath_kopis_production_cheat')]]
+ ('x4-kopis-production-cheat','vardath_kopis_production_cheat'),
+ ('x4-yaki-terran-habs','vardath_yaki_terran_habs')]]
 expected={'extensions/'+p.relative_to(src.parent).as_posix():p for src in SOURCES for p in src.rglob('*') if p.is_file()}
 if '--check' not in sys.argv:
  OUT.parent.mkdir(parents=True,exist_ok=True)

@@ -1,3 +1,7 @@
+# v1.22 — Existing-plan inspection repair
+
+The supplied debug(3).log rejected foreach iteration over a constructionsequence. The retrofit now reads the existing plan through its supported count/index properties, so already present/planned S/M/L habitats are detected before requesting additions. This prevents a failed scan from treating every size as missing. Existing stations, modules and connections are not deleted or moved. Runtime verification is pending.
+
 # v1.21 – Yaki workforce and recruiting fix
 
 The Yaki S/M/L habitation macros already specified `workforce race="yaki"`. However, the associated custom Yaki character generators were limited to `faction="[yaki]"`, so player-owned facilities could not select those actors. All Yaki-only character templates now accept both `yaki` and `faction.player`, while retaining `race="yaki"` and `owner exact="yaki"`. This is intended to avoid the generic mixed-race fallback on player-owned installations. Ordinary Terran habitat definitions are unchanged.

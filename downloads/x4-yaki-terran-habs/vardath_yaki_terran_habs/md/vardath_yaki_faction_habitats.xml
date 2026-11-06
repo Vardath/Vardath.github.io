@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mdscript name="VardathYakiFactionHabitats"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="md.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VardathYakiFactionHabitats" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
     <!-- Compatible with new and existing saves. The original yak_wharf plan
          retains its authentic Argon geometry: do NOT substitute Terran ring
@@ -10,41 +8,41 @@
          our exact Terran ring copies at actual compatible snap points. -->
     <cue name="RetrofitYakiWharfRings_v2" instantiate="true" checkinterval="10min">
       <conditions>
-        <check_value value="player.age ge 10min"/>
+        <check_value value="player.age ge 10min" />
       </conditions>
       <actions>
-        <find_station name="$YakiWharfs" owner="faction.yaki"
-                      space="player.galaxy" multiple="true"/>
+        <find_station name="$YakiWharfs" owner="faction.yaki" space="player.galaxy" multiple="true" />
         <do_for_each name="$Station" in="$YakiWharfs">
           <do_if value="$Station.exists and $Station.iswharf and $Station.trueowner == faction.yaki and $Station.buildstorage.exists">
-            <set_value name="$CurrentPlan" exact="$Station.plannedconstruction.sequence"/>
+            <set_value name="$CurrentPlan" exact="$Station.plannedconstruction.sequence" />
             <do_if value="$CurrentPlan.count gt 0">
               <!-- Inspect the station's REAL current plan, not a remembered
                    one-shot flag. Older saves may already contain only the S
                    variant; do not duplicate it when adding M and L. -->
-              <set_value name="$HasSmall" exact="false"/>
-              <set_value name="$HasMedium" exact="false"/>
-              <set_value name="$HasLarge" exact="false"/>
-              <do_for_each name="$Entry" in="$CurrentPlan">
+              <set_value name="$HasSmall" exact="false" />
+              <set_value name="$HasMedium" exact="false" />
+              <set_value name="$HasLarge" exact="false" />
+              <do_all exact="$CurrentPlan.count" counter="$PlanIndex">
+                <set_value name="$Entry" exact="$CurrentPlan.{$PlanIndex}" />
                 <do_if value="$Entry.macro == macro.vardath_yaki_hab_s_macro">
-                  <set_value name="$HasSmall" exact="true"/>
+                  <set_value name="$HasSmall" exact="true" />
                 </do_if>
                 <do_elseif value="$Entry.macro == macro.vardath_yaki_hab_m_macro">
-                  <set_value name="$HasMedium" exact="true"/>
+                  <set_value name="$HasMedium" exact="true" />
                 </do_elseif>
                 <do_elseif value="$Entry.macro == macro.vardath_yaki_hab_l_macro">
-                  <set_value name="$HasLarge" exact="true"/>
+                  <set_value name="$HasLarge" exact="true" />
                 </do_elseif>
-              </do_for_each>
-              <set_value name="$MissingRings" exact="[]"/>
+              </do_all>
+              <set_value name="$MissingRings" exact="[]" />
               <do_if value="not $HasSmall">
-                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_s_macro"/>
+                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_s_macro" />
               </do_if>
               <do_if value="not $HasMedium">
-                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_m_macro"/>
+                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_m_macro" />
               </do_if>
               <do_if value="not $HasLarge">
-                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_l_macro"/>
+                <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_l_macro" />
               </do_if>
               <!-- No duplicate orders while the NPC wharf is already
                    expanding. The engine chooses viable placement and
@@ -53,25 +51,18 @@
                 <!-- Vanilla Terran structure connectors are the original
                      adapters for Terran ring habitats. No extra Yaki
                      structure modules are defined by this extension. -->
-                <set_value name="$TerranConnectors"
-                           exact="[macro.struct_ter_base_02_macro, macro.struct_ter_cross_01_macro, macro.struct_ter_vertical_01_macro]"/>
-                <create_construction_sequence station="$Station"
-                                              base="$CurrentPlan"
-                                              macros="$MissingRings"
-                                              connectors="$TerranConnectors">
-                  <immediate result="$NewSequence"/>
+                <set_value name="$TerranConnectors" exact="[macro.struct_ter_base_02_macro, macro.struct_ter_cross_01_macro, macro.struct_ter_vertical_01_macro]" />
+                <create_construction_sequence station="$Station" base="$CurrentPlan" macros="$MissingRings" connectors="$TerranConnectors">
+                  <immediate result="$NewSequence" />
                 </create_construction_sequence>
                 <do_if value="$NewSequence">
-                  <add_build_to_expand_station result="$BuildTask"
-                                               buildobject="$Station"
-                                               object="$Station.buildstorage"
-                                               constructionplan="$NewSequence"/>
+                  <add_build_to_expand_station result="$BuildTask" buildobject="$Station" object="$Station.buildstorage" constructionplan="$NewSequence" />
                 </do_if>
               </do_if>
             </do_if>
           </do_if>
         </do_for_each>
-        <reset_cue cue="this"/>
+        <reset_cue cue="this" />
       </actions>
     </cue>
   </cues>

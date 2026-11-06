@@ -1,8 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
+  <patch sinceversion="5">
+    <set_value name="$remaining" exact="[]" />
+    <set_value name="$sectors" exact="[]" />
+    <set_value name="$stations" exact="[]" />
+    <set_value name="$destination" exact="null" />
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -24,7 +30,7 @@
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.exists and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" exact="$target" />
       </do_if>
-      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists and not this.ship.people.free">
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not (player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and not this.ship.people.free">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Taxi waiting for a free crew berth'" />
         <return value="false" />
       </do_if>

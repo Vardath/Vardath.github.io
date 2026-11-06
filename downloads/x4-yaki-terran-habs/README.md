@@ -1,3 +1,7 @@
+# v1.22 — Existing-plan inspection repair
+
+The supplied debug(3).log rejected foreach iteration over a constructionsequence. The retrofit now reads the existing plan through its supported count/index properties, so already present/planned S/M/L habitats are detected before requesting additions. This prevents a failed scan from treating every size as missing. Existing stations, modules and connections are not deleted or moved. Runtime verification is pending.
+
 # X4: Foundations — Vardath Yaki Terran Habitats
 
 **Separate mod, v1.1 (experimental X4 9.00)**. Requires the **Cradle of Humanity** DLC.

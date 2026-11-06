@@ -1,3 +1,7 @@
+# v1.75 — Independent native Logbook receipts
+
+Verified paid journal records now reach the normal General Logbook through an independent MD consumer. The shared saved cursor prevents duplicate receipts when Occupations is also installed, and recovers the latest twenty recorded payments once without transferring money again. Clear Logbook filters and search for `Vardath Payment`; allow the bounded five-second polling interval. Native transaction entries and rates/debts/SETA accounting remain unchanged. Protected UI stays enabled. Runtime confirmation is pending.
+
 # v1.74 — Native transaction screen repair
 
 Removed the custom income panel and every transaction renderer/search/paging override. Existing builder payments continue through native `reward_player` after verified accounting, at the same rates and SETA timing. The shared data-only adapter labels actual native payment IDs with hiring fee, construction/standby wages or final settlement, ship and employer/station details. Lifetime job totals are text in the payment description, not additional monetary rows. Its optional UIX callback is never a forced dependency; Protected UI stays enabled. Without a compatible callback, native labels remain generic and new paid receipts are recorded with amounts in the ordinary Logbook.

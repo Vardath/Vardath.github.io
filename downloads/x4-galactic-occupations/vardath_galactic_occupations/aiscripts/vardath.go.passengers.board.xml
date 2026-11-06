@@ -11,7 +11,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="@this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists and player.entity.$vgo_objects.{this.ship}.$vgo_job != 2">
+      <do_if value="(player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and player.entity.$vgo_objects.{this.ship}.$vgo_job != 2">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Resume Galactic Taxi Service to deliver the saved passenger first'" />
         <return value="false" />
       </do_if>
@@ -46,7 +46,7 @@
         <do_if value="@this.ship.dock.container != $pickup">
           <return value="false" />
         </do_if>
-        <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists and not this.ship.people.free">
+        <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not (player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and not this.ship.people.free">
           <return value="false" />
         </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'boarding'" />

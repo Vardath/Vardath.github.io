@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.scope" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.scope" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -9,7 +9,12 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
       <!-- 99 is an explicit unlimited sentinel, not a 99-jump ceiling. Native graph search includes undiscovered connections. -->
-      <find_sector_in_range name="$scope" object="player.entity.$vgo_objects.{this.ship}.$vgo_home" maxdistance="if player.entity.$vgo_objects.{this.ship}.$vgo_range ge 99 then 2147483647 else player.entity.$vgo_objects.{this.ship}.$vgo_range" multiple="true" accessgrantedto="faction.player" />
+      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_range ge 99">
+        <find_sector_in_range name="$scope" object="player.entity.$vgo_objects.{this.ship}.$vgo_home" multiple="true" accessgrantedto="faction.player" />
+      </do_if>
+      <do_else>
+        <find_sector_in_range name="$scope" object="player.entity.$vgo_objects.{this.ship}.$vgo_home" maxdistance="player.entity.$vgo_objects.{this.ship}.$vgo_range" multiple="true" accessgrantedto="faction.player" />
+      </do_else>
       <do_for_each name="$sector" in="$scope" counter="$i" reverse="true">
         <do_if value="not $sector.exists or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
           <remove_value name="$scope.{$i}" />

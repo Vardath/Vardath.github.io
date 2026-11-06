@@ -2,8 +2,8 @@
   "static_result": "PASS",
   "counts": {
     "xml_files": 45,
-    "commands": 1679,
-    "script_calls": 70,
+    "commands": 1828,
+    "script_calls": 71,
     "behaviours": 12,
     "ui_addons": 1
   },
@@ -12,7 +12,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2).log: missing object/group sources at VGO_State.xml:71/349 and visible-only shoot_at at vardath.go.fire.xml:102 / task.lure.xml:33; 2026-11-07 review.",
+    "runtime_evidence": "debug(2).log and debug(3).log; the latter confirms rejected @/? combination, unsafe order locations, absent legacy passengers/police factions, saved-stack failures and constructionsequence iteration; reviewed 2026-11-07.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [
@@ -20,7 +20,7 @@
       "9.00"
     ]
   },
-  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log reviewed for reported errors",
+  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log and debug(3).log reviewed for actual failures",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",
