@@ -2043,6 +2043,56 @@
       ],
       "kind": "action"
     },
+    "add_to_group": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "check": {
+          "doc": "Produce an error message if an inserted object or list element is not an existing object? (default is true)",
+          "type": "boolean"
+        },
+        "checkoperational": {
+          "doc": "Only add objects whose state is operational? (default is false) This will make sure that no existing but non-operational objects will be added, such as wrecks. Note: when an object is destroyed and possibly becomes a wreck, it is automatically removed from a group, so groups usually do not contain wrecks. However, without this attribute, adding a wreck to a group is still possible as long as it still exists in the universe. Note: non-existing objects cannot be added to a group anyway, and attempting to add an invalid object may still result in an error message unless check=\"false\" is used.",
+          "type": "boolean"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "group": {
+          "doc": "Group of objects to add to the group (cannot be used with attributes object or list)",
+          "type": "expression"
+        },
+        "groupname": {
+          "doc": "Name of the group to which the result will be added (group will be created if it does not exist yet)",
+          "required": true,
+          "type": "groupname"
+        },
+        "list": {
+          "doc": "List of objects to add to the group (cannot be used with attributes object or group)",
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object to add to the group (cannot be used with attributes list or group)",
+          "type": "expression"
+        },
+        "replace": {
+          "doc": "Replace all existing group members with the object(s) supplied (default is false) Note: consider using this instead of using <clear_group> first when repopulating group, to avoid overhead of removing and re-adding the same objects. Note: can be used even if the group does not already exist. Note: order of members in the group may be different when using this, with previously-existing members first followed by new ones.",
+          "type": "boolean"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
     "aim_turret": {
       "attributes": {
         "chance": {
@@ -2610,6 +2660,32 @@
       ],
       "kind": "action"
     },
+    "create_group": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "groupname": {
+          "doc": "Name of the group to be created",
+          "required": true,
+          "type": "lvalueexpression"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
     "create_loadout": {
       "attributes": {
         "chance": {
@@ -3109,6 +3185,42 @@
         },
         "value": {
           "doc": "Value to match (checked for non-zero if no comparison range or list is specified)",
+          "required": true,
+          "type": "expression"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "edit_order_param": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "order": {
+          "doc": "AI order",
+          "required": true,
+          "type": "order"
+        },
+        "param": {
+          "doc": "Parameter name as string",
+          "required": true,
+          "type": "expression"
+        },
+        "value": {
+          "doc": "New parameter value",
           "required": true,
           "type": "expression"
         },
@@ -12488,6 +12600,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
+    "runtime_evidence": "debug(2).log: missing object/group sources at VGO_State.xml:71/349 and visible-only shoot_at at vardath.go.fire.xml:102 / task.lure.xml:33; 2026-11-07 review.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [

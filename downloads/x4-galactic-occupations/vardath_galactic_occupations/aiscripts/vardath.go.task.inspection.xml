@@ -1,37 +1,45 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.inspection" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.inspection" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target"/>
+    <param name="target" />
   </params>
   <attention min="unknown">
     <actions>
-      <set_value name="$jurisdiction" exact="this.ship.sector.policefaction"/>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <set_value name="$jurisdiction" exact="this.ship.sector.policefaction" />
       <do_if value="not $jurisdiction or not $jurisdiction.hasrelation.dock.{faction.player} or $target.ishostileto.{this.ship} or $target.isplayerowned">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
-        <param name="target" value="$target"/>
-        <param name="distance" value="1km"/>
+        <param name="target" value="$target" />
+        <param name="distance" value="1km" />
       </run_script>
       <do_if value="not $ok">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
       <!-- NPC police perform a proximity/time inspection and inspect cargo.illegalto, rather than the player-only scan-target action. -->
-      <set_value name="this.ship.$vgo_status" exact="'Inspecting commercial cargo under local law'"/>
-      <set_command_action commandaction="commandaction.scanningto" param="$target"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Inspecting commercial cargo under local law'" />
+      <set_command_action commandaction="commandaction.scanningto" param="$target" />
       <do_all exact="12" counter="$sample">
         <do_if value="not $target.isoperational or this.ship.sector != $target.sector or $target.sector.policefaction != $jurisdiction or this.ship.distanceto.{$target} gt 2km + $target.size / 2">
-          <return value="false"/>
+          <return value="false" />
         </do_if>
-        <wait exact="1s"/>
+        <wait exact="1s" />
       </do_all>
-      <set_value name="$illegal" exact="$target.cargo.illegalto.{$jurisdiction}.count gt 0 or @$target.pilot.inventory.illegalto.{$jurisdiction}.count gt 0"/>
-      <write_to_logbook category="general" title="'Galactic Occupations: cargo inspection'" text="'%s inspected %s in %s: contraband found = %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname,$illegal]" interaction="showonmap" object="$target"/>
+      <set_value name="$illegal" exact="$target.cargo.illegalto.{$jurisdiction}.count gt 0 or @$target.pilot.inventory.illegalto.{$jurisdiction}.count gt 0" />
+      <write_to_logbook category="general" title="'Galactic Occupations: cargo inspection'" text="'%s inspected %s in %s: contraband found = %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname,$illegal]" interaction="showonmap" object="$target" />
       <do_if value="$illegal">
-        <signal_objects object="$target.sector" param="'police'" param2="$target" param3="this.ship"/>
-      <set_value name="this.ship.$vgo_verified" exact="true"/><set_value name="this.ship.$vgo_rewardfaction" exact="$jurisdiction"/></do_if>
+        <signal_objects object="$target.sector" param="'police'" param2="$target" param3="this.ship" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" exact="$jurisdiction" />
+      </do_if>
       <!-- Reporting does not change object/faction relations or manufacture a crime. -->
-      <return value="true"/>
+      <return value="true" />
     </actions>
   </attention>
 </aiscript>

@@ -1,34 +1,40 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target"/>
-    <param name="distance" default="3km"/>
+    <param name="target" />
+    <param name="distance" default="3km" />
   </params>
   <attention min="unknown">
     <actions>
-      <do_if value="not $target.exists">
-        <return value="false"/>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
       </do_if>
-      <set_value name="this.ship.$vgo_destination" exact="$target"/>
-      <set_value name="this.ship.$vgo_deadline" exact="player.age + 30min"/>
-      <set_value name="this.ship.$vgo_status" exact="'Approaching ' + $target.knownname"/>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <do_if value="not $target.exists">
+        <return value="false" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$target" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approaching ' + $target.knownname" />
       <do_all exact="3" counter="$attempt">
         <do_if value="not $target.exists">
-          <return value="false"/>
+          <return value="false" />
         </do_if>
         <do_if value="this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2">
-          <return value="true"/>
+          <return value="true" />
         </do_if>
-        <get_safe_pos result="$pos" sector="$target.sector" object="$target" min="$distance * 0.6" max="$distance * 0.9" radius="this.ship.size / 2" ignored="this.ship"/>
+        <get_safe_pos result="$pos" sector="$target.sector" object="$target" min="$distance * 0.6" max="$distance * 0.9" radius="this.ship.size / 2" ignored="this.ship" />
         <run_script name="'move.generic'" result="$ok">
-          <param name="destination" value="$target.sector"/>
-          <param name="position" value="$pos"/>
-          <param name="strictblacklist" value="true"/>
-          <param name="useknownpath" value="false"/>
+          <param name="destination" value="$target.sector" />
+          <param name="position" value="$pos" />
+          <param name="strictblacklist" value="true" />
+          <param name="useknownpath" value="false" />
         </run_script>
-        <wait exact="1s"/>
+        <wait exact="1s" />
       </do_all>
-      <return value="$target.exists and this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2"/>
+      <return value="$target.exists and this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2" />
     </actions>
   </attention>
 </aiscript>

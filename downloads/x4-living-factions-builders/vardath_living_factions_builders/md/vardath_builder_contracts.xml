@@ -147,8 +147,7 @@
             <set_value name="player.entity.$vardath_income_totals" exact="[]"/>
           </do_if>
           <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1"/>
-          <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f"/>
-          <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails]"/>
+            <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, 'script_add']"/>
           <do_while value="player.entity.$vardath_income.count gt 5000">
             <remove_value name="player.entity.$vardath_income.{1}"/>
           </do_while>
@@ -164,6 +163,8 @@
           <do_if value="not $found">
             <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]"/>
           </do_if>
+          <write_to_logbook category="general" title="$IncomeName + ' - ' + $IncomeShipName" text="$IncomeDetails" money="$IncomePaid"/>
+          <raise_lua_event name="'Vardath.NativeIncome.Payment'" param="player.entity"/>
         </do_if>
       </actions>
     </library>
@@ -172,8 +173,7 @@
         <check_value value="player.age ge 0s"/>
       </conditions>
       <actions>
-        <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f"/>
-        <raise_lua_event name="'Vardath.IncomeLedger.Install'" param="player.entity"/>
+        <raise_lua_event name="'Vardath.NativeIncome.Install'" param="player.entity"/>
       </actions>
     </cue>
   </cues>

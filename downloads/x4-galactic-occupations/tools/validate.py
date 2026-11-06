@@ -39,8 +39,25 @@ for path in sorted(MOD.rglob('*.xml')):
         scripts[root.get('name')] = root
 
 structural = {'aiscript','order','params','param','requires','location','interrupts','handler','actions','attention','init',
-              'mdscript','cues','cue','conditions','language','page','t','content','dependency','input_param'}
+              'mdscript','cues','cue','conditions','language','page','t','content','dependency','input_param','patch'}
 for path, root in trees.items():
+    parents = {child: parent for parent in root.iter() for child in parent}
+    for node in root.iter():
+        if node.tag in ('event_object_dropped_objects','event_object_changed_room') and not (node.get('object') or node.get('group')):
+            error(path, f'{node.tag} requires an explicit object or dynamic group')
+        if node.tag == 'shoot_at':
+            ancestor = node
+            while ancestor in parents and ancestor.tag != 'attention': ancestor = parents[ancestor]
+            if ancestor.tag != 'attention' or ancestor.get('min') != 'visible':
+                error(path, 'shoot_at requires a visible attention block')
+        if root.tag == 'mdscript' and node.tag == 'cue':
+            conditions = node.find('conditions')
+            if conditions is not None and len(conditions) and not node.get('checkinterval'):
+                if not any(isinstance(c.tag,str) and c.tag.startswith('event_') for c in conditions.iter()):
+                    error(path, f"cue {node.get('name')} needs a polling interval for non-event conditions")
+        for value in node.attrib.values():
+            if re.search(r'(this\.ship|\$(?:ship|turret|target|candidate|module|station|deposit|poi|component))\.\$vgo_', value):
+                error(path, 'Only entities have blackboards; component state belongs in the persistent player table')
     if root.tag == 'addon':
         counts['ui_addons'] += 1
         if root.get('name') != MOD.name:
@@ -180,7 +197,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable, save or live debug log available',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log reviewed for reported errors',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

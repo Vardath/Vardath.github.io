@@ -1,46 +1,52 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.deliver" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-  <params/>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.deliver" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params />
   <attention min="unknown">
     <actions>
-      <set_value name="$destination" exact="this.ship.$vgo_taxi_dest"/>
-      <do_if value="not $destination.isoperational">
-        <return value="0"/>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
       </do_if>
-      <set_value name="this.ship.$vgo_status" exact="'Passenger service: ' + this.ship.$vgo_passengers.count + ' passengers aboard, travelling to ' + $destination.knownname"/>
-      <set_value name="this.ship.$vgo_destination" exact="$destination"/>
-      <set_value name="this.ship.$vgo_deadline" exact="player.age + 45min"/>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <set_value name="$destination" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
+      <do_if value="not $destination.isoperational">
+        <return value="0" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: ' + player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count + ' passengers aboard, travelling to ' + $destination.knownname" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 45min" />
       <do_if value="this.ship.sector != $destination.sector">
         <run_script name="'move.generic'">
-          <param name="destination" value="$destination.sector"/>
-          <param name="endintargetsector" value="true"/>
-          <param name="strictblacklist" value="true"/>
-          <param name="useknownpath" value="false"/>
+          <param name="destination" value="$destination.sector" />
+          <param name="endintargetsector" value="true" />
+          <param name="strictblacklist" value="true" />
+          <param name="useknownpath" value="false" />
         </run_script>
       </do_if>
       <run_script name="'order.dock'">
-        <param name="destination" value="$destination"/>
-        <param name="waittime" value="5min"/>
-        <param name="internalorder" value="true"/>
+        <param name="destination" value="$destination" />
+        <param name="waittime" value="5min" />
+        <param name="internalorder" value="true" />
       </run_script>
-      <do_if value="@this.ship.dock.container != $destination or not @this.ship.$vgo_passengers.count">
-        <return value="0"/>
+      <do_if value="@this.ship.dock.container != $destination or not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count">
+        <return value="0" />
       </do_if>
-      <set_value name="this.ship.$vgo_taxi_delivered" exact="false"/>
-      <do_for_each name="$entry" in="this.ship.$vgo_passengers" counter="$i">
-        <set_value name="this.ship.$vgo_passengers.{$i}.$exitmoving" exact="false"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered" exact="false" />
+      <do_for_each name="$entry" in="player.entity.$vgo_objects.{this.ship}.$vgo_passengers" counter="$i">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_passengers.{$i}.$exitmoving" exact="false" />
       </do_for_each>
-      <set_value name="this.ship.$vgo_taxi_phase" exact="'disembarking'"/>
-      <set_value name="this.ship.$vgo_taxi_phase_started" exact="player.age"/>
-      <set_value name="this.ship.$vgo_status" exact="'Passenger service: docked, waiting for passenger to disembark'"/>
-      <set_value name="this.ship.$vgo_deadline" exact="player.age + 6min"/>
-      <do_while value="@this.ship.dock.container == $destination and not @this.ship.$vgo_taxi_delivered and player.age lt this.ship.$vgo_taxi_phase_started + 5min">
-        <wait exact="2s"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'disembarking'" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase_started" exact="player.age" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: docked, waiting for passenger to disembark'" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 6min" />
+      <do_while value="@this.ship.dock.container == $destination and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered and player.age lt player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase_started + 5min">
+        <wait exact="2s" />
       </do_while>
-      <do_if value="@this.ship.$vgo_taxi_delivered">
-        <return value="this.ship.$vgo_taxi_delivered_count"/>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered">
+        <return value="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count" />
       </do_if>
-      <return value="0"/>
+      <return value="0" />
     </actions>
   </attention>
 </aiscript>

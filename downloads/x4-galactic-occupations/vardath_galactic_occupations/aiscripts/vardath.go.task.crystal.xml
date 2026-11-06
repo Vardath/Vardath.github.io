@@ -1,44 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.crystal" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.crystal" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target"/>
+    <param name="target" />
   </params>
+  <interrupts>
+    <handler>
+      <conditions>
+        <event_object_dropped_objects object="$target" />
+      </conditions>
+      <actions>
+        <do_if value="not player.entity.$vgo_objects?">
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        </do_if>
+        <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+          <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+        </do_if>
+        <do_for_each name="$drop" in="event.param">
+          <do_if value="$drop.isclass.drop and not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.indexof.{$drop}">
+            <append_to_list name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" exact="$drop" />
+          </do_if>
+        </do_for_each>
+      </actions>
+    </handler>
+  </interrupts>
   <attention min="unknown">
     <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
       <!-- Drop list comes exclusively from event_object_dropped_objects on this exact deposit. -->
-      <set_value name="this.ship.$vgo_crystal_target" exact="$target"/>
-      <set_value name="this.ship.$vgo_crystal_drops" exact="[]"/>
-      <set_value name="this.ship.$vgo_crystal_before" exact="0"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_target" exact="$target" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" exact="[]" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_before" exact="0" />
       <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
-        <set_value name="this.ship.$vgo_crystal_before" exact="this.ship.$vgo_crystal_before + this.ship.pilot.inventory.{$ware}.count"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_before" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_before + this.ship.pilot.inventory.{$ware}.count" />
       </do_for_each>
       <run_script name="'vardath.go.fire'" result="$harvested">
-        <param name="target" value="$target"/>
-        <param name="crystal" value="true"/>
+        <param name="target" value="$target" />
+        <param name="crystal" value="true" />
       </run_script>
-      <wait exact="1s"/>
-      <set_value name="$drops" exact="this.ship.$vgo_crystal_drops.clone"/>
+      <wait exact="1s" />
+      <set_value name="$drops" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.clone" />
       <do_if value="$drops.count">
         <!-- Native Collect explicitly accepts inventory wares and removes the physical drops on pickup. -->
-        <set_value name="this.ship.$vgo_status" exact="'Collecting harvested crystal drops'"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Collecting harvested crystal drops'" />
         <run_script name="'order.collect.ship'">
-          <param name="targetlist" value="$drops"/>
+          <param name="targetlist" value="$drops" />
         </run_script>
       </do_if>
-      <set_value name="$after" exact="0"/>
+      <set_value name="$after" exact="0" />
       <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
-        <set_value name="$after" exact="$after + this.ship.pilot.inventory.{$ware}.count"/>
+        <set_value name="$after" exact="$after + this.ship.pilot.inventory.{$ware}.count" />
       </do_for_each>
-      <set_value name="$collected" exact="[$after - this.ship.$vgo_crystal_before, 0].max"/>
-      <do_if value="not this.ship.$vgo_crystal_collected?">
-        <set_value name="this.ship.$vgo_crystal_collected" exact="0"/>
+      <set_value name="$collected" exact="[$after - player.entity.$vgo_objects.{this.ship}.$vgo_crystal_before, 0].max" />
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected" exact="0" />
       </do_if>
-      <set_value name="this.ship.$vgo_crystal_collected" exact="this.ship.$vgo_crystal_collected + $collected"/>
-      <remove_value name="this.ship.$vgo_crystal_target"/>
-      <do_if value="this.ship.$vgo_sell and $after ge this.ship.$vgo_sellthreshold">
-        <run_script name="'vardath.go.sellcrystals'"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected + $collected" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_target" />
+      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_sell and $after ge player.entity.$vgo_objects.{this.ship}.$vgo_sellthreshold">
+        <run_script name="'vardath.go.sellcrystals'" />
       </do_if>
-      <return value="$collected gt 0"/>
+      <return value="$collected gt 0" />
     </actions>
   </attention>
 </aiscript>

@@ -1,26 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
-      <do_if value="not this.ship.$vgo_tour_catalogue? or @this.ship.$vgo_tour_catalogue_until lt player.age">
-        <find_object name="$catalogue" space="this.ship.$vgo_scope" multiple="true" landmark="true"/>
-        <find_object name="$catalogue" space="this.ship.$vgo_scope" multiple="true" datavault="true" append="true"/>
-        <find_object name="$catalogue" space="this.ship.$vgo_scope" class="class.anomaly" multiple="true" append="true"/>
-        <find_station name="$catalogue" space="this.ship.$vgo_scope" factionheadquarters="true" multiple="true" append="true"/>
-        <find_ship name="$catalogue" space="this.ship.$vgo_scope" owner="faction.ownerless" multiple="true" append="true"/>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue? or @player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until lt player.age">
+        <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" landmark="true" />
+        <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" datavault="true" append="true" />
+        <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" class="class.anomaly" multiple="true" append="true" />
+        <find_station name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" factionheadquarters="true" multiple="true" append="true" />
+        <find_ship name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" owner="faction.ownerless" multiple="true" append="true" />
         <do_if value="@md.VGO_Catalogue.Init.$Macros.count">
-          <find_object name="$catalogue" space="this.ship.$vgo_scope" macro="md.VGO_Catalogue.Init.$Macros" multiple="true" append="true"/>
+          <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" macro="md.VGO_Catalogue.Init.$Macros" multiple="true" append="true" />
         </do_if>
-        <set_value name="$unique" exact="[]"/>
+        <set_value name="$unique" exact="[]" />
         <do_for_each name="$poi" in="$catalogue">
           <do_if value="$poi.exists and not $unique.indexof.{$poi} and not $poi.ishostileto.{this.ship}">
-            <append_to_list name="$unique" exact="$poi"/>
+            <append_to_list name="$unique" exact="$poi" />
           </do_if>
         </do_for_each>
-        <set_value name="this.ship.$vgo_tour_catalogue" exact="$unique"/>
-        <set_value name="this.ship.$vgo_tour_catalogue_until" exact="player.age + 30min"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" exact="$unique" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until" exact="player.age + 30min" />
       </do_if>
-      <return value="this.ship.$vgo_tour_catalogue"/>
+      <return value="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" />
     </actions>
   </attention>
 </aiscript>

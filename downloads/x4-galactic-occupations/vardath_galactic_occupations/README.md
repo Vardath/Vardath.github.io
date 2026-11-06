@@ -1,16 +1,16 @@
 # Galactic Occupations
 
-Version 0.2.0 development build, 7 November 2026. Author: Vardath.
+Version 0.2.1 development build, 7 November 2026. Author: Vardath.
 
 **Runtime verification is pending for all twelve occupations.** This extension contains executable AI orders, MD state/passenger handling, and Lua menu integration. The build environment cannot run X4. Source checks and mocked UI tests do not establish gameplay success.
 
 ## Install and assign
 
-1. Close X4. Extract `Galactic_Occupations_0.2.0_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
+1. Close X4. Extract `Galactic_Occupations_0.2.1_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
 2. Enable Galactic Occupations and load your existing save. No new game is required by the implementation.
 3. Select an eligible player-owned ship with an AI captain, open Behaviour, and select a Default Behaviour below.
 4. Use range **99 for the whole connected galaxy**, 0 for the home sector, or 1–98 for a jump radius. Risk 0/1 avoids hostile destinations; 2 permits them. Normal travel blacklists remain enforced.
-5. Direct orders have native priority. Existing occupations receive a one-time internal recovery signal on upgrade; default orders and direct-order queues are preserved. Re-select the behaviour if an older saved call does not resume correctly.
+5. Direct orders have native priority. Registered occupations receive a one-time restart of their current default behaviour through the native editable home parameter; its value and other parameters are retained. Recovery waits while a direct order or player control is active. Re-select the behaviour if an older saved call does not resume correctly.
 
 ## Occupations
 
@@ -53,11 +53,15 @@ The controller excludes missiles/repair weapons, checks operational state/range/
 
 ## Payments and the main ledger
 
-Open the player's main **Transaction Log**. Its existing transaction list now displays job labels on unambiguous matching native payments and clearly identified verified receipt rows for journaled credits without a matching detailed entry. The list uses its existing search, time window and page controls. Native transaction IDs, times and amounts are preserved. The native account graph remains. The **Occupation & builder income** preview section below the graph is also retained for comparison. Switch between individual payments and lifetime earnings; filter by occupation or builder hire, construction wages, standby wages and final settlement. Each record includes game time, amount, ship and service/employer details. Descriptions and receipt rows are a UI integration with verified payment data; the game exposes no direct description argument on reward_player, so this does not claim to rewrite its internal transaction database.
+Open the player's main **Transaction Log**. The extra income panel and every transaction renderer, graph, table-body, search and paging override from 0.2.0 are removed. The replacement uses only the published `createTransactionLog_on_before_adding_entry` callback when UI Extensions supplies it. It annotates the text of real native payment rows. It cannot add rows, change amounts or create transactions.
 
-Occupation service fees use the documented native reward action after verified work. Records use the observed account increase. Passenger contract IDs and per-ship completion serials prevent repeated rewards. Tours pay only after the required distinct visits and passenger drop-off. Crystal sales record successful accounted sales, not collected or generated inventory. Discovery, scanning, lure, demolition and recruitment have no invented cash rewards; their total remains zero unless a genuine payment path is added.
+Each unambiguously identified payment shows the occupation or builder payment type and ship in the normal transaction label. Its description includes the service, employer/station where relevant and lifetime earned total/payment count for that job. Use the native search box and time range; native filtered totals remain based on actual transactions. Builder hire, construction, standby and final-settlement payments are distinct labels. Crystal brokerage labels actual inventory-sale transfers.
 
-The recent detailed journal retains 5,000 payments shared by both extensions; lifetime job totals are not truncated. Older payments before this update cannot be reliably reconstructed. Either extension can display the shared income section without requiring the other.
+**Keep Protected UI Mode enabled.** This extension does not change that setting or replace protected game UI files. It imports only the native `ffi` module and uses functions already declared by the vanilla helper. The optional callback is supplied by UI Extensions and HUD; availability in the actual Protected UI/load-order combination still needs an in-game check. If that callback is unavailable, the vanilla ledger retains its normal generic payment labels. Every new verified payment also receives a detailed native Logbook receipt with its amount. The Logbook is a separate vanilla screen, not a substitute claim that custom financial labels work without the callback.
+
+Service fees use native `reward_player` only after verified work. The journal records the observed account increase; crystal sales record the successful native transfer. Each new receipt is bound to an actual engine transaction ID, amount, event type and timestamp. Equal simultaneous payments are bound at payout time; ambiguous historical payments and condensed/deleted engine records remain vanilla. No historical income is replayed or added to totals a second time. The existing 5,000-payment journal and lifetime per-job counters are retained on the player entity, without the removed preview UI. In the new adapter, the financial ledger's engine retention/condensation rules still apply.
+
+Passenger contract IDs and completion serials prevent repeated fares. Tours pay only after the required distinct visits and passenger drop-off. Discovery, scanning, lure, demolition and recruitment do not receive invented cash rewards.
 
 Small external-faction reputation awards follow eligible verified escort/taxi/tour services, actual morale improvements, genuine contraband reports and completed trade-route escorts. A shared thirty-minute faction cooldown limits accumulation. Accounted crystal broker sales use a smaller trade award. Proximity alone does not grant reputation.
 
@@ -65,6 +69,8 @@ Small external-faction reputation awards follow eligible verified escort/taxi/to
 
 X4 9.00+; no required DLC/third-party mod for this extension. Other mods retain their own dependencies. All scripts/assets use namespaced paths; no vanilla XML/AI script is replaced. Kopis Forge, Astrid equipment, ownership and crew are untouched. Inventory Collector can remain enabled; already removed drops cannot be credited twice by native collection.
 
-The shared income addon wraps the existing transaction-log builder once. The crystal addon wraps selected existing-ship menu builders and delegates native choices. Other UI replacements or a changed game menu structure may require integration changes. Protected-UI operation is unverified; neither addon requires FFI or a third-party support API.
+Job, reservation, scan, passenger and turret state now lives in persistent tables on the **player entity**, because X4 supports entity blackboards, not ship/turret/component blackboards. The turret UI receives a small exported list; it does not query a nonexistent turret blackboard. Physical weapon commands run in visible-attention blocks. The crystal task listens for drops from its exact deposit, and the passenger room listener uses a live actor group.
+
+The income callback never wraps `Helper.createTransactionLog` or `Helper.transactionLogSearchHelper`. The crystal addon still delegates native mode selections to existing handlers. Existing-ship turret integration under Protected UI is unverified; this update neither disables protection nor changes third-party UI mods.
 
 See `IMPLEMENTATION.md`, `TESTING.md`, and `CHANGELOG.md`. Development checks pass separately from all still-pending in-game lifecycle and failure tests.

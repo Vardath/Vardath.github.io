@@ -15,12 +15,23 @@ local function eligibleTurret(turret)
     local macro, tug = GetComponentData(id64(turret), "macro", "istugweapon")
     return not IsMacroClass(macro, "missileturret") and not tug
 end
+local function shipstate(ship)
+    if not VGO.player then return nil end
+    for _, row in ipairs(GetNPCBlackboard(VGO.player, "$vgo_ui") or {}) do
+        if tostring(row[1]) == tostring(luaid(ship)) then return row end
+    end
+end
 local function enabled(ship, turret, scope)
     local object = scope == "all" and ship or turret
     local key = tostring(object) .. ":" .. scope
     if VGO.pending[key] ~= nil then return VGO.pending[key] end
-    local flag = GetNPCBlackboard(luaid(object), scope == "all" and "$vgo_crystal_all" or "$vgo_minecrystals")
-    return flag == true or flag == 1
+    local state = shipstate(ship)
+    if not state then return false end
+    if scope == "all" then return state[2] == true or state[2] == 1 end
+    for _, row in ipairs(state[5] or {}) do
+        if tostring(row[1]) == tostring(luaid(turret)) then return row[2] == true or row[2] == 1 end
+    end
+    return false
 end
 local function setmode(ship, turret, scope, on)
     -- IDs stay component values in MD; never round 64-bit IDs through tonumber().
@@ -83,11 +94,11 @@ function VGO.install()
             end
             if mode == "ship" and valid(ship) and type(ftable.addRow) == "function" and not ftable.vgo_status_added then
                 local owner = GetComponentData(id64(ship), "owner")
-                if owner == "player" and GetNPCBlackboard(luaid(ship), "$vgo_job") then
+                if owner == "player" and shipstate(ship) and shipstate(ship)[3] then
                     ftable.vgo_status_added = true
                     local statusrow = ftable:addRow(false, {})
                     statusrow[1]:setColSpan(13):createText(function ()
-                        return "Occupation: " .. tostring(GetNPCBlackboard(luaid(ship), "$vgo_status") or "Waiting for occupation update")
+                        return "Occupation: " .. tostring((shipstate(ship) or {})[4] or "Waiting for occupation update")
                     end)
                 end
             end
@@ -115,6 +126,6 @@ function VGO.install()
         outfitter.displayWeaponModeSelection = VGO.hooks.outfitter
     end
 end
-RegisterEvent("VGO.Install", function () VGO.pending = {}; VGO.install() end)
+RegisterEvent("VGO.Install", function (_, player) VGO.player = player or VGO.player; VGO.pending = {}; VGO.install() end)
 VGO.install()
 return VGO

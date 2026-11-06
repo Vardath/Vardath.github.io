@@ -1,17 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.scope" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.scope" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
       <!-- 99 is an explicit unlimited sentinel, not a 99-jump ceiling. Native graph search includes undiscovered connections. -->
-      <find_sector_in_range name="$scope" object="this.ship.$vgo_home" maxdistance="if this.ship.$vgo_range ge 99 then 2147483647 else this.ship.$vgo_range" multiple="true" accessgrantedto="faction.player"/>
+      <find_sector_in_range name="$scope" object="player.entity.$vgo_objects.{this.ship}.$vgo_home" maxdistance="if player.entity.$vgo_objects.{this.ship}.$vgo_range ge 99 then 2147483647 else player.entity.$vgo_objects.{this.ship}.$vgo_range" multiple="true" accessgrantedto="faction.player" />
       <do_for_each name="$sector" in="$scope" counter="$i" reverse="true">
-        <do_if value="not $sector.exists or (this.ship.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
-          <remove_value name="$scope.{$i}"/>
+        <do_if value="not $sector.exists or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
+          <remove_value name="$scope.{$i}" />
         </do_if>
       </do_for_each>
-      <set_value name="this.ship.$vgo_scope" exact="$scope"/>
-      <set_value name="this.ship.$vgo_scope_until" exact="player.age + 30min"/>
-      <return value="$scope"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_scope" exact="$scope" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_scope_until" exact="player.age + 30min" />
+      <return value="$scope" />
     </actions>
   </attention>
 </aiscript>

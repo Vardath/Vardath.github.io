@@ -8,7 +8,9 @@ BASE = Path(__file__).resolve().parents[2]
 MOD = BASE / 'vardath_galactic_occupations'
 BUILDER = BASE.parent / 'x4-living-factions-builders/vardath_living_factions_builders'
 
-def xml(name): return ET.parse(MOD/name).getroot()
+def source(name):
+    return (MOD/name).read_text().replace('player.entity.$vgo_objects.{this.ship}', 'this.ship').replace('player.entity.$vgo_objects.{$ship}', '$ship')
+def xml(name): return ET.fromstring(source(name))
 
 class SourceContracts(unittest.TestCase):
     def test_every_behaviour_uses_shared_galaxy_worker(self):
@@ -34,7 +36,7 @@ class SourceContracts(unittest.TestCase):
         self.assertGreaterEqual(len(searches),6)
         self.assertTrue(all(n.get('space')=='this.ship.$vgo_scope' for n in searches))
     def test_taxi_has_no_three_jump_destination_limit(self):
-        s=(MOD/'aiscripts/vardath.go.task.taxi.xml').read_text()
+        s=source('aiscripts/vardath.go.task.taxi.xml')
         self.assertIn('this.ship.$vgo_scope.clone',s)
         self.assertNotIn('maxdistance="3"',s)
     def test_passengers_are_capped_and_capacity_is_never_forced(self):
@@ -57,7 +59,7 @@ class SourceContracts(unittest.TestCase):
         r=xml('md/VGO_State.xml').find(".//cue[@name='PassengerTransfersV2']")
         ack=r.find(".//do_if[@value='$allaboard']/set_value[@name='$ship.$vgo_taxi_boarded']")
         self.assertIsNotNone(ack)
-        board=(MOD/'aiscripts/vardath.go.passengers.board.xml').read_text()
+        board=source('aiscripts/vardath.go.passengers.board.xml')
         self.assertIn('not $entry.$boarded',board)
         self.assertNotIn('wait exact="2s"/><return value="true"',board)
     def test_tours_need_ten_unique_stops_and_multiple_sectors(self):
@@ -70,11 +72,11 @@ class SourceContracts(unittest.TestCase):
         self.assertIsNotNone(gate.find(".//run_script[@name=\"'vardath.go.passengers.deliver'\"]"))
         self.assertIn('vgo_tour_trip.indexof',ET.tostring(task,encoding='unicode'))
     def test_passenger_fares_have_persistent_duplicate_guard(self):
-        s=(MOD/'aiscripts/vardath.go.reward.xml').read_text()
+        s=source('aiscripts/vardath.go.reward.xml')
         self.assertIn('vgo_taxi_completed_id == @this.ship.$vgo_taxi_paid_id',s)
         self.assertIn('name="this.ship.$vgo_taxi_paid_id"',s)
     def test_scanner_does_not_reject_normal_ai_scanner_levels(self):
-        s=(MOD/'aiscripts/vardath.go.task.scanner.xml').read_text()
+        s=source('aiscripts/vardath.go.task.scanner.xml')
         self.assertNotIn('this.ship.maxscanlevel lt player.maxscanlevel',s)
         self.assertNotIn('$module.secrecylevel gt this.ship.maxscanlevel',s)
     def test_survey_reveals_only_after_real_surface_and_los_work(self):
@@ -87,10 +89,26 @@ class SourceContracts(unittest.TestCase):
     def test_large_stations_are_not_permanently_capped_at_80_modules(self):
         r=xml('aiscripts/vardath.go.scanmodules.xml')
         self.assertTrue(all('sortlimit' not in n.attrib for n in r.iter('find_object_component')))
-    def test_income_files_are_identical_and_both_addons_load_them(self):
+    def test_native_receipt_adapter_has_no_layout_or_helper_overrides(self):
         self.assertEqual((MOD/'ui/vardath_income_ledger.lua').read_bytes(),(BUILDER/'ui/vardath_income_ledger.lua').read_bytes())
         for folder in [MOD,BUILDER]:
             self.assertIsNotNone(ET.parse(folder/'ui.xml').find(".//file[@name='ui/vardath_income_ledger.lua']"))
+        lua=(MOD/'ui/vardath_income_ledger.lua').read_text()
+        for forbidden in ['frame.content','frame:addTable','createTransactionLog =','transactionLogSearchHelper =','addPanel','mergeNative']:
+            self.assertNotIn(forbidden,lua)
+        self.assertIn('pcall(Helper.registerCallback, "createTransactionLog_on_before_adding_entry"',lua)
+        self.assertIn('return ok and result or entry',lua)
+        self.assertNotIn('require("extensions.',lua)
+    def test_reported_runtime_constraints(self):
+        for path in MOD.rglob('*.xml'):
+            r=ET.parse(path).getroot()
+            for node in r.iter():
+                if node.tag in ['event_object_dropped_objects','event_object_changed_room']:
+                    self.assertTrue(node.get('object') or node.get('group'))
+            for attention in r.findall('attention'):
+                if attention.find('.//shoot_at') is not None:self.assertEqual(attention.get('min'),'visible')
+        self.assertIn('player.entity.$vgo_objects',(MOD/'aiscripts/vardath.go.worker.xml').read_text())
+
     def test_builder_rates_and_payment_guards_are_preserved(self):
         r=ET.parse(BUILDER/'md/vardath_builder_contracts.xml').getroot()
         self.assertEqual(len(list(r.iter('reward_player'))),2)
@@ -99,7 +117,7 @@ class SourceContracts(unittest.TestCase):
             self.assertIn(required,s)
         self.assertEqual(len(r.findall(".//include_actions[@ref='RecordIncome']")),2)
     def test_income_records_use_actual_balance_change(self):
-        s=(MOD/'aiscripts/vardath.go.reward.xml').read_text()
+        s=source('aiscripts/vardath.go.reward.xml')
         self.assertIn('player.money - $moneybefore',s)
         self.assertIn("'vardath.go.recordpayment'",s)
         self.assertIn('player.money - $MoneyBefore',(BUILDER/'md/vardath_builder_contracts.xml').read_text())

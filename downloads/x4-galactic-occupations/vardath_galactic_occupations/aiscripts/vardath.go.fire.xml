@@ -1,111 +1,129 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target"/>
-    <param name="crystal" default="true"/>
+    <param name="target" />
+    <param name="crystal" default="true" />
   </params>
-  <attention min="unknown">
+  <attention min="visible">
     <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
       <!-- Scoped Mine Crystals controller. Does not write weapon modes, armed state, equipment, or weapon groups. -->
       <do_if value="not $target.exists or this.ship.attention lt attention.visible or this.ship.iscapitalship">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
-      <set_value name="$initialhull" exact="$target.hull"/>
-      <set_value name="$lastdamage" exact="player.age"/>
-      <set_value name="$previoushull" exact="$target.hull"/>
-      <set_value name="$end" exact="player.age + 2min"/>
-      <set_value name="this.ship.$vgo_turrets" exact="[]"/>
-      <find_object_component name="$allturrets" object="this.ship" class="class.turret" multiple="true" checkoperational="true"/>
+      <set_value name="$initialhull" exact="$target.hull" />
+      <set_value name="$lastdamage" exact="player.age" />
+      <set_value name="$previoushull" exact="$target.hull" />
+      <set_value name="$end" exact="player.age + 2min" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_turrets" exact="[]" />
+      <find_object_component name="$allturrets" object="this.ship" class="class.turret" multiple="true" checkoperational="true" />
       <do_for_each name="$turret" in="$allturrets">
-        <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing and (not $crystal or not this.ship.$vgo_beamonly or $turret.isbeam) and (not $crystal or @this.ship.$vgo_crystal_configured != true or @$turret.$vgo_minecrystals)">
-          <append_to_list name="this.ship.$vgo_turrets" exact="$turret"/>
+        <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing and (not $crystal or not player.entity.$vgo_objects.{this.ship}.$vgo_beamonly or $turret.isbeam) and (not $crystal or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_configured != true or @player.entity.$vgo_objects.{$turret}.$vgo_minecrystals)">
+          <append_to_list name="player.entity.$vgo_objects.{this.ship}.$vgo_turrets" exact="$turret" />
         </do_if>
       </do_for_each>
-      <do_if value="$crystal and not this.ship.$vgo_turrets.count">
-        <set_value name="this.ship.$vgo_status" exact="'Select Mine Crystals on a compatible deployed beam turret (or disable beam-only)'"/>
-        <return value="false"/>
+      <do_if value="$crystal and not player.entity.$vgo_objects.{this.ship}.$vgo_turrets.count">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Select Mine Crystals on a compatible deployed beam turret (or disable beam-only)'" />
+        <return value="false" />
       </do_if>
-      <set_value name="$range" exact="[this.ship.maxcombatrange.lasers.all * 0.65, 2km].min"/>
+      <set_value name="$range" exact="[this.ship.maxcombatrange.lasers.all * 0.65, 2km].min" />
       <do_if value="$crystal">
-        <set_value name="$range" exact="[this.ship.maxcombatrange.turrets * 0.6, 1500m].min"/>
+        <set_value name="$range" exact="[this.ship.maxcombatrange.turrets * 0.6, 1500m].min" />
       </do_if>
       <do_if value="$range lt 300m">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
-        <param name="target" value="$target"/>
-        <param name="distance" value="$range"/>
+        <param name="target" value="$target" />
+        <param name="distance" value="$range" />
       </run_script>
       <do_if value="not $ok">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
-      <set_region_object_persistence object="$target.parent" chance="if $crystal then 100 else 0"/>
-      <set_value name="this.ship.$vgo_firing" exact="true"/>
-      <set_value name="this.ship.$vgo_status" exact="if $crystal then 'Mine Crystals: aiming at the deposit' else 'Demolishing asteroid'"/>
+      <set_region_object_persistence object="$target.parent" chance="if $crystal then 100 else 0" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_firing" exact="true" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $crystal then 'Mine Crystals: aiming at the deposit' else 'Demolishing asteroid'" />
       <do_while value="$target.exists and $target.hull gt 0 and player.age lt $end and this.ship.attention ge attention.visible">
         <do_if value="this.ship.hullpercentage lt 65 or (this.ship.maxshield gt 0 and this.ship.shieldpercentage lt 25)">
-          <break/>
+          <break />
         </do_if>
         <do_if value="$target.hull lt $previoushull">
-          <set_value name="$lastdamage" exact="player.age"/>
-          <set_value name="$previoushull" exact="$target.hull"/>
+          <set_value name="$lastdamage" exact="player.age" />
+          <set_value name="$previoushull" exact="$target.hull" />
         </do_if>
         <do_if value="player.age gt $lastdamage + 20s">
-          <break comment="No damage: wrong arc, occlusion or unsuitable weapons. Release and retry another deposit."/>
+          <break comment="No damage: wrong arc, occlusion or unsuitable weapons. Release and retry another deposit." />
         </do_if>
         <find_ship name="$nearby" space="$target.sector" excluded="this.ship" multiple="true">
-          <match_distance object="$target" max="1500m"/>
+          <match_distance object="$target" max="1500m" />
         </find_ship>
-        <set_value name="$unsafe" exact="false"/>
+        <set_value name="$unsafe" exact="false" />
         <do_for_each name="$ship" in="$nearby">
           <do_if value="not $ship.ishostileto.{this.ship}">
-            <set_value name="$unsafe" exact="true"/>
-            <break/>
+            <set_value name="$unsafe" exact="true" />
+            <break />
           </do_if>
         </do_for_each>
         <find_station name="$nearstation" space="$target.sector">
-          <match_distance object="$target" max="5km"/>
+          <match_distance object="$target" max="5km" />
         </find_station>
         <do_if value="$unsafe or $nearstation.exists">
-          <set_value name="this.ship.$vgo_status" exact="'Firing withheld: nearby traffic or station'"/>
-          <break/>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Firing withheld: nearby traffic or station'" />
+          <break />
         </do_if>
-        <set_value name="this.ship.$vgo_fireuntil" exact="player.age + 3s"/>
-        <set_value name="$canfire" exact="false"/>
-        <do_for_each name="$turret" in="this.ship.$vgo_turrets">
-          <do_if value="$turret.isoperational and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @$turret.$vgo_minecrystals)">
-            <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_fireuntil" exact="player.age + 3s" />
+        <set_value name="$canfire" exact="false" />
+        <do_for_each name="$turret" in="player.entity.$vgo_objects.{this.ship}.$vgo_turrets">
+          <do_if value="$turret.isoperational and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @player.entity.$vgo_objects.{$turret}.$vgo_minecrystals)">
+            <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true" />
             <do_if value="$los">
-              <aim_turret turret="$turret" target="$target"/>
-              <set_value name="$canfire" exact="true"/>
+              <aim_turret turret="$turret" target="$target" />
+              <set_value name="$canfire" exact="true" />
             </do_if>
             <do_else>
-              <reset_turret turret="$turret"/>
+              <reset_turret turret="$turret" />
             </do_else>
           </do_if>
         </do_for_each>
-        <wait exact="500ms"/>
+        <wait exact="500ms" />
         <do_if value="not $target.exists">
-          <break/>
+          <break />
         </do_if>
-        <do_for_each name="$turret" in="this.ship.$vgo_turrets">
-          <do_if value="$turret.isoperational and $turret.isreadytofire and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @$turret.$vgo_minecrystals)">
-            <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true"/>
+        <do_for_each name="$turret" in="player.entity.$vgo_objects.{this.ship}.$vgo_turrets">
+          <do_if value="$turret.isoperational and $turret.isreadytofire and $turret.distanceto.{$target} le $turret.maxfirerange * 0.9 and (not $crystal or @player.entity.$vgo_objects.{$turret}.$vgo_minecrystals)">
+            <check_line_of_sight name="$los" object="$turret" target="$target" useaimtarget="true" />
             <do_if value="$los">
-              <fire_turret turret="$turret"/>
+              <fire_turret turret="$turret" />
             </do_if>
           </do_if>
         </do_for_each>
         <do_if value="not $crystal">
-          <check_line_of_sight name="$los" object="this.ship" target="$target" useaimtarget="true"/>
+          <check_line_of_sight name="$los" object="this.ship" target="$target" useaimtarget="true" />
           <do_if value="$los">
-            <shoot_at object="this.ship" target="$target" fixedtarget="true" missiles="false" tolerance="1deg"/>
+            <shoot_at object="this.ship" target="$target" fixedtarget="true" missiles="false" tolerance="1deg" />
           </do_if>
         </do_if>
-        <wait exact="500ms"/>
+        <wait exact="500ms" />
       </do_while>
-      <run_script name="'vardath.go.release'"/>
-      <return value="not $target.exists or $target.hull le 0"/>
+      <run_script name="'vardath.go.release'" />
+      <return value="not $target.exists or $target.hull le 0" />
+    </actions>
+  </attention>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Physical weapon operation requires visible attention; searching elsewhere'" />
+      <return value="false" />
     </actions>
   </attention>
 </aiscript>

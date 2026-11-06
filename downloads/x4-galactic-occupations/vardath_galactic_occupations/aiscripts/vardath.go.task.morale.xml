@@ -1,54 +1,66 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.morale" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.morale" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target"/>
+    <param name="target" />
   </params>
   <attention min="unknown">
     <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
       <do_if value="not $target.isoperational or not $target.pilot.iscommable">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
-        <param name="target" value="$target"/>
-        <param name="distance" value="3km"/>
+        <param name="target" value="$target" />
+        <param name="distance" value="3km" />
       </run_script>
       <do_if value="not $ok">
-        <return value="false"/>
+        <return value="false" />
       </do_if>
-      <set_value name="this.ship.$vgo_status" exact="'Providing crew morale support'"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Providing crew morale support'" />
       <do_all exact="6" counter="$sample">
         <do_if value="not $target.isoperational or $target.ishostileto.{this.ship} or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 5km + $target.size / 2">
-          <return value="false"/>
+          <return value="false" />
         </do_if>
-        <wait exact="5s"/>
+        <wait exact="5s" />
       </do_all>
-      <set_value name="$improved" exact="0"/>
+      <set_value name="$improved" exact="0" />
       <do_for_each name="$person" in="$target.people.list">
         <do_if value="$target.people.{$person}.exists and $target.people.{$person}.role != entityrole.passenger and $target.people.{$person}.skill.morale lt 15">
-          <set_value name="$before" exact="$target.people.{$person}.skill.morale"/>
-          <add_skill object="$target" template="$person" type="skilltype.morale" exact="1"/>
+          <set_value name="$before" exact="$target.people.{$person}.skill.morale" />
+          <add_skill object="$target" template="$person" type="skilltype.morale" exact="1" />
           <do_if value="$target.people.{$person}.skill.morale gt $before">
-            <set_value name="$improved" exact="$improved + 1"/>
+            <set_value name="$improved" exact="$improved + 1" />
           </do_if>
         </do_if>
       </do_for_each>
       <do_if value="$target.pilot.exists and not @$target.pilot.npctemplate and $target.pilot.skill.morale lt 15">
-        <set_value name="$before" exact="$target.pilot.skill.morale"/>
-        <add_skill entity="$target.pilot" type="skilltype.morale" exact="1"/>
+        <set_value name="$before" exact="$target.pilot.skill.morale" />
+        <add_skill entity="$target.pilot" type="skilltype.morale" exact="1" />
         <do_if value="$target.pilot.skill.morale gt $before">
-          <set_value name="$improved" exact="$improved + 1"/>
+          <set_value name="$improved" exact="$improved + 1" />
         </do_if>
       </do_if>
-      <do_if value="not $target.$vgo_cooldowns?">
-        <set_value name="$target.$vgo_cooldowns" exact="table[]"/>
+      <do_if value="not player.entity.$vgo_objects.{$target}.$vgo_cooldowns?">
+        <do_if value="not player.entity.$vgo_objects.{$target}?">
+          <set_value name="player.entity.$vgo_objects.{$target}" exact="table[]" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{$target}.$vgo_cooldowns" exact="table[]" />
       </do_if>
-      <set_value name="$target.$vgo_cooldowns.{9}" exact="player.age + this.ship.$vgo_cooldown"/>
+      <do_if value="not player.entity.$vgo_objects.{$target}?">
+        <set_value name="player.entity.$vgo_objects.{$target}" exact="table[]" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{$target}.$vgo_cooldowns.{9}" exact="player.age + player.entity.$vgo_objects.{this.ship}.$vgo_cooldown" />
       <do_if value="$improved gt 0">
-        <set_value name="this.ship.$vgo_verified" exact="true"/>
-        <set_value name="this.ship.$vgo_rewardfaction" exact="$target.owner"/>
-        <return value="true"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" exact="$target.owner" />
+        <return value="true" />
       </do_if>
-      <return value="false"/>
+      <return value="false" />
     </actions>
   </attention>
 </aiscript>

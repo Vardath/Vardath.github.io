@@ -1,3 +1,7 @@
+# v1.14 — Astrid braking null guard
+
+The supplied log showed repeated brake polling errors while no ship was occupied. The controller now checks that the occupied ship exists before reading ownership or macro. Astrid Tours equipment, crew, speed and berth changes are retained. The Forge hull, special main gun and weapon recovery scripts are unchanged.
+
 # v1.13 — Astrid Tours passenger space
 
 Astrid Tours now has 32 berths, and newly spawned copies use 50% Yaki crew fill so a ten-passenger tour can fit. Existing crew and equipment are retained. The special Forge weapon and its recovery scripts are unchanged.

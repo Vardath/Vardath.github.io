@@ -26,3 +26,5 @@ Checked: XML parsing; documented MD command attributes; new macro/index/loadout 
 Unverified: actual game loading, mount installation, damage, measured speed/handling, stop timing, respawn, crew selection, save/load and interaction with the installed DLC/mod set. Test in an existing manual-save copy: inspect the spawn's two guns/six turrets, attain full travel speed, release controls with flight assist on, time the stop, save/reload, then sell the Tours and wait for replacement. Confirm unrelated ships and the Forge weapon remain as before.
 
 Version 1.13: Astrid Tours has 32 people berths. New replacements use 50% crew fill, leaving room for a ten-passenger tour. Existing crew are retained; the expanded capacity also gives existing copies free passenger space. The Forge hull, its special weapon and weapon-recovery scripts are unchanged.
+
+1.14 repair: brake polling first checks `player.occupiedship.exists`, so walking on a station or having no occupied ship does not evaluate ownership on null. Other brake behavior, equipment and crew are retained. Runtime retest remains pending.

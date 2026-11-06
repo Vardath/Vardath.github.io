@@ -1,12 +1,8 @@
-# v1.73 — Main Transaction Log income details (2026-11-07)
+# v1.74 — Native transaction screen repair
 
-**Current download: [ready-to-install TEST ZIP](../vardath_living_factions_builders_TEST.zip).** Extract its mod folder into X4's `extensions` directory and replace the existing copy. Existing saves and contract ledgers are retained.
+Removed the custom income panel and every transaction renderer/search/paging override. Existing builder payments continue through native `reward_player` after verified accounting, at the same rates and SETA timing. The shared data-only adapter labels actual native payment IDs with hiring fee, construction/standby wages or final settlement, ship and employer/station details. Lifetime job totals are text in the payment description, not additional monetary rows. Its optional UIX callback is never a forced dependency; Protected UI stays enabled. Without a compatible callback, native labels remain generic and new paid receipts are recorded with amounts in the ordinary Logbook.
 
-The existing vanilla transaction list now displays verified builder payment labels/receipts through its normal search and page controls. The requested preview panel is retained too. Open the player Transaction Log for the new **Occupation & builder income** section under the graph. It records each new hiring fee, active-construction wage, standby wage and final settlement with ship, employer, station, game time and the actual credited amount. Switch to lifetime totals or filter individual payment history. Detailed history retains the latest 5,000 shared records; lifetime totals persist. Pre-update payments are not reconstructed.
-
-The 200,000 Cr hiring fee, 100,000 Cr/hour active rate, 25,000 Cr/hour standby rate, SETA billing and existing reputation rules are unchanged. Either this extension or Galactic Occupations can supply the UI; enabling both creates one shared section. No new dependency or game is required. Menu behavior still needs in-game verification.
-
-Earlier version notes follow.
+Fully exit X4, replace this extension's existing files from the current ZIP, restart and load the existing save. Saved contracts, accrued debts, payment journal and lifetime counters are retained. No past income is re-paid. Runtime menu, billing and save/load acceptance remains pending.
 
 # v1.71 fixes
 

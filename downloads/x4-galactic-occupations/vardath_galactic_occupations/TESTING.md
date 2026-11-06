@@ -1,6 +1,6 @@
 # Runtime acceptance tests
 
-**Execution status: not run.** No X4 executable, installed catalogs, save or live game log is available in the development environment. Every row below remains UNVERIFIED. Static XML/reference/packaging checks are reported separately in `STATIC_TEST_RESULTS.json` outside the installed extension.
+**Execution status: not run.** No X4 executable, installed catalogs, save or post-fix game log is available; the supplied debug(2).log was reviewed in the development environment. Every row below remains UNVERIFIED. Static XML/reference/packaging checks are reported separately in `STATIC_TEST_RESULTS.json` outside the installed extension.
 
 ## Setup
 
@@ -65,7 +65,7 @@ From `downloads/x4-galactic-occupations`:
 ```sh
 python tools/validate.py
 python tools/package.py
-python tools/validate.py --zip Galactic_Occupations_0.2.0_DEV.zip
+python tools/validate.py --zip Galactic_Occupations_0.2.1_DEV.zip
 ```
 
 For official schema and installed native-signature checking, extract the matching game catalogs with Egosoft's X Catalog Tool, preserving `libraries` and `aiscripts` paths, install `lxml` and run:
@@ -82,7 +82,7 @@ Schemas may take several minutes to compile. This validates XML structure and si
 - Boarding: test 0, 1, 5, 9, 10 and more than 10 free crew berths. The manifest must be min(10, free). Fill space between assignment and docking. Save while 0/5/9 NPCs are aboard and while walking through the hatch. No actor/template duplication or unrelated crew removal. Disable interior streaming by leaving the area: the ship must wait rather than treat seats as boarded. Return and observe real boarding.
 - Tours: record actual site identities and sector identities. Stops 0–9 must not award fares. Required sites without drop-off must not pay. Test one passenger (500,000 Cr) and ten passengers (5,000,000 Cr); changing fare after booking must preserve the booked amount. Destroy a route target/drop-off station and test recovery. A range with fewer than ten unique sights should reject a new booking with an explanatory status.
 - Surveys: use a basic AI scanner with a stronger active player scanner; it must no longer skip every module. Test a large station with more than eighty components, obstructed first viewing angles, ten-second interruption, destroyed modules and OOS collision geometry. Compare actual component scan levels and station discovery before/after. No success when data remains unchanged.
-- Main ledger: open the player's Transaction Log. Verify the income section under the account graph, per-payment game time/ship/amount/description, filters, pagination and lifetime totals. Native transactions/graph must remain usable. Test each addon alone and both together; there must be one section. Payments before this update are not reconstructed.
+- Main ledger acceptance is specified in the 0.2.1 section below; the 0.2.0 preview panel is removed.
 - Builder: observe the 200,000 Cr hire entry, active payroll at 100,000 Cr/hour and standby at 25,000 Cr/hour, including SETA and final settlement. Compare each displayed amount to actual account movement. Save/reload around payout and confirm neither money nor journal rows duplicate. Lost ships/stations should retain a useful recorded label.
 
 Additional developer checks (no X4 runtime):
@@ -94,4 +94,16 @@ lua5.1 tools/tests/ui_contracts.lua vardath_galactic_occupations
 
 The 36 UI checks mock menu/widget data and execute the addon Lua; they do not create real game menus or fire weapons.
 
-Vanilla-ledger follow-up: payment labels and verified receipts now appear directly in the existing transaction list, with native search/time-window/pagination. The separate income preview is retained at the user's request. Native IDs, amounts and account graph data are preserved; internal engine database metadata is not fabricated.
+
+## 0.2.1 native-ledger acceptance (Protected UI kept enabled)
+
+1. Fully exit X4, install the current three-mod ZIP over the existing folders, then restart and load the existing save. A UI reload alone can retain the old wrappers.
+2. With Protected UI enabled, open Player Information → Transaction Log before earning anything. Confirm its normal list, graph, native time controls, search, paging and account selection work, and the income preview panel is gone.
+3. Complete an actual taxi delivery, a full luxury tour, an escort and a builder hire/active/standby/final settlement. Note the balance change. Each payment must have one native monetary entry, with no receipt row added to its total. Check job/type and ship labels plus service/employer details and lifetime totals in the hover text if UIX supplies the published callback.
+4. Filter by the job or ship using the existing search field; change the time range and verify its totals count each payment once. Inspect a different station account: it must not inherit the player's job labels.
+5. Test two ships receiving the same amount in one frame; each new receipt must bind to a different real transaction ID. An ambiguous historical match must remain vanilla. Old condensed entries must not generate synthetic financial rows.
+6. Verify every new paid result also appears with its amount in the ordinary Logbook. With no compatible callback, native payment labels remain generic and the ledger must still open. Keep UI protection enabled throughout.
+7. Save/reload and check that the payment history/totals and native-ID bindings persist without re-paying anything. Test Occupations alone, Builders alone and both together; descriptions must not be added twice.
+8. Resume the previously registered occupation ships. Check that defaults restart once when editable, that direct orders finish first, and that no `Failed to set component...$vgo_*`, missing event-source or visible-attention parser errors recur. Re-select an occupation once if an older imported stack cannot recover.
+9. Re-run the individual occupation tests above, especially physical boarding, crystal deposits/drops, module scanning and failed/destroyed targets. These effects remain runtime-unverified until performed in X4.
+10. With the player walking on a station or outside an occupied ship, confirm Astrid brake polling no longer logs a null `player.occupiedship.isplayerowned` lookup. Check the Forge's special main gun still mounts and fires.

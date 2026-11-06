@@ -6,7 +6,7 @@
   <do_if value="not $Tours.count"><create_ship name="$Ship" macro="macro.ship_vardath_astrid_tours_macro" sector="player.sector"><owner exact="faction.player" overridenpc="true"/><pilot><select faction="faction.yaki" tags="tag.fighterpilot"/></pilot><loadout ref="vardath_astrid_tours_default"/><people ref="vardath_astrid_tours_yaki_crew"><fillpercent exact="50"/></people><safepos object="player.ship" exact="3km"/></create_ship><set_object_name object="$Ship" name="'Astrid Tours'"/><debug_text text="'Vardath Astrid Tours: spawned a player-owned Yaki-crewed replacement'" filter="general"/></do_if>
   <reset_cue cue="this"/>
  </actions></cue>
- <cue name="BrakeAssist_v112" instantiate="true" checkinterval="100ms"><conditions><check_value value="player.occupiedship.isplayerowned and player.occupiedship.macro == macro.ship_vardath_astrid_tours_macro"/></conditions><actions>
+ <cue name="BrakeAssist_v112" instantiate="true" checkinterval="100ms"><conditions><check_value value="player.occupiedship.exists and player.occupiedship.isplayerowned and player.occupiedship.macro == macro.ship_vardath_astrid_tours_macro"/></conditions><actions>
   <set_value name="$Ship" exact="player.occupiedship"/>
   <set_value name="$Idle" exact="player.flightassist and not player.autopilottarget.exists and not player.input.flight.matchspeed and player.input.flight.throttle == 0 and player.input.flight.horizontal == 0 and player.input.flight.vertical == 0 and player.input.flight.pitch == 0 and player.input.flight.yaw == 0 and player.input.flight.roll == 0 and not $Ship.boost.active"/>
   <do_if value="not $Idle"><remove_value name="$Ship.$vardath_tours_stopdeadline"/></do_if>

@@ -1,11 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<aiscript name="vardath.go.scanmodules" version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-<params><param name="station"/></params><attention min="unknown"><actions>
-  <find_object_component name="$components" object="$station" module="true" multiple="true"/>
-  <find_object_component name="$components" object="$station" class="[class.turret, class.shieldgenerator]" surfaceelement="true" multiple="true" append="true"/>
-  <set_value name="$eligible" exact="[]"/>
-  <do_for_each name="$component" in="$components">
-    <do_if value="$component.isoperational and $component.scannedlevel lt player.maxscanlevel and not (@$component.$vgo_survey_retry gt player.age) and not $eligible.indexof.{$component}"><append_to_list name="$eligible" exact="$component"/></do_if>
-  </do_for_each>
-  <return value="$eligible"/>
-</actions></attention></aiscript>
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.scanmodules" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="station" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <find_object_component name="$components" object="$station" module="true" multiple="true" />
+      <find_object_component name="$components" object="$station" class="[class.turret, class.shieldgenerator]" surfaceelement="true" multiple="true" append="true" />
+      <set_value name="$eligible" exact="[]" />
+      <do_for_each name="$component" in="$components">
+        <do_if value="$component.isoperational and $component.scannedlevel lt player.maxscanlevel and not (@player.entity.$vgo_objects.{$component}.$vgo_survey_retry gt player.age) and not $eligible.indexof.{$component}">
+          <append_to_list name="$eligible" exact="$component" />
+        </do_if>
+      </do_for_each>
+      <return value="$eligible" />
+    </actions>
+  </attention>
+</aiscript>

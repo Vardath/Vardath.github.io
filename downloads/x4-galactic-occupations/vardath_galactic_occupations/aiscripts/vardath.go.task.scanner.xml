@@ -1,51 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?>
-<aiscript name="vardath.go.task.scanner" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-<params><param name="target"/></params><attention min="unknown"><actions>
-  <!-- Remote survey equivalent: real close approach, surface raycast and sustained LOS, then native per-component scan publication. -->
-  <do_if value="not $target.isoperational or this.ship.iscapitalship or this.ship.maxscanlevel le 0 or player.maxscanlevel lt 0"><set_value name="this.ship.$vgo_status" exact="'Component survey requires an S/M ship with scanner software'"/><return value="false"/></do_if>
-  <run_script name="'vardath.go.scanmodules'" result="$modules"><param name="station" value="$target"/></run_script>
-  <set_value name="$count" exact="0"/><set_value name="$stationbefore" exact="$target.revealedpercentage"/>
-  <do_for_each name="$module" in="$modules">
-    <do_if value="not $module.isoperational or $module.scannedlevel ge player.maxscanlevel"><continue/></do_if>
-    <!-- Do not compare the survey ship's proximity-scanner level to the player's active scan-mode level: these differ normally. -->
-    <run_script name="'vardath.go.approach'" result="$ok"><param name="target" value="$module"/><param name="distance" value="2km"/></run_script>
-    <do_if value="not $ok"><set_value name="$module.$vgo_survey_retry" exact="player.age + 10min"/><continue/></do_if>
-    <set_value name="this.ship.$vgo_status" exact="'Finding a visible survey surface on ' + $module.knownname"/>
-    <do_all exact="10"><do_if value="$module.isphysicsready"><break/></do_if><wait exact="2s"/></do_all>
-    <do_if value="not $module.isphysicsready"><set_value name="this.ship.$vgo_status" exact="'Survey needs loaded component collision geometry; moving to another target'"/><set_value name="$module.$vgo_survey_retry" exact="player.age + 5min"/><continue/></do_if>
-    <set_value name="$scanned" exact="false"/>
-    <do_all exact="3" counter="$attempt">
-      <do_if value="not $module.isoperational or $target.ishostileto.{this.ship}"><break/></do_if>
-      <do_if value="$attempt == 1"><find_object_surface object="$module" posname="$surface" space="$module.sector" height="500m + this.ship.size / 2" tolerateneighbour="false"><position object="this.ship"/></find_object_surface></do_if>
-      <do_else><find_object_surface object="$module" posname="$surface" space="$module.sector" height="500m + this.ship.size / 2" tolerateneighbour="false"/></do_else>
-      <do_if value="not $surface"><continue/></do_if>
-      <run_script name="'move.generic'"><param name="destination" value="$module.sector"/><param name="position" value="$surface"/><param name="strictblacklist" value="true"/><param name="useknownpath" value="false"/></run_script>
-      <set_command_action commandaction="commandaction.scanningto" param="$module"/>
-      <set_value name="this.ship.$vgo_status" exact="'Surveying ' + $module.knownname + ' on ' + $target.knownname + ' (' + $count + ' completed)'"/>
-      <set_value name="$valid" exact="true"/>
-      <do_all exact="10">
-        <do_if value="not $module.isoperational or not $module.isphysicsready or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 800m + ($module.size + this.ship.size) / 2 or $target.ishostileto.{this.ship}"><set_value name="$valid" exact="false"/><break/></do_if>
-        <check_line_of_sight name="$los" object="this.ship" target="$module" useaimtarget="true"/>
-        <do_if value="not $los"><set_value name="$valid" exact="false"/><break/></do_if>
-        <wait exact="1s"/>
-      </do_all>
-      <do_if value="$valid and $module.isoperational">
-        <set_value name="$before" exact="$module.revealedpercentage"/><set_value name="$levelbefore" exact="$module.scannedlevel"/>
-        <!-- This documented action publishes only this surveyed component, at the player's scanner cap. It cannot select an arbitrary level. -->
-        <set_object_scanned object="$module"/><set_known object="$module" known="true"/>
-        <do_if value="$module.scannedlevel gt $levelbefore or $module.revealedpercentage gt $before">
-          <set_value name="$count" exact="$count + 1"/><set_value name="$scanned" exact="true"/><set_value name="$module.$vgo_survey_level" exact="$module.scannedlevel"/><set_value name="$module.$vgo_survey_time" exact="player.age"/>
-          <set_known object="$target" known="true" updatesnapshot="true"/>
-        </do_if>
-        <debug_text text="'GO: module survey %s level %s to %s reveal %s to %s'.[$module.debugname,$levelbefore,$module.scannedlevel,$before,$module.revealedpercentage]" chance="this.ship.$vgo_debug"/>
-        <break/>
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
       </do_if>
-    </do_all>
-    <do_if value="not $scanned"><set_value name="$module.$vgo_survey_retry" exact="player.age + 10min"/></do_if>
-    <do_if value="$count ge 8"><break/></do_if>
-    <wait exact="500ms"/>
-  </do_for_each>
-  <set_value name="this.ship.$vgo_status" exact="'Survey completed: ' + $count + ' components; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%'"/>
-  <do_if value="$count"><write_to_logbook category="general" title="'Galactic Occupations: component survey'" text="'%s surveyed %s components of %s. Discovery %s to %s percent.'.[this.ship.knownname,$count,$target.knownname,$stationbefore,$target.revealedpercentage]" interaction="showonmap" object="$target"/></do_if>
-  <return value="$count gt 0"/>
-</actions></attention></aiscript>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <!-- Remote survey equivalent: real close approach, surface raycast and sustained LOS, then native per-component scan publication. -->
+      <do_if value="not $target.isoperational or this.ship.iscapitalship or this.ship.maxscanlevel le 0 or player.maxscanlevel lt 0">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Component survey requires an S/M ship with scanner software'" />
+        <return value="false" />
+      </do_if>
+      <run_script name="'vardath.go.scanmodules'" result="$modules">
+        <param name="station" value="$target" />
+      </run_script>
+      <set_value name="$count" exact="0" />
+      <set_value name="$stationbefore" exact="$target.revealedpercentage" />
+      <do_for_each name="$module" in="$modules">
+        <do_if value="not $module.isoperational or $module.scannedlevel ge player.maxscanlevel">
+          <continue />
+        </do_if>
+        <!-- Do not compare the survey ship's proximity-scanner level to the player's active scan-mode level: these differ normally. -->
+        <run_script name="'vardath.go.approach'" result="$ok">
+          <param name="target" value="$module" />
+          <param name="distance" value="2km" />
+        </run_script>
+        <do_if value="not $ok">
+          <do_if value="not player.entity.$vgo_objects.{$module}?">
+            <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_retry" exact="player.age + 10min" />
+          <continue />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Finding a visible survey surface on ' + $module.knownname" />
+        <do_all exact="10">
+          <do_if value="$module.isphysicsready">
+            <break />
+          </do_if>
+          <wait exact="2s" />
+        </do_all>
+        <do_if value="not $module.isphysicsready">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Survey needs loaded component collision geometry; moving to another target'" />
+          <do_if value="not player.entity.$vgo_objects.{$module}?">
+            <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_retry" exact="player.age + 5min" />
+          <continue />
+        </do_if>
+        <set_value name="$scanned" exact="false" />
+        <do_all exact="3" counter="$attempt">
+          <do_if value="not $module.isoperational or $target.ishostileto.{this.ship}">
+            <break />
+          </do_if>
+          <do_if value="$attempt == 1">
+            <find_object_surface object="$module" posname="$surface" space="$module.sector" height="500m + this.ship.size / 2" tolerateneighbour="false">
+              <position object="this.ship" />
+            </find_object_surface>
+          </do_if>
+          <do_else>
+            <find_object_surface object="$module" posname="$surface" space="$module.sector" height="500m + this.ship.size / 2" tolerateneighbour="false" />
+          </do_else>
+          <do_if value="not $surface">
+            <continue />
+          </do_if>
+          <run_script name="'move.generic'">
+            <param name="destination" value="$module.sector" />
+            <param name="position" value="$surface" />
+            <param name="strictblacklist" value="true" />
+            <param name="useknownpath" value="false" />
+          </run_script>
+          <set_command_action commandaction="commandaction.scanningto" param="$module" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Surveying ' + $module.knownname + ' on ' + $target.knownname + ' (' + $count + ' completed)'" />
+          <set_value name="$valid" exact="true" />
+          <do_all exact="10">
+            <do_if value="not $module.isoperational or not $module.isphysicsready or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 800m + ($module.size + this.ship.size) / 2 or $target.ishostileto.{this.ship}">
+              <set_value name="$valid" exact="false" />
+              <break />
+            </do_if>
+            <check_line_of_sight name="$los" object="this.ship" target="$module" useaimtarget="true" />
+            <do_if value="not $los">
+              <set_value name="$valid" exact="false" />
+              <break />
+            </do_if>
+            <wait exact="1s" />
+          </do_all>
+          <do_if value="$valid and $module.isoperational">
+            <set_value name="$before" exact="$module.revealedpercentage" />
+            <set_value name="$levelbefore" exact="$module.scannedlevel" />
+            <!-- This documented action publishes only this surveyed component, at the player's scanner cap. It cannot select an arbitrary level. -->
+            <set_object_scanned object="$module" />
+            <set_known object="$module" known="true" />
+            <do_if value="$module.scannedlevel gt $levelbefore or $module.revealedpercentage gt $before">
+              <set_value name="$count" exact="$count + 1" />
+              <set_value name="$scanned" exact="true" />
+              <do_if value="not player.entity.$vgo_objects.{$module}?">
+                <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+              </do_if>
+              <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_level" exact="$module.scannedlevel" />
+              <do_if value="not player.entity.$vgo_objects.{$module}?">
+                <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+              </do_if>
+              <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_time" exact="player.age" />
+              <set_known object="$target" known="true" updatesnapshot="true" />
+            </do_if>
+            <debug_text text="'GO: module survey %s level %s to %s reveal %s to %s'.[$module.debugname,$levelbefore,$module.scannedlevel,$before,$module.revealedpercentage]" chance="player.entity.$vgo_objects.{this.ship}.$vgo_debug" />
+            <break />
+          </do_if>
+        </do_all>
+        <do_if value="not $scanned">
+          <do_if value="not player.entity.$vgo_objects.{$module}?">
+            <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_retry" exact="player.age + 10min" />
+        </do_if>
+        <do_if value="$count ge 8">
+          <break />
+        </do_if>
+        <wait exact="500ms" />
+      </do_for_each>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Survey completed: ' + $count + ' components; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%'" />
+      <do_if value="$count">
+        <write_to_logbook category="general" title="'Galactic Occupations: component survey'" text="'%s surveyed %s components of %s. Discovery %s to %s percent.'.[this.ship.knownname,$count,$target.knownname,$stationbefore,$target.revealedpercentage]" interaction="showonmap" object="$target" />
+      </do_if>
+      <return value="$count gt 0" />
+    </actions>
+  </attention>
+</aiscript>

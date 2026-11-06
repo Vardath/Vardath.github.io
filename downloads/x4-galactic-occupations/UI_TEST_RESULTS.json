@@ -1,18 +1,12 @@
 {
-  "source_contract_checks": {
-    "status": "PASS",
-    "checks": 16
-  },
-  "executable_lua_contract_checks": {
-    "status": "PASS",
-    "checks": 36,
-    "local_interpreter": "LuaTeX Lua 5.3",
-    "fixtures": "Native-shaped mock widgets; not the X4 UI",
-    "layouts": [
-      "8.00 native-shaped fixtures",
-      "Published 9.00 native-shaped fixtures"
-    ]
-  },
-  "game_runtime": "NOT RUN",
-  "lua_5_1_ci": "See the GitHub Actions result for this commit"
+  "result": "PASS",
+  "checks": 31,
+  "target": "Native receipt data and turret UI contracts",
+  "local_engine": "Lua 5.4 shared library",
+  "CI_syntax_engines": [
+    "Lua 5.1",
+    "LuaJIT"
+  ],
+  "real_X4_runtime": false,
+  "Protected_UI_runtime": "UNVERIFIED; no protection setting changed"
 }

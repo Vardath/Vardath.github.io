@@ -1,45 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="amount"/>
-    <param name="details" default="''"/>
+    <param name="amount" />
+    <param name="details" default="''" />
   </params>
   <attention min="unknown">
     <actions>
-      <do_if value="$amount le 0Cr">
-        <return/>
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
       </do_if>
-      <set_value name="$IncomePaid" exact="$amount"/>
-      <set_value name="$IncomeKey" exact="'occupation_' + this.ship.$vgo_job"/>
-      <set_value name="$textid" exact="100 + this.ship.$vgo_job"/>
-      <set_value name="$IncomeName" exact="readtext.{191180}.{$textid}"/>
-      <set_value name="$IncomeShip" exact="this.ship"/>
-      <set_value name="$IncomeShipName" exact="this.ship.knownname"/>
-      <set_value name="$IncomeDetails" exact="$details"/>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <do_if value="$amount le 0Cr">
+        <return />
+      </do_if>
+      <set_value name="$IncomePaid" exact="$amount" />
+      <set_value name="$IncomeKey" exact="'occupation_' + player.entity.$vgo_objects.{this.ship}.$vgo_job" />
+      <set_value name="$textid" exact="100 + player.entity.$vgo_objects.{this.ship}.$vgo_job" />
+      <set_value name="$IncomeName" exact="readtext.{191180}.{$textid}" />
+      <set_value name="$IncomeShip" exact="this.ship" />
+      <set_value name="$IncomeShipName" exact="this.ship.knownname" />
+      <set_value name="$IncomeDetails" exact="$details" />
       <do_if value="not player.entity.$vardath_income?">
-        <set_value name="player.entity.$vardath_income" exact="[]"/>
+        <set_value name="player.entity.$vardath_income" exact="[]" />
       </do_if>
       <do_if value="not player.entity.$vardath_income_totals?">
-        <set_value name="player.entity.$vardath_income_totals" exact="[]"/>
+        <set_value name="player.entity.$vardath_income_totals" exact="[]" />
       </do_if>
-      <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1"/>
-      <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f"/>
-      <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails]"/>
+      <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1" />
+      <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f" />
+      <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, if player.entity.$vgo_objects.{this.ship}.$vgo_job == 6 then 'transfer' else 'script_add']" />
       <do_while value="player.entity.$vardath_income.count gt 5000">
-        <remove_value name="player.entity.$vardath_income.{1}"/>
+        <remove_value name="player.entity.$vardath_income.{1}" />
       </do_while>
-      <set_value name="$found" exact="false"/>
+      <set_value name="$found" exact="false" />
       <do_for_each name="$entry" in="player.entity.$vardath_income_totals" counter="$i">
         <do_if value="$entry.{1} == $IncomeKey">
-          <set_value name="player.entity.$vardath_income_totals.{$i}.{3}" exact="$entry.{3} + (($IncomePaid / 1Cr)f)"/>
-          <set_value name="player.entity.$vardath_income_totals.{$i}.{4}" exact="$entry.{4} + 1"/>
-          <set_value name="$found" exact="true"/>
-          <break/>
+          <set_value name="player.entity.$vardath_income_totals.{$i}.{3}" exact="$entry.{3} + (($IncomePaid / 1Cr)f)" />
+          <set_value name="player.entity.$vardath_income_totals.{$i}.{4}" exact="$entry.{4} + 1" />
+          <set_value name="$found" exact="true" />
+          <break />
         </do_if>
       </do_for_each>
       <do_if value="not $found">
-        <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]"/>
+        <append_to_list name="player.entity.$vardath_income_totals" exact="[$IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, 1]" />
       </do_if>
+      <write_to_logbook category="general" title="$IncomeName + ' - ' + $IncomeShipName" text="$IncomeDetails" money="$IncomePaid" />
+      <raise_lua_event name="'Vardath.NativeIncome.Payment'" param="player.entity" />
     </actions>
   </attention>
 </aiscript>
