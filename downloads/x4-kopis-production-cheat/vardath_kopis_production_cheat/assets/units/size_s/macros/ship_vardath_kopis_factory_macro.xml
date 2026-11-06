@@ -49,6 +49,13 @@
       <sound_occlusion inside="0.5" />
     </properties>
     <connections>
+      <!-- Permanently attach the original special 8000-damage Forge Laser to its
+           real forward weapon hardpoint, using the vanilla Terran laser's
+           component-side connector. This does not add a turret or replace
+           the original physical con_weapon_01 connection. -->
+      <connection ref="con_weapon_01">
+        <macro ref="weapon_vardath_kopis_laser_macro" connection="WeaponCon_01" />
+      </connection>
       <connection ref="con_cockpit">
         <macro ref="cockpit_gen_virtual_01_macro" connection="ship" />
       </connection>

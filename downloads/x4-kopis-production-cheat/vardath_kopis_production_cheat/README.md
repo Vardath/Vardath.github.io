@@ -1,3 +1,23 @@
+# v1.11 — Fixed special weapon at the primary gun hardpoint (2026-11-06)
+
+**Diagnosis:** The Kopis Forge has a custom **special** weapon, `weapon_vardath_kopis_laser_macro`, using the original Terran pulse-laser **weapon component**, and a custom projectile with exactly **8,000 damage per hit**. The physical `con_weapon_01` socket and its tags remained identical to the working pre-turret-removal model. The previous revisions relied entirely on selecting or restoring the weapon via loadout scripts. Those attempts do not establish that the custom gun exists on an already saved ship.
+
+**Fix:** The ship macro itself now explicitly mounts the custom weapon on the original physical nose socket:
+
+```xml
+<connection ref="con_weapon_01">
+  <macro ref="weapon_vardath_kopis_laser_macro" connection="WeaponCon_01"/>
+</connection>
+```
+
+`WeaponCon_01` is the actual component-side connector in the *vanilla Terran S Pulse Laser Mk2 component* that our special weapon macro references. This implements a **fixed, hull-defined special gun**, avoiding reliance on shop/loadout auto-selection. The original gun connection's offset, tags, name and pre-turret-removal position have not been changed. The obsolete dorsal turret placeholder remains **inert**, and no turret mount has been restored.
+
+**Existing saves:** X4 may persist the component hierarchy on already spawned ships. Existing v1.07 and v1.09 non-destructive gun-recovery scripts remain as fallback for already-saved unarmed Forges. No ships are deleted, recreated, or force-spawned by this change. Loading the existing save is supported but only an actual game test can prove whether the game reconstructs a newly fixed child component on an existing ship.
+
+**Preserved:** 1,000,000 m³ container/solid/liquid holds; resource and build-storage production; drones and deployables; 250 crew; speed; permanent owned Astrid replacement; custom ship identity and existing save. The fixed special laser's projectile remains 8,000 damage. **This is not a vanilla gun substitution.**
+
+CI verifies XML and ZIP integrity only, not X4 runtime. After restarting with the corrected mod, check the Weapons tab on your *existing* Kopis. If still empty, the next required evidence is the fresh in-game debug log for this version, specifically the `Kopis V109 PRIMARY WEAPON STILL MISSING` line with slot count, and any new equipment import errors.
+
 # v1.10 — Preserve the original ship connection positions and existing-save main weapon slot (2026-11-06)
 
 **Structural regression identified from the actual v1.04 → v1.05 GitHub diff.** The turret removal deleted a connection *before* the original `con_weapon_01`. The physical component changed from 75 to 74 connections, moving `con_weapon_01` from zero-based position 24 to 23. That is a save-compatibility hazard for already spawned ships and equipment. The exact original `con_weapon_01` geometry, offsets and Terran-compatible tags were never broken; the changed position is the problem being corrected now.
