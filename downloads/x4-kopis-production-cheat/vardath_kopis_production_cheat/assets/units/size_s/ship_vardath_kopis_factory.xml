@@ -146,6 +146,16 @@
       <connection name="con_storage03" tags="storage ">
         <offset><position x="3.5" y="5.0" z="10"/></offset>
       </connection>
+      <!-- SAVE-COMPATIBILITY PLACEHOLDER: this occupied component slot 12
+           before v1.05 removed the dorsal turret. Removing the entry
+           renumbered every later connection, including con_weapon_01.
+           Keep the ORIGINAL identity/order/offset with only an inert
+           'small' tag. No 'turret' tag means NO equipable turret socket. -->
+      <connection name="con_vardath_turret_01" group="group_vardath_dorsal" tags="small ">
+        <offset>
+          <position x="0" y="3.5" z="-7"/>
+        </offset>
+      </connection>
       <connection name="con_storage01" tags="storage ">
         <offset>
           <position x="0" y="6.517262" z="14.28796" />

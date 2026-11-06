@@ -1,3 +1,13 @@
+# v1.10 — Preserve the original ship connection positions and existing-save main weapon slot (2026-11-06)
+
+**Structural regression identified from the actual v1.04 → v1.05 GitHub diff.** The turret removal deleted a connection *before* the original `con_weapon_01`. The physical component changed from 75 to 74 connections, moving `con_weapon_01` from zero-based position 24 to 23. That is a save-compatibility hazard for already spawned ships and equipment. The exact original `con_weapon_01` geometry, offsets and Terran-compatible tags were never broken; the changed position is the problem being corrected now.
+
+This update restores the **entire original connection-name/order sequence** (75 entries), but puts a neutral **`small`-only placeholder** at the former turret position. It carries **no `turret` tag**, so the broken experimental turret is still unavailable. The original main gun remains at its old position, 24 (zero-based), and is unchanged and ready for the 8,000-damage Forge Laser Mk2+.
+
+Source comparisons confirm every connection name is again in the same index/order as the pre-removal v1.04 ship component; the weapon's own connection tags are byte-for-byte identical to the earlier file. No cargo, crew, production, Astrid, drone, build storage, ship geometry or weapon damage code was reverted. The existing v1.09 periodic gun-repair cue continues to fit an empty main slot and reports confirmed success or failure based on the actual equipped gun count.
+
+**GitHub CI green checks are XML/packaging checks only and do not establish X4 runtime functionality.** This fix directly repairs the component-slot ordering problem seen in Git history, but X4 needs to be restarted and an existing Forge's Weapons tab checked. A save backup is prudent; **no new game or replacement ship requested**.
+
 # v1.09 — Weapon-ware ordering and verified existing-save gun recovery (2026-11-06)
 
 The **existing Kopis Mobile Forge is preserved**. This update does not restore the removed dorsal turret or undo cargo storage, production, Astrid replacement, crew, build storage, drones, or the existing game save.
