@@ -6,6 +6,6 @@ Standalone X4 extension: [installable source](vardath_galactic_occupations), [ZI
 
 Extract the ZIP into the X4 installation folder. Its `extensions/vardath_galactic_occupations/content.xml` must end up beside your other extensions. Enable Galactic Occupations, load an existing save and select an eligible ship's Behaviour → Default Behaviour. No new game is required by the implementation. See the included README for the expected order names and constraints.
 
-Targets X4 9.00+. No DLC or third-party mod dependency. Existing X4 mods in this repository are unchanged.
+Targets X4 9.00+. No DLC or third-party mod dependency. Galactic Occupations adds no patches to the other extensions. The separate Kopis update adds the requested Astrid Tours variant; see [the other-mod review](OTHER_MODS_REVIEW.md).
 
 Run `python tools/validate.py` from this directory for static checks, `python tools/package.py` to reproduce the archive, or `python tools/validate.py --reference /path/to/extracted/installed/X4` for matching installed AI signatures and full game-XSD validation. The latter requires `lxml` and the game's extracted `libraries` and `aiscripts` folders. Static success is not runtime success.
