@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.queueattack" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target" />
+    <param name="protected" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not $target.isoperational or not $target.ishostileto.{this.ship} or this.ship.order != this.ship.defaultorder or this.ship.orders.count gt 0">
+        <return value="false" />
+      </do_if>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_combat_order.exists">
+        <return value="true" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_combat_target" exact="$target" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_combat_until" exact="player.age + 60s" />
+      <create_order id="'Attack'" object="this.ship" name="$attack" override="true">
+        <param name="primarytarget" value="$target" />
+        <param name="escort" value="$protected" />
+        <param name="pursuedistance" value="8km" />
+        <param name="pursuetargets" value="false" />
+        <param name="allowothertargets" value="false" />
+        <param name="forceprimarytarget" value="true" />
+        <param name="internalorder" value="true" />
+      </create_order>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_combat_order" exact="$attack" />
+      <return value="$attack.exists" />
+    </actions>
+  </attention>
+</aiscript>

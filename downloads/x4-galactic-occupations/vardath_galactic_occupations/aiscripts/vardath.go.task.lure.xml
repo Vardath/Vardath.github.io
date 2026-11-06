@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.lure" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.lure" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -10,6 +10,10 @@
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <do_if value="this.ship.maxcombatrange.lasers.primary le 0">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Lure waiting: a usable forward laser is required to provoke a hostile'" />
+        <return value="false" />
       </do_if>
       <find_ship name="$defenders" space="this.ship.sector" primarypurpose="purpose.fight" multiple="true" excluded="[this.ship,$target]" />
       <find_station name="$defenders" space="this.ship.sector" defencestation="true" multiple="true" append="true" />

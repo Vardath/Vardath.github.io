@@ -55,13 +55,25 @@ for path, root in trees.items():
             if conditions is not None and len(conditions) and not node.get('checkinterval'):
                 if not any(isinstance(c.tag,str) and c.tag.startswith('event_') for c in conditions.iter()):
                     error(path, f"cue {node.get('name')} needs a polling interval for non-event conditions")
-        if node.tag == 'location' and node.get('object','').startswith('player.entity.$vgo_objects'):
+        if node.tag == 'run_script' and node.get('name') in ("'order.fight.escort'", "'order.fight.attack.object'"):
+            error(path, 'occupation must not borrow a native combat/fleet order as a subroutine; it may cancel the caller')
+        for value in node.attrib.values():
+            if re.search(r'illegalto\.\{[^}]+\}\.count',value):
+                error(path, 'illegalto is a boolean, not a counted collection')
+        if node.tag == 'location'  and node.get('object','').startswith('player.entity.$vgo_objects'):
             error(path, 'order location must have a valid component fallback before worker initialization')
         for value in node.attrib.values():
             if re.search(r'@[\w.$]+(?:\.\{[^{}]*\})?[\w.$]*\?', value):
                 error(path, 'X4 expressions cannot combine @ optional lookup with ? presence testing')
             if re.search(r'(this\.ship|\$(?:ship|turret|target|candidate|module|station|deposit|poi|component))\.\$vgo_', value):
                 error(path, 'Only entities have blackboards; component state belongs in the persistent player table')
+    if root.tag == 'diff' and path == MOD/'libraries/icons.xml':
+        for op in root:
+            if op.tag != 'add' or op.get('sel') != '/icons': error(path, 'icon integration may add aliases only')
+            for icon in op:
+                if icon.tag != 'icon' or not icon.get('name','').startswith('order_vgo_'):
+                    error(path, 'icon aliases must be namespaced')
+        continue
     if root.tag == 'addon':
         counts['ui_addons'] += 1
         if root.get('name') != MOD.name:
@@ -159,7 +171,7 @@ for key in JOBS:
 
 # No vanilla replacement or patch files are permitted in this standalone extension.
 for path, root in trees.items():
-    if root.tag == 'diff':
+    if root.tag == 'diff' and path != MOD/'libraries/icons.xml':
         error(path, 'unexpected vanilla/mod patch')
     if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem:
         error(path, 'non-namespaced AI script')
@@ -201,7 +213,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log and debug(3).log reviewed for actual failures',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log, debug(3).log and debug(4).log reviewed for actual failures',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

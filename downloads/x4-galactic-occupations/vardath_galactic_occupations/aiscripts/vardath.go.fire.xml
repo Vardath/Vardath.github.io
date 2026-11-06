@@ -45,7 +45,7 @@
       <do_if value="not $ok">
         <return value="false" />
       </do_if>
-      <set_region_object_persistence object="$target.parent" chance="if $crystal then 100 else 0" />
+      <set_region_object_persistence object="if $crystal then $target.parent else $target" chance="100" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_firing" exact="true" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $crystal then 'Mine Crystals: aiming at the deposit' else 'Demolishing asteroid'" />
       <do_while value="$target.exists and $target.hull gt 0 and player.age lt $end and this.ship.attention ge attention.visible">

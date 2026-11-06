@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -68,11 +68,16 @@
           <do_if value="not $surface">
             <continue />
           </do_if>
+          <run_script name="'vardath.go.depart'" result="$departed" />
+          <do_if value="not $departed">
+            <return value="false" />
+          </do_if>
           <run_script name="'move.generic'">
             <param name="destination" value="$module.sector" />
             <param name="position" value="$surface" />
             <param name="strictblacklist" value="true" />
             <param name="useknownpath" value="false" />
+            <param name="pursuetargets" value="false" />
           </run_script>
           <set_command_action commandaction="commandaction.scanningto" param="$module" />
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Surveying ' + $module.knownname + ' on ' + $target.knownname + ' (' + $count + ' completed)'" />

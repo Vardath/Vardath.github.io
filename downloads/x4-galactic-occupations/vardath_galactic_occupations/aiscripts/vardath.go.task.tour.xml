@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -45,7 +45,18 @@
         <run_script name="'vardath.go.passengers.board'" result="$boarded">
           <param name="target" value="$target" />
         </run_script>
-        <return value="false" />
+        <do_if value="not $boarded">
+          <return value="false" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Luxury tour: passengers aboard, selecting first sightseeing stop'" />
+        <run_script name="'vardath.go.find'" result="$nextstop">
+          <param name="job" value="5" />
+        </run_script>
+        <do_if value="not $nextstop.exists">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Luxury tour: passengers aboard; waiting for an accessible unvisited site'" />
+          <return value="false" />
+        </do_if>
+        <set_value name="$target" exact="$nextstop" />
       </do_if>
       <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count ge player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_stops and player.entity.$vgo_objects.{this.ship}.$vgo_tour_sectors.count ge player.entity.$vgo_objects.{this.ship}.$vgo_tour_minsectors">
         <run_script name="'vardath.go.passengers.deliver'" result="$delivered" />

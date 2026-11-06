@@ -51,7 +51,7 @@ class SourceContracts(unittest.TestCase):
     def test_each_boarded_ack_has_physical_actor_context(self):
         root=xml('md/VGO_State.xml');parents={c:p for p in root.iter() for c in p}
         assignments=[x for x in root.iter('set_value') if x.get('name')=='$ship.$vgo_passengers.{$i}.$boarded' and x.get('exact')=='true']
-        self.assertEqual(len(assignments),2)
+        self.assertEqual(len(assignments),3)
         for node in assignments:
             guards=[]
             while node in parents:
@@ -140,7 +140,55 @@ class SourceContracts(unittest.TestCase):
         path=BASE.parent/'x4-yaki-terran-habs/vardath_yaki_terran_habs/md/vardath_yaki_faction_habitats.xml'
         root=ET.parse(path).getroot()
         self.assertIsNone(root.find(".//do_for_each[@in='$CurrentPlan']"))
-        self.assertIsNotNone(root.find(".//do_all[@exact='$CurrentPlan.count']/set_value[@exact='$CurrentPlan.{$PlanIndex}']"))
+        self.assertIsNone(root.find(".//set_value[@exact='$CurrentPlan.{$PlanIndex}']"))
+        self.assertIn('$CurrentPlan.{$PlanIndex}.macro',ET.tostring(root,encoding='unicode'))
+    def test_tour_selects_a_real_next_stop_after_boarding(self):
+        root=xml('aiscripts/vardath.go.task.tour.xml')
+        boarded=root.find(".//do_if[@value='not @this.ship.$vgo_taxi_boarded']")
+        self.assertIsNotNone(boarded.find("run_script[@name=\"'vardath.go.find'\"]"))
+        self.assertIsNotNone(boarded.find("set_value[@name='$target'][@exact='$nextstop']"))
+        self.assertIsNone(boarded.find("return[@value='false']"))
+    def test_departure_uses_native_undocking_before_proximity_success(self):
+        root=xml('aiscripts/vardath.go.depart.xml')
+        call=root.find(".//run_script[@name=\"'move.undock'\"]")
+        self.assertEqual(call.find("param[@name='skipwait']").get('value'),'true')
+        actions=xml('aiscripts/vardath.go.approach.xml').find('attention/actions')
+        depart=next(i for i,n in enumerate(actions) if n.tag=='run_script' and n.get('name')=="'vardath.go.depart'")
+        loop=next(i for i,n in enumerate(actions) if n.tag=='do_all')
+        self.assertLess(depart,loop)
+    def test_foreign_trader_escort_does_not_run_same_faction_fleet_order(self):
+        for p in (MOD/'aiscripts').glob('*.xml'):
+            root=ET.parse(p).getroot()
+            self.assertIsNone(root.find(".//run_script[@name=\"'order.fight.escort'\"]"))
+            self.assertIsNone(root.find(".//run_script[@name=\"'order.fight.attack.object'\"]"))
+        root=xml('aiscripts/vardath.go.queueattack.xml')
+        order=root.find('.//create_order')
+        self.assertEqual(order.get('id'),"'Attack'")
+        self.assertEqual(order.get('override'),'true')
+        self.assertNotEqual(order.get('default'),'true')
+    def test_native_icon_aliases_cover_all_twelve_orders(self):
+        root=xml('libraries/icons.xml')
+        actual={n.get('name') for n in root.iter('icon')}
+        expected={'order_'+ET.parse(p).find('order').get('id').lower() for p in (MOD/'aiscripts').glob('order.vardath.go.*.xml')}
+        self.assertEqual(actual,expected)
+    def test_cargo_illegality_is_not_counted(self):
+        text=source('aiscripts/vardath.go.task.inspection.xml')
+        self.assertIn('cargo.illegalto.{$jurisdiction}',text)
+        self.assertNotIn('illegalto.{$jurisdiction}.count',text)
+    def test_delivery_is_gated_by_actual_station_arrival_for_all_passengers(self):
+        root=xml('md/VGO_State.xml')
+        cue=root.find(".//cue[@name='PassengerTransfersV2']")
+        text=ET.tostring(cue,encoding='unicode')
+        self.assertNotIn('vgo_taxi_phase_started + 15s',text)
+        self.assertIn('$actor.hascontext.{$station} and not $actor.hascontext.{$ship}',text)
+        self.assertIn('$completed == $ship.$vgo_passengers.count',text)
+        self.assertIsNotNone(cue.find('.//add_actor_to_room[@slot="$exit"]'))
+        self.assertIsNotNone(cue.find('.//add_actor_to_room[@slot="$rollback"]'))
+    def test_taxi_undocks_even_for_same_sector_delivery_and_keeps_real_manifest(self):
+        root=xml('aiscripts/vardath.go.passengers.deliver.xml')
+        first=root.find(".//do_if[@value='@this.ship.dock.container != $destination']")
+        self.assertIsNotNone(first.find("run_script[@name=\"'vardath.go.depart'\"]"))
+        self.assertIn('not @this.ship.$vgo_taxi_boarded',ET.tostring(root,encoding='unicode'))
     def test_builder_rates_and_payment_guards_are_preserved(self):
         r=ET.parse(BUILDER/'md/vardath_builder_contracts.xml').getroot()
         self.assertEqual(len(list(r.iter('reward_player'))),2)

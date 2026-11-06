@@ -33,3 +33,7 @@ Runtime repair evidence: direct ship/turret/component blackboards are unsupporte
 ## debug(3).log follow-up
 
 The current recovery bundle supersedes the three-mod 0.2.1/1.74/1.14 bundle and adds Yaki Habitats 1.22. It addresses the log's safe-location, presence-expression, optional passenger/police, saved-stack and constructionsequence faults. Explicit default retries and shared-cursor native Logbook receipts address the reported Hold Position/missing-receipt symptoms without simulating successful work or re-paying old records. Crystal harvesting remains UNVERIFIED because the reported session failed at startup. The log does not prove a crash cause. Existing modules are preserved.
+
+## 0.2.3 / debug(4).log
+
+The current bundle updates Occupations and Yaki Habitats; Builders/Kopis are included unchanged. The log's explicit errors are cargo boolean misuse, construction pseudo-entry materialisation and an undefined order icon. Native 9.00 script inspection additionally established the absent undock step and same-faction fleet escort side effects. Full details and per-job evidence gaps are in `JOB_REVIEW_0.2.3.md`. The user has verified real boarding; complete taxi/tour unloading, repaired patrol and physical crystal harvesting still require runtime tests. Existing saved passengers, station modules and Forge weapon files are retained.

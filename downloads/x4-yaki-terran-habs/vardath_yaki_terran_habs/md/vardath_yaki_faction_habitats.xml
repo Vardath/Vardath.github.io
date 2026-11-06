@@ -22,18 +22,26 @@
               <set_value name="$HasSmall" exact="false" />
               <set_value name="$HasMedium" exact="false" />
               <set_value name="$HasLarge" exact="false" />
+              <set_value name="$PlanInvalid" exact="false" />
               <do_all exact="$CurrentPlan.count" counter="$PlanIndex">
-                <set_value name="$Entry" exact="$CurrentPlan.{$PlanIndex}" />
-                <do_if value="$Entry.macro == macro.vardath_yaki_hab_s_macro">
+                <do_if value="not @$CurrentPlan.{$PlanIndex}.macro">
+                  <set_value name="$PlanInvalid" exact="true" />
+                  <break />
+                </do_if>
+                <do_if value="$CurrentPlan.{$PlanIndex}.macro == macro.vardath_yaki_hab_s_macro">
                   <set_value name="$HasSmall" exact="true" />
                 </do_if>
-                <do_elseif value="$Entry.macro == macro.vardath_yaki_hab_m_macro">
+                <do_elseif value="$CurrentPlan.{$PlanIndex}.macro == macro.vardath_yaki_hab_m_macro">
                   <set_value name="$HasMedium" exact="true" />
                 </do_elseif>
-                <do_elseif value="$Entry.macro == macro.vardath_yaki_hab_l_macro">
+                <do_elseif value="$CurrentPlan.{$PlanIndex}.macro == macro.vardath_yaki_hab_l_macro">
                   <set_value name="$HasLarge" exact="true" />
                 </do_elseif>
               </do_all>
+              <do_if value="$PlanInvalid">
+                <debug_text text="'Yaki habitat retrofit skipped: current plan macro could not be read; no expansion scheduled.'" />
+                <continue />
+              </do_if>
               <set_value name="$MissingRings" exact="[]" />
               <do_if value="not $HasSmall">
                 <append_to_list name="$MissingRings" exact="macro.vardath_yaki_hab_s_macro" />

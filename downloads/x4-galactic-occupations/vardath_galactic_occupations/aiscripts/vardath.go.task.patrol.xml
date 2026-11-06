@@ -1,65 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.patrol" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.patrol" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
   <attention min="unknown">
     <actions>
-      <do_if value="not player.entity.$vgo_objects?">
-        <set_value name="player.entity.$vgo_objects" exact="table[]" />
-      </do_if>
-      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
-        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
-      </do_if>
-      <run_script name="'vardath.go.destination'" result="$destination">
-        <param name="ship" value="$target" />
+      <run_script name="'vardath.go.task.convoy'" result="$success">
+        <param name="target" value="$target" />
+        <param name="fee" value="0Cr" />
+        <param name="duration" value="10min" />
       </run_script>
-      <do_if value="not $destination.exists">
-        <return value="false" />
-      </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Patrolling traffic corridor to ' + $destination.knownname" />
-      <set_value name="$end" exact="player.age + 10min" />
-      <do_while value="$target.isoperational and $destination.isoperational and player.age lt $end">
-        <do_if value="$target.ishostileto.{this.ship}">
-          <return value="false" />
-        </do_if>
-        <find_ship name="$threats" space="$target.sector" ishostileto="this.ship" multiple="true" sortbydistanceto="$target" sortlimit="6">
-          <match_distance object="$target" max="15km" />
-        </find_ship>
-        <set_value name="$threat" exact="null" />
-        <do_for_each name="$enemy" in="$threats">
-          <do_if value="$enemy.dps.all le this.ship.dps.all * (0.5 + player.entity.$vgo_objects.{this.ship}.$vgo_risk) and (not $enemy.iscapitalship or this.ship.iscapitalship)">
-            <set_value name="$threat" exact="$enemy" />
-            <break />
-          </do_if>
-        </do_for_each>
-        <do_if value="$threat.exists and this.ship.hullpercentage gt 65">
-          <run_script name="'order.fight.attack.object'">
-            <param name="primarytarget" value="$threat" />
-            <param name="escort" value="$target" />
-            <param name="pursuedistance" value="10km" />
-            <param name="pursuetargets" value="false" />
-            <param name="allowothertargets" value="false" />
-          </run_script>
-        </do_if>
-        <do_else>
-          <run_script name="'order.fight.escort'">
-            <param name="target" value="$target" />
-            <param name="timeout" value="30s" />
-            <param name="pursuedistance" value="8km" />
-          </run_script>
-        </do_else>
-        <do_if value="@$target.dock.container == $destination and this.ship.sector == $target.sector and this.ship.distanceto.{$target} lt 12km + $target.size / 2">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="true" />
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" exact="$target.owner" />
-          <return value="true" />
-        </do_if>
-        <do_if value="this.ship.hullpercentage lt 55">
-          <return value="false" />
-        </do_if>
-        <wait exact="2s" />
-      </do_while>
-      <return value="false" />
+      <return value="$success" />
     </actions>
   </attention>
 </aiscript>

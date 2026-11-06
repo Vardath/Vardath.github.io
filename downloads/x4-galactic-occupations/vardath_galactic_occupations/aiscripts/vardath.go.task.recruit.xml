@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.recruit" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.recruit" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -38,7 +38,7 @@
       <set_value name="player.entity.$vgo_objects.{$target}.$vgo_cooldowns.{11}" exact="player.age + 30min" />
       <set_value name="$classfactor" exact="if $target.iscapitalship then 0.25 else (if $target.isclass.ship_m then 0.6 else 1.0)" />
       <set_value name="$morale" exact="@$target.pilot.skill.morale" />
-      <set_value name="$chance" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_basechance * $classfactor * (1 + (25 - $target.hullpercentage) / 25) * (1 - $morale / 30) / (1 + $target.people.count / 100), 50].min" />
+      <set_value name="$chance" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_basechance * $classfactor * (1 + (25 - $target.hullpercentage) / 25.0) * (1 - $morale / 30.0) / (1 + $target.people.count / 100.0), 50].min" />
       <set_value name="$roll" min="0" max="100" />
       <do_if value="$roll ge $chance">
         <return value="false" />
@@ -46,8 +46,11 @@
       <!-- Surrender changes the existing object. No replacement hull, refit or crew recreation. -->
       <cease_fire object="this.ship" />
       <cease_fire object="$target" />
-      <remove_object_commander object="$target" />
       <set_owner object="$target" faction="faction.player" overridenpc="true" />
+      <do_if value="not $target.isplayerowned">
+        <return value="false" />
+      </do_if>
+      <remove_object_commander object="$target" />
       <reset_relation_boost object="$target" faction="faction.player" />
       <do_if value="$target.isplayerowned">
         <find_ship name="$nearby" space="$target.sector" owner="faction.player" multiple="true" />

@@ -1,12 +1,12 @@
 # Galactic Occupations
 
-Version 0.2.2 development build, 7 November 2026. Author: Vardath.
+Version 0.2.3 development build, 7 November 2026. Author: Vardath.
 
 **Runtime verification is pending for all twelve occupations.** This extension contains executable AI orders, MD state/passenger handling, and Lua menu integration. The build environment cannot run X4. Source checks and mocked UI tests do not establish gameplay success.
 
 ## Install and assign
 
-1. Close X4. Extract `Galactic_Occupations_0.2.2_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
+1. Close X4. Extract `Galactic_Occupations_0.2.3_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
 2. Enable Galactic Occupations and load your existing save. No new game is required by the implementation.
 3. Select an eligible player-owned ship with an AI captain, open Behaviour, and select a Default Behaviour below.
 4. Use range **99 for the whole connected galaxy**, 0 for the home sector, or 1–98 for a jump radius. Risk 0/1 avoids hostile destinations; 2 permits them. Normal travel blacklists remain enforced.
@@ -17,7 +17,7 @@ Version 0.2.2 development build, 7 November 2026. Author: Vardath.
 | Behaviour | Actual task implementation | Payment or qualification |
 |---|---|---|
 | Galactic Escort Service | Reads a commercial vessel's actual station destination, escorts it and verifies meaningful proximity plus arrival. | Custom 12,000 Cr fee and small faction reputation after success. No vanilla mission-offer acceptance is claimed. |
-| Galactic Taxi Service | Picks a friendly station, reserves up to ten free crew berths, places actual passenger actors at its dock, uses vanilla NPC movement to board, flies to a preferably different-sector destination and disembarks them. | 8,000 Cr per delivered passenger. Every accepted NPC must physically enter before departure. Other crew are retained. |
+| Galactic Taxi Service | Picks a friendly station, reserves up to ten free crew berths, places actual passenger actors at its dock, uses vanilla NPC movement to board, flies to a preferably different-sector destination and disembarks them. | 8,000 Cr per delivered passenger. Every accepted NPC must enter the ship context through walking or a verified off-screen room transfer before departure. Other crew are retained. |
 | Station and Component Scanner | Selects unscanned modules and defence elements, approaches actual surface positions, retries three viewing angles and sustains ten seconds of clear LOS. Publishes native per-component scan data and checks for a real level/information increase. | Explicit custom survey equivalent. The documented scan action uses the player's scan cap; the AI ship needs scanner software but does not need to match the player's active scanner level. No whole-station scan flag. |
 | Wormhole and Anomaly Mapper | Surveys real anomalies, gates and accelerators; logs actual anomaly destination sets separately from ordinary links. | Optional transit fallback first attempts traversal, then may move the same ship to a permitted real exit. Mission anomalies/capitals excluded. |
 | Galactic Sightseeing Tour | Boards up to ten real passengers, visits ten distinct global sights by default, dwells at viewing distance, covers at least three sectors where available and returns to a station for drop-off. | Luxury fare defaults to 500,000 Cr per passenger; up to 5,000,000 Cr. Ticket price and 10–20 stops are configurable. No payment for isolated visits, boarding or unfinished tours. |
@@ -33,7 +33,7 @@ Version 0.2.2 development build, 7 November 2026. Author: Vardath.
 
 Jobs use a cached native connected-sector graph and rotate sectors after an assignment instead of consuming local work indefinitely. The tour catalogue queries the entire operating scope and records distinct visits. Range 99 uses the native unlimited search form (omitting maxdistance), rather than a literal 99-jump ceiling. Travel may discover paths and respects native travel blacklists/access restrictions. Disconnected or story-locked spaces are not fabricated as reachable.
 
-Galaxy coverage describes target discovery and travel. Physical effects still depend on engine simulation: crystal harvesting and demolition need high attention; module surface raycasts need loaded collision geometry; real NPC boarding needs loaded, walkable docking/ship interiors. The taxi stays docked and reports this dependency until it can place and board the actual NPCs. It does not substitute a passenger template for physical boarding. Full unattended/OOS physical boarding and harvesting are not delivered.
+Galaxy coverage describes target discovery and travel. Physical effects still depend on engine simulation: crystal harvesting and demolition need high attention; module surface raycasts need loaded collision geometry; real NPC boarding needs valid, walkable docking/ship room connections. The taxi stays docked and reports this dependency until it can place and board the actual NPCs. It does not substitute a passenger template for physical boarding. Off-screen boarding/unloading attempts real cue-actor room transfers with context proof; engine room availability still needs runtime verification. Off-screen crystal harvesting is not delivered.
 
 ## Passengers and tours
 
@@ -41,7 +41,7 @@ Capacity is rechecked at pickup and native `create_npc_template force="false"` r
 
 Contracts and partial boarding/delivery survive interruptions. Resume the same passenger occupation to finish passengers already aboard; switching between taxi and tour does not silently reclassify their contract. Old single-passenger taxi state is adopted without replacing the actor/template and requires actual boarding confirmation.
 
-Tours book only when the available catalogue contains enough distinct sites. Range 0 may offer too few; increase the range. Each trip records sites and sectors separately from the long-term itinerary. Ten stops and three sectors are defaults, with the sector minimum limited by actual catalogue coverage. Booked fare/stops persist during the trip. A destroyed drop-off station is replaced by a suitable accessible station. Off-screen drop-off uses the native passenger manifest only after previous physical boarding and actual docking.
+Tours book only when the available catalogue contains enough distinct sites. Range 0 may offer too few; increase the range. Each trip records sites and sectors separately from the long-term itinerary. Ten stops and three sectors are defaults, with the sector minimum limited by actual catalogue coverage. Booked fare/stops persist during the trip. A destroyed drop-off station is replaced by a suitable accessible station. Off-screen drop-off attempts to transfer the same accepted cue actors into real destination rooms. Only a successful connection and actual station/outside-ship context count as disembarkation; missing rooms retain the manifest without a fare. Visible passengers walk off with the native NPC movement signal.
 
 ## Mine Crystals in Loadout
 
@@ -84,3 +84,15 @@ The twelve order location expressions now always return a valid component, inclu
 For crystal mining, use a player-owned S/M ship with an AI captain and at least one operational compatible deployed turret. With the conservative beam-only option enabled, it must be a beam turret. Select Mine Crystals for that turret if manually configured. A missing compatible selection leaves the occupation running with a Logbook/status explanation; it does not equip anything or select Hold Position. Main guns alone do not satisfy this turret-control implementation.
 
 Test startup separately from harvesting. After the `behaviour active` acknowledgment, remain near a real asteroid field so the engine loads crystals. Verify the selected target is a real deposit, a turret aims and actually damages it, the deposit's drop event supplies real objects, native collection removes those drops and increases the pilot's inventory, and any later sale produces exactly one native payment/receipt. Try a blocked arc, no beams, a destroyed deposit and an interruption/save/reload. Until these have been observed in the game, crystal harvesting remains UNVERIFIED. The turret preflight and parser corrections alone do not establish a working harvest cycle.
+
+## 0.2.3 closed passenger trip and patrol changes
+
+Taxi now explicitly undocks after the complete batch boards, including for same-sector delivery, travels to a suitable station, docks and waits until the whole accepted manifest has left the ship. Tours select their first sightseeing target after boarding, explicitly undock and cover the booked itinerary before using the same docking/unloading/fare path. An already docked, interrupted unload resumes without needlessly departing again. Walkable destinations are preferred/replaced when unsuitable. Stopped NPC paths retry; no elapsed-time branch marks a passenger delivered.
+
+The shared movement helper also fixes leaving docks for scanners, mappers, crystal brokerage, morale, recruitment and other navigation. It preserves the native player pilot-seat guard. NPC interiors must support valid room connections; unsuccessful walking/transfer attempts remain unpaid and may need the relevant scenes loaded.
+
+Escort/patrol now follow actual commercial destinations using a persistent convoy record. They use temporary, separately queued native defensive attacks, bounded to sixty seconds; an attack ending or failing cannot cancel the occupation default. Player commands retain priority. Normal player-created orders are not cleared by the combat watchdog. The old native fleet escort subroutine required matching owners and could replace the job with AssignCommander/Hold; it is no longer called.
+
+See `JOB_REVIEW_0.2.3.md` for every occupation, concrete native-source findings and remaining acceptance work. User-observed boarding does not verify the full tour, drop-off, patrol, crystal harvesting or other still untested gameplay effects.
+
+Outside rendered simulation, boarding also attempts an actual same-actor transfer from a real pickup-station room to a valid ship room. It still requires the exact passenger entity to exist in ship context and its native passenger template to be out of transit. No seat reservation or elapsed timer alone acknowledges boarding. The user-verified visible walking branch is retained. If the engine cannot connect either room, the batch waits unpaid. This alternative remains runtime-unverified.

@@ -65,7 +65,7 @@ From `downloads/x4-galactic-occupations`:
 ```sh
 python tools/validate.py
 python tools/package.py
-python tools/validate.py --zip Galactic_Occupations_0.2.2_DEV.zip
+python tools/validate.py --zip Galactic_Occupations_0.2.3_DEV.zip
 ```
 
 For official schema and installed native-signature checking, extract the matching game catalogs with Egosoft's X Catalog Tool, preserving `libraries` and `aiscripts` paths, install `lxml` and run:
@@ -119,3 +119,16 @@ The 36 UI checks mock menu/widget data and execute the addon Lua; they do not cr
 7. A successful unpaid task produces `work completed`, not a fictitious financial transaction. Ordinary trade income does not become an occupation receipt without a corresponding paid mod-journal record.
 8. On a Yaki wharf already planning all three habitat sizes, wait beyond the retrofit interval and verify no duplicate habitat task. Test a missing-size plan without moving/removing existing modules. No foreach-on-constructionsequence errors should recur.
 9. Revisit the heavy sector and retain a post-fix log/crash dump if it still crashes. This update removes known script-error flooding and repeat-habitat risk; it does not establish the original crash cause or remove existing station modules.
+
+## 0.2.3 priority runtime acceptance
+
+1. Fully close X4, update the existing folders, restart and load the current save with the existing boarded tour passengers. Retain Protected UI. Release the pilot seat to the captain. Check that the new current default selects a real sightseeing destination, undocks and moves without replacing/duplicating passengers. Reassign only jobs already lost to Hold.
+2. Complete the booked distinct stops/sectors, return to the station and observe all passengers walk out. Verify the manifest and passenger templates clear only after they leave; then exactly one fare and receipt. Stop midway through unloading, save/reload or issue a direct order, then resume: no passenger duplication or extra fare.
+3. Taxi: test both different-sector and same-sector destinations. After real boarding, it must undock, travel directly, dock and unload all accepted NPCs before payment. It must not need a tour stop. Try batches of one/ten and a ship with fewer free berths.
+4. Off-screen unloading: verify an actual same-actor connection to a real destination room, outside the ship, before the delivered flag. An unavailable room or failed connection must keep the manifest/unpaid state. No fifteen-second success fallback. Bring the scene into attention to test streamed walking if the engine cannot connect off-screen rooms.
+5. Escort/patrol: choose active non-player/player traders with real queued commercial destinations. Confirm foreign-owner escort no longer creates AssignCommander or Hold. Track the trader along its actual route. During a suitable hostile encounter, the separate temporary Attack order may run, then the occupation resumes its stored convoy. Test failed/out-of-ammo combat, direct player orders, route changes and trader destruction.
+6. Re-test the other ten jobs' assignment, target/effect/repeat, save/load and failure cases above, especially starting while docked. Diagnostics should name the current activity; neither source validation nor a clear log counts as proof of an effect.
+7. Inspection: use legal and actually illegal cargo; no `.illegalto...count` errors. Yaki: verify native plan macro lookup no longer errors and no duplicate habitat expansion is queued. The update does not delete existing habitat modules.
+8. Crystal mining remains a separate unverified acceptance test: actual deposit target, aim, hits, drop event, collection and sale must be observed. Departure repairs alone do not verify it.
+
+Off-screen pickup acceptance: at a valid station dock, verify the same cue actor is first connected to the pickup room and then the ship room, with a native non-transit passenger template, before the boarded acknowledgment. A failed room connection must preserve the batch and award no payment. Recheck the previously successful visible walking path unchanged.

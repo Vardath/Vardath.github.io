@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -37,7 +37,7 @@
       <do_if value="8000Cr * [10, this.ship.people.free + @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count].min lt player.entity.$vgo_objects.{this.ship}.$vgo_minreward and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
         <return value="false" />
       </do_if>
-      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.dockingallowed.{this.ship}">
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.dockingallowed.{this.ship} or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.haswalkableroom">
         <set_value name="$sectors" exact="player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone" />
         <set_value name="$destination" exact="null" />
         <do_all exact="2" counter="$pass">
@@ -48,7 +48,7 @@
             <do_if value="$pass == 1 and $sector == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.sector">
               <continue />
             </do_if>
-            <find_station name="$stations" space="$sector" multiple="true" excluded="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" reachablefrom="this.ship">
+            <find_station name="$stations" space="$sector" multiple="true" excluded="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" reachablefrom="this.ship" haswalkableroom="true">
               <match_dock size="this.ship.docksize" />
             </find_station>
             <do_while value="$stations.count">

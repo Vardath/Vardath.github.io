@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.convoy" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target" />
+    <param name="fee" default="0Cr" />
+    <param name="duration" default="10min" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not $target.isoperational or $target.ishostileto.{this.ship} or ($fee gt 0Cr and ($target.isplayerowned or $fee lt player.entity.$vgo_objects.{this.ship}.$vgo_minreward))">
+        <resume label="failed" />
+      </do_if>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target != $target or @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job != player.entity.$vgo_objects.{this.ship}.$vgo_job or not @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_destination.isoperational">
+        <run_script name="'vardath.go.destination'" result="$destination">
+          <param name="ship" value="$target" />
+        </run_script>
+        <do_if value="not $destination.isoperational or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$destination.sector}">
+          <resume label="failed" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" exact="$target" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job" exact="player.entity.$vgo_objects.{this.ship}.$vgo_job" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_destination" exact="$destination" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_started" exact="player.age" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_end" exact="player.age + $duration" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_samples" exact="0" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_near" exact="0" />
+      </do_if>
+      <set_value name="$destination" exact="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$destination" />
+      <do_while value="$target.isoperational and $destination.isoperational and player.age lt player.entity.$vgo_objects.{this.ship}.$vgo_convoy_end">
+        <do_if value="$target.ishostileto.{this.ship} or this.ship.hullpercentage lt 55">
+          <resume label="failed" />
+        </do_if>
+        <do_if value="@$target.dock.container == $destination">
+          <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_samples ge 2 and player.entity.$vgo_objects.{this.ship}.$vgo_convoy_near * 2 ge player.entity.$vgo_objects.{this.ship}.$vgo_convoy_samples and player.age ge player.entity.$vgo_objects.{this.ship}.$vgo_convoy_started + 30s and this.ship.sector == $target.sector and this.ship.distanceto.{$target} lt 12km + $target.size / 2">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="true" />
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_reward" exact="$fee" />
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" exact="$target.owner" />
+            <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" />
+            <return value="true" />
+          </do_if>
+          <resume label="failed" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="(if $fee gt 0Cr then 'Escorting ' else 'Patrolling trader corridor: ') + $target.knownname + ' to ' + $destination.knownname" />
+        <run_script name="'vardath.go.approach'" result="$near">
+          <param name="target" value="$target" />
+          <param name="distance" value="5km" />
+        </run_script>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_samples" exact="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_samples + 1" />
+        <do_if value="$target.isoperational and this.ship.sector == $target.sector and this.ship.distanceto.{$target} lt 12km + $target.size / 2">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_near" exact="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_near + 1" />
+          <find_ship name="$threats" space="$target.sector" ishostileto="this.ship" multiple="true" sortbydistanceto="$target" sortlimit="6">
+            <match_distance object="$target" max="15km" />
+          </find_ship>
+          <do_for_each name="$enemy" in="$threats">
+            <do_if value="($enemy.ishostileto.{$target} or @$enemy.order.$primarytarget == $target) and $enemy.dps.all le this.ship.dps.all * (0.5 + player.entity.$vgo_objects.{this.ship}.$vgo_risk) and (not $enemy.iscapitalship or this.ship.iscapitalship) and this.ship.hullpercentage gt 65">
+              <run_script name="'vardath.go.queueattack'" result="$queued">
+                <param name="target" value="$enemy" />
+                <param name="protected" value="$target" />
+              </run_script>
+              <do_if value="$queued">
+                <wait exact="1s" />
+                <return value="false" />
+              </do_if>
+            </do_if>
+          </do_for_each>
+        </do_if>
+        <wait exact="2s" />
+      </do_while>
+      <label name="failed" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" />
+      <return value="false" />
+    </actions>
+  </attention>
+</aiscript>

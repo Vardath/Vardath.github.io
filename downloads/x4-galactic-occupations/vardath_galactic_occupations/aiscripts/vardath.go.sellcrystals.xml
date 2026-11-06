@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
@@ -17,11 +17,16 @@
         </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 20min" />
         <do_if value="this.ship.sector != $station.sector">
+          <run_script name="'vardath.go.depart'" result="$departed" />
+          <do_if value="not $departed">
+            <return value="false" />
+          </do_if>
           <run_script name="'move.generic'">
             <param name="destination" value="$station.sector" />
             <param name="endintargetsector" value="true" />
             <param name="strictblacklist" value="true" />
             <param name="useknownpath" value="false" />
+            <param name="pursuetargets" value="false" />
           </run_script>
         </do_if>
         <run_script name="'order.dock'">

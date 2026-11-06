@@ -1,5 +1,15 @@
 # Version history
 
+## 0.2.3 development — tour, taxi, neutral escort and drop-off
+
+- Explicit native undocking before direct travel/proximity completion, with native skipwait handling; boarding hands tours immediately to a real sightseeing target.
+- Taxi same-sector departure; shared actual-actor disembarkation for taxi/tour, with a full-manifest completion gate. Removed timer-only off-screen delivery. Visible actors walk off; off-screen transfers must actually connect the same actor to a real destination room or remain unpaid.
+- Persistent neutral/player-trader convoy escort/patrol replaces the unsafe same-faction fleet escort call. Defensive combat uses a separate native override order, with bounded cleanup and route resumption.
+- Correct boolean cargo illegality. Recheck recruitment ownership before commander/order changes, preserve float probability factors, require a front laser for lure provocation, and use the actual asteroid persistence target.
+- New namespaced order-icon aliases reference native textures; no screen replacement or change to Protected UI.
+- Yaki Habitats 1.23 directly dereferences construction-plan macros and fails closed on unreadable plans. Existing modules, Forge equipment and other mods are preserved.
+- Boarding success is user-observed in 0.2.2. These repaired gameplay stages are still runtime-unverified; full per-job review and reproducible tests included.
+
 ## 0.2.2 development — failures from debug(3).log
 
 - Safe non-null order-location fallback for all twelve behaviours, including Crystal Miner; explicit retry after an unexpected worker return.

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.inspection" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.inspection" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -31,7 +31,7 @@
         </do_if>
         <wait exact="1s" />
       </do_all>
-      <set_value name="$illegal" exact="$target.cargo.illegalto.{$jurisdiction}.count gt 0 or @$target.pilot.inventory.illegalto.{$jurisdiction}.count gt 0" />
+      <set_value name="$illegal" exact="$target.cargo.illegalto.{$jurisdiction} or @$target.pilot.inventory.illegalto.{$jurisdiction}" />
       <write_to_logbook category="general" title="'Galactic Occupations: cargo inspection'" text="'%s inspected %s in %s: contraband found = %s'.[this.ship.knownname,$target.knownname,$target.sector.knownname,$illegal]" interaction="showonmap" object="$target" />
       <do_if value="$illegal">
         <signal_objects object="$target.sector" param="'police'" param2="$target" param3="this.ship" />

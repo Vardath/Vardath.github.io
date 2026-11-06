@@ -12375,6 +12375,40 @@
       "source": "08/aiscripts/move.generic.xml",
       "version": "23"
     },
+    "move.undock": {
+      "parameters": {
+        "debugchance": {
+          "advanced": "true",
+          "comment": "Print debug output",
+          "default": "0",
+          "name": "debugchance",
+          "text": "{1041, 10086}",
+          "type": "bool"
+        },
+        "releasesignal": {
+          "comment": "Release signal. List: [param, param2]. Wait will be cancelled if a signal with $releasesignal.{1} as event.param and $releasesignal.{2} as event.param2 is sent to this.object. While event.param MUST be non-null, event.param2 may be null.",
+          "default": "null",
+          "name": "releasesignal",
+          "type": "internal"
+        },
+        "skipwait": {
+          "comment": "Skip wait. Do not wait for the player",
+          "default": "false",
+          "name": "skipwait",
+          "text": "{1041, 10116}",
+          "type": "internal"
+        },
+        "uselaunchtubes": {
+          "advanced": "true",
+          "comment": "Use launch tubes. Ships in internal storage that undock from a ship with launch tubes are launched from launch tubes. Will be set to false below if container has no launch tubes or ship does not, in fact, launch from a launch tube. Note that this does not assure that ships use launch tubes, but will request their use and involves handling in the script for ships that are launched from launch tubes.",
+          "default": "false",
+          "name": "uselaunchtubes",
+          "text": "{1041, 10140}",
+          "type": "bool"
+        }
+      },
+      "provenance": "Native script interface; also inspected published 9.00 move.undock.xml at e3e8a345e5624db118bff3eb171b60b0993fcc2c"
+    },
     "order.collect.ship": {
       "parameters": {
         "debugchance": {
@@ -12600,7 +12634,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2).log and debug(3).log; the latter confirms rejected @/? combination, unsafe order locations, absent legacy passengers/police factions, saved-stack failures and constructionsequence iteration; reviewed 2026-11-07.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<content id="vardath_yaki_terran_habs" name="Vardath - Yaki Terran Habitats" description="Three exact S/M/L Terran ring habitation replicas, red/black materials, Yaki workforce, compatible snap connections, faction wharf expansion and player blueprints." author="Vardath" version="122" date="2026-11-07" save="1" enabled="1">
+<content id="vardath_yaki_terran_habs" name="Vardath - Yaki Terran Habitats" description="Three exact S/M/L Terran ring habitation replicas, red/black materials, Yaki workforce, compatible snap connections, faction wharf expansion and player blueprints." author="Vardath" version="123" date="2026-11-07" save="1" enabled="1">
   <dependency version="900" />
   <dependency id="ego_dlc_terran" optional="false" name="Cradle of Humanity" />
   <text language="44" name="Vardath - Yaki Terran Habitats" description="Standalone red-and-black Terran habitation for Yaki workforce." author="Vardath" />

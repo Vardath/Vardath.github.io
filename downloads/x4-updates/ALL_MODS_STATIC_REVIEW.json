@@ -26,7 +26,7 @@
       "aiscripts": 0,
       "lua": 0,
       "zip": "byte-for-byte checked",
-      "api_commands": 32,
+      "api_commands": 38,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_yaki_terran_habs; 21 source files, XML parse and ZIP integrity\n"
@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 51,
-      "xml": 45,
-      "diffs": 0,
+      "files": 56,
+      "xml": 49,
+      "diffs": 1,
       "md": 3,
-      "aiscripts": 39,
+      "aiscripts": 42,
       "lua": 2,
       "zip": "byte-for-byte checked",
-      "api_commands": 1828,
+      "api_commands": 1958,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 45,\n    \"commands\": 1828,\n    \"script_calls\": 71,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log and debug(3).log reviewed for actual failures\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 49,\n    \"commands\": 1958,\n    \"script_calls\": 81,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log, debug(3).log and debug(4).log reviewed for actual failures\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,13 +123,13 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Job_Recovery_2026-11-07.zip; 4 extensions, 122 byte-matched files\n"
+    "output": "PASS: X4_Tour_Patrol_Fixes_2026-11-07.zip; 4 extensions, 127 byte-matched files\n"
   },
   "command_provenance": {
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2).log and debug(3).log; the latter confirms rejected @/? combination, unsafe order locations, absent legacy passengers/police factions, saved-stack failures and constructionsequence iteration; reviewed 2026-11-07.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [
