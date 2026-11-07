@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.hackonce" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <order id="VGO_hackonce" name="{191180,114}" description="{191180,214}" category="navigation" infinite="false" allowinloop="false">
+    <params>
+      <param name="station" type="object" text="{191180,52}" default="null" />
+      <param name="panelid" type="internal" default="''" />
+    </params>
+    <requires>
+      <match owner="faction.player" />
+      <match class="[class.ship_s,class.ship_m,class.ship_l,class.ship_xl]" />
+    </requires>
+    <location object="if $station.exists then $station else this.ship" />
+  </order>
+  <attention min="unknown">
+    <actions>
+      <set_value name="$ship" exact="this.assignedcontrolled" />
+      <do_if value="not player.entity.$vgo_objects?">
+        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <set_value name="$previousdefault" exact="$ship.defaultorder" />
+      <set_value name="$previous" exact="table[]" />
+      <set_value name="$previous.$job" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_job" />
+      <set_value name="$previous.$order" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_order" />
+      <set_value name="$previous.$home" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_home" />
+      <set_value name="$previous.$range" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_range" />
+      <set_value name="$previous.$risk" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_risk" />
+      <set_value name="$previous.$minreward" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_minreward" />
+      <set_value name="$previous.$preferred" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_preferred" />
+      <set_value name="$previous.$debug" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_debug" />
+      <set_value name="$previous.$basechance" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_basechance" />
+      <set_value name="$previous.$cooldown" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_cooldown" />
+      <set_value name="$previous.$sell" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_sell" />
+      <set_value name="$previous.$sellthreshold" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_sellthreshold" />
+      <set_value name="$previous.$beamonly" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_beamonly" />
+      <set_value name="$previous.$transit" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_transit" />
+      <set_value name="$previous.$collect" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_collect" />
+      <set_value name="$previous.$resourceonly" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly" />
+      <set_value name="$previous.$viewtime" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_viewtime" />
+      <set_value name="$previous.$collectionlimit" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" />
+      <set_value name="$previous.$target" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_target" />
+      <set_value name="$previous.$destination" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_destination" />
+      <set_value name="$previous.$status" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+      <run_script name="'vardath.go.worker'" result="$success">
+        <param name="job" value="13" />
+        <param name="home" value="this.ship.sector" />
+        <param name="range" value="99" />
+        <param name="risk" value="2" />
+        <param name="hackstation" value="$station" />
+        <param name="hackpanel" value="$panelid" />
+        <param name="hackonce" value="true" />
+      </run_script>
+      <do_if value="$ship.isplayerowned and $ship.defaultorder == $previousdefault and $previous.$order == $previousdefault">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_job" exact="$previous.$job" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$previous.$order" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$previous.$home" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$previous.$range" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_risk" exact="$previous.$risk" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_minreward" exact="$previous.$minreward" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_preferred" exact="$previous.$preferred" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_debug" exact="$previous.$debug" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_basechance" exact="$previous.$basechance" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_cooldown" exact="$previous.$cooldown" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_sell" exact="$previous.$sell" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_sellthreshold" exact="$previous.$sellthreshold" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_beamonly" exact="$previous.$beamonly" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_transit" exact="$previous.$transit" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collect" exact="$previous.$collect" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly" exact="$previous.$resourceonly" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_viewtime" exact="$previous.$viewtime" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$previous.$collectionlimit" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" exact="$previous.$target" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$previous.$destination" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="$previous.$status" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_reward" exact="0Cr" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="0" />
+      </do_if>
+      <return value="$success" />
+    </actions>
+  </attention>
+</aiscript>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.hacker.catalogue" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params><param name="station" /></params>
+  <attention min="unknown"><actions>
+    <do_if value="not $station.isoperational or $station.isplayerowned"><return value="[]" /></do_if>
+    <do_if value="not player.entity.$vgo_objects.{$station}?">
+      <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
+    </do_if>
+    <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age">
+      <signal_objects object="player.entity" param="'vardath.go.hack.catalogue'" param2="$station" />
+      <do_all exact="20">
+        <wait exact="500ms" />
+        <do_if value="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? and @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until gt player.age"><break /></do_if>
+      </do_all>
+    </do_if>
+    <return value="if player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? then player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue else []" />
+  </actions></attention>
+</aiscript>

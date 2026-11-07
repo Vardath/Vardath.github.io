@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.hacker" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <set_value name="$ship" exact="this.assignedcontrolled" />
+      <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase and (not $target.isoperational or $target.isplayerowned or $target.owner == faction.ownerless or not $target.haswalkableroom)">
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: target is not an eligible faction station'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed" />
+        <do_if value="not $target.dockingallowed.{$ship} or not $target.dock.{$ship.docksize}.exists">
+          <return value="false" />
+        </do_if>
+        <run_script name="'vardath.go.hacker.catalogue'" result="$catalogue">
+          <param name="station" value="$target" />
+        </run_script>
+        <set_value name="$eligible" exact="[]" />
+        <do_for_each name="$entry" in="$catalogue">
+          <do_if value="not $target.iscontrolpanelhacked.{$entry.{1}} and (not @player.entity.$vgo_objects.{$ship}.$vgo_hack_forcedpanel or player.entity.$vgo_objects.{$ship}.$vgo_hack_forcedpanel == '' or player.entity.$vgo_objects.{$ship}.$vgo_hack_forcedpanel == $entry.{2})">
+            <append_to_list name="$eligible" exact="$entry" />
+          </do_if>
+        </do_for_each>
+        <do_if value="not $eligible.count">
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: requested panel absent, already hacked, or station has no accessible hack room'" />
+          <return value="false" />
+        </do_if>
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_call_sent" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apireason" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slot" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_room" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_walkstart" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_departed" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitroom" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitpath" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_travelfail" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="[]" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_traveluntil" exact="player.age + 30min" />
+        <set_value name="$entry" exact="$eligible.random" />
+        <set_value name="player.entity.$vgo_hack_seq" exact="@player.entity.$vgo_hack_seq + 1" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_token" exact="player.entity.$vgo_hack_seq" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_station" exact="$target" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_type" exact="$entry.{1}" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid" exact="$entry.{2}" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_rooms" exact="$entry.{3}" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_order" exact="$ship.order" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_native" exact="false" />
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'prepare'" />
+        <signal_objects object="player.entity" param="'vardath.go.hack.register'" param2="$ship" />
+      </do_if>
+      <do_while value="$ship.exists and @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" exact="player.age + 30min" />
+        <do_if value="@player.entity.$vgo_objects.{$target}.$vgo_owner == $ship">
+          <set_value name="player.entity.$vgo_objects.{$target}.$vgo_expires" exact="player.age + 25min" />
+        </do_if>
+        <set_value name="$phase" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" />
+        <do_if value="$phase == 'done' or $phase == 'aborted'">
+          <set_value name="$success" exact="$phase == 'done' and @player.entity.$vgo_objects.{$ship}.$vgo_hack_native and @player.entity.$vgo_objects.{$ship}.$vgo_hack_departed and @player.entity.$vgo_objects.{$ship}.$vgo_hack_actor.room.hascontext.{$ship}" />
+          <do_if value="$success">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_result" exact="'Native ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name + ' effect verified on ' + $target.knownname + '; ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_actor.knownname + ' physically returned aboard'" />
+          </do_if>
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" />
+          <return value="$success" />
+        </do_if>
+        <do_if value="$ship.isplayerowned and ($phase == 'ready' or ($phase == 'returning' and @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and @player.entity.$vgo_objects.{$ship}.$vgo_hack_actor.exists and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_actor.room.hascontext.{$ship} and @$ship.dock.container != $target))">
+          <do_if value="$phase == 'ready' and player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_hack_traveluntil">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: station travel/docking timed out; returning tools without claiming work'" />
+            <continue />
+          </do_if>
+          <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor == $ship.pilot and not player.entity.$vgo_objects.{$ship}.$vgo_hack_actor.hascontext.{$ship}">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker captain is ashore; waiting for a restored docking link to return'" />
+            <wait exact="5s" />
+            <continue />
+          </do_if>
+          <do_if value="not $target.isoperational or not $target.dockingallowed.{$ship}">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: docking unavailable; recovering crew and unused tools'" />
+            <wait exact="5s" />
+            <continue />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_destination" exact="$target" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: travelling/docking at ' + $target.knownname" />
+          <do_if value="@$ship.dock.container != $target">
+            <run_script name="'vardath.go.depart'" result="$departed" />
+            <do_if value="not $departed">
+              <wait exact="5s" />
+              <continue />
+            </do_if>
+            <do_if value="$ship.sector != $target.sector">
+              <run_script name="'move.generic'">
+                <param name="destination" value="$target.sector" />
+                <param name="endintargetsector" value="true" />
+                <param name="strictblacklist" value="true" />
+                <param name="useknownpath" value="false" />
+                <param name="pursuetargets" value="false" />
+              </run_script>
+            </do_if>
+            <run_script name="'order.dock'">
+              <param name="destination" value="$target" />
+              <param name="waittime" value="5min" />
+              <param name="internalorder" value="true" />
+            </run_script>
+          </do_if>
+          <do_if value="@$ship.dock.container == $target and $phase == 'ready'">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'docked'" />
+          </do_if>
+        </do_if>
+        <wait exact="2s" />
+      </do_while>
+      <return value="false" />
+    </actions>
+  </attention>
+</aiscript>

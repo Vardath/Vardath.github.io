@@ -10,7 +10,7 @@ import zipfile
 
 BASE = Path(__file__).resolve().parents[1]
 MOD = BASE / 'vardath_galactic_occupations'
-JOBS = ['escort','taxi','scanner','mapper','tour','crystal','lure','demolition','morale','inspection','recruit','patrol']
+JOBS = ['escort','taxi','scanner','mapper','tour','crystal','lure','demolition','morale','inspection','recruit','patrol','hacker']
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--reference', type=Path, help='Extracted installed X4 root: libraries/*.xsd and aiscripts/*.xml')
 parser.add_argument('--report', type=Path)
@@ -39,7 +39,7 @@ for path in sorted(MOD.rglob('*.xml')):
         scripts[root.get('name')] = root
 
 structural = {'aiscript','order','params','param','requires','location','interrupts','handler','actions','attention','init',
-              'mdscript','cues','cue','conditions','language','page','t','content','dependency','input_param','patch'}
+              'mdscript','cues','cue','library','conditions','language','page','t','content','dependency','input_param','patch'}
 for path, root in trees.items():
     parents = {child: parent for parent in root.iter() for child in parent}
     for node in root.iter():
@@ -109,6 +109,12 @@ for path, root in trees.items():
             if not variants or not any(set(node.attrib) <= set(v['attributes']) for v in variants):
                 error(path, f'undocumented element or child signature: {node.tag} {node.attrib}')
     if root.tag == 'aiscript':
+        native_param_types = {'internal','bool','object','number','time','list','length','position','sector','ware','trade','money','formationshape','build'}
+        for parameter in root.findall('./order/params/param'):
+            if parameter.get('type') not in native_param_types:
+                error(path, f"unsupported native order parameter type {parameter.get('type')}")
+            if 'internal' in parameter.attrib:
+                error(path, 'native hidden order parameters use type=internal, not an internal attribute')
         labels = {n.get('name') for n in root.findall('.//label')}
         for node in root.findall('.//resume') + root.findall('.//abort_called_scripts'):
             label = node.get('label') or node.get('resume')

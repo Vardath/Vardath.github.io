@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.hacker" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <order id="VGO_hacker" name="{191180,113}" description="{191180,213}" category="navigation" infinite="true" allowinloop="false">
+    <params>
+      <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
+      <param name="range" type="number" default="99" text="{191180,3}">
+        <input_param name="min" value="0" />
+        <input_param name="max" value="99" />
+        <input_param name="step" value="1" />
+      </param>
+      <param name="risk" type="number" default="2" text="{191180,4}">
+        <input_param name="min" value="0" />
+        <input_param name="max" value="2" />
+        <input_param name="step" value="1" />
+      </param>
+      <param name="repeat" type="bool" default="true" text="{191180,6}" />
+      <param name="debugchance" type="bool" default="0" text="{191180,8}" advanced="true">
+        <input_param name="truevalue" value="100" />
+      </param>
+    </params>
+    <requires>
+      <match owner="faction.player" />
+      <match class="class.spacesuit" negate="true" />
+      <match shiptype="shiptype.lasertower" negate="true" />
+      <match unit="false" />
+    </requires>
+    <location object="if @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists then player.entity.$vgo_objects.{this.ship}.$vgo_destination else (if @player.entity.$vgo_objects.{this.ship}.$vgo_target.exists then player.entity.$vgo_objects.{this.ship}.$vgo_target else this.ship)" />
+  </order>
+  <interrupts>
+    <handler ref="AttackHandler" />
+    <handler ref="MissileLockHandler" />
+    <handler ref="ScannedHandler" />
+    <handler ref="InspectedHandler" />
+    <handler ref="TideHandler" />
+  </interrupts>
+  <attention min="unknown">
+    <actions>
+      <label name="work" />
+      <set_order_syncpoint_reached order="this.ship.order" />
+      <run_script name="'vardath.go.worker'">
+        <param name="job" value="13" />
+        <param name="home" value="$home" />
+        <param name="range" value="$range" />
+        <param name="risk" value="$risk" />
+        <param name="repeat" value="$repeat" />
+        <param name="debugchance" value="$debugchance" />
+      </run_script>
+      <wait exact="15s" />
+      <do_if value="this.ship.isplayerowned and this.ship.order.id == 'VGO_hacker'">
+        <resume label="work" />
+      </do_if>
+    </actions>
+  </attention>
+</aiscript>

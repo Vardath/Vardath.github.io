@@ -7,7 +7,7 @@ import zipfile
 
 base = Path(__file__).resolve().parents[1]
 mod = base / 'vardath_galactic_occupations'
-archive = base / 'Galactic_Occupations_0.2.5_DEV.zip'
+archive = base / 'Galactic_Occupations_0.3.0_DEV.zip'
 subprocess.run([sys.executable,str(base/'tools/validate.py')],check=True)
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as output:
     for path in sorted(p for p in mod.rglob('*') if p.is_file()):

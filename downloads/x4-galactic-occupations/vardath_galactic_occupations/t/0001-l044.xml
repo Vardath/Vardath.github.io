@@ -46,5 +46,11 @@
     <t id="30">Mine Crystals</t>
     <t id="31">Distinct sightseeing stops per tour</t>
     <t id="32">Luxury tour fare per passenger</t>
+    <t id="51">Hack station</t>
+    <t id="52">Target station</t>
+    <t id="113">Galactic Station Hacker</t>
+    <t id="114">Hack selected station panel</t>
+    <t id="213">Galaxy-wide station hacking using an existing crew member or captain. Requires actual hacking tools from player inventory; missing tools retry every 10 game minutes. Crew must walk to a native panel and return before departure. No employer or automatic payment.</t>
+    <t id="214">Queue one physical crew hack of the selected native station panel. Existing orders and default behaviour are retained.</t>
   </page>
 </language>

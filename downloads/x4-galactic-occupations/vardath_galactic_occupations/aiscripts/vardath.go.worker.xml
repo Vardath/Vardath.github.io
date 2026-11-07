@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -19,21 +19,29 @@
     <param name="resourceonly" default="false" />
     <param name="viewtime" default="45s" />
     <param name="collectionlimit" default="500" />
+    <param name="hackstation" default="null" />
+    <param name="hackpanel" default="''" />
+    <param name="hackonce" default="false" />
   </params>
   <interrupts>
     <handler>
       <conditions>
-        <event_object_signalled object="this.ship" param="'vardath.go.timeout'" />
+        <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.timeout'" />
       </conditions>
       <actions>
-        <do_if value="not player.entity.$vgo_objects?">
-          <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        <do_if value="@player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_phase and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.exists and not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.room.hascontext.{this.assignedcontrolled}">
+          <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_deadline" exact="player.age + 30min" />
         </do_if>
-        <do_if value="not player.entity.$vgo_objects.{this.ship}?">
-          <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
-        </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Recovering from a timed-out assignment'" />
-        <abort_called_scripts resume="cleanup" />
+        <do_else>
+          <do_if value="not player.entity.$vgo_objects?">
+            <set_value name="player.entity.$vgo_objects" exact="table[]" />
+          </do_if>
+          <do_if value="not player.entity.$vgo_objects.{this.assignedcontrolled}?">
+            <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_status" exact="'Recovering from a timed-out assignment'" />
+          <abort_called_scripts resume="cleanup" />
+        </do_else>
       </actions>
     </handler>
   </interrupts>
@@ -59,7 +67,6 @@
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range" />
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$collectionlimit" />
-    <!-- Runs only as the active native order. No MD order injection and no queue replacement. -->
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_job" exact="$job" />
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="this.ship.order" />
     <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_risk" exact="$risk" />
@@ -91,11 +98,13 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="25" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="30" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" exact="$hackstation" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedpanel" exact="$hackpanel" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_once" exact="$hackonce" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$collectionlimit" />
-      <!-- Runs only as the active native order. No MD order injection and no queue replacement. -->
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_job" exact="$job" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="this.ship.order" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_risk" exact="$risk" />
@@ -206,6 +215,9 @@
       <do_if value="$job != 5 and not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{this.ship.sector} and not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational) and not ($job == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists)">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational)" />
       </do_if>
+      <do_if value="$job == 13 and ($hackonce or @player.entity.$vgo_objects.{this.ship}.$vgo_hack_phase)">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />
+      </do_if>
       <do_if value="$job != 5 and @player.entity.$vgo_objects.{this.ship}.$vgo_rotate and not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational) and not ($job == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists)">
         <resume label="nextsector" />
       </do_if>
@@ -215,6 +227,10 @@
       <run_script name="'vardath.go.find'" result="$target">
         <param name="job" value="$job" />
       </run_script>
+      <do_if value="$job == 13 and $hackonce and not $target.exists">
+        <write_to_logbook category="general" title="'Galactic Occupations: requested hack unavailable'" text="this.ship.knownname + ': requested station is unavailable; queued hack ended without success'" />
+        <return value="false" />
+      </do_if>
       <label name="nextsector" />
       <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope?">
         <run_script name="'vardath.go.scope'" />
@@ -260,7 +276,11 @@
         <wait min="5s" max="10s" />
         <resume label="start" />
       </do_if>
-      <!-- The reservation write is non-blocking and occurs before starting work. -->
+      <do_if value="$job == 13 and @player.entity.$vgo_objects.{$target}.$vgo_owner.exists and @player.entity.$vgo_objects.{$target}.$vgo_owner != this.ship and @player.entity.$vgo_objects.{$target}.$vgo_expires gt player.age">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Hacker waiting: station reserved by another occupation ship'" />
+        <wait min="10s" max="20s" />
+        <resume label="start" />
+      </do_if>
       <do_if value="not player.entity.$vgo_objects.{$target}?">
         <set_value name="player.entity.$vgo_objects.{$target}" exact="table[]" />
       </do_if>
@@ -342,6 +362,11 @@
           <param name="target" value="$target" />
         </run_script>
       </do_elseif>
+      <do_elseif value="$job == 13">
+        <run_script name="'vardath.go.task.hacker'" result="$success">
+          <param name="target" value="$target" />
+        </run_script>
+      </do_elseif>
       <do_if value="$success">
         <set_value name="$done" exact="true" />
         <run_script name="'vardath.go.recordresult'">
@@ -380,6 +405,9 @@
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" />
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" />
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" />
+      <do_if value="$job == 13 and $hackonce and $target == $hackstation">
+        <return value="$success" />
+      </do_if>
       <wait min="10s" max="20s" />
       <resume label="start" />
     </actions>

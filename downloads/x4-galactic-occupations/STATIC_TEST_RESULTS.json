@@ -1,10 +1,10 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 53,
-    "commands": 2209,
-    "script_calls": 85,
-    "behaviours": 12,
+    "xml_files": 58,
+    "commands": 2811,
+    "script_calls": 92,
+    "behaviours": 13,
     "ui_addons": 1
   },
   "installed_schema_validation": "NOT RUN: installed X4 schemas unavailable",
@@ -33,7 +33,8 @@
     "morale": "UNVERIFIED",
     "inspection": "UNVERIFIED",
     "recruit": "UNVERIFIED",
-    "patrol": "UNVERIFIED"
+    "patrol": "UNVERIFIED",
+    "hacker": "UNVERIFIED"
   },
   "errors": []
 }

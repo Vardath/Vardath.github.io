@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -14,6 +14,14 @@
       <set_value name="$candidates" exact="[]" />
       <do_if value="not this.ship.sector.exists">
         <return value="null" />
+      </do_if>
+      <do_if value="$job == 13">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_phase and @player.entity.$vgo_objects.{this.ship}.$vgo_hack_station.exists">
+          <return value="player.entity.$vgo_objects.{this.ship}.$vgo_hack_station" />
+        </do_if>
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_once">
+          <return value="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" />
+        </do_if>
       </do_if>
       <do_if value="$job == 6 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
         <do_for_each name="$drop" in="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" counter="$i" reverse="true">
@@ -62,6 +70,11 @@
       <do_elseif value="$job == 3">
         <find_station name="$candidates" space="this.ship.sector" multiple="true" sortbydistanceto="this.ship" sortlimit="40" />
       </do_elseif>
+      <do_elseif value="$job == 13">
+        <find_station name="$candidates" space="this.ship.sector" multiple="true" sortbydistanceto="this.ship" sortlimit="40" haswalkableroom="true">
+          <match_dock size="this.ship.docksize" />
+        </find_station>
+      </do_elseif>
       <do_elseif value="$job == 4">
         <find_object name="$candidates" space="this.ship.sector" class="[class.anomaly, class.gate, class.highwayentrygate]" multiple="true" sortbydistanceto="this.ship" sortlimit="40" />
       </do_elseif>
@@ -94,7 +107,6 @@
         </do_if>
       </do_elseif>
       <do_elseif value="$job == 6">
-        <!-- The native tutorial uses exactly this asteroid -> class.crystal traversal. -->
         <find_object name="$rocks" space="this.ship.sector" class="class.asteroid" multiple="true" sortbydistanceto="this.ship" sortlimit="96">
           </find_object>
         <set_value name="$candidates" exact="[]" />
@@ -121,11 +133,13 @@
       <do_elseif value="$job == 9 or $job == 10">
         <find_ship name="$candidates" space="this.ship.sector" multiple="true" sortbydistanceto="this.ship" sortlimit="48" />
       </do_elseif>
-      <!-- Random selection without replacement avoids starving less-near targets. -->
       <do_while value="$candidates.count">
         <wait exact="100ms" />
         <set_value name="$candidate" exact="if $job == 6 then $candidates.{1} else $candidates.random" />
         <remove_value name="$candidates.{$candidates.indexof.{$candidate}}" />
+        <do_if value="$job == 13 and ($candidate.isplayerowned or $candidate.owner == faction.ownerless or not $candidate.dockingallowed.{this.ship} or not $candidate.dock.{this.ship.docksize}.exists)">
+          <continue />
+        </do_if>
         <do_if value="not $candidate.exists or $candidate == this.ship">
           <continue />
         </do_if>
@@ -147,7 +161,7 @@
         <do_if value="($job != 5 or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded) and (@player.entity.$vgo_objects.{$candidate}.$vgo_cooldowns.{$job} gt player.age)">
           <continue />
         </do_if>
-        <do_if value="$job != 7 and $job != 11 and $candidate.ishostileto.{this.ship}">
+        <do_if value="$job != 7 and $job != 11 and $job != 13 and $candidate.ishostileto.{this.ship}">
           <continue />
         </do_if>
         <do_if value="($job == 1 or $job == 2 or $job == 9 or $job == 10 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_preferred and $candidate.owner != player.entity.$vgo_objects.{this.ship}.$vgo_preferred">

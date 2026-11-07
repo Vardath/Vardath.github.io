@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.0 development — physical crew hacking and verified patrol payments
+
+- Add galaxy-wide Galactic Station Hacker and queued station/panel context command using native actual panel discovery and costs. Existing crew/captain walk to the panel and back; completion requires the real native effect and actual return. No actor cloning, ashore teleport or whole-station hack flag.
+- Loan actual player inventory tools remotely with measured transfers/rollback; retain failed returns, serialize native consumption and retry missing tools every ten game minutes. Persist actor/token/phase across saves and recover interruptions without replacing player orders.
+- Use the native player-attributed StartControlPanelHack API after NPC arrival; remote invocation and native NPC transit remain explicitly runtime-unverified.
+- Fix the log-proven zero patrol fee: future verified foreign-trader arrivals pay 8,000 Cr; own traders remain unpaid. Add promised/actual/before/after payment tracing and retain shared General paid receipts plus the original ledger.
+- Keep all-size crystal/player-inventory fixes, existing passengers, Protected UI and all other mod sources. Add native order-type validation, 18 hacker accounting/source tests and 30 UI bridge/menu mocks; document unverified in-game cases and other log errors.
+
 ## 0.2.5 development — all-size crystal weapons and player inventory
 
 - Remove beam-only/S/M restrictions for crystal mining; allow forward weapons, ordinary and missile turrets, and L/XL Loadout controls. Keep normal turret mode IDs and equipment unchanged.

@@ -14,8 +14,8 @@ def xml(name): return ET.fromstring(source(name))
 
 class SourceContracts(unittest.TestCase):
     def test_every_behaviour_uses_shared_galaxy_worker(self):
-        wrappers = list((MOD/'aiscripts').glob('order.vardath.go.*.xml'))
-        self.assertEqual(len(wrappers),12)
+        wrappers = [p for p in (MOD/'aiscripts').glob('order.vardath.go.*.xml') if ET.parse(p).find('order').get('infinite') == 'true']
+        self.assertEqual(len(wrappers),13)
         for path in wrappers:
             r=ET.parse(path).getroot()
             self.assertEqual(r.find("./order/params/param[@name='range']").get('default'),'99')
@@ -125,9 +125,10 @@ class SourceContracts(unittest.TestCase):
     def test_default_wrappers_retry_and_always_have_valid_locations(self):
         for path in (MOD/'aiscripts').glob('order.vardath.go.*.xml'):
             root=ET.parse(path).getroot()
+            if root.find('order').get('infinite') != 'true': continue
             self.assertTrue(root.find('order/location').get('object').endswith('else this.ship)'))
             self.assertIsNotNone(root.find(".//resume[@label='work']"))
-            self.assertIsNotNone(root.find('.//patch//edit_order_param'))
+            if int(root.get('version','1')) > 1: self.assertIsNotNone(root.find('.//patch//edit_order_param'))
     def test_crystal_prerequisite_wait_does_not_create_hold_or_income(self):
         root=xml('aiscripts/vardath.go.worker.xml')
         branch=next(n for n in root.iter('do_if') if n.get('value','').startswith('$compatible_turrets == 0 and'))
@@ -166,7 +167,7 @@ class SourceContracts(unittest.TestCase):
         self.assertEqual(order.get('id'),"'Attack'")
         self.assertEqual(order.get('override'),'true')
         self.assertNotEqual(order.get('default'),'true')
-    def test_native_icon_aliases_cover_all_twelve_orders(self):
+    def test_native_icon_aliases_cover_all_registered_orders(self):
         root=xml('libraries/icons.xml')
         actual={n.get('name') for n in root.iter('icon')}
         expected={'order_'+ET.parse(p).find('order').get('id').lower() for p in (MOD/'aiscripts').glob('order.vardath.go.*.xml')}

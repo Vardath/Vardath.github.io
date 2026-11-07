@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
@@ -12,7 +12,6 @@
       <do_if value="(player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5) and (@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_service != player.entity.$vgo_objects.{this.ship}.$vgo_job)">
         <return />
       </do_if>
-      <!-- Only a task which verified its final gameplay effect may arm this ledger entry. -->
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_verified or @player.entity.$vgo_objects.{this.ship}.$vgo_paid == player.entity.$vgo_objects.{this.ship}.$vgo_serial">
         <return />
       </do_if>
@@ -26,6 +25,10 @@
           <set_value name="$moneybefore" exact="player.money" />
           <reward_player money="player.entity.$vgo_objects.{this.ship}.$vgo_reward" />
           <set_value name="$paid" exact="[player.money - $moneybefore, 0Cr].max" />
+          <debug_text text="'GO payment: ship=%1 job=%2 serial=%3 promised=%4 actual=%5 balance_before=%6 balance_after=%7'.[this.ship.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_job,player.entity.$vgo_objects.{this.ship}.$vgo_serial,player.entity.$vgo_objects.{this.ship}.$vgo_reward,$paid,$moneybefore,player.money]" />
+          <do_if value="$paid le 0Cr">
+            <write_to_logbook category="general" title="'Galactic Occupations: payment not received'" text="this.ship.knownname + ': verified work promised ' + player.entity.$vgo_objects.{this.ship}.$vgo_reward.formatted.default + ' but the player balance did not increase; no income receipt was recorded'" />
+          </do_if>
           <run_script name="'vardath.go.recordpayment'">
             <param name="amount" value="$paid" />
             <param name="details" value="if player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 then '' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers delivered; ' + $faction.name else (if player.entity.$vgo_objects.{this.ship}.$vgo_job == 5 then '' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' luxury passengers; ' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count + ' distinct sites in ' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_sectors.count + ' sectors; ' + $faction.name else 'Verified service for ' + $faction.name)" />

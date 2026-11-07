@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.patrol" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.patrol" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -7,7 +7,7 @@
     <actions>
       <run_script name="'vardath.go.task.convoy'" result="$success">
         <param name="target" value="$target" />
-        <param name="fee" value="0Cr" />
+        <param name="fee" value="if $target.isplayerowned then 0Cr else 8000Cr" />
         <param name="duration" value="10min" />
       </run_script>
       <return value="$success" />

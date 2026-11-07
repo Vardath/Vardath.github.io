@@ -42,7 +42,7 @@
           </do_if>
           <resume label="failed" />
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="(if $fee gt 0Cr then 'Escorting ' else 'Patrolling trader corridor: ') + $target.knownname + ' to ' + $destination.knownname" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="(if player.entity.$vgo_objects.{this.ship}.$vgo_job == 1 then 'Escorting ' else 'Patrolling trader corridor: ') + $target.knownname + ' to ' + $destination.knownname" />
         <run_script name="'vardath.go.approach'" result="$near">
           <param name="target" value="$target" />
           <param name="distance" value="5km" />
