@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
@@ -9,16 +9,14 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="(player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5) and (@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_service != player.entity.$vgo_objects.{this.ship}.$vgo_job)">
-        <return />
+      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5">
+        <run_script name="'vardath.go.passengers.pay'" result="$settled" />
+        <return value="$settled" />
       </do_if>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_verified or @player.entity.$vgo_objects.{this.ship}.$vgo_paid == player.entity.$vgo_objects.{this.ship}.$vgo_serial">
         <return />
       </do_if>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_paid" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial" />
-      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id" />
-      </do_if>
       <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" />
       <do_if value="$faction and $faction != faction.player and $faction != faction.ownerless and $faction.hasrelation.dock.{faction.player}">
         <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_reward ge player.entity.$vgo_objects.{this.ship}.$vgo_minreward and player.entity.$vgo_objects.{this.ship}.$vgo_reward gt 0Cr">
@@ -31,7 +29,7 @@
           </do_if>
           <run_script name="'vardath.go.recordpayment'">
             <param name="amount" value="$paid" />
-            <param name="details" value="if player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 then '' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers delivered; ' + $faction.name else (if player.entity.$vgo_objects.{this.ship}.$vgo_job == 5 then '' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' luxury passengers; ' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count + ' distinct sites in ' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_sectors.count + ' sectors; ' + $faction.name else 'Verified service for ' + $faction.name)" />
+            <param name="details" value="'Verified service for ' + $faction.name" />
           </run_script>
         </do_if>
         <do_if value="not player.entity.$vgo_rep_times?">
@@ -43,11 +41,6 @@
         </do_if>
       </do_if>
       <debug_text text="'GO: verified completion %s job %s serial %s'.[this.ship.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_job,player.entity.$vgo_objects.{this.ship}.$vgo_serial]" chance="player.entity.$vgo_objects.{this.ship}.$vgo_debug" />
-      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered" exact="false" />
-        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
-        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
-      </do_if>
     </actions>
   </attention>
 </aiscript>

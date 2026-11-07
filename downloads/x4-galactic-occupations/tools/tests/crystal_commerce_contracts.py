@@ -317,6 +317,7 @@ class CommerceSafetyContracts(unittest.TestCase):
             self.assertIsNotNone(r.find("patch[@sinceversion='10']/do_if[@value='not $"+name+"?']"))
         recovery=E.parse(MOD/'md/VGO_State.xml').find(".//cue[@name='RecoverOrdersV34']")
         text=E.tostring(recovery,encoding='unicode');self.assertIn('order == $ship.defaultorder',text)
-        self.assertIn('$vgo_runtime != 34',text)
+        startup=next(n.get('exact') for n in xml('vardath.go.worker').findall('attention/actions/set_value') if n.get('name')==S+'.$vgo_runtime')
+        self.assertIn('$vgo_runtime != '+startup,text)
 
 if __name__=='__main__':unittest.main(verbosity=2)

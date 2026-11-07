@@ -73,7 +73,9 @@ class Debug7Contracts(unittest.TestCase):
         self.assertIsNotNone(lib.find(".//find_npc_waypoint[@object='$pointroom'][@tags='tag.npctransport']"))
         for tag in ['create_cue_actor','remove_npc_template','add_inventory','reward_player','set_owner']:self.assertEqual(len(list(lib.iter(tag))),0)
         cue=root.find(".//cue[@name='PassengerTransfersV2']")
-        self.assertGreaterEqual(len(cue.findall(".//include_actions[@ref='PassengerRoomPointsV32']")),5)
+        departure=root.find(".//library[@name='PassengerDisembarkV35']")
+        self.assertIsNotNone(cue.find(".//include_actions[@ref='PassengerDisembarkV35']"))
+        self.assertGreaterEqual(len(cue.findall(".//include_actions[@ref='PassengerRoomPointsV32']"))+len(departure.findall(".//include_actions[@ref='PassengerRoomPointsV32']")),5)
         self.assertEqual(len(root.findall(".//set_value[@exact='true'][@name='player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$boarded']")),3)
 
     def test_cargo_docking_recovery_is_single_attempt_and_has_no_manual_transfer(self):

@@ -1,6 +1,12 @@
-# Galactic Occupations 0.3.4 development build
+# Galactic Occupations 0.3.5 development build
 
-Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 7 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.3.5: taxi and tour departure, completed fares
+
+Both passenger services now release their booked roster templates before native walking while retaining the SAME real NPCs. Real station-room arrival and the whole party are checked before completion. Station transport points support dock/pier fallback; blocked visible paths get a bounded native-style room-transfer recovery after two minutes. Missing rooms/failed placement never count as delivery. Existing passengers and tour progress are retained.
+
+Passenger fares now use observed-credit accounting: failed/partial payment preserves the unpaid balance, paid IDs follow full credit, and a completed booked fare survives faction/minimum-setting changes. Taxi remains 8,000 Cr per passenger; default luxury tour remains 500,000 Cr per passenger after ten distinct sites and sector coverage. Reputation stays restricted to eligible foreign factions with cooldowns. [Departure/payment mechanics, limits and live test steps](PASSENGER_COMPLETION_0.3.5.md).
 
 ## 0.3.4: taxi travel, escort discovery and persistent job recovery
 
@@ -22,10 +28,10 @@ The included 0.3.2 log repairs fix null sector-cache lists, conflicting hacker o
 
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.3.4_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.3.5_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
-4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances.
+4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances; passenger settlement uses `GO passenger payment:` with contract IDs and unpaid balances.
 
 ## Behaviours
 

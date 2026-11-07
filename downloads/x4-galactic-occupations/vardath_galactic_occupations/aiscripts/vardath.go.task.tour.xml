@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -97,7 +97,6 @@
       <set_known object="$target" known="true" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Luxury tour: ' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count + '/' + player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_stops + ' sights visited; ' + player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count + ' passengers aboard'" />
       <write_to_logbook category="general" title="'Galactic Occupations: luxury sightseeing'" text="'%s: stop %s/%s, %s in %s; %s passengers aboard.'.[this.ship.knownname,player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count,player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_stops,$target.knownname,$target.sector.knownname,player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count]" interaction="showonmap" object="$target" />
-      <!-- Intermediate visits are persistent route progress, not a paid service completion. -->
       <return value="false" />
     </actions>
   </attention>

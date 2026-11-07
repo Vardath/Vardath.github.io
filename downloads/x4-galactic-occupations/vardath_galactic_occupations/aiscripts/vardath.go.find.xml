@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="12" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -49,7 +49,7 @@
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
       </do_if>
       <do_if value="($job == 2 or $job == 5) and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_service == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id != @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id">
-        <return value="if @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists then player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest else player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
+        <return value="if @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists then player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest else (if @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.exists then player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup else this.ship)" />
       </do_if>
       <do_if value="($job == 2 or $job == 5) and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.isoperational and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational">
         <return value="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />

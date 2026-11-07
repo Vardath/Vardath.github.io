@@ -1,8 +1,12 @@
-# Reproducible tests — 0.3.4 development
+# Reproducible tests — 0.3.5 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
 
-## Current recovery acceptance
+## Current passenger completion acceptance
+
+Run [the six 0.3.5 passenger acceptance sequences](PASSENGER_COMPLETION_0.3.5.md#reproducible-live-checks) first. Verify actual station-room arrival for the whole taxi/tour party and actual credit balances, including the vanilla transaction ledger and General payment notices. Roster release alone is not departure. Test blocked native walking, documented two-minute same-actor recovery, partial parties, old-save retries, player-station pickup and duplicate prevention.
+
+## Earlier recovery acceptance
 
 Run [the six 0.3.4 acceptance sequences](LOG_REVIEW_0.3.4.md#live-acceptance-steps) first: the already-boarded taxi's real sector travel/docking/drop-off, remote escort discovery, Morale startup and actual crew effects, critical/default recovery, queued docking/player-order priority, and off-screen crystal work/sales. Existing saved Holds must be reassigned manually so intentional Holds are preserved. Tests must show actual arrival and NPC departure, not just a successful native return value.
 
@@ -33,7 +37,7 @@ Save/load before tools, during travel, with the actor ashore, after the native c
 
 ## Actual money tests
 
-Record player credits before/after each completed sponsored contract. Verify native incoming ledger entry, `GO payment:` promised/actual/balance values, one `Vardath Payment` General receipt and the matching activity total. Activity/approach/sight visits are not payments.
+Record player credits before/after each completed sponsored contract. Verify native incoming ledger entry, `GO payment:` or `GO passenger payment:` actual/balance values, one `Vardath Payment` General receipt and the matching activity total. Activity/approach/sight visits are not payments.
 
 - Escort: a foreign trader must reach its real station after meaningful protection; default fee 12,000 Cr.
 - Taxi: all accepted actual NPCs must board, depart and disembark; 8,000 Cr per delivered passenger. Test 0/1/10 available berths and interrupted boarding/delivery.

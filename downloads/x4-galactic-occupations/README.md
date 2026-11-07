@@ -1,9 +1,9 @@
-# Galactic Occupations 0.3.4 — travel and job recovery
+# Galactic Occupations 0.3.5 — passenger departure and fares
 
-[Download Occupations](Galactic_Occupations_0.3.4_DEV.zip) · [Five-mod bundle](../x4-updates/X4_Job_Travel_Recovery_2026-11-07.zip) · [Findings, limits and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.4.md)
+[Download Occupations](Galactic_Occupations_0.3.5_DEV.zip) · [Five-mod bundle](../x4-updates/X4_Passenger_Completion_2026-11-08.zip) · [Findings, limits and live tests](vardath_galactic_occupations/PASSENGER_COMPLETION_0.3.5.md)
 
-Repairs the 374,816-error crystal regression, premature sector-travel completion and unsafe nested docking calls. Taxi/Tour retain the same real passenger manifests while verified travel and finite native DockAt orders complete. Escort and Morale use bounded remote discovery; persistent wrappers and legacy critical defaults receive safer recovery. Exact optional expression fixes cover Sector Explorer and Auto Trade Subscriptions; narrow native MD guards cover missing faction loadout entries and expired protection requesters.
+Repairs the shared taxi/tour departure path: native-style roster release, the same real NPCs walking to station transport points, actual room/full-party verification, preserved retries and bounded blocked-path recovery. Booked fares use observed credits, retain zero/partial unpaid balances and mark paid only after full receipt. Taxi pays 8,000 Cr per delivered passenger; luxury tours retain the booked ticket price (default 500,000 Cr) after the full itinerary and departure.
 
-The latest supplied log confirms 52,000 Cr of prior escort/patrol payments and eight morale completions, with no crystal proceeds. New repairs pass source/mocked checks but still require live X4 verification. Other third-party errors are explicitly listed as unresolved where installed source is unavailable.
+All 152 Python contracts and 78 Lua mocks pass locally. XML/reference and seven-extension package audits are separate. New X4 execution remains unverified. Existing passengers, tour progress, crew, equipment and other occupations are retained. Protected UI and the vanilla ledger remain; no custom ledger UI is added.
 
-Fully exit X4 before overwriting extensions. Keep Protected UI and Inventory Collector. Load the existing save; reselect an occupation once if an older build already replaced it with Hold Position. Passenger manifests, crew, equipment and histories are retained. Companion source versions remain unchanged: Builders 1.75, Kopis/Astrid 1.15, Yaki Habitats 1.23, Cargo Teleport 1.01.
+Fully exit X4 before overwriting the matching extension. Load the existing save; reselect only jobs already lost to Hold. Companion sources are unchanged: Builders 1.75, Kopis/Astrid 1.15, Yaki Habitats 1.23, Cargo Teleport 1.01. Earlier unrelated external errors remain described in the debug(8) report.

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="13" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="14" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -50,6 +50,16 @@
     <handler>
       <conditions>
         <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart34'" />
+      </conditions>
+      <actions>
+        <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
+          <abort_called_scripts resume="cleanup" />
+        </do_if>
+      </actions>
+    </handler>
+    <handler>
+      <conditions>
+        <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart35'" />
       </conditions>
       <actions>
         <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
@@ -129,6 +139,10 @@
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
     <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart34'" />
   </patch>
+  <patch sinceversion="14">
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
+    <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart35'" />
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -146,7 +160,7 @@
       <do_if value="not $batchsize? or @$batchsize == null">
         <set_value name="$batchsize" exact="24" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="34" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="35" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_simfallback" exact="$simfallback" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_miningtime" exact="[[$miningtime,1min].max,30min].min" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_batchsize" exact="[[$batchsize,1].max,60].min" />
@@ -463,11 +477,16 @@
         </run_script>
       </do_elseif>
       <do_if value="$success">
-        <set_value name="$done" exact="true" />
-        <run_script name="'vardath.go.recordresult'">
-          <param name="outcome" value="'completed'" />
-        </run_script>
-        <run_script name="'vardath.go.reward'" />
+        <do_if value="$job == 2 or $job == 5">
+          <run_script name="'vardath.go.reward'" result="$done" />
+        </do_if>
+        <do_else>
+          <set_value name="$done" exact="true" />
+          <run_script name="'vardath.go.recordresult'">
+            <param name="outcome" value="'completed'" />
+          </run_script>
+          <run_script name="'vardath.go.reward'" />
+        </do_else>
       </do_if>
       <label name="cleanup" />
       <run_script name="'vardath.go.recordresult'">

@@ -5,7 +5,7 @@ from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'downloads/x4-updates/X4_Job_Travel_Recovery_2026-11-07.zip'
+OUT=ROOT/'downloads/x4-updates/X4_Passenger_Completion_2026-11-08.zip'
 SOURCES=[ROOT/'downloads'/folder/name for folder,name in [
  ('x4-galactic-occupations','vardath_galactic_occupations'),
  ('x4-living-factions-builders','vardath_living_factions_builders'),
@@ -17,7 +17,7 @@ if '--check' not in sys.argv:
  OUT.parent.mkdir(parents=True,exist_ok=True)
  with ZipFile(OUT,'w',ZIP_DEFLATED,compresslevel=9) as z:
   for name,p in sorted(expected.items()):
-   entry=ZipInfo(name,(2026,11,7,0,0,0));entry.compress_type=ZIP_DEFLATED;entry.external_attr=0o100644<<16;z.writestr(entry,p.read_bytes())
+   entry=ZipInfo(name,(2026,11,8,0,0,0));entry.compress_type=ZIP_DEFLATED;entry.external_attr=0o100644<<16;z.writestr(entry,p.read_bytes())
 with ZipFile(OUT) as z:
  assert z.testzip() is None,'Archive CRC error'
  assert set(z.namelist())==set(expected),'Archive paths differ from source'

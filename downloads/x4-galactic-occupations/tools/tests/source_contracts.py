@@ -75,7 +75,9 @@ class SourceContracts(unittest.TestCase):
         self.assertIsNotNone(gate.find(".//run_script[@name=\"'vardath.go.passengers.deliver'\"]"))
         self.assertIn('vgo_tour_trip.indexof',ET.tostring(task,encoding='unicode'))
     def test_passenger_fares_have_persistent_duplicate_guard(self):
-        s=source('aiscripts/vardath.go.reward.xml')
+        route=xml('aiscripts/vardath.go.reward.xml')
+        self.assertIsNotNone(route.find(".//run_script[@name=\"'vardath.go.passengers.pay'\"]"))
+        s=source('aiscripts/vardath.go.passengers.pay.xml')
         self.assertIn('vgo_taxi_completed_id == @this.ship.$vgo_taxi_paid_id',s)
         self.assertIn('name="this.ship.$vgo_taxi_paid_id"',s)
     def test_scanner_does_not_reject_normal_ai_scanner_levels(self):
@@ -179,10 +181,10 @@ class SourceContracts(unittest.TestCase):
         self.assertNotIn('illegalto.{$jurisdiction}.count',text)
     def test_delivery_is_gated_by_actual_station_arrival_for_all_passengers(self):
         root=xml('md/VGO_State.xml')
-        cue=root.find(".//cue[@name='PassengerTransfersV2']")
+        cue=root.find(".//library[@name='PassengerDisembarkV35']")
         text=ET.tostring(cue,encoding='unicode')
         self.assertNotIn('vgo_taxi_phase_started + 15s',text)
-        self.assertIn('$actor.hascontext.{$station} and not $actor.hascontext.{$ship}',text)
+        self.assertIn('$actor.room.hascontext.{$station} and not $actor.room.hascontext.{$ship}',text)
         self.assertIn('$completed == $ship.$vgo_passengers.count',text)
         self.assertIsNotNone(cue.find('.//add_actor_to_room[@slot="$exit"]'))
         self.assertIsNotNone(cue.find('.//add_actor_to_room[@slot="$rollback"]'))
@@ -255,7 +257,7 @@ class SourceContracts(unittest.TestCase):
         completed=[n for n in calls if n.find("param[@name='outcome']").get('value')=="'completed'"]
         self.assertEqual(len(completed),2)
         for result in ['$success','$crystalcycle == 1']:
-            self.assertTrue(any(n in list(worker.find(".//do_if[@value='"+result+"']")) for n in completed))
+            self.assertTrue(any(n in list(worker.find(".//do_if[@value='"+result+"']").iter()) for n in completed))
         result=xml('aiscripts/vardath.go.recordresult.xml')
         self.assertIn('$last_serial',ET.tostring(result,encoding='unicode'))
         for tag in ['reward_player','transfer_money','create_npc_template','add_inventory','set_object_scanned','set_owner']:

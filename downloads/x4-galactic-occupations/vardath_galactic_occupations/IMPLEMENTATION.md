@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.4
+# Implementation and native-interface provenance — 0.3.5
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -25,3 +25,7 @@ The hacker submenu retains the 0.3.1 draw-only refresh/poll/UI-clock timeout rep
 All new money is native `reward_player` / `script_add`, recorded only by observed player balance change. Persisted unpaid sale amounts decrease before any blocking receipt helper. A fully settled sale ID gates sold totals and small trade-reputation gain. See [CRYSTAL_COMMERCE_0.3.3.md](CRYSTAL_COMMERCE_0.3.3.md) for exact reference provenance, limitations and live acceptance steps. Matching installed schemas and X4 execution remain unavailable.
 
 0.3.4 introduces verified sector travel, finite native docking orders, guarded exact-setting critical-default recovery and throttled remote discovery. No occupation calls native order.dock on its own default stack. The known `endintargetsector` branch and unsupported `averagemaxyield` property are covered by source guards; actual arrival, queued docking and default reconstruction are executed with mocked native actions. Two optional extension expression patches and five native MD attribute changes are the only additional XML diffs. Actual native 9.00 diff grammar/selectors were checked separately; see LOG_REVIEW_0.3.4.md for evidence and remaining installed-merge limitations.
+
+## Passenger completion and settlement
+
+0.3.5 routes both taxi/tour drop-off through `PassengerDisembarkV35`. Native-style template release precedes movement; the same persistent actor must reach a real station room, with all manifest entries confirmed. Visible walking has a two-minute blocked-path recovery using native room placement; this is documented as a recovery alternative. Departure retries retain actor identities and timestamps. `vardath.go.passengers.pay` records only observed credit deltas, persists unpaid balances, marks paid only after full receipt, and gates tour settlement on its booked itinerary. See PASSENGER_COMPLETION_0.3.5.md for native sources, tests, limitations and live acceptance.

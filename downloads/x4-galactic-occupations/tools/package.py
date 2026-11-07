@@ -7,11 +7,11 @@ import zipfile
 
 base = Path(__file__).resolve().parents[1]
 mod = base / 'vardath_galactic_occupations'
-archive = base / 'Galactic_Occupations_0.3.4_DEV.zip'
+archive = base / 'Galactic_Occupations_0.3.5_DEV.zip'
 subprocess.run([sys.executable,str(base/'tools/validate.py')],check=True)
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as output:
     for path in sorted(p for p in mod.rglob('*') if p.is_file()):
-        info = zipfile.ZipInfo('extensions/'+path.relative_to(mod.parent).as_posix(),date_time=(2026,11,6,0,0,0))
+        info = zipfile.ZipInfo('extensions/'+path.relative_to(mod.parent).as_posix(),date_time=(2026,11,8,0,0,0))
         info.compress_type = zipfile.ZIP_DEFLATED
         info.external_attr = 0o100644 << 16
         output.writestr(info,path.read_bytes())

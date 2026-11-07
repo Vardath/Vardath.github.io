@@ -236,7 +236,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New repairs remain unverified in X4.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New travel, passenger departure and fare-settlement repairs remain unverified in X4.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

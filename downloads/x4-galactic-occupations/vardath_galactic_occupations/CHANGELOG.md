@@ -1,5 +1,12 @@
 # Version history
 
+## 0.3.5 — taxi/tour departure and booked fare settlement
+
+- Release only booked passenger templates before native movement; retain the same actors until observed station-room departure. Prefer transport waypoints, allow real station points at non-walkable piers and recover blocked visible paths after two minutes using native-style same-actor placement. No timer/native-success-only completion.
+- Preserve released passengers, per-person flags and movement deadlines through retries. Require complete tour itinerary and full party departure; keep existing NPCs, crews and stops.
+- Add dedicated passenger fare accounting: actual-credit receipts, persisted unpaid remainder, one-minute retry, paid IDs only after full settlement, one completion record per contract, repeat-disabled settlement and independent controlled reputation. Accepted fares survive player-station pickup and relation/minimum-setting changes. No guessed backpay.
+- Add 25 executed passenger control/accounting cases. All 152 Python contracts and 78 Lua mocks pass locally; new X4 execution remains unverified. Preserve native ledger UI and Protected UI. See PASSENGER_COMPLETION_0.3.5.md.
+
 ## 0.3.4 — debug(8) travel and job-start recovery
 
 - Remove the invalid sector-yield property responsible for 374,816 errors. Verify actual arrival through a bounded shared travel helper with the native premature sector shortcut disabled.
@@ -7,7 +14,7 @@
 - Retry persistent wrappers against their default identity, remove recursive migration self-edits, repair present-null new settings and log startup/end transitions. Existing player Holds remain untouched.
 - Add bounded, throttled galaxy search for escort/patrol/morale candidates; use real trade destinations and editable morale data, retaining effect/payment/reputation checks.
 - Add exact optional Sector Explorer and Auto Trade Subscriptions expression patches; guard missing native station equipment entries with native faction defaults and expired invincibility requester cues.
-- Add 20 source/executed recovery tests and native diff grammar/reference checks. Log confirms 52,000 Cr prior escort/patrol income and eight morale completions; new runtime integration remains unverified. Other external errors/source requirements are listed explicitly.
+- Add 21 source/executed recovery tests and native diff grammar/reference checks. Log confirms 52,000 Cr prior escort/patrol income and eight morale completions; new runtime integration remains unverified. Other external errors/source requirements are listed explicitly.
 
 ## 0.3.3 — user-requested off-screen crystal commerce
 

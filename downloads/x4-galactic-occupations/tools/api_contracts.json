@@ -2504,6 +2504,25 @@
       ],
       "kind": "condition"
     },
+    "clear_actor_roomslot": {
+      "attributes": {
+        "actor": {
+          "doc": "Actor object (NPC)",
+          "required": true,
+          "type": "actor"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Clear the current roomslot of this actor",
+      "kind": "action",
+      "src": {
+        "file": "common.xsd",
+        "line": 33094
+      }
+    },
     "clear_actor_tool": {
       "attributes": {
         "actor": {
@@ -13153,6 +13172,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
+    "passenger_departure_reference": "Native 9.00 GM_Transport_Passengers CleanUp removes NPC templates before departure; NPC_State_Machines TRANSITION_move_to and MoveFailedHandling_ToSlot keep actual actors and use add_actor_to_room on failed paths. Inspected ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. clear_actor_roomslot command metadata common.xsd:33094. Physical station-room arrival remains required for the custom fare.",
     "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected. debug(6) runs 0.2.4; crystal miners repeatedly report beam-turret preflight waiting with zero starts. No crystal harvest/drop/collection proof. Native collect_drop and capital-mining orientation patterns inspected.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
