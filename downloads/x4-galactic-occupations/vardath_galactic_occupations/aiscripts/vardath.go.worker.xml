@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -91,7 +91,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="23" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="24" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$collectionlimit" />
@@ -145,6 +145,11 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Physical harvesting requires an S/M ship'" />
         <set_command_action commandaction="commandaction.standingby" />
         <wait min="25s" max="35s" />
+        <resume label="start" />
+      </do_if>
+      <do_if value="not this.ship.sector.exists">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Occupation waiting for this ship to leave transit and enter a sector'" />
+        <wait exact="5s" />
         <resume label="start" />
       </do_if>
       <do_if value="not $home.exists">
@@ -270,6 +275,10 @@
       <set_value name="player.entity.$vgo_objects.{$target}.$vgo_expires" exact="player.age + 25min" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" exact="$target" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial + 1" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" />
+      <run_script name="'vardath.go.recordresult'">
+        <param name="outcome" value="'started'" />
+      </run_script>
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_verified" exact="false" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_reward" exact="0Cr" />
@@ -339,10 +348,15 @@
       </do_elseif>
       <do_if value="$success">
         <set_value name="$done" exact="true" />
+        <run_script name="'vardath.go.recordresult'">
+          <param name="outcome" value="'completed'" />
+        </run_script>
         <run_script name="'vardath.go.reward'" />
-        <write_to_logbook category="general" title="'Galactic Occupations: work completed'" text="'%1 completed %2; %3'.[this.ship.knownname, readtext.{191180}.{100 + $job}, @player.entity.$vgo_objects.{this.ship}.$vgo_status]" />
       </do_if>
       <label name="cleanup" />
+      <run_script name="'vardath.go.recordresult'">
+        <param name="outcome" value="'deferred'" />
+      </run_script>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational)" />
       <run_script name="'vardath.go.release'" />
       <do_if value="@$target.exists and @player.entity.$vgo_objects.{$target}.$vgo_owner == this.ship">

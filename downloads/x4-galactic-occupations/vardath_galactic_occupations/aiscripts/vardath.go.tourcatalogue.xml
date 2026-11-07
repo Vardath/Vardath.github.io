@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -19,7 +19,7 @@
         </do_if>
         <set_value name="$unique" exact="[]" />
         <do_for_each name="$poi" in="$catalogue">
-          <do_if value="$poi.exists and not $unique.indexof.{$poi} and not $poi.ishostileto.{this.ship}">
+          <do_if value="$poi.exists and $poi.sector.exists and not $unique.indexof.{$poi} and not $poi.ishostileto.{this.ship}">
             <append_to_list name="$unique" exact="$poi" />
           </do_if>
         </do_for_each>

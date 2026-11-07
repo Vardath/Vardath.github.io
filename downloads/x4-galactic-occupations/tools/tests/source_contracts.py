@@ -202,4 +202,75 @@ class SourceContracts(unittest.TestCase):
         self.assertIn("'vardath.go.recordpayment'",s)
         self.assertIn('player.money - $MoneyBefore',(BUILDER/'md/vardath_builder_contracts.xml').read_text())
 
+    def test_transient_target_sector_never_reaches_native_movement_as_null(self):
+        actions=xml('aiscripts/vardath.go.approach.xml').find('attention/actions')
+        attempt=actions.find("do_all[@counter='$attempt']")
+        resolve=attempt.find("do_all[@exact='12']")
+        self.assertIsNotNone(resolve.find("set_value[@name='$sector'][@exact='$target.sector']"))
+        self.assertEqual(resolve.find('wait').get('exact'),'5s')
+        reject=attempt.find("do_if[@value='not $sector.exists']")
+        self.assertEqual(reject.find('return').get('value'),'false')
+        move=attempt.find("run_script[@name=\"'move.generic'\"]")
+        self.assertLess(list(attempt).index(reject),list(attempt).index(move))
+        self.assertEqual(move.find("param[@name='destination']").get('value'),'$sector')
+        self.assertEqual(attempt.find('get_safe_pos').get('sector'),'$sector')
+        self.assertIsNotNone(attempt.find("do_if[@value='this.ship.$vgo_scope? and not this.ship.$vgo_scope.indexof.{$sector}']/return[@value='false']"))
+
+    def test_unlocated_wreck_and_pilotless_candidates_are_rejected_before_properties(self):
+        loop=xml('aiscripts/vardath.go.find.xml').find('.//do_while')
+        guards=[n for n in loop if n.tag=='do_if']
+        sector=next(i for i,n in enumerate(guards) if n.get('value')=='not $candidate.sector.exists')
+        live=next(i for i,n in enumerate(guards) if 'not $candidate.isoperational' in n.get('value',''))
+        owner=next(i for i,n in enumerate(guards) if '$candidate.sector.owner' in n.get('value',''))
+        capture=next(i for i,n in enumerate(guards) if '$candidate.iscapturable' in n.get('value',''))
+        pilot=next(i for i,n in enumerate(guards) if 'not $candidate.pilot.exists' in n.get('value',''))
+        self.assertLess(sector,owner)
+        self.assertLess(live,capture)
+        self.assertLess(pilot,capture)
+        for i in [sector,live,pilot]:self.assertIsNotNone(guards[i].find('continue'))
+
+    def test_recruitment_revalidates_operational_target_after_communication(self):
+        actions=xml('aiscripts/vardath.go.task.recruit.xml').find('attention/actions')
+        wait=actions.find("wait[@exact='8s']")
+        tail=list(actions)[list(actions).index(wait)+1:]
+        self.assertEqual(tail[0].get('value'),'not $target.isoperational')
+        self.assertEqual(tail[0].find('return').get('value'),'false')
+        self.assertEqual(tail[1].get('value'),'not $target.pilot.exists')
+
+    def test_activity_reports_are_throttled_observations_of_registered_ships(self):
+        cue=xml('md/VGO_State.xml').find(".//cue[@name='ActivityReportsV24']")
+        self.assertEqual(cue.find('.//do_for_each').get('in'),'Init.$Ships')
+        self.assertIn('player.age + 5min',ET.tostring(cue,encoding='unicode'))
+        self.assertIn('vgo_report_after gt player.age',ET.tostring(cue,encoding='unicode'))
+        self.assertIsNotNone(cue.find('.//write_to_logbook'))
+        self.assertIsNotNone(cue.find('.//debug_text'))
+        for tag in ['find_ship','find_station','reward_player','transfer_money','add_skill','set_owner','set_object_scanned']:
+            self.assertEqual(len(list(cue.iter(tag))),0)
+
+    def test_completion_counters_follow_task_success_without_creating_payments(self):
+        worker=xml('aiscripts/vardath.go.worker.xml')
+        calls=worker.findall(".//run_script[@name=\"'vardath.go.recordresult'\"]")
+        completed=next(n for n in calls if n.find("param[@name='outcome']").get('value')=="'completed'")
+        self.assertIn(completed,list(worker.find(".//do_if[@value='$success']")))
+        result=xml('aiscripts/vardath.go.recordresult.xml')
+        self.assertIn('$last_serial',ET.tostring(result,encoding='unicode'))
+        for tag in ['reward_player','transfer_money','create_npc_template','add_inventory','set_object_scanned','set_owner']:
+            self.assertEqual(len(list(result.iter(tag))),0)
+
+    def test_scanner_preserves_geometry_wait_reason_and_stops_unloaded_module_loop(self):
+        root=xml('aiscripts/vardath.go.task.scanner.xml')
+        missing=root.find(".//do_if[@value='not $module.isphysicsready']")
+        self.assertIsNotNone(missing.find('break'))
+        self.assertIsNone(missing.find('continue'))
+        self.assertIn('Component survey waiting for loaded collision geometry',ET.tostring(root,encoding='unicode'))
+
+    def test_demolition_does_not_count_a_missing_reference_as_destruction(self):
+        root=xml('aiscripts/vardath.go.fire.xml')
+        event=root.find('.//interrupts/handler/conditions/event_object_destroyed')
+        self.assertEqual(event.get('object'),'$target')
+        self.assertNotIn('not $target.exists or $target.hull le 0',ET.tostring(root,encoding='unicode'))
+        actions=root.find("attention[@min='visible']/actions")
+        self.assertIsNotNone(actions.find("do_if[@value='$destroyed']/return[@value='true']"))
+        self.assertEqual(actions[-1].get('value'),'false')
+
 if __name__=='__main__': unittest.main(verbosity=2)

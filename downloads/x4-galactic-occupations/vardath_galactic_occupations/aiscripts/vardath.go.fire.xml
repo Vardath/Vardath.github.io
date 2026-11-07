@@ -1,11 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
     <param name="crystal" default="true" />
   </params>
+  <interrupts>
+    <handler>
+      <conditions>
+        <event_object_destroyed object="$target" check="false" />
+      </conditions>
+      <actions>
+        <set_value name="$destroyed" exact="true" />
+      </actions>
+    </handler>
+  </interrupts>
   <attention min="visible">
     <actions>
+      <set_value name="$destroyed" exact="false" />
       <do_if value="not player.entity.$vgo_objects?">
         <set_value name="player.entity.$vgo_objects" exact="table[]" />
       </do_if>
@@ -36,6 +47,7 @@
         <set_value name="$range" exact="[this.ship.maxcombatrange.turrets * 0.6, 1500m].min" />
       </do_if>
       <do_if value="$range lt 300m">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'No usable weapon range for this harvesting or demolition target'" />
         <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
@@ -57,6 +69,7 @@
           <set_value name="$previoushull" exact="$target.hull" />
         </do_if>
         <do_if value="player.age gt $lastdamage + 20s">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Firing stopped: no target damage for 20 seconds; check firing arc, obstruction and weapon suitability'" />
           <break comment="No damage: wrong arc, occlusion or unsuitable weapons. Release and retry another deposit." />
         </do_if>
         <find_ship name="$nearby" space="$target.sector" excluded="this.ship" multiple="true">
@@ -111,7 +124,13 @@
         <wait exact="500ms" />
       </do_while>
       <run_script name="'vardath.go.release'" />
-      <return value="not $target.exists or $target.hull le 0" />
+      <do_if value="$destroyed">
+        <return value="true" />
+      </do_if>
+      <do_if value="$target.exists">
+        <return value="$target.hull le 0" />
+      </do_if>
+      <return value="false" />
     </actions>
   </attention>
   <attention min="unknown">

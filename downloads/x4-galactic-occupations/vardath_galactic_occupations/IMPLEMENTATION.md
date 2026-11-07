@@ -1,5 +1,11 @@
 # Implementation and verification report
 
+## 0.2.4 log-driven changes
+
+`debug(5).log` runs 0.2.3 and confirms 49 direct occupation errors plus 222 resulting native navigation errors. The new approach waits for and captures a real target sector; discovery rejects missing contexts and dead live-service targets before owner/capture/pilot lookups. The worker also defers starting searches while its own sector is unavailable. A located tour derelict remains eligible.
+
+An observational per-ship/per-job result table and throttled MD activity reporter now distinguish assignments, current work, completed effects and income. Reports use the existing General Logbook and debug log; no UI layout, payment API or native financial transaction integration changes. Actual positive payments update the income counter; no reporting path generates a reward. Completion is recorded only inside the task-success branch and is protected by its saved serial. The scanner exits a batch promptly when collision geometry is unavailable; physical demolition requires a destruction event or confirmed zero hull. The current evidence, all twelve result definitions and limitations are in `JOB_REVIEW_0.2.4.md`.
+
 ## Delivery status
 
 All twelve occupations have native infinite-order declarations and executable task implementations. **All in-game acceptance checks remain unverified.** The new Loadout option is a virtual mode backed by custom control. Its appearance and firing still require in-game proof. No stable release, accepted vanilla mission or successful runtime test is claimed.

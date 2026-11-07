@@ -10415,6 +10415,48 @@
         "md"
       ],
       "kind": "action"
+    },
+    "event_object_destroyed": {
+      "attributes": {
+        "chance": {
+          "doc": "Percentage chance of condition being checked (condition fails if not)",
+          "type": "expression"
+        },
+        "check": {
+          "doc": "Produce an error message if the provided event object does not exist? Default is true. NOTE: If the event object is a variable or a changeable property, changing it at a later time has no direct effect on this event condition, i.e. it is not re-enabled automatically. It is only updated under certain conditions, e.g. when loading a savegame or when the event condition is restarted explicitly (resetting MD cue or starting AI script).",
+          "type": "checkeventsource"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "group": {
+          "doc": "Group of event objects (can be supplied instead of a single event object). The check attribute does not apply. The group is required to exist but may be empty. Adding/removing group members is possible even after the event is set up.",
+          "type": "groupeventsource"
+        },
+        "object": {
+          "doc": "Event object (required if group attribute not supplied)",
+          "type": "expression"
+        },
+        "killer": {
+          "type": "killer",
+          "doc": "Killer object"
+        },
+        "method": {
+          "type": "killmethodlookup",
+          "doc": "Kill method"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "condition",
+      "doc": "Event for the specified object being destroyed (object = destroyed object, param = killer, param2 = kill method, param3 = was parent killed)",
+      "source": {
+        "file": "common.xsd",
+        "line": 13910
+      }
     }
   },
   "enum_types": {
@@ -12634,7 +12676,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [

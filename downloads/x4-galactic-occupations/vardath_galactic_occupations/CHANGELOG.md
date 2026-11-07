@@ -1,5 +1,13 @@
 # Version history
 
+## 0.2.4 development — job activity and transient target recovery
+
+- Repair debug(5) failures: wait for and capture a real target sector; do not pass null sectors to native movement. Defer searches while the occupation ship itself is in transit.
+- Reject missing-sector and non-operational live-service candidates before territory/capture/pilot properties. Revalidate recruitment after the communication delay; refresh the tour catalogue without resetting current passengers or itinerary.
+- Add per-ship/per-job observational counters and roughly five-minute activity reports to vanilla General Logbook and the debug log. Completed assignments get actual-effect details; incomplete stages and tour sights do not become successful contracts. No reporting code creates rewards.
+- Preserve scanner geometry wait reasons and stop checking an entire unloaded station. Explain missing damage, unconfirmed crystal collection, full morale, refused surrender and failed pursuit. Use a real destruction event/zero hull for demolition success.
+- Native financial ledger and payment receipts, UI Protection, existing saves and all other mod sources remain unchanged. Full 0.2.4 gameplay acceptance remains unverified.
+
 ## 0.2.3 development — tour, taxi, neutral escort and drop-off
 
 - Explicit native undocking before direct travel/proximity completion, with native skipwait handling; boarding hands tours immediately to a real sightseeing target.

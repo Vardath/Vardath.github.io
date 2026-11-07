@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="amount" />
     <param name="details" default="''" />
@@ -15,6 +15,10 @@
       <do_if value="$amount le 0Cr">
         <return />
       </do_if>
+      <run_script name="'vardath.go.recordresult'">
+        <param name="outcome" value="'payment'" />
+        <param name="amount" value="$amount" />
+      </run_script>
       <set_value name="$IncomePaid" exact="$amount" />
       <set_value name="$IncomeKey" exact="'occupation_' + player.entity.$vgo_objects.{this.ship}.$vgo_job" />
       <set_value name="$textid" exact="100 + player.entity.$vgo_objects.{this.ship}.$vgo_job" />

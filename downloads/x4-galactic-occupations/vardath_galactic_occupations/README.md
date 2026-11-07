@@ -1,12 +1,20 @@
 # Galactic Occupations
 
-Version 0.2.3 development build, 7 November 2026. Author: Vardath.
+Version 0.2.4 development build, 7 November 2026. Author: Vardath.
 
 **Runtime verification is pending for all twelve occupations.** This extension contains executable AI orders, MD state/passenger handling, and Lua menu integration. The build environment cannot run X4. Source checks and mocked UI tests do not establish gameplay success.
 
+## Current repair: 0.2.4
+
+`debug(5).log` confirms null-sector navigation and wreck-target lookup failures. The shared navigation now waits briefly for a valid sector, then safely defers unavailable targets. Live-service candidates are checked before class-specific data. No job is forcibly restored over an intentionally selected Hold or other player order.
+
+Look in **vanilla General Logbook** for `Galactic Occupations: activity - <job>`. Each assigned ship reports about every five minutes, and also writes `GO activity:` to the debug log. Reports show current work/target/destination, started cycles, completed assignments, recorded income, the latest completed result and an unfinished-cycle reason. A status report is not a completion or payment. Counters start with this update and persist per ship/job. Detailed completed-work entries and existing `Vardath Payment` receipts remain separate.
+
+Scanner geometry waits, unsuitable firing arcs/weapons, unconfirmed crystal collection, maxed morale crews and declined surrender are now explained more clearly. The scanner does not mark unloaded modules scanned. Only Occupations changes; Protected UI, native ledger callbacks, other mods, passengers and Forge equipment are preserved. See [the current log and job review](JOB_REVIEW_0.2.4.md).
+
 ## Install and assign
 
-1. Close X4. Extract `Galactic_Occupations_0.2.3_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
+1. Close X4. Extract `Galactic_Occupations_0.2.4_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
 2. Enable Galactic Occupations and load your existing save. No new game is required by the implementation.
 3. Select an eligible player-owned ship with an AI captain, open Behaviour, and select a Default Behaviour below.
 4. Use range **99 for the whole connected galaxy**, 0 for the home sector, or 1–98 for a jump radius. Risk 0/1 avoids hostile destinations; 2 permits them. Normal travel blacklists remain enforced.

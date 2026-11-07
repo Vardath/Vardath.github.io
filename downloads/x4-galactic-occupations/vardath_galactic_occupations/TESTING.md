@@ -1,10 +1,14 @@
 # Runtime acceptance tests
 
-**Execution status: not run.** No X4 executable, installed catalogs, save or post-fix game log is available; the supplied debug(2).log was reviewed in the development environment. Every row below remains UNVERIFIED. Static XML/reference/packaging checks are reported separately in `STATIC_TEST_RESULTS.json` outside the installed extension.
+**Execution status: not run.** No X4 executable, matching installed catalogs, save or post-0.2.4 game log is available. Supplied logs through debug(5).log were reviewed; debug(5) runs 0.2.3 and establishes the failures repaired in 0.2.4. Every row below remains UNVERIFIED. Static XML/reference/packaging checks are reported separately in `STATIC_TEST_RESULTS.json` outside the installed extension.
+
+## 0.2.4 evidence and recovery checks
+
+Follow [JOB_REVIEW_0.2.4.md](JOB_REVIEW_0.2.4.md) for transient-sector, wreck/pilot-bail, scanner geometry, periodic Logbook and per-job outcome tests. The first activity report should appear within a minute of registration, with later per-ship reports about every five to six game minutes. These reports are always enabled independently of optional verbose diagnostics. Completed counters must change only with the task's real effect; tour stops and incomplete attempts cannot count as paid contract completions. Income is observed positive payments, not a periodic reward. Save/load and direct-order interruption must preserve these counters and all original passenger actors.
 
 ## Setup
 
-Use a manual-save copy of an existing game; a new game is unnecessary. Record the exact X4 version/build, DLCs, enabled extensions, ship class/equipment and whether the player is nearby. Enable Diagnostics on the assigned occupation. For a detailed game log, launch X4 with `-debug all -logfile galactic-occupations.log`, then locate that log in the X4 user-data directory. Search for `GO:` and script/XML errors. A clear log alone is not evidence of successful gameplay.
+Use a manual-save copy of an existing game; a new game is unnecessary. Record the exact X4 version/build, DLCs, enabled extensions, ship class/equipment and whether the player is nearby. Enable Diagnostics on the assigned occupation. For a detailed game log, launch X4 with `-debug all -logfile galactic-occupations.log`, then locate that log in the X4 user-data directory. Search for `GO activity:`, `GO completed:`, optional verbose `GO:` lines and script/XML errors. A clear log alone is not evidence of successful gameplay.
 
 Start with one ship per occupation and Home/Range = local sector/0. Increase to range 2 and then 99 after local success. Use a ship with an AI captain, a route through discovered sectors, and appropriate docking access. Keep a before/after record of installed equipment, crew, ownership, turret modes and the direct-order queue.
 

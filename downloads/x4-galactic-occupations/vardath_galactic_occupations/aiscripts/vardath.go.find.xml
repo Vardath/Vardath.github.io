@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -12,6 +12,9 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
       <set_value name="$candidates" exact="[]" />
+      <do_if value="not this.ship.sector.exists">
+        <return value="null" />
+      </do_if>
       <do_if value="(($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational)">
         <set_value name="$convoy" exact="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" />
         <do_if value="not $convoy.ishostileto.{this.ship} and player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$convoy.sector} and (not @player.entity.$vgo_objects.{$convoy}.$vgo_owner.exists or @player.entity.$vgo_objects.{$convoy}.$vgo_owner == this.ship or @player.entity.$vgo_objects.{$convoy}.$vgo_expires lt player.age)">
@@ -104,6 +107,12 @@
         <do_if value="not $candidate.exists or $candidate == this.ship">
           <continue />
         </do_if>
+        <do_if value="not $candidate.sector.exists">
+          <continue />
+        </do_if>
+        <do_if value="($job != 5 or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded) and not $candidate.isoperational">
+          <continue />
+        </do_if>
         <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $candidate.sector.owner.hasrelation.enemy.{faction.player}">
           <continue />
         </do_if>
@@ -165,6 +174,9 @@
           <continue />
         </do_if>
         <do_if value="$job == 10 and ($candidate.primarypurpose != purpose.trade or $candidate.isplayerowned or not this.ship.sector.policefaction or not @this.ship.sector.policefaction.hasrelation.dock.{faction.player})">
+          <continue />
+        </do_if>
+        <do_if value="($job == 9 or $job == 11) and not $candidate.pilot.exists">
           <continue />
         </do_if>
         <do_if value="$job == 11 and (not $candidate.iscapturable or $candidate.ismission or $candidate.isinvulnerable or $candidate.hullpercentage ge 25 or not $candidate.pilot.iscommable or $candidate.isplayerowned)">

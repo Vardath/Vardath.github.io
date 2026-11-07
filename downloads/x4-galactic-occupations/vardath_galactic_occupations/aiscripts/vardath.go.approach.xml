@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
     <param name="distance" default="3km" />
@@ -23,19 +23,47 @@
         <return value="false" />
       </do_if>
       <do_all exact="3" counter="$attempt">
-        <do_if value="not $target.exists">
-          <return value="false" />
-        </do_if>
-        <do_if value="this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2">
-          <return value="true" />
-        </do_if>
-        <get_safe_pos result="$pos" sector="$target.sector" object="$target" min="$distance * 0.6" max="$distance * 0.9" radius="this.ship.size / 2" ignored="this.ship" />
+        <!-- Existing moving objects can temporarily have no sector context, notably during transit.
+             Resolve AFTER undocking/waits and retain the valid sector for the native call. -->
         <run_script name="'vardath.go.depart'" result="$departed" />
         <do_if value="not $departed">
           <return value="false" />
         </do_if>
+        <set_value name="$sector" exact="null" />
+        <do_all exact="12">
+          <do_if value="not $target.exists">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approach interrupted: target no longer exists'" />
+            <return value="false" />
+          </do_if>
+          <set_value name="$sector" exact="$target.sector" />
+          <do_if value="$sector.exists">
+            <break />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Waiting for target sector context: ' + $target.knownname + ' (in transit or unavailable)'" />
+          <wait exact="5s" />
+        </do_all>
+        <do_if value="not $sector.exists">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approach deferred: target has no navigable sector: ' + $target.knownname" />
+          <return value="false" />
+        </do_if>
+        <do_if value="not $target.exists">
+          <return value="false" />
+        </do_if>
+        <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_scope? and not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector}">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approach deferred: target moved outside the permitted operating sectors'" />
+          <return value="false" />
+        </do_if>
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player}">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approach deferred: target moved into hostile territory'" />
+          <return value="false" />
+        </do_if>
+        <do_if value="this.ship.sector == $sector and this.ship.distanceto.{$target} le $distance + $target.size / 2">
+          <return value="true" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approaching ' + $target.knownname + ' in ' + $sector.knownname" />
+        <get_safe_pos result="$pos" sector="$sector" object="$target" min="$distance * 0.6" max="$distance * 0.9" radius="this.ship.size / 2" ignored="this.ship" />
         <run_script name="'move.generic'" result="$ok">
-          <param name="destination" value="$target.sector" />
+          <param name="destination" value="$sector" />
           <param name="position" value="$pos" />
           <param name="strictblacklist" value="true" />
           <param name="useknownpath" value="false" />
@@ -43,7 +71,11 @@
         </run_script>
         <wait exact="1s" />
       </do_all>
-      <return value="$target.exists and this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2" />
+      <do_if value="not $target.exists or not $target.sector.exists">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Approach deferred: target disappeared or is between sectors'" />
+        <return value="false" />
+      </do_if>
+      <return value="this.ship.sector == $target.sector and this.ship.distanceto.{$target} le $distance + $target.size / 2" />
     </actions>
   </attention>
 </aiscript>

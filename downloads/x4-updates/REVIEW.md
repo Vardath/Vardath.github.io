@@ -37,3 +37,8 @@ The current recovery bundle supersedes the three-mod 0.2.1/1.74/1.14 bundle and 
 ## 0.2.3 / debug(4).log
 
 The current bundle updates Occupations and Yaki Habitats; Builders/Kopis are included unchanged. The log's explicit errors are cargo boolean misuse, construction pseudo-entry materialisation and an undefined order icon. Native 9.00 script inspection additionally established the absent undock step and same-faction fleet escort side effects. Full details and per-job evidence gaps are in `JOB_REVIEW_0.2.3.md`. The user has verified real boarding; complete taxi/tour unloading, repaired patrol and physical crystal harvesting still require runtime tests. Existing saved passengers, station modules and Forge weapon files are retained.
+
+
+## debug(5) and 0.2.4 follow-up
+
+The supplied 0.2.3 log contains 49 direct occupation errors and 222 secondary native movement errors. Shared sector resolution, live-service filtering and post-wait recruitment guards are repaired. New saved per-ship/job diagnostics report status, targets, completed effects and observed positive income in vanilla General Logbook and debug output. No new UI or periodic reward is introduced. Scanner unloaded geometry and physical destruction/collection evidence are handled explicitly. Only Occupations source changed. See its `JOB_REVIEW_0.2.4.md` for exact evidence, all twelve jobs and reproducible runtime tests. No new X4 runtime acceptance test was possible here.

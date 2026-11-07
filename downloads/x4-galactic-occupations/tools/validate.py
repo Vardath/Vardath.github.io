@@ -43,7 +43,7 @@ structural = {'aiscript','order','params','param','requires','location','interru
 for path, root in trees.items():
     parents = {child: parent for parent in root.iter() for child in parent}
     for node in root.iter():
-        if node.tag in ('event_object_dropped_objects','event_object_changed_room') and not (node.get('object') or node.get('group')):
+        if node.tag in ('event_object_dropped_objects','event_object_changed_room','event_object_destroyed') and not (node.get('object') or node.get('group')):
             error(path, f'{node.tag} requires an explicit object or dynamic group')
         if node.tag == 'shoot_at':
             ancestor = node
@@ -213,7 +213,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log, debug(3).log and debug(4).log reviewed for actual failures',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(5).log reviewed for actual failures',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

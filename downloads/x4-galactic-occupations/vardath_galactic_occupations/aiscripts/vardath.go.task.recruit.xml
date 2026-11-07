@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.recruit" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.recruit" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -11,7 +11,15 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="not $target.isoperational or not $target.iscapturable or $target.ismission or $target.hullpercentage ge 25 or not $target.ishostileto.{this.ship} or not $target.pilot.iscommable or @$target.pilot.ismissionactor">
+      <do_if value="not $target.isoperational">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Recruitment deferred: target is no longer operational'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="not $target.pilot.exists">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Recruitment deferred: target has no pilot to negotiate with'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="not $target.iscapturable or $target.ismission or $target.hullpercentage ge 25 or not $target.ishostileto.{this.ship} or not $target.pilot.iscommable or @$target.pilot.ismissionactor">
         <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
@@ -23,7 +31,15 @@
       </do_if>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Negotiating emergency surrender'" />
       <wait exact="8s" />
-      <do_if value="not $target.isoperational or not $target.iscapturable or $target.ismission or $target.isplayerowned or $target.hullpercentage ge 25 or not $target.ishostileto.{this.ship} or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 8km + $target.size / 2 or @$target.pilot.ismissionactor">
+      <do_if value="not $target.isoperational">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Recruitment deferred: target is no longer operational'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="not $target.pilot.exists">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Recruitment deferred: target has no pilot to negotiate with'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="not $target.iscapturable or $target.ismission or $target.isplayerowned or $target.hullpercentage ge 25 or not $target.ishostileto.{this.ship} or this.ship.sector != $target.sector or this.ship.distanceto.{$target} gt 8km + $target.size / 2 or @$target.pilot.ismissionactor">
         <return value="false" />
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{$target}.$vgo_cooldowns?">
@@ -41,6 +57,7 @@
       <set_value name="$chance" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_basechance * $classfactor * (1 + (25 - $target.hullpercentage) / 25.0) * (1 - $morale / 30.0) / (1 + $target.people.count / 100.0), 50].min" />
       <set_value name="$roll" min="0" max="100" />
       <do_if value="$roll ge $chance">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Surrender declined by ' + $target.knownname + '; chance ' + $chance + ' percent; target cooldown 30 minutes'" />
         <return value="false" />
       </do_if>
       <!-- Surrender changes the existing object. No replacement hull, refit or crew recreation. -->
@@ -66,6 +83,7 @@
       <create_order object="$target" id="'Wait'" default="true" />
       <reinitialise_control_entities object="$target" />
       <write_to_logbook category="general" title="'Galactic Occupations: emergency recruitment'" text="'%s accepted surrender of %s at %s percent hull.'.[this.ship.knownname,$target.knownname,$target.hullpercentage]" interaction="showonmap" object="$target" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'Ownership of ' + $target.knownname + ' transferred at ' + $target.hullpercentage + '% hull; existing ship retained'" />
       <return value="$target.isplayerowned" />
     </actions>
   </attention>

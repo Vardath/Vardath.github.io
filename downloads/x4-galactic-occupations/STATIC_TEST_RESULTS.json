@@ -1,9 +1,9 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 49,
-    "commands": 1958,
-    "script_calls": 81,
+    "xml_files": 50,
+    "commands": 2126,
+    "script_calls": 85,
     "behaviours": 12,
     "ui_addons": 1
   },
@@ -12,7 +12,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [
@@ -20,7 +20,7 @@
       "9.00"
     ]
   },
-  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log, debug(3).log and debug(4).log reviewed for actual failures",
+  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(5).log reviewed for actual failures",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",

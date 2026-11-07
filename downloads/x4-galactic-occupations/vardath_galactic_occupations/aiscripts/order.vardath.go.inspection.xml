@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.inspection" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.inspection" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_inspection" name="{191180,110}" description="{191180,210}" category="combat" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
@@ -42,6 +42,11 @@
     </do_if>
   </patch>
   <patch sinceversion="5">
+    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_inspection' and this.ship.order.isparameditable.home">
+      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
+    </do_if>
+  </patch>
+  <patch sinceversion="6">
     <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_inspection' and this.ship.order.isparameditable.home">
       <edit_order_param order="this.ship.order" param="'home'" value="$home" />
     </do_if>
