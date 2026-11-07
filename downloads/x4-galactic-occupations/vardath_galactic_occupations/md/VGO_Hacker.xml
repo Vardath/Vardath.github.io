@@ -233,6 +233,7 @@
           </do_if>
           <do_if value="$matched">
             <include_actions ref="LoanTools" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if $ready then 'departing' else 'waiting_actual_tools'" />
           </do_if>
           <do_else>
@@ -303,6 +304,16 @@
               <remove_value name="player.entity.$vgo_hack_call" />
             </do_if>
           </do_if>
+          <do_if value="($phase == 'docked' or $phase == 'probing' or $phase == 'departing') and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed">
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil?">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
+            </do_if>
+            <do_if value="player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <set_value name="$phase" exact="'returning'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: station interior/panel path unavailable after five minutes; returning tools and selecting another station'" />
+            </do_if>
+          </do_if>
           <do_if value="$phase == 'prepare' or $phase == 'waiting_tools'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool gt player.age">
               <continue />
@@ -350,6 +361,7 @@
             <include_actions ref="LoanTools" />
             <do_if value="$ready">
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'departing'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
             </do_if>
             <continue />
           </do_if>

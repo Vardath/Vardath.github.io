@@ -19,7 +19,7 @@ Choose multiple ships for the same panel: reservations must prevent duplicate co
 
 ## Hacker failure and save/load
 
-Save/load before tools, during travel, with the actor ashore, after the native call and during return. Verify same actor/token/loan quantities and no repeated native charge. Issue direct movement/Hold orders at each stage. Direct orders must take priority; while ashore, the actor must wait for a restored station docking link and return physically. If the captain is ashore, restore that link with normal in-game controls; do not expect a replacement captain. Test station ownership changes, destruction, ship loss, missing panel, invalid room path and unavailable native bridge. No crew teleport, free tool, fake hack or unsponsored payment should occur. Capture any stalled path with its status and ship ID.
+Save/load before tools, during travel, with the actor ashore, after the native call and during return. Verify same actor/token/loan quantities and no repeated native charge. Issue direct movement/Hold orders at each stage. Direct orders must take priority; while ashore, the actor must wait for a restored station docking link and return physically. If the captain is ashore, restore that link with normal in-game controls; do not expect a replacement captain. Test station ownership changes, destruction, ship loss, missing panel, invalid room path and unavailable native bridge. Unavailable interior/panel geometry before deployment must defer after five minutes and try another station; it must not expire a ten-minute missing-tool wait or abandon an already deployed actor. No crew teleport, free tool, fake hack or unsponsored payment should occur. Capture any stalled path with its status and ship ID.
 
 ## Actual money tests
 

@@ -19,7 +19,7 @@
 - Use an existing available service/marine NPC, otherwise the existing captain. Preserve identity, role, owner and control post. Temporarily protect the actor from disposal; release that temporary reservation on return. No cloned/disposable substitute, crew-template removal, ashore room teleport or forced crew ownership change.
 - Retrieve actual tools from player inventory before travel; measure source removal and destination credit, roll back partial failures and retain failed returns. Missing tools recheck in ten **game** minutes. Native consumption is serialized with other autonomous tool loans.
 - Native `npc_move_to` travels from ship to actual room/panel position and back through the dock. A four-metre room/proximity check and ten-second dwell gate the call. Completion requires native-call acknowledgement, the requested native station effect, actual deployment and the same actor back in a ship room.
-- Per-operation persisted tokens, request checks, station reservation, callback cancellation, safe tool returns and ship-destruction cleanup. A direct order remains higher priority; an ashore actor waits for a restored docking link rather than being teleported.
+- Per-operation persisted tokens, request checks, station reservation, callback cancellation, safe tool returns and ship-destruction cleanup. Pre-deployment interior/panel geometry waits defer after five minutes; missing-tool waits and physical return of deployed crew are handled separately. A direct order remains higher priority; an ashore actor waits for a restored docking link rather than being teleported.
 - Future successful foreign-trader patrol arrivals pay 8,000 Cr; own traders stay unpaid. Payment tracing records promised/actual credits and exact before/after balances. General receipts share the existing cross-mod cursor; no duplicate UI or financial rows are added.
 
 ## Actual interface and remaining uncertainty
@@ -33,7 +33,7 @@ This environment has no X4 executable, matching installed XSDs, live station int
 ## Validation performed
 
 - Static XML, documented command attributes, custom/native script parameters, localisation, icons, order registration and correctly nested ZIP/source parity.
-- 42 existing source contracts, 8 actual crystal-forwarding XML inventory mocks, 18 hacker source/tool-accounting tests, 32 existing Lua mocks and 30 hacker menu/native-bridge mocks.
+- 42 existing source contracts, 8 actual crystal-forwarding XML inventory mocks, 19 hacker source/tool-accounting tests, 32 existing Lua mocks and 30 hacker menu/native-bridge mocks.
 - All seven repository extensions audited for manifests, XML, documented command attributes, references and source/ZIP parity; runtime verification is explicitly false.
 - CI checks Lua 5.1 and LuaJIT syntax and runs the mocks. None simulates the X4 engine or proves an in-game success.
 

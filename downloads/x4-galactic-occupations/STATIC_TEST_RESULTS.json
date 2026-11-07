@@ -2,7 +2,7 @@
   "static_result": "PASS",
   "counts": {
     "xml_files": 58,
-    "commands": 2811,
+    "commands": 2821,
     "script_calls": 92,
     "behaviours": 13,
     "ui_addons": 1

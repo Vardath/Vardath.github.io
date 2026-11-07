@@ -6,7 +6,7 @@
 - Loan actual player inventory tools remotely with measured transfers/rollback; retain failed returns, serialize native consumption and retry missing tools every ten game minutes. Persist actor/token/phase across saves and recover interruptions without replacing player orders.
 - Use the native player-attributed StartControlPanelHack API after NPC arrival; remote invocation and native NPC transit remain explicitly runtime-unverified.
 - Fix the log-proven zero patrol fee: future verified foreign-trader arrivals pay 8,000 Cr; own traders remain unpaid. Add promised/actual/before/after payment tracing and retain shared General paid receipts plus the original ledger.
-- Keep all-size crystal/player-inventory fixes, existing passengers, Protected UI and all other mod sources. Add native order-type validation, 18 hacker accounting/source tests and 30 UI bridge/menu mocks; document unverified in-game cases and other log errors.
+- Keep all-size crystal/player-inventory fixes, existing passengers, Protected UI and all other mod sources. Add native order-type validation, 19 hacker accounting/source tests and 30 UI bridge/menu mocks; document unverified in-game cases and other log errors.
 
 ## 0.2.5 development — all-size crystal weapons and player inventory
 

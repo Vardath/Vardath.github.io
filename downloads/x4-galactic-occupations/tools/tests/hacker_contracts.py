@@ -93,6 +93,12 @@ class HackerSourceContracts(unittest.TestCase):
         self.assertIn('hack_step + 10s',E.tostring(ROOT,encoding='unicode'));self.assertGreaterEqual(len(ROOT.findall(".//signal_objects[@param=\"'npc_move_to'\"]")),3)
     def test_panels_are_discovered_from_actual_native_rooms(self):
         self.assertIsNotNone(ROOT.find('.//find_room[@hascontrolpanel]'));self.assertIsNotNone(ROOT.find('.//find_hack_slot'));self.assertIn('hack_type.requireditems.table',E.tostring(ROOT,encoding='unicode'))
+    def test_predeployment_geometry_timeout_does_not_abandon_deployed_crew_or_expire_tool_wait(self):
+        guard=next(n for n in ROOT.iter('do_if') if n.get('value','').startswith("($phase == 'docked' or $phase == 'probing'"))
+        self.assertIn('not @'+STATE+'deployed',guard.get('value'))
+        self.assertNotIn('waiting_actual_tools',guard.get('value'))
+        self.assertIsNotNone(guard.find(".//set_value[@exact='player.age + 5min']"))
+        self.assertIsNotNone(guard.find(".//set_value[@exact=\"'returning'\"]"))
     def test_queued_hack_does_not_replace_orders_or_defaults(self):
         order=ROOT.find('.//create_order');self.assertEqual(order.get('default'),'false');self.assertEqual(order.get('immediate'),'false');self.assertEqual(order.get('override'),'false');self.assertNotIn('append',order.attrib)
     def test_bridge_has_cancelled_request_cleanup_and_tokens(self):
