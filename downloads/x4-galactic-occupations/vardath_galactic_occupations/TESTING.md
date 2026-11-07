@@ -1,4 +1,4 @@
-# Reproducible tests — 0.3.1 development
+# Reproducible tests — 0.3.2 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
 
@@ -52,3 +52,7 @@ For each default verify selection, executable targeting/movement, actual effect,
 - Recruitment: hostile below 25%, actual capture eligibility, probabilistic failure/cooldown and success ownership transfer with original hull/equipment/crew safely retained.
 
 Attach the new complete debug log and the observed ship ID/stage for any failed acceptance case. The older debug(6).log cannot verify new 0.3.0 actions.
+
+## debug(7) recovery cases
+
+Test an old/default worker with an absent or present-null cached sector list; it must search and travel without a `.count` lookup error. Check actual reached sectors in `GO sector travel:`. Confirm the one-off hacker order produces no `default`/`immediate` parser warning. Keep actual NPC/context/full-manifest gates during private-room/transport-waypoint boarding and disembarkation. Activity income must display 5,000,000 Cr for the recorded tour, not 500,000,000. Check Cargo Teleport's zero-transfer native failure receives at most one docking retry and no duplicate goods or payment.

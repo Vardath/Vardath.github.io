@@ -278,6 +278,7 @@
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
       <actions>
+        <set_value name="$pointcache" exact="table[]" />
         <do_if value="not player.entity.$vgo_objects?">
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
@@ -426,8 +427,12 @@
                     <continue />
                   </do_if>
                   <do_if value="$ship.attention lt attention.visible">
-                    <find_npc_slot name="$start" object="$ship.dock.walkablemodule" tags="tag.npc_generic" />
-                    <find_npc_slot name="$seats" object="$ship" tags="tag.npc_generic" multiple="true" />
+                    <set_value name="$pointcontainer" exact="$ship.dock.walkablemodule" />
+                    <include_actions ref="PassengerRoomPointsV32" />
+                    <set_value name="$start" exact="if $pointlist.count then $pointlist.random else null" />
+                    <set_value name="$pointcontainer" exact="$ship" />
+                    <include_actions ref="PassengerRoomPointsV32" />
+                    <set_value name="$seats" exact="$pointlist.clone" />
                     <do_for_each name="$seat" in="$seats" counter="$j" reverse="true">
                       <do_if value="$seat.hastag.service or $seat.hastag.marine">
                         <remove_value name="$seats.{$j}" />
@@ -471,8 +476,12 @@
                     <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$moving" exact="false" />
                   </do_if>
                   <do_if value="not $entry.$moving or not $actor.exists">
-                    <find_npc_slot name="$start" object="$ship.dock.walkablemodule" tags="tag.npc_generic" />
-                    <find_npc_slot name="$slots" object="$ship" tags="tag.npc_generic" multiple="true" />
+                    <set_value name="$pointcontainer" exact="$ship.dock.walkablemodule" />
+                    <include_actions ref="PassengerRoomPointsV32" />
+                    <set_value name="$start" exact="if $pointlist.count then $pointlist.random else null" />
+                    <set_value name="$pointcontainer" exact="$ship" />
+                    <include_actions ref="PassengerRoomPointsV32" />
+                    <set_value name="$slots" exact="$pointlist.clone" />
                     <do_for_each name="$slot" in="$slots" counter="$j" reverse="true">
                       <do_if value="$slot.hastag.service or $slot.hastag.marine">
                         <remove_value name="$slots.{$j}" />
@@ -529,7 +538,7 @@
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Taxi: docked, ' + $aboard + '/' + player.entity.$vgo_objects.{$ship}.$vgo_passengers.count + ' passengers boarded' + (if $waiting then ' - waiting for walkable interiors' else '')" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Taxi: docked, ' + $aboard + '/' + player.entity.$vgo_objects.{$ship}.$vgo_passengers.count + ' passengers boarded' + (if $waiting then ' - no usable dock/ship room point or actor connection; waiting for interiors' else '')" />
             <do_if value="$allaboard">
               <do_if value="not player.entity.$vgo_objects.{$ship}?">
                 <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
@@ -564,14 +573,18 @@
                   <set_value name="$waiting" exact="true" />
                   <continue />
                 </do_if>
-                <find_npc_slot name="$exits" object="$ship.dock.walkablemodule" tags="tag.npc_generic" multiple="true" />
+                <set_value name="$pointcontainer" exact="$ship.dock.walkablemodule" />
+                <include_actions ref="PassengerRoomPointsV32" />
+                <set_value name="$exits" exact="$pointlist.clone" />
                 <do_if value="not $exits.count">
                   <set_value name="$waiting" exact="true" />
                   <continue />
                 </do_if>
                 <set_value name="$exit" exact="$exits.random" />
                 <do_if value="$ship.attention lt attention.visible">
-                  <find_npc_slot name="$rollback" object="$ship" tags="tag.npc_generic" />
+                  <set_value name="$pointcontainer" exact="$ship" />
+                  <include_actions ref="PassengerRoomPointsV32" />
+                  <set_value name="$rollback" exact="if $pointlist.count then $pointlist.random else null" />
                   <do_if value="$actor.exists">
                     <remove_actor_from_room actor="$actor" destroy="false" />
                   </do_if>
@@ -591,7 +604,9 @@
                 </do_if>
                 <do_else>
                   <do_if value="not $actor.exists">
-                    <find_npc_slot name="$seat" object="$ship" tags="tag.npc_generic" />
+                    <set_value name="$pointcontainer" exact="$ship" />
+                    <include_actions ref="PassengerRoomPointsV32" />
+                    <set_value name="$seat" exact="if $pointlist.count then $pointlist.random else null" />
                     <do_if value="$seat">
                       <add_actor_to_room actor="$actor" slot="$seat" result="$placed" />
                       <do_if value="$placed">
@@ -645,7 +660,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV31" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV32" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -654,11 +669,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 31 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 32 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="31" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="32" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
@@ -744,7 +759,7 @@
           <do_if value="not $job or $job lt 1 or $job gt 13">
             <continue />
           </do_if>
-          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 30 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 32 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
             <continue />
           </do_if>
           <set_value name="$status" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_status then player.entity.$vgo_objects.{$ship}.$vgo_status else 'Waiting for occupation worker'" />
@@ -754,7 +769,7 @@
           <set_value name="$completed" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$completed then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$completed else 0" />
           <set_value name="$income" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$income then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$income else 0Cr" />
           <set_value name="$last" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_success then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_success else 'None recorded since diagnostics update'" />
-          <set_value name="$report" exact="'%1 | %2 | Status: %3 | Sector: %4 | Target: %5 | Destination: %6 | Task cycles started: %7; completed assignments: %8; received: %9'.[$ship.knownname + ' [' + $ship.idcode + ']', readtext.{191180}.{100 + $job}, $status, if $ship.sector.exists then $ship.sector.knownname else 'In transit or unavailable', if $target.exists then $target.knownname else 'None selected', if $destination.exists then $destination.knownname else 'None selected', $started, $completed, $income] + ' | Last completed work: ' + $last" />
+          <set_value name="$report" exact="'%1 | %2 | Status: %3 | Sector: %4 | Target: %5 | Destination: %6 | Task cycles started: %7; completed assignments: %8; received: %9 Cr'.[$ship.knownname + ' [' + $ship.idcode + ']', readtext.{191180}.{100 + $job}, $status, if $ship.sector.exists then $ship.sector.knownname else 'In transit or unavailable', if $target.exists then $target.knownname else 'None selected', if $destination.exists then $destination.knownname else 'None selected', $started, $completed, ($income / 1Cr)f] + ' | Last completed work: ' + $last" />
           <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit">
             <set_value name="$report" exact="$report + ' | Last unfinished cycle: ' + player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit" />
           </do_if>
@@ -765,7 +780,7 @@
           <debug_text text="'GO activity: ' + $report" />
           <set_value name="$jitter" min="0s" max="30s" />
           <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_after" exact="player.age + 5min + $jitter" />
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="30" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="32" />
         </do_for_each>
       </actions>
     </cue>
@@ -787,5 +802,50 @@
         <write_to_logbook category="general" title="'Galactic Occupations 0.3.1 loaded'" text="'Station hack submenu now rebuilds on replies, polls for missed replies and offers a paused-safe timeout/retry. Crystal miners can follow permitted active simulation, recover actual loose crystal drops and retry native pickup directly to the player ship. No crystals are generated. Use the new search/fire/pickup diagnostics to verify real harvesting.'" />
       </actions>
     </cue>
+    <cue name="LoadedV32">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.3.2 loaded'" text="'Fixed the log-confirmed null sector list and conflicting hacker order attributes. Existing default jobs receive safe version recovery; direct orders and deployed crew are preserved. Activity income is now shown in Cr, not raw hundredths. Log evidence confirms a 5,000,000 Cr tour and three 8,000 Cr patrol payments; other job completion is still unverified.'" />
+      </actions>
+    </cue>
+    <library name="PassengerRoomPointsV32">
+      <actions>
+        <do_if value="not $pointcache? or @$pointcache == null">
+          <set_value name="$pointcache" exact="table[]" />
+        </do_if>
+        <do_if value="$pointcache.{$pointcontainer}?">
+          <set_value name="$pointlist" exact="$pointcache.{$pointcontainer}.clone" />
+        </do_if>
+        <do_else>
+          <set_value name="$pointlist" exact="[]" />
+          <find_npc_slot name="$pointlist" object="$pointcontainer" tags="tag.npc_generic" multiple="true" />
+          <do_for_each name="$roompoint" in="$pointlist" counter="$pointindex" reverse="true">
+            <do_if value="$pointcontainer == $ship and ($roompoint.hastag.service or $roompoint.hastag.marine)">
+              <remove_value name="$pointlist.{$pointindex}" />
+            </do_if>
+          </do_for_each>
+          <do_if value="not $pointlist.count">
+            <find_room name="$pointrooms" object="$pointcontainer" multiple="true" />
+            <do_for_each name="$pointroom" in="$pointrooms">
+              <find_npc_slot name="$pointlist" object="$pointroom" tags="tag.npc_generic" multiple="true" append="true" />
+            </do_for_each>
+            <do_for_each name="$roompoint" in="$pointlist" counter="$pointindex" reverse="true">
+              <do_if value="$pointcontainer == $ship and ($roompoint.hastag.service or $roompoint.hastag.marine)">
+                <remove_value name="$pointlist.{$pointindex}" />
+              </do_if>
+            </do_for_each>
+          </do_if>
+          <do_if value="not $pointlist.count">
+            <find_npc_waypoint name="$pointlist" object="$pointcontainer" tags="tag.npctransport" multiple="true" />
+            <do_if value="not $pointlist.count">
+              <find_room name="$pointrooms" object="$pointcontainer" multiple="true" />
+              <do_for_each name="$pointroom" in="$pointrooms">
+                <find_npc_waypoint name="$pointlist" object="$pointroom" tags="tag.npctransport" multiple="true" append="true" />
+              </do_for_each>
+            </do_if>
+          </do_if>
+          <set_value name="$pointcache.{$pointcontainer}" exact="$pointlist.clone" />
+        </do_else>
+      </actions>
+    </library>
   </cues>
 </mdscript>

@@ -100,7 +100,7 @@ class HackerSourceContracts(unittest.TestCase):
         self.assertIsNotNone(guard.find(".//set_value[@exact='player.age + 5min']"))
         self.assertIsNotNone(guard.find(".//set_value[@exact=\"'returning'\"]"))
     def test_queued_hack_does_not_replace_orders_or_defaults(self):
-        order=ROOT.find('.//create_order');self.assertEqual(order.get('default'),'false');self.assertEqual(order.get('immediate'),'false');self.assertEqual(order.get('override'),'false');self.assertNotIn('append',order.attrib)
+        order=ROOT.find('.//create_order');self.assertEqual(order.get('default','false'),'false');self.assertEqual(order.get('immediate','false'),'false');self.assertEqual(order.get('override'),'false');self.assertNotIn('append',order.attrib)
     def test_bridge_has_cancelled_request_cleanup_and_tokens(self):
         self.assertGreaterEqual(len(ROOT.findall(".//remove_value[@name='player.entity.$vgo_hack_call']")),2);self.assertIn('hack_token == event.param3.{2}',E.tostring(ROOT,encoding='unicode'))
     def test_hacking_has_no_unsponsored_pay_or_reputation(self):

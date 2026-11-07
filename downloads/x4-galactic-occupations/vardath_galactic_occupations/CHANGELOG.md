@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.2 — debug(7) shared-worker recovery
+
+- Guard missing and present-null sector caches at startup, saved-label resumes and refill; clone a valid cache. Log actual native travel results and reached sectors.
+- Remove conflicting default/immediate hacker order attributes; enforce the actual game constraint during validation/audit.
+- Query private passenger rooms and native transport waypoints for boarding, exits and rollback, caching only within the MD batch. Keep real actor/context/capacity checks. Report scanner prerequisites before searching.
+- Correct activity money units to Cr. The supplied log verifies a 5,000,000 Cr luxury tour and three 8,000 Cr patrol payments; none is re-awarded.
+- Companion Cargo Teleport 1.01 adds one bounded normal docking retry when undocked native execution fails with zero goods moved. No synthetic cargo or payment. Detailed remaining errors and runtime limits are recorded.
+
 ## 0.3.1 development — open-menu replies and actual crystal recovery
 
 - Fix the confirmed stale Checking submenu: rebuild only custom actions before native draw, poll for missed replies, normalize MD numeric booleans/IDs and revalidate station/ship selection. Replace the old unrealistic prepare-after-reply mock with draw-only update tests.

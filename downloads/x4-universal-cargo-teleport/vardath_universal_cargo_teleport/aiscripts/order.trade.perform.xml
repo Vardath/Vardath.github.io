@@ -1,32 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <diff>
-  <!-- Disable the capital-ship cargo-drone prerequisite only for the
-       player-owned ship's normal TradePerform order, where our ship is
-       able to travel to the partner and carry out a dockless transaction. -->
   <replace sel="/aiscript/attention/actions/do_if[contains(@value, 'not this.assignedcontrolled.units')]/@value">this.assignedcontrolled.iscapitalship and not this.assignedcontrolled.units.{unitcategory.transport}.count and not $targetobject.units.{unitcategory.transport}.count and not (this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship))</replace>
-
-  <!-- Near the target already: bypass the entire docking order. All sizes. -->
   <add sel="/aiscript/attention/actions/label[@name='move_to_targetobject']" pos="after">
-    <do_if value="this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship) and this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km">
-      <resume label="perform_trade"/>
+    <do_if value="(this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship) and this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km) and (not (@player.entity.$vuct_dock_required.{$targetobject} gt player.age) and not @$VardathTeleportDockRetry)">
+      <resume label="perform_trade" />
     </do_if>
   </add>
-
-  <!-- Before issuing DockAndWait, approach for a 30 km wireless transfer.
-       Execute X4's original trade transaction and payment logic. If the
-       target remains out of reach, leave the original dock flow alone. -->
   <add sel="/aiscript/attention/actions/do_if[@value='not $cannotdock']" pos="before">
-    <do_if value="this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship)">
+    <do_if value="(this.assignedcontrolled.isplayerowned and $targetobject.isoperational and ($targetobject.isclass.station or $targetobject.isclass.ship)) and (not (@player.entity.$vuct_dock_required.{$targetobject} gt player.age) and not @$VardathTeleportDockRetry)">
       <do_if value="this.assignedcontrolled.zone != $targetobject.zone or this.assignedcontrolled.distanceto.{$targetobject} gt 30km">
         <run_script name="'move.generic'" result="$VardathTeleportApproached">
-          <param name="destination" value="$targetobject"/>
-          <param name="pursuedistance" value="15km"/>
-          <param name="debugchance" value="$debugchance"/>
+          <param name="destination" value="$targetobject" />
+          <param name="pursuedistance" value="15km" />
+          <param name="debugchance" value="$debugchance" />
         </run_script>
       </do_if>
       <do_if value="this.assignedcontrolled.zone == $targetobject.zone and this.assignedcontrolled.distanceto.{$targetobject} le 30km">
-        <resume label="perform_trade"/>
+        <resume label="perform_trade" />
       </do_if>
+    </do_if>
+  </add>
+  <add sel="/aiscript/attention/actions//execute_trade[@tradepartner='this.ship'][@result='$traderesult']" pos="after">
+    <do_if value="this.assignedcontrolled.isplayerowned and not $traderesult and $tradedeal.transferredamount == 0 and not @$VardathTeleportDockRetry and @this.ship.dock.container != $targetobject and $targetobject.isoperational">
+      <do_if value="not player.entity.$vuct_dock_required?">
+        <set_value name="player.entity.$vuct_dock_required" exact="table[]" />
+      </do_if>
+      <set_value name="player.entity.$vuct_dock_required.{$targetobject}" exact="player.age + 1h" />
+      <set_value name="$VardathTeleportDockRetry" exact="true" />
+      <debug_text text="'Vardath Cargo Teleport: native undocked trade rejected without goods transfer; retrying normal docking. Ship=%1 target=%2'.[this.assignedcontrolled.debugname,$targetobject.debugname]" />
+      <resume label="move_to_targetobject" />
     </do_if>
   </add>
 </diff>

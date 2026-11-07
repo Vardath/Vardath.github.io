@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="10" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -98,6 +98,12 @@
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_simfallback" exact="$simfallback" />
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
   </patch>
+  <patch sinceversion="11">
+    <do_if value="not $sectors? or @$sectors == null">
+      <set_value name="$sectors" exact="[]" />
+    </do_if>
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -106,7 +112,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="31" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="32" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_simfallback" exact="$simfallback" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" exact="$hackstation" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedpanel" exact="$hackpanel" />
@@ -138,17 +144,20 @@
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />
       </do_if>
-      <set_value name="$sectors" exact="if @player.entity.$vgo_objects.{this.ship}.$vgo_navigation_version == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_searchjob == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_searchhome == $home and @player.entity.$vgo_objects.{this.ship}.$vgo_searchrange == $range then @player.entity.$vgo_objects.{this.ship}.$vgo_sectors else []" />
+      <set_value name="$sectors" exact="if @player.entity.$vgo_objects.{this.ship}.$vgo_navigation_version == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_searchjob == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_searchhome == $home and @player.entity.$vgo_objects.{this.ship}.$vgo_searchrange == $range and player.entity.$vgo_objects.{this.ship}.$vgo_sectors? and @player.entity.$vgo_objects.{this.ship}.$vgo_sectors != null then player.entity.$vgo_objects.{this.ship}.$vgo_sectors.clone else []" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_navigation_version" exact="2" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_searchrange" exact="$range" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_searchhome" exact="$home" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_searchjob" exact="$job" />
-      <do_if value="not $sectors?">
+      <do_if value="not $sectors? or @$sectors == null">
         <set_value name="$sectors" exact="[]" />
       </do_if>
       <set_value name="$done" exact="false" />
       <set_value name="$target" exact="null" />
       <label name="start" />
+      <do_if value="not $sectors? or @$sectors == null">
+        <set_value name="$sectors" exact="[]" />
+      </do_if>
       <set_order_syncpoint_reached order="this.ship.order" />
       <do_if value="not this.ship.isplayerowned">
         <return />
@@ -173,6 +182,16 @@
       <do_if value="not $home.exists">
         <set_value name="$home" exact="this.ship.sector" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home" />
+      </do_if>
+      <do_if value="$job == 3 and (this.ship.iscapitalship or this.ship.maxscanlevel le 0 or player.maxscanlevel le 0)">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if this.ship.iscapitalship then 'Scanner waiting: this survey requires an S/M ship; a capital ship is assigned' else (if this.ship.maxscanlevel le 0 then 'Scanner waiting: assigned ship has no usable scanner software' else 'Scanner waiting: the native player discovery scanner cap is zero; enter a scanner-equipped ship')" />
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_survey_warning != player.entity.$vgo_objects.{this.ship}.$vgo_status">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_survey_warning" exact="player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+          <write_to_logbook category="general" title="'Galactic Occupations: scanner prerequisite'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+          <debug_text text="'GO scanner prerequisite: %1 ship_class=%2 ship_cap=%3 player_cap=%4'.[this.ship.debugname,this.ship.class,this.ship.maxscanlevel,player.maxscanlevel]" />
+        </do_if>
+        <wait exact="1min" />
+        <resume label="start" />
       </do_if>
       <do_if value="$job == 6 and (@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_order != this.ship.order or not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_configured or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_all)">
         <find_object_component name="$turrets" object="this.ship" class="class.turret" multiple="true" />
@@ -254,12 +273,15 @@
         <return value="false" />
       </do_if>
       <label name="nextsector" />
+      <do_if value="not $sectors? or @$sectors == null">
+        <set_value name="$sectors" exact="[]" />
+      </do_if>
       <do_if value="$job == 6 and $simfallback and not $target.exists and (this.ship.attention ge attention.visible or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count)">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal search: ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchrocks + ' asteroids, ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchdeposits + ' deposits, ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count + ' real drops; waiting for harvestable loaded objects'" />
         <wait min="25s" max="35s" />
         <resume label="start" />
       </do_if>
-      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope?">
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope? or @player.entity.$vgo_objects.{this.ship}.$vgo_scope == null">
         <run_script name="'vardath.go.scope'" />
         <set_value name="$sectors" exact="[]" />
       </do_if>
@@ -270,7 +292,7 @@
           <resume label="start" />
         </do_if>
         <do_if value="not $sectors.count">
-          <set_value name="$sectors" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_scope? then player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone else []" />
+          <set_value name="$sectors" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_scope? and @player.entity.$vgo_objects.{this.ship}.$vgo_scope != null then player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone else []" />
         </do_if>
         <do_if value="$sectors.count gt 1 and $sectors.indexof.{this.ship.sector}">
           <remove_value name="$sectors.{$sectors.indexof.{this.ship.sector}}" />
@@ -288,13 +310,17 @@
               <wait exact="10s" />
               <resume label="start" />
             </do_if>
-            <run_script name="'move.generic'">
+            <run_script name="'move.generic'" result="$travelresult">
               <param name="destination" value="$next" />
               <param name="endintargetsector" value="true" />
               <param name="strictblacklist" value="true" />
               <param name="useknownpath" value="false" />
               <param name="pursuetargets" value="false" />
             </run_script>
+            <debug_text text="'GO sector travel: %1 destination=%2 native_result=%3 actual_sector=%4'.[this.ship.debugname,$next.knownname,$travelresult,if this.ship.sector.exists then this.ship.sector.knownname else 'In transit']" />
+            <do_if value="not this.ship.sector.exists or this.ship.sector != $next">
+              <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Sector travel did not reach ' + $next.knownname + '; check route, blacklist and ship restrictions; trying another permitted sector'" />
+            </do_if>
           </do_if>
         </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />

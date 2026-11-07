@@ -1,6 +1,10 @@
-# Galactic Occupations 0.3.1 development build
+# Galactic Occupations 0.3.2 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 7 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.3.2: confirmed payments and stalled-job recovery
+
+The new log proves a completed ten-passenger, ten-site/seven-sector tour paid **5,000,000 Cr**, plus three **8,000 Cr** patrol payments. It also reveals a null sector-cache error and conflicting hacker order flags, both corrected here. Activity income now displays Cr rather than hundredths. Private-room/transport-waypoint lookup is shared by passenger boarding, exits and rollback; scanner prerequisites and actual sector-travel results are explicit. See [the exact log findings](LOG_REVIEW_0.3.2.md). These changes do not establish success for the other stalled jobs; physical rooms/scanning/weapon simulation still impose the documented limits.
 
 ## 0.3.1 repair: station menu and crystal activity
 
@@ -14,7 +18,7 @@ The miner also recovers actual nearby crystal drops from their native ware conte
 
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.3.1_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.3.2_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
 4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances.

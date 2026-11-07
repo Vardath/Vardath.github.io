@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<content id="vardath_universal_cargo_teleport"
-         name="Vardath - Universal Cargo Teleportation"
-         description="Automatic dockless cargo trades and player-to-player ship ware exchanges for player-owned S/M/L/XL ships within 30 km. Protected UI compatible: native AI XML only, no Lua or UI dependencies."
-         author="Vardath"
-         version="100"
-         date="2026-11-06"
-         save="0"
-         enabled="1">
-  <dependency version="900"/>
+<?xml version='1.0' encoding='UTF-8'?>
+<content id="vardath_universal_cargo_teleport" name="Vardath - Universal Cargo Teleportation" description="Attempts dockless native cargo trades and player ship exchanges within 30 km. A rejected undocked trade with zero goods moved receives one normal docking retry; failed partners use docking for one game hour. Protected UI compatible; native trade accounting retained." author="Vardath" version="101" date="2026-11-07" save="0" enabled="1">
+  <dependency version="900" />
 </content>

@@ -45,6 +45,8 @@ for path, root in trees.items():
     for node in root.iter():
         if node.tag in ('event_object_dropped_objects','event_object_changed_room','event_object_destroyed') and not (node.get('object') or node.get('group')):
             error(path, f'{node.tag} requires an explicit object or dynamic group')
+        if node.tag == 'create_order' and 'default' in node.attrib and 'immediate' in node.attrib:
+            error(path, 'create_order cannot specify default and immediate together, even when false (confirmed by debug(7).log)')
         if node.tag == 'shoot_at':
             ancestor = node
             while ancestor in parents and ancestor.tag != 'attention': ancestor = parents[ancestor]

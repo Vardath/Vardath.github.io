@@ -200,7 +200,7 @@
           <set_value name="$ship" exact="$request.{1}" />
           <set_value name="$station" exact="$request.{2}" />
           <do_if value="$ship.isplayerowned and $station.isoperational and not $station.isplayerowned and $station.dockingallowed.{$ship}">
-            <create_order object="$ship" id="'VGO_hackonce'" name="$order" default="false" immediate="false" override="false">
+            <create_order object="$ship" id="'VGO_hackonce'" name="$order" override="false">
               <param name="station" value="$station" />
               <param name="panelid" value="$request.{3}" />
             </create_order>

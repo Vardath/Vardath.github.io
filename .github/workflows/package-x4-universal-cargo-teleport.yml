@@ -4,6 +4,7 @@ on:
     paths:
       - '.github/workflows/package-x4-universal-cargo-teleport.yml'
       - 'downloads/x4-universal-cargo-teleport/vardath_universal_cargo_teleport/**'
+      - 'downloads/x4-universal-cargo-teleport/package.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -18,27 +19,7 @@ jobs:
         with:
           ref: main
       - name: Parse XML and package single extension
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          from zipfile import ZipFile, ZIP_DEFLATED
-          import xml.etree.ElementTree as ET
-          folder=Path('downloads/x4-universal-cargo-teleport')
-          mod='vardath_universal_cargo_teleport'
-          src=folder/mod
-          files=sorted(p for p in src.rglob('*') if p.is_file())
-          assert (src/'content.xml').exists()
-          for p in files:
-              if p.suffix=='.xml':
-                  ET.parse(p)
-          target=folder/(mod+'_TEST.zip')
-          with ZipFile(target,'w',ZIP_DEFLATED) as z:
-              for p in files: z.write(p,p.relative_to(folder))
-          with ZipFile(target) as z:
-              assert z.testzip() is None
-              assert len(z.namelist())==len(files)
-          print('Packaged',target)
-          PY
+        run: python3 downloads/x4-universal-cargo-teleport/package.py
       - name: Publish ready-to-install ZIP
         run: |
           git config user.name "github-actions[bot]"
