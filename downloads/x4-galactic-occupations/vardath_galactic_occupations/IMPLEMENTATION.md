@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.0
+# Implementation and native-interface provenance — 0.3.1
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -17,3 +17,5 @@ Primary references inspected:
 - Documented command metadata in `tools/api_contracts.json`, with source file/line provenance. Added commands are checked against that metadata; matching installed XSD and expression-parser validation is unavailable.
 
 These sources establish the exposed interfaces, not their success with the user's save/mod load order. See `HACKER_REVIEW_0.3.0.md` for the exact log evidence and limitations, and `TESTING.md` for unperformed in-game acceptance tests.
+
+0.3.1: native InteractMenu refresh draws already-prepared actions. The hacker callback/poll now rebuild only the custom submenu before that redraw; a UI-clock deadline separates paused gameplay from a failed lookup. Empty/unavailable station responses are explicit. Crystal mining can navigate to permitted active simulation through `vardath.go.crystal.simulation`; `vardath.go.crystaldrops` discovers only genuine native drops. Native pickup is bounded/retried through the owned player-occupied ship when necessary. No manual crate deletion or item replacement is used. The detailed 0.3.1 review distinguishes this fallback from out-of-sector physics and documents new diagnostics/unverified runtime stages.

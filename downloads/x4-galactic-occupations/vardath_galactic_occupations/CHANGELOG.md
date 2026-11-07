@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.1 development — open-menu replies and actual crystal recovery
+
+- Fix the confirmed stale Checking submenu: rebuild only custom actions before native draw, poll for missed replies, normalize MD numeric booleans/IDs and revalidate station/ship selection. Replace the old unrealistic prepare-after-reply mock with draw-only update tests.
+- Add paused-safe ten-second UI timeout, explicit retry, empty/unavailable replies and short caching/refresh of unloaded station interiors. Native script requests still need unpaused gameplay.
+- Add configurable active-simulation navigation for crystal mining rather than silently cycling through unsupported out-of-sector firing. Recover genuine loose crystal drops independently of the task event. Retry native pickup through an owned player-occupied ship only if NPC collection leaves the actual drop untouched; wait for native results and retain failures.
+- Add search/damage/pickup/delivery diagnostics and native direct-delivery log receipts. No deposit/drop generation, manual crate deletion, fake inventory, cash wage or simulated out-of-sector damage. Actual harvesting/delivery remains runtime-unverified pending the next live log.
+- Keep galaxy range, player orders, existing saves/passengers/crew, Protected UI, Inventory Collector, original ledger and other mod sources.
+
 ## 0.3.0 development — physical crew hacking and verified patrol payments
 
 - Add galaxy-wide Galactic Station Hacker and queued station/panel context command using native actual panel discovery and costs. Existing crew/captain walk to the panel and back; completion requires the real native effect and actual return. No actor cloning, ashore teleport or whole-station hack flag.

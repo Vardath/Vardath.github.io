@@ -1,10 +1,20 @@
-# Galactic Occupations 0.3.0 development build
+# Galactic Occupations 0.3.1 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 7 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
 
+## 0.3.1 repair: station menu and crystal activity
+
+The station menu now replaces its cached Checking row **before** requesting the native redraw. It polls for missed replies while open, normalizes MD boolean values, and uses the native UI clock for a ten-second timeout/retry, even if simulation time is paused. Mission Director lookups still need the game unpaused. Empty/unavailable replies are displayed explicitly; no generic panel list is fabricated. The confirmed source defect and corrected draw-only tests are described in [MENU_CRYSTAL_REVIEW_0.3.1.md](MENU_CRYSTAL_REVIEW_0.3.1.md).
+
+Crystal Miner now has **Follow active crystal simulation** (default on). Out of active simulation, firing cannot harvest crystals. With the fallback enabled, the ship travels normally to the player's permitted active sector and stays with materialised objects instead of endlessly rotating through sectors where its firing task refuses to run. This does **not** enable out-of-sector crystal physics. All-sector range remains supported; the fallback operates wherever permitted active simulation is available, and respects range, risk, blacklists and direct orders. Turn it off to retain ordinary galaxy-sector exploration. For reliable verification, be in an asteroid field so real crystals and collision geometry are loaded. Re-select Crystal Miner after upgrading if the new setting is absent from an old order.
+
+The miner also recovers actual nearby crystal drops from their native ware contents, independently of the shooting task's event. It waits briefly for native pickup and, if an NPC pickup leaves the actual drop untouched, tries native collection by the player's occupied ship to route it directly into player inventory. No crate is manually destroyed and no replacement crystal is generated. Only observed player credit is recorded. If native pickup still fails, the real drop stays queued for retry. `GO crystal search:`, `GO crystal fire result:`, `GO crystal pickup:` and `GO crystals:` separate discovery, damage, collection and actual delivery in the new log.
+
+**The user has not yet observed any crystals returned.** This repair addresses concrete control-flow and recovery limits; its physical firing, native pickup and resulting inventory still require in-game verification. [Current report and tests](MENU_CRYSTAL_REVIEW_0.3.1.md).
+
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.3.0_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.3.1_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
 4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances.
@@ -47,7 +57,7 @@ Select an AI-controlled player ship on the map and right-click a faction station
 
 Mine Crystals is a selectable addon option in Map → Information → Loadout → Turret Behaviour for existing player S/M/L/XL ships, including groups and missile turrets. Existing-ship outfitter controls also receive it. It is a controller layered on native turret control, not a new engine enum. Native selections and equipment remain intact; the standalone controller yields to the active crystal occupation. No custom mode ID is written into a build plan.
 
-Only real drops attributed to a targeted crystal enter collection. Native pickup must consume the actual drop. Only observed withdrawal from the captain and observed credit to player inventory are counted; uncredited remainder is restored. Existing captain-held crystals on an assigned miner are forwarded too. No generated items, cash substitutes, cargo requirements, beam-only restriction, captain holding limit or automatic sale. Accurate firing, pickup and out-of-sector availability still require runtime verification. See the historical [crystal review](CRYSTAL_REVIEW_0.2.5.md).
+Only real nearby drops whose native contents include crystal inventory wares enter collection; drop-event attribution and direct loose-drop recovery are both used. Native pickup must consume the actual drop. Only observed withdrawal from the captain and observed credit to player inventory are counted; uncredited remainder is restored. Existing captain-held crystals on an assigned miner are forwarded too. No generated items, cash substitutes, cargo requirements, beam-only restriction, captain holding limit or automatic sale. Accurate firing, pickup and out-of-sector availability still require runtime verification. See the historical [crystal review](CRYSTAL_REVIEW_0.2.5.md).
 
 ## Payments, reputation and the vanilla UI
 
@@ -59,4 +69,4 @@ The vanilla transaction ledger remains the original renderer. There is no custom
 
 Requires X4 9.00 or later; DLC content is discovered at runtime. No dependencies on removed mods, no vanilla AI replacements, no ledger screen replacement and no change to Protected UI or Inventory Collector. Other extension sources, including Kopis Forge's special weapon and Astrid equipment, are unchanged in this delivery. The optional four-mod bundle includes their current versions unchanged.
 
-[Hacker/log review](HACKER_REVIEW_0.3.0.md), [reproducible in-game tests](TESTING.md), [implementation notes](IMPLEMENTATION.md) and [version history](CHANGELOG.md) distinguish source checks from unverified runtime stages. Keep a backup before testing this development build.
+[Hacker/log review](HACKER_REVIEW_0.3.1.md), [reproducible in-game tests](TESTING.md), [implementation notes](IMPLEMENTATION.md) and [version history](CHANGELOG.md) distinguish source checks from unverified runtime stages. Keep a backup before testing this development build.

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystaldrops" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="force" default="false" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" exact="[]" />
+      </do_if>
+      <do_for_each name="$drop" in="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" counter="$i" reverse="true">
+        <do_if value="not $drop.exists">
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+        </do_if>
+      </do_for_each>
+      <do_if value="not this.ship.sector.exists or (not $force and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_dropquery gt player.age)">
+        <return />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_dropquery" exact="player.age + 8s" />
+      <find_object name="$loose" space="this.ship.sector" class="class.drop" multiple="true" sortbydistanceto="this.ship" sortlimit="128">
+        <match_distance object="this.ship" max="25km + this.ship.size / 2" />
+      </find_object>
+      <do_for_each name="$drop" in="$loose">
+        <do_if value="not $drop.exists or player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.indexof.{$drop} or (@player.entity.$vgo_objects.{$drop}.$vgo_owner.exists and @player.entity.$vgo_objects.{$drop}.$vgo_owner != this.ship and @player.entity.$vgo_objects.{$drop}.$vgo_expires gt player.age)">
+          <continue />
+        </do_if>
+        <set_value name="$quantity" exact="0" />
+        <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+          <set_value name="$quantity" exact="$quantity + $drop.wares.{$ware}.count" />
+        </do_for_each>
+        <do_if value="$quantity gt 0">
+          <append_to_list name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" exact="$drop" />
+        </do_if>
+      </do_for_each>
+      <return value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count" />
+    </actions>
+  </attention>
+</aiscript>

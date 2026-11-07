@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="10" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -22,6 +22,9 @@
         <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_once">
           <return value="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" />
         </do_if>
+      </do_if>
+      <do_if value="$job == 6">
+        <run_script name="'vardath.go.crystaldrops'" />
       </do_if>
       <do_if value="$job == 6 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
         <do_for_each name="$drop" in="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" counter="$i" reverse="true">
@@ -121,6 +124,12 @@
             <wait exact="100ms" />
           </do_if>
         </do_for_each>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchrocks" exact="$rocks.count" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchdeposits" exact="$candidates.count" />
+        <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchlog? or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchlog lt player.age">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchlog" exact="player.age + 1min" />
+          <debug_text text="'GO crystal search: %1 sector=%2 attention=%3 asteroids=%4 deposits=%5 pending_drops=%6'.[this.ship.debugname,this.ship.sector.knownname,this.ship.attention,$rocks.count,$candidates.count,@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count]" />
+        </do_if>
       </do_elseif>
       <do_elseif value="$job == 8">
         <find_object name="$candidates" space="this.ship.sector" class="class.asteroid" indestructible="false" invulnerable="false" multiple="true" sortbydistanceto="this.ship" sortlimit="48">

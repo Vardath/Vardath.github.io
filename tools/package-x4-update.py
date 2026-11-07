@@ -5,7 +5,7 @@ from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'downloads/x4-updates/X4_Hacker_Jobs_Update_2026-11-07.zip'
+OUT=ROOT/'downloads/x4-updates/X4_Hacker_Menu_Crystal_Fix_2026-11-07.zip'
 SOURCES=[ROOT/'downloads'/folder/name for folder,name in [
  ('x4-galactic-occupations','vardath_galactic_occupations'),
  ('x4-living-factions-builders','vardath_living_factions_builders'),

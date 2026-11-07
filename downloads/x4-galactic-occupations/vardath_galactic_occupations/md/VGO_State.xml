@@ -645,7 +645,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV30" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV31" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -654,11 +654,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 30 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 31 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="30" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="31" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
@@ -779,7 +779,12 @@
     <cue name="BootstrapHackerV30">
       <actions>
         <set_value name="Init.$Orders" exact="['VGO_escort','VGO_taxi','VGO_scanner','VGO_mapper','VGO_tour','VGO_crystal','VGO_lure','VGO_demolition','VGO_morale','VGO_inspection','VGO_recruit','VGO_patrol','VGO_hacker','VGO_hackonce']" />
-        <write_to_logbook category="general" title="'Galactic Occupations 0.3.0 loaded'" text="'13 occupations registered. Galactic Station Hacker uses existing crew, real native panels, remotely reserved tools and physical crew return. Missing tools retry every 10 game minutes. Foreign-trader patrol arrivals now pay 8,000 Cr after verified protection; balance-confirmed receipts are recorded in General. New hacker interactions require in-game validation with your station interiors.'" />
+        <write_to_logbook category="general" title="'Galactic Occupations 0.3.1 registry ready'" text="'13 occupations registered. Galactic Station Hacker uses existing crew, real native panels, remotely reserved tools and physical crew return. Missing tools retry every 10 game minutes. Foreign-trader patrol arrivals now pay 8,000 Cr after verified protection; balance-confirmed receipts are recorded in General. New hacker interactions require in-game validation with your station interiors.'" />
+      </actions>
+    </cue>
+    <cue name="LoadedV31">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.3.1 loaded'" text="'Station hack submenu now rebuilds on replies, polls for missed replies and offers a paused-safe timeout/retry. Crystal miners can follow permitted active simulation, recover actual loose crystal drops and retry native pickup directly to the player ship. No crystals are generated. Use the new search/fire/pickup diagnostics to verify real harvesting.'" />
       </actions>
     </cue>
   </cues>

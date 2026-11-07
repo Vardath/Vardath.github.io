@@ -1,6 +1,8 @@
 -- Execute the actual hacker addon with native-shaped FFI/menu data; this is not X4 runtime testing.
 local root = arg[1] or 'downloads/x4-galactic-occupations/vardath_galactic_occupations'
 local checks, events, callbacks, calls, originalCalls, time = 0, {}, {}, {}, 0, 100
+local uiTime, updateCalls = 0, 0
+function getElapsedTime() return uiTime end
 local objects = { [1]={owner='player',class='npc'}, [10]={owner='player',class='ship_m'}, [11]={owner='player',class='ship_l'}, [12]={owner='argon',class='ship_m'}, [20]={owner='argon',class='station'}, [21]={owner='player',class='station'}, [30]={class='room'}, [31]={class='room'} }
 local board, panels, native = {}, {}, {}
 function ConvertStringTo64Bit(v) return tonumber(v) end
@@ -27,6 +29,12 @@ local menu={componentSlot={component=20},selectedplayerships={10,11,12},actions=
 -- Lua 5.1 closures must refer to a declared local rather than an initializer's global.
 menu.insertInteractionContent=function(section,entry) menu.actions[section][#menu.actions[section]+1]=entry end
 menu.prepareActions=function() originalCalls=originalCalls+1;menu.actions={selected_orders={{text='Fly and wait',script=function() end}}};return 'original' end
+menu.onUpdate=function()
+    updateCalls=updateCalls+1
+    -- Native InteractMenu refresh draws existing actions and does not prepare them.
+    if menu.refresh then menu.refresh=nil; menu.drawn=menu.actions.vgo_hack_panels end
+    return "native update"
+end
 menu.handleSubSectionOption=function(section) menu.opened=section.id end
 menu.onCloseElement=function() menu.closed=true end
 Helper={getMenu=function(name) return name=='InteractMenu' and menu or nil end}
@@ -38,8 +46,13 @@ check(menu.actions.selected_orders[1].text=='Fly and wait','normal order retaine
 check(menu.actions.vgo_hack_panels[1].active==false,'unqueried panel list disabled')
 local n=#events;menu.prepareActions();check(#events==n,'pending catalogue requests coalesced')
 board['$vgo_hack_catalogue_ui']={{20,{{'hack_storage','Storage',false},{'hack_all_turrets','Turrets',true}},700}}
-callbacks['VGO.HackCatalogue'](nil,20);menu.prepareActions()
+local preparesBeforeReply=originalCalls
+callbacks['VGO.HackCatalogue'](nil,20)
+check(originalCalls==preparesBeforeReply,'catalogue reply does not rebuild native order sections')
+check(menu.actions.vgo_hack_panels[1].text=='Storage','reply replaces checking row without prepareActions')
 check(menu.refresh==true,'reply requests ordinary menu refresh')
+check(menu.onUpdate()=="native update" and menu.drawn[1].text=="Storage",'native draw-only update displays returned panels')
+check(updateCalls==1,'native onUpdate delegated once')
 check(#menu.actions.selected_orders==2 and #menu.actions.vgo_hack_panels==2,'single additive root and actual panel list')
 check(menu.actions.vgo_hack_panels[1].active and not menu.actions.vgo_hack_panels[2].active,'already active panel disabled')
 menu.actions.selected_orders[2].script();check(menu.opened=='vgo_hack_panels','native submenu opened')
@@ -70,4 +83,31 @@ board['$vgo_hack_call']={10,203,30,'storage','hack_storage'};local request=board
 board['$vgo_hack_call']=request;local fn=native.StartControlPanelHack;native.StartControlPanelHack=nil;H.invoke(nil,10);check(#calls==1 and not events[#events][3][3],'missing protected native export fails safely');native.StartControlPanelHack=fn
 board['$vgo_hack_call']={10,204,30,'storage','hack_storage'};time=200;H.invoke(nil,10);time=50;H.invoke(nil,10);check(#calls==3,'older-save timeline permits its genuine token after time reversal')
 H.install(nil,2);H.invoke(nil,10);check(#calls==4,'new world/player does not inherit stale consumed-token cache')
+
+-- Numeric MD booleans and reply polling: do not fake a native prepareActions on receipt.
+menu.prepareActions()
+board['$vgo_hack_catalogue_ui']={{20,{{'hack_storage','Storage numeric',0},{'hack_all_turrets','Turrets numeric',1}},700,'ready'}}
+uiTime=1;menu.onUpdate()
+check(menu.actions.vgo_hack_panels[1].active and not menu.actions.vgo_hack_panels[2].active,'numeric MD boolean zero leaves a real panel selectable')
+check(menu.drawn[1].text=='Storage numeric','poll recovers a missed catalogue event without preparing native actions')
+local noPollEvents=#events;uiTime=1.1;menu.onUpdate();check(#events==noPollEvents,'subsecond updates do not resend lookup requests')
+-- A paused simulation must not leave the open submenu checking forever.
+board['$vgo_hack_catalogue_ui']={};H.requested={};H.nextPoll=0;uiTime=2;menu.prepareActions();local pendingEvents=#events
+uiTime=12.1;menu.onUpdate()
+check(menu.drawn[1].text=='Station panel lookup timed out' and menu.drawn[2].active,'real-time deadline advances while game time remains frozen')
+check(#events==pendingEvents,'timeout does not flood Mission Director with automatic retries')
+menu.drawn[2].script();check(#events==pendingEvents+1 and menu.actions.vgo_hack_panels[1].text=='Checking available station panels...','explicit retry requests once and refreshes the open submenu')
+board['$vgo_hack_catalogue_ui']={{20,{},700,'empty'}};callbacks['VGO.HackCatalogue'](nil,20)
+check(menu.actions.vgo_hack_panels[1].text=='No accessible station panels found' and menu.actions.vgo_hack_panels[2].active,'empty reply ends checking and offers refresh')
+board['$vgo_hack_catalogue_ui']={{20,{},700,'unavailable'}};callbacks['VGO.HackCatalogue'](nil,20)
+check(menu.actions.vgo_hack_panels[1].text=='Station unavailable for hacking','unavailable reply is distinct from pending and empty')
+-- A delayed reply for another station cannot redraw or retarget this menu.
+local beforeOther=menu.actions.vgo_hack_panels
+callbacks['VGO.HackCatalogue'](nil,21);check(menu.actions.vgo_hack_panels==beforeOther,'late unrelated station reply leaves active menu untouched')
+board['$vgo_hack_catalogue_ui']={{20,{{'hack_storage','Storage',false}},700,'ready'}};callbacks['VGO.HackCatalogue'](nil,20)
+local click=menu.actions.vgo_hack_panels[1].script
+menu.selectedplayerships={11};local beforeStaleClick=#events;click();check(#events==beforeStaleClick,'click revalidates current ship selection')
+menu.selectedplayerships={10};menu.componentSlot.component=21;click();check(#events==beforeStaleClick,'stale station click cannot queue a different target')
+menu.componentSlot.component=20;H.install();check(menu.onUpdate==H.updateHook,'update hook installation remains idempotent')
+
 print('PASS: '..checks..' hacker UI/native-bridge mock checks (no X4 runtime)')

@@ -14,11 +14,19 @@
     </cue>
     <library name="Catalogue">
       <actions>
-        <do_if value="$station.isoperational and not $station.isplayerowned">
+        <do_if value="not player.entity.$vgo_objects?">
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        </do_if>
+        <do_if value="not player.entity.$vgo_hack_catalogue_ui?">
+          <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]" />
+        </do_if>
+        <set_value name="$public" exact="[]" />
+        <set_value name="$cataloguestatus" exact="'unavailable'" />
+        <do_if value="$station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless">
           <do_if value="not player.entity.$vgo_objects.{$station}?">
             <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
           </do_if>
-          <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age">
+          <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age or @$refreshcatalogue">
             <set_value name="$entries" exact="[]" />
             <do_for_each name="$type" in="Init.$Types">
               <find_room name="$rooms" object="$station" hascontrolpanel="$type.{1}" multiple="true" />
@@ -27,28 +35,29 @@
               </do_if>
             </do_for_each>
             <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue" exact="$entries" />
-            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="player.age + 10min" />
+            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="player.age + (if $entries.count then 10min else 20s)" />
           </do_if>
-          <set_value name="$public" exact="[]" />
           <do_for_each name="$entry" in="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue">
             <append_to_list name="$public" exact="[$entry.{2},$entry.{1}.name,$station.iscontrolpanelhacked.{$entry.{1}}]" />
           </do_for_each>
-          <set_value name="$found" exact="false" />
-          <do_for_each name="$row" in="player.entity.$vgo_hack_catalogue_ui" counter="$i">
-            <do_if value="$row.{1} == $station">
-              <set_value name="player.entity.$vgo_hack_catalogue_ui.{$i}" exact="[$station,$public,(player.age / 1s)f + 600]" />
-              <set_value name="$found" exact="true" />
-              <break />
-            </do_if>
-          </do_for_each>
-          <do_if value="not $found">
-            <append_to_list name="player.entity.$vgo_hack_catalogue_ui" exact="[$station,$public,(player.age / 1s)f + 600]" />
-          </do_if>
-          <do_while value="player.entity.$vgo_hack_catalogue_ui.count gt 64">
-            <remove_value name="player.entity.$vgo_hack_catalogue_ui.{1}" />
-          </do_while>
-          <raise_lua_event name="'VGO.HackCatalogue'" param="$station" />
+          <set_value name="$cataloguestatus" exact="if $public.count then 'ready' else 'empty'" />
         </do_if>
+        <set_value name="$found" exact="false" />
+        <do_for_each name="$row" in="player.entity.$vgo_hack_catalogue_ui" counter="$i">
+          <do_if value="$row.{1} == $station">
+            <set_value name="player.entity.$vgo_hack_catalogue_ui.{$i}" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]" />
+            <set_value name="$found" exact="true" />
+            <break />
+          </do_if>
+        </do_for_each>
+        <do_if value="not $found">
+          <append_to_list name="player.entity.$vgo_hack_catalogue_ui" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]" />
+        </do_if>
+        <do_while value="player.entity.$vgo_hack_catalogue_ui.count gt 64">
+          <remove_value name="player.entity.$vgo_hack_catalogue_ui.{1}" />
+        </do_while>
+        <debug_text text="'GO hacker catalogue: station=%1 state=%2 actual_panel_types=%3'.[$station.debugname,$cataloguestatus,$public.count]" />
+        <raise_lua_event name="'VGO.HackCatalogue'" param="$station" />
       </actions>
     </library>
     <cue name="CatalogueRequest" instantiate="true">
@@ -65,6 +74,7 @@
         <event_ui_triggered screen="'VGO'" control="'hackcatalogue'" />
       </conditions>
       <actions>
+        <set_value name="$refreshcatalogue" exact="true" />
         <set_value name="$station" exact="event.param3" />
         <include_actions ref="Catalogue" />
       </actions>

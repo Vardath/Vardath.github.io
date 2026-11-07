@@ -35,7 +35,7 @@
     <t id="203">Close component surveys with surface approaches and ten seconds of clear line of sight. Publish native per-component scan data at the player scanner cap.</t>
     <t id="204">Explore connections, catalogue anomalies and their actual destination lists.</t>
     <t id="205">Board up to ten passengers, visit ten distinct sights across the connected galaxy, then return for drop-off. Default luxury fare: 500,000 Cr per passenger.</t>
-    <t id="206">Harvest actual asteroid crystal deposits with forward weapons or turrets on any normal ship size. Collect real drops and immediately send crystals to player inventory. Physical simulation required; no auto-sale.</t>
+    <t id="206">Harvest real asteroid crystals using suitable forward weapons or turrets and deliver actual drops to player inventory. All normal ship sizes. Active simulation is required for firing; the optional fallback follows an accessible active sector instead of inventing out-of-sector harvests.</t>
     <t id="207">Provoke a manageable hostile and retreat to a stronger friendly force. Detect pursuit and abandon failed attempts.</t>
     <t id="208">Shoot actual destructible asteroids. High attention required for physical firing.</t>
     <t id="209">Improve eligible crew morale, with ship and faction cooldowns. Reputation requires actual improvement.</t>
@@ -52,5 +52,6 @@
     <t id="114">Hack selected station panel</t>
     <t id="213">Galaxy-wide station hacking using an existing crew member or captain. Requires actual hacking tools from player inventory; missing tools retry every 10 game minutes. Crew must walk to a native panel and return before departure. No employer or automatic payment.</t>
     <t id="214">Queue one physical crew hack of the selected native station panel. Existing orders and default behaviour are retained.</t>
+    <t id="53">Follow active crystal simulation</t>
   </page>
 </language>

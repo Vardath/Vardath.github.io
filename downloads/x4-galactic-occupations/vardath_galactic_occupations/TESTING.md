@@ -1,6 +1,12 @@
-# Reproducible tests — 0.3.0 development
+# Reproducible tests — 0.3.1 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
+
+## Current menu and crystal repair
+
+Run [the 0.3.1 reproduction](MENU_CRYSTAL_REVIEW_0.3.1.md) first. The open station submenu must replace Checking on a reply **without** manually re-preparing/closing it. Test pause/ten-second UI timeout/retry, numeric MD boolean flags, empty/unavailable interiors, lost UI event and stale ship/station selection. Mission Director requests still need unpaused simulation.
+
+Crystal Miner now defaults to Follow active crystal simulation. Test normal travel into the player's permitted active sector, actual loaded deposits, native damage and drop consumption, and observed player credit. Test disabling the option for ordinary galaxy rotation, range/risk exclusion, actual loose-drop recovery after interrupted firing, NPC pickup refusal with native player-ship retry, player on foot, collector competition and retained failed drops. No synthetic deposit/damage/item is permitted. Collect a fresh log showing search/fire/pickup/delivery prefixes if yield remains zero.
 
 ## Hacker: full visible cycle
 

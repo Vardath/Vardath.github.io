@@ -39,6 +39,7 @@
       <set_value name="$previous.$collect" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_collect" />
       <set_value name="$previous.$resourceonly" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly" />
       <set_value name="$previous.$viewtime" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_viewtime" />
+      <set_value name="$previous.$simfallback" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_simfallback" />
       <set_value name="$previous.$collectionlimit" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" />
       <set_value name="$previous.$target" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_target" />
       <set_value name="$previous.$destination" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_destination" />
@@ -70,6 +71,7 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collect" exact="$previous.$collect" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly" exact="$previous.$resourceonly" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_viewtime" exact="$previous.$viewtime" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_simfallback" exact="$previous.$simfallback" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_collectionlimit" exact="$previous.$collectionlimit" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" exact="$previous.$target" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$previous.$destination" />

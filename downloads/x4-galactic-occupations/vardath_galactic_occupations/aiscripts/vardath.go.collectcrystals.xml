@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.collectcrystals" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.collectcrystals" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <interrupts>
     <handler>
       <conditions>
@@ -54,23 +54,41 @@
           <set_value name="$playerbefore" exact="$playerbefore + player.entity.inventory.{$ware}.count" />
         </do_for_each>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Collecting actual crystal drop and forwarding to player inventory'" />
-        <!-- Explicit short-range collection equivalent for every ship size. Native
-             collect_drop removes the actual tracked object and handles its contents. -->
         <set_value name="$pickup_confirmed" exact="false" />
         <collect_drop object="this.ship" drop="$drop" />
+        <do_all exact="5">
+          <wait exact="200ms" />
+          <do_if value="not $drop.exists or $drop.iswreck or $pickup_confirmed">
+            <break />
+          </do_if>
+        </do_all>
+        <do_if value="$drop.exists and not $drop.iswreck and not $pickup_confirmed and player.occupiedship.exists and player.occupiedship.isplayerowned and player.occupiedship != this.ship">
+          <collect_drop object="player.occupiedship" drop="$drop" />
+          <wait exact="200ms" />
+        </do_if>
+        <debug_text text="'GO crystal pickup: %1 drop=%2 expected=%3 still_exists=%4 native_ack=%5 player_before=%6'.[this.ship.debugname,$drop,$expected,$drop.exists,$pickup_confirmed,$playerbefore]" />
         <run_script name="'vardath.go.forwardcrystals'" result="$forwarded" />
         <set_value name="$playerafter" exact="0" />
         <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
           <set_value name="$playerafter" exact="$playerafter + player.entity.inventory.{$ware}.count" />
         </do_for_each>
-        <do_if value="not $drop.exists or $pickup_confirmed">
+        <do_if value="not $drop.exists or $drop.iswreck or $pickup_confirmed">
           <set_value name="$delivered" exact="[[$playerafter - $playerbefore, 0].max, $expected].min" />
           <do_if value="$delivered gt $forwarded">
             <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sent" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sent + $delivered - $forwarded" />
+            <write_to_logbook category="general" title="'Galactic Occupations: crystals to player inventory'" text="'%1 delivered %2 actual crystal items through native player collection; no sale or cash grant.'.[this.ship.knownname,$delivered - $forwarded]" />
+            <debug_text text="'GO crystals: %1 native direct delivery=%2 player_before=%3 player_after=%4'.[this.ship.debugname,$delivered - $forwarded,$playerbefore,$playerafter]" />
           </do_if>
           <set_value name="$collected" exact="$collected + $delivered" />
           <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
         </do_if>
+        <do_else>
+          <do_if value="not player.entity.$vgo_objects.{$drop}?">
+            <set_value name="player.entity.$vgo_objects.{$drop}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$drop}.$vgo_crystal_retry" exact="player.age + 2min" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal pickup was not accepted by the native collector; real drop retained for retry, no inventory credit fabricated'" />
+        </do_else>
       </do_for_each>
       <return value="$collected" />
     </actions>

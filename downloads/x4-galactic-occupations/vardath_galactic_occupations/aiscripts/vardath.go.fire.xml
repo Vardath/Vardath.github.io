@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.fire" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
     <param name="crystal" default="true" />
@@ -23,7 +23,6 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <!-- Scoped Mine Crystals controller. Does not write weapon modes, armed state, equipment, or weapon groups. -->
       <do_if value="not $target.exists or this.ship.attention lt attention.visible or (not $crystal and this.ship.iscapitalship)">
         <return value="false" />
       </do_if>
@@ -146,6 +145,9 @@
         <wait exact="500ms" />
       </do_while>
       <run_script name="'vardath.go.release'" />
+      <do_if value="$crystal">
+        <debug_text text="'GO crystal fire result: %1 target_exists=%2 destroyed_event=%3 initial_hull=%4 remaining_hull=%5'.[this.ship.debugname,$target.exists,$destroyed,$initialhull,if $target.exists then $target.hull else 0]" />
+      </do_if>
       <do_if value="$destroyed">
         <return value="true" />
       </do_if>

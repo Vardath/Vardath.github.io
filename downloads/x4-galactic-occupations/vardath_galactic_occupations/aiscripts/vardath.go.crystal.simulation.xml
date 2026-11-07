@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.simulation" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <attention min="unknown">
+    <actions>
+      <do_if value="this.ship.attention ge attention.visible">
+        <return value="true" />
+      </do_if>
+      <set_value name="$sector" exact="player.sector" />
+      <do_if value="not $sector.exists or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner waiting: no permitted active-simulation sector in operating range'" />
+        <return value="false" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$sector" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner moving to active simulation in ' + $sector.knownname + '; remote crystal physics cannot be fabricated'" />
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice? or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice lt player.age">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice" exact="player.age + 5min" />
+        <write_to_logbook category="general" title="'Galactic Occupations: crystal simulation fallback'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status" />
+        <debug_text text="'GO crystal simulation: %1 sector=%2 attention=%3 destination=%4'.[this.ship.debugname,this.ship.sector.knownname,this.ship.attention,$sector.knownname]" />
+      </do_if>
+      <run_script name="'vardath.go.depart'" result="$departed" />
+      <do_if value="not $departed">
+        <return value="false" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min" />
+      <get_safe_pos result="$pos" sector="$sector" value="player.entity.relativeposition.{$sector}" space="$sector" min="8km + this.ship.size / 2" max="15km + this.ship.size / 2" radius="this.ship.size / 2" ignored="this.ship" />
+      <run_script name="'move.generic'">
+        <param name="destination" value="$sector" />
+        <param name="position" value="$pos" />
+        <param name="strictblacklist" value="true" />
+        <param name="useknownpath" value="false" />
+        <param name="pursuetargets" value="false" />
+      </run_script>
+      <wait exact="3s" />
+      <return value="this.ship.attention ge attention.visible" />
+    </actions>
+  </attention>
+</aiscript>

@@ -20,13 +20,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.3.0_DEV.zip --report /tmp/galactic-occupations-static-results.json
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.3.1_DEV.zip --report /tmp/galactic-occupations-static-results.json
       - name: Reported scope, boarding, survey and payment source guards
         run: python downloads/x4-galactic-occupations/tools/tests/source_contracts.py
       - name: Execute crystal inventory accounting contracts (mock native actions)
         run: python downloads/x4-galactic-occupations/tools/tests/inventory_contracts.py
       - name: Execute hacker tool accounting and safety contracts
         run: python downloads/x4-galactic-occupations/tools/tests/hacker_contracts.py
+      - name: Check reported menu and crystal recovery contracts
+        run: python downloads/x4-galactic-occupations/tools/tests/runtime_recovery_contracts.py
       - name: Install Lua 5.1 for X4-compatible syntax checks
         run: sudo apt-get update -qq && sudo apt-get install -y lua5.1
       - name: Execute addon UI contract tests (mock widgets; no X4 runtime)
