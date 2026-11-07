@@ -3046,6 +3046,39 @@
       ],
       "kind": "action"
     },
+    "deplete_yield": {
+      "attributes": {
+        "amount": {
+          "doc": "Amount to be drained from the region, this value will contain the actual amount that was drained after the command has been executed",
+          "required": true,
+          "type": "lvaluename"
+        },
+        "container": {
+          "doc": "If provided, the wares will attempt to be added to the container object. The wares successfully transferred will then be depleted from the region",
+          "type": "expression"
+        },
+        "resourcearea": {
+          "doc": "The resource area to explicitly take the resources from - if omitted, the best one at the given position is used",
+          "type": "expression",
+          "v": "v900"
+        },
+        "sector": {
+          "doc": "Object",
+          "required": true,
+          "type": "object"
+        },
+        "ware": {
+          "doc": "Object",
+          "required": true,
+          "type": "object"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
     "disable_travel_mode": {
       "attributes": {
         "chance": {
@@ -3608,6 +3641,97 @@
         "slot": {
           "doc": "Slot to connect the NPC to - returned offset is relative to this slot",
           "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
+    "find_closest_resource": {
+      "attributes": {
+        "candismantle": {
+          "doc": "Whether this should find a position with recyclables that can be dismantled (defaults to false, mutually exclusive with canpickup and cantow)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "canpickup": {
+          "doc": "Whether this should find a position with rocks that can be collected without being broken up first (defaults to false, mutually exclusive with cantow and candismantle)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "cantow": {
+          "doc": "Whether this should find a position with recyclables that can be towed (defaults to false, mutually exclusive with canpickup and candismantle)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "distance": {
+          "doc": "(resultvalue) distance from the refposition to to the result position",
+          "type": "lvalueexpression"
+        },
+        "ignoredangerousregions": {
+          "doc": "(optional) Whether resources inside dangerous regions are allowed to be found (defaults to false)",
+          "type": "booleanexpression"
+        },
+        "minamount": {
+          "doc": "(optional) minimum resource yield that the region/zone needs to provide",
+          "type": "expression"
+        },
+        "minrating": {
+          "doc": "(optional) minimum resource yield rating that the region/zone needs to provide (value between 0 and 15)",
+          "type": "expression",
+          "v": "v900"
+        },
+        "onlydetected": {
+          "doc": "(optional) Whether only resources detected by player-owned resource probes are allowed to be found (defaults to false)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "onlyundetected": {
+          "doc": "(optional) Whether only resources NOT detected by player-owned resource probes are allowed to be found (defaults to false)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "position": {
+          "doc": "(resultvalue) the position relative to the returned space (sector or zone) where the requested resource can be found",
+          "required": true,
+          "type": "lvalueexpression"
+        },
+        "refobject": {
+          "doc": "Reference object for distance check",
+          "required": true,
+          "type": "expression"
+        },
+        "resourcearea": {
+          "doc": "(resultvalue) the resource area",
+          "type": "lvalueexpression",
+          "v": "v900"
+        },
+        "sector": {
+          "doc": "(resultvalue) the sector where the requested resource can be found (mutually exclusive with zone)",
+          "type": "lvalueexpression"
+        },
+        "useundiscovered": {
+          "doc": "(optional) Whether resources not yet discovered by the player are allowed to be found (defaults to true)",
+          "type": "booleanexpression",
+          "v": "v800"
+        },
+        "ware": {
+          "doc": "A single ware or list of wares that needs to be available as a resource in the region",
+          "required": true,
+          "type": "expression",
+          "vDoc": {
+            "8.00": "a single ware or list of wares that needs to be available as a resource in the region"
+          }
+        },
+        "wares": {
+          "doc": "(optional, resultvalue) list of all the resources that can be gathered in the found zone",
+          "type": "expression"
+        },
+        "zone": {
+          "doc": "(resultvalue) the zone where the requested resource can be found (mutually exclusive with sector)",
+          "type": "lvalueexpression"
         }
       },
       "contexts": [
@@ -12994,6 +13118,7 @@
     }
   },
   "provenance": {
+    "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,

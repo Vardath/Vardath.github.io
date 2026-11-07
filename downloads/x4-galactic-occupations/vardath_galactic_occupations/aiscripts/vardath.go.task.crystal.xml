@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.crystal" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.crystal" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -52,7 +52,7 @@
       <run_script name="'vardath.go.collectcrystals'" result="$collected" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_collected + $collected" />
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_target" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $collected + ' actual harvested crystal items delivered directly to player inventory'" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $collected + (if @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_commercial then ' actual harvested crystal items stored for station sale' else ' actual harvested crystal items delivered directly to player inventory')" />
       <do_if value="$collected == 0 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Real crystal drops are pending collection; no player-inventory delivery confirmed yet'" />
       </do_if>

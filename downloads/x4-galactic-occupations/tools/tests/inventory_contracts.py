@@ -27,6 +27,9 @@ class InventoryVM:
         self.root = ET.parse(MOD / 'aiscripts/vardath.go.forwardcrystals.xml').getroot()
 
     def expression(self, text):
+        # Exercise the retained legacy route; commercial accounting is tested separately.
+        text = text.replace('@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_commercial', 'False')
+        text = text.replace('@player.entity.$vgo_objects.{this.ship}.$vgo_job', '0')
         s = text.replace('@' + SENT, 'sent').replace(SENT, 'sent')
         s = re.sub(r'this\.ship\.pilot\.inventory\.\{\$ware\}\.count', "inventory('captain', v('ware'))", s)
         s = re.sub(r'player\.entity\.inventory\.\{\$ware\}\.count', "inventory('player', v('ware'))", s)

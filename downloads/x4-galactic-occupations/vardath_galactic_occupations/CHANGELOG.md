@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.3 — user-requested off-screen crystal commerce
+
+- Replace player-following fallback with real resource-field navigation, bounded active mining time and native yield depletion; finite custom crystal conversion is capped by actual ore/silicon removed. All normal armed sizes; no mineral hold.
+- Persist per-family stock and automatically simulate inventory-trader sales only at a real permitted faction station after docking. Native average prices; native cash directly to player. Correct `script_add` receipt matching, no duplicate completion wage.
+- Track sale IDs and unpaid claims before receipt callbacks; retain failed/partial payments and failed docking. A fully paid foreign sale grants small trade reputation with the shared cooldown. No approach rewards or existing player-inventory sweep.
+- Keep real visible crystal targeting/turret/drop collection and redirect actual observed harvests into sale stock. Preserve normal modes, Inventory Collector, Protected UI, existing saves and other job state.
+- Expose simulation, batch duration and size in native Behaviour settings; migrate old workers/defaults safely. Add 21 executed XML accounting/source contracts and full live reproduction steps. Engine integration remains unverified here.
+
 ## 0.3.2 — debug(7) shared-worker recovery
 
 - Guard missing and present-null sector caches at startup, saved-label resumes and refill; clone a valid cache. Log actual native travel results and reached sectors.

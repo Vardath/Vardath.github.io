@@ -1,4 +1,4 @@
-# Reproducible tests — 0.3.2 development
+# Reproducible tests — 0.3.3 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
 
@@ -6,7 +6,7 @@
 
 Run [the 0.3.1 reproduction](MENU_CRYSTAL_REVIEW_0.3.1.md) first. The open station submenu must replace Checking on a reply **without** manually re-preparing/closing it. Test pause/ten-second UI timeout/retry, numeric MD boolean flags, empty/unavailable interiors, lost UI event and stale ship/station selection. Mission Director requests still need unpaused simulation.
 
-Crystal Miner now defaults to Follow active crystal simulation. Test normal travel into the player's permitted active sector, actual loaded deposits, native damage and drop consumption, and observed player credit. Test disabling the option for ordinary galaxy rotation, range/risk exclusion, actual loose-drop recovery after interrupted firing, NPC pickup refusal with native player-ship retry, player on foot, collector competition and retained failed drops. No synthetic deposit/damage/item is permitted. Collect a fresh log showing search/fire/pickup/delivery prefixes if yield remains zero.
+Crystal Miner now defaults to **Simulate crystal mining off screen**. The earlier following-player fallback is superseded. Run [all six current crystal-commerce acceptance steps](CRYSTAL_COMMERCE_0.3.3.md#reproducible-live-test): remote field travel, actual finite depletion, active elapsed ticks, stock, real docking, simulated sale/native cash, save/load and interruptions. Test the retained visible turret/drop path separately. Neither the log's earlier zero crystal total nor source mocks verify the new flow.
 
 ## Hacker: full visible cycle
 
@@ -36,13 +36,14 @@ Record player credits before/after each completed sponsored contract. Verify nat
 - Tour: board actual NPCs, visit ten distinct sites across the connected galaxy (normally three or more sectors), dwell and disembark. Default fare 500,000 Cr per delivered passenger for ten verified stops. No partial-route/partial-manifest fare.
 - Trade patrol: follow actual traffic and verify meaningful protection/arrival; foreign service 8,000 Cr, own trader 0 Cr. Save/load after completion must not pay twice. Previous zero-fee completions are not backpaid.
 - Builders 1.75: observe its existing genuine contract/progress payment and the shared-cursor receipt; unchanged source still measures the actual credit delta. Do not count the private income journal as a second payment.
+- Crystal sales: only finite saved stock after actual station docking, quoted at native inventory prices; observed cash must match receipts. No separate completion wage.
 - Hacker, surveys, mapping, morale and other unsponsored tasks: no invented wage. Morale/service reputation requires an actual eligible improvement/completion and obeys cooldowns.
 
 ## All existing occupations
 
 For each default verify selection, executable targeting/movement, actual effect, completion, next work, save/load, player-order interruption and invalid-target recovery in at least two sectors. Range 99 must use connected galaxy coverage. A safe deferred action or prerequisite wait is not a successful job.
 
-- Crystal miner: test forward-only fighter, ordinary and missile turret ships, and L/XL; real deposit damage, accurate arcs, real drops consumed, matching immediate player-inventory increase and no captain/cargo restriction. Compare total item quantities with Inventory Collector active. Check no double collection and normal turret modes/armed states afterward. Repeat out of sector; no synthetic harvest may replace missing physics. See `CRYSTAL_REVIEW_0.2.5.md` for dedicated cases.
+- Crystal miner: all armed ship sizes, remote resource-backed simulation, partial/empty fields, actual docking, stock/claim settlement and native cash/receipt; real visible forward/turret damage/drop collection and current-drop inventory redirection with Inventory Collector. Existing player inventory must remain untouched. Test repeat, cancellation, buyer loss, range/risk, multiple miners, pause/SETA and save/load. Use the current commerce report rather than superseded inventory-only tests.
 - Scanner: record individual module/component native scan level; approach a real surface and maintain line of sight. Verify a genuine level/information increase, resume large stations and defer unloaded geometry without marking it scanned. Default ship eligibility is S/M.
 - Mapper: actual gate/anomaly destination records, invalid/mission exclusions, and permitted same-ship transit with equipment/crew retained.
 - Lure: actual hostile attention and pursuit, valid friendly anchor, breakoff if not followed or outmatched; physical forward firing requires loaded simulation.

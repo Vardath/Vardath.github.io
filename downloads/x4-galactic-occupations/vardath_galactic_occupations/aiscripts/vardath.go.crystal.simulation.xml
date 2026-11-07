@@ -1,37 +1,100 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.simulation" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.simulation" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
-      <do_if value="this.ship.attention ge attention.visible">
-        <return value="true" />
+      <do_if value="this.ship.sector == player.sector or this.ship.attention ge attention.visible or not player.entity.$vgo_objects.{this.ship}.$vgo_simfallback">
+        <return value="0" />
       </do_if>
-      <set_value name="$sector" exact="player.sector" />
-      <do_if value="not $sector.exists or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner waiting: no permitted active-simulation sector in operating range'" />
-        <return value="false" />
+      <set_value name="$sector" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_sector" />
+      <set_value name="$pos" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_pos" />
+      <set_value name="$ore" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_ware" />
+      <do_if value="not $sector.exists or $sector == player.sector or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
+        <set_value name="$sector" exact="null" />
+        <do_for_each name="$tryware" in="if player.age % 2s lt 1s then [ware.ore,ware.silicon] else [ware.silicon,ware.ore]">
+          <find_closest_resource refobject="this.ship.sector" ware="$tryware" sector="$foundsector" position="$foundpos" minamount="100" useundiscovered="true" ignoredangerousregions="false" />
+          <do_if value="$foundsector.exists and player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$foundsector} and $foundsector != player.sector and (player.entity.$vgo_objects.{this.ship}.$vgo_risk == 2 or not $foundsector.owner.hasrelation.enemy.{faction.player})">
+            <set_value name="$sector" exact="$foundsector" />
+            <set_value name="$pos" exact="$foundpos" />
+            <set_value name="$ore" exact="$tryware" />
+            <break />
+          </do_if>
+        </do_for_each>
+        <do_if value="not $sector.exists">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner: no permitted off-screen ore/silicon field here; seeking another sector'" />
+          <return value="0" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_sector" exact="$sector" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_pos" exact="$pos" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_ware" exact="$ore" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed" exact="0s" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_goal" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_miningtime" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_items" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_batchsize" />
       </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_serial + 1" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" />
+      <run_script name="'vardath.go.recordresult'">
+        <param name="outcome" value="'started'" />
+      </run_script>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min + player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_goal" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$sector" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner moving to active simulation in ' + $sector.knownname + '; remote crystal physics cannot be fabricated'" />
-      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice? or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice lt player.age">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simnotice" exact="player.age + 5min" />
-        <write_to_logbook category="general" title="'Galactic Occupations: crystal simulation fallback'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status" />
-        <debug_text text="'GO crystal simulation: %1 sector=%2 attention=%3 destination=%4'.[this.ship.debugname,this.ship.sector.knownname,this.ship.attention,$sector.knownname]" />
-      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner: travelling to off-screen asteroid field in ' + $sector.knownname" />
       <run_script name="'vardath.go.depart'" result="$departed" />
       <do_if value="not $departed">
-        <return value="false" />
+        <return value="2" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min" />
-      <get_safe_pos result="$pos" sector="$sector" value="player.entity.relativeposition.{$sector}" space="$sector" min="8km + this.ship.size / 2" max="15km + this.ship.size / 2" radius="this.ship.size / 2" ignored="this.ship" />
-      <run_script name="'move.generic'">
+      <run_script name="'move.generic'" result="$moved">
         <param name="destination" value="$sector" />
         <param name="position" value="$pos" />
         <param name="strictblacklist" value="true" />
         <param name="useknownpath" value="false" />
         <param name="pursuetargets" value="false" />
       </run_script>
-      <wait exact="3s" />
-      <return value="this.ship.attention ge attention.visible" />
+      <do_if value="this.ship.sector != $sector or this.ship.distanceto.[$sector,$pos] gt 15km + this.ship.size / 2">
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_sector" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner: resource field was not reached; trying a different route'" />
+        <return value="0" />
+      </do_if>
+      <set_command_action commandaction="commandaction.calculating" />
+      <do_while value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed lt player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_goal">
+        <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order.id != 'VGO_crystal' or this.ship.order != this.ship.defaultorder">
+          <return value="2" />
+        </do_if>
+        <do_if value="this.ship.sector != $sector or $sector == player.sector or this.ship.attention ge attention.visible or this.ship.distanceto.[$sector,$pos] gt 15km + this.ship.size / 2 or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player}) or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector}">
+          <return value="2" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Simulated crystal mining in ' + $sector.knownname + ': ' + ((player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed / 1s)i) + '/' + ((player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_goal / 1s)i) + ' seconds; resource-backed batch, not physical deposits'" />
+        <set_value name="$tick" exact="player.age" />
+        <wait exact="10s" />
+        <do_if value="not this.ship.isplayerowned or this.ship.order.id != 'VGO_crystal' or this.ship.order != this.ship.defaultorder or this.ship.sector != $sector or $sector == player.sector or this.ship.attention ge attention.visible or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player}) or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector} or this.ship.distanceto.[$sector,$pos] gt 15km + this.ship.size / 2">
+          <return value="2" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed + [player.age - $tick,10s].min, player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_goal].min" />
+      </do_while>
+      <set_value name="$drained" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_items * 100" />
+      <deplete_yield sector="$sector" ware="$ore" amount="$drained">
+        <position value="$pos" />
+      </deplete_yield>
+      <set_value name="$items" exact="[($drained / 100)i, player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_items].min" />
+      <do_if value="$items gt 0">
+        <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock? or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock == null">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock" exact="table[]" />
+        </do_if>
+        <do_all exact="$items">
+          <set_value name="$roll" min="1" max="1000" />
+          <set_value name="$crystalware" exact="if $roll le 850 then ware.inv_crystal_01 else (if $roll le 970 then ware.inv_crystal_02 else (if $roll le 995 then ware.inv_crystal_03 else (if $roll le 999 then ware.inv_crystal_04 else ware.inv_crystal_05)))" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$crystalware}" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$crystalware} + 1" />
+        </do_all>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simulated" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_simulated + $items" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Simulated crystal batch ready: ' + $items + ' items from ' + $drained + ' units of ' + $ore.name + '; seeking station sale'" />
+        <write_to_logbook category="general" title="'Galactic Occupations: simulated crystal batch'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status + ' in ' + $sector.knownname" />
+      </do_if>
+      <do_else>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal resource field depleted; no sale stock credited, seeking another field'" />
+      </do_else>
+      <debug_text text="'GO crystal simulation: %1 sector=%2 drained=%3 stock_added=%4 active_seconds=%5; no player inventory credit'.[this.ship.debugname,$sector.knownname,$drained,$items,player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed / 1s]" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_sector" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_elapsed" />
+      <return value="if $items gt 0 then 2 else 0" />
     </actions>
   </attention>
 </aiscript>

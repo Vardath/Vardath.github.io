@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="12" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1" />
     <param name="home" default="this.ship.sector" />
@@ -23,6 +23,8 @@
     <param name="hackpanel" default="''" />
     <param name="hackonce" default="false" />
     <param name="simfallback" default="true" />
+    <param name="miningtime" default="5min" />
+    <param name="batchsize" default="24" />
   </params>
   <interrupts>
     <handler>
@@ -104,6 +106,15 @@
     </do_if>
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
   </patch>
+  <patch sinceversion="12">
+    <do_if value="not $miningtime?">
+      <set_value name="$miningtime" exact="5min" />
+    </do_if>
+    <do_if value="not $batchsize?">
+      <set_value name="$batchsize" exact="24" />
+    </do_if>
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0" />
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -112,8 +123,10 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="32" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="33" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_simfallback" exact="$simfallback" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_miningtime" exact="[[$miningtime,1min].max,30min].min" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_batchsize" exact="[[$batchsize,1].max,60].min" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" exact="$hackstation" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedpanel" exact="$hackpanel" />
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_once" exact="$hackonce" />
@@ -226,9 +239,6 @@
           <resume label="start" />
         </do_if>
       </do_if>
-      <do_if value="$job == 6">
-        <run_script name="'vardath.go.forwardcrystals'" />
-      </do_if>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_scope.count or @player.entity.$vgo_objects.{this.ship}.$vgo_scope_until lt player.age">
         <run_script name="'vardath.go.scope'" />
       </do_if>
@@ -238,20 +248,26 @@
         <resume label="start" />
       </do_if>
       <do_if value="$job == 6">
-        <run_script name="'vardath.go.crystaldrops'" />
-      </do_if>
-      <do_if value="$job == 6 and $simfallback and not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
-        <run_script name="'vardath.go.crystal.simulation'" result="$simulationready" />
-        <do_if value="not $simulationready">
-          <wait min="20s" max="30s" />
-          <resume label="start" />
+        <run_script name="'vardath.go.crystal.commercial'" result="$crystalcycle" />
+        <do_if value="$crystalcycle == 1">
+          <set_value name="$done" exact="true" />
+          <run_script name="'vardath.go.recordresult'">
+            <param name="outcome" value="'completed'" />
+          </run_script>
         </do_if>
-        <do_if value="this.ship.attention ge attention.visible">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />
+        <run_script name="'vardath.go.recordresult'">
+          <param name="outcome" value="'deferred'" />
+        </run_script>
+        <run_script name="'vardath.go.release'" />
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" />
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" />
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" />
+        <set_value name="$target" exact="null" />
+        <do_if value="$crystalcycle == 0">
+          <resume label="nextsector" />
         </do_if>
-      </do_if>
-      <do_if value="$job == 6 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="false" />
+        <wait min="20s" max="30s" />
+        <resume label="start" />
       </do_if>
       <do_if value="$job != 5 and not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{this.ship.sector} and not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational) and not ($job == 2 and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists)">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_rotate" exact="not (($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational)" />
@@ -276,11 +292,6 @@
       <do_if value="not $sectors? or @$sectors == null">
         <set_value name="$sectors" exact="[]" />
       </do_if>
-      <do_if value="$job == 6 and $simfallback and not $target.exists and (this.ship.attention ge attention.visible or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count)">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal search: ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchrocks + ' asteroids, ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_searchdeposits + ' deposits, ' + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count + ' real drops; waiting for harvestable loaded objects'" />
-        <wait min="25s" max="35s" />
-        <resume label="start" />
-      </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope? or @player.entity.$vgo_objects.{this.ship}.$vgo_scope == null">
         <run_script name="'vardath.go.scope'" />
         <set_value name="$sectors" exact="[]" />
@@ -293,6 +304,13 @@
         </do_if>
         <do_if value="not $sectors.count">
           <set_value name="$sectors" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_scope? and @player.entity.$vgo_objects.{this.ship}.$vgo_scope != null then player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone else []" />
+          <do_if value="$job == 6 and $simfallback">
+            <do_for_each name="$sector" in="$sectors" counter="$i" reverse="true">
+              <do_if value="$sector.averagemaxyield.{ware.ore}.count le 0 and $sector.averagemaxyield.{ware.silicon}.count le 0">
+                <remove_value name="$sectors.{$i}" />
+              </do_if>
+            </do_for_each>
+          </do_if>
         </do_if>
         <do_if value="$sectors.count gt 1 and $sectors.indexof.{this.ship.sector}">
           <remove_value name="$sectors.{$sectors.indexof.{this.ship.sector}}" />

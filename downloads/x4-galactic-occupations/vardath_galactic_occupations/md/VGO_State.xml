@@ -660,7 +660,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV32" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV33" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -669,11 +669,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 32 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 33 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="32" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="33" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
@@ -759,7 +759,7 @@
           <do_if value="not $job or $job lt 1 or $job gt 13">
             <continue />
           </do_if>
-          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 32 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 33 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
             <continue />
           </do_if>
           <set_value name="$status" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_status then player.entity.$vgo_objects.{$ship}.$vgo_status else 'Waiting for occupation worker'" />
@@ -774,13 +774,17 @@
             <set_value name="$report" exact="$report + ' | Last unfinished cycle: ' + player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit" />
           </do_if>
           <do_if value="$job == 6">
-            <set_value name="$report" exact="$report + ' | Crystal items forwarded to player inventory: ' + (if @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent then player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent else 0)" />
+            <set_value name="$crystalstock" exact="0" />
+            <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+              <set_value name="$crystalstock" exact="$crystalstock + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_stock.{$ware}" />
+            </do_for_each>
+            <set_value name="$report" exact="$report + ' | Crystal items: simulated ' + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_simulated + ', actual harvested ' + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_physical + ', sold ' + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sold + ', pending stock ' + $crystalstock + ', unpaid sale ' + ((@player.entity.$vgo_objects.{$ship}.$vgo_crystal_sale_due / 1Cr)f) + ' Cr; legacy inventory deliveries ' + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent" />
           </do_if>
           <write_to_logbook category="general" title="'Galactic Occupations: activity - ' + readtext.{191180}.{100 + $job}" text="$report" />
           <debug_text text="'GO activity: ' + $report" />
           <set_value name="$jitter" min="0s" max="30s" />
           <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_after" exact="player.age + 5min + $jitter" />
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="32" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="33" />
         </do_for_each>
       </actions>
     </cue>
@@ -798,14 +802,10 @@
       </actions>
     </cue>
     <cue name="LoadedV31">
-      <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.3.1 loaded'" text="'Station hack submenu now rebuilds on replies, polls for missed replies and offers a paused-safe timeout/retry. Crystal miners can follow permitted active simulation, recover actual loose crystal drops and retry native pickup directly to the player ship. No crystals are generated. Use the new search/fire/pickup diagnostics to verify real harvesting.'" />
-      </actions>
+      <actions />
     </cue>
     <cue name="LoadedV32">
-      <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.3.2 loaded'" text="'Fixed the log-confirmed null sector list and conflicting hacker order attributes. Existing default jobs receive safe version recovery; direct orders and deployed crew are preserved. Activity income is now shown in Cr, not raw hundredths. Log evidence confirms a 5,000,000 Cr tour and three 8,000 Cr patrol payments; other job completion is still unverified.'" />
-      </actions>
+      <actions />
     </cue>
     <library name="PassengerRoomPointsV32">
       <actions>
@@ -847,5 +847,10 @@
         </do_else>
       </actions>
     </library>
+    <cue name="LoadedV33">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.3.3 loaded'" text="'Crystal miners now use resource-backed simulated off-screen mining across permitted sectors and automatically simulate inventory-trader sales at real dockable faction stations. Credits go to the player; old player inventory is not sold. No following the player. Defaults: 24 items per 5 game minutes, 100 ore/silicon units consumed per item; actual depleted yield caps stock. Visible turret harvesting remains available. Sale receipts and activity totals appear in vanilla logs; engine runtime verification remains pending.'" />
+      </actions>
+    </cue>
   </cues>
 </mdscript>

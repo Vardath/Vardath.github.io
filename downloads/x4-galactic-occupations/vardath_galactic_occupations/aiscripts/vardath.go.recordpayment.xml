@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.recordpayment" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="amount" />
     <param name="details" default="''" />
@@ -34,7 +34,7 @@
       </do_if>
       <set_value name="player.entity.$vardath_income_seq" exact="@player.entity.$vardath_income_seq + 1" />
       <set_value name="player.entity.$vardath_income_now" exact="(player.age / 1s)f" />
-      <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, if player.entity.$vgo_objects.{this.ship}.$vgo_job == 6 then 'transfer' else 'script_add']" />
+      <append_to_list name="player.entity.$vardath_income" exact="[player.entity.$vardath_income_seq, (player.age / 1s)f, $IncomeKey, $IncomeName, ($IncomePaid / 1Cr)f, $IncomeShip, $IncomeShipName, $IncomeDetails, 'script_add']" />
       <do_while value="player.entity.$vardath_income.count gt 5000">
         <remove_value name="player.entity.$vardath_income.{1}" />
       </do_while>

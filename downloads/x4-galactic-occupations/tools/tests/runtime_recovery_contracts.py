@@ -16,12 +16,17 @@ class RuntimeRecoveryContracts(unittest.TestCase):
         for tag in ['set_object_position','warp','create_object','create_drop','add_inventory','add_cargo','reward_player','set_object_attention']:
             self.assertEqual(len(list(root.iter(tag))),0)
 
-    def test_crystal_fallback_yields_until_native_physics_is_available(self):
+    def test_crystal_commerce_dispatches_remote_simulation_without_following_player(self):
         worker=xml('aiscripts/vardath.go.worker.xml')
-        branch=next(n for n in worker.iter('do_if') if n.find("run_script[@name=\"'vardath.go.crystal.simulation'\"]") is not None)
-        self.assertIn('$simfallback',branch.get('value'))
-        self.assertIsNotNone(branch.find("do_if[@value='not $simulationready']/resume[@label='start']"))
-        self.assertIn('not @this.ship.$vgo_crystal_drops.count',branch.get('value'))
+        self.assertIsNotNone(worker.find(".//run_script[@name=\"'vardath.go.crystal.commercial'\"]"))
+        root=xml('aiscripts/vardath.go.crystal.commercial.xml')
+        branch=next(n for n in root.iter('do_if') if n.find("run_script[@name=\"'vardath.go.crystal.simulation'\"]") is not None)
+        self.assertIn('this.ship.sector != player.sector',branch.get('value'))
+        self.assertIn('this.ship.attention lt attention.visible',branch.get('value'))
+        sim=source('aiscripts/vardath.go.crystal.simulation.xml')
+        self.assertNotIn('player.entity.relativeposition',sim)
+        self.assertNotIn('exact="player.sector"',sim)
+        self.assertIn('deplete_yield',sim)
 
     def test_crystal_loose_drop_recovery_filters_real_inventory_contents(self):
         root=xml('aiscripts/vardath.go.crystaldrops.xml')

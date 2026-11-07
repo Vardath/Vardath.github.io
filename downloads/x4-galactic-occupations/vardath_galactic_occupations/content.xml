@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide autonomous ship occupations. Real passengers, luxury tours, crystal inventory collection, existing-crew native panel hacking and vanilla payment receipts. Development build: in-game runtime verification pending." author="Vardath" version="32" date="2026-11-07" save="1" enabled="1">
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide autonomous ship occupations. Real passengers and luxury tours, resource-backed off-screen crystal mining and automatic simulated sales, crew panel hacking and vanilla payment receipts. Development build: runtime verification pending." author="Vardath" version="33" date="2026-11-07" save="1" enabled="1">
   <dependency version="900" />
 </content>

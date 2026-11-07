@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.stock" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="source" default="this.ship.pilot" />
+    <param name="limits" default="null" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <set_value name="$stored" exact="0" />
+      <do_if value="not this.ship.isplayerowned or not $source.exists or ($source == player.entity and $limits == null)">
+        <return value="0" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock? or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock == null">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock" exact="table[]" />
+      </do_if>
+      <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+        <set_value name="$before" exact="$source.inventory.{$ware}.count" />
+        <set_value name="$allowed" exact="if $limits != null then [[$before, @$limits.{$ware}].min, 0].max else $before" />
+        <do_if value="$allowed le 0">
+          <continue />
+        </do_if>
+        <remove_inventory entity="$source" ware="$ware" exact="$allowed" />
+        <set_value name="$removed" exact="[[$before - $source.inventory.{$ware}.count, 0].max, $allowed].min" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$ware}" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$ware} + $removed" />
+        <set_value name="$stored" exact="$stored + $removed" />
+      </do_for_each>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_physical" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_physical + $stored" />
+      <do_if value="$stored gt 0">
+        <debug_text text="'GO crystal stock: %1 physical=%2 source=%3; actual items withdrawn, awaiting station sale'.[this.ship.debugname,$stored,$source]" />
+      </do_if>
+      <return value="$stored" />
+    </actions>
+  </attention>
+</aiscript>

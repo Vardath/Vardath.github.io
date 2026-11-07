@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.commercial" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <attention min="unknown">
+    <actions>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_commercial" exact="true" />
+      <run_script name="'vardath.go.crystal.stock'" />
+      <set_value name="$stock" exact="0" />
+      <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+        <set_value name="$stock" exact="$stock + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$ware}" />
+      </do_for_each>
+      <do_if value="$stock gt 0 or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units gt 0">
+        <run_script name="'vardath.go.sellcrystals'" result="$sold" />
+        <return value="if $sold then 1 else 2" />
+      </do_if>
+      <do_if value="this.ship.sector != player.sector and this.ship.attention lt attention.visible">
+        <run_script name="'vardath.go.crystal.simulation'" result="$cycle" />
+        <return value="$cycle" />
+      </do_if>
+      <run_script name="'vardath.go.crystaldrops'" />
+      <run_script name="'vardath.go.find'" result="$target">
+        <param name="job" value="6" />
+      </run_script>
+      <do_if value="not $target.exists">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner: no real loaded deposits or drops here; seeking another permitted sector'" />
+        <return value="0" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_serial + 1" />
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" />
+      <run_script name="'vardath.go.recordresult'">
+        <param name="outcome" value="'started'" />
+      </run_script>
+      <do_if value="not player.entity.$vgo_objects.{$target}?">
+        <set_value name="player.entity.$vgo_objects.{$target}" exact="table[]" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{$target}.$vgo_owner" exact="this.ship" />
+      <set_value name="player.entity.$vgo_objects.{$target}.$vgo_expires" exact="player.age + 25min" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_target" exact="$target" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 20min" />
+      <run_script name="'vardath.go.task.crystal'" result="$harvested">
+        <param name="target" value="$target" />
+      </run_script>
+      <do_if value="@player.entity.$vgo_objects.{$target}.$vgo_owner == this.ship">
+        <remove_value name="player.entity.$vgo_objects.{$target}.$vgo_owner" />
+        <remove_value name="player.entity.$vgo_objects.{$target}.$vgo_expires" />
+        <do_if value="not player.entity.$vgo_objects.{$target}.$vgo_cooldowns?">
+          <set_value name="player.entity.$vgo_objects.{$target}.$vgo_cooldowns" exact="table[]" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{$target}.$vgo_cooldowns.{6}" exact="player.age + 5min" />
+      </do_if>
+      <return value="2" />
+    </actions>
+  </attention>
+</aiscript>

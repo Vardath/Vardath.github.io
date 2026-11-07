@@ -251,8 +251,10 @@ class SourceContracts(unittest.TestCase):
     def test_completion_counters_follow_task_success_without_creating_payments(self):
         worker=xml('aiscripts/vardath.go.worker.xml')
         calls=worker.findall(".//run_script[@name=\"'vardath.go.recordresult'\"]")
-        completed=next(n for n in calls if n.find("param[@name='outcome']").get('value')=="'completed'")
-        self.assertIn(completed,list(worker.find(".//do_if[@value='$success']")))
+        completed=[n for n in calls if n.find("param[@name='outcome']").get('value')=="'completed'"]
+        self.assertEqual(len(completed),2)
+        for result in ['$success','$crystalcycle == 1']:
+            self.assertTrue(any(n in list(worker.find(".//do_if[@value='"+result+"']")) for n in completed))
         result=xml('aiscripts/vardath.go.recordresult.xml')
         self.assertIn('$last_serial',ET.tostring(result,encoding='unicode'))
         for tag in ['reward_player','transfer_money','create_npc_template','add_inventory','set_object_scanned','set_owner']:
