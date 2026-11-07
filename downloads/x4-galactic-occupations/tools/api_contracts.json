@@ -1587,7 +1587,17 @@
         }
       }
     ],
-    "t": []
+    "t": [],
+    "rotation": [
+      {
+        "attributes": {
+          "value": {
+            "type": "expression"
+          }
+        },
+        "source": "Native capital mining move_to/rotation value pattern"
+      }
+    ]
   },
   "commands": {
     "abort_called_scripts": {
@@ -10457,6 +10467,131 @@
         "file": "common.xsd",
         "line": 13910
       }
+    },
+    "collect_drop": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        },
+        "drop": {
+          "type": "object",
+          "required": true,
+          "doc": "Object"
+        },
+        "object": {
+          "type": "object",
+          "required": true,
+          "doc": "Object"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Have a drop be instantly collected by an object",
+      "source": {
+        "file": "common.xsd",
+        "line": 35138
+      }
+    },
+    "create_orientation": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        },
+        "maxpitch": {
+          "type": "expression",
+          "doc": "The maximum pitch angle to be returned, in positive degrees (default: 90deg, i.e. no restriction)"
+        },
+        "name": {
+          "type": "lvaluename",
+          "required": true,
+          "doc": "Name of the value that will receive the result"
+        },
+        "useaimtarget": {
+          "type": "booleanexpression",
+          "doc": "If set to true, the refobject's aim targets (or the bounding box center if there are none) will be used as the reference point, consistent with weapon aiming. Requires refobject to be set. Defaults to false."
+        },
+        "orientation": {
+          "type": "orientationlookup"
+        },
+        "refobject": {
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Create an orientation(rotation) value. refobject takes priority over refposition if both are supplied",
+      "source": {
+        "file": "common.xsd",
+        "line": 24111
+      }
+    },
+    "event_object_collected_ware": {
+      "attributes": {
+        "chance": {
+          "doc": "Percentage chance of condition being checked (condition fails if not)",
+          "type": "expression"
+        },
+        "check": {
+          "doc": "Produce an error message if the provided event object does not exist? Default is true. NOTE: If the event object is a variable or a changeable property, changing it at a later time has no direct effect on this event condition, i.e. it is not re-enabled automatically. It is only updated under certain conditions, e.g. when loading a savegame or when the event condition is restarted explicitly (resetting MD cue or starting AI script).",
+          "type": "checkeventsource"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "group": {
+          "doc": "Group of event objects (can be supplied instead of a single event object). The check attribute does not apply. The group is required to exist but may be empty. Adding/removing group members is possible even after the event is set up.",
+          "type": "groupeventsource"
+        },
+        "object": {
+          "doc": "Event object (required if group attribute not supplied)",
+          "type": "expression"
+        },
+        "amount": {
+          "type": "expression",
+          "doc": "Ware amount"
+        },
+        "collected": {
+          "type": "expression",
+          "doc": "The collected object"
+        },
+        "ware": {
+          "type": "ware",
+          "doc": "Ware"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "condition",
+      "doc": "Event for the specified object collecting a ware drop (object = collecting object, param = ware, param2 = amount, param3 = collected object)",
+      "source": {
+        "file": "common.xsd",
+        "line": 13695
+      }
     }
   },
   "enum_types": {
@@ -12676,7 +12811,7 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected. debug(6) runs 0.2.4; crystal miners repeatedly report beam-turret preflight waiting with zero starts. No crystal harvest/drop/collection proof. Native collect_drop and capital-mining orientation patterns inspected.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [

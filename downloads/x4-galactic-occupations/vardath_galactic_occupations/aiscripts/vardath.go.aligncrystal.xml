@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.aligncrystal" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params><param name="target" /><param name="arc" default="1" /></params>
+  <attention min="visible">
+    <actions>
+      <do_if value="not $target.exists or not this.ship.sector.exists"><return value="false" /></do_if>
+      <stop_shooting object="this.ship" />
+      <do_for_each name="$turret" in="if player.entity.$vgo_objects.{this.ship}.$vgo_turrets? then player.entity.$vgo_objects.{this.ship}.$vgo_turrets else []">
+        <do_if value="$turret.exists"><reset_turret turret="$turret" /></do_if>
+      </do_for_each>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_fireuntil" exact="player.age + 15s" />
+      <!-- Native capital mining uses these orientations to bring different hull
+           quadrants to bear. Hold the current position rather than ramming rock. -->
+      <do_if value="$arc == 1"><create_orientation name="$rot" orientation="look_at" refobject="$target"><position object="this.ship" /></create_orientation></do_if>
+      <do_elseif value="$arc == 2"><create_orientation name="$rot" orientation="align_left" refobject="$target"><position object="this.ship" /></create_orientation></do_elseif>
+      <do_elseif value="$arc == 3"><create_orientation name="$rot" orientation="align_right" refobject="$target"><position object="this.ship" /></create_orientation></do_elseif>
+      <do_else><create_orientation name="$rot" orientation="look_away" refobject="$target"><position object="this.ship" /></create_orientation></do_else>
+      <move_to object="this.ship" destination="this.ship.sector" forceposition="false" forcerotation="true" forcesteering="true" travel="false" commandaction="false">
+        <position object="this.ship" />
+        <rotation value="$rot" />
+        <interrupt_after_time time="if this.ship.iscapitalship then 10s else 3s" />
+      </move_to>
+      <return value="$target.exists" />
+    </actions>
+  </attention>
+  <attention min="unknown"><actions><return value="false" /></actions></attention>
+</aiscript>

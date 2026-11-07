@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -14,6 +14,17 @@
       <set_value name="$candidates" exact="[]" />
       <do_if value="not this.ship.sector.exists">
         <return value="null" />
+      </do_if>
+      <do_if value="$job == 6 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.count">
+        <do_for_each name="$drop" in="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" counter="$i" reverse="true">
+          <do_if value="not $drop.exists or not $drop.isclass.drop">
+            <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+            <continue />
+          </do_if>
+          <do_if value="$drop.isclass.drop and not (@player.entity.$vgo_objects.{$drop}.$vgo_crystal_retry gt player.age)">
+            <return value="$drop" />
+          </do_if>
+        </do_for_each>
       </do_if>
       <do_if value="(($job == 1 or $job == 12) and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_job == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target.isoperational)">
         <set_value name="$convoy" exact="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" />
@@ -86,7 +97,18 @@
         <!-- The native tutorial uses exactly this asteroid -> class.crystal traversal. -->
         <find_object name="$rocks" space="this.ship.sector" class="class.asteroid" multiple="true" sortbydistanceto="this.ship" sortlimit="96">
           </find_object>
-        <find_object_component name="$candidates" object="$rocks" class="class.crystal" multiple="true" sortlimit="48" sortbyvalue="if loop.element.drop == 'drops_crystal_s_05' then 125000 else (if loop.element.drop == 'drops_crystal_s_04' then 20000 else (if loop.element.drop == 'drops_crystal_s_03' then 15000 else (if loop.element.drop == 'drops_crystal_s_02' then 10000 else 1000)))" sortdescending="true" />
+        <set_value name="$candidates" exact="[]" />
+        <do_for_each name="$rock" in="$rocks" counter="$rockindex">
+          <do_if value="$rock.exists">
+            <find_object_component name="$candidates" object="$rock" class="class.crystal" multiple="true" sortlimit="48" sortbyvalue="if loop.element.drop == 'drops_crystal_s_05' then 125000 else (if loop.element.drop == 'drops_crystal_s_04' then 20000 else (if loop.element.drop == 'drops_crystal_s_03' then 15000 else (if loop.element.drop == 'drops_crystal_s_02' then 10000 else 1000)))" sortdescending="true" append="true" />
+          </do_if>
+          <do_if value="$candidates.count ge 48">
+            <break />
+          </do_if>
+          <do_if value="$rockindex % 16 == 0">
+            <wait exact="100ms" />
+          </do_if>
+        </do_for_each>
       </do_elseif>
       <do_elseif value="$job == 8">
         <find_object name="$candidates" space="this.ship.sector" class="class.asteroid" indestructible="false" invulnerable="false" multiple="true" sortbydistanceto="this.ship" sortlimit="48">

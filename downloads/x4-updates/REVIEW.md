@@ -42,3 +42,8 @@ The current bundle updates Occupations and Yaki Habitats; Builders/Kopis are inc
 ## debug(5) and 0.2.4 follow-up
 
 The supplied 0.2.3 log contains 49 direct occupation errors and 222 secondary native movement errors. Shared sector resolution, live-service filtering and post-wait recruitment guards are repaired. New saved per-ship/job diagnostics report status, targets, completed effects and observed positive income in vanilla General Logbook and debug output. No new UI or periodic reward is introduced. Scanner unloaded geometry and physical destruction/collection evidence are handled explicitly. Only Occupations source changed. See its `JOB_REVIEW_0.2.4.md` for exact evidence, all twelve jobs and reproducible runtime tests. No new X4 runtime acceptance test was possible here.
+
+
+## debug(6) and crystal 0.2.5
+
+Twenty crystal activity reports are blocked by beam preflight, with zero started tasks. No new direct occupation script errors appear; nine older-context AI import warnings and four trade-patrol completion diagnostics are present. The repair removes crystal S/M/beam restrictions, adds forward and missile weapon paths, native hull alignment and real-drop collection with immediate accounted player-inventory delivery. Current auto-selling and captain holding limits are retired; other inventory and other mod sources remain unchanged. All new live crystal effects remain unverified. See `CRYSTAL_REVIEW_0.2.5.md` and the accounting/Lua/source tests.

@@ -38,7 +38,7 @@
         <set_value name="$representative" exact="event.param3.{2}" />
         <set_value name="$scope" exact="event.param3.{3}" />
         <set_value name="$on" exact="event.param3.{4}" />
-        <do_if value="$ship.isplayerowned and $ship.isclass.[class.ship_s, class.ship_m] and ($scope == 'all' or ($representative.isclass.turret and $representative.hascontext.{$ship}))">
+        <do_if value="$ship.isplayerowned and $ship.isclass.[class.ship_s, class.ship_m, class.ship_l, class.ship_xl] and ($scope == 'all' or ($representative.isclass.turret and $representative.hascontext.{$ship}))">
           <do_if value="not player.entity.$vgo_objects.{$ship}?">
             <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
           </do_if>
@@ -46,7 +46,7 @@
           <find_object_component name="$turrets" object="$ship" class="class.turret" multiple="true" />
           <do_for_each name="$turret" in="$turrets">
             <do_if value="$scope == 'all' or ($scope == 'turret' and $turret == $representative) or ($scope == 'group' and $turret.grouptag == $representative.grouptag and $turret.parent == $representative.parent)">
-              <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing">
+              <do_if value="not $turret.isrepairing">
                 <do_if value="not player.entity.$vgo_objects.{$turret}?">
                   <set_value name="player.entity.$vgo_objects.{$turret}" exact="table[]" />
                 </do_if>
@@ -60,7 +60,7 @@
           <set_value name="$all" exact="true" />
           <set_value name="$any" exact="false" />
           <do_for_each name="$turret" in="$turrets">
-            <do_if value="not $turret.isclass.missileturret and not $turret.isrepairing">
+            <do_if value="not $turret.isrepairing">
               <do_if value="@player.entity.$vgo_objects.{$turret}.$vgo_minecrystals">
                 <set_value name="$any" exact="true" />
               </do_if>
@@ -106,7 +106,7 @@
               </do_if>
               <remove_value name="player.entity.$vgo_objects.{$turret}.$vgo_mode_aimed" />
             </do_if>
-            <do_if value="@player.entity.$vgo_objects.{$turret}.$vgo_minecrystals and not $turret.isclass.missileturret and not $turret.isrepairing">
+            <do_if value="@player.entity.$vgo_objects.{$turret}.$vgo_minecrystals and not $turret.isrepairing">
               <append_to_list name="$selected" exact="$turret" />
             </do_if>
           </do_for_each>
@@ -115,7 +115,7 @@
             <continue />
           </do_if>
           <!-- Preserve direct-order priority when this is a temporarily interrupted miner. -->
-          <do_if value="$ship.attention lt attention.visible or $ship.iscapitalship or (@$ship.defaultorder.id == 'VGO_crystal' and @$ship.order.id != 'VGO_crystal')">
+          <do_if value="$ship.attention lt attention.visible or not $ship.sector.exists or @$ship.defaultorder.id == 'VGO_crystal'">
             <continue />
           </do_if>
           <do_if value="$ship.hullpercentage lt 65 or ($ship.maxshield gt 0 and $ship.shieldpercentage lt 25)">
@@ -142,7 +142,15 @@
             <find_object name="$rocks" space="$ship.sector" class="class.asteroid" multiple="true" sortlimit="48" sortbydistanceto="$ship">
               <match_distance object="$ship" max="10km" />
             </find_object>
-            <find_object_component name="$deposits" object="$rocks" class="class.crystal" multiple="true" />
+            <set_value name="$deposits" exact="[]" />
+            <do_for_each name="$rock" in="$rocks" counter="$rockindex">
+              <do_if value="$rock.exists">
+                <find_object_component name="$deposits" object="$rock" class="class.crystal" multiple="true" append="true" />
+              </do_if>
+              <do_if value="$deposits.count ge 48">
+                <break />
+              </do_if>
+            </do_for_each>
             <set_value name="$target" exact="null" />
             <do_for_each name="$deposit" in="$deposits">
               <do_if value="not $deposit.isoperational or $deposit.hull le 0 or @player.entity.$vgo_objects.{$deposit}.$vgo_mode_cooldown gt player.age or (@player.entity.$vgo_objects.{$deposit}.$vgo_owner.exists and player.entity.$vgo_objects.{$deposit}.$vgo_owner != $ship and @player.entity.$vgo_objects.{$deposit}.$vgo_expires gt player.age)">

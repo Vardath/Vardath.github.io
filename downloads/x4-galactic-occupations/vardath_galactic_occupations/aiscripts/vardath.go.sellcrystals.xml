@@ -1,91 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
-      <do_if value="not player.entity.$vgo_objects?">
-        <set_value name="player.entity.$vgo_objects" exact="table[]" />
-      </do_if>
-      <do_if value="not player.entity.$vgo_objects.{this.ship}?">
-        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
-      </do_if>
-      <set_value name="$sectors" exact="player.entity.$vgo_objects.{this.ship}.$vgo_scope" />
-      <find_station name="$stations" space="$sectors" haswalkableroom="true" multiple="true" sortbygatedistancefrom="this.ship" sortlimit="24" />
-      <do_for_each name="$station" in="$stations">
-        <do_if value="$station.isplayerowned or not $station.dockingallowed.{this.ship} or not $station.dock.{this.ship.docksize}.exists">
-          <continue />
-        </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 20min" />
-        <do_if value="this.ship.sector != $station.sector">
-          <run_script name="'vardath.go.depart'" result="$departed" />
-          <do_if value="not $departed">
-            <return value="false" />
-          </do_if>
-          <run_script name="'move.generic'">
-            <param name="destination" value="$station.sector" />
-            <param name="endintargetsector" value="true" />
-            <param name="strictblacklist" value="true" />
-            <param name="useknownpath" value="false" />
-            <param name="pursuetargets" value="false" />
-          </run_script>
-        </do_if>
-        <run_script name="'order.dock'">
-          <param name="destination" value="$station" />
-          <param name="waittime" value="2min" />
-          <param name="internalorder" value="true" />
-        </run_script>
-        <do_if value="@this.ship.dock.container != $station">
-          <continue />
-        </do_if>
-        <find_object_component name="$trader" object="$station" class="class.npc" entitytype="entitytype.trader" recursive="true" />
-        <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_brokerstock?">
-          <do_if value="not player.entity.$vgo_objects.{$station}?">
-            <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
-          </do_if>
-          <set_value name="player.entity.$vgo_objects.{$station}.$vgo_brokerstock" exact="table[]" />
-        </do_if>
-        <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
-          <set_value name="$amount" exact="this.ship.pilot.inventory.{$ware}.count" />
-          <do_if value="$amount gt 0">
-            <set_value name="$price" exact="$ware.averageprice * $amount" />
-            <remove_inventory entity="this.ship.pilot" ware="$ware" exact="$amount" />
-            <do_if value="this.ship.pilot.inventory.{$ware}.count == 0">
-              <transfer_money from="$station.owner" to="faction.player" amount="$price" result="$paid" />
-              <do_if value="$paid == $price">
-                <do_if value="$trader.exists">
-                  <add_inventory entity="$trader" ware="$ware" exact="$amount" />
-                </do_if>
-                <do_else>
-                  <do_if value="not player.entity.$vgo_objects.{$station}?">
-                    <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
-                  </do_if>
-                  <set_value name="player.entity.$vgo_objects.{$station}.$vgo_brokerstock.{$ware}" exact="@player.entity.$vgo_objects.{$station}.$vgo_brokerstock.{$ware} + $amount" />
-                </do_else>
-                <write_to_logbook category="general" title="'Galactic Occupations: crystal broker sale'" text="'%s sold %s units of %s at %s for %s'.[this.ship.knownname,$amount,$ware.name,$station.knownname,$paid]" />
-                <do_if value="not @player.entity.$vgo_rep_times.{$station.owner} or @player.entity.$vgo_rep_times.{$station.owner} le player.age">
-                  <do_if value="not player.entity.$vgo_rep_times?">
-                    <set_value name="player.entity.$vgo_rep_times" exact="table[]" />
-                  </do_if>
-                  <set_value name="player.entity.$vgo_rep_times.{$station.owner}" exact="player.age + 30min" />
-                  <add_faction_relation faction="faction.player" otherfaction="$station.owner" value="0.00005" reason="relationchangereason.tradecompleted" />
-                </do_if>
-                <run_script name="'vardath.go.recordpayment'">
-                  <param name="amount" value="$paid" />
-                  <param name="details" value="'Sold ' + $amount + ' ' + $ware.name + ' at ' + $station.knownname" />
-                </run_script>
-              </do_if>
-              <do_else>
-                <add_inventory entity="this.ship.pilot" ware="$ware" exact="$amount" />
-                <do_if value="$paid gt 0Cr">
-                  <transfer_money from="faction.player" to="$station.owner" amount="$paid" />
-                </do_if>
-              </do_else>
-            </do_if>
-          </do_if>
-        </do_for_each>
-        <return value="true" />
-      </do_for_each>
-      <return value="false" />
+      <run_script name="'vardath.go.forwardcrystals'" result="$forwarded" />
+      <return value="$forwarded gt 0" />
     </actions>
   </attention>
 </aiscript>

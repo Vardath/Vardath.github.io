@@ -8,12 +8,12 @@ end
 local function eligibleShip(ship)
     if not valid(ship) then return false end
     local owner, macro = GetComponentData(id64(ship), "owner", "macro")
-    return owner == "player" and (IsMacroClass(macro, "ship_s") or IsMacroClass(macro, "ship_m"))
+    return owner == "player" and (IsMacroClass(macro, "ship_s") or IsMacroClass(macro, "ship_m") or IsMacroClass(macro, "ship_l") or IsMacroClass(macro, "ship_xl"))
 end
 local function eligibleTurret(turret)
     if not valid(turret) then return false end
     local macro, tug = GetComponentData(id64(turret), "macro", "istugweapon")
-    return not IsMacroClass(macro, "missileturret") and not tug
+    return not tug
 end
 local function shipstate(ship)
     if not VGO.player then return nil end

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.collectcrystals" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <interrupts>
+    <handler>
+      <conditions>
+        <event_object_collected_ware object="this.ship" />
+      </conditions>
+      <actions>
+        <do_if value="event.param3 == @$drop and [ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05].indexof.{event.param}">
+          <set_value name="$pickup_confirmed" exact="true" />
+        </do_if>
+      </actions>
+    </handler>
+  </interrupts>
+  <attention min="unknown">
+    <actions>
+      <set_value name="$collected" exact="0" />
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops?">
+        <return value="0" />
+      </do_if>
+      <do_for_each name="$drop" in="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops" counter="$i" reverse="true">
+        <do_if value="not $drop.exists">
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+          <continue />
+        </do_if>
+        <do_if value="not $drop.isclass.drop or @player.entity.$vgo_objects.{$drop}.$vgo_crystal_retry gt player.age">
+          <continue />
+        </do_if>
+        <set_value name="$expected" exact="0" />
+        <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+          <set_value name="$expected" exact="$expected + $drop.wares.{$ware}.count" />
+        </do_for_each>
+        <do_if value="$expected le 0">
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+          <continue />
+        </do_if>
+        <run_script name="'vardath.go.approach'" result="$near">
+          <param name="target" value="$drop" />
+          <param name="distance" value="4km + this.ship.size / 2" />
+        </run_script>
+        <do_if value="not $drop.exists">
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+          <continue />
+        </do_if>
+        <do_if value="not $near or this.ship.sector != $drop.sector or this.ship.distanceto.{$drop} gt 5km + this.ship.size / 2">
+          <do_if value="not player.entity.$vgo_objects.{$drop}?">
+            <set_value name="player.entity.$vgo_objects.{$drop}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$drop}.$vgo_crystal_retry" exact="player.age + 5min" />
+          <continue />
+        </do_if>
+        <set_value name="$playerbefore" exact="0" />
+        <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+          <set_value name="$playerbefore" exact="$playerbefore + player.entity.inventory.{$ware}.count" />
+        </do_for_each>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Collecting actual crystal drop and forwarding to player inventory'" />
+        <!-- Explicit short-range collection equivalent for every ship size. Native
+             collect_drop removes the actual tracked object and handles its contents. -->
+        <set_value name="$pickup_confirmed" exact="false" />
+        <collect_drop object="this.ship" drop="$drop" />
+        <run_script name="'vardath.go.forwardcrystals'" result="$forwarded" />
+        <set_value name="$playerafter" exact="0" />
+        <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
+          <set_value name="$playerafter" exact="$playerafter + player.entity.inventory.{$ware}.count" />
+        </do_for_each>
+        <do_if value="not $drop.exists or $pickup_confirmed">
+          <set_value name="$delivered" exact="[[$playerafter - $playerbefore, 0].max, $expected].min" />
+          <do_if value="$delivered gt $forwarded">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sent" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sent + $delivered - $forwarded" />
+          </do_if>
+          <set_value name="$collected" exact="$collected + $delivered" />
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_drops.{$i}" />
+        </do_if>
+      </do_for_each>
+      <return value="$collected" />
+    </actions>
+  </attention>
+</aiscript>

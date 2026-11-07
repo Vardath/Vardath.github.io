@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 58,
-      "xml": 50,
+      "files": 62,
+      "xml": 53,
       "diffs": 1,
       "md": 3,
-      "aiscripts": 43,
+      "aiscripts": 46,
       "lua": 2,
       "zip": "byte-for-byte checked",
-      "api_commands": 2126,
+      "api_commands": 2209,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 50,\n    \"commands\": 2126,\n    \"script_calls\": 85,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(5).log reviewed for actual failures\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 53,\n    \"commands\": 2209,\n    \"script_calls\": 85,\n    \"behaviours\": 12,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(6).log reviewed for actual failures\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,13 +123,13 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Job_Activity_Fixes_2026-11-07.zip; 4 extensions, 129 byte-matched files\n"
+    "output": "PASS: X4_Crystal_Inventory_Fix_2026-11-07.zip; 4 extensions, 133 byte-matched files\n"
   },
   "command_provenance": {
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
-    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected. debug(6) runs 0.2.4; crystal miners repeatedly report beam-turret preflight waiting with zero starts. No crystal harvest/drop/collection proof. Native collect_drop and capital-mining orientation patterns inspected.",
     "schema_metadata_date": "2026-08-28",
     "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
     "schema_versions": [

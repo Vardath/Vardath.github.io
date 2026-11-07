@@ -1,13 +1,11 @@
-# Galactic Occupations 0.2.4 — target recovery and visible job results
+# Galactic Occupations 0.2.5 — crystal weapons and direct player inventory
 
-[Download Occupations](Galactic_Occupations_0.2.4_DEV.zip) · [Current four-mod bundle](../x4-updates/X4_Job_Activity_Fixes_2026-11-07.zip) · [Log findings and all twelve jobs](vardath_galactic_occupations/JOB_REVIEW_0.2.4.md)
+[Download Occupations](Galactic_Occupations_0.2.5_DEV.zip) · [Four-mod bundle](../x4-updates/X4_Crystal_Inventory_Fix_2026-11-07.zip) · [Crystal repair and test report](vardath_galactic_occupations/CRYSTAL_REVIEW_0.2.5.md)
 
-The supplied debug(5).log identifies 37 empty-sector approach failures, 222 resulting native navigation errors, 11 unsafe sector-owner lookups and one recruitment lookup on a wreck. This release waits for a usable target context, never knowingly passes an empty sector to navigation, and rejects unavailable live-service targets before capture/pilot lookups.
+The supplied debug(6).log confirms twenty crystal reports blocked by beam-only preflight and no attempted harvest. This release accepts S/M/L/XL ships, forward guns, ordinary turrets and missile turrets. It adds native aiming/arc attempts and per-asteroid deposit detection, and prevents competing occupation/standalone turret controllers.
 
-Every assigned occupation now writes a status summary to the **existing vanilla General Logbook** and debug log about every five minutes: current work, target, destination, started/completed task counts, actual recorded earnings and the last result. Completed work gets a detailed immediate result. Counters start with this update; activity reports create no rewards and do not claim completion. The native transaction ledger and Protected UI integration are unchanged.
+Actual attributed crystal drops are collected at short range with the native pickup action, then existing captain-held crystals are immediately and accountably forwarded to **player inventory**. No cargo hold, cargo drones, beam-only setting, captain holding limit or automatic sale is required. There is no free item or cash grant. Real weapons, ammunition, collision-safe access and physical simulation are still necessary; no off-screen harvest is fabricated.
 
-The station scanner promptly reports unloaded collision geometry instead of spending twenty seconds on each unavailable module. Other jobs report concrete morale changes, capture results, passenger deliveries, crystal collection and failed prerequisites. Physical harvesting/demolition still require visible simulation; no OOS effects are invented.
+Fully exit X4, overwrite this extension, restart and load your existing save with Protected UI enabled. Reassign any job already lost to Hold Position. Existing passengers, itineraries, equipment, crew and history remain saved. All other mod sources, including Forge/Astrid equipment and Inventory Collector, are untouched.
 
-Fully exit X4, replace the extension, restart and load the existing save. Keep Protected UI enabled. Reassign occupations already lost to Hold Position. Passenger manifests, tour progress, crew and equipment are retained. Only Occupations source changes in this repair; the four-mod bundle includes current unchanged Builder, Kopis and Yaki versions.
-
-Static checks are separate from in-game acceptance. The game log cannot establish every job's completion or income, and no executable/save is available to run 0.2.4 here. See the installed review and testing instructions for the evidence and remaining checks.
+XML/reference, source/accounting and Lua mock checks are separate from in-game verification. This development environment cannot run X4; the newly enabled firing, pickup and player-inventory effects remain runtime-unverified. The report includes reproducible tests and the supplied log's actual evidence.

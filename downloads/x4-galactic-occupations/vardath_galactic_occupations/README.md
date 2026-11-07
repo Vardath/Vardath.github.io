@@ -1,8 +1,16 @@
 # Galactic Occupations
 
-Version 0.2.4 development build, 7 November 2026. Author: Vardath.
+Version 0.2.5 development build, 7 November 2026. Author: Vardath.
 
 **Runtime verification is pending for all twelve occupations.** This extension contains executable AI orders, MD state/passenger handling, and Lua menu integration. The build environment cannot run X4. Source checks and mocked UI tests do not establish gameplay success.
+
+## Current crystal repair: 0.2.5
+
+All normal ship sizes and forward/turret weapons can undertake crystal mining. Beam-only and S/M restrictions are removed. The existing Loadout mode extends to L/XL and missile turrets, and yields to the actual mining behaviour to avoid competing controllers. Actual hits, ammunition, suitable arcs and loaded simulation remain necessary.
+
+Only real drops from the targeted deposit enter collection. Native pickup consumes the drop; its existing crystal contents are immediately forwarded to **player inventory**, with observed source removal, observed credit and rollback of any uncredited remainder. Other inventory stays untouched. There is no cargo capacity requirement, captain holding limit, automatic selling or synthetic payment. Previously collected crystals on an assigned miner's captain are forwarded too. Pending drops survive restarts when the actual objects remain available.
+
+See [CRYSTAL_REVIEW_0.2.5.md](CRYSTAL_REVIEW_0.2.5.md) for evidence, technical limits and weapon/inventory tests. Full live harvesting is still unverified here. Inventory Collector remains installed and unmodified. The 0.2.2/0.2.3 historical notes below are superseded for crystal eligibility, collection and sale.
 
 ## Current repair: 0.2.4
 
@@ -14,7 +22,7 @@ Scanner geometry waits, unsuitable firing arcs/weapons, unconfirmed crystal coll
 
 ## Install and assign
 
-1. Close X4. Extract `Galactic_Occupations_0.2.4_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
+1. Close X4. Extract `Galactic_Occupations_0.2.5_DEV.zip` into the X4 installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Replace this extension's older files in place.
 2. Enable Galactic Occupations and load your existing save. No new game is required by the implementation.
 3. Select an eligible player-owned ship with an AI captain, open Behaviour, and select a Default Behaviour below.
 4. Use range **99 for the whole connected galaxy**, 0 for the home sector, or 1–98 for a jump radius. Risk 0/1 avoids hostile destinations; 2 permits them. Normal travel blacklists remain enforced.
@@ -29,7 +37,7 @@ Scanner geometry waits, unsuitable firing arcs/weapons, unconfirmed crystal coll
 | Station and Component Scanner | Selects unscanned modules and defence elements, approaches actual surface positions, retries three viewing angles and sustains ten seconds of clear LOS. Publishes native per-component scan data and checks for a real level/information increase. | Explicit custom survey equivalent. The documented scan action uses the player's scan cap; the AI ship needs scanner software but does not need to match the player's active scanner level. No whole-station scan flag. |
 | Wormhole and Anomaly Mapper | Surveys real anomalies, gates and accelerators; logs actual anomaly destination sets separately from ordinary links. | Optional transit fallback first attempts traversal, then may move the same ship to a permitted real exit. Mission anomalies/capitals excluded. |
 | Galactic Sightseeing Tour | Boards up to ten real passengers, visits ten distinct global sights by default, dwells at viewing distance, covers at least three sectors where available and returns to a station for drop-off. | Luxury fare defaults to 500,000 Cr per passenger; up to 5,000,000 Cr. Ticket price and 10–20 stops are configurable. No payment for isolated visits, boarding or unfinished tours. |
-| Autonomous Crystal Miner | Searches real asteroid `class.crystal` deposits, uses selected suitable turrets on the deposit, records its real drops and runs native collection. | Mine Crystals is a custom Loadout option backed by direct control. S/M, suitable deployed weapons and high attention are required. Actual pilot-inventory sales are accounted separately. |
+| Autonomous Crystal Miner | Finds real deposit components per asteroid; uses forward guns or selected turrets on S/M/L/XL ships; collects actual attributed drops and forwards existing crystal items immediately to player inventory. | Physical simulation and suitable weapons/ammunition required. No cargo hold, automatic sale or cash reward. |
 | Hostile Lure and Interception | Provokes a manageable hostile, tests actual pursuit, retreats toward a stronger friendly defender and breaks off on danger/failure. | Does not force enemies to pursue or create a completion reward for failed pursuit. |
 | Asteroid Demolition | Fires actual weapons at destructible asteroids; checks destruction, times out ineffective attacks and can collect real drops. | S/M physical high-attention work. No simulated OOS destruction. |
 | Fleet Morale Booster | Approaches a friendly crewed ship, performs sustained support and increases eligible non-passenger crew morale by one step, capped at 15. | Reputation requires an observed improvement. Six-hour target cooldown by default and shared faction cooldown. |
@@ -67,11 +75,11 @@ Each unambiguously identified payment shows the occupation or builder payment ty
 
 **Keep Protected UI Mode enabled.** This extension does not change that setting or replace protected game UI files. It imports only the native `ffi` module and uses functions already declared by the vanilla helper. The optional callback is supplied by UI Extensions and HUD; availability in the actual Protected UI/load-order combination still needs an in-game check. If that callback is unavailable, the vanilla ledger retains its normal generic payment labels. Every new verified payment also receives a detailed native Logbook receipt with its amount. The Logbook is a separate vanilla screen, not a substitute claim that custom financial labels work without the callback. In 0.2.2 a shared saved cursor writes paid-journal receipts from MD independently of ship AI, at up to five receipts per five-second batch. It recovers at most the newest twenty prior records on first use, includes their original game time, and never re-pays them. Clear the Logbook search and select General/All; search for `Vardath Payment`.
 
-Service fees use native `reward_player` only after verified work. The journal records the observed account increase; crystal sales record the successful native transfer. Each new receipt is bound to an actual engine transaction ID, amount, event type and timestamp. Equal simultaneous payments are bound at payout time; ambiguous historical payments and condensed/deleted engine records remain vanilla. No historical income is replayed or added to totals a second time. The existing 5,000-payment journal and lifetime per-job counters are retained on the player entity, without the removed preview UI. In the new adapter, the financial ledger's engine retention/condensation rules still apply.
+Service fees use native `reward_player` only after verified work. The journal records the observed account increase. Legacy accounted crystal-sale receipts remain readable; the current crystal job forwards items and creates no sale or cash transaction. The optional financial adapter annotates real native transaction records without replacing the ledger.
 
 Passenger contract IDs and completion serials prevent repeated fares. Tours pay only after the required distinct visits and passenger drop-off. Discovery, scanning, lure, demolition and recruitment do not receive invented cash rewards.
 
-Small external-faction reputation awards follow eligible verified escort/taxi/tour services, actual morale improvements, genuine contraband reports and completed trade-route escorts. A shared thirty-minute faction cooldown limits accumulation. Accounted crystal broker sales use a smaller trade award. Proximity alone does not grant reputation.
+Small external-faction reputation awards follow eligible verified escort/taxi/tour services, actual morale improvements, genuine contraband reports and completed trade-route escorts. A shared thirty-minute faction cooldown limits accumulation. Crystal delivery itself creates no new cash or reputation grant; older broker-sale records are historical.
 
 ## Compatibility and verification
 

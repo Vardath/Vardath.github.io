@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.demolition" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.demolition" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -14,7 +14,6 @@
       <do_if value="not $target.isclass.asteroid or $target.isinvulnerable or $target.isindestructible">
         <return value="false" />
       </do_if>
-      <set_region_object_persistence object="$target" />
       <run_script name="'vardath.go.fire'" result="$destroyed">
         <param name="target" value="$target" />
         <param name="crystal" value="false" />

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.release" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.release" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
@@ -22,6 +22,10 @@
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_turrets" />
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_firing" />
       <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_fireuntil" />
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_persistent_rock.exists">
+        <set_region_object_persistence object="player.entity.$vgo_objects.{this.ship}.$vgo_persistent_rock" persistent="false" />
+      </do_if>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_persistent_rock" />
     </actions>
   </attention>
 </aiscript>

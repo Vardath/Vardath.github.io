@@ -130,7 +130,7 @@ class SourceContracts(unittest.TestCase):
             self.assertIsNotNone(root.find('.//patch//edit_order_param'))
     def test_crystal_prerequisite_wait_does_not_create_hold_or_income(self):
         root=xml('aiscripts/vardath.go.worker.xml')
-        branch=root.find(".//do_if[@value='$compatible_turrets == 0']")
+        branch=next(n for n in root.iter('do_if') if n.get('value','').startswith('$compatible_turrets == 0 and'))
         self.assertIsNotNone(branch.find("resume[@label='start']"))
         self.assertIsNotNone(branch.find('wait'))
         self.assertIsNotNone(branch.find('.//write_to_logbook'))
@@ -263,6 +263,75 @@ class SourceContracts(unittest.TestCase):
         self.assertIsNotNone(missing.find('break'))
         self.assertIsNone(missing.find('continue'))
         self.assertIn('Component survey waiting for loaded collision geometry',ET.tostring(root,encoding='unicode'))
+
+    def test_crystal_job_accepts_all_ship_sizes_and_retires_restrictive_controls(self):
+        order=xml('aiscripts/order.vardath.go.crystal.xml').find('order')
+        size=next(n for n in order.findall('requires/match') if n.get('class','').startswith('['))
+        self.assertEqual(size.get('class'),'[class.ship_s, class.ship_m, class.ship_l, class.ship_xl]')
+        names={n.get('name') for n in order.findall('params/param')}
+        self.assertFalse(names & {'beamonly','sell','sellthreshold','collectionlimit'})
+        worker=source('aiscripts/vardath.go.worker.xml')
+        self.assertNotIn('($job == 6 or $job == 8) and this.ship.iscapitalship',worker)
+        self.assertNotIn("'vardath.go.sellcrystals'",worker)
+        self.assertNotIn("'vardath.go.crystalcount'",worker)
+
+    def test_forward_weapons_and_turrets_have_real_firing_and_alignment_paths(self):
+        fire=xml('aiscripts/vardath.go.fire.xml')
+        self.assertIn('this.ship.maxcombatrange.missiles.all',ET.tostring(fire,encoding='unicode'))
+        forward=next(n for n in fire.iter('do_if') if n.get('value','').startswith('this.ship.maxcombatrange.lasers.all gt 0 or'))
+        self.assertIsNotNone(forward.find('.//shoot_at'))
+        self.assertIsNotNone(fire.find(".//run_script[@name=\"'vardath.go.aligncrystal'\"]"))
+        self.assertNotIn('$vgo_beamonly',ET.tostring(fire,encoding='unicode'))
+        align=xml('aiscripts/vardath.go.aligncrystal.xml')
+        self.assertEqual({n.get('orientation') for n in align.iter('create_orientation')},{'look_at','align_left','align_right','look_away'})
+        self.assertIsNotNone(align.find('.//move_to/interrupt_after_time'))
+        for tag in ['set_weapon_mode','activate_weapongroup','reset_weapongroups']:
+            self.assertEqual(len(list(fire.iter(tag)))+len(list(align.iter(tag))),0)
+
+    def test_crystal_collection_consumes_only_real_attributed_drops_near_ship(self):
+        root=xml('aiscripts/vardath.go.collectcrystals.xml')
+        loop=root.find('.//do_for_each')
+        self.assertEqual(loop.get('in'),'this.ship.$vgo_crystal_drops')
+        self.assertEqual(loop.find('collect_drop').get('object'),'this.ship')
+        self.assertEqual(loop.find('collect_drop').get('drop'),'$drop')
+        self.assertIn('5km + this.ship.size / 2',ET.tostring(loop,encoding='unicode'))
+        self.assertIn('$drop.wares.{$ware}.count',ET.tostring(loop,encoding='unicode'))
+        self.assertIsNotNone(loop.find("run_script[@name=\"'vardath.go.forwardcrystals'\"]"))
+        for tag in ['add_inventory','create_object','create_drop','find_object','reward_player']:
+            self.assertEqual(len(list(root.iter(tag))),0)
+
+    def test_crystal_forwarding_uses_observed_withdrawal_and_partial_credit_rollback(self):
+        root=xml('aiscripts/vardath.go.forwardcrystals.xml')
+        text=ET.tostring(root,encoding='unicode')
+        self.assertIn('$sourcebefore - this.ship.pilot.inventory.{$ware}.count',text)
+        self.assertIsNotNone(root.find(".//add_inventory[@entity='player.entity'][@exact='$removed']"))
+        self.assertIsNotNone(root.find(".//do_if[@value='$added lt $removed']/add_inventory[@entity='this.ship.pilot']"))
+        self.assertNotIn('wait', {n.tag for n in root.iter()})
+        for tag in ['reward_player','transfer_money','remove_cargo','add_cargo']:
+            self.assertEqual(len(list(root.iter(tag))),0)
+
+    def test_pending_crystal_drops_survive_a_task_restart(self):
+        root=xml('aiscripts/vardath.go.task.crystal.xml')
+        self.assertIsNotNone(root.find(".//do_if[@value='not this.ship.$vgo_crystal_drops?']/set_value"))
+        self.assertIsNone(root.find("./attention/actions/set_value[@name='this.ship.$vgo_crystal_drops']"))
+        self.assertIn('vgo_crystal_drops',source('aiscripts/vardath.go.find.xml'))
+        self.assertIn('vgo_crystal_sent',source('md/VGO_State.xml'))
+
+    def test_crystal_discovery_uses_native_per_asteroid_component_traversal(self):
+        for name in ['aiscripts/vardath.go.find.xml','md/VGO_Turrets.xml']:
+            root=xml(name)
+            nodes=[n for n in root.iter('find_object_component') if n.get('class')=='class.crystal']
+            self.assertEqual(len(nodes),1)
+            self.assertEqual(nodes[0].get('object'),'$rock')
+            self.assertEqual(nodes[0].get('append'),'true')
+            self.assertIsNotNone(root.find(".//do_for_each[@name='$rock'][@in='$rocks']"))
+
+    def test_standalone_turret_controller_yields_to_crystal_occupation(self):
+        root=xml('md/VGO_Turrets.xml')
+        text=ET.tostring(root,encoding='unicode')
+        self.assertIn("or @$ship.defaultorder.id == 'VGO_crystal'",text)
+        self.assertNotIn('$ship.iscapitalship',text)
+        self.assertNotIn('not $turret.isclass.missileturret',text)
 
     def test_demolition_does_not_count_a_missing_reference_as_destruction(self):
         root=xml('aiscripts/vardath.go.fire.xml')

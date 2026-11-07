@@ -2,7 +2,7 @@
 local root = arg[1] or "downloads/x4-galactic-occupations/vardath_galactic_occupations"
 local unpack = unpack or table.unpack
 local checks, nativeCalls, events, callbacks, blackboard = 0, 0, {}, {}, {}
-local objects = { [10]={owner="player",macro="ship_m"},[20]={owner="player",macro="ship_l"},[30]={owner="argon",macro="ship_m"},[101]={macro="beam"},[102]={macro="missileturret"},[104]={macro="beam"} }
+local objects = { [10]={owner="player",macro="ship_m"},[20]={owner="player",macro="ship_l"},[40]={owner="player",macro="ship_xl"},[30]={owner="argon",macro="ship_m"},[101]={macro="beam"},[102]={macro="missileturret"},[104]={macro="beam"} }
 function ConvertStringToLuaID(v) return tonumber(v) end
 function ConvertStringTo64Bit(v) return #tostring(v) > 15 and tostring(v) or tonumber(v) end
 function IsValidComponent(v) return objects[v] ~= nil end
@@ -40,7 +40,7 @@ Helper={getMenu=function(name) return name=="MapMenu" and map or name=="ShipConf
 local vgo=dofile(root.."/ui/vgo_turret_modes.lua")
 local t={rows={}};check(map.setupLoadoutInfoSubmenuRows("ship",t,10)=="native map","map return preserved")
 check(t.rows[1][5].properties.options[3].text=="Mine Crystals","all-turret option added")
-check(#t.rows[3][5].properties.options==2,"missile turret unchanged")
+check(#t.rows[3][5].properties.options==3,"missile turret can select crystal mode")
 check(#t.rows[5][5].properties.options==2,"armed button unchanged")
 t.rows[1][5].handlers.onDropDownConfirmed(nil,vgo.mode)
 check(nativeCalls==0 and events[#events][3][3]=="all" and events[#events][3][4],"virtual mode handled without native enum call")
@@ -49,7 +49,8 @@ check(nativeCalls==1 and not events[#events][3][4],"native mode passed through a
 t.rows[4][5].handlers.onDropDownConfirmed(nil,vgo.mode)
 check(events[#events][3][2]==104 and events[#events][3][3]=="group","group uses actual representative")
 local oldHook=map.setupLoadoutInfoSubmenuRows;vgo.install();check(map.setupLoadoutInfoSubmenuRows==oldHook,"install idempotent")
-local cap={rows={}};map.setupLoadoutInfoSubmenuRows("ship",cap,20);check(#cap.rows[1][5].properties.options==2,"capital ship excluded")
+local cap={rows={}};map.setupLoadoutInfoSubmenuRows("ship",cap,20);check(#cap.rows[1][5].properties.options==3,"large ship can select crystal mode")
+local xl={rows={}};map.setupLoadoutInfoSubmenuRows("ship",xl,40);check(#xl.rows[2][5].properties.options==3,"XL ship can select per-turret crystal mode")
 local npc={rows={}};map.setupLoadoutInfoSubmenuRows("ship",npc,30);check(#npc.rows[1][5].properties.options==2,"NPC ship excluded")
 local out={rows={}};outfitter.displayWeaponModeSelection(out,"turret",1,{})
 out.rows[1][7].handlers.onDropDownConfirmed(nil,vgo.mode);check(outfitter.upgradeplan.turret[1].weaponmode=="defend","virtual ID never enters upgrade plan")

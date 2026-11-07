@@ -107,6 +107,10 @@
             </do_else>
           </do_if>
           <set_value name="$active" exact="$ship.isplayerowned and $ship != player.occupiedship and @$ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and Init.$Orders.indexof.{@$ship.order.id}" />
+          <do_if value="not $active and @player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock.exists">
+            <set_region_object_persistence object="player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock" persistent="false" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock" />
+          </do_if>
           <do_if value="(not $active or (@player.entity.$vgo_objects.{$ship}.$vgo_fireuntil and player.entity.$vgo_objects.{$ship}.$vgo_fireuntil lt player.age)) and @player.entity.$vgo_objects.{$ship}.$vgo_turrets.count">
             <do_for_each name="$turret" in="player.entity.$vgo_objects.{$ship}.$vgo_turrets">
               <do_if value="$turret.exists">
@@ -646,7 +650,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV24" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV25" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -655,11 +659,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 24">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 25">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="24" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="25" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
@@ -745,7 +749,7 @@
           <do_if value="not $job or $job lt 1 or $job gt 12">
             <continue />
           </do_if>
-          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 24 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 25 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
             <continue />
           </do_if>
           <set_value name="$status" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_status then player.entity.$vgo_objects.{$ship}.$vgo_status else 'Waiting for occupation worker'" />
@@ -755,21 +759,28 @@
           <set_value name="$completed" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$completed then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$completed else 0" />
           <set_value name="$income" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$income then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$income else 0Cr" />
           <set_value name="$last" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_success then player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_success else 'None recorded since diagnostics update'" />
-          <set_value name="$report" exact="'%1 | %2 | Status: %3 | Sector: %4 | Target: %5 | Destination: %6 | Task cycles started: %7; completed assignments: %8; received: %9'.[$ship.knownname, readtext.{191180}.{100 + $job}, $status, if $ship.sector.exists then $ship.sector.knownname else 'In transit or unavailable', if $target.exists then $target.knownname else 'None selected', if $destination.exists then $destination.knownname else 'None selected', $started, $completed, $income] + ' | Last completed work: ' + $last" />
+          <set_value name="$report" exact="'%1 | %2 | Status: %3 | Sector: %4 | Target: %5 | Destination: %6 | Task cycles started: %7; completed assignments: %8; received: %9'.[$ship.knownname + ' [' + $ship.idcode + ']', readtext.{191180}.{100 + $job}, $status, if $ship.sector.exists then $ship.sector.knownname else 'In transit or unavailable', if $target.exists then $target.knownname else 'None selected', if $destination.exists then $destination.knownname else 'None selected', $started, $completed, $income] + ' | Last completed work: ' + $last" />
           <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit">
             <set_value name="$report" exact="$report + ' | Last unfinished cycle: ' + player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit" />
+          </do_if>
+          <do_if value="$job == 6">
+            <set_value name="$report" exact="$report + ' | Crystal items forwarded to player inventory: ' + (if @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent then player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent else 0)" />
           </do_if>
           <write_to_logbook category="general" title="'Galactic Occupations: activity - ' + readtext.{191180}.{100 + $job}" text="$report" />
           <debug_text text="'GO activity: ' + $report" />
           <set_value name="$jitter" min="0s" max="30s" />
           <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_after" exact="player.age + 5min + $jitter" />
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="24" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="25" />
         </do_for_each>
       </actions>
     </cue>
     <cue name="LoadedV24">
       <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.2.4 loaded'" text="'Sector-less target recovery installed. Every assigned occupation writes a vanilla General Logbook activity report about every five minutes, and a detailed result on completion. Diagnostic counters start with this update; earlier work is not reconstructed. Passenger manifests, tour progress and normal UI are retained.'" />
+        </actions>
+    </cue>
+    <cue name="LoadedV25">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.2.5 loaded'" text="'Crystal mining now accepts all normal ship sizes, forward weapons and non-beam or missile turrets. Actual drops are collected and immediately forwarded to player inventory; obsolete auto-sale, beam-only and captain holding-limit controls are retired. Loaded physical simulation and suitable weapons/ammunition are still required. Existing passengers, itinerary progress, crew and equipment are retained.'" />
       </actions>
     </cue>
   </cues>

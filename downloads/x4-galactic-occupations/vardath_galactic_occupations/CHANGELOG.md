@@ -1,5 +1,13 @@
 # Version history
 
+## 0.2.5 development — all-size crystal weapons and player inventory
+
+- Remove beam-only/S/M restrictions for crystal mining; allow forward weapons, ordinary and missile turrets, and L/XL Loadout controls. Keep normal turret mode IDs and equipment unchanged.
+- Use native per-asteroid component searches, weapon-range/hull-clearance approaches and four actual alignment orientations. Prevent competing occupation/standalone controllers. Release temporary region persistence after interruption/cleanup.
+- Collect only actual attributed drops with native short-range pickup, then accountably forward existing crystal quantities to player inventory. Verify source removal and player credit; restore uncredited remainder. No cargo requirement, automatic sale, captain holding limit or free crystals.
+- Retain and retry actual pending drops across task restarts. Legacy sale callers forward existing items instead. Add unique ship ID codes and item-delivery diagnostics without financial ledger fabrication.
+- Add eight accounting checks and extend source/Lua contracts for the actual failures. New physical/inventory effects remain unverified in X4. Other mod sources, Forge/Astrid equipment, passengers and Protected UI are preserved.
+
 ## 0.2.4 development — job activity and transient target recovery
 
 - Repair debug(5) failures: wait for and capture a real target sector; do not pass null sectors to native movement. Defer searches while the occupation ship itself is in transit.
