@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<diff>
+  <replace sel="/aiscript//do_if[@value='not $fs_target.isblacklisted.{blacklisttype.travel}.{blacklistgroup.civilian}.{this.assignedcontrolled} and not $fs_target.isblacklisted.{blacklisttype.sectoractivity}.{blacklistgroup.civilian}.{this.assignedcontrolled}']/@value" silent="true">not $fs_target.isblacklisted.{blacklisttype.sectortravel}.{blacklistgroup.civilian}.{this.assignedcontrolled} and not $fs_target.isblacklisted.{blacklisttype.sectoractivity}.{blacklistgroup.civilian}.{this.assignedcontrolled}</replace>
+</diff>

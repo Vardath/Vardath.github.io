@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="10" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.find" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" />
   </params>
@@ -44,18 +44,22 @@
         </do_if>
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_convoy_target" />
       </do_if>
+      <do_if value="($job == 2 or $job == 5) and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not (player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age">
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
+      </do_if>
       <do_if value="($job == 2 or $job == 5) and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_service == $job and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id != @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id">
         <return value="if @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.exists then player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest else player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
       </do_if>
       <do_if value="($job == 2 or $job == 5) and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.isoperational and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational">
         <return value="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
       </do_if>
-      <do_if value="($job == 2 or $job == 5) and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and (not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.haswalkableroom)">
+      <do_if value="($job == 2 or $job == 5) and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and (not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.haswalkableroom or (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age))">
         <find_station name="$alternates" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" reachablefrom="this.ship" multiple="true" haswalkableroom="true">
           <match_dock size="this.ship.docksize" />
         </find_station>
         <do_for_each name="$station" in="$alternates">
-          <do_if value="$station.isoperational and $station.dockingallowed.{this.ship} and not $station.ishostileto.{this.ship}">
+          <do_if value="$station.isoperational and $station.dockingallowed.{this.ship} and not $station.ishostileto.{this.ship} and not (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $station and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age)">
             <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" exact="$station" />
             <break />
           </do_if>
@@ -142,10 +146,15 @@
       <do_elseif value="$job == 9 or $job == 10">
         <find_ship name="$candidates" space="this.ship.sector" multiple="true" sortbydistanceto="this.ship" sortlimit="48" />
       </do_elseif>
+      <set_value name="$galaxychecked" exact="false" />
+      <label name="checkcandidates" />
       <do_while value="$candidates.count">
         <wait exact="100ms" />
         <set_value name="$candidate" exact="if $job == 6 then $candidates.{1} else $candidates.random" />
         <remove_value name="$candidates.{$candidates.indexof.{$candidate}}" />
+        <do_if value="($job == 2 or ($job == 5 and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded)) and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $candidate and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age">
+          <continue />
+        </do_if>
         <do_if value="$job == 13 and ($candidate.isplayerowned or $candidate.owner == faction.ownerless or not $candidate.dockingallowed.{this.ship} or not $candidate.dock.{this.ship.docksize}.exists)">
           <continue />
         </do_if>
@@ -215,13 +224,13 @@
         <do_if value="$job == 8 and @player.entity.$vgo_objects.{this.ship}.$vgo_resourceonly and not $candidate.wares.count">
           <continue />
         </do_if>
-        <do_if value="$job == 9 and (not $candidate.pilot.exists or not $candidate.pilot.iscommable or not $candidate.owner.hasrelation.dock.{faction.player})">
+        <do_if value="$job == 9 and not $candidate.owner.hasrelation.dock.{faction.player}">
           <continue />
         </do_if>
         <do_if value="$job == 10 and ($candidate.primarypurpose != purpose.trade or $candidate.isplayerowned or not this.ship.sector.policefaction or not @this.ship.sector.policefaction.hasrelation.dock.{faction.player})">
           <continue />
         </do_if>
-        <do_if value="($job == 9 or $job == 11) and not $candidate.pilot.exists">
+        <do_if value="$job == 11 and not $candidate.pilot.exists">
           <continue />
         </do_if>
         <do_if value="$job == 11 and (not $candidate.iscapturable or $candidate.ismission or $candidate.isinvulnerable or $candidate.hullpercentage ge 25 or not $candidate.pilot.iscommable or $candidate.isplayerowned)">
@@ -230,8 +239,44 @@
         <do_if value="$job == 7 and ($candidate.iscapitalship or ($candidate.dps.all gt this.ship.dps.all * (1 + player.entity.$vgo_objects.{this.ship}.$vgo_risk)))">
           <continue />
         </do_if>
+        <do_if value="$job == 9">
+          <run_script name="'vardath.go.moralecapable'" result="$eligible">
+            <param name="target" value="$candidate" />
+          </run_script>
+          <do_if value="not $eligible">
+            <continue />
+          </do_if>
+        </do_if>
         <return value="$candidate" />
       </do_while>
+      <do_if value="($job == 1 or $job == 12 or $job == 9) and not $galaxychecked and (not player.entity.$vgo_objects.{this.ship}.$vgo_remote_search? or @player.entity.$vgo_objects.{this.ship}.$vgo_remote_search le player.age)">
+        <set_value name="$galaxychecked" exact="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_remote_search" exact="player.age + 1min" />
+        <do_if value="$job == 1 or $job == 12">
+          <find_ship name="$candidates" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" sortbygatedistancefrom="this.ship" sortlimit="96" reachablefrom="this.ship" primarypurpose="purpose.trade">
+            <match owner="faction.ownerless" negate="true" />
+            <match class="class.spacesuit" negate="true" />
+            <match unit="false" />
+          </find_ship>
+        </do_if>
+        <do_else>
+          <find_ship name="$candidates" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" sortbygatedistancefrom="this.ship" sortlimit="96" reachablefrom="this.ship">
+            <match owner="faction.ownerless" negate="true" />
+            <match class="class.spacesuit" negate="true" />
+            <match unit="false" />
+          </find_ship>
+        </do_else>
+        <do_if value="$job == 1 or $job == 12">
+          <do_for_each name="$candidate" in="$candidates" counter="$i" reverse="true">
+            <do_if value="$candidate.primarypurpose != purpose.trade">
+              <remove_value name="$candidates.{$i}" />
+            </do_if>
+          </do_for_each>
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Searching permitted galaxy for ' + (if $job == 9 then 'crew needing morale support' else 'active trader voyages')" />
+        <debug_text text="'GO remote search: %1 job=%2 candidates=%3'.[this.ship.debugname,$job,$candidates.count]" />
+        <resume label="checkcandidates" />
+      </do_if>
       <return value="null" />
     </actions>
   </attention>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.taxi" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.taxi" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_taxi" name="{191180,102}" description="{191180,202}" category="trade" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
@@ -42,28 +42,9 @@
     <handler ref="InspectedHandler" />
     <handler ref="TideHandler" />
   </interrupts>
-  <patch sinceversion="4">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_taxi' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="5">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_taxi' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="6">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_taxi' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="7">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_taxi' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
   <attention min="unknown">
     <actions>
+      <debug_text text="'GO behaviour startup: %1 requested=VGO_taxi default=%2 current=%3'.[this.ship.debugname,this.ship.defaultorder.id,this.ship.order.id]" />
       <label name="work" />
       <set_order_syncpoint_reached order="this.ship.order" />
       <run_script name="'vardath.go.worker'">
@@ -77,14 +58,9 @@
         <param name="debugchance" value="$debugchance" />
       </run_script>
       <wait exact="15s" />
-      <do_if value="this.ship.isplayerowned and this.ship.order.id == 'VGO_taxi'">
+      <do_if value="this.ship.isplayerowned and this.ship.defaultorder.id == 'VGO_taxi'">
         <resume label="work" />
       </do_if>
     </actions>
   </attention>
-  <patch sinceversion="8">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_taxi' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
 </aiscript>

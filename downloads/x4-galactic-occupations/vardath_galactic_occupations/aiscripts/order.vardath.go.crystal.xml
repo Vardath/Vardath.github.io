@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="10" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_crystal" name="{191180,106}" description="{191180,206}" category="mining" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
@@ -17,16 +17,20 @@
       <param name="debugchance" type="bool" default="0" text="{191180,8}" advanced="true">
         <input_param name="truevalue" value="100" />
       </param>
-      <param name="simfallback" type="bool" default="true" text="{191180,53}" />
+      <param name="simfallback" type="bool" default="true" text="{191180,53}">
+        <patch sinceversion="11" condition="$simfallback == null" value="true" />
+      </param>
       <param name="miningtime" type="time" default="5min" text="{191180,54}">
         <input_param name="min" value="1min" />
         <input_param name="max" value="30min" />
         <input_param name="step" value="1min" />
+        <patch sinceversion="11" condition="$miningtime == null" value="5min" />
       </param>
       <param name="batchsize" type="number" default="24" text="{191180,55}">
         <input_param name="min" value="1" />
         <input_param name="max" value="60" />
         <input_param name="step" value="1" />
+        <patch sinceversion="11" condition="$batchsize == null" value="24" />
       </param>
     </params>
     <requires>
@@ -45,28 +49,9 @@
     <handler ref="InspectedHandler" />
     <handler ref="TideHandler" />
   </interrupts>
-  <patch sinceversion="4">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="5">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="6">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
-  <patch sinceversion="7">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
   <attention min="unknown">
     <actions>
+      <debug_text text="'GO behaviour startup: %1 requested=VGO_crystal default=%2 current=%3'.[this.ship.debugname,this.ship.defaultorder.id,this.ship.order.id]" />
       <label name="work" />
       <set_order_syncpoint_reached order="this.ship.order" />
       <run_script name="'vardath.go.worker'">
@@ -81,22 +66,14 @@
         <param name="batchsize" value="$batchsize" />
       </run_script>
       <wait exact="15s" />
-      <do_if value="this.ship.isplayerowned and this.ship.order.id == 'VGO_crystal'">
+      <do_if value="this.ship.isplayerowned and this.ship.defaultorder.id == 'VGO_crystal'">
         <resume label="work" />
       </do_if>
     </actions>
   </attention>
-  <patch sinceversion="8">
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
-    </do_if>
-  </patch>
   <patch sinceversion="9">
     <do_if value="not $simfallback?">
       <set_value name="$simfallback" exact="true" />
-    </do_if>
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
     </do_if>
   </patch>
   <patch sinceversion="10">
@@ -105,9 +82,6 @@
     </do_if>
     <do_if value="not $batchsize?">
       <set_value name="$batchsize" exact="24" />
-    </do_if>
-    <do_if value="this.ship.isplayerowned and this.ship.order == this.ship.defaultorder and this.ship.order.id == 'VGO_crystal' and this.ship.order.isparameditable.home">
-      <edit_order_param order="this.ship.order" param="'home'" value="$home" />
     </do_if>
   </patch>
 </aiscript>

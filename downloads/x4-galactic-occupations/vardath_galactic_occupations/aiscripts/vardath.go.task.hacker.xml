@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.hacker" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.hacker" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -98,18 +98,13 @@
               <continue />
             </do_if>
             <do_if value="$ship.sector != $target.sector">
-              <run_script name="'move.generic'">
+              <run_script name="'vardath.go.travel'">
                 <param name="destination" value="$target.sector" />
-                <param name="endintargetsector" value="true" />
-                <param name="strictblacklist" value="true" />
-                <param name="useknownpath" value="false" />
-                <param name="pursuetargets" value="false" />
               </run_script>
             </do_if>
-            <run_script name="'order.dock'">
+            <run_script name="'vardath.go.dock'" result="$vgo_docked">
               <param name="destination" value="$target" />
               <param name="waittime" value="5min" />
-              <param name="internalorder" value="true" />
             </run_script>
           </do_if>
           <do_if value="@$ship.dock.container == $target and $phase == 'ready'">

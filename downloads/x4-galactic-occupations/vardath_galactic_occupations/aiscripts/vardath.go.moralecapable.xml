@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.moralecapable" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="target" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not $target.isoperational or $target.ishostileto.{this.ship} or not $target.isclass.[class.ship_s, class.ship_m, class.ship_l, class.ship_xl] or $target.isunit">
+        <return value="false" />
+      </do_if>
+      <do_if value="$target.pilot.exists and $target.pilot.isclass.npc and $target.pilot.skill.morale lt 15">
+        <return value="true" />
+      </do_if>
+      <do_for_each name="$person" in="$target.people.list" counter="$i">
+        <do_if value="$target.people.{$person}.exists and $target.people.{$person}.role != entityrole.passenger and $target.people.{$person}.skill.morale lt 15">
+          <return value="true" />
+        </do_if>
+        <do_if value="$i ge 64">
+          <return value="true" />
+        </do_if>
+      </do_for_each>
+      <return value="false" />
+    </actions>
+  </attention>
+</aiscript>

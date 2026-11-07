@@ -302,7 +302,7 @@
           <do_if value="$phase == 'done' or $phase == 'aborted'">
             <continue />
           </do_if>
-          <do_if value="not $ship.isplayerowned or not $station.isoperational or $ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_hack_order or $station.isplayerowned or ($actor.exists and not $actor.isplayerowned)">
+          <do_if value="not $ship.isplayerowned or not $station.isoperational or ($ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_hack_order and $ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_dock_order) or $station.isplayerowned or ($actor.exists and not $actor.isplayerowned)">
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
             <set_value name="$phase" exact="'returning'" />
             <do_if value="@Init.$ProbeShip == $ship">

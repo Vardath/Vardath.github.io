@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.travel" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="destination" />
+    <param name="position" default="null" />
+    <param name="radius" default="15km + this.ship.size / 2" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not $destination.exists or not $destination.isclass.sector or not this.ship.isplayerowned">
+        <return value="false" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$destination} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $destination.owner.hasrelation.enemy.{faction.player})">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Travel deferred: destination outside permitted range or territory'" />
+        <return value="false" />
+      </do_if>
+      <run_script name="'vardath.go.depart'" result="$departed" />
+      <do_if value="not $departed">
+        <return value="false" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 45min" />
+      <do_all exact="2" counter="$attempt">
+        <do_if value="this.ship.sector == $destination and ($position == null or this.ship.distanceto.[$destination,$position] le $radius)">
+          <return value="true" />
+        </do_if>
+        <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != player.entity.$vgo_objects.{this.ship}.$vgo_order">
+          <return value="false" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Travelling to ' + $destination.knownname + ' (attempt ' + $attempt + ')'" />
+        <run_script name="'move.generic'" result="$native">
+          <param name="destination" value="$destination" />
+          <param name="position" value="$position" />
+          <param name="endintargetsector" value="false" />
+          <param name="strictblacklist" value="true" />
+          <param name="useknownpath" value="false" />
+          <param name="pursuetargets" value="false" />
+        </run_script>
+        <debug_text text="'GO travel: %1 requested=%2 native_result=%3 actual_sector=%4 attempt=%5'.[this.ship.debugname,$destination.knownname,$native,if this.ship.sector.exists then this.ship.sector.knownname else 'In transit',$attempt]" />
+        <do_if value="this.ship.sector == $destination and ($position == null or this.ship.distanceto.[$destination,$position] le $radius)">
+          <return value="true" />
+        </do_if>
+        <wait min="10s" max="15s" />
+      </do_all>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Travel did not reach ' + $destination.knownname + '; bounded retry ended, assignment retained or replaced safely'" />
+      <return value="false" />
+    </actions>
+  </attention>
+</aiscript>

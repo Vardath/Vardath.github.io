@@ -1,6 +1,10 @@
-# Reproducible tests — 0.3.3 development
+# Reproducible tests — 0.3.4 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
+
+## Current recovery acceptance
+
+Run [the six 0.3.4 acceptance sequences](LOG_REVIEW_0.3.4.md#live-acceptance-steps) first: the already-boarded taxi's real sector travel/docking/drop-off, remote escort discovery, Morale startup and actual crew effects, critical/default recovery, queued docking/player-order priority, and off-screen crystal work/sales. Existing saved Holds must be reassigned manually so intentional Holds are preserved. Tests must show actual arrival and NPC departure, not just a successful native return value.
 
 ## Current menu and crystal repair
 

@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<diff>
+  <replace sel="/mdscript//library[@name='ObjectInvincibilityManager_CheckRequests']//do_if[@value='$RequesterCue.state != cuestate.complete and $RequesterCue.state != cuestate.active']/@value">not $RequesterCue.exists or ($RequesterCue.state != cuestate.complete and $RequesterCue.state != cuestate.active)</replace>
+</diff>

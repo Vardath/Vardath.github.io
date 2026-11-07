@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.dock" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="destination" />
+    <param name="waittime" default="5min" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not this.ship.isplayerowned or not $destination.isoperational or not $destination.dockingallowed.{this.ship}">
+        <return value="false" />
+      </do_if>
+      <do_if value="@this.ship.dock.container == $destination">
+        <return value="true" />
+      </do_if>
+      <do_if value="this.ship == player.occupiedship or this.ship.order != player.entity.$vgo_objects.{this.ship}.$vgo_order">
+        <return value="false" />
+      </do_if>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $destination and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Dock retry cooldown at ' + $destination.knownname + '; passengers, tools and sale stock retained'" />
+        <return value="false" />
+      </do_if>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_dock_order.exists">
+        <return value="false" />
+      </do_if>
+      <do_if value="this.ship.sector != $destination.sector">
+        <run_script name="'vardath.go.travel'" result="$arrived">
+          <param name="destination" value="$destination.sector" />
+        </run_script>
+        <do_if value="not $arrived">
+          <return value="false" />
+        </do_if>
+      </do_if>
+      <run_script name="'vardath.go.refreshdefault'" result="$refreshed" />
+      <do_if value="$refreshed">
+        <return value="false" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_dock_previousorders" exact="this.ship.orders.clone" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_dock_target" exact="$destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_dock_until" exact="player.age + 30min" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Automatic docking at ' + $destination.knownname + '; native queued DockAt order, occupation retained'" />
+      <create_order id="'DockAt'" object="this.ship" name="$dockorder" immediate="true" override="true">
+        <param name="destination" value="$destination" />
+        <param name="waittime" value="$waittime" />
+        <param name="internalorder" value="true" />
+      </create_order>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_dock_order" exact="$dockorder" />
+      <debug_text text="'GO docking queued: %1 target=%2 order=%3 default=%4'.[this.ship.debugname,$destination.debugname,$dockorder,this.ship.defaultorder.id]" />
+      <wait exact="1s" />
+      <return value="@this.ship.dock.container == $destination" />
+    </actions>
+  </attention>
+</aiscript>

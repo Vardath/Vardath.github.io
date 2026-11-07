@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<diff>
+  <replace sel="/mdscript//do_if[@value='faction.player.canholdlicence.tradesubscription.{faction.alliance} and not faction.player.haslicence.tradesubscription.{alliance}']/@value" silent="true">faction.player.canholdlicence.tradesubscription.{faction.alliance} and not faction.player.haslicence.tradesubscription.{faction.alliance}</replace>
+</diff>

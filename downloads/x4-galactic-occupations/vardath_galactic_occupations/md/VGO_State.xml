@@ -163,7 +163,11 @@
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" />
             <signal_objects object="$ship" param="'vardath.go.timeout'" />
           </do_elseif>
-          <do_if value="not $ship.isplayerowned or (not Init.$Orders.indexof.{@$ship.defaultorder.id} and not Init.$Orders.indexof.{@$ship.order.id})">
+          <do_if value="not $ship.isplayerowned or (not Init.$Orders.indexof.{@$ship.defaultorder.id} and not Init.$Orders.indexof.{@$ship.order.id} and not @player.entity.$vgo_objects.{$ship}.$vgo_dock_order.exists)">
+            <do_if value="$ship.isplayerowned">
+              <debug_text text="'GO behaviour ended: %1 last_job=%2 current=%3 default=%4; player order/default changes preserved'.[$ship.debugname,@player.entity.$vgo_objects.{$ship}.$vgo_job,@$ship.order.id,@$ship.defaultorder.id]" />
+              <write_to_logbook category="general" title="'Galactic Occupations: behaviour ended'" text="$ship.knownname + ': last occupation ' + readtext.{191180}.{100 + @player.entity.$vgo_objects.{$ship}.$vgo_job} + '; current default ' + (if $ship.defaultorder.exists then $ship.defaultorder.name else 'None') + '. If this was an unexpected Hold Position, reselect the occupation and retain the startup/end debug lines.'" />
+            </do_if>
             <remove_value name="Init.$Ships.{$i}" />
           </do_if>
           <do_if value="$ship.isplayerowned and @player.entity.$vgo_objects.{$ship}.$vgo_debug gt 0 and @player.entity.$vgo_objects.{$ship}.$vgo_status != @player.entity.$vgo_objects.{$ship}.$vgo_loggedstatus">
@@ -660,7 +664,7 @@
         </do_for_each>
       </actions>
     </cue>
-    <cue name="RecoverOrdersV33" instantiate="true" checkinterval="5s">
+    <cue name="RecoverOrdersV34" instantiate="true" checkinterval="5s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
       </conditions>
@@ -669,11 +673,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 33 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 34 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="33" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="34" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />
@@ -759,7 +763,7 @@
           <do_if value="not $job or $job lt 1 or $job gt 13">
             <continue />
           </do_if>
-          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 33 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_report_version == 34 and @player.entity.$vgo_objects.{$ship}.$vgo_report_after gt player.age">
             <continue />
           </do_if>
           <set_value name="$status" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_status then player.entity.$vgo_objects.{$ship}.$vgo_status else 'Waiting for occupation worker'" />
@@ -774,6 +778,18 @@
             <set_value name="$report" exact="$report + ' | Last unfinished cycle: ' + player.entity.$vgo_objects.{$ship}.$vgo_stats.{$job}.$last_exit" />
           </do_if>
           <do_if value="$job == 6">
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent? or @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent == null">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_sent" exact="0" />
+            </do_if>
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_sold? or @player.entity.$vgo_objects.{$ship}.$vgo_crystal_sold == null">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_sold" exact="0" />
+            </do_if>
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_physical? or @player.entity.$vgo_objects.{$ship}.$vgo_crystal_physical == null">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_physical" exact="0" />
+            </do_if>
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_simulated? or @player.entity.$vgo_objects.{$ship}.$vgo_crystal_simulated == null">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_simulated" exact="0" />
+            </do_if>
             <set_value name="$crystalstock" exact="0" />
             <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
               <set_value name="$crystalstock" exact="$crystalstock + @player.entity.$vgo_objects.{$ship}.$vgo_crystal_stock.{$ware}" />
@@ -784,7 +800,7 @@
           <debug_text text="'GO activity: ' + $report" />
           <set_value name="$jitter" min="0s" max="30s" />
           <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_after" exact="player.age + 5min + $jitter" />
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="33" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_report_version" exact="34" />
         </do_for_each>
       </actions>
     </cue>
@@ -848,8 +864,48 @@
       </actions>
     </library>
     <cue name="LoadedV33">
+      <actions />
+    </cue>
+    <cue name="DockOrdersV34" instantiate="true" checkinterval="2s">
+      <conditions>
+        <check_value value="Init.$Ships.count gt 0" />
+      </conditions>
       <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.3.3 loaded'" text="'Crystal miners now use resource-backed simulated off-screen mining across permitted sectors and automatically simulate inventory-trader sales at real dockable faction stations. Credits go to the player; old player inventory is not sold. No following the player. Defaults: 24 items per 5 game minutes, 100 ore/silicon units consumed per item; actual depleted yield caps stock. Visible turret harvesting remains available. Sale receipts and activity totals appear in vanilla logs; engine runtime verification remains pending.'" />
+        <do_for_each name="$ship" in="Init.$Ships">
+          <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_dock_order?">
+            <continue />
+          </do_if>
+          <set_value name="$dockorder" exact="@player.entity.$vgo_objects.{$ship}.$vgo_dock_order" />
+          <set_value name="$target" exact="@player.entity.$vgo_objects.{$ship}.$vgo_dock_target" />
+          <set_value name="$cancel" exact="not $ship.isplayerowned or $ship == player.occupiedship or not $target.isoperational or not $target.dockingallowed.{$ship} or player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_dock_until" />
+          <do_if value="$dockorder.exists">
+            <do_for_each name="$other" in="$ship.orders">
+              <do_if value="$other != $dockorder and not @player.entity.$vgo_objects.{$ship}.$vgo_dock_previousorders.indexof.{$other}">
+                <set_value name="$cancel" exact="true" />
+                <break />
+              </do_if>
+            </do_for_each>
+            <do_if value="$cancel and $dockorder.id == 'DockAt' and $dockorder.isoverride">
+              <cancel_order order="$dockorder" />
+            </do_if>
+          </do_if>
+          <do_if value="not $dockorder.exists or $cancel">
+            <do_if value="@$ship.dock.container != $target and not $cancel">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_failed_target" exact="$target" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_retry" exact="player.age + 5min" />
+              <write_to_logbook category="general" title="'Galactic Occupations: docking deferred'" text="$ship.knownname + ': native docking order ended before arrival at ' + $target.knownname + '; default behaviour, passengers, tools and stock retained'" />
+            </do_if>
+            <debug_text text="'GO docking ended: %1 target=%2 docked=%3 cancelled=%4 current=%5 default=%6'.[$ship.debugname,$target,@$ship.dock.container == $target,$cancel,@$ship.order.id,@$ship.defaultorder.id]" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_order" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_target" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_previousorders" />
+          </do_if>
+        </do_for_each>
+      </actions>
+    </cue>
+    <cue name="LoadedV34">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.3.4 loaded'" text="'Removed invalid sector-yield lookup and premature sector-travel shortcut. Native docking now runs as a separate finite order, preserving persistent behaviours and real passenger manifests. Escort/morale discovery is widened and startup recovery no longer self-edits from version patches. Existing Hold Position orders remain yours: reassign a role once if an older build already lost it. New integration requires live verification.'" />
       </actions>
     </cue>
   </cues>

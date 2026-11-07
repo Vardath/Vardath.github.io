@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.deliver" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.deliver" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params />
   <attention min="unknown">
     <actions>
@@ -30,19 +30,20 @@
         <do_if value="not $departed">
           <return value="0" />
         </do_if>
-        <run_script name="'move.generic'">
+        <run_script name="'vardath.go.travel'" result="$vgo_arrived">
           <param name="destination" value="$destination.sector" />
-          <param name="endintargetsector" value="true" />
-          <param name="strictblacklist" value="true" />
-          <param name="useknownpath" value="false" />
-          <param name="pursuetargets" value="false" />
         </run_script>
+        <do_if value="not $vgo_arrived">
+          <return value="0" />
+        </do_if>
       </do_if>
-      <run_script name="'order.dock'">
+      <run_script name="'vardath.go.dock'" result="$vgo_docked">
         <param name="destination" value="$destination" />
         <param name="waittime" value="5min" />
-        <param name="internalorder" value="true" />
       </run_script>
+      <do_if value="not $vgo_docked">
+        <return value="0" />
+      </do_if>
       <do_if value="@this.ship.dock.container != $destination or not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count">
         <return value="0" />
       </do_if>

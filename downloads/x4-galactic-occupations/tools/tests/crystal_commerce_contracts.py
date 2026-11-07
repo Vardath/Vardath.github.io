@@ -50,6 +50,7 @@ class VM:
         self.resource=100000;self.rolls=[1];self.roll_index=0
         self.receipts=[];self.reward_requests=[];self.reputation=[];self.outcomes=[]
         self.rep_times={};self.interrupt_on_wait=False
+        self.station_candidates=[BUYER]
 
     def get(self,key,index=None):
         value=self.state.get(key,NULL if key.endswith('_station') else 0)
@@ -123,6 +124,7 @@ class VM:
             'rep_time':lambda:self.rep_times.get(self.vars.get('faction'),0)})
 
     def assign(self,name,value,remove=False):
+        if name=='$buyer' and value is None:value=NULL
         if name=='player.entity.$vgo_rep_times.{$faction}':self.rep_times[self.vars['faction']]=value;return
         if name.startswith(S+'.$'):
             tail=name[len(S)+2:];m=re.fullmatch(r'(\w+)\.\{\$(\w+)\}',tail)
@@ -175,10 +177,12 @@ class VM:
                 elif name=='vardath.go.recordresult':self.outcomes.append(params['outcome'])
                 elif name=='vardath.go.depart':value=self.departed
                 elif name=='move.generic':pass
-                elif name=='order.dock':self.docked=self.vars['buyer'] if self.can_dock else NULL
+                elif name=='vardath.go.dock':
+                    self.docked=self.vars['buyer'] if self.can_dock else NULL
+                    value=self.can_dock
                 else:raise AssertionError('Unknown native/script mock '+name)
                 if n.get('result'):self.assign(n.get('result'),value)
-            elif tag=='find_station':self.assign(n.get('name'),[BUYER])
+            elif tag=='find_station':self.assign(n.get('name'),self.station_candidates)
             elif tag=='wait':
                 self.age+=self.expr(n.get('exact'))
                 if self.interrupt_on_wait:self.direct=True;self.docked=NULL
@@ -311,8 +315,8 @@ class CommerceSafetyContracts(unittest.TestCase):
         for name in ['miningtime','batchsize']:
             self.assertIsNotNone(r.find("order/params/param[@name='"+name+"']"))
             self.assertIsNotNone(r.find("patch[@sinceversion='10']/do_if[@value='not $"+name+"?']"))
-        recovery=E.parse(MOD/'md/VGO_State.xml').find(".//cue[@name='RecoverOrdersV33']")
+        recovery=E.parse(MOD/'md/VGO_State.xml').find(".//cue[@name='RecoverOrdersV34']")
         text=E.tostring(recovery,encoding='unicode');self.assertIn('order == $ship.defaultorder',text)
-        self.assertIn('$vgo_runtime != 33',text)
+        self.assertIn('$vgo_runtime != 34',text)
 
 if __name__=='__main__':unittest.main(verbosity=2)

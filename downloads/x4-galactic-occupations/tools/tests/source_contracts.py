@@ -128,7 +128,8 @@ class SourceContracts(unittest.TestCase):
             if root.find('order').get('infinite') != 'true': continue
             self.assertTrue(root.find('order/location').get('object').endswith('else this.ship)'))
             self.assertIsNotNone(root.find(".//resume[@label='work']"))
-            if int(root.get('version','1')) > 1: self.assertIsNotNone(root.find('.//patch//edit_order_param'))
+            self.assertIsNone(root.find('.//patch//edit_order_param'))
+            self.assertIn('this.ship.defaultorder.id',ET.tostring(root.find('attention/actions'),encoding='unicode'))
     def test_crystal_prerequisite_wait_does_not_create_hold_or_income(self):
         root=xml('aiscripts/vardath.go.worker.xml')
         branch=next(n for n in root.iter('do_if') if n.get('value','').startswith('$compatible_turrets == 0 and'))

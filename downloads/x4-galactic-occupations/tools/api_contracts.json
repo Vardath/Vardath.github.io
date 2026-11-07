@@ -10268,6 +10268,25 @@
         "line": 34829
       }
     },
+    "set_order_state": {
+      "attributes": {
+        "order": {
+          "doc": "AI order",
+          "required": true,
+          "type": "order"
+        },
+        "state": {
+          "doc": "Order state",
+          "provenance": "Native 9.00 common.xsd inline restriction on set_order_state/@state; only critical/finish allowed. Not a generic enumeration alias.",
+          "type": "vgo_settable_orderstate"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
+    },
     "set_order_syncpoint_reached": {
       "attributes": {
         "chance": {
@@ -12660,6 +12679,17 @@
         }
       ]
     },
+    "vgo_settable_orderstate": {
+      "patterns": [],
+      "values": [
+        {
+          "v": "orderstate.critical"
+        },
+        {
+          "v": "orderstate.finish"
+        }
+      ]
+    },
     "waretransportlookup": {
       "kind": "enum",
       "patterns": [
@@ -13119,6 +13149,7 @@
   },
   "provenance": {
     "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
+    "log8_native_reference": "Native 9.00 move.generic endintargetsector guard, order.dock failure/current-order critical side effects, orderstate critical-to-finish semantics and declared scriptproperties inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. averagemaxyield is absent from 9.00 scriptproperties; unsupported optimization removed.",
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,

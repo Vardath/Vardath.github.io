@@ -1,5 +1,14 @@
 # Version history
 
+## 0.3.4 — debug(8) travel and job-start recovery
+
+- Remove the invalid sector-yield property responsible for 374,816 errors. Verify actual arrival through a bounded shared travel helper with the native premature sector shortcut disabled.
+- Replace borrowed native docking scripts with separate finite DockAt orders. Preserve manifests/defaults, handle new player orders, retain failed work and recover legacy critical defaults with exact declared settings.
+- Retry persistent wrappers against their default identity, remove recursive migration self-edits, repair present-null new settings and log startup/end transitions. Existing player Holds remain untouched.
+- Add bounded, throttled galaxy search for escort/patrol/morale candidates; use real trade destinations and editable morale data, retaining effect/payment/reputation checks.
+- Add exact optional Sector Explorer and Auto Trade Subscriptions expression patches; guard missing native station equipment entries with native faction defaults and expired invincibility requester cues.
+- Add 20 source/executed recovery tests and native diff grammar/reference checks. Log confirms 52,000 Cr prior escort/patrol income and eight morale completions; new runtime integration remains unverified. Other external errors/source requirements are listed explicitly.
+
 ## 0.3.3 — user-requested off-screen crystal commerce
 
 - Replace player-following fallback with real resource-field navigation, bounded active mining time and native yield depletion; finite custom crystal conversion is capped by actual ore/silicon removed. All normal armed sizes; no mineral hold.

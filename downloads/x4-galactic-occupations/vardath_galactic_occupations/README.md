@@ -1,6 +1,14 @@
-# Galactic Occupations 0.3.3 development build
+# Galactic Occupations 0.3.4 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 7 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.3.4: taxi travel, escort discovery and persistent job recovery
+
+The supplied debug(8) exposed a regression: the sector-yield optimization introduced 374,816 errors. It is removed. All 141 recorded sector-travel attempts also returned without arrival. Shared travel now disables the native sector shortcut, checks actual arrival and retries twice with a delay. Taxi/Tour/Hacker/Crystal sales queue a separate finite native docking order, preserving the persistent default and the same real passengers while it runs.
+
+Escort and Morale now fall back to a throttled, bounded search over permitted galaxy sectors. Morale probes actual editable crew without requiring a commable pilot. Wrappers retain their assigned default across internal queue transitions and no longer self-edit recursively during version patches. Legacy critical defaults receive guarded recovery with exact settings and persistent state. Existing Holds remain player-controlled; reassign a role once if an older build already lost it.
+
+The release also contains two exact optional compatibility expression fixes and small native station-loadout/stale-cue guards. Some third-party source files remain unavailable and their unrelated errors are explicitly unresolved. [Full findings, source provenance, limits and live tests](LOG_REVIEW_0.3.4.md). The new engine integration is unverified here; static green checks are not gameplay proof.
 
 ## 0.3.3: galaxy-wide crystal mining and automatic cash sales
 
@@ -14,7 +22,7 @@ The included 0.3.2 log repairs fix null sector-cache lists, conflicting hacker o
 
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.3.3_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.3.4_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
 4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances.
@@ -67,6 +75,6 @@ The vanilla transaction ledger remains the original renderer. There is no custom
 
 ## Compatibility and verification
 
-Requires X4 9.00 or later; DLC content is discovered at runtime. No dependencies on removed mods, no vanilla AI replacements, no ledger screen replacement and no change to Protected UI or Inventory Collector. The five-mod bundle includes Cargo Teleport 1.01 with a bounded native docking retry for a failed undocked zero-transfer trade. Builders 1.75, Kopis/Astrid 1.15 and Yaki Habitats 1.23 remain unchanged, including Forge's special weapon and Astrid equipment.
+Requires X4 9.00 or later; DLC content is discovered at runtime. No required dependencies on removed mods, no vanilla AI replacements, no ledger screen replacement and no change to Protected UI or Inventory Collector. Optional Sector Explorer/Auto Trade Subscriptions attribute patches and two small native MD guard patches are included; see the current review. The five-mod bundle includes Cargo Teleport 1.01 with a bounded native docking retry for a failed undocked zero-transfer trade. Builders 1.75, Kopis/Astrid 1.15 and Yaki Habitats 1.23 remain unchanged, including Forge's special weapon and Astrid equipment.
 
 [Hacker/log review](HACKER_REVIEW_0.3.1.md), [reproducible in-game tests](TESTING.md), [implementation notes](IMPLEMENTATION.md) and [version history](CHANGELOG.md) distinguish source checks from unverified runtime stages. Keep a backup before testing this development build.

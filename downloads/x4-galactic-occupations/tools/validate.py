@@ -11,6 +11,11 @@ import zipfile
 BASE = Path(__file__).resolve().parents[1]
 MOD = BASE / 'vardath_galactic_occupations'
 JOBS = ['escort','taxi','scanner','mapper','tour','crystal','lure','demolition','morale','inspection','recruit','patrol','hacker']
+COMPAT_PATCHES = {
+    MOD/'extensions/fs_exp/aiscripts/sectorexplorer.xml',
+    MOD/'extensions/z_ram_autotradesubs/md/ramautosubs.xml',
+}
+NATIVE_RECOVERY_PATCHES = {MOD/'md/finalisestations.xml', MOD/'md/lib_generic.xml'}
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--reference', type=Path, help='Extracted installed X4 root: libraries/*.xsd and aiscripts/*.xml')
 parser.add_argument('--report', type=Path)
@@ -75,6 +80,16 @@ for path, root in trees.items():
             for icon in op:
                 if icon.tag != 'icon' or not icon.get('name','').startswith('order_vgo_'):
                     error(path, 'icon aliases must be namespaced')
+        continue
+    if root.tag == 'diff' and path in COMPAT_PATCHES:
+        for op in root:
+            if op.tag != 'replace' or set(op.attrib) != {'sel','silent'} or op.get('silent') != 'true' or not op.get('sel','').endswith('/@value') or len(op):
+                error(path, 'compatibility patches may only replace an exact optional expression attribute')
+        continue
+    if root.tag == 'diff' and path in NATIVE_RECOVERY_PATCHES:
+        for op in root:
+            if op.tag != 'replace' or set(op.attrib) != {'sel'} or len(op) or not op.get('sel','').endswith(('/@value','/@wares')):
+                error(path, 'native recovery patches may only replace specific guard/loadout attributes')
         continue
     if root.tag == 'addon':
         counts['ui_addons'] += 1
@@ -177,11 +192,11 @@ for key in JOBS:
     if f'vardath.go.task.{key}' not in scripts:
         error(path, 'occupation task script missing')
 
-# No vanilla replacement or patch files are permitted in this standalone extension.
+# Only the two log-proven optional expression fixes and icon aliases are patches.
 for path, root in trees.items():
-    if root.tag == 'diff' and path != MOD/'libraries/icons.xml':
+    if root.tag == 'diff' and path != MOD/'libraries/icons.xml' and path not in COMPAT_PATCHES | NATIVE_RECOVERY_PATCHES:
         error(path, 'unexpected vanilla/mod patch')
-    if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem:
+    if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem and path not in COMPAT_PATCHES:
         error(path, 'non-namespaced AI script')
 
 schema_status = 'NOT RUN: installed X4 schemas unavailable'
@@ -221,7 +236,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(7).log reviewed. Prior runtime log confirms one tour and three patrol payments; new mining/sales remain unverified in X4.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New repairs remain unverified in X4.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

@@ -1,15 +1,16 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 62,
-    "commands": 3190,
-    "script_calls": 113,
+    "xml_files": 70,
+    "commands": 3456,
+    "script_calls": 118,
     "behaviours": 13,
     "ui_addons": 1
   },
   "installed_schema_validation": "NOT RUN: installed X4 schemas unavailable",
   "reference_provenance": {
     "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
+    "log8_native_reference": "Native 9.00 move.generic endintargetsector guard, order.dock failure/current-order critical side effects, orderstate critical-to-finish semantics and declared scriptproperties inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. averagemaxyield is absent from 9.00 scriptproperties; unsupported optimization removed.",
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
@@ -21,7 +22,7 @@
       "9.00"
     ]
   },
-  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(7).log reviewed. Prior runtime log confirms one tour and three patrol payments; new mining/sales remain unverified in X4.",
+  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New repairs remain unverified in X4.",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",

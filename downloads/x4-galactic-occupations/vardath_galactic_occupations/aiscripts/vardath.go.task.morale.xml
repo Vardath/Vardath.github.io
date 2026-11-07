@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.morale" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.morale" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -11,7 +11,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="not $target.isoperational or not $target.pilot.iscommable">
+      <do_if value="not $target.isoperational or $target.ishostileto.{this.ship}">
         <return value="false" />
       </do_if>
       <run_script name="'vardath.go.approach'" result="$ok">
@@ -29,7 +29,7 @@
         <wait exact="5s" />
       </do_all>
       <set_value name="$improved" exact="0" />
-      <do_for_each name="$person" in="$target.people.list">
+      <do_for_each name="$person" in="$target.people.list" counter="$personindex">
         <do_if value="$target.people.{$person}.exists and $target.people.{$person}.role != entityrole.passenger and $target.people.{$person}.skill.morale lt 15">
           <set_value name="$before" exact="$target.people.{$person}.skill.morale" />
           <add_skill object="$target" template="$person" type="skilltype.morale" exact="1" />
@@ -37,8 +37,11 @@
             <set_value name="$improved" exact="$improved + 1" />
           </do_if>
         </do_if>
+        <do_if value="$personindex % 64 == 0">
+          <wait exact="100ms" />
+        </do_if>
       </do_for_each>
-      <do_if value="$target.pilot.exists and not @$target.pilot.npctemplate and $target.pilot.skill.morale lt 15">
+      <do_if value="$target.pilot.exists and $target.pilot.isclass.npc and not @$target.pilot.npctemplate and $target.pilot.skill.morale lt 15">
         <set_value name="$before" exact="$target.pilot.skill.morale" />
         <add_skill entity="$target.pilot" type="skilltype.morale" exact="1" />
         <do_if value="$target.pilot.skill.morale gt $before">
