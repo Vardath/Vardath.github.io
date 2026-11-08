@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.taxi" version="10" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -38,7 +38,7 @@
       <do_if value="8000Cr * [10, this.ship.people.free + @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count].min lt player.entity.$vgo_objects.{this.ship}.$vgo_minreward and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
         <return value="false" />
       </do_if>
-      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.dockingallowed.{this.ship} or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.haswalkableroom or (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age)">
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and (not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.dockingallowed.{this.ship} or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.haswalkableroom or (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age))">
         <set_value name="$sectors" exact="player.entity.$vgo_objects.{this.ship}.$vgo_scope.clone" />
         <set_value name="$destination" exact="null" />
         <do_all exact="2" counter="$pass">

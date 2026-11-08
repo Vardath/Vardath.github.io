@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.simulation" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.simulation" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="this.ship.sector == player.sector or this.ship.attention ge attention.visible or not player.entity.$vgo_objects.{this.ship}.$vgo_simfallback">
@@ -10,7 +10,7 @@
       <set_value name="$ore" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_work_ware" />
       <do_if value="not $sector.exists or $sector == player.sector or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $sector.owner.hasrelation.enemy.{faction.player})">
         <set_value name="$sector" exact="null" />
-        <do_for_each name="$tryware" in="if player.age % 2s lt 1s then [ware.ore,ware.silicon] else [ware.silicon,ware.ore]">
+        <do_for_each name="$tryware" in="if @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_silicon_next then [ware.silicon,ware.ore] else [ware.ore,ware.silicon]">
           <find_closest_resource refobject="this.ship.sector" ware="$tryware" sector="$foundsector" position="$foundpos" minamount="100" useundiscovered="true" ignoredangerousregions="false" />
           <do_if value="$foundsector.exists and player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$foundsector} and $foundsector != player.sector and (player.entity.$vgo_objects.{this.ship}.$vgo_risk == 2 or not $foundsector.owner.hasrelation.enemy.{faction.player})">
             <set_value name="$sector" exact="$foundsector" />
@@ -19,6 +19,7 @@
             <break />
           </do_if>
         </do_for_each>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_silicon_next" exact="not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_silicon_next" />
         <do_if value="not $sector.exists">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal miner: no permitted off-screen ore/silicon field here; seeking another sector'" />
           <return value="0" />

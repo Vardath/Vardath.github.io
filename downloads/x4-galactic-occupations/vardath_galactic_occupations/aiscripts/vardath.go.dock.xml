@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.dock" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.dock" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="destination" />
     <param name="waittime" default="5min" />
@@ -9,6 +9,8 @@
       <do_if value="not this.ship.isplayerowned or not $destination.isoperational or not $destination.dockingallowed.{this.ship}">
         <return value="false" />
       </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_dock" exact="$destination" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_dock_until" exact="player.age + 30min" />
       <do_if value="@this.ship.dock.container == $destination">
         <return value="true" />
       </do_if>

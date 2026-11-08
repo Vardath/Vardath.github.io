@@ -10647,6 +10647,44 @@
         "line": 36951
       }
     },
+    "signal_cue_instantly": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "check": {
+          "doc": "Check for existing cue listeners? If true and there are no listeners for the cue signal, a warning is produced. Default is true.",
+          "type": "boolean"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "cue": {
+          "doc": "Cue name",
+          "required": true,
+          "type": "cuename"
+        },
+        "param": {
+          "doc": "Script Parameter passed to <event_cue_signalled>",
+          "type": "expression"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Signal a cue instantly, triggering cues that wait for this signal via <event_cue_signalled>. Can pass parameter to <event_cue_signalled>. NOTE: Make sure that the signal does not activate the current cue again (directly or indirectly), which could lead to an infinite recursion.",
+      "kind": "action",
+      "src": {
+        "file": "md.xsd",
+        "line": 4299
+      }
+    },
     "signal_objects": {
       "attributes": {
         "chance": {
@@ -10940,6 +10978,20 @@
         "md"
       ],
       "kind": "action"
+    },
+    "stop_actor_walk": {
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "attributes": {
+        "actor": {
+          "type": "actor",
+          "required": true,
+          "doc": "Actor object (NPC)"
+        }
+      },
+      "reference": "{'file': 'common.xsd', 'line': 33181}"
     }
   },
   "enum_types": {
@@ -13167,8 +13219,10 @@
     }
   },
   "provenance": {
+    "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
     "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
     "log8_native_reference": "Native 9.00 move.generic endintargetsector guard, order.dock failure/current-order critical side effects, orderstate critical-to-finish semantics and declared scriptproperties inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. averagemaxyield is absent from 9.00 scriptproperties; unsupported optimization removed.",
+    "log9_native_handoff": "Native 9.00 orders.base explicit pre-start undocking allowlist inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. One attribute guard exempts only owned VGO taxi/tour/crystal/hacker/hackonce orders equal to their tracked worker at the recorded operational dock before a 30-minute expiry. Four move.generic jump-discovery attributes honour the declared useknownpath parameter for tracked VGO workers runtime>=36; native blacklists and other orders are unchanged.",
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,

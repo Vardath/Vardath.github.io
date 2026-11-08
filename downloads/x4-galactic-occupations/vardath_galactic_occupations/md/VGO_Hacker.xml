@@ -332,12 +332,12 @@
               <set_value name="$actor" exact="null" />
               <find_object_component name="$crew" object="$ship" class="class.npc" multiple="true" />
               <do_for_each name="$crewactor" in="$crew">
-                <do_if value="($crewactor.role == entityrole.service or $crewactor.role == entityrole.marine) and not $crewactor.isbusy and not $crewactor.ismissionactor and not $crewactor.istransferscheduled and (not @$crewactor.$vgo_hack_ship.exists or @$crewactor.$vgo_hack_ship == $ship)">
+                <do_if value="($crewactor.role == entityrole.service or $crewactor.role == entityrole.marine) and not $crewactor.isbusy and not $crewactor.ismissionactor and not $crewactor.istransferscheduled and (not @$crewactor.$vgo_hack_ship.exists or @$crewactor.$vgo_hack_ship == $ship) and not @$crewactor.$vgo_sale_ship.exists">
                   <set_value name="$actor" exact="$crewactor" />
                   <break />
                 </do_if>
               </do_for_each>
-              <do_if value="not $actor.exists and $ship.pilot.isclass.npc and not $ship.pilot.isbusy and not $ship.pilot.ismissionactor and $ship.pilot != player.entity">
+              <do_if value="not $actor.exists and $ship.pilot.isclass.npc and not $ship.pilot.isbusy and not $ship.pilot.ismissionactor and $ship.pilot != player.entity and not @$ship.pilot.$vgo_sale_ship.exists">
                 <set_value name="$actor" exact="$ship.pilot" />
               </do_if>
               <do_if value="$actor.exists">

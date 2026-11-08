@@ -35,6 +35,7 @@ class PassengerVM(BaseVM):
             entries.append({'template':i,'actor':actor,'boarded':True,'delivered':False})
             self.actors.append(actor)
         self.state.update(vgo_job=job,vgo_passenger_service=job,vgo_passengers=entries,
+            vgo_taxi_booked_destination=self.station,
             vgo_taxi_boarded=True,vgo_taxi_contract_id=7,vgo_taxi_completed_id=0,
             vgo_taxi_phase='disembarking',vgo_taxi_faction=FACTION,vgo_taxi_dest=self.station,
             vgo_taxi_pickup=self.station,vgo_tour_booked_fee=50000000,vgo_tour_booked_stops=10,
@@ -79,6 +80,7 @@ class PassengerVM(BaseVM):
             '$actor.room.hascontext.{$station}':'$mock_actor_station',
             '$actor.room.hascontext.{$ship}':'$mock_actor_ship',
             '$actor.isclass.npc':'$mock_actor_class',
+            '@$ship.dock.container':'$mock_dockcontainer',
             '$exitpoint.component.hascontext.{$station}':'$mock_point_station',
             '$exitpoint.component.hascontext.{$ship}':'$mock_point_ship',
             '@$entry.$exit.component.exists':'$mock_exit_exists',
@@ -86,6 +88,7 @@ class PassengerVM(BaseVM):
             '$ship.dock.walkablemodule':'$mock_module',
             '$ship.attention':'$mock_attention','attention.visible':'1'}
         for old,new in replacements.items():text=text.replace(old,new)
+        self.vars['mock_dockcontainer']=self.station
         for prop in re.findall(r'\$entry\.\$(\w+)\?',text):
             text=text.replace('$entry.$'+prop+'?','true' if prop in entry else 'false')
         for prop in re.findall(r'\$entry\.\$(\w+)',text):

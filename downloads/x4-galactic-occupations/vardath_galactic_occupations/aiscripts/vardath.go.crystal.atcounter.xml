@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.atcounter" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="buyer"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <set_value name="$actor" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_actor"/>
+      <set_value name="$trader" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_trader"/>
+      <return value="this.ship.isplayerowned and this.ship.order == @player.entity.$vgo_objects.{this.ship}.$vgo_order and @this.ship.dock.container == $buyer and $buyer.isoperational and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station == $buyer and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase == 'atcounter' and $actor.exists and $trader.exists and @player.entity.$vgo_objects.{$trader}.$vgo_shop_owner == this.ship and @player.entity.$vgo_objects.{$trader}.$vgo_shop_expires gt player.age and $trader.type == entitytype.trader and @$trader.roomslot.hastag.itemtrader and $actor.room.exists and $trader.room.exists and $actor.room == $trader.room and $actor.room.hascontext.{$buyer} and not $actor.room.hascontext.{this.ship} and $actor.distanceto.{$trader} le 5m and not $actor.iswalking"/>
+    </actions>
+  </attention>
+</aiscript>

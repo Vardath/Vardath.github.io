@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.destination" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params />
+  <attention min="unknown">
+    <actions>
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered">
+        <return value="true" />
+      </do_if>
+      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination? or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination == null">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination" exact="if @player.entity.$vgo_objects.{this.ship}.$vgo_passenger_service == 5 then @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup else @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
+      </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination" />
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.isoperational or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest.dockingallowed.{this.ship}">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service blocked: booked drop-off station unavailable or docking denied; passengers retained, no substitute station'" />
+        <return value="false" />
+      </do_if>
+      <return value="true" />
+    </actions>
+  </attention>
+</aiscript>

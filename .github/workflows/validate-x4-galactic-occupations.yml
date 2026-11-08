@@ -22,7 +22,7 @@ jobs:
           python-version: '3.12'
       - name: Install XML patch test dependency
         run: python -m pip install 'lxml>=5,<7'
-      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.3.5_DEV.zip --report /tmp/galactic-occupations-static-results.json
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.3.6_DEV.zip --report /tmp/galactic-occupations-static-results.json
       - name: Reported scope, boarding, survey and payment source guards
         run: python downloads/x4-galactic-occupations/tools/tests/source_contracts.py
       - name: Execute crystal inventory accounting contracts (mock native actions)
@@ -39,6 +39,12 @@ jobs:
         run: python downloads/x4-galactic-occupations/tools/tests/log8_recovery_contracts.py
       - name: Execute taxi/tour departure and unpaid-fare recovery contracts
         run: python downloads/x4-galactic-occupations/tools/tests/passenger_completion_contracts.py
+      - name: Execute native dispatch, booked-station and galaxy-routing contracts
+        run: python downloads/x4-galactic-occupations/tools/tests/log9_docking_contracts.py
+      - name: Execute crew counter visits, finite merchant transfers and service invoices
+        run: |
+          python downloads/x4-galactic-occupations/tools/tests/crystal_retail_contracts.py
+          python downloads/x4-galactic-occupations/tools/tests/service_payment_contracts.py
       - name: Install Lua 5.1 for X4-compatible syntax checks
         run: sudo apt-get update -qq && sudo apt-get install -y lua5.1
       - name: Execute addon UI contract tests (mock widgets; no X4 runtime)

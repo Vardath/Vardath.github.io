@@ -1,46 +1,74 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-  <params />
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.reward" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params/>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
-        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        <set_value name="player.entity.$vgo_objects" exact="table[]"/>
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
-        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]"/>
       </do_if>
       <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_job == 2 or player.entity.$vgo_objects.{this.ship}.$vgo_job == 5">
-        <run_script name="'vardath.go.passengers.pay'" result="$settled" />
-        <return value="$settled" />
+        <run_script name="'vardath.go.passengers.pay'" result="$settled"/>
+        <return value="$settled"/>
       </do_if>
-      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_verified or @player.entity.$vgo_objects.{this.ship}.$vgo_paid == player.entity.$vgo_objects.{this.ship}.$vgo_serial">
-        <return />
+      <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != this.ship.defaultorder">
+        <return value="false"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_paid" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial" />
-      <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction" />
-      <do_if value="$faction and $faction != faction.player and $faction != faction.ownerless and $faction.hasrelation.dock.{faction.player}">
-        <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_reward ge player.entity.$vgo_objects.{this.ship}.$vgo_minreward and player.entity.$vgo_objects.{this.ship}.$vgo_reward gt 0Cr">
-          <set_value name="$moneybefore" exact="player.money" />
-          <reward_player money="player.entity.$vgo_objects.{this.ship}.$vgo_reward" />
-          <set_value name="$paid" exact="[player.money - $moneybefore, 0Cr].max" />
-          <debug_text text="'GO payment: ship=%1 job=%2 serial=%3 promised=%4 actual=%5 balance_before=%6 balance_after=%7'.[this.ship.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_job,player.entity.$vgo_objects.{this.ship}.$vgo_serial,player.entity.$vgo_objects.{this.ship}.$vgo_reward,$paid,$moneybefore,player.money]" />
-          <do_if value="$paid le 0Cr">
-            <write_to_logbook category="general" title="'Galactic Occupations: payment not received'" text="this.ship.knownname + ': verified work promised ' + player.entity.$vgo_objects.{this.ship}.$vgo_reward.formatted.default + ' but the player balance did not increase; no income receipt was recorded'" />
-          </do_if>
+      <do_if value="not (@player.entity.$vgo_objects.{this.ship}.$vgo_service_due gt 0Cr and @player.entity.$vgo_objects.{this.ship}.$vgo_service_job == player.entity.$vgo_objects.{this.ship}.$vgo_job)">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_paid == player.entity.$vgo_objects.{this.ship}.$vgo_serial">
+          <return value="true"/>
+        </do_if>
+        <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_verified">
+          <return value="false"/>
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_job" exact="player.entity.$vgo_objects.{this.ship}.$vgo_job"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_rewardfaction"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_due" exact="0Cr"/>
+        <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_service_faction"/>
+        <do_if value="$faction and $faction != faction.player and $faction != faction.ownerless and player.entity.$vgo_objects.{this.ship}.$vgo_reward gt 0Cr">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_due" exact="player.entity.$vgo_objects.{this.ship}.$vgo_reward"/>
+        </do_if>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_retry"/>
+      </do_if>
+      <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_service_faction"/>
+      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_service_due gt 0Cr">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_service_retry gt player.age">
+          <return value="false"/>
+        </do_if>
+        <set_value name="$due" exact="player.entity.$vgo_objects.{this.ship}.$vgo_service_due"/>
+        <set_value name="$moneybefore" exact="player.money"/>
+        <reward_player money="$due"/>
+        <set_value name="$paid" exact="[[player.money - $moneybefore,0Cr].max,$due].min"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_due" exact="$due - $paid"/>
+        <debug_text text="'GO payment: ship=%1 job=%2 serial=%3 promised=%4 actual=%5 remaining=%6 balance_before=%7 balance_after=%8'.[this.ship.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_service_job,player.entity.$vgo_objects.{this.ship}.$vgo_service_id,$due,$paid,player.entity.$vgo_objects.{this.ship}.$vgo_service_due,$moneybefore,player.money]"/>
+        <do_if value="$paid gt 0Cr">
           <run_script name="'vardath.go.recordpayment'">
-            <param name="amount" value="$paid" />
-            <param name="details" value="'Verified service for ' + $faction.name" />
+            <param name="amount" value="$paid"/>
+            <param name="details" value="'Verified service #' + player.entity.$vgo_objects.{this.ship}.$vgo_service_id + ' for ' + $faction.name + '; unpaid balance ' + player.entity.$vgo_objects.{this.ship}.$vgo_service_due.formatted.default"/>
           </run_script>
         </do_if>
-        <do_if value="not player.entity.$vgo_rep_times?">
-          <set_value name="player.entity.$vgo_rep_times" exact="table[]" />
-        </do_if>
-        <do_if value="not player.entity.$vgo_rep_times.{$faction}? or player.entity.$vgo_rep_times.{$faction} le player.age">
-          <set_value name="player.entity.$vgo_rep_times.{$faction}" exact="player.age + 30min" />
-          <add_faction_relation faction="faction.player" otherfaction="$faction" value="0.0001" reason="relationchangereason.missioncompleted" />
+        <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_service_due gt 0Cr">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_retry" exact="player.age + 1min"/>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Verified service payment pending; retaining unpaid balance and retrying in one minute'"/>
+          <write_to_logbook category="general" title="'Galactic Occupations: service payment pending'" text="this.ship.knownname + ': verified service #' + player.entity.$vgo_objects.{this.ship}.$vgo_service_id + ' still owed ' + player.entity.$vgo_objects.{this.ship}.$vgo_service_due.formatted.default + '; no paid marker set'"/>
+          <return value="false"/>
         </do_if>
       </do_if>
-      <debug_text text="'GO: verified completion %s job %s serial %s'.[this.ship.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_job,player.entity.$vgo_objects.{this.ship}.$vgo_serial]" chance="player.entity.$vgo_objects.{this.ship}.$vgo_debug" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_paid" exact="player.entity.$vgo_objects.{this.ship}.$vgo_service_id"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_service_retry"/>
+      <do_if value="$faction and $faction != faction.player and $faction != faction.ownerless and $faction.hasrelation.dock.{faction.player}">
+        <do_if value="not player.entity.$vgo_rep_times?">
+          <set_value name="player.entity.$vgo_rep_times" exact="table[]"/>
+        </do_if>
+        <do_if value="not player.entity.$vgo_rep_times.{$faction}? or player.entity.$vgo_rep_times.{$faction} le player.age">
+          <set_value name="player.entity.$vgo_rep_times.{$faction}" exact="player.age + 30min"/>
+          <add_faction_relation faction="faction.player" otherfaction="$faction" value="0.0001" reason="relationchangereason.missioncompleted"/>
+        </do_if>
+      </do_if>
+      <return value="true"/>
     </actions>
   </attention>
 </aiscript>

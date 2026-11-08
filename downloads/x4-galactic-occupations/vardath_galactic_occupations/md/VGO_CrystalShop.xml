@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_CrystalShop" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Ships" exact="[]"/>
+      </actions>
+    </cue>
+    <cue name="Register" instantiate="true">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.crystal.shop'"/>
+      </conditions>
+      <actions>
+        <do_if value="event.param2.exists and not Init.$Ships.indexof.{event.param2}">
+          <append_to_list name="Init.$Ships" exact="event.param2"/>
+        </do_if>
+      </actions>
+    </cue>
+    <library name="RestoreCrew">
+      <actions>
+        <do_if value="$actor.exists">
+          <set_entity_traits entity="$actor" temporary="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_temporary"/>
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_setbusy">
+            <set_entity_traits entity="$actor" busy="false"/>
+          </do_if>
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_hadstay">
+            <set_value name="$actor.$Stay" exact="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_oldstay"/>
+          </do_if>
+          <do_else>
+            <remove_value name="$actor.$Stay"/>
+          </do_else>
+          <remove_value name="$actor.$vgo_sale_ship"/>
+        </do_if>
+      </actions>
+    </library>
+    <cue name="Operations" instantiate="true" checkinterval="2s">
+      <conditions>
+        <check_value value="Init.$Ships.count gt 0"/>
+      </conditions>
+      <actions>
+        <do_for_each name="$ship" in="Init.$Ships" counter="$i" reverse="true">
+          <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_actor"/>
+          <set_value name="$trader" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_trader"/>
+          <do_if value="not $ship.exists">
+            <do_if value="$trader.exists and @player.entity.$vgo_objects.{$trader}.$vgo_shop_owner == $ship">
+              <remove_value name="player.entity.$vgo_objects.{$trader}.$vgo_shop_owner"/>
+            </do_if>
+            <include_actions ref="RestoreCrew"/>
+            <remove_value name="Init.$Ships.{$i}"/>
+            <continue/>
+          </do_if>
+          <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_station"/>
+          <set_value name="$phase" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase"/>
+          <do_if value="not $phase or $phase == 'returned'">
+            <remove_value name="Init.$Ships.{$i}"/>
+            <continue/>
+          </do_if>
+          <set_value name="$active" exact="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and @$ship.order.id == 'VGO_crystal'"/>
+          <do_if value="$active and $station.isoperational and @$ship.dock.container == $station">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_service_dock" exact="$station"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_service_dock_until" exact="player.age + 30min"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" exact="player.age + 30min"/>
+          </do_if>
+          <do_if value="not $active or not $station.isoperational or @$ship.dock.container != $station">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+            <set_value name="$phase" exact="'returning'"/>
+          </do_if>
+          <do_if value="$phase == 'returning'">
+            <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_return_started?">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_return_started" exact="player.age"/>
+            </do_if>
+            <do_if value="$trader.exists and @player.entity.$vgo_objects.{$trader}.$vgo_shop_owner == $ship">
+              <remove_value name="player.entity.$vgo_objects.{$trader}.$vgo_shop_owner"/>
+            </do_if>
+            <do_if value="not $actor.exists and not @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returned'"/>
+              <remove_value name="Init.$Ships.{$i}"/>
+              <continue/>
+            </do_if>
+            <do_if value="not $actor.exists">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal representative lost; visit failed, unsold stock and unpaid invoice retained'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returned'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed" exact="false"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_success" exact="false"/>
+              <remove_value name="Init.$Ships.{$i}"/>
+              <continue/>
+            </do_if>
+            <do_if value="$actor.iswalking and player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_return_started + 2min and player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step + 20s">
+              <stop_actor_walk actor="$actor"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal representative return walk stalled; stopping and retrying the same actor path'"/>
+            </do_if>
+            <do_if value="$actor.room.exists and $actor.room.hascontext.{$ship} and not $actor.iswalking">
+              <include_actions ref="RestoreCrew"/>
+              <add_actor_to_post_location actor="$actor"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returned'"/>
+              <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed">
+                <write_to_logbook category="general" title="'Galactic Occupations: crystal representative returned'" text="$actor.knownname + ' returned aboard ' + $ship.knownname + '; crew identity and control post retained'"/>
+              </do_if>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed" exact="false"/>
+              <debug_text text="'GO crystal shop returned: ship=%1 actor=%2 sold=%3'.[$ship.debugname,$actor.debugname,@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_success]"/>
+              <remove_value name="Init.$Ships.{$i}"/>
+              <continue/>
+            </do_if>
+            <do_if value="@$ship.dock.container != $station">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal representative ashore at ' + $station.knownname + '; redock to recover the same crew member'"/>
+              <continue/>
+            </do_if>
+            <do_if value="player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step + 20s and not $actor.iswalking">
+              <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin"/>
+              <do_if value="not @$origin.component.exists or not $origin.component.hascontext.{$ship}">
+                <find_npc_slot name="$origin" object="$ship" tags="tag.npc_generic"/>
+              </do_if>
+              <do_if value="$origin">
+                <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot=$origin,$preventanimation=true]"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step" exact="player.age"/>
+              </do_if>
+            </do_if>
+            <continue/>
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" exact="player.age + 30min"/>
+          <do_if value="$phase == 'prepare'">
+            <do_if value="player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_started + 5min">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no usable crew/counter; retaining stock and returning before trying another station'"/>
+              <continue/>
+            </do_if>
+            <do_if value="not $actor.exists">
+              <find_object_component name="$crew" object="$ship" class="class.npc" multiple="true"/>
+              <do_for_each name="$member" in="$crew">
+                <do_if value="($member.role == entityrole.service or $member.role == entityrole.marine) and not $member.isbusy and not $member.ismissionactor and not $member.istransferscheduled and not @$member.$vgo_hack_ship.exists and not @$member.$vgo_sale_ship.exists">
+                  <set_value name="$actor" exact="$member"/>
+                  <break/>
+                </do_if>
+              </do_for_each>
+              <do_if value="not $actor.exists and $ship.pilot.exists and $ship.pilot.isclass.npc and not $ship.pilot.isbusy and not $ship.pilot.ismissionactor and not $ship.pilot.istransferscheduled and not @$ship.pilot.$vgo_hack_ship.exists and not @$ship.pilot.$vgo_sale_ship.exists">
+                <set_value name="$actor" exact="$ship.pilot"/>
+              </do_if>
+              <do_if value="not $actor.exists">
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale waiting for an available existing crew member or captain'"/>
+                <continue/>
+              </do_if>
+              <do_if value="not $actor.hasbody">
+                <add_actor_to_post_location actor="$actor"/>
+              </do_if>
+              <do_if value="not $actor.room.exists or not $actor.room.hascontext.{$ship}">
+                <continue/>
+              </do_if>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_actor" exact="$actor"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin" exact="$actor.roomslot"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_temporary" exact="$actor.istemporary"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_hadstay" exact="$actor.$Stay?"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_oldstay" exact="@$actor.$Stay"/>
+              <set_value name="$actor.$vgo_sale_ship" exact="$ship"/>
+              <set_value name="$actor.$Stay" exact="true"/>
+              <set_entity_traits entity="$actor" temporary="false"/>
+              <do_if value="$actor != $ship.pilot">
+                <set_entity_traits entity="$actor" busy="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_setbusy" exact="true"/>
+              </do_if>
+            </do_if>
+            <do_if value="player.age lt @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_nextprobe">
+              <continue/>
+            </do_if>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_nextprobe" exact="player.age + 10s"/>
+            <find_object_component name="$traders" object="$station" class="class.npc" entitytype="entitytype.trader" multiple="true">
+              <match controlpost="controlpost.shiptrader" negate="true"/>
+            </find_object_component>
+            <set_value name="$trader" exact="null"/>
+            <do_for_each name="$candidate" in="$traders">
+              <do_if value="$candidate.exists and $candidate.room.exists and $candidate.room.hascontext.{$station} and not $candidate.room.hascontext.{$ship} and @$candidate.roomslot.hastag.itemtrader and (not @player.entity.$vgo_objects.{$candidate}.$vgo_shop_owner.exists or @player.entity.$vgo_objects.{$candidate}.$vgo_shop_owner == $ship or @player.entity.$vgo_objects.{$candidate}.$vgo_shop_expires lt player.age)">
+                <set_value name="$trader" exact="$candidate"/>
+                <break/>
+              </do_if>
+            </do_for_each>
+            <do_if value="not $trader.exists">
+              <do_if value="not player.entity.$vgo_objects.{$station}?">
+                <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]"/>
+              </do_if>
+              <do_if value="@player.entity.$vgo_objects.{$station}.$vgo_shop_population_after le player.age and md.NPC_Instantiation.PlaceItemTrader.exists">
+                <set_value name="player.entity.$vgo_objects.{$station}.$vgo_shop_population_after" exact="player.age + 1min"/>
+                <signal_cue_instantly cue="md.NPC_Instantiation.PlaceItemTrader" param="$station"/>
+              </do_if>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: waiting for a real inventory trader at a native trading corner'"/>
+              <continue/>
+            </do_if>
+            <set_value name="$room" exact="$trader.room"/>
+            <set_value name="$counter" exact="$trader.roomslot"/>
+            <find_npc_slot name="$points" object="$room" tags="tag.npc_generic" multiple="true"/>
+            <set_value name="$goal" exact="null"/>
+            <set_value name="$best" exact="4m"/>
+            <do_for_each name="$point" in="$points">
+              <do_if value="$point.distanceto.{$counter} lt $best">
+                <set_value name="$best" exact="$point.distanceto.{$counter}"/>
+                <set_value name="$goal" exact="$point"/>
+              </do_if>
+            </do_for_each>
+            <do_if value="$goal">
+              <set_value name="$movement" exact="table[$slot=$goal,$preventanimation=true]"/>
+            </do_if>
+            <do_else>
+              <find_actor_interaction_point actor="$actor" object="$station" slot="$counter" posname="$offset" rotname="$rotation"/>
+              <do_if value="not $offset">
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no real walkable customer position at this counter'"/>
+                <continue/>
+              </do_if>
+              <transform_position name="$goalpos" refposition="$counter.relativeposition.{$room}" refrotation="$counter.relativerotation.{$room}">
+                <position value="$offset"/>
+              </transform_position>
+              <set_value name="$movement" exact="table[$context=$room,$room=$room,$offset=$goalpos,$preventanimation=true]"/>
+            </do_else>
+            <do_if value="not player.entity.$vgo_objects.{$trader}?">
+              <set_value name="player.entity.$vgo_objects.{$trader}" exact="table[]"/>
+            </do_if>
+            <set_value name="player.entity.$vgo_objects.{$trader}.$vgo_shop_owner" exact="$ship"/>
+            <set_value name="player.entity.$vgo_objects.{$trader}.$vgo_shop_expires" exact="player.age + 15min"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_trader" exact="$trader"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_room" exact="$room"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_movement" exact="$movement"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_manifest" exact="player.entity.$vgo_objects.{$ship}.$vgo_crystal_stock.clone"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed" exact="true"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'walking'"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_walkstart" exact="player.age"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step" exact="player.age"/>
+            <signal_objects object="$actor" param="'npc_move_to'" param2="$movement"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: ' + $actor.knownname + ' walking to the trading corner counter'"/>
+            <continue/>
+          </do_if>
+          <do_if value="$phase == 'walking' or $phase == 'atcounter'">
+            <set_value name="$trader" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_trader"/>
+            <do_if value="not $actor.exists or not $trader.exists or not @$trader.roomslot.hastag.itemtrader or @player.entity.$vgo_objects.{$trader}.$vgo_shop_owner != $ship or player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_walkstart + 10min">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+              <continue/>
+            </do_if>
+            <set_value name="player.entity.$vgo_objects.{$trader}.$vgo_shop_expires" exact="player.age + 15min"/>
+            <set_value name="$near" exact="$actor.room.exists and $trader.room.exists and $actor.room == $trader.room and not $actor.room.hascontext.{$ship} and $actor.distanceto.{$trader} le 5m and not $actor.iswalking"/>
+            <do_if value="$near">
+              <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since?">
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since" exact="player.age"/>
+              </do_if>
+              <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since + 5s">
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'atcounter'"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal representative at the inventory-trader counter; verifying stock and sale'"/>
+              </do_if>
+            </do_if>
+            <do_else>
+              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'walking'"/>
+              <do_if value="not $actor.iswalking and player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step + 20s">
+                <signal_objects object="$actor" param="'npc_move_to'" param2="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_movement"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step" exact="player.age"/>
+              </do_if>
+            </do_else>
+          </do_if>
+        </do_for_each>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

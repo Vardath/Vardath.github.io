@@ -44,6 +44,9 @@ class VM:
                     'vgo_risk':1,'vgo_serial':0}
         self.vars={'source':CAPTAIN,'limits':None}
         self.inventories={CAPTAIN:{},ENTITY:{}}
+        self.merchant=Obj('merchant',exists=True)
+        self.inventories[self.merchant]={}
+        self.accept_limit=None;self.counter_authorized=True;self.goods_transfers=[]
         self.money=10000000;self.age=1000;self.owned=True;self.direct=False
         self.occupied=False;self.docked=BUYER;self.can_dock=True;self.departed=True
         self.in_scope=True;self.credit_limit=None;self.remove_limit=None
@@ -84,6 +87,7 @@ class VM:
         t=t.replace('this.ship.sector','ship_sector')
         t=t.replace('player.entity.inventory.{$ware}.count',"inv(entity,v('ware'))")
         t=t.replace('$source.inventory.{$ware}.count',"inv(v('source'),v('ware'))")
+        t=t.replace('$trader.inventory.{$ware}.count',"inv(v('trader'),v('ware'))")
         t=t.replace('player.entity', 'entity') if '$vgo_objects' not in t and '$vgo_rep_times' not in t else t
         t=t.replace('$ware.averageprice',"price(v('ware'))")
         t=t.replace('$buyer.owner.hasrelation.dock.{faction.player}',"v('buyer').owner.dock_ok")
@@ -164,6 +168,11 @@ class VM:
                 amount=min(request,self.inventories[owner].get(ware,0))
                 if self.remove_limit is not None:amount=min(amount,self.remove_limit)
                 self.inventories[owner][ware]=self.inventories[owner].get(ware,0)-amount
+            elif tag=='add_inventory':
+                owner=self.expr(n.get('entity'));ware=self.expr(n.get('ware'));request=self.expr(n.get('exact'))
+                amount=request if self.accept_limit is None else min(request,self.accept_limit)
+                self.inventories[owner][ware]=self.inventories[owner].get(ware,0)+amount
+                self.goods_transfers.append((owner,ware,amount))
             elif tag=='deplete_yield':
                 requested=self.expr(n.get('amount'));actual=min(requested,self.resource)
                 self.resource-=actual;self.assign(n.get('amount'),actual)
@@ -180,6 +189,21 @@ class VM:
                 elif name=='vardath.go.dock':
                     self.docked=self.vars['buyer'] if self.can_dock else NULL
                     value=self.can_dock
+                elif name=='vardath.go.crystal.atcounter':value=self.counter_authorized and not self.direct
+                elif name=='vardath.go.crystal.shop':
+                    # Financial tests mock the entire room visit. The separate
+                    # retail suite executes its real MD/AI movement control flow.
+                    buyer=self.expr(params['buyer']);saved=dict(self.vars)
+                    self.vars['buyer']=buyer
+                    if not self.get('vgo_crystal_shop_phase'):
+                        self.state['vgo_crystal_shop_manifest']=dict(self.get('vgo_crystal_stock'))
+                    self.state['vgo_crystal_shop_station']=buyer
+                    self.state['vgo_crystal_shop_trader']=self.merchant
+                    self.state['vgo_crystal_shop_phase']='atcounter'
+                    value=self.run('vardath.go.crystal.settle')
+                    if value or not self.get('vgo_crystal_sale_units'):
+                        self.state.pop('vgo_crystal_shop_phase',None)
+                    self.vars=saved
                 else:raise AssertionError('Unknown native/script mock '+name)
                 if n.get('result'):self.assign(n.get('result'),value)
             elif tag=='find_station':self.assign(n.get('name'),self.station_candidates)

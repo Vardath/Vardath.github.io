@@ -15,7 +15,7 @@ COMPAT_PATCHES = {
     MOD/'extensions/fs_exp/aiscripts/sectorexplorer.xml',
     MOD/'extensions/z_ram_autotradesubs/md/ramautosubs.xml',
 }
-NATIVE_RECOVERY_PATCHES = {MOD/'md/finalisestations.xml', MOD/'md/lib_generic.xml'}
+NATIVE_RECOVERY_PATCHES = {MOD/'md/finalisestations.xml', MOD/'md/lib_generic.xml', MOD/'aiscripts/orders.base.xml', MOD/'aiscripts/move.generic.xml'}
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--reference', type=Path, help='Extracted installed X4 root: libraries/*.xsd and aiscripts/*.xml')
 parser.add_argument('--report', type=Path)
@@ -88,7 +88,7 @@ for path, root in trees.items():
         continue
     if root.tag == 'diff' and path in NATIVE_RECOVERY_PATCHES:
         for op in root:
-            if op.tag != 'replace' or set(op.attrib) != {'sel'} or len(op) or not op.get('sel','').endswith(('/@value','/@wares')):
+            if op.tag != 'replace' or set(op.attrib) != {'sel'} or len(op) or not op.get('sel','').endswith(('/@value','/@wares','/@useknownpath')):
                 error(path, 'native recovery patches may only replace specific guard/loadout attributes')
         continue
     if root.tag == 'addon':
@@ -192,11 +192,11 @@ for key in JOBS:
     if f'vardath.go.task.{key}' not in scripts:
         error(path, 'occupation task script missing')
 
-# Only the two log-proven optional expression fixes and icon aliases are patches.
+# Permit only the explicit optional compatibility, native integration and icon diffs.
 for path, root in trees.items():
     if root.tag == 'diff' and path != MOD/'libraries/icons.xml' and path not in COMPAT_PATCHES | NATIVE_RECOVERY_PATCHES:
         error(path, 'unexpected vanilla/mod patch')
-    if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem and path not in COMPAT_PATCHES:
+    if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem and path not in COMPAT_PATCHES and path not in NATIVE_RECOVERY_PATCHES:
         error(path, 'non-namespaced AI script')
 
 schema_status = 'NOT RUN: installed X4 schemas unavailable'
@@ -236,7 +236,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New travel, passenger departure and fare-settlement repairs remain unverified in X4.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(9).log reviewed. Latest log records three taxi and two seller dock-to-Undock handoffs, 86/88 failed travel returns, four invalid time-remainder errors, three actual depleted-yield crystal batches (72 items) and one 8,000 Cr patrol payment. New integration remains unverified in X4.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

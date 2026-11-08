@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.commercial" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.commercial" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase">
+        <run_script name="'vardath.go.sellcrystals'" result="$sold" />
+        <return value="if $sold then 1 else 2" />
+      </do_if>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_commercial" exact="true" />
       <run_script name="'vardath.go.crystal.stock'" />
       <set_value name="$stock" exact="0" />

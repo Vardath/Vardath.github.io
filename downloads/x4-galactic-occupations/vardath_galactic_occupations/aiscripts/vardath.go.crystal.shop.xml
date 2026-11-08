@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.shop" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="buyer"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase">
+        <do_if value="@this.ship.dock.container != $buyer">
+          <return value="false"/>
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station" exact="$buyer"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'prepare'"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_started" exact="player.age"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_step" exact="player.age"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_success" exact="false"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_deployed" exact="false"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_actor"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_counter_since"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_nextpayment"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_nextprobe"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_setbusy"/>
+        <signal_objects object="player.entity" param="'vardath.go.crystal.shop'" param2="this.ship"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_return_started"/>
+      </do_if>
+      <do_while value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase != 'returned'">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min"/>
+        <do_if value="this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or this.ship == player.occupiedship">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+          <return value="false"/>
+        </do_if>
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase == 'atcounter' and player.age ge @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_nextpayment">
+          <run_script name="'vardath.go.crystal.settle'" result="$sold">
+            <param name="buyer" value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
+          </run_script>
+          <do_if value="$sold">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_success" exact="true"/>
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+          </do_if>
+          <do_elseif value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units le 0">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+          </do_elseif>
+          <do_else>
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_nextpayment" exact="player.age + 1min"/>
+          </do_else>
+        </do_if>
+        <wait exact="2s"/>
+      </do_while>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase == 'returned'">
+        <set_value name="$success" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_success"/>
+        <do_if value="not $success">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_failed" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_retry" exact="player.age + 10min"/>
+          <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station"/>
+        </do_if>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_deployed"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_manifest"/>
+        <return value="$success"/>
+      </do_if>
+      <return value="false"/>
+    </actions>
+  </attention>
+</aiscript>

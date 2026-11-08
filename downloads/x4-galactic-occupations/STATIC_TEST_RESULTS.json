@@ -1,16 +1,18 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 71,
-    "commands": 3541,
-    "script_calls": 122,
+    "xml_files": 78,
+    "commands": 3845,
+    "script_calls": 131,
     "behaviours": 13,
     "ui_addons": 1
   },
   "installed_schema_validation": "NOT RUN: installed X4 schemas unavailable",
   "reference_provenance": {
+    "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
     "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
     "log8_native_reference": "Native 9.00 move.generic endintargetsector guard, order.dock failure/current-order critical side effects, orderstate critical-to-finish semantics and declared scriptproperties inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. averagemaxyield is absent from 9.00 scriptproperties; unsupported optimization removed.",
+    "log9_native_handoff": "Native 9.00 orders.base explicit pre-start undocking allowlist inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. One attribute guard exempts only owned VGO taxi/tour/crystal/hacker/hackonce orders equal to their tracked worker at the recorded operational dock before a 30-minute expiry. Four move.generic jump-discovery attributes honour the declared useknownpath parameter for tracked VGO workers runtime>=36; native blacklists and other orders are unchanged.",
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
@@ -23,7 +25,7 @@
       "9.00"
     ]
   },
-  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(8).log reviewed. Latest log confirms five patrol payments (40,000 Cr), one escort payment (12,000 Cr), eight morale completions, 141 failed sector arrivals and the mining error flood. New travel, passenger departure and fare-settlement repairs remain unverified in X4.",
+  "runtime": "NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(9).log reviewed. Latest log records three taxi and two seller dock-to-Undock handoffs, 86/88 failed travel returns, four invalid time-remainder errors, three actual depleted-yield crystal batches (72 items) and one 8,000 Cr patrol payment. New integration remains unverified in X4.",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",

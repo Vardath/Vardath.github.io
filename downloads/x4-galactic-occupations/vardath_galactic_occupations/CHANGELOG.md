@@ -1,5 +1,15 @@
 # Version history
 
+## 0.3.6 — native landing-loop and shared routing recovery
+
+- Fix the demonstrated native DockAt-to-Undock boundary with one scoped attribute guard and a bounded saved service handoff. Keep own taxi/tour/crystal/hacker work at its actual service dock; clear before explicit departure. Other orders retain native handling.
+- Lock taxi drop-off and tour pickup return stations after booking. Remove automatic passenger diversion, retain blocked parties and enforce the booked destination during actual departure. Initialise a missing legacy departure clock without resetting person-level deadlines.
+- Honour the declared native known-path parameter in four jump-discovery attributes only for the tracked VGO worker. Cover all thirteen roles and remote Morale movement while retaining blacklists/range/risk.
+- Replace invalid time remainder in crystal field search with persistent boolean alternation. Keep actual finite depletion, stock and observed sale accounting.
+- Add a physical existing-crew crystal-sale visit: real native trading corner, actual merchant inventory acceptance, finite manifest/invoice, same-actor return and restored crew flags. No replacement crew or fictional shop. Preserve partial cash claims and native ledger receipts.
+- Retry unpaid verified escort/patrol invoices without setting an early paid marker; retry existing claims before new work or repeat-off standby.
+- Add 23 retail state/accounting and 9 service-invoice cases alongside 19 native-boundary/destination/route cases. All 203 Python contracts and 78 Lua mocks pass; five native selector matches/diff grammar checked. Log9 records 72 simulated items but no sale/passenger payment. New in-game execution remains unverified; see LOG_REVIEW_0.3.6.md.
+
 ## 0.3.5 — taxi/tour departure and booked fare settlement
 
 - Release only booked passenger templates before native movement; retain the same actors until observed station-room departure. Prefer transport waypoints, allow real station points at non-walkable piers and recover blocked visible paths after two minutes using native-style same-actor placement. No timer/native-success-only completion.

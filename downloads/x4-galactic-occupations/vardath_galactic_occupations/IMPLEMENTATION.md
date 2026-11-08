@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.5
+# Implementation and native-interface provenance — 0.3.6
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -29,3 +29,15 @@ All new money is native `reward_player` / `script_add`, recorded only by observe
 ## Passenger completion and settlement
 
 0.3.5 routes both taxi/tour drop-off through `PassengerDisembarkV35`. Native-style template release precedes movement; the same persistent actor must reach a real station room, with all manifest entries confirmed. Visible walking has a two-minute blocked-path recovery using native room placement; this is documented as a recovery alternative. Departure retries retain actor identities and timestamps. `vardath.go.passengers.pay` records only observed credit deltas, persists unpaid balances, marks paid only after full receipt, and gates tour settlement on its booked itinerary. See PASSENGER_COMPLETION_0.3.5.md for native sources, tests, limitations and live acceptance.
+
+## Native pre-start dispatch and booked destinations
+
+0.3.6 adds one scoped attribute guard in `aiscripts/orders.base.xml` so an owned tracked docking occupation can resume at its exact saved service dock before native auto-undocking. The bounded handoff is set before native DockAt and cleared before explicit departure. Four scoped `move.generic` jump-discovery attributes honour the existing native parameter for tracked workers, including Morale. `vardath.go.passengers.destination` freezes booked taxi drop-off/tour pickup return and blocks invalid destinations without an alternate. Full evidence, native selectors, all-thirteen-role coverage and runtime limits are in LOG_REVIEW_0.3.6.md.
+
+## Crew counter sales and verified service invoices
+
+0.3.6 adds `VGO_CrystalShop` with a staggered two-second registry of active visits, plus `vardath.go.crystal.shop`, `.atcounter` and `.settle`. An existing available service crew/marine or captain remains the same actor with the same role/control post. Native `NPC_Instantiation.PlaceItemTrader` is signalled only at a real docked station, throttled to once per station/minute; only an actual itemtrader slot and real trader NPC qualify. Native `npc_move_to` walks the representative out and back. Native `$Stay` is temporarily preserved/overridden to prevent wandering; temporary/busy/Stay flags are restored on return. A stalled return walk is stopped after two minutes and the same path is retried. No crew is cloned, roster template removed or station counter invented.
+
+At the actual counter after a five-second dwell, settlement rechecks presence before and after ten seconds, transfers only the departure snapshot of finite saved stock, observes the merchant's accepted inventory delta and invoices only that quantity. Subsequent partial-payment retries do not transfer goods again. Only actual positive player credits generate native-ledger/logbook descriptions. The custom broker price is each native crystal ware's average price; this is not the player Trade UI or a vanilla NPC sale API. A paid empty-stock visit still resumes until the same crew is aboard; player direct orders have priority and can require redocking to recover a representative. Native room streaming and remote counter movement remain unverified here. See CREW_CRYSTAL_SALES_0.3.6.md.
+
+`vardath.go.reward` now snapshots verified service fee/serial/faction and retains unpaid balances. Zero/partial native credit does not set a paid marker or grant completion reputation. The worker retries this existing claim before another assignment can reset its serial and before repeat-off standby. Morale remains a zero-cash service that grants controlled reputation only after actual skill improvement. Old versions' already-set paid markers cannot establish that an unrecorded historical fee is owed, so no guessed retroactive payments are generated.
