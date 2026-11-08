@@ -1,87 +1,96 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="12" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_crystal" name="{191180,106}" description="{191180,206}" category="mining" infinite="true" allowinloop="false">
     <params>
-      <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
+      <param name="home" type="sector" default="this.ship.sector" text="{191180,2}"/>
       <param name="range" type="number" default="99" text="{191180,3}">
-        <input_param name="min" value="0" />
-        <input_param name="max" value="99" />
-        <input_param name="step" value="1" />
+        <input_param name="min" value="0"/>
+        <input_param name="max" value="99"/>
+        <input_param name="step" value="1"/>
       </param>
       <param name="risk" type="number" default="1" text="{191180,4}">
-        <input_param name="min" value="0" />
-        <input_param name="max" value="2" />
-        <input_param name="step" value="1" />
+        <input_param name="min" value="0"/>
+        <input_param name="max" value="2"/>
+        <input_param name="step" value="1"/>
       </param>
-      <param name="repeat" type="bool" default="true" text="{191180,6}" />
+      <param name="repeat" type="bool" default="true" text="{191180,6}"/>
       <param name="debugchance" type="bool" default="0" text="{191180,8}" advanced="true">
-        <input_param name="truevalue" value="100" />
+        <input_param name="truevalue" value="100"/>
       </param>
       <param name="simfallback" type="bool" default="true" text="{191180,53}">
-        <patch sinceversion="11" condition="$simfallback == null" value="true" />
+        <patch sinceversion="11" condition="$simfallback == null" value="true"/>
       </param>
       <param name="miningtime" type="time" default="5min" text="{191180,54}">
-        <input_param name="min" value="1min" />
-        <input_param name="max" value="30min" />
-        <input_param name="step" value="1min" />
-        <patch sinceversion="11" condition="$miningtime == null" value="5min" />
+        <input_param name="min" value="1min"/>
+        <input_param name="max" value="30min"/>
+        <input_param name="step" value="1min"/>
+        <patch sinceversion="11" condition="$miningtime == null" value="5min"/>
       </param>
       <param name="batchsize" type="number" default="24" text="{191180,55}">
-        <input_param name="min" value="1" />
-        <input_param name="max" value="60" />
-        <input_param name="step" value="1" />
-        <patch sinceversion="11" condition="$batchsize == null" value="24" />
+        <input_param name="min" value="1"/>
+        <input_param name="max" value="60"/>
+        <input_param name="step" value="1"/>
+        <patch sinceversion="11" condition="$batchsize == null" value="24"/>
+      </param>
+      <param name="simulatesales" type="bool" default="true" text="{191180,56}">
+        <patch sinceversion="12" condition="$simulatesales == null" value="true"/>
       </param>
     </params>
     <requires>
-      <match owner="faction.player" />
-      <match class="class.spacesuit" negate="true" />
-      <match shiptype="shiptype.lasertower" negate="true" />
-      <match unit="false" />
-      <match class="[class.ship_s, class.ship_m, class.ship_l, class.ship_xl]" />
+      <match owner="faction.player"/>
+      <match class="class.spacesuit" negate="true"/>
+      <match shiptype="shiptype.lasertower" negate="true"/>
+      <match unit="false"/>
+      <match class="[class.ship_s, class.ship_m, class.ship_l, class.ship_xl]"/>
     </requires>
-    <location object="if @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists then player.entity.$vgo_objects.{this.ship}.$vgo_destination else (if @player.entity.$vgo_objects.{this.ship}.$vgo_target.exists then player.entity.$vgo_objects.{this.ship}.$vgo_target else this.ship)" />
+    <location object="if @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists then player.entity.$vgo_objects.{this.ship}.$vgo_destination else (if @player.entity.$vgo_objects.{this.ship}.$vgo_target.exists then player.entity.$vgo_objects.{this.ship}.$vgo_target else this.ship)"/>
   </order>
   <interrupts>
-    <handler ref="AttackHandler" />
-    <handler ref="MissileLockHandler" />
-    <handler ref="ScannedHandler" />
-    <handler ref="InspectedHandler" />
-    <handler ref="TideHandler" />
+    <handler ref="AttackHandler"/>
+    <handler ref="MissileLockHandler"/>
+    <handler ref="ScannedHandler"/>
+    <handler ref="InspectedHandler"/>
+    <handler ref="TideHandler"/>
   </interrupts>
   <attention min="unknown">
     <actions>
-      <debug_text text="'GO behaviour startup: %1 requested=VGO_crystal default=%2 current=%3'.[this.ship.debugname,this.ship.defaultorder.id,this.ship.order.id]" />
-      <label name="work" />
-      <set_order_syncpoint_reached order="this.ship.order" />
+      <debug_text text="'GO behaviour startup: %1 requested=VGO_crystal default=%2 current=%3'.[this.ship.debugname,this.ship.defaultorder.id,this.ship.order.id]"/>
+      <label name="work"/>
+      <set_order_syncpoint_reached order="this.ship.order"/>
       <run_script name="'vardath.go.worker'">
-        <param name="job" value="6" />
-        <param name="home" value="$home" />
-        <param name="range" value="$range" />
-        <param name="risk" value="$risk" />
-        <param name="repeat" value="$repeat" />
-        <param name="debugchance" value="$debugchance" />
-        <param name="simfallback" value="$simfallback" />
-        <param name="miningtime" value="$miningtime" />
-        <param name="batchsize" value="$batchsize" />
+        <param name="job" value="6"/>
+        <param name="home" value="$home"/>
+        <param name="range" value="$range"/>
+        <param name="risk" value="$risk"/>
+        <param name="repeat" value="$repeat"/>
+        <param name="debugchance" value="$debugchance"/>
+        <param name="simfallback" value="$simfallback"/>
+        <param name="miningtime" value="$miningtime"/>
+        <param name="batchsize" value="$batchsize"/>
+        <param name="simulatesales" value="$simulatesales"/>
       </run_script>
-      <wait exact="15s" />
+      <wait exact="15s"/>
       <do_if value="this.ship.isplayerowned and this.ship.defaultorder.id == 'VGO_crystal'">
-        <resume label="work" />
+        <resume label="work"/>
       </do_if>
     </actions>
   </attention>
   <patch sinceversion="9">
     <do_if value="not $simfallback?">
-      <set_value name="$simfallback" exact="true" />
+      <set_value name="$simfallback" exact="true"/>
     </do_if>
   </patch>
   <patch sinceversion="10">
     <do_if value="not $miningtime?">
-      <set_value name="$miningtime" exact="5min" />
+      <set_value name="$miningtime" exact="5min"/>
     </do_if>
     <do_if value="not $batchsize?">
-      <set_value name="$batchsize" exact="24" />
+      <set_value name="$batchsize" exact="24"/>
+    </do_if>
+  </patch>
+  <patch sinceversion="12">
+    <do_if value="not $simulatesales? or @$simulatesales == null">
+      <set_value name="$simulatesales" exact="true"/>
     </do_if>
   </patch>
 </aiscript>

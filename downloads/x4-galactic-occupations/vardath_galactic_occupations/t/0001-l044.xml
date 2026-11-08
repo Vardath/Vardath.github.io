@@ -55,5 +55,6 @@
     <t id="53">Simulate crystal mining off screen</t>
     <t id="54">Off-screen mining time per batch</t>
     <t id="55">Off-screen crystal items per full batch</t>
+    <t id="56">Simulate crystal sales off screen</t>
   </page>
 </language>

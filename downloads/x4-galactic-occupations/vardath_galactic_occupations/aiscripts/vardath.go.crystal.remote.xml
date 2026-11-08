@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.remote" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="buyer"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <run_script name="'vardath.go.crystal.remote.allowed'" result="$allowed">
+        <param name="buyer" value="$buyer"/>
+      </run_script>
+      <do_if value="not $allowed or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_retry gt player.age">
+        <return value="false"/>
+      </do_if>
+      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock?">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_manifest" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.clone"/>
+      </do_if>
+      <do_else>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_manifest" exact="table[]"/>
+      </do_else>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Off-screen crystal sale: docked at ' + $buyer.knownname + '; settling finite saved stock through the station broker'"/>
+      <wait exact="30s"/>
+      <run_script name="'vardath.go.crystal.remote.allowed'" result="$allowed">
+        <param name="buyer" value="$buyer"/>
+      </run_script>
+      <do_if value="not $allowed">
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_manifest"/>
+        <return value="false"/>
+      </do_if>
+      <run_script name="'vardath.go.crystal.exchange'" result="$sold">
+        <param name="buyer" value="$buyer"/>
+        <param name="physical" value="false"/>
+      </run_script>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_manifest"/>
+      <do_if value="$sold">
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_retry"/>
+        <debug_text text="'GO crystal off-screen sale completed: ship=%1 buyer=%2 stock-backed invoice=%3'.[this.ship.debugname,$buyer.debugname,player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_id]"/>
+      </do_if>
+      <do_elseif value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units gt 0">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_remote_retry" exact="player.age + 1min"/>
+      </do_elseif>
+      <return value="$sold"/>
+    </actions>
+  </attention>
+</aiscript>

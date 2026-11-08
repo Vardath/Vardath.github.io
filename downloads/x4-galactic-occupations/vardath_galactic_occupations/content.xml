@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations. Crystal counter-service first-use timers, buyer cooldowns and stage diagnostics; booked passenger services, native routing and stock-backed payments. Development build: runtime confirmation pending." author="Vardath" version="37" date="2026-11-08" save="1" enabled="1">
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations. Stock-backed off-screen crystal sales; native-validated physical counter paths; named passenger roster transfers and booked-station handoffs. Runtime confirmation remains pending." author="Vardath" version="38" date="2026-11-08" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ws_2074838459" optional="true" name="Sector Explorer"/>
   <dependency id="ws_3650236535" optional="true" name="Auto Trade Subscriptions"/>

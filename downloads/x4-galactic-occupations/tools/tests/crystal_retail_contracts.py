@@ -8,7 +8,7 @@ import copy
 import re
 import unittest
 import xml.etree.ElementTree as E
-from crystal_commerce_contracts import VM, Obj, NULL, BUYER, ENTITY, S, WARES, Returned, Continued, Broken, MOD, xml
+from crystal_commerce_contracts import VM, Obj, NULL, BUYER, ENTITY, SECTOR, S, WARES, Returned, Continued, Broken, MOD, xml
 from passenger_completion_contracts import Seq
 
 MD='player.entity.$vgo_objects.{$ship}'
@@ -29,6 +29,7 @@ class RetailVM(VM):
         super().__init__({WARES[0]:4} if stock is None else stock)
         self.order=Obj('order',id='VGO_crystal',exists=True)
         self.ship=Obj('ship',exists=True,isplayerowned=True,order=self.order,defaultorder=self.order)
+        self.ship.sector=SECTOR;self.ship.attention=1;self.player_sector=SECTOR
         self.shiproom=Obj('shiproom',exists=True,context=self.ship)
         self.shoproom=Obj('shoproom',exists=True,context=BUYER)
         self.seat=Obj('seat',component=self.shiproom)
@@ -45,6 +46,7 @@ class RetailVM(VM):
         self.trader_population=True;self.counter_points=True;self.interaction_point=True
         self.offset=Obj('offset',exists=True);self.distance=2;self.population_calls=[]
         self.populate_merchants=False;self.counter_slots=True;self.payment_attempt_times=[]
+        self.floor_checks=[];self.floor_results=None;self.native_slot_walkable=True
         self.state['vgo_order']=self.order;self.ticks=0
         self.vars.update(ship=self.ship,buyer=BUYER)
 
@@ -63,12 +65,15 @@ class RetailVM(VM):
     def expr(self,text):
         text=text.replace('this.ship','$ship').replace(MD,S)
         self.ship.order=NULL if self.direct else self.order
+        self.ship.isplayerowned=self.owned
         self.ship.dock=Obj('dock',container=self.docked) if self.docked is not NULL else NULL
         self.vars['registry']=self.registry
         if text.startswith('table[') and text!='table[]':
             return {k.strip().lstrip('$'):self.expr(v.strip()) for k,v in
                     (part.split('=',1) for part in text[6:-1].split(','))}
         text=text.replace('player.occupiedship',self.remembered(self.ship if self.occupied else NULL))
+        text=text.replace('player.sector',self.remembered(self.player_sector)).replace('attention.visible','1')
+        text=text.replace('$buyer.dockingallowed.{$ship}',self.remembered(self.can_dock))
         text=text.replace('Init.$Ships','$registry')
         text=re.sub(r'@?'+re.escape(S)+r'\.\$(\w+)\.clone',lambda m:self.remembered(copy.deepcopy(self.get(m[1]))),text)
         p=r'@?player\.entity\.\$vgo_objects\.\{\$(\w+)\}(?:\.\$(\w+))?(\?)?'
@@ -85,7 +90,7 @@ class RetailVM(VM):
         text=text.replace('md.NPC_Instantiation.PlaceItemTrader.exists','true')
         for token in ['service','marine']:text=text.replace('entityrole.'+token,repr(token))
         text=text.replace('entitytype.trader',"'trader'")
-        text=re.sub(r'(\d+)m\b',r'\1',text)
+        text=re.sub(r'(\d+(?:\.\d+)?)m\b',r'\1',text)
         text=re.sub(r'@(?=\$)','',text)
         try:return super().expr(text)
         except (AttributeError,SyntaxError,TypeError) as error:raise AssertionError('Unmodelled retail expression '+text) from error
@@ -134,6 +139,11 @@ class RetailVM(VM):
                     self.ticks+=1
                     if self.ticks>1000:raise AssertionError('Retail loop exceeded mock budget')
                     self.execute(n)
+            elif tag=='do_all':
+                for i in range(1,self.expr(n.get('exact'))+1):
+                    if n.get('counter'):self.vars[n.get('counter')[1:]]=i
+                    try:self.execute(n)
+                    except Broken:break
             elif tag=='include_actions':self.execute(ROOT.find(".//library[@name='"+n.get('ref')+"']/actions"))
             elif tag=='find_object_component':self.assign(n.get('name'),self.traders if n.get('entitytype') else self.crewlist)
             elif tag=='find_npc_slot':
@@ -141,10 +151,20 @@ class RetailVM(VM):
                 else:value=Seq([self.customer]) if n.get('multiple') and self.counter_points else self.seat if not n.get('multiple') else Seq()
                 self.assign(n.get('name'),value)
             elif tag=='find_actor_interaction_point':
-                # Interaction is with the actual merchant, not the station hull.
-                valid=self.interaction_point and self.expr(n.get('object')) is self.merchant
-                self.assign(n.get('posname'),self.offset if valid else None)
-            elif tag=='transform_position':self.assign(n.get('name'),self.offset)
+                raise AssertionError('NPCs are not class.object; retail must use native room-path validation')
+            elif tag=='find_npc_waypoint':
+                points=Seq()
+                if n.get('append')=='true':points=Seq(self.vars.get(n.get('name')[1:],[]))
+                self.assign(n.get('name'),points)
+            elif tag=='transform_position':
+                p=n.find('position');coords={k:self.expr(p.get(k,'0m')) for k in ['x','y','z']}
+                self.offset=Obj('floor_position',**coords);self.assign(n.get('name'),self.offset)
+            elif tag=='check_walk_path':
+                if n.find('end') is None:valid=self.native_slot_walkable
+                else:
+                    pos=self.expr(n.find('end').get('value'));self.floor_checks.append((pos.x,pos.y,pos.z))
+                    valid=(self.floor_results.pop(0) if self.floor_results else self.interaction_point)
+                self.assign(n.get('result'),valid)
             elif tag=='set_entity_traits':
                 actor=self.expr(n.get('entity'))
                 for key,value in n.attrib.items():
@@ -152,6 +172,11 @@ class RetailVM(VM):
             elif tag=='add_actor_to_post_location':
                 actor=self.expr(n.get('actor'));actor.hasbody=True;actor.room=self.shiproom;actor.roomslot=self.seat
                 self.events.append(('post',actor))
+            elif tag=='add_actor_to_room':
+                actor=self.expr(n.get('actor'));slot=self.expr(n.get('slot'))
+                actor.room=slot.component;actor.iswalking=False;self.pending.pop(actor,None)
+                if n.get('result'):self.assign(n.get('result'),True)
+                self.events.append(('reconnect',actor,actor.room))
             elif tag=='stop_actor_walk':
                 actor=self.expr(n.get('actor'));actor.iswalking=False;self.pending.pop(actor,None)
                 self.events.append(('stopwalk',actor))
@@ -169,10 +194,15 @@ class RetailVM(VM):
                 if self.populate_merchants and self.counter_slots:self.traders=Seq([self.merchant])
             elif tag=='reward_player':
                 self.payment_attempt_times.append(self.age);super().execute([n])
-            elif tag=='run_script' and n.get('name').strip("'") in ['vardath.go.crystal.atcounter','vardath.go.crystal.settle','vardath.go.crystal.shop','vardath.go.sellcrystals']:
+            elif tag=='run_script' and n.get('name').strip("'") in ['vardath.go.crystal.atcounter','vardath.go.crystal.settle','vardath.go.crystal.exchange','vardath.go.crystal.remote.allowed','vardath.go.crystal.remote','vardath.go.crystal.shop','vardath.go.sellcrystals']:
                 name=n.get('name').strip("'");args={p.get('name'):self.expr(p.get('value')) for p in n}
                 saved=dict(self.vars);self.vars.update(args);result=self.run(name);self.vars=saved
                 if n.get('result'):self.assign(n.get('result'),result)
+            elif tag=='run_script' and n.get('name').strip("'") in ['vardath.go.crystal.stock','vardath.go.depart']:
+                name=n.get('name').strip("'");saved=dict(self.vars);result=self.run(name);self.vars=saved
+                if n.get('result'):self.assign(n.get('result'),result)
+            elif tag=='run_script' and n.get('name')=="'move.undock'":
+                self.docked=NULL;self.events.append(('undock',self.ship))
             elif tag=='wait':
                 self.age+=self.expr(n.get('exact'))
                 if self.interrupt_on_wait:self.direct=True;self.docked=NULL
@@ -267,13 +297,14 @@ class PhysicalRetail(unittest.TestCase):
         v.state=copy.deepcopy(v.state);v.age+=25
         self.assertEqual(v.run('vardath.go.crystal.commercial'),1)
         self.assertIs(v.crew.room,v.shiproom);self.assertEqual(len(v.reward_requests),1)
-    def test_stalled_return_stops_and_retries_the_same_actor_path(self):
+    def test_stalled_return_recovers_the_same_actor_to_its_docked_ship(self):
         v=RetailVM();self.assertTrue(v.reach_counter());v.native_arrives=False
         v.state['vgo_crystal_shop_phase']='returning';v.age+=25;v.tick()
         self.assertTrue(v.crew.iswalking);self.assertIs(v.crew.room,v.shoproom)
         v.age+=121;v.tick();self.assertTrue(any(e[0]=='stopwalk' for e in v.events))
-        self.assertIs(v.crew.room,v.shoproom);self.assertTrue(v.crew.iswalking)
-        v.native_arrives=True;v.tick();self.assertIs(v.crew.room,v.shiproom)
+        self.assertIs(v.crew.room,v.shiproom);self.assertFalse(v.crew.iswalking)
+        self.assertTrue(any(e[0]=='reconnect' and e[1] is v.crew for e in v.events))
+        v.tick()
         self.assertEqual(v.get('vgo_crystal_shop_phase'),'returned')
     def test_active_service_refreshes_dock_lease_during_a_long_return(self):
         v=RetailVM();self.assertTrue(v.reach_counter());v.native_arrives=False

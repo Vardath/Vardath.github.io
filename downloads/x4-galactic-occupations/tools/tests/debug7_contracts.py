@@ -76,7 +76,10 @@ class Debug7Contracts(unittest.TestCase):
         departure=root.find(".//library[@name='PassengerDisembarkV35']")
         self.assertIsNotNone(cue.find(".//include_actions[@ref='PassengerDisembarkV35']"))
         self.assertGreaterEqual(len(cue.findall(".//include_actions[@ref='PassengerRoomPointsV32']"))+len(departure.findall(".//include_actions[@ref='PassengerRoomPointsV32']")),5)
-        self.assertEqual(len(root.findall(".//set_value[@exact='true'][@name='player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$boarded']")),3)
+        self.assertEqual(len(root.findall(".//set_value[@exact='true'][@name='player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$boarded']")),4)
+        native=root.find(".//library[@name='PassengerAbstractBoardV38']")
+        self.assertIsNotNone(native.find('.//set_entity_role_object'))
+        self.assertEqual(list(native.iter('reward_player')),[])
 
     def test_cargo_docking_recovery_is_single_attempt_and_has_no_manual_transfer(self):
         path=MOD.parents[1]/'x4-universal-cargo-teleport/vardath_universal_cargo_teleport/aiscripts/order.trade.perform.xml'

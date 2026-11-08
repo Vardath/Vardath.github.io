@@ -1,11 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.shop" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.shop" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="buyer"/>
   </params>
   <attention min="unknown">
     <actions>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase">
+        <run_script name="'vardath.go.crystal.remote.allowed'" result="$remote">
+          <param name="buyer" value="$buyer"/>
+        </run_script>
+        <do_if value="$remote">
+          <run_script name="'vardath.go.crystal.remote'" result="$sold">
+            <param name="buyer" value="$buyer"/>
+          </run_script>
+          <return value="$sold"/>
+        </do_if>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_remote_after_return"/>
         <do_if value="@this.ship.dock.container != $buyer">
           <return value="false"/>
         </do_if>
@@ -26,6 +36,15 @@
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_return_started"/>
       </do_if>
       <do_while value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase != 'returned'">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase == 'prepare' and not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_deployed">
+          <run_script name="'vardath.go.crystal.remote.allowed'" result="$remote">
+            <param name="buyer" value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
+          </run_script>
+          <do_if value="$remote">
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_remote_after_return" exact="true"/>
+            <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+          </do_if>
+        </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min"/>
         <do_if value="this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or this.ship == player.occupiedship">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
@@ -49,8 +68,10 @@
         <wait exact="2s"/>
       </do_while>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase == 'returned'">
+        <set_value name="$remoteafterreturn" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_remote_after_return"/>
+        <set_value name="$resumebuyer" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
         <set_value name="$success" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_success"/>
-        <do_if value="not $success">
+        <do_if value="not $success and not $remoteafterreturn">
           <set_value name="$failedstation" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
           <do_if value="$failedstation.exists">
             <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_cooldowns?">
@@ -65,6 +86,12 @@
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase"/>
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_deployed"/>
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_manifest"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_remote_after_return"/>
+        <do_if value="$remoteafterreturn">
+          <run_script name="'vardath.go.crystal.remote'" result="$success">
+            <param name="buyer" value="$resumebuyer"/>
+          </run_script>
+        </do_if>
         <return value="$success"/>
       </do_if>
       <return value="false"/>

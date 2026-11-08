@@ -48,16 +48,16 @@ class SourceContracts(unittest.TestCase):
         self.assertIn('10 - $ship.$vgo_passengers.count',seats)
         self.assertIn('$ship.people.free',seats)
         self.assertEqual(r.find('.//create_npc_template').get('force'),'false')
-    def test_each_boarded_ack_has_physical_actor_context(self):
+    def test_boarded_ack_has_physical_context_or_verified_native_person_record(self):
         root=xml('md/VGO_State.xml');parents={c:p for p in root.iter() for c in p}
         assignments=[x for x in root.iter('set_value') if x.get('name')=='$ship.$vgo_passengers.{$i}.$boarded' and x.get('exact')=='true']
-        self.assertEqual(len(assignments),3)
+        self.assertEqual(len(assignments),4)
         for node in assignments:
             guards=[]
             while node in parents:
                 node=parents[node]
                 if node.tag=='do_if':guards.append(node.get('value',''))
-            self.assertTrue(any('hascontext.{$ship}' in v for v in guards))
+            self.assertTrue(any('hascontext.{$ship}' in v for v in guards) or any('roleobject == $ship' in v and 'people.{$entry.$template}.exists' in v and 'isintransit' in v for v in guards))
     def test_whole_ship_boarded_requires_all_passengers(self):
         r=xml('md/VGO_State.xml').find(".//cue[@name='PassengerTransfersV2']")
         ack=r.find(".//do_if[@value='$allaboard']/set_value[@name='$ship.$vgo_taxi_boarded']")

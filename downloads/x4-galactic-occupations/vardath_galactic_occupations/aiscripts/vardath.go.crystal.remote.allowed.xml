@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.remote.allowed" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="buyer"/>
+  </params>
+  <attention min="unknown">
+    <actions>
+      <return value="(not player.entity.$vgo_objects.{this.ship}.$vgo_simulatesales? or player.entity.$vgo_objects.{this.ship}.$vgo_simulatesales) and this.ship.isplayerowned and this.ship != player.occupiedship and this.ship.order == this.ship.defaultorder and this.ship.order == @player.entity.$vgo_objects.{this.ship}.$vgo_order and @this.ship.order.id == 'VGO_crystal' and this.ship.sector.exists and this.ship.sector != player.sector and this.ship.attention lt attention.visible and @this.ship.dock.container == $buyer and $buyer.isoperational and not $buyer.isplayerowned and $buyer.owner != faction.ownerless and $buyer.owner.hasrelation.dock.{faction.player} and $buyer.dockingallowed.{this.ship} and not @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_deployed and (player.entity.$vgo_objects.{this.ship}.$vgo_risk == 2 or not $buyer.sector.owner.hasrelation.enemy.{faction.player})"/>
+    </actions>
+  </attention>
+</aiscript>

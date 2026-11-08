@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 97,
-      "xml": 78,
+      "files": 101,
+      "xml": 81,
       "diffs": 7,
       "md": 5,
-      "aiscripts": 63,
+      "aiscripts": 66,
       "lua": 3,
       "zip": "byte-for-byte checked",
-      "api_commands": 3869,
+      "api_commands": 4030,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 78,\n    \"commands\": 3869,\n    \"script_calls\": 131,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(10).log reviewed. Latest log records successful service dock resumption, 23/25 successful sector travel attempts, one actual morale improvement, one 8,000 Cr patrol payment and seven real crystal pickups, but no sale. Missing-trader/customer-point waits are addressed by first-use clock gates, merchant-targeted interaction and buyer cooldowns; new engine execution remains unverified.\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 81,\n    \"commands\": 4030,\n    \"script_calls\": 141,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, save or full installed catalogs. Supplied logs through debug(20261108-021152).log reviewed. Latest run verifies two 8,000 Cr patrol payments, not crystal sales or passenger fares. Remove NPC-as-object API regression, implement finite stock-backed off-screen broker sales, native validated physical counter paths and real passenger actor/roster handoffs. Static/mocked passes do not certify the new engine execution.\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,7 +123,7 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Crystal_Counter_Recovery_2026-11-08.zip; 6 extensions, 177 byte-matched files\n"
+    "output": "PASS: X4_Galaxy_Service_Recovery_2026-11-08.zip; 6 extensions, 181 byte-matched files\n"
   },
   "command_provenance": {
     "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
@@ -140,7 +140,9 @@
     "schema_versions": [
       "8.00",
       "9.00"
-    ]
+    ],
+    "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
+    "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections."
   },
   "reviewed_source": "Current worktree; X4 runtime unavailable"
 }

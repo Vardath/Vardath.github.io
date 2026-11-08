@@ -22,6 +22,7 @@ class Obj:
     def __getattr__(self,key):return False
     def __repr__(self):return self.name
     def __deepcopy__(self,memo):return self
+    def __bool__(self):return self.__dict__.get('exists',True)
 
 PLAYER=Obj('player',dock_ok=True,hostile=False)
 OWNERLESS=Obj('ownerless',dock_ok=False,hostile=False)
@@ -102,10 +103,12 @@ class VM:
         t=t.replace('player.money','money').replace('player.age','age')
         pattern=r'@?'+re.escape(S)+r'\.\$(\w+)(?:\.\{\$(\w+)\})?(\?)?'
         def state(m):
-            if m[3]:return 'present('+repr(m[1])+')'
+            if m[3]:return ('state_key_present('+repr(m[1])+',v('+repr(m[2])+'))' if m[2] else 'present('+repr(m[1])+')')
             return 'st('+repr(m[1])+(','+"v("+repr(m[2])+")" if m[2] else '')+')'
         t=re.sub(pattern,state,t)
         t=re.sub(r'@?\$limits\.\{\$ware\}',"at(v('limits'),v('ware'))",t)
+        t=re.sub(r'\$(\w+)\?',lambda m:'local_present('+repr(m[1])+')',t)
+        t=re.sub(r'@(?=\$)','',t)
         t=re.sub(r'\$(\w+)',lambda m:'v('+repr(m[1])+')',t)
         t=t.replace('faction.player','player_faction').replace('faction.ownerless','ownerless')
         t=t.replace('table[]','{}')
@@ -119,6 +122,8 @@ class VM:
         while re.search(r'\[([^\[\]]*)\]\.(min|max)',t):t=re.sub(r'\[([^\[\]]*)\]\.(min|max)',lambda m:m[2]+'('+m[1]+')',t)
         return eval(t,{'__builtins__':{}},{'v':lambda n:self.vars.get(n,0),'st':self.get,
             'present':lambda k:k in self.state,'at':lambda d,k:d.get(k,0),
+            'state_key_present':lambda k,i:isinstance(self.state.get(k),dict) and i in self.state[k],
+            'local_present':lambda k:k in self.vars,
             'min':min,'max':max,'int':int,'price':lambda w:PRICES[w],
             'inv':lambda o,w:self.inventories[o].get(w,0),'owned':self.owned,
             'direct':self.direct,'occupied':self.occupied,'docked':self.docked,
@@ -190,6 +195,9 @@ class VM:
                     self.docked=self.vars['buyer'] if self.can_dock else NULL
                     value=self.can_dock
                 elif name=='vardath.go.crystal.atcounter':value=self.counter_authorized and not self.direct
+                elif name=='vardath.go.crystal.exchange':
+                    args={key:self.expr(value) for key,value in params.items()};saved=dict(self.vars)
+                    self.vars.update(args);value=self.run(name);self.vars=saved
                 elif name=='vardath.go.crystal.shop':
                     # Financial tests mock the entire room visit. The separate
                     # retail suite executes its real MD/AI movement control flow.

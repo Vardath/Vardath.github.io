@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="16" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="17" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1"/>
     <param name="home" default="this.ship.sector"/>
@@ -25,6 +25,7 @@
     <param name="simfallback" default="true"/>
     <param name="miningtime" default="5min"/>
     <param name="batchsize" default="24"/>
+    <param name="simulatesales" default="true"/>
   </params>
   <interrupts>
     <handler>
@@ -80,6 +81,16 @@
     <handler>
       <conditions>
         <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart37'"/>
+      </conditions>
+      <actions>
+        <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
+          <abort_called_scripts resume="cleanup"/>
+        </do_if>
+      </actions>
+    </handler>
+    <handler>
+      <conditions>
+        <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart38'"/>
       </conditions>
       <actions>
         <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
@@ -171,14 +182,25 @@
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
     <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart37'"/>
   </patch>
+  <patch sinceversion="17">
+    <do_if value="not $simulatesales? or @$simulatesales == null">
+      <set_value name="$simulatesales" exact="true"/>
+    </do_if>
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
+    <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart38'"/>
+  </patch>
   <attention min="unknown">
     <actions>
+      <do_if value="not $simulatesales? or @$simulatesales == null">
+        <set_value name="$simulatesales" exact="true"/>
+      </do_if>
       <do_if value="not player.entity.$vgo_objects?">
         <set_value name="player.entity.$vgo_objects" exact="table[]"/>
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]"/>
       </do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_simulatesales" exact="$simulatesales"/>
       <do_if value="not $simfallback? or @$simfallback == null">
         <set_value name="$simfallback" exact="true"/>
       </do_if>
@@ -188,7 +210,7 @@
       <do_if value="not $batchsize? or @$batchsize == null">
         <set_value name="$batchsize" exact="24"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="37"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="38"/>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.isoperational and @this.ship.dock.container == @player.entity.$vgo_objects.{this.ship}.$vgo_service_dock">
         <debug_text text="'GO service dock resumed: ship=%1 job=%2 station=%3 order=%4'.[this.ship.debugname,$job,player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.debugname,this.ship.order.id]"/>
       </do_if>

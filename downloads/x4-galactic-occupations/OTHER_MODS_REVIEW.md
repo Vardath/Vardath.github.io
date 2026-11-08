@@ -18,3 +18,7 @@ Galactic Occupations adds only its own namespaced AI/MD/order definitions and no
 Appropriate reputation rewards are implemented for verified custom escort/taxi completion, actual morale improvement, completed commercial-route escort, genuine contraband reports and accounted crystal broker sales. A shared faction cooldown prevents stacking. Sightseeing, discovery, demolition and ownership transfer do not reward mere proximity.
 
 See `vardath_galactic_occupations/TESTING.md` and `../x4-kopis-production-cheat/vardath_kopis_production_cheat/ASTRID_TOURS.md` for reproducible in-game checks and explicit limitations.
+
+## 8 November 2026 — current 0.3.8 follow-up
+
+The dated sections above describe earlier reviews, not the current patch inventory. The full latest log is now reviewed in [LOG_REVIEW_0.3.8.md](vardath_galactic_occupations/LOG_REVIEW_0.3.8.md), including 27 confirmed Occupations errors and other attribution limits. Occupations includes the previously documented narrow native AI/MD and optional-extension attribute diffs; it is no longer accurate to describe its current release as having no vanilla diffs. Only Occupations source changes in this follow-up. Auto Drones 1.02, Cargo Teleport 1.01, Builders 1.75, Kopis/Astrid 1.15 and Yaki Habitats 1.23 retain their published source hashes. All seven packages are re-audited without claiming runtime certification. No third-party source or old save plan is silently removed.

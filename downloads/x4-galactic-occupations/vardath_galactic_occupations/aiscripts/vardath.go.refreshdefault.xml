@@ -1,361 +1,363 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.refreshdefault" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.refreshdefault" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="this.ship.order != this.ship.defaultorder or this.ship.order.state != orderstate.critical or this.ship == player.occupiedship or not this.ship.isplayerowned or @player.entity.$vgo_objects.{this.ship}.$vgo_hack_deployed">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_crystal'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$simfallback" exact="if @this.ship.defaultorder.$simfallback != null then this.ship.defaultorder.$simfallback else true" />
-        <set_value name="$settings.$miningtime" exact="if @this.ship.defaultorder.$miningtime != null then this.ship.defaultorder.$miningtime else 5min" />
-        <set_value name="$settings.$batchsize" exact="if @this.ship.defaultorder.$batchsize != null then this.ship.defaultorder.$batchsize else 24" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$simfallback" exact="if @this.ship.defaultorder.$simfallback != null then this.ship.defaultorder.$simfallback else true"/>
+        <set_value name="$settings.$miningtime" exact="if @this.ship.defaultorder.$miningtime != null then this.ship.defaultorder.$miningtime else 5min"/>
+        <set_value name="$settings.$batchsize" exact="if @this.ship.defaultorder.$batchsize != null then this.ship.defaultorder.$batchsize else 24"/>
+        <set_value name="$settings.$simulatesales" exact="if @this.ship.defaultorder.$simulatesales != null then this.ship.defaultorder.$simulatesales else true"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_crystal'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="simfallback" value="$settings.$simfallback" />
-          <param name="miningtime" value="$settings.$miningtime" />
-          <param name="batchsize" value="$settings.$batchsize" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="simfallback" value="$settings.$simfallback"/>
+          <param name="miningtime" value="$settings.$miningtime"/>
+          <param name="batchsize" value="$settings.$batchsize"/>
+          <param name="simulatesales" value="$settings.$simulatesales"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_demolition'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$collect" exact="if @this.ship.defaultorder.$collect != null then this.ship.defaultorder.$collect else false" />
-        <set_value name="$settings.$resourceonly" exact="if @this.ship.defaultorder.$resourceonly != null then this.ship.defaultorder.$resourceonly else false" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$collect" exact="if @this.ship.defaultorder.$collect != null then this.ship.defaultorder.$collect else false"/>
+        <set_value name="$settings.$resourceonly" exact="if @this.ship.defaultorder.$resourceonly != null then this.ship.defaultorder.$resourceonly else false"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_demolition'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="collect" value="$settings.$collect" />
-          <param name="resourceonly" value="$settings.$resourceonly" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="collect" value="$settings.$collect"/>
+          <param name="resourceonly" value="$settings.$resourceonly"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_escort'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$minreward" exact="if @this.ship.defaultorder.$minreward != null then this.ship.defaultorder.$minreward else 0Cr" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$minreward" exact="if @this.ship.defaultorder.$minreward != null then this.ship.defaultorder.$minreward else 0Cr"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_escort'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="preferred" value="$settings.$preferred" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="minreward" value="$settings.$minreward" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="preferred" value="$settings.$preferred"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="minreward" value="$settings.$minreward"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_hacker'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 2" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 2"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_hacker'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_inspection'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_inspection'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="preferred" value="$settings.$preferred" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="preferred" value="$settings.$preferred"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_lure'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$noattackresponse" exact="if @this.ship.defaultorder.$noattackresponse != null then this.ship.defaultorder.$noattackresponse else true" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$noattackresponse" exact="if @this.ship.defaultorder.$noattackresponse != null then this.ship.defaultorder.$noattackresponse else true"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_lure'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="noattackresponse" value="$settings.$noattackresponse" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="noattackresponse" value="$settings.$noattackresponse"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_mapper'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$transit" exact="if @this.ship.defaultorder.$transit != null then this.ship.defaultorder.$transit else false" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$transit" exact="if @this.ship.defaultorder.$transit != null then this.ship.defaultorder.$transit else false"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_mapper'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="transit" value="$settings.$transit" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="transit" value="$settings.$transit"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_morale'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$cooldown" exact="if @this.ship.defaultorder.$cooldown != null then this.ship.defaultorder.$cooldown else 6h" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$cooldown" exact="if @this.ship.defaultorder.$cooldown != null then this.ship.defaultorder.$cooldown else 6h"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_morale'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="preferred" value="$settings.$preferred" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="cooldown" value="$settings.$cooldown" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="preferred" value="$settings.$preferred"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="cooldown" value="$settings.$cooldown"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_patrol'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_patrol'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="preferred" value="$settings.$preferred" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="preferred" value="$settings.$preferred"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_recruit'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$basechance" exact="if @this.ship.defaultorder.$basechance != null then this.ship.defaultorder.$basechance else 8" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$basechance" exact="if @this.ship.defaultorder.$basechance != null then this.ship.defaultorder.$basechance else 8"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_recruit'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="basechance" value="$settings.$basechance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="basechance" value="$settings.$basechance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_scanner'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_scanner'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_taxi'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$minreward" exact="if @this.ship.defaultorder.$minreward != null then this.ship.defaultorder.$minreward else 0Cr" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$preferred" exact="if @this.ship.defaultorder.$preferred != null then this.ship.defaultorder.$preferred else null"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$minreward" exact="if @this.ship.defaultorder.$minreward != null then this.ship.defaultorder.$minreward else 0Cr"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_taxi'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="preferred" value="$settings.$preferred" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="minreward" value="$settings.$minreward" />
-          <param name="debugchance" value="$settings.$debugchance" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="preferred" value="$settings.$preferred"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="minreward" value="$settings.$minreward"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
       <do_if value="this.ship.defaultorder.id == 'VGO_tour'">
-        <set_value name="$settings" exact="table[]" />
-        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector" />
-        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99" />
-        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1" />
-        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
-        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
-        <set_value name="$settings.$viewtime" exact="if @this.ship.defaultorder.$viewtime != null then this.ship.defaultorder.$viewtime else 45s" />
-        <set_value name="$settings.$stops" exact="if @this.ship.defaultorder.$stops != null then this.ship.defaultorder.$stops else 10" />
-        <set_value name="$settings.$ticketfee" exact="if @this.ship.defaultorder.$ticketfee != null then this.ship.defaultorder.$ticketfee else 500000Cr" />
-        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
-        <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
+        <set_value name="$settings" exact="table[]"/>
+        <set_value name="$settings.$home" exact="if @this.ship.defaultorder.$home != null then this.ship.defaultorder.$home else this.ship.sector"/>
+        <set_value name="$settings.$range" exact="if @this.ship.defaultorder.$range != null then this.ship.defaultorder.$range else 99"/>
+        <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 1"/>
+        <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
+        <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
+        <set_value name="$settings.$viewtime" exact="if @this.ship.defaultorder.$viewtime != null then this.ship.defaultorder.$viewtime else 45s"/>
+        <set_value name="$settings.$stops" exact="if @this.ship.defaultorder.$stops != null then this.ship.defaultorder.$stops else 10"/>
+        <set_value name="$settings.$ticketfee" exact="if @this.ship.defaultorder.$ticketfee != null then this.ship.defaultorder.$ticketfee else 500000Cr"/>
+        <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
+        <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>
         <create_order id="'VGO_tour'" object="this.ship" name="$refreshed" default="true">
-          <param name="home" value="$settings.$home" />
-          <param name="range" value="$settings.$range" />
-          <param name="risk" value="$settings.$risk" />
-          <param name="repeat" value="$settings.$repeat" />
-          <param name="debugchance" value="$settings.$debugchance" />
-          <param name="viewtime" value="$settings.$viewtime" />
-          <param name="stops" value="$settings.$stops" />
-          <param name="ticketfee" value="$settings.$ticketfee" />
+          <param name="home" value="$settings.$home"/>
+          <param name="range" value="$settings.$range"/>
+          <param name="risk" value="$settings.$risk"/>
+          <param name="repeat" value="$settings.$repeat"/>
+          <param name="debugchance" value="$settings.$debugchance"/>
+          <param name="viewtime" value="$settings.$viewtime"/>
+          <param name="stops" value="$settings.$stops"/>
+          <param name="ticketfee" value="$settings.$ticketfee"/>
         </create_order>
         <do_if value="$samehack">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed" />
-        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]" />
-        <wait exact="1s" />
-        <return value="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_order" exact="$refreshed"/>
+        <debug_text text="'GO critical default repaired: %1 id=%2; settings and persistent job state retained'.[this.ship.debugname,$refreshed.id]"/>
+        <wait exact="1s"/>
+        <return value="true"/>
       </do_if>
-      <return value="false" />
+      <return value="false"/>
     </actions>
   </attention>
 </aiscript>

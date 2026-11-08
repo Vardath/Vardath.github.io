@@ -1,11 +1,10 @@
 {
   "result": "PASS",
-  "checks": 31,
-  "target": "Native receipt data and turret UI contracts",
+  "checks": 78,
+  "target": "32 native receipt/turret UI mocks and 46 hacker menu/bridge mocks; unchanged UI source",
   "local_engine": "Lua 5.4 shared library",
   "CI_syntax_engines": [
-    "Lua 5.1",
-    "LuaJIT"
+    "Lua 5.1"
   ],
   "real_X4_runtime": false,
   "Protected_UI_runtime": "UNVERIFIED; no protection setting changed"

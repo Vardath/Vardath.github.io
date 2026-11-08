@@ -8,7 +8,7 @@ import copy
 import re
 import unittest
 import xml.etree.ElementTree as E
-from crystal_commerce_contracts import VM as BaseVM, Obj, NULL, FACTION, PLAYER, S, Returned, Continued, Broken, MOD, xml
+from crystal_commerce_contracts import VM as BaseVM, Obj, NULL, FACTION, PLAYER, SECTOR, S, Returned, Continued, Broken, MOD, xml
 
 MD='player.entity.$vgo_objects.{$ship}'
 class Seq(list):
@@ -23,6 +23,7 @@ class PassengerVM(BaseVM):
     def __init__(self,job=2,count=2):
         super().__init__()
         self.ship=Obj('ship',exists=True,knownname='Taxi',isplayerowned=True)
+        self.ship.sector=SECTOR;self.player_sector=SECTOR
         self.station=Obj('station',exists=True,knownname='Destination',isoperational=True)
         self.shiproom=Obj('shiproom',exists=True,context=self.ship)
         self.stationroom=Obj('stationroom',exists=True,context=self.station)
@@ -45,6 +46,7 @@ class PassengerVM(BaseVM):
         self.native_walk_arrives=True;self.place_succeeds=True;self.release_succeeds=True
         self.placement_misreports=False
         self.signals=[];self.placements=[];self.removed=[];self.ordering=[]
+        self.disconnected=[];self.role_transfer_accepts=True
 
     def get(self,key,index=None):
         if index is not None and isinstance(self.state.get(key),list):
@@ -56,6 +58,8 @@ class PassengerVM(BaseVM):
 
     def expr(self,text):
         text=text.replace(MD,S)
+        self.vars['mock_player_sector']=self.player_sector
+        text=text.replace('player.sector','$mock_player_sector').replace('entityrole.passenger',"'passenger'")
         text=text.replace('player.entity.$vgo_objects?','true').replace(S+'?','true')
         def saved_entry(match):
             index=self.vars.get(match[1],1)-1
@@ -131,6 +135,8 @@ class PassengerVM(BaseVM):
             elif tag=='include_actions':
                 if n.get('ref')=='PassengerRoomPointsV32':
                     self.vars['pointlist']=Seq([self.seat] if self.vars['pointcontainer'] is self.ship else [self.exit] if self.available_exits else [])
+                elif n.get('ref') in ['PassengerAbstractBoardV38','PassengerAbstractExitV38']:
+                    self.execute(E.parse(MOD/'md/VGO_State.xml').find(".//library[@name='"+n.get('ref')+"']/actions"))
                 else:raise AssertionError('Unexpected library '+n.get('ref'))
             elif tag=='find_npc_waypoint':
                 self.assign(n.get('name'),Seq([self.exit] if self.available_exits else []))
@@ -140,15 +146,23 @@ class PassengerVM(BaseVM):
             elif tag=='add_actor_to_room':
                 actor=self.expr(n.get('actor'));slot=self.expr(n.get('slot'))
                 placed=self.place_succeeds
-                if placed and not self.placement_misreports:actor.exists=True;actor.room=slot.component
+                if placed and not self.placement_misreports:actor.exists=True;actor.room=slot.component;actor.hasbody=True
                 self.placements.append((actor,slot,placed));self.assign(n.get('result'),placed)
             elif tag=='remove_actor_from_room':
-                actor=self.expr(n.get('actor'));self.removed.append(actor);actor.exists=False
+                actor=self.expr(n.get('actor'));actor.room=NULL;actor.hasbody=False
+                if n.get('destroy')=='true':self.removed.append(actor);actor.exists=False
+                else:self.disconnected.append(actor)
             elif tag=='signal_objects':
                 actor=self.expr(n.get('object'));self.signals.append(actor)
                 self.ordering.append(('walk',self.vars['entry']['template']))
                 if self.native_walk_arrives:actor.room=self.stationroom
-            elif tag in ['set_entity_role','set_entity_role_object','set_entity_traits','clear_actor_roomslot']:pass
+            elif tag=='set_entity_role':
+                actor=self.expr(n.get('entity'));actor.role=self.expr(n.get('role'))
+            elif tag=='set_entity_role_object':
+                actor=self.expr(n.get('entity'))
+                if self.role_transfer_accepts:actor.roleobject=self.expr(n.get('object'))
+            elif tag=='stop_actor_walk':self.expr(n.get('actor')).iswalking=False
+            elif tag in ['set_entity_traits','clear_actor_roomslot']:pass
             elif tag=='run_script' and n.get('name')=="'vardath.go.passengers.pay'":
                 result=self.run('vardath.go.passengers.pay')
                 if n.get('result'):self.assign(n.get('result'),result)

@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.8 — galaxy service and unloaded-interior recovery
+
+- Remove 0.3.7's invalid merchant-NPC object interaction call. Use actual free counter-room slots/waypoints and native-validated floor offsets; retain observed counter/dwell/merchant acceptance checks and same-crew return. Recover a stalled same-dock return using the same actor.
+- Restore explicitly requested off-screen sales as a real configurable, finite-stock broker alternative at an actual permitted dock. Snapshot/recheck before conversion; preserve one shared invoice, unpaid money, stock, crew and cooldown-limited reputation. No imaginary NPC visit or free crystals.
+- Transfer real named taxi/tour roster actors off screen without requiring loaded body geometry; observe template/role-object results and materialise the same actors when visible. Preserve booked destinations, capacity limit ten, full tour itinerary and whole-party departure before fares. Broaden actual room points and recover released bodyless passengers at their booked station.
+- Upgrade workers/defaults to runtime 38 without dropping explicit false settings or creating state fields before their tables. Keep all companion sources, equipment, Protected UI, Inventory Collector and native ledger.
+- Add 31 executed native-boundary/accounting/transfer tests; 242 Python contracts and 78 Lua mocks pass. The new log confirms two 8,000 Cr patrol payments, no crystal/passenger payment; new X4 execution remains unverified. See LOG_REVIEW_0.3.8.md.
+
 ## 0.3.7 — first-use crystal counter recovery
 
 - Address debug(10)'s no-merchant/no-customer-position sale stalls. Allow absent initial population/payment times explicitly rather than comparing a null clock to current time. The previous mocks incorrectly substituted zero for both absent values.

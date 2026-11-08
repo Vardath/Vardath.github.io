@@ -1597,7 +1597,147 @@
         }
       }
     ],
-    "t": []
+    "t": [],
+    "start": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed",
+            "doc": "Auto-advance seed used for random number evaluation."
+          },
+          "exact": {
+            "type": "expression",
+            "doc": "Exact value (takes priority over min/max/profile/scale)"
+          },
+          "list": {
+            "type": "expression",
+            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)"
+          },
+          "max": {
+            "type": "expression",
+            "doc": "Maximum random number (ignored if exact is set)"
+          },
+          "min": {
+            "type": "expression",
+            "doc": "Minimum random number (ignored if exact is set)"
+          },
+          "object": {
+            "type": "expression",
+            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node."
+          },
+          "profile": {
+            "type": "profilelookup",
+            "doc": "Random number profile (ignored if exact is set)"
+          },
+          "randomoffset": {
+            "type": "expression",
+            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object."
+          },
+          "scale": {
+            "type": null,
+            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)"
+          },
+          "seed": {
+            "type": "fixedrandomseed",
+            "doc": "Fixed seed used for random number evaluation."
+          },
+          "space": {
+            "type": "expression",
+            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space."
+          },
+          "value": {
+            "type": "expression",
+            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)"
+          },
+          "x": {
+            "type": "expression",
+            "doc": "X coordinate"
+          },
+          "y": {
+            "type": "expression",
+            "doc": "Y coordinate"
+          },
+          "z": {
+            "type": "expression",
+            "doc": "Z coordinate"
+          },
+          "comment": {
+            "type": "comment",
+            "doc": "Comment for documentation purposes only"
+          }
+        }
+      }
+    ],
+    "end": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "type": "autoadvancerandomseed",
+            "doc": "Auto-advance seed used for random number evaluation."
+          },
+          "exact": {
+            "type": "expression",
+            "doc": "Exact value (takes priority over min/max/profile/scale)"
+          },
+          "list": {
+            "type": "expression",
+            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)"
+          },
+          "max": {
+            "type": "expression",
+            "doc": "Maximum random number (ignored if exact is set)"
+          },
+          "min": {
+            "type": "expression",
+            "doc": "Minimum random number (ignored if exact is set)"
+          },
+          "object": {
+            "type": "expression",
+            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node."
+          },
+          "profile": {
+            "type": "profilelookup",
+            "doc": "Random number profile (ignored if exact is set)"
+          },
+          "randomoffset": {
+            "type": "expression",
+            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object."
+          },
+          "scale": {
+            "type": null,
+            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)"
+          },
+          "seed": {
+            "type": "fixedrandomseed",
+            "doc": "Fixed seed used for random number evaluation."
+          },
+          "space": {
+            "type": "expression",
+            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space."
+          },
+          "value": {
+            "type": "expression",
+            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)"
+          },
+          "x": {
+            "type": "expression",
+            "doc": "X coordinate"
+          },
+          "y": {
+            "type": "expression",
+            "doc": "Y coordinate"
+          },
+          "z": {
+            "type": "expression",
+            "doc": "Z coordinate"
+          },
+          "comment": {
+            "type": "comment",
+            "doc": "Comment for documentation purposes only"
+          }
+        }
+      }
+    ]
   },
   "commands": {
     "abort_called_scripts": {
@@ -10992,6 +11132,58 @@
         }
       },
       "reference": "{'file': 'common.xsd', 'line': 33181}"
+    },
+    "check_walk_path": {
+      "attributes": {
+        "chance": {
+          "type": "expression",
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)"
+        },
+        "comment": {
+          "type": "comment",
+          "doc": "Comment for documentation purposes only"
+        },
+        "weight": {
+          "type": "expression",
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)"
+        },
+        "actor": {
+          "type": "actor",
+          "required": true,
+          "doc": "Actor object (NPC)"
+        },
+        "checkstate": {
+          "type": "booleanexpression",
+          "doc": "Check if the NPC is currently able to move. NPCs can not move if in low attention or are hidden. (defaults to true)"
+        },
+        "destination": {
+          "type": "expression",
+          "doc": "The ultimate destination component. Used to judge which surfaces the NPC may be alowed to walk on. (if 'end' is the the destination, this is not necessary)"
+        },
+        "destinationtags": {
+          "type": "expression",
+          "doc": "Known floor tags at the destination position. Used to judge which surfaces the NPC may be alowed to walk on."
+        },
+        "end": {
+          "type": "expression",
+          "required": true,
+          "doc": "Object or component slot destination. Combined with 'end' position."
+        },
+        "result": {
+          "type": "lvaluename",
+          "required": true,
+          "doc": "Name of the value that will receive the result"
+        },
+        "start": {
+          "type": "expression",
+          "doc": "Object or component slot to start from. Combined with 'start' position. (optional, NPC uses current position if not provided)"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
     }
   },
   "enum_types": {
@@ -13233,6 +13425,8 @@
     "schema_versions": [
       "8.00",
       "9.00"
-    ]
+    ],
+    "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
+    "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections."
   }
 }

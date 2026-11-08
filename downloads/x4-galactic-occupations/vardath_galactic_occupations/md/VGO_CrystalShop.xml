@@ -33,6 +33,42 @@
         </do_if>
       </actions>
     </library>
+    <library name="CustomerPositionV38">
+      <actions>
+        <set_value name="$movement" exact="null"/>
+        <set_value name="$goal" exact="null"/>
+        <set_value name="$best" exact="4m"/>
+        <find_npc_slot name="$points" object="$room" excludefilled="true" multiple="true"/>
+        <find_npc_waypoint name="$points" object="$room" multiple="true" append="true"/>
+        <do_for_each name="$point" in="$points">
+          <do_if value="$point.distanceto.{$counter} lt $best">
+            <check_walk_path actor="$actor" start="$point" end="$point" checkstate="false" result="$floorvalid"/>
+            <do_if value="$floorvalid">
+              <set_value name="$best" exact="$point.distanceto.{$counter}"/>
+              <set_value name="$goal" exact="$point"/>
+            </do_if>
+          </do_if>
+        </do_for_each>
+        <do_if value="$goal">
+          <set_value name="$movement" exact="table[$slot=$goal,$preventanimation=true]"/>
+        </do_if>
+        <do_else>
+          <do_all exact="5" counter="$floorattempt">
+            <transform_position name="$goalpos" refposition="$counter.relativeposition.{$room}" refrotation="$counter.relativerotation.{$room}">
+              <position x="if $floorattempt == 3 then 1.5m else (if $floorattempt == 4 then -1.5m else 0m)" y="0m" z="if $floorattempt == 1 then 2m else (if $floorattempt == 5 then -2m else 3m)"/>
+            </transform_position>
+            <check_walk_path actor="$actor" start="$room" end="$room" destination="$room" checkstate="false" result="$floorvalid">
+              <start value="$goalpos"/>
+              <end value="$goalpos"/>
+            </check_walk_path>
+            <do_if value="$floorvalid">
+              <set_value name="$movement" exact="table[$context=$room,$room=$room,$offset=$goalpos,$preventanimation=true]"/>
+              <break/>
+            </do_if>
+          </do_all>
+        </do_else>
+      </actions>
+    </library>
     <cue name="Operations" instantiate="true" checkinterval="2s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0"/>
@@ -112,6 +148,19 @@
               <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin"/>
               <do_if value="not @$origin.component.exists or not $origin.component.hascontext.{$ship}">
                 <find_npc_slot name="$origin" object="$ship" tags="tag.npc_generic"/>
+              </do_if>
+              <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_return_started + 2min">
+                <do_if value="$origin">
+                  <stop_actor_walk actor="$actor"/>
+                  <add_actor_to_room actor="$actor" slot="$origin" result="$reconnected" triggeranimation="false"/>
+                </do_if>
+                <do_else>
+                  <add_actor_to_post_location actor="$actor"/>
+                </do_else>
+                <do_if value="$actor.room.exists and $actor.room.hascontext.{$ship}">
+                  <debug_text text="'GO crystal shop return path recovered: ship=%1 actor=%2; native same-actor placement'.[$ship.debugname,$actor.debugname]"/>
+                  <continue/>
+                </do_if>
               </do_if>
               <do_if value="$origin">
                 <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot=$origin,$preventanimation=true]"/>
@@ -196,29 +245,11 @@
             </do_if>
             <set_value name="$room" exact="$trader.room"/>
             <set_value name="$counter" exact="$trader.roomslot"/>
-            <find_npc_slot name="$points" object="$room" excludefilled="true" multiple="true"/>
-            <set_value name="$goal" exact="null"/>
-            <set_value name="$best" exact="4m"/>
-            <do_for_each name="$point" in="$points">
-              <do_if value="$point.distanceto.{$counter} lt $best">
-                <set_value name="$best" exact="$point.distanceto.{$counter}"/>
-                <set_value name="$goal" exact="$point"/>
-              </do_if>
-            </do_for_each>
-            <do_if value="$goal">
-              <set_value name="$movement" exact="table[$slot=$goal,$preventanimation=true]"/>
+            <include_actions ref="CustomerPositionV38"/>
+            <do_if value="not $movement">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no native-validated walkable floor at this counter; stock retained'"/>
+              <continue/>
             </do_if>
-            <do_else>
-              <find_actor_interaction_point actor="$actor" object="$trader" slot="$counter" posname="$offset" rotname="$rotation"/>
-              <do_if value="not $offset">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no real walkable customer position at this counter'"/>
-                <continue/>
-              </do_if>
-              <transform_position name="$goalpos" refposition="$counter.relativeposition.{$room}" refrotation="$counter.relativerotation.{$room}">
-                <position value="$offset"/>
-              </transform_position>
-              <set_value name="$movement" exact="table[$context=$room,$room=$room,$offset=$goalpos,$preventanimation=true]"/>
-            </do_else>
             <do_if value="not player.entity.$vgo_objects.{$trader}?">
               <set_value name="player.entity.$vgo_objects.{$trader}" exact="table[]"/>
             </do_if>

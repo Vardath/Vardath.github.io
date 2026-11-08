@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.7
+# Implementation and native-interface provenance — 0.3.8
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -47,3 +47,13 @@ At the actual counter after a five-second dwell, settlement rechecks presence be
 `VGO_CrystalShop` explicitly accepts an absent station population timestamp. `vardath.go.crystal.shop` explicitly accepts an absent first payment timestamp. Prior mocks read those absent optional clocks as integer zero; tests now model them as null and reproduce both failures against the old expressions. Real native replies are still mocked, not engine-confirmed.
 
 A customer interaction is queried against the actual merchant and their real slot; the previous whole-station target did not describe the intended interaction. All free nearby NPC slots are considered before that fallback. Saved per-ship/per-station buyer deadlines prevent two-station oscillation while preserving finite stock/claims. New diagnostics distinguish requests, actual at-counter state and failed preparation. `event_object_dropped_objects check="false"` retains the exact deposit filter while allowing its expected destruction; the command metadata documents that flag. Shared worker restart 37 reuses state-preserving recovery. See LOG_REVIEW_0.3.7.md for observed successes, unresolved import/interior errors and live acceptance.
+
+## 0.3.8 native room and off-screen service split
+
+The merchant interaction described above was invalid: NPC is not the API's class.object. It is removed. `CustomerPositionV38` uses real native room slots/waypoints, then five actual-counter-relative floor candidates with documented `check_walk_path` start/end position children and `checkstate=false`. The native `npc_move_to` context/room/offset form requests the path; actual counter room/range/dwell remains the payment guard. Same-dock return placement reconnects the same actor only after a stalled native path.
+
+`crystal.remote.allowed` requires the exact controlled default job, actual permitted dock, low attention outside the player sector, appropriate risk and no crew deployed ashore. `crystal.remote` snapshots saved stock, waits thirty seconds, rechecks and calls shared `crystal.exchange` with physical=false. This is the user-authorized custom broker simulation; no fake merchant inventory or NPC walk. Physical=true observes the real merchant inventory increment. One invoice handles both paths, with measured credit deltas and only unpaid remainders retried. Existing preparation restores crew before switching; an ashore visit must return.
+
+`PassengerAbstractBoardV38`/`PassengerAbstractExitV38` preserve real cue actors with native passenger templates and observe ship/station role-object assignments. Body uninstancing follows native passenger mission practice; visible bodies are reconnected using real points. Only low attention outside the player sector can use abstract acknowledgements. Exit is still gated by actual booked docking, full tour itinerary, native template absence, station handoff and five-second confirmation for the whole party. Released bodyless actors can reconnect only at the booked station. No ordinary cargo passenger or fabricated mission completion.
+
+See [LOG_REVIEW_0.3.8.md](LOG_REVIEW_0.3.8.md) for exact source references, 31 new contract cases, observed payments, limitations and unperformed live tests. All thirteen role/routing contracts remain; installed merging, actor persistence, pathfinding and gameplay effects need X4 runtime confirmation.
