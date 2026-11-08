@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 102,
-      "xml": 81,
+      "files": 104,
+      "xml": 82,
       "diffs": 7,
-      "md": 5,
+      "md": 6,
       "aiscripts": 66,
       "lua": 3,
       "zip": "byte-for-byte checked",
-      "api_commands": 4078,
+      "api_commands": 4265,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 81,\n    \"commands\": 4078,\n    \"script_calls\": 141,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, save or full installed catalogs. Latest debug(20261108-032505).log verifies seven crystal payments totalling 337,000 Cr, including a physical seven-item sale for 7,000 Cr whose representative remained at the counter. Implement persistent paid-visit return and independent legacy/registry recovery, safe parameter and imported-call handling. New return recovery is unverified; one tour remains waiting at 0/2 boarding in the log.\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 82,\n    \"commands\": 4265,\n    \"script_calls\": 141,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, save or full installed catalogs. Version 0.4.0 implements twenty-minute same-crew recall, interruption-safe thirty-minute taxi/minimum-two-hour adaptive tour cancellation grace and new twenty-stop tours. Native actions are mocked in local contracts; no new runtime log verifies these timers. Prior log verifies seven crystal payments totalling 337,000 Cr and still shows one tour waiting at 0/2 boarding. Existing runtime limitations remain.\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,7 +123,7 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Crystal_Crew_Return_Recovery_2026-11-08.zip; 6 extensions, 182 byte-matched files\n"
+    "output": "PASS: X4_Recovery_Grace_2026-11-08.zip; 6 extensions, 184 byte-matched files\n"
   },
   "command_provenance": {
     "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",

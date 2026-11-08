@@ -1,9 +1,9 @@
-# Galactic Occupations 0.3.9 — paid crystal crew return
+# Galactic Occupations 0.4.0 — interruption-safe recovery
 
-[Download Occupations](Galactic_Occupations_0.3.9_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Crystal_Crew_Return_Recovery_2026-11-08.zip) · [Log findings and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.9.md)
+[Download Occupations](Galactic_Occupations_0.4.0_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Recovery_Grace_2026-11-08.zip) · [Recovery rules and live checks](vardath_galactic_occupations/RECOVERY_POLICY_0.4.0.md)
 
-The supplied log confirms seven crystal payments totalling 337,000 Cr, including Astrid Tours' physical seven-item sale for 7,000 Cr. Its representative then remained at the desk. The fix commits a persistent return state with the paid invoice and lets the independent crew controller recover a lost AI handoff, including the already-paid saved visit, without paying twice or replacing crew. Missing parameter lookups and imported result/version handling are also corrected.
+Stranded crystal/hacker crew are recalled to the same ship after twenty game minutes away, preserving the same NPC, role, post and native roster. Cancelling the persistent taxi service gives passengers thirty game minutes before unpaid evacuation. Cancelled tours get at least two game hours, extended by observed cruise duration. Resuming before expiry keeps the same party. Combat, lockboxes, other orders and player control retain passengers whenever the original default or queued service remains.
 
-Exit X4, overwrite the same extension and load the existing save while the ship remains docked at that station. The same crew member should walk back; a blocked path has the documented two-game-minute native same-actor recovery at that dock. Existing crew/equipment, stock, passengers, bookings, Protected UI and Inventory Collector remain intact.
+New tours default to twenty stops; accepted bookings keep their existing route. Cancellation cleanup removes only that booking's passenger entries and preserves anyone recruited into ordinary crew. No cancellation fare, duplicate payment, extra actor or invented ledger transaction. Timers and progress persist across saves.
 
-255 Python contracts, 78 Lua mocks and static/native-patch/package checks pass. New crew-return recovery still needs live confirmation. The log's tour boarding wait remains explicitly unresolved. Only Occupations source changes; companion mods in the bundle are unchanged.
+Exit X4 and overwrite the existing extension, then load the same save. Keep Protected UI and Inventory Collector. Only Occupations source changes. 299 Python contracts, 78 Lua mocks and static/native-patch/package checks pass; new native recalls and evacuations remain unverified in X4. The prior tour boarding wait remains a separate reported limitation.

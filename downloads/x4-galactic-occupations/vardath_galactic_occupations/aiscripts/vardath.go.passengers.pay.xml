@@ -1,77 +1,81 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.pay" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
-  <params />
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.pay" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params/>
   <attention min="unknown">
     <actions>
-      <set_value name="$job" exact="player.entity.$vgo_objects.{this.ship}.$vgo_job" />
+      <set_value name="$claim" exact="if player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id? and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id gt 0 then player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id else 0"/>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_void_passenger_contracts.{$claim} or @player.entity.$vgo_objects.{this.ship}.$vgo_passenger_disposing or (player.entity.$vgo_objects.{this.ship}.$vgo_taxi_cancelled_id? and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_cancelled_id == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id)">
+        <return value="false"/>
+      </do_if>
+      <set_value name="$job" exact="player.entity.$vgo_objects.{this.ship}.$vgo_job"/>
       <do_if value="not this.ship.isplayerowned or ($job != 2 and $job != 5) or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_service != $job or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id le 0 or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count le 0 or @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count gt 10 or @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
       <do_if value="$job == 5 and (@player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_stops le 0 or @player.entity.$vgo_objects.{this.ship}.$vgo_tour_trip.count lt @player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_stops or @player.entity.$vgo_objects.{this.ship}.$vgo_tour_sectors.count lt @player.entity.$vgo_objects.{this.ship}.$vgo_tour_minsectors)">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
       <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id == @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id">
-        <return value="true" />
+        <return value="true"/>
       </do_if>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_retry gt player.age">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_contract != player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id">
-        <set_value name="$ticket" exact="if $job == 2 then 8000Cr else @player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_fee" />
+        <set_value name="$ticket" exact="if $job == 2 then 8000Cr else @player.entity.$vgo_objects.{this.ship}.$vgo_tour_booked_fee"/>
         <do_if value="$ticket le 0Cr">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: invalid booked fare; payment retained for diagnosis'" />
-          <return value="false" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: invalid booked fare; payment retained for diagnosis'"/>
+          <return value="false"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_contract" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total" exact="$ticket * player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received" exact="0Cr" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_contract" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total" exact="$ticket * player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received" exact="0Cr"/>
       </do_if>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_result_id != player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id">
         <run_script name="'vardath.go.recordresult'">
-          <param name="outcome" value="'completed'" />
+          <param name="outcome" value="'completed'"/>
         </run_script>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_result_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_result_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id"/>
       </do_if>
-      <set_value name="$remaining" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total - player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received, 0Cr].max" />
+      <set_value name="$remaining" exact="[player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total - player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received, 0Cr].max"/>
       <do_if value="$remaining gt 0Cr">
-        <set_value name="$moneybefore" exact="player.money" />
-        <reward_player money="$remaining" />
-        <set_value name="$paid" exact="[[player.money - $moneybefore, 0Cr].max, $remaining].min" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received + $paid" />
-        <debug_text text="'GO passenger payment: ship=%1 service=%2 contract=%3 owed=%4 actual=%5 received=%6 total=%7 balance_before=%8 balance_after=%9'.[this.ship.debugname,$job,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id,$remaining,$paid,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total,$moneybefore,player.money]" />
+        <set_value name="$moneybefore" exact="player.money"/>
+        <reward_player money="$remaining"/>
+        <set_value name="$paid" exact="[[player.money - $moneybefore, 0Cr].max, $remaining].min"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received + $paid"/>
+        <debug_text text="'GO passenger payment: ship=%1 service=%2 contract=%3 owed=%4 actual=%5 received=%6 total=%7 balance_before=%8 balance_after=%9'.[this.ship.debugname,$job,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id,$remaining,$paid,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received,player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total,$moneybefore,player.money]"/>
         <do_if value="$paid gt 0Cr">
           <run_script name="'vardath.go.recordpayment'">
-            <param name="amount" value="$paid" />
-            <param name="details" value="'Passenger contract ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers delivered at ' + @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivery_label + '; received ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + '/' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total.formatted.default" />
+            <param name="amount" value="$paid"/>
+            <param name="details" value="'Passenger contract ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers delivered at ' + @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivery_label + '; received ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + '/' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total.formatted.default"/>
           </run_script>
         </do_if>
       </do_if>
       <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received lt player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_retry" exact="player.age + 1min" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger fare pending: ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + '/' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total.formatted.default + ' received; retrying the unpaid balance'" />
-        <write_to_logbook category="general" title="'Galactic Occupations: passenger fare pending'" text="this.ship.knownname + ': passengers delivered; ' + (player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total - player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received).formatted.default + ' still owed. No paid marker set; retry in one minute.'" />
-        <return value="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_retry" exact="player.age + 1min"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger fare pending: ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + '/' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total.formatted.default + ' received; retrying the unpaid balance'"/>
+        <write_to_logbook category="general" title="'Galactic Occupations: passenger fare pending'" text="this.ship.knownname + ': passengers delivered; ' + (player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_total - player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received).formatted.default + ' still owed. No paid marker set; retry in one minute.'"/>
+        <return value="false"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_paid" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial" />
-      <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_faction" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_paid_id" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_paid" exact="player.entity.$vgo_objects.{this.ship}.$vgo_serial"/>
+      <set_value name="$faction" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_taxi_faction"/>
       <do_if value="$faction and $faction != faction.player and $faction != faction.ownerless and $faction.hasrelation.dock.{faction.player}">
         <do_if value="not player.entity.$vgo_rep_times?">
-          <set_value name="player.entity.$vgo_rep_times" exact="table[]" />
+          <set_value name="player.entity.$vgo_rep_times" exact="table[]"/>
         </do_if>
         <do_if value="not player.entity.$vgo_rep_times.{$faction}? or player.entity.$vgo_rep_times.{$faction} le player.age">
-          <set_value name="player.entity.$vgo_rep_times.{$faction}" exact="player.age + 30min" />
-          <add_faction_relation faction="faction.player" otherfaction="$faction" value="0.0001" reason="relationchangereason.missioncompleted" />
+          <set_value name="player.entity.$vgo_rep_times.{$faction}" exact="player.age + 30min"/>
+          <add_faction_relation faction="faction.player" otherfaction="$faction" value="0.0001" reason="relationchangereason.missioncompleted"/>
         </do_if>
       </do_if>
-      <write_to_logbook category="general" title="'Galactic Occupations: passenger fare paid'" text="this.ship.knownname + ': received ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + ' for ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers. Contract ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id + ' paid in full.'" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered" exact="false" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'paid'" />
-      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_retry" />
-      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest" />
-      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
-      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination" />
-      <return value="true" />
+      <write_to_logbook category="general" title="'Galactic Occupations: passenger fare paid'" text="this.ship.knownname + ': received ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_fare_received.formatted.default + ' for ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered_count + ' passengers. Contract ' + player.entity.$vgo_objects.{this.ship}.$vgo_taxi_completed_id + ' paid in full.'"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_delivered" exact="false"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'paid'"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_payment_retry"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_dest"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_booked_destination"/>
+      <return value="true"/>
     </actions>
   </attention>
 </aiscript>

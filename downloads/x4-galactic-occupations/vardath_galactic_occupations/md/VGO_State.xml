@@ -163,7 +163,7 @@
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline"/>
             <signal_objects object="$ship" param="'vardath.go.timeout'"/>
           </do_elseif>
-          <do_if value="not $ship.isplayerowned or (not Init.$Orders.indexof.{@$ship.defaultorder.id} and not Init.$Orders.indexof.{@$ship.order.id} and not @player.entity.$vgo_objects.{$ship}.$vgo_dock_order.exists)">
+          <do_if value="(not $ship.isplayerowned or (not Init.$Orders.indexof.{@$ship.defaultorder.id} and not Init.$Orders.indexof.{@$ship.order.id} and not @player.entity.$vgo_objects.{$ship}.$vgo_dock_order.exists)) and not @player.entity.$vgo_objects.{$ship}.$vgo_passengers.count">
             <do_if value="$ship.isplayerowned">
               <debug_text text="'GO behaviour ended: %1 last_job=%2 current=%3 default=%4; player order/default changes preserved'.[$ship.debugname,@player.entity.$vgo_objects.{$ship}.$vgo_job,@$ship.order.id,@$ship.defaultorder.id]"/>
               <write_to_logbook category="general" title="'Galactic Occupations: behaviour ended'" text="$ship.knownname + ': last occupation ' + readtext.{191180}.{100 + @player.entity.$vgo_objects.{$ship}.$vgo_job} + '; current default ' + (if $ship.defaultorder.exists then $ship.defaultorder.name else 'None') + '. If this was an unexpected Hold Position, reselect the occupation and retain the startup/end debug lines.'"/>
@@ -308,40 +308,17 @@
             <continue/>
           </do_if>
           <set_value name="$phase" exact="@player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase"/>
-          <do_if value="$phase == 'cancel' or ($phase == 'boarding' and (not @player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup.isoperational or not $ship.isplayerowned))">
-            <do_for_each name="$entry" in="if player.entity.$vgo_objects.{$ship}.$vgo_passengers? then player.entity.$vgo_objects.{$ship}.$vgo_passengers else []">
-              <do_if value="@$ship.people.{$entry.$template}.exists">
-                <remove_npc_template object="$ship" template="$entry.$template"/>
-              </do_if>
-              <remove_actor_from_room actor="$entry.$actor" destroy="true"/>
-            </do_for_each>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers"/>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_manifest_ready"/>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase"/>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded"/>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_dest"/>
-            <do_if value="not player.entity.$vgo_objects.{$ship}?">
-              <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
-            </do_if>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup"/>
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
+            <continue/>
+          </do_if>
+          <do_if value="$phase == 'cancel'">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded then 'aboard' else 'boarding'"/>
             <continue/>
           </do_if>
           <do_if value="not $ship.isplayerowned or $ship == player.occupiedship or ($ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_order and $ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_dock_order) or (@$ship.defaultorder.id != 'VGO_taxi' and @$ship.defaultorder.id != 'VGO_tour') or ($phase != 'boarding' and $phase != 'disembarking')">
+            <continue/>
+          </do_if>
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and ((player.entity.$vgo_objects.{$ship}.$vgo_passenger_service? and player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 2 and @$ship.defaultorder.id != 'VGO_taxi' and @$ship.order.id != 'VGO_taxi') or (player.entity.$vgo_objects.{$ship}.$vgo_passenger_service? and player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and @$ship.defaultorder.id != 'VGO_tour' and @$ship.order.id != 'VGO_tour'))">
             <continue/>
           </do_if>
           <set_value name="$station" exact="if $phase == 'boarding' then @player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup else @player.entity.$vgo_objects.{$ship}.$vgo_taxi_dest"/>
@@ -379,6 +356,7 @@
                   <select faction="$station.owner" tags="tag.crew"/>
                   <owner exact="$station.owner"/>
                 </create_cue_actor>
+                <set_entity_role entity="$actor" role="entityrole.passenger"/>
                 <set_entity_traits entity="$actor" missionactor="true" customhandler="true"/>
                 <create_npc_template object="$ship" entity="$actor" role="entityrole.passenger" name="$template" force="false"/>
                 <do_if value="not $template">
@@ -412,6 +390,12 @@
                   <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
                 </do_if>
                 <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service" exact="player.entity.$vgo_objects.{$ship}.$vgo_job"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_contract"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since"/>
+                <signal_objects object="player.entity" param="'vardath.go.recovery.track'" param2="$ship"/>
                 <do_if value="not player.entity.$vgo_objects.{$ship}?">
                   <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
                 </do_if>
@@ -601,11 +585,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]"/>
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 39 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 40 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="39"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="40"/>
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue"/>
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until"/>
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home"/>
@@ -870,89 +854,145 @@
     </library>
     <library name="PassengerDisembarkV35">
       <actions>
-        <do_if value="$station != @player.entity.$vgo_objects.{$ship}.$vgo_taxi_booked_destination or @$ship.dock.container != $station">
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Passenger service: waiting for the booked drop-off station; no alternative handoff'"/>
-        </do_if>
-        <do_else>
-          <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and (@player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count lt @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops or @player.entity.$vgo_objects.{$ship}.$vgo_tour_sectors.count lt @player.entity.$vgo_objects.{$ship}.$vgo_tour_minsectors)">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Luxury tour: itinerary is not complete; departure/payment withheld'"/>
+        <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
+          <do_if value="$station != @player.entity.$vgo_objects.{$ship}.$vgo_taxi_booked_destination or @$ship.dock.container != $station">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Passenger service: waiting for the booked drop-off station; no alternative handoff'"/>
           </do_if>
           <do_else>
-            <set_value name="$completed" exact="0"/>
-            <set_value name="$waiting" exact="false"/>
-            <do_for_each name="$entry" in="player.entity.$vgo_objects.{$ship}.$vgo_passengers" counter="$i">
-              <do_if value="$entry.$delivered">
-                <set_value name="$completed" exact="$completed + 1"/>
-                <continue/>
-              </do_if>
-              <do_if value="not $entry.$boarded">
-                <set_value name="$waiting" exact="true"/>
-                <continue/>
-              </do_if>
-              <set_value name="$actor" exact="$entry.$actor"/>
-              <set_value name="$nativeexited" exact="false"/>
-              <do_if value="$ship.sector.exists and $ship.sector != player.sector and $ship.attention lt attention.visible">
-                <include_actions ref="PassengerAbstractExitV38"/>
-                <do_if value="not $nativeexited">
+            <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and (@player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count lt @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops or @player.entity.$vgo_objects.{$ship}.$vgo_tour_sectors.count lt @player.entity.$vgo_objects.{$ship}.$vgo_tour_minsectors)">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Luxury tour: itinerary is not complete; departure/payment withheld'"/>
+            </do_if>
+            <do_else>
+              <set_value name="$completed" exact="0"/>
+              <set_value name="$waiting" exact="false"/>
+              <do_for_each name="$entry" in="player.entity.$vgo_objects.{$ship}.$vgo_passengers" counter="$i">
+                <do_if value="$entry.$delivered">
+                  <set_value name="$completed" exact="$completed + 1"/>
+                  <continue/>
+                </do_if>
+                <do_if value="not $entry.$boarded">
                   <set_value name="$waiting" exact="true"/>
                   <continue/>
                 </do_if>
-              </do_if>
-              <do_if value="not $nativeexited and (@$entry.$native_exit or @$entry.$released) and $actor.isclass.npc and not @$ship.people.{$entry.$template}.exists and not $actor.room.exists">
-                <set_value name="$pointcontainer" exact="$station"/>
-                <include_actions ref="PassengerRoomPointsV32"/>
-                <do_if value="$pointlist.count">
-                  <add_actor_to_room actor="$actor" slot="$pointlist.random" result="$reified" setroomslot="false" triggeranimation="false"/>
-                  <do_if value="$reified and $actor.room.exists and $actor.room.hascontext.{$station}">
-                    <set_entity_role entity="$actor" role="entityrole.passenger"/>
-                    <set_entity_role_object entity="$actor" object="$station"/>
-                  </do_if>
-                </do_if>
-              </do_if>
-              <set_value name="$arrived" exact="$nativeexited or ($actor.exists and $actor.room.exists and $actor.room.hascontext.{$station} and not $actor.room.hascontext.{$ship})"/>
-              <do_if value="not $arrived">
-                <do_if value="not @$entry.$exit.component.exists or @$entry.$exitstation != $station">
-                  <set_value name="$exits" exact="[]"/>
-                  <do_if value="@$ship.dock.walkablemodule.haswalkableroom">
-                    <find_npc_waypoint name="$exits" object="$ship.dock.walkablemodule" tags="tag.npctransport" multiple="true"/>
-                  </do_if>
-                  <do_if value="not $exits.count">
-                    <find_npc_waypoint name="$exits" object="$station" tags="tag.npctransport" multiple="true"/>
-                  </do_if>
-                  <do_if value="not $exits.count">
-                    <set_value name="$pointcontainer" exact="$station"/>
-                    <include_actions ref="PassengerRoomPointsV32"/>
-                    <set_value name="$exits" exact="$pointlist.clone"/>
-                  </do_if>
-                  <do_for_each name="$exitpoint" in="$exits" counter="$j" reverse="true">
-                    <do_if value="not $exitpoint.component.hascontext.{$station} or $exitpoint.component.hascontext.{$ship}">
-                      <remove_value name="$exits.{$j}"/>
-                    </do_if>
-                  </do_for_each>
-                  <do_if value="not $exits.count">
+                <set_value name="$actor" exact="$entry.$actor"/>
+                <set_value name="$nativeexited" exact="false"/>
+                <do_if value="$ship.sector.exists and $ship.sector != player.sector and $ship.attention lt attention.visible">
+                  <include_actions ref="PassengerAbstractExitV38"/>
+                  <do_if value="not $nativeexited">
                     <set_value name="$waiting" exact="true"/>
                     <continue/>
                   </do_if>
-                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit" exact="$exits.random"/>
-                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitstation" exact="$station"/>
-                  <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitmoving"/>
-                  <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival"/>
                 </do_if>
-                <set_value name="$exit" exact="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit"/>
-                <set_value name="$pointcontainer" exact="$ship"/>
-                <include_actions ref="PassengerRoomPointsV32"/>
-                <set_value name="$rollback" exact="if $pointlist.count then $pointlist.random else null"/>
-                <do_if value="not $actor.exists">
-                  <do_if value="$rollback and $actor.isclass.npc">
+                <do_if value="not $nativeexited and (@$entry.$native_exit or @$entry.$released) and $actor.isclass.npc and not @$ship.people.{$entry.$template}.exists and not $actor.room.exists">
+                  <set_value name="$pointcontainer" exact="$station"/>
+                  <include_actions ref="PassengerRoomPointsV32"/>
+                  <do_if value="$pointlist.count">
+                    <add_actor_to_room actor="$actor" slot="$pointlist.random" result="$reified" setroomslot="false" triggeranimation="false"/>
+                    <do_if value="$reified and $actor.room.exists and $actor.room.hascontext.{$station}">
+                      <set_entity_role entity="$actor" role="entityrole.passenger"/>
+                      <set_entity_role_object entity="$actor" object="$station"/>
+                    </do_if>
+                  </do_if>
+                </do_if>
+                <set_value name="$arrived" exact="$nativeexited or ($actor.exists and $actor.room.exists and $actor.room.hascontext.{$station} and not $actor.room.hascontext.{$ship})"/>
+                <do_if value="not $arrived">
+                  <do_if value="not @$entry.$exit.component.exists or @$entry.$exitstation != $station">
+                    <set_value name="$exits" exact="[]"/>
+                    <do_if value="@$ship.dock.walkablemodule.haswalkableroom">
+                      <find_npc_waypoint name="$exits" object="$ship.dock.walkablemodule" tags="tag.npctransport" multiple="true"/>
+                    </do_if>
+                    <do_if value="not $exits.count">
+                      <find_npc_waypoint name="$exits" object="$station" tags="tag.npctransport" multiple="true"/>
+                    </do_if>
+                    <do_if value="not $exits.count">
+                      <set_value name="$pointcontainer" exact="$station"/>
+                      <include_actions ref="PassengerRoomPointsV32"/>
+                      <set_value name="$exits" exact="$pointlist.clone"/>
+                    </do_if>
+                    <do_for_each name="$exitpoint" in="$exits" counter="$j" reverse="true">
+                      <do_if value="not $exitpoint.component.hascontext.{$station} or $exitpoint.component.hascontext.{$ship}">
+                        <remove_value name="$exits.{$j}"/>
+                      </do_if>
+                    </do_for_each>
+                    <do_if value="not $exits.count">
+                      <set_value name="$waiting" exact="true"/>
+                      <continue/>
+                    </do_if>
+                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit" exact="$exits.random"/>
+                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitstation" exact="$station"/>
+                    <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitmoving"/>
+                    <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival"/>
+                  </do_if>
+                  <set_value name="$exit" exact="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit"/>
+                  <set_value name="$pointcontainer" exact="$ship"/>
+                  <include_actions ref="PassengerRoomPointsV32"/>
+                  <set_value name="$rollback" exact="if $pointlist.count then $pointlist.random else null"/>
+                  <do_if value="not $actor.exists">
+                    <do_if value="$rollback and $actor.isclass.npc">
+                      <add_actor_to_room actor="$actor" slot="$rollback" result="$restored"/>
+                    </do_if>
+                    <do_if value="not $actor.exists">
+                      <set_value name="$waiting" exact="true"/>
+                      <continue/>
+                    </do_if>
+                  </do_if>
+                  <do_if value="not $actor.room.hascontext.{$ship}">
+                    <set_value name="$waiting" exact="true"/>
+                    <continue/>
+                  </do_if>
+                  <do_if value="@$ship.people.{$entry.$template}.exists">
+                    <remove_npc_template object="$ship" template="$entry.$template"/>
+                  </do_if>
+                  <do_if value="@$ship.people.{$entry.$template}.exists">
+                    <set_value name="$waiting" exact="true"/>
+                    <continue/>
+                  </do_if>
+                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$released" exact="true"/>
+                  <do_if value="not $actor.exists and $rollback">
                     <add_actor_to_room actor="$actor" slot="$rollback" result="$restored"/>
                   </do_if>
                   <do_if value="not $actor.exists">
                     <set_value name="$waiting" exact="true"/>
                     <continue/>
                   </do_if>
-                </do_if>
-                <do_if value="not $actor.room.hascontext.{$ship}">
+                  <set_entity_role entity="$actor" role="entityrole.passenger"/>
+                  <set_entity_role_object entity="$actor" object="$station"/>
+                  <do_if value="not $entry.$exitstarted?">
+                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitstarted" exact="player.age"/>
+                  </do_if>
+                  <do_if value="$ship.attention lt attention.visible or player.age ge @$entry.$exitstarted + 2min">
+                    <set_value name="$placed" exact="false"/>
+                    <clear_actor_roomslot actor="$actor"/>
+                    <add_actor_to_room actor="$actor" slot="$exit" result="$placed" setroomslot="false" triggeranimation="false"/>
+                    <do_if value="$placed and $actor.exists and $actor.room.exists and $actor.room.hascontext.{$station} and not $actor.room.hascontext.{$ship}">
+                      <set_entity_traits entity="$actor" hidden="false" intransit="false"/>
+                      <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$arrived" exact="true"/>
+                      <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival" exact="player.age"/>
+                      <debug_text text="'GO passenger transfer: ship=%1 contract=%2 passenger=%3 station=%4 visible=%5'.[$ship.debugname,player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id,$i,$station.debugname,$ship.attention ge attention.visible]"/>
+                    </do_if>
+                    <do_else>
+                      <do_if value="not $actor.exists and $rollback">
+                        <add_actor_to_room actor="$actor" slot="$rollback" result="$restored"/>
+                      </do_if>
+                      <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit"/>
+                      <set_value name="$waiting" exact="true"/>
+                    </do_else>
+                  </do_if>
+                  <do_else>
+                    <do_if value="not @$entry.$exitmoving or (not $actor.iswalking and player.age ge @$entry.$exitsignal + 20s)">
+                      <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot = $exit, $movementspeed = $actor.walkspeed, $preventanimation = true]"/>
+                      <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitmoving" exact="true"/>
+                      <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitsignal" exact="player.age"/>
+                    </do_if>
+                  </do_else>
                   <set_value name="$waiting" exact="true"/>
+                  <continue/>
+                </do_if>
+                <do_if value="not @$entry.$stationarrival">
+                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival" exact="player.age"/>
+                  <continue/>
+                </do_if>
+                <do_if value="player.age lt @$entry.$stationarrival + 5s">
                   <continue/>
                 </do_if>
                 <do_if value="@$ship.people.{$entry.$template}.exists">
@@ -962,83 +1002,33 @@
                   <set_value name="$waiting" exact="true"/>
                   <continue/>
                 </do_if>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$released" exact="true"/>
-                <do_if value="not $actor.exists and $rollback">
-                  <add_actor_to_room actor="$actor" slot="$rollback" result="$restored"/>
+                <remove_actor_from_room actor="$actor" destroy="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$delivered" exact="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_progress" exact="player.age"/>
+                <set_value name="$completed" exact="$completed + 1"/>
+                <debug_text text="'GO passenger departed: ship=%1 service=%2 contract=%3 passenger=%4 destination=%5 native_offscreen=%6'.[$ship.debugname,player.entity.$vgo_objects.{$ship}.$vgo_passenger_service,player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id,$i,$station.debugname,$nativeexited]"/>
+              </do_for_each>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_waiting_interiors" exact="$waiting"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Passenger service: docked, ' + $completed + '/' + player.entity.$vgo_objects.{$ship}.$vgo_passengers.count + ' passengers left the ship' + (if $waiting then ' - completing station transfer; no fare until all passengers leave' else '')"/>
+              <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and $completed == player.entity.$vgo_objects.{$ship}.$vgo_passengers.count">
+                <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and @player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed gt 0s and @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops gt 0">
+                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration" exact="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed"/>
+                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops" exact="player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops"/>
                 </do_if>
-                <do_if value="not $actor.exists">
-                  <set_value name="$waiting" exact="true"/>
-                  <continue/>
-                </do_if>
-                <set_entity_role entity="$actor" role="entityrole.passenger"/>
-                <set_entity_role_object entity="$actor" object="$station"/>
-                <do_if value="not $entry.$exitstarted?">
-                  <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitstarted" exact="player.age"/>
-                </do_if>
-                <do_if value="$ship.attention lt attention.visible or player.age ge @$entry.$exitstarted + 2min">
-                  <set_value name="$placed" exact="false"/>
-                  <clear_actor_roomslot actor="$actor"/>
-                  <add_actor_to_room actor="$actor" slot="$exit" result="$placed" setroomslot="false" triggeranimation="false"/>
-                  <do_if value="$placed and $actor.exists and $actor.room.exists and $actor.room.hascontext.{$station} and not $actor.room.hascontext.{$ship}">
-                    <set_entity_traits entity="$actor" hidden="false" intransit="false"/>
-                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$arrived" exact="true"/>
-                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival" exact="player.age"/>
-                    <debug_text text="'GO passenger transfer: ship=%1 contract=%2 passenger=%3 station=%4 visible=%5'.[$ship.debugname,player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id,$i,$station.debugname,$ship.attention ge attention.visible]"/>
-                  </do_if>
-                  <do_else>
-                    <do_if value="not $actor.exists and $rollback">
-                      <add_actor_to_room actor="$actor" slot="$rollback" result="$restored"/>
-                    </do_if>
-                    <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exit"/>
-                    <set_value name="$waiting" exact="true"/>
-                  </do_else>
-                </do_if>
-                <do_else>
-                  <do_if value="not @$entry.$exitmoving or (not $actor.iswalking and player.age ge @$entry.$exitsignal + 20s)">
-                    <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot = $exit, $movementspeed = $actor.walkspeed, $preventanimation = true]"/>
-                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitmoving" exact="true"/>
-                    <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$exitsignal" exact="player.age"/>
-                  </do_if>
-                </do_else>
-                <set_value name="$waiting" exact="true"/>
-                <continue/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered_count" exact="$completed"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivery_label" exact="$station.knownname"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_manifest_ready"/>
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase" exact="'delivered'"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered" exact="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_completed_id" exact="player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_completed_service" exact="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service"/>
+                <write_to_logbook category="general" title="'Galactic Occupations: passengers delivered'" text="$ship.knownname + ': all ' + $completed + ' passengers have left the ship at ' + $station.knownname + '; settling the booked fare'" interaction="showonmap" object="$station"/>
               </do_if>
-              <do_if value="not @$entry.$stationarrival">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$stationarrival" exact="player.age"/>
-                <continue/>
-              </do_if>
-              <do_if value="player.age lt @$entry.$stationarrival + 5s">
-                <continue/>
-              </do_if>
-              <do_if value="@$ship.people.{$entry.$template}.exists">
-                <remove_npc_template object="$ship" template="$entry.$template"/>
-              </do_if>
-              <do_if value="@$ship.people.{$entry.$template}.exists">
-                <set_value name="$waiting" exact="true"/>
-                <continue/>
-              </do_if>
-              <remove_actor_from_room actor="$actor" destroy="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$delivered" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_progress" exact="player.age"/>
-              <set_value name="$completed" exact="$completed + 1"/>
-              <debug_text text="'GO passenger departed: ship=%1 service=%2 contract=%3 passenger=%4 destination=%5 native_offscreen=%6'.[$ship.debugname,player.entity.$vgo_objects.{$ship}.$vgo_passenger_service,player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id,$i,$station.debugname,$nativeexited]"/>
-            </do_for_each>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_waiting_interiors" exact="$waiting"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Passenger service: docked, ' + $completed + '/' + player.entity.$vgo_objects.{$ship}.$vgo_passengers.count + ' passengers left the ship' + (if $waiting then ' - completing station transfer; no fare until all passengers leave' else '')"/>
-            <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and $completed == player.entity.$vgo_objects.{$ship}.$vgo_passengers.count">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered_count" exact="$completed"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivery_label" exact="$station.knownname"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_manifest_ready"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase" exact="'delivered'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_completed_id" exact="player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_completed_service" exact="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service"/>
-              <write_to_logbook category="general" title="'Galactic Occupations: passengers delivered'" text="$ship.knownname + ': all ' + $completed + ' passengers have left the ship at ' + $station.knownname + '; settling the booked fare'" interaction="showonmap" object="$station"/>
-            </do_if>
+            </do_else>
           </do_else>
-        </do_else>
+        </do_if>
       </actions>
     </library>
     <cue name="LoadedV35">
@@ -1077,6 +1067,15 @@
       </actions>
     </cue>
     <cue name="LoadedV38">
-      <actions/></cue>
-  <cue name="LoadedV39"><actions><write_to_logbook category="general" title="'Galactic Occupations 0.3.9: crystal crew return recovery'" text="'Paid counter visits now commit a persistent return state. The independent crew controller recovers matching paid invoices, including the previously stranded seven-item sale, without paying twice. Existing crew, stock, passengers and bookings are retained. Off-screen sales are confirmed in the supplied log; this new return recovery still needs live confirmation.'"/></actions></cue></cues>
+      <actions/>
+    </cue>
+    <cue name="LoadedV39">
+      <actions/>
+    </cue>
+    <cue name="LoadedV40">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.4.0: crew recall and cancelled passengers'" text="'Stranded crystal/hacker crew recall after twenty game minutes away. Removing the persistent taxi/tour service starts unpaid passenger departure grace: thirty minutes for taxi, at least two hours for tours, extended by measured cruise duration. Retained defaults/queued service orders protect combat, lockboxes and other temporary interruptions. Resuming before expiry keeps the same party. New tours default to twenty stops; existing bookings are preserved.'"/>
+      </actions>
+    </cue>
+  </cues>
 </mdscript>

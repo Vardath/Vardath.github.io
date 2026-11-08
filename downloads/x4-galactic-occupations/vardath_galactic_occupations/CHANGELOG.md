@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.0 — delayed recovery without cancelling temporary work
+
+- Recall stranded crystal/hacker crew after twenty game minutes away, using the same native actor/template, original role/post and guarded room/post placement. Preserve manual transfers, player orders and hacker tool-loan accounting.
+- Track real service cancellation separately from current orders. Retained default/current/queued service protects combat, lockboxes and manual control. Save taxi thirty-minute and tour minimum-two-hour unpaid grace; resume before expiry with the same party.
+- Extend cancelled-tour grace using measured active cruise/history; default new tours to twenty stops while preserving accepted bookings and reading live settings for future ones.
+- Remove immediate interruption cleanup; retain manifests in persistent registries, void expired contract IDs before native passenger removals, retry failures and preserve recruited crew. No cancellation payment/reputation or fabricated ledger transaction.
+- Add 42 executed lifecycle/native-boundary/integration contracts. All 299 Python contracts and 78 Lua mocks pass, alongside XML/API/reference/patch/package checks. New X4 recalls/evacuations remain unverified; prior boarding limitations are not claimed fixed. See RECOVERY_POLICY_0.4.0.md.
+
 ## 0.3.9 — paid crystal crew return and imported-state recovery
 
 - Commit the exact physical invoice and returning phase when native sale money is fully observed; do not rely solely on the settlement caller. Independently reconcile paid visits and the exact old seven-item stranded state without issuing money or replacing crew.

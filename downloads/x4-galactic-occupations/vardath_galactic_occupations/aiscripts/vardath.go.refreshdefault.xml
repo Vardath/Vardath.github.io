@@ -335,7 +335,7 @@
         <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true"/>
         <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0"/>
         <set_value name="$settings.$viewtime" exact="if @this.ship.defaultorder.$viewtime != null then this.ship.defaultorder.$viewtime else 45s"/>
-        <set_value name="$settings.$stops" exact="if @this.ship.defaultorder.$stops != null then this.ship.defaultorder.$stops else 10"/>
+        <set_value name="$settings.$stops" exact="if @this.ship.defaultorder.$stops != null then this.ship.defaultorder.$stops else 20"/>
         <set_value name="$settings.$ticketfee" exact="if @this.ship.defaultorder.$ticketfee != null then this.ship.defaultorder.$ticketfee else 500000Cr"/>
         <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder"/>
         <set_order_state order="this.ship.defaultorder" state="orderstate.finish"/>

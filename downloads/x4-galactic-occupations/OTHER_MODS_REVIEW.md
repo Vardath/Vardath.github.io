@@ -26,3 +26,7 @@ The dated sections above describe earlier reviews, not the current patch invento
 ## 8 November 2026 — 0.3.9 crew-return follow-up
 
 Only Occupations source changes. All companion sources retain their 0.3.8 published hashes and are re-audited. The new log confirms physical/off-screen crystal money and identifies eleven Occupations import/parameter/result errors; its other 1,151 error records are separately identified rather than claimed fixed. No third-party source or saved plan was deleted. See [the current report](vardath_galactic_occupations/LOG_REVIEW_0.3.9.md), including the unresolved 0/2 tour boarding wait.
+
+## 8 November 2026 — 0.4.0 recovery policy
+
+Only Occupations source changes. Companion sources retain the last published hashes. New code adds delayed same-crew recall and unpaid cancelled-passenger evacuation without changing the native UI, other ship modifications, Inventory Collector or previous paid receipts. No new log/runtime proof is asserted; see RECOVERY_POLICY_0.4.0.md for native checks, boundary tests and remaining limitations.

@@ -1,8 +1,8 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 81,
-    "commands": 4078,
+    "xml_files": 82,
+    "commands": 4265,
     "script_calls": 141,
     "behaviours": 13,
     "ui_addons": 1
@@ -27,7 +27,7 @@
     "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
     "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections."
   },
-  "runtime": "NOT RUN: no X4 executable, save or full installed catalogs. Latest debug(20261108-032505).log verifies seven crystal payments totalling 337,000 Cr, including a physical seven-item sale for 7,000 Cr whose representative remained at the counter. Implement persistent paid-visit return and independent legacy/registry recovery, safe parameter and imported-call handling. New return recovery is unverified; one tour remains waiting at 0/2 boarding in the log.",
+  "runtime": "NOT RUN: no X4 executable, save or full installed catalogs. Version 0.4.0 implements twenty-minute same-crew recall, interruption-safe thirty-minute taxi/minimum-two-hour adaptive tour cancellation grace and new twenty-stop tours. Native actions are mocked in local contracts; no new runtime log verifies these timers. Prior log verifies seven crystal payments totalling 337,000 Cr and still shows one tour waiting at 0/2 boarding. Existing runtime limitations remain.",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",

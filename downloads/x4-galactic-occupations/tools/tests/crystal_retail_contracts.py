@@ -40,6 +40,9 @@ class RetailVM(VM):
         self.captain=Obj('captain',exists=True,isclass=Obj('class',npc=True),room=self.shiproom,
                          roomslot=self.seat,iswalking=False,role='pilot',controlpost='pilot')
         self.ship.pilot=self.captain
+        self.crew.npctemplate=1000;self.captain.npctemplate=1001
+        self.crew.roleobject=self.ship;self.captain.roleobject=self.ship
+        self.crew_roster={1000,1001}
         self.merchant.type='trader';self.merchant.room=self.shoproom;self.merchant.roomslot=self.counter
         self.crewlist=Seq([self.crew]);self.traders=Seq([self.merchant]);self.registry=Seq()
         self.other={};self.events=[];self.pending={};self.native_arrives=True
@@ -74,6 +77,9 @@ class RetailVM(VM):
         text=text.replace('player.occupiedship',self.remembered(self.ship if self.occupied else NULL))
         text=text.replace('player.sector',self.remembered(self.player_sector)).replace('attention.visible','1')
         text=text.replace('$buyer.dockingallowed.{$ship}',self.remembered(self.can_dock))
+        text=text.replace('@$origin.component.exists',self.remembered(bool(self.path('$origin.component.exists'))))
+        actor=self.vars.get('actor',NULL)
+        text=text.replace('@$ship.people.{$actor.npctemplate}.exists',self.remembered(getattr(actor,'npctemplate',NULL) in self.crew_roster))
         text=text.replace('Init.$Ships','$registry')
         text=re.sub(r'@?'+re.escape(S)+r'\.\$(\w+)\.clone',lambda m:self.remembered(copy.deepcopy(self.get(m[1]))),text)
         p=r'@?player\.entity\.\$vgo_objects\.\{\$(\w+)\}(?:\.\$(\w+))?(\?)?'
@@ -183,6 +189,7 @@ class RetailVM(VM):
             elif tag=='signal_objects':
                 if n.get('param')=="'vardath.go.crystal.shop'":
                     if self.ship not in self.registry:self.registry.append(self.ship)
+                elif n.get('param')=="'vardath.go.recovery.track'":pass # Independent lifecycle tested separately.
                 else:
                     actor=self.expr(n.get('object'));movement=self.expr(n.get('param2'))
                     target=movement.get('slot',NULL)

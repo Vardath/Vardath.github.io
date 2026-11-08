@@ -1,87 +1,90 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.board" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.passengers.board" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
-    <param name="target" />
+    <param name="target"/>
   </params>
   <attention min="unknown">
     <actions>
+      <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_passenger_disposing">
+        <return value="false"/>
+      </do_if>
       <do_if value="not player.entity.$vgo_objects?">
-        <set_value name="player.entity.$vgo_objects" exact="table[]" />
+        <set_value name="player.entity.$vgo_objects" exact="table[]"/>
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
-        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]"/>
       </do_if>
       <do_if value="(player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and player.entity.$vgo_objects.{this.ship}.$vgo_job != 2">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Resume Galactic Taxi Service to deliver the saved passenger first'" />
-        <return value="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Resume Galactic Taxi Service to deliver the saved passenger first'"/>
+        <return value="false"/>
       </do_if>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and @player.entity.$vgo_objects.{this.ship}.$vgo_passenger_service != @player.entity.$vgo_objects.{this.ship}.$vgo_job">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passengers belong to another service; resume it to complete their journey'" />
-        <return value="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passengers belong to another service; resume it to complete their journey'"/>
+        <return value="false"/>
       </do_if>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup.exists">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" exact="$target" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" exact="$target"/>
       </do_if>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
-        <set_value name="$pickup" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup" />
+        <set_value name="$pickup" exact="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_pickup"/>
         <do_if value="not $pickup.isoperational">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: docking for passenger at ' + $pickup.knownname" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$pickup" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: docking for passenger at ' + $pickup.knownname"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$pickup"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min"/>
         <do_if value="this.ship.sector != $pickup.sector">
-          <run_script name="'vardath.go.depart'" result="$departed" />
+          <run_script name="'vardath.go.depart'" result="$departed"/>
           <do_if value="not $departed">
-            <return value="false" />
+            <return value="false"/>
           </do_if>
           <run_script name="'vardath.go.travel'" result="$vgo_arrived">
-            <param name="destination" value="$pickup.sector" />
+            <param name="destination" value="$pickup.sector"/>
           </run_script>
           <do_if value="not $vgo_arrived">
-            <return value="false" />
+            <return value="false"/>
           </do_if>
         </do_if>
         <run_script name="'vardath.go.dock'" result="$vgo_docked">
-          <param name="destination" value="$pickup" />
-          <param name="waittime" value="5min" />
+          <param name="destination" value="$pickup"/>
+          <param name="waittime" value="5min"/>
         </run_script>
         <do_if value="not $vgo_docked">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
         <do_if value="@this.ship.dock.container != $pickup">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
         <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count and not (player.entity.$vgo_objects.{this.ship}.$vgo_passenger? and @this.ship.people.{player.entity.$vgo_objects.{this.ship}.$vgo_passenger}.exists) and not this.ship.people.free">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'boarding'" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase_started" exact="player.age" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_progress" exact="player.age" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: docked, waiting for passenger to board'" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 6min" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'boarding'"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase_started" exact="player.age"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_progress" exact="player.age"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: docked, waiting for passenger to board'"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 6min"/>
         <do_while value="@this.ship.dock.container == $pickup and not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded and @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase == 'boarding'">
-          <wait exact="2s" />
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 6min" />
+          <wait exact="2s"/>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 6min"/>
           <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_waiting_interiors and player.age gt @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_progress + 5min">
-            <break />
+            <break/>
           </do_if>
         </do_while>
         <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'cancel'" />
-          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger service: boarding failed or interrupted; no fare awarded'" />
-          <return value="false" />
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_taxi_phase" exact="'boarding'"/>
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Passenger boarding interrupted; same passengers retained for resumption, no fare awarded'"/>
+          <return value="false"/>
         </do_if>
       </do_if>
       <do_if value="not @player.entity.$vgo_objects.{this.ship}.$vgo_passengers.count or not @player.entity.$vgo_objects.{this.ship}.$vgo_taxi_boarded">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
       <do_for_each name="$entry" in="player.entity.$vgo_objects.{this.ship}.$vgo_passengers">
         <do_if value="not $entry.$delivered and (not $entry.$boarded or (@this.ship.people.{$entry.$template}.isintransit and not @$entry.$released) or (not @this.ship.people.{$entry.$template}.exists and not @$entry.$released))">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
       </do_for_each>
-      <return value="true" />
+      <return value="true"/>
     </actions>
   </attention>
 </aiscript>
