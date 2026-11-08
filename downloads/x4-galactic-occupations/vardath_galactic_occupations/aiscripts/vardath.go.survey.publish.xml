@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.survey.publish" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="station" />
+    <param name="module" />
+    <param name="started" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or not $module.isoperational or not $station.isoperational or this.ship.sector != $station.sector or $station.ishostileto.{this.ship} or this.ship.distanceto.{$module} gt 3km + (this.ship.size + $module.size) / 2 or player.age lt $started + 10s">
+        <return value="0" />
+      </do_if>
+      <set_value name="$before" exact="$module.scannedlevel" />
+      <set_value name="$beforepct" exact="$module.revealedpercentage" />
+      <do_if value="player.maxscanlevel gt 0">
+        <set_object_scanned object="$module" />
+      </do_if>
+      <set_known object="$module" known="true" />
+      <set_known object="$station" known="true" updatesnapshot="true" />
+      <do_if value="$module.scannedlevel lt this.ship.maxscanlevel">
+        <do_if value="not player.entity.$vgo_objects.{$module}?">
+          <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_sample" exact="table[$ship = this.ship, $station = $station, $started = $started, $finished = player.age, $level = this.ship.maxscanlevel]" />
+        <signal_objects object="player.entity" param="'vardath.go.survey.publish'" param2="$module" param3="this.ship" />
+        <wait exact="100ms" />
+      </do_if>
+      <do_if value="@player.entity.$vgo_objects.{$module}.$vgo_survey_queued and @player.entity.$vgo_objects.{$module}.$vgo_survey_sample_level ge this.ship.maxscanlevel">
+        <return value="1" />
+      </do_if>
+      <do_if value="$module.scannedlevel gt $before or $module.revealedpercentage gt $beforepct">
+        <return value="2" />
+      </do_if>
+      <return value="0" />
+    </actions>
+  </attention>
+</aiscript>

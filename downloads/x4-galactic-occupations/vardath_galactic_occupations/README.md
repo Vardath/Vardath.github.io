@@ -1,6 +1,12 @@
-# Galactic Occupations 0.4.1 development build
+# Galactic Occupations 0.4.2 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.2: new roles move while old crew recovery continues
+
+Fixes the shared departure gate that held every occupation while a crystal representative remained ashore, including ships already in space. The current crystal service still waits at its own actual shop dock; changing roles permits travel while the original same-NPC twenty-minute recall and financial state continue independently. Background crew visits no longer overwrite another role's status or disable its timeout recovery. Runtime 42 repairs eligible existing workers without taking over player orders or a currently deployed hack.
+
+Scanner eligibility uses the assigned ship's equipment rather than the player's current scan cap or ship class. Completed timed samples can wait in a bounded persistent queue for actual native scan publication while the survey ship keeps working. Signal-leak station effects remain independent. Native information is acknowledged only after a real scan-level change; queued work is labelled pending. [Exact new-log evidence, changes, limits and existing-save live checks](CREW_ORDER_RECOVERY_0.4.2.md). 370 Python contracts and 91 Lua mocks pass. Actual X4 movement, NPC recovery, scan publication and save/load still need live verification. Only Occupations source changes; all companion sources remain unchanged.
 
 ## 0.4.1: station signals, passenger handoffs and spacesuit recovery
 

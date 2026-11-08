@@ -4,6 +4,8 @@
     <cue name="Init">
       <actions>
         <set_value name="$Offers" exact="[]" />
+        <set_value name="$Pending" exact="[]" />
+        <set_value name="$Cursor" exact="1" />
       </actions>
     </cue>
     <cue name="NativeOffer" instantiate="true">
@@ -169,6 +171,88 @@
           </cues>
         </cue>
       </cues>
+    </cue>
+    <cue name="PublicationBootstrapV42">
+      <actions>
+        <do_if value="not Init.$Pending?">
+          <set_value name="Init.$Pending" exact="[]" />
+        </do_if>
+        <do_if value="not Init.$Cursor?">
+          <set_value name="Init.$Cursor" exact="1" />
+        </do_if>
+      </actions>
+    </cue>
+    <cue name="QueuePublication" instantiate="true" namespace="this">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.survey.publish'" />
+      </conditions>
+      <actions>
+        <set_value name="$module" exact="event.param2" />
+        <set_value name="$ship" exact="event.param3" />
+        <set_value name="$sample" exact="@player.entity.$vgo_objects.{$module}.$vgo_survey_sample" />
+        <set_value name="$station" exact="@$sample.$station" />
+        <do_if value="$module.isoperational and $ship.isplayerowned and $ship != player.occupiedship and @$ship.order.id == 'VGO_scanner' and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and $sample.$ship == $ship and $station.isoperational and not $station.ishostileto.{$ship} and $ship.sector == $station.sector and $ship.distanceto.{$module} le 3km + ($ship.size + $module.size) / 2 and $sample.$finished ge $sample.$started + 10s and player.age le $sample.$finished + 5s and $sample.$level gt 0 and $sample.$level == $ship.maxscanlevel">
+          <do_if value="@player.entity.$vgo_objects.{$module}.$vgo_survey_queued or Init.$Pending.count lt 2048">
+            <do_if value="not @player.entity.$vgo_objects.{$module}.$vgo_survey_queued">
+              <append_to_list name="Init.$Pending" exact="$module" />
+            </do_if>
+            <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_queued" exact="true" />
+            <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_sample_level" exact="if player.entity.$vgo_objects.{$module}.$vgo_survey_sample_level? then [$sample.$level,player.entity.$vgo_objects.{$module}.$vgo_survey_sample_level].max else $sample.$level" />
+            <debug_text text="'GO component survey queued: module=%1 ship=%2 target_level=%3 player_cap=%4; real sample retained, native scan publication pending'.[$module,$ship,$sample.$level,player.maxscanlevel]" />
+          </do_if>
+        </do_if>
+      </actions>
+    </cue>
+    <library name="PublishPending">
+      <actions>
+        <set_value name="$published" exact="0" />
+        <do_all exact="[Init.$Pending.count,16].min">
+          <do_if value="not Init.$Pending.count">
+            <break />
+          </do_if>
+          <do_if value="Init.$Cursor lt 1 or Init.$Cursor gt Init.$Pending.count">
+            <set_value name="Init.$Cursor" exact="1" />
+          </do_if>
+          <set_value name="$index" exact="Init.$Cursor" />
+          <set_value name="$module" exact="Init.$Pending.{$index}" />
+          <do_if value="not $module.isoperational">
+            <remove_value name="Init.$Pending.{$index}" />
+            <continue />
+          </do_if>
+          <set_value name="$goal" exact="@player.entity.$vgo_objects.{$module}.$vgo_survey_sample_level" />
+          <do_if value="$module.scannedlevel lt $goal and player.maxscanlevel gt $module.scannedlevel and (not player.entity.$vgo_objects.{$module}.$vgo_survey_publication_retry? or player.age ge @player.entity.$vgo_objects.{$module}.$vgo_survey_publication_retry or @player.entity.$vgo_objects.{$module}.$vgo_survey_publication_cap != player.maxscanlevel)">
+            <set_value name="$beforelevel" exact="$module.scannedlevel" />
+            <set_object_scanned object="$module" />
+            <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_publication_cap" exact="player.maxscanlevel" />
+            <do_if value="$module.scannedlevel le $beforelevel">
+              <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_publication_retry" exact="player.age + 10min" />
+            </do_if>
+          </do_if>
+          <do_if value="$module.scannedlevel ge $goal">
+            <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_level" exact="$module.scannedlevel" />
+            <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_time" exact="player.age" />
+            <remove_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_queued" />
+            <set_known object="$module" known="true" />
+            <set_known object="$module.container" known="true" updatesnapshot="true" />
+            <remove_value name="Init.$Pending.{$index}" />
+            <set_value name="$published" exact="$published + 1" />
+          </do_if>
+          <do_else>
+            <set_value name="Init.$Cursor" exact="$index + 1" />
+          </do_else>
+        </do_all>
+        <do_if value="$published gt 0">
+          <write_to_logbook category="general" title="'Galactic Occupations: native scan information published'" text="'' + $published + ' previously sampled components published at the native scanner cap. Remaining queued components: ' + Init.$Pending.count" />
+        </do_if>
+      </actions>
+    </library>
+    <cue name="PublishPendingSurveys" instantiate="true" namespace="this" checkinterval="30s">
+      <conditions>
+        <check_value value="Init.$Pending? and Init.$Pending.count gt 0 and player.maxscanlevel gt 0" />
+      </conditions>
+      <actions>
+        <include_actions ref="PublishPending" />
+      </actions>
     </cue>
   </cues>
 </mdscript>

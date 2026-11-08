@@ -1,8 +1,8 @@
 {
   "result": "PASS",
-  "checks": 78,
-  "target": "32 native receipt/turret UI mocks and 46 hacker menu/bridge mocks; unchanged UI source",
-  "local_engine": "Lua 5.4 shared library",
+  "checks": 91,
+  "target": "32 native receipt/turret UI mocks; 46 hacker menu/bridge mocks; 13 spacesuit observer mocks; UI source unchanged in 0.4.2",
+  "local_engine": "Lua 5.4 shared library, unpack=table.unpack compatibility alias",
   "CI_syntax_engines": [
     "Lua 5.1"
   ],

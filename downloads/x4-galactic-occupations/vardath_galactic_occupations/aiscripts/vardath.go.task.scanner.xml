@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -11,7 +11,7 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="not $target.isoperational or this.ship.maxscanlevel le 0 or player.maxscanlevel lt 0">
+      <do_if value="not $target.isoperational or this.ship.maxscanlevel le 0">
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Component survey requires scanner software'" />
         <return value="false" />
       </do_if>
@@ -19,10 +19,11 @@
         <param name="station" value="$target" />
       </run_script>
       <set_value name="$count" exact="0" />
+      <set_value name="$pendingcount" exact="0" />
       <set_value name="$geometrymissing" exact="false" />
       <set_value name="$stationbefore" exact="$target.revealedpercentage" />
       <do_for_each name="$module" in="$modules">
-        <do_if value="not $module.isoperational or $module.scannedlevel ge player.maxscanlevel">
+        <do_if value="not $module.isoperational or $module.scannedlevel ge this.ship.maxscanlevel">
           <continue />
         </do_if>
         <run_script name="'vardath.go.approach'" result="$ok">
@@ -37,12 +38,17 @@
           <continue />
         </do_if>
         <do_if value="(not this.ship.order.$simulatescans? or this.ship.order.$simulatescans) and ($module.sector != player.sector or not $module.isphysicsready)">
+          <set_value name="$remotelevel" exact="$module.scannedlevel" />
+          <set_value name="$remotepct" exact="$module.revealedpercentage" />
           <run_script name="'vardath.go.survey.remote'" result="$remotechanged">
             <param name="station" value="$target" />
             <param name="module" value="$module" />
           </run_script>
           <do_if value="$remotechanged">
             <set_value name="$count" exact="$count + 1" />
+            <do_if value="@player.entity.$vgo_objects.{$module}.$vgo_survey_queued and $module.scannedlevel lt this.ship.maxscanlevel">
+              <set_value name="$pendingcount" exact="$pendingcount + 1" />
+            </do_if>
           </do_if>
           <do_if value="$count ge 8">
             <break />
@@ -94,6 +100,7 @@
           </run_script>
           <set_command_action commandaction="commandaction.scanningto" param="$module" />
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Surveying ' + $module.knownname + ' on ' + $target.knownname + ' (' + $count + ' completed)'" />
+          <set_value name="$sample_started" exact="player.age" />
           <set_value name="$valid" exact="true" />
           <do_all exact="10">
             <do_if value="not $module.isoperational or not $module.isphysicsready or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 800m + ($module.size + this.ship.size) / 2 or $target.ishostileto.{this.ship}">
@@ -110,9 +117,13 @@
           <do_if value="$valid and $module.isoperational">
             <set_value name="$before" exact="$module.revealedpercentage" />
             <set_value name="$levelbefore" exact="$module.scannedlevel" />
-            <set_object_scanned object="$module" />
+            <run_script name="'vardath.go.survey.publish'" result="$publication" sinceversion="7">
+              <param name="station" value="$target" />
+              <param name="module" value="$module" />
+              <param name="started" value="$sample_started" />
+            </run_script>
             <set_known object="$module" known="true" />
-            <do_if value="$module.scannedlevel gt $levelbefore or $module.revealedpercentage gt $before">
+            <do_if value="@$publication gt 0">
               <set_value name="$count" exact="$count + 1" />
               <set_value name="$scanned" exact="true" />
               <do_if value="not player.entity.$vgo_objects.{$module}?">
@@ -124,6 +135,9 @@
               </do_if>
               <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_time" exact="player.age" />
               <set_known object="$target" known="true" updatesnapshot="true" />
+              <do_if value="@$publication == 1">
+                <set_value name="$pendingcount" exact="$pendingcount + 1" />
+              </do_if>
             </do_if>
             <debug_text text="'GO: module survey %s level %s to %s reveal %s to %s'.[$module.debugname,$levelbefore,$module.scannedlevel,$before,$module.revealedpercentage]" chance="player.entity.$vgo_objects.{this.ship}.$vgo_debug" />
             <break />
@@ -143,11 +157,11 @@
       <run_script name="'vardath.go.task.leaks'" result="$leakcount">
         <param name="station" value="$target" />
       </run_script>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $count then 'Survey completed: ' + $count + ' components; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%' else (if $geometrymissing then 'Component survey waiting for loaded collision geometry at ' + $target.knownname else 'No component scan changed discovery at ' + $target.knownname + '; retrying another target')" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $geometrymissing then 'Component survey waiting for loaded collision geometry at ' + $target.knownname + '; enable simulation for off-screen work' else ('Surveyed ' + $count + ' components at ' + $target.knownname + '; queued native scan publications: ' + $pendingcount + '; signal-leak surveys: ' + $leakcount)" />
       <do_if value="$count">
-        <write_to_logbook category="general" title="'Galactic Occupations: component survey'" text="'%s surveyed %s components of %s. Discovery %s to %s percent.'.[this.ship.knownname,$count,$target.knownname,$stationbefore,$target.revealedpercentage]" interaction="showonmap" object="$target" />
+        <write_to_logbook category="general" title="'Galactic Occupations: component survey'" text="'%1 surveyed %2 components of %3. Native discovery %4 to %5 percent; %6 scan publications queued because the player scanner context is unavailable or lower level.'.[this.ship.knownname,$count,$target.knownname,$stationbefore,$target.revealedpercentage,$pendingcount]" interaction="showonmap" object="$target" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $count + ' components scanned at ' + $target.knownname + '; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%' + '; signal-leak surveys: ' + $leakcount" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $count + ' components surveyed at ' + $target.knownname + '; native scan publications pending: ' + $pendingcount + '; native station discovery ' + $target.revealedpercentage + '%; signal-leak surveys: ' + $leakcount" />
       <return value="$count gt 0 or $leakcount gt 0" />
     </actions>
   </attention>

@@ -194,7 +194,7 @@
     <library name="RecallCrew">
       <actions>
         <set_value name="$recalled" exact="false" />
-        <do_if value="$ship.isplayerowned and $actor.isclass.npc and $actor != player.entity and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and not $actor.istransferscheduled">
+        <do_if value="$ship.isplayerowned and $actor.isclass.npc and $actor != player.entity and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and not $actor.istransferscheduled and not player.entity.isintransit and not (player.occupiedship == $ship and $actor.controlpost == controlpost.aipilot)">
           <set_value name="$oldrole" exact="$actor.role" />
           <set_value name="$oldpost" exact="$actor.controlpost" />
           <stop_actor_walk actor="$actor" />
@@ -220,6 +220,10 @@
           <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since?">
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" exact="player.age" />
           </do_if>
+          <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_notice">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_notice" exact="true" />
+            <write_to_logbook category="general" title="'Galactic Occupations: background crew recovery'" text="$ship.knownname + ': ' + $actor.knownname + ' is ashore at ' + $station.knownname + '. New ship jobs and direct orders remain available. Redock for physical return or allow twenty game minutes away for automatic same-crew recall.'" />
+          </do_if>
           <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since + 20min and (not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry? or player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry)">
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry" exact="player.age + 30s" />
             <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin" />
@@ -234,6 +238,7 @@
         <do_else>
           <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" />
           <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_notice" />
         </do_else>
       </actions>
     </library>
@@ -244,6 +249,10 @@
         <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and $actor.isclass.npc and not $actor.room.hascontext.{$ship} and @$ship.dock.container != $station">
           <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since?">
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" exact="player.age" />
+          </do_if>
+          <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_hack_away_notice">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_notice" exact="true" />
+            <write_to_logbook category="general" title="'Galactic Occupations: background crew recovery'" text="$ship.knownname + ': ' + $actor.knownname + ' is ashore at ' + $station.knownname + '. New ship jobs and direct orders remain available. Redock for physical return or allow twenty game minutes away for automatic same-crew recall.'" />
           </do_if>
           <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since + 20min and (not player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry? or player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry)">
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" exact="player.age + 30s" />
@@ -259,6 +268,7 @@
         <do_else>
           <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" />
           <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_notice" />
         </do_else>
       </actions>
     </library>

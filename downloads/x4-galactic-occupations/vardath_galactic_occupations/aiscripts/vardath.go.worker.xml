@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="19" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="20" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1"/>
     <param name="home" default="this.ship.sector"/>
@@ -33,7 +33,7 @@
         <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.timeout'"/>
       </conditions>
       <actions>
-        <do_if value="@player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_phase and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.exists and not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.room.hascontext.{this.assignedcontrolled}">
+        <do_if value="@player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_phase and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed and this.assignedcontrolled.order == @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_order and @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.isclass.npc and not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_actor.room.hascontext.{this.assignedcontrolled}">
           <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_deadline" exact="player.age + 30min"/>
         </do_if>
         <do_else>
@@ -114,6 +114,16 @@
       </conditions>
       <actions>
         <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
+          <abort_called_scripts resume="cleanup"/>
+        </do_if>
+      </actions>
+    </handler>
+    <handler>
+      <conditions>
+        <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart42'"/>
+      </conditions>
+      <actions>
+        <do_if value="not (@player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed and this.assignedcontrolled.order == @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_order)">
           <abort_called_scripts resume="cleanup"/>
         </do_if>
       </actions>
@@ -217,6 +227,10 @@
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
     <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart40'"/>
   </patch>
+  <patch sinceversion="20">
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
+    <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart42'"/>
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not $simulatesales? or @$simulatesales == null">
@@ -238,7 +252,7 @@
       <do_if value="not $batchsize? or @$batchsize == null">
         <set_value name="$batchsize" exact="24"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="40"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="42"/>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.isoperational and @this.ship.dock.container == @player.entity.$vgo_objects.{this.ship}.$vgo_service_dock">
         <debug_text text="'GO service dock resumed: ship=%1 job=%2 station=%3 order=%4'.[this.ship.debugname,$job,player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.debugname,this.ship.order.id]"/>
       </do_if>
@@ -340,8 +354,8 @@
         <set_value name="$home" exact="this.ship.sector"/>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home"/>
       </do_if>
-      <do_if value="$job == 3 and (this.ship.iscapitalship or this.ship.maxscanlevel le 0 or player.maxscanlevel le 0)">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if this.ship.iscapitalship then 'Scanner waiting: this survey requires an S/M ship; a capital ship is assigned' else (if this.ship.maxscanlevel le 0 then 'Scanner waiting: assigned ship has no usable scanner software' else 'Scanner waiting: the native player discovery scanner cap is zero; enter a scanner-equipped ship')"/>
+      <do_if value="$job == 3 and this.ship.maxscanlevel le 0">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Scanner waiting: assigned ship has no usable scanner software'"/>
         <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_survey_warning != player.entity.$vgo_objects.{this.ship}.$vgo_status">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_survey_warning" exact="player.entity.$vgo_objects.{this.ship}.$vgo_status"/>
           <write_to_logbook category="general" title="'Galactic Occupations: scanner prerequisite'" text="this.ship.knownname + ': ' + player.entity.$vgo_objects.{this.ship}.$vgo_status"/>

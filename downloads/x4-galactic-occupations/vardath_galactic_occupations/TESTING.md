@@ -1,5 +1,11 @@
 # Reproducible tests — 0.4.1 development
 
+## Current 0.4.2 crew/order regression
+
+Run [the six current existing-save acceptance sequences](CREW_ORDER_RECOVERY_0.4.2.md#validation-and-remaining-runtime-checks), especially the reported AKD-700 paid representative state followed by Scanner/Patrol. Verify actual flight while the same NPC remains ashore, no background status takeover, direct-order priority, non-sliding twenty-minute recall, same-NPC redock/recall and no duplicate invoice. Test native scanner caps -1/0, scanner-equipped capital ships, queued actual publication, signal benefits independent of publication and saved pending samples. There is no new X4 runtime result from this environment.
+
+370 Python contracts (22 new) and 91 Lua mocks pass. Native diff selectors/grammar and package/source audits are separate static checks. Earlier sections retain their release-specific evidence and outstanding runtime checks.
+
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
 
 ## Current station signal and boarding acceptance

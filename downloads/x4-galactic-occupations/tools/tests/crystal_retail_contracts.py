@@ -38,7 +38,7 @@ class RetailVM(VM):
         self.crew=Obj('crew',exists=True,hasbody=True,room=self.shiproom,roomslot=self.seat,
                       iswalking=False,role='service',istemporary=True,controlpost='engineer',isclass=Obj('class',npc=True))
         self.captain=Obj('captain',exists=True,isclass=Obj('class',npc=True),room=self.shiproom,
-                         roomslot=self.seat,iswalking=False,role='unassigned',controlpost='pilot')
+                         roomslot=self.seat,iswalking=False,role='unassigned',controlpost='aipilot')
         self.ship.pilot=self.captain
         self.crew.npctemplate=1000;self.captain.npctemplate=1001
         self.crew.roleobject=self.ship;self.captain.roleobject=self.ship
@@ -244,7 +244,7 @@ class PhysicalRetail(unittest.TestCase):
     def test_captain_fallback_retains_pilot_control_post_and_identity(self):
         v=RetailVM();v.crewlist=Seq()
         self.assertTrue(v.run('vardath.go.crystal.shop'));self.assertIs(v.ship.pilot,v.captain)
-        self.assertEqual(v.captain.controlpost,'pilot');self.assertIs(v.captain.room,v.shiproom)
+        self.assertEqual(v.captain.controlpost,'aipilot');self.assertIs(v.captain.room,v.shiproom)
     def test_preexisting_stay_value_and_temporary_flag_are_restored(self):
         v=RetailVM();v.crew.Stay=False;v.crew.istemporary=False
         self.assertTrue(v.run('vardath.go.crystal.shop'));self.assertIs(v.crew.Stay,False)

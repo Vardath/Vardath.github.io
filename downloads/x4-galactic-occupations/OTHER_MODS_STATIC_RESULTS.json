@@ -3,16 +3,17 @@
   "mods": {
     "x4-living-factions-builders": {
       "id": "vardath_living_factions_builders",
-      "files": 15,
-      "xml": 12,
+      "files": 17,
+      "xml": 13,
       "diffs": 8,
       "md": 2,
       "aiscripts": 0,
-      "lua": 0,
+      "lua": 1,
       "zip": "byte-for-byte checked",
+      "api_commands": 130,
       "validator": {
         "returncode": 0,
-        "output": "PASS: vardath_living_factions_builders; 15 source files, XML parse and ZIP integrity\n"
+        "output": "PASS: vardath_living_factions_builders; 17 source files, XML parse and ZIP integrity\n"
       },
       "runtime_verified": false
     },
@@ -25,6 +26,7 @@
       "aiscripts": 0,
       "lua": 0,
       "zip": "byte-for-byte checked",
+      "api_commands": 38,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_yaki_terran_habs; 21 source files, XML parse and ZIP integrity\n"
@@ -40,6 +42,7 @@
       "aiscripts": 0,
       "lua": 0,
       "zip": "byte-for-byte checked",
+      "api_commands": 130,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_kopis_production_cheat; 33 source files, XML parse and ZIP integrity\n"
@@ -55,6 +58,7 @@
       "aiscripts": 0,
       "lua": 0,
       "zip": "byte-for-byte checked",
+      "api_commands": 46,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_faction_invincible; 3 source files, XML parse and ZIP integrity\n"
@@ -70,9 +74,42 @@
       "aiscripts": 0,
       "lua": 1,
       "zip": "byte-for-byte checked",
+      "api_commands": 38,
       "validator": {
         "returncode": 0,
         "output": "PASS: vardath_station_auto_drones; 5 source files, XML parse and ZIP integrity\n"
+      },
+      "runtime_verified": false
+    },
+    "x4-universal-cargo-teleport": {
+      "id": "vardath_universal_cargo_teleport",
+      "files": 4,
+      "xml": 3,
+      "diffs": 2,
+      "md": 0,
+      "aiscripts": 0,
+      "lua": 0,
+      "zip": "byte-for-byte checked",
+      "api_commands": 22,
+      "validator": {
+        "returncode": 0,
+        "output": "Generic archive, XML and API checks above; no extension-local validator"
+      },
+      "runtime_verified": false
+    },
+    "x4-galactic-occupations": {
+      "id": "vardath_galactic_occupations",
+      "files": 115,
+      "xml": 89,
+      "diffs": 8,
+      "md": 8,
+      "aiscripts": 70,
+      "lua": 4,
+      "zip": "byte-for-byte checked",
+      "api_commands": 4587,
+      "validator": {
+        "returncode": 0,
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 89,\n    \"commands\": 4586,\n    \"script_calls\": 148,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.2 fixes the shared crew-return departure lock after role changes, scopes background statuses and hacker timeout protection to their own order, retains twenty-minute same-crew recall, and removes the worker scanner capital/player-context gate. Completed real close-range component samples queue for actual native publication when player.maxscanlevel becomes available; signal-leak station effects continue independently. The supplied 081204 log confirms old crew status persisting across Scanner/Patrol role changes and player scanner caps -1/0, not native parser errors in these mods. Actual movement, walking, queue publication, save/load and load-order require live X4 testing.\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -83,5 +120,30 @@
     "Static tests cannot establish that the game executes MD cues, Lua events, or overrides.",
     "No installed 9.00 vanilla/DLC catalogs or actual mod load-order are available to resolve XPath patches against the effective merged game.",
     "Historical XSDs, when available, may not match the player's current X4 build."
-  ]
+  ],
+  "update_bundle": {
+    "returncode": 0,
+    "output": "PASS: X4_Crew_Order_Recovery_2026-11-08.zip; 6 extensions, 195 byte-matched files\n"
+  },
+  "command_provenance": {
+    "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
+    "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
+    "log8_native_reference": "Native 9.00 move.generic endintargetsector guard, order.dock failure/current-order critical side effects, orderstate critical-to-finish semantics and declared scriptproperties inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. averagemaxyield is absent from 9.00 scriptproperties; unsupported optimization removed.",
+    "log9_native_handoff": "Native 9.00 orders.base explicit pre-start undocking allowlist inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. One attribute guard exempts only owned VGO taxi/tour/crystal/hacker/hackonce orders equal to their tracked worker at the recorded operational dock before a 30-minute expiry. Four move.generic jump-discovery attributes honour the declared useknownpath parameter for tracked VGO workers runtime>=36; native blacklists and other orders are unchanged.",
+    "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
+    "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
+    "not_installed_game_build": true,
+    "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
+    "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections.",
+    "passenger_departure_reference": "Native 9.00 GM_Transport_Passengers CleanUp removes NPC templates before departure; NPC_State_Machines TRANSITION_move_to and MoveFailedHandling_ToSlot keep actual actors and use add_actor_to_room on failed paths. Inspected ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. clear_actor_roomslot command metadata common.xsd:33094. Physical station-room arrival remains required for the custom fare.",
+    "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected. debug(6) runs 0.2.4; crystal miners repeatedly report beam-turret preflight waiting with zero starts. No crystal harvest/drop/collection proof. Native collect_drop and capital-mining orientation patterns inspected.",
+    "schema_metadata_date": "2026-08-28",
+    "schema_metadata_url": "https://github.com/chemodun/chemodun.github.io/tree/main/src/commands/data",
+    "schema_versions": [
+      "8.00",
+      "9.00"
+    ],
+    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented."
+  },
+  "reviewed_source": "Current worktree; X4 runtime unavailable"
 }

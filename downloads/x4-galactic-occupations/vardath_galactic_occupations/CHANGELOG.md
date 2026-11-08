@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.2 — 2026-11-08
+
+- Fixed the shared ashore-crystal-crew departure hold after takeoff/role changes; retained the actual current service's docked return wait and direct/player-order priority.
+- Scoped background crystal/hacker status and timeout protection to the owning order, with a separate one-time background recovery notice. Preserved twenty-minute same-actor recall, original crew flags, bookings, stock and settled/unpaid invoices.
+- Added runtime-42 import recovery without restarting a genuinely deployed current hacker operation. Returning captain recall defers during player transit/occupancy.
+- Removed the missed worker capital/player-scan-cap gate. Scanner-equipped ships now sample independently of the player's on-foot cap and queue real samples for bounded native publication; signal benefits continue independently. No invented scan-level API or false full-scan flags.
+- Added 22 mocked XML regression cases. 370 Python and 91 Lua checks pass; native execution remains unverified here. See CREW_ORDER_RECOVERY_0.4.2.md for exact supplied-log evidence and acceptance steps.
+
 ## 0.4.1 — guarded spacesuit recovery and logged role/braking fixes
 
 - Observe only confirmed vanilla Use Spacesuit transporter requests. Allow twelve seconds for native completion; check real suit/control/room state, cancel changed contexts, expire native-transit waits and consume intent before one native emergency-form suit teleport. Log actual verification without claiming a camera repair from a successful call alone.

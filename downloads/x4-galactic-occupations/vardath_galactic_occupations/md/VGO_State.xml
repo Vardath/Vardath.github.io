@@ -595,11 +595,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 40 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 42 and not (@player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_hack_order)">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="40" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="42" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until" />
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home" />

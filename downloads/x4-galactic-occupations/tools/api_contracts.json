@@ -11643,6 +11643,7 @@
       "kind": "action"
     }
   },
+  "controlpost_source": "X4 9.00 libraries/posts.xml at e3e8a345e5624db118bff3eb171b60b0993fcc2c",
   "enum_types": {
     "blacklistgrouplookup": {
       "kind": "enum",
@@ -13509,6 +13510,18 @@
     }
   },
   "literal_expression_enums": {
+    "controlpost": [
+      "playerpilot",
+      "aipilot",
+      "defence",
+      "manager",
+      "engineer",
+      "shadyguy",
+      "shiptrader",
+      "tradeagent",
+      "tradecomputer",
+      "trainee_individual"
+    ],
     "entityrole": [
       "service",
       "marine",
@@ -14167,6 +14180,7 @@
     "schema_versions": [
       "8.00",
       "9.00"
-    ]
+    ],
+    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented."
   }
 }

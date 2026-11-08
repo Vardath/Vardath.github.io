@@ -16,7 +16,7 @@ class SurveyVM(VM):
     def __init__(self):
         super().__init__();self.other=Obj('remote sector',exists=True)
         self.order=Obj('survey order',exists=True,id='VGO_scanner',scanleaks=True,simulatescans=True)
-        self.ship=Obj('survey ship',exists=True,isplayerowned=True,order=self.order,size=50,sector=SECTOR,attention=0)
+        self.ship=Obj('survey ship',exists=True,isplayerowned=True,order=self.order,size=50,sector=SECTOR,attention=0,maxscanlevel=2)
         self.station=Obj('station',exists=True,isoperational=True,isplayerowned=False,hostile=False,
             sector=SECTOR,size=1000,attention=0,dock_ok=True,knownname='Actual station',isclass=Obj('class',station=True),controlentity=NULL)
         self.module=Obj('module',exists=True,isoperational=True,isphysicsready=False,sector=SECTOR,size=200,
@@ -28,7 +28,7 @@ class SurveyVM(VM):
         self.native_offers=Seq();self.generic=Seq();self.slots=Seq(['actual leak slot'])
         self.native_leaks=Seq();self.native_calls=[];self.distance=1000;self.scan_accepts=True
         self.player_sector=self.other;self.vars.update(ship=self.ship,station=self.station,module=self.module,leak=self.leak)
-        self.after_wait=None;self.waits=0;self.gm_enabled=True;self.market=NULL;self.approach_accepts=True;self.los=True
+        self.after_wait=None;self.waits=0;self.gm_enabled=True;self.market=NULL;self.approach_accepts=True;self.los=True;self.player_cap=2
         self.work(virtual=True)
     def work(self,virtual=True):
         self.state['vgo_leak_work']={'station':self.station,'leak':self.station if virtual else self.leak,
@@ -42,11 +42,12 @@ class SurveyVM(VM):
         t=t.replace('Init.$Offers','$native_offers')
         t=t.replace('event.param2','$survey_ship')
         t=t.replace('this.ship','$survey_ship').replace('player.occupiedship','$occupied_ship').replace('player.sector','$player_sector')
+        t=t.replace('player.maxscanlevel',str(self.player_cap))
         for flag in ['scanleaks','simulatescans']:
             self.vars['option_'+flag]=getattr(self.ship.order,flag,True)
             t=t.replace('$survey_ship.order.$'+flag+'?','true' if flag in self.ship.order.__dict__ else 'false')
             t=t.replace('$survey_ship.order.$'+flag,'$option_'+flag)
-        for var,obj in [('station',self.vars.get('station',self.station)),('leak',self.vars.get('leak',self.leak))]:
+        for var,obj in [('station',self.vars.get('station',self.station)),('leak',self.vars.get('leak',self.leak)),('module',self.vars.get('module',self.module))]:
             prefix='player.entity.$vgo_objects.{$'+var+'}'
             for key in re.findall(re.escape(prefix)+r'\.\$(\w+)',t):
                 k=var+'_state_'+key;self.vars[k]=self.component_states.setdefault(obj,{}).get(key,NULL if key.endswith('_offer') else 0)
@@ -94,12 +95,13 @@ class SurveyVM(VM):
             tail=name[len('player.entity.$vgo_objects.{$ship}')+2:]
             if tail=='vgo_leak_work.$accepted':self.state['vgo_leak_work']['accepted']=value;return
             name=name.replace('player.entity.$vgo_objects.{$ship}',S)
-        for var in ['station','leak']:
+        for var in ['station','leak','module']:
             prefix='player.entity.$vgo_objects.{$'+var+'}'
             if name.startswith(prefix):
                 obj=self.vars[var];record=self.component_states.setdefault(obj,{})
                 if name.endswith('.$vgo_network_next'):record['vgo_network_next']=value
                 elif name.endswith('.$vgo_leak_scanned'):record['vgo_leak_scanned']=value
+                elif name.endswith('.$vgo_survey_sample'):record['vgo_survey_sample']=value
                 elif name==prefix:pass
                 else:raise AssertionError(name)
                 return
@@ -140,12 +142,15 @@ class SurveyVM(VM):
             elif n.tag=='run_script':
                 name=n.get('name').strip("'")
                 if name=='vardath.go.approach':result=self.approach_accepts
-                elif name=='vardath.go.scanleaks':
-                    saved=dict(self.vars);result=self.run(name);self.vars=saved
+                elif name in ['vardath.go.scanleaks','vardath.go.survey.publish']:
+                    saved=dict(self.vars);self.vars.update({p.get('name'):self.expr(p.get('value')) for p in n})
+                    result=self.run(name);self.vars=saved
                 else:raise AssertionError('Unexpected survey dependency '+name)
                 self.assign(n.get('result'),result)
             elif n.tag=='signal_objects' and n.get('param')=="'vardath.go.survey.leak'":
                 saved=dict(self.vars);self.decode();self.vars=saved
+            elif n.tag=='signal_objects' and n.get('param')=="'vardath.go.survey.publish'":
+                pass # This legacy VM refuses queue acknowledgement; PublicationVM executes it.
             elif n.tag=='check_line_of_sight':self.assign(n.get('name'),self.los)
             elif n.tag=='wait':
                 self.waits+=1;super().execute([n])

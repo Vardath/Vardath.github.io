@@ -1,11 +1,9 @@
-# Galactic Occupations 0.4.1 — spacesuit recovery and log fixes
+# Galactic Occupations 0.4.2 — crew and order recovery
 
-[Download Occupations](Galactic_Occupations_0.4.1_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Spacesuit_Recovery_2026-11-08.zip) · [Findings and live checks](vardath_galactic_occupations/SPACESUIT_RECOVERY_0.4.1.md)
+[Download Occupations](Galactic_Occupations_0.4.2_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Crew_Order_Recovery_2026-11-08.zip) · [Log findings, fixes and live checks](vardath_galactic_occupations/CREW_ORDER_RECOVERY_0.4.2.md)
 
-[Scanner and passenger changes](vardath_galactic_occupations/SURVEY_BOARDING_0.4.1.md): timed off-screen module/signal-leak surveys, real station bonuses and native job/black-market discovery. Boarding/departure now accept valid disconnected NPC identities; visible blocked walking has same-actor recovery. New gameplay paths require live checking.
+Fixes the movement lock after taking off with a crystal representative ashore and changing roles. All occupations can travel while old crew recovery runs independently; the original twenty-minute same-NPC recall and payment accounting remain. Background crystal/hacker activity no longer replaces another role's status or timeout recovery.
 
-Adds one delayed native recovery for a confirmed Use Spacesuit exit that leaves inconsistent suit/control/room state. Normal exits remain vanilla. Fixes the invalid pilot role check in cancelled-passenger cleanup; retains twenty-minute crew recalls, interruption-safe unpaid cancellation grace and twenty-stop tour defaults.
+Scanners now use their own installed equipment, including capital ships, rather than the player's current scan context. Real completed samples queue for actual native publication when available while the ship and signal-leak benefits keep working. Pending information is explicitly labelled pending.
 
-The companion Kopis/Astrid 1.16 fixes 11,240 logged ship-blackboard braking errors and excludes native/suit transitions from the yacht's braking assist. Forge weapon assets and recovery scripts are unchanged.
-
-Exit X4, overwrite the matching extension folders and load the same save. Keep Protected UI and Inventory Collector. The new log confirms 581,000 Cr in crystal/escort/patrol payments, but tour boarding remains unresolved. 348 Python contracts, 91 Lua mocks and static/package checks pass; new native recovery is not live verified.
+Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Only Occupations source changes; all five other bundle sources are unchanged. 370 Python contracts, 91 Lua mocks and static/package checks pass; new native movement, walking, publication and save/load remain unverified in X4 here.

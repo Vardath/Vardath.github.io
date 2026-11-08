@@ -15,7 +15,7 @@
       <find_object_component name="$components" object="$station" class="[class.turret, class.shieldgenerator]" surfaceelement="true" multiple="true" append="true" />
       <set_value name="$eligible" exact="[]" />
       <do_for_each name="$component" in="$components">
-        <do_if value="$component.isoperational and $component.scannedlevel lt player.maxscanlevel and not (@player.entity.$vgo_objects.{$component}.$vgo_survey_retry gt player.age) and not $eligible.indexof.{$component}">
+        <do_if value="$component.isoperational and $component.scannedlevel lt this.ship.maxscanlevel and not (@player.entity.$vgo_objects.{$component}.$vgo_survey_retry gt player.age) and not $eligible.indexof.{$component} and not (@player.entity.$vgo_objects.{$component}.$vgo_survey_queued and @player.entity.$vgo_objects.{$component}.$vgo_survey_sample_level ge this.ship.maxscanlevel)">
           <append_to_list name="$eligible" exact="$component" />
         </do_if>
       </do_for_each>

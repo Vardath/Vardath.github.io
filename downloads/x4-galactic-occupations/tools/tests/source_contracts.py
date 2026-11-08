@@ -86,11 +86,14 @@ class SourceContracts(unittest.TestCase):
         self.assertNotIn('$module.secrecylevel gt this.ship.maxscanlevel',s)
     def test_survey_reveals_only_after_real_surface_and_los_work(self):
         r=xml('aiscripts/vardath.go.task.scanner.xml')
-        self.assertEqual({n.get('object') for n in r.iter('set_object_scanned')},{'$module'})
+        publish=xml('aiscripts/vardath.go.survey.publish.xml')
+        self.assertEqual({n.get('object') for n in publish.iter('set_object_scanned')},{'$module'})
+        self.assertIsNotNone(r.find(".//run_script[@name=\"'vardath.go.survey.publish'\"]"))
         self.assertIsNotNone(r.find('.//find_object_surface'))
         self.assertIsNotNone(r.find('.//check_line_of_sight'))
         self.assertIsNotNone(r.find(".//do_all[@exact='10']/check_line_of_sight"))
-        self.assertIn('$module.scannedlevel gt $levelbefore',ET.tostring(r,encoding='unicode'))
+        self.assertIn('$module.scannedlevel gt $before',ET.tostring(publish,encoding='unicode'))
+        self.assertIn('player.maxscanlevel gt 0',ET.tostring(publish,encoding='unicode'))
     def test_large_stations_are_not_permanently_capped_at_80_modules(self):
         r=xml('aiscripts/vardath.go.scanmodules.xml')
         self.assertTrue(all('sortlimit' not in n.attrib for n in r.iter('find_object_component')))

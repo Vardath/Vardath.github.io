@@ -43,6 +43,7 @@ class LifecycleVM(PassengerVM):
             lifecycle_dock=self.actualdock)
         self.vars['recovery_npc']=bool(getattr(getattr(actor,'isclass',NULL),'npc',False))
         text=text.replace('$actor.isclass.npc','$recovery_npc')
+        text=text.replace('controlpost.aipilot',repr('aipilot'))
         text=text.replace('player.entity.$vgo_objects.keys.list','$knownships')
         text=text.replace('Init.$Ships.indexof.{$ship}','true' if self.ship in self.registry else 'false')
         text=text.replace('Init.$Ships','$registry')

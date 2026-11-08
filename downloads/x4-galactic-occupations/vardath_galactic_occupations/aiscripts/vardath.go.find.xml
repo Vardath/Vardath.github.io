@@ -186,7 +186,7 @@
           <continue />
         </do_if>
         <do_if value="$job == 3">
-          <do_if value="@player.entity.$vgo_objects.{$candidate}.$vgo_survey_next gt player.age and @player.entity.$vgo_objects.{$candidate}.$vgo_survey_cap == player.maxscanlevel">
+          <do_if value="@player.entity.$vgo_objects.{$candidate}.$vgo_survey_next gt player.age and @player.entity.$vgo_objects.{$candidate}.$vgo_survey_cap == this.ship.maxscanlevel">
             <continue />
           </do_if>
           <run_script name="'vardath.go.scanmodules'" result="$modules">
@@ -203,7 +203,7 @@
             <do_if value="not player.entity.$vgo_objects.{$candidate}?">
               <set_value name="player.entity.$vgo_objects.{$candidate}" exact="table[]" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$candidate}.$vgo_survey_cap" exact="player.maxscanlevel" />
+            <set_value name="player.entity.$vgo_objects.{$candidate}.$vgo_survey_cap" exact="this.ship.maxscanlevel" />
             <continue />
           </do_if>
         </do_if>

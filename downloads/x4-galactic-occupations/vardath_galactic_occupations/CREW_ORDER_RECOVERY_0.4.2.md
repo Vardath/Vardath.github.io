@@ -1,0 +1,45 @@
+# Crew and order recovery — 0.4.2
+
+## What the new log establishes
+
+Reviewed the complete `debug(20261108-081204).log`: 1,698,859 bytes, 11,592 lines; SHA-256 `42c6db933a0e95baa559d1e926178ce072420691738a91015cc0aee9c748eec8`. It loaded Occupations manifest 41. Its 1,104 error-tagged entries do not explicitly name this suite. That does **not** mean its gameplay was correct: the following control-flow faults do not need a parser exception to stop useful work.
+
+- Astrid Tours **AKD-700** has an already-recorded seven-item/7,000 Cr counter settlement. Its representative **Marelle Kevlin AAS-369** remains ashore at **TEL Swamp Plant Farm I XIP-833** in Turquoise Sea X. The active captain AI is a different entity. The evidence does not show a missing captain.
+- At game times 6265.03/6192.26 the occupation startup records show Scanner/Crystal respectively; Scanner has ship scan cap 2 but current player cap -1. Later the ship starts Trade Route Patrol. The old crystal-crew status overwrites these foreground jobs (6429.97 and 6763.03).
+- The shared departure helper checked the ashore crystal representative **before** checking that the ship had already taken off. Thus a real crew visit in one job could refuse travel for every subsequent occupation. This is the missed common boundary behind this report; changing the destination or repeating the job did not clear it.
+- A second worker-level prerequisite still rejected capital scanners or current player scan caps -1/0, despite the previous release's wrapper/task changes. Discoverer also reports player cap 0 later in the log. Native `player.maxscanlevel` describes the player's current controllable context, not the survey ship's installed scanner.
+- The recorded session covers less than twenty game minutes after the crew-return request. The requested twenty-minute away-from-station recall had not yet elapsed. This update retains that delay.
+- The log also records actual boarding of two passengers on Astrid **LMF-454**, followed by travel toward an Unstable Warp Anomaly. That is evidence of those particular handoffs/travel, not proof of a whole tour's departure and payment.
+
+Other error families include stale VRO patch selectors, unavailable-object queries in Kuertee CHC, missing build/loadout references, save-header parsing and missing Terran job groups. No changes to those external mods are bundled, and the log does not establish that they caused this movement freeze or the earlier spacesuit problem.
+
+## Implemented repair
+
+`vardath.go.depart` immediately accepts an already-undocked ship when its own tracked occupation remains current. It only waits for a real deployed crystal NPC when the current occupation itself is Crystal Miner **at that visit's actual shop dock**. Another role, a different dock or an invalid NPC cannot inherit the hold. Explicit direct orders, non-player ships and player control remain protected. The old crew, finite crystal stock, paid/unpaid invoices and original post are retained.
+
+Crystal and hacker controllers keep resolving their old visits independently, but write foreground status only while their own order owns the activity. Hacker timeout protection also applies only to its own deployed order, so a background hacker visit cannot disable failure recovery for a later role. A one-time General logbook notice explains background crew recovery without replacing the new role's status.
+
+The same crew member returns after twenty game minutes away, with the original role/control post and no second payment. Redocking permits physical return and resets the away clock. Role changes do not slide the clock. Recall defers while the player is in native transit or occupies the ship of a returning captain; it does not force an NPC into the player's pilot context. Native captain post `controlpost.aipilot` is checked against the pinned game's actual `libraries/posts.xml`.
+
+Runtime 42 restarts old eligible occupation workers and repairs default parameters on the existing save. It leaves deliberate vanilla Hold Position, direct orders and an actually deployed current hacker operation alone. The shared worker keeps existing passengers, bookings, tour itinerary, stock and unpaid claims.
+
+## Scanner continuation without a player-context lock
+
+Eligibility now uses **the assigned ship's** positive scanner cap and supports scanner-equipped capital ships. Real ten-second close-range module sampling still checks range, sector, ownership, hostility and order; visible scans require loaded surfaces and line of sight. When the native player scanner cap is unavailable or below the survey ship's cap, the completed sample is saved as pending native publication and the ship can continue to other work. Signal-leak bonuses/native job and market discovery run independently.
+
+Native `set_object_scanned` has only an object parameter and uses the current player cap. This update does not invent a scanner-level argument or claim 100% discovery. A persistent queue publishes completed samples when native scanning becomes available, confirms the actual resulting module level and reports pending versus published information separately. It handles at most sixteen entries per thirty seconds, round-robin, caps the list at 2,048 components and backs off native refusals for ten minutes (a changed native cap can retry sooner). Existing earned samples survive changing jobs. Destroyed modules are dropped. A full queue refuses new registration rather than claiming completion. No wage or reputation is generated for a queued scan.
+
+## Validation and remaining runtime checks
+
+370 Python source/control-flow contracts and 91 Lua mocks pass, including 22 new cases for the reported shared boundary and deferred native publication. All thirteen occupations cross the actual shipped departure/approach XML into the mocked native movement call with old paid crew ashore. Cases cover same-dock waits, other roles/docks, direct/player orders, same-NPC return, no duplicate payment, non-sliding recall clocks, scanner caps -1/0, partial native scan levels, refusal/backoff, save-state copies, queue bounds and fairness. Eleven native XPath selectors across five diff files match the pinned 9.00 reference and pass its diff grammar. These checks are not in-game movement, native save/load, NPC pathfinding or full installed-schema validation.
+
+The independent native references are pinned at [ArtByunex e3e8a345](https://github.com/ArtByunex/x4-foundation-artbyunex/tree/e3e8a345e5624db118bff3eb171b60b0993fcc2c). No X4 executable, current save or merged installed catalogs are available here. The new movement/recall/scanner paths still require this reproducible live acceptance:
+
+1. Exit X4, overwrite **only** `extensions/vardath_galactic_occupations` with 0.4.2 and load the existing save. Keep Protected UI and Inventory Collector. If the ship has an intentional vanilla Hold Position, assign the desired occupation again. Leave its pilot seat so its captain can perform the order.
+2. On the reported AKD-700 state, retain Marelle ashore, select Trade Route Patrol or another role and select an explicit Fly To order. Verify actual flight/sector arrival and that the new activity persists. Do not count a destination label as arrival. Direct orders must take priority.
+3. Change roles several times before twenty game minutes; verify the crew identity and timer remain. Redock early and observe the same representative return without a second 7,000 Cr. Separately leave for twenty game minutes: verify same-crew recall, restored flags/post, normal new-job movement and one recall notice. Save/reload midway. If the original away time was not previously recorded, its timer starts when the recovery controller observes the absence.
+4. Repeat with an old hacker crew visit, including tools on loan. It must not overwrite/disable a later occupation, consume another tool, fabricate another hack or reset the recall clock. Verify the original tools and crew reconcile normally after return.
+5. Assign an equipped capital and a small scanner while the player is on foot/current cap 0. Verify real target travel, close sampling and signal-survey station effects continue. Pending publication must be labelled pending, not full native discovery. Enter a scanner-capable player ship; verify actual module levels rise, pending entries clear and one native-publication notice appears. Save/reload the queue and interrupt sampling with direct orders; incomplete work must earn nothing.
+6. Complete another physical crystal visit and a full taxi/tour route. Verify the same actual crew/passengers depart at the booked destination, whole-route completion, native credits, one vanilla ledger receipt and General payment notice. Prior payment evidence cannot verify these new journeys.
+
+Only Galactic Occupations source changes. Kopis/Astrid 1.16, Builders 1.75, Yaki Habitats 1.23, Station Drones 1.02 and Cargo Teleport 1.01 remain byte-identical in the optional six-mod convenience bundle. No vanilla UI replacement or Forge weapon/equipment change is introduced.
