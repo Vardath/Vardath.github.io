@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.4 — 2026-11-09
+
+- Guarded the crew-recovery registry's presence before its count at cold startup, preserving existing registry/actor actions.
+- Removed two faulty explicit-null loadout-wares overrides from station compatibility. Native list arguments and missing-faction equipment guards remain; no faction catalogue or equipment is fabricated.
+- Extended optional exact-expression Auto Trade Subscriptions guards to the eighteen additional logged bare-faction checks. Existing corrected code is a no-op; eligibility, purchases, UI and completed cue state remain unchanged.
+- Added nine boundary cases, including reproduction of the actual old null argument. 387 Python contracts and 91 Lua mocks pass. Native patch selectors decrease from eleven to nine because the two bad overrides are removed; five diff files remain.
+- New log confirms a completed twenty-stop/15-sector ten-passenger luxury tour paid 5,000,000 Cr, plus 136 crystal sales paid 8,353,000 Cr. New corrections require live confirmation; all job AI/UI/payment/crew actions and companion sources stay unchanged.
+
 ## 0.4.3 — 2026-11-08
 
 - Corrected the native scanner mission-request cue to its declared script-wide identifier and added a safe existence guard; missing/disabled native generation leaves other earned station benefits intact.

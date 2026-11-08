@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <diff>
   <replace sel="/mdscript//cue[@name='ConstructionSequenceCompleted']//do_if[@value='md.$EquipmentTable']/@value">md.$EquipmentTable? and @md.$EquipmentTable.{$Station.owner} != null</replace>
-  <replace sel="/mdscript//cue[@name='ConstructionSequenceCompleted']//generate_loadout[@result='$Loadouts'][@sequence='$ConstructionSequence'][@wares='$PossibleWares']/@wares">if $PossibleWares.count then $PossibleWares else null</replace>
   <replace sel="/mdscript//cue[@name='NewStation_ConstructionSequenceCompleted']//do_if[@value='md.$EquipmentTable']/@value">md.$EquipmentTable? and @md.$EquipmentTable.{$Station.owner} != null</replace>
-  <replace sel="/mdscript//cue[@name='NewStation_ConstructionSequenceCompleted']//generate_loadout[@result='$Loadouts'][@sequence='$ConstructionSequence'][@wares='$PossibleWares']/@wares">if $PossibleWares.count then $PossibleWares else null</replace>
 </diff>

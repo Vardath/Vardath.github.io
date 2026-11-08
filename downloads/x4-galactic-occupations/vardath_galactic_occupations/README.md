@@ -1,6 +1,12 @@
-# Galactic Occupations 0.4.3 development build
+# Galactic Occupations 0.4.4 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.4: cold-start and compatibility corrections
+
+The supplied 0.43 log confirms a full twenty-stop tour across fifteen sectors: all ten passengers depart at the booked station and the player receives 5,000,000 Cr. Another 136 crystal sales pay 8,353,000 Cr; all 137 recorded balance differences match their payment amounts. Thirteen scanner visits complete. The previous scanner-reference, CHC and character-model floods are absent.
+
+Fixes one early registry lookup and removes our incorrect explicit-null station-wares overrides (55 logged failures), restoring the original native list argument. Extends optional Auto Trade Subscriptions compatibility to the eighteen additional bare-faction conditions in this log. Its initialization/purchases are not forcibly replayed. AI, navigation, bookings, payments, crew-return actions, turrets, UI and companion sources remain unchanged. 387 Python contracts and 91 Lua mocks pass; new native corrections still need live confirmation. [Evidence, remaining UI/faction errors and existing-save checks](LOG_REVIEW_0.4.4.md).
 
 ## 0.4.3: native scanner mission-offer reference
 

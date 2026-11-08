@@ -104,6 +104,8 @@ for path, root in trees.items():
         continue
     if root.tag == 'diff' and path in NATIVE_RECOVERY_PATCHES:
         for op in root:
+            if path.name == 'finalisestations.xml' and not op.get('sel','').endswith("do_if[@value='md.$EquipmentTable']/@value"):
+                error(path, 'station compatibility may guard missing faction equipment only; preserve native list-valued loadout wares')
             if op.tag != 'replace' or set(op.attrib) != {'sel'} or len(op) or not op.get('sel','').endswith(('/@value','/@wares','/@useknownpath')):
                 error(path, 'native recovery patches may only replace specific guard/loadout attributes')
         continue
@@ -262,7 +264,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.3 corrects the scanner native mission request identifier and guards its availability; no AI, payment, crew or UI behavior is replaced. Supplied 122227 log (manifest42) records 57 crystal sales, two taxi fares, one escort payment and eight patrol payments totalling 4,137,000 Cr with matching balance deltas and no duplicate recorded IDs; nine morale completions improve 40 crew values, ten component/signal surveys queue 80 samples, and the longest tour reaches 17/20 stops. Ten errors (five failed requests) name our invalid Manager.SelectMission property path. Corrected native mission generation remains unverified in X4.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.4 guards the cold-start crew registry check, restores native list-valued station loadout wares by removing two faulty explicit-null overrides, and extends optional exact-expression Auto Trade Subscriptions compatibility to 18 more logged bare faction identifiers. The supplied manifest43 log records 136 crystal sales totalling 8,353,000 Cr plus a completed twenty-stop/15-sector ten-passenger luxury tour paid 5,000,000 Cr: 137 balance-matched payments total 13,353,000 Cr, with no duplicate recorded IDs. Scanner completed 13 visits; prior mission-reference, CHC and character-model floods are absent. Corrected cold-start/native loadout/subscription paths require live confirmation.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

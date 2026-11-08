@@ -362,6 +362,7 @@
     </cue>
     <cue name="RecoverVisitsV39" instantiate="true" checkinterval="5s">
       <conditions>
+        <check_value value="md.VGO_State.Init.$Ships?" />
         <check_value value="md.VGO_State.Init.$Ships.count gt 0" />
       </conditions>
       <actions>

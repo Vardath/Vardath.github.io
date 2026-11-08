@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 116,
+      "files": 117,
       "xml": 89,
       "diffs": 8,
       "md": 8,
       "aiscripts": 70,
       "lua": 4,
       "zip": "byte-for-byte checked",
-      "api_commands": 4588,
+      "api_commands": 4589,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 89,\n    \"commands\": 4587,\n    \"script_calls\": 148,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.3 corrects the scanner native mission request identifier and guards its availability; no AI, payment, crew or UI behavior is replaced. Supplied 122227 log (manifest42) records 57 crystal sales, two taxi fares, one escort payment and eight patrol payments totalling 4,137,000 Cr with matching balance deltas and no duplicate recorded IDs; nine morale completions improve 40 crew values, ten component/signal surveys queue 80 samples, and the longest tour reaches 17/20 stops. Ten errors (five failed requests) name our invalid Manager.SelectMission property path. Corrected native mission generation remains unverified in X4.\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 89,\n    \"commands\": 4588,\n    \"script_calls\": 148,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.4 guards the cold-start crew registry check, restores native list-valued station loadout wares by removing two faulty explicit-null overrides, and extends optional exact-expression Auto Trade Subscriptions compatibility to 18 more logged bare faction identifiers. The supplied manifest43 log records 136 crystal sales totalling 8,353,000 Cr plus a completed twenty-stop/15-sector ten-passenger luxury tour paid 5,000,000 Cr: 137 balance-matched payments total 13,353,000 Cr, with no duplicate recorded IDs. Scanner completed 13 visits; prior mission-reference, CHC and character-model floods are absent. Corrected cold-start/native loadout/subscription paths require live confirmation.\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,7 +123,7 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Scanner_Mission_Fix_2026-11-08.zip; 6 extensions, 196 byte-matched files\n"
+    "output": "PASS: X4_Startup_Loadout_Fixes_2026-11-09.zip; 6 extensions, 197 byte-matched files\n"
   },
   "command_provenance": {
     "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
@@ -144,7 +144,10 @@
       "9.00"
     ],
     "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented.",
-    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown."
+    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown.",
+    "log44_native_equipment_contract": "Native 9.00 generate_loadout wares is a list/table expression; omission (not explicit null) selects defaults. The supplied 154336 log records 55 failures of the old explicit-null fallback across initial and new-station paths. Version 0.4.4 removes both custom wares overrides, retains the original native $PossibleWares list and the two safe missing-faction equipment guards; no faction table or equipment is fabricated.",
+    "log44_cold_registry_contract": "Egosoft Mission Director Guide specifies conditions are evaluated in sequence, with later conditions skipped after a failure. Version 0.4.4 tests md.VGO_State.Init.$Ships presence in its own first check_value before the existing count check; registry and saved actor recovery logic are otherwise unchanged.",
+    "log44_auto_subscriptions_contract": "The 154336 log identifies 18 exact ramautosubs canholdlicence/haslicence conditions whose right-hand faction is an undefined bare identifier. Optional silent attribute replacements qualify that same faction without changing eligibility, actions, prices, UI or existing corrected checks; the earlier alliance fix is retained."
   },
   "reviewed_source": "Current worktree; X4 runtime unavailable"
 }

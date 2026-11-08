@@ -1,5 +1,9 @@
 # Reproducible tests — 0.4.1 development
 
+## Current 0.4.4 cold-start and compatibility checks
+
+Run [the five current existing-save checks](LOG_REVIEW_0.4.4.md#validation-and-existing-save-acceptance). Verify registry presence precedes count; station finalisation uses the original list-valued wares argument; optional trade subscriptions keep native eligibility and existing-subscription protection. Do not replay a completed third-party initializer. Continue booked tours, crystal invoices, direct orders and crew visits unchanged. 387 Python contracts include nine new boundary cases; 91 retained Lua mocks cover unchanged UI. Nine native selectors across five diff files remain. The supplied manifest43 log confirms particular tour/sale outcomes, not runtime execution of these new fixes.
+
 ## Current 0.4.3 scanner native request check
 
 Run [the four current live steps](LOG_REVIEW_0.4.3.md#install-and-live-check) using an eligible non-player station outside the existing twenty-four-game-hour survey cooldown. Verify the old Manager.SelectMission/null-cue errors disappear while real payload, native exclusions/cap and other station effects remain. Confirm existing orders, bookings, stock, invoices and recovery clocks continue. 378 Python contracts include eight new reference/dispatch boundaries; 91 retained Lua mocks cover unchanged UI. No new native runtime test was possible here. The supplied manifest42 log establishes the particular recorded payments and completions, not a runtime result for this correction.

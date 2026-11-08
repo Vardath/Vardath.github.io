@@ -206,19 +206,15 @@ class SourceAndCompatibility(unittest.TestCase):
                 if not exists:raise AssertionError('Read a dead cue state')
                 return value
             self.assertEqual(eval(expression,{'__builtins__':{}},{'exists':exists,'state':state}),remove)
-    def test_missing_faction_equipment_selects_native_defaults_without_fabricating_table(self):
+    def test_missing_faction_equipment_keeps_native_wares_list_without_fabricating_table(self):
         root=E.parse(MOD/'md/finalisestations.xml').getroot()
         guards=[n for n in root if n.get('sel').endswith('/@value')]
         self.assertEqual(len(guards),2)
         for table,entry,allowed in [(False,None,False),(True,None,False),(True,['turret'],True)]:
             expression=guards[0].text.replace('md.$EquipmentTable?','present').replace('@md.$EquipmentTable.{$Station.owner}','entry').replace('null','None')
             self.assertEqual(eval(expression,{'__builtins__':{}},{'present':table,'entry':entry}),allowed)
-        for op in root:
-            if op.get('sel').endswith('/@wares'):
-                condition,branches=op.text[3:].split(' then ');yes,no=branches.split(' else ')
-                for wares in [[],['turret']]:
-                    chosen=yes if len(wares) else no
-                    self.assertEqual(wares if chosen=='$PossibleWares' else None,wares or None)
+        self.assertEqual(len(root),2)
+        self.assertFalse(any(op.get('sel').endswith('/@wares') for op in root))
         self.assertTrue(all(n.tag=='replace' for n in root))
 
 if __name__=='__main__':unittest.main(verbosity=2)

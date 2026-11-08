@@ -2,7 +2,7 @@
   "static_result": "PASS",
   "counts": {
     "xml_files": 89,
-    "commands": 4587,
+    "commands": 4588,
     "script_calls": 148,
     "behaviours": 13,
     "ui_addons": 1
@@ -27,9 +27,12 @@
       "9.00"
     ],
     "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented.",
-    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown."
+    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown.",
+    "log44_native_equipment_contract": "Native 9.00 generate_loadout wares is a list/table expression; omission (not explicit null) selects defaults. The supplied 154336 log records 55 failures of the old explicit-null fallback across initial and new-station paths. Version 0.4.4 removes both custom wares overrides, retains the original native $PossibleWares list and the two safe missing-faction equipment guards; no faction table or equipment is fabricated.",
+    "log44_cold_registry_contract": "Egosoft Mission Director Guide specifies conditions are evaluated in sequence, with later conditions skipped after a failure. Version 0.4.4 tests md.VGO_State.Init.$Ships presence in its own first check_value before the existing count check; registry and saved actor recovery logic are otherwise unchanged.",
+    "log44_auto_subscriptions_contract": "The 154336 log identifies 18 exact ramautosubs canholdlicence/haslicence conditions whose right-hand faction is an undefined bare identifier. Optional silent attribute replacements qualify that same faction without changing eligibility, actions, prices, UI or existing corrected checks; the earlier alliance fix is retained."
   },
-  "runtime": "NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.3 corrects the scanner native mission request identifier and guards its availability; no AI, payment, crew or UI behavior is replaced. Supplied 122227 log (manifest42) records 57 crystal sales, two taxi fares, one escort payment and eight patrol payments totalling 4,137,000 Cr with matching balance deltas and no duplicate recorded IDs; nine morale completions improve 40 crew values, ten component/signal surveys queue 80 samples, and the longest tour reaches 17/20 stops. Ten errors (five failed requests) name our invalid Manager.SelectMission property path. Corrected native mission generation remains unverified in X4.",
+  "runtime": "NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.4 guards the cold-start crew registry check, restores native list-valued station loadout wares by removing two faulty explicit-null overrides, and extends optional exact-expression Auto Trade Subscriptions compatibility to 18 more logged bare faction identifiers. The supplied manifest43 log records 136 crystal sales totalling 8,353,000 Cr plus a completed twenty-stop/15-sector ten-passenger luxury tour paid 5,000,000 Cr: 137 balance-matched payments total 13,353,000 Cr, with no duplicate recorded IDs. Scanner completed 13 visits; prior mission-reference, CHC and character-model floods are absent. Corrected cold-start/native loadout/subscription paths require live confirmation.",
   "runtime_jobs": {
     "escort": "UNVERIFIED",
     "taxi": "UNVERIFIED",
