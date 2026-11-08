@@ -1,6 +1,12 @@
-# Galactic Occupations 0.4.4 development build
+# Galactic Occupations 0.4.5 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.5: ten-stop default and one extra game hour
+
+Newly assigned Tours default to **10 stops**; valid existing settings and accepted bookings keep their promised route/fare. Active booked-tour task and native docking deadlines gain one game hour once per helper-issued deadline. Cancelled-tour grace gains one hour above its previous duration-based estimate, with a **three-hour minimum**; pending saved deadlines extend once. Temporary orders retain the party, and taxi/crew timers remain unchanged. Default fare stays 500,000 Cr per delivered passenger.
+
+The new manifest44 log records four completed twenty-stop tours and 193 crystal sales, totalling 28,993,000 Cr in balance-matched payments. It has no error block explicitly naming this suite, but records an unpaid Envoy evacuation after its role changed to Scanner and other task-timeout diagnostics. [Evidence, exact scope, remaining errors and same-save checks](LOG_REVIEW_0.4.5.md). 400 Python contracts and 91 Lua mocks pass; new timeout integration still needs live confirmation. Companion sources, payment/physical passenger/crew actions and UI are unchanged.
 
 ## 0.4.4: cold-start and compatibility corrections
 

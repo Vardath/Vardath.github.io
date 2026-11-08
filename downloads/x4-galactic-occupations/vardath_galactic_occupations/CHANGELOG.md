@@ -1,5 +1,12 @@
 # Version history
 
+## 0.4.5 — 2026-11-09
+
+- Newly assigned Tours default to ten stops; editable 10–20 range, valid saved settings and accepted bookings are preserved. Ticket-fee default remains 500,000 Cr per delivered passenger.
+- Added one game hour to active booked-tour task and own native docking deadlines, tracked per absolute deadline so repeated polls/load do not pad it again. Other occupations/direct orders are excluded.
+- Added one hour above cancelled-tour measured grace (minimum three hours), with one-time saved-pending-deadline migration. Already evacuated/disposing parties are not recreated; taxi and crew-return timers remain unchanged.
+- Added thirteen timeout/default contracts; 400 Python and 91 Lua checks pass. Supplied manifest44 log records 28,993,000 Cr across 197 balance-matched payments and no explicitly named suite exception. New native integration requires live testing; see LOG_REVIEW_0.4.5.md.
+
 ## 0.4.4 — 2026-11-09
 
 - Guarded the crew-recovery registry's presence before its count at cold startup, preserving existing registry/actor actions.

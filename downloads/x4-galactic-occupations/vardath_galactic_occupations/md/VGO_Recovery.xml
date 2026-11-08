@@ -67,6 +67,7 @@
     </library>
     <library name="ClearCancellation">
       <actions>
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_cancel_grace_v45" />
         <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since" />
         <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" />
         <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract" />
@@ -158,17 +159,24 @@
               <set_value name="$grace" exact="30min" />
               <do_if value="$service == 'VGO_tour'">
                 <set_value name="$grace" exact="2h" />
-                <set_value name="$stops" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops else 20" />
+                <set_value name="$stops" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops else 10" />
                 <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops gt 0 and @player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration gt 0s">
                   <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops].max" />
                 </do_if>
                 <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count gt 0 and @player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed gt 0s">
                   <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count + 30min].max" />
                 </do_if>
+                <set_value name="$grace" exact="$grace + 1h" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_cancel_grace_v45" exact="true" />
               </do_if>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since" exact="player.age" />
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" exact="player.age + $grace" />
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract" exact="$contract" />
+              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" />
+            </do_if>
+            <do_if value="$service == 'VGO_tour' and not @player.entity.$vgo_objects.{$ship}.$vgo_tour_cancel_grace_v45 and player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due?">
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" exact="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due + 1h" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_cancel_grace_v45" exact="true" />
               <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" />
             </do_if>
             <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified and player.age ge player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since + 1min">

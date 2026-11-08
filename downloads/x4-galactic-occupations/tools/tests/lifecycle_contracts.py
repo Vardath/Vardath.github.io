@@ -108,19 +108,19 @@ class CancellationGrace(unittest.TestCase):
         self.assertEqual(v.get('vgo_taxi_cancelled_id'),7)
         self.assertFalse(v.get('vgo_taxi_delivered'));self.assertEqual(v.reward_requests,[])
         self.assertEqual(v.reputation,[]);self.assertEqual(v.crew.controlpost,'engineer')
-    def test_cancelled_tour_has_at_least_two_game_hours(self):
-        v=LifecycleVM(job=5);v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due'),v.age+7200)
-        v.age+=7199;v.passengers();self.assertEqual(v.roster,{1,2,999})
+    def test_cancelled_tour_has_at_least_three_game_hours(self):
+        v=LifecycleVM(job=5);v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due'),v.age+10800)
+        v.age+=10799;v.passengers();self.assertEqual(v.roster,{1,2,999})
         v.age+=1;v.passengers();self.assertEqual(v.roster,{999});self.assertEqual(v.reward_requests,[])
     def test_twenty_stop_estimate_extends_slow_cruise_grace(self):
         v=LifecycleVM(job=5);v.state.update(vgo_tour_trip=Seq(range(4)),vgo_tour_active_elapsed=3600)
-        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,19800)
+        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,23400)
     def test_last_completed_cruise_scales_to_current_booked_route(self):
         v=LifecycleVM(job=5);v.state.update(vgo_tour_last_duration=5400,vgo_tour_last_stops=10)
-        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,10800)
+        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,14400)
     def test_unmoving_zero_stop_tour_cannot_inflate_deadline_from_idle_time(self):
         v=LifecycleVM(job=5);v.state.update(vgo_tour_trip=Seq(),vgo_tour_active_elapsed=86400)
-        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,7200)
+        v.cancel();v.passengers();self.assertEqual(v.get('vgo_passenger_cancel_due')-v.age,10800)
     def test_combat_lockbox_and_manual_control_with_retained_default_never_cancel(self):
         for job in [2,5]:
             for action in ['Attack','CollectLockbox','MoveWait']:
@@ -315,9 +315,9 @@ class RegistryAndSource(unittest.TestCase):
             self.assertEqual(list(ROOT.iter(tag)),[])
         self.assertEqual(ROOT.find(".//cue[@name='Operations']").get('checkinterval'),'30s')
         self.assertEqual(ROOT.find(".//cue[@name='RecoverRegistry']").get('checkinterval'),'5min')
-    def test_twenty_stop_default_does_not_rewrite_existing_booked_stops(self):
+    def test_ten_stop_default_does_not_rewrite_existing_booked_stops(self):
         r=xml('order.vardath.go.tour');p=r.find("order/params/param[@name='stops']")
-        self.assertEqual(p.get('default'),'20')
+        self.assertEqual(p.get('default'),'10')
         self.assertFalse(any(n.tag=='set_value' and n.get('name','').endswith('.$vgo_tour_booked_stops') for n in r.iter()))
         task=xml('vardath.go.task.tour')
         booking=next(n for n in task.iter('do_if') if n.get('value')=='not @'+S+'.$vgo_passengers.count')

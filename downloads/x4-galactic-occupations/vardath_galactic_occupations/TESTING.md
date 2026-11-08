@@ -1,5 +1,9 @@
 # Reproducible tests — 0.4.1 development
 
+## Current 0.4.5 tour defaults and timeout checks
+
+Run [the five current existing-save sequences](LOG_REVIEW_0.4.5.md#validation-and-install). Verify new ten-stop defaults without rewriting accepted/configured routes; one extra hour per active tour task/dock deadline without repeated padding; minimum-three-hour cancelled-tour grace and one-time legacy extension; direct/queued order priority, party retention, booked destination departure and no premature/duplicate fare. Already disposing parties stay void. 400 Python contracts include thirteen new cases; 91 retained Lua mocks cover unchanged UI. No new X4 runtime test is available here.
+
 ## Current 0.4.4 cold-start and compatibility checks
 
 Run [the five current existing-save checks](LOG_REVIEW_0.4.4.md#validation-and-existing-save-acceptance). Verify registry presence precedes count; station finalisation uses the original list-valued wares argument; optional trade subscriptions keep native eligibility and existing-subscription protection. Do not replay a completed third-party initializer. Continue booked tours, crystal invoices, direct orders and crew visits unchanged. 387 Python contracts include nine new boundary cases; 91 retained Lua mocks cover unchanged UI. Nine native selectors across five diff files remain. The supplied manifest43 log confirms particular tour/sale outcomes, not runtime execution of these new fixes.

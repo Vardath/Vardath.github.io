@@ -81,6 +81,20 @@
         </do_if>
       </actions>
     </cue>
+    <library name="TourTimeoutBudgetV45">
+      <actions>
+        <do_if value="$ship.isplayerowned and $ship != player.occupiedship and @player.entity.$vgo_objects.{$ship}.$vgo_order.id == 'VGO_tour' and @player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and @player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing and ($ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order or $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_dock_order)">
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_deadline gt 0s and @player.entity.$vgo_objects.{$ship}.$vgo_deadline != @player.entity.$vgo_objects.{$ship}.$vgo_tour_watchdog_extended">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" exact="player.entity.$vgo_objects.{$ship}.$vgo_deadline + 1h" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_watchdog_extended" exact="player.entity.$vgo_objects.{$ship}.$vgo_deadline" />
+          </do_if>
+          <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_dock_order.exists and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_dock_order and @player.entity.$vgo_objects.{$ship}.$vgo_dock_until gt 0s and @player.entity.$vgo_objects.{$ship}.$vgo_dock_until != @player.entity.$vgo_objects.{$ship}.$vgo_tour_dock_extended">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_dock_until" exact="player.entity.$vgo_objects.{$ship}.$vgo_dock_until + 1h" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_dock_extended" exact="player.entity.$vgo_objects.{$ship}.$vgo_dock_until" />
+          </do_if>
+        </do_if>
+      </actions>
+    </library>
     <cue name="Watchdog" instantiate="true" checkinterval="2s">
       <conditions>
         <check_value value="Init.$Ships.count gt 0" />
@@ -106,6 +120,7 @@
             </do_else>
           </do_if>
           <set_value name="$active" exact="$ship.isplayerowned and $ship != player.occupiedship and @$ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and Init.$Orders.indexof.{@$ship.order.id}" />
+          <include_actions ref="TourTimeoutBudgetV45" />
           <do_if value="not $active and @player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock.exists">
             <set_region_object_persistence object="player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock" persistent="false" />
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_persistent_rock" />
@@ -836,6 +851,7 @@
           </do_if>
           <set_value name="$dockorder" exact="@player.entity.$vgo_objects.{$ship}.$vgo_dock_order" />
           <set_value name="$target" exact="@player.entity.$vgo_objects.{$ship}.$vgo_dock_target" />
+          <include_actions ref="TourTimeoutBudgetV45" />
           <set_value name="$cancel" exact="not $ship.isplayerowned or $ship == player.occupiedship or not $target.isoperational or not $target.dockingallowed.{$ship} or player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_dock_until" />
           <do_if value="$dockorder.exists">
             <do_for_each name="$other" in="$ship.orders">
@@ -1110,12 +1126,17 @@
     </cue>
     <cue name="LoadedV40">
       <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.4.0: crew recall and cancelled passengers'" text="'Stranded crystal/hacker crew recall after twenty game minutes away. Removing the persistent taxi/tour service starts unpaid passenger departure grace: thirty minutes for taxi, at least two hours for tours, extended by measured cruise duration. Retained defaults/queued service orders protect combat, lockboxes and other temporary interruptions. Resuming before expiry keeps the same party. New tours default to twenty stops; existing bookings are preserved.'" />
+        <write_to_logbook category="general" title="'Galactic Occupations 0.4.0: crew recall and cancelled passengers'" text="'Stranded crystal/hacker crew recall after twenty game minutes away. Removing the persistent taxi/tour service starts unpaid passenger departure grace: thirty minutes for taxi, at least three hours for tours, extended by measured cruise duration. Retained defaults/queued service orders protect combat, lockboxes and other temporary interruptions. Resuming before expiry keeps the same party. Newly assigned tours default to ten stops; existing booked routes are preserved.'" />
       </actions>
     </cue>
     <cue name="LoadedV41">
       <actions>
         <write_to_logbook category="general" title="'Galactic Occupations 0.4.1: station signals and passenger recovery'" text="'Signal scanner now surveys modules/leaks with timed off-screen alternatives, station coupons/trade updates and native job/black-market discovery. Repaired disconnected NPC boarding/departure and twenty-minute crew/tool return. Guarded spacesuit recovery follows a confirmed vanilla exit only. Existing bookings, tour stops and native fare receipts retained. New native paths require live confirmation.'" />
+      </actions>
+    </cue>
+    <cue name="NoticeV45">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.4.5: shorter tours and longer grace'" text="'Newly assigned tours default to ten stops. Accepted bookings retain their promised stop count and fare. Active tour task/docking deadlines gain one game hour; cancelled tours gain one hour above their previous measured grace, with a three-hour minimum. Temporary interruptions retain the party and itinerary. Taxi cancellation remains thirty minutes; stranded crew recall remains twenty minutes.'" />
       </actions>
     </cue>
   </cues>

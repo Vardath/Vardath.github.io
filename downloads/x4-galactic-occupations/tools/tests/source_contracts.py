@@ -65,9 +65,9 @@ class SourceContracts(unittest.TestCase):
         board=source('aiscripts/vardath.go.passengers.board.xml')
         self.assertIn('not $entry.$boarded',board)
         self.assertNotIn('wait exact="2s"/><return value="true"',board)
-    def test_new_tours_default_to_twenty_unique_stops_and_multiple_sectors(self):
+    def test_new_tours_default_to_ten_unique_stops_and_multiple_sectors(self):
         order=xml('aiscripts/order.vardath.go.tour.xml')
-        self.assertEqual(order.find("./order/params/param[@name='stops']").get('default'),'20')
+        self.assertEqual(order.find("./order/params/param[@name='stops']").get('default'),'10')
         self.assertEqual(order.find("./order/params/param[@name='ticketfee']").get('default'),'500000Cr')
         task=xml('aiscripts/vardath.go.task.tour.xml')
         gate=next(n for n in task.iter('do_if') if 'trip.count ge' in n.get('value',''))
