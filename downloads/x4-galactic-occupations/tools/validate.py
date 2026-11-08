@@ -7,6 +7,7 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
+from native_references import invalid_native_cue_refs
 
 BASE = Path(__file__).resolve().parents[1]
 MOD = BASE / 'vardath_galactic_occupations'
@@ -65,6 +66,8 @@ for path, root in trees.items():
         if node.tag == 'run_script' and node.get('name') in ("'order.fight.escort'", "'order.fight.attack.object'"):
             error(path, 'occupation must not borrow a native combat/fleet order as a subroutine; it may cancel the caller')
         for value in node.attrib.values():
+            for ref in invalid_native_cue_refs(value, api.get('native_md_cues', {})):
+                error(path, f'unknown native MD cue identifier {ref}; cue names are script-wide, not XML parent property paths')
             for enum, allowed in api.get('literal_expression_enums', {}).items():
                 for literal in re.findall(r'\b' + re.escape(enum) + r'\.([A-Za-z_][A-Za-z_0-9]*)\b', value):
                     if literal not in allowed:
@@ -259,7 +262,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.2 fixes the shared crew-return departure lock after role changes, scopes background statuses and hacker timeout protection to their own order, retains twenty-minute same-crew recall, and removes the worker scanner capital/player-context gate. Completed real close-range component samples queue for actual native publication when player.maxscanlevel becomes available; signal-leak station effects continue independently. The supplied 081204 log confirms old crew status persisting across Scanner/Patrol role changes and player scanner caps -1/0, not native parser errors in these mods. Actual movement, walking, queue publication, save/load and load-order require live X4 testing.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.3 corrects the scanner native mission request identifier and guards its availability; no AI, payment, crew or UI behavior is replaced. Supplied 122227 log (manifest42) records 57 crystal sales, two taxi fares, one escort payment and eight patrol payments totalling 4,137,000 Cr with matching balance deltas and no duplicate recorded IDs; nine morale completions improve 40 crew values, ten component/signal surveys queue 80 samples, and the longest tour reaches 17/20 stops. Ten errors (five failed requests) name our invalid Manager.SelectMission property path. Corrected native mission generation remains unverified in X4.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

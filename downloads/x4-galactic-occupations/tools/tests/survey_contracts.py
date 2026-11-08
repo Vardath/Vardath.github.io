@@ -29,6 +29,7 @@ class SurveyVM(VM):
         self.native_leaks=Seq();self.native_calls=[];self.distance=1000;self.scan_accepts=True
         self.player_sector=self.other;self.vars.update(ship=self.ship,station=self.station,module=self.module,leak=self.leak)
         self.after_wait=None;self.waits=0;self.gm_enabled=True;self.market=NULL;self.approach_accepts=True;self.los=True;self.player_cap=2
+        self.mission_request=Obj('native SelectMission cue',exists=True)
         self.work(virtual=True)
     def work(self,virtual=True):
         self.state['vgo_leak_work']={'station':self.station,'leak':self.station if virtual else self.leak,
@@ -38,7 +39,9 @@ class SurveyVM(VM):
             return {k.strip()[1:]:self.expr(v.strip()) for k,v in (part.split('=',1) for part in text[6:-1].split(','))}
         t=text.replace(S,'_STATE_').replace('player.entity.$vgo_objects.{$ship}','_STATE_')
         self.vars.update(survey_ship=self.ship,player_sector=self.player_sector,occupied_ship=self.ship if self.occupied else NULL,
-            native_offers=self.native_offers,gm_cues=self.generic,gm_disabled=not self.gm_enabled,market=self.market)
+            native_offers=self.native_offers,gm_cues=self.generic,gm_disabled=not self.gm_enabled,market=self.market,
+            native_mission_request=self.mission_request)
+        t=t.replace('md.GenericMissions.SelectMission','$native_mission_request')
         t=t.replace('Init.$Offers','$native_offers')
         t=t.replace('event.param2','$survey_ship')
         t=t.replace('this.ship','$survey_ship').replace('player.occupiedship','$occupied_ship').replace('player.sector','$player_sector')

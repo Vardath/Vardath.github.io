@@ -1,5 +1,9 @@
 # Reproducible tests — 0.4.1 development
 
+## Current 0.4.3 scanner native request check
+
+Run [the four current live steps](LOG_REVIEW_0.4.3.md#install-and-live-check) using an eligible non-player station outside the existing twenty-four-game-hour survey cooldown. Verify the old Manager.SelectMission/null-cue errors disappear while real payload, native exclusions/cap and other station effects remain. Confirm existing orders, bookings, stock, invoices and recovery clocks continue. 378 Python contracts include eight new reference/dispatch boundaries; 91 retained Lua mocks cover unchanged UI. No new native runtime test was possible here. The supplied manifest42 log establishes the particular recorded payments and completions, not a runtime result for this correction.
+
 ## Current 0.4.2 crew/order regression
 
 Run [the six current existing-save acceptance sequences](CREW_ORDER_RECOVERY_0.4.2.md#validation-and-remaining-runtime-checks), especially the reported AKD-700 paid representative state followed by Scanner/Patrol. Verify actual flight while the same NPC remains ashore, no background status takeover, direct-order priority, non-sliding twenty-minute recall, same-NPC redock/recall and no duplicate invoice. Test native scanner caps -1/0, scanner-equipped capital ships, queued actual publication, signal benefits independent of publication and saved pending samples. There is no new X4 runtime result from this environment.

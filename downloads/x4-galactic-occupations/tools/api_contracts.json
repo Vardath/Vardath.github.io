@@ -14181,6 +14181,58 @@
       "8.00",
       "9.00"
     ],
-    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented."
+    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented.",
+    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown."
+  },
+  "native_md_cues": {
+    "GenericMissions": {
+      "source": "https://github.com/ArtByunex/x4-foundation-artbyunex/blob/e3e8a345e5624db118bff3eb171b60b0993fcc2c/md/genericmissions.xml",
+      "identifiers": [
+        "BBSOfferHandler",
+        "CleanupActor",
+        "CleanupActor_Check",
+        "Debug_SpamMissions_Loop_v2",
+        "Debug_SpamMissions_v2",
+        "DisconnectedActorObjectiveLibrary",
+        "DisconnectedActorObjectiveLibrary_Abort",
+        "DisconnectedActorObjectiveLibrary_Cancel",
+        "DisconnectedActorObjectiveLibrary_Changed_Attention",
+        "DisconnectedActorObjectiveLibrary_Init",
+        "DisconnectedActorObjectiveLibrary_No_Mission",
+        "DisconnectedActorObjectiveLibrary_To_Actor",
+        "DisconnectedActorObjectiveLibrary_To_Object",
+        "EmergentMissions",
+        "EmergentMissions_ReportCue",
+        "EvaluateSectorMissions",
+        "GamestartGMs",
+        "GenericAbortLogbookEntry",
+        "GenericAcceptLogbookEntry",
+        "GenericCompleteLogbookEntry",
+        "GenericFailLogbookEntry",
+        "GenericNewsLogbookEntry",
+        "GenericTimeoutLogbookEntry",
+        "GetOfferType",
+        "Manager",
+        "MissionInterrupted_Cancel",
+        "MissionInterrupted_Trigger",
+        "MissionInterrupted_Trigger_Immediate",
+        "MoreOffers",
+        "OfferFeedbackValueManager",
+        "OfferMission",
+        "OfferOnObject",
+        "OnSectorChange",
+        "PlotMissionInterrupted",
+        "RegisterMissionVariant",
+        "RemoveAllOffers",
+        "SelectMission",
+        "SelectMissionVariant",
+        "SelectMission_GM_Signal_Cue",
+        "SelectMission_Signal_GM",
+        "Signal_Leak_Offer",
+        "UpdateTextOffsetsTable",
+        "UpdateTextOffsetsTable_completedcounter",
+        "Validate_NPC_Mission_GM_Feedback_Table"
+      ]
+    }
   }
 }

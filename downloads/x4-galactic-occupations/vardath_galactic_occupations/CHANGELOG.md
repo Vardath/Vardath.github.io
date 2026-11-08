@@ -1,5 +1,12 @@
 # Version history
 
+## 0.4.3 — 2026-11-08
+
+- Corrected the native scanner mission-request cue to its declared script-wide identifier and added a safe existence guard; missing/disabled native generation leaves other earned station benefits intact.
+- Retained existing native faction/docking exclusions, sector cap, station cooldown and exact actual station/sector payload. No mission acceptance or reward simulation.
+- Added a 44-identifier pinned native cue index, a validator for literal native MD references and eight dispatch/reference regression cases. 378 Python contracts and 91 Lua mocks pass; new native generation still requires live confirmation.
+- Reviewed the full new log: 68 balance-matched payments total 4,137,000 Cr; the previous global movement lock is not reproduced. Companion and all AI/UI/payment/crew source files remain unchanged. See LOG_REVIEW_0.4.3.md.
+
 ## 0.4.2 — 2026-11-08
 
 - Fixed the shared ashore-crystal-crew departure hold after takeoff/role changes; retained the actual current service's docked return wait and direct/player-order priority.

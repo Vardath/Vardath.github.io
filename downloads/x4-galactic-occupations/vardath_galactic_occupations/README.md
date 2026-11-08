@@ -1,6 +1,12 @@
-# Galactic Occupations 0.4.2 development build
+# Galactic Occupations 0.4.3 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.3: native scanner mission-offer reference
+
+The new 0.42 log confirms 4,137,000 Cr in 68 balance-matched crystal/taxi/escort/patrol payments, nine morale services and ten component/signal surveys. AKD-700 moves across roles and sectors; tours progress as far as 17/20 stops. Fixes five failed native mission-offer requests (ten error entries): the MD cue is `md.GenericMissions.SelectMission`, not a Manager property. A safe existence guard preserves other station benefits if that native cue is unavailable. New literal native-cue validation and eight boundary tests catch the exact old error. 378 Python contracts and 91 Lua mocks pass; corrected native generation remains runtime-unverified here.
+
+Only scanner mission-request gameplay logic and extension metadata change. AI/navigation, crew, bookings, payments, UI and all companion sources remain unchanged. [Full evidence, remaining external errors, limitations and same-save live check](LOG_REVIEW_0.4.3.md).
 
 ## 0.4.2: new roles move while old crew recovery continues
 

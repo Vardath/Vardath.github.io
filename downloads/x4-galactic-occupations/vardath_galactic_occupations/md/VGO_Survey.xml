@@ -65,8 +65,9 @@
           <do_all exact="1" chance="20">
             <add_trade_subscription object="$station" />
           </do_all>
-          <do_if value="not @md.GenericMissions.Manager.$Disabled and not @md.$TutorialActive and md.GenericMissions.Manager.$DefaultExcludedOfferFactions? and not md.GenericMissions.Manager.$DefaultExcludedOfferFactions.indexof.{$station.owner} and not md.GenericMissions.Manager.$ExcludedOfferObjects.indexof.{$station} and $sectoroffers lt md.GenericMissions.Manager.$SectorLimit and $station.hasrelation.dock.{faction.player}">
-            <signal_cue_instantly cue="md.GenericMissions.Manager.SelectMission" param="table[$Sector = $station.sector, $OfferObject = $station]" />
+          <set_value name="$missionrequest" exact="@md.GenericMissions.SelectMission" />
+          <do_if value="$missionrequest.exists and not @md.GenericMissions.Manager.$Disabled and not @md.$TutorialActive and md.GenericMissions.Manager.$DefaultExcludedOfferFactions? and not md.GenericMissions.Manager.$DefaultExcludedOfferFactions.indexof.{$station.owner} and not md.GenericMissions.Manager.$ExcludedOfferObjects.indexof.{$station} and $sectoroffers lt md.GenericMissions.Manager.$SectorLimit and $station.hasrelation.dock.{faction.player}">
+            <signal_cue_instantly cue="$missionrequest" param="table[$Sector = $station.sector, $OfferObject = $station]" />
             <set_value name="$generated" exact="true" />
           </do_if>
         </do_if>

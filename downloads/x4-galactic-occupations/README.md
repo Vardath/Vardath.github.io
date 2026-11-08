@@ -1,9 +1,9 @@
-# Galactic Occupations 0.4.2 — crew and order recovery
+# Galactic Occupations 0.4.3 — scanner native mission request
 
-[Download Occupations](Galactic_Occupations_0.4.2_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Crew_Order_Recovery_2026-11-08.zip) · [Log findings, fixes and live checks](vardath_galactic_occupations/CREW_ORDER_RECOVERY_0.4.2.md)
+[Download Occupations](Galactic_Occupations_0.4.3_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Scanner_Mission_Fix_2026-11-08.zip) · [Full log findings and live check](vardath_galactic_occupations/LOG_REVIEW_0.4.3.md)
 
-Fixes the movement lock after taking off with a crystal representative ashore and changing roles. All occupations can travel while old crew recovery runs independently; the original twenty-minute same-NPC recall and payment accounting remain. Background crystal/hacker activity no longer replaces another role's status or timeout recovery.
+The supplied 0.42 log records **4,137,000 Cr** in 68 balance-matched payments, two completed taxi jobs, repeated crystal sales, escort/patrol work, nine morale services and ten scanner surveys. Tours progress up to 17/20 stops. The old cross-role movement lock is not reproduced.
 
-Scanners now use their own installed equipment, including capital ships, rather than the player's current scan context. Real completed samples queue for actual native publication when available while the ship and signal-leak benefits keep working. Pending information is explicitly labelled pending.
+0.4.3 narrowly fixes the scanner's incorrect native mission-offer cue reference and checks its availability. Other station benefits continue independently. AI/navigation, crew, bookings, payments, turrets, UI and companion mod sources are unchanged.
 
-Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Only Occupations source changes; all five other bundle sources are unchanged. 370 Python contracts, 91 Lua mocks and static/package checks pass; new native movement, walking, publication and save/load remain unverified in X4 here.
+Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. 378 Python contracts, 91 Lua mocks and static/package checks pass; the corrected native mission generation still needs in-game confirmation. Full tour payout, twenty-minute recall and new visible crystal-drop collection are not established by this supplied log.

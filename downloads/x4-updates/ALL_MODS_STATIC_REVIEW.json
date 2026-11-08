@@ -99,17 +99,17 @@
     },
     "x4-galactic-occupations": {
       "id": "vardath_galactic_occupations",
-      "files": 115,
+      "files": 116,
       "xml": 89,
       "diffs": 8,
       "md": 8,
       "aiscripts": 70,
       "lua": 4,
       "zip": "byte-for-byte checked",
-      "api_commands": 4587,
+      "api_commands": 4588,
       "validator": {
         "returncode": 0,
-        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 89,\n    \"commands\": 4586,\n    \"script_calls\": 148,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.2 fixes the shared crew-return departure lock after role changes, scopes background statuses and hacker timeout protection to their own order, retains twenty-minute same-crew recall, and removes the worker scanner capital/player-context gate. Completed real close-range component samples queue for actual native publication when player.maxscanlevel becomes available; signal-leak station effects continue independently. The supplied 081204 log confirms old crew status persisting across Scanner/Patrol role changes and player scanner caps -1/0, not native parser errors in these mods. Actual movement, walking, queue publication, save/load and load-order require live X4 testing.\",\n  \"errors\": []\n}\n"
+        "output": "{\n  \"static_result\": \"PASS\",\n  \"counts\": {\n    \"xml_files\": 89,\n    \"commands\": 4587,\n    \"script_calls\": 148,\n    \"behaviours\": 13,\n    \"ui_addons\": 1\n  },\n  \"installed_schema_validation\": \"NOT RUN: installed X4 schemas unavailable\",\n  \"runtime\": \"NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.3 corrects the scanner native mission request identifier and guards its availability; no AI, payment, crew or UI behavior is replaced. Supplied 122227 log (manifest42) records 57 crystal sales, two taxi fares, one escort payment and eight patrol payments totalling 4,137,000 Cr with matching balance deltas and no duplicate recorded IDs; nine morale completions improve 40 crew values, ten component/signal surveys queue 80 samples, and the longest tour reaches 17/20 stops. Ten errors (five failed requests) name our invalid Manager.SelectMission property path. Corrected native mission generation remains unverified in X4.\",\n  \"errors\": []\n}\n"
       },
       "runtime_verified": false
     }
@@ -123,7 +123,7 @@
   ],
   "update_bundle": {
     "returncode": 0,
-    "output": "PASS: X4_Crew_Order_Recovery_2026-11-08.zip; 6 extensions, 195 byte-matched files\n"
+    "output": "PASS: X4_Scanner_Mission_Fix_2026-11-08.zip; 6 extensions, 196 byte-matched files\n"
   },
   "command_provenance": {
     "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
@@ -143,7 +143,8 @@
       "8.00",
       "9.00"
     ],
-    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented."
+    "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented.",
+    "native_mission_cue_reference": "Native 9.00 GenericMissions declares SelectMission with event_cue_signalled, $Sector and $OfferObject, nested under Manager but referenced script-wide as md.GenericMissions.SelectMission. Egosoft Mission Director Guide explains script-wide cue identifiers, distinct from variable namespaces. The 122227 log confirms Manager.SelectMission is an invalid property path. Version 0.4.3 uses the declared native cue with a safe existence guard and preserves native exclusions, sector cap and station cooldown."
   },
   "reviewed_source": "Current worktree; X4 runtime unavailable"
 }
