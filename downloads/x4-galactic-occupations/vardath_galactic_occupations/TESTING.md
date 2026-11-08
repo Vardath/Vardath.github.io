@@ -1,4 +1,4 @@
-# Reproducible tests — 0.3.6 development
+# Reproducible tests — 0.3.7 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
 
@@ -13,6 +13,10 @@ Run [the six 0.3.5 passenger acceptance sequences](PASSENGER_COMPLETION_0.3.5.md
 ## Earlier recovery acceptance
 
 Run [the six 0.3.4 acceptance sequences](LOG_REVIEW_0.3.4.md#live-acceptance-steps) first: the already-boarded taxi's real sector travel/docking/drop-off, remote escort discovery, Morale startup and actual crew effects, critical/default recovery, queued docking/player-order priority, and off-screen crystal work/sales. Existing saved Holds must be reassigned manually so intentional Holds are preserved. Tests must show actual arrival and NPC departure, not just a successful native return value.
+
+## Current supplied-log acceptance
+
+Run the [0.3.7 live checks](LOG_REVIEW_0.3.7.md#live-acceptance) first: existing stock at dock, actual population request, correct merchant/customer point, real same-NPC outward/return walk, finite accepted inventory, player cash and native receipts, per-buyer backoff, save/load and direct orders. The prior source/mocked pass missed null first-use clocks and the station-targeted interaction query. The log proves real pickups and no sales; a new complete sale must be observed before calling this verified.
 
 ## Crew counter-sale acceptance
 
@@ -76,4 +80,4 @@ Test an old/default worker with an absent or present-null cached sector list; it
 
 ## Local validation for this build
 
-203 Python contracts and 78 Lua mocks pass. This includes 19 native docking/routing cases, 23 crew retail cases and nine persistent service-invoice cases. The actual five native patch selectors and native 9.00 diff grammar are checked separately. Seven source/ZIP packages and the five-mod bundle are byte-checked. These are source/mock/packaging checks. All live role interface, physical action, save/load, installed load-order and full-loop acceptance tests above remain necessary in X4; the log confirms only the specific earlier events recorded in LOG_REVIEW_0.3.6.md.
+211 Python contracts and 78 Lua mocks pass. This includes 19 native docking/routing cases, 23 crew retail cases and nine persistent service-invoice cases. The actual five native patch selectors and native 9.00 diff grammar are checked separately. Seven source/ZIP packages and the current six-mod bundle are byte-checked. These are source/mock/packaging checks. All live role interface, physical action, save/load, installed load-order and full-loop acceptance tests above remain necessary in X4; the log confirms only the specific earlier events recorded in LOG_REVIEW_0.3.6.md.

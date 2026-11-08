@@ -1,76 +1,76 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.sellcrystals" version="9" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase">
         <run_script name="'vardath.go.crystal.shop'" result="$shopresult">
-          <param name="buyer" value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station" />
+          <param name="buyer" value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_station"/>
         </run_script>
-        <return value="$shopresult" />
+        <return value="$shopresult"/>
       </do_if>
-      <set_value name="$quantity" exact="0" />
+      <set_value name="$quantity" exact="0"/>
       <do_for_each name="$ware" in="[ware.inv_crystal_01,ware.inv_crystal_02,ware.inv_crystal_03,ware.inv_crystal_04,ware.inv_crystal_05]">
-        <set_value name="$quantity" exact="$quantity + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$ware}" />
+        <set_value name="$quantity" exact="$quantity + @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_stock.{$ware}"/>
       </do_for_each>
       <do_if value="$quantity le 0 and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units le 0">
-        <return value="false" />
+        <return value="false"/>
       </do_if>
-      <set_value name="$buyer" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station" />
-      <do_if value="not $buyer.isoperational or $buyer.isplayerowned or not $buyer.owner.hasrelation.dock.{faction.player} or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$buyer.sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $buyer.sector.owner.hasrelation.enemy.{faction.player}) or (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $buyer and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age)">
-        <set_value name="$buyer" exact="null" />
+      <set_value name="$buyer" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station"/>
+      <do_if value="not $buyer.isoperational or $buyer.isplayerowned or not $buyer.owner.hasrelation.dock.{faction.player} or not player.entity.$vgo_objects.{this.ship}.$vgo_scope.indexof.{$buyer.sector} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $buyer.sector.owner.hasrelation.enemy.{faction.player}) or (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $buyer and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age) or @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_cooldowns.{$buyer} gt player.age">
+        <set_value name="$buyer" exact="null"/>
         <find_station name="$stations" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" reachablefrom="this.ship" sortbygatedistancefrom="this.ship" multiple="true" sortlimit="96" haswalkableroom="true">
-          <match_dock size="this.ship.docksize" />
-          <match owner="faction.player" negate="true" />
+          <match_dock size="this.ship.docksize"/>
+          <match owner="faction.player" negate="true"/>
         </find_station>
         <do_for_each name="$station" in="$stations">
-          <do_if value="$station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless and $station.owner.hasrelation.dock.{faction.player} and (player.entity.$vgo_objects.{this.ship}.$vgo_risk == 2 or not $station.sector.owner.hasrelation.enemy.{faction.player}) and not (@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_failed == $station and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_retry gt player.age) and not (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $station and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age)">
-            <set_value name="$buyer" exact="$station" />
-            <break />
+          <do_if value="$station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless and $station.owner.hasrelation.dock.{faction.player} and (player.entity.$vgo_objects.{this.ship}.$vgo_risk == 2 or not $station.sector.owner.hasrelation.enemy.{faction.player}) and not (@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_failed == $station and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_retry gt player.age) and not (@player.entity.$vgo_objects.{this.ship}.$vgo_dock_failed_target == $station and @player.entity.$vgo_objects.{this.ship}.$vgo_dock_retry gt player.age) and not (@player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_cooldowns.{$station} gt player.age)">
+            <set_value name="$buyer" exact="$station"/>
+            <break/>
           </do_if>
         </do_for_each>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station" exact="$buyer" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station" exact="$buyer"/>
       </do_if>
       <do_if value="not $buyer.exists">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale waiting: no permitted reachable faction station with a suitable dock; stock and unpaid sale balance retained'" />
-        <return value="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale waiting: no permitted reachable faction station with a suitable dock; stock and unpaid sale balance retained'"/>
+        <return value="false"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_serial + 1" />
-      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_serial" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_serial + 1"/>
+      <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result"/>
       <run_script name="'vardath.go.recordresult'">
-        <param name="outcome" value="'started'" />
+        <param name="outcome" value="'started'"/>
       </run_script>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$buyer" />
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale: travelling/docking at ' + $buyer.knownname" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_deadline" exact="player.age + 30min"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_destination" exact="$buyer"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale: travelling/docking at ' + $buyer.knownname"/>
       <do_if value="@this.ship.dock.container != $buyer">
-        <run_script name="'vardath.go.depart'" result="$departed" />
+        <run_script name="'vardath.go.depart'" result="$departed"/>
         <do_if value="not $departed">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
         <do_if value="this.ship.sector != $buyer.sector">
           <run_script name="'vardath.go.travel'">
-            <param name="destination" value="$buyer.sector" />
+            <param name="destination" value="$buyer.sector"/>
           </run_script>
         </do_if>
         <run_script name="'vardath.go.dock'" result="$vgo_docked">
-          <param name="destination" value="$buyer" />
-          <param name="waittime" value="5min" />
+          <param name="destination" value="$buyer"/>
+          <param name="waittime" value="5min"/>
         </run_script>
         <do_if value="not $vgo_docked">
-          <return value="false" />
+          <return value="false"/>
         </do_if>
       </do_if>
       <do_if value="@this.ship.dock.container != $buyer or not $buyer.isoperational or not $buyer.owner.hasrelation.dock.{faction.player} or (player.entity.$vgo_objects.{this.ship}.$vgo_risk != 2 and $buyer.sector.owner.hasrelation.enemy.{faction.player})">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_failed" exact="$buyer" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_retry" exact="player.age + 10min" />
-        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station" />
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale dock unavailable; stock and unpaid balance retained, trying another station'" />
-        <return value="false" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_failed" exact="$buyer"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_retry" exact="player.age + 10min"/>
+        <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale dock unavailable; stock and unpaid balance retained, trying another station'"/>
+        <return value="false"/>
       </do_if>
       <run_script name="'vardath.go.crystal.shop'" result="$shopresult">
-        <param name="buyer" value="$buyer" />
+        <param name="buyer" value="$buyer"/>
       </run_script>
-      <return value="$shopresult" />
+      <return value="$shopresult"/>
     </actions>
   </attention>
 </aiscript>

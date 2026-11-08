@@ -22,11 +22,15 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          from zipfile import ZipFile,ZIP_DEFLATED
+          from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
           root=Path('downloads/x4-station-auto-drones')
-          with ZipFile(root/'vardath_station_auto_drones_TEST.zip','w',ZIP_DEFLATED) as z:
+          with ZipFile(root/'vardath_station_auto_drones_TEST.zip','w',ZIP_DEFLATED,compresslevel=9) as z:
             for file in sorted((root/'vardath_station_auto_drones').rglob('*')):
-              if file.is_file(): z.write(file,file.relative_to(root))
+              if file.is_file():
+                item=ZipInfo(file.relative_to(root).as_posix(),(2026,11,8,0,0,0))
+                item.compress_type=ZIP_DEFLATED
+                item.external_attr=0o100644<<16
+                z.writestr(item,file.read_bytes())
           PY
           python3 downloads/x4-station-auto-drones/validate.py
       - name: Commit installable ZIP

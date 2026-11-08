@@ -236,7 +236,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(9).log reviewed. Latest log records three taxi and two seller dock-to-Undock handoffs, 86/88 failed travel returns, four invalid time-remainder errors, three actual depleted-yield crystal batches (72 items) and one 8,000 Cr patrol payment. New integration remains unverified in X4.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 installation, executable or save available; supplied debug(2).log through debug(10).log reviewed. Latest log records successful service dock resumption, 23/25 successful sector travel attempts, one actual morale improvement, one 8,000 Cr patrol payment and seven real crystal pickups, but no sale. Missing-trader/customer-point waits are addressed by first-use clock gates, merchant-targeted interaction and buyer cooldowns; new engine execution remains unverified.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

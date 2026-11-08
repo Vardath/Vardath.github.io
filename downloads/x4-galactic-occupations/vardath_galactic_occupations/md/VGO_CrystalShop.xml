@@ -95,9 +95,12 @@
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returned'"/>
               <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed">
                 <write_to_logbook category="general" title="'Galactic Occupations: crystal representative returned'" text="$actor.knownname + ' returned aboard ' + $ship.knownname + '; crew identity and control post retained'"/>
+                <debug_text text="'GO crystal shop returned: ship=%1 actor=%2 sold=%3'.[$ship.debugname,$actor.debugname,@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_success]"/>
               </do_if>
+              <do_else>
+                <debug_text text="'GO crystal shop preparation ended: ship=%1 actor=%2 station=%3; no counter visit or sale completed'.[$ship.debugname,$actor.debugname,$station.debugname]"/>
+              </do_else>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed" exact="false"/>
-              <debug_text text="'GO crystal shop returned: ship=%1 actor=%2 sold=%3'.[$ship.debugname,$actor.debugname,@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_success]"/>
               <remove_value name="Init.$Ships.{$i}"/>
               <continue/>
             </do_if>
@@ -120,6 +123,7 @@
           <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_deadline" exact="player.age + 30min"/>
           <do_if value="$phase == 'prepare'">
             <do_if value="player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_started + 5min">
+              <write_to_logbook category="general" title="'Galactic Occupations: crystal visit blocked'" text="$ship.knownname + ' at ' + $station.knownname + ': ' + @player.entity.$vgo_objects.{$ship}.$vgo_status + '. No sale completed; stock and unpaid balance retained. This buyer will receive a ten-minute cooldown.'"/>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no usable crew/counter; retaining stock and returning before trying another station'"/>
               <continue/>
@@ -176,16 +180,23 @@
               <do_if value="not player.entity.$vgo_objects.{$station}?">
                 <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]"/>
               </do_if>
-              <do_if value="@player.entity.$vgo_objects.{$station}.$vgo_shop_population_after le player.age and md.NPC_Instantiation.PlaceItemTrader.exists">
+              <do_if value="(not player.entity.$vgo_objects.{$station}.$vgo_shop_population_after? or @player.entity.$vgo_objects.{$station}.$vgo_shop_population_after le player.age) and md.NPC_Instantiation.PlaceItemTrader.exists">
                 <set_value name="player.entity.$vgo_objects.{$station}.$vgo_shop_population_after" exact="player.age + 1min"/>
+                <find_npc_slot name="$counter_slots" object="$station" tags="tag.itemtrader" excludefilled="false" multiple="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_slots" exact="$counter_slots.count"/>
+                <debug_text text="'GO crystal shop population: ship=%1 station=%2 crew=%3 traders=%4 actual_counter_slots=%5'.[$ship.debugname,$station.debugname,$actor.debugname,$traders.count,$counter_slots.count]"/>
                 <signal_cue_instantly cue="md.NPC_Instantiation.PlaceItemTrader" param="$station"/>
+              </do_if>
+              <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_probe_log? or player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_probe_log le player.age">
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_probe_log" exact="player.age + 1min"/>
+                <debug_text text="'GO crystal shop waiting: ship=%1 station=%2 crew=%3 trader_candidates=%4 saved_counter_slots=%5 population_api=%6'.[$ship.debugname,$station.debugname,$actor.debugname,$traders.count,@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_slots,md.NPC_Instantiation.PlaceItemTrader.exists]"/>
               </do_if>
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: waiting for a real inventory trader at a native trading corner'"/>
               <continue/>
             </do_if>
             <set_value name="$room" exact="$trader.room"/>
             <set_value name="$counter" exact="$trader.roomslot"/>
-            <find_npc_slot name="$points" object="$room" tags="tag.npc_generic" multiple="true"/>
+            <find_npc_slot name="$points" object="$room" excludefilled="true" multiple="true"/>
             <set_value name="$goal" exact="null"/>
             <set_value name="$best" exact="4m"/>
             <do_for_each name="$point" in="$points">
@@ -198,7 +209,7 @@
               <set_value name="$movement" exact="table[$slot=$goal,$preventanimation=true]"/>
             </do_if>
             <do_else>
-              <find_actor_interaction_point actor="$actor" object="$station" slot="$counter" posname="$offset" rotname="$rotation"/>
+              <find_actor_interaction_point actor="$actor" object="$trader" slot="$counter" posname="$offset" rotname="$rotation"/>
               <do_if value="not $offset">
                 <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: no real walkable customer position at this counter'"/>
                 <continue/>
@@ -222,6 +233,7 @@
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_walkstart" exact="player.age"/>
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_step" exact="player.age"/>
             <signal_objects object="$actor" param="'npc_move_to'" param2="$movement"/>
+            <debug_text text="'GO crystal shop departure: ship=%1 actor=%2 station=%3 trader=%4'.[$ship.debugname,$actor.debugname,$station.debugname,$trader.debugname]"/>
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal sale: ' + $actor.knownname + ' walking to the trading corner counter'"/>
             <continue/>
           </do_if>
@@ -238,6 +250,9 @@
                 <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since" exact="player.age"/>
               </do_if>
               <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_counter_since + 5s">
+                <do_if value="$phase != 'atcounter'">
+                  <debug_text text="'GO crystal shop counter: ship=%1 actor=%2 station=%3 trader=%4'.[$ship.debugname,$actor.debugname,$station.debugname,$trader.debugname]"/>
+                </do_if>
                 <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'atcounter'"/>
                 <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Crystal representative at the inventory-trader counter; verifying stock and sale'"/>
               </do_if>

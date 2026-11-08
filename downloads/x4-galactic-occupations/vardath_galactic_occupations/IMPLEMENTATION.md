@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.6
+# Implementation and native-interface provenance — 0.3.7
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -41,3 +41,9 @@ All new money is native `reward_player` / `script_add`, recorded only by observe
 At the actual counter after a five-second dwell, settlement rechecks presence before and after ten seconds, transfers only the departure snapshot of finite saved stock, observes the merchant's accepted inventory delta and invoices only that quantity. Subsequent partial-payment retries do not transfer goods again. Only actual positive player credits generate native-ledger/logbook descriptions. The custom broker price is each native crystal ware's average price; this is not the player Trade UI or a vanilla NPC sale API. A paid empty-stock visit still resumes until the same crew is aboard; player direct orders have priority and can require redocking to recover a representative. Native room streaming and remote counter movement remain unverified here. See CREW_CRYSTAL_SALES_0.3.6.md.
 
 `vardath.go.reward` now snapshots verified service fee/serial/faction and retains unpaid balances. Zero/partial native credit does not set a paid marker or grant completion reputation. The worker retries this existing claim before another assignment can reset its serial and before repeat-off standby. Morale remains a zero-cash service that grants controlled reputation only after actual skill improvement. Old versions' already-set paid markers cannot establish that an unrecorded historical fee is owed, so no guessed retroactive payments are generated.
+
+## debug(10) corrections
+
+`VGO_CrystalShop` explicitly accepts an absent station population timestamp. `vardath.go.crystal.shop` explicitly accepts an absent first payment timestamp. Prior mocks read those absent optional clocks as integer zero; tests now model them as null and reproduce both failures against the old expressions. Real native replies are still mocked, not engine-confirmed.
+
+A customer interaction is queried against the actual merchant and their real slot; the previous whole-station target did not describe the intended interaction. All free nearby NPC slots are considered before that fallback. Saved per-ship/per-station buyer deadlines prevent two-station oscillation while preserving finite stock/claims. New diagnostics distinguish requests, actual at-counter state and failed preparation. `event_object_dropped_objects check="false"` retains the exact deposit filter while allowing its expected destruction; the command metadata documents that flag. Shared worker restart 37 reuses state-preserving recovery. See LOG_REVIEW_0.3.7.md for observed successes, unresolved import/interior errors and live acceptance.

@@ -1,11 +1,9 @@
-# Galactic Occupations 0.3.6 — docked services and galaxy movement
+# Galactic Occupations 0.3.7 — crystal counter recovery
 
-[Download Occupations](Galactic_Occupations_0.3.6_DEV.zip) · [Five-mod bundle](../x4-updates/X4_Docking_Travel_Recovery_2026-11-08.zip) · [Log evidence, all-role review and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.6.md)
+[Download Occupations](Galactic_Occupations_0.3.7_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Crystal_Counter_Recovery_2026-11-08.zip) · [Current log report and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.7.md)
 
-Repairs the native automatic-undock boundary that interrupted taxis, tours and crystal sellers after landing. The exact owned service resumes at its recorded dock; explicit departure clears the bounded handoff. Passengers leave only at the booked taxi destination or original tour pickup station. No alternate/safety station is selected after boarding.
+The supplied debug(10) proves actual docking/worker resumption, 23 successful sector-travel attempts, a five-crew morale improvement, one 8,000 Cr patrol payment and seven real crystal pickups. It does not show a crystal sale: miners waited for merchants or a usable customer position, then retried.
 
-Scoped native jump discovery now honours shared VGO galaxy routing, including Morale, while keeping native blacklists and other orders intact. Crystal field search no longer performs invalid arithmetic on time. Existing real passengers, routes, crew, equipment, finite stock and unpaid balances are retained. Crystal sales now require an existing crew member at a real inventory-trader counter, finite merchant stock acceptance and the same actor back aboard before occupation departure. Escort/patrol partial payments retain their unpaid balance. [Crew sales and live limits](vardath_galactic_occupations/CREW_CRYSTAL_SALES_0.3.6.md).
+This build fixes missing first-use population/payment clocks, targets the actual merchant for interaction, uses nearby free NPC positions, retains cooldowns for every failed buyer, and adds stage diagnostics. Stock, existing crew, passenger bookings, earned claims, normal turret settings, Protected UI and Inventory Collector are preserved. Source/mocked tests pass; native NPC paths and sales still require in-game confirmation.
 
-203 Python contracts, 78 Lua mocks, native diff grammar/selectors and seven package audits are separate from X4 runtime verification, which is unavailable here. The report identifies demonstrated log9 failures, new repairs, actual recorded work/payments and remaining limits for every role. Keep Protected UI and Inventory Collector; no vanilla UI renderer is replaced.
-
-Fully exit X4, overwrite the extension and load the same save. Already-inserted launch orders may finish once; the next planned docking must resume the service. Reselect only jobs already lost to Hold. Companion source mods remain Builders 1.75, Kopis/Astrid 1.15, Yaki Habitats 1.23 and Cargo Teleport 1.01.
+Close X4, overwrite the extension, then load the same save. Existing batches are retained. The bundle includes Occupations 0.3.7, Auto Drones 1.02 (one missing-statistics guard), Builders 1.75, Kopis/Astrid 1.15, Yaki Habitats 1.23 and Cargo Teleport 1.01. The last four sources are unchanged.

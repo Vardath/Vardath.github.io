@@ -1,4 +1,4 @@
-# Vardath – Automatic Station Drones and Managers v1.01
+# Vardath – Automatic Station Drones and Managers v1.02
 
 Automatic, no-toggle X4: Foundations 9.00 extension. Works with existing saves and new construction, applying requirements to **all player-owned stations every in-game minute**. Does not modify any other Vardath extension.
 
@@ -10,6 +10,10 @@ Automatic, no-toggle X4: Foundations 9.00 extension. Works with existing saves a
 The percentages represent *shared drone/unit storage capacity*, NOT freight ware storage. The game rounds to whole drones. It does **not** spawn free drones: it sets the supply requirements shown in Logical Overview. The station must have enough funds/resources and access to supply to restock. Existing drones are preserved, so physical inventory may temporarily differ from target distribution. If a required category has no available compatible drone macro, the mod reports a diagnostic rather than silently claiming success.
 
 **Managers:** once the first dock or pier is actually built and operational, create a player-owned manager if the manager post is vacant. Existing managers are never replaced. If a manager is dismissed, a new one is assigned on a subsequent pass.
+
+## v1.02 — supplied debug(10) guard
+
+The supplied log reports an absent `$VAD_Stats.$errors` value immediately after loading. The diagnostic now uses an optional property read so an incomplete statistics table does not produce another lookup error. Drone quantities, bridge behaviour, existing drones, managers and station orders are unchanged. This small source repair is not a new in-game verification of drone supply.
 
 ## Fixes since v1.00
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="15" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="16" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1"/>
     <param name="home" default="this.ship.sector"/>
@@ -70,6 +70,16 @@
     <handler>
       <conditions>
         <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart36'"/>
+      </conditions>
+      <actions>
+        <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
+          <abort_called_scripts resume="cleanup"/>
+        </do_if>
+      </actions>
+    </handler>
+    <handler>
+      <conditions>
+        <event_object_signalled object="this.assignedcontrolled" param="'vardath.go.restart37'"/>
       </conditions>
       <actions>
         <do_if value="not @player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_hack_deployed">
@@ -157,6 +167,10 @@
     <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
     <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart36'"/>
   </patch>
+  <patch sinceversion="16">
+    <set_value name="player.entity.$vgo_objects.{this.assignedcontrolled}.$vgo_runtime" exact="0"/>
+    <signal_objects object="this.assignedcontrolled" param="'vardath.go.restart37'"/>
+  </patch>
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -174,7 +188,7 @@
       <do_if value="not $batchsize? or @$batchsize == null">
         <set_value name="$batchsize" exact="24"/>
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="36"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_runtime" exact="37"/>
       <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.isoperational and @this.ship.dock.container == @player.entity.$vgo_objects.{this.ship}.$vgo_service_dock">
         <debug_text text="'GO service dock resumed: ship=%1 job=%2 station=%3 order=%4'.[this.ship.debugname,$job,player.entity.$vgo_objects.{this.ship}.$vgo_service_dock.debugname,this.ship.order.id]"/>
       </do_if>

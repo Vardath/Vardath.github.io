@@ -102,7 +102,7 @@ for folder in EXTS:
     archive = top / f"{mod.name}_TEST.zip"
     archive_prefix = f"{mod.name}/"
     if folder == 'x4-galactic-occupations':
-        archive=top/'Galactic_Occupations_0.3.6_DEV.zip'
+        archive=top/'Galactic_Occupations_0.3.7_DEV.zip'
         archive_prefix='extensions/'+archive_prefix
     try:
         with ZipFile(archive) as z:

@@ -31,7 +31,7 @@
      <show_notification text="'Vardath Station Drones: drone script not responding. Check Extensions / Protected UI Mode and restart X4.'"/>
      <set_value name="md.$VAD_MissingBridgeWarned" exact="true"/>
     </do_if>
-    <do_if value="player.entity.$VAD_Stats? and player.entity.$VAD_Stats.$errors gt 0 and not md.$VAD_DroneErrorWarned?">
+    <do_if value="player.entity.$VAD_Stats? and @player.entity.$VAD_Stats.$errors gt 0 and not md.$VAD_DroneErrorWarned?">
      <debug_text text="'[VAD] ERROR: station drone update reported ' + player.entity.$VAD_Stats.$errors + ' failure(s). Check debuglog for Vardath Auto Drones.'" filter="error"/>
      <show_notification text="'Vardath Station Drones: a supply update failed. Check the X4 debug log for Vardath Auto Drones.'"/>
      <set_value name="md.$VAD_DroneErrorWarned" exact="true"/>

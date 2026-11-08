@@ -57,7 +57,7 @@ class VM:
 
     def get(self,key,index=None):
         value=self.state.get(key,NULL if key.endswith('_station') else 0)
-        return value.get(index,0) if index is not None else value
+        return value.get(index,0) if index is not None and isinstance(value,dict) else 0 if index is not None else value
 
     def expr(self,text):
         text=text.strip()
@@ -289,6 +289,13 @@ class CommerceAccounting(unittest.TestCase):
         v=VM({WARES[0]:4});v.docked=NULL;v.can_dock=False
         self.assertFalse(v.run('vardath.go.sellcrystals'))
         self.assertEqual(v.get('vgo_crystal_stock')[WARES[0]],4);self.assertEqual(v.reward_requests,[])
+    def test_buyer_search_skips_all_recently_failed_stations(self):
+        v=VM({WARES[0]:4})
+        second=Obj('second',owner=FACTION,sector=SECTOR,isoperational=True,isplayerowned=False,exists=True)
+        third=Obj('third',owner=FACTION,sector=SECTOR,isoperational=True,isplayerowned=False,exists=True)
+        v.state['vgo_crystal_sale_cooldowns']={BUYER:v.age+600,second:v.age+600}
+        v.station_candidates=[BUYER,second,third]
+        self.assertTrue(v.run('vardath.go.sellcrystals'));self.assertIs(v.vars['buyer'],third)
     def test_player_order_during_sale_wait_prevents_payment(self):
         v=VM({WARES[0]:4});v.interrupt_on_wait=True
         self.assertFalse(v.run('vardath.go.sellcrystals'))

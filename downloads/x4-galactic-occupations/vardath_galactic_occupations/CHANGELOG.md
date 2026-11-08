@@ -1,5 +1,13 @@
 # Version history
 
+## 0.3.7 — first-use crystal counter recovery
+
+- Address debug(10)'s no-merchant/no-customer-position sale stalls. Allow absent initial population/payment times explicitly rather than comparing a null clock to current time. The previous mocks incorrectly substituted zero for both absent values.
+- Query all free nearby room slots and calculate the interaction point at the actual merchant rather than the whole station. Keep actual counter/actor/dock/stock/payment guards.
+- Save independent ten-minute failed-buyer cooldowns instead of alternating the last two unavailable buyers. Add throttled population counts, movement-request/counter diagnostics and honest preparation-failure logs.
+- Keep the drop listener scoped to the exact deposit but permit expected destruction via the supported event-source check flag. Retain state-preserving worker recovery for imported old stacks.
+- Add eight relevant checks, including native population response with both clocks missing, merchant fallback, retry gates and multi-buyer recovery. All 211 Python contracts and 78 Lua mocks pass. No full in-game sale is asserted; debug10 proves seven real pickups, a morale improvement and one patrol payment. See LOG_REVIEW_0.3.7.md.
+
 ## 0.3.6 — native landing-loop and shared routing recovery
 
 - Fix the demonstrated native DockAt-to-Undock boundary with one scoped attribute guard and a bounded saved service handoff. Keep own taxi/tour/crystal/hacker work at its actual service dock; clear before explicit departure. Other orders retain native handling.

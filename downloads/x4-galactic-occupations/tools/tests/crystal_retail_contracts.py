@@ -14,6 +14,16 @@ from passenger_completion_contracts import Seq
 MD='player.entity.$vgo_objects.{$ship}'
 ROOT=E.parse(MOD/'md/VGO_CrystalShop.xml').getroot()
 
+class MissingClock:
+    """Absent optional game times are null, rather than a numeric zero clock."""
+    def __bool__(self):return False
+    def __lt__(self,other):return False
+    def __le__(self,other):return False
+    def __gt__(self,other):return False
+    def __ge__(self,other):return False
+
+MISSING_CLOCK=MissingClock()
+
 class RetailVM(VM):
     def __init__(self,stock=None):
         super().__init__({WARES[0]:4} if stock is None else stock)
@@ -34,12 +44,14 @@ class RetailVM(VM):
         self.other={};self.events=[];self.pending={};self.native_arrives=True
         self.trader_population=True;self.counter_points=True;self.interaction_point=True
         self.offset=Obj('offset',exists=True);self.distance=2;self.population_calls=[]
+        self.populate_merchants=False;self.counter_slots=True;self.payment_attempt_times=[]
         self.state['vgo_order']=self.order;self.ticks=0
         self.vars.update(ship=self.ship,buyer=BUYER)
 
     def context(self,obj,target):return bool(obj and obj is not NULL and getattr(obj,'context',NULL) is target)
     def get(self,key,index=None):
         if key in ['vgo_crystal_shop_actor','vgo_crystal_shop_trader'] and key not in self.state:return NULL
+        if key=='vgo_crystal_shop_nextpayment' and key not in self.state:return MISSING_CLOCK
         return super().get(key,index)
     def path(self,path):
         bits=path.lstrip('@$').split('.');v=self.vars.get(bits[0],NULL)
@@ -63,7 +75,7 @@ class RetailVM(VM):
         def other(m):
             obj=self.vars.get(m[1],NULL);data=self.other.get(obj,{})
             return self.remembered((m[2] in data if m[2] else obj in self.other) if m[3]
-                                   else data.get(m[2],NULL if m[2] and m[2].endswith('owner') else 0))
+                                   else data.get(m[2],NULL if m[2] and m[2].endswith('owner') else MISSING_CLOCK if m[2] and m[2].endswith('_after') else 0))
         text=re.sub(p,other,text)
         text=re.sub(r'@?(\$\w+(?:\.\w+)*)\.\$(\w+)(\?)?',lambda m:self.remembered(
             m[2] in self.path(m[1]).__dict__ if m[3] else self.path(m[1]).__dict__.get(m[2],NULL if m[2].endswith('_ship') else False)),text)
@@ -124,8 +136,14 @@ class RetailVM(VM):
                     self.execute(n)
             elif tag=='include_actions':self.execute(ROOT.find(".//library[@name='"+n.get('ref')+"']/actions"))
             elif tag=='find_object_component':self.assign(n.get('name'),self.traders if n.get('entitytype') else self.crewlist)
-            elif tag=='find_npc_slot':self.assign(n.get('name'),Seq([self.customer]) if n.get('multiple') and self.counter_points else self.seat if not n.get('multiple') else Seq())
-            elif tag=='find_actor_interaction_point':self.assign(n.get('posname'),self.offset if self.interaction_point else None)
+            elif tag=='find_npc_slot':
+                if n.get('tags')=='tag.itemtrader':value=Seq([self.counter]) if self.counter_slots else Seq()
+                else:value=Seq([self.customer]) if n.get('multiple') and self.counter_points else self.seat if not n.get('multiple') else Seq()
+                self.assign(n.get('name'),value)
+            elif tag=='find_actor_interaction_point':
+                # Interaction is with the actual merchant, not the station hull.
+                valid=self.interaction_point and self.expr(n.get('object')) is self.merchant
+                self.assign(n.get('posname'),self.offset if valid else None)
             elif tag=='transform_position':self.assign(n.get('name'),self.offset)
             elif tag=='set_entity_traits':
                 actor=self.expr(n.get('entity'))
@@ -143,10 +161,14 @@ class RetailVM(VM):
                 else:
                     actor=self.expr(n.get('object'));movement=self.expr(n.get('param2'))
                     target=movement.get('slot',NULL)
-                    room=target.component if target else movement['room']
+                    room=target.component if target is not NULL and target else movement['room']
                     actor.iswalking=True;self.pending[actor]=room
                     self.events.append(('walk',actor,room))
-            elif tag=='signal_cue_instantly':self.population_calls.append(self.age)
+            elif tag=='signal_cue_instantly':
+                self.population_calls.append(self.age)
+                if self.populate_merchants and self.counter_slots:self.traders=Seq([self.merchant])
+            elif tag=='reward_player':
+                self.payment_attempt_times.append(self.age);super().execute([n])
             elif tag=='run_script' and n.get('name').strip("'") in ['vardath.go.crystal.atcounter','vardath.go.crystal.settle','vardath.go.crystal.shop','vardath.go.sellcrystals']:
                 name=n.get('name').strip("'");args={p.get('name'):self.expr(p.get('value')) for p in n}
                 saved=dict(self.vars);self.vars.update(args);result=self.run(name);self.vars=saved
@@ -288,5 +310,44 @@ class RetailAccounting(unittest.TestCase):
         for root in roots:
             for tag in ['create_npc','remove_npc_template','remove_actor_from_room','set_owner','set_entity_controlpost']:
                 self.assertEqual(list(root.iter(tag)),[])
+
+class FirstUseAndBuyerRecovery(unittest.TestCase):
+    def test_no_nearby_free_slot_uses_actual_merchant_interaction_point(self):
+        v=RetailVM();v.counter_points=False
+        self.assertTrue(v.run('vardath.go.crystal.shop'))
+        self.assertEqual(v.receipts,[400000]);self.assertIs(v.crew.room,v.shiproom)
+    def test_native_population_reply_can_start_first_visit_with_both_clocks_missing(self):
+        v=RetailVM();v.traders=Seq();v.populate_merchants=True
+        self.assertTrue(v.run('vardath.go.crystal.shop'))
+        self.assertEqual(len(v.population_calls),1);self.assertEqual(v.receipts,[400000])
+        self.assertIs(v.crew.room,v.shiproom)
+    def test_no_actual_counter_cannot_be_populated_or_sold_at(self):
+        v=RetailVM();v.traders=Seq();v.populate_merchants=True;v.counter_slots=False
+        self.assertFalse(v.run('vardath.go.crystal.shop'))
+        self.assertEqual(v.get('vgo_crystal_shop_counter_slots'),0)
+        self.assertEqual(v.traders,[]);self.assertEqual(v.reward_requests,[])
+        self.assertEqual(v.get('vgo_crystal_stock')[WARES[0]],4)
+    def test_existing_population_clock_remains_station_throttled(self):
+        v=RetailVM();v.traders=Seq();v.other[BUYER]={'vgo_shop_population_after':v.age+60}
+        v.start();self.assertEqual(v.population_calls,[])
+        v.age+=60;v.tick();self.assertEqual(v.population_calls,[1060])
+    def test_existing_payment_clock_is_respected_then_same_visit_settles(self):
+        v=RetailVM();self.assertTrue(v.reach_counter());due=v.age+60
+        v.state['vgo_crystal_shop_nextpayment']=due
+        self.assertTrue(v.run('vardath.go.crystal.shop'))
+        self.assertEqual(len(v.payment_attempt_times),1);self.assertGreaterEqual(v.payment_attempt_times[0],due+10)
+    def test_failed_buyers_keep_independent_retry_times(self):
+        v=RetailVM();v.traders=Seq();self.assertFalse(v.run('vardath.go.crystal.shop'))
+        first=v.get('vgo_crystal_sale_cooldowns')[BUYER]
+        other=Obj('second',exists=True,isoperational=True)
+        v.vars['buyer']=other;v.docked=other
+        self.assertFalse(v.run('vardath.go.crystal.shop'))
+        self.assertEqual(v.get('vgo_crystal_sale_cooldowns')[BUYER],first)
+        self.assertGreater(v.get('vgo_crystal_sale_cooldowns')[other],first)
+    def test_shot_deposit_listener_allows_destroyed_source_without_global_subscription(self):
+        event=xml('vardath.go.task.crystal').find('.//event_object_dropped_objects')
+        self.assertEqual(event.get('object'),'$target');self.assertEqual(event.get('check'),'false')
+        scan=xml('vardath.go.task.crystal').find(".//run_script[@name=\"'vardath.go.crystaldrops'\"]")
+        self.assertEqual(scan.find("param[@name='force']").get('value'),'true')
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -1,6 +1,14 @@
-# Galactic Occupations 0.3.6 development build
+# Galactic Occupations 0.3.7 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.3.7: crystal-sale first-use and counter recovery
+
+The new log proves service docking and shared travel now progress. Astrid Tours targeted actual crystal deposits with six selected turrets, picked up seven real drops and retained seven sale items. Three older miners retained their 24-item batches. No crystal sale completed: visits stalled at trader discovery or a missing customer position.
+
+The sale now explicitly permits missing first-use population/payment clocks, searches all free nearby NPC positions, and asks for an interaction point at the actual merchant instead of the whole station. A separate cooldown is saved for every failed buyer. New population, movement-request, actual-counter and preparation-failure diagnostics distinguish stages. Destroyed deposit listeners no longer report errors for an expected vanished source. Existing stock, crew, bookings and unpaid claims are preserved; the native ledger and Protected UI remain intact.
+
+211 Python contracts and 78 Lua mocks pass. These fixes still require live confirmation. [Exact log findings, source fixes, remaining errors and acceptance steps](LOG_REVIEW_0.3.7.md). The current six-mod bundle also includes the small Auto Drones 1.02 missing-statistics guard; other companion sources are unchanged.
 
 ## 0.3.6: docked services, crew counter sales and galaxy routing
 
@@ -38,7 +46,7 @@ The included 0.3.2 log repairs fix null sector-cache lists, conflicting hacker o
 
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.3.6_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.3.7_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
 4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances; passenger settlement uses `GO passenger payment:` with contract IDs and unpaid balances.
