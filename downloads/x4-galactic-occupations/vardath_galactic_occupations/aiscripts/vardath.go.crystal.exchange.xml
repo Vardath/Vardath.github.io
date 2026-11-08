@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.exchange" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.crystal.exchange" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="buyer"/>
     <param name="physical" default="true"/>
@@ -78,7 +78,7 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale waiting: no positive native price; unsold stock retained'"/>
         <return value="false"/>
       </do_if>
-      <do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_due gt 0Cr">
+      <do_if value="$physical and player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units gt 0"><set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_invoice" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_id"/></do_if><do_if value="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_due gt 0Cr">
         <set_value name="$due" exact="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_due"/>
         <set_value name="$moneybefore" exact="player.money"/>
         <reward_player money="$due"/>
@@ -111,7 +111,13 @@
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_units" exact="0"/>
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_manifest"/>
         <remove_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_station"/>
-        <return value="true"/>
+        <do_if value="$physical and @player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_invoice == player.entity.$vgo_objects.{this.ship}.$vgo_crystal_sale_completed">
+  <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_success" exact="true"/>
+  <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
+  <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_shop_return_started" exact="player.age"/>
+  <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Crystal sale paid; waiting for the same crew member to return aboard'"/>
+  <signal_objects object="player.entity" param="'vardath.go.crystal.shop'" param2="this.ship"/>
+</do_if><return value="true"/>
       </do_if>
       <return value="false"/>
     </actions>

@@ -223,6 +223,9 @@ class VM:
             elif tag=='continue':raise Continued()
             elif tag=='break':raise Broken()
             elif tag in ['debug_text','write_to_logbook','set_command_action']:pass
+            elif tag=='signal_objects':
+                # The retail suite executes the independent MD registry and return.
+                assert n.get('param')=="'vardath.go.crystal.shop'"
             else:raise AssertionError('Unmodelled action '+tag)
 
     def run(self,name):

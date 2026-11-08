@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="12" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.crystal" version="13" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_crystal" name="{191180,106}" description="{191180,206}" category="mining" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}"/>
@@ -18,22 +18,22 @@
         <input_param name="truevalue" value="100"/>
       </param>
       <param name="simfallback" type="bool" default="true" text="{191180,53}">
-        <patch sinceversion="11" condition="$simfallback == null" value="true"/>
+        <patch sinceversion="11" condition="not $simfallback? or @$simfallback == null" value="true"/>
       </param>
       <param name="miningtime" type="time" default="5min" text="{191180,54}">
         <input_param name="min" value="1min"/>
         <input_param name="max" value="30min"/>
         <input_param name="step" value="1min"/>
-        <patch sinceversion="11" condition="$miningtime == null" value="5min"/>
+        <patch sinceversion="11" condition="not $miningtime? or @$miningtime == null" value="5min"/>
       </param>
       <param name="batchsize" type="number" default="24" text="{191180,55}">
         <input_param name="min" value="1"/>
         <input_param name="max" value="60"/>
         <input_param name="step" value="1"/>
-        <patch sinceversion="11" condition="$batchsize == null" value="24"/>
+        <patch sinceversion="11" condition="not $batchsize? or @$batchsize == null" value="24"/>
       </param>
       <param name="simulatesales" type="bool" default="true" text="{191180,56}">
-        <patch sinceversion="12" condition="$simulatesales == null" value="true"/>
+        <patch sinceversion="13" condition="not $simulatesales? or @$simulatesales == null" value="true"/>
       </param>
     </params>
     <requires>
@@ -88,7 +88,7 @@
       <set_value name="$batchsize" exact="24"/>
     </do_if>
   </patch>
-  <patch sinceversion="12">
+  <patch sinceversion="13">
     <do_if value="not $simulatesales? or @$simulatesales == null">
       <set_value name="$simulatesales" exact="true"/>
     </do_if>

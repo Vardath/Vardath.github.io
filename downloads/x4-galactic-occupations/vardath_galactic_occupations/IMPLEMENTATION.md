@@ -1,4 +1,4 @@
-# Implementation and native-interface provenance — 0.3.8
+# Implementation and native-interface provenance — 0.3.9
 
 `order.vardath.go.*` registers 13 persistent defaults and one finite queued order. `vardath.go.worker` coordinates scope, staggered local discovery, reservations, serials, results, rewards and release. State lives in the real `player.entity` blackboard, keyed by ship/target; it does not attach blackboards to ship/station components. `VGO_State` manages persistent registries, genuine passenger actors, recovery and throttled activity/payment reports.
 
@@ -57,3 +57,7 @@ The merchant interaction described above was invalid: NPC is not the API's class
 `PassengerAbstractBoardV38`/`PassengerAbstractExitV38` preserve real cue actors with native passenger templates and observe ship/station role-object assignments. Body uninstancing follows native passenger mission practice; visible bodies are reconnected using real points. Only low attention outside the player sector can use abstract acknowledgements. Exit is still gated by actual booked docking, full tour itinerary, native template absence, station handoff and five-second confirmation for the whole party. Released bodyless actors can reconnect only at the booked station. No ordinary cargo passenger or fabricated mission completion.
 
 See [LOG_REVIEW_0.3.8.md](LOG_REVIEW_0.3.8.md) for exact source references, 31 new contract cases, observed payments, limitations and unperformed live tests. All thirteen role/routing contracts remain; installed merging, actor persistence, pathfinding and gameplay effects need X4 runtime confirmation.
+
+## 0.3.9 paid physical visit handoff
+
+The physical exchange records `shop_invoice` before money, and after fully observed settlement writes the saved successful/returning state before returning to its caller. `ReconcilePaidVisitV39` compares the exact active invoice with completed sale state. A narrow no-stock/no-claim physical-mode legacy path recovers the old seven-item visit only when no new-visit baseline exists. No recovery action issues money, transfers inventory or changes crew identity/role. `RecoverVisitsV39` reattaches pending visits from the existing MD ship registry every five seconds; native same-actor return/dock safeguards remain. Runtime 39 preserves state and retries the worker through the existing supported interrupt/default recovery. Order wrapper 13 guards unset fields; newly inserted run_script blockers declare their historical sinceversion. The independent controller, not an isolated helper result, is tested. See LOG_REVIEW_0.3.9.md for exact observed payments, incomplete tour boarding, remaining third-party errors and unperformed live checks.

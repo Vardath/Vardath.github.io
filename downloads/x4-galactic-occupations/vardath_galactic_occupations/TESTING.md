@@ -1,6 +1,10 @@
-# Reproducible tests — 0.3.8 development
+# Reproducible tests — 0.3.9 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
+
+## Current paid crew-return acceptance
+
+Run [the 0.3.9 live sequence](LOG_REVIEW_0.3.9.md#live-acceptance-on-the-existing-save) first, using the saved Astrid Tours seven-item sale. Record balance and the existing representative's identity. The same actor must return from the actual counter to a real ship room, preserving its crew role/control post, with no second payment. Test loss of the AI caller, a blocked path, save/load mid-return, player control and leaving/redocking under a direct order. Allow two game minutes for documented same-dock native placement recovery. Then verify AI departure and another full cycle. The new source tests inject a lost return value; this is not a finding that this specific native fault caused the stall.
 
 ## Current off-screen and physical service acceptance
 
@@ -84,4 +88,4 @@ Test an old/default worker with an absent or present-null cached sector list; it
 
 ## Local validation for this build
 
-242 Python contracts and 78 Lua mocks pass. Thirty-one new cases cover the log-11 broker/roster/room/upgrade boundaries. This includes 19 native docking/routing cases, 23 crew retail cases and nine persistent service-invoice cases. The actual five native patch selectors and native 9.00 diff grammar are checked separately. Seven source/ZIP packages and the current six-mod bundle are byte-checked. These are source/mock/packaging checks. All live role interface, physical action, save/load, installed load-order and full-loop acceptance tests above remain necessary in X4; the log confirms only the specific earlier events recorded in LOG_REVIEW_0.3.6.md.
+255 Python contracts and 78 Lua mocks pass. Thirteen new cases exercise independent paid-visit and import recovery. Thirty-one new cases cover the log-11 broker/roster/room/upgrade boundaries. This includes 19 native docking/routing cases, 23 crew retail cases and nine persistent service-invoice cases. The actual five native patch selectors and native 9.00 diff grammar are checked separately. Seven source/ZIP packages and the current six-mod bundle are byte-checked. These are source/mock/packaging checks. All live role interface, physical action, save/load, installed load-order and full-loop acceptance tests above remain necessary in X4; the log confirms only the specific earlier events recorded in LOG_REVIEW_0.3.6.md.

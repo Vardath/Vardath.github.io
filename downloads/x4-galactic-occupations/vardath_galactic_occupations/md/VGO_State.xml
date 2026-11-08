@@ -601,11 +601,11 @@
           <set_value name="player.entity.$vgo_objects" exact="table[]"/>
         </do_if>
         <do_for_each name="$ship" in="Init.$Ships">
-          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 38 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
+          <do_if value="$ship.isplayerowned and $ship != player.occupiedship and $ship.order == $ship.defaultorder and Init.$Orders.indexof.{@$ship.order.id} and $ship.order.isparameditable.home and @player.entity.$vgo_objects.{$ship}.$vgo_runtime != 39 and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase">
             <do_if value="not player.entity.$vgo_objects.{$ship}?">
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]"/>
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="38"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_runtime" exact="39"/>
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue"/>
             <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_catalogue_until"/>
             <edit_order_param order="$ship.order" param="'home'" value="$ship.order.$home"/>
@@ -1077,9 +1077,6 @@
       </actions>
     </cue>
     <cue name="LoadedV38">
-      <actions>
-        <write_to_logbook category="general" title="'Galactic Occupations 0.3.8 loaded'" text="'Off-screen crystal sales now settle finite stock after real docking without waiting for unloaded trader corners. Physical crew sales use native walkable floor checks. Off-screen passengers use actual named crew records and verified booked-station handoffs; visible actors are retained. Existing stock, crews, bookings and unpaid balances are preserved.'"/>
-      </actions>
-    </cue>
-  </cues>
+      <actions/></cue>
+  <cue name="LoadedV39"><actions><write_to_logbook category="general" title="'Galactic Occupations 0.3.9: crystal crew return recovery'" text="'Paid counter visits now commit a persistent return state. The independent crew controller recovers matching paid invoices, including the previously stranded seven-item sale, without paying twice. Existing crew, stock, passengers and bookings are retained. Off-screen sales are confirmed in the supplied log; this new return recovery still needs live confirmation.'"/></actions></cue></cues>
 </mdscript>

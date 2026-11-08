@@ -236,7 +236,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, save or full installed catalogs. Supplied logs through debug(20261108-021152).log reviewed. Latest run verifies two 8,000 Cr patrol payments, not crystal sales or passenger fares. Remove NPC-as-object API regression, implement finite stock-backed off-screen broker sales, native validated physical counter paths and real passenger actor/roster handoffs. Static/mocked passes do not certify the new engine execution.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, save or full installed catalogs. Latest debug(20261108-032505).log verifies seven crystal payments totalling 337,000 Cr, including a physical seven-item sale for 7,000 Cr whose representative remained at the counter. Implement persistent paid-visit return and independent legacy/registry recovery, safe parameter and imported-call handling. New return recovery is unverified; one tour remains waiting at 0/2 boarding in the log.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

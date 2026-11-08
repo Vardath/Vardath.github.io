@@ -22,3 +22,7 @@ See `vardath_galactic_occupations/TESTING.md` and `../x4-kopis-production-cheat/
 ## 8 November 2026 — current 0.3.8 follow-up
 
 The dated sections above describe earlier reviews, not the current patch inventory. The full latest log is now reviewed in [LOG_REVIEW_0.3.8.md](vardath_galactic_occupations/LOG_REVIEW_0.3.8.md), including 27 confirmed Occupations errors and other attribution limits. Occupations includes the previously documented narrow native AI/MD and optional-extension attribute diffs; it is no longer accurate to describe its current release as having no vanilla diffs. Only Occupations source changes in this follow-up. Auto Drones 1.02, Cargo Teleport 1.01, Builders 1.75, Kopis/Astrid 1.15 and Yaki Habitats 1.23 retain their published source hashes. All seven packages are re-audited without claiming runtime certification. No third-party source or old save plan is silently removed.
+
+## 8 November 2026 — 0.3.9 crew-return follow-up
+
+Only Occupations source changes. All companion sources retain their 0.3.8 published hashes and are re-audited. The new log confirms physical/off-screen crystal money and identifies eleven Occupations import/parameter/result errors; its other 1,151 error records are separately identified rather than claimed fixed. No third-party source or saved plan was deleted. See [the current report](vardath_galactic_occupations/LOG_REVIEW_0.3.9.md), including the unresolved 0/2 tour boarding wait.

@@ -1,5 +1,12 @@
 # Version history
 
+## 0.3.9 — paid crystal crew return and imported-state recovery
+
+- Commit the exact physical invoice and returning phase when native sale money is fully observed; do not rely solely on the settlement caller. Independently reconcile paid visits and the exact old seven-item stranded state without issuing money or replacing crew.
+- Recover pending-visit registry membership, report return status and preserve same-actor native walking/blocked-path recovery, flags/control post, direct orders and actual ship-room departure gates.
+- Guard missing order parameters, heal version-12 missing sales toggles at wrapper version 13, annotate earlier inserted blocking calls and suppress missing result reads. Retain guarded worker/default recovery at runtime 39 and all existing state.
+- Add 13 executed recovery/import-boundary contracts; all 255 Python and 78 Lua checks pass. Latest log verifies seven crystal payments totalling 337,000 Cr, but no physical crew return or tour fare. New return recovery remains runtime-unverified. See LOG_REVIEW_0.3.9.md.
+
 ## 0.3.8 — galaxy service and unloaded-interior recovery
 
 - Remove 0.3.7's invalid merchant-NPC object interaction call. Use actual free counter-room slots/waypoints and native-validated floor offsets; retain observed counter/dwell/merchant acceptance checks and same-crew return. Recover a stalled same-dock return using the same actor.

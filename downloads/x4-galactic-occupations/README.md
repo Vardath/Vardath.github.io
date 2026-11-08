@@ -1,9 +1,9 @@
-# Galactic Occupations 0.3.8 — galaxy service recovery
+# Galactic Occupations 0.3.9 — paid crystal crew return
 
-[Download Occupations](Galactic_Occupations_0.3.8_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Galaxy_Service_Recovery_2026-11-08.zip) · [Log findings and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.8.md)
+[Download Occupations](Galactic_Occupations_0.3.9_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Crystal_Crew_Return_Recovery_2026-11-08.zip) · [Log findings and live tests](vardath_galactic_occupations/LOG_REVIEW_0.3.9.md)
 
-The new log exposes a 0.3.7 regression: a merchant NPC was passed to an object-only interaction API. That call is removed. Physical counter visits use native room/floor queries and actual crew arrival. Off-screen crystal sales use the requested finite-stock broker simulation at a real permitted dock, so unloaded trading corners no longer block galaxy-wide sales. Cash goes to the player; existing stock and unpaid balances survive.
+The supplied log confirms seven crystal payments totalling 337,000 Cr, including Astrid Tours' physical seven-item sale for 7,000 Cr. Its representative then remained at the desk. The fix commits a persistent return state with the paid invoice and lets the independent crew controller recover a lost AI handoff, including the already-paid saved visit, without paying twice or replacing crew. Missing parameter lookups and imported result/version handling are also corrected.
 
-Taxi/tour keep real named NPCs and native passenger rosters. Away from the player, native-style roster/actor handoffs avoid waiting forever for uninstantiated rooms. Visible NPCs use actual ship/station points. Only whole-party departure at the booked station completes a fare; tours still require their full itinerary. No alternative drop-off, duplicate payment or synthetic passenger cargo.
+Exit X4, overwrite the same extension and load the existing save while the ship remains docked at that station. The same crew member should walk back; a blocked path has the documented two-game-minute native same-actor recovery at that dock. Existing crew/equipment, stock, passengers, bookings, Protected UI and Inventory Collector remain intact.
 
-Only Occupations changes this time. The log verifies two 8,000 Cr patrol payments; it does not verify a new crystal sale or passenger fare. 242 Python contracts and 78 Lua mocks pass, plus XML/reference/native-patch/package checks. These are not in-game tests. Close X4, overwrite the same extension and load the existing save. Protected UI, Inventory Collector, Forge/Astrid and companion mod sources are preserved. Full limits and reproducible tests are in the linked review.
+255 Python contracts, 78 Lua mocks and static/native-patch/package checks pass. New crew-return recovery still needs live confirmation. The log's tour boarding wait remains explicitly unresolved. Only Occupations source changes; companion mods in the bundle are unchanged.
