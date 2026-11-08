@@ -1,3 +1,9 @@
+# v1.16 — Astrid braking state and spacesuit transition guards
+
+The new log contains 11,240 failed reads/writes of braking state on a ship component. Ships do not have entity blackboards. The controller now stores its deadline on a persistent MD cue and clears it whenever the player leaves the actual yacht controls, enters a suit or is in native transit. Normal flight-assist/input/boost/autopilot checks remain. The 2.5-second stop target needs in-game confirmation after this fix.
+
+Only the braking controller, extension metadata and documentation change. Forge hull, special main weapon, weapon recovery scripts, Astrid equipment and crew are preserved. Install the current ZIP in place and use the existing save. Occupations 0.4.1 supplies the separate guarded spacesuit-exit recovery; see its report.
+
 # v1.15 — Astrid equipment metadata
 
 The supplied log flagged missing equipment-use and blueprint-licence fields on Astrid Tours wares. Added the supported metadata for those four wares only. Existing Forge ware definitions, special weapon assets and weapon recovery scripts are preserved. No equipment, crew or ownership is reset. In-game availability/equipment acceptance remains pending.

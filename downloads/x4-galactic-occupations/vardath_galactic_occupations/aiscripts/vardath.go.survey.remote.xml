@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiscript name="vardath.go.survey.remote" version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params><param name="station"/><param name="module"/></params>
+  <attention min="unknown"><actions>
+    <do_all exact="10">
+      <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or not $module.isoperational or not $station.isoperational or this.ship.sector != $station.sector or $station.ishostileto.{this.ship} or this.ship.distanceto.{$module} gt 3km + (this.ship.size + $module.size) / 2 or ($module.isphysicsready and this.ship.sector == player.sector)"><return value="false"/></do_if>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Simulating component survey at ' + $station.knownname + '; active close-range sample, no collision geometry required'"/>
+      <wait exact="1s"/>
+    </do_all>
+    <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or not $module.isoperational or not $station.isoperational or this.ship.sector != $station.sector or $station.ishostileto.{this.ship} or this.ship.distanceto.{$module} gt 3km + (this.ship.size + $module.size) / 2 or ($module.isphysicsready and this.ship.sector == player.sector)"><return value="false"/></do_if>
+    <set_value name="$before" exact="$module.revealedpercentage"/><set_value name="$levelbefore" exact="$module.scannedlevel"/>
+    <set_object_scanned object="$module"/><set_known object="$module" known="true"/>
+    <set_known object="$station" known="true" updatesnapshot="true"/>
+    <return value="$module.scannedlevel gt $levelbefore or $module.revealedpercentage gt $before"/>
+  </actions></attention>
+</aiscript>

@@ -1,44 +1,44 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_Recovery" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
     <cue name="Init">
       <actions>
-        <set_value name="$Ships" exact="[]"/>
+        <set_value name="$Ships" exact="[]" />
       </actions>
     </cue>
     <library name="Track">
       <actions>
         <do_if value="$ship.exists and $ship.isclass.ship and (@player.entity.$vgo_objects.{$ship}.$vgo_passengers.count or @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed or @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed) and not Init.$Ships.indexof.{$ship}">
-          <append_to_list name="Init.$Ships" exact="$ship"/>
+          <append_to_list name="Init.$Ships" exact="$ship" />
         </do_if>
       </actions>
     </library>
     <cue name="Register" instantiate="true">
       <conditions>
-        <event_object_signalled object="player.entity" param="'vardath.go.recovery.track'"/>
+        <event_object_signalled object="player.entity" param="'vardath.go.recovery.track'" />
       </conditions>
       <actions>
-        <set_value name="$ship" exact="event.param2"/>
-        <include_actions ref="Track"/>
+        <set_value name="$ship" exact="event.param2" />
+        <include_actions ref="Track" />
       </actions>
     </cue>
     <cue name="BootstrapV40">
       <actions>
         <do_if value="player.entity.$vgo_objects?">
           <do_for_each name="$ship" in="player.entity.$vgo_objects.keys.list">
-            <include_actions ref="Track"/>
+            <include_actions ref="Track" />
           </do_for_each>
         </do_if>
       </actions>
     </cue>
     <cue name="RecoverRegistry" instantiate="true" checkinterval="5min">
       <conditions>
-        <check_value value="player.entity.$vgo_objects?"/>
+        <check_value value="player.entity.$vgo_objects?" />
       </conditions>
       <actions>
         <do_if value="player.entity.$vgo_objects?">
           <do_for_each name="$ship" in="player.entity.$vgo_objects.keys.list">
-            <include_actions ref="Track"/>
+            <include_actions ref="Track" />
           </do_for_each>
         </do_if>
       </actions>
@@ -46,236 +46,236 @@
     <library name="TourClock">
       <actions>
         <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 and @player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
-          <set_value name="$tourcontract" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0"/>
+          <set_value name="$tourcontract" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0" />
           <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_contract? or @player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_contract != $tourcontract">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_contract" exact="$tourcontract"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="0s"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_contract" exact="$tourcontract" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="0s" />
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count gt 0 and player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked? and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked le player.age">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="player.age - player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="player.age - player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock" exact="player.age"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_active" exact="false"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock" exact="player.age" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_active" exact="false" />
           </do_if>
-          <set_value name="$touractive" exact="$ship.isplayerowned and $ship != player.occupiedship and @$ship.defaultorder.id == 'VGO_tour' and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded and ($ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order or $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_dock_order)"/>
+          <set_value name="$touractive" exact="$ship.isplayerowned and $ship != player.occupiedship and @$ship.defaultorder.id == 'VGO_tour' and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded and ($ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order or $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_dock_order)" />
           <do_if value="$touractive and @player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_active and player.entity.$vgo_objects.{$ship}.$vgo_tour_clock?">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="@player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed + [[player.age - player.entity.$vgo_objects.{$ship}.$vgo_tour_clock,0s].max,1min].min"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed" exact="@player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed + [[player.age - player.entity.$vgo_objects.{$ship}.$vgo_tour_clock,0s].max,1min].min" />
           </do_if>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock" exact="player.age"/>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_active" exact="$touractive"/>
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock" exact="player.age" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_tour_clock_active" exact="$touractive" />
         </do_if>
       </actions>
     </library>
     <library name="ClearCancellation">
       <actions>
-        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since"/>
-        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due"/>
-        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract"/>
-        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified"/>
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract" />
+        <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" />
       </actions>
     </library>
     <library name="EvacuatePassengers">
       <actions>
-        <set_value name="$pending" exact="0"/>
-        <set_value name="$evacuated" exact="0"/>
-        <set_value name="$retainedcrew" exact="0"/>
+        <set_value name="$pending" exact="0" />
+        <set_value name="$evacuated" exact="0" />
+        <set_value name="$retainedcrew" exact="0" />
         <do_for_each name="$entry" in="player.entity.$vgo_objects.{$ship}.$vgo_passengers" counter="$i">
           <do_if value="@$entry.$evacuated">
-            <continue/>
+            <continue />
           </do_if>
-          <set_value name="$actor" exact="$entry.$actor"/>
+          <set_value name="$actor" exact="$entry.$actor" />
           <do_if value="$actor.exists">
-            <remove_value name="$actor.$vgo_taxi_ship"/>
+            <remove_value name="$actor.$vgo_taxi_ship" />
           </do_if>
-          <do_if value="$actor.exists and ($actor.role == entityrole.pilot or $actor.role == entityrole.service or $actor.role == entityrole.marine)">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true"/>
-            <set_value name="$retainedcrew" exact="$retainedcrew + 1"/>
-            <continue/>
+          <do_if value="$actor.exists and ($actor == player.entity or $actor == $ship.pilot or $actor.role == entityrole.service or $actor.role == entityrole.marine)">
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true" />
+            <set_value name="$retainedcrew" exact="$retainedcrew + 1" />
+            <continue />
           </do_if>
           <do_if value="@$ship.people.{$entry.$template}.exists and $ship.people.{$entry.$template}.role != entityrole.passenger">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true"/>
-            <set_value name="$retainedcrew" exact="$retainedcrew + 1"/>
-            <continue/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true" />
+            <set_value name="$retainedcrew" exact="$retainedcrew + 1" />
+            <continue />
           </do_if>
           <do_if value="@$ship.people.{$entry.$template}.exists">
-            <remove_npc_template object="$ship" template="$entry.$template"/>
+            <remove_npc_template object="$ship" template="$entry.$template" />
           </do_if>
           <do_if value="@$ship.people.{$entry.$template}.exists">
-            <set_value name="$pending" exact="$pending + 1"/>
-            <continue/>
+            <set_value name="$pending" exact="$pending + 1" />
+            <continue />
           </do_if>
           <do_if value="$actor.exists">
-            <remove_value name="$actor.$vgo_taxi_ship"/>
-            <stop_actor_walk actor="$actor"/>
-            <remove_actor_from_room actor="$actor" destroy="true"/>
+            <remove_value name="$actor.$vgo_taxi_ship" />
+            <stop_actor_walk actor="$actor" />
+            <remove_actor_from_room actor="$actor" destroy="true" />
           </do_if>
           <do_if value="not $actor.exists or not $actor.room.hascontext.{$ship}">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true"/>
-            <set_value name="$evacuated" exact="$evacuated + 1"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers.{$i}.$evacuated" exact="true" />
+            <set_value name="$evacuated" exact="$evacuated + 1" />
           </do_if>
           <do_else>
-            <set_value name="$pending" exact="$pending + 1"/>
+            <set_value name="$pending" exact="$pending + 1" />
           </do_else>
         </do_for_each>
         <do_if value="$pending == 0">
-          <set_value name="$cancelled" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_manifest_ready"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_dest"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_booked_destination"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing"/>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered" exact="false"/>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered_count" exact="0"/>
-          <include_actions ref="ClearCancellation"/>
-          <write_to_logbook category="general" title="'Galactic Occupations: cancelled passengers departed unpaid'" text="$ship.knownname + ': cancelled passenger contract ' + $cancelled + ' evacuated; no fare or reputation. Only booked passenger entries released; recruited crew retained.'"/>
-          <debug_text text="'GO cancelled passengers evacuated: ship=%1 contract=%2 removed_this_pass=%3 recruited_crew_retained=%4; no payment'.[$ship.debugname,$cancelled,$evacuated,$retainedcrew]"/>
+          <set_value name="$cancelled" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passengers" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_manifest_ready" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_boarded" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_phase" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_dest" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_pickup" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_booked_destination" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_embarked" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_service" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered" exact="false" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_delivered_count" exact="0" />
+          <include_actions ref="ClearCancellation" />
+          <write_to_logbook category="general" title="'Galactic Occupations: cancelled passengers departed unpaid'" text="$ship.knownname + ': cancelled passenger contract ' + $cancelled + ' evacuated; no fare or reputation. Only booked passenger entries released; recruited crew retained.'" />
+          <debug_text text="'GO cancelled passengers evacuated: ship=%1 contract=%2 removed_this_pass=%3 recruited_crew_retained=%4; no payment'.[$ship.debugname,$cancelled,$evacuated,$retainedcrew]" />
         </do_if>
       </actions>
     </library>
     <library name="PassengerLifecycle">
       <actions>
         <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passengers.count">
-          <set_value name="$contract" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0"/>
-          <set_value name="$service" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 then 'VGO_tour' else 'VGO_taxi'"/>
-          <set_value name="$retained" exact="$ship.isplayerowned and (@$ship.defaultorder.id == $service or @$ship.order.id == $service)"/>
+          <set_value name="$contract" exact="if player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id? and @player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_taxi_contract_id else 0" />
+          <set_value name="$service" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_passenger_service == 5 then 'VGO_tour' else 'VGO_taxi'" />
+          <set_value name="$retained" exact="$ship.isplayerowned and (@$ship.defaultorder.id == $service or @$ship.order.id == $service)" />
           <do_if value="not $retained and $ship.isplayerowned">
             <do_for_each name="$queued" in="$ship.orders">
               <do_if value="$queued.exists and $queued.id == $service">
-                <set_value name="$retained" exact="true"/>
-                <break/>
+                <set_value name="$retained" exact="true" />
+                <break />
               </do_if>
             </do_for_each>
           </do_if>
           <do_if value="$retained and not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
-            <include_actions ref="ClearCancellation"/>
+            <include_actions ref="ClearCancellation" />
           </do_if>
           <do_elseif value="not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
             <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since? or @player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract != $contract">
-              <set_value name="$grace" exact="30min"/>
+              <set_value name="$grace" exact="30min" />
               <do_if value="$service == 'VGO_tour'">
-                <set_value name="$grace" exact="2h"/>
-                <set_value name="$stops" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops else 20"/>
+                <set_value name="$grace" exact="2h" />
+                <set_value name="$stops" exact="if @player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops gt 0 then player.entity.$vgo_objects.{$ship}.$vgo_tour_booked_stops else 20" />
                 <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops gt 0 and @player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration gt 0s">
-                  <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops].max"/>
+                  <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_last_duration * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_last_stops].max" />
                 </do_if>
                 <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count gt 0 and @player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed gt 0s">
-                  <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count + 30min].max"/>
+                  <set_value name="$grace" exact="[$grace,player.entity.$vgo_objects.{$ship}.$vgo_tour_active_elapsed * $stops / player.entity.$vgo_objects.{$ship}.$vgo_tour_trip.count + 30min].max" />
                 </do_if>
               </do_if>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since" exact="player.age"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" exact="player.age + $grace"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract" exact="$contract"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since" exact="player.age" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due" exact="player.age + $grace" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_contract" exact="$contract" />
+              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" />
             </do_if>
             <do_if value="not @player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified and player.age ge player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since + 1min">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" exact="true"/>
-              <write_to_logbook category="general" title="'Galactic Occupations: passenger cancellation grace'" text="$ship.knownname + ': persistent passenger service removed. Unpaid evacuation after ' + ((player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due - player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since) / 1min)f + ' game minutes. Resume that service before expiry to keep this same party and itinerary. Temporary orders with that service retained do not start this timer.'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_notified" exact="true" />
+              <write_to_logbook category="general" title="'Galactic Occupations: passenger cancellation grace'" text="$ship.knownname + ': persistent passenger service removed. Unpaid evacuation after ' + ((player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due - player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_since) / 1min)f + ' game minutes. Resume that service before expiry to keep this same party and itinerary. Temporary orders with that service retained do not start this timer.'" />
             </do_if>
             <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_passenger_cancel_due">
-              <set_value name="$voidcontract" exact="$contract"/>
+              <set_value name="$voidcontract" exact="$contract" />
               <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts? or @player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts == null">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts" exact="table[]"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts" exact="table[]" />
               </do_if>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts.{$voidcontract}" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_cancelled_id" exact="$contract"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing" exact="true"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_void_passenger_contracts.{$voidcontract}" exact="true" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_taxi_cancelled_id" exact="$contract" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing" exact="true" />
             </do_if>
           </do_elseif>
           <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_passenger_disposing">
-            <include_actions ref="EvacuatePassengers"/>
+            <include_actions ref="EvacuatePassengers" />
           </do_if>
         </do_if>
       </actions>
     </library>
     <library name="RecallCrew">
       <actions>
-        <set_value name="$recalled" exact="false"/>
-        <do_if value="$ship.isplayerowned and $actor.exists and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and not $actor.istransferscheduled">
-          <set_value name="$oldrole" exact="$actor.role"/>
-          <set_value name="$oldpost" exact="$actor.controlpost"/>
-          <stop_actor_walk actor="$actor"/>
+        <set_value name="$recalled" exact="false" />
+        <do_if value="$ship.isplayerowned and $actor.isclass.npc and $actor != player.entity and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and not $actor.istransferscheduled">
+          <set_value name="$oldrole" exact="$actor.role" />
+          <set_value name="$oldpost" exact="$actor.controlpost" />
+          <stop_actor_walk actor="$actor" />
           <do_if value="@$origin.component.exists and $origin.component.hascontext.{$ship}">
-            <add_actor_to_room actor="$actor" slot="$origin" result="$placed" triggeranimation="false" setroomslot="false"/>
+            <add_actor_to_room actor="$actor" slot="$origin" result="$placed" triggeranimation="false" setroomslot="false" />
           </do_if>
           <do_if value="not $actor.room.hascontext.{$ship}">
-            <add_actor_to_post_location actor="$actor"/>
+            <add_actor_to_post_location actor="$actor" />
           </do_if>
-          <do_if value="$actor.exists and $actor.role == $oldrole and $actor.controlpost == $oldpost and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and ($actor.room.hascontext.{$ship} or (not $actor.room.exists and $ship.attention lt attention.visible and $ship.sector != player.sector))">
-            <set_value name="$recalled" exact="true"/>
-            <write_to_logbook category="general" title="'Galactic Occupations: stranded crew recalled'" text="$actor.knownname + ' recalled to ' + $ship.knownname + ' after twenty game minutes away from the station. Same crew member, role and control post retained.'"/>
-            <debug_text text="'GO stranded crew recalled: ship=%1 actor=%2 role=%3 post=%4 body_room=%5'.[$ship.debugname,$actor.debugname,$actor.role,$actor.controlpost,$actor.room]"/>
+          <do_if value="$actor.isclass.npc and $actor.role == $oldrole and $actor.controlpost == $oldpost and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship and ($actor.room.hascontext.{$ship} or (not $actor.room.exists and $ship.attention lt attention.visible and $ship.sector != player.sector))">
+            <set_value name="$recalled" exact="true" />
+            <write_to_logbook category="general" title="'Galactic Occupations: stranded crew recalled'" text="$actor.knownname + ' recalled to ' + $ship.knownname + ' after twenty game minutes away from the station. Same crew member, role and control post retained.'" />
+            <debug_text text="'GO stranded crew recalled: ship=%1 actor=%2 role=%3 post=%4 body_room=%5'.[$ship.debugname,$actor.debugname,$actor.role,$actor.controlpost,$actor.room]" />
           </do_if>
         </do_if>
       </actions>
     </library>
     <library name="RecallCrystal">
       <actions>
-        <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_actor"/>
-        <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_station"/>
-        <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed and $actor.exists and not $actor.room.hascontext.{$ship} and @$ship.dock.container != $station">
+        <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_actor" />
+        <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_station" />
+        <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed and $actor.isclass.npc and not $actor.room.hascontext.{$ship} and @$ship.dock.container != $station">
           <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since?">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" exact="player.age"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" exact="player.age" />
           </do_if>
           <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since + 20min and (not player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry? or player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry)">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry" exact="player.age + 30s"/>
-            <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin"/>
-            <include_actions ref="RecallCrew"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry" exact="player.age + 30s" />
+            <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_origin" />
+            <include_actions ref="RecallCrew" />
             <do_if value="$recalled">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recalled" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recalled" exact="true" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_phase" exact="'returning'" />
+              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" />
             </do_if>
           </do_if>
         </do_if>
         <do_else>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry"/>
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_away_since" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_recall_retry" />
         </do_else>
       </actions>
     </library>
     <library name="RecallHacker">
       <actions>
-        <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor"/>
-        <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_station"/>
-        <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and $actor.exists and not $actor.room.hascontext.{$ship} and @$ship.dock.container != $station">
+        <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" />
+        <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_station" />
+        <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and $actor.isclass.npc and not $actor.room.hascontext.{$ship} and @$ship.dock.container != $station">
           <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since?">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" exact="player.age"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" exact="player.age" />
           </do_if>
           <do_if value="player.age ge player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since + 20min and (not player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry? or player.age ge @player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry)">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" exact="player.age + 30s"/>
-            <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_origin"/>
-            <include_actions ref="RecallCrew"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" exact="player.age + 30s" />
+            <set_value name="$origin" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" />
+            <include_actions ref="RecallCrew" />
             <do_if value="$recalled">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recalled" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recalled" exact="true" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" />
             </do_if>
           </do_if>
         </do_if>
         <do_else>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since"/>
-          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry"/>
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" />
+          <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" />
         </do_else>
       </actions>
     </library>
     <cue name="Operations" instantiate="true" checkinterval="30s">
       <conditions>
-        <check_value value="Init.$Ships.count gt 0"/>
+        <check_value value="Init.$Ships.count gt 0" />
       </conditions>
       <actions>
         <do_for_each name="$ship" in="Init.$Ships" counter="$shipindex" reverse="true">
           <do_if value="not $ship.exists or (not @player.entity.$vgo_objects.{$ship}.$vgo_passengers.count and not @player.entity.$vgo_objects.{$ship}.$vgo_crystal_shop_deployed and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed)">
-            <remove_value name="Init.$Ships.{$shipindex}"/>
-            <continue/>
+            <remove_value name="Init.$Ships.{$shipindex}" />
+            <continue />
           </do_if>
-          <include_actions ref="TourClock"/>
-          <include_actions ref="PassengerLifecycle"/>
-          <include_actions ref="RecallCrystal"/>
-          <include_actions ref="RecallHacker"/>
+          <include_actions ref="TourClock" />
+          <include_actions ref="PassengerLifecycle" />
+          <include_actions ref="RecallCrystal" />
+          <include_actions ref="RecallHacker" />
         </do_for_each>
       </actions>
     </cue>

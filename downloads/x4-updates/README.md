@@ -1,14 +1,14 @@
-# Current X4 update — delayed recovery, 8 November 2026
+# Current X4 update — spacesuit recovery, 8 November 2026
 
-[Occupations 0.4.0](../x4-galactic-occupations/Galactic_Occupations_0.4.0_DEV.zip) · [Six-mod bundle](X4_Recovery_Grace_2026-11-08.zip) · [Policy and live checks](../x4-galactic-occupations/vardath_galactic_occupations/RECOVERY_POLICY_0.4.0.md)
+[Occupations 0.4.1](../x4-galactic-occupations/Galactic_Occupations_0.4.1_DEV.zip) · [Six-mod bundle](X4_Spacesuit_Recovery_2026-11-08.zip) · [Log findings and live checks](../x4-galactic-occupations/vardath_galactic_occupations/SPACESUIT_RECOVERY_0.4.1.md)
 
 | Extension | Version | This update |
 |---|---|---|
-| Galactic Occupations | 0.4.0 DEV | Same-crew recall after twenty game minutes away; unpaid cancellation grace; temporary-order protection; new twenty-stop tours. |
-| Automatic Station Drones and Managers | 1.02 | Unchanged. |
-| Living Factions Builders | 1.75 | Unchanged. |
-| Kopis Forge / Astrid Tours | 1.15 | Unchanged, including special weapon and Astrid equipment. |
-| Yaki Terran Habitats | 1.23 | Unchanged. |
-| Universal Cargo Teleport | 1.01 | Unchanged. |
+| Galactic Occupations | 0.4.1 DEV | Signal surveys and station bonuses/native offers; disconnected passenger boarding/departure repair; guarded spacesuit recovery; retains delayed lifecycle recovery. |
+| Kopis Forge / Astrid Tours | 1.16 | Persistent MD braking state and player-transition guards; no Forge weapon/equipment changes. |
+| Automatic Station Drones and Managers | 1.02 | Source unchanged. |
+| Living Factions Builders | 1.75 | Source unchanged. |
+| Yaki Terran Habitats | 1.23 | Source unchanged. |
+| Universal Cargo Teleport | 1.01 | Source unchanged. |
 
-Exit X4 and extract in the game installation so files land in `extensions/`. Overwrite matching folders and load the existing save. Keep Protected UI and Inventory Collector. Timers use game time, survive save/load and preserve ordinary interruptions. Only actually removed persistent passenger services start unpaid grace; resuming before expiry keeps their party. 299 Python contracts, 78 Lua mocks and package checks pass; new native recalls and evacuations remain runtime-unverified.
+Exit X4, extract so files land in `extensions/`, overwrite matching folders and load the existing save. Keep Protected UI and Inventory Collector. No new game. All previous lifecycle fixes remain included. 348 Python contracts, 91 Lua mocks and source/archive audits pass; actual new spacesuit/camera behaviour requires in-game testing. The supplied log confirms 581,000 Cr in crystal/escort/patrol payments; that session predates the new boarding repairs.

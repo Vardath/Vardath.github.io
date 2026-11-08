@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Register actual generic leak offers; preserve every native player unlock/cutscene handler. -->
+  <add sel="/mdscript/cues/library[@name='Signal_Leak_Offer']/actions">
+    <signal_objects object="player.entity" param="'vardath.go.survey.offer'" param2="$BaseCue" param3="$SignalLeak"/>
+  </add>
+</diff>

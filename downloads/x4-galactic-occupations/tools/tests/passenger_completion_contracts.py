@@ -32,7 +32,7 @@ class PassengerVM(BaseVM):
         self.roster=set(range(1,count+1));self.actors=[]
         entries=Seq()
         for i in range(1,count+1):
-            actor=Obj('pax'+str(i),exists=True,room=self.shiproom,iswalking=False,walkspeed=1)
+            actor=Obj('pax'+str(i),exists=True,room=self.shiproom,iswalking=False,walkspeed=1,hasbody=True,role='passenger')
             entries.append({'template':i,'actor':actor,'boarded':True,'delivered':False})
             self.actors.append(actor)
         self.state.update(vgo_job=job,vgo_passenger_service=job,vgo_passengers=entries,
@@ -59,6 +59,11 @@ class PassengerVM(BaseVM):
     def expr(self,text):
         text=text.replace(MD,S)
         self.vars['mock_player_sector']=self.player_sector
+        # These legacy cases test physical-room handoffs while the player observes
+        # the service. NativePassengers overrides these with explicit remote context.
+        self.vars['mock_player_ship']=self.ship
+        self.vars['mock_player_station']=self.station
+        text=text.replace('player.ship','$mock_player_ship').replace('player.station','$mock_player_station')
         text=text.replace('player.sector','$mock_player_sector').replace('entityrole.passenger',"'passenger'")
         text=text.replace('player.entity.$vgo_objects?','true').replace(S+'?','true')
         def saved_entry(match):
@@ -135,7 +140,7 @@ class PassengerVM(BaseVM):
             elif tag=='include_actions':
                 if n.get('ref')=='PassengerRoomPointsV32':
                     self.vars['pointlist']=Seq([self.seat] if self.vars['pointcontainer'] is self.ship else [self.exit] if self.available_exits else [])
-                elif n.get('ref') in ['PassengerAbstractBoardV38','PassengerAbstractExitV38']:
+                elif n.get('ref') in ['PassengerAbstractBoardV38','PassengerAbstractExitV38','PassengerVisibleBoardRecoveryV41']:
                     self.execute(E.parse(MOD/'md/VGO_State.xml').find(".//library[@name='"+n.get('ref')+"']/actions"))
                 else:raise AssertionError('Unexpected library '+n.get('ref'))
             elif tag=='find_npc_waypoint':

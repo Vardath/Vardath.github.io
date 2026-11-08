@@ -1,3 +1,9 @@
+# v1.16 — Astrid braking state and spacesuit transition guards
+
+The new log contains 11,240 failed reads/writes of braking state on a ship component. Ships do not have entity blackboards. The controller now stores its deadline on a persistent MD cue and clears it whenever the player leaves the actual yacht controls, enters a suit or is in native transit. Normal flight-assist/input/boost/autopilot checks remain. The 2.5-second stop target needs in-game confirmation after this fix.
+
+Only the braking controller, extension metadata and documentation change. Forge hull, special main weapon, weapon recovery scripts, Astrid equipment and crew are preserved. Install the current ZIP in place and use the existing save. Occupations 0.4.1 supplies the separate guarded spacesuit-exit recovery; see its report.
+
 # v1.11 — Fixed special weapon at the primary gun hardpoint (2026-11-06)
 
 **Diagnosis:** The Kopis Forge has a custom **special** weapon, `weapon_vardath_kopis_laser_macro`, using the original Terran pulse-laser **weapon component**, and a custom projectile with exactly **8,000 damage per hit**. The physical `con_weapon_01` socket and its tags remained identical to the working pre-turret-removal model. The previous revisions relied entirely on selecting or restoring the weapon via loadout scripts. Those attempts do not establish that the custom gun exists on an already saved ship.

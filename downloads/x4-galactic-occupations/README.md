@@ -1,9 +1,11 @@
-# Galactic Occupations 0.4.0 — interruption-safe recovery
+# Galactic Occupations 0.4.1 — spacesuit recovery and log fixes
 
-[Download Occupations](Galactic_Occupations_0.4.0_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Recovery_Grace_2026-11-08.zip) · [Recovery rules and live checks](vardath_galactic_occupations/RECOVERY_POLICY_0.4.0.md)
+[Download Occupations](Galactic_Occupations_0.4.1_DEV.zip) · [Six-mod bundle](../x4-updates/X4_Spacesuit_Recovery_2026-11-08.zip) · [Findings and live checks](vardath_galactic_occupations/SPACESUIT_RECOVERY_0.4.1.md)
 
-Stranded crystal/hacker crew are recalled to the same ship after twenty game minutes away, preserving the same NPC, role, post and native roster. Cancelling the persistent taxi service gives passengers thirty game minutes before unpaid evacuation. Cancelled tours get at least two game hours, extended by observed cruise duration. Resuming before expiry keeps the same party. Combat, lockboxes, other orders and player control retain passengers whenever the original default or queued service remains.
+[Scanner and passenger changes](vardath_galactic_occupations/SURVEY_BOARDING_0.4.1.md): timed off-screen module/signal-leak surveys, real station bonuses and native job/black-market discovery. Boarding/departure now accept valid disconnected NPC identities; visible blocked walking has same-actor recovery. New gameplay paths require live checking.
 
-New tours default to twenty stops; accepted bookings keep their existing route. Cancellation cleanup removes only that booking's passenger entries and preserves anyone recruited into ordinary crew. No cancellation fare, duplicate payment, extra actor or invented ledger transaction. Timers and progress persist across saves.
+Adds one delayed native recovery for a confirmed Use Spacesuit exit that leaves inconsistent suit/control/room state. Normal exits remain vanilla. Fixes the invalid pilot role check in cancelled-passenger cleanup; retains twenty-minute crew recalls, interruption-safe unpaid cancellation grace and twenty-stop tour defaults.
 
-Exit X4 and overwrite the existing extension, then load the same save. Keep Protected UI and Inventory Collector. Only Occupations source changes. 299 Python contracts, 78 Lua mocks and static/native-patch/package checks pass; new native recalls and evacuations remain unverified in X4. The prior tour boarding wait remains a separate reported limitation.
+The companion Kopis/Astrid 1.16 fixes 11,240 logged ship-blackboard braking errors and excludes native/suit transitions from the yacht's braking assist. Forge weapon assets and recovery scripts are unchanged.
+
+Exit X4, overwrite the matching extension folders and load the same save. Keep Protected UI and Inventory Collector. The new log confirms 581,000 Cr in crystal/escort/patrol payments, but tour boarding remains unresolved. 348 Python contracts, 91 Lua mocks and static/package checks pass; new native recovery is not live verified.

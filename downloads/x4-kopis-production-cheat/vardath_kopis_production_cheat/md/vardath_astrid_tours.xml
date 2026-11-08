@@ -6,16 +6,33 @@
   <do_if value="not $Tours.count"><create_ship name="$Ship" macro="macro.ship_vardath_astrid_tours_macro" sector="player.sector"><owner exact="faction.player" overridenpc="true"/><pilot><select faction="faction.yaki" tags="tag.fighterpilot"/></pilot><loadout ref="vardath_astrid_tours_default"/><people ref="vardath_astrid_tours_yaki_crew"><fillpercent exact="50"/></people><safepos object="player.ship" exact="3km"/></create_ship><set_object_name object="$Ship" name="'Astrid Tours'"/><debug_text text="'Vardath Astrid Tours: spawned a player-owned Yaki-crewed replacement'" filter="general"/></do_if>
   <reset_cue cue="this"/>
  </actions></cue>
- <cue name="BrakeAssist_v112" instantiate="true" checkinterval="100ms"><conditions><check_value value="player.occupiedship.exists and player.occupiedship.isplayerowned and player.occupiedship.macro == macro.ship_vardath_astrid_tours_macro"/></conditions><actions>
+ <!-- Ships do not have entity blackboards. Keep the deadline on this persistent MD cue. -->
+ <cue name="BrakeStateV116"><actions>
+  <set_value name="$Ship" exact="null"/><set_value name="$Due" exact="0s"/>
+ </actions></cue>
+ <cue name="BrakeAssist_v112" instantiate="true" checkinterval="100ms">
+ <conditions><check_value value="player.exists"/></conditions><actions>
   <set_value name="$Ship" exact="player.occupiedship"/>
-  <set_value name="$Idle" exact="player.flightassist and not player.autopilottarget.exists and not player.input.flight.matchspeed and player.input.flight.throttle == 0 and player.input.flight.horizontal == 0 and player.input.flight.vertical == 0 and player.input.flight.pitch == 0 and player.input.flight.yaw == 0 and player.input.flight.roll == 0 and not $Ship.boost.active"/>
-  <do_if value="not $Idle"><remove_value name="$Ship.$vardath_tours_stopdeadline"/></do_if>
-  <do_elseif value="$Ship.speed gt 0.5m or $Ship.travel.active or $Ship.boost.active">
-   <do_if value="@$Ship.$vardath_tours_stopdeadline and player.age gt $Ship.$vardath_tours_stopdeadline + 1s"><remove_value name="$Ship.$vardath_tours_stopdeadline"/></do_if>
-   <do_if value="not $Ship.$vardath_tours_stopdeadline?"><set_value name="$Ship.$vardath_tours_stopdeadline" exact="player.age + 2500ms"/><disable_travel_mode ship="$Ship" duration="0s"/><set_playership_throttle value="0"/></do_if>
-   <do_elseif value="player.age ge $Ship.$vardath_tours_stopdeadline"><set_object_velocity object="$Ship" constantvel="false"><linear x="0" y="0" z="0"/></set_object_velocity><remove_value name="$Ship.$vardath_tours_stopdeadline"/></do_elseif>
-  </do_elseif>
-  <do_else><remove_value name="$Ship.$vardath_tours_stopdeadline"/></do_else>
+  <do_if value="not $Ship.exists or not $Ship.isplayerowned or $Ship.macro != macro.ship_vardath_astrid_tours_macro or player.controlled != $Ship or player.spacesuit.exists or player.entity.isintransit">
+   <set_value name="BrakeStateV116.$Ship" exact="null"/><set_value name="BrakeStateV116.$Due" exact="0s"/>
+  </do_if>
+  <do_else>
+   <do_if value="BrakeStateV116.$Ship != $Ship">
+    <set_value name="BrakeStateV116.$Ship" exact="$Ship"/><set_value name="BrakeStateV116.$Due" exact="0s"/>
+   </do_if>
+   <set_value name="$Idle" exact="player.flightassist and not player.autopilottarget.exists and not player.input.flight.matchspeed and player.input.flight.throttle == 0 and player.input.flight.horizontal == 0 and player.input.flight.vertical == 0 and player.input.flight.pitch == 0 and player.input.flight.yaw == 0 and player.input.flight.roll == 0 and not $Ship.boost.active"/>
+   <do_if value="not $Idle or ($Ship.speed le 0.5m and not $Ship.travel.active and not $Ship.boost.active)">
+    <set_value name="BrakeStateV116.$Due" exact="0s"/>
+   </do_if>
+   <do_elseif value="BrakeStateV116.$Due == 0s or player.age gt BrakeStateV116.$Due + 1s">
+    <set_value name="BrakeStateV116.$Due" exact="player.age + 2500ms"/>
+    <disable_travel_mode ship="$Ship" duration="0s"/><set_playership_throttle value="0"/>
+   </do_elseif>
+   <do_elseif value="player.age ge BrakeStateV116.$Due">
+    <set_object_velocity object="$Ship" constantvel="false"><linear x="0" y="0" z="0"/></set_object_velocity>
+    <set_value name="BrakeStateV116.$Due" exact="0s"/>
+   </do_elseif>
+  </do_else>
  </actions></cue>
 </cues>
 </mdscript>

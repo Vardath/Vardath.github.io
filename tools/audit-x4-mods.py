@@ -77,6 +77,13 @@ for folder in EXTS:
                 scripts[name] = f"{folder}/{rel}"
             elif root.tag == "aiscript": status["aiscripts"] += 1
             for node in root.iter():
+                for value in node.attrib.values():
+                    for enum, allowed in api.get('literal_expression_enums', {}).items():
+                        for literal in re.findall(r'\b' + re.escape(enum) + r'\.([A-Za-z_][A-Za-z_0-9]*)\b', value):
+                            if literal not in allowed:
+                                note('errors',folder,f'{rel}: unknown expression literal {enum}.{literal}')
+                    if re.search(r'\$(?:Ship|ship|target|station|deposit|turret)\.\$vardath_',value):
+                        note('errors',folder,f'{rel}: ship/object blackboard is unsupported; persist state on a cue or entity')
                 if node.tag == 'create_order' and 'default' in node.attrib and 'immediate' in node.attrib:
                     note('errors',folder,f'{rel}: create_order cannot specify default and immediate together')
                 if ('md' in p.relative_to(mod).parts or 'aiscripts' in p.relative_to(mod).parts) and node.tag in api['commands']:
@@ -102,7 +109,7 @@ for folder in EXTS:
     archive = top / f"{mod.name}_TEST.zip"
     archive_prefix = f"{mod.name}/"
     if folder == 'x4-galactic-occupations':
-        archive=top/'Galactic_Occupations_0.4.0_DEV.zip'
+        archive=top/'Galactic_Occupations_0.4.1_DEV.zip'
         archive_prefix='extensions/'+archive_prefix
     try:
         with ZipFile(archive) as z:

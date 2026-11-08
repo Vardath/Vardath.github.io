@@ -158,9 +158,12 @@ class NativePassengers(PassengerVM):
         self.state.update(vgo_order=self.order,vgo_taxi_phase='boarding',vgo_taxi_manifest_ready=True,vgo_taxi_boarded=False)
         for e in self.state['vgo_passengers']:e['boarded']=False
         self.transit=set();self.registry=Seq([self.ship]);self.available_exits=False
+        self.observed_ship=NULL;self.observed_station=NULL
     def expr(self,text):
         self.vars.update(native_dock=self.actualdock,native_transit=self.vars.get('entry',{}).get('template') in self.transit,
-                         native_registry=self.registry,native_occupied=self.occupied)
+                         native_registry=self.registry,native_occupied=self.occupied,
+                         observed_ship=self.observed_ship,observed_station=self.observed_station)
+        text=text.replace('player.ship','$observed_ship').replace('player.station','$observed_station')
         text=text.replace('@$ship.dock.container','$native_dock')
         text=text.replace('Init.$Ships','$native_registry')
         text=text.replace('$ship == player.occupiedship','$native_occupied')
@@ -210,7 +213,7 @@ class NativePassengerRecovery(unittest.TestCase):
             self.assertFalse(v.board());self.assertEqual(v.reward_requests,[])
             self.assertTrue(all(not e['boarded'] for e in v.state['vgo_passengers']))
     def test_visible_transfer_never_uses_offscreen_acknowledgement(self):
-        v=NativePassengers();v.visible=True;v.player_sector=SECTOR
+        v=NativePassengers();v.visible=True;v.player_sector=SECTOR;v.observed_station=v.station
         for a in v.actors:a.room=v.stationroom
         self.assertFalse(v.board());self.assertEqual(v.disconnected,[])
         self.assertFalse(any(e.get('native_abstract') for e in v.state['vgo_passengers']))
@@ -254,7 +257,7 @@ class NativePassengerRecovery(unittest.TestCase):
         v=NativePassengers();self.assertTrue(v.board());v.state['vgo_taxi_phase']='disembarking'
         v.role_transfer_accepts=False;v.transfer();self.assertEqual(v.roster,set())
         self.assertFalse(v.state.get('vgo_taxi_delivered',False))
-        v.visible=True;v.player_sector=SECTOR;v.available_exits=True;v.role_transfer_accepts=True
+        v.visible=True;v.player_sector=SECTOR;v.observed_station=v.station;v.available_exits=True;v.role_transfer_accepts=True
         v.transfer();self.assertTrue(all(a.room is v.stationroom for a in v.actors))
         self.assertEqual(v.reward_requests,[]);v.age+=5;v.transfer()
         self.assertTrue(v.state['vgo_taxi_delivered']);self.assertEqual(len(v.placements),2)

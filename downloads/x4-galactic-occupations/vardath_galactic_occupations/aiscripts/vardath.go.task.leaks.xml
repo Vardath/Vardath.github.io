@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.leaks" version="1" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params>
+    <param name="station" />
+  </params>
+  <attention min="unknown">
+    <actions>
+      <run_script name="'vardath.go.scanleaks'" result="$leaks">
+        <param name="station" value="$station" />
+      </run_script>
+      <set_value name="$count" exact="0" />
+      <do_for_each name="$leak" in="$leaks">
+        <set_value name="$virtual" exact="$leak == $station" />
+        <run_script name="'vardath.go.approach'" result="$ok">
+          <param name="target" value="$leak" />
+          <param name="distance" value="if $virtual then 4km else 600m" />
+        </run_script>
+        <do_if value="not $ok">
+          <continue />
+        </do_if>
+        <set_value name="$started" exact="player.age" />
+        <set_value name="$valid" exact="true" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $virtual then 'Simulating off-screen signal-leak survey at ' + $station.knownname else 'Decoding station signal leak at ' + $station.knownname" />
+        <do_all exact="15">
+          <do_if value="not this.ship.isplayerowned or this.ship == player.occupiedship or this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or not $station.isoperational or $station.isplayerowned or this.ship.sector != $station.sector or $station.ishostileto.{this.ship} or not $leak.exists or this.ship.distanceto.{$leak} gt (if $virtual then 6km else 1km) + (this.ship.size + $leak.size) / 2 or (not $virtual and $leak.islocked) or ($virtual and $station.sector == player.sector and $station.attention ge attention.visible)">
+            <set_value name="$valid" exact="false" />
+            <break />
+          </do_if>
+          <do_if value="not $virtual and $leak.object.isphysicsready and this.ship.attention ge attention.visible">
+            <check_line_of_sight name="$los" object="this.ship" target="$leak.object" useaimtarget="true" />
+            <do_if value="not $los">
+              <set_value name="$valid" exact="false" />
+              <break />
+            </do_if>
+          </do_if>
+          <wait exact="1s" />
+        </do_all>
+        <do_if value="not $valid or player.age lt $started + 15s or not $station.isoperational or not $leak.exists or this.ship.order != @player.entity.$vgo_objects.{this.ship}.$vgo_order or this.ship == player.occupiedship or $station.ishostileto.{this.ship}">
+          <continue />
+        </do_if>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_leak_work" exact="table[$station = $station, $leak = $leak, $started = $started, $finished = player.age, $virtual = $virtual]" />
+        <signal_objects object="player.entity" param="'vardath.go.survey.leak'" param2="this.ship" />
+        <wait exact="100ms" />
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_leak_work.$accepted">
+          <set_value name="$count" exact="$count + 1" />
+        </do_if>
+        <do_if value="$count ge 3">
+          <break />
+        </do_if>
+      </do_for_each>
+      <return value="$count" />
+    </actions>
+  </attention>
+</aiscript>

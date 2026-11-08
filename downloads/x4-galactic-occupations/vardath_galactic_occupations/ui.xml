@@ -4,5 +4,6 @@
     <file name="ui/vgo_turret_modes.lua" />
     <file name="ui/vardath_income_ledger.lua" />
     <file name="ui/vgo_hacker.lua" />
+    <file name="ui/vgo_spacesuit.lua" />
   </environment>
 </addon>

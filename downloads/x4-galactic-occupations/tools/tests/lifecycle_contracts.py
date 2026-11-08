@@ -27,7 +27,7 @@ class LifecycleVM(PassengerVM):
         self.registry=Seq([self.ship]);self.knownships=Seq([self.ship])
         self.crew=Obj('existing crew',exists=True,npctemplate=999,room=self.stationroom,
             role='service',roleobject=self.ship,controlpost='engineer',iswalking=False,
-            hasbody=True,istransferscheduled=False)
+            hasbody=True,istransferscheduled=False,isclass=Obj('npc class',npc=True))
         self.roles={i:'passenger' for i in self.roster};self.roles[999]='service';self.roster.add(999)
         for i,a in enumerate(self.actors,1):a.role='passenger';a.roleobject=self.ship;a.npctemplate=i
         self.logs=[];self.post_calls=[];self.native_post_accepts=True;self.post_instantiates=True
@@ -41,6 +41,8 @@ class LifecycleVM(PassengerVM):
             template_role=self.roles.get(entry.get('template'),'passenger'),
             native_crew_template=getattr(actor,'npctemplate',NULL) in self.roster,
             lifecycle_dock=self.actualdock)
+        self.vars['recovery_npc']=bool(getattr(getattr(actor,'isclass',NULL),'npc',False))
+        text=text.replace('$actor.isclass.npc','$recovery_npc')
         text=text.replace('player.entity.$vgo_objects.keys.list','$knownships')
         text=text.replace('Init.$Ships.indexof.{$ship}','true' if self.ship in self.registry else 'false')
         text=text.replace('Init.$Ships','$registry')
@@ -52,7 +54,7 @@ class LifecycleVM(PassengerVM):
         self.vars['origin_exists']=bool(getattr(getattr(self.vars.get('origin',NULL),'component',NULL),'exists',False))
         text=text.replace('@$origin.component.exists','$origin_exists')
         text=text.replace('$origin.component.hascontext.{$ship}','true' if self.vars.get('origin',NULL) is self.seat else 'false')
-        for role in ['pilot','service','marine']:text=text.replace('entityrole.'+role,repr(role))
+        for role in ['service','marine']:text=text.replace('entityrole.'+role,repr(role))
         text=re.sub(r'(\d+)h\b',lambda m:str(int(m[1])*3600),text)
         return super().expr(text)
     def assign(self,name,value,remove=False):
@@ -191,6 +193,10 @@ class EvacuationAccounting(unittest.TestCase):
     def test_role_conversion_is_checked_before_removing_even_stale_passenger_template(self):
         v=self.expired();v.actors[0].role='marine';v.passengers()
         self.assertEqual(v.roster,{1,999});self.assertTrue(v.actors[0].exists)
+    def test_promoted_captain_is_retained_using_actual_pilot_identity(self):
+        v=self.expired();v.actors[0].role='unassigned';v.ship.pilot=v.actors[0]
+        v.passengers();self.assertEqual(v.roster,{1,999})
+        self.assertTrue(v.actors[0].exists);self.assertNotIn(v.actors[0],v.removed)
     def test_cancellation_cannot_forge_completed_paid_contract_after_cleanup(self):
         v=self.expired();v.passengers()
         v.state.update(vgo_taxi_delivered=True,vgo_taxi_completed_service=2,vgo_taxi_completed_id=7,vgo_taxi_delivered_count=2)
@@ -278,7 +284,7 @@ class StrandedCrewRecall(unittest.TestCase):
                 v=LifecycleVM();p=v.crew_visit()
                 if reason=='roster':v.roster.remove(999)
                 elif reason=='roleobject':v.crew.roleobject=Obj('another ship',exists=True)
-                elif reason=='dead':v.crew.exists=False
+                elif reason=='dead':v.crew.exists=False;v.crew.isclass.npc=False;v.roster.remove(999)
                 elif reason=='scheduled':v.crew.istransferscheduled=True
                 else:v.owned=False
                 v.library('RecallCrystal');v.age+=1200;v.library('RecallCrystal')
@@ -288,6 +294,12 @@ class StrandedCrewRecall(unittest.TestCase):
         v.library('RecallCrystal');v.age+=1200;v.library('RecallCrystal')
         self.assertIs(v.ship.order,v.otherorder);self.assertTrue(v.occupied)
         self.assertIs(v.crew.room,v.shiproom);self.assertEqual(v.reward_requests,[])
+    def test_disconnected_existing_crew_still_recalls_to_native_roster_post(self):
+        v=LifecycleVM();p=v.crew_visit();v.crew.exists=False;v.crew.hasbody=False;v.crew.room=NULL
+        v.state[p+'_origin']=NULL;v.post_instantiates=False;v.visible=False;v.player_sector=Obj('elsewhere',exists=True)
+        v.library('RecallCrystal');v.age+=1200;v.library('RecallCrystal')
+        self.assertTrue(v.get(p+'_recalled'));self.assertIs(v.post_calls[0],v.crew)
+        self.assertIn(999,v.roster);self.assertEqual(v.crew.controlpost,'engineer')
 
 class RegistryAndSource(unittest.TestCase):
     def test_registry_recovers_only_mod_payloads_from_saved_keys(self):
@@ -313,6 +325,10 @@ class RegistryAndSource(unittest.TestCase):
 
 class RetailRecallVM(ReturnVM):
     def __init__(self):super().__init__();self.uninstanced_post=False
+    def expr(self,text):
+        actor=self.vars.get('actor',NULL)
+        text=text.replace('$actor.isclass.npc','true' if actor is self.crew else 'false')
+        return super().expr(text)
     def execute(self,nodes):
         previous=False
         for n in nodes:
@@ -349,6 +365,14 @@ class IntegratedRecovery(unittest.TestCase):
         v.tick();self.assertEqual(v.get('vgo_crystal_shop_phase'),'returned')
         self.assertFalse(v.get('vgo_crystal_shop_deployed'));self.assertFalse(actor.isbusy)
         self.assertIn(actor.npctemplate,v.crew_roster);self.assertEqual(v.reward_requests,[400000])
+    def test_disconnected_paid_representative_finishes_and_restores_flags_without_second_payment(self):
+        v=self.paid_away();actor=v.crew;cash=v.money
+        actor.exists=False;actor.hasbody=False;actor.room=NULL
+        v.state['vgo_crystal_shop_origin']=NULL;v.ship.attention=0;v.player_sector=Obj('elsewhere',exists=True);v.uninstanced_post=True
+        v.recall();v.age+=1200;v.recall();v.tick()
+        self.assertEqual(v.get('vgo_crystal_shop_phase'),'returned')
+        self.assertFalse(actor.isbusy);self.assertTrue(actor.istemporary)
+        self.assertEqual(v.money,cash);self.assertEqual(v.reward_requests,[400000])
     def test_changed_service_cannot_deliver_previous_party_through_normal_transfer_cue(self):
         v=NativePassengers();v.state['vgo_taxi_phase']='disembarking';v.state['vgo_taxi_boarded']=True
         for e in v.state['vgo_passengers']:e['boarded']=True

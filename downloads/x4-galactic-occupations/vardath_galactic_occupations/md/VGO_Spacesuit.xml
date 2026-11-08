@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="VGO_Spacesuit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Pending" exact="false"/>
+        <set_value name="$Serial" exact="0"/>
+      </actions>
+    </cue>
+    <library name="Clear">
+      <actions>
+        <set_value name="Init.$Pending" exact="false"/>
+      </actions>
+    </library>
+    <library name="Healthy">
+      <actions>
+        <set_value name="$healthy" exact="player.spacesuit.exists and player.controlled == player.spacesuit and player.entity.controlled == player.spacesuit and not player.room.exists"/>
+      </actions>
+    </library>
+    <cue name="Confirmed" instantiate="true">
+      <conditions>
+        <event_ui_triggered screen="'VGO.Spacesuit'" control="'confirmed'"/>
+      </conditions>
+      <actions>
+        <set_value name="$source" exact="event.param3.{1}"/>
+        <set_value name="$zone" exact="event.param3.{2}"/>
+        <include_actions ref="Healthy"/>
+        <do_if value="not $healthy and $source.exists and $source.isclass.ship and not $source.isclass.spacesuit and $zone.isclass.zone and $source.sector == $zone.sector and $source.sector == player.sector and not @$source.dock.container.exists and (player.room.hascontext.{$source} or player.ship == $source or player.spacesuit.exists)">
+          <set_value name="Init.$Source" exact="$source"/>
+          <set_value name="Init.$Room" exact="player.room"/>
+          <set_value name="Init.$Sector" exact="player.sector"/>
+          <set_value name="Init.$Due" exact="player.age + 12s"/>
+          <set_value name="Init.$Expires" exact="player.age + 30s"/>
+          <set_value name="Init.$Serial" exact="Init.$Serial + 1"/>
+          <set_value name="Init.$Pending" exact="true"/>
+          <debug_text text="'GO spacesuit exit requested: source=%1 controlled=%2 suit=%3 room=%4'.[$source,player.controlled,player.spacesuit,player.room]"/>
+        </do_if>
+      </actions>
+    </cue>
+    <library name="Watch">
+      <actions>
+        <include_actions ref="Healthy"/>
+        <do_if value="$healthy">
+          <include_actions ref="Clear"/>
+        </do_if>
+        <do_elseif value="not Init.$Source.exists or player.sector != Init.$Sector or Init.$Source.sector != Init.$Sector or @Init.$Source.dock.container.exists or player.occupiedship.exists or (player.room.exists and player.room != Init.$Room) or (player.ship.exists and player.ship != Init.$Source and not player.ship.isclass.spacesuit)">
+          <include_actions ref="Clear"/>
+        </do_elseif>
+        <do_elseif value="player.age gt Init.$Expires">
+          <include_actions ref="Clear"/>
+          <write_to_logbook category="general" title="'Galactic Occupations: spacesuit exit still in transit'" text="'The confirmed spacesuit exit remained in a native transfer for thirty game seconds. Recovery stopped; no repeated forced exits. Return to a ship using Teleport To if available, then retry Use Spacesuit. Save the debug log if controls remain unavailable.'"/>
+        </do_elseif>
+        <do_elseif value="player.age ge Init.$Due and not player.entity.isintransit and not player.isinconversation">
+          <!-- Consume the request BEFORE native execution: never an automatic ejection loop. -->
+          <include_actions ref="Clear"/>
+          <set_value name="Init.$Attempt" exact="Init.$Serial"/>
+          <debug_text text="'GO spacesuit exit recovery: source=%1 controlled=%2 suit=%3 room=%4'.[Init.$Source,player.controlled,player.spacesuit,player.room]"/>
+          <teleport_player_to_spacesuit emergency="true" launch="true" instant="true" allowinhighway="false"/>
+          <signal_cue cue="Verify"/>
+        </do_elseif>
+      </actions>
+    </library>
+    <cue name="Poll" instantiate="true" checkinterval="1s">
+      <conditions><check_value value="Init.$Pending"/></conditions>
+      <actions><include_actions ref="Watch"/></actions>
+    </cue>
+    <cue name="Verify" instantiate="true">
+      <conditions><event_cue_signalled/></conditions>
+      <delay exact="2s"/>
+      <actions>
+        <include_actions ref="Healthy"/>
+        <write_to_logbook category="general" title="if $healthy then 'Galactic Occupations: spacesuit recovery verified' else 'Galactic Occupations: spacesuit recovery unconfirmed'" text="if $healthy then 'The delayed native recovery completed: player and controls are in the spacesuit outside a ship room. No ship crew, equipment or orders were changed.' else 'One native spacesuit recovery was attempted after a confirmed exit stalled. The game has not reported a complete suit/control/room handoff; no further forced attempts will run. Save the debug log and return to a ship using Teleport To if available.'"/>
+        <debug_text text="'GO spacesuit recovery result: verified=%1 controlled=%2 suit=%3 room=%4 transit=%5'.[$healthy,player.controlled,player.spacesuit,player.room,player.entity.isintransit]"/>
+      </actions>
+    </cue>
+    <cue name="Loaded" instantiate="true">
+      <conditions><event_universe_generated/></conditions>
+      <actions><include_actions ref="Clear"/></actions>
+    </cue>
+  </cues>
+</mdscript>

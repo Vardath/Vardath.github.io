@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiscript name="vardath.go.scanleaks" version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+  <params><param name="station"/></params>
+  <attention min="unknown"><actions>
+    <set_value name="$eligible" exact="[]"/>
+    <do_if value="not $station.isoperational or $station.isplayerowned or (this.ship.order.$scanleaks? and not this.ship.order.$scanleaks)"><return value="$eligible"/></do_if>
+    <find_object_component name="$leaks" object="$station" class="class.signalleak" multiple="true" recursive="true"/>
+    <do_for_each name="$leak" in="$leaks">
+      <do_if value="$leak.exists and $leak.container == $station and not $leak.islocked and ($leak.type == signalleaktype.data or $leak.type == signalleaktype.voice) and not @player.entity.$vgo_objects.{$leak}.$vgo_leak_scanned">
+        <append_to_list name="$eligible" exact="$leak"/>
+      </do_if>
+    </do_for_each>
+    <do_if value="not $eligible.count and (this.ship.order.$simulatescans? and not this.ship.order.$simulatescans)"><return value="$eligible"/></do_if>
+    <!-- Signal leaks are normally instantiated only at visible attention. Survey actual attachment capacity off screen. -->
+    <do_if value="not $eligible.count and ($station.sector != player.sector or $station.attention lt attention.visible) and not (@player.entity.$vgo_objects.{$station}.$vgo_network_next gt player.age)">
+      <find_signalleak_location name="$slots" container="$station" multiple="true"/>
+      <do_if value="$slots.count"><append_to_list name="$eligible" exact="$station"/></do_if>
+    </do_if>
+    <return value="$eligible"/>
+  </actions></attention>
+</aiscript>

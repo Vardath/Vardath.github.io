@@ -36,9 +36,9 @@ class RetailVM(VM):
         self.counter=Obj('counter',component=self.shoproom,hastag=Obj('tags',itemtrader=True))
         self.customer=Obj('customer',component=self.shoproom)
         self.crew=Obj('crew',exists=True,hasbody=True,room=self.shiproom,roomslot=self.seat,
-                      iswalking=False,role='service',istemporary=True,controlpost='engineer')
+                      iswalking=False,role='service',istemporary=True,controlpost='engineer',isclass=Obj('class',npc=True))
         self.captain=Obj('captain',exists=True,isclass=Obj('class',npc=True),room=self.shiproom,
-                         roomslot=self.seat,iswalking=False,role='pilot',controlpost='pilot')
+                         roomslot=self.seat,iswalking=False,role='unassigned',controlpost='pilot')
         self.ship.pilot=self.captain
         self.crew.npctemplate=1000;self.captain.npctemplate=1001
         self.crew.roleobject=self.ship;self.captain.roleobject=self.ship
@@ -295,7 +295,7 @@ class PhysicalRetail(unittest.TestCase):
         self.assertEqual(v.get('vgo_crystal_stock')[WARES[0]],4);self.assertEqual(v.reward_requests,[])
         self.assertNotIn('vgo_sale_ship',v.crew.__dict__);self.assertTrue(v.crew.istemporary)
     def test_destroyed_actor_fails_without_inventing_a_replacement_or_a_return_receipt(self):
-        v=RetailVM();v.start();v.crew.exists=False;v.state['vgo_crystal_shop_phase']='returning';v.tick()
+        v=RetailVM();v.start();v.crew.exists=False;v.crew.isclass.npc=False;v.crew_roster.remove(v.crew.npctemplate);v.state['vgo_crystal_shop_phase']='returning';v.tick()
         self.assertEqual(v.get('vgo_crystal_shop_phase'),'returned');self.assertFalse(v.get('vgo_crystal_shop_success'))
         self.assertFalse(any(e[0]=='log' for e in v.events));self.assertEqual(v.goods_transfers,[])
     def test_saved_paid_visit_is_resumed_even_when_stock_is_empty(self):

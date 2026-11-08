@@ -16,9 +16,10 @@ class ToolVM:
         self.stock={'player':dict(player or {}),'actor':dict(actor or {})}
         self.state={'costs':list(costs or []),'loans':[]}
         self.vars={};self.age=100;self.remove_limit=remove_limit or {};self.credit_limit=credit_limit or {};self.logs=[];self.busycall=False
+        self.actor_exists=True;self.actor_npc=True
     def expr(self,text):
         if text=='if '+STATE+'loans? then '+STATE+'loans else []':return self.state.get('loans',[])
-        s=text.replace('@Init.$CallShip.exists','callbusy').replace('$actor.exists','True').replace('$actor.isbusy','False').replace('player.age','age').replace('10min','600').replace('2s','2')
+        s=text.replace('@Init.$CallShip.exists','callbusy').replace('$actor.exists',str(self.actor_exists)).replace('$actor.isclass.npc',str(self.actor_npc)).replace('$actor.isbusy','False').replace('player.age','age').replace('10min','600').replace('2s','2')
         s=re.sub(re.escape(STATE)+r'(\w+)',lambda m:'st('+repr(m[1])+')',s)
         s=re.sub(r'player\.entity\.inventory\.\{(\$\w+(?:\.\{\d+\})?)\}\.count',lambda m:'inv("player",'+m[1]+')',s)
         s=re.sub(r'\$actor\.inventory\.\{(\$\w+(?:\.\{\d+\})?)\}\.count',lambda m:'inv("actor",'+m[1]+')',s)
@@ -61,6 +62,11 @@ class ToolVM:
     def total(self,ware):return sum(x.get(ware,0) for x in self.stock.values())
 
 class ToolAccounting(unittest.TestCase):
+    def test_disconnected_same_npc_returns_only_its_real_borrowed_tools(self):
+        v=ToolVM({'slicer':0},{'slicer':5,'parts':7});v.actor_exists=False
+        v.state['loans']=[['slicer',2]];v.library('ReturnTools')
+        self.assertEqual(v.stock['player']['slicer'],2);self.assertEqual(v.stock['actor']['slicer'],3)
+        self.assertEqual(v.stock['actor']['parts'],7);self.assertEqual(v.state['loans'],[])
     def test_real_tools_are_reserved_and_returned_without_touching_existing_crew_items(self):
         v=ToolVM({'slicer':3},{'slicer':7,'parts':11},[('slicer',2)]);v.library('LoanTools');self.assertTrue(v.vars['ready']);self.assertEqual(v.stock['player']['slicer'],1);self.assertEqual(v.state['loans'],[['slicer',2]]);v.library('ReturnTools');self.assertEqual(v.stock,{'player':{'slicer':3},'actor':{'slicer':7,'parts':11}})
     def test_missing_tools_do_not_partially_remove_a_multi_item_request(self):

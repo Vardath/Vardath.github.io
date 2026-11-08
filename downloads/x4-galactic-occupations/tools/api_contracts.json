@@ -21,7 +21,119 @@
     "content": [],
     "cue": [],
     "cues": [],
+    "delay": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "doc": "Auto-advance seed used for random number evaluation.",
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "type": "comment"
+          },
+          "exact": {
+            "doc": "Exact value (takes priority over min/max/profile/scale)",
+            "type": "expression"
+          },
+          "list": {
+            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)",
+            "type": "expression"
+          },
+          "max": {
+            "doc": "Maximum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "min": {
+            "doc": "Minimum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "profile": {
+            "doc": "Random number profile (ignored if exact is set)",
+            "type": "profilelookup"
+          },
+          "scale": {
+            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)",
+            "type": null
+          },
+          "seed": {
+            "doc": "Fixed seed used for random number evaluation.",
+            "type": "fixedrandomseed"
+          }
+        },
+        "source": "md.xsd complexType delay, X4 9.00 pinned e3e8a345"
+      }
+    ],
     "dependency": [],
+    "end": [
+      {
+        "attributes": {
+          "autoadvanceseed": {
+            "doc": "Auto-advance seed used for random number evaluation.",
+            "type": "autoadvancerandomseed"
+          },
+          "comment": {
+            "doc": "Comment for documentation purposes only",
+            "type": "comment"
+          },
+          "exact": {
+            "doc": "Exact value (takes priority over min/max/profile/scale)",
+            "type": "expression"
+          },
+          "list": {
+            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)",
+            "type": "expression"
+          },
+          "max": {
+            "doc": "Maximum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "min": {
+            "doc": "Minimum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "object": {
+            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node.",
+            "type": "expression"
+          },
+          "profile": {
+            "doc": "Random number profile (ignored if exact is set)",
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object.",
+            "type": "expression"
+          },
+          "scale": {
+            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)",
+            "type": null
+          },
+          "seed": {
+            "doc": "Fixed seed used for random number evaluation.",
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space.",
+            "type": "expression"
+          },
+          "value": {
+            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)",
+            "type": "expression"
+          },
+          "x": {
+            "doc": "X coordinate",
+            "type": "expression"
+          },
+          "y": {
+            "doc": "Y coordinate",
+            "type": "expression"
+          },
+          "z": {
+            "doc": "Z coordinate",
+            "type": "expression"
+          }
+        }
+      }
+    ],
     "handler": [],
     "input_param": [],
     "interrupt_after_time": [
@@ -1597,147 +1709,77 @@
         }
       }
     ],
-    "t": [],
     "start": [
       {
         "attributes": {
           "autoadvanceseed": {
-            "type": "autoadvancerandomseed",
-            "doc": "Auto-advance seed used for random number evaluation."
-          },
-          "exact": {
-            "type": "expression",
-            "doc": "Exact value (takes priority over min/max/profile/scale)"
-          },
-          "list": {
-            "type": "expression",
-            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)"
-          },
-          "max": {
-            "type": "expression",
-            "doc": "Maximum random number (ignored if exact is set)"
-          },
-          "min": {
-            "type": "expression",
-            "doc": "Minimum random number (ignored if exact is set)"
-          },
-          "object": {
-            "type": "expression",
-            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node."
-          },
-          "profile": {
-            "type": "profilelookup",
-            "doc": "Random number profile (ignored if exact is set)"
-          },
-          "randomoffset": {
-            "type": "expression",
-            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object."
-          },
-          "scale": {
-            "type": null,
-            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)"
-          },
-          "seed": {
-            "type": "fixedrandomseed",
-            "doc": "Fixed seed used for random number evaluation."
-          },
-          "space": {
-            "type": "expression",
-            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space."
-          },
-          "value": {
-            "type": "expression",
-            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)"
-          },
-          "x": {
-            "type": "expression",
-            "doc": "X coordinate"
-          },
-          "y": {
-            "type": "expression",
-            "doc": "Y coordinate"
-          },
-          "z": {
-            "type": "expression",
-            "doc": "Z coordinate"
+            "doc": "Auto-advance seed used for random number evaluation.",
+            "type": "autoadvancerandomseed"
           },
           "comment": {
-            "type": "comment",
-            "doc": "Comment for documentation purposes only"
+            "doc": "Comment for documentation purposes only",
+            "type": "comment"
+          },
+          "exact": {
+            "doc": "Exact value (takes priority over min/max/profile/scale)",
+            "type": "expression"
+          },
+          "list": {
+            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)",
+            "type": "expression"
+          },
+          "max": {
+            "doc": "Maximum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "min": {
+            "doc": "Minimum random number (ignored if exact is set)",
+            "type": "expression"
+          },
+          "object": {
+            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node.",
+            "type": "expression"
+          },
+          "profile": {
+            "doc": "Random number profile (ignored if exact is set)",
+            "type": "profilelookup"
+          },
+          "randomoffset": {
+            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object.",
+            "type": "expression"
+          },
+          "scale": {
+            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)",
+            "type": null
+          },
+          "seed": {
+            "doc": "Fixed seed used for random number evaluation.",
+            "type": "fixedrandomseed"
+          },
+          "space": {
+            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space.",
+            "type": "expression"
+          },
+          "value": {
+            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)",
+            "type": "expression"
+          },
+          "x": {
+            "doc": "X coordinate",
+            "type": "expression"
+          },
+          "y": {
+            "doc": "Y coordinate",
+            "type": "expression"
+          },
+          "z": {
+            "doc": "Z coordinate",
+            "type": "expression"
           }
         }
       }
     ],
-    "end": [
-      {
-        "attributes": {
-          "autoadvanceseed": {
-            "type": "autoadvancerandomseed",
-            "doc": "Auto-advance seed used for random number evaluation."
-          },
-          "exact": {
-            "type": "expression",
-            "doc": "Exact value (takes priority over min/max/profile/scale)"
-          },
-          "list": {
-            "type": "expression",
-            "doc": "List of values, from which one value will be selected randomly (takes priority over min/max/profile/scale, ignored if exact is set)"
-          },
-          "max": {
-            "type": "expression",
-            "doc": "Maximum random number (ignored if exact is set)"
-          },
-          "min": {
-            "type": "expression",
-            "doc": "Minimum random number (ignored if exact is set)"
-          },
-          "object": {
-            "type": "expression",
-            "doc": "An object (or any positional) to use the offset of. If coordinates or a position value are supplied, they are interpreted as relative to the object. If space is not supplied, the object's parent will be taken as the space unless a suitable space is supplied by the parent XML node."
-          },
-          "profile": {
-            "type": "profilelookup",
-            "doc": "Random number profile (ignored if exact is set)"
-          },
-          "randomoffset": {
-            "type": "expression",
-            "doc": "Random offset from provided object (given as length or vector value - can be combined with coordinate attributes, but cannot be used in combination with value attribute). When a length is given, it specifies the maximal offset distance from the object in any direction (equivalent to a vector with identical X/Y/Z extents). When a vector is given, it specifies an ellipsoid with given X/Y/Z extents around the object - the random offset is a vector to a random point inside the ellipsoid. NOTE: Using the same randomoffset value with the same object multiple times will always yield the same random offset. NOTE: In order to retrieve only the random offset (relative to the object itself), the space attribute value has to set to the object."
-          },
-          "scale": {
-            "type": null,
-            "doc": "Scale of random number profile (ignored if exact is set or if profile is flat)"
-          },
-          "seed": {
-            "type": "fixedrandomseed",
-            "doc": "Fixed seed used for random number evaluation."
-          },
-          "space": {
-            "type": "expression",
-            "doc": "Reference space to be used if the object attribute is supplied. Defaults to the space supplied by the parent XML node, if applicable, otherwise to the object's parent space."
-          },
-          "value": {
-            "type": "expression",
-            "doc": "Position value (can be combined with coordinate attributes, but cannot be used in combination with randomoffset attribute)"
-          },
-          "x": {
-            "type": "expression",
-            "doc": "X coordinate"
-          },
-          "y": {
-            "type": "expression",
-            "doc": "Y coordinate"
-          },
-          "z": {
-            "type": "expression",
-            "doc": "Z coordinate"
-          },
-          "comment": {
-            "type": "comment",
-            "doc": "Comment for documentation purposes only"
-          }
-        }
-      }
-    ]
+    "t": []
   },
   "commands": {
     "abort_called_scripts": {
@@ -2141,6 +2183,61 @@
       ],
       "kind": "action"
     },
+    "add_player_discount": {
+      "attributes": {
+        "amount": {
+          "doc": "Discount/commission amount as percentage of a ware's price variation range, valid range from 1 to 100. NOTE: This is not the actual discount/commission percentage, which depends on the ware that the price modifier is applied to. Discounts/Commissions apply to all sell/buy offers of object/faction respectively.",
+          "required": true,
+          "type": "pricemodifieramount"
+        },
+        "applytoshipsales": {
+          "doc": "Should this discount additionally apply to ship sales/upgrades? (defaults to false)",
+          "type": "expression"
+        },
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "faction": {
+          "doc": "Faction",
+          "type": "faction"
+        },
+        "id": {
+          "doc": "Identifier string for the discount",
+          "type": "expression"
+        },
+        "name": {
+          "doc": "Name of discount, only required if target is faction.player",
+          "required": true,
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object",
+          "type": "object"
+        },
+        "time": {
+          "doc": "How long this discount lasts. Will last forever if 0 or omitted!",
+          "type": "expression"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Add price discount for player faction to object/faction(=target gets stuff cheaper), if object and faction are specified, object takes precedence!",
+      "source": {
+        "file": "common.xsd",
+        "line": 20007
+      }
+    },
     "add_skill": {
       "attributes": {
         "autoadvanceseed": {
@@ -2256,6 +2353,40 @@
         "md"
       ],
       "kind": "action"
+    },
+    "add_trade_subscription": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "duration": {
+          "doc": "How long this subscription is valid for. Unlimited duration if omitted. (optional)",
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object",
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Add permanent player subscription to trade offer updates of the specified object. This also immediately adds the current trade offers to the trade memory.",
+      "source": {
+        "file": "common.xsd",
+        "line": 38738
+      }
     },
     "aim_turret": {
       "attributes": {
@@ -2643,6 +2774,58 @@
         "md"
       ],
       "kind": "condition"
+    },
+    "check_walk_path": {
+      "attributes": {
+        "actor": {
+          "doc": "Actor object (NPC)",
+          "required": true,
+          "type": "actor"
+        },
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "checkstate": {
+          "doc": "Check if the NPC is currently able to move. NPCs can not move if in low attention or are hidden. (defaults to true)",
+          "type": "booleanexpression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "destination": {
+          "doc": "The ultimate destination component. Used to judge which surfaces the NPC may be alowed to walk on. (if 'end' is the the destination, this is not necessary)",
+          "type": "expression"
+        },
+        "destinationtags": {
+          "doc": "Known floor tags at the destination position. Used to judge which surfaces the NPC may be alowed to walk on.",
+          "type": "expression"
+        },
+        "end": {
+          "doc": "Object or component slot destination. Combined with 'end' position.",
+          "required": true,
+          "type": "expression"
+        },
+        "result": {
+          "doc": "Name of the value that will receive the result",
+          "required": true,
+          "type": "lvaluename"
+        },
+        "start": {
+          "doc": "Object or component slot to start from. Combined with 'start' position. (optional, NPC uses current position if not provided)",
+          "type": "expression"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "kind": "action"
     },
     "clear_actor_roomslot": {
       "attributes": {
@@ -3238,6 +3421,40 @@
       ],
       "kind": "action"
     },
+    "destroy_object": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "explosion": {
+          "doc": "Show explosion effect? Default is false",
+          "type": "boolean"
+        },
+        "object": {
+          "doc": "Object",
+          "required": true,
+          "type": "object"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Destroy specified object (NOTE: The destruction does not take place instantly and the object may still appear operational at the end of the action. Subsequent actions may not be able to tell whether the object is being destroyed. See also <remove_actor_from_room>.)",
+      "source": {
+        "file": "common.xsd",
+        "line": 26293
+      }
+    },
     "disable_travel_mode": {
       "attributes": {
         "chance": {
@@ -3551,6 +3768,22 @@
       ],
       "kind": "action"
     },
+    "event_cue_signalled": {
+      "attributes": {
+        "cue": {
+          "doc": "Cue name",
+          "type": "cuename"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Event for when a cue is signalled. Default is this cue if no cue is specified. (object = cue, param = script parameter passed from <signal_cue_instantly>)",
+      "source": {
+        "file": "md.xsd",
+        "line": 2020
+      }
+    },
     "event_object_changed_room": {
       "attributes": {
         "chance": {
@@ -3747,6 +3980,35 @@
       ],
       "kind": "condition"
     },
+    "event_player_discount_added": {
+      "attributes": {
+        "chance": {
+          "doc": "Percentage chance of condition being checked (condition fails if not)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "source": {
+          "doc": "Source of discount/commission, can be an object or a faction",
+          "type": "expression"
+        },
+        "type": {
+          "doc": "Required type of discount/commission source",
+          "type": "enumeration"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Event for when a discount for the player is added (object = source object or source faction, param = display name, param2 = discount amount, param3 = end time)",
+      "source": {
+        "file": "common.xsd",
+        "line": 15601
+      }
+    },
     "event_ui_triggered": {
       "attributes": {
         "chance": {
@@ -3774,6 +4036,18 @@
       "source": {
         "file": "common.xsd",
         "line": 12023
+      }
+    },
+    "event_universe_generated": {
+      "attributes": {},
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Event for when the universe generation process has been completed (all stations have been built) at game start or when loading a savegame.",
+      "source": {
+        "file": "common.xsd",
+        "line": 17280
       }
     },
     "find_actor_interaction_point": {
@@ -7667,6 +7941,57 @@
         "line": 28374
       }
     },
+    "find_signalleak_location": {
+      "attributes": {
+        "append": {
+          "doc": "If true then the found objects are appended to the value used as the result (not the groupname result value). Should the value used as the result not be a list, it will become one, losing its previous value (default false)",
+          "type": "findappend"
+        },
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "container": {
+          "doc": "Object",
+          "required": true,
+          "type": "object"
+        },
+        "excludefilled": {
+          "doc": "Do not include slots currently filled by a signal leak (defaults to false)",
+          "type": "booleanexpression"
+        },
+        "multiple": {
+          "doc": "If true then the result is a list of all found objects, otherwise the result is a single object or null (default is true for count_ conditions, false for find_ actions). In case of multiple=false, the single result is the first object according to the sort criteria, or randomly selected from all matching objects if no sort criteria are specified.",
+          "type": "findmultiple"
+        },
+        "name": {
+          "doc": "Name of the value that will receive the result",
+          "required": true,
+          "type": "lvaluename"
+        },
+        "required": {
+          "doc": "If true then an error message will be produced if no result is found (default is false)",
+          "type": "findrequired"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Find signal leak locations at an object",
+      "source": {
+        "file": "common.xsd",
+        "line": 27534
+      }
+    },
     "find_station": {
       "attributes": {
         "accelerator": {
@@ -10787,6 +11112,27 @@
         "line": 36951
       }
     },
+    "signal_cue": {
+      "attributes": {
+        "check": {
+          "doc": "Check for existing cue listeners? If true and there are no listeners for the cue signal, a warning is produced. Default is true.",
+          "type": "boolean"
+        },
+        "cue": {
+          "doc": "Cue name",
+          "required": true,
+          "type": "cuename"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Send a signal to a cue, triggering cues that wait for this signal via <event_cue_signalled>. The signal will be dispatched in the same frame, but only after the current cue actions are completed. NOTE: Make sure that the signal does not activate the current cue again (directly or indirectly), which could lead to an infinite loop.",
+      "source": {
+        "file": "md.xsd",
+        "line": 4278
+      }
+    },
     "signal_cue_instantly": {
       "attributes": {
         "chance": {
@@ -10819,8 +11165,7 @@
         "md"
       ],
       "doc": "Signal a cue instantly, triggering cues that wait for this signal via <event_cue_signalled>. Can pass parameter to <event_cue_signalled>. NOTE: Make sure that the signal does not activate the current cue again (directly or indirectly), which could lead to an infinite recursion.",
-      "kind": "action",
-      "src": {
+      "source": {
         "file": "md.xsd",
         "line": 4299
       }
@@ -10870,6 +11215,20 @@
       ],
       "kind": "action"
     },
+    "stop_actor_walk": {
+      "attributes": {
+        "actor": {
+          "doc": "Actor object (NPC)",
+          "required": true,
+          "type": "actor"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "reference": "{'file': 'common.xsd', 'line': 33181}"
+    },
     "stop_shooting": {
       "attributes": {
         "chance": {
@@ -10909,6 +11268,39 @@
         "md"
       ],
       "kind": "action"
+    },
+    "teleport_player_to_spacesuit": {
+      "attributes": {
+        "allowinhighway": {
+          "doc": "Should the action be performed even if the player will end up in a highway? (default is false)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "emergency": {
+          "doc": "Is this an emergency teleport? If true, \"launch\" property is ignored and spacesuit will be outside of the current object's bounding box (default is false)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "instant": {
+          "doc": "Should the teleport effect be skipped? (default is false)",
+          "type": "booleanexpression",
+          "v": "v900"
+        },
+        "launch": {
+          "doc": "Should the player launch from the XS dock? If false, spacesuit will be at current player position (default is true)",
+          "type": "booleanexpression",
+          "v": "v900"
+        }
+      },
+      "contexts": [
+        "aiscripts",
+        "md"
+      ],
+      "doc": "Teleport the player into their spacesuit",
+      "source": {
+        "file": "common.xsd",
+        "line": 40676
+      }
     },
     "transfer_money": {
       "attributes": {
@@ -10969,6 +11361,137 @@
         "md"
       ],
       "kind": "action"
+    },
+    "update_offer": {
+      "attributes": {
+        "abortable": {
+          "doc": "Is this mission abortable? (Only used for missions, has no effect on mission offers)",
+          "type": "booleanexpression"
+        },
+        "alertlevel": {
+          "doc": "Upkeep alert level",
+          "type": "upkeepalertlevellookup"
+        },
+        "associated": {
+          "doc": "Object that is associated with this mission (e.g. an NPC)",
+          "type": "expression"
+        },
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "cue": {
+          "doc": "Cue name",
+          "required": true,
+          "type": "cuename"
+        },
+        "description": {
+          "doc": "Mission description",
+          "type": "expression"
+        },
+        "difficulty": {
+          "doc": "Difficulty level",
+          "type": "levellookup"
+        },
+        "duration": {
+          "doc": "Duration of the mission. Set to 0s to remove existing duration. Cannot be combined with attribute showelapsedtime.",
+          "type": "expression"
+        },
+        "faction": {
+          "doc": "Faction that offers the mission (required if mission or mission offer is created from scratch)",
+          "type": "factionexprlookup"
+        },
+        "group": {
+          "doc": "Mission group (defined in missiongroups.xml)",
+          "type": "missiongrouplookup"
+        },
+        "helpoverlayid": {
+          "doc": "Help overlay ID string",
+          "type": "expression"
+        },
+        "hidden": {
+          "doc": "Is the offer hidden from the BBS? If true, the mission offer can only be found via the offer location.",
+          "type": "booleanexpression"
+        },
+        "icon": {
+          "doc": "Icon to be displayed in mission briefing",
+          "type": "expression"
+        },
+        "iconcaption": {
+          "doc": "Caption for mission briefing icon (requires icon attribute)",
+          "type": "expression"
+        },
+        "licence": {
+          "doc": "Licence required to accept the mission (licence faction must match 'faction')",
+          "type": "expression"
+        },
+        "name": {
+          "doc": "Mission name (required if mission or mission offer is created from scratch)",
+          "type": "expression"
+        },
+        "onlinemissionchapter": {
+          "doc": "Online mission chapter string",
+          "type": "expression"
+        },
+        "onlinemissiongamestart": {
+          "doc": "Online mission Gamestart ID string (used by Personal Ventures)",
+          "type": "expression",
+          "v": "v900"
+        },
+        "onlinemissionid": {
+          "doc": "Online mission ID string",
+          "type": "expression"
+        },
+        "opposingfaction": {
+          "doc": "Opposition faction to be encountered during the mission",
+          "type": "factionexprlookup"
+        },
+        "reward": {
+          "doc": "Money reward",
+          "type": "expression"
+        },
+        "rewardtext": {
+          "doc": "Arbitrary reward text (null is allowed and ignored; a non-null value takes precedence over money reward if specified)",
+          "type": "expression"
+        },
+        "scaneffect": {
+          "doc": "Optional effect definition (from libraries/effects.xml) to be used for the set long range scan target. Has no effect if scantarget is not set.",
+          "type": "expression",
+          "v": "v900"
+        },
+        "scantarget": {
+          "doc": "Class, macro or object to be set as the long range scan target (can also be 0 to clear the long range scan target when updating a mission)",
+          "type": "expression"
+        },
+        "showelapsedtime": {
+          "doc": "Should the elapsed time for this mission be displayed in the message ticker? Set to false to remove existing timer display. Cannot be combined with attribute duration.",
+          "type": "booleanexpression"
+        },
+        "space": {
+          "doc": "Space location or list of locations the player must be in for the mission to appear in the BBS (unless hidden for another reason)",
+          "type": "expression"
+        },
+        "type": {
+          "doc": "(required if mission or mission offer is created from scratch)",
+          "type": "missiontypelookup"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Update metadata and briefing of an existing mission offer associated with a cue",
+      "source": {
+        "file": "md.xsd",
+        "line": 4060
+      }
     },
     "wait": {
       "attributes": {
@@ -11111,72 +11634,6 @@
         "weight": {
           "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
           "type": "expression"
-        }
-      },
-      "contexts": [
-        "aiscripts",
-        "md"
-      ],
-      "kind": "action"
-    },
-    "stop_actor_walk": {
-      "contexts": [
-        "aiscripts",
-        "md"
-      ],
-      "attributes": {
-        "actor": {
-          "type": "actor",
-          "required": true,
-          "doc": "Actor object (NPC)"
-        }
-      },
-      "reference": "{'file': 'common.xsd', 'line': 33181}"
-    },
-    "check_walk_path": {
-      "attributes": {
-        "chance": {
-          "type": "expression",
-          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)"
-        },
-        "comment": {
-          "type": "comment",
-          "doc": "Comment for documentation purposes only"
-        },
-        "weight": {
-          "type": "expression",
-          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)"
-        },
-        "actor": {
-          "type": "actor",
-          "required": true,
-          "doc": "Actor object (NPC)"
-        },
-        "checkstate": {
-          "type": "booleanexpression",
-          "doc": "Check if the NPC is currently able to move. NPCs can not move if in low attention or are hidden. (defaults to true)"
-        },
-        "destination": {
-          "type": "expression",
-          "doc": "The ultimate destination component. Used to judge which surfaces the NPC may be alowed to walk on. (if 'end' is the the destination, this is not necessary)"
-        },
-        "destinationtags": {
-          "type": "expression",
-          "doc": "Known floor tags at the destination position. Used to judge which surfaces the NPC may be alowed to walk on."
-        },
-        "end": {
-          "type": "expression",
-          "required": true,
-          "doc": "Object or component slot destination. Combined with 'end' position."
-        },
-        "result": {
-          "type": "lvaluename",
-          "required": true,
-          "doc": "Name of the value that will receive the result"
-        },
-        "start": {
-          "type": "expression",
-          "doc": "Object or component slot to start from. Combined with 'start' position. (optional, NPC uses current position if not provided)"
         }
       },
       "contexts": [
@@ -13051,6 +13508,289 @@
       ]
     }
   },
+  "literal_expression_enums": {
+    "entityrole": [
+      "service",
+      "marine",
+      "passenger",
+      "prisoner",
+      "trainee_group",
+      "worker",
+      "unassigned"
+    ]
+  },
+  "literal_expression_enums_source": "X4 9.00 libraries/roles.xml at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c",
+  "native_libraries": {
+    "md.GM_BringItems.Start": {
+      "parameters": {
+        "AcceptOnItemObjectCollection": {
+          "comment": "Accept the mission if the resulting object of $ItemPlacementParam is collected by the player",
+          "default": "true",
+          "name": "AcceptOnItemObjectCollection"
+        },
+        "BBSDistance": {
+          "default": "null",
+          "name": "BBSDistance"
+        },
+        "BBSObject": {
+          "default": "null",
+          "name": "BBSObject"
+        },
+        "BBSSpace": {
+          "default": "null",
+          "name": "BBSSpace"
+        },
+        "BBSTimeoutMax": {
+          "default": "null",
+          "name": "BBSTimeoutMax"
+        },
+        "BBSTimeoutMin": {
+          "default": "null",
+          "name": "BBSTimeoutMin"
+        },
+        "BriefingIcon": {
+          "default": "''",
+          "name": "BriefingIcon"
+        },
+        "CancelOfferCue": {
+          "comment": "Cue which when completed will force this missions offer to be removed and cleaned up. No effect if mission has been accepted.",
+          "default": "null",
+          "name": "CancelOfferCue"
+        },
+        "Client": {
+          "comment": "Pre-existing client",
+          "default": "null",
+          "name": "Client"
+        },
+        "ClientOwner": {
+          "comment": "Overriding owner for reward calculation or creation of $Client if not provided. Defaults to $OfferObject owner if able",
+          "default": "null",
+          "name": "ClientOwner"
+        },
+        "ConversationOffer": {
+          "comment": "When $EventOffer is false, should this offer be through a conversation with the $Client. Otherwise, offer at mission location",
+          "default": "false",
+          "name": "ConversationOffer"
+        },
+        "ConversationTriggerCue": {
+          "comment": "If provided, when this cue is signalled, start the mission offer conversation.",
+          "default": "null",
+          "name": "ConversationTriggerCue"
+        },
+        "DebugChance": {
+          "default": "0",
+          "name": "DebugChance"
+        },
+        "DeclineButton": {
+          "comment": "Have a decline button instead of a back button in the offer conversation",
+          "default": "true",
+          "name": "DeclineButton"
+        },
+        "DeliveryAmount": {
+          "comment": "The number of DeliveryItem to be delivered",
+          "default": "1",
+          "name": "DeliveryAmount"
+        },
+        "DeliveryCorridorMacro": {
+          "comment": "The dynamic interior corridor leading to DeliveryRoomMacro",
+          "default": "null",
+          "name": "DeliveryCorridorMacro"
+        },
+        "DeliveryDoors": {
+          "comment": "The possible dynamic interior doors used to connect the room and corridor. When defining a room or corridor macro, this is is the variable saved in the doors parameter",
+          "default": "null",
+          "name": "DeliveryDoors"
+        },
+        "DeliveryInteriorName": {
+          "comment": "The name of the dynamic interior the DeliveryNPC should used, if not placed already",
+          "default": "null",
+          "name": "DeliveryInteriorName"
+        },
+        "DeliveryItem": {
+          "comment": "The item to be delivered",
+          "name": "DeliveryItem"
+        },
+        "DeliveryNPC": {
+          "comment": "The NPC to which the items should be delivered",
+          "name": "DeliveryNPC"
+        },
+        "DeliveryNPCSlotTags": {
+          "comment": "NPC slot tags to help position the DeliveryNPC",
+          "default": "[tag.npc_generic]",
+          "name": "DeliveryNPCSlotTags"
+        },
+        "DeliveryRoomMacro": {
+          "comment": "The dynamic interior room the DeliveryNPC should be placed in, if not placed already",
+          "default": "null",
+          "name": "DeliveryRoomMacro"
+        },
+        "DeliveryRoomTags": {
+          "comment": "List of tags used to generate the room.",
+          "default": "[]",
+          "name": "DeliveryRoomTags"
+        },
+        "DeliveryStation": {
+          "comment": "The station in which to place the NPC or to place the dynamic interior",
+          "name": "DeliveryStation"
+        },
+        "Difficulty": {
+          "name": "Difficulty"
+        },
+        "DurationUntilBonusDecay": {
+          "comment": "Mission duration until the bonus reward credits start to decay",
+          "default": "null",
+          "name": "DurationUntilBonusDecay"
+        },
+        "DurationUntilBonusExpiry": {
+          "comment": "Mission duration until the bonus reward credits expire completely",
+          "default": "null",
+          "name": "DurationUntilBonusExpiry"
+        },
+        "EventOffer": {
+          "comment": "Is the mission offered directly to the player with an interactive event",
+          "default": "false",
+          "name": "EventOffer"
+        },
+        "ForceCleanup": {
+          "comment": "Cue to force a cleanup from outside when completed",
+          "default": "null",
+          "name": "ForceCleanup"
+        },
+        "GenerateReward": {
+          "comment": "If RewardCr or RewardNotoriety are invalid, generate them?",
+          "default": "true",
+          "name": "GenerateReward"
+        },
+        "HideFromBBS": {
+          "comment": "Hide this offer from the BBS? Show only through locations or special conversation handling.",
+          "default": "false",
+          "name": "HideFromBBS"
+        },
+        "HolderPlacementDef": {
+          "comment": "                                    Lockbox/Collectablewares case:       Space position list: [$component, $offset(defaults to 0,0,0)]                                    ---------                                    Room crate case:                     Room crate slot OR,                                                                         room/walkablemodule/defensible/dynamicinterior component in which to find a crate slot OR,                                                                         list [room/walkablemodule/defensible/dynamicinterior component, roomtag] in which to find a crate slot.",
+          "default": "null",
+          "name": "HolderPlacementDef"
+        },
+        "ItemHolder": {
+          "comment": "Container holding the ware. Can be existing collectableware/lockbox/room crate or the macro of one for creation.",
+          "default": "null",
+          "name": "ItemHolder"
+        },
+        "MissionAbortable": {
+          "default": "true",
+          "name": "MissionAbortable"
+        },
+        "MissionCue": {
+          "comment": "Cue the mission is attached to. Defaults to Start (this).",
+          "default": "null",
+          "name": "MissionCue"
+        },
+        "MissionDuration": {
+          "default": "null",
+          "name": "MissionDuration"
+        },
+        "MissionLevel": {
+          "name": "MissionLevel"
+        },
+        "MissionThread": {
+          "comment": "Mission thread for the offer and mission",
+          "default": "null",
+          "name": "MissionThread"
+        },
+        "MissionType": {
+          "comment": "Variations can override mission type if required",
+          "default": "missiontype.deliver",
+          "name": "MissionType"
+        },
+        "OfferDistance": {
+          "comment": "Distance to the offer location before it becomes visible on the map or BBS (unless otherwise hidden)",
+          "default": "50km",
+          "name": "OfferDistance"
+        },
+        "OfferMaxDistance": {
+          "default": "null",
+          "name": "OfferMaxDistance"
+        },
+        "OfferObject": {
+          "comment": "The object on which this mission is based e.g. A Ship / Station / Signal Leak. Only needed for missions with a physical location.",
+          "default": "null",
+          "name": "OfferObject"
+        },
+        "OwnedAmount": {
+          "comment": "The number of DeliveryItem to be delivered",
+          "default": "null",
+          "name": "OwnedAmount"
+        },
+        "Page": {
+          "comment": "Allows a different text page to be used instead of the generic one. Text IDs must be mapped similarly.",
+          "name": "Page"
+        },
+        "PlaceNPC": {
+          "comment": "Does the mission handle the placement and removal of the delivery NPC? If false, some other system must be in charge of doing so.",
+          "default": "false",
+          "name": "PlaceNPC"
+        },
+        "PlacementTable": {
+          "comment": "Table containing the owning cue and priority of placing the NPC vs other missions",
+          "default": "table[$cue = namespace, $priority = 50]",
+          "name": "PlacementTable"
+        },
+        "RemoveOnSectorChange": {
+          "default": "true",
+          "name": "RemoveOnSectorChange"
+        },
+        "ReportSignalCue": {
+          "comment": "Cue to be signalled when something happens which could be of interest to the calling cue. Saves values to ReportSignalCue.$FeedbackValue and ReportSignalCue.$EndFeedbackValue",
+          "default": "null",
+          "name": "ReportSignalCue"
+        },
+        "RewardCr": {
+          "comment": "If the reward for this mission is credits, the number of credits should be set to this variable.",
+          "default": "null",
+          "name": "RewardCr"
+        },
+        "RewardNotoriety": {
+          "default": "null",
+          "name": "RewardNotoriety"
+        },
+        "RewardObj": {
+          "comment": "If the reward for this mission is not credits, and is an object, it should be set to this variable.",
+          "default": "null",
+          "name": "RewardObj"
+        },
+        "RewardText": {
+          "comment": "Any text needed to define the reward for this mission - may be used in conjunction with $RewardCr and $RewardObj.",
+          "default": "null",
+          "name": "RewardText"
+        },
+        "TextOffset": {
+          "comment": "The text offset for this variant's text on the page.",
+          "name": "TextOffset"
+        },
+        "TextTable": {
+          "comment": "Table, usually populated by the mission, to store the texts by an identifier key e.g. $missionname = 'Kill Bala Gi'                Check library 'GenerateTextTable' for identifier keys. Pass in a table with such an entry to override the text usually generated from the $Page and $TextOffset",
+          "default": "table[]",
+          "name": "TextTable"
+        },
+        "VoiceTable": {
+          "comment": "Table, usually populated by the mission, keys can have a value of 0 (=stay silent)                .$SignalLeakVoiceLine = The line that should be used for signal leak introductions to this mission",
+          "default": "table[]",
+          "name": "VoiceTable"
+        },
+        "WithoutOffer": {
+          "comment": "Do not create a mission offer. Either run immediatly or wait for WithoutOfferWaitCue",
+          "default": "false",
+          "name": "WithoutOffer"
+        },
+        "WithoutOfferWaitCue": {
+          "comment": "Do not create a mission offer but wait for this cue to be completed before running the mission",
+          "default": "null",
+          "name": "WithoutOfferWaitCue"
+        }
+      },
+      "source": "md/gm_bringitems.xml at e3e8a345e5624db118bff3eb171b60b0993fcc2c"
+    }
+  },
   "native_scripts": {
     "move.generic": {
       "parameters": {
@@ -13418,6 +14158,8 @@
     "native_script_commit": "c45e48e77e5e9fe195d24ffe8935dbea7ad864a2",
     "native_script_repository": "https://github.com/loewenherz-projekt/X4-Scripts",
     "not_installed_game_build": true,
+    "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
+    "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections.",
     "passenger_departure_reference": "Native 9.00 GM_Transport_Passengers CleanUp removes NPC templates before departure; NPC_State_Machines TRANSITION_move_to and MoveFailedHandling_ToSlot keep actual actors and use add_actor_to_room on failed paths. Inspected ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. clear_actor_roomslot command metadata common.xsd:33094. Physical station-room arrival remains required for the custom fare.",
     "runtime_evidence": "debug(2), debug(3), debug(4); debug(4) confirms illegalto boolean/count misuse, construction pseudo-entry materialization and missing order icon. Inspected native 9.00 escort order faction checks and movement/undocking semantics. debug(5) confirms 37 null-sector approach failures, 222 consequent native navigation failures, 11 unsafe candidate sector-owner lookups and one capturable-wreck lookup. Native 9.00 component properties and native scoped destruction event usage inspected. debug(6) runs 0.2.4; crystal miners repeatedly report beam-turret preflight waiting with zero starts. No crystal harvest/drop/collection proof. Native collect_drop and capital-mining orientation patterns inspected.",
     "schema_metadata_date": "2026-08-28",
@@ -13425,8 +14167,6 @@
     "schema_versions": [
       "8.00",
       "9.00"
-    ],
-    "npc_floor_path_reference": "Native 9.00 NPC_State_Machines TRANSITION_move_to accepts slot or context/room/offset; GetNextTargetPoint checks walk paths using start/end contexts and positions, checkstate=false. Merchants are entities and cannot be passed to find_actor_interaction_point object; replaced by bounded native-validated floor candidates. Physical start_actor_walk is player-observed; off-screen sales use explicitly authorised finite-stock broker settlement.",
-    "passenger_abstract_reference": "Native 9.00 GM_Transport_Passengers creates real passenger NPC templates, sends visible player-ship passengers to actual room points and disconnects their cue actor bodies for off-screen ships. 0.3.8 retains actual named roster/actor identities off screen, verifies berth/template and role-object assignment, and removes booked templates with an observed same-actor station role handoff at the actual booked dock. Visible boarding/departure continue to require room connections."
+    ]
   }
 }

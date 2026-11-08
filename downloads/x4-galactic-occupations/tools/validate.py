@@ -65,6 +65,10 @@ for path, root in trees.items():
         if node.tag == 'run_script' and node.get('name') in ("'order.fight.escort'", "'order.fight.attack.object'"):
             error(path, 'occupation must not borrow a native combat/fleet order as a subroutine; it may cancel the caller')
         for value in node.attrib.values():
+            for enum, allowed in api.get('literal_expression_enums', {}).items():
+                for literal in re.findall(r'\b' + re.escape(enum) + r'\.([A-Za-z_][A-Za-z_0-9]*)\b', value):
+                    if literal not in allowed:
+                        error(path, f'unknown expression literal {enum}.{literal}; checked against native data')
             if re.search(r'illegalto\.\{[^}]+\}\.count',value):
                 error(path, 'illegalto is a boolean, not a counted collection')
         if node.tag == 'location'  and node.get('object','').startswith('player.entity.$vgo_objects'):
@@ -80,6 +84,15 @@ for path, root in trees.items():
             for icon in op:
                 if icon.tag != 'icon' or not icon.get('name','').startswith('order_vgo_'):
                     error(path, 'icon aliases must be namespaced')
+        continue
+    if root.tag == 'diff' and path == MOD/'md/genericmissions.xml':
+        operations=list(root)
+        if len(operations)!=1 or operations[0].tag!='add' or operations[0].get('sel')!="/mdscript/cues/library[@name='Signal_Leak_Offer']/actions":
+            error(path, 'native leak-offer integration must be one additive registration action')
+        else:
+            nodes=list(operations[0])
+            if len(nodes)!=1 or nodes[0].tag!='signal_objects' or nodes[0].get('param')!="'vardath.go.survey.offer'" or nodes[0].get('param2')!='$BaseCue' or nodes[0].get('param3')!='$SignalLeak':
+                error(path, 'native leak-offer registration must preserve the exact existing offer/leak')
         continue
     if root.tag == 'diff' and path in COMPAT_PATCHES:
         for op in root:
@@ -167,6 +180,16 @@ for path, root in trees.items():
         for name, info in declarations.items():
             if info.get('required') == 'true' and name not in supplied and 'default' not in info:
                 error(path, f'{target} requires parameter {name}')
+    for node in root.findall('.//cue[@ref]'):
+        ref=node.get('ref')
+        if ref in api.get('native_libraries',{}):
+            declarations=api['native_libraries'][ref]['parameters']
+            supplied={p.get('name') for p in node.findall('param')}
+            for name in supplied-declarations.keys():
+                error(path,f'{ref} does not declare parameter {name}')
+            for name, info in declarations.items():
+                if 'default' not in info and name not in supplied:
+                    error(path,f'{ref} requires parameter {name}')
 
 texts = {n.get('id') for r in trees.values() if r.tag == 'language' for n in r.findall('.//t')}
 for path, root in trees.items():
@@ -194,7 +217,7 @@ for key in JOBS:
 
 # Permit only the explicit optional compatibility, native integration and icon diffs.
 for path, root in trees.items():
-    if root.tag == 'diff' and path != MOD/'libraries/icons.xml' and path not in COMPAT_PATCHES | NATIVE_RECOVERY_PATCHES:
+    if root.tag == 'diff' and path not in {MOD/'libraries/icons.xml', MOD/'md/genericmissions.xml'} and path not in COMPAT_PATCHES | NATIVE_RECOVERY_PATCHES:
         error(path, 'unexpected vanilla/mod patch')
     if path.parent.name == 'aiscripts' and 'vardath.go.' not in path.stem and path not in COMPAT_PATCHES and path not in NATIVE_RECOVERY_PATCHES:
         error(path, 'non-namespaced AI script')
@@ -236,7 +259,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, save or full installed catalogs. Version 0.4.0 implements twenty-minute same-crew recall, interruption-safe thirty-minute taxi/minimum-two-hour adaptive tour cancellation grace and new twenty-stop tours. Native actions are mocked in local contracts; no new runtime log verifies these timers. Prior log verifies seven crystal payments totalling 337,000 Cr and still shows one tour waiting at 0/2 boarding. Existing runtime limitations remain.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, matching save or full installed catalogs. Version 0.4.1 adds timed off-screen module/signal surveys, native station bonuses/offers and disconnected-NPC boarding/departure fixes alongside one guarded native spacesuit recovery after a confirmed exit, fixes invalid pilot role lookup and retains delayed crew/passenger recovery. Kopis 1.16 fixes the logged Astrid ship-blackboard flood and excludes partial player transitions. The supplied 063558 log records ten crystal sales totalling 541,000 Cr, two escort payments totalling 24,000 Cr and two patrol payments totalling 16,000 Cr; tour boarding remains incomplete. New recovery/camera behaviour requires live testing.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_Survey" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Init">
+      <actions>
+        <set_value name="$Offers" exact="[]" />
+      </actions>
+    </cue>
+    <cue name="NativeOffer" instantiate="true">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.survey.offer'" />
+      </conditions>
+      <actions>
+        <do_if value="event.param2.exists and event.param3.isclass.signalleak and event.param3.type == signalleaktype.voice">
+          <append_to_list name="Init.$Offers" exact="[event.param2,event.param3]" />
+          <do_while value="Init.$Offers.count gt 256">
+            <remove_value name="Init.$Offers.{1}" />
+          </do_while>
+        </do_if>
+      </actions>
+    </cue>
+    <library name="ExposeOffers">
+      <actions>
+        <set_value name="$offers" exact="0" />
+        <do_for_each name="$row" in="Init.$Offers" counter="$oi" reverse="true">
+          <do_if value="not $row.{1}.exists or not $row.{2}.exists">
+            <remove_value name="Init.$Offers.{$oi}" />
+            <continue />
+          </do_if>
+          <do_if value="$row.{2}.container == $station and $row.{1}.hasmissionoffer and not $row.{2}.islocked">
+            <set_known object="$row.{2}" known="true" />
+            <update_offer cue="$row.{1}" hidden="false" space="player.galaxy" />
+            <set_value name="$offers" exact="$offers + 1" />
+          </do_if>
+        </do_for_each>
+        <set_value name="$sectoroffers" exact="0" />
+        <do_if value="md.GenericMissions.Manager.$MissionCues?">
+          <do_for_each name="$offer" in="md.GenericMissions.Manager.$MissionCues">
+            <do_if value="$offer.exists and ($offer.hasmissionoffer or $offer.hasmission) and @$offer.$OfferObject.sector == $station.sector">
+              <set_value name="$sectoroffers" exact="$sectoroffers + 1" />
+            </do_if>
+            <do_if value="$offer.exists and $offer.hasmissionoffer and (@$offer.$OfferObject == $station or @$offer.$OfferObject.hascontext.{$station})">
+              <update_offer cue="$offer" hidden="false" space="player.galaxy" />
+              <set_value name="$offers" exact="$offers + 1" />
+            </do_if>
+          </do_for_each>
+        </do_if>
+      </actions>
+    </library>
+    <library name="Benefits">
+      <actions>
+        <set_value name="$generated" exact="false" />
+        <set_value name="$market" exact="$station.controlentity.{controlpost.shadyguy}" />
+        <do_if value="$market.isclass.npc and $market.isshadyguy">
+          <write_to_logbook category="general" title="'Galactic Occupations: black market contact located'" text="$ship.knownname + ': found ' + $market.knownname + ' at ' + $station.knownname + ' in ' + $station.sector.knownname + '. Existing unlocked markets retain access; locked markets require their real unlock job.'" interaction="showonmap" object="$station" />
+          <do_if value="not $market.tradesvisible and not (@player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmissionoffer or @player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmission)">
+            <signal_cue_instantly cue="MarketOffer" param="$station" />
+          </do_if>
+        </do_if>
+        <do_if value="not (@player.entity.$vgo_objects.{$station}.$vgo_network_next gt player.age)">
+          <set_value name="player.entity.$vgo_objects.{$station}.$vgo_network_next" exact="player.age + 24h" />
+          <add_player_discount object="$station" id="'vardath.go.survey'" name="readtext.{191180}.{73}" amount="4" time="24h" />
+          <do_all exact="1" chance="20">
+            <add_trade_subscription object="$station" />
+          </do_all>
+          <do_if value="not @md.GenericMissions.Manager.$Disabled and not @md.$TutorialActive and md.GenericMissions.Manager.$DefaultExcludedOfferFactions? and not md.GenericMissions.Manager.$DefaultExcludedOfferFactions.indexof.{$station.owner} and not md.GenericMissions.Manager.$ExcludedOfferObjects.indexof.{$station} and $sectoroffers lt md.GenericMissions.Manager.$SectorLimit and $station.hasrelation.dock.{faction.player}">
+            <signal_cue_instantly cue="md.GenericMissions.Manager.SelectMission" param="table[$Sector = $station.sector, $OfferObject = $station]" />
+            <set_value name="$generated" exact="true" />
+          </do_if>
+        </do_if>
+      </actions>
+    </library>
+    <cue name="Decode" instantiate="true" namespace="this">
+      <conditions>
+        <event_object_signalled object="player.entity" param="'vardath.go.survey.leak'" />
+      </conditions>
+      <actions>
+        <set_value name="$ship" exact="event.param2" />
+        <set_value name="$work" exact="@player.entity.$vgo_objects.{$ship}.$vgo_leak_work" />
+        <set_value name="$station" exact="@$work.$station" />
+        <set_value name="$leak" exact="@$work.$leak" />
+        <set_value name="$slots" exact="[]" />
+        <do_if value="@$work.$virtual and $station.isoperational">
+          <find_signalleak_location name="$slots" container="$station" multiple="true" />
+        </do_if>
+        <do_if value="$ship.isplayerowned and $ship != player.occupiedship and @$ship.order.id == 'VGO_scanner' and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and $station.isoperational and not $station.isplayerowned and not $station.ishostileto.{$ship} and $ship.sector == $station.sector and $leak.exists and not @$work.$accepted and $work.$finished ge $work.$started + 15s and player.age le $work.$finished + 5s and $ship.distanceto.{$leak} le (if $work.$virtual then 6km else 1km) + ($ship.size + $leak.size) / 2 and (($work.$virtual and $slots.count gt 0 and $leak == $station and ($station.sector != player.sector or $station.attention lt attention.visible) and not (@player.entity.$vgo_objects.{$station}.$vgo_network_next gt player.age)) or (not $work.$virtual and $leak.isclass.signalleak and $leak.container == $station and not $leak.islocked and ($leak.type == signalleaktype.data or $leak.type == signalleaktype.voice) and not @player.entity.$vgo_objects.{$leak}.$vgo_leak_scanned))">
+          <do_if value="not player.entity.$vgo_objects.{$station}?">
+            <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
+          </do_if>
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_leak_work.$accepted" exact="true" />
+          <do_if value="not $work.$virtual">
+            <do_if value="not player.entity.$vgo_objects.{$leak}?">
+              <set_value name="player.entity.$vgo_objects.{$leak}" exact="table[]" />
+            </do_if>
+            <set_value name="player.entity.$vgo_objects.{$leak}.$vgo_leak_scanned" exact="true" />
+          </do_if>
+          <set_known object="$station" known="true" updatesnapshot="true" />
+          <include_actions ref="ExposeOffers" />
+          <include_actions ref="Benefits" />
+          <do_if value="not $work.$virtual and $leak.type == signalleaktype.data">
+            <destroy_object object="$leak" explosion="false" />
+          </do_if>
+          <write_to_logbook category="general" title="'Galactic Occupations: signal-leak survey'" text="$ship.knownname + ': ' + (if $work.$virtual then 'simulated survey of native station signal slots at ' else 'decoded an existing public data/voice leak at ') + $station.knownname + '. Existing native offers exposed: ' + $offers + '; native job generation requested: ' + $generated + '. Station coupon/subscription cooldown: twenty-four game hours. Job acceptance, completion and black-market access remain native.'" interaction="showonmap" object="$station" />
+        </do_if>
+      </actions>
+      <cues>
+        <cue name="PublishGeneratedOffers">
+          <delay exact="6s" />
+          <actions>
+            <do_if value="$station.isoperational">
+              <include_actions ref="ExposeOffers" />
+            </do_if>
+          </actions>
+        </cue>
+      </cues>
+    </cue>
+    <cue name="DiscountConfirmed" instantiate="true">
+      <conditions>
+        <event_player_discount_added />
+        <check_value value="event.param == readtext.{191180}.{73}" />
+      </conditions>
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations: station survey discount confirmed'" text="event.object.knownname + ': native station trade discount added. Amount is a share of each ware price range, not a flat percentage of its full price.'" interaction="showonmap" object="event.object" />
+      </actions>
+    </cue>
+    <cue name="MarketOffer" instantiate="true" namespace="this">
+      <conditions>
+        <event_cue_signalled />
+      </conditions>
+      <actions>
+        <set_value name="$station" exact="event.param" />
+        <set_value name="$contact" exact="$station.controlentity.{controlpost.shadyguy}" />
+        <set_value name="$valid" exact="$station.isoperational and not $station.isplayerowned and $station.hasrelation.dock.{faction.player} and $contact.isclass.npc and $contact.isshadyguy and not $contact.tradesvisible and not (@player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmissionoffer or @player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmission)" />
+        <do_if value="$valid">
+          <set_value name="player.entity.$vgo_objects.{$station}.$vgo_market_offer" exact="this" />
+          <set_value name="$item" exact="[ware.inv_decryptionmodule,ware.inv_securitydecryptionsystem,ware.inv_unstablecrystal,ware.inv_agidevice_02].random" />
+          <set_value name="$amount" min="1" max="3" />
+        </do_if>
+      </actions>
+      <cues>
+        <cue name="OfferValid" onfail="cancel" checkinterval="1s">
+          <conditions>
+            <check_value value="$valid" />
+          </conditions>
+          <cues>
+            <cue name="NativeMarketWork" ref="md.GM_BringItems.Start">
+              <param name="MissionCue" value="MarketOffer" />
+              <param name="OfferObject" value="$station" />
+              <param name="Client" value="$contact" />
+              <param name="ClientOwner" value="$contact.owner" />
+              <param name="MissionLevel" value="1" />
+              <param name="Difficulty" value="level.easy" />
+              <param name="Page" value="30135" />
+              <param name="TextOffset" value="1000" />
+              <param name="RewardObj" value="$contact" />
+              <param name="RewardText" value="readtext.{30135}.{106}" />
+              <param name="DeliveryNPC" value="$contact" />
+              <param name="DeliveryStation" value="$station" />
+              <param name="DeliveryItem" value="$item" />
+              <param name="DeliveryAmount" value="$amount" />
+              <param name="MissionDuration" value="1h" />
+              <param name="DurationUntilBonusDecay" value="30min" />
+              <param name="DurationUntilBonusExpiry" value="51min" />
+              <param name="BBSSpace" value="player.galaxy" />
+              <param name="RemoveOnSectorChange" value="false" />
+              <param name="OfferDistance" value="null" />
+              <param name="OfferMaxDistance" value="null" />
+            </cue>
+          </cues>
+        </cue>
+      </cues>
+    </cue>
+  </cues>
+</mdscript>

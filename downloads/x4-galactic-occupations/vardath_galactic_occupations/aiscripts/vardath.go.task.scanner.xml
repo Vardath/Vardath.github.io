@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -11,9 +11,8 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <!-- Remote survey equivalent: real close approach, surface raycast and sustained LOS, then native per-component scan publication. -->
-      <do_if value="not $target.isoperational or this.ship.iscapitalship or this.ship.maxscanlevel le 0 or player.maxscanlevel lt 0">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Component survey requires an S/M ship with scanner software'" />
+      <do_if value="not $target.isoperational or this.ship.maxscanlevel le 0 or player.maxscanlevel lt 0">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Component survey requires scanner software'" />
         <return value="false" />
       </do_if>
       <run_script name="'vardath.go.scanmodules'" result="$modules">
@@ -26,7 +25,6 @@
         <do_if value="not $module.isoperational or $module.scannedlevel ge player.maxscanlevel">
           <continue />
         </do_if>
-        <!-- Do not compare the survey ship's proximity-scanner level to the player's active scan-mode level: these differ normally. -->
         <run_script name="'vardath.go.approach'" result="$ok">
           <param name="target" value="$module" />
           <param name="distance" value="2km" />
@@ -36,6 +34,19 @@
             <set_value name="player.entity.$vgo_objects.{$module}" exact="table[]" />
           </do_if>
           <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_retry" exact="player.age + 10min" />
+          <continue />
+        </do_if>
+        <do_if value="(not this.ship.order.$simulatescans? or this.ship.order.$simulatescans) and ($module.sector != player.sector or not $module.isphysicsready)">
+          <run_script name="'vardath.go.survey.remote'" result="$remotechanged">
+            <param name="station" value="$target" />
+            <param name="module" value="$module" />
+          </run_script>
+          <do_if value="$remotechanged">
+            <set_value name="$count" exact="$count + 1" />
+          </do_if>
+          <do_if value="$count ge 8">
+            <break />
+          </do_if>
           <continue />
         </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Finding a visible survey surface on ' + $module.knownname" />
@@ -99,7 +110,6 @@
           <do_if value="$valid and $module.isoperational">
             <set_value name="$before" exact="$module.revealedpercentage" />
             <set_value name="$levelbefore" exact="$module.scannedlevel" />
-            <!-- This documented action publishes only this surveyed component, at the player's scanner cap. It cannot select an arbitrary level. -->
             <set_object_scanned object="$module" />
             <set_known object="$module" known="true" />
             <do_if value="$module.scannedlevel gt $levelbefore or $module.revealedpercentage gt $before">
@@ -130,12 +140,15 @@
         </do_if>
         <wait exact="500ms" />
       </do_for_each>
+      <run_script name="'vardath.go.task.leaks'" result="$leakcount">
+        <param name="station" value="$target" />
+      </run_script>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="if $count then 'Survey completed: ' + $count + ' components; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%' else (if $geometrymissing then 'Component survey waiting for loaded collision geometry at ' + $target.knownname else 'No component scan changed discovery at ' + $target.knownname + '; retrying another target')" />
       <do_if value="$count">
         <write_to_logbook category="general" title="'Galactic Occupations: component survey'" text="'%s surveyed %s components of %s. Discovery %s to %s percent.'.[this.ship.knownname,$count,$target.knownname,$stationbefore,$target.revealedpercentage]" interaction="showonmap" object="$target" />
       </do_if>
-      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $count + ' components scanned at ' + $target.knownname + '; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%'" />
-      <return value="$count gt 0" />
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_result" exact="'' + $count + ' components scanned at ' + $target.knownname + '; station discovery ' + $stationbefore + '% to ' + $target.revealedpercentage + '%' + '; signal-leak surveys: ' + $leakcount" />
+      <return value="$count gt 0 or $leakcount gt 0" />
     </actions>
   </attention>
 </aiscript>

@@ -1,6 +1,14 @@
-# Galactic Occupations 0.4.0 development build
+# Galactic Occupations 0.4.1 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.1: station signals, passenger handoffs and spacesuit recovery
+
+The station scanner now surveys signal leaks, offers timed off-screen module/network equivalents, applies real station coupons/trade subscriptions and discovers native jobs/black-market contacts. It supports scanner-equipped S/M/L/XL ships and exposes two functional controls. Boarding/departure now accept valid disconnected NPCs and recover stalled visible walks using the same actor. [Mechanics, constraints and reproducible checks](SURVEY_BOARDING_0.4.1.md). These new native paths remain runtime-unverified.
+
+Adds a twelve-second, single-attempt native recovery only after the vanilla Use Spacesuit confirmation, with actual suit/control/room checks, cancellation on later player actions and thirty-second expiry while native transit remains active. Fixes the invalid passenger-recovery pilot role check and adds role-literal validation. [Actual log findings, supported APIs, limits and in-game checks](SPACESUIT_RECOVERY_0.4.1.md).
+
+Kopis/Astrid 1.16 fixes the logged component-blackboard flood and suspends braking during partial player transitions. No Forge weapon asset changes. The new log records ten crystal sale completions totalling 541,000 Cr and 40,000 Cr in escort/patrol balance-confirmed payments. The supplied log predates these boarding changes; their native execution still needs live confirmation. All 348 Python contracts and 91 Lua mocks pass; new spacesuit recovery is unverified in X4 here.
 
 ## 0.4.0: delayed crew recall and cancelled passenger departures
 
@@ -66,7 +74,7 @@ The included 0.3.2 log repairs fix null sector-cache lists, conflicting hacker o
 
 ## Install and operate
 
-1. Fully exit X4. Extract `Galactic_Occupations_0.4.0_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
+1. Fully exit X4. Extract `Galactic_Occupations_0.4.1_DEV.zip` into the game installation directory, producing `extensions/vardath_galactic_occupations/content.xml`. Overwrite this extension in place. Keep Protected UI enabled and Inventory Collector installed.
 2. Load the existing save. The implementation does not require a new game. Existing passengers, itineraries, equipment, crew, ownership and diagnostic history are retained. Reassign jobs that an older build already lost to Hold Position; intentional player orders are not overwritten.
 3. Select a player ship with an AI captain, then select the occupation in Default Behaviour. Range **99 means the entire connected accessible galaxy**, 0 means the home sector, and 1–98 specifies a jump radius. Native travel blacklists still apply. Risk 0/1 avoids hostile territory; 2 permits it.
 4. Inspect vanilla General Logbook for `Galactic Occupations: activity`, `completed` and `Vardath Payment`. Five-minute activity reports show observations, not paid completions. Debug lines `GO completed:` identify successful work; `GO payment:` includes promised/actual money and before/after balances; passenger settlement uses `GO passenger payment:` with contract IDs and unpaid balances.
@@ -77,7 +85,7 @@ The included 0.3.2 log repairs fix null sector-cache lists, conflicting hacker o
 |---|---|---|
 | Galactic Escort Service | Follow a trader's actual station destination; require arrival, time and meaningful close-range protection. | Custom 12,000 Cr fee for a verified foreign-faction service, plus controlled reputation. Does not accept vanilla mission offers. |
 | Galactic Taxi Service | Board up to ten actual NPC passengers according to free crew berths, travel to a station and disembark the accepted manifest. | 8,000 Cr per delivered passenger; no fare for reservations, approach or timer expiry. Native NPC movement near the player; verified real actor/roster handoffs away from the player, without requiring rendered interiors. |
-| Station and Component Scanner | Approach unscanned module surfaces, retry viewing angles, sustain ten seconds of clear line of sight, then verify native per-component scan information increased. | Explicit custom survey equivalent using the player's scan cap. No global station-scanned flag or employer payment. Geometry may require loaded simulation. S/M ships. |
+| Station, Component and Signal Scanner | Survey real modules and public signal leaks across the galaxy. Timed off-screen equivalents publish actual native component information, station bonuses and real mission/contact discoveries. | Scanner-equipped S/M/L/XL; player scan cap; actual native signal slots for remote network surveys; 24-hour shared bonus cooldown. No scanner wage, invented market or auto-completed mission. |
 | Wormhole and Anomaly Mapper | Survey real anomalies/gates/accelerators; catalogue actual destinations separately. | Optional safe transit fallback uses a permitted real anomaly exit and the same ship. No invented links or wage. |
 | Galactic Sightseeing Tour | Board up to ten real passengers; visit twenty distinct global sights by default and normally at least three sectors; dwell, return and disembark. | Default 500,000 Cr per delivered luxury passenger for the fully booked itinerary. Fare requires the booked route and completed disembarkation. |
 | Autonomous Crystal Miner | Real loaded deposit/turret harvesting; native-resource-backed custom mining off screen throughout the permitted galaxy. Saved batches travel to actual dockable faction stations; off-screen finite broker settlement or a visible same-crew inventory-counter visit and return. | All normal armed S/M/L/XL ships. Credits paid to player at native average inventory prices after finite broker settlement or verified counter presence and actual merchant acceptance; no mineral hold or following the player. Small completed-sale reputation with shared cooldown. New engine integration remains unverified. |
@@ -119,6 +127,6 @@ The vanilla transaction ledger remains the original renderer. There is no custom
 
 ## Compatibility and verification
 
-Requires X4 9.00 or later; DLC content is discovered at runtime. No required dependencies on removed mods, no complete vanilla AI replacements (two narrowly scoped native AI attribute diffs are included), no ledger screen replacement and no change to Protected UI or Inventory Collector. Optional Sector Explorer/Auto Trade Subscriptions attribute patches and two small native MD guard patches are included; see the current review. The six-mod bundle includes Auto Drones 1.02 and Cargo Teleport 1.01 with a bounded native docking retry for a failed undocked zero-transfer trade. Builders 1.75, Kopis/Astrid 1.15 and Yaki Habitats 1.23 remain unchanged, including Forge's special weapon and Astrid equipment.
+Requires X4 9.00 or later; DLC content is discovered at runtime. No required dependencies on removed mods, no complete vanilla AI replacements (two narrowly scoped native AI attribute diffs are included), no ledger screen replacement and no change to Protected UI or Inventory Collector. Optional Sector Explorer/Auto Trade Subscriptions attribute patches and two small native MD guard patches and one additive leak-offer registration are included; see the current review. The six-mod bundle includes Auto Drones 1.02 and Cargo Teleport 1.01 with a bounded native docking retry for a failed undocked zero-transfer trade. Builders 1.75 and Yaki Habitats 1.23 remain unchanged. Kopis/Astrid 1.16 changes only braking state/transition guards and metadata/docs; Forge special weapon assets and Astrid equipment remain unchanged.
 
 [Hacker/log review](HACKER_REVIEW_0.3.1.md), [reproducible in-game tests](TESTING.md), [implementation notes](IMPLEMENTATION.md) and [version history](CHANGELOG.md) distinguish source checks from unverified runtime stages. Keep a backup before testing this development build.

@@ -1,187 +1,187 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VGO_Hacker" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
     <cue name="Init">
       <actions>
-        <set_value name="$Ships" exact="[]"/>
-        <set_value name="$Requests" exact="[]"/>
-        <set_value name="$Types" exact="[[controlpaneltype.hack_all_turrets,'hack_all_turrets'],[controlpaneltype.hack_buildmodules,'hack_buildmodules'],[controlpaneltype.hack_discount,'hack_discount'],[controlpaneltype.hack_engineer,'hack_engineer'],[controlpaneltype.hack_production,'hack_production'],[controlpaneltype.hack_shieldgenerators,'hack_shieldgenerators'],[controlpaneltype.hack_storage,'hack_storage'],[controlpaneltype.hack_watchdogs,'hack_watchdogs'],[controlpaneltype.hack_hiringdiscount,'hack_hiringdiscount'],[controlpaneltype.hack_moddingdiscount,'hack_moddingdiscount'],[controlpaneltype.hack_repairdiscount,'hack_repairdiscount'],[controlpaneltype.hack_traderdiscount,'hack_traderdiscount'],[controlpaneltype.hack_radar,'hack_radar']]"/>
+        <set_value name="$Ships" exact="[]" />
+        <set_value name="$Requests" exact="[]" />
+        <set_value name="$Types" exact="[[controlpaneltype.hack_all_turrets,'hack_all_turrets'],[controlpaneltype.hack_buildmodules,'hack_buildmodules'],[controlpaneltype.hack_discount,'hack_discount'],[controlpaneltype.hack_engineer,'hack_engineer'],[controlpaneltype.hack_production,'hack_production'],[controlpaneltype.hack_shieldgenerators,'hack_shieldgenerators'],[controlpaneltype.hack_storage,'hack_storage'],[controlpaneltype.hack_watchdogs,'hack_watchdogs'],[controlpaneltype.hack_hiringdiscount,'hack_hiringdiscount'],[controlpaneltype.hack_moddingdiscount,'hack_moddingdiscount'],[controlpaneltype.hack_repairdiscount,'hack_repairdiscount'],[controlpaneltype.hack_traderdiscount,'hack_traderdiscount'],[controlpaneltype.hack_radar,'hack_radar']]" />
         <do_if value="not player.entity.$vgo_objects?">
-          <set_value name="player.entity.$vgo_objects" exact="table[]"/>
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
-        <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]"/>
+        <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]" />
       </actions>
     </cue>
     <library name="Catalogue">
       <actions>
         <do_if value="not player.entity.$vgo_objects?">
-          <set_value name="player.entity.$vgo_objects" exact="table[]"/>
+          <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <do_if value="not player.entity.$vgo_hack_catalogue_ui?">
-          <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]"/>
+          <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]" />
         </do_if>
-        <set_value name="$public" exact="[]"/>
-        <set_value name="$cataloguestatus" exact="'unavailable'"/>
+        <set_value name="$public" exact="[]" />
+        <set_value name="$cataloguestatus" exact="'unavailable'" />
         <do_if value="$station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless">
           <do_if value="not player.entity.$vgo_objects.{$station}?">
-            <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]"/>
+            <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
           </do_if>
           <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age or @$refreshcatalogue">
-            <set_value name="$entries" exact="[]"/>
+            <set_value name="$entries" exact="[]" />
             <do_for_each name="$type" in="Init.$Types">
-              <find_room name="$rooms" object="$station" hascontrolpanel="$type.{1}" multiple="true"/>
+              <find_room name="$rooms" object="$station" hascontrolpanel="$type.{1}" multiple="true" />
               <do_if value="$rooms.count">
-                <append_to_list name="$entries" exact="[$type.{1},$type.{2},$rooms]"/>
+                <append_to_list name="$entries" exact="[$type.{1},$type.{2},$rooms]" />
               </do_if>
             </do_for_each>
-            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue" exact="$entries"/>
-            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="player.age + (if $entries.count then 10min else 20s)"/>
+            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue" exact="$entries" />
+            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="player.age + (if $entries.count then 10min else 20s)" />
           </do_if>
           <do_for_each name="$entry" in="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue">
-            <append_to_list name="$public" exact="[$entry.{2},$entry.{1}.name,$station.iscontrolpanelhacked.{$entry.{1}}]"/>
+            <append_to_list name="$public" exact="[$entry.{2},$entry.{1}.name,$station.iscontrolpanelhacked.{$entry.{1}}]" />
           </do_for_each>
-          <set_value name="$cataloguestatus" exact="if $public.count then 'ready' else 'empty'"/>
+          <set_value name="$cataloguestatus" exact="if $public.count then 'ready' else 'empty'" />
         </do_if>
-        <set_value name="$found" exact="false"/>
+        <set_value name="$found" exact="false" />
         <do_for_each name="$row" in="player.entity.$vgo_hack_catalogue_ui" counter="$i">
           <do_if value="$row.{1} == $station">
-            <set_value name="player.entity.$vgo_hack_catalogue_ui.{$i}" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]"/>
-            <set_value name="$found" exact="true"/>
-            <break/>
+            <set_value name="player.entity.$vgo_hack_catalogue_ui.{$i}" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]" />
+            <set_value name="$found" exact="true" />
+            <break />
           </do_if>
         </do_for_each>
         <do_if value="not $found">
-          <append_to_list name="player.entity.$vgo_hack_catalogue_ui" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]"/>
+          <append_to_list name="player.entity.$vgo_hack_catalogue_ui" exact="[$station,$public,(player.age / 1s)f + (if $public.count then 600 else 20),$cataloguestatus]" />
         </do_if>
         <do_while value="player.entity.$vgo_hack_catalogue_ui.count gt 64">
-          <remove_value name="player.entity.$vgo_hack_catalogue_ui.{1}"/>
+          <remove_value name="player.entity.$vgo_hack_catalogue_ui.{1}" />
         </do_while>
-        <debug_text text="'GO hacker catalogue: station=%1 state=%2 actual_panel_types=%3'.[$station.debugname,$cataloguestatus,$public.count]"/>
-        <raise_lua_event name="'VGO.HackCatalogue'" param="$station"/>
+        <debug_text text="'GO hacker catalogue: station=%1 state=%2 actual_panel_types=%3'.[$station.debugname,$cataloguestatus,$public.count]" />
+        <raise_lua_event name="'VGO.HackCatalogue'" param="$station" />
       </actions>
     </library>
     <cue name="CatalogueRequest" instantiate="true">
       <conditions>
-        <event_object_signalled object="player.entity" param="'vardath.go.hack.catalogue'"/>
+        <event_object_signalled object="player.entity" param="'vardath.go.hack.catalogue'" />
       </conditions>
       <actions>
-        <set_value name="$station" exact="event.param2"/>
-        <include_actions ref="Catalogue"/>
+        <set_value name="$station" exact="event.param2" />
+        <include_actions ref="Catalogue" />
       </actions>
     </cue>
     <cue name="UICatalogue" instantiate="true">
       <conditions>
-        <event_ui_triggered screen="'VGO'" control="'hackcatalogue'"/>
+        <event_ui_triggered screen="'VGO'" control="'hackcatalogue'" />
       </conditions>
       <actions>
-        <set_value name="$refreshcatalogue" exact="true"/>
-        <set_value name="$station" exact="event.param3"/>
-        <include_actions ref="Catalogue"/>
+        <set_value name="$refreshcatalogue" exact="true" />
+        <set_value name="$station" exact="event.param3" />
+        <include_actions ref="Catalogue" />
       </actions>
     </cue>
     <cue name="Register" instantiate="true">
       <conditions>
-        <event_object_signalled object="player.entity" param="'vardath.go.hack.register'"/>
+        <event_object_signalled object="player.entity" param="'vardath.go.hack.register'" />
       </conditions>
       <actions>
         <do_if value="event.param2.isplayerowned and not Init.$Ships.indexof.{event.param2}">
-          <append_to_list name="Init.$Ships" exact="event.param2"/>
+          <append_to_list name="Init.$Ships" exact="event.param2" />
         </do_if>
       </actions>
     </cue>
     <library name="ReturnTools">
       <actions>
-        <set_value name="$remaining" exact="[]"/>
-        <do_if value="$actor.exists">
+        <set_value name="$remaining" exact="[]" />
+        <do_if value="$actor.isclass.npc">
           <do_for_each name="$loan" in="if player.entity.$vgo_objects.{$ship}.$vgo_hack_loans? then player.entity.$vgo_objects.{$ship}.$vgo_hack_loans else []">
-            <set_value name="$ware" exact="$loan.{1}"/>
-            <set_value name="$before" exact="$actor.inventory.{$ware}.count"/>
-            <set_value name="$amount" exact="[$loan.{2},$before].min"/>
-            <set_value name="$playerbefore" exact="player.entity.inventory.{$ware}.count"/>
+            <set_value name="$ware" exact="$loan.{1}" />
+            <set_value name="$before" exact="$actor.inventory.{$ware}.count" />
+            <set_value name="$amount" exact="[$loan.{2},$before].min" />
+            <set_value name="$playerbefore" exact="player.entity.inventory.{$ware}.count" />
             <do_if value="$amount gt 0">
-              <remove_inventory entity="$actor" ware="$ware" exact="$amount"/>
-              <set_value name="$removed" exact="[$before - $actor.inventory.{$ware}.count,0].max"/>
-              <add_inventory entity="player.entity" ware="$ware" exact="$removed"/>
-              <set_value name="$added" exact="[[player.entity.inventory.{$ware}.count - $playerbefore,0].max,$removed].min"/>
+              <remove_inventory entity="$actor" ware="$ware" exact="$amount" />
+              <set_value name="$removed" exact="[$before - $actor.inventory.{$ware}.count,0].max" />
+              <add_inventory entity="player.entity" ware="$ware" exact="$removed" />
+              <set_value name="$added" exact="[[player.entity.inventory.{$ware}.count - $playerbefore,0].max,$removed].min" />
               <do_if value="$added lt $removed">
-                <add_inventory entity="$actor" ware="$ware" exact="$removed - $added"/>
+                <add_inventory entity="$actor" ware="$ware" exact="$removed - $added" />
               </do_if>
-              <set_value name="$left" exact="[$loan.{2} - $added,$actor.inventory.{$ware}.count].min"/>
+              <set_value name="$left" exact="[$loan.{2} - $added,$actor.inventory.{$ware}.count].min" />
               <do_if value="$left gt 0">
-                <append_to_list name="$remaining" exact="[$ware,$left]"/>
+                <append_to_list name="$remaining" exact="[$ware,$left]" />
               </do_if>
             </do_if>
           </do_for_each>
         </do_if>
-        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="$remaining"/>
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="$remaining" />
       </actions>
     </library>
     <library name="LoanTools">
       <actions>
         <do_if value="not @Init.$CallShip.exists">
-          <include_actions ref="ReturnTools"/>
-          <set_value name="$ready" exact="$actor.exists and not $actor.isbusy and not player.entity.$vgo_objects.{$ship}.$vgo_hack_loans.count"/>
+          <include_actions ref="ReturnTools" />
+          <set_value name="$ready" exact="$actor.exists and not $actor.isbusy and not player.entity.$vgo_objects.{$ship}.$vgo_hack_loans.count" />
           <do_for_each name="$cost" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs">
             <do_if value="player.entity.inventory.{$cost.{1}}.count lt $cost.{2}">
-              <set_value name="$ready" exact="false"/>
-              <break/>
+              <set_value name="$ready" exact="false" />
+              <break />
             </do_if>
           </do_for_each>
           <do_if value="$ready">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="[]"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="[]" />
             <do_for_each name="$cost" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs">
-              <set_value name="$ware" exact="$cost.{1}"/>
-              <set_value name="$sourcebefore" exact="player.entity.inventory.{$ware}.count"/>
-              <set_value name="$actorbefore" exact="$actor.inventory.{$ware}.count"/>
-              <remove_inventory entity="player.entity" ware="$ware" exact="$cost.{2}"/>
-              <set_value name="$removed" exact="[$sourcebefore - player.entity.inventory.{$ware}.count,0].max"/>
-              <add_inventory entity="$actor" ware="$ware" exact="$removed"/>
-              <set_value name="$added" exact="[[$actor.inventory.{$ware}.count - $actorbefore,0].max,$removed].min"/>
+              <set_value name="$ware" exact="$cost.{1}" />
+              <set_value name="$sourcebefore" exact="player.entity.inventory.{$ware}.count" />
+              <set_value name="$actorbefore" exact="$actor.inventory.{$ware}.count" />
+              <remove_inventory entity="player.entity" ware="$ware" exact="$cost.{2}" />
+              <set_value name="$removed" exact="[$sourcebefore - player.entity.inventory.{$ware}.count,0].max" />
+              <add_inventory entity="$actor" ware="$ware" exact="$removed" />
+              <set_value name="$added" exact="[[$actor.inventory.{$ware}.count - $actorbefore,0].max,$removed].min" />
               <do_if value="$added lt $removed">
-                <add_inventory entity="player.entity" ware="$ware" exact="$removed - $added"/>
+                <add_inventory entity="player.entity" ware="$ware" exact="$removed - $added" />
               </do_if>
               <do_if value="$added gt 0">
-                <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="[$ware,$added]"/>
+                <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans" exact="[$ware,$added]" />
               </do_if>
               <do_if value="$added lt $cost.{2}">
-                <set_value name="$ready" exact="false"/>
-                <break/>
+                <set_value name="$ready" exact="false" />
+                <break />
               </do_if>
             </do_for_each>
             <do_if value="not $ready">
-              <include_actions ref="ReturnTools"/>
+              <include_actions ref="ReturnTools" />
             </do_if>
           </do_if>
           <do_if value="not $ready">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 10min"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for native hacking tools or a free crew member; next inventory check in 10 game minutes'"/>
-            <write_to_logbook category="general" title="'Galactic Occupations: hacker waiting for tools'" text="$ship.knownname + ': ' + player.entity.$vgo_objects.{$ship}.$vgo_status"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 10min" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for native hacking tools or a free crew member; next inventory check in 10 game minutes'" />
+            <write_to_logbook category="general" title="'Galactic Occupations: hacker waiting for tools'" text="$ship.knownname + ': ' + player.entity.$vgo_objects.{$ship}.$vgo_status" />
           </do_if>
         </do_if>
         <do_else>
-          <set_value name="$ready" exact="false"/>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 2s"/>
+          <set_value name="$ready" exact="false" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 2s" />
         </do_else>
       </actions>
     </library>
     <cue name="OneOffRequest" instantiate="true">
       <conditions>
-        <event_ui_triggered screen="'VGO'" control="'hackstation'"/>
+        <event_ui_triggered screen="'VGO'" control="'hackstation'" />
       </conditions>
       <actions>
-        <set_value name="$station" exact="event.param3.{1}"/>
-        <set_value name="$panelid" exact="event.param3.{3}"/>
-        <set_value name="$validtype" exact="false"/>
+        <set_value name="$station" exact="event.param3.{1}" />
+        <set_value name="$panelid" exact="event.param3.{3}" />
+        <set_value name="$validtype" exact="false" />
         <do_for_each name="$entry" in="Init.$Types">
           <do_if value="$entry.{2} == $panelid">
-            <set_value name="$validtype" exact="true"/>
-            <break/>
+            <set_value name="$validtype" exact="true" />
+            <break />
           </do_if>
         </do_for_each>
         <do_if value="$validtype and $station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless">
           <do_for_each name="$ship" in="event.param3.{2}">
             <do_if value="$ship.isplayerowned and $ship.isclass.[class.ship_s,class.ship_m,class.ship_l,class.ship_xl] and $ship != player.occupiedship and $station.dockingallowed.{$ship}">
-              <append_to_list name="Init.$Requests" exact="[$ship,$station,$panelid,player.age + 1s]"/>
+              <append_to_list name="Init.$Requests" exact="[$ship,$station,$panelid,player.age + 1s]" />
             </do_if>
           </do_for_each>
         </do_if>
@@ -189,421 +189,421 @@
     </cue>
     <cue name="DispatchOneOff" instantiate="true" checkinterval="1s">
       <conditions>
-        <check_value value="Init.$Requests.count gt 0"/>
+        <check_value value="Init.$Requests.count gt 0" />
       </conditions>
       <actions>
         <do_for_each name="$request" in="Init.$Requests" counter="$i" reverse="true">
           <do_if value="$request.{4} gt player.age">
-            <continue/>
+            <continue />
           </do_if>
-          <remove_value name="Init.$Requests.{$i}"/>
-          <set_value name="$ship" exact="$request.{1}"/>
-          <set_value name="$station" exact="$request.{2}"/>
+          <remove_value name="Init.$Requests.{$i}" />
+          <set_value name="$ship" exact="$request.{1}" />
+          <set_value name="$station" exact="$request.{2}" />
           <do_if value="$ship.isplayerowned and $station.isoperational and not $station.isplayerowned and $station.dockingallowed.{$ship}">
             <create_order object="$ship" id="'VGO_hackonce'" name="$order" override="false">
-              <param name="station" value="$station"/>
-              <param name="panelid" value="$request.{3}"/>
+              <param name="station" value="$station" />
+              <param name="panelid" value="$request.{3}" />
             </create_order>
-            <write_to_logbook category="general" title="'Galactic Occupations: station hack queued'" text="'%1: %2 at %3. Existing default and orders retained.'.[$ship.knownname,$request.{3},$station.knownname]"/>
+            <write_to_logbook category="general" title="'Galactic Occupations: station hack queued'" text="'%1: %2 at %3. Existing default and orders retained.'.[$ship.knownname,$request.{3},$station.knownname]" />
           </do_if>
         </do_for_each>
       </actions>
     </cue>
     <cue name="ProbeReply" instantiate="true">
       <conditions>
-        <event_ui_triggered screen="'VGO'" control="'hackprobe'"/>
+        <event_ui_triggered screen="'VGO'" control="'hackprobe'" />
       </conditions>
       <actions>
-        <set_value name="$ship" exact="event.param3.{1}"/>
+        <set_value name="$ship" exact="event.param3.{1}" />
         <do_if value="$ship == @Init.$ProbeShip and @player.entity.$vgo_objects.{$ship}.$vgo_hack_token == event.param3.{2} and @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase == 'probing'">
-          <remove_value name="Init.$ProbeShip"/>
-          <set_value name="$actor" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor"/>
-          <set_value name="$matched" exact="false"/>
+          <remove_value name="Init.$ProbeShip" />
+          <set_value name="$actor" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" />
+          <set_value name="$matched" exact="false" />
           <do_if value="event.param3.{3}">
             <do_for_each name="$entry" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_slots">
               <do_if value="$entry.{1}.component == event.param3.{4} and $entry.{1}.name == event.param3.{5} and $entry.{2} == event.param3.{6}">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slot" exact="$entry.{1}"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_room" exact="$entry.{2}"/>
-                <set_value name="$matched" exact="true"/>
-                <break/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slot" exact="$entry.{1}" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_room" exact="$entry.{2}" />
+                <set_value name="$matched" exact="true" />
+                <break />
               </do_if>
             </do_for_each>
           </do_if>
           <do_if value="$matched">
-            <include_actions ref="ReturnTools"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[]"/>
+            <include_actions ref="ReturnTools" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[]" />
             <do_for_each name="$cost" in="event.param3.{7}">
-              <set_value name="$ware" exact="ware.{$cost.{1}}"/>
+              <set_value name="$ware" exact="ware.{$cost.{1}}" />
               <do_if value="not $ware.isinventory or $cost.{2} le 0 or $cost.{2} gt 1000000">
-                <set_value name="$matched" exact="false"/>
-                <break/>
+                <set_value name="$matched" exact="false" />
+                <break />
               </do_if>
-              <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[$ware,$cost.{2}]"/>
+              <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[$ware,$cost.{2}]" />
             </do_for_each>
           </do_if>
           <do_if value="$matched">
-            <include_actions ref="LoanTools"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if $ready then 'departing' else 'waiting_actual_tools'"/>
+            <include_actions ref="LoanTools" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if $ready then 'departing' else 'waiting_actual_tools'" />
           </do_if>
           <do_else>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: no verified native panel/API available; returning unused tools and crew'"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: no verified native panel/API available; returning unused tools and crew'" />
           </do_else>
         </do_if>
       </actions>
     </cue>
     <cue name="InvokeReply" instantiate="true">
       <conditions>
-        <event_ui_triggered screen="'VGO'" control="'hackinvoked'"/>
+        <event_ui_triggered screen="'VGO'" control="'hackinvoked'" />
       </conditions>
       <actions>
-        <set_value name="$ship" exact="event.param3.{1}"/>
+        <set_value name="$ship" exact="event.param3.{1}" />
         <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_token == event.param3.{2} and @player.entity.$vgo_objects.{$ship}.$vgo_hack_phase == 'verifying'">
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued" exact="event.param3.{3}"/>
-          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apireason" exact="event.param3.{4}"/>
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued" exact="event.param3.{3}" />
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apireason" exact="event.param3.{4}" />
         </do_if>
       </actions>
     </cue>
     <cue name="Operations" instantiate="true" checkinterval="2s">
       <conditions>
-        <check_value value="Init.$Ships.count gt 0"/>
+        <check_value value="Init.$Ships.count gt 0" />
       </conditions>
       <actions>
         <do_for_each name="$ship" in="Init.$Ships" counter="$shipindex" reverse="true">
           <do_if value="not $ship.exists">
             <do_if value="@Init.$ProbeShip == $ship">
-              <remove_value name="Init.$ProbeShip"/>
-              <remove_value name="player.entity.$vgo_hack_probe"/>
+              <remove_value name="Init.$ProbeShip" />
+              <remove_value name="player.entity.$vgo_hack_probe" />
             </do_if>
             <do_if value="@Init.$CallShip == $ship">
-              <remove_value name="Init.$CallShip"/>
-              <remove_value name="player.entity.$vgo_hack_call"/>
+              <remove_value name="Init.$CallShip" />
+              <remove_value name="player.entity.$vgo_hack_call" />
             </do_if>
-            <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor"/>
-            <include_actions ref="ReturnTools"/>
+            <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" />
+            <include_actions ref="ReturnTools" />
             <do_if value="$actor.exists">
-              <set_entity_traits entity="$actor" temporary="@player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary"/>
+              <set_entity_traits entity="$actor" temporary="@player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary" />
               <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy">
-                <set_entity_traits entity="$actor" busy="false"/>
+                <set_entity_traits entity="$actor" busy="false" />
               </do_if>
-              <remove_value name="$actor.$vgo_hack_ship"/>
+              <remove_value name="$actor.$vgo_hack_ship" />
             </do_if>
-            <remove_value name="Init.$Ships.{$shipindex}"/>
-            <continue/>
+            <remove_value name="Init.$Ships.{$shipindex}" />
+            <continue />
           </do_if>
-          <set_value name="$phase" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_phase"/>
-          <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_station"/>
-          <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor"/>
+          <set_value name="$phase" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" />
+          <set_value name="$station" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_station" />
+          <set_value name="$actor" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" />
           <do_if value="not $phase">
-            <remove_value name="Init.$Ships.{$shipindex}"/>
-            <continue/>
+            <remove_value name="Init.$Ships.{$shipindex}" />
+            <continue />
           </do_if>
           <do_if value="$phase == 'done' or $phase == 'aborted'">
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="not $ship.isplayerowned or not $station.isoperational or ($ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_hack_order and $ship.order != @player.entity.$vgo_objects.{$ship}.$vgo_dock_order) or $station.isplayerowned or ($actor.exists and not $actor.isplayerowned)">
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-            <set_value name="$phase" exact="'returning'"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+            <set_value name="$phase" exact="'returning'" />
             <do_if value="@Init.$ProbeShip == $ship">
-              <remove_value name="Init.$ProbeShip"/>
-              <remove_value name="player.entity.$vgo_hack_probe"/>
+              <remove_value name="Init.$ProbeShip" />
+              <remove_value name="player.entity.$vgo_hack_probe" />
             </do_if>
             <do_if value="@Init.$CallShip == $ship">
-              <remove_value name="Init.$CallShip"/>
-              <remove_value name="player.entity.$vgo_hack_call"/>
+              <remove_value name="Init.$CallShip" />
+              <remove_value name="player.entity.$vgo_hack_call" />
             </do_if>
           </do_if>
           <do_if value="($phase == 'docked' or $phase == 'probing' or $phase == 'departing') and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed">
             <do_if value="not player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil?">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
             </do_if>
             <do_if value="player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <set_value name="$phase" exact="'returning'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: station interior/panel path unavailable after five minutes; returning tools and selecting another station'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <set_value name="$phase" exact="'returning'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: station interior/panel path unavailable after five minutes; returning tools and selecting another station'" />
             </do_if>
           </do_if>
           <do_if value="$phase == 'prepare' or $phase == 'waiting_tools'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool gt player.age">
-              <continue/>
+              <continue />
             </do_if>
             <do_if value="not $actor.exists">
-              <set_value name="$actor" exact="null"/>
-              <find_object_component name="$crew" object="$ship" class="class.npc" multiple="true"/>
+              <set_value name="$actor" exact="null" />
+              <find_object_component name="$crew" object="$ship" class="class.npc" multiple="true" />
               <do_for_each name="$crewactor" in="$crew">
                 <do_if value="($crewactor.role == entityrole.service or $crewactor.role == entityrole.marine) and not $crewactor.isbusy and not $crewactor.ismissionactor and not $crewactor.istransferscheduled and (not @$crewactor.$vgo_hack_ship.exists or @$crewactor.$vgo_hack_ship == $ship) and not @$crewactor.$vgo_sale_ship.exists">
-                  <set_value name="$actor" exact="$crewactor"/>
-                  <break/>
+                  <set_value name="$actor" exact="$crewactor" />
+                  <break />
                 </do_if>
               </do_for_each>
               <do_if value="not $actor.exists and $ship.pilot.isclass.npc and not $ship.pilot.isbusy and not $ship.pilot.ismissionactor and $ship.pilot != player.entity and not @$ship.pilot.$vgo_sale_ship.exists">
-                <set_value name="$actor" exact="$ship.pilot"/>
+                <set_value name="$actor" exact="$ship.pilot" />
               </do_if>
               <do_if value="$actor.exists">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" exact="$actor"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary" exact="$actor.istemporary"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" exact="$actor.roomslot"/>
-                <set_value name="$actor.$vgo_hack_ship" exact="$ship"/>
-                <set_entity_traits entity="$actor" temporary="false"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_actor" exact="$actor" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary" exact="$actor.istemporary" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" exact="$actor.roomslot" />
+                <set_value name="$actor.$vgo_hack_ship" exact="$ship" />
+                <set_entity_traits entity="$actor" temporary="false" />
               </do_if>
             </do_if>
             <do_if value="not $actor.exists or not $actor.hascontext.{$ship} or $actor.isbusy">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for an available existing crew member or captain'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 1min"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for an available existing crew member or captain'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool" exact="player.age + 1min" />
+              <continue />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[]"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[]" />
             <do_for_each name="$ware" valuename="$amount" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_type.requireditems.table">
-              <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[$ware,$amount]"/>
+              <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs" exact="[$ware,$amount]" />
             </do_for_each>
-            <include_actions ref="LoanTools"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if $ready then 'ready' else 'waiting_tools'"/>
+            <include_actions ref="LoanTools" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if $ready then 'ready' else 'waiting_tools'" />
             <do_if value="$ready">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: actual tools retrieved remotely; ready to travel'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: actual tools retrieved remotely; ready to travel'" />
             </do_if>
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="$phase == 'waiting_actual_tools'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_nexttool gt player.age">
-              <continue/>
+              <continue />
             </do_if>
-            <include_actions ref="LoanTools"/>
+            <include_actions ref="LoanTools" />
             <do_if value="$ready">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'departing'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'departing'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_dockuntil" exact="player.age + 5min" />
             </do_if>
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="$phase == 'ready'">
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="$phase == 'docked'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_waitroom gt player.age">
-              <continue/>
+              <continue />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitroom" exact="player.age + 10s"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitroom" exact="player.age + 10s" />
             <do_if value="@$ship.dock.container != $station">
-              <continue/>
+              <continue />
             </do_if>
             <do_if value="not $actor.exists">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <continue />
             </do_if>
             <do_if value="not $actor.hasbody and not @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and $actor.hascontext.{$ship} and (not $actor.room.exists or $actor.room.hascontext.{$ship})">
-              <add_actor_to_post_location actor="$actor"/>
+              <add_actor_to_post_location actor="$actor" />
             </do_if>
             <do_if value="not $actor.room.hascontext.{$ship}">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for the existing crew actor and walkable ship interiors'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for the existing crew actor and walkable ship interiors'" />
+              <continue />
             </do_if>
             <do_if value="@Init.$ProbeShip.exists">
-              <continue/>
+              <continue />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" exact="$actor.roomslot"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slots" exact="[]"/>
-            <set_value name="$publicslots" exact="[]"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" exact="$actor.roomslot" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slots" exact="[]" />
+            <set_value name="$publicslots" exact="[]" />
             <do_for_each name="$room" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_rooms">
               <do_if value="$room.exists">
-                <find_hack_slot name="$slots" object="$room" multiple="true"/>
+                <find_hack_slot name="$slots" object="$room" multiple="true" />
                 <do_for_each name="$slot" in="$slots">
-                  <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slots" exact="[$slot,$room]"/>
-                  <append_to_list name="$publicslots" exact="[$slot.component,$slot.name,$room]"/>
+                  <append_to_list name="player.entity.$vgo_objects.{$ship}.$vgo_hack_slots" exact="[$slot,$room]" />
+                  <append_to_list name="$publicslots" exact="[$slot.component,$slot.name,$room]" />
                 </do_for_each>
               </do_if>
             </do_for_each>
             <do_if value="not $publicslots.count">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for actual security/engineering panel room geometry'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for actual security/engineering panel room geometry'" />
+              <continue />
             </do_if>
-            <set_value name="Init.$ProbeShip" exact="$ship"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'probing'"/>
-            <set_value name="player.entity.$vgo_hack_probe" exact="[$ship,player.entity.$vgo_objects.{$ship}.$vgo_hack_token,player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid,$publicslots]"/>
-            <raise_lua_event name="'VGO.HackProbe'" param="$ship"/>
-            <continue/>
+            <set_value name="Init.$ProbeShip" exact="$ship" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'probing'" />
+            <set_value name="player.entity.$vgo_hack_probe" exact="[$ship,player.entity.$vgo_objects.{$ship}.$vgo_hack_token,player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid,$publicslots]" />
+            <raise_lua_event name="'VGO.HackProbe'" param="$ship" />
+            <continue />
           </do_if>
           <do_if value="$phase == 'probing'">
             <do_if value="player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_step + 30s">
-              <remove_value name="Init.$ProbeShip"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker native panel probe timed out; no hack claimed'"/>
+              <remove_value name="Init.$ProbeShip" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker native panel probe timed out; no hack claimed'" />
             </do_if>
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="$phase == 'departing'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_waitpath gt player.age">
-              <continue/>
+              <continue />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitpath" exact="player.age + 10s"/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_waitpath" exact="player.age + 10s" />
             <do_if value="@$ship.dock.container != $station or $station.iscontrolpanelhacked.{player.entity.$vgo_objects.{$ship}.$vgo_hack_type}">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <continue />
             </do_if>
-            <set_value name="$room" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_room"/>
-            <set_value name="$panel" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_slot"/>
-            <find_npc_slot name="$points" object="$room" multiple="true"/>
-            <set_value name="$goal" exact="null"/>
-            <set_value name="$best" exact="4m"/>
+            <set_value name="$room" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_room" />
+            <set_value name="$panel" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_slot" />
+            <find_npc_slot name="$points" object="$room" multiple="true" />
+            <set_value name="$goal" exact="null" />
+            <set_value name="$best" exact="4m" />
             <do_for_each name="$point" in="$points">
               <do_if value="$panel.distanceto.{$point} lt $best">
-                <set_value name="$goal" exact="$point"/>
-                <set_value name="$best" exact="$panel.distanceto.{$point}"/>
+                <set_value name="$goal" exact="$point" />
+                <set_value name="$best" exact="$panel.distanceto.{$point}" />
               </do_if>
             </do_for_each>
             <do_if value="not $goal">
-              <find_actor_interaction_point actor="$actor" object="$station" slot="$panel" posname="$offset" rotname="$rotation"/>
+              <find_actor_interaction_point actor="$actor" object="$station" slot="$panel" posname="$offset" rotname="$rotation" />
               <do_if value="not $offset">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for a native walkable position beside the chosen panel'"/>
-                <continue/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker waiting for a native walkable position beside the chosen panel'" />
+                <continue />
               </do_if>
               <transform_position name="$goalpos" refposition="$panel.relativeposition.{$room}" refrotation="$panel.relativerotation.{$room}">
-                <position value="$offset"/>
+                <position value="$offset" />
               </transform_position>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" exact="table[$context=$room,$room=$room,$offset=$goalpos,$preventanimation=true]"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" exact="table[$context=$room,$room=$room,$offset=$goalpos,$preventanimation=true]" />
             </do_if>
             <do_else>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" exact="table[$slot=$goal,$room=$room,$preventanimation=true]"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" exact="table[$slot=$goal,$room=$room,$preventanimation=true]" />
             </do_else>
             <do_if value="$actor != $ship.pilot">
-              <set_entity_traits entity="$actor" busy="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy" exact="true"/>
+              <set_entity_traits entity="$actor" busy="true" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy" exact="true" />
             </do_if>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed" exact="true"/>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry"/>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since"/>
-            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recalled"/>
-            <signal_objects object="player.entity" param="'vardath.go.recovery.track'" param2="$ship"/>
-            <signal_objects object="$actor" param="'npc_move_to'" param2="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_walkstart" exact="player.age"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'walking'"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: ' + $actor.knownname + ' walking off the ship to ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name"/>
-            <continue/>
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed" exact="true" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recall_retry" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_away_since" />
+            <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_recalled" />
+            <signal_objects object="player.entity" param="'vardath.go.recovery.track'" param2="$ship" />
+            <signal_objects object="$actor" param="'npc_move_to'" param2="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_walkstart" exact="player.age" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'walking'" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: ' + $actor.knownname + ' walking off the ship to ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name" />
+            <continue />
           </do_if>
           <do_if value="$phase == 'walking' or $phase == 'working'">
             <do_if value="not $actor.exists">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <continue />
             </do_if>
-            <set_value name="$near" exact="$actor.room == player.entity.$vgo_objects.{$ship}.$vgo_hack_room and not $actor.room.hascontext.{$ship} and $actor.distanceto.{player.entity.$vgo_objects.{$ship}.$vgo_hack_slot} le 4m and not $actor.iswalking"/>
+            <set_value name="$near" exact="$actor.room == player.entity.$vgo_objects.{$ship}.$vgo_hack_room and not $actor.room.hascontext.{$ship} and $actor.distanceto.{player.entity.$vgo_objects.{$ship}.$vgo_hack_slot} le 4m and not $actor.iswalking" />
             <do_if value="$phase == 'walking'">
               <do_if value="$near">
                 <do_if value="$actor.hasbody">
-                  <set_actor_tool actor="$actor" name="'pda1hand'"/>
+                  <set_actor_tool actor="$actor" name="'pda1hand'" />
                 </do_if>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'working'"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker physically at ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name + '; operating panel'"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_departed" exact="true"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'working'" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker physically at ' + player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name + '; operating panel'" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_departed" exact="true" />
               </do_if>
               <do_elseif value="player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_walkstart + 5min">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker could not reach the physical panel; recovering crew without claiming success'"/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker could not reach the physical panel; recovering crew without claiming success'" />
               </do_elseif>
               <do_elseif value="not $actor.iswalking and player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_step + 15s">
-                <signal_objects object="$actor" param="'npc_move_to'" param2="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
+                <signal_objects object="$actor" param="'npc_move_to'" param2="player.entity.$vgo_objects.{$ship}.$vgo_hack_movetable" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
               </do_elseif>
-              <continue/>
+              <continue />
             </do_if>
             <do_if value="not $near">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'walking'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'walking'" />
+              <continue />
             </do_if>
             <do_if value="player.age lt player.entity.$vgo_objects.{$ship}.$vgo_hack_step + 10s">
-              <continue/>
+              <continue />
             </do_if>
             <do_if value="@Init.$CallShip.exists">
-              <continue/>
+              <continue />
             </do_if>
-            <include_actions ref="ReturnTools"/>
+            <include_actions ref="ReturnTools" />
             <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_hack_loans.count">
-              <continue/>
+              <continue />
             </do_if>
             <do_if value="$station.iscontrolpanelhacked.{player.entity.$vgo_objects.{$ship}.$vgo_hack_type}">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <continue />
             </do_if>
             <do_for_each name="$cost" in="player.entity.$vgo_objects.{$ship}.$vgo_hack_costs">
               <do_if value="player.entity.inventory.{$cost.{1}}.count lt $cost.{2}">
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: tool reservation could not be recovered; no free panel operation attempted'"/>
-                <break/>
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker: tool reservation could not be recovered; no free panel operation attempted'" />
+                <break />
               </do_if>
             </do_for_each>
             <do_if value="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase == 'returning'">
-              <continue/>
+              <continue />
             </do_if>
-            <set_value name="Init.$CallShip" exact="$ship"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_call_sent" exact="true"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued" exact="null"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
-            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'verifying'"/>
-            <set_value name="player.entity.$vgo_hack_call" exact="[$ship,player.entity.$vgo_objects.{$ship}.$vgo_hack_token,player.entity.$vgo_objects.{$ship}.$vgo_hack_slot.component,player.entity.$vgo_objects.{$ship}.$vgo_hack_slot.name,player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid]"/>
-            <raise_lua_event name="'VGO.HackInvoke'" param="$ship"/>
-            <continue/>
+            <set_value name="Init.$CallShip" exact="$ship" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_call_sent" exact="true" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued" exact="null" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
+            <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'verifying'" />
+            <set_value name="player.entity.$vgo_hack_call" exact="[$ship,player.entity.$vgo_objects.{$ship}.$vgo_hack_token,player.entity.$vgo_objects.{$ship}.$vgo_hack_slot.component,player.entity.$vgo_objects.{$ship}.$vgo_hack_slot.name,player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid]" />
+            <raise_lua_event name="'VGO.HackInvoke'" param="$ship" />
+            <continue />
           </do_if>
           <do_if value="$phase == 'verifying'">
             <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued and player.entity.$vgo_objects.{$ship}.$vgo_hack_call_sent and $station.iscontrolpanelhacked.{player.entity.$vgo_objects.{$ship}.$vgo_hack_type}">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_native" exact="true"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Native panel effect verified; waiting for hacker to walk back aboard'"/>
-              <write_to_logbook category="general" title="'Galactic Occupations: native station hack verified'" text="'%1 operated %2 on %3; native effect is active. Crew return still required.'.[$actor.knownname,player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name,$station.knownname]"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <remove_value name="Init.$CallShip"/>
-              <include_actions ref="Catalogue"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_native" exact="true" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Native panel effect verified; waiting for hacker to walk back aboard'" />
+              <write_to_logbook category="general" title="'Galactic Occupations: native station hack verified'" text="'%1 operated %2 on %3; native effect is active. Crew return still required.'.[$actor.knownname,player.entity.$vgo_objects.{$ship}.$vgo_hack_type.name,$station.knownname]" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <remove_value name="Init.$CallShip" />
+              <include_actions ref="Catalogue" />
             </do_if>
             <do_elseif value="(player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued? and not player.entity.$vgo_objects.{$ship}.$vgo_hack_apiissued) or player.age gt player.entity.$vgo_objects.{$ship}.$vgo_hack_step + 30s">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'"/>
-              <remove_value name="Init.$CallShip"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Native panel effect not verified; no completed hack or reward claimed'"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
+              <remove_value name="Init.$CallShip" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Native panel effect not verified; no completed hack or reward claimed'" />
             </do_elseif>
-            <continue/>
+            <continue />
           </do_if>
           <do_if value="$phase == 'returning'">
             <do_if value="@Init.$ProbeShip == $ship">
-              <remove_value name="Init.$ProbeShip"/>
-              <remove_value name="player.entity.$vgo_hack_probe"/>
+              <remove_value name="Init.$ProbeShip" />
+              <remove_value name="player.entity.$vgo_hack_probe" />
             </do_if>
             <do_if value="@Init.$CallShip == $ship">
-              <remove_value name="Init.$CallShip"/>
-              <remove_value name="player.entity.$vgo_hack_call"/>
+              <remove_value name="Init.$CallShip" />
+              <remove_value name="player.entity.$vgo_hack_call" />
             </do_if>
           </do_if>
           <do_if value="$phase == 'returning'">
-            <include_actions ref="ReturnTools"/>
+            <include_actions ref="ReturnTools" />
             <do_if value="not $actor.exists">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'aborted'"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker actor unavailable; no crew return or completion fabricated'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'aborted'" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker actor unavailable; no crew return or completion fabricated'" />
+              <continue />
             </do_if>
             <do_if value="(($actor.room.hascontext.{$ship} or (not @player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed and not $actor.room.exists and $actor.hascontext.{$ship})) or (@player.entity.$vgo_objects.{$ship}.$vgo_hack_recalled and $actor.exists and not $actor.room.exists and @$ship.people.{$actor.npctemplate}.exists and $actor.roleobject == $ship)) and not $actor.iswalking and not player.entity.$vgo_objects.{$ship}.$vgo_hack_loans.count">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed" exact="false"/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_deployed" exact="false" />
               <do_if value="$actor.hasbody">
-                <clear_actor_tool actor="$actor"/>
+                <clear_actor_tool actor="$actor" />
               </do_if>
-              <set_entity_traits entity="$actor" temporary="player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary"/>
+              <set_entity_traits entity="$actor" temporary="player.entity.$vgo_objects.{$ship}.$vgo_hack_wastemporary" />
               <do_if value="@player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy">
-                <set_entity_traits entity="$actor" busy="false"/>
-                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy"/>
+                <set_entity_traits entity="$actor" busy="false" />
+                <remove_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_setbusy" />
               </do_if>
-              <remove_value name="$actor.$vgo_hack_ship"/>
-              <add_actor_to_post_location actor="$actor"/>
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if player.entity.$vgo_objects.{$ship}.$vgo_hack_native and @player.entity.$vgo_objects.{$ship}.$vgo_hack_departed then 'done' else 'aborted'"/>
-              <continue/>
+              <remove_value name="$actor.$vgo_hack_ship" />
+              <add_actor_to_post_location actor="$actor" />
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="if player.entity.$vgo_objects.{$ship}.$vgo_hack_native and @player.entity.$vgo_objects.{$ship}.$vgo_hack_departed then 'done' else 'aborted'" />
+              <continue />
             </do_if>
             <do_if value="@$ship.dock.container != $station">
-              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker ashore at ' + $station.knownname + '; waiting for ship to redock before physical return'"/>
-              <continue/>
+              <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker ashore at ' + $station.knownname + '; waiting for ship to redock before physical return'" />
+              <continue />
             </do_if>
             <do_if value="not $actor.iswalking and player.age gt @player.entity.$vgo_objects.{$ship}.$vgo_hack_step + 15s">
-              <set_value name="$returnslot" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_origin"/>
+              <set_value name="$returnslot" exact="@player.entity.$vgo_objects.{$ship}.$vgo_hack_origin" />
               <do_if value="not @$returnslot.component.exists or not $returnslot.component.hascontext.{$ship}">
-                <find_npc_slot name="$returnslot" object="$ship" multiple="false"/>
+                <find_npc_slot name="$returnslot" object="$ship" multiple="false" />
               </do_if>
               <do_if value="$returnslot">
-                <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot=$returnslot,$preventanimation=true]"/>
-                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age"/>
+                <signal_objects object="$actor" param="'npc_move_to'" param2="table[$slot=$returnslot,$preventanimation=true]" />
+                <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_step" exact="player.age" />
               </do_if>
             </do_if>
           </do_if>

@@ -1,6 +1,14 @@
-# Reproducible tests — 0.4.0 development
+# Reproducible tests — 0.4.1 development
 
 **No actual X4 runtime test has been performed in this environment.** XML/API/reference checks and inventory/UI mocks are separate. Use a backup save, Protected UI enabled, the new extension installed, and a fresh debug log. Keep Inventory Collector and your normal mod load order.
+
+## Current station signal and boarding acceptance
+
+Run [the 0.4.1 scanner/passenger tests](SURVEY_BOARDING_0.4.1.md#validation-and-live-acceptance) first: real module information, public leaks, timed off-screen alternatives, station bonus cooldowns, actual native offers/market delivery work and the existing saved party boarding/launch/drop-off/fare. The new source paths have not been run in X4 here.
+
+## Current spacesuit exit and Astrid acceptance
+
+Run [the 0.4.1 checks](SPACESUIT_RECOVERY_0.4.1.md#validation-and-live-checks) first. Normal exits, changed/cancelled requests, native transfer refusal, actual suit control/HUD and re-entry must all be verified with the installed spacesuit mods. Retest full-speed Astrid braking and partial-control transitions without any ship-blackboard errors. New native recovery has not been run in X4 here.
 
 ## Current cancellation and stranded crew acceptance
 

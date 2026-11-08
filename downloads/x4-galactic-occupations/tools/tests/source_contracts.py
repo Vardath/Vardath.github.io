@@ -51,7 +51,7 @@ class SourceContracts(unittest.TestCase):
     def test_boarded_ack_has_physical_context_or_verified_native_person_record(self):
         root=xml('md/VGO_State.xml');parents={c:p for p in root.iter() for c in p}
         assignments=[x for x in root.iter('set_value') if x.get('name')=='$ship.$vgo_passengers.{$i}.$boarded' and x.get('exact')=='true']
-        self.assertEqual(len(assignments),4)
+        self.assertEqual(len(assignments),5)
         for node in assignments:
             guards=[]
             while node in parents:

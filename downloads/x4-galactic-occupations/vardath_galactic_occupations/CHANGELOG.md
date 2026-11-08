@@ -1,5 +1,15 @@
 # Version history
 
+## 0.4.1 — guarded spacesuit recovery and logged role/braking fixes
+
+- Observe only confirmed vanilla Use Spacesuit transporter requests. Allow twelve seconds for native completion; check real suit/control/room state, cancel changed contexts, expire native-transit waits and consume intent before one native emergency-form suit teleport. Log actual verification without claiming a camera repair from a successful call alone.
+- Preserve vanilla confirmation and return values; add no menu, ledger replacement or automatic ejection loop. Isolate missing observer APIs and retain other addon call chains.
+- Replace invalid `entityrole.pilot` with actual pilot identity, retain recruited crew/player and validate all native role literals. Preserve 0.4.0 lifecycle timers and delayed cleanup.
+- Companion Kopis/Astrid 1.16 removes unsupported ship-blackboard braking state and excludes player/native/suit transitions. No Forge equipment or weapon-recovery changes.
+- Extend scanner to timed off-screen component surveys and public signal-leak/network intelligence. Apply real station coupons/subscriptions with a shared 24-hour cooldown; expose actual native job offers, report real black-market contacts and offer normal native item-delivery unlock work. Preserve plot leaks and native acceptance/rewards. Add functional controls and scanner-equipped capital eligibility.
+- Repair disconnected NPC identity checks, detach/role assignment order, same-sector unloaded interiors and two-minute visible boarding recovery without creating replacement passengers. Keep booked destinations, whole-party/tour completion and fare accounting.
+- Supplied log confirms ten crystal sales (541,000 Cr), two escorts (24,000 Cr), two patrols (16,000 Cr) and a morale completion. Tour boarding remains blocked. 348 Python contracts and 91 Lua mocks pass; new native suit/survey/boarding recovery remains live-unverified. See SPACESUIT_RECOVERY_0.4.1.md and SURVEY_BOARDING_0.4.1.md.
+
 ## 0.4.0 — delayed recovery without cancelling temporary work
 
 - Recall stranded crystal/hacker crew after twenty game minutes away, using the same native actor/template, original role/post and guarded room/post placement. Preserve manual transfers, player orders and hacker tool-loan accounting.

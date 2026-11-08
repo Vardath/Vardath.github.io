@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations. Twenty-minute stranded-crew recall; interruption-safe cancelled taxi/tour passenger grace and unpaid evacuation; twenty-stop new tours." author="Vardath" version="40" date="2026-11-08" save="1" enabled="1">
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations. Twenty-minute stranded-crew recall; interruption-safe cancelled taxi/tour passenger grace and unpaid evacuation; twenty-stop new tours." author="Vardath" version="41" date="2026-11-08" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ws_2074838459" optional="true" name="Sector Explorer"/>
   <dependency id="ws_3650236535" optional="true" name="Auto Trade Subscriptions"/>
