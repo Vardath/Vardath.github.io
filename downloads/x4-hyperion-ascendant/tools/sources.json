@@ -1,0 +1,42 @@
+[
+  {
+    "key": "story",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_mini_01/md/story_hyperion.xml",
+    "sha256_lf_finalnewline": "2bc18c3151c236b059cb2ee251d72e4419e96204f8ef200c6c1174219aada77e"
+  },
+  {
+    "key": "loadouts",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_mini_01/libraries/loadouts.xml",
+    "sha256_lf_finalnewline": "5ddbe7805c929b8107624f0c545fb3cb1db09445220245ae5eb97ef4e332c618"
+  },
+  {
+    "key": "base_macros",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/index/macros.xml",
+    "sha256_lf_finalnewline": "9a16f024e4d824e51ecd87cb9395fd9e23360989d8f0b741208c35169217bf82"
+  },
+  {
+    "key": "base_components",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/index/components.xml",
+    "sha256_lf_finalnewline": "6201d2285d345c377c34dba7998dd52abb3b7def795763e5bbcb5923f8824e39"
+  },
+  {
+    "key": "dlc_macros",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_mini_01/index/macros.xml",
+    "sha256_lf_finalnewline": "3059cbccc8e5309d5a7adb3f1f7d05b5410511109f9f9be4d8b5e8703a1b02b3"
+  },
+  {
+    "key": "dlc_components",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_mini_01/index/components.xml",
+    "sha256_lf_finalnewline": "49bd11df4c4bd63448d06a8c4c973c5f50863cde7f44332cc4fb9d3d1435e560"
+  },
+  {
+    "key": "diff",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/diff.xsd",
+    "sha256_lf_finalnewline": "829d29c760a8fbb78ba38b3b3b179468f85091a3d933c4869b28d9758aa3bc3c"
+  },
+  {
+    "key": "commands",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/common.xsd",
+    "sha256_lf_finalnewline": "1e50c1d407adc1d83dee66a4a328e254a7a30ed34ae15d7bd2f7b3a810d32294"
+  }
+]

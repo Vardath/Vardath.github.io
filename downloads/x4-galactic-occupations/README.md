@@ -1,9 +1,11 @@
-# Galactic Occupations 0.4.7 — hacker offices and signal results
+# Galactic Occupations 0.4.8 — capital tours and scanner physics
 
-[Download Occupations](Galactic_Occupations_0.4.7_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Hacker_Survey_Update_2026-11-09.zip) · [Evidence and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.7.md)
+[Download Occupations](Galactic_Occupations_0.4.8_DEV.zip) · [All three updated mods](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
 
-Hacker discovery now uses installed native security/engineering room definitions instead of relying only on already-created rooms. The chosen real office is prepared after docking, with actual panel verification and guarded cleanup. Signal surveys find real assigned off-screen contacts and report native discounts and actual offer availability. Crystal worker bookkeeping yields between fast-return calls.
+Galactic Sightseeing Tour now accepts **S, M, L and XL ships**. Visible capital services use real ship/station transporter waypoints: the same booked NPC approaches the source, transfers to the receiving room, and must actually be aboard or ashore before the booking advances. Ten passengers maximum, available crew berths, existing fare conditions, ten-stop new bookings and cancellation rules remain.
 
-The supplied log confirms 66,010,000 Cr across 192 balance-matched payments. It shows a worker wake-loop warning, but continues for another 3,986 game seconds and contains no fatal/crash stack; the crash cause is not established.
+The scanner now checks visible attention as well as loaded meshes and sector context before surface queries. Inactive geometry uses the existing timed remote survey path where enabled.
 
-Exit X4, overwrite its Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Existing bookings, stock, invoices and crews remain; the ten-stop new tour default and extra hour are retained. 440 Python contracts, 91 Lua mocks and static/source/archive checks pass. New native office/panel execution requires live X4 verification. Companion sources and all UI files are unchanged.
+Exit X4, overwrite its Occupations folder and load your existing save. Keep Protected UI and Inventory Collector. No new UI, worker restart, passenger reset or changes to the Forge weapon. The separate Hyperion Ascendant and Compatibility 1.0.1 packages address the quest/ship and other logged errors.
+
+459 Python contracts and 91 Lua mocks pass, with native-reference/XML/ZIP checks. **Native capital transporter, physics and save/load execution remain unverified in X4.** The supplied older-version log confirms 623 balance-matched payments totalling 994,060,000 Cr; those are not runtime tests of this release.

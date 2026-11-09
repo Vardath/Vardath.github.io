@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Vardath_Hyperion_Ascendant" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="Maintain" instantiate="true" checkinterval="1min" namespace="this">
+      <conditions>
+        <check_value value="player.age ge 10s and player.ship.exists and player.sector.exists"/>
+      </conditions>
+      <actions>
+        <find_ship_by_true_owner name="$Ships" faction="faction.player" macro="macro.ship_vardath_hyperion_ascendant_macro" space="player.galaxy" multiple="true"/>
+        <do_if value="not $Ships.count">
+          <set_value name="$Ship" exact="null"/>
+          <create_ship name="$Ship" macro="macro.ship_vardath_hyperion_ascendant_macro" sector="player.sector">
+            <owner exact="faction.player" overridenpc="true"/>
+            <pilot><select faction="faction.yaki" tags="tag.fighterpilot"/></pilot>
+            <loadout ref="vardath_hyperion_ascendant_default"/>
+            <people ref="vardath_hyperion_yaki_crew"><fillpercent exact="80"/></people>
+            <safepos object="player.ship" min="8km" max="12km"/>
+          </create_ship>
+          <do_if value="$Ship.exists">
+            <set_object_name object="$Ship" name="{995510,1}"/>
+            <debug_text text="'Vardath Hyperion Ascendant: spawned player-owned Yaki-crewed ship %1 with six custom main guns and eight custom turrets'.[$Ship.debugname]" filter="general"/>
+          </do_if>
+          <do_else><debug_text text="'Vardath Hyperion Ascendant: creation failed; retrying in one game minute'" filter="error"/></do_else>
+        </do_if>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+    <cue name="BrakeState"><actions><set_value name="$Ship" exact="null"/><set_value name="$Due" exact="0s"/></actions></cue>
+    <cue name="BrakeAssist" instantiate="true" checkinterval="100ms" namespace="this">
+      <conditions><check_value value="player.exists"/></conditions>
+      <actions>
+        <set_value name="$Ship" exact="player.occupiedship"/>
+        <do_if value="not $Ship.exists or not $Ship.isplayerowned or $Ship.macro != macro.ship_vardath_hyperion_ascendant_macro or player.controlled != $Ship or player.spacesuit.exists or player.entity.isintransit">
+          <set_value name="BrakeState.$Ship" exact="null"/><set_value name="BrakeState.$Due" exact="0s"/>
+        </do_if>
+        <do_else>
+          <do_if value="BrakeState.$Ship != $Ship"><set_value name="BrakeState.$Ship" exact="$Ship"/><set_value name="BrakeState.$Due" exact="0s"/></do_if>
+          <set_value name="$Idle" exact="player.flightassist and not player.autopilottarget.exists and not player.input.flight.matchspeed and player.input.flight.throttle == 0 and player.input.flight.horizontal == 0 and player.input.flight.vertical == 0 and player.input.flight.pitch == 0 and player.input.flight.yaw == 0 and player.input.flight.roll == 0 and not $Ship.boost.active"/>
+          <do_if value="not $Idle or ($Ship.speed le 0.5m and not $Ship.travel.active and not $Ship.boost.active)"><set_value name="BrakeState.$Due" exact="0s"/></do_if>
+          <do_elseif value="BrakeState.$Due == 0s or player.age gt BrakeState.$Due + 1s">
+            <set_value name="BrakeState.$Due" exact="player.age + 2500ms"/><disable_travel_mode ship="$Ship" duration="0s"/><set_playership_throttle value="0"/>
+          </do_elseif>
+          <do_elseif value="player.age ge BrakeState.$Due">
+            <set_object_velocity object="$Ship" constantvel="false"><linear x="0" y="0" z="0"/></set_object_velocity><set_value name="BrakeState.$Due" exact="0s"/>
+          </do_elseif>
+        </do_else>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

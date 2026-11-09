@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<macros><macro name="weapon_vardath_hyperion_ascendant_macro" class="weapon">
+    <component ref="weapon_par_l_expeditionary_01_mk1"/>
+    <properties>
+      <identification name="{995510,7}" basename="{20105,3101}" makerrace="paranid" description="{995510,8}" mk="1"/>
+      <bullet class="bullet_vardath_hyperion_ascendant_macro"/>
+      <heat overheat="10000" cooldelay="2" coolrate="9000" reenable="9500"/>
+      <rotationspeed max="35.53"/>
+      <rotationacceleration max="71.06"/>
+      <hull max="80000"/>
+    </properties>
+  </macro>
+</macros>

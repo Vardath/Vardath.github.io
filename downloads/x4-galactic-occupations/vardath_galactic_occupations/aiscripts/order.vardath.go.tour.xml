@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.tour" version="11" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.tour" version="12" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_tour" name="{191180,105}" description="{191180,205}" category="navigation" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}"/>
@@ -42,7 +42,7 @@
       <match class="class.spacesuit" negate="true"/>
       <match shiptype="shiptype.lasertower" negate="true"/>
       <match unit="false"/>
-      <match class="[class.ship_s, class.ship_m]"/>
+      <match class="[class.ship_s, class.ship_m, class.ship_l, class.ship_xl]"/>
     </requires>
     <location object="if @player.entity.$vgo_objects.{this.ship}.$vgo_destination.exists then player.entity.$vgo_objects.{this.ship}.$vgo_destination else (if @player.entity.$vgo_objects.{this.ship}.$vgo_target.exists then player.entity.$vgo_objects.{this.ship}.$vgo_target else this.ship)"/>
   </order>

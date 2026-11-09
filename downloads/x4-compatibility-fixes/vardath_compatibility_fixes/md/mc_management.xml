@@ -11,4 +11,13 @@
       <signal_cue cue="Thread_Manager_Cleanup" check="false"/>
     </do_if>
   </replace>
+  <replace sel="/mdscript//cue[@name='Thread_Manager_Cleanup']/actions/do_if[@value='$Submissions?']/do_all[@exact='$Submissions.count']">
+    <do_if value="$Submissions.count gt 0">
+      <set_value name="this.$vcf_cleanup_submissions" exact="$Submissions.clone"/>
+      <do_all exact="this.$vcf_cleanup_submissions.count" counter="$vcf_cleanup_index">
+        <do_if value="@this.$vcf_cleanup_submissions.{$vcf_cleanup_index}.$Cue.exists"><signal_cue_instantly cue="Thread_Manager_Cleanup_Submission" param="this.$vcf_cleanup_submissions.{$vcf_cleanup_index}.$Cue"/></do_if>
+      </do_all>
+      <remove_value name="$vcf_cleanup_index"/><remove_value name="this.$vcf_cleanup_submissions"/>
+    </do_if>
+  </replace>
 </diff>

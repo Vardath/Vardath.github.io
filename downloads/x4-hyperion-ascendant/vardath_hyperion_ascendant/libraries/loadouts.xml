@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/loadouts"><loadout id="vardath_hyperion_ascendant_default" macro="ship_vardath_hyperion_ascendant_macro">
+    <macros>
+      <engine macro="engine_vardath_hyperion_ascendant_macro" path="../con_engine_01"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_01"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_03"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_05"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_06"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_04"/>
+      <weapon macro="weapon_vardath_hyperion_ascendant_macro" path="../con_weapon_02"/>
+      <shield macro="shield_vardath_hyperion_ascendant_macro" path="../con_shield_l_01"/>
+    </macros>
+    <groups>
+      <shields macro="shield_par_m_standard_02_mk2_macro" group="group_engines" exact="2"/>
+      <shields macro="shield_par_m_standard_02_mk2_macro" group="group_front_up_mid" exact="2"/>
+      <shields macro="shield_par_m_standard_02_mk2_macro" group="group_rear_left_down"/>
+      <shields macro="shield_par_m_standard_02_mk2_macro" group="group_rear_right_down"/>
+      <shields macro="shield_par_m_standard_02_mk2_macro" group="group_rear_up_mid"/>
+      <turrets macro="turret_vardath_hyperion_ascendant_macro" group="group_front_up_mid" exact="2"/>
+      <turrets macro="turret_vardath_hyperion_ascendant_macro" group="group_rear_left_down" exact="2"/>
+      <turrets macro="turret_vardath_hyperion_ascendant_macro" group="group_rear_right_down" exact="2"/>
+      <turrets macro="turret_vardath_hyperion_ascendant_macro" group="group_rear_up_mid" exact="2"/>
+    </groups>
+    <ammunition>
+      <ammunition macro="countermeasure_flares_01_macro" exact="20"/>
+      <unit macro="ship_gen_xs_repairdrone_01_a_macro" exact="8"/>
+      <unit macro="ship_gen_xs_cargodrone_empty_01_a_macro" exact="2"/>
+    </ammunition>
+    <software>
+      <software ware="software_dockmk2"/>
+      <software ware="software_flightassistmk1"/>
+      <software ware="software_scannerlongrangemk2"/>
+      <software ware="software_scannerobjectmk2"/>
+      <software ware="software_targetmk1"/>
+      <software ware="software_trademk1"/>
+    </software>
+    <virtualmacros>
+      <thruster macro="thruster_gen_l_allround_01_mk3_macro"/>
+    </virtualmacros>
+  </loadout>
+
+  </add>
+</diff>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language id="44">
+  <page id="995510" title="Hyperion Ascendant">
+    <t id="1">Hyperion Ascendant</t>
+    <t id="2">A separate Yaki-crewed Hyperion with reinforced hull and shields, improved engines and handling, and dedicated enhanced main batteries and beam turrets. A replacement is supplied if the player no longer owns one.</t>
+    <t id="3">Ascendant Drive</t><t id="4">Enhanced large Paranid drive, improved thrust and reverse braking.</t>
+    <t id="5">Ascendant Shield</t><t id="6">Reinforced large shield with rapid recharge.</t>
+    <t id="7">Ascendant Main Battery</t><t id="8">Dedicated Hyperion battery with greatly enhanced projectile damage. Normal Hyperion weapons are unchanged.</t>
+    <t id="9">Ascendant Beam Turret</t><t id="10">Dedicated medium beam turret with enhanced damage. Normal turret modes remain available.</t>
+  </page>
+</language>

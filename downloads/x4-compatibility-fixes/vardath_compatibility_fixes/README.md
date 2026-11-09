@@ -1,9 +1,9 @@
-# Vardath Compatibility Fixes 1.0.0
+# Vardath Compatibility Fixes 1.0.1
 
-Optional, separate X4 9.00 compatibility extension. Install alongside Galactic Occupations 0.4.7; no new game is required. Exit X4 before copying this folder into `extensions`.
+Nine targeted XML compatibility patches for X4 9.00. Install this folder under `extensions`, enable it and load your existing save. Keep Protected UI and Inventory Collector enabled.
 
-Patches six source-confirmed invalid operations: incompatible Fly-by Looting ammo pickup, GalaxyTrader academy entries without captains, Research Blueprints' missing HQ actor, mismatched native trade offers, stale invasion entry points, and late mission-thread cleanup callbacks. See `TESTING.md` for the exact scope, upstream versions and live acceptance tests.
+Includes the original six guards plus Inventory Collector's missing common-handler debug default, HeadHunter's absent-pilot expiry cleanup and Emergent Missions' late rescue callback. Native mission cleanup also takes a stable snapshot before invoking immediate callbacks that can change its source list.
 
-Keep Protected UI and Inventory Collector enabled. This extension has no Lua/UI replacement and does not modify your other mod folders, ships, equipment, crew, payments or ownership. Third-party patches activate only for matching extension folders. Missing engine/ship assets, saved Hyperion quest state and the actual crash cause remain unresolved.
+No Lua/UI replacement, ship assets, reward replay, ownership transfer or forced player order cancellation. This extension does not require the new Hyperion. Third-party dependencies are optional and use the installed folder names recorded in the supplied log.
 
-Validated statically and against pinned source/mocked guard scenarios. Not tested in a running X4 instance.
+See `REVIEW_1.0.1.md` for current scope and live checks. `TESTING.md` documents the historical 1.0.0 review. Fifteen source/mocked contracts, native diff grammar, 29 unique selector applications and archive/source checks pass. New engine paths are not tested in a running X4 instance.

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript//cue[@name='WatcherExpire']/conditions/check_value/@value">not $enemy.exists or not @$enemy.pilot.isclass.npc or not $enemy.pilot.$attackedtime? or player.age - @$enemy.pilot.$attackedtime ge 600s</replace>
+  <replace sel="/mdscript//cue[@name='WatcherExpire']/actions">
+    <actions>
+      <do_if value="$enemy.exists and @$enemy.pilot.isclass.npc">
+        <do_if value="$enemy.pilot.$attackedtime?"><debug_to_file name="'bounties'" directory="'HeadHunter'" text="'HeadHunter: HHAttackTagger expired on %s %s. PlayerAge is %s and $attackedtime was %s'.[$enemy.idcode,$enemy.knownname,player.age,$enemy.pilot.$attackedtime]" output="true" append="true" chance="$HHDebug"/>
+                        </do_if><do_if value="$enemy.pilot.$beenattacked?"><remove_value name="$enemy.pilot.$beenattacked"/></do_if>
+        <do_if value="$enemy.pilot.$attackedtime?"><remove_value name="$enemy.pilot.$attackedtime"/></do_if>
+      </do_if>
+      <cancel_cue cue="Watcher"/>
+    </actions>
+  </replace>
+</diff>

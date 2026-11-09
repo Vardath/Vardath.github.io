@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VCF_HyperionRoute" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <cue name="RouteState"><actions><set_value name="$NoRouteNotice" exact="0s"/></actions></cue>
+    <library name="ResolveGate" purpose="run_actions">
+      <params><param name="sector"/><param name="destination"/></params>
+      <actions>
+        <do_if value="not $sector.exists or not $destination.exists or $sector == $destination"><return value="null"/></do_if>
+        <find_gate name="$ActualGates" space="$sector" active="true" multiple="true"/>
+        <set_value name="$Path" exact="[]"/>
+        <get_jump_path component="$Path" multiple="true" uselocalhighways="false">
+          <start object="$sector"/><end object="$destination"/>
+        </get_jump_path>
+        <do_for_each name="$Candidate" in="$Path">
+          <do_if value="$Candidate.exists and $ActualGates.indexof.{$Candidate} and $Candidate.sector == $sector and $Candidate.exit.exists and $Candidate.exit.sector.exists and $Candidate.exit.sector != $sector">
+            <return value="$Candidate"/>
+          </do_if>
+        </do_for_each>
+        <!-- A newly inserted highway-only sector may have no gate to scan.
+             Return the next actual gate on the same native route so callers
+             can relocate the search, not pretend a missing gate was scanned. -->
+        <do_for_each name="$Candidate" in="$Path">
+          <do_if value="$Candidate.exists and $Candidate.isclass.gate and $Candidate.sector.exists and $Candidate.sector != $destination and $Candidate.exit.exists and $Candidate.exit.sector.exists and $Candidate.exit.sector != $Candidate.sector">
+            <find_gate name="$LiveGates" space="$Candidate.sector" active="true" multiple="true"/>
+            <do_if value="$LiveGates.indexof.{$Candidate}"><return value="$Candidate"/></do_if>
+          </do_if>
+        </do_for_each>
+        <return value="null"/>
+      </actions>
+    </library>
+    <!-- Root poller also runs in saves whose native Start cue completed before
+         this extension was installed. Never reset the story or award a reward. -->
+    <cue name="RecoverCurrentInvestigation" instantiate="true" checkinterval="30s" namespace="this">
+      <conditions><check_value value="player.exists"/></conditions>
+      <actions>
+        <do_if value="@md.Story_Hyperion.Start.hasmission">
+          <set_value name="$Story" exact="md.Story_Hyperion.Start"/>
+          <do_if value="$Story.$MissionAccepted? and @$Story.$Sector_Investigation.exists and @$Story.$Sector_Hyperion.exists and $Story.$Sector_Investigation != $Story.$Sector_Hyperion and (not @$Story.$Sector_Next.exists or @$Story.$Sector_Next == $Story.$Sector_Investigation) and md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.complete and md.Story_Hyperion.Ch1_3_Hyperion_Sector.state == cuestate.waiting and not @$Story.$HyperionCloneShip.exists">
+            <set_value name="$Gate" exact="null"/><run_actions ref="ResolveGate" result="$Gate"><param name="sector" value="$Story.$Sector_Investigation"/><param name="destination" value="$Story.$Sector_Hyperion"/></run_actions>
+            <do_if value="$Gate.exists and ($Gate != @$Story.$Investigation_CorrectGate or $Gate.sector != $Story.$Sector_Investigation or not @$Story.$Sector_Next.exists)">
+              <set_value name="$Sector" exact="$Story.$Sector_Investigation"/>
+              <do_if value="$Gate.sector != $Sector and $Gate.sector != $Story.$Sector_Hyperion">
+                <debug_text text="'VCF Hyperion: relocating gate search from %1 to real gate sector %2 via the native route; no scan or chapter completion granted'.[$Sector.knownname,$Gate.sector.knownname]" filter="general"/>
+                <signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates_Next_Sector" param="$Gate.sector"/>
+              </do_if>
+              <do_else>
+              <set_value name="$Investigated" exact="@$Story.$SectorsInvestigated"/>
+              <debug_text text="'VCF Hyperion: repairing current sector search in %1 using real gate %2 to %3; retaining story progress'.[$Sector.knownname,$Gate.debugname,$Gate.exit.sector.knownname]" filter="general"/>
+              <set_value name="$Story.$Sector_Next" exact="$Sector"/><reset_cue cue="md.Story_Hyperion.Ch1_3_Investigate_Gates"/>
+              <signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates" param="$Sector"/>
+              <set_value name="$Story.$SectorsInvestigated" exact="$Investigated"/>
+              </do_else>
+            </do_if>
+            <do_elseif value="not $Gate.exists and (not RouteState.$NoRouteNotice? or player.age ge RouteState.$NoRouteNotice)">
+              <set_value name="RouteState.$NoRouteNotice" exact="player.age + 10min"/>
+              <debug_text text="'VCF Hyperion: no real connected gate route from %1 to %2; quest remains pending, retrying without creating gates or completing objectives'.[$Story.$Sector_Investigation.knownname,$Story.$Sector_Hyperion.knownname]" filter="general"/>
+            </do_elseif>
+          </do_if>
+        </do_if>
+        <reset_cue cue="this"/>
+      </actions>
+    </cue>
+  </cues>
+</mdscript>

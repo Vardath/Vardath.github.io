@@ -1,5 +1,11 @@
 # Version history
 
+## 1.0.1 — 2026-11-10
+
+- Stable native cleanup work list/private counter for immediate callback mutation.
+- Guarded Inventory Collector debug default, HeadHunter absent-pilot expiry and late Emergent Missions rescue cleanup.
+- Nine diffs, 29 unique operations, thirteen pinned references and fifteen source/fault contracts; no reward replay or UI protection changes.
+
 ## 1.0.0 — 2026-11-09
 
 - Added six narrowly scoped XML compatibility patches for errors in the 083003 debug log.

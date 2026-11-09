@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/peopledefinitions">
+    <people id="vardath_hyperion_yaki_crew">
+      <fillpercent min="80" max="80"/>
+      <person role="service" weight="4">
+        <select faction="yaki" tags="[service, veteran]"/>
+      </person>
+      <person role="marine" weight="1">
+        <select faction="yaki" tags="[marine, veteran]"/>
+      </person>
+    </people>
+  </add>
+</diff>

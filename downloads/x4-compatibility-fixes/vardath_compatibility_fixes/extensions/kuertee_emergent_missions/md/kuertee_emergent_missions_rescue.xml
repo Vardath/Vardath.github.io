@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <replace sel="/mdscript//cue[@name='kEMissions_Rescue_UpdateMission']/actions/do_if[@value='(not $OKConditions.$isMissionOk) or (not $OKConditions.$isContinueRescue)']/do_if[@value='not $Count_Rescues']/signal_cue[@cue='kEMissions_Rescue_End2']">
+    <do_if value="kEMissions_Rescue_End2.state == cuestate.waiting"><signal_cue cue="kEMissions_Rescue_End2" check="false"/></do_if>
+  </replace>
+</diff>

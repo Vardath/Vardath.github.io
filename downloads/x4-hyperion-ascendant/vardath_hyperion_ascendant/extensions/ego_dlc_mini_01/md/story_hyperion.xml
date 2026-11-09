@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript//cue[@name='Ch1_3_Investigate_Gates']/actions/do_for_each[@in='$WayHomeTable.{$Sector_Investigation}']">
+    <do_all exact="1"><set_value name="$Investigation_CorrectGate" exact="null"/><run_actions ref="md.VCF_HyperionRoute.ResolveGate" result="$Investigation_CorrectGate">
+      <param name="sector" value="$Sector_Investigation"/><param name="destination" value="$Sector_Hyperion"/>
+    </run_actions>
+    <do_if value="not $WayHomeTable?"><set_value name="$WayHomeTable" exact="table[]"/></do_if>
+    <set_value name="$WayHomeTable.{$Sector_Investigation}" exact="[]"/>
+    <do_if value="$Investigation_CorrectGate.exists and $Investigation_CorrectGate.sector == $Sector_Investigation">
+      <append_to_list name="$WayHomeTable.{$Sector_Investigation}" exact="$Investigation_CorrectGate"/>
+      <!-- A map insertion can make the former entry gate the actual route.
+           Native exclusion of Sector_Last must not discard the only live path. -->
+      <append_to_list name="$Gates_CurrentInvestigationSector" exact="$Investigation_CorrectGate" unique="true"/>
+      <debug_text text="'VCF Hyperion: current route %1 via %2 to %3'.[$Sector_Investigation.knownname,$Investigation_CorrectGate.debugname,$Investigation_CorrectGate.exit.sector.knownname]"/>
+    </do_if>
+    <do_else><set_value name="$Investigation_CorrectGate" exact="null"/></do_else>
+  </do_all></replace>
+  <add sel="/mdscript//cue[@name='Ch1_3_Investigate_Gates_Next_Sector']/actions/set_value[@name='$Sector_Next']" pos="after">
+    <do_if value="$Sector_Next != $Sector_Hyperion">
+      <set_value name="this.$vcf_next_gate" exact="null"/><run_actions ref="md.VCF_HyperionRoute.ResolveGate" result="this.$vcf_next_gate"><param name="sector" value="$Sector_Next"/><param name="destination" value="$Sector_Hyperion"/></run_actions>
+      <do_if value="this.$vcf_next_gate.exists and this.$vcf_next_gate.sector != $Sector_Next and this.$vcf_next_gate.sector != $Sector_Hyperion">
+        <set_value name="$Sector_Next" exact="this.$vcf_next_gate.sector"/>
+      </do_if>
+    </do_if>
+    <do_if value="$Sector_Next == $Sector_Hyperion and @$Investigation_CorrectGate.exit.sector == $Sector_Hyperion">
+      <set_value name="$Gate_HyperionSector_Exit" exact="$Investigation_CorrectGate.exit"/>
+      <set_value name="$Gate_HyperionSector_Entry" exact="$Investigation_CorrectGate"/>
+    </do_if>
+  </add>
+</diff>

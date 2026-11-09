@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="vardath_hyperion_ascendant" name="Vardath - Hyperion Ascendant" author="Vardath" version="100" date="2026-11-10" save="1" sync="false" description="Separate upgraded Hyperion with dedicated weapons, engines and shield. Maintains one player-owned Yaki-crewed copy and repairs original quest gate routing against the actual map without resetting the story.">
+  <dependency version="900"/>
+  <dependency id="ego_dlc_mini_01" name="Hyperion Pack"/>
+  <dependency id="ego_dlc_terran" name="Cradle of Humanity - Yaki crew"/>
+  <dependency id="ws_3835983248" optional="true" name="More X3 Sectors - Reunion"/>
+</content>

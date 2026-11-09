@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install 'lxml>=5,<7'
       - name: Verify pinned sources, native diffs, failure boundaries and installed ZIP
-        run: python downloads/x4-compatibility-fixes/tools/validate.py --zip downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.0.zip --report /tmp/x4-compatibility-static-results.json
+        run: python downloads/x4-compatibility-fixes/tools/validate.py --zip downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.1.zip --report /tmp/x4-compatibility-static-results.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -6,6 +6,7 @@ on:
       - '.github/workflows/audit-all-x4-mods.yml'
       - 'tools/audit-x4-mods.py'
       - 'tools/package-x4-update.py'
+      - 'tools/package-x4-hyperion-update.py'
       - 'downloads/x4-updates/*.zip'
       - 'downloads/x4-universal-cargo-teleport/*_TEST.zip'
       - 'downloads/x4-galactic-occupations/*_DEV.zip'
@@ -24,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify seven extensions, API contracts and update bundle
+      - name: Verify seven existing extensions, API contracts and current update bundle
         run: python3 tools/audit-x4-mods.py
       - name: Check LuaJIT syntax
         run: |

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<macros><macro name="engine_vardath_hyperion_ascendant_macro" class="engine">
+    <component ref="engine_par_l_allround_01_mk1"/>
+    <properties>
+      <identification name="{995510,3}" basename="{20107,3011}" shortname="{20107,3015}" makerrace="paranid" description="{995510,4}" mk="1"/>
+      <boost duration="9" thrust="2" attack="0.25" release="1"/>
+      <travel charge="3" thrust="23" attack="5" release="0.5"/>
+      <thrust forward="15705.0" reverse="51831.0"/>
+      <angular/>
+      <hull max="40000" threshold="0.3"/>
+      <effects>
+        <boosting ref="arg_boost_fx_l"/>
+      </effects>
+      <sounds>
+        <enginedetail ref="enginedetail_ship_l_01"/>
+      </sounds>
+    </properties>
+  </macro>
+</macros>

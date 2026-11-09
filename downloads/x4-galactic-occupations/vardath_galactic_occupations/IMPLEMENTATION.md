@@ -69,3 +69,8 @@ The physical exchange records `shop_invoice` before money, and after fully obser
 TourClock measures active tracked work/docking, excludes overrides/control, caps unobserved intervals and records full completed cruise history. Tour grace takes the larger of two hours, scaled genuine history and current observed pace plus return allowance. Zero-stop waiting cannot create an enormous projection. New order/default settings use twenty sites; accepted booked stop/price fields remain untouched.
 
 RecallCrew checks `npc.npctemplate` in the original native people list, `roleobject`, scheduled transfer and preserved role/controlpost before/after native room/post placement. It never manually destroys a permanent crew actor or creates another. Existing return controllers accept a confirmed unloaded native roster/post return and restore their own flags/tool loans. Native failures remain pending; direct ship orders are untouched. See RECOVERY_POLICY_0.4.0.md for the exact custom evacuation/recall alternatives, forty-four new contracts and required live acceptance.
+
+
+## Capital transport and scanner physics — 0.4.8
+
+See [LOG_REVIEW_0.4.8.md](LOG_REVIEW_0.4.8.md) for the current S/M/L/XL class scope, same-NPC transporter handoff, inactive-physics guards, source/mocked results and complete live checks. Existing player-occupied-ship pause, ten-stop new bookings, accepted older itineraries, cancellation, crew and payment rules remain.

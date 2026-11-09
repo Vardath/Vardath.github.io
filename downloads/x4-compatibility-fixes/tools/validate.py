@@ -10,6 +10,7 @@ import copy
 import hashlib
 import json
 import re
+import struct
 import tempfile
 import unittest
 import urllib.request
@@ -24,6 +25,43 @@ CHECKS = []
 def normalized(data):
     return data.removeprefix(b'\xef\xbb\xbf').replace(b'\r\n', b'\n')
 
+def workshop_source(data, item):
+    """Read XRWS file sizes/names, then locate the target in its CAT/DAT pair."""
+    if len(data) < 20 or data[:4] != b'XRWS':
+        raise ValueError('Invalid Workshop container')
+    version, count, names_size, total_size = struct.unpack_from('>4I', data, 4)
+    header_end = 20 + 4 * count
+    if version != 1 or not 0 < count <= 256 or header_end + names_size > len(data):
+        raise ValueError('Invalid Workshop header')
+    sizes = struct.unpack_from('>' + str(count) + 'I', data, 20)
+    names = data[header_end:header_end + names_size].rstrip(b'\0').decode('utf-8').split('\0')
+    offset = header_end + names_size
+    if len(names) != count or sum(sizes) != total_size or offset + total_size > len(data):
+        raise ValueError('Truncated Workshop payload')
+    files = {}
+    for name, size in zip(names, sizes):
+        if name in files:
+            raise ValueError('Duplicate Workshop file')
+        files[name] = data[offset:offset + size]
+        offset += size
+    for name, catalog in files.items():
+        if not name.endswith('.cat') or name[:-4] + '.dat' not in files:
+            continue
+        payload = files[name[:-4] + '.dat']
+        cursor = 0
+        for line in catalog.decode('utf-8').splitlines():
+            path, size, _timestamp, checksum = line.rsplit(' ', 3)
+            size = int(size)
+            if size < 0 or cursor + size > len(payload):
+                raise ValueError('Truncated Workshop catalog entry')
+            source = payload[cursor:cursor + size]
+            cursor += size
+            if path == item['catalog_path']:
+                if checksum != item['catalog_md5'] or hashlib.md5(source).hexdigest() != checksum:
+                    raise ValueError('Workshop catalog checksum mismatch')
+                return source
+    raise ValueError('Workshop catalog entry not found')
+
 def references(cache):
     result = {}
     for item in SOURCES:
@@ -32,12 +70,7 @@ def references(cache):
             request = urllib.request.Request(item['url'], headers={'User-Agent': 'Vardath-X4-compatibility-validation/1.0'})
             data = urllib.request.urlopen(request, timeout=40).read()
             if item.get('catalog_path'):
-                pattern = re.escape(item['catalog_path'].encode()) + rb' (\d+) (\d+) ([0-9a-f]{32})\n'
-                m = re.search(pattern, data)
-                if not m: raise ValueError('Workshop catalog entry not found')
-                data = data[m.end():m.end()+int(m[1])]
-                if hashlib.md5(data).hexdigest() != item['catalog_md5'] or m[3].decode() != item['catalog_md5']:
-                    raise ValueError('Workshop catalog checksum mismatch')
+                data = workshop_source(data, item)
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_bytes(normalized(data))
         data = normalized(p.read_bytes())
@@ -103,11 +136,32 @@ def expr(source, values):
     source = re.sub(r'\bfalse\b', 'False', source)
     source = re.sub(r'\bnull\b', 'None', source)
     tree = ast.parse(source, mode='eval')
-    allowed = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.Compare, ast.Eq, ast.NotEq, ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Name, ast.Load, ast.Constant, ast.BinOp, ast.Add)
+    allowed = (ast.Expression, ast.BoolOp, ast.And, ast.Or, ast.UnaryOp, ast.Not, ast.Compare, ast.Eq, ast.NotEq, ast.Gt, ast.GtE, ast.Lt, ast.LtE, ast.Name, ast.Load, ast.Constant, ast.BinOp, ast.Add, ast.Sub)
     if any(not isinstance(n, allowed) for n in ast.walk(tree)): raise ValueError('Unresolved or unsupported X4 expression: ' + source)
     return eval(compile(tree, '<source guard>', 'eval'), {'__builtins__': {}}, bindings)
 
 class Contracts(unittest.TestCase):
+    def workshop_fixture(self):
+        parts = [('first.xml', b'<first/>\r\n'), ('md/target.xml', b'<target>exact</target>\r\n')]
+        catalog = ''.join(f'{name} {len(data)} 123 {hashlib.md5(data).hexdigest()}\n' for name, data in parts).encode()
+        payload = b''.join(data for _, data in parts)
+        names = b'ext_01.cat\0ext_01.dat\0'
+        sizes = [len(catalog), len(payload)]
+        container = b'XRWS' + struct.pack('>6I', 1, 2, len(names), sum(sizes), *sizes) + names + catalog + payload
+        return container, {'catalog_path': parts[1][0], 'catalog_md5': hashlib.md5(parts[1][1]).hexdigest()}, parts[1][1]
+
+    def test_workshop_multiple_catalog_entries_extract_exact_target(self):
+        container, item, expected = self.workshop_fixture()
+        self.assertEqual(workshop_source(container + b'optional workshop metadata', item), expected)
+
+    def test_workshop_truncation_and_checksum_mismatch_rejected(self):
+        container, item, _ = self.workshop_fixture()
+        for bad in (container[:12], container[:-1], container[:-2] + b'XX'):
+            with self.subTest(length=len(bad)), self.assertRaises(ValueError):
+                workshop_source(bad, item)
+        with self.assertRaises(ValueError):
+            workshop_source(container, dict(item, catalog_md5='0' * 32))
+
     original = patched = None
     def one(self, path, selector, patched=True):
         values = (self.patched if patched else self.original)[path].xpath(selector)
@@ -147,9 +201,28 @@ class Contracts(unittest.TestCase):
             for state in ('waiting','active','complete','cancelled','disabled'):
                 self.assertEqual(bool(expr(sig.getparent().get('value'),{'Thread_Manager_Cleanup.state':state,'cuestate.waiting':'waiting'})),state=='waiting')
         # Reward-bearing cleanup and other callback bookkeeping are untouched.
-        self.assertEqual(canonical(self.one(p,".//cue[@name='Thread_Manager_Cleanup']")),canonical(self.one(p,".//cue[@name='Thread_Manager_Cleanup']",False)))
+        a=self.one(p,".//cue[@name='Thread_Manager_Cleanup']/actions")
+        b=self.one(p,".//cue[@name='Thread_Manager_Cleanup']/actions",False)
+        unchanged=lambda parent:[canonical(n) for n in parent if not(n.tag=='do_if' and n.get('value')=='$Submissions?')]
+        self.assertEqual(unchanged(a),unchanged(b))
         self.assertEqual(len(self.patched[p].xpath(base+"//set_value[@name='$FailedMissions'][@operation='add']")),1)
         self.assertFalse(self.patched[p].xpath(base+'//reset_cue|'+base+'//reward_player'))
+
+    def test_cleanup_snapshot_survives_synchronous_callback_list_removal(self):
+        p='md/mc_management.xml'
+        snapshot=self.one(p,".//cue[@name='Thread_Manager_Cleanup']//set_value[@name='this.$vcf_cleanup_submissions']")
+        self.assertEqual(snapshot.get('exact'),'$Submissions.clone')
+        loop=self.one(p,".//cue[@name='Thread_Manager_Cleanup']//do_all[@exact='this.$vcf_cleanup_submissions.count']")
+        self.assertEqual(loop.get('counter'),'$vcf_cleanup_index') # native callbacks reuse $i
+        self.assertEqual(loop[0].get('value'),'@this.$vcf_cleanup_submissions.{$vcf_cleanup_index}.$Cue.exists')
+        self.assertEqual(loop[0][0].get('param'),'this.$vcf_cleanup_submissions.{$vcf_cleanup_index}.$Cue')
+        for disappear in (False,True):
+            submissions=['A','B'];work=submissions.copy();visited=[]
+            for i in range(len(work)):
+                alive=not(disappear and work[i]=='B')
+                if alive:
+                    visited.append(work[i]);submissions.remove(work[i]) # native immediate callback
+            self.assertEqual(visited,['A'] if disappear else ['A','B'])
 
     def test_gate_snapshot_excludes_stale_and_preserves_saved_invasion(self):
         p='md/factiongoal_hold_space.xml';base=".//cue[@name='EvaluateState']"
@@ -219,10 +292,45 @@ class Contracts(unittest.TestCase):
             patched=apply_patch(original,E.parse(str(MOD/p)).getroot())
             self.assertEqual(canonical(original),canonical(patched))
 
+    def test_collector_declares_common_handler_debug_value_without_changing_collection(self):
+        p='extensions/fs_inv/aiscripts/inventorycollector.xml'
+        guards=self.patched[p].xpath(".//do_if[@value='not $debugchance?']")
+        self.assertEqual(len(guards),3)
+        for g in guards:
+            for present in (True,False):self.assertEqual(bool(expr(g.get('value'),{'$debugchance?':present})),not present)
+            self.assertEqual([(c.tag,c.get('name'),c.get('exact')) for c in g],[('set_value','$debugchance','0')])
+        q=copy.deepcopy(self.patched[p])
+        for g in q.xpath(".//do_if[@value='not $debugchance?']"):g.getparent().remove(g)
+        self.assertEqual(canonical(q),canonical(self.original[p]))
+
+    def test_headhunter_expiry_handles_missing_pilot_without_bounty_replay(self):
+        p='extensions/chillheadhunter/md/headhuntermd.xml';s=".//cue[@name='WatcherExpire']"
+        g=self.one(p,s+'/conditions/check_value').get('value')
+        for exists,pilot,tag,age,wanted in [(False,False,False,0,True),(True,False,False,0,True),(True,True,False,0,True),(True,True,True,599,False),(True,True,True,600,True)]:
+            # Engine times use seconds; execute the actual condition after native
+            # object/field results and the clock unit have been bound.
+            condition=g.replace('600s','600')
+            self.assertEqual(bool(expr(condition,{'$enemy.exists':exists,'@$enemy.pilot.isclass.npc':pilot,'$enemy.pilot.$attackedtime?':tag,'@$enemy.pilot.$attackedtime':0,'player.age':age})),wanted)
+        actions=self.one(p,s+'/actions')
+        self.assertEqual(actions[-1].tag,'cancel_cue');self.assertEqual(actions[-1].get('cue'),'Watcher')
+        self.assertEqual(len(actions.xpath('./do_if/do_if/remove_value')),2)
+        self.assertEqual(canonical(self.one(p,".//cue[@name='DeathWatcher']")),canonical(self.one(p,".//cue[@name='DeathWatcher']",False)))
+        self.assertFalse(actions.xpath('.//reward_player|.//transfer_money_to_player|.//set_faction_relation'))
+
+    def test_rescue_late_update_does_not_replay_consumed_cleanup(self):
+        p='extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_rescue.xml'
+        condition=self.one(p,".//cue[@name='kEMissions_Rescue_UpdateMission']//do_if[@value='not $Count_Rescues']/do_if")
+        self.assertEqual(condition.get('value'),'kEMissions_Rescue_End2.state == cuestate.waiting')
+        for state in ('waiting','active','complete','cancelled'):
+            self.assertEqual(bool(expr(condition.get('value'),{'kEMissions_Rescue_End2.state':state,'cuestate.waiting':'waiting'})),state=='waiting')
+        self.assertEqual(condition[0].get('check'),'false')
+        self.assertEqual(canonical(self.one(p,".//cue[@name='kEMissions_Rescue_End2']")),canonical(self.one(p,".//cue[@name='kEMissions_Rescue_End2']",False)))
+        self.assertFalse(condition.xpath('.//reset_cue|.//reward_player|.//set_owner'))
+
     def test_protected_ui_inventory_collector_and_companions_untouched(self):
         files={p.relative_to(MOD).as_posix() for p in MOD.rglob('*') if p.is_file()}
         self.assertFalse(any(p.endswith('.lua') or p.startswith(('ui/','assets/','index/')) for p in files))
-        self.assertFalse(any('fs_inv' in p or 'vardath_galactic' in p or 'kopis' in p for p in files))
+        self.assertFalse(any('vardath_galactic' in p or 'kopis' in p for p in files))
         content=E.parse(str(MOD/'content.xml')).getroot()
         self.assertEqual(content.get('save'),'0')
         self.assertEqual(content.find('./dependency[@version]').get('version'),'900')
@@ -237,7 +345,7 @@ def validate(cache, archive=None):
         if not p.exists():continue
         patch=E.parse(str(p)).getroot();schema.assertValid(patch)
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
-    if len(patched)!=6:raise ValueError('Expected exactly six targeted diff files')
+    if len(patched)!=9:raise ValueError('Expected exactly nine targeted diff files')
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -261,7 +369,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.0','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.1','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

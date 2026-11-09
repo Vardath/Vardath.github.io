@@ -1,6 +1,14 @@
-# Galactic Occupations 0.4.7 development build
+# Galactic Occupations 0.4.8 development build
 
-Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 9 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 10 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.8: capital tours and scanner physics
+
+Galactic Sightseeing Tour now accepts S, M, L and XL ships with spare crew berths and a compatible station dock or pier. Visible L/XL services use actual ship/station transporter waypoints: the booked NPC walks to the source, transfers to the receiving room, and must be confirmed aboard or ashore before progression. Capacity remains up to ten passengers. New bookings retain the ten-stop default, and existing itineraries, fares, interruptions and cancellation rules persist.
+
+The scanner checks active visible attention, loaded geometry and player-sector context before surface queries, including after movement. Inactive modules use the existing remote survey path when enabled. No turret, ledger or menu layouts change. Companion Forge/Astrid, Builder, habitat, drone and teleport sources remain unchanged.
+
+The latest supplied log confirms 623 uniquely keyed payments totalling 994,060,000 Cr, each matching its recorded balance change. 459 Python contracts and 91 Lua mocks pass; the new native transporter, physics and save/load behavior needs live X4 acceptance. [Full log findings, limits and live checks](LOG_REVIEW_0.4.8.md). The separate Compatibility 1.0.1 and Hyperion Ascendant packages address the other bounded errors and quest/ship request.
 
 ## 0.4.7: hacker offices, signal results and worker scheduling
 

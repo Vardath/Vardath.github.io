@@ -1,4 +1,6 @@
-# Compatibility review and acceptance — 1.0.0
+# Historical compatibility review — 1.0.0
+
+Current findings and checks: [REVIEW_1.0.1.md](REVIEW_1.0.1.md). Source-availability statements below describe the earlier review.
 
 ## Evidence and limits
 

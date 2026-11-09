@@ -109,7 +109,7 @@ for folder in EXTS:
     archive = top / f"{mod.name}_TEST.zip"
     archive_prefix = f"{mod.name}/"
     if folder == 'x4-galactic-occupations':
-        archive=top/'Galactic_Occupations_0.4.7_DEV.zip'
+        archive=top/'Galactic_Occupations_0.4.8_DEV.zip'
         archive_prefix='extensions/'+archive_prefix
     try:
         with ZipFile(archive) as z:
@@ -146,7 +146,7 @@ for folder,(mod,items) in files_by_mod.items():
     # Distinguish scripts that only check XML structure vs genuine engine tests.
     report["mods"][folder]["runtime_verified"] = False
 
-bundle=subprocess.run([sys.executable,str(ROOT/'tools/package-x4-update.py'),'--check'],capture_output=True,text=True)
+bundle=subprocess.run([sys.executable,str(ROOT/'tools/package-x4-hyperion-update.py'),'--check'],capture_output=True,text=True)
 report['update_bundle']={'returncode':bundle.returncode,'output':bundle.stdout+bundle.stderr}
 if bundle.returncode: note('errors','update-bundle','Combined update ZIP failed integrity checks')
 report['command_provenance']=api['provenance']

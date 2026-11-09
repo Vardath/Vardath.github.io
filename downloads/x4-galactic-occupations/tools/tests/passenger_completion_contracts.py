@@ -22,7 +22,7 @@ class Seq(list):
 class PassengerVM(BaseVM):
     def __init__(self,job=2,count=2):
         super().__init__()
-        self.ship=Obj('ship',exists=True,knownname='Taxi',isplayerowned=True)
+        self.ship=Obj('ship',exists=True,knownname='Taxi',isplayerowned=True,isclass=Obj('ship class',ship_s=False,ship_m=True,ship_l=False,ship_xl=False))
         self.ship.sector=SECTOR;self.player_sector=SECTOR
         self.station=Obj('station',exists=True,knownname='Destination',isoperational=True)
         self.shiproom=Obj('shiproom',exists=True,context=self.ship)
@@ -57,6 +57,7 @@ class PassengerVM(BaseVM):
         return value
 
     def expr(self,text):
+        text=text.replace('$ship.isclass.[class.ship_l, class.ship_xl]', '($ship.isclass.ship_l or $ship.isclass.ship_xl)')
         text=text.replace(MD,S)
         self.vars['mock_player_sector']=self.player_sector
         # These legacy cases test physical-room handoffs while the player observes

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.scanner" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
   </params>
@@ -37,7 +37,7 @@
           <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_retry" exact="player.age + 10min" />
           <continue />
         </do_if>
-        <do_if value="(not this.ship.order.$simulatescans? or this.ship.order.$simulatescans) and ($module.sector != player.sector or not $module.isphysicsready)">
+        <do_if value="(not this.ship.order.$simulatescans? or this.ship.order.$simulatescans) and ($module.sector != player.sector or $module.attention lt attention.visible or not $module.isphysicsready)">
           <set_value name="$remotelevel" exact="$module.scannedlevel" />
           <set_value name="$remotepct" exact="$module.revealedpercentage" />
           <run_script name="'vardath.go.survey.remote'" result="$remotechanged">
@@ -57,12 +57,12 @@
         </do_if>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Finding a visible survey surface on ' + $module.knownname" />
         <do_all exact="10">
-          <do_if value="$module.isphysicsready">
+          <do_if value="$module.isphysicsready and $module.attention ge attention.visible and $module.sector == player.sector">
             <break />
           </do_if>
           <wait exact="2s" />
         </do_all>
-        <do_if value="not $module.isphysicsready">
+        <do_if value="not $module.isphysicsready or $module.attention lt attention.visible or $module.sector != player.sector">
           <set_value name="$geometrymissing" exact="true" />
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Survey needs loaded component collision geometry; moving to another target'" />
           <do_if value="not player.entity.$vgo_objects.{$module}?">
@@ -73,7 +73,7 @@
         </do_if>
         <set_value name="$scanned" exact="false" />
         <do_all exact="3" counter="$attempt">
-          <do_if value="not $module.isoperational or $target.ishostileto.{this.ship}">
+          <do_if value="not $module.isoperational or not $module.isphysicsready or $module.attention lt attention.visible or $module.sector != player.sector or $target.ishostileto.{this.ship}">
             <break />
           </do_if>
           <do_if value="$attempt == 1">
@@ -103,7 +103,7 @@
           <set_value name="$sample_started" exact="player.age" />
           <set_value name="$valid" exact="true" />
           <do_all exact="10">
-            <do_if value="not $module.isoperational or not $module.isphysicsready or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 800m + ($module.size + this.ship.size) / 2 or $target.ishostileto.{this.ship}">
+            <do_if value="not $module.isoperational or not $module.isphysicsready or $module.attention lt attention.visible or $module.sector != player.sector or this.ship.sector != $module.sector or this.ship.distanceto.{$module} gt 800m + ($module.size + this.ship.size) / 2 or $target.ishostileto.{this.ship}">
               <set_value name="$valid" exact="false" />
               <break />
             </do_if>

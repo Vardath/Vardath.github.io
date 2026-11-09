@@ -51,5 +51,29 @@
     "path": "libraries/diff.xsd",
     "sha256_lf": "829d29c760a8fbb78ba38b3b3b179468f85091a3d933c4869b28d9758aa3bc3c",
     "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/diff.xsd"
+  },
+  {
+    "path": "extensions/fs_inv/aiscripts/inventorycollector.xml",
+    "sha256_lf": "8cfcdf4da064b55082544ba076b82768e167389c31e56dc0d39daa16b5b94a6a",
+    "url": "https://cdn.steamusercontent.com/ugc/13275474660171401458/889DDE1F0B2394E5A5207D0A7F9B9E3CD3904311/",
+    "workshop": "2063916598",
+    "catalog_path": "aiscripts/inventorycollector.xml",
+    "catalog_md5": "7f6f9fd1a7137ea4b9e4368b6478a2ca"
+  },
+  {
+    "path": "extensions/chillheadhunter/md/headhuntermd.xml",
+    "sha256_lf": "576e29ac46fd8c0bc11bab26a4789fe02c9acbf717a7bdca8956dfbaa8985903",
+    "url": "https://cdn.steamusercontent.com/ugc/10551348141176352847/83EA64B30EDE5BA1A061204F3DAD3AF724F5BA78/",
+    "workshop": "2992233767",
+    "catalog_path": "md/headhuntermd.xml",
+    "catalog_md5": "d7fbc7da1f934195999039d983a92949"
+  },
+  {
+    "path": "extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_rescue.xml",
+    "sha256_lf": "9c259afb67a589afe6634b86fe794c6f0806bedad22305b45ee9833e9fa8f272",
+    "url": "https://cdn.steamusercontent.com/ugc/9586465453319108855/7C4802FF7B21FADAC5A675D5C6D2C8B2227A1A68/",
+    "workshop": "3627916728",
+    "catalog_path": "md/kuertee_emergent_missions_rescue.xml",
+    "catalog_md5": "4422060b6a88524f0bab23c63cc38be8"
   }
 ]

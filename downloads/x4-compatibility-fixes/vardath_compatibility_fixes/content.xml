@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="100" date="2026-11-09" save="0" sync="false" description="Targeted X4 9.00 mission, trade, gate, ammo, academy and HQ conversation guards. No UI replacement.">
+<?xml version='1.0' encoding='utf-8'?>
+<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="101" date="2026-11-10" save="0" sync="false" description="Targeted X4 9.00 mission, trade, gate, ammo, academy, HQ, Inventory Collector and Head Hunter guards. No UI replacement.">
   <dependency version="900"/>
   <dependency id="ws_1683358279" optional="true" name="Fly-by Looting"/>
   <dependency id="ws_2961007180" optional="true" name="Research Blueprints Mod"/>
   <dependency id="ws_3715175855" optional="true" name="GalaxyTrader MK3"/>
   <dependency id="GalaxyTraderMK3" optional="true" name="GalaxyTrader MK3 manual release"/>
   <text language="44" name="Vardath Compatibility Fixes" description="Targeted X4 9.00 compatibility guards; keep Protected UI and Inventory Collector enabled."/>
-</content>
+<dependency id="ws_2063916598" optional="true" name="Inventory Collector"/><dependency id="ws_2992233767" optional="true" name="Head Hunter"/><dependency id="ws_3627916728" optional="true" name="Emergent Missions"/></content>

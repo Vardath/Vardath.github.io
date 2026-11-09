@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.8 — 2026-11-10
+
+- L/XL sightseeing eligibility and real same-NPC transporter-point boarding/departure, preserving capacity, bookings and fare gates.
+- Stable first station-arrival clock, rollback on refused transfer, exclusion of other docked ships and protection for ordinary crew/player actors.
+- Station scanner visible-attention/geometry/sector guards before surface and LOS work; existing remote simulation retained.
+- 459 Python contracts and unchanged Lua/vanilla UI integration; native execution requires live acceptance.
+
+
 ## 0.4.7 — 2026-11-09
 
 - Added positive, versioned waits around the logged crystal worker fast-return chain and new-iteration boundary. Preserved runtime42 and saved work; no mass worker restart or payment changes.

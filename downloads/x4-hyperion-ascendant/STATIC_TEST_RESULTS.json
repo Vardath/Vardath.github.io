@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "result": "pass",
+  "reference_files": 8,
+  "xml_files": 17,
+  "diffs": 5,
+  "native_story_selectors": 2,
+  "tests": 15,
+  "runtime_tested": false,
+  "limitations": [
+    "No X4 executable, user save or effective installed mod merge available.",
+    "Native pathfinding, physical ship/weapon/crew behavior and current-stage recovery require live acceptance."
+  ]
+}

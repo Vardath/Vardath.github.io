@@ -124,6 +124,11 @@ Attach the new complete debug log and the observed ship ID/stage for any failed 
 
 Test an old/default worker with an absent or present-null cached sector list; it must search and travel without a `.count` lookup error. Check actual reached sectors in `GO sector travel:`. Confirm the one-off hacker order produces no `default`/`immediate` parser warning. Keep actual NPC/context/full-manifest gates during private-room/transport-waypoint boarding and disembarkation. Activity income must display 5,000,000 Cr for the recorded tour, not 500,000,000. Check Cargo Teleport's zero-transfer native failure receives at most one docking retry and no duplicate goods or payment.
 
-## Local validation for this build
+## Historical local validation for 0.3.6
 
 299 Python contracts and 78 Lua mocks pass. Forty-four new cases execute delayed lifecycle/native-boundary recovery. Thirteen new cases exercise independent paid-visit and import recovery. Thirty-one new cases cover the log-11 broker/roster/room/upgrade boundaries. This includes 19 native docking/routing cases, 23 crew retail cases and nine persistent service-invoice cases. The actual five native patch selectors and native 9.00 diff grammar are checked separately. Seven source/ZIP packages and the current six-mod bundle are byte-checked. These are source/mock/packaging checks. All live role interface, physical action, save/load, installed load-order and full-loop acceptance tests above remain necessary in X4; the log confirms only the specific earlier events recorded in LOG_REVIEW_0.3.6.md.
+
+
+## Capital tours — 0.4.8 acceptance
+
+See [LOG_REVIEW_0.4.8.md](LOG_REVIEW_0.4.8.md) for the current S/M/L/XL class scope, same-NPC transporter handoff, inactive-physics guards, source/mocked results and complete live checks. Existing player-occupied-ship pause, ten-stop new bookings, accepted older itineraries, cancellation, crew and payment rules remain.
