@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Native construction orders and drone rules already support L builders.
+       Keep the build-purpose and faction-relation filters of this request. -->
+  <replace sel="/aiscript//find_ship[@name='$constructionvessels'][@primarypurpose='purpose.build'][@class='class.ship_xl']/@class">[class.ship_l, class.ship_xl]</replace>
+</diff>

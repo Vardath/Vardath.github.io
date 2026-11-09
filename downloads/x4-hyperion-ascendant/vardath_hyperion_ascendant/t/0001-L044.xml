@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <language id="44">
   <page id="995510" title="Hyperion Ascendant">
     <t id="1">Hyperion Ascendant</t>
@@ -7,5 +7,5 @@
     <t id="5">Ascendant Shield</t><t id="6">Reinforced large shield with rapid recharge.</t>
     <t id="7">Ascendant Main Battery</t><t id="8">Dedicated Hyperion battery with greatly enhanced projectile damage. Normal Hyperion weapons are unchanged.</t>
     <t id="9">Ascendant Beam Turret</t><t id="10">Dedicated medium beam turret with enhanced damage. Normal turret modes remain available.</t>
-  </page>
+  <t id="11">Ascendant S-Ship Hangar</t><t id="12">Internal storage for 1,000 small ships, served by the existing Hyperion landing pads.</t></page>
 </language>

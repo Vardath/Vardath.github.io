@@ -8,5 +8,5 @@
     <entry name="bullet_vardath_hyperion_ascendant_macro" value="extensions\vardath_hyperion_ascendant\assets\fx\weaponfx\macros\bullet_vardath_hyperion_ascendant_macro"/>
     <entry name="turret_vardath_hyperion_ascendant_macro" value="extensions\vardath_hyperion_ascendant\assets\props\weaponsystems\energy\macros\turret_vardath_hyperion_ascendant_macro"/>
     <entry name="bullet_vardath_hyperion_ascendant_beam_macro" value="extensions\vardath_hyperion_ascendant\assets\fx\weaponfx\macros\bullet_vardath_hyperion_ascendant_beam_macro"/>
-  </add>
+  <entry name="storage_vardath_hyperion_container_macro" value="extensions\vardath_hyperion_ascendant\assets\props\StorageModules\macros\storage_vardath_hyperion_container_macro"/><entry name="storage_vardath_hyperion_solid_macro" value="extensions\vardath_hyperion_ascendant\assets\props\StorageModules\macros\storage_vardath_hyperion_solid_macro"/><entry name="storage_vardath_hyperion_liquid_macro" value="extensions\vardath_hyperion_ascendant\assets\props\StorageModules\macros\storage_vardath_hyperion_liquid_macro"/><entry name="shipstorage_vardath_hyperion_s_macro" value="extensions\vardath_hyperion_ascendant\assets\props\SurfaceElements\macros\shipstorage_vardath_hyperion_s_macro"/></add>
 </diff>

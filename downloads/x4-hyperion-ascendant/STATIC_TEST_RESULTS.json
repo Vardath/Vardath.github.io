@@ -1,14 +1,15 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "result": "pass",
-  "reference_files": 15,
-  "xml_files": 17,
-  "diffs": 5,
+  "reference_files": 30,
+  "xml_files": 24,
+  "diffs": 7,
   "native_story_selectors": 2,
-  "tests": 22,
+  "tests": 42,
   "runtime_tested": false,
   "limitations": [
     "No X4 executable, user save or effective installed mod merge available.",
-    "Native pathfinding, physical ship/weapon/crew behavior and current-stage recovery require live acceptance."
+    "Native ship-module attachment, S-ship storage/launch, L construction, regeneration, physical combat and save/load require live acceptance.",
+    "Legacy storage is retained; additional cargo/S capacity may exceed the nominal target. Existing universal cargo is preserved and requires separate capacity review."
   ]
 }

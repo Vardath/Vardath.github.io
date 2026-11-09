@@ -73,5 +73,81 @@
     "key": "previous_engine",
     "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-hyperion-ascendant/vardath_hyperion_ascendant/assets/props/engines/macros/engine_vardath_hyperion_ascendant_macro.xml",
     "sha256_lf_finalnewline": "cc55e2e70194403b2238e24c4fc539acaaea64c049ccbd3aff20bb199a46004c"
+  },
+  {
+    "key": "defaults",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/defaults.xml",
+    "sha256_lf_finalnewline": "38913a81c6e1af82882185efd05d10b9febb37580f464f9da1d576f9b9621850"
+  },
+  {
+    "key": "unit_rules",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/loadoutrules.xml",
+    "sha256_lf_finalnewline": "87b3e85a78d24e228fa2f496bf9cbe0ea0a1f75a3bf355a78c580f0b1f0267a0"
+  },
+  {
+    "key": "builder_hull",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/assets/units/size_xl/macros/ship_arg_xl_builder_01_a_macro.xml",
+    "sha256_lf_finalnewline": "6d1c7038c40c97551add9eb3fd0e0681685b2ad31cf2218d15b9e192ec4d7896"
+  },
+  {
+    "key": "build_deploy",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/aiscripts/order.build.deploy.xml",
+    "sha256_lf_finalnewline": "f93e4a5b83b67fd3e2dd30e6af0f7526b347954b0df2217ac93af24441c3018b"
+  },
+  {
+    "key": "find_build_task",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/aiscripts/order.build.find.task.xml",
+    "sha256_lf_finalnewline": "01e7695d2cb5803a2b4dbb620de1e6f9d818cdbac4a32f845c43edbb2ab97fbb"
+  },
+  {
+    "key": "move_builder",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/aiscripts/move.buildership.xml",
+    "sha256_lf_finalnewline": "d5827f34e661bc98a71bbbf2111c9cfbf1dbf52d428ced49942f8b678f9cf36c"
+  },
+  {
+    "key": "buildstorage",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/aiscripts/build.buildstorage.xml",
+    "sha256_lf_finalnewline": "ac8fc7ac506909023d055abe02070b2e36c3d1d62e4d8f734751fd356e743285"
+  },
+  {
+    "key": "interact",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/ui/addons/ego_interactmenu/menu_interactmenu.lua",
+    "sha256_lf_finalnewline": "e5eed50f81a2c3571761da9b95bb122bd4ec31b71df8edb93df4b34404cb9509",
+    "format": "text"
+  },
+  {
+    "key": "texts",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/t/0001-l044.xml",
+    "sha256_lf_finalnewline": "e5f96712998b51727f8e904958935f2da3b628f3405e84e8210c56a2e743f507"
+  },
+  {
+    "key": "scriptprops",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/scriptproperties.xml",
+    "sha256_lf_finalnewline": "d9a9b8d810d94799542be3a7500615e2fa72bedb68cd6f13cc29d0c178a9a41c"
+  },
+  {
+    "key": "kopis_ship",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/3a5a1d161fdce2cd2496bfbe421e1a7b751f55ac/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml",
+    "sha256_lf_finalnewline": "2fe057203fe4609d6ddb5f9c18e2759c6e89b71911b706fd10e6e6b8e032ee25"
+  },
+  {
+    "key": "kopis_container",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/3a5a1d161fdce2cd2496bfbe421e1a7b751f55ac/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/units/size_s/macros/storage_vardath_kopis_container_macro.xml",
+    "sha256_lf_finalnewline": "606c94ebe76ab6bebe94e3a09374e30c9994f6f3e8b38d807f3651bcc64b63e9"
+  },
+  {
+    "key": "kopis_solid",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/3a5a1d161fdce2cd2496bfbe421e1a7b751f55ac/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/units/size_s/macros/storage_vardath_kopis_solid_macro.xml",
+    "sha256_lf_finalnewline": "30ee251c795798d71c1d34419aecf8f4100c002ddd1effd626a394e4267bd0d8"
+  },
+  {
+    "key": "kopis_liquid",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/3a5a1d161fdce2cd2496bfbe421e1a7b751f55ac/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/units/size_s/macros/storage_vardath_kopis_liquid_macro.xml",
+    "sha256_lf_finalnewline": "8ff93dbdf6d394970bc66264abe23cd27217661fd6a3bdcb03f237f566a300ad"
+  },
+  {
+    "key": "builder_contracts",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/3a5a1d161fdce2cd2496bfbe421e1a7b751f55ac/downloads/x4-living-factions-builders/vardath_living_factions_builders/md/vardath_builder_contracts.xml",
+    "sha256_lf_finalnewline": "3127f379fd106b207cb98a270d90f18cb3b8a523e0cb4a9df5f6019d1502b2e2"
   }
 ]

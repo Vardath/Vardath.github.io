@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<macros>
+  <macro name="storage_vardath_hyperion_container_macro" class="storage">
+    <component ref="generic_storage"/>
+    <properties>
+      <identification makerrace="paranid"/>
+      <cargo max="2000000" tags="container"/>
+      <hull integrated="1"/>
+    </properties>
+  </macro>
+</macros>

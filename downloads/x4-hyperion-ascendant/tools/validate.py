@@ -8,6 +8,7 @@ import argparse,ast,copy,hashlib,json,re,tempfile,unittest,urllib.request
 from pathlib import Path
 from zipfile import ZipFile
 from lxml import etree as E
+import services_contracts
 
 BASE=Path(__file__).resolve().parents[1]
 MOD=BASE/'vardath_hyperion_ascendant'
@@ -23,7 +24,7 @@ def references(cache):
             p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(urllib.request.urlopen(req,timeout=40).read())
         b=normalize(p.read_bytes())
         if hashlib.sha256(b).hexdigest()!=item['sha256_lf_finalnewline']:raise ValueError('Reference mismatch: '+item['key'])
-        out[item['key']]=E.fromstring(b)
+        out[item['key']]=b.decode('utf-8') if item.get('format')=='text' else E.fromstring(b)
     return out
 def canonical(x):
     x=copy.deepcopy(x)
@@ -112,7 +113,7 @@ class Contracts(unittest.TestCase):
         components=set(REFS['base_components'].xpath('//entry/@name'))|set(REFS['dlc_components'].xpath('//entry/@name'))
         external=set(REFS['base_macros'].xpath('//entry/@name'))|set(REFS['dlc_macros'].xpath('//entry/@name'))
         custom={x.get('name') for p in MOD.glob('assets/**/*.xml') for x in E.parse(str(p)).xpath('/macros/macro')}
-        self.assertEqual(len(custom),7)
+        self.assertEqual(len(custom),11)
         for p in MOD.glob('assets/**/*.xml'):
             x=E.parse(str(p));m=x.find('macro');self.assertIn(m.find('component').get('ref'),components)
             for n in m.findall('./connections/connection/macro'):self.assertTrue(n.get('ref') in custom|external,n.get('ref'))
@@ -266,13 +267,15 @@ def validate(cache,archive=None):
         x=E.parse(str(p))
         if x.getroot().tag=='diff':schema.assertValid(x);diffs+=1
     apply_story_patch(REFS['story'])
-    result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(Contracts))
+    services_contracts.REFS=REFS
+    suite=unittest.TestSuite([unittest.defaultTestLoader.loadTestsFromTestCase(Contracts),unittest.defaultTestLoader.loadTestsFromTestCase(services_contracts.ServiceContracts)])
+    result=unittest.TextTestRunner(verbosity=2).run(suite)
     if not result.wasSuccessful():raise ValueError('Hyperion source contracts failed')
     if archive:
         with ZipFile(archive) as z:
             expected={'extensions/'+MOD.name+'/'+p.relative_to(MOD).as_posix():p.read_bytes() for p in MOD.rglob('*') if p.is_file()}
             if z.testzip() or set(z.namelist())!=set(expected) or any(z.read(p)!=b for p,b in expected.items()):raise ValueError('Archive/source mismatch')
-    return {'version':'1.0.1','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Native pathfinding, physical ship/weapon/crew behavior and current-stage recovery require live acceptance.']}
+    return {'version':'1.0.2','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Native ship-module attachment, S-ship storage/launch, L construction, regeneration, physical combat and save/load require live acceptance.','Legacy storage is retained; additional cargo/S capacity may exceed the nominal target. Existing universal cargo is preserved and requires separate capacity review.']}
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);a=parser.parse_args()
     with tempfile.TemporaryDirectory() as tmp:report=validate(a.source_cache or Path(tmp),a.zip)

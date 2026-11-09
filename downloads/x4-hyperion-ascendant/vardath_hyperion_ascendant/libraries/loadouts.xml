@@ -25,8 +25,8 @@
     <ammunition>
       <ammunition macro="countermeasure_flares_01_macro" exact="20"/>
       <unit macro="ship_gen_xs_repairdrone_01_a_macro" exact="8"/>
-      <unit macro="ship_gen_xs_cargodrone_empty_01_a_macro" exact="2"/>
-    </ammunition>
+      <unit macro="ship_gen_xs_cargodrone_empty_01_a_macro" exact="20"/>
+    <unit macro="ship_gen_xs_buildingdrone_01_a_macro" exact="30"/></ammunition>
     <software>
       <software ware="software_dockmk2"/>
       <software ware="software_flightassistmk1"/>

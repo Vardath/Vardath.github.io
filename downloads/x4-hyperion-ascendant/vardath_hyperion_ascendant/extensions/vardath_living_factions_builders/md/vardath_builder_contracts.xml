@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Optional existing payroll: still requires a real assigned construction
+       module, an NPC station and all original time/relation/payment guards. -->
+  <replace sel="/mdscript//find_ship[@name='$Builders'][@owner='faction.player'][@class='class.ship_xl']/@class">[class.ship_l, class.ship_xl]</replace>
+</diff>

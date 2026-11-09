@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_hyperion_ascendant" name="Vardath - Hyperion Ascendant" author="Vardath" version="101" date="2026-11-10" save="1" sync="false" description="Separate upgraded Hyperion with dedicated weapons, engines and shield. Maintains one player-owned Yaki-crewed copy and repairs original quest gate routing against the actual map without resetting the story.">
+<content id="vardath_hyperion_ascendant" name="Vardath - Hyperion Ascendant" author="Vardath" version="102" date="2026-11-10" save="1" sync="false" description="Upgraded L Hyperion builder with 700 crew berths, large cargo and S-ship storage, slow consumable/drone replenishment, Yaki replacement maintainer and current-map quest recovery. Trade goods do not regenerate.">
   <dependency version="900"/>
   <dependency id="ego_dlc_mini_01" name="Hyperion Pack"/>
   <dependency id="ego_dlc_terran" name="Cradle of Humanity - Yaki crew"/>
   <dependency id="ws_3835983248" optional="true" name="More X3 Sectors - Reunion"/>
-</content>
+<dependency id="vardath_living_factions_builders" optional="true" version="175" name="Optional Living Factions and Builders payroll integration"/></content>
