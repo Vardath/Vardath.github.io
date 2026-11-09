@@ -1,6 +1,14 @@
-# Galactic Occupations 0.4.6 development build
+# Galactic Occupations 0.4.7 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 9 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.7: hacker offices, signal results and worker scheduling
+
+Hacker menus now inspect the installed native security/engineering room definitions as well as existing rooms. A selected missing office is prepared with real native assets only after actual docking; actual panel slots, tool costs, effect verification and same-crew return remain mandatory. Old partial catalogues refresh. Extension-created rooms have guarded cleanup; ordinary station rooms and all UI files are unchanged.
+
+Signal surveys now find assigned off-screen market contacts and the native NPC registry, and report accepted surveys, confirmed native discounts and actual visible offers in the existing General logbook/debug log. A request is distinguished from a generated offer; black-market access still requires the actual native delivery job. Crystal worker bookkeeping now yields between fast-return calls. Existing bookings, stock, invoices, crews, orders and the ten-stop tour default remain.
+
+The new log confirms **66,010,000 Cr** across 192 matching payment records. Its logged worker path now has explicit yields, but the crash cause cannot be established: the game continues for another 3,986 game seconds and the file contains no fatal/crash stack. [Full findings, constraints and live checks](LOG_REVIEW_0.4.7.md). 440 Python contracts and 91 Lua mocks pass; new native office/panel execution requires live X4 testing. Companion sources remain unchanged.
 
 ## 0.4.6: spacesuit context reset and station NPC guard
 

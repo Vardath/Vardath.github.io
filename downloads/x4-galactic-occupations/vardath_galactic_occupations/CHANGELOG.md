@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.7 — 2026-11-09
+
+- Added positive, versioned waits around the logged crystal worker fast-return chain and new-iteration boundary. Preserved runtime42 and saved work; no mass worker restart or payment changes.
+- Hacker catalogue now inspects installed native security/infrastructure room macros for supported panel types, without creating rooms while browsing. Versioned partial caches refresh. Eligible dockable faction stations may provide a native dynamic office even before one is instantiated.
+- After actual docking, prepare only the selected missing compatible native office with verified corridor/room definitions and fresh output references. Refresh actual rooms before panel probing. Track only extension-created interiors; retain active/player-occupied rooms, release unused persistence, and never force-remove an NPC-occupied room. Existing native offices are unchanged.
+- Resolve real assigned/off-screen black-market NPCs and native registry mappings. Added accepted-leak, actual native discount-event and delayed visible-offer/contact diagnostics to the existing logbook/debug log. Real native delivery and unlock requirements remain; no fabricated traders or auto-accepted/completed missions.
+- Added 25 source-executing fault-injection cases: 440 Python contracts and 91 unchanged Lua mocks pass. Supplied log verifies 66,010,000 Cr in 192 balance-matched receipts. Crash attribution remains unknown without a crash stack; native office/panel integration requires live testing. See LOG_REVIEW_0.4.7.md.
+
 ## 0.4.6 — 2026-11-09
 
 - Replaced the consumed one-shot spacesuit retry with a bounded native original-ship context reset, real teleport-event acknowledgement, single emergency suit exit and polled suit/control/room/transit verification.

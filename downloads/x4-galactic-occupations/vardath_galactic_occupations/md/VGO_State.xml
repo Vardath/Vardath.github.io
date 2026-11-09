@@ -1134,6 +1134,11 @@
         <write_to_logbook category="general" title="'Galactic Occupations 0.4.1: station signals and passenger recovery'" text="'Signal scanner now surveys modules/leaks with timed off-screen alternatives, station coupons/trade updates and native job/black-market discovery. Repaired disconnected NPC boarding/departure and twenty-minute crew/tool return. Guarded spacesuit recovery follows a confirmed vanilla exit only. Existing bookings, tour stops and native fare receipts retained. New native paths require live confirmation.'" />
       </actions>
     </cue>
+    <cue name="NoticeV47">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.4.7: hacker offices and signal results'" text="'Hacker discovery now checks installed native security/engineering room definitions, prepares the selected real office after docking when needed, and verifies actual panels before operation. Signal surveys now find assigned off-screen market contacts and report actual visible offers and native discount events. Crystal worker bookkeeping yields between fast-return calls. Existing passenger bookings, invoices, crew and UI remain. New native office paths still require in-game verification.'" />
+      </actions>
+    </cue>
     <cue name="NoticeV46">
       <actions>
         <write_to_logbook category="general" title="'Galactic Occupations 0.4.6: spacesuit handoff recovery'" text="'A stalled confirmed Use Spacesuit request now gets one original-ship context reset, a native teleport confirmation, one suit exit and observed control verification. A failed exit has one bounded return to the original ship. Recovery cancels on changed player/source context and never alters ship orders, crew or equipment. General logbook and debug snapshots distinguish verified suit control, ship return and blocked handoff. New native execution still requires live confirmation.'" />

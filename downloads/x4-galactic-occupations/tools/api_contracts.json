@@ -3082,6 +3082,83 @@
       ],
       "kind": "action"
     },
+    "create_dynamic_interior": {
+      "attributes": {
+        "autoadvanceseed": {
+          "doc": "Auto-advance seed used for interior generation.",
+          "type": "autoadvancerandomseed"
+        },
+        "corridor": {
+          "doc": "Corridor macro",
+          "required": true,
+          "type": "expression"
+        },
+        "corridorname": {
+          "type": "lvaluename"
+        },
+        "door": {
+          "doc": "Door macro slot or connection name within corridor (random door is selected if not supplied)",
+          "type": "expression"
+        },
+        "interiorname": {
+          "type": "lvaluename"
+        },
+        "module": {
+          "doc": "Optional module within the object where the interior should be added",
+          "type": "expression"
+        },
+        "name": {
+          "doc": "Name to be applied to new interior (use format '{page,line}' as string for full localisation support, including support for saving and loading with a different language)",
+          "type": "expression"
+        },
+        "navmeshoverride": {
+          "doc": "ID of the navmesh generation parameter overrides as defined in parameters.xml in the <navmesh_overrides>/<by_id> nodes",
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object to add the interior to",
+          "required": true,
+          "type": "expression"
+        },
+        "persistent": {
+          "doc": "Is the interior persistent in low attention? (defaults to false)",
+          "type": "booleanexpression"
+        },
+        "private": {
+          "doc": "Are the dynamic interior rooms private? (defaults to false)",
+          "type": "booleanexpression"
+        },
+        "renderoutside": {
+          "doc": "Is this interior also rendered when the player is outside of it? (defaults to false)",
+          "type": "boolean"
+        },
+        "room": {
+          "doc": "Room macro",
+          "required": true,
+          "type": "expression"
+        },
+        "roomname": {
+          "type": "lvaluename"
+        },
+        "roomtype": {
+          "type": "roomtypeexprlookup"
+        },
+        "seed": {
+          "doc": "Fixed seed used for interior generation.",
+          "type": "fixedrandomseed"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "doc": "Create and add a dynamic interior to an object",
+      "source": {
+        "commit": "e3e8a345e5624db118bff3eb171b60b0993fcc2c",
+        "file": "common.xsd",
+        "line": 25471
+      }
+    },
     "create_group": {
       "attributes": {
         "chance": {
@@ -9406,6 +9483,52 @@
         "line": 24489
       }
     },
+    "get_room_definition": {
+      "attributes": {
+        "autoadvanceseed": {
+          "doc": "Auto-advance seed used for room selection where multiple are available.",
+          "type": "autoadvancerandomseed"
+        },
+        "doors": {
+          "doc": "Result doors (list of macroslots for a single macro, a list of lists of macroslots for multiple macros, nothing if only references are returned)",
+          "type": "lvalueexpression"
+        },
+        "macro": {
+          "doc": "Result macro (list if 'multiple' is true. Less performant than 'reference')",
+          "type": "lvalueexpression"
+        },
+        "multiple": {
+          "doc": "Find multiple definitions? If true, the result values return a list. If false (default), the results returns a single value.",
+          "type": "boolean"
+        },
+        "race": {
+          "doc": "Race",
+          "type": "raceexprlookup"
+        },
+        "reference": {
+          "doc": "Result module reference (list if 'multiple' is true)",
+          "type": "lvalueexpression"
+        },
+        "seed": {
+          "doc": "Fixed seed used for room selection where multiple are available.",
+          "type": "fixedrandomseed"
+        },
+        "tags": {
+          "doc": "Specification tag or list of tags",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "doc": "Get room macro or reference by filtering via category parameters",
+      "source": {
+        "commit": "e3e8a345e5624db118bff3eb171b60b0993fcc2c",
+        "file": "common.xsd",
+        "line": 29661
+      }
+    },
     "get_safe_pos": {
       "attributes": {
         "allowyaxis": {
@@ -9837,6 +9960,37 @@
         "line": 19434
       }
     },
+    "remove_dynamic_interior": {
+      "attributes": {
+        "corridor": {
+          "doc": "Corridor to remove (ignored if interior provided)",
+          "type": "expression"
+        },
+        "interior": {
+          "doc": "Interior to remove",
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object to remove the interior from (any one of interior, corridor or room component can be supplied)",
+          "required": true,
+          "type": "expression"
+        },
+        "room": {
+          "doc": "Room to remove (ignored if interior or corridor provided)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "doc": "Remove a dynamic interior from an object",
+      "source": {
+        "commit": "e3e8a345e5624db118bff3eb171b60b0993fcc2c",
+        "file": "common.xsd",
+        "line": 25611
+      }
+    },
     "remove_inventory": {
       "attributes": {
         "autoadvanceseed": {
@@ -10258,6 +10412,41 @@
         "aiscripts"
       ],
       "kind": "action"
+    },
+    "set_dynamic_interior_persistent": {
+      "attributes": {
+        "corridor": {
+          "doc": "Corridor used to find interior to set persistence for (ignored if interior provided)",
+          "type": "expression"
+        },
+        "interior": {
+          "doc": "Interior to set persistence for",
+          "type": "expression"
+        },
+        "object": {
+          "doc": "Object containing the interior (any one of interior, corridor or room component can be supplied)",
+          "required": true,
+          "type": "expression"
+        },
+        "persistent": {
+          "doc": "Should the dynamic interior rooms be persistent? (default is true)",
+          "type": "booleanexpression"
+        },
+        "room": {
+          "doc": "Room used to find interior to set persistence for (ignored if interior or corridor provided)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md",
+        "aiscripts"
+      ],
+      "doc": "Set a dynamic interior to be persistent so that it won't be cleaned up when the player leaves its vicinity",
+      "source": {
+        "commit": "e3e8a345e5624db118bff3eb171b60b0993fcc2c",
+        "file": "common.xsd",
+        "line": 25696
+      }
     },
     "set_entity_role": {
       "attributes": {
@@ -14271,6 +14460,7 @@
   "provenance": {
     "crystal_shop_reference": "Native 9.00 NPC_Instantiation.PlaceItemTrader and NPC_Itemtrader.OnPlatformPopulation_Itemtrader inspected at ArtByunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Existing native population is signalled; real entitytype.trader at itemtrader-tagged counter, native interaction positions and NPC movement. Native NPC_State_Machines $Stay/STATE_stay hold and original NPC flags/post restored. Counter settlement adds only actual accepted finite stock to merchant inventory before recording observed custom-price cash. No player conversation/UI automation or free unbacked inventory.",
     "crystal_simulation_reference": "Native 9.00 order.mining.collect.ship.xml deplete_yield in/out amount and get_resource_gatherrate inspected; command metadata common.xsd 26046/26888. Native wares.xml inv_crystal_01..05 average prices inspected at ArtByunex/x4-foundation-artbyunex e3e8a345e5624db118bff3eb171b60b0993fcc2c. Off-screen crystal conversion/grade weights and simulated trader sales are custom, explicitly user-authorized, not vanilla crystal simulation.",
+    "hacker_rooms_v47": "Pinned 9.00 NPC_Instantiation.SecurityOffice/InfrastructureOffice create native tag.security/tag.infrastructure rooms only at nearby attention. Macro.hascontrolpanel and get_room_definition are declared native APIs. Catalogue now inspects installed native room definitions without creating station interiors; selected actual office is created after real docking only if missing, with native corridor/room definitions and seed rules. The real room/slot/native panel API/effect and same-crew return are still mandatory. Only extension-created offices are tracked for occupied-safe release. No installed native execution has been tested here.",
     "log44_auto_subscriptions_contract": "The 154336 log identifies 18 exact ramautosubs canholdlicence/haslicence conditions whose right-hand faction is an undefined bare identifier. Optional silent attribute replacements qualify that same faction without changing eligibility, actions, prices, UI or existing corrected checks; the earlier alliance fix is retained.",
     "log44_cold_registry_contract": "Egosoft Mission Director Guide specifies conditions are evaluated in sequence, with later conditions skipped after a failure. Version 0.4.4 tests md.VGO_State.Init.$Ships presence in its own first check_value before the existing count check; registry and saved actor recovery logic are otherwise unchanged.",
     "log44_native_equipment_contract": "Native 9.00 generate_loadout wares is a list/table expression; omission (not explicit null) selects defaults. The supplied 154336 log records 55 failures of the old explicit-null fallback across initial and new-station paths. Version 0.4.4 removes both custom wares overrides, retains the original native $PossibleWares list and the two safe missing-faction equipment guards; no faction table or equipment is fabricated.",
@@ -14292,7 +14482,9 @@
       "9.00"
     ],
     "spacesuit_context_reset_v46": "Pinned native 9.00 common.xsd teleport_player(object, control=false, instant=true, force=true) and event_player_teleport_successful inspected. Only a recent confirmed vanilla spacesuit exit arms a bounded original-ship context reset, waits for the actual native teleport event, then invokes one native emergency suit exit. Poll verifies native suit/control/room/transit; a refused suit handoff has one original-ship rollback, with no repeating ejections. New native execution is unverified without the installed game.",
+    "survey_contacts_v47": "Pinned native 9.00 NPC_ShadyGuy stores actual NPC-to-station assignments in md.$ShadyGuyMap and uses assignedcontrolentity.shadyguy for off-screen identity. FindMarketV47 prefers the actual assigned NPC, then visible controlentity, then that exact registry mapping; no NPC is fabricated. Native GM_BringItems explicitly supports unlocking an actual shady-guy RewardObj after real item delivery. Existing work/coupon/native mission guards remain. Accepted-work, actual discount-event and six-second real offer availability diagnostics distinguish dispatched generation from an existing offer. New native paths remain unverified here.",
     "survey_context_publication_reference": "Pinned native 9.00 scriptproperties distinguishes player.maxscanlevel (current player context) from controllable.maxscanlevel (assigned ship equipment); set_object_scanned has object-only parameters and scans at the player cap. Version 0.4.2 records actual timed close-range samples and publishes them with that native action when available, acknowledging actual module.scannedlevel and retaining lower-cap/refused samples. No scanner-level override or raw 100-percent discovery flag is invented.",
-    "tour_timeout_v45": "Existing native MD time arithmetic/conditions and persistent player-entity object state are used; no new native actions or UI controls. While the tracked current worker is a booked VGO_tour (or its own current DockAt), a helper-written watchdog/dock deadline receives one game hour and the extended absolute value is saved to prevent repeated padding. A genuinely cancelled tour receives one hour above the previous max(two hours, measured duration estimate); existing pending cancellation deadlines are extended once with a saved per-episode marker. Already disposing parties are not recreated; native direct-order/ownership/target checks and all fare-completion gates remain."
+    "tour_timeout_v45": "Existing native MD time arithmetic/conditions and persistent player-entity object state are used; no new native actions or UI controls. While the tracked current worker is a booked VGO_tour (or its own current DockAt), a helper-written watchdog/dock deadline receives one game hour and the extended absolute value is saved to prevent repeated padding. A genuinely cancelled tour receives one hour above the previous max(two hours, measured duration estimate); existing pending cancellation deadlines are extended once with a saved per-episode marker. Already disposing parties are not recreated; native direct-order/ownership/target checks and all fare-completion gates remain.",
+    "worker_yields_v47": "The 083003 log reports AIDirector::Move possible infinite wake request loop immediately after a balance-confirmed crystal sale and completion on the worker. Worker version21 adds four positive one-second waits with sinceversion21 around the new iteration and fast-return commercial/completion/deferred bookkeeping boundaries. Runtime42 and saved contracts/invoices are retained; no mass restart. No claim is made that this warning caused the later crash."
   }
 }

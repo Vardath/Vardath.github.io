@@ -5,11 +5,92 @@
       <actions>
         <set_value name="$Ships" exact="[]" />
         <set_value name="$Requests" exact="[]" />
+        <set_value name="$OwnedRoomsV47" exact="[]" />
         <set_value name="$Types" exact="[[controlpaneltype.hack_all_turrets,'hack_all_turrets'],[controlpaneltype.hack_buildmodules,'hack_buildmodules'],[controlpaneltype.hack_discount,'hack_discount'],[controlpaneltype.hack_engineer,'hack_engineer'],[controlpaneltype.hack_production,'hack_production'],[controlpaneltype.hack_shieldgenerators,'hack_shieldgenerators'],[controlpaneltype.hack_storage,'hack_storage'],[controlpaneltype.hack_watchdogs,'hack_watchdogs'],[controlpaneltype.hack_hiringdiscount,'hack_hiringdiscount'],[controlpaneltype.hack_moddingdiscount,'hack_moddingdiscount'],[controlpaneltype.hack_repairdiscount,'hack_repairdiscount'],[controlpaneltype.hack_traderdiscount,'hack_traderdiscount'],[controlpaneltype.hack_radar,'hack_radar']]" />
         <do_if value="not player.entity.$vgo_objects?">
           <set_value name="player.entity.$vgo_objects" exact="table[]" />
         </do_if>
         <set_value name="player.entity.$vgo_hack_catalogue_ui" exact="[]" />
+      </actions>
+    </cue>
+    <library name="RoomDefinitionsV47">
+      <actions>
+        <set_value name="$definitions" exact="[]" />
+        <set_value name="$securitymacro" exact="null" />
+        <set_value name="$infrastructuremacro" exact="null" />
+        <do_if value="$station.canhavedynamicinterior">
+          <!-- Match NPC_Instantiation's own room definitions and deterministic seeds. -->
+          <get_room_definition macro="$securitymacro" tags="tag.security" seed="$station.seed + lookup.roomtype.list.indexof.{roomtype.security}" />
+          <get_room_definition macro="$infrastructuremacro" tags="tag.infrastructure" seed="$station.seed + lookup.roomtype.list.indexof.{roomtype.infrastructure}" />
+          <do_if value="$securitymacro"><append_to_list name="$definitions" exact="[$securitymacro,roomtype.security,tag.administrationcorridor]" /></do_if>
+          <do_if value="$infrastructuremacro"><append_to_list name="$definitions" exact="[$infrastructuremacro,roomtype.infrastructure,tag.maintenancecorridor]" /></do_if>
+        </do_if>
+      </actions>
+    </library>
+    <library name="EnsureHackRoomV47">
+      <actions>
+        <set_value name="$requestedtype" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_type" />
+        <find_room name="$actualrooms" object="$station" hascontrolpanel="$requestedtype" multiple="true" />
+        <do_if value="not $actualrooms.count and $station.isoperational and not $station.isplayerowned and $station.owner != faction.ownerless and $station.canhavedynamicinterior and @$ship.dock.container == $station and @player.entity.$vgo_objects.{$ship}.$vgo_hack_room_attempt_token != @player.entity.$vgo_objects.{$ship}.$vgo_hack_token">
+          <!-- One creation attempt per visit; absent geometry must not spawn repeated interiors. -->
+          <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_room_attempt_token" exact="player.entity.$vgo_objects.{$ship}.$vgo_hack_token" />
+          <include_actions ref="RoomDefinitionsV47" />
+          <do_for_each name="$definition" in="$definitions">
+            <do_if value="not $definition.{1}.hascontrolpanel.{$requestedtype}"><continue /></do_if>
+            <set_value name="$roomseed" exact="$station.seed + lookup.roomtype.list.indexof.{$definition.{2}}" />
+            <set_value name="$corridormacro" exact="null" />
+            <get_room_definition macro="$corridormacro" race="$station.owner.primaryrace" tags="$definition.{3}" seed="$roomseed" />
+            <do_if value="not $corridormacro"><get_room_definition macro="$corridormacro" race="$station.owner.primaryrace" tags="tag.corridor" seed="$roomseed" /></do_if>
+            <do_if value="not $corridormacro"><get_room_definition macro="$corridormacro" tags="$definition.{3}" seed="$roomseed" /></do_if>
+            <do_if value="not $corridormacro"><get_room_definition macro="$corridormacro" tags="tag.corridor" seed="$roomseed" /></do_if>
+            <do_if value="$corridormacro">
+              <set_value name="$newinterior" exact="null" />
+              <set_value name="$newcorridor" exact="null" />
+              <set_value name="$newroom" exact="null" />
+              <create_dynamic_interior object="$station" corridor="$corridormacro" room="$definition.{1}" roomtype="$definition.{2}" name="if $definition.{2} == roomtype.security then '{20007,1041}' else '{20007,1051}'" seed="$roomseed" persistent="true" interiorname="$newinterior" corridorname="$newcorridor" roomname="$newroom" />
+              <do_if value="$newinterior.exists">
+                <do_if value="not Init.$OwnedRoomsV47?"><set_value name="Init.$OwnedRoomsV47" exact="[]" /></do_if>
+                <append_to_list name="Init.$OwnedRoomsV47" exact="[$station,$newinterior]" />
+              </do_if>
+              <do_if value="$newroom.exists">
+                <signal_objects object="$station" param="'interior_created'" param2="$newroom" param3="$newinterior" />
+                <debug_text text="'GO hacker office created: station=%1 type=%2 room=%3 interior=%4'.[$station.debugname,$requestedtype,$newroom,$newinterior]" />
+              </do_if>
+            </do_if>
+            <break />
+          </do_for_each>
+          <find_room name="$actualrooms" object="$station" hascontrolpanel="$requestedtype" multiple="true" />
+          <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="0s" />
+        </do_if>
+        <!-- Do not use cached references to a room which was never instantiated or has despawned. -->
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_rooms" exact="$actualrooms" />
+      </actions>
+    </library>
+    <cue name="CleanupRoomsV47" instantiate="true" checkinterval="1min">
+      <conditions>
+        <check_value value="Init.$OwnedRoomsV47?" />
+        <check_value value="Init.$OwnedRoomsV47.count gt 0" />
+      </conditions>
+      <actions>
+        <do_for_each name="$owned" in="Init.$OwnedRoomsV47" counter="$ri" reverse="true">
+          <set_value name="$roomstation" exact="$owned.{1}" />
+          <set_value name="$interior" exact="$owned.{2}" />
+          <do_if value="not $roomstation.exists or not $interior.exists"><remove_value name="Init.$OwnedRoomsV47.{$ri}" /><continue /></do_if>
+          <set_value name="$needed" exact="false" />
+          <do_for_each name="$visitor" in="Init.$Ships">
+            <do_if value="$visitor.exists and @player.entity.$vgo_objects.{$visitor}.$vgo_hack_station == $roomstation and @player.entity.$vgo_objects.{$visitor}.$vgo_hack_phase and not ['done','aborted'].indexof.{player.entity.$vgo_objects.{$visitor}.$vgo_hack_phase}">
+              <set_value name="$needed" exact="true" /><break />
+            </do_if>
+          </do_for_each>
+          <do_if value="$needed or player.entity.hascontext.{$interior}"><continue /></do_if>
+          <!-- Release only extension-created interiors; ordinary offices are never removed. -->
+          <set_dynamic_interior_persistent object="$roomstation" interior="$interior" persistent="false" />
+          <find_object_component name="$occupants" object="$interior" class="class.npc" multiple="true" recursive="true" />
+          <do_if value="not $occupants.count">
+            <remove_dynamic_interior object="$roomstation" interior="$interior" />
+            <remove_value name="Init.$OwnedRoomsV47.{$ri}" />
+          </do_if>
+        </do_for_each>
       </actions>
     </cue>
     <library name="Catalogue">
@@ -26,15 +107,29 @@
           <do_if value="not player.entity.$vgo_objects.{$station}?">
             <set_value name="player.entity.$vgo_objects.{$station}" exact="table[]" />
           </do_if>
-          <do_if value="not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age or @$refreshcatalogue">
+          <do_if value="@player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_version != 47 or not player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue? or @player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until lt player.age or @$refreshcatalogue">
             <set_value name="$entries" exact="[]" />
+            <set_value name="$instantiatedtypes" exact="0" />
+            <include_actions ref="RoomDefinitionsV47" />
             <do_for_each name="$type" in="Init.$Types">
               <find_room name="$rooms" object="$station" hascontrolpanel="$type.{1}" multiple="true" />
               <do_if value="$rooms.count">
                 <append_to_list name="$entries" exact="[$type.{1},$type.{2},$rooms]" />
+                <set_value name="$instantiatedtypes" exact="$instantiatedtypes + 1" />
               </do_if>
+              <do_else>
+                <do_for_each name="$definition" in="$definitions">
+                  <do_if value="$definition.{1}.hascontrolpanel.{$type.{1}}">
+                    <!-- Verified installed native macro; create the real room only after docking. -->
+                    <append_to_list name="$entries" exact="[$type.{1},$type.{2},[]]" />
+                    <break />
+                  </do_if>
+                </do_for_each>
+              </do_else>
             </do_for_each>
             <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue" exact="$entries" />
+            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_version" exact="47" />
+            <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_instantiated_types" exact="$instantiatedtypes" />
             <set_value name="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue_until" exact="player.age + (if $entries.count then 10min else 20s)" />
           </do_if>
           <do_for_each name="$entry" in="player.entity.$vgo_objects.{$station}.$vgo_hack_catalogue">
@@ -56,7 +151,7 @@
         <do_while value="player.entity.$vgo_hack_catalogue_ui.count gt 64">
           <remove_value name="player.entity.$vgo_hack_catalogue_ui.{1}" />
         </do_while>
-        <debug_text text="'GO hacker catalogue: station=%1 state=%2 actual_panel_types=%3'.[$station.debugname,$cataloguestatus,$public.count]" />
+        <debug_text text="'GO hacker catalogue v47: station=%1 state=%2 available_panel_types=%3 instantiated_panel_types=%4; remaining types require a verified native office after docking'.[$station.debugname,$cataloguestatus,$public.count,@player.entity.$vgo_objects.{$station}.$vgo_hack_instantiated_types]" />
         <raise_lua_event name="'VGO.HackCatalogue'" param="$station" />
       </actions>
     </library>
@@ -393,6 +488,7 @@
             <do_if value="@$ship.dock.container != $station">
               <continue />
             </do_if>
+            <include_actions ref="EnsureHackRoomV47" />
             <do_if value="not $actor.exists">
               <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_phase" exact="'returning'" />
               <continue />

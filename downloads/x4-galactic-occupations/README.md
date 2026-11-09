@@ -1,9 +1,9 @@
-# Galactic Occupations 0.4.6 — spacesuit handoff recovery
+# Galactic Occupations 0.4.7 — hacker offices and signal results
 
-[Download Occupations](Galactic_Occupations_0.4.6_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Spacesuit_Control_Update_2026-11-09.zip) · [Evidence and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.6.md)
+[Download Occupations](Galactic_Occupations_0.4.7_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Hacker_Survey_Update_2026-11-09.zip) · [Evidence and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.7.md)
 
-After a confirmed Use Spacesuit stalls, recovery resets the original ship context, requires a real native teleport acknowledgement, attempts one suit exit and verifies actual suit/control/room/transit state. A failed exit has one bounded original-ship return. No unrequested/repeated ejections, crew/order changes or UI replacement. The station NPC empty-service-slot branch is also guarded before actor creation.
+Hacker discovery now uses installed native security/engineering room definitions instead of relying only on already-created rooms. The chosen real office is prepared after docking, with actual panel verification and guarded cleanup. Signal surveys find real assigned off-screen contacts and report native discounts and actual offer availability. Crystal worker bookkeeping yields between fast-return calls.
 
-The supplied 035808 log confirms the earlier recovery fired but ends before verification. It also confirms 26 crystal sales and two completed tours paid 10,700,000 Cr with matching balance changes. Other data/UI errors are documented with uncertain callers left unattributed.
+The supplied log confirms 66,010,000 Cr across 192 balance-matched payments. It shows a worker wake-loop warning, but continues for another 3,986 game seconds and contains no fatal/crash stack; the crash cause is not established.
 
-Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Tours retain the ten-stop new default and extra hour from 0.4.5; existing bookings/settings are preserved. 415 Python contracts, 91 Lua mocks and static/native-reference/package checks pass. New native recovery and station population execution need live X4 confirmation. Companion sources are unchanged.
+Exit X4, overwrite its Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Existing bookings, stock, invoices and crews remain; the ten-stop new tour default and extra hour are retained. 440 Python contracts, 91 Lua mocks and static/source/archive checks pass. New native office/panel execution requires live X4 verification. Companion sources and all UI files are unchanged.

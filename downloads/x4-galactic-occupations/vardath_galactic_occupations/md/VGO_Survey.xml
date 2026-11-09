@@ -49,15 +49,32 @@
         </do_if>
       </actions>
     </library>
+    <library name="FindMarketV47">
+      <actions>
+        <!-- Assigned NPCs remain available while their visible control-room body is absent. -->
+        <set_value name="$market" exact="$station.assignedcontrolentity.{controlpost.shadyguy}" />
+        <do_if value="not $market.isclass.npc or not $market.isshadyguy">
+          <set_value name="$market" exact="$station.controlentity.{controlpost.shadyguy}" />
+        </do_if>
+        <do_if value="(not $market.isclass.npc or not $market.isshadyguy) and md.$ShadyGuyMap?">
+          <do_for_each name="$candidatecontact" valuename="$contactstation" in="md.$ShadyGuyMap">
+            <do_if value="$contactstation == $station and $candidatecontact.isclass.npc and $candidatecontact.isshadyguy">
+              <set_value name="$market" exact="$candidatecontact" /><break />
+            </do_if>
+          </do_for_each>
+        </do_if>
+      </actions>
+    </library>
     <library name="Benefits">
       <actions>
         <set_value name="$generated" exact="false" />
-        <set_value name="$market" exact="$station.controlentity.{controlpost.shadyguy}" />
+        <include_actions ref="FindMarketV47" />
         <do_if value="$market.isclass.npc and $market.isshadyguy">
           <write_to_logbook category="general" title="'Galactic Occupations: black market contact located'" text="$ship.knownname + ': found ' + $market.knownname + ' at ' + $station.knownname + ' in ' + $station.sector.knownname + '. Existing unlocked markets retain access; locked markets require their real unlock job.'" interaction="showonmap" object="$station" />
           <do_if value="not $market.tradesvisible and not (@player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmissionoffer or @player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmission)">
             <signal_cue_instantly cue="MarketOffer" param="$station" />
           </do_if>
+          <debug_text text="'GO survey market: station=%1 contact=%2 unlocked=%3; real native delivery offer requested if locked'.[$station.debugname,$market,$market.tradesvisible]" />
         </do_if>
         <do_if value="not (@player.entity.$vgo_objects.{$station}.$vgo_network_next gt player.age)">
           <set_value name="player.entity.$vgo_objects.{$station}.$vgo_network_next" exact="player.age + 24h" />
@@ -104,14 +121,20 @@
             <destroy_object object="$leak" explosion="false" />
           </do_if>
           <write_to_logbook category="general" title="'Galactic Occupations: signal-leak survey'" text="$ship.knownname + ': ' + (if $work.$virtual then 'simulated survey of native station signal slots at ' else 'decoded an existing public data/voice leak at ') + $station.knownname + '. Existing native offers exposed: ' + $offers + '; native job generation requested: ' + $generated + '. Station coupon/subscription cooldown: twenty-four game hours. Job acceptance, completion and black-market access remain native.'" interaction="showonmap" object="$station" />
+          <debug_text text="'GO signal survey accepted v47: ship=%1 station=%2 virtual=%3 offers_exposed=%4 native_request=%5 market=%6; accepted work is not a claim that a mission was generated'.[$ship.debugname,$station.debugname,$work.$virtual,$offers,$generated,$market]" />
         </do_if>
       </actions>
       <cues>
         <cue name="PublishGeneratedOffers">
           <delay exact="6s" />
           <actions>
-            <do_if value="$station.isoperational">
+            <do_if value="$station.isoperational and @$work.$accepted">
               <include_actions ref="ExposeOffers" />
+              <include_actions ref="FindMarketV47" />
+              <set_value name="$marketoffer" exact="@player.entity.$vgo_objects.{$station}.$vgo_market_offer" />
+              <set_value name="$marketavailable" exact="$marketoffer.exists and $marketoffer.hasmissionoffer" />
+              <debug_text text="'GO signal survey result v47: station=%1 native_offers_visible=%2 native_request_sent=%3 market_contact=%4 market_delivery_offer=%5 market_unlocked=%6'.[$station.debugname,$offers,$generated,$market,$marketavailable,@$market.tradesvisible]" />
+              <write_to_logbook category="general" title="'Galactic Occupations: signal survey results'" text="$station.knownname + ' in ' + $station.sector.knownname + ': native station offers visible: ' + $offers + '; black-market delivery offer available: ' + $marketavailable + '; existing market contact: ' + (if $market.isclass.npc and $market.isshadyguy then $market.knownname else 'none at this station') + '. A generation request does not guarantee an eligible offer. A locked black market requires its real item-delivery job; scanning does not fabricate traders or complete missions.'" interaction="showonmap" object="$station" />
             </do_if>
           </actions>
         </cue>
@@ -124,6 +147,7 @@
       </conditions>
       <actions>
         <write_to_logbook category="general" title="'Galactic Occupations: station survey discount confirmed'" text="event.object.knownname + ': native station trade discount added. Amount is a share of each ware price range, not a flat percentage of its full price.'" interaction="showonmap" object="event.object" />
+        <debug_text text="'GO survey discount confirmed v47: station=%1 amount=%2 expires=%3'.[event.object,event.param2,event.param3]" />
       </actions>
     </cue>
     <cue name="MarketOffer" instantiate="true" namespace="this">
@@ -132,7 +156,8 @@
       </conditions>
       <actions>
         <set_value name="$station" exact="event.param" />
-        <set_value name="$contact" exact="$station.controlentity.{controlpost.shadyguy}" />
+        <include_actions ref="FindMarketV47" />
+        <set_value name="$contact" exact="$market" />
         <set_value name="$valid" exact="$station.isoperational and not $station.isplayerowned and $station.hasrelation.dock.{faction.player} and $contact.isclass.npc and $contact.isshadyguy and not $contact.tradesvisible and not (@player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmissionoffer or @player.entity.$vgo_objects.{$station}.$vgo_market_offer.hasmission)" />
         <do_if value="$valid">
           <set_value name="player.entity.$vgo_objects.{$station}.$vgo_market_offer" exact="this" />

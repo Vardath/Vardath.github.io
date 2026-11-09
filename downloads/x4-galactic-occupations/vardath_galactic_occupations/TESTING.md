@@ -1,4 +1,8 @@
-# Reproducible tests — 0.4.6 development
+# Reproducible tests — 0.4.7 development
+
+## Current 0.4.7 office, survey and scheduling checks
+
+Run [the current existing-save sequences](LOG_REVIEW_0.4.7.md#existing-save-acceptance). Recheck the previously production-only station's menu, actual office creation after docking, same-NPC physical walk, native tool charge/effect and return for every available panel type. Validate occupied-room cleanup and absent assets/docking. Check an actual accepted signal survey, native station discount, six-second actual offer count and real locked-market delivery offer; absence of an eligible native offer must remain explicit. Continue the previously paid crystal worker through another sale and inspect for rapid wake warnings. 440 Python contracts and 91 Lua mocks pass; no native execution test is available here.
 
 ## Current 0.4.6 spacesuit and station population checks
 

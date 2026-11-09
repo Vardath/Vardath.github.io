@@ -28,7 +28,7 @@ class SurveyVM(VM):
         self.native_offers=Seq();self.generic=Seq();self.slots=Seq(['actual leak slot'])
         self.native_leaks=Seq();self.native_calls=[];self.distance=1000;self.scan_accepts=True
         self.player_sector=self.other;self.vars.update(ship=self.ship,station=self.station,module=self.module,leak=self.leak)
-        self.after_wait=None;self.waits=0;self.gm_enabled=True;self.market=NULL;self.approach_accepts=True;self.los=True;self.player_cap=2
+        self.after_wait=None;self.waits=0;self.gm_enabled=True;self.market=NULL;self.assigned_market=NULL;self.market_map=None;self.approach_accepts=True;self.los=True;self.player_cap=2
         self.mission_request=Obj('native SelectMission cue',exists=True)
         self.work(virtual=True)
     def work(self,virtual=True):
@@ -39,7 +39,7 @@ class SurveyVM(VM):
             return {k.strip()[1:]:self.expr(v.strip()) for k,v in (part.split('=',1) for part in text[6:-1].split(','))}
         t=text.replace(S,'_STATE_').replace('player.entity.$vgo_objects.{$ship}','_STATE_')
         self.vars.update(survey_ship=self.ship,player_sector=self.player_sector,occupied_ship=self.ship if self.occupied else NULL,
-            native_offers=self.native_offers,gm_cues=self.generic,gm_disabled=not self.gm_enabled,market=self.market,
+            native_offers=self.native_offers,gm_cues=self.generic,gm_disabled=not self.gm_enabled,native_visible_market=self.market,native_assigned_market=self.assigned_market,native_market_map=self.market_map,
             native_mission_request=self.mission_request)
         t=t.replace('md.GenericMissions.SelectMission','$native_mission_request')
         t=t.replace('Init.$Offers','$native_offers')
@@ -66,8 +66,12 @@ class SurveyVM(VM):
         t=re.sub(r'md\.GenericMissions\.Manager\.\$DefaultExcludedOfferFactions\.indexof\.\{[^}]+\}','false',t)
         t=re.sub(r'md\.GenericMissions\.Manager\.\$ExcludedOfferObjects\.indexof\.\{[^}]+\}','false',t)
         t=t.replace('md.GenericMissions.Manager.$Disabled','$gm_disabled').replace('md.GenericMissions.Manager.$SectorLimit','7').replace('md.$TutorialActive','false')
-        t=t.replace('$station.controlentity.{controlpost.shadyguy}','$market')
-        t=t.replace('$market.isclass.npc','false' if self.market is NULL else 'true')
+        t=t.replace('$station.assignedcontrolentity.{controlpost.shadyguy}','$native_assigned_market')
+        t=t.replace('$station.controlentity.{controlpost.shadyguy}','$native_visible_market')
+        t=t.replace('md.$ShadyGuyMap?','true' if self.market_map is not None else 'false').replace('md.$ShadyGuyMap','$native_market_map')
+        for var in re.findall(r'\$(\w+)\.isclass\.npc',t):
+            obj=self.vars.get(var,NULL);flag=bool(getattr(getattr(obj,'isclass',NULL),'npc',False))
+            t=t.replace('$'+var+'.isclass.npc','true' if flag else 'false')
         t=t.replace('$station.ishostileto.{$survey_ship}','$station.hostile').replace('$station.ishostileto.{$ship}','$station.hostile')
         t=t.replace('$station.hasrelation.dock.{faction.player}','$station.dock_ok')
         t=re.sub(r'\$(?:survey_ship|ship)\.distanceto\.\{[^}]+\}',str(self.distance),t)
@@ -134,10 +138,12 @@ class SurveyVM(VM):
                     try:self.execute(n)
                     except Broken:break
             elif n.tag=='do_for_each':
-                items=list(enumerate(self.expr(n.get('in')),1))
+                source=self.expr(n.get('in'))
+                items=list(source.items()) if isinstance(source,dict) else list(enumerate(source,1))
                 if n.get('reverse')=='true':items.reverse()
                 for index,value in items:
-                    self.vars[n.get('name')[1:]]=value
+                    self.vars[n.get('name')[1:]]=index if n.get('valuename') else value
+                    if n.get('valuename'):self.vars[n.get('valuename')[1:]]=value
                     if n.get('counter'):self.vars[n.get('counter')[1:]]=index
                     try:self.execute(n)
                     except Continued:continue
