@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "reference_files": 10,
+  "diff_files": 6,
+  "single_match_operations": 22,
+  "contract_tests": 9,
+  "result": "pass",
+  "archive_members": 10,
+  "runtime_tested": false,
+  "limitations": [
+    "No X4 executable, save or merged installed catalogs available.",
+    "Tests apply patches to exact pinned references, not the effective installed load order.",
+    "Native runtime, reload and same-frame event behavior require in-game acceptance."
+  ]
+}

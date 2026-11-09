@@ -1,0 +1,55 @@
+[
+  {
+    "path": "md/mc_management.xml",
+    "sha256_lf": "6d0168cda12454819673636c1cd68f30297cc809e68bbafefe5923406bbc5366",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/md/mc_management.xml"
+  },
+  {
+    "path": "md/factiongoal_hold_space.xml",
+    "sha256_lf": "65e6f3e1de62b21a99ffb024ad89b366c641b13e81c362050c75f0387fcccd09",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/md/factiongoal_hold_space.xml"
+  },
+  {
+    "path": "aiscripts/order.trade.routine.xml",
+    "sha256_lf": "65c470a142dff6a2f633cc4c18f71ef49206ec4739a724405cc16ed3734bf850",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/aiscripts/order.trade.routine.xml"
+  },
+  {
+    "path": "extensions/galaxy_trader/md/gt_context_academy.xml",
+    "sha256_lf": "fbfb62b3cc125017d2a2d33d7f15779a5bdb6ae1892bf98be2ebfd2d75cd7c91",
+    "url": "https://raw.githubusercontent.com/GoAhead-at/galaxy_trader_v9/b292a80489980771406b6e5498b395b1e5343778/md/gt_context_academy.xml"
+  },
+  {
+    "path": "extensions/researchblueprintsmod/md/researchblueprintsmod.xml",
+    "sha256_lf": "1563f8d2cef79f766a389a0eb192aeb5cb876c62fa2e456d42077b77f62b97e2",
+    "url": "https://raw.githubusercontent.com/YuJin44/researchblueprintsmod/36c6a0772fda4938e5cf5a67a650c40722ae255e/md/researchblueprintsmod.xml"
+  },
+  {
+    "path": "extensions/fbl/md/fbl.xml",
+    "sha256_lf": "e8e47cc0063bfb5ccc34f32bf978bc8312dec9f525c443d054d34095bd954eb5",
+    "url": "https://cdn.steamusercontent.com/ugc/1010437351820266833/8E35593367DDA5BE5521ABD9E4953BD1F1D9D6B0/",
+    "workshop": "1683358279",
+    "catalog_md5": "db4db1d952636d0eb2943e707865ab75",
+    "catalog_path": "md/fbl.xml"
+  },
+  {
+    "path": "libraries/common.xsd",
+    "sha256_lf": "1e50c1d407adc1d83dee66a4a328e254a7a30ed34ae15d7bd2f7b3a810d32294",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/common.xsd"
+  },
+  {
+    "path": "libraries/md.xsd",
+    "sha256_lf": "db87b7aa458c0b538233f126ee6c0bf8717c5e233a1a3e5afd4bd04f882c2c2c",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/md.xsd"
+  },
+  {
+    "path": "libraries/scriptproperties.xml",
+    "sha256_lf": "d9a9b8d810d94799542be3a7500615e2fa72bedb68cd6f13cc29d0c178a9a41c",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/scriptproperties.xml"
+  },
+  {
+    "path": "libraries/diff.xsd",
+    "sha256_lf": "829d29c760a8fbb78ba38b3b3b179468f85091a3d933c4869b28d9758aa3bc3c",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/diff.xsd"
+  }
+]

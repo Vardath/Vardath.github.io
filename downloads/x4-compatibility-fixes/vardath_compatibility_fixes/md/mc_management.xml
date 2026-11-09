@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript//cue[@name='Thread_Manager_Submission_Ended']/actions//do_if[@value='$FailedMissions == 0']/@value">$FailedMissions == 0 and $ThreadCue.hasmission</replace>
+  <replace sel="/mdscript//cue[@name='Thread_Manager_Submission_Ended']/actions/do_if[@value=&quot;$Feedback and $Feedback.$type == 'failure'&quot;]/do_else/signal_cue[@cue='Thread_Manager_Cleanup']">
+    <do_if value="Thread_Manager_Cleanup.state == cuestate.waiting">
+      <signal_cue cue="Thread_Manager_Cleanup" check="false"/>
+    </do_if>
+  </replace>
+  <replace sel="/mdscript//cue[@name='Thread_Manager_Submission_Ended']/actions/do_elseif[@value='not $Submissions.count']/signal_cue[@cue='Thread_Manager_Cleanup']">
+    <do_if value="Thread_Manager_Cleanup.state == cuestate.waiting">
+      <signal_cue cue="Thread_Manager_Cleanup" check="false"/>
+    </do_if>
+  </replace>
+</diff>

@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript//library[@name='GT_Academy_BuildShipEntryIfEligible']/actions/do_if[@value=&quot;$ship? and $ship.exists and $ship.isclass.ship and $ship.isplayerowned and $ship.pilot?&quot;]/@value" silent="true">$ship? and $ship.exists and $ship.isclass.ship and $ship.isplayerowned and $ship.pilot.isclass.npc</replace>
+</diff>

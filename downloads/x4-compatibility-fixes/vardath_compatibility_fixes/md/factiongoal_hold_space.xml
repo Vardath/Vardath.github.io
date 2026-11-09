@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']" pos="before">
+    <set_value name="this.$vcf_entrypoints" exact="[]"/>
+    <do_for_each name="this.$vcf_entry" in="$Invasions.{$i}.$AlliedEntryPoints">
+      <do_if value="this.$vcf_entry.exists and this.$vcf_entry.exit.exists and this.$vcf_entry.exit.sector == $Target">
+        <append_to_list name="this.$vcf_entrypoints" exact="this.$vcf_entry"/>
+      </do_if>
+    </do_for_each>
+    <remove_value name="this.$vcf_entry"/>
+    <do_if value="this.$vcf_entrypoints.count != $Invasions.{$i}.$AlliedEntryPoints.count and (not @this.$vcf_gate_notice or this.$vcf_gate_notice le player.age)">
+      <debug_text text="'VCF: deferred stale invasion entry points for %1; usable %2 / %3'.[$Target.knownname, this.$vcf_entrypoints.count, $Invasions.{$i}.$AlliedEntryPoints.count]"/>
+      <set_value name="this.$vcf_gate_notice" exact="player.age + 10min"/>
+    </do_if>
+  </add>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/assert/@value">this.$vcf_entrypoints.{$k}.exit.sector == $Target</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/assert/@text">'Invasion exit point for enemy faction leads to sector ' + this.$vcf_entrypoints.{$k}.exit.sector.knownname + ' instead of ' + $Target.knownname + ' [Owen]'</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/@value">this.$vcf_entrypoints.{$k}.exit.sector == $Target</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/create_position/@object">this.$vcf_entrypoints.{$k}.exit</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/debug_text/@text">$DebugText + ' Will attempt to defend entrypoint: ' + this.$vcf_entrypoints.{$k}.exit +  ' ' + this.$vcf_entrypoints.{$k}.exit.knownname</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/find_ship_by_true_owner[1]/match_distance/@object">this.$vcf_entrypoints.{$k}.exit</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/find_ship_by_true_owner[2]/match_distance/@object">this.$vcf_entrypoints.{$k}.exit</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/do_if[1]/find_station/match_distance/@object">this.$vcf_entrypoints.{$k}.exit</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/do_if[1]/do_else/create_position/@object">this.$vcf_entrypoints.{$k}.exit</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/do_if[1]/do_if/do_if[1]/do_else/create_position/@space">this.$vcf_entrypoints.{$k}.exit.sector</replace>
+  <replace sel="/mdscript//cue[@name='EvaluateState']//do_all[@exact='$Invasions.{$i}.$AlliedEntryPoints.count']/@exact">this.$vcf_entrypoints.count</replace>
+</diff>

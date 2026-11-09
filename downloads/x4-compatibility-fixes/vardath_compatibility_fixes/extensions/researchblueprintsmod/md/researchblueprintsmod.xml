@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <remove sel="/mdscript//cue[@name='RBM_Start']/conditions/check_any/event_conversation_started[@actor=&quot;@player.headquarters.controlentity.{controlpost.manager}&quot;]/@actor" silent="true"/>
+  <remove sel="/mdscript//cue[@name='RBM_Start']/conditions/check_any/event_conversation_returned_to_section[@actor=&quot;@player.headquarters.controlentity.{controlpost.manager}&quot;]/@actor" silent="true"/>
+  <add sel="/mdscript//cue[@name='RBM_Start']/conditions/check_any" pos="after">
+    <check_value value="@player.headquarters.assignedcontrolentity.{controlpost.manager}.isclass.npc and event.object == @player.headquarters.assignedcontrolentity.{controlpost.manager}"/>
+  </add>
+</diff>

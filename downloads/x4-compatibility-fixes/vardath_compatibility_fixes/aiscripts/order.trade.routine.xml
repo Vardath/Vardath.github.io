@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/aiscript/attention/actions/assert[@value='not $buyoffer.exists or not $selloffer.exists or ($buyoffer.ware == $selloffer.ware)']" pos="before">
+    <do_if value="$buyoffer.exists and $selloffer.exists and $buyoffer.ware != $selloffer.ware">
+      <debug_text text="'VCF: rejected mismatched trade pair on %1: %2 / %3; retrying native search'.[this.assignedcontrolled.knownname, $buyoffer.ware, $selloffer.ware]"/>
+      <set_value name="$buyoffer" exact="null"/>
+      <set_value name="$selloffer" exact="null"/>
+      <resume label="find trade run"/>
+    </do_if>
+  </add>
+  <add sel="/aiscript/attention/actions/label[@name='perform trade run']" pos="after">
+    <do_if value="$buyoffer.exists and $selloffer.exists and $buyoffer.ware != $selloffer.ware">
+      <debug_text text="'VCF: rejected mismatched trade pair on %1: %2 / %3; retrying native search'.[this.assignedcontrolled.knownname, $buyoffer.ware, $selloffer.ware]"/>
+      <set_value name="$buyoffer" exact="null"/>
+      <set_value name="$selloffer" exact="null"/>
+      <resume label="find trade run"/>
+    </do_if>
+  </add>
+</diff>
