@@ -1,9 +1,9 @@
-# Galactic Occupations 0.4.5 — shorter tours and longer timeouts
+# Galactic Occupations 0.4.6 — spacesuit handoff recovery
 
-[Download Occupations](Galactic_Occupations_0.4.5_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Tour_Timeout_Update_2026-11-09.zip) · [Full findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.5.md)
+[Download Occupations](Galactic_Occupations_0.4.6_DEV.zip) · [Optional six-mod bundle](../x4-updates/X4_Spacesuit_Control_Update_2026-11-09.zip) · [Evidence and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.6.md)
 
-Newly assigned Tours default to **ten stops**. Accepted bookings and valid saved settings keep their promised route/fare. Active booked-tour task/docking deadlines receive **one extra game hour**, tracked so repeated polling does not extend the same deadline again. Cancelled-tour grace gains an hour above the previous measured estimate, with a **three-hour minimum**; pending saved deadlines extend once. Taxi and crew-return timers, passenger actions, payments and UI are unchanged.
+After a confirmed Use Spacesuit stalls, recovery resets the original ship context, requires a real native teleport acknowledgement, attempts one suit exit and verifies actual suit/control/room/transit state. A failed exit has one bounded original-ship return. No unrequested/repeated ejections, crew/order changes or UI replacement. The station NPC empty-service-slot branch is also guarded before actor creation.
 
-The supplied manifest44 log confirms 28,993,000 Cr from 193 crystal sales and four completed full tours. It contains no error block explicitly naming this suite; the documented remaining messages concern external scripts, missing equipment/ship candidates and UI/save-header queries.
+The supplied 035808 log confirms the earlier recovery fired but ends before verification. It also confirms 26 crystal sales and two completed tours paid 10,700,000 Cr with matching balance changes. Other data/UI errors are documented with uncertain callers left unattributed.
 
-Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Existing orders still configured for twenty stops can be changed to ten for their next booking; current accepted tours retain their stop count. 400 Python contracts, 91 Lua mocks and static/native-reference/package checks pass. New native timeout integration needs in-game confirmation; all companion sources are unchanged.
+Exit X4, overwrite the matching Occupations extension folder and load the same save. Keep Protected UI and Inventory Collector. Tours retain the ten-stop new default and extra hour from 0.4.5; existing bookings/settings are preserved. 415 Python contracts, 91 Lua mocks and static/native-reference/package checks pass. New native recovery and station population execution need live X4 confirmation. Companion sources are unchanged.

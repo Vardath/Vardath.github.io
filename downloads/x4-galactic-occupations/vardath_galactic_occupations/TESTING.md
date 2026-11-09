@@ -1,4 +1,8 @@
-# Reproducible tests — 0.4.1 development
+# Reproducible tests — 0.4.6 development
+
+## Current 0.4.6 spacesuit and station population checks
+
+Run [all current existing-save checks](LOG_REVIEW_0.4.6.md#existing-save-acceptance). Normal exits must remain native. Reproduce the null-suit/null-control/old-room stall; observe source reset, its actual native success event, one suit exit, real control and re-entry. A refused transfer must stop or return once, never loop. Verify manual reseating, teleport, source docking/loss, conversation, save/load and blocked/transit boundaries. Observe station population at multiple docks with and without service slots. 415 Python contracts and 91 retained Lua mocks pass; no X4 executable or installed merged catalogs are available here. Earlier sections below retain their release-specific evidence; current tour defaults are ten stops and minimum cancelled-tour grace is three hours.
 
 ## Current 0.4.5 tour defaults and timeout checks
 

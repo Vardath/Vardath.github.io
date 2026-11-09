@@ -1,6 +1,12 @@
-# Galactic Occupations 0.4.5 development build
+# Galactic Occupations 0.4.6 development build
 
-Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 8 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 9 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.
+
+## 0.4.6: spacesuit context reset and station NPC guard
+
+A stalled confirmed **Use Spacesuit** request now rebuilds the original ship context using the native teleport command, waits for the actual native teleport event, then makes one suit exit. It verifies the suit, both control references, room and transit state. A failed exit gets one return to the same ship; the request then stops. Changed player/source context cancels recovery. Existing saved requests are cleared on upgrade/load. No crew, equipment, ship orders or UI layouts are changed.
+
+The new log confirms the previous recovery fired; it ends 0.36 game seconds later, before the old verification could run. A separate native station-workforce error indexes an empty service-slot list. One exact pre-creation guard prevents that invalid branch. The log also confirms **10,700,000 Cr** from 26 crystal sales and two completed tours, with all 28 observed balance differences matching. [Evidence, limits and reproducible checks](LOG_REVIEW_0.4.6.md). 415 Python contracts and 91 Lua mocks pass; new native recovery/population execution still requires live X4 confirmation. Companion sources remain unchanged.
 
 ## 0.4.5: ten-stop default and one extra game hour
 

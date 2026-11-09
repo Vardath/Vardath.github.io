@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations. Thirteen galaxy-wide occupations; new tours default to ten stops, with one additional game hour for tour task/docking and cancelled-tour grace." author="Vardath" version="45" date="2026-11-09" save="1" enabled="1">
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations; bounded spacesuit context recovery with native handoff verification, and a station NPC empty-slot guard." author="Vardath" version="46" date="2026-11-09" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ws_2074838459" optional="true" name="Sector Explorer"/>
   <dependency id="ws_3650236535" optional="true" name="Auto Trade Subscriptions"/>

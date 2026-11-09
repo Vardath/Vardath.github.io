@@ -1134,6 +1134,11 @@
         <write_to_logbook category="general" title="'Galactic Occupations 0.4.1: station signals and passenger recovery'" text="'Signal scanner now surveys modules/leaks with timed off-screen alternatives, station coupons/trade updates and native job/black-market discovery. Repaired disconnected NPC boarding/departure and twenty-minute crew/tool return. Guarded spacesuit recovery follows a confirmed vanilla exit only. Existing bookings, tour stops and native fare receipts retained. New native paths require live confirmation.'" />
       </actions>
     </cue>
+    <cue name="NoticeV46">
+      <actions>
+        <write_to_logbook category="general" title="'Galactic Occupations 0.4.6: spacesuit handoff recovery'" text="'A stalled confirmed Use Spacesuit request now gets one original-ship context reset, a native teleport confirmation, one suit exit and observed control verification. A failed exit has one bounded return to the original ship. Recovery cancels on changed player/source context and never alters ship orders, crew or equipment. General logbook and debug snapshots distinguish verified suit control, ship return and blocked handoff. New native execution still requires live confirmation.'" />
+      </actions>
+    </cue>
     <cue name="NoticeV45">
       <actions>
         <write_to_logbook category="general" title="'Galactic Occupations 0.4.5: shorter tours and longer grace'" text="'Newly assigned tours default to ten stops. Accepted bookings retain their promised stop count and fare. Active tour task/docking deadlines gain one game hour; cancelled tours gain one hour above their previous measured grace, with a three-hour minimum. Temporary interruptions retain the party and itinerary. Taxi cancellation remains thirty minutes; stranded crew recall remains twenty minutes.'" />

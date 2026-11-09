@@ -1,5 +1,13 @@
 # Version history
 
+## 0.4.6 — 2026-11-09
+
+- Replaced the consumed one-shot spacesuit retry with a bounded native original-ship context reset, real teleport-event acknowledgement, single emergency suit exit and polled suit/control/room/transit verification.
+- Added one original-ship return if the suit handoff fails, including bounded stale-transit handling. No repeated exits, player-seat takeover, ship-order changes or unrequested recovery. Native commands log before/after state; changed context, permissions, conversation and expired intent are respected. Old saved requests are cleared on upgrade/load.
+- Accept a suit's own cockpit room as healthy; do not confuse it with the old ship room. Verification, ship return and blocked transfer have distinct General logbook outcomes.
+- Guarded native NPC_Instantiation.InstantiateNPCs workforce generation before actor creation when its service-slot list is empty. This prevents the two logged invalid-slot failures; native visitors, merchants and existing actors are untouched.
+- Added/expanded failure boundaries: 415 Python contracts and 91 unchanged Lua mocks pass. Log proves 26 crystal sales and two tour fares paid 10,700,000 Cr; new native execution remains unverified. Other occupation AI, payment/passenger systems, UI and companion sources are unchanged. See LOG_REVIEW_0.4.6.md.
+
 ## 0.4.5 — 2026-11-09
 
 - Newly assigned Tours default to ten stops; editable 10–20 range, valid saved settings and accepted bookings are preserved. Ticket-fee default remains 500,000 Cr per delivered passenger.

@@ -16,7 +16,7 @@ COMPAT_PATCHES = {
     MOD/'extensions/fs_exp/aiscripts/sectorexplorer.xml',
     MOD/'extensions/z_ram_autotradesubs/md/ramautosubs.xml',
 }
-NATIVE_RECOVERY_PATCHES = {MOD/'md/finalisestations.xml', MOD/'md/lib_generic.xml', MOD/'aiscripts/orders.base.xml', MOD/'aiscripts/move.generic.xml'}
+NATIVE_RECOVERY_PATCHES = {MOD/'md/finalisestations.xml', MOD/'md/lib_generic.xml', MOD/'md/npc_instantiation.xml', MOD/'aiscripts/orders.base.xml', MOD/'aiscripts/move.generic.xml'}
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--reference', type=Path, help='Extracted installed X4 root: libraries/*.xsd and aiscripts/*.xml')
 parser.add_argument('--report', type=Path)
@@ -103,6 +103,10 @@ for path, root in trees.items():
                 error(path, 'compatibility patches may only replace an exact optional expression attribute')
         continue
     if root.tag == 'diff' and path in NATIVE_RECOVERY_PATCHES:
+        if path.name == 'npc_instantiation.xml':
+            expected="/mdscript//library[@name='InstantiateNPCs']//do_if[@value='this.$ServiceSlots.count + this.$GenericSlots.count ge 2']/@value"
+            if len(root) != 1 or root[0].get('sel') != expected or root[0].text != 'this.$ServiceSlots.count gt 0 and this.$ServiceSlots.count + this.$GenericSlots.count ge 2':
+                error(path, 'native population repair must only guard recruitable workforce before empty service-slot selection')
         for op in root:
             if path.name == 'finalisestations.xml' and not op.get('sel','').endswith("do_if[@value='md.$EquipmentTable']/@value"):
                 error(path, 'station compatibility may guard missing faction equipment only; preserve native list-valued loadout wares')
@@ -264,7 +268,7 @@ if args.zip:
         errors.append(str(exc))
 
 report = {'static_result':'FAIL' if errors else 'PASS', 'counts':counts, 'installed_schema_validation':schema_status,
-          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, current save or merged installed catalogs. Version 0.4.5 sets newly assigned tour default to ten stops, preserves accepted bookings/settings, adds one game hour to active booked-tour task/dock deadlines without sliding repeated polls, and extends cancelled-tour grace by one hour (minimum three hours), including saved pending deadlines once. The supplied manifest44 log records four paid complete twenty-stop tours (16,500,000 Cr) and 193 stock-backed crystal sales (12,493,000 Cr), total 28,993,000 Cr with matching balance deltas and no repeated payment IDs. One unpaid Envoy evacuation occurs after its role changes to Scanner. No error block explicitly names this suite; prior startup, null-loadout and bare-faction errors do not recur. New timeout integration still requires live confirmation.',
+          'reference_provenance':api['provenance'], 'runtime':'NOT RUN: no X4 executable, current save or merged installed catalogs. Version 0.4.6 replaces the one-shot spacesuit retry with a bounded original-ship native context reset, observed teleport event, single suit exit, control/room/transit verification and one ship return on failure. A narrow native workforce guard prevents indexing an empty service-slot list before NPC creation. The new 035808 log proves the prior exit request/retry fired but stops 0.36 game seconds after that retry, before verification. It also records 26 stock-backed crystal sales and two completed tours paying 10,700,000 Cr with matching balances. New native recovery and population execution require live confirmation; static/mocked results do not verify game controls.',
           'runtime_jobs':{key:'UNVERIFIED' for key in JOBS}, 'errors':errors}
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)

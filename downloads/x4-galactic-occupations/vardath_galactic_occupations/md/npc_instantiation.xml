@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Skip native recruitable-workforce iterations without a service slot. -->
+  <replace sel="/mdscript//library[@name='InstantiateNPCs']//do_if[@value='this.$ServiceSlots.count + this.$GenericSlots.count ge 2']/@value">this.$ServiceSlots.count gt 0 and this.$ServiceSlots.count + this.$GenericSlots.count ge 2</replace>
+</diff>
