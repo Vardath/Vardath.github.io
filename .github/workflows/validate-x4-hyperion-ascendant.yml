@@ -5,13 +5,13 @@ on:
       - 'downloads/x4-hyperion-ascendant/**'
       - '.github/workflows/validate-x4-hyperion-ascendant.yml'
       - 'tools/package-x4-hyperion-update.py'
-      - 'downloads/x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip'
+      - 'downloads/x4-updates/X4_Hyperion_Speed_Update_2026-11-10.zip'
   pull_request:
     paths:
       - 'downloads/x4-hyperion-ascendant/**'
       - '.github/workflows/validate-x4-hyperion-ascendant.yml'
       - 'tools/package-x4-hyperion-update.py'
-      - 'downloads/x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip'
+      - 'downloads/x4-updates/X4_Hyperion_Speed_Update_2026-11-10.zip'
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install 'lxml>=5,<7'
       - name: Validate native references, quest recovery, equipment layout and installed archive
-        run: python downloads/x4-hyperion-ascendant/tools/validate.py --zip downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.0.zip --report /tmp/hyperion-static-results.json
+        run: python downloads/x4-hyperion-ascendant/tools/validate.py --zip downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.1.zip --report /tmp/hyperion-static-results.json
       - name: Verify the complete three-extension installation bundle
         run: python tools/package-x4-hyperion-update.py --check
       - uses: actions/upload-artifact@v4

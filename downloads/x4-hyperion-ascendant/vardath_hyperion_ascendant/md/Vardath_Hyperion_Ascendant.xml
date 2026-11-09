@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mdscript name="Vardath_Hyperion_Ascendant" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Vardath_Hyperion_Ascendant" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
     <cue name="Maintain" instantiate="true" checkinterval="1min" namespace="this">
       <conditions>
@@ -17,7 +17,7 @@
             <safepos object="player.ship" min="8km" max="12km"/>
           </create_ship>
           <do_if value="$Ship.exists">
-            <set_object_name object="$Ship" name="{995510,1}"/>
+            <set_object_name object="$Ship" name="'{995510,1}'"/>
             <debug_text text="'Vardath Hyperion Ascendant: spawned player-owned Yaki-crewed ship %1 with six custom main guns and eight custom turrets'.[$Ship.debugname]" filter="general"/>
           </do_if>
           <do_else><debug_text text="'Vardath Hyperion Ascendant: creation failed; retrying in one game minute'" filter="error"/></do_else>

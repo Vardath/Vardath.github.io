@@ -5,7 +5,7 @@ from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
 from validate import BASE,MOD,validate
 
 p=argparse.ArgumentParser();p.add_argument('--source-cache',type=Path);a=p.parse_args()
-archive=BASE/'Hyperion_Ascendant_1.0.0.zip'
+archive=BASE/'Hyperion_Ascendant_1.0.1.zip'
 with tempfile.TemporaryDirectory() as tmp:
     cache=a.source_cache or Path(tmp);validate(cache)
     with ZipFile(archive,'w',ZIP_DEFLATED,compresslevel=9) as z:

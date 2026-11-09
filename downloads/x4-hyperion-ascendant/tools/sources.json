@@ -38,5 +38,40 @@
     "key": "commands",
     "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/common.xsd",
     "sha256_lf_finalnewline": "1e50c1d407adc1d83dee66a4a328e254a7a30ed34ae15d7bd2f7b3a810d32294"
+  },
+  {
+    "key": "md_schema",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/md.xsd",
+    "sha256_lf_finalnewline": "db87b7aa458c0b538233f126ee6c0bf8717c5e233a1a3e5afd4bd04f882c2c2c"
+  },
+  {
+    "key": "wares",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/libraries/wares.xml",
+    "sha256_lf_finalnewline": "7cbba62cc82c333d28096c9249d4a2a0613e7b3da3b8d2a388e613ed0728466c"
+  },
+  {
+    "key": "astrid_laser",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/fx/weaponfx/macros/bullet_vardath_astrid_tours_laser_macro.xml",
+    "sha256_lf_finalnewline": "646505de5b056b77c72ebba169a9e88ed0e8f7c2b5a0e7fd0718ea06a52a45e0"
+  },
+  {
+    "key": "astrid_beam",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/fx/weaponfx/macros/bullet_vardath_astrid_tours_beam_macro.xml",
+    "sha256_lf_finalnewline": "fd09fb1f56bc88cd19441502bf734bfc444480edb021d778c7f4cc68763c17ec"
+  },
+  {
+    "key": "astrid_weapon",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/props/weaponsystems/standard/macros/weapon_vardath_astrid_tours_macro.xml",
+    "sha256_lf_finalnewline": "4a63c0856ec52e61cff7c61252a905be6cd784050d15f902b2ad475a6f10cc7b"
+  },
+  {
+    "key": "astrid_turret",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-kopis-production-cheat/vardath_kopis_production_cheat/assets/props/weaponsystems/standard/macros/turret_vardath_astrid_tours_macro.xml",
+    "sha256_lf_finalnewline": "9b22c96fe38a2cf0417c1dedf07e0ec89699d6457c1e74876b30fef5f2959059"
+  },
+  {
+    "key": "previous_engine",
+    "url": "https://raw.githubusercontent.com/Vardath/Vardath.github.io/43bbc413ab21e807a60f632d55d23f2ace703348/downloads/x4-hyperion-ascendant/vardath_hyperion_ascendant/assets/props/engines/macros/engine_vardath_hyperion_ascendant_macro.xml",
+    "sha256_lf_finalnewline": "cc55e2e70194403b2238e24c4fc539acaaea64c049ccbd3aff20bb199a46004c"
   }
 ]

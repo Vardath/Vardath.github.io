@@ -33,22 +33,24 @@
     <cue name="RecoverCurrentInvestigation" instantiate="true" checkinterval="30s" namespace="this">
       <conditions><check_value value="player.exists"/></conditions>
       <actions>
+        <set_value name="$Prepared" exact="false"/>
         <do_if value="@md.Story_Hyperion.Start.hasmission">
           <set_value name="$Story" exact="md.Story_Hyperion.Start"/>
-          <do_if value="$Story.$MissionAccepted? and @$Story.$Sector_Investigation.exists and @$Story.$Sector_Hyperion.exists and $Story.$Sector_Investigation != $Story.$Sector_Hyperion and (not @$Story.$Sector_Next.exists or @$Story.$Sector_Next == $Story.$Sector_Investigation) and md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.complete and md.Story_Hyperion.Ch1_3_Hyperion_Sector.state == cuestate.waiting and not @$Story.$HyperionCloneShip.exists">
+          <do_if value="$Story.$MissionAccepted? and @$Story.$Sector_Investigation.exists and @$Story.$Sector_Hyperion.exists and $Story.$Sector_Investigation != $Story.$Sector_Hyperion and (not @$Story.$Sector_Next.exists or @$Story.$Sector_Next == $Story.$Sector_Investigation) and (md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.complete or md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.waiting) and md.Story_Hyperion.Ch1_3_Hyperion_Sector.state == cuestate.waiting and not @$Story.$HyperionCloneShip.exists">
             <set_value name="$Gate" exact="null"/><run_actions ref="ResolveGate" result="$Gate"><param name="sector" value="$Story.$Sector_Investigation"/><param name="destination" value="$Story.$Sector_Hyperion"/></run_actions>
-            <do_if value="$Gate.exists and ($Gate != @$Story.$Investigation_CorrectGate or $Gate.sector != $Story.$Sector_Investigation or not @$Story.$Sector_Next.exists)">
+            <do_if value="$Gate.exists and ($Gate != @$Story.$Investigation_CorrectGate or $Gate.sector != $Story.$Sector_Investigation or not @$Story.$Sector_Next.exists or md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.waiting)">
               <set_value name="$Sector" exact="$Story.$Sector_Investigation"/>
               <do_if value="$Gate.sector != $Sector and $Gate.sector != $Story.$Sector_Hyperion">
                 <debug_text text="'VCF Hyperion: relocating gate search from %1 to real gate sector %2 via the native route; no scan or chapter completion granted'.[$Sector.knownname,$Gate.sector.knownname]" filter="general"/>
-                <signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates_Next_Sector" param="$Gate.sector"/>
+                <do_if value="md.Story_Hyperion.Ch1_3_Investigate_Gates_Next_Sector.state == cuestate.waiting"><signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates_Next_Sector" param="$Gate.sector"/></do_if>
               </do_if>
               <do_else>
-              <set_value name="$Investigated" exact="@$Story.$SectorsInvestigated"/>
-              <debug_text text="'VCF Hyperion: repairing current sector search in %1 using real gate %2 to %3; retaining story progress'.[$Sector.knownname,$Gate.debugname,$Gate.exit.sector.knownname]" filter="general"/>
-              <set_value name="$Story.$Sector_Next" exact="$Sector"/><reset_cue cue="md.Story_Hyperion.Ch1_3_Investigate_Gates"/>
-              <signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates" param="$Sector"/>
-              <set_value name="$Story.$SectorsInvestigated" exact="$Investigated"/>
+                <set_value name="$HadInvestigated" exact="$Story.$SectorsInvestigated?"/>
+                <set_value name="$Investigated" exact="@$Story.$SectorsInvestigated"/>
+                <set_value name="$Prepared" exact="true"/>
+                <set_value name="$Story.$Sector_Next" exact="$Sector"/>
+                <debug_text text="'VCF Hyperion: preparing current sector search in %1 using real gate %2 to %3; waiting for the reset listener'.[$Sector.knownname,$Gate.debugname,$Gate.exit.sector.knownname]" filter="general"/>
+                <do_if value="md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.complete"><reset_cue cue="md.Story_Hyperion.Ch1_3_Investigate_Gates"/></do_if>
               </do_else>
             </do_if>
             <do_elseif value="not $Gate.exists and (not RouteState.$NoRouteNotice? or player.age ge RouteState.$NoRouteNotice)">
@@ -56,6 +58,16 @@
               <debug_text text="'VCF Hyperion: no real connected gate route from %1 to %2; quest remains pending, retrying without creating gates or completing objectives'.[$Story.$Sector_Investigation.knownname,$Story.$Sector_Hyperion.knownname]" filter="general"/>
             </do_elseif>
           </do_if>
+        </do_if>
+      </actions>
+      <!-- Native reset_cue takes effect after its actions block. The original
+           Next_Sector handler also waits one second before signalling this cue. -->
+      <delay exact="1s"/>
+      <actions>
+        <do_if value="$Prepared and @$Story.hasmission and $Story.$MissionAccepted? and @$Story.$Sector_Investigation == $Sector and @$Story.$Sector_Next == $Sector and @$Story.$Sector_Hyperion.exists and $Sector != $Story.$Sector_Hyperion and md.Story_Hyperion.Ch1_3_Investigate_Gates.state == cuestate.waiting and md.Story_Hyperion.Ch1_3_Hyperion_Sector.state == cuestate.waiting and not @$Story.$HyperionCloneShip.exists">
+          <signal_cue_instantly cue="md.Story_Hyperion.Ch1_3_Investigate_Gates" param="$Sector"/>
+          <do_if value="$HadInvestigated"><set_value name="$Story.$SectorsInvestigated" exact="$Investigated"/></do_if>
+          <debug_text text="'VCF Hyperion: resumed current gate investigation in %1 after listener reset; no scan or reward granted'.[$Sector.knownname]" filter="general"/>
         </do_if>
         <reset_cue cue="this"/>
       </actions>

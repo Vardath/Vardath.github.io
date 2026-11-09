@@ -84,6 +84,29 @@ class RouteVM:
         try:self.execute(E.parse(str(MOD/'md/VCF_HyperionRoute.xml')).find(".//library[@name='ResolveGate']/actions"))
         except ReturnValue as r:return r.value
 
+class RecoveryDeliveryVM:
+    """Run the shipped post-delay actions with explicit native event boundaries."""
+    stage='md.Story_Hyperion.Ch1_3_Investigate_Gates.state'
+    def __init__(self,changes=None):
+        self.values={'$Prepared':True,'@$Story.hasmission':True,'$Story.$MissionAccepted?':True,'@$Story.$Sector_Investigation':'current','@$Story.$Sector_Next':'current','@$Story.$Sector_Hyperion.exists':True,'$Story.$Sector_Hyperion':'home','$Sector':'current',self.stage:'waiting','cuestate.waiting':'waiting','md.Story_Hyperion.Ch1_3_Hyperion_Sector.state':'waiting','@$Story.$HyperionCloneShip.exists':False,'$HadInvestigated':True,'$Investigated':7,'$Story.$SectorsInvestigated':7}
+        self.values.update(changes or {});self.signals=[];self.reset=False
+    def execute(self,nodes):
+        for n in nodes:
+            if not isinstance(n.tag,str):continue
+            if n.tag=='do_if':
+                if scalar(n.get('value'),self.values):self.execute(n)
+            elif n.tag=='signal_cue_instantly':
+                if self.values[self.stage]!='waiting':raise ValueError('No native listener')
+                self.signals.append(scalar(n.get('param'),self.values));self.values[self.stage]='complete';self.values['$Story.$SectorsInvestigated']+=1
+            elif n.tag=='set_value':self.values[n.get('name')]=scalar(n.get('exact'),self.values)
+            elif n.tag=='reset_cue':
+                if n.get('cue')!='this':raise ValueError('Unexpected deferred reset')
+                self.reset=True
+            elif n.tag!='debug_text':raise ValueError('Unexpected deferred action '+n.tag)
+    def run(self):
+        actions=E.parse(str(MOD/'md/VCF_HyperionRoute.xml')).find(".//cue[@name='RecoverCurrentInvestigation']").findall('actions')
+        self.execute(actions[1]);return self
+
 class Contracts(unittest.TestCase):
     def test_all_assets_and_external_connections_resolve(self):
         components=set(REFS['base_components'].xpath('//entry/@name'))|set(REFS['dlc_components'].xpath('//entry/@name'))
@@ -114,11 +137,56 @@ class Contracts(unittest.TestCase):
         self.assertTrue(all('vardath_hyperion' in p.name for p in files))
         wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('//ware')
         self.assertEqual(len(wares),5)
-        self.assertTrue(all(w.find('owner').get('faction')=='player' for w in wares))
+        self.assertTrue(all(w.find('owner') is None and w.find('production') is None for w in wares))
         self.assertTrue(all(w.find('component').get('ref').startswith(('ship_vardath_','engine_vardath_','shield_vardath_','weapon_vardath_','turret_vardath_')) for w in wares))
         manifest=E.parse(str(MOD/'content.xml'));ids=set(manifest.xpath('//dependency/@id'))
         self.assertTrue({'ego_dlc_mini_01','ego_dlc_terran'}<=ids);self.assertNotIn('vro',ids)
         self.assertFalse(list(MOD.glob('ui/**/*')))
+    def test_normal_reverse_boost_and_travel_speed_factors_are_tripled_once(self):
+        old=REFS['previous_engine'].find('.//properties');new=E.parse(str(MOD/'assets/props/engines/macros/engine_vardath_hyperion_ascendant_macro.xml')).find('.//properties')
+        for axis in ('forward','reverse'):
+            self.assertAlmostEqual(float(new.find('thrust').get(axis))/float(old.find('thrust').get(axis)),3)
+        for mode in ('boost','travel'):
+            self.assertEqual(new.find(mode).attrib,old.find(mode).attrib) # three times base force, not nine times mode force
+            self.assertAlmostEqual(float(new.find('thrust').get('forward'))*float(new.find(mode).get('thrust'))/(float(old.find('thrust').get('forward'))*float(old.find(mode).get('thrust'))),3)
+    def test_each_main_battery_and_beam_damage_meets_published_astrid(self):
+        main=E.parse(str(MOD/'assets/fx/weaponfx/macros/bullet_vardath_hyperion_ascendant_macro.xml')).find('.//properties');other=REFS['astrid_laser'].find('.//properties')
+        self.assertGreaterEqual(float(main.find('damage').get('value')),float(other.find('damage').get('value')))
+        self.assertGreaterEqual(float(main.find('damage').get('value'))*float(main.find('reload').get('rate')),float(other.find('damage').get('value'))*float(other.find('reload').get('rate'))) # Astrid burst ceiling, before its magazine reload
+        beam=E.parse(str(MOD/'assets/fx/weaponfx/macros/bullet_vardath_hyperion_ascendant_beam_macro.xml')).find('.//properties');other=REFS['astrid_beam'].find('.//properties')
+        for channel in ('value','shield'):
+            self.assertGreaterEqual(float(beam.find('damage').get(channel)),10*float(other.find('damage').get(channel,other.find('damage').get('value'))))
+        self.assertGreaterEqual(float(beam.find('bullet').get('lifetime')),float(other.find('bullet').get('lifetime')))
+        self.assertLessEqual(float(beam.find('reload').get('time')),float(other.find('reload').get('time')))
+        turret=E.parse(str(MOD/'assets/props/weaponsystems/energy/macros/turret_vardath_hyperion_ascendant_macro.xml')).find('.//properties');other=REFS['astrid_turret'].find('.//properties')
+        self.assertEqual(turret.find('reload').attrib,other.find('reload').attrib)
+        for tag in ('rotationspeed','rotationacceleration'):self.assertGreaterEqual(float(turret.find(tag).get('max')),float(other.find(tag).get('max')))
+    def test_equipment_wares_have_native_use_metadata_and_no_unused_blueprint_owners(self):
+        wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('//ware');native=REFS['wares'].xpath('/wares/ware[@id="engine_par_l_allround_01_mk1"]')[0]
+        self.assertIsNotNone(native.find('restriction'));self.assertIsNotNone(native.find('use'))
+        equipment=[w for w in wares if 'equipment' in w.get('tags','').split()];self.assertEqual(len(equipment),4)
+        for w in equipment:self.assertEqual(w.find('use').get('threshold'),'0')
+        self.assertFalse(any(w.find('owner') is not None for w in wares))
+    def test_localized_ship_name_is_a_native_text_token_string(self):
+        self.assertEqual(E.parse(str(MOD/'md/Vardath_Hyperion_Ascendant.xml')).find('.//set_object_name').get('name'),"'{995510,1}'")
+    def test_native_reset_is_settled_before_signal_in_separate_action_block(self):
+        cue=E.parse(str(MOD/'md/VCF_HyperionRoute.xml')).find(".//cue[@name='RecoverCurrentInvestigation']");blocks=cue.findall('actions')
+        self.assertEqual(len(blocks),2);self.assertEqual(cue.find('delay').get('exact'),'1s')
+        self.assertIsNotNone(blocks[0].find(".//reset_cue[@cue='md.Story_Hyperion.Ch1_3_Investigate_Gates']"));self.assertIsNone(blocks[0].find(".//signal_cue_instantly[@cue='md.Story_Hyperion.Ch1_3_Investigate_Gates']"))
+        documentation=''.join(REFS['md_schema'].xpath('//*[local-name()="element"][@name="reset_cue"]//*[local-name()="documentation"]/text()'))
+        self.assertIn('after the current cue actions',documentation)
+        native=REFS['story'].xpath("//cue[@name='Ch1_3_Investigate_Gates_Next_Sector']")[0];self.assertEqual(cue.find('delay').attrib,native.find('delay').attrib)
+    def test_post_reset_and_previous_failed_waiting_stage_start_once_without_counter_gain(self):
+        # In both cases the real listener becomes/remains waiting after the delay.
+        for starting_state in ('complete','waiting'):
+            with self.subTest(starting_state=starting_state):
+                cue=E.parse(str(MOD/'md/VCF_HyperionRoute.xml')).find(".//cue[@name='RecoverCurrentInvestigation']");self.assertIn('cuestate.'+starting_state,cue.find('actions/do_if/do_if').get('value'))
+                vm=RecoveryDeliveryVM().run();self.assertEqual(vm.signals,['current']);self.assertEqual(vm.values['$Story.$SectorsInvestigated'],7);self.assertTrue(vm.reset)
+                vm.run();self.assertEqual(vm.signals,['current']) # already consumed listener
+    def test_deferred_recovery_does_not_replay_after_quest_or_sector_changes(self):
+        for changes in ({'$Prepared':False},{'@$Story.hasmission':False},{'$Story.$MissionAccepted?':False},{'@$Story.$Sector_Investigation':'elsewhere'},{'@$Story.$Sector_Next':'elsewhere'},{'$Story.$Sector_Hyperion':'current'},{'@$Story.$HyperionCloneShip.exists':True},{RecoveryDeliveryVM.stage:'complete'},{'md.Story_Hyperion.Ch1_3_Hyperion_Sector.state':'complete'}):
+            with self.subTest(changes=changes):
+                vm=RecoveryDeliveryVM(changes).run();self.assertEqual(vm.signals,[]);self.assertEqual(vm.values['$Story.$SectorsInvestigated'],7);self.assertTrue(vm.reset)
     def test_spawn_is_player_owned_yaki_and_leaves_ten_passenger_berths(self):
         r=E.parse(str(MOD/'md/Vardath_Hyperion_Ascendant.xml'));cue=r.find(".//cue[@name='Maintain']")
         self.assertEqual(cue.get('checkinterval'),'1min')
@@ -204,7 +272,7 @@ def validate(cache,archive=None):
         with ZipFile(archive) as z:
             expected={'extensions/'+MOD.name+'/'+p.relative_to(MOD).as_posix():p.read_bytes() for p in MOD.rglob('*') if p.is_file()}
             if z.testzip() or set(z.namelist())!=set(expected) or any(z.read(p)!=b for p,b in expected.items()):raise ValueError('Archive/source mismatch')
-    return {'version':'1.0.0','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Native pathfinding, physical ship/weapon/crew behavior and current-stage recovery require live acceptance.']}
+    return {'version':'1.0.1','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Native pathfinding, physical ship/weapon/crew behavior and current-stage recovery require live acceptance.']}
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);a=parser.parse_args()
     with tempfile.TemporaryDirectory() as tmp:report=validate(a.source_cache or Path(tmp),a.zip)

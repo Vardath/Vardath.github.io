@@ -5,7 +5,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'downloads/x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip'
+OUT = ROOT / 'downloads/x4-updates/X4_Hyperion_Speed_Update_2026-11-10.zip'
 SOURCES = [ROOT / 'downloads' / folder / name for folder, name in [
     ('x4-galactic-occupations', 'vardath_galactic_occupations'),
     ('x4-compatibility-fixes', 'vardath_compatibility_fixes'),

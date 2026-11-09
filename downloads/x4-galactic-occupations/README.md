@@ -1,6 +1,6 @@
 # Galactic Occupations 0.4.8 — capital tours and scanner physics
 
-[Download Occupations](Galactic_Occupations_0.4.8_DEV.zip) · [All three updated mods](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.4.8_DEV.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
 
 Galactic Sightseeing Tour now accepts **S, M, L and XL ships**. Visible capital services use real ship/station transporter waypoints: the same booked NPC approaches the source, transfers to the receiving room, and must actually be aboard or ashore before the booking advances. Ten passengers maximum, available crew berths, existing fare conditions, ten-stop new bookings and cancellation rules remain.
 
