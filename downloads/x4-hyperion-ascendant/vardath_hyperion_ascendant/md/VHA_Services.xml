@@ -1,160 +1,55 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VHA_Services" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <cue name="RetrofitV102" instantiate="true" checkinterval="1min" namespace="this">
+    <!-- V103: Runtime storage-module attachment on ships is unsupported. The old
+         V102 retrofit repeatedly failed and tried to treat a docking bay as a
+         destructible station module. Capacity must be defined by the ship macro. -->
+    <!-- Ship component references do NOT own writable MD state. Run a bounded
+         10-minute batch without per-ship component properties or catch-up bursts. -->
+    <cue name="ReplenishV103" instantiate="true" checkinterval="10min" namespace="this">
       <conditions>
-        <check_value value="player.exists and player.galaxy.exists"/>
+        <check_value value="player.exists and player.galaxy.exists and player.age ge 10min"/>
       </conditions>
       <actions>
         <find_ship_by_true_owner name="$Ships" faction="faction.player" macro="macro.ship_vardath_hyperion_ascendant_macro" space="player.galaxy" multiple="true"/>
         <do_for_each name="$Ship" in="$Ships">
           <do_if value="$Ship.exists and $Ship.isplayerowned and $Ship.isoperational and $Ship.macro == macro.ship_vardath_hyperion_ascendant_macro">
-            <do_if value="not $Ship.$vha_ready_after_v102?">
-              <set_value name="$Ship.$vha_ready_after_v102" exact="player.age + 5s"/>
+            <set_value name="$AmmoBefore" exact="$Ship.ammostorage.countermeasure.count + $Ship.ammostorage.deployable.count"/>
+            <set_value name="$UnitsBefore" exact="$Ship.units.count"/>
+            <!-- Give ships with no construction drones a bounded initial builder kit. -->
+            <do_if value="$Ship.units.{unitcategory.build}.count == 0 and $Ship.units.free gt 0">
+              <add_units object="$Ship" macro="macro.ship_gen_xs_buildingdrone_01_a_macro" exact="[30, $Ship.units.free].min"/>
             </do_if>
-            <do_if value="player.age ge $Ship.$vha_ready_after_v102">
-              <do_if value="not $Ship.$vha_module_attempts_v102?">
-                <set_value name="$Ship.$vha_module_attempts_v102" exact="table[]"/>
-              </do_if>
-              <do_if value="$Ship.cargo.capacity.universal == 0">
-                <set_value name="$CargoTags" exact="[tag.container, tag.solid, tag.liquid]"/>
-                <set_value name="$CargoMacros" exact="[macro.storage_vardath_hyperion_container_macro, macro.storage_vardath_hyperion_solid_macro, macro.storage_vardath_hyperion_liquid_macro]"/>
-                <do_for_each name="$CargoTag" in="$CargoTags" counter="$Index">
-                  <do_if value="$Ship.cargo.capacity.{$CargoTag} lt 2000000">
-                    <set_value name="$ModuleMacro" exact="$CargoMacros.{$Index}"/>
-                    <include_actions ref="EnsureModuleV102"/>
-                  </do_if>
-                </do_for_each>
-              </do_if>
-              <include_actions ref="ReadSmallStorageV102"/>
-              <do_if value="$SmallCapacity lt 1000">
-                <set_value name="$ModuleMacro" exact="macro.shipstorage_vardath_hyperion_s_macro"/>
-                <include_actions ref="EnsureModuleV102"/>
-              </do_if>
-              <include_actions ref="ReportCapacityV102"/>
+            <do_if value="$Ship.ammostorage.countermeasure.free gt 0">
+              <add_ammo object="$Ship" macro="macro.countermeasure_flares_01_macro" amount="[5, $Ship.ammostorage.countermeasure.free].min"/>
+            </do_if>
+            <do_if value="$Ship.ammostorage.deployable.free gt 0">
+              <add_ammo object="$Ship" macro="macro.eq_arg_satellite_02_macro" amount="1"/>
+            </do_if>
+            <do_if value="$Ship.ammostorage.deployable.free gt 0">
+              <add_ammo object="$Ship" macro="macro.eq_arg_resourceprobe_01_macro" amount="1"/>
+            </do_if>
+            <do_if value="$Ship.ammostorage.deployable.free gt 0">
+              <add_ammo object="$Ship" macro="macro.env_deco_nav_beacon_t1_macro" amount="1"/>
+            </do_if>
+            <do_if value="$Ship.ammostorage.deployable.free gt 0">
+              <add_ammo object="$Ship" macro="macro.weapon_gen_mine_03_macro" amount="1"/>
+            </do_if>
+            <do_if value="$Ship.units.free gt 0">
+              <add_units object="$Ship" macro="macro.ship_gen_xs_cargodrone_empty_01_a_macro" exact="1"/>
+            </do_if>
+            <do_if value="$Ship.units.free gt 0">
+              <add_units object="$Ship" macro="macro.ship_gen_xs_buildingdrone_01_a_macro" exact="1"/>
+            </do_if>
+            <set_value name="$AddedAmmo" exact="$Ship.ammostorage.countermeasure.count + $Ship.ammostorage.deployable.count - $AmmoBefore"/>
+            <set_value name="$AddedUnits" exact="$Ship.units.count - $UnitsBefore"/>
+            <do_if value="$AddedAmmo gt 0 or $AddedUnits gt 0">
+              <debug_text text="'VHA V103 replenishment: %1 +%2 consumables, +%3 drones. No trade cargo or equipment replaced.'.[$Ship.debugname,$AddedAmmo,$AddedUnits]" filter="general"/>
             </do_if>
           </do_if>
         </do_for_each>
         <reset_cue cue="this"/>
       </actions>
     </cue>
-    <cue name="ReplenishV102" instantiate="true" checkinterval="1min" namespace="this">
-      <conditions>
-        <check_value value="player.exists and player.galaxy.exists"/>
-      </conditions>
-      <actions>
-        <find_ship_by_true_owner name="$Ships" faction="faction.player" macro="macro.ship_vardath_hyperion_ascendant_macro" space="player.galaxy" multiple="true"/>
-        <do_for_each name="$Ship" in="$Ships">
-          <do_if value="$Ship.exists and $Ship.isplayerowned and $Ship.isoperational and $Ship.macro == macro.ship_vardath_hyperion_ascendant_macro">
-            <do_if value="not $Ship.$vha_ready_after_v102?">
-              <set_value name="$Ship.$vha_ready_after_v102" exact="player.age + 5s"/>
-            </do_if>
-            <do_if value="not $Ship.$vha_supply_due_v102?">
-              <set_value name="$Ship.$vha_supply_due_v102" exact="player.age + 10min"/>
-            </do_if>
-            <do_if value="player.age ge $Ship.$vha_ready_after_v102">
-              <!-- One-time construction kit if none exists; existing units are never replaced. -->
-              <do_if value="not @$Ship.$vha_builder_seed_v102">
-                <do_if value="$Ship.units.{unitcategory.build}.count gt 0">
-                  <set_value name="$Ship.$vha_builder_seed_v102" exact="true"/>
-                </do_if>
-                <do_elseif value="$Ship.units.free gt 0">
-                  <add_units object="$Ship" macro="macro.ship_gen_xs_buildingdrone_01_a_macro" exact="[30, $Ship.units.free].min"/>
-                  <do_if value="$Ship.units.{unitcategory.build}.count gt 0">
-                    <set_value name="$Ship.$vha_builder_seed_v102" exact="true"/>
-                  </do_if>
-                </do_elseif>
-              </do_if>
-              <do_if value="player.age ge $Ship.$vha_supply_due_v102">
-                <!-- Advance before adding: reloads and long gaps cannot replay
-                     a paid/issued batch or accumulate a stock catch-up burst. -->
-                <set_value name="$Ship.$vha_supply_due_v102" exact="player.age + 10min"/>
-                <include_actions ref="SupplyBatchV102"/>
-              </do_if>
-            </do_if>
-          </do_if>
-        </do_for_each>
-        <reset_cue cue="this"/>
-      </actions>
-    </cue>
-    <library name="EnsureModuleV102">
-      <actions>
-        <set_value name="$Modules" exact="[]"/>
-        <find_object_component name="$Modules" object="$Ship" macro="$ModuleMacro" multiple="true" recursive="true" includeobjects="true" required="false"/>
-        <do_if value="not @$Modules.count and not @$Ship.$vha_module_attempts_v102.{$ModuleMacro}">
-          <!-- Native create_module adds a real module to the existing object.
-               Old bays, cargo, docked ships, equipment and orders stay intact.
-               A failed native creation is latched, not retried every minute. -->
-          <set_value name="$Ship.$vha_module_attempts_v102.{$ModuleMacro}" exact="true"/>
-          <set_value name="$Created" exact="null"/>
-          <create_module name="$Created" object="$Ship" macro="$ModuleMacro"/>
-          <do_if value="$Created.exists and $Created.container == $Ship and $Created.macro == $ModuleMacro">
-            <debug_text text="'VHA capacity module: attached %1 to %2; final capacity is checked separately'.[$ModuleMacro,$Ship.debugname]" filter="general"/>
-          </do_if>
-          <do_else>
-            <debug_text text="'VHA capacity module: native attachment not confirmed for %1 on %2; retaining existing ship and reporting pending capacity'.[$ModuleMacro,$Ship.debugname]" filter="general"/>
-          </do_else>
-        </do_if>
-      </actions>
-    </library>
-    <library name="ReadSmallStorageV102">
-      <actions>
-        <set_value name="$SmallCapacity" exact="0"/>
-        <set_value name="$SmallBays" exact="[]"/>
-        <find_dockingbay name="$SmallBays" object="$Ship" multiple="true" required="false"/>
-        <do_for_each name="$Bay" in="$SmallBays">
-          <do_if value="$Bay.exists and $Bay.isstorage and $Bay.docksize.indexof.{tag.dock_s}">
-            <set_value name="$SmallCapacity" exact="$SmallCapacity + $Bay.shipstorage.capacity"/>
-          </do_if>
-        </do_for_each>
-      </actions>
-    </library>
-    <library name="ReportCapacityV102">
-      <actions>
-        <include_actions ref="ReadSmallStorageV102"/>
-        <set_value name="$CapacityReady" exact="$Ship.cargo.capacity.universal == 0 and $Ship.cargo.capacity.container ge 2000000 and $Ship.cargo.capacity.solid ge 2000000 and $Ship.cargo.capacity.liquid ge 2000000 and $SmallCapacity ge 1000 and $Ship.people.capacity ge 700 and $Ship.units.maxcount ge 1024 and $Ship.ammostorage.missile.capacity ge 10000 and $Ship.ammostorage.deployable.capacity ge 10000 and $Ship.ammostorage.countermeasure.capacity ge 1000"/>
-        <set_value name="$CapacityState" exact="if $CapacityReady then 'verified' else 'pending'"/>
-        <do_if value="@$Ship.$vha_capacity_state_v102 != $CapacityState">
-          <set_value name="$Ship.$vha_capacity_state_v102" exact="$CapacityState"/>
-          <debug_text text="'VHA capacity %1: %2 container=%3 solid=%4 liquid=%5 S-storage=%6 crew=%7 drones=%8; existing cargo and docked ships retained'.[$CapacityState,$Ship.debugname,$Ship.cargo.capacity.container,$Ship.cargo.capacity.solid,$Ship.cargo.capacity.liquid,$SmallCapacity,$Ship.people.capacity,$Ship.units.maxcount]" filter="general"/>
-          <write_to_logbook category="general" title="'Hyperion Ascendant: capacity update'" text="'%1: %2. Cargo capacities: container %3, solid %4, liquid %5. Internal S storage %6; crew capacity %7; drone capacity %8. Existing cargo, docked ships, crew, equipment and orders retained.'.[$Ship.knownname,$CapacityState,$Ship.cargo.capacity.container,$Ship.cargo.capacity.solid,$Ship.cargo.capacity.liquid,$SmallCapacity,$Ship.people.capacity,$Ship.units.maxcount]"/>
-        </do_if>
-      </actions>
-    </library>
-    <library name="SupplyBatchV102">
-      <actions>
-        <set_value name="$AmmoBefore" exact="$Ship.ammostorage.countermeasure.count + $Ship.ammostorage.deployable.count"/>
-        <set_value name="$UnitsBefore" exact="$Ship.units.count"/>
-        <do_if value="$Ship.ammostorage.countermeasure.free gt 0">
-          <add_ammo object="$Ship" macro="macro.countermeasure_flares_01_macro" amount="[5, $Ship.ammostorage.countermeasure.free].min"/>
-        </do_if>
-        <set_value name="$AmmoMacros" exact="[macro.eq_arg_satellite_02_macro, macro.eq_arg_resourceprobe_01_macro, macro.env_deco_nav_beacon_t1_macro, macro.weapon_gen_mine_03_macro]"/>
-        <do_if value="not $Ship.$vha_supply_turn_v102? or $Ship.$vha_supply_turn_v102 lt 1 or $Ship.$vha_supply_turn_v102 gt 4">
-          <set_value name="$Ship.$vha_supply_turn_v102" exact="1"/>
-        </do_if>
-        <do_all exact="4" counter="$AmmoIndex">
-          <set_value name="$Selected" exact="$Ship.$vha_supply_turn_v102 + $AmmoIndex - 1"/>
-          <do_if value="$Selected gt 4">
-            <set_value name="$Selected" exact="$Selected - 4"/>
-          </do_if>
-          <do_if value="$Ship.ammostorage.deployable.free gt 0">
-            <add_ammo object="$Ship" macro="$AmmoMacros.{$Selected}" amount="1"/>
-          </do_if>
-        </do_all>
-        <set_value name="$Ship.$vha_supply_turn_v102" exact="if $Ship.$vha_supply_turn_v102 ge 4 then 1 else $Ship.$vha_supply_turn_v102 + 1"/>
-        <set_value name="$UnitMacros" exact="if @$Ship.$vha_build_first_v102 then [macro.ship_gen_xs_buildingdrone_01_a_macro, macro.ship_gen_xs_cargodrone_empty_01_a_macro] else [macro.ship_gen_xs_cargodrone_empty_01_a_macro, macro.ship_gen_xs_buildingdrone_01_a_macro]"/>
-        <do_for_each name="$UnitMacro" in="$UnitMacros">
-          <do_if value="$Ship.units.free gt 0">
-            <add_units object="$Ship" macro="$UnitMacro" exact="1"/>
-          </do_if>
-        </do_for_each>
-        <set_value name="$Ship.$vha_build_first_v102" exact="not @$Ship.$vha_build_first_v102"/>
-        <set_value name="$AddedAmmo" exact="$Ship.ammostorage.countermeasure.count + $Ship.ammostorage.deployable.count - $AmmoBefore"/>
-        <set_value name="$AddedUnits" exact="$Ship.units.count - $UnitsBefore"/>
-        <do_if value="$AddedAmmo gt 0 or $AddedUnits gt 0">
-          <debug_text text="'VHA slow replenishment: %1 observed +%2 consumables, +%3 drones; next batch at %4. No trade cargo generated.'.[$Ship.debugname,$AddedAmmo,$AddedUnits,$Ship.$vha_supply_due_v102]" filter="general"/>
-        </do_if>
-      </actions>
-    </library>
   </cues>
 </mdscript>
