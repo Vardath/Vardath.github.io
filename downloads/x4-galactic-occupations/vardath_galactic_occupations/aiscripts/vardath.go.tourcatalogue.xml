@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -25,6 +25,26 @@
         </do_for_each>
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" exact="$unique" />
         <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until" exact="player.age + 30min" />
+      </do_if>
+      <!-- A cached POI may have been destroyed or uninstantiated since its discovery.
+           Prune it every time the catalogue is read; expire the cache so the next
+           call discovers replacements. Never inspect .sector on an invalid object. -->
+      <set_value name="$live" exact="[]"/>
+      <do_for_each name="$poi" in="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue">
+        <do_if value="not $poi.exists">
+          <continue/>
+        </do_if>
+        <do_if value="not $poi.sector.exists">
+          <continue/>
+        </do_if>
+        <do_if value="$poi.ishostileto.{this.ship} or $live.indexof.{$poi}">
+          <continue/>
+        </do_if>
+        <append_to_list name="$live" exact="$poi"/>
+      </do_for_each>
+      <do_if value="$live.count != player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue.count">
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" exact="$live"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until" exact="0s"/>
       </do_if>
       <return value="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" />
     </actions>
