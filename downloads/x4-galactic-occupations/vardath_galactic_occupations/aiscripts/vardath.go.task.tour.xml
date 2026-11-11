@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="7" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.tour" version="8" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target"/>
   </params>
@@ -36,6 +36,14 @@
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_sectors" exact="[]"/>
           <set_value name="$sectors" exact="[]"/>
           <do_for_each name="$poi" in="$catalogue">
+            <!-- Catalogue references can go stale after station/ship removal or save reload.
+                 Test existence separately before ever accessing the sector property. -->
+            <do_if value="not $poi.exists">
+              <continue/>
+            </do_if>
+            <do_if value="not $poi.sector.exists">
+              <continue/>
+            </do_if>
             <do_if value="not $sectors.indexof.{$poi.sector}">
               <append_to_list name="$sectors" exact="$poi.sector"/>
             </do_if>
