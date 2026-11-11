@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_hyperion_ascendant" name="Vardath - Hyperion Ascendant" author="Vardath" version="102" date="2026-11-10" save="1" sync="false" description="Upgraded L Hyperion builder with 700 crew berths, large cargo and S-ship storage, slow consumable/drone replenishment, Yaki replacement maintainer and current-map quest recovery. Trade goods do not regenerate.">
+<content id="vardath_hyperion_ascendant" name="Vardath - Hyperion Ascendant" author="Vardath" version="103" date="2026-11-11" save="1" sync="false" description="Upgraded L Hyperion builder with 700 crew berths, large cargo and S-ship storage, error-safe 10-minute consumable/drone replenishment, Yaki replacement maintainer and current-map quest recovery. Trade goods do not regenerate.">
   <dependency version="900"/>
   <dependency id="ego_dlc_mini_01" name="Hyperion Pack"/>
   <dependency id="ego_dlc_terran" name="Cradle of Humanity - Yaki crew"/>
