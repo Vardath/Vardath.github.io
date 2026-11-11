@@ -38,6 +38,26 @@ class SourceContracts(unittest.TestCase):
         searches=[n for n in r.iter() if n.tag in ['find_object','find_ship','find_station']]
         self.assertGreaterEqual(len(searches),6)
         self.assertTrue(all(n.get('space')=='this.ship.$vgo_scope' for n in searches))
+    def test_cached_tour_landmarks_are_pruned_before_sector_reads(self):
+        catalogue=xml('aiscripts/vardath.go.tourcatalogue.xml')
+        task=xml('aiscripts/vardath.go.task.tour.xml')
+        loops=[n for n in catalogue.iter('do_for_each') if n.get('name')=='$poi']
+        self.assertGreaterEqual(len(loops),2)
+        cache_loop=next(n for n in loops if '$vgo_tour_catalogue' in n.get('in',''))
+        children=list(cache_loop)
+        self.assertEqual(children[0].tag,'do_if')
+        self.assertEqual(children[0].get('value'),'not $poi.exists')
+        self.assertIsNotNone(children[0].find('continue'))
+        self.assertEqual(children[1].get('value'),'not $poi.sector.exists')
+        self.assertIsNotNone(children[1].find('continue'))
+        self.assertIsNotNone(catalogue.find(".//set_value[@name='this.ship.$vgo_tour_catalogue_until'][@exact='0s']"))
+        booking=next(n for n in task.iter('do_for_each') if n.get('name')=='$poi' and n.get('in')=='$catalogue')
+        booking_children=list(booking)
+        self.assertEqual(booking_children[0].get('value'),'not $poi.exists')
+        self.assertIsNotNone(booking_children[0].find('continue'))
+        self.assertEqual(booking_children[1].get('value'),'not $poi.sector.exists')
+        self.assertIsNotNone(booking_children[1].find('continue'))
+        self.assertIn('$poi.sector',booking_children[2].get('value'))
     def test_taxi_has_no_three_jump_destination_limit(self):
         s=source('aiscripts/vardath.go.task.taxi.xml')
         self.assertIn('this.ship.$vgo_scope.clone',s)
