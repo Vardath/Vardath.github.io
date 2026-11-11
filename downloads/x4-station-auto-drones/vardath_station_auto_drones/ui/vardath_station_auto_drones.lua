@@ -209,7 +209,7 @@ local function onRoster(_,seq)
  -- mismatch, and the status is inspectable in saved player blackboard.
  SetNPCBlackboard(playerID,'$VAD_Stats',stats)
  SetNPCBlackboard(playerID,'$VAD_Ack',request)
- if stats.changed>0 or stats.errors>0 then
+ if stats.errors>0 then
   log(string.format('Scan %d: stations=%d, updated=%d, unchanged=%d, skipped=%d, errors=%d',
    request,stats.seen,stats.changed,stats.unchanged,stats.skipped,stats.errors))
  end
