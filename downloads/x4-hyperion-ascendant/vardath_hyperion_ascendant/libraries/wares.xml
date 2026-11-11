@@ -3,22 +3,27 @@
   <add sel="/wares">
     <ware id="ship_vardath_hyperion_ascendant" name="{995510,1}" description="{995510,2}" transport="ship" volume="1" tags="ship">
       <price min="1" average="1" max="1"/>
+      <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="energycells" amount="1000"/></primary></production>
       <component ref="ship_vardath_hyperion_ascendant_macro"/>
       </ware>
     <ware id="engine_vardath_hyperion_ascendant" name="{995510,3}" description="{995510,4}" transport="equipment" volume="1" tags="equipment engine" group="engines">
       <price min="1" average="1" max="1"/>
+      <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="energycells" amount="100"/></primary></production>
       <component ref="engine_vardath_hyperion_ascendant_macro"/>
       <use threshold="0"/></ware>
     <ware id="shield_vardath_hyperion_ascendant" name="{995510,5}" description="{995510,6}" transport="equipment" volume="1" tags="equipment shield" group="shields">
       <price min="1" average="1" max="1"/>
+      <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="energycells" amount="75"/></primary></production>
       <component ref="shield_vardath_hyperion_ascendant_macro"/>
       <use threshold="0"/></ware>
     <ware id="weapon_vardath_hyperion_ascendant" name="{995510,7}" description="{995510,8}" transport="equipment" volume="1" tags="equipment weapon" group="weapons">
       <price min="1" average="1" max="1"/>
+      <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="energycells" amount="150"/></primary></production>
       <component ref="weapon_vardath_hyperion_ascendant_macro"/>
       <use threshold="0"/></ware>
     <ware id="turret_vardath_hyperion_ascendant" name="{995510,9}" description="{995510,10}" transport="equipment" volume="1" tags="equipment turret" group="turrets">
       <price min="1" average="1" max="1"/>
+      <production time="10" amount="1" method="default" name="{20206,901}"><primary><ware ware="energycells" amount="200"/></primary></production>
       <component ref="turret_vardath_hyperion_ascendant_macro"/>
       <use threshold="0"/></ware>
   </add>
