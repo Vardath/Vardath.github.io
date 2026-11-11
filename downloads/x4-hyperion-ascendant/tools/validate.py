@@ -138,7 +138,7 @@ class Contracts(unittest.TestCase):
         self.assertTrue(all('vardath_hyperion' in p.name for p in files))
         wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('//ware')
         self.assertEqual(len(wares),5)
-        self.assertTrue(all(w.find('owner') is None and w.find('production') is None for w in wares))
+        self.assertTrue(all(w.find('owner') is None and w.find('production') is not None for w in wares))
         self.assertTrue(all(w.find('component').get('ref').startswith(('ship_vardath_','engine_vardath_','shield_vardath_','weapon_vardath_','turret_vardath_')) for w in wares))
         manifest=E.parse(str(MOD/'content.xml'));ids=set(manifest.xpath('//dependency/@id'))
         self.assertTrue({'ego_dlc_mini_01','ego_dlc_terran'}<=ids);self.assertNotIn('vro',ids)
@@ -275,7 +275,7 @@ def validate(cache,archive=None):
         with ZipFile(archive) as z:
             expected={'extensions/'+MOD.name+'/'+p.relative_to(MOD).as_posix():p.read_bytes() for p in MOD.rglob('*') if p.is_file()}
             if z.testzip() or set(z.namelist())!=set(expected) or any(z.read(p)!=b for p,b in expected.items()):raise ValueError('Archive/source mismatch')
-    return {'version':'1.0.2','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Native ship-module attachment, S-ship storage/launch, L construction, regeneration, physical combat and save/load require live acceptance.','Legacy storage is retained; additional cargo/S capacity may exceed the nominal target. Existing universal cargo is preserved and requires separate capacity review.']}
+    return {'version':'1.0.3','result':'pass','reference_files':len(REFS),'xml_files':len(xmlfiles),'diffs':diffs,'native_story_selectors':2,'tests':result.testsRun,'runtime_tested':False,'limitations':['No X4 executable, user save or effective installed mod merge available.','Unsupported live ship-module attachment has been removed; S-ship storage/launch, L construction, regeneration, physical combat and save/load still require live acceptance.','Existing ships keep their original storage/docking capacity: in-game capacity retrofit was rejected by the engine. Static macro capacities apply to newly spawned ships and still require effective-asset checks.']}
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);a=parser.parse_args()
     with tempfile.TemporaryDirectory() as tmp:report=validate(a.source_cache or Path(tmp),a.zip)
