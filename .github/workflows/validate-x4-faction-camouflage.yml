@@ -1,0 +1,51 @@
+name: Validate X4 faction camouflage
+on:
+  push:
+    paths:
+      - 'downloads/x4-faction-camouflage/**'
+      - '.github/workflows/validate-x4-faction-camouflage.yml'
+  pull_request:
+    paths:
+      - 'downloads/x4-faction-camouflage/**'
+      - '.github/workflows/validate-x4-faction-camouflage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify installable ZIP, native-only cover and protected UI
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import xml.etree.ElementTree as ET
+          zipfile=Path('downloads/x4-faction-camouflage/Vardath_Faction_Camouflage_1.01.zip')
+          prefix='extensions/vardath_faction_camouflage/'
+          expected={prefix+'content.xml',prefix+'README.md',prefix+'md/VardathFactionCamouflage.xml'}
+          with ZipFile(zipfile) as z:
+              assert z.testzip() is None
+              assert set(z.namelist()) == expected, sorted(z.namelist())
+              content=ET.fromstring(z.read(prefix+'content.xml'))
+              root=ET.fromstring(z.read(prefix+'md/VardathFactionCamouflage.xml'))
+          assert content.get('id') == 'vardath_faction_camouflage'
+          assert content.get('version') == '101'
+          assert any(d.get('id') == 'ws_2042901274' for d in content.findall('dependency'))
+          cues={n.get('name'):n for n in root.findall('cues/cue')}
+          assert len(cues) == 5
+          assert len(root.findall('.//signal_cue_instantly[@cue="md.Cover.TriggerCover"]')) == 3
+          assert len(root.findall('.//signal_cue_instantly[@cue="md.Simple_Menu_API.Make_Button"]')) == 2
+          assert len(root.findall('.//signal_cue_instantly[@cue="md.Interact_Menu_API.Add_Action"]')) == 2
+          assert len(root.findall('.//signal_cue_instantly[@cue="md.Simple_Menu_API.Close_Menu"]')) == 2
+          source=ET.tostring(root,encoding='unicode')
+          assert 'macro.ship_vardath_hyperion_ascendant_macro' in source
+          assert 'macro.ship_vardath_astrid_tours_macro' in source
+          for forbidden in ['add_faction_relation', 'set_owner', 'set_relation_boost',
+                            'add_relation_boost', 'create_order', 'remove_order',
+                            'event_object_attacked', 'event_scan_finished']:
+              assert forbidden not in source,forbidden
+          print('GREEN: ZIP CRC, 3 install files, 5 MD cues, two ship selectors, native cover only')
+          print('NOTE: no X4 executable/runtime test performed')
+          PY
