@@ -80,7 +80,7 @@ class ServiceContracts(unittest.TestCase):
         self.assertIsNotNone(ship.find(".//connection[@ref='con_storage_01']"))
 
     def test_default_methods_exist_for_all_five_custom_wares(self):
-        wares = E.parse(str(MOD / "libraries/wares.xml")).xpath("//ware")
+        wares = E.parse(str(MOD / "libraries/wares.xml")).xpath("/diff/add/ware")
         self.assertEqual(len(wares), 5)
         for ware in wares:
             production = ware.find("production")
