@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations; L and XL luxury tours with real passenger transporter transfers, guarded station physics, persistent services and native transaction records." author="Vardath" version="48" date="2026-11-10" save="1" enabled="1">
+<content id="vardath_galactic_occupations" name="Galactic Occupations" description="Thirteen galaxy-wide occupations; L and XL luxury tours with real passenger transporter transfers, guarded station physics, persistent services, stale-POI-safe catalogue and native transaction records." author="Vardath" version="49" date="2026-11-12" save="1" enabled="1">
   <dependency version="900"/>
   <dependency id="ws_2074838459" optional="true" name="Sector Explorer"/>
   <dependency id="ws_3650236535" optional="true" name="Auto Trade Subscriptions"/>
