@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install XML patch test dependency
+      # Revalidate the freshly repackaged 0.4.8 archive after the 11 November hotfix.\n      - name: Install XML patch test dependency
         run: python -m pip install 'lxml>=5,<7'
       - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.4.8_DEV.zip --report /tmp/galactic-occupations-static-results.json
       - name: Reported scope, boarding, survey and payment source guards
