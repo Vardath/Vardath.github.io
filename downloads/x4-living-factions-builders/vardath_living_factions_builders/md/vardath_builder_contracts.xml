@@ -187,7 +187,7 @@
         <do_for_each name="$receipt" in="player.entity.$vardath_income">
           <do_if value="$receipt.{1} gt player.entity.$vardath_income_logged_seq and $receipt.{5} gt 0">
             <set_value name="player.entity.$vardath_income_logged_seq" exact="$receipt.{1}" />
-            <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" entity="$receipt.{7}" />
+            <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" />
             <set_value name="$written" exact="$written + 1" />
             <do_if value="$written ge 5">
               <break />
