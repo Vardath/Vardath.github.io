@@ -136,7 +136,7 @@ class Contracts(unittest.TestCase):
     def test_only_custom_assets_are_modified_and_registered_as_wares(self):
         files=list(MOD.glob('assets/**/*.xml'))
         self.assertTrue(all('vardath_hyperion' in p.name for p in files))
-        wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('//ware')
+        wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('/diff/add/ware')
         self.assertEqual(len(wares),5)
         self.assertTrue(all(w.find('owner') is None and w.find('production') is not None for w in wares))
         self.assertTrue(all(w.find('component').get('ref').startswith(('ship_vardath_','engine_vardath_','shield_vardath_','weapon_vardath_','turret_vardath_')) for w in wares))
@@ -163,7 +163,7 @@ class Contracts(unittest.TestCase):
         self.assertEqual(turret.find('reload').attrib,other.find('reload').attrib)
         for tag in ('rotationspeed','rotationacceleration'):self.assertGreaterEqual(float(turret.find(tag).get('max')),float(other.find(tag).get('max')))
     def test_equipment_wares_have_native_use_metadata_and_no_unused_blueprint_owners(self):
-        wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('//ware');native=REFS['wares'].xpath('/wares/ware[@id="engine_par_l_allround_01_mk1"]')[0]
+        wares=E.parse(str(MOD/'libraries/wares.xml')).xpath('/diff/add/ware');native=REFS['wares'].xpath('/wares/ware[@id="engine_par_l_allround_01_mk1"]')[0]
         self.assertIsNotNone(native.find('restriction'));self.assertIsNotNone(native.find('use'))
         equipment=[w for w in wares if 'equipment' in w.get('tags','').split()];self.assertEqual(len(equipment),4)
         for w in equipment:self.assertEqual(w.find('use').get('threshold'),'0')
