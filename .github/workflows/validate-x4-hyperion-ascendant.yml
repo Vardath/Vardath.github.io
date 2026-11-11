@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'downloads/x4-hyperion-ascendant/**'
+      - 'downloads/x4-galactic-occupations/vardath_galactic_occupations/**'
+      - 'downloads/x4-compatibility-fixes/vardath_compatibility_fixes/**'
       - '.github/workflows/validate-x4-hyperion-ascendant.yml'
       - 'tools/package-x4-hyperion-update.py'
       - 'downloads/x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip'
@@ -14,7 +16,7 @@ on:
       - 'downloads/x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,10 +26,52 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install 'lxml>=5,<7'
+      - name: Rebuild current Hyperion and Occupations ZIPs from checked-out sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED, ZipInfo
+          root = Path('downloads')
+          releases = [
+              ('x4-hyperion-ascendant', 'vardath_hyperion_ascendant', 'Hyperion_Ascendant_1.0.2.zip'),
+              ('x4-galactic-occupations', 'vardath_galactic_occupations', 'Galactic_Occupations_0.4.8_DEV.zip'),
+          ]
+          for folder, mod, filename in releases:
+              src = root/folder/mod
+              out = root/folder/filename
+              expected = {'extensions/'+mod+'/'+p.relative_to(src).as_posix():p.read_bytes() for p in src.rglob('*') if p.is_file()}
+              with ZipFile(out, 'w', ZIP_DEFLATED, compresslevel=9) as z:
+                  for name, data in sorted(expected.items()):
+                      entry = ZipInfo(name, (2026,11,11,0,0,0))
+                      entry.compress_type = ZIP_DEFLATED
+                      entry.external_attr = 0o100644<<16
+                      z.writestr(entry, data)
+              with ZipFile(out) as z:
+                  assert z.testzip() is None and set(z.namelist()) == set(expected)
+                  assert all(z.read(name) == data for name,data in expected.items())
+              print('PASS packaged:',out, len(expected),'files')
+          PY
+          python tools/package-x4-hyperion-update.py
       - name: Validate native references, quest recovery, equipment layout and installed archive
         run: python downloads/x4-hyperion-ascendant/tools/validate.py --zip downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.2.zip --report /tmp/hyperion-static-results.json
       - name: Verify the complete three-extension installation bundle
         run: python tools/package-x4-hyperion-update.py --check
+      - name: Publish validated, byte-matched installation archives
+        if: github.event_name == 'push' && success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.2.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.4.8_DEV.zip downloads/x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip
+          if ! git diff --cached --quiet; then
+            git commit -m "Package verified Hyperion and Occupations hotfix ZIPs"
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep 2
+            done
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
