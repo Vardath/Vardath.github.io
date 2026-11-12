@@ -78,3 +78,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: previewed Vesper Guild, started in Vellum Gate with +20 Vesper relations, and verified the ship still belongs to the player's own faction. Android device not tested.
 - Defects and limitations: Initial relations (+20 chosen faction, 0 others) are provisional. Save/load, reputation changes, economy, and Android export are not yet implemented; the origin and relations currently live only in memory.
 - Next task / gate: Green verified. Implement persistence so the selected origin, evolving relations and orders can survive a restart; then check that task's exact commit before proceeding.
+
+## Pass 5 — Saved games and recovery
+- Date: 2026-11-13
+- Scope: Add one offline save slot, manual saving, autosaving on new games, queued orders, pauses, app background/close and every 30 simulation ticks; add Continue and an overwrite confirmation. Preserve faction origin, relations, credits, crew, tick, orders and mid-crossing state. Use versioned, checksum-checked data, a verified temporary file and a previous-save backup.
+- Files changed: `faction-command/scripts/save_store.gd`, `scripts/main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: Source commit containing this entry; exact SHA and outcome will be recorded after verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not start the next implementation task until this source commit's exact check is green.
+- Automated tests: Local Godot 4.6.3: 219 checks passed, including round-trip of a mid-journey multi-order game, deterministic continuation, changed relations, corrupted primary recovery, backup preservation, checksum and structural validation, unsupported versions, autosave, background pause, and overwrite confirmation. Test saves use isolated directories.
+- Manual/device tests: Desktop Godot: queued a trip, saved during a crossing, restarted the game, confirmed the overwrite warning, and continued the saved journey. Android device not tested.
+- Defects and limitations: One slot plus one previous-save backup; multiple save slots and migration from future formats remain future work. Autosave can lose up to 30 simulation ticks after an abrupt stop since the last event/save. There is no Android APK, trade or station construction yet.
+- Next task / gate: Verify the exact source commit's GitHub Actions checks and record the result; then implement the first physical economy and trading slice.

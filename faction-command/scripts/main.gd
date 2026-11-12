@@ -2,6 +2,7 @@ extends Control
 
 const WorldScript = preload("res://scripts/world.gd")
 const GalaxyMapScript = preload("res://scripts/galaxy_map.gd")
+const SaveStoreScript = preload("res://scripts/save_store.gd")
 const BACKGROUND := Color("080f1b")
 const PANEL := Color("101e2d")
 const BORDER := Color("24394a")
@@ -10,6 +11,9 @@ const MUTED := Color("8ca4b3")
 const ACCENT := Color("71dfcc")
 
 var world = WorldScript.new()
+var save_store = SaveStoreScript.new()
+var save_path := "user://faction_command_save.json"
+var _last_saved_tick := 0
 var paused := true
 var _elapsed := 0.0
 var map_view
@@ -30,6 +34,9 @@ var start_buttons: Dictionary = {}
 var origin_title: Label
 var origin_summary: Label
 var game_started := false
+var save_status: Label
+var save_notice: Label
+var overwrite_confirmation: ConfirmationDialog
 
 
 func _ready() -> void:
@@ -50,6 +57,18 @@ func _process(delta: float) -> void:
 		_elapsed -= whole_ticks
 		_update_header()
 		_refresh_world_display()
+		if save_status.text != "Save failed":
+			save_status.text = "Unsaved"
+		if int(world.state.tick) - _last_saved_tick >= 30:
+			_save_current_game()
+
+
+func _notification(what: int) -> void:
+	if (what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_CLOSE_REQUEST) and game_started:
+		paused = true
+		if is_instance_valid(pause_button):
+			_update_header()
+		_save_current_game()
 
 
 func _style(bg: Color, border: Color = BORDER, radius: int = 8) -> StyleBoxFlat:
@@ -148,10 +167,31 @@ func _build_new_game_screen() -> void:
 	origin_summary.name = "OriginSummary"
 	origin_summary.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	info.add_child(origin_summary)
+	save_notice = _wrapped_label("", 12, MUTED)
+	save_notice.name = "SaveNotice"
+	info.add_child(save_notice)
+	if save_store.has_any_save(save_path):
+		var saved: Dictionary = save_store.load_game(save_path)
+		if bool(saved.get("ok", false)):
+			var continue_button := _button("Continue saved game")
+			continue_button.name = "ContinueButton"
+			continue_button.pressed.connect(_continue_game)
+			info.add_child(continue_button)
+			if bool(saved.get("recovered", false)):
+				save_notice.text = "The latest save is damaged. Continue will use the previous backup."
+		else:
+			save_notice.text = "Saved game is unreadable or uses an unsupported version."
 	var start_button := _button("Start new game")
 	start_button.name = "StartGameButton"
 	start_button.pressed.connect(_start_game)
 	info.add_child(start_button)
+	overwrite_confirmation = ConfirmationDialog.new()
+	overwrite_confirmation.name = "OverwriteConfirmation"
+	overwrite_confirmation.title = "Start a new game?"
+	overwrite_confirmation.dialog_text = "Starting a new game replaces the current save slot. A compatible previous save is kept as a backup when possible."
+	overwrite_confirmation.ok_button_text = "Start new game"
+	overwrite_confirmation.confirmed.connect(_begin_new_game)
+	start_screen.add_child(overwrite_confirmation)
 	_select_origin(chosen_origin)
 
 
@@ -181,18 +221,58 @@ func _select_origin(faction_id: String) -> void:
 func _start_game() -> void:
 	if game_started:
 		return
+	if save_store.has_any_save(save_path):
+		overwrite_confirmation.popup_centered()
+		return
+	_begin_new_game()
+
+
+func _begin_new_game() -> void:
+	if game_started:
+		return
 	if world.load_starter(chosen_origin) != OK:
 		push_error("Unable to create the selected starting origin")
 		return
+	_enter_world()
+	_save_current_game()
+
+
+func _continue_game() -> void:
+	if game_started:
+		return
+	var saved: Dictionary = save_store.load_game(save_path)
+	if not bool(saved.get("ok", false)):
+		save_notice.text = "Saved game could not be loaded."
+		return
+	world.state = saved.state.duplicate(true)
+	_enter_world()
+	save_status.text = "Backup loaded" if bool(saved.get("recovered", false)) else "Game loaded"
+
+
+func _enter_world() -> void:
 	game_started = true
 	paused = true
 	_elapsed = 0.0
+	_last_saved_tick = int(world.state.tick)
 	selected_sector = str(world.state.ships[0].sector)
 	selected_view = "sector"
 	start_screen.queue_free()
 	_build_ui()
 	_show_sector(selected_sector)
 	_update_header()
+
+
+func _save_current_game() -> bool:
+	var error: Error = save_store.save_game(save_path, world.snapshot())
+	if error != OK:
+		if is_instance_valid(save_status):
+			save_status.text = "Save failed"
+		push_warning("Could not save the game: " + error_string(error))
+		return false
+	_last_saved_tick = int(world.state.tick)
+	if is_instance_valid(save_status):
+		save_status.text = "Saved"
+	return true
 
 
 func _build_ui() -> void:
@@ -225,6 +305,14 @@ func _build_ui() -> void:
 	tick_label = _label("", 17, MUTED)
 	tick_label.name = "Tick"
 	header.add_child(tick_label)
+	save_status = _label("", 13, MUTED)
+	save_status.name = "SaveStatus"
+	header.add_child(save_status)
+	var save_button := _button("Save")
+	save_button.name = "SaveButton"
+	save_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	save_button.pressed.connect(_save_current_game)
+	header.add_child(save_button)
 	pause_button = _button("Resume")
 	pause_button.name = "PauseButton"
 	pause_button.custom_minimum_size.x = 100
@@ -328,6 +416,8 @@ func _toggle_pause() -> void:
 	paused = not paused
 	order_feedback.text = ""
 	_update_header()
+	if paused:
+		_save_current_game()
 
 
 func _update_header() -> void:
@@ -393,6 +483,7 @@ func _queue_order() -> void:
 	var ship: Dictionary = world.state.ships[0]
 	if world.queue_fly_to(str(ship.id), selected_sector):
 		order_feedback.text = "Order queued. Resume to travel." if paused else "Order queued."
+		_save_current_game()
 	else:
 		order_feedback.text = "Already there, already queued, or unreachable."
 	_refresh_world_display()

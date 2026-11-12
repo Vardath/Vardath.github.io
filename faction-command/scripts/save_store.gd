@@ -1,0 +1,149 @@
+extends RefCounted
+## One local save slot. A verified temporary file replaces the primary only
+## after the previous valid primary has been retained as a backup.
+
+const FORMAT_VERSION := 1
+const MAX_SAVE_BYTES := 64 * 1024 * 1024
+
+
+func has_any_save(path: String) -> bool:
+	return FileAccess.file_exists(path) or FileAccess.file_exists(path + ".bak")
+
+
+func save_game(path: String, state: Dictionary) -> Error:
+	if not _valid_world(state):
+		return ERR_INVALID_DATA
+	# Preserve exact numeric types and values. Objects are never serialized.
+	var payload := Marshalls.variant_to_base64(state, false)
+	var envelope := {"format_version": FORMAT_VERSION, "checksum": payload.sha256_text(), "payload": payload}
+	var temporary := path + ".tmp"
+	var file := FileAccess.open(temporary, FileAccess.WRITE)
+	if file == null:
+		return FileAccess.get_open_error()
+	file.store_string(JSON.stringify(envelope))
+	file.flush()
+	var write_error := file.get_error()
+	file.close()
+	if write_error != OK:
+		return write_error
+	if not bool(_read_one(temporary).get("ok", false)):
+		return ERR_FILE_CORRUPT
+	if FileAccess.file_exists(path) and bool(_read_one(path).get("ok", false)):
+		var backup_error := DirAccess.rename_absolute(ProjectSettings.globalize_path(path), ProjectSettings.globalize_path(path + ".bak"))
+		if backup_error != OK:
+			return backup_error
+	# If the primary is damaged, retain any usable backup instead of replacing it.
+	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary), ProjectSettings.globalize_path(path))
+
+
+func load_game(path: String) -> Dictionary:
+	var primary := _read_one(path)
+	if bool(primary.get("ok", false)):
+		primary["recovered"] = false
+		return primary
+	# Do not silently replace a save from a newer version with an older backup.
+	if primary.get("reason", "") == "unsupported":
+		return primary
+	var backup := _read_one(path + ".bak")
+	if bool(backup.get("ok", false)):
+		backup["recovered"] = true
+		return backup
+	if primary.get("reason", "") == "missing" and backup.get("reason", "") == "missing":
+		return {"ok": false, "reason": "missing"}
+	return {"ok": false, "reason": "unreadable"}
+
+
+func _read_one(path: String) -> Dictionary:
+	if not FileAccess.file_exists(path):
+		return {"ok": false, "reason": "missing"}
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return {"ok": false, "reason": "unreadable"}
+	if file.get_length() > MAX_SAVE_BYTES:
+		file.close()
+		return {"ok": false, "reason": "unreadable"}
+	var text := file.get_as_text()
+	file.close()
+	var parser := JSON.new()
+	if parser.parse(text) != OK:
+		return {"ok": false, "reason": "unreadable"}
+	var envelope: Variant = parser.data
+	if not envelope is Dictionary:
+		return {"ok": false, "reason": "unreadable"}
+	if not _is_nonnegative_integer(envelope.get("format_version")):
+		return {"ok": false, "reason": "unreadable"}
+	if envelope.get("format_version", -1) != FORMAT_VERSION:
+		return {"ok": false, "reason": "unsupported"}
+	if not envelope.get("payload") is String or not envelope.get("checksum") is String:
+		return {"ok": false, "reason": "unreadable"}
+	var payload: String = envelope.payload
+	if payload.sha256_text() != envelope.checksum:
+		return {"ok": false, "reason": "unreadable"}
+	# Objects remain disabled: saves contain data only, never executable objects.
+	var decoded: Variant = Marshalls.base64_to_variant(payload, false)
+	if not decoded is Dictionary or not _valid_world(decoded):
+		return {"ok": false, "reason": "unreadable"}
+	return {"ok": true, "state": decoded}
+
+
+func _is_number(value: Variant) -> bool:
+	return (value is int or value is float) and is_finite(float(value))
+
+
+func _is_nonnegative_integer(value: Variant) -> bool:
+	return _is_number(value) and float(value) >= 0.0 and float(value) == floor(float(value))
+
+
+func _valid_world(state: Dictionary) -> bool:
+	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
+		return false
+	for key in ["factions", "sectors", "links", "ships", "starting_profiles"]:
+		if not state.get(key) is Array:
+			return false
+	if not state.get("relations") is Dictionary or not state.get("player_faction_id") is String or not state.get("player_origin_faction_id") is String:
+		return false
+	var factions: Dictionary = {}
+	for faction in state.factions:
+		if not faction is Dictionary or not faction.get("id") is String or str(faction.id).is_empty() or not faction.get("name") is String or not faction.get("color") is String or not str(faction.color).is_valid_html_color() or factions.has(faction.id):
+			return false
+		factions[faction.id] = true
+	if not factions.has(state.player_faction_id) or not factions.has(state.player_origin_faction_id) or state.player_origin_faction_id == state.player_faction_id:
+		return false
+	for id in factions:
+		if id != state.player_faction_id and not _is_number(state.relations.get(id)):
+			return false
+	var sectors: Dictionary = {}
+	for sector in state.sectors:
+		if not sector is Dictionary or not sector.get("id") is String or str(sector.id).is_empty() or sectors.has(sector.id) or not sector.get("name") is String or not sector.get("description") is String or not factions.has(sector.get("owner")):
+			return false
+		if not _is_number(sector.get("x")) or not _is_number(sector.get("y")) or float(sector.x) < 0.0 or float(sector.x) > 1.0 or float(sector.y) < 0.0 or float(sector.y) > 1.0:
+			return false
+		sectors[sector.id] = true
+	var links: Dictionary = {}
+	for link in state.links:
+		if not link is Array or link.size() != 2 or not sectors.has(link[0]) or not sectors.has(link[1]) or link[0] == link[1]:
+			return false
+		links["%s|%s" % [link[0], link[1]]] = true
+		links["%s|%s" % [link[1], link[0]]] = true
+	if state.ships.is_empty():
+		return false
+	var ships: Dictionary = {}
+	for ship in state.ships:
+		if not ship is Dictionary:
+			return false
+		for key in ["id", "name", "class", "owner", "sector", "captain", "role", "status"]:
+			if not ship.get(key) is String:
+				return false
+		if str(ship.id).is_empty() or ships.has(ship.id) or not factions.has(ship.owner) or not sectors.has(ship.sector) or not _is_nonnegative_integer(ship.get("crew")) or not ship.get("orders") is Array or not ship.get("travel") is Dictionary:
+			return false
+		ships[ship.id] = true
+		for order in ship.orders:
+			if not order is Dictionary or order.get("type") != "fly_to" or not sectors.has(order.get("destination")):
+				return false
+		if not ship.travel.is_empty():
+			var trip: Dictionary = ship.travel
+			if ship.orders.is_empty() or trip.get("from") != ship.sector or not sectors.has(trip.get("to")) or not links.has("%s|%s" % [trip.get("from"), trip.get("to")]):
+				return false
+			if not _is_nonnegative_integer(trip.get("total")) or not _is_nonnegative_integer(trip.get("remaining")) or int(trip.total) < 1 or int(trip.remaining) < 1 or int(trip.remaining) > int(trip.total):
+				return false
+	return state.ships[0].owner == state.player_faction_id

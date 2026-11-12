@@ -1,6 +1,7 @@
 extends SceneTree
 
 const WorldScript = preload("res://scripts/world.gd")
+const SaveStoreScript = preload("res://scripts/save_store.gd")
 const MainScene = preload("res://scenes/main.tscn")
 
 var failures: Array[String] = []
@@ -19,6 +20,9 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	# A unique isolated directory prevents tests from ever touching a player's save.
+	var test_root := "user://fc-test-%s-%s" % [OS.get_process_id(), Time.get_ticks_usec()]
+	_expect(DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(test_root)) == OK, "isolated test save directory is created")
 	var first = WorldScript.new()
 	var second = WorldScript.new()
 	_expect(first.load_starter() == OK, "starter galaxy loads")
@@ -139,10 +143,66 @@ func _run() -> void:
 	disconnected.state.ships[0].owner = "vesper"
 	_expect(not disconnected.queue_fly_to("ship_001", "opal_crossing"), "player cannot order a foreign ship")
 
+	var save_store = SaveStoreScript.new()
+	var save_path := test_root + "/travel.json"
+	var to_save = WorldScript.new()
+	_expect(to_save.load_starter("vesper") == OK, "saved journey starts with a selected origin")
+	_expect(to_save.queue_fly_to("ship_001", "cinder_veil"), "first saved journey order queues")
+	_expect(to_save.queue_fly_to("ship_001", "copper_wake"), "second saved journey order queues")
+	to_save.state.relations.ravel = 7
+	to_save.state.starting_credits = 23800
+	to_save.advance_ticks(2)
+	var original: Dictionary = to_save.snapshot()
+	_expect(save_store.save_game(save_path, original) == OK, "mid-crossing game saves successfully")
+	var loaded: Dictionary = save_store.load_game(save_path)
+	_expect(bool(loaded.get("ok", false)) and not bool(loaded.get("recovered", true)), "primary save loads")
+	if bool(loaded.get("ok", false)):
+		_expect(loaded.state == original, "save restores the whole world, including origin, relations, credits, crew, travel and orders")
+		var resumed = WorldScript.new()
+		resumed.state = loaded.state.duplicate(true)
+		to_save.advance_ticks(13)
+		resumed.advance_ticks(13)
+		_expect(resumed.snapshot() == to_save.snapshot(), "travel continues identically after save/load")
+		_expect(resumed.state.ships[0].orders.is_empty(), "restored queued orders complete once")
+	var previous_text := FileAccess.get_file_as_string(save_path)
+	var invalid_world: Dictionary = original.duplicate(true)
+	invalid_world.tick = -1
+	_expect(save_store.save_game(save_path, invalid_world) != OK, "invalid world is rejected before writing")
+	_expect(FileAccess.get_file_as_string(save_path) == previous_text, "failed validation leaves the existing save intact")
+	_expect(save_store.save_game(save_path, to_save.snapshot()) == OK, "subsequent save succeeds")
+	_expect(FileAccess.file_exists(save_path + ".bak"), "a previous valid save is kept as a backup")
+	var corrupt := FileAccess.open(save_path, FileAccess.WRITE)
+	corrupt.store_string("{broken")
+	corrupt.close()
+	var recovered: Dictionary = save_store.load_game(save_path)
+	_expect(bool(recovered.get("ok", false)) and bool(recovered.get("recovered", false)), "damaged primary recovers the backup")
+	if bool(recovered.get("ok", false)):
+		_expect(recovered.state == original, "recovery restores the previous complete world")
+	_expect(save_store.save_game(save_path, to_save.snapshot()) == OK, "a recovered game can write a new primary")
+	_expect(bool(save_store.load_game(save_path + ".bak").get("ok", false)), "replacing a damaged primary preserves the valid backup")
+	var corrupt_path := test_root + "/invalid.json"
+	var malformed: Dictionary = original.duplicate(true)
+	malformed.ships[0].travel.remaining = -1
+	var malformed_payload := Marshalls.variant_to_base64(malformed, false)
+	var corrupt_file := FileAccess.open(corrupt_path, FileAccess.WRITE)
+	corrupt_file.store_string(JSON.stringify({"format_version": 1, "payload": malformed_payload, "checksum": malformed_payload.sha256_text()}))
+	corrupt_file.close()
+	_expect(not bool(save_store.load_game(corrupt_path).get("ok", false)), "structurally invalid data is rejected even with a matching checksum")
+	var tampered_path := test_root + "/tampered.json"
+	var tampered := FileAccess.open(tampered_path, FileAccess.WRITE)
+	tampered.store_string(JSON.stringify({"format_version": 1, "payload": malformed_payload, "checksum": "incorrect"}))
+	tampered.close()
+	_expect(not bool(save_store.load_game(tampered_path).get("ok", false)), "checksum mismatch is rejected")
+	var newer := FileAccess.open(save_path, FileAccess.WRITE)
+	newer.store_string(JSON.stringify({"format_version": 99, "payload": "{}", "checksum": ""}))
+	newer.close()
+	_expect(save_store.load_game(save_path).get("reason") == "unsupported", "newer save versions are not silently replaced by an older backup")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
 	var screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-vesper.json"
 	root.add_child(screen)
 	await process_frame
 	# Container layout can require another frame on older Godot versions.
@@ -161,6 +221,7 @@ func _run() -> void:
 	screen.queue_free()
 	await process_frame
 	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-travel.json"
 	root.add_child(screen)
 	await process_frame
 	screen.find_child("StartGameButton", true, false).pressed.emit()
@@ -192,8 +253,47 @@ func _run() -> void:
 	_expect(screen.order_feedback.text.is_empty(), "resume clears the paused-order prompt")
 	screen.find_child("PauseButton", true, false).pressed.emit()
 	_expect(screen.paused, "pause control pauses")
+	_expect(screen.find_child("SaveButton", true, false) != null, "manual save control is available")
+	_expect(FileAccess.file_exists(screen.save_path), "starting and ordering a ship creates a save")
+	screen.world.state.relations.vesper = 12
+	screen.find_child("PauseButton", true, false).pressed.emit()
+	screen._process(1.0)
+	_expect(screen.save_status.text == "Unsaved", "advanced simulation is marked unsaved until the next save")
+	screen._process(29.0)
+	var timed_save: Dictionary = save_store.load_game(screen.save_path)
+	_expect(bool(timed_save.get("ok", false)) and timed_save.state.tick == screen.world.state.tick and timed_save.state.relations.vesper == 12, "autosave records elapsed time and changed relations")
+	screen.world.advance_ticks(1)
+	screen.notification(Node.NOTIFICATION_APPLICATION_PAUSED)
+	var background_save: Dictionary = save_store.load_game(screen.save_path)
+	_expect(screen.paused and bool(background_save.get("ok", false)) and background_save.state.tick == screen.world.state.tick, "backgrounding pauses and saves the game")
+	var saved_ui_state: Dictionary = screen.world.snapshot()
 	screen.queue_free()
 	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-travel.json"
+	root.add_child(screen)
+	await process_frame
+	_expect(screen.find_child("ContinueButton", true, false) != null, "continue is offered when a save exists")
+	screen.find_child("ContinueButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.snapshot() == saved_ui_state, "continue restores the exact saved ship orders and world")
+	_expect(screen.paused, "continued game starts paused")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-travel.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	_expect(not screen.game_started, "starting a new game does not immediately overwrite an existing save")
+	_expect(screen.overwrite_confirmation.visible, "replacing an existing save requires confirmation")
+	screen.queue_free()
+	await process_frame
+	var directory := DirAccess.open(test_root)
+	if directory != null:
+		for file_name in directory.get_files():
+			directory.remove(file_name)
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(test_root))
 	if failures.is_empty():
 		print("PASS: %d foundation checks" % checks)
 		quit(0)

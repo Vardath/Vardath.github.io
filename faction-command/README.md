@@ -18,8 +18,17 @@ additional destinations to visit them in order. Resume time to see the ship
 cross connected sectors; each crossing currently takes five ticks. Selecting
 the ship shows its captain, crew, location and pending destinations.
 
+The game has one local save slot and a manual **Save** button. It also saves
+when a game starts, an order is queued, the game is paused or backgrounded,
+and every 30 simulation ticks. **Continue saved game** restores the chosen
+origin, current relations, credits, crew, tick, and orders, including a crossing
+in progress. Games always resume paused. Starting another new game asks before
+replacing the slot. A validated previous save is retained as a backup; if the
+primary is damaged, Continue offers the backup. A save from an unsupported
+version is not silently replaced by an older backup.
+
 This is an early foundation, not yet a playable economy: docking, trading,
-save/load, order cancellation, Android export, and the wider management
+multiple save slots, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
@@ -28,7 +37,9 @@ stable sector IDs. `scripts/world.gd` owns the
 starting state, whole-tick clock, deterministic route search and queued ship
 movement independently from the UI. The test harness checks scenario integrity,
 connectivity, travel timing and order queues, deterministic tick batching,
-isolation of snapshots, and basic screen interactions.
+isolation of snapshots, save integrity and backup recovery, and basic screen
+interactions. The versioned local save wraps an object-free serialized world in
+a checksum-protected envelope. Tests use a unique temporary save directory.
 
 ## Run and test
 
