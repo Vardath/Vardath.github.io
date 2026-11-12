@@ -1,8 +1,10 @@
-# Galactic Occupations 0.4.9 — safe sightseeing POI references and capital tours
+# Galactic Occupations 0.5.0 — safe payments, sightseeing and capital tours
 
-[Download Occupations](Galactic_Occupations_0.4.8_DEV.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.5.0.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
 
-**November 12 hotfix:** Tour catalogues now prune destroyed/stale points-of-interest from stored lists and force a fresh catalogue search on the next cycle. Tour booking checks validity before accessing a landmark's sector, eliminating the 156 invalid \`$poi.sector\` AI errors recorded in the 2026-11-11 evening log. Existing passengers, tour tickets, destinations, sightseeing progress and paid income are not reset. The filename remains 0.4.8_DEV for existing website links, while the internal mod version is 0.4.9.\n\nGalactic Sightseeing Tour accepts **S, M, L and XL ships**. Visible capital services use real ship/station transporter waypoints: the same booked NPC approaches the source, transfers to the receiving room, and must actually be aboard or ashore before the booking advances. Ten passengers maximum, available crew berths, existing fare conditions, ten-stop new bookings and cancellation rules remain.
+**November 12 tour hotfix:** Tour catalogues now prune destroyed/stale points-of-interest from stored lists and force a fresh catalogue search on the next cycle. Tour booking checks validity before accessing a landmark's sector, eliminating the 156 invalid \`$poi.sector\` AI errors recorded in the 2026-11-11 evening log. Existing passengers, tour tickets, destinations, sightseeing progress and paid income are not reset. **0.5.0** also validates restored receipt records and their binding keys before annotating the vanilla transaction log; invalid saved records no longer crash `Vardath.NativeIncome.Payment`. The old `0.4.8_DEV` ZIP remains available as a historical compatibility link.
+
+Galactic Sightseeing Tour accepts **S, M, L and XL ships**. Visible capital services use real ship/station transporter waypoints: the same booked NPC approaches the source, transfers to the receiving room, and must actually be aboard or ashore before the booking advances. Ten passengers maximum, available crew berths, existing fare conditions, ten-stop new bookings and cancellation rules remain.
 
 The scanner now checks visible attention as well as loaded meshes and sector context before surface queries. Inactive geometry uses the existing timed remote survey path where enabled.
 

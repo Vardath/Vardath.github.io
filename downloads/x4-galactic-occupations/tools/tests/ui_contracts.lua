@@ -140,6 +140,27 @@ ledger.sequence=nil
 local safe=display('failure',100,1)
 check(ledger.onEntry(safe)==safe,'data failure returns the original native row')
 GetNPCBlackboard=oldRead
+-- A saved game with partially imported MD script values can yield nil
+-- receipt sequence keys and malformed native bindings. The old adapter used
+-- L.byseq[receipt[1]]=receipt and threw "table index is nil" on every payment.
+local damaged=blackboard[10]
+damaged['$vardath_income_seq']=7
+damaged['$vardath_income']={{}, {'bad'}, {nil,1,'builder_hire','Incomplete',500}, 'corrupt'}
+damaged['$vardath_income_native_ids']={{}, {nil,7}, {'orphan'}, 'corrupt'}
+damaged['$vardath_income_totals']={{},'corrupt'}
+check(pcall(callbacks['Vardath.NativeIncome.Payment'],nil,10),
+      'damaged saved receipt cannot abort native payment callback')
+check(ledger.byseq[7]==nil,'malformed receipts cannot claim arbitrary transaction ID')
+local damagedEntry=display('not-a-real-payment',500,25)
+check(ledger.onEntry(damagedEntry)==damagedEntry and damagedEntry.eventtypename=='Mission reward',
+      'damaged saved receipts never overwrite native entries')
+damaged['$vardath_income_seq']=8
+damaged['$vardath_income']='invalid table'
+damaged['$vardath_income_native_ids']='invalid table'
+damaged['$vardath_income_totals']='invalid table'
+check(pcall(callbacks['Vardath.NativeIncome.Payment'],nil,10) and #ledger.receipts==0,
+      'invalid persisted receipt list is ignored safely')
+
 Helper.registerCallback=nil
 check(Helper.createTransactionLog()== 'untouched vanilla screen','native renderer remains callable without callback support')
 print(string.format('PASS: %d Lua contract checks (mock menu/data APIs; no X4 runtime)',checks))

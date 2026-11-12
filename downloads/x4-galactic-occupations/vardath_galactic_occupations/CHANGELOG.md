@@ -1,5 +1,12 @@
 # Version history
 
+## 0.5.0 — 2026-11-12
+
+- Guard both shared native-income Lua adapters against incomplete save imports: reject nil receipt sequences, invalid row types and invalid bindings without writing any fictional transaction or cancelling the real payment event.
+- Preserve the 0.4.9 stale-POI tour catalogue fix, native transaction ledger, orders, passengers, crew and saved task data.
+- Add test cases for malformed save receipts and empty native binding tables. Static source/ZIP/Lua test suites only; live X4 validation still required.
+
+
 ## 0.4.8 — 2026-11-10
 
 - L/XL sightseeing eligibility and real same-NPC transporter-point boarding/departure, preserving capacity, bookings and fare gates.
