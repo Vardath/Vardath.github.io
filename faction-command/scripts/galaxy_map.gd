@@ -67,8 +67,13 @@ func _draw() -> void:
 			if not travel.is_empty() and _points.has(travel.get("to", "")):
 				var progress := 1.0 - float(travel.remaining) / float(travel.total)
 				pos = pos.lerp(_points[travel.to], progress)
-			pos += Vector2(-15, -17)
-			draw_colored_polygon(PackedVector2Array([pos + Vector2(0, -6), pos + Vector2(6, 5), pos + Vector2(-6, 5)]), Color("70e4cf"))
+			if ship.owner == world.get("player_faction_id", ""):
+				pos += Vector2(-15, -17)
+				draw_colored_polygon(PackedVector2Array([pos + Vector2(0, -6), pos + Vector2(6, 5), pos + Vector2(-6, 5)]), Color("70e4cf"))
+			else:
+				pos += Vector2(15, -17)
+				var ship_color: Color = faction_colors.get(ship.owner, MUTED)
+				draw_colored_polygon(PackedVector2Array([pos + Vector2(0, -6), pos + Vector2(6, 0), pos + Vector2(0, 6), pos + Vector2(-6, 0)]), ship_color)
 
 
 func _gui_input(event: InputEvent) -> void:

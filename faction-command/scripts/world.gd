@@ -4,8 +4,10 @@ extends RefCounted
 
 const STARTER_DATA := "res://data/starter_galaxy.json"
 const TICKS_PER_CROSSING := 5
+const NPCTradeScript = preload("res://scripts/npc_trade.gd")
 
 var state: Dictionary = {}
+var npc_trade = NPCTradeScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -34,6 +36,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if _prepare_production(new_state) != OK:
 		return ERR_INVALID_DATA
+	if _prepare_logistics(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -44,6 +48,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = _prepare_production(restored)
+	if result != OK:
+		return result
+	result = _prepare_logistics(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -109,6 +116,32 @@ func _prepare_production(target: Dictionary) -> Error:
 	return OK
 
 
+func _prepare_logistics(target: Dictionary) -> Error:
+	if target.has("logistics_version"):
+		return OK if target.logistics_version == 1 else ERR_UNAVAILABLE
+	for ship in target.ships:
+		if ship.id == "npc_logistics_001":
+			return ERR_ALREADY_IN_USE
+	var home: Dictionary = {}
+	for station in target.stations:
+		if station.id == "verdant_hub" and station.owner != target.player_faction_id:
+			home = station
+			break
+	if home.is_empty():
+		for station in target.stations:
+			if station.owner != target.player_faction_id:
+				home = station
+				break
+	if home.is_empty():
+		target["logistics_version"] = 1
+		return OK
+	# The freighter starts with no money. Its home station transfers working
+	# capital on the first simulation tick; migration creates no credits.
+	target.ships.append({"id":"npc_logistics_001", "name":"Wayfarer", "class":"Freighter", "owner":home.owner, "sector":home.sector, "captain":"Talin Rho", "crew":3, "role":"Autonomous Trader", "status":"Idle", "orders":[], "travel":{}, "cargo_capacity":50, "cargo":{}, "docked_at":"", "credits":0, "autotrader":{"enabled":true, "phase":"idle", "home_station_id":home.id, "source_id":"", "destination_id":"", "ware_id":"", "quantity":0, "retry_ticks":0, "funded":false}})
+	target["logistics_version"] = 1
+	return OK
+
+
 func advance_ticks(count: int) -> void:
 	if count <= 0 or state.is_empty():
 		return
@@ -118,6 +151,9 @@ func advance_ticks(count: int) -> void:
 			_tick_ship(ship)
 		for station in state.get("stations", []):
 			_tick_production(station)
+		for ship in state.get("ships", []):
+			if ship.has("autotrader"):
+				npc_trade.tick(self, ship)
 
 
 func snapshot() -> Dictionary:
@@ -128,6 +164,10 @@ func queue_fly_to(ship_id: String, destination: String) -> bool:
 	var ship := _find_ship(ship_id)
 	if ship.is_empty() or ship.owner != state.get("player_faction_id", ""):
 		return false
+	return _queue_ship_route(ship, destination)
+
+
+func _queue_ship_route(ship: Dictionary, destination: String) -> bool:
 	var origin: String = str(ship.sector)
 	if not ship.orders.is_empty():
 		origin = str(ship.orders.back().destination)
@@ -272,9 +312,15 @@ func dock_ship(ship_id: String, station_id: String) -> Dictionary:
 
 func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, buy: bool) -> Dictionary:
 	var ship := _find_ship(ship_id)
+	if ship.is_empty() or ship.owner != state.player_faction_id:
+		return {"ok": false, "message": "Ship is unavailable."}
+	return _trade_for_ship(ship, station_id, ware_id, quantity, buy)
+
+
+func _trade_for_ship(ship: Dictionary, station_id: String, ware_id: String, quantity: int, buy: bool) -> Dictionary:
 	var station := _find_station(station_id)
 	var ware := _find_ware(ware_id)
-	if ship.is_empty() or station.is_empty() or ware.is_empty() or ship.owner != state.player_faction_id:
+	if ship.is_empty() or station.is_empty() or ware.is_empty():
 		return {"ok": false, "message": "Ship, station or ware is unavailable."}
 	if quantity <= 0 or quantity > 1000000000:
 		return {"ok": false, "message": "Choose a positive quantity."}
@@ -292,11 +338,15 @@ func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, 
 	if buy:
 		if stock < quantity:
 			return {"ok": false, "message": "The station does not have enough stock."}
-		if cargo_volume(ship_id) + quantity * int(ware.volume) > int(ship.cargo_capacity):
+		if cargo_volume(str(ship.id)) + quantity * int(ware.volume) > int(ship.cargo_capacity):
 			return {"ok": false, "message": "The ship does not have enough cargo space."}
-		if int(state.starting_credits) < total:
+		var available_credits := int(state.starting_credits) if ship.owner == state.player_faction_id else int(ship.get("credits", 0))
+		if available_credits < total:
 			return {"ok": false, "message": "Your faction does not have enough credits."}
-		state.starting_credits = int(state.starting_credits) - total
+		if ship.owner == state.player_faction_id:
+			state.starting_credits = available_credits - total
+		else:
+			ship.credits = available_credits - total
 		station.credits = int(station.credits) + total
 		station.stock[ware_id] = stock - quantity
 		ship.cargo[ware_id] = cargo + quantity
@@ -307,13 +357,20 @@ func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, 
 			return {"ok": false, "message": "The station does not have enough credits."}
 		if station_volume(station_id) + quantity * int(ware.volume) > int(station.storage_capacity):
 			return {"ok": false, "message": "The station does not have enough storage space."}
-		state.starting_credits = int(state.starting_credits) + total
+		if ship.owner == state.player_faction_id:
+			state.starting_credits = int(state.starting_credits) + total
+		else:
+			ship.credits = int(ship.get("credits", 0)) + total
 		station.credits = int(station.credits) - total
 		station.stock[ware_id] = stock + quantity
 		ship.cargo[ware_id] = cargo - quantity
-	state.ledger.append({"id": int(state.next_transaction_id), "tick": int(state.tick), "kind": "buy" if buy else "sell", "ship_id": ship_id, "station_id": station_id, "ware_id": ware_id, "quantity": quantity, "price": price, "amount": -total if buy else total})
-	state.next_transaction_id = int(state.next_transaction_id) + 1
+	_record_transaction("buy" if buy else "sell", str(ship.id), station_id, ware_id, quantity, price, -total if buy else total)
 	return {"ok": true, "message": "%s %d %s for %d credits." % ["Bought" if buy else "Sold", quantity, ware.name, total]}
+
+
+func _record_transaction(kind: String, ship_id: String, station_id: String, ware_id: String, quantity: int, price: int, amount: int) -> void:
+	state.ledger.append({"id": int(state.next_transaction_id), "tick": int(state.tick), "kind": kind, "ship_id": ship_id, "station_id": station_id, "ware_id": ware_id, "quantity": quantity, "price": price, "amount": amount})
+	state.next_transaction_id = int(state.next_transaction_id) + 1
 
 
 func _find_route(origin: String, destination: String) -> Array:

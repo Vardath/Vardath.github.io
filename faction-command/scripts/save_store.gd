@@ -89,6 +89,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("production_version") and _is_nonnegative_integer(decoded.production_version) and decoded.production_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("logistics_version") and _is_nonnegative_integer(decoded.logistics_version) and decoded.logistics_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -158,11 +160,15 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version")
+		return not state.has("production_version") and not state.has("logistics_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
-	return not state.has("production_version") or _valid_production(state)
+	if not state.has("production_version"):
+		return not state.has("logistics_version")
+	if not _valid_production(state):
+		return false
+	return not state.has("logistics_version") or _valid_logistics(state)
 
 
 func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
@@ -260,4 +266,32 @@ func _valid_production(state: Dictionary) -> bool:
 				return false
 			if int(module.progress) >= int(recipes[module.recipe_id].cycle_ticks):
 				return false
+	return true
+
+
+func _valid_logistics(state: Dictionary) -> bool:
+	if state.logistics_version != 1:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	for ship in state.ships:
+		if not ship.has("autotrader"):
+			continue
+		if ship.owner == state.player_faction_id or not _is_nonnegative_integer(ship.get("credits")) or not ship.autotrader is Dictionary:
+			return false
+		var job: Dictionary = ship.autotrader
+		if not job.get("enabled") is bool or not job.get("funded") is bool or not job.get("phase") is String or job.phase not in ["idle", "to_source", "to_destination"]:
+			return false
+		for key in ["home_station_id", "source_id", "destination_id", "ware_id"]:
+			if not job.get(key) is String:
+				return false
+		if not _is_nonnegative_integer(job.get("quantity")) or not _is_nonnegative_integer(job.get("retry_ticks")) or job.home_station_id.is_empty():
+			return false
+		# A station can disappear while a ship is en route. The trader will
+		# replan on arrival; that ordinary world change must not corrupt a save.
+		if job.phase == "to_source" and (job.source_id.is_empty() or job.destination_id.is_empty() or not wares.has(job.ware_id) or int(job.quantity) < 1):
+			return false
+		if job.phase == "to_destination" and (not wares.has(job.ware_id) or int(job.quantity) < 1):
+			return false
 	return true

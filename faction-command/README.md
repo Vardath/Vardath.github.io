@@ -32,8 +32,15 @@ uses Energy Cells and a finite local ore deposit to produce Ore. An alloy
 smelter consumes both Ore and Energy Cells to produce Alloy Plates. The Trade
 screen shows each station's recipe, progress, shortage or storage blockage, and
 remaining deposit. Materials and output move together at cycle completion;
-partial progress pauses when inputs or storage are unavailable. NPC traders are
-not implemented yet, so the player must transport supplies between stations.
+partial progress pauses when inputs or storage are unavailable.
+
+One faction-owned freighter now transports supplies between stations. It is
+separate from the player's property: its home station transfers real working
+capital, and it buys stock, travels, docks and sells to factories with input
+shortages. It checks prices, budgets, storage and routes. If stock disappears
+or a buyer cannot pay, it replans or waits with any unsold cargo. Its movements
+appear as a diamond on the galaxy map, sector details identify faction traffic,
+and the transaction ledger identifies the ship responsible for each entry.
 
 The game has one local save slot and a manual **Save** button. It also saves
 when a game starts, an order is queued, the game is paused or backgrounded,
@@ -44,10 +51,13 @@ replacing the slot. A validated previous save is retained as a backup; if the
 primary is damaged, Continue offers the backup. A save from an unsupported
 version is not silently replaced by an older backup.
 
-Existing trading saves gain the production definitions and an empty Ore stock
-without resetting existing balances, goods, ships, orders or transaction history.
+Existing trading saves gain production definitions and an empty Ore stock;
+existing production saves gain the NPC freighter with an empty wallet. Neither
+upgrade resets existing balances, goods, player ships, orders or transaction
+history. The NPC receives capital from its home station only after time resumes.
 
-This is an early foundation: NPC traders, dynamic prices, multiple
+This is an early foundation: there is only one NPC trader; player-assigned
+trader roles, dynamic prices, multiple
 save slots, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
@@ -62,6 +72,9 @@ interactions. Trading tests cover conservation of credits and goods, failed
 transactions, storage limits and upgrading older saves without resetting progress.
 Production tests cover shortages, resumption, finite deposits, capacity, competing
 modules, save/load during a cycle and a 2,000-tick run.
+NPC logistics tests cover funded travel and deliveries, money conservation,
+stock changes, missing or insolvent buyers, lost destinations, migration and
+save/load during a trip.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

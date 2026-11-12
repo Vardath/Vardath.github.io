@@ -23,7 +23,16 @@ func _total_credits(state: Dictionary) -> int:
 	var total := int(state.starting_credits)
 	for station in state.stations:
 		total += int(station.credits)
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			total += int(ship.get("credits", 0))
 	return total
+
+
+func _disable_npc_trading(world: RefCounted) -> void:
+	for ship in world.state.ships:
+		if ship.has("autotrader"):
+			ship.autotrader.enabled = false
 
 
 func _total_ware(state: Dictionary, ware_id: String) -> int:
@@ -50,7 +59,12 @@ func _run() -> void:
 	_expect(first.state.schema_version == 1, "starter schema is versioned")
 	_expect(first.state.sectors.size() == 12, "starter contains 12 sectors")
 	_expect(first.state.factions.size() == 5, "starter contains player plus four NPC factions")
-	_expect(first.state.ships.size() == 1, "player starts with one ship")
+	var player_ship_count := 0
+	for ship in first.state.ships:
+		if ship.owner == first.state.player_faction_id:
+			player_ship_count += 1
+	_expect(player_ship_count == 1, "player starts with one independently owned ship")
+	_expect(first.state.ships.size() == 2, "starter galaxy also contains one NPC trader")
 	_expect(first.state.starting_credits > 0, "player starts with credits")
 
 	var faction_ids: Dictionary = {}
@@ -90,7 +104,7 @@ func _run() -> void:
 				queue.append(neighbor)
 	_expect(visited.size() == sector_ids.size(), "all starter sectors are reachable")
 	for ship in first.state.ships:
-		_expect(ship.owner == first.state.player_faction_id, "starter ship belongs to player")
+		_expect(faction_ids.has(ship.owner), "starter ship belongs to a valid faction")
 		_expect(sector_ids.has(ship.sector), "starter ship is in a valid sector")
 		_expect(not str(ship.captain).is_empty() and int(ship.crew) > 0, "starter ship has a captain and crew")
 
@@ -216,6 +230,7 @@ func _run() -> void:
 
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
+	_disable_npc_trading(economy)
 	_expect(economy.state.stations.size() == 4 and economy.state.wares.size() == 3, "starter economy has four stations and three wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
@@ -293,8 +308,11 @@ func _run() -> void:
 	future_file.close()
 	_expect(save_store.load_game(economy_path).get("reason") == "unsupported", "future economy schema is not silently replaced with an older backup")
 	var old_save: Dictionary = original.duplicate(true)
-	for key in ["economy_version", "production_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
+	for key in ["economy_version", "production_version", "logistics_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
 		old_save.erase(key)
+	for index in range(old_save.ships.size() - 1, -1, -1):
+		if old_save.ships[index].id == "npc_logistics_001":
+			old_save.ships.remove_at(index)
 	for ship in old_save.ships:
 		ship.erase("cargo")
 		ship.erase("cargo_capacity")
@@ -310,6 +328,7 @@ func _run() -> void:
 
 	var production_world = WorldScript.new()
 	_expect(production_world.load_starter() == OK, "production scenario loads")
+	_disable_npc_trading(production_world)
 	var solar: Dictionary = production_world._find_station("hearth_exchange")
 	var smelter: Dictionary = production_world._find_station("vellum_foundry")
 	var mine: Dictionary = production_world._find_station("cinder_depot")
@@ -353,6 +372,7 @@ func _run() -> void:
 
 	var finite = WorldScript.new()
 	finite.load_starter()
+	_disable_npc_trading(finite)
 	var finite_mine: Dictionary = finite._find_station("cinder_depot")
 	finite_mine.deposits.ore = 4
 	finite.advance_ticks(8)
@@ -361,6 +381,7 @@ func _run() -> void:
 	_expect(int(finite_mine.stock.ore) == 4 and int(finite_mine.production[0].cycles) == 1 and finite_mine.production[0].status == "Deposit exhausted", "exhausted deposits cannot generate more ore")
 	var full = WorldScript.new()
 	full.load_starter()
+	_disable_npc_trading(full)
 	var full_solar: Dictionary = full._find_station("hearth_exchange")
 	full_solar.stock.energy_cells = 300
 	full.advance_ticks(12)
@@ -373,6 +394,7 @@ func _run() -> void:
 	_expect(int(full_solar.stock.energy_cells) == 300 and int(full_solar.production[0].cycles) == 1, "solar production resumes when storage has room")
 	var partial_capacity = WorldScript.new()
 	partial_capacity.load_starter()
+	_disable_npc_trading(partial_capacity)
 	var partial_solar: Dictionary = partial_capacity._find_station("hearth_exchange")
 	partial_capacity.advance_ticks(3)
 	partial_solar.storage_capacity = partial_capacity.station_volume("hearth_exchange")
@@ -383,6 +405,7 @@ func _run() -> void:
 	_expect(int(partial_solar.production[0].cycles) == 1 and int(partial_solar.stock.energy_cells) == 124, "unfinished production resumes without duplicating output")
 	var competing = WorldScript.new()
 	competing.load_starter()
+	_disable_npc_trading(competing)
 	var shared_smelter: Dictionary = competing._find_station("vellum_foundry")
 	shared_smelter.stock.ore = 2
 	shared_smelter.stock.energy_cells = 1
@@ -393,6 +416,7 @@ func _run() -> void:
 	_expect(int(shared_smelter.production[0].cycles) == 1 and int(shared_smelter.production[1].cycles) == 0 and int(shared_smelter.production[1].progress) == 9, "competing modules cannot consume the same inputs twice")
 	var soak = WorldScript.new()
 	soak.load_starter()
+	_disable_npc_trading(soak)
 	var soak_credits := _total_credits(soak.state)
 	soak.advance_ticks(2000)
 	for station in soak.state.stations:
@@ -405,7 +429,11 @@ func _run() -> void:
 
 	var trading_legacy: Dictionary = economy.snapshot()
 	trading_legacy.erase("production_version")
+	trading_legacy.erase("logistics_version")
 	trading_legacy.erase("recipes")
+	for index in range(trading_legacy.ships.size() - 1, -1, -1):
+		if trading_legacy.ships[index].id == "npc_logistics_001":
+			trading_legacy.ships.remove_at(index)
 	for index in range(trading_legacy.wares.size() - 1, -1, -1):
 		if trading_legacy.wares[index].id == "ore":
 			trading_legacy.wares.remove_at(index)
@@ -422,7 +450,7 @@ func _run() -> void:
 	var trading_legacy_read: Dictionary = save_store.load_game(trading_legacy_path)
 	var production_upgrade = WorldScript.new()
 	_expect(bool(trading_legacy_read.get("ok", false)) and production_upgrade.restore_snapshot(trading_legacy_read.state) == OK, "pre-production trading save upgrades")
-	_expect(production_upgrade.state.starting_credits == trading_legacy.starting_credits and production_upgrade.state.ledger == trading_legacy.ledger and production_upgrade.state.ships == trading_legacy.ships, "production upgrade preserves credits, transaction history and ships")
+	_expect(production_upgrade.state.starting_credits == trading_legacy.starting_credits and production_upgrade.state.ledger == trading_legacy.ledger and production_upgrade.state.ships[0] == trading_legacy.ships[0], "production upgrade preserves credits, transaction history and the player's ship")
 	for old_station in trading_legacy.stations:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
@@ -443,6 +471,180 @@ func _run() -> void:
 	future_production_file.store_string(JSON.stringify({"format_version": 1, "payload": production_payload, "checksum": production_payload.sha256_text()}))
 	future_production_file.close()
 	_expect(save_store.load_game(trading_legacy_path).get("reason") == "unsupported", "future production schema is not silently replaced by an older backup")
+
+	var logistics = WorldScript.new()
+	_expect(logistics.load_starter() == OK, "autonomous logistics scenario loads")
+	var npc: Dictionary = logistics._find_ship("npc_logistics_001")
+	var npc_start_credits := _total_credits(logistics.state)
+	var home_market: Dictionary = logistics._find_station("verdant_hub")
+	var home_before: int = int(home_market.credits)
+	_expect(npc.owner == "frontier" and int(npc.credits) == 0, "NPC trader starts independently with no fabricated credits")
+	_expect(not logistics.queue_fly_to("npc_logistics_001", "hearthreach"), "player cannot command an NPC trader")
+	logistics.advance_ticks(1)
+	_expect(int(npc.credits) == 1000 and int(home_market.credits) == home_before - 1000 and logistics.state.ledger[0].kind == "funding", "home station transfers and records real working capital")
+	_expect(_total_credits(logistics.state) == npc_start_credits and int(logistics.state.starting_credits) == 25000, "funding conserves credits and does not use player money")
+	_expect(npc.sector == "verdant_trace" and npc.cargo.is_empty(), "planned cargo is not teleported into the ship")
+	logistics.advance_ticks(1)
+	_expect(int(npc.cargo.get("energy_cells", 0)) == 8 and logistics.state.ledger[1].kind == "buy", "NPC buys physical energy from station stock")
+	_expect(int(logistics._find_station("vellum_foundry").stock.energy_cells) == 0, "destination receives nothing before the journey")
+	logistics.advance_ticks(9)
+	_expect(int(logistics._find_station("vellum_foundry").stock.energy_cells) == 0, "NPC delivery takes actual sector travel time")
+	logistics.advance_ticks(1)
+	_expect(logistics.state.ledger[2].kind == "sell" and logistics.state.ledger[2].station_id == "vellum_foundry" and int(logistics._find_station("vellum_foundry").stock.energy_cells) == 8, "NPC sells cargo only on arrival at the destination")
+	var logistics_valid := true
+	var prior_events: int = logistics.state.ledger.size()
+	for _step in range(220):
+		var previous_cargo: Dictionary = npc.cargo.duplicate(true)
+		logistics.advance_ticks(1)
+		if _total_credits(logistics.state) != npc_start_credits or int(logistics.state.starting_credits) != 25000:
+			logistics_valid = false
+		if logistics.cargo_volume(str(npc.id)) > int(npc.cargo_capacity):
+			logistics_valid = false
+		for station in logistics.state.stations:
+			if int(station.credits) < 0 or logistics.station_volume(str(station.id)) > int(station.storage_capacity):
+				logistics_valid = false
+			for ware_id in station.stock:
+				if int(station.stock[ware_id]) < 0:
+					logistics_valid = false
+		for index in range(prior_events, logistics.state.ledger.size()):
+			var event: Dictionary = logistics.state.ledger[index]
+			if event.kind in ["buy", "sell"]:
+				var market: Dictionary = logistics._find_station(str(event.station_id))
+				var delta := int(npc.cargo.get(event.ware_id, 0)) - int(previous_cargo.get(event.ware_id, 0))
+				var expected_delta := int(event.quantity) if event.kind == "buy" else -int(event.quantity)
+				if npc.sector != market.sector or delta != expected_delta:
+					logistics_valid = false
+		prior_events = logistics.state.ledger.size()
+	_expect(logistics_valid, "autonomous trades conserve credits, obey capacity and move cargo only at the visited market")
+	_expect(int(logistics._find_station("vellum_foundry").production[0].cycles) > 0, "NPC energy deliveries enable real alloy production")
+	_expect(int(logistics._find_station("cinder_depot").production[0].cycles) > 3, "NPC energy deliveries replenish the ore extractor")
+	var ore_delivered := false
+	for event in logistics.state.ledger:
+		if event.kind == "sell" and event.ware_id == "ore" and event.station_id == "vellum_foundry":
+			ore_delivered = true
+	_expect(ore_delivered, "NPC physically transports ore to the smelter")
+	var logistics_soak = WorldScript.new()
+	logistics_soak.load_starter()
+	var logistics_soak_credits := _total_credits(logistics_soak.state)
+	logistics_soak.advance_ticks(2000)
+	var soak_npc: Dictionary = logistics_soak.state.ships[1]
+	var soak_valid := int(soak_npc.credits) >= 0 and logistics_soak.cargo_volume(str(soak_npc.id)) <= int(soak_npc.cargo_capacity)
+	for station in logistics_soak.state.stations:
+		if int(station.credits) < 0 or logistics_soak.station_volume(str(station.id)) > int(station.storage_capacity):
+			soak_valid = false
+		for ware_id in station.stock:
+			if int(station.stock[ware_id]) < 0:
+				soak_valid = false
+	_expect(soak_valid and _total_credits(logistics_soak.state) == logistics_soak_credits, "2,000-tick NPC run preserves credit, stock and capacity invariants")
+	_expect(save_store.save_game(test_root + "/npc-soak.json", logistics_soak.snapshot()) == OK, "long-running NPC world remains saveable")
+
+	var trip = WorldScript.new()
+	trip.load_starter()
+	trip.advance_ticks(2)
+	_expect(trip.state.ships[1].autotrader.phase == "to_destination" and int(trip.state.ships[1].cargo.energy_cells) > 0, "NPC test captures a purchased cargo in transit")
+	var trip_path := test_root + "/npc-trip.json"
+	_expect(save_store.save_game(trip_path, trip.snapshot()) == OK, "NPC trade in progress can be saved")
+	var trip_read: Dictionary = save_store.load_game(trip_path)
+	var trip_loaded = WorldScript.new()
+	_expect(bool(trip_read.get("ok", false)) and trip_loaded.restore_snapshot(trip_read.state) == OK, "NPC route and cargo reload")
+	trip.advance_ticks(120)
+	for _step in range(120):
+		trip_loaded.advance_ticks(1)
+	_expect(trip.snapshot() == trip_loaded.snapshot(), "NPC trading remains deterministic across save/load and tick batching")
+
+	var vanished_stock = WorldScript.new()
+	vanished_stock.load_starter()
+	vanished_stock.advance_ticks(1)
+	var waiting_npc: Dictionary = vanished_stock.state.ships[1]
+	var chosen_source: Dictionary = vanished_stock._find_station(str(waiting_npc.autotrader.source_id))
+	_expect(not chosen_source.is_empty() and chosen_source.sector == waiting_npc.sector, "NPC selected a local supplier for the stock-race scenario")
+	chosen_source.production.clear()
+	chosen_source.stock[waiting_npc.autotrader.ware_id] = 0
+	vanished_stock.advance_ticks(1)
+	_expect(waiting_npc.cargo.is_empty() and vanished_stock.state.ledger.size() == 1, "stock disappearing before purchase cannot create cargo or a payment")
+
+	var no_buyer = WorldScript.new()
+	no_buyer.load_starter()
+	no_buyer.advance_ticks(2)
+	var waiting_cargo: Dictionary = no_buyer.state.ships[1]
+	for station in no_buyer.state.stations:
+		if station.buy_prices.has("energy_cells"):
+			station.credits = 0
+	no_buyer.advance_ticks(20)
+	var sales_before := 0
+	for event in no_buyer.state.ledger:
+		if event.kind == "sell" and event.ware_id == "energy_cells":
+			sales_before += 1
+	_expect(int(waiting_cargo.cargo.energy_cells) == 8 and sales_before == 0 and waiting_cargo.autotrader.phase == "to_destination", "NPC retains cargo when no station can pay")
+	var funds_source: Dictionary = no_buyer._find_station("hearth_exchange")
+	var funds_target: Dictionary = no_buyer._find_station("vellum_foundry")
+	funds_source.credits = int(funds_source.credits) - 200
+	funds_target.credits = int(funds_target.credits) + 200
+	no_buyer.advance_ticks(20)
+	var sales_after := 0
+	for event in no_buyer.state.ledger:
+		if event.kind == "sell" and event.ware_id == "energy_cells":
+			sales_after += 1
+	_expect(int(waiting_cargo.cargo.energy_cells) == 0 and sales_after == 1, "NPC sells retained cargo once a real buyer can pay")
+	var lost_market = WorldScript.new()
+	lost_market.load_starter()
+	lost_market.advance_ticks(2)
+	var missing_id: String = lost_market.state.ships[1].autotrader.destination_id
+	for index in range(lost_market.state.stations.size() - 1, -1, -1):
+		if lost_market.state.stations[index].id == missing_id:
+			lost_market.state.stations.remove_at(index)
+	var lost_market_path := test_root + "/lost-market.json"
+	_expect(save_store.save_game(lost_market_path, lost_market.snapshot()) == OK, "a station disappearing en route does not corrupt the save")
+	var lost_read: Dictionary = save_store.load_game(lost_market_path)
+	var resumed_market = WorldScript.new()
+	_expect(bool(lost_read.get("ok", false)) and resumed_market.restore_snapshot(lost_read.state) == OK, "NPC cargo reloads after its destination disappears")
+	resumed_market.advance_ticks(40)
+	_expect(int(resumed_market.state.ships[1].cargo.get("energy_cells", 0)) == 0, "NPC finds another available buyer after its destination disappears")
+
+	var pre_logistics: Dictionary = production_world.snapshot()
+	pre_logistics.erase("logistics_version")
+	for index in range(pre_logistics.ships.size() - 1, -1, -1):
+		if pre_logistics.ships[index].id == "npc_logistics_001":
+			pre_logistics.ships.remove_at(index)
+	var old_production_path := test_root + "/production-legacy.json"
+	_expect(save_store.save_game(old_production_path, pre_logistics) == OK, "pre-logistics production save remains readable")
+	var old_production: Dictionary = save_store.load_game(old_production_path)
+	var logistics_upgrade = WorldScript.new()
+	_expect(bool(old_production.get("ok", false)) and logistics_upgrade.restore_snapshot(old_production.state) == OK, "production save gains autonomous logistics")
+	_expect(logistics_upgrade.state.ships[0] == pre_logistics.ships[0] and logistics_upgrade.state.ledger == pre_logistics.ledger and logistics_upgrade.state.starting_credits == pre_logistics.starting_credits, "logistics upgrade preserves the player's ship, credits and ledger")
+	for old_station in pre_logistics.stations:
+		var new_station: Dictionary = logistics_upgrade._find_station(str(old_station.id))
+		_expect(new_station.credits == old_station.credits and new_station.stock == old_station.stock and new_station.production == old_station.production, "logistics upgrade preserves station finances and production: " + str(old_station.id))
+	_expect(int(logistics_upgrade.state.ships[1].credits) == 0, "logistics upgrade does not create NPC funds")
+	var altered_home: Dictionary = pre_logistics.duplicate(true)
+	for station in altered_home.stations:
+		if station.id == "verdant_hub":
+			station.owner = altered_home.player_faction_id
+	var alternate = WorldScript.new()
+	_expect(alternate.restore_snapshot(altered_home) == OK and alternate.state.ships[1].owner != altered_home.player_faction_id, "logistics upgrade selects an available NPC home if the original is player-owned")
+	var captured_home = WorldScript.new()
+	captured_home.load_starter()
+	var captured_station: Dictionary = captured_home._find_station("verdant_hub")
+	captured_station.owner = captured_home.state.player_faction_id
+	var captured_balance: int = int(captured_station.credits)
+	captured_home.advance_ticks(8)
+	_expect(int(captured_station.credits) == captured_balance and int(captured_home.state.ships[1].credits) == 0, "an NPC cannot take working capital from a station captured by the player")
+	_expect(save_store.save_game(test_root + "/captured-home.json", captured_home.snapshot()) == OK, "a changed station owner does not invalidate the save")
+	var invalid_logistics: Dictionary = logistics.snapshot()
+	invalid_logistics.ships[1].credits = -1
+	_expect(save_store.save_game(test_root + "/bad-npc.json", invalid_logistics) != OK, "a negative NPC wallet is rejected")
+	invalid_logistics = logistics.snapshot()
+	invalid_logistics.ships[1].autotrader.phase = "invalid"
+	_expect(save_store.save_game(test_root + "/bad-npc.json", invalid_logistics) != OK, "an invalid NPC order phase is rejected")
+	var npc_version_path := test_root + "/npc-version.json"
+	_expect(save_store.save_game(npc_version_path, logistics.snapshot()) == OK and save_store.save_game(npc_version_path, logistics.snapshot()) == OK, "NPC version check has a valid backup")
+	var future_logistics: Dictionary = logistics.snapshot()
+	future_logistics.logistics_version = 2
+	var logistics_payload := Marshalls.variant_to_base64(future_logistics, false)
+	var future_logistics_file := FileAccess.open(npc_version_path, FileAccess.WRITE)
+	future_logistics_file.store_string(JSON.stringify({"format_version": 1, "payload": logistics_payload, "checksum": logistics_payload.sha256_text()}))
+	future_logistics_file.close()
+	_expect(save_store.load_game(npc_version_path).get("reason") == "unsupported", "future logistics schema is not silently replaced by an older backup")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -554,6 +756,19 @@ func _run() -> void:
 	screen.find_child("StartGameButton", true, false).pressed.emit()
 	_expect(not screen.game_started, "starting a new game does not immediately overwrite an existing save")
 	_expect(screen.overwrite_confirmation.visible, "replacing an existing save requires confirmation")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-npc.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	screen.world.advance_ticks(12)
+	screen._show_sector("vellum_gate")
+	_expect(screen.detail_body.text.contains("Wayfarer") and screen.detail_body.text.contains("Faction traffic"), "sector details identify NPC traffic separately from player property")
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	_expect(screen.trade_ledger.text.contains("Wayfarer") and screen.trade_ledger.text.contains("funded"), "ledger identifies NPC trade and working-capital transfers")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

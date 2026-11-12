@@ -383,7 +383,7 @@ func _build_ui() -> void:
 	map_view.set_world(world.snapshot())
 	map_view.sector_selected.connect(_show_sector)
 	map_column.add_child(map_view)
-	map_column.add_child(_label("Select a sector on the map or use the sector list.", 12, MUTED))
+	map_column.add_child(_label("▲ Your ship    ◆ Faction traffic    ·    Select a sector on the map or in the list.", 12, MUTED))
 
 	var detail_panel := _panel()
 	detail_panel.custom_minimum_size.x = 230
@@ -462,6 +462,13 @@ func _show_sector(sector_id: String) -> void:
 			detail_title.text = sector.name
 			var standing := int(world.state.relations.get(sector.owner, 0))
 			detail_body.text = "Controlled by\n%s\n\nRelations: %s%d\n\n%s" % [faction_name, "+" if standing > 0 else "", standing, sector.description]
+			var traffic: Array[String] = []
+			for vessel in world.state.ships:
+				if vessel.owner != world.state.player_faction_id and vessel.sector == sector_id:
+					var movement := " → " + _sector_name(str(vessel.travel.to)) if not vessel.travel.is_empty() else ""
+					traffic.append("%s · %s%s" % [vessel.name, vessel.status, movement])
+			if not traffic.is_empty():
+				detail_body.text += "\n\nFaction traffic\n" + "\n".join(traffic)
 			order_target.text = "Destination: " + str(sector.name)
 			return
 
@@ -680,7 +687,12 @@ func _update_trade_screen() -> void:
 		var entry: Dictionary = ledger[index]
 		var entry_ware: Dictionary = world._find_ware(str(entry.ware_id))
 		var entry_station: Dictionary = world._find_station(str(entry.station_id))
-		lines.append("#%d  T%d  %s %d %s  ·  %s%d CR\n%s" % [int(entry.id), int(entry.tick), str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount), entry_station.get("name", entry.station_id)])
+		var entry_ship: Dictionary = world._find_ship(str(entry.ship_id))
+		var actor := str(entry_ship.get("name", entry.ship_id))
+		if entry.kind == "funding":
+			lines.append("#%d  T%d  %s funded +%d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
+		else:
+			lines.append("#%d  T%d  %s: %s %d %s  ·  %s%d CR\n%s" % [int(entry.id), int(entry.tick), actor, str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount), entry_station.get("name", entry.station_id)])
 	var ledger_text := "No transactions yet." if lines.is_empty() else "\n\n".join(lines)
 	if trade_ledger.text != ledger_text:
 		trade_ledger.text = ledger_text

@@ -114,3 +114,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: loaded a prior trading save and inspected solar, smelter and extractor recipes, shortage states and remaining deposit on the market screen. Android device not tested.
 - Defects and limitations: Player deliveries are required; NPC traders, dynamic prices, player-built stations and Android export remain unimplemented. Solar energy is an abstract renewable natural input; existing saves receive no free initial ore stock. Production runs at the same fidelity in all sectors and has not been profiled at the planned galaxy scale.
 - Next task / gate: Green verified. Implement NPC logistics and autonomous trading against actual inventories, budgets, routes and station needs; verify that task's exact commit before proceeding.
+
+## Pass 8 — Autonomous faction supply freighter
+- Date: 2026-11-13
+- Scope: Add one NPC-owned autonomous freighter that receives working capital from its own station, identifies profitable factory input shortages, buys actual station stock, travels over sector links, docks and sells physical cargo against station budgets and storage. Revalidate deals at arrival; retain cargo and seek another buyer or wait when conditions change. Display faction traffic and identify each actor in the shared ledger. Upgrade previous saves without resetting player property, finances, orders, station stock or production.
+- Files changed: `faction-command/scripts/npc_trade.gd`, `scripts/world.gd`, `scripts/galaxy_map.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: Source commit containing this entry; exact SHA and result will be recorded after verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not start another implementation task until this commit's exact checks are green.
+- Automated tests: Local Godot 4.6.3: 388 checks passed. Coverage includes real station funding, travel and input delivery, credit and cargo invariants, player/NPC ownership, stock disappearing, an insolvent buyer, missing destinations, save/load mid-trip, migration, and a 2,000-tick NPC economy run.
+- Manual/device tests: Desktop Godot: loaded an earlier save, watched the NPC diamond travel across the map, inspected its sector traffic and observed its separately identified funding, purchase and sale in the transaction ledger. Android device not tested.
+- Defects and limitations: Only one prototype NPC trader; player-selectable trading roles, dynamic pricing, diplomacy checks, more factions/ships and Android export remain unimplemented. Long-run and galaxy-scale device performance are not yet profiled.
+- Next task / gate: Verify this source commit's exact checks and record the result; then implement a player-owned autonomous trader role with real routes, cargo, station constraints and ledger entries.
