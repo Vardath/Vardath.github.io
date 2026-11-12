@@ -220,7 +220,7 @@ class SourceContracts(unittest.TestCase):
         r=ET.parse(BUILDER/'md/vardath_builder_contracts.xml').getroot()
         self.assertEqual(len(list(r.iter('reward_player'))),2)
         s=ET.tostring(r,encoding='unicode')
-        for required in ['100000Cr','25000Cr','200000Cr',"$Contract.$Owed gt 0Cr",'checkinterval="1min"']:
+        for required in ['(($Delta / 1h)f * 10000000)i * 1ct', '(($Delta / 1h)f * 2500000)i * 1ct', '200000Cr', "$Contract.$Owed gt 0Cr", 'checkinterval="1min"']:
             self.assertIn(required,s)
         self.assertEqual(len(r.findall(".//include_actions[@ref='RecordIncome']")),2)
     def test_income_records_use_actual_balance_change(self):
