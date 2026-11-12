@@ -75,5 +75,10 @@
     "workshop": "3627916728",
     "catalog_path": "md/kuertee_emergent_missions_rescue.xml",
     "catalog_md5": "4422060b6a88524f0bab23c63cc38be8"
+  },
+  {
+    "path": "extensions/galaxy_trader/md/gt_core_system.xml",
+    "git_blob_sha": "16fc6873b64da1daafb26739e55c8ca03d58f623",
+    "url": "https://raw.githubusercontent.com/GoAhead-at/galaxy_trader_v9/c6d3c9a36b6dea974babb79ef66f3903e978bc83/md/gt_core_system.xml"
   }
 ]

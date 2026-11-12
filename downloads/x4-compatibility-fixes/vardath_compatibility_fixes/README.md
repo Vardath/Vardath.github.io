@@ -1,8 +1,8 @@
-# Vardath Compatibility Fixes 1.0.1
+# Vardath Compatibility Fixes 1.0.2
 
-Nine targeted XML compatibility patches for X4 9.00. Install this folder under `extensions`, enable it and load your existing save. Keep Protected UI and Inventory Collector enabled.
+Ten targeted XML compatibility patches for X4 9.00. Install this folder under `extensions`, enable it and load your existing save. Keep Protected UI and Inventory Collector enabled.
 
-Includes the original six guards plus Inventory Collector's missing common-handler debug default, HeadHunter's absent-pilot expiry cleanup and Emergent Missions' late rescue callback. Native mission cleanup also takes a stable snapshot before invoking immediate callbacks that can change its source list.
+Includes the GalaxyTrader destroyed-ship sector-name guard plus the original six guards and Inventory Collector's missing common-handler debug default, HeadHunter's absent-pilot expiry cleanup and Emergent Missions' late rescue callback. Native mission cleanup also takes a stable snapshot before invoking immediate callbacks that can change its source list.
 
 No Lua/UI replacement, ship assets, reward replay, ownership transfer or forced player order cancellation. This extension does not require the new Hyperion. Third-party dependencies are optional and use the installed folder names recorded in the supplied log.
 

@@ -10,7 +10,7 @@ from validate import BASE, MOD, validate
 parser=argparse.ArgumentParser()
 parser.add_argument('--source-cache',type=Path)
 args=parser.parse_args()
-archive=BASE/'Vardath_Compatibility_Fixes_1.0.1.zip'
+archive=BASE/'Vardath_Compatibility_Fixes_1.0.2.zip'
 with tempfile.TemporaryDirectory() as tmp:
     cache=args.source_cache or Path(tmp)
     validate(cache)

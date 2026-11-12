@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- galaxy_trader_v9; guard nullable sector name on destroyed/removed ships.
+     No changes to GalaxyTrader's job state, fleet or pilot lifecycle. -->
+<diff>
+  <replace sel="/mdscript//cue[@name='HandlePlayerOwnedShipDestroyedForGT']/actions/set_value[@name='$destroySectorName' and @exact=&quot;if $ship? and $ship.sector? then $ship.sector.knownname else 'NONE'&quot;]/@exact" silent="true">if $ship? and $ship.sector? and $ship.sector.knownname? then $ship.sector.knownname else 'NONE'</replace>
+</diff>

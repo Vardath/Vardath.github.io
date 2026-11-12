@@ -74,8 +74,12 @@ def references(cache):
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_bytes(normalized(data))
         data = normalized(p.read_bytes())
-        if hashlib.sha256(data).hexdigest() != item['sha256_lf']:
-            raise ValueError('Pinned reference mismatch: ' + item['path'])
+        if item.get('sha256_lf') and hashlib.sha256(data).hexdigest() != item['sha256_lf']:
+            raise ValueError('Pinned SHA256 reference mismatch: ' + item['path'])
+        if item.get('git_blob_sha'):
+            header = ('blob ' + str(len(data)) + '\\0').encode('utf-8')
+            if hashlib.sha1(header + data).hexdigest() != item['git_blob_sha']:
+                raise ValueError('Pinned Git blob reference mismatch: ' + item['path'])
         result[item['path']] = E.fromstring(data)
     return result
 
@@ -327,6 +331,21 @@ class Contracts(unittest.TestCase):
         self.assertEqual(canonical(self.one(p,".//cue[@name='kEMissions_Rescue_End2']")),canonical(self.one(p,".//cue[@name='kEMissions_Rescue_End2']",False)))
         self.assertFalse(condition.xpath('.//reset_cue|.//reward_player|.//set_owner'))
 
+    def test_galaxytrader_destroyed_ship_diagnostic_does_not_deref_missing_sector_name(self):
+        p='extensions/galaxy_trader/md/gt_core_system.xml'
+        selector=".//cue[@name='HandlePlayerOwnedShipDestroyedForGT']/actions/set_value[@name='$destroySectorName']"
+        original=self.one(p,selector,False)
+        amended=self.one(p,selector,True)
+        self.assertEqual(original.get('exact'),"if $ship? and $ship.sector? then $ship.sector.knownname else 'NONE'")
+        self.assertEqual(amended.get('exact'),"if $ship? and $ship.sector? and $ship.sector.knownname? then $ship.sector.knownname else 'NONE'")
+        self.assertEqual(len(self.patched[p].xpath(".//cue[@name='HandlePlayerOwnedShipDestroyedForGT']//run_actions")),len(self.original[p].xpath(".//cue[@name='HandlePlayerOwnedShipDestroyedForGT']//run_actions")))
+        restored=copy.deepcopy(self.patched[p])
+        restored.xpath(selector)[0].set('exact',original.get('exact'))
+        self.assertEqual(canonical(restored),canonical(self.original[p]))
+        future=copy.deepcopy(self.original[p])
+        future.xpath(selector)[0].set('exact','future upstream defensive expression')
+        self.assertEqual(canonical(future),canonical(apply_patch(future,E.parse(str(MOD/p)).getroot())))
+
     def test_protected_ui_inventory_collector_and_companions_untouched(self):
         files={p.relative_to(MOD).as_posix() for p in MOD.rglob('*') if p.is_file()}
         self.assertFalse(any(p.endswith('.lua') or p.startswith(('ui/','assets/','index/')) for p in files))
@@ -345,7 +364,7 @@ def validate(cache, archive=None):
         if not p.exists():continue
         patch=E.parse(str(p)).getroot();schema.assertValid(patch)
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
-    if len(patched)!=9:raise ValueError('Expected exactly nine targeted diff files')
+    if len(patched)!=10:raise ValueError('Expected exactly ten targeted diff files')
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -369,7 +388,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.1','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.2','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()
