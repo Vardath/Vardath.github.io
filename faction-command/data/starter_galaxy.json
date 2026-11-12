@@ -9,6 +9,12 @@
     {"id": "ravel", "name": "Ravel Concord", "color": "e5b86e"},
     {"id": "frontier", "name": "Free Frontier", "color": "8dbd91"}
   ],
+  "starting_profiles": [
+    {"faction_id":"auroran", "sector_id":"hearthreach", "description":"Begin among the traders and navigators of the Auroran Compact.", "relations":{"auroran":20,"vesper":0,"ravel":0,"frontier":0}},
+    {"faction_id":"vesper", "sector_id":"vellum_gate", "description":"Begin among the merchants and surveyors of the Vesper Guild.", "relations":{"auroran":0,"vesper":20,"ravel":0,"frontier":0}},
+    {"faction_id":"ravel", "sector_id":"cinder_veil", "description":"Begin among the industrial worlds of the Ravel Concord.", "relations":{"auroran":0,"vesper":0,"ravel":20,"frontier":0}},
+    {"faction_id":"frontier", "sector_id":"verdant_trace", "description":"Begin among the independent communities of the Free Frontier.", "relations":{"auroran":0,"vesper":0,"ravel":0,"frontier":20}}
+  ],
   "sectors": [
     {"id":"hearthreach", "name":"Hearthreach", "owner":"auroran", "x":0.30, "y":0.50, "description":"A busy meeting point on the edge of Compact space."},
     {"id":"opal_crossing", "name":"Opal Crossing", "owner":"auroran", "x":0.16, "y":0.26, "description":"A trading passage through pale mineral clouds."},

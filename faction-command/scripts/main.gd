@@ -24,6 +24,12 @@ var order_target: Label
 var order_feedback: Label
 var selected_sector := "hearthreach"
 var selected_view := "sector"
+var chosen_origin := "auroran"
+var start_screen: Control
+var start_buttons: Dictionary = {}
+var origin_title: Label
+var origin_summary: Label
+var game_started := false
 
 
 func _ready() -> void:
@@ -31,9 +37,7 @@ func _ready() -> void:
 	if world.load_starter() != OK:
 		push_error("Unable to load starter galaxy")
 		return
-	_build_ui()
-	_show_sector("hearthreach")
-	_update_header()
+	_build_new_game_screen()
 
 
 func _process(delta: float) -> void:
@@ -91,6 +95,104 @@ func _panel() -> PanelContainer:
 	var panel := PanelContainer.new()
 	panel.add_theme_stylebox_override("panel", _style(PANEL))
 	return panel
+
+
+func _build_new_game_screen() -> void:
+	start_screen = Control.new()
+	start_screen.name = "NewGameScreen"
+	start_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(start_screen)
+	var background := ColorRect.new()
+	background.color = BACKGROUND
+	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	start_screen.add_child(background)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	start_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(900, 550)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 12)
+	panel.add_child(column)
+	column.add_child(_label("FACTION COMMAND", 25, TEXT))
+	column.add_child(_label("NEW GAME  /  CHOOSE YOUR ORIGIN", 13, ACCENT))
+	column.add_child(_wrapped_label("Your origin sets your starting sector and relations. Your faction and property remain your own.", 15, MUTED))
+	var content := HBoxContainer.new()
+	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	content.add_theme_constant_override("separation", 22)
+	column.add_child(content)
+	var choices := VBoxContainer.new()
+	choices.custom_minimum_size.x = 335
+	choices.add_theme_constant_override("separation", 8)
+	content.add_child(choices)
+	choices.add_child(_label("STARTING FACTION", 12, ACCENT))
+	for profile in world.state.starting_profiles:
+		var faction_id: String = profile.faction_id
+		var button := _button("%s\n%s" % [_faction_name(faction_id), _sector_name(str(profile.sector_id))])
+		button.name = "Origin_" + faction_id
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		button.custom_minimum_size.y = 62
+		button.pressed.connect(_select_origin.bind(faction_id))
+		choices.add_child(button)
+		start_buttons[faction_id] = button
+	var info := VBoxContainer.new()
+	info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	info.add_theme_constant_override("separation", 10)
+	content.add_child(info)
+	info.add_child(_label("ORIGIN PREVIEW", 12, ACCENT))
+	origin_title = _label("", 22, TEXT)
+	origin_title.name = "OriginTitle"
+	info.add_child(origin_title)
+	origin_summary = _wrapped_label("", 15, MUTED)
+	origin_summary.name = "OriginSummary"
+	origin_summary.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	info.add_child(origin_summary)
+	var start_button := _button("Start new game")
+	start_button.name = "StartGameButton"
+	start_button.pressed.connect(_start_game)
+	info.add_child(start_button)
+	_select_origin(chosen_origin)
+
+
+func _select_origin(faction_id: String) -> void:
+	for profile in world.state.starting_profiles:
+		if profile.faction_id != faction_id:
+			continue
+		chosen_origin = faction_id
+		origin_title.text = _faction_name(faction_id)
+		var lines: Array[String] = []
+		lines.append(str(profile.description))
+		lines.append("\nStarting sector: " + _sector_name(str(profile.sector_id)))
+		lines.append("\nStarting relations")
+		for faction in world.state.factions:
+			if faction.id == world.state.player_faction_id:
+				continue
+			var value := int(profile.relations.get(faction.id, 0))
+			lines.append("%s: %s%d" % [faction.name, "+" if value > 0 else "", value])
+		origin_summary.text = "\n".join(lines)
+		for id in start_buttons:
+			var border := ACCENT if id == faction_id else BORDER
+			var fill := Color("1b3a41") if id == faction_id else Color("182d3b")
+			start_buttons[id].add_theme_stylebox_override("normal", _style(fill, border))
+		return
+
+
+func _start_game() -> void:
+	if game_started:
+		return
+	if world.load_starter(chosen_origin) != OK:
+		push_error("Unable to create the selected starting origin")
+		return
+	game_started = true
+	paused = true
+	_elapsed = 0.0
+	selected_sector = str(world.state.ships[0].sector)
+	selected_view = "sector"
+	start_screen.queue_free()
+	_build_ui()
+	_show_sector(selected_sector)
+	_update_header()
 
 
 func _build_ui() -> void:
@@ -153,8 +255,9 @@ func _build_ui() -> void:
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	property_list.add_child(spacer)
-	property_list.add_child(_label("YOUR FACTION", 12, ACCENT))
-	property_list.add_child(_wrapped_label("A small beginning. A whole galaxy ahead.", 13, MUTED))
+	property_list.add_child(_label("YOUR FACTION  /  ORIGIN", 12, ACCENT))
+	property_list.add_child(_wrapped_label(_faction_name(str(world.state.player_origin_faction_id)), 14, TEXT))
+	property_list.add_child(_wrapped_label("Your ships belong to your own faction.", 13, MUTED))
 
 	var map_panel := _panel()
 	map_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -251,7 +354,8 @@ func _show_sector(sector_id: String) -> void:
 				if sector_picker.get_item_metadata(index) == sector_id:
 					sector_picker.select(index)
 			detail_title.text = sector.name
-			detail_body.text = "Controlled by\n%s\n\n%s" % [faction_name, sector.description]
+			var standing := int(world.state.relations.get(sector.owner, 0))
+			detail_body.text = "Controlled by\n%s\n\nRelations: %s%d\n\n%s" % [faction_name, "+" if standing > 0 else "", standing, sector.description]
 			order_target.text = "Destination: " + str(sector.name)
 			return
 
@@ -276,6 +380,13 @@ func _sector_name(sector_id: String) -> String:
 		if sector.id == sector_id:
 			return str(sector.name)
 	return sector_id
+
+
+func _faction_name(faction_id: String) -> String:
+	for faction in world.state.factions:
+		if faction.id == faction_id:
+			return str(faction.name)
+	return faction_id
 
 
 func _queue_order() -> void:

@@ -5,9 +5,14 @@ built with Godot 4. The authoritative design is [Faction Command.md](../Faction%
 
 ## Current foundation
 
-The project opens to a selectable 12-sector starter galaxy, four original NPC
-factions, and one player-owned ship with a captain and crew. The world starts
-paused; Resume and Pause control the simulation. Select a sector on the map or
+Choose one of four original faction origins when starting a new game. The
+preview shows its starting sector and initial relations; the chosen origin is
+friendly (+20) and the other three are neutral (0) in this first prototype.
+Your ship and credits still belong to your own independent player faction.
+
+The game has a selectable 12-sector starter galaxy and one player-owned ship
+with a captain and crew. The world starts paused; Resume and Pause control the
+simulation. Select a sector on the map or
 in the directory, then use **Queue fly order** to send First Light there. Queue
 additional destinations to visit them in order. Resume time to see the ship
 cross connected sectors; each crossing currently takes five ticks. Selecting
@@ -17,8 +22,9 @@ This is an early foundation, not yet a playable economy: docking, trading,
 save/load, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
-The scenario data is in `data/starter_galaxy.json` (schema version 1); sector
-links are undirected pairs of stable sector IDs. `scripts/world.gd` owns the
+The scenario data is in `data/starter_galaxy.json` (schema version 1), including
+data-driven origin sectors and standings; sector links are undirected pairs of
+stable sector IDs. `scripts/world.gd` owns the
 starting state, whole-tick clock, deterministic route search and queued ship
 movement independently from the UI. The test harness checks scenario integrity,
 connectivity, travel timing and order queues, deterministic tick batching,

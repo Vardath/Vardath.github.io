@@ -8,17 +8,29 @@ const TICKS_PER_CROSSING := 5
 var state: Dictionary = {}
 
 
-func load_starter() -> Error:
+func load_starter(origin_faction_id: String = "auroran") -> Error:
 	if not FileAccess.file_exists(STARTER_DATA):
 		return ERR_FILE_NOT_FOUND
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(STARTER_DATA))
 	if not parsed is Dictionary or parsed.get("schema_version", 0) != 1:
 		return ERR_PARSE_ERROR
-	state = parsed.duplicate(true)
-	state["tick"] = 0
-	for ship in state.get("ships", []):
+	var chosen: Dictionary = {}
+	for profile in parsed.get("starting_profiles", []):
+		if profile.get("faction_id", "") == origin_faction_id:
+			chosen = profile
+			break
+	if chosen.is_empty():
+		return ERR_INVALID_PARAMETER
+	var new_state: Dictionary = parsed.duplicate(true)
+	new_state["tick"] = 0
+	new_state["player_origin_faction_id"] = origin_faction_id
+	new_state["relations"] = chosen.relations.duplicate(true)
+	for ship in new_state.get("ships", []):
+		if ship.owner == new_state.player_faction_id:
+			ship.sector = chosen.sector_id
 		ship["orders"] = []
 		ship["travel"] = {}
+	state = new_state
 	return OK
 
 

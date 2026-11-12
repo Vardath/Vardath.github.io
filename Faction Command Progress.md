@@ -66,3 +66,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: queued First Light from Hearthreach to Vellum Gate; observed travel via Meridian and arrival after 10 ticks. Sector and ship selection, pause/resume and long-detail scrolling were inspected. Android device not tested.
 - Defects and limitations: This is still an early prototype: no order cancellation, docking, trading, economy, save/load, station construction, Android export, or APK. Crossing times are placeholders, and touch/device performance remain unverified.
 - Next task / gate: Green verified. Implement the user's newly requested faction-origin selection for new games while retaining an independent player faction; then verify the exact commit before proceeding.
+
+## Pass 4 — Faction origin selection
+- Date: 2026-11-13
+- Scope: Add a new-game origin selector with four NPC factions, a preview of each starting sector and initial relations, and data-driven creation of the player's independent faction and ship. Record the chosen origin and current relations in world state.
+- Files changed: `Faction Command.md` (design was updated in the preceding planning commit), `faction-command/data/starter_galaxy.json`, `scripts/world.gd`, `scripts/main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: The source commit containing this entry; record its exact SHA and final CI outcome after the check finishes.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not proceed to the next implementation task until the exact source commit's check is green.
+- Automated tests: Local Godot 4.6.3: 189 checks passed, including all four origins, complete relation tables, correct starting sectors, player ownership, unchanged NPC sector ownership, rejection of invalid origins, and menu interactions.
+- Manual/device tests: Desktop Godot: previewed Vesper Guild, started in Vellum Gate with +20 Vesper relations, and verified the ship still belongs to the player's own faction. Android device not tested.
+- Defects and limitations: Initial relations (+20 chosen faction, 0 others) are provisional. Save/load, reputation changes, economy, and Android export are not yet implemented; the origin and relations currently live only in memory.
+- Next task / gate: Verify this source commit's exact check; then implement persistence so the selected origin, evolving relations and orders can survive a restart.

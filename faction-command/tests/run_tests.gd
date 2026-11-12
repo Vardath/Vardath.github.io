@@ -74,6 +74,30 @@ func _run() -> void:
 		_expect(sector_ids.has(ship.sector), "starter ship is in a valid sector")
 		_expect(not str(ship.captain).is_empty() and int(ship.crew) > 0, "starter ship has a captain and crew")
 
+	_expect(first.state.starting_profiles.size() == 4, "four faction origins are available")
+	var seen_origins: Dictionary = {}
+	for profile in first.state.starting_profiles:
+		var origin: String = profile.faction_id
+		_expect(not seen_origins.has(origin), "starting origin is unique: " + origin)
+		seen_origins[origin] = true
+		_expect(faction_ids.has(origin) and origin != first.state.player_faction_id, "starting origin is an NPC faction: " + origin)
+		_expect(sector_ids.has(profile.sector_id), "origin has a valid sector: " + origin)
+		for faction in first.state.factions:
+			if faction.id != first.state.player_faction_id:
+				_expect(profile.relations.has(faction.id), "origin defines relations with " + str(faction.id))
+		var origin_world = WorldScript.new()
+		_expect(origin_world.load_starter(origin) == OK, "new game starts with " + origin)
+		_expect(origin_world.state.player_origin_faction_id == origin, "chosen origin is recorded: " + origin)
+		_expect(origin_world.state.ships[0].sector == profile.sector_id, "starting ship is placed in chosen origin sector: " + origin)
+		_expect(origin_world.state.ships[0].owner == "player", "ship remains independently owned for " + origin)
+		_expect(origin_world.state.relations == profile.relations, "chosen origin's initial relations are applied: " + origin)
+		_expect(origin_world.state.sectors == first.state.sectors, "choosing an origin does not change sector ownership: " + origin)
+		origin_world.state.relations[origin] = 99
+		_expect(profile.relations[origin] != 99, "live relations are independent of profile defaults")
+	var unchanged: Dictionary = first.snapshot()
+	_expect(first.load_starter("invalid_origin") == ERR_INVALID_PARAMETER, "invalid origin is rejected")
+	_expect(first.snapshot() == unchanged, "invalid origin does not overwrite the existing world")
+
 	first.advance_ticks(12)
 	first.advance_ticks(25)
 	second.advance_ticks(37)
@@ -122,6 +146,25 @@ func _run() -> void:
 	root.add_child(screen)
 	await process_frame
 	# Container layout can require another frame on older Godot versions.
+	await process_frame
+	_expect(screen.find_child("NewGameScreen", true, false) != null, "new game presents faction origins")
+	_expect(screen.start_buttons.size() == 4, "new game offers all four origins")
+	screen.find_child("Origin_vesper", true, false).pressed.emit()
+	_expect(screen.origin_title.text == "Vesper Guild", "choosing an origin updates its preview")
+	_expect(screen.origin_summary.text.contains("Vellum Gate") and screen.origin_summary.text.contains("Vesper Guild: +20"), "origin preview shows starting sector and relations")
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_expect(screen.world.state.player_origin_faction_id == "vesper", "new game applies selected origin")
+	_expect(screen.world.state.ships[0].sector == "vellum_gate", "new game starts in selected faction sector")
+	_expect(screen.world.state.ships[0].owner == "player", "new game keeps the player faction independent")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
 	await process_frame
 	_expect(screen.paused, "game starts paused")
 	_expect(screen.find_child("GalaxyMap", true, false) != null, "main scene creates the galaxy map")
