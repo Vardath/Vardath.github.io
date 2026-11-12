@@ -216,7 +216,11 @@ func _run() -> void:
 
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
-	_expect(economy.state.stations.size() == 4 and economy.state.wares.size() == 2, "starter economy has four stations and two wares")
+	_expect(economy.state.stations.size() == 4 and economy.state.wares.size() == 3, "starter economy has four stations and three wares")
+	# Isolate the conservation check to trading; production has explicit
+	# resource sources and sinks that are tested separately below.
+	for station in economy.state.stations:
+		station.production.clear()
 	var credits_before := _total_credits(economy.state)
 	var energy_before := _total_ware(economy.state, "energy_cells")
 	var alloy_before := _total_ware(economy.state, "alloy_plates")
@@ -289,7 +293,7 @@ func _run() -> void:
 	future_file.close()
 	_expect(save_store.load_game(economy_path).get("reason") == "unsupported", "future economy schema is not silently replaced with an older backup")
 	var old_save: Dictionary = original.duplicate(true)
-	for key in ["economy_version", "wares", "stations", "ledger", "next_transaction_id"]:
+	for key in ["economy_version", "production_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
 		old_save.erase(key)
 	for ship in old_save.ships:
 		ship.erase("cargo")
@@ -303,6 +307,142 @@ func _run() -> void:
 	_expect(upgraded.state.player_origin_faction_id == old_save.player_origin_faction_id and upgraded.state.relations == old_save.relations and upgraded.state.tick == old_save.tick, "upgrade preserves origin, relations and time")
 	_expect(upgraded.state.ships[0].orders == old_save.ships[0].orders and upgraded.state.ships[0].travel == old_save.ships[0].travel, "upgrade preserves a journey in progress")
 	_expect(upgraded.state.ships[0].cargo.is_empty() and upgraded.state.stations.size() == 4, "upgrade adds empty cargo and starter markets")
+
+	var production_world = WorldScript.new()
+	_expect(production_world.load_starter() == OK, "production scenario loads")
+	var solar: Dictionary = production_world._find_station("hearth_exchange")
+	var smelter: Dictionary = production_world._find_station("vellum_foundry")
+	var mine: Dictionary = production_world._find_station("cinder_depot")
+	var credits_at_start := _total_credits(production_world.state)
+	production_world.advance_ticks(5)
+	_expect(int(solar.stock.energy_cells) == 120 and int(solar.production[0].progress) == 5, "solar output waits for the full production cycle")
+	_expect(int(smelter.production[0].cycles) == 0 and smelter.production[0].status == "Needs Energy Cells", "smelter halts when an input is missing")
+	production_world.advance_ticks(1)
+	_expect(int(solar.stock.energy_cells) == 124 and int(solar.production[0].cycles) == 1, "sunlight produces energy after six ticks")
+	production_world.advance_ticks(2)
+	_expect(int(mine.stock.ore) == 4 and int(mine.stock.energy_cells) == 2 and int(mine.deposits.ore) == 1196, "ore extraction consumes energy and the finite deposit")
+	_expect(_total_credits(production_world.state) == credits_at_start, "production alone does not create credits")
+	_expect(production_world.dock_ship("ship_001", "hearth_exchange").ok, "production test ship docks at the solar station")
+	_expect(production_world.trade("ship_001", "hearth_exchange", "energy_cells", 5, true).ok, "production test ship buys real energy cargo")
+	_expect(production_world.queue_fly_to("ship_001", "vellum_gate"), "energy delivery route is queued")
+	production_world.advance_ticks(10)
+	_expect(int(smelter.production[0].cycles) == 0, "smelter remains idle until the delivery arrives")
+	_expect(production_world.dock_ship("ship_001", "vellum_foundry").ok, "energy delivery docks at the smelter")
+	_expect(production_world.trade("ship_001", "vellum_foundry", "energy_cells", 5, false).ok, "energy is physically delivered to the smelter")
+	production_world.advance_ticks(5)
+	_expect(int(smelter.production[0].progress) == 5 and int(smelter.stock.ore) == 12 and int(smelter.stock.alloy_plates) == 100, "partial cycle preserves inputs and output until completion")
+	var halfway_path := test_root + "/production-halfway.json"
+	_expect(save_store.save_game(halfway_path, production_world.snapshot()) == OK, "a production cycle can be saved partway through")
+	var halfway_load: Dictionary = save_store.load_game(halfway_path)
+	var continued = WorldScript.new()
+	_expect(bool(halfway_load.get("ok", false)) and continued.restore_snapshot(halfway_load.state) == OK, "partial production cycle reloads")
+	var unbroken = WorldScript.new()
+	_expect(unbroken.restore_snapshot(production_world.snapshot()) == OK, "comparison world starts from the same snapshot")
+	continued.advance_ticks(5)
+	for _tick in range(5):
+		unbroken.advance_ticks(1)
+	_expect(continued.snapshot() == unbroken.snapshot(), "production after reload matches uninterrupted single-tick execution")
+	var completed_smelter: Dictionary = continued._find_station("vellum_foundry")
+	_expect(int(completed_smelter.stock.ore) == 10 and int(completed_smelter.stock.energy_cells) == 4 and int(completed_smelter.stock.alloy_plates) == 102 and int(completed_smelter.production[0].cycles) == 1, "completed cycle consumes exactly two ore and one energy for two alloy")
+	smelter.stock.energy_cells = 0
+	production_world.advance_ticks(10)
+	_expect(int(smelter.production[0].progress) == 5 and int(smelter.production[0].cycles) == 0 and smelter.production[0].status == "Needs Energy Cells", "shortage freezes partial progress without producing goods")
+	smelter.stock.energy_cells = 5
+	production_world.advance_ticks(5)
+	_expect(int(smelter.production[0].cycles) == 1 and int(smelter.stock.alloy_plates) == 102, "production resumes from its preserved progress when supplies return")
+
+	var finite = WorldScript.new()
+	finite.load_starter()
+	var finite_mine: Dictionary = finite._find_station("cinder_depot")
+	finite_mine.deposits.ore = 4
+	finite.advance_ticks(8)
+	_expect(int(finite_mine.stock.ore) == 4 and int(finite_mine.deposits.ore) == 0, "extractor consumes the last available deposit")
+	finite.advance_ticks(16)
+	_expect(int(finite_mine.stock.ore) == 4 and int(finite_mine.production[0].cycles) == 1 and finite_mine.production[0].status == "Deposit exhausted", "exhausted deposits cannot generate more ore")
+	var full = WorldScript.new()
+	full.load_starter()
+	var full_solar: Dictionary = full._find_station("hearth_exchange")
+	full_solar.stock.energy_cells = 300
+	full.advance_ticks(12)
+	_expect(int(full_solar.stock.energy_cells) == 300 and int(full_solar.production[0].progress) == 0 and full_solar.production[0].status == "Storage full", "full storage stops solar production without overfilling")
+	full_solar.natural_sources.clear()
+	_expect(full.production_report("hearth_exchange")[0].status == "Needs sunlight", "renewable source is required explicitly")
+	full_solar.natural_sources.append("sunlight")
+	_expect(full.dock_ship("ship_001", "hearth_exchange").ok and full.trade("ship_001", "hearth_exchange", "energy_cells", 4, true).ok, "player can clear full storage by buying real stock")
+	full.advance_ticks(6)
+	_expect(int(full_solar.stock.energy_cells) == 300 and int(full_solar.production[0].cycles) == 1, "solar production resumes when storage has room")
+	var partial_capacity = WorldScript.new()
+	partial_capacity.load_starter()
+	var partial_solar: Dictionary = partial_capacity._find_station("hearth_exchange")
+	partial_capacity.advance_ticks(3)
+	partial_solar.storage_capacity = partial_capacity.station_volume("hearth_exchange")
+	partial_capacity.advance_ticks(8)
+	_expect(int(partial_solar.production[0].progress) == 3 and partial_solar.production[0].status == "Storage full", "storage shortage freezes an unfinished cycle")
+	partial_solar.storage_capacity = partial_capacity.station_volume("hearth_exchange") + 4
+	partial_capacity.advance_ticks(3)
+	_expect(int(partial_solar.production[0].cycles) == 1 and int(partial_solar.stock.energy_cells) == 124, "unfinished production resumes without duplicating output")
+	var competing = WorldScript.new()
+	competing.load_starter()
+	var shared_smelter: Dictionary = competing._find_station("vellum_foundry")
+	shared_smelter.stock.ore = 2
+	shared_smelter.stock.energy_cells = 1
+	shared_smelter.storage_capacity = competing.station_volume("vellum_foundry")
+	shared_smelter.production.append({"recipe_id":"alloy_smelting", "progress":0, "cycles":0, "status":"Running"})
+	competing.advance_ticks(10)
+	_expect(int(shared_smelter.stock.ore) == 0 and int(shared_smelter.stock.energy_cells) == 0 and int(shared_smelter.stock.alloy_plates) == 102, "a full station can convert inputs when the finished output uses less space")
+	_expect(int(shared_smelter.production[0].cycles) == 1 and int(shared_smelter.production[1].cycles) == 0 and int(shared_smelter.production[1].progress) == 9, "competing modules cannot consume the same inputs twice")
+	var soak = WorldScript.new()
+	soak.load_starter()
+	var soak_credits := _total_credits(soak.state)
+	soak.advance_ticks(2000)
+	for station in soak.state.stations:
+		_expect(soak.station_volume(str(station.id)) <= int(station.storage_capacity), "long run respects station storage: " + str(station.id))
+		for ware_id in station.stock:
+			_expect(int(station.stock[ware_id]) >= 0, "long run never creates negative stock: " + str(station.id) + "/" + str(ware_id))
+	_expect(int(soak._find_station("hearth_exchange").stock.energy_cells) == 300 and int(soak._find_station("hearth_exchange").production[0].cycles) == 45, "solar output stops exactly at capacity in a long run")
+	_expect(int(soak._find_station("cinder_depot").stock.ore) == 12 and int(soak._find_station("cinder_depot").deposits.ore) == 1188 and soak._find_station("cinder_depot").production[0].status == "Needs Energy Cells", "extractor stops after consuming its finite starting energy")
+	_expect(_total_credits(soak.state) == soak_credits and soak.state.ledger.is_empty(), "long production run creates neither credits nor trade entries")
+
+	var trading_legacy: Dictionary = economy.snapshot()
+	trading_legacy.erase("production_version")
+	trading_legacy.erase("recipes")
+	for index in range(trading_legacy.wares.size() - 1, -1, -1):
+		if trading_legacy.wares[index].id == "ore":
+			trading_legacy.wares.remove_at(index)
+	for station in trading_legacy.stations:
+		for key in ["stock", "buy_prices", "sell_prices"]:
+			station[key].erase("ore")
+		station.erase("production")
+		station.erase("natural_sources")
+		station.erase("deposits")
+	# A pre-existing market rule may have deliberately been removed.
+	trading_legacy.stations[0].sell_prices.erase("energy_cells")
+	var trading_legacy_path := test_root + "/trading-legacy.json"
+	_expect(save_store.save_game(trading_legacy_path, trading_legacy) == OK, "pre-production trading save remains readable")
+	var trading_legacy_read: Dictionary = save_store.load_game(trading_legacy_path)
+	var production_upgrade = WorldScript.new()
+	_expect(bool(trading_legacy_read.get("ok", false)) and production_upgrade.restore_snapshot(trading_legacy_read.state) == OK, "pre-production trading save upgrades")
+	_expect(production_upgrade.state.starting_credits == trading_legacy.starting_credits and production_upgrade.state.ledger == trading_legacy.ledger and production_upgrade.state.ships == trading_legacy.ships, "production upgrade preserves credits, transaction history and ships")
+	for old_station in trading_legacy.stations:
+		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
+		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
+		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 3, "production upgrade adds the new finite deposit and recipes")
+	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
+	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
+	var invalid_production: Dictionary = production_world.snapshot()
+	invalid_production.stations[0].production[0].progress = 6
+	_expect(save_store.save_game(trading_legacy_path, invalid_production) != OK, "invalid production progress is rejected")
+	invalid_production = production_world.snapshot()
+	invalid_production.recipes[0].erase("source")
+	_expect(save_store.save_game(trading_legacy_path, invalid_production) != OK, "input-free recipes require an explicit natural source")
+	var future_production: Dictionary = production_world.snapshot()
+	future_production.production_version = 2
+	var production_payload := Marshalls.variant_to_base64(future_production, false)
+	var future_production_file := FileAccess.open(trading_legacy_path, FileAccess.WRITE)
+	future_production_file.store_string(JSON.stringify({"format_version": 1, "payload": production_payload, "checksum": production_payload.sha256_text()}))
+	future_production_file.close()
+	_expect(save_store.load_game(trading_legacy_path).get("reason") == "unsupported", "future production schema is not silently replaced by an older backup")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -340,6 +480,12 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	screen.find_child("TradeButton", true, false).pressed.emit()
 	_expect(screen.find_child("TradeScreen", true, false) != null, "trade screen opens")
+	_expect(screen.trade_production.text.contains("Solar Array") and screen.trade_production.text.contains("Sunlight"), "market screen shows production and its natural input")
+	screen.trade_station_picker.select(1)
+	screen.trade_station_picker.item_selected.emit(1)
+	_expect(screen.trade_production.text.contains("Needs Energy Cells") and screen.trade_production.text.contains("Ore"), "market screen explains a smelter shortage and its recipe")
+	screen.trade_station_picker.select(0)
+	screen.trade_station_picker.item_selected.emit(0)
 	screen.find_child("DockButton", true, false).pressed.emit()
 	_expect(screen.world.state.ships[0].docked_at == "hearth_exchange", "trade screen docks at the local station")
 	screen.trade_quantity.value = 5

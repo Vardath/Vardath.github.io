@@ -18,14 +18,22 @@ additional destinations to visit them in order. Resume time to see the ship
 cross connected sectors; each crossing currently takes five ticks. Selecting
 the ship shows its captain, crew, location and pending destinations.
 
-The first manual trading loop has four NPC stations and two wares: Energy Cells
-and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
+The first manual trading loop has four NPC stations and three wares: Energy
+Cells, Ore and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
 finish the ship's orders, then dock. Buy goods from station stock and carry them
 to a station that buys them. Each transaction changes real cargo, station stock
 and both credit balances, and appears in the scrollable transaction ledger. Cargo
 space, station storage, stock and budgets are finite. Docking is currently an
-immediate sector-level action; prices and starting inventories are fixed, and
-the stations do not yet produce or restock goods.
+immediate sector-level action; prices are fixed.
+
+The first production chain runs on simulation ticks. Solar arrays use the
+station's renewable sunlight source to make Energy Cells. An ore extractor
+uses Energy Cells and a finite local ore deposit to produce Ore. An alloy
+smelter consumes both Ore and Energy Cells to produce Alloy Plates. The Trade
+screen shows each station's recipe, progress, shortage or storage blockage, and
+remaining deposit. Materials and output move together at cycle completion;
+partial progress pauses when inputs or storage are unavailable. NPC traders are
+not implemented yet, so the player must transport supplies between stations.
 
 The game has one local save slot and a manual **Save** button. It also saves
 when a game starts, an order is queued, the game is paused or backgrounded,
@@ -36,7 +44,10 @@ replacing the slot. A validated previous save is retained as a backup; if the
 primary is damaged, Continue offers the backup. A save from an unsupported
 version is not silently replaced by an older backup.
 
-This is an early foundation: production, NPC traders, dynamic prices, multiple
+Existing trading saves gain the production definitions and an empty Ore stock
+without resetting existing balances, goods, ships, orders or transaction history.
+
+This is an early foundation: NPC traders, dynamic prices, multiple
 save slots, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
@@ -49,6 +60,8 @@ connectivity, travel timing and order queues, deterministic tick batching,
 isolation of snapshots, save integrity and backup recovery, and basic screen
 interactions. Trading tests cover conservation of credits and goods, failed
 transactions, storage limits and upgrading older saves without resetting progress.
+Production tests cover shortages, resumption, finite deposits, capacity, competing
+modules, save/load during a cycle and a 2,000-tick run.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

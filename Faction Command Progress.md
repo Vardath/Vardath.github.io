@@ -102,3 +102,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: loaded an earlier save, travelled to Vellum Gate, docked and bought alloy, carried it to Hearthreach, docked and sold it; cargo, station stock, balances and ledger reflected both trades. Android device not tested.
 - Defects and limitations: Prices and initial inventories are fixed; stations do not yet produce or restock, NPCs do not trade, and docking is an immediate sector-level action. There is no Android APK or station construction yet.
 - Next task / gate: Green verified. Add deterministic production and replenishment from actual inputs before expanding trader automation; verify that task's exact commit before proceeding.
+
+## Pass 7 — Resource-backed station production
+- Date: 2026-11-13
+- Scope: Add Ore, data-driven production recipes and fixed-tick modules. Solar arrays use an explicit renewable sunlight source; an extractor consumes Energy Cells and a finite ore deposit; a smelter consumes Ore and Energy Cells to produce Alloy Plates. Inputs and output change atomically at cycle completion, and shortages or full storage pause progress. Show recipes, progress, shortages and remaining deposits in the Trade screen. Upgrade older saves without resetting existing inventories, credits, trade rules, ships, orders, relations or ledger.
+- Files changed: `faction-command/data/starter_galaxy.json`, `scripts/world.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: Source commit containing this entry; exact SHA and result will be recorded after verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not start another implementation task until this commit's exact checks are green.
+- Automated tests: Local Godot 4.6.3: 340 checks passed. Coverage includes production timing, physical inputs and deposit depletion, shortages and recovery, full storage, competing modules, deterministic save/load mid-cycle, older-save migration, unsupported schema protection and a 2,000-tick run.
+- Manual/device tests: Desktop Godot: loaded a prior trading save and inspected solar, smelter and extractor recipes, shortage states and remaining deposit on the market screen. Android device not tested.
+- Defects and limitations: Player deliveries are required; NPC traders, dynamic prices, player-built stations and Android export remain unimplemented. Solar energy is an abstract renewable natural input; existing saves receive no free initial ore stock. Production runs at the same fidelity in all sectors and has not been profiled at the planned galaxy scale.
+- Next task / gate: Verify this source commit's exact checks and record the result; then implement NPC logistics and autonomous trading against actual inventories, budgets, routes and station needs.

@@ -32,6 +32,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		ship["travel"] = {}
 	if _prepare_economy(new_state) != OK:
 		return ERR_INVALID_DATA
+	if _prepare_production(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -39,6 +41,9 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 func restore_snapshot(snapshot: Dictionary) -> Error:
 	var restored := snapshot.duplicate(true)
 	var result := _prepare_economy(restored)
+	if result != OK:
+		return result
+	result = _prepare_production(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -65,6 +70,45 @@ func _prepare_economy(target: Dictionary) -> Error:
 	return OK
 
 
+func _prepare_production(target: Dictionary) -> Error:
+	if target.has("production_version"):
+		return OK if target.production_version == 1 else ERR_UNAVAILABLE
+	var defaults: Variant = JSON.parse_string(FileAccess.get_file_as_string(STARTER_DATA))
+	if not defaults is Dictionary or not defaults.get("recipes") is Array or not defaults.get("wares") is Array or not defaults.get("stations") is Array:
+		return ERR_INVALID_DATA
+	# Preserve all old balances, inventories, orders and ships. New resource and
+	# module definitions are added without replenishing an existing station.
+	var newly_added_wares: Dictionary = {}
+	for default_ware in defaults.wares:
+		var found := false
+		for ware in target.wares:
+			if ware.id == default_ware.id:
+				found = true
+				break
+		if not found:
+			target.wares.append(default_ware.duplicate(true))
+			newly_added_wares[default_ware.id] = true
+	target["recipes"] = defaults.recipes.duplicate(true)
+	for station in target.stations:
+		var template: Dictionary = {}
+		for candidate in defaults.stations:
+			if candidate.id == station.id:
+				template = candidate
+				break
+		station["natural_sources"] = template.get("natural_sources", []).duplicate(true)
+		station["deposits"] = template.get("deposits", {}).duplicate(true)
+		station["production"] = template.get("production", []).duplicate(true)
+		for ware in target.wares:
+			if not station.stock.has(ware.id):
+				station.stock[ware.id] = 0
+		for price_type in ["buy_prices", "sell_prices"]:
+			for ware_id in template.get(price_type, {}):
+				if newly_added_wares.has(ware_id) and not station[price_type].has(ware_id):
+					station[price_type][ware_id] = template[price_type][ware_id]
+	target["production_version"] = 1
+	return OK
+
+
 func advance_ticks(count: int) -> void:
 	if count <= 0 or state.is_empty():
 		return
@@ -72,6 +116,8 @@ func advance_ticks(count: int) -> void:
 		state["tick"] = int(state["tick"]) + 1
 		for ship in state.get("ships", []):
 			_tick_ship(ship)
+		for station in state.get("stations", []):
+			_tick_production(station)
 
 
 func snapshot() -> Dictionary:
@@ -113,6 +159,77 @@ func _find_ware(ware_id: String) -> Dictionary:
 		if ware.id == ware_id:
 			return ware
 	return {}
+
+
+func _find_recipe(recipe_id: String) -> Dictionary:
+	for recipe in state.get("recipes", []):
+		if recipe.id == recipe_id:
+			return recipe
+	return {}
+
+
+func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String:
+	for ware_id in recipe.inputs:
+		if int(station.stock.get(ware_id, 0)) < int(recipe.inputs[ware_id]):
+			var ware := _find_ware(str(ware_id))
+			return "Needs " + str(ware.get("name", ware_id))
+	var source := str(recipe.get("source", ""))
+	if not source.is_empty() and source not in station.natural_sources:
+		return "Needs " + source
+	var deposit: Dictionary = recipe.get("deposit", {})
+	if not deposit.is_empty() and int(station.deposits.get(deposit.resource, 0)) < int(deposit.quantity):
+		return "Deposit exhausted"
+	var projected := station_volume(str(station.id))
+	for ware_id in recipe.inputs:
+		projected -= int(recipe.inputs[ware_id]) * int(_find_ware(str(ware_id)).volume)
+	for ware_id in recipe.outputs:
+		projected += int(recipe.outputs[ware_id]) * int(_find_ware(str(ware_id)).volume)
+	if projected > int(station.storage_capacity):
+		return "Storage full"
+	return ""
+
+
+func _tick_production(station: Dictionary) -> void:
+	for module in station.production:
+		var recipe := _find_recipe(str(module.recipe_id))
+		if recipe.is_empty():
+			module.status = "Invalid recipe"
+			continue
+		var blocked := _production_block_reason(station, recipe)
+		if not blocked.is_empty():
+			module.status = blocked
+			continue
+		module.status = "Running"
+		module.progress = int(module.progress) + 1
+		if int(module.progress) < int(recipe.cycle_ticks):
+			continue
+		# Input removal, output addition and resource depletion occur together.
+		for ware_id in recipe.inputs:
+			station.stock[ware_id] = int(station.stock.get(ware_id, 0)) - int(recipe.inputs[ware_id])
+		for ware_id in recipe.outputs:
+			station.stock[ware_id] = int(station.stock.get(ware_id, 0)) + int(recipe.outputs[ware_id])
+		var deposit: Dictionary = recipe.get("deposit", {})
+		if not deposit.is_empty():
+			station.deposits[deposit.resource] = int(station.deposits[deposit.resource]) - int(deposit.quantity)
+		module.progress = 0
+		module.cycles = int(module.cycles) + 1
+		blocked = _production_block_reason(station, recipe)
+		if not blocked.is_empty():
+			module.status = blocked
+
+
+func production_report(station_id: String) -> Array:
+	var station := _find_station(station_id)
+	var reports: Array = []
+	if station.is_empty():
+		return reports
+	for module in station.production:
+		var recipe := _find_recipe(str(module.recipe_id))
+		if recipe.is_empty():
+			continue
+		var reason := _production_block_reason(station, recipe)
+		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
+	return reports
 
 
 func cargo_volume(ship_id: String) -> int:

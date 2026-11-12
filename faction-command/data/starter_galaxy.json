@@ -41,13 +41,19 @@
   ],
   "wares": [
     {"id":"energy_cells", "name":"Energy Cells", "volume":1},
-    {"id":"alloy_plates", "name":"Alloy Plates", "volume":1}
+    {"id":"alloy_plates", "name":"Alloy Plates", "volume":1},
+    {"id":"ore", "name":"Ore", "volume":1}
+  ],
+  "recipes": [
+    {"id":"solar_cells", "name":"Solar Array", "cycle_ticks":6, "inputs":{}, "outputs":{"energy_cells":4}, "source":"sunlight"},
+    {"id":"ore_extraction", "name":"Ore Extractor", "cycle_ticks":8, "inputs":{"energy_cells":1}, "outputs":{"ore":4}, "deposit":{"resource":"ore", "quantity":4}},
+    {"id":"alloy_smelting", "name":"Alloy Smelter", "cycle_ticks":10, "inputs":{"ore":2,"energy_cells":1}, "outputs":{"alloy_plates":2}}
   ],
   "stations": [
-    {"id":"hearth_exchange", "name":"Hearth Exchange", "owner":"auroran", "sector":"hearthreach", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":120,"alloy_plates":0}, "sell_prices":{"energy_cells":10}, "buy_prices":{"alloy_plates":30}},
-    {"id":"vellum_foundry", "name":"Vellum Foundry", "owner":"vesper", "sector":"vellum_gate", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":0,"alloy_plates":100}, "sell_prices":{"alloy_plates":20}, "buy_prices":{"energy_cells":16}},
-    {"id":"cinder_depot", "name":"Cinder Depot", "owner":"ravel", "sector":"cinder_veil", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":0,"alloy_plates":100}, "sell_prices":{"alloy_plates":22}, "buy_prices":{"energy_cells":17}},
-    {"id":"verdant_hub", "name":"Verdant Hub", "owner":"frontier", "sector":"verdant_trace", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":100,"alloy_plates":0}, "sell_prices":{"energy_cells":11}, "buy_prices":{"alloy_plates":29}}
+    {"id":"hearth_exchange", "name":"Hearth Exchange", "owner":"auroran", "sector":"hearthreach", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":120,"alloy_plates":0,"ore":0}, "sell_prices":{"energy_cells":10}, "buy_prices":{"alloy_plates":30}, "natural_sources":["sunlight"], "deposits":{}, "production":[{"recipe_id":"solar_cells", "progress":0, "cycles":0, "status":"Running"}]},
+    {"id":"vellum_foundry", "name":"Vellum Foundry", "owner":"vesper", "sector":"vellum_gate", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":0,"alloy_plates":100,"ore":12}, "sell_prices":{"alloy_plates":20}, "buy_prices":{"energy_cells":16,"ore":10}, "natural_sources":[], "deposits":{}, "production":[{"recipe_id":"alloy_smelting", "progress":0, "cycles":0, "status":"Needs Energy Cells"}]},
+    {"id":"cinder_depot", "name":"Cinder Depot", "owner":"ravel", "sector":"cinder_veil", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":3,"alloy_plates":100,"ore":0}, "sell_prices":{"alloy_plates":22,"ore":6}, "buy_prices":{"energy_cells":17}, "natural_sources":[], "deposits":{"ore":1200}, "production":[{"recipe_id":"ore_extraction", "progress":0, "cycles":0, "status":"Running"}]},
+    {"id":"verdant_hub", "name":"Verdant Hub", "owner":"frontier", "sector":"verdant_trace", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":100,"alloy_plates":0,"ore":0}, "sell_prices":{"energy_cells":11}, "buy_prices":{"alloy_plates":29}, "natural_sources":["sunlight"], "deposits":{}, "production":[{"recipe_id":"solar_cells", "progress":0, "cycles":0, "status":"Running"}]}
   ],
   "ships": [
     {"id":"ship_001", "name":"First Light", "class":"Courier", "owner":"player", "sector":"hearthreach", "captain":"Mira Vale", "crew":2, "role":"Unassigned", "status":"Idle"}

@@ -42,6 +42,7 @@ var trade_station_picker: OptionButton
 var trade_ware_picker: OptionButton
 var trade_quantity: SpinBox
 var trade_info: Label
+var trade_production: Label
 var trade_ledger: Label
 var trade_feedback: Label
 
@@ -609,6 +610,10 @@ func _open_trade() -> void:
 	trade_info = _wrapped_label("", 15, TEXT)
 	trade_info.name = "TradeInfo"
 	details.add_child(trade_info)
+	details.add_child(_label("PRODUCTION", 12, ACCENT))
+	trade_production = _wrapped_label("", 13, MUTED)
+	trade_production.name = "TradeProduction"
+	details.add_child(trade_production)
 	details.add_child(_label("TRANSACTION LEDGER", 12, ACCENT))
 	var ledger_scroll := ScrollContainer.new()
 	ledger_scroll.name = "TradeLedgerScroll"
@@ -649,7 +654,26 @@ func _update_trade_screen() -> void:
 	var buy_price := "%d CR" % int(station.sell_prices[ware.id]) if station.sell_prices.has(ware.id) else "Not sold"
 	var sell_price := "%d CR" % int(station.buy_prices[ware.id]) if station.buy_prices.has(ware.id) else "Not bought"
 	var docked := "Docked here" if ship.docked_at == station.id else "Not docked here"
-	trade_info.text = "%s\n%s  ·  %s\n\nShip: %s  ·  %s\nCargo: %d / %d\nStation storage: %d / %d\n\n%s: %d in cargo / %d at station\nStation sells: %s\nStation buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
+	trade_info.text = "%s\n%s  ·  %s\nShip: %s  ·  %s\nCargo: %d / %d  ·  Storage: %d / %d\n%s: %d in cargo / %d at station\nStation sells: %s  ·  buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
+	var production_lines: Array[String] = []
+	for report in world.production_report(str(station.id)):
+		var inputs: Array[String] = []
+		var outputs: Array[String] = []
+		for ware_id in report.inputs:
+			var input_ware: Dictionary = world._find_ware(str(ware_id))
+			inputs.append("%s ×%d" % [input_ware.get("name", ware_id), int(report.inputs[ware_id])])
+		if not str(report.source).is_empty():
+			inputs.append(str(report.source).capitalize())
+		if not report.deposit.is_empty():
+			var deposit_ware: Dictionary = world._find_ware(str(report.deposit.resource))
+			inputs.append("%s deposit ×%d" % [deposit_ware.get("name", report.deposit.resource), int(report.deposit.quantity)])
+		for ware_id in report.outputs:
+			var output_ware: Dictionary = world._find_ware(str(ware_id))
+			outputs.append("%s ×%d" % [output_ware.get("name", ware_id), int(report.outputs[ware_id])])
+		production_lines.append("%s: %s (%d/%d)\n%s → %s" % [report.name, report.status, int(report.progress), int(report.duration), " + ".join(inputs), " + ".join(outputs)])
+		if not report.deposit.is_empty():
+			production_lines.append("Deposit remaining: %d" % int(station.deposits.get(report.deposit.resource, 0)))
+	trade_production.text = "No production modules." if production_lines.is_empty() else "\n".join(production_lines)
 	var lines: Array[String] = []
 	var ledger: Array = world.state.ledger
 	for index in range(ledger.size() - 1, -1, -1):

@@ -87,6 +87,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("economy_version") and _is_nonnegative_integer(decoded.economy_version) and decoded.economy_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("production_version") and _is_nonnegative_integer(decoded.production_version) and decoded.production_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -156,8 +158,11 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return true
-	return _valid_economy(state, factions, sectors)
+		return not state.has("production_version")
+	if not _valid_economy(state, factions, sectors):
+		return false
+	# Saves from the manual-trading pass are migrated when opened.
+	return not state.has("production_version") or _valid_production(state)
 
 
 func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
@@ -208,4 +213,51 @@ func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary
 		last_id = int(entry.id)
 	if int(state.next_transaction_id) <= last_id:
 		return false
+	return true
+
+
+func _valid_production(state: Dictionary) -> bool:
+	if state.production_version != 1 or not state.get("recipes") is Array:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	var recipes: Dictionary = {}
+	for recipe in state.recipes:
+		if not recipe is Dictionary or not recipe.get("id") is String or str(recipe.id).is_empty() or recipes.has(recipe.id) or not recipe.get("name") is String or not _is_nonnegative_integer(recipe.get("cycle_ticks")) or int(recipe.cycle_ticks) < 1 or int(recipe.cycle_ticks) > 1000000:
+			return false
+		if not recipe.get("inputs") is Dictionary or not recipe.get("outputs") is Dictionary or recipe.outputs.is_empty():
+			return false
+		for key in ["inputs", "outputs"]:
+			for ware_id in recipe[key]:
+				if not wares.has(ware_id) or not _is_nonnegative_integer(recipe[key][ware_id]) or int(recipe[key][ware_id]) < 1 or int(recipe[key][ware_id]) > 1000000:
+					return false
+		var source: Variant = recipe.get("source", "")
+		if not source is String or (source != "" and source != "sunlight"):
+			return false
+		var deposit: Variant = recipe.get("deposit", {})
+		if not deposit is Dictionary:
+			return false
+		if not deposit.is_empty():
+			if not wares.has(deposit.get("resource")) or not _is_nonnegative_integer(deposit.get("quantity")) or int(deposit.quantity) < 1 or int(deposit.quantity) > 1000000:
+				return false
+		if recipe.inputs.is_empty() and source == "" and deposit.is_empty():
+			return false
+		recipes[recipe.id] = recipe
+	if recipes.is_empty():
+		return false
+	for station in state.stations:
+		if not station.get("natural_sources") is Array or not station.get("deposits") is Dictionary or not station.get("production") is Array:
+			return false
+		for source in station.natural_sources:
+			if source != "sunlight":
+				return false
+		for resource_id in station.deposits:
+			if not wares.has(resource_id) or not _is_nonnegative_integer(station.deposits[resource_id]):
+				return false
+		for module in station.production:
+			if not module is Dictionary or not recipes.has(module.get("recipe_id")) or not _is_nonnegative_integer(module.get("progress")) or not _is_nonnegative_integer(module.get("cycles")) or not module.get("status") is String:
+				return false
+			if int(module.progress) >= int(recipes[module.recipe_id].cycle_ticks):
+				return false
 	return true
