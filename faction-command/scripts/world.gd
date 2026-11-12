@@ -30,7 +30,38 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 			ship.sector = chosen.sector_id
 		ship["orders"] = []
 		ship["travel"] = {}
+	if _prepare_economy(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
+	return OK
+
+
+func restore_snapshot(snapshot: Dictionary) -> Error:
+	var restored := snapshot.duplicate(true)
+	var result := _prepare_economy(restored)
+	if result != OK:
+		return result
+	state = restored
+	return OK
+
+
+func _prepare_economy(target: Dictionary) -> Error:
+	if target.has("economy_version"):
+		return OK if target.economy_version == 1 else ERR_UNAVAILABLE
+	# Older saves predate the economy. Add the initial NPC economy and empty
+	# player cargo without resetting the saved world, ship, orders or relations.
+	var defaults: Variant = JSON.parse_string(FileAccess.get_file_as_string(STARTER_DATA))
+	if not defaults is Dictionary or not defaults.get("wares") is Array or not defaults.get("stations") is Array:
+		return ERR_INVALID_DATA
+	target["wares"] = defaults.wares.duplicate(true)
+	target["stations"] = defaults.stations.duplicate(true)
+	target["economy_version"] = 1
+	target["ledger"] = []
+	target["next_transaction_id"] = 1
+	for ship in target.get("ships", []):
+		ship["cargo_capacity"] = 50
+		ship["cargo"] = {}
+		ship["docked_at"] = ""
 	return OK
 
 
@@ -57,6 +88,7 @@ func queue_fly_to(ship_id: String, destination: String) -> bool:
 	if origin == destination or _find_route(origin, destination).is_empty():
 		return false
 	ship.orders.append({"type": "fly_to", "destination": destination})
+	ship.docked_at = ""
 	if ship.travel.is_empty():
 		ship.status = "Queued"
 	return true
@@ -67,6 +99,104 @@ func _find_ship(ship_id: String) -> Dictionary:
 		if ship.id == ship_id:
 			return ship
 	return {}
+
+
+func _find_station(station_id: String) -> Dictionary:
+	for station in state.get("stations", []):
+		if station.id == station_id:
+			return station
+	return {}
+
+
+func _find_ware(ware_id: String) -> Dictionary:
+	for ware in state.get("wares", []):
+		if ware.id == ware_id:
+			return ware
+	return {}
+
+
+func cargo_volume(ship_id: String) -> int:
+	var ship := _find_ship(ship_id)
+	if ship.is_empty():
+		return 0
+	var used := 0
+	for ware_id in ship.cargo:
+		var ware := _find_ware(str(ware_id))
+		if not ware.is_empty():
+			used += int(ship.cargo[ware_id]) * int(ware.volume)
+	return used
+
+
+func station_volume(station_id: String) -> int:
+	var station := _find_station(station_id)
+	if station.is_empty():
+		return 0
+	var used := 0
+	for ware_id in station.stock:
+		var ware := _find_ware(str(ware_id))
+		if not ware.is_empty():
+			used += int(station.stock[ware_id]) * int(ware.volume)
+	return used
+
+
+func dock_ship(ship_id: String, station_id: String) -> Dictionary:
+	var ship := _find_ship(ship_id)
+	var station := _find_station(station_id)
+	if ship.is_empty() or station.is_empty() or ship.owner != state.player_faction_id:
+		return {"ok": false, "message": "Ship or station is unavailable."}
+	if not ship.orders.is_empty() or not ship.travel.is_empty():
+		return {"ok": false, "message": "Wait until the ship finishes its orders."}
+	if ship.sector != station.sector:
+		return {"ok": false, "message": "The ship must travel to the station's sector first."}
+	ship.docked_at = station.id
+	ship.status = "Docked"
+	return {"ok": true, "message": "Docked at " + str(station.name) + "."}
+
+
+func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, buy: bool) -> Dictionary:
+	var ship := _find_ship(ship_id)
+	var station := _find_station(station_id)
+	var ware := _find_ware(ware_id)
+	if ship.is_empty() or station.is_empty() or ware.is_empty() or ship.owner != state.player_faction_id:
+		return {"ok": false, "message": "Ship, station or ware is unavailable."}
+	if quantity <= 0 or quantity > 1000000000:
+		return {"ok": false, "message": "Choose a positive quantity."}
+	if ship.sector != station.sector or ship.docked_at != station_id or not ship.travel.is_empty() or not ship.orders.is_empty():
+		return {"ok": false, "message": "The ship must be docked at this station."}
+	var prices: Dictionary = station.sell_prices if buy else station.buy_prices
+	if not prices.has(ware_id):
+		return {"ok": false, "message": "This station does not offer that trade."}
+	var price := int(prices[ware_id])
+	if price <= 0 or price > 1000000000:
+		return {"ok": false, "message": "This station has an invalid price."}
+	var total := price * quantity
+	var stock := int(station.stock.get(ware_id, 0))
+	var cargo := int(ship.cargo.get(ware_id, 0))
+	if buy:
+		if stock < quantity:
+			return {"ok": false, "message": "The station does not have enough stock."}
+		if cargo_volume(ship_id) + quantity * int(ware.volume) > int(ship.cargo_capacity):
+			return {"ok": false, "message": "The ship does not have enough cargo space."}
+		if int(state.starting_credits) < total:
+			return {"ok": false, "message": "Your faction does not have enough credits."}
+		state.starting_credits = int(state.starting_credits) - total
+		station.credits = int(station.credits) + total
+		station.stock[ware_id] = stock - quantity
+		ship.cargo[ware_id] = cargo + quantity
+	else:
+		if cargo < quantity:
+			return {"ok": false, "message": "The ship does not carry enough of this ware."}
+		if int(station.credits) < total:
+			return {"ok": false, "message": "The station does not have enough credits."}
+		if station_volume(station_id) + quantity * int(ware.volume) > int(station.storage_capacity):
+			return {"ok": false, "message": "The station does not have enough storage space."}
+		state.starting_credits = int(state.starting_credits) + total
+		station.credits = int(station.credits) - total
+		station.stock[ware_id] = stock + quantity
+		ship.cargo[ware_id] = cargo - quantity
+	state.ledger.append({"id": int(state.next_transaction_id), "tick": int(state.tick), "kind": "buy" if buy else "sell", "ship_id": ship_id, "station_id": station_id, "ware_id": ware_id, "quantity": quantity, "price": price, "amount": -total if buy else total})
+	state.next_transaction_id = int(state.next_transaction_id) + 1
+	return {"ok": true, "message": "%s %d %s for %d credits." % ["Bought" if buy else "Sold", quantity, ware.name, total]}
 
 
 func _find_route(origin: String, destination: String) -> Array:
@@ -100,7 +230,7 @@ func _find_route(origin: String, destination: String) -> Array:
 
 func _tick_ship(ship: Dictionary) -> void:
 	if ship.orders.is_empty():
-		ship.status = "Idle"
+		ship.status = "Docked" if not str(ship.docked_at).is_empty() else "Idle"
 		return
 	if ship.travel.is_empty():
 		var route := _find_route(str(ship.sector), str(ship.orders[0].destination))

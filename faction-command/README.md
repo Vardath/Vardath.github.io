@@ -18,6 +18,15 @@ additional destinations to visit them in order. Resume time to see the ship
 cross connected sectors; each crossing currently takes five ticks. Selecting
 the ship shows its captain, crew, location and pending destinations.
 
+The first manual trading loop has four NPC stations and two wares: Energy Cells
+and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
+finish the ship's orders, then dock. Buy goods from station stock and carry them
+to a station that buys them. Each transaction changes real cargo, station stock
+and both credit balances, and appears in the recent transaction ledger. Cargo
+space, station storage, stock and budgets are finite. Docking is currently an
+immediate sector-level action; prices and starting inventories are fixed, and
+the stations do not yet produce or restock goods.
+
 The game has one local save slot and a manual **Save** button. It also saves
 when a game starts, an order is queued, the game is paused or backgrounded,
 and every 30 simulation ticks. **Continue saved game** restores the chosen
@@ -27,8 +36,8 @@ replacing the slot. A validated previous save is retained as a backup; if the
 primary is damaged, Continue offers the backup. A save from an unsupported
 version is not silently replaced by an older backup.
 
-This is an early foundation, not yet a playable economy: docking, trading,
-multiple save slots, order cancellation, Android export, and the wider management
+This is an early foundation: production, NPC traders, dynamic prices, multiple
+save slots, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
@@ -38,8 +47,10 @@ starting state, whole-tick clock, deterministic route search and queued ship
 movement independently from the UI. The test harness checks scenario integrity,
 connectivity, travel timing and order queues, deterministic tick batching,
 isolation of snapshots, save integrity and backup recovery, and basic screen
-interactions. The versioned local save wraps an object-free serialized world in
-a checksum-protected envelope. Tests use a unique temporary save directory.
+interactions. Trading tests cover conservation of credits and goods, failed
+transactions, storage limits and upgrading older saves without resetting progress.
+The versioned local save wraps an object-free serialized world in a
+checksum-protected envelope. Tests use a unique temporary save directory.
 
 ## Run and test
 

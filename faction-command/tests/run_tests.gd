@@ -19,6 +19,22 @@ func _expect(condition: bool, message: String) -> void:
 		printerr("FAIL: " + message)
 
 
+func _total_credits(state: Dictionary) -> int:
+	var total := int(state.starting_credits)
+	for station in state.stations:
+		total += int(station.credits)
+	return total
+
+
+func _total_ware(state: Dictionary, ware_id: String) -> int:
+	var total := 0
+	for station in state.stations:
+		total += int(station.stock.get(ware_id, 0))
+	for ship in state.ships:
+		total += int(ship.cargo.get(ware_id, 0))
+	return total
+
+
 func _run() -> void:
 	# A unique isolated directory prevents tests from ever touching a player's save.
 	var test_root := "user://fc-test-%s-%s" % [OS.get_process_id(), Time.get_ticks_usec()]
@@ -198,6 +214,96 @@ func _run() -> void:
 	newer.close()
 	_expect(save_store.load_game(save_path).get("reason") == "unsupported", "newer save versions are not silently replaced by an older backup")
 
+	var economy = WorldScript.new()
+	_expect(economy.load_starter() == OK, "starter economy loads")
+	_expect(economy.state.stations.size() == 4 and economy.state.wares.size() == 2, "starter economy has four stations and two wares")
+	var credits_before := _total_credits(economy.state)
+	var energy_before := _total_ware(economy.state, "energy_cells")
+	var alloy_before := _total_ware(economy.state, "alloy_plates")
+	var no_trade: Dictionary = economy.snapshot()
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 1, true).ok, "buying requires docking")
+	_expect(not economy.dock_ship("ship_001", "vellum_foundry").ok, "cannot dock at a distant station")
+	_expect(economy.snapshot() == no_trade, "rejected distant and undocked actions change nothing")
+	_expect(economy.dock_ship("ship_001", "hearth_exchange").ok, "ship docks at a station in its sector")
+	no_trade = economy.snapshot()
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 0, true).ok, "zero-quantity trade is rejected")
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", -2, true).ok, "negative-quantity trade is rejected")
+	_expect(not economy.trade("ship_001", "hearth_exchange", "alloy_plates", 1, true).ok, "unavailable station offer is rejected")
+	_expect(not economy.trade("ship_001", "hearth_exchange", "alloy_plates", 1, false).ok, "cannot sell cargo the ship does not carry")
+	_expect(not economy.trade("missing", "hearth_exchange", "energy_cells", 1, true).ok, "unknown ship cannot trade")
+	_expect(economy.snapshot() == no_trade, "invalid trades leave cargo, stock, credits and ledger untouched")
+	_expect(economy.trade("ship_001", "hearth_exchange", "energy_cells", 10, true).ok, "docked ship buys available energy")
+	_expect(economy.state.starting_credits == 24900 and economy.state.ships[0].cargo.energy_cells == 10, "purchase debits credits and adds physical cargo")
+	_expect(economy._find_station("hearth_exchange").stock.energy_cells == 110, "purchase removes stock from the selling station")
+	_expect(economy.state.ledger.size() == 1 and economy.state.ledger[0].amount == -100, "purchase is recorded once in the ledger")
+	no_trade = economy.snapshot()
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 41, true).ok, "purchase cannot exceed ship cargo space")
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 1000, true).ok, "purchase cannot exceed station stock")
+	_expect(economy.snapshot() == no_trade, "capacity and stock failures are atomic")
+	var funds: int = int(economy.state.starting_credits)
+	economy.state.starting_credits = 0
+	no_trade = economy.snapshot()
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 1, true).ok and economy.snapshot() == no_trade, "purchase requires sufficient player credits")
+	economy.state.starting_credits = funds
+	_expect(economy.queue_fly_to("ship_001", "vellum_gate"), "a docked ship can be ordered to another sector")
+	_expect(economy.state.ships[0].docked_at == "", "travel order undocks the ship")
+	_expect(not economy.trade("ship_001", "hearth_exchange", "energy_cells", 1, true).ok, "ship cannot trade while travelling")
+	economy.advance_ticks(10)
+	_expect(economy.state.ships[0].sector == "vellum_gate", "ship physically reaches the next market")
+	_expect(economy.dock_ship("ship_001", "vellum_foundry").ok, "ship docks at destination")
+	var foundry: Dictionary = economy._find_station("vellum_foundry")
+	var foundry_funds: int = int(foundry.credits)
+	foundry.credits = 0
+	no_trade = economy.snapshot()
+	_expect(not economy.trade("ship_001", "vellum_foundry", "energy_cells", 1, false).ok and economy.snapshot() == no_trade, "sale requires the station to have credits")
+	foundry.credits = foundry_funds
+	var foundry_capacity: int = int(foundry.storage_capacity)
+	foundry.storage_capacity = economy.station_volume("vellum_foundry")
+	no_trade = economy.snapshot()
+	_expect(not economy.trade("ship_001", "vellum_foundry", "energy_cells", 1, false).ok and economy.snapshot() == no_trade, "sale requires station storage space")
+	foundry.storage_capacity = foundry_capacity
+	_expect(economy.trade("ship_001", "vellum_foundry", "energy_cells", 10, false).ok, "cargo is sold to the destination station")
+	_expect(economy.state.starting_credits == 25060 and economy.state.ships[0].cargo.energy_cells == 0 and foundry.stock.energy_cells == 10, "sale moves cargo and pays the player")
+	_expect(economy.trade("ship_001", "vellum_foundry", "alloy_plates", 10, true).ok, "return cargo can be purchased")
+	_expect(economy.queue_fly_to("ship_001", "hearthreach"), "return route is queued")
+	economy.advance_ticks(10)
+	_expect(economy.dock_ship("ship_001", "hearth_exchange").ok, "returning ship docks")
+	_expect(economy.trade("ship_001", "hearth_exchange", "alloy_plates", 10, false).ok, "return cargo can be sold")
+	_expect(economy.state.starting_credits == 25160 and economy.state.ledger.size() == 4, "round trip profit and four ledger entries are correct")
+	_expect(_total_credits(economy.state) == credits_before, "trading conserves credits between player and stations")
+	_expect(_total_ware(economy.state, "energy_cells") == energy_before and _total_ware(economy.state, "alloy_plates") == alloy_before, "trading conserves physical wares")
+	var economy_path := test_root + "/economy.json"
+	_expect(save_store.save_game(economy_path, economy.snapshot()) == OK, "economy and ledger can be saved")
+	var economy_load: Dictionary = save_store.load_game(economy_path)
+	_expect(bool(economy_load.get("ok", false)) and economy_load.state == economy.snapshot(), "economy, docked ship and ledger survive save/load")
+	var invalid_economy: Dictionary = economy.snapshot()
+	invalid_economy.stations[0].storage_capacity = 0
+	_expect(save_store.save_game(economy_path, invalid_economy) != OK, "save validation rejects station stock beyond storage capacity")
+	_expect(save_store.load_game(economy_path).state == economy.snapshot(), "rejecting invalid economy leaves the last save intact")
+	_expect(save_store.save_game(economy_path, economy.snapshot()) == OK, "economy save retains a compatible backup")
+	var future_economy: Dictionary = economy.snapshot()
+	future_economy.economy_version = 2
+	var future_payload := Marshalls.variant_to_base64(future_economy, false)
+	var future_file := FileAccess.open(economy_path, FileAccess.WRITE)
+	future_file.store_string(JSON.stringify({"format_version": 1, "payload": future_payload, "checksum": future_payload.sha256_text()}))
+	future_file.close()
+	_expect(save_store.load_game(economy_path).get("reason") == "unsupported", "future economy schema is not silently replaced with an older backup")
+	var old_save: Dictionary = original.duplicate(true)
+	for key in ["economy_version", "wares", "stations", "ledger", "next_transaction_id"]:
+		old_save.erase(key)
+	for ship in old_save.ships:
+		ship.erase("cargo")
+		ship.erase("cargo_capacity")
+		ship.erase("docked_at")
+	var legacy_path := test_root + "/legacy.json"
+	_expect(save_store.save_game(legacy_path, old_save) == OK, "pre-economy save remains readable")
+	var legacy_load: Dictionary = save_store.load_game(legacy_path)
+	var upgraded = WorldScript.new()
+	_expect(bool(legacy_load.get("ok", false)) and upgraded.restore_snapshot(legacy_load.state) == OK, "pre-economy save is upgraded")
+	_expect(upgraded.state.player_origin_faction_id == old_save.player_origin_faction_id and upgraded.state.relations == old_save.relations and upgraded.state.tick == old_save.tick, "upgrade preserves origin, relations and time")
+	_expect(upgraded.state.ships[0].orders == old_save.ships[0].orders and upgraded.state.ships[0].travel == old_save.ships[0].travel, "upgrade preserves a journey in progress")
+	_expect(upgraded.state.ships[0].cargo.is_empty() and upgraded.state.stations.size() == 4, "upgrade adds empty cargo and starter markets")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
@@ -232,6 +338,16 @@ func _run() -> void:
 	_expect(screen.find_child("ShipButton", true, false) != null, "main scene exposes player property")
 	_expect(screen.pause_button.size.y <= 65.0, "top bar stays compact at landscape resolution (button: %s, viewport: %s)" % [screen.pause_button.size, root.size])
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	_expect(screen.find_child("TradeScreen", true, false) != null, "trade screen opens")
+	screen.find_child("DockButton", true, false).pressed.emit()
+	_expect(screen.world.state.ships[0].docked_at == "hearth_exchange", "trade screen docks at the local station")
+	screen.trade_quantity.value = 5
+	screen.find_child("BuyButton", true, false).pressed.emit()
+	_expect(screen.world.state.ships[0].cargo.energy_cells == 5 and screen.world.state.ledger.size() == 1, "trade screen purchases stock and records it")
+	_expect(save_store.load_game(screen.save_path).state.ships[0].cargo.energy_cells == 5, "successful trade is saved immediately")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
 	screen.map_view.sector_selected.emit("vellum_gate")
 	_expect(screen.detail_title.text == "Vellum Gate", "map sector selection updates details")
 	_expect(screen.detail_body.text.contains("Vesper Guild"), "sector details show the controlling faction")
@@ -243,6 +359,7 @@ func _run() -> void:
 	_expect(screen.detail_title.text == "First Light", "property selection shows the player's ship")
 	_expect(screen.detail_body.text.contains("Mira Vale"), "ship details show the captain")
 	_expect(screen.detail_body.text.contains("Crew\n2\n"), "crew count displays as a whole number")
+	_expect(screen.detail_body.text.contains("Energy Cells: 5"), "ship details display carried cargo")
 	_expect(screen.detail_body.text.contains("Vellum Gate"), "ship details show queued destination")
 	await process_frame
 	await process_frame

@@ -39,6 +39,16 @@
     ["meridian", "vellum_gate"], ["meridian", "verdant_trace"],
     ["meridian", "cinder_veil"]
   ],
+  "wares": [
+    {"id":"energy_cells", "name":"Energy Cells", "volume":1},
+    {"id":"alloy_plates", "name":"Alloy Plates", "volume":1}
+  ],
+  "stations": [
+    {"id":"hearth_exchange", "name":"Hearth Exchange", "owner":"auroran", "sector":"hearthreach", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":120,"alloy_plates":0}, "sell_prices":{"energy_cells":10}, "buy_prices":{"alloy_plates":30}},
+    {"id":"vellum_foundry", "name":"Vellum Foundry", "owner":"vesper", "sector":"vellum_gate", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":0,"alloy_plates":100}, "sell_prices":{"alloy_plates":20}, "buy_prices":{"energy_cells":16}},
+    {"id":"cinder_depot", "name":"Cinder Depot", "owner":"ravel", "sector":"cinder_veil", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":0,"alloy_plates":100}, "sell_prices":{"alloy_plates":22}, "buy_prices":{"energy_cells":17}},
+    {"id":"verdant_hub", "name":"Verdant Hub", "owner":"frontier", "sector":"verdant_trace", "credits":20000, "storage_capacity":300, "stock":{"energy_cells":100,"alloy_plates":0}, "sell_prices":{"energy_cells":11}, "buy_prices":{"alloy_plates":29}}
+  ],
   "ships": [
     {"id":"ship_001", "name":"First Light", "class":"Courier", "owner":"player", "sector":"hearthreach", "captain":"Mira Vale", "crew":2, "role":"Unassigned", "status":"Idle"}
   ]

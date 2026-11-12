@@ -90,3 +90,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: queued a trip, saved during a crossing, restarted the game, confirmed the overwrite warning, and continued the saved journey. Android device not tested.
 - Defects and limitations: One slot plus one previous-save backup; multiple save slots and migration from future formats remain future work. Autosave can lose up to 30 simulation ticks after an abrupt stop since the last event/save. There is no Android APK, trade or station construction yet.
 - Next task / gate: Green verified. Implement the first physical economy and trading slice, then verify its exact commit before proceeding.
+
+## Pass 6 — First physical trading loop
+- Date: 2026-11-13
+- Scope: Add four NPC markets, two wares, ship cargo and capacity, station inventories/storage and budgets, explicit sector-level docking, manual buy/sell, a transaction ledger and a trade screen. Trades transfer physical goods and credits atomically; failed trades leave the world unchanged. Upgrade pre-economy saves without resetting existing progress.
+- Files changed: `faction-command/data/starter_galaxy.json`, `scripts/world.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: Source commit containing this entry; exact SHA and outcome will be recorded after verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not start the next implementation task until this source commit's exact check is green.
+- Automated tests: Local Godot 4.6.3: 271 checks passed. Coverage includes a profitable two-way journey, cargo/credit conservation, docking and travel requirements, insufficient stock/credits/capacity, transaction atomicity and ledger, save/load, future-version protection, and migration of an older mid-journey save.
+- Manual/device tests: Desktop Godot: loaded an earlier save, travelled to Vellum Gate, docked and bought alloy, carried it to Hearthreach, docked and sold it; cargo, station stock, balances and ledger reflected both trades. Android device not tested.
+- Defects and limitations: Prices and initial inventories are fixed; stations do not yet produce or restock, NPCs do not trade, docking is an immediate sector-level action, and the UI displays only recent ledger entries. There is no Android APK or station construction yet.
+- Next task / gate: Verify the exact source commit's checks and record the result; then add deterministic production and replenishment from actual inputs before expanding trader automation.

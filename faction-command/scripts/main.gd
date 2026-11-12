@@ -37,6 +37,13 @@ var game_started := false
 var save_status: Label
 var save_notice: Label
 var overwrite_confirmation: ConfirmationDialog
+var trade_screen: Control
+var trade_station_picker: OptionButton
+var trade_ware_picker: OptionButton
+var trade_quantity: SpinBox
+var trade_info: Label
+var trade_ledger: Label
+var trade_feedback: Label
 
 
 func _ready() -> void:
@@ -57,6 +64,8 @@ func _process(delta: float) -> void:
 		_elapsed -= whole_ticks
 		_update_header()
 		_refresh_world_display()
+		if is_instance_valid(trade_screen):
+			_update_trade_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -244,7 +253,9 @@ func _continue_game() -> void:
 	if not bool(saved.get("ok", false)):
 		save_notice.text = "Saved game could not be loaded."
 		return
-	world.state = saved.state.duplicate(true)
+	if world.restore_snapshot(saved.state) != OK:
+		save_notice.text = "Saved game could not be upgraded."
+		return
 	_enter_world()
 	save_status.text = "Backup loaded" if bool(saved.get("recovered", false)) else "Game loaded"
 
@@ -340,6 +351,10 @@ func _build_ui() -> void:
 	ship_brief = _label("", 13, MUTED)
 	ship_brief.name = "ShipBrief"
 	property_list.add_child(ship_brief)
+	var trade_button := _button("Trade")
+	trade_button.name = "TradeButton"
+	trade_button.pressed.connect(_open_trade)
+	property_list.add_child(trade_button)
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	property_list.add_child(spacer)
@@ -456,6 +471,12 @@ func _show_ship() -> void:
 	var sector_name := _sector_name(str(ship.sector))
 	detail_title.text = ship.name
 	detail_body.text = "%s  ·  %s\n\nCaptain\n%s\n\nCrew\n%s\n\nRole\n%s\n\nLocation\n%s" % [ship["class"], ship.status, ship.captain, int(ship.crew), ship.role, sector_name]
+	var cargo_lines: Array[String] = []
+	for ware in world.state.wares:
+		var quantity := int(ship.cargo.get(ware.id, 0))
+		if quantity > 0:
+			cargo_lines.append("%s: %d" % [ware.name, quantity])
+	detail_body.text += "\n\nCargo (%d / %d)\n%s" % [world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), "Empty" if cargo_lines.is_empty() else "\n".join(cargo_lines)]
 	if not ship.travel.is_empty():
 		detail_body.text += "\n\nCrossing to %s" % _sector_name(str(ship.travel.to))
 	if not ship.orders.is_empty():
@@ -497,3 +518,162 @@ func _refresh_world_display() -> void:
 		_show_ship()
 	else:
 		_show_sector(selected_sector)
+
+
+func _open_trade() -> void:
+	if is_instance_valid(trade_screen):
+		return
+	trade_screen = Control.new()
+	trade_screen.name = "TradeScreen"
+	trade_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(trade_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.90)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	trade_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	trade_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(850, 560)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label("STATION TRADE", 22, TEXT))
+	column.add_child(_wrapped_label("Travel to the station's sector, dock, then exchange cargo for credits.", 14, MUTED))
+	var content := HBoxContainer.new()
+	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	content.add_theme_constant_override("separation", 20)
+	column.add_child(content)
+	var controls := VBoxContainer.new()
+	controls.custom_minimum_size.x = 355
+	controls.add_theme_constant_override("separation", 8)
+	content.add_child(controls)
+	controls.add_child(_label("STATION", 12, ACCENT))
+	trade_station_picker = OptionButton.new()
+	trade_station_picker.name = "TradeStationPicker"
+	trade_station_picker.custom_minimum_size.y = 44
+	trade_station_picker.add_theme_font_size_override("font_size", 15)
+	var current_sector: String = world.state.ships[0].sector
+	var selected_index := 0
+	for station in world.state.stations:
+		trade_station_picker.add_item("%s  ·  %s" % [station.name, _sector_name(str(station.sector))])
+		trade_station_picker.set_item_metadata(trade_station_picker.item_count - 1, station.id)
+		if station.sector == current_sector:
+			selected_index = trade_station_picker.item_count - 1
+	trade_station_picker.select(selected_index)
+	trade_station_picker.item_selected.connect(_on_trade_selection)
+	controls.add_child(trade_station_picker)
+	var dock_button := _button("Dock at selected station")
+	dock_button.name = "DockButton"
+	dock_button.pressed.connect(_dock_at_station)
+	controls.add_child(dock_button)
+	controls.add_child(_label("WARE", 12, ACCENT))
+	trade_ware_picker = OptionButton.new()
+	trade_ware_picker.name = "TradeWarePicker"
+	trade_ware_picker.custom_minimum_size.y = 44
+	trade_ware_picker.add_theme_font_size_override("font_size", 15)
+	for ware in world.state.wares:
+		trade_ware_picker.add_item(str(ware.name))
+		trade_ware_picker.set_item_metadata(trade_ware_picker.item_count - 1, ware.id)
+	trade_ware_picker.item_selected.connect(_on_trade_selection)
+	controls.add_child(trade_ware_picker)
+	controls.add_child(_label("QUANTITY", 12, ACCENT))
+	trade_quantity = SpinBox.new()
+	trade_quantity.name = "TradeQuantity"
+	trade_quantity.min_value = 1
+	trade_quantity.max_value = maxi(1, int(world.state.ships[0].cargo_capacity))
+	trade_quantity.step = 1
+	trade_quantity.value = 1
+	trade_quantity.custom_minimum_size.y = 44
+	trade_quantity.add_theme_font_size_override("font_size", 16)
+	controls.add_child(trade_quantity)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	controls.add_child(actions)
+	for option in [{"name": "Buy", "buy": true}, {"name": "Sell", "buy": false}]:
+		var button := _button(str(option.name))
+		button.name = "BuyButton" if option.buy else "SellButton"
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		button.pressed.connect(_perform_trade.bind(bool(option.buy)))
+		actions.add_child(button)
+	trade_feedback = _wrapped_label("", 13, ACCENT)
+	trade_feedback.name = "TradeFeedback"
+	controls.add_child(trade_feedback)
+	var details := VBoxContainer.new()
+	details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	details.add_theme_constant_override("separation", 10)
+	content.add_child(details)
+	details.add_child(_label("MARKET & CARGO", 12, ACCENT))
+	trade_info = _wrapped_label("", 15, TEXT)
+	trade_info.name = "TradeInfo"
+	details.add_child(trade_info)
+	details.add_child(_label("RECENT TRANSACTIONS", 12, ACCENT))
+	trade_ledger = _wrapped_label("", 13, MUTED)
+	trade_ledger.name = "TradeLedger"
+	trade_ledger.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	details.add_child(trade_ledger)
+	var close_button := _button("Close")
+	close_button.name = "CloseTradeButton"
+	close_button.pressed.connect(_close_trade)
+	column.add_child(close_button)
+	_update_trade_screen()
+
+
+func _trade_station_id() -> String:
+	return str(trade_station_picker.get_item_metadata(trade_station_picker.selected))
+
+
+func _trade_ware_id() -> String:
+	return str(trade_ware_picker.get_item_metadata(trade_ware_picker.selected))
+
+
+func _on_trade_selection(_index: int) -> void:
+	trade_feedback.text = ""
+	_update_trade_screen()
+
+
+func _update_trade_screen() -> void:
+	if not is_instance_valid(trade_screen):
+		return
+	var ship: Dictionary = world.state.ships[0]
+	var station: Dictionary = world._find_station(_trade_station_id())
+	var ware: Dictionary = world._find_ware(_trade_ware_id())
+	var buy_price := "%d CR" % int(station.sell_prices[ware.id]) if station.sell_prices.has(ware.id) else "Not sold"
+	var sell_price := "%d CR" % int(station.buy_prices[ware.id]) if station.buy_prices.has(ware.id) else "Not bought"
+	var docked := "Docked here" if ship.docked_at == station.id else "Not docked here"
+	trade_info.text = "%s\n%s  ·  %s\n\nShip: %s  ·  %s\nCargo: %d / %d\nStation storage: %d / %d\n\n%s: %d in cargo / %d at station\nStation sells: %s\nStation buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
+	var lines: Array[String] = []
+	var ledger: Array = world.state.ledger
+	for index in range(maxi(0, ledger.size() - 4), ledger.size()):
+		var entry: Dictionary = ledger[index]
+		var entry_ware: Dictionary = world._find_ware(str(entry.ware_id))
+		lines.append("%s %d %s  ·  %s%d CR" % [str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount)])
+	trade_ledger.text = "No transactions yet." if lines.is_empty() else "\n".join(lines)
+
+
+func _dock_at_station() -> void:
+	var result: Dictionary = world.dock_ship(str(world.state.ships[0].id), _trade_station_id())
+	trade_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			trade_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_trade_screen()
+
+
+func _perform_trade(buy: bool) -> void:
+	var result: Dictionary = world.trade(str(world.state.ships[0].id), _trade_station_id(), _trade_ware_id(), int(trade_quantity.value), buy)
+	trade_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			trade_feedback.text += " Save failed."
+		_update_header()
+		_refresh_world_display()
+	_update_trade_screen()
+
+
+func _close_trade() -> void:
+	trade_screen.queue_free()
+	trade_screen = null

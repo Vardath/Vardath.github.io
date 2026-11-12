@@ -81,7 +81,13 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unreadable"}
 	# Objects remain disabled: saves contain data only, never executable objects.
 	var decoded: Variant = Marshalls.base64_to_variant(payload, false)
-	if not decoded is Dictionary or not _valid_world(decoded):
+	if not decoded is Dictionary:
+		return {"ok": false, "reason": "unreadable"}
+	if _is_nonnegative_integer(decoded.get("schema_version")) and decoded.schema_version != 1:
+		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("economy_version") and _is_nonnegative_integer(decoded.economy_version) and decoded.economy_version != 1:
+		return {"ok": false, "reason": "unsupported"}
+	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
 
@@ -146,4 +152,60 @@ func _valid_world(state: Dictionary) -> bool:
 				return false
 			if not _is_nonnegative_integer(trip.get("total")) or not _is_nonnegative_integer(trip.get("remaining")) or int(trip.total) < 1 or int(trip.remaining) < 1 or int(trip.remaining) > int(trip.total):
 				return false
-	return state.ships[0].owner == state.player_faction_id
+	if state.ships[0].owner != state.player_faction_id:
+		return false
+	# Saves made before the first economy pass are migrated when opened.
+	if not state.has("economy_version"):
+		return true
+	return _valid_economy(state, factions, sectors)
+
+
+func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
+	if state.economy_version != 1 or not state.get("wares") is Array or not state.get("stations") is Array or not state.get("ledger") is Array or not _is_nonnegative_integer(state.get("next_transaction_id")):
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		if not ware is Dictionary or not ware.get("id") is String or str(ware.id).is_empty() or wares.has(ware.id) or not ware.get("name") is String or not _is_nonnegative_integer(ware.get("volume")) or int(ware.volume) < 1:
+			return false
+		wares[ware.id] = int(ware.volume)
+	var stations: Dictionary = {}
+	for station in state.stations:
+		if not station is Dictionary or not station.get("id") is String or str(station.id).is_empty() or stations.has(station.id) or not station.get("name") is String or not factions.has(station.get("owner")) or not sectors.has(station.get("sector")) or not _is_nonnegative_integer(station.get("credits")) or not _is_nonnegative_integer(station.get("storage_capacity")):
+			return false
+		var station_used := 0
+		for key in ["stock", "sell_prices", "buy_prices"]:
+			if not station.get(key) is Dictionary:
+				return false
+			for ware_id in station[key]:
+				if not wares.has(ware_id) or not _is_nonnegative_integer(station[key][ware_id]):
+					return false
+				if key != "stock" and (int(station[key][ware_id]) < 1 or int(station[key][ware_id]) > 1000000000):
+					return false
+				if key == "stock":
+					station_used += int(station[key][ware_id]) * int(wares[ware_id])
+		if station_used > int(station.storage_capacity):
+			return false
+		stations[station.id] = station
+	if wares.is_empty() or stations.is_empty():
+		return false
+	for ship in state.ships:
+		if not ship.get("cargo") is Dictionary or not ship.get("docked_at") is String or not _is_nonnegative_integer(ship.get("cargo_capacity")):
+			return false
+		var volume := 0
+		for ware_id in ship.cargo:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(ship.cargo[ware_id]):
+				return false
+			volume += int(ship.cargo[ware_id]) * int(wares[ware_id])
+		if volume > int(ship.cargo_capacity):
+			return false
+		if not str(ship.docked_at).is_empty():
+			if not stations.has(ship.docked_at) or stations[ship.docked_at].sector != ship.sector or not ship.orders.is_empty() or not ship.travel.is_empty():
+				return false
+	var last_id := 0
+	for entry in state.ledger:
+		if not entry is Dictionary or not _is_nonnegative_integer(entry.get("id")) or int(entry.id) <= last_id:
+			return false
+		last_id = int(entry.id)
+	if int(state.next_transaction_id) <= last_id:
+		return false
+	return true
