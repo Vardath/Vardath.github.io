@@ -16,7 +16,7 @@
         <!-- Release assets sold, captured, abandoned or transferred out of the
              player faction. The keys list is a snapshot, safe to modify. -->
         <do_for_each name="$FormerAsset" in="md.$VardathFactionInvincibleProtected.keys.list">
-          <do_if value="not $FormerAsset.exists">
+          <do_if value="not $FormerAsset.exists or not $FormerAsset.isclass.defensible">
             <remove_value name="md.$VardathFactionInvincibleProtected.{$FormerAsset}"/>
           </do_if>
           <do_elseif value="$FormerAsset.trueowner != faction.player">
@@ -35,7 +35,7 @@
         <find_station_by_true_owner name="$Stations"
                                     faction="faction.player"
                                     space="player.galaxy" multiple="true"/>
-        <!-- Also cover player-owned satellites, mines, laser towers, beacons
+        <!-- Gate construction sites can be returned by owner queries but are not\n             defensible; never pass such objects to hull/shield actions. -->\n        <!-- Also cover player-owned satellites, mines, laser towers, beacons
              and other deployables, not just ships/stations. -->
         <find_object name="$Deployables" owner="faction.player"
                      deployable="true" space="player.galaxy" multiple="true"/>
@@ -44,7 +44,7 @@
         <append_list_elements name="$Assets" other="$Stations"/>
         <append_list_elements name="$Assets" other="$Deployables"/>
         <do_for_each name="$Asset" in="$Assets">
-          <do_if value="$Asset.exists and $Asset.trueowner == faction.player">
+          <do_if value="$Asset.exists and $Asset.isclass.defensible and $Asset.trueowner == faction.player">
             <!-- Reapply every minute: newly built station modules and new ship
                  equipment are protected even on an already-protected asset. -->
             <run_actions ref="SetAssetProtection">
@@ -63,7 +63,7 @@
         <param name="Enabled"/>
       </params>
       <actions>
-        <do_if value="$Asset.exists">
+        <do_if value="$Asset.exists and $Asset.isclass.defensible">
           <do_if value="$Enabled">
             <!-- Full restoration backs up the 100% minimums against damage. -->
             <set_object_hull object="$Asset" exact="100"/>
@@ -92,7 +92,7 @@
                                  class="class.weapon" recursive="true"
                                  multiple="true" append="true"/>
           <do_for_each name="$Part" in="$Parts">
-            <do_if value="$Part.exists">
+            <do_if value="$Part.exists and $Part.isclass.defensible">
               <do_if value="$Enabled">
                 <set_object_hull object="$Part" exact="100"/>
                 <set_object_shield object="$Part" exact="100"/>
