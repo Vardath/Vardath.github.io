@@ -91,6 +91,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("logistics_version") and _is_nonnegative_integer(decoded.logistics_version) and decoded.logistics_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("player_roles_version") and _is_nonnegative_integer(decoded.player_roles_version) and decoded.player_roles_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -160,15 +162,19 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version") and not state.has("logistics_version")
+		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
 	if not state.has("production_version"):
-		return not state.has("logistics_version")
+		return not state.has("logistics_version") and not state.has("player_roles_version")
 	if not _valid_production(state):
 		return false
-	return not state.has("logistics_version") or _valid_logistics(state)
+	if not state.has("logistics_version"):
+		return not state.has("player_roles_version")
+	if not _valid_logistics(state):
+		return false
+	return not state.has("player_roles_version") or _valid_player_roles(state)
 
 
 func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
@@ -293,5 +299,38 @@ func _valid_logistics(state: Dictionary) -> bool:
 		if job.phase == "to_source" and (job.source_id.is_empty() or job.destination_id.is_empty() or not wares.has(job.ware_id) or int(job.quantity) < 1):
 			return false
 		if job.phase == "to_destination" and (not wares.has(job.ware_id) or int(job.quantity) < 1):
+			return false
+	return true
+
+
+func _valid_player_roles(state: Dictionary) -> bool:
+	if state.player_roles_version != 1:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			if ship.has("player_trader"):
+				return false
+			continue
+		if not ship.get("player_trader") is Dictionary:
+			return false
+		var job: Dictionary = ship.player_trader
+		if not job.get("enabled") is bool or job.get("phase") not in ["idle", "to_source", "to_destination"]:
+			return false
+		for key in ["source_id", "destination_id", "ware_id"]:
+			if not job.get(key) is String:
+				return false
+		for key in ["quantity", "managed_quantity", "retry_ticks"]:
+			if not _is_nonnegative_integer(job.get(key)):
+				return false
+		if job.phase == "to_source" and (job.source_id.is_empty() or job.destination_id.is_empty() or not wares.has(job.ware_id) or int(job.quantity) < 1):
+			return false
+		if job.phase == "to_destination" and (not wares.has(job.ware_id) or int(job.quantity) < 1):
+			return false
+		if job.phase != "to_destination" and int(job.managed_quantity) != 0:
+			return false
+		if int(job.managed_quantity) > int(job.quantity) or int(job.managed_quantity) > int(ship.cargo.get(job.ware_id, 0)):
 			return false
 	return true

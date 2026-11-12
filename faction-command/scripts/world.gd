@@ -38,6 +38,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if _prepare_logistics(new_state) != OK:
 		return ERR_INVALID_DATA
+	if _prepare_player_roles(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -51,6 +53,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = _prepare_logistics(restored)
+	if result != OK:
+		return result
+	result = _prepare_player_roles(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -142,6 +147,18 @@ func _prepare_logistics(target: Dictionary) -> Error:
 	return OK
 
 
+func _prepare_player_roles(target: Dictionary) -> Error:
+	if target.has("player_roles_version"):
+		return OK if target.player_roles_version == 1 else ERR_UNAVAILABLE
+	# Add an inactive role to old player ships without touching their orders,
+	# cargo, crew, balances or existing NPC traders.
+	for ship in target.ships:
+		if ship.owner == target.player_faction_id:
+			ship["player_trader"] = {"enabled":false, "phase":"idle", "source_id":"", "destination_id":"", "ware_id":"", "quantity":0, "managed_quantity":0, "retry_ticks":0}
+	target["player_roles_version"] = 1
+	return OK
+
+
 func advance_ticks(count: int) -> void:
 	if count <= 0 or state.is_empty():
 		return
@@ -152,7 +169,7 @@ func advance_ticks(count: int) -> void:
 		for station in state.get("stations", []):
 			_tick_production(station)
 		for ship in state.get("ships", []):
-			if ship.has("autotrader"):
+			if ship.has("autotrader") or ship.has("player_trader"):
 				npc_trade.tick(self, ship)
 
 
@@ -165,6 +182,15 @@ func queue_fly_to(ship_id: String, destination: String) -> bool:
 	if ship.is_empty() or ship.owner != state.get("player_faction_id", ""):
 		return false
 	return _queue_ship_route(ship, destination)
+
+
+func set_player_trader(ship_id: String, enabled: bool) -> bool:
+	var ship := _find_ship(ship_id)
+	if ship.is_empty() or ship.owner != state.get("player_faction_id", "") or not ship.has("player_trader"):
+		return false
+	ship.player_trader.enabled = enabled
+	ship.role = "Autonomous Trader" if enabled else "Unassigned"
+	return true
 
 
 func _queue_ship_route(ship: Dictionary, destination: String) -> bool:
@@ -314,7 +340,14 @@ func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, 
 	var ship := _find_ship(ship_id)
 	if ship.is_empty() or ship.owner != state.player_faction_id:
 		return {"ok": false, "message": "Ship is unavailable."}
-	return _trade_for_ship(ship, station_id, ware_id, quantity, buy)
+	var result := _trade_for_ship(ship, station_id, ware_id, quantity, buy)
+	# A manual sale consumes role-managed goods first, so resuming the role
+	# cannot later sell the player's unrelated pre-existing cargo by mistake.
+	if result.ok and not buy and ship.has("player_trader"):
+		var job: Dictionary = ship.player_trader
+		if job.phase == "to_destination" and job.ware_id == ware_id:
+			job.managed_quantity = maxi(0, int(job.managed_quantity) - quantity)
+	return result
 
 
 func _trade_for_ship(ship: Dictionary, station_id: String, ware_id: String, quantity: int, buy: bool) -> Dictionary:

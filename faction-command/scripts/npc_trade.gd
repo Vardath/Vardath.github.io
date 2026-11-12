@@ -1,6 +1,6 @@
 extends RefCounted
-## Deterministic, one-ship-at-a-time logistics. The trader pays for stock,
-## travels through the same sector graph and sells only after docking.
+## Deterministic logistics shared by faction freighters and player traders.
+## Both pay for stock, use sector routes and sell only after docking.
 
 const WORKING_CAPITAL := 1000
 const TARGET_CYCLES := 8
@@ -8,7 +8,8 @@ const RETRY_TICKS := 5
 
 
 func tick(world: RefCounted, ship: Dictionary) -> void:
-	var job: Dictionary = ship.autotrader
+	var is_player: bool = ship.owner == world.state.player_faction_id
+	var job: Dictionary = ship.player_trader if is_player else ship.autotrader
 	if not job.enabled or not ship.orders.is_empty() or not ship.travel.is_empty():
 		return
 	if int(job.retry_ticks) > 0:
@@ -16,7 +17,7 @@ func tick(world: RefCounted, ship: Dictionary) -> void:
 		ship.status = "Waiting for buyer" if job.phase == "to_destination" else "Waiting for trade"
 		return
 	if job.phase == "idle":
-		if not bool(job.funded):
+		if not is_player and not bool(job.funded):
 			var home: Dictionary = world._find_station(str(job.home_station_id))
 			if home.is_empty() or home.owner != ship.owner:
 				home = {}
@@ -77,12 +78,14 @@ func tick(world: RefCounted, ship: Dictionary) -> void:
 			_reset(job)
 			return
 		job.quantity = amount
+		if is_player:
+			job.managed_quantity = amount
 		job.phase = "to_destination"
 		_go(world, ship, str(destination.sector))
 		return
 	if job.phase == "to_destination":
 		var ware: Dictionary = world._find_ware(str(job.ware_id))
-		if ware.is_empty() or int(ship.cargo.get(job.ware_id, 0)) <= 0:
+		if ware.is_empty() or _managed_cargo(ship, job) <= 0:
 			_reset(job)
 			return
 		var destination: Dictionary = world._find_station(str(job.destination_id))
@@ -93,14 +96,16 @@ func tick(world: RefCounted, ship: Dictionary) -> void:
 			if not _go(world, ship, str(destination.sector)):
 				_redirect(world, ship, ware)
 			return
-		var amount := mini(int(ship.cargo.get(ware.id, 0)), _sale_capacity(world, destination, ware))
+		var amount := mini(_managed_cargo(ship, job), _sale_capacity(world, destination, ware))
 		ship.docked_at = destination.id
 		ship.status = "Docked"
 		var sale: Dictionary = world._trade_for_ship(ship, str(destination.id), str(ware.id), amount, false)
 		if not sale.ok:
 			_redirect(world, ship, ware)
 			return
-		if int(ship.cargo.get(ware.id, 0)) == 0:
+		if is_player:
+			job.managed_quantity = int(job.managed_quantity) - amount
+		if _managed_cargo(ship, job) == 0:
 			_reset(job)
 		else:
 			_redirect(world, ship, ware)
@@ -119,6 +124,15 @@ func _reset(job: Dictionary) -> void:
 	job.ware_id = ""
 	job.quantity = 0
 	job.retry_ticks = 0
+	if job.has("managed_quantity"):
+		job.managed_quantity = 0
+
+
+func _managed_cargo(ship: Dictionary, job: Dictionary) -> int:
+	var carried := int(ship.cargo.get(job.ware_id, 0))
+	if job.has("managed_quantity"):
+		return mini(carried, int(job.managed_quantity))
+	return carried
 
 
 func _demand(world: RefCounted, station: Dictionary, ware_id: String) -> int:
@@ -150,7 +164,8 @@ func _available_quantity(world: RefCounted, ship: Dictionary, source: Dictionary
 	var capacity := maxi(0, int(ship.cargo_capacity) - int(world.cargo_volume(str(ship.id))))
 	var quantity := mini(requested, int(source.stock.get(ware.id, 0)))
 	quantity = mini(quantity, int(capacity / int(ware.volume)))
-	quantity = mini(quantity, int(int(ship.credits) / purchase_price))
+	var wallet := int(world.state.starting_credits) if ship.owner == world.state.player_faction_id else int(ship.credits)
+	quantity = mini(quantity, int(wallet / purchase_price))
 	quantity = mini(quantity, _sale_capacity(world, destination, ware))
 	if require_demand:
 		quantity = mini(quantity, _demand(world, destination, str(ware.id)))
@@ -184,11 +199,11 @@ func _plan_trade(world: RefCounted, ship: Dictionary) -> Dictionary:
 
 
 func _redirect(world: RefCounted, ship: Dictionary, ware: Dictionary) -> void:
-	var job: Dictionary = ship.autotrader
+	var job: Dictionary = ship.player_trader if ship.owner == world.state.player_faction_id else ship.autotrader
 	var best: Dictionary = {}
 	var best_score := -1
 	for station in world.state.stations:
-		var quantity := mini(int(ship.cargo.get(ware.id, 0)), _sale_capacity(world, station, ware))
+		var quantity := mini(_managed_cargo(ship, job), _sale_capacity(world, station, ware))
 		if quantity <= 0:
 			continue
 		var route: Array = world._find_route(str(ship.sector), str(station.sector))

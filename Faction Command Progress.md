@@ -126,3 +126,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: loaded an earlier save, watched the NPC diamond travel across the map, inspected its sector traffic and observed its separately identified funding, purchase and sale in the transaction ledger. Android device not tested.
 - Defects and limitations: Only one prototype NPC trader; player-selectable trading roles, dynamic pricing, diplomacy checks, more factions/ships and Android export remain unimplemented. Long-run and galaxy-scale device performance are not yet profiled.
 - Next task / gate: Green verified. Implement a player-owned autonomous trader role with real routes, cargo, station constraints and ledger entries; verify that task's exact commit before proceeding.
+
+## Pass 9 — Player-owned autonomous trader
+- Date: 2026-11-12 (UTC).
+- Scope: Add an opt-in trader role for player-owned ships. It spends the player's credits on real factory supply runs, observes routes, stock, prices, budgets and cargo/storage limits, records purchases and sales, preserves manually acquired cargo, and revalidates interrupted or unavailable trades. Manual orders remain queued and take precedence before the role resumes; disabling the role leaves existing orders and cargo intact. Upgrade older saves without enabling automation or resetting their world.
+- Files changed: `faction-command/scripts/world.gd`, `scripts/npc_trade.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate`; Pages build and deployment.
+- CI result: **PENDING**. Do not move to the next implementation task until the checks for this exact source commit are green.
+- Automated tests: Local Godot 4.6.3: 430 checks passed, including role opt-in, real purchases and sales, player and NPC credit conservation, retained pre-existing cargo, manual sales and queued orders, unavailable buyers, insufficient funds, save/reload in transit, migration, unsupported save versions and concurrent traders.
+- Manual/device tests: Desktop Godot: selected Auto trader, resumed time, observed First Light buy eight Energy Cells, travel to Vellum Gate and sell them; both transactions appeared in the ledger. Android device not tested.
+- Defects and limitations: One prototype player ship and one NPC trader; traders target factory input shortages and use fixed prices. Orders are queued rather than instantly interrupted. Android export and device testing, station construction, dynamic prices and broader roles remain unimplemented.
+- Next task / gate: Wait for and record green checks on this pass before configuring the Android debug export pipeline and CI artifact build; physical-device testing remains required.

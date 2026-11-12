@@ -35,6 +35,12 @@ func _disable_npc_trading(world: RefCounted) -> void:
 			ship.autotrader.enabled = false
 
 
+func _without_player_role(ship: Dictionary) -> Dictionary:
+	var copy := ship.duplicate(true)
+	copy.erase("player_trader")
+	return copy
+
+
 func _total_ware(state: Dictionary, ware_id: String) -> int:
 	var total := 0
 	for station in state.stations:
@@ -308,12 +314,13 @@ func _run() -> void:
 	future_file.close()
 	_expect(save_store.load_game(economy_path).get("reason") == "unsupported", "future economy schema is not silently replaced with an older backup")
 	var old_save: Dictionary = original.duplicate(true)
-	for key in ["economy_version", "production_version", "logistics_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
+	for key in ["economy_version", "production_version", "logistics_version", "player_roles_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
 		old_save.erase(key)
 	for index in range(old_save.ships.size() - 1, -1, -1):
 		if old_save.ships[index].id == "npc_logistics_001":
 			old_save.ships.remove_at(index)
 	for ship in old_save.ships:
+		ship.erase("player_trader")
 		ship.erase("cargo")
 		ship.erase("cargo_capacity")
 		ship.erase("docked_at")
@@ -430,6 +437,8 @@ func _run() -> void:
 	var trading_legacy: Dictionary = economy.snapshot()
 	trading_legacy.erase("production_version")
 	trading_legacy.erase("logistics_version")
+	trading_legacy.erase("player_roles_version")
+	trading_legacy.ships[0].erase("player_trader")
 	trading_legacy.erase("recipes")
 	for index in range(trading_legacy.ships.size() - 1, -1, -1):
 		if trading_legacy.ships[index].id == "npc_logistics_001":
@@ -450,7 +459,7 @@ func _run() -> void:
 	var trading_legacy_read: Dictionary = save_store.load_game(trading_legacy_path)
 	var production_upgrade = WorldScript.new()
 	_expect(bool(trading_legacy_read.get("ok", false)) and production_upgrade.restore_snapshot(trading_legacy_read.state) == OK, "pre-production trading save upgrades")
-	_expect(production_upgrade.state.starting_credits == trading_legacy.starting_credits and production_upgrade.state.ledger == trading_legacy.ledger and production_upgrade.state.ships[0] == trading_legacy.ships[0], "production upgrade preserves credits, transaction history and the player's ship")
+	_expect(production_upgrade.state.starting_credits == trading_legacy.starting_credits and production_upgrade.state.ledger == trading_legacy.ledger and _without_player_role(production_upgrade.state.ships[0]) == trading_legacy.ships[0], "production upgrade preserves credits, transaction history and the player's ship")
 	for old_station in trading_legacy.stations:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
@@ -603,6 +612,8 @@ func _run() -> void:
 
 	var pre_logistics: Dictionary = production_world.snapshot()
 	pre_logistics.erase("logistics_version")
+	pre_logistics.erase("player_roles_version")
+	pre_logistics.ships[0].erase("player_trader")
 	for index in range(pre_logistics.ships.size() - 1, -1, -1):
 		if pre_logistics.ships[index].id == "npc_logistics_001":
 			pre_logistics.ships.remove_at(index)
@@ -611,7 +622,7 @@ func _run() -> void:
 	var old_production: Dictionary = save_store.load_game(old_production_path)
 	var logistics_upgrade = WorldScript.new()
 	_expect(bool(old_production.get("ok", false)) and logistics_upgrade.restore_snapshot(old_production.state) == OK, "production save gains autonomous logistics")
-	_expect(logistics_upgrade.state.ships[0] == pre_logistics.ships[0] and logistics_upgrade.state.ledger == pre_logistics.ledger and logistics_upgrade.state.starting_credits == pre_logistics.starting_credits, "logistics upgrade preserves the player's ship, credits and ledger")
+	_expect(_without_player_role(logistics_upgrade.state.ships[0]) == pre_logistics.ships[0] and logistics_upgrade.state.ledger == pre_logistics.ledger and logistics_upgrade.state.starting_credits == pre_logistics.starting_credits, "logistics upgrade preserves the player's ship, credits and ledger")
 	for old_station in pre_logistics.stations:
 		var new_station: Dictionary = logistics_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock == old_station.stock and new_station.production == old_station.production, "logistics upgrade preserves station finances and production: " + str(old_station.id))
@@ -645,6 +656,145 @@ func _run() -> void:
 	future_logistics_file.store_string(JSON.stringify({"format_version": 1, "payload": logistics_payload, "checksum": logistics_payload.sha256_text()}))
 	future_logistics_file.close()
 	_expect(save_store.load_game(npc_version_path).get("reason") == "unsupported", "future logistics schema is not silently replaced by an older backup")
+
+	# Player role: physical trades, manual intervention and save safety.
+	var trader = WorldScript.new()
+	_expect(trader.load_starter() == OK, "player trader scenario loads")
+	_disable_npc_trading(trader)
+	var player: Dictionary = trader.state.ships[0]
+	var total_money := _total_credits(trader.state)
+	_expect(not player.player_trader.enabled and player.role == "Unassigned", "player trader is opt-in")
+	_expect(not trader.set_player_trader("npc_logistics_001", true) and not trader.set_player_trader("unknown", true), "roles cannot be assigned to NPC or unknown ships")
+	_expect(trader.dock_ship("ship_001", "hearth_exchange").ok and trader.trade("ship_001", "hearth_exchange", "energy_cells", 3, true).ok, "player acquires cargo before enabling automation")
+	_expect(trader.set_player_trader("ship_001", true), "player enables autonomous trading")
+	for _tick in range(40):
+		trader.advance_ticks(1)
+		if player.player_trader.phase == "to_destination":
+			break
+	var player_job: Dictionary = player.player_trader
+	_expect(player_job.phase == "to_destination" and player_job.ware_id == "energy_cells" and int(player_job.managed_quantity) > 2, "role buys physical cargo for a profitable supply run")
+	_expect(int(player.cargo.energy_cells) == int(player_job.managed_quantity) + 3 and trader.state.ledger.size() == 2, "purchased cargo is tracked separately from existing cargo")
+	_expect(int(trader.state.starting_credits) < 25000 and _total_credits(trader.state) == total_money, "player buys with faction credits without creating money")
+	var saved_trip: Dictionary = trader.snapshot()
+	var player_trip_path := test_root + "/player-trip.json"
+	_expect(save_store.save_game(player_trip_path, saved_trip) == OK, "player trade can be saved while carrying goods")
+	var player_trip_read: Dictionary = save_store.load_game(player_trip_path)
+	var player_resumed = WorldScript.new()
+	_expect(bool(player_trip_read.get("ok", false)) and player_resumed.restore_snapshot(player_trip_read.state) == OK, "player trade resumes from a saved journey")
+	trader.advance_ticks(60)
+	player_resumed.advance_ticks(60)
+	_expect(trader.snapshot() == player_resumed.snapshot(), "saved player trade continues deterministically")
+	var player_sale_seen := false
+	for entry in trader.state.ledger:
+		if entry.ship_id == "ship_001" and entry.kind == "sell":
+			player_sale_seen = true
+	_expect(player_sale_seen and int(player.cargo.energy_cells) >= 3 and _total_credits(trader.state) == total_money, "player trader delivers real cargo while preserving pre-existing goods and credits")
+
+	# Disable during a run, then manually sell part of the managed cargo.
+	var intervention = WorldScript.new()
+	_expect(intervention.restore_snapshot(saved_trip) == OK, "intervention scenario restores in-flight cargo")
+	var held: Dictionary = intervention.state.ships[0]
+	var managed_before := int(held.player_trader.managed_quantity)
+	_expect(intervention.set_player_trader("ship_001", false), "player can turn automation off in transit")
+	var events_before: int = intervention.state.ledger.size()
+	intervention.advance_ticks(40)
+	_expect(intervention.state.ledger.size() == events_before and int(held.player_trader.managed_quantity) == managed_before, "disabling lets the existing trip finish without trading or losing cargo")
+	var buyer_id := str(held.player_trader.destination_id)
+	_expect(intervention.dock_ship("ship_001", buyer_id).ok and intervention.trade("ship_001", buyer_id, "energy_cells", 2, false).ok, "player can manually sell some role-managed cargo")
+	_expect(int(held.player_trader.managed_quantity) == managed_before - 2, "manual sale reduces the amount the role may later sell")
+	intervention.set_player_trader("ship_001", true)
+	intervention.advance_ticks(1)
+	_expect(int(held.cargo.energy_cells) == 3 and held.player_trader.phase == "idle", "resuming delivers only remaining managed cargo, leaving original goods aboard")
+
+	var ordered = WorldScript.new()
+	ordered.load_starter()
+	_disable_npc_trading(ordered)
+	_expect(ordered.queue_fly_to("ship_001", "vellum_gate") and ordered.set_player_trader("ship_001", true), "a role can be enabled with a manual route already queued")
+	ordered.advance_ticks(9)
+	_expect(ordered.state.ledger.is_empty() and ordered.state.ships[0].sector != "vellum_gate", "automation waits while the manual journey is in progress")
+	ordered.advance_ticks(1)
+	_expect(ordered.state.ships[0].sector == "vellum_gate", "manual destination is reached before automation continues")
+
+	var override_world = WorldScript.new()
+	override_world.restore_snapshot(saved_trip)
+	var override_ship: Dictionary = override_world.state.ships[0]
+	_expect(override_world.queue_fly_to("ship_001", "hearthreach"), "a manual route can be queued behind an automated journey")
+	var has_left := false
+	var completed_manual := false
+	var no_early_sale := true
+	var original_events: int = override_world.state.ledger.size()
+	for _tick in range(80):
+		override_world.advance_ticks(1)
+		if override_ship.sector != "hearthreach":
+			has_left = true
+		if override_world.state.ledger.size() != original_events:
+			no_early_sale = false
+		if has_left and override_ship.sector == "hearthreach":
+			completed_manual = true
+			break
+	_expect(completed_manual and no_early_sale, "queued manual destination completes before the trader resumes its sale")
+	override_world.advance_ticks(40)
+	_expect(override_world.state.ledger.size() > original_events and int(override_ship.cargo.energy_cells) >= 3, "trader replans its delivery after the manual route without losing original cargo")
+
+	var waiting_player = WorldScript.new()
+	waiting_player.restore_snapshot(saved_trip)
+	var waiting_ship: Dictionary = waiting_player.state.ships[0]
+	for station in waiting_player.state.stations:
+		if station.buy_prices.has("energy_cells"):
+			station.credits = 0
+	waiting_player.advance_ticks(80)
+	_expect(int(waiting_ship.player_trader.managed_quantity) > 0 and int(waiting_ship.cargo.energy_cells) >= int(waiting_ship.player_trader.managed_quantity) + 3, "insolvent buyers make the player trader wait with its cargo")
+	_expect(save_store.save_game(test_root + "/waiting-player.json", waiting_player.snapshot()) == OK, "waiting cargo and an unavailable buyer remain saveable")
+	waiting_player._find_station("vellum_foundry").credits = 1000
+	waiting_player.advance_ticks(60)
+	_expect(int(waiting_ship.cargo.energy_cells) >= 3 and waiting_player.state.ledger.size() > 2, "trader resumes when a buyer can pay")
+	var no_funds = WorldScript.new()
+	no_funds.load_starter()
+	_disable_npc_trading(no_funds)
+	no_funds.state.starting_credits = 0
+	no_funds.set_player_trader("ship_001", true)
+	no_funds.advance_ticks(40)
+	_expect(no_funds.state.ledger.is_empty() and no_funds.state.ships[0].cargo.is_empty(), "trader cannot buy without player funds")
+
+	var old_roles: Dictionary = saved_trip.duplicate(true)
+	old_roles.erase("player_roles_version")
+	old_roles.ships[0].erase("player_trader")
+	old_roles.ships[0].role = "Unassigned"
+	_expect(save_store.save_game(test_root + "/old-roles.json", old_roles) == OK, "older logistics save remains readable")
+	var old_roles_load: Dictionary = save_store.load_game(test_root + "/old-roles.json")
+	var roles_upgrade = WorldScript.new()
+	_expect(bool(old_roles_load.get("ok", false)) and roles_upgrade.restore_snapshot(old_roles_load.state) == OK, "older logistics save gains the new role")
+	_expect(not roles_upgrade.state.ships[0].player_trader.enabled and _without_player_role(roles_upgrade.state.ships[0]) == old_roles.ships[0] and roles_upgrade.state.ledger == old_roles.ledger and roles_upgrade.state.ships[1] == old_roles.ships[1], "role migration preserves existing ship, journey, NPC and ledger without enabling automation")
+	var bad_role: Dictionary = saved_trip.duplicate(true)
+	bad_role.ships[0].player_trader.managed_quantity = 999
+	_expect(save_store.save_game(test_root + "/bad-role.json", bad_role) != OK, "save validation rejects managed cargo beyond the actual hold")
+	bad_role = saved_trip.duplicate(true)
+	bad_role.ships[0].player_trader.phase = "invalid"
+	_expect(save_store.save_game(test_root + "/bad-role.json", bad_role) != OK, "save validation rejects invalid player trader phases")
+	var roles_version_path := test_root + "/role-version.json"
+	_expect(save_store.save_game(roles_version_path, saved_trip) == OK and save_store.save_game(roles_version_path, saved_trip) == OK, "player-role version test has a valid backup")
+	var future_roles: Dictionary = saved_trip.duplicate(true)
+	future_roles.player_roles_version = 2
+	var roles_payload := Marshalls.variant_to_base64(future_roles, false)
+	var future_roles_file := FileAccess.open(roles_version_path, FileAccess.WRITE)
+	future_roles_file.store_string(JSON.stringify({"format_version": 1, "payload": roles_payload, "checksum": roles_payload.sha256_text()}))
+	future_roles_file.close()
+	_expect(save_store.load_game(roles_version_path).get("reason") == "unsupported", "future player-role data is not silently replaced by an older backup")
+
+	var concurrent = WorldScript.new()
+	concurrent.load_starter()
+	var concurrent_credits := _total_credits(concurrent.state)
+	concurrent.set_player_trader("ship_001", true)
+	concurrent.advance_ticks(500)
+	var concurrent_ok := _total_credits(concurrent.state) == concurrent_credits
+	for ship in concurrent.state.ships:
+		if concurrent.cargo_volume(str(ship.id)) > int(ship.cargo_capacity):
+			concurrent_ok = false
+	for station in concurrent.state.stations:
+		if int(station.credits) < 0 or concurrent.station_volume(str(station.id)) > int(station.storage_capacity):
+			concurrent_ok = false
+	_expect(concurrent_ok and concurrent.state.ledger.size() > 3, "player and NPC traders operate together without creating credits or exceeding capacity")
+	_expect(save_store.save_game(test_root + "/concurrent.json", concurrent.snapshot()) == OK, "concurrent trading world remains saveable")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -680,6 +830,16 @@ func _run() -> void:
 	_expect(screen.find_child("ShipButton", true, false) != null, "main scene exposes player property")
 	_expect(screen.pause_button.size.y <= 65.0, "top bar stays compact at landscape resolution (button: %s, viewport: %s)" % [screen.pause_button.size, root.size])
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 2, "property panel offers manual and autonomous trader roles")
+	screen.role_picker.select(1)
+	screen.role_picker.item_selected.emit(1)
+	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
+	_expect(save_store.load_game(screen.save_path).state.ships[0].player_trader.enabled, "changing the ship role saves immediately")
+	screen.find_child("ShipButton", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Autonomous Trader") and screen.detail_body.text.contains("Trader plan"), "ship details show its role and current plan")
+	screen.role_picker.select(0)
+	screen.role_picker.item_selected.emit(0)
+	_expect(not screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("cargo"), "unassigning explains the treatment of the current journey and cargo")
 	screen.find_child("TradeButton", true, false).pressed.emit()
 	_expect(screen.find_child("TradeScreen", true, false) != null, "trade screen opens")
 	_expect(screen.trade_production.text.contains("Solar Array") and screen.trade_production.text.contains("Sunlight"), "market screen shows production and its natural input")

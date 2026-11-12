@@ -42,6 +42,22 @@ or a buyer cannot pay, it replans or waits with any unsold cargo. Its movements
 appear as a diamond on the galaxy map, sector details identify faction traffic,
 and the transaction ledger identifies the ship responsible for each entry.
 
+Select **Auto trader** under First Light's ship role to automate its supply
+runs. The role spends your faction's credits to buy stock, travels to the
+buyer, and returns sale proceeds to your faction. It chooses profitable
+factory supply runs using current prices, stock, cargo space, station budgets
+and storage. Existing cargo is left alone; the trader sells only the goods it
+purchased for its own runs. Both purchases and sales appear in the ledger.
+When conditions change it rechecks the deal, finds another buyer or waits
+with its cargo. It operates alongside the independent faction freighter.
+
+Manual fly orders join the ship's queue; the trader waits until queued orders
+finish, then rechecks its plan. Select **Unassigned** to stop new automated
+trades: the current journey still finishes and any purchased cargo stays
+aboard. Re-selecting **Auto trader** resumes delivery of that cargo. Manual
+sales of the same ware are counted against the trader's cargo first. Role
+changes save immediately; in-progress trades and cargo survive save/load.
+
 The game has one local save slot and a manual **Save** button. It also saves
 when a game starts, an order is queued, the game is paused or backgrounded,
 and every 30 simulation ticks. **Continue saved game** restores the chosen
@@ -56,8 +72,7 @@ existing production saves gain the NPC freighter with an empty wallet. Neither
 upgrade resets existing balances, goods, player ships, orders or transaction
 history. The NPC receives capital from its home station only after time resumes.
 
-This is an early foundation: there is only one NPC trader; player-assigned
-trader roles, dynamic prices, multiple
+This is an early foundation: there is only one NPC trader; dynamic prices, multiple
 save slots, order cancellation, Android export, and the wider management
 systems remain to be implemented.
 
@@ -74,7 +89,8 @@ Production tests cover shortages, resumption, finite deposits, capacity, competi
 modules, save/load during a cycle and a 2,000-tick run.
 NPC logistics tests cover funded travel and deliveries, money conservation,
 stock changes, missing or insolvent buyers, lost destinations, migration and
-save/load during a trip.
+save/load during a trip. Player trader tests also cover manual orders and
+intervention, cargo preservation, role changes and save/load in transit.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

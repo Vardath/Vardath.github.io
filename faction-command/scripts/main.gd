@@ -24,6 +24,8 @@ var detail_title: Label
 var detail_body: Label
 var sector_picker: OptionButton
 var ship_brief: Label
+var role_picker: OptionButton
+var role_hint: Label
 var order_target: Label
 var order_feedback: Label
 var selected_sector := "hearthreach"
@@ -352,6 +354,18 @@ func _build_ui() -> void:
 	ship_brief = _label("", 13, MUTED)
 	ship_brief.name = "ShipBrief"
 	property_list.add_child(ship_brief)
+	property_list.add_child(_label("SHIP ROLE", 12, ACCENT))
+	role_picker = OptionButton.new()
+	role_picker.name = "RolePicker"
+	role_picker.custom_minimum_size.y = 44
+	role_picker.add_theme_font_size_override("font_size", 14)
+	role_picker.add_item("Unassigned")
+	role_picker.add_item("Auto trader")
+	role_picker.item_selected.connect(_on_role_selected)
+	property_list.add_child(role_picker)
+	role_hint = _wrapped_label("", 12, MUTED)
+	role_hint.name = "RoleHint"
+	property_list.add_child(role_hint)
 	var trade_button := _button("Trade")
 	trade_button.name = "TradeButton"
 	trade_button.pressed.connect(_open_trade)
@@ -479,6 +493,14 @@ func _show_ship() -> void:
 	var sector_name := _sector_name(str(ship.sector))
 	detail_title.text = ship.name
 	detail_body.text = "%s  ·  %s\n\nCaptain\n%s\n\nCrew\n%s\n\nRole\n%s\n\nLocation\n%s" % [ship["class"], ship.status, ship.captain, int(ship.crew), ship.role, sector_name]
+	var job: Dictionary = ship.player_trader
+	if job.enabled:
+		if job.phase == "to_source":
+			detail_body.text += "\n\nTrader plan\nCollect from " + _station_name(str(job.source_id))
+		elif job.phase == "to_destination":
+			detail_body.text += "\n\nTrader cargo\n%d units for %s" % [int(job.managed_quantity), _station_name(str(job.destination_id)) if not str(job.destination_id).is_empty() else "an available buyer"]
+		else:
+			detail_body.text += "\n\nTrader plan\nLooking for a profitable supply run"
 	var cargo_lines: Array[String] = []
 	for ware in world.state.wares:
 		var quantity := int(ship.cargo.get(ware.id, 0))
@@ -501,11 +523,23 @@ func _sector_name(sector_id: String) -> String:
 	return sector_id
 
 
+func _station_name(station_id: String) -> String:
+	var station: Dictionary = world._find_station(station_id)
+	return str(station.name) if not station.is_empty() else station_id
+
+
 func _faction_name(faction_id: String) -> String:
 	for faction in world.state.factions:
 		if faction.id == faction_id:
 			return str(faction.name)
 	return faction_id
+
+
+func _on_role_selected(index: int) -> void:
+	var ship: Dictionary = world.state.ships[0]
+	if index in [0, 1] and world.set_player_trader(str(ship.id), index == 1):
+		_save_current_game()
+	_refresh_world_display()
 
 
 func _queue_order() -> void:
@@ -521,6 +555,8 @@ func _queue_order() -> void:
 func _refresh_world_display() -> void:
 	var ship: Dictionary = world.state.ships[0]
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
+	role_picker.select(1 if ship.player_trader.enabled else 0)
+	role_hint.text = "Uses your credits. Queued orders finish before trading." if ship.player_trader.enabled else "Turning off a role leaves cargo aboard; current orders finish."
 	map_view.set_world(world.snapshot())
 	if selected_view == "ship":
 		_show_ship()
