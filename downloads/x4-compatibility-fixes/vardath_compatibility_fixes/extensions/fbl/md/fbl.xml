@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/mdscript//cue[@name='fbl_cue']/actions/do_all/do_if[@value='$drop.isclass.collectableammo']/do_if[@value=&quot;$drop.ammo.macro.isclass.missile and player.ship.ammostorage.missile.free&quot;]/@value" silent="true">$drop.exists and player.ship.exists and $drop.ammo.macro.isclass.missile and $drop.ammo.macro.ware and player.ship.ammostorage.{$drop.ammo.macro.ware}.free gt 0</replace>
+  <replace sel="/mdscript//cue[@name='fbl_cue']/actions/do_all/do_if[@value='$drop.isclass.collectableammo']/do_if[@value=&quot;$drop.ammo.macro.isclass.missile and player.ship.ammostorage.missile.free&quot;]/@value" silent="true">$drop.exists and player.ship.exists and $drop.ammo.macro.isclass.missile and $drop.ammo.macro.ware and player.ship.ammostorage.{$drop.ammo.macro.ware}.free gt 0 and (player.ship.isclass.ship_s or player.ship.isclass.ship_m)</replace>
 </diff>
