@@ -1,11 +1,11 @@
 {
-  "version": "1.0.3",
-  "reference_files": 14,
-  "diff_files": 10,
-  "single_match_operations": 30,
-  "contract_tests": 16,
+  "version": "1.0.4",
+  "reference_files": 15,
+  "diff_files": 11,
+  "single_match_operations": 36,
+  "contract_tests": 17,
   "result": "pass",
-  "archive_members": 15,
+  "archive_members": 16,
   "runtime_tested": false,
   "limitations": [
     "No X4 executable, save or merged installed catalogs available.",
