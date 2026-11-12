@@ -29,12 +29,13 @@
               <do_if value="$Delta gt 0s">
                 <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta" />
                 <do_if value="$Contract.$BuildModule.isbuilding">
+                  <!-- Integer centi-credit arithmetic avoids fractional-money conversion errors while preserving SETA elapsed time. -->
                   <!-- Actual construction is required for a completion reputation award. -->
                   <set_value name="$Contract.$SawConstruction" exact="true" />
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 100000Cr)" />
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ((($Delta / 1h)f * 10000000)i * 1ct)" />
                 </do_if>
                 <do_else>
-                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + (($Delta / 1h)f * 25000Cr)" />
+                  <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ((($Delta / 1h)f * 2500000)i * 1ct)" />
                 </do_else>
               </do_if>
               <set_value name="$Contract.$LastSample" exact="player.age" />
