@@ -34,7 +34,7 @@
     <t id="202">Transport up to ten real NPC passengers, limited by free crew berths. Normal booked delivery pays 8,000 Cr each. Removing the persistent taxi service starts a thirty-game-minute unpaid departure grace; temporary orders retain passengers.</t>
     <t id="203">Galaxy surveys of real station components and signal leaks. Native scan data, station discounts, trade updates, real mission offers and black-market locations; timed off-screen alternatives when geometry is unloaded.</t>
     <t id="204">Explore connections, catalogue anomalies and their actual destination lists.</t>
-    <t id="205">Board up to ten real passengers; new tours default to twenty distinct galaxy sights before booked drop-off. Default luxury fare: 500,000 Cr each. Cancelled tours leave unpaid after at least two game hours; ordinary interruptions retain the party.</t>
+    <t id="205">Board up to ten real passengers; new tours default to ten distinct galaxy sights before booked drop-off. Default luxury fare: 500,000 Cr each. Cancelled tours leave unpaid after at least two game hours; ordinary interruptions retain the party.</t>
     <t id="206">Harvest real loaded crystals with weapons or turrets; simulate resource-backed mining off screen across the galaxy. Automatically sell at dockable faction stations and pay credits to the player. All normal armed ship sizes; no mineral hold required.</t>
     <t id="207">Provoke a manageable hostile and retreat to a stronger friendly force. Detect pursuit and abandon failed attempts.</t>
     <t id="208">Shoot actual destructible asteroids. High attention required for physical firing.</t>

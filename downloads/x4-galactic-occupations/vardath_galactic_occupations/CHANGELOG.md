@@ -1,5 +1,13 @@
 # Version history
 
+## 0.5.1 — 2026-11-13
+
+- Added universal English text fallback `t/0001.xml`, preserving English-specific strings in `t/0001-l044.xml`. Other language clients can show readable English instead of missing `ReadText191180` entries.
+- Updated the outdated tour description from twenty to ten default sightseeing stops to match the current game-code setting. Existing itineraries are untouched.
+- Added source-level localization checks and a detailed Nexus feature guide covering all thirteen jobs and manual station-panel hacking.
+- No gameplay, worker, crew, save, payment or UI layout changes. Actual multi-language X4 runtime checks are pending.
+
+
 ## 0.5.0 — 2026-11-12
 
 - Guard both shared native-income Lua adapters against incomplete save imports: reject nil receipt sequences, invalid row types and invalid bindings without writing any fictional transaction or cancelling the real payment event.

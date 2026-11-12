@@ -1,6 +1,8 @@
-# Galactic Occupations 0.5.0 — safe payments, sightseeing and capital tours
+# Galactic Occupations 0.5.1 — English fallback for all game languages
 
-[Download Occupations](Galactic_Occupations_0.5.0.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.5.1.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+
+**November 13 localization release:** The new language-neutral `t/0001.xml` supplies English labels, job descriptions and settings to non-English game clients, addressing `=ReadText191180-XXX=` errors. The English-specific file is retained for translation compatibility. The obsolete twenty-stop tooltip has been corrected to the actual ten-stop default; saved booking and job logic remain unchanged. See the [complete Nexus-ready description](NEXUS_DESCRIPTION.md). Full validation uses the 0.5.1 package. Live non-English localization still needs in-game confirmation.
 
 **November 12 tour hotfix:** Tour catalogues now prune destroyed/stale points-of-interest from stored lists and force a fresh catalogue search on the next cycle. Tour booking checks validity before accessing a landmark's sector, eliminating the 156 invalid \`$poi.sector\` AI errors recorded in the 2026-11-11 evening log. Existing passengers, tour tickets, destinations, sightseeing progress and paid income are not reset. **0.5.0** also validates restored receipt records and their binding keys before annotating the vanilla transaction log; invalid saved records no longer crash `Vardath.NativeIncome.Payment`. The old `0.4.8_DEV` ZIP remains available as a historical compatibility link.
 
