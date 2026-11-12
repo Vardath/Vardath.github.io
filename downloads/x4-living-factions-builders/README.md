@@ -1,3 +1,7 @@
+# v1.77 — Native payment callback safety
+
+The shared Galactic Occupations / Builders native-income Lua handler now validates receipt sequence IDs, saved binding keys, record types and totals before looking up actual transaction IDs. A malformed save import can no longer throw a nil-key exception on each `Vardath.NativeIncome.Payment` event. All actual credits, rates, deposits, ledger entries, crew and contracts are left untouched. This builds on 1.76 integer-cent SETA payroll; runtime verification still requires a new debug log.
+
 # v1.75 — Independent native Logbook receipts
 
 Verified paid journal records now reach the normal General Logbook through an independent MD consumer. The shared saved cursor prevents duplicate receipts when Occupations is also installed, and recovers the latest twenty recorded payments once without transferring money again. Clear Logbook filters and search for `Vardath Payment`; allow the bounded five-second polling interval. Native transaction entries and rates/debts/SETA accounting remain unchanged. Protected UI stays enabled. Runtime confirmation is pending.
