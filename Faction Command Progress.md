@@ -83,10 +83,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13
 - Scope: Add one offline save slot, manual saving, autosaving on new games, queued orders, pauses, app background/close and every 30 simulation ticks; add Continue and an overwrite confirmation. Preserve faction origin, relations, credits, crew, tick, orders and mid-crossing state. Use versioned, checksum-checked data, a verified temporary file and a previous-save backup.
 - Files changed: `faction-command/scripts/save_store.gd`, `scripts/main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
-- Commit SHA: Source commit containing this entry; exact SHA and outcome will be recorded after verification.
+- Commit SHA: `ff4f2593fe2fd46dffcdbb00b01d0bc781e6b47c`.
 - CI workflow/check runs: `Faction Command foundation` / `validate`.
-- CI result: **PENDING VERIFICATION**. Do not start the next implementation task until this source commit's exact check is green.
+- CI result: **SUCCESS** on `ff4f2593fe2fd46dffcdbb00b01d0bc781e6b47c`: [foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43300489431/job/131470033032) passed all 219 checks on Godot 4.4.1; the Pages build and deployment also succeeded on the same SHA.
 - Automated tests: Local Godot 4.6.3: 219 checks passed, including round-trip of a mid-journey multi-order game, deterministic continuation, changed relations, corrupted primary recovery, backup preservation, checksum and structural validation, unsupported versions, autosave, background pause, and overwrite confirmation. Test saves use isolated directories.
 - Manual/device tests: Desktop Godot: queued a trip, saved during a crossing, restarted the game, confirmed the overwrite warning, and continued the saved journey. Android device not tested.
 - Defects and limitations: One slot plus one previous-save backup; multiple save slots and migration from future formats remain future work. Autosave can lose up to 30 simulation ticks after an abrupt stop since the last event/save. There is no Android APK, trade or station construction yet.
-- Next task / gate: Verify the exact source commit's GitHub Actions checks and record the result; then implement the first physical economy and trading slice.
+- Next task / gate: Green verified. Implement the first physical economy and trading slice, then verify its exact commit before proceeding.
