@@ -77,7 +77,7 @@ def references(cache):
         if item.get('sha256_lf') and hashlib.sha256(data).hexdigest() != item['sha256_lf']:
             raise ValueError('Pinned SHA256 reference mismatch: ' + item['path'])
         if item.get('git_blob_sha'):
-            header = ('blob ' + str(len(data)) + '\\0').encode('utf-8')
+            header = ('blob ' + str(len(data))).encode('utf-8') + bytes([0])
             if hashlib.sha1(header + data).hexdigest() != item['git_blob_sha']:
                 raise ValueError('Pinned Git blob reference mismatch: ' + item['path'])
         result[item['path']] = E.fromstring(data)
