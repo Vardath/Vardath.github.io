@@ -143,9 +143,9 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-12 (UTC).
 - Scope: Add a Godot Android export preset for ARM64 and ARMv7, include the starter-galaxy data in exported builds, configure Godot's Android texture import, and extend game CI to create and verify a signed test APK and upload it with a checksum. A public debug-only signing key and distinct debug package ID keep test-build updates compatible; release signing remains separate.
 - Files changed: `.github/workflows/faction-command.yml`, `faction-command/export_presets.cfg`, `project.godot`, `.gitignore`, `build_support/public-debug.keystore.b64`, `README.md`, `Faction Command.md`, and this journal.
-- Commit SHA: pending verification.
+- Initial source commit: `34cc59812f94941aac922e62db120371ad0c715c` (workflow rejected before jobs started); follow-up commit pending verification.
 - CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
-- CI result: **PENDING**. Do not move to the next implementation task until the checks for this exact source commit are green and the APK artifact is inspected.
+- CI result: **PENDING**. The initial workflow was rejected before jobs started; its job-level `runner` context was replaced because GitHub does not support that context there. The follow-up must pass all checks and its APK artifact must be inspected before the next task.
 - Automated tests: Local Godot 4.6.3 passed 430 foundation checks, imported the project, and exported a resource pack containing `data/starter_galaxy.json`; workflow YAML parsed and the public debug key was verified. Android APK export runs in GitHub Actions because the local Android SDK and templates are unavailable.
 - Manual/device tests: No Android device test yet.
 - Defects and limitations: This is a debug-only build signed with a public test key, not a production release. Actual installation, touch layout, playability, performance and save survival on Android remain unverified.

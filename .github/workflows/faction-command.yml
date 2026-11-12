@@ -35,9 +35,9 @@ jobs:
     permissions:
       contents: read
     env:
-      XDG_CONFIG_HOME: ${{ runner.temp }}/fc-godot-config
-      XDG_DATA_HOME: ${{ runner.temp }}/fc-godot-data
-      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ runner.temp }}/faction-command-debug.keystore
+      XDG_CONFIG_HOME: /tmp/fc-godot-config
+      XDG_DATA_HOME: /tmp/fc-godot-data
+      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /tmp/faction-command-debug.keystore
       GODOT_ANDROID_KEYSTORE_DEBUG_USER: factioncommanddebug
       GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
     steps:
