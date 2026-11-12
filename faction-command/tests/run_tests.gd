@@ -346,6 +346,10 @@ func _run() -> void:
 	screen.find_child("BuyButton", true, false).pressed.emit()
 	_expect(screen.world.state.ships[0].cargo.energy_cells == 5 and screen.world.state.ledger.size() == 1, "trade screen purchases stock and records it")
 	_expect(save_store.load_game(screen.save_path).state.ships[0].cargo.energy_cells == 5, "successful trade is saved immediately")
+	screen.trade_quantity.value = 1
+	for _count in range(4):
+		screen.find_child("BuyButton", true, false).pressed.emit()
+	_expect(screen.world.state.ledger.size() == 5 and screen.trade_ledger.text.contains("#1") and screen.trade_ledger.text.contains("#5"), "scrollable ledger includes both old and new transactions")
 	screen.find_child("CloseTradeButton", true, false).pressed.emit()
 	await process_frame
 	screen.map_view.sector_selected.emit("vellum_gate")
@@ -359,7 +363,7 @@ func _run() -> void:
 	_expect(screen.detail_title.text == "First Light", "property selection shows the player's ship")
 	_expect(screen.detail_body.text.contains("Mira Vale"), "ship details show the captain")
 	_expect(screen.detail_body.text.contains("Crew\n2\n"), "crew count displays as a whole number")
-	_expect(screen.detail_body.text.contains("Energy Cells: 5"), "ship details display carried cargo")
+	_expect(screen.detail_body.text.contains("Energy Cells: 9"), "ship details display carried cargo")
 	_expect(screen.detail_body.text.contains("Vellum Gate"), "ship details show queued destination")
 	await process_frame
 	await process_frame

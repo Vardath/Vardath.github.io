@@ -609,11 +609,17 @@ func _open_trade() -> void:
 	trade_info = _wrapped_label("", 15, TEXT)
 	trade_info.name = "TradeInfo"
 	details.add_child(trade_info)
-	details.add_child(_label("RECENT TRANSACTIONS", 12, ACCENT))
+	details.add_child(_label("TRANSACTION LEDGER", 12, ACCENT))
+	var ledger_scroll := ScrollContainer.new()
+	ledger_scroll.name = "TradeLedgerScroll"
+	ledger_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	ledger_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	ledger_scroll.custom_minimum_size.y = 70
+	details.add_child(ledger_scroll)
 	trade_ledger = _wrapped_label("", 13, MUTED)
 	trade_ledger.name = "TradeLedger"
-	trade_ledger.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	details.add_child(trade_ledger)
+	trade_ledger.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	ledger_scroll.add_child(trade_ledger)
 	var close_button := _button("Close")
 	close_button.name = "CloseTradeButton"
 	close_button.pressed.connect(_close_trade)
@@ -646,11 +652,14 @@ func _update_trade_screen() -> void:
 	trade_info.text = "%s\n%s  ·  %s\n\nShip: %s  ·  %s\nCargo: %d / %d\nStation storage: %d / %d\n\n%s: %d in cargo / %d at station\nStation sells: %s\nStation buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
 	var lines: Array[String] = []
 	var ledger: Array = world.state.ledger
-	for index in range(maxi(0, ledger.size() - 4), ledger.size()):
+	for index in range(ledger.size() - 1, -1, -1):
 		var entry: Dictionary = ledger[index]
 		var entry_ware: Dictionary = world._find_ware(str(entry.ware_id))
-		lines.append("%s %d %s  ·  %s%d CR" % [str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount)])
-	trade_ledger.text = "No transactions yet." if lines.is_empty() else "\n".join(lines)
+		var entry_station: Dictionary = world._find_station(str(entry.station_id))
+		lines.append("#%d  T%d  %s %d %s  ·  %s%d CR\n%s" % [int(entry.id), int(entry.tick), str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount), entry_station.get("name", entry.station_id)])
+	var ledger_text := "No transactions yet." if lines.is_empty() else "\n\n".join(lines)
+	if trade_ledger.text != ledger_text:
+		trade_ledger.text = ledger_text
 
 
 func _dock_at_station() -> void:

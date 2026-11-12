@@ -22,7 +22,7 @@ The first manual trading loop has four NPC stations and two wares: Energy Cells
 and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
 finish the ship's orders, then dock. Buy goods from station stock and carry them
 to a station that buys them. Each transaction changes real cargo, station stock
-and both credit balances, and appears in the recent transaction ledger. Cargo
+and both credit balances, and appears in the scrollable transaction ledger. Cargo
 space, station storage, stock and budgets are finite. Docking is currently an
 immediate sector-level action; prices and starting inventories are fixed, and
 the stations do not yet produce or restock goods.
