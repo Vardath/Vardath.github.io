@@ -30,3 +30,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests:
 - Defects and limitations:
 - Next task / gate:
+
+## Pass 1 — CI foundation bootstrap
+- Date: 2026-11-13
+- Scope: Added a path-scoped GitHub Actions workflow for future Godot headless project validation and test execution.
+- Files changed: `.github/workflows/faction-command.yml`
+- Commit SHA: `7c314701753caae37a83797fe31619998d9f6bbe`
+- CI workflow/check runs: `Faction Command foundation`; combined status query returned no statuses.
+- CI result: **UNVERIFIED**. No green/success result observed.
+- Automated tests: Not run or not confirmed. The bootstrap workflow intentionally skips Godot validation until a project exists.
+- Manual/device tests: Not run.
+- Defects and limitations: GitHub check visibility/trigger must be confirmed. The initial workflow is only a bootstrap gate, not Android APK export.
+- Next task / gate: Verify workflow activation and success on the exact commit; do not proceed with game project implementation until verified. Once green, add Godot skeleton and real tests, then verify that commit before the next feature.
