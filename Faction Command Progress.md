@@ -131,10 +131,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-12 (UTC).
 - Scope: Add an opt-in trader role for player-owned ships. It spends the player's credits on real factory supply runs, observes routes, stock, prices, budgets and cargo/storage limits, records purchases and sales, preserves manually acquired cargo, and revalidates interrupted or unavailable trades. Manual orders remain queued and take precedence before the role resumes; disabling the role leaves existing orders and cargo intact. Upgrade older saves without enabling automation or resetting their world.
 - Files changed: `faction-command/scripts/world.gd`, `scripts/npc_trade.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
-- Commit SHA: pending verification.
+- Commit SHA: `3b3bad72208f8d7ff9005a2965a4b2feca1a3fa1`.
 - CI workflow/check runs: `Faction Command foundation` / `validate`; Pages build and deployment.
-- CI result: **PENDING**. Do not move to the next implementation task until the checks for this exact source commit are green.
+- CI result: **SUCCESS** on `3b3bad72208f8d7ff9005a2965a4b2feca1a3fa1`: [foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43321943084/job/131544563979) passed all 430 checks on Godot 4.4.1; Pages build and deployment also succeeded on the same SHA.
 - Automated tests: Local Godot 4.6.3: 430 checks passed, including role opt-in, real purchases and sales, player and NPC credit conservation, retained pre-existing cargo, manual sales and queued orders, unavailable buyers, insufficient funds, save/reload in transit, migration, unsupported save versions and concurrent traders.
 - Manual/device tests: Desktop Godot: selected Auto trader, resumed time, observed First Light buy eight Energy Cells, travel to Vellum Gate and sell them; both transactions appeared in the ledger. Android device not tested.
 - Defects and limitations: One prototype player ship and one NPC trader; traders target factory input shortages and use fixed prices. Orders are queued rather than instantly interrupted. Android export and device testing, station construction, dynamic prices and broader roles remain unimplemented.
-- Next task / gate: Wait for and record green checks on this pass before configuring the Android debug export pipeline and CI artifact build; physical-device testing remains required.
+- Next task / gate: Green verified. Configure the Android debug export pipeline and CI artifact build; physical-device testing remains required.
