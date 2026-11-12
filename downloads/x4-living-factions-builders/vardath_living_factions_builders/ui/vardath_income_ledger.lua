@@ -7,19 +7,32 @@ _G.VardathNativeIncome = L
 local ffi = require("ffi")
 local C = ffi.C
 local function nativeid(value) return tostring(ConvertStringTo64Bit(tostring(value))) end
+-- Save data created by other extensions (or interrupted saves) can contain
+-- partially imported receipt rows without sequence/ID keys. Never index a Lua
+-- table with nil: keep the native game transaction log available regardless.
+local function list(value) return type(value) == "table" and value or {} end
+local function validreceipt(row)
+    return type(row) == "table" and type(row[1]) == "number"
+        and type(row[2]) == "number" and type(row[5]) == "number"
+        and type(row[3]) == "string" and type(row[4]) == "string"
+end
 local function read()
     if not L.player then return end
-    local sequence = GetNPCBlackboard(L.player, "$vardath_income_seq") or 0
+    local sequence = tonumber(GetNPCBlackboard(L.player, "$vardath_income_seq")) or 0
     if L.sequence == sequence then return end
-    L.receipts = GetNPCBlackboard(L.player, "$vardath_income") or {}
-    L.totals = GetNPCBlackboard(L.player, "$vardath_income_totals") or {}
-    L.bindings = GetNPCBlackboard(L.player, "$vardath_income_native_ids") or {}
+    L.receipts = list(GetNPCBlackboard(L.player, "$vardath_income"))
+    L.totals = list(GetNPCBlackboard(L.player, "$vardath_income_totals"))
+    L.bindings = list(GetNPCBlackboard(L.player, "$vardath_income_native_ids"))
     L.ids, L.byseq, L.claimed = {}, {}, {}
-    for _, receipt in ipairs(L.receipts) do L.byseq[receipt[1]] = receipt end
+    for _, receipt in ipairs(L.receipts) do
+        if validreceipt(receipt) then L.byseq[receipt[1]] = receipt end
+    end
     for _, binding in ipairs(L.bindings) do
-        if L.byseq[binding[2]] then
-            L.ids[binding[1]] = binding[2]
-            L.claimed[binding[2]] = binding[1]
+        if type(binding) == "table" and binding[1] ~= nil and
+            type(binding[2]) == "number" and L.byseq[binding[2]] then
+            local id = tostring(binding[1])
+            L.ids[id] = binding[2]
+            L.claimed[binding[2]] = id
         end
     end
     L.sequence = sequence
@@ -34,6 +47,7 @@ local function matches(row, receipt)
         and math.abs(row.time - receipt[2]) <= 0.05
 end
 local function bind(receipt)
+    if not validreceipt(receipt) then return false end
     if L.claimed[receipt[1]] then return true end
     local player = C.GetPlayerID()
     local count = C.GetNumTransactionLog(player, math.max(0, receipt[2] - 0.05), receipt[2] + 0.05)
@@ -56,7 +70,9 @@ local function bind(receipt)
     L.ids[found], L.claimed[receipt[1]] = receipt[1], found
     local saved = {}
     for _, binding in ipairs(L.bindings) do
-        if L.byseq[binding[2]] then saved[#saved + 1] = binding end
+        if type(binding) == "table" and type(binding[2]) == "number" and L.byseq[binding[2]] then
+            saved[#saved + 1] = binding
+        end
     end
     saved[#saved + 1] = { found, receipt[1] }
     L.bindings = saved
@@ -72,7 +88,7 @@ local function decorate(entry)
     if not receipt and (entry.eventtype == "script_add" or entry.eventtype == "transfer") then
         local candidate
         for _, record in ipairs(L.receipts) do
-            if not L.claimed[record[1]] and matches(entry, record) then
+            if validreceipt(record) and not L.claimed[record[1]] and matches(entry, record) then
                 if candidate then return entry end
                 candidate = record
             end
@@ -84,7 +100,8 @@ local function decorate(entry)
     entry.eventtypename = receipt[4] .. " - " .. receipt[7]
     local text = receipt[8] or ""
     for _, total in ipairs(L.totals) do
-        if total[1] == receipt[3] then
+        if type(total) == "table" and total[1] == receipt[3] and
+            type(total[3]) == "number" and type(total[4]) == "number" then
             local amount = ConvertMoneyString and ConvertMoneyString(total[3], false, true, 0, true) or tostring(total[3])
             text = text .. "\n" .. receipt[4] .. " lifetime income: " .. amount .. " Cr (" .. total[4] .. " payments)"
             break
@@ -108,9 +125,11 @@ function L.install(_, player)
 end
 function L.onPayment(_, player)
     L.install(nil, player)
-    read()
+    -- The optional UI annotation cannot throw out of a payment event. In
+    -- particular, a malformed saved receipt must never abort the payment cue.
+    if not pcall(read) then return end
     local receipt = L.byseq and L.byseq[L.sequence]
-    if receipt then pcall(bind, receipt) end
+    if receipt and validreceipt(receipt) then pcall(bind, receipt) end
 end
 RegisterEvent("Vardath.NativeIncome.Install", L.install)
 RegisterEvent("Vardath.NativeIncome.Payment", L.onPayment)
