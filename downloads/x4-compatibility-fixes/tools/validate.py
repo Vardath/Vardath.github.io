@@ -362,6 +362,30 @@ class Contracts(unittest.TestCase):
         future.xpath(selector)[0].set('exact','future upstream defensive expression')
         self.assertEqual(canonical(future),canonical(apply_patch(future,E.parse(str(MOD/p)).getroot())))
 
+    def test_terran_cadet_long_range_scan_hints_can_close_without_skipping_story(self):
+        p='extensions/ego_dlc_terran/md/gs_terran1.xml'
+        base=".//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']"
+        hints=self.patched[p].xpath(base+"/actions/do_if/show_help|"+base+"/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help|"+base+"/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help_multi")
+        self.assertEqual(len(hints),4)
+        for hint in hints:
+            self.assertEqual(hint.get('allowclose'),'true')
+            if hint.tag=='show_help':
+                self.assertEqual(hint.get('timeout'),'true')
+        original=copy.deepcopy(self.original[p])
+        patched=copy.deepcopy(self.patched[p])
+        changed=0
+        for n in patched.xpath(base+"/actions/do_if/show_help|"+base+"/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help|"+base+"/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help_multi"):
+            n.set('allowclose','false')
+            if n.tag=='show_help':n.set('timeout','false')
+            changed+=1
+        self.assertEqual(changed,4)
+        # Exact mission conditions, controls, scanner ping objective and cleanup
+        # remain identical to the native DLC script.
+        self.assertEqual(canonical(patched),canonical(original))
+        scan=self.one(p,".//cue[@name='Ch2_2_Long_Range_Scan']/conditions/event_long_range_scan_ping")
+        self.assertEqual(scan.get('object'),'$TraderWreck')
+        self.assertEqual(self.one(p,".//cue[@name='Ch2_2_Clean_Up']/actions")[0].tag,'remove_help')
+
     def test_protected_ui_inventory_collector_and_companions_untouched(self):
         files={p.relative_to(MOD).as_posix() for p in MOD.rglob('*') if p.is_file()}
         self.assertFalse(any(p.endswith('.lua') or p.startswith(('ui/','assets/','index/')) for p in files))
@@ -380,7 +404,7 @@ def validate(cache, archive=None):
         if not p.exists():continue
         patch=E.parse(str(p)).getroot();schema.assertValid(patch)
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
-    if len(patched)!=10:raise ValueError('Expected exactly ten targeted diff files')
+    if len(patched)!=11:raise ValueError('Expected exactly eleven targeted diff files')
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -404,7 +428,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.3','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.4','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

@@ -1,6 +1,8 @@
-# Vardath Compatibility Fixes 1.0.3
+# Vardath Compatibility Fixes 1.0.4
 
-[Download](Vardath_Compatibility_Fixes_1.0.3.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.4.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.4 (Terran Cadet start, 2026-11-13):** The vanilla Cradle of Humanity Chapter 2 rescue tutorial uses non-dismissable yellow long-range-scan hints (`allowclose=false`, `timeout=false`) that can obstruct game menus when controller scanning does not advance. This release patches only those four help panels: they can be closed and timed out. The scripted wreck scan objective, mission cues, scan actions, rewards, story, controls and save state are **unchanged**. Whether the user's RB binding works is **not established** by the debug log. No menus are replaced. The same recording also contains fullscreen `GetCellContent invalid table ID` errors with no identified add-on, and unrelated external mod faults, which this patch does not claim to cure.
 
 **1.0.3 (log 2026-11-12, 22:20):** The Fly-by Looting compatibility guard now excludes ammunition pickups from L/XL ships. The latest log shows 129 `collect_drop` rejections, only for the large Hyperion Ascendant and Warlord-class mothership. The native command is not called for those large-ship ammo drops, but S/M missile pickups with capacity and all other existing Fly-by Looting behaviour remain unchanged. This does not modify either ship's storage or destroy the floating ammunition containers. Static patched-source tests confirm the guard; only a new X4 run can confirm the runtime result.
 
@@ -17,6 +19,6 @@ The existing incompatible-ammo, captainless academy, HQ conversation, mismatched
 
 Exit X4 and extract into its game directory, overwriting `extensions/vardath_compatibility_fixes`. Enable the extension and load the same save. Keep **Protected UI** and **Inventory Collector** enabled. Third-party dependencies are optional. No UI replacement, free rewards, new game, quest reset or changes to your other mod folders.
 
-Static source/fault contracts cover **ten targeted diff files**, including the GalaxyTrader destroyed-ship guard. All native diffs apply uniquely to exact pinned references; XML/diff grammar and ZIP contents are checked. **Runtime testing was unavailable.** HeadHunter's Lua import blocked by Protected UI, missing ship/engine catalogs and unrelated old selectors remain unresolved. The separate Hyperion Ascendant extension supplies the Hyperion story routing repair.
+Static source/fault contracts cover **eleven targeted diff files**, including the GalaxyTrader destroyed-ship guard. All native diffs apply uniquely to exact pinned references; XML/diff grammar and ZIP contents are checked. **Runtime testing was unavailable.** HeadHunter's Lua import blocked by Protected UI, missing ship/engine catalogs and unrelated old selectors remain unresolved. The separate Hyperion Ascendant extension supplies the Hyperion story routing repair.
 
 To reproduce: install `lxml>=5,<7`, run `tools/validate.py`, then `tools/package.py`. Exact source URLs/checksums are in `tools/sources.json`; original scripts are downloaded for checking, not redistributed.

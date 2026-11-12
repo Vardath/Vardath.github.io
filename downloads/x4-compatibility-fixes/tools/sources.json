@@ -80,5 +80,10 @@
     "path": "extensions/galaxy_trader/md/gt_core_system.xml",
     "git_blob_sha": "16fc6873b64da1daafb26739e55c8ca03d58f623",
     "url": "https://raw.githubusercontent.com/GoAhead-at/galaxy_trader_v9/c6d3c9a36b6dea974babb79ef66f3903e978bc83/md/gt_core_system.xml"
+  },
+  {
+    "path": "extensions/ego_dlc_terran/md/gs_terran1.xml",
+    "git_blob_sha": "82346d337e4470257386ff760a1bf18dc95fa6fd",
+    "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_terran/md/gs_terran1.xml"
   }
 ]

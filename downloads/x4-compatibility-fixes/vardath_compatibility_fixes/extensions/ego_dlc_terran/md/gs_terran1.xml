@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Native Terran Cadet Chapter 2 long-range scan assistance can hold menus
+       open with allowclose/timeout=false. Only the yellow help panels change.
+       The actual scan cue, wreck detection and mission progression remain native. -->
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/actions/do_if/show_help[@line='4200']/@allowclose" silent="true">true</replace>
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/actions/do_if/show_help[@line='4200']/@timeout" silent="true">true</replace>
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help_multi[1]/@allowclose" silent="true">true</replace>
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help_multi[2]/@allowclose" silent="true">true</replace>
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help[@line='4203']/@allowclose" silent="true">true</replace>
+  <replace sel="/mdscript//cue[@name='Ch2_2_Long_Range_Scan_Hint_1']/cues/cue[@name='Ch2_2_Long_Range_Scan_Hint_2']/actions/show_help[@line='4203']/@timeout" silent="true">true</replace>
+</diff>
