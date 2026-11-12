@@ -85,6 +85,9 @@ func _run() -> void:
 	copy.ships[0].name = "Changed copy"
 	_expect(first.state.ships[0].name == "First Light", "snapshots cannot mutate the live world")
 
+	# Godot 4.4's headless display can default to 64x64 regardless of project
+	# window settings. Test the actual intended landscape viewport explicitly.
+	root.size = Vector2i(1280, 720)
 	var screen = MainScene.instantiate()
 	root.add_child(screen)
 	await process_frame
