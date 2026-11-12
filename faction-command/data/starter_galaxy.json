@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "player_faction_id": "player",
+  "starting_credits": 25000,
+  "factions": [
+    {"id": "player", "name": "Your Faction", "color": "62d6cc"},
+    {"id": "auroran", "name": "Auroran Compact", "color": "5fc6d4"},
+    {"id": "vesper", "name": "Vesper Guild", "color": "b89adc"},
+    {"id": "ravel", "name": "Ravel Concord", "color": "e5b86e"},
+    {"id": "frontier", "name": "Free Frontier", "color": "8dbd91"}
+  ],
+  "sectors": [
+    {"id":"hearthreach", "name":"Hearthreach", "owner":"auroran", "x":0.30, "y":0.50, "description":"A busy meeting point on the edge of Compact space."},
+    {"id":"opal_crossing", "name":"Opal Crossing", "owner":"auroran", "x":0.16, "y":0.26, "description":"A trading passage through pale mineral clouds."},
+    {"id":"lantern_deep", "name":"Lantern Deep", "owner":"auroran", "x":0.34, "y":0.19, "description":"A remote light in a broad dust field."},
+    {"id":"sable_drift", "name":"Sable Drift", "owner":"vesper", "x":0.56, "y":0.16, "description":"A quiet corridor watched by the Vesper Guild."},
+    {"id":"vellum_gate", "name":"Vellum Gate", "owner":"vesper", "x":0.70, "y":0.35, "description":"A crossroads for merchants and surveyors."},
+    {"id":"gloam_reach", "name":"Gloam Reach", "owner":"vesper", "x":0.89, "y":0.20, "description":"A distant reach beyond the established routes."},
+    {"id":"cinder_veil", "name":"Cinder Veil", "owner":"ravel", "x":0.73, "y":0.62, "description":"A warm red nebula with a long industrial history."},
+    {"id":"ember_confluence", "name":"Ember Confluence", "owner":"ravel", "x":0.89, "y":0.79, "description":"Traffic gathers where the outer routes meet."},
+    {"id":"copper_wake", "name":"Copper Wake", "owner":"ravel", "x":0.57, "y":0.82, "description":"A mining frontier among copper-colored rocks."},
+    {"id":"verdant_trace", "name":"Verdant Trace", "owner":"frontier", "x":0.36, "y":0.82, "description":"A thin green cloud marks a young settlement."},
+    {"id":"quiet_span", "name":"Quiet Span", "owner":"frontier", "x":0.13, "y":0.72, "description":"An independent waystation between distant homes."},
+    {"id":"meridian", "name":"Meridian", "owner":"frontier", "x":0.51, "y":0.48, "description":"A central route claimed by no single great power."}
+  ],
+  "links": [
+    ["hearthreach", "opal_crossing"], ["opal_crossing", "lantern_deep"],
+    ["lantern_deep", "sable_drift"], ["sable_drift", "vellum_gate"],
+    ["vellum_gate", "gloam_reach"], ["vellum_gate", "cinder_veil"],
+    ["cinder_veil", "ember_confluence"], ["ember_confluence", "copper_wake"],
+    ["copper_wake", "verdant_trace"], ["verdant_trace", "quiet_span"],
+    ["quiet_span", "hearthreach"], ["hearthreach", "meridian"],
+    ["meridian", "vellum_gate"], ["meridian", "verdant_trace"],
+    ["meridian", "cinder_veil"]
+  ],
+  "ships": [
+    {"id":"ship_001", "name":"First Light", "class":"Courier", "owner":"player", "sector":"hearthreach", "captain":"Mira Vale", "crew":2, "role":"Unassigned", "status":"Idle"}
+  ]
+}

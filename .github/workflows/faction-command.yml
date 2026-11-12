@@ -14,18 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate game project and run headless tests
+      - name: Require the project and test harness
         run: |
-          if [ ! -f faction-command/project.godot ]; then
-            echo "Game project not created yet; foundation workflow installed."
-            exit 0
-          fi
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
+          test -f faction-command/project.godot
+          test -f faction-command/tests/run_tests.gd
+      - name: Install Godot 4.4.1
+        run: |
           wget -q https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O /tmp/godot.zip
           unzip -q /tmp/godot.zip -d /tmp
           chmod +x /tmp/Godot_v4.4.1-stable_linux.x86_64
+      - name: Import project and run foundation tests
+        run: |
           /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --editor --quit
-          if [ -f faction-command/tests/run_tests.gd ]; then
-            /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --script res://tests/run_tests.gd
-          fi
+          /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --script res://tests/run_tests.gd
