@@ -59,10 +59,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13
 - Scope: Add deterministic route finding across the connected starter sectors, a queue of player ship fly-to orders, five-tick sector crossings, visible map movement, and destination/order controls. The ship panel scrolls to keep controls visible.
 - Files changed: `faction-command/scripts/world.gd`, `galaxy_map.gd`, `main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
-- Commit SHA: The source commit containing this entry; record its exact SHA and final CI outcome after the check finishes.
+- Commit SHA: `ae4944e51aeefeeccc68f6f0fe6b1f3d595fa824`.
 - CI workflow/check runs: `Faction Command foundation` / `validate`.
-- CI result: **PENDING VERIFICATION**. Do not proceed to the next implementation task until the exact source commit's check is green.
+- CI result: **SUCCESS** on `ae4944e51aeefeeccc68f6f0fe6b1f3d595fa824`. [Foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43248122786/job/131286232609) passed all 123 checks on Godot 4.4.1; the Pages build and deployment also succeeded on the same SHA.
 - Automated tests: Local Godot 4.6.3: 123 checks passed, including routing, reachability, queued order sequence, crossing timing, ownership, deterministic tick batching, and UI controls. CI uses Godot 4.4.1.
 - Manual/device tests: Desktop Godot: queued First Light from Hearthreach to Vellum Gate; observed travel via Meridian and arrival after 10 ticks. Sector and ship selection, pause/resume and long-detail scrolling were inspected. Android device not tested.
 - Defects and limitations: This is still an early prototype: no order cancellation, docking, trading, economy, save/load, station construction, Android export, or APK. Crossing times are placeholders, and touch/device performance remain unverified.
-- Next task / gate: Wait for this source commit's exact check to finish, record the result, and only then proceed toward persistence and the first physical trading/economy slice.
+- Next task / gate: Green verified. Implement the user's newly requested faction-origin selection for new games while retaining an independent player faction; then verify the exact commit before proceeding.

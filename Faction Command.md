@@ -142,3 +142,11 @@ Expand toward ~300 sectors and 20–30 factions with procedural variety and auth
 - Individual property commands, crew management and selectable autonomous ship occupations.
 - Real shared economy for player and NPC factions.
 - Bigger galaxy and more factions than a typical initial prototype, contingent on performance.
+
+## New game: faction origins and independent player faction
+- At the start of a new game, let the player choose a starting faction from the available origins. Show the starting sector and initial relations with the other factions before the player confirms their choice.
+- The choice represents the player's starting background or affiliation. The player's ships, stations, credits and other property belong to the player's own independent faction, not to the chosen NPC faction; NPC ownership and autonomy remain intact.
+- Each origin defines the player's starting sector and initial relationship values with the relevant NPC factions. Those initial values are ordinary starting conditions: relations can change through gameplay as diplomacy and reputation systems are implemented. The chosen origin itself does not grant control of the NPC faction.
+- Store origin definitions as game data, with stable faction and sector IDs and explicit initial relation values. Persist the chosen origin and current relations in saves once persistence exists; loading an existing game must not ask the player to choose again or reset earned relations.
+- Initial prototype: offer the four starter NPC factions as origins with clear, provisional starting standings; give the player one independently owned starting ship in the selected sector. More factions and differentiated starts can be added as content develops.
+- Acceptance: every available start puts the independently owned player ship in its defined sector; applies that origin's standings; leaves NPC ownership unchanged; rejects invalid or missing origins; previews the choice before starting; and, once saving is implemented, preserves the choice and evolving standings across save/load.
