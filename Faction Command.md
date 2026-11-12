@@ -1,6 +1,6 @@
 # Faction Command — Master Game Design and Development Plan
 
-Version: 0.1 | Status: approved concept, implementation pending | Target: Android landscape, offline-first
+Version: 0.2 | Status: approved concept, implementation pending | Target: Android landscape, offline-first
 
 ## Vision
 Faction Command is an ORIGINAL 2D, map-driven space economy and faction management simulation inspired by the depth of space trading/empire games. It must not copy X4: Foundations code, art, text, faction/sector/ship names, maps, or distinctive UI assets. The player commands a faction rather than manually pilots ships. Gameplay centers on strategic map navigation, property management, individual ship orders, automation, production, diplomacy, policing and autonomous battles.
@@ -109,6 +109,25 @@ Expand toward ~300 sectors and 20–30 factions with procedural variety and auth
 - Maintain milestones/issues, small reviewable commits, tests, versioned changelog and reproducible Android build instructions.
 - Do not silently replace features or claim completion without passing relevant tests. Update this document when scope decisions are approved.
 - GitHub stores code and build artifacts; Godot and Android export tools perform compilation, while CI automates checks and builds.
+
+
+## List-based station construction and self-sufficiency planner
+- The station builder is a mobile-friendly list of module types with quantity controls, rather than a manual 3D assembly puzzle. The player chooses production modules, storage, docks, housing, defenses, shipbuilding and support modules and enters quantities. New stations and existing station expansions use the same planner.
+- Three resource-sourcing modes per station: **Fully self-sufficient**, **Import selected inputs**, and **Import all inputs**. The partial-import mode exposes each required ware as a toggle and permits per-ware import quotas, supplier restrictions and maximum purchase price.
+- Player chooses target final output wares and desired production modules or output rate. The planner recursively expands the recipe dependency graph, calculates required intermediate production, mines/extractors, power, workforce, storage and docks, then rounds to whole modules. It must handle shared intermediates across multiple outputs, production cycle rates, alternative recipes, recycling and cyclic dependencies; cycles require explicit resolution or a warning, never infinite recursion.
+- Self-sufficient means all *manufacturable* recurring inputs are produced locally at sufficient throughput; natural resources still require accessible local deposits/collectors. Warn if the sector lacks a resource or if workforce/energy is insufficient; offer import exceptions or alternative sites.
+- For imported wares, omit their upstream production modules and calculate expected import throughput, transport capacity, running cost and exposure to shortages. Mixed sourcing must permit local production plus imports for a single ware.
+- Planner previews module bill of materials, credit cost, estimated build time, required construction deliveries, per-minute inputs/outputs, workforce, power balance, storage days, expected profit and bottlenecks. Estimates must clearly distinguish current market prices from guaranteed prices.
+- Construction is a persistent queued process: reserve budget/resources, obtain a builder, deliver physical materials, complete modules in sequence, and update station production when commissioned. No instant free modules. Allow pause, reorder, cancel with defined refund/salvage rules, and save/load mid-build.
+- The player can assign station managers and subordinate traders/miners, define trade rules and budgets, enable auto-purchase of build materials, and expand stations later. NPC factions use the same module economics and construction constraints.
+- MVP implementation: module selection and quantities, dependency calculation for three production chains, preview, construction queue and persistence. Later: full mixed sourcing, shared inputs, workforce, advanced station logic and shipyards.
+- Acceptance tests: (1) self-sufficient plan covers all required recurring inputs at target rate; (2) import-all adds no unnecessary upstream factories; (3) selective imports remove only the correct dependency branches; (4) shared inputs are not double-counted; (5) missing resources and recipe cycles yield actionable warnings; (6) construction consumes materials/credits exactly once and survives save/load.
+
+## Development progress and mandatory green-commit gate
+- Maintain a separate repository-root file **`Faction Command Progress.md`** as the durable, chronological implementation journal. Each development pass records scope, files changed, commits, tests run, results, known defects, remaining work and the next permitted task.
+- Before moving from one implementation task to the next: push/commit the task, inspect the corresponding GitHub Actions check runs for the actual commit SHA, wait for required workflows to finish, and verify **green/success**. A created commit alone is not verification.
+- If checks are red, pending, missing or cannot be inspected, **do not proceed to the next implementation task**. Record the exact blocker in the progress file and fix the current task or request the necessary access. Never report green without observing the check results.
+- Keep CI checks scoped to the game directory so existing website functionality is not inadvertently broken. Do not equate a green CI result with verified Android gameplay; retain real-device acceptance tests.
 
 ## Immediate next tasks
 1. Establish original lore, faction list and sector-generation schema.
