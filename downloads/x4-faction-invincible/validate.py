@@ -23,6 +23,14 @@ if manifest.tag != "content" or manifest.get("id") != name:
 for item in items:
     if item.suffix.lower() == ".xml":
         ET.parse(item)
+source_md = (source / "md/vardath_faction_invincible.xml").read_text()
+for expression in (
+    "$Asset.exists and not $Asset.isclass.gate and not $Asset.isclass.highwayentrygate",
+    "$Part.exists and not $Part.isclass.gate and not $Part.isclass.highwayentrygate",
+    "not $FormerAsset.exists or $FormerAsset.isclass.gate or $FormerAsset.isclass.highwayentrygate",
+):
+    if expression not in source_md:
+        raise SystemExit("Missing native gate-site exclusion: " + expression)
 if not archive.is_file():
     raise SystemExit(f"Missing packaged ZIP: {archive}")
 with ZipFile(archive) as packed:

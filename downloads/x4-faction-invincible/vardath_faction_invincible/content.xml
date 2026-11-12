@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="vardath_faction_invincible"
          name="Vardath - Player Faction Invincible"
-         description="Always-on full hull and shield protection on defensible assets for player-owned ships, stations, station modules, subsystems and deployables. Sweeps the galaxy every game minute; refills damage and removes protection on ownership loss. No toggle."
+         description="Always-on full hull and shield protection on defensible assets; excludes gate classes before shield/hull actions for player-owned ships, stations, station modules, subsystems and deployables. Sweeps the galaxy every game minute; refills damage and removes protection on ownership loss. No toggle."
          author="Vardath"
-         version="102"
+         version="103"
          date="2026-11-12"
          save="1">
     <dependency version="900"/>

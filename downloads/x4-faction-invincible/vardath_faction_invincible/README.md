@@ -1,4 +1,6 @@
-# Vardath - Player Faction Invincible (X4: Foundations 9.00)
+# Vardath - Player Faction Invincible 1.03 (X4: Foundations 9.00)
+
+**1.03:** Gate and highway-entry-gate components are explicitly excluded *before* checking defensibility or applying health/minimum commands. Previously saved gate entries are removed from this mod’s tracking table without attempting to modify their hull or shields. This is a conservative guard for the 100 non-defensible gate construction-site errors still appearing every in-game minute in the 12 November 22:20 log. It leaves player ships, genuine stations, and other eligible deployables protected; requires live X4 verification.
 
 Independent, **always-on** invincibility for the entire player faction. No menu, toggle, required DLC, or changes to the other Vardath X4 mods.
 
