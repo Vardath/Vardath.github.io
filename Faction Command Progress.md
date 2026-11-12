@@ -71,10 +71,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13
 - Scope: Add a new-game origin selector with four NPC factions, a preview of each starting sector and initial relations, and data-driven creation of the player's independent faction and ship. Record the chosen origin and current relations in world state.
 - Files changed: `Faction Command.md` (design was updated in the preceding planning commit), `faction-command/data/starter_galaxy.json`, `scripts/world.gd`, `scripts/main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
-- Commit SHA: The source commit containing this entry; record its exact SHA and final CI outcome after the check finishes.
+- Commit SHA: `bf46de43016f057b0d27678d013810236518770b`.
 - CI workflow/check runs: `Faction Command foundation` / `validate`.
-- CI result: **PENDING VERIFICATION**. Do not proceed to the next implementation task until the exact source commit's check is green.
+- CI result: **SUCCESS** on `bf46de43016f057b0d27678d013810236518770b`. [Foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43249576281/job/131291371634) passed all 189 checks on Godot 4.4.1; Pages build and deployment also succeeded on the same SHA.
 - Automated tests: Local Godot 4.6.3: 189 checks passed, including all four origins, complete relation tables, correct starting sectors, player ownership, unchanged NPC sector ownership, rejection of invalid origins, and menu interactions.
 - Manual/device tests: Desktop Godot: previewed Vesper Guild, started in Vellum Gate with +20 Vesper relations, and verified the ship still belongs to the player's own faction. Android device not tested.
 - Defects and limitations: Initial relations (+20 chosen faction, 0 others) are provisional. Save/load, reputation changes, economy, and Android export are not yet implemented; the origin and relations currently live only in memory.
-- Next task / gate: Verify this source commit's exact check; then implement persistence so the selected origin, evolving relations and orders can survive a restart.
+- Next task / gate: Green verified. Implement persistence so the selected origin, evolving relations and orders can survive a restart; then check that task's exact commit before proceeding.
