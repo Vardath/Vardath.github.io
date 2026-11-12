@@ -1,8 +1,12 @@
-# Vardath Compatibility Fixes 1.0.2
+# Vardath Compatibility Fixes 1.0.3
 
-[Download](Vardath_Compatibility_Fixes_1.0.2.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.3.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
 
-**1.0.2:** GalaxyTrader MK3's destroyed-ship event now checks for a valid sector name before logging. This prevents repeated destroyed-ship sector property-lookup errors without changing trader assignments, pilot rescue, orders or balances. A separate Vardath Invincibility 1.02 update guards non-defensible player gate construction sites; this compatibility mod does not modify the gates extension itself.\n\nRetains the six 1.0.0 fixes and addresses new errors in `debug(20261109-150118).log`:
+**1.0.3 (log 2026-11-12, 22:20):** The Fly-by Looting compatibility guard now excludes ammunition pickups from L/XL ships. The latest log shows 129 `collect_drop` rejections, only for the large Hyperion Ascendant and Warlord-class mothership. The native command is not called for those large-ship ammo drops, but S/M missile pickups with capacity and all other existing Fly-by Looting behaviour remain unchanged. This does not modify either ship's storage or destroy the floating ammunition containers. Static patched-source tests confirm the guard; only a new X4 run can confirm the runtime result.
+
+**1.0.2:** GalaxyTrader MK3's destroyed-ship event now checks for a valid sector name before logging. This prevents repeated destroyed-ship sector property-lookup errors without changing trader assignments, pilot rescue, orders or balances. A separate Vardath Invincibility 1.02 update guards non-defensible player gate construction sites; this compatibility mod does not modify the gates extension itself.
+
+Retains the six 1.0.0 fixes and addresses new errors in `debug(20261109-150118).log`:
 
 - Native mission cleanup now iterates a cloned work list with a private counter; immediate callbacks cannot invalidate the next submission index.
 - Inventory Collector initializes the conventional common-handler debug variable without changing collection, routing or deposits.

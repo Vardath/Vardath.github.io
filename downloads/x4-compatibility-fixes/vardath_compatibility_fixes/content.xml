@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="102" date="2026-11-12" save="0" sync="false" description="Targeted X4 9.00 mission, trade, gate, ammo, academy, HQ, Inventory Collector, Head Hunter and GalaxyTrader destroyed-ship sector guards. No UI replacement.">
+<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="103" date="2026-11-12" save="0" sync="false" description="Targeted X4 9.00 mission, trade, gate, capital-ammo, academy, HQ, Inventory Collector, Head Hunter and GalaxyTrader destroyed-ship sector guards. No UI replacement.">
   <dependency version="900"/>
   <dependency id="ws_1683358279" optional="true" name="Fly-by Looting"/>
   <dependency id="ws_2961007180" optional="true" name="Research Blueprints Mod"/>

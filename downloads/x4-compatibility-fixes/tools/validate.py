@@ -283,8 +283,24 @@ class Contracts(unittest.TestCase):
     def test_flyby_uses_specific_ammo_capacity_without_destroying_drop(self):
         p='extensions/fbl/md/fbl.xml';s=".//do_if[@value='$drop.isclass.collectableammo']/do_if"
         g=self.one(p,s)
-        for drop,ship,missile,ware,capacity,wanted in [(True,True,True,'missile',1,True),(True,True,True,'missile',0,False),(True,True,True,None,10,False),(True,True,False,'drone',10,False),(False,True,True,'missile',10,False),(True,False,True,'missile',10,False)]:
-            values={'$drop.exists':drop,'player.ship.exists':ship,'$drop.ammo.macro.isclass.missile':missile,'$drop.ammo.macro.ware':ware,'player.ship.ammostorage.{$drop.ammo.macro.ware}.free':capacity}
+        # The 2026-11-12 debug log contains 129 rejected ammo pickups, all
+        # from large Hyperion/Warlord-class ships. Those ships must not retry.
+        # S/M missile pickups with a matching free storage slot still work.
+        cases = [
+            (True,True,True,'missile',1,True,False,True),
+            (True,True,True,'missile',1,False,True,True),
+            (True,True,True,'missile',1,False,False,False), # L / XL
+            (True,True,True,'missile',0,True,False,False),
+            (True,True,True,None,10,True,False,False),
+            (True,True,False,'drone',10,True,False,False),
+            (False,True,True,'missile',10,True,False,False),
+            (True,False,True,'missile',10,True,False,False),
+        ]
+        for drop,ship,missile,ware,capacity,small,medium,wanted in cases:
+            values={'$drop.exists':drop,'player.ship.exists':ship,
+                '$drop.ammo.macro.isclass.missile':missile,'$drop.ammo.macro.ware':ware,
+                'player.ship.ammostorage.{$drop.ammo.macro.ware}.free':capacity,
+                'player.ship.isclass.ship_s':small,'player.ship.isclass.ship_m':medium}
             self.assertEqual(bool(expr(g.get('value'),values)),wanted)
         self.assertEqual([(n.tag,n.get('object'),n.get('drop')) for n in g],[('collect_drop','player.ship','$drop')])
         q=copy.deepcopy(self.patched[p]);q.xpath(s)[0].set('value',self.one(p,s,False).get('value'))
@@ -388,7 +404,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.2','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.3','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

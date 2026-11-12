@@ -23,15 +23,15 @@ jobs:
       - name: Build versioned ZIP from verified pinned sources
         run: python downloads/x4-compatibility-fixes/tools/package.py
       - name: Verify pinned sources, native diffs, failure boundaries and installed ZIP
-        run: python downloads/x4-compatibility-fixes/tools/validate.py --zip downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.2.zip --report /tmp/x4-compatibility-static-results.json
+        run: python downloads/x4-compatibility-fixes/tools/validate.py --zip downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.3.zip --report /tmp/x4-compatibility-static-results.json
       - name: Publish validated installable archive
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.2.zip downloads/x4-compatibility-fixes/STATIC_TEST_RESULTS.json
+          git add downloads/x4-compatibility-fixes/Vardath_Compatibility_Fixes_1.0.3.zip downloads/x4-compatibility-fixes/STATIC_TEST_RESULTS.json
           if ! git diff --cached --quiet; then
-            git commit -m "Package X4 Compatibility Fixes 1.0.2"
+            git commit -m "Package X4 Compatibility Fixes 1.0.3"
             for attempt in 1 2 3 4 5; do
               git fetch origin main
               git rebase origin/main

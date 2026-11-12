@@ -1,6 +1,6 @@
-# Vardath Compatibility Fixes 1.0.2
+# Vardath Compatibility Fixes 1.0.3
 
-Ten targeted XML compatibility patches for X4 9.00. Install this folder under `extensions`, enable it and load your existing save. Keep Protected UI and Inventory Collector enabled.
+Ten targeted XML compatibility patches; 1.0.3 extends the Fly-by Looting ammo condition to exclude large capital-class ships that reject native collect_drop for X4 9.00. Install this folder under `extensions`, enable it and load your existing save. Keep Protected UI and Inventory Collector enabled.
 
 Includes the GalaxyTrader destroyed-ship sector-name guard plus the original six guards and Inventory Collector's missing common-handler debug default, HeadHunter's absent-pilot expiry cleanup and Emergent Missions' late rescue callback. Native mission cleanup also takes a stable snapshot before invoking immediate callbacks that can change its source list.
 
