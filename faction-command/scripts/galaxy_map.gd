@@ -62,7 +62,12 @@ func _draw() -> void:
 		draw_string(font, pos + Vector2(15, 5), str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, label_color)
 	for ship in world.get("ships", []):
 		if _points.has(ship.sector):
-			var pos: Vector2 = _points[ship.sector] + Vector2(-15, -17)
+			var pos: Vector2 = _points[ship.sector]
+			var travel: Dictionary = ship.get("travel", {})
+			if not travel.is_empty() and _points.has(travel.get("to", "")):
+				var progress := 1.0 - float(travel.remaining) / float(travel.total)
+				pos = pos.lerp(_points[travel.to], progress)
+			pos += Vector2(-15, -17)
 			draw_colored_polygon(PackedVector2Array([pos + Vector2(0, -6), pos + Vector2(6, 5), pos + Vector2(-6, 5)]), Color("70e4cf"))
 
 

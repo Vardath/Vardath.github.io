@@ -54,3 +54,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot screen opened; sector selection, ship selection, and pause/resume were exercised. Android device not tested.
 - Defects and limitations: This is a foundation, not the playable economy. No ship orders, navigation, trading, persistence, station construction, Android export or APK yet. Screen scaling and touch require real-device verification.
 - Next task / gate: Foundation check is green. Implement the first deterministic ship travel and order controls, then verify that task's exact commit before proceeding.
+
+## Pass 3 — First ship travel orders
+- Date: 2026-11-13
+- Scope: Add deterministic route finding across the connected starter sectors, a queue of player ship fly-to orders, five-tick sector crossings, visible map movement, and destination/order controls. The ship panel scrolls to keep controls visible.
+- Files changed: `faction-command/scripts/world.gd`, `galaxy_map.gd`, `main.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
+- Commit SHA: The source commit containing this entry; record its exact SHA and final CI outcome after the check finishes.
+- CI workflow/check runs: `Faction Command foundation` / `validate`.
+- CI result: **PENDING VERIFICATION**. Do not proceed to the next implementation task until the exact source commit's check is green.
+- Automated tests: Local Godot 4.6.3: 123 checks passed, including routing, reachability, queued order sequence, crossing timing, ownership, deterministic tick batching, and UI controls. CI uses Godot 4.4.1.
+- Manual/device tests: Desktop Godot: queued First Light from Hearthreach to Vellum Gate; observed travel via Meridian and arrival after 10 ticks. Sector and ship selection, pause/resume and long-detail scrolling were inspected. Android device not tested.
+- Defects and limitations: This is still an early prototype: no order cancellation, docking, trading, economy, save/load, station construction, Android export, or APK. Crossing times are placeholders, and touch/device performance remain unverified.
+- Next task / gate: Wait for this source commit's exact check to finish, record the result, and only then proceed toward persistence and the first physical trading/economy slice.

@@ -19,6 +19,11 @@ var pause_button: Button
 var detail_title: Label
 var detail_body: Label
 var sector_picker: OptionButton
+var ship_brief: Label
+var order_target: Label
+var order_feedback: Label
+var selected_sector := "hearthreach"
+var selected_view := "sector"
 
 
 func _ready() -> void:
@@ -40,6 +45,7 @@ func _process(delta: float) -> void:
 		world.advance_ticks(whole_ticks)
 		_elapsed -= whole_ticks
 		_update_header()
+		_refresh_world_display()
 
 
 func _style(bg: Color, border: Color = BORDER, radius: int = 8) -> StyleBoxFlat:
@@ -141,7 +147,9 @@ func _build_ui() -> void:
 	ship_button.name = "ShipButton"
 	ship_button.pressed.connect(_show_ship)
 	property_list.add_child(ship_button)
-	property_list.add_child(_label("Courier  ·  Idle\nHearthreach", 13, MUTED))
+	ship_brief = _label("", 13, MUTED)
+	ship_brief.name = "ShipBrief"
+	property_list.add_child(ship_brief)
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	property_list.add_child(spacer)
@@ -189,18 +197,33 @@ func _build_ui() -> void:
 	detail_title = _label("", 21, TEXT)
 	detail_title.name = "DetailTitle"
 	detail.add_child(detail_title)
+	var detail_scroll := ScrollContainer.new()
+	detail_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	detail_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	detail_scroll.custom_minimum_size.y = 80
+	detail.add_child(detail_scroll)
 	detail_body = _wrapped_label("", 15, MUTED)
 	detail_body.name = "DetailBody"
-	detail_body.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	detail.add_child(detail_body)
-	detail.add_child(_label("FOUNDATION BUILD", 12, ACCENT))
-	detail.add_child(_wrapped_label("Travel, trading and orders are being built in future passes.", 13, MUTED))
+	detail_body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	detail_scroll.add_child(detail_body)
+	order_target = _wrapped_label("", 13, MUTED)
+	order_target.name = "OrderTarget"
+	detail.add_child(order_target)
+	var order_button := _button("Queue fly order")
+	order_button.name = "OrderButton"
+	order_button.pressed.connect(_queue_order)
+	detail.add_child(order_button)
+	order_feedback = _wrapped_label("", 12, ACCENT)
+	order_feedback.name = "OrderFeedback"
+	detail.add_child(order_feedback)
 
 	root.add_child(_label("OFFLINE  ·  PAUSED AT START  ·  ORIGINAL STARTER GALAXY", 11, MUTED))
+	_refresh_world_display()
 
 
 func _toggle_pause() -> void:
 	paused = not paused
+	order_feedback.text = ""
 	_update_header()
 
 
@@ -217,6 +240,8 @@ func _on_sector_picked(index: int) -> void:
 func _show_sector(sector_id: String) -> void:
 	for sector in world.state.sectors:
 		if sector.id == sector_id:
+			selected_sector = sector_id
+			selected_view = "sector"
 			var faction_name := "Independent"
 			for faction in world.state.factions:
 				if faction.id == sector.owner:
@@ -227,15 +252,46 @@ func _show_sector(sector_id: String) -> void:
 					sector_picker.select(index)
 			detail_title.text = sector.name
 			detail_body.text = "Controlled by\n%s\n\n%s" % [faction_name, sector.description]
+			order_target.text = "Destination: " + str(sector.name)
 			return
 
 
 func _show_ship() -> void:
+	selected_view = "ship"
 	var ship: Dictionary = world.state.ships[0]
-	var sector_name := str(ship.sector)
-	for sector in world.state.sectors:
-		if sector.id == ship.sector:
-			sector_name = str(sector.name)
-			break
+	var sector_name := _sector_name(str(ship.sector))
 	detail_title.text = ship.name
 	detail_body.text = "%s  ·  %s\n\nCaptain\n%s\n\nCrew\n%s\n\nRole\n%s\n\nLocation\n%s" % [ship["class"], ship.status, ship.captain, int(ship.crew), ship.role, sector_name]
+	if not ship.travel.is_empty():
+		detail_body.text += "\n\nCrossing to %s" % _sector_name(str(ship.travel.to))
+	if not ship.orders.is_empty():
+		var destinations: Array[String] = []
+		for order in ship.orders:
+			destinations.append(_sector_name(str(order.destination)))
+		detail_body.text += "\n\nOrders\n" + " → ".join(destinations)
+
+
+func _sector_name(sector_id: String) -> String:
+	for sector in world.state.sectors:
+		if sector.id == sector_id:
+			return str(sector.name)
+	return sector_id
+
+
+func _queue_order() -> void:
+	var ship: Dictionary = world.state.ships[0]
+	if world.queue_fly_to(str(ship.id), selected_sector):
+		order_feedback.text = "Order queued. Resume to travel." if paused else "Order queued."
+	else:
+		order_feedback.text = "Already there, already queued, or unreachable."
+	_refresh_world_display()
+
+
+func _refresh_world_display() -> void:
+	var ship: Dictionary = world.state.ships[0]
+	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
+	map_view.set_world(world.snapshot())
+	if selected_view == "ship":
+		_show_ship()
+	else:
+		_show_sector(selected_sector)

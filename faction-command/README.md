@@ -7,17 +7,22 @@ built with Godot 4. The authoritative design is [Faction Command.md](../Faction%
 
 The project opens to a selectable 12-sector starter galaxy, four original NPC
 factions, and one player-owned ship with a captain and crew. The world starts
-paused; Resume and Pause control an integer tick counter. Sector details can be
-selected on the map or from the directory; selecting the ship displays its
-details. This is a foundation, not yet a playable economy: navigation, orders,
-trading, save/load, Android export, and the wider management systems remain to
-be implemented.
+paused; Resume and Pause control the simulation. Select a sector on the map or
+in the directory, then use **Queue fly order** to send First Light there. Queue
+additional destinations to visit them in order. Resume time to see the ship
+cross connected sectors; each crossing currently takes five ticks. Selecting
+the ship shows its captain, crew, location and pending destinations.
+
+This is an early foundation, not yet a playable economy: docking, trading,
+save/load, order cancellation, Android export, and the wider management
+systems remain to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1); sector
 links are undirected pairs of stable sector IDs. `scripts/world.gd` owns the
-starting state and deterministic whole-tick clock, independently from the UI.
-The test harness checks scenario integrity, connectivity, deterministic tick
-batching, isolation of snapshots, and basic screen interactions.
+starting state, whole-tick clock, deterministic route search and queued ship
+movement independently from the UI. The test harness checks scenario integrity,
+connectivity, travel timing and order queues, deterministic tick batching,
+isolation of snapshots, and basic screen interactions.
 
 ## Run and test
 
