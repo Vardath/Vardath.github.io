@@ -107,10 +107,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13
 - Scope: Add Ore, data-driven production recipes and fixed-tick modules. Solar arrays use an explicit renewable sunlight source; an extractor consumes Energy Cells and a finite ore deposit; a smelter consumes Ore and Energy Cells to produce Alloy Plates. Inputs and output change atomically at cycle completion, and shortages or full storage pause progress. Show recipes, progress, shortages and remaining deposits in the Trade screen. Upgrade older saves without resetting existing inventories, credits, trade rules, ships, orders, relations or ledger.
 - Files changed: `faction-command/data/starter_galaxy.json`, `scripts/world.gd`, `scripts/main.gd`, `scripts/save_store.gd`, `tests/run_tests.gd`, `README.md`, and this journal.
-- Commit SHA: Source commit containing this entry; exact SHA and result will be recorded after verification.
+- Commit SHA: `e54945dc8fa80ef5ac853014aa821fe01743915c`.
 - CI workflow/check runs: `Faction Command foundation` / `validate`.
-- CI result: **PENDING VERIFICATION**. Do not start another implementation task until this commit's exact checks are green.
+- CI result: **SUCCESS** on `e54945dc8fa80ef5ac853014aa821fe01743915c`: [foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43307692468/job/131495219567) passed all 340 checks on Godot 4.4.1; Pages build and deployment also succeeded on the same SHA.
 - Automated tests: Local Godot 4.6.3: 340 checks passed. Coverage includes production timing, physical inputs and deposit depletion, shortages and recovery, full storage, competing modules, deterministic save/load mid-cycle, older-save migration, unsupported schema protection and a 2,000-tick run.
 - Manual/device tests: Desktop Godot: loaded a prior trading save and inspected solar, smelter and extractor recipes, shortage states and remaining deposit on the market screen. Android device not tested.
 - Defects and limitations: Player deliveries are required; NPC traders, dynamic prices, player-built stations and Android export remain unimplemented. Solar energy is an abstract renewable natural input; existing saves receive no free initial ore stock. Production runs at the same fidelity in all sectors and has not been profiled at the planned galaxy scale.
-- Next task / gate: Verify this source commit's exact checks and record the result; then implement NPC logistics and autonomous trading against actual inventories, budgets, routes and station needs.
+- Next task / gate: Green verified. Implement NPC logistics and autonomous trading against actual inventories, budgets, routes and station needs; verify that task's exact commit before proceeding.
