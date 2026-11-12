@@ -88,10 +88,12 @@ func _run() -> void:
 	var screen = MainScene.instantiate()
 	root.add_child(screen)
 	await process_frame
+	# Container layout can require another frame on older Godot versions.
+	await process_frame
 	_expect(screen.paused, "game starts paused")
 	_expect(screen.find_child("GalaxyMap", true, false) != null, "main scene creates the galaxy map")
 	_expect(screen.find_child("ShipButton", true, false) != null, "main scene exposes player property")
-	_expect(screen.pause_button.size.y <= 65.0, "top bar stays compact at landscape resolution")
+	_expect(screen.pause_button.size.y <= 65.0, "top bar stays compact at landscape resolution (button: %s, viewport: %s)" % [screen.pause_button.size, root.size])
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	screen.map_view.sector_selected.emit("vellum_gate")
 	_expect(screen.detail_title.text == "Vellum Gate", "map sector selection updates details")

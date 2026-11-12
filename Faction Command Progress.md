@@ -47,10 +47,10 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13
 - Scope: Create the Godot project, original starter scenario, presentation-independent whole-tick world state, landscape command screen, and mandatory headless foundation tests. Harden the existing workflow to fail if the project or harness is missing.
 - Files changed: `faction-command/` (project, starter data, UI, simulation, README and tests); `.github/workflows/faction-command.yml`; this journal.
-- Commit SHA: This pass's source commit; exact SHA and final CI outcome will be recorded after the workflow finishes.
+- Source commit: `350ce71903c7a8ee5192f08f2c484f45fca4d7d2` (failed; see below). A follow-up fix commit is part of the same pass; its final SHA and result will be recorded after verification.
 - CI workflow/check runs: `Faction Command foundation` / `validate`.
-- CI result: **PENDING VERIFICATION** for this pass. Do not start another implementation task until the exact source commit's check succeeds.
-- Automated tests: Local Godot 4.6.3 headless harness: 97 checks passed; JSON parsed successfully. CI uses Godot 4.4.1.
+- CI result: **FAILURE** on `350ce71903c7a8ee5192f08f2c484f45fca4d7d2`: the Godot 4.4.1 runner failed the landscape top-bar size check. The other 96 checks passed; Pages build and deploy succeeded. The same pass now adjusts the button's vertical sizing and allows an additional layout frame. Await the fix commit's exact check before proceeding.
+- Automated tests: Local Godot 4.6.3 headless harness: 97 checks passed before and after the fix; JSON parsed successfully. CI uses Godot 4.4.1 and initially exposed a layout check failure.
 - Manual/device tests: Desktop Godot screen opened; sector selection, ship selection, and pause/resume were exercised. Android device not tested.
 - Defects and limitations: This is a foundation, not the playable economy. No ship orders, navigation, trading, persistence, station construction, Android export or APK yet. Screen scaling and touch require real-device verification.
 - Next task / gate: Wait for the source commit's exact `validate` check to finish successfully; record the result before moving to the next implementation task.

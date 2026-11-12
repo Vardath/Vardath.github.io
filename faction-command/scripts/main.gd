@@ -120,6 +120,7 @@ func _build_ui() -> void:
 	pause_button = _button("Resume")
 	pause_button.name = "PauseButton"
 	pause_button.custom_minimum_size.x = 100
+	pause_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	pause_button.pressed.connect(_toggle_pause)
 	header.add_child(pause_button)
 
