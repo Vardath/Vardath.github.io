@@ -1,6 +1,6 @@
 # Faction Command — Master Game Design and Development Plan
 
-Version: 0.2 | Status: approved concept, implementation pending | Target: Android landscape, offline-first
+Version: 0.2 | Status: foundation and vertical slice in progress | Target: Android landscape, offline-first
 
 ## Vision
 Faction Command is an ORIGINAL 2D, map-driven space economy and faction management simulation inspired by the depth of space trading/empire games. It must not copy X4: Foundations code, art, text, faction/sector/ship names, maps, or distinctive UI assets. The player commands a faction rather than manually pilots ships. Gameplay centers on strategic map navigation, property management, individual ship orders, automation, production, diplomacy, policing and autonomous battles.

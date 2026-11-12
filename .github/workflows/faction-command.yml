@@ -27,3 +27,78 @@ jobs:
         run: |
           /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --editor --quit
           /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --script res://tests/run_tests.gd
+
+  android-debug:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      XDG_CONFIG_HOME: ${{ runner.temp }}/fc-godot-config
+      XDG_DATA_HOME: ${{ runner.temp }}/fc-godot-data
+      GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ runner.temp }}/faction-command-debug.keystore
+      GODOT_ANDROID_KEYSTORE_DEBUG_USER: factioncommanddebug
+      GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Prepare Android SDK tools
+        run: |
+          test -n "$ANDROID_HOME"
+          test -x "$ANDROID_HOME/platform-tools/adb"
+          if [ ! -x "$ANDROID_HOME/build-tools/34.0.0/apksigner" ]; then
+            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "build-tools;34.0.0"
+          fi
+          test -x "$ANDROID_HOME/build-tools/34.0.0/apksigner"
+          test -x "$ANDROID_HOME/build-tools/34.0.0/aapt"
+      - name: Install matching Godot and Android export templates
+        run: |
+          wget -q https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O "$RUNNER_TEMP/godot.zip"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP"
+          chmod +x "$RUNNER_TEMP/Godot_v4.4.1-stable_linux.x86_64"
+          wget -q https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz -O "$RUNNER_TEMP/templates.tpz"
+          mkdir -p "$XDG_DATA_HOME/godot/export_templates/4.4.1.stable"
+          unzip -j -q "$RUNNER_TEMP/templates.tpz" 'templates/android_debug.apk' 'templates/android_release.apk' -d "$XDG_DATA_HOME/godot/export_templates/4.4.1.stable"
+      - name: Configure test signing and Godot
+        run: |
+          base64 --decode faction-command/build_support/public-debug.keystore.b64 > "$GODOT_ANDROID_KEYSTORE_DEBUG_PATH"
+          keytool -list -keystore "$GODOT_ANDROID_KEYSTORE_DEBUG_PATH" -storepass android -alias factioncommanddebug > /dev/null
+          mkdir -p "$XDG_CONFIG_HOME/godot"
+          cat > "$XDG_CONFIG_HOME/godot/editor_settings-4.4.tres" <<EOF
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/java_sdk_path = "$JAVA_HOME"
+          export/android/android_sdk_path = "$ANDROID_HOME"
+          EOF
+      - name: Export Android debug APK
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/faction-command/build"
+          "$RUNNER_TEMP/Godot_v4.4.1-stable_linux.x86_64" --headless --path faction-command --editor --quit
+          "$RUNNER_TEMP/Godot_v4.4.1-stable_linux.x86_64" --headless --path faction-command --export-debug "Android Debug" "$GITHUB_WORKSPACE/faction-command/build/FactionCommand-debug.apk"
+      - name: Verify package, architectures and signature
+        run: |
+          cd faction-command/build
+          test -s FactionCommand-debug.apk
+          unzip -tq FactionCommand-debug.apk
+          unzip -p FactionCommand-debug.apk assets/data/starter_galaxy.json | cmp - ../data/starter_galaxy.json
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
+          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
+          grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
+          grep -F "'arm64-v8a'" package-info.txt
+          grep -F "'armeabi-v7a'" package-info.txt
+          sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
+      - name: Upload test APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FactionCommand-Android-debug
+          path: |
+            faction-command/build/FactionCommand-debug.apk
+            faction-command/build/FactionCommand-debug.apk.sha256
+            faction-command/build/package-info.txt
+          if-no-files-found: error
+          retention-days: 30

@@ -73,7 +73,7 @@ upgrade resets existing balances, goods, player ships, orders or transaction
 history. The NPC receives capital from its home station only after time resumes.
 
 This is an early foundation: there is only one NPC trader; dynamic prices, multiple
-save slots, order cancellation, Android export, and the wider management
+save slots, order cancellation, device testing, and the wider management
 systems remain to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
@@ -105,6 +105,36 @@ godot --headless --path faction-command --editor --quit
 godot --headless --path faction-command --script res://tests/run_tests.gd
 ```
 
-CI uses the official Godot 4.4.1 Linux executable. Android export templates,
-SDK setup, an APK and actual device testing are future foundation work; a
-passing headless test is not proof of Android gameplay or performance.
+## Android debug builds
+
+The [Faction Command foundation workflow](https://github.com/Vardath/Vardath.github.io/actions/workflows/faction-command.yml)
+runs the tests, exports a signed ARM64/ARMv7 debug APK, checks its signature and
+package, and uploads `FactionCommand-Android-debug` to the successful run for
+30 days. The artifact includes the APK, its SHA-256 checksum and package
+information. GitHub may require sign-in to download workflow artifacts.
+
+The APK is a development build using the distinct package ID
+`io.github.vardath.factioncommand.debug`. Its debug signing key is deliberately
+public and is only for testing; it is not a release key. Keeping that debug key
+and package ID stable lets later debug builds install over earlier ones on the
+same device. Never use this public key to sign a production release.
+
+To export locally, use Godot 4.4.1 with matching export templates, OpenJDK 17,
+and the Android SDK platform tools and build tools 34.0.0. Configure the Java
+and Android SDK paths in Godot's Editor Settings. Decode the public test key
+to a temporary location, then provide it through Godot's debug-keystore
+environment variables and run the Android Debug export preset:
+
+```sh
+base64 --decode faction-command/build_support/public-debug.keystore.b64 > /tmp/faction-command-debug.keystore
+export GODOT_ANDROID_KEYSTORE_DEBUG_PATH=/tmp/faction-command-debug.keystore
+export GODOT_ANDROID_KEYSTORE_DEBUG_USER=factioncommanddebug
+export GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD=android
+mkdir -p faction-command/build
+godot --headless --path faction-command --editor --quit
+godot --headless --path faction-command --export-debug "Android Debug" "$PWD/faction-command/build/FactionCommand-debug.apk"
+```
+
+The debug key and package ID must stay unchanged for an in-place update. A
+passing CI export is not proof of Android gameplay or performance: the APK
+still needs installation and playtesting on a physical device.

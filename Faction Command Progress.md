@@ -138,3 +138,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: selected Auto trader, resumed time, observed First Light buy eight Energy Cells, travel to Vellum Gate and sell them; both transactions appeared in the ledger. Android device not tested.
 - Defects and limitations: One prototype player ship and one NPC trader; traders target factory input shortages and use fixed prices. Orders are queued rather than instantly interrupted. Android export and device testing, station construction, dynamic prices and broader roles remain unimplemented.
 - Next task / gate: Green verified. Configure the Android debug export pipeline and CI artifact build; physical-device testing remains required.
+
+## Pass 10 — Android debug APK pipeline
+- Date: 2026-11-12 (UTC).
+- Scope: Add a Godot Android export preset for ARM64 and ARMv7, include the starter-galaxy data in exported builds, configure Godot's Android texture import, and extend game CI to create and verify a signed test APK and upload it with a checksum. A public debug-only signing key and distinct debug package ID keep test-build updates compatible; release signing remains separate.
+- Files changed: `.github/workflows/faction-command.yml`, `faction-command/export_presets.cfg`, `project.godot`, `.gitignore`, `build_support/public-debug.keystore.b64`, `README.md`, `Faction Command.md`, and this journal.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: **PENDING**. Do not move to the next implementation task until the checks for this exact source commit are green and the APK artifact is inspected.
+- Automated tests: Local Godot 4.6.3 passed 430 foundation checks, imported the project, and exported a resource pack containing `data/starter_galaxy.json`; workflow YAML parsed and the public debug key was verified. Android APK export runs in GitHub Actions because the local Android SDK and templates are unavailable.
+- Manual/device tests: No Android device test yet.
+- Defects and limitations: This is a debug-only build signed with a public test key, not a production release. Actual installation, touch layout, playability, performance and save survival on Android remain unverified.
+- Next task / gate: Wait for the exact commit's CI, inspect the resulting APK artifact, and record the outcome before continuing. Physical-device testing remains required.
