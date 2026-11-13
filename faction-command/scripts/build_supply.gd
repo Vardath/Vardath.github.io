@@ -24,6 +24,8 @@ func assign(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
 	var site: Dictionary = world.construction.find_site(world, site_id)
 	if ship.is_empty() or ship.owner != world.state.player_faction_id or not ship.has("build_supply") or site.is_empty():
 		return {"ok":false, "message":"Ship or build site is unavailable."}
+	if bool(site.get("cancelled", false)):
+		return {"ok":false, "message":"This site was cancelled and no longer accepts build supplies."}
 	if not _has_need(world.construction.remaining_materials(site)):
 		return {"ok":false, "message":"This site does not need more materials."}
 	ship.player_trader.enabled = false
@@ -151,6 +153,10 @@ func tick(world: RefCounted, ship: Dictionary) -> void:
 	if site.is_empty():
 		stop(ship)
 		ship.status = "Build site unavailable"
+		return
+	if bool(site.get("cancelled", false)):
+		stop(ship)
+		ship.status = "Build cancelled; cargo retained"
 		return
 	var needed: Dictionary = world.construction.remaining_materials(site)
 	if not _has_need(needed):
