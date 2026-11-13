@@ -5,6 +5,14 @@ Version: 0.2 | Status: foundation and vertical slice in progress | Target: Andro
 ## Vision
 Faction Command is an ORIGINAL 2D, map-driven space economy and faction management simulation inspired by the depth of space trading/empire games. It must not copy X4: Foundations code, art, text, faction/sector/ship names, maps, or distinctive UI assets. The player commands a faction rather than manually pilots ships. Gameplay centers on strategic map navigation, property management, individual ship orders, automation, production, diplomacy, policing and autonomous battles.
 
+
+## Deep simulation, simple controls
+- Aim for the interacting economic, fleet, station-building and faction-management depth of a large space sandbox such as X4, while keeping the setting, assets and presentation original. Simplifying the interface must not remove the underlying simulation or meaningful strategic choices.
+- Lead with a clear overview, sensible defaults and the few decisions needed for the current task. Reveal deeper settings, statistics and fine control when the player asks for them; avoid making new players configure every detail before they can act.
+- Make automation understandable and controllable: show its goal, current activity, costs and reasons for waiting; retain manual commands, useful overrides and safe ways to change course as those systems are developed.
+- Explain consequences before the player commits resources, surface important shortages and opportunities, and connect alerts to the action that can resolve them. Keep physical goods, money, travel and outcomes consistent behind both simple and advanced views.
+- Design for touch and readability from the start, with large targets, concise labels, accessible alternatives to gestures and controls that remain manageable as the number of ships and stations grows.
+
 ## Non-negotiable gameplay
 - Start with one owned ship, modest credits and crew; grow through trade, mining, missions and production into stations, shipyards, fleets and territory.
 - All player-owned property appears in a searchable, filterable tree: ships, stations, fleets, construction, and subordinate groups. Select any asset to inspect orders, inventory, equipment, crew, finances and behavior.
@@ -22,6 +30,7 @@ Faction Command is an ORIGINAL 2D, map-driven space economy and faction manageme
 - Continuous zoom from galaxy graph to sector 2D tactical view. Galaxy level displays nodes, trade routes, faction territory, filters, mission markers and moving asset indicators. Sector level shows ships, stations, gates, asteroid fields, resource zones, combat and traffic.
 - Same underlying simulation for both views; distant objects need not be rendered. Fog of war, sensor range, discovered routes, searchable assets and map overlays.
 - Touch gestures: pinch zoom, pan, tap select, long-press context order, multi-select and accessible list alternatives. Keep UI readable on a phone in landscape.
+- First sector-view increment: use a clearly identified schematic of actual sector connections, stations and ships until intra-sector coordinates exist. Selecting a station opens its real market and selecting a connection navigates to that neighboring sector. Continuous tactical zoom and spatial movement remain later work.
 
 ## Economy — authoritative simulation
 - Every ware has unit volume, production inputs, outputs, cycle duration, workforce/energy requirements, storage and legal status.

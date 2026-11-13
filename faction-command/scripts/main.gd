@@ -2,6 +2,7 @@ extends Control
 
 const WorldScript = preload("res://scripts/world.gd")
 const GalaxyMapScript = preload("res://scripts/galaxy_map.gd")
+const SectorMapScript = preload("res://scripts/sector_map.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
 const BACKGROUND := Color("080f1b")
 const PANEL := Color("101e2d")
@@ -17,6 +18,11 @@ var _last_saved_tick := 0
 var paused := true
 var _elapsed := 0.0
 var map_view
+var sector_map
+var showing_sector_map := false
+var map_title: Label
+var map_caption: Label
+var map_mode_button: Button
 var credits_label: Label
 var tick_label: Label
 var pause_button: Button
@@ -30,6 +36,7 @@ var order_target: Label
 var order_feedback: Label
 var selected_sector := "hearthreach"
 var selected_view := "sector"
+var selected_ship_id := ""
 var chosen_origin := "auroran"
 var start_screen: Control
 var start_buttons: Dictionary = {}
@@ -385,11 +392,26 @@ func _build_ui() -> void:
 	map_column.add_theme_constant_override("separation", 8)
 	map_panel.add_child(map_column)
 	var map_heading := HBoxContainer.new()
+	map_heading.add_theme_constant_override("separation", 6)
 	map_column.add_child(map_heading)
-	var title := _label("GALAXY MAP", 16, TEXT)
-	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	map_heading.add_child(title)
-	map_heading.add_child(_label("12 SECTORS   /   4 FACTIONS", 12, MUTED))
+	map_title = _label("GALAXY MAP", 16, TEXT)
+	map_title.name = "MapTitle"
+	map_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	map_heading.add_child(map_title)
+	for control in [{"text":"−", "name":"MapZoomOut", "factor":0.8}, {"text":"+", "name":"MapZoomIn", "factor":1.25}]:
+		var zoom_button := _button(str(control.text))
+		zoom_button.name = str(control.name)
+		zoom_button.custom_minimum_size.x = 46
+		zoom_button.pressed.connect(_zoom_map.bind(float(control.factor)))
+		map_heading.add_child(zoom_button)
+	var fit_button := _button("Fit")
+	fit_button.name = "MapFit"
+	fit_button.pressed.connect(_fit_map)
+	map_heading.add_child(fit_button)
+	map_mode_button = _button("Open sector")
+	map_mode_button.name = "MapMode"
+	map_mode_button.pressed.connect(_toggle_map_mode)
+	map_heading.add_child(map_mode_button)
 	map_view = GalaxyMapScript.new()
 	map_view.name = "GalaxyMap"
 	map_view.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -397,7 +419,20 @@ func _build_ui() -> void:
 	map_view.set_world(world.snapshot())
 	map_view.sector_selected.connect(_show_sector)
 	map_column.add_child(map_view)
-	map_column.add_child(_label("▲ Your ship    ◆ Faction traffic    ·    Select a sector on the map or in the list.", 12, MUTED))
+	sector_map = SectorMapScript.new()
+	sector_map.name = "SectorMap"
+	sector_map.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sector_map.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	sector_map.set_world(world.snapshot())
+	sector_map.select_sector(selected_sector)
+	sector_map.sector_selected.connect(_show_sector)
+	sector_map.station_selected.connect(_open_map_station)
+	sector_map.ship_selected.connect(_show_map_ship)
+	sector_map.visible = false
+	map_column.add_child(sector_map)
+	map_caption = _label("▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom.", 12, MUTED)
+	map_caption.name = "MapCaption"
+	map_column.add_child(map_caption)
 
 	var detail_panel := _panel()
 	detail_panel.custom_minimum_size.x = 230
@@ -460,6 +495,30 @@ func _on_sector_picked(index: int) -> void:
 	_show_sector(str(sector_picker.get_item_metadata(index)))
 
 
+func _toggle_map_mode() -> void:
+	showing_sector_map = not showing_sector_map
+	map_view.visible = not showing_sector_map
+	sector_map.visible = showing_sector_map
+	sector_map.select_sector(selected_sector)
+	_update_map_heading()
+
+
+func _update_map_heading() -> void:
+	map_title.text = _sector_name(selected_sector).to_upper() if showing_sector_map else "GALAXY MAP"
+	map_mode_button.text = "Galaxy" if showing_sector_map else "Open sector"
+	map_caption.text = "Tap a connection, station or ship. Drag to pan; pinch or use + / − to zoom." if showing_sector_map else "▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom."
+
+
+func _zoom_map(factor: float) -> void:
+	var active_map = sector_map if showing_sector_map else map_view
+	active_map.zoom_by(factor)
+
+
+func _fit_map() -> void:
+	var active_map = sector_map if showing_sector_map else map_view
+	active_map.fit_map()
+
+
 func _show_sector(sector_id: String) -> void:
 	for sector in world.state.sectors:
 		if sector.id == sector_id:
@@ -470,6 +529,8 @@ func _show_sector(sector_id: String) -> void:
 				if faction.id == sector.owner:
 					faction_name = faction.name
 			map_view.select_sector(sector_id)
+			sector_map.select_sector(sector_id)
+			_update_map_heading()
 			for index in sector_picker.item_count:
 				if sector_picker.get_item_metadata(index) == sector_id:
 					sector_picker.select(index)
@@ -485,6 +546,34 @@ func _show_sector(sector_id: String) -> void:
 				detail_body.text += "\n\nFaction traffic\n" + "\n".join(traffic)
 			order_target.text = "Destination: " + str(sector.name)
 			return
+
+
+func _open_map_station(station_id: String) -> void:
+	if world._find_station(station_id).is_empty():
+		return
+	_open_trade()
+	for index in trade_station_picker.item_count:
+		if trade_station_picker.get_item_metadata(index) == station_id:
+			trade_station_picker.select(index)
+			_on_trade_selection(index)
+			return
+
+
+func _show_map_ship(ship_id: String) -> void:
+	var ship: Dictionary = world._find_ship(ship_id)
+	if ship.is_empty():
+		_show_sector(selected_sector)
+		return
+	if ship.owner == world.state.player_faction_id:
+		_show_ship()
+		return
+	selected_view = "npc_ship"
+	selected_ship_id = ship_id
+	detail_title.text = str(ship.name)
+	var destination := ""
+	if not ship.travel.is_empty():
+		destination = "\nCrossing to " + _sector_name(str(ship.travel.to))
+	detail_body.text = "%s  ·  %s\n\nFaction\n%s\n\nRole\n%s\n\nSector\n%s%s" % [ship["class"], ship.status, _faction_name(str(ship.owner)), ship.role, _sector_name(str(ship.sector)), destination]
 
 
 func _show_ship() -> void:
@@ -557,9 +646,13 @@ func _refresh_world_display() -> void:
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
 	role_picker.select(1 if ship.player_trader.enabled else 0)
 	role_hint.text = "Uses your credits. Queued orders finish before trading." if ship.player_trader.enabled else "Turning off a role leaves cargo aboard; current orders finish."
-	map_view.set_world(world.snapshot())
+	var current_world: Dictionary = world.snapshot()
+	map_view.set_world(current_world)
+	sector_map.set_world(current_world)
 	if selected_view == "ship":
 		_show_ship()
+	elif selected_view == "npc_ship":
+		_show_map_ship(selected_ship_id)
 	else:
 		_show_sector(selected_sector)
 

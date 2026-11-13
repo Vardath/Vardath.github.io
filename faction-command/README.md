@@ -18,6 +18,14 @@ additional destinations to visit them in order. Resume time to see the ship
 cross connected sectors; each crossing currently takes five ticks. Selecting
 the ship shows its captain, crew, location and pending destinations.
 
+The galaxy map can be dragged to pan and pinched to zoom; the **+**, **−**
+and **Fit** buttons provide an alternative. Select a sector and choose **Open
+sector** to see its connections, stations and ships. Tap a connection to open
+the neighboring sector, a station to inspect its market and production, or a
+ship to see its details. Sector contents are a schematic list for now: the
+simulation does not yet track exact positions within a sector. Choose
+**Galaxy** to return. The same pan and zoom controls work in both views.
+
 The first manual trading loop has four NPC stations and three wares: Energy
 Cells, Ore and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
 finish the ship's orders, then dock. Buy goods from station stock and carry them

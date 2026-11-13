@@ -41,6 +41,28 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	return copy
 
 
+func _map_touch(view, index: int, position: Vector2, pressed: bool) -> void:
+	var event := InputEventScreenTouch.new()
+	event.index = index
+	event.position = position
+	event.pressed = pressed
+	view._gui_input(event)
+
+
+func _map_drag(view, index: int, position: Vector2) -> void:
+	var event := InputEventScreenDrag.new()
+	event.index = index
+	event.position = position
+	view._gui_input(event)
+
+
+func _map_item(view, kind: String, id: String) -> Dictionary:
+	for item in view._items():
+		if item.kind == kind and item.id == id:
+			return item
+	return {}
+
+
 func _total_ware(state: Dictionary, ware_id: String) -> int:
 	var total := 0
 	for station in state.stations:
@@ -929,6 +951,104 @@ func _run() -> void:
 	_expect(screen.detail_body.text.contains("Wayfarer") and screen.detail_body.text.contains("Faction traffic"), "sector details identify NPC traffic separately from player property")
 	screen.find_child("TradeButton", true, false).pressed.emit()
 	_expect(screen.trade_ledger.text.contains("Wayfarer") and screen.trade_ledger.text.contains("funded"), "ledger identifies NPC trade and working-capital transfers")
+	screen.queue_free()
+	await process_frame
+
+	# Map navigation is presentation only; touch gestures and selection must
+	# not change the world, and cards must resolve to actual entities.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-maps.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	var map_world_before: Dictionary = screen.world.snapshot()
+	var galaxy = screen.map_view
+	var anchor := Vector2(250, 200)
+	var map_anchor: Vector2 = galaxy.screen_to_map(anchor)
+	galaxy.zoom_by(1.5, anchor)
+	_expect(absf(galaxy.zoom_level - 1.5) < 0.001 and galaxy.screen_to_map(anchor).distance_to(map_anchor) < 0.01, "zoom keeps the point under the user's fingers fixed")
+	galaxy.pan_by(Vector2(45, 25))
+	var target_sector: Dictionary = {}
+	for sector in screen.world.state.sectors:
+		if sector.id == "vellum_gate":
+			target_sector = sector
+	var target_point: Vector2 = galaxy._sector_position(target_sector)
+	_map_touch(galaxy, 0, target_point, true)
+	_map_touch(galaxy, 0, target_point, false)
+	_expect(screen.selected_sector == "vellum_gate", "a touch selects the correct sector after zoom and pan")
+	var drag_start := Vector2(200, 220)
+	var offset_before: Vector2 = galaxy.pan_offset
+	_map_touch(galaxy, 0, drag_start, true)
+	_map_drag(galaxy, 0, drag_start + Vector2(50, 30))
+	_map_touch(galaxy, 0, drag_start + Vector2(50, 30), false)
+	_expect(galaxy.pan_offset != offset_before and screen.selected_sector == "vellum_gate", "one-finger dragging pans without selecting a sector")
+	var zoom_before: float = galaxy.zoom_level
+	_map_touch(galaxy, 0, Vector2(100, 160), true)
+	_map_touch(galaxy, 1, Vector2(200, 160), true)
+	_map_drag(galaxy, 1, Vector2(260, 160))
+	_map_touch(galaxy, 1, Vector2(260, 160), false)
+	_map_touch(galaxy, 0, Vector2(100, 160), false)
+	_expect(galaxy.zoom_level > zoom_before and screen.selected_sector == "vellum_gate", "pinching zooms without generating a stray tap")
+	galaxy.zoom_by(100.0)
+	_expect(is_equal_approx(galaxy.zoom_level, galaxy.MAX_ZOOM), "zoom has an upper bound")
+	galaxy.zoom_by(0.00001)
+	_expect(is_equal_approx(galaxy.zoom_level, galaxy.MIN_ZOOM), "zoom has a lower bound")
+	screen.find_child("MapFit", true, false).pressed.emit()
+	_expect(is_equal_approx(galaxy.zoom_level, 1.0) and galaxy.pan_offset == Vector2.ZERO, "Fit restores the galaxy view")
+	var fitted_labels_visible := true
+	for sector in screen.world.state.sectors:
+		var label_width: float = ThemeDB.fallback_font.get_string_size(str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+		if galaxy._sector_position(sector).x + 15.0 + label_width > galaxy.size.x:
+			fitted_labels_visible = false
+	_expect(fitted_labels_visible, "sector names fit within the map at the default zoom")
+	screen.find_child("MapMode", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.sector_map.visible and not galaxy.visible and screen.map_title.text == "VELLUM GATE", "sector view opens for the selected sector")
+	var sector_view = screen.sector_map
+	var foundry_card := _map_item(sector_view, "station", "vellum_foundry")
+	_expect(not foundry_card.is_empty() and foundry_card.subtitle == "Needs Energy Cells", "sector view uses the real station and production status")
+	if not foundry_card.is_empty():
+		var point: Vector2 = foundry_card.rect.get_center()
+		_map_touch(sector_view, 0, point, true)
+		_map_touch(sector_view, 0, point, false)
+	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "vellum_foundry", "tapping a station opens its actual market")
+	if is_instance_valid(screen.trade_screen):
+		screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	var meridian_card := _map_item(sector_view, "sector", "meridian")
+	_expect(not meridian_card.is_empty(), "sector overview shows a real adjacent connection")
+	if not meridian_card.is_empty():
+		var point: Vector2 = meridian_card.rect.get_center()
+		_map_touch(sector_view, 0, point, true)
+		_map_touch(sector_view, 0, point, false)
+	_expect(screen.selected_sector == "meridian" and screen.map_title.text == "MERIDIAN", "tapping a connection opens the adjacent sector")
+	_expect(_map_item(sector_view, "station", "vellum_foundry").is_empty(), "sector view does not invent stations in empty sectors")
+	_expect(screen.world.snapshot() == map_world_before, "camera and sector browsing do not alter simulation state")
+	screen.find_child("MapZoomIn", true, false).pressed.emit()
+	_expect(sector_view.zoom_level > 1.0, "zoom buttons also work in the sector overview")
+	screen.find_child("MapFit", true, false).pressed.emit()
+	_expect(is_equal_approx(sector_view.zoom_level, 1.0), "Fit resets the sector overview")
+	screen.find_child("OrderButton", true, false).pressed.emit()
+	_expect(screen.world.state.ships[0].orders.size() == 1 and screen.world.state.ships[0].orders[0].destination == "meridian", "existing ship orders work from the sector view")
+	screen._show_sector("verdant_trace")
+	var npc_card := _map_item(sector_view, "ship", "npc_logistics_001")
+	_expect(not npc_card.is_empty(), "sector overview lists real NPC traffic")
+	if not npc_card.is_empty():
+		sector_view._activate_at(npc_card.rect.get_center())
+	_expect(screen.detail_title.text == "Wayfarer" and screen.detail_body.text.contains("Free Frontier"), "selecting faction traffic shows its actual owner and role")
+	sector_view.zoom_by(1.25)
+	sector_view.pan_by(Vector2(20, 10))
+	var live_offset: Vector2 = sector_view.pan_offset
+	screen.world.advance_ticks(12)
+	screen._refresh_world_display()
+	_expect(_map_item(sector_view, "ship", "npc_logistics_001").is_empty() and screen.detail_body.text.contains("Vellum Gate"), "sector traffic and ship details update when a ship actually travels")
+	_expect(is_equal_approx(sector_view.zoom_level, 1.25) and sector_view.pan_offset == live_offset, "simulation updates preserve the current map camera")
+	screen.find_child("MapMode", true, false).pressed.emit()
+	_expect(galaxy.visible and not sector_view.visible and screen.map_title.text == "GALAXY MAP", "Galaxy returns to the strategic map")
+	var map_mode_button: Control = screen.find_child("MapMode", true, false)
+	_expect(map_mode_button.global_position.x + map_mode_button.size.x <= float(root.size.x) and map_mode_button.global_position.y + map_mode_button.size.y <= float(root.size.y), "map controls remain inside the landscape viewport")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

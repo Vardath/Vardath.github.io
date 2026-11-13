@@ -151,3 +151,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: No Android device test yet.
 - Defects and limitations: This is a debug-only build signed with a public test key, not a production release. Actual installation, touch layout, playability, performance and save survival on Android remain unverified.
 - Next task / gate: Green verified. Continue the vertical slice with galaxy-map pan and zoom and sector-level navigation; physical-device installation and playtesting remain required.
+
+## Pass 11 — Accessible galaxy and sector navigation
+- Date: 2026-11-13 (Australia/Brisbane).
+- Scope: Record the goal of X4-level depth with simple, progressively disclosed controls. Add pinch, drag, mouse-wheel and button zoom/pan to the galaxy and sector views; provide Fit and a simple sector overview of real connections, stations and ships. Selecting a connection opens its neighboring sector, a station opens its existing market and production details, and a ship shows its current details. Camera changes do not modify simulation or save data.
+- Files changed: `Faction Command.md`, `Faction Command Progress.md`, `faction-command/scripts/map_interaction.gd`, `galaxy_map.gd`, `sector_map.gd`, `main.gd`, `tests/run_tests.gd` and `README.md`.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: **PENDING**. Verify the exact source commit and its Android artifact before starting the next implementation task.
+- Automated tests: Local Godot 4.6.3 passed 454 checks at the intended landscape viewport and under the 64×64 headless display override. Coverage includes touch taps, panning, pinch zoom, anchored coordinates, zoom bounds and reset, selecting real entities after transforms, live ship movements, queued orders, save-state preservation and visible map controls. A local resource-pack export included the new scripts.
+- Manual/device tests: Desktop Godot: zoomed the galaxy, opened a sector, opened a station market and followed a connection to its actual neighboring sector. Android touch and device playtesting remain unverified.
+- Defects and limitations: Sector view is explicitly schematic: intra-sector spatial positions, tactical movement, combat and continuous galaxy-to-sector zoom are not implemented. More fleets, sectors and station objects will need scale and layout profiling.
+- Next task / gate: Wait for green checks and inspect the rebuilt APK before starting the station planner's module and sourcing preview.

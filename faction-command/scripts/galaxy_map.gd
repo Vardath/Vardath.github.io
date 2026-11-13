@@ -1,4 +1,4 @@
-extends Control
+extends "res://scripts/map_interaction.gd"
 
 signal sector_selected(sector_id: String)
 
@@ -12,11 +12,6 @@ var selected_id := "hearthreach"
 var _points: Dictionary = {}
 
 
-func _ready() -> void:
-	mouse_filter = Control.MOUSE_FILTER_STOP
-	custom_minimum_size = Vector2(420, 340)
-
-
 func set_world(value: Dictionary) -> void:
 	world = value
 	queue_redraw()
@@ -28,9 +23,11 @@ func select_sector(sector_id: String) -> void:
 
 
 func _sector_position(sector: Dictionary) -> Vector2:
-	var margin := Vector2(60, 50)
-	var area := Vector2(maxf(1.0, size.x - margin.x * 2.0), maxf(1.0, size.y - margin.y * 2.0))
-	return margin + Vector2(float(sector.x) * area.x, float(sector.y) * area.y)
+	# Leave room for the longest sector names on the right at the fitted zoom.
+	var left := 48.0
+	var right := minf(150.0, size.x * 0.23)
+	var area := Vector2(maxf(1.0, size.x - left - right), maxf(1.0, size.y - 100.0))
+	return map_to_screen(Vector2(left, 50.0) + Vector2(float(sector.x) * area.x, float(sector.y) * area.y))
 
 
 func _draw() -> void:
@@ -76,21 +73,13 @@ func _draw() -> void:
 				draw_colored_polygon(PackedVector2Array([pos + Vector2(0, -6), pos + Vector2(6, 0), pos + Vector2(0, 6), pos + Vector2(-6, 0)]), ship_color)
 
 
-func _gui_input(event: InputEvent) -> void:
-	var point := Vector2.ZERO
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		point = event.position
-	elif event is InputEventScreenTouch and event.pressed:
-		point = event.position
-	else:
-		return
+func _activate_at(point: Vector2) -> void:
 	var nearest := ""
 	var distance := 30.0
-	for id in _points:
-		var candidate: float = point.distance_to(_points[id])
+	for sector in world.get("sectors", []):
+		var candidate: float = point.distance_to(_sector_position(sector))
 		if candidate < distance:
 			distance = candidate
-			nearest = str(id)
+			nearest = str(sector.id)
 	if not nearest.is_empty():
 		sector_selected.emit(nearest)
-		accept_event()
