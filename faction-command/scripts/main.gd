@@ -1130,7 +1130,7 @@ func _update_build_task_picker(site: Dictionary) -> void:
 		build_task_picker_site_id = str(site.id)
 	build_task_picker.disabled = false
 	var chosen := build_task_picker.selected
-	var first := world.construction.first_editable_index(site)
+	var first: int = int(world.construction.first_editable_index(site))
 	build_move_up_button.disabled = bool(site.get("cancelled", false)) or chosen <= first
 	build_move_down_button.disabled = bool(site.get("cancelled", false)) or chosen < first or chosen >= site.tasks.size() - 1
 	build_task_picker.set_block_signals(false)
