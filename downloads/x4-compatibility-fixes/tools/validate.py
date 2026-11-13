@@ -293,6 +293,29 @@ class Contracts(unittest.TestCase):
                 self.assertEqual(bool(expr(g.get('value'),{'@$attacker.pilot.isclass.npc':present})),present)
             pnode=g.getparent();position=pnode.index(g);child=g[0]
             g.remove(child);pnode.remove(g);pnode.insert(position,child)
+        # Restore the new native-location guard and its two idempotent
+        # initialisers; the release must not alter any bounty calculation.
+        locus=".//library[@name='Bounties_UpdateLastKnown']/actions/do_if"
+        guarded=self.one(p,locus)
+        original=self.one(p,locus,False)
+        self.assertEqual(guarded.get('value'),'@$Pilot.isclass.npc and '+original.get('value'))
+        for npc,eligible in [(False,False),(True,True)]:
+            self.assertEqual(bool(expr(guarded.get('value'), {
+                '@$Pilot.isclass.npc':npc,
+                '@$Pilot.isoperational':True,
+                '@$Pilot.ship.isoperational':True,
+                '@$Pilot.ship.sector.exists':True,
+                '$Faction':True})),eligible)
+        patched_locus=q.xpath(locus)[0]
+        self.assertEqual([n.tag for n in list(patched_locus)[:3]], ['do_if','do_if','do_all'])
+        self.assertEqual([n[0].get('name') for n in list(patched_locus)[:2]],
+            ['$Pilot.$kEM_lastKnownLocation','$Pilot.$kEM_lastKnownLocation.{$Faction}'])
+        self.assertEqual([n[0].get('exact') for n in list(patched_locus)[:2]], ['table[]','[]'])
+        self.assertEqual([n.get('value') for n in list(patched_locus)[:2]],
+            ['not @$Pilot.$kEM_lastKnownLocation','not @$Pilot.$kEM_lastKnownLocation.{$Faction}'])
+        patched_locus.remove(patched_locus[0])
+        patched_locus.remove(patched_locus[0])
+        patched_locus.set('value',original.get('value'))
         self.assertEqual(canonical(q),canonical(self.original[p]))
 
     def test_kuertee_npc_target_sort_uses_current_ship_and_guards_empty_targets(self):
@@ -468,7 +491,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.5','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.6','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()
