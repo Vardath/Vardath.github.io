@@ -54,6 +54,8 @@ func _without_station_supply(ships: Array) -> Array:
 
 
 func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("personnel_version")
+	state.erase("crew_pools")
 	state.erase("shipyard_version")
 	state.erase("shipyard")
 
