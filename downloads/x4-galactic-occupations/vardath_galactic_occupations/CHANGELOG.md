@@ -1,5 +1,14 @@
 # Version history
 
+## 0.5.4 — 2026-11-13 — scanning, selective hacking and crystal-only fire
+
+- **Station scanner:** publish each verified close-range module survey to the native map snapshot with `set_known updatesnapshot=true` and `set_object_scanned`. The player receives actual module identity independently of a deferred high-detail scan. No unvisited modules are revealed.
+- **Optional EMP blueprint recovery:** scanner Behaviour gains a disabled-by-default toggle. Each eligible new blueprint costs one real `bomb_player_limpet_emp_01_mk1` from player inventory after a ten-second close-range sample and only when all native Player HQ research prerequisites are complete. Respect native `noplayerblueprint` and already-owned checks. This simulates the EMP/leak outcome without physically launching a bomb or faking data leaks; shipyard/wharf/equipment-dock blueprints remain restricted.
+- **Selective station hacking:** autonomous hacker Behaviour gets a number-coded objective (0=random, 1=production, 2=turrets, 3=shields, 4=storage, 5=radar, 6=build modules, 7=watchdogs). Actual native panel catalogue filters the job; no substitute when a requested panel is absent. The existing one-time right-click menu still targets individual real panels.
+- **Crystal turrets:** selecting Mine Crystals now snapshots the original native weapon mode, switches that turret to native hold fire to prevent its ordinary mining AI targeting asteroid bodies, and restores the exact original mode upon deactivation. Visible-attention script selects only `class.crystal` deposits, with increased 15 km/96-asteroid candidate search. Existing-save enabled modes are migrated when the controller runs.
+- No protected UI replacement, crew/equipment/order reset, player teleport, or new game. Static validation cannot replace live X4 turret physics or blueprint-UI checks.
+
+
 ## 0.5.3 — 2026-11-13 — redocking and player-control safety
 
 - Disable the v46 spacesuit "recovery" path which intercepted broad transporter confirmations and, after 12 seconds, issued a forced player-to-ship teleport followed by an emergency spacesuit ejection. This is unsafe around docking and interior transporters. The 2026-11-13 log proves that the two forced commands ran near the end of the session; it does not prove the precise floor collision.

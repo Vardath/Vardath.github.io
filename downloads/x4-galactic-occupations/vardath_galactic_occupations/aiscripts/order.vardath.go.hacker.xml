@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.hacker" version="2" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="order.vardath.go.hacker" version="3" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <order id="VGO_hacker" name="{191180,113}" description="{191180,213}" category="navigation" infinite="true" allowinloop="false">
     <params>
       <param name="home" type="sector" default="this.ship.sector" text="{191180,2}" />
@@ -14,6 +14,12 @@
         <input_param name="step" value="1" />
       </param>
       <param name="repeat" type="bool" default="true" text="{191180,6}" />
+      <param name="hackobjective" type="number" default="0" text="{191180,75}">
+        <input_param name="min" value="0"/>
+        <input_param name="max" value="7"/>
+        <input_param name="step" value="1"/>
+        <patch sinceversion="3" condition="not $hackobjective? or @$hackobjective == null" value="0"/>
+      </param>
       <param name="debugchance" type="bool" default="0" text="{191180,8}" advanced="true">
         <input_param name="truevalue" value="100" />
       </param>
@@ -38,6 +44,14 @@
       <debug_text text="'GO behaviour startup: %1 requested=VGO_hacker default=%2 current=%3'.[this.ship.debugname,this.ship.defaultorder.id,this.ship.order.id]" />
       <label name="work" />
       <set_order_syncpoint_reached order="this.ship.order" />
+      <set_value name="$requestedpanel" exact="''"/>
+      <do_if value="$hackobjective == 1"><set_value name="$requestedpanel" exact="'hack_production'"/></do_if>
+      <do_elseif value="$hackobjective == 2"><set_value name="$requestedpanel" exact="'hack_all_turrets'"/></do_elseif>
+      <do_elseif value="$hackobjective == 3"><set_value name="$requestedpanel" exact="'hack_shieldgenerators'"/></do_elseif>
+      <do_elseif value="$hackobjective == 4"><set_value name="$requestedpanel" exact="'hack_storage'"/></do_elseif>
+      <do_elseif value="$hackobjective == 5"><set_value name="$requestedpanel" exact="'hack_radar'"/></do_elseif>
+      <do_elseif value="$hackobjective == 6"><set_value name="$requestedpanel" exact="'hack_buildmodules'"/></do_elseif>
+      <do_elseif value="$hackobjective == 7"><set_value name="$requestedpanel" exact="'hack_watchdogs'"/></do_elseif>
       <run_script name="'vardath.go.worker'">
         <param name="job" value="13" />
         <param name="home" value="$home" />
@@ -45,6 +59,7 @@
         <param name="risk" value="$risk" />
         <param name="repeat" value="$repeat" />
         <param name="debugchance" value="$debugchance" />
+        <param name="hackpanel" value="$requestedpanel" />
       </run_script>
       <wait exact="15s" />
       <do_if value="this.ship.isplayerowned and this.ship.defaultorder.id == 'VGO_hacker'">

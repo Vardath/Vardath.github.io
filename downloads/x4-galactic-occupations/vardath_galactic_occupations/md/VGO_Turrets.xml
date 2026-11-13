@@ -51,9 +51,22 @@
                   <set_value name="player.entity.$vgo_objects.{$turret}" exact="table[]" />
                 </do_if>
                 <set_value name="player.entity.$vgo_objects.{$turret}.$vgo_minecrystals" exact="$on" />
-                <do_if value="not $on">
-                  <reset_turret turret="$turret" />
+                <do_if value="$on">
+                  <!-- Do not let the native mining controller shoot whole asteroids
+                       concurrently with our crystal-only scripted aim/fire. -->
+                  <do_if value="not player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode?">
+                    <set_value name="player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode" exact="$turret.mode" />
+                  </do_if>
+                  <set_weapon_mode weapon="$turret" weaponmode="weaponmode.holdfire" />
                 </do_if>
+                <do_else>
+                  <!-- Restore precisely the player's prior turret mode on exit. -->
+                  <do_if value="player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode?">
+                    <set_weapon_mode weapon="$turret" weaponmode="player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode" />
+                    <remove_value name="player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode" />
+                  </do_if>
+                  <reset_turret turret="$turret" />
+                </do_else>
               </do_if>
             </do_if>
           </do_for_each>
@@ -107,6 +120,14 @@
               <remove_value name="player.entity.$vgo_objects.{$turret}.$vgo_mode_aimed" />
             </do_if>
             <do_if value="@player.entity.$vgo_objects.{$turret}.$vgo_minecrystals and not $turret.isrepairing">
+              <!-- Upgrade existing saves: preserve old mode once, then suppress
+                   native asteroid mining while crystal mode owns the turret. -->
+              <do_if value="not player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode?">
+                <set_value name="player.entity.$vgo_objects.{$turret}.$vgo_saved_native_mode" exact="$turret.mode" />
+              </do_if>
+              <do_if value="$turret.mode != weaponmode.holdfire">
+                <set_weapon_mode weapon="$turret" weaponmode="weaponmode.holdfire" />
+              </do_if>
               <append_to_list name="$selected" exact="$turret" />
             </do_if>
           </do_for_each>
@@ -139,15 +160,15 @@
               <set_value name="player.entity.$vgo_objects.{$ship}" exact="table[]" />
             </do_if>
             <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_mode_search" exact="player.age + 8s" />
-            <find_object name="$rocks" space="$ship.sector" class="class.asteroid" multiple="true" sortlimit="48" sortbydistanceto="$ship">
-              <match_distance object="$ship" max="10km" />
+            <find_object name="$rocks" space="$ship.sector" class="class.asteroid" multiple="true" sortlimit="96" sortbydistanceto="$ship">
+              <match_distance object="$ship" max="15km" />
             </find_object>
             <set_value name="$deposits" exact="[]" />
             <do_for_each name="$rock" in="$rocks" counter="$rockindex">
               <do_if value="$rock.exists">
                 <find_object_component name="$deposits" object="$rock" class="class.crystal" multiple="true" append="true" />
               </do_if>
-              <do_if value="$deposits.count ge 48">
+              <do_if value="$deposits.count ge 96">
                 <break />
               </do_if>
             </do_for_each>

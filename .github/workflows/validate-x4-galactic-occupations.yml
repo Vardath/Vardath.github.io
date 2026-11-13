@@ -32,7 +32,7 @@ jobs:
           from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
           folder=Path("downloads/x4-galactic-occupations")
           src=folder/"vardath_galactic_occupations"
-          out=folder/"Galactic_Occupations_0.5.3.zip"
+          out=folder/"Galactic_Occupations_0.5.4.zip"
           with ZipFile(out,"w",ZIP_DEFLATED,compresslevel=9) as z:
               for p in sorted(src.rglob("*")):
                   if p.is_file():
@@ -42,7 +42,7 @@ jobs:
                       z.writestr(info,p.read_bytes())
           print("Prepared:",out)
           PY
-      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.3.zip --report /tmp/galactic-occupations-static-results.json
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.4.zip --report /tmp/galactic-occupations-static-results.json
       - name: Validate universal fallback and all thirteen occupation text labels
         run: python downloads/x4-galactic-occupations/tools/tests/localization_contracts.py
       - name: Reported scope, boarding, survey and payment source guards
@@ -93,6 +93,8 @@ jobs:
         run: python downloads/x4-galactic-occupations/tools/tests/station_services_contracts.py
       - name: Execute L and XL passenger transporter and inactive-physics failure contracts
         run: python downloads/x4-galactic-occupations/tools/tests/capital_transport_contracts.py
+      - name: Check selective hacking, EMP blueprint restrictions and crystal-only turret mode
+        run: python downloads/x4-galactic-occupations/tools/tests/feature_054_contracts.py
       - name: Install Lua 5.1 for X4-compatible syntax checks
         run: sudo apt-get update -qq && sudo apt-get install -y lua5.1
       - name: Execute addon UI contract tests (mock widgets; no X4 runtime)

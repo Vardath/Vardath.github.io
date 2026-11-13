@@ -1,6 +1,6 @@
 # Galactic Occupations — 13 Autonomous Ship Careers for X4: Foundations
 
-**Version:** 0.5.3
+**Version:** 0.5.4
 **Game:** X4: Foundations 9.00
 **Author:** Vardath
 **Existing saves:** Supported — no new game required
@@ -64,6 +64,14 @@ Some occupations rely on docking access, spare crew slots, actual station panels
 GitHub Actions checks the extension's XML, source contracts, mocked Lua integration and ZIP integrity. New behaviour and localization still require testing in X4 itself. The v0.5.1 update affects localization and documentation only; it does not reset existing jobs, bookings, wages, orders or saved state.
 
 **Source and downloads:** https://github.com/Vardath/Vardath.github.io/tree/main/downloads/x4-galactic-occupations
+
+## v0.5.4 changelog
+
+- **Station scanning:** verified surveys now immediately publish each scanned module's identity and native map snapshot. High-detail scanner limits still apply; unvisited modules are not revealed.
+- **Blueprint recovery:** optionally consume one real Spacesuit EMP from player inventory per researched, eligible missing station module blueprint. Requires close-range NPC survey and completed PHQ research; excluded module types remain unavailable. This uses the native blueprint award after resource consumption but is not an animated or physical bomb/data leak. Toggle **EMP blueprint recovery** in the scanner Behaviour; default OFF.
+- **Choose hacking objective:** autonomous hacker Behaviour now offers a numeric choice: 0=random, 1=production, 2=turrets, 3=shields, 4=storage, 5=radar, 6=construction, 7=security. Hacker only uses an available native panel of that type; station context menu still supports specific panel selections and real crew interior work.
+- **Mine Crystals:** while active, suspend the selected turret's existing native mining behaviour so it cannot independently aim at whole asteroid bodies. Save and restore its exact previous native turret mode. Search up to 96 nearest asteroids within 15 km for real `class.crystal` deposits. Physical scripted turret fire requires live testing with beam weapons.
+- Existing saves supported, no changes to native menu tables or UI scale. Source validation is not an in-game acceptance test.
 
 ## v0.5.3 changelog
 

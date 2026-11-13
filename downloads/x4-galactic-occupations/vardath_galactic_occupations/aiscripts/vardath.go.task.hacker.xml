@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.hacker" version="4" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.task.hacker" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target"/>
   </params>
@@ -52,6 +52,7 @@
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_station" exact="$target"/>
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_type" exact="$entry.{1}"/>
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_panelid" exact="$entry.{2}"/>
+        <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_status" exact="'Hacker objective: ' + $entry.{1}.name + ' on ' + $target.knownname"/>
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_rooms" exact="$entry.{3}"/>
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_order" exact="$ship.order"/>
         <set_value name="player.entity.$vgo_objects.{$ship}.$vgo_hack_native" exact="false"/>

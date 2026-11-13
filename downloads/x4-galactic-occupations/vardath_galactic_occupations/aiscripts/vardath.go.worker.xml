@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="21" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.worker" version="22" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="job" default="1"/>
     <param name="home" default="this.ship.sector"/>
@@ -21,6 +21,7 @@
     <param name="collectionlimit" default="500"/>
     <param name="hackstation" default="null"/>
     <param name="hackpanel" default="''"/>
+    <param name="empscan" default="false"/>
     <param name="hackonce" default="false"/>
     <param name="simfallback" default="true"/>
     <param name="miningtime" default="5min"/>
@@ -261,6 +262,7 @@
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_crystal_batchsize" exact="[[$batchsize,1].max,60].min"/>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedstation" exact="$hackstation"/>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_forcedpanel" exact="$hackpanel"/>
+      <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_emp_enabled" exact="$job == 3 and $empscan"/>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_once" exact="$hackonce"/>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_home" exact="$home"/>
       <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_range" exact="$range"/>

@@ -218,6 +218,33 @@
         <set_value name="$sample" exact="@player.entity.$vgo_objects.{$module}.$vgo_survey_sample" />
         <set_value name="$station" exact="@$sample.$station" />
         <do_if value="$module.isoperational and $ship.isplayerowned and $ship != player.occupiedship and @$ship.order.id == 'VGO_scanner' and $ship.order == @player.entity.$vgo_objects.{$ship}.$vgo_order and $sample.$ship == $ship and $station.isoperational and not $station.ishostileto.{$ship} and $ship.sector == $station.sector and $ship.distanceto.{$module} le 3km + ($ship.size + $module.size) / 2 and $sample.$finished ge $sample.$started + 10s and player.age le $sample.$finished + 5s and $sample.$level gt 0 and $sample.$level == $ship.maxscanlevel">
+          <!-- Publish each actual ten-second close-range survey to the native
+               station snapshot immediately; NPC recordings must not remain '?'.
+               Station and module discovery are not blueprint unlocks. -->
+          <set_known object="$module" known="true" updatesnapshot="true"/>
+          <set_known object="$station" known="true" updatesnapshot="true"/>
+          <set_object_scanned object="$module"/>
+          <!-- Optional EMP-assisted blueprint recovery uses one real EMP from
+               the player's inventory, the same eligibility/research checks
+               as native md.Signal_Leaks, and no unresearched/special blueprints.
+               This is a remote resource-consuming survey, NOT a physical
+               spacesuit bomb animation or manufactured data leaks. -->
+          <do_if value="$module.isclass.module and @player.entity.$vgo_objects.{$ship}.$vgo_emp_enabled and not $station.isplayerowned and $module.macro.ware and not player.blueprints.{$module.macro.ware}.any.exists and not $module.macro.ware.hastag.noplayerblueprint and player.entity.inventory.{ware.bomb_player_limpet_emp_01_mk1}.count ge 1">
+            <set_value name="$blueprintware" exact="$module.macro.ware"/>
+            <set_value name="$researchready" exact="true"/>
+            <set_value name="$precursors" exact="$blueprintware.research.requiredprecursors.list"/>
+            <do_for_each name="$precursor" in="$precursors">
+              <do_if value="not $precursor.research.unlocked">
+                <set_value name="$researchready" exact="false"/>
+                <break/>
+              </do_if>
+            </do_for_each>
+            <do_if value="$researchready and not player.blueprints.{$blueprintware}.any.exists and player.entity.inventory.{ware.bomb_player_limpet_emp_01_mk1}.count ge 1">
+              <remove_inventory entity="player.entity" ware="ware.bomb_player_limpet_emp_01_mk1" exact="1"/>
+              <add_blueprints macros="$module.macro"/>
+              <write_to_logbook category="general" title="'Galactic Occupations: EMP blueprint survey'" text="'%1 remotely surveyed %2 on %3 using one Spacesuit EMP from player inventory; eligible researched module blueprint unlocked: %4.'.[$ship.knownname,$module.knownname,$station.knownname,$blueprintware.name]" interaction="showonmap" object="$station"/>
+            </do_if>
+          </do_if>
           <do_if value="@player.entity.$vgo_objects.{$module}.$vgo_survey_queued or Init.$Pending.count lt 2048">
             <do_if value="not @player.entity.$vgo_objects.{$module}.$vgo_survey_queued">
               <append_to_list name="Init.$Pending" exact="$module" />
@@ -258,7 +285,7 @@
             <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_level" exact="$module.scannedlevel" />
             <set_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_time" exact="player.age" />
             <remove_value name="player.entity.$vgo_objects.{$module}.$vgo_survey_queued" />
-            <set_known object="$module" known="true" />
+            <set_known object="$module" known="true" updatesnapshot="true" />
             <set_known object="$module.container" known="true" updatesnapshot="true" />
             <remove_value name="Init.$Pending.{$index}" />
             <set_value name="$published" exact="$published + 1" />
