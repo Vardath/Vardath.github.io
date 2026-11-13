@@ -2628,6 +2628,81 @@ func _run() -> void:
 		_expect(screen.property_count_label.text.contains("2 ships") and screen.world._find_ship(delivered_id).orders.size() == 1, "reload restores purchased hull and its queued route with no duplication")
 	screen.queue_free()
 	await process_frame
+	# Ship management UI saves real ship names, recruitment, discharge and
+	# physical transfers without changing which asset is being commanded.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-personnel.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	var ui_crew_ship: Dictionary = screen.world.state.ships[0]
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.crew_screen) and screen.find_child("RenameShipButton", true, false) != null and screen.find_child("HireCrewButton", true, false) != null and screen.find_child("DischargeCrewButton", true, false) != null and screen.find_child("TransferCrewButton", true, false) != null, "ship-property panel exposes actual rename, recruitment, discharge and transfer controls")
+	_expect(screen.crew_info.text.contains("Mira Vale") and screen.crew_info.text.contains("2 / 8 berths") and screen.crew_transfer_picker.disabled, "crew interface displays the separate captain, real berth capacity and no phantom transfer destinations")
+	screen.crew_rename_input.text = "Dawn Voyager"
+	screen.find_child("RenameShipButton", true, false).pressed.emit()
+	_expect(ui_crew_ship.name == "Dawn Voyager" and screen.ship_button.text.contains("Dawn Voyager") and screen.detail_title.text == "Dawn Voyager", "renaming in UI changes the selected ship everywhere without replacing its ID")
+	screen.crew_quantity.value = 2
+	var before_ui_hire: int = int(screen.world.state.starting_credits)
+	screen.find_child("HireCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 2 and int(screen.world.state.starting_credits) == before_ui_hire and screen.crew_feedback.text.contains("Dock"), "UI refuses undocked recruitment without spending")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in range(screen.trade_station_picker.item_count):
+		if str(screen.trade_station_picker.get_item_metadata(index)) == "hearth_exchange":
+			screen.trade_station_picker.select(index)
+			break
+	screen.find_child("DockButton", true, false).pressed.emit()
+	_expect(ui_crew_ship.docked_at == "hearth_exchange", "UI ship reaches a real NPC crew market using its existing trade/docking controls")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(screen.crew_info.text.contains("Available recruits: 12"), "UI displays the physical recruitment pool at the dock")
+	screen.crew_quantity.value = 2
+	screen.find_child("HireCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 4 and int(screen.world.state.starting_credits) == before_ui_hire - 500 and int(screen.world.state.crew_pools.hearth_exchange) == 10, "UI hiring transfers real credits and reduces the finite NPC roster")
+	screen.crew_quantity.value = 1
+	screen.find_child("DischargeCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 3 and int(screen.world.state.crew_pools.hearth_exchange) == 11 and int(screen.world.state.starting_credits) == before_ui_hire - 500, "UI discharge returns one worker without an invented refund")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and save_store.load_game(screen.save_path).state.ships[0].name == "Dawn Voyager", "crew management immediately saves renamed vessel and financial/crew changes")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	var ui_contract: Dictionary = screen.world.shipyard.place_order(screen.world, "courier_mk1")
+	screen.world.advance_ticks(24)
+	var ui_second: Dictionary = screen.world._find_ship(str(ui_contract.ship_id))
+	_expect(ui_contract.ok and not ui_second.is_empty() and screen.world.personnel.capacity(ui_second) == 8, "real wharf-built courier supports the same crew management interface")
+	_expect(screen.world.queue_fly_to("ship_001", "vellum_gate"), "player can fly renamed vessel to a dock holding the new courier")
+	screen.world.advance_ticks(35)
+	_expect(screen.world.dock_ship("ship_001", "vellum_foundry").ok, "both player ships dock at a single real station for transfer")
+	screen._refresh_world_display()
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(not screen.crew_transfer_picker.disabled and str(screen.crew_transfer_picker.get_item_metadata(screen.crew_transfer_picker.selected)) == ui_second.id, "transfer picker shows only a co-docked owned ship")
+	screen.crew_quantity.value = 2
+	screen.find_child("TransferCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 1 and int(ui_second.crew) == 4 and screen.crew_feedback.text.contains("Transferred"), "UI moves two existing crew between ships without materializing people")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "UI transfers save the existing real ship IDs and rosters")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-personnel.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_crew: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_crew != null, "renamed and staffed fleet has a resumable save")
+	if continue_crew != null:
+		continue_crew.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.world._find_ship("ship_001").name == "Dawn Voyager" and int(screen.world._find_ship("ship_001").crew) == 1 and int(screen.world._find_ship(str(ui_contract.ship_id)).crew) == 4, "reloaded fleet retains paid hires, discharge, transfer and original identities")
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
