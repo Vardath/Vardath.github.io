@@ -164,3 +164,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: zoomed the galaxy, opened a sector, opened a station market and followed a connection to its actual neighboring sector. Android touch and device playtesting remain unverified.
 - Defects and limitations: Sector view is explicitly schematic: intra-sector spatial positions, tactical movement, combat and continuous galaxy-to-sector zoom are not implemented. More fleets, sectors and station objects will need scale and layout profiling.
 - Next task / gate: Green verified. Begin the station planner's module selection, quantities and sourcing preview, while retaining the longer-term goal of a physical construction queue.
+
+## Pass 12 — Station production planner preview
+- Date: 2026-11-13 (Australia/Brisbane).
+- Scope: Add a read-only station planner with module quantities, touch-sized increment/decrement controls and self-sufficient, selective-import and import-all modes. Calculate supporting whole modules and per-60-tick production, consumption, imports and surplus from the current recipes; aggregate shared inputs and respect explicitly selected production. Warn about unsurveyed sunlight and finite deposits, missing producers and cyclic dependencies. Improve galaxy-map label placement when names overlap markers.
+- Files changed: `Faction Command Progress.md`, `faction-command/scripts/station_planner.gd`, `main.gd`, `galaxy_map.gd`, `tests/run_tests.gd` and `README.md`.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: **PENDING**. Verify the exact source commit and rebuilt Android artifact before starting the next implementation task.
+- Automated tests: Local Godot 4.6.3 passed 482 checks, including whole-module rounding, shared inputs, all three sourcing modes, mixed local/imported stock, unavailable recipes, cycle detection and startup warning, unchanged world state, touch-sized planner controls and non-overlapping map labels. The landscape and headless viewport tests passed; the Android resource pack included the planner.
+- Manual/device tests: Desktop Godot: chose an alloy smelter, inspected the suggested ore and energy modules, and selected ore imports to see the ore module removed and its import rate displayed. Android device testing remains outstanding.
+- Defects and limitations: The planner is a temporary preview using three production recipes. Plans are not saved, priced or constructed. Local resources have not been surveyed; advanced recipes, workforce, transport, budgets and physical construction remain future work. The galaxy label layout has not been profiled at the planned full scale.
+- Next task / gate: Wait for green checks and inspect the rebuilt APK before implementing the next construction stage with real costs, materials and a persistent queue.

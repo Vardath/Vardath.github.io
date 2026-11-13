@@ -2,6 +2,7 @@ extends SceneTree
 
 const WorldScript = preload("res://scripts/world.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
+const StationPlannerScript = preload("res://scripts/station_planner.gd")
 const MainScene = preload("res://scenes/main.tscn")
 
 var failures: Array[String] = []
@@ -60,6 +61,13 @@ func _map_item(view, kind: String, id: String) -> Dictionary:
 	for item in view._items():
 		if item.kind == kind and item.id == id:
 			return item
+	return {}
+
+
+func _plan_row(rows: Array, id: String) -> Dictionary:
+	for row in rows:
+		if row.id == id:
+			return row
 	return {}
 
 
@@ -818,6 +826,44 @@ func _run() -> void:
 	_expect(concurrent_ok and concurrent.state.ledger.size() > 3, "player and NPC traders operate together without creating credits or exceeding capacity")
 	_expect(save_store.save_game(test_root + "/concurrent.json", concurrent.snapshot()) == OK, "concurrent trading world remains saveable")
 
+	# Station planner is a pure preview of real recipes and shared inputs.
+	var planner = StationPlannerScript.new()
+	var planner_state: Dictionary = concurrent.snapshot()
+	var unchanged_planner_state: Dictionary = planner_state.duplicate(true)
+	var full_plan: Dictionary = planner.preview(planner_state, {"alloy_smelting":1}, "self", [])
+	_expect(full_plan.ok and int(_plan_row(full_plan.modules, "alloy_smelting").get("total", 0)) == 1, "self-sufficient plan preserves the selected smelter")
+	_expect(int(_plan_row(full_plan.modules, "ore_extraction").get("added", 0)) == 1 and int(_plan_row(full_plan.modules, "solar_cells").get("added", 0)) == 1, "self-sufficient smelter adds whole ore and power modules")
+	_expect(is_equal_approx(float(_plan_row(full_plan.wares, "energy_cells").get("supply", 0)), 40.0) and is_equal_approx(float(_plan_row(full_plan.wares, "energy_cells").get("demand", 0)), 13.5), "plan calculates production and shared input rates per 60 ticks")
+	_expect(float(_plan_row(full_plan.wares, "ore").get("imports", -1)) == 0.0 and full_plan.warnings.size() >= 2 and " ".join(full_plan.warnings).contains("finite"), "self-sufficient plan flags unsurveyed sunlight and a finite ore deposit")
+	var shared_plan: Dictionary = planner.preview(planner_state, {"alloy_smelting":5, "ore_extraction":1}, "self", [])
+	_expect(int(_plan_row(shared_plan.modules, "ore_extraction").get("total", 0)) == 2 and int(_plan_row(shared_plan.modules, "ore_extraction").get("added", 0)) == 1, "shared ore production includes the user's existing module once")
+	_expect(int(_plan_row(shared_plan.modules, "solar_cells").get("total", 0)) == 2 and is_equal_approx(float(_plan_row(shared_plan.wares, "energy_cells").get("demand", 0)), 45.0), "shared energy demand is summed before rounding whole solar modules")
+	var ore_import: Dictionary = planner.preview(planner_state, {"alloy_smelting":1}, "selected", ["ore"])
+	_expect(_plan_row(ore_import.modules, "ore_extraction").is_empty() and int(_plan_row(ore_import.modules, "solar_cells").get("total", 0)) == 1, "selective ore imports remove only the ore production branch")
+	_expect(is_equal_approx(float(_plan_row(ore_import.wares, "ore").get("imports", 0)), 12.0), "selective imports report the actual ore shortage")
+	var energy_import: Dictionary = planner.preview(planner_state, {"alloy_smelting":1}, "selected", ["energy_cells"])
+	_expect(_plan_row(energy_import.modules, "solar_cells").is_empty() and int(_plan_row(energy_import.modules, "ore_extraction").get("total", 0)) == 1 and is_equal_approx(float(_plan_row(energy_import.wares, "energy_cells").get("imports", 0)), 13.5), "selective energy imports leave the ore chain intact")
+	var all_import: Dictionary = planner.preview(planner_state, {"alloy_smelting":1}, "all", [])
+	_expect(all_import.modules.size() == 1 and is_equal_approx(float(_plan_row(all_import.wares, "ore").get("imports", 0)), 12.0) and is_equal_approx(float(_plan_row(all_import.wares, "energy_cells").get("imports", 0)), 6.0), "import-all adds no upstream modules and reports both inputs")
+	var mixed_plan: Dictionary = planner.preview(planner_state, {"alloy_smelting":3, "ore_extraction":1}, "selected", ["ore"])
+	_expect(int(_plan_row(mixed_plan.modules, "ore_extraction").get("total", 0)) == 1 and is_equal_approx(float(_plan_row(mixed_plan.wares, "ore").get("imports", 0)), 6.0), "selected imports supplement explicitly chosen local production")
+	var missing_recipe: Dictionary = planner_state.duplicate(true)
+	for index in range(missing_recipe.recipes.size() - 1, -1, -1):
+		if missing_recipe.recipes[index].id == "ore_extraction":
+			missing_recipe.recipes.remove_at(index)
+	var missing_plan: Dictionary = planner.preview(missing_recipe, {"alloy_smelting":1}, "self", [])
+	_expect(float(_plan_row(missing_plan.wares, "ore").get("imports", 0)) > 0.0 and " ".join(missing_plan.warnings).contains("must be imported"), "unavailable production is reported as an import, not fabricated")
+	var cyclic_state: Dictionary = {"wares":planner_state.wares.duplicate(true), "recipes":[
+		{"id":"loop_energy", "name":"Loop Energy", "cycle_ticks":60, "inputs":{"ore":1}, "outputs":{"energy_cells":1}},
+		{"id":"loop_ore", "name":"Loop Ore", "cycle_ticks":60, "inputs":{"energy_cells":1}, "outputs":{"ore":1}}
+	]}
+	var cycle_plan: Dictionary = planner.preview(cyclic_state, {"loop_energy":1}, "self", [])
+	_expect(not cycle_plan.ok and " ".join(cycle_plan.errors).contains("Cyclic dependency"), "cyclic recipes are detected without infinite expansion")
+	var resolved_cycle: Dictionary = planner.preview(cyclic_state, {"loop_energy":1}, "selected", ["energy_cells"])
+	_expect(resolved_cycle.ok and " ".join(resolved_cycle.warnings).contains("starter stock"), "an import exception breaks a cycle and warns about startup stock")
+	_expect(not planner.preview(planner_state, {"alloy_smelting":-1}, "self", []).ok, "invalid module quantities are rejected")
+	_expect(planner_state == unchanged_planner_state, "station previews do not mutate the real world")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
@@ -998,11 +1044,19 @@ func _run() -> void:
 	screen.find_child("MapFit", true, false).pressed.emit()
 	_expect(is_equal_approx(galaxy.zoom_level, 1.0) and galaxy.pan_offset == Vector2.ZERO, "Fit restores the galaxy view")
 	var fitted_labels_visible := true
+	var fitted_labels_clear := true
+	var fitted_labels: Dictionary = galaxy._label_layout()
 	for sector in screen.world.state.sectors:
-		var label_width: float = ThemeDB.fallback_font.get_string_size(str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
-		if galaxy._sector_position(sector).x + 15.0 + label_width > galaxy.size.x:
+		var label_rect: Rect2 = fitted_labels[sector.id]
+		if label_rect.position.x < 0 or label_rect.position.y < 0 or label_rect.end.x > galaxy.size.x or label_rect.end.y > galaxy.size.y:
 			fitted_labels_visible = false
+		for other in screen.world.state.sectors:
+			if other.id != sector.id:
+				var marker := Rect2(galaxy._sector_position(other) - Vector2(13, 13), Vector2(26, 26))
+				if label_rect.intersects(marker) or label_rect.intersects(fitted_labels[other.id]):
+					fitted_labels_clear = false
 	_expect(fitted_labels_visible, "sector names fit within the map at the default zoom")
+	_expect(fitted_labels_clear, "sector names do not overlap other names or markers at the default zoom")
 	screen.find_child("MapMode", true, false).pressed.emit()
 	await process_frame
 	_expect(screen.sector_map.visible and not galaxy.visible and screen.map_title.text == "VELLUM GATE", "sector view opens for the selected sector")
@@ -1049,6 +1103,33 @@ func _run() -> void:
 	_expect(galaxy.visible and not sector_view.visible and screen.map_title.text == "GALAXY MAP", "Galaxy returns to the strategic map")
 	var map_mode_button: Control = screen.find_child("MapMode", true, false)
 	_expect(map_mode_button.global_position.x + map_mode_button.size.x <= float(root.size.x) and map_mode_button.global_position.y + map_mode_button.size.y <= float(root.size.y), "map controls remain inside the landscape viewport")
+	var before_station_preview: Dictionary = screen.world.snapshot()
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	await process_frame
+	_expect(is_instance_valid(screen.plan_screen) and screen.plan_result.text.contains("Choose a production module"), "station planner opens with a clear starting instruction")
+	screen.find_child("PlanAdd_alloy_smelting", true, false).pressed.emit()
+	_expect(screen.plan_result.text.contains("Alloy Smelter × 1") and screen.plan_result.text.contains("Ore Extractor × 1") and screen.plan_result.text.contains("Solar Array × 1"), "planner displays chosen and automatically required modules")
+	screen.find_child("PlanRemove_alloy_smelting", true, false).pressed.emit()
+	_expect(int(screen.plan_module_counts["alloy_smelting"].value) == 0 and screen.plan_result.text.contains("Choose a production module"), "large minus control removes a chosen module")
+	screen.find_child("PlanRemove_alloy_smelting", true, false).pressed.emit()
+	_expect(int(screen.plan_module_counts["alloy_smelting"].value) == 0, "module quantities cannot become negative")
+	screen.find_child("PlanAdd_alloy_smelting", true, false).pressed.emit()
+	screen.plan_mode.select(1)
+	screen.plan_mode.item_selected.emit(1)
+	_expect(screen.plan_import_list.visible and not screen.plan_import_options.has("alloy_plates"), "selective sourcing shows recipe inputs without unrelated outputs")
+	screen.plan_import_options["ore"].button_pressed = true
+	_expect(not screen.plan_result.text.contains("Ore Extractor") and screen.plan_result.text.contains("Import 12.0"), "selecting an imported ware updates the preview and required rate")
+	screen.plan_mode.select(2)
+	screen.plan_mode.item_selected.emit(2)
+	_expect(not screen.plan_result.text.contains("Solar Array") and not screen.plan_result.text.contains("Ore Extractor"), "import-all removes unnecessary upstream modules in the interface")
+	_expect(screen.world.snapshot() == before_station_preview, "station planning spends no credits and builds no modules")
+	await process_frame
+	var planner_close: Control = screen.find_child("ClosePlannerButton", true, false)
+	_expect(planner_close.global_position.y + planner_close.size.y <= float(root.size.y), "station planner close control remains inside the landscape viewport")
+	var planner_add: Control = screen.find_child("PlanAdd_alloy_smelting", true, false)
+	_expect(planner_add.size.x >= 44.0 and planner_add.size.y >= 44.0, "module add control has a touch-sized target")
+	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
+	_expect(not is_instance_valid(screen.plan_screen), "station planner closes without changing the world")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

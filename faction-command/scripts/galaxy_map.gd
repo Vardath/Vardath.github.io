@@ -10,6 +10,9 @@ const HIGHLIGHT := Color("d1f4ec")
 var world: Dictionary = {}
 var selected_id := "hearthreach"
 var _points: Dictionary = {}
+var _label_cache: Dictionary = {}
+var _label_camera: Array = []
+var _label_sectors: Array = []
 
 
 func set_world(value: Dictionary) -> void:
@@ -28,6 +31,50 @@ func _sector_position(sector: Dictionary) -> Vector2:
 	var right := minf(150.0, size.x * 0.23)
 	var area := Vector2(maxf(1.0, size.x - left - right), maxf(1.0, size.y - 100.0))
 	return map_to_screen(Vector2(left, 50.0) + Vector2(float(sector.x) * area.x, float(sector.y) * area.y))
+
+
+func _label_layout() -> Dictionary:
+	var font := ThemeDB.fallback_font
+	var sectors: Array = world.get("sectors", [])
+	var camera := [size, zoom_level, pan_offset]
+	if camera == _label_camera and sectors == _label_sectors:
+		return _label_cache
+	var labels: Dictionary = {}
+	var occupied: Array[Rect2] = []
+	for sector in sectors:
+		var pos := _sector_position(sector)
+		var text_size := font.get_string_size(str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14)
+		var candidates: Array[Rect2] = [
+			Rect2(pos + Vector2(15, -text_size.y / 2.0), text_size),
+			Rect2(pos + Vector2(-text_size.x / 2.0, 16), text_size),
+			Rect2(pos + Vector2(-text_size.x / 2.0, -16 - text_size.y), text_size),
+			Rect2(pos + Vector2(-15 - text_size.x, -text_size.y / 2.0), text_size)
+		]
+		var best: Rect2 = candidates[0]
+		var best_score := INF
+		for candidate in candidates:
+			var score := 0.0
+			score += maxf(0.0, -candidate.position.x) + maxf(0.0, -candidate.position.y)
+			score += maxf(0.0, candidate.end.x - size.x) + maxf(0.0, candidate.end.y - size.y)
+			score *= 10.0
+			for other in sectors:
+				if other.id == sector.id:
+					continue
+				var marker := Rect2(_sector_position(other) - Vector2(13, 13), Vector2(26, 26))
+				if candidate.intersects(marker):
+					score += 1000.0 + candidate.intersection(marker).get_area()
+			for previous in occupied:
+				if candidate.intersects(previous):
+					score += 1000.0 + candidate.intersection(previous).get_area()
+			if score < best_score:
+				best_score = score
+				best = candidate
+		labels[sector.id] = best
+		occupied.append(best)
+	_label_cache = labels
+	_label_camera = camera
+	_label_sectors = sectors.duplicate(true)
+	return labels
 
 
 func _draw() -> void:
@@ -49,6 +96,7 @@ func _draw() -> void:
 		if link.size() == 2 and _points.has(link[0]) and _points.has(link[1]):
 			draw_line(_points[link[0]], _points[link[1]], LINE, 2.0, true)
 	var font := ThemeDB.fallback_font
+	var labels := _label_layout()
 	for sector in world.get("sectors", []):
 		var pos: Vector2 = _points[sector.id]
 		var color: Color = faction_colors.get(sector.owner, MUTED)
@@ -56,7 +104,8 @@ func _draw() -> void:
 		draw_arc(pos, 13.0 if sector.id == selected_id else 9.0, 0.0, TAU, 32, color, 2.0, true)
 		draw_circle(pos, 4.0, color)
 		var label_color := HIGHLIGHT if sector.id == selected_id else Color("a9becb")
-		draw_string(font, pos + Vector2(15, 5), str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, label_color)
+		var label_rect: Rect2 = labels[sector.id]
+		draw_string(font, label_rect.position + Vector2(0, font.get_ascent(14)), str(sector.name), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, label_color)
 	for ship in world.get("ships", []):
 		if _points.has(ship.sector):
 			var pos: Vector2 = _points[ship.sector]

@@ -42,6 +42,16 @@ screen shows each station's recipe, progress, shortage or storage blockage, and
 remaining deposit. Materials and output move together at cycle completion;
 partial progress pauses when inputs or storage are unavailable.
 
+**Plan station** previews a station in the selected sector. Choose production
+modules and quantities, then choose **Self-sufficient**, **Import selected
+inputs**, or **Import all inputs**. The planner uses the existing recipes to
+calculate whole supporting modules and shared input rates, and shows expected
+imports and remaining output per 60 ticks. For example, an alloy smelter can
+be supplied by an ore extractor and solar array, or ore can be imported.
+Natural-source availability has not yet been surveyed, so plans requiring
+sunlight or deposits show a warning. Plans are previews only: they are not
+saved, priced or constructed, and they do not spend credits or create goods.
+
 One faction-owned freighter now transports supplies between stations. It is
 separate from the player's property: its home station transfers real working
 capital, and it buys stock, travels, docks and sells to factories with input

@@ -4,6 +4,7 @@ const WorldScript = preload("res://scripts/world.gd")
 const GalaxyMapScript = preload("res://scripts/galaxy_map.gd")
 const SectorMapScript = preload("res://scripts/sector_map.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
+const StationPlannerScript = preload("res://scripts/station_planner.gd")
 const BACKGROUND := Color("080f1b")
 const PANEL := Color("101e2d")
 const BORDER := Color("24394a")
@@ -13,6 +14,7 @@ const ACCENT := Color("71dfcc")
 
 var world = WorldScript.new()
 var save_store = SaveStoreScript.new()
+var station_planner = StationPlannerScript.new()
 var save_path := "user://faction_command_save.json"
 var _last_saved_tick := 0
 var paused := true
@@ -54,6 +56,12 @@ var trade_info: Label
 var trade_production: Label
 var trade_ledger: Label
 var trade_feedback: Label
+var plan_screen: Control
+var plan_mode: OptionButton
+var plan_module_counts: Dictionary = {}
+var plan_import_options: Dictionary = {}
+var plan_import_list: VBoxContainer
+var plan_result: Label
 
 
 func _ready() -> void:
@@ -377,6 +385,10 @@ func _build_ui() -> void:
 	trade_button.name = "TradeButton"
 	trade_button.pressed.connect(_open_trade)
 	property_list.add_child(trade_button)
+	var plan_button := _button("Plan station")
+	plan_button.name = "PlanStationButton"
+	plan_button.pressed.connect(_open_station_planner)
+	property_list.add_child(plan_button)
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	property_list.add_child(spacer)
@@ -655,6 +667,165 @@ func _refresh_world_display() -> void:
 		_show_map_ship(selected_ship_id)
 	else:
 		_show_sector(selected_sector)
+
+
+func _open_station_planner() -> void:
+	if is_instance_valid(plan_screen):
+		return
+	plan_module_counts.clear()
+	plan_import_options.clear()
+	plan_screen = Control.new()
+	plan_screen.name = "StationPlanner"
+	plan_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(plan_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.90)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	plan_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	plan_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(920, 600)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label("STATION PLANNER", 22, TEXT))
+	column.add_child(_wrapped_label("Sector: %s  ·  Preview only: construction and costs are not available yet." % _sector_name(selected_sector), 14, MUTED))
+	var content := HBoxContainer.new()
+	content.add_theme_constant_override("separation", 18)
+	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	column.add_child(content)
+	var control_scroll := ScrollContainer.new()
+	control_scroll.custom_minimum_size.x = 350
+	control_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	content.add_child(control_scroll)
+	var controls := VBoxContainer.new()
+	controls.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	controls.add_theme_constant_override("separation", 6)
+	control_scroll.add_child(controls)
+	controls.add_child(_label("CHOOSE PRODUCTION MODULES", 13, ACCENT))
+	for recipe in world.state.recipes:
+		var row := HBoxContainer.new()
+		controls.add_child(row)
+		var label := _label(str(recipe.name), 15, TEXT)
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(label)
+		var remove := _button("−")
+		remove.name = "PlanRemove_" + str(recipe.id)
+		remove.custom_minimum_size.x = 44
+		remove.pressed.connect(_adjust_plan_count.bind(str(recipe.id), -1))
+		row.add_child(remove)
+		var amount := SpinBox.new()
+		amount.name = "ModuleCount_" + str(recipe.id)
+		amount.min_value = 0
+		amount.max_value = 100
+		amount.step = 1
+		amount.value = 0
+		amount.custom_minimum_size = Vector2(72, 44)
+		amount.add_theme_font_size_override("font_size", 15)
+		amount.value_changed.connect(_on_plan_changed)
+		row.add_child(amount)
+		plan_module_counts[recipe.id] = amount
+		var add := _button("+")
+		add.name = "PlanAdd_" + str(recipe.id)
+		add.custom_minimum_size.x = 44
+		add.pressed.connect(_adjust_plan_count.bind(str(recipe.id), 1))
+		row.add_child(add)
+	controls.add_child(_label("HOW TO SOURCE INPUTS", 13, ACCENT))
+	plan_mode = OptionButton.new()
+	plan_mode.name = "PlanSourceMode"
+	plan_mode.custom_minimum_size.y = 44
+	plan_mode.add_theme_font_size_override("font_size", 15)
+	for option in [{"label":"Self-sufficient", "id":"self"}, {"label":"Import selected inputs", "id":"selected"}, {"label":"Import all inputs", "id":"all"}]:
+		plan_mode.add_item(str(option.label))
+		plan_mode.set_item_metadata(plan_mode.item_count - 1, option.id)
+	plan_mode.item_selected.connect(_on_plan_changed)
+	controls.add_child(plan_mode)
+	plan_import_list = VBoxContainer.new()
+	plan_import_list.name = "PlanImportOptions"
+	plan_import_list.visible = false
+	controls.add_child(plan_import_list)
+	var input_wares: Dictionary = {}
+	for recipe in world.state.recipes:
+		for ware_id in recipe.inputs:
+			input_wares[ware_id] = true
+	for ware in world.state.wares:
+		if not input_wares.has(ware.id):
+			continue
+		var toggle := CheckButton.new()
+		toggle.name = "Import_" + str(ware.id)
+		toggle.text = "Import " + str(ware.name)
+		toggle.custom_minimum_size.y = 44
+		toggle.add_theme_font_size_override("font_size", 14)
+		toggle.toggled.connect(_on_plan_changed)
+		plan_import_list.add_child(toggle)
+		plan_import_options[ware.id] = toggle
+	var result_scroll := ScrollContainer.new()
+	result_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	result_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	result_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	content.add_child(result_scroll)
+	plan_result = _wrapped_label("", 15, TEXT)
+	plan_result.name = "StationPlanResult"
+	plan_result.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	result_scroll.add_child(plan_result)
+	var close_button := _button("Close")
+	close_button.name = "ClosePlannerButton"
+	close_button.pressed.connect(_close_station_planner)
+	column.add_child(close_button)
+	_update_station_plan()
+
+
+func _adjust_plan_count(recipe_id: String, delta: int) -> void:
+	if plan_module_counts.has(recipe_id):
+		var amount: SpinBox = plan_module_counts[recipe_id]
+		amount.value += delta
+
+
+func _on_plan_changed(_value: Variant) -> void:
+	_update_station_plan()
+
+
+func _update_station_plan() -> void:
+	if not is_instance_valid(plan_screen):
+		return
+	var mode := str(plan_mode.get_item_metadata(plan_mode.selected))
+	plan_import_list.visible = mode == "selected"
+	var requested: Dictionary = {}
+	for id in plan_module_counts:
+		requested[id] = int(plan_module_counts[id].value)
+	var imports: Array = []
+	for id in plan_import_options:
+		if plan_import_options[id].button_pressed:
+			imports.append(id)
+	var result: Dictionary = station_planner.preview(world.state, requested, mode, imports)
+	if result.modules.is_empty() and result.errors.is_empty():
+		plan_result.text = "Choose a production module and quantity to see the required station modules and supplies."
+		return
+	var lines: Array[String] = []
+	if not result.errors.is_empty():
+		lines.append("PLAN NEEDS ATTENTION\n" + "\n".join(result.errors))
+	lines.append("MODULES")
+	for row in result.modules:
+		var added := "  (+%d for inputs)" % int(row.added) if int(row.added) > 0 else ""
+		lines.append("%s × %d%s" % [row.name, int(row.total), added])
+	if not result.wares.is_empty():
+		lines.append("\nFLOW PER 60 TICKS")
+		for ware in result.wares:
+			var line := "%s: %.1f made, %.1f used" % [ware.name, float(ware.supply), float(ware.demand)]
+			line += "\n  Import %.1f" % float(ware.imports) if float(ware.imports) > 0.000001 else "\n  Available %.1f" % float(ware.surplus)
+			lines.append(line)
+	if not result.warnings.is_empty():
+		lines.append("\nCHECK BEFORE BUILDING\n" + "\n".join(result.warnings))
+	plan_result.text = "\n".join(lines)
+
+
+func _close_station_planner() -> void:
+	if is_instance_valid(plan_screen):
+		plan_screen.queue_free()
+	plan_screen = null
 
 
 func _open_trade() -> void:
