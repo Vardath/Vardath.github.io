@@ -2467,6 +2467,65 @@ func _run() -> void:
 		_expect(screen.world._find_ship(second_ship.id).build_supply.enabled, "saved second-ship automation survives a UI restart")
 	screen.queue_free()
 	await process_frame
+	# The player can really buy and command a new ship from the on-screen
+	# wharf interface, rather than inserting a test-only property.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-ship-orders.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	var ui_original_ship: Dictionary = screen.world.state.ships[0]
+	screen.find_child("ShipyardButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.shipyard_screen) and screen.shipyard_info.text.contains("physically at wharf") and screen.find_child("ShipyardHullPicker", true, false) != null, "shipyard menu displays physical wharf inventory and selectable hulls")
+	_expect(screen.shipyard_hull_picker.item_count == 2 and not screen.shipyard_buy_button.disabled, "two hull types are available to buy with real starting funds and wharf stock")
+	for index in range(screen.shipyard_hull_picker.item_count):
+		if str(screen.shipyard_hull_picker.get_item_metadata(index)) == "freighter_mk1":
+			screen.shipyard_hull_picker.select(index)
+			screen._on_shipyard_hull_selected(index)
+			break
+	_expect(screen.shipyard_info.text.contains("8500 CR") and screen.shipyard_info.text.contains("Cargo capacity: 180"), "freighter quote shows its real contract cost and cargo capacity")
+	screen.find_child("OrderShipButton", true, false).pressed.emit()
+	_expect(screen.shipyard_confirm.dialog_text.contains("8500 CR") and screen.world.state.shipyard.orders.is_empty(), "buying a hull requires confirmation before spending")
+	screen.shipyard_confirm.confirmed.emit()
+	_expect(screen.world.state.shipyard.orders.size() == 1 and int(screen.world.state.starting_credits) == 16500 and int(screen.world._find_station("vellum_foundry").stock.alloy_plates) == 70, "confirmed purchase transfers credits and consumes exactly 30 alloy plates")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.property_count_label.text.contains("1 ships"), "paid pending order saves without granting an instant ship")
+	screen.world.advance_ticks(48)
+	screen._refresh_world_display()
+	screen._update_shipyard_screen()
+	var delivered_id: String = str(screen.world.state.shipyard.orders[0].ship_id)
+	var delivered_ship: Dictionary = screen.world._find_ship(delivered_id)
+	_expect(not delivered_ship.is_empty() and delivered_ship.owner == "player" and delivered_ship["class"] == "Freighter" and int(delivered_ship.cargo_capacity) == 180 and screen.property_count_label.text.contains("2 ships"), "completed paid freighter joins the player's property directory as a real second ship")
+	_expect(screen.shipyard_info.text.contains("Complete") and bool(save_store.save_game(screen.save_path, screen.world.snapshot()) == OK), "the shipyard panel reports delivery and the completed new ship is saveable")
+	screen.find_child("CloseShipyardButton", true, false).pressed.emit()
+	await process_frame
+	screen.property_filter.text = "freighter"
+	screen._on_property_filter("freighter")
+	_expect(screen.property_picker.item_count == 1 and str(screen.property_picker.get_item_metadata(0)) == "ship|" + delivered_id, "newly built freighter is individually searchable")
+	screen.property_picker.select(0)
+	screen.property_picker.item_selected.emit(0)
+	_expect(screen.active_player_ship_id == delivered_id and screen.detail_title.text == delivered_ship.name, "the manufactured ship can be selected as the active command vessel")
+	screen.map_view.sector_selected.emit("cinder_veil")
+	screen.find_child("OrderButton", true, false).pressed.emit()
+	_expect(delivered_ship.orders.size() == 1 and ui_original_ship.orders.is_empty(), "real purchased freighters receive individual orders without changing the starter ship")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "newly purchased vessel orders survive normal autosaving")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-ship-orders.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_wharf: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_wharf != null, "save containing a manufactured hull remains available to continue")
+	if continue_wharf != null:
+		continue_wharf.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.property_count_label.text.contains("2 ships") and screen.world._find_ship(delivered_id).orders.size() == 1, "reload restores purchased hull and its queued route with no duplication")
+	screen.queue_free()
+	await process_frame
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
