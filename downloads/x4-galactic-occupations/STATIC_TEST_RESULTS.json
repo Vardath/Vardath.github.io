@@ -1,8 +1,8 @@
 {
   "static_result": "PASS",
   "counts": {
-    "xml_files": 90,
-    "commands": 4844,
+    "xml_files": 103,
+    "commands": 4840,
     "script_calls": 148,
     "behaviours": 13,
     "ui_addons": 1
@@ -38,7 +38,8 @@
     "tour_timeout_v45": "Existing native MD time arithmetic/conditions and persistent player-entity object state are used; no new native actions or UI controls. While the tracked current worker is a booked VGO_tour (or its own current DockAt), a helper-written watchdog/dock deadline receives one game hour and the extended absolute value is saved to prevent repeated padding. A genuinely cancelled tour receives one hour above the previous max(two hours, measured duration estimate); existing pending cancellation deadlines are extended once with a saved per-episode marker. Already disposing parties are not recreated; native direct-order/ownership/target checks and all fare-completion gates remain.",
     "worker_yields_v47": "The 083003 log reports AIDirector::Move possible infinite wake request loop immediately after a balance-confirmed crystal sale and completion on the worker. Worker version21 adds four positive one-second waits with sinceversion21 around the new iteration and fast-return commercial/completion/deferred bookkeeping boundaries. Runtime42 and saved contracts/invoices are retained; no mass restart. No claim is made that this warning caused the later crash.",
     "capital_tours_v48": "Native 9.00 bridge/corridor component definitions expose npc_waypoint stand npctransport points grouped as transporter_01. L/XL visible services walk the same booked NPC to a real source point, require observed proximity and a stopped actor, then use add_actor_to_room at a verified receiving transporter. Actual room context, roster release and station role gates retain fare control. Other docked ships are excluded from station endpoints. Existing native uninstanced NPC transfer remains off screen. Source/mocked tests only; no X4 runtime.",
-    "scanner_physics_v48": "The 150118 log records one find_object_surface call on inactive production-module physics despite loaded collision meshes. Native component attention/isphysicsready and attention.visible metadata are checked before each surface attempt and LOS, including after movement/yields. Low attention uses the existing timed remote-survey path. Physical engine execution needs live verification."
+    "scanner_physics_v48": "The 150118 log records one find_object_surface call on inactive production-module physics despite loaded collision meshes. Native component attention/isphysicsready and attention.visible metadata are checked before each surface attempt and LOS, including after movement/yields. Low attention uses the existing timed remote-survey path. Physical engine execution needs live verification.",
+    "weaponmode_054": "Verified native X4 9.00 md/setup_gamestarts.xml uses <set_weapon_mode weapon=\"$turret\" weaponmode=\"weaponmode.attackenemies\"/>; md/scenario_advanced.xml and aiscripts/lib.set.weaponmode.xml likewise. Game script examples establish action in MD/AI and weaponmode lookup. Explicit holdfire mode used in native order.wait.xml and related scripts. VGO 0.5.4 stores pre-existing turret.mode and restores it after crystal-only direct fire."
   },
   "runtime": "NOT RUN: no X4 executable, user save or effective installed catalogs. Version 0.4.8 adds L/XL sightseeing tours with real same-NPC transporter-point transfers at actual docks, preserves ten-passenger/free-berth limits and full disembarkation/fare gates, and guards station surface queries with visible attention, loaded meshes and current player sector. Failed or false-positive transfers cannot earn fares. The supplied 150118 log runs 0.4.7 and records 623 balance-matched payments totalling 994,060,000 Cr; new transport, scanner physics and save/load paths remain unverified in the game.",
   "runtime_jobs": {
