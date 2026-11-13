@@ -1,5 +1,8 @@
 # Vardath Compatibility Fixes 1.0.6
 
+**CI source coverage notice (1.0.6):** The release ZIP and 11 XML diffs are source-checked and 19 contract tests are run, with two GalaxyTrader tests skipped because the previous pinned upstream GitHub URLs now return HTTP 404. The two unchanged GalaxyTrader patches remain packaged but their application to the installed game build is not revalidated. The CI workflow is green with a deliberately recorded `result: partial`; this does not mean complete upstream or in-game validation.
+
+
 [Download](Vardath_Compatibility_Fixes_1.0.6.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
 
 **1.0.6 (14 November 2026):** Kuertee's bounty-location update is now restricted to operational NPC pilots; missing saved history containers are initialised before list access. This targets the 19,775 repeat errors in the 13 November 2026 22:21 debug log while leaving existing faction histories and bounty scores untouched. Tested against the pinned source XML; in-game confirmation is still required.
