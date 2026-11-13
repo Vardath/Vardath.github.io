@@ -27,7 +27,8 @@ simulation does not yet track exact positions within a sector. Choose
 **Galaxy** to return. The same pan and zoom controls work in both views.
 
 The starter economy has four markets and four historical archives. Its wares
-include Energy Cells, Ore, Alloy Plates, Blank Media and Recorded Data. Open **Trade**, choose a station, travel to its sector and
+include Energy Cells, Ore, Alloy Plates, Blank Media, Recorded Data and Research
+Notes. Open **Trade**, choose a station, travel to its sector and
 finish the ship's orders, then dock. Buy goods from station stock and carry them
 to a station that buys them. Each transaction changes real cargo, station stock
 and both credit balances, and appears in the scrollable transaction ledger. Cargo
@@ -78,9 +79,9 @@ Each NPC faction maintains a historical archive station in its starter sector.
 Select its sector, choose **Open sector**, tap the archive, dock and choose
 **Read historical records**. The starter collection has five entries per
 faction, with books, tablets, tapes, crystals, discs and light drives among the
-catalogued formats. Archive subjects indicate potential research relevance;
-research projects and research bonuses are not implemented yet. A visit is
-saved, and the records remain readable on site even when upkeep is short.
+catalogued formats. Archive subjects can contribute to matching research
+projects. A visit is saved, and the records remain readable on site even when
+upkeep is short.
 
 Faction sponsors transfer existing funds into archive operating budgets.
 Archives buy physical energy and alloy, pay staff from their budgets, consume
@@ -96,6 +97,21 @@ Data unit in its station storage as a reusable source, plus blank media and
 energy for each copy. The current two wares aggregate formats and source
 civilizations; they do not yet represent individual books, provenance or a
 player-managed catalogue. Ongoing station imports are still manual.
+
+Build a **Research Laboratory** through the station planner and supply it with
+Recorded Data and Energy Cells. It produces one Research Note per cycle. Open
+your station in **Trade**, choose **Research projects**, and assign a project
+to that laboratory. Each note consumed adds two progress, plus one for each
+distinct relevant archive you have visited, up to two extra. The project screen
+names the relevant archives and shows the current contribution. Visits are
+references learned by the player; the aggregate data ware does not yet track
+which archive a particular copy came from. You can pause or switch projects
+without losing their progress. Completing the first projects makes your own
+scriptoria, media workshops or ore extractors work faster; NPC stations retain
+their existing rates. The station planner and production reports show the new
+rates, and the normal inputs and finite deposits are still required.
+If a laboratory and a scriptorium share a station, the last data copy needed
+as the scriptorium's reusable source is reserved automatically.
 
 One faction-owned freighter now transports supplies between stations. It is
 separate from the player's property: its home station transfers real working
@@ -138,12 +154,14 @@ Older saves also gain the NPC builder and sector resources, without a fee or a
 new build site. Existing construction saves gain the inactive supply role;
 in-progress construction, cargo, builder travel and supply trips are saved.
 Older saves gain the archive stations and data recipes with empty new stocks;
-no existing credits, cargo or production are reset.
+they also gain an inactive research system. No existing credits, cargo or
+production are reset.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
 automatic station imports, build cancellation/refunds and reordering, dynamic
-prices, source-specific collections, research projects, multiple save slots,
-device testing and wider management systems remain to be implemented.
+prices, source-specific collections, expanded research and prerequisites,
+multiple save slots, device testing and wider management systems remain to be
+implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
 data-driven origin sectors and standings; sector links are undirected pairs of
@@ -166,6 +184,8 @@ mid-construction. Supply tests cover real purchases, limited cargo, waiting and
 resuming, role changes, competing ships and saving during supply trips.
 Archive tests cover funding, maintenance, visits, media manufacture, retained
 copy sources, player-built data production, migration and save/load.
+Research tests cover lab construction and inputs, relevant archive references,
+project progress and pausing, real upgrade effects, migration and save/load.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

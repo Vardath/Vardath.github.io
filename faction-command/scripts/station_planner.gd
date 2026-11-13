@@ -4,6 +4,9 @@ extends RefCounted
 
 const MAX_MODULES := 10000
 const EPSILON := 0.000001
+const ResearchScript = preload("res://scripts/research.gd")
+
+var research = ResearchScript.new()
 
 
 func preview(state: Dictionary, requested: Dictionary, mode: String, selected_imports: Array, sector_id: String = "") -> Dictionary:
@@ -14,7 +17,8 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 	var wares: Dictionary = {}
 	for ware in state.get("wares", []):
 		wares[str(ware.id)] = str(ware.name)
-	for recipe in state.get("recipes", []):
+	for original in state.get("recipes", []):
+		var recipe: Dictionary = research.adjusted_recipe(state, original, true)
 		var id := str(recipe.id)
 		if recipes.has(id) or int(recipe.cycle_ticks) <= 0:
 			errors.append("Invalid or duplicate production recipe: " + id)
@@ -102,10 +106,11 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 	var rates := _rates(recipes, counts)
 	var module_rows: Array[Dictionary] = []
 	var known_resources: Dictionary = state.get("construction_resources", {}).get(sector_id, {})
-	for recipe in state.get("recipes", []):
-		var id := str(recipe.id)
+	for original in state.get("recipes", []):
+		var id := str(original.id)
 		if not counts.has(id) or int(counts[id]) <= 0:
 			continue
+		var recipe: Dictionary = recipes[id]
 		var chosen := int(requested.get(id, 0))
 		module_rows.append({"id":id, "name":str(recipe.name), "chosen":chosen, "added":int(counts[id]) - chosen, "total":int(counts[id])})
 		for ware_id in recipe.get("catalysts", {}):

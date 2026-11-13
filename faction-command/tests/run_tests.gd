@@ -45,7 +45,23 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	return copy
 
 
+func _strip_research(state: Dictionary) -> void:
+	state.erase("research_version")
+	state.erase("research")
+	for station in state.stations:
+		station.stock.erase("research_notes")
+	for index in range(state.wares.size() - 1, -1, -1):
+		if state.wares[index].id == "research_notes":
+			state.wares.remove_at(index)
+	for index in range(state.recipes.size() - 1, -1, -1):
+		if state.recipes[index].id == "research_laboratory":
+			state.recipes.remove_at(index)
+	if state.has("construction_blueprints"):
+		state.construction_blueprints.erase("research_laboratory")
+
+
 func _strip_archives(state: Dictionary) -> void:
+	_strip_research(state)
 	state.erase("archive_version")
 	state.erase("visited_archives")
 	for index in range(state.stations.size() - 1, -1, -1):
@@ -300,7 +316,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 5, "starter economy includes four markets, four archives and five wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 6, "starter economy includes four markets, four archives and six wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -529,7 +545,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 5, "production upgrade adds the finite deposit and current recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 6, "production upgrade adds the finite deposit and current recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -699,6 +715,7 @@ func _run() -> void:
 		var migrated_stock: Dictionary = new_station.stock.duplicate(true)
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
+		migrated_stock.erase("research_notes")
 		_expect(new_station.credits == old_station.credits and migrated_stock == old_station.stock and new_station.production == old_station.production, "logistics upgrade preserves station finances and production: " + str(old_station.id))
 	_expect(int(logistics_upgrade.state.ships[1].credits) == 0, "logistics upgrade does not create NPC funds")
 	var altered_home: Dictionary = pre_logistics.duplicate(true)
@@ -1290,6 +1307,171 @@ func _run() -> void:
 	future_archive_file.close()
 	_expect(save_store.load_game(future_archive_path).get("reason") == "unsupported", "future archive data cannot silently fall back to an older save")
 
+	# Research uses physical lab output and distinct, relevant visited archives.
+	var research_before_invalid: Dictionary = history_world.snapshot()
+	_expect(not history_world.research.start(history_world, "auroran_archive", "archive_indexing").ok and history_world.snapshot() == research_before_invalid, "research cannot be assigned to an NPC archive or spend anything on failure")
+	var research_quote: Dictionary = history_world.construction.quote(history_world, "hearthreach", {"research_laboratory":1}, "all", [])
+	_expect(research_quote.ok and int(research_quote.fee) == 900 and int(research_quote.materials.alloy_plates) == 14, "the planner prices a buildable research laboratory")
+	var research_placement: Dictionary = history_world.construction.place(history_world, "hearthreach", {"research_laboratory":1}, "all", [])
+	var research_site: Dictionary = history_world.construction.find_site(history_world, str(research_placement.site_id))
+	_expect(research_placement.ok and history_world.build_supply.assign(history_world, "ship_001", str(research_site.id)).ok, "the player places a lab and assigns physical construction supplies")
+	history_world.advance_ticks(70)
+	var research_lab: Dictionary = history_world._find_station(str(research_site.station_id))
+	_expect(int(research_site.completed) == 1 and history_world.research.has_lab(research_lab), "the builder completes an actual player-owned laboratory")
+	_expect(history_world.research.progress_per_note(history_world, "archive_indexing") == 3 and history_world.research.progress_per_note(history_world, "media_engineering") == 2, "a visited matching archive helps the relevant project but not an unrelated one")
+	var research_invalid: Dictionary = history_world.snapshot()
+	_expect(not history_world.research.start(history_world, str(research_lab.id), "unknown_project").ok and history_world.snapshot() == research_invalid, "an unknown project leaves research and property untouched")
+	_expect(history_world.dock_ship("ship_001", str(player_archive_station.id)).ok and history_world.transfer_player_station("ship_001", str(player_archive_station.id), "recorded_data", 1, false).ok, "the player physically collects a data copy for laboratory work")
+	_expect(history_world.dock_ship("ship_001", "hearth_exchange").ok and history_world.trade("ship_001", "hearth_exchange", "energy_cells", 2, true).ok, "the player buys the lab's energy")
+	_expect(history_world.dock_ship("ship_001", str(research_lab.id)).ok and history_world.transfer_player_station("ship_001", str(research_lab.id), "recorded_data", 1, true).ok and history_world.transfer_player_station("ship_001", str(research_lab.id), "energy_cells", 2, true).ok, "the laboratory receives the actual data and energy by ship")
+	_expect(history_world.research.start(history_world, str(research_lab.id), "archive_indexing").ok, "a project can be assigned to the completed laboratory")
+	history_world.advance_ticks(14)
+	_expect(int(history_world.state.research.progress.get("archive_indexing", 0)) == 0 and int(research_lab.stock.recorded_data) == 1, "no research progress or inputs are consumed before the laboratory cycle finishes")
+	var research_trip_path := test_root + "/research-mid-cycle.json"
+	_expect(save_store.save_game(research_trip_path, history_world.snapshot()) == OK, "active research and the partial lab cycle save")
+	var research_trip_read: Dictionary = save_store.load_game(research_trip_path)
+	var research_reload = WorldScript.new()
+	_expect(bool(research_trip_read.get("ok", false)) and research_reload.restore_snapshot(research_trip_read.state) == OK, "active research reloads with its selected lab")
+	history_world.advance_ticks(1)
+	research_reload.advance_ticks(1)
+	_expect(history_world.snapshot() == research_reload.snapshot(), "lab production and research progress continue deterministically after reload")
+	_expect(int(history_world.state.research.progress.archive_indexing) == 3 and int(research_lab.stock.research_notes) == 0 and int(research_lab.stock.recorded_data) == 0 and int(research_lab.stock.energy_cells) == 0, "one real note is consumed for base progress plus one relevant archive bonus")
+	_expect(int(player_archive_station.stock.recorded_data) == 1, "laboratory research consumes a copy without consuming the source retained at the archive")
+
+	var research_branch = WorldScript.new()
+	research_branch.restore_snapshot(history_world.snapshot())
+	var branch_lab: Dictionary = research_branch._find_station(str(research_lab.id))
+	branch_lab.stock.research_notes = 3 # Isolated fixture for switching and pausing.
+	_expect(research_branch.research.pause(research_branch), "an active research project can be paused")
+	research_branch.advance_ticks(2)
+	_expect(int(branch_lab.stock.research_notes) == 3 and int(research_branch.state.research.progress.archive_indexing) == 3, "pausing retains notes and prior progress")
+	_expect(research_branch.research.start(research_branch, str(branch_lab.id), "media_engineering").ok, "the player can switch to another research project")
+	research_branch.advance_ticks(1)
+	_expect(int(research_branch.state.research.progress.media_engineering) == 2 and int(research_branch.state.research.progress.archive_indexing) == 3, "switching preserves the first project and gives no unrelated archive bonus")
+	research_branch.research.start(research_branch, str(branch_lab.id), "archive_indexing")
+	research_branch.advance_ticks(1)
+	_expect(int(research_branch.state.research.progress.archive_indexing) == 6 and int(research_branch.state.research.progress.media_engineering) == 2 and int(branch_lab.stock.research_notes) == 1, "resuming retains both project totals and consumes only one note")
+	_expect(save_store.save_game(test_root + "/research-switch.json", research_branch.snapshot()) == OK, "switched projects and remaining notes save")
+
+	var research_refs = WorldScript.new()
+	research_refs.restore_snapshot(history_world.snapshot())
+	_expect(research_refs.queue_fly_to("ship_001", "vellum_gate"), "a researcher can travel to another faction's archive")
+	research_refs.advance_ticks(10)
+	_expect(research_refs.dock_ship("ship_001", "vesper_archive").ok and research_refs.archives.read(research_refs, "ship_001", "vesper_archive").ok, "the Vesper archive is physically visited")
+	_expect(research_refs.research.references(research_refs, "archive_indexing").size() == 2 and research_refs.research.progress_per_note(research_refs, "archive_indexing") == 4, "two independent relevant archives contribute to the project")
+	research_refs.archives.read(research_refs, "ship_001", "vesper_archive")
+	_expect(research_refs.research.progress_per_note(research_refs, "archive_indexing") == 4, "revisiting an archive never stacks its bonus")
+	_expect(research_refs.queue_fly_to("ship_001", "verdant_trace"), "the player can continue to the Frontier archive")
+	research_refs.advance_ticks(10)
+	_expect(research_refs.dock_ship("ship_001", "frontier_archive").ok and research_refs.archives.read(research_refs, "ship_001", "frontier_archive").ok, "the Frontier collection can be visited")
+	_expect(research_refs.research.references(research_refs, "archive_indexing").size() == 3 and research_refs.research.progress_per_note(research_refs, "archive_indexing") == 4, "a third relevant source is shown while its additional bonus is capped")
+	_expect(research_refs.queue_fly_to("ship_001", "cinder_veil"), "the player can visit the Ravel archive")
+	research_refs.advance_ticks(10)
+	_expect(research_refs.dock_ship("ship_001", "ravel_archive").ok and research_refs.archives.read(research_refs, "ship_001", "ravel_archive").ok, "the Ravel collection can be visited")
+	_expect(research_refs.research.references(research_refs, "media_engineering").size() == 2 and research_refs.research.progress_per_note(research_refs, "media_engineering") == 4, "an archive matching multiple subjects is counted once, alongside another relevant archive")
+
+	var research_clamp = WorldScript.new()
+	research_clamp.restore_snapshot(history_world.snapshot())
+	var clamp_archive: Dictionary = research_clamp._find_station(str(player_archive_station.id))
+	var clamp_lab: Dictionary = research_clamp._find_station(str(research_lab.id))
+	clamp_archive.production[1].progress = 11
+	clamp_lab.stock.research_notes = 1
+	research_clamp.state.research.progress.archive_indexing = 22
+	research_clamp.advance_ticks(1)
+	_expect("archive_indexing" in research_clamp.state.research.completed and int(clamp_archive.production[1].progress) == 8, "an upgrade safely adjusts an already-started copying cycle")
+	_expect(save_store.save_game(test_root + "/research-upgrade-cycle.json", research_clamp.snapshot()) == OK, "an upgraded in-progress production cycle remains saveable")
+
+	# Manufacture enough copies and notes to finish a real project.
+	_expect(history_world.dock_ship("ship_001", "hearth_exchange").ok and history_world.trade("ship_001", "hearth_exchange", "energy_cells", 25, true).ok, "the player buys energy for the research supply chain")
+	_expect(history_world.queue_fly_to("ship_001", "vellum_gate"), "the player travels for blank-media material")
+	history_world.advance_ticks(10)
+	_expect(history_world.dock_ship("ship_001", "vellum_foundry").ok and history_world.trade("ship_001", "vellum_foundry", "alloy_plates", 1, true).ok, "the player buys alloy for blank media")
+	_expect(history_world.queue_fly_to("ship_001", "hearthreach"), "the player returns supplies to the archive")
+	history_world.advance_ticks(10)
+	_expect(history_world.dock_ship("ship_001", str(player_archive_station.id)).ok and history_world.transfer_player_station("ship_001", str(player_archive_station.id), "alloy_plates", 1, true).ok and history_world.transfer_player_station("ship_001", str(player_archive_station.id), "energy_cells", 8, true).ok, "the archive receives real inputs to make further copies")
+	history_world.advance_ticks(90)
+	_expect(int(player_archive_station.stock.recorded_data) == 8, "the scriptorium produces seven more copies while retaining its source")
+	_expect(history_world.transfer_player_station("ship_001", str(player_archive_station.id), "recorded_data", 7, false).ok and history_world.dock_ship("ship_001", str(research_lab.id)).ok and history_world.transfer_player_station("ship_001", str(research_lab.id), "recorded_data", 7, true).ok and history_world.transfer_player_station("ship_001", str(research_lab.id), "energy_cells", 14, true).ok, "seven physical copies and their energy arrive at the lab")
+	history_world.advance_ticks(105)
+	_expect("archive_indexing" in history_world.state.research.completed and history_world.state.research.active_project_id == "" and int(history_world.state.research.progress.archive_indexing) == 24, "the project completes only after consuming the required laboratory output")
+	_expect(int(player_archive_station.stock.recorded_data) == 1 and int(research_lab.stock.recorded_data) == 0 and int(research_lab.stock.energy_cells) == 0, "research preserves the source copy while consuming delivered copies and energy")
+	var player_copy_report: Dictionary = history_world.production_report(str(player_archive_station.id))[1]
+	var npc_copy_report: Dictionary = history_world.production_report("auroran_archive")[1]
+	_expect(int(player_copy_report.duration) == 9 and int(npc_copy_report.duration) == 12, "completed research accelerates the player's scriptorium but not an NPC archive")
+	var upgraded_plan: Dictionary = history_world.research.adjusted_recipe(history_world.state, history_world._find_recipe("data_reproduction"), true)
+	var upgraded_preview: Dictionary = history_world.construction.planner.preview(history_world.state, {"data_reproduction":1}, "all", [], "hearthreach")
+	_expect(int(upgraded_plan.cycle_ticks) == 9 and absf(float(_plan_row(upgraded_preview.wares, "recorded_data").supply) - 60.0 / 9.0) < 0.001, "the planner shows the researched production rate")
+	_expect(_total_credits(history_world.state) == history_credits and save_store.save_game(test_root + "/research-complete.json", history_world.snapshot()) == OK, "research and its full supply chain conserve credits and save")
+	_expect(not history_world.research.start(history_world, str(research_lab.id), "archive_indexing").ok, "completed research cannot be claimed twice")
+	var effects_world = WorldScript.new()
+	effects_world.restore_snapshot(history_world.snapshot())
+	var effects_lab: Dictionary = effects_world._find_station(str(research_lab.id))
+	effects_lab.stock.research_notes = 20 # Isolated fixture for the remaining project rewards.
+	_expect(effects_world.research.start(effects_world, str(effects_lab.id), "media_engineering").ok, "the media engineering project can start")
+	effects_world.advance_ticks(12)
+	_expect("media_engineering" in effects_world.state.research.completed and int(effects_world.production_report(str(player_archive_station.id))[0].duration) == 8 and int(effects_world.production_report("auroran_archive")[0].duration) == 10, "media engineering speeds player workshops without changing NPC workshops")
+	var media_preview: Dictionary = effects_world.construction.planner.preview(effects_world.state, {"media_fabrication":1}, "all", [], "hearthreach")
+	_expect(absf(float(_plan_row(media_preview.wares, "blank_media").supply) - 30.0) < 0.001, "the planner includes the researched media production rate")
+	_expect(effects_world.research.start(effects_world, str(effects_lab.id), "resource_surveying").ok, "the resource surveying project can start")
+	effects_world.advance_ticks(8)
+	_expect("resource_surveying" in effects_world.state.research.completed and int(effects_world.research.adjusted_recipe(effects_world.state, effects_world._find_recipe("ore_extraction"), true).cycle_ticks) == 6 and int(effects_world.research.adjusted_recipe(effects_world.state, effects_world._find_recipe("ore_extraction"), false).cycle_ticks) == 8, "resource surveying speeds player extractors without changing NPC recipes")
+	var ore_fixture: Dictionary = effects_world._find_station("cinder_depot").duplicate(true)
+	ore_fixture.id = "player_ore_research_fixture"
+	ore_fixture.owner = "player"
+	ore_fixture.credits = 0
+	ore_fixture.sell_prices = {}
+	ore_fixture.buy_prices = {}
+	for ware_id in ore_fixture.stock:
+		ore_fixture.stock[ware_id] = 0
+	ore_fixture.stock.energy_cells = 2
+	ore_fixture.deposits.ore = 8
+	ore_fixture.production = [{"recipe_id":"ore_extraction", "progress":0, "cycles":0, "status":"Waiting"}]
+	effects_world.state.stations.append(ore_fixture)
+	effects_world.advance_ticks(5)
+	_expect(int(ore_fixture.stock.ore) == 0 and int(ore_fixture.deposits.ore) == 8, "a researched extractor still waits for a complete cycle")
+	effects_world.advance_ticks(1)
+	_expect(int(ore_fixture.stock.ore) == 4 and int(ore_fixture.stock.energy_cells) == 1 and int(ore_fixture.deposits.ore) == 4, "the faster extractor consumes actual energy and finite ore per cycle")
+	_expect(save_store.save_game(test_root + "/all-research-effects.json", effects_world.snapshot()) == OK, "all three completed project effects remain saveable")
+	var reserve_world = WorldScript.new()
+	reserve_world.restore_snapshot(history_world.snapshot())
+	var shared_archive_lab: Dictionary = reserve_world._find_station(str(player_archive_station.id)).duplicate(true)
+	shared_archive_lab.id = "player_shared_archive_lab_fixture"
+	shared_archive_lab.storage_capacity = 160
+	for ware_id in shared_archive_lab.stock:
+		shared_archive_lab.stock[ware_id] = 0
+	shared_archive_lab.stock.recorded_data = 1
+	shared_archive_lab.stock.energy_cells = 2
+	shared_archive_lab.production = [{"recipe_id":"data_reproduction", "progress":0, "cycles":0, "status":"Waiting"}, {"recipe_id":"research_laboratory", "progress":14, "cycles":0, "status":"Waiting"}]
+	reserve_world.state.stations.append(shared_archive_lab)
+	reserve_world.advance_ticks(1)
+	_expect(int(shared_archive_lab.stock.recorded_data) == 1 and int(shared_archive_lab.stock.research_notes) == 0 and shared_archive_lab.production[1].status.contains("source"), "a shared laboratory cannot consume the last reusable scriptorium source")
+	shared_archive_lab.stock.recorded_data = 2 # Isolated fixture supplies a second copy.
+	reserve_world.advance_ticks(1)
+	_expect(int(shared_archive_lab.stock.recorded_data) == 1 and int(shared_archive_lab.stock.research_notes) == 1 and int(shared_archive_lab.stock.energy_cells) == 0, "a shared laboratory uses a spare data copy while the source stays reserved")
+	_expect(save_store.save_game(test_root + "/reserved-source.json", reserve_world.snapshot()) == OK, "a station with a reserved source remains saveable")
+
+	var old_research_state: Dictionary = saved_trip.duplicate(true)
+	_strip_research(old_research_state)
+	var old_research_credits := _total_credits(old_research_state)
+	_expect(save_store.save_game(test_root + "/before-research.json", old_research_state) == OK, "a pre-research archive save remains readable")
+	var old_research_read: Dictionary = save_store.load_game(test_root + "/before-research.json")
+	var research_upgrade = WorldScript.new()
+	_expect(bool(old_research_read.get("ok", false)) and research_upgrade.restore_snapshot(old_research_read.state) == OK, "old saves gain the inactive research system")
+	_expect(research_upgrade.state.ships == old_research_state.ships and research_upgrade.state.ledger == old_research_state.ledger and _total_credits(research_upgrade.state) == old_research_credits and research_upgrade.state.research.completed.is_empty(), "research migration preserves property and money without free progress")
+	_expect(int(research_upgrade._find_station("hearth_exchange").stock.research_notes) == 0, "research migration does not add free notes")
+	var bad_research: Dictionary = history_world.snapshot()
+	bad_research.research.progress.archive_indexing = 25
+	_expect(save_store.save_game(test_root + "/bad-research.json", bad_research) != OK, "invalid research progress is rejected")
+	var future_research: Dictionary = history_world.snapshot()
+	future_research.research_version = 2
+	var future_research_path := test_root + "/research-version.json"
+	_expect(save_store.save_game(future_research_path, history_world.snapshot()) == OK and save_store.save_game(future_research_path, history_world.snapshot()) == OK, "research version test retains a valid backup")
+	var future_research_payload := Marshalls.variant_to_base64(future_research, false)
+	var future_research_file := FileAccess.open(future_research_path, FileAccess.WRITE)
+	future_research_file.store_string(JSON.stringify({"format_version":1, "payload":future_research_payload, "checksum":future_research_payload.sha256_text()}))
+	future_research_file.close()
+	_expect(save_store.load_game(future_research_path).get("reason") == "unsupported", "future research data cannot silently fall back to an older save")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
@@ -1671,6 +1853,41 @@ func _run() -> void:
 	screen.find_child("PlanStationButton", true, false).pressed.emit()
 	screen.find_child("PlanAdd_data_reproduction", true, false).pressed.emit()
 	_expect(screen.plan_result.text.contains("Recorded Data") and screen.plan_result.text.contains("reusable source"), "the planner explains the reusable source needed for a player scriptorium")
+	screen.queue_free()
+	await process_frame
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-research.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_expect(screen.world.restore_snapshot(research_refs.snapshot()) == OK, "research screen scenario restores a built laboratory and visited archives")
+	screen._refresh_world_display()
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in screen.trade_station_picker.item_count:
+		if screen.trade_station_picker.get_item_metadata(index) == research_lab.id:
+			screen.trade_station_picker.select(index)
+	screen._on_trade_selection(0)
+	_expect(screen.trade_research_button.visible, "a player laboratory offers research projects from its station screen")
+	screen.find_child("ResearchButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.research_screen) and screen.research_picker.item_count == 3, "research screen lists the available projects")
+	_expect(screen.research_info.text.contains("bonus cap reached") and screen.research_info.text.contains("+1 per note"), "research screen distinguishes contributing archives from sources beyond the cap")
+	for index in screen.research_picker.item_count:
+		if screen.research_picker.get_item_metadata(index) == "resource_surveying":
+			screen.research_picker.select(index)
+	screen.research_picker.item_selected.emit(screen.research_picker.selected)
+	_expect(screen.research_info.text.contains("Auroran Hall of Memory") and screen.research_info.text.contains("Current progress per note: 4"), "project details name relevant archives and their exact bonus")
+	screen.find_child("StartResearchButton", true, false).pressed.emit()
+	_expect(screen.world.state.research.active_project_id == "resource_surveying" and bool(save_store.load_game(screen.save_path).get("ok", false)), "starting research through the interface saves the assignment")
+	screen.find_child("PauseResearchButton", true, false).pressed.emit()
+	_expect(screen.world.state.research.active_project_id == "" and screen.research_feedback.text.contains("retained"), "research screen pauses without discarding progress")
+	await process_frame
+	var research_close_control: Control = screen.find_child("CloseResearchButton", true, false)
+	_expect(research_close_control.size.y >= 44.0 and research_close_control.global_position.y + research_close_control.size.y <= float(root.size.y), "research controls are touch-sized and visible in landscape")
+	screen.find_child("CloseResearchButton", true, false).pressed.emit()
+	_expect(not is_instance_valid(screen.research_screen) and is_instance_valid(screen.trade_screen), "closing research returns to the station")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

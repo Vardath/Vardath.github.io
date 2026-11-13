@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "ware": {"id":"research_notes", "name":"Research Notes", "volume":1},
+  "recipe": {"id":"research_laboratory", "name":"Research Laboratory", "cycle_ticks":15, "inputs":{"recorded_data":1,"energy_cells":2}, "outputs":{"research_notes":1}},
+  "blueprint": {"fee":900, "ticks":20, "materials":{"alloy_plates":14}, "storage":80},
+  "projects": [
+    {
+      "id":"archive_indexing", "name":"Archive Indexing",
+      "description":"Develop clearer indexes and safer ways to retrieve historical records.",
+      "topics":["Ancient traditions", "Trade", "Cultural continuity"],
+      "target":24,
+      "reward":"Your Archive Scriptoria take 25% less time per copying cycle.",
+      "effect":{"recipe_id":"data_reproduction", "cycle_ticks":9}
+    },
+    {
+      "id":"media_engineering", "name":"Media Engineering",
+      "description":"Improve the machines that prepare durable recording media.",
+      "topics":["Early cultures", "Materials engineering", "Industry"],
+      "target":24,
+      "reward":"Your Media Workshops take 20% less time per production cycle.",
+      "effect":{"recipe_id":"media_fabrication", "cycle_ticks":8}
+    },
+    {
+      "id":"resource_surveying", "name":"Resource Surveying",
+      "description":"Use environmental records to improve extraction planning.",
+      "topics":["Living worlds", "Extreme environments", "Materials engineering"],
+      "target":24,
+      "reward":"Your Ore Extractors take 25% less time per cycle; deposits remain finite.",
+      "effect":{"recipe_id":"ore_extraction", "cycle_ticks":6}
+    }
+  ]
+}

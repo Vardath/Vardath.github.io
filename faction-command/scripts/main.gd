@@ -61,6 +61,13 @@ var trade_sell_button: Button
 var trade_archive_button: Button
 var trade_production_heading: Label
 var archive_screen: Control
+var trade_research_button: Button
+var research_screen: Control
+var research_picker: OptionButton
+var research_info: Label
+var research_feedback: Label
+var research_start_button: Button
+var research_pause_button: Button
 var plan_screen: Control
 var plan_mode: OptionButton
 var plan_module_counts: Dictionary = {}
@@ -101,6 +108,8 @@ func _process(delta: float) -> void:
 			_update_trade_screen()
 		if is_instance_valid(build_screen):
 			_update_build_screen()
+		if is_instance_valid(research_screen):
+			_update_research_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -1165,6 +1174,10 @@ func _open_trade() -> void:
 	trade_archive_button.name = "ReadArchiveButton"
 	trade_archive_button.pressed.connect(_open_archive)
 	controls.add_child(trade_archive_button)
+	trade_research_button = _button("Research projects")
+	trade_research_button.name = "ResearchButton"
+	trade_research_button.pressed.connect(_open_research)
+	controls.add_child(trade_research_button)
 	controls.add_child(_label("WARE", 12, ACCENT))
 	trade_ware_picker = OptionButton.new()
 	trade_ware_picker.name = "TradeWarePicker"
@@ -1284,7 +1297,7 @@ func _open_archive() -> void:
 	records.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	records.add_theme_constant_override("separation", 12)
 	scroll.add_child(records)
-	var overview := _wrapped_label("HOMEWORLD\n%s\n\nRESEARCH SUBJECTS\n%s\nResearch links are not available yet." % [entry.world_type, ", ".join(entry.research_subjects)], 15, TEXT)
+	var overview := _wrapped_label("HOMEWORLD\n%s\n\nRESEARCH SUBJECTS\n%s\nSubjects from visited archives can support research." % [entry.world_type, ", ".join(entry.research_subjects)], 15, TEXT)
 	overview.name = "ArchiveOverview"
 	records.add_child(overview)
 	for index in entry.records.size():
@@ -1306,6 +1319,144 @@ func _close_archive() -> void:
 	archive_screen = null
 
 
+func _open_research() -> void:
+	if is_instance_valid(research_screen):
+		return
+	var station: Dictionary = world._find_station(_trade_station_id())
+	if station.is_empty() or station.owner != world.state.player_faction_id or not world.research.has_lab(station):
+		trade_feedback.text = "A completed player research laboratory is required."
+		return
+	research_screen = Control.new()
+	research_screen.name = "ResearchScreen"
+	research_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(research_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.95)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	research_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	research_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(900, 570)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label("RESEARCH PROJECTS", 22, TEXT))
+	column.add_child(_wrapped_label("Laboratory: %s · Completed projects improve your faction's stations." % station.name, 14, MUTED))
+	research_picker = OptionButton.new()
+	research_picker.name = "ResearchProjectPicker"
+	research_picker.custom_minimum_size.y = 44
+	research_picker.add_theme_font_size_override("font_size", 15)
+	var selected := 0
+	for project_id in world.research.project_order:
+		var project: Dictionary = world.research.definition(str(project_id))
+		research_picker.add_item(str(project.name))
+		research_picker.set_item_metadata(research_picker.item_count - 1, project_id)
+		if project_id == world.state.research.active_project_id:
+			selected = research_picker.item_count - 1
+	research_picker.select(selected)
+	research_picker.item_selected.connect(_on_research_selection)
+	column.add_child(research_picker)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	research_info = _wrapped_label("", 15, TEXT)
+	research_info.name = "ResearchInfo"
+	research_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(research_info)
+	research_feedback = _wrapped_label("", 13, ACCENT)
+	research_feedback.name = "ResearchFeedback"
+	column.add_child(research_feedback)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	column.add_child(actions)
+	research_start_button = _button("Start project here")
+	research_start_button.name = "StartResearchButton"
+	research_start_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	research_start_button.pressed.connect(_start_research)
+	actions.add_child(research_start_button)
+	research_pause_button = _button("Pause research")
+	research_pause_button.name = "PauseResearchButton"
+	research_pause_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	research_pause_button.pressed.connect(_pause_research)
+	actions.add_child(research_pause_button)
+	var close_button := _button("Close")
+	close_button.name = "CloseResearchButton"
+	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	close_button.pressed.connect(_close_research)
+	actions.add_child(close_button)
+	_update_research_screen()
+
+
+func _selected_research_id() -> String:
+	return str(research_picker.get_item_metadata(research_picker.selected))
+
+
+func _on_research_selection(_index: int) -> void:
+	research_feedback.text = ""
+	_update_research_screen()
+
+
+func _update_research_screen() -> void:
+	if not is_instance_valid(research_screen):
+		return
+	var station: Dictionary = world._find_station(_trade_station_id())
+	var project_id := _selected_research_id()
+	var project: Dictionary = world.research.definition(project_id)
+	if station.is_empty() or project.is_empty():
+		return
+	var state: Dictionary = world.state.research
+	var completed: bool = project_id in state.completed
+	var active: bool = state.active_project_id == project_id and state.lab_station_id == station.id
+	var status := "Completed" if completed else ("Active" if active else "Not active")
+	if not completed and not active and state.active_project_id == project_id:
+		status = "Active at " + _station_name(str(state.lab_station_id))
+	if active and int(station.stock.get("research_notes", 0)) == 0:
+		status = "Waiting for research notes"
+	var references: Array = world.research.references(world, project_id)
+	var bonus: int = mini(world.research.MAX_ARCHIVE_BONUS, references.size())
+	var sources: Array[String] = []
+	for index in references.size():
+		var reference: Dictionary = references[index]
+		var contribution := "+1 per note" if index < world.research.MAX_ARCHIVE_BONUS else "bonus cap reached"
+		sources.append("%s · %s · %s" % [reference.name, ", ".join(reference.topics), contribution])
+	var lines: Array[String] = []
+	lines.append("%s\n%s\nProgress: %d / %d · %s" % [project.name, project.description, int(state.progress.get(project_id, 0)), int(project.target), status])
+	lines.append("REWARD\n" + str(project.reward))
+	lines.append("ARCHIVE REFERENCES\nEach note adds %d base progress, plus 1 per relevant visited archive (maximum %d). Current progress per note: %d.\n%s" % [world.research.BASE_PROGRESS, world.research.MAX_ARCHIVE_BONUS, world.research.BASE_PROGRESS + bonus, "\n".join(sources) if not sources.is_empty() else "No relevant archives visited yet."])
+	lines.append("LABORATORY\nResearch Notes in storage: %d\nThe laboratory makes one note from one Recorded Data and two Energy Cells every 15 ticks." % int(station.stock.get("research_notes", 0)))
+	lines.append("Switching projects preserves each project's progress. Only the selected laboratory supplies the active project.")
+	research_info.text = "\n\n".join(lines)
+	research_start_button.disabled = completed or active or not world.research.has_lab(station)
+	research_start_button.text = "Project active here" if active else "Start project here"
+	research_pause_button.disabled = str(state.active_project_id).is_empty()
+
+
+func _start_research() -> void:
+	var result: Dictionary = world.research.start(world, _trade_station_id(), _selected_research_id())
+	research_feedback.text = str(result.message)
+	if result.ok and not _save_current_game():
+		research_feedback.text += " Save failed."
+	_update_research_screen()
+
+
+func _pause_research() -> void:
+	if world.research.pause(world):
+		research_feedback.text = "Research paused; completed work is retained."
+		if not _save_current_game():
+			research_feedback.text += " Save failed."
+	_update_research_screen()
+
+
+func _close_research() -> void:
+	if is_instance_valid(research_screen):
+		research_screen.queue_free()
+	research_screen = null
+
+
 func _update_trade_screen() -> void:
 	if not is_instance_valid(trade_screen):
 		return
@@ -1314,6 +1465,7 @@ func _update_trade_screen() -> void:
 	var ware: Dictionary = world._find_ware(_trade_ware_id())
 	var own_station: bool = station.owner == world.state.player_faction_id
 	trade_archive_button.visible = station.has("archive")
+	trade_research_button.visible = own_station and world.research.has_lab(station)
 	trade_archive_button.disabled = ship.docked_at != station.id
 	trade_archive_button.text = "Read historical records" if ship.docked_at == station.id else "Dock to read records"
 	trade_buy_button.text = "Take from station" if own_station else "Buy"
@@ -1402,5 +1554,6 @@ func _perform_trade(buy: bool) -> void:
 
 func _close_trade() -> void:
 	_close_archive()
+	_close_research()
 	trade_screen.queue_free()
 	trade_screen = null

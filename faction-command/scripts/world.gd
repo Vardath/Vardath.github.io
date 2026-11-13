@@ -8,12 +8,14 @@ const NPCTradeScript = preload("res://scripts/npc_trade.gd")
 const ConstructionScript = preload("res://scripts/construction.gd")
 const BuildSupplyScript = preload("res://scripts/build_supply.gd")
 const ArchivesScript = preload("res://scripts/archives.gd")
+const ResearchScript = preload("res://scripts/research.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
 var construction = ConstructionScript.new()
 var build_supply = BuildSupplyScript.new()
 var archives = ArchivesScript.new()
+var research = ResearchScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -52,6 +54,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if archives.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if research.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -77,6 +81,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = archives.prepare(restored)
+	if result != OK:
+		return result
+	result = research.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -196,6 +203,7 @@ func advance_ticks(count: int) -> void:
 				build_supply.tick(self, ship)
 		construction.tick(self)
 		archives.tick(self)
+		research.tick(self)
 
 
 func snapshot() -> Dictionary:
@@ -267,13 +275,30 @@ func _station_deposits(station: Dictionary) -> Dictionary:
 	return station.deposits
 
 
-func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String:
+func _station_reservations(station: Dictionary) -> Dictionary:
+	var reserved: Dictionary = {}
+	for module in station.production:
+		var recipe := _find_recipe(str(module.recipe_id))
+		if recipe.is_empty():
+			continue
+		for ware_id in recipe.get("catalysts", {}):
+			if bool(recipe.get("catalog_source", false)) and station.has("archive") and ware_id == "recorded_data":
+				continue
+			reserved[ware_id] = maxi(int(reserved.get(ware_id, 0)), int(recipe.catalysts[ware_id]))
+	return reserved
+
+
+func _production_block_reason(station: Dictionary, recipe: Dictionary, reservations: Variant = null) -> String:
+	var reserved: Dictionary = _station_reservations(station) if reservations == null else reservations
 	if bool(recipe.get("catalog_source", false)) and station.has("archive") and station.archive.status != "Operational":
 		return "Archive needs upkeep"
 	for ware_id in recipe.inputs:
 		if int(station.stock.get(ware_id, 0)) < int(recipe.inputs[ware_id]):
 			var ware := _find_ware(str(ware_id))
 			return "Needs " + str(ware.get("name", ware_id))
+		if int(station.stock.get(ware_id, 0)) - int(recipe.inputs[ware_id]) < int(reserved.get(ware_id, 0)):
+			var ware := _find_ware(str(ware_id))
+			return "Keep " + str(ware.get("name", ware_id)) + " source"
 	for ware_id in recipe.get("catalysts", {}):
 		if bool(recipe.get("catalog_source", false)) and station.has("archive") and ware_id == "recorded_data":
 			continue
@@ -297,12 +322,14 @@ func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String
 
 
 func _tick_production(station: Dictionary) -> void:
+	var reservations := _station_reservations(station)
 	for module in station.production:
 		var recipe := _find_recipe(str(module.recipe_id))
 		if recipe.is_empty():
 			module.status = "Invalid recipe"
 			continue
-		var blocked := _production_block_reason(station, recipe)
+		recipe = research.adjusted_recipe(state, recipe, station.owner == state.player_faction_id)
+		var blocked := _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
 			module.status = blocked
 			continue
@@ -321,7 +348,7 @@ func _tick_production(station: Dictionary) -> void:
 			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
-		blocked = _production_block_reason(station, recipe)
+		blocked = _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
 			module.status = blocked
 
@@ -331,11 +358,13 @@ func production_report(station_id: String) -> Array:
 	var reports: Array = []
 	if station.is_empty():
 		return reports
+	var reservations := _station_reservations(station)
 	for module in station.production:
 		var recipe := _find_recipe(str(module.recipe_id))
 		if recipe.is_empty():
 			continue
-		var reason := _production_block_reason(station, recipe)
+		recipe = research.adjusted_recipe(state, recipe, station.owner == state.player_faction_id)
+		var reason := _production_block_reason(station, recipe, reservations)
 		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "catalysts":recipe.get("catalysts", {}).duplicate(true), "catalog_source":bool(recipe.get("catalog_source", false)), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
 	return reports
 

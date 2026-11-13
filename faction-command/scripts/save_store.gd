@@ -5,6 +5,7 @@ extends RefCounted
 const FORMAT_VERSION := 1
 const MAX_SAVE_BYTES := 64 * 1024 * 1024
 const ArchivesScript = preload("res://scripts/archives.gd")
+const ResearchScript = preload("res://scripts/research.gd")
 
 
 func has_any_save(path: String) -> bool:
@@ -100,6 +101,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("archive_version") and _is_nonnegative_integer(decoded.archive_version) and decoded.archive_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("research_version") and _is_nonnegative_integer(decoded.research_version) and decoded.research_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -169,31 +172,72 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
+		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version") and not state.has("research_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
 	if not state.has("production_version"):
-		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
+		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version") and not state.has("research_version")
 	if not _valid_production(state):
 		return false
 	if not state.has("logistics_version"):
-		return not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
+		return not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version") and not state.has("research_version")
 	if not _valid_logistics(state):
 		return false
 	if not state.has("player_roles_version"):
-		return not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
+		return not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version") and not state.has("research_version")
 	if not _valid_player_roles(state):
 		return false
 	if not state.has("construction_version"):
-		return not state.has("build_supply_version") and not state.has("archive_version")
+		return not state.has("build_supply_version") and not state.has("archive_version") and not state.has("research_version")
 	if not _valid_construction(state, factions, sectors):
 		return false
 	if not state.has("build_supply_version"):
-		return not state.has("archive_version")
+		return not state.has("archive_version") and not state.has("research_version")
 	if not _valid_build_supply(state):
 		return false
-	return not state.has("archive_version") or _valid_archives(state)
+	if not state.has("archive_version"):
+		return not state.has("research_version")
+	if not _valid_archives(state):
+		return false
+	return not state.has("research_version") or _valid_research(state)
+
+
+func _valid_research(state: Dictionary) -> bool:
+	if state.research_version != 1 or not state.get("research") is Dictionary:
+		return false
+	var data = ResearchScript.new()
+	if data._load_definitions() != OK:
+		return false
+	var found_ware := false
+	var found_recipe := false
+	for ware in state.wares:
+		if ware.id == "research_notes":
+			found_ware = true
+	for recipe in state.recipes:
+		if recipe.id == "research_laboratory":
+			found_recipe = true
+	if not found_ware or not found_recipe or not state.construction_blueprints.has("research_laboratory"):
+		return false
+	var research: Dictionary = state.research
+	if not research.get("completed") is Array or not research.get("progress") is Dictionary or not research.get("active_project_id") is String or not research.get("lab_station_id") is String:
+		return false
+	var completed: Dictionary = {}
+	for id in research.completed:
+		if not id is String or not data.projects.has(id) or completed.has(id):
+			return false
+		completed[id] = true
+	for id in research.progress:
+		if not data.projects.has(id) or not _is_nonnegative_integer(research.progress[id]) or int(research.progress[id]) > int(data.projects[id].target):
+			return false
+		if (int(research.progress[id]) == int(data.projects[id].target)) != completed.has(id):
+			return false
+	for id in completed:
+		if not research.progress.has(id) or int(research.progress[id]) != int(data.projects[id].target):
+			return false
+	if research.active_project_id.is_empty():
+		return research.lab_station_id.is_empty()
+	return data.projects.has(research.active_project_id) and not completed.has(research.active_project_id) and not research.lab_station_id.is_empty()
 
 
 func _valid_archives(state: Dictionary) -> bool:
