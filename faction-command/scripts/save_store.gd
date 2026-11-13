@@ -95,7 +95,7 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("player_roles_version") and _is_nonnegative_integer(decoded.player_roles_version) and decoded.player_roles_version != 1:
 		return {"ok": false, "reason": "unsupported"}
-	if decoded.has("construction_version") and _is_nonnegative_integer(decoded.construction_version) and decoded.construction_version != 1:
+	if decoded.has("construction_version") and _is_nonnegative_integer(decoded.construction_version) and decoded.construction_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("build_supply_version") and _is_nonnegative_integer(decoded.build_supply_version) and decoded.build_supply_version != 1:
 		return {"ok": false, "reason": "unsupported"}
@@ -522,7 +522,7 @@ func _valid_player_roles(state: Dictionary) -> bool:
 
 
 func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
-	if state.construction_version != 1 or not state.get("construction_blueprints") is Dictionary or not state.get("construction_resources") is Dictionary or not state.get("build_sites") is Array or not _is_nonnegative_integer(state.get("next_build_site_id")) or int(state.next_build_site_id) < 1:
+	if state.construction_version not in [1, 2] or not state.get("construction_blueprints") is Dictionary or not state.get("construction_resources") is Dictionary or not state.get("build_sites") is Array or not _is_nonnegative_integer(state.get("next_build_site_id")) or int(state.next_build_site_id) < 1:
 		return false
 	var wares: Dictionary = {}
 	for ware in state.wares:
@@ -566,10 +566,20 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 	for site in state.build_sites:
 		if not site is Dictionary or not site.get("id") is String or str(site.id).is_empty() or sites.has(site.id) or not site.get("station_id") is String or station_sites.has(site.station_id) or not stations.has(site.station_id) or not site.get("name") is String or not sectors.has(site.get("sector")) or not _is_nonnegative_integer(site.get("fee")) or int(site.fee) < 1 or not site.get("paused") is bool or not _is_nonnegative_integer(site.get("completed")) or not site.get("builder_id") is String or not site.get("status") is String or not site.get("build_storage") is Dictionary or not site.get("tasks") is Array or site.tasks.is_empty() or site.tasks.size() > 300 or int(site.completed) > site.tasks.size():
 			return false
+		var cancelled := false
+		var refunded_fee := 0
+		if state.construction_version == 2:
+			if not site.get("cancelled") is bool or not _is_nonnegative_integer(site.get("refunded_fee")):
+				return false
+			cancelled = bool(site.cancelled)
+			refunded_fee = int(site.refunded_fee)
+			if (not cancelled and refunded_fee != 0) or (cancelled and site.paused):
+				return false
 		var station: Dictionary = stations[site.station_id]
 		if station.owner != state.player_faction_id or station.sector != site.sector or station.get("resource_sector", "") != site.sector or station.production.size() != int(site.completed):
 			return false
 		var required: Dictionary = {}
+		var unstarted_fee := 0
 		var storage_total := 0
 		for index in range(site.tasks.size()):
 			var task: Variant = site.tasks[index]
@@ -580,6 +590,10 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 					return false
 				if not task.started:
 					required[ware_id] = int(required.get(ware_id, 0)) + int(task.materials[ware_id])
+			if not task.started:
+				if not state.construction_blueprints.has(task.recipe_id):
+					return false
+				unstarted_fee += int(state.construction_blueprints[task.recipe_id].fee)
 			if index < int(site.completed):
 				if not task.started or int(task.progress) != int(task.duration) or station.production[index].recipe_id != task.recipe_id:
 					return false
@@ -591,6 +605,11 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 				return false
 		if int(station.storage_capacity) != storage_total:
 			return false
+		if state.construction_version == 2 and cancelled and (refunded_fee != unstarted_fee or refunded_fee > int(site.fee)):
+			return false
+		if cancelled and not str(site.builder_id).is_empty():
+			if int(site.completed) >= site.tasks.size() or not bool(site.tasks[int(site.completed)].started):
+				return false
 		for ware_id in site.build_storage:
 			if not wares.has(ware_id) or not _is_nonnegative_integer(site.build_storage[ware_id]) or int(site.build_storage[ware_id]) > int(required.get(ware_id, 0)):
 				return false
