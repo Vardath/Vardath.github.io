@@ -177,6 +177,36 @@ func set_paused(world: RefCounted, site_id: String, paused: bool) -> bool:
 	return true
 
 
+## Completed modules and an in-progress module cannot be moved. Entries
+## that have not consumed materials are safe to swap without changing stock,
+## budgets, production or the builder's existing travel orders.
+func first_editable_index(site: Dictionary) -> int:
+	var index := int(site.completed)
+	if index < site.tasks.size() and bool(site.tasks[index].started):
+		index += 1
+	return index
+
+
+func move_queued_module(world: RefCounted, site_id: String, index: int, direction: int) -> Dictionary:
+	var site := find_site(world, site_id)
+	if site.is_empty() or bool(site.get("cancelled", false)):
+		return {"ok":false, "message":"Choose an active construction site with queued modules."}
+	if direction != -1 and direction != 1:
+		return {"ok":false, "message":"Move one position up or down."}
+	var other_index := index + direction
+	var first := first_editable_index(site)
+	if index < first or other_index < first or index >= site.tasks.size() or other_index >= site.tasks.size():
+		return {"ok":false, "message":"Completed or active modules cannot move, and a queued module cannot move beyond the queue."}
+	if bool(site.tasks[index].started) or bool(site.tasks[other_index].started):
+		return {"ok":false, "message":"Only unstarted modules can be reordered."}
+	var displaced: Dictionary = site.tasks[other_index]
+	site.tasks[other_index] = site.tasks[index]
+	site.tasks[index] = displaced
+	if str(site.builder_id).is_empty():
+		site.status = "Awaiting builder" if _ready_for_work(site) else "Needs materials"
+	return {"ok":true, "message":"Queued module moved; material requirements and paid fees are unchanged.", "new_index":other_index}
+
+
 func _ready_for_work(site: Dictionary) -> bool:
 	if bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size():
 		return false
