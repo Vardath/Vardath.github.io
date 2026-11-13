@@ -32,6 +32,14 @@ var detail_title: Label
 var detail_body: Label
 var sector_picker: OptionButton
 var ship_brief: Label
+var ship_button: Button
+var property_count_label: Label
+var property_filter: LineEdit
+var property_picker: OptionButton
+var property_action_button: Button
+var property_picker_signature := ""
+var selected_property_key := ""
+var active_player_ship_id := ""
 var role_picker: OptionButton
 var role_hint: Label
 var order_target: Label
@@ -327,6 +335,9 @@ func _enter_world() -> void:
 	paused = true
 	_elapsed = 0.0
 	_last_saved_tick = int(world.state.tick)
+	active_player_ship_id = str(world.state.ships[0].id)
+	selected_property_key = "ship|" + active_player_ship_id
+	property_picker_signature = ""
 	selected_sector = str(world.state.ships[0].sector)
 	selected_view = "sector"
 	start_screen.queue_free()
@@ -399,14 +410,40 @@ func _build_ui() -> void:
 	root.add_child(content)
 
 	var property_panel := _panel()
-	property_panel.custom_minimum_size.x = 210
+	property_panel.custom_minimum_size.x = 235
 	content.add_child(property_panel)
+	var property_scroll := ScrollContainer.new()
+	property_scroll.name = "PropertyScroll"
+	property_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	property_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	property_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	property_panel.add_child(property_scroll)
 	var property_list := VBoxContainer.new()
+	property_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	property_list.add_theme_constant_override("separation", 8)
-	property_panel.add_child(property_list)
+	property_scroll.add_child(property_list)
 	property_list.add_child(_label("YOUR PROPERTY", 14, ACCENT))
-	property_list.add_child(_label("1 SHIP", 12, MUTED))
-	var ship_button := _button("◈   First Light")
+	property_count_label = _label("", 12, MUTED)
+	property_count_label.name = "PropertyCount"
+	property_list.add_child(property_count_label)
+	property_filter = LineEdit.new()
+	property_filter.name = "PropertySearch"
+	property_filter.placeholder_text = "Find ship, station or site"
+	property_filter.custom_minimum_size.y = 40
+	property_filter.add_theme_font_size_override("font_size", 13)
+	property_filter.text_changed.connect(_on_property_filter)
+	property_list.add_child(property_filter)
+	property_picker = OptionButton.new()
+	property_picker.name = "PropertyPicker"
+	property_picker.custom_minimum_size.y = 44
+	property_picker.add_theme_font_size_override("font_size", 13)
+	property_picker.item_selected.connect(_on_property_picked)
+	property_list.add_child(property_picker)
+	property_action_button = _button("Show selected property")
+	property_action_button.name = "OpenPropertyButton"
+	property_action_button.pressed.connect(_open_selected_property_action)
+	property_list.add_child(property_action_button)
+	ship_button = _button("◈   First Light")
 	ship_button.name = "ShipButton"
 	ship_button.pressed.connect(_show_ship)
 	property_list.add_child(ship_button)
