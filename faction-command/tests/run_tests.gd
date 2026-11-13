@@ -1068,6 +1068,55 @@ func _run() -> void:
 	future_construction_file.close()
 	_expect(save_store.load_game(construction_version_path).get("reason") == "unsupported", "future construction data is not silently replaced by an older backup")
 
+	# The construction queue may be reprioritised only before material consumption.
+	var reorder_world = WorldScript.new()
+	_expect(reorder_world.load_starter() == OK, "construction reorder scenario loads")
+	_disable_npc_trading(reorder_world)
+	var reorder_plan: Dictionary = reorder_world.construction.place(reorder_world, "hearthreach", {"alloy_smelting":1}, "self", [])
+	var reorder_site: Dictionary = reorder_world.construction.find_site(reorder_world, str(reorder_plan.site_id))
+	var initial_reorder_ids: Array[String] = []
+	for task in reorder_site.tasks:
+		initial_reorder_ids.append(str(task.recipe_id))
+	var reorder_funds := _total_credits(reorder_world.state)
+	var before_required: Dictionary = reorder_world.construction.remaining_materials(reorder_site).duplicate(true)
+	var reorder_ledger: Array = reorder_world.state.ledger.duplicate(true)
+	_expect(reorder_site.tasks.size() == 3 and reorder_world.construction.first_editable_index(reorder_site) == 0, "all queued modules are initially editable")
+	var reorder_first: Dictionary = reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 2, -1)
+	_expect(reorder_first.ok and int(reorder_first.new_index) == 1 and reorder_site.tasks[1].recipe_id == initial_reorder_ids[2] and reorder_site.tasks[2].recipe_id == initial_reorder_ids[1], "moving a pending module up swaps exactly two unstarted tasks")
+	_expect(reorder_world.construction.remaining_materials(reorder_site) == before_required and _total_credits(reorder_world.state) == reorder_funds and reorder_world.state.ledger == reorder_ledger, "reordering never fabricates materials or charges or refunds fees")
+	var reverse_reorder: Dictionary = reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 1, 1)
+	_expect(reverse_reorder.ok and reorder_site.tasks[1].recipe_id == initial_reorder_ids[1] and reorder_site.tasks[2].recipe_id == initial_reorder_ids[2], "moving a queued module down restores original sequence")
+	var invalid_move_state: Dictionary = reorder_world.snapshot()
+	_expect(not reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 0, -1).ok and not reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 0, 2).ok and reorder_world.snapshot() == invalid_move_state, "out-of-bounds and multi-position queue changes are rejected atomically")
+	var reorder_path := test_root + "/construction-reordered.json"
+	_expect(save_store.save_game(reorder_path, reorder_world.snapshot()) == OK, "reordered construction queue is saveable")
+	var reorder_read: Dictionary = save_store.load_game(reorder_path)
+	var reorder_resume = WorldScript.new()
+	_expect(bool(reorder_read.get("ok", false)) and reorder_resume.restore_snapshot(reorder_read.state) == OK and reorder_resume.snapshot() == reorder_world.snapshot(), "queued priority persists through save/load")
+	reorder_world._find_station("vellum_foundry").stock.alloy_plates -= 28
+	reorder_world.state.ships[0].cargo.alloy_plates = 28
+	reorder_world.dock_ship("ship_001", str(reorder_site.station_id))
+	reorder_world.construction.deliver(reorder_world, "ship_001", str(reorder_site.id))
+	for _step in range(35):
+		reorder_world.advance_ticks(1)
+		if reorder_site.tasks[0].started:
+			break
+	_expect(reorder_site.tasks[0].started and reorder_world.construction.first_editable_index(reorder_site) == 1, "active construction locks the started module and leaves later modules editable")
+	var started_move_state: Dictionary = reorder_world.snapshot()
+	_expect(not reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 0, 1).ok and reorder_world.snapshot() == started_move_state, "an already started module cannot be moved while materials are committed")
+	_expect(reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 2, -1).ok and reorder_site.tasks[1].recipe_id == initial_reorder_ids[2], "later unstarted modules can still be reordered during active construction")
+	_expect(save_store.save_game(test_root + "/construction-reorder-active.json", reorder_world.snapshot()) == OK, "reordering behind an active builder remains saveable")
+	reorder_world.advance_ticks(100)
+	_expect(int(reorder_site.completed) == 3 and reorder_world._find_station(str(reorder_site.station_id)).production.size() == 3, "builder eventually commissions every module exactly once in revised order")
+	var finished_move_state: Dictionary = reorder_world.snapshot()
+	_expect(not reorder_world.construction.move_queued_module(reorder_world, str(reorder_site.id), 2, -1).ok and reorder_world.snapshot() == finished_move_state, "completed construction sequence is locked")
+	var reorder_cancel = WorldScript.new()
+	reorder_cancel.load_starter()
+	var cancelled_reorder_id: String = reorder_cancel.construction.place(reorder_cancel, "hearthreach", {"solar_cells":2}, "self", []).site_id
+	reorder_cancel.construction.cancel(reorder_cancel, cancelled_reorder_id)
+	var cancelled_reorder_state: Dictionary = reorder_cancel.snapshot()
+	_expect(not reorder_cancel.construction.move_queued_module(reorder_cancel, cancelled_reorder_id, 1, -1).ok and reorder_cancel.snapshot() == cancelled_reorder_state, "cancelled build sites cannot resume work by reordering their old queue")
+
 	# Cancellation refunds only unstarted work and never materialises cargo.
 	var cancel_world = WorldScript.new()
 	_expect(cancel_world.load_starter() == OK, "cancellation test world loads")
@@ -2026,6 +2075,8 @@ func _run() -> void:
 	_expect(screen.world.state.build_sites.size() == 1 and int(screen.world.state.starting_credits) == 24700, "a repeated placement action cannot charge twice after the planner closes")
 	var ui_site: Dictionary = screen.world.state.build_sites[0]
 	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.build_info.text.contains("6 still needed"), "the placed site saves immediately and explains missing materials")
+	_expect(screen.find_child("BuildTaskPicker", true, false) != null and screen.find_child("MoveBuildTaskUp", true, false) != null and screen.find_child("MoveBuildTaskDown", true, false) != null, "build screen exposes queue selection and clear move controls")
+	_expect(screen.build_move_up_button.disabled and screen.build_move_down_button.disabled, "a single pending module has no illegal reorder movement")
 	screen.find_child("AutoSupplyBuildButton", true, false).pressed.emit()
 	_expect(screen.world.state.ships[0].build_supply.enabled and screen.role_picker.selected == 2 and screen.build_supply_button.text.contains("Stop supplying"), "build screen assigns the ship and clearly offers a stop control")
 	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.build_feedback.text.contains("credits"), "the supply assignment saves and explains purchases")
