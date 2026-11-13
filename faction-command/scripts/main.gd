@@ -529,7 +529,7 @@ func _build_ui() -> void:
 	sector_map.ship_selected.connect(_show_map_ship)
 	sector_map.visible = false
 	map_column.add_child(sector_map)
-	map_caption = _label("▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom.", 12, MUTED)
+	map_caption = _label("▲ Player ships   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom.", 12, MUTED)
 	map_caption.name = "MapCaption"
 	map_column.add_child(map_caption)
 
@@ -607,7 +607,7 @@ func _toggle_map_mode() -> void:
 func _update_map_heading() -> void:
 	map_title.text = _sector_name(selected_sector).to_upper() if showing_sector_map else "GALAXY MAP"
 	map_mode_button.text = "Galaxy" if showing_sector_map else "Open sector"
-	map_caption.text = "Tap a connection, station or ship. Drag to pan; pinch or use + / − to zoom." if showing_sector_map else "▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom."
+	map_caption.text = "Tap a connection, station or ship. Drag to pan; pinch or use + / − to zoom." if showing_sector_map else "▲ Player ships   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom."
 
 
 func _zoom_map(factor: float) -> void:
@@ -1907,7 +1907,7 @@ func _open_station_supply() -> void:
 	panel.add_child(column)
 	column.add_child(_label("STATION INPUT SUPPLY", 22, TEXT))
 	column.add_child(_wrapped_label("%s · %s" % [station.name, _sector_name(str(station.sector))], 14, MUTED))
-	column.add_child(_wrapped_label("First Light uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced.", 14, TEXT))
+	column.add_child(_wrapped_label("%s uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced." % _player_ship().name, 14, TEXT))
 	column.add_child(_label("MAXIMUM PURCHASE SPEND FOR THIS ASSIGNMENT (CR)", 12, ACCENT))
 	station_supply_budget = SpinBox.new()
 	station_supply_budget.name = "StationSupplyBudget"
