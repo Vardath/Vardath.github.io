@@ -1095,6 +1095,9 @@ func _on_build_task_selection(_index: int) -> void:
 
 
 func _update_build_task_picker(site: Dictionary) -> void:
+	# Populating the selector programmatically must not recursively call its
+	# selection handler, particularly during a one-tick state refresh.
+	build_task_picker.set_block_signals(true)
 	if site.is_empty():
 		build_task_picker.clear()
 		build_task_picker.add_item("No modules")
@@ -1104,6 +1107,7 @@ func _update_build_task_picker(site: Dictionary) -> void:
 		build_move_down_button.disabled = true
 		build_task_list_signature = ""
 		build_task_picker_site_id = ""
+		build_task_picker.set_block_signals(false)
 		return
 	var entries: Array[String] = []
 	for index in range(site.tasks.size()):
@@ -1129,6 +1133,7 @@ func _update_build_task_picker(site: Dictionary) -> void:
 	var first := world.construction.first_editable_index(site)
 	build_move_up_button.disabled = bool(site.get("cancelled", false)) or chosen <= first
 	build_move_down_button.disabled = bool(site.get("cancelled", false)) or chosen < first or chosen >= site.tasks.size() - 1
+	build_task_picker.set_block_signals(false)
 
 
 func _move_selected_build_task(direction: int) -> void:
