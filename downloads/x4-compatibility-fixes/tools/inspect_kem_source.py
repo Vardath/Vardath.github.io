@@ -20,7 +20,7 @@ for name,size in zip(names,sizes):
   files[name]=data[offset:offset+size];offset+=size
 if sum(sizes)!=total:raise ValueError("Archive length mismatch")
 res={"workshop_id":item["workshop"],"catalogs":[],"files":{},"callers":[],"targets":[]}
-wanted=["Bounties_RegisterPilot","Bounties_RegisterKill","EnemyTargetManager_SetPlayerTarget","kEMissions_Rescue_EnemyTargetManager"]
+wanted=["Bounties_RegisterPilot","Bounties_RegisterKill","Bounties_UpdateLastKnown","EnemyTargetManager_SetPlayerTarget","kEMissions_Rescue_EnemyTargetManager"]
 for name,cat in files.items():
   if not name.endswith(".cat") or name[:-4]+".dat" not in files:continue
   payload=files[name[:-4]+".dat"];offset=0
