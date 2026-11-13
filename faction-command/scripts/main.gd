@@ -91,6 +91,10 @@ var build_pause_button: Button
 var build_dock_button: Button
 var build_deliver_button: Button
 var build_supply_button: Button
+var build_cancel_button: Button
+var build_recover_button: Button
+var build_cancel_confirm: ConfirmationDialog
+var build_cancel_site_id := ""
 
 
 func _ready() -> void:
@@ -1024,6 +1028,24 @@ func _open_build_screen(selected_site_id: String = "") -> void:
 	build_pause_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	build_pause_button.pressed.connect(_toggle_build_pause)
 	actions.add_child(build_pause_button)
+	var recovery_actions := HBoxContainer.new()
+	recovery_actions.add_theme_constant_override("separation", 8)
+	column.add_child(recovery_actions)
+	build_cancel_button = _button("Cancel unfinished construction")
+	build_cancel_button.name = "CancelBuildButton"
+	build_cancel_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_cancel_button.pressed.connect(_request_build_cancel)
+	recovery_actions.add_child(build_cancel_button)
+	build_recover_button = _button("Recover unused materials")
+	build_recover_button.name = "RecoverBuildMaterialsButton"
+	build_recover_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_recover_button.pressed.connect(_recover_build_materials)
+	recovery_actions.add_child(build_recover_button)
+	build_cancel_confirm = ConfirmationDialog.new()
+	build_cancel_confirm.name = "ConfirmCancelBuild"
+	build_cancel_confirm.title = "Cancel unfinished construction?"
+	build_cancel_confirm.confirmed.connect(_confirm_build_cancel)
+	build_screen.add_child(build_cancel_confirm)
 	var close_button := _button("Close")
 	close_button.name = "CloseBuildButton"
 	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1050,8 +1072,10 @@ func _update_build_screen() -> void:
 	var available := not site.is_empty()
 	build_dock_button.disabled = not available
 	build_deliver_button.disabled = not available
-	build_pause_button.disabled = not available or (available and int(site.completed) >= site.tasks.size())
-	build_supply_button.disabled = not available
+	build_pause_button.disabled = not available or (available and (bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size()))
+	build_supply_button.disabled = not available or (available and bool(site.get("cancelled", false))
+	build_cancel_button.disabled = not available or (available and (bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size()))
+	build_recover_button.disabled = not available or (available and (not bool(site.get("cancelled", false)) or _construction_storage_empty(site)))
 	if not available:
 		build_info.text = "No build sites yet. Choose Plan station to create one."
 		return
@@ -1066,7 +1090,15 @@ func _update_build_screen() -> void:
 	for ware_id in needed:
 		var ware: Dictionary = world._find_ware(str(ware_id))
 		material_lines.append("%s: %d still needed  ·  %d in build storage" % [ware.get("name", ware_id), int(needed[ware_id]), int(site.build_storage.get(ware_id, 0))])
-	lines.append("BUILD MATERIALS\n" + ("All required materials delivered." if material_lines.is_empty() else "\n".join(material_lines)))
+	if bool(site.get("cancelled", false)):
+		var recover_lines: Array[String] = []
+		for ware_id in site.build_storage:
+			if int(site.build_storage[ware_id]) > 0:
+				var ware: Dictionary = world._find_ware(str(ware_id))
+				recover_lines.append("%s: %d units" % [ware.get("name", ware_id), int(site.build_storage[ware_id])])
+		lines.append("CONSTRUCTION CANCELLED\nRefunded builder fees: %d CR\nRecoverable materials: %s" % [int(site.refunded_fee), ", ".join(recover_lines) if not recover_lines.is_empty() else "None remaining"])
+	else:
+		lines.append("BUILD MATERIALS\n" + ("All required materials delivered." if material_lines.is_empty() else "\n".join(material_lines)))
 	if supplying_here:
 		lines.append("Supplier: %s · %s" % [supplier.name, supplier.status])
 	var builder: Dictionary = world._find_ship(str(site.builder_id))
@@ -1076,8 +1108,49 @@ func _update_build_screen() -> void:
 		var recipe: Dictionary = world._find_recipe(str(task.recipe_id))
 		lines.append("Current module: %s  ·  %d / %d ticks" % [recipe.get("name", task.recipe_id), int(task.progress), int(task.duration)])
 	lines.append("AUTO SUPPLY\nUses %s's suitable cargo, then collects from your stations or buys from NPC markets using your credits. Current orders finish first; changing the ship's role stops supply and leaves cargo aboard." % supplier.name)
-	lines.append("Paused builds retain their materials. Cancellation and reordering are not available yet.")
+	lines.append("Cancellation returns fees for never-started modules and retains physical materials for dockside recovery. A module already underway finishes; no further modules start." if bool(site.get("cancelled", false)) else "Pause or cancel remaining work. Completed modules remain operational; cancellation refunds fees for unstarted modules only.")
 	build_info.text = "\n\n".join(lines)
+
+
+func _construction_storage_empty(site: Dictionary) -> bool:
+	for quantity in site.build_storage.values():
+		if int(quantity) > 0:
+			return false
+	return true
+
+
+func _request_build_cancel() -> void:
+	var site := _selected_build_site()
+	if site.is_empty() or bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size():
+		return
+	build_cancel_site_id = str(site.id)
+	build_cancel_confirm.dialog_text = "Cancel unstarted modules at %s? Their builder fees will be refunded, delivered unused materials will remain for physical recovery, and an active module will finish. Completed modules are kept." % site.name
+	build_cancel_confirm.popup_centered()
+
+
+func _confirm_build_cancel() -> void:
+	var site_id := build_cancel_site_id
+	build_cancel_site_id = ""
+	var result: Dictionary = world.construction.cancel(world, site_id)
+	build_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_build_screen()
+
+
+func _recover_build_materials() -> void:
+	var site := _selected_build_site()
+	if site.is_empty():
+		return
+	var result: Dictionary = world.construction.recover(world, str(world.state.ships[0].id), str(site.id))
+	build_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_build_screen()
 
 
 func _dock_build_site() -> void:
