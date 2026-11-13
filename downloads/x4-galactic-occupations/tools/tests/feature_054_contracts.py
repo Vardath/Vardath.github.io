@@ -76,9 +76,11 @@ for phrase in ("$sample.$finished ge $sample.$started + 10s",
                "$station.isoperational","$ship.distanceto.{$module}"):
     check(phrase in predicate,"verified sample gate: "+phrase)
 check(bool(q.xpath("./set_known[@object='$module'][@known='true'][@updatesnapshot='true']"))
-      and bool(q.xpath("./set_known[@object='$station'][@known='true'][@updatesnapshot='true']"))
-      and bool(q.xpath("./set_object_scanned[@object='$module']")),
-      "each verified surveyed module is published to native map")
+      and bool(q.xpath("./set_known[@object='$station'][@known='true'][@updatesnapshot='true']")),
+      "each verified surveyed module identity is published to native map")
+check(not q.xpath("./set_object_scanned")
+      and bool(survey.xpath(".//library[@name='PublishPending']//set_object_scanned[@object='$module']")),
+      "native high-detail scan stays bounded by deferred player scanner cap")
 condition=one(q,"./do_if[contains(@value,'$vgo_emp_enabled')]")
 for phrase in ("$module.isclass.module","not player.blueprints.{$module.macro.ware}.any.exists",
                "noplayerblueprint","inventory.{ware.bomb_player_limpet_emp_01_mk1}.count"):

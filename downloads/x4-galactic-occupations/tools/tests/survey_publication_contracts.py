@@ -19,6 +19,12 @@ class PublicationVM(SurveyVM):
     def remember(self,value):
         key='publication_value_'+str(len(self.vars));self.vars[key]=value;return '$'+key
     def expr(self,text):
+        # Legacy native-publication scenarios have no EMP opt-in. A separate
+        # source contract checks its inventory/research entitlement; this VM
+        # deliberately never manufactures bombs or awards blueprints.
+        if '$vgo_emp_enabled' in text and 'bomb_player_limpet_emp_01_mk1' in text:
+            assert not self.state.get('vgo_emp_enabled', False)
+            return False
         text=text.replace('event.param3',self.remember(self.ship))
         if self.in_queue:text=text.replace('event.param2',self.remember(self.event_module))
         text=text.replace('Init.$Pending.{$index}',self.remember(self.pending[self.vars.get('index',1)-1] if self.pending and self.vars.get('index',1)<=len(self.pending) else NULL))
