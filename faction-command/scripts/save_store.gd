@@ -229,11 +229,11 @@ func _valid_world(state: Dictionary) -> bool:
 func _valid_personnel(state: Dictionary) -> bool:
 	if state.personnel_version != 1 or not state.get("crew_pools") is Dictionary or state.crew_pools.is_empty():
 		return false
-	var station_ids: Dictionary = {}
-	for station in state.stations:
-		station_ids[str(station.id)] = true
+	# A station may legitimately be destroyed or removed while NPC ships are
+	# travelling. Keep its saved, dormant roster so station disappearance cannot
+	# corrupt a game or fabricate people; only extant NPC docks can recruit.
 	for station_id in state.crew_pools:
-		if not station_id is String or not station_ids.has(station_id) or not _is_nonnegative_integer(state.crew_pools[station_id]) or int(state.crew_pools[station_id]) > 1000000:
+		if not station_id is String or str(station_id).is_empty() or str(station_id).length() > 128 or not _is_nonnegative_integer(state.crew_pools[station_id]) or int(state.crew_pools[station_id]) > 1000000:
 			return false
 	return true
 
