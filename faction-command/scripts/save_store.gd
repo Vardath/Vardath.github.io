@@ -105,6 +105,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("station_supply_version") and _is_nonnegative_integer(decoded.station_supply_version) and decoded.station_supply_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("shipyard_version") and _is_nonnegative_integer(decoded.shipyard_version) and decoded.shipyard_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -120,6 +122,8 @@ func _is_nonnegative_integer(value: Variant) -> bool:
 
 func _valid_world(state: Dictionary) -> bool:
 	if state.has("station_supply_version") and not state.has("research_version"):
+		return false
+	if state.has("shipyard_version") != state.has("shipyard") or (state.has("shipyard_version") and not state.has("station_supply_version")):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -208,7 +212,61 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("station_supply_version")
 	if not _valid_research(state):
 		return false
-	return not state.has("station_supply_version") or _valid_station_supply(state)
+	if not state.has("station_supply_version"):
+		return not state.has("shipyard_version")
+	if not _valid_station_supply(state):
+		return false
+	return not state.has("shipyard_version") or _valid_shipyard(state)
+
+
+
+func _valid_shipyard(state: Dictionary) -> bool:
+	if state.shipyard_version != 1 or not state.get("shipyard") is Dictionary:
+		return false
+	var yard: Dictionary = state.shipyard
+	if not yard.get("wharf_station_id") is String or str(yard.wharf_station_id).is_empty() or not yard.get("catalog") is Dictionary or yard.catalog.is_empty() or not yard.get("orders") is Array or not _is_nonnegative_integer(yard.get("next_order_id")) or int(yard.next_order_id) < 1 or not _is_nonnegative_integer(yard.get("next_ship_serial")) or int(yard.next_ship_serial) < 2:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	for hull_id in yard.catalog:
+		var hull: Variant = yard.catalog[hull_id]
+		if not hull is Dictionary or hull.get("id") != hull_id or not hull.get("name") is String or str(hull.name).is_empty() or not hull.get("class") is String or str(hull["class"]).is_empty() or not hull.get("materials") is Dictionary or hull.materials.is_empty():
+			return false
+		for key in ["price", "ticks", "cargo_capacity", "crew"]:
+			if not _is_nonnegative_integer(hull.get(key)) or int(hull[key]) < 1 or int(hull[key]) > 100000000:
+				return false
+		for ware_id in hull.materials:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(hull.materials[ware_id]) or int(hull.materials[ware_id]) < 1:
+				return false
+	var order_ids: Dictionary = {}
+	var reserved_ids: Dictionary = {}
+	var pending := 0
+	for order in yard.orders:
+		if not order is Dictionary or not order.get("id") is String or str(order.id).is_empty() or order_ids.has(order.id) or not order.get("ship_id") is String or str(order.ship_id).is_empty() or reserved_ids.has(order.ship_id) or not yard.catalog.has(order.get("hull_id")) or order.get("wharf_station_id") != yard.wharf_station_id:
+			return false
+		for key in ["price", "duration", "progress", "placed_tick", "finished_tick"]:
+			if not _is_nonnegative_integer(order.get(key)):
+				return false
+		if int(order.price) < 1 or int(order.duration) < 1 or int(order.duration) > 1000000 or int(order.progress) > int(order.duration) or int(order.placed_tick) > int(state.tick) or int(order.finished_tick) > int(state.tick):
+			return false
+		if not order.get("materials") is Dictionary or order.materials.is_empty() or order.get("status") not in ["queued", "building", "blocked", "complete"]:
+			return false
+		for ware_id in order.materials:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(order.materials[ware_id]) or int(order.materials[ware_id]) < 1:
+				return false
+		if order.status == "complete":
+			if int(order.progress) != int(order.duration) or int(order.finished_tick) < int(order.placed_tick):
+				return false
+		else:
+			pending += 1
+			if int(order.progress) >= int(order.duration) or int(order.finished_tick) != 0:
+				return false
+		order_ids[order.id] = true
+		reserved_ids[order.ship_id] = true
+	if pending > 5 or int(yard.next_order_id) <= yard.orders.size():
+		return false
+	return true
 
 
 func _valid_station_supply(state: Dictionary) -> bool:
