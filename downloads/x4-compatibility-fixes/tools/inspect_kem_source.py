@@ -36,7 +36,7 @@ for name,cat in files.items():
     body=workshop_source(data,{"catalog_path":path,"catalog_md5":checksum})
     try:r=E.fromstring(body)
     except E.XMLSyntaxError:continue
-    norm=body.removeprefix(b'\\xef\\xbb\\xbf').replace(b'\\r\\n',b'\\n')
+    norm=normalized(body)
     res["files"][path]={"sha256_lf":hashlib.sha256(norm).hexdigest(),"catalog_md5":checksum}
     for action in r.xpath("//run_actions[contains(@ref, 'Bounties_RegisterPilot') or contains(@ref, 'Bounties_RegisterKill')]"):
       res["callers"].append({"file":path,"path":r.getroottree().getpath(action),"attrs":dict(action.attrib),
