@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="34">
+  <page id="191180" title="Ocupaciones galácticas" descr="Trabajos para naves" voice="no">
+    <t id="1">Ocupaciones galácticas</t>
+    <t id="2">Sector de origen</t>
+    <t id="3">Alcance operativo (0 = sector de origen; 99 = toda la galaxia conectada)</t>
+    <t id="4">Riesgo (0 prudente, 1 equilibrado, 2 agresivo)</t>
+    <t id="5">Facción preferida: selecciona una de sus naves o estaciones</t>
+    <t id="6">Repetir encargos</t>
+    <t id="7">Recompensa mínima por contrato</t>
+    <t id="8">Diagnóstico</t>
+    <t id="9">Probabilidad base de reclutamiento (%)</t>
+    <t id="10">Tiempo de espera de moral por nave</t>
+    <t id="11">Vender cristales recolectados</t>
+    <t id="12">Umbral de venta de cristales</t>
+    <t id="13">Extraer cristales: solo torretas de haz</t>
+    <t id="14">Permitir ruta alternativa por anomalía explorada</t>
+    <t id="15">Recoger restos de demolición</t>
+    <t id="16">Tiempo de observación</t>
+    <t id="17">Demolición: solo asteroides de recursos</t>
+    <t id="101">Servicio de escolta galáctica</t>
+    <t id="102">Servicio de taxi galáctico</t>
+    <t id="103">Escáner de estaciones, componentes y señales</t>
+    <t id="104">Cartografía de agujeros de gusano y anomalías</t>
+    <t id="105">Excursión turística galáctica</t>
+    <t id="106">Minero autónomo de cristales</t>
+    <t id="107">Señuelo e intercepción de hostiles</t>
+    <t id="108">Demolición de asteroides</t>
+    <t id="109">Refuerzo de la moral de la flota</t>
+    <t id="110">Control de tráfico e inspección de carga</t>
+    <t id="111">Reclutamiento de emergencia de naves</t>
+    <t id="112">Patrulla de rutas comerciales</t>
+    <t id="201">Escoltar un viaje comercial en curso hasta su destino real. Contrato de servicio personalizado.</t>
+    <t id="202">Transportar hasta diez pasajeros PNJ reales, limitados por las plazas libres de tripulación. Cada traslado reservado normal paga 8000 Cr. Eliminar el servicio de taxi permanente inicia un plazo de treinta minutos de juego para desembarcar sin cobrar; las órdenes temporales conservan a los pasajeros.</t>
+    <t id="203">Escanear automáticamente componentes de estación y fugas de señales. Los reconocimientos confirmados identifican módulos en el mapa normal. La recuperación opcional de planos mediante PEM consume una bomba PEM de traje espacial real del inventario del jugador por cada plano de módulo admisible que falte tras investigar en el cuartel general; no aparece ninguna bomba física. Los planos de astilleros, dársenas y muelles de equipo siguen restringidos.</t>
+    <t id="204">Explorar conexiones y catalogar anomalías junto con las listas de sus destinos reales.</t>
+    <t id="205">Embarcar hasta diez pasajeros reales; las excursiones nuevas visitan por defecto diez lugares galácticos distintos antes de desembarcar según la reserva. Tarifa de lujo predeterminada: 500 000 Cr por persona. Los viajes cancelados desembarcan sin pago tras al menos dos horas de juego; las interrupciones normales mantienen al grupo.</t>
+    <t id="206">Recolectar cristales reales cargados con armas o torretas; simular minería con respaldo de recursos fuera de pantalla por toda la galaxia. Vender automáticamente en estaciones de facción donde se pueda atracar y abonar créditos al jugador. Cualquier tamaño habitual de nave armada; no se necesita bodega mineral.</t>
+    <t id="207">Provocar a un enemigo manejable y retirarse hacia una fuerza amiga superior. Detectar si persigue y abandonar intentos fallidos.</t>
+    <t id="208">Disparar a asteroides destructibles reales. El disparo físico requiere atención de simulación alta.</t>
+    <t id="209">Mejorar la moral de tripulaciones aptas con tiempos de espera por nave y facción. La reputación exige una mejora real.</t>
+    <t id="210">Realizar inspecciones de carga de PNJ cronometradas según la jurisdicción local. Informar del contrabando sin provocar hostilidad automáticamente.</t>
+    <t id="211">Intentar la rendición de naves hostiles capturables, ajenas a misiones y con el casco por debajo del 25 %; conservar casco, equipo y tripulación.</t>
+    <t id="212">Seguir los destinos reales de comerciantes, escoltar el tráfico e interceptar amenazas manejables en su ruta.</t>
+    <t id="18">Límite de recogida de cristales en inventario</t>
+    <t id="30">Extraer cristales</t>
+    <t id="31">Paradas turísticas distintas por excursión</t>
+    <t id="32">Tarifa de lujo por pasajero</t>
+    <t id="51">Hackear estación</t>
+    <t id="52">Estación objetivo</t>
+    <t id="113">Hacker galáctico de estaciones</t>
+    <t id="114">Hackear panel de estación seleccionado</t>
+    <t id="213">Hackear estaciones por toda la galaxia mediante un tripulante o capitán real y herramientas del inventario del jugador. Elegir objetivo nativo preferido en Objetivo de hackeo (0 aleatorio, 1 producción, 2 torretas, 3 escudos, 4 almacén, 5 radar, 6 construcción, 7 seguridad). Se omiten los paneles ausentes o ya hackeados, sin sustituciones. El tripulante debe llegar físicamente al panel y regresar. Sin pago automático.</t>
+    <t id="214">Poner en cola un hackeo físico por un tripulante del panel nativo elegido. Se mantienen las órdenes existentes y el comportamiento predeterminado.</t>
+    <t id="53">Simular extracción de cristales fuera de pantalla</t>
+    <t id="54">Tiempo de minería por lote fuera de pantalla</t>
+    <t id="55">Cristales por lote completo fuera de pantalla</t>
+    <t id="56">Simular ventas de cristales fuera de pantalla</t>
+    <t id="71">Simular reconocimientos sin geometría cargada</t>
+    <t id="72">Descifrar fugas de señales e información de estaciones</t>
+    <t id="73">Reconocimiento de estación descifrado</t>
+    <t id="74">Recuperación de planos con PEM (1 PEM del jugador por módulo apto e investigado; desactivado por defecto)</t>
+    <t id="75">Objetivo de hackeo (0 cualquiera; 1 producción; 2 torretas; 3 escudos; 4 almacén; 5 radar; 6 construcción; 7 seguridad)</t>
+  </page>
+</language>

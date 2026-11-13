@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="33">
+  <page id="191180" title="Métiers galactiques" descr="Activités des vaisseaux" voice="no">
+    <t id="1">Métiers galactiques</t>
+    <t id="2">Secteur d'origine</t>
+    <t id="3">Rayon d'action (0 = secteur d'origine ; 99 = toute la galaxie connectée)</t>
+    <t id="4">Risque (0 prudent, 1 équilibré, 2 agressif)</t>
+    <t id="5">Faction préférée : sélectionnez un de ses vaisseaux ou stations</t>
+    <t id="6">Répéter les missions</t>
+    <t id="7">Récompense minimale du contrat</t>
+    <t id="8">Diagnostic</t>
+    <t id="9">Chance de base de recrutement (%)</t>
+    <t id="10">Délai de récupération du moral par vaisseau</t>
+    <t id="11">Vendre les cristaux récoltés</t>
+    <t id="12">Seuil de vente des cristaux</t>
+    <t id="13">Extraire les cristaux : tourelles à faisceau uniquement</t>
+    <t id="14">Autoriser un trajet de secours par une anomalie explorée</t>
+    <t id="15">Ramasser les débris de démolition</t>
+    <t id="16">Durée d'observation</t>
+    <t id="17">Démolition : astéroïdes de ressources uniquement</t>
+    <t id="101">Service d'escorte galactique</t>
+    <t id="102">Service de taxi galactique</t>
+    <t id="103">Scanner de stations, modules et signaux</t>
+    <t id="104">Cartographie des trous de ver et anomalies</t>
+    <t id="105">Circuit touristique galactique</t>
+    <t id="106">Mineur de cristaux autonome</t>
+    <t id="107">Leurre et interception d'hostiles</t>
+    <t id="108">Démolition d'astéroïdes</t>
+    <t id="109">Amélioration du moral de la flotte</t>
+    <t id="110">Contrôle du trafic et inspection des cargaisons</t>
+    <t id="111">Recrutement d'urgence de vaisseaux</t>
+    <t id="112">Patrouille des routes commerciales</t>
+    <t id="201">Escorter un trajet commercial actif jusqu'à sa destination réelle. Contrat de service personnalisé.</t>
+    <t id="202">Transporter jusqu'à dix véritables passagers PNJ, dans la limite des places d'équipage libres. Une livraison réservée normale rapporte 8 000 Cr par personne. Supprimer le service de taxi permanent déclenche un délai de débarquement gratuit de trente minutes de jeu ; les ordres temporaires conservent les passagers.</t>
+    <t id="203">Scanner automatiquement les modules de station et les fuites de signaux. Les relevés confirmés identifient les modules sur la carte native. La récupération facultative de plans par IEM consomme une vraie bombe IEM de combinaison de l'inventaire du joueur par plan admissible manquant, une fois les recherches du QG terminées ; aucune bombe physique n'est créée. Les plans de chantiers navals, quais et docks d'équipement restent restreints.</t>
+    <t id="204">Explorer les connexions, cataloguer les anomalies et leurs véritables listes de destinations.</t>
+    <t id="205">Embarquer jusqu'à dix véritables passagers ; les nouveaux circuits visitent par défaut dix sites galactiques distincts avant le débarquement réservé. Tarif de luxe par défaut : 500 000 Cr par personne. Les circuits annulés débarquent sans paiement après au moins deux heures de jeu ; les interruptions ordinaires conservent le groupe.</t>
+    <t id="206">Récolter des cristaux réels chargés avec des armes ou des tourelles ; simuler une extraction fondée sur les ressources hors écran, dans toute la galaxie. Vendre automatiquement aux stations de faction accessibles à l'amarrage et verser les crédits au joueur. Toutes les tailles habituelles de vaisseaux armés conviennent ; aucune soute minérale requise.</t>
+    <t id="207">Provoquer un hostile à sa portée puis se replier vers une force alliée plus puissante. Vérifier la poursuite et abandonner les tentatives infructueuses.</t>
+    <t id="208">Tirer sur de véritables astéroïdes destructibles. Une simulation à haute attention est requise pour le tir physique.</t>
+    <t id="209">Améliorer le moral des équipages admissibles, avec des délais par vaisseau et faction. La réputation n'augmente qu'après une amélioration réelle.</t>
+    <t id="210">Effectuer l'équivalent d'une inspection chronométrée des cargaisons de PNJ selon la juridiction locale. Signaler la contrebande sans déclencher automatiquement d'hostilité.</t>
+    <t id="211">Tenter d'obtenir la reddition de vaisseaux ennemis capturables, hors mission et sous 25 % de coque ; préserver coque, équipement et équipage.</t>
+    <t id="212">Suivre les destinations réelles des marchands, escorter le trafic et intercepter les menaces à portée le long de leur route.</t>
+    <t id="18">Limite de collecte des cristaux en inventaire</t>
+    <t id="30">Extraire les cristaux</t>
+    <t id="31">Nombre de sites distincts par circuit</t>
+    <t id="32">Tarif de luxe par passager</t>
+    <t id="51">Pirater la station</t>
+    <t id="52">Station cible</t>
+    <t id="113">Pirate informatique de stations galactiques</t>
+    <t id="114">Pirater le panneau de station choisi</t>
+    <t id="213">Pirater les stations de toute la galaxie avec un véritable membre d'équipage ou capitaine et des outils de l'inventaire du joueur. Choisir une cible native préférée via l'objectif de piratage (0 aléatoire, 1 production, 2 tourelles, 3 boucliers, 4 stockage, 5 radar, 6 construction, 7 sécurité). Les panneaux absents ou déjà piratés sont ignorés, sans substitution. L'équipier doit rejoindre physiquement le panneau puis revenir. Aucun paiement automatique.</t>
+    <t id="214">Programmer un piratage physique, par un équipier, du panneau natif choisi. Les ordres existants et le comportement par défaut sont conservés.</t>
+    <t id="53">Simuler l'extraction de cristaux hors écran</t>
+    <t id="54">Temps d'extraction hors écran par lot</t>
+    <t id="55">Cristaux par lot complet hors écran</t>
+    <t id="56">Simuler les ventes de cristaux hors écran</t>
+    <t id="71">Simuler les relevés sans géométrie chargée</t>
+    <t id="72">Décoder les fuites de signaux et les renseignements de station</t>
+    <t id="73">Relevé de station décodé</t>
+    <t id="74">Récupération de plans par IEM (1 IEM du joueur par module admissible après recherche ; désactivé par défaut)</t>
+    <t id="75">Objectif de piratage (0 quelconque ; 1 production ; 2 tourelles ; 3 boucliers ; 4 stockage ; 5 radar ; 6 construction ; 7 sécurité)</t>
+  </page>
+</language>

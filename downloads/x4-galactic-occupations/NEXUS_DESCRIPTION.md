@@ -1,3 +1,5 @@
+**Interface localization (0.5.5):** 12 translations (Russian, French, German, Spanish, Italian, Czech, Polish, Brazilian Portuguese, Japanese, Korean, Simplified and Traditional Chinese) plus English and language-neutral fallback. All 60 built-in menu text IDs per language. Spanish regional selections share L034. Initial AI-assisted wording is open to community corrections. Some dynamically generated status/logbook text remains English. No gameplay changes.
+
 # Galactic Occupations — 13 Autonomous Ship Careers for X4: Foundations
 
 **Version:** 0.5.4

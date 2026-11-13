@@ -1,5 +1,15 @@
 # Version history
 
+## 0.5.5 — 2026-11-14 — multilingual interface tables
+
+- Add fully populated, language-ID-correct X4 XML localization tables for Russian (007), French (033), Spanish (034), Italian (039), Czech (042), Polish (048), German (049), Brazilian Portuguese (055), Japanese (081), Korean (082), Simplified Chinese (086) and Traditional Chinese (088).
+- Maintain English (044) and the language-neutral `0001.xml` fallback. Each translated file contains the same 60 text entries, including 13 job names, 13 job descriptions, settings and hacking commands.
+- Use lowercase filenames for Linux. Spanish Spain and Latin American language selection share the standard X4 Spanish ID 034. Do not fabricate unsupported language IDs.
+- Add localization coverage contracts, package assertions, translation-contributor guidance and versioned distribution.
+- AI-assisted first-pass translations should be reviewed by native speakers. The 60 static text entries are localized; some runtime-generated logbook/debug text and Lua strings remain in English.
+- No ship AI, faction jobs, orders, passengers, mining, payments, crew, saves, or custom UI behaviour has changed. Same-save compatible; no X4 runtime/localized-client test conducted.
+
+
 ## 0.5.4 — 2026-11-13 — scanning, selective hacking and crystal-only fire
 
 - **Station scanner:** publish each verified close-range module survey to the native map snapshot with `set_known updatesnapshot=true` and `set_object_scanned`. The player receives actual module identity independently of a deferred high-detail scan. No unvisited modules are revealed.

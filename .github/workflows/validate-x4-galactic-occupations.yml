@@ -12,7 +12,7 @@ on:
       - '.github/workflows/validate-x4-galactic-occupations.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   validate:
     name: XML, commands, references and installable ZIP (no X4 runtime)
@@ -32,7 +32,7 @@ jobs:
           from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
           folder=Path("downloads/x4-galactic-occupations")
           src=folder/"vardath_galactic_occupations"
-          out=folder/"Galactic_Occupations_0.5.4.zip"
+          out=folder/"Galactic_Occupations_0.5.5.zip"
           with ZipFile(out,"w",ZIP_DEFLATED,compresslevel=9) as z:
               for p in sorted(src.rglob("*")):
                   if p.is_file():
@@ -42,7 +42,7 @@ jobs:
                       z.writestr(info,p.read_bytes())
           print("Prepared:",out)
           PY
-      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.4.zip --report /tmp/galactic-occupations-static-results.json
+      - run: python downloads/x4-galactic-occupations/tools/validate.py --zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.5.zip --report /tmp/galactic-occupations-static-results.json
       - name: Validate universal fallback and all thirteen occupation text labels
         run: python downloads/x4-galactic-occupations/tools/tests/localization_contracts.py
       - name: Reported scope, boarding, survey and payment source guards
@@ -107,6 +107,23 @@ jobs:
           lua5.1 downloads/x4-galactic-occupations/tools/tests/ui_contracts.lua downloads/x4-galactic-occupations/vardath_galactic_occupations
           lua5.1 downloads/x4-galactic-occupations/tools/tests/hacker_ui_contracts.lua downloads/x4-galactic-occupations/vardath_galactic_occupations
           lua5.1 downloads/x4-galactic-occupations/tools/tests/spacesuit_ui_contracts.lua downloads/x4-galactic-occupations/vardath_galactic_occupations
+      - name: Publish validated Occupations archive and static results
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          cp /tmp/galactic-occupations-static-results.json downloads/x4-galactic-occupations/STATIC_TEST_RESULTS.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/x4-galactic-occupations/Galactic_Occupations_0.5.5.zip downloads/x4-galactic-occupations/STATIC_TEST_RESULTS.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Package Galactic Occupations 0.5.5 (multilingual)"
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep 2
+            done
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="39">
+  <page id="191180" title="Occupazioni galattiche" descr="Incarichi per navi" voice="no">
+    <t id="1">Occupazioni galattiche</t>
+    <t id="2">Settore d'origine</t>
+    <t id="3">Raggio operativo (0 = settore d'origine; 99 = intera galassia connessa)</t>
+    <t id="4">Rischio (0 prudente, 1 bilanciato, 2 aggressivo)</t>
+    <t id="5">Fazione preferita: seleziona una sua nave o stazione</t>
+    <t id="6">Ripeti incarichi</t>
+    <t id="7">Ricompensa minima per contratto</t>
+    <t id="8">Diagnostica</t>
+    <t id="9">Probabilità base di reclutamento (%)</t>
+    <t id="10">Tempo di recupero del morale per nave</t>
+    <t id="11">Vendi i cristalli raccolti</t>
+    <t id="12">Soglia di vendita dei cristalli</t>
+    <t id="13">Estrai cristalli: solo torrette a raggio</t>
+    <t id="14">Consenti un percorso alternativo tramite anomalia esplorata</t>
+    <t id="15">Raccogli i detriti della demolizione</t>
+    <t id="16">Tempo di osservazione</t>
+    <t id="17">Demolizione: solo asteroidi con risorse</t>
+    <t id="101">Servizio di scorta galattica</t>
+    <t id="102">Servizio taxi galattico</t>
+    <t id="103">Scanner di stazioni, componenti e segnali</t>
+    <t id="104">Mappatura di wormhole e anomalie</t>
+    <t id="105">Tour panoramico galattico</t>
+    <t id="106">Minatore autonomo di cristalli</t>
+    <t id="107">Esca e intercettazione di ostili</t>
+    <t id="108">Demolizione di asteroidi</t>
+    <t id="109">Potenziamento del morale della flotta</t>
+    <t id="110">Controllo traffico e ispezione merci</t>
+    <t id="111">Reclutamento d'emergenza delle navi</t>
+    <t id="112">Pattugliamento delle rotte commerciali</t>
+    <t id="201">Scorta un viaggio commerciale in corso fino alla destinazione effettiva. Contratto di servizio personalizzato.</t>
+    <t id="202">Trasporta fino a dieci passeggeri PNG reali, nei limiti dei posti equipaggio liberi. Ogni consegna prenotata regolare paga 8.000 Cr a persona. La rimozione del servizio taxi permanente avvia una finestra di trenta minuti di gioco per lo sbarco non retribuito; gli ordini temporanei mantengono i passeggeri.</t>
+    <t id="203">Scansione autonoma di componenti delle stazioni e perdite di segnale. I rilevamenti confermati identificano i moduli nella mappa nativa. Il recupero facoltativo dei progetti tramite EMP consuma una vera bomba EMP per tuta dall'inventario del giocatore per ogni progetto idoneo mancante dopo la ricerca al QG; non viene creata alcuna bomba fisica. I progetti per cantieri navali, moli e dock attrezzature restano limitati.</t>
+    <t id="204">Esplora le connessioni, cataloga le anomalie e gli elenchi delle loro destinazioni reali.</t>
+    <t id="205">Imbarca fino a dieci passeggeri reali; i nuovi tour visitano per impostazione predefinita dieci attrazioni galattiche distinte prima dello sbarco prenotato. Tariffa di lusso: 500.000 Cr a persona. I tour annullati sbarcano senza pagamento dopo almeno due ore di gioco; le normali interruzioni mantengono il gruppo.</t>
+    <t id="206">Raccogli cristalli reali caricati con armi o torrette; simula l'estrazione sostenuta da risorse fuori schermo in tutta la galassia. Vendi automaticamente presso stazioni di fazione attraccabili e accredita i crediti al giocatore. Tutte le normali dimensioni di navi armate; non serve una stiva mineraria.</t>
+    <t id="207">Provoca un nemico affrontabile e ritirati verso una forza alleata più potente. Rileva l'inseguimento e interrompi i tentativi falliti.</t>
+    <t id="208">Spara ad asteroidi realmente distruttibili. Il fuoco fisico richiede alta attenzione di simulazione.</t>
+    <t id="209">Aumenta il morale degli equipaggi idonei, con tempi di recupero per nave e fazione. La reputazione aumenta solo dopo un effettivo miglioramento.</t>
+    <t id="210">Esegui l'equivalente temporizzato dell'ispezione merci dei PNG secondo la giurisdizione locale. Segnala il contrabbando senza provocare automaticamente ostilità.</t>
+    <t id="211">Tenta la resa di navi ostili catturabili, non legate a missioni e sotto il 25% di scafo; preserva scafo, equipaggiamento ed equipaggio.</t>
+    <t id="212">Segui le vere destinazioni dei mercanti, scorta il traffico e intercetta minacce affrontabili lungo la rotta.</t>
+    <t id="18">Limite di raccolta dei cristalli nell'inventario</t>
+    <t id="30">Estrai cristalli</t>
+    <t id="31">Tappe turistiche distinte per tour</t>
+    <t id="32">Tariffa di lusso per passeggero</t>
+    <t id="51">Hackerare la stazione</t>
+    <t id="52">Stazione bersaglio</t>
+    <t id="113">Hacker galattico delle stazioni</t>
+    <t id="114">Hackera il pannello della stazione selezionato</t>
+    <t id="213">Hackera stazioni in tutta la galassia con un vero membro dell'equipaggio o capitano usando strumenti dell'inventario del giocatore. Scegli un bersaglio nativo preferito in Obiettivo hacker (0 casuale, 1 produzione, 2 torrette, 3 scudi, 4 stoccaggio, 5 radar, 6 costruzione, 7 sicurezza). Pannelli assenti o già hackerati vengono saltati, non sostituiti. L'equipaggio deve raggiungere fisicamente il pannello e tornare. Nessun pagamento automatico.</t>
+    <t id="214">Metti in coda un hack fisico di un membro dell'equipaggio sul pannello nativo scelto. Gli ordini esistenti e il comportamento predefinito restano invariati.</t>
+    <t id="53">Simula estrazione di cristalli fuori schermo</t>
+    <t id="54">Tempo di estrazione fuori schermo per lotto</t>
+    <t id="55">Cristalli per lotto completo fuori schermo</t>
+    <t id="56">Simula vendite di cristalli fuori schermo</t>
+    <t id="71">Simula rilevamenti senza geometria caricata</t>
+    <t id="72">Decodifica perdite di segnale e informazioni della stazione</t>
+    <t id="73">Rilevamento della stazione decodificato</t>
+    <t id="74">Recupero progetti tramite EMP (1 EMP del giocatore per modulo idoneo ricercato; disattivato per impostazione predefinita)</t>
+    <t id="75">Obiettivo hacker (0 qualsiasi; 1 produzione; 2 torrette; 3 scudi; 4 stoccaggio; 5 radar; 6 costruzione; 7 sicurezza)</t>
+  </page>
+</language>

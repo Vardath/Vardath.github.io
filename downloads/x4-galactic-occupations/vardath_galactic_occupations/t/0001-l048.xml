@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="48">
+  <page id="191180" title="Galaktyczne profesje" descr="Zadania statków" voice="no">
+    <t id="1">Galaktyczne profesje</t>
+    <t id="2">Sektor macierzysty</t>
+    <t id="3">Zasięg działania (0 = sektor macierzysty; 99 = cała połączona galaktyka)</t>
+    <t id="4">Ryzyko (0 ostrożnie, 1 zrównoważenie, 2 agresywnie)</t>
+    <t id="5">Preferowana frakcja: wybierz jej statek lub stację</t>
+    <t id="6">Powtarzaj zadania</t>
+    <t id="7">Minimalna nagroda za kontrakt</t>
+    <t id="8">Diagnostyka</t>
+    <t id="9">Podstawowa szansa werbunku (%)</t>
+    <t id="10">Czas odnowienia morale na statek</t>
+    <t id="11">Sprzedawaj zebrane kryształy</t>
+    <t id="12">Próg sprzedaży kryształów</t>
+    <t id="13">Wydobywanie kryształów: tylko wieżyczki wiązkowe</t>
+    <t id="14">Zezwól na trasę awaryjną przez zbadaną anomalię</t>
+    <t id="15">Zbieraj pozostałości po niszczeniu</t>
+    <t id="16">Czas zwiedzania</t>
+    <t id="17">Niszczenie: tylko asteroidy surowcowe</t>
+    <t id="101">Galaktyczna służba eskortowa</t>
+    <t id="102">Galaktyczna taksówka</t>
+    <t id="103">Skaner stacji, modułów i sygnałów</t>
+    <t id="104">Mapowanie tuneli czasoprzestrzennych i anomalii</t>
+    <t id="105">Galaktyczna wycieczka</t>
+    <t id="106">Autonomiczny górnik kryształów</t>
+    <t id="107">Wabienie i przechwytywanie wrogów</t>
+    <t id="108">Niszczenie asteroid</t>
+    <t id="109">Podnoszenie morale floty</t>
+    <t id="110">Kontrola ruchu i ładunków</t>
+    <t id="111">Awaryjna rekrutacja statków</t>
+    <t id="112">Patrol szlaków handlowych</t>
+    <t id="201">Eskortuj aktywny rejs handlowy do rzeczywistego celu. Niestandardowy kontrakt usługowy.</t>
+    <t id="202">Przewoź do dziesięciu rzeczywistych pasażerów NPC, ograniczonych wolnymi miejscami załogi. Zwykły zarezerwowany przejazd daje 8000 Cr za osobę. Usunięcie stałej usługi taksówki rozpoczyna 30 minut czasu gry na bezpłatne opuszczenie statku; tymczasowe rozkazy zachowują pasażerów.</t>
+    <t id="203">Automatycznie skanuj moduły stacji i wycieki sygnału. Potwierdzone pomiary ujawniają moduły na standardowej mapie. Opcjonalne odzyskiwanie schematów za pomocą EMP zużywa jeden prawdziwy ładunek EMP skafandra z ekwipunku gracza na każdy kwalifikujący się brakujący schemat modułu po badaniach w kwaterze głównej; fizyczny ładunek nie jest tworzony. Schematy stoczni, doków produkcyjnych i wyposażeniowych pozostają ograniczone.</t>
+    <t id="204">Badaj połączenia, kataloguj anomalie i listy ich rzeczywistych miejsc docelowych.</t>
+    <t id="205">Zabierz do dziesięciu rzeczywistych pasażerów; nowe wycieczki domyślnie odwiedzają dziesięć różnych atrakcji galaktyki przed zarezerwowanym wysiadaniem. Domyślna luksusowa opłata: 500 000 Cr za osobę. Anulowane wycieczki kończą się bez zapłaty po co najmniej dwóch godzinach gry; zwykłe przerwy zachowują grupę.</t>
+    <t id="206">Wydobywaj rzeczywiste załadowane kryształy bronią lub wieżyczkami; symuluj wydobycie oparte na zasobach poza ekranem w całej galaktyce. Automatycznie sprzedawaj na stacjach frakcji dostępnych do dokowania i przekazuj kredyty graczowi. Wszystkie zwykłe rozmiary uzbrojonych statków; ładownia minerałów nie jest potrzebna.</t>
+    <t id="207">Sprowokuj możliwego do pokonania wroga i wycofaj się do silniejszych przyjaznych sił. Wykryj pościg i przerwij nieudane próby.</t>
+    <t id="208">Strzelaj do rzeczywistych zniszczalnych asteroid. Fizyczny ostrzał wymaga wysokiej szczegółowości symulacji.</t>
+    <t id="209">Podnoś morale kwalifikujących się załóg z ograniczeniami czasu dla statków i frakcji. Reputacja rośnie tylko po rzeczywistej poprawie.</t>
+    <t id="210">Przeprowadzaj ograniczoną czasowo kontrolę ładunków NPC zgodnie z miejscowym prawem. Zgłaszaj kontrabandę bez automatycznego wywoływania wrogości.</t>
+    <t id="211">Próbuj skłonić do kapitulacji możliwe do przejęcia wrogie statki niezwiązane z misjami, z kadłubem poniżej 25%; zachowaj kadłub, sprzęt i załogę.</t>
+    <t id="212">Podążaj do rzeczywistych celów kupców, eskortuj ruch i przechwytuj możliwe do pokonania zagrożenia na szlaku.</t>
+    <t id="18">Limit kryształów zbieranych do ekwipunku</t>
+    <t id="30">Wydobywaj kryształy</t>
+    <t id="31">Liczba różnych przystanków na wycieczkę</t>
+    <t id="32">Luksusowa opłata za pasażera</t>
+    <t id="51">Włam się do stacji</t>
+    <t id="52">Stacja docelowa</t>
+    <t id="113">Galaktyczny haker stacji</t>
+    <t id="114">Włam się do wybranego panelu stacji</t>
+    <t id="213">Włamuj się do stacji w całej galaktyce przy pomocy prawdziwego członka załogi lub kapitana i narzędzi z ekwipunku gracza. Wybierz preferowany cel w parametrze Cel włamania (0 losowy, 1 produkcja, 2 wieżyczki, 3 osłony, 4 magazyn, 5 radar, 6 budowa, 7 zabezpieczenia). Brakujące lub już zhakowane panele są pomijane, bez zamienników. Członek załogi musi fizycznie dotrzeć do panelu i wrócić. Brak automatycznej zapłaty.</t>
+    <t id="214">Dodaj do kolejki fizyczne włamanie członka załogi do wybranego standardowego panelu stacji. Istniejące rozkazy i domyślne zachowanie zostaną zachowane.</t>
+    <t id="53">Symuluj wydobywanie kryształów poza ekranem</t>
+    <t id="54">Czas wydobycia jednej partii poza ekranem</t>
+    <t id="55">Liczba kryształów na pełną partię poza ekranem</t>
+    <t id="56">Symuluj sprzedaż kryształów poza ekranem</t>
+    <t id="71">Symuluj badania bez załadowanej geometrii</t>
+    <t id="72">Odszyfruj wycieki sygnałów i informacje o stacji</t>
+    <t id="73">Odszyfrowane badanie stacji</t>
+    <t id="74">Odzyskiwanie schematów przez EMP (1 EMP gracza na odpowiedni zbadany moduł; domyślnie wyłączone)</t>
+    <t id="75">Cel włamania (0 dowolny; 1 produkcja; 2 wieżyczki; 3 osłony; 4 magazyn; 5 radar; 6 budowa; 7 zabezpieczenia)</t>
+  </page>
+</language>

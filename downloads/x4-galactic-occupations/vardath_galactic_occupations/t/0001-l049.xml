@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="49">
+  <page id="191180" title="Galaktische Berufe" descr="Schiffsaufgaben" voice="no">
+    <t id="1">Galaktische Berufe</t>
+    <t id="2">Heimatsektor</t>
+    <t id="3">Einsatzradius (0 = Heimatsektor; 99 = gesamte verbundene Galaxie)</t>
+    <t id="4">Risiko (0 vorsichtig, 1 ausgewogen, 2 aggressiv)</t>
+    <t id="5">Bevorzugte Fraktion: eines ihrer Schiffe oder Stationen auswählen</t>
+    <t id="6">Aufträge wiederholen</t>
+    <t id="7">Mindestbelohnung pro Auftrag</t>
+    <t id="8">Diagnose</t>
+    <t id="9">Grundchance für Rekrutierung (%)</t>
+    <t id="10">Moral-Abklingzeit pro Schiff</t>
+    <t id="11">Abgebaute Kristalle verkaufen</t>
+    <t id="12">Verkaufsschwelle für Kristalle</t>
+    <t id="13">Kristalle abbauen: nur Strahlgeschütztürme</t>
+    <t id="14">Erkundete Anomalie als Ausweichroute zulassen</t>
+    <t id="15">Trümmer nach Asteroidenzerstörung einsammeln</t>
+    <t id="16">Besichtigungsdauer</t>
+    <t id="17">Zerstörung: nur Ressourcenasteroiden</t>
+    <t id="101">Galaktischer Geleitschutz</t>
+    <t id="102">Galaktischer Taxiservice</t>
+    <t id="103">Stations-, Modul- und Signalscanner</t>
+    <t id="104">Wurmloch- und Anomaliekartierung</t>
+    <t id="105">Galaktische Rundreise</t>
+    <t id="106">Autonomer Kristallschürfer</t>
+    <t id="107">Feindköder und Abfangdienst</t>
+    <t id="108">Asteroidenzerstörung</t>
+    <t id="109">Flottenmoral steigern</t>
+    <t id="110">Verkehrskontrolle und Frachtinspektion</t>
+    <t id="111">Notfallrekrutierung von Schiffen</t>
+    <t id="112">Handelsroutenpatrouille</t>
+    <t id="201">Eine laufende Handelsreise bis zu ihrem tatsächlichen Ziel begleiten. Spezieller Dienstleistungsvertrag.</t>
+    <t id="202">Bis zu zehn echte NPC-Passagiere transportieren, begrenzt durch freie Besatzungsplätze. Reguläre gebuchte Fahrten zahlen 8.000 Cr pro Person. Das Entfernen des dauerhaften Taxidienstes startet eine unbezahlte Ausstiegsfrist von 30 Spielminuten; vorübergehende Befehle behalten die Passagiere an Bord.</t>
+    <t id="203">Stationsteile und Signallecks automatisch scannen. Bestätigte Untersuchungen identifizieren Module auf der normalen Karte. Optionale EMP-Bauplanbeschaffung verbraucht pro geeignetem, fehlendem Stationsmodul-Bauplan nach entsprechender Forschung im Spieler-HQ eine echte Raumanzug-EMP-Bombe aus dem Spielerinventar; es wird keine physische Bombe erzeugt. Baupläne für Schiffswerften, Raumpiers und Ausrüstungsdocks bleiben gesperrt.</t>
+    <t id="204">Verbindungen erkunden sowie Anomalien und ihre tatsächlichen Ziellisten katalogisieren.</t>
+    <t id="205">Bis zu zehn echte Passagiere aufnehmen; neue Rundreisen besuchen standardmäßig zehn unterschiedliche Sehenswürdigkeiten der Galaxie vor der gebuchten Ankunft. Standard-Luxuspreis: 500.000 Cr pro Person. Bei Abbruch steigen Passagiere frühestens nach zwei Spielstunden ohne Bezahlung aus; gewöhnliche Unterbrechungen behalten die Gruppe.</t>
+    <t id="206">Echte geladene Kristalle mit Waffen oder Geschütztürmen abbauen; außerhalb des Bildschirms ressourcengestützten Abbau in der ganzen Galaxie simulieren. Automatisch an andockbaren Fraktionsstationen verkaufen und dem Spieler Credits gutschreiben. Alle üblichen bewaffneten Schiffsgrößen; kein Mineralienfrachtraum nötig.</t>
+    <t id="207">Einen bewältigbaren Feind provozieren und zu einer stärkeren befreundeten Streitmacht zurückweichen. Verfolgung erkennen und erfolglose Versuche abbrechen.</t>
+    <t id="208">Auf echte zerstörbare Asteroiden schießen. Für tatsächliches Schießen ist hohe Simulationsaufmerksamkeit erforderlich.</t>
+    <t id="209">Die Moral geeigneter Besatzungen steigern, mit Abklingzeiten für Schiffe und Fraktionen. Ansehen steigt nur bei tatsächlicher Verbesserung.</t>
+    <t id="210">Zeitlich begrenzte NPC-Frachtkontrollen nach örtlichen Vorschriften durchführen. Schmuggelware melden, ohne automatisch Feindschaft auszulösen.</t>
+    <t id="211">Die Kapitulation eroberbarer feindlicher Schiffe ohne Missionsbindung bei unter 25 Prozent Hülle versuchen; Hülle, Ausrüstung und Besatzung bewahren.</t>
+    <t id="212">Tatsächlichen Händlerzielen folgen, Verkehr begleiten und bewältigbare Bedrohungen entlang der Route abfangen.</t>
+    <t id="18">Inventarlimit für eingesammelte Kristalle</t>
+    <t id="30">Kristalle abbauen</t>
+    <t id="31">Unterschiedliche Zwischenstopps je Rundreise</t>
+    <t id="32">Luxusfahrpreis pro Passagier</t>
+    <t id="51">Station hacken</t>
+    <t id="52">Zielstation</t>
+    <t id="113">Galaktischer Stationshacker</t>
+    <t id="114">Ausgewähltes Stationspanel hacken</t>
+    <t id="213">Galaxieweit Stationshacks durch ein echtes Besatzungsmitglied oder den Kapitän mit Werkzeugen aus dem Spielerinventar. Bevorzugtes natives Ziel über Hackziel wählen (0 zufällig, 1 Produktion, 2 Geschütztürme, 3 Schilde, 4 Lager, 5 Radar, 6 Bau, 7 Sicherheit). Fehlende oder bereits gehackte Panels werden übersprungen und nicht ersetzt. Die Person muss zum Panel gehen und zurückkehren. Keine automatische Zahlung.</t>
+    <t id="214">Einen physischen Hack des ausgewählten nativen Stationspanels durch ein Besatzungsmitglied einreihen. Bestehende Befehle und Standardverhalten bleiben erhalten.</t>
+    <t id="53">Kristallabbau außerhalb des Bildschirms simulieren</t>
+    <t id="54">Abbauzeit pro Durchlauf außerhalb des Bildschirms</t>
+    <t id="55">Kristalle pro vollständigem Durchlauf außerhalb des Bildschirms</t>
+    <t id="56">Kristallverkäufe außerhalb des Bildschirms simulieren</t>
+    <t id="71">Untersuchungen ohne geladene Geometrie simulieren</t>
+    <t id="72">Signallecks und Stationsinformationen entschlüsseln</t>
+    <t id="73">Entschlüsselte Stationsuntersuchung</t>
+    <t id="74">EMP-Bauplanbeschaffung (1 Spieler-EMP je geeignetem erforschtem Modul; standardmäßig aus)</t>
+    <t id="75">Hackziel (0 beliebig; 1 Produktion; 2 Geschütztürme; 3 Schilde; 4 Lager; 5 Radar; 6 Bau; 7 Sicherheit)</t>
+  </page>
+</language>

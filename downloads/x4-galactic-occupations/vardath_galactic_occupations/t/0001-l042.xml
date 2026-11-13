@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<language id="42">
+  <page id="191180" title="Galaktická povolání" descr="Úkoly lodí" voice="no">
+    <t id="1">Galaktická povolání</t>
+    <t id="2">Domovský sektor</t>
+    <t id="3">Operační dosah (0 = domovský sektor; 99 = celá propojená galaxie)</t>
+    <t id="4">Riziko (0 opatrné, 1 vyvážené, 2 agresivní)</t>
+    <t id="5">Preferovaná frakce: vyberte jednu její loď nebo stanici</t>
+    <t id="6">Opakovat úkoly</t>
+    <t id="7">Minimální odměna za zakázku</t>
+    <t id="8">Diagnostika</t>
+    <t id="9">Základní šance na získání posádky (%)</t>
+    <t id="10">Prodleva mezi zvýšením morálky jedné lodi</t>
+    <t id="11">Prodávat vytěžené krystaly</t>
+    <t id="12">Práh prodeje krystalů</t>
+    <t id="13">Těžit krystaly: pouze paprskové věže</t>
+    <t id="14">Povolit záložní průlet prozkoumanou anomálií</t>
+    <t id="15">Sbírat trosky po demolici</t>
+    <t id="16">Doba prohlídky</t>
+    <t id="17">Demolice: pouze surovinové asteroidy</t>
+    <t id="101">Galaktická eskortní služba</t>
+    <t id="102">Galaktická taxislužba</t>
+    <t id="103">Skenování stanic, modulů a signálů</t>
+    <t id="104">Mapování červích děr a anomálií</t>
+    <t id="105">Galaktická vyhlídková plavba</t>
+    <t id="106">Autonomní těžař krystalů</t>
+    <t id="107">Vylákání a zachycení nepřátel</t>
+    <t id="108">Likvidace asteroidů</t>
+    <t id="109">Posilování morálky flotily</t>
+    <t id="110">Řízení provozu a kontrola nákladu</t>
+    <t id="111">Nouzový nábor nepřátelských lodí</t>
+    <t id="112">Hlídka obchodních tras</t>
+    <t id="201">Doprovázet probíhající obchodní cestu do jejího skutečného cíle. Vlastní servisní smlouva.</t>
+    <t id="202">Přepravovat až deset skutečných NPC cestujících podle počtu volných míst pro posádku. Běžná objednaná přeprava platí 8 000 Cr za osobu. Zrušení trvalé taxislužby spustí třicet herních minut na neplacené vystoupení; dočasné rozkazy cestující ponechají na palubě.</t>
+    <t id="203">Automaticky skenovat moduly stanic a úniky signálu. Potvrzené průzkumy odhalují moduly na běžné mapě. Volitelné získání plánů pomocí EMP spotřebuje jednu skutečnou skafandrovou EMP bombu z inventáře hráče za každý vhodný chybějící plán modulu po výzkumu v hráčském velitelství; žádná fyzická bomba nevzniká. Plány loděnic, doků na stavbu lodí a doků vybavení zůstávají omezené.</t>
+    <t id="204">Prozkoumávat spojení, evidovat anomálie a seznamy jejich skutečných cílů.</t>
+    <t id="205">Nalodit až deset skutečných cestujících; nové výlety standardně navštíví deset různých galaktických zajímavostí před plánovaným výstupem. Výchozí luxusní jízdné: 500 000 Cr za osobu. Při zrušení výletu cestující vystoupí bez platby nejdříve po dvou herních hodinách; běžná přerušení skupinu zachovají.</t>
+    <t id="206">Těžit skutečné načtené krystaly zbraněmi či věžemi; mimo obraz simulovat těžbu podloženou zdroji v celé galaxii. Automaticky prodávat na přístupných stanicích frakcí a připisovat hráči kredity. Všechny běžné velikosti ozbrojených lodí; sklad minerálů není nutný.</t>
+    <t id="207">Vyprovokovat zvládnutelného nepřítele a ustoupit k silnějším spojencům. Sledovat pronásledování a neúspěšné pokusy ukončit.</t>
+    <t id="208">Střílet na skutečné zničitelné asteroidy. Fyzická střelba vyžaduje vysokou pozornost simulace.</t>
+    <t id="209">Zvyšovat morálku vhodných posádek s prodlevami pro lodě a frakce. Reputace roste pouze při skutečném zlepšení.</t>
+    <t id="210">Provádět časově omezenou NPC kontrolu nákladu podle místní jurisdikce. Hlásit pašované zboží bez automatického vyvolání nepřátelství.</t>
+    <t id="211">Pokusit se přimět k kapitulaci zabavitelné nepřátelské lodě mimo mise s trupem pod 25 %; zachovat trup, vybavení a posádku.</t>
+    <t id="212">Sledovat skutečné cíle obchodníků, doprovázet provoz a zachytávat zvládnutelné hrozby na trase.</t>
+    <t id="18">Limit sběru krystalů do inventáře</t>
+    <t id="30">Těžit krystaly</t>
+    <t id="31">Počet různých zastávek na výlet</t>
+    <t id="32">Luxusní jízdné za cestujícího</t>
+    <t id="51">Hacknout stanici</t>
+    <t id="52">Cílová stanice</t>
+    <t id="113">Galaktický hacker stanic</t>
+    <t id="114">Hacknout zvolený panel stanice</t>
+    <t id="213">Hackovat stanice v celé galaxii skutečným členem posádky nebo kapitánem pomocí nástrojů z inventáře hráče. Upřednostněný cíl vyberte v položce Cíl hackování (0 náhodný, 1 výroba, 2 věže, 3 štíty, 4 sklady, 5 radar, 6 stavba, 7 zabezpečení). Chybějící nebo již hacknuté panely se přeskočí bez náhrady. Člen posádky musí k panelu fyzicky dojít a vrátit se. Bez automatické platby.</t>
+    <t id="214">Zařadit fyzické hacknutí vybraného nativního panelu členem posádky do fronty. Stávající rozkazy a výchozí chování zůstanou zachovány.</t>
+    <t id="53">Simulovat těžbu krystalů mimo obraz</t>
+    <t id="54">Čas těžby mimo obraz na dávku</t>
+    <t id="55">Počet krystalů na celou dávku mimo obraz</t>
+    <t id="56">Simulovat prodeje krystalů mimo obraz</t>
+    <t id="71">Simulovat průzkumy bez načtené geometrie</t>
+    <t id="72">Dekódovat úniky signálů a údaje o stanici</t>
+    <t id="73">Dekódovaný průzkum stanice</t>
+    <t id="74">Získávání plánů přes EMP (1 hráčova EMP za vhodný vyzkoumaný modul; výchozí vypnuto)</t>
+    <t id="75">Cíl hackování (0 libovolný; 1 výroba; 2 věže; 3 štíty; 4 sklady; 5 radar; 6 stavba; 7 zabezpečení)</t>
+  </page>
+</language>
