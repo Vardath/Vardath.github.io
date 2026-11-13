@@ -12,7 +12,16 @@ var planner = PlannerScript.new()
 
 func prepare(target: Dictionary) -> Error:
 	if target.has("construction_version"):
-		return OK if target.construction_version == 1 else ERR_UNAVAILABLE
+		if int(target.construction_version) == 2:
+			return OK
+		if int(target.construction_version) != 1:
+			return ERR_UNAVAILABLE
+		# Preserve legacy site queues, materials, progress and builder assignments.
+		for site in target.get("build_sites", []):
+			site["cancelled"] = false
+			site["refunded_fee"] = 0
+		target["construction_version"] = 2
+		return OK
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
 	if not data is Dictionary or not data.get("blueprints") is Dictionary or not data.get("sector_deposits") is Dictionary or not data.get("default_natural_sources") is Array:
 		return ERR_INVALID_DATA
@@ -39,7 +48,7 @@ func prepare(target: Dictionary) -> Error:
 	target["build_sites"] = []
 	target["next_build_site_id"] = 1
 	target.ships.append({"id":BUILDER_ID, "name":"Keystone", "class":"Builder", "owner":home.owner, "sector":home.sector, "captain":"Sera Nahl", "crew":5, "role":"Builder", "status":"Idle", "orders":[], "travel":{}, "cargo_capacity":0, "cargo":{}, "docked_at":"", "credits":0, "build_assignment":""})
-	target["construction_version"] = 1
+	target["construction_version"] = 2
 	return OK
 
 
@@ -97,7 +106,7 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 		var blueprint: Dictionary = world.state.construction_blueprints[row.id]
 		for _count in range(int(row.total)):
 			tasks.append({"recipe_id":row.id, "duration":int(blueprint.ticks), "materials":blueprint.materials.duplicate(true), "storage":int(blueprint.storage), "started":false, "progress":0})
-	var site := {"id":site_id, "station_id":station_id, "name":name, "sector":sector_id, "fee":int(estimate.fee), "paused":false, "completed":0, "builder_id":"", "status":"Needs materials", "build_storage":{}, "tasks":tasks}
+	var site := {"id":site_id, "station_id":station_id, "name":name, "sector":sector_id, "fee":int(estimate.fee), "paused":false, "cancelled":false, "refunded_fee":0, "completed":0, "builder_id":"", "status":"Needs materials", "build_storage":{}, "tasks":tasks}
 	# The upfront fee is transferred to the actual NPC builder once, and all
 	# validation is complete before balances or world objects are changed.
 	world.state.starting_credits = int(world.state.starting_credits) - int(estimate.fee)
@@ -118,6 +127,8 @@ func find_site(world: RefCounted, site_id: String) -> Dictionary:
 
 func remaining_materials(site: Dictionary) -> Dictionary:
 	var needed: Dictionary = {}
+	if bool(site.get("cancelled", false)):
+		return needed
 	for index in range(int(site.completed), site.tasks.size()):
 		var task: Dictionary = site.tasks[index]
 		if task.started:
@@ -134,6 +145,8 @@ func deliver(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
 	var site := find_site(world, site_id)
 	if ship.is_empty() or site.is_empty() or ship.owner != world.state.player_faction_id:
 		return {"ok":false, "message":"Ship or build site is unavailable."}
+	if bool(site.get("cancelled", false)):
+		return {"ok":false, "message":"Construction was cancelled. Recover its materials instead."}
 	if ship.sector != site.sector or ship.docked_at != site.station_id or not ship.orders.is_empty() or not ship.travel.is_empty():
 		return {"ok":false, "message":"Dock the ship at this build site first."}
 	var needed := remaining_materials(site)
@@ -157,7 +170,7 @@ func deliver(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
 
 func set_paused(world: RefCounted, site_id: String, paused: bool) -> bool:
 	var site := find_site(world, site_id)
-	if site.is_empty() or int(site.completed) >= site.tasks.size():
+	if site.is_empty() or bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size():
 		return false
 	site.paused = paused
 	site.status = "Paused" if paused else ("Awaiting builder" if _ready_for_work(site) else "Needs materials")
@@ -165,7 +178,7 @@ func set_paused(world: RefCounted, site_id: String, paused: bool) -> bool:
 
 
 func _ready_for_work(site: Dictionary) -> bool:
-	if int(site.completed) >= site.tasks.size():
+	if bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size():
 		return false
 	var task: Dictionary = site.tasks[int(site.completed)]
 	if task.started:
@@ -176,18 +189,97 @@ func _ready_for_work(site: Dictionary) -> bool:
 	return true
 
 
+## Cancel only unfinished work. A module which already consumed its inputs is
+## allowed to finish, avoiding a phantom loss of goods or completed production.
+## Fees for never-started modules return from the NPC builder's actual wallet.
+## Construction storage remains physical stock until recovered by a docked ship.
+func cancel(world: RefCounted, site_id: String) -> Dictionary:
+	var site := find_site(world, site_id)
+	var builder: Dictionary = world._find_ship(BUILDER_ID)
+	if site.is_empty() or builder.is_empty() or bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size():
+		return {"ok":false, "message":"No unfinished active construction is available to cancel."}
+	var refund := 0
+	for index in range(int(site.completed), site.tasks.size()):
+		var task: Dictionary = site.tasks[index]
+		if task.started:
+			continue
+		var blueprint: Dictionary = world.state.construction_blueprints.get(str(task.recipe_id), {})
+		if blueprint.is_empty():
+			return {"ok":false, "message":"The builder fee schedule is unavailable."}
+		refund += int(blueprint.fee)
+	if refund > int(site.fee) or refund > int(builder.credits):
+		return {"ok":false, "message":"The builder cannot fund the outstanding fee refund."}
+	var active := int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
+	site.cancelled = true
+	site.paused = false
+	site.refunded_fee = refund
+	if refund > 0:
+		builder.credits = int(builder.credits) - refund
+		world.state.starting_credits = int(world.state.starting_credits) + refund
+		world._record_transaction("construction_refund", BUILDER_ID, str(site.station_id), "", 0, 0, refund)
+	for ship in world.state.ships:
+		if ship.has("build_supply") and ship.build_supply.enabled and ship.build_supply.site_id == site.id:
+			world.build_supply.stop(ship)
+	if not active:
+		# An NPC builder already travelling completes its route, without starting
+		# anything at the cancelled site or losing its queued movement.
+		if builder.build_assignment == site.id:
+			builder.build_assignment = ""
+		site.builder_id = ""
+	var station: Dictionary = world._find_station(str(site.station_id))
+	if not station.is_empty():
+		station.name = str(site.name) if int(site.completed) > 0 else str(site.name) + " (cancelled plot)"
+	site.status = "Finishing current module" if active else "Cancelled"
+	return {"ok":true, "message":"Cancelled unstarted modules; refunded %d CR. Unused material remains at the site for recovery." % refund, "refund":refund}
+
+
+func recover(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
+	var ship: Dictionary = world._find_ship(ship_id)
+	var site := find_site(world, site_id)
+	if ship.is_empty() or site.is_empty() or ship.owner != world.state.player_faction_id or not bool(site.get("cancelled", false)):
+		return {"ok":false, "message":"Select one of your cancelled construction sites."}
+	if ship.sector != site.sector or ship.docked_at != site.station_id or not ship.orders.is_empty() or not ship.travel.is_empty():
+		return {"ok":false, "message":"Dock the recovery ship at the cancelled site first."}
+	var free_volume := maxi(0, int(ship.cargo_capacity) - int(world.cargo_volume(ship_id)))
+	var recovered := 0
+	var ware_ids: Array = site.build_storage.keys()
+	ware_ids.sort()
+	for ware_id in ware_ids:
+		var ware: Dictionary = world._find_ware(str(ware_id))
+		if ware.is_empty() or int(ware.volume) <= 0:
+			continue
+		var amount := mini(int(site.build_storage[ware_id]), int(free_volume / int(ware.volume)))
+		if amount <= 0:
+			continue
+		site.build_storage[ware_id] = int(site.build_storage[ware_id]) - amount
+		ship.cargo[ware_id] = int(ship.cargo.get(ware_id, 0)) + amount
+		free_volume -= amount * int(ware.volume)
+		recovered += amount
+		world._record_transaction("construction_recovery", ship_id, str(site.station_id), str(ware_id), amount, 0, 0)
+	if recovered == 0:
+		return {"ok":false, "message":"No construction material fits in this ship's remaining cargo space."}
+	return {"ok":true, "message":"Recovered %d physical construction material units." % recovered, "quantity":recovered}
+
+
 func tick(world: RefCounted) -> void:
 	var builder: Dictionary = world._find_ship(BUILDER_ID)
 	if builder.is_empty():
 		return
 	for site in world.state.build_sites:
-		if int(site.completed) >= site.tasks.size():
+		if bool(site.get("cancelled", false)):
+			var still_building := not str(site.builder_id).is_empty() and int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
+			site.status = "Finishing current module" if still_building else "Cancelled"
+		elif int(site.completed) >= site.tasks.size():
 			site.status = "Complete"
 		elif site.paused:
 			site.status = "Paused"
 		elif str(site.builder_id).is_empty():
 			site.status = "Awaiting builder" if _ready_for_work(site) else "Needs materials"
 	var current := find_site(world, str(builder.build_assignment))
+	if not current.is_empty() and bool(current.get("cancelled", false)) and (int(current.completed) >= current.tasks.size() or not bool(current.tasks[int(current.completed)].started)):
+		current.builder_id = ""
+		builder.build_assignment = ""
+		current = {}
 	if not current.is_empty() and (current.paused or int(current.completed) >= current.tasks.size()):
 		if not builder.orders.is_empty() or not builder.travel.is_empty():
 			return
@@ -199,7 +291,7 @@ func tick(world: RefCounted) -> void:
 		if not builder.orders.is_empty() or not builder.travel.is_empty():
 			return
 		for site in world.state.build_sites:
-			if site.paused or not _ready_for_work(site) or world._find_route(str(builder.sector), str(site.sector)).is_empty():
+			if bool(site.get("cancelled", false)) or site.paused or not _ready_for_work(site) or world._find_route(str(builder.sector), str(site.sector)).is_empty():
 				continue
 			current = site
 			builder.build_assignment = site.id
@@ -238,7 +330,12 @@ func tick(world: RefCounted) -> void:
 	station.storage_capacity = int(station.storage_capacity) + int(task.storage)
 	station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
 	current.completed = int(current.completed) + 1
-	if int(current.completed) >= current.tasks.size():
+	if bool(current.get("cancelled", false)):
+		station.name = current.name
+		current.status = "Cancelled"
+		current.builder_id = ""
+		builder.build_assignment = ""
+	elif int(current.completed) >= current.tasks.size():
 		station.name = current.name
 		current.status = "Complete"
 		current.builder_id = ""
