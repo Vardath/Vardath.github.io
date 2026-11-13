@@ -48,6 +48,11 @@ for name,cat in files.items():
         attrs={k:v[:500] for k,v in child.attrib.items()}
         entry["items"].append({"path":r.getroottree().getpath(child),"tag":child.tag,"attrs":attrs})
       res["targets"].append(entry)
+# Match the exact unpack + newline normalization code used by release CI.
+from validate import workshop_source, normalized
+for file, meta in res["files"].items():
+    native=workshop_source(data,{"catalog_path":file,"catalog_md5":meta["catalog_md5"]})
+    meta["validator_sha256_lf"]=hashlib.sha256(normalized(native)).hexdigest()
 res["source_sha256"]=hashlib.sha256(data).hexdigest()
 (BASE/"tools/kem_source_audit.json").write_text(json.dumps(res,indent=2)+"\n")
 print("Found",len(res["targets"]),"target cue definitions")
