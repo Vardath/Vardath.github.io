@@ -19,7 +19,7 @@ offset=start+nsize;files={}
 for name,size in zip(names,sizes):
   files[name]=data[offset:offset+size];offset+=size
 if sum(sizes)!=total:raise ValueError("Archive length mismatch")
-res={"workshop_id":item["workshop"],"catalogs":[],"targets":[]}
+res={"workshop_id":item["workshop"],"catalogs":[],"files":{},"callers":[],"targets":[]}
 wanted=["Bounties_RegisterPilot","Bounties_RegisterKill","EnemyTargetManager_SetPlayerTarget","kEMissions_Rescue_EnemyTargetManager"]
 for name,cat in files.items():
   if not name.endswith(".cat") or name[:-4]+".dat" not in files:continue
@@ -31,6 +31,12 @@ for name,cat in files.items():
     if not any(w.lower() in path.lower() for w in ["emergent_missions","patrol_raid"]):continue
     try:r=E.fromstring(body)
     except E.XMLSyntaxError:continue
+    norm=body.removeprefix(b'\\xef\\xbb\\xbf').replace(b'\\r\\n',b'\\n')
+    res["files"][path]={"sha256_lf":hashlib.sha256(norm).hexdigest(),"catalog_md5":checksum}
+    for action in r.xpath("//run_actions[contains(@ref, 'Bounties_RegisterPilot') or contains(@ref, 'Bounties_RegisterKill')]"):
+      res["callers"].append({"file":path,"path":r.getroottree().getpath(action),"attrs":dict(action.attrib),
+          "params":[{"name":x.get("name"),"value":x.get("value")} for x in action.findall("param")],
+          "parent":dict(action.getparent().attrib),"parent_tag":str(action.getparent().tag)})
     for cue in r.xpath("//*[self::cue or self::library]"):
       if cue.get("name") not in wanted:continue
       entry={"file":path,"cue":cue.get("name"),"cue_path":r.getroottree().getpath(cue),"root_tag":r.tag,"root_name":r.get("name"),"items":[]}
