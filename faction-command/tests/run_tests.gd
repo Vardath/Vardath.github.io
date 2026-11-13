@@ -2244,6 +2244,124 @@ func _run() -> void:
 	_expect(not is_instance_valid(screen.station_supply_screen) and is_instance_valid(screen.trade_screen), "closing station supply returns to the station")
 	screen.queue_free()
 	await process_frame
+	# Property management: two player ships, a completed station and an active
+	# build site must remain distinct command targets without creating new data.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-property-management.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	var property_world = screen.world
+	_disable_npc_trading(property_world)
+	var property_first: Dictionary = property_world.state.ships[0]
+	var built_property: Dictionary = property_world.construction.place(property_world, "hearthreach", {"solar_cells":1}, "self", [])
+	_expect(built_property.ok, "property scenario can place a real player station")
+	var ready_site: Dictionary = property_world.construction.find_site(property_world, str(built_property.site_id))
+	property_world._find_station("vellum_foundry").stock.alloy_plates -= 6
+	property_first.cargo.alloy_plates = 6
+	property_world.dock_ship(str(property_first.id), str(ready_site.station_id))
+	property_world.construction.deliver(property_world, str(property_first.id), str(ready_site.id))
+	property_world.advance_ticks(65)
+	_expect(int(ready_site.completed) == 1, "property scenario commissions a player-owned working station")
+	var waiting_property: Dictionary = property_world.construction.place(property_world, "lantern_deep", {"solar_cells":1}, "self", [])
+	_expect(waiting_property.ok, "property scenario also has an unfinished build site")
+	var second_ship: Dictionary = property_first.duplicate(true)
+	second_ship.id = "player_ship_second"
+	second_ship.name = "Second Wind"
+	second_ship.captain = "Ilya Tor"
+	second_ship.crew = 3
+	second_ship.sector = "vellum_gate"
+	second_ship.docked_at = ""
+	second_ship.orders = []
+	second_ship.travel = {}
+	second_ship.cargo = {}
+	second_ship.role = "Unassigned"
+	second_ship.status = "Idle"
+	second_ship.player_trader = {"enabled":false, "phase":"idle", "source_id":"", "destination_id":"", "ware_id":"", "quantity":0, "managed_quantity":0, "retry_ticks":0}
+	second_ship.build_supply = property_world.build_supply._empty_job()
+	second_ship.station_supply = property_world.station_supply._empty_job()
+	property_world.state.ships.append(second_ship)
+	screen._refresh_world_display()
+	_expect(screen.property_count_label.text.contains("2 ships") and screen.property_count_label.text.contains("1 stations") and screen.property_count_label.text.contains("1 sites"), "property directory lists owned ships, working stations and active sites separately")
+	_expect(screen.property_picker.item_count == 4 and screen.find_child("PropertySearch", true, false) != null and screen.find_child("OpenPropertyButton", true, false) != null, "searchable property directory exposes four real owned assets")
+	var original_selection: String = screen.active_player_ship_id
+	_expect(not screen._activate_player_ship("npc_builder_001") and screen.active_player_ship_id == original_selection, "NPC property cannot be selected or controlled as a player ship")
+	screen.property_filter.text = "SECOND WIND"
+	screen._on_property_filter("SECOND WIND")
+	_expect(screen.property_picker.item_count == 1 and str(screen.property_picker.get_item_metadata(0)) == "ship|player_ship_second", "property search finds an owned ship case insensitively")
+	screen.property_picker.select(0)
+	screen.property_picker.item_selected.emit(0)
+	_expect(screen.active_player_ship_id == second_ship.id and screen.detail_title.text == second_ship.name and screen.detail_body.text.contains("Ilya Tor"), "choosing the second ship updates its captain and detail view")
+	screen.role_picker.select(1)
+	screen.role_picker.item_selected.emit(1)
+	_expect(second_ship.player_trader.enabled and not property_first.player_trader.enabled and screen.role_picker.selected == 1, "setting a ship role affects only the selected player ship")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "second ship role and original property save successfully")
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in range(screen.trade_station_picker.item_count):
+		if str(screen.trade_station_picker.get_item_metadata(index)) == "vellum_foundry":
+			screen.trade_station_picker.select(index)
+			break
+	for index in range(screen.trade_ware_picker.item_count):
+		if str(screen.trade_ware_picker.get_item_metadata(index)) == "alloy_plates":
+			screen.trade_ware_picker.select(index)
+			break
+	screen._update_trade_screen()
+	screen.find_child("DockButton", true, false).pressed.emit()
+	screen.trade_quantity.value = 1
+	screen.find_child("BuyButton", true, false).pressed.emit()
+	_expect(second_ship.docked_at == "vellum_foundry" and int(second_ship.cargo.get("alloy_plates", 0)) == 1 and int(property_first.cargo.get("alloy_plates", 0)) == 0, "docking and buying cargo use the selected ship, not First Light")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.map_view.sector_selected.emit("cinder_veil")
+	screen.find_child("OrderButton", true, false).pressed.emit()
+	_expect(second_ship.orders.size() == 1 and property_first.orders.is_empty(), "fly orders are queued only on the active player ship")
+	screen.property_filter.text = "nomatchingasset"
+	screen._on_property_filter("nomatchingasset")
+	_expect(screen.property_picker.disabled and screen.property_action_button.disabled and screen.active_player_ship_id == second_ship.id, "an empty search safely disables selection and retains the command ship")
+	screen.property_filter.text = "outpost 1"
+	screen._on_property_filter("outpost 1")
+	_expect(screen.property_picker.item_count == 1 and str(screen.property_picker.get_item_metadata(0)) == "station|" + str(ready_site.station_id), "a commissioned site is listed as a working station, not a duplicate plot")
+	screen.property_picker.select(0)
+	screen.property_picker.item_selected.emit(0)
+	_expect(screen.selected_view == "owned_station" and screen.detail_body.text.contains("Production modules: 1"), "selecting a player station shows its actual production")
+	screen.property_action_button.pressed.emit()
+	_expect(screen._trade_station_id() == str(ready_site.station_id) and is_instance_valid(screen.trade_screen), "station property action opens the chosen station's trade screen")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.property_filter.text = "outpost 2"
+	screen._on_property_filter("outpost 2")
+	_expect(screen.property_picker.item_count == 1 and str(screen.property_picker.get_item_metadata(0)) == "site|" + str(waiting_property.site_id), "uncompleted construction is separately accessible as a build site")
+	screen.property_picker.select(0)
+	screen.property_picker.item_selected.emit(0)
+	_expect(screen.selected_view == "owned_site" and screen.detail_body.text.contains("Modules completed: 0 / 1"), "site selection shows the actual construction state")
+	screen.property_action_button.pressed.emit()
+	_expect(is_instance_valid(screen.build_screen) and str(screen._selected_build_site().id) == str(waiting_property.site_id), "build-site property action manages the selected construction plot")
+	screen.find_child("AutoSupplyBuildButton", true, false).pressed.emit()
+	_expect(second_ship.build_supply.enabled and second_ship.build_supply.site_id == waiting_property.site_id and not property_first.build_supply.enabled, "build supplies can be assigned to the selected second ship without changing First Light")
+	screen.find_child("CloseBuildButton", true, false).pressed.emit()
+	await process_frame
+	screen._refresh_world_display()
+	_expect(screen.active_player_ship_id == second_ship.id and bool(save_store.load_game(screen.save_path).get("ok", false)), "property selection survives refresh and its real ship assignments remain saveable")
+	var property_loaded: Dictionary = save_store.load_game(screen.save_path)
+	_expect(bool(property_loaded.get("ok", false)) and property_loaded.state.ships.any(func(item): return item.id == second_ship.id and item.build_supply.enabled), "saved world preserves the second player's stable ship ID and assigned role")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-property-management.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_property_button: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_property_button != null, "multi-property saved game remains available to continue")
+	if continue_property_button != null:
+		continue_property_button.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.property_picker.item_count == 4 and screen.active_player_ship_id == "ship_001", "continuing a multi-property save restores all assets and defaults to a valid owned command ship")
+		_expect(screen.world._find_ship(second_ship.id).build_supply.enabled, "saved second-ship automation survives a UI restart")
+	screen.queue_free()
+	await process_frame
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
