@@ -1,6 +1,96 @@
 {
   "workshop_id": "3627916728",
   "catalogs": [],
+  "files": {
+    "md/kuertee_emergent_missions.xml": {
+      "sha256_lf": "a623ea7cbe378a066223382141c9992ab963b1c7dce092fac7012e14ec082e02",
+      "catalog_md5": "d9c4e7bf1e03c3c87c4b49e86098763c"
+    },
+    "md/kuertee_emergent_missions_config.xml": {
+      "sha256_lf": "ae42c7bd39138bc1b4207f0351d88e9a3c0973ddb847ab1130abad34a00279ec",
+      "catalog_md5": "861bfbbdc9a801e319d506f1e15efdfd"
+    },
+    "md/kuertee_emergent_missions_enemy_targets.xml": {
+      "sha256_lf": "2c5ee3b52e069ecfe69b221f4b46062e980cac30de182f48182b9548d5ca58d0",
+      "catalog_md5": "bd1bd40bce2a75f4f34388f8e815451a"
+    },
+    "md/kuertee_emergent_missions_escort.xml": {
+      "sha256_lf": "6ba87615f82da6e7e2f9d8242b576738f750ae4f7e582e3794052c9ab7c167a8",
+      "catalog_md5": "525c68160caa62060d6e47f2b12ca624"
+    },
+    "md/kuertee_emergent_missions_hunt.xml": {
+      "sha256_lf": "f80ff8d80332ed67871af3a5e482ef28ff5c7b76dc66a32e42794b77eea370d6",
+      "catalog_md5": "27567e83037328e7b4d9e7df0910cd01"
+    },
+    "md/kuertee_emergent_missions_mayday.xml": {
+      "sha256_lf": "1821e7de83a7edf1fe3969d1ad059378f1cf51716cc282c83255525b0e3d5ee1",
+      "catalog_md5": "3cb2355fc22a61a856d1bc16222cf180"
+    },
+    "md/kuertee_emergent_missions_npc_manager.xml": {
+      "sha256_lf": "34fb1f2122ff9c1860640d28a99464ebc46d6674866a37df48caee0c3ac1863b",
+      "catalog_md5": "4ed1d7b634ae9072f0862e35f0448d5e"
+    },
+    "md/kuertee_emergent_missions_patrol_raid.xml": {
+      "sha256_lf": "132eef352d5b8ec8a0cc8b05c5060a82ad5acf176d9e78f0b4fc3e7c24c79165",
+      "catalog_md5": "38afee39b010530bfa85173a6886afdd"
+    },
+    "md/kuertee_emergent_missions_player_owned_nearby.xml": {
+      "sha256_lf": "f536cc7c69d024b68d92998e377e2dcd1275a78b495e126591670e7ca7e90502",
+      "catalog_md5": "5cc97ebbbe838cb86ef82191354e2a9a"
+    },
+    "md/kuertee_emergent_missions_requirements_by_faction.xml": {
+      "sha256_lf": "08ba3550ef9b0e64a00f3fb51c09d7d726e8e2fafedf336e2c0e9da2df408cfd",
+      "catalog_md5": "c1dc56f84febdd2458e72e98382fedbd"
+    },
+    "md/kuertee_emergent_missions_rescue.xml": {
+      "sha256_lf": "5c01409e26e5046665c1b315223e546f3e04da5b979ab73a75a9c61872f8313a",
+      "catalog_md5": "4422060b6a88524f0bab23c63cc38be8"
+    }
+  },
+  "callers": [
+    {
+      "file": "md/kuertee_emergent_missions.xml",
+      "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/cue[4]/actions/run_actions[1]",
+      "attrs": {
+        "ref": "Bounties_RegisterPilot"
+      },
+      "params": [
+        {
+          "name": "Pilot",
+          "value": "$attacker.pilot"
+        }
+      ],
+      "parent": {},
+      "parent_tag": "actions"
+    },
+    {
+      "file": "md/kuertee_emergent_missions.xml",
+      "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/cue[4]/actions/run_actions[2]",
+      "attrs": {
+        "ref": "Bounties_RegisterKill"
+      },
+      "params": [
+        {
+          "name": "Pilot",
+          "value": "$attacker.pilot"
+        },
+        {
+          "name": "VictimClass",
+          "value": "$victimClass"
+        },
+        {
+          "name": "VictimFaction",
+          "value": "$victimFaction"
+        },
+        {
+          "name": "IsSubordinateKill",
+          "value": "$isSubordinateKill"
+        }
+      ],
+      "parent": {},
+      "parent_tag": "actions"
+    }
+  ],
   "targets": [
     {
       "file": "md/kuertee_emergent_missions.xml",
