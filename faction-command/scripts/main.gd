@@ -666,7 +666,7 @@ func _show_map_ship(ship_id: String) -> void:
 		_show_sector(selected_sector)
 		return
 	if ship.owner == world.state.player_faction_id:
-		_show_ship()
+		_activate_player_ship(ship_id)
 		return
 	selected_view = "npc_ship"
 	selected_ship_id = ship_id
@@ -680,6 +680,12 @@ func _show_map_ship(ship_id: String) -> void:
 func _show_ship() -> void:
 	selected_view = "ship"
 	var ship: Dictionary = _player_ship()
+	if ship.is_empty():
+		detail_title.text = "No selected ship"
+		detail_body.text = "Choose one of your ships from the property list."
+		return
+	selected_property_key = "ship|" + str(ship.id)
+	_refresh_property_picker()
 	var sector_name := _sector_name(str(ship.sector))
 	detail_title.text = ship.name
 	detail_body.text = "%s  ·  %s\n\nCaptain\n%s\n\nCrew\n%s\n\nRole\n%s\n\nLocation\n%s" % [ship["class"], ship.status, ship.captain, int(ship.crew), ship.role, sector_name]
@@ -886,6 +892,9 @@ func _show_owned_site(site_id: String) -> void:
 	if site.is_empty():
 		_show_sector(selected_sector)
 		return
+	if int(site.completed) >= site.tasks.size() and not bool(site.get("cancelled", false)):
+		_show_owned_station(str(site.station_id))
+		return
 	selected_view = "owned_site"
 	selected_property_key = "site|" + site_id
 	_focus_property_sector(str(site.sector))
@@ -940,6 +949,9 @@ func _queue_order() -> void:
 
 func _refresh_world_display() -> void:
 	var ship: Dictionary = _player_ship()
+	active_player_ship_id = str(ship.id)
+	ship_button.text = "◈   " + str(ship.name)
+	_refresh_property_picker()
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
 	role_picker.select(3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))
 	if ship.station_supply.enabled:
@@ -957,6 +969,10 @@ func _refresh_world_display() -> void:
 		_show_ship()
 	elif selected_view == "npc_ship":
 		_show_map_ship(selected_ship_id)
+	elif selected_view == "owned_station":
+		_show_owned_station(selected_property_key.substr(8))
+	elif selected_view == "owned_site":
+		_show_owned_site(selected_property_key.substr(5))
 	else:
 		_show_sector(selected_sector)
 
