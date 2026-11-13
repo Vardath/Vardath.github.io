@@ -91,11 +91,13 @@ jobs:
           unzip -p FactionCommand-debug.apk assets/data/construction.json | cmp - ../data/construction.json
           unzip -p FactionCommand-debug.apk assets/data/archives.json | cmp - ../data/archives.json
           unzip -p FactionCommand-debug.apk assets/data/research.json | cmp - ../data/research.json
+          unzip -p FactionCommand-debug.apk assets/data/ship_hulls.json | cmp - ../data/ship_hulls.json
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/construction.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/build_supply.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/archives.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/research.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/station_supply.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/shipyard.gdc'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt

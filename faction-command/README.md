@@ -22,8 +22,8 @@ previous ship's orders. Select a station for its production details and
 **Open station trade**, or choose a build site and **Manage build site**.
 The directory shows property counts and supports case-insensitive matching by
 asset name, category, stable ID and sector. It handles additional player-owned
-ships already present in a save, although purchasing/building more ships is
-a later gameplay feature.
+ships already present in a save. The first NPC wharf contracts below can
+also produce additional owned ships in normal play.
 
 Select a sector on the map or in the directory, then use **Queue fly order**
 for the active ship. Queue additional destinations to visit in sequence.
@@ -31,6 +31,30 @@ Resume time to see ships cross connected sectors, currently five ticks
 per crossing. Ship details show captain, crew, role, cargo and orders.
 Your selection is a UI preference; underlying ship IDs, orders, roles,
 stations, credits and save data are unchanged by browsing the directory.
+
+### Ship orders at the NPC wharf
+
+Choose **Order ships** from Your Property. Vellum Foundry in Vellum Gate
+currently provides a small, remotely accessible NPC assembly berth. The first
+catalogue has a **Courier** (4,000 CR, 12 Alloy Plates, 24 build ticks and 50
+cargo capacity) and a **Freighter** (8,500 CR, 30 Alloy Plates, 48 ticks and 180
+cargo capacity). The quoted fee includes contract crew and an initial pilot.
+Placing an order is confirmed before credits move. The wharf must already have
+the required physical alloy in stock; payment transfers directly to its
+operating budget and consumes that stock exactly once. A lack of money or metal
+prevents the whole transaction. This prototype uses an alloy-only hull bill;
+later shipyards will require more complete components, equipment and workforce.
+
+The wharf handles one ship at a time, with up to five incomplete orders.
+Pending contracts, ordered stable ship IDs and construction progress survive
+saving, restoring and game pauses. If the NPC wharf becomes unavailable,
+production blocks without creating a free vessel or refunding an unfinished
+paid order. Once finished, the ship exists at the wharf with the owner's
+player-faction identity, its own crew and cargo capacity, full ship automation
+controls, and an entry in the property directory and transaction ledger.
+Select the new ship there to command or trade with it. Ship contracts cannot
+yet be cancelled, and new shipyard construction, modular hull equipment and
+player-owned wharf operation are later goals.
 
 The galaxy map can be dragged to pan and pinched to zoom; the **+**, **−**
 and **Fit** buttons provide an alternative. Select a sector and choose **Open
@@ -234,6 +258,10 @@ Research tests cover lab construction and inputs, relevant archive references,
 project progress and pausing, real upgrade effects, migration and save/load.
 Station supply tests cover purchase limits, physical deliveries, working-stock
 protection, changing shortages, competing ships, role changes and save/load.
+Shipyard tests cover verified money/ware transfers, full or hostile facilities,
+serial construction, per-hull ship roles, a blocked wharf, stable ship identities,
+save/load mid-contract, old-save migration, future-version protection and the
+end-to-end purchase and command UI.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

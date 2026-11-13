@@ -108,6 +108,12 @@ var build_move_up_button: Button
 var build_move_down_button: Button
 var build_task_list_signature := ""
 var build_task_picker_site_id := ""
+var shipyard_screen: Control
+var shipyard_hull_picker: OptionButton
+var shipyard_info: Label
+var shipyard_feedback: Label
+var shipyard_buy_button: Button
+var shipyard_confirm: ConfirmationDialog
 
 
 func _ready() -> void:
@@ -136,6 +142,8 @@ func _process(delta: float) -> void:
 			_update_research_screen()
 		if is_instance_valid(station_supply_screen):
 			_update_station_supply_screen()
+		if is_instance_valid(shipyard_screen):
+			_update_shipyard_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -468,6 +476,10 @@ func _build_ui() -> void:
 	trade_button.name = "TradeButton"
 	trade_button.pressed.connect(_open_trade)
 	property_list.add_child(trade_button)
+	var wharf_button := _button("Order ships")
+	wharf_button.name = "ShipyardButton"
+	wharf_button.pressed.connect(_open_shipyard)
+	property_list.add_child(wharf_button)
 	var plan_button := _button("Plan station")
 	plan_button.name = "PlanStationButton"
 	plan_button.pressed.connect(_open_station_planner)
@@ -1533,6 +1545,141 @@ func _close_build_screen() -> void:
 	build_task_picker_site_id = ""
 
 
+func _open_shipyard() -> void:
+	if is_instance_valid(shipyard_screen):
+		return
+	shipyard_screen = Control.new()
+	shipyard_screen.name = "ShipyardScreen"
+	shipyard_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(shipyard_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.94)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	shipyard_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	shipyard_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(820, 530)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 9)
+	panel.add_child(column)
+	column.add_child(_label("NPC WHARF — SHIP ORDERS", 22, TEXT))
+	column.add_child(_wrapped_label("Remote contracts consume actual alloy stock and transfer credits at Vellum Foundry. One berth builds the ships in order. The price includes an initial contract pilot and crew.", 14, MUTED))
+	column.add_child(_label("CHOOSE HULL", 12, ACCENT))
+	shipyard_hull_picker = OptionButton.new()
+	shipyard_hull_picker.name = "ShipyardHullPicker"
+	shipyard_hull_picker.custom_minimum_size.y = 44
+	shipyard_hull_picker.add_theme_font_size_override("font_size", 15)
+	for hull_id in world.state.shipyard.catalog:
+		var hull: Dictionary = world.state.shipyard.catalog[hull_id]
+		shipyard_hull_picker.add_item("%s  ·  %d CR" % [hull.name, int(hull.price)])
+		shipyard_hull_picker.set_item_metadata(shipyard_hull_picker.item_count - 1, str(hull_id))
+	shipyard_hull_picker.select(0)
+	shipyard_hull_picker.item_selected.connect(_on_shipyard_hull_selected)
+	column.add_child(shipyard_hull_picker)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	shipyard_info = _wrapped_label("", 15, TEXT)
+	shipyard_info.name = "ShipyardInfo"
+	shipyard_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(shipyard_info)
+	shipyard_feedback = _wrapped_label("", 13, ACCENT)
+	shipyard_feedback.name = "ShipyardFeedback"
+	column.add_child(shipyard_feedback)
+	var buttons := HBoxContainer.new()
+	buttons.add_theme_constant_override("separation", 8)
+	column.add_child(buttons)
+	shipyard_buy_button = _button("Place ship order")
+	shipyard_buy_button.name = "OrderShipButton"
+	shipyard_buy_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	shipyard_buy_button.pressed.connect(_request_ship_order)
+	buttons.add_child(shipyard_buy_button)
+	var close_button := _button("Close")
+	close_button.name = "CloseShipyardButton"
+	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	close_button.pressed.connect(_close_shipyard)
+	buttons.add_child(close_button)
+	shipyard_confirm = ConfirmationDialog.new()
+	shipyard_confirm.name = "ConfirmShipOrder"
+	shipyard_confirm.title = "Confirm ship contract"
+	shipyard_confirm.confirmed.connect(_confirm_ship_order)
+	shipyard_screen.add_child(shipyard_confirm)
+	_update_shipyard_screen()
+
+
+func _selected_hull_id() -> String:
+	if not is_instance_valid(shipyard_hull_picker) or shipyard_hull_picker.selected < 0:
+		return ""
+	return str(shipyard_hull_picker.get_item_metadata(shipyard_hull_picker.selected))
+
+
+func _on_shipyard_hull_selected(_index: int) -> void:
+	shipyard_feedback.text = ""
+	_update_shipyard_screen()
+
+
+func _update_shipyard_screen() -> void:
+	if not is_instance_valid(shipyard_screen):
+		return
+	var hull_id: String = _selected_hull_id()
+	var hull: Dictionary = world.state.shipyard.catalog.get(hull_id, {})
+	if hull.is_empty():
+		shipyard_buy_button.disabled = true
+		shipyard_info.text = "No available hulls."
+		return
+	var wharf: Dictionary = world._find_station(str(world.state.shipyard.wharf_station_id))
+	var stock_lines: Array[String] = []
+	for ware_id in hull.materials:
+		var ware: Dictionary = world._find_ware(str(ware_id))
+		stock_lines.append("%s: %d required · %d physically at wharf" % [ware.get("name", ware_id), int(hull.materials[ware_id]), int(wharf.get("stock", {}).get(ware_id, 0))])
+	var quote: Dictionary = world.shipyard.quote(world, hull_id)
+	shipyard_buy_button.disabled = not bool(quote.get("ok", false))
+	var lines: Array[String] = []
+	lines.append("%s — %s\nPrice: %d CR  ·  Assembly: %d simulation ticks\nCargo capacity: %d  ·  Initial crew: %d\nWharf: %s in %s" % [hull.name, hull["class"], int(hull.price), int(hull.ticks), int(hull.cargo_capacity), int(hull.crew), wharf.get("name", "Unavailable"), _sector_name(str(wharf.get("sector", "")))])
+	lines.append("PHYSICAL CONSTRUCTION MATERIALS\n" + "\n".join(stock_lines))
+	lines.append("ORDER STATUS\n" + str(quote.message))
+	var queue_lines: Array[String] = []
+	for order in world.state.shipyard.orders:
+		var ordered: Dictionary = world.state.shipyard.catalog.get(str(order.hull_id), {})
+		queue_lines.append("%s · %s · %d / %d ticks · %s" % [order.id, ordered.get("name", order.hull_id), int(order.progress), int(order.duration), str(order.status).capitalize()])
+	lines.append("SHIP ASSEMBLY QUEUE\n" + ("No orders yet." if queue_lines.is_empty() else "\n".join(queue_lines)))
+	lines.append("Completed ships appear in Your Property, docked at the wharf. A ship awaiting assembly has paid its contract and committed its metal. Ship order cancellation, refunds and dedicated player shipyards are future features.")
+	shipyard_info.text = "\n\n".join(lines)
+
+
+func _request_ship_order() -> void:
+	var hull_id: String = _selected_hull_id()
+	var quote: Dictionary = world.shipyard.quote(world, hull_id)
+	if not bool(quote.get("ok", false)):
+		shipyard_feedback.text = str(quote.message)
+		_update_shipyard_screen()
+		return
+	var hull: Dictionary = quote.hull
+	shipyard_confirm.dialog_text = "Spend %d CR and the listed physical wharf material on one %s? The ship will arrive only after its %d-tick assembly completes. This prototype contract cannot be cancelled." % [int(hull.price), str(hull.name), int(hull.ticks)]
+	shipyard_confirm.popup_centered()
+
+
+func _confirm_ship_order() -> void:
+	var result: Dictionary = world.shipyard.place_order(world, _selected_hull_id())
+	shipyard_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			shipyard_feedback.text += " Save failed."
+		_update_header()
+		_refresh_world_display()
+	_update_shipyard_screen()
+
+
+func _close_shipyard() -> void:
+	if is_instance_valid(shipyard_screen):
+		shipyard_screen.queue_free()
+	shipyard_screen = null
+
+
 func _open_trade() -> void:
 	if is_instance_valid(trade_screen):
 		return
@@ -2066,6 +2213,10 @@ func _update_trade_screen() -> void:
 			lines.append("#%d  T%d  %s funded +%d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
 		elif entry.kind == "construction_fee":
 			lines.append("#%d  T%d  Builder %s hired · %d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind == "ship_order":
+			lines.append("#%d  T%d  Ship contract %s · %d CR paid\n%s" % [int(entry.id), int(entry.tick), actor, -int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind == "ship_delivery":
+			lines.append("#%d  T%d  New ship delivered: %s\n%s" % [int(entry.id), int(entry.tick), actor, entry_station.get("name", entry.station_id)])
 		elif entry.kind in ["build_delivery", "transfer_in", "transfer_out"]:
 			var action := "Delivered to build storage" if entry.kind == "build_delivery" else ("Transferred to station" if entry.kind == "transfer_in" else "Taken from station")
 			lines.append("#%d  T%d  %s: %s %d %s\n%s" % [int(entry.id), int(entry.tick), actor, action, int(entry.quantity), entry_ware.get("name", entry.ware_id), entry_station.get("name", entry.station_id)])

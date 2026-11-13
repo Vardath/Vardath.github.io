@@ -10,6 +10,7 @@ const BuildSupplyScript = preload("res://scripts/build_supply.gd")
 const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
 const StationSupplyScript = preload("res://scripts/station_supply.gd")
+const ShipyardScript = preload("res://scripts/shipyard.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
@@ -18,6 +19,7 @@ var build_supply = BuildSupplyScript.new()
 var archives = ArchivesScript.new()
 var research = ResearchScript.new()
 var station_supply = StationSupplyScript.new()
+var shipyard = ShipyardScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -60,6 +62,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if station_supply.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if shipyard.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -91,6 +95,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = station_supply.prepare(restored)
+	if result != OK:
+		return result
+	result = shipyard.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -213,6 +220,7 @@ func advance_ticks(count: int) -> void:
 		construction.tick(self)
 		archives.tick(self)
 		research.tick(self)
+		shipyard.tick(self)
 
 
 func snapshot() -> Dictionary:

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "wharf_station_id": "vellum_foundry",
+  "hulls": [
+    {
+      "id": "courier_mk1",
+      "name": "Courier",
+      "class": "Courier",
+      "price": 4000,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 12
+      },
+      "cargo_capacity": 50,
+      "crew": 2
+    },
+    {
+      "id": "freighter_mk1",
+      "name": "Freighter",
+      "class": "Freighter",
+      "price": 8500,
+      "ticks": 48,
+      "materials": {
+        "alloy_plates": 30
+      },
+      "cargo_capacity": 180,
+      "crew": 4
+    }
+  ]
+}

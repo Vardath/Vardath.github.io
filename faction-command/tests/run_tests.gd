@@ -53,7 +53,13 @@ func _without_station_supply(ships: Array) -> Array:
 	return copy
 
 
+func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("shipyard_version")
+	state.erase("shipyard")
+
+
 func _strip_research(state: Dictionary) -> void:
+	_strip_shipyard(state)
 	state.erase("station_supply_version")
 	for ship in state.ships:
 		ship.erase("station_supply")
@@ -1767,6 +1773,7 @@ func _run() -> void:
 	_expect(save_store.save_game(test_root + "/competing-station-suppliers.json", competing_stations.snapshot()) == OK, "competing station suppliers remain saveable")
 
 	var old_station_supply: Dictionary = saved_trip.duplicate(true)
+	_strip_shipyard(old_station_supply)
 	old_station_supply.erase("station_supply_version")
 	for old_ship in old_station_supply.ships:
 		old_ship.erase("station_supply")
@@ -1787,6 +1794,104 @@ func _run() -> void:
 	future_station_file.store_string(JSON.stringify({"format_version":1, "payload":future_station_payload, "checksum":future_station_payload.sha256_text()}))
 	future_station_file.close()
 	_expect(save_store.load_game(future_station_path).get("reason") == "unsupported", "future station supply data cannot silently fall back to an older save")
+
+	# Ship contracts: the NPC wharf must transfer real money, remove physical
+	# metal, and commission new owned ships over serialized simulation time.
+	var wharf_world = WorldScript.new()
+	_expect(wharf_world.load_starter() == OK, "wharf scenario loads without granting another player ship")
+	_disable_npc_trading(wharf_world)
+	var wharf: Dictionary = wharf_world._find_station("vellum_foundry")
+	var initial_wharf_money := _total_credits(wharf_world.state)
+	var initial_wharf_stock := int(wharf.stock.alloy_plates)
+	_expect(wharf_world.state.shipyard_version == 1 and wharf_world.state.shipyard.orders.is_empty() and wharf_world.state.ships.filter(func(item): return item.owner == "player").size() == 1, "the shipyard is ready with an empty queue and no free player ships")
+	var courier_quote: Dictionary = wharf_world.shipyard.quote(wharf_world, "courier_mk1")
+	_expect(courier_quote.ok and int(courier_quote.hull.price) == 4000 and int(courier_quote.hull.materials.alloy_plates) == 12 and int(courier_quote.hull.ticks) == 24, "a courier hull has a physical material bill, real price and finite build duration")
+	var before_bad_hull: Dictionary = wharf_world.snapshot()
+	_expect(not wharf_world.shipyard.place_order(wharf_world, "invalid_hull").ok and before_bad_hull == wharf_world.snapshot(), "unknown hulls cannot spend credits or materials")
+	wharf_world.state.relations.vesper = -40
+	var before_hostile: Dictionary = wharf_world.snapshot()
+	_expect(not wharf_world.shipyard.place_order(wharf_world, "courier_mk1").ok and before_hostile == wharf_world.snapshot(), "hostile faction cannot place a ship contract")
+	wharf_world.state.relations.vesper = 0
+	wharf_world.state.starting_credits = 200
+	var before_poor_wharf: Dictionary = wharf_world.snapshot()
+	_expect(not wharf_world.shipyard.place_order(wharf_world, "courier_mk1").ok and before_poor_wharf == wharf_world.snapshot(), "insufficient money rejects the entire hull transaction")
+	wharf_world.state.starting_credits = 25000
+	wharf.stock.alloy_plates = 0
+	var before_short_wharf: Dictionary = wharf_world.snapshot()
+	_expect(not wharf_world.shipyard.place_order(wharf_world, "courier_mk1").ok and before_short_wharf == wharf_world.snapshot(), "an empty wharf cannot create ships from missing alloy")
+	wharf.stock.alloy_plates = initial_wharf_stock
+	var wharf_first: Dictionary = wharf_world.shipyard.place_order(wharf_world, "courier_mk1")
+	var wharf_second: Dictionary = wharf_world.shipyard.place_order(wharf_world, "freighter_mk1")
+	_expect(wharf_first.ok and wharf_second.ok and wharf_first.ship_id != wharf_second.ship_id and wharf_world.state.shipyard.orders.size() == 2, "two hull contracts reserve stable distinct ship IDs and enter the real queue")
+	_expect(int(wharf_world.state.starting_credits) == 12500 and int(wharf.credits) == 32500 and _total_credits(wharf_world.state) == initial_wharf_money, "hull prices transfer existing player credits to the NPC wharf exactly once")
+	_expect(int(wharf.stock.alloy_plates) == initial_wharf_stock - 42 and wharf_world.state.ledger[wharf_world.state.ledger.size() - 1].kind == "ship_order", "two hulls consume their exact existing metal immediately and record the payment")
+	_expect(wharf_world._find_ship(str(wharf_first.ship_id)).is_empty(), "placing an order does not materialise an instant ship")
+	wharf_world.advance_ticks(9)
+	_expect(int(wharf_world.state.shipyard.orders[0].progress) == 9 and wharf_world.state.shipyard.orders[0].status == "building" and int(wharf_world.state.shipyard.orders[1].progress) == 0, "only the first paid hull occupies the berth")
+	var wharf_save_path := test_root + "/shipyard-in-progress.json"
+	_expect(save_store.save_game(wharf_save_path, wharf_world.snapshot()) == OK, "shipbuilding progress and reserved materials are saveable")
+	var wharf_loaded: Dictionary = save_store.load_game(wharf_save_path)
+	var wharf_restored = WorldScript.new()
+	_expect(bool(wharf_loaded.get("ok", false)) and wharf_restored.restore_snapshot(wharf_loaded.state) == OK, "pending paid hull orders restore without duplicate charges")
+	wharf_world.advance_ticks(75)
+	wharf_restored.advance_ticks(75)
+	_expect(wharf_world.snapshot() == wharf_restored.snapshot(), "two serialised hull orders finish deterministically after a mid-build save")
+	_expect(wharf_world.state.shipyard.orders[0].status == "complete" and wharf_world.state.shipyard.orders[1].status == "complete" and int(wharf_world.state.shipyard.orders[0].progress) == 24 and int(wharf_world.state.shipyard.orders[1].progress) == 48, "the single berth completes both hulls with their actual build durations")
+	var courier_ship: Dictionary = wharf_world._find_ship(str(wharf_first.ship_id))
+	var freighter_ship: Dictionary = wharf_world._find_ship(str(wharf_second.ship_id))
+	_expect(not courier_ship.is_empty() and not freighter_ship.is_empty() and courier_ship.owner == "player" and freighter_ship.owner == "player" and courier_ship.sector == "vellum_gate" and freighter_ship.sector == "vellum_gate", "completed ships exist as separately owned assets at the actual wharf sector")
+	_expect(int(courier_ship.cargo_capacity) == 50 and int(freighter_ship.cargo_capacity) == 180 and courier_ship.has("player_trader") and freighter_ship.has("build_supply") and freighter_ship.has("station_supply"), "new ships have distinct cargo capacities and full existing ship-role compatibility")
+	_expect(_total_credits(wharf_world.state) == initial_wharf_money and wharf_world.state.ledger.back().kind == "ship_delivery", "delivering ships cannot duplicate money and appears in the ledger")
+	_expect(save_store.save_game(test_root + "/shipyard-completed.json", wharf_world.snapshot()) == OK, "both completed commissioned ships pass strict save validation")
+	_expect(wharf_world.set_player_trader(str(freighter_ship.id), true) and wharf_world.queue_fly_to(str(freighter_ship.id), "cinder_veil") and wharf_world.state.ships[0].orders.is_empty(), "new freighter can take real autonomous and manual orders independently of First Light")
+
+	# The service berth halts, rather than forging a ship or refunding money,
+	# if wharf ownership changes during a paid contract.
+	var blocked_wharf = WorldScript.new()
+	blocked_wharf.load_starter()
+	_disable_npc_trading(blocked_wharf)
+	var blocked_order: Dictionary = blocked_wharf.shipyard.place_order(blocked_wharf, "courier_mk1")
+	blocked_wharf.advance_ticks(5)
+	var blocked_progress: int = int(blocked_wharf.state.shipyard.orders[0].progress)
+	blocked_wharf._find_station("vellum_foundry").owner = blocked_wharf.state.player_faction_id
+	blocked_wharf.advance_ticks(14)
+	_expect(blocked_wharf.state.shipyard.orders[0].status == "blocked" and int(blocked_wharf.state.shipyard.orders[0].progress) == blocked_progress and blocked_wharf._find_ship(str(blocked_order.ship_id)).is_empty(), "unavailable wharf suspends paid assembly without fabricating a ship")
+	_expect(save_store.save_game(test_root + "/shipyard-blocked.json", blocked_wharf.snapshot()) == OK, "the blocked contract remains a valid persistent state")
+	blocked_wharf._find_station("vellum_foundry").owner = "vesper"
+	blocked_wharf.advance_ticks(24)
+	_expect(blocked_wharf.state.shipyard.orders[0].status == "complete" and not blocked_wharf._find_ship(str(blocked_order.ship_id)).is_empty(), "restoring access to the wharf lets the paid contract finish exactly once")
+	var limited_wharf = WorldScript.new()
+	limited_wharf.load_starter()
+	_disable_npc_trading(limited_wharf)
+	for _order in range(5):
+		limited_wharf.shipyard.place_order(limited_wharf, "courier_mk1")
+	var before_sixth: Dictionary = limited_wharf.snapshot()
+	_expect(not limited_wharf.shipyard.place_order(limited_wharf, "courier_mk1").ok and limited_wharf.snapshot() == before_sixth, "a full five-order production queue rejects further purchases atomically")
+
+	# Pre-shipyard saves migrate without resetting existing player property.
+	var old_wharf_state: Dictionary = wharf_world.snapshot()
+	_strip_shipyard(old_wharf_state)
+	var old_wharf_save := test_root + "/before-shipyard.json"
+	_expect(save_store.save_game(old_wharf_save, old_wharf_state) == OK, "a pre-shipyard game remains readable")
+	var old_wharf_read: Dictionary = save_store.load_game(old_wharf_save)
+	var wharf_migrated = WorldScript.new()
+	_expect(bool(old_wharf_read.get("ok", false)) and wharf_migrated.restore_snapshot(old_wharf_read.state) == OK and wharf_migrated.state.shipyard_version == 1, "older games gain an empty wharf order catalogue")
+	_expect(wharf_migrated.state.shipyard.orders.is_empty() and wharf_migrated.state.ships == old_wharf_state.ships and wharf_migrated.state.starting_credits == old_wharf_state.starting_credits and wharf_migrated.state.ledger == old_wharf_state.ledger, "migration preserves every existing vessel, order, financial record and cargo unit without granting free ships")
+	var bad_shipyard: Dictionary = wharf_world.snapshot()
+	bad_shipyard.shipyard.orders[0].progress = 999
+	_expect(save_store.save_game(test_root + "/bad-shipyard.json", bad_shipyard) != OK, "save validator rejects impossible shipyard progress")
+	bad_shipyard = wharf_world.snapshot()
+	bad_shipyard.shipyard.orders[1].ship_id = bad_shipyard.shipyard.orders[0].ship_id
+	_expect(save_store.save_game(test_root + "/bad-shipyard.json", bad_shipyard) != OK, "duplicate reserved ship IDs are not saveable")
+	var future_wharf_path := test_root + "/future-shipyard.json"
+	_expect(save_store.save_game(future_wharf_path, wharf_world.snapshot()) == OK and save_store.save_game(future_wharf_path, wharf_world.snapshot()) == OK, "shipyard version test retains a valid backup")
+	var future_wharf: Dictionary = wharf_world.snapshot()
+	future_wharf.shipyard_version = 2
+	var future_wharf_payload := Marshalls.variant_to_base64(future_wharf, false)
+	var future_wharf_file := FileAccess.open(future_wharf_path, FileAccess.WRITE)
+	future_wharf_file.store_string(JSON.stringify({"format_version":1, "payload":future_wharf_payload, "checksum":future_wharf_payload.sha256_text()}))
+	future_wharf_file.close()
+	_expect(save_store.load_game(future_wharf_path).get("reason") == "unsupported", "future shipyard save versions are never silently replaced by an older backup")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -2360,6 +2465,65 @@ func _run() -> void:
 		await process_frame
 		_expect(screen.property_picker.item_count == 4 and screen.active_player_ship_id == "ship_001", "continuing a multi-property save restores all assets and defaults to a valid owned command ship")
 		_expect(screen.world._find_ship(second_ship.id).build_supply.enabled, "saved second-ship automation survives a UI restart")
+	screen.queue_free()
+	await process_frame
+	# The player can really buy and command a new ship from the on-screen
+	# wharf interface, rather than inserting a test-only property.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-ship-orders.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	var ui_original_ship: Dictionary = screen.world.state.ships[0]
+	screen.find_child("ShipyardButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.shipyard_screen) and screen.shipyard_info.text.contains("physically at wharf") and screen.find_child("ShipyardHullPicker", true, false) != null, "shipyard menu displays physical wharf inventory and selectable hulls")
+	_expect(screen.shipyard_hull_picker.item_count == 2 and not screen.shipyard_buy_button.disabled, "two hull types are available to buy with real starting funds and wharf stock")
+	for index in range(screen.shipyard_hull_picker.item_count):
+		if str(screen.shipyard_hull_picker.get_item_metadata(index)) == "freighter_mk1":
+			screen.shipyard_hull_picker.select(index)
+			screen._on_shipyard_hull_selected(index)
+			break
+	_expect(screen.shipyard_info.text.contains("8500 CR") and screen.shipyard_info.text.contains("Cargo capacity: 180"), "freighter quote shows its real contract cost and cargo capacity")
+	screen.find_child("OrderShipButton", true, false).pressed.emit()
+	_expect(screen.shipyard_confirm.dialog_text.contains("8500 CR") and screen.world.state.shipyard.orders.is_empty(), "buying a hull requires confirmation before spending")
+	screen.shipyard_confirm.confirmed.emit()
+	_expect(screen.world.state.shipyard.orders.size() == 1 and int(screen.world.state.starting_credits) == 16500 and int(screen.world._find_station("vellum_foundry").stock.alloy_plates) == 70, "confirmed purchase transfers credits and consumes exactly 30 alloy plates")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.property_count_label.text.contains("1 ships"), "paid pending order saves without granting an instant ship")
+	screen.world.advance_ticks(48)
+	screen._refresh_world_display()
+	screen._update_shipyard_screen()
+	var delivered_id: String = str(screen.world.state.shipyard.orders[0].ship_id)
+	var delivered_ship: Dictionary = screen.world._find_ship(delivered_id)
+	_expect(not delivered_ship.is_empty() and delivered_ship.owner == "player" and delivered_ship["class"] == "Freighter" and int(delivered_ship.cargo_capacity) == 180 and screen.property_count_label.text.contains("2 ships"), "completed paid freighter joins the player's property directory as a real second ship")
+	_expect(screen.shipyard_info.text.contains("Complete") and bool(save_store.save_game(screen.save_path, screen.world.snapshot()) == OK), "the shipyard panel reports delivery and the completed new ship is saveable")
+	screen.find_child("CloseShipyardButton", true, false).pressed.emit()
+	await process_frame
+	screen.property_filter.text = "freighter"
+	screen._on_property_filter("freighter")
+	_expect(screen.property_picker.item_count == 1 and str(screen.property_picker.get_item_metadata(0)) == "ship|" + delivered_id, "newly built freighter is individually searchable")
+	screen.property_picker.select(0)
+	screen.property_picker.item_selected.emit(0)
+	_expect(screen.active_player_ship_id == delivered_id and screen.detail_title.text == delivered_ship.name, "the manufactured ship can be selected as the active command vessel")
+	screen.map_view.sector_selected.emit("cinder_veil")
+	screen.find_child("OrderButton", true, false).pressed.emit()
+	_expect(delivered_ship.orders.size() == 1 and ui_original_ship.orders.is_empty(), "real purchased freighters receive individual orders without changing the starter ship")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "newly purchased vessel orders survive normal autosaving")
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-ship-orders.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_wharf: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_wharf != null, "save containing a manufactured hull remains available to continue")
+	if continue_wharf != null:
+		continue_wharf.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.property_count_label.text.contains("2 ships") and screen.world._find_ship(delivered_id).orders.size() == 1, "reload restores purchased hull and its queued route with no duplication")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)
