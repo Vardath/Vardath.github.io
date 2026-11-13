@@ -42,15 +42,29 @@ screen shows each station's recipe, progress, shortage or storage blockage, and
 remaining deposit. Materials and output move together at cycle completion;
 partial progress pauses when inputs or storage are unavailable.
 
-**Plan station** previews a station in the selected sector. Choose production
+**Plan station** designs a station in the selected sector. Choose production
 modules and quantities, then choose **Self-sufficient**, **Import selected
-inputs**, or **Import all inputs**. The planner uses the existing recipes to
-calculate whole supporting modules and shared input rates, and shows expected
-imports and remaining output per 60 ticks. For example, an alloy smelter can
-be supplied by an ore extractor and solar array, or ore can be imported.
-Natural-source availability has not yet been surveyed, so plans requiring
-sunlight or deposits show a warning. Plans are previews only: they are not
-saved, priced or constructed, and they do not spend credits or create goods.
+inputs**, or **Import all inputs**. The planner calculates supporting modules,
+shared input rates, the builder fee, construction materials and work time.
+It warns if an ore deposit is absent or finite. The estimate does not include
+the purchase price of materials or builder travel time.
+
+Choose **Place build site** to pay the quoted fee to the independent builder
+Keystone and create an empty player-owned plot. Buy Alloy Plates from an NPC
+market, fly them to the plot's sector, open **Stations & builds**, dock at the
+site and choose **Deliver materials**. The builder travels to supplied sites
+and consumes physical build storage as each module starts. Modules finish over
+time and immediately become working production with their own storage. Pause
+or resume a build from the same screen. The current builder fee is paid upfront;
+cancellation, refunds and reordering are not implemented yet. The separate
+build storage cannot be consumed by production. Imported production inputs
+must currently be carried to the completed station manually.
+
+At your own station, **Trade** offers free cargo transfers instead of buying
+from yourself. Player stations in the same sector share a finite ore reserve:
+Hearthreach starts with 240 units, Lantern Deep 400, Cinder Veil 600 and Copper
+Wake 1,000. These are separate from existing NPC station deposits. All starter
+sectors have sunlight. Plans that have not been placed are not saved.
 
 One faction-owned freighter now transports supplies between stations. It is
 separate from the player's property: its home station transfers real working
@@ -89,10 +103,13 @@ Existing trading saves gain production definitions and an empty Ore stock;
 existing production saves gain the NPC freighter with an empty wallet. Neither
 upgrade resets existing balances, goods, player ships, orders or transaction
 history. The NPC receives capital from its home station only after time resumes.
+Older saves also gain the NPC builder and sector resources, without a fee or a
+new build site. In-progress construction, cargo and builder travel are saved.
 
-This is an early foundation: there is only one NPC trader; dynamic prices, multiple
-save slots, order cancellation, device testing, and the wider management
-systems remain to be implemented.
+This is an early foundation: there is one NPC trader and one NPC builder;
+automatic station imports, build cancellation/refunds and reordering, dynamic
+prices, multiple save slots, device testing and wider management systems remain
+to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
 data-driven origin sectors and standings; sector links are undirected pairs of
@@ -109,6 +126,9 @@ NPC logistics tests cover funded travel and deliveries, money conservation,
 stock changes, missing or insolvent buyers, lost destinations, migration and
 save/load during a trip. Player trader tests also cover manual orders and
 intervention, cargo preservation, role changes and save/load in transit.
+Construction tests cover paid builder travel, physical deliveries, resource
+sharing, paused and resumed builds, completed production, migration and saving
+mid-construction.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

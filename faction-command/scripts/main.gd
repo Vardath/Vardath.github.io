@@ -56,12 +56,23 @@ var trade_info: Label
 var trade_production: Label
 var trade_ledger: Label
 var trade_feedback: Label
+var trade_buy_button: Button
+var trade_sell_button: Button
 var plan_screen: Control
 var plan_mode: OptionButton
 var plan_module_counts: Dictionary = {}
 var plan_import_options: Dictionary = {}
 var plan_import_list: VBoxContainer
 var plan_result: Label
+var plan_build_button: Button
+var plan_feedback: Label
+var build_screen: Control
+var build_picker: OptionButton
+var build_info: Label
+var build_feedback: Label
+var build_pause_button: Button
+var build_dock_button: Button
+var build_deliver_button: Button
 
 
 func _ready() -> void:
@@ -84,6 +95,8 @@ func _process(delta: float) -> void:
 		_refresh_world_display()
 		if is_instance_valid(trade_screen):
 			_update_trade_screen()
+		if is_instance_valid(build_screen):
+			_update_build_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -358,7 +371,7 @@ func _build_ui() -> void:
 	property_panel.custom_minimum_size.x = 210
 	content.add_child(property_panel)
 	var property_list := VBoxContainer.new()
-	property_list.add_theme_constant_override("separation", 12)
+	property_list.add_theme_constant_override("separation", 8)
 	property_panel.add_child(property_list)
 	property_list.add_child(_label("YOUR PROPERTY", 14, ACCENT))
 	property_list.add_child(_label("1 SHIP", 12, MUTED))
@@ -389,6 +402,10 @@ func _build_ui() -> void:
 	plan_button.name = "PlanStationButton"
 	plan_button.pressed.connect(_open_station_planner)
 	property_list.add_child(plan_button)
+	var builds_button := _button("Stations & builds")
+	builds_button.name = "BuildsButton"
+	builds_button.pressed.connect(_open_build_screen)
+	property_list.add_child(builds_button)
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	property_list.add_child(spacer)
@@ -485,7 +502,9 @@ func _build_ui() -> void:
 	order_feedback.name = "OrderFeedback"
 	detail.add_child(order_feedback)
 
-	root.add_child(_label("OFFLINE  ·  PAUSED AT START  ·  ORIGINAL STARTER GALAXY", 11, MUTED))
+	var footer := _label("OFFLINE  ·  PAUSED AT START  ·  ORIGINAL STARTER GALAXY", 11, MUTED)
+	footer.name = "MainFooter"
+	root.add_child(footer)
 	_refresh_world_display()
 
 
@@ -692,7 +711,7 @@ func _open_station_planner() -> void:
 	column.add_theme_constant_override("separation", 10)
 	panel.add_child(column)
 	column.add_child(_label("STATION PLANNER", 22, TEXT))
-	column.add_child(_wrapped_label("Sector: %s  ·  Preview only: construction and costs are not available yet." % _sector_name(selected_sector), 14, MUTED))
+	column.add_child(_wrapped_label("Sector: %s  ·  Fee paid upfront; materials supplied separately. Cancellation is not yet available." % _sector_name(selected_sector), 14, MUTED))
 	var content := HBoxContainer.new()
 	content.add_theme_constant_override("separation", 18)
 	content.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -771,10 +790,21 @@ func _open_station_planner() -> void:
 	plan_result.name = "StationPlanResult"
 	plan_result.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	result_scroll.add_child(plan_result)
+	plan_feedback = _wrapped_label("", 13, ACCENT)
+	column.add_child(plan_feedback)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	column.add_child(actions)
+	plan_build_button = _button("Place build site")
+	plan_build_button.name = "PlaceBuildSiteButton"
+	plan_build_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	plan_build_button.pressed.connect(_place_build_site)
+	actions.add_child(plan_build_button)
 	var close_button := _button("Close")
 	close_button.name = "ClosePlannerButton"
+	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	close_button.pressed.connect(_close_station_planner)
-	column.add_child(close_button)
+	actions.add_child(close_button)
 	_update_station_plan()
 
 
@@ -785,14 +815,13 @@ func _adjust_plan_count(recipe_id: String, delta: int) -> void:
 
 
 func _on_plan_changed(_value: Variant) -> void:
+	if is_instance_valid(plan_feedback):
+		plan_feedback.text = ""
 	_update_station_plan()
 
 
-func _update_station_plan() -> void:
-	if not is_instance_valid(plan_screen):
-		return
+func _plan_settings() -> Dictionary:
 	var mode := str(plan_mode.get_item_metadata(plan_mode.selected))
-	plan_import_list.visible = mode == "selected"
 	var requested: Dictionary = {}
 	for id in plan_module_counts:
 		requested[id] = int(plan_module_counts[id].value)
@@ -800,13 +829,38 @@ func _update_station_plan() -> void:
 	for id in plan_import_options:
 		if plan_import_options[id].button_pressed:
 			imports.append(id)
-	var result: Dictionary = station_planner.preview(world.state, requested, mode, imports)
+	return {"mode":mode, "requested":requested, "imports":imports}
+
+
+func _update_station_plan() -> void:
+	if not is_instance_valid(plan_screen):
+		return
+	var settings := _plan_settings()
+	plan_import_list.visible = settings.mode == "selected"
+	var result: Dictionary = station_planner.preview(world.state, settings.requested, str(settings.mode), settings.imports, selected_sector)
+	var estimate: Dictionary = world.construction.quote(world, selected_sector, settings.requested, str(settings.mode), settings.imports)
+	plan_build_button.disabled = not estimate.ok or (estimate.ok and int(world.state.starting_credits) < int(estimate.fee))
 	if result.modules.is_empty() and result.errors.is_empty():
 		plan_result.text = "Choose a production module and quantity to see the required station modules and supplies."
 		return
 	var lines: Array[String] = []
 	if not result.errors.is_empty():
 		lines.append("PLAN NEEDS ATTENTION\n" + "\n".join(result.errors))
+	if estimate.ok:
+		lines.append("BUILDER FEE: %d CR  ·  %d work ticks, plus travel" % [int(estimate.fee), int(estimate.ticks)])
+		var material_lines: Array[String] = []
+		for ware_id in estimate.materials:
+			var ware: Dictionary = world._find_ware(str(ware_id))
+			material_lines.append("%s × %d" % [ware.get("name", ware_id), int(estimate.materials[ware_id])])
+		lines.append("BUILD MATERIALS\n" + ", ".join(material_lines) + "\nBuy and deliver these separately.")
+		if int(world.state.starting_credits) < int(estimate.fee):
+			lines.append("Not enough credits for the builder fee.")
+	elif result.errors.is_empty():
+		lines.append(str(estimate.message))
+	if settings.mode != "self":
+		lines.append("Imported production inputs must be delivered manually for now.")
+	if not result.warnings.is_empty():
+		lines.append("CHECK BEFORE BUILDING\n" + "\n".join(result.warnings))
 	lines.append("MODULES")
 	for row in result.modules:
 		var added := "  (+%d for inputs)" % int(row.added) if int(row.added) > 0 else ""
@@ -817,15 +871,190 @@ func _update_station_plan() -> void:
 			var line := "%s: %.1f made, %.1f used" % [ware.name, float(ware.supply), float(ware.demand)]
 			line += "\n  Import %.1f" % float(ware.imports) if float(ware.imports) > 0.000001 else "\n  Available %.1f" % float(ware.surplus)
 			lines.append(line)
-	if not result.warnings.is_empty():
-		lines.append("\nCHECK BEFORE BUILDING\n" + "\n".join(result.warnings))
 	plan_result.text = "\n".join(lines)
+
+
+func _place_build_site() -> void:
+	if not is_instance_valid(plan_screen):
+		return
+	var settings := _plan_settings()
+	var result: Dictionary = world.construction.place(world, selected_sector, settings.requested, str(settings.mode), settings.imports)
+	if not result.ok:
+		plan_feedback.text = str(result.message)
+		_update_station_plan()
+		return
+	var saved := _save_current_game()
+	_update_header()
+	_refresh_world_display()
+	_close_station_planner()
+	_open_build_screen(str(result.site_id))
+	if not saved:
+		build_feedback.text = "Site placed, but saving failed."
 
 
 func _close_station_planner() -> void:
 	if is_instance_valid(plan_screen):
 		plan_screen.queue_free()
 	plan_screen = null
+
+
+func _open_build_screen(selected_site_id: String = "") -> void:
+	if is_instance_valid(build_screen):
+		return
+	build_screen = Control.new()
+	build_screen.name = "BuildScreen"
+	build_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(build_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.90)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	build_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	build_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(900, 560)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label("STATIONS & BUILDS", 22, TEXT))
+	column.add_child(_wrapped_label("Carry construction materials to the site, dock, then deliver them to build storage.", 14, MUTED))
+	build_picker = OptionButton.new()
+	build_picker.name = "BuildSitePicker"
+	build_picker.custom_minimum_size.y = 44
+	build_picker.add_theme_font_size_override("font_size", 15)
+	var selected := 0
+	for site in world.state.build_sites:
+		build_picker.add_item("%s  ·  %s" % [site.name, _sector_name(str(site.sector))])
+		build_picker.set_item_metadata(build_picker.item_count - 1, site.id)
+		if site.id == selected_site_id:
+			selected = build_picker.item_count - 1
+	if build_picker.item_count == 0:
+		build_picker.add_item("No build sites yet")
+		build_picker.set_item_metadata(0, "")
+		build_picker.disabled = true
+	build_picker.select(selected)
+	build_picker.item_selected.connect(_on_build_selection)
+	column.add_child(build_picker)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	build_info = _wrapped_label("", 15, TEXT)
+	build_info.name = "BuildInfo"
+	build_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(build_info)
+	build_feedback = _wrapped_label("", 13, ACCENT)
+	build_feedback.name = "BuildFeedback"
+	column.add_child(build_feedback)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	column.add_child(actions)
+	build_dock_button = _button("Dock at site")
+	build_dock_button.name = "DockBuildSiteButton"
+	build_dock_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_dock_button.pressed.connect(_dock_build_site)
+	actions.add_child(build_dock_button)
+	build_deliver_button = _button("Deliver materials")
+	build_deliver_button.name = "DeliverBuildMaterialsButton"
+	build_deliver_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_deliver_button.pressed.connect(_deliver_build_materials)
+	actions.add_child(build_deliver_button)
+	build_pause_button = _button("Pause build")
+	build_pause_button.name = "PauseBuildButton"
+	build_pause_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_pause_button.pressed.connect(_toggle_build_pause)
+	actions.add_child(build_pause_button)
+	var close_button := _button("Close")
+	close_button.name = "CloseBuildButton"
+	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	close_button.pressed.connect(_close_build_screen)
+	actions.add_child(close_button)
+	_update_build_screen()
+
+
+func _selected_build_site() -> Dictionary:
+	if not is_instance_valid(build_picker) or build_picker.item_count == 0:
+		return {}
+	return world.construction.find_site(world, str(build_picker.get_item_metadata(build_picker.selected)))
+
+
+func _on_build_selection(_index: int) -> void:
+	build_feedback.text = ""
+	_update_build_screen()
+
+
+func _update_build_screen() -> void:
+	if not is_instance_valid(build_screen):
+		return
+	var site := _selected_build_site()
+	var available := not site.is_empty()
+	build_dock_button.disabled = not available
+	build_deliver_button.disabled = not available
+	build_pause_button.disabled = not available or (available and int(site.completed) >= site.tasks.size())
+	if not available:
+		build_info.text = "No build sites yet. Choose Plan station to create one."
+		return
+	build_pause_button.text = "Resume build" if site.paused else "Pause build"
+	var lines: Array[String] = []
+	lines.append("%s  ·  %s\nStatus: %s\nBuilder fee paid: %d CR" % [site.name, _sector_name(str(site.sector)), site.status, int(site.fee)])
+	var builder: Dictionary = world._find_ship(str(site.builder_id))
+	lines.append("Builder: %s" % (str(builder.name) if not builder.is_empty() else "Waiting for a ready site"))
+	lines.append("Modules completed: %d / %d" % [int(site.completed), site.tasks.size()])
+	if int(site.completed) < site.tasks.size():
+		var task: Dictionary = site.tasks[int(site.completed)]
+		var recipe: Dictionary = world._find_recipe(str(task.recipe_id))
+		lines.append("Current module: %s  ·  %d / %d ticks" % [recipe.get("name", task.recipe_id), int(task.progress), int(task.duration)])
+	var needed: Dictionary = world.construction.remaining_materials(site)
+	var material_lines: Array[String] = []
+	for ware_id in needed:
+		var ware: Dictionary = world._find_ware(str(ware_id))
+		material_lines.append("%s: %d still needed  ·  %d in build storage" % [ware.get("name", ware_id), int(needed[ware_id]), int(site.build_storage.get(ware_id, 0))])
+	lines.append("BUILD MATERIALS\n" + ("All required materials delivered." if material_lines.is_empty() else "\n".join(material_lines)))
+	lines.append("\nPaused builds retain their materials. Cancellation and reordering are not available yet.")
+	build_info.text = "\n\n".join(lines)
+
+
+func _dock_build_site() -> void:
+	var site := _selected_build_site()
+	if site.is_empty():
+		return
+	var result: Dictionary = world.dock_ship(str(world.state.ships[0].id), str(site.station_id))
+	build_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_build_screen()
+
+
+func _deliver_build_materials() -> void:
+	var site := _selected_build_site()
+	if site.is_empty():
+		return
+	var result: Dictionary = world.construction.deliver(world, str(world.state.ships[0].id), str(site.id))
+	build_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_build_screen()
+
+
+func _toggle_build_pause() -> void:
+	var site := _selected_build_site()
+	if not site.is_empty() and world.construction.set_paused(world, str(site.id), not bool(site.paused)):
+		build_feedback.text = "Build paused." if site.paused else "Build resumed."
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+	_update_build_screen()
+
+
+func _close_build_screen() -> void:
+	if is_instance_valid(build_screen):
+		build_screen.queue_free()
+	build_screen = null
 
 
 func _open_trade() -> void:
@@ -906,6 +1135,10 @@ func _open_trade() -> void:
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.pressed.connect(_perform_trade.bind(bool(option.buy)))
 		actions.add_child(button)
+		if option.buy:
+			trade_buy_button = button
+		else:
+			trade_sell_button = button
 	trade_feedback = _wrapped_label("", 13, ACCENT)
 	trade_feedback.name = "TradeFeedback"
 	controls.add_child(trade_feedback)
@@ -958,10 +1191,15 @@ func _update_trade_screen() -> void:
 	var ship: Dictionary = world.state.ships[0]
 	var station: Dictionary = world._find_station(_trade_station_id())
 	var ware: Dictionary = world._find_ware(_trade_ware_id())
+	var own_station: bool = station.owner == world.state.player_faction_id
+	trade_buy_button.text = "Take from station" if own_station else "Buy"
+	trade_sell_button.text = "Transfer to station" if own_station else "Sell"
 	var buy_price := "%d CR" % int(station.sell_prices[ware.id]) if station.sell_prices.has(ware.id) else "Not sold"
 	var sell_price := "%d CR" % int(station.buy_prices[ware.id]) if station.buy_prices.has(ware.id) else "Not bought"
 	var docked := "Docked here" if ship.docked_at == station.id else "Not docked here"
 	trade_info.text = "%s\n%s  ·  %s\nShip: %s  ·  %s\nCargo: %d / %d  ·  Storage: %d / %d\n%s: %d in cargo / %d at station\nStation sells: %s  ·  buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
+	if own_station:
+		trade_info.text = "%s\nYour station  ·  %s\nShip: %s  ·  %s\nCargo: %d / %d  ·  Storage: %d / %d\n%s: %d in cargo / %d at station\nTransfers between your ship and station are free." % [station.name, _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0))]
 	var production_lines: Array[String] = []
 	for report in world.production_report(str(station.id)):
 		var inputs: Array[String] = []
@@ -979,7 +1217,7 @@ func _update_trade_screen() -> void:
 			outputs.append("%s ×%d" % [output_ware.get("name", ware_id), int(report.outputs[ware_id])])
 		production_lines.append("%s: %s (%d/%d)\n%s → %s" % [report.name, report.status, int(report.progress), int(report.duration), " + ".join(inputs), " + ".join(outputs)])
 		if not report.deposit.is_empty():
-			production_lines.append("Deposit remaining: %d" % int(station.deposits.get(report.deposit.resource, 0)))
+			production_lines.append("Deposit remaining: %d" % int(world._station_deposits(station).get(report.deposit.resource, 0)))
 	trade_production.text = "No production modules." if production_lines.is_empty() else "\n".join(production_lines)
 	var lines: Array[String] = []
 	var ledger: Array = world.state.ledger
@@ -991,6 +1229,11 @@ func _update_trade_screen() -> void:
 		var actor := str(entry_ship.get("name", entry.ship_id))
 		if entry.kind == "funding":
 			lines.append("#%d  T%d  %s funded +%d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind == "construction_fee":
+			lines.append("#%d  T%d  Builder %s hired · %d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind in ["build_delivery", "transfer_in", "transfer_out"]:
+			var action := "Delivered to build storage" if entry.kind == "build_delivery" else ("Transferred to station" if entry.kind == "transfer_in" else "Taken from station")
+			lines.append("#%d  T%d  %s: %s %d %s\n%s" % [int(entry.id), int(entry.tick), actor, action, int(entry.quantity), entry_ware.get("name", entry.ware_id), entry_station.get("name", entry.station_id)])
 		else:
 			lines.append("#%d  T%d  %s: %s %d %s  ·  %s%d CR\n%s" % [int(entry.id), int(entry.tick), actor, str(entry.kind).capitalize(), int(entry.quantity), entry_ware.get("name", entry.ware_id), "+" if int(entry.amount) > 0 else "", int(entry.amount), entry_station.get("name", entry.station_id)])
 	var ledger_text := "No transactions yet." if lines.is_empty() else "\n\n".join(lines)
@@ -1009,7 +1252,12 @@ func _dock_at_station() -> void:
 
 
 func _perform_trade(buy: bool) -> void:
-	var result: Dictionary = world.trade(str(world.state.ships[0].id), _trade_station_id(), _trade_ware_id(), int(trade_quantity.value), buy)
+	var station: Dictionary = world._find_station(_trade_station_id())
+	var result: Dictionary
+	if station.owner == world.state.player_faction_id:
+		result = world.transfer_player_station(str(world.state.ships[0].id), str(station.id), _trade_ware_id(), int(trade_quantity.value), not buy)
+	else:
+		result = world.trade(str(world.state.ships[0].id), str(station.id), _trade_ware_id(), int(trade_quantity.value), buy)
 	trade_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():

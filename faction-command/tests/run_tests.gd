@@ -42,6 +42,14 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	return copy
 
 
+func _strip_construction(state: Dictionary) -> void:
+	for key in ["construction_version", "construction_blueprints", "construction_resources", "build_sites", "next_build_site_id"]:
+		state.erase(key)
+	for index in range(state.ships.size() - 1, -1, -1):
+		if state.ships[index].id == "npc_builder_001":
+			state.ships.remove_at(index)
+
+
 func _map_touch(view, index: int, position: Vector2, pressed: bool) -> void:
 	var event := InputEventScreenTouch.new()
 	event.index = index
@@ -100,7 +108,7 @@ func _run() -> void:
 		if ship.owner == first.state.player_faction_id:
 			player_ship_count += 1
 	_expect(player_ship_count == 1, "player starts with one independently owned ship")
-	_expect(first.state.ships.size() == 2, "starter galaxy also contains one NPC trader")
+	_expect(first.state.ships.size() == 3, "starter galaxy contains one NPC trader and one builder")
 	_expect(first.state.starting_credits > 0, "player starts with credits")
 
 	var faction_ids: Dictionary = {}
@@ -344,6 +352,7 @@ func _run() -> void:
 	future_file.close()
 	_expect(save_store.load_game(economy_path).get("reason") == "unsupported", "future economy schema is not silently replaced with an older backup")
 	var old_save: Dictionary = original.duplicate(true)
+	_strip_construction(old_save)
 	for key in ["economy_version", "production_version", "logistics_version", "player_roles_version", "recipes", "wares", "stations", "ledger", "next_transaction_id"]:
 		old_save.erase(key)
 	for index in range(old_save.ships.size() - 1, -1, -1):
@@ -465,6 +474,7 @@ func _run() -> void:
 	_expect(_total_credits(soak.state) == soak_credits and soak.state.ledger.is_empty(), "long production run creates neither credits nor trade entries")
 
 	var trading_legacy: Dictionary = economy.snapshot()
+	_strip_construction(trading_legacy)
 	trading_legacy.erase("production_version")
 	trading_legacy.erase("logistics_version")
 	trading_legacy.erase("player_roles_version")
@@ -641,6 +651,7 @@ func _run() -> void:
 	_expect(int(resumed_market.state.ships[1].cargo.get("energy_cells", 0)) == 0, "NPC finds another available buyer after its destination disappears")
 
 	var pre_logistics: Dictionary = production_world.snapshot()
+	_strip_construction(pre_logistics)
 	pre_logistics.erase("logistics_version")
 	pre_logistics.erase("player_roles_version")
 	pre_logistics.ships[0].erase("player_trader")
@@ -787,6 +798,7 @@ func _run() -> void:
 	_expect(no_funds.state.ledger.is_empty() and no_funds.state.ships[0].cargo.is_empty(), "trader cannot buy without player funds")
 
 	var old_roles: Dictionary = saved_trip.duplicate(true)
+	_strip_construction(old_roles)
 	old_roles.erase("player_roles_version")
 	old_roles.ships[0].erase("player_trader")
 	old_roles.ships[0].role = "Unassigned"
@@ -864,6 +876,135 @@ func _run() -> void:
 	_expect(not planner.preview(planner_state, {"alloy_smelting":-1}, "self", []).ok, "invalid module quantities are rejected")
 	_expect(planner_state == unchanged_planner_state, "station previews do not mutate the real world")
 
+	# Physical station construction: fee, cargo, builder travel, time and saves.
+	var build_world = WorldScript.new()
+	_expect(build_world.load_starter() == OK, "construction scenario loads")
+	_disable_npc_trading(build_world)
+	var build_player: Dictionary = build_world.state.ships[0]
+	var builder: Dictionary = build_world._find_ship("npc_builder_001")
+	var initial_build_money := _total_credits(build_world.state)
+	_expect(builder.owner != build_world.state.player_faction_id and builder.sector == "verdant_trace" and int(builder.credits) == 0, "the independent builder starts at a real sector without invented money")
+	_expect(not build_world.queue_fly_to(str(builder.id), "hearthreach"), "the player cannot directly command the NPC builder")
+	var build_quote: Dictionary = build_world.construction.quote(build_world, "hearthreach", {"alloy_smelting":1}, "self", [])
+	_expect(build_quote.ok and int(build_quote.fee) == 1500 and int(build_quote.materials.alloy_plates) == 28 and int(build_quote.ticks) == 50, "construction quote totals actual modules, builder fee, materials and work time")
+	var dry_sector: Dictionary = build_world.construction.quote(build_world, "vellum_gate", {"ore_extraction":1}, "all", [])
+	_expect(dry_sector.ok and " ".join(dry_sector.warnings).contains("No usable Ore deposit"), "construction warns when the chosen sector lacks the required deposit")
+	var invalid_before: Dictionary = build_world.snapshot()
+	_expect(not build_world.construction.place(build_world, "unknown", {"solar_cells":1}, "self", []).ok and build_world.snapshot() == invalid_before, "invalid construction sector has no side effects")
+	var poor_build = WorldScript.new()
+	poor_build.load_starter()
+	poor_build.state.starting_credits = 100
+	var poor_before: Dictionary = poor_build.snapshot()
+	_expect(not poor_build.construction.place(poor_build, "hearthreach", {"solar_cells":1}, "self", []).ok and poor_build.snapshot() == poor_before, "insufficient builder fee rejects the whole construction transaction")
+	var placed: Dictionary = build_world.construction.place(build_world, "hearthreach", {"alloy_smelting":1}, "self", [])
+	_expect(placed.ok, "a valid plan creates a build site")
+	var site: Dictionary = build_world.construction.find_site(build_world, str(placed.site_id))
+	var outpost: Dictionary = build_world._find_station(str(site.station_id))
+	_expect(int(build_world.state.starting_credits) == 23500 and int(builder.credits) == 1500 and _total_credits(build_world.state) == initial_build_money, "upfront fee transfers real player credits to the NPC builder")
+	_expect(build_world.state.ledger.back().kind == "construction_fee" and outpost.owner == "player" and outpost.production.is_empty() and int(outpost.storage_capacity) == 0, "the ledger records the hire and the empty plot has no free production modules")
+	_expect(save_store.save_game(test_root + "/construction-placed.json", build_world.snapshot()) == OK, "an empty build site is saveable immediately after placement")
+	build_world.advance_ticks(25)
+	_expect(site.status == "Needs materials" and int(site.completed) == 0 and not site.tasks[0].started and builder.sector == "verdant_trace", "the builder does not fabricate materials or start an unfunded module")
+	build_world.construction.set_paused(build_world, str(site.id), true)
+	build_world.construction.set_paused(build_world, str(site.id), false)
+	_expect(site.status == "Needs materials", "resuming an unsupplied site immediately shows that materials are needed")
+	_expect(not build_world.construction.deliver(build_world, "ship_001", str(site.id)).ok, "construction cargo cannot be delivered while undocked")
+	_expect(build_world.queue_fly_to("ship_001", "vellum_gate"), "player sends the supply ship to the alloy market")
+	build_world.advance_ticks(10)
+	_expect(build_world.dock_ship("ship_001", "vellum_foundry").ok and build_world.trade("ship_001", "vellum_foundry", "alloy_plates", 28, true).ok, "player buys the actual construction materials")
+	_expect(build_world.queue_fly_to("ship_001", "hearthreach"), "player returns the materials to the build sector")
+	build_world.advance_ticks(10)
+	_expect(build_world.dock_ship("ship_001", str(outpost.id)).ok, "supply ship docks at the actual site")
+	_expect(build_world.construction.deliver(build_world, "ship_001", str(site.id)).ok and int(site.build_storage.alloy_plates) == 28 and int(build_player.cargo.alloy_plates) == 0, "physical cargo moves from the ship into separate build storage")
+	_expect(save_store.save_game(test_root + "/construction-delivered.json", build_world.snapshot()) == OK, "delivered build storage is saveable before work starts")
+	var delivered_once: Dictionary = build_world.snapshot()
+	_expect(not build_world.construction.deliver(build_world, "ship_001", str(site.id)).ok and build_world.snapshot() == delivered_once, "repeating a delivery cannot duplicate materials")
+	_expect(build_world.construction.set_paused(build_world, str(site.id), true), "construction can be paused")
+	build_world.advance_ticks(15)
+	_expect(int(site.completed) == 0 and not site.tasks[0].started and int(site.build_storage.alloy_plates) == 28, "paused construction retains materials and performs no work")
+	_expect(build_world.construction.set_paused(build_world, str(site.id), false), "construction can resume")
+	build_world.advance_ticks(1)
+	_expect(site.status == "Builder en route" and builder.sector == "verdant_trace" and not builder.orders.is_empty(), "the hired builder starts a real route to the site")
+	for _tick in range(20):
+		build_world.advance_ticks(1)
+		if site.tasks[0].started:
+			break
+	_expect(builder.sector == "hearthreach" and site.tasks[0].started and int(site.tasks[0].progress) > 0 and int(site.build_storage.alloy_plates) == 22, "arrival starts the first module and consumes its actual materials exactly once")
+	var paused_progress := int(site.tasks[0].progress)
+	build_world.construction.set_paused(build_world, str(site.id), true)
+	build_world.advance_ticks(8)
+	_expect(int(site.tasks[0].progress) == paused_progress and int(site.build_storage.alloy_plates) == 22, "pausing mid-module preserves progress and already committed materials")
+	_expect(save_store.save_game(test_root + "/construction-paused.json", build_world.snapshot()) == OK, "paused in-progress work remains saveable")
+	build_world.construction.set_paused(build_world, str(site.id), false)
+	var mid_build_path := test_root + "/construction-mid.json"
+	_expect(save_store.save_game(mid_build_path, build_world.snapshot()) == OK, "an in-progress construction site can be saved")
+	var mid_build_read: Dictionary = save_store.load_game(mid_build_path)
+	var resumed_build = WorldScript.new()
+	_expect(bool(mid_build_read.get("ok", false)) and resumed_build.restore_snapshot(mid_build_read.state) == OK, "an in-progress build restores with its builder and materials")
+	build_world.advance_ticks(100)
+	resumed_build.advance_ticks(100)
+	_expect(build_world.snapshot() == resumed_build.snapshot(), "construction and production continue deterministically after save/load")
+	_expect(int(site.completed) == 3 and site.status == "Complete" and outpost.name == site.name and outpost.production.size() == 3 and int(outpost.storage_capacity) == 200, "completed modules become a real player-owned production station")
+	_expect(int(site.build_storage.alloy_plates) == 0 and _total_credits(build_world.state) == initial_build_money, "the completed build consumed only its delivered materials and conserved credits")
+	_expect(int(outpost.production[0].cycles) > 0 and int(outpost.production[1].cycles) > 0 and int(outpost.production[2].cycles) > 0 and int(build_world.state.construction_resources.hearthreach.deposits.ore) < 240, "the new station produces from sunlight, inputs and its finite sector reserve")
+	_expect(save_store.save_game(test_root + "/construction-complete.json", build_world.snapshot()) == OK, "the completed player station remains saveable")
+	var completed_read: Dictionary = save_store.load_game(test_root + "/construction-complete.json")
+	_expect(bool(completed_read.get("ok", false)) and completed_read.state.construction_resources.hearthreach.deposits.ore == build_world.state.construction_resources.hearthreach.deposits.ore, "remaining finite sector resources survive save/load")
+	var cargo_before_transfer: int = int(build_player.cargo.get("alloy_plates", 0))
+	var station_before_transfer: int = int(outpost.stock.get("alloy_plates", 0))
+	_expect(station_before_transfer > 0 and build_world.transfer_player_station("ship_001", str(outpost.id), "alloy_plates", 1, false).ok, "the player can take real output from their own station")
+	_expect(int(build_player.cargo.alloy_plates) == cargo_before_transfer + 1 and int(outpost.stock.alloy_plates) == station_before_transfer - 1 and _total_credits(build_world.state) == initial_build_money, "station cargo transfers preserve goods and do not charge the player")
+	var before_invalid_transfer: Dictionary = build_world.snapshot()
+	_expect(not build_world.transfer_player_station("ship_001", "vellum_foundry", "alloy_plates", 1, true).ok and build_world.snapshot() == before_invalid_transfer, "free transfers cannot be used on NPC stations")
+	var shared_world = WorldScript.new()
+	shared_world.restore_snapshot(build_world.snapshot())
+	var shared_first: Dictionary = shared_world._find_station(str(outpost.id))
+	shared_first.production = [{"recipe_id":"ore_extraction", "progress":7, "cycles":0, "status":"Running"}]
+	shared_first.stock = {"energy_cells":10, "ore":0, "alloy_plates":0}
+	var shared_second: Dictionary = shared_first.duplicate(true)
+	shared_second.id = "shared_resource_test"
+	shared_world.state.stations.append(shared_second)
+	shared_world.state.construction_resources.hearthreach.deposits.ore = 4
+	shared_world.advance_ticks(1)
+	_expect(int(shared_world.state.construction_resources.hearthreach.deposits.ore) == 0 and int(shared_first.stock.ore) + int(shared_second.stock.ore) == 4, "two player stations share and cannot overdraw a finite sector deposit")
+	var queue_world = WorldScript.new()
+	queue_world.load_starter()
+	_disable_npc_trading(queue_world)
+	var queue_first: Dictionary = queue_world.construction.place(queue_world, "hearthreach", {"solar_cells":1}, "self", [])
+	var queue_second: Dictionary = queue_world.construction.place(queue_world, "hearthreach", {"solar_cells":1}, "self", [])
+	var queue_site_one: Dictionary = queue_world.construction.find_site(queue_world, str(queue_first.site_id))
+	var queue_site_two: Dictionary = queue_world.construction.find_site(queue_world, str(queue_second.site_id))
+	queue_world._find_station("vellum_foundry").stock.alloy_plates -= 6
+	queue_world.state.ships[0].cargo["alloy_plates"] = 6
+	queue_world.dock_ship("ship_001", str(queue_site_two.station_id))
+	queue_world.construction.deliver(queue_world, "ship_001", str(queue_site_two.id))
+	queue_world.advance_ticks(40)
+	_expect(int(queue_site_one.completed) == 0 and queue_site_one.status == "Needs materials" and int(queue_site_two.completed) == 1, "the builder skips an unready site and works on the next supplied site")
+	var legacy_construction: Dictionary = saved_trip.duplicate(true)
+	_strip_construction(legacy_construction)
+	var legacy_construction_path := test_root + "/before-construction.json"
+	_expect(save_store.save_game(legacy_construction_path, legacy_construction) == OK, "a pre-construction save remains readable")
+	var legacy_construction_read: Dictionary = save_store.load_game(legacy_construction_path)
+	var migrated_build = WorldScript.new()
+	_expect(bool(legacy_construction_read.get("ok", false)) and migrated_build.restore_snapshot(legacy_construction_read.state) == OK, "a pre-construction save gains the builder and sector resources")
+	_expect(migrated_build.state.ships[0] == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
+	_expect(int(migrated_build._find_ship("npc_builder_001").credits) == 0 and migrated_build.state.build_sites.is_empty(), "migration adds no free money, sites or materials")
+	var bad_construction: Dictionary = build_world.snapshot()
+	bad_construction.build_sites[0].tasks[0].progress = 999
+	_expect(save_store.save_game(test_root + "/bad-construction.json", bad_construction) != OK, "invalid completed build progress is rejected")
+	bad_construction = build_world.snapshot()
+	bad_construction.build_sites[0].build_storage.alloy_plates = 1
+	_expect(save_store.save_game(test_root + "/bad-construction.json", bad_construction) != OK, "save validation rejects excess build materials")
+	var construction_version_path := test_root + "/construction-version.json"
+	_expect(save_store.save_game(construction_version_path, build_world.snapshot()) == OK and save_store.save_game(construction_version_path, build_world.snapshot()) == OK, "construction version test has a backup")
+	var future_construction: Dictionary = build_world.snapshot()
+	future_construction.construction_version = 2
+	var construction_payload := Marshalls.variant_to_base64(future_construction, false)
+	var future_construction_file := FileAccess.open(construction_version_path, FileAccess.WRITE)
+	future_construction_file.store_string(JSON.stringify({"format_version":1, "payload":construction_payload, "checksum":construction_payload.sha256_text()}))
+	future_construction_file.close()
+	_expect(save_store.load_game(construction_version_path).get("reason") == "unsupported", "future construction data is not silently replaced by an older backup")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
@@ -898,6 +1039,8 @@ func _run() -> void:
 	_expect(screen.find_child("ShipButton", true, false) != null, "main scene exposes player property")
 	_expect(screen.pause_button.size.y <= 65.0, "top bar stays compact at landscape resolution (button: %s, viewport: %s)" % [screen.pause_button.size, root.size])
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
+	var footer_control: Control = screen.find_child("MainFooter", true, false)
+	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
 	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 2, "property panel offers manual and autonomous trader roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
@@ -1130,6 +1273,75 @@ func _run() -> void:
 	_expect(planner_add.size.x >= 44.0 and planner_add.size.y >= 44.0, "module add control has a touch-sized target")
 	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
 	_expect(not is_instance_valid(screen.plan_screen), "station planner closes without changing the world")
+	screen.queue_free()
+	await process_frame
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-construction.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	screen.find_child("PlanAdd_solar_cells", true, false).pressed.emit()
+	_expect(screen.plan_result.text.contains("BUILDER FEE: 300 CR") and screen.plan_result.text.contains("Alloy Plates × 6") and not screen.plan_build_button.disabled, "planner shows the actual fee and materials before placement")
+	screen.find_child("PlaceBuildSiteButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.build_screen) and screen.world.state.build_sites.size() == 1 and int(screen.world.state.starting_credits) == 24700, "placing a site opens its build queue and charges the quoted fee")
+	screen._place_build_site()
+	_expect(screen.world.state.build_sites.size() == 1 and int(screen.world.state.starting_credits) == 24700, "a repeated placement action cannot charge twice after the planner closes")
+	var ui_site: Dictionary = screen.world.state.build_sites[0]
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.build_info.text.contains("6 still needed"), "the placed site saves immediately and explains missing materials")
+	screen.find_child("DockBuildSiteButton", true, false).pressed.emit()
+	screen.find_child("DeliverBuildMaterialsButton", true, false).pressed.emit()
+	_expect(screen.build_feedback.text.contains("No required construction materials"), "build screen explains when no materials are aboard")
+	screen.find_child("CloseBuildButton", true, false).pressed.emit()
+	await process_frame
+	screen.world.queue_fly_to("ship_001", "vellum_gate")
+	screen.world.advance_ticks(10)
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in screen.trade_station_picker.item_count:
+		if screen.trade_station_picker.get_item_metadata(index) == "vellum_foundry":
+			screen.trade_station_picker.select(index)
+	for index in screen.trade_ware_picker.item_count:
+		if screen.trade_ware_picker.get_item_metadata(index) == "alloy_plates":
+			screen.trade_ware_picker.select(index)
+	screen._update_trade_screen()
+	screen.find_child("DockButton", true, false).pressed.emit()
+	screen.trade_quantity.value = 6
+	screen.find_child("BuyButton", true, false).pressed.emit()
+	_expect(int(screen.world.state.ships[0].cargo.alloy_plates) == 6, "build UI scenario purchases real alloy at the NPC market")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.world.queue_fly_to("ship_001", "hearthreach")
+	screen.world.advance_ticks(10)
+	screen.find_child("BuildsButton", true, false).pressed.emit()
+	screen.find_child("DockBuildSiteButton", true, false).pressed.emit()
+	screen.find_child("DeliverBuildMaterialsButton", true, false).pressed.emit()
+	_expect(int(ui_site.build_storage.alloy_plates) == 6 and screen.build_feedback.text.contains("Delivered"), "build screen delivers the purchased cargo to the site")
+	screen.find_child("PauseBuildButton", true, false).pressed.emit()
+	screen.world.advance_ticks(12)
+	_expect(ui_site.paused and int(ui_site.completed) == 0, "build screen pause prevents construction")
+	screen.find_child("PauseBuildButton", true, false).pressed.emit()
+	screen.world.advance_ticks(35)
+	screen._update_build_screen()
+	_expect(not ui_site.paused and int(ui_site.completed) == 1 and screen.build_info.text.contains("Complete"), "build screen resume leads to a completed station")
+	screen.find_child("CloseBuildButton", true, false).pressed.emit()
+	await process_frame
+	screen.world.advance_ticks(8)
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in screen.trade_station_picker.item_count:
+		if screen.trade_station_picker.get_item_metadata(index) == ui_site.station_id:
+			screen.trade_station_picker.select(index)
+	for index in screen.trade_ware_picker.item_count:
+		if screen.trade_ware_picker.get_item_metadata(index) == "energy_cells":
+			screen.trade_ware_picker.select(index)
+	screen._update_trade_screen()
+	_expect(screen.trade_buy_button.text == "Take from station" and screen.trade_info.text.contains("Transfers between your ship and station are free"), "owned stations offer clear free cargo transfers")
+	screen.trade_quantity.value = 1
+	var ui_credits_before: int = int(screen.world.state.starting_credits)
+	screen.find_child("BuyButton", true, false).pressed.emit()
+	_expect(int(screen.world.state.ships[0].cargo.energy_cells) == 1 and int(screen.world.state.starting_credits) == ui_credits_before, "owned-station UI takes produced cargo without a fabricated purchase")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

@@ -93,6 +93,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("player_roles_version") and _is_nonnegative_integer(decoded.player_roles_version) and decoded.player_roles_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("construction_version") and _is_nonnegative_integer(decoded.construction_version) and decoded.construction_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -162,19 +164,23 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version")
+		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
 	if not state.has("production_version"):
-		return not state.has("logistics_version") and not state.has("player_roles_version")
+		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version")
 	if not _valid_production(state):
 		return false
 	if not state.has("logistics_version"):
-		return not state.has("player_roles_version")
+		return not state.has("player_roles_version") and not state.has("construction_version")
 	if not _valid_logistics(state):
 		return false
-	return not state.has("player_roles_version") or _valid_player_roles(state)
+	if not state.has("player_roles_version"):
+		return not state.has("construction_version")
+	if not _valid_player_roles(state):
+		return false
+	return not state.has("construction_version") or _valid_construction(state, factions, sectors)
 
 
 func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
@@ -333,4 +339,88 @@ func _valid_player_roles(state: Dictionary) -> bool:
 			return false
 		if int(job.managed_quantity) > int(job.quantity) or int(job.managed_quantity) > int(ship.cargo.get(job.ware_id, 0)):
 			return false
+	return true
+
+
+func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
+	if state.construction_version != 1 or not state.get("construction_blueprints") is Dictionary or not state.get("construction_resources") is Dictionary or not state.get("build_sites") is Array or not _is_nonnegative_integer(state.get("next_build_site_id")) or int(state.next_build_site_id) < 1:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	var recipes: Dictionary = {}
+	for recipe in state.recipes:
+		recipes[recipe.id] = true
+	for recipe_id in state.construction_blueprints:
+		var blueprint: Variant = state.construction_blueprints[recipe_id]
+		if not recipes.has(recipe_id) or not blueprint is Dictionary or not _is_nonnegative_integer(blueprint.get("fee")) or int(blueprint.fee) < 1 or not _is_nonnegative_integer(blueprint.get("ticks")) or int(blueprint.ticks) < 1 or int(blueprint.ticks) > 1000000 or not _is_nonnegative_integer(blueprint.get("storage")) or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary or blueprint.materials.is_empty():
+			return false
+		for ware_id in blueprint.materials:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(blueprint.materials[ware_id]) or int(blueprint.materials[ware_id]) < 1:
+				return false
+	for sector_id in sectors:
+		if not state.construction_resources.has(sector_id):
+			return false
+	for sector_id in state.construction_resources:
+		var pool: Variant = state.construction_resources[sector_id]
+		if not sectors.has(sector_id) or not pool is Dictionary or not pool.get("natural_sources") is Array or not pool.get("deposits") is Dictionary:
+			return false
+		for source in pool.natural_sources:
+			if source != "sunlight":
+				return false
+		for ware_id in pool.deposits:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(pool.deposits[ware_id]):
+				return false
+	var builder: Dictionary = {}
+	for ship in state.ships:
+		if ship.id == "npc_builder_001":
+			builder = ship
+	if builder.is_empty() or builder.owner == state.player_faction_id or not factions.has(builder.owner) or not _is_nonnegative_integer(builder.get("credits")) or not builder.get("build_assignment") is String or builder.has("autotrader"):
+		return false
+	var stations: Dictionary = {}
+	for station in state.stations:
+		stations[station.id] = station
+		if station.has("resource_sector") and (station.owner != state.player_faction_id or station.resource_sector != station.sector or not state.construction_resources.has(station.resource_sector)):
+			return false
+	var sites: Dictionary = {}
+	var station_sites: Dictionary = {}
+	for site in state.build_sites:
+		if not site is Dictionary or not site.get("id") is String or str(site.id).is_empty() or sites.has(site.id) or not site.get("station_id") is String or station_sites.has(site.station_id) or not stations.has(site.station_id) or not site.get("name") is String or not sectors.has(site.get("sector")) or not _is_nonnegative_integer(site.get("fee")) or int(site.fee) < 1 or not site.get("paused") is bool or not _is_nonnegative_integer(site.get("completed")) or not site.get("builder_id") is String or not site.get("status") is String or not site.get("build_storage") is Dictionary or not site.get("tasks") is Array or site.tasks.is_empty() or site.tasks.size() > 300 or int(site.completed) > site.tasks.size():
+			return false
+		var station: Dictionary = stations[site.station_id]
+		if station.owner != state.player_faction_id or station.sector != site.sector or station.get("resource_sector", "") != site.sector or station.production.size() != int(site.completed):
+			return false
+		var required: Dictionary = {}
+		var storage_total := 0
+		for index in range(site.tasks.size()):
+			var task: Variant = site.tasks[index]
+			if not task is Dictionary or not recipes.has(task.get("recipe_id")) or not _is_nonnegative_integer(task.get("duration")) or int(task.duration) < 1 or int(task.duration) > 1000000 or not _is_nonnegative_integer(task.get("storage")) or int(task.storage) < 1 or not task.get("materials") is Dictionary or task.materials.is_empty() or not task.get("started") is bool or not _is_nonnegative_integer(task.get("progress")):
+				return false
+			for ware_id in task.materials:
+				if not wares.has(ware_id) or not _is_nonnegative_integer(task.materials[ware_id]) or int(task.materials[ware_id]) < 1:
+					return false
+				if not task.started:
+					required[ware_id] = int(required.get(ware_id, 0)) + int(task.materials[ware_id])
+			if index < int(site.completed):
+				if not task.started or int(task.progress) != int(task.duration) or station.production[index].recipe_id != task.recipe_id:
+					return false
+				storage_total += int(task.storage)
+			elif index == int(site.completed):
+				if int(task.progress) >= int(task.duration) or (not task.started and int(task.progress) != 0):
+					return false
+			elif task.started or int(task.progress) != 0:
+				return false
+		if int(station.storage_capacity) != storage_total:
+			return false
+		for ware_id in site.build_storage:
+			if not wares.has(ware_id) or not _is_nonnegative_integer(site.build_storage[ware_id]) or int(site.build_storage[ware_id]) > int(required.get(ware_id, 0)):
+				return false
+		if not str(site.builder_id).is_empty() and (site.builder_id != builder.id or builder.build_assignment != site.id or int(site.completed) == site.tasks.size()):
+			return false
+		sites[site.id] = site
+		station_sites[site.station_id] = true
+	if not str(builder.build_assignment).is_empty() and (not sites.has(builder.build_assignment) or sites[builder.build_assignment].builder_id != builder.id):
+		return false
+	if sites.has("buildsite_%d" % int(state.next_build_site_id)) or stations.has("player_station_%d" % int(state.next_build_site_id)):
+		return false
 	return true

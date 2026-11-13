@@ -5,9 +5,11 @@ extends RefCounted
 const STARTER_DATA := "res://data/starter_galaxy.json"
 const TICKS_PER_CROSSING := 5
 const NPCTradeScript = preload("res://scripts/npc_trade.gd")
+const ConstructionScript = preload("res://scripts/construction.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
+var construction = ConstructionScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -40,6 +42,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if _prepare_player_roles(new_state) != OK:
 		return ERR_INVALID_DATA
+	if construction.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -56,6 +60,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = _prepare_player_roles(restored)
+	if result != OK:
+		return result
+	result = construction.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -171,6 +178,7 @@ func advance_ticks(count: int) -> void:
 		for ship in state.get("ships", []):
 			if ship.has("autotrader") or ship.has("player_trader"):
 				npc_trade.tick(self, ship)
+		construction.tick(self)
 
 
 func snapshot() -> Dictionary:
@@ -234,6 +242,13 @@ func _find_recipe(recipe_id: String) -> Dictionary:
 	return {}
 
 
+func _station_deposits(station: Dictionary) -> Dictionary:
+	var sector_id := str(station.get("resource_sector", ""))
+	if not sector_id.is_empty():
+		return state.get("construction_resources", {}).get(sector_id, {}).get("deposits", {})
+	return station.deposits
+
+
 func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String:
 	for ware_id in recipe.inputs:
 		if int(station.stock.get(ware_id, 0)) < int(recipe.inputs[ware_id]):
@@ -243,7 +258,7 @@ func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String
 	if not source.is_empty() and source not in station.natural_sources:
 		return "Needs " + source
 	var deposit: Dictionary = recipe.get("deposit", {})
-	if not deposit.is_empty() and int(station.deposits.get(deposit.resource, 0)) < int(deposit.quantity):
+	if not deposit.is_empty() and int(_station_deposits(station).get(deposit.resource, 0)) < int(deposit.quantity):
 		return "Deposit exhausted"
 	var projected := station_volume(str(station.id))
 	for ware_id in recipe.inputs:
@@ -276,7 +291,8 @@ func _tick_production(station: Dictionary) -> void:
 			station.stock[ware_id] = int(station.stock.get(ware_id, 0)) + int(recipe.outputs[ware_id])
 		var deposit: Dictionary = recipe.get("deposit", {})
 		if not deposit.is_empty():
-			station.deposits[deposit.resource] = int(station.deposits[deposit.resource]) - int(deposit.quantity)
+			var deposits := _station_deposits(station)
+			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
 		blocked = _production_block_reason(station, recipe)
@@ -334,6 +350,34 @@ func dock_ship(ship_id: String, station_id: String) -> Dictionary:
 	ship.docked_at = station.id
 	ship.status = "Docked"
 	return {"ok": true, "message": "Docked at " + str(station.name) + "."}
+
+
+func transfer_player_station(ship_id: String, station_id: String, ware_id: String, quantity: int, to_station: bool) -> Dictionary:
+	var ship := _find_ship(ship_id)
+	var station := _find_station(station_id)
+	var ware := _find_ware(ware_id)
+	if ship.is_empty() or station.is_empty() or ware.is_empty() or ship.owner != state.player_faction_id or station.owner != state.player_faction_id:
+		return {"ok":false, "message":"Your ship and station are required."}
+	if quantity <= 0 or quantity > 1000000000:
+		return {"ok":false, "message":"Choose a positive quantity."}
+	if ship.sector != station.sector or ship.docked_at != station_id or not ship.orders.is_empty() or not ship.travel.is_empty():
+		return {"ok":false, "message":"Dock the ship at your station first."}
+	var cargo := int(ship.cargo.get(ware_id, 0))
+	var stock := int(station.stock.get(ware_id, 0))
+	if to_station:
+		if cargo < quantity or station_volume(station_id) + quantity * int(ware.volume) > int(station.storage_capacity):
+			return {"ok":false, "message":"Not enough cargo or station storage."}
+		ship.cargo[ware_id] = cargo - quantity
+		station.stock[ware_id] = stock + quantity
+		if ship.has("player_trader") and ship.player_trader.phase == "to_destination" and ship.player_trader.ware_id == ware_id:
+			ship.player_trader.managed_quantity = maxi(0, int(ship.player_trader.managed_quantity) - quantity)
+	else:
+		if stock < quantity or cargo_volume(ship_id) + quantity * int(ware.volume) > int(ship.cargo_capacity):
+			return {"ok":false, "message":"Not enough station stock or ship cargo space."}
+		station.stock[ware_id] = stock - quantity
+		ship.cargo[ware_id] = cargo + quantity
+	_record_transaction("transfer_in" if to_station else "transfer_out", ship_id, station_id, ware_id, quantity, 0, 0)
+	return {"ok":true, "message":"Transferred %d %s." % [quantity, ware.name]}
 
 
 func trade(ship_id: String, station_id: String, ware_id: String, quantity: int, buy: bool) -> Dictionary:

@@ -1,0 +1,245 @@
+extends RefCounted
+## Persistent construction contracts, physical build storage and one NPC
+## builder. Fees move to the builder; materials are consumed at module start.
+
+const DATA_PATH := "res://data/construction.json"
+const BUILDER_ID := "npc_builder_001"
+const MAX_TASKS := 300
+const PlannerScript = preload("res://scripts/station_planner.gd")
+
+var planner = PlannerScript.new()
+
+
+func prepare(target: Dictionary) -> Error:
+	if target.has("construction_version"):
+		return OK if target.construction_version == 1 else ERR_UNAVAILABLE
+	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
+	if not data is Dictionary or not data.get("blueprints") is Dictionary or not data.get("sector_deposits") is Dictionary or not data.get("default_natural_sources") is Array:
+		return ERR_INVALID_DATA
+	for ship in target.ships:
+		if ship.id == BUILDER_ID:
+			return ERR_ALREADY_IN_USE
+	var home: Dictionary = {}
+	for station in target.stations:
+		if station.id == "verdant_hub" and station.owner != target.player_faction_id:
+			home = station
+			break
+	if home.is_empty():
+		for station in target.stations:
+			if station.owner != target.player_faction_id:
+				home = station
+				break
+	if home.is_empty():
+		return ERR_INVALID_DATA
+	var resources: Dictionary = {}
+	for sector in target.sectors:
+		resources[sector.id] = {"natural_sources":data.default_natural_sources.duplicate(true), "deposits":data.sector_deposits.get(sector.id, {}).duplicate(true)}
+	target["construction_blueprints"] = data.blueprints.duplicate(true)
+	target["construction_resources"] = resources
+	target["build_sites"] = []
+	target["next_build_site_id"] = 1
+	target.ships.append({"id":BUILDER_ID, "name":"Keystone", "class":"Builder", "owner":home.owner, "sector":home.sector, "captain":"Sera Nahl", "crew":5, "role":"Builder", "status":"Idle", "orders":[], "travel":{}, "cargo_capacity":0, "cargo":{}, "docked_at":"", "credits":0, "build_assignment":""})
+	target["construction_version"] = 1
+	return OK
+
+
+func quote(world: RefCounted, sector_id: String, requested: Dictionary, mode: String, imports: Array) -> Dictionary:
+	if not world.state.construction_resources.has(sector_id):
+		return {"ok":false, "message":"Choose a valid sector."}
+	var plan: Dictionary = planner.preview(world.state, requested, mode, imports, sector_id)
+	if not plan.ok:
+		return {"ok":false, "message":" ".join(plan.errors)}
+	if plan.modules.is_empty():
+		return {"ok":false, "message":"Choose at least one production module."}
+	var total := 0
+	var fee := 0
+	var ticks := 0
+	var materials: Dictionary = {}
+	for row in plan.modules:
+		if not world.state.construction_blueprints.has(row.id):
+			return {"ok":false, "message":"No construction blueprint for " + str(row.name) + "."}
+		var blueprint: Dictionary = world.state.construction_blueprints[row.id]
+		var amount := int(row.total)
+		total += amount
+		fee += int(blueprint.fee) * amount
+		ticks += int(blueprint.ticks) * amount
+		for ware_id in blueprint.materials:
+			materials[ware_id] = int(materials.get(ware_id, 0)) + int(blueprint.materials[ware_id]) * amount
+	if total > MAX_TASKS:
+		return {"ok":false, "message":"A build can contain at most %d modules." % MAX_TASKS}
+	return {"ok":true, "modules":plan.modules, "warnings":plan.warnings, "fee":fee, "ticks":ticks, "materials":materials}
+
+
+func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: String, imports: Array) -> Dictionary:
+	var estimate := quote(world, sector_id, requested, mode, imports)
+	if not estimate.ok:
+		return estimate
+	var builder: Dictionary = world._find_ship(BUILDER_ID)
+	if builder.is_empty() or builder.owner == world.state.player_faction_id:
+		return {"ok":false, "message":"No builder is available."}
+	if int(world.state.starting_credits) < int(estimate.fee):
+		return {"ok":false, "message":"Not enough credits for the builder fee."}
+	if world._find_route(str(builder.sector), sector_id).is_empty():
+		return {"ok":false, "message":"The builder cannot reach that sector."}
+	var number := int(world.state.next_build_site_id)
+	var site_id := "buildsite_%d" % number
+	var station_id := "player_station_%d" % number
+	if not find_site(world, site_id).is_empty() or not world._find_station(station_id).is_empty():
+		return {"ok":false, "message":"The next build-site ID is already in use."}
+	var name := "Outpost %d" % number
+	var stock: Dictionary = {}
+	for ware in world.state.wares:
+		stock[ware.id] = 0
+	var resources: Dictionary = world.state.construction_resources[sector_id]
+	var station := {"id":station_id, "name":name + " (building)", "owner":world.state.player_faction_id, "sector":sector_id, "credits":0, "storage_capacity":0, "stock":stock, "sell_prices":{}, "buy_prices":{}, "natural_sources":resources.natural_sources.duplicate(true), "deposits":{}, "resource_sector":sector_id, "production":[]}
+	var tasks: Array = []
+	for row in estimate.modules:
+		var blueprint: Dictionary = world.state.construction_blueprints[row.id]
+		for _count in range(int(row.total)):
+			tasks.append({"recipe_id":row.id, "duration":int(blueprint.ticks), "materials":blueprint.materials.duplicate(true), "storage":int(blueprint.storage), "started":false, "progress":0})
+	var site := {"id":site_id, "station_id":station_id, "name":name, "sector":sector_id, "fee":int(estimate.fee), "paused":false, "completed":0, "builder_id":"", "status":"Needs materials", "build_storage":{}, "tasks":tasks}
+	# The upfront fee is transferred to the actual NPC builder once, and all
+	# validation is complete before balances or world objects are changed.
+	world.state.starting_credits = int(world.state.starting_credits) - int(estimate.fee)
+	builder.credits = int(builder.credits) + int(estimate.fee)
+	world.state.next_build_site_id = number + 1
+	world.state.stations.append(station)
+	world.state.build_sites.append(site)
+	world._record_transaction("construction_fee", BUILDER_ID, station_id, "", 0, 0, -int(estimate.fee))
+	return {"ok":true, "message":"Build site placed. Deliver the listed materials.", "site_id":site_id}
+
+
+func find_site(world: RefCounted, site_id: String) -> Dictionary:
+	for site in world.state.get("build_sites", []):
+		if site.id == site_id:
+			return site
+	return {}
+
+
+func remaining_materials(site: Dictionary) -> Dictionary:
+	var needed: Dictionary = {}
+	for index in range(int(site.completed), site.tasks.size()):
+		var task: Dictionary = site.tasks[index]
+		if task.started:
+			continue
+		for ware_id in task.materials:
+			needed[ware_id] = int(needed.get(ware_id, 0)) + int(task.materials[ware_id])
+	for ware_id in needed:
+		needed[ware_id] = maxi(0, int(needed[ware_id]) - int(site.build_storage.get(ware_id, 0)))
+	return needed
+
+
+func deliver(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
+	var ship: Dictionary = world._find_ship(ship_id)
+	var site := find_site(world, site_id)
+	if ship.is_empty() or site.is_empty() or ship.owner != world.state.player_faction_id:
+		return {"ok":false, "message":"Ship or build site is unavailable."}
+	if ship.sector != site.sector or ship.docked_at != site.station_id or not ship.orders.is_empty() or not ship.travel.is_empty():
+		return {"ok":false, "message":"Dock the ship at this build site first."}
+	var needed := remaining_materials(site)
+	var transferred := 0
+	for ware_id in needed:
+		var amount := mini(int(needed[ware_id]), int(ship.cargo.get(ware_id, 0)))
+		if amount <= 0:
+			continue
+		ship.cargo[ware_id] = int(ship.cargo[ware_id]) - amount
+		site.build_storage[ware_id] = int(site.build_storage.get(ware_id, 0)) + amount
+		if ship.has("player_trader") and ship.player_trader.phase == "to_destination" and ship.player_trader.ware_id == ware_id:
+			ship.player_trader.managed_quantity = maxi(0, int(ship.player_trader.managed_quantity) - amount)
+		transferred += amount
+		world._record_transaction("build_delivery", ship_id, str(site.station_id), str(ware_id), amount, 0, 0)
+	if transferred == 0:
+		return {"ok":false, "message":"No required construction materials are aboard."}
+	if not site.paused and str(site.builder_id).is_empty() and _ready_for_work(site):
+		site.status = "Awaiting builder"
+	return {"ok":true, "message":"Delivered %d units to build storage." % transferred}
+
+
+func set_paused(world: RefCounted, site_id: String, paused: bool) -> bool:
+	var site := find_site(world, site_id)
+	if site.is_empty() or int(site.completed) >= site.tasks.size():
+		return false
+	site.paused = paused
+	site.status = "Paused" if paused else ("Awaiting builder" if _ready_for_work(site) else "Needs materials")
+	return true
+
+
+func _ready_for_work(site: Dictionary) -> bool:
+	if int(site.completed) >= site.tasks.size():
+		return false
+	var task: Dictionary = site.tasks[int(site.completed)]
+	if task.started:
+		return true
+	for ware_id in task.materials:
+		if int(site.build_storage.get(ware_id, 0)) < int(task.materials[ware_id]):
+			return false
+	return true
+
+
+func tick(world: RefCounted) -> void:
+	var builder: Dictionary = world._find_ship(BUILDER_ID)
+	if builder.is_empty():
+		return
+	for site in world.state.build_sites:
+		if int(site.completed) >= site.tasks.size():
+			site.status = "Complete"
+		elif site.paused:
+			site.status = "Paused"
+		elif str(site.builder_id).is_empty():
+			site.status = "Awaiting builder" if _ready_for_work(site) else "Needs materials"
+	var current := find_site(world, str(builder.build_assignment))
+	if not current.is_empty() and (current.paused or int(current.completed) >= current.tasks.size()):
+		if not builder.orders.is_empty() or not builder.travel.is_empty():
+			return
+		current.builder_id = ""
+		builder.build_assignment = ""
+		current = {}
+	if current.is_empty():
+		builder.build_assignment = ""
+		if not builder.orders.is_empty() or not builder.travel.is_empty():
+			return
+		for site in world.state.build_sites:
+			if site.paused or not _ready_for_work(site) or world._find_route(str(builder.sector), str(site.sector)).is_empty():
+				continue
+			current = site
+			builder.build_assignment = site.id
+			site.builder_id = builder.id
+			break
+	if current.is_empty():
+		return
+	if not builder.orders.is_empty() or not builder.travel.is_empty():
+		current.status = "Builder en route"
+		return
+	if builder.sector != current.sector:
+		if world._queue_ship_route(builder, str(current.sector)):
+			current.status = "Builder en route"
+		else:
+			current.status = "Builder cannot reach site"
+		return
+	var task: Dictionary = current.tasks[int(current.completed)]
+	if not task.started:
+		if not _ready_for_work(current):
+			current.builder_id = ""
+			builder.build_assignment = ""
+			current.status = "Needs materials"
+			return
+		for ware_id in task.materials:
+			current.build_storage[ware_id] = int(current.build_storage[ware_id]) - int(task.materials[ware_id])
+		task.started = true
+	task.progress = int(task.progress) + 1
+	current.status = "Building"
+	builder.status = "Building"
+	if int(task.progress) < int(task.duration):
+		return
+	var station: Dictionary = world._find_station(str(current.station_id))
+	if station.is_empty():
+		current.status = "Station unavailable"
+		return
+	station.storage_capacity = int(station.storage_capacity) + int(task.storage)
+	station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
+	current.completed = int(current.completed) + 1
+	if int(current.completed) >= current.tasks.size():
+		station.name = current.name
+		current.status = "Complete"
+		current.builder_id = ""
+		builder.build_assignment = ""

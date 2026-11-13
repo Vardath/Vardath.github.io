@@ -6,7 +6,7 @@ const MAX_MODULES := 10000
 const EPSILON := 0.000001
 
 
-func preview(state: Dictionary, requested: Dictionary, mode: String, selected_imports: Array) -> Dictionary:
+func preview(state: Dictionary, requested: Dictionary, mode: String, selected_imports: Array, sector_id: String = "") -> Dictionary:
 	var errors: Array[String] = []
 	var warnings: Array[String] = []
 	var recipes: Dictionary = {}
@@ -101,6 +101,7 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 			errors.append("Could not resolve the module dependencies.")
 	var rates := _rates(recipes, counts)
 	var module_rows: Array[Dictionary] = []
+	var known_resources: Dictionary = state.get("construction_resources", {}).get(sector_id, {})
 	for recipe in state.get("recipes", []):
 		var id := str(recipe.id)
 		if not counts.has(id) or int(counts[id]) <= 0:
@@ -109,11 +110,16 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 		module_rows.append({"id":id, "name":str(recipe.name), "chosen":chosen, "added":int(counts[id]) - chosen, "total":int(counts[id])})
 		if not str(recipe.get("source", "")).is_empty():
 			var message := "Requires %s; local availability is not yet surveyed." % str(recipe.source).capitalize()
-			if not warnings.has(message):
+			if not known_resources.is_empty():
+				message = "" if recipe.source in known_resources.natural_sources else "No %s is available in this sector." % str(recipe.source)
+			if not message.is_empty() and not warnings.has(message):
 				warnings.append(message)
 		if not recipe.get("deposit", {}).is_empty():
 			var resource := str(recipe.deposit.resource)
 			var message := "Requires a finite %s deposit; local availability is not yet surveyed." % str(wares.get(resource, resource))
+			if not known_resources.is_empty():
+				var remaining := int(known_resources.deposits.get(resource, 0))
+				message = "Finite %s reserve in this sector: %d units, shared by your stations." % [str(wares.get(resource, resource)), remaining] if remaining >= int(recipe.deposit.quantity) else "No usable %s deposit remains in this sector." % str(wares.get(resource, resource))
 			if not warnings.has(message):
 				warnings.append(message)
 	var ware_rows: Array[Dictionary] = []

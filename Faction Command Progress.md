@@ -177,3 +177,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: chose an alloy smelter, inspected the suggested ore and energy modules, and selected ore imports to see the ore module removed and its import rate displayed. Android device testing remains outstanding.
 - Defects and limitations: The planner is a temporary preview using three production recipes. Plans are not saved, priced or constructed. Local resources have not been surveyed; advanced recipes, workforce, transport, budgets and physical construction remain future work. The galaxy label layout has not been profiled at the planned full scale.
 - Next task / gate: Green verified. Implement the next construction stage with defined costs, physical materials and a persistent queue.
+
+## Pass 13 — Physical station construction
+- Date: 2026-11-13 (Australia/Brisbane).
+- Scope: Turn station plans into player-owned build sites with upfront builder hire, actual construction materials, a persistent module queue and a physically travelling NPC builder. Materials are purchased and delivered by ship into separate build storage; each module consumes its materials and work time before adding functional production and storage. Allow pausing, resuming and free ship-to-owned-station cargo transfers. Player stations share finite, surveyed sector resources. Upgrade existing saves and protect unknown future construction formats.
+- Files changed: `Faction Command Progress.md`, `.github/workflows/faction-command.yml`, `faction-command/data/construction.json`, `faction-command/scripts/construction.gd`, `station_planner.gd`, `world.gd`, `save_store.gd`, `main.gd`, `tests/run_tests.gd` and `README.md`.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: **PENDING**; do not begin the next task until this exact source commit's checks are green.
+- Automated tests: Godot 4.6.3 passed 546 foundation checks at the landscape viewport and with a 64×64 headless display override. Coverage includes fee conservation, purchase and delivery of real cargo, builder travel, waiting for materials, pause/resume, saving and reloading mid-build, station production, shared finite deposits, old-save migration, future-version protection and the game controls. A local Android resource-pack export included the construction data and compiled script.
+- Manual/device tests: In desktop Godot, inspected the construction quote and finite reserve, placed a site and checked its build queue and material requirement. Android device playtesting remains outstanding.
+- Defects and limitations: The builder fee is paid up front; cancellation, refunds and reordering are not yet available. Only one NPC builder and three production modules are implemented. Build materials and imported inputs must be delivered manually, and station positioning remains schematic.
+- Next task / gate: Wait for the exact source checks to pass, inspect the Android APK, and record the verified results before continuing with construction and station logistics.

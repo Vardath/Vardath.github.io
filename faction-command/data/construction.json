@@ -1,0 +1,14 @@
+{
+  "blueprints": {
+    "solar_cells": {"fee":300, "ticks":12, "materials":{"alloy_plates":6}, "storage":40},
+    "ore_extraction": {"fee":500, "ticks":18, "materials":{"alloy_plates":10}, "storage":80},
+    "alloy_smelting": {"fee":700, "ticks":20, "materials":{"alloy_plates":12}, "storage":80}
+  },
+  "default_natural_sources": ["sunlight"],
+  "sector_deposits": {
+    "hearthreach": {"ore":240},
+    "lantern_deep": {"ore":400},
+    "cinder_veil": {"ore":600},
+    "copper_wake": {"ore":1000}
+  }
+}
