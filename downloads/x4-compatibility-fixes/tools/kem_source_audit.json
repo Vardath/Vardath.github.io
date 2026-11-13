@@ -4,47 +4,58 @@
   "files": {
     "md/kuertee_emergent_missions.xml": {
       "sha256_lf": "a623ea7cbe378a066223382141c9992ab963b1c7dce092fac7012e14ec082e02",
-      "catalog_md5": "d9c4e7bf1e03c3c87c4b49e86098763c"
+      "catalog_md5": "d9c4e7bf1e03c3c87c4b49e86098763c",
+      "validator_sha256_lf": "03db11a64374e8161ecd9e70c5263cfc494be36e9e7df168649194ec96330a37"
     },
     "md/kuertee_emergent_missions_config.xml": {
       "sha256_lf": "ae42c7bd39138bc1b4207f0351d88e9a3c0973ddb847ab1130abad34a00279ec",
-      "catalog_md5": "861bfbbdc9a801e319d506f1e15efdfd"
+      "catalog_md5": "861bfbbdc9a801e319d506f1e15efdfd",
+      "validator_sha256_lf": "df032a06de3e02d4da9e0cce2304d8494f82cbd7abb0c91b0ad57c48f1c0b868"
     },
     "md/kuertee_emergent_missions_enemy_targets.xml": {
       "sha256_lf": "2c5ee3b52e069ecfe69b221f4b46062e980cac30de182f48182b9548d5ca58d0",
-      "catalog_md5": "bd1bd40bce2a75f4f34388f8e815451a"
+      "catalog_md5": "bd1bd40bce2a75f4f34388f8e815451a",
+      "validator_sha256_lf": "9e2bef337bdd2d3d6ef49330ea0421a237d34510d680995a746275d1bc952889"
     },
     "md/kuertee_emergent_missions_escort.xml": {
       "sha256_lf": "6ba87615f82da6e7e2f9d8242b576738f750ae4f7e582e3794052c9ab7c167a8",
-      "catalog_md5": "525c68160caa62060d6e47f2b12ca624"
+      "catalog_md5": "525c68160caa62060d6e47f2b12ca624",
+      "validator_sha256_lf": "d86835ca36d92026924f84f99c9bdbb606e94c7a63d46cc1fd3f7b4aea565231"
     },
     "md/kuertee_emergent_missions_hunt.xml": {
       "sha256_lf": "f80ff8d80332ed67871af3a5e482ef28ff5c7b76dc66a32e42794b77eea370d6",
-      "catalog_md5": "27567e83037328e7b4d9e7df0910cd01"
+      "catalog_md5": "27567e83037328e7b4d9e7df0910cd01",
+      "validator_sha256_lf": "30a3a934f7de2fe452f49eab99a1650ba755f52d33b9c229e5f288cf282d6f38"
     },
     "md/kuertee_emergent_missions_mayday.xml": {
       "sha256_lf": "1821e7de83a7edf1fe3969d1ad059378f1cf51716cc282c83255525b0e3d5ee1",
-      "catalog_md5": "3cb2355fc22a61a856d1bc16222cf180"
+      "catalog_md5": "3cb2355fc22a61a856d1bc16222cf180",
+      "validator_sha256_lf": "832224c6bd048a05581b35de4d39f31e35fdd1496f5174a8bc014fa9bcc06a9d"
     },
     "md/kuertee_emergent_missions_npc_manager.xml": {
       "sha256_lf": "34fb1f2122ff9c1860640d28a99464ebc46d6674866a37df48caee0c3ac1863b",
-      "catalog_md5": "4ed1d7b634ae9072f0862e35f0448d5e"
+      "catalog_md5": "4ed1d7b634ae9072f0862e35f0448d5e",
+      "validator_sha256_lf": "21e436b9b8c7e51ff7bf4c9000531625dcf550fc467cc0b46970a5f53da3ab2f"
     },
     "md/kuertee_emergent_missions_patrol_raid.xml": {
       "sha256_lf": "132eef352d5b8ec8a0cc8b05c5060a82ad5acf176d9e78f0b4fc3e7c24c79165",
-      "catalog_md5": "38afee39b010530bfa85173a6886afdd"
+      "catalog_md5": "38afee39b010530bfa85173a6886afdd",
+      "validator_sha256_lf": "88b65f355e783699288d212896a05990a61dd7b37b26299f5320991af2fbe16a"
     },
     "md/kuertee_emergent_missions_player_owned_nearby.xml": {
       "sha256_lf": "f536cc7c69d024b68d92998e377e2dcd1275a78b495e126591670e7ca7e90502",
-      "catalog_md5": "5cc97ebbbe838cb86ef82191354e2a9a"
+      "catalog_md5": "5cc97ebbbe838cb86ef82191354e2a9a",
+      "validator_sha256_lf": "6113f5bf925a5358157b9de41390d41bec6d1294b59a13c6d92d89320d97a2dd"
     },
     "md/kuertee_emergent_missions_requirements_by_faction.xml": {
       "sha256_lf": "08ba3550ef9b0e64a00f3fb51c09d7d726e8e2fafedf336e2c0e9da2df408cfd",
-      "catalog_md5": "c1dc56f84febdd2458e72e98382fedbd"
+      "catalog_md5": "c1dc56f84febdd2458e72e98382fedbd",
+      "validator_sha256_lf": "b1ea36423b92bb38b045a387125ac63706b9ce6ff6424986abd15f10faaefbf1"
     },
     "md/kuertee_emergent_missions_rescue.xml": {
       "sha256_lf": "5c01409e26e5046665c1b315223e546f3e04da5b979ab73a75a9c61872f8313a",
-      "catalog_md5": "4422060b6a88524f0bab23c63cc38be8"
+      "catalog_md5": "4422060b6a88524f0bab23c63cc38be8",
+      "validator_sha256_lf": "9c259afb67a589afe6634b86fe794c6f0806bedad22305b45ee9833e9fa8f272"
     }
   },
   "callers": [
