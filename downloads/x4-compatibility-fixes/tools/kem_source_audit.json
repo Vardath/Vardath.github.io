@@ -254,6 +254,374 @@
     },
     {
       "file": "md/kuertee_emergent_missions.xml",
+      "cue": "Bounties_UpdateLastKnown",
+      "cue_path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]",
+      "root_tag": "mdscript",
+      "root_name": "kuertee_emergent_missions",
+      "items": [
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/params",
+          "tag": "params",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/params/param[1]",
+          "tag": "param",
+          "attrs": {
+            "name": "Pilot"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/params/param[2]",
+          "tag": "param",
+          "attrs": {
+            "name": "Faction"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/params/param[3]",
+          "tag": "param",
+          "attrs": {
+            "name": "IsFromSatellite",
+            "default": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions",
+          "tag": "actions",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if",
+          "tag": "do_if",
+          "attrs": {
+            "value": "@$Pilot.isoperational and @$Pilot.ship.isoperational and @$Pilot.ship.sector.exists and $Faction"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_all",
+          "tag": "do_all",
+          "attrs": {
+            "counter": "$i",
+            "exact": "@$Pilot.$kEM_lastKnownLocation.{$Faction}.count",
+            "reverse": "true"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_all/do_if",
+          "tag": "do_if",
+          "attrs": {
+            "value": "typeof @$Pilot.$kEM_lastKnownLocation.{$Faction}.{$i}.$position != datatype.position"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_all/do_if/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "'remove_value invalid $Pilot (%s).kEM_lastKnownLocation.{%s}.{%s} %s'.[@$Pilot.knownname, $Faction, $i, @$Pilot.$kEM_lastKnownLocation.{$Faction}.{$i}]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_all/do_if/remove_value",
+          "tag": "remove_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{$i}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isNewRecord",
+            "exact": "not @$Pilot.$kEM_lastKnownLocation.{$Faction}.count"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$time_elapsed",
+            "exact": "0"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/set_value[3]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isNewPosition",
+            "exact": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/set_value[4]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$distFromOld",
+            "exact": "0"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/find_station",
+          "tag": "find_station",
+          "attrs": {
+            "name": "$station",
+            "owner": "$Faction",
+            "sortbydistanceto": "$Pilot.ship",
+            "space": "player.galaxy"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not $station"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[1]/find_station",
+          "tag": "find_station",
+          "attrs": {
+            "name": "$station",
+            "sortbydistanceto": "$Pilot.ship",
+            "space": "player.galaxy"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[1]/find_station/match_relation_to",
+          "tag": "match_relation_to",
+          "attrs": {
+            "faction": "$Pilot.ship.owner",
+            "comparison": "ge",
+            "relation": "neutral"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/create_position",
+          "tag": "create_position",
+          "attrs": {
+            "name": "$pos_current",
+            "space": "$Pilot.ship.sector",
+            "object": "$Pilot.ship"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not $isNewRecord"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[2]/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$time_elapsed",
+            "exact": "player.age - @$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$time"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[2]/create_position",
+          "tag": "create_position",
+          "attrs": {
+            "name": "$pos_old",
+            "space": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$sector",
+            "value": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$position"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[2]/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$distFromOld",
+            "exact": "$pos_current.distanceto.{$pos_old}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[2]/set_value[3]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isNewPosition",
+            "exact": "$distFromOld gt 50km"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$isNewRecord or $isNewPosition"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not @$Pilot.$kEM_lastKnownLocation.{$Faction}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/do_if[1]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}",
+            "exact": "[]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}",
+            "operation": "insert",
+            "exact": "table[            $sector = $Pilot.ship.sector,            $position = $pos_current,            $station = $station,            $time = player.age,            $distFromOld = $distFromOld,            $time_elapsed = $time_elapsed,            $isFromSatellite = $IsFromSatellite,            $otherPosInArea = []           ]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Pilot.$kEM_lastKnownLocation.{$Faction}.count gt 10"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/do_if[2]/resize_list",
+          "tag": "resize_list",
+          "attrs": {
+            "list": "$Pilot.$kEM_lastKnownLocation.{$Faction}",
+            "count": "10"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/signal_objects",
+          "tag": "signal_objects",
+          "attrs": {
+            "object": "$Pilot.assignedcontrolled",
+            "param": "'kEM_Bounties_UpdateLastKnown'",
+            "param2": "table[$faction = $Faction]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "$Pilot + ' (' + $Pilot.knownname + ', ' + @$Pilot.ship.idcode + ', ' + @$Pilot.ship.owner + ') $kEM_lastKnownLocation.{' + $Faction + '}.{1}: ' + $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}",
+            "chance": "md.kuertee_emergent_missions.UserSettings.$debugChance_bounties"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_if[3]/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_timeLastUpdate",
+            "exact": "player.age"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif",
+          "tag": "do_elseif",
+          "attrs": {
+            "value": "$distFromOld gt 10km"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$otherPosInArea.{1}",
+            "operation": "insert",
+            "exact": "table[            $sector = $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$sector,            $position = $pos_old,            $station = $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$station,            $time = $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$time,            $distFromOld = $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$distFromOld,            $time_elapsed = $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$time_elapsed,            $isFromSatellite = $Pilot.$kEM_lastKnownLocation.{$Fac"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/do_if",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$otherPosInArea.count gt 3"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/do_if/resize_list",
+          "tag": "resize_list",
+          "attrs": {
+            "list": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$otherPosInArea",
+            "count": "3"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$sector",
+            "exact": "$Pilot.ship.sector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[3]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$position",
+            "exact": "$pos_current"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[4]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$station",
+            "exact": "$station"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[5]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$time",
+            "exact": "player.age"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[6]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$distFromOld",
+            "exact": "$distFromOld"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[7]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$time_elapsed",
+            "exact": "$time_elapsed"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[8]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation.{$Faction}.{1}.$isFromSatellite",
+            "exact": "$IsFromSatellite"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "$Pilot + ' (' + $Pilot.knownname + ', ' + @$Pilot.ship.idcode + ', ' + @$Pilot.ship.owner + ') $kEM_lastKnownLocation.{' + $Faction + '}.{1}: ' + $Pilot.$kEM_lastKnownLocation.{$Faction}.{1}",
+            "chance": "md.kuertee_emergent_missions.UserSettings.$debugChance_bounties"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[3]/actions/do_if/do_elseif/set_value[9]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_timeLastUpdate",
+            "exact": "player.age"
+          }
+        }
+      ]
+    },
+    {
+      "file": "md/kuertee_emergent_missions.xml",
       "cue": "Bounties_RegisterKill",
       "cue_path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]",
       "root_tag": "mdscript",
