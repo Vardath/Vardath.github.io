@@ -156,10 +156,11 @@ Next task (only after verifying required checks for the current commits, or esta
 - Date: 2026-11-13 (Australia/Brisbane).
 - Scope: Record the goal of X4-level depth with simple, progressively disclosed controls. Add pinch, drag, mouse-wheel and button zoom/pan to the galaxy and sector views; provide Fit and a simple sector overview of real connections, stations and ships. Selecting a connection opens its neighboring sector, a station opens its existing market and production details, and a ship shows its current details. Camera changes do not modify simulation or save data.
 - Files changed: `Faction Command.md`, `Faction Command Progress.md`, `faction-command/scripts/map_interaction.gd`, `galaxy_map.gd`, `sector_map.gd`, `main.gd`, `tests/run_tests.gd` and `README.md`.
-- Commit SHA: pending verification.
+- Commit SHA: `3fc74a3b8013330693a8c45596557f86ebfe8b00`.
 - CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
-- CI result: **PENDING**. Verify the exact source commit and its Android artifact before starting the next implementation task.
+- CI result: **SUCCESS** on `3fc74a3b8013330693a8c45596557f86ebfe8b00`: [foundation validate](https://github.com/Vardath/Vardath.github.io/actions/runs/43335865996/job/131591746693) passed 454 checks on Godot 4.4.1, [Android debug](https://github.com/Vardath/Vardath.github.io/actions/runs/43335865996/job/131591904239) exported and verified the APK, and Pages build and deployment succeeded.
 - Automated tests: Local Godot 4.6.3 passed 454 checks at the intended landscape viewport and under the 64×64 headless display override. Coverage includes touch taps, panning, pinch zoom, anchored coordinates, zoom bounds and reset, selecting real entities after transforms, live ship movements, queued orders, save-state preservation and visible map controls. A local resource-pack export included the new scripts.
+- Artifact verification: Downloaded the rebuilt APK, verified its checksum and embedded galaxy data, confirmed both new map scripts were packaged, and checked that the package and signing certificate match the previous debug build.
 - Manual/device tests: Desktop Godot: zoomed the galaxy, opened a sector, opened a station market and followed a connection to its actual neighboring sector. Android touch and device playtesting remain unverified.
 - Defects and limitations: Sector view is explicitly schematic: intra-sector spatial positions, tactical movement, combat and continuous galaxy-to-sector zoom are not implemented. More fleets, sectors and station objects will need scale and layout profiling.
-- Next task / gate: Wait for green checks and inspect the rebuilt APK before starting the station planner's module and sourcing preview.
+- Next task / gate: Green verified. Begin the station planner's module selection, quantities and sourcing preview, while retaining the longer-term goal of a physical construction queue.
