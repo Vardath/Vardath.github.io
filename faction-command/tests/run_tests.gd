@@ -54,6 +54,8 @@ func _without_station_supply(ships: Array) -> Array:
 
 
 func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("personnel_version")
+	state.erase("crew_pools")
 	state.erase("shipyard_version")
 	state.erase("shipyard")
 
@@ -1893,6 +1895,106 @@ func _run() -> void:
 	future_wharf_file.close()
 	_expect(save_store.load_game(future_wharf_path).get("reason") == "unsupported", "future shipyard save versions are never silently replaced by an older backup")
 
+	# Personnel are a finite NPC roster. Hiring consumes actual credits;
+	# discharge returns a crew member to the same station without a refund,
+	# and transfers move existing crew between two physically co-docked ships.
+	var crew_world = WorldScript.new()
+	_expect(crew_world.load_starter() == OK, "crew-management world loads with finite station rosters")
+	_disable_npc_trading(crew_world)
+	var crew_first: Dictionary = crew_world._find_ship("ship_001")
+	var crew_market: Dictionary = crew_world._find_station("hearth_exchange")
+	var crew_total_before: int = _total_credits(crew_world.state)
+	var initial_roster: int = int(crew_world.state.crew_pools.hearth_exchange)
+	_expect(crew_world.state.personnel_version == 1 and initial_roster == 12 and crew_world.personnel.capacity(crew_first) == 8, "finite recruitment pool and courier crew berth limit are initialized")
+	var rename_before: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.rename(crew_world, "npc_builder_001", "Owned Now").ok and crew_world.snapshot() == rename_before, "NPC vessels cannot be renamed")
+	_expect(not crew_world.personnel.rename(crew_world, "ship_001", " \t ").ok and crew_world.snapshot() == rename_before, "blank ship names cannot alter world state")
+	_expect(not crew_world.personnel.rename(crew_world, "ship_001", "This name exceeds forty letters and must be rejected immediately").ok and crew_world.snapshot() == rename_before, "overlong names are rejected before changing the ship")
+	var rename_result: Dictionary = crew_world.personnel.rename(crew_world, "ship_001", "  Aurora One  ")
+	_expect(rename_result.ok and crew_first.name == "Aurora One" and crew_first.id == "ship_001" and crew_first.captain == "Mira Vale" and int(crew_first.crew) == 2, "renaming trims whitespace but preserves stable ID, pilot and crew")
+	_expect(not crew_world.personnel.rename(crew_world, "ship_001", "Aurora One").ok, "renaming to the current name is rejected without changing state")
+	var no_dock: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.hire(crew_world, "ship_001", 1).ok and not crew_world.personnel.discharge(crew_world, "ship_001", 1).ok and crew_world.snapshot() == no_dock, "recruitment and discharge require a real station dock")
+	_expect(crew_world.dock_ship("ship_001", "hearth_exchange").ok, "player ship can physically dock at a recruitment market")
+	crew_world.state.relations.auroran = -30
+	var hostile_crew: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.hire(crew_world, "ship_001", 1).ok and crew_world.snapshot() == hostile_crew, "hostile NPC recruitment fails atomically")
+	crew_world.state.relations.auroran = 0
+	crew_world.state.starting_credits = 100
+	var too_poor_crew: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.hire(crew_world, "ship_001", 1).ok and crew_world.snapshot() == too_poor_crew, "recruitment fails when player cannot afford the crew contract")
+	crew_world.state.starting_credits = 25000
+	var recruitment_result: Dictionary = crew_world.personnel.hire(crew_world, "ship_001", 3)
+	_expect(recruitment_result.ok and int(crew_first.crew) == 5 and int(crew_world.state.crew_pools.hearth_exchange) == initial_roster - 3, "three recruits leave a finite station roster and board the owned ship")
+	_expect(int(crew_world.state.starting_credits) == 24250 and int(crew_market.credits) == 20750 and _total_credits(crew_world.state) == crew_total_before, "recruitment transfers exactly 750 existing credits from the player to the NPC station")
+	_expect(crew_world.state.ledger.back().kind == "crew_hire" and int(crew_world.state.ledger.back().quantity) == 3 and int(crew_world.state.ledger.back().amount) == -750, "recruitment ledger records the ship, people and actual outlay")
+	var crew_cap_before: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.hire(crew_world, "ship_001", 4).ok and crew_world.snapshot() == crew_cap_before, "a courier cannot recruit beyond its physical crew berths")
+	crew_world.state.crew_pools.hearth_exchange = 1
+	var empty_roster_before: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.hire(crew_world, "ship_001", 2).ok and crew_world.snapshot() == empty_roster_before, "insufficient station personnel cannot manufacture workers")
+	crew_world.state.crew_pools.hearth_exchange = initial_roster - 3
+	var discharge_result: Dictionary = crew_world.personnel.discharge(crew_world, "ship_001", 1)
+	_expect(discharge_result.ok and int(crew_first.crew) == 4 and int(crew_world.state.crew_pools.hearth_exchange) == initial_roster - 2 and int(crew_world.state.starting_credits) == 24250, "discharge returns one worker to the roster without an invented refund")
+	_expect(crew_world.state.ledger.back().kind == "crew_discharge" and int(crew_world.state.ledger.back().amount) == 0, "discharged crew get a nonfinancial transaction entry")
+	var too_many_discharge: Dictionary = crew_world.snapshot()
+	_expect(not crew_world.personnel.discharge(crew_world, "ship_001", 5).ok and crew_world.snapshot() == too_many_discharge, "discharging more crew than aboard does not go negative")
+	_expect(save_store.save_game(test_root + "/crew-recruit-and-rename.json", crew_world.snapshot()) == OK, "renamed ship, paid hires and finite station pool survive save validation")
+	var crew_save: Dictionary = save_store.load_game(test_root + "/crew-recruit-and-rename.json")
+	var restored_crew = WorldScript.new()
+	_expect(bool(crew_save.get("ok", false)) and restored_crew.restore_snapshot(crew_save.state) == OK and restored_crew.snapshot() == crew_world.snapshot(), "recruitment and renamed ship round-trip with no duplicated headcount or money")
+
+	var transfer_world = WorldScript.new()
+	transfer_world.load_starter()
+	_disable_npc_trading(transfer_world)
+	var second_contract: Dictionary = transfer_world.shipyard.place_order(transfer_world, "freighter_mk1")
+	transfer_world.advance_ticks(48)
+	var transfer_source: Dictionary = transfer_world._find_ship("ship_001")
+	var transfer_destination: Dictionary = transfer_world._find_ship(str(second_contract.ship_id))
+	_expect(second_contract.ok and not transfer_destination.is_empty(), "crew transfers use a real constructed freighter rather than a free test ship")
+	var not_colocated: Dictionary = transfer_world.snapshot()
+	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 1).ok and transfer_world.snapshot() == not_colocated, "different sectors and absent docks prevent remote crew teleportation")
+	_expect(transfer_world.queue_fly_to("ship_001", "vellum_gate"), "first player ship can travel to the wharf on a real route")
+	transfer_world.advance_ticks(30)
+	_expect(transfer_world.dock_ship("ship_001", "vellum_foundry").ok and transfer_source.sector == transfer_destination.sector and transfer_source.docked_at == transfer_destination.docked_at, "both owned ships can be physically co-docked at the NPC wharf")
+	var transfer_before_crew: int = int(transfer_source.crew) + int(transfer_destination.crew)
+	var transfer_before_money: int = _total_credits(transfer_world.state)
+	var transferred: Dictionary = transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 1)
+	_expect(transferred.ok and int(transfer_source.crew) == 1 and int(transfer_destination.crew) == 5 and int(transfer_source.crew) + int(transfer_destination.crew) == transfer_before_crew, "crew transfer conserves the exact number of personnel between two co-docked ships")
+	_expect(_total_credits(transfer_world.state) == transfer_before_money and transfer_world.state.ledger.back().kind == "crew_transfer" and int(transfer_world.state.ledger.back().amount) == 0, "moving crew between owned ships is free but recorded")
+	var bad_transfer: Dictionary = transfer_world.snapshot()
+	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 9).ok and transfer_world.snapshot() == bad_transfer, "insufficient source crew blocks transfers atomically")
+	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", "ship_001", 1).ok and transfer_world.snapshot() == bad_transfer, "self-transfers are forbidden")
+	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", "npc_builder_001", 1).ok and transfer_world.snapshot() == bad_transfer, "transfers cannot increase NPC crews")
+	_expect(save_store.save_game(test_root + "/crew-transfer.json", transfer_world.snapshot()) == OK, "co-docked crew transfer and ship identities remain saveable")
+	var transfer_saved: Dictionary = save_store.load_game(test_root + "/crew-transfer.json")
+	var transfer_reloaded = WorldScript.new()
+	_expect(bool(transfer_saved.get("ok", false)) and transfer_reloaded.restore_snapshot(transfer_saved.state) == OK and transfer_reloaded.snapshot() == transfer_world.snapshot(), "ship-to-ship transfer remains deterministic after save and load")
+	transfer_world.queue_fly_to("ship_001", "cinder_veil")
+	var moving_transfer: Dictionary = transfer_world.snapshot()
+	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 1).ok and transfer_world.snapshot() == moving_transfer, "crew cannot leave a ship while fly orders are pending")
+
+	var old_personnel: Dictionary = transfer_world.snapshot()
+	old_personnel.erase("personnel_version")
+	old_personnel.erase("crew_pools")
+	_expect(save_store.save_game(test_root + "/crew-legacy.json", old_personnel) == OK, "old shipyard save without personnel roster remains readable")
+	var old_personnel_read: Dictionary = save_store.load_game(test_root + "/crew-legacy.json")
+	var migrated_personnel = WorldScript.new()
+	_expect(bool(old_personnel_read.get("ok", false)) and migrated_personnel.restore_snapshot(old_personnel_read.state) == OK and migrated_personnel.state.personnel_version == 1, "old save migrates to finite recruitment rosters without a new game")
+	_expect(migrated_personnel.state.ships == old_personnel.ships and migrated_personnel.state.starting_credits == old_personnel.starting_credits and migrated_personnel.state.ledger == old_personnel.ledger, "migration preserves every existing ship, captain, order, crew member and credit")
+	var bad_pool: Dictionary = crew_world.snapshot()
+	bad_pool.crew_pools.hearth_exchange = -1
+	_expect(save_store.save_game(test_root + "/crew-bad-market.json", bad_pool) != OK, "negative roster size is rejected by save validation")
+	var future_personnel_path := test_root + "/crew-future.json"
+	_expect(save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK and save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK, "future personnel schema test has a valid backup")
+	var future_personnel: Dictionary = crew_world.snapshot()
+	future_personnel.personnel_version = 2
+	var future_personnel_payload := Marshalls.variant_to_base64(future_personnel, false)
+	var future_personnel_file := FileAccess.open(future_personnel_path, FileAccess.WRITE)
+	future_personnel_file.store_string(JSON.stringify({"format_version":1, "payload":future_personnel_payload, "checksum":future_personnel_payload.sha256_text()}))
+	future_personnel_file.close()
+	_expect(save_store.load_game(future_personnel_path).get("reason") == "unsupported", "future personnel versions cannot silently revert to previous save backups")
+
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
 	root.size = Vector2i(1280, 720)
@@ -2526,6 +2628,81 @@ func _run() -> void:
 		_expect(screen.property_count_label.text.contains("2 ships") and screen.world._find_ship(delivered_id).orders.size() == 1, "reload restores purchased hull and its queued route with no duplication")
 	screen.queue_free()
 	await process_frame
+	# Ship management UI saves real ship names, recruitment, discharge and
+	# physical transfers without changing which asset is being commanded.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-personnel.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	var ui_crew_ship: Dictionary = screen.world.state.ships[0]
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.crew_screen) and screen.find_child("RenameShipButton", true, false) != null and screen.find_child("HireCrewButton", true, false) != null and screen.find_child("DischargeCrewButton", true, false) != null and screen.find_child("TransferCrewButton", true, false) != null, "ship-property panel exposes actual rename, recruitment, discharge and transfer controls")
+	_expect(screen.crew_info.text.contains("Mira Vale") and screen.crew_info.text.contains("2 / 8 berths") and screen.crew_transfer_picker.disabled, "crew interface displays the separate captain, real berth capacity and no phantom transfer destinations")
+	screen.crew_rename_input.text = "Dawn Voyager"
+	screen.find_child("RenameShipButton", true, false).pressed.emit()
+	_expect(ui_crew_ship.name == "Dawn Voyager" and screen.ship_button.text.contains("Dawn Voyager") and screen.detail_title.text == "Dawn Voyager", "renaming in UI changes the selected ship everywhere without replacing its ID")
+	screen.crew_quantity.value = 2
+	var before_ui_hire: int = int(screen.world.state.starting_credits)
+	screen.find_child("HireCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 2 and int(screen.world.state.starting_credits) == before_ui_hire and screen.crew_feedback.text.contains("Dock"), "UI refuses undocked recruitment without spending")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in range(screen.trade_station_picker.item_count):
+		if str(screen.trade_station_picker.get_item_metadata(index)) == "hearth_exchange":
+			screen.trade_station_picker.select(index)
+			break
+	screen.find_child("DockButton", true, false).pressed.emit()
+	_expect(ui_crew_ship.docked_at == "hearth_exchange", "UI ship reaches a real NPC crew market using its existing trade/docking controls")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(screen.crew_info.text.contains("Available recruits: 12"), "UI displays the physical recruitment pool at the dock")
+	screen.crew_quantity.value = 2
+	screen.find_child("HireCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 4 and int(screen.world.state.starting_credits) == before_ui_hire - 500 and int(screen.world.state.crew_pools.hearth_exchange) == 10, "UI hiring transfers real credits and reduces the finite NPC roster")
+	screen.crew_quantity.value = 1
+	screen.find_child("DischargeCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 3 and int(screen.world.state.crew_pools.hearth_exchange) == 11 and int(screen.world.state.starting_credits) == before_ui_hire - 500, "UI discharge returns one worker without an invented refund")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and save_store.load_game(screen.save_path).state.ships[0].name == "Dawn Voyager", "crew management immediately saves renamed vessel and financial/crew changes")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	var ui_contract: Dictionary = screen.world.shipyard.place_order(screen.world, "courier_mk1")
+	screen.world.advance_ticks(24)
+	var ui_second: Dictionary = screen.world._find_ship(str(ui_contract.ship_id))
+	_expect(ui_contract.ok and not ui_second.is_empty() and screen.world.personnel.capacity(ui_second) == 8, "real wharf-built courier supports the same crew management interface")
+	_expect(screen.world.queue_fly_to("ship_001", "vellum_gate"), "player can fly renamed vessel to a dock holding the new courier")
+	screen.world.advance_ticks(35)
+	_expect(screen.world.dock_ship("ship_001", "vellum_foundry").ok, "both player ships dock at a single real station for transfer")
+	screen._refresh_world_display()
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(not screen.crew_transfer_picker.disabled and str(screen.crew_transfer_picker.get_item_metadata(screen.crew_transfer_picker.selected)) == ui_second.id, "transfer picker shows only a co-docked owned ship")
+	screen.crew_quantity.value = 2
+	screen.find_child("TransferCrewButton", true, false).pressed.emit()
+	_expect(int(ui_crew_ship.crew) == 1 and int(ui_second.crew) == 4 and screen.crew_feedback.text.contains("Transferred"), "UI moves two existing crew between ships without materializing people")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "UI transfers save the existing real ship IDs and rosters")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-personnel.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_crew: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_crew != null, "renamed and staffed fleet has a resumable save")
+	if continue_crew != null:
+		continue_crew.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.world._find_ship("ship_001").name == "Dawn Voyager" and int(screen.world._find_ship("ship_001").crew) == 1 and int(screen.world._find_ship(str(ui_contract.ship_id)).crew) == 4, "reloaded fleet retains paid hires, discharge, transfer and original identities")
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():

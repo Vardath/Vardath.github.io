@@ -107,6 +107,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("shipyard_version") and _is_nonnegative_integer(decoded.shipyard_version) and decoded.shipyard_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("personnel_version") and _is_nonnegative_integer(decoded.personnel_version) and decoded.personnel_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -124,6 +126,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("station_supply_version") and not state.has("research_version"):
 		return false
 	if state.has("shipyard_version") != state.has("shipyard") or (state.has("shipyard_version") and not state.has("station_supply_version")):
+		return false
+	if state.has("personnel_version") != state.has("crew_pools") or (state.has("personnel_version") and not state.has("shipyard_version")):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -216,8 +220,22 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("shipyard_version")
 	if not _valid_station_supply(state):
 		return false
-	return not state.has("shipyard_version") or _valid_shipyard(state)
+	if state.has("shipyard_version") and not _valid_shipyard(state):
+		return false
+	return not state.has("personnel_version") or _valid_personnel(state)
 
+
+
+func _valid_personnel(state: Dictionary) -> bool:
+	if state.personnel_version != 1 or not state.get("crew_pools") is Dictionary or state.crew_pools.is_empty():
+		return false
+	# A station may legitimately be destroyed or removed while NPC ships are
+	# travelling. Keep its saved, dormant roster so station disappearance cannot
+	# corrupt a game or fabricate people; only extant NPC docks can recruit.
+	for station_id in state.crew_pools:
+		if not station_id is String or str(station_id).is_empty() or str(station_id).length() > 128 or not _is_nonnegative_integer(state.crew_pools[station_id]) or int(state.crew_pools[station_id]) > 1000000:
+			return false
+	return true
 
 
 func _valid_shipyard(state: Dictionary) -> bool:

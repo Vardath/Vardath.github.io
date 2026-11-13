@@ -114,6 +114,13 @@ var shipyard_info: Label
 var shipyard_feedback: Label
 var shipyard_buy_button: Button
 var shipyard_confirm: ConfirmationDialog
+var crew_screen: Control
+var crew_screen_ship_id := ""
+var crew_info: Label
+var crew_feedback: Label
+var crew_rename_input: LineEdit
+var crew_quantity: SpinBox
+var crew_transfer_picker: OptionButton
 
 
 func _ready() -> void:
@@ -144,6 +151,8 @@ func _process(delta: float) -> void:
 			_update_station_supply_screen()
 		if is_instance_valid(shipyard_screen):
 			_update_shipyard_screen()
+		if is_instance_valid(crew_screen):
+			_update_crew_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -472,6 +481,10 @@ func _build_ui() -> void:
 	role_hint = _wrapped_label("", 12, MUTED)
 	role_hint.name = "RoleHint"
 	property_list.add_child(role_hint)
+	var crew_button := _button("Rename / manage crew")
+	crew_button.name = "ManageCrewButton"
+	crew_button.pressed.connect(_open_crew_screen)
+	property_list.add_child(crew_button)
 	var trade_button := _button("Trade")
 	trade_button.name = "TradeButton"
 	trade_button.pressed.connect(_open_trade)
@@ -1543,6 +1556,185 @@ func _close_build_screen() -> void:
 	build_screen = null
 	build_task_list_signature = ""
 	build_task_picker_site_id = ""
+
+
+func _open_crew_screen() -> void:
+	if is_instance_valid(crew_screen):
+		return
+	var ship: Dictionary = _player_ship()
+	if ship.is_empty():
+		return
+	crew_screen_ship_id = str(ship.id)
+	_show_ship()
+	crew_screen = Control.new()
+	crew_screen.name = "CrewScreen"
+	crew_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(crew_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.94)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	crew_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	crew_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(820, 540)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 9)
+	panel.add_child(column)
+	column.add_child(_label("SHIP & CREW MANAGEMENT", 22, TEXT))
+	var name_row := HBoxContainer.new()
+	name_row.add_theme_constant_override("separation", 8)
+	column.add_child(name_row)
+	crew_rename_input = LineEdit.new()
+	crew_rename_input.name = "CrewShipName"
+	crew_rename_input.text = str(ship.name)
+	crew_rename_input.max_length = world.personnel.MAX_NAME_LENGTH
+	crew_rename_input.custom_minimum_size.y = 44
+	crew_rename_input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	name_row.add_child(crew_rename_input)
+	var rename_button := _button("Rename ship")
+	rename_button.name = "RenameShipButton"
+	rename_button.pressed.connect(_rename_crew_ship)
+	name_row.add_child(rename_button)
+	var scrolling := ScrollContainer.new()
+	scrolling.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scrolling.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scrolling)
+	crew_info = _wrapped_label("", 15, TEXT)
+	crew_info.name = "CrewInfo"
+	crew_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scrolling.add_child(crew_info)
+	crew_feedback = _wrapped_label("", 13, ACCENT)
+	crew_feedback.name = "CrewFeedback"
+	column.add_child(crew_feedback)
+	var count_row := HBoxContainer.new()
+	count_row.add_theme_constant_override("separation", 8)
+	column.add_child(count_row)
+	count_row.add_child(_label("Crew quantity", 14, TEXT))
+	crew_quantity = SpinBox.new()
+	crew_quantity.name = "CrewQuantity"
+	crew_quantity.min_value = 1
+	crew_quantity.max_value = 100
+	crew_quantity.step = 1
+	crew_quantity.value = 1
+	crew_quantity.custom_minimum_size = Vector2(105, 44)
+	count_row.add_child(crew_quantity)
+	var hire_button := _button("Hire")
+	hire_button.name = "HireCrewButton"
+	hire_button.pressed.connect(_hire_crew)
+	count_row.add_child(hire_button)
+	var discharge_button := _button("Discharge")
+	discharge_button.name = "DischargeCrewButton"
+	discharge_button.pressed.connect(_discharge_crew)
+	count_row.add_child(discharge_button)
+	var transfer_row := HBoxContainer.new()
+	transfer_row.add_theme_constant_override("separation", 8)
+	column.add_child(transfer_row)
+	crew_transfer_picker = OptionButton.new()
+	crew_transfer_picker.name = "CrewTransferPicker"
+	crew_transfer_picker.custom_minimum_size.y = 44
+	crew_transfer_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	transfer_row.add_child(crew_transfer_picker)
+	var transfer_button := _button("Transfer crew")
+	transfer_button.name = "TransferCrewButton"
+	transfer_button.pressed.connect(_transfer_crew)
+	transfer_row.add_child(transfer_button)
+	var close_button := _button("Close")
+	close_button.name = "CloseCrewButton"
+	close_button.pressed.connect(_close_crew_screen)
+	column.add_child(close_button)
+	_update_crew_screen()
+
+
+func _crew_ship() -> Dictionary:
+	var ship: Dictionary = world._find_ship(crew_screen_ship_id)
+	if ship.is_empty() or ship.owner != world.state.player_faction_id:
+		return {}
+	return ship
+
+
+func _crew_quantity_value() -> int:
+	return int(crew_quantity.value)
+
+
+func _update_crew_screen() -> void:
+	if not is_instance_valid(crew_screen):
+		return
+	var ship: Dictionary = _crew_ship()
+	if ship.is_empty():
+		crew_info.text = "Selected ship is no longer owned."
+		crew_transfer_picker.disabled = true
+		return
+	var station: Dictionary = world._find_station(str(ship.docked_at))
+	var at_npc: bool = not station.is_empty() and station.owner != world.state.player_faction_id and world.state.crew_pools.has(station.id)
+	var count: int = int(ship.crew)
+	var capacity: int = int(world.personnel.capacity(ship))
+	var lines: Array[String] = []
+	lines.append("%s · %s\nCaptain: %s (separate from service crew)\nService crew: %d / %d berths" % [ship.name, ship["class"], ship.captain, count, capacity])
+	lines.append("DOCKSIDE STAFFING\n%s" % ("Docked at " + str(station.name) if not station.is_empty() else "Not docked. Dock at an NPC station in Trade to hire or discharge crew."))
+	if at_npc:
+		lines.append("Available recruits: %d\nHiring cost: %d CR per crew member\nYour faction credits: %d CR" % [int(world.state.crew_pools[station.id]), int(world.personnel.HIRE_COST), int(world.state.starting_credits)])
+	else:
+		lines.append("Recruitment and discharge require an NPC recruitment station. The station pool is finite and hires are paid to its operating budget.")
+	lines.append("CREW TRANSFERS\nTwo player-owned ships must be docked at the same station, with no active orders. Crew move between their berths; no fee is charged.")
+	lines.append("Renaming does not change the ship ID, role, captain, orders, equipment, funds or cargo. Crew services do not replace the separately assigned captain.")
+	crew_info.text = "\n\n".join(lines)
+	var previous_id := ""
+	if crew_transfer_picker.item_count > 0 and crew_transfer_picker.selected >= 0:
+		previous_id = str(crew_transfer_picker.get_item_metadata(crew_transfer_picker.selected))
+	var transfers: Array = world.personnel.eligible_transfers(world, str(ship.id))
+	crew_transfer_picker.set_block_signals(true)
+	crew_transfer_picker.clear()
+	var selected_index := 0
+	for candidate in transfers:
+		crew_transfer_picker.add_item("%s · %d / %d" % [candidate.name, int(candidate.crew), int(world.personnel.capacity(candidate))])
+		crew_transfer_picker.set_item_metadata(crew_transfer_picker.item_count - 1, str(candidate.id))
+		if candidate.id == previous_id:
+			selected_index = crew_transfer_picker.item_count - 1
+	if transfers.is_empty():
+		crew_transfer_picker.add_item("No other ship at this dock")
+		crew_transfer_picker.set_item_metadata(0, "")
+	crew_transfer_picker.select(selected_index)
+	crew_transfer_picker.disabled = transfers.is_empty()
+	crew_transfer_picker.set_block_signals(false)
+
+
+func _finish_crew_action(result: Dictionary) -> void:
+	crew_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			crew_feedback.text += " Save failed."
+		_update_header()
+		_refresh_world_display()
+	_update_crew_screen()
+
+
+func _rename_crew_ship() -> void:
+	_finish_crew_action(world.personnel.rename(world, crew_screen_ship_id, crew_rename_input.text))
+
+
+func _hire_crew() -> void:
+	_finish_crew_action(world.personnel.hire(world, crew_screen_ship_id, _crew_quantity_value()))
+
+
+func _discharge_crew() -> void:
+	_finish_crew_action(world.personnel.discharge(world, crew_screen_ship_id, _crew_quantity_value()))
+
+
+func _transfer_crew() -> void:
+	var destination_id := ""
+	if crew_transfer_picker.selected >= 0:
+		destination_id = str(crew_transfer_picker.get_item_metadata(crew_transfer_picker.selected))
+	_finish_crew_action(world.personnel.transfer(world, crew_screen_ship_id, destination_id, _crew_quantity_value()))
+
+
+func _close_crew_screen() -> void:
+	if is_instance_valid(crew_screen):
+		crew_screen.queue_free()
+	crew_screen = null
+	crew_screen_ship_id = ""
 
 
 func _open_shipyard() -> void:
