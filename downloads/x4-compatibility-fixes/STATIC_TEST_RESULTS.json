@@ -1,10 +1,14 @@
 {
-  "version": "1.0.5",
-  "reference_files": 17,
-  "diff_files": 13,
+  "version": "1.0.6",
+  "reference_files": 15,
+  "diff_files": 11,
+  "untested_upstream_diffs": [
+    "extensions/galaxy_trader/md/gt_context_academy.xml",
+    "extensions/galaxy_trader/md/gt_core_system.xml"
+  ],
   "single_match_operations": 44,
   "contract_tests": 19,
-  "result": "pass",
+  "result": "partial",
   "archive_members": 18,
   "runtime_tested": false,
   "limitations": [
