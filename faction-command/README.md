@@ -76,7 +76,12 @@ plot and choose **Recover unused materials** to transfer as much as its cargo
 capacity permits; repeat with available space until the stock is empty.
 Fees and physical recoveries are recorded in the transaction ledger.
 A cancelled empty plot remains on the property list as a recovery location;
-plot demolition and construction reordering are not yet implemented.
+plot demolition is not yet implemented. To change construction priority, open
+**Stations & builds**, select a module in the queue and choose **Move up** or
+**Move down**. Only modules which have not begun consuming materials can move;
+completed modules and the currently building module are locked. Reordering
+does not alter fees, stock, cargo, builder travel or the module bill of
+materials. The revised sequence is saved immediately and survives loading.
 Build storage cannot be consumed by production. The ship uses only surplus
 from your stations, preserving their working inputs and reusable sources.
 
@@ -184,7 +189,7 @@ production are reset. Existing saves also gain an inactive station-supplier
 role without changing their current orders or cargo.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
-automated station output sales, build-queue reordering and cancelled-plot removal,
+automated station output sales and cancelled-plot removal,
 dynamic prices, source-specific collections, expanded research and prerequisites,
 multiple save slots, device testing and wider management systems remain to be
 implemented.
@@ -207,8 +212,8 @@ intervention, cargo preservation, role changes and save/load in transit.
 Construction tests cover paid builder travel, physical deliveries, resource
 sharing, paused and resumed builds, completed production, cancellation of
 unstarted and actively building modules, exact fee refunds, dockside material
-recovery, interrupted suppliers, construction save schema migration and saving
-mid-construction. Supply tests cover real purchases, limited cargo, waiting and
+recovery, interrupted suppliers, safe reordering of unstarted modules,
+construction save schema migration and saving mid-construction. Supply tests cover real purchases, limited cargo, waiting and
 resuming, role changes, competing ships and saving during supply trips.
 Archive tests cover funding, maintenance, visits, media manufacture, retained
 copy sources, player-built data production, migration and save/load.
