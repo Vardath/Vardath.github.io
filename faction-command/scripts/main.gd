@@ -32,6 +32,14 @@ var detail_title: Label
 var detail_body: Label
 var sector_picker: OptionButton
 var ship_brief: Label
+var ship_button: Button
+var property_count_label: Label
+var property_filter: LineEdit
+var property_picker: OptionButton
+var property_action_button: Button
+var property_picker_signature := ""
+var selected_property_key := ""
+var active_player_ship_id := ""
 var role_picker: OptionButton
 var role_hint: Label
 var order_target: Label
@@ -327,6 +335,9 @@ func _enter_world() -> void:
 	paused = true
 	_elapsed = 0.0
 	_last_saved_tick = int(world.state.tick)
+	active_player_ship_id = str(world.state.ships[0].id)
+	selected_property_key = "ship|" + active_player_ship_id
+	property_picker_signature = ""
 	selected_sector = str(world.state.ships[0].sector)
 	selected_view = "sector"
 	start_screen.queue_free()
@@ -399,14 +410,40 @@ func _build_ui() -> void:
 	root.add_child(content)
 
 	var property_panel := _panel()
-	property_panel.custom_minimum_size.x = 210
+	property_panel.custom_minimum_size.x = 235
 	content.add_child(property_panel)
+	var property_scroll := ScrollContainer.new()
+	property_scroll.name = "PropertyScroll"
+	property_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	property_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	property_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	property_panel.add_child(property_scroll)
 	var property_list := VBoxContainer.new()
+	property_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	property_list.add_theme_constant_override("separation", 8)
-	property_panel.add_child(property_list)
+	property_scroll.add_child(property_list)
 	property_list.add_child(_label("YOUR PROPERTY", 14, ACCENT))
-	property_list.add_child(_label("1 SHIP", 12, MUTED))
-	var ship_button := _button("◈   First Light")
+	property_count_label = _label("", 12, MUTED)
+	property_count_label.name = "PropertyCount"
+	property_list.add_child(property_count_label)
+	property_filter = LineEdit.new()
+	property_filter.name = "PropertySearch"
+	property_filter.placeholder_text = "Find ship, station or site"
+	property_filter.custom_minimum_size.y = 40
+	property_filter.add_theme_font_size_override("font_size", 13)
+	property_filter.text_changed.connect(_on_property_filter)
+	property_list.add_child(property_filter)
+	property_picker = OptionButton.new()
+	property_picker.name = "PropertyPicker"
+	property_picker.custom_minimum_size.y = 44
+	property_picker.add_theme_font_size_override("font_size", 13)
+	property_picker.item_selected.connect(_on_property_picked)
+	property_list.add_child(property_picker)
+	property_action_button = _button("Show selected property")
+	property_action_button.name = "OpenPropertyButton"
+	property_action_button.pressed.connect(_open_selected_property_action)
+	property_list.add_child(property_action_button)
+	ship_button = _button("◈   First Light")
 	ship_button.name = "ShipButton"
 	ship_button.pressed.connect(_show_ship)
 	property_list.add_child(ship_button)
@@ -492,7 +529,7 @@ func _build_ui() -> void:
 	sector_map.ship_selected.connect(_show_map_ship)
 	sector_map.visible = false
 	map_column.add_child(sector_map)
-	map_caption = _label("▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom.", 12, MUTED)
+	map_caption = _label("▲ Player ships   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom.", 12, MUTED)
 	map_caption.name = "MapCaption"
 	map_column.add_child(map_caption)
 
@@ -570,7 +607,7 @@ func _toggle_map_mode() -> void:
 func _update_map_heading() -> void:
 	map_title.text = _sector_name(selected_sector).to_upper() if showing_sector_map else "GALAXY MAP"
 	map_mode_button.text = "Galaxy" if showing_sector_map else "Open sector"
-	map_caption.text = "Tap a connection, station or ship. Drag to pan; pinch or use + / − to zoom." if showing_sector_map else "▲ Your ship   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom."
+	map_caption.text = "Tap a connection, station or ship. Drag to pan; pinch or use + / − to zoom." if showing_sector_map else "▲ Player ships   ◆ Faction traffic   ·   Drag to pan; pinch or use + / − to zoom."
 
 
 func _zoom_map(factor: float) -> void:
@@ -629,7 +666,7 @@ func _show_map_ship(ship_id: String) -> void:
 		_show_sector(selected_sector)
 		return
 	if ship.owner == world.state.player_faction_id:
-		_show_ship()
+		_activate_player_ship(ship_id)
 		return
 	selected_view = "npc_ship"
 	selected_ship_id = ship_id
@@ -642,7 +679,13 @@ func _show_map_ship(ship_id: String) -> void:
 
 func _show_ship() -> void:
 	selected_view = "ship"
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
+	if ship.is_empty():
+		detail_title.text = "No selected ship"
+		detail_body.text = "Choose one of your ships from the property list."
+		return
+	selected_property_key = "ship|" + str(ship.id)
+	_refresh_property_picker()
 	var sector_name := _sector_name(str(ship.sector))
 	detail_title.text = ship.name
 	detail_body.text = "%s  ·  %s\n\nCaptain\n%s\n\nCrew\n%s\n\nRole\n%s\n\nLocation\n%s" % [ship["class"], ship.status, ship.captain, int(ship.crew), ship.role, sector_name]
@@ -705,8 +748,185 @@ func _faction_name(faction_id: String) -> String:
 	return faction_id
 
 
+## The active command ship is a UI selection, not an ownership transfer or
+## saved simulation field. Orders, trading and supply always pass its stable ID.
+func _player_ship() -> Dictionary:
+	var ship: Dictionary = world._find_ship(active_player_ship_id)
+	if not ship.is_empty() and ship.owner == world.state.player_faction_id:
+		return ship
+	for candidate in world.state.ships:
+		if candidate.owner == world.state.player_faction_id:
+			return candidate
+	return {}
+
+
+func _activate_player_ship(ship_id: String) -> bool:
+	var ship: Dictionary = world._find_ship(ship_id)
+	if ship.is_empty() or ship.owner != world.state.player_faction_id:
+		return false
+	active_player_ship_id = ship_id
+	selected_property_key = "ship|" + ship_id
+	_refresh_property_picker()
+	_show_ship()
+	return true
+
+
+func _property_records() -> Array:
+	var records: Array = []
+	var site_station_ids: Dictionary = {}
+	for site in world.state.get("build_sites", []):
+		if int(site.completed) < site.tasks.size() or bool(site.get("cancelled", false)):
+			site_station_ids[str(site.station_id)] = true
+	for ship in world.state.ships:
+		if ship.owner == world.state.player_faction_id:
+			records.append({"key":"ship|" + str(ship.id), "kind":"Ship", "name":str(ship.name), "sector":str(ship.sector)})
+	for station in world.state.stations:
+		if station.owner == world.state.player_faction_id and not site_station_ids.has(str(station.id)):
+			records.append({"key":"station|" + str(station.id), "kind":"Station", "name":str(station.name), "sector":str(station.sector)})
+	for site in world.state.get("build_sites", []):
+		if site_station_ids.has(str(site.station_id)):
+			records.append({"key":"site|" + str(site.id), "kind":"Build site", "name":str(site.name), "sector":str(site.sector)})
+	return records
+
+
+func _refresh_property_picker() -> void:
+	if not is_instance_valid(property_picker) or not is_instance_valid(property_filter):
+		return
+	var records: Array = _property_records()
+	var ship_count := 0
+	var station_count := 0
+	var site_count := 0
+	var visible: Array = []
+	var needle: String = property_filter.text.strip_edges().to_lower()
+	var signatures: Array[String] = [needle]
+	for record in records:
+		match str(record.kind):
+			"Ship":
+				ship_count += 1
+			"Station":
+				station_count += 1
+			"Build site":
+				site_count += 1
+		var search_text: String = ("%s %s %s %s" % [record.kind, record.name, record.key, _sector_name(str(record.sector))]).to_lower()
+		if needle.is_empty() or search_text.contains(needle):
+			visible.append(record)
+			signatures.append("%s=%s@%s" % [record.key, record.name, record.sector])
+	property_count_label.text = "%d ships · %d stations · %d sites" % [ship_count, station_count, site_count]
+	var signature: String = "|".join(signatures)
+	if signature != property_picker_signature:
+		property_picker.set_block_signals(true)
+		property_picker.clear()
+		if visible.is_empty():
+			property_picker.add_item("No matching property")
+			property_picker.set_item_metadata(0, "")
+		else:
+			for entry in visible:
+				property_picker.add_item("%s: %s" % [entry.kind, entry.name])
+				property_picker.set_item_metadata(property_picker.item_count - 1, str(entry.key))
+		property_picker_signature = signature
+		property_picker.set_block_signals(false)
+	var chosen_index := 0
+	for index in range(property_picker.item_count):
+		if str(property_picker.get_item_metadata(index)) == selected_property_key:
+			chosen_index = index
+			break
+	property_picker.select(chosen_index)
+	property_picker.disabled = visible.is_empty()
+	property_action_button.disabled = visible.is_empty()
+	if not visible.is_empty():
+		var key: String = str(property_picker.get_item_metadata(chosen_index))
+		property_action_button.text = "Manage build site" if key.begins_with("site|") else ("Open station trade" if key.begins_with("station|") else "Show selected ship")
+
+
+func _on_property_filter(_text: String) -> void:
+	property_picker_signature = ""
+	_refresh_property_picker()
+
+
+func _on_property_picked(index: int) -> void:
+	if index < 0 or index >= property_picker.item_count:
+		return
+	var key: String = str(property_picker.get_item_metadata(index))
+	if key.is_empty():
+		return
+	selected_property_key = key
+	if key.begins_with("ship|"):
+		_activate_player_ship(key.substr(5))
+	elif key.begins_with("station|"):
+		_show_owned_station(key.substr(8))
+	elif key.begins_with("site|"):
+		_show_owned_site(key.substr(5))
+	_refresh_property_picker()
+
+
+func _focus_property_sector(sector_id: String) -> void:
+	selected_sector = sector_id
+	map_view.select_sector(sector_id)
+	sector_map.select_sector(sector_id)
+	_update_map_heading()
+	for index in range(sector_picker.item_count):
+		if str(sector_picker.get_item_metadata(index)) == sector_id:
+			sector_picker.select(index)
+			break
+	order_target.text = "Destination: " + _sector_name(sector_id)
+
+
+func _show_owned_station(station_id: String) -> void:
+	var station: Dictionary = world._find_station(station_id)
+	if station.is_empty() or station.owner != world.state.player_faction_id:
+		_show_sector(selected_sector)
+		return
+	selected_view = "owned_station"
+	selected_property_key = "station|" + station_id
+	_focus_property_sector(str(station.sector))
+	detail_title.text = str(station.name)
+	var modules: Array[String] = []
+	for module in station.production:
+		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
+		modules.append("%s · %s" % [recipe.get("name", module.recipe_id), module.get("status", "Waiting")])
+	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), "No active production." if modules.is_empty() else "\n".join(modules)]
+
+
+func _show_owned_site(site_id: String) -> void:
+	var site: Dictionary = world.construction.find_site(world, site_id)
+	if site.is_empty():
+		_show_sector(selected_sector)
+		return
+	if int(site.completed) >= site.tasks.size() and not bool(site.get("cancelled", false)):
+		_show_owned_station(str(site.station_id))
+		return
+	selected_view = "owned_site"
+	selected_property_key = "site|" + site_id
+	_focus_property_sector(str(site.sector))
+	detail_title.text = str(site.name)
+	var stored: Array[String] = []
+	for ware_id in site.build_storage:
+		if int(site.build_storage[ware_id]) > 0:
+			var ware: Dictionary = world._find_ware(str(ware_id))
+			stored.append("%s × %d" % [ware.get("name", ware_id), int(site.build_storage[ware_id])])
+	detail_body.text = "YOUR BUILD SITE\nSector: %s\nStatus: %s\nModules completed: %d / %d\nBuild storage: %s" % [_sector_name(str(site.sector)), site.status, int(site.completed), site.tasks.size(), "Empty" if stored.is_empty() else ", ".join(stored)]
+
+
+func _open_selected_property_action() -> void:
+	if property_picker.disabled or property_picker.selected < 0:
+		return
+	var key: String = str(property_picker.get_item_metadata(property_picker.selected))
+	if key.begins_with("ship|"):
+		_activate_player_ship(key.substr(5))
+	elif key.begins_with("site|"):
+		_open_build_screen(key.substr(5))
+	elif key.begins_with("station|"):
+		var station_id: String = key.substr(8)
+		_open_trade()
+		for index in range(trade_station_picker.item_count):
+			if str(trade_station_picker.get_item_metadata(index)) == station_id:
+				trade_station_picker.select(index)
+				_on_trade_selection(index)
+				break
+
+
 func _on_role_selected(index: int) -> void:
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	if index in [0, 1] and world.set_player_trader(str(ship.id), index == 1):
 		_save_current_game()
 	elif index == 2:
@@ -718,7 +938,7 @@ func _on_role_selected(index: int) -> void:
 
 
 func _queue_order() -> void:
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	if world.queue_fly_to(str(ship.id), selected_sector):
 		order_feedback.text = "Order queued. Resume to travel." if paused else "Order queued."
 		_save_current_game()
@@ -728,7 +948,10 @@ func _queue_order() -> void:
 
 
 func _refresh_world_display() -> void:
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
+	active_player_ship_id = str(ship.id)
+	ship_button.text = "◈   " + str(ship.name)
+	_refresh_property_picker()
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
 	role_picker.select(3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))
 	if ship.station_supply.enabled:
@@ -746,6 +969,10 @@ func _refresh_world_display() -> void:
 		_show_ship()
 	elif selected_view == "npc_ship":
 		_show_map_ship(selected_ship_id)
+	elif selected_view == "owned_station":
+		_show_owned_station(selected_property_key.substr(8))
+	elif selected_view == "owned_site":
+		_show_owned_site(selected_property_key.substr(5))
 	else:
 		_show_sector(selected_sector)
 
@@ -1169,7 +1396,7 @@ func _update_build_screen() -> void:
 		build_info.text = "No build sites yet. Choose Plan station to create one."
 		return
 	build_pause_button.text = "Resume build" if site.paused else "Pause build"
-	var supplier: Dictionary = world.state.ships[0]
+	var supplier: Dictionary = _player_ship()
 	var supplying_here: bool = supplier.build_supply.enabled and supplier.build_supply.site_id == site.id
 	build_supply_button.text = "Stop supplying this site" if supplying_here else "Automatically supply with %s" % supplier.name
 	var lines: Array[String] = []
@@ -1234,7 +1461,7 @@ func _recover_build_materials() -> void:
 	var site := _selected_build_site()
 	if site.is_empty():
 		return
-	var result: Dictionary = world.construction.recover(world, str(world.state.ships[0].id), str(site.id))
+	var result: Dictionary = world.construction.recover(world, str(_player_ship().id), str(site.id))
 	build_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():
@@ -1247,7 +1474,7 @@ func _dock_build_site() -> void:
 	var site := _selected_build_site()
 	if site.is_empty():
 		return
-	var result: Dictionary = world.dock_ship(str(world.state.ships[0].id), str(site.station_id))
+	var result: Dictionary = world.dock_ship(str(_player_ship().id), str(site.station_id))
 	build_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():
@@ -1260,7 +1487,7 @@ func _deliver_build_materials() -> void:
 	var site := _selected_build_site()
 	if site.is_empty():
 		return
-	var result: Dictionary = world.construction.deliver(world, str(world.state.ships[0].id), str(site.id))
+	var result: Dictionary = world.construction.deliver(world, str(_player_ship().id), str(site.id))
 	build_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():
@@ -1282,7 +1509,7 @@ func _toggle_build_supply() -> void:
 	var site := _selected_build_site()
 	if site.is_empty():
 		return
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	if ship.build_supply.enabled and ship.build_supply.site_id == site.id:
 		world.build_supply.stop(ship)
 		build_feedback.text = "Supply stopped. Cargo stays aboard and queued orders finish."
@@ -1341,7 +1568,7 @@ func _open_trade() -> void:
 	trade_station_picker.name = "TradeStationPicker"
 	trade_station_picker.custom_minimum_size.y = 44
 	trade_station_picker.add_theme_font_size_override("font_size", 15)
-	var current_sector: String = world.state.ships[0].sector
+	var current_sector: String = _player_ship().sector
 	var selected_index := 0
 	var selected_current := false
 	for station in world.state.stations:
@@ -1389,7 +1616,7 @@ func _open_trade() -> void:
 	trade_quantity = SpinBox.new()
 	trade_quantity.name = "TradeQuantity"
 	trade_quantity.min_value = 1
-	trade_quantity.max_value = maxi(1, int(world.state.ships[0].cargo_capacity))
+	trade_quantity.max_value = maxi(1, int(_player_ship().cargo_capacity))
 	trade_quantity.step = 1
 	trade_quantity.value = 1
 	trade_quantity.custom_minimum_size.y = 44
@@ -1459,7 +1686,7 @@ func _open_archive() -> void:
 	if is_instance_valid(archive_screen):
 		return
 	var station: Dictionary = world._find_station(_trade_station_id())
-	var result: Dictionary = world.archives.read(world, str(world.state.ships[0].id), str(station.id))
+	var result: Dictionary = world.archives.read(world, str(_player_ship().id), str(station.id))
 	if not result.ok:
 		trade_feedback.text = str(result.message)
 		return
@@ -1680,7 +1907,7 @@ func _open_station_supply() -> void:
 	panel.add_child(column)
 	column.add_child(_label("STATION INPUT SUPPLY", 22, TEXT))
 	column.add_child(_wrapped_label("%s · %s" % [station.name, _sector_name(str(station.sector))], 14, MUTED))
-	column.add_child(_wrapped_label("First Light uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced.", 14, TEXT))
+	column.add_child(_wrapped_label("%s uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced." % _player_ship().name, 14, TEXT))
 	column.add_child(_label("MAXIMUM PURCHASE SPEND FOR THIS ASSIGNMENT (CR)", 12, ACCENT))
 	station_supply_budget = SpinBox.new()
 	station_supply_budget.name = "StationSupplyBudget"
@@ -1689,7 +1916,7 @@ func _open_station_supply() -> void:
 	station_supply_budget.step = 1
 	station_supply_budget.custom_minimum_size.y = 44
 	station_supply_budget.add_theme_font_size_override("font_size", 15)
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	var active_here: bool = ship.station_supply.enabled and ship.station_supply.station_id == station.id
 	station_supply_budget.value = int(ship.station_supply.budget_limit) if active_here else mini(1000, int(world.state.starting_credits))
 	column.add_child(station_supply_budget)
@@ -1731,7 +1958,7 @@ func _update_station_supply_screen() -> void:
 	var station: Dictionary = world._find_station(_trade_station_id())
 	if station.is_empty():
 		return
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	var active_here: bool = ship.station_supply.enabled and ship.station_supply.station_id == station.id
 	station_supply_stop_button.disabled = not active_here
 	var desired: Dictionary = world.station_supply.targets(world, station)
@@ -1751,7 +1978,7 @@ func _update_station_supply_screen() -> void:
 
 
 func _assign_station_supply() -> void:
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	var result: Dictionary = world.station_supply.assign(world, str(ship.id), _trade_station_id(), int(station_supply_budget.value))
 	station_supply_feedback.text = str(result.message)
 	if result.ok:
@@ -1762,7 +1989,7 @@ func _assign_station_supply() -> void:
 
 
 func _stop_station_supply() -> void:
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	if ship.station_supply.enabled and ship.station_supply.station_id == _trade_station_id():
 		world.station_supply.stop(ship)
 		station_supply_feedback.text = "Supply stopped. Cargo stays aboard and queued orders finish."
@@ -1781,7 +2008,7 @@ func _close_station_supply() -> void:
 func _update_trade_screen() -> void:
 	if not is_instance_valid(trade_screen):
 		return
-	var ship: Dictionary = world.state.ships[0]
+	var ship: Dictionary = _player_ship()
 	var station: Dictionary = world._find_station(_trade_station_id())
 	var ware: Dictionary = world._find_ware(_trade_ware_id())
 	var own_station: bool = station.owner == world.state.player_faction_id
@@ -1850,7 +2077,7 @@ func _update_trade_screen() -> void:
 
 
 func _dock_at_station() -> void:
-	var result: Dictionary = world.dock_ship(str(world.state.ships[0].id), _trade_station_id())
+	var result: Dictionary = world.dock_ship(str(_player_ship().id), _trade_station_id())
 	trade_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():
@@ -1863,9 +2090,9 @@ func _perform_trade(buy: bool) -> void:
 	var station: Dictionary = world._find_station(_trade_station_id())
 	var result: Dictionary
 	if station.owner == world.state.player_faction_id:
-		result = world.transfer_player_station(str(world.state.ships[0].id), str(station.id), _trade_ware_id(), int(trade_quantity.value), not buy)
+		result = world.transfer_player_station(str(_player_ship().id), str(station.id), _trade_ware_id(), int(trade_quantity.value), not buy)
 	else:
-		result = world.trade(str(world.state.ships[0].id), str(station.id), _trade_ware_id(), int(trade_quantity.value), buy)
+		result = world.trade(str(_player_ship().id), str(station.id), _trade_ware_id(), int(trade_quantity.value), buy)
 	trade_feedback.text = str(result.message)
 	if result.ok:
 		if not _save_current_game():

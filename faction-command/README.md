@@ -10,13 +10,27 @@ preview shows its starting sector and initial relations; the chosen origin is
 friendly (+20) and the other three are neutral (0) in this first prototype.
 Your ship and credits still belong to your own independent player faction.
 
-The game has a selectable 12-sector starter galaxy and one player-owned ship
-with a captain and crew. The world starts paused; Resume and Pause control the
-simulation. Select a sector on the map or
-in the directory, then use **Queue fly order** to send First Light there. Queue
-additional destinations to visit them in order. Resume time to see the ship
-cross connected sectors; each crossing currently takes five ticks. Selecting
-the ship shows its captain, crew, location and pending destinations.
+The game has a selectable 12-sector starter galaxy and starts with one
+player-owned ship, First Light, with a captain and crew. The world starts
+paused; Resume and Pause control the simulation. Use the **Your Property**
+search field to find owned ships, commissioned stations and active or cancelled
+construction sites. Selecting a ship makes it the active command ship for
+role changes, queued fly orders, docking, manual trading, archive visits and
+station/build supply. All orders and physical cargo belong to that selected
+ship; selecting a different ship does not transfer ownership or cancel the
+previous ship's orders. Select a station for its production details and
+**Open station trade**, or choose a build site and **Manage build site**.
+The directory shows property counts and supports case-insensitive matching by
+asset name, category, stable ID and sector. It handles additional player-owned
+ships already present in a save, although purchasing/building more ships is
+a later gameplay feature.
+
+Select a sector on the map or in the directory, then use **Queue fly order**
+for the active ship. Queue additional destinations to visit in sequence.
+Resume time to see ships cross connected sectors, currently five ticks
+per crossing. Ship details show captain, crew, role, cargo and orders.
+Your selection is a UI preference; underlying ship IDs, orders, roles,
+stations, credits and save data are unchanged by browsing the directory.
 
 The galaxy map can be dragged to pan and pinched to zoom; the **+**, **−**
 and **Fit** buttons provide an alternative. Select a sector and choose **Open
@@ -54,7 +68,7 @@ Choose **Place build site** to pay the quoted fee to the independent builder
 Keystone and create an empty player-owned plot. Buy Alloy Plates from an NPC
 market, fly them to the plot's sector, open **Stations & builds**, dock at the
 site and choose **Deliver materials**. Alternatively, select the site and use
-**Automatically supply** to assign First Light. It delivers matching cargo
+**Automatically supply** to assign the selected player ship. It delivers matching cargo
 already aboard, then collects from your own station stock or buys from a
 reachable NPC market with your faction's credits. It physically travels and
 makes multiple trips if needed, showing when it waits for stock, credits or
@@ -92,7 +106,7 @@ Wake 1,000. These are separate from existing NPC station deposits. All starter
 sectors have sunlight. Plans that have not been placed are not saved.
 
 For ongoing production inputs, open one of your completed stations through
-**Trade** and choose **Supply inputs**. Assign First Light and set a maximum
+**Trade** and choose **Supply inputs**. Assign the selected player ship and set a maximum
 purchase spend for that assignment. The ship uses matching cargo already
 aboard, collects surplus from your other stations, or buys from reachable NPC
 markets within the allowance. The allowance is a cap, not an upfront payment;
@@ -102,8 +116,7 @@ production needs and required reusable sources, so locally produced inputs
 are not routinely purchased. Exhausted deposits can create new import needs.
 The supplier preserves source stations' working inputs and reusable originals,
 respects station storage, and reports why it is waiting. Stop it or change its
-role to retain cargo and let queued orders finish. The interface currently
-assigns the single starter ship; station output sales are not automated here.
+role to retain cargo and let queued orders finish. The interface assigns the ship currently selected in Your Property; station output sales are not automated here.
 
 Each NPC faction maintains a historical archive station in its starter sector.
 Select its sector, choose **Open sector**, tap the archive, dock and choose
@@ -151,7 +164,7 @@ or a buyer cannot pay, it replans or waits with any unsold cargo. Its movements
 appear as a diamond on the galaxy map, sector details identify faction traffic,
 and the transaction ledger identifies the ship responsible for each entry.
 
-Select **Auto trader** under First Light's ship role to automate its supply
+Select **Auto trader** under the selected ship's role to automate its supply
 runs. The role spends your faction's credits to buy stock, travels to the
 buyer, and returns sale proceeds to your faction. It chooses profitable
 factory supply runs using current prices, stock, cargo space, station budgets
