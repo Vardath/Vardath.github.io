@@ -31,6 +31,9 @@ for name,cat in files.items():
     if not any(w.lower() in path.lower() for w in ["emergent_missions","patrol_raid"]):continue
     # Mirror workshop_source(): the first matched CAT entry is authoritative.
     if path in res["files"]:continue
+    # Work from the exact checked catalog entry, not a hand-sliced offset.
+    from validate import workshop_source, normalized
+    body=workshop_source(data,{"catalog_path":path,"catalog_md5":checksum})
     try:r=E.fromstring(body)
     except E.XMLSyntaxError:continue
     norm=body.removeprefix(b'\\xef\\xbb\\xbf').replace(b'\\r\\n',b'\\n')
