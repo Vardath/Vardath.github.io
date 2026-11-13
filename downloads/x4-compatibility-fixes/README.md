@@ -1,6 +1,8 @@
-# Vardath Compatibility Fixes 1.0.5
+# Vardath Compatibility Fixes 1.0.6
 
-[Download](Vardath_Compatibility_Fixes_1.0.5.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.6.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.6 (14 November 2026):** Kuertee's bounty-location update is now restricted to operational NPC pilots; missing saved history containers are initialised before list access. This targets the 19,775 repeat errors in the 13 November 2026 22:21 debug log while leaving existing faction histories and bounty scores untouched. Tested against the pinned source XML; in-game confirmation is still required.
 
 **1.0.5 (13 November 2026 — latest debug log):** The installed Kuertee Emergent Missions v9.02 bounty and NPC target-selection scripts now receive native XML guards for missing pilots, out-of-scope target origins and empty enemy lists. Fly-by Looting no longer attempts rejected ammunition pickup on M-class Verdandi and other M/L/XL ships; S-class missile and non-ammo collection remain available. These are source-confirmed compatibility guards, not a universal correction for third-party XR geometry, stale mission IDs, or tall UI tables.
 
