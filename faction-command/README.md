@@ -64,9 +64,20 @@ its current orders finish and any cargo stays aboard. Queued orders also finish
 before a new supply assignment starts. The builder travels to supplied sites
 and consumes physical build storage as each module starts. Modules finish over
 time and immediately become working production with their own storage. Pause
-or resume a build from the same screen. The current builder fee is paid upfront;
-cancellation, refunds and reordering are not implemented yet. The separate
-build storage cannot be consumed by production. The ship uses only surplus
+or resume a build from the same screen. The builder fee is initially paid upfront. **Cancel unfinished construction**
+on the Stations & builds screen to refund the exact fees for never-started
+modules from the builder's actual wallet. A module that already began keeps
+its committed materials and finishes before the builder leaves; previously
+completed modules remain operational. The cancellation stops build suppliers
+without cancelling their queued travel or taking their cargo. No more modules
+start on that plot. Delivered but unused construction materials stay in
+separate physical build storage. Dock one of your ships at the cancelled
+plot and choose **Recover unused materials** to transfer as much as its cargo
+capacity permits; repeat with available space until the stock is empty.
+Fees and physical recoveries are recorded in the transaction ledger.
+A cancelled empty plot remains on the property list as a recovery location;
+plot demolition and construction reordering are not yet implemented.
+Build storage cannot be consumed by production. The ship uses only surplus
 from your stations, preserving their working inputs and reusable sources.
 
 At your own station, **Trade** offers free cargo transfers instead of buying
@@ -173,7 +184,7 @@ production are reset. Existing saves also gain an inactive station-supplier
 role without changing their current orders or cargo.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
-automated station output sales, build cancellation/refunds and reordering,
+automated station output sales, build-queue reordering and cancelled-plot removal,
 dynamic prices, source-specific collections, expanded research and prerequisites,
 multiple save slots, device testing and wider management systems remain to be
 implemented.
@@ -194,7 +205,9 @@ stock changes, missing or insolvent buyers, lost destinations, migration and
 save/load during a trip. Player trader tests also cover manual orders and
 intervention, cargo preservation, role changes and save/load in transit.
 Construction tests cover paid builder travel, physical deliveries, resource
-sharing, paused and resumed builds, completed production, migration and saving
+sharing, paused and resumed builds, completed production, cancellation of
+unstarted and actively building modules, exact fee refunds, dockside material
+recovery, interrupted suppliers, construction save schema migration and saving
 mid-construction. Supply tests cover real purchases, limited cargo, waiting and
 resuming, role changes, competing ships and saving during supply trips.
 Archive tests cover funding, maintenance, visits, media manufacture, retained
