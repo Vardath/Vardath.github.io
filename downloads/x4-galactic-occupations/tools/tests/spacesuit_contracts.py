@@ -113,115 +113,67 @@ class BoundaryVM:
         self.player.entity.isintransit=False
     def tick(self):self.cue('BrakeAssist_v112')
 
-class ConfirmedSpacesuitRecovery(unittest.TestCase):
-    def reset(self,v):
-        v.cue('Confirmed');v.player.age+=12;v.watch()
-    def exit(self,v):
-        self.reset(v);v.player.age+=2;v.watch()
-    def test_no_explicit_exit_request_never_moves_player(self):
-        v=BoundaryVM();v.player.age+=1000;v.watch();self.assertEqual(v.calls,[])
-    def test_logged_null_suit_null_control_ship_room_is_reset_before_an_exit(self):
-        v=BoundaryVM();v.cue('Confirmed');v.player.age+=11.9;v.watch();self.assertEqual(v.calls,[])
-        v.player.age+=0.1;v.watch();self.assertEqual(v.calls,[('teleport',{'object':'Init.$Source','control':'false','instant':'true','force':'true'})])
-        self.assertTrue(v.state['Init.ResetObserved']);self.assertEqual(v.state['Init.Stage'],1)
-        v.player.age+=2;v.watch();self.assertEqual(v.calls[1],{'emergency':'true','instant':'true','allowinhighway':'false'})
-        v.watch();self.assertFalse(v.state['Init.Pending']);self.assertEqual(len(v.calls),2)
-        self.assertTrue(any('handoff verified' in l for l in v.logs))
-    def test_successful_normal_exit_never_gets_repeated(self):
-        v=BoundaryVM();v.cue('Confirmed');v.healthy();v.watch();v.player.age+=30;v.watch()
-        self.assertFalse(v.state['Init.Pending']);self.assertEqual(v.calls,[])
-    def test_already_healthy_on_event_delivery_does_not_arm(self):
-        v=BoundaryVM();v.healthy();v.cue('Confirmed');self.assertFalse(v.state['Init.Pending'])
-    def test_suit_cockpit_room_is_healthy_but_original_ship_room_is_not(self):
-        v=BoundaryVM();v.healthy();v.player.room=Object(exists=True,context=v.suit)
-        v.cue('Confirmed');self.assertFalse(v.state['Init.Pending'])
-        v.player.room=v.room;v.cue('Confirmed');self.assertTrue(v.state['Init.Pending'])
-    def test_existing_suit_with_original_room_and_split_controls_gets_reset(self):
-        v=BoundaryVM();v.player.spacesuit=v.suit;v.player.controlled=v.suit;self.exit(v)
-        v.watch();self.assertEqual(len(v.calls),2);self.assertFalse(v.state['Init.Pending'])
-    def test_refused_suit_exit_returns_to_ship_once_then_stops(self):
-        v=BoundaryVM();v.accept=False;self.exit(v)
-        self.assertEqual(v.state['Init.Stage'],2);self.assertEqual(v.logs,[])
-        v.player.age+=5;v.watch();self.assertEqual(v.state['Init.Stage'],3)
-        for i in range(40):v.player.age+=1;v.watch()
-        self.assertEqual(len(v.calls),3);self.assertFalse(v.state['Init.Pending'])
-        self.assertEqual(sum(isinstance(c,dict) for c in v.calls),1)
-        self.assertFalse(any('handoff verified' in l for l in v.logs))
-    def test_room_without_actual_native_reset_event_cannot_start_an_exit(self):
-        v=BoundaryVM();v.anchor_event=False;self.reset(v)
-        for i in range(30):v.player.age+=1;v.watch()
-        self.assertEqual(len(v.calls),1);self.assertFalse(v.state['Init.Pending'])
-        self.assertFalse(v.state['Init.ResetObserved'])
-    def test_wrong_room_teleport_event_cannot_unlock_the_reset(self):
-        v=BoundaryVM();v.anchor_event=False;self.reset(v)
-        v.eventroom=Object(exists=True,context=Object(exists=True));v.cue('ShipResetObservedV46')
-        self.assertFalse(v.state['Init.ResetObserved']);v.player.age+=2;v.watch();self.assertEqual(len(v.calls),1)
-    def test_refused_anchor_never_repeats_and_cannot_claim_a_successful_exit(self):
-        v=BoundaryVM();v.anchor_accept=False;self.reset(v)
-        for i in range(30):v.player.age+=1;v.watch()
-        self.assertEqual(len(v.calls),1);self.assertFalse(v.state['Init.Pending'])
-        self.assertFalse(any('handoff verified' in l for l in v.logs))
-    def test_duplicate_confirmation_does_not_slide_the_recovery_clock(self):
-        v=BoundaryVM();v.cue('Confirmed');due=v.state['Init.Due'];serial=v.state['Init.Serial']
-        v.player.age+=7;v.cue('Confirmed');self.assertEqual(v.state['Init.Due'],due);self.assertEqual(v.state['Init.Serial'],serial)
-    def test_player_reseating_changing_rooms_teleporting_or_docking_cancels(self):
-        for reason in ['seat','room','ship','dock','sector','destroyed','remote control']:
-            with self.subTest(reason=reason):
-                v=BoundaryVM();v.cue('Confirmed')
-                if reason=='seat':v.player.occupiedship=v.source
-                if reason=='room':v.player.room=Object(exists=True,context=v.source)
-                if reason=='ship':v.player.ship=Object(exists=True,isclass=Object(spacesuit=False))
-                if reason=='dock':v.source.dock.container=Object(exists=True)
-                if reason=='sector':v.source.sector=Object(exists=True)
-                if reason=='destroyed':v.source.exists=False
-                if reason=='remote control':v.player.controlled=v.source
-                v.player.age+=12;v.watch();self.assertFalse(v.state['Init.Pending']);self.assertEqual(v.calls,[])
-    def test_native_transit_is_allowed_to_finish_then_stale_transit_has_one_reset(self):
-        v=BoundaryVM();v.cue('Confirmed');v.player.entity.isintransit=True
-        v.player.age+=12;v.watch();self.assertEqual(v.calls,[]);self.assertTrue(v.state['Init.Pending'])
-        v.player.age+=17;v.watch();self.assertEqual(v.calls,[])
-        v.player.age+=1;v.watch();self.assertEqual(len(v.calls),1)
-        self.assertFalse(v.player.entity.isintransit)
-        v.player.age+=2;v.watch();self.assertEqual(len(v.calls),2)
-    def test_suit_exit_stale_transit_also_gets_a_bounded_original_ship_return(self):
-        v=BoundaryVM();v.accept=False;self.exit(v);v.player.entity.isintransit=True
-        v.player.age+=5;v.watch();self.assertEqual(len(v.calls),2)
-        v.player.age+=10;v.watch();self.assertEqual(len(v.calls),3)
-        v.player.age+=3;v.watch();self.assertFalse(v.state['Init.Pending'])
-    def test_conversation_and_expired_confirmation_cannot_force_any_movement(self):
-        v=BoundaryVM();v.player.isinconversation=True;self.reset(v);self.assertEqual(v.calls,[])
-        v.player.age+=34;v.watch();self.assertEqual(v.calls,[]);self.assertFalse(v.state['Init.Pending'])
-    def test_native_permission_refusal_does_not_call_teleport(self):
-        v=BoundaryVM();v.player.teleport_permission=False;self.reset(v)
-        self.assertFalse(v.state['Init.Pending']);self.assertEqual(v.calls,[])
-    def test_transit_finishes_before_expiry_then_single_context_reset(self):
-        v=BoundaryVM();v.cue('Confirmed');v.player.entity.isintransit=True;v.player.age+=15;v.watch()
-        v.player.entity.isintransit=False;v.watch();self.assertEqual(len(v.calls),1)
-    def test_saving_loading_clears_pending_ejection_intent(self):
-        v=BoundaryVM();v.cue('Confirmed');v.state=copy.deepcopy(v.state);v.cue('Loaded')
-        v.player.age+=20;v.watch();self.assertEqual(v.calls,[])
-    def test_upgrade_cannot_replay_a_saved_request_from_the_old_controller(self):
-        v=BoundaryVM();v.cue('Confirmed');del v.state['Init.Stage']
-        v.cue('UpgradeV46');v.player.age+=20;v.watch()
-        self.assertEqual(v.calls,[]);self.assertFalse(v.state['Init.Pending'])
-    def test_foreign_zone_docked_source_or_invalid_source_is_rejected(self):
-        for reason in ['zone','dock','suit','dead']:
-            with self.subTest(reason=reason):
-                v=BoundaryVM()
-                if reason=='zone':v.zone.sector=Object(exists=True)
-                if reason=='dock':v.source.dock.container=Object(exists=True)
-                if reason=='suit':v.source.isclass.spacesuit=True
-                if reason=='dead':v.source.exists=False
-                v.cue('Confirmed');v.player.age+=20;v.watch();self.assertEqual(v.calls,[])
-    def test_reseating_between_reset_and_exit_cancels_ejection(self):
-        v=BoundaryVM();self.reset(v);v.player.occupiedship=v.source
-        v.player.age+=2;v.watch();self.assertEqual(len(v.calls),1);self.assertFalse(v.state['Init.Pending'])
-    def test_recovery_changes_no_ship_rosters_equipment_orders_or_control_posts(self):
-        banned=['create_ship','destroy_object','set_player_entity_position','set_entity_controlpost','set_object_velocity','create_order','cancel_order','set_owner']
-        self.assertFalse(any(SUIT.find('.//'+tag) is not None for tag in banned))
-        self.assertEqual(SUIT.find(".//cue[@name='Poll']").get('checkinterval'),'1s')
-        for n in SUIT.iter('teleport_player'):
-            self.assertEqual(n.get('object'),'Init.$Source');self.assertEqual(n.get('control'),'false')
+class SpacesuitRedockingSafety(unittest.TestCase):
+    """Prevent any delayed teleport/eject from ordinary transporter use."""
+    def test_legacy_cues_preserved_for_save_import(self):
+        expected={'Init','Confirmed','ShipResetObservedV46','Poll','Verify','Loaded','UpgradeV46'}
+        self.assertTrue(expected.issubset({c.get('name') for c in SUIT.findall('.//cue')}))
+        for name in ('Clear','Healthy','SnapshotV46','ReturnToShipV46','Watch'):
+            self.assertIsNotNone(SUIT.find(".//library[@name='"+name+"']"))
+
+    def test_no_forced_player_movement_commands_exist(self):
+        forbidden=('teleport_player','teleport_player_to_spacesuit',
+                  'set_player_entity_position','set_entity_controlpost',
+                  'create_ship','destroy_object')
+        for name in forbidden:
+            self.assertEqual(list(SUIT.iter(name)),[],name)
+        self.assertFalse(SUIT.find(".//cue[@name='Confirmed']/actions").findall("set_value"))
+
+    def test_confirmed_event_is_now_inert(self):
+        v=BoundaryVM()
+        original=v.state.copy()
+        for _ in range(5):
+            v.cue('Confirmed');v.watch();v.player.age+=20
+        self.assertEqual(v.calls,[])
+        self.assertFalse(v.state.get('Init.Pending'))
+        self.assertEqual(v.state.get('Init.Serial'),original.get('Init.Serial'))
+        self.assertEqual(v.player.ship,v.source)
+
+    def test_loaded_pending_v46_request_is_disarmed_immediately(self):
+        v=BoundaryVM()
+        v.state.update({'Init.Pending':True,'Init.Source':v.source,
+                        'Init.Stage':1,'Init.Due':v.player.age-12})
+        v.cue('Poll')
+        self.assertFalse(v.state['Init.Pending'])
+        self.assertEqual(v.calls,[])
+
+    def test_all_legacy_recovery_library_paths_cannot_move_player(self):
+        v=BoundaryVM()
+        v.state['Init.Pending']=True
+        for name in ('ReturnToShipV46','Watch'):
+            v.actions(SUIT.find(".//library[@name='"+name+"']/actions"))
+        self.assertFalse(v.state['Init.Pending'])
+        self.assertEqual(v.calls,[])
+
+    def test_teleport_event_does_not_trigger_another_teleport(self):
+        v=BoundaryVM()
+        v.state['Init.Pending']=True
+        v.cue('ShipResetObservedV46')
+        self.assertFalse(v.state['Init.Pending'])
+        self.assertEqual(v.calls,[])
+
+    def test_new_game_and_upgrade_clear_old_requests(self):
+        for cue in ('Loaded','UpgradeV46'):
+            v=BoundaryVM();v.state['Init.Pending']=True
+            v.cue(cue)
+            self.assertFalse(v.state['Init.Pending'])
+            self.assertEqual(v.calls,[])
+
+    def test_poll_stays_bounded_and_clearing_only(self):
+        poll=SUIT.find(".//cue[@name='Poll']")
+        self.assertEqual(poll.get('checkinterval'),'1s')
+        self.assertEqual(len(poll.findall('./actions/include_actions[@ref="Clear"]')),1)
+        self.assertEqual(list(poll.iter('wait')),[])
 
 class AstridBrakeBoundary(unittest.TestCase):
     def vm(self):

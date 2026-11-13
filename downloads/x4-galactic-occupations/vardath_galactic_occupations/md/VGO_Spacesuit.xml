@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VGO_Spacesuit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <!-- v0.5.3 safety rollback. The v46 transport-confirm observer could arm on a
+       normal transporter use and forcibly move the player into a ship and then
+       into a spacesuit 12 seconds later. This is unsafe around docking/interiors.
+       Preserve every saved cue/library identifier but NEVER move the player.
+       Normal X4 docking, teleporters and spacesuit exits remain entirely native. -->
   <cues>
     <cue name="Init">
       <actions>
@@ -11,122 +16,38 @@
       <actions><set_value name="Init.$Pending" exact="false"/></actions>
     </library>
     <library name="Healthy">
-      <actions>
-        <!-- A native suit cockpit is a valid room; the old ship's room is not. -->
-        <set_value name="$healthy" exact="player.spacesuit.exists and player.controlled == player.spacesuit and player.entity.controlled == player.spacesuit and (not player.room.exists or player.room.hascontext.{player.spacesuit}) and not player.entity.isintransit"/>
-      </actions>
+      <actions><set_value name="$healthy" exact="false"/></actions>
     </library>
     <library name="SnapshotV46">
-      <actions>
-        <debug_text text="'GO spacesuit state v46: request=%1 phase=%2 source=%3 ship=%4 controlled=%5 entity_controlled=%6 suit=%7 room=%8 transit=%9'.[Init.$Serial,Init.$Stage,Init.$Source,player.ship,player.controlled,player.entity.controlled,player.spacesuit,player.room,player.entity.isintransit]"/>
-      </actions>
+      <actions/>
     </library>
     <cue name="Confirmed" instantiate="true">
       <conditions><event_ui_triggered screen="'VGO.Spacesuit'" control="'confirmed'"/></conditions>
       <actions>
-        <set_value name="$source" exact="event.param3.{1}"/>
-        <set_value name="$zone" exact="event.param3.{2}"/>
-        <include_actions ref="Healthy"/>
-        <do_if value="not Init.$Pending and not $healthy and $source.exists and $source.isclass.ship and not $source.isclass.spacesuit and $zone.isclass.zone and $source.sector == $zone.sector and $source.sector == player.sector and not @$source.dock.container.exists and (player.room.hascontext.{$source} or player.ship == $source or player.spacesuit.exists)">
-          <set_value name="Init.$Source" exact="$source"/>
-          <set_value name="Init.$Room" exact="player.room"/>
-          <set_value name="Init.$Sector" exact="player.sector"/>
-          <set_value name="Init.$Started" exact="player.age"/>
-          <set_value name="Init.$Due" exact="player.age + 12s"/>
-          <set_value name="Init.$Expires" exact="player.age + 45s"/>
-          <set_value name="Init.$Stage" exact="0"/>
-          <set_value name="Init.$Serial" exact="Init.$Serial + 1"/>
-          <set_value name="Init.$Pending" exact="true"/>
-          <debug_text text="'GO spacesuit exit requested v46: source=%1 controlled=%2 suit=%3 room=%4'.[$source,player.controlled,player.spacesuit,player.room]"/>
-        </do_if>
+        <!-- Old queued UI events may arrive after an update. Disarm, never eject. -->
+        <include_actions ref="Clear"/>
       </actions>
     </cue>
     <library name="ReturnToShipV46">
-      <actions>
-        <!-- One bounded fallback, never a repeated eject/teleport loop. -->
-        <set_value name="Init.$Stage" exact="3"/>
-        <set_value name="Init.$ResetObserved" exact="false"/>
-        <set_value name="Init.$Due" exact="player.age + 3s"/>
-        <set_value name="Init.$Expires" exact="player.age + 15s"/>
-        <debug_text text="'GO spacesuit rollback v46: rebuilding original ship context, request=%1'.[Init.$Serial]"/>
-        <include_actions ref="SnapshotV46"/>
-        <teleport_player object="Init.$Source" control="false" instant="true" force="true"/>
-        <debug_text text="'GO spacesuit rollback command returned v46: request=%1'.[Init.$Serial]"/>
-      </actions>
+      <actions><include_actions ref="Clear"/></actions>
     </library>
     <library name="Watch">
-      <actions>
-        <include_actions ref="Healthy"/>
-        <do_if value="$healthy">
-          <include_actions ref="Clear"/>
-          <include_actions ref="SnapshotV46"/>
-          <do_if value="Init.$Stage gt 0">
-            <write_to_logbook category="general" title="'Galactic Occupations: spacesuit handoff verified'" text="'The confirmed exit now has the player and native control in the same spacesuit, outside the original ship room. Recovery stopped. Ship crew, equipment and orders were preserved.'"/>
-          </do_if>
-        </do_if>
-        <do_elseif value="not Init.$Source.exists or player.sector != Init.$Sector or Init.$Source.sector != Init.$Sector or @Init.$Source.dock.container.exists or player.occupiedship.exists or (player.controlled.exists and not player.controlled.isclass.spacesuit) or (player.room.exists and player.room != Init.$Room and (Init.$Stage == 0 or not player.room.hascontext.{Init.$Source})) or (player.ship.exists and player.ship != Init.$Source and not player.ship.isclass.spacesuit)">
-          <include_actions ref="Clear"/>
-          <debug_text text="'GO spacesuit recovery cancelled v46: player or source context changed'"/>
-          <include_actions ref="SnapshotV46"/>
-        </do_elseif>
-        <do_elseif value="player.age gt Init.$Expires or (Init.$Stage == 3 and player.age ge Init.$Due and not player.entity.isintransit)">
-          <include_actions ref="Clear"/>
-          <include_actions ref="SnapshotV46"/>
-          <write_to_logbook category="general" title="if Init.$Stage == 3 and Init.$ResetObserved and player.room.hascontext.{Init.$Source} and not player.entity.isintransit then 'Galactic Occupations: returned to original ship' else 'Galactic Occupations: spacesuit handoff still blocked'" text="'The bounded recovery has stopped. See GO spacesuit state v46 in the debug log for the observed ship, room, suit, control and transit state. No further automatic exits or teleports will run for this request. A ship-room return is not verification that spacesuit controls work.'"/>
-        </do_elseif>
-        <do_elseif value="player.age ge Init.$Due and not player.isinconversation">
-          <do_if value="Init.$Stage == 0 and (not player.entity.isintransit or player.age ge Init.$Started + 30s)">
-            <do_if value="player.canforceteleportto.{Init.$Source}">
-              <!-- Commit phase BEFORE native execution so a failed/re-entrant call cannot repeat. -->
-              <set_value name="Init.$Stage" exact="1"/>
-              <set_value name="Init.$ResetObserved" exact="false"/>
-              <set_value name="Init.$Due" exact="player.age + 2s"/>
-              <set_value name="Init.$Expires" exact="player.age + 15s"/>
-              <debug_text text="'GO spacesuit reset v46: rebuilding source room before exit, request=%1'.[Init.$Serial]"/>
-              <include_actions ref="SnapshotV46"/>
-              <teleport_player object="Init.$Source" control="false" instant="true" force="true"/>
-              <debug_text text="'GO spacesuit reset command returned v46: request=%1'.[Init.$Serial]"/>
-            </do_if>
-            <do_else>
-              <include_actions ref="Clear"/>
-              <include_actions ref="SnapshotV46"/>
-              <write_to_logbook category="general" title="'Galactic Occupations: source ship unavailable for recovery'" text="'The game refused forced teleport permission to the original ship. No ship reset or further automatic exit was attempted.'"/>
-            </do_else>
-          </do_if>
-          <do_elseif value="Init.$Stage == 1">
-            <do_if value="Init.$ResetObserved and not player.entity.isintransit and player.room.hascontext.{Init.$Source}">
-              <set_value name="Init.$Stage" exact="2"/>
-              <set_value name="Init.$Due" exact="player.age + 5s"/>
-              <set_value name="Init.$Expires" exact="player.age + 20s"/>
-              <debug_text text="'GO spacesuit exit v46: source room restored, one native emergency exit, request=%1'.[Init.$Serial]"/>
-              <include_actions ref="SnapshotV46"/>
-              <teleport_player_to_spacesuit emergency="true" instant="true" allowinhighway="false"/>
-              <debug_text text="'GO spacesuit exit command returned v46: request=%1'.[Init.$Serial]"/>
-            </do_if>
-          </do_elseif>
-          <do_elseif value="Init.$Stage == 2 and (not player.entity.isintransit or player.age ge Init.$Expires - 5s) and player.canforceteleportto.{Init.$Source}">
-            <include_actions ref="ReturnToShipV46"/>
-          </do_elseif>
-        </do_elseif>
-      </actions>
+      <actions><include_actions ref="Clear"/></actions>
     </library>
     <cue name="ShipResetObservedV46" instantiate="true">
       <conditions>
         <event_player_teleport_successful/>
         <check_value value="Init.$Pending"/>
-        <check_value value="Init.$Stage == 1 or Init.$Stage == 3"/>
-        <check_value value="event.param.exists and event.param.hascontext.{Init.$Source}"/>
       </conditions>
-      <actions>
-        <set_value name="Init.$ResetObserved" exact="true"/>
-        <debug_text text="'GO spacesuit source teleport observed v46: request=%1 phase=%2 room=%3'.[Init.$Serial,Init.$Stage,event.param]"/>
-      </actions>
+      <actions><include_actions ref="Clear"/></actions>
     </cue>
     <cue name="Poll" instantiate="true" checkinterval="1s">
-      <conditions><check_value value="Init.$Stage?"/><check_value value="Init.$Pending"/></conditions>
-      <actions><include_actions ref="Watch"/></actions>
+      <conditions><check_value value="Init.$Pending"/></conditions>
+      <actions>
+        <!-- Also discard pending v46 requests restored from old saves. -->
+        <include_actions ref="Clear"/>
+      </actions>
     </cue>
-    <!-- Preserve the old saved identifier; v46 verification runs in the persistent poll. -->
     <cue name="Verify" instantiate="true">
       <conditions><event_cue_signalled/></conditions>
       <actions/>
@@ -136,7 +57,6 @@
       <actions><include_actions ref="Clear"/></actions>
     </cue>
     <cue name="UpgradeV46">
-      <!-- An old saved request has no v46 phase/event state; never execute it. -->
       <actions><include_actions ref="Clear"/></actions>
     </cue>
   </cues>

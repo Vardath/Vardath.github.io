@@ -38,6 +38,7 @@ jobs:
               ('x4-galactic-occupations', 'vardath_galactic_occupations', 'Galactic_Occupations_0.5.0.zip'),
               ('x4-galactic-occupations', 'vardath_galactic_occupations', 'Galactic_Occupations_0.5.1.zip'),
               ('x4-galactic-occupations', 'vardath_galactic_occupations', 'Galactic_Occupations_0.5.2.zip'),
+              ('x4-galactic-occupations', 'vardath_galactic_occupations', 'Galactic_Occupations_0.5.3.zip'),
           ]
           for folder, mod, filename in releases:
               src = root/folder/mod
@@ -64,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.2.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.4.8_DEV.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.0.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.1.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.2.zip downloads/x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip
+          git add downloads/x4-hyperion-ascendant/Hyperion_Ascendant_1.0.2.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.4.8_DEV.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.0.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.1.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.2.zip downloads/x4-galactic-occupations/Galactic_Occupations_0.5.3.zip downloads/x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip
           if ! git diff --cached --quiet; then
             git commit -m "Package verified Hyperion and Occupations hotfix ZIPs"
             for attempt in 1 2 3 4 5; do

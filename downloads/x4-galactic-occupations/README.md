@@ -1,6 +1,8 @@
-# Galactic Occupations 0.5.2 — safeguard native Map information tables
+# Galactic Occupations 0.5.3 — safe redocking: disable forced spacesuit recovery
 
-[Download Occupations](Galactic_Occupations_0.5.2.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.5.3.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+
+**November 13 spacesuit/redocking safety fix:** The latest X4 run recorded a Galactic Occupations v46 transporter-confirm observer forcibly teleporting the player back into the current ship at 15217.42 game seconds and issuing an emergency spacesuit exit at 15219.47. It followed a normal transporter confirmation on a ship during redocking. Version **0.5.3** disables the observer and delayed forced teleport/ejection entirely, while preserving all X4-native transporters and spacesuit interaction. Pending old saved requests are disarmed without moving the player. This is a causal safety repair of a proven unexpected action, although the debug log cannot establish exactly which physical collision placed the avatar inside the floor. No new game, orders, crew, jobs or wages are modified. The separate vanilla X4 9.00 floor-clipping problem may still occur.
 
 **November 13 map UI safety hotfix:** The 13 November 2026 new-game debug log records 21 failed map info-frame builds, 52 table-width/scrollbar errors, 350 vertical-space failures and 312 invalid/destroyed-table calls. Galactic Occupations previously inserted a custom occupation-status row with an unsafe fixed 13-column span in the Map's dynamic Loadout table. Version 0.5.2 removes only that extra row; the ordinary Map information and **Mine Crystals** turret controls remain. The log does not prove this was the only contributor to the failures, and no live X4 game execution has yet confirmed the cure. Existing saves, passengers, orders, crew, jobs and payments are unaffected. On a new-game ship, greyed Deploy Military is expected when there are no mines or laser towers onboard.
 

@@ -1,6 +1,6 @@
 # Galactic Occupations — 13 Autonomous Ship Careers for X4: Foundations
 
-**Version:** 0.5.2
+**Version:** 0.5.3
 **Game:** X4: Foundations 9.00
 **Author:** Vardath
 **Existing saves:** Supported — no new game required
@@ -64,6 +64,12 @@ Some occupations rely on docking access, spare crew slots, actual station panels
 GitHub Actions checks the extension's XML, source contracts, mocked Lua integration and ZIP integrity. New behaviour and localization still require testing in X4 itself. The v0.5.1 update affects localization and documentation only; it does not reset existing jobs, bookings, wages, orders or saved state.
 
 **Source and downloads:** https://github.com/Vardath/Vardath.github.io/tree/main/downloads/x4-galactic-occupations
+
+## v0.5.3 changelog
+
+- Disabled Galactic Occupations' forced spacesuit recovery following ordinary transporter confirmations. An earlier recovery could teleport a player back to a ship and then issue an emergency spacesuit exit while redocking.
+- Normal ship/station transporters, X4-native spacesuit use, crew, saved occupations and payments remain unchanged. No new game needed.
+- Automated source and mocked UI tests added. In-game floor clipping is not universally solved; try the native Shift+D return-to-ship function if trapped.
 
 ## v0.5.2 changelog
 

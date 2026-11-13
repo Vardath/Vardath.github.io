@@ -1,5 +1,15 @@
 # Version history
 
+## 0.5.3 — 2026-11-13 — redocking and player-control safety
+
+- Disable the v46 spacesuit "recovery" path which intercepted broad transporter confirmations and, after 12 seconds, issued a forced player-to-ship teleport followed by an emergency spacesuit ejection. This is unsafe around docking and interior transporters. The 2026-11-13 log proves that the two forced commands ran near the end of the session; it does not prove the precise floor collision.
+- Retain every persistent MD cue/library identifier so old saved tasks remain loadable; a newly loaded pending request is cleared on the next poll and cannot issue movement. No normal X4 transporter, docking or spacesuit confirmation is overridden.
+- Remove the UserQuestionMenu.confirm wrapper entirely. Galactic Occupations no longer tries to repair native spacesuit exits automatically.
+- New MD and Lua regression contracts confirm no forced teleport/ejection commands remain, saved pending work is disarmed, and native menu confirmations are untouched.
+- All 13 jobs, ships, trading, crew, passenger transfers and payments remain unchanged; no new game required.
+- Additional independent warnings remain: repeated undersized-widget reports (615 height versus required 732), third-party XR Shippack collision mesh errors, noncrafting inventory ware definitions, and invalid mission ID queries. This release does not claim to repair them.
+
+
 ## 0.5.2 — 2026-11-13
 
 - Remove a nonessential custom "Occupation:" row which hard-coded a 13-column span into X4's native Map/Ship Loadout information table. The latest new-game log reports invalid information-table cells and narrow-column/height failures; this is a precautionary source repair, not a confirmed cure for all UI failures.
