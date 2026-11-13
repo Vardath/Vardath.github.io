@@ -68,7 +68,7 @@ Choose **Place build site** to pay the quoted fee to the independent builder
 Keystone and create an empty player-owned plot. Buy Alloy Plates from an NPC
 market, fly them to the plot's sector, open **Stations & builds**, dock at the
 site and choose **Deliver materials**. Alternatively, select the site and use
-**Automatically supply** to assign First Light. It delivers matching cargo
+**Automatically supply** to assign the selected player ship. It delivers matching cargo
 already aboard, then collects from your own station stock or buys from a
 reachable NPC market with your faction's credits. It physically travels and
 makes multiple trips if needed, showing when it waits for stock, credits or
@@ -106,7 +106,7 @@ Wake 1,000. These are separate from existing NPC station deposits. All starter
 sectors have sunlight. Plans that have not been placed are not saved.
 
 For ongoing production inputs, open one of your completed stations through
-**Trade** and choose **Supply inputs**. Assign First Light and set a maximum
+**Trade** and choose **Supply inputs**. Assign the selected player ship and set a maximum
 purchase spend for that assignment. The ship uses matching cargo already
 aboard, collects surplus from your other stations, or buys from reachable NPC
 markets within the allowance. The allowance is a cap, not an upfront payment;
@@ -116,8 +116,7 @@ production needs and required reusable sources, so locally produced inputs
 are not routinely purchased. Exhausted deposits can create new import needs.
 The supplier preserves source stations' working inputs and reusable originals,
 respects station storage, and reports why it is waiting. Stop it or change its
-role to retain cargo and let queued orders finish. The interface currently
-assigns the single starter ship; station output sales are not automated here.
+role to retain cargo and let queued orders finish. The interface assigns the ship currently selected in Your Property; station output sales are not automated here.
 
 Each NPC faction maintains a historical archive station in its starter sector.
 Select its sector, choose **Open sector**, tap the archive, dock and choose
@@ -165,7 +164,7 @@ or a buyer cannot pay, it replans or waits with any unsold cargo. Its movements
 appear as a diamond on the galaxy map, sector details identify faction traffic,
 and the transaction ledger identifies the ship responsible for each entry.
 
-Select **Auto trader** under First Light's ship role to automate its supply
+Select **Auto trader** under the selected ship's role to automate its supply
 runs. The role spends your faction's credits to buy stock, travels to the
 buyer, and returns sale proceeds to your faction. It chooses profitable
 factory supply runs using current prices, stock, cargo space, station budgets
