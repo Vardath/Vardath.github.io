@@ -1061,12 +1061,114 @@ func _run() -> void:
 	var construction_version_path := test_root + "/construction-version.json"
 	_expect(save_store.save_game(construction_version_path, build_world.snapshot()) == OK and save_store.save_game(construction_version_path, build_world.snapshot()) == OK, "construction version test has a backup")
 	var future_construction: Dictionary = build_world.snapshot()
-	future_construction.construction_version = 2
+	future_construction.construction_version = 3
 	var construction_payload := Marshalls.variant_to_base64(future_construction, false)
 	var future_construction_file := FileAccess.open(construction_version_path, FileAccess.WRITE)
 	future_construction_file.store_string(JSON.stringify({"format_version":1, "payload":construction_payload, "checksum":construction_payload.sha256_text()}))
 	future_construction_file.close()
 	_expect(save_store.load_game(construction_version_path).get("reason") == "unsupported", "future construction data is not silently replaced by an older backup")
+
+	# Cancellation refunds only unstarted work and never materialises cargo.
+	var cancel_world = WorldScript.new()
+	_expect(cancel_world.load_starter() == OK, "cancellation test world loads")
+	_disable_npc_trading(cancel_world)
+	var cancel_initial := _total_credits(cancel_world.state)
+	var cancel_plan: Dictionary = cancel_world.construction.place(cancel_world, "hearthreach", {"solar_cells":2}, "self", [])
+	var cancel_site: Dictionary = cancel_world.construction.find_site(cancel_world, str(cancel_plan.site_id))
+	var cancel_station: Dictionary = cancel_world._find_station(str(cancel_site.station_id))
+	var cancel_ship: Dictionary = cancel_world.state.ships[0]
+	cancel_world._find_station("vellum_foundry").stock.alloy_plates -= 12
+	cancel_ship.cargo.alloy_plates = 12
+	_expect(cancel_world.dock_ship("ship_001", str(cancel_station.id)).ok and cancel_world.construction.deliver(cancel_world, "ship_001", str(cancel_site.id)).ok, "cancel test delivers real alloy to the plot")
+	var original_stored: int = int(cancel_site.build_storage.alloy_plates)
+	var fresh_cancel: Dictionary = cancel_world.construction.cancel(cancel_world, str(cancel_site.id))
+	_expect(fresh_cancel.ok and int(fresh_cancel.refund) == 600 and int(cancel_world.state.starting_credits) == 25000 and int(cancel_world._find_ship("npc_builder_001").credits) == 0 and _total_credits(cancel_world.state) == cancel_initial, "unstarted cancellation returns the complete fee from the builder without minting credits")
+	_expect(cancel_site.cancelled and cancel_site.status == "Cancelled" and cancel_site.tasks.size() == 2 and int(cancel_site.completed) == 0 and int(cancel_site.build_storage.alloy_plates) == original_stored, "cancelled plot preserves every delivered unused unit and its original queue")
+	_expect(cancel_world.state.ledger.back().kind == "construction_refund" and int(cancel_world.state.ledger.back().amount) == 600, "fee refund has a positive ledger entry")
+	var cancelled_snapshot: Dictionary = cancel_world.snapshot()
+	_expect(not cancel_world.construction.cancel(cancel_world, str(cancel_site.id)).ok and cancel_world.snapshot() == cancelled_snapshot, "repeated cancellation cannot pay twice or alter stored materials")
+	_expect(not cancel_world.construction.set_paused(cancel_world, str(cancel_site.id), true) and not cancel_world.construction.deliver(cancel_world, "ship_001", str(cancel_site.id)).ok and not cancel_world.build_supply.assign(cancel_world, "ship_001", str(cancel_site.id)).ok, "cancelled construction rejects resuming work and fresh deliveries or suppliers")
+	cancel_ship.cargo_capacity = 7
+	var first_recovery: Dictionary = cancel_world.construction.recover(cancel_world, "ship_001", str(cancel_site.id))
+	_expect(first_recovery.ok and int(first_recovery.quantity) == 7 and int(cancel_ship.cargo.alloy_plates) == 7 and int(cancel_site.build_storage.alloy_plates) == 5, "recovery respects real free cargo volume and retains overflow")
+	var recovery_before: Dictionary = cancel_world.snapshot()
+	_expect(not cancel_world.construction.recover(cancel_world, "ship_001", str(cancel_site.id)).ok and cancel_world.snapshot() == recovery_before, "recovery cannot duplicate materials with a full ship")
+	cancel_ship.cargo_capacity = 20
+	_expect(cancel_world.construction.recover(cancel_world, "ship_001", str(cancel_site.id)).ok and int(cancel_ship.cargo.alloy_plates) == 12 and int(cancel_site.build_storage.alloy_plates) == 0, "second physical trip can recover remaining materials without loss")
+	_expect(cancel_world.state.ledger.back().kind == "construction_recovery", "dockside recovery is recorded without a fictitious sale")
+	var canceled_path := test_root + "/construction-cancelled.json"
+	_expect(save_store.save_game(canceled_path, cancel_world.snapshot()) == OK, "cancelled empty plot with recovered cargo remains saveable")
+	var canceled_read: Dictionary = save_store.load_game(canceled_path)
+	var canceled_resume = WorldScript.new()
+	_expect(bool(canceled_read.get("ok", false)) and canceled_resume.restore_snapshot(canceled_read.state) == OK and canceled_resume.snapshot() == cancel_world.snapshot(), "refunds, cancelled queue and recovered cargo persist through save and load")
+	cancel_world.advance_ticks(30)
+	_expect(cancel_site.status == "Cancelled" and int(cancel_site.completed) == 0 and cancel_station.production.is_empty(), "a cancelled site never restarts work after time advances")
+
+	# A started module has consumed materials; finish it, cancelling only later tasks.
+	var partial_cancel = WorldScript.new()
+	partial_cancel.load_starter()
+	_disable_npc_trading(partial_cancel)
+	var partial_plan: Dictionary = partial_cancel.construction.place(partial_cancel, "hearthreach", {"solar_cells":3}, "self", [])
+	var partial_site: Dictionary = partial_cancel.construction.find_site(partial_cancel, str(partial_plan.site_id))
+	var partial_station: Dictionary = partial_cancel._find_station(str(partial_site.station_id))
+	partial_cancel._find_station("vellum_foundry").stock.alloy_plates -= 18
+	partial_cancel.state.ships[0].cargo.alloy_plates = 18
+	partial_cancel.dock_ship("ship_001", str(partial_station.id))
+	partial_cancel.construction.deliver(partial_cancel, "ship_001", str(partial_site.id))
+	for _step in range(35):
+		partial_cancel.advance_ticks(1)
+		if partial_site.tasks[0].started:
+			break
+	_expect(partial_site.tasks[0].started and int(partial_site.completed) == 0 and int(partial_site.build_storage.alloy_plates) == 12, "builder begins one module and consumes exactly six materials before cancellation")
+	var part_cancel_result: Dictionary = partial_cancel.construction.cancel(partial_cancel, str(partial_site.id))
+	_expect(part_cancel_result.ok and int(part_cancel_result.refund) == 600 and int(partial_cancel._find_ship("npc_builder_001").credits) == 300 and int(partial_cancel.state.starting_credits) == 24700, "partial cancellation refunds only two unstarted modules, not the active module")
+	_expect(partial_site.status == "Finishing current module" and int(partial_site.build_storage.alloy_plates) == 12, "active build can finish while the remaining unused materials stay stored")
+	var partial_path := test_root + "/construction-cancel-active.json"
+	_expect(save_store.save_game(partial_path, partial_cancel.snapshot()) == OK, "a cancellation during active construction is saveable")
+	var partial_read: Dictionary = save_store.load_game(partial_path)
+	var partial_resume = WorldScript.new()
+	_expect(bool(partial_read.get("ok", false)) and partial_resume.restore_snapshot(partial_read.state) == OK, "active cancellation restores without resetting progress")
+	partial_cancel.advance_ticks(80)
+	partial_resume.advance_ticks(80)
+	_expect(partial_cancel.snapshot() == partial_resume.snapshot(), "a cancelled active build finishes deterministically after saving")
+	_expect(partial_site.cancelled and partial_site.status == "Cancelled" and int(partial_site.completed) == 1 and partial_station.production.size() == 1 and int(partial_station.storage_capacity) == 40 and int(partial_site.build_storage.alloy_plates) == 12, "the started module finishes once while both cancelled modules remain unbuilt and recoverable")
+	_expect(str(partial_cancel._find_ship("npc_builder_001").build_assignment).is_empty(), "the builder is released after finishing the sole active module")
+	_expect(partial_cancel.construction.recover(partial_cancel, "ship_001", str(partial_site.id)).ok and int(partial_cancel.state.ships[0].cargo.alloy_plates) == 12, "physical material recovery still works after a partial station is commissioned")
+	var fully_built_snapshot: Dictionary = build_world.snapshot()
+	_expect(not build_world.construction.cancel(build_world, str(site.id)).ok and build_world.snapshot() == fully_built_snapshot, "fully completed station cannot be cancelled or refunded")
+
+	# Cancelling a supply run does not erase ship orders or cargo in transit.
+	var moving_cancel = WorldScript.new()
+	moving_cancel.load_starter()
+	_disable_npc_trading(moving_cancel)
+	var moving_site_id: String = moving_cancel.construction.place(moving_cancel, "cinder_veil", {"solar_cells":1}, "self", []).site_id
+	moving_cancel._find_station("vellum_foundry").stock.alloy_plates -= 6
+	moving_cancel.state.ships[0].cargo.alloy_plates = 6
+	_expect(moving_cancel.build_supply.assign(moving_cancel, "ship_001", moving_site_id).ok, "build supplier can be assigned before its supply journey")
+	moving_cancel.advance_ticks(1)
+	var moving_ship: Dictionary = moving_cancel.state.ships[0]
+	var original_moving_orders: Array = moving_ship.orders.duplicate(true)
+	_expect(not original_moving_orders.is_empty() and moving_ship.build_supply.enabled, "build supplier begins a real sector route")
+	_expect(moving_cancel.construction.cancel(moving_cancel, moving_site_id).ok and not moving_ship.build_supply.enabled and moving_ship.role == "Unassigned" and moving_ship.orders == original_moving_orders and int(moving_ship.cargo.alloy_plates) == 6, "cancellation releases an active supplier without discarding queued orders or onboard goods")
+	_expect(save_store.save_game(test_root + "/construction-cancel-supplier.json", moving_cancel.snapshot()) == OK, "cancelled construction with an in-flight former supplier remains saveable")
+	moving_cancel.advance_ticks(35)
+	_expect(moving_ship.orders.is_empty() and int(moving_ship.cargo.alloy_plates) == 6 and int(moving_cancel.construction.find_site(moving_cancel, moving_site_id).build_storage.get("alloy_plates", 0)) == 0, "former supplier completes existing travel but does not deliver into a cancelled plot")
+
+	# Construction schema v1 saves migrate without altering completed work or money.
+	var legacy_cancel: Dictionary = build_world.snapshot()
+	legacy_cancel.construction_version = 1
+	for old_site in legacy_cancel.build_sites:
+		old_site.erase("cancelled")
+		old_site.erase("refunded_fee")
+	var legacy_cancel_path := test_root + "/construction-v1-upgrade.json"
+	_expect(save_store.save_game(legacy_cancel_path, legacy_cancel) == OK, "a legacy construction-v1 save remains readable")
+	var legacy_cancel_read: Dictionary = save_store.load_game(legacy_cancel_path)
+	var legacy_cancel_upgraded = WorldScript.new()
+	_expect(bool(legacy_cancel_read.get("ok", false)) and legacy_cancel_upgraded.restore_snapshot(legacy_cancel_read.state) == OK and legacy_cancel_upgraded.state.construction_version == 2, "construction v1 upgrades to v2 without requiring a fresh start")
+	_expect(legacy_cancel_upgraded.state.starting_credits == legacy_cancel.starting_credits and legacy_cancel_upgraded.state.ledger == legacy_cancel.ledger and not legacy_cancel_upgraded.state.build_sites[0].cancelled and int(legacy_cancel_upgraded.state.build_sites[0].refunded_fee) == 0, "construction migration preserves credit history and live station state")
+	var bad_refund: Dictionary = partial_cancel.snapshot()
+	bad_refund.build_sites[0].refunded_fee += 1
+	_expect(save_store.save_game(test_root + "/construction-bad-refund.json", bad_refund) != OK, "save validation rejects invented or mismatched cancellation refunds")
 
 	# Automated build supply makes real trips and respects money, cargo and saves.
 	var supply_world = WorldScript.new()
