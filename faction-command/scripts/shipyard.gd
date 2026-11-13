@@ -7,6 +7,10 @@ const DATA_PATH := "res://data/ship_hulls.json"
 const MAX_PENDING := 5
 
 
+func _positive_whole(value: Variant) -> bool:
+	return (value is int or value is float) and is_finite(float(value)) and float(value) >= 1.0 and float(value) == floor(float(value))
+
+
 func prepare(target: Dictionary) -> Error:
 	if target.has("shipyard_version"):
 		return OK if target.shipyard_version == 1 and target.get("shipyard") is Dictionary else ERR_UNAVAILABLE
@@ -23,12 +27,12 @@ func prepare(target: Dictionary) -> Error:
 		if not hull is Dictionary or not hull.get("id") is String or str(hull.id).is_empty() or catalog.has(hull.id) or not hull.get("name") is String or not hull.get("class") is String:
 			return ERR_INVALID_DATA
 		for key in ["price", "ticks", "cargo_capacity", "crew"]:
-			if not hull.get(key) is int or int(hull[key]) < 1:
+			if not _positive_whole(hull.get(key)):
 				return ERR_INVALID_DATA
 		if not hull.get("materials") is Dictionary or hull.materials.is_empty():
 			return ERR_INVALID_DATA
 		for ware_id in hull.materials:
-			if not wares.has(ware_id) or not hull.materials[ware_id] is int or int(hull.materials[ware_id]) < 1:
+			if not wares.has(ware_id) or not _positive_whole(hull.materials[ware_id]):
 				return ERR_INVALID_DATA
 		catalog[hull.id] = hull.duplicate(true)
 	if catalog.is_empty():
