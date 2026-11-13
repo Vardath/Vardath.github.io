@@ -93,6 +93,7 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/build_supply.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/archives.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/research.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/station_supply.gdc'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt

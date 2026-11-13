@@ -68,6 +68,13 @@ var research_info: Label
 var research_feedback: Label
 var research_start_button: Button
 var research_pause_button: Button
+var trade_station_actions: HBoxContainer
+var trade_station_supply_button: Button
+var station_supply_screen: Control
+var station_supply_budget: SpinBox
+var station_supply_info: Label
+var station_supply_feedback: Label
+var station_supply_stop_button: Button
 var plan_screen: Control
 var plan_mode: OptionButton
 var plan_module_counts: Dictionary = {}
@@ -110,6 +117,8 @@ func _process(delta: float) -> void:
 			_update_build_screen()
 		if is_instance_valid(research_screen):
 			_update_research_screen()
+		if is_instance_valid(station_supply_screen):
+			_update_station_supply_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -403,6 +412,7 @@ func _build_ui() -> void:
 	role_picker.add_item("Unassigned")
 	role_picker.add_item("Auto trader")
 	role_picker.add_item("Build supplier")
+	role_picker.add_item("Station supplier")
 	role_picker.item_selected.connect(_on_role_selected)
 	property_list.add_child(role_picker)
 	role_hint = _wrapped_label("", 12, MUTED)
@@ -645,6 +655,13 @@ func _show_ship() -> void:
 			detail_body.text += " · Deliver to site"
 		elif not str(supply.wait_reason).is_empty():
 			detail_body.text += " · " + str(supply.wait_reason)
+	if ship.station_supply.enabled:
+		var supply: Dictionary = ship.station_supply
+		detail_body.text += "\n\nStation supply\n%s · %s\nSpent: %d / %d CR" % [_station_name(str(supply.station_id)), ship.status, int(supply.spent), int(supply.budget_limit)]
+		if supply.phase == "to_source":
+			detail_body.text += "\nCollecting from " + _station_name(str(supply.source_id))
+		elif supply.phase == "to_station":
+			detail_body.text += "\nDelivering to station"
 	var cargo_lines: Array[String] = []
 	for ware in world.state.wares:
 		var quantity := int(ship.cargo.get(ware.id, 0))
@@ -685,6 +702,9 @@ func _on_role_selected(index: int) -> void:
 		_save_current_game()
 	elif index == 2:
 		_open_build_screen()
+	elif index == 3:
+		_open_trade()
+		trade_feedback.text = "Select one of your stations, then choose Supply inputs."
 	_refresh_world_display()
 
 
@@ -701,8 +721,10 @@ func _queue_order() -> void:
 func _refresh_world_display() -> void:
 	var ship: Dictionary = world.state.ships[0]
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
-	role_picker.select(2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0))
-	if ship.build_supply.enabled:
+	role_picker.select(3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))
+	if ship.station_supply.enabled:
+		role_hint.text = "Supplying a station within your purchase allowance."
+	elif ship.build_supply.enabled:
 		role_hint.text = "Supplying a build site using your cargo and credits."
 	elif ship.player_trader.enabled:
 		role_hint.text = "Uses your credits. Queued orders finish before trading."
@@ -1170,14 +1192,24 @@ func _open_trade() -> void:
 	dock_button.name = "DockButton"
 	dock_button.pressed.connect(_dock_at_station)
 	controls.add_child(dock_button)
+	trade_station_actions = HBoxContainer.new()
+	trade_station_actions.add_theme_constant_override("separation", 8)
+	controls.add_child(trade_station_actions)
 	trade_archive_button = _button("Read historical records")
 	trade_archive_button.name = "ReadArchiveButton"
+	trade_archive_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	trade_archive_button.pressed.connect(_open_archive)
-	controls.add_child(trade_archive_button)
-	trade_research_button = _button("Research projects")
+	trade_station_actions.add_child(trade_archive_button)
+	trade_research_button = _button("Research")
 	trade_research_button.name = "ResearchButton"
+	trade_research_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	trade_research_button.pressed.connect(_open_research)
-	controls.add_child(trade_research_button)
+	trade_station_actions.add_child(trade_research_button)
+	trade_station_supply_button = _button("Supply inputs")
+	trade_station_supply_button.name = "StationSupplyButton"
+	trade_station_supply_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	trade_station_supply_button.pressed.connect(_open_station_supply)
+	trade_station_actions.add_child(trade_station_supply_button)
 	controls.add_child(_label("WARE", 12, ACCENT))
 	trade_ware_picker = OptionButton.new()
 	trade_ware_picker.name = "TradeWarePicker"
@@ -1457,6 +1489,130 @@ func _close_research() -> void:
 	research_screen = null
 
 
+func _open_station_supply() -> void:
+	if is_instance_valid(station_supply_screen):
+		return
+	var station: Dictionary = world._find_station(_trade_station_id())
+	if station.is_empty() or station.owner != world.state.player_faction_id:
+		trade_feedback.text = "Choose one of your stations."
+		return
+	station_supply_screen = Control.new()
+	station_supply_screen.name = "StationSupplyScreen"
+	station_supply_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(station_supply_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.95)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	station_supply_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	station_supply_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(900, 570)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label("STATION INPUT SUPPLY", 22, TEXT))
+	column.add_child(_wrapped_label("%s · %s" % [station.name, _sector_name(str(station.sector))], 14, MUTED))
+	column.add_child(_wrapped_label("First Light uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced.", 14, TEXT))
+	column.add_child(_label("MAXIMUM PURCHASE SPEND FOR THIS ASSIGNMENT (CR)", 12, ACCENT))
+	station_supply_budget = SpinBox.new()
+	station_supply_budget.name = "StationSupplyBudget"
+	station_supply_budget.min_value = 0
+	station_supply_budget.max_value = 1000000000
+	station_supply_budget.step = 1
+	station_supply_budget.custom_minimum_size.y = 44
+	station_supply_budget.add_theme_font_size_override("font_size", 15)
+	var ship: Dictionary = world.state.ships[0]
+	var active_here: bool = ship.station_supply.enabled and ship.station_supply.station_id == station.id
+	station_supply_budget.value = int(ship.station_supply.budget_limit) if active_here else mini(1000, int(world.state.starting_credits))
+	column.add_child(station_supply_budget)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	station_supply_info = _wrapped_label("", 15, TEXT)
+	station_supply_info.name = "StationSupplyInfo"
+	station_supply_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(station_supply_info)
+	station_supply_feedback = _wrapped_label("", 13, ACCENT)
+	station_supply_feedback.name = "StationSupplyFeedback"
+	column.add_child(station_supply_feedback)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	column.add_child(actions)
+	var assign_button := _button("Assign / update")
+	assign_button.name = "AssignStationSupplyButton"
+	assign_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	assign_button.pressed.connect(_assign_station_supply)
+	actions.add_child(assign_button)
+	station_supply_stop_button = _button("Stop supply")
+	station_supply_stop_button.name = "StopStationSupplyButton"
+	station_supply_stop_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	station_supply_stop_button.pressed.connect(_stop_station_supply)
+	actions.add_child(station_supply_stop_button)
+	var close_button := _button("Close")
+	close_button.name = "CloseStationSupplyButton"
+	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	close_button.pressed.connect(_close_station_supply)
+	actions.add_child(close_button)
+	_update_station_supply_screen()
+
+
+func _update_station_supply_screen() -> void:
+	if not is_instance_valid(station_supply_screen):
+		return
+	var station: Dictionary = world._find_station(_trade_station_id())
+	if station.is_empty():
+		return
+	var ship: Dictionary = world.state.ships[0]
+	var active_here: bool = ship.station_supply.enabled and ship.station_supply.station_id == station.id
+	station_supply_stop_button.disabled = not active_here
+	var desired: Dictionary = world.station_supply.targets(world, station)
+	var rows: Array[String] = []
+	for ware_id in desired:
+		var ware: Dictionary = world._find_ware(str(ware_id))
+		rows.append("%s: %d in storage · target %d" % [ware.get("name", ware_id), int(station.stock.get(ware_id, 0)), int(desired[ware_id])])
+	var lines: Array[String] = []
+	lines.append("INPUT TARGETS\n" + ("No imports needed right now; the supplier can wait for changes." if rows.is_empty() else "\n".join(rows)))
+	lines.append("Targets cover about %d ticks of net demand and any reusable source, with room kept for output. They adjust to production and resource changes." % world.station_supply.BUFFER_TICKS)
+	if active_here:
+		lines.append("SUPPLIER\n%s · %s\nSpent: %d / %d CR" % [ship.name, ship.status, int(ship.station_supply.spent), int(ship.station_supply.budget_limit)])
+	else:
+		lines.append("No ship assigned to this station.")
+	lines.append("The limit is a cap, not an upfront payment. Set it to zero to use only carried cargo or surplus from your own stations. Working stock and reusable sources at those stations are protected.")
+	station_supply_info.text = "\n\n".join(lines)
+
+
+func _assign_station_supply() -> void:
+	var ship: Dictionary = world.state.ships[0]
+	var result: Dictionary = world.station_supply.assign(world, str(ship.id), _trade_station_id(), int(station_supply_budget.value))
+	station_supply_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			station_supply_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_station_supply_screen()
+
+
+func _stop_station_supply() -> void:
+	var ship: Dictionary = world.state.ships[0]
+	if ship.station_supply.enabled and ship.station_supply.station_id == _trade_station_id():
+		world.station_supply.stop(ship)
+		station_supply_feedback.text = "Supply stopped. Cargo stays aboard and queued orders finish."
+		if not _save_current_game():
+			station_supply_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_station_supply_screen()
+
+
+func _close_station_supply() -> void:
+	if is_instance_valid(station_supply_screen):
+		station_supply_screen.queue_free()
+	station_supply_screen = null
+
+
 func _update_trade_screen() -> void:
 	if not is_instance_valid(trade_screen):
 		return
@@ -1466,6 +1622,8 @@ func _update_trade_screen() -> void:
 	var own_station: bool = station.owner == world.state.player_faction_id
 	trade_archive_button.visible = station.has("archive")
 	trade_research_button.visible = own_station and world.research.has_lab(station)
+	trade_station_supply_button.visible = own_station
+	trade_station_actions.visible = trade_archive_button.visible or trade_research_button.visible or trade_station_supply_button.visible
 	trade_archive_button.disabled = ship.docked_at != station.id
 	trade_archive_button.text = "Read historical records" if ship.docked_at == station.id else "Dock to read records"
 	trade_buy_button.text = "Take from station" if own_station else "Buy"
@@ -1555,5 +1713,6 @@ func _perform_trade(buy: bool) -> void:
 func _close_trade() -> void:
 	_close_archive()
 	_close_research()
+	_close_station_supply()
 	trade_screen.queue_free()
 	trade_screen = null

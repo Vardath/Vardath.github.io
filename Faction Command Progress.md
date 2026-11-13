@@ -229,3 +229,16 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: Desktop Godot: opened a legitimately constructed laboratory in an isolated test save, inspected the research project, its archive bonus and reward, and started it to see the materials wait. Android-device playtesting remains outstanding.
 - Defects and limitations: Research currently has three projects and one active project at one selected laboratory. Archive visits provide general learned references, not source-specific copies; Recorded Data remains an aggregate ware. Research staff, prerequisites, complex discoveries and individual collections are future work. Station production imports remain manual; construction cancellation/refunds and reordering remain unavailable.
 - Next task / gate: Green verified. Continue broader station logistics, research depth and source-specific archive collections.
+
+## Pass 17 — Budgeted station input supply
+- Date: 2026-11-14 (Australia/Brisbane).
+- Scope: Add an ongoing player station-supplier role. It delivers matching cargo, collects surplus above working-input and reusable-source reserves from player stations, or physically buys and transports inputs within a player-set total assignment cap. Targets reflect net production demand, storage, reusable sources and exhausted deposits. The existing construction-supplier role also protects working stock. Add station controls, role status and save migration.
+- Files changed: `Faction Command.md`, `Faction Command Progress.md`, `.github/workflows/faction-command.yml`, `faction-command/scripts/station_supply.gd`, `build_supply.gd`, `world.gd`, `save_store.gd`, `main.gd`, `tests/run_tests.gd` and `README.md`.
+- Commit SHA: Pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: Pending.
+- Automated tests: Local Godot 4.6.3 passed 802 checks at the landscape viewport and with a 64×64 headless display override. Tests exercise actual production, purchases and transfers, budget limits, source protection, multiple suppliers, save/load while travelling, role changes, old-save migration and station controls. A local Android resource-pack export includes the compiled supply script.
+- Artifact verification: Pending.
+- Manual/device tests: Desktop Godot: opened a constructed laboratory, checked its input targets and spending limit, and assigned the supplier. Android-device playtesting remains outstanding.
+- Defects and limitations: The interface currently assigns First Light only. Output sales and per-ware rules are not automated. The cap applies to the total assignment, not a repeating allowance. Net targets assume local production can operate except where natural sources or deposits are unavailable; a closed production loop may need initial inputs. Construction cancellation/refunds and reordering remain unavailable.
+- Next task / gate: Wait for the exact source commit's green checks, verify the Android artifact and record results before proceeding.

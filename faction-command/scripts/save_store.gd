@@ -103,6 +103,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("research_version") and _is_nonnegative_integer(decoded.research_version) and decoded.research_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("station_supply_version") and _is_nonnegative_integer(decoded.station_supply_version) and decoded.station_supply_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -117,6 +119,8 @@ func _is_nonnegative_integer(value: Variant) -> bool:
 
 
 func _valid_world(state: Dictionary) -> bool:
+	if state.has("station_supply_version") and not state.has("research_version"):
+		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
 	for key in ["factions", "sectors", "links", "ships", "starting_profiles"]:
@@ -200,7 +204,50 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("research_version")
 	if not _valid_archives(state):
 		return false
-	return not state.has("research_version") or _valid_research(state)
+	if not state.has("research_version"):
+		return not state.has("station_supply_version")
+	if not _valid_research(state):
+		return false
+	return not state.has("station_supply_version") or _valid_station_supply(state)
+
+
+func _valid_station_supply(state: Dictionary) -> bool:
+	if state.station_supply_version != 1:
+		return false
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			if ship.has("station_supply"):
+				return false
+			continue
+		if not ship.get("station_supply") is Dictionary:
+			return false
+		var job: Dictionary = ship.station_supply
+		if not job.get("enabled") is bool or job.get("phase") not in ["idle", "to_source", "to_station"]:
+			return false
+		for key in ["station_id", "source_id", "ware_id", "wait_reason"]:
+			if not job.get(key) is String:
+				return false
+		for key in ["retry_ticks", "budget_limit", "spent"]:
+			if not _is_nonnegative_integer(job.get(key)):
+				return false
+		if int(job.budget_limit) > 1000000000 or int(job.spent) > int(job.budget_limit):
+			return false
+		if not job.enabled:
+			if not job.station_id.is_empty() or job.phase != "idle" or not job.source_id.is_empty() or not job.ware_id.is_empty() or not job.wait_reason.is_empty() or int(job.retry_ticks) != 0 or int(job.budget_limit) != 0 or int(job.spent) != 0:
+				return false
+			continue
+		if job.station_id.is_empty() or ship.role != "Station Supplier" or ship.player_trader.enabled or ship.build_supply.enabled:
+			return false
+		if job.phase == "idle" and (not job.source_id.is_empty() or not job.ware_id.is_empty()):
+			return false
+		if job.phase == "to_source" and (job.source_id.is_empty() or not wares.has(job.ware_id)):
+			return false
+		if job.phase == "to_station" and (not job.source_id.is_empty() or not wares.has(job.ware_id)):
+			return false
+	return true
 
 
 func _valid_research(state: Dictionary) -> bool:

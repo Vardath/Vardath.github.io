@@ -66,14 +66,28 @@ and consumes physical build storage as each module starts. Modules finish over
 time and immediately become working production with their own storage. Pause
 or resume a build from the same screen. The current builder fee is paid upfront;
 cancellation, refunds and reordering are not implemented yet. The separate
-build storage cannot be consumed by production. Imported production inputs
-must currently be carried to the completed station manually.
+build storage cannot be consumed by production. The ship uses only surplus
+from your stations, preserving their working inputs and reusable sources.
 
 At your own station, **Trade** offers free cargo transfers instead of buying
 from yourself. Player stations in the same sector share a finite ore reserve:
 Hearthreach starts with 240 units, Lantern Deep 400, Cinder Veil 600 and Copper
 Wake 1,000. These are separate from existing NPC station deposits. All starter
 sectors have sunlight. Plans that have not been placed are not saved.
+
+For ongoing production inputs, open one of your completed stations through
+**Trade** and choose **Supply inputs**. Assign First Light and set a maximum
+purchase spend for that assignment. The ship uses matching cargo already
+aboard, collects surplus from your other stations, or buys from reachable NPC
+markets within the allowance. The allowance is a cap, not an upfront payment;
+zero permits only carried cargo and your own surplus. The supplier stays on
+the job and replenishes inputs as they are used. Targets are based on net
+production needs and required reusable sources, so locally produced inputs
+are not routinely purchased. Exhausted deposits can create new import needs.
+The supplier preserves source stations' working inputs and reusable originals,
+respects station storage, and reports why it is waiting. Stop it or change its
+role to retain cargo and let queued orders finish. The interface currently
+assigns the single starter ship; station output sales are not automated here.
 
 Each NPC faction maintains a historical archive station in its starter sector.
 Select its sector, choose **Open sector**, tap the archive, dock and choose
@@ -96,7 +110,7 @@ using the station planner. A player scriptorium needs at least one Recorded
 Data unit in its station storage as a reusable source, plus blank media and
 energy for each copy. The current two wares aggregate formats and source
 civilizations; they do not yet represent individual books, provenance or a
-player-managed catalogue. Ongoing station imports are still manual.
+player-managed catalogue.
 
 Build a **Research Laboratory** through the station planner and supply it with
 Recorded Data and Energy Cells. It produces one Research Note per cycle. Open
@@ -155,11 +169,12 @@ new build site. Existing construction saves gain the inactive supply role;
 in-progress construction, cargo, builder travel and supply trips are saved.
 Older saves gain the archive stations and data recipes with empty new stocks;
 they also gain an inactive research system. No existing credits, cargo or
-production are reset.
+production are reset. Existing saves also gain an inactive station-supplier
+role without changing their current orders or cargo.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
-automatic station imports, build cancellation/refunds and reordering, dynamic
-prices, source-specific collections, expanded research and prerequisites,
+automated station output sales, build cancellation/refunds and reordering,
+dynamic prices, source-specific collections, expanded research and prerequisites,
 multiple save slots, device testing and wider management systems remain to be
 implemented.
 
@@ -186,6 +201,8 @@ Archive tests cover funding, maintenance, visits, media manufacture, retained
 copy sources, player-built data production, migration and save/load.
 Research tests cover lab construction and inputs, relevant archive references,
 project progress and pausing, real upgrade effects, migration and save/load.
+Station supply tests cover purchase limits, physical deliveries, working-stock
+protection, changing shortages, competing ships, role changes and save/load.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

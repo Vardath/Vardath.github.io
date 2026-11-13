@@ -27,6 +27,7 @@ func assign(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
 	if not _has_need(world.construction.remaining_materials(site)):
 		return {"ok":false, "message":"This site does not need more materials."}
 	ship.player_trader.enabled = false
+	world.station_supply.stop(ship)
 	ship.build_supply = _empty_job()
 	ship.build_supply.enabled = true
 	ship.build_supply.site_id = site_id
@@ -105,6 +106,8 @@ func _candidate(world: RefCounted, ship: Dictionary, site: Dictionary, needed: D
 		has_space = true
 		for station in world.state.stations:
 			var available := int(station.stock.get(ware_id, 0))
+			if station.owner == world.state.player_faction_id:
+				available = maxi(0, available - int(world.station_supply.protected_stock(world, station, str(ware_id))))
 			if available <= 0:
 				continue
 			var owned: bool = station.owner == world.state.player_faction_id
@@ -183,7 +186,10 @@ func tick(world: RefCounted, ship: Dictionary) -> void:
 				_reset_trip(job)
 			return
 		var need := maxi(0, int(needed.get(job.ware_id, 0)) - _other_inbound(world, ship, str(site.id), str(job.ware_id)))
-		var amount := mini(need, int(source.stock.get(job.ware_id, 0)))
+		var source_stock := int(source.stock.get(job.ware_id, 0))
+		if source.owner == world.state.player_faction_id:
+			source_stock = maxi(0, source_stock - int(world.station_supply.protected_stock(world, source, str(job.ware_id))))
+		var amount := mini(need, source_stock)
 		amount = mini(amount, int(maxi(0, int(ship.cargo_capacity) - int(world.cargo_volume(str(ship.id)))) / int(ware.volume)))
 		var owned: bool = source.owner == world.state.player_faction_id
 		var price := 0 if owned else int(source.sell_prices.get(job.ware_id, 0))

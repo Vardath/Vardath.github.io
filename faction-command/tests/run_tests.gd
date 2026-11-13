@@ -42,10 +42,21 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	var copy := ship.duplicate(true)
 	copy.erase("player_trader")
 	copy.erase("build_supply")
+	copy.erase("station_supply")
+	return copy
+
+
+func _without_station_supply(ships: Array) -> Array:
+	var copy := ships.duplicate(true)
+	for ship in copy:
+		ship.erase("station_supply")
 	return copy
 
 
 func _strip_research(state: Dictionary) -> void:
+	state.erase("station_supply_version")
+	for ship in state.ships:
+		ship.erase("station_supply")
 	state.erase("research_version")
 	state.erase("research")
 	for station in state.stations:
@@ -1038,6 +1049,7 @@ func _run() -> void:
 	_expect(bool(legacy_construction_read.get("ok", false)) and migrated_build.restore_snapshot(legacy_construction_read.state) == OK, "a pre-construction save gains the builder and sector resources")
 	var migrated_ship: Dictionary = migrated_build.state.ships[0].duplicate(true)
 	migrated_ship.erase("build_supply")
+	migrated_ship.erase("station_supply")
 	_expect(migrated_ship == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
 	_expect(int(migrated_build._find_ship("npc_builder_001").credits) == 0 and migrated_build.state.build_sites.is_empty(), "migration adds no free money, sites or materials")
 	var bad_construction: Dictionary = build_world.snapshot()
@@ -1187,6 +1199,7 @@ func _run() -> void:
 	_expect(bool(old_supply_load.get("ok", false)) and supply_upgrade.restore_snapshot(old_supply_load.state) == OK and not supply_upgrade.state.ships[0].build_supply.enabled, "older saves gain an inactive build supplier")
 	var upgraded_ship: Dictionary = supply_upgrade.state.ships[0].duplicate(true)
 	upgraded_ship.erase("build_supply")
+	upgraded_ship.erase("station_supply")
 	_expect(upgraded_ship == old_supply.ships[0] and supply_upgrade.state.ledger == old_supply.ledger and supply_upgrade.state.starting_credits == old_supply.starting_credits, "supply migration preserves ship orders, cargo, credits and ledger")
 	var invalid_supply: Dictionary = supply_world.snapshot()
 	invalid_supply.ships[0].build_supply.enabled = true
@@ -1285,7 +1298,7 @@ func _run() -> void:
 	var old_archive_read: Dictionary = save_store.load_game(test_root + "/before-archives.json")
 	var archive_upgrade = WorldScript.new()
 	_expect(bool(old_archive_read.get("ok", false)) and archive_upgrade.restore_snapshot(old_archive_read.state) == OK, "an old save gains archive stations and data recipes")
-	_expect(_total_credits(archive_upgrade.state) == archive_old_credits and archive_upgrade.state.ships == archive_old_snapshot.ships and archive_upgrade.state.ledger == archive_old_snapshot.ledger, "archive migration preserves money, ships, cargo, orders and ledger")
+	_expect(_total_credits(archive_upgrade.state) == archive_old_credits and _without_station_supply(archive_upgrade.state.ships) == archive_old_snapshot.ships and archive_upgrade.state.ledger == archive_old_snapshot.ledger, "archive migration preserves money, ships, cargo, orders and ledger")
 	_expect(int(archive_upgrade._find_station("hearth_exchange").stock.blank_media) == 0 and int(archive_upgrade._find_station("auroran_archive").credits) == 0 and archive_upgrade.state.visited_archives.is_empty(), "archive migration adds no free commodities, funding or visits")
 	var invalid_archive: Dictionary = history_world.snapshot()
 	for item in invalid_archive.stations:
@@ -1457,7 +1470,7 @@ func _run() -> void:
 	var old_research_read: Dictionary = save_store.load_game(test_root + "/before-research.json")
 	var research_upgrade = WorldScript.new()
 	_expect(bool(old_research_read.get("ok", false)) and research_upgrade.restore_snapshot(old_research_read.state) == OK, "old saves gain the inactive research system")
-	_expect(research_upgrade.state.ships == old_research_state.ships and research_upgrade.state.ledger == old_research_state.ledger and _total_credits(research_upgrade.state) == old_research_credits and research_upgrade.state.research.completed.is_empty(), "research migration preserves property and money without free progress")
+	_expect(_without_station_supply(research_upgrade.state.ships) == old_research_state.ships and research_upgrade.state.ledger == old_research_state.ledger and _total_credits(research_upgrade.state) == old_research_credits and research_upgrade.state.research.completed.is_empty(), "research migration preserves property and money without free progress")
 	_expect(int(research_upgrade._find_station("hearth_exchange").stock.research_notes) == 0, "research migration does not add free notes")
 	var bad_research: Dictionary = history_world.snapshot()
 	bad_research.research.progress.archive_indexing = 25
@@ -1471,6 +1484,158 @@ func _run() -> void:
 	future_research_file.store_string(JSON.stringify({"format_version":1, "payload":future_research_payload, "checksum":future_research_payload.sha256_text()}))
 	future_research_file.close()
 	_expect(save_store.load_game(future_research_path).get("reason") == "unsupported", "future research data cannot silently fall back to an older save")
+
+	# Standing station supply uses real stock, preserves working reserves and respects a spending cap.
+	var station_world = WorldScript.new()
+	_expect(station_world.restore_snapshot(history_world.snapshot()) == OK, "station supply scenario restores the working economy")
+	_disable_npc_trading(station_world)
+	var station_plot: Dictionary = station_world.construction.place(station_world, "hearthreach", {"alloy_smelting":1}, "all", [])
+	var station_site: Dictionary = station_world.construction.find_site(station_world, str(station_plot.site_id))
+	_expect(station_plot.ok and station_world.build_supply.assign(station_world, "ship_001", str(station_site.id)).ok, "a real production station is placed and its construction supply is assigned")
+	station_world.advance_ticks(70)
+	var supplied_station: Dictionary = station_world._find_station(str(station_site.station_id))
+	var station_ship: Dictionary = station_world.state.ships[0]
+	var station_targets: Dictionary = station_world.station_supply.targets(station_world, supplied_station)
+	_expect(int(station_site.completed) == 1 and int(station_targets.energy_cells) == 3 and int(station_targets.ore) == 6, "a completed smelter has modest targets for its two actual net inputs")
+	var station_setup: Dictionary = station_world.snapshot()
+	var station_money := _total_credits(station_world.state)
+	var station_wallet: int = int(station_world.state.starting_credits)
+	var station_ore: int = int(station_world._find_station("cinder_depot").stock.ore)
+	_expect(station_world.station_supply.assign(station_world, "ship_001", str(supplied_station.id), 18).ok and station_ship.role == "Station Supplier", "the player assigns ongoing input supply with a fixed purchase cap")
+	station_world.advance_ticks(1)
+	_expect(int(supplied_station.stock.energy_cells) == 3 and int(station_ship.cargo.get("energy_cells", 0)) == 0 and int(station_ship.station_supply.spent) == 0, "the supplier delivers matching cargo already aboard before spending")
+	station_world.advance_ticks(3)
+	_expect(station_ship.station_supply.phase == "to_source" and not station_ship.orders.is_empty(), "the supplier travels to a real source for the missing input")
+	var station_trip_path := test_root + "/station-supply-trip.json"
+	_expect(save_store.save_game(station_trip_path, station_world.snapshot()) == OK, "station supply, allowance and the trip save in transit")
+	var station_trip_read: Dictionary = save_store.load_game(station_trip_path)
+	var station_reload = WorldScript.new()
+	_expect(bool(station_trip_read.get("ok", false)) and station_reload.restore_snapshot(station_trip_read.state) == OK, "station supply restores in transit")
+	station_world.advance_ticks(40)
+	station_reload.advance_ticks(40)
+	_expect(station_world.snapshot() == station_reload.snapshot(), "ongoing station logistics continue deterministically after reload")
+	_expect(int(station_ship.station_supply.spent) == 18 and int(station_world.state.starting_credits) == station_wallet - 18 and int(station_world._find_station("cinder_depot").stock.ore) == station_ore - 3, "real ore is bought at its market price without exceeding the allowance")
+	_expect(station_ship.station_supply.enabled and int(supplied_station.production[0].cycles) > 0 and _total_credits(station_world.state) == station_money, "delivered inputs support real production and all credits remain accounted for")
+	var station_bad_update: Dictionary = station_world.snapshot()
+	_expect(not station_world.station_supply.assign(station_world, "ship_001", str(supplied_station.id), 17).ok and station_world.snapshot() == station_bad_update, "an updated cap cannot be reduced below the amount already spent")
+	_expect(station_world.station_supply.assign(station_world, "ship_001", str(supplied_station.id), 60).ok and int(station_ship.station_supply.spent) == 18, "raising the same assignment's total cap preserves its spending history")
+	station_world.advance_ticks(60)
+	_expect(int(station_ship.station_supply.spent) > 18 and int(station_ship.station_supply.spent) <= 60 and _total_credits(station_world.state) == station_money, "the standing supplier continues replenishing without exceeding its updated cap")
+
+	var interrupted_station = WorldScript.new()
+	interrupted_station.restore_snapshot(station_trip_read.state)
+	var interrupted_ship: Dictionary = interrupted_station.state.ships[0]
+	for _step in range(30):
+		interrupted_station.advance_ticks(1)
+		if interrupted_ship.station_supply.phase == "to_station" and not interrupted_ship.orders.is_empty():
+			break
+	var station_kept_cargo: int = int(interrupted_ship.cargo.get("ore", 0))
+	var station_kept_orders: Array = interrupted_ship.orders.duplicate(true)
+	_expect(station_kept_cargo == 3 and not station_kept_orders.is_empty(), "purchased station input is physically carried on the return journey")
+	interrupted_station.set_player_trader("ship_001", false)
+	_expect(not interrupted_ship.station_supply.enabled and int(interrupted_ship.cargo.ore) == station_kept_cargo and interrupted_ship.orders == station_kept_orders, "changing role stops station supply while preserving cargo and queued orders")
+	interrupted_station.advance_ticks(20)
+	_expect(int(interrupted_ship.cargo.ore) == station_kept_cargo and int(interrupted_station._find_station(str(supplied_station.id)).stock.ore) == 0, "stopped station supply does not later deliver retained cargo")
+
+	var protected_world = WorldScript.new()
+	protected_world.restore_snapshot(history_world.snapshot())
+	_disable_npc_trading(protected_world)
+	var protected_source: Dictionary = protected_world._find_station(str(player_archive_station.id))
+	var protected_lab: Dictionary = protected_world._find_station(str(research_lab.id))
+	var protected_ship: Dictionary = protected_world.state.ships[0]
+	var protected_credits: int = int(protected_world.state.starting_credits)
+	_expect(int(protected_source.stock.recorded_data) == 1 and int(protected_world.station_supply.protected_stock(protected_world, protected_source, "recorded_data")) >= 1, "a scriptorium's last data source is protected from automated collection")
+	_expect(protected_world.station_supply.assign(protected_world, "ship_001", str(protected_lab.id), 0).ok, "a zero-credit station allowance can use carried cargo and owned surplus")
+	protected_world.advance_ticks(8)
+	_expect(int(protected_source.stock.recorded_data) == 1 and int(protected_lab.stock.recorded_data) == 0 and int(protected_world.state.starting_credits) == protected_credits, "the supplier neither takes the last source nor purchases with a zero allowance")
+	protected_source.stock.recorded_data += 3 # Isolated fixture supplies additional owned copies.
+	var protected_total := _total_ware(protected_world.state, "recorded_data")
+	protected_world.advance_ticks(8)
+	_expect(int(protected_source.stock.recorded_data) == 2 and int(protected_lab.stock.recorded_data) == 2 and _total_ware(protected_world.state, "recorded_data") == protected_total, "owned surplus moves physically and leaves the source intact without creating data")
+	_expect(int(protected_world.state.starting_credits) == protected_credits and int(protected_ship.station_supply.spent) == 0, "transfers from owned stations do not spend the allowance")
+
+	var working_world = WorldScript.new()
+	working_world.restore_snapshot(history_world.snapshot())
+	var working_station: Dictionary = working_world._find_station(str(player_archive_station.id)).duplicate(true)
+	working_station.id = "player_working_stock_fixture"
+	working_station.production = [{"recipe_id":"media_fabrication", "progress":0, "cycles":0, "status":"Waiting"}]
+	for ware_id in working_station.stock:
+		working_station.stock[ware_id] = 0
+	working_station.stock.alloy_plates = 2
+	working_world.state.stations.append(working_station)
+	_expect(int(working_world.station_supply._source_stock(working_world, working_station, "alloy_plates")) == 0, "a supplier protects another station's working production inputs")
+	working_station.stock.alloy_plates = 5
+	_expect(int(working_world.station_supply._source_stock(working_world, working_station, "alloy_plates")) == 2, "only stock above the other station's operating buffer is treated as surplus")
+	working_station.stock.alloy_plates = 2
+	var safe_build_site: Dictionary = working_world.construction.place(working_world, "hearthreach", {"solar_cells":1}, "all", [])
+	_expect(working_world.build_supply.assign(working_world, "ship_001", str(safe_build_site.site_id)).ok, "construction supply can coexist with working-stock protection")
+	working_world.advance_ticks(1)
+	_expect(working_world.state.ships[0].build_supply.source_id != working_station.id and int(working_station.stock.alloy_plates) == 2, "construction supply also avoids stripping another station's working inputs")
+
+	var full_station_world = WorldScript.new()
+	full_station_world.restore_snapshot(station_setup)
+	_disable_npc_trading(full_station_world)
+	var full_target: Dictionary = full_station_world._find_station(str(supplied_station.id))
+	full_target.stock.alloy_plates = int(full_target.storage_capacity)
+	full_station_world.station_supply.assign(full_station_world, "ship_001", str(full_target.id), 0)
+	full_station_world.advance_ticks(1)
+	_expect(full_station_world.state.ships[0].status == "Waiting for station storage" and int(full_station_world.state.ships[0].cargo.energy_cells) == 3, "a full station causes the supplier to wait with cargo intact")
+	full_target.stock.alloy_plates = 0 # Isolated fixture frees destination storage.
+	full_station_world.advance_ticks(7)
+	_expect(int(full_target.stock.energy_cells) == 3 and int(full_station_world.state.ships[0].cargo.energy_cells) == 0, "station supply resumes when storage is freed")
+
+	var self_station_world = WorldScript.new()
+	self_station_world.restore_snapshot(build_world.snapshot())
+	_disable_npc_trading(self_station_world)
+	var self_target: Dictionary = self_station_world._find_station(str(outpost.id))
+	_expect(self_station_world.station_supply.targets(self_station_world, self_target).is_empty(), "a self-sufficient station does not request inputs that it can produce itself")
+	_expect(self_station_world.station_supply.assign(self_station_world, "ship_001", str(self_target.id), 60).ok, "a supplier may stand by for future shortages at a self-sufficient station")
+	self_station_world.advance_ticks(1)
+	_expect(self_station_world.state.ships[0].station_supply.enabled and self_station_world.state.ships[0].status == "Station inputs stocked", "the supplier waits rather than buying unnecessary inputs")
+	self_station_world.state.construction_resources.hearthreach.deposits.ore = 0
+	_expect(int(self_station_world.station_supply.targets(self_station_world, self_target).get("ore", 0)) == 6, "an exhausted deposit creates a new ore import need")
+
+	var competing_stations = WorldScript.new()
+	competing_stations.restore_snapshot(station_setup)
+	_disable_npc_trading(competing_stations)
+	competing_stations.state.ships[0].cargo.clear()
+	var second_supplier: Dictionary = competing_stations.state.ships[0].duplicate(true)
+	second_supplier.id = "ship_002"
+	second_supplier.name = "Second Light"
+	competing_stations.state.ships.append(second_supplier)
+	competing_stations.station_supply.assign(competing_stations, "ship_001", str(supplied_station.id), 36)
+	competing_stations.station_supply.assign(competing_stations, "ship_002", str(supplied_station.id), 36)
+	var competing_events: int = competing_stations.state.ledger.size()
+	competing_stations.advance_ticks(12)
+	var competing_ore := 0
+	for index in range(competing_events, competing_stations.state.ledger.size()):
+		var event: Dictionary = competing_stations.state.ledger[index]
+		if event.kind == "buy" and event.ware_id == "ore" and event.ship_id in ["ship_001", "ship_002"]:
+			competing_ore += int(event.quantity)
+	_expect(competing_ore == 6, "competing suppliers count inbound cargo and do not buy the same shortage twice")
+	_expect(save_store.save_game(test_root + "/competing-station-suppliers.json", competing_stations.snapshot()) == OK, "competing station suppliers remain saveable")
+
+	var old_station_supply: Dictionary = saved_trip.duplicate(true)
+	old_station_supply.erase("station_supply_version")
+	for old_ship in old_station_supply.ships:
+		old_ship.erase("station_supply")
+	_expect(save_store.save_game(test_root + "/before-station-supply.json", old_station_supply) == OK, "a pre-station-supply save remains readable")
+	var old_station_read: Dictionary = save_store.load_game(test_root + "/before-station-supply.json")
+	var station_upgrade = WorldScript.new()
+	_expect(bool(old_station_read.get("ok", false)) and station_upgrade.restore_snapshot(old_station_read.state) == OK and not station_upgrade.state.ships[0].station_supply.enabled, "old saves gain an inactive station supplier")
+	_expect(_without_station_supply(station_upgrade.state.ships) == old_station_supply.ships and station_upgrade.state.ledger == old_station_supply.ledger and _total_credits(station_upgrade.state) == _total_credits(old_station_supply), "station supply migration preserves ship orders, cargo, credits and ledger")
+	var bad_station_supply: Dictionary = station_world.snapshot()
+	bad_station_supply.ships[0].station_supply.spent = int(bad_station_supply.ships[0].station_supply.budget_limit) + 1
+	_expect(save_store.save_game(test_root + "/bad-station-supply.json", bad_station_supply) != OK, "save validation rejects a supplier whose spending exceeds its cap")
+	var future_station_supply: Dictionary = station_world.snapshot()
+	future_station_supply.station_supply_version = 2
+	var future_station_path := test_root + "/station-supply-version.json"
+	_expect(save_store.save_game(future_station_path, station_world.snapshot()) == OK and save_store.save_game(future_station_path, station_world.snapshot()) == OK, "station supply version test retains a valid backup")
+	var future_station_payload := Marshalls.variant_to_base64(future_station_supply, false)
+	var future_station_file := FileAccess.open(future_station_path, FileAccess.WRITE)
+	future_station_file.store_string(JSON.stringify({"format_version":1, "payload":future_station_payload, "checksum":future_station_payload.sha256_text()}))
+	future_station_file.close()
+	_expect(save_store.load_game(future_station_path).get("reason") == "unsupported", "future station supply data cannot silently fall back to an older save")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -1508,7 +1673,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 3, "property panel offers manual, trader and build supplier roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 4, "property panel offers manual, trader, build supply and station supply roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -1871,6 +2036,7 @@ func _run() -> void:
 			screen.trade_station_picker.select(index)
 	screen._on_trade_selection(0)
 	_expect(screen.trade_research_button.visible, "a player laboratory offers research projects from its station screen")
+	_expect(screen.trade_station_supply_button.visible, "a player laboratory also offers input supply alongside research")
 	screen.find_child("ResearchButton", true, false).pressed.emit()
 	_expect(is_instance_valid(screen.research_screen) and screen.research_picker.item_count == 3, "research screen lists the available projects")
 	_expect(screen.research_info.text.contains("bonus cap reached") and screen.research_info.text.contains("+1 per note"), "research screen distinguishes contributing archives from sources beyond the cap")
@@ -1888,6 +2054,41 @@ func _run() -> void:
 	_expect(research_close_control.size.y >= 44.0 and research_close_control.global_position.y + research_close_control.size.y <= float(root.size.y), "research controls are touch-sized and visible in landscape")
 	screen.find_child("CloseResearchButton", true, false).pressed.emit()
 	_expect(not is_instance_valid(screen.research_screen) and is_instance_valid(screen.trade_screen), "closing research returns to the station")
+	screen.queue_free()
+	await process_frame
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-station-supply.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_expect(screen.world.restore_snapshot(station_setup) == OK, "station supply screen restores a completed production station")
+	screen._refresh_world_display()
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for index in screen.trade_station_picker.item_count:
+		if screen.trade_station_picker.get_item_metadata(index) == supplied_station.id:
+			screen.trade_station_picker.select(index)
+	screen._on_trade_selection(0)
+	_expect(screen.trade_station_supply_button.visible, "an owned station offers input supply from its station screen")
+	screen.find_child("StationSupplyButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.station_supply_screen) and screen.station_supply_info.text.contains("Energy Cells") and screen.station_supply_info.text.contains("Ore"), "the supply screen names the station's actual needed inputs")
+	_expect(screen.station_supply_info.text.contains("zero") and screen.find_child("StopStationSupplyButton", true, false).disabled, "the supply screen explains a zero cap and initially offers no stop action")
+	screen.station_supply_budget.value = 18
+	screen.find_child("AssignStationSupplyButton", true, false).pressed.emit()
+	_expect(screen.world.state.ships[0].station_supply.enabled and int(screen.world.state.ships[0].station_supply.budget_limit) == 18 and bool(save_store.load_game(screen.save_path).get("ok", false)), "assigning supply through the interface saves the selected allowance")
+	_expect(screen.role_picker.selected == 3 and not screen.find_child("StopStationSupplyButton", true, false).disabled, "the station supplier role and stop control reflect the new assignment")
+	screen.station_supply_budget.value = 30
+	screen.find_child("AssignStationSupplyButton", true, false).pressed.emit()
+	_expect(int(screen.world.state.ships[0].station_supply.budget_limit) == 30, "the interface can update the existing purchase cap")
+	await process_frame
+	var supply_close_control: Control = screen.find_child("CloseStationSupplyButton", true, false)
+	_expect(supply_close_control.size.y >= 44.0 and supply_close_control.global_position.y + supply_close_control.size.y <= float(root.size.y), "station supply controls are touch-sized and visible in landscape")
+	screen.find_child("StopStationSupplyButton", true, false).pressed.emit()
+	_expect(not screen.world.state.ships[0].station_supply.enabled and screen.role_picker.selected == 0 and bool(save_store.load_game(screen.save_path).get("ok", false)), "stopping supply through the interface saves the unassigned role")
+	screen.find_child("CloseStationSupplyButton", true, false).pressed.emit()
+	_expect(not is_instance_valid(screen.station_supply_screen) and is_instance_valid(screen.trade_screen), "closing station supply returns to the station")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)
