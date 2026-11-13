@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <replace sel="/mdscript//run_actions[@ref='Bounties_RegisterPilot']"><do_if value="@$attacker.pilot.isclass.npc"><run_actions ref="Bounties_RegisterPilot"><param name="Pilot" value="$attacker.pilot"/></run_actions></do_if></replace>
+  <replace sel="/mdscript//run_actions[@ref='Bounties_RegisterKill']"><do_if value="@$attacker.pilot.isclass.npc"><run_actions ref="Bounties_RegisterKill"><param name="Pilot" value="$attacker.pilot"/><param name="VictimClass" value="$victimClass"/><param name="VictimFaction" value="$victimFaction"/><param name="IsSubordinateKill" value="$isSubordinateKill"/></run_actions></do_if></replace>
+</diff>

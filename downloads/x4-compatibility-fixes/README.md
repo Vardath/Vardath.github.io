@@ -1,6 +1,8 @@
-# Vardath Compatibility Fixes 1.0.4
+# Vardath Compatibility Fixes 1.0.5
 
-[Download](Vardath_Compatibility_Fixes_1.0.4.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.5.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.5 (13 November 2026 — latest debug log):** The installed Kuertee Emergent Missions v9.02 bounty and NPC target-selection scripts now receive native XML guards for missing pilots, out-of-scope target origins and empty enemy lists. Fly-by Looting no longer attempts rejected ammunition pickup on M-class Verdandi and other M/L/XL ships; S-class missile and non-ammo collection remain available. These are source-confirmed compatibility guards, not a universal correction for third-party XR geometry, stale mission IDs, or tall UI tables.
 
 **1.0.4 (Terran Cadet start, 2026-11-13):** The vanilla Cradle of Humanity Chapter 2 rescue tutorial uses non-dismissable yellow long-range-scan hints (`allowclose=false`, `timeout=false`) that can obstruct game menus when controller scanning does not advance. This release patches only those four help panels: they can be closed and timed out. The scripted wreck scan objective, mission cues, scan actions, rewards, story, controls and save state are **unchanged**. Whether the user's RB binding works is **not established** by the debug log. No menus are replaced. The same recording also contains fullscreen `GetCellContent invalid table ID` errors with no identified add-on, and unrelated external mod faults, which this patch does not claim to cure.
 

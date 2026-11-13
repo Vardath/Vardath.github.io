@@ -280,15 +280,55 @@ class Contracts(unittest.TestCase):
         for e in c.xpath('./check_any/*'): e.set('actor','@player.headquarters.controlentity.{controlpost.manager}')
         self.assertEqual(canonical(q),canonical(self.original[p]))
 
+    def test_kuertee_bounty_callbacks_skip_missing_pilots_but_preserve_real_kills(self):
+        p='extensions/kuertee_emergent_missions/md/kuertee_emergent_missions.xml'
+        q=copy.deepcopy(self.patched[p])
+        guards=q.xpath(".//do_if[@value='@$attacker.pilot.isclass.npc']")
+        self.assertEqual(len(guards),2)
+        self.assertEqual({g[0].get('ref') for g in guards},{'Bounties_RegisterPilot','Bounties_RegisterKill'})
+        for g in guards:
+            self.assertEqual(len(g),1)
+            self.assertEqual(g[0].tag,'run_actions')
+            for present in (False,True):
+                self.assertEqual(bool(expr(g.get('value'),{'@$attacker.pilot.isclass.npc':present})),present)
+            pnode=g.getparent();position=pnode.index(g);child=g[0]
+            g.remove(child);pnode.remove(g);pnode.insert(position,child)
+        self.assertEqual(canonical(q),canonical(self.original[p]))
+
+    def test_kuertee_npc_target_sort_uses_current_ship_and_guards_empty_targets(self):
+        p='extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_enemy_targets.xml'
+        base=".//cue[@name='EnemyTargetManager_SetPlayerTarget']/actions"
+        npc=base+"/do_if[@value='$RunActions_OrderNPCShip']"
+        signal=base+"/do_if[contains(@value,'$Cue_Mission.hasguidance')]/do_if[contains(@value,'$Cue_PlayerTargetSet.exists')]"
+        q=copy.deepcopy(self.patched[p])
+        current=self.one(p,npc+"//sort_group[@group='$EnemyTargets']")
+        original=self.one(p,npc+"//sort_group[@group='$EnemyTargets']",False)
+        self.assertIn('loop.element.distanceto.{$ship}',current.get('sortbyvalue'))
+        self.assertNotIn('$nearestTo',current.get('sortbyvalue'))
+        self.assertIn('$nearestTo',original.get('sortbyvalue'))
+        q.xpath(npc+"//sort_group[@group='$EnemyTargets']")[0].set('sortbyvalue',original.get('sortbyvalue'))
+        guards=q.xpath(base+"//do_if[@value='@$EnemyTargets.{1}.exists']")
+        self.assertEqual(len(guards),4)
+        self.assertEqual(sorted(g[0].tag for g in guards),['debug_text','debug_text','run_actions','set_player_target'])
+        for g in guards:
+            self.assertEqual(len(g),1)
+            pnode=g.getparent();position=pnode.index(g);child=g[0]
+            g.remove(child);pnode.remove(g);pnode.insert(position,child)
+        self.assertEqual(len(q.xpath(signal)),1)
+        self.assertTrue(q.xpath(signal)[0].get('value').startswith('@$EnemyTargets.{1}.exists and '))
+        q.xpath(signal)[0].set('value',self.one(p,signal,False).get('value'))
+        self.assertEqual(canonical(q),canonical(self.original[p]))
+
     def test_flyby_uses_specific_ammo_capacity_without_destroying_drop(self):
         p='extensions/fbl/md/fbl.xml';s=".//do_if[@value='$drop.isclass.collectableammo']/do_if"
         g=self.one(p,s)
         # The 2026-11-12 debug log contains 129 rejected ammo pickups, all
         # from large Hyperion/Warlord-class ships. Those ships must not retry.
-        # S/M missile pickups with a matching free storage slot still work.
+        # S-class compatible ammo remains collectable. The supplied Verdandi M-class
+        # still rejected native collect_drop despite the former capacity guard.
         cases = [
             (True,True,True,'missile',1,True,False,True),
-            (True,True,True,'missile',1,False,True,True),
+            (True,True,True,'missile',1,False,True,False),
             (True,True,True,'missile',1,False,False,False), # L / XL
             (True,True,True,'missile',0,True,False,False),
             (True,True,True,None,10,True,False,False),
@@ -404,7 +444,7 @@ def validate(cache, archive=None):
         if not p.exists():continue
         patch=E.parse(str(p)).getroot();schema.assertValid(patch)
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
-    if len(patched)!=11:raise ValueError('Expected exactly eleven targeted diff files')
+    if len(patched)!=13:raise ValueError('Expected exactly thirteen targeted diff files')
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -428,7 +468,7 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.4','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.5','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

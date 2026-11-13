@@ -85,5 +85,21 @@
     "path": "extensions/ego_dlc_terran/md/gs_terran1.xml",
     "git_blob_sha": "82346d337e4470257386ff760a1bf18dc95fa6fd",
     "url": "https://raw.githubusercontent.com/ArtByunex/x4-foundation-artbyunex/e3e8a345e5624db118bff3eb171b60b0993fcc2c/extensions/ego_dlc_terran/md/gs_terran1.xml"
+  },
+  {
+    "path": "extensions/kuertee_emergent_missions/md/kuertee_emergent_missions.xml",
+    "sha256_lf": "a623ea7cbe378a066223382141c9992ab963b1c7dce092fac7012e14ec082e02",
+    "url": "https://cdn.steamusercontent.com/ugc/9586465453319108855/7C4802FF7B21FADAC5A675D5C6D2C8B2227A1A68/",
+    "workshop": "3627916728",
+    "catalog_path": "md/kuertee_emergent_missions.xml",
+    "catalog_md5": "d9c4e7bf1e03c3c87c4b49e86098763c"
+  },
+  {
+    "path": "extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_enemy_targets.xml",
+    "sha256_lf": "2c5ee3b52e069ecfe69b221f4b46062e980cac30de182f48182b9548d5ca58d0",
+    "url": "https://cdn.steamusercontent.com/ugc/9586465453319108855/7C4802FF7B21FADAC5A675D5C6D2C8B2227A1A68/",
+    "workshop": "3627916728",
+    "catalog_path": "md/kuertee_emergent_missions_enemy_targets.xml",
+    "catalog_md5": "bd1bd40bce2a75f4f34388f8e815451a"
   }
 ]

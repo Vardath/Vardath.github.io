@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="104" date="2026-11-13" save="0" sync="false" description="Targeted X4 9.00 Terran Cadet dismissible scan hints plus mission, trade, gate, ammo, Academy, inventory and GalaxyTrader crash guards. No UI replacement.">
+<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="105" date="2026-11-13" save="0" sync="false" description="Targeted X4 9.00 X4 9.00 Kuertee missing-pilot and stale-target guards; Fly-by Looting rejected M-class ammo collection fixed; preserves earlier safeguards. No UI replacement.">
   <dependency version="900"/>
   <dependency id="ego_dlc_terran" optional="true" name="Cradle of Humanity — Terran Cadet tutorial"/>
   <dependency id="ws_1683358279" optional="true" name="Fly-by Looting"/>
