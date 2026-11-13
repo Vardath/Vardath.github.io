@@ -14,6 +14,7 @@ import struct
 import tempfile
 import unittest
 import urllib.request
+import urllib.error
 from pathlib import Path
 from zipfile import ZipFile
 from lxml import etree as E
@@ -22,6 +23,14 @@ BASE = Path(__file__).resolve().parents[1]
 MOD = BASE / 'vardath_compatibility_fixes'
 SOURCES = json.loads((BASE / 'tools/sources.json').read_text())
 CHECKS = []
+# The previous upstream GalaxyTrader repository currently responds HTTP 404
+# at its exact pinned git revisions. Keep the installed patches intact, but
+# explicitly mark only these two existing diffs as NOT source-validated.
+UNAVAILABLE_SOURCE_PATHS = frozenset({
+    'extensions/galaxy_trader/md/gt_context_academy.xml',
+    'extensions/galaxy_trader/md/gt_core_system.xml',
+})
+MISSING_SOURCE_PATHS = set()
 def normalized(data):
     return data.removeprefix(b'\xef\xbb\xbf').replace(b'\r\n', b'\n')
 
@@ -68,7 +77,14 @@ def references(cache):
         p = cache / item['path']
         if not p.exists():
             request = urllib.request.Request(item['url'], headers={'User-Agent': 'Vardath-X4-compatibility-validation/1.0'})
-            data = urllib.request.urlopen(request, timeout=40).read()
+            try:
+                data = urllib.request.urlopen(request, timeout=40).read()
+            except urllib.error.HTTPError as exc:
+                if exc.code != 404 or item['path'] not in UNAVAILABLE_SOURCE_PATHS:
+                    raise
+                print('PARTIAL VALIDATION: pinned upstream reference returned HTTP 404:', item['path'])
+                MISSING_SOURCE_PATHS.add(item['path'])
+                continue
             if item.get('catalog_path'):
                 data = workshop_source(data, item)
             p.parent.mkdir(parents=True, exist_ok=True)
@@ -260,6 +276,8 @@ class Contracts(unittest.TestCase):
         self.assertEqual(expr(guard[-1].get('exact'),{'player.age':30}),630)
 
     def test_academy_captainless_ship_is_ineligible(self):
+        if 'extensions/galaxy_trader/md/gt_context_academy.xml' not in self.original:
+            self.skipTest('Pinned GalaxyTrader source HTTP 404; old patch retained but not validated')
         p='extensions/galaxy_trader/md/gt_context_academy.xml';s=".//library[@name='GT_Academy_BuildShipEntryIfEligible']/actions/do_if"
         g=self.one(p,s)
         for ship,pilot,owned,expected in [(True,True,True,True),(True,False,True,False),(False,False,True,False),(True,True,False,False)]:
@@ -371,6 +389,8 @@ class Contracts(unittest.TestCase):
 
     def test_optional_exact_old_guard_patches_do_not_overwrite_upstream_fix(self):
         for p,s in [('extensions/galaxy_trader/md/gt_context_academy.xml',".//library[@name='GT_Academy_BuildShipEntryIfEligible']/actions/do_if"),('extensions/fbl/md/fbl.xml',".//do_if[@value='$drop.isclass.collectableammo']/do_if")]:
+            if p not in self.original:
+                continue
             original=copy.deepcopy(self.original[p]);original.xpath(s)[0].set('value','upstream_future_guard')
             patched=apply_patch(original,E.parse(str(MOD/p)).getroot())
             self.assertEqual(canonical(original),canonical(patched))
@@ -411,6 +431,8 @@ class Contracts(unittest.TestCase):
         self.assertFalse(condition.xpath('.//reset_cue|.//reward_player|.//set_owner'))
 
     def test_galaxytrader_destroyed_ship_diagnostic_does_not_deref_missing_sector_name(self):
+        if 'extensions/galaxy_trader/md/gt_core_system.xml' not in self.original:
+            self.skipTest('Pinned GalaxyTrader source HTTP 404; old patch retained but not validated')
         p='extensions/galaxy_trader/md/gt_core_system.xml'
         selector=".//cue[@name='HandlePlayerOwnedShipDestroyedForGT']/actions/set_value[@name='$destroySectorName']"
         original=self.one(p,selector,False)
@@ -459,15 +481,17 @@ class Contracts(unittest.TestCase):
         self.assertTrue(all(x.get('optional')=='true' for x in content.findall('./dependency[@id]')))
 
 def validate(cache, archive=None):
+    MISSING_SOURCE_PATHS.clear()
     original=references(cache)
     schema=E.XMLSchema(E.ElementTree(original['libraries/diff.xsd']))
     patched={};counts=[]
     for item in SOURCES:
         p=MOD/item['path']
-        if not p.exists():continue
+        if not p.exists() or item['path'] not in original:continue
         patch=E.parse(str(p)).getroot();schema.assertValid(patch)
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
-    if len(patched)!=13:raise ValueError('Expected exactly thirteen targeted diff files')
+    if len(patched) != 13-len(MISSING_SOURCE_PATHS):
+        raise ValueError('Unexpected count of source-validated diff files')
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -491,7 +515,11 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.6','reference_files':len(original),'diff_files':len(patched),'single_match_operations':len(counts),'contract_tests':count,'result':'pass','archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+    return {'version':'1.0.6','reference_files':len(original),'diff_files':len(patched),
+            'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS),
+            'single_match_operations':len(counts),'contract_tests':count,
+            'result':'partial' if MISSING_SOURCE_PATHS else 'pass',
+            'archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()
