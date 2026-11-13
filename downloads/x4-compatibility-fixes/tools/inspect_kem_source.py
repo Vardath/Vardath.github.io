@@ -35,7 +35,7 @@ for name,cat in files.items():
       if cue.get("name") not in wanted:continue
       entry={"file":path,"cue":cue.get("name"),"cue_path":r.getroottree().getpath(cue),"root_tag":r.tag,"root_name":r.get("name"),"items":[]}
       for child in cue.iter():
-        if child is cue:continue
+        if child is cue or not isinstance(child.tag,str):continue
         if len(entry["items"])>=90:break
         attrs={k:v[:500] for k,v in child.attrib.items()}
         entry["items"].append({"path":r.getroottree().getpath(child),"tag":child.tag,"attrs":attrs})
