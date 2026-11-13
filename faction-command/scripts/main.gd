@@ -2213,6 +2213,10 @@ func _update_trade_screen() -> void:
 			lines.append("#%d  T%d  %s funded +%d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
 		elif entry.kind == "construction_fee":
 			lines.append("#%d  T%d  Builder %s hired · %d CR\n%s" % [int(entry.id), int(entry.tick), actor, int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind == "ship_order":
+			lines.append("#%d  T%d  Ship contract %s · %d CR paid\n%s" % [int(entry.id), int(entry.tick), actor, -int(entry.amount), entry_station.get("name", entry.station_id)])
+		elif entry.kind == "ship_delivery":
+			lines.append("#%d  T%d  New ship delivered: %s\n%s" % [int(entry.id), int(entry.tick), actor, entry_station.get("name", entry.station_id)])
 		elif entry.kind in ["build_delivery", "transfer_in", "transfer_out"]:
 			var action := "Delivered to build storage" if entry.kind == "build_delivery" else ("Transferred to station" if entry.kind == "transfer_in" else "Taken from station")
 			lines.append("#%d  T%d  %s: %s %d %s\n%s" % [int(entry.id), int(entry.tick), actor, action, int(entry.quantity), entry_ware.get("name", entry.ware_id), entry_station.get("name", entry.station_id)])
