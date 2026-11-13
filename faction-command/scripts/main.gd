@@ -1565,6 +1565,7 @@ func _open_crew_screen() -> void:
 	if ship.is_empty():
 		return
 	crew_screen_ship_id = str(ship.id)
+	_show_ship()
 	crew_screen = Control.new()
 	crew_screen.name = "CrewScreen"
 	crew_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
