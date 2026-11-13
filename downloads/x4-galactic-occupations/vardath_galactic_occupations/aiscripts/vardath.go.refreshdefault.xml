@@ -100,6 +100,7 @@
         <set_value name="$settings.$risk" exact="if @this.ship.defaultorder.$risk != null then this.ship.defaultorder.$risk else 2" />
         <set_value name="$settings.$repeat" exact="if @this.ship.defaultorder.$repeat != null then this.ship.defaultorder.$repeat else true" />
         <set_value name="$settings.$debugchance" exact="if @this.ship.defaultorder.$debugchance != null then this.ship.defaultorder.$debugchance else 0" />
+        <set_value name="$settings.$hackobjective" exact="if @this.ship.defaultorder.$hackobjective != null then this.ship.defaultorder.$hackobjective else 0" />
         <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
         <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
         <create_order id="'VGO_hacker'" object="this.ship" name="$refreshed" default="true">
@@ -108,6 +109,7 @@
           <param name="risk" value="$settings.$risk" />
           <param name="repeat" value="$settings.$repeat" />
           <param name="debugchance" value="$settings.$debugchance" />
+          <param name="hackobjective" value="$settings.$hackobjective" />
         </create_order>
         <do_if value="$samehack">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
@@ -285,6 +287,7 @@
         <set_value name="$samehack" exact="@player.entity.$vgo_objects.{this.ship}.$vgo_hack_order == this.ship.defaultorder" />
         <set_value name="$settings.$simulatescans" exact="if @this.ship.defaultorder.$simulatescans != null then this.ship.defaultorder.$simulatescans else true" />
         <set_value name="$settings.$scanleaks" exact="if @this.ship.defaultorder.$scanleaks != null then this.ship.defaultorder.$scanleaks else true" />
+        <set_value name="$settings.$blueprintemp" exact="if @this.ship.defaultorder.$blueprintemp != null then this.ship.defaultorder.$blueprintemp else false" />
         <set_order_state order="this.ship.defaultorder" state="orderstate.finish" />
         <create_order id="'VGO_scanner'" object="this.ship" name="$refreshed" default="true">
           <param name="home" value="$settings.$home" />
@@ -294,6 +297,7 @@
           <param name="debugchance" value="$settings.$debugchance" />
           <param name="simulatescans" value="$settings.$simulatescans" />
           <param name="scanleaks" value="$settings.$scanleaks" />
+          <param name="blueprintemp" value="$settings.$blueprintemp" />
         </create_order>
         <do_if value="$samehack">
           <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_hack_order" exact="$refreshed" />
