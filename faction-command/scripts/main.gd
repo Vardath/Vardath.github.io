@@ -1073,7 +1073,7 @@ func _update_build_screen() -> void:
 	build_dock_button.disabled = not available
 	build_deliver_button.disabled = not available
 	build_pause_button.disabled = not available or (available and (bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size()))
-	build_supply_button.disabled = not available or (available and bool(site.get("cancelled", false))
+	build_supply_button.disabled = not available or (available and bool(site.get("cancelled", false)))
 	build_cancel_button.disabled = not available or (available and (bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size()))
 	build_recover_button.disabled = not available or (available and (not bool(site.get("cancelled", false)) or _construction_storage_empty(site)))
 	if not available:
