@@ -56,6 +56,13 @@ local out={rows={}};outfitter.displayWeaponModeSelection(out,"turret",1,{})
 out.rows[1][7].handlers.onDropDownConfirmed(nil,vgo.mode);check(outfitter.upgradeplan.turret[1].weaponmode=="defend","virtual ID never enters upgrade plan")
 out.rows[1][7].handlers.onDropDownConfirmed(nil,"attackenemies");check(outfitter.upgradeplan.turret[1].weaponmode=="attackenemies","native outfitter option preserved")
 blackboard[10]={['$vgo_ui']={{10,false,6,'Mining crystals',{{101,true},{104,false}}}}};callbacks['VGO.Install'](nil,10);local saved={rows={}};map.setupLoadoutInfoSubmenuRows("ship",saved,10);check(saved.rows[2][5].properties.startOption()==vgo.mode,"saved per-turret selection read")
+-- Native map information tables must retain their original row structure.
+local injected=0
+local strict={rows={},addRow=function(self) injected=injected+1;error("unexpected custom status row") end}
+check(map.setupLoadoutInfoSubmenuRows("ship",strict,10)=="native map","Map info callback result preserved")
+check(injected==0 and #strict.rows==5,"saved occupation never injects malformed status row")
+check(strict.rows[1][5].properties.options[3].id==vgo.mode,"Mine Crystals option retained")
+
 
 -- Native receipt data and the actual published UIX callback contract, without a frame/widget API.
 -- FFI is mocked here; the game owns the real TransactionLogEntry buffer and database.

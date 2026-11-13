@@ -1,5 +1,13 @@
 # Version history
 
+## 0.5.2 — 2026-11-13
+
+- Remove a nonessential custom "Occupation:" row which hard-coded a 13-column span into X4's native Map/Ship Loadout information table. The latest new-game log reports invalid information-table cells and narrow-column/height failures; this is a precautionary source repair, not a confirmed cure for all UI failures.
+- Keep the Mine Crystals turret dropdown, all native information rows, existing occupations, crew, orders and native transaction ledger intact.
+- Lua regression contract checks that no extra status row is injected even when saved occupation state is present.
+- No custom protected UI override, game-menu replacement or saved-state mutation. Requires live X4 verification.
+
+
 ## 0.5.1 — 2026-11-13
 
 - Added universal English text fallback `t/0001.xml`, preserving English-specific strings in `t/0001-l044.xml`. Other language clients can show readable English instead of missing `ReadText191180` entries.

@@ -92,16 +92,9 @@ function VGO.install()
                     end
                 end
             end
-            if mode == "ship" and valid(ship) and type(ftable.addRow) == "function" and not ftable.vgo_status_added then
-                local owner = GetComponentData(id64(ship), "owner")
-                if owner == "player" and shipstate(ship) and shipstate(ship)[3] then
-                    ftable.vgo_status_added = true
-                    local statusrow = ftable:addRow(false, {})
-                    statusrow[1]:setColSpan(13):createText(function ()
-                        return "Occupation: " .. tostring((shipstate(ship) or {})[4] or "Waiting for occupation update")
-                    end)
-                end
-            end
+            -- Keep native Map info rows and columns untouched. A hard-coded
+            -- 13-column status line may corrupt the native narrow info pane.
+            -- Occupation activity remains in the logbook and ledger.
             return result
         end
         map.setupLoadoutInfoSubmenuRows = VGO.hooks.map

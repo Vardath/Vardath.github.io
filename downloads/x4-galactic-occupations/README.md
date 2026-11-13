@@ -1,6 +1,8 @@
-# Galactic Occupations 0.5.1 — English fallback for all game languages
+# Galactic Occupations 0.5.2 — safeguard native Map information tables
 
-[Download Occupations](Galactic_Occupations_0.5.1.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.5.2.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+
+**November 13 map UI safety hotfix:** The 13 November 2026 new-game debug log records 21 failed map info-frame builds, 52 table-width/scrollbar errors, 350 vertical-space failures and 312 invalid/destroyed-table calls. Galactic Occupations previously inserted a custom occupation-status row with an unsafe fixed 13-column span in the Map's dynamic Loadout table. Version 0.5.2 removes only that extra row; the ordinary Map information and **Mine Crystals** turret controls remain. The log does not prove this was the only contributor to the failures, and no live X4 game execution has yet confirmed the cure. Existing saves, passengers, orders, crew, jobs and payments are unaffected. On a new-game ship, greyed Deploy Military is expected when there are no mines or laser towers onboard.
 
 **November 13 localization release:** The new language-neutral `t/0001.xml` supplies English labels, job descriptions and settings to non-English game clients, addressing `=ReadText191180-XXX=` errors. The English-specific file is retained for translation compatibility. The obsolete twenty-stop tooltip has been corrected to the actual ten-stop default; saved booking and job logic remain unchanged. See the [complete Nexus-ready description](NEXUS_DESCRIPTION.md). Full validation uses the 0.5.1 package. Live non-English localization still needs in-game confirmation.
 
