@@ -88,7 +88,7 @@
   },
   {
     "path": "extensions/kuertee_emergent_missions/md/kuertee_emergent_missions.xml",
-    "sha256_lf": "a623ea7cbe378a066223382141c9992ab963b1c7dce092fac7012e14ec082e02",
+    "sha256_lf": "03db11a64374e8161ecd9e70c5263cfc494be36e9e7df168649194ec96330a37",
     "url": "https://cdn.steamusercontent.com/ugc/9586465453319108855/7C4802FF7B21FADAC5A675D5C6D2C8B2227A1A68/",
     "workshop": "3627916728",
     "catalog_path": "md/kuertee_emergent_missions.xml",
@@ -96,7 +96,7 @@
   },
   {
     "path": "extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_enemy_targets.xml",
-    "sha256_lf": "2c5ee3b52e069ecfe69b221f4b46062e980cac30de182f48182b9548d5ca58d0",
+    "sha256_lf": "9e2bef337bdd2d3d6ef49330ea0421a237d34510d680995a746275d1bc952889",
     "url": "https://cdn.steamusercontent.com/ugc/9586465453319108855/7C4802FF7B21FADAC5A675D5C6D2C8B2227A1A68/",
     "workshop": "3627916728",
     "catalog_path": "md/kuertee_emergent_missions_enemy_targets.xml",
