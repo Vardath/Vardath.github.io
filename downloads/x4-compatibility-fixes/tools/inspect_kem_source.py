@@ -29,6 +29,8 @@ for name,cat in files.items():
     body=payload[offset:offset+size];offset+=size
     if not path.lower().endswith(".xml") or not path.startswith("md/"):continue
     if not any(w.lower() in path.lower() for w in ["emergent_missions","patrol_raid"]):continue
+    # Mirror workshop_source(): the first matched CAT entry is authoritative.
+    if path in res["files"]:continue
     try:r=E.fromstring(body)
     except E.XMLSyntaxError:continue
     norm=body.removeprefix(b'\\xef\\xbb\\xbf').replace(b'\\r\\n',b'\\n')
