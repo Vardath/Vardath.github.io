@@ -95,6 +95,11 @@ var build_cancel_button: Button
 var build_recover_button: Button
 var build_cancel_confirm: ConfirmationDialog
 var build_cancel_site_id := ""
+var build_task_picker: OptionButton
+var build_move_up_button: Button
+var build_move_down_button: Button
+var build_task_list_signature := ""
+var build_task_picker_site_id := ""
 
 
 func _ready() -> void:
@@ -994,6 +999,26 @@ func _open_build_screen(selected_site_id: String = "") -> void:
 	build_picker.select(selected)
 	build_picker.item_selected.connect(_on_build_selection)
 	column.add_child(build_picker)
+	var task_controls := HBoxContainer.new()
+	task_controls.add_theme_constant_override("separation", 8)
+	column.add_child(task_controls)
+	build_task_picker = OptionButton.new()
+	build_task_picker.name = "BuildTaskPicker"
+	build_task_picker.custom_minimum_size.y = 44
+	build_task_picker.add_theme_font_size_override("font_size", 14)
+	build_task_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	build_task_picker.item_selected.connect(_on_build_task_selection)
+	task_controls.add_child(build_task_picker)
+	build_move_up_button = _button("Move up")
+	build_move_up_button.name = "MoveBuildTaskUp"
+	build_move_up_button.pressed.connect(_move_selected_build_task.bind(-1))
+	task_controls.add_child(build_move_up_button)
+	build_move_down_button = _button("Move down")
+	build_move_down_button.name = "MoveBuildTaskDown"
+	build_move_down_button.pressed.connect(_move_selected_build_task.bind(1))
+	task_controls.add_child(build_move_down_button)
+	build_task_list_signature = ""
+	build_task_picker_site_id = ""
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -1065,11 +1090,70 @@ func _on_build_selection(_index: int) -> void:
 	_update_build_screen()
 
 
+func _on_build_task_selection(_index: int) -> void:
+	_update_build_screen()
+
+
+func _update_build_task_picker(site: Dictionary) -> void:
+	if site.is_empty():
+		build_task_picker.clear()
+		build_task_picker.add_item("No modules")
+		build_task_picker.select(0)
+		build_task_picker.disabled = true
+		build_move_up_button.disabled = true
+		build_move_down_button.disabled = true
+		build_task_list_signature = ""
+		build_task_picker_site_id = ""
+		return
+	var entries: Array[String] = []
+	for index in range(site.tasks.size()):
+		var task: Dictionary = site.tasks[index]
+		var stage := "Completed" if index < int(site.completed) else ("Building" if task.started else "Queued")
+		entries.append("%s:%s" % [task.recipe_id, stage])
+	var signature := str(site.id) + "|" + "|".join(entries)
+	if signature != build_task_list_signature:
+		var selected_index := 0
+		if build_task_picker_site_id == str(site.id) and build_task_picker.selected >= 0:
+			selected_index = build_task_picker.selected
+		build_task_picker.clear()
+		for index in range(site.tasks.size()):
+			var recipe: Dictionary = world._find_recipe(str(site.tasks[index].recipe_id))
+			var stage := "Completed" if index < int(site.completed) else ("Building" if site.tasks[index].started else "Queued")
+			build_task_picker.add_item("%d. %s — %s" % [index + 1, recipe.get("name", site.tasks[index].recipe_id), stage])
+			build_task_picker.set_item_metadata(index, index)
+		build_task_picker.select(clampi(selected_index, 0, site.tasks.size() - 1))
+		build_task_list_signature = signature
+		build_task_picker_site_id = str(site.id)
+	build_task_picker.disabled = false
+	var chosen := build_task_picker.selected
+	var first := world.construction.first_editable_index(site)
+	build_move_up_button.disabled = bool(site.get("cancelled", false)) or chosen <= first
+	build_move_down_button.disabled = bool(site.get("cancelled", false)) or chosen < first or chosen >= site.tasks.size() - 1
+
+
+func _move_selected_build_task(direction: int) -> void:
+	var site := _selected_build_site()
+	if site.is_empty() or build_task_picker.selected < 0:
+		return
+	var index := int(build_task_picker.get_item_metadata(build_task_picker.selected))
+	var result: Dictionary = world.construction.move_queued_module(world, str(site.id), index, direction)
+	build_feedback.text = str(result.message)
+	if result.ok:
+		build_task_list_signature = ""
+		if not _save_current_game():
+			build_feedback.text += " Save failed."
+		_refresh_world_display()
+		_update_build_screen()
+		build_task_picker.select(int(result.new_index))
+	_update_build_screen()
+
+
 func _update_build_screen() -> void:
 	if not is_instance_valid(build_screen):
 		return
 	var site := _selected_build_site()
 	var available := not site.is_empty()
+	_update_build_task_picker(site)
 	build_dock_button.disabled = not available
 	build_deliver_button.disabled = not available
 	build_pause_button.disabled = not available or (available and (bool(site.get("cancelled", false)) or int(site.completed) >= site.tasks.size()))
@@ -1107,6 +1191,7 @@ func _update_build_screen() -> void:
 		var task: Dictionary = site.tasks[int(site.completed)]
 		var recipe: Dictionary = world._find_recipe(str(task.recipe_id))
 		lines.append("Current module: %s  ·  %d / %d ticks" % [recipe.get("name", task.recipe_id), int(task.progress), int(task.duration)])
+	lines.append("BUILD ORDER\nMove up or down changes priority only among unstarted modules. Completed and building modules remain fixed.")
 	lines.append("AUTO SUPPLY\nUses %s's suitable cargo, then collects from your stations or buys from NPC markets using your credits. Current orders finish first; changing the ship's role stops supply and leaves cargo aboard." % supplier.name)
 	lines.append("Cancellation returns fees for never-started modules and retains physical materials for dockside recovery. A module already underway finishes; no further modules start." if bool(site.get("cancelled", false)) else "Pause or cancel remaining work. Completed modules remain operational; cancellation refunds fees for unstarted modules only.")
 	build_info.text = "\n\n".join(lines)
@@ -1212,6 +1297,8 @@ func _close_build_screen() -> void:
 	if is_instance_valid(build_screen):
 		build_screen.queue_free()
 	build_screen = null
+	build_task_list_signature = ""
+	build_task_picker_site_id = ""
 
 
 func _open_trade() -> void:
