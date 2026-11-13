@@ -223,7 +223,8 @@
                Station and module discovery are not blueprint unlocks. -->
           <set_known object="$module" known="true" updatesnapshot="true"/>
           <set_known object="$station" known="true" updatesnapshot="true"/>
-          <set_object_scanned object="$module"/>
+          <!-- The native high-detail scan remains in PublishPending at the
+               currently valid player scanner cap. Identity is known now. -->
           <!-- Optional EMP-assisted blueprint recovery uses one real EMP from
                the player's inventory, the same eligibility/research checks
                as native md.Signal_Leaks, and no unresearched/special blueprints.
