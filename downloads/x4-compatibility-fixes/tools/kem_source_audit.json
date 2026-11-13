@@ -1,0 +1,692 @@
+{
+  "workshop_id": "3627916728",
+  "catalogs": [],
+  "targets": [
+    {
+      "file": "md/kuertee_emergent_missions.xml",
+      "cue": "Bounties_RegisterPilot",
+      "cue_path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]",
+      "root_tag": "mdscript",
+      "root_name": "kuertee_emergent_missions",
+      "items": [
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/params",
+          "tag": "params",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/params/param",
+          "tag": "param",
+          "attrs": {
+            "name": "Pilot"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions",
+          "tag": "actions",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isNew",
+            "exact": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isUpdated",
+            "exact": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not md.kuertee_emergent_missions.Bounties.$pilots.indexof.{$Pilot}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[1]/add_to_group",
+          "tag": "add_to_group",
+          "attrs": {
+            "groupname": "md.kuertee_emergent_missions.Bounties.$pilots",
+            "object": "$Pilot"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[1]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isNew",
+            "exact": "true"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not @$Pilot.$kEM_lastKnownLocation"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[2]/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_lastKnownLocation",
+            "exact": "table[]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[2]/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isUpdated",
+            "exact": "true"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[3]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not @$Pilot.$kEM_kills"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[3]/set_value[1]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_kills",
+            "exact": "table[]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[3]/set_value[2]",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$isUpdated",
+            "exact": "true"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[4]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$isNew or $isUpdated"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[4]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_timeLastUpdate",
+            "exact": "player.age"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[5]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$isNew"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/do_if[5]/signal_objects",
+          "tag": "signal_objects",
+          "attrs": {
+            "object": "$Pilot",
+            "param": "'kEM_Bounties_RegisterPilot'"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[1]/actions/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "$Pilot + ' (' + $Pilot.knownname + ', ' + @$Pilot.ship.idcode + ', ' + @$Pilot.ship.owner + ') $isNew: ' + $isNew + ' $isUpdated: ' + $isUpdated + ' $kEM_lastKnownLocation: ' + $Pilot.$kEM_lastKnownLocation + ', $kEM_kills: ' + $Pilot.$kEM_kills",
+            "chance": "md.kuertee_emergent_missions.UserSettings.$debugChance_bounties"
+          }
+        }
+      ]
+    },
+    {
+      "file": "md/kuertee_emergent_missions.xml",
+      "cue": "Bounties_RegisterKill",
+      "cue_path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]",
+      "root_tag": "mdscript",
+      "root_name": "kuertee_emergent_missions",
+      "items": [
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/params",
+          "tag": "params",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/params/param[1]",
+          "tag": "param",
+          "attrs": {
+            "name": "Pilot"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/params/param[2]",
+          "tag": "param",
+          "attrs": {
+            "name": "VictimClass"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/params/param[3]",
+          "tag": "param",
+          "attrs": {
+            "name": "VictimFaction"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/params/param[4]",
+          "tag": "param",
+          "attrs": {
+            "name": "IsSubordinateKill",
+            "default": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions",
+          "tag": "actions",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not @$Pilot.$kEM_kills"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[1]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_kills",
+            "exact": "table[]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "not @$Pilot.$kEM_kills.{$VictimFaction}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[2]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_kills.{$VictimFaction}",
+            "exact": "table[           {class.ship_xs} = 0,           {class.ship_s} = 0,           {class.ship_m} = 0,           {class.ship_l} = 0,           {class.ship_xl} = 0,           {class.station} = 0          ]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[3]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$IsSubordinateKill"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_if[3]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_kills.{$VictimFaction}.{$VictimClass}",
+            "exact": "0.25",
+            "operation": "add"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_else",
+          "tag": "do_else",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/do_else/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_kills.{$VictimFaction}.{$VictimClass}",
+            "exact": "1",
+            "operation": "add"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$Pilot.$kEM_timeLastUpdate",
+            "exact": "player.age"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/signal_objects",
+          "tag": "signal_objects",
+          "attrs": {
+            "object": "$Pilot",
+            "param": "'kEM_Bounties_RegisterKill'",
+            "param2": "table[$faction = $VictimFaction]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[6]/cues/cue[6]/cues/library[4]/actions/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "$Pilot + ' (' + $Pilot.knownname + ', ' + @$Pilot.ship.idcode + ', ' + @$PilotFaction + ') $kEM_kills.{' + $VictimFaction + '}.{' + $VictimClass + '}: ' + $Pilot.$kEM_kills.{$VictimFaction}.{$VictimClass}",
+            "chance": "md.kuertee_emergent_missions.UserSettings.$debugChance_bounties"
+          }
+        }
+      ]
+    },
+    {
+      "file": "md/kuertee_emergent_missions_enemy_targets.xml",
+      "cue": "EnemyTargetManager_SetPlayerTarget",
+      "cue_path": "/mdscript/cues/library[2]/cues/cue[5]",
+      "root_tag": "mdscript",
+      "root_name": "Kuertee_emergent_mission_enemy_targets",
+      "items": [
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/conditions",
+          "tag": "conditions",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/conditions/event_cue_signalled",
+          "tag": "event_cue_signalled",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/conditions/check_value",
+          "tag": "check_value",
+          "attrs": {
+            "value": "$IsSetPlayerTarget"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions",
+          "tag": "actions",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$sector_areaOfOperation",
+            "exact": "null"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Cue_Mission.$Ship.isoperational and $Cue_Mission.$Ship.sector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[1]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$sector_areaOfOperation",
+            "exact": "$Cue_Mission.$Ship.sector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_elseif",
+          "tag": "do_elseif",
+          "attrs": {
+            "value": "$TargetSector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_elseif/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$sector_areaOfOperation",
+            "exact": "$TargetSector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "        $Cue_Mission.hasguidance        and $sector_areaOfOperation        and player.entity.hascontext.{$sector_areaOfOperation}        and player.occupiedship        and (not player.ship.isclass.spacesuit)        and (not player.target)"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_if[1]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Cue_Mission.$kEMissionType == md.kuertee_emergent_missions.kEMissions.$missionType_patrol         or $Cue_Mission.$kEMissionType == md.kuertee_emergent_missions.kEMissions.$missionType_raid         or $Cue_Mission.$kEMissionType == md.kuertee_emergent_missions.kEMissions.$missionType_rescue"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_if[1]/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$nearestTo",
+            "exact": "player.entity"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_else",
+          "tag": "do_else",
+          "attrs": {}
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_else/set_value",
+          "tag": "set_value",
+          "attrs": {
+            "name": "$nearestTo",
+            "exact": "$Cue_Mission.$Ship"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/sort_group",
+          "tag": "sort_group",
+          "attrs": {
+            "group": "$EnemyTargets",
+            "sortdescending": "false",
+            "sortbyvalue": "         abs(player.ship.threatscore - (loop.element.threatscore + loop.element.isclass.station * 100))         + loop.element.distanceto.{$nearestTo} / 1000.0         - (@loop.element.toplevelcommander.isclass.ship and @loop.element.toplevelcommander.order.$primarytarget == $nearestTo) * 100"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_while",
+          "tag": "do_while",
+          "attrs": {
+            "value": "$EnemyTargets.{1}? and (not $Faction.hasrelation.enemy.{$EnemyTargets.{1}})"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_while/remove_from_group",
+          "tag": "remove_from_group",
+          "attrs": {
+            "group": "$EnemyTargets",
+            "object": "$EnemyTargets.{1}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "'%s $EnemyTargets.{1} %s %s %s'.[$Cue_Mission.$MissionId, $EnemyTargets.{1}, $EnemyTargets.{1}.knownname, $EnemyTargets.{1}.idcode]",
+            "chance": "[md.Kuertee_emergent_mission_enemy_targets.Manager.$debugChance_enemyTargets, $DebugChance].max"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/set_player_target",
+          "tag": "set_player_target",
+          "attrs": {
+            "object": "$EnemyTargets.{1}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_if[2]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Cue_PlayerTargetSet.exists and $Cue_PlayerTargetSet.state == cuestate.waiting"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[2]/do_if[2]/signal_cue_instantly",
+          "tag": "signal_cue_instantly",
+          "attrs": {
+            "cue": "$Cue_PlayerTargetSet",
+            "param": "table[$target = $EnemyTargets.{1}]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$RunActions_OrderNPCShip"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if",
+          "tag": "do_if",
+          "attrs": {
+            "value": "$Cue_Mission.$Ships_aiDefenders.count"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each",
+          "tag": "do_for_each",
+          "attrs": {
+            "name": "$ship",
+            "in": "$Cue_Mission.$Ships_aiDefenders"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if",
+          "tag": "do_if",
+          "attrs": {
+            "value": "(not $Cue_Mission.$OrdersByNPCShipId.{'$' + $ship.idcode}.exists) or $Cue_Mission.$OrdersByNPCShipId.{'$' + $ship.idcode}.id != 'Attack'"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/sort_group",
+          "tag": "sort_group",
+          "attrs": {
+            "group": "$EnemyTargets",
+            "sortdescending": "false",
+            "sortbyvalue": "            abs($ship.threatscore - (loop.element.threatscore + loop.element.isclass.station * 100))            + loop.element.distanceto.{$nearestTo} / 1000.0            - (@loop.element.toplevelcommander.isclass.ship and @loop.element.toplevelcommander.order.$primarytarget == $nearestTo) * 100"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/do_while",
+          "tag": "do_while",
+          "attrs": {
+            "value": "$EnemyTargets.{1}? and (not $Faction.hasrelation.enemy.{$EnemyTargets.{1}})"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/do_while/remove_from_group",
+          "tag": "remove_from_group",
+          "attrs": {
+            "group": "$EnemyTargets",
+            "object": "$EnemyTargets.{1}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/debug_text",
+          "tag": "debug_text",
+          "attrs": {
+            "text": "'%s $ship %s %s %s $EnemyTargets.{1} %s %s %s'.[$Cue_Mission.$MissionId, $ship, $ship.knownname, $ship.idcode, $EnemyTargets.{1}, $EnemyTargets.{1}.knownname, $EnemyTargets.{1}.idcode]",
+            "chance": "[md.Kuertee_emergent_mission_enemy_targets.Manager.$debugChance_enemyTargets, $DebugChance].max"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/run_actions",
+          "tag": "run_actions",
+          "attrs": {
+            "ref": "$RunActions_OrderNPCShip"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/run_actions/param[1]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_Mission",
+            "value": "$Cue_Mission"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/run_actions/param[2]",
+          "tag": "param",
+          "attrs": {
+            "name": "Ship",
+            "value": "$ship"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/run_actions/param[3]",
+          "tag": "param",
+          "attrs": {
+            "name": "Target",
+            "value": "$EnemyTargets.{1}"
+          }
+        },
+        {
+          "path": "/mdscript/cues/library[2]/cues/cue[5]/actions/do_if[3]/do_if/do_for_each/do_if/run_actions/param[4]",
+          "tag": "param",
+          "attrs": {
+            "name": "IsAttack",
+            "value": "true"
+          }
+        }
+      ]
+    },
+    {
+      "file": "md/kuertee_emergent_missions_rescue.xml",
+      "cue": "kEMissions_Rescue_EnemyTargetManager",
+      "cue_path": "/mdscript/cues/cue[3]/cues/cue[15]",
+      "root_tag": "mdscript",
+      "root_name": "Kuertee_emergent_missions_rescue",
+      "items": [
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[1]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_Mission",
+            "value": "$Cue_Mission"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[2]",
+          "tag": "param",
+          "attrs": {
+            "name": "TargetSector",
+            "value": "$Sector"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[3]",
+          "tag": "param",
+          "attrs": {
+            "name": "Faction",
+            "value": "$Faction"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[4]",
+          "tag": "param",
+          "attrs": {
+            "name": "EnemyFactions",
+            "value": "$EnemyFactions"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[5]",
+          "tag": "param",
+          "attrs": {
+            "name": "EnemyTargets",
+            "value": "$EnemyTargets"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[6]",
+          "tag": "param",
+          "attrs": {
+            "name": "DamageAndKillsByIdCode",
+            "value": "$DamageAndKillsByIdCode"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[7]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_StartTrigger",
+            "value": "kEMissions_Rescue_EnemyTargetManager_Start"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[8]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_CleanUpTrigger",
+            "value": "kEMissions_Rescue_EnemyTargetManager_CleanUp"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[9]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_EnemyFound",
+            "value": "kEMissions_Rescue_EnemyFound"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[10]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_NoEnemiesFound",
+            "value": "kEMissions_Rescue_NoEnemiesFound"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[11]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_NewEnemyFaction",
+            "value": "kEMissions_Rescue_NewEnemyFaction"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[12]",
+          "tag": "param",
+          "attrs": {
+            "name": "Cue_PlayerTargetSet",
+            "value": "kEMissions_Rescue_PlayerTargetSet"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[13]",
+          "tag": "param",
+          "attrs": {
+            "name": "RunActions_OrderNPCShip",
+            "value": "md.kuertee_emergent_missions.NPCShips_OrderShip"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[14]",
+          "tag": "param",
+          "attrs": {
+            "name": "FindFromObjects",
+            "value": "[$Station]"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[15]",
+          "tag": "param",
+          "attrs": {
+            "name": "IsAllowStationTargets",
+            "value": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[16]",
+          "tag": "param",
+          "attrs": {
+            "name": "IsFindNewEnemyFactions",
+            "value": "false"
+          }
+        },
+        {
+          "path": "/mdscript/cues/cue[3]/cues/cue[15]/param[17]",
+          "tag": "param",
+          "attrs": {
+            "name": "DebugChance",
+            "value": "0"
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha256": "9c414a672dfd69c05734f535cd7dafd01766ada1b2ccbc36fe83c4bb00d6e951"
+}
