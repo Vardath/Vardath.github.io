@@ -6,10 +6,12 @@ const STARTER_DATA := "res://data/starter_galaxy.json"
 const TICKS_PER_CROSSING := 5
 const NPCTradeScript = preload("res://scripts/npc_trade.gd")
 const ConstructionScript = preload("res://scripts/construction.gd")
+const BuildSupplyScript = preload("res://scripts/build_supply.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
 var construction = ConstructionScript.new()
+var build_supply = BuildSupplyScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -44,6 +46,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if construction.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if build_supply.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -63,6 +67,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = construction.prepare(restored)
+	if result != OK:
+		return result
+	result = build_supply.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -178,6 +185,8 @@ func advance_ticks(count: int) -> void:
 		for ship in state.get("ships", []):
 			if ship.has("autotrader") or ship.has("player_trader"):
 				npc_trade.tick(self, ship)
+			if ship.has("build_supply"):
+				build_supply.tick(self, ship)
 		construction.tick(self)
 
 
@@ -196,6 +205,7 @@ func set_player_trader(ship_id: String, enabled: bool) -> bool:
 	var ship := _find_ship(ship_id)
 	if ship.is_empty() or ship.owner != state.get("player_faction_id", "") or not ship.has("player_trader"):
 		return false
+	build_supply.stop(ship)
 	ship.player_trader.enabled = enabled
 	ship.role = "Autonomous Trader" if enabled else "Unassigned"
 	return true

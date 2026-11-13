@@ -73,6 +73,7 @@ var build_feedback: Label
 var build_pause_button: Button
 var build_dock_button: Button
 var build_deliver_button: Button
+var build_supply_button: Button
 
 
 func _ready() -> void:
@@ -389,6 +390,7 @@ func _build_ui() -> void:
 	role_picker.add_theme_font_size_override("font_size", 14)
 	role_picker.add_item("Unassigned")
 	role_picker.add_item("Auto trader")
+	role_picker.add_item("Build supplier")
 	role_picker.item_selected.connect(_on_role_selected)
 	property_list.add_child(role_picker)
 	role_hint = _wrapped_label("", 12, MUTED)
@@ -621,6 +623,16 @@ func _show_ship() -> void:
 			detail_body.text += "\n\nTrader cargo\n%d units for %s" % [int(job.managed_quantity), _station_name(str(job.destination_id)) if not str(job.destination_id).is_empty() else "an available buyer"]
 		else:
 			detail_body.text += "\n\nTrader plan\nLooking for a profitable supply run"
+	if ship.build_supply.enabled:
+		var supply: Dictionary = ship.build_supply
+		var site: Dictionary = world.construction.find_site(world, str(supply.site_id))
+		detail_body.text += "\n\nBuild supply\n" + str(site.get("name", "Build site"))
+		if supply.phase == "to_source":
+			detail_body.text += " · Collect from " + _station_name(str(supply.source_id))
+		elif supply.phase == "to_site":
+			detail_body.text += " · Deliver to site"
+		elif not str(supply.wait_reason).is_empty():
+			detail_body.text += " · " + str(supply.wait_reason)
 	var cargo_lines: Array[String] = []
 	for ware in world.state.wares:
 		var quantity := int(ship.cargo.get(ware.id, 0))
@@ -659,6 +671,8 @@ func _on_role_selected(index: int) -> void:
 	var ship: Dictionary = world.state.ships[0]
 	if index in [0, 1] and world.set_player_trader(str(ship.id), index == 1):
 		_save_current_game()
+	elif index == 2:
+		_open_build_screen()
 	_refresh_world_display()
 
 
@@ -675,8 +689,13 @@ func _queue_order() -> void:
 func _refresh_world_display() -> void:
 	var ship: Dictionary = world.state.ships[0]
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
-	role_picker.select(1 if ship.player_trader.enabled else 0)
-	role_hint.text = "Uses your credits. Queued orders finish before trading." if ship.player_trader.enabled else "Turning off a role leaves cargo aboard; current orders finish."
+	role_picker.select(2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0))
+	if ship.build_supply.enabled:
+		role_hint.text = "Supplying a build site using your cargo and credits."
+	elif ship.player_trader.enabled:
+		role_hint.text = "Uses your credits. Queued orders finish before trading."
+	else:
+		role_hint.text = "Turning off a role leaves cargo aboard; current orders finish."
 	var current_world: Dictionary = world.snapshot()
 	map_view.set_world(current_world)
 	sector_map.set_world(current_world)
@@ -919,7 +938,7 @@ func _open_build_screen(selected_site_id: String = "") -> void:
 	column.add_theme_constant_override("separation", 10)
 	panel.add_child(column)
 	column.add_child(_label("STATIONS & BUILDS", 22, TEXT))
-	column.add_child(_wrapped_label("Carry construction materials to the site, dock, then deliver them to build storage.", 14, MUTED))
+	column.add_child(_wrapped_label("Deliver materials yourself or assign your ship to supply this site.", 14, MUTED))
 	build_picker = OptionButton.new()
 	build_picker.name = "BuildSitePicker"
 	build_picker.custom_minimum_size.y = 44
@@ -948,6 +967,11 @@ func _open_build_screen(selected_site_id: String = "") -> void:
 	build_feedback = _wrapped_label("", 13, ACCENT)
 	build_feedback.name = "BuildFeedback"
 	column.add_child(build_feedback)
+	column.add_child(_wrapped_label("Auto supply uses your ship's cargo and credits, and replaces its current role. Queued orders finish first.", 13, MUTED))
+	build_supply_button = _button("Automatically supply this site")
+	build_supply_button.name = "AutoSupplyBuildButton"
+	build_supply_button.pressed.connect(_toggle_build_supply)
+	column.add_child(build_supply_button)
 	var actions := HBoxContainer.new()
 	actions.add_theme_constant_override("separation", 8)
 	column.add_child(actions)
@@ -993,26 +1017,32 @@ func _update_build_screen() -> void:
 	build_dock_button.disabled = not available
 	build_deliver_button.disabled = not available
 	build_pause_button.disabled = not available or (available and int(site.completed) >= site.tasks.size())
+	build_supply_button.disabled = not available
 	if not available:
 		build_info.text = "No build sites yet. Choose Plan station to create one."
 		return
 	build_pause_button.text = "Resume build" if site.paused else "Pause build"
+	var supplier: Dictionary = world.state.ships[0]
+	var supplying_here: bool = supplier.build_supply.enabled and supplier.build_supply.site_id == site.id
+	build_supply_button.text = "Stop supplying this site" if supplying_here else "Automatically supply with %s" % supplier.name
 	var lines: Array[String] = []
 	lines.append("%s  ·  %s\nStatus: %s\nBuilder fee paid: %d CR" % [site.name, _sector_name(str(site.sector)), site.status, int(site.fee)])
-	var builder: Dictionary = world._find_ship(str(site.builder_id))
-	lines.append("Builder: %s" % (str(builder.name) if not builder.is_empty() else "Waiting for a ready site"))
-	lines.append("Modules completed: %d / %d" % [int(site.completed), site.tasks.size()])
-	if int(site.completed) < site.tasks.size():
-		var task: Dictionary = site.tasks[int(site.completed)]
-		var recipe: Dictionary = world._find_recipe(str(task.recipe_id))
-		lines.append("Current module: %s  ·  %d / %d ticks" % [recipe.get("name", task.recipe_id), int(task.progress), int(task.duration)])
 	var needed: Dictionary = world.construction.remaining_materials(site)
 	var material_lines: Array[String] = []
 	for ware_id in needed:
 		var ware: Dictionary = world._find_ware(str(ware_id))
 		material_lines.append("%s: %d still needed  ·  %d in build storage" % [ware.get("name", ware_id), int(needed[ware_id]), int(site.build_storage.get(ware_id, 0))])
 	lines.append("BUILD MATERIALS\n" + ("All required materials delivered." if material_lines.is_empty() else "\n".join(material_lines)))
-	lines.append("\nPaused builds retain their materials. Cancellation and reordering are not available yet.")
+	if supplying_here:
+		lines.append("Supplier: %s · %s" % [supplier.name, supplier.status])
+	var builder: Dictionary = world._find_ship(str(site.builder_id))
+	lines.append("Builder: %s\nModules completed: %d / %d" % [str(builder.name) if not builder.is_empty() else "Waiting for a ready site", int(site.completed), site.tasks.size()])
+	if int(site.completed) < site.tasks.size():
+		var task: Dictionary = site.tasks[int(site.completed)]
+		var recipe: Dictionary = world._find_recipe(str(task.recipe_id))
+		lines.append("Current module: %s  ·  %d / %d ticks" % [recipe.get("name", task.recipe_id), int(task.progress), int(task.duration)])
+	lines.append("AUTO SUPPLY\nUses %s's suitable cargo, then collects from your stations or buys from NPC markets using your credits. Current orders finish first; changing the ship's role stops supply and leaves cargo aboard." % supplier.name)
+	lines.append("Paused builds retain their materials. Cancellation and reordering are not available yet.")
 	build_info.text = "\n\n".join(lines)
 
 
@@ -1048,6 +1078,26 @@ func _toggle_build_pause() -> void:
 		build_feedback.text = "Build paused." if site.paused else "Build resumed."
 		if not _save_current_game():
 			build_feedback.text += " Save failed."
+	_update_build_screen()
+
+
+func _toggle_build_supply() -> void:
+	var site := _selected_build_site()
+	if site.is_empty():
+		return
+	var ship: Dictionary = world.state.ships[0]
+	if ship.build_supply.enabled and ship.build_supply.site_id == site.id:
+		world.build_supply.stop(ship)
+		build_feedback.text = "Supply stopped. Cargo stays aboard and queued orders finish."
+	else:
+		var result: Dictionary = world.build_supply.assign(world, str(ship.id), str(site.id))
+		build_feedback.text = str(result.message)
+		if not result.ok:
+			_update_build_screen()
+			return
+	if not _save_current_game():
+		build_feedback.text += " Save failed."
+	_refresh_world_display()
 	_update_build_screen()
 
 

@@ -190,3 +190,15 @@ Next task (only after verifying required checks for the current commits, or esta
 - Manual/device tests: In desktop Godot, inspected the construction quote and finite reserve, placed a site and checked its build queue and material requirement. Android device playtesting remains outstanding.
 - Defects and limitations: The builder fee is paid up front; cancellation, refunds and reordering are not yet available. Only one NPC builder and three production modules are implemented. Build materials and imported inputs must be delivered manually, and station positioning remains schematic.
 - Next task / gate: Green verified. Continue construction and station logistics, including practical ways to supply sites and manage or cancel queued builds.
+
+## Pass 14 — Automatic build-site supply
+- Date: 2026-11-13 (Australia/Brisbane).
+- Scope: Assign the player's ship to automatically supply a selected build site. Deliver relevant cargo already aboard, collect from owned station stock, or purchase real materials from reachable NPC markets with faction credits. Respect actual stock, prices, hold capacity and physical travel; repeat trips and account for other suppliers' cargo en route. Show waiting reasons, allow a player to stop or change role while keeping cargo and queued orders, and persist active trips across save/load. Present material shortages and supply controls in the build screen.
+- Files changed: `Faction Command Progress.md`, `.github/workflows/faction-command.yml`, `faction-command/scripts/build_supply.gd`, `world.gd`, `save_store.gd`, `main.gd`, `tests/run_tests.gd` and `README.md`.
+- Commit SHA: pending verification.
+- CI workflow/check runs: `Faction Command foundation` / `validate` and `android-debug`; Pages build and deployment.
+- CI result: **PENDING**; wait for the exact source commit's checks before beginning another task.
+- Automated tests: Godot 4.6.3 passed 577 foundation checks in the landscape viewport and with a 64×64 headless display override. Coverage includes multi-trip supply, stock and credit conservation, a save in transit, waiting and resuming, full cargo, changing role, multiple suppliers avoiding duplicate purchases, owned stock, existing-save migration and future-version protection. A local Android resource pack includes the new compiled supply script.
+- Manual/device tests: In desktop Godot, created a station and assigned its supply ship; checked the visible cost warning, assignment feedback and stop control. Android device testing remains outstanding.
+- Defects and limitations: The interface currently assigns First Light; broader property selection is future work. Supply uses faction credits without a separate player-set budget. It supplies construction materials, not ongoing station-production imports. Build cancellation, refunds and reordering remain unavailable.
+- Next task / gate: Wait for the exact source checks and Android artifact verification before continuing with construction management and station logistics.

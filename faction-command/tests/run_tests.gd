@@ -39,13 +39,15 @@ func _disable_npc_trading(world: RefCounted) -> void:
 func _without_player_role(ship: Dictionary) -> Dictionary:
 	var copy := ship.duplicate(true)
 	copy.erase("player_trader")
+	copy.erase("build_supply")
 	return copy
 
 
 func _strip_construction(state: Dictionary) -> void:
-	for key in ["construction_version", "construction_blueprints", "construction_resources", "build_sites", "next_build_site_id"]:
+	for key in ["construction_version", "construction_blueprints", "construction_resources", "build_sites", "next_build_site_id", "build_supply_version"]:
 		state.erase(key)
 	for index in range(state.ships.size() - 1, -1, -1):
+		state.ships[index].erase("build_supply")
 		if state.ships[index].id == "npc_builder_001":
 			state.ships.remove_at(index)
 
@@ -987,7 +989,9 @@ func _run() -> void:
 	var legacy_construction_read: Dictionary = save_store.load_game(legacy_construction_path)
 	var migrated_build = WorldScript.new()
 	_expect(bool(legacy_construction_read.get("ok", false)) and migrated_build.restore_snapshot(legacy_construction_read.state) == OK, "a pre-construction save gains the builder and sector resources")
-	_expect(migrated_build.state.ships[0] == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
+	var migrated_ship: Dictionary = migrated_build.state.ships[0].duplicate(true)
+	migrated_ship.erase("build_supply")
+	_expect(migrated_ship == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
 	_expect(int(migrated_build._find_ship("npc_builder_001").credits) == 0 and migrated_build.state.build_sites.is_empty(), "migration adds no free money, sites or materials")
 	var bad_construction: Dictionary = build_world.snapshot()
 	bad_construction.build_sites[0].tasks[0].progress = 999
@@ -1004,6 +1008,151 @@ func _run() -> void:
 	future_construction_file.store_string(JSON.stringify({"format_version":1, "payload":construction_payload, "checksum":construction_payload.sha256_text()}))
 	future_construction_file.close()
 	_expect(save_store.load_game(construction_version_path).get("reason") == "unsupported", "future construction data is not silently replaced by an older backup")
+
+	# Automated build supply makes real trips and respects money, cargo and saves.
+	var supply_world = WorldScript.new()
+	supply_world.load_starter()
+	_disable_npc_trading(supply_world)
+	var supply_player: Dictionary = supply_world.state.ships[0]
+	supply_player.cargo_capacity = 5
+	var supply_credits := _total_credits(supply_world.state)
+	var supply_foundry: Dictionary = supply_world._find_station("vellum_foundry")
+	var original_stock := int(supply_foundry.stock.alloy_plates)
+	var supply_placement: Dictionary = supply_world.construction.place(supply_world, "hearthreach", {"solar_cells":3}, "self", [])
+	var supply_site: Dictionary = supply_world.construction.find_site(supply_world, str(supply_placement.site_id))
+	supply_world.set_player_trader("ship_001", true)
+	_expect(supply_world.build_supply.assign(supply_world, "ship_001", str(supply_site.id)).ok and not supply_player.player_trader.enabled and supply_player.role == "Build Supplier", "assigning build supply changes the existing ship role without creating another ship")
+	supply_world.advance_ticks(1)
+	_expect(supply_player.build_supply.phase == "to_source" and not supply_player.orders.is_empty() and int(supply_foundry.stock.alloy_plates) == original_stock, "supplier physically travels to a real market before buying")
+	supply_world.advance_ticks(3)
+	var supply_path := test_root + "/supply-travel.json"
+	_expect(save_store.save_game(supply_path, supply_world.snapshot()) == OK, "an automatic supplier can be saved while travelling")
+	var supply_read: Dictionary = save_store.load_game(supply_path)
+	var supply_restored = WorldScript.new()
+	_expect(bool(supply_read.get("ok", false)) and supply_restored.restore_snapshot(supply_read.state) == OK, "a supplier restores its destination and current route")
+	supply_world.advance_ticks(250)
+	supply_restored.advance_ticks(250)
+	_expect(supply_world.snapshot() == supply_restored.snapshot(), "automatic supply continues deterministically after save and reload")
+	_expect(int(supply_site.completed) == 3 and not supply_player.build_supply.enabled and supply_player.role == "Unassigned", "multiple cargo-sized trips supply the site and the role ends after delivery")
+	_expect(original_stock - int(supply_foundry.stock.alloy_plates) == 18 and int(supply_world.state.starting_credits) == 25000 - 900 - 18 * 20, "the supplier buys exactly the required real materials at the market price")
+	_expect(_total_credits(supply_world.state) == supply_credits and int(supply_player.cargo.get("alloy_plates", 0)) == 0, "repeated supply trips conserve credits and do not fabricate or strand required cargo")
+
+	var poor_supplier = WorldScript.new()
+	poor_supplier.load_starter()
+	_disable_npc_trading(poor_supplier)
+	var poor_site_id: String = poor_supplier.construction.place(poor_supplier, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	poor_supplier.state.starting_credits = 0
+	poor_supplier.build_supply.assign(poor_supplier, "ship_001", poor_site_id)
+	poor_supplier.advance_ticks(1)
+	_expect(poor_supplier.state.ships[0].status == "Waiting for credits" and poor_supplier.state.ships[0].build_supply.enabled and poor_supplier.state.ships[0].cargo.is_empty(), "a supplier waits clearly when it cannot afford materials")
+	poor_supplier._find_station("hearth_exchange").credits -= 120
+	poor_supplier.state.starting_credits = 120
+	poor_supplier.advance_ticks(80)
+	_expect(int(poor_supplier.construction.find_site(poor_supplier, poor_site_id).completed) == 1, "a supplier automatically resumes when funds become available")
+	var onboard_supply = WorldScript.new()
+	onboard_supply.load_starter()
+	_disable_npc_trading(onboard_supply)
+	var onboard_site_id: String = onboard_supply.construction.place(onboard_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	onboard_supply._find_station("vellum_foundry").stock.alloy_plates -= 6
+	onboard_supply.state.ships[0].cargo.alloy_plates = 6
+	onboard_supply.state.starting_credits = 0
+	onboard_supply.build_supply.assign(onboard_supply, "ship_001", onboard_site_id)
+	onboard_supply.advance_ticks(1)
+	_expect(int(onboard_supply.state.ships[0].cargo.alloy_plates) == 0 and int(onboard_supply.construction.find_site(onboard_supply, onboard_site_id).build_storage.alloy_plates) == 6 and int(onboard_supply.state.starting_credits) == 0, "a supplier delivers matching cargo already aboard without buying anything")
+	var full_supplier = WorldScript.new()
+	full_supplier.load_starter()
+	_disable_npc_trading(full_supplier)
+	var full_site_id: String = full_supplier.construction.place(full_supplier, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	full_supplier.state.ships[0].cargo_capacity = 1
+	full_supplier._find_station("hearth_exchange").stock.energy_cells -= 1
+	full_supplier.state.ships[0].cargo.energy_cells = 1
+	full_supplier.build_supply.assign(full_supplier, "ship_001", full_site_id)
+	full_supplier.advance_ticks(1)
+	_expect(full_supplier.state.ships[0].status == "Waiting for cargo space" and int(full_supplier.state.ships[0].cargo.energy_cells) == 1, "a full hold causes a visible wait without discarding unrelated cargo")
+	var no_stock = WorldScript.new()
+	no_stock.load_starter()
+	_disable_npc_trading(no_stock)
+	var no_stock_site: String = no_stock.construction.place(no_stock, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	no_stock._find_station("vellum_foundry").stock.alloy_plates = 0
+	no_stock._find_station("cinder_depot").stock.alloy_plates = 0
+	no_stock.build_supply.assign(no_stock, "ship_001", no_stock_site)
+	no_stock.advance_ticks(1)
+	_expect(no_stock.state.ships[0].status == "Waiting for material stock", "a supplier reports a lack of reachable material stock")
+
+	var cancelled_supply = WorldScript.new()
+	cancelled_supply.load_starter()
+	_disable_npc_trading(cancelled_supply)
+	var cancelled_site: String = cancelled_supply.construction.place(cancelled_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	cancelled_supply.build_supply.assign(cancelled_supply, "ship_001", cancelled_site)
+	for _step in range(30):
+		cancelled_supply.advance_ticks(1)
+		if cancelled_supply.state.ships[0].build_supply.phase == "to_site" and not cancelled_supply.state.ships[0].orders.is_empty():
+			break
+	var in_transit: Dictionary = cancelled_supply.state.ships[0]
+	var kept_cargo: int = int(in_transit.cargo.get("alloy_plates", 0))
+	var kept_orders: Array = in_transit.orders.duplicate(true)
+	_expect(kept_cargo == 6 and not kept_orders.is_empty(), "supplier carries purchased materials on its return trip")
+	cancelled_supply.set_player_trader("ship_001", false)
+	_expect(not in_transit.build_supply.enabled and int(in_transit.cargo.alloy_plates) == kept_cargo and in_transit.orders == kept_orders, "changing role stops supply without cancelling orders or taking cargo")
+	cancelled_supply.advance_ticks(15)
+	_expect(int(in_transit.cargo.alloy_plates) == kept_cargo and int(cancelled_supply.construction.find_site(cancelled_supply, cancelled_site).build_storage.get("alloy_plates", 0)) == 0, "stopped automation does not later deliver retained cargo")
+
+	var competing_supply = WorldScript.new()
+	competing_supply.load_starter()
+	_disable_npc_trading(competing_supply)
+	var rival_ship: Dictionary = competing_supply.state.ships[0].duplicate(true)
+	rival_ship.id = "ship_002"
+	rival_ship.name = "Second Light"
+	competing_supply.state.ships.append(rival_ship)
+	var competing_supply_site: String = competing_supply.construction.place(competing_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	competing_supply.build_supply.assign(competing_supply, "ship_001", competing_supply_site)
+	competing_supply.build_supply.assign(competing_supply, "ship_002", competing_supply_site)
+	var compete_stock: int = int(competing_supply._find_station("vellum_foundry").stock.alloy_plates)
+	competing_supply.advance_ticks(80)
+	_expect(compete_stock - int(competing_supply._find_station("vellum_foundry").stock.alloy_plates) == 6, "suppliers account for each other's purchased in-transit materials and do not buy twice")
+	_expect(int(competing_supply.construction.find_site(competing_supply, competing_supply_site).completed) == 1 and save_store.save_game(test_root + "/two-suppliers.json", competing_supply.snapshot()) == OK, "competing_supply suppliers finish with a valid save and a functioning module")
+
+	var owned_supply = WorldScript.new()
+	owned_supply.restore_snapshot(build_world.snapshot())
+	_disable_npc_trading(owned_supply)
+	var owned_station: Dictionary = owned_supply._find_station(str(outpost.id))
+	owned_supply.transfer_player_station("ship_001", str(owned_station.id), "alloy_plates", 1, true)
+	owned_supply._find_station("vellum_foundry").stock.alloy_plates -= 6
+	owned_station.stock.alloy_plates = int(owned_station.stock.alloy_plates) + 6
+	for module in owned_station.production:
+		module.progress = 0
+	var owned_site_id: String = owned_supply.construction.place(owned_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
+	var before_owned_credits: int = int(owned_supply.state.starting_credits)
+	var before_owned_stock: int = int(owned_station.stock.alloy_plates)
+	owned_supply.build_supply.assign(owned_supply, "ship_001", owned_site_id)
+	owned_supply.advance_ticks(1)
+	_expect(int(owned_station.stock.alloy_plates) == before_owned_stock - 6 and int(owned_supply.state.starting_credits) == before_owned_credits, "automatic supply prioritizes free physical stock at a player station")
+	_expect(int(owned_supply.construction.find_site(owned_supply, owned_site_id).build_storage.get("alloy_plates", 0)) == 6 or owned_supply.construction.find_site(owned_supply, owned_site_id).tasks[0].started, "owned station stock is transferred to the build site before use")
+
+	var old_supply: Dictionary = saved_trip.duplicate(true)
+	old_supply.erase("build_supply_version")
+	for old_ship in old_supply.ships:
+		old_ship.erase("build_supply")
+	_expect(save_store.save_game(test_root + "/before-supply.json", old_supply) == OK, "a construction-era save without supply automation remains readable")
+	var old_supply_load: Dictionary = save_store.load_game(test_root + "/before-supply.json")
+	var supply_upgrade = WorldScript.new()
+	_expect(bool(old_supply_load.get("ok", false)) and supply_upgrade.restore_snapshot(old_supply_load.state) == OK and not supply_upgrade.state.ships[0].build_supply.enabled, "older saves gain an inactive build supplier")
+	var upgraded_ship: Dictionary = supply_upgrade.state.ships[0].duplicate(true)
+	upgraded_ship.erase("build_supply")
+	_expect(upgraded_ship == old_supply.ships[0] and supply_upgrade.state.ledger == old_supply.ledger and supply_upgrade.state.starting_credits == old_supply.starting_credits, "supply migration preserves ship orders, cargo, credits and ledger")
+	var invalid_supply: Dictionary = supply_world.snapshot()
+	invalid_supply.ships[0].build_supply.enabled = true
+	invalid_supply.ships[0].build_supply.site_id = "unknown"
+	_expect(save_store.save_game(test_root + "/bad-supply.json", invalid_supply) != OK, "save validation rejects supplier assignments to missing sites")
+	var future_supply: Dictionary = supply_world.snapshot()
+	future_supply.build_supply_version = 2
+	var future_supply_payload := Marshalls.variant_to_base64(future_supply, false)
+	var future_supply_path := test_root + "/supply-version.json"
+	_expect(save_store.save_game(future_supply_path, supply_world.snapshot()) == OK and save_store.save_game(future_supply_path, supply_world.snapshot()) == OK, "supply version test has a valid backup")
+	var future_supply_file := FileAccess.open(future_supply_path, FileAccess.WRITE)
+	future_supply_file.store_string(JSON.stringify({"format_version":1, "payload":future_supply_payload, "checksum":future_supply_payload.sha256_text()}))
+	future_supply_file.close()
+	_expect(save_store.load_game(future_supply_path).get("reason") == "unsupported", "future supply data cannot silently fall back to an older save")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -1041,7 +1190,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 2, "property panel offers manual and autonomous trader roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 3, "property panel offers manual, trader and build supplier roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -1292,6 +1441,16 @@ func _run() -> void:
 	_expect(screen.world.state.build_sites.size() == 1 and int(screen.world.state.starting_credits) == 24700, "a repeated placement action cannot charge twice after the planner closes")
 	var ui_site: Dictionary = screen.world.state.build_sites[0]
 	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.build_info.text.contains("6 still needed"), "the placed site saves immediately and explains missing materials")
+	screen.find_child("AutoSupplyBuildButton", true, false).pressed.emit()
+	_expect(screen.world.state.ships[0].build_supply.enabled and screen.role_picker.selected == 2 and screen.build_supply_button.text.contains("Stop supplying"), "build screen assigns the ship and clearly offers a stop control")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)) and screen.build_feedback.text.contains("credits"), "the supply assignment saves and explains purchases")
+	screen.find_child("AutoSupplyBuildButton", true, false).pressed.emit()
+	_expect(not screen.world.state.ships[0].build_supply.enabled and screen.role_picker.selected == 0, "build screen can stop supply and return the ship to manual control")
+	await process_frame
+	var supply_control: Control = screen.find_child("AutoSupplyBuildButton", true, false)
+	_expect(supply_control.size.y >= 44.0 and supply_control.global_position.y + supply_control.size.y <= float(root.size.y), "automatic supply remains touch-sized and visible in landscape")
+	var build_close_control: Control = screen.find_child("CloseBuildButton", true, false)
+	_expect(build_close_control.global_position.y + build_close_control.size.y <= float(root.size.y), "build actions remain inside the landscape viewport after feedback")
 	screen.find_child("DockBuildSiteButton", true, false).pressed.emit()
 	screen.find_child("DeliverBuildMaterialsButton", true, false).pressed.emit()
 	_expect(screen.build_feedback.text.contains("No required construction materials"), "build screen explains when no materials are aboard")

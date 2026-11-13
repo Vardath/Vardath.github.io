@@ -52,7 +52,15 @@ the purchase price of materials or builder travel time.
 Choose **Place build site** to pay the quoted fee to the independent builder
 Keystone and create an empty player-owned plot. Buy Alloy Plates from an NPC
 market, fly them to the plot's sector, open **Stations & builds**, dock at the
-site and choose **Deliver materials**. The builder travels to supplied sites
+site and choose **Deliver materials**. Alternatively, select the site and use
+**Automatically supply** to assign First Light. It delivers matching cargo
+already aboard, then collects from your own station stock or buys from a
+reachable NPC market with your faction's credits. It physically travels and
+makes multiple trips if needed, showing when it waits for stock, credits or
+cargo space. When the materials are delivered, the ship returns to an
+unassigned role. Stop supply from the build screen or change the ship's role;
+its current orders finish and any cargo stays aboard. Queued orders also finish
+before a new supply assignment starts. The builder travels to supplied sites
 and consumes physical build storage as each module starts. Modules finish over
 time and immediately become working production with their own storage. Pause
 or resume a build from the same screen. The current builder fee is paid upfront;
@@ -104,7 +112,8 @@ existing production saves gain the NPC freighter with an empty wallet. Neither
 upgrade resets existing balances, goods, player ships, orders or transaction
 history. The NPC receives capital from its home station only after time resumes.
 Older saves also gain the NPC builder and sector resources, without a fee or a
-new build site. In-progress construction, cargo and builder travel are saved.
+new build site. Existing construction saves gain the inactive supply role;
+in-progress construction, cargo, builder travel and supply trips are saved.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
 automatic station imports, build cancellation/refunds and reordering, dynamic
@@ -128,7 +137,8 @@ save/load during a trip. Player trader tests also cover manual orders and
 intervention, cargo preservation, role changes and save/load in transit.
 Construction tests cover paid builder travel, physical deliveries, resource
 sharing, paused and resumed builds, completed production, migration and saving
-mid-construction.
+mid-construction. Supply tests cover real purchases, limited cargo, waiting and
+resuming, role changes, competing ships and saving during supply trips.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

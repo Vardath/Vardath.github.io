@@ -95,6 +95,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("construction_version") and _is_nonnegative_integer(decoded.construction_version) and decoded.construction_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("build_supply_version") and _is_nonnegative_integer(decoded.build_supply_version) and decoded.build_supply_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -164,23 +166,64 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version")
+		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
 	if not state.has("production_version"):
-		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version")
+		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
 	if not _valid_production(state):
 		return false
 	if not state.has("logistics_version"):
-		return not state.has("player_roles_version") and not state.has("construction_version")
+		return not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
 	if not _valid_logistics(state):
 		return false
 	if not state.has("player_roles_version"):
-		return not state.has("construction_version")
+		return not state.has("construction_version") and not state.has("build_supply_version")
 	if not _valid_player_roles(state):
 		return false
-	return not state.has("construction_version") or _valid_construction(state, factions, sectors)
+	if not state.has("construction_version"):
+		return not state.has("build_supply_version")
+	if not _valid_construction(state, factions, sectors):
+		return false
+	return not state.has("build_supply_version") or _valid_build_supply(state)
+
+
+func _valid_build_supply(state: Dictionary) -> bool:
+	if state.build_supply_version != 1:
+		return false
+	var sites: Dictionary = {}
+	for site in state.build_sites:
+		sites[site.id] = true
+	var wares: Dictionary = {}
+	for ware in state.wares:
+		wares[ware.id] = true
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			if ship.has("build_supply"):
+				return false
+			continue
+		if not ship.get("build_supply") is Dictionary:
+			return false
+		var job: Dictionary = ship.build_supply
+		if not job.get("enabled") is bool or job.get("phase") not in ["idle", "to_source", "to_site"] or not _is_nonnegative_integer(job.get("retry_ticks")):
+			return false
+		for key in ["site_id", "source_id", "ware_id", "wait_reason"]:
+			if not job.get(key) is String:
+				return false
+		if not job.enabled:
+			if not job.site_id.is_empty() or job.phase != "idle" or not job.source_id.is_empty() or not job.ware_id.is_empty() or int(job.retry_ticks) != 0 or not job.wait_reason.is_empty():
+				return false
+			continue
+		if not sites.has(job.site_id) or ship.player_trader.enabled or ship.role != "Build Supplier":
+			return false
+		if job.phase == "idle" and (not job.source_id.is_empty() or not job.ware_id.is_empty()):
+			return false
+		if job.phase == "to_source" and (job.source_id.is_empty() or not wares.has(job.ware_id)):
+			return false
+		if job.phase == "to_site" and (not job.source_id.is_empty() or not wares.has(job.ware_id)):
+			return false
+	return true
 
 
 func _valid_economy(state: Dictionary, factions: Dictionary, sectors: Dictionary) -> bool:
