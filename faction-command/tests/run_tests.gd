@@ -53,7 +53,13 @@ func _without_station_supply(ships: Array) -> Array:
 	return copy
 
 
+func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("shipyard_version")
+	state.erase("shipyard")
+
+
 func _strip_research(state: Dictionary) -> void:
+	_strip_shipyard(state)
 	state.erase("station_supply_version")
 	for ship in state.ships:
 		ship.erase("station_supply")
@@ -1767,6 +1773,7 @@ func _run() -> void:
 	_expect(save_store.save_game(test_root + "/competing-station-suppliers.json", competing_stations.snapshot()) == OK, "competing station suppliers remain saveable")
 
 	var old_station_supply: Dictionary = saved_trip.duplicate(true)
+	_strip_shipyard(old_station_supply)
 	old_station_supply.erase("station_supply_version")
 	for old_ship in old_station_supply.ships:
 		old_ship.erase("station_supply")
