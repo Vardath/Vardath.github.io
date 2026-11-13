@@ -56,6 +56,33 @@ Select the new ship there to command or trade with it. Ship contracts cannot
 yet be cancelled, and new shipyard construction, modular hull equipment and
 player-owned wharf operation are later goals.
 
+### Ship renaming and crew management
+
+Select a player-owned ship in **Your Property**, then choose **Rename / manage
+crew**. Rename the selected vessel (1–40 visible characters) without changing
+its stable ship ID, captain, orders, cargo or automation. The service crew
+are counted separately from the ship's named captain. This first pass sets
+capacity by ship class: Couriers have 8 service-crew berths, Freighters 24,
+Builders 32, Carriers 80 and other ships 12.
+
+To **Hire** service crew, fly the selected ship to an NPC station and dock
+using the normal Trade screen. NPC stations have a finite initial pool of
+12 available recruits, retained in the save. Recruitment costs 250 CR per
+person and transfers the money directly to the hiring station; it does not
+create additional station personnel or silently replace existing crew.
+Hiring fails if there are insufficient credits, berths or recruits, or the
+station's faction is hostile. **Discharge** returns people to that NPC
+station's roster without refunding their hiring fees. **Transfer crew**
+moves existing people for free only between two player-owned ships both docked
+at the same station with their travel orders finished. Transfer eligibility,
+crew quantities and berth capacity are checked before a change is committed.
+
+Hiring, discharge and transfers are recorded in the financial ledger and
+save immediately. A ship can have zero service crew while its separately
+assigned captain remains aboard. Captain replacement, individual crew names,
+skills, salaries, training, station workforce and operational crew requirements
+are later systems; the current prototype does not simulate them.
+
 The galaxy map can be dragged to pan and pinched to zoom; the **+**, **−**
 and **Fit** buttons provide an alternative. Select a sector and choose **Open
 sector** to see its connections, stations and ships. Tap a connection to open
