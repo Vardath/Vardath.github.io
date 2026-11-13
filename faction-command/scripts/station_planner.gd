@@ -108,6 +108,10 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 			continue
 		var chosen := int(requested.get(id, 0))
 		module_rows.append({"id":id, "name":str(recipe.name), "chosen":chosen, "added":int(counts[id]) - chosen, "total":int(counts[id])})
+		for ware_id in recipe.get("catalysts", {}):
+			var message := "Requires %d %s as a reusable source; obtain it before copying begins." % [int(recipe.catalysts[ware_id]), str(wares.get(ware_id, ware_id))]
+			if not warnings.has(message):
+				warnings.append(message)
 		if not str(recipe.get("source", "")).is_empty():
 			var message := "Requires %s; local availability is not yet surveyed." % str(recipe.source).capitalize()
 			if not known_resources.is_empty():

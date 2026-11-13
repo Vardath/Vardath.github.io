@@ -26,8 +26,8 @@ ship to see its details. Sector contents are a schematic list for now: the
 simulation does not yet track exact positions within a sector. Choose
 **Galaxy** to return. The same pan and zoom controls work in both views.
 
-The first manual trading loop has four NPC stations and three wares: Energy
-Cells, Ore and Alloy Plates. Open **Trade**, choose a station, travel to its sector and
+The starter economy has four markets and four historical archives. Its wares
+include Energy Cells, Ore, Alloy Plates, Blank Media and Recorded Data. Open **Trade**, choose a station, travel to its sector and
 finish the ship's orders, then dock. Buy goods from station stock and carry them
 to a station that buys them. Each transaction changes real cargo, station stock
 and both credit balances, and appears in the scrollable transaction ledger. Cargo
@@ -74,6 +74,29 @@ Hearthreach starts with 240 units, Lantern Deep 400, Cinder Veil 600 and Copper
 Wake 1,000. These are separate from existing NPC station deposits. All starter
 sectors have sunlight. Plans that have not been placed are not saved.
 
+Each NPC faction maintains a historical archive station in its starter sector.
+Select its sector, choose **Open sector**, tap the archive, dock and choose
+**Read historical records**. The starter collection has five entries per
+faction, with books, tablets, tapes, crystals, discs and light drives among the
+catalogued formats. Archive subjects indicate potential research relevance;
+research projects and research bonuses are not implemented yet. A visit is
+saved, and the records remain readable on site even when upkeep is short.
+
+Faction sponsors transfer existing funds into archive operating budgets.
+Archives buy physical energy and alloy, pay staff from their budgets, consume
+energy for upkeep and report shortages. Their media workshop uses alloy and
+energy to make Blank Media, and their scriptorium uses blank media and energy
+to produce Recorded Data copies from the retained historical collection.
+Sources are never consumed when copied. Traders and the player can supply
+archives and buy recorded copies when stock is available.
+
+Players can build their own **Media Workshop** and **Archive Scriptorium**
+using the station planner. A player scriptorium needs at least one Recorded
+Data unit in its station storage as a reusable source, plus blank media and
+energy for each copy. The current two wares aggregate formats and source
+civilizations; they do not yet represent individual books, provenance or a
+player-managed catalogue. Ongoing station imports are still manual.
+
 One faction-owned freighter now transports supplies between stations. It is
 separate from the player's property: its home station transfers real working
 capital, and it buys stock, travels, docks and sells to factories with input
@@ -114,11 +137,13 @@ history. The NPC receives capital from its home station only after time resumes.
 Older saves also gain the NPC builder and sector resources, without a fee or a
 new build site. Existing construction saves gain the inactive supply role;
 in-progress construction, cargo, builder travel and supply trips are saved.
+Older saves gain the archive stations and data recipes with empty new stocks;
+no existing credits, cargo or production are reset.
 
 This is an early foundation: there is one NPC trader and one NPC builder;
 automatic station imports, build cancellation/refunds and reordering, dynamic
-prices, multiple save slots, device testing and wider management systems remain
-to be implemented.
+prices, source-specific collections, research projects, multiple save slots,
+device testing and wider management systems remain to be implemented.
 
 The scenario data is in `data/starter_galaxy.json` (schema version 1), including
 data-driven origin sectors and standings; sector links are undirected pairs of
@@ -139,6 +164,8 @@ Construction tests cover paid builder travel, physical deliveries, resource
 sharing, paused and resumed builds, completed production, migration and saving
 mid-construction. Supply tests cover real purchases, limited cargo, waiting and
 resuming, role changes, competing ships and saving during supply trips.
+Archive tests cover funding, maintenance, visits, media manufacture, retained
+copy sources, player-built data production, migration and save/load.
 The versioned local save wraps an object-free serialized world in a
 checksum-protected envelope. Tests use a unique temporary save directory.
 

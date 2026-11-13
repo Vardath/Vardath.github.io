@@ -53,7 +53,9 @@ func _items() -> Array[Dictionary]:
 		if station.sector != selected_id:
 			continue
 		var status := "No production"
-		if not station.get("production", []).is_empty():
+		if station.has("archive"):
+			status = "Archive · " + str(station.archive.status)
+		elif not station.get("production", []).is_empty():
 			status = str(station.production[0].status)
 		items.append(_item(1, counts[1], column_width, margin, gap, "station", str(station.id), str(station.name), status))
 		counts[1] += 1

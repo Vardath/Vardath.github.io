@@ -7,11 +7,13 @@ const TICKS_PER_CROSSING := 5
 const NPCTradeScript = preload("res://scripts/npc_trade.gd")
 const ConstructionScript = preload("res://scripts/construction.gd")
 const BuildSupplyScript = preload("res://scripts/build_supply.gd")
+const ArchivesScript = preload("res://scripts/archives.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
 var construction = ConstructionScript.new()
 var build_supply = BuildSupplyScript.new()
+var archives = ArchivesScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -48,6 +50,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if build_supply.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if archives.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -70,6 +74,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = build_supply.prepare(restored)
+	if result != OK:
+		return result
+	result = archives.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -188,6 +195,7 @@ func advance_ticks(count: int) -> void:
 			if ship.has("build_supply"):
 				build_supply.tick(self, ship)
 		construction.tick(self)
+		archives.tick(self)
 
 
 func snapshot() -> Dictionary:
@@ -260,10 +268,18 @@ func _station_deposits(station: Dictionary) -> Dictionary:
 
 
 func _production_block_reason(station: Dictionary, recipe: Dictionary) -> String:
+	if bool(recipe.get("catalog_source", false)) and station.has("archive") and station.archive.status != "Operational":
+		return "Archive needs upkeep"
 	for ware_id in recipe.inputs:
 		if int(station.stock.get(ware_id, 0)) < int(recipe.inputs[ware_id]):
 			var ware := _find_ware(str(ware_id))
 			return "Needs " + str(ware.get("name", ware_id))
+	for ware_id in recipe.get("catalysts", {}):
+		if bool(recipe.get("catalog_source", false)) and station.has("archive") and ware_id == "recorded_data":
+			continue
+		if int(station.stock.get(ware_id, 0)) < int(recipe.catalysts[ware_id]):
+			var ware := _find_ware(str(ware_id))
+			return "Needs " + str(ware.get("name", ware_id)) + " source"
 	var source := str(recipe.get("source", ""))
 	if not source.is_empty() and source not in station.natural_sources:
 		return "Needs " + source
@@ -320,7 +336,7 @@ func production_report(station_id: String) -> Array:
 		if recipe.is_empty():
 			continue
 		var reason := _production_block_reason(station, recipe)
-		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
+		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "catalysts":recipe.get("catalysts", {}).duplicate(true), "catalog_source":bool(recipe.get("catalog_source", false)), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
 	return reports
 
 

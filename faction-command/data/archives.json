@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "archives": [
+    {
+      "id": "auroran_archive",
+      "name": "Auroran Hall of Memory",
+      "owner": "auroran",
+      "sector": "hearthreach",
+      "sponsor": "hearth_exchange",
+      "civilization": "Selenari and the Auroran Compact",
+      "homeworld": "Kaelith",
+      "world_type": "Enchanted forests and floating stone",
+      "records": [
+        {
+          "title": "The Living Canopy",
+          "text": "On Kaelith, forests grow across cliffs and islands of floating stone. Selenari stories describe paths that open to a remembered song, springs that answer a promise, and ancient trees whose roots shelter whole communities. Visitors disagree about what is magic, what is craft and what remains unknown.",
+          "medium": "Illuminated book"
+        },
+        {
+          "title": "The Courts and the Commons",
+          "text": "The first surviving accounts tell of forest courts, river settlements and wandering keepers who carried news between them. Their alliances were not always peaceful. After a long struggle over the water routes, several communities began meeting beneath a great root bridge to settle disputes and share access to the springs.",
+          "medium": "Carved root tablet"
+        },
+        {
+          "title": "Beyond the Canopy",
+          "text": "Selenari navigators eventually followed lights above the highest floating islands and learned to cross between worlds. The Auroran Compact grew from agreements between their settlements and other peoples they met. It remains a compact of members rather than a single family or species.",
+          "medium": "Star chart disc"
+        },
+        {
+          "title": "A Question Left Open",
+          "text": "The oldest song tablets contain a verse about a path that leads beyond the known sky. Some archivists consider it a map; others read it as a lesson about welcoming strangers. Both interpretations are preserved here, together with the voices that challenge them.",
+          "medium": "Song crystal"
+        },
+        {
+          "title": "Letters from Meridian",
+          "medium": "Hand-bound correspondence",
+          "text": "During the Meridian storm, an Auroran guide wrote that her ship opened a safe route for a damaged Ravel convoy and helped direct it to a Frontier dock. Her letters praise the cooperation that followed, but omit the names of the passengers. Other accounts in this archive question whether the route was opened before or after the convoy sent its distress call."
+        }
+      ],
+      "research_subjects": [
+        "Living worlds",
+        "Ancient traditions",
+        "Diplomacy"
+      ]
+    },
+    {
+      "id": "vesper_archive",
+      "name": "Vesper House of Voices",
+      "owner": "vesper",
+      "sector": "vellum_gate",
+      "sponsor": "vellum_foundry",
+      "civilization": "Tavren and the Vesper Guild",
+      "homeworld": "Nareth",
+      "world_type": "Early coastal settlements and tidal plains",
+      "records": [
+        {
+          "title": "Before the Harbours",
+          "text": "The earliest Tavren communities on Nareth lived along tidal plains, making tools from stone, shell and bone. Their technology was simple, but their lives were not: generations of navigators memorised the tides, mapped the stars in stories and taught one another where the sea could be crossed safely.",
+          "medium": "Shell and stone tools"
+        },
+        {
+          "title": "The Long Exchange",
+          "text": "Coastal communities traded food, pigments and carved records, and they also fought over sheltered water. The first councils began as seasonal gatherings where rivals could negotiate safe passage. Their agreements changed over centuries as new towns and new voices joined them.",
+          "medium": "Carved trade ledger"
+        },
+        {
+          "title": "From Canoes to Starships",
+          "text": "Later Tavren engineers built ocean vessels, observatories and, eventually, spacecraft. The Vesper Guild traces its name to night crossings between the old harbours. Today its merchants and surveyors come from many worlds, and membership depends on their agreements rather than ancestry.",
+          "medium": "Voyage light drive"
+        },
+        {
+          "title": "The Unfinished Tide Song",
+          "text": "Several communities remember different endings to the same ancient voyage. The House of Voices records each version beside the others. Its keepers argue that a shared past becomes richer when disagreements are kept in the record.",
+          "medium": "Oral history tape"
+        },
+        {
+          "title": "The Relief Ledger",
+          "medium": "Merchant ledger disc",
+          "text": "A Vesper quartermaster recorded food, sealant and navigation charts supplied during the Meridian storm. The ledger lists some cargo as a gift and other cargo as a debt, with later entries disputing who had authority to promise repayment. Its figures do not agree with every account of the rescue."
+        }
+      ],
+      "research_subjects": [
+        "Early cultures",
+        "Navigation",
+        "Trade"
+      ]
+    },
+    {
+      "id": "ravel_archive",
+      "name": "Ravel Deep Record",
+      "owner": "ravel",
+      "sector": "cinder_veil",
+      "sponsor": "cinder_depot",
+      "civilization": "Kethari and the Ravel Concord",
+      "homeworld": "Varkesh",
+      "world_type": "High-pressure volcanic world",
+      "records": [
+        {
+          "title": "A World of Pressure",
+          "text": "Varkesh has dense, corrosive air, heavy gravity and volcanic basins. It is dangerous to many visiting species without protective equipment, but it is home to the Kethari. Their settlements grew around sheltered thermal channels where water and minerals could be gathered.",
+          "medium": "Heatproof stone tablet"
+        },
+        {
+          "title": "The Shelter Compacts",
+          "text": "Early Kethari communities learned to reinforce caverns and share maintenance of the barriers that kept their homes safe. Records also describe bitter arguments over who controlled those shelters. The shelter compacts established shared obligations and the right to request aid during a breach.",
+          "medium": "Barrier log disc"
+        },
+        {
+          "title": "Forges Among the Stars",
+          "text": "Pressure engineering and careful recycling became foundations of Kethari industry. Spaceflight brought new resources and new political conflicts. The Ravel Concord formed through negotiated agreements among industrial settlements and neighbouring peoples, not through one uninterrupted story of progress.",
+          "medium": "Engineering crystal"
+        },
+        {
+          "title": "The Sealed Chamber",
+          "text": "A sealed chamber beneath an old basin bears marks from a people whose identity remains disputed. The Concord funds several competing investigations and keeps their findings available here. No single explanation has been accepted as final.",
+          "medium": "Sealed chamber rubbing"
+        },
+        {
+          "title": "Testimony of the Breach",
+          "medium": "Heatproof testimony foil",
+          "text": "A Ravel engineer remembered the Meridian storm from inside a failing convoy ship. Her account describes the crew holding a pressure barrier while strangers negotiated where to dock. She credited help from several factions but argued that later histories treated the convoy members as helpless passengers rather than people who kept one another alive."
+        }
+      ],
+      "research_subjects": [
+        "Extreme environments",
+        "Materials engineering",
+        "Industry"
+      ]
+    },
+    {
+      "id": "frontier_archive",
+      "name": "Frontier Continuity Archive",
+      "owner": "frontier",
+      "sector": "verdant_trace",
+      "sponsor": "verdant_hub",
+      "civilization": "Ilyrans and the Free Frontier",
+      "homeworld": "Ilyra",
+      "world_type": "Futuristic orbital cities and habitat rings",
+      "records": [
+        {
+          "title": "The Ring Cities",
+          "text": "Around Ilyra, generations of Ilyrans built inhabited rings, gardens and research cities. Biological people and machine intelligences shared many of those habitats. Their advanced systems could sustain vast populations, but decisions about ownership, autonomy and memory remained matters of disagreement.",
+          "medium": "Habitat light drive"
+        },
+        {
+          "title": "The Departure",
+          "text": "A series of political and ecological crises led some habitat communities to leave. Their reasons differed: some sought independence, others wanted room to rebuild, and many simply followed family. Their ships carried seed libraries, engineering records and accounts of mistakes they did not want forgotten.",
+          "medium": "Personal memory crystal"
+        },
+        {
+          "title": "The Free Frontier",
+          "text": "Ilyran travellers joined settlements and ships from many other civilizations along the outer routes. The Free Frontier grew from local aid agreements among them. Its members include people who never lived near Ilyra and whose histories are preserved in their own right.",
+          "medium": "Coalition records disc"
+        },
+        {
+          "title": "Copies and Continuity",
+          "text": "Frontier archivists debate what it means for a person or a culture to continue when memories can be copied and habitats can be rebuilt. This station keeps technical records beside personal testimony, including accounts that reject the idea that every copy is the same person.",
+          "medium": "Testimony tape"
+        },
+        {
+          "title": "Open Dock Recording",
+          "medium": "Dockside light drive",
+          "text": "A Frontier dockkeeper recorded the arrival of the damaged convoy after the Meridian storm. The recording includes unnamed travellers whose families do not appear in the later public agreement. Frontier archivists keep the full account beside the official histories so that those missing voices can still be sought."
+        }
+      ],
+      "research_subjects": [
+        "Artificial habitats",
+        "Machine intelligence",
+        "Cultural continuity"
+      ]
+    }
+  ],
+  "wares": [
+    {
+      "id": "blank_media",
+      "name": "Blank Media",
+      "volume": 1
+    },
+    {
+      "id": "recorded_data",
+      "name": "Recorded Data",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "media_fabrication",
+      "name": "Media Workshop",
+      "cycle_ticks": 10,
+      "inputs": {
+        "alloy_plates": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "blank_media": 4
+      }
+    },
+    {
+      "id": "data_reproduction",
+      "name": "Archive Scriptorium",
+      "cycle_ticks": 12,
+      "inputs": {
+        "blank_media": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "recorded_data": 1
+      },
+      "catalysts": {
+        "recorded_data": 1
+      },
+      "catalog_source": true
+    }
+  ],
+  "blueprints": {
+    "media_fabrication": {
+      "fee": 600,
+      "ticks": 16,
+      "materials": {
+        "alloy_plates": 8
+      },
+      "storage": 80
+    },
+    "data_reproduction": {
+      "fee": 800,
+      "ticks": 20,
+      "materials": {
+        "alloy_plates": 10
+      },
+      "storage": 80
+    }
+  }
+}

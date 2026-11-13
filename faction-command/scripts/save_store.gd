@@ -4,6 +4,7 @@ extends RefCounted
 
 const FORMAT_VERSION := 1
 const MAX_SAVE_BYTES := 64 * 1024 * 1024
+const ArchivesScript = preload("res://scripts/archives.gd")
 
 
 func has_any_save(path: String) -> bool:
@@ -97,6 +98,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("build_supply_version") and _is_nonnegative_integer(decoded.build_supply_version) and decoded.build_supply_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("archive_version") and _is_nonnegative_integer(decoded.archive_version) and decoded.archive_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -166,27 +169,61 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	# Saves made before the first economy pass are migrated when opened.
 	if not state.has("economy_version"):
-		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
+		return not state.has("production_version") and not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
 	if not _valid_economy(state, factions, sectors):
 		return false
 	# Saves from the manual-trading pass are migrated when opened.
 	if not state.has("production_version"):
-		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
+		return not state.has("logistics_version") and not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
 	if not _valid_production(state):
 		return false
 	if not state.has("logistics_version"):
-		return not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version")
+		return not state.has("player_roles_version") and not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
 	if not _valid_logistics(state):
 		return false
 	if not state.has("player_roles_version"):
-		return not state.has("construction_version") and not state.has("build_supply_version")
+		return not state.has("construction_version") and not state.has("build_supply_version") and not state.has("archive_version")
 	if not _valid_player_roles(state):
 		return false
 	if not state.has("construction_version"):
-		return not state.has("build_supply_version")
+		return not state.has("build_supply_version") and not state.has("archive_version")
 	if not _valid_construction(state, factions, sectors):
 		return false
-	return not state.has("build_supply_version") or _valid_build_supply(state)
+	if not state.has("build_supply_version"):
+		return not state.has("archive_version")
+	if not _valid_build_supply(state):
+		return false
+	return not state.has("archive_version") or _valid_archives(state)
+
+
+func _valid_archives(state: Dictionary) -> bool:
+	if state.archive_version != 1 or not state.get("visited_archives") is Array:
+		return false
+	var archive_data = ArchivesScript.new()
+	if archive_data._load_definitions() != OK:
+		return false
+	var visited: Dictionary = {}
+	for id in state.visited_archives:
+		if not id is String or not archive_data.definitions.has(id) or visited.has(id):
+			return false
+		visited[id] = true
+	for station in state.stations:
+		if archive_data.definitions.has(station.id) and not station.has("archive"):
+			return false
+		if not station.has("archive"):
+			continue
+		var definition: Dictionary = archive_data.definition(str(station.id))
+		var archive: Variant = station.archive
+		if definition.is_empty() or not archive is Dictionary or station.sector != definition.sector:
+			return false
+		if not archive.get("sponsor") is String or str(archive.sponsor).is_empty() or archive.get("status") not in ["Operational", "Needs energy", "Needs funding"]:
+			return false
+		for key in ["progress", "cycles", "staff_credits"]:
+			if not _is_nonnegative_integer(archive.get(key)):
+				return false
+		if int(archive.progress) >= archive_data.INTERVAL:
+			return false
+	return true
 
 
 func _valid_build_supply(state: Dictionary) -> bool:
@@ -293,6 +330,14 @@ func _valid_production(state: Dictionary) -> bool:
 			for ware_id in recipe[key]:
 				if not wares.has(ware_id) or not _is_nonnegative_integer(recipe[key][ware_id]) or int(recipe[key][ware_id]) < 1 or int(recipe[key][ware_id]) > 1000000:
 					return false
+		var catalysts: Variant = recipe.get("catalysts", {})
+		if not catalysts is Dictionary or not recipe.get("catalog_source", false) is bool:
+			return false
+		for ware_id in catalysts:
+			if not wares.has(ware_id) or recipe.inputs.has(ware_id) or not _is_nonnegative_integer(catalysts[ware_id]) or int(catalysts[ware_id]) < 1 or int(catalysts[ware_id]) > 1000000:
+				return false
+		if recipe.get("catalog_source", false) and not catalysts.has("recorded_data"):
+			return false
 		var source: Variant = recipe.get("source", "")
 		if not source is String or (source != "" and source != "sunlight"):
 			return false

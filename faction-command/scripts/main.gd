@@ -58,6 +58,9 @@ var trade_ledger: Label
 var trade_feedback: Label
 var trade_buy_button: Button
 var trade_sell_button: Button
+var trade_archive_button: Button
+var trade_production_heading: Label
+var archive_screen: Control
 var plan_screen: Control
 var plan_mode: OptionButton
 var plan_module_counts: Dictionary = {}
@@ -1144,11 +1147,13 @@ func _open_trade() -> void:
 	trade_station_picker.add_theme_font_size_override("font_size", 15)
 	var current_sector: String = world.state.ships[0].sector
 	var selected_index := 0
+	var selected_current := false
 	for station in world.state.stations:
 		trade_station_picker.add_item("%s  ·  %s" % [station.name, _sector_name(str(station.sector))])
 		trade_station_picker.set_item_metadata(trade_station_picker.item_count - 1, station.id)
-		if station.sector == current_sector:
+		if station.sector == current_sector and not selected_current:
 			selected_index = trade_station_picker.item_count - 1
+			selected_current = true
 	trade_station_picker.select(selected_index)
 	trade_station_picker.item_selected.connect(_on_trade_selection)
 	controls.add_child(trade_station_picker)
@@ -1156,6 +1161,10 @@ func _open_trade() -> void:
 	dock_button.name = "DockButton"
 	dock_button.pressed.connect(_dock_at_station)
 	controls.add_child(dock_button)
+	trade_archive_button = _button("Read historical records")
+	trade_archive_button.name = "ReadArchiveButton"
+	trade_archive_button.pressed.connect(_open_archive)
+	controls.add_child(trade_archive_button)
 	controls.add_child(_label("WARE", 12, ACCENT))
 	trade_ware_picker = OptionButton.new()
 	trade_ware_picker.name = "TradeWarePicker"
@@ -1200,7 +1209,8 @@ func _open_trade() -> void:
 	trade_info = _wrapped_label("", 15, TEXT)
 	trade_info.name = "TradeInfo"
 	details.add_child(trade_info)
-	details.add_child(_label("PRODUCTION", 12, ACCENT))
+	trade_production_heading = _label("PRODUCTION", 12, ACCENT)
+	details.add_child(trade_production_heading)
 	trade_production = _wrapped_label("", 13, MUTED)
 	trade_production.name = "TradeProduction"
 	details.add_child(trade_production)
@@ -1235,6 +1245,67 @@ func _on_trade_selection(_index: int) -> void:
 	_update_trade_screen()
 
 
+func _open_archive() -> void:
+	if is_instance_valid(archive_screen):
+		return
+	var station: Dictionary = world._find_station(_trade_station_id())
+	var result: Dictionary = world.archives.read(world, str(world.state.ships[0].id), str(station.id))
+	if not result.ok:
+		trade_feedback.text = str(result.message)
+		return
+	if result.first_visit and not _save_current_game():
+		trade_feedback.text = "The visit could not be saved."
+	var entry: Dictionary = result.entry
+	archive_screen = Control.new()
+	archive_screen.name = "HistoricalArchiveScreen"
+	archive_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(archive_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.95)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	archive_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	archive_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(900, 570)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 10)
+	panel.add_child(column)
+	column.add_child(_label(str(entry.name).to_upper(), 22, TEXT))
+	column.add_child(_wrapped_label("%s · %s · Maintained by %s" % [entry.civilization, entry.homeworld, _faction_name(str(station.owner))], 14, MUTED))
+	var scroll := ScrollContainer.new()
+	scroll.name = "ArchiveRecordsScroll"
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	var records := VBoxContainer.new()
+	records.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	records.add_theme_constant_override("separation", 12)
+	scroll.add_child(records)
+	var overview := _wrapped_label("HOMEWORLD\n%s\n\nRESEARCH SUBJECTS\n%s\nResearch links are not available yet." % [entry.world_type, ", ".join(entry.research_subjects)], 15, TEXT)
+	overview.name = "ArchiveOverview"
+	records.add_child(overview)
+	for index in entry.records.size():
+		var record: Dictionary = entry.records[index]
+		var title := _label(str(record.title).to_upper(), 15, ACCENT)
+		records.add_child(title)
+		var description := _wrapped_label("%s\n%s" % [record.medium, record.text], 15, TEXT)
+		description.name = "ArchiveRecord_%d" % index
+		records.add_child(description)
+	var close_button := _button("Close archive")
+	close_button.name = "CloseArchiveButton"
+	close_button.pressed.connect(_close_archive)
+	column.add_child(close_button)
+
+
+func _close_archive() -> void:
+	if is_instance_valid(archive_screen):
+		archive_screen.queue_free()
+	archive_screen = null
+
+
 func _update_trade_screen() -> void:
 	if not is_instance_valid(trade_screen):
 		return
@@ -1242,6 +1313,9 @@ func _update_trade_screen() -> void:
 	var station: Dictionary = world._find_station(_trade_station_id())
 	var ware: Dictionary = world._find_ware(_trade_ware_id())
 	var own_station: bool = station.owner == world.state.player_faction_id
+	trade_archive_button.visible = station.has("archive")
+	trade_archive_button.disabled = ship.docked_at != station.id
+	trade_archive_button.text = "Read historical records" if ship.docked_at == station.id else "Dock to read records"
 	trade_buy_button.text = "Take from station" if own_station else "Buy"
 	trade_sell_button.text = "Transfer to station" if own_station else "Sell"
 	var buy_price := "%d CR" % int(station.sell_prices[ware.id]) if station.sell_prices.has(ware.id) else "Not sold"
@@ -1266,8 +1340,17 @@ func _update_trade_screen() -> void:
 			var output_ware: Dictionary = world._find_ware(str(ware_id))
 			outputs.append("%s ×%d" % [output_ware.get("name", ware_id), int(report.outputs[ware_id])])
 		production_lines.append("%s: %s (%d/%d)\n%s → %s" % [report.name, report.status, int(report.progress), int(report.duration), " + ".join(inputs), " + ".join(outputs)])
+		for ware_id in report.catalysts:
+			var catalyst: Dictionary = world._find_ware(str(ware_id))
+			if station.has("archive") and report.catalog_source and ware_id == "recorded_data":
+				production_lines.append("Reusable source: this archive's historical collection")
+			else:
+				production_lines.append("Reusable source: %s ×%d" % [catalyst.get("name", ware_id), int(report.catalysts[ware_id])])
 		if not report.deposit.is_empty():
 			production_lines.append("Deposit remaining: %d" % int(world._station_deposits(station).get(report.deposit.resource, 0)))
+	trade_production_heading.text = "ARCHIVE SERVICE & PRODUCTION" if station.has("archive") else "PRODUCTION"
+	if station.has("archive"):
+		production_lines.push_front("Archive: %s · Staff paid: %d CR\nRecords are readable on site even when service needs upkeep." % [station.archive.status, int(station.archive.staff_credits)])
 	trade_production.text = "No production modules." if production_lines.is_empty() else "\n".join(production_lines)
 	var lines: Array[String] = []
 	var ledger: Array = world.state.ledger
@@ -1318,5 +1401,6 @@ func _perform_trade(buy: bool) -> void:
 
 
 func _close_trade() -> void:
+	_close_archive()
 	trade_screen.queue_free()
 	trade_screen = null

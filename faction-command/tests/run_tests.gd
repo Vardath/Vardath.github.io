@@ -24,6 +24,8 @@ func _total_credits(state: Dictionary) -> int:
 	var total := int(state.starting_credits)
 	for station in state.stations:
 		total += int(station.credits)
+		if station.has("archive"):
+			total += int(station.archive.staff_credits)
 	for ship in state.ships:
 		if ship.owner != state.player_faction_id:
 			total += int(ship.get("credits", 0))
@@ -43,7 +45,28 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	return copy
 
 
+func _strip_archives(state: Dictionary) -> void:
+	state.erase("archive_version")
+	state.erase("visited_archives")
+	for index in range(state.stations.size() - 1, -1, -1):
+		if state.stations[index].has("archive"):
+			state.stations.remove_at(index)
+		else:
+			state.stations[index].stock.erase("blank_media")
+			state.stations[index].stock.erase("recorded_data")
+	for index in range(state.wares.size() - 1, -1, -1):
+		if state.wares[index].id in ["blank_media", "recorded_data"]:
+			state.wares.remove_at(index)
+	for index in range(state.recipes.size() - 1, -1, -1):
+		if state.recipes[index].id in ["media_fabrication", "data_reproduction"]:
+			state.recipes.remove_at(index)
+	if state.has("construction_blueprints"):
+		state.construction_blueprints.erase("media_fabrication")
+		state.construction_blueprints.erase("data_reproduction")
+
+
 func _strip_construction(state: Dictionary) -> void:
+	_strip_archives(state)
 	for key in ["construction_version", "construction_blueprints", "construction_resources", "build_sites", "next_build_site_id", "build_supply_version"]:
 		state.erase(key)
 	for index in range(state.ships.size() - 1, -1, -1):
@@ -277,7 +300,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 4 and economy.state.wares.size() == 3, "starter economy has four stations and three wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 5, "starter economy includes four markets, four archives and five wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -372,7 +395,7 @@ func _run() -> void:
 	_expect(bool(legacy_load.get("ok", false)) and upgraded.restore_snapshot(legacy_load.state) == OK, "pre-economy save is upgraded")
 	_expect(upgraded.state.player_origin_faction_id == old_save.player_origin_faction_id and upgraded.state.relations == old_save.relations and upgraded.state.tick == old_save.tick, "upgrade preserves origin, relations and time")
 	_expect(upgraded.state.ships[0].orders == old_save.ships[0].orders and upgraded.state.ships[0].travel == old_save.ships[0].travel, "upgrade preserves a journey in progress")
-	_expect(upgraded.state.ships[0].cargo.is_empty() and upgraded.state.stations.size() == 4, "upgrade adds empty cargo and starter markets")
+	_expect(upgraded.state.ships[0].cargo.is_empty() and upgraded.state.stations.size() == 8, "upgrade adds empty cargo, starter markets and archives")
 
 	var production_world = WorldScript.new()
 	_expect(production_world.load_starter() == OK, "production scenario loads")
@@ -506,7 +529,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 3, "production upgrade adds the new finite deposit and recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 5, "production upgrade adds the finite deposit and current recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -587,6 +610,11 @@ func _run() -> void:
 			if int(station.stock[ware_id]) < 0:
 				soak_valid = false
 	_expect(soak_valid and _total_credits(logistics_soak.state) == logistics_soak_credits, "2,000-tick NPC run preserves credit, stock and capacity invariants")
+	var served_archives := 0
+	for station in logistics_soak.state.stations:
+		if station.has("archive") and int(station.archive.cycles) > 0 and int(station.production[1].cycles) > 0:
+			served_archives += 1
+	_expect(served_archives == 4, "all four faction archives receive supplies, perform upkeep and make copies during the autonomous economy run")
 	_expect(save_store.save_game(test_root + "/npc-soak.json", logistics_soak.snapshot()) == OK, "long-running NPC world remains saveable")
 
 	var trip = WorldScript.new()
@@ -668,7 +696,10 @@ func _run() -> void:
 	_expect(_without_player_role(logistics_upgrade.state.ships[0]) == pre_logistics.ships[0] and logistics_upgrade.state.ledger == pre_logistics.ledger and logistics_upgrade.state.starting_credits == pre_logistics.starting_credits, "logistics upgrade preserves the player's ship, credits and ledger")
 	for old_station in pre_logistics.stations:
 		var new_station: Dictionary = logistics_upgrade._find_station(str(old_station.id))
-		_expect(new_station.credits == old_station.credits and new_station.stock == old_station.stock and new_station.production == old_station.production, "logistics upgrade preserves station finances and production: " + str(old_station.id))
+		var migrated_stock: Dictionary = new_station.stock.duplicate(true)
+		migrated_stock.erase("blank_media")
+		migrated_stock.erase("recorded_data")
+		_expect(new_station.credits == old_station.credits and migrated_stock == old_station.stock and new_station.production == old_station.production, "logistics upgrade preserves station finances and production: " + str(old_station.id))
 	_expect(int(logistics_upgrade.state.ships[1].credits) == 0, "logistics upgrade does not create NPC funds")
 	var altered_home: Dictionary = pre_logistics.duplicate(true)
 	for station in altered_home.stations:
@@ -783,8 +814,7 @@ func _run() -> void:
 	waiting_player.restore_snapshot(saved_trip)
 	var waiting_ship: Dictionary = waiting_player.state.ships[0]
 	for station in waiting_player.state.stations:
-		if station.buy_prices.has("energy_cells"):
-			station.credits = 0
+		station.credits = 0 # Sponsors cannot recapitalise an insolvent archive during this scenario.
 	waiting_player.advance_ticks(80)
 	_expect(int(waiting_ship.player_trader.managed_quantity) > 0 and int(waiting_ship.cargo.energy_cells) >= int(waiting_ship.player_trader.managed_quantity) + 3, "insolvent buyers make the player trader wait with its cargo")
 	_expect(save_store.save_game(test_root + "/waiting-player.json", waiting_player.snapshot()) == OK, "waiting cargo and an unavailable buyer remain saveable")
@@ -1130,6 +1160,7 @@ func _run() -> void:
 	_expect(int(owned_supply.construction.find_site(owned_supply, owned_site_id).build_storage.get("alloy_plates", 0)) == 6 or owned_supply.construction.find_site(owned_supply, owned_site_id).tasks[0].started, "owned station stock is transferred to the build site before use")
 
 	var old_supply: Dictionary = saved_trip.duplicate(true)
+	_strip_archives(old_supply)
 	old_supply.erase("build_supply_version")
 	for old_ship in old_supply.ships:
 		old_ship.erase("build_supply")
@@ -1153,6 +1184,111 @@ func _run() -> void:
 	future_supply_file.store_string(JSON.stringify({"format_version":1, "payload":future_supply_payload, "checksum":future_supply_payload.sha256_text()}))
 	future_supply_file.close()
 	_expect(save_store.load_game(future_supply_path).get("reason") == "unsupported", "future supply data cannot silently fall back to an older save")
+
+	# Historical stations, genuine upkeep and a complete physical copying chain.
+	var history_world = WorldScript.new()
+	_expect(history_world.load_starter() == OK, "the archive scenario loads")
+	_disable_npc_trading(history_world)
+	var archive_count := 0
+	var archive_owners: Dictionary = {}
+	var archive_media: Dictionary = {}
+	for station in history_world.state.stations:
+		if not station.has("archive"):
+			continue
+		archive_count += 1
+		archive_owners[station.owner] = true
+		var catalog: Dictionary = history_world.archives.definition(str(station.id))
+		_expect(station.owner != "player" and catalog.owner == station.owner and catalog.sector == station.sector, "archive is a real station belonging to its civilization: " + str(station.id))
+		_expect(catalog.records.size() == 5 and not catalog.research_subjects.is_empty(), "archive has a collection and research subjects: " + str(station.id))
+		for record in catalog.records:
+			archive_media[str(record.medium)] = true
+	_expect(archive_count == 4 and archive_owners.size() == 4 and archive_media.size() >= 12, "the four faction archives contain varied physical record formats")
+	var archive_station: Dictionary = history_world._find_station("auroran_archive")
+	var original_catalog: Dictionary = history_world.archives.definition("auroran_archive").duplicate(true)
+	var before_unread: Dictionary = history_world.snapshot()
+	_expect(not history_world.archives.read(history_world, "ship_001", "auroran_archive").ok and history_world.snapshot() == before_unread, "reading records requires a visit and cannot unlock them remotely")
+	_expect(history_world.dock_ship("ship_001", "auroran_archive").ok, "the player's ship can dock at the faction archive")
+	var read_result: Dictionary = history_world.archives.read(history_world, "ship_001", "auroran_archive")
+	_expect(read_result.ok and read_result.first_visit and read_result.entry.homeworld == "Kaelith" and archive_station.archive.status == "Needs energy", "a docked visitor can read original records even when the archive needs upkeep")
+	_expect(not history_world.archives.read(history_world, "ship_001", "auroran_archive").first_visit and history_world.state.visited_archives.size() == 1, "revisiting cannot duplicate the saved discovery")
+	var history_save := test_root + "/history-visited.json"
+	_expect(save_store.save_game(history_save, history_world.snapshot()) == OK, "an archive visit saves")
+	var history_read: Dictionary = save_store.load_game(history_save)
+	var history_restore = WorldScript.new()
+	_expect(bool(history_read.get("ok", false)) and history_restore.restore_snapshot(history_read.state) == OK and history_restore.state.visited_archives == ["auroran_archive"], "archive visits survive loading")
+	var history_credits := _total_credits(history_world.state)
+	var sponsor_balance: int = int(history_world._find_station("hearth_exchange").credits)
+	history_world.advance_ticks(30)
+	_expect(int(archive_station.credits) == 60 and int(history_world._find_station("hearth_exchange").credits) == sponsor_balance - 60 and _total_credits(history_world.state) == history_credits, "the faction funds its archive by transferring real credits from its own station")
+	_expect(int(archive_station.stock.energy_cells) == 0 and archive_station.archive.status == "Needs energy" and int(archive_station.archive.cycles) == 0, "an unfuelled archive reports its shortage without inventing energy or upkeep")
+	_expect(history_world.dock_ship("ship_001", "hearth_exchange").ok and history_world.trade("ship_001", "hearth_exchange", "energy_cells", 6, true).ok, "the player buys real energy for the archive")
+	_expect(history_world.dock_ship("ship_001", "auroran_archive").ok and history_world.trade("ship_001", "auroran_archive", "energy_cells", 4, false).ok, "the archive buys physical energy using its faction-funded budget")
+	_expect(history_world.queue_fly_to("ship_001", "vellum_gate"), "the player travels to purchase archival manufacturing supplies")
+	history_world.advance_ticks(10)
+	_expect(history_world.dock_ship("ship_001", "vellum_foundry").ok and history_world.trade("ship_001", "vellum_foundry", "alloy_plates", 20, true).ok, "the player purchases real alloy from a market")
+	_expect(history_world.queue_fly_to("ship_001", "hearthreach"), "the player carries the alloy back to the archive sector")
+	history_world.advance_ticks(10)
+	_expect(history_world.dock_ship("ship_001", "auroran_archive").ok, "the player docks at the archive again")
+	history_world.advance_ticks(10)
+	_expect(int(archive_station.archive.staff_credits) == 2 and int(archive_station.archive.cycles) == 1 and int(archive_station.stock.energy_cells) == 3, "upkeep consumes physical energy and moves wages to the archive staff")
+	_expect(history_world.trade("ship_001", "auroran_archive", "alloy_plates", 1, false).ok, "the archive buys an alloy input from the visiting ship")
+	history_world.advance_ticks(5)
+	var copying_path := test_root + "/archive-copying.json"
+	_expect(save_store.save_game(copying_path, history_world.snapshot()) == OK, "archive upkeep and media production save mid-cycle")
+	var copying_read: Dictionary = save_store.load_game(copying_path)
+	var copying_reload = WorldScript.new()
+	_expect(bool(copying_read.get("ok", false)) and copying_reload.restore_snapshot(copying_read.state) == OK, "archive operations restore mid-cycle")
+	history_world.advance_ticks(19)
+	copying_reload.advance_ticks(19)
+	_expect(history_world.snapshot() == copying_reload.snapshot(), "archive funding, upkeep and production continue deterministically after reload")
+	_expect(int(archive_station.stock.blank_media) == 3 and int(archive_station.stock.recorded_data) == 1, "the archive turns alloy and energy into blank media and a data copy")
+	_expect(history_world.archives.definition("auroran_archive") == original_catalog and int(archive_station.production[1].cycles) == 1, "copying does not consume or alter the historical originals")
+	_expect(_total_credits(history_world.state) == history_credits, "archive funding, wages and player trade conserve credits")
+	_expect(history_world.trade("ship_001", "auroran_archive", "recorded_data", 1, true).ok, "the player can buy a produced data copy")
+	var archive_plan: Dictionary = history_world.construction.quote(history_world, "hearthreach", {"media_fabrication":1, "data_reproduction":1}, "all", [])
+	_expect(archive_plan.ok and int(archive_plan.fee) == 1400 and int(archive_plan.materials.alloy_plates) == 18 and " ".join(archive_plan.warnings).contains("Recorded Data"), "the station planner offers a player archive and warns about its reusable source")
+	var archive_plot: Dictionary = history_world.construction.place(history_world, "hearthreach", {"media_fabrication":1, "data_reproduction":1}, "all", [])
+	var player_archive_site: Dictionary = history_world.construction.find_site(history_world, str(archive_plot.site_id))
+	_expect(archive_plot.ok and history_world.dock_ship("ship_001", str(player_archive_site.station_id)).ok and history_world.construction.deliver(history_world, "ship_001", str(player_archive_site.id)).ok, "a player-owned archive is placed and receives its actual construction materials")
+	history_world.advance_ticks(70)
+	var player_archive_station: Dictionary = history_world._find_station(str(player_archive_site.station_id))
+	_expect(int(player_archive_site.completed) == 2 and player_archive_station.owner == "player" and player_archive_station.production.size() == 2, "the builder completes the player's media workshop and scriptorium")
+	_expect(history_world.transfer_player_station("ship_001", str(player_archive_station.id), "alloy_plates", 1, true).ok and history_world.transfer_player_station("ship_001", str(player_archive_station.id), "energy_cells", 2, true).ok, "the player's station receives physical inputs from the ship")
+	history_world.advance_ticks(22)
+	_expect(int(player_archive_station.stock.blank_media) == 4 and int(player_archive_station.stock.get("recorded_data", 0)) == 0 and player_archive_station.production[1].status.contains("Recorded Data source"), "a player scriptorium cannot fabricate a source when only blank media and energy are available")
+	_expect(history_world.transfer_player_station("ship_001", str(player_archive_station.id), "recorded_data", 1, true).ok, "the player delivers the purchased source copy")
+	history_world.advance_ticks(12)
+	_expect(int(player_archive_station.stock.recorded_data) == 2 and int(player_archive_station.stock.blank_media) == 3 and int(player_archive_station.stock.energy_cells) == 0, "the scriptorium retains its source and consumes media and energy to make one copy")
+	_expect(_total_credits(history_world.state) == history_credits and save_store.save_game(test_root + "/player-archive.json", history_world.snapshot()) == OK, "the complete archive and copying economy remains funded, conserved and saveable")
+	var old_archive_state: Dictionary = saved_trip.duplicate(true)
+	_strip_archives(old_archive_state)
+	var archive_old_credits := _total_credits(old_archive_state)
+	var archive_old_snapshot := old_archive_state.duplicate(true)
+	_expect(save_store.save_game(test_root + "/before-archives.json", old_archive_state) == OK, "a pre-archive save remains readable")
+	var old_archive_read: Dictionary = save_store.load_game(test_root + "/before-archives.json")
+	var archive_upgrade = WorldScript.new()
+	_expect(bool(old_archive_read.get("ok", false)) and archive_upgrade.restore_snapshot(old_archive_read.state) == OK, "an old save gains archive stations and data recipes")
+	_expect(_total_credits(archive_upgrade.state) == archive_old_credits and archive_upgrade.state.ships == archive_old_snapshot.ships and archive_upgrade.state.ledger == archive_old_snapshot.ledger, "archive migration preserves money, ships, cargo, orders and ledger")
+	_expect(int(archive_upgrade._find_station("hearth_exchange").stock.blank_media) == 0 and int(archive_upgrade._find_station("auroran_archive").credits) == 0 and archive_upgrade.state.visited_archives.is_empty(), "archive migration adds no free commodities, funding or visits")
+	var invalid_archive: Dictionary = history_world.snapshot()
+	for item in invalid_archive.stations:
+		if item.id == "auroran_archive":
+			item.archive.staff_credits = -1
+	_expect(save_store.save_game(test_root + "/invalid-archive.json", invalid_archive) != OK, "save validation rejects negative archive staff balances")
+	invalid_archive = history_world.snapshot()
+	for recipe in invalid_archive.recipes:
+		if recipe.id == "data_reproduction":
+			recipe.inputs["recorded_data"] = 1
+	_expect(save_store.save_game(test_root + "/invalid-archive.json", invalid_archive) != OK, "a reusable source cannot also be a consumed recipe input")
+	var future_archive: Dictionary = history_world.snapshot()
+	future_archive.archive_version = 2
+	var future_archive_path := test_root + "/archive-version.json"
+	_expect(save_store.save_game(future_archive_path, history_world.snapshot()) == OK and save_store.save_game(future_archive_path, history_world.snapshot()) == OK, "archive version test retains a valid backup")
+	var future_archive_payload := Marshalls.variant_to_base64(future_archive, false)
+	var future_archive_file := FileAccess.open(future_archive_path, FileAccess.WRITE)
+	future_archive_file.store_string(JSON.stringify({"format_version":1, "payload":future_archive_payload, "checksum":future_archive_payload.sha256_text()}))
+	future_archive_file.close()
+	_expect(save_store.load_game(future_archive_path).get("reason") == "unsupported", "future archive data cannot silently fall back to an older save")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -1408,7 +1544,7 @@ func _run() -> void:
 	screen.find_child("PlanAdd_alloy_smelting", true, false).pressed.emit()
 	screen.plan_mode.select(1)
 	screen.plan_mode.item_selected.emit(1)
-	_expect(screen.plan_import_list.visible and not screen.plan_import_options.has("alloy_plates"), "selective sourcing shows recipe inputs without unrelated outputs")
+	_expect(screen.plan_import_list.visible and screen.plan_import_options.has("alloy_plates") and screen.plan_import_options.has("blank_media"), "selective sourcing includes inputs for the expanded production recipes")
 	screen.plan_import_options["ore"].button_pressed = true
 	_expect(not screen.plan_result.text.contains("Ore Extractor") and screen.plan_result.text.contains("Import 12.0"), "selecting an imported ware updates the preview and required rate")
 	screen.plan_mode.select(2)
@@ -1501,6 +1637,40 @@ func _run() -> void:
 	var ui_credits_before: int = int(screen.world.state.starting_credits)
 	screen.find_child("BuyButton", true, false).pressed.emit()
 	_expect(int(screen.world.state.ships[0].cargo.energy_cells) == 1 and int(screen.world.state.starting_credits) == ui_credits_before, "owned-station UI takes produced cargo without a fabricated purchase")
+	screen.queue_free()
+	await process_frame
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-archive.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen._show_sector("hearthreach")
+	var archive_map_item := _map_item(screen.sector_map, "station", "auroran_archive")
+	_expect(not archive_map_item.is_empty() and str(archive_map_item.subtitle).contains("Archive"), "the sector map identifies the faction archive as a station")
+	screen.sector_map.station_selected.emit("auroran_archive")
+	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "auroran_archive" and screen.trade_archive_button.visible and screen.trade_archive_button.disabled, "choosing the archive shows its records control and asks the visitor to dock")
+	screen.find_child("DockButton", true, false).pressed.emit()
+	_expect(not screen.trade_archive_button.disabled and screen.trade_production.text.contains("Archive:"), "docking enables records and shows the archive's service status")
+	await process_frame
+	var archive_trade_close: Control = screen.find_child("CloseTradeButton", true, false)
+	_expect(archive_trade_close.global_position.y + archive_trade_close.size.y <= float(root.size.y), "archive market controls remain within the landscape viewport")
+	screen.find_child("ReadArchiveButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.archive_screen) and screen.find_child("ArchiveOverview", true, false).text.contains("Living worlds"), "archive screen displays its world and future research subjects")
+	_expect(screen.find_child("ArchiveRecord_0", true, false).text.contains("Illuminated book") and screen.find_child("ArchiveRecord_0", true, false).text.contains("Kaelith"), "archive screen shows the physical medium and original lore")
+	_expect(screen.world.state.visited_archives == ["auroran_archive"] and bool(save_store.load_game(screen.save_path).get("ok", false)), "opening the archive saves its visit")
+	await process_frame
+	var archive_close: Control = screen.find_child("CloseArchiveButton", true, false)
+	_expect(archive_close.size.y >= 44.0 and archive_close.global_position.y + archive_close.size.y <= float(root.size.y), "the archive close control is touch-sized and visible")
+	screen.find_child("CloseArchiveButton", true, false).pressed.emit()
+	_expect(not is_instance_valid(screen.archive_screen) and is_instance_valid(screen.trade_screen), "closing the collection returns to its station")
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	screen.find_child("PlanAdd_data_reproduction", true, false).pressed.emit()
+	_expect(screen.plan_result.text.contains("Recorded Data") and screen.plan_result.text.contains("reusable source"), "the planner explains the reusable source needed for a player scriptorium")
 	screen.queue_free()
 	await process_frame
 	var directory := DirAccess.open(test_root)

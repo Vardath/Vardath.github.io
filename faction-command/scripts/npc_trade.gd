@@ -137,6 +137,8 @@ func _managed_cargo(ship: Dictionary, job: Dictionary) -> int:
 
 func _demand(world: RefCounted, station: Dictionary, ware_id: String) -> int:
 	var target := 0
+	if station.has("archive") and ware_id == "energy_cells":
+		target += int(world.archives.ENERGY_BUFFER)
 	for module in station.production:
 		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
 		if not recipe.is_empty():
