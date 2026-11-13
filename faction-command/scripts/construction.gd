@@ -209,7 +209,7 @@ func cancel(world: RefCounted, site_id: String) -> Dictionary:
 		refund += int(blueprint.fee)
 	if refund > int(site.fee) or refund > int(builder.credits):
 		return {"ok":false, "message":"The builder cannot fund the outstanding fee refund."}
-	var active := int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
+	var active: bool = int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
 	site.cancelled = true
 	site.paused = false
 	site.refunded_fee = refund
@@ -267,7 +267,7 @@ func tick(world: RefCounted) -> void:
 		return
 	for site in world.state.build_sites:
 		if bool(site.get("cancelled", false)):
-			var still_building := not str(site.builder_id).is_empty() and int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
+			var still_building: bool = not str(site.builder_id).is_empty() and int(site.completed) < site.tasks.size() and bool(site.tasks[int(site.completed)].started)
 			site.status = "Finishing current module" if still_building else "Cancelled"
 		elif int(site.completed) >= site.tasks.size():
 			site.status = "Complete"
