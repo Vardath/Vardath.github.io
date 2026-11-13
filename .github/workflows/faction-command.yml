@@ -12,6 +12,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - name: Require the project and test harness
@@ -26,7 +27,8 @@ jobs:
       - name: Import project and run foundation tests
         run: |
           /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --editor --quit
-          /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --script res://tests/run_tests.gd
+          /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --check-only --script res://tests/run_tests.gd
+          timeout --signal=TERM --kill-after=5s 90s /tmp/Godot_v4.4.1-stable_linux.x86_64 --headless --path faction-command --script res://tests/run_tests.gd
 
   android-debug:
     needs: validate
