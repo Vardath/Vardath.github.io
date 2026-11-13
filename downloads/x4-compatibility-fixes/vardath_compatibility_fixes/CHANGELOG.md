@@ -1,5 +1,12 @@
 # Version history
 
+## 1.0.6 — 2026-11-14
+
+- **Kuertee Emergent Missions:** prevent the repeat `Bounties_UpdateLastKnown` error flood caused by computer-class pilot objects and bounty history tables absent in older saved records. The original location-update calculation now runs only for operational NPC pilots with a valid ship/sector and faction. Initialise only missing per-pilot and per-faction location containers; never overwrite existing entries.
+- Source-grounded in the pinned v9.02 Workshop cue structure; static validation must confirm every XPath uniquely and the unchanged remainder of the Kuertee bounty logic. No extra bounties, reward replay, UI changes, forced orders or new game.
+- This does not repair broken ship generators, Koha engines, XR models, malformed third-party wares, or oversized UI tables.
+
+
 ## 1.0.5 — 2026-11-13
 
 - **Fly-by Looting:** stop calling `collect_drop` for ammunition containers on M, L and XL ships. The November 13 log shows hundreds of native rejections by the M-class Verdandi despite its reported missile-storage capacity. S-class ammo collection and all ordinary loot are retained.
