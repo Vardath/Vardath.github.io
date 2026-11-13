@@ -42,7 +42,7 @@ Faction Command is an ORIGINAL 2D, map-driven space economy and faction manageme
 - Track ware-level stock flow, credit flow, faction solvency, factory utilization and logistics bottlenecks. Include debug economic inspector and repeatable seed scenarios.
 
 ## Ship and station model
-- Ship classes: scout, courier, fighter, corvette, freighter, miner, salvage, transport, destroyer, carrier, construction vessel. Original hull designs and names; modular engine, shields, weapons, sensors, cargo and drones.
+- Ship classes: scout, courier, fighter, corvette, freighter, miner, salvage, transport, destroyer, carrier, construction vessel. Original hull designs and names; modular engine, shields, weapons, sensors, cargo and drones. Initial acquisition slice: an NPC wharf at Vellum Foundry offers two data-driven paid hull contracts (Courier and Freighter). It consumes real Alloy Plates and transfers player credits into the NPC station's budget at order placement; production advances through one serialized assembly berth with up to five pending orders. Purchased player ships arrive at the wharf as full independent owned assets, with a bundled contract pilot/crew. Future: dedicated wharf facilities, richer components, refits, customer-supplied materials and player-owned shipyards.
 - Ships have position, velocity abstraction, orders, role, captain, crew, fuel/energy if used, cargo, hull/shields, equipment, faction ownership, operating costs and history.
 - Stations have modules, production recipes, dock capacity, storage, managers, workers, buy/sell rules, build queues and defense systems.
 - Fleet hierarchy supports commanders, subordinates, formation/doctrine, resupply and automatic replacement.
