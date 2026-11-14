@@ -68,7 +68,21 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_habitation(state: Dictionary) -> void:
+	state.erase("habitation_version")
+	state.erase("habitation_catalog")
+	for station in state.get("stations", []):
+		station.erase("habitation")
+	if state.has("construction_blueprints"):
+		for id in ["crew_habitat", "family_habitat", "adaptive_habitat"]:
+			state.construction_blueprints.erase(id)
+	for cohort in state.get("population", {}).get("stations", {}).values():
+		cohort.hab_capacity = 0
+		cohort.housing_status = "unimplemented"
+
+
 func _strip_shipyard(state: Dictionary) -> void:
+	_strip_habitation(state)
 	state.erase("population_version")
 	state.erase("population")
 	state.erase("personnel_version")
@@ -2006,6 +2020,7 @@ func _run() -> void:
 	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 1).ok and transfer_world.snapshot() == moving_transfer, "crew cannot leave a ship while fly orders are pending")
 
 	var old_personnel: Dictionary = transfer_world.snapshot()
+	_strip_habitation(old_personnel)
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
 	old_personnel.erase("population_version")
@@ -2165,6 +2180,7 @@ func _run() -> void:
 	# bills, captain replacements, existing crew resets or lost route orders.
 	var old_progression: Dictionary = captain_world.snapshot()
 	old_progression.personnel_version = 1
+	_strip_habitation(old_progression)
 	old_progression.erase("population_version")
 	old_progression.erase("population")
 	for legacy_ship in old_progression.ships:
@@ -2977,7 +2993,7 @@ func _run() -> void:
 		expected_known += int(counted_ship.crew) + 1
 	_expect(known_before == expected_known, "galaxy population total includes each existing worker once, plus actual ship crews and pilots")
 	var residents_report: Array = resident_world.population.report(resident_world)
-	_expect(residents_report.size() == resident_world.state.stations.size() and residents_report[0].housing_status == "unimplemented", "station roster report accurately labels housing and life support as unimplemented")
+	_expect(residents_report.size() == resident_world.state.stations.size() and residents_report[0].housing_status == "No habitat", "station roster report accurately labels housing and life support as unimplemented")
 	_expect(not resident_world.population.move_workers(resident_world, "not_a_station", -1), "invalid source station cannot give away free residents")
 	_expect(not resident_world.population.move_workers(resident_world, "hearth_exchange", -13) and resident_world.population.total_people(resident_world) == known_before, "empty or insufficient cohorts cannot supply more than the available adults")
 	_expect(resident_world.dock_ship("ship_001", "hearth_exchange").ok, "starter ship can dock at a station with counted resident workers")
@@ -3001,7 +3017,7 @@ func _run() -> void:
 	impossible_child.population.stations.hearth_exchange.cohorts.children = 1
 	_expect(save_store.save_game(test_root + "/resident-false-birth.json", impossible_child) != OK, "births cannot be forged before the birth simulation exists")
 	var ghost_resident: Dictionary = resident_world.snapshot()
-	ghost_resident.population.stations.unknown_site = {"id":"residents_unknown_site", "station_id":"unknown_site", "cohorts":{"children":0,"students":0,"available_workers":1,"assigned_workers":0,"retirees":0}, "hab_capacity":0, "housing_status":"unimplemented"}
+	ghost_resident.population.stations.unknown_site = {"id":"residents_unknown_site", "station_id":"unknown_site", "cohorts":{"children":0,"students":0,"available_workers":1,"assigned_workers":0,"retirees":0}, "hab_capacity":0, "housing_status":"No habitat"}
 	_expect(save_store.save_game(test_root + "/resident-ghost-station.json", ghost_resident) != OK, "save validator rejects populated stations that never existed")
 	var negative_cohort: Dictionary = resident_world.snapshot()
 	negative_cohort.population.stations.hearth_exchange.cohorts.available_workers = -1
@@ -3087,6 +3103,7 @@ func _run() -> void:
 	# A Pass-23 saved game has no population key; migration reads its existing
 	# exact adult recruitment pool and never duplicates already hired crews.
 	var old_population: Dictionary = resident_world.snapshot()
+	_strip_habitation(old_population)
 	old_population.erase("population_version")
 	old_population.erase("population")
 	var old_population_path := test_root + "/before-resident-ledger.json"
@@ -3110,7 +3127,7 @@ func _run() -> void:
 	screen.find_child("PopulationButton", true, false).pressed.emit()
 	_expect(is_instance_valid(screen.population_screen) and screen.find_child("PopulationInfo", true, false) != null, "population overview is reachable from the player's property panel")
 	_expect(screen.population_info.text.contains("Known total:") and screen.population_info.text.contains("hearth_exchange") == false and screen.population_info.text.contains("Hearth Exchange"), "population screen displays real counted residents by named station")
-	_expect(screen.population_info.text.contains("Available resident workers: 12") and screen.population_info.text.contains("Births, housing, immigration, schools"), "interface distinguishes available real workers from unimplemented residential life simulation")
+	_expect(screen.population_info.text.contains("Available resident workers: 12") and screen.population_info.text.contains("Births, immigration, schools"), "interface distinguishes available real workers from unimplemented residential life simulation")
 	var ui_population_total: int = screen.world.population.total_people(screen.world)
 	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
 	await process_frame
