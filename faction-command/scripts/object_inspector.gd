@@ -182,7 +182,9 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				if cohort.is_empty():
 					return "No known residents at this station."
 				var powered: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
-				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered\nLife support: %s\nEnergy upkeep: %d/60 ticks\nNew births, immigration and schooling are not implemented yet." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), int(cohort.cohorts.assigned_workers), int(cohort.hab_capacity), powered, cohort.housing_status, world.habitation.maintenance_per_60(station, world.state.habitation_catalog)]
+				var needs: Dictionary = world.provisions.facility_needs(world, station)
+				var shortage: String = world.provisions.missing_provision(world, station)
+				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\n%s\nNew births, immigration and schooling are not implemented yet." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), int(cohort.cohorts.assigned_workers), int(cohort.hab_capacity), powered, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages"]
 			"Construction":
 				var jobs: Array[String] = []
 				for site in world.state.build_sites:
