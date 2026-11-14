@@ -58,6 +58,8 @@ func register_station(world: RefCounted, station_id: String) -> void:
 		var record: Dictionary = _cohort(station_id, int(world.state.crew_pools.get(station_id, 0)))
 		if world.state.has("habitation_version"):
 			record.housing_status = "No habitat"
+		if int(world.state.get("settlement_version", 0)) >= 2:
+			world.settlement._initialize_welfare(record)
 		world.state.population.stations[station_id] = record
 
 
