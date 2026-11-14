@@ -114,6 +114,8 @@ func evacuate(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 		var dependent: int = int(record.cohorts.children) + int(record.cohorts.students)
 		if dependent > 0 and (int(record.cohorts.assigned_workers) - quantity) * 2 < dependent:
 			return {"ok":false, "message":"Dependents need local adult care. Child passenger transport is not implemented; keep adequate carers at the colony."}
+	if world.state.has("education_version") and quantity > world.education.available_for_relocation(world, str(station.id)):
+		return {"ok":false, "message":"Enrolled learners, appointed educators and recorded graduates cannot be evacuated as unqualified passengers. Move unreserved adults only until credentialed transport is implemented."}
 	# Evacuation is explicitly legal even when housing is unpowered or stocks
 	# are empty. It does not create medical supplies, crew or free credits.
 	record.cohorts.assigned_workers = int(record.cohorts.assigned_workers) - quantity
