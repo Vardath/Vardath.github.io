@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "modules": [
+    {
+      "id": "crew_habitat",
+      "name": "Crew Residential Habitat",
+      "capacity": 8,
+      "energy_per_60": 1,
+      "environment": "standard",
+      "blueprint": {
+        "fee": 500,
+        "ticks": 16,
+        "materials": {
+          "alloy_plates": 8,
+          "energy_cells": 2
+        },
+        "storage": 24
+      }
+    },
+    {
+      "id": "family_habitat",
+      "name": "Family Residential Habitat",
+      "capacity": 16,
+      "energy_per_60": 2,
+      "environment": "standard",
+      "blueprint": {
+        "fee": 900,
+        "ticks": 26,
+        "materials": {
+          "alloy_plates": 16,
+          "energy_cells": 4
+        },
+        "storage": 36
+      }
+    },
+    {
+      "id": "adaptive_habitat",
+      "name": "Adaptive Environment Habitat",
+      "capacity": 12,
+      "energy_per_60": 3,
+      "environment": "adaptive",
+      "blueprint": {
+        "fee": 1200,
+        "ticks": 34,
+        "materials": {
+          "alloy_plates": 20,
+          "energy_cells": 6
+        },
+        "storage": 48
+      }
+    }
+  ]
+}

@@ -3,18 +3,35 @@
 An original, offline-first space faction management game for Android landscape,
 built with Godot 4. The authoritative design is [Faction Command.md](../Faction%20Command.md).
 
-## Station population accounting and future habitation
+## Station population, residential construction and life support
 
-**The first population ledger is implemented; residential habitation and
-education remain designs, not playable mechanics.** Open **Population** in
-Your Property to see counted available resident workers at each NPC station,
-known population across stations, and actual ship crew plus named captains.
-The original finite NPC recruitment pools have been converted into matching
-station-resident cohorts. Each recruit is one person, not a second population
-on top of the old roster. Paid hiring removes workers from their NPC-station
-cohort when they board a ship, and discharge returns those same people.
-New construction sites start with zero residents; building modules alone
-does not add people, housing capacity or free crew.
+The first resident workforce ledger and **three buildable residential
+modules** are playable. From **Plan station**, choose Crew Residential
+Habitat (8 places), Family Residential Habitat (16 places), or Adaptive
+Environment Habitat (12 places), alongside production modules. The preview
+shows the required physical alloy and Energy Cells, an upfront builder fee,
+construction duration, housing capacity and recurring power demand.
+Self-sufficient plans add real energy production; importing Energy Cells
+removes that upstream factory.
+
+Residential modules are separate from factories and are commissioned only
+after the builder has consumed the material delivery and completed its work.
+Housing consumes **one, two or three Energy Cells every 60 simulation ticks**
+respectively. Power service stops when real station stock is exhausted,
+reducing operational housing capacity to zero until supplies return; the
+physical building is retained. Building a residence **never creates free
+people, births or crew**. Food, water, medical supplies, biological
+compatibility, population movement and education are subsequent systems.
+The adaptive module is preparatory infrastructure, not yet a live
+species-specific environment simulation.
+
+Open **Population** to see the same counted available residents, real ship
+crew and pilots, plus each station's physical and powered housing capacity,
+power upkeep and status. NPC recruitment pools remain mirrored to known
+residents, not duplicated as a separate workforce. Paid hires deduct adults
+from the source station and return workers on discharge.
+New construction sites without completed housing begin with zero residents
+and zero capacity.
 
 New ships from the NPC wharf must also source their bundled captain and crew
 from its available **resident workforce** at the time of delivery. If the
@@ -24,12 +41,11 @@ wharf and discharge them, or later use immigration and schools when those
 mechanics exist. Existing Pass-23 saves migrate in place without credit,
 captain, ship-order or personnel resets.
 
-In later passes, station habitats will provide actual housing and capacity
-for households, children, growing adults, trained workers, immigrants and
-retirees, with species-compatible life support, upkeep, jobs and morale.
-Births will create children rather than instant adult workers; immigration
-and staffing transfers will deduct from known populations and require travel.
-Housing, teachers and schools will have finite capacity and operating costs.
+In later passes, actual households, children, growing adults, trained
+workers, immigrants and retirees will populate available housing with real
+travel and resource upkeep. Births will produce children, not instant workers;
+migration and job assignments must conserve the known population. Schools,
+healthcare and leisure modules will require real staffing and maintenance.
 
 Future buildable modules include family, urban and adaptive habitats;
 community schools, flight academies, navigation colleges, industrial trade
@@ -46,9 +62,25 @@ of [Faction Command.md](../Faction%20Command.md) for the full skills matrix,
 module catalogue, staffing economics, migration safeguards and ordered
 implementation/testing plan. The first resident-worker ledger already reuses the original finite NPC
 recruitment pools and preserves the captain/crew careers from Passes 22–23.
-The next implementation priority is buildable habitats and supported life
-support, not another isolated crew counter. No school, habitat, birth,
-immigration or population-growth recipes are playable yet.
+The first residential construction and Energy Cell upkeep system is now
+playable. Next priorities are real civilian provisions and resource chains,
+then population movement, births and education. No school, birth, immigration
+or population-growth mechanics are playable yet.
+
+## Android map-first interface direction
+
+The target interface takes inspiration from **Space RPG 1–4's simple
+star-link navigation and concise object panels**, with original Faction
+Command artwork, labels and controls. Keep the galaxy/sector map central
+and control one selected object through a collapsible side/bottom inspector:
+**Info**, **Orders**, **Cargo**, **Crew**, **Trade**, **Production**,
+**Population**, **Construction**, **Research** and other context-specific
+sub-tabs. Third-party objects remain inspectable without granting player
+control. Selecting a target for an owned ship must show the actual
+command, route and cost before an order is queued. There is **no manual
+flight control**. The existing map/property interface and standalone
+management windows remain operational while the contextual inspector is
+implemented in a subsequent bounded UI pass.
 
 ## Current foundation
 

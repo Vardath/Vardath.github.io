@@ -919,7 +919,10 @@ func _show_owned_station(station_id: String) -> void:
 		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
 		modules.append("%s · %s" % [recipe.get("name", module.recipe_id), module.get("status", "Waiting")])
 	var residents: Dictionary = world.population.station_cohort(world, station_id)
-	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\nKnown resident workers: %d\nHabitation: not yet implemented\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), world.population.station_total(residents), "No active production." if modules.is_empty() else "\n".join(modules)]
+	var housing: int = int(residents.get("hab_capacity", 0))
+	var working_housing: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
+	var housing_power: int = world.habitation.maintenance_per_60(station, world.state.habitation_catalog)
+	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\nKnown resident workers: %d\nHousing: %d slots, %d powered\nLife-support energy: %d per 60 ticks\nStatus: %s\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), world.population.station_total(residents), housing, working_housing, housing_power, residents.get("housing_status", "No habitat"), "No active production." if modules.is_empty() else "\n".join(modules)]
 
 
 func _show_owned_site(site_id: String) -> void:
@@ -1076,6 +1079,35 @@ func _open_station_planner() -> void:
 		add.custom_minimum_size.x = 44
 		add.pressed.connect(_adjust_plan_count.bind(str(recipe.id), 1))
 		row.add_child(add)
+	controls.add_child(_label("RESIDENTIAL / LIFE SUPPORT", 13, ACCENT))
+	for module_id in world.state.get("habitation_catalog", {}):
+		var home: Dictionary = world.state.habitation_catalog[module_id]
+		var row := HBoxContainer.new()
+		controls.add_child(row)
+		var label := _label("%s · +%d places" % [home.name, int(home.capacity)], 13, TEXT)
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(label)
+		var remove := _button("−")
+		remove.name = "PlanRemove_" + str(module_id)
+		remove.custom_minimum_size.x = 44
+		remove.pressed.connect(_adjust_plan_count.bind(str(module_id), -1))
+		row.add_child(remove)
+		var amount := SpinBox.new()
+		amount.name = "ModuleCount_" + str(module_id)
+		amount.min_value = 0
+		amount.max_value = 100
+		amount.step = 1
+		amount.value = 0
+		amount.custom_minimum_size = Vector2(72, 44)
+		amount.value_changed.connect(_on_plan_changed)
+		row.add_child(amount)
+		plan_module_counts[module_id] = amount
+		var add := _button("+")
+		add.name = "PlanAdd_" + str(module_id)
+		add.custom_minimum_size.x = 44
+		add.pressed.connect(_adjust_plan_count.bind(str(module_id), 1))
+		row.add_child(add)
+	controls.add_child(_wrapped_label("Housing gives capacity, not residents. Real Energy Cells are consumed every 60 ticks after commissioning; food, medicine, births and migration are later systems.", 12, MUTED))
 	controls.add_child(_label("HOW TO SOURCE INPUTS", 13, ACCENT))
 	plan_mode = OptionButton.new()
 	plan_mode.name = "PlanSourceMode"
@@ -1165,7 +1197,7 @@ func _update_station_plan() -> void:
 	var estimate: Dictionary = world.construction.quote(world, selected_sector, settings.requested, str(settings.mode), settings.imports)
 	plan_build_button.disabled = not estimate.ok or (estimate.ok and int(world.state.starting_credits) < int(estimate.fee))
 	if result.modules.is_empty() and result.errors.is_empty():
-		plan_result.text = "Choose a production module and quantity to see the required station modules and supplies."
+		plan_result.text = "Choose a production module or residential habitat and quantity to see its physical construction bill and recurring upkeep."
 		return
 	var lines: Array[String] = []
 	if not result.errors.is_empty():
@@ -1188,7 +1220,8 @@ func _update_station_plan() -> void:
 	lines.append("MODULES")
 	for row in result.modules:
 		var added := "  (+%d for inputs)" % int(row.added) if int(row.added) > 0 else ""
-		lines.append("%s × %d%s" % [row.name, int(row.total), added])
+		var home_label := " · %d housing places, %d Energy Cells/60 ticks" % [int(row.housing_capacity), int(row.energy_per_60)] if row.has("housing_capacity") else ""
+		lines.append("%s × %d%s%s" % [row.name, int(row.total), added, home_label])
 	if not result.wares.is_empty():
 		lines.append("\nFLOW PER 60 TICKS")
 		for ware in result.wares:
@@ -1787,7 +1820,7 @@ func _open_population_screen() -> void:
 	column.add_theme_constant_override("separation", 9)
 	panel.add_child(column)
 	column.add_child(_label("KNOWN STATION POPULATIONS", 22, TEXT))
-	column.add_child(_wrapped_label("First accounting stage: existing recruits are counted once as resident workers. Ship crews and captains count separately. Births, housing, immigration, schools and morale facilities are planned, not yet simulated.", 14, MUTED))
+	column.add_child(_wrapped_label("Station residents and ship crews are counted separately. Finished residential modules create housing capacity and use real Energy Cells. New residents, births, migration, food and medicine, schools and morale facilities are later systems.", 14, MUTED))
 	var scrolling := ScrollContainer.new()
 	scrolling.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scrolling.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -1812,10 +1845,10 @@ func _update_population_screen() -> void:
 		aboard += int(ship.crew) + 1
 	var station_people: int = world.population.total_people(world) - aboard
 	var text_rows: Array[String] = []
-	text_rows.append("Known total: %d people\nStation cohorts: %d  ·  Ship crews and pilots: %d\nStaffing is counted once; recruitment pools are references to the same residents, not extra people.\nBirths, housing, immigration, schools and morale facilities are not implemented yet." % [world.population.total_people(world), station_people, aboard])
+	text_rows.append("Known total: %d people\nStation cohorts: %d · Ship crews and pilots: %d\nStaffing is counted once; recruitment pools reference the same residents.\nHousing consumes real energy. Births, immigration, schools, food, medicine and morale facilities are not implemented yet." % [world.population.total_people(world), station_people, aboard])
 	for entry in entries:
 		var title: String = "%s · %s" % [entry.name, _faction_name(str(entry.owner))] if entry.active else "%s · dormant roster (station unavailable)" % entry.name
-		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing capacity: not implemented (no free residential space)" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees)])
+		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing: %d slots · %d powered · %d Energy Cells / 60 ticks\nLife support: %s" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees), int(entry.hab_capacity), int(entry.operational_capacity), int(entry.energy_per_60), entry.housing_status])
 	population_info.text = "\n\n".join(text_rows)
 
 

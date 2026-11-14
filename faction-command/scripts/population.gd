@@ -55,7 +55,10 @@ func register_station(world: RefCounted, station_id: String) -> void:
 	if not world.state.has("population"):
 		return
 	if not world.state.population.stations.has(station_id):
-		world.state.population.stations[station_id] = _cohort(station_id, int(world.state.crew_pools.get(station_id, 0)))
+		var record: Dictionary = _cohort(station_id, int(world.state.crew_pools.get(station_id, 0)))
+		if world.state.has("habitation_version"):
+			record.housing_status = "No habitat"
+		world.state.population.stations[station_id] = record
 
 
 func station_cohort(world: RefCounted, station_id: String) -> Dictionary:
@@ -128,6 +131,8 @@ func report(world: RefCounted) -> Array:
 			"assigned":int(rec.cohorts.assigned_workers),
 			"retirees":int(rec.cohorts.retirees),
 			"hab_capacity":int(rec.hab_capacity),
+			"operational_capacity":world.habitation.operational_capacity(station, world.state.habitation_catalog) if not station.is_empty() else 0,
+			"energy_per_60":world.habitation.maintenance_per_60(station, world.state.habitation_catalog) if not station.is_empty() else 0,
 			"housing_status":str(rec.housing_status),
 			"active":not station.is_empty()
 		})

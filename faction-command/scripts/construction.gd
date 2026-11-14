@@ -100,7 +100,7 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 	for ware in world.state.wares:
 		stock[ware.id] = 0
 	var resources: Dictionary = world.state.construction_resources[sector_id]
-	var station := {"id":station_id, "name":name + " (building)", "owner":world.state.player_faction_id, "sector":sector_id, "credits":0, "storage_capacity":0, "stock":stock, "sell_prices":{}, "buy_prices":{}, "natural_sources":resources.natural_sources.duplicate(true), "deposits":{}, "resource_sector":sector_id, "production":[]}
+	var station := {"id":station_id, "name":name + " (building)", "owner":world.state.player_faction_id, "sector":sector_id, "credits":0, "storage_capacity":0, "stock":stock, "sell_prices":{}, "buy_prices":{}, "natural_sources":resources.natural_sources.duplicate(true), "deposits":{}, "resource_sector":sector_id, "production":[], "habitation":[]}
 	var tasks: Array = []
 	for row in estimate.modules:
 		var blueprint: Dictionary = world.state.construction_blueprints[row.id]
@@ -358,8 +358,16 @@ func tick(world: RefCounted) -> void:
 	if station.is_empty():
 		current.status = "Station unavailable"
 		return
+	# A residence is a real service module, not a fictitious production
+	# recipe. It creates living space only after physical materials and all
+	# builder work are completed; it never creates adults, children or crew.
+	if world.habitation.is_habitat(world, str(task.recipe_id)):
+		if not world.habitation.on_commission(world, str(station.id), str(task.recipe_id)):
+			current.status = "Cannot commission habitat"
+			return
+	else:
+		station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
 	station.storage_capacity = int(station.storage_capacity) + int(task.storage)
-	station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
 	current.completed = int(current.completed) + 1
 	if bool(current.get("cancelled", false)):
 		station.name = current.name

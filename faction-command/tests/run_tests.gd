@@ -68,7 +68,21 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_habitation(state: Dictionary) -> void:
+	state.erase("habitation_version")
+	state.erase("habitation_catalog")
+	for station in state.get("stations", []):
+		station.erase("habitation")
+	if state.has("construction_blueprints"):
+		for id in ["crew_habitat", "family_habitat", "adaptive_habitat"]:
+			state.construction_blueprints.erase(id)
+	for cohort in state.get("population", {}).get("stations", {}).values():
+		cohort.hab_capacity = 0
+		cohort.housing_status = "unimplemented"
+
+
 func _strip_shipyard(state: Dictionary) -> void:
+	_strip_habitation(state)
 	state.erase("population_version")
 	state.erase("population")
 	state.erase("personnel_version")
@@ -2006,6 +2020,7 @@ func _run() -> void:
 	_expect(not transfer_world.personnel.transfer(transfer_world, "ship_001", str(transfer_destination.id), 1).ok and transfer_world.snapshot() == moving_transfer, "crew cannot leave a ship while fly orders are pending")
 
 	var old_personnel: Dictionary = transfer_world.snapshot()
+	_strip_habitation(old_personnel)
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
 	old_personnel.erase("population_version")
@@ -2165,6 +2180,7 @@ func _run() -> void:
 	# bills, captain replacements, existing crew resets or lost route orders.
 	var old_progression: Dictionary = captain_world.snapshot()
 	old_progression.personnel_version = 1
+	_strip_habitation(old_progression)
 	old_progression.erase("population_version")
 	old_progression.erase("population")
 	for legacy_ship in old_progression.ships:
@@ -2977,7 +2993,7 @@ func _run() -> void:
 		expected_known += int(counted_ship.crew) + 1
 	_expect(known_before == expected_known, "galaxy population total includes each existing worker once, plus actual ship crews and pilots")
 	var residents_report: Array = resident_world.population.report(resident_world)
-	_expect(residents_report.size() == resident_world.state.stations.size() and residents_report[0].housing_status == "unimplemented", "station roster report accurately labels housing and life support as unimplemented")
+	_expect(residents_report.size() == resident_world.state.stations.size() and residents_report[0].housing_status == "No habitat", "station roster report accurately labels housing and life support as unimplemented")
 	_expect(not resident_world.population.move_workers(resident_world, "not_a_station", -1), "invalid source station cannot give away free residents")
 	_expect(not resident_world.population.move_workers(resident_world, "hearth_exchange", -13) and resident_world.population.total_people(resident_world) == known_before, "empty or insufficient cohorts cannot supply more than the available adults")
 	_expect(resident_world.dock_ship("ship_001", "hearth_exchange").ok, "starter ship can dock at a station with counted resident workers")
@@ -3001,7 +3017,7 @@ func _run() -> void:
 	impossible_child.population.stations.hearth_exchange.cohorts.children = 1
 	_expect(save_store.save_game(test_root + "/resident-false-birth.json", impossible_child) != OK, "births cannot be forged before the birth simulation exists")
 	var ghost_resident: Dictionary = resident_world.snapshot()
-	ghost_resident.population.stations.unknown_site = {"id":"residents_unknown_site", "station_id":"unknown_site", "cohorts":{"children":0,"students":0,"available_workers":1,"assigned_workers":0,"retirees":0}, "hab_capacity":0, "housing_status":"unimplemented"}
+	ghost_resident.population.stations.unknown_site = {"id":"residents_unknown_site", "station_id":"unknown_site", "cohorts":{"children":0,"students":0,"available_workers":1,"assigned_workers":0,"retirees":0}, "hab_capacity":0, "housing_status":"No habitat"}
 	_expect(save_store.save_game(test_root + "/resident-ghost-station.json", ghost_resident) != OK, "save validator rejects populated stations that never existed")
 	var negative_cohort: Dictionary = resident_world.snapshot()
 	negative_cohort.population.stations.hearth_exchange.cohorts.available_workers = -1
@@ -3087,6 +3103,7 @@ func _run() -> void:
 	# A Pass-23 saved game has no population key; migration reads its existing
 	# exact adult recruitment pool and never duplicates already hired crews.
 	var old_population: Dictionary = resident_world.snapshot()
+	_strip_habitation(old_population)
 	old_population.erase("population_version")
 	old_population.erase("population")
 	var old_population_path := test_root + "/before-resident-ledger.json"
@@ -3110,7 +3127,7 @@ func _run() -> void:
 	screen.find_child("PopulationButton", true, false).pressed.emit()
 	_expect(is_instance_valid(screen.population_screen) and screen.find_child("PopulationInfo", true, false) != null, "population overview is reachable from the player's property panel")
 	_expect(screen.population_info.text.contains("Known total:") and screen.population_info.text.contains("hearth_exchange") == false and screen.population_info.text.contains("Hearth Exchange"), "population screen displays real counted residents by named station")
-	_expect(screen.population_info.text.contains("Available resident workers: 12") and screen.population_info.text.contains("Births, housing, immigration, schools"), "interface distinguishes available real workers from unimplemented residential life simulation")
+	_expect(screen.population_info.text.contains("Available resident workers: 12") and screen.population_info.text.contains("Births, immigration, schools"), "interface distinguishes available real workers from unimplemented residential life simulation")
 	var ui_population_total: int = screen.world.population.total_people(screen.world)
 	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
 	await process_frame
@@ -3133,6 +3150,126 @@ func _run() -> void:
 	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
 	await process_frame
 	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "UI population and individual-ship crew states persist with the normal autosave")
+	screen.queue_free()
+	await process_frame
+
+	# Pass 26: habitation is physical residential infrastructure rather than
+	# an instantly generated population or a fake output-producing factory.
+	var residential_world = WorldScript.new()
+	_expect(residential_world.load_starter() == OK, "habitation-capable starter loads")
+	_disable_npc_trading(residential_world)
+	_expect(residential_world.state.habitation_version == 1 and residential_world.state.habitation_catalog.size() == 3, "three original residence module types are available in the actual build catalogue")
+	var original_people: int = residential_world.population.total_people(residential_world)
+	var original_player_money: int = int(residential_world.state.starting_credits)
+	var original_all_money: int = _total_credits(residential_world.state)
+	for housing_id in ["crew_habitat", "family_habitat", "adaptive_habitat"]:
+		var housing_plan: Dictionary = residential_world.construction.quote(residential_world, "vellum_gate", {housing_id:1}, "all", [])
+		var definition: Dictionary = residential_world.state.habitation_catalog[housing_id]
+		var blueprint: Dictionary = residential_world.state.construction_blueprints[housing_id]
+		var projected: Dictionary = residential_world.construction.planner.preview(residential_world.state, {housing_id:1}, "all", [], "vellum_gate")
+		var housing_row: Dictionary = _plan_row(projected.modules, housing_id)
+		_expect(housing_plan.ok and int(housing_plan.fee) == int(blueprint.fee) and int(housing_plan.ticks) == int(blueprint.ticks), "residential construction quote uses real blueprint fee and duration: " + housing_id)
+		_expect(int(housing_row.housing_capacity) == int(definition.capacity) and int(housing_row.energy_per_60) == int(definition.energy_per_60), "station planner previews housing capacity and funded power needs: " + housing_id)
+		_expect(housing_plan.materials.has("alloy_plates") and housing_plan.materials.has("energy_cells"), "all habitats require real construction alloys and energy: " + housing_id)
+	var self_sufficient_housing: Dictionary = residential_world.construction.planner.preview(residential_world.state, {"crew_habitat":1}, "self", [], "hearthreach")
+	var self_solar: Dictionary = _plan_row(self_sufficient_housing.modules, "solar_cells")
+	_expect(self_sufficient_housing.ok and not self_solar.is_empty() and int(self_solar.added) >= 1, "self-sufficient habitat planning adds a real energy-production dependency rather than free life support")
+	var imported_housing: Dictionary = residential_world.construction.planner.preview(residential_world.state, {"crew_habitat":1}, "selected", ["energy_cells"], "hearthreach")
+	_expect(imported_housing.ok and _plan_row(imported_housing.modules, "solar_cells").is_empty() and imported_housing.warnings.any(func(message): return str(message).contains("not instant residents")), "selected import mode omits solar array and warns housing does not create people")
+	_expect(not residential_world.construction.quote(residential_world, "vellum_gate", {"not_real_hab":1}, "all", []).ok, "unknown housing modules cannot be contracted")
+
+	var residential_site: Dictionary = residential_world.construction.place(residential_world, "vellum_gate", {"crew_habitat":1}, "all", [])
+	_expect(residential_site.ok and int(residential_world.state.starting_credits) == original_player_money - 500, "buying residential construction transfers real builder fees exactly once")
+	var residential_plot: Dictionary = residential_world._find_station("player_station_1")
+	var empty_household: Dictionary = residential_world.population.station_cohort(residential_world, "player_station_1")
+	_expect(residential_plot.habitation.is_empty() and int(empty_household.hab_capacity) == 0 and residential_world.population.total_people(residential_world) == original_people, "placing construction does not instantly commission homes or create new people")
+	_expect(residential_world.dock_ship("ship_001", "hearth_exchange").ok, "ship docks at real source of construction power")
+	_expect(residential_world.trade("ship_001", "hearth_exchange", "energy_cells", 2, true).ok, "energy inputs are purchased from a real NPC station")
+	_expect(residential_world.queue_fly_to("ship_001", "vellum_gate"), "physical cargo must travel to the housing build sector")
+	residential_world.advance_ticks(15)
+	_expect(residential_world.dock_ship("ship_001", "vellum_foundry").ok, "construction ship arrives at real NPC alloy vendor")
+	_expect(residential_world.trade("ship_001", "vellum_foundry", "alloy_plates", 8, true).ok, "eight physical alloy plates are paid for and loaded")
+	_expect(residential_world.dock_ship("ship_001", "player_station_1").ok and residential_world.construction.deliver(residential_world, "ship_001", str(residential_site.site_id)).ok, "player actually docks and delivers both materials into dedicated build storage")
+	_expect(int(residential_world._find_ship("ship_001").cargo.get("alloy_plates", 0)) == 0 and int(residential_world._find_ship("ship_001").cargo.get("energy_cells", 0)) == 0, "all physical housing build materials leave ship cargo once")
+	residential_world.advance_ticks(80)
+	var built_housing_site: Dictionary = residential_world.construction.find_site(residential_world, str(residential_site.site_id))
+	_expect(int(built_housing_site.completed) == 1 and residential_plot.habitation.size() == 1 and residential_plot.production.is_empty(), "residential module commissions after real builder work without being misrepresented as a producing factory")
+	_expect(int(empty_household.hab_capacity) == 8 and residential_plot.habitation[0].id == "crew_habitat", "completed crew habitat adds exactly eight physical housing places")
+	_expect(residential_world.population.station_total(empty_household) == 0 and residential_world.population.total_people(residential_world) == original_people, "housing capacity creates no automatic births, migrants, captains or recruitable adults")
+	_expect(residential_plot.habitation[0].status == "Needs Energy Cells" and int(residential_world.habitation.operational_capacity(residential_plot, residential_world.state.habitation_catalog)) == 0, "unpowered housing exists physically but has zero operational life-support capacity")
+	_expect(_total_credits(residential_world.state) == original_all_money, "real housing construction and materials trading conserve all credits across the existing economy")
+	var built_hab_save := test_root + "/habitat-unpowered.json"
+	_expect(save_store.save_game(built_hab_save, residential_world.snapshot()) == OK, "unpowered but completed habitat passes strict save and build-site validation")
+	var built_hab_read: Dictionary = save_store.load_game(built_hab_save)
+	var built_hab_restored = WorldScript.new()
+	_expect(bool(built_hab_read.get("ok", false)) and built_hab_restored.restore_snapshot(built_hab_read.state) == OK and built_hab_restored.snapshot() == residential_world.snapshot(), "constructed housing and population status round-trip without recreating adults or materials")
+	_expect(residential_world.queue_fly_to("ship_001", "hearthreach"), "player can return to real NPC energy supplier")
+	residential_world.advance_ticks(15)
+	_expect(residential_world.dock_ship("ship_001", "hearth_exchange").ok and residential_world.trade("ship_001", "hearth_exchange", "energy_cells", 4, true).ok, "ongoing habitat life-support energy has a physical paid source")
+	_expect(residential_world.queue_fly_to("ship_001", "vellum_gate"), "life-support stocks travel through the same galaxy route system")
+	residential_world.advance_ticks(15)
+	_expect(residential_world.dock_ship("ship_001", "player_station_1").ok and residential_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 4, true).ok, "real energy stock is delivered to the owned habitat station")
+	var before_life_support: int = int(residential_plot.stock.energy_cells)
+	var until_service: int = 60 - int(residential_world.state.tick) % 60
+	residential_world.advance_ticks(until_service)
+	_expect(int(residential_plot.stock.energy_cells) == before_life_support - 1 and residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Powered", "housing consumes precisely one real Energy Cell on its scheduled life-support cycle")
+	_expect(residential_world.habitation.operational_capacity(residential_plot, residential_world.state.habitation_catalog) == 8 and empty_household.housing_status == "Powered", "residence becomes operational only after a real funded power service")
+	_expect(residential_world.population.total_people(residential_world) == original_people, "powered housing still does not fabricate workers, residents or children")
+	residential_world.advance_ticks(240)
+	_expect(residential_plot.stock.energy_cells == 0 and not residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Needs Energy Cells" and empty_household.housing_status == "Unpowered", "exhausted physical life-support inputs reduce operational housing to zero without negative stock")
+	_expect(int(empty_household.hab_capacity) == 8 and residential_world.population.total_people(residential_world) == original_people, "energy shortage preserves constructed physical housing and existing people")
+	_expect(save_store.save_game(test_root + "/habitat-after-power-shortage.json", residential_world.snapshot()) == OK, "life-support failures persist as valid station states")
+	var forged_housing: Dictionary = residential_world.snapshot()
+	forged_housing.population.stations.player_station_1.hab_capacity = 24
+	_expect(save_store.save_game(test_root + "/habitat-fake-capacity.json", forged_housing) != OK, "save validation forbids creating housing slots without real built modules")
+	var forged_power: Dictionary = residential_world.snapshot()
+	forged_power.stations.back().habitation[0].powered = true
+	_expect(save_store.save_game(test_root + "/habitat-fake-power.json", forged_power) != OK, "powered residential status must match actual housing service record")
+	var fake_module: Dictionary = residential_world.snapshot()
+	fake_module.stations.back().habitation.append({"id":"family_habitat","status":"Awaiting power","powered":false,"cycles":0})
+	_expect(save_store.save_game(test_root + "/habitat-fake-module.json", fake_module) != OK, "habitat modules cannot be added without matching commissioned build tasks")
+	var unborn_child: Dictionary = residential_world.snapshot()
+	unborn_child.population.stations.player_station_1.cohorts.children = 1
+	_expect(save_store.save_game(test_root + "/habitat-false-birth.json", unborn_child) != OK, "residential modules cannot be used to forge children before the birth lifecycle exists")
+	var legacy_housing_world = WorldScript.new()
+	legacy_housing_world.load_starter()
+	_disable_npc_trading(legacy_housing_world)
+	var legacy_housing: Dictionary = legacy_housing_world.snapshot()
+	_strip_habitation(legacy_housing)
+	_expect(save_store.save_game(test_root + "/before-housing.json", legacy_housing) == OK, "a pre-housing population save remains loadable")
+	var legacy_housing_read: Dictionary = save_store.load_game(test_root + "/before-housing.json")
+	var housing_migrated = WorldScript.new()
+	_expect(bool(legacy_housing_read.get("ok", false)) and housing_migrated.restore_snapshot(legacy_housing_read.state) == OK and housing_migrated.state.habitation_version == 1, "legacy population state gains an empty residential catalogue without resetting the game")
+	_expect(housing_migrated.state.starting_credits == legacy_housing.starting_credits and housing_migrated.state.ships == legacy_housing.ships and housing_migrated.state.population.stations.hearth_exchange.cohorts == legacy_housing.population.stations.hearth_exchange.cohorts, "habitation migration preserves people, captain skills, ship orders, crew and credits")
+	var invalid_future_housing: Dictionary = residential_world.snapshot()
+	invalid_future_housing.habitation_version = 2
+	var future_housing_path := test_root + "/future-housing.json"
+	_expect(save_store.save_game(future_housing_path, residential_world.snapshot()) == OK and save_store.save_game(future_housing_path, residential_world.snapshot()) == OK, "future housing version check prepares a valid backup")
+	var future_housing_payload: String = Marshalls.variant_to_base64(invalid_future_housing, false)
+	var future_housing_file := FileAccess.open(future_housing_path, FileAccess.WRITE)
+	future_housing_file.store_string(JSON.stringify({"format_version":1, "payload":future_housing_payload, "checksum":future_housing_payload.sha256_text()}))
+	future_housing_file.close()
+	_expect(save_store.load_game(future_housing_path).get("reason") == "unsupported", "future habitat save versions cannot silently load a previous backup")
+
+	# Android-oriented planner offers real residential controls, not mock UI.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-habitation.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	_expect(screen.plan_module_counts.has("crew_habitat") and screen.plan_module_counts.has("family_habitat") and screen.plan_module_counts.has("adaptive_habitat"), "touch station planner exposes all three actual residential construction choices")
+	screen.plan_module_counts.crew_habitat.value = 1
+	screen._update_station_plan()
+	_expect(screen.plan_result.text.contains("housing places") and screen.plan_result.text.contains("Energy Cells") and screen.plan_build_button.disabled == false, "housing planner displays funded builder cost, real life-support supply and no automatic population")
+	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("PopulationButton", true, false).pressed.emit()
+	_expect(screen.population_info.text.contains("Housing: 0 slots") and screen.population_info.text.contains("Births, immigration"), "population UI distinguishes empty completed housing from unimplemented immigration and births")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	await process_frame
 	screen.queue_free()
 	await process_frame
 

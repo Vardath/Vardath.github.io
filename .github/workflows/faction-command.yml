@@ -100,6 +100,8 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/shipyard.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/personnel.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/population.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/habitation.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/data/habitation.json'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
