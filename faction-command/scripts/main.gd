@@ -652,9 +652,12 @@ func _build_ui() -> void:
 
 
 func _apply_map_layout() -> void:
+	_apply_map_layout_for_width(get_viewport_rect().size.x)
+
+
+func _apply_map_layout_for_width(width: float) -> void:
 	if not is_instance_valid(property_panel) or not is_instance_valid(inspector_panel):
 		return
-	var width: float = get_viewport_rect().size.x
 	var compact: bool = width < 1100.0
 	property_drawer_button.visible = compact
 	property_panel.visible = not compact or property_drawer_open
@@ -695,6 +698,17 @@ func _inspector_present() -> void:
 		return
 	var key: String = "%s|%s" % [target.kind, target.id]
 	var available: Array[String] = inspector.tabs(world, str(target.kind), str(target.id))
+	# A map highlight follows the inspected object, not the previously
+	# selected command ship. Sector selections clear the ship/station marker.
+	if str(target.kind) in ["ship", "npc_ship"]:
+		sector_map.select_object("ship", str(target.id))
+	elif str(target.kind) in ["station", "npc_station"]:
+		sector_map.select_object("station", str(target.id))
+	elif str(target.kind) == "site":
+		var site: Dictionary = world.construction.find_site(world, str(target.id))
+		sector_map.select_object("station", str(site.get("station_id", "")))
+	else:
+		sector_map.select_object("", "")
 	if key != inspector_key:
 		inspector_key = key
 		inspector_current_tab = "Info"
@@ -890,6 +904,10 @@ func _open_map_station(station_id: String) -> void:
 	if station.is_empty():
 		return
 	if station.owner == world.state.player_faction_id:
+		for site in world.state.build_sites:
+			if str(site.station_id) == station_id and (int(site.completed) < site.tasks.size() or bool(site.get("cancelled", false))):
+				_show_owned_site(str(site.id))
+				return
 		_show_owned_station(station_id)
 		return
 	# Tapping a station inspects it first, unlike the old forced trade modal.
