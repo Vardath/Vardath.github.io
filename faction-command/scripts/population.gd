@@ -1,7 +1,8 @@
 extends RefCounted
-## First resident-population ledger: a counted source for NPC-station recruits.
-## At this stage stations have NO buildable living quarters, birth cycles,
-## immigration or adult graduation. Migrating an existing recruitment pool
+## Conserved resident-population ledger: one source for NPC recruitment.
+## Real habitation, resident life support, childbirth, age progression and
+## physically staffed schools now extend these same counted people.
+## Migrating an existing recruitment pool
 ## labels the *same* people as available residents; it does not seed a second
 ## population or manufacture a recruit. Legacy crew_pools is a checked mirror
 ## until all callers have migrated onto this API.
@@ -157,7 +158,7 @@ func report(world: RefCounted) -> Array:
 
 
 func tick(world: RefCounted) -> void:
-	# Register new facilities without seeding adults. Boarded adults may
-	# relocate into existing housing; births and schooling are future passes.
+	# Register new facilities without seeding adults. Only genuine boarded
+	# or medically born residents appear, and staffed schools train them.
 	for station in world.state.stations:
 		register_station(world, str(station.id))
