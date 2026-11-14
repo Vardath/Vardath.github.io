@@ -264,6 +264,7 @@ func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: Str
 		if needed == 0:
 			continue
 		if int(source.stock.get(ware_id, 0)) < needed:
+			printerr("P32 FAMILY SOURCE SHORTAGE: ware=", ware_id, " needed=", needed, " actual=", int(source.stock.get(ware_id, 0)), " station=", source_id, " tick=", int(world.state.tick), " family_stock=", destination.stock)
 			return false
 		if not world.dock_ship("ship_001", source_id).ok or not world.transfer_player_station("ship_001", source_id, ware_id, needed, false).ok:
 			return false
@@ -4122,7 +4123,7 @@ func _run() -> void:
 	_expect(int(p32_family_record.cohorts.children) == 1 and int(p32_family_record.cohorts.students) == 0 and int(p32_family_record.family.births_total) == 1 and int(p32_family_record.family.birth_progress) == 0, "ten successful service cycles produce one actual dependent child, never an adult crew member")
 	_expect(p32_world.population.total_people(p32_world) == p32_adults_total + 1 and int(p32_family_record.cohorts.assigned_workers) == 2, "one medically funded birth is the one permitted increase in total known people")
 	_expect(p32_family.stock.medical_supplies >= 0 and p32_world.state.ledger.any(func(e): return e.kind == "resident_birth" and int(e.quantity) == 1 and e.ware_id == "medical_supplies" and int(e.amount) == 0), "birth consumes one separately paid medical kit and records its counted newborn in the immutable ledger")
-	_expect(int(p32_family_record.family.child_queue[0].quantity) == 1 and int(p32_family_record.family.child_queue[0].ready_tick) == int(p32_world.state.tick) + p32_world.demographics.CHILDHOOD_TICKS, "birth stores a stable future maturation tick for exactly one child rather than instantly graduating into work")
+	_expect(p32_family_record.family.child_queue.size() == 1 and int(p32_family_record.family.child_queue[0].quantity) == 1 and int(p32_family_record.family.child_queue[0].ready_tick) == int(p32_world.state.tick) + p32_world.demographics.CHILDHOOD_TICKS, "birth stores a stable future maturation tick for exactly one child rather than instantly graduating into work")
 	_expect(p32_world.population.report(p32_world).any(func(entry): return entry.station_id == "player_station_2" and int(entry.occupied_housing) == 3 and int(entry.households) == 1 and int(entry.available_beds) == 13), "Family Habitat counts occupied bed for the newborn and reports thirteen real free beds")
 	_expect(save_store.save_game(test_root + "/pass32-newborn.json", p32_world.snapshot()) == OK, "live birth, age queue and finite warehouse/health state satisfy strict saved-game validation")
 	var p32_newborn_read: Dictionary = save_store.load_game(test_root + "/pass32-newborn.json")
