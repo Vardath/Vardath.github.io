@@ -113,6 +113,7 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 	builder.credits = int(builder.credits) + int(estimate.fee)
 	world.state.next_build_site_id = number + 1
 	world.state.stations.append(station)
+	world.population.register_station(world, station_id)
 	world.state.build_sites.append(site)
 	world._record_transaction("construction_fee", BUILDER_ID, station_id, "", 0, 0, -int(estimate.fee))
 	return {"ok":true, "message":"Build site placed. Deliver the listed materials.", "site_id":site_id}
