@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Crime Has Consequences 9.02: ResolveObjectToShipStation receives
+       a null $kCHC_object. Optional lookups preserve the existing outputs
+       and commander path for live objects; no alternate owner is invented. -->
+  <replace sel="/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value">@$kCHC_object.toplevelcommander</replace>
+</diff>

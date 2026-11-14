@@ -1,5 +1,15 @@
 # Version history
 
+## 1.0.8 — 2026-11-14 — exact log-targeted guards
+
+- **Personal Envoy Auto (Workshop 3744204222, v1.21):** X4 explicitly logs that Compatibility Fixes 1.0.7's absolute cue selector matched no node. Its original `EnsurePermanentCrew` still emits 5,319 missing `$PilotActor` errors in the new session, with the exact failing action `<do_if>` at line 409, expression `$CrewKept and $PilotActor and $PilotActor.exists`. The replacement diff targets the **exact original expression** anywhere in the MD script, with `$CrewKept and @$PilotActor.exists` so only an existing actor satisfies the branch. It no longer prepends a null actor or assumes a cue tree structure. It does not spawn, delete or reassign crew.
+- **Kuertee Crime Has Consequences (Workshop 3627879558, v9.02):** `ResolveObjectToShipStation` dereferences `$kCHC_object == null` at line 515 and 522. Two precise attribute replacements use optional property lookups for the existing headquarters/commander expressions. Other crime, police, bounty, ship and faction logic is unchanged.
+- **Significant unrelated problems in new log:** 25,483 missing empty character-model records, 835 missing `ccmod/assets/units/size_xl/macros/ccsupership_macro` references (3,338 related errors), 205 missing trade-ware-list selections, 406 invalid mission-ID query pairs. The `ccmod_spectrum_steamgg` Workshop mod needs its actual missing asset or correct original installation; creating a dummy capital ship is unsafe. No hidden fixes to these non-sourced issues.
+- **Validation:** Exact expressions are taken from the attached 14 November debug log; the upstream original XML of Personal Envoy and Crime Has Consequences is unavailable. Synthetic fixture tests ensure exact-selector unique application, original action bodies preserved, and failure when the upstream target changes. The new overlays **cannot** be asserted to match the real Workshop XML until X4 run or original sources are available. CI records partial validation; earlier 11 source-covered diffs remain intact and two older GalaxyTrader pins remain unavailable.
+- Existing save, ship orders, original crew, Protected UI, inventory-collector integration, and every other mod are unmodified.
+
+
+
 ## 1.0.7 — 2026-11-14 — provisional Personal Envoy Auto 1.21 guard
 
 - **Personal Envoy Auto (Shpeck, Workshop 3744204222):** the supplied 14 November X4 log contains exactly 2,795 `md.Personal_Envoy_Full_Crew.EnsurePermanentCrew` missing-`$PilotActor` property errors. The extension is recorded as version 1.21. A cross-extension diff, under `extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml`, prepends a single `do_if value="not $PilotActor?"` and initialises a missing `$PilotActor` to `null`. It does not override a pre-existing actor, replace the cue, spawn or destroy crew, move the ship, or change assignments. Optional dependency uses exact Workshop ID `ws_3744204222`.

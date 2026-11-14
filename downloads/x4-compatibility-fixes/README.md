@@ -1,9 +1,12 @@
-# Vardath Compatibility Fixes 1.0.7
+# Vardath Compatibility Fixes 1.0.8
 
-**CI source coverage notice (1.0.7):** 11 existing diffs are validated against exact upstream files, with 2 older GalaxyTrader upstream URLs currently unavailable. The new Personal Envoy overlay is **not** source-verified: the Workshop XML was not publicly retrievable. X4 patch schema, synthetic-cue prepending, duplicate/actor preservation, and full packaged archive are tested, but this is an experimental safety guard, not a proven crew-repair fix. CI explicitly records `result: partial` even if green.
+**Source coverage (1.0.8):** The 14 November session proves the 1.0.7 Personal Envoy cue-selector failed to match. This release replaces that selector with the exact log-recorded failing `do_if` expression, guarding only the missing actor read; it also adds two optional null lookups for Kuertee Crime Has Consequences. Original XML for **both Workshop 9.02/1.21 extensions remains unavailable**, so the two new diffs have X4-schema and synthetic-source tests, not complete source-based validation. Eleven earlier diffs remain source-validated, two GalaxyTrader URLs are unavailable. CI intentionally reports partial validation even when green. No runtime claims.
 
 
-[Download](Vardath_Compatibility_Fixes_1.0.7.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+[Download](Vardath_Compatibility_Fixes_1.0.8.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.8 (14 November 2026):** Updated from the newly supplied `debug(20261114-085351).log` (183,176 lines): the previous Envoy guard was **not applied** (explicit `No matching node`), and its missing `$PilotActor` error repeats 5,319 times. A new exact expression guard replaces the single logged `do_if` expression while preserving crew actions. Kuertee Crime Has Consequences has 2,064 null-target property errors; two exact logged expressions now use safe optional reads. [Full log audit](LOG_AUDIT_2026-11-14_085351.md). Both new overlays are log-grounded but not yet merged against original Workshop XML, and the game has not been run to test them. **Version 1.0.8 supersedes the failed Envoy guard.**
 
 **1.0.7 (14 November 2026):** Adds a provisional cross-extension guard for Shpeck's Personal Envoy Auto 1.21, addressing the 2,795 missing `$PilotActor` lookup attempts reported from its `EnsurePermanentCrew` cue. The guard initialises that variable to `null` only if it is absent, without replacing original crew logic or overwriting a valid actor. **This cannot be guaranteed to fix the original author's crew-recovery bug without inspecting the source XML and testing in X4.** See [targeted analysis](PERSONAL_ENVOY_1.0.7.md). Retains all previous compatibility fixes.
 

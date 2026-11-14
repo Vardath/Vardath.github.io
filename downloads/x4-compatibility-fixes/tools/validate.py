@@ -473,32 +473,60 @@ class Contracts(unittest.TestCase):
         self.assertEqual(scan.get('object'),'$TraderWreck')
         self.assertEqual(self.one(p,".//cue[@name='Ch2_2_Clean_Up']/actions")[0].tag,'remove_help')
 
-    def test_personal_envoy_provisional_guard_on_synthetic_fixture(self):
-        """Workshop 1.21 source unavailable: no original-script claim."""
+    def test_personal_envoy_targeted_expression_guard_preserves_crew_flow(self):
+        """Log-grounded action line 409; original Workshop XML still unavailable."""
         p='extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml'
         patch=E.parse(str(MOD/p)).getroot()
-        ops=[node for node in patch if isinstance(node.tag,str)]
-        self.assertEqual(patch.tag,'diff');self.assertEqual(len(ops),1)
+        ops=[x for x in patch if isinstance(x.tag,str)]
+        self.assertEqual(len(ops),1)
         op=ops[0]
-        self.assertEqual(op.tag,'add')
-        self.assertEqual(op.get('sel'),"/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions")
-        self.assertEqual(op.get('pos'),'prepend')
-        guard=op[0]
-        self.assertEqual(guard.tag,'do_if')
-        self.assertEqual(guard.get('value'),'not $PilotActor?')
-        self.assertEqual(guard[0].tag,'set_value')
-        self.assertEqual(guard[0].get('name'),'$PilotActor')
-        self.assertEqual(guard[0].get('exact'),'null')
-        fixture=E.fromstring(b'<mdscript name="Personal_Envoy_Full_Crew"><cues><cue name="EnsurePermanentCrew"><actions><set_value name="$OldOrder" exact="true"/><debug_text text="\'preserve crew logic\'"/></actions></cue><cue name="Other"><actions><debug_text text="\'other\'"/></actions></cue></cues></mdscript>')
+        self.assertEqual(op.tag,'replace')
+        self.assertEqual(op.get('sel'),
+                         "/mdscript//do_if[@value='$CrewKept and $PilotActor and $PilotActor.exists']/@value")
+        self.assertEqual(op.text,'$CrewKept and @$PilotActor.exists')
+        # Unlike v1.0.7, the selector is based on an exact logged expression
+        # and does not assume that the cue is an immediate child of /cues.
+        fixture=E.fromstring(b'<mdscript name="Personal_Envoy_Full_Crew"><cues><cue name="Main"><cues><cue name="EnsurePermanentCrew"><actions><do_if value="$CrewKept and $PilotActor and $PilotActor.exists"><set_value name="$ActualOriginalCrew" exact="true"/></do_if><set_value name="$Preserved" exact="true"/></actions></cue></cues></cue><cue name="Other"><actions><debug_text text="42"/></actions></cue></cues></mdscript>')
         merged=apply_patch(fixture,patch)
-        a=merged.xpath("/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions")[0]
-        self.assertEqual(len(a),3)
-        self.assertEqual(a[0].tag,'do_if')
-        self.assertEqual([child.tag for child in a[1:]],['set_value','debug_text'])
-        self.assertEqual(canonical(merged.xpath("/mdscript/cues/cue[@name='Other']")[0]),
-                         canonical(fixture.xpath("/mdscript/cues/cue[@name='Other']")[0]))
+        v=merged.xpath(".//cue[@name='EnsurePermanentCrew']//do_if")[0]
+        self.assertEqual(v.get('value'),'$CrewKept and @$PilotActor.exists')
+        self.assertEqual(v[0].get('name'),'$ActualOriginalCrew')
+        self.assertEqual(len(merged.xpath(".//cue[@name='EnsurePermanentCrew']/actions/*")),2)
+        self.assertEqual(canonical(merged.xpath(".//cue[@name='Other']")[0]),
+                         canonical(fixture.xpath(".//cue[@name='Other']")[0]))
+        self.assertEqual(merged.xpath(".//cue[@name='EnsurePermanentCrew']/actions/set_value")[0].get('name'),'$Preserved')
+        # Stop instead of applying a potentially unrelated patch if upstream
+        # replaces the logged condition in a future version.
         with self.assertRaises(ValueError):
-            apply_patch(E.fromstring(b'<mdscript><cues><cue name="Other"><actions/></cue></cues></mdscript>'),patch)
+            apply_patch(E.fromstring(b'<mdscript><cues><cue name="EnsurePermanentCrew"><actions><do_if value="true"/></actions></cue></cues></mdscript>'),patch)
+
+    def test_chc_null_object_optional_lookups_preserve_valid_branch(self):
+        """The two 9.02 expressions are supplied by native log line 515/522."""
+        p='extensions/kuertee_crime_has_consequences/md/kuertee_chc.xml'
+        patch=E.parse(str(MOD/p)).getroot()
+        ops=[x for x in patch if isinstance(x.tag,str)]
+        self.assertEqual(len(ops),2)
+        self.assertEqual(ops[0].get('sel'),
+                         "/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact")
+        self.assertEqual(ops[0].text,'@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(ops[1].get('sel'),
+                         "/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value")
+        self.assertEqual(ops[1].text,'@$kCHC_object.toplevelcommander')
+        fixture=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="Init"><cues><cue name="ResolveObjectToShipStation"><actions><set_value name="$HQ" exact="$kCHC_object.trueowner.headquarters"/><do_if value="$kCHC_object.toplevelcommander"><set_value name="$Branch" exact="true"/></do_if><set_value name="$Preserved" exact="true"/></actions></cue></cues></cue></cues></mdscript>')
+        merged=apply_patch(fixture,patch)
+        actions=merged.xpath(".//cue[@name='ResolveObjectToShipStation']/actions")[0]
+        self.assertEqual(len(actions),3)
+        self.assertEqual(actions[0].get('exact'),'@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(actions[1].get('value'),'@$kCHC_object.toplevelcommander')
+        self.assertEqual(actions[1][0].get('name'),'$Branch')
+        self.assertEqual(actions[2].get('name'),'$Preserved')
+        with self.assertRaises(ValueError):
+            apply_patch(E.fromstring(b'<mdscript><cues><cue name="ResolveObjectToShipStation"><actions/></cue></cues></mdscript>'),patch)
+
+    def test_chc_optional_workshop_dependency(self):
+        root=E.parse(str(MOD/'content.xml')).getroot()
+        d=root.find("./dependency[@id='ws_3627879558']")
+        self.assertIsNotNone(d);self.assertEqual(d.get('optional'),'true')
 
     def test_personal_envoy_mod_dependency_is_optional(self):
         root=E.parse(str(MOD/'content.xml')).getroot()
@@ -527,9 +555,13 @@ def validate(cache, archive=None):
     if len(patched) != 13-len(MISSING_SOURCE_PATHS):
         raise ValueError('Unexpected count of source-validated diff files')
     envoy_path='extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml'
-    envoy_xml=MOD/envoy_path
-    if not envoy_xml.is_file():raise ValueError('Missing provisional Envoy XML overlay')
-    schema.assertValid(E.parse(str(envoy_xml)))
+    chc_path='extensions/kuertee_crime_has_consequences/md/kuertee_chc.xml'
+    for p in (envoy_path,chc_path):
+        f=MOD/p
+        if not f.is_file():raise ValueError('Missing log-grounded overlay '+p)
+        schema.assertValid(E.parse(str(f)))
+    # The two new overlays are verified only against synthetic exact-expression
+    # fixtures, not the original Workshop XML. Do not inflate source-verified count.
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -553,11 +585,11 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.7','reference_files':len(original),'diff_files':len(patched)+1,'source_validated_diff_files':len(patched),
-            'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS | {envoy_path}),
+    return {'version':'1.0.8','reference_files':len(original),'diff_files':len(patched)+2,'source_validated_diff_files':len(patched),
+            'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS | {envoy_path,chc_path}),
             'single_match_operations':len(counts),'contract_tests':count,
             'result':'partial',
-            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy 1.21 original XML unavailable: provisional null-initializer only validated against synthetic XML fixture, NOT installed source.','The guard may avoid missing-property errors but does not guarantee the crew creation logic is repaired.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.','Kuertee CHC 9.02 original XML unavailable; two null-object expressions are synthetic-verified only.','Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="107" date="2026-11-14" save="0" sync="false" description="X4 9.00 targeted compatibility guards and provisional Personal Envoy Auto missing-PilotActor initializer; original upstream Envoy script not accessible. No UI replacement.">
+<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="108" date="2026-11-14" save="0" sync="false" description="X4 9.00 targeted compatibility guards and provisional Personal Envoy Auto missing-actor condition and Kuertee Crime Has Consequences null-target guards; no UI replacement.">
   <dependency version="900"/>
   <dependency id="ego_dlc_terran" optional="true" name="Cradle of Humanity — Terran Cadet tutorial"/>
   <dependency id="ws_1683358279" optional="true" name="Fly-by Looting"/>
   <dependency id="ws_2961007180" optional="true" name="Research Blueprints Mod"/>
   <dependency id="ws_3715175855" optional="true" name="GalaxyTrader MK3"/>
   <dependency id="GalaxyTraderMK3" optional="true" name="GalaxyTrader MK3 manual release"/>
+  <dependency id="ws_3627879558" optional="true" name="Crime Has Consequences"/>
   <dependency id="ws_3744204222" optional="true" name="Personal Envoy Auto"/>
   <text language="44" name="Vardath Compatibility Fixes" description="Targeted X4 9.00 compatibility guards; keep Protected UI and Inventory Collector enabled."/>
 <dependency id="ws_2063916598" optional="true" name="Inventory Collector"/><dependency id="ws_2992233767" optional="true" name="Head Hunter"/><dependency id="ws_3627916728" optional="true" name="Emergent Missions"/></content>
