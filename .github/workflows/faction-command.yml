@@ -110,6 +110,8 @@ jobs:
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
+          grep -F "versionCode='19'" package-info.txt
+          grep -F "versionName='0.1.19-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
