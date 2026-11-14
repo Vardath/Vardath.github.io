@@ -1,17 +1,21 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7",
   "reference_files": 15,
-  "diff_files": 11,
+  "diff_files": 12,
+  "source_validated_diff_files": 11,
   "untested_upstream_diffs": [
     "extensions/galaxy_trader/md/gt_context_academy.xml",
-    "extensions/galaxy_trader/md/gt_core_system.xml"
+    "extensions/galaxy_trader/md/gt_core_system.xml",
+    "extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml"
   ],
   "single_match_operations": 44,
-  "contract_tests": 19,
+  "contract_tests": 21,
   "result": "partial",
-  "archive_members": 18,
+  "archive_members": 19,
   "runtime_tested": false,
   "limitations": [
+    "Personal Envoy 1.21 original XML unavailable: provisional null-initializer only validated against synthetic XML fixture, NOT installed source.",
+    "The guard may avoid missing-property errors but does not guarantee the crew creation logic is repaired.",
     "No X4 executable, save or merged installed catalogs available.",
     "Tests apply patches to exact pinned references, not the effective installed load order.",
     "Native runtime, reload and same-frame event behavior require in-game acceptance."
