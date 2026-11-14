@@ -4403,7 +4403,7 @@ func _run() -> void:
 	var p33_youth_total: int = p33_youth_world.population.total_people(p33_youth_world)
 	p33_youth_world.advance_ticks(120)
 	_expect(p33_youth_campus.education.courses.has("community_school") and int(p33_youth_campus.education.courses.community_school.progress) == 120, "school-age instruction requires paid course ticks and actual purchased education media, not immediate literacy")
-	_expect(_deliver_family_supplies(p33_youth_world, "player_station_1", "player_station_2", 12), "a real child classroom's second set of study cycles consumes stocked provisions and transports its residential biowaste")
+	_expect(_deliver_family_supplies(p33_youth_world, "player_station_1", "player_station_2", 6), "child classrooms request only the final two physically missing energy cells when the upstream station has a full warehouse")
 	p33_youth_world.advance_ticks(120)
 	_expect(int(p33_youth_campus.education.youth_completed) == 1 and int(p33_youth_campus.education.certificates_total) == 3 and not p33_youth_campus.education.courses.has("community_school"), "four completed paid service periods grant exactly one school-age youth a real community education record")
 	_expect(int(p33_youth_campus.education.qualified.community_school) == 1 and int(p33_youth_campus.education.qualified.engineering_college) == 1, "teaching a youth does not accidentally create another fully grown adult or duplicate a previous graduate")
