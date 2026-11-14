@@ -3476,6 +3476,136 @@ func _run() -> void:
 	screen.queue_free()
 	await process_frame
 
+	# Pass 28: real civilian provision chains, geological resource depletion,
+	# self-sufficient module planning and atomic life-support upkeep.
+	var supply_world = WorldScript.new()
+	_expect(supply_world.load_starter() == OK, "civilian provision system initializes with the starter galaxy")
+	_disable_npc_trading(supply_world)
+	var provision_data: Dictionary = supply_world.provisions.definitions()
+	_expect(supply_world.state.provisions_version == 1 and not provision_data.is_empty(), "versioned civilian provision recipes are parsed from the checked-in game data")
+	var prior_wares: Array = ["ice", "potable_water", "food_rations", "medical_supplies"]
+	for provision_ware in prior_wares:
+		_expect(not supply_world._find_ware(provision_ware).is_empty() and int(supply_world._find_ware(provision_ware).volume) == 1, "physical civilian ware is tradable and takes actual cargo space: " + provision_ware)
+		_expect(_total_ware(supply_world.state, provision_ware) == 0, "new game does not receive free manufactured civilian stock: " + provision_ware)
+	for provisioning_recipe in ["ice_extraction", "water_purification", "hydroponics", "medical_synthesis"]:
+		_expect(not supply_world._find_recipe(provisioning_recipe).is_empty() and supply_world.state.construction_blueprints.has(provisioning_recipe), "civilian service recipe has production inputs and a paid construction contract: " + provisioning_recipe)
+	_expect(supply_world.state.construction_resources.copper_wake.deposits.ice == 900 and not supply_world.state.construction_resources.hearthreach.deposits.has("ice"), "only documented ice-bearing sectors receive finite geological ice reserves")
+	_expect(supply_world._find_recipe("ice_extraction").deposit.resource == "ice" and supply_world._find_recipe("ice_extraction").inputs.energy_cells == 1, "ice cannot be harvested without real energy and a diminishing deposit")
+	_expect(supply_world._find_recipe("water_purification").inputs.ice == 2 and supply_world._find_recipe("hydroponics").inputs.potable_water == 2 and supply_world._find_recipe("medical_synthesis").inputs.food_rations == 1, "water, food and medicine are physically interdependent manufactured goods")
+	_expect(supply_world._find_recipe("medical_synthesis").inputs.alloy_plates == 1, "medical kits require real advanced manufactured parts rather than output-from-nothing")
+	var civilian_self: Dictionary = supply_world.construction.planner.preview(supply_world.state, {"crew_habitat":1}, "self", [], "copper_wake")
+	_expect(civilian_self.ok and ["ice_extraction", "water_purification", "hydroponics", "medical_synthesis"].all(func(id): return not _plan_row(civilian_self.modules, str(id)).is_empty()), "self-sufficient hab plan now builds the full physical water-food-medicine production chain")
+	_expect(not _plan_row(civilian_self.modules, "ore_extraction").is_empty() and not _plan_row(civilian_self.modules, "alloy_smelting").is_empty() and not _plan_row(civilian_self.modules, "solar_cells").is_empty(), "self-sufficient medical fabrication adds real upstream ore, metal and electricity")
+	_expect(civilian_self.warnings.any(func(w): return str(w).contains("Finite Water Ice reserve")), "player can see the real sector ice resource constraint before ordering a supply station")
+	var civilian_imported: Dictionary = supply_world.construction.planner.preview(supply_world.state, {"crew_habitat":1}, "all", [], "hearthreach")
+	_expect(civilian_imported.ok and _plan_row(civilian_imported.modules, "ice_extraction").is_empty() and _plan_row(civilian_imported.modules, "medical_synthesis").is_empty(), "import-all option lists hab inputs without constructing unnecessary resource factories")
+	_expect(civilian_imported.wares.any(func(ware): return ware.id == "potable_water" and float(ware.imports) >= 1.0) and civilian_imported.wares.any(func(ware): return ware.id == "food_rations" and float(ware.imports) >= 1.0), "import plan reports actual recurring water and food demand")
+	_expect(civilian_imported.wares.any(func(ware): return ware.id == "medical_supplies" and float(ware.imports) >= 1.0), "import plan reports actual medical supplies demand")
+
+	var supply_total_credits: int = _total_credits(supply_world.state)
+	var supply_people: int = supply_world.population.total_people(supply_world)
+	var supply_plan: Dictionary = {"solar_cells":2, "ore_extraction":1, "alloy_smelting":1, "ice_extraction":1, "water_purification":1, "hydroponics":1, "medical_synthesis":1, "crew_habitat":1}
+	var supply_quote: Dictionary = supply_world.construction.quote(supply_world, "copper_wake", supply_plan, "all", [])
+	_expect(supply_quote.ok and int(supply_quote.materials.alloy_plates) == 96 and int(supply_quote.materials.energy_cells) == 11, "real nine-module supply and habitation contract requires exactly 96 alloys and 11 energy cells")
+	var supply_site: Dictionary = supply_world.construction.place(supply_world, "copper_wake", supply_plan, "all", [])
+	_expect(supply_site.ok and int(supply_world.state.starting_credits) == 25000 - int(supply_quote.fee), "civilian manufacturing station pays its builder fee upfront")
+	var supply_station: Dictionary = supply_world._find_station("player_station_1")
+	_expect(not supply_station.is_empty() and supply_station.habitation.is_empty() and supply_station.production.is_empty(), "contracted manufacturing modules are not given away before real materials and work")
+	_expect(_total_ware(supply_world.state, "potable_water") == 0 and supply_world.population.total_people(supply_world) == supply_people, "placing a food-and-medicine station creates neither products nor people")
+	_expect(supply_world.dock_ship("ship_001", "hearth_exchange").ok and supply_world.trade("ship_001", "hearth_exchange", "energy_cells", 11, true).ok, "housing and civilian factory construction uses eleven genuinely purchased energy cells")
+	var stage_amounts: Array = [39, 50, 7]
+	for stage in range(stage_amounts.size()):
+		var count: int = int(stage_amounts[stage])
+		if supply_world._find_ship("ship_001").sector != "vellum_gate":
+			_expect(supply_world.queue_fly_to("ship_001", "vellum_gate"), "construction supply cargo gets an actual voyage to the foundry, batch " + str(stage))
+			supply_world.advance_ticks(35)
+		_expect(supply_world.dock_ship("ship_001", "vellum_foundry").ok, "ship docks at the real alloy supplier for batch " + str(stage))
+		_expect(supply_world.trade("ship_001", "vellum_foundry", "alloy_plates", count, true).ok, "ship purchases real alloy stock for civilian factory batch " + str(stage))
+		_expect(supply_world.queue_fly_to("ship_001", "copper_wake"), "alloy supply crosses the actual star network, batch " + str(stage))
+		supply_world.advance_ticks(35)
+		_expect(supply_world.dock_ship("ship_001", "player_station_1").ok, "delivered goods reach the player build dock, batch " + str(stage))
+		_expect(supply_world.construction.deliver(supply_world, "ship_001", str(supply_site.site_id)).ok, "real cargo moves into reserved builder storage, batch " + str(stage))
+		_expect(int(supply_world._find_ship("ship_001").cargo.get("alloy_plates", 0)) == 0, "no duplicate alloys remain aboard after build delivery " + str(stage))
+	_expect(_total_credits(supply_world.state) == supply_total_credits, "building and physically sourcing the civilian factory neither mints nor destroys credits")
+	supply_world.advance_ticks(340)
+	var live_build: Dictionary = supply_world.construction.find_site(supply_world, str(supply_site.site_id))
+	_expect(int(live_build.completed) == 9 and supply_station.habitation.size() == 1 and supply_station.production.size() == 8, "real supply complex commissions all eight factories and one habitat after paid deliveries and work")
+	var copper_reserve: int = int(supply_world.state.construction_resources.copper_wake.deposits.ice)
+	_expect(copper_reserve < 900 and copper_reserve >= 0, "ice harvesting decreases the actual finite geological sector reserve")
+	_expect(supply_station.production.any(func(m): return m.recipe_id == "ice_extraction" and int(m.cycles) > 0) and supply_station.production.any(func(m): return m.recipe_id == "water_purification" and int(m.cycles) > 0), "water is manufactured from mined ice through real powered factory cycles")
+	_expect(supply_station.production.any(func(m): return m.recipe_id == "hydroponics" and int(m.cycles) > 0) and supply_station.production.any(func(m): return m.recipe_id == "medical_synthesis" and int(m.cycles) > 0), "food and medicine are manufactured only after their real water, mineral and alloy inputs")
+	_expect(supply_station.stock.potable_water > 0 and supply_station.stock.food_rations > 0 and supply_station.stock.medical_supplies > 0, "civilian factory yields actual storable water rations and medical supplies")
+	_expect(supply_station.habitation[0].powered and supply_station.habitation[0].status == "Powered", "all four real provisions together sustain an operational commissioned habitat")
+	_expect(supply_world.population.total_people(supply_world) == supply_people, "even a fully supplied hab never creates a population or captain")
+	_expect(_total_credits(supply_world.state) == supply_total_credits, "long-running physical provisioning and player payroll preserve total simulated credits")
+	_expect(save_store.save_game(test_root + "/civilian-manufacturing.json", supply_world.snapshot()) == OK, "supply chain outputs, consumed deposits and funded housing pass strict save validation")
+	var verified_supply_save: Dictionary = save_store.load_game(test_root + "/civilian-manufacturing.json")
+	var verified_supply_world = WorldScript.new()
+	_expect(bool(verified_supply_save.get("ok", false)) and verified_supply_world.restore_snapshot(verified_supply_save.state) == OK and verified_supply_world.snapshot() == supply_world.snapshot(), "manufactured food water and medical inventory round trips with the same source resource balances")
+	# Halt factory tick work for one service pulse to isolate exact consumed
+	# ware quantities. The goods above were really mined and manufactured.
+	var stocked_before: Dictionary = {}
+	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
+		stocked_before[ware_id] = int(supply_station.stock.get(ware_id, 0))
+	supply_world.state.tick = int(supply_world.state.tick) + 60 - (int(supply_world.state.tick) % 60)
+	supply_world.habitation.tick(supply_world)
+	var life_support_exact := true
+	for ware_id in stocked_before:
+		if int(supply_station.stock[ware_id]) != int(stocked_before[ware_id]) - 1:
+			life_support_exact = false
+	_expect(life_support_exact and supply_station.habitation[0].powered, "a single complete life-support cycle atomically consumes exactly one physically sourced cell, water, ration and medical kit")
+	_expect(save_store.save_game(test_root + "/civilian-life-support.json", supply_world.snapshot()) == OK, "post-consumption housing and factory balances remain valid persisted state")
+	var spoiled_ice: Dictionary = supply_world.snapshot()
+	spoiled_ice.construction_resources.copper_wake.deposits.ice = 901
+	_expect(save_store.save_game(test_root + "/civilian-faked-ice.json", spoiled_ice) != OK, "save validation rejects increasing geological ice beyond the finite original reserve")
+	var fake_recipe: Dictionary = supply_world.snapshot()
+	for original_recipe in fake_recipe.recipes:
+		if original_recipe.id == "medical_synthesis":
+			original_recipe.inputs.erase("food_rations")
+	_expect(save_store.save_game(test_root + "/civilian-faked-medicine.json", fake_recipe) != OK, "save validation rejects medical output recipes that secretly bypass food inputs")
+	var fake_supply: Dictionary = supply_world.snapshot()
+	fake_supply.provisions_catalog.habitat_needs_per_60.medical_supplies = 0
+	_expect(save_store.save_game(test_root + "/civilian-free-medicine.json", fake_supply) != OK, "save validator forbids evading medical upkeep by changing a supply coefficient")
+	var old_provision_world = WorldScript.new()
+	old_provision_world.load_starter()
+	var before_civilian: Dictionary = old_provision_world.snapshot()
+	_strip_provisions(before_civilian)
+	var before_civilian_save: String = test_root + "/pass27-before-civilian.json"
+	_expect(save_store.save_game(before_civilian_save, before_civilian) == OK, "actual Pass 27 housing and population saves remain readable without new provision fields")
+	var from_previous: Dictionary = save_store.load_game(before_civilian_save)
+	var supply_migrated = WorldScript.new()
+	_expect(bool(from_previous.get("ok", false)) and supply_migrated.restore_snapshot(from_previous.state) == OK and supply_migrated.state.provisions_version == 1, "older save migrates in place to four newly defined civilian wares and physical ice reserves")
+	_expect(supply_migrated.state.ships == before_civilian.ships and supply_migrated.state.stations.size() == before_civilian.stations.size() and supply_migrated.state.starting_credits == before_civilian.starting_credits and supply_migrated.state.ledger == before_civilian.ledger, "migration preserves all ships, captains, crew, orders, money, old station stock and transaction history")
+	_expect(_total_ware(supply_migrated.state, "food_rations") == 0 and _total_ware(supply_migrated.state, "medical_supplies") == 0, "migrating a previous game never seeds fictional civilian goods into station or ship inventories")
+	_expect(save_store.save_game(test_root + "/pass27-upgraded-provisioning.json", supply_migrated.snapshot()) == OK, "migrated four-ware economy is immediately saveable")
+	var bogus_supply_version: Dictionary = supply_world.snapshot()
+	bogus_supply_version.provisions_version = 2
+	_expect(save_store.save_game(test_root + "/civilian-future-version.json", bogus_supply_version) != OK, "future unsupported civilian schema cannot be written as a valid game save")
+	# Touch UI opens the new production plan and displays actual next-cycle
+	# resource costs without changing an inspected station's ownership.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-civilian-supplies.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	_expect(screen.plan_module_counts.has("ice_extraction") and screen.plan_module_counts.has("water_purification") and screen.plan_module_counts.has("hydroponics") and screen.plan_module_counts.has("medical_synthesis"), "mobile station planner lists all genuinely constructible civilian industries")
+	screen.find_child("PlanAdd_crew_habitat", true, false).pressed.emit()
+	_expect(screen.plan_result.text.contains("Potable Water") and screen.plan_result.text.contains("Food Rations") and screen.plan_result.text.contains("Medical Supplies"), "touch planner explains all three actual recurring habitation resource requirements")
+	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("PopulationButton", true, false).pressed.emit()
+	_expect(screen.population_info.text.contains("Water") and screen.population_info.text.contains("Food") and screen.population_info.text.contains("Medical"), "mobile population screen reports civilian life-support needs from the real source inventory")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	await process_frame
+	screen._open_map_station("hearth_exchange")
+	screen.find_child("InspectorTab_Population", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Consumption/60 ticks") and screen.detail_body.text.contains("New births"), "Space RPG-style inspector exposes provisions without claiming births or schooling are done")
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
