@@ -429,7 +429,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 10, "starter economy includes four markets, four archives and six original plus four provision wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 12, "starter economy includes four markets, four archives, six original wares, four provisions and two ecological resources")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -658,7 +658,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 10, "production upgrade adds the original finite deposit and four verified civilian manufacturing recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 12, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -829,6 +829,9 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
+		for ecology_ware in ["organic_waste", "fertile_soil"]:
+			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
+			migrated_stock.erase(ecology_ware)
 		for provision_ware in ["ice", "potable_water", "food_rations", "medical_supplies"]:
 			_expect(int(migrated_stock.get(provision_ware, -1)) == 0, "older station migration never receives free new civilian stock: " + str(old_station.id) + " / " + provision_ware)
 			migrated_stock.erase(provision_ware)
@@ -3727,6 +3730,7 @@ func _run() -> void:
 	var original_v17 = WorldScript.new()
 	_expect(original_v17.load_starter() == OK, "version 17 migration fixture begins as a valid starter world")
 	var prior_settlement: Dictionary = original_v17.snapshot()
+	_strip_ecology(prior_settlement)
 	prior_settlement.erase("settlement_version")
 	for legacy_ship in prior_settlement.ships:
 		legacy_ship.erase("settler_passengers")
