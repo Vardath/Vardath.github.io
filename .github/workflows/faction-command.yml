@@ -1,6 +1,6 @@
 name: Faction Command foundation
 # Pass 32 final-head CI gate: household births, age cohorts, dependent-safe rescue and Android v21.
-# Verify both jobs on the complete Pass 31 implementation, master design, README and progress journal.
+# Pass 32 final-head gate: verify all 1,603 Godot assertions and signed Android v21 after code, design, README and journal updates.
 on:
   push:
     paths:
