@@ -228,6 +228,7 @@ func advance_ticks(count: int) -> void:
 		archives.tick(self)
 		research.tick(self)
 		shipyard.tick(self)
+		personnel.tick(self)
 
 
 func snapshot() -> Dictionary:
@@ -528,6 +529,7 @@ func _trade_for_ship(ship: Dictionary, station_id: String, ware_id: String, quan
 func _record_transaction(kind: String, ship_id: String, station_id: String, ware_id: String, quantity: int, price: int, amount: int) -> void:
 	state.ledger.append({"id": int(state.next_transaction_id), "tick": int(state.tick), "kind": kind, "ship_id": ship_id, "station_id": station_id, "ware_id": ware_id, "quantity": quantity, "price": price, "amount": amount})
 	state.next_transaction_id = int(state.next_transaction_id) + 1
+	personnel.record_activity(self, ship_id, kind)
 
 
 func _find_route(origin: String, destination: String) -> Array:
@@ -574,6 +576,7 @@ func _tick_ship(ship: Dictionary) -> void:
 	if int(ship.travel.remaining) <= 0:
 		ship.sector = ship.travel.to
 		ship.travel = {}
+		personnel.record_activity(self, str(ship.id), "sector_crossing")
 		if ship.sector == ship.orders[0].destination:
 			ship.orders.pop_front()
 		if ship.orders.is_empty():
