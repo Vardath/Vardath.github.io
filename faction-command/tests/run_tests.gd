@@ -4130,7 +4130,11 @@ func _run() -> void:
 	_expect(int(p32_family_record.cohorts.children) == 1 and int(p32_family_record.cohorts.students) == 0 and int(p32_family_record.family.births_total) == 1 and int(p32_family_record.family.birth_progress) == 0, "ten successful service cycles produce one actual dependent child, never an adult crew member")
 	_expect(p32_world.population.total_people(p32_world) == p32_adults_total + 1 and int(p32_family_record.cohorts.assigned_workers) == 2, "one medically funded birth is the one permitted increase in total known people")
 	_expect(p32_family.stock.medical_supplies >= 0 and p32_world.state.ledger.any(func(e): return e.kind == "resident_birth" and int(e.quantity) == 1 and e.ware_id == "medical_supplies" and int(e.amount) == 0), "birth consumes one separately paid medical kit and records its counted newborn in the immutable ledger")
-	_expect(p32_family_record.family.child_queue.size() == 1 and int(p32_family_record.family.child_queue[0].quantity) == 1 and int(p32_family_record.family.child_queue[0].ready_tick) == int(p32_world.state.tick) + p32_world.demographics.CHILDHOOD_TICKS, "birth stores a stable future maturation tick for exactly one child rather than instantly graduating into work")
+	var p32_birth_event: Dictionary = {}
+	for p32_entry in p32_world.state.ledger:
+		if p32_entry.kind == "resident_birth" and p32_entry.station_id == "player_station_2":
+			p32_birth_event = p32_entry
+	_expect(not p32_birth_event.is_empty() and p32_family_record.family.child_queue.size() == 1 and int(p32_family_record.family.child_queue[0].quantity) == 1 and int(p32_family_record.family.child_queue[0].ready_tick) == int(p32_birth_event.tick) + p32_world.demographics.CHILDHOOD_TICKS, "birth stores one future maturation tick relative to the actual recorded delivery tick, not simply the end of the test batch")
 	_expect(p32_world.population.report(p32_world).any(func(entry): return entry.station_id == "player_station_2" and int(entry.occupied_housing) == 3 and int(entry.households) == 1 and int(entry.available_beds) == 13), "Family Habitat counts occupied bed for the newborn and reports thirteen real free beds")
 	_expect(save_store.save_game(test_root + "/pass32-newborn.json", p32_world.snapshot()) == OK, "live birth, age queue and finite warehouse/health state satisfy strict saved-game validation")
 	var p32_newborn_read: Dictionary = save_store.load_game(test_root + "/pass32-newborn.json")
