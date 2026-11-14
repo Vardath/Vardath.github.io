@@ -168,7 +168,7 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 	if not state.get("education_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("school_seats")):
 		warnings.append("Education facilities create classrooms, NOT free students, teachers, skills or research. Enrol real housed residents, appoint existing adults as instructors and physically supply archival records, power and salary credits. College certificates are foundational theory only, not licensed pilots or marines.")
 	if not state.get("habitation_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("housing_capacity")):
-		warnings.append("Habitats provide housing capacity, not instant residents, crew or births. Every service cycle requires real Energy Cells, Potable Water, Food Rations and Medical Supplies; household growth, ageing and species compatibility are future systems.")
+		warnings.append("Habitats provide housing capacity, not instant residents, crew or births. Every service cycle requires real Energy Cells, Potable Water, Food Rations and Medical Supplies; household births and schooling require actual people and physical supplies; species compatibility remains a future system.")
 	var ware_rows: Array[Dictionary] = []
 	for ware in state.get("wares", []):
 		var ware_id := str(ware.id)
