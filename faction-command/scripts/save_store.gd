@@ -438,6 +438,50 @@ func _valid_education(state: Dictionary) -> bool:
 			teachers_busy += ceili(float(int(classroom.count)) / float(EducationScript.STUDENTS_PER_TEACHER))
 		if teachers_busy > int(record.teachers) or adult_studying + maxi(int(record.teachers), trained_adults) > adults or youth_studying + int(record.youth_completed) > youths:
 			return false
+		# A save cannot mint a certificate by changing a counter. Validate
+		# its immutable education enrollment/completion and wage evidence.
+		var last_appointment: int = 0
+		var enrolled_by_program: Dictionary = {}
+		var completed_by_program: Dictionary = {}
+		var exited_by_program: Dictionary = {}
+		var payroll_evidence := 0
+		for event in state.ledger:
+			if str(event.get("station_id", "")) != str(station.id):
+				continue
+			var kind: String = str(event.get("kind", ""))
+			if kind not in ["education_appointment", "education_enrollment", "education_completed", "education_age_exit", "education_payroll"]:
+				continue
+			if not _is_nonnegative_integer(event.get("quantity")) or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick):
+				return false
+			if kind == "education_appointment":
+				if int(event.price) != 0 or int(event.amount) != 0:
+					return false
+				last_appointment = int(event.quantity)
+			elif kind == "education_payroll":
+				if int(event.amount) >= 0 or int(event.price) < 1 or int(event.quantity) < 1:
+					return false
+				payroll_evidence += -int(event.amount)
+			else:
+				var program_id: String = str(event.get("ware_id", ""))
+				if program_id not in EducationScript.PROGRAM_IDS or int(event.quantity) < 1 or int(event.price) != 0 or int(event.amount) != 0:
+					return false
+				if kind == "education_enrollment":
+					enrolled_by_program[program_id] = int(enrolled_by_program.get(program_id, 0)) + int(event.quantity)
+				elif kind == "education_completed":
+					completed_by_program[program_id] = int(completed_by_program.get(program_id, 0)) + int(event.quantity)
+				elif kind == "education_age_exit":
+					if program_id != "community_school":
+						return false
+					exited_by_program[program_id] = int(exited_by_program.get(program_id, 0)) + int(event.quantity)
+		if last_appointment != int(record.teachers) or payroll_evidence != int(record.payroll_credits):
+			return false
+		for program_id in EducationScript.PROGRAM_IDS:
+			var expected_completed: int = int(record.qualified[program_id]) + (int(record.youth_completed) if program_id == "community_school" else 0)
+			if int(completed_by_program.get(program_id, 0)) != expected_completed:
+				return false
+			var active_count: int = int(record.courses.get(program_id, {}).get("count", 0))
+			if int(enrolled_by_program.get(program_id, 0)) != expected_completed + int(exited_by_program.get(program_id, 0)) + active_count:
+				return false
 		if (not record.courses.is_empty() or trained_adults > 0 or int(record.youth_completed) > 0 or int(record.teachers) > 0) and station.owner != state.player_faction_id:
 			return false
 		if not record.courses.is_empty() and (station.get("habitation", []).is_empty() or int(cohort.hab_capacity) < adults + youths + int(cohort.cohorts.children)):
