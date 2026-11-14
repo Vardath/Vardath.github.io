@@ -117,7 +117,7 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
-	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version != 1:
+	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
@@ -260,9 +260,13 @@ func _valid_world(state: Dictionary) -> bool:
 
 
 func _valid_settlement(state: Dictionary) -> bool:
-	if state.settlement_version != 1:
+	if state.settlement_version not in [1, 2]:
 		return false
 	var personnel = PersonnelScript.new()
+	var player_stations: Dictionary = {}
+	for station in state.stations:
+		if station.owner == state.player_faction_id:
+			player_stations[str(station.id)] = true
 	for ship in state.ships:
 		if not _is_nonnegative_integer(ship.get("settler_passengers")) or not ship.get("settler_source_station_id") is String:
 			return false
@@ -271,8 +275,33 @@ func _valid_settlement(state: Dictionary) -> bool:
 		if n > 1000000 or source.length() > 128 or (n == 0) != source.is_empty():
 			return false
 		if n > 0:
-			if ship.owner != state.player_faction_id or not state.crew_pools.has(source) or int(ship.crew) + n > personnel.capacity(ship):
+			if ship.owner != state.player_faction_id or int(ship.crew) + n > personnel.capacity(ship):
 				return false
+			# Pass 29 sources are existing NPC roster stations only. Pass 30
+			# also permits physical evacuation from a valid owned colony.
+			if not state.crew_pools.has(source) and (state.settlement_version != 2 or not player_stations.has(source)):
+				return false
+	if state.settlement_version == 1:
+		return true
+	for record in state.population.stations.values():
+		if not record is Dictionary or record.get("resident_status") not in ["Unoccupied", "Awaiting service", "Provisioned", "Provision shortage", "Housing offline"]:
+			return false
+		if not record.get("resident_shortage") is String or str(record.resident_shortage) not in ["", "potable_water", "food_rations", "medical_supplies"]:
+			return false
+		if not _is_nonnegative_integer(record.get("resident_alert_cycles")) or int(record.resident_alert_cycles) > 1000000:
+			return false
+		var occupied: int = int(record.cohorts.assigned_workers)
+		var mode: String = str(record.resident_status)
+		var alert: int = int(record.resident_alert_cycles)
+		if (occupied == 0) != (mode == "Unoccupied"):
+			return false
+		if (mode == "Provision shortage") != (str(record.resident_shortage) != ""):
+			return false
+		if mode in ["Provision shortage", "Housing offline"]:
+			if alert < 1:
+				return false
+		elif alert != 0:
+			return false
 	return true
 
 

@@ -58,6 +58,8 @@ func register_station(world: RefCounted, station_id: String) -> void:
 		var record: Dictionary = _cohort(station_id, int(world.state.crew_pools.get(station_id, 0)))
 		if world.state.has("habitation_version"):
 			record.housing_status = "No habitat"
+		if int(world.state.get("settlement_version", 0)) >= 2:
+			world.settlement._initialize_welfare(record)
 		world.state.population.stations[station_id] = record
 
 
@@ -131,6 +133,11 @@ func report(world: RefCounted) -> Array:
 			"students":int(rec.cohorts.students),
 			"assigned":int(rec.cohorts.assigned_workers),
 			"occupied_housing":int(rec.cohorts.assigned_workers),
+			"available_beds":maxi(0, world.habitation.operational_capacity(station, world.state.habitation_catalog) - int(rec.cohorts.assigned_workers)) if not station.is_empty() else 0,
+			"housing_deficit":maxi(0, int(rec.cohorts.assigned_workers) - world.habitation.operational_capacity(station, world.state.habitation_catalog)) if not station.is_empty() else int(rec.cohorts.assigned_workers),
+			"resident_status":str(rec.get("resident_status", "Unoccupied")),
+			"resident_shortage":str(rec.get("resident_shortage", "")),
+			"resident_alert_cycles":int(rec.get("resident_alert_cycles", 0)),
 			"retirees":int(rec.cohorts.retirees),
 			"hab_capacity":int(rec.hab_capacity),
 			"operational_capacity":world.habitation.operational_capacity(station, world.state.habitation_catalog) if not station.is_empty() else 0,

@@ -74,22 +74,31 @@ func needs_per_module(world: RefCounted, module_id: String) -> Dictionary:
 	return world.state.provisions_catalog.habitat_needs_per_60.duplicate(true)
 
 
-func facility_needs(world: RefCounted, station: Dictionary) -> Dictionary:
+func facility_needs(world: RefCounted, station: Dictionary, projected_occupants: int = -1) -> Dictionary:
 	var totals: Dictionary = {}
 	for module in station.get("habitation", []):
 		totals["energy_cells"] = int(totals.get("energy_cells", 0)) + int(world.state.habitation_catalog[module.id].energy_per_60)
 		for ware_id in needs_per_module(world, str(module.id)):
 			totals[ware_id] = int(totals.get(ware_id, 0)) + int(world.state.provisions_catalog.habitat_needs_per_60[ware_id])
+	# Settled adults consume *additional* finite supplies over module baseline.
+	# Optional projected occupancy checks the full bill BEFORE a new landing.
+	if int(world.state.get("settlement_version", 0)) >= 2:
+		var occupants: int = projected_occupants
+		if occupants < 0:
+			occupants = int(world.population.station_cohort(world, str(station.get("id", ""))).get("cohorts", {}).get("assigned_workers", 0))
+		for ware_id in world.settlement.resident_needs(occupants):
+			totals[ware_id] = int(totals.get(ware_id, 0)) + int(world.settlement.resident_needs(occupants)[ware_id])
 	return totals
 
 
-func missing_provision(world: RefCounted, station: Dictionary) -> String:
+func missing_provision(world: RefCounted, station: Dictionary, projected_occupants: int = -1) -> String:
 	if not world.state.has("provisions_version") or station.get("habitation", []).is_empty():
 		return ""
 	# A station stock report is actionable and cannot silently count goods
 	# still on a ship or stranded in uncompleted construction storage.
+	var needed_wares: Dictionary = facility_needs(world, station, projected_occupants)
 	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
-		var needed: int = int(facility_needs(world, station).get(ware_id, 0))
+		var needed: int = int(needed_wares.get(ware_id, 0))
 		if int(station.stock.get(ware_id, 0)) < needed:
 			return str(world._find_ware(ware_id).get("name", ware_id))
 	return ""

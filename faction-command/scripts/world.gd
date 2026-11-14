@@ -254,6 +254,7 @@ func advance_ticks(count: int) -> void:
 				station_supply.tick(self, ship)
 		construction.tick(self)
 		habitation.tick(self)
+		settlement.tick(self)
 		archives.tick(self)
 		research.tick(self)
 		shipyard.tick(self)
