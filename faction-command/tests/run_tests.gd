@@ -39,8 +39,23 @@ func _disable_npc_trading(world: RefCounted) -> void:
 			ship.autotrader.enabled = false
 
 
-func _without_player_role(ship: Dictionary) -> Dictionary:
+func _without_settlement(ship: Dictionary) -> Dictionary:
 	var copy := ship.duplicate(true)
+	copy.erase("settler_passengers")
+	copy.erase("settler_source_station_id")
+	return copy
+
+
+func _without_settlement_ships(ships: Array) -> Array:
+	var copy := ships.duplicate(true)
+	for ship in copy:
+		ship.erase("settler_passengers")
+		ship.erase("settler_source_station_id")
+	return copy
+
+
+func _without_player_role(ship: Dictionary) -> Dictionary:
+	var copy := _without_settlement(ship)
 	copy.erase("player_trader")
 	copy.erase("build_supply")
 	copy.erase("station_supply")
@@ -51,7 +66,7 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 
 
 func _without_station_supply(ships: Array) -> Array:
-	var copy := ships.duplicate(true)
+	var copy := _without_settlement_ships(ships)
 	for ship in copy:
 		ship.erase("station_supply")
 		ship.erase("captain_profile")
@@ -61,7 +76,7 @@ func _without_station_supply(ships: Array) -> Array:
 
 
 func _without_progression(ships: Array) -> Array:
-	var copy := ships.duplicate(true)
+	var copy := _without_settlement_ships(ships)
 	for ship in copy:
 		ship.erase("captain_profile")
 		ship.erase("crew_profile")
@@ -939,7 +954,7 @@ func _run() -> void:
 	var old_roles_load: Dictionary = save_store.load_game(test_root + "/old-roles.json")
 	var roles_upgrade = WorldScript.new()
 	_expect(bool(old_roles_load.get("ok", false)) and roles_upgrade.restore_snapshot(old_roles_load.state) == OK, "older logistics save gains the new role")
-	_expect(not roles_upgrade.state.ships[0].player_trader.enabled and _without_player_role(roles_upgrade.state.ships[0]) == old_roles.ships[0] and roles_upgrade.state.ledger == old_roles.ledger and roles_upgrade.state.ships[1] == old_roles.ships[1], "role migration preserves existing ship, journey, NPC and ledger without enabling automation")
+	_expect(not roles_upgrade.state.ships[0].player_trader.enabled and _without_player_role(roles_upgrade.state.ships[0]) == old_roles.ships[0] and roles_upgrade.state.ledger == old_roles.ledger and _without_settlement(roles_upgrade.state.ships[1]) == old_roles.ships[1], "role migration preserves existing ship, journey, NPC and ledger without enabling automation")
 	var bad_role: Dictionary = saved_trip.duplicate(true)
 	bad_role.ships[0].player_trader.managed_quantity = 999
 	_expect(save_store.save_game(test_root + "/bad-role.json", bad_role) != OK, "save validation rejects managed cargo beyond the actual hold")
@@ -1126,7 +1141,7 @@ func _run() -> void:
 	migrated_ship.erase("captain_profile")
 	migrated_ship.erase("crew_profile")
 	migrated_ship.erase("payroll")
-	_expect(migrated_ship == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
+	_expect(_without_settlement(migrated_ship) == legacy_construction.ships[0] and _without_settlement(migrated_build.state.ships[1]) == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
 	_expect(int(migrated_build._find_ship("npc_builder_001").credits) == 0 and migrated_build.state.build_sites.is_empty(), "migration adds no free money, sites or materials")
 	var bad_construction: Dictionary = build_world.snapshot()
 	bad_construction.build_sites[0].tasks[0].progress = 999
@@ -1432,7 +1447,7 @@ func _run() -> void:
 	upgraded_ship.erase("captain_profile")
 	upgraded_ship.erase("crew_profile")
 	upgraded_ship.erase("payroll")
-	_expect(upgraded_ship == old_supply.ships[0] and supply_upgrade.state.ledger == old_supply.ledger and supply_upgrade.state.starting_credits == old_supply.starting_credits, "supply migration preserves ship orders, cargo, credits and ledger")
+	_expect(_without_settlement(upgraded_ship) == old_supply.ships[0] and supply_upgrade.state.ledger == old_supply.ledger and supply_upgrade.state.starting_credits == old_supply.starting_credits, "supply migration preserves ship orders, cargo, credits and ledger")
 	var invalid_supply: Dictionary = supply_world.snapshot()
 	invalid_supply.ships[0].build_supply.enabled = true
 	invalid_supply.ships[0].build_supply.site_id = "unknown"
@@ -3151,7 +3166,7 @@ func _run() -> void:
 	var old_population_loaded: Dictionary = save_store.load_game(old_population_path)
 	var migrated_population = WorldScript.new()
 	_expect(bool(old_population_loaded.get("ok", false)) and migrated_population.restore_snapshot(old_population_loaded.state) == OK and migrated_population.state.population_version == 1, "Pass-23 save migrates to the resident-worker ledger without a fresh game")
-	_expect(migrated_population.state.ships == old_population.ships and migrated_population.state.crew_pools == old_population.crew_pools and migrated_population.state.starting_credits == old_population.starting_credits and migrated_population.state.ledger == old_population.ledger, "migration leaves existing pilots, crews, salaries, assets, roles, orders and money unchanged")
+	_expect(_without_settlement_ships(migrated_population.state.ships) == old_population.ships and migrated_population.state.crew_pools == old_population.crew_pools and migrated_population.state.starting_credits == old_population.starting_credits and migrated_population.state.ledger == old_population.ledger, "migration leaves existing pilots, crews, salaries, assets, roles, orders and money unchanged")
 	_expect(migrated_population.population.total_people(migrated_population) == known_before and migrated_population.population.available_workers(migrated_population, "hearth_exchange") == 11, "old hired workers are not counted again as additional residents on migration")
 	_expect(save_store.save_game(test_root + "/migrated-population.json", migrated_population.snapshot()) == OK, "newly migrated population schema is permanently saveable")
 
@@ -3287,7 +3302,7 @@ func _run() -> void:
 	var legacy_housing_read: Dictionary = save_store.load_game(test_root + "/before-housing.json")
 	var housing_migrated = WorldScript.new()
 	_expect(bool(legacy_housing_read.get("ok", false)) and housing_migrated.restore_snapshot(legacy_housing_read.state) == OK and housing_migrated.state.habitation_version == 1, "legacy population state gains an empty residential catalogue without resetting the game")
-	_expect(housing_migrated.state.starting_credits == legacy_housing.starting_credits and housing_migrated.state.ships == legacy_housing.ships and housing_migrated.state.population.stations.hearth_exchange.cohorts == legacy_housing.population.stations.hearth_exchange.cohorts, "habitation migration preserves people, captain skills, ship orders, crew and credits")
+	_expect(housing_migrated.state.starting_credits == legacy_housing.starting_credits and _without_settlement_ships(housing_migrated.state.ships) == legacy_housing.ships and housing_migrated.state.population.stations.hearth_exchange.cohorts == legacy_housing.population.stations.hearth_exchange.cohorts, "habitation migration preserves people, captain skills, ship orders, crew and credits")
 	var invalid_future_housing: Dictionary = residential_world.snapshot()
 	invalid_future_housing.habitation_version = 2
 	var future_housing_path := test_root + "/future-housing.json"
@@ -3582,7 +3597,7 @@ func _run() -> void:
 	var from_previous: Dictionary = save_store.load_game(before_civilian_save)
 	var supply_migrated = WorldScript.new()
 	_expect(bool(from_previous.get("ok", false)) and supply_migrated.restore_snapshot(from_previous.state) == OK and supply_migrated.state.provisions_version == 1, "older save migrates in place to four newly defined civilian wares and physical ice reserves")
-	_expect(supply_migrated.state.ships == before_civilian.ships and supply_migrated.state.stations.size() == before_civilian.stations.size() and supply_migrated.state.starting_credits == before_civilian.starting_credits and supply_migrated.state.ledger == before_civilian.ledger, "migration preserves all ships, captains, crew, orders, money, old station stock and transaction history")
+	_expect(_without_settlement_ships(supply_migrated.state.ships) == before_civilian.ships and supply_migrated.state.stations.size() == before_civilian.stations.size() and supply_migrated.state.starting_credits == before_civilian.starting_credits and supply_migrated.state.ledger == before_civilian.ledger, "migration preserves all ships, captains, crew, orders, money, old station stock and transaction history")
 	_expect(_total_ware(supply_migrated.state, "food_rations") == 0 and _total_ware(supply_migrated.state, "medical_supplies") == 0, "migrating a previous game never seeds fictional civilian goods into station or ship inventories")
 	_expect(save_store.save_game(test_root + "/pass27-upgraded-provisioning.json", supply_migrated.snapshot()) == OK, "migrated four-ware economy is immediately saveable")
 	var bogus_supply_version: Dictionary = civilian_world.snapshot()
