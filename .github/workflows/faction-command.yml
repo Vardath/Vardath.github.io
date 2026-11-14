@@ -1,6 +1,6 @@
 name: Faction Command foundation
-# Pass 31 final-head CI gate: ecological recycling, soil-based agriculture and Android v20.
-# Verify both jobs on the complete Pass 31 implementation, master design, README and progress journal.
+# Pass 32 final-head CI gate: household births, age cohorts, dependent-safe rescue and Android v21.
+# Pass 32 final-head gate: verify all 1,603 Godot assertions and signed Android v21 after code, design, README and journal updates.
 on:
   push:
     paths:
@@ -108,13 +108,14 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/provisions.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/settlement.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/ecology.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/demographics.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/provisions.json'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/habitation.json'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='20'" package-info.txt
-          grep -F "versionName='0.1.20-debug'" package-info.txt
+          grep -F "versionCode='21'" package-info.txt
+          grep -F "versionName='0.1.21-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256

@@ -84,7 +84,15 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_demographics(state: Dictionary) -> void:
+	state.erase("demographics_version")
+	state.erase("demographics_catalog")
+	for record in state.get("population", {}).get("stations", {}).values():
+		record.erase("family")
+
+
 func _strip_ecology(state: Dictionary) -> void:
+	_strip_demographics(state)
 	state.erase("ecology_version")
 	state.erase("ecology_catalog")
 	for index in range(state.get("wares", []).size() - 1, -1, -1):
@@ -240,6 +248,36 @@ func _total_ware(state: Dictionary, ware_id: String) -> int:
 	for ship in state.ships:
 		total += int(ship.cargo.get(ware_id, 0))
 	return total
+
+
+
+func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: String, units_per_ware: int = 8) -> bool:
+	# This is a REAL cargo operation in the test harness: supplies leave
+	# a previously physically constructed and functioning industrial colony,
+	# occupy the owned ship, and are unloaded only at a physical station dock.
+	var destination: Dictionary = world._find_station(home_id)
+	var source: Dictionary = world._find_station(source_id)
+	if destination.is_empty() or source.is_empty():
+		return false
+	# Biological waste occupies real finite storage. Collect it into the
+	# ship cargo hold before replenishment, exactly as a recycler supplier
+	# would. It is retained aboard, not deleted or teleported.
+	var recoverable_waste: int = int(destination.stock.get("organic_waste", 0))
+	if recoverable_waste > 0:
+		if not world.dock_ship("ship_001", home_id).ok or not world.transfer_player_station("ship_001", home_id, "organic_waste", recoverable_waste, false).ok:
+			return false
+	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
+		var needed: int = maxi(0, units_per_ware - int(destination.stock.get(ware_id, 0)))
+		if needed == 0:
+			continue
+		if int(source.stock.get(ware_id, 0)) < needed:
+			printerr("P32 FAMILY SOURCE SHORTAGE: ware=", ware_id, " needed=", needed, " actual=", int(source.stock.get(ware_id, 0)), " station=", source_id, " tick=", int(world.state.tick), " family_stock=", destination.stock)
+			return false
+		if not world.dock_ship("ship_001", source_id).ok or not world.transfer_player_station("ship_001", source_id, ware_id, needed, false).ok:
+			return false
+		if not world.dock_ship("ship_001", home_id).ok or not world.transfer_player_station("ship_001", home_id, ware_id, needed, true).ok:
+			return false
+	return true
 
 
 func _run() -> void:
@@ -4041,6 +4079,159 @@ func _run() -> void:
 	_expect(screen.detail_body.text.contains("Wastewater & biosolids") and screen.detail_body.text.contains("Recoverable organic waste"), "Android Population inspector shows real colonial waste and future recoverable volume")
 	screen.find_child("PopulationButton", true, false).pressed.emit()
 	_expect(screen.population_info.text.contains("CIRCULAR ECOLOGY") and screen.population_info.text.contains("Reclaimed Fertile Soil"), "global population panel includes ecological recovery and agricultural materials alongside life support")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 32: family residences are real, paid, supplied and occupied.
+	# Cohort births create only actual children, then advance through precise
+	# time-indexed youth queues into untrained adults, never free skilled crew.
+	var p32_world = WorldScript.new()
+	_expect(p32_world.restore_snapshot(settled_restore.snapshot()) == OK, "family lifecycle reuses the physically supplied, inhabited Pass 29/30 Copper Wake complex without fabricating a second starting population")
+	_disable_npc_trading(p32_world)
+	_expect(p32_world.state.demographics_version == 1 and int(p32_world.state.demographics_catalog.birth_interval) == 600, "versioned resident family lifecycle is initialized with explicitly slow 600-tick birth eligibility")
+	var p32_adults_total: int = p32_world.population.total_people(p32_world)
+	var p32_base_credits: int = _total_credits(p32_world.state)
+	var p32_parent_station: Dictionary = p32_world._find_station("player_station_1")
+	_expect(p32_parent_station.stock.alloy_plates >= 16 and p32_parent_station.stock.energy_cells >= 4, "existing alloy smelter and solar power plant physically manufactured the required family home construction inputs")
+	var p32_plan: Dictionary = p32_world.construction.planner.preview(p32_world.state, {"family_habitat":1}, "all", [], "copper_wake")
+	_expect(p32_plan.ok and not _plan_row(p32_plan.modules, "family_habitat").is_empty(), "original Android list planner exposes one paid Family Habitat and its actual material requirements")
+	var p32_quote: Dictionary = p32_world.construction.quote(p32_world, "copper_wake", {"family_habitat":1}, "all", [])
+	_expect(p32_quote.ok and int(p32_quote.materials.alloy_plates) == 16 and int(p32_quote.materials.energy_cells) == 4 and int(p32_quote.fee) == 900, "Family Habitat must be constructed with exactly sixteen real alloys, four power cells and nine hundred credits")
+	var p32_site: Dictionary = p32_world.construction.place(p32_world, "copper_wake", {"family_habitat":1}, "all", [])
+	_expect(p32_site.ok and p32_world._find_station("player_station_2").habitation.is_empty(), "paying for a family residence creates an unfinished build site, not instant housing or free children")
+	_expect(p32_world.dock_ship("ship_001", "player_station_1").ok, "existing real transport ship docks at source production colony")
+	_expect(p32_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 16, false).ok and p32_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 4, false).ok, "family housing construction inputs are loaded from genuine owned colony inventory")
+	_expect(p32_world.dock_ship("ship_001", "player_station_2").ok and p32_world.construction.deliver(p32_world, "ship_001", str(p32_site.site_id)).ok, "physical transport ship delivers paid family residential materials to the NPC builder's actual build storage")
+	p32_world.advance_ticks(120)
+	var p32_site_live: Dictionary = p32_world.construction.find_site(p32_world, str(p32_site.site_id))
+	var p32_family: Dictionary = p32_world._find_station("player_station_2")
+	_expect(int(p32_site_live.completed) == 1 and p32_family.habitation.size() == 1 and p32_family.habitation[0].id == "family_habitat" and int(p32_family.storage_capacity) == 36, "original funded builder commissions a real 16-place Family Habitat with 36 physical storage slots")
+	_expect(p32_world.population.total_people(p32_world) == p32_adults_total and _total_credits(p32_world.state) == p32_base_credits, "paying for and completing family housing conserves money and never spawns settlers")
+	_expect(_deliver_family_supplies(p32_world, "player_station_1", "player_station_2"), "a real owned cargo ship delivers finite manufactured water food medicine and solar energy for family service")
+	_expect(p32_world.station_volume("player_station_2") == 32, "a family station with 36 volume stores exactly thirty-two genuinely delivered life-support units")
+	p32_world.advance_ticks(60)
+	_expect(p32_world.habitation.operational_capacity(p32_family, p32_world.state.habitation_catalog) == 16 and p32_family.habitation[0].powered, "genuinely stocked Family Habitat starts its paid powered baseline service before passengers arrive")
+	_expect(p32_world.dock_ship("ship_001", "player_station_1").ok and p32_world.settlement.evacuate(p32_world, "ship_001", 2).ok, "two already counted adults leave the old crew habitat in actual transport berths, not magical migration")
+	_expect(p32_world.dock_ship("ship_001", "player_station_2").ok and p32_world.settlement.disembark(p32_world, "ship_001", 2).ok, "physically transported parents settle in commissioned powered Family Habitat with projected supplies")
+	var p32_family_record: Dictionary = p32_world.population.station_cohort(p32_world, "player_station_2")
+	_expect(p32_world.demographics.known_households(p32_world, p32_family, int(p32_family_record.cohorts.assigned_workers)) == 1 and int(p32_family_record.cohorts.assigned_workers) == 2 and int(p32_family_record.cohorts.children) == 0, "two transported adults form one tracked household, not an automatically created infant")
+	_expect(p32_world.population.total_people(p32_world) == p32_adults_total, "adult parent transfer creates no net population, replaces no crew and duplicates no person")
+	_expect(p32_world.state.population.stations.player_station_1.cohorts.assigned_workers == 0, "moving to family housing subtracts both parents exactly once from their former station")
+	# A full pregnancy-equivalent period takes ten separate powered/provisioned
+	# 60-tick cycles. Deliver real goods at docks between each pair of cycles.
+	var p32_prebirth: Dictionary = {}
+	for p32_stage in range(5):
+		_expect(_deliver_family_supplies(p32_world, "player_station_1", "player_station_2"), "continuing family support obtains real industrial food, water and medical stock rather than an invisible replenishment (batch %d)" % p32_stage)
+		p32_world.advance_ticks(120)
+		if p32_stage == 3:
+			p32_prebirth = p32_world.snapshot()
+	_expect(int(p32_family_record.cohorts.children) == 1 and int(p32_family_record.cohorts.students) == 0 and int(p32_family_record.family.births_total) == 1 and int(p32_family_record.family.birth_progress) == 0, "ten successful service cycles produce one actual dependent child, never an adult crew member")
+	_expect(p32_world.population.total_people(p32_world) == p32_adults_total + 1 and int(p32_family_record.cohorts.assigned_workers) == 2, "one medically funded birth is the one permitted increase in total known people")
+	_expect(p32_family.stock.medical_supplies >= 0 and p32_world.state.ledger.any(func(e): return e.kind == "resident_birth" and int(e.quantity) == 1 and e.ware_id == "medical_supplies" and int(e.amount) == 0), "birth consumes one separately paid medical kit and records its counted newborn in the immutable ledger")
+	var p32_birth_event: Dictionary = {}
+	for p32_entry in p32_world.state.ledger:
+		if p32_entry.kind == "resident_birth" and p32_entry.station_id == "player_station_2":
+			p32_birth_event = p32_entry
+	_expect(not p32_birth_event.is_empty() and p32_family_record.family.child_queue.size() == 1 and int(p32_family_record.family.child_queue[0].quantity) == 1 and int(p32_family_record.family.child_queue[0].ready_tick) == int(p32_birth_event.tick) + p32_world.demographics.CHILDHOOD_TICKS, "birth stores one future maturation tick relative to the actual recorded delivery tick, not simply the end of the test batch")
+	_expect(p32_world.population.report(p32_world).any(func(entry): return entry.station_id == "player_station_2" and int(entry.occupied_housing) == 3 and int(entry.households) == 1 and int(entry.available_beds) == 13), "Family Habitat counts occupied bed for the newborn and reports thirteen real free beds")
+	_expect(save_store.save_game(test_root + "/pass32-newborn.json", p32_world.snapshot()) == OK, "live birth, age queue and finite warehouse/health state satisfy strict saved-game validation")
+	var p32_newborn_read: Dictionary = save_store.load_game(test_root + "/pass32-newborn.json")
+	var p32_newborn_resume = WorldScript.new()
+	_expect(p32_newborn_read.get("ok", false) and p32_newborn_resume.restore_snapshot(p32_newborn_read.state) == OK and p32_newborn_resume.snapshot() == p32_world.snapshot(), "save/reload retains parents, newborn, exact future maturation tick, physical cargo and medical costs")
+	var p32_age_world = WorldScript.new()
+	_expect(p32_age_world.restore_snapshot(p32_world.snapshot()) == OK, "age-progress scenario clones the real living family without creating new members")
+	var p32_age_record: Dictionary = p32_age_world.population.station_cohort(p32_age_world, "player_station_2")
+	var p32_age_total: int = p32_age_world.population.total_people(p32_age_world)
+	p32_age_world.state.tick = int(p32_age_record.family.child_queue[0].ready_tick)
+	p32_age_world.demographics.tick(p32_age_world)
+	_expect(int(p32_age_record.cohorts.children) == 0 and int(p32_age_record.cohorts.students) == 1 and p32_age_record.family.child_queue.is_empty() and p32_age_record.family.youth_queue.size() == 1, "at the child's actual scheduled milestone, exactly one child becomes one school-age youth")
+	_expect(int(p32_age_record.family.youth_queue[0].ready_tick) == int(p32_age_world.state.tick) + p32_age_world.demographics.YOUTH_TICKS and p32_age_world.population.total_people(p32_age_world) == p32_age_total, "school-age progression has its own future timestamp and never alters headcount")
+	_expect(save_store.save_game(test_root + "/pass32-school-age.json", p32_age_world.snapshot()) == OK, "school-age youth and queued graduation are valid persisted generations")
+	var p32_school_read: Dictionary = save_store.load_game(test_root + "/pass32-school-age.json")
+	var p32_school_resume = WorldScript.new()
+	_expect(p32_school_read.get("ok", false) and p32_school_resume.restore_snapshot(p32_school_read.state) == OK, "a school-age generation survives save/load at its future age milestone")
+	p32_school_resume.state.tick = int(p32_school_resume.population.station_cohort(p32_school_resume, "player_station_2").family.youth_queue[0].ready_tick)
+	p32_school_resume.demographics.tick(p32_school_resume)
+	var p32_graduate: Dictionary = p32_school_resume.population.station_cohort(p32_school_resume, "player_station_2")
+	_expect(int(p32_graduate.cohorts.children) == 0 and int(p32_graduate.cohorts.students) == 0 and int(p32_graduate.cohorts.assigned_workers) == 3 and int(p32_graduate.family.grown_total) == 1, "school-age youth biologically matures into one untrained existing station adult without producing a free captain or pilot")
+	_expect(p32_school_resume.population.total_people(p32_school_resume) == p32_age_total and _total_credits(p32_school_resume.state) == _total_credits(p32_age_world.state), "both ageing transitions conserve all persons and credits and never mint funds")
+	_expect(save_store.save_game(test_root + "/pass32-grown.json", p32_school_resume.snapshot()) == OK, "adult graduation with preserved birth lineage passes strict save validation")
+	var p32_challenged = WorldScript.new()
+	_expect(p32_challenged.restore_snapshot(p32_prebirth) == OK, "shortage test begins with a genuine paid, eight-cycle stable household, before its due birth")
+	var p32_challenged_home: Dictionary = p32_challenged._find_station("player_station_2")
+	p32_challenged_home.stock.food_rations = 0
+	p32_challenged.advance_ticks(60)
+	var p32_challenged_rec: Dictionary = p32_challenged.population.station_cohort(p32_challenged, "player_station_2")
+	_expect(p32_challenged_rec.resident_status == "Housing offline" and int(p32_challenged_rec.family.birth_progress) == 0 and int(p32_challenged_rec.cohorts.children) == 0, "a real family food shortage blocks births and resets continuous health eligibility without deleting adults")
+	_expect(p32_challenged.population.total_people(p32_challenged) == p32_adults_total and not p32_challenged.state.ledger.any(func(e): return e.kind == "resident_birth"), "no births or death occur on failed life support or a fabricated medical reserve")
+	var p32_carers = WorldScript.new()
+	_expect(p32_carers.restore_snapshot(p32_world.snapshot()) == OK, "caregiver security scenario starts with one real child and two real parents")
+	var p32_care_before: Dictionary = p32_carers.snapshot()
+	_expect(not p32_carers.settlement.evacuate(p32_carers, "ship_001", 2).ok and p32_carers.snapshot() == p32_care_before, "adult-only evacuation cannot strand a dependent child with zero carers")
+	_expect(p32_carers.settlement.evacuate(p32_carers, "ship_001", 1).ok and p32_carers.population.total_people(p32_carers) == p32_adults_total + 1, "limited real rescue leaves an adult carer for the child and conserves the full family headcount")
+	_expect(save_store.save_game(test_root + "/pass32-cared-child.json", p32_carers.snapshot()) == OK, "post-evacuation child protection and passenger provenance pass strict save validation")
+
+	# Regression: accepting a third adult must count the existing newborn
+	# for beds and provisions, but must NOT convert that child into a second
+	# working adult. Arrivals still pay real NPC permits and use ship routes.
+	var p32_arrivals = WorldScript.new()
+	_expect(p32_arrivals.restore_snapshot(p32_world.snapshot()) == OK, "adult-arrival-after-birth test starts from real Family Habitat with two adults and a newborn")
+	_disable_npc_trading(p32_arrivals)
+	var p32_arrival_total: int = p32_arrivals.population.total_people(p32_arrivals)
+	var p32_arrival_credits: int = _total_credits(p32_arrivals.state)
+	var p32_arrival_source: int = p32_arrivals.population.available_workers(p32_arrivals, "hearth_exchange")
+	_expect(p32_arrivals.queue_fly_to("ship_001", "hearthreach"), "a real player ship can leave the newborn colony for its finite NPC recruitment source")
+	p32_arrivals.advance_ticks(40)
+	_expect(p32_arrivals.dock_ship("ship_001", "hearth_exchange").ok and p32_arrivals.settlement.board(p32_arrivals, "ship_001", 1).ok, "one existing NPC adult buys a real passenger berth and leaves the finite station roster")
+	_expect(p32_arrivals.population.available_workers(p32_arrivals, "hearth_exchange") == p32_arrival_source - 1 and p32_arrivals.queue_fly_to("ship_001", "copper_wake"), "adult immigrant leaves exactly one recruitment-source worker and travels toward the established family home")
+	p32_arrivals.advance_ticks(40)
+	_expect(_deliver_family_supplies(p32_arrivals, "player_station_1", "player_station_2"), "new family resident housing is refilled with real physical wares and excess sewage is retained aboard the ship before another arrival")
+	p32_arrivals.advance_ticks(60)
+	_expect(p32_arrivals.dock_ship("ship_001", "player_station_2").ok and p32_arrivals.settlement.disembark(p32_arrivals, "ship_001", 1).ok, "a third adult disembarks into a family home with existing child and enough provisioned powered beds")
+	var p32_joined: Dictionary = p32_arrivals.population.station_cohort(p32_arrivals, "player_station_2")
+	_expect(int(p32_joined.cohorts.assigned_workers) == 3 and int(p32_joined.cohorts.children) == 1 and int(p32_joined.family.births_total) == 1, "settler arrival increments only adult workforce; it never double-counts a dependent child as an adult")
+	_expect(p32_arrivals.population.total_people(p32_arrivals) == p32_arrival_total and _total_credits(p32_arrivals.state) == p32_arrival_credits, "arriving at family home conserves every person and every credit across both stations and the ship")
+	_expect(save_store.save_game(test_root + "/pass32-third-adult.json", p32_arrivals.snapshot()) == OK, "mixed adult-child family immigration and unchanged birth schedule pass strict persisted-world validation")
+	var p32_forged_child: Dictionary = p32_world.snapshot()
+	p32_forged_child.population.stations.player_station_2.cohorts.children = 2
+	_expect(save_store.save_game(test_root + "/pass32-fake-baby.json", p32_forged_child) != OK, "unprovenanced child cannot be added without a matching timed birth queue and birth count")
+	var p32_forged_tick: Dictionary = p32_world.snapshot()
+	p32_forged_tick.population.stations.player_station_2.family.child_queue[0].ready_tick = -5
+	_expect(save_store.save_game(test_root + "/pass32-fake-age.json", p32_forged_tick) != OK, "birth age queue cannot be retroactively rewritten into an invalid timestamp")
+	var p32_forged_births: Dictionary = p32_world.snapshot()
+	p32_forged_births.population.stations.player_station_2.family.births_total = 99
+	_expect(save_store.save_game(test_root + "/pass32-fake-count.json", p32_forged_births) != OK, "saved birth counters must reconcile exactly to counted children, school-age youths and matured resident adults")
+	var p32_future: Dictionary = p32_world.snapshot()
+	p32_future.demographics_version = 2
+	_expect(save_store.save_game(test_root + "/pass32-future-schema.json", p32_future) != OK, "unknown future demographic schema cannot be silently accepted")
+	var p32_prev_save: Dictionary = settled_restore.snapshot()
+	_strip_demographics(p32_prev_save)
+	_expect(save_store.save_game(test_root + "/pass31-before-family.json", p32_prev_save) == OK, "authentic pre-demographic inhabited save remains valid with its exact two existing adults")
+	var p32_prev_read: Dictionary = save_store.load_game(test_root + "/pass31-before-family.json")
+	var p32_migrated = WorldScript.new()
+	_expect(p32_prev_read.get("ok", false) and p32_migrated.restore_snapshot(p32_prev_read.state) == OK and p32_migrated.state.demographics_version == 1, "Pass 31 family migration adds empty dated cohort metadata without starting a new game")
+	_expect(p32_migrated.population.total_people(p32_migrated) == p32_adults_total and p32_migrated._find_ship("ship_001") == settled_restore._find_ship("ship_001") and p32_migrated.state.starting_credits == p32_prev_save.starting_credits, "upgraded saves keep every original parent, ship captain, orders, adult recruit roster and credit without an imaginary existing baby")
+	_expect(save_store.save_game(test_root + "/pass32-migrated.json", p32_migrated.snapshot()) == OK, "migrated family cohorts and every existing financial asset pass new strict save checks")
+	var p32_none = WorldScript.new()
+	_expect(p32_none.restore_snapshot(settled_restore.snapshot()) == OK, "control uses two genuine adults in a commissioned crew rather than family habitat")
+	var p32_none_before: int = p32_none.population.total_people(p32_none)
+	p32_none.advance_ticks(600)
+	_expect(p32_none.population.total_people(p32_none) == p32_none_before and not p32_none.state.ledger.any(func(e): return e.kind == "resident_birth"), "ordinary residential crew habitats cannot produce free babies without actual Family Habitat infrastructure")
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass32-families.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p32_world.snapshot()) == OK, "mobile interface accepts the genuinely constructed, populated family colony state")
+	screen._open_map_station("player_station_2")
+	screen.find_child("InspectorTab_Population", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Households:") and screen.detail_body.text.contains("Recorded births:") and screen.detail_body.text.contains("Birth readiness:"), "map-first Population inspector exposes physical family counts, birth progress and counted newborns")
+	screen._open_population_screen()
+	_expect(screen.population_info.text.contains("HOUSEHOLDS & GENERATIONS") and screen.population_info.text.contains("Biologically mature untrained adults"), "Android global population dashboard explains the family schedule without implying schools have trained youth")
 	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame

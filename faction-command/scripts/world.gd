@@ -17,6 +17,7 @@ const HabitationScript = preload("res://scripts/habitation.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const SettlementScript = preload("res://scripts/settlement.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
+const DemographicsScript = preload("res://scripts/demographics.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
@@ -32,6 +33,7 @@ var habitation = HabitationScript.new()
 var provisions = ProvisionsScript.new()
 var settlement = SettlementScript.new()
 var ecology = EcologyScript.new()
+var demographics = DemographicsScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -88,6 +90,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if ecology.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if demographics.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -140,6 +144,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = ecology.prepare(restored)
+	if result != OK:
+		return result
+	result = demographics.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -262,6 +269,7 @@ func advance_ticks(count: int) -> void:
 		construction.tick(self)
 		habitation.tick(self)
 		settlement.tick(self)
+		demographics.tick(self)
 		archives.tick(self)
 		research.tick(self)
 		shipyard.tick(self)

@@ -60,6 +60,8 @@ func register_station(world: RefCounted, station_id: String) -> void:
 			record.housing_status = "No habitat"
 		if int(world.state.get("settlement_version", 0)) >= 2:
 			world.settlement._initialize_welfare(record)
+		if int(world.state.get("demographics_version", 0)) >= 1:
+			world.demographics.initialize_record(record)
 		world.state.population.stations[station_id] = record
 
 
@@ -132,9 +134,13 @@ func report(world: RefCounted) -> Array:
 			"children":int(rec.cohorts.children),
 			"students":int(rec.cohorts.students),
 			"assigned":int(rec.cohorts.assigned_workers),
-			"occupied_housing":int(rec.cohorts.assigned_workers),
-			"available_beds":maxi(0, world.habitation.operational_capacity(station, world.state.habitation_catalog) - int(rec.cohorts.assigned_workers)) if not station.is_empty() else 0,
-			"housing_deficit":maxi(0, int(rec.cohorts.assigned_workers) - world.habitation.operational_capacity(station, world.state.habitation_catalog)) if not station.is_empty() else int(rec.cohorts.assigned_workers),
+			"occupied_housing":world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers),
+			"households":world.demographics.known_households(world, station, int(rec.cohorts.assigned_workers)) if world.state.has("demographics_version") else 0,
+			"birth_progress":int(rec.get("family", {}).get("birth_progress", 0)),
+			"births_total":int(rec.get("family", {}).get("births_total", 0)),
+			"grown_total":int(rec.get("family", {}).get("grown_total", 0)),
+			"available_beds":maxi(0, world.habitation.operational_capacity(station, world.state.habitation_catalog) - (world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers))) if not station.is_empty() else 0,
+			"housing_deficit":maxi(0, (world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers)) - world.habitation.operational_capacity(station, world.state.habitation_catalog)) if not station.is_empty() else int(rec.cohorts.assigned_workers),
 			"resident_status":str(rec.get("resident_status", "Unoccupied")),
 			"resident_shortage":str(rec.get("resident_shortage", "")),
 			"resident_alert_cycles":int(rec.get("resident_alert_cycles", 0)),
