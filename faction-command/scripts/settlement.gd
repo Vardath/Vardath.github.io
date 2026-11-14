@@ -193,6 +193,10 @@ func tick(world: RefCounted) -> void:
 			continue
 		for ware_id in necessary:
 			station.stock[ware_id] = int(station.stock.get(ware_id, 0)) - int(necessary[ware_id])
+		# Waste comes only from paid water and food, never from vacant
+		# habitats, passengers, phantom NPC pools or failed service cycles.
+		if world.state.has("ecology_version"):
+			world.ecology.record_resident_waste(world, station, necessary)
 		record.resident_status = "Provisioned"
 		record.resident_shortage = ""
 		record.resident_alert_cycles = 0
