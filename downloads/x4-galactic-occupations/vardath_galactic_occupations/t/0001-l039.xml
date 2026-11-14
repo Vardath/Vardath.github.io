@@ -61,5 +61,9 @@
     <t id="73">Rilevamento della stazione decodificato</t>
     <t id="74">Recupero progetti tramite EMP (1 EMP del giocatore per modulo idoneo ricercato; disattivato per impostazione predefinita)</t>
     <t id="75">Obiettivo hacker (0 qualsiasi; 1 produzione; 2 torrette; 3 scudi; 4 stoccaggio; 5 radar; 6 costruzione; 7 sicurezza)</t>
+    <t id="76">Uscita EVA di emergenza (fuori dallo scafo)</t>
+    <t id="77">Soccorso: rientra in questa nave</t>
+    <t id="78">A bordo di questa nave non attraccata, esci in tuta tramite il posizionamento di emergenza nativo fuori dallo scafo. Solo su richiesta; nessuna espulsione automatica.</t>
+    <t id="79">In tuta spaziale entro 2 km da questa tua nave, usa il teletrasporto nativo per tornare a bordo. Solo su richiesta.</t>
   </page>
 </language>

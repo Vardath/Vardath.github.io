@@ -1,42 +1,82 @@
--- Galactic Occupations 0.5.3 UI regression test: no native confirmer hook.
+-- v0.5.6: explicit context actions. Native transporter confirmation remains untouched.
 local path = arg[1] .. "/ui/vgo_spacesuit.lua"
 local checks, calls, events, installs = 0, {}, {}, {}
-local function check(title, fn)
-    fn(); checks=checks+1
-end
-local function confirm(...)
+local function check(title, fn) fn(); checks=checks+1 end
+
+local function nativeConfirm(...)
     calls[#calls+1]={...}
     return "native confirmation", 17
 end
-local menu={mode="transporter",transportertarget={component=9007199254740997},confirm=confirm}
+local confirmMenu={ mode="transporter", confirm=nativeConfirm }
+local ship=101
+local menu
+menu={
+    componentSlot={component=ship},
+    actions={selected_orders={}},
+    prepareActions=function() return false end,
+    onCloseElement=function(x) calls[#calls+1]={"closed",x} end,
+    insertInteractionContent=function(group,action)
+        assert(group=="selected_orders")
+        table.insert(menu.actions.selected_orders,action)
+    end,
+}
 Helper={getMenu=function(name)
-    if name=="UserQuestionMenu" then return menu end
+    if name=="UserQuestionMenu" then return confirmMenu end
+    if name=="InteractMenu" then return menu end
 end}
 RegisterEvent=function(name,fn) installs[name]=fn end
 AddUITriggeredEvent=function(...) events[#events+1]={...} end
+ConvertStringTo64Bit=function(x)return tonumber(x) end
+ConvertStringToLuaID=function(x)return tonumber(x) end
+IsValidComponent=function(x)return x==ship end
+GetComponentData=function(x,k) if x==ship and k=="owner" then return "player" end end
+ReadText=function(_,id)
+    if id==76 then return "Emergency EVA (outside hull)" end
+    if id==77 then return "Rescue: board this ship" end
+    return "Explanatory tooltip"
+end
+
 local S=dofile(path)
-check("native confirmation never wrapped",function()
-    assert(menu.confirm==confirm)
+check("native confirmation is never wrapped", function()
+    assert(confirmMenu.confirm==nativeConfirm)
     assert(installs["VGO.Install"]==S.install)
 end)
-check("legacy install leaves native menus untouched",function()
-    for i=1,100 do installs["VGO.Install"](nil,9007199254740995) end
-    assert(menu.confirm==confirm)
-end)
-check("transporter operation goes through native function exactly once",function()
-    local a,b=menu.confirm("redocking",23)
-    assert(a=="native confirmation" and b==17)
-    assert(#calls==1 and calls[1][1]=="redocking" and calls[1][2]==23)
+check("only own ship gets contextual buttons",function()
+    menu.prepareActions()
+    assert(#menu.actions.selected_orders==2)
+    assert(menu.actions.selected_orders[1].vgo_safe_eva_v56)
+    assert(menu.actions.selected_orders[2].vgo_manual_board_v56)
     assert(#events==0)
 end)
-check("all menu modes remain native",function()
+check("explicit click alone emits bounded rescue request",function()
+    menu.actions.selected_orders[1].script()
+    assert(#events==1 and events[1][1]=="VGO.Spacesuit")
+    assert(events[1][2]=="safe_eva" and events[1][3]==ship)
+    menu.actions.selected_orders[2].script()
+    assert(#events==2 and events[2][2]=="recover_board" and events[2][3]==ship)
+end)
+check("stale menu target may not dispatch",function()
+    menu.componentSlot.component=102
+    menu.actions.selected_orders[1].script()
+    assert(#events==2)
+    menu.componentSlot.component=ship
+end)
+check("no duplicate menu actions on repeated installation",function()
+    installs["VGO.Install"](nil,1001)
+    assert(menu.prepareActions==S.hook)
+    S.decorate(menu)
+    assert(#menu.actions.selected_orders==2)
+end)
+check("native menu confirms remain identical across all modes",function()
     for _,mode in ipairs({"transporter","abortupgrade","hackpanel","other"}) do
-        menu.mode=mode;menu.confirm(mode)
+        confirmMenu.mode=mode
+        local result,code=confirmMenu.confirm(mode)
+        assert(result=="native confirmation" and code==17)
     end
-    assert(#events==0 and #calls==5)
+    assert(#events==2)
 end)
-check("reload singleton does not change native function",function()
+check("reload singleton does not double wrap",function()
     assert(dofile(path)==S)
-    assert(menu.confirm==confirm)
+    assert(confirmMenu.confirm==nativeConfirm)
 end)
-print("PASS: "..checks.." native redocking/spacesuit UI safety contracts; no X4 runtime")
+print("PASS: "..checks.." opt-in EVA/boarding and native transporter UI contracts (mock only)")

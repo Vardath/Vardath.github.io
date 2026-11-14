@@ -121,13 +121,60 @@ class SpacesuitRedockingSafety(unittest.TestCase):
         for name in ('Clear','Healthy','SnapshotV46','ReturnToShipV46','Watch'):
             self.assertIsNotNone(SUIT.find(".//library[@name='"+name+"']"))
 
-    def test_no_forced_player_movement_commands_exist(self):
+    def test_legacy_cues_have_no_forced_player_movement(self):
+        # No movement anywhere in an automatic, saved or legacy v46 path.
+        automatic=('Init','Confirmed','ShipResetObservedV46','Poll','Verify',
+                   'Loaded','UpgradeV46')
         forbidden=('teleport_player','teleport_player_to_spacesuit',
                   'set_player_entity_position','set_entity_controlpost',
                   'create_ship','destroy_object')
-        for name in forbidden:
-            self.assertEqual(list(SUIT.iter(name)),[],name)
+        for cue in automatic:
+            actions=SUIT.find(".//cue[@name='"+cue+"']/actions")
+            for name in forbidden:
+                self.assertEqual(list(actions.iter(name)),[],(cue,name))
+        for name in ('Clear','Healthy','SnapshotV46','ReturnToShipV46','Watch'):
+            actions=SUIT.find(".//library[@name='"+name+"']/actions")
+            for cmd in forbidden:
+                self.assertEqual(list(actions.iter(cmd)),[],(name,cmd))
         self.assertFalse(SUIT.find(".//cue[@name='Confirmed']/actions").findall("set_value"))
+
+    def test_manual_eva_and_board_are_explicit_and_native_bounded(self):
+        eva=SUIT.find(".//cue[@name='ManualSafeEVAV56']")
+        board=SUIT.find(".//cue[@name='ManualBoardV56']")
+        recovery=SUIT.find(".//cue[@name='ManualInputRecoveryV56']")
+        self.assertIsNotNone(eva);self.assertIsNotNone(board);self.assertIsNotNone(recovery)
+        self.assertEqual(eva.find('./conditions/event_ui_triggered').get('control'),"'safe_eva'")
+        self.assertEqual(board.find('./conditions/event_ui_triggered').get('control'),"'recover_board'")
+        self.assertEqual(eva.find('./conditions/event_ui_triggered').get('screen'),"'VGO.Spacesuit'")
+        self.assertEqual(board.find('./conditions/event_ui_triggered').get('screen'),"'VGO.Spacesuit'")
+        eva_guard=eva.find('./actions/do_if')
+        board_guard=board.find('./actions/do_if')
+        for token in ('@$Target.isclass.ship','@$Target.isplayerowned',
+                      '@player.room.context == $Target','not @player.spacesuit',
+                      'not @player.entity.isintransit','not @$Target.isdocked'):
+            self.assertIn(token,eva_guard.get('value'))
+        for token in ('@$Target.isclass.ship','@$Target.isplayerowned',
+                      '@player.spacesuit.isclass.spacesuit',
+                      'not @player.entity.isintransit','@$Target.sector == player.sector',
+                      '@$Target.distanceto.{player.spacesuit} le 2km'):
+            self.assertIn(token,board_guard.get('value'))
+        native_exit=eva_guard.find('teleport_player_to_spacesuit')
+        self.assertEqual(native_exit.get('emergency'),'true')
+        self.assertEqual(native_exit.get('instant'),'true')
+        self.assertEqual(native_exit.get('allowinhighway'),'false')
+        native_board=board_guard.find('teleport_player')
+        self.assertEqual(native_board.get('object'),'$Target')
+        self.assertEqual(native_board.get('control'),'false')
+        self.assertEqual(native_board.get('instant'),'true')
+        self.assertEqual(native_board.get('force'),'true')
+        self.assertEqual(len(list(SUIT.iter('teleport_player'))),1)
+        self.assertEqual(len(list(SUIT.iter('teleport_player_to_spacesuit'))),1)
+        self.assertEqual(recovery.find('./conditions/event_cue_signalled').attrib,{})
+        self.assertEqual(recovery.find('./delay').get('exact'),'2s')
+        self.assertEqual(len(list(SUIT.iter('unlock_all_flight_input'))),1)
+        self.assertEqual(len(list(SUIT.iter('unlock_all_shooting_input'))),1)
+        self.assertEqual(len(list(recovery.iter('teleport_player'))),0)
+        self.assertEqual(len(list(recovery.iter('teleport_player_to_spacesuit'))),0)
 
     def test_confirmed_event_is_now_inert(self):
         v=BoundaryVM()

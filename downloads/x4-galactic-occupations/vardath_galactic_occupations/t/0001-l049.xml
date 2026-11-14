@@ -61,5 +61,9 @@
     <t id="73">Entschlüsselte Stationsuntersuchung</t>
     <t id="74">EMP-Bauplanbeschaffung (1 Spieler-EMP je geeignetem erforschtem Modul; standardmäßig aus)</t>
     <t id="75">Hackziel (0 beliebig; 1 Produktion; 2 Geschütztürme; 3 Schilde; 4 Lager; 5 Radar; 6 Bau; 7 Sicherheit)</t>
+    <t id="76">Notfall-EVA (außerhalb der Hülle)</t>
+    <t id="77">Rettung: dieses Schiff betreten</t>
+    <t id="78">An Bord dieses unangedockten Schiffs den Raumanzug mit nativer Notfallplatzierung außerhalb der Hülle verlassen. Nur manuell, kein automatischer Ausstieg.</t>
+    <t id="79">Im Raumanzug innerhalb von 2 km dieses eigenen Schiffs das native Transporterziel zur Rückkehr an Bord nutzen. Nur manuell.</t>
   </page>
 </language>

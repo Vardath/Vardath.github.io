@@ -61,5 +61,9 @@
     <t id="73">Reconocimiento de estación descifrado</t>
     <t id="74">Recuperación de planos con PEM (1 PEM del jugador por módulo apto e investigado; desactivado por defecto)</t>
     <t id="75">Objetivo de hackeo (0 cualquiera; 1 producción; 2 torretas; 3 escudos; 4 almacén; 5 radar; 6 construcción; 7 seguridad)</t>
+    <t id="76">EVA de emergencia (fuera del casco)</t>
+    <t id="77">Rescate: subir a esta nave</t>
+    <t id="78">A bordo de esta nave desacoplada, salir en traje usando la colocación de emergencia nativa fuera del casco. Solo manual; nunca expulsa automáticamente.</t>
+    <t id="79">Con el traje espacial a menos de 2 km de esta nave propia, usar el destino nativo del teletransportador para volver a bordo. Solo manual.</t>
   </page>
 </language>

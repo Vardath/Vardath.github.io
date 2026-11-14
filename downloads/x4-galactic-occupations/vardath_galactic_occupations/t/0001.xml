@@ -61,5 +61,9 @@
     <t id="73">Decoded station survey</t>
     <t id="74">EMP blueprint recovery (1 player EMP for each eligible researched module; default off)</t>
     <t id="75">Hack objective (0 any; 1 production; 2 turrets; 3 shields; 4 storage; 5 radar; 6 construction; 7 security)</t>
+    <t id="76">Emergency EVA (outside hull)</t>
+    <t id="77">Rescue: board this ship</t>
+    <t id="78">When aboard this undocked ship, exit via native emergency spacesuit placement outside the hull. Manual click only; no automatic ejection.</t>
+    <t id="79">When in your spacesuit within 2 km of this owned ship, use the native transporter destination to recover aboard. Manual click only.</t>
   </page>
 </language>

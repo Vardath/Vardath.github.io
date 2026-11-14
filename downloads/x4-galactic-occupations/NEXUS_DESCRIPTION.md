@@ -1,3 +1,5 @@
+**0.5.6 EVA / boarding recovery:** On a selected owned ship's Interact menu, use Emergency EVA (outside hull) while physically aboard an undocked ship, or Rescue: board this ship while in a spacesuit within 2 km. Both are explicit, bounded X4-native actions, with no automatic teleport loops. Live in-game behavior remains unverified.
+
 **Interface localization (0.5.5):** 12 translations (Russian, French, German, Spanish, Italian, Czech, Polish, Brazilian Portuguese, Japanese, Korean, Simplified and Traditional Chinese) plus English and language-neutral fallback. All 60 built-in menu text IDs per language. Spanish regional selections share L034. Initial AI-assisted wording is open to community corrections. Some dynamically generated status/logbook text remains English. No gameplay changes.
 
 # Galactic Occupations — 13 Autonomous Ship Careers for X4: Foundations

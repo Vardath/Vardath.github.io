@@ -61,5 +61,9 @@
     <t id="73">Relevé de station décodé</t>
     <t id="74">Récupération de plans par IEM (1 IEM du joueur par module admissible après recherche ; désactivé par défaut)</t>
     <t id="75">Objectif de piratage (0 quelconque ; 1 production ; 2 tourelles ; 3 boucliers ; 4 stockage ; 5 radar ; 6 construction ; 7 sécurité)</t>
+    <t id="76">Sortie EVA d'urgence (hors coque)</t>
+    <t id="77">Secours : remonter dans ce vaisseau</t>
+    <t id="78">À bord de ce vaisseau non amarré, sortir en combinaison avec le placement d'urgence natif hors de la coque. Clic manuel uniquement ; aucune éjection automatique.</t>
+    <t id="79">En combinaison à moins de 2 km de votre vaisseau, utiliser la destination native du téléporteur pour remonter à bord. Uniquement sur demande.</t>
   </page>
 </language>

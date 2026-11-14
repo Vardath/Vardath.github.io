@@ -61,5 +61,9 @@
     <t id="73">Dekódovaný průzkum stanice</t>
     <t id="74">Získávání plánů přes EMP (1 hráčova EMP za vhodný vyzkoumaný modul; výchozí vypnuto)</t>
     <t id="75">Cíl hackování (0 libovolný; 1 výroba; 2 věže; 3 štíty; 4 sklady; 5 radar; 6 stavba; 7 zabezpečení)</t>
+    <t id="76">Nouzový výstup ve skafandru (mimo trup)</t>
+    <t id="77">Záchrana: vstoupit na tuto loď</t>
+    <t id="78">Na palubě této neukotvené lodi opustit loď ve skafandru nativním nouzovým umístěním mimo trup. Jen na ruční příkaz, žádné automatické vystřelení.</t>
+    <t id="79">Ve skafandru do 2 km od vlastní lodi použít nativní teleport do lodního interiéru. Jen na ruční příkaz.</t>
   </page>
 </language>

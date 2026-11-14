@@ -1,5 +1,17 @@
 # Version history
 
+## 0.5.6 — 2026-11-14 — player-controlled EVA and boarding rescue
+
+- Add two **manual** owned-ship interaction-menu entries: **Emergency EVA (outside hull)** and **Rescue: board this ship**. These are explicit requests, not automatic player movement.
+- Safe EVA requires the player to be physically inside the target's room, the source ship to be player-owned and undocked, and no suit/conversation/native transit. X4 9.00 `teleport_player_to_spacesuit emergency=true instant=true allowinhighway=false` places the suit outside the ship bounding box.
+- Recovery boarding requires an actual spacesuit, an owned destination ship within 2km and in the same sector, and no conversation/transit. The native `teleport_player object=target instant=true force=true control=false` requests its interior destination. The only time forced teleport is allowed is this explicit, bounded recovery.
+- A single two-second delayed input-release request follows a manually initiated transition, not a periodic player-control override. Original `UserQuestionMenu.confirm`, transporters, airlocks, normal docking, and all saved v46 cue IDs remain untouched.
+- Add translated text IDs 76–79 to all 13 native X4 language files and the English fallback: **64 entries** per locale.
+- The supplied 2026-11-14 log does not record a definitive cause of the player control lock. It includes multiple installed spacesuit/teleport mods, 2,795 `Personal_Envoy_Full_Crew` missing `$PilotActor` errors, extensive missing Amaterasu assets and small-screen UI layout failures. Unavailable third-party code and missing ship meshes were not fabricated or patched.
+- Preserve all 13 occupations, passenger/crew state, payments and ships. X4 runtime testing still required; see `SPACEWALK_AUDIT_2026-11-14.md`.
+
+
+
 ## 0.5.5 — 2026-11-14 — multilingual interface tables
 
 - Add fully populated, language-ID-correct X4 XML localization tables for Russian (007), French (033), Spanish (034), Italian (039), Czech (042), Polish (048), German (049), Brazilian Portuguese (055), Japanese (081), Korean (082), Simplified Chinese (086) and Traditional Chinese (088).

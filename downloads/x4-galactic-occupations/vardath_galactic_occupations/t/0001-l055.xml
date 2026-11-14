@@ -61,5 +61,9 @@
     <t id="73">Pesquisa de estação decodificada</t>
     <t id="74">Obtenção de projetos via PEM (1 PEM do jogador por módulo pesquisado elegível; desativado por padrão)</t>
     <t id="75">Objetivo de hack (0 qualquer; 1 produção; 2 torretas; 3 escudos; 4 armazenamento; 5 radar; 6 construção; 7 segurança)</t>
+    <t id="76">Saída EVA de emergência (fora do casco)</t>
+    <t id="77">Resgate: embarcar nesta nave</t>
+    <t id="78">A bordo desta nave desatracada, sair em traje usando o posicionamento de emergência nativo fora do casco. Só manual; sem ejeção automática.</t>
+    <t id="79">De traje espacial a até 2 km desta nave do jogador, usar o destino nativo do teletransporte para retornar a bordo. Somente manual.</t>
   </page>
 </language>

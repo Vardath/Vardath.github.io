@@ -19,7 +19,7 @@ X4 supports 14 Steam interface selections. The stock X4 text table supplies 13 d
 | 088 | `0001-l088.xml` | Traditional Chinese |
 
 The original language-neutral `0001.xml` supplies a complete **English** fallback.
-All 13 language-specific files use `<page id="191180">` and have exactly the same 60 `<t id="...">` entries. Language IDs are decimal within the XML element (`id="7"` for L007). Filenames are deliberately lowercase for Linux filesystem support.
+All 13 language-specific files use `<page id="191180">` and have exactly the same 64 `<t id="...">` entries. Language IDs are decimal within the XML element (`id="7"` for L007). Filenames are deliberately lowercase for Linux filesystem support.
 
 ## Changing your language
 
@@ -27,7 +27,7 @@ Set X4 to your language in the game's settings; the mod reads the matching table
 
 ## Scope and translation review
 
-These translations cover the 60 `readtext` strings: settings, every occupation name and description, hacking commands, EMP/crystal survey options and tooltip explanations. Text generated directly inside mission/AI scripts or Lua UI, including some debug and logbook status messages, remains in English. The source language tables are complete, **but this is not a claim of 100% localization of all runtime prose**.
+These translations cover the 64 `readtext` strings: settings, every occupation name and description, hacking commands, EMP/crystal survey options and tooltip explanations. Text generated directly inside mission/AI scripts or Lua UI, including some debug and logbook status messages, remains in English. The source language tables are complete, **but this is not a claim of 100% localization of all runtime prose**.
 
 Translations are AI-assisted first drafts; native-speaker review is welcomed, especially for in-game X4 technical vocabulary, idioms, grammatical agreement and layout length.
 

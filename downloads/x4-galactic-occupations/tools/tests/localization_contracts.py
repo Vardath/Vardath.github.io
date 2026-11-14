@@ -56,7 +56,7 @@ class LocalizationContracts(unittest.TestCase):
 
     def test_every_locale_preserves_exact_text_id_set(self):
         original=self.entries(self.english)
-        self.assertEqual(len(original),60)
+        self.assertEqual(len(original),64)
         for code,language in LANGUAGES.items():
             with self.subTest(language=language):
                 root=ET.parse(TEXT/f"0001-l{code}.xml").getroot()
@@ -65,10 +65,10 @@ class LocalizationContracts(unittest.TestCase):
                 self.assertEqual(set(actual),set(original))
                 self.assertTrue(all(isinstance(v,str) and v.strip() for v in actual.values()))
                 if code!="044":
-                    for idx in ("101","102","202","203","205","213","214","75"):
+                    for idx in ("76","77","78","79","101","102","202","203","205","213","214","75"):
                         self.assertNotEqual(actual[idx],original[idx],(language,idx))
                     self.assertNotEqual(root.find("page").get("title"),"Galactic Occupations")
-                for idx in ("202","203","205","206","211","213","214","74","75"):
+                for idx in ("78","79","202","203","205","206","211","213","214","74","75"):
                     self.assertFalse(re.search(r"\{\d+,\s*\d+\}",actual[idx]),
                         (language,idx,"unresolved nested X4 text reference"))
                 # Preserve the numbered hack objectives, not just their labels.

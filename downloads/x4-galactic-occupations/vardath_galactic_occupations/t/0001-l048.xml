@@ -61,5 +61,9 @@
     <t id="73">Odszyfrowane badanie stacji</t>
     <t id="74">Odzyskiwanie schematów przez EMP (1 EMP gracza na odpowiedni zbadany moduł; domyślnie wyłączone)</t>
     <t id="75">Cel włamania (0 dowolny; 1 produkcja; 2 wieżyczki; 3 osłony; 4 magazyn; 5 radar; 6 budowa; 7 zabezpieczenia)</t>
+    <t id="76">Awaryjne wyjście EVA (poza kadłub)</t>
+    <t id="77">Ratunek: wróć na pokład tej jednostki</t>
+    <t id="78">Będąc na pokładzie niezadokowanego statku, wyjdź w skafandrze używając natywnego awaryjnego umieszczenia poza kadłubem. Tylko na żądanie, bez automatycznego wyrzutu.</t>
+    <t id="79">Będąc w skafandrze do 2 km od własnego statku, użyj natywnego celu teleportacji, aby wrócić na pokład. Tylko na żądanie.</t>
   </page>
 </language>

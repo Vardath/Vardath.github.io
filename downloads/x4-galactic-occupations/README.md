@@ -1,6 +1,8 @@
-# Galactic Occupations 0.5.5 — multilingual interface, station intelligence and crystal targeting
+# Galactic Occupations 0.5.6 — safe player EVA/boarding recovery, multilingual occupations
 
-[Download Occupations](Galactic_Occupations_0.5.5.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+[Download Occupations](Galactic_Occupations_0.5.6.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)
+
+**November 14 player EVA/boarding rescue (v0.5.6):** Right-click your owned ship in the Interact menu for **Emergency EVA (outside hull)**, a native X4 9.00 emergency suit exit placing the suit outside the hull when you are aboard an undocked ship, or **Rescue: board this ship**, a manually requested native ship-room teleport when stranded in a suit within 2 km of the target. A single input-release follow-up is guarded; no automatic ejections, normal transport UI hooks, or recurring teleport loops. This provides bounded recovery, **not proof the underlying X4/mod conflict is eliminated**. No orders, crews, bookings, payments or saves are reset. [Log findings](SPACEWALK_AUDIT_2026-11-14.md).
 
 **November 14 multilingual release (v0.5.5):** Russian, French, German, Spanish, Italian, Czech, Polish, Brazilian Portuguese, Japanese, Korean, Simplified Chinese and Traditional Chinese now have complete 60-entry interface text tables with the native X4 language IDs. Both Spanish Steam regions use the game's standard Spanish L034 table. English L044 and language-neutral English remain as fallbacks. This changes **text only**; no save reset or gameplay code. Machine-assisted translations can be improved by native speakers. See [language details](LOCALIZATION.md). Runtime-generated status/logbook messages may remain in English, and live non-English clients have not been tested.
 

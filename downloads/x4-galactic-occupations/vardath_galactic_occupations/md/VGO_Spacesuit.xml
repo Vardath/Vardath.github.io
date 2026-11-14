@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="VGO_Spacesuit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
-  <!-- v0.5.3 safety rollback. The v46 transport-confirm observer could arm on a
+  <!-- v0.5.6 manual bounded rescue; v0.5.3 safety rollback. The v46 transport-confirm observer could arm on a
        normal transporter use and forcibly move the player into a ship and then
        into a spacesuit 12 seconds later. This is unsafe around docking/interiors.
        Preserve every saved cue/library identifier but NEVER move the player.
@@ -51,6 +51,60 @@
     <cue name="Verify" instantiate="true">
       <conditions><event_cue_signalled/></conditions>
       <actions/>
+    </cue>
+    <!-- v56: Only an explicit player click in the ship's context menu may
+         use these native actions. No transporter-confirm hooks, no automatic
+         relocation, no repeating forced ejections. The emergency variant of
+         native 9.00 spacesuit launch spawns outside the ship bounding box
+         instead of leaving the suit at its current position inside geometry. -->
+    <cue name="ManualSafeEVAV56" instantiate="true">
+      <conditions>
+        <event_ui_triggered screen="'VGO.Spacesuit'" control="'safe_eva'"/>
+      </conditions>
+      <actions>
+        <set_value name="$Target" exact="event.param"/>
+        <do_if value="@$Target.isclass.ship and @$Target.isplayerowned and @player.room.context == $Target and not @player.spacesuit and not @player.entity.isintransit and not player.isinconversation and not @$Target.isdocked">
+          <debug_text text="'VGO manual EVA: checked source ship; native emergency-bounds exit requested'"/>
+          <teleport_player_to_spacesuit instant="true" emergency="true" allowinhighway="false"/>
+          <signal_cue cue="ManualInputRecoveryV56"/>
+        </do_if>
+        <do_else>
+          <debug_text text="'VGO manual EVA: refused (not aboard target, occupied suit, docked ship or native transit)'"/>
+        </do_else>
+      </actions>
+    </cue>
+    <!-- Use the native ship transporter destination, not a raw world position.
+         Rescue is deliberately restricted to a player-owned hull in the same
+         sector within 2km of the actual spacesuit. No remote teleport cheat,
+         no force-ejection and no other ship's boarding orders are modified. -->
+    <cue name="ManualBoardV56" instantiate="true">
+      <conditions>
+        <event_ui_triggered screen="'VGO.Spacesuit'" control="'recover_board'"/>
+      </conditions>
+      <actions>
+        <set_value name="$Target" exact="event.param"/>
+        <do_if value="@$Target.isclass.ship and @$Target.isplayerowned and @player.spacesuit.isclass.spacesuit and not @player.entity.isintransit and not player.isinconversation and @$Target.sector == player.sector and @$Target.distanceto.{player.spacesuit} le 2km">
+          <debug_text text="'VGO manual board: same-sector owner and range checked; native ship-room teleport requested'"/>
+          <teleport_player object="$Target" instant="true" control="false" force="true"/>
+          <signal_cue cue="ManualInputRecoveryV56"/>
+        </do_if>
+        <do_else>
+          <debug_text text="'VGO manual board: refused (not in suit, invalid owned hull, transit or out of range)'"/>
+        </do_else>
+      </actions>
+    </cue>
+    <!-- One-shot input reset ONLY following manual rescue. Never unlock input
+         periodically during plot tutorials, cutscenes or conversations. -->
+    <cue name="ManualInputRecoveryV56" instantiate="true">
+      <conditions><event_cue_signalled/></conditions>
+      <delay exact="2s"/>
+      <actions>
+        <do_if value="not @player.entity.isintransit and not player.isinconversation">
+          <unlock_all_flight_input/>
+          <unlock_all_shooting_input/>
+          <debug_text text="'VGO manual transition: requested native flight and weapon input release'"/>
+        </do_if>
+      </actions>
     </cue>
     <cue name="Loaded" instantiate="true">
       <conditions><event_universe_generated/></conditions>
