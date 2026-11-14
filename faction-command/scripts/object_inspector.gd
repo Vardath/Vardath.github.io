@@ -27,7 +27,7 @@ func tabs(world: RefCounted, kind: String, id: String) -> Array[String]:
 				return result
 			result = ["Info", "Trade", "Cargo", "Production", "Population"]
 			if kind == "station":
-				result.append_array(["Construction", "Research"])
+				result.append_array(["Construction", "Research", "Education"])
 			if station.has("archive"):
 				result.append("History")
 		"site":
@@ -62,6 +62,9 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 				"Construction":
 					if kind == "station":
 						options.append({"id":"builds", "label":"Manage builds"})
+				"Education":
+					if kind == "station" and not world._find_station(id).get("education", {}).get("modules", []).is_empty():
+						options.append({"id":"education", "label":"Manage staffed education"})
 				"Research":
 					if kind == "station" and world.research.has_lab(world._find_station(id)):
 						options.append({"id":"research", "label":"Open research"})
@@ -182,6 +185,9 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 							output_rows.append("%d %s" % [int(item.outputs[ware_id]), str(world._find_ware(str(ware_id)).get("name", ware_id))])
 						detail = "\nPhysical inputs: %s\nPhysical outputs: %s" % [", ".join(input_rows), ", ".join(output_rows)]
 					cycles.append("%s\n%s · %d/%d ticks%s" % [item.name, item.status, int(item.progress), int(item.duration), detail])
+				for school_id in station.get("education", {}).get("modules", []):
+					var school: Dictionary = world.state.education_catalog.get(school_id, {})
+					cycles.append("%s\\nStaffed education service · %d seats; no resource production" % [school.get("name", school_id), int(school.get("seats", 0))])
 				for habitat in station.get("habitation", []):
 					var home: Dictionary = world.state.habitation_catalog.get(str(habitat.id), {})
 					cycles.append("%s\n%s · %d energy/60 ticks" % [home.get("name", habitat.id), habitat.status, int(home.get("energy_per_60", 0))])
@@ -204,6 +210,9 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				var grown: int = int(cohort.get("family", {}).get("grown_total", 0))
 				var family_info: String = "Households: %d · Birth readiness: %d/%d ticks · Recorded births: %d · Youth matured: %d\nFamily Habitats, two settled adults, adequate food/water/medical care and a free powered bed permit births. Children and school-age youths count toward bed occupancy; actual schools and skilled careers follow later." % [families, int(cohort.get("family", {}).get("birth_progress", 0)), world.demographics.BIRTH_INTERVAL, born, grown]
 				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered · %d occupied · %d free powered beds\nShelter deficit: %d\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\nResident share: Water %d · Food %d · Medical %d (additional to module baseline)\nResident status: %s · Critical cycles: %d\n%s\n%s\nNew births are medically gated in Family Habitats; immigration still uses real passenger ships and schooling is not implemented yet." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), occupied, int(cohort.hab_capacity), powered, occupied, free_beds, deficit, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), int(resident_needs.get("potable_water", 0)), int(resident_needs.get("food_rations", 0)), int(resident_needs.get("medical_supplies", 0)), str(cohort.get("resident_status", "Unoccupied")), int(cohort.get("resident_alert_cycles", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages", "Emergency response: resupply or dock an owned ship and use Ship & Crew > Evacuate residents." if deficit > 0 or int(cohort.get("resident_alert_cycles", 0)) > 0 else "Residents are conserved through supply cycles."] + "\n" + ecology_status + "\n" + family_info
+			"Education":
+				var school: Array[String] = world.education.report(world, id)
+				return "%s\\n%s\\nClasses run only with a physical school, resident adults appointed as instructors, actual youths/adults enrolled, records, station power and funded salaries. Certificates are foundational course records; specialist licences and ship skill transfers are not implemented." % [station.name, "No built school modules. Use the station planner to build a school alongside powered residential housing." if station.get("education", {}).get("modules", []).is_empty() else "\\n\\n".join(school)]
 			"Construction":
 				var jobs: Array[String] = []
 				for site in world.state.build_sites:
