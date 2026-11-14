@@ -44,7 +44,7 @@ Faction Command is an ORIGINAL 2D, map-driven space economy and faction manageme
 ## Ship and station model
 - Ship classes: scout, courier, fighter, corvette, freighter, miner, salvage, transport, destroyer, carrier, construction vessel. Original hull designs and names; modular engine, shields, weapons, sensors, cargo and drones. Initial acquisition slice: an NPC wharf at Vellum Foundry offers two data-driven paid hull contracts (Courier and Freighter). It consumes real Alloy Plates and transfers player credits into the NPC station's budget at order placement; production advances through one serialized assembly berth with up to five pending orders. Purchased player ships arrive at the wharf as full independent owned assets, with a bundled contract pilot/crew. Future: dedicated wharf facilities, richer components, refits, customer-supplied materials and player-owned shipyards.
 - Ships have position, velocity abstraction, orders, role, captain, crew, fuel/energy if used, cargo, hull/shields, equipment, faction ownership, operating costs and history.
-- Stations have modules, production recipes, dock capacity, storage, managers, workers, buy/sell rules, build queues and defense systems.
+- Stations have modules, production recipes, dock capacity, storage, managers, workers, buy/sell rules, build queues and defense systems. Their habitation modules eventually host persistent residents, family growth and suitable life-support systems; education, health, community and recreation modules train or sustain real people and are part of the station economy rather than decorative modifiers.
 - Fleet hierarchy supports commanders, subordinates, formation/doctrine, resupply and automatic replacement.
 - Shipyards consume components and time to produce real hulls; production slots and equipment stocks matter.
 
@@ -167,10 +167,10 @@ Module upgrades can increase places, instructors, throughput, comfort or curricu
 ## Interface screens
 1. Galaxy map and sector zoom.
 2. Property tree and asset detail with contextual command queue.
-3. Crew hiring, firing, training and transfer.
+3. Crew hiring, firing, training, transfer and captain career records.
 4. Ship roles/behavior configuration, blacklists, risk and profit thresholds.
 5. Cargo, ware trading, station logistics and price history.
-6. Station builder and production overview.
+6. Station builder, production, residential population, education and workforce overview.
 7. Fleet doctrine and tactical command.
 8. Diplomacy, laws, crime and faction standing.
 9. Missions and contract tracking.
@@ -186,7 +186,7 @@ Create Godot project, repository game directory, data schemas, original naming c
 **Pass:** player can order a ship to buy and deliver ware; actual inventory and credits change exactly once; simulation survives save/reload.
 
 ### Phase 2 — Economic depth
-Expand wares, factories, station construction, player-owned stations, workforce, logistics AI and NPC budgets; shipyards consume real materials and build ships.
+Expand wares, factories, station construction, player-owned stations, workforce, habitation, demographics, skill education, morale, logistics AI and NPC budgets; shipyards consume real materials and build ships.
 **Pass:** deliberate disruption creates observable shortage, price response and production slowdown; restoring supply recovers output.
 
 ### Phase 3 — Security and combat
@@ -236,18 +236,21 @@ Expand toward ~300 sectors and 20–30 factions with procedural variety and auth
 - If checks are red, pending, missing or cannot be inspected, **do not proceed to the next implementation task**. Record the exact blocker in the progress file and fix the current task or request the necessary access. Never report green without observing the check results.
 - Keep CI checks scoped to the game directory so existing website functionality is not inadvertently broken. Do not equate a green CI result with verified Android gameplay; retain real-device acceptance tests.
 
-## Immediate next tasks
-1. Establish original lore, faction list and sector-generation schema.
-2. Implement Godot project skeleton and mobile navigation/property UI.
-3. Implement deterministic economy simulation and test harness.
-4. Implement order queues, autonomous ship navigation and cargo trading.
-5. Configure GitHub Actions for Android debug builds and test on a physical device.
+## Next implementation priorities (after Pass 23)
+1. Keep the existing real economy, fleet commands, station-builder, research and personnel capabilities intact; maintain the green Godot/Android gate and verify on an actual Android device.
+2. **Population foundation:** persistent inhabitants and demographics, with exactly counted recruitment pools mapped to resident cohorts, meaningful station/hab capacity and conservative save migration.
+3. **Habitats and life support:** buildable living quarters and family/adaptive habs with upfront physical construction costs, upkeep, space and a real population source.
+4. **Civilian lifecycle and travel:** bounded births, growth, housing, health, immigrant routes and physically transported recruitment.
+5. **Education:** implement initial community school, vocational college, pilot academy, station management college, research academy and marine/boarding school. Expand to the full skill and station-school catalogue above.
+6. **Morale, workplaces and policy:** civilian healthcare/recreation, trained staff requirements, NPC faction use, simple station education presets, then bounded effects of qualified staff on the actual simulation.
+7. After the coherent population pipeline, add broader named-captain hiring/succession, ship outfitting, fuller shipyards, advanced occupations, combat and increased galactic scale.
 
 ## Current design decisions
 - Strategic management, **no manual piloting**.
 - Galaxy map with zoomable 2D sectors and visible autonomous battles.
 - Individual property commands, crew management and selectable autonomous ship occupations.
 - Real shared economy for player and NPC factions.
+- **Habitation as the source of population; population as the source of staff and specialists.** Education and welfare modules train and sustain people through bounded, paid simulation rather than granting instant invisible bonuses.
 - Bigger galaxy and more factions than a typical initial prototype, contingent on performance.
 
 ## New game: faction origins and independent player faction
