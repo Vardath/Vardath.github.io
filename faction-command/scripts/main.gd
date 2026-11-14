@@ -138,6 +138,7 @@ var crew_transfer_picker: OptionButton
 var crew_captain_swap_button: Button
 var crew_board_settlers_button: Button
 var crew_settle_passengers_button: Button
+var crew_evacuate_button: Button
 var population_screen: Control
 var population_info: Label
 
@@ -1946,6 +1947,11 @@ func _open_crew_screen() -> void:
 	crew_settle_passengers_button.name = "DisembarkSettlersButton"
 	crew_settle_passengers_button.pressed.connect(_disembark_settlers)
 	settlement_row.add_child(crew_settle_passengers_button)
+	crew_evacuate_button = _button("Evacuate residents")
+	crew_evacuate_button.name = "EvacuateResidentsButton"
+	crew_evacuate_button.custom_minimum_size.y = 44
+	crew_evacuate_button.pressed.connect(_evacuate_residents)
+	column.add_child(crew_evacuate_button)
 	var close_button := _button("Close")
 	close_button.name = "CloseCrewButton"
 	close_button.pressed.connect(_close_crew_screen)
@@ -1991,11 +1997,17 @@ func _update_crew_screen() -> void:
 	else:
 		lines.append("Recruitment and discharge require an NPC recruitment station. The station pool is finite and hires are paid to its operating budget.")
 	lines.append("CIVILIAN SETTLEMENT\n%d passengers aboard · %d free transport berths. Board existing NPC adults for %d CR each at a non-hostile recruitment dock. Fly to an owned station, dock there and disembark only into powered, provisioned, vacant residential slots. Returning to their original NPC station restores the workers to that roster; the original permit cost is not refunded." % [int(ship.get("settler_passengers", 0)), world.settlement.free_berths(world, ship), world.settlement.RESETTLEMENT_FEE])
+	if not station.is_empty() and station.owner == world.state.player_faction_id:
+		var colony: Dictionary = world.population.station_cohort(world, str(station.id))
+		lines.append("COLONY RESCUE\nSettled adults: %d · Resident service: %s · Critical cycles: %d. Evacuation transfers adults into vacant berths, even from an unpowered or unsupplied habitat. They remain in the ship manifest until safely delivered to a provisioned player colony." % [int(colony.get("cohorts", {}).get("assigned_workers", 0)), str(colony.get("resident_status", "Unoccupied")), int(colony.get("resident_alert_cycles", 0))])
 	lines.append("CREW AND CAPTAIN TRANSFERS\nTwo player-owned ships must be docked at the same station, with no active orders. Move service crew or swap named captains with the selected ship. Captains retain their own skill and morale.")
 	lines.append("Real sector crossings and physical trade or delivery work earn experience. Payroll transfers credits to an NPC agency station; unpaid wages accrue as arrears and reduce morale. Skill and morale do not yet change job speed or efficiency.")
 	crew_info.text = "\n\n".join(lines)
 	crew_board_settlers_button.disabled = not at_npc or world.settlement.free_berths(world, ship) < 1 or int(world.state.crew_pools.get(str(station.get("id", "")), 0)) < 1
 	crew_settle_passengers_button.disabled = station.is_empty() or int(ship.get("settler_passengers", 0)) < 1
+	var at_owned: bool = not station.is_empty() and station.owner == world.state.player_faction_id
+	var occupants: int = int(world.population.station_cohort(world, str(station.get("id", ""))).get("cohorts", {}).get("assigned_workers", 0)) if at_owned else 0
+	crew_evacuate_button.disabled = not at_owned or occupants < 1 or world.settlement.free_berths(world, ship) < 1
 	var previous_id := ""
 	if crew_transfer_picker.item_count > 0 and crew_transfer_picker.selected >= 0:
 		previous_id = str(crew_transfer_picker.get_item_metadata(crew_transfer_picker.selected))
@@ -2054,6 +2066,10 @@ func _disembark_settlers() -> void:
 	_finish_crew_action(world.settlement.disembark(world, crew_screen_ship_id, _crew_quantity_value()))
 
 
+func _evacuate_residents() -> void:
+	_finish_crew_action(world.settlement.evacuate(world, crew_screen_ship_id, _crew_quantity_value()))
+
+
 func _swap_crew_captains() -> void:
 	var destination_id := ""
 	if crew_transfer_picker.selected >= 0:
@@ -2089,7 +2105,7 @@ func _open_population_screen() -> void:
 	column.add_theme_constant_override("separation", 9)
 	panel.add_child(column)
 	column.add_child(_label("KNOWN STATION POPULATIONS", 22, TEXT))
-	column.add_child(_wrapped_label("Station residents, ship crews and civilian passengers are counted separately. Finished residential modules consume physically supplied energy, potable water, food and medicine. Existing adults can relocate by ship; births, schools and natural immigration are later systems.", 14, MUTED))
+	column.add_child(_wrapped_label("Station residents, ship crews and civilian passengers are counted separately. Residential modules consume physical energy, water, food and medicine; settled adults also consume finite supplies. Shortages preserve residents and require resupply or ship evacuation. Births, schools and natural immigration are later systems.", 14, MUTED))
 	var scrolling := ScrollContainer.new()
 	scrolling.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scrolling.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -2114,12 +2130,12 @@ func _update_population_screen() -> void:
 		aboard += int(ship.crew) + 1 + int(ship.get("settler_passengers", 0))
 	var station_people: int = world.population.total_people(world) - aboard
 	var text_rows: Array[String] = []
-	text_rows.append("Known total: %d people\nStation cohorts: %d · Ship crews and pilots: %d\nStaffing is counted once; recruitment pools reference the same residents.\nHousing uses real energy, water, food and medical stocks every service cycle. Births, immigration, schools and morale facilities are not implemented yet. Passenger resettlement of existing adults is implemented." % [world.population.total_people(world), station_people, aboard])
+	text_rows.append("Known total: %d people\nStation cohorts: %d · Ship crews and pilots: %d\nStaffing is counted once; recruitment pools reference the same residents.\nHousing requires physical energy, water, food and medical stocks. Settled adults add finite water, ration and medical requirements every 60 ticks (per four/eight residents). Critical shortages preserve all people; evacuation requires a physically docked owned ship. Births, immigration, schools and morale facilities are not implemented yet. Passenger resettlement of existing adults is implemented." % [world.population.total_people(world), station_people, aboard])
 	for entry in entries:
 		var title: String = "%s · %s" % [entry.name, _faction_name(str(entry.owner))] if entry.active else "%s · dormant roster (station unavailable)" % entry.name
 		var upkeep: Dictionary = entry.provisions_per_60
 		var shortage_text: String = " · NEXT SHORTAGE: " + str(entry.provision_shortage) if not str(entry.provision_shortage).is_empty() else ""
-		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing: %d slots · %d powered · %d occupied by adult settlers\nLife support/60 ticks: Energy %d, Water %d, Food %d, Medical %d\nStatus: %s%s" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees), int(entry.hab_capacity), int(entry.operational_capacity), int(entry.occupied_housing), int(upkeep.get("energy_cells", 0)), int(upkeep.get("potable_water", 0)), int(upkeep.get("food_rations", 0)), int(upkeep.get("medical_supplies", 0)), entry.housing_status, shortage_text])
+		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing: %d slots · %d powered · %d occupied by adult settlers\nLife support/60 ticks: Energy %d, Water %d, Food %d, Medical %d\nStatus: %s%s\nResident service: %s · Critical cycles: %d · Available powered beds: %d · Shelter deficit: %d%s" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees), int(entry.hab_capacity), int(entry.operational_capacity), int(entry.occupied_housing), int(upkeep.get("energy_cells", 0)), int(upkeep.get("potable_water", 0)), int(upkeep.get("food_rations", 0)), int(upkeep.get("medical_supplies", 0)), entry.housing_status, shortage_text, entry.resident_status, int(entry.resident_alert_cycles), int(entry.available_beds), int(entry.housing_deficit), " · MISSING " + str(entry.resident_shortage) if not str(entry.resident_shortage).is_empty() else ""])
 	population_info.text = "\n\n".join(text_rows)
 
 
