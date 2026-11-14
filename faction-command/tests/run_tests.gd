@@ -84,7 +84,17 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_education(state: Dictionary) -> void:
+	state.erase("education_version")
+	state.erase("education_catalog")
+	for program_id in ["community_school", "flight_academy", "engineering_college", "management_college", "research_academy", "marine_academy", "agriculture_institute"]:
+		state.get("construction_blueprints", {}).erase(program_id)
+	for station in state.get("stations", []):
+		station.erase("education")
+
+
 func _strip_demographics(state: Dictionary) -> void:
+	_strip_education(state)
 	state.erase("demographics_version")
 	state.erase("demographics_catalog")
 	for record in state.get("population", {}).get("stations", {}).values():
