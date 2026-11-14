@@ -31,6 +31,15 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 				producers[ware_id] = recipe
 			elif not warnings.has("Several recipes produce %s; using %s." % [wares.get(ware_id, ware_id), producers[ware_id].name]):
 				warnings.append("Several recipes produce %s; using %s." % [wares.get(ware_id, ware_id), producers[ware_id].name])
+	# Habitats are services, not factories. Include their recurring station
+	# Energy Cells consumption in the same dependency graph so self-sufficient
+	# construction can add solar generation, or explicitly import it.
+	for habitat_id in state.get("habitation_catalog", {}):
+		var home: Dictionary = state.habitation_catalog[habitat_id]
+		if recipes.has(habitat_id):
+			errors.append("Habitat ID collides with a production recipe: " + str(habitat_id))
+			continue
+		recipes[habitat_id] = {"id":str(habitat_id), "name":str(home.name), "inputs":{"energy_cells":int(home.energy_per_60)}, "outputs":{}, "cycle_ticks":60}
 	if mode not in ["self", "selected", "all"]:
 		errors.append("Choose a valid sourcing mode.")
 	var imported: Dictionary = {}
@@ -131,6 +140,14 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 				message = "Finite %s reserve in this sector: %d units, shared by your stations." % [str(wares.get(resource, resource)), remaining] if remaining >= int(recipe.deposit.quantity) else "No usable %s deposit remains in this sector." % str(wares.get(resource, resource))
 			if not warnings.has(message):
 				warnings.append(message)
+	for habitat_id in state.get("habitation_catalog", {}):
+		if int(counts.get(habitat_id, 0)) < 1:
+			continue
+		var home: Dictionary = state.habitation_catalog[habitat_id]
+		var chosen: int = int(requested.get(habitat_id, 0))
+		module_rows.append({"id":str(habitat_id), "name":str(home.name), "chosen":chosen, "added":int(counts[habitat_id]) - chosen, "total":int(counts[habitat_id]), "housing_capacity":int(home.capacity) * int(counts[habitat_id]), "energy_per_60":int(home.energy_per_60) * int(counts[habitat_id])})
+	if not state.get("habitation_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("housing_capacity")):
+		warnings.append("Habitats provide housing capacity, not instant residents, crew or birth events. Current life support requires real Energy Cells; food, water, medicine, family growth and species compatibility are future systems.")
 	var ware_rows: Array[Dictionary] = []
 	for ware in state.get("wares", []):
 		var ware_id := str(ware.id)
