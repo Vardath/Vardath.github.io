@@ -1,6 +1,6 @@
 name: Faction Command foundation
 # Pass 31 final-head CI gate: ecological recycling, soil-based agriculture and Android v20.
-# Verify both required jobs against the exact final merged source, not an earlier passing commit.
+# Verify both jobs on the complete Pass 31 implementation, master design, README and progress journal.
 on:
   push:
     paths:
