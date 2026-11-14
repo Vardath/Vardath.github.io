@@ -150,6 +150,7 @@ func appoint(world: RefCounted, station_id: String, count: int) -> Dictionary:
 	if count < 0 or count > int(rec.cohorts.assigned_workers) - _active_adults(station) or _teacher_load(station) > count:
 		return {"ok":false, "message":"Appointed instructors must be real resident adults, not enrolled students or imaginary workers."}
 	station.education.teachers = count
+	world._record_transaction("education_appointment", "", station_id, "", count, 0, 0)
 	return {"ok":true, "message":"%d existing resident adults are now appointed as teaching staff. Active classes pay real wages." % count}
 
 
@@ -182,7 +183,7 @@ func enroll(world: RefCounted, station_id: String, program_id: String, count: in
 	if int(station.stock.get(str(definition.material), 0)) < min_material or int(station.stock.get("energy_cells", 0)) < int(definition.energy_per_60) or int(world.state.starting_credits) < min_cost:
 		return {"ok":false, "message":"Fund a first teaching cycle with physically stocked learning records, energy and actual instructor wages."}
 	station.education.courses[program_id] = {"count":count, "target":target, "progress":0, "status":"Enrolled"}
-	world._record_transaction("education_enrollment", "", station_id, "", count, 0, 0)
+	world._record_transaction("education_enrollment", "", station_id, program_id, count, 0, 0)
 	return {"ok":true, "message":"Enrolled %d existing %s residents in %s. Their class requires physical records, power, teachers, wages and time." % [count, target, definition.name]}
 
 
@@ -198,7 +199,7 @@ func on_youth_mature(world: RefCounted, station: Dictionary, quantity: int) -> v
 			class_state.count = eligible
 			if eligible == 0:
 				station.education.courses.erase("community_school")
-			world._record_transaction("education_age_exit", "", str(station.id), "", removed, 0, 0)
+			world._record_transaction("education_age_exit", "", str(station.id), "community_school", removed, 0, 0)
 	var accredited: int = mini(quantity, int(station.education.youth_completed))
 	if accredited > 0:
 		station.education.youth_completed = int(station.education.youth_completed) - accredited
