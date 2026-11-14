@@ -358,8 +358,16 @@ func tick(world: RefCounted) -> void:
 	if station.is_empty():
 		current.status = "Station unavailable"
 		return
+	# A residence is a real service module, not a fictitious production
+	# recipe. It creates living space only after physical materials and all
+	# builder work are completed; it never creates adults, children or crew.
+	if world.habitation.is_habitat(world, str(task.recipe_id)):
+		if not world.habitation.on_commission(world, str(station.id), str(task.recipe_id)):
+			current.status = "Cannot commission habitat"
+			return
+	else:
+		station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
 	station.storage_capacity = int(station.storage_capacity) + int(task.storage)
-	station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})
 	current.completed = int(current.completed) + 1
 	if bool(current.get("cancelled", false)):
 		station.name = current.name
