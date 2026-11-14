@@ -881,18 +881,27 @@ func _show_sector(sector_id: String) -> void:
 			if not traffic.is_empty():
 				detail_body.text += "\n\nFaction traffic\n" + "\n".join(traffic)
 			order_target.text = "Destination: " + str(sector.name)
+			_inspector_present()
 			return
 
 
 func _open_map_station(station_id: String) -> void:
-	if world._find_station(station_id).is_empty():
+	var station: Dictionary = world._find_station(station_id)
+	if station.is_empty():
 		return
-	_open_trade()
-	for index in trade_station_picker.item_count:
-		if trade_station_picker.get_item_metadata(index) == station_id:
-			trade_station_picker.select(index)
-			_on_trade_selection(index)
-			return
+	if station.owner == world.state.player_faction_id:
+		_show_owned_station(station_id)
+		return
+	# Tapping a station inspects it first, unlike the old forced trade modal.
+	# The active player ship remains the only object receiving player commands.
+	selected_station_id = station_id
+	selected_view = "npc_station"
+	_focus_property_sector(str(station.sector))
+	detail_title.text = str(station.name)
+	var production: int = station.get("production", []).size()
+	var archive_label := "\nArchive: %s" % str(station.archive.status) if station.has("archive") else ""
+	detail_body.text = "%s\nFaction: %s\nSector: %s\nStation storage: %d / %d\nProduction modules: %d%s\n\nInspect the tabs for market, production and known population information." % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), production, archive_label]
+	_inspector_present()
 
 
 func _show_map_ship(ship_id: String) -> void:
@@ -910,6 +919,7 @@ func _show_map_ship(ship_id: String) -> void:
 	if not ship.travel.is_empty():
 		destination = "\nCrossing to " + _sector_name(str(ship.travel.to))
 	detail_body.text = "%s  ·  %s\n\nFaction\n%s\n\nRole\n%s\n\nSector\n%s%s" % [ship["class"], ship.status, _faction_name(str(ship.owner)), ship.role, _sector_name(str(ship.sector)), destination]
+	_inspector_present()
 
 
 func _show_ship() -> void:
@@ -962,6 +972,7 @@ func _show_ship() -> void:
 		for order in ship.orders:
 			destinations.append(_sector_name(str(order.destination)))
 		detail_body.text += "\n\nOrders\n" + " → ".join(destinations)
+	_inspector_present()
 
 
 func _sector_name(sector_id: String) -> String:
@@ -1124,6 +1135,7 @@ func _show_owned_station(station_id: String) -> void:
 	var working_housing: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
 	var housing_power: int = world.habitation.maintenance_per_60(station, world.state.habitation_catalog)
 	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\nKnown resident workers: %d\nHousing: %d slots, %d powered\nLife-support energy: %d per 60 ticks\nStatus: %s\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), world.population.station_total(residents), housing, working_housing, housing_power, residents.get("housing_status", "No habitat"), "No active production." if modules.is_empty() else "\n".join(modules)]
+	_inspector_present()
 
 
 func _show_owned_site(site_id: String) -> void:
@@ -1144,6 +1156,7 @@ func _show_owned_site(site_id: String) -> void:
 			var ware: Dictionary = world._find_ware(str(ware_id))
 			stored.append("%s × %d" % [ware.get("name", ware_id), int(site.build_storage[ware_id])])
 	detail_body.text = "YOUR BUILD SITE\nSector: %s\nStatus: %s\nModules completed: %d / %d\nBuild storage: %s" % [_sector_name(str(site.sector)), site.status, int(site.completed), site.tasks.size(), "Empty" if stored.is_empty() else ", ".join(stored)]
+	_inspector_present()
 
 
 func _open_selected_property_action() -> void:
@@ -1177,7 +1190,15 @@ func _on_role_selected(index: int) -> void:
 
 
 func _queue_order() -> void:
+	# Orders from NPC ships or NPC station inspections must never leak
+	# through the persistent global command button.
+	if selected_view not in ["sector", "ship"] or inspector_current_tab not in ["Info", "Orders"]:
+		order_feedback.text = "Inspect an owned ship or destination sector to issue orders."
+		return
 	var ship: Dictionary = _player_ship()
+	if ship.is_empty() or ship.owner != world.state.player_faction_id:
+		order_feedback.text = "Only owned ships can receive commands."
+		return
 	if world.queue_fly_to(str(ship.id), selected_sector):
 		order_feedback.text = "Order queued. Resume to travel." if paused else "Order queued."
 		_save_current_game()
@@ -1208,6 +1229,8 @@ func _refresh_world_display() -> void:
 		_show_ship()
 	elif selected_view == "npc_ship":
 		_show_map_ship(selected_ship_id)
+	elif selected_view == "npc_station":
+		_open_map_station(selected_station_id)
 	elif selected_view == "owned_station":
 		_show_owned_station(selected_property_key.substr(8))
 	elif selected_view == "owned_site":
