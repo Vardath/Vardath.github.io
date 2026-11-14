@@ -14,33 +14,37 @@ const WASTE_SOURCES := ["potable_water", "food_rations"]
 func definitions() -> Dictionary:
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
 	if not parsed is Dictionary or parsed.get("schema_version") != VERSION or not parsed.get("wares") is Array or not parsed.get("recipes") is Array or not parsed.get("blueprints") is Dictionary or not parsed.get("waste_sources") is Dictionary:
-		printerr("ECOLOGY REJECTION STAGE 1")
+
 		return {}
-	if parsed.wares.size() != 2 or parsed.recipes.size() != 2 or parsed.blueprints.size() != 2 or parsed.waste_sources != {"potable_water":1, "food_rations":1}:
-		printerr("ECOLOGY REJECTION STAGE 2")
+	if parsed.wares.size() != 2 or parsed.recipes.size() != 2 or parsed.blueprints.size() != 2 or parsed.waste_sources.size() != 2 or int(parsed.waste_sources.get("potable_water", 0)) != 1 or int(parsed.waste_sources.get("food_rations", 0)) != 1:
+
 		return {}
 	for i in range(2):
 		if not parsed.wares[i] is Dictionary or parsed.wares[i].get("id") != WARE_IDS[i] or parsed.wares[i].get("volume") != 1 or not parsed.wares[i].get("name") is String:
-			printerr("ECOLOGY REJECTION STAGE 3")
+
 			return {}
 		if not parsed.recipes[i] is Dictionary or parsed.recipes[i].get("id") != RECIPE_IDS[i] or not parsed.recipes[i].get("name") is String or not parsed.blueprints.has(RECIPE_IDS[i]):
-			printerr("ECOLOGY REJECTION STAGE 4")
+
 			return {}
 	var recycler: Dictionary = parsed.recipes[0]
 	var farmland: Dictionary = parsed.recipes[1]
-	if int(recycler.get("cycle_ticks", 0)) != 15 or recycler.get("inputs") != {"organic_waste":2, "energy_cells":1} or recycler.get("outputs") != {"potable_water":1, "fertile_soil":1}:
-		printerr("ECOLOGY REJECTION STAGE 5")
+	if int(recycler.get("cycle_ticks", 0)) != 15 or not recycler.get("inputs") is Dictionary or not recycler.get("outputs") is Dictionary:
 		return {}
-	if int(farmland.get("cycle_ticks", 0)) != 20 or farmland.get("inputs") != {"fertile_soil":1, "potable_water":2, "energy_cells":1} or farmland.get("outputs") != {"food_rations":4}:
-		printerr("ECOLOGY REJECTION STAGE 6")
+	if recycler.inputs.size() != 2 or recycler.outputs.size() != 2 or int(recycler.inputs.get("organic_waste", 0)) != 2 or int(recycler.inputs.get("energy_cells", 0)) != 1 or int(recycler.outputs.get("potable_water", 0)) != 1 or int(recycler.outputs.get("fertile_soil", 0)) != 1:
+
+		return {}
+	if int(farmland.get("cycle_ticks", 0)) != 20 or not farmland.get("inputs") is Dictionary or not farmland.get("outputs") is Dictionary:
+		return {}
+	if farmland.inputs.size() != 3 or farmland.outputs.size() != 1 or int(farmland.inputs.get("fertile_soil", 0)) != 1 or int(farmland.inputs.get("potable_water", 0)) != 2 or int(farmland.inputs.get("energy_cells", 0)) != 1 or int(farmland.outputs.get("food_rations", 0)) != 4:
+
 		return {}
 	for recipe_id in RECIPE_IDS:
 		var blueprint: Dictionary = parsed.blueprints[recipe_id]
 		if int(blueprint.get("fee", 0)) < 1 or int(blueprint.get("ticks", 0)) < 1 or int(blueprint.get("storage", 0)) < 1 or not blueprint.get("materials") is Dictionary:
-			printerr("ECOLOGY REJECTION STAGE 7")
+
 			return {}
 		if int(blueprint.materials.get("alloy_plates", 0)) < 1 or int(blueprint.materials.get("energy_cells", 0)) < 1:
-			printerr("ECOLOGY REJECTION STAGE 8")
+
 			return {}
 	return parsed
 
