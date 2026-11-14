@@ -472,7 +472,7 @@ func _valid_education(state: Dictionary) -> bool:
 				payroll_evidence += -int(event.amount)
 			else:
 				var program_id: String = str(event.get("ware_id", ""))
-				if program_id not in EducationScript.PROGRAM_IDS or int(event.quantity) < 1 or int(event.price) != 0 or int(event.amount) != 0:
+				if program_id not in EducationScript.PROGRAM_IDS or int(event.quantity) < 1 or (kind not in ["career_transfer_departure", "career_transfer_arrival"] and int(event.price) != 0) or int(event.amount) != 0:
 					return false
 				if kind == "education_enrollment":
 					enrolled_by_program[program_id] = int(enrolled_by_program.get(program_id, 0)) + int(event.quantity)
@@ -605,7 +605,7 @@ func _valid_careers(state: Dictionary) -> bool:
 		var manifest: Dictionary = ship.career_manifest
 		if manifest.is_empty():
 			continue
-		if manifest.size() != 3 or manifest.get("track") not in EducationScript.PROGRAM_IDS or not _is_nonnegative_integer(manifest.get("quantity")) or int(manifest.quantity) < 1 or manifest.get("certified") not is bool:
+		if manifest.size() != 3 or manifest.get("track") not in EducationScript.PROGRAM_IDS or not _is_nonnegative_integer(manifest.get("quantity")) or int(manifest.quantity) < 1 or not manifest.get("certified") is bool:
 			return false
 		if ship.owner != state.player_faction_id or int(ship.get("settler_passengers", 0)) != int(manifest.quantity):
 			return false
