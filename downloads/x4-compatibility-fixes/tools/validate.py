@@ -477,8 +477,9 @@ class Contracts(unittest.TestCase):
         """Workshop 1.21 source unavailable: no original-script claim."""
         p='extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml'
         patch=E.parse(str(MOD/p)).getroot()
-        self.assertEqual(patch.tag,'diff');self.assertEqual(len(patch),1)
-        op=patch[0]
+        ops=[node for node in patch if isinstance(node.tag,str)]
+        self.assertEqual(patch.tag,'diff');self.assertEqual(len(ops),1)
+        op=ops[0]
         self.assertEqual(op.tag,'add')
         self.assertEqual(op.get('sel'),"/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions")
         self.assertEqual(op.get('pos'),'prepend')
