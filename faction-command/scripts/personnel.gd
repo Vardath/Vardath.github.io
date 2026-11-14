@@ -204,7 +204,9 @@ func hire(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 		return {"ok":false, "message":"A hostile station will not recruit for your faction."}
 	if int(ship.crew) + quantity > capacity(ship):
 		return {"ok":false, "message":"This ship has insufficient crew berths."}
-	if int(world.state.crew_pools[station.id]) < quantity or world.population.available_workers(world, str(station.id)) < quantity:
+	if int(world.state.crew_pools[station.id]) != world.population.available_workers(world, str(station.id)):
+		return {"ok":false, "message":"Population and recruitment rosters disagree."}
+	if int(world.state.crew_pools[station.id]) < quantity:
 		return {"ok":false, "message":"The station has insufficient available resident recruits."}
 	var total: int = quantity * HIRE_COST
 	if int(world.state.starting_credits) < total:
@@ -231,6 +233,8 @@ func discharge(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var station: Dictionary = world._find_station(str(ship.docked_at))
 	if not _dock_available(ship, station) or not world.state.crew_pools.has(station.id) or station.owner == world.state.player_faction_id:
 		return {"ok":false, "message":"Dock at an NPC recruitment station to discharge crew."}
+	if int(world.state.crew_pools[station.id]) != world.population.available_workers(world, str(station.id)) or int(world.state.crew_pools[station.id]) + quantity > 1000000:
+		return {"ok":false, "message":"Station population cannot accept discharged crew."}
 	var old_count: int = int(ship.crew)
 	var lost_experience: int = int(int(ship.crew_profile.experience) * quantity / old_count)
 	ship.crew = old_count - quantity
