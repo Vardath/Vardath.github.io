@@ -33,13 +33,16 @@ local function label(id, fallback)
 end
 
 function S.decorate(menu)
-    if not menu or not menu.actions or not menu.actions.selected_orders or
+    -- The native "selected_orders" group is gated on selected player ships.
+    -- Use the always-available "main" interaction group so the action is
+    -- reachable from a spacesuit without any ship selected for orders.
+    if not menu or not menu.actions or not menu.actions.main or
         type(menu.insertInteractionContent) ~= "function" or not menu.componentSlot then
         return false
     end
     local ship = menu.componentSlot.component
     if not ownedShip(ship) then return false end
-    for _, entry in ipairs(menu.actions.selected_orders) do
+    for _, entry in ipairs(menu.actions.main) do
         if entry.vgo_safe_eva_v56 then return false end
     end
     local shipid = tostring(id64(ship))
@@ -50,13 +53,13 @@ function S.decorate(menu)
         AddUITriggeredEvent("VGO.Spacesuit", control, luaid(ship))
         if type(menu.onCloseElement) == "function" then menu.onCloseElement("close") end
     end
-    menu.insertInteractionContent("selected_orders", {
+    menu.insertInteractionContent("main", {
         vgo_safe_eva_v56 = true, active = type(AddUITriggeredEvent) == "function",
         text = label(76, "Emergency EVA (outside hull)"),
         mouseOverText = label(78, "When aboard this undocked ship, exit via native emergency spacesuit placement outside the hull. Manual click only; no automatic ejection."),
         script = function() dispatch("safe_eva") end,
     })
-    menu.insertInteractionContent("selected_orders", {
+    menu.insertInteractionContent("main", {
         vgo_manual_board_v56 = true, active = type(AddUITriggeredEvent) == "function",
         text = label(77, "Rescue: board this ship"),
         mouseOverText = label(79, "When in your spacesuit within 2 km of this owned ship, use the native transporter destination to recover aboard. Manual click only."),

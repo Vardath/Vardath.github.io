@@ -12,12 +12,12 @@ local ship=101
 local menu
 menu={
     componentSlot={component=ship},
-    actions={selected_orders={}},
+    actions={main={}}, -- no selected_orders: simulate stranded EVA
     prepareActions=function() return false end,
     onCloseElement=function(x) calls[#calls+1]={"closed",x} end,
     insertInteractionContent=function(group,action)
-        assert(group=="selected_orders")
-        table.insert(menu.actions.selected_orders,action)
+        assert(group=="main")
+        table.insert(menu.actions.main,action)
     end,
 }
 Helper={getMenu=function(name)
@@ -41,23 +41,23 @@ check("native confirmation is never wrapped", function()
     assert(confirmMenu.confirm==nativeConfirm)
     assert(installs["VGO.Install"]==S.install)
 end)
-check("only own ship gets contextual buttons",function()
+check("recovery controls work without a selected-order group",function()
     menu.prepareActions()
-    assert(#menu.actions.selected_orders==2)
-    assert(menu.actions.selected_orders[1].vgo_safe_eva_v56)
-    assert(menu.actions.selected_orders[2].vgo_manual_board_v56)
+    assert(#menu.actions.main==2)
+    assert(menu.actions.main[1].vgo_safe_eva_v56)
+    assert(menu.actions.main[2].vgo_manual_board_v56)
     assert(#events==0)
 end)
 check("explicit click alone emits bounded rescue request",function()
-    menu.actions.selected_orders[1].script()
+    menu.actions.main[1].script()
     assert(#events==1 and events[1][1]=="VGO.Spacesuit")
     assert(events[1][2]=="safe_eva" and events[1][3]==ship)
-    menu.actions.selected_orders[2].script()
+    menu.actions.main[2].script()
     assert(#events==2 and events[2][2]=="recover_board" and events[2][3]==ship)
 end)
 check("stale menu target may not dispatch",function()
     menu.componentSlot.component=102
-    menu.actions.selected_orders[1].script()
+    menu.actions.main[1].script()
     assert(#events==2)
     menu.componentSlot.component=ship
 end)
@@ -65,7 +65,7 @@ check("no duplicate menu actions on repeated installation",function()
     installs["VGO.Install"](nil,1001)
     assert(menu.prepareActions==S.hook)
     S.decorate(menu)
-    assert(#menu.actions.selected_orders==2)
+    assert(#menu.actions.main==2)
 end)
 check("native menu confirms remain identical across all modes",function()
     for _,mode in ipairs({"transporter","abortupgrade","hackpanel","other"}) do
