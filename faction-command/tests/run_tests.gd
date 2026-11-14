@@ -250,6 +250,28 @@ func _total_ware(state: Dictionary, ware_id: String) -> int:
 	return total
 
 
+
+func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: String, units_per_ware: int = 8) -> bool:
+	# This is a REAL cargo operation in the test harness: supplies leave
+	# a previously physically constructed and functioning industrial colony,
+	# occupy the owned ship, and are unloaded only at a physical station dock.
+	var destination: Dictionary = world._find_station(home_id)
+	var source: Dictionary = world._find_station(source_id)
+	if destination.is_empty() or source.is_empty():
+		return false
+	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
+		var needed: int = maxi(0, units_per_ware - int(destination.stock.get(ware_id, 0)))
+		if needed == 0:
+			continue
+		if int(source.stock.get(ware_id, 0)) < needed:
+			return false
+		if not world.dock_ship("ship_001", source_id).ok or not world.transfer_player_station("ship_001", source_id, ware_id, needed, false).ok:
+			return false
+		if not world.dock_ship("ship_001", home_id).ok or not world.transfer_player_station("ship_001", home_id, ware_id, needed, true).ok:
+			return false
+	return true
+
+
 func _run() -> void:
 	# A unique isolated directory prevents tests from ever touching a player's save.
 	var test_root := "user://fc-test-%s-%s" % [OS.get_process_id(), Time.get_ticks_usec()]
