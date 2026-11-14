@@ -85,7 +85,8 @@ func facility_needs(world: RefCounted, station: Dictionary, projected_occupants:
 	if int(world.state.get("settlement_version", 0)) >= 2:
 		var occupants: int = projected_occupants
 		if occupants < 0:
-			occupants = int(world.population.station_cohort(world, str(station.get("id", ""))).get("cohorts", {}).get("assigned_workers", 0))
+			var cohort: Dictionary = world.population.station_cohort(world, str(station.get("id", "")))
+			occupants = world.demographics.residents(cohort) if world.state.has("demographics_version") else int(cohort.get("cohorts", {}).get("assigned_workers", 0))
 		for ware_id in world.settlement.resident_needs(occupants):
 			totals[ware_id] = int(totals.get(ware_id, 0)) + int(world.settlement.resident_needs(occupants)[ware_id])
 	return totals
