@@ -246,14 +246,14 @@ Expand toward ~300 sectors and 20–30 factions with procedural variety and auth
 - If checks are red, pending, missing or cannot be inspected, **do not proceed to the next implementation task**. Record the exact blocker in the progress file and fix the current task or request the necessary access. Never report green without observing the check results.
 - Keep CI checks scoped to the game directory so existing website functionality is not inadvertently broken. Do not equate a green CI result with verified Android gameplay; retain real-device acceptance tests.
 
-## Next implementation priorities (after Pass 23)
-1. Keep the existing real economy, fleet commands, station-builder, research and personnel capabilities intact; maintain the green Godot/Android gate and verify on an actual Android device.
-2. **Population foundation:** persistent inhabitants and demographics, with exactly counted recruitment pools mapped to resident cohorts, meaningful station/hab capacity and conservative save migration.
-3. **Habitats and life support:** buildable living quarters and family/adaptive habs with upfront physical construction costs, upkeep, space and a real population source.
-4. **Civilian lifecycle and travel:** bounded births, growth, housing, health, immigrant routes and physically transported recruitment.
-5. **Education:** implement initial community school, vocational college, pilot academy, station management college, research academy and marine/boarding school. Expand to the full skill and station-school catalogue above.
-6. **Morale, workplaces and policy:** civilian healthcare/recreation, trained staff requirements, NPC faction use, simple station education presets, then bounded effects of qualified staff on the actual simulation.
-7. After the coherent population pipeline, add broader named-captain hiring/succession, ship outfitting, fuller shipyards, advanced occupations, combat and increased galactic scale.
+## Next implementation priorities (after Pass 26)
+1. Keep all existing economy, fleet orders, station construction, research, crew, population ledgers and powered habitats intact, with verified green commit/Android gates and real-handset acceptance still outstanding.
+2. **Next UX pass: Space RPG-style object inspector and mobile map workflow.** Keep the original galaxy and sector map central. Choose an object to open a contextual inspector with scrollable relevant sub-tabs; show ship/station/sector information and legal owner-scoped commands in a compact landscape-friendly surface. Preserve selection, routes, orders, properties, map pan/zoom and existing deep screens. Test NPC ownership restrictions and high Android UI scaling before merging.
+3. **Civilian provisions:** build actual food/water/medical production or imports and stock consumption using the same material-conserving station economy, with no fictitious supply source. Expand habitat operational conditions from Energy Cells to real civilian needs.
+4. **Population lifecycle and travel:** implement bounded family births (children, not adult workers), growth, age cohorts, housing occupancy, medical health, immigration/emigration from real known populations using transported passengers and stable identities.
+5. **Education:** community school, vocational college, flight academy, station management school, research university and boarding academy, requiring funded teachers, time, materials, suitable classrooms and real students.
+6. **Morale, employment and faction adoption:** healthcare and recreation, trained job requirements and bounded efficiency changes; extend the same population/workforce rules to NPC factions and Android-scale performance.
+7. Add more complex hull/equipment markets, captain hiring/succession, advanced occupations, autonomous combat and further galaxy depth through separately tested passes.
 
 ## Current design decisions
 - Strategic management, **no manual piloting**.
