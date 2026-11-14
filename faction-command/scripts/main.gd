@@ -5,6 +5,7 @@ const GalaxyMapScript = preload("res://scripts/galaxy_map.gd")
 const SectorMapScript = preload("res://scripts/sector_map.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
 const StationPlannerScript = preload("res://scripts/station_planner.gd")
+const InspectorScript = preload("res://scripts/object_inspector.gd")
 const BACKGROUND := Color("080f1b")
 const PANEL := Color("101e2d")
 const BORDER := Color("24394a")
@@ -15,6 +16,7 @@ const ACCENT := Color("71dfcc")
 var world = WorldScript.new()
 var save_store = SaveStoreScript.new()
 var station_planner = StationPlannerScript.new()
+var inspector = InspectorScript.new()
 var save_path := "user://faction_command_save.json"
 var _last_saved_tick := 0
 var paused := true
@@ -30,6 +32,18 @@ var tick_label: Label
 var pause_button: Button
 var detail_title: Label
 var detail_body: Label
+var inspector_tabs: HBoxContainer
+var inspector_actions: VBoxContainer
+var inspector_key := ""
+var inspector_current_tab := "Info"
+var inspector_base_info := ""
+var inspector_action_signature := ""
+var inspector_order_button: Button
+var selected_station_id := ""
+var property_panel: PanelContainer
+var inspector_panel: PanelContainer
+var property_drawer_button: Button
+var property_drawer_open := false
 var sector_picker: OptionButton
 var ship_brief: Label
 var ship_button: Button
@@ -362,6 +376,9 @@ func _enter_world() -> void:
 	property_picker_signature = ""
 	selected_sector = str(world.state.ships[0].sector)
 	selected_view = "sector"
+	inspector_key = ""
+	inspector_current_tab = "Info"
+	property_drawer_open = false
 	start_screen.queue_free()
 	_build_ui()
 	_show_sector(selected_sector)
@@ -431,7 +448,8 @@ func _build_ui() -> void:
 	content.add_theme_constant_override("separation", 12)
 	root.add_child(content)
 
-	var property_panel := _panel()
+	property_panel = _panel()
+	property_panel.name = "PropertyPanel"
 	property_panel.custom_minimum_size.x = 235
 	content.add_child(property_panel)
 	var property_scroll := ScrollContainer.new()
@@ -531,6 +549,10 @@ func _build_ui() -> void:
 	map_title.name = "MapTitle"
 	map_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	map_heading.add_child(map_title)
+	property_drawer_button = _button("Assets")
+	property_drawer_button.name = "PropertyDrawerButton"
+	property_drawer_button.pressed.connect(_toggle_property_drawer)
+	map_heading.add_child(property_drawer_button)
 	for control in [{"text":"−", "name":"MapZoomOut", "factor":0.8}, {"text":"+", "name":"MapZoomIn", "factor":1.25}]:
 		var zoom_button := _button(str(control.text))
 		zoom_button.name = str(control.name)
@@ -567,13 +589,14 @@ func _build_ui() -> void:
 	map_caption.name = "MapCaption"
 	map_column.add_child(map_caption)
 
-	var detail_panel := _panel()
-	detail_panel.custom_minimum_size.x = 230
-	content.add_child(detail_panel)
+	inspector_panel = _panel()
+	inspector_panel.name = "ObjectInspectorPanel"
+	inspector_panel.custom_minimum_size.x = 280
+	content.add_child(inspector_panel)
 	var detail := VBoxContainer.new()
 	detail.add_theme_constant_override("separation", 12)
-	detail_panel.add_child(detail)
-	detail.add_child(_label("SECTOR DIRECTORY", 13, ACCENT))
+	inspector_panel.add_child(detail)
+	detail.add_child(_label("SELECTED OBJECT", 13, ACCENT))
 	sector_picker = OptionButton.new()
 	sector_picker.name = "SectorPicker"
 	sector_picker.custom_minimum_size.y = 44
@@ -586,6 +609,16 @@ func _build_ui() -> void:
 	detail_title = _label("", 21, TEXT)
 	detail_title.name = "DetailTitle"
 	detail.add_child(detail_title)
+	var tab_scroll := ScrollContainer.new()
+	tab_scroll.name = "InspectorTabScroll"
+	tab_scroll.custom_minimum_size.y = 51
+	tab_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	tab_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	detail.add_child(tab_scroll)
+	inspector_tabs = HBoxContainer.new()
+	inspector_tabs.name = "InspectorTabs"
+	inspector_tabs.add_theme_constant_override("separation", 5)
+	tab_scroll.add_child(inspector_tabs)
 	var detail_scroll := ScrollContainer.new()
 	detail_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	detail_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -595,13 +628,17 @@ func _build_ui() -> void:
 	detail_body.name = "DetailBody"
 	detail_body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	detail_scroll.add_child(detail_body)
+	inspector_actions = VBoxContainer.new()
+	inspector_actions.name = "InspectorActions"
+	inspector_actions.add_theme_constant_override("separation", 5)
+	detail.add_child(inspector_actions)
 	order_target = _wrapped_label("", 13, MUTED)
 	order_target.name = "OrderTarget"
 	detail.add_child(order_target)
-	var order_button := _button("Queue fly order")
-	order_button.name = "OrderButton"
-	order_button.pressed.connect(_queue_order)
-	detail.add_child(order_button)
+	inspector_order_button = _button("Queue fly order")
+	inspector_order_button.name = "OrderButton"
+	inspector_order_button.pressed.connect(_queue_order)
+	detail.add_child(inspector_order_button)
 	order_feedback = _wrapped_label("", 12, ACCENT)
 	order_feedback.name = "OrderFeedback"
 	detail.add_child(order_feedback)
@@ -610,6 +647,8 @@ func _build_ui() -> void:
 	footer.name = "MainFooter"
 	root.add_child(footer)
 	_refresh_world_display()
+	resized.connect(_apply_map_layout)
+	_apply_map_layout()
 
 
 func _toggle_pause() -> void:
