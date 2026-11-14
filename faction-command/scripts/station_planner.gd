@@ -70,6 +70,8 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 		if int(counts[id]) > 0:
 			for ware_id in recipes[id].inputs:
 				_check_cycle(str(ware_id), producers, imported, visiting, visited, errors, wares)
+	if int(requested.get("water_recycling", 0)) > 0 or int(requested.get("soil_agriculture", 0)) > 0:
+		warnings.append("Recycling recovers potable water and fertile soil ONLY from physical organic waste generated when real settled adults consume food and water. Empty habitats and ship crews supply none; import organic waste or house/provision residents before expecting output. Soil farms consume real reclaimed soil, water and power.")
 	# An import exception can break a cyclic recipe graph, but the loop may
 	# still need a delivery or starter stock before it can begin operating.
 	if errors.is_empty() and not imported.is_empty():
