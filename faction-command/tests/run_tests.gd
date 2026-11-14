@@ -4246,6 +4246,170 @@ func _run() -> void:
 	screen.queue_free()
 	await process_frame
 
+
+	# Pass 33: physically built community education plus a second vocational
+	# foundation. All actual people are conserved; teaching staff are counted
+	# adults, learners remain residential citizens, school books are archival
+	# cargo and wages move between existing faction/station accounts.
+	var p33_catalog: Dictionary = first.education.definitions()
+	_expect(first.state.education_version == 1 and p33_catalog.catalog.size() == 7 and first.state.education_catalog.size() == 7, "seven original physical community/vocational education service types migrate into the game with strict versioned definitions")
+	_expect(first.education.PROGRAM_IDS.all(func(program_id): return first.state.construction_blueprints.has(program_id)), "every school requires its own payable builder blueprint rather than appearing for free at game start")
+	_expect(first.state.stations.all(func(st): return st.education.modules.is_empty() and int(st.education.teachers) == 0 and int(st.education.certificates_total) == 0), "a fresh galaxy invents no instructors, students, schools or civilian credentials")
+	_expect(not first.education.enroll(first, "hearth_exchange", "community_school", 1).ok and not first.education.appoint(first, "hearth_exchange", 1).ok, "NPC recruitment rosters cannot be silently turned into free player instructors or pupils")
+	var p33_prior: Dictionary = settled_restore.snapshot()
+	_strip_education(p33_prior)
+	_expect(save_store.save_game(test_root + "/pass32-before-school.json", p33_prior) == OK, "genuine pre-school world with two settled adults remains a valid complete legacy save")
+	var p33_prior_read: Dictionary = save_store.load_game(test_root + "/pass32-before-school.json")
+	var p33_migration = WorldScript.new()
+	_expect(p33_prior_read.get("ok", false) and p33_migration.restore_snapshot(p33_prior_read.state) == OK and p33_migration.state.education_version == 1, "education migration adds school blueprints without requiring a new game")
+	_expect(p33_migration.population.total_people(p33_migration) == settled_restore.population.total_people(settled_restore) and p33_migration._find_ship("ship_001") == settled_restore._find_ship("ship_001") and p33_migration.state.starting_credits == p33_prior.starting_credits, "migration preserves all real adult sources, ship orders, pilot, passenger states, research and credits")
+	_expect(p33_migration._find_station("player_station_1").education.modules.is_empty() and p33_migration._find_station("player_station_1").education.qualified.community_school == 0, "existing fully operational residential complexes gain no imaginary buildings or free diplomas")
+	_expect(save_store.save_game(test_root + "/pass33-migrated-school.json", p33_migration.snapshot()) == OK, "empty education records from old populated saves are strictly valid and saveable")
+	var p33_world = WorldScript.new()
+	_expect(p33_world.restore_snapshot(settled_restore.snapshot()) == OK, "real community/technical school test starts with preexisting mine-to-food economy and two physically resettled parents")
+	_disable_npc_trading(p33_world)
+	var p33_source: Dictionary = p33_world._find_station("player_station_1")
+	var p33_people: int = p33_world.population.total_people(p33_world)
+	var p33_credits: int = _total_credits(p33_world.state)
+	var p33_request: Dictionary = {"family_habitat":1, "community_school":1, "engineering_college":1}
+	var p33_preview: Dictionary = p33_world.construction.planner.preview(p33_world.state, p33_request, "all", [], "copper_wake")
+	_expect(p33_preview.ok and ["family_habitat", "community_school", "engineering_college"].all(func(k): return not _plan_row(p33_preview.modules, str(k)).is_empty()), "Android list planner combines a real family habitat, community classroom and technical school into one build contract")
+	_expect(p33_preview.warnings.any(func(t): return str(t).contains("NOT free students")), "school construction planner warns against imaginary pupils, certificates and teachers")
+	var p33_quote: Dictionary = p33_world.construction.quote(p33_world, "copper_wake", p33_request, "all", [])
+	_expect(p33_quote.ok and int(p33_quote.materials.alloy_plates) == 44 and int(p33_quote.materials.energy_cells) == 12 and int(p33_quote.fee) == 2450, "school-plus-family build contract requires forty-four real alloys, twelve actual energy cells and 2,450 credits")
+	for _p33_power in range(20):
+		if int(p33_source.stock.energy_cells) >= 12:
+			break
+		p33_world.advance_ticks(12)
+	_expect(int(p33_source.stock.alloy_plates) >= 48 and int(p33_source.stock.energy_cells) >= 12, "previous solar array and ore-fed alloy smelter physically manufactured both school construction supplies and archive source alloys")
+	var p33_contract: Dictionary = p33_world.construction.place(p33_world, "copper_wake", p33_request, "all", [])
+	_expect(p33_contract.ok and p33_world._find_station("player_station_2").education.modules.is_empty(), "paying real NPC builder creates an unfinished school construction site, without pre-commissioned classrooms")
+	_expect(p33_world.dock_ship("ship_001", "player_station_1").ok and p33_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 44, false).ok, "owned logistics ship loads exactly forty-four genuinely smelted structural alloys")
+	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.construction.deliver(p33_world, "ship_001", str(p33_contract.site_id)).ok, "construction alloys enter the physical builder's storage, not an invisible school inventory")
+	_expect(p33_world.dock_ship("ship_001", "player_station_1").ok and p33_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 12, false).ok, "the same ship loads twelve actual solar cells for the three commissioned services")
+	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.construction.deliver(p33_world, "ship_001", str(p33_contract.site_id)).ok, "all construction energy is physically delivered to the hired builder")
+	p33_world.advance_ticks(150)
+	var p33_site: Dictionary = p33_world.construction.find_site(p33_world, str(p33_contract.site_id))
+	var p33_campus: Dictionary = p33_world._find_station("player_station_2")
+	_expect(int(p33_site.completed) == 3 and p33_campus.habitation.size() == 1 and p33_campus.education.modules.size() == 2 and p33_campus.education.modules.has("community_school") and p33_campus.education.modules.has("engineering_college"), "NPC builder completes the actual powered 16-bed home plus two separately built physical education service modules")
+	_expect(p33_campus.production.is_empty() and int(p33_campus.storage_capacity) == 116 and int(p33_campus.education.certificates_total) == 0, "commissioned schools occupy real storage and teaching seats but are not disguised automated production recipes and create no students")
+	_expect(p33_world.population.total_people(p33_world) == p33_people and _total_credits(p33_world.state) == p33_credits, "education and residential construction conserve all person headcounts and money across builder fees")
+	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "genuine colony-to-campus ship transfers source first housing and education power, food, water and medical inventory")
+	p33_world.advance_ticks(60)
+	_expect(p33_world.habitation.operational_capacity(p33_campus, p33_world.state.habitation_catalog) == 16, "physical campus residential maintenance is operational before pupils and instructors arrive")
+	_expect(p33_world.dock_ship("ship_001", "player_station_1").ok and p33_world.settlement.evacuate(p33_world, "ship_001", 2).ok, "two preexisting adult workers relocate to their new campus using a real crew-compatible passenger manifest")
+	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.settlement.disembark(p33_world, "ship_001", 2).ok, "actual resident trainees and an instructor settle in school housing without new free people")
+	p33_world.advance_ticks(60)
+	var p33_record: Dictionary = p33_world.population.station_cohort(p33_world, "player_station_2")
+	_expect(int(p33_record.cohorts.assigned_workers) == 2 and int(p33_campus.education.teachers) == 0 and p33_world.population.total_people(p33_world) == p33_people, "campus starts with exactly two real resident adults, no default teachers or invented trained staff")
+	_expect(not p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "real student cannot enrol when no local adult instructor was actually designated")
+	_expect(not p33_world.education.appoint(p33_world, "player_station_2", 3).ok and p33_world.education.appoint(p33_world, "player_station_2", 1).ok, "only genuinely settled adults may take teaching duty and staffing never creates extra people")
+	_expect(not p33_world.education.enroll(p33_world, "player_station_2", "engineering_college", 1).ok, "college cannot start with an unqualified theoretical mentor before foundational instruction")
+	_expect(not p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "real student enrolment requires physically delivered archive study material, not just a building and money")
+
+	# Source actual teaching records from the NPC Auroran Archive. If it has
+	# insufficient catalog copies from its existing finite production cycles,
+	# physically supply its media workshop with purchased energy and smelted
+	# alloys through its published buy-prices and sponsoring faction budget.
+	var p33_archive: Dictionary = p33_world._find_station("auroran_archive")
+	_expect(not p33_archive.is_empty() and p33_archive.sell_prices.has("recorded_data") and p33_archive.production.any(func(m): return m.recipe_id == "data_reproduction"), "historical Auroran archive is an original seller that manufactures reproducible books and learning discs, not a source of magically created data")
+	if int(p33_archive.stock.recorded_data) < 12:
+		_expect(p33_world.dock_ship("ship_001", "player_station_1").ok and p33_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 4, false).ok, "archive's real media printers need four player-smelted metal plates, hauled in the player's cargo hold")
+		_expect(p33_world.queue_fly_to("ship_001", "hearthreach"), "player ship physically crosses sectors to resupply historical records instead of teleporting teaching materials")
+		p33_world.advance_ticks(35)
+		_expect(p33_world.dock_ship("ship_001", "hearth_exchange").ok and p33_world.trade("ship_001", "hearth_exchange", "energy_cells", 35, true).ok, "owned school procurement ship buys actual archive-production energy from an NPC solar trading market")
+		var p33_deliver_alloys: int = 4
+		var p33_deliver_energy: int = 35
+		for _archive_round in range(35):
+			if p33_deliver_alloys == 0 and p33_deliver_energy == 0:
+				break
+			p33_world.advance_ticks(30)
+			var archive_money: int = int(p33_archive.credits)
+			var volume_room: int = maxi(0, int(p33_archive.storage_capacity) - p33_world.station_volume("auroran_archive"))
+			if p33_deliver_alloys > 0:
+				var enough_alloy: int = mini(p33_deliver_alloys, mini(int(archive_money / 25), volume_room))
+				if enough_alloy > 0:
+					_expect(p33_world.dock_ship("ship_001", "auroran_archive").ok and p33_world.trade("ship_001", "auroran_archive", "alloy_plates", enough_alloy, false).ok, "historical archive buys metal from the real player cargo instead of gaining a phantom print press")
+					p33_deliver_alloys -= enough_alloy
+					archive_money -= enough_alloy * 25
+					volume_room -= enough_alloy
+			if p33_deliver_energy > 0:
+				var enough_energy: int = mini(p33_deliver_energy, mini(int(archive_money / 11), volume_room))
+				if enough_energy > 0:
+					_expect(p33_world.dock_ship("ship_001", "auroran_archive").ok and p33_world.trade("ship_001", "auroran_archive", "energy_cells", enough_energy, false).ok, "historical archive pays for real solar energy to operate physical scriptorium and reproduction machinery")
+					p33_deliver_energy -= enough_energy
+		_expect(p33_deliver_alloys == 0 and p33_deliver_energy == 0, "all four metal and thirty-five energy ware units reach the actual schoolbook producer via paid real NPC marketplace transactions")
+		p33_world.advance_ticks(260)
+	if p33_world._find_ship("ship_001").sector != "hearthreach":
+		_expect(p33_world.queue_fly_to("ship_001", "hearthreach"), "records buyer must travel to the archive's actual sector")
+		p33_world.advance_ticks(35)
+	_expect(int(p33_archive.stock.recorded_data) >= 9 and p33_archive.production.any(func(m): return m.recipe_id == "data_reproduction" and int(m.cycles) > 0), "archive's funded real workshop has manufactured at least nine reproducible study documents from actual media and energy")
+	_expect(p33_world.dock_ship("ship_001", "auroran_archive").ok and p33_world.trade("ship_001", "auroran_archive", "recorded_data", 9, true).ok, "player purchases nine genuine educational records from a physical operating archive at its published price")
+	_expect(p33_world.queue_fly_to("ship_001", "copper_wake"), "records for school are hauled over the star map aboard a real owned cargo ship")
+	p33_world.advance_ticks(35)
+	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.transfer_player_station("ship_001", "player_station_2", "recorded_data", 9, true).ok, "nine bought archive records are delivered through dockside ware transfer to the physical campus")
+	_expect(p33_campus.stock.recorded_data == 9 and p33_world.state.ledger.any(func(e): return e.kind == "buy" and e.station_id == "auroran_archive" and e.ware_id == "recorded_data" and int(e.quantity) == 9), "study materials are inspectable real cargo and purchases, not classroom-only virtual points")
+	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "working residential school receives real clean water, food, medicine and solar electricity before scheduled instruction")
+	p33_world.advance_ticks(60)
+	_expect(p33_record.resident_status == "Provisioned" and p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "one physically housed adult learner can start general education only with an appointed real resident instructor and actual purchased source books")
+	_expect(not p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "one active school class cannot be duplicated into a second phantom booking")
+	var p33_payroll_before: int = int(p33_campus.education.payroll_credits)
+	var p33_available_money: int = _total_credits(p33_world.state)
+	p33_world.advance_ticks(120)
+	_expect(p33_campus.education.courses.has("community_school") and int(p33_campus.education.courses.community_school.progress) == 120 and p33_campus.education.qualified.community_school == 0, "two properly supplied instruction cycles accumulate time, not instant worker qualifications")
+	_expect(p33_campus.stock.recorded_data == 7 and int(p33_campus.education.payroll_credits) == p33_payroll_before + 24 and _total_credits(p33_world.state) == p33_available_money, "real instructor salary transfers from player treasury into station payroll escrow while two physical recorded-data units are consumed")
+	_expect(save_store.save_game(test_root + "/pass33-mid-school.json", p33_world.snapshot()) == OK, "mid-course staff allocation, actual materials and dated class progression are valid on save")
+	var p33_mid_save: Dictionary = save_store.load_game(test_root + "/pass33-mid-school.json")
+	var p33_reloaded = WorldScript.new()
+	_expect(p33_mid_save.get("ok", false) and p33_reloaded.restore_snapshot(p33_mid_save.state) == OK and p33_reloaded.snapshot() == p33_world.snapshot(), "class seats, adult instructors, student counts, paid lessons and prior salary accounts restore byte-for-byte between play sessions")
+	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "school re-supply after partial curriculum consumes real station-to-station delivered housing wares")
+	p33_world.advance_ticks(120)
+	_expect(not p33_campus.education.courses.has("community_school") and int(p33_campus.education.qualified.community_school) == 1 and int(p33_campus.education.certificates_total) == 1, "four complete paid study cycles award one recorded foundation certificate to an EXISTING adult, not a new trained crew member")
+	_expect(p33_world.population.total_people(p33_world) == p33_people and p33_world._find_ship("ship_001").crew_profile.skill == settled_restore._find_ship("ship_001").crew_profile.skill, "a basic civilian graduation does not create additional people, ship pilots, equipment or crew skill ranks")
+	_expect(save_store.save_game(test_root + "/pass33-community-graduate.json", p33_world.snapshot()) == OK, "genuinely paid foundation graduation reconciles to exact immutable archived class, payroll and graduation ledger events")
+	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "technical college receives finite electricity and fully supported resident housing before specialist theoretical instruction")
+	_expect(p33_world.education.enroll(p33_world, "player_station_2", "engineering_college", 1).ok, "engineering foundations requires its physical college, one community-qualified resident mentor, actual student, books and funded school wages")
+	var p33_professional_total: int = p33_world.population.total_people(p33_world)
+	for p33_lecture_batch in range(3):
+		_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "advanced course lecture batch %d is sustained by actual delivered water, food, medical and power stocks" % p33_lecture_batch)
+		p33_world.advance_ticks(120 if p33_lecture_batch < 2 else 60)
+	_expect(not p33_campus.education.courses.has("engineering_college") and int(p33_campus.education.qualified.engineering_college) == 1 and int(p33_campus.education.certificates_total) == 2, "five funded periods produce one engineering foundations record without generating unearned ship-level engineering skills")
+	_expect(p33_world.population.total_people(p33_world) >= p33_professional_total and p33_world.education.available_for_relocation(p33_world, "player_station_2") == 0, "resident graduate credentials, teacher appointments and dependent families cannot be silently lost during unqualified ship evacuation")
+	_expect(save_store.save_game(test_root + "/pass33-two-curricula.json", p33_world.snapshot()) == OK, "two completed independently sourced education programs and all residents pass strict cohort and ledger validation")
+	var p33_forced_certificate: Dictionary = p33_world.snapshot()
+	p33_forced_certificate.stations.filter(func(st): return st.id == "player_station_2")[0].education.qualified.flight_academy = 1
+	_expect(save_store.save_game(test_root + "/pass33-fabricated-pilot.json", p33_forced_certificate) != OK, "strict saves reject invented flight certificates without actual school, training time, materials, classrooms and completion ledger")
+	var p33_forged_lecturer: Dictionary = p33_world.snapshot()
+	p33_forged_lecturer.stations.filter(func(st): return st.id == "player_station_2")[0].education.teachers = 9
+	_expect(save_store.save_game(test_root + "/pass33-ghost-teachers.json", p33_forged_lecturer) != OK, "strict saves reject imaginary teaching staff without actual resident adults and teacher appointment evidence")
+	var p33_future: Dictionary = p33_world.snapshot()
+	p33_future.education_version = 2
+	_expect(save_store.save_game(test_root + "/pass33-future-edu.json", p33_future) != OK, "unsupported future educational schema is rejected instead of silently migrating or dropping learner credentials")
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass33-education.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.find_child("PlanAdd_community_school", true, false) == null, "school planner controls are generated only inside the station planner screen rather than cluttering the map")
+	screen._open_station_planner()
+	_expect(screen.find_child("PlanAdd_community_school", true, false) != null and screen.find_child("PlanAdd_engineering_college", true, false) != null, "mobile list planner offers physical school modules at touch-compatible size alongside housing")
+	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p33_world.snapshot()) == OK, "original Android interface accepts the genuinely staffed dual-course campus state")
+	screen._open_map_station("player_station_2")
+	_expect(screen.find_child("InspectorTab_Education", true, false) != null, "owned school appears in original contextual map with an Education tab")
+	screen.find_child("InspectorTab_Education", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("community") or screen.detail_body.text.contains("Community"), "map-based Education tab reports actual installed school and number of resident instructors")
+	_expect(screen.find_child("InspectorAction_education", true, false) != null, "only owned built school offers a command to manage teaching staff and student enrollment")
+	screen.find_child("InspectorAction_education", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.education_screen) and screen.find_child("EducationAppointButton", true, false) != null and screen.find_child("EducationEnrollButton", true, false) != null and screen.find_child("EducationStudentCount", true, false) != null, "touch-screen education interface exposes resident teacher assignment and real learner counts")
+	_expect(screen.education_info.text.contains("School payroll account") and screen.education_info.text.contains("engineering"), "mobile teaching screen shows genuine material, payroll and certificate history without claiming new pilots")
+	screen.find_child("CloseEducationButton", true, false).pressed.emit()
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
