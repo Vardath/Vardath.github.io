@@ -4,6 +4,7 @@ const WorldScript = preload("res://scripts/world.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
 const StationPlannerScript = preload("res://scripts/station_planner.gd")
 const MainScene = preload("res://scenes/main.tscn")
+const ObjectInspectorScript = preload("res://scripts/object_inspector.gd")
 
 var failures: Array[String] = []
 var checks := 0
@@ -2418,7 +2419,12 @@ func _run() -> void:
 		var point: Vector2 = foundry_card.rect.get_center()
 		_map_touch(sector_view, 0, point, true)
 		_map_touch(sector_view, 0, point, false)
-	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "vellum_foundry", "tapping a station opens its actual market")
+	_expect(screen.inspector_key == "npc_station|vellum_foundry" and screen.detail_title.text == "Vellum Foundry" and not is_instance_valid(screen.trade_screen), "tapping a station inspects its actual info without forcing a trade modal")
+	_expect(screen.sector_map.selected_object_kind == "station" and screen.sector_map.selected_object_id == "vellum_foundry", "selected sector-map station is visibly highlighted")
+	screen.find_child("InspectorTab_Trade", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Alloy Plates") and screen.inspector_current_tab == "Trade", "station Trade sub-tab displays its actual market and ownership")
+	screen.find_child("InspectorAction_station_trade", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "vellum_foundry", "contextual trade action opens the real market for the inspected station")
 	if is_instance_valid(screen.trade_screen):
 		screen.find_child("CloseTradeButton", true, false).pressed.emit()
 	await process_frame
