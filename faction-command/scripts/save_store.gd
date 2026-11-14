@@ -109,6 +109,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("personnel_version") and _is_nonnegative_integer(decoded.personnel_version) and decoded.personnel_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("population_version") and _is_nonnegative_integer(decoded.population_version) and decoded.population_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -128,6 +130,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("shipyard_version") != state.has("shipyard") or (state.has("shipyard_version") and not state.has("station_supply_version")):
 		return false
 	if state.has("personnel_version") != state.has("crew_pools") or (state.has("personnel_version") and not state.has("shipyard_version")):
+		return false
+	if state.has("population_version") != state.has("population") or (state.has("population_version") and state.get("personnel_version") != 2):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -222,8 +226,53 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("shipyard_version") and not _valid_shipyard(state):
 		return false
-	return not state.has("personnel_version") or _valid_personnel(state)
+	if not state.has("personnel_version"):
+		return not state.has("population_version")
+	if not _valid_personnel(state):
+		return false
+	return not state.has("population_version") or _valid_population(state)
 
+
+func _valid_population(state: Dictionary) -> bool:
+	if state.population_version != 1 or not state.get("population") is Dictionary:
+		return false
+	var population: Dictionary = state.population
+	if not population.get("stations") is Dictionary or population.stations.size() > 10000:
+		return false
+	if population.stations.is_empty():
+		return false
+	var registered: Dictionary = {}
+	for station in state.stations:
+		registered[str(station.id)] = true
+	# The legacy pool and the new cohort are two views of the SAME people:
+	# a difference would duplicate, lose or fabricate recruits.
+	for station_id in state.crew_pools:
+		if not population.stations.has(station_id):
+			return false
+	for station_id in population.stations:
+		if not station_id is String or str(station_id).is_empty() or str(station_id).length() > 128:
+			return false
+		if not registered.has(station_id) and not state.crew_pools.has(station_id):
+			return false
+		var entry: Variant = population.stations[station_id]
+		if not entry is Dictionary:
+			return false
+		if entry.get("id") != "residents_" + str(station_id) or entry.get("station_id") != station_id or not entry.get("cohorts") is Dictionary:
+			return false
+		if not _is_nonnegative_integer(entry.get("hab_capacity")) or int(entry.hab_capacity) != 0 or entry.get("housing_status") != "unimplemented":
+			return false
+		var counts: Dictionary = entry.cohorts
+		if counts.size() != 5:
+			return false
+		for group in ["children", "students", "available_workers", "assigned_workers", "retirees"]:
+			if not _is_nonnegative_integer(counts.get(group)) or int(counts[group]) > 1000000:
+				return false
+		if int(counts.children) != 0 or int(counts.students) != 0 or int(counts.assigned_workers) != 0 or int(counts.retirees) != 0:
+			return false
+		var available: int = int(counts.available_workers)
+		if available != int(state.crew_pools.get(station_id, 0)):
+			return false
+	return true
 
 
 func _valid_personnel(state: Dictionary) -> bool:

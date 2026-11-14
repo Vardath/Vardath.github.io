@@ -69,6 +69,8 @@ func _without_progression(ships: Array) -> Array:
 
 
 func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("population_version")
+	state.erase("population")
 	state.erase("personnel_version")
 	state.erase("crew_pools")
 	for ship in state.ships:
@@ -2006,6 +2008,8 @@ func _run() -> void:
 	var old_personnel: Dictionary = transfer_world.snapshot()
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
+	old_personnel.erase("population_version")
+	old_personnel.erase("population")
 	for old_staff_ship in old_personnel.ships:
 		old_staff_ship.erase("captain_profile")
 		old_staff_ship.erase("crew_profile")
@@ -2161,6 +2165,8 @@ func _run() -> void:
 	# bills, captain replacements, existing crew resets or lost route orders.
 	var old_progression: Dictionary = captain_world.snapshot()
 	old_progression.personnel_version = 1
+	old_progression.erase("population_version")
+	old_progression.erase("population")
 	for legacy_ship in old_progression.ships:
 		legacy_ship.erase("captain_profile")
 		legacy_ship.erase("crew_profile")
@@ -2951,6 +2957,182 @@ func _run() -> void:
 		await process_frame
 		await process_frame
 		_expect(screen.world._find_ship("ship_001").captain == initial_second_pilot and screen.world._find_ship(str(ui_captain_order.ship_id)).captain == initial_first_pilot, "save/load preserves the real exchanged captain assignments")
+	screen.queue_free()
+	await process_frame
+
+	# Pass 25: one resident population accounting ledger. Existing NPC
+	# recruit rosters are mirrored, never summed as a second group of people.
+	var resident_world = WorldScript.new()
+	_expect(resident_world.load_starter() == OK, "starter galaxy initializes the population accounting ledger")
+	_disable_npc_trading(resident_world)
+	_expect(resident_world.state.population_version == 1 and resident_world.state.population.stations.size() == resident_world.state.stations.size(), "all existing NPC stations receive one resident cohort")
+	var hearth_cohort: Dictionary = resident_world.population.station_cohort(resident_world, "hearth_exchange")
+	_expect(int(hearth_cohort.cohorts.available_workers) == 12 and resident_world.state.crew_pools.hearth_exchange == 12 and resident_world.population.station_total(hearth_cohort) == 12, "twelve legacy jobseekers are the same twelve residents, never twenty-four people")
+	_expect(int(hearth_cohort.cohorts.children) == 0 and int(hearth_cohort.cohorts.students) == 0 and int(hearth_cohort.cohorts.assigned_workers) == 0 and int(hearth_cohort.cohorts.retirees) == 0 and int(hearth_cohort.hab_capacity) == 0, "first cohort has no fictional births, schools, housing or station employment")
+	var known_before: int = resident_world.population.total_people(resident_world)
+	var expected_known: int = 0
+	for historic_pool in resident_world.state.crew_pools:
+		expected_known += int(resident_world.state.crew_pools[historic_pool])
+	for counted_ship in resident_world.state.ships:
+		expected_known += int(counted_ship.crew) + 1
+	_expect(known_before == expected_known, "galaxy population total includes each existing worker once, plus actual ship crews and pilots")
+	var residents_report: Array = resident_world.population.report(resident_world)
+	_expect(residents_report.size() == resident_world.state.stations.size() and residents_report[0].housing_status == "unimplemented", "station roster report accurately labels housing and life support as unimplemented")
+	_expect(not resident_world.population.move_workers(resident_world, "not_a_station", -1), "invalid source station cannot give away free residents")
+	_expect(not resident_world.population.move_workers(resident_world, "hearth_exchange", -13) and resident_world.population.total_people(resident_world) == known_before, "empty or insufficient cohorts cannot supply more than the available adults")
+	_expect(resident_world.dock_ship("ship_001", "hearth_exchange").ok, "starter ship can dock at a station with counted resident workers")
+	var adult_recruit: Dictionary = resident_world.personnel.hire(resident_world, "ship_001", 2)
+	_expect(adult_recruit.ok and resident_world.population.available_workers(resident_world, "hearth_exchange") == 10 and int(resident_world.state.crew_pools.hearth_exchange) == 10 and int(resident_world.state.ships[0].crew) == 4, "paid hiring removes the exact adults from their origin cohort and boards them on the same real ship")
+	_expect(resident_world.population.total_people(resident_world) == known_before, "hiring service crew preserves galaxy-wide accounted headcount")
+	var adult_discharge: Dictionary = resident_world.personnel.discharge(resident_world, "ship_001", 1)
+	_expect(adult_discharge.ok and resident_world.population.available_workers(resident_world, "hearth_exchange") == 11 and resident_world.state.crew_pools.hearth_exchange == 11 and resident_world.state.ships[0].crew == 3, "discharge returns one actual worker to the station cohort")
+	_expect(resident_world.population.total_people(resident_world) == known_before, "discharging service crew cannot duplicate or destroy residents")
+	var resident_save_path := test_root + "/resident-labor.json"
+	_expect(save_store.save_game(resident_save_path, resident_world.snapshot()) == OK, "cohort-backed real recruitment passes complete save validation")
+	var resident_saved: Dictionary = save_store.load_game(resident_save_path)
+	var resident_reloaded = WorldScript.new()
+	_expect(bool(resident_saved.get("ok", false)) and resident_reloaded.restore_snapshot(resident_saved.state) == OK and resident_reloaded.snapshot() == resident_world.snapshot(), "cohort-backed hiring round-trips without resetting people, funds or crew")
+	_expect(resident_reloaded.population.total_people(resident_reloaded) == known_before and resident_reloaded.population.available_workers(resident_reloaded, "hearth_exchange") == 11, "resident cohort counts and onboard personnel remain conserved through save/reload")
+	var no_free_people: Dictionary = resident_world.snapshot()
+	_expect(save_store.save_game(test_root + "/resident-valid.json", no_free_people) == OK, "well-formed population record saves normally")
+	no_free_people.population.stations.hearth_exchange.cohorts.available_workers = 12
+	_expect(save_store.save_game(test_root + "/resident-dupe-workers.json", no_free_people) != OK, "save validator rejects duplicated recruits in population-versus-legacy mirror")
+	var impossible_child: Dictionary = resident_world.snapshot()
+	impossible_child.population.stations.hearth_exchange.cohorts.children = 1
+	_expect(save_store.save_game(test_root + "/resident-false-birth.json", impossible_child) != OK, "births cannot be forged before the birth simulation exists")
+	var ghost_resident: Dictionary = resident_world.snapshot()
+	ghost_resident.population.stations.unknown_site = {"id":"residents_unknown_site", "station_id":"unknown_site", "cohorts":{"children":0,"students":0,"available_workers":1,"assigned_workers":0,"retirees":0}, "hab_capacity":0, "housing_status":"unimplemented"}
+	_expect(save_store.save_game(test_root + "/resident-ghost-station.json", ghost_resident) != OK, "save validator rejects populated stations that never existed")
+	var negative_cohort: Dictionary = resident_world.snapshot()
+	negative_cohort.population.stations.hearth_exchange.cohorts.available_workers = -1
+	_expect(save_store.save_game(test_root + "/resident-negative.json", negative_cohort) != OK, "negative resident cohorts cannot be saved")
+	var duplicate_personnel: Dictionary = resident_world.snapshot()
+	duplicate_personnel.crew_pools.hearth_exchange = 13
+	_expect(save_store.save_game(test_root + "/resident-divergence.json", duplicate_personnel) != OK, "modded legacy recruitment pools cannot diverge from real counted people")
+	var empty_legacy_roster: Dictionary = resident_world.snapshot()
+	empty_legacy_roster.crew_pools.hearth_exchange = 0
+	empty_legacy_roster.population.stations.hearth_exchange.cohorts.available_workers = 0
+	_expect(save_store.save_game(test_root + "/resident-empty-roster.json", empty_legacy_roster) == OK, "a genuinely empty resident-worker pool is a legal save state")
+	var future_population: Dictionary = resident_world.snapshot()
+	future_population.population_version = 2
+	var population_future_path := test_root + "/future-population-v2.json"
+	_expect(save_store.save_game(population_future_path, resident_world.snapshot()) == OK and save_store.save_game(population_future_path, resident_world.snapshot()) == OK, "future resident format test retains a valid save backup")
+	var future_population_payload := Marshalls.variant_to_base64(future_population, false)
+	var future_population_file := FileAccess.open(population_future_path, FileAccess.WRITE)
+	future_population_file.store_string(JSON.stringify({"format_version":1, "payload":future_population_payload, "checksum":future_population_payload.sha256_text()}))
+	future_population_file.close()
+	_expect(save_store.load_game(population_future_path).get("reason") == "unsupported", "a future population schema cannot silently fall back to an older saved game")
+
+	# Construction never populates a station or grants phantom housing.
+	var resident_plot = WorldScript.new()
+	resident_plot.load_starter()
+	_disable_npc_trading(resident_plot)
+	var before_station_people: int = resident_plot.population.total_people(resident_plot)
+	var resident_site: Dictionary = resident_plot.construction.place(resident_plot, "hearthreach", {"solar_cells":1}, "self", [])
+	_expect(resident_site.ok and resident_plot.state.population.stations.has("player_station_1"), "placing a paid station immediately registers a resident cohort without needing to advance time")
+	var construction_cohort: Dictionary = resident_plot.population.station_cohort(resident_plot, "player_station_1")
+	_expect(resident_plot.population.station_total(construction_cohort) == 0 and construction_cohort.hab_capacity == 0 and resident_plot.population.total_people(resident_plot) == before_station_people, "new station construction gives housing capacity zero and invents no adults")
+	_expect(save_store.save_game(test_root + "/resident-empty-player-station.json", resident_plot.snapshot()) == OK, "new empty player-station population saves before its first simulation tick")
+	resident_plot.advance_ticks(90)
+	_expect(resident_plot.population.station_total(construction_cohort) == 0 and resident_plot.population.total_people(resident_plot) == before_station_people, "waiting alone cannot spontaneously create residents at an unfurnished new station")
+
+	# A paid NPC ship contract must obtain its human pilot and service crew
+	# from the wharf's finite counted local adult residents at delivery.
+	var new_ship_people = WorldScript.new()
+	new_ship_people.load_starter()
+	_disable_npc_trading(new_ship_people)
+	var before_contract_people: int = new_ship_people.population.total_people(new_ship_people)
+	var source_workers: int = new_ship_people.population.available_workers(new_ship_people, "vellum_foundry")
+	var commissioned: Dictionary = new_ship_people.shipyard.place_order(new_ship_people, "freighter_mk1")
+	_expect(commissioned.ok and new_ship_people.population.total_people(new_ship_people) == before_contract_people, "paying for ship construction creates neither a pilot nor crew prematurely")
+	new_ship_people.advance_ticks(48)
+	var staffed_freighter: Dictionary = new_ship_people._find_ship(str(commissioned.ship_id))
+	_expect(not staffed_freighter.is_empty() and staffed_freighter.crew == 4 and new_ship_people.population.available_workers(new_ship_people, "vellum_foundry") == source_workers - 5, "finishing a freighter moves four real adults plus one pilot from the wharf into the new vessel")
+	_expect(new_ship_people.population.total_people(new_ship_people) == before_contract_people and new_ship_people.state.crew_pools.vellum_foundry == source_workers - 5, "new ship contract conserves headcount and keeps the legacy available-worker mirror accurate")
+	_expect(save_store.save_game(test_root + "/resident-staffed-freighter.json", new_ship_people.snapshot()) == OK, "ship acquired through finite wharf recruitment is a saveable player-owned asset")
+
+	# If a wharf has no staff, a paid hull is kept blocked until suitable real
+	# residents return to its recruitment pool; no free contractor is spawned.
+	var shortages = WorldScript.new()
+	shortages.load_starter()
+	_disable_npc_trading(shortages)
+	shortages.state.crew_pools.vellum_foundry = 1
+	shortages.state.population.stations.vellum_foundry.cohorts.available_workers = 1
+	var before_shortage_people: int = shortages.population.total_people(shortages)
+	var waiting_hull: Dictionary = shortages.shipyard.place_order(shortages, "courier_mk1")
+	shortages.advance_ticks(24)
+	_expect(waiting_hull.ok and shortages.state.shipyard.orders[0].status == "blocked" and shortages._find_ship(str(waiting_hull.ship_id)).is_empty(), "a paid ship cannot manufacture an unfunded pilot and crew from an empty population")
+	_expect(shortages.population.total_people(shortages) == before_shortage_people, "blocked ship assembly neither creates nor destroys people")
+	_expect(shortages.queue_fly_to("ship_001", "vellum_gate"), "player can transport existing onboard workers to the constrained wharf")
+	shortages.advance_ticks(20)
+	_expect(shortages.dock_ship("ship_001", "vellum_foundry").ok, "existing workers can physically reach the shipbuilding station before being discharged")
+	_expect(shortages.personnel.discharge(shortages, "ship_001", 2).ok and shortages.population.available_workers(shortages, "vellum_foundry") == 3, "returning two real ship workers replenishes an otherwise exhausted wharf population")
+	shortages.advance_ticks(1)
+	_expect(shortages.state.shipyard.orders[0].status == "complete" and not shortages._find_ship(str(waiting_hull.ship_id)).is_empty(), "previously blocked paid hull completes after legitimate workers become available")
+	_expect(shortages.population.total_people(shortages) == before_shortage_people and shortages.population.available_workers(shortages, "vellum_foundry") == 0, "recruited pilot and crew are deducted from that wharf and population is conserved across the full cycle")
+	_expect(save_store.save_game(test_root + "/resident-wharf-recovery.json", shortages.snapshot()) == OK, "blocked and restored ship staffing can be saved with exact headcounts")
+
+	# Destruction/removal of a market may retain dormant counted residents
+	# from old saves but must never be a usable source for new ship recruits.
+	var disappeared = WorldScript.new()
+	disappeared.load_starter()
+	var disappeared_headcount: int = disappeared.population.total_people(disappeared)
+	for station_index in range(disappeared.state.stations.size() - 1, -1, -1):
+		if disappeared.state.stations[station_index].id == "hearth_exchange":
+			disappeared.state.stations.remove_at(station_index)
+	_expect(disappeared.population.station_cohort(disappeared, "hearth_exchange").cohorts.available_workers == 12 and disappeared.population.total_people(disappeared) == disappeared_headcount, "removed NPC station retains dormant residents without magically relocating them")
+	_expect(save_store.save_game(test_root + "/resident-dormant.json", disappeared.snapshot()) == OK, "dormant population remains a valid save state until a later evacuation mechanic")
+	_expect(disappeared.population.report(disappeared).any(func(row): return row.station_id == "hearth_exchange" and not row.active), "population reporting clearly identifies orphaned but conserved station residents")
+
+	# A Pass-23 saved game has no population key; migration reads its existing
+	# exact adult recruitment pool and never duplicates already hired crews.
+	var old_population: Dictionary = resident_world.snapshot()
+	old_population.erase("population_version")
+	old_population.erase("population")
+	var old_population_path := test_root + "/before-resident-ledger.json"
+	_expect(save_store.save_game(old_population_path, old_population) == OK, "Pass-23 personnel game remains readable without the new population schema")
+	var old_population_loaded: Dictionary = save_store.load_game(old_population_path)
+	var migrated_population = WorldScript.new()
+	_expect(bool(old_population_loaded.get("ok", false)) and migrated_population.restore_snapshot(old_population_loaded.state) == OK and migrated_population.state.population_version == 1, "Pass-23 save migrates to the resident-worker ledger without a fresh game")
+	_expect(migrated_population.state.ships == old_population.ships and migrated_population.state.crew_pools == old_population.crew_pools and migrated_population.state.starting_credits == old_population.starting_credits and migrated_population.state.ledger == old_population.ledger, "migration leaves existing pilots, crews, salaries, assets, roles, orders and money unchanged")
+	_expect(migrated_population.population.total_people(migrated_population) == known_before and migrated_population.population.available_workers(migrated_population, "hearth_exchange") == 11, "old hired workers are not counted again as additional residents on migration")
+	_expect(save_store.save_game(test_root + "/migrated-population.json", migrated_population.snapshot()) == OK, "newly migrated population schema is permanently saveable")
+
+	# Headless UI exposes real figures and states that habitat schooling and
+	# population births are NOT implemented as playable systems yet.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-population-ledger.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen.find_child("PopulationButton", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.population_screen) and screen.find_child("PopulationInfo", true, false) != null, "population overview is reachable from the player's property panel")
+	_expect(screen.population_info.text.contains("Known total:") and screen.population_info.text.contains("hearth_exchange") == false and screen.population_info.text.contains("Hearth Exchange"), "population screen displays real counted residents by named station")
+	_expect(screen.population_info.text.contains("Available resident workers: 12") and screen.population_info.text.contains("Births, housing, immigration, schools"), "interface distinguishes available real workers from unimplemented residential life simulation")
+	var ui_population_total: int = screen.world.population.total_people(screen.world)
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("TradeButton", true, false).pressed.emit()
+	for i in range(screen.trade_station_picker.item_count):
+		if str(screen.trade_station_picker.get_item_metadata(i)) == "hearth_exchange":
+			screen.trade_station_picker.select(i)
+			break
+	screen.find_child("DockButton", true, false).pressed.emit()
+	screen.find_child("CloseTradeButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	screen.crew_quantity.value = 1
+	screen.find_child("HireCrewButton", true, false).pressed.emit()
+	_expect(screen.world.population.available_workers(screen.world, "hearth_exchange") == 11 and screen.world.population.total_people(screen.world) == ui_population_total, "UI crew hire updates the very same station resident cohort without duplication")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.find_child("PopulationButton", true, false).pressed.emit()
+	_expect(screen.population_info.text.contains("Available resident workers: 11"), "population overview reflects the actual crew hire immediately")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	await process_frame
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "UI population and individual-ship crew states persist with the normal autosave")
 	screen.queue_free()
 	await process_frame
 

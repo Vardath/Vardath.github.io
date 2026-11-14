@@ -145,6 +145,13 @@ func tick(world: RefCounted) -> void:
 		if new_ship.is_empty():
 			order.status = "blocked"
 			return
+		# The contracted pilot and crew now leave the wharf's *existing*
+		# resident workforce. If too few people remain, a paid hull waits
+		# rather than generating free ship personnel.
+		var staff_needed: int = int(new_ship.crew) + 1
+		if world.population.available_workers(world, str(wharf.id)) < staff_needed or not world.population.move_workers(world, str(wharf.id), -staff_needed):
+			order.status = "blocked"
+			return
 		world.state.ships.append(new_ship)
 		order.progress = int(order.duration)
 		order.status = "complete"

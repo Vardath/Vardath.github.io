@@ -204,8 +204,10 @@ func hire(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 		return {"ok":false, "message":"A hostile station will not recruit for your faction."}
 	if int(ship.crew) + quantity > capacity(ship):
 		return {"ok":false, "message":"This ship has insufficient crew berths."}
+	if int(world.state.crew_pools[station.id]) != world.population.available_workers(world, str(station.id)):
+		return {"ok":false, "message":"Population and recruitment rosters disagree."}
 	if int(world.state.crew_pools[station.id]) < quantity:
-		return {"ok":false, "message":"The station has insufficient available recruits."}
+		return {"ok":false, "message":"The station has insufficient available resident recruits."}
 	var total: int = quantity * HIRE_COST
 	if int(world.state.starting_credits) < total:
 		return {"ok":false, "message":"Insufficient faction credits for recruitment."}
@@ -216,7 +218,10 @@ func hire(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	ship.crew = old_count + quantity
 	ship.crew_profile.morale = int((int(ship.crew_profile.morale) * old_count + 75 * quantity) / (old_count + quantity))
 	_update_skills(ship)
-	world.state.crew_pools[station.id] = int(world.state.crew_pools[station.id]) - quantity
+	if not world.population.move_workers(world, str(station.id), -quantity):
+		# Population and legacy crew pools must agree before hiring.
+		push_error("Population reconciliation failed during crew hiring")
+		return {"ok":false, "message":"Population roster is inconsistent."}
 	world._record_transaction("crew_hire", ship_id, str(station.id), "", quantity, HIRE_COST, -total)
 	return {"ok":true, "message":"Hired %d service crew for %d CR." % [quantity, total]}
 
@@ -228,12 +233,16 @@ func discharge(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var station: Dictionary = world._find_station(str(ship.docked_at))
 	if not _dock_available(ship, station) or not world.state.crew_pools.has(station.id) or station.owner == world.state.player_faction_id:
 		return {"ok":false, "message":"Dock at an NPC recruitment station to discharge crew."}
+	if int(world.state.crew_pools[station.id]) != world.population.available_workers(world, str(station.id)) or int(world.state.crew_pools[station.id]) + quantity > 1000000:
+		return {"ok":false, "message":"Station population cannot accept discharged crew."}
 	var old_count: int = int(ship.crew)
 	var lost_experience: int = int(int(ship.crew_profile.experience) * quantity / old_count)
 	ship.crew = old_count - quantity
 	ship.crew_profile.experience = int(ship.crew_profile.experience) - lost_experience
 	_update_skills(ship)
-	world.state.crew_pools[station.id] = int(world.state.crew_pools[station.id]) + quantity
+	if not world.population.move_workers(world, str(station.id), quantity):
+		push_error("Population reconciliation failed during crew discharge")
+		return {"ok":false, "message":"Population roster is inconsistent."}
 	world._record_transaction("crew_discharge", ship_id, str(station.id), "", quantity, 0, 0)
 	return {"ok":true, "message":"Discharged %d service crew to the station roster." % quantity}
 

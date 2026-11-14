@@ -122,6 +122,8 @@ var crew_rename_input: LineEdit
 var crew_quantity: SpinBox
 var crew_transfer_picker: OptionButton
 var crew_captain_swap_button: Button
+var population_screen: Control
+var population_info: Label
 
 
 func _ready() -> void:
@@ -154,6 +156,8 @@ func _process(delta: float) -> void:
 			_update_shipyard_screen()
 		if is_instance_valid(crew_screen):
 			_update_crew_screen()
+		if is_instance_valid(population_screen):
+			_update_population_screen()
 		if save_status.text != "Save failed":
 			save_status.text = "Unsaved"
 		if int(world.state.tick) - _last_saved_tick >= 30:
@@ -490,6 +494,10 @@ func _build_ui() -> void:
 	trade_button.name = "TradeButton"
 	trade_button.pressed.connect(_open_trade)
 	property_list.add_child(trade_button)
+	var population_button := _button("Population")
+	population_button.name = "PopulationButton"
+	population_button.pressed.connect(_open_population_screen)
+	property_list.add_child(population_button)
 	var wharf_button := _button("Order ships")
 	wharf_button.name = "ShipyardButton"
 	wharf_button.pressed.connect(_open_shipyard)
@@ -910,7 +918,8 @@ func _show_owned_station(station_id: String) -> void:
 	for module in station.production:
 		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
 		modules.append("%s · %s" % [recipe.get("name", module.recipe_id), module.get("status", "Waiting")])
-	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), "No active production." if modules.is_empty() else "\n".join(modules)]
+	var residents: Dictionary = world.population.station_cohort(world, station_id)
+	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\nKnown resident workers: %d\nHabitation: not yet implemented\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), world.population.station_total(residents), "No active production." if modules.is_empty() else "\n".join(modules)]
 
 
 func _show_owned_site(site_id: String) -> void:
@@ -1755,6 +1764,65 @@ func _close_crew_screen() -> void:
 		crew_screen.queue_free()
 	crew_screen = null
 	crew_screen_ship_id = ""
+
+
+func _open_population_screen() -> void:
+	if is_instance_valid(population_screen):
+		return
+	population_screen = Control.new()
+	population_screen.name = "PopulationScreen"
+	population_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(population_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.94)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	population_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	population_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(820, 530)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 9)
+	panel.add_child(column)
+	column.add_child(_label("KNOWN STATION POPULATIONS", 22, TEXT))
+	column.add_child(_wrapped_label("First accounting stage: existing recruits are counted once as resident workers. Ship crews and captains count separately. Births, housing, immigration, schools and morale facilities are planned, not yet simulated.", 14, MUTED))
+	var scrolling := ScrollContainer.new()
+	scrolling.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scrolling.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scrolling)
+	population_info = _wrapped_label("", 14, TEXT)
+	population_info.name = "PopulationInfo"
+	population_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scrolling.add_child(population_info)
+	var close_button := _button("Close")
+	close_button.name = "ClosePopulationButton"
+	close_button.pressed.connect(_close_population_screen)
+	column.add_child(close_button)
+	_update_population_screen()
+
+
+func _update_population_screen() -> void:
+	if not is_instance_valid(population_screen):
+		return
+	var entries: Array = world.population.report(world)
+	var aboard := 0
+	for ship in world.state.ships:
+		aboard += int(ship.crew) + 1
+	var station_people: int = world.population.total_people(world) - aboard
+	var text_rows: Array[String] = []
+	text_rows.append("Known total: %d people\nStation cohorts: %d  ·  Ship crews and pilots: %d\nStaffing is counted once; recruitment pools are references to the same residents, not extra people.\nBirths, housing, immigration, schools and morale facilities are not implemented yet." % [world.population.total_people(world), station_people, aboard])
+	for entry in entries:
+		var title: String = "%s · %s" % [entry.name, _faction_name(str(entry.owner))] if entry.active else "%s · dormant roster (station unavailable)" % entry.name
+		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing capacity: not implemented (no free residential space)" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees)])
+	population_info.text = "\n\n".join(text_rows)
+
+
+func _close_population_screen() -> void:
+	if is_instance_valid(population_screen):
+		population_screen.queue_free()
+	population_screen = null
 
 
 func _open_shipyard() -> void:

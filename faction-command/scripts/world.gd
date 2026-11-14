@@ -12,6 +12,7 @@ const ResearchScript = preload("res://scripts/research.gd")
 const StationSupplyScript = preload("res://scripts/station_supply.gd")
 const ShipyardScript = preload("res://scripts/shipyard.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
+const PopulationScript = preload("res://scripts/population.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
@@ -22,6 +23,7 @@ var research = ResearchScript.new()
 var station_supply = StationSupplyScript.new()
 var shipyard = ShipyardScript.new()
 var personnel = PersonnelScript.new()
+var population = PopulationScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -68,6 +70,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if personnel.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if population.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -105,6 +109,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = personnel.prepare(restored)
+	if result != OK:
+		return result
+	result = population.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -229,6 +236,7 @@ func advance_ticks(count: int) -> void:
 		research.tick(self)
 		shipyard.tick(self)
 		personnel.tick(self)
+		population.tick(self)
 
 
 func snapshot() -> Dictionary:
