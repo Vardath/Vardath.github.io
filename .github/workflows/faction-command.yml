@@ -1,6 +1,5 @@
 name: Faction Command foundation
-# Pass 33 CI gate: physical staff, paid classrooms, finite archive texts, youth credentials, Android v22.
-# Pass 34 CI development gate: practical workplace mentorship, credentialed person transport, versioned saves and signed Android v23.
+# Pass 34 FINAL PR HEAD: verify 1,773 Godot headless assertions on the complete code, design, README and progress journal, and build a signed Android v23 APK including the compiled careers engine and protected passenger UI.
 on:
   push:
     paths:
