@@ -19,7 +19,7 @@ func initialize_ship(ship: Dictionary) -> void:
 
 func _initialize_welfare(record: Dictionary) -> void:
 	# Existing settled adults from v1 are not retroactively charged or reset.
-	record["resident_status"] = "Awaiting service" if int(record.cohorts.assigned_workers) > 0 else "Unoccupied"
+	record["resident_status"] = "Awaiting service" if int(record.cohorts.assigned_workers) + int(record.cohorts.get("children", 0)) + int(record.cohorts.get("students", 0)) + int(record.cohorts.get("retirees", 0)) > 0 else "Unoccupied"
 	record["resident_shortage"] = ""
 	record["resident_alert_cycles"] = 0
 
@@ -119,7 +119,8 @@ func evacuate(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	record.cohorts.assigned_workers = int(record.cohorts.assigned_workers) - quantity
 	ship.settler_passengers = int(ship.settler_passengers) + quantity
 	ship.settler_source_station_id = str(station.id)
-	if world.demographics.residents(record) == 0 if world.state.has("demographics_version") else int(record.cohorts.assigned_workers) == 0:
+	var remaining_residents: int = world.demographics.residents(record) if world.state.has("demographics_version") else int(record.cohorts.assigned_workers)
+	if remaining_residents == 0:
 		_initialize_welfare(record)
 	world._record_transaction("resident_evacuation", ship_id, str(station.id), "", quantity, 0, 0)
 	return {"ok":true, "message":"Evacuated %d existing adults aboard %s. Travel to a supplied player colony." % [quantity, ship.name]}
