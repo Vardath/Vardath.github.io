@@ -651,6 +651,168 @@ func _build_ui() -> void:
 	_apply_map_layout()
 
 
+func _apply_map_layout() -> void:
+	if not is_instance_valid(property_panel) or not is_instance_valid(inspector_panel):
+		return
+	var width: float = get_viewport_rect().size.x
+	var compact: bool = width < 1100.0
+	property_drawer_button.visible = compact
+	property_panel.visible = not compact or property_drawer_open
+	inspector_panel.visible = not compact or not property_drawer_open
+	property_drawer_button.text = "Map" if property_drawer_open else "Assets"
+	# Preserve the 420px interactive map even when the portrait-size UI
+	# would otherwise squeeze three permanently open tool panels.
+	inspector_panel.custom_minimum_size.x = 260.0 if compact else 280.0
+
+
+func _toggle_property_drawer() -> void:
+	property_drawer_open = not property_drawer_open
+	_apply_map_layout()
+
+
+func _inspector_context() -> Dictionary:
+	match selected_view:
+		"sector":
+			return {"kind":"sector", "id":selected_sector}
+		"ship":
+			return {"kind":"ship", "id":active_player_ship_id}
+		"npc_ship":
+			return {"kind":"npc_ship", "id":selected_ship_id}
+		"owned_station":
+			return {"kind":"station", "id":selected_property_key.substr(8)}
+		"npc_station":
+			return {"kind":"npc_station", "id":selected_station_id}
+		"owned_site":
+			return {"kind":"site", "id":selected_property_key.substr(5)}
+	return {}
+
+
+func _inspector_present() -> void:
+	if not is_instance_valid(inspector_tabs):
+		return
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var key: String = "%s|%s" % [target.kind, target.id]
+	var available: Array[String] = inspector.tabs(world, str(target.kind), str(target.id))
+	if key != inspector_key:
+		inspector_key = key
+		inspector_current_tab = "Info"
+		inspector_action_signature = ""
+		for previous in inspector_tabs.get_children():
+			inspector_tabs.remove_child(previous)
+			previous.queue_free()
+		for tab in available:
+			var tab_button := _button(tab)
+			tab_button.name = "InspectorTab_" + tab
+			tab_button.custom_minimum_size = Vector2(74, 46)
+			tab_button.pressed.connect(_select_inspector_tab.bind(tab))
+			inspector_tabs.add_child(tab_button)
+	inspector_base_info = detail_body.text
+	_render_inspector()
+
+
+func _select_inspector_tab(tab: String) -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty() or tab not in inspector.tabs(world, str(target.kind), str(target.id)):
+		return
+	inspector_current_tab = tab
+	_render_inspector()
+
+
+func _render_inspector() -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var kind: String = str(target.kind)
+	var object_id: String = str(target.id)
+	var available: Array[String] = inspector.tabs(world, kind, object_id)
+	if inspector_current_tab not in available:
+		inspector_current_tab = "Info"
+	for tab_button in inspector_tabs.get_children():
+		tab_button.disabled = str(tab_button.text) == inspector_current_tab
+		tab_button.self_modulate = Color.WHITE if tab_button.disabled else Color("a6c3ca")
+	detail_body.text = inspector.content(world, kind, object_id, inspector_current_tab, inspector_base_info, active_player_ship_id, selected_sector)
+	var can_issue_fly_order: bool = kind in ["sector", "ship"] and inspector_current_tab in ["Info", "Orders"]
+	inspector_order_button.visible = can_issue_fly_order
+	order_target.visible = can_issue_fly_order
+	order_feedback.visible = can_issue_fly_order
+	if can_issue_fly_order:
+		order_target.text = "Command %s to %s" % [_player_ship().get("name", "ship"), _sector_name(selected_sector)]
+	var actions: Array[Dictionary] = inspector.actions(world, kind, object_id, inspector_current_tab)
+	var signature: String = "%s|%s" % [inspector_key, inspector_current_tab]
+	for action in actions:
+		signature += "|" + str(action.id) + ":" + str(action.label)
+	if signature != inspector_action_signature:
+		inspector_action_signature = signature
+		for previous in inspector_actions.get_children():
+			inspector_actions.remove_child(previous)
+			previous.queue_free()
+		for action in actions:
+			var action_button := _button(str(action.label))
+			action_button.name = "InspectorAction_" + str(action.id)
+			action_button.custom_minimum_size.y = 46
+			action_button.pressed.connect(_execute_inspector_action.bind(str(action.id)))
+			inspector_actions.add_child(action_button)
+	inspector_actions.visible = not actions.is_empty()
+
+
+func _execute_inspector_action(action_id: String) -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var kind: String = str(target.kind)
+	var object_id: String = str(target.id)
+	# Revalidate at the moment of the tap so an NPC object, stale button
+	# or external save change cannot grant player-only station/ship powers.
+	var permitted := false
+	for action in inspector.actions(world, kind, object_id, inspector_current_tab):
+		if str(action.id) == action_id:
+			permitted = true
+			break
+	if not permitted:
+		return
+	match action_id:
+		"crew":
+			if kind == "ship" and active_player_ship_id == object_id:
+				_open_crew_screen()
+		"trade":
+			if kind == "ship" or kind == "site":
+				_open_trade()
+		"station_trade":
+			if kind in ["station", "npc_station"]:
+				_open_trade_for_station(object_id)
+		"population":
+			if kind in ["station", "npc_station"]:
+				_open_population_screen()
+		"builds":
+			if kind == "station":
+				_open_build_screen()
+		"build_site":
+			if kind == "site":
+				_open_build_screen(object_id)
+		"research":
+			if kind == "station" and world.research.has_lab(world._find_station(object_id)):
+				_open_trade_for_station(object_id)
+				_open_research()
+		"open_sector":
+			if kind == "sector" and not showing_sector_map:
+				_toggle_map_mode()
+
+
+func _open_trade_for_station(station_id: String) -> void:
+	if world._find_station(station_id).is_empty():
+		return
+	_open_trade()
+	if not is_instance_valid(trade_screen):
+		return
+	for index in range(trade_station_picker.item_count):
+		if str(trade_station_picker.get_item_metadata(index)) == station_id:
+			trade_station_picker.select(index)
+			_on_trade_selection(index)
+			return
+
+
 func _toggle_pause() -> void:
 	paused = not paused
 	order_feedback.text = ""
