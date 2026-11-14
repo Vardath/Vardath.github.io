@@ -3231,13 +3231,16 @@ func _run() -> void:
 	var unborn_child: Dictionary = residential_world.snapshot()
 	unborn_child.population.stations.player_station_1.cohorts.children = 1
 	_expect(save_store.save_game(test_root + "/habitat-false-birth.json", unborn_child) != OK, "residential modules cannot be used to forge children before the birth lifecycle exists")
-	var legacy_housing: Dictionary = residential_world.snapshot()
+	var legacy_housing_world = WorldScript.new()
+	legacy_housing_world.load_starter()
+	_disable_npc_trading(legacy_housing_world)
+	var legacy_housing: Dictionary = legacy_housing_world.snapshot()
 	_strip_habitation(legacy_housing)
 	_expect(save_store.save_game(test_root + "/before-housing.json", legacy_housing) == OK, "a pre-housing population save remains loadable")
 	var legacy_housing_read: Dictionary = save_store.load_game(test_root + "/before-housing.json")
 	var housing_migrated = WorldScript.new()
 	_expect(bool(legacy_housing_read.get("ok", false)) and housing_migrated.restore_snapshot(legacy_housing_read.state) == OK and housing_migrated.state.habitation_version == 1, "legacy population state gains an empty residential catalogue without resetting the game")
-	_expect(housing_migrated.state.starting_credits == legacy_housing.starting_credits and housing_migrated.state.ships == legacy_housing.ships and housing_migrated.state.population.stations.player_station_1.cohorts == legacy_housing.population.stations.player_station_1.cohorts, "habitation migration preserves people, captain skills, ship orders, crew and credits")
+	_expect(housing_migrated.state.starting_credits == legacy_housing.starting_credits and housing_migrated.state.ships == legacy_housing.ships and housing_migrated.state.population.stations.hearth_exchange.cohorts == legacy_housing.population.stations.hearth_exchange.cohorts, "habitation migration preserves people, captain skills, ship orders, crew and credits")
 	var invalid_future_housing: Dictionary = residential_world.snapshot()
 	invalid_future_housing.habitation_version = 2
 	var future_housing_path := test_root + "/future-housing.json"
