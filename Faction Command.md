@@ -44,9 +44,105 @@ Faction Command is an ORIGINAL 2D, map-driven space economy and faction manageme
 ## Ship and station model
 - Ship classes: scout, courier, fighter, corvette, freighter, miner, salvage, transport, destroyer, carrier, construction vessel. Original hull designs and names; modular engine, shields, weapons, sensors, cargo and drones. Initial acquisition slice: an NPC wharf at Vellum Foundry offers two data-driven paid hull contracts (Courier and Freighter). It consumes real Alloy Plates and transfers player credits into the NPC station's budget at order placement; production advances through one serialized assembly berth with up to five pending orders. Purchased player ships arrive at the wharf as full independent owned assets, with a bundled contract pilot/crew. Future: dedicated wharf facilities, richer components, refits, customer-supplied materials and player-owned shipyards.
 - Ships have position, velocity abstraction, orders, role, captain, crew, fuel/energy if used, cargo, hull/shields, equipment, faction ownership, operating costs and history.
-- Stations have modules, production recipes, dock capacity, storage, managers, workers, buy/sell rules, build queues and defense systems.
+- Stations have modules, production recipes, dock capacity, storage, managers, workers, buy/sell rules, build queues and defense systems. Their habitation modules eventually host persistent residents, family growth and suitable life-support systems; education, health, community and recreation modules train or sustain real people and are part of the station economy rather than decorative modifiers.
 - Fleet hierarchy supports commanders, subordinates, formation/doctrine, resupply and automatic replacement.
 - Shipyards consume components and time to produce real hulls; production slots and equipment stocks matter.
+
+## Population, habitation, education and professional skills — governing design
+This is a **design specification, not a claim that these mechanics are already playable**. Faction Command remains an original, management-first, 2D galaxy and economy simulation with the systemic depth of a large space sandbox. Habitats, schools, labour, life support and station welfare must form one population economy, shared by player and NPC factions. The future population system replaces the present hard-coded 12-recruit NPC pools and abstract crew counts in stages; it must preserve existing property, captain IDs, orders, skill experience, credits, wage arrears and saved games.
+
+### Habitats generate and sustain real populations
+- **Residential modules are the primary source of station inhabitants.** They supply species-appropriate living space for families, children, students, working-age adults and elders, instead of directly creating trained adults. Habitation modules can support **births over time** when there are residents of suitable age, functioning life support, available room and adequate welfare. Births add children, not instantly available pilots or marines; their maturation is represented on a longer simulation schedule. The hab's construction alone never grants free service crew.
+- **Immigration and emigration must be accounted for.** Colonies, planets and other stations start with seeded, finite populations. Migrants leave a known population source, travel on actual civilian/passenger transport capacity with time and route risk, and arrive at a destination where they occupy available housing. A new empty habitat attracts settlers or takes transported residents before it can have births. People cannot exist in two stations at once, and losing a transport can have demographic consequences. No infinite free recruit pool.
+- Keep population ledgers by species/biological requirements and coarse life-stage cohorts (children, learners, working-age residents, retirees), occupation and training level. Only named captains, managers, educators, exceptional specialists or story characters need individual persistent records. Large ordinary populations are aggregated cohorts for Android performance; all movements between cohorts conserve people. Named individuals are linked to a specific source cohort and must not duplicate their source count.
+- **Life-support compatibility matters**: different species/cultures can require different gravity, pressure, atmospheric chemistry, humidity, temperature, radiation protection, aquatic environments or other requirements. Create adaptable hab modules and separate habitation zones if necessary; a population cannot be forced to live in an incompatible atmosphere. The setting includes worlds with primitive, advanced, unusual and inhospitable environments. Species and culture influence needs and opportunities, **not fixed intelligence or forbidden skill paths**.
+- Each habitat has physical population capacity, sustainable birth/maturation and migration throughput, energy and resource upkeep, service staffing and vulnerability to shortages. Its residents consume food, water, medical supplies, consumer necessities and energy as those ware chains are implemented. Sanitation, recycling and waste management matter. During early integration use explicit balance placeholders for not-yet-authored wares, never claim nonexistent food or water deliveries took place.
+- An apartment block or compact crew hab offers basic capacity; a **Family Habitat** adds space for households and births; a **City Habitat** houses larger populations at higher upkeep and social-service demand; an **Adaptive/Xenobiology Habitat** supports additional environmental needs at higher construction and life-support cost; an **Agricultural Habitat** links residential upkeep to real food production. All use actual builders, module inputs and construction time through the ordinary station planner.
+- Population growth is **bounded**, slow relative to cargo cycles, and limited by housing, family formation, health, age structure, security, resources and immigration. Include aging, natural deaths and migration out, with an understandable demographic summary. A habitat does not endlessly multiply people from nothing and is not a passive credit generator.
+
+### Work, careers, morale and mobility
+- Residents may be dependants, students, unemployed jobseekers, civilian service staff, assigned station workers, teachers, scientists, doctors, managers, ship crew, pilots, marines or retirees. **Workplaces request qualified employees**. A person accepting ship or station employment leaves the local unassigned-worker pool; moving ships or changing jobs does not create a replacement person. Job vacancies and bottlenecks are displayed by station and faction.
+- Workforce shortages reduce or halt the appropriate production or shipbuilding cycles only when the workforce model becomes active, never silently change already-delivered wares. Skill and morale alter efficiency within transparent, bounded limits and must not invent extra input resources. High-level specialists can unlock advanced research/shipbuilding where appropriate; lower-skill staff may take longer or require a mentor. Automation can replace tasks only when actual equipment and upkeep exist.
+- Morale depends on housing quality, environmental safety, adequate nutrition and healthcare, pay reliability, working hours, security, education access, recreation, culture, social connection, faction policy and losses in conflict. Morale affects retention, immigration, absence, learning efficiency and labour productivity; do not create arbitrary direct credits. Unpaid wages and overcrowding lower morale; thoughtful station investment can counter them. Distinguish individual morale of named staff from aggregate resident satisfaction.
+- Schooling is a **real service**: named or cohort instructors and actual students must have a suitable station, classroom capacity, available time, access to learning resources, relevant base skill, energy, wages and maintenance. Education consumes or licenses physical Recorded Data/Research Notes and appropriate teaching equipment where relevant. A school with no teachers or students produces no training. Qualified teachers and specialist classrooms cap throughput; repeated completion cannot mint people, infinite XP, wares or research.
+- Training can be **general education, certification, profession conversion or advanced specialisation**. Work experience and school study both build skill, while practical qualifications can require a combination of the two. Use existing 0–5 skill tiers as an initial compatible scale. Different career tracks can be taught in parallel but cannot occupy the same student for overlapping full-time courses. Courses have time, prerequisites, seats, costs, completion records and optional student/teacher travel.
+- An education credential is not a research discovery. **Research Laboratories** conduct projects consuming valid Research Notes; **Research Academies** train researchers; historical archives contribute actual relevant records and teach preservation, language, history and research methods. Schools may improve teams' research productivity, but do not grant finished discoveries merely because a module was built.
+- Educational and welfare modules can be public, faction-run, player-owned or private. A school may enroll local residents or visiting students subject to travel and quotas. Fees and subsidies move existing money between owners, students and institutions; teachers and station workers receive wages from a funded budget. A boarding academy trains people for boarding operations, not for free instant ship capture.
+
+### Skill catalogue (proposed foundation; specialisations can expand)
+Each broad competence may have practical subskills, 0–5 proficiency and optional credentials; the listed skills must be tied to real in-game work rather than empty statistics.
+
+| Career family | Skills relevant to ships, stations and faction gameplay |
+| --- | --- |
+| Flight and exploration | **Helmsmanship/piloting**, astrogation/navigation, combat flying and evasion, fleet command/tactics, sensor operation, mapping/cartography, planetary and deep-space surveying, exploration/first contact |
+| Engineering and shipbuilding | Mechanical engineering, electrical/electronics, propulsion and drive systems, ship systems maintenance, shield systems, weapons engineering, robotics and automation, manufacturing/fabrication, construction engineering, shipyard assembly and outfitting |
+| Industry and resources | Mining/extraction, geology and prospecting, refinery/process operations, energy generation/grid operations, agriculture/hydroponics, environmental/life-support engineering, recycling/salvage, hazardous material handling |
+| Science, medicine and archives | Research methodology, physics/materials science, chemistry, computing/data analysis, biology/xenobiology, medicine and emergency treatment, genetics/ecology, archaeology/xenohistory, archival preservation and information cataloguing |
+| Commerce and administration | **Station management**, fleet/transport logistics, resource forecasting and procurement, warehousing/cargo operations, trade and negotiation, finance/accounting, business administration, personnel management and leadership |
+| Military, policing and intelligence | Weapons/gunnery, tactical command, station defense, patrol and policing, **boarding operations**, marine combat, shipboard security, infiltration/cybersecurity, counter-intelligence, emergency response and rescue |
+| Civilian, social and diplomatic | Diplomacy/intercultural relations, law and mediation, translation/xenolinguistics, teaching/instruction, psychology/counselling, public health and community services, hospitality/passenger care, recreation and performance arts |
+
+**Occupational matching:** a ship captain draws on piloting, navigation and leadership; traders on commerce, route planning and negotiation; miners on extraction and survey; station managers on administration, logistics and staffing; researchers on their scientific discipline and methodology; medics on medicine and emergency care; marines on boarding, tactics and shipboard security; police on law, sensors and enforcement; builders on engineering and project management; archive keepers on preservation, history and data. Show job skill needs, staff proficiency and the predicted (bounded) effect before assignment.
+
+### Station modules for housing, schooling and wellbeing
+The existing station construction interface remains list-based: select a module type and count, preview required materials, power, ongoing supply, teachers, students, housing/workforce effects and construction time, then build using physical inputs. The following is the **intended catalogue, not a list of currently implemented recipes**.
+
+| Module / institution | Primary output, curriculum or function |
+| --- | --- |
+| Basic Residential Habitat | Basic living quarters, adult housing and population capacity |
+| Family Residential Habitat | Family housing, births and childcare access; needs adequate life support and welfare |
+| High-Density City Habitat | Higher population capacity with proportionally greater service, transport and upkeep demand |
+| Adaptive/Xeno-Environment Habitat | Environmental compatibility zones for multiple species with specialised life-support upkeep |
+| Agricultural & Life-Support Habitat | Housing support, food/hydroponics, water recycling and ecology jobs as input chains become available |
+| Community School & Youth Centre | Literacy, numeracy, foundational sciences, civilian education and maturation support |
+| Vocational Technical College | Electrical, mechanical, fabrication, maintenance and general industrial training |
+| Flight Academy & Simulator | **Piloting**, flight controls, navigation basics and safe flight certification |
+| Combat Flight & Evasion School | Fighter craft tactics, evasive flying and combat pilot qualification |
+| Navigation, Sensors & Survey Institute | Astrogation, exploration, scanner operations, sector surveying and cartography |
+| Fleet Officer & Command College | Fleet command, tactics, personnel leadership and operational planning |
+| Ship Systems Engineering Academy | Propulsion, shields, weapons, automation and onboard system maintenance |
+| Construction & Shipyard Trade Institute | Station construction, rigging, hull assembly, fitting and project supervision |
+| Mining & Geoscience School | Geology, surveying deposits, extraction and resource handling |
+| Industrial Process & Energy College | Refining, manufacturing, energy distribution and industrial safety |
+| Agriculture & Environmental Institute | Hydroponics, recycling, life support, ecological management and habitat upkeep |
+| Business & Station Management College | **Station management**, accounting, staffing, trade policy, resource planning and procurement |
+| Logistics & Freight Operations School | Cargo handling, route planning, fleet logistics, supply chains and warehousing |
+| Research University & Laboratory School | Research methods, scientific specialisations, laboratory safety and mentoring; **does not itself complete research projects** |
+| Medical Academy & Teaching Hospital | Doctors, medics, triage, xenomedicine and healthcare; clinic service plus trained staff |
+| Data, Robotics & Cyber Institute | Data analysis, computing, automation, cryptography, cybersecurity and lawful security testing |
+| Historical Archives & Cultural Institute | Preservation, archaeology, records, translation, archival staff and culturally relevant scholarship; requires actual archival collections |
+| Diplomacy, Law & Languages College | Diplomatic service, mediation, legal procedure, cultural studies and translation |
+| Security & Police Academy | Policing, station security, cargo inspections, evidence and defensive gunnery |
+| **Marine Boarding & Tactical Academy** | Boarding, ship assault, close-quarters tactics, marine teamwork and rescue; uses training equipment, instructors and time |
+| Emergency Response & Rescue Centre | Fire/safety, disaster response, evacuation, medical first aid and search and rescue |
+| Hospitality, Tourism & Civilian Services School | Passenger care, galactic tours, food service, tourism and civilian customer operations |
+| Teacher Training Institute | Develops qualified educators and teaching capacity; relevant subject skills remain necessary |
+| Recreation Deck & Sports Centre | Leisure and physical activity, stress reduction, social cohesion and marine fitness support |
+| Parks, Botanical Commons & Community Gardens | Hab satisfaction, environment and recreation; real capacity and life-support upkeep |
+| Arts, Music & Cultural Hall | Entertainment, culture, social connection and civilian morale with staffed programming |
+| Medical Clinic & Counselling Centre | Resident health and mental-health support, retention and workforce attendance |
+| Family Services & Childcare Module | Care for children and dependants, family welfare and education access |
+| Dining Hall, Civic Market & Social Hub | Food distribution, shopping, civilian social services and additional station morale |
+| Public Safety & Emergency Shelter | Emergency shelter, evacuation readiness, security and catastrophe resilience |
+
+Module upgrades can increase places, instructors, throughput, comfort or curriculum, but require additional maintenance; no module creates skills or satisfaction merely by existing with its services offline. Civilian schools, medical facilities and community spaces may share modules where sensible, while advanced institutions require specialised equipment, research access and qualified instructors.
+
+### Management UI and automated education policy
+- On **Station > Population & Education**, show residents, life stages, housing occupancy, species/environment needs, food/water/energy availability, job vacancies, unemployed/qualified applicants, morale, births, migration, education seats, active courses, trainees, teachers, expected graduates and current operating costs. Label absent systems as planned during implementation.
+- Provide a few simple policies: **Balanced**, **Expand population**, **Train workforce**, **Attract specialists**, **Research campus**, **Naval training hub** or **Custom**. The planner can suggest numbers of habs, support facilities and schools for a target crew or production workforce; advanced users may specify course quotas, skill thresholds, species-compatible habitats and import rules.
+- **Staffing:** when the player requests five marines or a three-star pilot, a search finds real candidates in the faction's employment pool; if insufficient, suggest recruit transport, housing, wages, training seats and completion times. A named hire and a cohort transfer are both sourced from a real pool, and the route is visible.
+- **NPC factions use the same rules**: they house residents, build schools and hospitals, educate specialist workforces, recruit qualified employees, compete for staff and respond to displacement and shortages. Population structures become strategic civilian targets needing protection, not instant renewable crew dispensers.
+
+### Implementation order and test gates (supersedes an isolated captain-market feature)
+1. **Population ledger and save migration**: introduce resident cohorts at existing inhabited NPC facilities; map the existing finite recruitment pools into explicit adult unassigned-worker cohorts **without counting the same residents twice**. Preserve all current hired crew and named captains. Add stable station/faction population IDs, deterministic demographic tests and versioned migration. Keep current training/crew systems functional.
+2. **Buildable habs and resources**: add family/basic and adaptive housing to the ordinary module planner with real construction bills, capacity, life-support requirement, residential upkeep and explicit population occupancy. No free adults on construction. Extend wares and production chains only as actual supported mechanics; surface import shortages.
+3. **Population growth and movement**: age cohorts, support births and natural deaths, actual passenger immigration/emigration, housing constraints and offscreen deterministic simulation. Tests must show conservation of transfers, known birth/death events and no duplicate population after save/load.
+4. **Workforce and recruitment integration**: connect station job slots, existing NPC recruit pools, ship crew hiring and paid wages to one resident workforce source; vacancies matter, staff cannot be present on a ship and at the origin station simultaneously. Migrate old abstract crew progressively without removing or duplicating personnel.
+5. **Education and qualifications**: implement community school, vocational college, flight academy, station management college, research academy and marine/boarding school first. Courses require teachers, enrolled students, real resources, attendance time and wages, then increase appropriate skills/credentials. Extend to the broader curriculum by demand.
+6. **Morale and civilian life**: introduce welfare facilities, healthcare, employment satisfaction, crowding, immigration attraction, population health and bounded skill/productivity impacts. Ensure player and NPC factions face equivalent economic rules and existing legacy saves remain playable.
+7. **Scale and usability**: aggregate cohorts offscreen, show clear housing/workforce forecasts and education queues in the property screen, performance-test heavily populated systems on actual Android hardware, and verify savings/performance in long-running campaigns.
+
+**Non-negotiable acceptance tests:** (1) a hab at commissioning provides capacity but no free adult workers; (2) any new child comes from a documented resident-family birth event, not a spawned pilot; (3) no cross-station migration without a source deduction and supported transit; (4) recruited and transferred staff always leave one counted pool and enter one destination; (5) teaching with no instructor, materials, power, students or free seats cannot produce XP; (6) skills and certificates remain tied to their owner after transfer, retirement or ship reassignment; (7) salaries, tuition and school upkeep move real balances; (8) morale and skill bonuses change only supported outcomes within bounded rules; (9) NPC and player population rules are consistent; (10) saving, loading, migration and destruction cannot double residents, wages or training; (11) an existing Pass-23 save still loads with all ships, crews, captains, orders and funds preserved; (12) Android headless builds stay green, followed by real-device tests before calling the system production-ready.
 
 ## Factions, law and diplomacy
 - 20–30 original factions at full target: governments, corporations, guilds, frontier coalitions, pirates and independents, with distinct doctrines, home sectors, economic strengths and diplomatic relations.
@@ -71,10 +167,10 @@ Faction Command is an ORIGINAL 2D, map-driven space economy and faction manageme
 ## Interface screens
 1. Galaxy map and sector zoom.
 2. Property tree and asset detail with contextual command queue.
-3. Crew hiring, firing, training and transfer.
+3. Crew hiring, firing, training, transfer and captain career records.
 4. Ship roles/behavior configuration, blacklists, risk and profit thresholds.
 5. Cargo, ware trading, station logistics and price history.
-6. Station builder and production overview.
+6. Station builder, production, residential population, education and workforce overview.
 7. Fleet doctrine and tactical command.
 8. Diplomacy, laws, crime and faction standing.
 9. Missions and contract tracking.
@@ -90,7 +186,7 @@ Create Godot project, repository game directory, data schemas, original naming c
 **Pass:** player can order a ship to buy and deliver ware; actual inventory and credits change exactly once; simulation survives save/reload.
 
 ### Phase 2 — Economic depth
-Expand wares, factories, station construction, player-owned stations, workforce, logistics AI and NPC budgets; shipyards consume real materials and build ships.
+Expand wares, factories, station construction, player-owned stations, workforce, habitation, demographics, skill education, morale, logistics AI and NPC budgets; shipyards consume real materials and build ships.
 **Pass:** deliberate disruption creates observable shortage, price response and production slowdown; restoring supply recovers output.
 
 ### Phase 3 — Security and combat
@@ -140,18 +236,21 @@ Expand toward ~300 sectors and 20–30 factions with procedural variety and auth
 - If checks are red, pending, missing or cannot be inspected, **do not proceed to the next implementation task**. Record the exact blocker in the progress file and fix the current task or request the necessary access. Never report green without observing the check results.
 - Keep CI checks scoped to the game directory so existing website functionality is not inadvertently broken. Do not equate a green CI result with verified Android gameplay; retain real-device acceptance tests.
 
-## Immediate next tasks
-1. Establish original lore, faction list and sector-generation schema.
-2. Implement Godot project skeleton and mobile navigation/property UI.
-3. Implement deterministic economy simulation and test harness.
-4. Implement order queues, autonomous ship navigation and cargo trading.
-5. Configure GitHub Actions for Android debug builds and test on a physical device.
+## Next implementation priorities (after Pass 23)
+1. Keep the existing real economy, fleet commands, station-builder, research and personnel capabilities intact; maintain the green Godot/Android gate and verify on an actual Android device.
+2. **Population foundation:** persistent inhabitants and demographics, with exactly counted recruitment pools mapped to resident cohorts, meaningful station/hab capacity and conservative save migration.
+3. **Habitats and life support:** buildable living quarters and family/adaptive habs with upfront physical construction costs, upkeep, space and a real population source.
+4. **Civilian lifecycle and travel:** bounded births, growth, housing, health, immigrant routes and physically transported recruitment.
+5. **Education:** implement initial community school, vocational college, pilot academy, station management college, research academy and marine/boarding school. Expand to the full skill and station-school catalogue above.
+6. **Morale, workplaces and policy:** civilian healthcare/recreation, trained staff requirements, NPC faction use, simple station education presets, then bounded effects of qualified staff on the actual simulation.
+7. After the coherent population pipeline, add broader named-captain hiring/succession, ship outfitting, fuller shipyards, advanced occupations, combat and increased galactic scale.
 
 ## Current design decisions
 - Strategic management, **no manual piloting**.
 - Galaxy map with zoomable 2D sectors and visible autonomous battles.
 - Individual property commands, crew management and selectable autonomous ship occupations.
 - Real shared economy for player and NPC factions.
+- **Habitation as the source of population; population as the source of staff and specialists.** Education and welfare modules train and sustain people through bounded, paid simulation rather than granting instant invisible bonuses.
 - Bigger galaxy and more factions than a typical initial prototype, contingent on performance.
 
 ## New game: faction origins and independent player faction

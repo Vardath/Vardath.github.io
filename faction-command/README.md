@@ -3,6 +3,35 @@
 An original, offline-first space faction management game for Android landscape,
 built with Godot 4. The authoritative design is [Faction Command.md](../Faction%20Command.md).
 
+## Future population, habitation and education design
+
+**Design only; not yet implemented as gameplay.** Faction Command's station
+habitats are planned as real housing and population sources: households,
+children, growing adults, trained workers, immigrants and retirees, with
+species-compatible life support, upkeep, jobs and morale. Births create
+children rather than instant fully qualified crew; immigration and all staff
+transfers deduct from a known source population and use real transport.
+Housing, teachers and schools have finite capacity and operating costs.
+
+Future buildable modules include family, urban and adaptive habitats;
+community schools, flight academies, navigation colleges, industrial trade
+schools, shipyard and engineering institutes, station management and logistics
+colleges, research universities, medical and cultural academies, marine and
+boarding schools; and clinics, recreation, parks and civic spaces to improve
+wellbeing. Training requires actual students, instructors, time, materials,
+equipment and funding. Skills include piloting, navigation, research,
+engineering, mining, station administration, trade, security, boarding,
+medicine, diplomacy, archiving, teaching and civilian services.
+
+See the **Population, habitation, education and professional skills** section
+of [Faction Command.md](../Faction%20Command.md) for the full skills matrix,
+module catalogue, staffing economics, migration safeguards and ordered
+implementation/testing plan. Existing finite NPC recruitment pools and the
+captain/crew records from Passes 22–23 are temporary precursors; the next
+implementation priority is a single resident population ledger linked to
+actual station labour and recruitment. No new school or habitat recipes are
+available in the current Android build.
+
 ## Current foundation
 
 Choose one of four original faction origins when starting a new game. The
