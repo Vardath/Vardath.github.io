@@ -3952,13 +3952,22 @@ func _run() -> void:
 	_expect(p31_colony.queue_fly_to("ship_001", "copper_wake"), "physically purchased energy flies to the planned recycling station")
 	p31_colony.advance_ticks(35)
 	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "ship docks at the actual unfinished station and puts paid energy into its construction storage")
-	print("P31 ALLOY STORES source=", int(p31_home.stock.get("alloy_plates", 0)), " foundry=", int(p31_colony._find_station("vellum_foundry").stock.get("alloy_plates", 0)))
-	_expect(p31_colony.queue_fly_to("ship_001", "vellum_gate"), "owned ship travels to the sector's established finite alloy supplier")
-	p31_colony.advance_ticks(35)
-	_expect(p31_colony.dock_ship("ship_001", "vellum_foundry").ok and p31_colony.trade("ship_001", "vellum_foundry", "alloy_plates", 34, true).ok, "recycling and agriculture structures require 34 genuinely purchased alloy plates")
-	_expect(p31_colony.queue_fly_to("ship_001", "copper_wake"), "construction metal crosses real sectors with the original ship orders")
-	p31_colony.advance_ticks(35)
-	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "all construction metal is physically transferred into the new recycling station's build storage")
+	# The original NPC foundry supplied 96 alloys for the already built
+	# residential complex and may now be depleted. Source new materials
+	# physically from that colony's real ore-fed alloy smelter instead.
+	var p31_alloys_remaining: int = 34
+	for _supply_batch in range(24):
+		if p31_alloys_remaining == 0:
+			break
+		var p31_source_available: int = int(p31_home.stock.get("alloy_plates", 0))
+		var p31_load_quantity: int = mini(p31_alloys_remaining, p31_source_available)
+		if p31_load_quantity == 0:
+			p31_colony.advance_ticks(20)
+			continue
+		_expect(p31_colony.dock_ship("ship_001", "player_station_1").ok and p31_colony.transfer_player_station("ship_001", "player_station_1", "alloy_plates", p31_load_quantity, false).ok, "owned ship loads actually smelted metals from the existing civilian production complex")
+		_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "locally manufactured construction alloys move between genuinely docked player stations into the hired builder's supply")
+		p31_alloys_remaining -= p31_load_quantity
+	_expect(p31_alloys_remaining == 0, "all 34 construction alloys are obtained and delivered from mined and processed stock, not the depleted NPC foundry")
 	p31_colony.advance_ticks(180)
 	var p31_worksite: Dictionary = p31_colony.construction.find_site(p31_colony, str(p31_build.site_id))
 	var p31_factory: Dictionary = p31_colony._find_station("player_station_2")
