@@ -150,7 +150,8 @@ func disembark(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var record: Dictionary = world.population.station_cohort(world, str(station.id))
 	if record.is_empty():
 		return {"ok":false, "message":"Station has no registered population ledger."}
-	var occupied: int = world.demographics.residents(record) if world.state.has("demographics_version") else int(record.cohorts.assigned_workers)
+	var adults_before: int = int(record.cohorts.assigned_workers)
+	var occupied: int = world.demographics.residents(record) if world.state.has("demographics_version") else adults_before
 	var usable: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
 	if usable < 1 or occupied + quantity > usable or occupied + quantity > 1000000:
 		return {"ok":false, "message":"The station needs enough powered housing for all arriving adults."}
@@ -159,7 +160,7 @@ func disembark(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var shortage: String = world.provisions.missing_provision(world, station, occupied + quantity)
 	if not shortage.is_empty():
 		return {"ok":false, "message":"Next residential service cycle lacks " + shortage + "."}
-	record.cohorts.assigned_workers = occupied + quantity
+	record.cohorts.assigned_workers = adults_before + quantity
 	_clear_manifest(ship, quantity)
 	record.resident_status = "Awaiting service"
 	record.resident_shortage = ""
