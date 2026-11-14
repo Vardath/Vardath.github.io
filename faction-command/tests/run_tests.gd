@@ -3909,8 +3909,8 @@ func _run() -> void:
 		_expect(_total_ware(first.state, ecology_ware_id) == 0, "starting galaxy does not spawn free biosolids or fertile soil: " + ecology_ware_id)
 	for ecology_recipe_id in ["water_recycling", "soil_agriculture"]:
 		_expect(not first._find_recipe(ecology_recipe_id).is_empty() and first.state.construction_blueprints.has(ecology_recipe_id), "water recycling and soil farms use real construction contracts and validated recipes: " + ecology_recipe_id)
-	_expect(first._find_recipe("water_recycling").inputs == {"organic_waste":2, "energy_cells":1} and first._find_recipe("water_recycling").outputs == {"potable_water":1, "fertile_soil":1}, "every recycling cycle consumes two units of actual biosolids and one energy cell to produce one potable water and one fertile soil")
-	_expect(first._find_recipe("soil_agriculture").inputs == {"fertile_soil":1, "potable_water":2, "energy_cells":1} and first._find_recipe("soil_agriculture").outputs == {"food_rations":4}, "regenerative soil farming consumes recovered soil, actual water and real power to grow food")
+	_expect(int(first._find_recipe("water_recycling").inputs.organic_waste) == 2 and int(first._find_recipe("water_recycling").inputs.energy_cells) == 1 and int(first._find_recipe("water_recycling").outputs.potable_water) == 1 and int(first._find_recipe("water_recycling").outputs.fertile_soil) == 1, "every recycling cycle consumes two units of actual biosolids and one energy cell to produce one potable water and one fertile soil")
+	_expect(int(first._find_recipe("soil_agriculture").inputs.fertile_soil) == 1 and int(first._find_recipe("soil_agriculture").inputs.potable_water) == 2 and int(first._find_recipe("soil_agriculture").inputs.energy_cells) == 1 and int(first._find_recipe("soil_agriculture").outputs.food_rations) == 4, "regenerative soil farming consumes recovered soil, actual water and real power to grow food")
 	_expect(first.ecology.recovered_waste(first.settlement.resident_needs(0)) == 0 and first.ecology.recovered_waste(first.settlement.resident_needs(2)) == 2 and first.ecology.recovered_waste(first.settlement.resident_needs(5)) == 4, "potential organic waste is bounded by actual per-resident water plus food consumption")
 	var p31_colony = WorldScript.new()
 	_expect(p31_colony.restore_snapshot(settled_restore.snapshot()) == OK, "ecological collection reuses the real physically settled and supplied two-person Copper Wake colony")
@@ -3952,6 +3952,7 @@ func _run() -> void:
 	_expect(p31_colony.queue_fly_to("ship_001", "copper_wake"), "physically purchased energy flies to the planned recycling station")
 	p31_colony.advance_ticks(35)
 	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "ship docks at the actual unfinished station and puts paid energy into its construction storage")
+	print("P31 ALLOY STORES source=", int(p31_home.stock.get("alloy_plates", 0)), " foundry=", int(p31_colony._find_station("vellum_foundry").stock.get("alloy_plates", 0)))
 	_expect(p31_colony.queue_fly_to("ship_001", "vellum_gate"), "owned ship travels to the sector's established finite alloy supplier")
 	p31_colony.advance_ticks(35)
 	_expect(p31_colony.dock_ship("ship_001", "vellum_foundry").ok and p31_colony.trade("ship_001", "vellum_foundry", "alloy_plates", 34, true).ok, "recycling and agriculture structures require 34 genuinely purchased alloy plates")
@@ -4016,6 +4017,7 @@ func _run() -> void:
 	root.add_child(screen)
 	await process_frame
 	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
 	await process_frame
 	screen.find_child("PlanStationButton", true, false).pressed.emit()
 	_expect(screen.find_child("PlanAdd_water_recycling", true, false) != null and screen.find_child("PlanAdd_soil_agriculture", true, false) != null, "Android station planning screen offers touch-selectable recycler and regenerative farm modules")
