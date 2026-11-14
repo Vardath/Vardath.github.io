@@ -2136,6 +2136,12 @@ func _update_population_screen() -> void:
 		var upkeep: Dictionary = entry.provisions_per_60
 		var shortage_text: String = " · NEXT SHORTAGE: " + str(entry.provision_shortage) if not str(entry.provision_shortage).is_empty() else ""
 		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing: %d slots · %d powered · %d occupied by adult settlers\nLife support/60 ticks: Energy %d, Water %d, Food %d, Medical %d\nStatus: %s%s\nResident service: %s · Critical cycles: %d · Available powered beds: %d · Shelter deficit: %d%s" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees), int(entry.hab_capacity), int(entry.operational_capacity), int(entry.occupied_housing), int(upkeep.get("energy_cells", 0)), int(upkeep.get("potable_water", 0)), int(upkeep.get("food_rations", 0)), int(upkeep.get("medical_supplies", 0)), entry.housing_status, shortage_text, entry.resident_status, int(entry.resident_alert_cycles), int(entry.available_beds), int(entry.housing_deficit), " · MISSING " + str(entry.resident_shortage) if not str(entry.resident_shortage).is_empty() else ""])
+		if entry.active:
+			var station: Dictionary = world._find_station(str(entry.station_id))
+			var waste: int = int(station.stock.get("organic_waste", 0))
+			var soil: int = int(station.stock.get("fertile_soil", 0))
+			var yield_per_cycle: int = world.ecology.recovered_waste(world.settlement.resident_needs(int(entry.occupied_housing)))
+			text_rows.append("CIRCULAR ECOLOGY · %s\nOrganic Wastewater & Biosolids: %d · Reclaimed Fertile Soil: %d\nWaste recovered per successful resident cycle: %d\nBuild Wastewater & Compost Recycler and Regenerative Soil Farms using the existing station planner." % [entry.name, waste, soil, yield_per_cycle])
 	population_info.text = "\n\n".join(text_rows)
 
 

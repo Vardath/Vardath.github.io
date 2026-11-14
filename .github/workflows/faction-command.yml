@@ -1,6 +1,6 @@
 name: Faction Command foundation
-# Pass 30 final-head CI gate: resident supplies, evacuation and docs, Android v19.
-# Verify the final Pass 29 documentation-and-gameplay head, not an earlier code-only SHA.
+# Pass 31 final-head CI gate: ecological recycling, soil-based agriculture and Android v20.
+# Verify both jobs on the complete Pass 31 implementation, master design, README and progress journal.
 on:
   push:
     paths:
@@ -91,6 +91,7 @@ jobs:
           unzip -tq FactionCommand-debug.apk
           unzip -p FactionCommand-debug.apk assets/data/starter_galaxy.json | cmp - ../data/starter_galaxy.json
           unzip -p FactionCommand-debug.apk assets/data/construction.json | cmp - ../data/construction.json
+          unzip -p FactionCommand-debug.apk assets/data/ecology.json | cmp - ../data/ecology.json
           unzip -p FactionCommand-debug.apk assets/data/archives.json | cmp - ../data/archives.json
           unzip -p FactionCommand-debug.apk assets/data/research.json | cmp - ../data/research.json
           unzip -p FactionCommand-debug.apk assets/data/ship_hulls.json | cmp - ../data/ship_hulls.json
@@ -106,13 +107,14 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/object_inspector.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/provisions.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/settlement.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/ecology.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/provisions.json'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/habitation.json'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='19'" package-info.txt
-          grep -F "versionName='0.1.19-debug'" package-info.txt
+          grep -F "versionCode='20'" package-info.txt
+          grep -F "versionName='0.1.20-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256

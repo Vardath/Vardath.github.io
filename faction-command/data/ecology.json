@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "wares": [
+    {
+      "id": "organic_waste",
+      "name": "Organic Wastewater & Biosolids",
+      "volume": 1
+    },
+    {
+      "id": "fertile_soil",
+      "name": "Reclaimed Fertile Soil",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "water_recycling",
+      "name": "Wastewater & Compost Recycler",
+      "cycle_ticks": 15,
+      "inputs": {
+        "organic_waste": 2,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "potable_water": 1,
+        "fertile_soil": 1
+      }
+    },
+    {
+      "id": "soil_agriculture",
+      "name": "Regenerative Soil Farms",
+      "cycle_ticks": 20,
+      "inputs": {
+        "fertile_soil": 1,
+        "potable_water": 2,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "food_rations": 4
+      }
+    }
+  ],
+  "blueprints": {
+    "water_recycling": {
+      "fee": 1000,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 16,
+        "energy_cells": 3
+      },
+      "storage": 80
+    },
+    "soil_agriculture": {
+      "fee": 1150,
+      "ticks": 28,
+      "materials": {
+        "alloy_plates": 18,
+        "energy_cells": 4
+      },
+      "storage": 80
+    }
+  },
+  "waste_sources": {
+    "potable_water": 1,
+    "food_rations": 1
+  }
+}

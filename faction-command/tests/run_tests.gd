@@ -84,7 +84,24 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_ecology(state: Dictionary) -> void:
+	state.erase("ecology_version")
+	state.erase("ecology_catalog")
+	for index in range(state.get("wares", []).size() - 1, -1, -1):
+		if state.wares[index].id in ["organic_waste", "fertile_soil"]:
+			state.wares.remove_at(index)
+	for index in range(state.get("recipes", []).size() - 1, -1, -1):
+		if state.recipes[index].id in ["water_recycling", "soil_agriculture"]:
+			state.recipes.remove_at(index)
+	for recipe_id in ["water_recycling", "soil_agriculture"]:
+		state.get("construction_blueprints", {}).erase(recipe_id)
+	for station in state.get("stations", []):
+		station.stock.erase("organic_waste")
+		station.stock.erase("fertile_soil")
+
+
 func _strip_provisions(state: Dictionary) -> void:
+	_strip_ecology(state)
 	state.erase("settlement_version")
 	for ship in state.get("ships", []):
 		ship.erase("settler_passengers")
@@ -412,7 +429,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 10, "starter economy includes four markets, four archives and six original plus four provision wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 12, "starter economy includes four markets, four archives, six original wares, four provisions and two ecological resources")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -641,7 +658,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 10, "production upgrade adds the original finite deposit and four verified civilian manufacturing recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 12, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -812,6 +829,9 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
+		for ecology_ware in ["organic_waste", "fertile_soil"]:
+			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
+			migrated_stock.erase(ecology_ware)
 		for provision_ware in ["ice", "potable_water", "food_rations", "medical_supplies"]:
 			_expect(int(migrated_stock.get(provision_ware, -1)) == 0, "older station migration never receives free new civilian stock: " + str(old_station.id) + " / " + provision_ware)
 			migrated_stock.erase(provision_ware)
@@ -3710,6 +3730,7 @@ func _run() -> void:
 	var original_v17 = WorldScript.new()
 	_expect(original_v17.load_starter() == OK, "version 17 migration fixture begins as a valid starter world")
 	var prior_settlement: Dictionary = original_v17.snapshot()
+	_strip_ecology(prior_settlement)
 	prior_settlement.erase("settlement_version")
 	for legacy_ship in prior_settlement.ships:
 		legacy_ship.erase("settler_passengers")
@@ -3828,6 +3849,7 @@ func _run() -> void:
 	p30_invalid_source.ships[0].settler_source_station_id = "player_colony_ghost"
 	_expect(save_store.save_game(test_root + "/pass30-ghost-evac.json", p30_invalid_source) != OK, "passengers cannot claim to have been evacuated from a nonexistent player colony")
 	var p30_old_v1: Dictionary = settled_restore.snapshot()
+	_strip_ecology(p30_old_v1)
 	p30_old_v1.settlement_version = 1
 	for p30_legacy_cohort in p30_old_v1.population.stations.values():
 		p30_legacy_cohort.erase("resident_status")
@@ -3871,6 +3893,155 @@ func _run() -> void:
 	_expect(p30_evac_control != null and not p30_evac_control.disabled, "Android-oriented crew panel exposes a touch-sized, enabled colony evacuation action")
 	p30_evac_control.pressed.emit()
 	_expect(int(screen.world._find_ship("ship_001").settler_passengers) == 1 and int(screen.world.population.station_cohort(screen.world, "player_station_1").cohorts.assigned_workers) == 1, "one tap physically transfers exactly one adult from a real player colony into a real ship")
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 31: commissioned waste-recycling and regenerative soil agriculture.
+	# Waste is returned only by the physical water/food that an occupied,
+	# provisioned habitat actually consumed. An empty habitat and a failed
+	# service cycle cannot be perpetual organic-waste generators.
+	var ecology_definitions: Dictionary = first.ecology.definitions()
+	_expect(first.state.ecology_version == 1 and ecology_definitions.recipes.size() == 2, "checked-in circular ecology recipes parse as a strict and versioned physical resource system")
+	_expect(first.state.ecology_catalog.waste_sources == ecology_definitions.waste_sources, "waste origin requires real water and food service debits, not arbitrary production")
+	for ecology_ware_id in ["organic_waste", "fertile_soil"]:
+		_expect(not first._find_ware(ecology_ware_id).is_empty() and int(first._find_ware(ecology_ware_id).volume) == 1, "ecology goods take finite station and ship cargo capacity: " + ecology_ware_id)
+		_expect(_total_ware(first.state, ecology_ware_id) == 0, "starting galaxy does not spawn free biosolids or fertile soil: " + ecology_ware_id)
+	for ecology_recipe_id in ["water_recycling", "soil_agriculture"]:
+		_expect(not first._find_recipe(ecology_recipe_id).is_empty() and first.state.construction_blueprints.has(ecology_recipe_id), "water recycling and soil farms use real construction contracts and validated recipes: " + ecology_recipe_id)
+	_expect(int(first._find_recipe("water_recycling").inputs.organic_waste) == 2 and int(first._find_recipe("water_recycling").inputs.energy_cells) == 1 and int(first._find_recipe("water_recycling").outputs.potable_water) == 1 and int(first._find_recipe("water_recycling").outputs.fertile_soil) == 1, "every recycling cycle consumes two units of actual biosolids and one energy cell to produce one potable water and one fertile soil")
+	_expect(int(first._find_recipe("soil_agriculture").inputs.fertile_soil) == 1 and int(first._find_recipe("soil_agriculture").inputs.potable_water) == 2 and int(first._find_recipe("soil_agriculture").inputs.energy_cells) == 1 and int(first._find_recipe("soil_agriculture").outputs.food_rations) == 4, "regenerative soil farming consumes recovered soil, actual water and real power to grow food")
+	_expect(first.ecology.recovered_waste(first.settlement.resident_needs(0)) == 0 and first.ecology.recovered_waste(first.settlement.resident_needs(2)) == 2 and first.ecology.recovered_waste(first.settlement.resident_needs(5)) == 4, "potential organic waste is bounded by actual per-resident water plus food consumption")
+	var p31_colony = WorldScript.new()
+	_expect(p31_colony.restore_snapshot(settled_restore.snapshot()) == OK, "ecological collection reuses the real physically settled and supplied two-person Copper Wake colony")
+	_disable_npc_trading(p31_colony)
+	var p31_home: Dictionary = p31_colony._find_station("player_station_1")
+	var p31_people_before: int = p31_colony.population.total_people(p31_colony)
+	var p31_bank_before: int = _total_credits(p31_colony.state)
+	var p31_stock_pre: Dictionary = p31_home.stock.duplicate(true)
+	p31_colony.state.tick += 60 - int(p31_colony.state.tick) % 60
+	p31_colony.habitation.tick(p31_colony)
+	p31_colony.settlement.tick(p31_colony)
+	_expect(int(p31_home.stock.organic_waste) == 2 and int(p31_home.stock.fertile_soil) == 0, "two real serviced residents yield exactly two physical units of organic wastewater and biosolids, no free soil")
+	_expect(int(p31_home.stock.potable_water) == int(p31_stock_pre.potable_water) - 2 and int(p31_home.stock.food_rations) == int(p31_stock_pre.food_rations) - 2, "one real resident cycle pays both the module baseline and adult water-food provisions before reclaiming waste")
+	_expect(p31_colony.population.total_people(p31_colony) == p31_people_before and _total_credits(p31_colony.state) == p31_bank_before, "waste creation changes neither the number of residents nor the amount of money")
+	_expect(p31_colony.state.ledger.any(func(e): return e.kind == "resident_biowaste" and e.station_id == "player_station_1" and int(e.quantity) == 2 and int(e.amount) == 0), "recovered organic waste appears in the real transaction history, with an exact physical quantity and no invented payment")
+	var p31_failed = WorldScript.new()
+	_expect(p31_failed.restore_snapshot(settled_restore.snapshot()) == OK, "starved ecology scenario starts with the same real occupied housing")
+	p31_failed._find_station("player_station_1").stock.food_rations = 1
+	p31_failed.state.tick += 60 - int(p31_failed.state.tick) % 60
+	p31_failed.habitation.tick(p31_failed)
+	p31_failed.settlement.tick(p31_failed)
+	_expect(int(p31_failed._find_station("player_station_1").stock.organic_waste) == 0 and p31_failed.population.station_cohort(p31_failed, "player_station_1").resident_status == "Provision shortage", "starved residents are protected but cannot create imaginary wastewater when their food service fails")
+	_expect(p31_failed.population.total_people(p31_failed) == p31_people_before and not p31_failed.state.ledger.any(func(e): return e.kind == "resident_biowaste"), "a failed service cycle neither kills residents nor records free biowaste")
+
+	var p31_plan: Dictionary = p31_colony.construction.planner.preview(p31_colony.state, {"water_recycling":1, "soil_agriculture":1}, "all", [], "copper_wake")
+	_expect(p31_plan.ok and not _plan_row(p31_plan.modules, "water_recycling").is_empty() and not _plan_row(p31_plan.modules, "soil_agriculture").is_empty(), "list-first Android station planner offers real buildable recycling and soil farming modules")
+	_expect(p31_plan.warnings.any(func(t): return str(t).contains("ONLY from physical organic waste")), "station planner explicitly warns that uninhabited habitats produce no recycling stock")
+	var p31_quote: Dictionary = p31_colony.construction.quote(p31_colony, "copper_wake", {"water_recycling":1, "soil_agriculture":1}, "all", [])
+	_expect(p31_quote.ok and int(p31_quote.materials.alloy_plates) == 34 and int(p31_quote.materials.energy_cells) == 7 and int(p31_quote.fee) == 2150, "paid two-module water/soil manufacturing contract needs exactly 34 alloys, seven energy cells and 2,150 credits")
+	var p31_build_money: int = _total_credits(p31_colony.state)
+	var p31_build: Dictionary = p31_colony.construction.place(p31_colony, "copper_wake", {"water_recycling":1, "soil_agriculture":1}, "all", [])
+	_expect(p31_build.ok and p31_colony._find_station("player_station_2").production.is_empty(), "placing a recycling farm pays the NPC builder and does not commission unfinished industry")
+	_expect(_total_credits(p31_colony.state) == p31_build_money and int(p31_colony._find_station("player_station_2").stock.organic_waste) == 0, "newly placed recycling site has neither free resources nor money minting")
+	var p31_site: Dictionary = p31_colony.construction.find_site(p31_colony, str(p31_build.site_id))
+	_expect(p31_site.tasks.size() == 2 and p31_site.tasks[0].recipe_id == "water_recycling" and p31_site.tasks[1].recipe_id == "soil_agriculture", "paid builder uses the original modular station queue for both recycler and agricultural module")
+	_expect(p31_colony.queue_fly_to("ship_001", "hearthreach"), "ecology builder materials travel aboard an owned ship along a real sector route")
+	p31_colony.advance_ticks(35)
+	_expect(p31_colony.dock_ship("ship_001", "hearth_exchange").ok and p31_colony.trade("ship_001", "hearth_exchange", "energy_cells", 7, true).ok, "all seven construction energy cells are paid for at a real NPC supply station")
+	_expect(p31_colony.queue_fly_to("ship_001", "copper_wake"), "physically purchased energy flies to the planned recycling station")
+	p31_colony.advance_ticks(35)
+	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "ship docks at the actual unfinished station and puts paid energy into its construction storage")
+	# The original NPC foundry supplied 96 alloys for the already built
+	# residential complex and may now be depleted. Source new materials
+	# physically from that colony's real ore-fed alloy smelter instead.
+	var p31_alloys_remaining: int = 34
+	for _supply_batch in range(24):
+		if p31_alloys_remaining == 0:
+			break
+		var p31_source_available: int = int(p31_home.stock.get("alloy_plates", 0))
+		var p31_load_quantity: int = mini(p31_alloys_remaining, p31_source_available)
+		if p31_load_quantity == 0:
+			p31_colony.advance_ticks(20)
+			continue
+		_expect(p31_colony.dock_ship("ship_001", "player_station_1").ok and p31_colony.transfer_player_station("ship_001", "player_station_1", "alloy_plates", p31_load_quantity, false).ok, "owned ship loads actually smelted metals from the existing civilian production complex")
+		_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.construction.deliver(p31_colony, "ship_001", str(p31_build.site_id)).ok, "locally manufactured construction alloys move between genuinely docked player stations into the hired builder's supply")
+		p31_alloys_remaining -= p31_load_quantity
+	_expect(p31_alloys_remaining == 0, "all 34 construction alloys are obtained and delivered from mined and processed stock, not the depleted NPC foundry")
+	p31_colony.advance_ticks(180)
+	var p31_worksite: Dictionary = p31_colony.construction.find_site(p31_colony, str(p31_build.site_id))
+	var p31_factory: Dictionary = p31_colony._find_station("player_station_2")
+	_expect(int(p31_worksite.completed) == 2 and p31_factory.production.size() == 2 and p31_factory.storage_capacity == 160, "original hired NPC builder physically commissions both new recycling and soil farm factories after real work")
+	_expect(p31_factory.production.all(func(m): return int(m.cycles) == 0) and int(p31_factory.stock.potable_water) == 0 and int(p31_factory.stock.fertile_soil) == 0, "two constructed machines do not manufacture products until their genuine inputs arrive")
+	_expect(p31_colony.queue_fly_to("ship_001", "hearthreach"), "commissioned industrial site still requires separately delivered operational power")
+	p31_colony.advance_ticks(35)
+	_expect(p31_colony.dock_ship("ship_001", "hearth_exchange").ok and p31_colony.trade("ship_001", "hearth_exchange", "energy_cells", 20, true).ok, "recycling operation pays for 20 energy cells using existing NPC trade")
+	_expect(p31_colony.queue_fly_to("ship_001", "copper_wake"), "fuel and operational stock arrive through normal route orders")
+	p31_colony.advance_ticks(35)
+	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.transfer_player_station("ship_001", "player_station_2", "energy_cells", 20, true).ok, "recycler and soil farms consume power from finite physically delivered warehouse stock")
+	_expect(p31_colony.dock_ship("ship_001", "player_station_1").ok and int(p31_home.stock.organic_waste) >= 2, "original inhabited colony retains actual wastewater as tradable/interstation cargo")
+	_expect(p31_colony.transfer_player_station("ship_001", "player_station_1", "organic_waste", 2, false).ok, "real ship loads two units of biological waste from occupied colony stores")
+	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.transfer_player_station("ship_001", "player_station_2", "organic_waste", 2, true).ok, "ship unloads real waste at the newly built recycling station, not via a remote teleport")
+	var p31_precycle: Dictionary = p31_factory.stock.duplicate(true)
+	p31_colony.advance_ticks(16)
+	_expect(p31_factory.production.any(func(m): return m.recipe_id == "water_recycling" and int(m.cycles) == 1), "operational recycling completes one powered 15-tick recipe cycle on two real waste units")
+	_expect(int(p31_factory.stock.organic_waste) == int(p31_precycle.organic_waste) - 2 and int(p31_factory.stock.potable_water) == int(p31_precycle.potable_water) + 1 and int(p31_factory.stock.fertile_soil) == int(p31_precycle.fertile_soil) + 1, "wastewater recycler atomically consumes 2 biosolids and returns one usable potable water and one recoverable fertile soil")
+	_expect(p31_factory.production.any(func(m): return m.recipe_id == "soil_agriculture" and int(m.cycles) == 0), "regenerative soil farm does not run until it has real fertile soil AND enough water")
+	_expect(p31_colony.dock_ship("ship_001", "player_station_1").ok and int(p31_home.stock.potable_water) > 0, "source colony retains actual manufactured farm water available for transport")
+	_expect(p31_colony.transfer_player_station("ship_001", "player_station_1", "potable_water", 1, false).ok, "the farm's missing water comes from actual colonial warehouse stock")
+	_expect(p31_colony.dock_ship("ship_001", "player_station_2").ok and p31_colony.transfer_player_station("ship_001", "player_station_2", "potable_water", 1, true).ok, "farm water is delivered using existing physically docked cargo transfer")
+	p31_colony.advance_ticks(21)
+	_expect(p31_factory.production.any(func(m): return m.recipe_id == "soil_agriculture" and int(m.cycles) >= 1), "the fully supplied soil farm actually grows food after its twenty-tick powered agricultural production cycle")
+	_expect(int(p31_factory.stock.food_rations) == 4 and int(p31_factory.stock.fertile_soil) == 0 and int(p31_factory.stock.potable_water) == 0, "soil farming consumes one real batch of fertile soil and two water to produce exactly four storable food rations")
+	_expect(_total_credits(p31_colony.state) == p31_build_money and p31_colony.population.total_people(p31_colony) == p31_people_before, "end-to-end recycler and agriculture construction, provision sourcing and station trading conserve all simulated credits and people")
+	_expect(p31_factory.production.all(func(m): return int(m.cycles) >= 1) and p31_colony.state.ledger.any(func(e): return e.kind == "resident_biowaste"), "living residents feed physical recycling and the resulting soil truly feeds agriculture without hidden wares")
+	_expect(save_store.save_game(test_root + "/pass31-closed-loop.json", p31_colony.snapshot()) == OK, "built recycler, real food output, transported wastewater and both production counters are valid in saved state")
+	var p31_saved: Dictionary = save_store.load_game(test_root + "/pass31-closed-loop.json")
+	var p31_roundtrip = WorldScript.new()
+	_expect(bool(p31_saved.get("ok", false)) and p31_roundtrip.restore_snapshot(p31_saved.state) == OK and p31_roundtrip.snapshot() == p31_colony.snapshot(), "physical recycling chain, ships, colony residents, warehouses and factory cycles restore exactly after save/reload")
+	var p31_bad_recipe: Dictionary = p31_colony.snapshot()
+	for p31_rec in p31_bad_recipe.recipes:
+		if p31_rec.id == "water_recycling":
+			p31_rec.outputs.potable_water = 10000
+	_expect(save_store.save_game(test_root + "/pass31-miracle-water.json", p31_bad_recipe) != OK, "strict ecology saves reject edited recipes that fabricate water from low-value waste")
+	var p31_bad_ware: Dictionary = p31_colony.snapshot()
+	for p31_ware in p31_bad_ware.wares:
+		if p31_ware.id == "fertile_soil":
+			p31_ware.volume = 0
+	_expect(save_store.save_game(test_root + "/pass31-zero-volume-soil.json", p31_bad_ware) != OK, "strict ecology saves reject zero-volume bulk soil that could exceed storage limits")
+	var p31_future: Dictionary = p31_colony.snapshot()
+	p31_future.ecology_version = 2
+	_expect(save_store.save_game(test_root + "/pass31-future-ecology.json", p31_future) != OK, "new ecology save version cannot be forged or mistaken for an older format")
+	var p31_legacy: Dictionary = settled_restore.snapshot()
+	_strip_ecology(p31_legacy)
+	_expect(save_store.save_game(test_root + "/pass30-before-recycling.json", p31_legacy) == OK, "authentic pre-recycling occupied player settlement remains readable without the two new wares")
+	var p31_legacy_read: Dictionary = save_store.load_game(test_root + "/pass30-before-recycling.json")
+	var p31_migrated = WorldScript.new()
+	_expect(bool(p31_legacy_read.get("ok", false)) and p31_migrated.restore_snapshot(p31_legacy_read.state) == OK and p31_migrated.state.ecology_version == 1, "Pass 30 save migrates additively to ecological schema without starting a new game")
+	_expect(_total_ware(p31_migrated.state, "organic_waste") == 0 and _total_ware(p31_migrated.state, "fertile_soil") == 0 and p31_migrated.population.total_people(p31_migrated) == p31_people_before and p31_migrated.state.starting_credits == p31_legacy.starting_credits, "migration never backfills imaginary historical sewage, soil, funds or passengers")
+	_expect(save_store.save_game(test_root + "/pass31-upgraded-colony.json", p31_migrated.snapshot()) == OK, "old populated save upgraded with empty new stocks passes the new strict save validation")
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass31-ecology.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	screen.find_child("PlanStationButton", true, false).pressed.emit()
+	_expect(screen.find_child("PlanAdd_water_recycling", true, false) != null and screen.find_child("PlanAdd_soil_agriculture", true, false) != null, "Android station planning screen offers touch-selectable recycler and regenerative farm modules")
+	screen.find_child("ClosePlannerButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p31_colony.snapshot()) == OK, "mobile ecology inspector opens the exact physical completed recycling-and-colony state")
+	screen._open_map_station("player_station_2")
+	screen.find_child("InspectorTab_Production", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Wastewater & Compost Recycler") and screen.detail_body.text.contains("Regenerative Soil Farms") and screen.detail_body.text.contains("Physical outputs:"), "map-first station production inspector explains both machine outputs and real input commodities")
+	screen._open_map_station("player_station_1")
+	screen.find_child("InspectorTab_Population", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Wastewater & biosolids") and screen.detail_body.text.contains("Recoverable organic waste"), "Android Population inspector shows real colonial waste and future recoverable volume")
+	screen.find_child("PopulationButton", true, false).pressed.emit()
+	_expect(screen.population_info.text.contains("CIRCULAR ECOLOGY") and screen.population_info.text.contains("Reclaimed Fertile Soil"), "global population panel includes ecological recovery and agricultural materials alongside life support")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
 

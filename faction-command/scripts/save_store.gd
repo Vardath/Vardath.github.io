@@ -7,6 +7,7 @@ const MAX_SAVE_BYTES := 64 * 1024 * 1024
 const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
+const EcologyScript = preload("res://scripts/ecology.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
@@ -117,6 +118,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("ecology_version") and _is_nonnegative_integer(decoded.ecology_version) and decoded.ecology_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
@@ -146,6 +149,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("provisions_version") != state.has("provisions_catalog") or (state.has("provisions_version") and not state.has("habitation_version")):
 		return false
 	if state.has("settlement_version") and not state.has("provisions_version"):
+		return false
+	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -256,7 +261,9 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("settlement_version")
 	if not _valid_provisions(state):
 		return false
-	return not state.has("settlement_version") or _valid_settlement(state)
+	if state.has("settlement_version") and not _valid_settlement(state):
+		return false
+	return not state.has("ecology_version") or _valid_ecology(state)
 
 
 func _valid_settlement(state: Dictionary) -> bool:
@@ -301,6 +308,40 @@ func _valid_settlement(state: Dictionary) -> bool:
 			if alert < 1:
 				return false
 		elif alert != 0:
+			return false
+	return true
+
+
+
+func _valid_ecology(state: Dictionary) -> bool:
+	if state.ecology_version != 1 or not state.get("ecology_catalog") is Dictionary:
+		return false
+	var expected: Dictionary = EcologyScript.new().definitions()
+	if expected.is_empty() or state.ecology_catalog != {
+		"wares":EcologyScript.WARE_IDS,
+		"recipes":EcologyScript.RECIPE_IDS,
+		"waste_sources":expected.waste_sources
+	}:
+		return false
+	for ware in expected.wares:
+		var found := false
+		for present in state.wares:
+			if present.id == ware.id:
+				if present != ware:
+					return false
+				found = true
+				break
+		if not found:
+			return false
+	for recipe in expected.recipes:
+		var found := false
+		for present in state.recipes:
+			if present.id == recipe.id:
+				if present != recipe:
+					return false
+				found = true
+				break
+		if not found or state.construction_blueprints.get(recipe.id, {}) != expected.blueprints[recipe.id]:
 			return false
 	return true
 

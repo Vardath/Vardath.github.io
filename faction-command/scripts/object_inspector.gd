@@ -172,7 +172,16 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 			"Production":
 				var cycles: Array[String] = []
 				for item in world.production_report(id):
-					cycles.append("%s\n%s · %d/%d ticks" % [item.name, item.status, int(item.progress), int(item.duration)])
+					var detail: String = ""
+					if item.name in ["Wastewater & Compost Recycler", "Regenerative Soil Farms"]:
+						var input_rows: Array[String] = []
+						var output_rows: Array[String] = []
+						for ware_id in item.inputs:
+							input_rows.append("%d %s" % [int(item.inputs[ware_id]), str(world._find_ware(str(ware_id)).get("name", ware_id))])
+						for ware_id in item.outputs:
+							output_rows.append("%d %s" % [int(item.outputs[ware_id]), str(world._find_ware(str(ware_id)).get("name", ware_id))])
+						detail = "\nPhysical inputs: %s\nPhysical outputs: %s" % [", ".join(input_rows), ", ".join(output_rows)]
+					cycles.append("%s\n%s · %d/%d ticks%s" % [item.name, item.status, int(item.progress), int(item.duration), detail])
 				for habitat in station.get("habitation", []):
 					var home: Dictionary = world.state.habitation_catalog.get(str(habitat.id), {})
 					cycles.append("%s\n%s · %d energy/60 ticks" % [home.get("name", habitat.id), habitat.status, int(home.get("energy_per_60", 0))])
@@ -188,7 +197,9 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				var free_beds: int = maxi(0, powered - occupied)
 				var deficit: int = maxi(0, occupied - powered)
 				var resident_needs: Dictionary = world.settlement.resident_needs(occupied)
-				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered · %d occupied · %d free powered beds\nShelter deficit: %d\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\nResident share: Water %d · Food %d · Medical %d (additional to module baseline)\nResident status: %s · Critical cycles: %d\n%s\n%s\nNew births, automatic immigration and schooling are not implemented yet; existing adults can arrive aboard your ships." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), occupied, int(cohort.hab_capacity), powered, occupied, free_beds, deficit, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), int(resident_needs.get("potable_water", 0)), int(resident_needs.get("food_rations", 0)), int(resident_needs.get("medical_supplies", 0)), str(cohort.get("resident_status", "Unoccupied")), int(cohort.get("resident_alert_cycles", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages", "Emergency response: resupply or dock an owned ship and use Ship & Crew > Evacuate residents." if deficit > 0 or int(cohort.get("resident_alert_cycles", 0)) > 0 else "Residents are conserved through supply cycles."]
+				var waste_yield: int = world.ecology.recovered_waste(resident_needs)
+				var ecology_status: String = "Wastewater & biosolids in stock: %d · Fertile soil: %d\nRecoverable organic waste per successful resident cycle: %d (requires real food and water consumption)\nRecycling and soil agriculture use the normal station Production modules; neither creates stock without physical inputs." % [int(station.stock.get("organic_waste", 0)), int(station.stock.get("fertile_soil", 0)), waste_yield]
+				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered · %d occupied · %d free powered beds\nShelter deficit: %d\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\nResident share: Water %d · Food %d · Medical %d (additional to module baseline)\nResident status: %s · Critical cycles: %d\n%s\n%s\nNew births, automatic immigration and schooling are not implemented yet; existing adults can arrive aboard your ships." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), occupied, int(cohort.hab_capacity), powered, occupied, free_beds, deficit, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), int(resident_needs.get("potable_water", 0)), int(resident_needs.get("food_rations", 0)), int(resident_needs.get("medical_supplies", 0)), str(cohort.get("resident_status", "Unoccupied")), int(cohort.get("resident_alert_cycles", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages", "Emergency response: resupply or dock an owned ship and use Ship & Crew > Evacuate residents." if deficit > 0 or int(cohort.get("resident_alert_cycles", 0)) > 0 else "Residents are conserved through supply cycles."] + "\n" + ecology_status
 			"Construction":
 				var jobs: Array[String] = []
 				for site in world.state.build_sites:
