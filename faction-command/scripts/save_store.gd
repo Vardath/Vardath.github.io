@@ -6,6 +6,7 @@ const FORMAT_VERSION := 1
 const MAX_SAVE_BYTES := 64 * 1024 * 1024
 const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
+const ProvisionsScript = preload("res://scripts/provisions.gd")
 
 
 func has_any_save(path: String) -> bool:
@@ -113,6 +114,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("habitation_version") and _is_nonnegative_integer(decoded.habitation_version) and decoded.habitation_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -136,6 +139,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("population_version") != state.has("population") or (state.has("population_version") and state.get("personnel_version") != 2):
 		return false
 	if state.has("habitation_version") != state.has("habitation_catalog") or (state.has("habitation_version") and not state.has("population_version")):
+		return false
+	if state.has("provisions_version") != state.has("provisions_catalog") or (state.has("provisions_version") and not state.has("habitation_version")):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -238,7 +243,54 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("habitation_version")
 	if not _valid_population(state):
 		return false
-	return not state.has("habitation_version") or _valid_habitation(state)
+	if not state.has("habitation_version"):
+		return not state.has("provisions_version")
+	if not _valid_habitation(state):
+		return false
+	return not state.has("provisions_version") or _valid_provisions(state)
+
+
+func _valid_provisions(state: Dictionary) -> bool:
+	if state.provisions_version != 1 or not state.get("provisions_catalog") is Dictionary:
+		return false
+	var data: Dictionary = ProvisionsScript.new().definitions()
+	if data.is_empty():
+		return false
+	var expected: Dictionary = {
+		"wares":ProvisionsScript.WARE_IDS,
+		"recipes":ProvisionsScript.RECIPE_IDS,
+		"habitat_needs_per_60":data.habitat_needs_per_60,
+		"sector_ice_deposits":data.sector_ice_deposits
+	}
+	if state.provisions_catalog != expected:
+		return false
+	for ware in data.wares:
+		var found := false
+		for existing in state.wares:
+			if existing.id == ware.id:
+				if existing != ware:
+					return false
+				found = true
+				break
+		if not found:
+			return false
+	for recipe in data.recipes:
+		var found := false
+		for existing in state.recipes:
+			if existing.id == recipe.id:
+				if existing != recipe:
+					return false
+				found = true
+				break
+		if not found or state.construction_blueprints.get(recipe.id, {}) != data.blueprints[recipe.id]:
+			return false
+	for sector_id in data.sector_ice_deposits:
+		if not state.construction_resources.has(sector_id):
+			return false
+		var deposits: Dictionary = state.construction_resources[sector_id].deposits
+		if not _is_nonnegative_integer(deposits.get("ice")) or int(deposits.ice) > int(data.sector_ice_deposits[sector_id]):
+			return false
+	return true
 
 
 func _valid_habitation(state: Dictionary) -> bool:
@@ -259,7 +311,7 @@ func _valid_habitation(state: Dictionary) -> bool:
 		var total := 0
 		var powered := 0
 		for housing in station.habitation:
-			if not housing is Dictionary or not state.habitation_catalog.has(housing.get("id")) or not housing.get("powered") is bool or housing.get("status") not in ["Awaiting power", "Powered", "Needs Energy Cells"] or not _is_nonnegative_integer(housing.get("cycles")) or int(housing.cycles) > int(state.tick / 60):
+			if not housing is Dictionary or not state.habitation_catalog.has(housing.get("id")) or not housing.get("powered") is bool or housing.get("status") not in ["Awaiting power", "Powered", "Needs Energy Cells", "Needs Potable Water", "Needs Food Rations", "Needs Medical Supplies"] or not _is_nonnegative_integer(housing.get("cycles")) or int(housing.cycles) > int(state.tick / 60):
 				return false
 			if bool(housing.powered) != (housing.status == "Powered"):
 				return false
