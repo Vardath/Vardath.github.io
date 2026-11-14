@@ -43,6 +43,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	var copy := ship.duplicate(true)
 	copy.erase("settler_passengers")
 	copy.erase("settler_source_station_id")
+	copy.erase("career_manifest")
 	return copy
 
 
@@ -51,6 +52,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 	for ship in copy:
 		ship.erase("settler_passengers")
 		ship.erase("settler_source_station_id")
+		ship.erase("career_manifest")
 	return copy
 
 
