@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "wares": [
+    {
+      "id": "ice",
+      "name": "Water Ice",
+      "volume": 1
+    },
+    {
+      "id": "potable_water",
+      "name": "Potable Water",
+      "volume": 1
+    },
+    {
+      "id": "food_rations",
+      "name": "Food Rations",
+      "volume": 1
+    },
+    {
+      "id": "medical_supplies",
+      "name": "Medical Supplies",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "ice_extraction",
+      "name": "Ice Harvester",
+      "cycle_ticks": 8,
+      "inputs": {
+        "energy_cells": 1
+      },
+      "outputs": {
+        "ice": 4
+      },
+      "deposit": {
+        "resource": "ice",
+        "quantity": 4
+      }
+    },
+    {
+      "id": "water_purification",
+      "name": "Water Purification Plant",
+      "cycle_ticks": 8,
+      "inputs": {
+        "ice": 2,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "potable_water": 3
+      }
+    },
+    {
+      "id": "hydroponics",
+      "name": "Hydroponic Farms",
+      "cycle_ticks": 12,
+      "inputs": {
+        "potable_water": 2,
+        "ore": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "food_rations": 4
+      }
+    },
+    {
+      "id": "medical_synthesis",
+      "name": "Medical Fabricator",
+      "cycle_ticks": 15,
+      "inputs": {
+        "potable_water": 1,
+        "food_rations": 1,
+        "alloy_plates": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "medical_supplies": 2
+      }
+    }
+  ],
+  "blueprints": {
+    "ice_extraction": {
+      "fee": 650,
+      "ticks": 18,
+      "materials": {
+        "alloy_plates": 10
+      },
+      "storage": 80
+    },
+    "water_purification": {
+      "fee": 700,
+      "ticks": 20,
+      "materials": {
+        "alloy_plates": 12,
+        "energy_cells": 2
+      },
+      "storage": 60
+    },
+    "hydroponics": {
+      "fee": 850,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 14,
+        "energy_cells": 3
+      },
+      "storage": 60
+    },
+    "medical_synthesis": {
+      "fee": 1100,
+      "ticks": 28,
+      "materials": {
+        "alloy_plates": 18,
+        "energy_cells": 4
+      },
+      "storage": 60
+    }
+  },
+  "sector_ice_deposits": {
+    "lantern_deep": 600,
+    "sable_drift": 400,
+    "copper_wake": 900,
+    "verdant_trace": 700
+  },
+  "habitat_needs_per_60": {
+    "potable_water": 1,
+    "food_rations": 1,
+    "medical_supplies": 1
+  }
+}
