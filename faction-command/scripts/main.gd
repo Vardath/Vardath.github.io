@@ -5,6 +5,7 @@ const GalaxyMapScript = preload("res://scripts/galaxy_map.gd")
 const SectorMapScript = preload("res://scripts/sector_map.gd")
 const SaveStoreScript = preload("res://scripts/save_store.gd")
 const StationPlannerScript = preload("res://scripts/station_planner.gd")
+const InspectorScript = preload("res://scripts/object_inspector.gd")
 const BACKGROUND := Color("080f1b")
 const PANEL := Color("101e2d")
 const BORDER := Color("24394a")
@@ -15,6 +16,7 @@ const ACCENT := Color("71dfcc")
 var world = WorldScript.new()
 var save_store = SaveStoreScript.new()
 var station_planner = StationPlannerScript.new()
+var inspector = InspectorScript.new()
 var save_path := "user://faction_command_save.json"
 var _last_saved_tick := 0
 var paused := true
@@ -30,6 +32,18 @@ var tick_label: Label
 var pause_button: Button
 var detail_title: Label
 var detail_body: Label
+var inspector_tabs: HBoxContainer
+var inspector_actions: VBoxContainer
+var inspector_key := ""
+var inspector_current_tab := "Info"
+var inspector_base_info := ""
+var inspector_action_signature := ""
+var inspector_order_button: Button
+var selected_station_id := ""
+var property_panel: PanelContainer
+var inspector_panel: PanelContainer
+var property_drawer_button: Button
+var property_drawer_open := false
 var sector_picker: OptionButton
 var ship_brief: Label
 var ship_button: Button
@@ -362,6 +376,9 @@ func _enter_world() -> void:
 	property_picker_signature = ""
 	selected_sector = str(world.state.ships[0].sector)
 	selected_view = "sector"
+	inspector_key = ""
+	inspector_current_tab = "Info"
+	property_drawer_open = false
 	start_screen.queue_free()
 	_build_ui()
 	_show_sector(selected_sector)
@@ -431,7 +448,8 @@ func _build_ui() -> void:
 	content.add_theme_constant_override("separation", 12)
 	root.add_child(content)
 
-	var property_panel := _panel()
+	property_panel = _panel()
+	property_panel.name = "PropertyPanel"
 	property_panel.custom_minimum_size.x = 235
 	content.add_child(property_panel)
 	var property_scroll := ScrollContainer.new()
@@ -531,6 +549,10 @@ func _build_ui() -> void:
 	map_title.name = "MapTitle"
 	map_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	map_heading.add_child(map_title)
+	property_drawer_button = _button("Assets")
+	property_drawer_button.name = "PropertyDrawerButton"
+	property_drawer_button.pressed.connect(_toggle_property_drawer)
+	map_heading.add_child(property_drawer_button)
 	for control in [{"text":"−", "name":"MapZoomOut", "factor":0.8}, {"text":"+", "name":"MapZoomIn", "factor":1.25}]:
 		var zoom_button := _button(str(control.text))
 		zoom_button.name = str(control.name)
@@ -567,13 +589,14 @@ func _build_ui() -> void:
 	map_caption.name = "MapCaption"
 	map_column.add_child(map_caption)
 
-	var detail_panel := _panel()
-	detail_panel.custom_minimum_size.x = 230
-	content.add_child(detail_panel)
+	inspector_panel = _panel()
+	inspector_panel.name = "ObjectInspectorPanel"
+	inspector_panel.custom_minimum_size.x = 280
+	content.add_child(inspector_panel)
 	var detail := VBoxContainer.new()
 	detail.add_theme_constant_override("separation", 12)
-	detail_panel.add_child(detail)
-	detail.add_child(_label("SECTOR DIRECTORY", 13, ACCENT))
+	inspector_panel.add_child(detail)
+	detail.add_child(_label("SELECTED OBJECT", 13, ACCENT))
 	sector_picker = OptionButton.new()
 	sector_picker.name = "SectorPicker"
 	sector_picker.custom_minimum_size.y = 44
@@ -586,6 +609,16 @@ func _build_ui() -> void:
 	detail_title = _label("", 21, TEXT)
 	detail_title.name = "DetailTitle"
 	detail.add_child(detail_title)
+	var tab_scroll := ScrollContainer.new()
+	tab_scroll.name = "InspectorTabScroll"
+	tab_scroll.custom_minimum_size.y = 51
+	tab_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	tab_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	detail.add_child(tab_scroll)
+	inspector_tabs = HBoxContainer.new()
+	inspector_tabs.name = "InspectorTabs"
+	inspector_tabs.add_theme_constant_override("separation", 5)
+	tab_scroll.add_child(inspector_tabs)
 	var detail_scroll := ScrollContainer.new()
 	detail_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	detail_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -595,13 +628,17 @@ func _build_ui() -> void:
 	detail_body.name = "DetailBody"
 	detail_body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	detail_scroll.add_child(detail_body)
+	inspector_actions = VBoxContainer.new()
+	inspector_actions.name = "InspectorActions"
+	inspector_actions.add_theme_constant_override("separation", 5)
+	detail.add_child(inspector_actions)
 	order_target = _wrapped_label("", 13, MUTED)
 	order_target.name = "OrderTarget"
 	detail.add_child(order_target)
-	var order_button := _button("Queue fly order")
-	order_button.name = "OrderButton"
-	order_button.pressed.connect(_queue_order)
-	detail.add_child(order_button)
+	inspector_order_button = _button("Queue fly order")
+	inspector_order_button.name = "OrderButton"
+	inspector_order_button.pressed.connect(_queue_order)
+	detail.add_child(inspector_order_button)
 	order_feedback = _wrapped_label("", 12, ACCENT)
 	order_feedback.name = "OrderFeedback"
 	detail.add_child(order_feedback)
@@ -610,6 +647,184 @@ func _build_ui() -> void:
 	footer.name = "MainFooter"
 	root.add_child(footer)
 	_refresh_world_display()
+	resized.connect(_apply_map_layout)
+	_apply_map_layout()
+
+
+func _apply_map_layout() -> void:
+	_apply_map_layout_for_width(get_viewport_rect().size.x)
+
+
+func _apply_map_layout_for_width(width: float) -> void:
+	if not is_instance_valid(property_panel) or not is_instance_valid(inspector_panel):
+		return
+	var compact: bool = width < 1100.0
+	property_drawer_button.visible = compact
+	property_panel.visible = not compact or property_drawer_open
+	inspector_panel.visible = not compact or not property_drawer_open
+	property_drawer_button.text = "Map" if property_drawer_open else "Assets"
+	# Preserve the 420px interactive map even when the portrait-size UI
+	# would otherwise squeeze three permanently open tool panels.
+	inspector_panel.custom_minimum_size.x = 260.0 if compact else 280.0
+
+
+func _toggle_property_drawer() -> void:
+	property_drawer_open = not property_drawer_open
+	_apply_map_layout()
+
+
+func _inspector_context() -> Dictionary:
+	match selected_view:
+		"sector":
+			return {"kind":"sector", "id":selected_sector}
+		"ship":
+			return {"kind":"ship", "id":active_player_ship_id}
+		"npc_ship":
+			return {"kind":"npc_ship", "id":selected_ship_id}
+		"owned_station":
+			return {"kind":"station", "id":selected_property_key.substr(8)}
+		"npc_station":
+			return {"kind":"npc_station", "id":selected_station_id}
+		"owned_site":
+			return {"kind":"site", "id":selected_property_key.substr(5)}
+	return {}
+
+
+func _inspector_present() -> void:
+	if not is_instance_valid(inspector_tabs):
+		return
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var key: String = "%s|%s" % [target.kind, target.id]
+	var available: Array[String] = inspector.tabs(world, str(target.kind), str(target.id))
+	# A map highlight follows the inspected object, not the previously
+	# selected command ship. Sector selections clear the ship/station marker.
+	if str(target.kind) in ["ship", "npc_ship"]:
+		sector_map.select_object("ship", str(target.id))
+	elif str(target.kind) in ["station", "npc_station"]:
+		sector_map.select_object("station", str(target.id))
+	elif str(target.kind) == "site":
+		var site: Dictionary = world.construction.find_site(world, str(target.id))
+		sector_map.select_object("station", str(site.get("station_id", "")))
+	else:
+		sector_map.select_object("", "")
+	if key != inspector_key:
+		inspector_key = key
+		inspector_current_tab = "Info"
+		inspector_action_signature = ""
+		for previous in inspector_tabs.get_children():
+			inspector_tabs.remove_child(previous)
+			previous.queue_free()
+		for tab in available:
+			var tab_button := _button(tab)
+			tab_button.name = "InspectorTab_" + tab
+			tab_button.custom_minimum_size = Vector2(74, 46)
+			tab_button.pressed.connect(_select_inspector_tab.bind(tab))
+			inspector_tabs.add_child(tab_button)
+	inspector_base_info = detail_body.text
+	_render_inspector()
+
+
+func _select_inspector_tab(tab: String) -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty() or tab not in inspector.tabs(world, str(target.kind), str(target.id)):
+		return
+	inspector_current_tab = tab
+	_render_inspector()
+
+
+func _render_inspector() -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var kind: String = str(target.kind)
+	var object_id: String = str(target.id)
+	var available: Array[String] = inspector.tabs(world, kind, object_id)
+	if inspector_current_tab not in available:
+		inspector_current_tab = "Info"
+	for tab_button in inspector_tabs.get_children():
+		tab_button.disabled = str(tab_button.text) == inspector_current_tab
+		tab_button.self_modulate = Color.WHITE if tab_button.disabled else Color("a6c3ca")
+	detail_body.text = inspector.content(world, kind, object_id, inspector_current_tab, inspector_base_info, active_player_ship_id, selected_sector)
+	var can_issue_fly_order: bool = kind in ["sector", "ship"] and inspector_current_tab in ["Info", "Orders"]
+	inspector_order_button.visible = can_issue_fly_order
+	order_target.visible = can_issue_fly_order
+	order_feedback.visible = can_issue_fly_order
+	if can_issue_fly_order:
+		order_target.text = "Command %s to %s" % [_player_ship().get("name", "ship"), _sector_name(selected_sector)]
+	var actions: Array[Dictionary] = inspector.actions(world, kind, object_id, inspector_current_tab)
+	var signature: String = "%s|%s" % [inspector_key, inspector_current_tab]
+	for action in actions:
+		signature += "|" + str(action.id) + ":" + str(action.label)
+	if signature != inspector_action_signature:
+		inspector_action_signature = signature
+		for previous in inspector_actions.get_children():
+			inspector_actions.remove_child(previous)
+			previous.queue_free()
+		for action in actions:
+			var action_button := _button(str(action.label))
+			action_button.name = "InspectorAction_" + str(action.id)
+			action_button.custom_minimum_size.y = 46
+			action_button.pressed.connect(_execute_inspector_action.bind(str(action.id)))
+			inspector_actions.add_child(action_button)
+	inspector_actions.visible = not actions.is_empty()
+
+
+func _execute_inspector_action(action_id: String) -> void:
+	var target: Dictionary = _inspector_context()
+	if target.is_empty():
+		return
+	var kind: String = str(target.kind)
+	var object_id: String = str(target.id)
+	# Revalidate at the moment of the tap so an NPC object, stale button
+	# or external save change cannot grant player-only station/ship powers.
+	var permitted := false
+	for action in inspector.actions(world, kind, object_id, inspector_current_tab):
+		if str(action.id) == action_id:
+			permitted = true
+			break
+	if not permitted:
+		return
+	match action_id:
+		"crew":
+			if kind == "ship" and active_player_ship_id == object_id:
+				_open_crew_screen()
+		"trade":
+			if kind == "ship" or kind == "site":
+				_open_trade()
+		"station_trade":
+			if kind in ["station", "npc_station"]:
+				_open_trade_for_station(object_id)
+		"population":
+			if kind in ["station", "npc_station"]:
+				_open_population_screen()
+		"builds":
+			if kind == "station":
+				_open_build_screen()
+		"build_site":
+			if kind == "site":
+				_open_build_screen(object_id)
+		"research":
+			if kind == "station" and world.research.has_lab(world._find_station(object_id)):
+				_open_trade_for_station(object_id)
+				_open_research()
+		"open_sector":
+			if kind == "sector" and not showing_sector_map:
+				_toggle_map_mode()
+
+
+func _open_trade_for_station(station_id: String) -> void:
+	if world._find_station(station_id).is_empty():
+		return
+	_open_trade()
+	if not is_instance_valid(trade_screen):
+		return
+	for index in range(trade_station_picker.item_count):
+		if str(trade_station_picker.get_item_metadata(index)) == station_id:
+			trade_station_picker.select(index)
+			_on_trade_selection(index)
+			return
 
 
 func _toggle_pause() -> void:
@@ -680,18 +895,31 @@ func _show_sector(sector_id: String) -> void:
 			if not traffic.is_empty():
 				detail_body.text += "\n\nFaction traffic\n" + "\n".join(traffic)
 			order_target.text = "Destination: " + str(sector.name)
+			_inspector_present()
 			return
 
 
 func _open_map_station(station_id: String) -> void:
-	if world._find_station(station_id).is_empty():
+	var station: Dictionary = world._find_station(station_id)
+	if station.is_empty():
 		return
-	_open_trade()
-	for index in trade_station_picker.item_count:
-		if trade_station_picker.get_item_metadata(index) == station_id:
-			trade_station_picker.select(index)
-			_on_trade_selection(index)
-			return
+	if station.owner == world.state.player_faction_id:
+		for site in world.state.build_sites:
+			if str(site.station_id) == station_id and (int(site.completed) < site.tasks.size() or bool(site.get("cancelled", false))):
+				_show_owned_site(str(site.id))
+				return
+		_show_owned_station(station_id)
+		return
+	# Tapping a station inspects it first, unlike the old forced trade modal.
+	# The active player ship remains the only object receiving player commands.
+	selected_station_id = station_id
+	selected_view = "npc_station"
+	_focus_property_sector(str(station.sector))
+	detail_title.text = str(station.name)
+	var production: int = station.get("production", []).size()
+	var archive_label := "\nArchive: %s" % str(station.archive.status) if station.has("archive") else ""
+	detail_body.text = "%s\nFaction: %s\nSector: %s\nStation storage: %d / %d\nProduction modules: %d%s\n\nInspect the tabs for market, production and known population information." % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), production, archive_label]
+	_inspector_present()
 
 
 func _show_map_ship(ship_id: String) -> void:
@@ -709,6 +937,7 @@ func _show_map_ship(ship_id: String) -> void:
 	if not ship.travel.is_empty():
 		destination = "\nCrossing to " + _sector_name(str(ship.travel.to))
 	detail_body.text = "%s  ·  %s\n\nFaction\n%s\n\nRole\n%s\n\nSector\n%s%s" % [ship["class"], ship.status, _faction_name(str(ship.owner)), ship.role, _sector_name(str(ship.sector)), destination]
+	_inspector_present()
 
 
 func _show_ship() -> void:
@@ -761,6 +990,7 @@ func _show_ship() -> void:
 		for order in ship.orders:
 			destinations.append(_sector_name(str(order.destination)))
 		detail_body.text += "\n\nOrders\n" + " → ".join(destinations)
+	_inspector_present()
 
 
 func _sector_name(sector_id: String) -> String:
@@ -923,6 +1153,7 @@ func _show_owned_station(station_id: String) -> void:
 	var working_housing: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
 	var housing_power: int = world.habitation.maintenance_per_60(station, world.state.habitation_catalog)
 	detail_body.text = "YOUR STATION\nSector: %s\nStorage: %d / %d\nProduction modules: %d\nKnown resident workers: %d\nHousing: %d slots, %d powered\nLife-support energy: %d per 60 ticks\nStatus: %s\n%s" % [_sector_name(str(station.sector)), world.station_volume(station_id), int(station.storage_capacity), station.production.size(), world.population.station_total(residents), housing, working_housing, housing_power, residents.get("housing_status", "No habitat"), "No active production." if modules.is_empty() else "\n".join(modules)]
+	_inspector_present()
 
 
 func _show_owned_site(site_id: String) -> void:
@@ -943,6 +1174,7 @@ func _show_owned_site(site_id: String) -> void:
 			var ware: Dictionary = world._find_ware(str(ware_id))
 			stored.append("%s × %d" % [ware.get("name", ware_id), int(site.build_storage[ware_id])])
 	detail_body.text = "YOUR BUILD SITE\nSector: %s\nStatus: %s\nModules completed: %d / %d\nBuild storage: %s" % [_sector_name(str(site.sector)), site.status, int(site.completed), site.tasks.size(), "Empty" if stored.is_empty() else ", ".join(stored)]
+	_inspector_present()
 
 
 func _open_selected_property_action() -> void:
@@ -976,7 +1208,15 @@ func _on_role_selected(index: int) -> void:
 
 
 func _queue_order() -> void:
+	# Orders from NPC ships or NPC station inspections must never leak
+	# through the persistent global command button.
+	if selected_view not in ["sector", "ship"] or inspector_current_tab not in ["Info", "Orders"]:
+		order_feedback.text = "Inspect an owned ship or destination sector to issue orders."
+		return
 	var ship: Dictionary = _player_ship()
+	if ship.is_empty() or ship.owner != world.state.player_faction_id:
+		order_feedback.text = "Only owned ships can receive commands."
+		return
 	if world.queue_fly_to(str(ship.id), selected_sector):
 		order_feedback.text = "Order queued. Resume to travel." if paused else "Order queued."
 		_save_current_game()
@@ -1007,6 +1247,8 @@ func _refresh_world_display() -> void:
 		_show_ship()
 	elif selected_view == "npc_ship":
 		_show_map_ship(selected_ship_id)
+	elif selected_view == "npc_station":
+		_open_map_station(selected_station_id)
 	elif selected_view == "owned_station":
 		_show_owned_station(selected_property_key.substr(8))
 	elif selected_view == "owned_site":
