@@ -3,15 +3,33 @@
 An original, offline-first space faction management game for Android landscape,
 built with Godot 4. The authoritative design is [Faction Command.md](../Faction%20Command.md).
 
-## Future population, habitation and education design
+## Station population accounting and future habitation
 
-**Design only; not yet implemented as gameplay.** Faction Command's station
-habitats are planned as real housing and population sources: households,
-children, growing adults, trained workers, immigrants and retirees, with
-species-compatible life support, upkeep, jobs and morale. Births create
-children rather than instant fully qualified crew; immigration and all staff
-transfers deduct from a known source population and use real transport.
-Housing, teachers and schools have finite capacity and operating costs.
+**The first population ledger is implemented; residential habitation and
+education remain designs, not playable mechanics.** Open **Population** in
+Your Property to see counted available resident workers at each NPC station,
+known population across stations, and actual ship crew plus named captains.
+The original finite NPC recruitment pools have been converted into matching
+station-resident cohorts. Each recruit is one person, not a second population
+on top of the old roster. Paid hiring removes workers from their NPC-station
+cohort when they board a ship, and discharge returns those same people.
+New construction sites start with zero residents; building modules alone
+does not add people, housing capacity or free crew.
+
+New ships from the NPC wharf must also source their bundled captain and crew
+from its available **resident workforce** at the time of delivery. If the
+wharf has insufficient personnel, the fully paid hull waits instead of
+creating fictional people. The player may bring existing ship staff to the
+wharf and discharge them, or later use immigration and schools when those
+mechanics exist. Existing Pass-23 saves migrate in place without credit,
+captain, ship-order or personnel resets.
+
+In later passes, station habitats will provide actual housing and capacity
+for households, children, growing adults, trained workers, immigrants and
+retirees, with species-compatible life support, upkeep, jobs and morale.
+Births will create children rather than instant adult workers; immigration
+and staffing transfers will deduct from known populations and require travel.
+Housing, teachers and schools will have finite capacity and operating costs.
 
 Future buildable modules include family, urban and adaptive habitats;
 community schools, flight academies, navigation colleges, industrial trade
@@ -26,11 +44,11 @@ medicine, diplomacy, archiving, teaching and civilian services.
 See the **Population, habitation, education and professional skills** section
 of [Faction Command.md](../Faction%20Command.md) for the full skills matrix,
 module catalogue, staffing economics, migration safeguards and ordered
-implementation/testing plan. Existing finite NPC recruitment pools and the
-captain/crew records from Passes 22–23 are temporary precursors; the next
-implementation priority is a single resident population ledger linked to
-actual station labour and recruitment. No new school or habitat recipes are
-available in the current Android build.
+implementation/testing plan. The first resident-worker ledger already reuses the original finite NPC
+recruitment pools and preserves the captain/crew careers from Passes 22–23.
+The next implementation priority is buildable habitats and supported life
+support, not another isolated crew counter. No school, habitat, birth,
+immigration or population-growth recipes are playable yet.
 
 ## Current foundation
 
