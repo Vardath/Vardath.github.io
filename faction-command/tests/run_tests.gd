@@ -4172,6 +4172,28 @@ func _run() -> void:
 	_expect(not p32_carers.settlement.evacuate(p32_carers, "ship_001", 2).ok and p32_carers.snapshot() == p32_care_before, "adult-only evacuation cannot strand a dependent child with zero carers")
 	_expect(p32_carers.settlement.evacuate(p32_carers, "ship_001", 1).ok and p32_carers.population.total_people(p32_carers) == p32_adults_total + 1, "limited real rescue leaves an adult carer for the child and conserves the full family headcount")
 	_expect(save_store.save_game(test_root + "/pass32-cared-child.json", p32_carers.snapshot()) == OK, "post-evacuation child protection and passenger provenance pass strict save validation")
+
+	# Regression: accepting a third adult must count the existing newborn
+	# for beds and provisions, but must NOT convert that child into a second
+	# working adult. Arrivals still pay real NPC permits and use ship routes.
+	var p32_arrivals = WorldScript.new()
+	_expect(p32_arrivals.restore_snapshot(p32_world.snapshot()) == OK, "adult-arrival-after-birth test starts from real Family Habitat with two adults and a newborn")
+	_disable_npc_trading(p32_arrivals)
+	var p32_arrival_total: int = p32_arrivals.population.total_people(p32_arrivals)
+	var p32_arrival_credits: int = _total_credits(p32_arrivals.state)
+	var p32_arrival_source: int = p32_arrivals.population.available_workers(p32_arrivals, "hearth_exchange")
+	_expect(p32_arrivals.queue_fly_to("ship_001", "hearthreach"), "a real player ship can leave the newborn colony for its finite NPC recruitment source")
+	p32_arrivals.advance_ticks(40)
+	_expect(p32_arrivals.dock_ship("ship_001", "hearth_exchange").ok and p32_arrivals.settlement.board(p32_arrivals, "ship_001", 1).ok, "one existing NPC adult buys a real passenger berth and leaves the finite station roster")
+	_expect(p32_arrivals.population.available_workers(p32_arrivals, "hearth_exchange") == p32_arrival_source - 1 and p32_arrivals.queue_fly_to("ship_001", "copper_wake"), "adult immigrant leaves exactly one recruitment-source worker and travels toward the established family home")
+	p32_arrivals.advance_ticks(40)
+	_expect(_deliver_family_supplies(p32_arrivals, "player_station_1", "player_station_2"), "new family resident housing is refilled with real physical wares and excess sewage is retained aboard the ship before another arrival")
+	p32_arrivals.advance_ticks(60)
+	_expect(p32_arrivals.dock_ship("ship_001", "player_station_2").ok and p32_arrivals.settlement.disembark(p32_arrivals, "ship_001", 1).ok, "a third adult disembarks into a family home with existing child and enough provisioned powered beds")
+	var p32_joined: Dictionary = p32_arrivals.population.station_cohort(p32_arrivals, "player_station_2")
+	_expect(int(p32_joined.cohorts.assigned_workers) == 3 and int(p32_joined.cohorts.children) == 1 and int(p32_joined.family.births_total) == 1, "settler arrival increments only adult workforce; it never double-counts a dependent child as an adult")
+	_expect(p32_arrivals.population.total_people(p32_arrivals) == p32_arrival_total and _total_credits(p32_arrivals.state) == p32_arrival_credits, "arriving at family home conserves every person and every credit across both stations and the ship")
+	_expect(save_store.save_game(test_root + "/pass32-third-adult.json", p32_arrivals.snapshot()) == OK, "mixed adult-child family immigration and unchanged birth schedule pass strict persisted-world validation")
 	var p32_forged_child: Dictionary = p32_world.snapshot()
 	p32_forged_child.population.stations.player_station_2.cohorts.children = 2
 	_expect(save_store.save_game(test_root + "/pass32-fake-baby.json", p32_forged_child) != OK, "unprovenanced child cannot be added without a matching timed birth queue and birth count")
