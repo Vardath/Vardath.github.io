@@ -7,6 +7,7 @@ const MAX_SAVE_BYTES := 64 * 1024 * 1024
 const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
+const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
 func has_any_save(path: String) -> bool:
@@ -116,6 +117,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -141,6 +144,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("habitation_version") != state.has("habitation_catalog") or (state.has("habitation_version") and not state.has("population_version")):
 		return false
 	if state.has("provisions_version") != state.has("provisions_catalog") or (state.has("provisions_version") and not state.has("habitation_version")):
+		return false
+	if state.has("settlement_version") and not state.has("provisions_version"):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -247,7 +252,28 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("provisions_version")
 	if not _valid_habitation(state):
 		return false
-	return not state.has("provisions_version") or _valid_provisions(state)
+	if not state.has("provisions_version"):
+		return not state.has("settlement_version")
+	if not _valid_provisions(state):
+		return false
+	return not state.has("settlement_version") or _valid_settlement(state)
+
+
+func _valid_settlement(state: Dictionary) -> bool:
+	if state.settlement_version != 1:
+		return false
+	var personnel = PersonnelScript.new()
+	for ship in state.ships:
+		if not _is_nonnegative_integer(ship.get("settler_passengers")) or not ship.get("settler_source_station_id") is String:
+			return false
+		var n: int = int(ship.settler_passengers)
+		var source: String = str(ship.settler_source_station_id)
+		if n > 1000000 or source.length() > 128 or (n == 0) != source.is_empty():
+			return false
+		if n > 0:
+			if ship.owner != state.player_faction_id or not state.crew_pools.has(source) or int(ship.crew) + n > personnel.capacity(ship):
+				return false
+	return true
 
 
 func _valid_provisions(state: Dictionary) -> bool:
@@ -366,8 +392,18 @@ func _valid_population(state: Dictionary) -> bool:
 		for group in ["children", "students", "available_workers", "assigned_workers", "retirees"]:
 			if not _is_nonnegative_integer(counts.get(group)) or int(counts[group]) > 1000000:
 				return false
-		if int(counts.children) != 0 or int(counts.students) != 0 or int(counts.assigned_workers) != 0 or int(counts.retirees) != 0:
+		if int(counts.children) != 0 or int(counts.students) != 0 or int(counts.retirees) != 0:
 			return false
+		if int(counts.assigned_workers) > 0:
+			if not state.has("settlement_version") or not registered.has(station_id):
+				return false
+			var owned: Dictionary = {}
+			for location in state.stations:
+				if str(location.id) == str(station_id):
+					owned = location
+					break
+			if owned.is_empty() or owned.owner != state.player_faction_id or int(counts.assigned_workers) > int(entry.hab_capacity):
+				return false
 		var available: int = int(counts.available_workers)
 		if available != int(state.crew_pools.get(station_id, 0)):
 			return false

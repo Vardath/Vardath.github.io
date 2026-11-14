@@ -202,7 +202,7 @@ func hire(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 		return {"ok":false, "message":"Dock this ship at an NPC recruitment station to hire crew."}
 	if int(world.state.relations.get(str(station.owner), 0)) < -25:
 		return {"ok":false, "message":"A hostile station will not recruit for your faction."}
-	if int(ship.crew) + quantity > capacity(ship):
+	if int(ship.crew) + int(ship.get("settler_passengers", 0)) + quantity > capacity(ship):
 		return {"ok":false, "message":"This ship has insufficient crew berths."}
 	if int(world.state.crew_pools[station.id]) != world.population.available_workers(world, str(station.id)):
 		return {"ok":false, "message":"Population and recruitment rosters disagree."}
@@ -257,7 +257,7 @@ func transfer(world: RefCounted, source_id: String, destination_id: String, quan
 		return {"ok":false, "message":"Both ships must finish orders and dock at the same station."}
 	if quantity > int(source.crew):
 		return {"ok":false, "message":"Not enough crew aboard the source ship."}
-	if int(destination.crew) + quantity > capacity(destination):
+	if int(destination.crew) + int(destination.get("settler_passengers", 0)) + quantity > capacity(destination):
 		return {"ok":false, "message":"Destination ship has insufficient crew berths."}
 	var old_source: int = int(source.crew)
 	var old_destination: int = int(destination.crew)

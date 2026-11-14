@@ -510,3 +510,8 @@ godot --headless --path faction-command --export-debug "Android Debug" "$PWD/fac
 The debug key and package ID must stay unchanged for an in-place update. A
 passing CI export is not proof of Android gameplay or performance: the APK
 still needs installation and playtesting on a physical device.
+
+
+## Pass 29 — physical settlement of existing adults
+
+A player-owned ship physically docked at a non-hostile NPC recruitment station can **Board settlers** in the Ship & Crew screen. Each passenger comes from the NPC's finite existing resident workforce, takes an unused crew-compatible berth, and costs 100 CR paid to the NPC station; crew and passenger capacity share a single limit. Move the ship using ordinary galaxy movement orders, dock at an actual player-owned station and choose **Disembark / return**. Settlers occupy only pre-built, operational, provisioned housing slots, with occupied capacity visible in the station Population and map inspector. Passengers may instead return to their original source station without refund. Failed transfers preserve people and money; passenger manifests, source identification, station occupation, ship orders and ledgers persist in versioned saves. Pass 28 saves migrate with empty passenger manifests and zero fabricated people. This does not create births, school students, free skilled workers or automatic immigration. Android debug v18.

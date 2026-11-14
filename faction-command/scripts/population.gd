@@ -109,6 +109,7 @@ func total_people(world: RefCounted) -> int:
 		total += station_total(cohort)
 	for ship in world.state.ships:
 		total += int(ship.crew) + 1 # Each existing ship has a named pilot.
+		total += int(ship.get("settler_passengers", 0)) # In transit, no longer at their source.
 	return total
 
 
@@ -129,6 +130,7 @@ func report(world: RefCounted) -> Array:
 			"children":int(rec.cohorts.children),
 			"students":int(rec.cohorts.students),
 			"assigned":int(rec.cohorts.assigned_workers),
+			"occupied_housing":int(rec.cohorts.assigned_workers),
 			"retirees":int(rec.cohorts.retirees),
 			"hab_capacity":int(rec.hab_capacity),
 			"operational_capacity":world.habitation.operational_capacity(station, world.state.habitation_catalog) if not station.is_empty() else 0,
@@ -142,7 +144,7 @@ func report(world: RefCounted) -> Array:
 
 
 func tick(world: RefCounted) -> void:
-	# Register new facilities without seeding adults. Hab occupancy, births,
-	# immigration, mortality and schooling are future independent passes.
+	# Register new facilities without seeding adults. Boarded adults may
+	# relocate into existing housing; births and schooling are future passes.
 	for station in world.state.stations:
 		register_station(world, str(station.id))

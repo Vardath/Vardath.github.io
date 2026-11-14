@@ -147,12 +147,12 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				return "%s · %s\nCaptain: %s\nActive role: %s\nOrders: %s\n\n%s" % [ship.name, ship.status, ship.captain, ship.role, "None" if queued.is_empty() else " → ".join(queued), _target_route(world, active_ship_id, selected_sector)]
 			"Cargo":
 				var stock: Array[String] = _stock_lines(world, ship.cargo)
-				return "%s\nCargo capacity: %d / %d\n%s" % [ship.name, world.cargo_volume(id), int(ship.cargo_capacity), "Empty" if stock.is_empty() else "\n".join(stock)]
+				return "%s\nCargo capacity: %d / %d\nCivilian passengers: %d\n%s" % [ship.name, world.cargo_volume(id), int(ship.cargo_capacity), int(ship.get("settler_passengers", 0)), "Empty" if stock.is_empty() else "\n".join(stock)]
 			"Crew":
 				var pilot: Dictionary = ship.captain_profile
 				var staff: Dictionary = ship.crew_profile
 				var pay: Dictionary = ship.payroll
-				return "%s\nCaptain: %s\nPilot skill: %d / 5 · XP: %d\nPilot morale: %d / 100\nService crew: %d / %d berths\nCrew skill: %d / 5 · XP: %d\nCrew morale: %d / 100\nWages: %d CR per %d ticks\nArrears: %d CR" % [ship.name, ship.captain, int(pilot.skill), int(pilot.experience), int(pilot.morale), int(ship.crew), world.personnel.capacity(ship), int(staff.skill), int(staff.experience), int(staff.morale), world.personnel._ship_wages(ship), world.personnel.PAYROLL_TICKS, int(pay.arrears)]
+				return "%s\nCaptain: %s\nPilot skill: %d / 5 · XP: %d\nPilot morale: %d / 100\nService crew: %d / %d berths\nCrew skill: %d / 5 · XP: %d\nCrew morale: %d / 100\nPassengers: %d · Free transport berths: %d\nWages: %d CR per %d ticks\nArrears: %d CR" % [ship.name, ship.captain, int(pilot.skill), int(pilot.experience), int(pilot.morale), int(ship.crew), world.personnel.capacity(ship), int(staff.skill), int(staff.experience), int(staff.morale), int(ship.get("settler_passengers", 0)), world.settlement.free_berths(world, ship), world.personnel._ship_wages(ship), world.personnel.PAYROLL_TICKS, int(pay.arrears)]
 			"Trade":
 				return "Command ship: %s\nCargo: %d / %d\nSelect a station in the map to inspect its market, or open trade for this ship.\nAutomatic trading and supply roles remain managed separately." % [ship.name, world.cargo_volume(id), int(ship.cargo_capacity)]
 	if kind in ["station", "npc_station"]:
@@ -184,7 +184,7 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				var powered: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
 				var needs: Dictionary = world.provisions.facility_needs(world, station)
 				var shortage: String = world.provisions.missing_provision(world, station)
-				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\n%s\nNew births, immigration and schooling are not implemented yet." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), int(cohort.cohorts.assigned_workers), int(cohort.hab_capacity), powered, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages"]
+				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\n%s\nNew births, automatic immigration and schooling are not implemented yet; existing adults can arrive aboard your ships." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), int(cohort.cohorts.assigned_workers), int(cohort.hab_capacity), powered, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages"]
 			"Construction":
 				var jobs: Array[String] = []
 				for site in world.state.build_sites:
