@@ -30,7 +30,7 @@ func definitions() -> Dictionary:
 		return {}
 	for recipe_id in RECIPE_IDS:
 		var blueprint: Dictionary = parsed.blueprints[recipe_id]
-		if not blueprint.get("fee") is int or int(blueprint.fee) < 1 or not blueprint.get("ticks") is int or int(blueprint.ticks) < 1 or not blueprint.get("storage") is int or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary:
+		if int(blueprint.get("fee", 0)) < 1 or int(blueprint.get("ticks", 0)) < 1 or int(blueprint.get("storage", 0)) < 1 or not blueprint.get("materials") is Dictionary:
 			return {}
 		if int(blueprint.materials.get("alloy_plates", 0)) < 1 or int(blueprint.materials.get("energy_cells", 0)) < 1:
 			return {}
