@@ -39,7 +39,10 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 		if recipes.has(habitat_id):
 			errors.append("Habitat ID collides with a production recipe: " + str(habitat_id))
 			continue
-		recipes[habitat_id] = {"id":str(habitat_id), "name":str(home.name), "inputs":{"energy_cells":int(home.energy_per_60)}, "outputs":{}, "cycle_ticks":60}
+		var requirements: Dictionary = {"energy_cells":int(home.energy_per_60)}
+		for ware_id in state.get("provisions_catalog", {}).get("habitat_needs_per_60", {}):
+			requirements[ware_id] = int(state.provisions_catalog.habitat_needs_per_60[ware_id])
+		recipes[habitat_id] = {"id":str(habitat_id), "name":str(home.name), "inputs":requirements, "outputs":{}, "cycle_ticks":60}
 	if mode not in ["self", "selected", "all"]:
 		errors.append("Choose a valid sourcing mode.")
 	var imported: Dictionary = {}
@@ -145,9 +148,9 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 			continue
 		var home: Dictionary = state.habitation_catalog[habitat_id]
 		var chosen: int = int(requested.get(habitat_id, 0))
-		module_rows.append({"id":str(habitat_id), "name":str(home.name), "chosen":chosen, "added":int(counts[habitat_id]) - chosen, "total":int(counts[habitat_id]), "housing_capacity":int(home.capacity) * int(counts[habitat_id]), "energy_per_60":int(home.energy_per_60) * int(counts[habitat_id])})
+		module_rows.append({"id":str(habitat_id), "name":str(home.name), "chosen":chosen, "added":int(counts[habitat_id]) - chosen, "total":int(counts[habitat_id]), "housing_capacity":int(home.capacity) * int(counts[habitat_id]), "energy_per_60":int(home.energy_per_60) * int(counts[habitat_id]), "provisions_per_60":state.get("provisions_catalog", {}).get("habitat_needs_per_60", {}).duplicate(true)})
 	if not state.get("habitation_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("housing_capacity")):
-		warnings.append("Habitats provide housing capacity, not instant residents, crew or birth events. Current life support requires real Energy Cells; food, water, medicine, family growth and species compatibility are future systems.")
+		warnings.append("Habitats provide housing capacity, not instant residents, crew or births. Every service cycle requires real Energy Cells, Potable Water, Food Rations and Medical Supplies; household growth, ageing and species compatibility are future systems.")
 	var ware_rows: Array[Dictionary] = []
 	for ware in state.get("wares", []):
 		var ware_id := str(ware.id)

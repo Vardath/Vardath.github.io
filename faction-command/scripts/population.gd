@@ -134,6 +134,8 @@ func report(world: RefCounted) -> Array:
 			"operational_capacity":world.habitation.operational_capacity(station, world.state.habitation_catalog) if not station.is_empty() else 0,
 			"energy_per_60":world.habitation.maintenance_per_60(station, world.state.habitation_catalog) if not station.is_empty() else 0,
 			"housing_status":str(rec.housing_status),
+			"provisions_per_60":world.provisions.facility_needs(world, station) if not station.is_empty() else {},
+			"provision_shortage":world.provisions.missing_provision(world, station) if not station.is_empty() else "",
 			"active":not station.is_empty()
 		})
 	return result
