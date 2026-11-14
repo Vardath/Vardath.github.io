@@ -1,6 +1,6 @@
 name: Faction Command foundation
 # Pass 33 CI gate: physical staff, paid classrooms, finite archive texts, youth credentials, Android v22.
-# Pass 33 FINAL PR HEAD: verify all 1,708 Godot assertions and signed Android v22 with compiled education script and byte-identical education.json after all gameplay, README, design and progress commits.
+# Pass 34 CI development gate: practical workplace mentorship, credentialed person transport, versioned saves and signed Android v23.
 on:
   push:
     paths:
@@ -110,14 +110,15 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/ecology.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/demographics.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/education.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/careers.gdc'
           unzip -p FactionCommand-debug.apk assets/data/education.json | cmp - ../data/education.json
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/provisions.json'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/habitation.json'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='22'" package-info.txt
-          grep -F "versionName='0.1.22-debug'" package-info.txt
+          grep -F "versionCode='23'" package-info.txt
+          grep -F "versionName='0.1.23-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
