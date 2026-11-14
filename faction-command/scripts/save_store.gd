@@ -10,6 +10,7 @@ const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
+const CareersScript = preload("res://scripts/careers.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
@@ -120,6 +121,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("career_version") and _is_nonnegative_integer(decoded.career_version) and decoded.career_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("education_version") and _is_nonnegative_integer(decoded.education_version) and decoded.education_version != 1:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("demographics_version") and _is_nonnegative_integer(decoded.demographics_version) and decoded.demographics_version != 1:
@@ -161,6 +164,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
 	if state.has("education_version") != state.has("education_catalog") or (state.has("education_version") and state.get("demographics_version") != 1):
+		return false
+	if state.has("career_version") != state.has("career_catalog") or (state.has("career_version") and state.get("education_version") != 1):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -277,7 +282,9 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
-	return not state.has("education_version") or _valid_education(state)
+	if state.has("education_version") and not _valid_education(state):
+		return false
+	return not state.has("career_version") or _valid_careers(state)
 
 
 func _valid_settlement(state: Dictionary) -> bool:
@@ -444,12 +451,14 @@ func _valid_education(state: Dictionary) -> bool:
 		var enrolled_by_program: Dictionary = {}
 		var completed_by_program: Dictionary = {}
 		var exited_by_program: Dictionary = {}
+		var transferred_out: Dictionary = {}
+		var transferred_in: Dictionary = {}
 		var payroll_evidence := 0
 		for event in state.ledger:
 			if str(event.get("station_id", "")) != str(station.id):
 				continue
 			var kind: String = str(event.get("kind", ""))
-			if kind not in ["education_appointment", "education_enrollment", "education_completed", "education_age_exit", "education_payroll"]:
+			if kind not in ["education_appointment", "education_enrollment", "education_completed", "education_age_exit", "education_payroll", "career_transfer_departure", "career_transfer_arrival"]:
 				continue
 			if not _is_nonnegative_integer(event.get("quantity")) or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick):
 				return false
@@ -473,10 +482,18 @@ func _valid_education(state: Dictionary) -> bool:
 					if program_id != "community_school":
 						return false
 					exited_by_program[program_id] = int(exited_by_program.get(program_id, 0)) + int(event.quantity)
+				elif kind == "career_transfer_departure":
+					if not state.has("career_version") or int(event.price) not in [0, 1]:
+						return false
+					transferred_out[program_id] = int(transferred_out.get(program_id, 0)) + int(event.quantity)
+				elif kind == "career_transfer_arrival":
+					if not state.has("career_version") or int(event.price) not in [0, 1]:
+						return false
+					transferred_in[program_id] = int(transferred_in.get(program_id, 0)) + int(event.quantity)
 		if last_appointment != int(record.teachers) or payroll_evidence != int(record.payroll_credits):
 			return false
 		for program_id in EducationScript.PROGRAM_IDS:
-			var expected_completed: int = int(record.qualified[program_id]) + (int(record.youth_completed) if program_id == "community_school" else 0)
+			var expected_completed: int = int(record.qualified[program_id]) + (int(record.youth_completed) if program_id == "community_school" else 0) + int(transferred_out.get(program_id, 0)) - int(transferred_in.get(program_id, 0))
 			if int(completed_by_program.get(program_id, 0)) != expected_completed:
 				return false
 			var active_count: int = int(record.courses.get(program_id, {}).get("count", 0))
@@ -485,6 +502,133 @@ func _valid_education(state: Dictionary) -> bool:
 		if (not record.courses.is_empty() or trained_adults > 0 or int(record.youth_completed) > 0 or int(record.teachers) > 0) and station.owner != state.player_faction_id:
 			return false
 		if not record.courses.is_empty() and (station.get("habitation", []).is_empty() or int(cohort.hab_capacity) < adults + youths + int(cohort.cohorts.children)):
+			return false
+	return true
+
+
+func _valid_careers(state: Dictionary) -> bool:
+	if state.career_version != CareersScript.VERSION or not state.get("career_catalog") is Dictionary:
+		return false
+	var source := CareersScript.new()
+	var expected: Dictionary = {}
+	for track in CareersScript.TRACKS:
+		expected[track] = {
+			"name":str(state.education_catalog[track].name) + " — supervised practicum",
+			"duration":CareersScript.PRACTICUM_TICKS,
+			"energy_per_60":CareersScript.ENERGY_PER_CYCLE,
+			"records_per_60":CareersScript.RECORDS_PER_CYCLE,
+			"wages_per_60":CareersScript.PAY_PER_CYCLE,
+			"prerequisite":track,
+			"workplace":source.workplace_name(track)
+		}
+	if expected != state.career_catalog:
+		return false
+	var departures: Dictionary = {}
+	var arrivals: Dictionary = {}
+	for station in state.stations:
+		if not station.get("careers") is Dictionary:
+			return false
+		var careers: Dictionary = station.careers
+		if careers.size() != 3 or not careers.get("licensed") is Dictionary or not careers.get("apprenticeships") is Dictionary or careers.licensed.size() != CareersScript.TRACKS.size() or careers.apprenticeships.size() > CareersScript.TRACKS.size() or not _is_nonnegative_integer(careers.get("payroll_credits")):
+			return false
+		var rec: Dictionary = state.population.stations.get(str(station.id), {})
+		if rec.is_empty():
+			return false
+		var trainees := 0
+		for track in CareersScript.TRACKS:
+			var certified: Variant = careers.licensed.get(track)
+			if not _is_nonnegative_integer(certified) or int(certified) > int(station.education.qualified[track]):
+				return false
+			var study: Variant = careers.apprenticeships.get(track, {})
+			if not study is Dictionary or not study.is_empty():
+				if not study is Dictionary or study.size() != 3 or not _is_nonnegative_integer(study.get("count")) or int(study.count) < 1 or not _is_nonnegative_integer(study.get("progress")) or int(study.progress) >= CareersScript.PRACTICUM_TICKS or int(study.progress) % CareersScript.SERVICE_INTERVAL != 0 or study.get("status") not in ["Enrolled", "Supervised work", "Needs provisioned residents", "Needs real adult mentor", "Needs working practice facility", "Needs Energy Cells", "Needs recorded_data", "Needs research_notes", "Needs salaries"]:
+					return false
+				if int(study.count) + int(certified) > int(station.education.qualified[track]):
+					return false
+				trainees += int(study.count)
+		if int(station.education.teachers) + trainees > int(rec.cohorts.assigned_workers):
+			return false
+		if not careers.apprenticeships.is_empty() and (station.owner != state.player_faction_id or int(station.education.teachers) < 1 or station.habitation.is_empty()):
+			return false
+		var paid := 0
+		var by_program: Dictionary = {}
+		var practice_complete: Dictionary = {}
+		var local_departures: Dictionary = {}
+		var local_arrivals: Dictionary = {}
+		for event in state.ledger:
+			if str(event.get("station_id", "")) != str(station.id):
+				continue
+			var kind: String = str(event.get("kind", ""))
+			if kind not in ["career_apprenticeship_start", "career_practicum_payroll", "career_practicum_complete", "career_transfer_departure", "career_transfer_arrival"]:
+				continue
+			if not _is_nonnegative_integer(event.get("quantity")) or not _is_number(event.get("amount")) or not _is_nonnegative_integer(event.get("price")) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick):
+				return false
+			if kind == "career_practicum_payroll":
+				if event.ware_id not in ["recorded_data", "research_notes"] or int(event.quantity) != CareersScript.RECORDS_PER_CYCLE or int(event.price) != CareersScript.PAY_PER_CYCLE or int(event.amount) != -CareersScript.PAY_PER_CYCLE:
+					return false
+				paid += -int(event.amount)
+				continue
+			var track: String = str(event.get("ware_id", ""))
+			if kind == "career_apprenticeship_start":
+				if track not in CareersScript.TRACKS or int(event.quantity) < 1 or int(event.amount) != 0 or int(event.price) != 0:
+					return false
+				by_program[track] = int(by_program.get(track, 0)) + int(event.quantity)
+			elif kind == "career_practicum_complete":
+				if track not in CareersScript.TRACKS or int(event.quantity) < 1 or int(event.amount) != 0 or int(event.price) != 0:
+					return false
+				practice_complete[track] = int(practice_complete.get(track, 0)) + int(event.quantity)
+			elif kind in ["career_transfer_departure", "career_transfer_arrival"]:
+				if track not in EducationScript.PROGRAM_IDS or int(event.quantity) < 1 or int(event.amount) != 0 or int(event.price) not in [0, 1] or not event.get("ship_id") is String:
+					return false
+				var key := str(event.ship_id) + "|" + track + "|" + str(event.price)
+				if kind == "career_transfer_departure":
+					departures[key] = int(departures.get(key, 0)) + int(event.quantity)
+					if int(event.price) == 1:
+						local_departures[track] = int(local_departures.get(track, 0)) + int(event.quantity)
+				else:
+					arrivals[key] = int(arrivals.get(key, 0)) + int(event.quantity)
+					if int(event.price) == 1:
+						local_arrivals[track] = int(local_arrivals.get(track, 0)) + int(event.quantity)
+		if paid != int(careers.payroll_credits):
+			return false
+		for track in CareersScript.TRACKS:
+			var enrolled: int = int(by_program.get(track, 0))
+			var completed: int = int(practice_complete.get(track, 0))
+			var working: int = int(careers.apprenticeships.get(track, {}).get("count", 0))
+			if enrolled != completed + working:
+				return false
+			if completed + int(local_arrivals.get(track, 0)) - int(local_departures.get(track, 0)) != int(careers.licensed[track]):
+				return false
+	for ship in state.ships:
+		if not ship.get("career_manifest") is Dictionary:
+			return false
+		var manifest: Dictionary = ship.career_manifest
+		if manifest.is_empty():
+			continue
+		if manifest.size() != 3 or manifest.get("track") not in EducationScript.PROGRAM_IDS or not _is_nonnegative_integer(manifest.get("quantity")) or int(manifest.quantity) < 1 or manifest.get("certified") not is bool:
+			return false
+		if ship.owner != state.player_faction_id or int(ship.get("settler_passengers", 0)) != int(manifest.quantity):
+			return false
+		var origin: Dictionary = {}
+		for station in state.stations:
+			if str(station.id) == str(ship.settler_source_station_id):
+				origin = station
+				break
+		if origin.is_empty() or origin.owner != state.player_faction_id:
+			return false
+		var key := str(ship.id) + "|" + str(manifest.track) + "|" + ("1" if bool(manifest.certified) else "0")
+		if int(departures.get(key, 0)) - int(arrivals.get(key, 0)) < int(manifest.quantity):
+			return false
+	for key in departures:
+		var on_ship := 0
+		for ship in state.ships:
+			var manifest: Dictionary = ship.career_manifest
+			if not manifest.is_empty() and key == str(ship.id) + "|" + str(manifest.track) + "|" + ("1" if bool(manifest.certified) else "0"):
+				on_ship += int(manifest.quantity)
+		if int(departures[key]) - int(arrivals.get(key, 0)) != on_ship:
+			return false
+	for key in arrivals:
+		if not departures.has(key):
 			return false
 	return true
 
