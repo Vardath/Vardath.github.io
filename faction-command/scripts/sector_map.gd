@@ -14,6 +14,8 @@ const EDGE := Color("355367")
 
 var world: Dictionary = {}
 var selected_id := ""
+var selected_object_kind := ""
+var selected_object_id := ""
 
 
 func set_world(value: Dictionary) -> void:
@@ -26,6 +28,15 @@ func select_sector(sector_id: String) -> void:
 		selected_id = sector_id
 		fit_map()
 	queue_redraw()
+
+
+func select_object(kind: String, object_id: String) -> void:
+	if kind not in ["", "ship", "station"]:
+		return
+	if selected_object_kind != kind or selected_object_id != object_id:
+		selected_object_kind = kind
+		selected_object_id = object_id
+		queue_redraw()
 
 
 func _sector_name(sector_id: String) -> String:
@@ -100,8 +111,9 @@ func _draw() -> void:
 		var rect: Rect2 = item.rect
 		if not viewport.intersects(rect):
 			continue
-		draw_rect(rect, Color("152a39"))
-		draw_rect(rect, EDGE, false, 1.0)
+		var chosen: bool = str(item.kind) == selected_object_kind and str(item.id) == selected_object_id
+		draw_rect(rect, Color("214b4c") if chosen else Color("152a39"))
+		draw_rect(rect, ACCENT if chosen else EDGE, false, 2.0 if chosen else 1.0)
 		var inset := 9.0 * zoom_level
 		draw_string(font, rect.position + Vector2(inset, 21.0 * zoom_level), str(item.title), HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - inset * 2.0, title_size, TEXT)
 		draw_string(font, rect.position + Vector2(inset, 41.0 * zoom_level), str(item.subtitle), HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - inset * 2.0, small_size, MUTED)
