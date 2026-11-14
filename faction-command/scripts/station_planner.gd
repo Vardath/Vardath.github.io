@@ -43,6 +43,14 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 		for ware_id in state.get("provisions_catalog", {}).get("habitat_needs_per_60", {}):
 			requirements[ware_id] = int(state.provisions_catalog.habitat_needs_per_60[ware_id])
 		recipes[habitat_id] = {"id":str(habitat_id), "name":str(home.name), "inputs":requirements, "outputs":{}, "cycle_ticks":60}
+	for school_id in state.get("education_catalog", {}):
+		var school: Dictionary = state.education_catalog[school_id]
+		if recipes.has(school_id):
+			errors.append("School ID collides with a production recipe: " + str(school_id))
+			continue
+		# School and teaching records are REAL ongoing demands, not
+		# manufacturing outputs or free graduation tokens.
+		recipes[school_id] = {"id":str(school_id), "name":str(school.name), "inputs":{"energy_cells":int(school.energy_per_60), str(school.material):int(school.material_per_60)}, "outputs":{}, "cycle_ticks":60}
 	if mode not in ["self", "selected", "all"]:
 		errors.append("Choose a valid sourcing mode.")
 	var imported: Dictionary = {}
@@ -151,6 +159,14 @@ func preview(state: Dictionary, requested: Dictionary, mode: String, selected_im
 		var home: Dictionary = state.habitation_catalog[habitat_id]
 		var chosen: int = int(requested.get(habitat_id, 0))
 		module_rows.append({"id":str(habitat_id), "name":str(home.name), "chosen":chosen, "added":int(counts[habitat_id]) - chosen, "total":int(counts[habitat_id]), "housing_capacity":int(home.capacity) * int(counts[habitat_id]), "energy_per_60":int(home.energy_per_60) * int(counts[habitat_id]), "provisions_per_60":state.get("provisions_catalog", {}).get("habitat_needs_per_60", {}).duplicate(true)})
+	for school_id in state.get("education_catalog", {}):
+		if int(counts.get(school_id, 0)) <= 0:
+			continue
+		var school: Dictionary = state.education_catalog[school_id]
+		var chosen: int = int(requested.get(school_id, 0))
+		module_rows.append({"id":str(school_id), "name":str(school.name), "chosen":chosen, "added":int(counts[school_id]) - chosen, "total":int(counts[school_id]), "school_seats":int(school.seats) * int(counts[school_id]), "school_target":str(school.target), "education_energy_per_60":int(school.energy_per_60) * int(counts[school_id]), "education_material":str(school.material)})
+	if not state.get("education_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("school_seats")):
+		warnings.append("Education facilities create classrooms, NOT free students, teachers, skills or research. Enrol real housed residents, appoint existing adults as instructors and physically supply archival records, power and salary credits. College certificates are foundational theory only, not licensed pilots or marines.")
 	if not state.get("habitation_catalog", {}).is_empty() and module_rows.any(func(row): return row.has("housing_capacity")):
 		warnings.append("Habitats provide housing capacity, not instant residents, crew or births. Every service cycle requires real Energy Cells, Potable Water, Food Rations and Medical Supplies; household growth, ageing and species compatibility are future systems.")
 	var ware_rows: Array[Dictionary] = []
