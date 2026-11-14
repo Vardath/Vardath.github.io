@@ -121,6 +121,7 @@ var crew_feedback: Label
 var crew_rename_input: LineEdit
 var crew_quantity: SpinBox
 var crew_transfer_picker: OptionButton
+var crew_captain_swap_button: Button
 
 
 func _ready() -> void:
@@ -1641,6 +1642,10 @@ func _open_crew_screen() -> void:
 	transfer_button.name = "TransferCrewButton"
 	transfer_button.pressed.connect(_transfer_crew)
 	transfer_row.add_child(transfer_button)
+	crew_captain_swap_button = _button("Swap captains")
+	crew_captain_swap_button.name = "SwapCaptainsButton"
+	crew_captain_swap_button.pressed.connect(_swap_crew_captains)
+	transfer_row.add_child(crew_captain_swap_button)
 	var close_button := _button("Close")
 	close_button.name = "CloseCrewButton"
 	close_button.pressed.connect(_close_crew_screen)
@@ -1673,13 +1678,20 @@ func _update_crew_screen() -> void:
 	var capacity: int = int(world.personnel.capacity(ship))
 	var lines: Array[String] = []
 	lines.append("%s · %s\nCaptain: %s (separate from service crew)\nService crew: %d / %d berths" % [ship.name, ship["class"], ship.captain, count, capacity])
+	var captain: Dictionary = ship.captain_profile
+	var crew: Dictionary = ship.crew_profile
+	var pay: Dictionary = ship.payroll
+	var until_pay: int = maxi(0, int(world.personnel.PAYROLL_TICKS) - (int(world.state.tick) - int(pay.last_tick)))
+	lines.append("CAPTAIN PROFILE\n%s\nPiloting skill: %d / 5 · Experience: %d\nMorale: %d / 100" % [captain.id, int(captain.skill), int(captain.experience), int(captain.morale)])
+	lines.append("SERVICE CREW PROGRESSION\nAverage skill: %d / 5 · Total crew experience: %d\nMorale: %d / 100" % [int(crew.skill), int(crew.experience), int(crew.morale)])
+	lines.append("PAYROLL\nCurrent wage: %d CR every %d ticks\nNext payroll in: %d ticks\nOutstanding: %d CR · Total paid: %d CR\nConsecutive unpaid cycles: %d" % [world.personnel._ship_wages(ship), world.personnel.PAYROLL_TICKS, until_pay, int(pay.arrears), int(pay.total_paid), int(pay.unpaid_periods)])
 	lines.append("DOCKSIDE STAFFING\n%s" % ("Docked at " + str(station.name) if not station.is_empty() else "Not docked. Dock at an NPC station in Trade to hire or discharge crew."))
 	if at_npc:
 		lines.append("Available recruits: %d\nHiring cost: %d CR per crew member\nYour faction credits: %d CR" % [int(world.state.crew_pools[station.id]), int(world.personnel.HIRE_COST), int(world.state.starting_credits)])
 	else:
 		lines.append("Recruitment and discharge require an NPC recruitment station. The station pool is finite and hires are paid to its operating budget.")
-	lines.append("CREW TRANSFERS\nTwo player-owned ships must be docked at the same station, with no active orders. Crew move between their berths; no fee is charged.")
-	lines.append("Renaming does not change the ship ID, role, captain, orders, equipment, funds or cargo. Crew services do not replace the separately assigned captain.")
+	lines.append("CREW AND CAPTAIN TRANSFERS\nTwo player-owned ships must be docked at the same station, with no active orders. Move service crew or swap named captains with the selected ship. Captains retain their own skill and morale.")
+	lines.append("Real sector crossings and physical trade or delivery work earn experience. Payroll transfers credits to an NPC agency station; unpaid wages accrue as arrears and reduce morale. Skill and morale do not yet change job speed or efficiency.")
 	crew_info.text = "\n\n".join(lines)
 	var previous_id := ""
 	if crew_transfer_picker.item_count > 0 and crew_transfer_picker.selected >= 0:
@@ -1698,6 +1710,7 @@ func _update_crew_screen() -> void:
 		crew_transfer_picker.set_item_metadata(0, "")
 	crew_transfer_picker.select(selected_index)
 	crew_transfer_picker.disabled = transfers.is_empty()
+	crew_captain_swap_button.disabled = transfers.is_empty()
 	crew_transfer_picker.set_block_signals(false)
 
 
@@ -1728,6 +1741,13 @@ func _transfer_crew() -> void:
 	if crew_transfer_picker.selected >= 0:
 		destination_id = str(crew_transfer_picker.get_item_metadata(crew_transfer_picker.selected))
 	_finish_crew_action(world.personnel.transfer(world, crew_screen_ship_id, destination_id, _crew_quantity_value()))
+
+
+func _swap_crew_captains() -> void:
+	var destination_id := ""
+	if crew_transfer_picker.selected >= 0:
+		destination_id = str(crew_transfer_picker.get_item_metadata(crew_transfer_picker.selected))
+	_finish_crew_action(world.personnel.swap_captains(world, crew_screen_ship_id, destination_id))
 
 
 func _close_crew_screen() -> void:

@@ -107,7 +107,7 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("shipyard_version") and _is_nonnegative_integer(decoded.shipyard_version) and decoded.shipyard_version != 1:
 		return {"ok": false, "reason": "unsupported"}
-	if decoded.has("personnel_version") and _is_nonnegative_integer(decoded.personnel_version) and decoded.personnel_version != 1:
+	if decoded.has("personnel_version") and _is_nonnegative_integer(decoded.personnel_version) and decoded.personnel_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
@@ -227,13 +227,38 @@ func _valid_world(state: Dictionary) -> bool:
 
 
 func _valid_personnel(state: Dictionary) -> bool:
-	if state.personnel_version != 1 or not state.get("crew_pools") is Dictionary or state.crew_pools.is_empty():
+	if state.personnel_version not in [1, 2] or not state.get("crew_pools") is Dictionary or state.crew_pools.is_empty():
 		return false
 	# A station may legitimately be destroyed or removed while NPC ships are
-	# travelling. Keep its saved, dormant roster so station disappearance cannot
-	# corrupt a game or fabricate people; only extant NPC docks can recruit.
+	# travelling. Keep its dormant roster for save compatibility.
 	for station_id in state.crew_pools:
 		if not station_id is String or str(station_id).is_empty() or str(station_id).length() > 128 or not _is_nonnegative_integer(state.crew_pools[station_id]) or int(state.crew_pools[station_id]) > 1000000:
+			return false
+	if state.personnel_version == 1:
+		return true
+	var captain_ids: Dictionary = {}
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			if ship.has("captain_profile") or ship.has("crew_profile") or ship.has("payroll"):
+				return false
+			continue
+		if not ship.get("captain_profile") is Dictionary or not ship.get("crew_profile") is Dictionary or not ship.get("payroll") is Dictionary:
+			return false
+		var captain: Dictionary = ship.captain_profile
+		var crew: Dictionary = ship.crew_profile
+		var pay: Dictionary = ship.payroll
+		if not captain.get("id") is String or str(captain.id).is_empty() or str(captain.id).length() > 128 or captain_ids.has(captain.id):
+			return false
+		captain_ids[captain.id] = true
+		for profile in [captain, crew]:
+			if not _is_nonnegative_integer(profile.get("experience")) or int(profile.experience) > 1000000000 or not _is_nonnegative_integer(profile.get("skill")) or int(profile.skill) > 5 or not _is_nonnegative_integer(profile.get("morale")) or int(profile.morale) > 100:
+				return false
+		if int(captain.skill) != mini(5, int(int(captain.experience) / 25)) or int(crew.skill) != mini(5, int(int(crew.experience) / maxi(1, int(ship.crew)) / 25)):
+			return false
+		for field in ["last_tick", "arrears", "total_paid", "unpaid_periods"]:
+			if not _is_nonnegative_integer(pay.get(field)) or int(pay[field]) > 1000000000:
+				return false
+		if int(pay.last_tick) > int(state.tick) or not pay.get("station_id") is String or str(pay.station_id).length() > 128:
 			return false
 	return true
 

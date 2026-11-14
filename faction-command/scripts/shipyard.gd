@@ -122,6 +122,7 @@ func _assemble_ship(world: RefCounted, order: Dictionary, wharf: Dictionary) -> 
 		"build_supply":world.build_supply._empty_job(),
 		"station_supply":world.station_supply._empty_job()
 	}
+	world.personnel.initialize_ship(vessel, int(world.state.tick), str(wharf.id))
 	return vessel
 
 

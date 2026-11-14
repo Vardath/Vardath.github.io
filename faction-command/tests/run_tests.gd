@@ -43,6 +43,9 @@ func _without_player_role(ship: Dictionary) -> Dictionary:
 	copy.erase("player_trader")
 	copy.erase("build_supply")
 	copy.erase("station_supply")
+	copy.erase("captain_profile")
+	copy.erase("crew_profile")
+	copy.erase("payroll")
 	return copy
 
 
@@ -50,12 +53,28 @@ func _without_station_supply(ships: Array) -> Array:
 	var copy := ships.duplicate(true)
 	for ship in copy:
 		ship.erase("station_supply")
+		ship.erase("captain_profile")
+		ship.erase("crew_profile")
+		ship.erase("payroll")
+	return copy
+
+
+func _without_progression(ships: Array) -> Array:
+	var copy := ships.duplicate(true)
+	for ship in copy:
+		ship.erase("captain_profile")
+		ship.erase("crew_profile")
+		ship.erase("payroll")
 	return copy
 
 
 func _strip_shipyard(state: Dictionary) -> void:
 	state.erase("personnel_version")
 	state.erase("crew_pools")
+	for ship in state.ships:
+		ship.erase("captain_profile")
+		ship.erase("crew_profile")
+		ship.erase("payroll")
 	state.erase("shipyard_version")
 	state.erase("shipyard")
 
@@ -531,7 +550,7 @@ func _run() -> void:
 			_expect(int(station.stock[ware_id]) >= 0, "long run never creates negative stock: " + str(station.id) + "/" + str(ware_id))
 	_expect(int(soak._find_station("hearth_exchange").stock.energy_cells) == 300 and int(soak._find_station("hearth_exchange").production[0].cycles) == 45, "solar output stops exactly at capacity in a long run")
 	_expect(int(soak._find_station("cinder_depot").stock.ore) == 12 and int(soak._find_station("cinder_depot").deposits.ore) == 1188 and soak._find_station("cinder_depot").production[0].status == "Needs Energy Cells", "extractor stops after consuming its finite starting energy")
-	_expect(_total_credits(soak.state) == soak_credits and soak.state.ledger.is_empty(), "long production run creates neither credits nor trade entries")
+	_expect(_total_credits(soak.state) == soak_credits and soak.state.ledger.all(func(entry): return entry.kind == "crew_payroll"), "long production run creates neither credits nor trade entries; recurring wages remain internally funded")
 
 	var trading_legacy: Dictionary = economy.snapshot()
 	_strip_construction(trading_legacy)
@@ -605,7 +624,7 @@ func _run() -> void:
 	for _step in range(220):
 		var previous_cargo: Dictionary = npc.cargo.duplicate(true)
 		logistics.advance_ticks(1)
-		if _total_credits(logistics.state) != npc_start_credits or int(logistics.state.starting_credits) != 25000:
+		if _total_credits(logistics.state) != npc_start_credits or int(logistics.state.starting_credits) + int(logistics.state.ships[0].payroll.total_paid) != 25000:
 			logistics_valid = false
 		if logistics.cargo_volume(str(npc.id)) > int(npc.cargo_capacity):
 			logistics_valid = false
@@ -1058,6 +1077,9 @@ func _run() -> void:
 	var migrated_ship: Dictionary = migrated_build.state.ships[0].duplicate(true)
 	migrated_ship.erase("build_supply")
 	migrated_ship.erase("station_supply")
+	migrated_ship.erase("captain_profile")
+	migrated_ship.erase("crew_profile")
+	migrated_ship.erase("payroll")
 	_expect(migrated_ship == legacy_construction.ships[0] and migrated_build.state.ships[1] == legacy_construction.ships[1] and migrated_build.state.ledger == legacy_construction.ledger and migrated_build.state.starting_credits == legacy_construction.starting_credits, "construction migration preserves player property, NPC logistics, orders, credits and ledger")
 	_expect(int(migrated_build._find_ship("npc_builder_001").credits) == 0 and migrated_build.state.build_sites.is_empty(), "migration adds no free money, sites or materials")
 	var bad_construction: Dictionary = build_world.snapshot()
@@ -1252,7 +1274,7 @@ func _run() -> void:
 	supply_restored.advance_ticks(250)
 	_expect(supply_world.snapshot() == supply_restored.snapshot(), "automatic supply continues deterministically after save and reload")
 	_expect(int(supply_site.completed) == 3 and not supply_player.build_supply.enabled and supply_player.role == "Unassigned", "multiple cargo-sized trips supply the site and the role ends after delivery")
-	_expect(original_stock - int(supply_foundry.stock.alloy_plates) == 18 and int(supply_world.state.starting_credits) == 25000 - 900 - 18 * 20, "the supplier buys exactly the required real materials at the market price")
+	_expect(original_stock - int(supply_foundry.stock.alloy_plates) == 18 and int(supply_world.state.starting_credits) + int(supply_player.payroll.total_paid) == 25000 - 900 - 18 * 20, "the supplier buys exactly the required real materials at the market price")
 	_expect(_total_credits(supply_world.state) == supply_credits and int(supply_player.cargo.get("alloy_plates", 0)) == 0, "repeated supply trips conserve credits and do not fabricate or strand required cargo")
 
 	var poor_supplier = WorldScript.new()
@@ -1321,6 +1343,7 @@ func _run() -> void:
 	var rival_ship: Dictionary = competing_supply.state.ships[0].duplicate(true)
 	rival_ship.id = "ship_002"
 	rival_ship.name = "Second Light"
+	competing_supply.personnel.initialize_ship(rival_ship, int(competing_supply.state.tick), "hearth_exchange")
 	competing_supply.state.ships.append(rival_ship)
 	var competing_supply_site: String = competing_supply.construction.place(competing_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
 	competing_supply.build_supply.assign(competing_supply, "ship_001", competing_supply_site)
@@ -1341,10 +1364,11 @@ func _run() -> void:
 		module.progress = 0
 	var owned_site_id: String = owned_supply.construction.place(owned_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
 	var before_owned_credits: int = int(owned_supply.state.starting_credits)
+	var before_owned_payroll: int = int(owned_supply.state.ships[0].payroll.total_paid)
 	var before_owned_stock: int = int(owned_station.stock.alloy_plates)
 	owned_supply.build_supply.assign(owned_supply, "ship_001", owned_site_id)
 	owned_supply.advance_ticks(1)
-	_expect(int(owned_station.stock.alloy_plates) == before_owned_stock - 6 and int(owned_supply.state.starting_credits) == before_owned_credits, "automatic supply prioritizes free physical stock at a player station")
+	_expect(int(owned_station.stock.alloy_plates) == before_owned_stock - 6 and int(owned_supply.state.starting_credits) + int(owned_supply.state.ships[0].payroll.total_paid) - before_owned_payroll == before_owned_credits, "automatic supply prioritizes free physical stock at a player station")
 	_expect(int(owned_supply.construction.find_site(owned_supply, owned_site_id).build_storage.get("alloy_plates", 0)) == 6 or owned_supply.construction.find_site(owned_supply, owned_site_id).tasks[0].started, "owned station stock is transferred to the build site before use")
 
 	var old_supply: Dictionary = saved_trip.duplicate(true)
@@ -1359,6 +1383,9 @@ func _run() -> void:
 	var upgraded_ship: Dictionary = supply_upgrade.state.ships[0].duplicate(true)
 	upgraded_ship.erase("build_supply")
 	upgraded_ship.erase("station_supply")
+	upgraded_ship.erase("captain_profile")
+	upgraded_ship.erase("crew_profile")
+	upgraded_ship.erase("payroll")
 	_expect(upgraded_ship == old_supply.ships[0] and supply_upgrade.state.ledger == old_supply.ledger and supply_upgrade.state.starting_credits == old_supply.starting_credits, "supply migration preserves ship orders, cargo, credits and ledger")
 	var invalid_supply: Dictionary = supply_world.snapshot()
 	invalid_supply.ships[0].build_supply.enabled = true
@@ -1659,6 +1686,7 @@ func _run() -> void:
 	var station_setup: Dictionary = station_world.snapshot()
 	var station_money := _total_credits(station_world.state)
 	var station_wallet: int = int(station_world.state.starting_credits)
+	var station_wages_before: int = int(station_world.state.ships[0].payroll.total_paid)
 	var station_ore: int = int(station_world._find_station("cinder_depot").stock.ore)
 	_expect(station_world.station_supply.assign(station_world, "ship_001", str(supplied_station.id), 18).ok and station_ship.role == "Station Supplier", "the player assigns ongoing input supply with a fixed purchase cap")
 	station_world.advance_ticks(1)
@@ -1673,7 +1701,7 @@ func _run() -> void:
 	station_world.advance_ticks(40)
 	station_reload.advance_ticks(40)
 	_expect(station_world.snapshot() == station_reload.snapshot(), "ongoing station logistics continue deterministically after reload")
-	_expect(int(station_ship.station_supply.spent) == 18 and int(station_world.state.starting_credits) == station_wallet - 18 and int(station_world._find_station("cinder_depot").stock.ore) == station_ore - 3, "real ore is bought at its market price without exceeding the allowance")
+	_expect(int(station_ship.station_supply.spent) == 18 and int(station_world.state.starting_credits) + int(station_ship.payroll.total_paid) - station_wages_before == station_wallet - 18 and int(station_world._find_station("cinder_depot").stock.ore) == station_ore - 3, "real ore is bought at its market price without exceeding the allowance")
 	_expect(station_ship.station_supply.enabled and int(supplied_station.production[0].cycles) > 0 and _total_credits(station_world.state) == station_money, "delivered inputs support real production and all credits remain accounted for")
 	var station_bad_update: Dictionary = station_world.snapshot()
 	_expect(not station_world.station_supply.assign(station_world, "ship_001", str(supplied_station.id), 17).ok and station_world.snapshot() == station_bad_update, "an updated cap cannot be reduced below the amount already spent")
@@ -1761,6 +1789,7 @@ func _run() -> void:
 	var second_supplier: Dictionary = competing_stations.state.ships[0].duplicate(true)
 	second_supplier.id = "ship_002"
 	second_supplier.name = "Second Light"
+	competing_stations.personnel.initialize_ship(second_supplier, int(competing_stations.state.tick), "hearth_exchange")
 	competing_stations.state.ships.append(second_supplier)
 	competing_stations.station_supply.assign(competing_stations, "ship_001", str(supplied_station.id), 36)
 	competing_stations.station_supply.assign(competing_stations, "ship_002", str(supplied_station.id), 36)
@@ -1843,7 +1872,7 @@ func _run() -> void:
 	var freighter_ship: Dictionary = wharf_world._find_ship(str(wharf_second.ship_id))
 	_expect(not courier_ship.is_empty() and not freighter_ship.is_empty() and courier_ship.owner == "player" and freighter_ship.owner == "player" and courier_ship.sector == "vellum_gate" and freighter_ship.sector == "vellum_gate", "completed ships exist as separately owned assets at the actual wharf sector")
 	_expect(int(courier_ship.cargo_capacity) == 50 and int(freighter_ship.cargo_capacity) == 180 and courier_ship.has("player_trader") and freighter_ship.has("build_supply") and freighter_ship.has("station_supply"), "new ships have distinct cargo capacities and full existing ship-role compatibility")
-	_expect(_total_credits(wharf_world.state) == initial_wharf_money and wharf_world.state.ledger.back().kind == "ship_delivery", "delivering ships cannot duplicate money and appears in the ledger")
+	_expect(_total_credits(wharf_world.state) == initial_wharf_money and wharf_world.state.ledger.filter(func(entry): return entry.kind == "ship_delivery").size() == 2, "delivering ships cannot duplicate money and appears in the ledger")
 	_expect(save_store.save_game(test_root + "/shipyard-completed.json", wharf_world.snapshot()) == OK, "both completed commissioned ships pass strict save validation")
 	_expect(wharf_world.set_player_trader(str(freighter_ship.id), true) and wharf_world.queue_fly_to(str(freighter_ship.id), "cinder_veil") and wharf_world.state.ships[0].orders.is_empty(), "new freighter can take real autonomous and manual orders independently of First Light")
 
@@ -1878,7 +1907,7 @@ func _run() -> void:
 	var old_wharf_read: Dictionary = save_store.load_game(old_wharf_save)
 	var wharf_migrated = WorldScript.new()
 	_expect(bool(old_wharf_read.get("ok", false)) and wharf_migrated.restore_snapshot(old_wharf_read.state) == OK and wharf_migrated.state.shipyard_version == 1, "older games gain an empty wharf order catalogue")
-	_expect(wharf_migrated.state.shipyard.orders.is_empty() and wharf_migrated.state.ships == old_wharf_state.ships and wharf_migrated.state.starting_credits == old_wharf_state.starting_credits and wharf_migrated.state.ledger == old_wharf_state.ledger, "migration preserves every existing vessel, order, financial record and cargo unit without granting free ships")
+	_expect(wharf_migrated.state.shipyard.orders.is_empty() and _without_progression(wharf_migrated.state.ships) == old_wharf_state.ships and wharf_migrated.state.starting_credits == old_wharf_state.starting_credits and wharf_migrated.state.ledger == old_wharf_state.ledger, "migration preserves every existing vessel, order, financial record and cargo unit without granting free ships")
 	var bad_shipyard: Dictionary = wharf_world.snapshot()
 	bad_shipyard.shipyard.orders[0].progress = 999
 	_expect(save_store.save_game(test_root + "/bad-shipyard.json", bad_shipyard) != OK, "save validator rejects impossible shipyard progress")
@@ -1905,7 +1934,7 @@ func _run() -> void:
 	var crew_market: Dictionary = crew_world._find_station("hearth_exchange")
 	var crew_total_before: int = _total_credits(crew_world.state)
 	var initial_roster: int = int(crew_world.state.crew_pools.hearth_exchange)
-	_expect(crew_world.state.personnel_version == 1 and initial_roster == 12 and crew_world.personnel.capacity(crew_first) == 8, "finite recruitment pool and courier crew berth limit are initialized")
+	_expect(crew_world.state.personnel_version == 2 and initial_roster == 12 and crew_world.personnel.capacity(crew_first) == 8, "finite recruitment pool and courier crew berth limit are initialized")
 	var rename_before: Dictionary = crew_world.snapshot()
 	_expect(not crew_world.personnel.rename(crew_world, "npc_builder_001", "Owned Now").ok and crew_world.snapshot() == rename_before, "NPC vessels cannot be renamed")
 	_expect(not crew_world.personnel.rename(crew_world, "ship_001", " \t ").ok and crew_world.snapshot() == rename_before, "blank ship names cannot alter world state")
@@ -1977,23 +2006,190 @@ func _run() -> void:
 	var old_personnel: Dictionary = transfer_world.snapshot()
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
+	for old_staff_ship in old_personnel.ships:
+		old_staff_ship.erase("captain_profile")
+		old_staff_ship.erase("crew_profile")
+		old_staff_ship.erase("payroll")
 	_expect(save_store.save_game(test_root + "/crew-legacy.json", old_personnel) == OK, "old shipyard save without personnel roster remains readable")
 	var old_personnel_read: Dictionary = save_store.load_game(test_root + "/crew-legacy.json")
 	var migrated_personnel = WorldScript.new()
-	_expect(bool(old_personnel_read.get("ok", false)) and migrated_personnel.restore_snapshot(old_personnel_read.state) == OK and migrated_personnel.state.personnel_version == 1, "old save migrates to finite recruitment rosters without a new game")
-	_expect(migrated_personnel.state.ships == old_personnel.ships and migrated_personnel.state.starting_credits == old_personnel.starting_credits and migrated_personnel.state.ledger == old_personnel.ledger, "migration preserves every existing ship, captain, order, crew member and credit")
+	_expect(bool(old_personnel_read.get("ok", false)) and migrated_personnel.restore_snapshot(old_personnel_read.state) == OK and migrated_personnel.state.personnel_version == 2, "old save migrates to finite recruitment rosters without a new game")
+	_expect(_without_progression(migrated_personnel.state.ships) == old_personnel.ships and migrated_personnel.state.starting_credits == old_personnel.starting_credits and migrated_personnel.state.ledger == old_personnel.ledger, "migration preserves every existing ship, captain, order, crew member and credit")
 	var bad_pool: Dictionary = crew_world.snapshot()
 	bad_pool.crew_pools.hearth_exchange = -1
 	_expect(save_store.save_game(test_root + "/crew-bad-market.json", bad_pool) != OK, "negative roster size is rejected by save validation")
 	var future_personnel_path := test_root + "/crew-future.json"
 	_expect(save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK and save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK, "future personnel schema test has a valid backup")
 	var future_personnel: Dictionary = crew_world.snapshot()
-	future_personnel.personnel_version = 2
+	future_personnel.personnel_version = 3
 	var future_personnel_payload := Marshalls.variant_to_base64(future_personnel, false)
 	var future_personnel_file := FileAccess.open(future_personnel_path, FileAccess.WRITE)
 	future_personnel_file.store_string(JSON.stringify({"format_version":1, "payload":future_personnel_payload, "checksum":future_personnel_payload.sha256_text()}))
 	future_personnel_file.close()
 	_expect(save_store.load_game(future_personnel_path).get("reason") == "unsupported", "future personnel versions cannot silently revert to previous save backups")
+
+	# Pass 23: real periodic wages, individual captain experience and aggregate
+	# crew training. A payroll debit always credits an existing NPC wage agency.
+	var payroll_world = WorldScript.new()
+	_expect(payroll_world.load_starter() == OK, "captain progression world initializes")
+	_disable_npc_trading(payroll_world)
+	var payroll_ship: Dictionary = payroll_world._find_ship("ship_001")
+	var payroll_station: Dictionary = payroll_world._find_station("hearth_exchange")
+	var payroll_initial_money: int = _total_credits(payroll_world.state)
+	var payroll_credits: int = int(payroll_world.state.starting_credits)
+	var payroll_market_credits: int = int(payroll_station.credits)
+	_expect(payroll_world.state.personnel_version == 2 and payroll_ship.captain_profile.id == "captain_ship_001" and payroll_ship.captain == "Mira Vale", "captain has a stable identity separate from the ship name")
+	_expect(payroll_ship.captain_profile.skill == 0 and payroll_ship.crew_profile.skill == 0 and payroll_ship.captain_profile.morale == 75 and payroll_ship.crew_profile.morale == 75, "captain and crew start with separate zero skills and normal morale")
+	_expect(payroll_ship.payroll.last_tick == 0 and payroll_ship.payroll.arrears == 0 and payroll_world.personnel._ship_wages(payroll_ship) == 18, "initial payroll includes one pilot and two existing service crew")
+	payroll_world.advance_ticks(59)
+	_expect(int(payroll_world.state.starting_credits) == payroll_credits and int(payroll_ship.payroll.total_paid) == 0 and payroll_ship.payroll.arrears == 0, "simulated salaries do not debit early")
+	payroll_world.advance_ticks(1)
+	_expect(int(payroll_world.state.starting_credits) == payroll_credits - 18 and int(payroll_ship.payroll.total_paid) == 18, "first crew payroll transfers exactly eighteen existing credits to the agency station")
+	_expect(_total_credits(payroll_world.state) == payroll_initial_money and payroll_world.state.ledger.back().kind == "crew_payroll" and int(payroll_world.state.ledger.back().amount) == -18, "wages conserve credits and appear in the main transaction ledger")
+	_expect(payroll_ship.captain_profile.morale == 76 and payroll_ship.crew_profile.morale == 76 and payroll_ship.payroll.unpaid_periods == 0, "funded payroll improves captain and crew morale")
+	payroll_world.advance_ticks(60)
+	_expect(payroll_ship.payroll.total_paid == 36 and payroll_ship.payroll.last_tick == 120 and int(payroll_world.state.starting_credits) == payroll_credits - 36 and _total_credits(payroll_world.state) == payroll_initial_money, "second payroll interval charges exactly once without minting credits")
+	var payroll_path := test_root + "/captain-payroll.json"
+	_expect(save_store.save_game(payroll_path, payroll_world.snapshot()) == OK, "paid captain and crew wages are saveable")
+	var payroll_saved: Dictionary = save_store.load_game(payroll_path)
+	var payroll_restored = WorldScript.new()
+	_expect(bool(payroll_saved.get("ok", false)) and payroll_restored.restore_snapshot(payroll_saved.state) == OK and payroll_restored.snapshot() == payroll_world.snapshot(), "periodic payroll state restores without paying twice")
+
+	var wage_shortage = WorldScript.new()
+	wage_shortage.load_starter()
+	_disable_npc_trading(wage_shortage)
+	wage_shortage.state.starting_credits = 0
+	var unfunded_ship: Dictionary = wage_shortage._find_ship("ship_001")
+	wage_shortage.advance_ticks(180)
+	_expect(unfunded_ship.payroll.arrears == 54 and unfunded_ship.payroll.unpaid_periods == 3 and unfunded_ship.payroll.total_paid == 0 and wage_shortage.state.starting_credits == 0, "three failed paydays accrue exactly 54 credits of wage debt without overdrawing")
+	_expect(unfunded_ship.captain_profile.morale == 60 and unfunded_ship.crew_profile.morale == 60, "three missed payrolls lower actual morale without removing or duplicating crew")
+	var unfunded_path := test_root + "/captain-wages-owed.json"
+	_expect(save_store.save_game(unfunded_path, wage_shortage.snapshot()) == OK, "wage arrears and morale decline persist in the save format")
+	var unpaid_saved: Dictionary = save_store.load_game(unfunded_path)
+	var unpaid_restored = WorldScript.new()
+	_expect(bool(unpaid_saved.get("ok", false)) and unpaid_restored.restore_snapshot(unpaid_saved.state) == OK and unpaid_restored.snapshot() == wage_shortage.snapshot(), "unpaid payroll round-trips without clearing debt")
+	wage_shortage.state.starting_credits = 100
+	var shortage_agency_before: int = int(wage_shortage._find_station("hearth_exchange").credits)
+	wage_shortage.advance_ticks(60)
+	_expect(unfunded_ship.payroll.arrears == 0 and unfunded_ship.payroll.unpaid_periods == 0 and unfunded_ship.payroll.total_paid == 72 and wage_shortage.state.starting_credits == 28, "restored funding pays all accrued wages and the new payroll once")
+	_expect(int(wage_shortage._find_station("hearth_exchange").credits) == shortage_agency_before + 72 and unfunded_ship.captain_profile.morale == 61, "arrears repayment conserves station money and morale recovers gradually")
+	var no_double_salary: Dictionary = wage_shortage.snapshot()
+	wage_shortage.advance_ticks(0)
+	_expect(wage_shortage.snapshot() == no_double_salary, "saving or zero-time advancement never pays wages twice")
+
+	# Training is earned from completed movement and actual cargo exchanges,
+	# not simply from an idling selected role or uncompleted travel.
+	var skill_world = WorldScript.new()
+	skill_world.load_starter()
+	_disable_npc_trading(skill_world)
+	var skill_ship: Dictionary = skill_world._find_ship("ship_001")
+	_expect(skill_world.queue_fly_to("ship_001", "opal_crossing"), "training uses a real connected sector crossing")
+	skill_world.advance_ticks(4)
+	_expect(int(skill_ship.captain_profile.experience) == 0 and int(skill_ship.crew_profile.experience) == 0, "an incomplete sector crossing grants no captain or crew experience")
+	skill_world.advance_ticks(1)
+	_expect(skill_ship.sector == "opal_crossing" and skill_ship.captain_profile.experience == 2 and skill_ship.crew_profile.experience == 2, "a completed sector crossing trains its assigned captain and aboard crew")
+	skill_world.advance_ticks(3)
+	_expect(skill_ship.captain_profile.experience == 2 and skill_ship.crew_profile.experience == 2, "idle time after arrival grants no additional experience")
+	_expect(skill_world.queue_fly_to("ship_001", "hearthreach"), "pilot can return over the same real route")
+	skill_world.advance_ticks(5)
+	_expect(skill_ship.captain_profile.experience == 4 and skill_ship.crew_profile.experience == 4, "a second completed crossing grants exactly one additional award")
+	_expect(skill_world.dock_ship("ship_001", "hearth_exchange").ok, "crew can use existing market trades for work experience")
+	for _purchase in range(25):
+		skill_world.trade("ship_001", "hearth_exchange", "energy_cells", 1, true)
+	_expect(skill_ship.captain_profile.experience == 29 and skill_ship.captain_profile.skill == 1, "twenty-five physical purchases improve this captain's piloting skill to level one")
+	_expect(skill_ship.crew_profile.experience == 54 and skill_ship.crew_profile.skill == 1 and skill_ship.crew == 2, "aboard crew gain aggregate experience from actual purchases without new personnel")
+	var trained_xp: int = int(skill_ship.crew_profile.experience)
+	skill_world.advance_ticks(2)
+	_expect(skill_ship.crew_profile.experience == trained_xp, "docked idle crews do not train themselves")
+	var skill_balance_before: int = _total_credits(skill_world.state)
+	_expect(skill_world.personnel.hire(skill_world, "ship_001", 2).ok and skill_ship.crew_profile.experience == trained_xp and skill_ship.crew_profile.skill == 0, "inexperienced recruits dilute average crew skill without fabricating prior experience")
+	_expect(_total_credits(skill_world.state) == skill_balance_before, "adding trainee crew is still a real money transfer, not a credit source")
+
+	# Captains are distinct people: switching command between co-docked owned
+	# hulls keeps a captain's own experience and morale attached to that pilot.
+	var captain_world = WorldScript.new()
+	captain_world.load_starter()
+	_disable_npc_trading(captain_world)
+	var captain_contract: Dictionary = captain_world.shipyard.place_order(captain_world, "freighter_mk1")
+	captain_world.advance_ticks(48)
+	var original_hull: Dictionary = captain_world._find_ship("ship_001")
+	var new_hull: Dictionary = captain_world._find_ship(str(captain_contract.ship_id))
+	_expect(captain_contract.ok and not new_hull.is_empty() and original_hull.captain_profile.id != new_hull.captain_profile.id, "real new freighter has a distinct named captain profile")
+	_expect(captain_world.queue_fly_to("ship_001", "vellum_gate"), "first player pilot travels physically to the wharf for exchange")
+	captain_world.advance_ticks(20)
+	_expect(captain_world.dock_ship("ship_001", "vellum_foundry").ok, "two player ships physically share the same wharf")
+	var original_captain_id: String = str(original_hull.captain_profile.id)
+	var original_captain_name: String = str(original_hull.captain)
+	var second_captain_id: String = str(new_hull.captain_profile.id)
+	var second_captain_name: String = str(new_hull.captain)
+	var captain_xp_before: int = int(original_hull.captain_profile.experience)
+	var captain_funds_before: int = _total_credits(captain_world.state)
+	var changed: Dictionary = captain_world.personnel.swap_captains(captain_world, "ship_001", str(new_hull.id))
+	_expect(changed.ok and original_hull.captain_profile.id == second_captain_id and new_hull.captain_profile.id == original_captain_id, "swapping co-docked captains moves their unique identities, never copies them")
+	_expect(original_hull.captain == second_captain_name and new_hull.captain == original_captain_name and int(new_hull.captain_profile.experience) == captain_xp_before, "actual captain names and accumulated experience travel together")
+	_expect(_total_credits(captain_world.state) == captain_funds_before and captain_world.state.ledger.back().kind == "captain_swap" and int(captain_world.state.ledger.back().amount) == 0, "a same-dock captain swap transfers neither money nor service crew")
+	var captain_swap_path := test_root + "/captain-swapped.json"
+	_expect(save_store.save_game(captain_swap_path, captain_world.snapshot()) == OK, "reassigned unique captains and payroll are persisted safely")
+	var swapped_saved: Dictionary = save_store.load_game(captain_swap_path)
+	var swapped_restored = WorldScript.new()
+	_expect(bool(swapped_saved.get("ok", false)) and swapped_restored.restore_snapshot(swapped_saved.state) == OK and swapped_restored.snapshot() == captain_world.snapshot(), "captain transfers survive save/load without replacing ship orders")
+	var denied_captain: Dictionary = captain_world.snapshot()
+	_expect(not captain_world.personnel.swap_captains(captain_world, "ship_001", "npc_builder_001").ok and captain_world.snapshot() == denied_captain, "NPC captains cannot be silently acquired")
+	_expect(not captain_world.personnel.swap_captains(captain_world, "ship_001", "ship_001").ok and captain_world.snapshot() == denied_captain, "captains cannot swap with themselves")
+	captain_world.queue_fly_to("ship_001", "cinder_veil")
+	var captain_moving: Dictionary = captain_world.snapshot()
+	_expect(not captain_world.personnel.swap_captains(captain_world, "ship_001", str(new_hull.id)).ok and captain_world.snapshot() == captain_moving, "a captain cannot leave a vessel with active fly orders")
+
+	# Transfer the accumulated training of service crew without duplication.
+	var training_transfer = WorldScript.new()
+	training_transfer.load_starter()
+	_disable_npc_trading(training_transfer)
+	var training_order: Dictionary = training_transfer.shipyard.place_order(training_transfer, "freighter_mk1")
+	training_transfer.advance_ticks(48)
+	var trained_source: Dictionary = training_transfer._find_ship("ship_001")
+	var trained_destination: Dictionary = training_transfer._find_ship(str(training_order.ship_id))
+	training_transfer.queue_fly_to("ship_001", "vellum_gate")
+	training_transfer.advance_ticks(20)
+	training_transfer.dock_ship("ship_001", "vellum_foundry")
+	var total_training: int = int(trained_source.crew_profile.experience) + int(trained_destination.crew_profile.experience)
+	_expect(total_training > 0, "the original ship's real sector journey has already earned experience to transfer")
+	_expect(training_transfer.personnel.transfer(training_transfer, "ship_001", str(trained_destination.id), 1).ok, "physical service crew can be transferred after actual route training")
+	_expect(int(trained_source.crew_profile.experience) + int(trained_destination.crew_profile.experience) == total_training and int(trained_source.crew) == 1 and int(trained_destination.crew) == 5, "transfer conserves exact aggregate earned experience and personnel headcount")
+	_expect(save_store.save_game(test_root + "/crew-progression-transfer.json", training_transfer.snapshot()) == OK, "trained transferred crew remain valid saved property")
+
+	# Pre-progression personnel v1 saves are upgraded without retroactive wage
+	# bills, captain replacements, existing crew resets or lost route orders.
+	var old_progression: Dictionary = captain_world.snapshot()
+	old_progression.personnel_version = 1
+	for legacy_ship in old_progression.ships:
+		legacy_ship.erase("captain_profile")
+		legacy_ship.erase("crew_profile")
+		legacy_ship.erase("payroll")
+	var legacy_progression_path := test_root + "/personnel-v1-upgrade.json"
+	_expect(save_store.save_game(legacy_progression_path, old_progression) == OK, "original personnel v1 saves are still readable")
+	var legacy_progression_read: Dictionary = save_store.load_game(legacy_progression_path)
+	var progressed_restore = WorldScript.new()
+	_expect(bool(legacy_progression_read.get("ok", false)) and progressed_restore.restore_snapshot(legacy_progression_read.state) == OK and progressed_restore.state.personnel_version == 2, "personnel v1 migrations create captain and payroll profiles")
+	_expect(progressed_restore.state.ships.size() == old_progression.ships.size() and progressed_restore.state.ships[0].captain == old_progression.ships[0].captain and progressed_restore.state.ships[0].orders == old_progression.ships[0].orders and progressed_restore.state.ships[0].crew == old_progression.ships[0].crew, "migration preserves names, existing captains, ship orders and all crew counts")
+	_expect(progressed_restore.state.ships[0].payroll.arrears == 0 and progressed_restore.state.ships[0].payroll.last_tick == progressed_restore.state.tick and progressed_restore.state.starting_credits == old_progression.starting_credits, "migration cannot invent back pay or silently debit player funds")
+	var corrupt_captain: Dictionary = captain_world.snapshot()
+	corrupt_captain.ships.back().captain_profile = corrupt_captain.ships[0].captain_profile.duplicate(true)
+	_expect(save_store.save_game(test_root + "/duplicate-captain.json", corrupt_captain) != OK, "save validation blocks duplicating an individual captain identity")
+	var corrupt_morale: Dictionary = captain_world.snapshot()
+	corrupt_morale.ships[0].captain_profile.morale = 101
+	_expect(save_store.save_game(test_root + "/invalid-morale.json", corrupt_morale) != OK, "captain morale cannot exceed 100 in a valid save")
+	var corrupt_payroll: Dictionary = captain_world.snapshot()
+	corrupt_payroll.ships[0].payroll.arrears = -10
+	_expect(save_store.save_game(test_root + "/negative-payroll.json", corrupt_payroll) != OK, "negative crew wage debt is forbidden")
+	var future_progression: Dictionary = captain_world.snapshot()
+	future_progression.personnel_version = 3
+	var future_progression_path := test_root + "/future-personnel-v3.json"
+	_expect(save_store.save_game(future_progression_path, captain_world.snapshot()) == OK and save_store.save_game(future_progression_path, captain_world.snapshot()) == OK, "personnel future-version test prepares a valid backup")
+	var future_progression_payload := Marshalls.variant_to_base64(future_progression, false)
+	var future_progression_file := FileAccess.open(future_progression_path, FileAccess.WRITE)
+	future_progression_file.store_string(JSON.stringify({"format_version":1, "payload":future_progression_payload, "checksum":future_progression_payload.sha256_text()}))
+	future_progression_file.close()
+	_expect(save_store.load_game(future_progression_path).get("reason") == "unsupported", "personnel v3 saves never downgrade through a backup")
 
 	# Godot 4.4's headless display can default to 64x64 regardless of project
 	# window settings. Test the actual intended landscape viewport explicitly.
@@ -2489,6 +2685,7 @@ func _run() -> void:
 	second_ship.player_trader = {"enabled":false, "phase":"idle", "source_id":"", "destination_id":"", "ware_id":"", "quantity":0, "managed_quantity":0, "retry_ticks":0}
 	second_ship.build_supply = property_world.build_supply._empty_job()
 	second_ship.station_supply = property_world.station_supply._empty_job()
+	property_world.personnel.initialize_ship(second_ship, int(property_world.state.tick), "vellum_foundry")
 	property_world.state.ships.append(second_ship)
 	screen._refresh_world_display()
 	_expect(screen.property_count_label.text.contains("2 ships") and screen.property_count_label.text.contains("1 stations") and screen.property_count_label.text.contains("1 sites"), "property directory lists owned ships, working stations and active sites separately")
@@ -2700,6 +2897,60 @@ func _run() -> void:
 		await process_frame
 		await process_frame
 		_expect(screen.world._find_ship("ship_001").name == "Dawn Voyager" and int(screen.world._find_ship("ship_001").crew) == 1 and int(screen.world._find_ship(str(ui_contract.ship_id)).crew) == 4, "reloaded fleet retains paid hires, discharge, transfer and original identities")
+	screen.queue_free()
+	await process_frame
+
+	# Real UI exposes named captain progression and swaps experienced pilots
+	# without changing the identities of their commissioned ships.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-captain-progression.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(screen.find_child("SwapCaptainsButton", true, false) != null and screen.crew_captain_swap_button.disabled, "crew menu exposes captain swaps but disables them without a second co-docked ship")
+	_expect(screen.crew_info.text.contains("CAPTAIN PROFILE") and screen.crew_info.text.contains("SERVICE CREW PROGRESSION") and screen.crew_info.text.contains("PAYROLL"), "crew menu reports named captain, service skills and explicit wage cost")
+	_expect(screen.crew_info.text.contains("18 CR every 60 ticks") and screen.crew_info.text.contains("Next payroll in: 60 ticks"), "initial captain and two service crew display correct live payroll")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	var ui_captain_order: Dictionary = screen.world.shipyard.place_order(screen.world, "courier_mk1")
+	screen.world.advance_ticks(24)
+	var ui_captain_first: Dictionary = screen.world._find_ship("ship_001")
+	var ui_captain_second: Dictionary = screen.world._find_ship(str(ui_captain_order.ship_id))
+	var initial_first_pilot: String = str(ui_captain_first.captain)
+	var initial_second_pilot: String = str(ui_captain_second.captain)
+	_expect(ui_captain_order.ok and not ui_captain_second.is_empty(), "UI captain exchange uses a real paid wharf-built second ship")
+	screen.world.queue_fly_to("ship_001", "vellum_gate")
+	screen.world.advance_ticks(20)
+	_expect(screen.world.dock_ship("ship_001", "vellum_foundry").ok, "both captains physically meet at a valid wharf dock")
+	screen._refresh_world_display()
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(not screen.crew_captain_swap_button.disabled and screen.crew_transfer_picker.item_count == 1, "captain exchange is enabled for an eligible co-docked player vessel")
+	screen.find_child("SwapCaptainsButton", true, false).pressed.emit()
+	_expect(ui_captain_first.captain == initial_second_pilot and ui_captain_second.captain == initial_first_pilot, "GUI swaps named pilots without exchanging ships or generating a new captain")
+	_expect(screen.crew_info.text.contains(initial_second_pilot) and screen.crew_feedback.text.contains("Captains exchanged"), "pilot management UI updates visible name and action result")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "captain assignment is saved immediately after a UI swap")
+	screen.world.advance_ticks(61)
+	screen._update_crew_screen()
+	_expect(screen.crew_info.text.contains("Total paid:") and screen.crew_info.text.contains("Morale:") and int(ui_captain_first.payroll.total_paid) > 0, "live crew UI updates after a real recurring paid payroll")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-captain-progression.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_pilot: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_pilot != null, "named-captain management keeps a resumable save")
+	if continue_pilot != null:
+		continue_pilot.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.world._find_ship("ship_001").captain == initial_second_pilot and screen.world._find_ship(str(ui_captain_order.ship_id)).captain == initial_first_pilot, "save/load preserves the real exchanged captain assignments")
 	screen.queue_free()
 	await process_frame
 

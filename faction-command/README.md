@@ -79,9 +79,39 @@ crew quantities and berth capacity are checked before a change is committed.
 
 Hiring, discharge and transfers are recorded in the financial ledger and
 save immediately. A ship can have zero service crew while its separately
-assigned captain remains aboard. Captain replacement, individual crew names,
-skills, salaries, training, station workforce and operational crew requirements
-are later systems; the current prototype does not simulate them.
+assigned captain remains aboard.
+
+### Individual captains, training and payroll
+
+Every player-owned ship now keeps a **named captain identity** with its own
+piloting experience, skill (level 0–5) and morale (0–100), independently from
+the ship ID. Captains earn experience from completed sector crossings and
+actual cargo/trade or construction-delivery events; idle time does not produce
+free training. The crew has a separate aggregate service-skill and morale
+record, with total earned experience conserved when people transfer between
+ships. New recruits have no previous earned experience. **Swap captains**
+lets two owned ships exchange their named pilots when both are docked at the
+same station with no outstanding orders. Each captain retains their personal
+experience and morale, without changing either ship's crew, cargo or orders.
+
+Every 60 simulation ticks the player's faction owes **12 CR for the captain,
+plus 2 CR per captain skill level, plus 3 CR for each service crew member**.
+The prototype sends paid wages to the nominated NPC recruitment agency's
+existing station balance; it does not yet create personal NPC credit wallets.
+Payments appear in the ordinary financial ledger and preserve total credits
+across the simulated economy. With insufficient credits, wages accumulate as
+an explicit debt rather than allowing a negative player balance, and unpaid
+crew morale decreases five points per payroll cycle. Paying accumulated
+arrears plus the current payroll restores the account, with morale recovering
+gradually one point per funded payday. Wage records and their precise
+simulation clock survive save/reload. If the primary agency station vanishes,
+a surviving NPC station can clear the debt; if none exists, wages remain owed.
+
+This pass **records** skill and morale, but they do not yet affect movement
+speed, trade results, production, recruitment or job efficiency. Crew remain
+aggregate counts rather than individually named NPCs; captain hiring/firing,
+training facilities, individual wages, officer ranks, operational crew minimums
+and a larger personnel market remain future work.
 
 The galaxy map can be dragged to pan and pinched to zoom; the **+**, **−**
 and **Fit** buttons provide an alternative. Select a sector and choose **Open
