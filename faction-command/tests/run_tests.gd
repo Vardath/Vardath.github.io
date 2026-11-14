@@ -84,7 +84,15 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_demographics(state: Dictionary) -> void:
+	state.erase("demographics_version")
+	state.erase("demographics_catalog")
+	for record in state.get("population", {}).get("stations", {}).values():
+		record.erase("family")
+
+
 func _strip_ecology(state: Dictionary) -> void:
+	_strip_demographics(state)
 	state.erase("ecology_version")
 	state.erase("ecology_catalog")
 	for index in range(state.get("wares", []).size() - 1, -1, -1):
