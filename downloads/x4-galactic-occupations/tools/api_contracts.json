@@ -11901,6 +11901,54 @@
         "md"
       ],
       "kind": "action"
+    },
+    "unlock_all_flight_input": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Unlocks all flight input.",
+      "source": {
+        "file": "md.xsd",
+        "line": 3547
+      }
+    },
+    "unlock_all_shooting_input": {
+      "attributes": {
+        "chance": {
+          "doc": "Chance percentage of action being performed (action is skipped if not -- in case of a conditional action such as <do_if>, any following <do_elseif>/<do_else> actions will still be performed as if the condition had failed)",
+          "type": "expression"
+        },
+        "comment": {
+          "doc": "Comment for documentation purposes only",
+          "type": "comment"
+        },
+        "weight": {
+          "doc": "Weight of action which determines its chance of being selected (integer value, only evaluated in <do_any> blocks, default is 1 if omitted)",
+          "type": "expression"
+        }
+      },
+      "contexts": [
+        "md"
+      ],
+      "doc": "Unlocks all shooting input.",
+      "source": {
+        "file": "md.xsd",
+        "line": 3701
+      }
     }
   },
   "controlpost_source": "X4 9.00 libraries/posts.xml at e3e8a345e5624db118bff3eb171b60b0993fcc2c",
