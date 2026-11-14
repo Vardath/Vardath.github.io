@@ -128,6 +128,8 @@ func report(world: RefCounted) -> Array:
 			"assigned":int(rec.cohorts.assigned_workers),
 			"retirees":int(rec.cohorts.retirees),
 			"hab_capacity":int(rec.hab_capacity),
+			"operational_capacity":world.habitation.operational_capacity(station, world.state.habitation_catalog) if not station.is_empty() else 0,
+			"energy_per_60":world.habitation.maintenance_per_60(station, world.state.habitation_catalog) if not station.is_empty() else 0,
 			"housing_status":str(rec.housing_status),
 			"active":not station.is_empty()
 		})
