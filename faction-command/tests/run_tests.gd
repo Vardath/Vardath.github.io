@@ -259,6 +259,13 @@ func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: Str
 	var source: Dictionary = world._find_station(source_id)
 	if destination.is_empty() or source.is_empty():
 		return false
+	# Biological waste occupies real finite storage. Collect it into the
+	# ship cargo hold before replenishment, exactly as a recycler supplier
+	# would. It is retained aboard, not deleted or teleported.
+	var recoverable_waste: int = int(destination.stock.get("organic_waste", 0))
+	if recoverable_waste > 0:
+		if not world.dock_ship("ship_001", home_id).ok or not world.transfer_player_station("ship_001", home_id, "organic_waste", recoverable_waste, false).ok:
+			return false
 	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
 		var needed: int = maxi(0, units_per_ware - int(destination.stock.get(ware_id, 0)))
 		if needed == 0:
