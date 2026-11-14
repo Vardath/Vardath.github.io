@@ -139,7 +139,7 @@ func report(world: RefCounted) -> Array:
 			"birth_progress":int(rec.get("family", {}).get("birth_progress", 0)),
 			"births_total":int(rec.get("family", {}).get("births_total", 0)),
 			"grown_total":int(rec.get("family", {}).get("grown_total", 0)),
-			"available_beds":maxi(0, world.habitation.operational_capacity(station, world.state.habitation_catalog) - world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers)) if not station.is_empty() else 0,
+			"available_beds":maxi(0, world.habitation.operational_capacity(station, world.state.habitation_catalog) - (world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers))) if not station.is_empty() else 0,
 			"housing_deficit":maxi(0, (world.demographics.residents(rec) if world.state.has("demographics_version") else int(rec.cohorts.assigned_workers)) - world.habitation.operational_capacity(station, world.state.habitation_catalog)) if not station.is_empty() else int(rec.cohorts.assigned_workers),
 			"resident_status":str(rec.get("resident_status", "Unoccupied")),
 			"resident_shortage":str(rec.get("resident_shortage", "")),
