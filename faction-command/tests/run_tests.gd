@@ -2877,6 +2877,60 @@ func _run() -> void:
 	screen.queue_free()
 	await process_frame
 
+	# Real UI exposes named captain progression and swaps experienced pilots
+	# without changing the identities of their commissioned ships.
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-captain-progression.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_disable_npc_trading(screen.world)
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(screen.find_child("SwapCaptainsButton", true, false) != null and screen.crew_captain_swap_button.disabled, "crew menu exposes captain swaps but disables them without a second co-docked ship")
+	_expect(screen.crew_info.text.contains("CAPTAIN PROFILE") and screen.crew_info.text.contains("SERVICE CREW PROGRESSION") and screen.crew_info.text.contains("PAYROLL"), "crew menu reports named captain, service skills and explicit wage cost")
+	_expect(screen.crew_info.text.contains("18 CR every 60 ticks") and screen.crew_info.text.contains("Next payroll in: 60 ticks"), "initial captain and two service crew display correct live payroll")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	var ui_captain_order: Dictionary = screen.world.shipyard.place_order(screen.world, "courier_mk1")
+	screen.world.advance_ticks(24)
+	var ui_captain_first: Dictionary = screen.world._find_ship("ship_001")
+	var ui_captain_second: Dictionary = screen.world._find_ship(str(ui_captain_order.ship_id))
+	var initial_first_pilot: String = str(ui_captain_first.captain)
+	var initial_second_pilot: String = str(ui_captain_second.captain)
+	_expect(ui_captain_order.ok and not ui_captain_second.is_empty(), "UI captain exchange uses a real paid wharf-built second ship")
+	screen.world.queue_fly_to("ship_001", "vellum_gate")
+	screen.world.advance_ticks(20)
+	_expect(screen.world.dock_ship("ship_001", "vellum_foundry").ok, "both captains physically meet at a valid wharf dock")
+	screen._refresh_world_display()
+	screen.find_child("ManageCrewButton", true, false).pressed.emit()
+	_expect(not screen.crew_captain_swap_button.disabled and screen.crew_transfer_picker.item_count == 1, "captain exchange is enabled for an eligible co-docked player vessel")
+	screen.find_child("SwapCaptainsButton", true, false).pressed.emit()
+	_expect(ui_captain_first.captain == initial_second_pilot and ui_captain_second.captain == initial_first_pilot, "GUI swaps named pilots without exchanging ships or generating a new captain")
+	_expect(screen.crew_info.text.contains(initial_second_pilot) and screen.crew_feedback.text.contains("Captains exchanged"), "pilot management UI updates visible name and action result")
+	_expect(bool(save_store.load_game(screen.save_path).get("ok", false)), "captain assignment is saved immediately after a UI swap")
+	screen.world.advance_ticks(61)
+	screen._update_crew_screen()
+	_expect(screen.crew_info.text.contains("Total paid:") and screen.crew_info.text.contains("Morale:") and int(ui_captain_first.payroll.total_paid) > 0, "live crew UI updates after a real recurring paid payroll")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
+	await process_frame
+	screen.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-captain-progression.json"
+	root.add_child(screen)
+	await process_frame
+	var continue_pilot: Button = screen.find_child("ContinueButton", true, false)
+	_expect(continue_pilot != null, "named-captain management keeps a resumable save")
+	if continue_pilot != null:
+		continue_pilot.pressed.emit()
+		await process_frame
+		await process_frame
+		_expect(screen.world._find_ship("ship_001").captain == initial_second_pilot and screen.world._find_ship(str(ui_captain_order.ship_id)).captain == initial_first_pilot, "save/load preserves the real exchanged captain assignments")
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
