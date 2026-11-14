@@ -2114,7 +2114,7 @@ func _update_population_screen() -> void:
 		aboard += int(ship.crew) + 1 + int(ship.get("settler_passengers", 0))
 	var station_people: int = world.population.total_people(world) - aboard
 	var text_rows: Array[String] = []
-	text_rows.append("Known total: %d people\nStation cohorts: %d · Ship crews and pilots: %d\nStaffing is counted once; recruitment pools reference the same residents.\nHousing uses real energy, water, food and medical stocks every service cycle. Passenger resettlement is implemented; births, automatic immigration, schools and morale facilities are not implemented yet." % [world.population.total_people(world), station_people, aboard])
+	text_rows.append("Known total: %d people\nStation cohorts: %d · Ship crews and pilots: %d\nStaffing is counted once; recruitment pools reference the same residents.\nHousing uses real energy, water, food and medical stocks every service cycle. Births, immigration, schools and morale facilities are not implemented yet. Passenger resettlement of existing adults is implemented." % [world.population.total_people(world), station_people, aboard])
 	for entry in entries:
 		var title: String = "%s · %s" % [entry.name, _faction_name(str(entry.owner))] if entry.active else "%s · dormant roster (station unavailable)" % entry.name
 		var upkeep: Dictionary = entry.provisions_per_60
