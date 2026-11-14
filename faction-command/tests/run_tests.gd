@@ -2582,7 +2582,12 @@ func _run() -> void:
 	var archive_map_item := _map_item(screen.sector_map, "station", "auroran_archive")
 	_expect(not archive_map_item.is_empty() and str(archive_map_item.subtitle).contains("Archive"), "the sector map identifies the faction archive as a station")
 	screen.sector_map.station_selected.emit("auroran_archive")
-	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "auroran_archive" and screen.trade_archive_button.visible and screen.trade_archive_button.disabled, "choosing the archive shows its records control and asks the visitor to dock")
+	_expect(screen.inspector_key == "npc_station|auroran_archive" and screen.selected_view == "npc_station" and not is_instance_valid(screen.trade_screen), "selecting a historical archive shows its information before trade")
+	_expect(screen.inspector.tabs(screen.world, "npc_station", "auroran_archive").has("History"), "archives offer a distinct historical records tab")
+	screen.find_child("InspectorTab_History", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Dock an owned ship"), "archive History tab explains real docking and access requirements")
+	screen.find_child("InspectorAction_station_trade", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.trade_screen) and screen._trade_station_id() == "auroran_archive" and screen.trade_archive_button.visible and screen.trade_archive_button.disabled, "contextual archive action opens targeted trade and requires docking for records")
 	screen.find_child("DockButton", true, false).pressed.emit()
 	_expect(not screen.trade_archive_button.disabled and screen.trade_production.text.contains("Archive:"), "docking enables records and shows the archive's service status")
 	await process_frame
