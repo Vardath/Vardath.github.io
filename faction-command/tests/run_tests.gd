@@ -69,6 +69,8 @@ func _without_progression(ships: Array) -> Array:
 
 
 func _strip_shipyard(state: Dictionary) -> void:
+	state.erase("population_version")
+	state.erase("population")
 	state.erase("personnel_version")
 	state.erase("crew_pools")
 	for ship in state.ships:
@@ -2006,6 +2008,8 @@ func _run() -> void:
 	var old_personnel: Dictionary = transfer_world.snapshot()
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
+	old_personnel.erase("population_version")
+	old_personnel.erase("population")
 	for old_staff_ship in old_personnel.ships:
 		old_staff_ship.erase("captain_profile")
 		old_staff_ship.erase("crew_profile")
@@ -2161,6 +2165,8 @@ func _run() -> void:
 	# bills, captain replacements, existing crew resets or lost route orders.
 	var old_progression: Dictionary = captain_world.snapshot()
 	old_progression.personnel_version = 1
+	old_progression.erase("population_version")
+	old_progression.erase("population")
 	for legacy_ship in old_progression.ships:
 		legacy_ship.erase("captain_profile")
 		legacy_ship.erase("crew_profile")
