@@ -98,6 +98,9 @@ var education_quantity: SpinBox
 var education_instructors: SpinBox
 var education_info: Label
 var education_feedback: Label
+var career_track_picker: OptionButton
+var career_ship_picker: OptionButton
+var career_certified_toggle: CheckButton
 var trade_station_actions: HBoxContainer
 var trade_station_supply_button: Button
 var station_supply_screen: Control
@@ -816,7 +819,7 @@ func _execute_inspector_action(action_id: String) -> void:
 		"build_site":
 			if kind == "site":
 				_open_build_screen(object_id)
-		"education":
+		"education", "careers":
 			if kind == "station" and not world._find_station(object_id).get("education", {}).get("modules", []).is_empty():
 				_open_education_screen(object_id)
 		"research":
@@ -2036,6 +2039,9 @@ func _update_crew_screen() -> void:
 	else:
 		lines.append("Recruitment and discharge require an NPC recruitment station. The station pool is finite and hires are paid to its operating budget.")
 	lines.append("CIVILIAN SETTLEMENT\n%d passengers aboard · %d free transport berths. Board existing NPC adults for %d CR each at a non-hostile recruitment dock. Fly to an owned station, dock there and disembark only into powered, provisioned, vacant residential slots. Returning to their original NPC station restores the workers to that roster; the original permit cost is not refunded." % [int(ship.get("settler_passengers", 0)), world.settlement.free_berths(world, ship), world.settlement.RESETTLEMENT_FEE])
+	if not ship.get("career_manifest", {}).is_empty():
+		var manifest: Dictionary = ship.career_manifest
+		lines.append("CREDENTIALED PASSENGER MANIFEST\\n%d %s graduates aboard · %s track, origin %s. This is a real protected civilian manifest, not regular service crew. Disembark only at a physically provisioned owned residence to preserve every academic and workplace record." % [int(manifest.quantity), "practical" if bool(manifest.certified) else "foundation", str(manifest.track), str(ship.settler_source_station_id)])
 	if not station.is_empty() and station.owner == world.state.player_faction_id:
 		var colony: Dictionary = world.population.station_cohort(world, str(station.id))
 		lines.append("COLONY RESCUE\nSettled adults: %d · Resident service: %s · Critical cycles: %d. Evacuation transfers adults into vacant berths, even from an unpowered or unsupplied habitat. They remain in the ship manifest until safely delivered to a provisioned player colony." % [int(colony.get("cohorts", {}).get("assigned_workers", 0)), str(colony.get("resident_status", "Unoccupied")), int(colony.get("resident_alert_cycles", 0))])
@@ -2616,6 +2622,42 @@ func _open_education_screen(station_id: String) -> void:
 	enroll_button.name = "EducationEnrollButton"
 	enroll_button.pressed.connect(_education_enroll)
 	choice_row.add_child(enroll_button)
+	column.add_child(_label("WORKPLACE APPRENTICESHIPS / QUALIFIED PASSENGERS", 13, ACCENT))
+	var careers_row := HBoxContainer.new()
+	careers_row.add_theme_constant_override("separation", 6)
+	column.add_child(careers_row)
+	career_track_picker = OptionButton.new()
+	career_track_picker.name = "CareerTrackPicker"
+	career_track_picker.custom_minimum_size = Vector2(260, 44)
+	career_track_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	for track in world.careers.TRACKS:
+		career_track_picker.add_item(str(world.state.education_catalog[track].name))
+		career_track_picker.set_item_metadata(career_track_picker.item_count - 1, track)
+	career_track_picker.select(0)
+	careers_row.add_child(career_track_picker)
+	var mentor_button := _button("Begin practice")
+	mentor_button.name = "CareerPracticumButton"
+	mentor_button.pressed.connect(_career_practicum_start)
+	careers_row.add_child(mentor_button)
+	var transport_row := HBoxContainer.new()
+	transport_row.add_theme_constant_override("separation", 6)
+	column.add_child(transport_row)
+	career_ship_picker = OptionButton.new()
+	career_ship_picker.name = "CareerShipPicker"
+	career_ship_picker.custom_minimum_size = Vector2(240, 44)
+	career_ship_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	transport_row.add_child(career_ship_picker)
+	career_certified_toggle = CheckButton.new()
+	career_certified_toggle.name = "CareerPracticalTransfer"
+	career_certified_toggle.text = "Practical"
+	career_certified_toggle.button_pressed = true
+	career_certified_toggle.custom_minimum_size.y = 44
+	transport_row.add_child(career_certified_toggle)
+	var board_button := _button("Board graduates")
+	board_button.name = "CareerBoardButton"
+	board_button.pressed.connect(_career_board_graduates)
+	transport_row.add_child(board_button)
+	column.add_child(_wrapped_label("One real resident mentor and a genuine workplace are required per course. Study notes, energy, and salaries are consumed every 60 ticks. Boarding transfers already qualified adults into actual ship passenger berths; finish the voyage using Ship & Crew > Disembark / return. All qualifications stay with the existing people.", 12, MUTED))
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -2660,7 +2702,27 @@ func _update_education_screen() -> void:
 	var rows: Array[String] = []
 	rows.append("Real resident adults: %d · School-age youths: %d\nFaction credits: %d · Physical station stock: Energy %d, Recorded Data %d, Research Notes %d\nOne instructor supervises up to %d concurrent learners. Appointing adults changes assignments, never headcount." % [int(cohort.cohorts.assigned_workers), int(cohort.cohorts.students), int(world.state.starting_credits), int(station.stock.get("energy_cells", 0)), int(station.stock.get("recorded_data", 0)), int(station.stock.get("research_notes", 0)), world.education.STUDENTS_PER_TEACHER])
 	rows.append_array(world.education.report(world, education_station_id))
-	rows.append("Specialist courses currently award recorded foundation certificates only; full profession licensing, real mentor specialties and promotion to ship roles follow later.")
+	rows.append_array(world.careers.report(world, education_station_id))
+	rows.append("Practical completions confirm supervised local workplace training, not instant ship skill or a captain assignment. Only explicit qualified passenger boarding transfers credentials to another owned residence.")
+	var selected_ship := ""
+	if career_ship_picker.selected >= 0:
+		selected_ship = str(career_ship_picker.get_item_metadata(career_ship_picker.selected))
+	career_ship_picker.clear()
+	var selection := 0
+	for ship in world.state.ships:
+		if ship.owner != world.state.player_faction_id or ship.docked_at != education_station_id or not ship.orders.is_empty() or not ship.travel.is_empty():
+			continue
+		career_ship_picker.add_item("%s · %d free berths" % [ship.name, world.settlement.free_berths(world, ship)])
+		career_ship_picker.set_item_metadata(career_ship_picker.item_count - 1, str(ship.id))
+		if str(ship.id) == selected_ship:
+			selection = career_ship_picker.item_count - 1
+	if career_ship_picker.item_count == 0:
+		career_ship_picker.add_item("No owned ship currently docked")
+		career_ship_picker.set_item_metadata(0, "")
+		career_ship_picker.disabled = true
+	else:
+		career_ship_picker.disabled = false
+	career_ship_picker.select(selection)
 	education_info.text = "\n\n".join(rows)
 
 
@@ -2679,6 +2741,23 @@ func _education_appoint() -> void:
 
 func _education_enroll() -> void:
 	_education_action_result(world.education.enroll(world, education_station_id, _education_selected_program(), int(education_quantity.value), str(education_target.get_item_metadata(education_target.selected))))
+
+
+func _career_selected_track() -> String:
+	if not is_instance_valid(career_track_picker) or career_track_picker.selected < 0:
+		return ""
+	return str(career_track_picker.get_item_metadata(career_track_picker.selected))
+
+
+func _career_practicum_start() -> void:
+	_education_action_result(world.careers.start(world, education_station_id, _career_selected_track(), int(education_quantity.value)))
+
+
+func _career_board_graduates() -> void:
+	if not is_instance_valid(career_ship_picker) or career_ship_picker.selected < 0:
+		return
+	var ship_id: String = str(career_ship_picker.get_item_metadata(career_ship_picker.selected))
+	_education_action_result(world.careers.board_qualified(world, ship_id, _career_selected_track(), int(education_quantity.value), career_certified_toggle.button_pressed))
 
 
 func _close_education_screen() -> void:

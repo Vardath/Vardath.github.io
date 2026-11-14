@@ -115,6 +115,8 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 	world.state.stations.append(station)
 	if world.state.has("education_version"):
 		world.education.initialize_station(station)
+	if world.state.has("career_version"):
+		world.careers.initialize_station(station)
 	world.population.register_station(world, station_id)
 	world.state.build_sites.append(site)
 	world._record_transaction("construction_fee", BUILDER_ID, station_id, "", 0, 0, -int(estimate.fee))

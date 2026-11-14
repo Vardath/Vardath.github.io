@@ -43,6 +43,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	var copy := ship.duplicate(true)
 	copy.erase("settler_passengers")
 	copy.erase("settler_source_station_id")
+	copy.erase("career_manifest")
 	return copy
 
 
@@ -51,6 +52,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 	for ship in copy:
 		ship.erase("settler_passengers")
 		ship.erase("settler_source_station_id")
+		ship.erase("career_manifest")
 	return copy
 
 
@@ -84,7 +86,17 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_careers(state: Dictionary) -> void:
+	state.erase("career_version")
+	state.erase("career_catalog")
+	for station in state.get("stations", []):
+		station.erase("careers")
+	for ship in state.get("ships", []):
+		ship.erase("career_manifest")
+
+
 func _strip_education(state: Dictionary) -> void:
+	_strip_careers(state)
 	state.erase("education_version")
 	state.erase("education_catalog")
 	for program_id in ["community_school", "flight_academy", "engineering_college", "management_college", "research_academy", "marine_academy", "agriculture_institute"]:
@@ -289,6 +301,59 @@ func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: Str
 			return false
 	return true
 
+
+func _replenish_practical_station(world: RefCounted, source_id: String, campus_id: String, stock_target: int = 8) -> bool:
+	# The mature industrial source's full warehouse can genuinely block
+	# solar power. Do NOT mint energy or discard waste to force a test.
+	# Obtain real energy from the NPC Hearth Exchange solar market instead,
+	# paying its price, then ship it back across the star network.
+	# All other family wares still come from the existing player factories.
+	var source: Dictionary = world._find_station(source_id)
+	var campus: Dictionary = world._find_station(campus_id)
+	var ship: Dictionary = world._find_ship("ship_001")
+	if source.is_empty() or campus.is_empty() or ship.is_empty():
+		return false
+	var wares: Array[String] = ["potable_water", "food_rations", "medical_supplies"]
+	var total_needed := 0
+	for ware_id in wares:
+		var quantity: int = maxi(0, stock_target - int(campus.stock.get(ware_id, 0)))
+		if int(source.stock.get(ware_id, 0)) < quantity:
+			return false
+		total_needed += quantity
+	if total_needed > maxi(0, int(ship.cargo_capacity) - world.cargo_volume("ship_001")):
+		return false
+	if total_needed > 0:
+		if not world.dock_ship("ship_001", source_id).ok:
+			return false
+		for ware_id in wares:
+			var quantity: int = maxi(0, stock_target - int(campus.stock.get(ware_id, 0)))
+			if quantity > 0 and not world.transfer_player_station("ship_001", source_id, ware_id, quantity, false).ok:
+				return false
+		if not world.dock_ship("ship_001", campus_id).ok:
+			return false
+		for ware_id in wares:
+			var quantity: int = int(ship.cargo.get(ware_id, 0))
+			if quantity > 0 and not world.transfer_player_station("ship_001", campus_id, ware_id, quantity, true).ok:
+				return false
+	var energy_needed: int = maxi(0, stock_target - int(campus.stock.get("energy_cells", 0)))
+	if energy_needed > 0:
+		if int(ship.cargo_capacity) - world.cargo_volume("ship_001") < energy_needed:
+			return false
+		if ship.sector != "hearthreach":
+			if not world.queue_fly_to("ship_001", "hearthreach"):
+				return false
+			world.advance_ticks(40)
+		if not world.dock_ship("ship_001", "hearth_exchange").ok or not world.trade("ship_001", "hearth_exchange", "energy_cells", energy_needed, true).ok:
+			return false
+		if not world.queue_fly_to("ship_001", str(campus.sector)):
+			return false
+		world.advance_ticks(40)
+		if not world.dock_ship("ship_001", campus_id).ok or not world.transfer_player_station("ship_001", campus_id, "energy_cells", energy_needed, true).ok:
+			return false
+	else:
+		if not world.dock_ship("ship_001", campus_id).ok:
+			return false
+	return true
 
 func _run() -> void:
 	# A unique isolated directory prevents tests from ever touching a player's save.
@@ -4472,6 +4537,148 @@ func _run() -> void:
 	_expect(screen.education_feedback.text.contains("appointed") and int(screen.world._find_station("player_station_2").education.teachers) == 1, "tapping instructor appointment actually records the adult workforce in the active game and saves the authorized change")
 	screen.find_child("EducationEnrollButton", true, false).pressed.emit()
 	_expect(screen.education_feedback.text.contains("Enrolled") and screen.world._find_station("player_station_2").education.courses.has("community_school"), "tapping enrol in the original mobile schooling screen really reserves one existing adult, not a simulated inert UI action")
+	screen.find_child("CloseEducationButton", true, false).pressed.emit()
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 34: completed academics are not working professionals until paid
+	# supervised workplace time has been recorded. The same conserved adults
+	# hold certificates and travel on actual passenger berths between owned
+	# habitats without losing either theory or workplace accreditation.
+	var p34_migration_snapshot: Dictionary = p33_world.snapshot()
+	_strip_careers(p34_migration_snapshot)
+	_expect(save_store.save_game(test_root + "/pass33-legacy-no-apprenticeship.json", p34_migration_snapshot) == OK, "an existing fully educated game without Pass 34 records remains a valid saved world")
+	var p34_migration_load: Dictionary = save_store.load_game(test_root + "/pass33-legacy-no-apprenticeship.json")
+	var p34_legacy = WorldScript.new()
+	_expect(p34_migration_load.get("ok", false) and p34_legacy.restore_snapshot(p34_migration_load.state) == OK and p34_legacy.state.career_version == 1, "old practical-training-free save gains empty real-station career records without a new game")
+	_expect(p34_legacy.population.total_people(p34_legacy) == p33_world.population.total_people(p33_world) and p34_legacy.state.starting_credits == p33_world.state.starting_credits and p34_legacy._find_ship("ship_001").captain_profile == p33_world._find_ship("ship_001").captain_profile, "migration preserves genuine education, children, real crew skills, all credits and individual captains")
+	_expect(p34_legacy._find_station("player_station_2").careers.licensed.engineering_college == 0 and p34_legacy._find_ship("ship_001").career_manifest.is_empty(), "migrating old theory-only graduates never awards free practical licences or imaginary transferred civilians")
+	_expect(save_store.save_game(test_root + "/pass34-old-upgraded.json", p34_legacy.snapshot()) == OK, "migrated old paid education state remains valid under the full practical credential validator")
+	var p34_world = WorldScript.new()
+	_expect(p34_world.restore_snapshot(p33_world.snapshot()) == OK, "paid apprentice scenario starts from the actual completed and archived Pass 33 education world")
+	_disable_npc_trading(p34_world)
+	var p34_campus: Dictionary = p34_world._find_station("player_station_2")
+	var p34_record: Dictionary = p34_world.population.station_cohort(p34_world, "player_station_2")
+	var p34_ship: Dictionary = p34_world._find_ship("ship_001")
+	var p34_known_people: int = p34_world.population.total_people(p34_world)
+	var p34_known_births: int = int(p34_record.family.births_total)
+	var p34_original_credits: int = _total_credits(p34_world.state)
+	_expect(p34_world.state.career_version == 1 and p34_world.state.career_catalog.size() == 6 and p34_world.careers.TRACKS.size() == 6, "six independently gated practical courses are defined and versioned separately from seven original paid academic schools")
+	_expect(p34_world.careers.candidates(p34_world, "player_station_2", "engineering_college") == 1 and p34_campus.careers.licensed.engineering_college == 0, "one genuinely theory-qualified engineer is available and not already a licensed practical worker")
+	_expect(not p34_world.careers.start(p34_world, "player_station_2", "marine_academy", 1).ok, "an academic school cannot mint a marine or boarding-safety worker without an enrolled, graduated theory-qualified adult")
+	_expect(p34_world.education.available_for_relocation(p34_world, "player_station_2") == 0, "old anonymous evacuation path continues to protect educated station residents and teaching staff")
+	_expect(p34_ship.docked_at == "player_station_2" and p34_world.careers._workplace(p34_world, p34_campus, "engineering_college"), "an actual player-operated ship with experienced crew is physically docked for the engineering maintenance practicum")
+	_expect(not p34_world.careers.start(p34_world, "player_station_2", "engineering_college", 2).ok, "only one real educated resident may enter the hands-on technical course; no second fabricated worker")
+	_expect(p34_world.careers.start(p34_world, "player_station_2", "engineering_college", 1).ok, "a resident theorist with a separate real instructor, powered housing, actual workshop ship, physical study media and wages can start a paid workplace course")
+	_expect(not p34_world.careers.start(p34_world, "player_station_2", "engineering_college", 1).ok, "one apprentice cannot be booked into a second simultaneous copy of the same program")
+	var p34_before_cycles: Dictionary = p34_world.snapshot()
+	var p34_material_before: int = int(p34_campus.stock.recorded_data)
+	var p34_payroll_before: int = int(p34_campus.careers.payroll_credits)
+	p34_world.advance_ticks(60)
+	_expect(p34_campus.careers.apprenticeships.has("engineering_college") and int(p34_campus.careers.apprenticeships.engineering_college.progress) == 60, "exactly one 60-tick practical laboratory cycle advances only after a legitimate workplace and on-site resident mentor exist")
+	_expect(int(p34_campus.stock.recorded_data) == p34_material_before - 1 and int(p34_campus.careers.payroll_credits) == p34_payroll_before + 18 and _total_credits(p34_world.state) == p34_original_credits, "practical mentoring consumes one real archived book and transfers 18 real credits into the station's instructor payroll without minting money")
+	_expect(save_store.save_game(test_root + "/pass34-first-practice.json", p34_world.snapshot()) == OK, "a genuine staffed, half-begun practicum with exact study expenses and mentors saves under strict validation")
+	var p34_saved: Dictionary = save_store.load_game(test_root + "/pass34-first-practice.json")
+	var p34_resume = WorldScript.new()
+	_expect(p34_saved.get("ok", false) and p34_resume.restore_snapshot(p34_saved.state) == OK and p34_resume.snapshot() == p34_world.snapshot(), "paid practice and all counted adult/child cohorts resume exactly after saved-game reload")
+
+	var p34_pause = WorldScript.new()
+	_expect(p34_pause.restore_snapshot(p34_before_cycles) == OK, "interrupted practicum case uses actual active, fully paid first-course conditions")
+	var p34_pause_home: Dictionary = p34_pause._find_station("player_station_2")
+	var p34_notes_taken: int = int(p34_pause_home.stock.recorded_data)
+	_expect(p34_pause.dock_ship("ship_001", "player_station_2").ok and p34_pause.transfer_player_station("ship_001", "player_station_2", "recorded_data", p34_notes_taken, false).ok, "all remaining practicum books are physically loaded aboard an owned docked ship rather than silently disappearing")
+	var p34_paused_credits: int = _total_credits(p34_pause.state)
+	p34_pause.advance_ticks(60)
+	_expect(int(p34_pause_home.careers.apprenticeships.engineering_college.progress) == 0 and p34_pause_home.careers.apprenticeships.engineering_college.status == "Needs recorded_data", "no practical certification, elapsed study or phantom study occurs when classroom knowledge is aboard a ship")
+	_expect(_total_credits(p34_pause.state) == p34_paused_credits and int(p34_pause_home.careers.payroll_credits) == 0, "missing records pause actual practicum salaries atomically without minting or destroying credits")
+	_expect(p34_pause.dock_ship("ship_001", "player_station_2").ok and p34_pause.transfer_player_station("ship_001", "player_station_2", "recorded_data", p34_notes_taken, true).ok, "the same physically purchased study books are returned to the campus from the real vessel")
+	_expect(_replenish_practical_station(p34_pause, "player_station_1", "player_station_2", 8), "after real study books are returned, actual solar and water/food/medical stock are physically replenished before the next working lesson")
+	var p34_resume_progress: int = int(p34_pause_home.careers.apprenticeships.engineering_college.progress)
+	p34_pause.advance_ticks(60)
+	_expect(int(p34_pause_home.careers.apprenticeships.engineering_college.progress) >= 60 and int(p34_pause_home.careers.apprenticeships.engineering_college.progress) >= p34_resume_progress and int(p34_pause_home.careers.payroll_credits) >= 18, "returning physical documents and replenishing real industrial supplies resumes the previously paused funded working apprenticeship")
+	_expect(save_store.save_game(test_root + "/pass34-paid-pause.json", p34_pause.snapshot()) == OK, "pause and resumption of professional work preserve finite media payroll and apprenticeship provenance in a strict save")
+
+	for p34_batch in range(4):
+		if not p34_campus.careers.apprenticeships.has("engineering_college"):
+			break
+		_expect(_replenish_practical_station(p34_world, "player_station_1", "player_station_2", 8), "mentor and apprentice continue receiving genuinely manufactured industrial food, water, medicine and electricity during paid working block %d" % p34_batch)
+		p34_world.advance_ticks(60)
+	_expect(not p34_campus.careers.apprenticeships.has("engineering_college") and int(p34_campus.careers.licensed.engineering_college) == 1, "four real staffed 60-tick practicum periods produce exactly one existing graduate's practical engineering attestation")
+	_expect(int(p34_campus.careers.payroll_credits) == p34_payroll_before + 72 and int(p34_campus.stock.recorded_data) == p34_material_before - 4, "all four supervised periods consume four actual books and transfer 72 actual mentor salary credits")
+	_expect(int(p34_record.cohorts.assigned_workers) == 2 and p34_world.population.total_people(p34_world) == p34_known_people + int(p34_record.family.births_total) - p34_known_births, "hands-on work never creates free trained people, only independently logged medically supported family births may change the real headcount")
+	_expect(save_store.save_game(test_root + "/pass34-graduated-engineer.json", p34_world.snapshot()) == OK, "paid practical engineer with all four labour/material service records passes strict double-credential save invariants")
+	var p34_forgery: Dictionary = p34_world.snapshot()
+	for station in p34_forgery.stations:
+		if station.id == "player_station_2":
+			station.careers.licensed.flight_academy = 1
+	_expect(save_store.save_game(test_root + "/pass34-forged-practical-flight.json", p34_forgery) != OK, "no saved-game editor may invent pilot working credentials without existing theory, real workplace or exact paid training ledger")
+	var p34_forged_pay: Dictionary = p34_world.snapshot()
+	for station in p34_forged_pay.stations:
+		if station.id == "player_station_2":
+			station.careers.payroll_credits += 500
+	_expect(save_store.save_game(test_root + "/pass34-forged-practice-salary.json", p34_forged_pay) != OK, "saved mentor salary balance must reconcile exactly with the original immutable payroll events")
+
+	# The typed qualification is attached to an ACTUAL transport manifest,
+	# never discharged as anonymous crew, and the destination must have real
+	# space, energy, food, water and medical supplies for the incoming adult.
+	var p34_qualified_departure: Dictionary = p34_world.snapshot()
+	_expect(not p34_world.careers.board_qualified(p34_world, "ship_001", "flight_academy", 1, true).ok, "a graduate cannot masquerade as a certified pilot when their certificate is engineering")
+	_expect(not p34_world.settlement.evacuate(p34_world, "ship_001", 1).ok, "unqualified evacuation still cannot discard the resident's genuinely completed theory and practical records")
+	_expect(p34_world.careers.board_qualified(p34_world, "ship_001", "engineering_college", 1, true).ok, "a single engineer boards one vacant physical passenger berth with both typed engineering theory and practical attestation")
+	_expect(p34_ship.career_manifest.get("track", "") == "engineering_college" and bool(p34_ship.career_manifest.get("certified", false)) and int(p34_ship.settler_passengers) == 1 and int(p34_campus.education.qualified.engineering_college) == 0 and int(p34_campus.careers.licensed.engineering_college) == 0, "person and both credentials leave the original colony exactly once without creating a ghost graduate")
+	_expect(not p34_world.settlement.board(p34_world, "ship_001", 1).ok and not p34_world.settlement.evacuate(p34_world, "ship_001", 1).ok, "regular recruitment and rescue cannot mix unqualified passengers into an already documented qualified manifest")
+	_expect(save_store.save_game(test_root + "/pass34-trained-on-board.json", p34_world.snapshot()) == OK, "an actual qualified civilian in transit can be saved with their source, credentials and berth")
+	_expect(p34_world.queue_fly_to("ship_001", "hearthreach"), "qualified graduate physically departs for another sector instead of teleporting")
+	p34_world.advance_ticks(40)
+	_expect(int(p34_ship.settler_passengers) == 1 and p34_ship.career_manifest.get("track", "") == "engineering_college" and p34_ship.sector == "hearthreach", "all original professional records remain attached during actual star-route movement")
+	_expect(save_store.save_game(test_root + "/pass34-educated-in-flight.json", p34_world.snapshot()) == OK, "sector-route transported graduates retain intact verifiable provenance through saved-game restart")
+	var p34_flight_read: Dictionary = save_store.load_game(test_root + "/pass34-educated-in-flight.json")
+	var p34_flight_restore = WorldScript.new()
+	_expect(p34_flight_read.get("ok", false) and p34_flight_restore.restore_snapshot(p34_flight_read.state) == OK and p34_flight_restore.snapshot() == p34_world.snapshot(), "the actual ship, captain, ongoing career manifest, academic theory and practical certifications survive full save/load in a different sector")
+	_expect(p34_flight_restore.dock_ship("ship_001", "hearth_exchange").ok and p34_flight_restore.trade("ship_001", "hearth_exchange", "energy_cells", 12, true).ok, "genuine recruited engineer's transport buys twelve solar energy cells from the NPC market to reactivate the receiving factory's actual habitat")
+	_expect(p34_flight_restore.queue_fly_to("ship_001", "copper_wake"), "actual ship carries its qualified passenger and twelve paid energy cells back from the historical archive sector")
+	p34_flight_restore.advance_ticks(40)
+	var p34_dest: Dictionary = p34_flight_restore._find_station("player_station_1")
+	_expect(p34_flight_restore.dock_ship("ship_001", "player_station_1").ok and p34_flight_restore.transfer_player_station("ship_001", "player_station_1", "food_rations", 12, false).ok, "full industry warehouse frees twelve physical slots by loading exactly twelve already manufactured food rations into ship cargo")
+	_expect(p34_flight_restore.transfer_player_station("ship_001", "player_station_1", "energy_cells", 12, true).ok, "paid solar energy is unloaded physically into the receiving colony's freed stock space, not minted in a blocked factory")
+	p34_flight_restore.advance_ticks(60)
+	_expect(p34_flight_restore.state.ledger.any(func(e): return e.kind == "buy" and e.station_id == "hearth_exchange" and e.ware_id == "energy_cells" and int(e.quantity) == 12), "qualified settlement activation has verifiable paid power procurement in the immutable transaction ledger")
+	_expect(p34_flight_restore.habitation.operational_capacity(p34_dest, p34_flight_restore.state.habitation_catalog) >= 1 and p34_flight_restore.provisions.missing_provision(p34_flight_restore, p34_dest, 1).is_empty(), "receiving colony has genuinely commissioned, powered, provisioned and vacant resident housing rather than an imaginary professional workplace")
+	_expect(p34_flight_restore.dock_ship("ship_001", "player_station_1").ok and p34_flight_restore.settlement.disembark(p34_flight_restore, "ship_001", 1).ok, "normal mobile Ship & Crew > Disembark uses original residential admission with credential-preserving handoff for the same adult")
+	_expect(int(p34_dest.education.qualified.engineering_college) == 1 and int(p34_dest.careers.licensed.engineering_college) == 1 and int(p34_flight_restore.population.station_cohort(p34_flight_restore, "player_station_1").cohorts.assigned_workers) == 1, "the destination receives exactly one already existing fully certified engineer, not a free worker or an orphaned unlicensed certificate")
+	_expect(p34_flight_restore._find_ship("ship_001").career_manifest.is_empty() and int(p34_flight_restore._find_ship("ship_001").settler_passengers) == 0 and p34_flight_restore.population.total_people(p34_flight_restore) == p34_world.population.total_people(p34_world), "both qualification fields clear from the delivered ship and the same exact person is conserved from source to destination")
+	_expect(save_store.save_game(test_root + "/pass34-career-resettled.json", p34_flight_restore.snapshot()) == OK, "delivered professional plus original source/arrival, original school and real paid workplace ledgers are consistent under strict final save")
+	var p34_forged_manifest: Dictionary = p34_world.snapshot()
+	p34_forged_manifest.ships[0].career_manifest["quantity"] = 500
+	_expect(save_store.save_game(test_root + "/pass34-forged-professional-manifest.json", p34_forged_manifest) != OK, "ship cannot claim hundreds of accredited passengers without matching actual berths and signed source roster transfer")
+	var p34_unsupported: Dictionary = p34_world.snapshot()
+	p34_unsupported.career_version = 2
+	_expect(save_store.save_game(test_root + "/pass34-future-careers.json", p34_unsupported) != OK, "unknown future professional schema cannot erase or silently reinterpret existing workers")
+
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass34-careers.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p34_qualified_departure) == OK, "Android map-view loads a real paid-practicum graduate still resident and a real ship docked for professional transfer")
+	screen._open_map_station("player_station_2")
+	_expect(screen.find_child("InspectorTab_Careers", true, false) != null, "owned physical school appears in the original Android map inspector under a distinct Careers tab")
+	screen.find_child("InspectorTab_Careers", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("PRACTICAL WORK EXPERIENCE") and screen.find_child("InspectorAction_careers", true, false) != null, "practical professional certificates are visible on the map with an actual staffing/action control, not fake science production")
+	screen.find_child("InspectorAction_careers", true, false).pressed.emit()
+	_expect(is_instance_valid(screen.education_screen) and screen.find_child("CareerPracticumButton", true, false) != null and screen.find_child("CareerBoardButton", true, false) != null and screen.find_child("CareerShipPicker", true, false) != null and screen.find_child("CareerPracticalTransfer", true, false) != null, "touch UI exposes usable supervised workplace start and dockside credentialed graduate transfer controls")
+	_expect(screen.education_info.text.contains("engineering") or screen.education_info.text.contains("Engineering"), "original education screen shows actual station professional wages and local practical certificates alongside school enrolments")
+	var p34_course_picker: OptionButton = screen.find_child("CareerTrackPicker", true, false)
+	for p34_option in range(p34_course_picker.item_count):
+		if str(p34_course_picker.get_item_metadata(p34_option)) == "engineering_college":
+			p34_course_picker.select(p34_option)
+			break
+	_expect(screen.career_certified_toggle.button_pressed and screen.career_ship_picker.get_item_metadata(screen.career_ship_picker.selected) == "ship_001", "touch UI selects the actually docked player ship and the verified-practical qualification tier")
+	screen.find_child("CareerBoardButton", true, false).pressed.emit()
+	_expect(screen.education_feedback.text.contains("boarded") and screen.world._find_ship("ship_001").career_manifest.get("track", "") == "engineering_college" and screen.world._find_station("player_station_2").education.qualified.engineering_college == 0, "tapping Board graduates actually moves one existing certified engineer and typed credentials onto the ship without generating an unlisted person")
+	_expect(save_store.save_game(test_root + "/pass34-ui-certified-board.json", screen.world.snapshot()) == OK, "map-first Android graduate transfer action results in a strictly valid on-ship qualification state")
 	screen.find_child("CloseEducationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
