@@ -4351,6 +4351,7 @@ func _run() -> void:
 	_expect(p33_campus.stock.recorded_data == 13 and p33_world.state.ledger.any(func(e): return e.kind == "buy" and e.station_id == "auroran_archive" and e.ware_id == "recorded_data" and int(e.quantity) == 13), "study materials are inspectable real cargo and purchases, not classroom-only virtual points")
 	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "working residential school receives real clean water, food, medicine and solar electricity before scheduled instruction")
 	p33_world.advance_ticks(60)
+	var p33_ready_to_enrol: Dictionary = p33_world.snapshot()
 	_expect(p33_record.resident_status == "Provisioned" and p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "one physically housed adult learner can start general education only with an appointed real resident instructor and actual purchased source books")
 	_expect(not p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "one active school class cannot be duplicated into a second phantom booking")
 	var p33_payroll_before: int = int(p33_campus.education.payroll_credits)
@@ -4416,6 +4417,25 @@ func _run() -> void:
 	_expect(int(p33_youth_campus.education.certificates_total) == 3, "childhood maturation conserves exactly the original total number of academic course completions")
 	_expect(save_store.save_game(test_root + "/pass33-schooled-adult.json", p33_youth_world.snapshot()) == OK, "biological ageing and recorded youth education are jointly save-safe and never mint an extra adult")
 
+	
+	# A stalled class does not consume a salary or produce an invisible
+	# certificate. A ship can physically remove school books and later return
+	# those same units to resume the same saved paid class.
+	var p33_stalled = WorldScript.new()
+	_expect(p33_stalled.restore_snapshot(p33_ready_to_enrol) == OK and p33_stalled.education.enroll(p33_stalled, "player_station_2", "community_school", 1).ok, "a second genuine pre-course snapshot reproduces a real eligible class")
+	var p33_stalled_station: Dictionary = p33_stalled._find_station("player_station_2")
+	var p33_notes_to_ship: int = int(p33_stalled_station.stock.recorded_data)
+	_expect(p33_stalled.dock_ship("ship_001", "player_station_2").ok and p33_stalled.transfer_player_station("ship_001", "player_station_2", "recorded_data", p33_notes_to_ship, false).ok, "removing study notes requires a physically docked player ship and conserves all purchased media")
+	var p33_salary_on_hold: int = _total_credits(p33_stalled.state)
+	var p33_payroll_on_hold: int = int(p33_stalled_station.education.payroll_credits)
+	p33_stalled.advance_ticks(60)
+	_expect(int(p33_stalled_station.education.courses.community_school.progress) == 0 and p33_stalled_station.education.courses.community_school.status == "Needs recorded_data", "class cannot advance, graduate or consume phantom knowledge when every bought study book is physically aboard the ship")
+	_expect(_total_credits(p33_stalled.state) == p33_salary_on_hold and int(p33_stalled_station.education.payroll_credits) == p33_payroll_on_hold, "missing research/media material causes a true all-or-nothing teaching pause with no salaries lost or minted")
+	_expect(p33_stalled.dock_ship("ship_001", "player_station_2").ok and p33_stalled.transfer_player_station("ship_001", "player_station_2", "recorded_data", p33_notes_to_ship, true).ok, "same school books physically return from the ship into the campus warehouse without teleportation")
+	p33_stalled.advance_ticks(60)
+	_expect(int(p33_stalled_station.education.courses.community_school.progress) == 60 and int(p33_stalled_station.education.payroll_credits) == p33_payroll_on_hold + 12, "returning exact previously purchased learning records restarts a previously stalled wage-funded course")
+	_expect(save_store.save_game(test_root + "/pass33-school-resume.json", p33_stalled.snapshot()) == OK, "stalled and resumed courses with physically returned student materials remain safe to save")
+
 	var p33_forced_certificate: Dictionary = p33_world.snapshot()
 	p33_forced_certificate.stations.filter(func(st): return st.id == "player_station_2")[0].education.qualified.flight_academy = 1
 	_expect(save_store.save_game(test_root + "/pass33-fabricated-pilot.json", p33_forced_certificate) != OK, "strict saves reject invented flight certificates without actual school, training time, materials, classrooms and completion ledger")
@@ -4446,6 +4466,12 @@ func _run() -> void:
 	screen.find_child("InspectorAction_education", true, false).pressed.emit()
 	_expect(is_instance_valid(screen.education_screen) and screen.find_child("EducationAppointButton", true, false) != null and screen.find_child("EducationEnrollButton", true, false) != null and screen.find_child("EducationStudentCount", true, false) != null, "touch-screen education interface exposes resident teacher assignment and real learner counts")
 	_expect(screen.education_info.text.contains("School payroll account") and screen.education_info.text.to_lower().contains("engineering"), "mobile teaching screen shows genuine material, payroll and certificate history without claiming new pilots")
+	_expect(screen.world.restore_snapshot(p33_ready_to_enrol) == OK, "touch interaction test starts with real adult pupils, actual completed school and thirteen physically stocked notes")
+	screen._update_education_screen()
+	screen.find_child("EducationAppointButton", true, false).pressed.emit()
+	_expect(screen.education_feedback.text.contains("appointed") and int(screen.world._find_station("player_station_2").education.teachers) == 1, "tapping instructor appointment actually records the adult workforce in the active game and saves the authorized change")
+	screen.find_child("EducationEnrollButton", true, false).pressed.emit()
+	_expect(screen.education_feedback.text.contains("Enrolled") and screen.world._find_station("player_station_2").education.courses.has("community_school"), "tapping enrol in the original mobile schooling screen really reserves one existing adult, not a simulated inert UI action")
 	screen.find_child("CloseEducationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
