@@ -1,6 +1,6 @@
 name: Faction Command foundation
 # Pass 33 CI gate: physical staff, paid classrooms, finite archive texts, youth credentials, Android v22.
-# Pass 32 final-head gate: verify all 1,603 Godot assertions and signed Android v21 after code, design, README and journal updates.
+# Pass 33 FINAL PR HEAD: verify all 1,708 Godot assertions and signed Android v22 with compiled education script and byte-identical education.json after all gameplay, README, design and progress commits.
 on:
   push:
     paths:
