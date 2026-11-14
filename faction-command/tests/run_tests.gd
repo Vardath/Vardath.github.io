@@ -4622,6 +4622,7 @@ func _run() -> void:
 	# The typed qualification is attached to an ACTUAL transport manifest,
 	# never discharged as anonymous crew, and the destination must have real
 	# space, energy, food, water and medical supplies for the incoming adult.
+	var p34_qualified_departure: Dictionary = p34_world.snapshot()
 	_expect(not p34_world.careers.board_qualified(p34_world, "ship_001", "flight_academy", 1, true).ok, "a graduate cannot masquerade as a certified pilot when their certificate is engineering")
 	_expect(not p34_world.settlement.evacuate(p34_world, "ship_001", 1).ok, "unqualified evacuation still cannot discard the resident's genuinely completed theory and practical records")
 	_expect(p34_world.careers.board_qualified(p34_world, "ship_001", "engineering_college", 1, true).ok, "a single engineer boards one vacant physical passenger berth with both typed engineering theory and practical attestation")
@@ -4661,7 +4662,7 @@ func _run() -> void:
 	await process_frame
 	screen.find_child("StartGameButton", true, false).pressed.emit()
 	await process_frame
-	_expect(screen.world.restore_snapshot(p34_world.snapshot()) == OK, "Android map-view can load a real apprenticeship-graduated active colony with a qualified passenger at the dock")
+	_expect(screen.world.restore_snapshot(p34_qualified_departure) == OK, "Android map-view loads a real paid-practicum graduate still resident and a real ship docked for professional transfer")
 	screen._open_map_station("player_station_2")
 	_expect(screen.find_child("InspectorTab_Careers", true, false) != null, "owned physical school appears in the original Android map inspector under a distinct Careers tab")
 	screen.find_child("InspectorTab_Careers", true, false).pressed.emit()
@@ -4669,6 +4670,15 @@ func _run() -> void:
 	screen.find_child("InspectorAction_careers", true, false).pressed.emit()
 	_expect(is_instance_valid(screen.education_screen) and screen.find_child("CareerPracticumButton", true, false) != null and screen.find_child("CareerBoardButton", true, false) != null and screen.find_child("CareerShipPicker", true, false) != null and screen.find_child("CareerPracticalTransfer", true, false) != null, "touch UI exposes usable supervised workplace start and dockside credentialed graduate transfer controls")
 	_expect(screen.education_info.text.contains("engineering") or screen.education_info.text.contains("Engineering"), "original education screen shows actual station professional wages and local practical certificates alongside school enrolments")
+	var p34_course_picker: OptionButton = screen.find_child("CareerTrackPicker", true, false)
+	for p34_option in range(p34_course_picker.item_count):
+		if str(p34_course_picker.get_item_metadata(p34_option)) == "engineering_college":
+			p34_course_picker.select(p34_option)
+			break
+	_expect(screen.career_certified_toggle.button_pressed and screen.career_ship_picker.get_item_metadata(screen.career_ship_picker.selected) == "ship_001", "touch UI selects the actually docked player ship and the verified-practical qualification tier")
+	screen.find_child("CareerBoardButton", true, false).pressed.emit()
+	_expect(screen.education_feedback.text.contains("boarded") and screen.world._find_ship("ship_001").career_manifest.get("track", "") == "engineering_college" and screen.world._find_station("player_station_2").education.qualified.engineering_college == 0, "tapping Board graduates actually moves one existing certified engineer and typed credentials onto the ship without generating an unlisted person")
+	_expect(save_store.save_game(test_root + "/pass34-ui-certified-board.json", screen.world.snapshot()) == OK, "map-first Android graduate transfer action results in a strictly valid on-ship qualification state")
 	screen.find_child("CloseEducationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
