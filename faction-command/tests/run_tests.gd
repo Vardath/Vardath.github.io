@@ -311,7 +311,9 @@ func _replenish_practical_station(world: RefCounted, source_id: String, campus_i
 	var campus: Dictionary = world._find_station(campus_id)
 	var ship: Dictionary = world._find_ship("ship_001")
 	if source.is_empty() or campus.is_empty() or ship.is_empty():
+		printerr("P34 REFUEL: empty source, campus or ship")
 		return false
+	printerr("P34 REFUEL INIT: tick=", world.state.tick, " srcStock=", source.stock, " srcSpace=", int(source.storage_capacity)-world.station_volume(source_id), " shipCargo=", ship.cargo, " shipCap=", ship.cargo_capacity, " sector=", ship.sector, " orders=", ship.orders)
 	for round_index in range(6):
 		var need_energy: int = maxi(0, stock_target - int(campus.stock.get("energy_cells", 0)))
 		if int(source.stock.get("energy_cells", 0)) >= need_energy:
@@ -326,10 +328,16 @@ func _replenish_practical_station(world: RefCounted, source_id: String, campus_i
 					break
 			if not ware_id.is_empty():
 				var quantity: int = mini(20, mini(int(source.stock.get(ware_id, 0)), free_cargo))
-				if not world.dock_ship("ship_001", source_id).ok or not world.transfer_player_station("ship_001", source_id, ware_id, quantity, false).ok:
+				var arriving: Dictionary = world.dock_ship("ship_001", source_id)
+				var taking: Dictionary = world.transfer_player_station("ship_001", source_id, ware_id, quantity, false) if bool(arriving.ok) else {"ok":false, "message":"Could not dock"}
+				if not bool(arriving.ok) or not bool(taking.ok):
+					printerr("P34 REFUEL TRANSFER FAILURE: ", arriving, " ", taking, " shipCargo=", ship.cargo, " srcStock=", source.stock)
 					return false
 		world.advance_ticks(12)
-	return _deliver_family_supplies(world, source_id, campus_id, stock_target)
+	var final: bool = _deliver_family_supplies(world, source_id, campus_id, stock_target)
+	if not final:
+		printerr("P34 REFUEL FINAL FAILURE: tick=", world.state.tick, " sourceStock=", source.stock, " srcCapacity=", source.storage_capacity, " srcUsed=", world.station_volume(source_id), " shipCargo=", ship.cargo, " campusStock=", campus.stock)
+	return final
 
 
 func _run() -> void:
