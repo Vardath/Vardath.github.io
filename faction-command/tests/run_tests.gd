@@ -56,6 +56,10 @@ func _without_station_supply(ships: Array) -> Array:
 func _strip_shipyard(state: Dictionary) -> void:
 	state.erase("personnel_version")
 	state.erase("crew_pools")
+	for ship in state.ships:
+		ship.erase("captain_profile")
+		ship.erase("crew_profile")
+		ship.erase("payroll")
 	state.erase("shipyard_version")
 	state.erase("shipyard")
 
@@ -1321,6 +1325,7 @@ func _run() -> void:
 	var rival_ship: Dictionary = competing_supply.state.ships[0].duplicate(true)
 	rival_ship.id = "ship_002"
 	rival_ship.name = "Second Light"
+	competing_supply.personnel.initialize_ship(rival_ship, int(competing_supply.state.tick), "hearth_exchange")
 	competing_supply.state.ships.append(rival_ship)
 	var competing_supply_site: String = competing_supply.construction.place(competing_supply, "hearthreach", {"solar_cells":1}, "self", []).site_id
 	competing_supply.build_supply.assign(competing_supply, "ship_001", competing_supply_site)
@@ -1761,6 +1766,7 @@ func _run() -> void:
 	var second_supplier: Dictionary = competing_stations.state.ships[0].duplicate(true)
 	second_supplier.id = "ship_002"
 	second_supplier.name = "Second Light"
+	competing_stations.personnel.initialize_ship(second_supplier, int(competing_stations.state.tick), "hearth_exchange")
 	competing_stations.state.ships.append(second_supplier)
 	competing_stations.station_supply.assign(competing_stations, "ship_001", str(supplied_station.id), 36)
 	competing_stations.station_supply.assign(competing_stations, "ship_002", str(supplied_station.id), 36)
@@ -1905,7 +1911,7 @@ func _run() -> void:
 	var crew_market: Dictionary = crew_world._find_station("hearth_exchange")
 	var crew_total_before: int = _total_credits(crew_world.state)
 	var initial_roster: int = int(crew_world.state.crew_pools.hearth_exchange)
-	_expect(crew_world.state.personnel_version == 1 and initial_roster == 12 and crew_world.personnel.capacity(crew_first) == 8, "finite recruitment pool and courier crew berth limit are initialized")
+	_expect(crew_world.state.personnel_version == 2 and initial_roster == 12 and crew_world.personnel.capacity(crew_first) == 8, "finite recruitment pool and courier crew berth limit are initialized")
 	var rename_before: Dictionary = crew_world.snapshot()
 	_expect(not crew_world.personnel.rename(crew_world, "npc_builder_001", "Owned Now").ok and crew_world.snapshot() == rename_before, "NPC vessels cannot be renamed")
 	_expect(not crew_world.personnel.rename(crew_world, "ship_001", " \t ").ok and crew_world.snapshot() == rename_before, "blank ship names cannot alter world state")
@@ -1977,10 +1983,14 @@ func _run() -> void:
 	var old_personnel: Dictionary = transfer_world.snapshot()
 	old_personnel.erase("personnel_version")
 	old_personnel.erase("crew_pools")
+	for old_staff_ship in old_personnel.ships:
+		old_staff_ship.erase("captain_profile")
+		old_staff_ship.erase("crew_profile")
+		old_staff_ship.erase("payroll")
 	_expect(save_store.save_game(test_root + "/crew-legacy.json", old_personnel) == OK, "old shipyard save without personnel roster remains readable")
 	var old_personnel_read: Dictionary = save_store.load_game(test_root + "/crew-legacy.json")
 	var migrated_personnel = WorldScript.new()
-	_expect(bool(old_personnel_read.get("ok", false)) and migrated_personnel.restore_snapshot(old_personnel_read.state) == OK and migrated_personnel.state.personnel_version == 1, "old save migrates to finite recruitment rosters without a new game")
+	_expect(bool(old_personnel_read.get("ok", false)) and migrated_personnel.restore_snapshot(old_personnel_read.state) == OK and migrated_personnel.state.personnel_version == 2, "old save migrates to finite recruitment rosters without a new game")
 	_expect(migrated_personnel.state.ships == old_personnel.ships and migrated_personnel.state.starting_credits == old_personnel.starting_credits and migrated_personnel.state.ledger == old_personnel.ledger, "migration preserves every existing ship, captain, order, crew member and credit")
 	var bad_pool: Dictionary = crew_world.snapshot()
 	bad_pool.crew_pools.hearth_exchange = -1
@@ -1988,7 +1998,7 @@ func _run() -> void:
 	var future_personnel_path := test_root + "/crew-future.json"
 	_expect(save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK and save_store.save_game(future_personnel_path, crew_world.snapshot()) == OK, "future personnel schema test has a valid backup")
 	var future_personnel: Dictionary = crew_world.snapshot()
-	future_personnel.personnel_version = 2
+	future_personnel.personnel_version = 3
 	var future_personnel_payload := Marshalls.variant_to_base64(future_personnel, false)
 	var future_personnel_file := FileAccess.open(future_personnel_path, FileAccess.WRITE)
 	future_personnel_file.store_string(JSON.stringify({"format_version":1, "payload":future_personnel_payload, "checksum":future_personnel_payload.sha256_text()}))
@@ -2489,6 +2499,7 @@ func _run() -> void:
 	second_ship.player_trader = {"enabled":false, "phase":"idle", "source_id":"", "destination_id":"", "ware_id":"", "quantity":0, "managed_quantity":0, "retry_ticks":0}
 	second_ship.build_supply = property_world.build_supply._empty_job()
 	second_ship.station_supply = property_world.station_supply._empty_job()
+	property_world.personnel.initialize_ship(second_ship, int(property_world.state.tick), "vellum_foundry")
 	property_world.state.ships.append(second_ship)
 	screen._refresh_world_display()
 	_expect(screen.property_count_label.text.contains("2 ships") and screen.property_count_label.text.contains("1 stations") and screen.property_count_label.text.contains("1 sites"), "property directory lists owned ships, working stations and active sites separately")
