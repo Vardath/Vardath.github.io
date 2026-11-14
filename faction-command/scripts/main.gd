@@ -1812,7 +1812,7 @@ func _update_population_screen() -> void:
 		aboard += int(ship.crew) + 1
 	var station_people: int = world.population.total_people(world) - aboard
 	var text_rows: Array[String] = []
-	text_rows.append("Known total: %d people\nStation cohorts: %d  ·  Ship crews and pilots: %d\nStaffing is counted once; recruitment pools are references to the same residents, not extra people." % [world.population.total_people(world), station_people, aboard])
+	text_rows.append("Known total: %d people\nStation cohorts: %d  ·  Ship crews and pilots: %d\nStaffing is counted once; recruitment pools are references to the same residents, not extra people.\nBirths, housing, immigration, schools and morale facilities are not implemented yet." % [world.population.total_people(world), station_people, aboard])
 	for entry in entries:
 		var title: String = "%s · %s" % [entry.name, _faction_name(str(entry.owner))] if entry.active else "%s · dormant roster (station unavailable)" % entry.name
 		text_rows.append("%s\nAvailable resident workers: %d\nChildren: %d · Students: %d · Assigned station staff: %d · Retirees: %d\nHousing capacity: not implemented (no free residential space)" % [title, int(entry.available), int(entry.children), int(entry.students), int(entry.assigned), int(entry.retirees)])
