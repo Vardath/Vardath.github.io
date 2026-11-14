@@ -1,4 +1,5 @@
 name: Faction Command foundation
+# Pass 30 final-head CI gate: resident supplies, evacuation and docs, Android v19.
 # Verify the final Pass 29 documentation-and-gameplay head, not an earlier code-only SHA.
 on:
   push:
