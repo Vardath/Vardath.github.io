@@ -4313,7 +4313,7 @@ func _run() -> void:
 	# alloys through its published buy-prices and sponsoring faction budget.
 	var p33_archive: Dictionary = p33_world._find_station("auroran_archive")
 	_expect(not p33_archive.is_empty() and p33_archive.sell_prices.has("recorded_data") and p33_archive.production.any(func(m): return m.recipe_id == "data_reproduction"), "historical Auroran archive is an original seller that manufactures reproducible books and learning discs, not a source of magically created data")
-	if int(p33_archive.stock.recorded_data) < 12:
+	if int(p33_archive.stock.recorded_data) < 13:
 		_expect(p33_world.dock_ship("ship_001", "player_station_1").ok and p33_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 4, false).ok, "archive's real media printers need four player-smelted metal plates, hauled in the player's cargo hold")
 		_expect(p33_world.queue_fly_to("ship_001", "hearthreach"), "player ship physically crosses sectors to resupply historical records instead of teleporting teaching materials")
 		p33_world.advance_ticks(35)
@@ -4343,12 +4343,12 @@ func _run() -> void:
 	if p33_world._find_ship("ship_001").sector != "hearthreach":
 		_expect(p33_world.queue_fly_to("ship_001", "hearthreach"), "records buyer must travel to the archive's actual sector")
 		p33_world.advance_ticks(35)
-	_expect(int(p33_archive.stock.recorded_data) >= 9 and p33_archive.production.any(func(m): return m.recipe_id == "data_reproduction" and int(m.cycles) > 0), "archive's funded real workshop has manufactured at least nine reproducible study documents from actual media and energy")
-	_expect(p33_world.dock_ship("ship_001", "auroran_archive").ok and p33_world.trade("ship_001", "auroran_archive", "recorded_data", 9, true).ok, "player purchases nine genuine educational records from a physical operating archive at its published price")
+	_expect(int(p33_archive.stock.recorded_data) >= 13 and p33_archive.production.any(func(m): return m.recipe_id == "data_reproduction" and int(m.cycles) > 0), "archive's funded real workshop has manufactured at least thirteen reproducible study documents from actual media and energy")
+	_expect(p33_world.dock_ship("ship_001", "auroran_archive").ok and p33_world.trade("ship_001", "auroran_archive", "recorded_data", 13, true).ok, "player purchases thirteen genuine educational records from a physical operating archive at its published price")
 	_expect(p33_world.queue_fly_to("ship_001", "copper_wake"), "records for school are hauled over the star map aboard a real owned cargo ship")
 	p33_world.advance_ticks(35)
-	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.transfer_player_station("ship_001", "player_station_2", "recorded_data", 9, true).ok, "nine bought archive records are delivered through dockside ware transfer to the physical campus")
-	_expect(p33_campus.stock.recorded_data == 9 and p33_world.state.ledger.any(func(e): return e.kind == "buy" and e.station_id == "auroran_archive" and e.ware_id == "recorded_data" and int(e.quantity) == 9), "study materials are inspectable real cargo and purchases, not classroom-only virtual points")
+	_expect(p33_world.dock_ship("ship_001", "player_station_2").ok and p33_world.transfer_player_station("ship_001", "player_station_2", "recorded_data", 13, true).ok, "thirteen bought archive records are delivered through dockside ware transfer to the physical campus")
+	_expect(p33_campus.stock.recorded_data == 13 and p33_world.state.ledger.any(func(e): return e.kind == "buy" and e.station_id == "auroran_archive" and e.ware_id == "recorded_data" and int(e.quantity) == 13), "study materials are inspectable real cargo and purchases, not classroom-only virtual points")
 	_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "working residential school receives real clean water, food, medicine and solar electricity before scheduled instruction")
 	p33_world.advance_ticks(60)
 	_expect(p33_record.resident_status == "Provisioned" and p33_world.education.enroll(p33_world, "player_station_2", "community_school", 1).ok, "one physically housed adult learner can start general education only with an appointed real resident instructor and actual purchased source books")
@@ -4359,7 +4359,7 @@ func _run() -> void:
 	var p33_available_money: int = _total_credits(p33_world.state)
 	p33_world.advance_ticks(120)
 	_expect(p33_campus.education.courses.has("community_school") and int(p33_campus.education.courses.community_school.progress) == 120 and p33_campus.education.qualified.community_school == 0, "two properly supplied instruction cycles accumulate time, not instant worker qualifications")
-	_expect(p33_campus.stock.recorded_data == 7 and int(p33_campus.education.payroll_credits) == p33_payroll_before + 24 and _total_credits(p33_world.state) == p33_available_money, "real instructor salary transfers from player treasury into station payroll escrow while two physical recorded-data units are consumed")
+	_expect(p33_campus.stock.recorded_data == 11 and int(p33_campus.education.payroll_credits) == p33_payroll_before + 24 and _total_credits(p33_world.state) == p33_available_money, "real instructor salary transfers from player treasury into station payroll escrow while two physical recorded-data units are consumed")
 	_expect(save_store.save_game(test_root + "/pass33-mid-school.json", p33_world.snapshot()) == OK, "mid-course staff allocation, actual materials and dated class progression are valid on save")
 	var p33_mid_save: Dictionary = save_store.load_game(test_root + "/pass33-mid-school.json")
 	var p33_reloaded = WorldScript.new()
@@ -4378,6 +4378,44 @@ func _run() -> void:
 	_expect(not p33_campus.education.courses.has("engineering_college") and int(p33_campus.education.qualified.engineering_college) == 1 and int(p33_campus.education.certificates_total) == 2, "five funded periods produce one engineering foundations record without generating unearned ship-level engineering skills")
 	_expect(p33_world.population.total_people(p33_world) >= p33_professional_total and p33_world.education.available_for_relocation(p33_world, "player_station_2") == 0, "resident graduate credentials, teacher appointments and dependent families cannot be silently lost during unqualified ship evacuation")
 	_expect(save_store.save_game(test_root + "/pass33-two-curricula.json", p33_world.snapshot()) == OK, "two completed independently sourced education programs and all residents pass strict cohort and ledger validation")
+	
+	# The same genuine family home and community classroom can educate
+	# school-age residents born through the actual Pass 32 medical and
+	# provisioning rules. A school may never conjure children from nothing.
+	for p33_birth_maintenance in range(15):
+		if int(p33_record.cohorts.children) >= 1:
+			break
+		_expect(_deliver_family_supplies(p33_world, "player_station_1", "player_station_2"), "family school housing consumes actual produced water/food/medicine before a naturally eligible child is born")
+		p33_world.advance_ticks(60)
+	_expect(int(p33_record.cohorts.children) >= 1 and int(p33_record.family.births_total) >= 1, "a real two-parent family and physical medical kit must produce a counted child before school-age teaching can begin")
+	_expect(int(p33_campus.stock.recorded_data) == 4, "four actual remaining archive books are reserved for the naturally born future school-age learner")
+	var p33_youth_world = WorldScript.new()
+	_expect(p33_youth_world.restore_snapshot(p33_world.snapshot()) == OK, "education and puberty test reuses an actual recorded child rather than forging student cohorts")
+	var p33_youth_rec: Dictionary = p33_youth_world.population.station_cohort(p33_youth_world, "player_station_2")
+	var p33_youth_campus: Dictionary = p33_youth_world._find_station("player_station_2")
+	var p33_child_stage_due: int = int(p33_youth_rec.family.child_queue[0].ready_tick)
+	p33_youth_world.state.tick = p33_child_stage_due
+	p33_youth_world.demographics.tick(p33_youth_world)
+	_expect(int(p33_youth_rec.cohorts.students) >= 1 and p33_youth_rec.family.youth_queue.size() >= 1, "the real saved child becomes a counted school-age youth only when the correct maturity timestamp arrives")
+	_expect(_deliver_family_supplies(p33_youth_world, "player_station_1", "player_station_2", 12), "real family and teacher life support is refilled from production for four school-age education service periods")
+	p33_youth_world.advance_ticks(60)
+	_expect(p33_youth_world.education.enroll(p33_youth_world, "player_station_2", "community_school", 1, "youth").ok, "community school accepts an actual school-age youth in a real powered hab without using an adult recruitment slot")
+	var p33_youth_total: int = p33_youth_world.population.total_people(p33_youth_world)
+	p33_youth_world.advance_ticks(120)
+	_expect(p33_youth_campus.education.courses.has("community_school") and int(p33_youth_campus.education.courses.community_school.progress) == 120, "school-age instruction requires paid course ticks and actual purchased education media, not immediate literacy")
+	_expect(_deliver_family_supplies(p33_youth_world, "player_station_1", "player_station_2", 12), "a real child classroom's second set of study cycles consumes stocked provisions and transports its residential biowaste")
+	p33_youth_world.advance_ticks(120)
+	_expect(int(p33_youth_campus.education.youth_completed) == 1 and int(p33_youth_campus.education.certificates_total) == 3 and not p33_youth_campus.education.courses.has("community_school"), "four completed paid service periods grant exactly one school-age youth a real community education record")
+	_expect(int(p33_youth_campus.education.qualified.community_school) == 1 and int(p33_youth_campus.education.qualified.engineering_college) == 1, "teaching a youth does not accidentally create another fully grown adult or duplicate a previous graduate")
+	_expect(p33_youth_world.population.total_people(p33_youth_world) == p33_youth_total + (int(p33_youth_rec.family.births_total) - int(p33_record.family.births_total)), "education never changes headcount; any concurrent medically supported birth is accounted for as a distinct demographic event")
+	_expect(save_store.save_game(test_root + "/pass33-educated-youth.json", p33_youth_world.snapshot()) == OK, "youth diploma, school staff, paid lessons and persistent age queues survive strict save verification")
+	var p33_youth_due: int = int(p33_youth_rec.family.youth_queue[0].ready_tick)
+	p33_youth_world.state.tick = p33_youth_due
+	p33_youth_world.demographics.tick(p33_youth_world)
+	_expect(int(p33_youth_rec.cohorts.assigned_workers) >= 3 and int(p33_youth_campus.education.youth_completed) == 0 and int(p33_youth_campus.education.qualified.community_school) == 2, "once the schooled youth matures, the same existing person carries their recorded credential into adulthood, with no second diploma or phantom teacher")
+	_expect(int(p33_youth_campus.education.certificates_total) == 3, "childhood maturation conserves exactly the original total number of academic course completions")
+	_expect(save_store.save_game(test_root + "/pass33-schooled-adult.json", p33_youth_world.snapshot()) == OK, "biological ageing and recorded youth education are jointly save-safe and never mint an extra adult")
+
 	var p33_forced_certificate: Dictionary = p33_world.snapshot()
 	p33_forced_certificate.stations.filter(func(st): return st.id == "player_station_2")[0].education.qualified.flight_academy = 1
 	_expect(save_store.save_game(test_root + "/pass33-fabricated-pilot.json", p33_forced_certificate) != OK, "strict saves reject invented flight certificates without actual school, training time, materials, classrooms and completion ledger")
