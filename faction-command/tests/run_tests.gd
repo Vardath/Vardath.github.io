@@ -70,6 +70,10 @@ func _without_progression(ships: Array) -> Array:
 
 
 func _strip_provisions(state: Dictionary) -> void:
+	state.erase("settlement_version")
+	for ship in state.get("ships", []):
+		ship.erase("settler_passengers")
+		ship.erase("settler_source_station_id")
 	state.erase("provisions_version")
 	state.erase("provisions_catalog")
 	if state.has("wares"):
@@ -3606,6 +3610,119 @@ func _run() -> void:
 	screen._open_map_station("hearth_exchange")
 	screen.find_child("InspectorTab_Population", true, false).pressed.emit()
 	_expect(screen.detail_body.text.contains("Consumption/60 ticks") and screen.detail_body.text.contains("New births"), "Space RPG-style inspector exposes provisions without claiming births or schooling are done")
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 29: conserved dock-to-dock settlement of existing adults. Use
+	# the paid, fully built, physically provisioned complex from Pass 28;
+	# never inject a free habitat or invent residents for test convenience.
+	var transit_world = WorldScript.new()
+	_expect(transit_world.restore_snapshot(verified_supply_world.snapshot()) == OK, "working physical civilian complex is usable as the settlement test fixture")
+	_disable_npc_trading(transit_world)
+	var transit_ship: Dictionary = transit_world._find_ship("ship_001")
+	var transit_home: Dictionary = transit_world._find_station("player_station_1")
+	var initial_people: int = transit_world.population.total_people(transit_world)
+	var initial_source: int = transit_world.population.available_workers(transit_world, "hearth_exchange")
+	var source_station: Dictionary = transit_world._find_station("hearth_exchange")
+	var initial_bank: int = int(transit_world.state.starting_credits)
+	var initial_source_bank: int = int(source_station.credits)
+	var initial_credit_total: int = _total_credits(transit_world.state)
+	_expect(transit_world.state.settlement_version == 1 and int(transit_ship.settler_passengers) == 0 and str(transit_ship.settler_source_station_id).is_empty(), "new ships have empty versioned civilian manifests")
+	_expect(transit_world.settlement.free_berths(transit_world, transit_ship) == transit_world.personnel.capacity(transit_ship) - int(transit_ship.crew), "passenger seats are the actual vacant crew-compatible ship berths")
+	var at_home_before: Dictionary = transit_world.snapshot()
+	_expect(not transit_world.settlement.board(transit_world, "ship_001", 2).ok and transit_world.snapshot() == at_home_before, "a remotely docked player vessel cannot board NPC passengers")
+	_expect(transit_world.queue_fly_to("ship_001", "hearthreach"), "ship receives a real route from provisioned colony to NPC source")
+	transit_world.advance_ticks(35)
+	_expect(str(transit_ship.sector) == "hearthreach" and transit_ship.orders.is_empty(), "colonist transport completes genuine multi-sector transit to source")
+	_expect(transit_world.dock_ship("ship_001", "hearth_exchange").ok, "ship explicitly docks at NPC recruitment station")
+	var before_board_reject: Dictionary = transit_world.snapshot()
+	_expect(not transit_world.settlement.board(transit_world, "ship_001", 7).ok and transit_world.snapshot() == before_board_reject, "boarding refuses groups larger than remaining real ship berths without mutation")
+	var board_two: Dictionary = transit_world.settlement.board(transit_world, "ship_001", 2)
+	_expect(board_two.ok and int(transit_ship.settler_passengers) == 2 and str(transit_ship.settler_source_station_id) == "hearth_exchange", "two existing adult residents board with explicit recorded source provenance")
+	_expect(transit_world.population.available_workers(transit_world, "hearth_exchange") == initial_source - 2 and int(transit_world.state.crew_pools.hearth_exchange) == initial_source - 2, "boarding subtracts exactly two people from the real source cohort and compatibility roster")
+	_expect(int(transit_world.state.starting_credits) == initial_bank - 200 and int(source_station.credits) == initial_source_bank + 200, "passenger permits are actual player-to-NPC station credit transfers")
+	_expect(_total_credits(transit_world.state) == initial_credit_total and transit_world.population.total_people(transit_world) == initial_people, "paid boarding conserves all known people and all simulated money")
+	_expect(not transit_world.personnel.hire(transit_world, "ship_001", 5).ok, "boarding passengers reserves berths against later crew hiring")
+	var after_board: Dictionary = transit_world.snapshot()
+	_expect(not transit_world.settlement.board(transit_world, "ship_001", 100).ok and transit_world.snapshot() == after_board, "failed extra boarding does not mint credits, people or passengers")
+	_expect(transit_world.queue_fly_to("ship_001", "copper_wake"), "full passenger manifest travels using the existing player ship order system")
+	transit_world.advance_ticks(5)
+	_expect(int(transit_ship.settler_passengers) == 2 and str(transit_ship.docked_at).is_empty(), "civilian passengers remain physically aboard during inter-sector flight")
+	var transit_save_path := test_root + "/pass29-civilian-in-transit.json"
+	_expect(save_store.save_game(transit_save_path, transit_world.snapshot()) == OK, "populated passenger manifests serialize safely while ship is mid-crossing")
+	var transit_save: Dictionary = save_store.load_game(transit_save_path)
+	var transit_restore = WorldScript.new()
+	_expect(transit_save.get("ok", false) and transit_restore.restore_snapshot(transit_save.state) == OK and transit_restore.snapshot() == transit_world.snapshot(), "mid-flight passengers, source, order, payroll and all stocks survive exact save/reload")
+	transit_restore.advance_ticks(40)
+	var arriving_ship: Dictionary = transit_restore._find_ship("ship_001")
+	var arriving_home: Dictionary = transit_restore._find_station("player_station_1")
+	_expect(arriving_ship.sector == "copper_wake" and arriving_ship.orders.is_empty() and int(arriving_ship.settler_passengers) == 2, "passengers reach the real destination without teleporting or losing their manifest")
+	_expect(transit_restore.dock_ship("ship_001", "player_station_1").ok, "colonist ship docks at the paid-built player station")
+	var populated_cohort: Dictionary = transit_restore.population.station_cohort(transit_restore, "player_station_1")
+	_expect(int(populated_cohort.cohorts.assigned_workers) == 0 and transit_restore.habitation.operational_capacity(arriving_home, transit_restore.state.habitation_catalog) >= 2, "real completed habitation provides operational vacant slots but no free inhabitants")
+	var arrival: Dictionary = transit_restore.settlement.disembark(transit_restore, "ship_001", 2)
+	_expect(arrival.ok and int(populated_cohort.cohorts.assigned_workers) == 2 and int(arriving_ship.settler_passengers) == 0 and str(arriving_ship.settler_source_station_id).is_empty(), "two adults move from ship manifest into existing station housing without duplication")
+	_expect(transit_restore.population.total_people(transit_restore) == initial_people, "people are conserved across source, voyage and new home")
+	_expect(int(populated_cohort.hab_capacity) >= 2 and transit_restore.population.report(transit_restore).any(func(entry): return str(entry.station_id) == "player_station_1" and int(entry.occupied_housing) == 2), "occupied residences are exposed through the live population report")
+	_expect(transit_restore.state.ledger.any(func(entry): return entry.kind == "settler_boarding" and int(entry.amount) == -200) and transit_restore.state.ledger.any(func(entry): return entry.kind == "settler_arrival" and int(entry.quantity) == 2), "real passenger boarding and arrival have immutable transaction-ledger entries")
+	_expect(not transit_restore.settlement.disembark(transit_restore, "ship_001", 1).ok, "empty ship cannot disembark invented additional settlers")
+	_expect(save_store.save_game(test_root + "/pass29-occupied-housing.json", transit_restore.snapshot()) == OK, "occupied real housing and its founding passenger transfer remain valid save state")
+	var settled_save: Dictionary = save_store.load_game(test_root + "/pass29-occupied-housing.json")
+	var settled_restore = WorldScript.new()
+	_expect(settled_save.get("ok", false) and settled_restore.restore_snapshot(settled_save.state) == OK and settled_restore.snapshot() == transit_restore.snapshot(), "settled adult residents survive exact saved-game round-trip")
+	var passenger_forgery: Dictionary = transit_world.snapshot()
+	passenger_forgery.ships[0].settler_passengers = 100
+	_expect(save_store.save_game(test_root + "/pass29-impossible-seats.json", passenger_forgery) != OK, "strict saves reject passengers exceeding real hull capacity")
+	var passenger_no_source: Dictionary = transit_world.snapshot()
+	passenger_no_source.ships[0].settler_source_station_id = ""
+	_expect(save_store.save_game(test_root + "/pass29-source-missing.json", passenger_no_source) != OK, "strict saves reject unprovenanced nonempty passenger manifests")
+	var fake_settler: Dictionary = transit_restore.snapshot()
+	fake_settler.population.stations.hearth_exchange.cohorts.assigned_workers = 3
+	_expect(save_store.save_game(test_root + "/pass29-npc-hab-spoof.json", fake_settler) != OK, "NPC stations cannot acquire unexplained player-assigned adult cohorts")
+	var overoccupied: Dictionary = transit_restore.snapshot()
+	overoccupied.population.stations.player_station_1.cohorts.assigned_workers = 999
+	_expect(save_store.save_game(test_root + "/pass29-over-occupied.json", overoccupied) != OK, "resident occupancy cannot exceed physically constructed habitat slots")
+	var future_settlement: Dictionary = transit_world.snapshot()
+	future_settlement.settlement_version = 2
+	_expect(save_store.save_game(test_root + "/pass29-future-version.json", future_settlement) != OK, "unsupported future settlement schema is not treated as a valid current game")
+	var return_world = WorldScript.new()
+	_expect(return_world.load_starter() == OK and return_world.dock_ship("ship_001", "hearth_exchange").ok, "return-contract fixture uses real starting ship and existing resident source")
+	var return_total: int = return_world.population.total_people(return_world)
+	var source_workers_before: int = return_world.population.available_workers(return_world, "hearth_exchange")
+	_expect(return_world.settlement.board(return_world, "ship_001", 1).ok and return_world.settlement.disembark(return_world, "ship_001", 1).ok, "passengers can physically return to their original NPC station")
+	_expect(return_world.population.available_workers(return_world, "hearth_exchange") == source_workers_before and return_world.population.total_people(return_world) == return_total and int(return_world._find_ship("ship_001").settler_passengers) == 0, "return to source restores exact resident headcount and clears the ship manifest")
+	var original_v17 = WorldScript.new()
+	_expect(original_v17.load_starter() == OK, "version 17 migration fixture begins as a valid starter world")
+	var prior_settlement: Dictionary = original_v17.snapshot()
+	prior_settlement.erase("settlement_version")
+	for legacy_ship in prior_settlement.ships:
+		legacy_ship.erase("settler_passengers")
+		legacy_ship.erase("settler_source_station_id")
+	_expect(save_store.save_game(test_root + "/pass28-before-settlement.json", prior_settlement) == OK, "authentic pre-settlement saved games remain readable")
+	var pre_settle_save: Dictionary = save_store.load_game(test_root + "/pass28-before-settlement.json")
+	var migrated_settler_world = WorldScript.new()
+	_expect(pre_settle_save.get("ok", false) and migrated_settler_world.restore_snapshot(pre_settle_save.state) == OK and migrated_settler_world.state.settlement_version == 1, "Pass 28 saves migrate additively to versioned zero-passenger manifests")
+	_expect(int(migrated_settler_world._find_ship("ship_001").settler_passengers) == 0 and migrated_settler_world.state.starting_credits == prior_settlement.starting_credits and migrated_settler_world.population.total_people(migrated_settler_world) == original_v17.population.total_people(original_v17), "legacy upgrade does not reset credits, crew or invent new people")
+	_expect(save_store.save_game(test_root + "/pass29-migrated.json", migrated_settler_world.snapshot()) == OK, "migrated settlement state can be saved immediately")
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass29-transit.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	await process_frame
+	_expect(screen.world.dock_ship("ship_001", "hearth_exchange").ok, "mobile-passenger UI fixture physically docks its command ship")
+	screen._open_crew_screen()
+	await process_frame
+	var board_control: Button = screen.find_child("BoardSettlersButton", true, false)
+	var settle_control: Button = screen.find_child("DisembarkSettlersButton", true, false)
+	_expect(board_control != null and settle_control != null and not board_control.disabled and settle_control.disabled, "compact crew manager exposes legal boarding and disabled disembark actions")
+	board_control.pressed.emit()
+	_expect(int(screen.world._find_ship("ship_001").settler_passengers) == 1 and screen.crew_info.text.contains("1 passengers aboard"), "real mobile boarding button moves one adult and refreshes the ship manifest")
+	_expect(not settle_control.disabled and screen.world.population.total_people(screen.world) > 0, "disembark control becomes available for a real passenger batch")
+	settle_control.pressed.emit()
+	_expect(int(screen.world._find_ship("ship_001").settler_passengers) == 0 and screen.crew_feedback.text.contains("returned"), "mobile return action physically unloads the NPC's original resident without dupes")
 	screen.queue_free()
 	await process_frame
 
