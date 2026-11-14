@@ -1,5 +1,14 @@
 # Version history
 
+## 1.0.7 — 2026-11-14 — provisional Personal Envoy Auto 1.21 guard
+
+- **Personal Envoy Auto (Shpeck, Workshop 3744204222):** the supplied 14 November X4 log contains exactly 2,795 `md.Personal_Envoy_Full_Crew.EnsurePermanentCrew` missing-`$PilotActor` property errors. The extension is recorded as version 1.21. A cross-extension diff, under `extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml`, prepends a single `do_if value="not $PilotActor?"` and initialises a missing `$PilotActor` to `null`. It does not override a pre-existing actor, replace the cue, spawn or destroy crew, move the ship, or change assignments. Optional dependency uses exact Workshop ID `ws_3744204222`.
+- **Validation limitation:** the original Workshop `personal_envoy_full_crew.xml` could not be retrieved. This is an *experimental missing-variable guard*, tested against the X4 diff schema and a synthetic matching cue only; it is **NOT** verified against the actual upstream source or game. If the original script relies on a valid actor in following actions, additional errors may remain; no claim of fixed crew respawning.
+- All previously source-confirmed compatibility diffs remain unchanged. Two older GalaxyTrader sources are also unavailable (HTTP 404), reported explicitly in CI as partial validation.
+- Save-compatible metadata (`save="0"`); no UI/Lua replacement and no changes to Protected UI or Inventory Collector.
+
+
+
 ## 1.0.6 — 2026-11-14
 
 - **Kuertee Emergent Missions:** prevent the repeat `Bounties_UpdateLastKnown` error flood caused by computer-class pilot objects and bounty history tables absent in older saved records. The original location-update calculation now runs only for operational NPC pilots with a valid ship/sector and faction. Initialise only missing per-pilot and per-faction location containers; never overwrite existing entries.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <!-- Provisional guard for Shpeck Personal Envoy Auto 1.21, cue
+       Personal_Envoy_Full_Crew.EnsurePermanentCrew.
+       Supplied 2026-11-14 log: 2795 uninitialised $PilotActor lookups.
+       Preserve a valid existing actor and all original cue actions. -->
+  <add sel="/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions" pos="prepend">
+    <do_if value="not $PilotActor?">
+      <set_value name="$PilotActor" exact="null"/>
+    </do_if>
+  </add>
+</diff>

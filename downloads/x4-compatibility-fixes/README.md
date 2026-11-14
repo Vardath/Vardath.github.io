@@ -1,9 +1,11 @@
-# Vardath Compatibility Fixes 1.0.6
+# Vardath Compatibility Fixes 1.0.7
 
-**CI source coverage notice (1.0.6):** The release ZIP and 11 XML diffs are source-checked and 19 contract tests are run, with two GalaxyTrader tests skipped because the previous pinned upstream GitHub URLs now return HTTP 404. The two unchanged GalaxyTrader patches remain packaged but their application to the installed game build is not revalidated. The CI workflow is green with a deliberately recorded `result: partial`; this does not mean complete upstream or in-game validation.
+**CI source coverage notice (1.0.7):** 11 existing diffs are validated against exact upstream files, with 2 older GalaxyTrader upstream URLs currently unavailable. The new Personal Envoy overlay is **not** source-verified: the Workshop XML was not publicly retrievable. X4 patch schema, synthetic-cue prepending, duplicate/actor preservation, and full packaged archive are tested, but this is an experimental safety guard, not a proven crew-repair fix. CI explicitly records `result: partial` even if green.
 
 
-[Download](Vardath_Compatibility_Fixes_1.0.6.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.7.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.7 (14 November 2026):** Adds a provisional cross-extension guard for Shpeck's Personal Envoy Auto 1.21, addressing the 2,795 missing `$PilotActor` lookup attempts reported from its `EnsurePermanentCrew` cue. The guard initialises that variable to `null` only if it is absent, without replacing original crew logic or overwriting a valid actor. **This cannot be guaranteed to fix the original author's crew-recovery bug without inspecting the source XML and testing in X4.** See [targeted analysis](PERSONAL_ENVOY_1.0.7.md). Retains all previous compatibility fixes.
 
 **1.0.6 (14 November 2026):** Kuertee's bounty-location update is now restricted to operational NPC pilots; missing saved history containers are initialised before list access. This targets the 19,775 repeat errors in the 13 November 2026 22:21 debug log while leaving existing faction histories and bounty scores untouched. Tested against the pinned source XML; in-game confirmation is still required.
 

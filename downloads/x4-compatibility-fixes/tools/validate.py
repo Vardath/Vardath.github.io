@@ -123,7 +123,9 @@ def apply_patch(root, patch, counts=None):
             if op.get('pos') in ('before', 'after'):
                 parent, index = selected.getparent(), selected.getparent().index(selected)
                 if op.get('pos') == 'after': index += 1
-            else: parent, index = selected, len(selected)
+            elif op.get('pos') == 'prepend': parent, index = selected, 0
+            elif op.get('pos') in (None, ''): parent, index = selected, len(selected)
+            else: raise ValueError('Unsupported add position')
             for child in op: parent.insert(index, copy.deepcopy(child)); index += 1
         else: raise ValueError('Unsupported diff action')
     return root
@@ -471,6 +473,37 @@ class Contracts(unittest.TestCase):
         self.assertEqual(scan.get('object'),'$TraderWreck')
         self.assertEqual(self.one(p,".//cue[@name='Ch2_2_Clean_Up']/actions")[0].tag,'remove_help')
 
+    def test_personal_envoy_provisional_guard_on_synthetic_fixture(self):
+        """Workshop 1.21 source unavailable: no original-script claim."""
+        p='extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml'
+        patch=E.parse(str(MOD/p)).getroot()
+        self.assertEqual(patch.tag,'diff');self.assertEqual(len(patch),1)
+        op=patch[0]
+        self.assertEqual(op.tag,'add')
+        self.assertEqual(op.get('sel'),"/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions")
+        self.assertEqual(op.get('pos'),'prepend')
+        guard=op[0]
+        self.assertEqual(guard.tag,'do_if')
+        self.assertEqual(guard.get('value'),'not $PilotActor?')
+        self.assertEqual(guard[0].tag,'set_value')
+        self.assertEqual(guard[0].get('name'),'$PilotActor')
+        self.assertEqual(guard[0].get('exact'),'null')
+        fixture=E.fromstring(b'<mdscript name="Personal_Envoy_Full_Crew"><cues><cue name="EnsurePermanentCrew"><actions><set_value name="$OldOrder" exact="true"/><debug_text text="\'preserve crew logic\'"/></actions></cue><cue name="Other"><actions><debug_text text="\'other\'"/></actions></cue></cues></mdscript>')
+        merged=apply_patch(fixture,patch)
+        a=merged.xpath("/mdscript/cues/cue[@name='EnsurePermanentCrew']/actions")[0]
+        self.assertEqual(len(a),3)
+        self.assertEqual(a[0].tag,'do_if')
+        self.assertEqual([child.tag for child in a[1:]],['set_value','debug_text'])
+        self.assertEqual(canonical(merged.xpath("/mdscript/cues/cue[@name='Other']")[0]),
+                         canonical(fixture.xpath("/mdscript/cues/cue[@name='Other']")[0]))
+        with self.assertRaises(ValueError):
+            apply_patch(E.fromstring(b'<mdscript><cues><cue name="Other"><actions/></cue></cues></mdscript>'),patch)
+
+    def test_personal_envoy_mod_dependency_is_optional(self):
+        root=E.parse(str(MOD/'content.xml')).getroot()
+        d=root.find("./dependency[@id='ws_3744204222']")
+        self.assertIsNotNone(d);self.assertEqual(d.get('optional'),'true')
+
     def test_protected_ui_inventory_collector_and_companions_untouched(self):
         files={p.relative_to(MOD).as_posix() for p in MOD.rglob('*') if p.is_file()}
         self.assertFalse(any(p.endswith('.lua') or p.startswith(('ui/','assets/','index/')) for p in files))
@@ -492,6 +525,10 @@ def validate(cache, archive=None):
         patched[item['path']]=apply_patch(original[item['path']],patch,counts)
     if len(patched) != 13-len(MISSING_SOURCE_PATHS):
         raise ValueError('Unexpected count of source-validated diff files')
+    envoy_path='extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml'
+    envoy_xml=MOD/envoy_path
+    if not envoy_xml.is_file():raise ValueError('Missing provisional Envoy XML overlay')
+    schema.assertValid(E.parse(str(envoy_xml)))
     # Check the actual native metadata supporting the added guards.
     props=original['libraries/scriptproperties.xml']
     for name in ('ware','hasmission','ammostorage.{$ware}.free'):
@@ -515,11 +552,11 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.6','reference_files':len(original),'diff_files':len(patched),
-            'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS),
+    return {'version':'1.0.7','reference_files':len(original),'diff_files':len(patched)+1,'source_validated_diff_files':len(patched),
+            'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS | {envoy_path}),
             'single_match_operations':len(counts),'contract_tests':count,
-            'result':'partial' if MISSING_SOURCE_PATHS else 'pass',
-            'archive_members':len(members),'runtime_tested':False,'limitations':['No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+            'result':'partial',
+            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy 1.21 original XML unavailable: provisional null-initializer only validated against synthetic XML fixture, NOT installed source.','The guard may avoid missing-property errors but does not guarantee the crew creation logic is repaired.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()
