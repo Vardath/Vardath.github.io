@@ -156,8 +156,9 @@ func disembark(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 		return {"ok":false, "message":"Next residential service cycle lacks " + shortage + "."}
 	record.cohorts.assigned_workers = occupied + quantity
 	_clear_manifest(ship, quantity)
-	record.resident_status = "Awaiting service" if str(record.resident_status) == "Unoccupied" else str(record.resident_status)
+	record.resident_status = "Awaiting service"
 	record.resident_shortage = ""
+	record.resident_alert_cycles = 0
 	world._record_transaction("settler_arrival", ship_id, str(station.id), "", quantity, 0, 0)
 	return {"ok":true, "message":"%d adults settled in %s's real, provisioned housing." % [quantity, station.name]}
 
