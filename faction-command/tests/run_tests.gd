@@ -84,7 +84,24 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_ecology(state: Dictionary) -> void:
+	state.erase("ecology_version")
+	state.erase("ecology_catalog")
+	for index in range(state.get("wares", []).size() - 1, -1, -1):
+		if state.wares[index].id in ["organic_waste", "fertile_soil"]:
+			state.wares.remove_at(index)
+	for index in range(state.get("recipes", []).size() - 1, -1, -1):
+		if state.recipes[index].id in ["water_recycling", "soil_agriculture"]:
+			state.recipes.remove_at(index)
+	for recipe_id in ["water_recycling", "soil_agriculture"]:
+		state.get("construction_blueprints", {}).erase(recipe_id)
+	for station in state.get("stations", []):
+		station.stock.erase("organic_waste")
+		station.stock.erase("fertile_soil")
+
+
 func _strip_provisions(state: Dictionary) -> void:
+	_strip_ecology(state)
 	state.erase("settlement_version")
 	for ship in state.get("ships", []):
 		ship.erase("settler_passengers")
@@ -3828,6 +3845,7 @@ func _run() -> void:
 	p30_invalid_source.ships[0].settler_source_station_id = "player_colony_ghost"
 	_expect(save_store.save_game(test_root + "/pass30-ghost-evac.json", p30_invalid_source) != OK, "passengers cannot claim to have been evacuated from a nonexistent player colony")
 	var p30_old_v1: Dictionary = settled_restore.snapshot()
+	_strip_ecology(p30_old_v1)
 	p30_old_v1.settlement_version = 1
 	for p30_legacy_cohort in p30_old_v1.population.stations.values():
 		p30_legacy_cohort.erase("resident_status")
