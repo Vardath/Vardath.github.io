@@ -53,7 +53,7 @@ func known_households(world: RefCounted, station: Dictionary, adults: int) -> in
 	for home in station.get("habitation", []):
 		if str(home.id) == "family_habitat" and bool(home.powered):
 			family_beds += int(world.state.habitation_catalog.family_habitat.capacity)
-	return mini(adults / 2, family_beds / 2)
+	return mini(int(adults / 2), int(family_beds / 2))
 
 
 func residents(record: Dictionary) -> int:
