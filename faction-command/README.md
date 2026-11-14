@@ -67,20 +67,50 @@ playable. Next priorities are real civilian provisions and resource chains,
 then population movement, births and education. No school, birth, immigration
 or population-growth mechanics are playable yet.
 
-## Android map-first interface direction
+## Android map-first contextual object inspector
 
-The target interface takes inspiration from **Space RPG 1–4's simple
-star-link navigation and concise object panels**, with original Faction
-Command artwork, labels and controls. Keep the galaxy/sector map central
-and control one selected object through a collapsible side/bottom inspector:
-**Info**, **Orders**, **Cargo**, **Crew**, **Trade**, **Production**,
-**Population**, **Construction**, **Research** and other context-specific
-sub-tabs. Third-party objects remain inspectable without granting player
-control. Selecting a target for an owned ship must show the actual
-command, route and cost before an order is queued. There is **no manual
-flight control**. The existing map/property interface and standalone
-management windows remain operational while the contextual inspector is
-implemented in a subsequent bounded UI pass.
+**Pass 27 implements the first map-first contextual inspector.** The
+original galaxy and 2D schematic sector map stay central. Tap a sector,
+station or ship to inspect **that object** in the right-hand panel; the
+selected item is highlighted in the sector map. Selection is distinct from
+the active player-owned command ship, so tapping a third-party station or
+NPC ship does not take control or secretly queue an order. Tapping a
+station now displays its information before any trade window opens.
+
+Swipe horizontally through the inspector's 46-pixel-tall sub-tabs:
+- **Sector:** Info, Orders (route preview for the active owned ship),
+  Assets (ships and stations in the selected sector).
+- **Owned ship:** Info, Orders, Cargo, Crew, Trade.
+- **NPC ship:** Info only (no inaccessible Crew or Orders buttons).
+- **Stations:** Info, Trade, Cargo, Production and Population;
+  player stations additionally offer Construction and Research.
+  Historical archive stations also offer History.
+- **Unfinished owned build site:** Info, Construction, Cargo.
+
+Contextual action buttons open the **existing functional** crew manager,
+trade screen, construction manager, population report and research screen,
+with their existing real inventory, staffing, funding and save rules.
+Choosing Info or a tab never changes the world. Orders only commit when
+the player explicitly presses **Queue fly order** from a sector or owned
+ship selection. NPC-only inspection cannot generate player commands;
+permissions are revalidated when contextual buttons are pressed.
+
+For Android landscape widths below 1100 logical pixels, the searchable
+property directory is moved into an **Assets** drawer. Opening it hides
+the inspector rather than covering the map; tapping **Map** restores the
+inspector. Large layouts show the property directory and inspector
+together. Map dragging, pinch zoom, Fit, Galaxy/Sector mode and saved
+simulations all continue to work. The tab strip scrolls for more options,
+and selected tabs persist during simulation ticks and after closing deep
+management screens.
+
+This is an **original** interface inspired by the simplicity of
+Space RPG 1–4 navigation and the managerial depth of X4, not a copied
+layout, artwork or codebase. Currently implemented map objects are
+sectors, stations, ships and build sites. More object types (asteroids,
+equipment, derelicts, combat, threats, diplomacy, shipyard outfitting)
+and physical Android/high-scale usability testing remain later tasks.
+There is **no manual flight control**.
 
 ## Current foundation
 
