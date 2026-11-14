@@ -1,21 +1,23 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.8",
   "reference_files": 15,
-  "diff_files": 12,
+  "diff_files": 13,
   "source_validated_diff_files": 11,
   "untested_upstream_diffs": [
     "extensions/galaxy_trader/md/gt_context_academy.xml",
     "extensions/galaxy_trader/md/gt_core_system.xml",
+    "extensions/kuertee_crime_has_consequences/md/kuertee_chc.xml",
     "extensions/personal_envoy_auto/md/personal_envoy_full_crew.xml"
   ],
   "single_match_operations": 44,
-  "contract_tests": 21,
+  "contract_tests": 23,
   "result": "partial",
-  "archive_members": 19,
+  "archive_members": 20,
   "runtime_tested": false,
   "limitations": [
-    "Personal Envoy 1.21 original XML unavailable: provisional null-initializer only validated against synthetic XML fixture, NOT installed source.",
-    "The guard may avoid missing-property errors but does not guarantee the crew creation logic is repaired.",
+    "Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.",
+    "Kuertee CHC 9.02 original XML unavailable; two null-object expressions are synthetic-verified only.",
+    "Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.",
     "No X4 executable, save or merged installed catalogs available.",
     "Tests apply patches to exact pinned references, not the effective installed load order.",
     "Native runtime, reload and same-frame event behavior require in-game acceptance."
