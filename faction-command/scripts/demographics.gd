@@ -88,6 +88,8 @@ func tick(world: RefCounted) -> void:
 		var child_to_youth: int = _advance_cohort(record, "child_queue", "children", "students", CHILDHOOD_TICKS, int(world.state.tick))
 		var youth_to_adult: int = _advance_cohort(record, "youth_queue", "students", "assigned_workers", YOUTH_TICKS, int(world.state.tick))
 		if youth_to_adult > 0:
+			if world.state.has("education_version"):
+				world.education.on_youth_mature(world, station, youth_to_adult)
 			record.family.grown_total = int(record.family.grown_total) + youth_to_adult
 			world._record_transaction("resident_maturity", "", str(station.id), "", youth_to_adult, 0, 0)
 		if child_to_youth > 0:

@@ -9,6 +9,7 @@ const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
+const EducationScript = preload("res://scripts/education.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
@@ -119,6 +120,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("education_version") and _is_nonnegative_integer(decoded.education_version) and decoded.education_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("demographics_version") and _is_nonnegative_integer(decoded.demographics_version) and decoded.demographics_version != 1:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("ecology_version") and _is_nonnegative_integer(decoded.ecology_version) and decoded.ecology_version != 1:
@@ -156,6 +159,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
 		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
+		return false
+	if state.has("education_version") != state.has("education_catalog") or (state.has("education_version") and state.get("demographics_version") != 1):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -270,7 +275,9 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("ecology_version") and not _valid_ecology(state):
 		return false
-	return not state.has("demographics_version") or _valid_demographics(state)
+	if state.has("demographics_version") and not _valid_demographics(state):
+		return false
+	return not state.has("education_version") or _valid_education(state)
 
 
 func _valid_settlement(state: Dictionary) -> bool:
@@ -368,6 +375,116 @@ func _valid_demographics(state: Dictionary) -> bool:
 		if child_count != int(record.cohorts.children) or youth_count != int(record.cohorts.students) or int(family.births_total) != child_count + youth_count + int(family.grown_total):
 			return false
 		if (child_count + youth_count) > int(record.hab_capacity) or (child_count + youth_count) > 0 and int(record.cohorts.assigned_workers) * 2 < child_count + youth_count:
+			return false
+	return true
+
+
+
+func _valid_education(state: Dictionary) -> bool:
+	if state.education_version != 1 or not state.get("education_catalog") is Dictionary:
+		return false
+	var source: Dictionary = EducationScript.new().definitions()
+	if source.is_empty() or state.education_catalog != source.catalog:
+		return false
+	for program_id in EducationScript.PROGRAM_IDS:
+		if state.construction_blueprints.get(program_id, {}) != source.blueprints[program_id]:
+			return false
+	for station in state.stations:
+		if not station.get("education") is Dictionary:
+			return false
+		var record: Dictionary = station.education
+		if record.size() != 7 or not record.get("modules") is Array or not record.get("courses") is Dictionary or not record.get("qualified") is Dictionary or record.qualified.size() != EducationScript.PROGRAM_IDS.size():
+			return false
+		for key in ["teachers", "youth_completed", "certificates_total", "payroll_credits"]:
+			if not _is_nonnegative_integer(record.get(key)) or int(record[key]) > 1000000:
+				return false
+		if int(record.teachers) > 1000000 or record.modules.size() > 300 or record.courses.size() > EducationScript.PROGRAM_IDS.size():
+			return false
+		var module_counts: Dictionary = {}
+		for id in record.modules:
+			if not id is String or id not in EducationScript.PROGRAM_IDS:
+				return false
+			module_counts[id] = int(module_counts.get(id, 0)) + 1
+		var cohort: Dictionary = state.population.stations.get(str(station.id), {})
+		if cohort.is_empty():
+			return false
+		var adults: int = int(cohort.cohorts.assigned_workers)
+		var youths: int = int(cohort.cohorts.students)
+		var trained_adults := 0
+		for program_id in EducationScript.PROGRAM_IDS:
+			if not _is_nonnegative_integer(record.qualified.get(program_id)) or int(record.qualified[program_id]) > 1000000:
+				return false
+			trained_adults += int(record.qualified[program_id])
+		if trained_adults > adults or int(record.teachers) > adults or int(record.youth_completed) > youths or int(record.certificates_total) != trained_adults + int(record.youth_completed):
+			return false
+		var adult_studying := 0
+		var youth_studying := 0
+		var teachers_busy := 0
+		for program_id in record.courses:
+			var classroom: Variant = record.courses[program_id]
+			if not record.qualified.has(program_id) or not classroom is Dictionary or classroom.size() != 4 or int(module_counts.get(program_id, 0)) == 0:
+				return false
+			if not _is_nonnegative_integer(classroom.get("count")) or int(classroom.count) < 1 or not _is_nonnegative_integer(classroom.get("progress")) or classroom.get("target") not in ["adult", "youth"] or not classroom.get("status") is String or str(classroom.status).length() > 96:
+				return false
+			var program: Dictionary = state.education_catalog[program_id]
+			if int(classroom.count) > int(module_counts[program_id]) * int(program.seats) or int(classroom.progress) >= int(program.course_ticks) or int(classroom.progress) % EducationScript.INTERVAL != 0 or int(classroom.progress) > int(state.tick):
+				return false
+			if classroom.target == "youth":
+				if program_id != "community_school":
+					return false
+				youth_studying += int(classroom.count)
+			else:
+				adult_studying += int(classroom.count)
+			teachers_busy += ceili(float(int(classroom.count)) / float(EducationScript.STUDENTS_PER_TEACHER))
+		if teachers_busy > int(record.teachers) or adult_studying + maxi(int(record.teachers), trained_adults) > adults or youth_studying + int(record.youth_completed) > youths:
+			return false
+		# A save cannot mint a certificate by changing a counter. Validate
+		# its immutable education enrollment/completion and wage evidence.
+		var last_appointment: int = 0
+		var enrolled_by_program: Dictionary = {}
+		var completed_by_program: Dictionary = {}
+		var exited_by_program: Dictionary = {}
+		var payroll_evidence := 0
+		for event in state.ledger:
+			if str(event.get("station_id", "")) != str(station.id):
+				continue
+			var kind: String = str(event.get("kind", ""))
+			if kind not in ["education_appointment", "education_enrollment", "education_completed", "education_age_exit", "education_payroll"]:
+				continue
+			if not _is_nonnegative_integer(event.get("quantity")) or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick):
+				return false
+			if kind == "education_appointment":
+				if int(event.price) != 0 or int(event.amount) != 0:
+					return false
+				last_appointment = int(event.quantity)
+			elif kind == "education_payroll":
+				if int(event.amount) >= 0 or int(event.price) < 1 or int(event.quantity) < 1:
+					return false
+				payroll_evidence += -int(event.amount)
+			else:
+				var program_id: String = str(event.get("ware_id", ""))
+				if program_id not in EducationScript.PROGRAM_IDS or int(event.quantity) < 1 or int(event.price) != 0 or int(event.amount) != 0:
+					return false
+				if kind == "education_enrollment":
+					enrolled_by_program[program_id] = int(enrolled_by_program.get(program_id, 0)) + int(event.quantity)
+				elif kind == "education_completed":
+					completed_by_program[program_id] = int(completed_by_program.get(program_id, 0)) + int(event.quantity)
+				elif kind == "education_age_exit":
+					if program_id != "community_school":
+						return false
+					exited_by_program[program_id] = int(exited_by_program.get(program_id, 0)) + int(event.quantity)
+		if last_appointment != int(record.teachers) or payroll_evidence != int(record.payroll_credits):
+			return false
+		for program_id in EducationScript.PROGRAM_IDS:
+			var expected_completed: int = int(record.qualified[program_id]) + (int(record.youth_completed) if program_id == "community_school" else 0)
+			if int(completed_by_program.get(program_id, 0)) != expected_completed:
+				return false
+			var active_count: int = int(record.courses.get(program_id, {}).get("count", 0))
+			if int(enrolled_by_program.get(program_id, 0)) != expected_completed + int(exited_by_program.get(program_id, 0)) + active_count:
+				return false
+		if (not record.courses.is_empty() or trained_adults > 0 or int(record.youth_completed) > 0 or int(record.teachers) > 0) and station.owner != state.player_faction_id:
+			return false
+		if not record.courses.is_empty() and (station.get("habitation", []).is_empty() or int(cohort.hab_capacity) < adults + youths + int(cohort.cohorts.children)):
 			return false
 	return true
 
@@ -948,7 +1065,7 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 		recipes[recipe.id] = true
 	for recipe_id in state.construction_blueprints:
 		var blueprint: Variant = state.construction_blueprints[recipe_id]
-		if not recipes.has(recipe_id) and not state.get("habitation_catalog", {}).has(recipe_id) or not blueprint is Dictionary or not _is_nonnegative_integer(blueprint.get("fee")) or int(blueprint.fee) < 1 or not _is_nonnegative_integer(blueprint.get("ticks")) or int(blueprint.ticks) < 1 or int(blueprint.ticks) > 1000000 or not _is_nonnegative_integer(blueprint.get("storage")) or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary or blueprint.materials.is_empty():
+		if not recipes.has(recipe_id) and not state.get("habitation_catalog", {}).has(recipe_id) and not state.get("education_catalog", {}).has(recipe_id) or not blueprint is Dictionary or not _is_nonnegative_integer(blueprint.get("fee")) or int(blueprint.fee) < 1 or not _is_nonnegative_integer(blueprint.get("ticks")) or int(blueprint.ticks) < 1 or int(blueprint.ticks) > 1000000 or not _is_nonnegative_integer(blueprint.get("storage")) or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary or blueprint.materials.is_empty():
 			return false
 		for ware_id in blueprint.materials:
 			if not wares.has(ware_id) or not _is_nonnegative_integer(blueprint.materials[ware_id]) or int(blueprint.materials[ware_id]) < 1:
@@ -996,12 +1113,13 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 			return false
 		var production_index := 0
 		var habitat_index := 0
+		var education_index := 0
 		var required: Dictionary = {}
 		var unstarted_fee := 0
 		var storage_total := 0
 		for index in range(site.tasks.size()):
 			var task: Variant = site.tasks[index]
-			if not task is Dictionary or (not recipes.has(task.get("recipe_id")) and not state.get("habitation_catalog", {}).has(task.get("recipe_id"))) or not _is_nonnegative_integer(task.get("duration")) or int(task.duration) < 1 or int(task.duration) > 1000000 or not _is_nonnegative_integer(task.get("storage")) or int(task.storage) < 1 or not task.get("materials") is Dictionary or task.materials.is_empty() or not task.get("started") is bool or not _is_nonnegative_integer(task.get("progress")):
+			if not task is Dictionary or (not recipes.has(task.get("recipe_id")) and not state.get("habitation_catalog", {}).has(task.get("recipe_id")) and not state.get("education_catalog", {}).has(task.get("recipe_id"))) or not _is_nonnegative_integer(task.get("duration")) or int(task.duration) < 1 or int(task.duration) > 1000000 or not _is_nonnegative_integer(task.get("storage")) or int(task.storage) < 1 or not task.get("materials") is Dictionary or task.materials.is_empty() or not task.get("started") is bool or not _is_nonnegative_integer(task.get("progress")):
 				return false
 			for ware_id in task.materials:
 				if not wares.has(ware_id) or not _is_nonnegative_integer(task.materials[ware_id]) or int(task.materials[ware_id]) < 1:
@@ -1019,6 +1137,10 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 					if not station.has("habitation") or habitat_index >= station.habitation.size() or station.habitation[habitat_index].id != task.recipe_id:
 						return false
 					habitat_index += 1
+				elif state.get("education_catalog", {}).has(task.recipe_id):
+					if not station.has("education") or education_index >= station.education.modules.size() or station.education.modules[education_index] != task.recipe_id:
+						return false
+					education_index += 1
 				else:
 					if production_index >= station.production.size() or station.production[production_index].recipe_id != task.recipe_id:
 						return false
@@ -1029,7 +1151,7 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 					return false
 			elif task.started or int(task.progress) != 0:
 				return false
-		if int(station.storage_capacity) != storage_total or station.production.size() != production_index or (state.has("habitation_version") and station.habitation.size() != habitat_index):
+		if int(station.storage_capacity) != storage_total or station.production.size() != production_index or (state.has("habitation_version") and station.habitation.size() != habitat_index) or (state.has("education_version") and station.education.modules.size() != education_index):
 			return false
 		if state.construction_version == 2 and cancelled and (refunded_fee != unstarted_fee or refunded_fee > int(site.fee)):
 			return false

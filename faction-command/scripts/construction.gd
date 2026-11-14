@@ -113,6 +113,8 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 	builder.credits = int(builder.credits) + int(estimate.fee)
 	world.state.next_build_site_id = number + 1
 	world.state.stations.append(station)
+	if world.state.has("education_version"):
+		world.education.initialize_station(station)
 	world.population.register_station(world, station_id)
 	world.state.build_sites.append(site)
 	world._record_transaction("construction_fee", BUILDER_ID, station_id, "", 0, 0, -int(estimate.fee))
@@ -364,6 +366,10 @@ func tick(world: RefCounted) -> void:
 	if world.habitation.is_habitat(world, str(task.recipe_id)):
 		if not world.habitation.on_commission(world, str(station.id), str(task.recipe_id)):
 			current.status = "Cannot commission habitat"
+			return
+	elif world.state.has("education_catalog") and world.state.education_catalog.has(str(task.recipe_id)):
+		if not world.education.on_commission(world, str(station.id), str(task.recipe_id)):
+			current.status = "Cannot commission education facility"
 			return
 	else:
 		station.production.append({"recipe_id":task.recipe_id, "progress":0, "cycles":0, "status":"Waiting"})

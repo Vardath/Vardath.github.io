@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "service_interval": 60,
+  "students_per_instructor": 4,
+  "modules": [
+    {
+      "id": "community_school",
+      "name": "Community School & General Education",
+      "target": "any",
+      "seats": 6,
+      "course_ticks": 240,
+      "energy_per_60": 1,
+      "wage_per_60": 12,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 550,
+        "ticks": 20,
+        "materials": {
+          "alloy_plates": 10,
+          "energy_cells": 3
+        },
+        "storage": 32
+      }
+    },
+    {
+      "id": "flight_academy",
+      "name": "Flight Academy — Navigation Theory",
+      "target": "adult",
+      "seats": 4,
+      "course_ticks": 300,
+      "energy_per_60": 2,
+      "wage_per_60": 20,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 1050,
+        "ticks": 40,
+        "materials": {
+          "alloy_plates": 20,
+          "energy_cells": 5
+        },
+        "storage": 48
+      }
+    },
+    {
+      "id": "engineering_college",
+      "name": "Engineering & Ship Systems College",
+      "target": "adult",
+      "seats": 4,
+      "course_ticks": 300,
+      "energy_per_60": 2,
+      "wage_per_60": 20,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 1000,
+        "ticks": 38,
+        "materials": {
+          "alloy_plates": 18,
+          "energy_cells": 5
+        },
+        "storage": 48
+      }
+    },
+    {
+      "id": "management_college",
+      "name": "Station Management College",
+      "target": "adult",
+      "seats": 4,
+      "course_ticks": 300,
+      "energy_per_60": 1,
+      "wage_per_60": 18,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 850,
+        "ticks": 32,
+        "materials": {
+          "alloy_plates": 15,
+          "energy_cells": 4
+        },
+        "storage": 40
+      }
+    },
+    {
+      "id": "research_academy",
+      "name": "Research Methods Academy",
+      "target": "adult",
+      "seats": 3,
+      "course_ticks": 360,
+      "energy_per_60": 2,
+      "wage_per_60": 22,
+      "material": "research_notes",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 1200,
+        "ticks": 44,
+        "materials": {
+          "alloy_plates": 20,
+          "energy_cells": 6
+        },
+        "storage": 48
+      }
+    },
+    {
+      "id": "marine_academy",
+      "name": "Boarding & Safety Academy",
+      "target": "adult",
+      "seats": 4,
+      "course_ticks": 360,
+      "energy_per_60": 2,
+      "wage_per_60": 22,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 1100,
+        "ticks": 40,
+        "materials": {
+          "alloy_plates": 19,
+          "energy_cells": 5
+        },
+        "storage": 48
+      }
+    },
+    {
+      "id": "agriculture_institute",
+      "name": "Agriculture & Ecology Institute",
+      "target": "adult",
+      "seats": 4,
+      "course_ticks": 300,
+      "energy_per_60": 1,
+      "wage_per_60": 18,
+      "material": "recorded_data",
+      "material_per_60": 1,
+      "blueprint": {
+        "fee": 900,
+        "ticks": 34,
+        "materials": {
+          "alloy_plates": 16,
+          "energy_cells": 4
+        },
+        "storage": 40
+      }
+    }
+  ]
+}
