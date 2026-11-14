@@ -3643,7 +3643,7 @@ func _run() -> void:
 	var initial_bank: int = int(transit_world.state.starting_credits)
 	var initial_source_bank: int = int(source_station.credits)
 	var initial_credit_total: int = _total_credits(transit_world.state)
-	_expect(transit_world.state.settlement_version == 1 and int(transit_ship.settler_passengers) == 0 and str(transit_ship.settler_source_station_id).is_empty(), "new ships have empty versioned civilian manifests")
+	_expect(transit_world.state.settlement_version == 2 and int(transit_ship.settler_passengers) == 0 and str(transit_ship.settler_source_station_id).is_empty(), "new ships have empty versioned civilian manifests")
 	_expect(transit_world.settlement.free_berths(transit_world, transit_ship) == transit_world.personnel.capacity(transit_ship) - int(transit_ship.crew), "passenger seats are the actual vacant crew-compatible ship berths")
 	var at_home_before: Dictionary = transit_world.snapshot()
 	_expect(not transit_world.settlement.board(transit_world, "ship_001", 2).ok and transit_world.snapshot() == at_home_before, "a remotely docked player vessel cannot board NPC passengers")
@@ -3699,7 +3699,7 @@ func _run() -> void:
 	overoccupied.population.stations.player_station_1.cohorts.assigned_workers = 999
 	_expect(save_store.save_game(test_root + "/pass29-over-occupied.json", overoccupied) != OK, "resident occupancy cannot exceed physically constructed habitat slots")
 	var future_settlement: Dictionary = transit_world.snapshot()
-	future_settlement.settlement_version = 2
+	future_settlement.settlement_version = 3
 	_expect(save_store.save_game(test_root + "/pass29-future-version.json", future_settlement) != OK, "unsupported future settlement schema is not treated as a valid current game")
 	var return_world = WorldScript.new()
 	_expect(return_world.load_starter() == OK and return_world.dock_ship("ship_001", "hearth_exchange").ok, "return-contract fixture uses real starting ship and existing resident source")
@@ -3717,7 +3717,7 @@ func _run() -> void:
 	_expect(save_store.save_game(test_root + "/pass28-before-settlement.json", prior_settlement) == OK, "authentic pre-settlement saved games remain readable")
 	var pre_settle_save: Dictionary = save_store.load_game(test_root + "/pass28-before-settlement.json")
 	var migrated_settler_world = WorldScript.new()
-	_expect(pre_settle_save.get("ok", false) and migrated_settler_world.restore_snapshot(pre_settle_save.state) == OK and migrated_settler_world.state.settlement_version == 1, "Pass 28 saves migrate additively to versioned zero-passenger manifests")
+	_expect(pre_settle_save.get("ok", false) and migrated_settler_world.restore_snapshot(pre_settle_save.state) == OK and migrated_settler_world.state.settlement_version == 2, "Pass 28 saves migrate additively to versioned zero-passenger manifests")
 	_expect(int(migrated_settler_world._find_ship("ship_001").settler_passengers) == 0 and migrated_settler_world.state.starting_credits == prior_settlement.starting_credits and migrated_settler_world.population.total_people(migrated_settler_world) == original_v17.population.total_people(original_v17), "legacy upgrade does not reset credits, crew or invent new people")
 	_expect(save_store.save_game(test_root + "/pass29-migrated.json", migrated_settler_world.snapshot()) == OK, "migrated settlement state can be saved immediately")
 	screen = MainScene.instantiate()
