@@ -69,7 +69,29 @@ func _without_progression(ships: Array) -> Array:
 	return copy
 
 
+func _strip_provisions(state: Dictionary) -> void:
+	state.erase("provisions_version")
+	state.erase("provisions_catalog")
+	if state.has("wares"):
+		for index in range(state.wares.size() - 1, -1, -1):
+			if state.wares[index].id in ["ice", "potable_water", "food_rations", "medical_supplies"]:
+				state.wares.remove_at(index)
+	if state.has("recipes"):
+		for index in range(state.recipes.size() - 1, -1, -1):
+			if state.recipes[index].id in ["ice_extraction", "water_purification", "hydroponics", "medical_synthesis"]:
+				state.recipes.remove_at(index)
+	if state.has("construction_blueprints"):
+		for id in ["ice_extraction", "water_purification", "hydroponics", "medical_synthesis"]:
+			state.construction_blueprints.erase(id)
+	for station in state.get("stations", []):
+		for ware_id in ["ice", "potable_water", "food_rations", "medical_supplies"]:
+			station.stock.erase(ware_id)
+	for sector_id in state.get("construction_resources", {}):
+		state.construction_resources[sector_id].deposits.erase("ice")
+
+
 func _strip_habitation(state: Dictionary) -> void:
+	_strip_provisions(state)
 	state.erase("habitation_version")
 	state.erase("habitation_catalog")
 	for station in state.get("stations", []):
@@ -3223,11 +3245,18 @@ func _run() -> void:
 	var before_life_support: int = int(residential_plot.stock.energy_cells)
 	var until_service: int = 60 - int(residential_world.state.tick) % 60
 	residential_world.advance_ticks(until_service)
-	_expect(int(residential_plot.stock.energy_cells) == before_life_support - 1 and residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Powered", "housing consumes precisely one real Energy Cell on its scheduled life-support cycle")
+	_expect(int(residential_plot.stock.energy_cells) == before_life_support and residential_plot.habitation[0].status == "Needs Potable Water" and not residential_plot.habitation[0].powered, "new civilian upkeep blocks incomplete housing service atomically without wasting the supplied energy")
+	# Controlled stock fixture isolates recurring life-support mechanics from
+	# the real new manufacturing-chain tests below.
+	residential_plot.stock.potable_water = 4
+	residential_plot.stock.food_rations = 4
+	residential_plot.stock.medical_supplies = 4
+	residential_world.advance_ticks(60)
+	_expect(int(residential_plot.stock.energy_cells) == before_life_support - 1 and residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Powered" and residential_plot.stock.potable_water == 3 and residential_plot.stock.food_rations == 3 and residential_plot.stock.medical_supplies == 3, "housing consumes one of each actual service item on a complete funded cycle")
 	_expect(residential_world.habitation.operational_capacity(residential_plot, residential_world.state.habitation_catalog) == 8 and empty_household.housing_status == "Powered", "residence becomes operational only after a real funded power service")
 	_expect(residential_world.population.total_people(residential_world) == original_people, "powered housing still does not fabricate workers, residents or children")
 	residential_world.advance_ticks(240)
-	_expect(residential_plot.stock.energy_cells == 0 and not residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Needs Energy Cells" and empty_household.housing_status == "Unpowered", "exhausted physical life-support inputs reduce operational housing to zero without negative stock")
+	_expect(residential_plot.stock.energy_cells == 0 and not residential_plot.habitation[0].powered and residential_plot.habitation[0].status == "Needs Energy Cells" and empty_household.housing_status == "Unpowered" and residential_plot.stock.potable_water == 0 and residential_plot.stock.food_rations == 0 and residential_plot.stock.medical_supplies == 0, "exhausted energy, water, food and medical provisions disable life support without ever producing negative stock")
 	_expect(int(empty_household.hab_capacity) == 8 and residential_world.population.total_people(residential_world) == original_people, "energy shortage preserves constructed physical housing and existing people")
 	_expect(save_store.save_game(test_root + "/habitat-after-power-shortage.json", residential_world.snapshot()) == OK, "life-support failures persist as valid station states")
 	var forged_housing: Dictionary = residential_world.snapshot()
