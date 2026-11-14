@@ -110,12 +110,16 @@ func evacuate(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var record: Dictionary = world.population.station_cohort(world, str(station.id))
 	if record.is_empty() or int(record.cohorts.assigned_workers) < quantity:
 		return {"ok":false, "message":"The colony has fewer settled adults than requested."}
+	if world.state.has("demographics_version"):
+		var dependent: int = int(record.cohorts.children) + int(record.cohorts.students)
+		if dependent > 0 and (int(record.cohorts.assigned_workers) - quantity) * 2 < dependent:
+			return {"ok":false, "message":"Dependents need local adult care. Child passenger transport is not implemented; keep adequate carers at the colony."}
 	# Evacuation is explicitly legal even when housing is unpowered or stocks
 	# are empty. It does not create medical supplies, crew or free credits.
 	record.cohorts.assigned_workers = int(record.cohorts.assigned_workers) - quantity
 	ship.settler_passengers = int(ship.settler_passengers) + quantity
 	ship.settler_source_station_id = str(station.id)
-	if int(record.cohorts.assigned_workers) == 0:
+	if world.demographics.residents(record) == 0 if world.state.has("demographics_version") else int(record.cohorts.assigned_workers) == 0:
 		_initialize_welfare(record)
 	world._record_transaction("resident_evacuation", ship_id, str(station.id), "", quantity, 0, 0)
 	return {"ok":true, "message":"Evacuated %d existing adults aboard %s. Travel to a supplied player colony." % [quantity, ship.name]}
@@ -145,7 +149,7 @@ func disembark(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var record: Dictionary = world.population.station_cohort(world, str(station.id))
 	if record.is_empty():
 		return {"ok":false, "message":"Station has no registered population ledger."}
-	var occupied: int = int(record.cohorts.assigned_workers)
+	var occupied: int = world.demographics.residents(record) if world.state.has("demographics_version") else int(record.cohorts.assigned_workers)
 	var usable: int = world.habitation.operational_capacity(station, world.state.habitation_catalog)
 	if usable < 1 or occupied + quantity > usable or occupied + quantity > 1000000:
 		return {"ok":false, "message":"The station needs enough powered housing for all arriving adults."}
@@ -170,7 +174,7 @@ func tick(world: RefCounted) -> void:
 		var record: Dictionary = world.population.station_cohort(world, str(station.id))
 		if record.is_empty():
 			continue
-		var people: int = int(record.cohorts.assigned_workers)
+		var people: int = world.demographics.residents(record) if world.state.has("demographics_version") else int(record.cohorts.assigned_workers)
 		if people <= 0:
 			_initialize_welfare(record)
 			continue
