@@ -1,4 +1,5 @@
 name: Faction Command foundation
+# Verify the final Pass 29 documentation-and-gameplay head, not an earlier code-only SHA.
 on:
   push:
     paths:
