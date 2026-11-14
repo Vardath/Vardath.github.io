@@ -90,6 +90,14 @@ var research_info: Label
 var research_feedback: Label
 var research_start_button: Button
 var research_pause_button: Button
+var education_screen: Control
+var education_station_id := ""
+var education_picker: OptionButton
+var education_target: OptionButton
+var education_quantity: SpinBox
+var education_instructors: SpinBox
+var education_info: Label
+var education_feedback: Label
 var trade_station_actions: HBoxContainer
 var trade_station_supply_button: Button
 var station_supply_screen: Control
@@ -808,6 +816,9 @@ func _execute_inspector_action(action_id: String) -> void:
 		"build_site":
 			if kind == "site":
 				_open_build_screen(object_id)
+		"education":
+			if kind == "station" and not world._find_station(object_id).get("education", {}).get("modules", []).is_empty():
+				_open_education_screen(object_id)
 		"research":
 			if kind == "station" and world.research.has_lab(world._find_station(object_id)):
 				_open_trade_for_station(object_id)
@@ -1355,7 +1366,35 @@ func _open_station_planner() -> void:
 		add.custom_minimum_size.x = 44
 		add.pressed.connect(_adjust_plan_count.bind(str(module_id), 1))
 		row.add_child(add)
-	controls.add_child(_wrapped_label("Housing gives capacity, not residents. Commissioned modules consume real Energy Cells, Potable Water, Food Rations and Medical Supplies every 60 ticks. Births, automatic immigration and schooling are later systems; settlers travel physically by ship.", 12, MUTED))
+	controls.add_child(_wrapped_label("Housing gives real population capacity, not settlers. Sustained life support permits Family Habitat births, while schools train only existing residents and need appointed educators, records and paid resources.", 12, MUTED))
+	controls.add_child(_label("EDUCATION / VOCATIONAL FOUNDATIONS", 13, ACCENT))
+	for school_id in world.education.PROGRAM_IDS:
+		var school: Dictionary = world.state.education_catalog[school_id]
+		var row := HBoxContainer.new()
+		controls.add_child(row)
+		var label := _label("%s · %d places" % [school.name, int(school.seats)], 13, TEXT)
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(label)
+		var remove := _button("−")
+		remove.name = "PlanRemove_" + str(school_id)
+		remove.custom_minimum_size.x = 44
+		remove.pressed.connect(_adjust_plan_count.bind(str(school_id), -1))
+		row.add_child(remove)
+		var amount := SpinBox.new()
+		amount.name = "ModuleCount_" + str(school_id)
+		amount.min_value = 0
+		amount.max_value = 100
+		amount.step = 1
+		amount.custom_minimum_size = Vector2(72, 44)
+		amount.value_changed.connect(_on_plan_changed)
+		row.add_child(amount)
+		plan_module_counts[school_id] = amount
+		var add := _button("+")
+		add.name = "PlanAdd_" + str(school_id)
+		add.custom_minimum_size.x = 44
+		add.pressed.connect(_adjust_plan_count.bind(str(school_id), 1))
+		row.add_child(add)
+	controls.add_child(_wrapped_label("Schools do not mint people or ship skills. Complete paid housing, appoint real settled adults as teaching staff, supply Recorded Data or Research Notes and fund each class before enrolling.", 12, MUTED))
 	controls.add_child(_label("HOW TO SOURCE INPUTS", 13, ACCENT))
 	plan_mode = OptionButton.new()
 	plan_mode.name = "PlanSourceMode"
@@ -2497,6 +2536,156 @@ func _close_archive() -> void:
 		archive_screen.queue_free()
 	archive_screen = null
 
+
+
+
+func _open_education_screen(station_id: String) -> void:
+	if is_instance_valid(education_screen):
+		return
+	var station: Dictionary = world._find_station(station_id)
+	if station.is_empty() or station.owner != world.state.player_faction_id or not station.has("education") or station.education.modules.is_empty():
+		return
+	education_station_id = station_id
+	education_screen = Control.new()
+	education_screen.name = "EducationScreen"
+	education_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(education_screen)
+	var shade := ColorRect.new()
+	shade.color = Color(0.02, 0.04, 0.06, 0.95)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	education_screen.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	education_screen.add_child(center)
+	var panel := _panel()
+	panel.custom_minimum_size = Vector2(880, 620)
+	center.add_child(panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 8)
+	panel.add_child(column)
+	column.add_child(_label("STAFFED EDUCATION", 22, TEXT))
+	column.add_child(_wrapped_label("%s · Assign existing resident adults to instructor duty, then enrol existing adults or school-age youths. This is foundational academic instruction, not instant crew qualifications." % station.name, 14, MUTED))
+	var instructor_row := HBoxContainer.new()
+	instructor_row.add_theme_constant_override("separation", 6)
+	column.add_child(instructor_row)
+	instructor_row.add_child(_label("Resident instructors", 14, ACCENT))
+	education_instructors = SpinBox.new()
+	education_instructors.name = "EducationInstructors"
+	education_instructors.min_value = 0
+	education_instructors.max_value = 100
+	education_instructors.step = 1
+	education_instructors.value = int(station.education.teachers)
+	education_instructors.custom_minimum_size = Vector2(95, 44)
+	instructor_row.add_child(education_instructors)
+	var appoint_button := _button("Appoint staff")
+	appoint_button.name = "EducationAppointButton"
+	appoint_button.pressed.connect(_education_appoint)
+	instructor_row.add_child(appoint_button)
+	var choice_row := HBoxContainer.new()
+	choice_row.add_theme_constant_override("separation", 6)
+	column.add_child(choice_row)
+	education_picker = OptionButton.new()
+	education_picker.name = "EducationProgramPicker"
+	education_picker.custom_minimum_size = Vector2(250, 44)
+	education_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	for program_id in world.education.PROGRAM_IDS:
+		if world.education.modules_at(station, program_id) > 0:
+			education_picker.add_item(str(world.state.education_catalog[program_id].name))
+			education_picker.set_item_metadata(education_picker.item_count - 1, program_id)
+	education_picker.select(0)
+	education_picker.item_selected.connect(_education_update_selection)
+	choice_row.add_child(education_picker)
+	education_target = OptionButton.new()
+	education_target.name = "EducationTargetPicker"
+	education_target.custom_minimum_size = Vector2(130, 44)
+	education_target.add_item("Adults")
+	education_target.set_item_metadata(0, "adult")
+	education_target.add_item("School-age")
+	education_target.set_item_metadata(1, "youth")
+	education_target.select(0)
+	choice_row.add_child(education_target)
+	education_quantity = SpinBox.new()
+	education_quantity.name = "EducationStudentCount"
+	education_quantity.min_value = 1
+	education_quantity.max_value = 100
+	education_quantity.step = 1
+	education_quantity.value = 1
+	education_quantity.custom_minimum_size = Vector2(88, 44)
+	choice_row.add_child(education_quantity)
+	var enroll_button := _button("Enrol")
+	enroll_button.name = "EducationEnrollButton"
+	enroll_button.pressed.connect(_education_enroll)
+	choice_row.add_child(enroll_button)
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	column.add_child(scroll)
+	education_info = _wrapped_label("", 14, TEXT)
+	education_info.name = "EducationInfo"
+	education_info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(education_info)
+	education_feedback = _wrapped_label("", 13, ACCENT)
+	education_feedback.name = "EducationFeedback"
+	column.add_child(education_feedback)
+	var close := _button("Close")
+	close.name = "CloseEducationButton"
+	close.pressed.connect(_close_education_screen)
+	column.add_child(close)
+	_education_update_selection(0)
+
+
+func _education_selected_program() -> String:
+	if not is_instance_valid(education_picker) or education_picker.selected < 0:
+		return ""
+	return str(education_picker.get_item_metadata(education_picker.selected))
+
+
+func _education_update_selection(_index: int) -> void:
+	if not is_instance_valid(education_screen):
+		return
+	var program: Dictionary = world.state.education_catalog.get(_education_selected_program(), {})
+	education_target.disabled = program.get("target", "adult") != "any"
+	if education_target.disabled:
+		education_target.select(0)
+	_update_education_screen()
+
+
+func _update_education_screen() -> void:
+	if not is_instance_valid(education_screen):
+		return
+	var station: Dictionary = world._find_station(education_station_id)
+	if station.is_empty():
+		return
+	var cohort: Dictionary = world.population.station_cohort(world, education_station_id)
+	var rows: Array[String] = []
+	rows.append("Real resident adults: %d · School-age youths: %d\nFaction credits: %d · Physical station stock: Energy %d, Recorded Data %d, Research Notes %d\nOne instructor supervises up to %d concurrent learners. Appointing adults changes assignments, never headcount." % [int(cohort.cohorts.assigned_workers), int(cohort.cohorts.students), int(world.state.starting_credits), int(station.stock.get("energy_cells", 0)), int(station.stock.get("recorded_data", 0)), int(station.stock.get("research_notes", 0)), world.education.STUDENTS_PER_TEACHER])
+	rows.append_array(world.education.report(world, education_station_id))
+	rows.append("Specialist courses currently award recorded foundation certificates only; full profession licensing, real mentor specialties and promotion to ship roles follow later.")
+	education_info.text = "\n\n".join(rows)
+
+
+func _education_action_result(result: Dictionary) -> void:
+	education_feedback.text = str(result.get("message", "Action rejected."))
+	if bool(result.get("ok", false)):
+		if not _save_current_game():
+			education_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_education_screen()
+
+
+func _education_appoint() -> void:
+	_education_action_result(world.education.appoint(world, education_station_id, int(education_instructors.value)))
+
+
+func _education_enroll() -> void:
+	_education_action_result(world.education.enroll(world, education_station_id, _education_selected_program(), int(education_quantity.value), str(education_target.get_item_metadata(education_target.selected))))
+
+
+func _close_education_screen() -> void:
+	if is_instance_valid(education_screen):
+		education_screen.queue_free()
+	education_screen = null
+	education_station_id = ""
 
 func _open_research() -> void:
 	if is_instance_valid(research_screen):
