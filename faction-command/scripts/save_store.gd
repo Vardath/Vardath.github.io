@@ -8,6 +8,7 @@ const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
+const DemographicsScript = preload("res://scripts/demographics.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
@@ -118,6 +119,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("provisions_version") and _is_nonnegative_integer(decoded.provisions_version) and decoded.provisions_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("demographics_version") and _is_nonnegative_integer(decoded.demographics_version) and decoded.demographics_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("ecology_version") and _is_nonnegative_integer(decoded.ecology_version) and decoded.ecology_version != 1:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
@@ -151,6 +154,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("settlement_version") and not state.has("provisions_version"):
 		return false
 	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
+		return false
+	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -263,7 +268,9 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("settlement_version") and not _valid_settlement(state):
 		return false
-	return not state.has("ecology_version") or _valid_ecology(state)
+	if state.has("ecology_version") and not _valid_ecology(state):
+		return false
+	return not state.has("demographics_version") or _valid_demographics(state)
 
 
 func _valid_settlement(state: Dictionary) -> bool:
@@ -311,6 +318,58 @@ func _valid_settlement(state: Dictionary) -> bool:
 			return false
 	return true
 
+
+
+
+func _valid_demographics(state: Dictionary) -> bool:
+	if state.demographics_version != 1 or state.get("demographics_catalog") != {
+		"birth_interval":DemographicsScript.BIRTH_INTERVAL,
+		"childhood_ticks":DemographicsScript.CHILDHOOD_TICKS,
+		"youth_ticks":DemographicsScript.YOUTH_TICKS,
+		"birth_medical_cost":1
+	}:
+		return false
+	var registered: Dictionary = {}
+	for station in state.stations:
+		registered[str(station.id)] = station
+	for station_id in state.population.stations:
+		var record: Dictionary = state.population.stations[station_id]
+		if not record.get("family") is Dictionary:
+			return false
+		var family: Dictionary = record.family
+		if family.size() != 5 or not _is_nonnegative_integer(family.get("birth_progress")) or int(family.birth_progress) > DemographicsScript.BIRTH_INTERVAL or int(family.birth_progress) % DemographicsScript.SERVICE_INTERVAL != 0:
+			return false
+		for key in ["births_total", "grown_total"]:
+			if not _is_nonnegative_integer(family.get(key)) or int(family[key]) > 1000000:
+				return false
+		if int(family.grown_total) > int(family.births_total) or not family.get("child_queue") is Array or not family.get("youth_queue") is Array:
+			return false
+		if not registered.has(station_id) and (int(family.births_total) != 0 or int(family.birth_progress) != 0):
+			return false
+		var child_count: int = 0
+		var youth_count: int = 0
+		for queue_id in ["child_queue", "youth_queue"]:
+			var cohort_queue: Array = family[queue_id]
+			if cohort_queue.size() > 10000:
+				return false
+			var earliest := -1
+			for entry in cohort_queue:
+				if not entry is Dictionary or entry.size() != 2 or not _is_nonnegative_integer(entry.get("quantity")) or int(entry.quantity) < 1 or not _is_nonnegative_integer(entry.get("ready_tick")):
+					return false
+				var due: int = int(entry.ready_tick)
+				var duration: int = DemographicsScript.CHILDHOOD_TICKS if queue_id == "child_queue" else DemographicsScript.YOUTH_TICKS
+				if due <= int(state.tick) or due > int(state.tick) + duration or (earliest >= 0 and due < earliest):
+					return false
+				earliest = due
+				if queue_id == "child_queue":
+					child_count += int(entry.quantity)
+				else:
+					youth_count += int(entry.quantity)
+		if child_count != int(record.cohorts.children) or youth_count != int(record.cohorts.students) or int(family.births_total) != child_count + youth_count + int(family.grown_total):
+			return false
+		if (child_count + youth_count) > int(record.hab_capacity) or (child_count + youth_count) > 0 and int(record.cohorts.assigned_workers) * 2 < child_count + youth_count:
+			return false
+	return true
 
 
 func _valid_ecology(state: Dictionary) -> bool:
@@ -462,9 +521,11 @@ func _valid_population(state: Dictionary) -> bool:
 		for group in ["children", "students", "available_workers", "assigned_workers", "retirees"]:
 			if not _is_nonnegative_integer(counts.get(group)) or int(counts[group]) > 1000000:
 				return false
-		if int(counts.children) != 0 or int(counts.students) != 0 or int(counts.retirees) != 0:
+		if not state.has("demographics_version") and (int(counts.children) != 0 or int(counts.students) != 0 or int(counts.retirees) != 0):
 			return false
-		if int(counts.assigned_workers) > 0:
+		if state.has("demographics_version") and int(counts.retirees) != 0:
+			return false
+		if int(counts.assigned_workers) + int(counts.children) + int(counts.students) + int(counts.retirees) > 0:
 			if not state.has("settlement_version") or not registered.has(station_id):
 				return false
 			var owned: Dictionary = {}
@@ -472,7 +533,7 @@ func _valid_population(state: Dictionary) -> bool:
 				if str(location.id) == str(station_id):
 					owned = location
 					break
-			if owned.is_empty() or owned.owner != state.player_faction_id or int(counts.assigned_workers) > int(entry.hab_capacity):
+			if owned.is_empty() or owned.owner != state.player_faction_id or int(counts.assigned_workers) + int(counts.children) + int(counts.students) + int(counts.retirees) > int(entry.hab_capacity):
 				return false
 		var available: int = int(counts.available_workers)
 		if available != int(state.crew_pools.get(station_id, 0)):
