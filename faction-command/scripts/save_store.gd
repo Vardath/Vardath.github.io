@@ -111,6 +111,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("population_version") and _is_nonnegative_integer(decoded.population_version) and decoded.population_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("habitation_version") and _is_nonnegative_integer(decoded.habitation_version) and decoded.habitation_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
 		return {"ok": false, "reason": "unreadable"}
 	return {"ok": true, "state": decoded}
@@ -132,6 +134,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("personnel_version") != state.has("crew_pools") or (state.has("personnel_version") and not state.has("shipyard_version")):
 		return false
 	if state.has("population_version") != state.has("population") or (state.has("population_version") and state.get("personnel_version") != 2):
+		return false
+	if state.has("habitation_version") != state.has("habitation_catalog") or (state.has("habitation_version") and not state.has("population_version")):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -230,7 +234,46 @@ func _valid_world(state: Dictionary) -> bool:
 		return not state.has("population_version")
 	if not _valid_personnel(state):
 		return false
-	return not state.has("population_version") or _valid_population(state)
+	if not state.has("population_version"):
+		return not state.has("habitation_version")
+	if not _valid_population(state):
+		return false
+	return not state.has("habitation_version") or _valid_habitation(state)
+
+
+func _valid_habitation(state: Dictionary) -> bool:
+	if state.habitation_version != 1 or not state.get("habitation_catalog") is Dictionary or state.habitation_catalog.size() != 3:
+		return false
+	var expected_ids := ["crew_habitat", "family_habitat", "adaptive_habitat"]
+	for module_id in state.habitation_catalog:
+		if not module_id in expected_ids:
+			return false
+		var definition: Variant = state.habitation_catalog[module_id]
+		if not definition is Dictionary or definition.get("id") != module_id or not definition.get("name") is String or not definition.get("environment") is String or not _is_nonnegative_integer(definition.get("capacity")) or int(definition.capacity) < 1 or int(definition.capacity) > 1000000 or not _is_nonnegative_integer(definition.get("energy_per_60")) or int(definition.energy_per_60) < 1 or int(definition.energy_per_60) > 1000:
+			return false
+		if not state.construction_blueprints.has(module_id):
+			return false
+	for station in state.stations:
+		if not station.get("habitation") is Array or not state.population.stations.has(str(station.id)):
+			return false
+		var total := 0
+		var powered := 0
+		for housing in station.habitation:
+			if not housing is Dictionary or not state.habitation_catalog.has(housing.get("id")) or not housing.get("powered") is bool or housing.get("status") not in ["Awaiting power", "Powered", "Needs Energy Cells"] or not _is_nonnegative_integer(housing.get("cycles")) or int(housing.cycles) > int(state.tick / 60):
+				return false
+			if bool(housing.powered) != (housing.status == "Powered"):
+				return false
+			var definition: Dictionary = state.habitation_catalog[housing.id]
+			total += int(definition.capacity)
+			if housing.powered:
+				powered += int(definition.capacity)
+		if total > 1000000:
+			return false
+		var residents: Dictionary = state.population.stations[str(station.id)]
+		var expected_status := "No habitat" if total == 0 else ("Powered" if powered == total else ("Partially powered" if powered > 0 else "Unpowered"))
+		if int(residents.hab_capacity) != total or residents.housing_status != expected_status:
+			return false
+	return true
 
 
 func _valid_population(state: Dictionary) -> bool:
@@ -259,7 +302,11 @@ func _valid_population(state: Dictionary) -> bool:
 			return false
 		if entry.get("id") != "residents_" + str(station_id) or entry.get("station_id") != station_id or not entry.get("cohorts") is Dictionary:
 			return false
-		if not _is_nonnegative_integer(entry.get("hab_capacity")) or int(entry.hab_capacity) != 0 or entry.get("housing_status") != "unimplemented":
+		if not _is_nonnegative_integer(entry.get("hab_capacity")) or int(entry.hab_capacity) > 1000000 or not entry.get("housing_status") is String:
+			return false
+		if not state.has("habitation_version") and (int(entry.hab_capacity) != 0 or entry.housing_status != "unimplemented"):
+			return false
+		if state.has("habitation_version") and entry.housing_status not in ["No habitat", "Powered", "Partially powered", "Unpowered"]:
 			return false
 		var counts: Dictionary = entry.cohorts
 		if counts.size() != 5:
@@ -682,7 +729,7 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 		recipes[recipe.id] = true
 	for recipe_id in state.construction_blueprints:
 		var blueprint: Variant = state.construction_blueprints[recipe_id]
-		if not recipes.has(recipe_id) or not blueprint is Dictionary or not _is_nonnegative_integer(blueprint.get("fee")) or int(blueprint.fee) < 1 or not _is_nonnegative_integer(blueprint.get("ticks")) or int(blueprint.ticks) < 1 or int(blueprint.ticks) > 1000000 or not _is_nonnegative_integer(blueprint.get("storage")) or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary or blueprint.materials.is_empty():
+		if not recipes.has(recipe_id) and not state.get("habitation_catalog", {}).has(recipe_id) or not blueprint is Dictionary or not _is_nonnegative_integer(blueprint.get("fee")) or int(blueprint.fee) < 1 or not _is_nonnegative_integer(blueprint.get("ticks")) or int(blueprint.ticks) < 1 or int(blueprint.ticks) > 1000000 or not _is_nonnegative_integer(blueprint.get("storage")) or int(blueprint.storage) < 1 or not blueprint.get("materials") is Dictionary or blueprint.materials.is_empty():
 			return false
 		for ware_id in blueprint.materials:
 			if not wares.has(ware_id) or not _is_nonnegative_integer(blueprint.materials[ware_id]) or int(blueprint.materials[ware_id]) < 1:
@@ -726,14 +773,16 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 			if (not cancelled and refunded_fee != 0) or (cancelled and site.paused):
 				return false
 		var station: Dictionary = stations[site.station_id]
-		if station.owner != state.player_faction_id or station.sector != site.sector or station.get("resource_sector", "") != site.sector or station.production.size() != int(site.completed):
+		if station.owner != state.player_faction_id or station.sector != site.sector or station.get("resource_sector", "") != site.sector:
 			return false
+		var production_index := 0
+		var habitat_index := 0
 		var required: Dictionary = {}
 		var unstarted_fee := 0
 		var storage_total := 0
 		for index in range(site.tasks.size()):
 			var task: Variant = site.tasks[index]
-			if not task is Dictionary or not recipes.has(task.get("recipe_id")) or not _is_nonnegative_integer(task.get("duration")) or int(task.duration) < 1 or int(task.duration) > 1000000 or not _is_nonnegative_integer(task.get("storage")) or int(task.storage) < 1 or not task.get("materials") is Dictionary or task.materials.is_empty() or not task.get("started") is bool or not _is_nonnegative_integer(task.get("progress")):
+			if not task is Dictionary or (not recipes.has(task.get("recipe_id")) and not state.get("habitation_catalog", {}).has(task.get("recipe_id"))) or not _is_nonnegative_integer(task.get("duration")) or int(task.duration) < 1 or int(task.duration) > 1000000 or not _is_nonnegative_integer(task.get("storage")) or int(task.storage) < 1 or not task.get("materials") is Dictionary or task.materials.is_empty() or not task.get("started") is bool or not _is_nonnegative_integer(task.get("progress")):
 				return false
 			for ware_id in task.materials:
 				if not wares.has(ware_id) or not _is_nonnegative_integer(task.materials[ware_id]) or int(task.materials[ware_id]) < 1:
@@ -745,15 +794,23 @@ func _valid_construction(state: Dictionary, factions: Dictionary, sectors: Dicti
 					return false
 				unstarted_fee += int(state.construction_blueprints[task.recipe_id].fee)
 			if index < int(site.completed):
-				if not task.started or int(task.progress) != int(task.duration) or station.production[index].recipe_id != task.recipe_id:
+				if not task.started or int(task.progress) != int(task.duration):
 					return false
+				if state.get("habitation_catalog", {}).has(task.recipe_id):
+					if not station.has("habitation") or habitat_index >= station.habitation.size() or station.habitation[habitat_index].id != task.recipe_id:
+						return false
+					habitat_index += 1
+				else:
+					if production_index >= station.production.size() or station.production[production_index].recipe_id != task.recipe_id:
+						return false
+					production_index += 1
 				storage_total += int(task.storage)
 			elif index == int(site.completed):
 				if int(task.progress) >= int(task.duration) or (not task.started and int(task.progress) != 0):
 					return false
 			elif task.started or int(task.progress) != 0:
 				return false
-		if int(station.storage_capacity) != storage_total:
+		if int(station.storage_capacity) != storage_total or station.production.size() != production_index or (state.has("habitation_version") and station.habitation.size() != habitat_index):
 			return false
 		if state.construction_version == 2 and cancelled and (refunded_fee != unstarted_fee or refunded_fee > int(site.fee)):
 			return false
