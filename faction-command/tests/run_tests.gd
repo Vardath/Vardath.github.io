@@ -3741,6 +3741,139 @@ func _run() -> void:
 	screen.queue_free()
 	await process_frame
 
+
+	# Pass 30: finite resident consumption, non-lethal shortages, emergency
+	# evacuation with real vessel berths and save-safe colony source records.
+	_expect(first.settlement.resident_needs(0).is_empty() and first.settlement.resident_needs(1).potable_water == 1 and first.settlement.resident_needs(4).food_rations == 1, "unoccupied stations consume no resident provisions, while the first four adults use one food and water batch")
+	_expect(first.settlement.resident_needs(5).potable_water == 2 and first.settlement.resident_needs(9).medical_supplies == 2, "finite resident requirements scale at published water-food four-person and medical eight-person thresholds")
+	var p30_live = WorldScript.new()
+	_expect(p30_live.restore_snapshot(settled_restore.snapshot()) == OK, "Pass 30 opens the physically built and populated Pass 29 colony without resetting its people")
+	var p30_station: Dictionary = p30_live._find_station("player_station_1")
+	var p30_ship: Dictionary = p30_live._find_ship("ship_001")
+	var p30_people: int = p30_live.population.total_people(p30_live)
+	var p30_rec: Dictionary = p30_live.population.station_cohort(p30_live, "player_station_1")
+	_expect(p30_live.state.settlement_version == 2 and int(p30_rec.cohorts.assigned_workers) == 2 and str(p30_rec.resident_status) == "Awaiting service", "additive v2 settlement state preserves the two already relocated adults")
+	var p30_needs: Dictionary = p30_live.provisions.facility_needs(p30_live, p30_station)
+	_expect(int(p30_needs.get("energy_cells", 0)) == 1 and int(p30_needs.get("potable_water", 0)) == 2 and int(p30_needs.get("food_rations", 0)) == 2 and int(p30_needs.get("medical_supplies", 0)) == 2, "station projection includes both old habitat baseline and additional finite two-adult water, ration and medicine")
+	_expect(p30_station.stock.potable_water >= 2 and p30_station.stock.food_rations >= 2 and p30_station.stock.medical_supplies >= 2 and p30_station.stock.energy_cells >= 1, "real completed and active production complex contains enough physically manufactured inputs for one full populated service cycle")
+	var p30_pre_service: Dictionary = {}
+	for ware_id in ["energy_cells", "potable_water", "food_rations", "medical_supplies"]:
+		p30_pre_service[ware_id] = int(p30_station.stock.get(ware_id, 0))
+	p30_live.state.tick = int(p30_live.state.tick) + 60 - int(p30_live.state.tick) % 60
+	p30_live.habitation.tick(p30_live)
+	p30_live.settlement.tick(p30_live)
+	var p30_exact: bool = int(p30_station.stock.energy_cells) == int(p30_pre_service.energy_cells) - 1
+	for ware_id in ["potable_water", "food_rations", "medical_supplies"]:
+		p30_exact = p30_exact and int(p30_station.stock[ware_id]) == int(p30_pre_service[ware_id]) - 2
+	_expect(p30_exact and p30_rec.resident_status == "Provisioned" and int(p30_rec.resident_alert_cycles) == 0, "real population service debits both module and resident wares exactly once, with zero phantom stock")
+	_expect(p30_live.population.total_people(p30_live) == p30_people and int(p30_rec.cohorts.assigned_workers) == 2, "routine life-support service never consumes people or changes occupied beds")
+	_expect(save_store.save_game(test_root + "/pass30-provisioned.json", p30_live.snapshot()) == OK, "post-payment welfare status and physical inventories pass strict v2 save validation")
+	var p30_served_read: Dictionary = save_store.load_game(test_root + "/pass30-provisioned.json")
+	var p30_served_reload = WorldScript.new()
+	_expect(p30_served_read.get("ok", false) and p30_served_reload.restore_snapshot(p30_served_read.state) == OK and p30_served_reload.snapshot() == p30_live.snapshot(), "resident service and depleted supply inventories round-trip without recharging or duplication")
+
+	var p30_shortage = WorldScript.new()
+	_expect(p30_shortage.restore_snapshot(settled_restore.snapshot()) == OK, "shortage simulation starts from a real supplied colony snapshot")
+	var p30_unsafe: Dictionary = p30_shortage._find_station("player_station_1")
+	var p30_unsafe_rec: Dictionary = p30_shortage.population.station_cohort(p30_shortage, "player_station_1")
+	p30_unsafe.stock.food_rations = 1
+	var p30_short_stock: Dictionary = p30_unsafe.stock.duplicate(true)
+	var p30_before_short: int = p30_shortage.population.total_people(p30_shortage)
+	p30_shortage.state.tick = int(p30_shortage.state.tick) + 60 - int(p30_shortage.state.tick) % 60
+	p30_shortage.habitation.tick(p30_shortage)
+	p30_shortage.settlement.tick(p30_shortage)
+	_expect(p30_unsafe_rec.resident_status == "Provision shortage" and p30_unsafe_rec.resident_shortage == "food_rations" and int(p30_unsafe_rec.resident_alert_cycles) == 1, "food needed by actual residents produces a specific critical service alert without partial resident debit")
+	_expect(int(p30_unsafe.stock.food_rations) == 0 and p30_shortage.population.total_people(p30_shortage) == p30_before_short and int(p30_unsafe_rec.cohorts.assigned_workers) == 2, "partial food supply is spent only by physical module baseline; residents are not silently killed or duplicated")
+	_expect(p30_shortage.provisions.missing_provision(p30_shortage, p30_unsafe) != "", "live shortage indicator includes resident-dependent requirements rather than only module baseline")
+	_expect(save_store.save_game(test_root + "/pass30-shortage.json", p30_shortage.snapshot()) == OK, "actual finite-resident shortage can be saved without inventing lost persons")
+	var p30_offline = WorldScript.new()
+	_expect(p30_offline.restore_snapshot(settled_restore.snapshot()) == OK, "loss-of-power scenario starts with the same counted colony")
+	var p30_offstation: Dictionary = p30_offline._find_station("player_station_1")
+	var p30_offrecord: Dictionary = p30_offline.population.station_cohort(p30_offline, "player_station_1")
+	p30_offstation.stock.energy_cells = 0
+	var p30_off_water: int = int(p30_offstation.stock.potable_water)
+	p30_offline.state.tick = int(p30_offline.state.tick) + 60 - int(p30_offline.state.tick) % 60
+	p30_offline.habitation.tick(p30_offline)
+	p30_offline.settlement.tick(p30_offline)
+	_expect(p30_offrecord.resident_status == "Housing offline" and int(p30_offrecord.resident_alert_cycles) == 1 and p30_offline.habitation.operational_capacity(p30_offstation, p30_offline.state.habitation_catalog) == 0, "station power loss creates a persistent housing alert without destroying modules or moving occupants")
+	_expect(int(p30_offstation.stock.potable_water) == p30_off_water and int(p30_offrecord.cohorts.assigned_workers) == 2 and p30_offline.population.total_people(p30_offline) == p30_people, "unpowered residents survive without a fabricated medical, water or ration debit")
+	var p30_evac_before_money: int = _total_credits(p30_offline.state)
+	var p30_evac_before_people: int = p30_offline.population.total_people(p30_offline)
+	_expect(not p30_offline.settlement.evacuate(p30_offline, "ship_001", 7).ok, "evacuation rejects a group larger than actual free berths or resident pool")
+	var p30_rescue: Dictionary = p30_offline.settlement.evacuate(p30_offline, "ship_001", 2)
+	_expect(p30_rescue.ok and int(p30_offrecord.cohorts.assigned_workers) == 0 and int(p30_offline._find_ship("ship_001").settler_passengers) == 2 and str(p30_offline._find_ship("ship_001").settler_source_station_id) == "player_station_1", "an emergency ship rescues the original two adults from an unsupplied, unpowered player colony")
+	_expect(p30_offline.population.total_people(p30_offline) == p30_evac_before_people and _total_credits(p30_offline.state) == p30_evac_before_money and p30_offrecord.resident_status == "Unoccupied", "emergency evacuation conserves all people and credits and clears empty-colony welfare alerts")
+	_expect(p30_offline.state.ledger.any(func(entry): return entry.kind == "resident_evacuation" and int(entry.quantity) == 2 and int(entry.amount) == 0), "emergency passenger boarding is recorded in the immutable transaction history without an invented evacuation fee")
+	_expect(save_store.save_game(test_root + "/pass30-evacuated.json", p30_offline.snapshot()) == OK, "owned colony manifests and empty endangered habitats pass strict save validation")
+	var p30_rescued_read: Dictionary = save_store.load_game(test_root + "/pass30-evacuated.json")
+	var p30_rescued_world = WorldScript.new()
+	_expect(p30_rescued_read.get("ok", false) and p30_rescued_world.restore_snapshot(p30_rescued_read.state) == OK and p30_rescued_world.snapshot() == p30_offline.snapshot(), "evacuated adults retain their real player-station origin across save/reload")
+	_expect(p30_rescued_world.queue_fly_to("ship_001", "hearthreach"), "evacuated adults can be transported by existing real route orders")
+	p30_rescued_world.advance_ticks(35)
+	_expect(p30_rescued_world.dock_ship("ship_001", "hearth_exchange").ok and not p30_rescued_world.settlement.disembark(p30_rescued_world, "ship_001", 1).ok, "a colony evacuation cannot dump residents into an unrelated NPC recruitment station")
+	_expect(int(p30_rescued_world._find_ship("ship_001").settler_passengers) == 2 and p30_rescued_world.population.total_people(p30_rescued_world) == p30_people, "rejected NPC disembark leaves evacuated adults safely aboard")
+	var p30_safe_rehome = WorldScript.new()
+	_expect(p30_safe_rehome.restore_snapshot(settled_restore.snapshot()) == OK, "reoccupation test uses actually provisioned player habitat rather than creating free food")
+	var p30_safe_original: int = p30_safe_rehome.population.total_people(p30_safe_rehome)
+	_expect(p30_safe_rehome.settlement.evacuate(p30_safe_rehome, "ship_001", 1).ok, "owned station can intentionally move one resident to a passenger ship without making a new person")
+	_expect(p30_safe_rehome.settlement.disembark(p30_safe_rehome, "ship_001", 1).ok, "provided original colony can safely accept returning evacuated residents when beds and stocks remain sufficient")
+	_expect(p30_safe_rehome.population.total_people(p30_safe_rehome) == p30_safe_original and p30_safe_rehome.population.station_cohort(p30_safe_rehome, "player_station_1").cohorts.assigned_workers == 2, "returning evacuated adults restores exact original housing count and total headcount")
+	var p30_invalid_mode: Dictionary = p30_offline.snapshot()
+	p30_invalid_mode.population.stations.player_station_1.resident_status = "Unverified miracle"
+	_expect(save_store.save_game(test_root + "/pass30-fake-welfare.json", p30_invalid_mode) != OK, "save validator rejects forged settlement welfare states")
+	var p30_invalid_alert: Dictionary = p30_shortage.snapshot()
+	p30_invalid_alert.population.stations.player_station_1.resident_alert_cycles = -1
+	_expect(save_store.save_game(test_root + "/pass30-negative-alert.json", p30_invalid_alert) != OK, "save validator rejects negative or unbounded housing-critical counters")
+	var p30_invalid_source: Dictionary = p30_offline.snapshot()
+	p30_invalid_source.ships[0].settler_source_station_id = "player_colony_ghost"
+	_expect(save_store.save_game(test_root + "/pass30-ghost-evac.json", p30_invalid_source) != OK, "passengers cannot claim to have been evacuated from a nonexistent player colony")
+	var p30_old_v1: Dictionary = settled_restore.snapshot()
+	p30_old_v1.settlement_version = 1
+	for p30_legacy_cohort in p30_old_v1.population.stations.values():
+		p30_legacy_cohort.erase("resident_status")
+		p30_legacy_cohort.erase("resident_shortage")
+		p30_legacy_cohort.erase("resident_alert_cycles")
+	_expect(save_store.save_game(test_root + "/pass29-before-service.json", p30_old_v1) == OK, "genuine Pass 29 settlement version 1 and its occupied residents remain readable")
+	var p30_old_read: Dictionary = save_store.load_game(test_root + "/pass29-before-service.json")
+	var p30_old_upgraded = WorldScript.new()
+	_expect(p30_old_read.get("ok", false) and p30_old_upgraded.restore_snapshot(p30_old_read.state) == OK and p30_old_upgraded.state.settlement_version == 2, "existing occupied Pass 29 colonies migrate to versioned service metadata without a new game")
+	_expect(p30_old_upgraded.population.total_people(p30_old_upgraded) == p30_people and int(p30_old_upgraded.population.station_cohort(p30_old_upgraded, "player_station_1").cohorts.assigned_workers) == 2 and p30_old_upgraded._find_ship("ship_001") == settled_restore._find_ship("ship_001"), "migration preserves each old captain, crew, passenger manifest, money and settled adult")
+	_expect(save_store.save_game(test_root + "/pass30-upgraded.json", p30_old_upgraded.snapshot()) == OK, "upgraded occupied Pass 29 game passes the new strict welfare/save contract")
+	var p30_future: Dictionary = p30_offline.snapshot()
+	p30_future.settlement_version = 3
+	_expect(save_store.save_game(test_root + "/pass30-future-version.json", p30_future) != OK, "unknown future settlement format cannot be saved by the current game")
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass30-evacuation.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p30_offline.snapshot()) == OK, "mobile layout can load the post-evacuation model directly")
+	_expect(screen.world.restore_snapshot(p30_shortage.snapshot()) == OK, "mobile layout can load a population-critical state without losing its save")
+	screen._update_population_screen()
+	screen._open_map_station("player_station_1")
+	screen.find_child("InspectorTab_Population", true, false).pressed.emit()
+	_expect(screen.detail_body.text.contains("Resident status:") and screen.detail_body.text.contains("Critical cycles:") and screen.detail_body.text.contains("Resident share:"), "mobile map Population inspector exposes genuine resident service and shortage counters")
+	screen._open_population_screen()
+	_expect(screen.population_info.text.contains("Resident service:") and screen.population_info.text.contains("Available powered beds"), "mobile global Population screen explains actual shelter, adult provisioning and emergency alert state")
+	screen.find_child("ClosePopulationButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p30_offline.snapshot()) == OK, "mobile evacuee fixture can be restored without adding any property")
+	# Restore an occupied endangered colony (before its residents evacuated)
+	# and use its existing player's ship to test the real emergency tap.
+	var p30_touch_world = WorldScript.new()
+	p30_touch_world.restore_snapshot(settled_restore.snapshot())
+	p30_touch_world._find_station("player_station_1").stock.energy_cells = 0
+	_expect(screen.world.restore_snapshot(p30_touch_world.snapshot()) == OK, "mobile emergency action tests a real docked owned ship and a distressed colony")
+	screen._open_crew_screen()
+	await process_frame
+	var p30_evac_control: Button = screen.find_child("EvacuateResidentsButton", true, false)
+	_expect(p30_evac_control != null and not p30_evac_control.disabled, "Android-oriented crew panel exposes a touch-sized, enabled colony evacuation action")
+	p30_evac_control.pressed.emit()
+	_expect(int(screen.world._find_ship("ship_001").settler_passengers) == 1 and int(screen.world.population.station_cohort(screen.world, "player_station_1").cohorts.assigned_workers) == 1, "one tap physically transfers exactly one adult from a real player colony into a real ship")
+	screen.queue_free()
+	await process_frame
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
