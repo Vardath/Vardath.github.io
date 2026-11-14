@@ -1197,7 +1197,7 @@ func _update_station_plan() -> void:
 	var estimate: Dictionary = world.construction.quote(world, selected_sector, settings.requested, str(settings.mode), settings.imports)
 	plan_build_button.disabled = not estimate.ok or (estimate.ok and int(world.state.starting_credits) < int(estimate.fee))
 	if result.modules.is_empty() and result.errors.is_empty():
-		plan_result.text = "Choose production or residential modules and their quantities to see the physical construction bill and recurring upkeep."
+		plan_result.text = "Choose a production module or residential habitat and quantity to see its physical construction bill and recurring upkeep."
 		return
 	var lines: Array[String] = []
 	if not result.errors.is_empty():
