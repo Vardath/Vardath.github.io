@@ -303,42 +303,57 @@ func _deliver_family_supplies(world: RefCounted, source_id: String, home_id: Str
 
 
 func _replenish_practical_station(world: RefCounted, source_id: String, campus_id: String, stock_target: int = 8) -> bool:
-	# Occupied industrial warehouses can block real solar production.
-	# Transfer EXISTING excess manufactured stock into a real ship hold to
-	# make space for the solar plant, then run actual work ticks before
-	# delivering energy and resident supplies. Nothing is gifted or deleted.
+	# The mature industrial source's full warehouse can genuinely block
+	# solar power. Do NOT mint energy or discard waste to force a test.
+	# Obtain real energy from the NPC Hearth Exchange solar market instead,
+	# paying its price, then ship it back across the star network.
+	# All other family wares still come from the existing player factories.
 	var source: Dictionary = world._find_station(source_id)
 	var campus: Dictionary = world._find_station(campus_id)
 	var ship: Dictionary = world._find_ship("ship_001")
 	if source.is_empty() or campus.is_empty() or ship.is_empty():
-		printerr("P34 REFUEL: empty source, campus or ship")
 		return false
-	printerr("P34 REFUEL INIT: tick=", world.state.tick, " srcStock=", source.stock, " srcSpace=", int(source.storage_capacity)-world.station_volume(source_id), " shipCargo=", ship.cargo, " shipCap=", ship.cargo_capacity, " sector=", ship.sector, " orders=", ship.orders)
-	for round_index in range(6):
-		var need_energy: int = maxi(0, stock_target - int(campus.stock.get("energy_cells", 0)))
-		if int(source.stock.get("energy_cells", 0)) >= need_energy:
-			break
-		var free_cargo: int = maxi(0, int(ship.cargo_capacity) - world.cargo_volume("ship_001"))
-		var free_station: int = maxi(0, int(source.storage_capacity) - world.station_volume(source_id))
-		if free_station < 20 and free_cargo >= 5:
-			var ware_id: String = ""
-			for id in ["alloy_plates", "ore", "ice", "food_rations", "potable_water", "medical_supplies"]:
-				if int(source.stock.get(id, 0)) > 20:
-					ware_id = id
-					break
-			if not ware_id.is_empty():
-				var quantity: int = mini(20, mini(int(source.stock.get(ware_id, 0)), free_cargo))
-				var arriving: Dictionary = world.dock_ship("ship_001", source_id)
-				var taking: Dictionary = world.transfer_player_station("ship_001", source_id, ware_id, quantity, false) if bool(arriving.ok) else {"ok":false, "message":"Could not dock"}
-				if not bool(arriving.ok) or not bool(taking.ok):
-					printerr("P34 REFUEL TRANSFER FAILURE: ", arriving, " ", taking, " shipCargo=", ship.cargo, " srcStock=", source.stock)
-					return false
-		world.advance_ticks(12)
-	var final: bool = _deliver_family_supplies(world, source_id, campus_id, stock_target)
-	if not final:
-		printerr("P34 REFUEL FINAL FAILURE: tick=", world.state.tick, " sourceStock=", source.stock, " srcCapacity=", source.storage_capacity, " srcUsed=", world.station_volume(source_id), " shipCargo=", ship.cargo, " campusStock=", campus.stock)
-	return final
-
+	var wares: Array[String] = ["potable_water", "food_rations", "medical_supplies"]
+	var total_needed := 0
+	for ware_id in wares:
+		var quantity: int = maxi(0, stock_target - int(campus.stock.get(ware_id, 0)))
+		if int(source.stock.get(ware_id, 0)) < quantity:
+			return false
+		total_needed += quantity
+	if total_needed > maxi(0, int(ship.cargo_capacity) - world.cargo_volume("ship_001")):
+		return false
+	if total_needed > 0:
+		if not world.dock_ship("ship_001", source_id).ok:
+			return false
+		for ware_id in wares:
+			var quantity: int = maxi(0, stock_target - int(campus.stock.get(ware_id, 0)))
+			if quantity > 0 and not world.transfer_player_station("ship_001", source_id, ware_id, quantity, false).ok:
+				return false
+		if not world.dock_ship("ship_001", campus_id).ok:
+			return false
+		for ware_id in wares:
+			var quantity: int = int(ship.cargo.get(ware_id, 0))
+			if quantity > 0 and not world.transfer_player_station("ship_001", campus_id, ware_id, quantity, true).ok:
+				return false
+	var energy_needed: int = maxi(0, stock_target - int(campus.stock.get("energy_cells", 0)))
+	if energy_needed > 0:
+		if int(ship.cargo_capacity) - world.cargo_volume("ship_001") < energy_needed:
+			return false
+		if ship.sector != "hearthreach":
+			if not world.queue_fly_to("ship_001", "hearthreach"):
+				return false
+			world.advance_ticks(40)
+		if not world.dock_ship("ship_001", "hearth_exchange").ok or not world.trade("ship_001", "hearth_exchange", "energy_cells", energy_needed, true).ok:
+			return false
+		if not world.queue_fly_to("ship_001", str(campus.sector)):
+			return false
+		world.advance_ticks(40)
+		if not world.dock_ship("ship_001", campus_id).ok or not world.transfer_player_station("ship_001", campus_id, "energy_cells", energy_needed, true).ok:
+			return false
+	else:
+		if not world.dock_ship("ship_001", campus_id).ok:
+			return false
+	return true
 
 func _run() -> void:
 	# A unique isolated directory prevents tests from ever touching a player's save.
