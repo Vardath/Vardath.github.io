@@ -106,7 +106,9 @@ func tick(world: RefCounted) -> void:
 		var free_beds: int = maxi(0, powered_beds - residents(record))
 		# Each newborn needs a real powered bed and one separately paid
 		# medical kit for birth care. No birth occurs if either is absent.
-		births = mini(households, mini(free_beds, int(station.stock.get("medical_supplies", 0))))
+		var dependents: int = int(record.cohorts.children) + int(record.cohorts.students)
+		var care_capacity: int = maxi(0, adults * 2 - dependents)
+		births = mini(households, mini(free_beds, mini(care_capacity, int(station.stock.get("medical_supplies", 0)))))
 		if births <= 0:
 			continue
 		station.stock.medical_supplies = int(station.stock.medical_supplies) - births
