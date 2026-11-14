@@ -2128,9 +2128,8 @@ func _run() -> void:
 	training_transfer.queue_fly_to("ship_001", "vellum_gate")
 	training_transfer.advance_ticks(20)
 	training_transfer.dock_ship("ship_001", "vellum_foundry")
-	for _training in range(6):
-		training_transfer.personnel.record_activity(training_transfer, "ship_001", "sector_crossing")
 	var total_training: int = int(trained_source.crew_profile.experience) + int(trained_destination.crew_profile.experience)
+	_expect(total_training > 0, "the original ship's real sector journey has already earned experience to transfer")
 	_expect(training_transfer.personnel.transfer(training_transfer, "ship_001", str(trained_destination.id), 1).ok, "physical service crew can be transferred after actual route training")
 	_expect(int(trained_source.crew_profile.experience) + int(trained_destination.crew_profile.experience) == total_training and int(trained_source.crew) == 1 and int(trained_destination.crew) == 5, "transfer conserves exact aggregate earned experience and personnel headcount")
 	_expect(save_store.save_game(test_root + "/crew-progression-transfer.json", training_transfer.snapshot()) == OK, "trained transferred crew remain valid saved property")
@@ -2151,7 +2150,7 @@ func _run() -> void:
 	_expect(progressed_restore.state.ships.size() == old_progression.ships.size() and progressed_restore.state.ships[0].captain == old_progression.ships[0].captain and progressed_restore.state.ships[0].orders == old_progression.ships[0].orders and progressed_restore.state.ships[0].crew == old_progression.ships[0].crew, "migration preserves names, existing captains, ship orders and all crew counts")
 	_expect(progressed_restore.state.ships[0].payroll.arrears == 0 and progressed_restore.state.ships[0].payroll.last_tick == progressed_restore.state.tick and progressed_restore.state.starting_credits == old_progression.starting_credits, "migration cannot invent back pay or silently debit player funds")
 	var corrupt_captain: Dictionary = captain_world.snapshot()
-	corrupt_captain.ships[1].captain_profile = corrupt_captain.ships[0].captain_profile.duplicate(true)
+	corrupt_captain.ships.back().captain_profile = corrupt_captain.ships[0].captain_profile.duplicate(true)
 	_expect(save_store.save_game(test_root + "/duplicate-captain.json", corrupt_captain) != OK, "save validation blocks duplicating an individual captain identity")
 	var corrupt_morale: Dictionary = captain_world.snapshot()
 	corrupt_morale.ships[0].captain_profile.morale = 101
