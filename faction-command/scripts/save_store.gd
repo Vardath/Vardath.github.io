@@ -9,6 +9,7 @@ const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
+const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
@@ -140,6 +141,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("salt_recovery_version") and _is_nonnegative_integer(decoded.salt_recovery_version) and decoded.salt_recovery_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("waste_cultures_version") and _is_nonnegative_integer(decoded.waste_cultures_version) and decoded.waste_cultures_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
@@ -173,6 +176,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
 		return false
 	if state.has("salt_recovery_version") != state.has("salt_recovery_catalog") or (state.has("salt_recovery_version") and state.get("ecology_version") != 1):
+		return false
+	if state.has("waste_cultures_version") != state.has("waste_cultures_catalog") or (state.has("waste_cultures_version") and state.get("salt_recovery_version") != 1):
 		return false
 	if state.has("waste_transport_version") and (not state.has("salt_recovery_version") or not state.has("station_supply_version")):
 		return false
@@ -300,6 +305,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("ecology_version") and not _valid_ecology(state):
 		return false
 	if state.has("salt_recovery_version") and not _valid_salt_recovery(state):
+		return false
+	if state.has("waste_cultures_version") and not _valid_waste_cultures(state):
 		return false
 	if state.has("waste_transport_version") and not _valid_waste_transport(state):
 		return false
@@ -933,6 +940,29 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 	# Future consumption/trading may reduce stock, but cannot exceed
 	# completed recycler receipts with no other declared source.
 	return total_stock <= total_recovered
+
+
+func _valid_waste_cultures(state: Dictionary) -> bool:
+	if state.waste_cultures_version != WasteCulturesScript.VERSION or not state.get("waste_cultures_catalog") is Dictionary:
+		return false
+	var data: Dictionary = WasteCulturesScript.new().definitions()
+	if data.is_empty() or state.waste_cultures_catalog != WasteCulturesScript.new().catalog(data):
+		return false
+	# This records who buys mixed waste, never a fabricated biological
+	# species-of-origin for existing cargo or any anonymous settlers.
+	for binding in data.stations:
+		for station in state.stations:
+			if station.id != binding.station_id:
+				continue
+			if station.get("waste_buyer_species_id") != binding.buyer_species_id:
+				return false
+			var quote: int = int(station.buy_prices.get("organic_waste", 0))
+			if quote > 0 and (quote > 1000000000 or station.owner == state.player_faction_id and quote != int(binding.organic_waste_buy_price)):
+				# Legacy captured stations may have original trade quotes;
+				# all quotes still obey the standard economy bounds.
+				if quote > 1000000000:
+					return false
+	return true
 
 
 func _valid_provisions(state: Dictionary) -> bool:
