@@ -14,11 +14,14 @@ const REQUIRED_ENERGY := "energy_cells"
 func definitions() -> Dictionary:
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
 	if not parsed is Dictionary or parsed.get("schema_version") != VERSION or not parsed.get("sites") is Array or not parsed.get("wares") is Array or not parsed.get("recipes") is Array or not parsed.get("blueprints") is Dictionary or not parsed.get("scope") is String or not parsed.get("biohazard_policy") is String:
+		printerr("Pass37B catalogue validation rejected at original line 17")
 		return {}
 	if parsed.sites.size() != 2 or parsed.wares.size() != 5 or parsed.recipes.size() != RECIPE_IDS.size() or parsed.blueprints.size() != RECIPE_IDS.size():
+		printerr("Pass37B catalogue validation rejected at original line 20")
 		return {}
 	var biota: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/biota.json"))
 	if not biota is Dictionary or not biota.get("organisms") is Array:
+		printerr("Pass37B catalogue validation rejected at original line 24")
 		return {}
 	var organisms: Dictionary = {}
 	for organism in biota.organisms:
@@ -28,40 +31,54 @@ func definitions() -> Dictionary:
 		var w: Variant = parsed.wares[i]
 		var valid_id: String = (SAMPLES + PRODUCTS)[i]
 		if not w is Dictionary or w.get("id") != valid_id or not w.get("name") is String or w.get("volume") != 1:
+			printerr("Pass37B catalogue validation rejected at original line 34")
 			return {}
 	for site in parsed.sites:
 		if not site is Dictionary or not site.get("id") is String or ids.has(site.id) or not site.get("name") is String or not site.get("sector_id") is String or not organisms.has(site.get("organism_id")) or not SAMPLES.has(site.get("sample_ware_id")):
+			printerr("Pass37B catalogue validation rejected at original line 38")
 			return {}
 		if not site.get("safety") is String or site.safety not in ["clean_botanical", "contained_microbe"]:
+			printerr("Pass37B catalogue validation rejected at original line 41")
 			return {}
 		for key in ["initial_reserve", "collection_ticks", "energy_cost", "min_crew"]:
 			var value: Variant = site.get(key, null)
 			if not (value is int or value is float) or not is_finite(float(value)) or float(value) != floor(float(value)):
+				printerr("Pass37B catalogue validation rejected at original line 46")
 				return {}
 		if int(site.initial_reserve) < 1 or int(site.initial_reserve) > 1000 or int(site.collection_ticks) < 2 or int(site.collection_ticks) > 1000 or int(site.energy_cost) != 1 or int(site.min_crew) != 2:
+			printerr("Pass37B catalogue validation rejected at original line 49")
 			return {}
 		if site.sample_ware_id == "sunlace_seed_capsule" and site.organism_id != "sunlace_fruit":
+			printerr("Pass37B catalogue validation rejected at original line 52")
 			return {}
 		if site.sample_ware_id == "mirealgae_culture_capsule" and site.organism_id != "mirealgae":
+			printerr("Pass37B catalogue validation rejected at original line 55")
 			return {}
 		ids[site.id] = true
 	for i in range(parsed.recipes.size()):
 		var recipe: Variant = parsed.recipes[i]
 		if not recipe is Dictionary or recipe.get("id") != RECIPE_IDS[i] or not recipe.get("name") is String or not (recipe.get("cycle_ticks") is int or recipe.get("cycle_ticks") is float) or int(recipe.cycle_ticks) < 1:
+			printerr("Pass37B catalogue validation rejected at original line 61")
 			return {}
 		if not recipe.get("inputs") is Dictionary or not recipe.get("outputs") is Dictionary or not recipe.get("catalysts", {}) is Dictionary:
+			printerr("Pass37B catalogue validation rejected at original line 64")
 			return {}
 		if not parsed.blueprints.has(recipe.id):
+			printerr("Pass37B catalogue validation rejected at original line 67")
 			return {}
 		var blueprint: Dictionary = parsed.blueprints[recipe.id]
 		if not blueprint.get("materials") is Dictionary or int(blueprint.get("fee", 0)) < 1 or int(blueprint.get("ticks", 0)) < 1 or int(blueprint.get("storage", 0)) < 1 or int(blueprint.materials.get("alloy_plates", 0)) < 1 or int(blueprint.materials.get("energy_cells", 0)) < 1:
+			printerr("Pass37B catalogue validation rejected at original line 71")
 			return {}
 	# Keep biological accounting fixed and independently auditable.
 	if parsed.recipes[0].inputs != {"sunlace_seed_capsule":1, "energy_cells":1} or parsed.recipes[0].outputs != {"biogene_record":1}:
+		printerr("Pass37B catalogue validation rejected at original line 75")
 		return {}
 	if parsed.recipes[1].inputs != {"potable_water":2, "fertile_soil":1, "energy_cells":1} or parsed.recipes[1].get("catalysts", {}) != {"sunlace_seed_capsule":1} or parsed.recipes[1].outputs != {"sunlace_fruit":3}:
+		printerr("Pass37B catalogue validation rejected at original line 78")
 		return {}
 	if parsed.recipes[2].inputs != {"potable_water":2, "energy_cells":1} or parsed.recipes[2].get("catalysts", {}) != {"mirealgae_culture_capsule":1} or parsed.recipes[2].outputs != {"mirealgae_biomass":3}:
+		printerr("Pass37B catalogue validation rejected at original line 81")
 		return {}
 	return parsed
 
