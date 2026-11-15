@@ -126,7 +126,7 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("professional_version") and _is_nonnegative_integer(decoded.professional_version) and decoded.professional_version != 1:
 		return {"ok":false, "reason":"unsupported"}
-	if decoded.has("professional_transport_version") and _is_nonnegative_integer(decoded.professional_transport_version) and decoded.professional_transport_version != 1:
+	if decoded.has("professional_transport_version") and _is_nonnegative_integer(decoded.professional_transport_version) and decoded.professional_transport_version not in [1, 2]:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("education_version") and _is_nonnegative_integer(decoded.education_version) and decoded.education_version != 1:
 		return {"ok":false, "reason":"unsupported"}
@@ -636,9 +636,12 @@ func _valid_careers(state: Dictionary) -> bool:
 			var manifest: Dictionary = ship.career_manifest
 			if not manifest.is_empty() and key == str(ship.id) + "|" + str(manifest.track) + "|" + ("1" if bool(manifest.certified) else "0"):
 				on_ship += int(manifest.quantity)
-			var named_id: String = str(ship.get("professional_passenger_id", ""))
-			if not named_id.is_empty():
-				var worker: Dictionary = state.get("professional_registry", {}).get(named_id, {})
+			var named_ids: Array = ship.get("professional_passenger_ids", [])
+			if not state.has("professional_transport_version") or int(state.professional_transport_version) == 1:
+				var legacy_id: String = str(ship.get("professional_passenger_id", ""))
+				named_ids = [] if legacy_id.is_empty() else [legacy_id]
+			for named_id in named_ids:
+				var worker: Dictionary = state.get("professional_registry", {}).get(str(named_id), {})
 				if not worker.is_empty() and key == str(ship.id) + "|" + str(worker.track) + "|1":
 					on_ship += 1
 		if int(departures[key]) - int(arrivals.get(key, 0)) != on_ship:
@@ -662,17 +665,32 @@ func _valid_professionals(state: Dictionary) -> bool:
 	var transports: Dictionary = {}
 	for ship in state.ships:
 		if not state.has("professional_transport_version"):
-			if ship.has("professional_passenger_id"):
+			if ship.has("professional_passenger_id") or ship.has("professional_passenger_ids"):
 				return false
 			continue
-		if state.professional_transport_version != ProfessionalScript.TRANSPORT_VERSION or not ship.get("professional_passenger_id") is String:
+		var version: int = int(state.professional_transport_version)
+		if version not in [1, 2] or not ship.get("professional_passenger_id") is String:
 			return false
-		var passenger_id: String = str(ship.professional_passenger_id)
-		if passenger_id.is_empty():
+		var names: Array = []
+		if version == 1:
+			if ship.has("professional_passenger_ids"):
+				return false
+			if not str(ship.professional_passenger_id).is_empty():
+				names = [str(ship.professional_passenger_id)]
+		else:
+			if not ship.get("professional_passenger_ids") is Array:
+				return false
+			names = ship.professional_passenger_ids
+			if names.size() > ProfessionalScript.MAX_NAMED_PASSENGERS or str(ship.professional_passenger_id) != ("" if names.is_empty() else str(names[0])):
+				return false
+		if names.is_empty():
 			continue
-		if transports.has(passenger_id) or not roster.has(passenger_id) or ship.owner != state.player_faction_id or int(ship.get("settler_passengers", 0)) != 1 or not ship.get("career_manifest", {}).is_empty() or str(ship.get("settler_source_station_id", "")).is_empty():
+		if ship.owner != state.player_faction_id or int(ship.get("settler_passengers", 0)) != names.size() or not ship.get("career_manifest", {}).is_empty() or str(ship.get("settler_source_station_id", "")).is_empty():
 			return false
-		transports[passenger_id] = str(ship.id)
+		for id in names:
+			if not id is String or str(id).is_empty() or not roster.has(id) or transports.has(id):
+				return false
+			transports[id] = str(ship.id)
 	var reserved: Dictionary = {}
 	var resident_ids: Dictionary = {}
 	for id in roster:
@@ -703,7 +721,7 @@ func _valid_professionals(state: Dictionary) -> bool:
 			return false
 		var key := str(person.station_id) + "|" + str(person.track)
 		reserved[key] = int(reserved.get(key, 0)) + 1
-		if int(reserved[key]) > 1 or int(reserved[key]) > int(station.careers.licensed.get(person.track, 0)):
+		if int(reserved[key]) > int(station.careers.licensed.get(person.track, 0)):
 			return false
 		resident_ids[str(person.station_id)] = int(resident_ids.get(str(person.station_id), 0)) + 1
 		var cohort: Dictionary = state.population.stations.get(str(person.station_id), {})
