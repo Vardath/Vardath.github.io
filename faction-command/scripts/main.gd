@@ -820,7 +820,9 @@ func _execute_inspector_action(action_id: String) -> void:
 			if kind == "site":
 				_open_build_screen(object_id)
 		"education", "careers":
-			if kind == "station" and not world._find_station(object_id).get("education", {}).get("modules", []).is_empty():
+			if kind == "station":
+				# The employment inspector is legal at a staffed factory even
+				# when no classroom has yet been constructed there.
 				_open_education_screen(object_id)
 		"research":
 			if kind == "station" and world.research.has_lab(world._find_station(object_id)):
