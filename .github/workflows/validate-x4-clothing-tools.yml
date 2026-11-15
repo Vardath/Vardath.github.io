@@ -13,5 +13,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m py_compile downloads/x4-terran-pio-sleeveless/tools/merge_replace_bodies.py downloads/x4-terran-pio-sleeveless/tools/audit_blend.py
+      - name: Check syntax of all Blender automation scripts
+        run: python -m py_compile downloads/x4-terran-pio-sleeveless/tools/merge_replace_bodies.py downloads/x4-terran-pio-sleeveless/tools/audit_blend.py downloads/x4-terran-pio-sleeveless/tools/auto_edit_and_build.py
       - run: python downloads/x4-terran-pio-sleeveless/tools/test_merge.py
+      - name: Package Windows Blender auto-builder (not a prebuilt XAC mod)
+        run: |
+          mkdir -p dist/Vardath_X4_Clothing_Builder/tools
+          cp downloads/x4-terran-pio-sleeveless/build_on_windows.bat dist/Vardath_X4_Clothing_Builder/
+          cp downloads/x4-terran-pio-sleeveless/README.md dist/Vardath_X4_Clothing_Builder/
+          cp downloads/x4-terran-pio-sleeveless/tools/auto_edit_and_build.py dist/Vardath_X4_Clothing_Builder/tools/
+          cp downloads/x4-terran-pio-sleeveless/tools/merge_replace_bodies.py dist/Vardath_X4_Clothing_Builder/tools/
+          cp downloads/x4-terran-pio-sleeveless/tools/audit_blend.py dist/Vardath_X4_Clothing_Builder/tools/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Vardath_X4_Clothing_Builder
+          path: dist/Vardath_X4_Clothing_Builder/
+          if-no-files-found: error
