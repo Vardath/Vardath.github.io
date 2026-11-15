@@ -2041,6 +2041,8 @@ func _update_crew_screen() -> void:
 	else:
 		lines.append("Recruitment and discharge require an NPC recruitment station. The station pool is finite and hires are paid to its operating budget.")
 	lines.append("CIVILIAN SETTLEMENT\n%d passengers aboard · %d free transport berths. Board existing NPC adults for %d CR each at a non-hostile recruitment dock. Fly to an owned station, dock there and disembark only into powered, provisioned, vacant residential slots. Returning to their original NPC station restores the workers to that roster; the original permit cost is not refunded." % [int(ship.get("settler_passengers", 0)), world.settlement.free_berths(world, ship), world.settlement.RESETTLEMENT_FEE])
+	if not str(ship.get("professional_passenger_id", "")).is_empty():
+		lines.append(world.professionals.passenger_report(world, ship))
 	if not ship.get("career_manifest", {}).is_empty():
 		var manifest: Dictionary = ship.career_manifest
 		lines.append("CREDENTIALED PASSENGER MANIFEST\\n%d %s graduates aboard · %s track, origin %s. This is a real protected civilian manifest, not regular service crew. Disembark only at a physically provisioned owned residence to preserve every academic and workplace record." % [int(manifest.quantity), "practical" if bool(manifest.certified) else "foundation", str(manifest.track), str(ship.settler_source_station_id)])
@@ -2670,6 +2672,10 @@ func _open_education_screen(station_id: String) -> void:
 	board_button.name = "CareerBoardButton"
 	board_button.pressed.connect(_career_board_graduates)
 	transport_row.add_child(board_button)
+	var named_transfer_button := _button("Board named worker")
+	named_transfer_button.name = "ProfessionalBoardNamedButton"
+	named_transfer_button.pressed.connect(_professional_board_named)
+	transport_row.add_child(named_transfer_button)
 	var employment_row := HBoxContainer.new()
 	employment_row.add_theme_constant_override("separation", 6)
 	column.add_child(employment_row)
@@ -2789,6 +2795,13 @@ func _career_board_graduates() -> void:
 		return
 	var ship_id: String = str(career_ship_picker.get_item_metadata(career_ship_picker.selected))
 	_education_action_result(world.careers.board_qualified(world, ship_id, _career_selected_track(), int(education_quantity.value), career_certified_toggle.button_pressed))
+
+
+func _professional_board_named() -> void:
+	if not is_instance_valid(career_ship_picker) or career_ship_picker.selected < 0:
+		return
+	var ship_id: String = str(career_ship_picker.get_item_metadata(career_ship_picker.selected))
+	_education_action_result(world.professionals.board_named(world, ship_id, _professional_worker_for_track()))
 
 
 func _professional_appoint() -> void:
