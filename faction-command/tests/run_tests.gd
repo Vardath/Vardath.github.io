@@ -5056,7 +5056,10 @@ func _run() -> void:
 	if not p35c_family_admission.ok:
 		var p35c_factory_rec: Dictionary = p35c_world.population.station_cohort(p35c_world, "player_station_1")
 		printerr("P35C INDUSTRIAL SETTLEMENT BLOCKED ", p35c_family_admission, " stock=", p35c_factory.stock, " housing=", p35c_factory.habitation, " power=", p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog), " shortages=", p35c_world.provisions.missing_provision(p35c_world, p35c_factory, p35c_world.demographics.residents(p35c_factory_rec) + 2), " ship=", p35c_ship.cargo)
-	_expect(p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog) >= 2 and p35c_family_admission.ok, "two already trained engineers settle once into a real functioning 8-bed industrial habitat")
+	var p35c_factory_capacity: int = p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog)
+	if p35c_factory_capacity < 2 or not p35c_family_admission.ok:
+		printerr("P35C FACTORY ADMISSION DIAGNOSTIC cap=", p35c_factory_capacity, " admitted=", p35c_family_admission, " housing=", p35c_factory.habitation, " headcount=", p35c_world.population.station_cohort(p35c_world, "player_station_1").cohorts, " ship=", p35c_ship.get("career_manifest", {}), " passengers=", p35c_ship.settler_passengers)
+	_expect(p35c_factory_capacity >= 2 and p35c_family_admission.ok, "two already trained engineers settle once into a real functioning 8-bed industrial habitat")
 	p35c_world.advance_ticks(60)
 	_expect(p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok and p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok, "the two paid and proven industrial residents receive two distinct professional IDs on the SAME genuine license track")
 	_expect(p35c_world.state.professional_registry.size() == 2 and p35c_world.professionals.available(p35c_world, "player_station_1", "engineering_college") == 0 and p35c_world.population.total_people(p35c_world) >= p35c_people, "identifying two real adult colleagues consumes no new population, diplomas, ship crews or extra graduate slots")
