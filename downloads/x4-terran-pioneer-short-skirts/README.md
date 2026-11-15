@@ -1,10 +1,10 @@
-# Terran and Pioneer Short Skirts — 1.2
+# Terran and Pioneer Short Skirts — 1.3
 
-[Download version 1.2](Terran_Pioneer_Short_Skirts_v1.2.zip)
+[Download version 1.3](Terran_Pioneer_Short_Skirts_v1.3.zip)
 
-Adds the missing **hips, pelvis and upper thighs beneath the skirts** for all four female Terran/Pioneer crew and diplomat outfits. The lower-body fill joins the original thighs and uses the existing Terran leg skin material and skeleton.
+All four female Terran/Pioneer crew and diplomat outfits now have **sleeveless tops with built upper arms and shoulders**. The fitted lower arms remain, and the armholes have finished edges and revised clothing weights.
 
-The skirt length, finished hems, tops, elbow-length sleeves and fitted Argon lower arms from version 1.1 are unchanged. No pilot suits or character assignments are changed.
+The skirts are **another inch (2.54 cm) shorter than version 1.2**. The completed hips, pelvis, upper thighs and legs from version 1.2 remain unchanged. Pilot suits are unchanged.
 
 ## Install or update
 
@@ -12,14 +12,14 @@ Close X4. Extract the ZIP and copy `terran_pioneer_short_skirts` into `X4 Founda
 
 ## Preview
 
-![Version 1.2 outfit geometry](Body_Fill_Preview.png)
+![Sleeveless version 1.3 geometry](Sleeveless_Preview.png)
 
-Blender geometry preview with simplified colors, not an in-game screenshot. The added body is concealed beneath the existing outfit.
+Blender geometry preview using simplified colors, not an in-game screenshot.
 
 ## Validation
 
-All four exported lower-body meshes reimported successfully and have no open or nonmanifold edges. Original skeletons/materials remain; skirt, top and arm meshes are unchanged; original leg vertex positions are preserved. Finite coordinates, triangle indices, normalized weights and archive integrity were checked. Standing and representative walking-pose geometry previews were reviewed. [Validation details](validation.json).
+All four exported models reimported successfully. Every body and clothing mesh is closed and manifold. Original skeletons/materials and the completed lower body are unchanged. Finite coordinates, triangle indices, normalized skin weights, the 2.54 cm hem change and archive integrity were checked. Representative front, side, rear and raised-arm geometry previews were reviewed. [Validation details](validation.json).
 
-**Version 1.2 still needs an in-game animation/clipping check.** The concealed addition uses an extended upper-thigh skin UV strip. Version 1.1's forearm palette limitations and full-detail-at-distance behavior remain. Other replacements of these same bodies may conflict.
+**Version 1.3 still needs an in-game animation and clipping check.** Upper-arm skin extends the donor forearm UV strip. Existing adaptive-skin palette limitations and full-detail-at-distance behavior remain. Other replacements of these same bodies may conflict.
 
-[Full release notes](README.txt) · [Previous version 1.1](Terran_Pioneer_Short_Skirts_v1.1.zip) · [Version 1.0](Terran_Pioneer_Short_Skirts_v1.0.zip)
+[Full release notes](README.txt) · [Previous version 1.2](Terran_Pioneer_Short_Skirts_v1.2.zip) · [Version 1.1](Terran_Pioneer_Short_Skirts_v1.1.zip)

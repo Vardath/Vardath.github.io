@@ -1,16 +1,16 @@
-TERRAN AND PIONEER SHORT SKIRTS — 1.2
+TERRAN AND PIONEER SHORT SKIRTS — 1.3 (16 November 2026)
 
-Adds the previously missing hips, pelvis and upper thighs beneath all four female Terran/Pioneer crew and diplomat skirts. The concealed lower-body shape is adapted from the Argon civilian lower-body mesh, fitted within the existing skirt, joined to the original open thigh rims, and skinned to the original skeleton. It uses the existing Terran leg skin material. The completed lower-body surfaces have no open or nonmanifold edges.
+All four female Terran/Pioneer crew and diplomat outfits now have sleeveless tops with newly built upper arms and shoulders connected to the existing donor forearms. The armholes are reshaped and lined. Retained top fabric is weighted to the torso, and the shoulder skin blends between clavicle and upper-arm bones.
 
-Version 1.1 skirt length, lined hem, top geometry, sleeves, forearms and hands are preserved exactly. Original leg vertex positions and shoes are preserved; normals are regenerated to smooth the thigh joins. The added concealed region reuses an extended upper-thigh skin UV strip. It is intended to fill missing geometry under clothing.
+Skirts are another inch (2.54 cm) shorter than version 1.2, with the hem raised from 81.81 cm to 84.35 cm in the original model coordinates. The existing lining is closed at the new hem. The completed hips, pelvis, upper thighs, legs and shoes from version 1.2 are unchanged. Pilot suits are unchanged.
 
 INSTALL / UPDATE
 Close X4. Copy terran_pioneer_short_skirts into X4 Foundations/extensions, replacing the existing files. Keep the same mod enabled. Requires Cradle of Humanity. No save scripts or character assignments are changed.
 
 VALIDATION
-All four exported bodies reimported and checked as closed manifold lower-body meshes. Skeletons/materials unchanged; clothing and arms unchanged; finite coordinates, triangle indices and normalized weights checked. Standing and representative walking-pose geometry previews reviewed. Preview colors are simplified, not game textures. This version has not yet been tested in a running X4 game; check varied animations for clipping.
+All four exported models reimported; all body and clothing meshes are closed and manifold. Skeletons/materials and the version 1.2 lower body are unchanged. Finite coordinates, triangle indices, normalized bone weights and exact skirt hem height were checked. Representative front, side, rear and raised-arm geometry previews were reviewed. Not yet tested in a running X4 game: check varied gestures and lighting for clipping or skin seams. Previews use simplified colors, not game textures.
 
-Existing limitations from 1.1 remain: full-detail bodies are used at distance; the donor forearm material has two skin palettes and uses the light palette for the third skin blend. Other replacements of these body assets can conflict.
+Upper-arm skin extends the donor forearm UV strip and uses the existing adaptive arm material. Existing limitations remain: the donor forearm material has two palettes and uses the light palette for its third skin blend; full-detail models are used at distance; other replacements of these same four bodies can conflict.
 
 ROLLBACK
-Restore the included Installed_Short_Skirts_Before_v1.2.zip into extensions while X4 is closed to return to the exact previously installed outfit. Disable the mod to restore the base-game outfits.
+Restore Installed_Short_Skirts_Before_v1.3.zip into extensions while X4 is closed to return to the exact previously installed outfit. Disable the mod to restore base-game outfits.
