@@ -4932,22 +4932,54 @@ func _run() -> void:
 	var p35c_ship: Dictionary = p35c_world._find_ship("ship_001")
 	var p35c_archive: Dictionary = p35c_world._find_station("auroran_archive")
 	_expect(p35c_campus.education.qualified.engineering_college == 1 and int(p35c_campus.education.teachers) == 1 and not p35c_campus.education.modules.is_empty(), "real prior foundational graduate and mentor remain in the commissioned player engineering school")
-	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "two future apprentice residents are recruited only after a real intersector voyage")
-	p35c_world.advance_ticks(40)
 	var p35c_books_required: int = maxi(0, 13 - int(p35c_campus.stock.get("recorded_data", 0)))
-	if int(p35c_archive.stock.get("recorded_data", 0)) < p35c_books_required:
-		# Archive books may only come from the already present natural
-		# reproduction recipe's paid physical input stock, never a test mint.
+	var p35c_resupply_archive: bool = int(p35c_archive.stock.get("recorded_data", 0)) < p35c_books_required
+	if p35c_resupply_archive:
+		# The exhausted archive cannot provide study credentials for free.
+		# Use the SAME real supply method tested in Pass 33: smelted metal
+		# comes from the operating factory, electricity is bought at an NPC
+		# solar market, and the sponsor actually pays for these imports.
+		_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 4, false).ok, "four real smelted metal units are physically loaded for a new archive media fabrication run")
+	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "new apprentice adults and their paid books require a real journey to a source NPC sector")
+	p35c_world.advance_ticks(40)
+	if p35c_resupply_archive:
+		var p35c_buy_energy: Dictionary = p35c_world.trade("ship_001", "hearth_exchange", "energy_cells", 22, true) if p35c_world.dock_ship("ship_001", "hearth_exchange").ok else {"ok":false}
+		if not p35c_buy_energy.ok:
+			printerr("P35C ARCHIVE ENERGY PURCHASE FAILED ", p35c_buy_energy, " ship=", p35c_ship.cargo, " market=", p35c_world._find_station("hearth_exchange").stock)
+		_expect(p35c_buy_energy.ok, "twenty-two physical energy cells are purchased at real NPC solar prices for archive printing")
+		var p35c_metal_left := 4
+		var p35c_energy_left := 22
+		for archive_delivery in range(45):
+			if p35c_metal_left == 0 and p35c_energy_left == 0:
+				break
+			p35c_world.advance_ticks(30)
+			var p35c_funds: int = int(p35c_archive.credits)
+			var p35c_free_storage: int = maxi(0, int(p35c_archive.storage_capacity) - p35c_world.station_volume("auroran_archive"))
+			if p35c_metal_left > 0:
+				var p35c_metal_chunk: int = mini(p35c_metal_left, mini(int(p35c_funds / 25), p35c_free_storage))
+				if p35c_metal_chunk > 0:
+					_expect(p35c_world.dock_ship("ship_001", "auroran_archive").ok and p35c_world.trade("ship_001", "auroran_archive", "alloy_plates", p35c_metal_chunk, false).ok, "sponsor-funded historical workshop pays the owned ship for real smelted alloy metal")
+					p35c_metal_left -= p35c_metal_chunk
+					p35c_funds -= p35c_metal_chunk * 25
+					p35c_free_storage -= p35c_metal_chunk
+			if p35c_energy_left > 0:
+				var p35c_energy_chunk: int = mini(p35c_energy_left, mini(int(p35c_funds / 11), p35c_free_storage))
+				if p35c_energy_chunk > 0:
+					_expect(p35c_world.dock_ship("ship_001", "auroran_archive").ok and p35c_world.trade("ship_001", "auroran_archive", "energy_cells", p35c_energy_chunk, false).ok, "sponsor-funded archive buys actual delivered energy for each successive printing cycle")
+					p35c_energy_left -= p35c_energy_chunk
+		if p35c_metal_left != 0 or p35c_energy_left != 0:
+			printerr("P35C ARCHIVE MATERIAL DELIVERY BLOCKED alloy=", p35c_metal_left, " energy=", p35c_energy_left, " ship=", p35c_ship.cargo, " archive=", p35c_archive.stock)
+		_expect(p35c_metal_left == 0 and p35c_energy_left == 0, "archive receives all four smelted alloy and twenty-two purchased solar inputs through actual priced station trade")
 		p35c_world.advance_ticks(240)
 	if int(p35c_archive.stock.get("recorded_data", 0)) < p35c_books_required:
-		printerr("P35C BOOK SHORTAGE source archive=", p35c_archive.stock, " school=", p35c_campus.stock, " need=", p35c_books_required)
+		printerr("P35C BOOK SHORTAGE AFTER PHYSICAL WORKSHOP SUPPLY source archive=", p35c_archive.stock, " school=", p35c_campus.stock, " need=", p35c_books_required)
 	var p35c_buy_books: bool = p35c_books_required == 0
 	if p35c_books_required > 0 and p35c_world.dock_ship("ship_001", "auroran_archive").ok:
 		var p35c_buy_result: Dictionary = p35c_world.trade("ship_001", "auroran_archive", "recorded_data", p35c_books_required, true)
 		p35c_buy_books = bool(p35c_buy_result.ok)
 		if not p35c_buy_books:
 			printerr("P35C BOOK PURCHASE FAILED: ", p35c_buy_result, " archive=", p35c_archive.stock, " ship=", p35c_ship.cargo)
-	_expect(p35c_buy_books, "a second civilian learner's entire recorded-data curriculum is bought from the genuinely operating and priced NPC archive")
+	_expect(p35c_buy_books, "real archive manufactures nine further classroom/practicum documents using delivered alloy and energy, then sells them for actual player credits")
 	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.settlement.board(p35c_world, "ship_001", 2).ok, "two genuine NPC adults are recruited into paid ship passenger berths, not created by training")
 	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "actual two-person recruitment and purchased study books are transported through the galaxy map")
 	p35c_world.advance_ticks(40)
