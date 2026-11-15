@@ -108,6 +108,36 @@ func appoint(world: RefCounted, station_id: String, track: String) -> Dictionary
 	return {"ok":true, "message":"Assigned existing certified %s %s to genuine %s production. The adult and qualification were already counted." % [id, WORK[track].role, station.name], "id":id}
 
 
+## Registration is NOT employment: an actual practical graduate may receive a
+## durable identity at their school, even before an industrial workstation is
+## built. This spends no money or diploma, gives no XP, and is off payroll.
+## The registered person remains an existing counted resident adult.
+func register_graduate(world: RefCounted, station_id: String, track: String) -> Dictionary:
+	var station: Dictionary = world._find_station(station_id)
+	var cohort: Dictionary = world.population.station_cohort(world, station_id)
+	if station.is_empty() or station.owner != world.state.player_faction_id or cohort.is_empty() or not WORK.has(track):
+		return {"ok":false, "message":"Choose an owned school with an existing practically certified engineering or agriculture graduate."}
+	if int(world.state.professional_next_id) > MAX_PROFESSIONALS or available(world, station_id, track) < 1:
+		return {"ok":false, "message":"Every practical certificate is already assigned to an identified person, or no real graduate exists."}
+	if int(cohort.cohorts.assigned_workers) < 1 or int(station.education.qualified.get(track, 0)) < _local_count(world, station_id, track) + 1:
+		return {"ok":false, "message":"No distinct qualified, present resident adult is available for identity registration."}
+	if cohort.resident_status != "Provisioned" or world.habitation.operational_capacity(station, world.state.habitation_catalog) < world.demographics.residents(cohort):
+		return {"ok":false, "message":"Registration requires actual provisioned, powered resident accommodation."}
+	var number: int = int(world.state.professional_next_id)
+	var id := "professional_%d" % number
+	if world.state.professional_registry.has(id):
+		return {"ok":false, "message":"This individual identifier has already been allocated."}
+	world.state.professional_next_id = number + 1
+	world.state.professional_registry[id] = {
+		"id":id, "station_id":station_id, "track":track, "role":WORK[track].role,
+		"active":false, "experience":0, "skill":0, "work_events":0,
+		"salary_due":0, "salary_paid":0, "last_salary_tick":int(world.state.tick),
+		"status":"Off duty"
+	}
+	world._record_transaction("professional_register", track, station_id, id, 1, 0, 0)
+	return {"ok":true, "message":"Registered certified resident %s as an identifiable %s. They remain physically at %s without payroll or invented experience." % [id, WORK[track].role, station.name], "id":id}
+
+
 func set_active(world: RefCounted, worker_id: String, enabled: bool) -> Dictionary:
 	var worker: Dictionary = world.state.professional_registry.get(worker_id, {})
 	if worker.is_empty():
