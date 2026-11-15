@@ -126,7 +126,9 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if biota.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
-	if biosurvey.prepare(new_state) != OK:
+	var biological_result: Error = biosurvey.prepare(new_state)
+	if biological_result != OK:
+		printerr("Pass37B startup diagnostic: biosurvey result=", biological_result, " definitions keys=", biosurvey.definitions().keys(), " biota_version=", new_state.get("biota_version", "missing"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
 		return ERR_INVALID_DATA
 	state = new_state
 	return OK
