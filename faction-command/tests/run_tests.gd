@@ -44,6 +44,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("settler_passengers")
 	copy.erase("settler_source_station_id")
 	copy.erase("career_manifest")
+	copy.erase("professional_passenger_id")
 	return copy
 
 
@@ -53,6 +54,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("settler_passengers")
 		ship.erase("settler_source_station_id")
 		ship.erase("career_manifest")
+		ship.erase("professional_passenger_id")
 	return copy
 
 
@@ -4783,7 +4785,11 @@ func _run() -> void:
 	_expect(p35b_source.careers.licensed.engineering_college == 1 and p35b_world.dock_ship("ship_001", "player_station_1").ok, "a physically commissioned source and a genuinely docked passenger ship are available")
 	_expect(not p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_999").ok, "nonexistent professional can never board")
 	_expect(not p35b_world.professionals.board_named(p35b_world, "npc_builder_001", "professional_1").ok, "faction NPC builder cannot steal the player's named resident")
-	_expect(_replenish_practical_station(p35b_world, "player_station_1", "player_station_2", 10), "physical prior-producer stock and paid solar power genuinely provision the destination before a named employee's arrival")
+	printerr("P35B DIAGNOSTIC BEFORE SUPPLY source=", p35b_source.stock, " destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " sectors=", p35b_source.sector, "/", p35b_dest.sector, "/", p35b_ship.sector)
+	var p35b_supply_ok: bool = _replenish_practical_station(p35b_world, "player_station_1", "player_station_2", 10)
+	if not p35b_supply_ok:
+		printerr("P35B DIAGNOSTIC FAILED SUPPLY destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " source=", p35b_source.stock)
+	_expect(p35b_supply_ok, "physical prior-producer stock and paid solar power genuinely provision the destination before a named employee's arrival")
 	_expect(p35b_world.dock_ship("ship_001", "player_station_1").ok, "qualified employee travels only after ship is back at the actual source station")
 	_expect(p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_1").ok, "an existing professional boards exactly one real ship passenger berth and is off the company payroll during travel")
 	_expect(int(p35b_ship.settler_passengers) == 1 and p35b_ship.professional_passenger_id == "professional_1" and p35b_worker.station_id == "" and not p35b_worker.active and p35b_worker.status == "In transit", "one named in-transit identity is linked to one physical ship rather than duplicated in the source housing")
