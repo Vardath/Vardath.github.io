@@ -13,14 +13,14 @@ const EXPECTED_INPUTS := [
 	{"sunlace_fruit":2, "potable_water":1, "energy_cells":1},
 	{"emberhorn_fur":2, "energy_cells":1},
 	{"dustwhistle_feathers":2, "alloy_plates":1, "energy_cells":1},
-	{}
+	{"medical_supplies":1, "energy_cells":1}
 ]
 const EXPECTED_OUTPUTS := [
 	{"emberhorn_fodder":5},
 	{"dustwhistle_nectar":5},
 	{"emberhorn_woven_cloth":1},
 	{"dustwhistle_insulation":1},
-	{}
+	{"organic_waste":1}
 ]
 const EXPECTED_DURATIONS := [28, 24, 30, 32, 60]
 
@@ -148,6 +148,7 @@ func treat(world: RefCounted, station_id: String, animal_id: String) -> Dictiona
 	if int(station.stock.get("medical_supplies", 0)) < meds or int(station.stock.get("energy_cells", 0)) < 1:
 		return {"ok":false, "message":"Clinical intervention requires %d real Medical Supplies and one actual Energy Cell." % meds}
 	station.stock.medical_supplies = int(station.stock.medical_supplies) - meds
+	station.stock.organic_waste = int(station.stock.get("organic_waste", 0)) + 1
 	station.stock.energy_cells = int(station.stock.energy_cells) - 1
 	status.shortages = 0
 	status.last_status = "Veterinary recovery; monitor actual animal diet, water and electricity"
@@ -155,6 +156,7 @@ func treat(world: RefCounted, station_id: String, animal_id: String) -> Dictiona
 	# Historical and clinical receipts are linked by station, species and tick.
 	world._record_transaction("animal_treatment_medical", "", station_id, animal_id, meds, 0, 0)
 	world._record_transaction("animal_treatment_energy", "", station_id, animal_id, 1, 0, 0)
+	world._record_transaction("animal_treatment_waste", "", station_id, animal_id, 1, 0, 0)
 	world._record_transaction("animal_treated", "", station_id, animal_id, 1, 0, 0)
 	return {"ok":true, "message":"Treated %d living %s with %d Medical Supplies and one Energy Cell. Quarantine released; future food and water still required." % [heads, str(animal.name), meds]}
 
