@@ -5711,6 +5711,83 @@ func _run() -> void:
 	_expect(int(p37c_dust_station.stock.dustwhistle_moth) == 1 and int(p37c_dust_station.stock.dustwhistle_feathers) == 0 and int(p37c_dust_station.stock.organic_waste) == 0 and p37c.state.ledger.any(func(e): return e.kind == "livestock_death" and e.ware_id == "dustwhistle_moth"), "three completely unfunded husbandry service periods cause one real counted adult death, not unlimited welfare or free manure")
 	_expect(save_store.save_game(test_root + "/pass37c-starved-animals.json", p37c.snapshot()) == OK, "a genuine welfare-related animal death conserves the collected native population and survives strict save accounting")
 
+	# Pass 37D: food becomes a physical, species-appropriate product
+	# manufactured from collected/matured organisms, not an old-save grant.
+	var p37d = WorldScript.new()
+	_expect(p37d.load_starter() == OK, "Pass 37D loads two new organic feed recipes, two animal-material factories and a paid veterinary clinic")
+	_disable_npc_trading(p37d)
+	_expect(p37d.state.animal_feed_version == 1 and p37d.state.animal_quarantine.is_empty() and p37d.state.wares.size() == 29 and p37d.state.recipes.size() == 22, "tailored animal feeds are canonical additive wares and five buildable service or processing modules")
+	_expect(_total_ware(p37d.state, "emberhorn_fodder") == 0 and _total_ware(p37d.state, "dustwhistle_nectar") == 0 and _total_ware(p37d.state, "emberhorn_woven_cloth") == 0 and _total_ware(p37d.state, "dustwhistle_insulation") == 0, "migration cannot fabricate enriched feed, shed materials or processed clothing")
+	_expect(save_store.save_game(test_root + "/pass37d-zero-inventories.json", p37d.snapshot()) == OK, "new animal feed schema saves without introducing any physical products")
+	var p37d_fake_fodder: Dictionary = p37d.snapshot()
+	p37d_fake_fodder.ships[0].cargo["emberhorn_fodder"] = 1
+	_expect(save_store.save_game(test_root + "/pass37d-forged-fodder.json", p37d_fake_fodder) != OK, "an animal feed unit forged without a full paid manufacturing cycle fails strict load/save auditing")
+	var p37d_fake_fabric: Dictionary = p37d.snapshot()
+	p37d_fake_fabric.ships[0].cargo["emberhorn_woven_cloth"] = 1
+	_expect(save_store.save_game(test_root + "/pass37d-forged-cloth.json", p37d_fake_fabric) != OK, "woven fur cloth cannot exist without a genuine paid factory consuming source-certified animal fur")
+	var p37d_future: Dictionary = p37d.snapshot()
+	p37d_future.animal_feed_version = 2
+	_expect(save_store.save_game(test_root + "/pass37d-future.json", p37d_future) != OK, "unknown future animal nutrition schema is never accepted as a current save")
+	var p37d_v30: Dictionary = p37c_fed.snapshot()
+	_strip_animal_feed(p37d_v30)
+	_expect(save_store.save_game(test_root + "/pass37d-v30.json", p37d_v30) == OK, "real v30 saved moths, ages, care and historically fed inventories remain valid to import")
+	var p37d_migrated = WorldScript.new()
+	_expect(p37d_migrated.restore_snapshot(p37d_v30) == OK and p37d_migrated.state.animal_feed_version == 1, "in-place Pass 37C-to-37D migration succeeds without restarting a game")
+	var p37d_reduced: Dictionary = p37d_migrated.snapshot()
+	_strip_animal_feed(p37d_reduced)
+	_expect(p37d_reduced == p37d_v30 and _total_ware(p37d_migrated.state, "dustwhistle_nectar") == 0, "animal feed migration leaves old actual adult/young animals, care clocks, cash, crew, stations, cargo, ship orders and provenance unchanged")
+	_expect(save_store.save_game(test_root + "/pass37d-after-v30.json", p37d_migrated.snapshot()) == OK, "migrated real animal colonies and physical product catalogue pass all save invariants")
+	var p37d_moth_pen: Dictionary = p37d_migrated._find_station(str(p37c_dust_station.id))
+	var p37d_needed: Dictionary = p37d_migrated.station_supply.targets(p37d_migrated, p37d_moth_pen)
+	_expect(int(p37d_needed.get("dustwhistle_nectar", 0)) > 0 and int(p37d_needed.get("potable_water", 0)) > 0 and int(p37d_needed.get("energy_cells", 0)) > 0, "the existing automated station supplier recognises actual per-head nectar, water and energy demand instead of trying to buy live animals as manufacturing catalysts")
+	_expect(int(p37d_needed.get("dustwhistle_moth", 0)) == 0, "animal-specific resupply never manufactures or procures fictitious living captives")
+	var p37d_no_quarantine: Dictionary = p37d_migrated.snapshot()
+	_expect(not p37d_migrated.animal_feed.set_quarantine(p37d_migrated, "hearth_exchange", "dustwhistle").ok and p37d_migrated.snapshot() == p37d_no_quarantine, "NPC stations cannot isolate animals that are not owned or contained by the player")
+	_expect(p37d_migrated.animal_feed.set_quarantine(p37d_migrated, str(p37d_moth_pen.id), "dustwhistle").ok and p37d_migrated.animal_feed.is_quarantined(p37d_migrated, str(p37d_moth_pen.id), "dustwhistle"), "the living Dustwhistle colony can be isolated without reassigning or deleting any animal")
+	_expect(not p37d_migrated.transfer_player_station("ship_001", str(p37d_moth_pen.id), "dustwhistle_moth", 1, false).ok, "existing animal quarantine blocks physically removing a live adult from a station")
+	_expect(not p37d_migrated.animal_feed.treat(p37d_migrated, str(p37d_moth_pen.id), "dustwhistle").ok, "quarantine cannot be bypassed by pressing treatment without a real, built veterinary clinic")
+	var p37d_bogus_quarantine: Dictionary = p37d_migrated.snapshot()
+	p37d_bogus_quarantine.animal_quarantine["hearth_exchange|dustwhistle"] = true
+	_expect(save_store.save_game(test_root + "/pass37d-false-quarantine.json", p37d_bogus_quarantine) != OK, "quarantine state is audited against an actual owned animal habitat, not arbitrary remote markers")
+	_expect(save_store.save_game(test_root + "/pass37d-actual-quarantine.json", p37d_migrated.snapshot()) == OK, "a legitimately quarantined real animal cohort is serializable without losing previously recorded breeding and feeding history")
+
+	# Physical station expansion: paid actual modules join an existing
+	# living-occupied station and do not reset its original construction site.
+	var p37d_clinic = WorldScript.new()
+	_expect(p37d_clinic.restore_snapshot(p37c_fed.snapshot()) == OK, "clinical commissioning starts with previously captured, counted animals in a real completed aviary")
+	_disable_npc_trading(p37d_clinic)
+	var p37d_clinic_pen: Dictionary = p37d_clinic._find_station(str(p37c_dust_station.id))
+	var p37d_site: Dictionary = p37d_clinic.construction.find_site(p37d_clinic, str(p37c_dust_site.id))
+	var p37d_prior_credits: int = int(p37d_clinic.state.starting_credits)
+	var p37d_clinic_order: Dictionary = p37d_clinic.construction.extend_completed_station(p37d_clinic, str(p37d_clinic_pen.id), {"animal_veterinary_clinic":1})
+	_expect(p37d_clinic_order.ok and int(p37d_clinic.state.starting_credits) == p37d_prior_credits - 1500 and int(p37d_site.completed) == 1 and p37d_site.tasks.size() == 2 and p37d_clinic.animal_feed.clinic_count(p37d_clinic_pen) == 0, "expanding an occupied station spends exactly the new NPC fee, appends one unfinished clinic task and preserves the physically built aviary")
+	_expect(not p37d_clinic.construction.extend_completed_station(p37d_clinic, str(p37d_clinic_pen.id), {"animal_veterinary_clinic":1}).ok, "unfinished construction prevents duplicate instant clinical modules and unexpected charges")
+	_expect(save_store.save_game(test_root + "/pass37d-clinic-unbuilt.json", p37d_clinic.snapshot()) == OK, "new veterinary module order is save-safe and creates neither medicines nor operational treatments before construction")
+	_expect(p37d_clinic.queue_fly_to("ship_001", "vellum_gate"), "animal-carrier ship can return to the genuine NPC alloy foundry for veterinary build materials")
+	p37d_clinic.advance_ticks(30)
+	_expect(p37d_clinic.dock_ship("ship_001", "vellum_foundry").ok and p37d_clinic.trade("ship_001", "vellum_foundry", "alloy_plates", 18, true).ok, "eighteen paid NPC alloys physically enter the original ship's hold")
+	_expect(p37d_clinic.queue_fly_to("ship_001", "hearthreach"), "paid clinic metal cargo returns through the actual sector network")
+	p37d_clinic.advance_ticks(30)
+	_expect(p37d_clinic.dock_ship("ship_001", "hearth_exchange").ok and p37d_clinic.trade("ship_001", "hearth_exchange", "energy_cells", 5, true).ok, "commissioning purchases the five real Energy Cells required by veterinary construction")
+	_expect(p37d_clinic.dock_ship("ship_001", str(p37d_clinic_pen.id)).ok and p37d_clinic.construction.deliver(p37d_clinic, "ship_001", str(p37d_site.id)).ok, "medical construction requires actual delivery to the original station build storage")
+	p37d_clinic.advance_ticks(100)
+	_expect(p37d_site.completed == 2 and p37d_clinic.animal_feed.clinic_count(p37d_clinic_pen) == 1 and p37d_clinic.livestock.pen_count(p37d_clinic_pen, p37d_clinic.livestock.species_by_id(p37d_clinic, "dustwhistle")) == 1, "a hired builder can upgrade a previously occupied aviary, retaining the same adult/juvenile enclosure and adding a real veterinary room")
+	_expect(p37d_clinic.animal_feed.set_quarantine(p37d_clinic, str(p37d_clinic_pen.id), "dustwhistle").ok, "veterinary quarantine can be applied to a physically retained colony at a newly expanded station")
+	_expect(not p37d_clinic.animal_feed.treat(p37d_clinic, str(p37d_clinic_pen.id), "dustwhistle").ok, "built clinic alone does not grant free medication or power after the construction delivery")
+	# Controlled post-construction clinical-supplies test: no NPC market
+	# supplies medicine by default, so this fixture isolates clinical use.
+	var p37d_clinic_heads: int = p37d_clinic.livestock._headcount(p37d_clinic_pen, p37d_clinic.livestock.species_by_id(p37d_clinic, "dustwhistle"))
+	var p37d_med_bill: int = int(ceil(float(p37d_clinic_heads) / 2.0))
+	p37d_clinic_pen.stock.medical_supplies = p37d_med_bill
+	p37d_clinic_pen.stock.energy_cells = 1
+	var p37d_waste_before: int = int(p37d_clinic_pen.stock.organic_waste)
+	_expect(p37d_clinic.animal_feed.treat(p37d_clinic, str(p37d_clinic_pen.id), "dustwhistle").ok and int(p37d_clinic_pen.stock.medical_supplies) == 0 and int(p37d_clinic_pen.stock.energy_cells) == 0 and int(p37d_clinic_pen.stock.organic_waste) == p37d_waste_before + 1, "clinical treatment spends precisely the counted medical supply, one real power unit and records one physical waste output")
+	_expect(not p37d_clinic.animal_feed.is_quarantined(p37d_clinic, str(p37d_clinic_pen.id), "dustwhistle") and not p37d_clinic.animal_feed.treat(p37d_clinic, str(p37d_clinic_pen.id), "dustwhistle").ok, "genuine clinic treatment releases quarantine and does not permit an additional supply-free wellness cure")
+	_expect(save_store.save_game(test_root + "/pass37d-real-clinic-and-treatment.json", p37d_clinic.snapshot()) == OK, "real physical on-station veterinary expansion, medication spent, clinical waste and quarantine clearance pass provenance audit")
+	var p37d_clinic_saved: Dictionary = save_store.load_game(test_root + "/pass37d-real-clinic-and-treatment.json")
+	var p37d_clinic_reloaded = WorldScript.new()
+	_expect(p37d_clinic_saved.get("ok", false) and p37d_clinic_reloaded.restore_snapshot(p37d_clinic_saved.state) == OK and p37d_clinic_reloaded.snapshot() == p37d_clinic.snapshot(), "after treatment the exact living fauna population, completed paid clinic and waste receipts survive save/reload")
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
