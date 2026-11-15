@@ -3140,7 +3140,7 @@ func _update_station_supply_screen() -> void:
 		lines.append("SUPPLIER\n%s · %s\nSpent: %d / %d CR" % [ship.name, ship.status, int(ship.station_supply.spent), int(ship.station_supply.budget_limit)])
 	else:
 		lines.append("No ship assigned to this station.")
-	lines.append("The purchase cap applies only to the input-supply role. Waste collection never manufactures stock or buys waste: it hauls actual surplus organic wastewater from other owned residential stations, keeping source recycler inputs protected.")
+	lines.append("The purchase cap applies only to the input-supply role; set it to zero to use ship cargo and owned source stock without purchases. Waste collection never manufactures stock or buys waste: it hauls actual surplus organic wastewater from other owned residential stations, keeping source recycler inputs protected.")
 	var waste_sources: Array[String] = []
 	for source in world.state.stations:
 		if source.owner != world.state.player_faction_id or source.id == station.id:
