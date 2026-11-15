@@ -744,17 +744,17 @@ func _valid_professionals(state: Dictionary) -> bool:
 			bucket[travel_key] = int(bucket.get(travel_key, 0)) + int(event.get("quantity", 0))
 		if not kind.begins_with("professional_"):
 			continue
-		if kind not in ["professional_appoint", "professional_assign", "professional_unassign", "professional_due", "professional_payroll", "professional_work", "professional_board", "professional_arrive"]:
+		if kind not in ["professional_appoint", "professional_register", "professional_assign", "professional_unassign", "professional_due", "professional_payroll", "professional_work", "professional_board", "professional_arrive"]:
 			return false
 		var id: String = str(event.get("ware_id", ""))
 		if not roster.has(id) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick) or not _is_nonnegative_integer(event.get("quantity")) or int(event.quantity) != 1 or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")):
 			return false
 		var person: Dictionary = roster[id]
 		var tick: int = int(event.tick)
-		if kind == "professional_appoint":
+		if kind in ["professional_appoint", "professional_register"]:
 			if replay.has(id) or event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0 or not event.get("station_id") is String or str(event.station_id).is_empty():
 				return false
-			replay[id] = {"active":true, "last":tick, "tick":tick, "due":0, "paid":0, "work":0, "station":str(event.station_id), "ship":""}
+			replay[id] = {"active":kind == "professional_appoint", "last":tick, "tick":tick, "due":0, "paid":0, "work":0, "station":str(event.station_id), "ship":""}
 			continue
 		if not replay.has(id):
 			return false
