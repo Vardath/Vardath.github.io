@@ -5016,9 +5016,13 @@ func _run() -> void:
 			# ship to free storage, let the REAL ice/solar/water modules
 			# run, and deliver that food to the school rather than delete
 			# or sell a virtual pile of goods.
-			var p35c_shift_food: int = mini(12, int(p35c_factory.stock.get("food_rations", 0)))
+			var p35c_shift_food: int = mini(24, int(p35c_factory.stock.get("food_rations", 0)))
 			var p35c_room: int = maxi(0, int(p35c_ship.cargo_capacity) - p35c_world.cargo_volume("ship_001"))
-			p35c_shift_food = mini(p35c_shift_food, p35c_room)
+			var p35c_campus_room: int = maxi(0, int(p35c_campus.storage_capacity) - p35c_world.station_volume("player_station_2"))
+			# Free enough source space for solar and geological extraction
+			# before these first high-output modules refill the warehouse.
+			# Leave twelve destination units for subsequent water/medicine.
+			p35c_shift_food = mini(p35c_shift_food, mini(p35c_room, maxi(0, p35c_campus_room - 12)))
 			if p35c_shift_food > 0 and p35c_world.dock_ship("ship_001", "player_station_1").ok:
 				_expect(p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", p35c_shift_food, false).ok, "moving actual source food into ship cargo frees industrial storage to reactivate its blocked ice, solar and water production")
 				p35c_world.advance_ticks(120)
