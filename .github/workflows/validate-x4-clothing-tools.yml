@@ -1,38 +1,17 @@
-name: Validate X4 clothing inspection tool
+name: Validate X4 clothing mod build tools
 on:
   push:
     paths:
-      - 'downloads/x4-clothing-tools/**'
-      - '.github/workflows/validate-x4-clothing-tools.yml'
-  pull_request:
-    paths:
-      - 'downloads/x4-clothing-tools/**'
+      - 'downloads/x4-terran-pio-sleeveless/**'
       - '.github/workflows/validate-x4-clothing-tools.yml'
   workflow_dispatch:
-permissions:
-  contents: read
 jobs:
-  validate:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check script syntax and read-only safety invariants
-        run: |
-          python -m py_compile downloads/x4-clothing-tools/inspect_blend.py
-          python - <<'PY'
-          from pathlib import Path
-          from ast import parse
-          source=Path('downloads/x4-clothing-tools/inspect_blend.py').read_text()
-          parse(source)
-          assert 'save_mainfile' not in source
-          assert 'save_as_mainfile' not in source
-          assert 'open_mainfile' not in source
-          assert 'write_text' in source
-          batch=Path('downloads/x4-clothing-tools/audit_clothing.bat').read_text()
-          assert '--python-exit-code' in batch
-          assert 'X4_Clothing_Diagnostics.zip' in batch
-          print('Clothing inspector: syntax and safety checks green; Blender runtime and uploaded models NOT tested')
-          PY
+      - run: python -m py_compile downloads/x4-terran-pio-sleeveless/tools/merge_replace_bodies.py downloads/x4-terran-pio-sleeveless/tools/audit_blend.py
+      - run: python downloads/x4-terran-pio-sleeveless/tools/test_merge.py
