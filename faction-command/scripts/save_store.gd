@@ -8,6 +8,7 @@ const ArchivesScript = preload("res://scripts/archives.gd")
 const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
+const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -134,6 +135,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("ecology_version") and _is_nonnegative_integer(decoded.ecology_version) and decoded.ecology_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("salt_recovery_version") and _is_nonnegative_integer(decoded.salt_recovery_version) and decoded.salt_recovery_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
@@ -165,6 +168,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("settlement_version") and not state.has("provisions_version"):
 		return false
 	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
+		return false
+	if state.has("salt_recovery_version") != state.has("salt_recovery_catalog") or (state.has("salt_recovery_version") and state.get("ecology_version") != 1):
 		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
@@ -288,6 +293,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("settlement_version") and not _valid_settlement(state):
 		return false
 	if state.has("ecology_version") and not _valid_ecology(state):
+		return false
+	if state.has("salt_recovery_version") and not _valid_salt_recovery(state):
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
@@ -858,16 +865,69 @@ func _valid_ecology(state: Dictionary) -> bool:
 		if not found:
 			return false
 	for recipe in expected.recipes:
+		var desired_recipe: Dictionary = recipe.duplicate(true)
+		if state.has("salt_recovery_version") and recipe.id == "water_recycling":
+			desired_recipe.outputs["salt"] = 1
 		var found := false
 		for present in state.recipes:
 			if present.id == recipe.id:
-				if present != recipe:
+				if present != desired_recipe:
 					return false
 				found = true
 				break
 		if not found or state.construction_blueprints.get(recipe.id, {}) != expected.blueprints[recipe.id]:
 			return false
 	return true
+
+
+func _valid_salt_recovery(state: Dictionary) -> bool:
+	if state.salt_recovery_version != SaltRecoveryScript.VERSION or state.salt_recovery_catalog != SaltRecoveryScript.SALT_CATALOG:
+		return false
+	var salt_seen := 0
+	for ware in state.wares:
+		if ware.id == "salt":
+			if ware != SaltRecoveryScript.SALT_WARE:
+				return false
+			salt_seen += 1
+	if salt_seen != 1:
+		return false
+	var receipts: Dictionary = {}
+	var total_recovered := 0
+	for event in state.ledger:
+		if event.get("kind", "") != SaltRecoveryScript.RECOVERY_EVENT:
+			continue
+		if event.get("ware_id", "") != "salt" or str(event.get("ship_id", "")) != "" or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick) or int(event.get("quantity", 0)) != 1 or int(event.get("price", 0)) != 0 or int(event.get("amount", 0)) != 0:
+			return false
+		var found_station := false
+		for station in state.stations:
+			if station.id != event.station_id:
+				continue
+			found_station = true
+			var cycles := 0
+			for module in station.production:
+				if module.recipe_id == "water_recycling":
+					cycles += int(module.cycles)
+			var station_key: String = str(event.station_id)
+			receipts[station_key] = int(receipts.get(station_key, 0)) + 1
+			if int(receipts[station_key]) > cycles:
+				return false
+			break
+		if not found_station:
+			return false
+		total_recovered += 1
+	var total_stock := 0
+	for station in state.stations:
+		if not _is_nonnegative_integer(station.stock.get("salt")):
+			return false
+		total_stock += int(station.stock.salt)
+	for ship in state.ships:
+		if not _is_nonnegative_integer(ship.cargo.get("salt", 0)):
+			return false
+		total_stock += int(ship.cargo.get("salt", 0))
+	# This salt source has no other producer and no historical backfill.
+	# Future consumption/trading may reduce stock, but cannot exceed
+	# completed recycler receipts with no other declared source.
+	return total_stock <= total_recovered
 
 
 func _valid_provisions(state: Dictionary) -> bool:
