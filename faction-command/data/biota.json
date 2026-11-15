@@ -1,0 +1,742 @@
+{
+  "schema_version": 1,
+  "simulation_scope": "Discovery and physiology catalogue only. No live populations, edible stock, livestock, planetary collection, live drugs, pets or pests are spawned or consumed by this version; Food Rations remain the conserved residential ware.",
+  "nutrient_axes": [
+    "sugar",
+    "protein",
+    "mineral",
+    "spore",
+    "radiance"
+  ],
+  "flavor_axes": [
+    "sweet",
+    "bitter",
+    "earthy",
+    "floral",
+    "briny"
+  ],
+  "toxin_axes": [
+    "alkaloid",
+    "mycotoxin",
+    "irritant"
+  ],
+  "species": [
+    {
+      "id": "aeralith",
+      "name": "Aeralith",
+      "digestion": {
+        "sugar": 2,
+        "protein": 1,
+        "mineral": 0.3,
+        "spore": 0,
+        "radiance": 1
+      },
+      "flavor_weights": {
+        "sweet": 2,
+        "bitter": -2,
+        "earthy": -1,
+        "floral": 2,
+        "briny": -1
+      },
+      "toxin_tolerance": {
+        "alkaloid": 1,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "notes": "Aerial nectar and fruit consumers; fungal toxins are not metabolically safe."
+    },
+    {
+      "id": "mycoran",
+      "name": "Mycoran",
+      "digestion": {
+        "sugar": 0.2,
+        "protein": 0.4,
+        "mineral": 0.5,
+        "spore": 2,
+        "radiance": 0.5
+      },
+      "flavor_weights": {
+        "sweet": -2,
+        "bitter": 1,
+        "earthy": 2,
+        "floral": -1,
+        "briny": 1
+      },
+      "toxin_tolerance": {
+        "alkaloid": 1,
+        "mycotoxin": 2,
+        "irritant": 1
+      },
+      "notes": "Spore-linked digestive pathways; earthy fungal cuisine."
+    },
+    {
+      "id": "kethric",
+      "name": "Kethric",
+      "digestion": {
+        "sugar": 0.1,
+        "protein": 1,
+        "mineral": 2,
+        "spore": 0,
+        "radiance": 0.5
+      },
+      "flavor_weights": {
+        "sweet": -1,
+        "bitter": 1,
+        "earthy": 2,
+        "floral": -1,
+        "briny": 2
+      },
+      "toxin_tolerance": {
+        "alkaloid": 2,
+        "mycotoxin": 0,
+        "irritant": 2
+      },
+      "notes": "Mineral-processing symbionts; strong briny/earth preferences."
+    },
+    {
+      "id": "lumeni",
+      "name": "Lumeni",
+      "digestion": {
+        "sugar": 2,
+        "protein": 1,
+        "mineral": 0.5,
+        "spore": 0.5,
+        "radiance": 0.5
+      },
+      "flavor_weights": {
+        "sweet": 2,
+        "bitter": -2,
+        "earthy": 1,
+        "floral": 1,
+        "briny": 1
+      },
+      "toxin_tolerance": {
+        "alkaloid": 1,
+        "mycotoxin": 1,
+        "irritant": 0
+      },
+      "notes": "Wetland omnivores; ripened fruits, algae and protein sources."
+    }
+  ],
+  "cultures": [
+    {
+      "id": "auroran",
+      "name": "Auroran trade kitchens",
+      "bias": {
+        "sunlace_fruit": 12,
+        "mycelune_truffle": -8
+      }
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper spice exchanges",
+      "bias": {
+        "glaze_nectar": 16,
+        "ash_dustkelp": -6
+      }
+    },
+    {
+      "id": "ravel",
+      "name": "Ravel industrial hearths",
+      "bias": {
+        "flintgrain": 14,
+        "glaze_nectar": -10
+      }
+    },
+    {
+      "id": "frontier",
+      "name": "Frontier wetland growers",
+      "bias": {
+        "mirealgae": 12,
+        "bitter_skyroot": -9
+      }
+    }
+  ],
+  "organisms": [
+    {
+      "id": "sunlace_fruit",
+      "name": "Sunlace Fruit",
+      "kind": "flora",
+      "origin_world": "Liora",
+      "biome": "sky-orchard",
+      "roles": [
+        "food",
+        "luxury"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 5,
+        "protein": 3,
+        "mineral": 0,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 5,
+        "bitter": 0,
+        "earthy": 0,
+        "floral": 4,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "weave_fibre"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "glaze_nectar",
+      "name": "Glaze Nectar",
+      "kind": "flora",
+      "origin_world": "Liora",
+      "biome": "mist-bloom",
+      "roles": [
+        "food",
+        "luxury"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 1,
+        "protein": 0,
+        "mineral": 0,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 5,
+        "bitter": 0,
+        "earthy": 0,
+        "floral": 5,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "aromatic_essence"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "bitter_skyroot",
+      "name": "Bitter Skyroot",
+      "kind": "flora",
+      "origin_world": "Liora",
+      "biome": "cliff-root",
+      "roles": [
+        "food",
+        "feed"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 5,
+        "protein": 4,
+        "mineral": 0,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 5,
+        "earthy": 3,
+        "floral": 0,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "root_fibre"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "ash_dustkelp",
+      "name": "Ash Dustkelp",
+      "kind": "flora",
+      "origin_world": "Cindara",
+      "biome": "ash-tide",
+      "roles": [
+        "food",
+        "pest"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 0,
+        "mineral": 0,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 5,
+        "earthy": 1,
+        "floral": 0,
+        "briny": 2
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "rough_fibre"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "invasive",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "mycelune_truffle",
+      "name": "Mycelune Truffle",
+      "kind": "fungus",
+      "origin_world": "Mycoria",
+      "biome": "twilight-fungal-bed",
+      "roles": [
+        "food",
+        "medicine",
+        "luxury"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 0,
+        "mineral": 2,
+        "spore": 5,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 0,
+        "earthy": 5,
+        "floral": 0,
+        "briny": 2
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 1,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "fermentation_culture"
+      ],
+      "pharmacology": "fictional dream metabolite; species-dependent response",
+      "containment_hazard": "quarantine",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "flintgrain",
+      "name": "Flintgrain",
+      "kind": "flora",
+      "origin_world": "Verrak",
+      "biome": "mineral-prairie",
+      "roles": [
+        "food",
+        "feed"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 1,
+        "mineral": 5,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 1,
+        "earthy": 4,
+        "floral": 0,
+        "briny": 4
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "abrasive_husk"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "driftfin",
+      "name": "Driftfin",
+      "kind": "fauna",
+      "origin_world": "Lumin Marsh",
+      "biome": "tidal-pools",
+      "roles": [
+        "food",
+        "livestock"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 5,
+        "mineral": 1,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 1,
+        "bitter": 1,
+        "earthy": 2,
+        "floral": 0,
+        "briny": 2
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "scales",
+        "oils"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 90
+    },
+    {
+      "id": "emberhorn_grazer",
+      "name": "Emberhorn Grazer",
+      "kind": "fauna",
+      "origin_world": "Cindara",
+      "biome": "basalt-grassland",
+      "roles": [
+        "food",
+        "livestock",
+        "material"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 4,
+        "mineral": 3,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 1,
+        "earthy": 3,
+        "floral": 0,
+        "briny": 2
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "leather",
+        "fur",
+        "horn",
+        "manure"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 90
+    },
+    {
+      "id": "dustwhistle_moth",
+      "name": "Dustwhistle Moth",
+      "kind": "fauna",
+      "origin_world": "Liora",
+      "biome": "floating-pollen-garden",
+      "roles": [
+        "pet",
+        "material",
+        "pollinator"
+      ],
+      "edible": false,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 2,
+        "mineral": 0,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 0,
+        "earthy": 0,
+        "floral": 3,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "feathers",
+        "silk"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 90
+    },
+    {
+      "id": "velvet_sporecat",
+      "name": "Velvet Sporecat",
+      "kind": "fauna",
+      "origin_world": "Mycoria",
+      "biome": "moss-canopy",
+      "roles": [
+        "pet",
+        "material"
+      ],
+      "edible": false,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 2,
+        "mineral": 0,
+        "spore": 1,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 0,
+        "earthy": 4,
+        "floral": 0,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "fur",
+        "compostable_bedding"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "quarantine",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 90
+    },
+    {
+      "id": "coilvine",
+      "name": "Coilvine",
+      "kind": "flora",
+      "origin_world": "Verrak",
+      "biome": "ruined-greenhouse",
+      "roles": [
+        "pest",
+        "material"
+      ],
+      "edible": false,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 1,
+        "mineral": 2,
+        "spore": 0,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 5,
+        "earthy": 4,
+        "floral": 0,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 1
+      },
+      "harvest_byproducts": [
+        "binding_fibre"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "invasive",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "vaultmold",
+      "name": "Vaultmold",
+      "kind": "microbe",
+      "origin_world": "Mycoria",
+      "biome": "humid-caverns",
+      "roles": [
+        "pest",
+        "research",
+        "fermentation"
+      ],
+      "edible": false,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 0,
+        "mineral": 0,
+        "spore": 4,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 0,
+        "earthy": 3,
+        "floral": 0,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 2,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "enzyme_culture"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "quarantine",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 20
+    },
+    {
+      "id": "prismreed",
+      "name": "Prismreed",
+      "kind": "flora",
+      "origin_world": "Lumin Marsh",
+      "biome": "saline-reedbed",
+      "roles": [
+        "food",
+        "medicine",
+        "material"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 2,
+        "protein": 1,
+        "mineral": 2,
+        "spore": 0,
+        "radiance": 1
+      },
+      "flavors": {
+        "sweet": 2,
+        "bitter": 0,
+        "earthy": 1,
+        "floral": 3,
+        "briny": 1
+      },
+      "toxins": {
+        "alkaloid": 1,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "fibre",
+        "resin"
+      ],
+      "pharmacology": "fictional pulse-lift compound; dose model not yet implemented",
+      "containment_hazard": "controlled",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "phosphor_manta",
+      "name": "Phosphor Manta",
+      "kind": "exotic",
+      "origin_world": "Nyxara",
+      "biome": "radiant-ocean",
+      "roles": [
+        "pet",
+        "research",
+        "material"
+      ],
+      "edible": false,
+      "nutrients": {
+        "sugar": 0,
+        "protein": 0,
+        "mineral": 1,
+        "spore": 0,
+        "radiance": 5
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 1,
+        "earthy": 0,
+        "floral": 4,
+        "briny": 0
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 1
+      },
+      "harvest_byproducts": [
+        "luminous_pigment"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "hazardous",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 45
+    },
+    {
+      "id": "mirealgae",
+      "name": "Mirealgae",
+      "kind": "microbe",
+      "origin_world": "Lumin Marsh",
+      "biome": "mineral-swamp",
+      "roles": [
+        "food",
+        "feed",
+        "soil"
+      ],
+      "edible": true,
+      "nutrients": {
+        "sugar": 1,
+        "protein": 2,
+        "mineral": 1,
+        "spore": 3,
+        "radiance": 0
+      },
+      "flavors": {
+        "sweet": 0,
+        "bitter": 1,
+        "earthy": 3,
+        "floral": 0,
+        "briny": 2
+      },
+      "toxins": {
+        "alkaloid": 0,
+        "mycotoxin": 0,
+        "irritant": 0
+      },
+      "harvest_byproducts": [
+        "soil_inoculant",
+        "pigment"
+      ],
+      "pharmacology": "",
+      "containment_hazard": "none",
+      "stock_origin": "undiscovered",
+      "growth_ticks": 20
+    }
+  ]
+}
