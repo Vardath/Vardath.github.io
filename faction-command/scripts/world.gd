@@ -18,6 +18,7 @@ const ProvisionsScript = preload("res://scripts/provisions.gd")
 const SettlementScript = preload("res://scripts/settlement.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
+const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -38,6 +39,7 @@ var provisions = ProvisionsScript.new()
 var settlement = SettlementScript.new()
 var ecology = EcologyScript.new()
 var salt_recovery = SaltRecoveryScript.new()
+var waste_transport = WasteTransportScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -108,6 +110,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if professionals.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if waste_transport.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -175,6 +179,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = professionals.prepare(restored)
+	if result != OK:
+		return result
+	result = waste_transport.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -294,6 +301,8 @@ func advance_ticks(count: int) -> void:
 				build_supply.tick(self, ship)
 			if ship.has("station_supply"):
 				station_supply.tick(self, ship)
+			if ship.has("waste_transport"):
+				waste_transport.tick(self, ship)
 		construction.tick(self)
 		habitation.tick(self)
 		settlement.tick(self)
@@ -325,6 +334,7 @@ func set_player_trader(ship_id: String, enabled: bool) -> bool:
 		return false
 	build_supply.stop(ship)
 	station_supply.stop(ship)
+	waste_transport.stop(ship)
 	ship.player_trader.enabled = enabled
 	ship.role = "Autonomous Trader" if enabled else "Unassigned"
 	return true
