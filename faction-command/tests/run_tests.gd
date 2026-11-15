@@ -5086,10 +5086,11 @@ func _run() -> void:
 	_expect(int(p35c_campus.education.qualified.engineering_college) == 0 and int(p35c_campus.careers.licensed.engineering_college) == 0 and p35c_world.population.total_people(p35c_world) == p35c_people_before, "two theoretical and two practical certificates leave their origin together with exactly two already counted adult people")
 	_expect(not p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok and not p35c_world.settlement.board(p35c_world, "ship_001", 1).ok and not p35c_world.settlement.evacuate(p35c_world, "ship_001", 1).ok, "duplicate names and anonymous passenger mixing are rejected by actual source/cargo checks")
 	_expect(save_store.save_game(test_root + "/pass35c-two-person-manifest.json", p35c_world.snapshot()) == OK, "two-person manifest reconciles headcount, paid training, practical licences, original ID registration and seats")
-	# This is also a genuine logistics journey: the factory is clogged by
-	# overproduced alloy and medicine. Move thirty real alloys off-site and
-	# SELL them at the remote NPC market, freeing water/power production space
-	# at the eventual staffed destination. No stock is gifted or erased.
+	# A genuine industrial logistics journey: excess factory alloys occupy
+	# precious water-production space. Move them aboard the same real ship,
+	# cross the galaxy with two adults, and deliver the alloys to the actual
+	# new recycling outpost's remaining physical storage. Do not depend on
+	# a saturated NPC market or conjure/discard any goods.
 	var p35c_transfer_alloys: int = mini(30, maxi(0, int(p35c_factory.stock.get("alloy_plates", 0))))
 	var p35c_remaining_cargo: int = maxi(0, int(p35c_ship.cargo_capacity) - p35c_world.cargo_volume("ship_001"))
 	p35c_transfer_alloys = mini(p35c_transfer_alloys, p35c_remaining_cargo)
@@ -5097,13 +5098,16 @@ func _run() -> void:
 	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "two professionals and real tradable cargo depart together along an actual connected star route")
 	p35c_world.advance_ticks(20)
 	_expect(p35c_ship.sector == "hearthreach" and p35c_ship.professional_passenger_ids.size() == 2, "both live passenger identities persist after the ship's genuine outbound galaxy movement")
-	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "alloy_plates", p35c_transfer_alloys, false).ok, "real remote market purchases the alloy cargo and pays the player without minting source warehouse capacity")
-	_expect(save_store.save_game(test_root + "/pass35c-two-workers-in-flight.json", p35c_world.snapshot()) == OK, "both named workers and fully accounted industrial trade survive strict mid-voyage save validation")
+	_expect(int(p35c_ship.cargo.get("alloy_plates", 0)) == p35c_transfer_alloys and int(p35c_ship.professional_passenger_ids.size()) == 2, "real alloys remain physically aboard the identical ship during its genuine intersector voyage alongside two occupied passenger berths")
+	_expect(save_store.save_game(test_root + "/pass35c-two-workers-in-flight.json", p35c_world.snapshot()) == OK, "both named workers and fully conserved industrial cargo survive strict mid-voyage save validation")
 	var p35c_saved: Dictionary = save_store.load_game(test_root + "/pass35c-two-workers-in-flight.json")
 	var p35c_multi_restore = WorldScript.new()
-	_expect(p35c_saved.get("ok", false) and p35c_multi_restore.restore_snapshot(p35c_saved.state) == OK and p35c_multi_restore.snapshot() == p35c_world.snapshot(), "both original names, historic school provenance and completed market transaction are restored exactly on another galaxy sector")
+	_expect(p35c_saved.get("ok", false) and p35c_multi_restore.restore_snapshot(p35c_saved.state) == OK and p35c_multi_restore.snapshot() == p35c_world.snapshot(), "both original names, historic school provenance and physical alloy cargo restore exactly in the remote galaxy sector")
 	_expect(p35c_multi_restore.queue_fly_to("ship_001", "copper_wake"), "the same transport returns to the new employer's sector via a valid connected route")
 	p35c_multi_restore.advance_ticks(20)
+	var p35c_depot_before: int = int(p35c_multi_restore._find_station("player_station_3").stock.get("alloy_plates", 0))
+	_expect(p35c_multi_restore.dock_ship("ship_001", "player_station_3").ok and p35c_multi_restore.transfer_player_station("ship_001", "player_station_3", "alloy_plates", p35c_transfer_alloys, true).ok, "real excess industrial alloys are transferred into the separate stocked recycling annex's vacant warehouse, preserving every ware in the same galaxy")
+	_expect(int(p35c_multi_restore._find_station("player_station_3").stock.alloy_plates) == p35c_depot_before + p35c_transfer_alloys and int(p35c_multi_restore._find_ship("ship_001").cargo.alloy_plates) == 0, "new outpost storage receives exactly the alloy quantity physically removed from the old saturated factory")
 	var p35c_destination: Dictionary = p35c_multi_restore._find_station("player_station_1")
 	var p35c_destination_house: Dictionary = p35c_multi_restore.population.station_cohort(p35c_multi_restore, "player_station_1")
 	var p35c_missing_before: String = p35c_multi_restore.provisions.missing_provision(p35c_multi_restore, p35c_destination, p35c_multi_restore.demographics.residents(p35c_destination_house) + 2)
