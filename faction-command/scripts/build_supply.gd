@@ -31,6 +31,7 @@ func assign(world: RefCounted, ship_id: String, site_id: String) -> Dictionary:
 	ship.player_trader.enabled = false
 	world.station_supply.stop(ship)
 	world.waste_transport.stop(ship)
+	world.biosurvey.stop(ship)
 	ship.build_supply = _empty_job()
 	ship.build_supply.enabled = true
 	ship.build_supply.site_id = site_id

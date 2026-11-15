@@ -3,6 +3,14 @@
 An original, offline-first space faction management game for Android landscape,
 built with Godot 4. The authoritative design is [Faction Command.md](../Faction%20Command.md).
 
+## Pass 37B: finite biological survey and physical cultivation
+
+The new **Bio survey** ship role targets the selected map sector. Two limited orbital sampling sites are active: Liora Sunlace in Hearthreach (16 native seeds) and Lumin Marsh cultures in Verdant Trace (20 native cultures). At least two real ship service crew, a named pilot, cargo room and a purchased Energy Cell are required. The ship travels on the regular sector routes, spends 18 or 24 actual ticks collecting, consumes one Energy Cell, and takes one actual sample from the persisted finite site reserve. Players can inspect a sector's **Biology** tab and issue **Send active ship to survey** from its normal inspector.
+
+Sample capsules are real cargo, not generic population or food stock. To unload samples at an owned station, first commission a **Specimen Gene Bank** using the ordinary paid station-building interface and physical delivery of construction materials. Then choose the actual docked ship to unload, or leave the samples in cargo. A gene-bank recipe turns one physical Sunlace seed and one energy cell into one physically stocked gene record; the seed is spent. A Sunlace Hydroponic Orchard instead reserves a surviving starter seed and consumes real water, soil and energy to produce Sunlace fruit. The Mirealgae Bioreactor similarly requires a physical culture capsule plus water and energy to produce culture biomass.
+
+No animal pens, diets, food-ration substitution, planet landing, full quarantine disease model, pets or pests are claimed as playable. Never assume that a politically owned station makes all its residents one alien species. Save migrations add empty samples, empty jobs and fixed finite native ecological sources; strict validators reject unreal collected specimens and fabricated products.
+
 ## Pass 37A experimental: original biological catalogue
 
 The game now contains a versioned *reference catalogue* of fifteen original

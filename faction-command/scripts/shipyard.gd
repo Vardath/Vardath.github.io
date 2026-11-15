@@ -131,6 +131,8 @@ func _assemble_ship(world: RefCounted, order: Dictionary, wharf: Dictionary) -> 
 		world.professionals.initialize_ship(vessel)
 	if world.state.has("waste_transport_version"):
 		world.waste_transport.initialize_ship(vessel)
+	if world.state.has("biosurvey_version"):
+		world.biosurvey.initialize_ship(vessel)
 	return vessel
 
 

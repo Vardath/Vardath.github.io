@@ -21,6 +21,7 @@ const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const BiotaScript = preload("res://scripts/biota.gd")
+const BioSurveyScript = preload("res://scripts/biosurvey.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -44,6 +45,7 @@ var salt_recovery = SaltRecoveryScript.new()
 var waste_cultures = WasteCulturesScript.new()
 var waste_transport = WasteTransportScript.new()
 var biota = BiotaScript.new()
+var biosurvey = BioSurveyScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -124,6 +126,10 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if biota.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	var biological_result: Error = biosurvey.prepare(new_state)
+	if biological_result != OK:
+		printerr("Pass37B startup diagnostic: biosurvey result=", biological_result, " definitions keys=", biosurvey.definitions().keys(), " biota_version=", new_state.get("biota_version", "missing"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -200,6 +206,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = biota.prepare(restored)
+	if result != OK:
+		return result
+	result = biosurvey.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -321,6 +330,8 @@ func advance_ticks(count: int) -> void:
 				station_supply.tick(self, ship)
 			if ship.has("waste_transport"):
 				waste_transport.tick(self, ship)
+			if ship.has("bio_survey"):
+				biosurvey.tick(self, ship)
 		construction.tick(self)
 		habitation.tick(self)
 		settlement.tick(self)
@@ -353,6 +364,7 @@ func set_player_trader(ship_id: String, enabled: bool) -> bool:
 	build_supply.stop(ship)
 	station_supply.stop(ship)
 	waste_transport.stop(ship)
+	biosurvey.stop(ship)
 	ship.player_trader.enabled = enabled
 	ship.role = "Autonomous Trader" if enabled else "Unassigned"
 	return true
@@ -566,6 +578,8 @@ func transfer_player_station(ship_id: String, station_id: String, ware_id: Strin
 	var cargo := int(ship.cargo.get(ware_id, 0))
 	var stock := int(station.stock.get(ware_id, 0))
 	if to_station:
+		if ware_id in biosurvey.SAMPLES and not biosurvey.has_gene_bank(station):
+			return {"ok":false, "message":"Biological specimens require a completed containment/gene-bank module at the receiving station."}
 		if cargo < quantity or station_volume(station_id) + quantity * int(ware.volume) > int(station.storage_capacity):
 			return {"ok":false, "message":"Not enough cargo or station storage."}
 		ship.cargo[ware_id] = cargo - quantity

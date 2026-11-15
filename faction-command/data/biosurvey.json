@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "scope": "First two nonhazardous orbital biome sampling sites; samples are physical conserved goods. Animal capture, genetic breeding, full planet navigation, cold-chain decay and population diets remain future passes.",
+  "sites": [
+    {
+      "id": "liora_sunlace_orbit",
+      "name": "Liora Sunlace Orbital Survey",
+      "sector_id": "hearthreach",
+      "organism_id": "sunlace_fruit",
+      "sample_ware_id": "sunlace_seed_capsule",
+      "initial_reserve": 16,
+      "collection_ticks": 18,
+      "energy_cost": 1,
+      "min_crew": 2,
+      "safety": "clean_botanical"
+    },
+    {
+      "id": "lumin_marsh_samples",
+      "name": "Lumin Marsh Culture Survey",
+      "sector_id": "verdant_trace",
+      "organism_id": "mirealgae",
+      "sample_ware_id": "mirealgae_culture_capsule",
+      "initial_reserve": 20,
+      "collection_ticks": 24,
+      "energy_cost": 1,
+      "min_crew": 2,
+      "safety": "contained_microbe"
+    }
+  ],
+  "wares": [
+    {
+      "id": "sunlace_seed_capsule",
+      "name": "Sunlace Seed Capsule",
+      "volume": 1
+    },
+    {
+      "id": "mirealgae_culture_capsule",
+      "name": "Mirealgae Culture Capsule",
+      "volume": 1
+    },
+    {
+      "id": "sunlace_fruit",
+      "name": "Harvested Sunlace Fruit",
+      "volume": 1
+    },
+    {
+      "id": "mirealgae_biomass",
+      "name": "Cultured Mirealgae Biomass",
+      "volume": 1
+    },
+    {
+      "id": "biogene_record",
+      "name": "Archived Sunlace Genetic Record",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "bio_gene_bank",
+      "name": "Specimen Gene Bank",
+      "cycle_ticks": 25,
+      "inputs": {
+        "sunlace_seed_capsule": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "biogene_record": 1
+      }
+    },
+    {
+      "id": "sunlace_hydroponics",
+      "name": "Sunlace Hydroponic Orchard",
+      "cycle_ticks": 40,
+      "inputs": {
+        "potable_water": 2,
+        "fertile_soil": 1,
+        "energy_cells": 1
+      },
+      "catalysts": {
+        "sunlace_seed_capsule": 1
+      },
+      "outputs": {
+        "sunlace_fruit": 3
+      }
+    },
+    {
+      "id": "mirealgae_bioreactor",
+      "name": "Contained Mirealgae Bioreactor",
+      "cycle_ticks": 30,
+      "inputs": {
+        "potable_water": 2,
+        "energy_cells": 1
+      },
+      "catalysts": {
+        "mirealgae_culture_capsule": 1
+      },
+      "outputs": {
+        "mirealgae_biomass": 3
+      }
+    }
+  ],
+  "blueprints": {
+    "bio_gene_bank": {
+      "fee": 1100,
+      "ticks": 28,
+      "materials": {
+        "alloy_plates": 14,
+        "energy_cells": 5
+      },
+      "storage": 60
+    },
+    "sunlace_hydroponics": {
+      "fee": 1400,
+      "ticks": 36,
+      "materials": {
+        "alloy_plates": 18,
+        "energy_cells": 6
+      },
+      "storage": 80
+    },
+    "mirealgae_bioreactor": {
+      "fee": 1300,
+      "ticks": 34,
+      "materials": {
+        "alloy_plates": 16,
+        "energy_cells": 5
+      },
+      "storage": 80
+    }
+  },
+  "biohazard_policy": "Only already surveyed clean botanical and contained harmless laboratory cultures are enabled. Every sample must dock at an actually constructed gene-bank facility to be unloaded; all NPC consumers and mixed residents remain unspecialised."
+}

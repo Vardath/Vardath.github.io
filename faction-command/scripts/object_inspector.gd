@@ -10,7 +10,7 @@ func tabs(world: RefCounted, kind: String, id: String) -> Array[String]:
 		"sector":
 			if _sector(world, id).is_empty():
 				return result
-			return ["Info", "Orders", "Assets"]
+			return ["Info", "Orders", "Assets", "Biology"]
 		"ship":
 			var vessel: Dictionary = world._find_ship(id)
 			if vessel.is_empty() or vessel.owner != world.state.player_faction_id:
@@ -53,6 +53,8 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 		"sector":
 			if tab == "Assets":
 				options.append({"id":"open_sector", "label":"Open sector map"})
+			elif tab == "Biology" and not world.biosurvey.site_for_sector(world, id).is_empty():
+				options.append({"id":"bio_survey", "label":"Send active ship to survey"})
 		"station", "npc_station":
 			match tab:
 				"Info", "Trade", "Cargo":
@@ -141,6 +143,11 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 		var sector: Dictionary = _sector(world, id)
 		if tab == "Orders":
 			return _target_route(world, active_ship_id, id)
+		if tab == "Biology":
+			var site: Dictionary = world.biosurvey.site_for_sector(world, id)
+			if site.is_empty():
+				return "No surveyed orbital biological collection sites in this sector. More planets, animals, survey tools and exotic biomes are planned."
+			return "%s\nOriginal organism: %s\nRemaining native samples: %d / %d\nSurvey: %d ticks, %d Energy Cell, %d existing crew\nRequires physical cargo, lawful sector access and delivery to a built gene-bank module. No stock appears until an actual ship completes collection." % [site.name, site.organism_id, int(world.state.biosurvey_sites.get(str(site.id), 0)), int(site.initial_reserve), int(site.collection_ticks), int(site.energy_cost), int(site.min_crew)]
 		var assets: Array[String] = []
 		for station in world.state.stations:
 			if station.sector == id:

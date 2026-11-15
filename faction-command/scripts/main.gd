@@ -517,6 +517,7 @@ func _build_ui() -> void:
 	role_picker.add_item("Build supplier")
 	role_picker.add_item("Station supplier")
 	role_picker.add_item("Waste hauler")
+	role_picker.add_item("Bio survey")
 	role_picker.item_selected.connect(_on_role_selected)
 	property_list.add_child(role_picker)
 	role_hint = _wrapped_label("", 12, MUTED)
@@ -835,6 +836,13 @@ func _execute_inspector_action(action_id: String) -> void:
 		"open_sector":
 			if kind == "sector" and not showing_sector_map:
 				_toggle_map_mode()
+		"bio_survey":
+			if kind == "sector" and object_id == selected_sector:
+				var survey_result: Dictionary = world.biosurvey.assign(world, active_player_ship_id, object_id)
+				order_feedback.text = str(survey_result.message)
+				if survey_result.ok:
+					_save_current_game()
+				_refresh_world_display()
 
 
 func _open_trade_for_station(station_id: String) -> void:
@@ -1236,6 +1244,11 @@ func _on_role_selected(index: int) -> void:
 	elif index == 4:
 		_open_trade()
 		trade_feedback.text = "Select an owned wastewater recycling station, then open Supply inputs and choose Collect waste."
+	elif index == 5:
+		var result: Dictionary = world.biosurvey.assign(world, str(ship.id), selected_sector)
+		order_feedback.text = str(result.message)
+		if result.ok:
+			_save_current_game()
 	_refresh_world_display()
 
 
@@ -1263,8 +1276,10 @@ func _refresh_world_display() -> void:
 	ship_button.text = "◈   " + str(ship.name)
 	_refresh_property_picker()
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
-	role_picker.select(4 if ship.waste_transport.enabled else (3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0))))
-	if ship.waste_transport.enabled:
+	role_picker.select(5 if ship.bio_survey.enabled else (4 if ship.waste_transport.enabled else (3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))))
+	if ship.bio_survey.enabled:
+		role_hint.text = "Surveying %s: %d work ticks remain. Real crew, cargo energy and finite native stock are required." % [str(ship.bio_survey.site_id), int(ship.bio_survey.ticks_remaining)]
+	elif ship.waste_transport.enabled:
 		role_hint.text = "Collecting real residential waste for a stocked wastewater recycler, via ordinary cargo and sector routes."
 	elif ship.station_supply.enabled:
 		role_hint.text = "Supplying a station within your purchase allowance."

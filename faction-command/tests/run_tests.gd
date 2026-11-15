@@ -47,6 +47,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("professional_passenger_id")
 	copy.erase("professional_passenger_ids")
 	copy.erase("waste_transport")
+	copy.erase("bio_survey")
 	return copy
 
 
@@ -59,6 +60,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("professional_passenger_id")
 		ship.erase("professional_passenger_ids")
 		ship.erase("waste_transport")
+		ship.erase("bio_survey")
 	return copy
 
 
@@ -125,8 +127,30 @@ func _strip_demographics(state: Dictionary) -> void:
 		record.erase("family")
 
 
+func _strip_biosurvey(state: Dictionary) -> void:
+	state.erase("biosurvey_version")
+	state.erase("biosurvey_catalog")
+	state.erase("biosurvey_sites")
+	for ship in state.get("ships", []):
+		ship.erase("bio_survey")
+		for ware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+			ship.get("cargo", {}).erase(ware_id)
+	for station in state.get("stations", []):
+		for ware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+			station.get("stock", {}).erase(ware_id)
+	for i in range(state.get("wares", []).size() - 1, -1, -1):
+		if str(state.wares[i].id) in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+			state.wares.remove_at(i)
+	for i in range(state.get("recipes", []).size() - 1, -1, -1):
+		if str(state.recipes[i].id) in ["bio_gene_bank", "sunlace_hydroponics", "mirealgae_bioreactor"]:
+			state.recipes.remove_at(i)
+	for recipe_id in ["bio_gene_bank", "sunlace_hydroponics", "mirealgae_bioreactor"]:
+		state.get("construction_blueprints", {}).erase(recipe_id)
+
+
 func _strip_ecology(state: Dictionary) -> void:
 	_strip_demographics(state)
+	_strip_biosurvey(state)
 	state.erase("biota_version")
 	state.erase("biota_catalog")
 	state.erase("salt_recovery_version")
@@ -570,7 +594,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 13, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 18, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -799,7 +823,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 12, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 15, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -970,6 +994,9 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
+		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+			_expect(int(migrated_stock.get(bioware_id, -1)) == 0, "pre-logistics NPC migration creates no free planetary specimen or crop: " + str(old_station.id) + " / " + bioware_id)
+			migrated_stock.erase(bioware_id)
 		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
 			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
 			migrated_stock.erase(ecology_ware)
@@ -2455,7 +2482,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 5, "property panel offers manual, trading, construction supply, station supply and bio-waste collection roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 6, "property panel offers manual, trading, construction supply, station supply, waste collection and bio survey roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -3506,7 +3533,7 @@ func _run() -> void:
 	_expect(inspector_model.tabs(inspector_world, "npc_ship", "npc_builder_001") == ["Info"], "NPC traffic is inspectable without accessible player crew or command tabs")
 	_expect(inspector_model.tabs(inspector_world, "ship", "npc_builder_001").is_empty(), "an NPC ship ID cannot be forged as an owned ship selection")
 	_expect(inspector_model.tabs(inspector_world, "npc_ship", "ship_001").is_empty(), "a player ship cannot be mislabelled as foreign traffic")
-	_expect(inspector_model.tabs(inspector_world, "sector", "hearthreach") == ["Info", "Orders", "Assets"], "sector map shows descriptive, route and asset views")
+	_expect(inspector_model.tabs(inspector_world, "sector", "hearthreach") == ["Info", "Orders", "Assets", "Biology"], "sector map shows descriptive, route, asset and legitimate biology views")
 	_expect(inspector_model.tabs(inspector_world, "sector", "not_a_sector").is_empty(), "unknown sector does not get valid command tabs")
 	_expect(inspector_model.tabs(inspector_world, "npc_station", "hearth_exchange") == ["Info", "Trade", "Cargo", "Production", "Population"], "NPC stations show their market and civic details without owning the station")
 	_expect(inspector_model.tabs(inspector_world, "station", "hearth_exchange").is_empty(), "NPC station cannot be selected as player property")
@@ -5247,6 +5274,7 @@ func _run() -> void:
 	_expect(p36_freshship.waste_transport == p36_fresh.waste_transport._empty_job(), "waste hauling starts disabled and does not overwrite orders or cargo on migration")
 	_expect(save_store.save_game(test_root + "/pass36-starter.json", p36_fresh.snapshot()) == OK, "species-market metadata, empty salt and idle waste jobs pass strict starter save auditing")
 	var p36_prior: Dictionary = p36_fresh.snapshot()
+	_strip_biosurvey(p36_prior)
 	# Simulate a genuine Pass 35C1 save, which predates the Pass 36
 	# biological buyers and Pass 37 reference catalogue alike.
 	p36_prior.erase("biota_version")
@@ -5399,11 +5427,13 @@ func _run() -> void:
 	var p37_starter: Dictionary = p37_world.snapshot()
 	_expect(p37_starter.biota_version == 1 and p37_starter.biota_catalog == p37_defs and p37_world.biota.prepare(p37_starter) == OK, "reference catalogue is versioned and deterministic without inventing specimens or foods")
 	var p37_old: Dictionary = p37_world.snapshot()
+	_strip_biosurvey(p37_old)
 	p37_old.erase("biota_version")
 	p37_old.erase("biota_catalog")
 	var p37_migration = WorldScript.new()
 	_expect(p37_migration.restore_snapshot(p37_old) == OK and p37_migration.state.biota_version == 1, "actual Pass 36 save gains a catalogue by additive migration only")
 	var p37_migrated_no_catalog: Dictionary = p37_migration.snapshot()
+	_strip_biosurvey(p37_migrated_no_catalog)
 	p37_migrated_no_catalog.erase("biota_version")
 	p37_migrated_no_catalog.erase("biota_catalog")
 	_expect(p37_migrated_no_catalog == p37_old, "migration conserves every pre-existing ship, order, crew, settler, warehouse unit, credit, salary and historical research datum")
@@ -5414,7 +5444,97 @@ func _run() -> void:
 	var p37_future: Dictionary = p37_world.snapshot()
 	p37_future.biota_version = 2
 	_expect(save_store.save_game(test_root + "/pass37-future-biota.json", p37_future) != OK, "unknown future biological save versions are rejected")
-	_expect(p37_world._find_ware("sunlace_fruit").is_empty() and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
+	_expect(_total_ware(p37_world.state, "sunlace_fruit") == 0 and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
+
+	# Pass 37B: a counted orbital wild population moves into ship cargo
+	# only after physical travel, staffed sampling time, and paid energy.
+	var p37b = WorldScript.new()
+	_expect(p37b.load_starter() == OK, "Pass 37B installs two finite discoverable native specimen reserves")
+	_disable_npc_trading(p37b)
+	var p37b_ship: Dictionary = p37b._find_ship("ship_001")
+	_expect(p37b.state.biosurvey_version == 1 and p37b.state.biosurvey_sites.liora_sunlace_orbit == 16 and p37b.state.biosurvey_sites.lumin_marsh_samples == 20 and _total_ware(p37b.state, "sunlace_seed_capsule") == 0, "new biological surveys add known natural deposits but no historic cargo or samples")
+	var p37b_before: Dictionary = p37b.snapshot()
+	_expect(not p37b.biosurvey.assign(p37b, "ship_001", "hearthreach").ok and p37b.snapshot() == p37b_before, "survey cannot begin without an actual acquired energy supply and available cargo")
+	_expect(not p37b.biosurvey.assign(p37b, "ship_001", "cinder_veil").ok, "no imaginary animal-collection license for a sector lacking an approved sample site")
+	_expect(p37b.dock_ship("ship_001", "hearth_exchange").ok and p37b.trade("ship_001", "hearth_exchange", "energy_cells", 3, true).ok, "real captain buys three survey Energy Cells from an actual NPC supplier")
+	var p37b_money: int = _total_credits(p37b.state)
+	_expect(p37b.biosurvey.assign(p37b, "ship_001", "hearthreach").ok and p37b_ship.role == "Bio Survey", "player assigns active vessel via a distinct touch-screen biological survey role")
+	p37b.advance_ticks(6)
+	_expect(p37b_ship.bio_survey.enabled and int(p37b_ship.bio_survey.ticks_remaining) == 12 and _total_ware(p37b.state, "sunlace_seed_capsule") == 0, "survey progresses by actual simulation ticks without early specimen creation")
+	_expect(save_store.save_game(test_root + "/pass37b-mid-survey.json", p37b.snapshot()) == OK, "partway survey saves with exact unfinished time and zero premature stock")
+	var p37b_mid: Dictionary = save_store.load_game(test_root + "/pass37b-mid-survey.json")
+	var p37b_reloaded = WorldScript.new()
+	_expect(p37b_mid.get("ok", false) and p37b_reloaded.restore_snapshot(p37b_mid.state) == OK and p37b_reloaded.snapshot() == p37b.snapshot(), "save/reload retains real ship sector, resources, crew, course progress and planetary reserve")
+	p37b.advance_ticks(12)
+	_expect(_total_ware(p37b.state, "sunlace_seed_capsule") == 1 and int(p37b.state.biosurvey_sites.liora_sunlace_orbit) == 15 and int(p37b_ship.cargo.energy_cells) == 2 and not p37b_ship.bio_survey.enabled, "one 18-tick mission debits exactly one native sample and one paid survey Energy Cell into real cargo")
+	_expect(p37b.state.ledger.any(func(e): return e.kind == "bio_collected" and e.station_id == "liora_sunlace_orbit" and e.ware_id == "sunlace_seed_capsule") and p37b.state.ledger.any(func(e): return e.kind == "bio_survey_energy" and e.station_id == "liora_sunlace_orbit"), "matched planetary sampling receipts preserve organism, site, ship and energy provenance")
+	_expect(p37b.biosurvey.assign(p37b, "ship_001", "hearthreach").ok, "a second collection is a separate paid, timed expedition")
+	p37b.advance_ticks(18)
+	_expect(_total_ware(p37b.state, "sunlace_seed_capsule") == 2 and int(p37b.state.biosurvey_sites.liora_sunlace_orbit) == 14 and int(p37b_ship.cargo.energy_cells) == 1 and _total_credits(p37b.state) == p37b_money, "repeated collection never replenishes wild specimens, credits or survey energy")
+	_expect(save_store.save_game(test_root + "/pass37b-two-samples.json", p37b.snapshot()) == OK, "two sample lots and exact finite source accounting pass the strict save validator")
+	var p37b_spoof: Dictionary = p37b.snapshot()
+	p37b_spoof.ships[0].cargo.sunlace_seed_capsule += 100
+	_expect(save_store.save_game(test_root + "/pass37b-fake-samples.json", p37b_spoof) != OK, "a forged stack of biological specimens without real orbital receipts is rejected")
+	var p37b_spoof_source: Dictionary = p37b.snapshot()
+	p37b_spoof_source.biosurvey_sites.liora_sunlace_orbit = 16
+	_expect(save_store.save_game(test_root + "/pass37b-restored-wildlife.json", p37b_spoof_source) != OK, "finite native population reserves cannot be reset or revived in an edited save")
+	var p37b_spoof_receipt: Dictionary = p37b.snapshot()
+	for e in p37b_spoof_receipt.ledger:
+		if e.kind == "bio_survey_energy":
+			e.quantity = 9
+			break
+	_expect(save_store.save_game(test_root + "/pass37b-fake-survey-energy.json", p37b_spoof_receipt) != OK, "fake, unmatched survey-energy receipts are rejected")
+	var p37b_future: Dictionary = p37b.snapshot()
+	p37b_future.biosurvey_version = 2
+	_expect(save_store.save_game(test_root + "/pass37b-future.json", p37b_future) != OK, "unknown future planetary bio-economy versions are blocked")
+	var p37b_legacy: Dictionary = p37b_before.duplicate(true)
+	_strip_biosurvey(p37b_legacy)
+	_expect(save_store.save_game(test_root + "/pass37b-legacy.json", p37b_legacy) == OK, "original Pass 37A games without living specimens still save as valid historical input")
+	var p37b_migrated = WorldScript.new()
+	_expect(p37b_migrated.restore_snapshot(p37b_legacy) == OK, "prior Android v28 saves migrate without requiring a new game")
+	var p37b_migrated_comparable: Dictionary = p37b_migrated.snapshot()
+	_strip_biosurvey(p37b_migrated_comparable)
+	_expect(p37b_migrated_comparable == p37b_legacy and _total_ware(p37b_migrated.state, "sunlace_seed_capsule") == 0, "additive catalogue migration does not change any historical citizen, ship, role, cargo, station or credit")
+	_expect(p37b._find_recipe("sunlace_hydroponics").get("catalysts", {}).get("sunlace_seed_capsule", 0) == 1 and int(p37b._find_recipe("sunlace_hydroponics").outputs.sunlace_fruit) == 3 and p37b._find_recipe("mirealgae_bioreactor").get("catalysts", {}).has("mirealgae_culture_capsule"), "crop and microbial farms must hold a physical cultured starter and pay water, soil and power inputs")
+	var p37b_quote: Dictionary = p37b.construction.quote(p37b, "hearthreach", {"bio_gene_bank":1, "sunlace_hydroponics":1}, "all", [])
+	_expect(p37b_quote.ok and int(p37b_quote.fee) == 2500 and int(p37b_quote.materials.alloy_plates) == 32 and int(p37b_quote.materials.energy_cells) == 11, "gene bank and hydroponic orchard have genuine builder fees, purchased materials and construction duration")
+	var p37b_build: Dictionary = p37b.construction.place(p37b, "hearthreach", {"bio_gene_bank":1, "sunlace_hydroponics":1}, "all", [])
+	var p37b_build_site: Dictionary = p37b.construction.find_site(p37b, str(p37b_build.get("site_id", "")))
+	_expect(p37b_build.ok and not p37b_build_site.is_empty(), "player can order a genuine biological research and cultivation complex without a free station")
+	if not p37b_build_site.is_empty():
+		var p37b_build_station: Dictionary = p37b._find_station(str(p37b_build_site.station_id))
+		_expect(p37b.dock_ship("ship_001", str(p37b_build_station.id)).ok and not p37b.transfer_player_station("ship_001", str(p37b_build_station.id), "sunlace_seed_capsule", 1, true).ok and int(p37b_build_station.stock.get("sunlace_seed_capsule", 0)) == 0, "an unbuilt gene-bank plot may NOT accept dangerous or delicate biological cargo before physical containment is constructed")
+	_expect(save_store.save_game(test_root + "/pass37b-construction-pending.json", p37b.snapshot()) == OK, "unfunded biological construction cannot mint crops, genetic records or power")
+	# Now commission those exact modules using actual NPC alloys and solar
+	# power, transported by the collecting ship rather than injected goods.
+	_expect(p37b.queue_fly_to("ship_001", "vellum_gate"), "the original surveying ship begins a real cross-sector journey to acquire building alloys")
+	p37b.advance_ticks(30)
+	_expect(p37b.dock_ship("ship_001", "vellum_foundry").ok and p37b.trade("ship_001", "vellum_foundry", "alloy_plates", 32, true).ok, "thirty-two paid, physically available NPC alloy units enter the original ship cargo")
+	_expect(p37b.queue_fly_to("ship_001", "hearthreach"), "ship returns to the genuine botanical construction site through the star network")
+	p37b.advance_ticks(30)
+	_expect(p37b.dock_ship("ship_001", "hearth_exchange").ok and p37b.trade("ship_001", "hearth_exchange", "energy_cells", 12, true).ok, "eleven real construction power cells and one operating cell are financed by existing player money")
+	_expect(p37b.dock_ship("ship_001", str(p37b_build_site.station_id)).ok and p37b.construction.deliver(p37b, "ship_001", str(p37b_build_site.id)).ok, "player physically unloads all paid gene bank and orchard build materials into the builder's real storage")
+	p37b.advance_ticks(105)
+	var p37b_finished_station: Dictionary = p37b._find_station(str(p37b_build_site.station_id))
+	_expect(int(p37b_build_site.completed) == 2 and p37b.biosurvey.has_gene_bank(p37b_finished_station) and p37b_finished_station.production.any(func(m): return m.recipe_id == "sunlace_hydroponics"), "NPC builder commissions both physical, paid biological modules before accepting any biological specimen")
+	_expect(p37b.dock_ship("ship_001", str(p37b_finished_station.id)).ok and p37b.transfer_player_station("ship_001", str(p37b_finished_station.id), "sunlace_seed_capsule", 2, true).ok and p37b.transfer_player_station("ship_001", str(p37b_finished_station.id), "energy_cells", 1, true).ok, "the same two collected seed capsules reach completed powered containment by a real docked ship")
+	p37b.advance_ticks(28)
+	_expect(int(p37b_finished_station.stock.get("biogene_record", 0)) == 1 and int(p37b_finished_station.stock.get("sunlace_seed_capsule", 0)) == 1 and int(p37b_finished_station.stock.get("sunlace_fruit", 0)) == 0, "one actual seed is archived using genuine power, and a second retained growing starter cannot produce fruit without real water, soil and power")
+	_expect(save_store.save_game(test_root + "/pass37b-physical-gene-bank.json", p37b.snapshot()) == OK, "finished biological gene banking, physical cargo transport, paid construction and conserved reserves pass strict save audits")
+	var p37b_final_saved: Dictionary = save_store.load_game(test_root + "/pass37b-physical-gene-bank.json")
+	var p37b_final_restore = WorldScript.new()
+	_expect(p37b_final_saved.get("ok", false) and p37b_final_restore.restore_snapshot(p37b_final_saved.state) == OK and p37b_final_restore.snapshot() == p37b.snapshot(), "real archived genes, site depletion, nutrition catalog and construction survive reload without minting extra specimens")
+	# Independently prove the second organism can be collected by the
+	# SAME ordinary ship-navigation system; no cargo is credited remotely.
+	var p37b_mire = WorldScript.new()
+	_expect(p37b_mire.load_starter("auroran") == OK, "a second biological survey starts from a real neutral-border home faction")
+	_disable_npc_trading(p37b_mire)
+	_expect(p37b_mire.dock_ship("ship_001", "hearth_exchange").ok and p37b_mire.trade("ship_001", "hearth_exchange", "energy_cells", 1, true).ok, "Mirealgae survey purchases its own one real solar Energy Cell")
+	_expect(p37b_mire.biosurvey.assign(p37b_mire, "ship_001", "verdant_trace").ok, "player orders an actual intersectoral expedition to the distinct Lumin Marsh microbial source")
+	p37b_mire.advance_ticks(75)
+	_expect(p37b_mire._find_ship("ship_001").sector == "verdant_trace" and int(p37b_mire._find_ship("ship_001").cargo.get("mirealgae_culture_capsule", 0)) == 1 and int(p37b_mire._find_ship("ship_001").cargo.get("energy_cells", 0)) == 0, "ordinary galaxy route and 24 actual culture sampling ticks produce exactly one physical Mirealgae capsule at the destination")
+	_expect(int(p37b_mire.state.biosurvey_sites.lumin_marsh_samples) == 19 and int(p37b_mire.state.biosurvey_sites.liora_sunlace_orbit) == 16 and not p37b_mire._find_ship("ship_001").bio_survey.enabled, "expedition exhausts only its own environment's finite native reserve, leaving unrelated organisms untouched")
+	_expect(save_store.save_game(test_root + "/pass37b-real-mirealgae.json", p37b_mire.snapshot()) == OK, "second intersectoral native sample, energy receipt and complete route pass audited save validation")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
