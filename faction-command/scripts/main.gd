@@ -2549,7 +2549,14 @@ func _open_education_screen(station_id: String) -> void:
 	if is_instance_valid(education_screen):
 		return
 	var station: Dictionary = world._find_station(station_id)
-	if station.is_empty() or station.owner != world.state.player_faction_id or not station.has("education") or station.education.modules.is_empty():
+	if station.is_empty() or station.owner != world.state.player_faction_id or not station.has("education"):
+		return
+	var has_career: bool = false
+	for track in world.professionals.WORK:
+		if int(station.careers.licensed.get(track, 0)) > 0 or world.professionals._has_workplace(station, track) or world.professionals._local_count(world, station_id, track) > 0:
+			has_career = true
+			break
+	if station.education.modules.is_empty() and not has_career:
 		return
 	education_station_id = station_id
 	education_screen = Control.new()
@@ -2598,6 +2605,10 @@ func _open_education_screen(station_id: String) -> void:
 		if world.education.modules_at(station, program_id) > 0:
 			education_picker.add_item(str(world.state.education_catalog[program_id].name))
 			education_picker.set_item_metadata(education_picker.item_count - 1, program_id)
+	if education_picker.item_count == 0:
+		education_picker.add_item("No school built here")
+		education_picker.set_item_metadata(0, "")
+		education_picker.disabled = true
 	education_picker.select(0)
 	education_picker.item_selected.connect(_education_update_selection)
 	choice_row.add_child(education_picker)
