@@ -5247,6 +5247,10 @@ func _run() -> void:
 	_expect(p36_freshship.waste_transport == p36_fresh.waste_transport._empty_job(), "waste hauling starts disabled and does not overwrite orders or cargo on migration")
 	_expect(save_store.save_game(test_root + "/pass36-starter.json", p36_fresh.snapshot()) == OK, "species-market metadata, empty salt and idle waste jobs pass strict starter save auditing")
 	var p36_prior: Dictionary = p36_fresh.snapshot()
+	# Simulate a genuine Pass 35C1 save, which predates the Pass 36
+	# biological buyers and Pass 37 reference catalogue alike.
+	p36_prior.erase("biota_version")
+	p36_prior.erase("biota_catalog")
 	p36_prior.erase("salt_recovery_version")
 	p36_prior.erase("salt_recovery_catalog")
 	p36_prior.erase("waste_transport_version")
