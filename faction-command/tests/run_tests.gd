@@ -5079,6 +5079,40 @@ func _run() -> void:
 	var p35c_id_two: Dictionary = p35c_world.state.professional_registry.get("professional_2", {})
 	_expect(not p35c_id_one.is_empty() and not p35c_id_two.is_empty() and not p35c_id_one.get("active", true) and not p35c_id_two.get("active", true) and int(p35c_id_one.get("work_events", -1)) == 0 and int(p35c_id_two.get("salary_due", -1)) == 0, "professional identity alone does not award a phantom factory job, work XP or salaries")
 	_expect(save_store.save_game(test_root + "/pass35c-two-registered-real-graduates.json", p35c_world.snapshot()) == OK, "both independent named certifications are reconciled against actual paid classroom and practicum ledger entries")
+	# Android phone-map controls must choose between TWO different graduate
+	# IDs, and repeated taps must move each exact person only once.
+	var p35c_ui_board_state: Dictionary = p35c_world.snapshot()
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass35c-two-employees.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p35c_ui_board_state) == OK, "phone Careers panel loads the genuine two-graduate registered school without minting crew")
+	screen._open_map_station("player_station_2")
+	var p35c_ui_career_tab: Button = screen.find_child("InspectorTab_Careers", true, false)
+	if p35c_ui_career_tab != null:
+		p35c_ui_career_tab.pressed.emit()
+	var p35c_ui_career_action: Button = screen.find_child("InspectorAction_careers", true, false)
+	if p35c_ui_career_action != null:
+		p35c_ui_career_action.pressed.emit()
+	var p35c_ui_named_picker: OptionButton = screen.find_child("ProfessionalWorkerPicker", true, false)
+	var p35c_ui_board_button: Button = screen.find_child("ProfessionalBoardNamedButton", true, false)
+	_expect(p35c_ui_named_picker != null and p35c_ui_board_button != null, "original Android map Careers panel includes actual individually selectable named graduates and boarding action")
+	if p35c_ui_named_picker != null and p35c_ui_board_button != null:
+		for p35c_track_i in range(screen.career_track_picker.item_count):
+			if str(screen.career_track_picker.get_item_metadata(p35c_track_i)) == "engineering_college":
+				screen.career_track_picker.select(p35c_track_i)
+				screen.career_track_picker.item_selected.emit(p35c_track_i)
+				break
+		_expect(p35c_ui_named_picker.item_count == 2 and str(p35c_ui_named_picker.get_item_metadata(0)) == "professional_1" and str(p35c_ui_named_picker.get_item_metadata(1)) == "professional_2", "same-career employees have two visible and distinct stable-ID selection entries on a narrow touch screen")
+		p35c_ui_board_button.pressed.emit()
+		_expect(screen.world._find_ship("ship_001").professional_passenger_ids == ["professional_1"], "first mobile tap boards only the first selected true graduate and updates the docked ship")
+		p35c_ui_board_button.pressed.emit()
+		_expect(screen.world._find_ship("ship_001").professional_passenger_ids == ["professional_1", "professional_2"], "second mobile tap boards only the remaining named graduate into the ship's second actual berth")
+		_expect(save_store.save_game(test_root + "/pass35c-ui-two-boarded.json", screen.world.snapshot()) == OK, "actual double boarding from the original Android controls remains valid under full career, headcount and ship-manifest checks")
+	screen.queue_free()
+	await process_frame
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok, "the same owned transport remains physically docked at the school of its now named crew")
 	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok, "the first actual named engineer boards one ordinary passenger berth from a stocked and staffed school")
 	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_2").ok, "the second original engineer boards one additional real berth of the SAME owned ship")
@@ -5114,6 +5148,29 @@ func _run() -> void:
 	if not p35c_missing_before.is_empty():
 		printerr("P35C GENUINE INDUSTRY ADMISSION PRECHECK missing=", p35c_missing_before, " destination=", p35c_destination.stock, " power=", p35c_multi_restore.habitation.operational_capacity(p35c_destination, p35c_multi_restore.state.habitation_catalog), " available warehouse=", int(p35c_destination.storage_capacity) - p35c_multi_restore.station_volume("player_station_1"))
 	_expect(p35c_multi_restore.dock_ship("ship_001", "player_station_1").ok, "the two named adults physically dock at the existing powered industrial living station")
+	# Also exercise the real user-facing ship controls with a *copy* of the
+	# arrived ship: first tap lands one person, second lands the other, with
+	# visual feedback and immutable registered identity in the crew inspector.
+	var p35c_ui_arrival_state: Dictionary = p35c_multi_restore.snapshot()
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass35c-partial-disembark.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p35c_ui_arrival_state) == OK, "Android ship-and-crew inspector restores a real two-person docked passenger manifest")
+	screen._open_crew_screen()
+	var p35c_disembark: Button = screen.find_child("DisembarkSettlersButton", true, false)
+	_expect(screen.crew_info.text.contains("NAMED PROFESSIONAL PASSENGERS: 2") and screen.crew_info.text.contains("professional_1") and screen.crew_info.text.contains("professional_2") and p35c_disembark != null, "mobile Ship & Crew describes both individual certified passengers, their conserved experience, salaries and a disembark action")
+	if p35c_disembark != null and not p35c_disembark.disabled:
+		screen.crew_quantity.value = 1
+		p35c_disembark.pressed.emit()
+		_expect(screen.world._find_ship("ship_001").professional_passenger_ids == ["professional_2"] and screen.crew_info.text.contains("NAMED PROFESSIONAL PASSENGERS: 1"), "one touch disembarks only the first employee, leaving the second visible and safely aboard")
+		p35c_disembark.pressed.emit()
+		_expect(screen.world._find_ship("ship_001").professional_passenger_ids.is_empty() and int(screen.world._find_ship("ship_001").settler_passengers) == 0, "second touch disembarks the remaining original employee and clears both real passenger berths")
+		_expect(save_store.save_game(test_root + "/pass35c-ui-partial-arrivals.json", screen.world.snapshot()) == OK, "two actual Android disembark button interactions reconcile all professional IDs, qualifications and original residential origins")
+	screen.queue_free()
+	await process_frame
 	var p35c_first_arrival: Dictionary = p35c_multi_restore.settlement.disembark(p35c_multi_restore, "ship_001", 1)
 	if not p35c_first_arrival.ok:
 		printerr("P35C FIRST INDUSTRIAL ARRIVAL BLOCKED ", p35c_first_arrival, " physical stock=", p35c_destination.stock, " power=", p35c_multi_restore.habitation.operational_capacity(p35c_destination, p35c_multi_restore.state.habitation_catalog))
