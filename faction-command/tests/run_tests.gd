@@ -5039,78 +5039,79 @@ func _run() -> void:
 		p35c_world.advance_ticks(60)
 	_expect(int(p35c_campus.careers.licensed.engineering_college) == 2 and p35c_campus.careers.apprenticeships.is_empty(), "four supervised paid production training blocks certify exactly two original adult engineers without generating extra people")
 	_expect(save_store.save_game(test_root + "/pass35c-two-real-practical-graduates.json", p35c_world.snapshot()) == OK, "two genuinely trained certificates and original NPC population provenance survive strict real-education-and-workplace save validation")
-	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.careers.board_qualified(p35c_world, "ship_001", "engineering_college", 2, true).ok, "two actually qualified adults travel as an existing certified passenger cohort with original work qualifications")
-	var p35c_cargo_food: int = int(p35c_ship.cargo.get("food_rations", 0))
-	var p35c_campus_free: int = maxi(0, int(p35c_campus.storage_capacity) - p35c_world.station_volume("player_station_2"))
-	if p35c_cargo_food > 0 and p35c_campus_free >= p35c_cargo_food:
-		_expect(p35c_world.transfer_player_station("ship_001", "player_station_2", "food_rations", p35c_cargo_food, true).ok, "spare physical passenger-ship cargo is unloaded at the staffed campus before paying for power deliveries")
-	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "two original practical graduates physically fly to the paid solar market to provision the remote industrial home")
-	p35c_world.advance_ticks(40)
-	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "energy_cells", 12, true).ok, "the transport buys twelve actual energy cells from a working solar market, with no power minting")
-	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "solar-powered residential admission requires physically carrying the bought cells back through existing star gates")
-	p35c_world.advance_ticks(40)
-	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", 12, false).ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 12, true).ok, "existing factory stock is physically rearranged so all purchased life-support energy fits without bypassing warehouse volume")
-	p35c_world.advance_ticks(60)
-	var p35c_factory_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_1")
-	var p35c_family_admission: Dictionary = p35c_world.settlement.disembark(p35c_world, "ship_001", 2) if p35c_factory_dock.ok else {"ok":false, "message":"Ship docking failed"}
-	if not p35c_family_admission.ok:
-		var p35c_factory_rec: Dictionary = p35c_world.population.station_cohort(p35c_world, "player_station_1")
-		printerr("P35C INDUSTRIAL SETTLEMENT BLOCKED ", p35c_family_admission, " stock=", p35c_factory.stock, " housing=", p35c_factory.habitation, " power=", p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog), " shortages=", p35c_world.provisions.missing_provision(p35c_world, p35c_factory, p35c_world.demographics.residents(p35c_factory_rec) + 2), " ship=", p35c_ship.cargo)
-	var p35c_factory_capacity: int = p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog)
-	if p35c_factory_capacity < 2 or not p35c_family_admission.ok:
-		printerr("P35C FACTORY ADMISSION DIAGNOSTIC cap=", p35c_factory_capacity, " admitted=", p35c_family_admission, " housing=", p35c_factory.habitation, " headcount=", p35c_world.population.station_cohort(p35c_world, "player_station_1").cohorts, " ship=", p35c_ship.get("career_manifest", {}), " passengers=", p35c_ship.settler_passengers)
-	_expect(p35c_factory_capacity >= 2 and p35c_family_admission.ok, "two already trained engineers settle once into a real functioning 8-bed industrial habitat")
-	p35c_world.advance_ticks(60)
-	_expect(p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok and p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok, "the two paid and proven industrial residents receive two distinct professional IDs on the SAME genuine license track")
-	_expect(p35c_world.state.professional_registry.size() == 2 and p35c_world.professionals.available(p35c_world, "player_station_1", "engineering_college") == 0 and p35c_world.population.total_people(p35c_world) >= p35c_people, "identifying two real adult colleagues consumes no new population, diplomas, ship crews or extra graduate slots")
-	# The destination campus is serviced before the departure. At admission
-	# the original field-tested real habitat must still be powered.
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 5), "shared professional transport's destination receives real cargo and bought electricity before the crossing")
-	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
-	_expect(p35c_world.habitation.operational_capacity(p35c_campus, p35c_world.state.habitation_catalog) >= 4, "future destination family housing has genuinely completed another finite powered maintenance cycle")
-	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok, "the transport ship returns to the real employer to collect both named engineers")
-	var p35c_total_before: int = p35c_world.population.total_people(p35c_world)
-	var p35c_money_before: int = _total_credits(p35c_world.state)
-	var p35c_source_professionals: Dictionary = p35c_world.state.professional_registry.duplicate(true)
-	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok, "first named engineer boards the real vessel with existing credentials, zero duplicate crew and immediate salary suspension")
-	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_2").ok, "a second independent paid and certified engineer boards a second real berth on the SAME ship from the SAME legitimate residence")
-	_expect(p35c_ship.professional_passenger_ids == ["professional_1", "professional_2"] and p35c_ship.professional_passenger_id == "professional_1" and int(p35c_ship.settler_passengers) == 2 and p35c_world.population.total_people(p35c_world) == p35c_total_before, "two complete professional identities occupy two real berths, with v25 compatibility mirror and exactly conserved headcount")
-	_expect(int(p35c_factory.careers.licensed.engineering_college) == 0 and int(p35c_factory.education.qualified.engineering_college) == 0 and not p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok, "both original double credentials leave source once, and repeating an ID cannot board a third copy")
-	_expect(not p35c_world.settlement.evacuate(p35c_world, "ship_001", 1).ok and not p35c_world.settlement.board(p35c_world, "ship_001", 1).ok, "ordinary passenger boarding and evacuation remain prohibited when any named real professional occupies the ship")
-	_expect(save_store.save_game(test_root + "/pass35c-two-person-manifest.json", p35c_world.snapshot()) == OK, "complete 2-ID ship manifest passes accurate berth, career-transfer and historical XP/pay audits")
-	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "the same two people depart on one ship, retaining immutable IDs during genuine space travel")
-	p35c_world.advance_ticks(40)
-	_expect(save_store.save_game(test_root + "/pass35c-two-workers-in-flight.json", p35c_world.snapshot()) == OK, "multi-person manifest is strictly valid while both employees are between real sectors")
-	var p35c_multi_loaded: Dictionary = save_store.load_game(test_root + "/pass35c-two-workers-in-flight.json")
+	# Identity is not employment. The two actually paid practical graduates
+	# are identified at their school, not sent to a factory solely to get a
+	# name. Wages and XP remain precisely zero until a physical job exists.
+	var p35c_people_before: int = p35c_world.population.total_people(p35c_world)
+	var p35c_credits_before: int = _total_credits(p35c_world.state)
+	var p35c_register_one: Dictionary = p35c_world.professionals.register_graduate(p35c_world, "player_station_2", "engineering_college")
+	var p35c_register_two: Dictionary = p35c_world.professionals.register_graduate(p35c_world, "player_station_2", "engineering_college")
+	_expect(p35c_register_one.ok and p35c_register_two.ok and p35c_register_one.id == "professional_1" and p35c_register_two.id == "professional_2", "two distinct authentic paid-practice graduates are identified while still physically residing at their original school")
+	_expect(not p35c_world.professionals.register_graduate(p35c_world, "player_station_2", "engineering_college").ok and p35c_world.population.total_people(p35c_world) == p35c_people_before and _total_credits(p35c_world.state) == p35c_credits_before, "two certificates can register exactly two adults, without adding people, funds or unearned diplomas")
+	_expect(not p35c_world.state.professional_registry.professional_1.active and not p35c_world.state.professional_registry.professional_2.active and p35c_world.state.professional_registry.professional_1.work_events == 0 and p35c_world.state.professional_registry.professional_2.salary_due == 0, "professional identity alone does not award a phantom factory job, work XP or salaries")
+	_expect(save_store.save_game(test_root + "/pass35c-two-registered-real-graduates.json", p35c_world.snapshot()) == OK, "both independent named certifications are reconciled against actual paid classroom and practicum ledger entries")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok, "the same owned transport remains physically docked at the school of its now named crew")
+	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok, "the first actual named engineer boards one ordinary passenger berth from a stocked and staffed school")
+	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_2").ok, "the second original engineer boards one additional real berth of the SAME owned ship")
+	_expect(p35c_ship.professional_passenger_ids == ["professional_1", "professional_2"] and p35c_ship.professional_passenger_id == "professional_1" and int(p35c_ship.settler_passengers) == 2, "both immutable IDs occupy two legitimate physical seats with a version-one first-person compatibility field")
+	_expect(int(p35c_campus.education.qualified.engineering_college) == 0 and int(p35c_campus.careers.licensed.engineering_college) == 0 and p35c_world.population.total_people(p35c_world) == p35c_people_before, "two theoretical and two practical certificates leave their origin together with exactly two already counted adult people")
+	_expect(not p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok and not p35c_world.settlement.board(p35c_world, "ship_001", 1).ok and not p35c_world.settlement.evacuate(p35c_world, "ship_001", 1).ok, "duplicate names and anonymous passenger mixing are rejected by actual source/cargo checks")
+	_expect(save_store.save_game(test_root + "/pass35c-two-person-manifest.json", p35c_world.snapshot()) == OK, "two-person manifest reconciles headcount, paid training, practical licences, original ID registration and seats")
+	# This is also a genuine logistics journey: the factory is clogged by
+	# overproduced alloy and medicine. Move thirty real alloys off-site and
+	# SELL them at the remote NPC market, freeing water/power production space
+	# at the eventual staffed destination. No stock is gifted or erased.
+	var p35c_transfer_alloys: int = mini(30, maxi(0, int(p35c_factory.stock.get("alloy_plates", 0))))
+	var p35c_remaining_cargo: int = maxi(0, int(p35c_ship.cargo_capacity) - p35c_world.cargo_volume("ship_001"))
+	p35c_transfer_alloys = mini(p35c_transfer_alloys, p35c_remaining_cargo)
+	_expect(p35c_transfer_alloys >= 16 and p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", p35c_transfer_alloys, false).ok, "twenty-plus genuine alloy plates move to the transporting ship to unblock the destination factory's ice-water production")
+	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "two professionals and real tradable cargo depart together along an actual connected star route")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_ship.sector == "hearthreach" and p35c_ship.professional_passenger_ids.size() == 2, "both live passenger identities persist after the ship's genuine outbound galaxy movement")
+	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "alloy_plates", p35c_transfer_alloys, false).ok, "real remote market purchases the alloy cargo and pays the player without minting source warehouse capacity")
+	_expect(save_store.save_game(test_root + "/pass35c-two-workers-in-flight.json", p35c_world.snapshot()) == OK, "both named workers and fully accounted industrial trade survive strict mid-voyage save validation")
+	var p35c_saved: Dictionary = save_store.load_game(test_root + "/pass35c-two-workers-in-flight.json")
 	var p35c_multi_restore = WorldScript.new()
-	_expect(p35c_multi_loaded.get("ok", false) and p35c_multi_restore.restore_snapshot(p35c_multi_loaded.state) == OK and p35c_multi_restore.snapshot() == p35c_world.snapshot(), "both living professionals, original company debts, skills and passenger slot order persist through a genuine in-flight save/reload")
-	_expect(p35c_multi_restore.queue_fly_to("ship_001", "copper_wake"), "both graduates remain on the original ship for the physically connected return route")
-	p35c_multi_restore.advance_ticks(40)
-	_expect(p35c_multi_restore.dock_ship("ship_001", "player_station_2").ok, "the ship physically docks at the alternate fully built family residence")
+	_expect(p35c_saved.get("ok", false) and p35c_multi_restore.restore_snapshot(p35c_saved.state) == OK and p35c_multi_restore.snapshot() == p35c_world.snapshot(), "both original names, historic school provenance and completed market transaction are restored exactly on another galaxy sector")
+	_expect(p35c_multi_restore.queue_fly_to("ship_001", "copper_wake"), "the same transport returns to the new employer's sector via a valid connected route")
+	p35c_multi_restore.advance_ticks(20)
+	var p35c_destination: Dictionary = p35c_multi_restore._find_station("player_station_1")
+	var p35c_destination_house: Dictionary = p35c_multi_restore.population.station_cohort(p35c_multi_restore, "player_station_1")
+	var p35c_missing_before: String = p35c_multi_restore.provisions.missing_provision(p35c_multi_restore, p35c_destination, p35c_multi_restore.demographics.residents(p35c_destination_house) + 2)
+	if not p35c_missing_before.is_empty():
+		printerr("P35C GENUINE INDUSTRY ADMISSION PRECHECK missing=", p35c_missing_before, " destination=", p35c_destination.stock, " power=", p35c_multi_restore.habitation.operational_capacity(p35c_destination, p35c_multi_restore.state.habitation_catalog), " available warehouse=", int(p35c_destination.storage_capacity) - p35c_multi_restore.station_volume("player_station_1"))
+	_expect(p35c_multi_restore.dock_ship("ship_001", "player_station_1").ok, "the two named adults physically dock at the existing powered industrial living station")
 	var p35c_first_arrival: Dictionary = p35c_multi_restore.settlement.disembark(p35c_multi_restore, "ship_001", 1)
 	if not p35c_first_arrival.ok:
-		printerr("P35C FIRST GROUP ARRIVAL BLOCKED ", p35c_first_arrival, " campus=", p35c_multi_restore._find_station("player_station_2").stock, " hab=", p35c_multi_restore.habitation.operational_capacity(p35c_multi_restore._find_station("player_station_2"), p35c_multi_restore.state.habitation_catalog))
-	_expect(p35c_first_arrival.ok, "one named worker can disembark first without deleting the other passenger or changing original contracts")
+		printerr("P35C FIRST INDUSTRIAL ARRIVAL BLOCKED ", p35c_first_arrival, " physical stock=", p35c_destination.stock, " power=", p35c_multi_restore.habitation.operational_capacity(p35c_destination, p35c_multi_restore.state.habitation_catalog))
+	_expect(p35c_first_arrival.ok, "one original named worker may disembark independently into a truly stocked, powered destination")
 	var p35c_left_aboard: Dictionary = p35c_multi_restore._find_ship("ship_001")
-	_expect(p35c_left_aboard.professional_passenger_ids == ["professional_2"] and p35c_left_aboard.professional_passenger_id == "professional_2" and int(p35c_left_aboard.settler_passengers) == 1 and p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("station_id", "missing") == "player_station_2" and p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("station_id", "missing") == "", "partial arrival preserves second engineer, updates original v25 first-ID alias and counts only one transferred adult")
-	_expect(save_store.save_game(test_root + "/pass35c-partial-named-arrival.json", p35c_multi_restore.snapshot()) == OK, "one settled and one travelling ID reconcile against every original academy and practical certificate on the ledger")
-	_expect(p35c_multi_restore.settlement.disembark(p35c_multi_restore, "ship_001", 1).ok, "second named worker disembarks independently into the same correctly provisioned colony")
-	var p35c_final: Dictionary = p35c_multi_restore._find_ship("ship_001")
-	_expect(p35c_final.professional_passenger_ids.is_empty() and p35c_final.professional_passenger_id == "" and int(p35c_final.settler_passengers) == 0 and p35c_multi_restore.population.total_people(p35c_multi_restore) == p35c_total_before, "the final arrival clears all names and both real berths while conserving exact universal adult population")
-	_expect(int(p35c_multi_restore._find_station("player_station_2").careers.licensed.engineering_college) == 2 and int(p35c_multi_restore._find_station("player_station_2").education.qualified.engineering_college) == 2, "both named passengers carry back their original genuine theoretical and practical engineer qualifications")
-	_expect(p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("experience", -1) == p35c_source_professionals.get("professional_1", {}).get("experience", -2) and p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("salary_paid", -1) == p35c_source_professionals.get("professional_2", {}).get("salary_paid", -2) and p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("salary_due", -1) == p35c_source_professionals.get("professional_1", {}).get("salary_due", -2) and _total_credits(p35c_multi_restore.state) == p35c_money_before, "both individually earned XP, paid/owed wage histories and existing bank balances persist without fictional voyage salaries")
-	_expect(save_store.save_game(test_root + "/pass35c-two-person-complete.json", p35c_multi_restore.snapshot()) == OK, "two legally transported original specialists finish with strict valid course, population, professional and ship manifests")
-	var p35c_forged_duplicate: Dictionary = p35c_world.snapshot()
-	if p35c_forged_duplicate.ships[0].professional_passenger_ids.size() >= 2:
-		p35c_forged_duplicate.ships[0].professional_passenger_ids[1] = "professional_1"
-	_expect(save_store.save_game(test_root + "/pass35c-forged-double-id.json", p35c_forged_duplicate) != OK, "even when the total passenger count is valid, reusing one ID in two distinct berths is rejected")
-	var p35c_forged_extra: Dictionary = p35c_world.snapshot()
-	p35c_forged_extra.ships[0].settler_passengers = 3
-	_expect(save_store.save_game(test_root + "/pass35c-forged-third-seat.json", p35c_forged_extra) != OK, "unrecorded anonymous third passenger cannot join a fully named two-person manifest")
-	var p35c_forged_both: Dictionary = p35c_world.snapshot()
-	if p35c_forged_both.professional_registry.has("professional_2"):
-		p35c_forged_both.professional_registry.professional_2.station_id = "player_station_1"
-	_expect(save_store.save_game(test_root + "/pass35c-double-location.json", p35c_forged_both) != OK, "one named worker cannot simultaneously be settled at their old station and travel on the real ship")
+	_expect(p35c_left_aboard.professional_passenger_ids == ["professional_2"] and p35c_left_aboard.professional_passenger_id == "professional_2" and int(p35c_left_aboard.settler_passengers) == 1 and str(p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("station_id", "missing")) == "player_station_1" and str(p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("station_id", "missing")).is_empty(), "partial arrival reserves one real resident, leaves one real passenger, and correctly updates the first-person compatibility mirror")
+	_expect(save_store.save_game(test_root + "/pass35c-partial-named-arrival.json", p35c_multi_restore.snapshot()) == OK, "one resident and one still-transiting person reconcile all source/arrival certificates, worker IDs and passenger capacity")
+	_expect(p35c_multi_restore.settlement.disembark(p35c_multi_restore, "ship_001", 1).ok, "second named professional exits the same ship into a second properly provisioned local bed")
+	var p35c_clear: Dictionary = p35c_multi_restore._find_ship("ship_001")
+	_expect(p35c_clear.professional_passenger_ids.is_empty() and p35c_clear.professional_passenger_id == "" and int(p35c_clear.settler_passengers) == 0, "both names clear from physical passenger manifest only after both really enter the station")
+	_expect(int(p35c_destination.education.qualified.engineering_college) == 2 and int(p35c_destination.careers.licensed.engineering_college) == 2, "the new industrial home receives exactly two genuine academic-and-practical engineering qualifications")
+	var p35c_ledger_old: Dictionary = p35c_world.state.professional_registry
+	_expect(p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("salary_paid", -1) == p35c_ledger_old.get("professional_1", {}).get("salary_paid", -2) and p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("experience", -1) == p35c_ledger_old.get("professional_2", {}).get("experience", -2), "two unique professionals retain prior wage and experience records without magical transit payroll")
+	var p35c_new_births: int = 0
+	for original in p35c_world.state.population.stations:
+		var before_cohort: Dictionary = p35c_world.state.population.stations[original]
+		var after_cohort: Dictionary = p35c_multi_restore.state.population.stations[original]
+		p35c_new_births += int(after_cohort.family.births_total) - int(before_cohort.family.births_total)
+	_expect(p35c_multi_restore.population.total_people(p35c_multi_restore) == p35c_people_before + p35c_new_births and _total_credits(p35c_multi_restore.state) == p35c_credits_before, "all moving people and real traded money are conserved; only independently serviced recorded births can increase headcount")
+	_expect(p35c_multi_restore.professionals.set_active(p35c_multi_restore, "professional_1", true).ok, "a newly settled qualified adult can begin genuine paid work only at their physically existing industrial workstation")
+	_expect(p35c_multi_restore.state.professional_registry.professional_1.experience == 0, "registration and transfer grant no free production experience; the first actual factory completion is required")
+	_expect(save_store.save_game(test_root + "/pass35c-two-person-complete.json", p35c_multi_restore.snapshot()) == OK, "two authentic graduates and one legitimately employed specialist pass strict professional, education, transaction and population save checks")
+	var p35c_fake_id: Dictionary = p35c_world.snapshot()
+	p35c_fake_id.ships[0].professional_passenger_ids[1] = "professional_1"
+	_expect(save_store.save_game(test_root + "/pass35c-forged-double-id.json", p35c_fake_id) != OK, "duplicating one professional into two fully occupied berths is always rejected")
+	var p35c_fake_berth: Dictionary = p35c_world.snapshot()
+	p35c_fake_berth.ships[0].settler_passengers = 3
+	_expect(save_store.save_game(test_root + "/pass35c-forged-third-seat.json", p35c_fake_berth) != OK, "fake third person without a genuine ID and original academy provenance cannot ride in a named group")
+	var p35c_double_location: Dictionary = p35c_world.snapshot()
+	p35c_double_location.professional_registry.professional_2.station_id = "player_station_2"
+	_expect(save_store.save_game(test_root + "/pass35c-double-location.json", p35c_double_location) != OK, "a single adult cannot exist simultaneously at the original classroom and on a travelling ship")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
