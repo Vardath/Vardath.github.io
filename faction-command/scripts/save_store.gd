@@ -9,6 +9,7 @@ const ResearchScript = preload("res://scripts/research.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
+const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -113,6 +114,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("station_supply_version") and _is_nonnegative_integer(decoded.station_supply_version) and decoded.station_supply_version != 1:
 		return {"ok": false, "reason": "unsupported"}
+	if decoded.has("waste_transport_version") and _is_nonnegative_integer(decoded.waste_transport_version) and decoded.waste_transport_version != 1:
+		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("shipyard_version") and _is_nonnegative_integer(decoded.shipyard_version) and decoded.shipyard_version != 1:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("personnel_version") and _is_nonnegative_integer(decoded.personnel_version) and decoded.personnel_version not in [1, 2]:
@@ -170,6 +173,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("ecology_version") != state.has("ecology_catalog") or (state.has("ecology_version") and state.get("settlement_version") != 2):
 		return false
 	if state.has("salt_recovery_version") != state.has("salt_recovery_catalog") or (state.has("salt_recovery_version") and state.get("ecology_version") != 1):
+		return false
+	if state.has("waste_transport_version") and (not state.has("salt_recovery_version") or not state.has("station_supply_version")):
 		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
@@ -295,6 +300,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("ecology_version") and not _valid_ecology(state):
 		return false
 	if state.has("salt_recovery_version") and not _valid_salt_recovery(state):
+		return false
+	if state.has("waste_transport_version") and not _valid_waste_transport(state):
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
@@ -1187,6 +1194,91 @@ func _valid_station_supply(state: Dictionary) -> bool:
 		if job.phase == "to_source" and (job.source_id.is_empty() or not wares.has(job.ware_id)):
 			return false
 		if job.phase == "to_station" and (not job.source_id.is_empty() or not wares.has(job.ware_id)):
+			return false
+	return true
+
+
+func _valid_waste_transport(state: Dictionary) -> bool:
+	if state.waste_transport_version != WasteTransportScript.VERSION:
+		return false
+	var ships: Dictionary = {}
+	var stations: Dictionary = {}
+	for ship in state.ships:
+		ships[str(ship.id)] = ship
+	for station in state.stations:
+		stations[str(station.id)] = station
+	var transfer_out: Dictionary = {}
+	var transfer_in: Dictionary = {}
+	var collected: Dictionary = {}
+	var delivered: Dictionary = {}
+	var credited: Dictionary = {}
+	for event in state.ledger:
+		var kind: String = str(event.get("kind", ""))
+		if kind not in ["transfer_out", "transfer_in", "waste_collected", "waste_delivered"] or event.get("ware_id") != WasteTransportScript.WARE:
+			continue
+		if not _is_nonnegative_integer(event.get("tick")) or not _is_nonnegative_integer(event.get("quantity")) or int(event.quantity) < 1 or int(event.tick) > int(state.tick):
+			return false
+		var key: String = str(event.ship_id) + "|" + str(event.station_id) + "|" + str(event.tick)
+		if kind == "transfer_out":
+			transfer_out[key] = int(transfer_out.get(key, 0)) + int(event.quantity)
+		elif kind == "transfer_in":
+			transfer_in[key] = int(transfer_in.get(key, 0)) + int(event.quantity)
+		else:
+			if not ships.has(str(event.ship_id)) or not stations.has(str(event.station_id)) or int(event.get("price", 0)) != 0 or int(event.get("amount", 0)) != 0:
+				return false
+			if ships[str(event.ship_id)].owner != state.player_faction_id or stations[str(event.station_id)].owner != state.player_faction_id:
+				return false
+			var counter: Dictionary = collected if kind == "waste_collected" else delivered
+			counter[key] = int(counter.get(key, 0)) + int(event.quantity)
+			if kind == "waste_delivered":
+				credited[str(event.ship_id)] = int(credited.get(str(event.ship_id), 0)) + int(event.quantity)
+	for key in collected:
+		if int(collected[key]) > int(transfer_out.get(key, 0)):
+			return false
+	for key in delivered:
+		if int(delivered[key]) > int(transfer_in.get(key, 0)):
+			return false
+	for ship in state.ships:
+		if ship.owner != state.player_faction_id:
+			if ship.has("waste_transport"):
+				return false
+			continue
+		if not ship.get("waste_transport") is Dictionary:
+			return false
+		var job: Dictionary = ship.waste_transport
+		if job.size() != 9 or not job.get("enabled") is bool or job.get("phase") not in ["idle", "to_source", "to_destination"]:
+			return false
+		for field in ["destination_id", "source_id", "wait_reason"]:
+			if not job.get(field) is String or str(job[field]).length() > 180:
+				return false
+		for field in ["managed_quantity", "retry_ticks", "trips", "delivered_total"]:
+			if not _is_nonnegative_integer(job.get(field)):
+				return false
+		if int(job.retry_ticks) > WasteTransportScript.RETRY_TICKS or int(job.managed_quantity) > int(ship.cargo_capacity) or int(job.delivered_total) > int(credited.get(str(ship.id), 0)):
+			return false
+		if not job.enabled:
+			if job != WasteTransportScript.new()._empty_job():
+				return false
+			continue
+		if ship.role != "Waste Hauler" or ship.player_trader.enabled or ship.build_supply.enabled or ship.station_supply.enabled or int(ship.get("settler_passengers", 0)) > 0:
+			return false
+		var dest: Dictionary = stations.get(str(job.destination_id), {})
+		if dest.is_empty() or dest.owner != state.player_faction_id:
+			return false
+		var recycler := false
+		for module in dest.production:
+			if str(module.recipe_id) == "water_recycling":
+				recycler = true
+		if not recycler:
+			return false
+		if job.phase == "idle" and (not str(job.source_id).is_empty() or int(job.managed_quantity) != 0):
+			return false
+		if job.phase == "to_source" and (not stations.has(str(job.source_id)) or int(job.managed_quantity) != 0):
+			return false
+		if job.phase == "to_destination":
+			if not stations.has(str(job.source_id)) or int(job.managed_quantity) < 1 or int(ship.cargo.get("organic_waste", 0)) < int(job.managed_quantity):
+				return false
+		if job.phase != "idle" and (job.source_id == job.destination_id or stations[str(job.source_id)].owner != state.player_faction_id):
 			return false
 	return true
 
