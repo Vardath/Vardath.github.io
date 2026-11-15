@@ -123,6 +123,44 @@ func place(world: RefCounted, sector_id: String, requested: Dictionary, mode: St
 	return {"ok":true, "message":"Build site placed. Deliver the listed materials.", "site_id":site_id}
 
 
+func extend_completed_station(world: RefCounted, station_id: String, requested: Dictionary) -> Dictionary:
+	# A completed player outpost has an existing persistent build-site ledger.
+	# Append real paid tasks to that site instead of fabricating another
+	# overlapping station with a separate inventory or personnel registry.
+	var station: Dictionary = world._find_station(station_id)
+	if station.is_empty() or station.owner != world.state.player_faction_id or not station.has("resource_sector"):
+		return {"ok":false, "message":"Only an existing player-built station can be expanded."}
+	var site: Dictionary = {}
+	for candidate in world.state.build_sites:
+		if candidate.station_id == station_id:
+			site = candidate
+			break
+	if site.is_empty() or bool(site.get("cancelled", false)) or int(site.completed) != site.tasks.size() or not str(site.builder_id).is_empty() or site.tasks.size() + requested.values().reduce(func(accum, n): return accum + int(n), 0) > MAX_TASKS:
+		return {"ok":false, "message":"Finish the current station build first, or use a valid completed, uncancelled site."}
+	var estimate: Dictionary = quote(world, str(station.sector), requested, "all", [])
+	if not estimate.get("ok", false):
+		return estimate
+	var builder: Dictionary = world._find_ship(BUILDER_ID)
+	if builder.is_empty() or builder.owner == world.state.player_faction_id or int(world.state.starting_credits) < int(estimate.fee) or world._find_route(str(builder.sector), str(station.sector)).is_empty():
+		return {"ok":false, "message":"A funded external builder and an accessible route are required."}
+	var new_tasks: Array = []
+	for row in estimate.modules:
+		var blueprint: Dictionary = world.state.construction_blueprints[str(row.id)]
+		for _i in range(int(row.total)):
+			new_tasks.append({"recipe_id":row.id, "duration":int(blueprint.ticks), "materials":blueprint.materials.duplicate(true), "storage":int(blueprint.storage), "started":false, "progress":0})
+	if new_tasks.is_empty() or site.tasks.size() + new_tasks.size() > MAX_TASKS:
+		return {"ok":false, "message":"No eligible expansion capacity."}
+	# Atomic: all validation precedes the fee transfer and task append.
+	world.state.starting_credits = int(world.state.starting_credits) - int(estimate.fee)
+	builder.credits = int(builder.credits) + int(estimate.fee)
+	site.fee = int(site.fee) + int(estimate.fee)
+	site.tasks.append_array(new_tasks)
+	site.status = "Needs materials"
+	site.paused = false
+	world._record_transaction("construction_fee", BUILDER_ID, station_id, "", 0, 0, -int(estimate.fee))
+	return {"ok":true, "site_id":str(site.id), "message":"New modules are queued at the existing owned station. Deliver real alloys and energy through the station's original construction site."}
+
+
 func find_site(world: RefCounted, site_id: String) -> Dictionary:
 	for site in world.state.get("build_sites", []):
 		if site.id == site_id:
