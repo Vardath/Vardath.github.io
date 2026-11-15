@@ -126,6 +126,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("professional_version") and _is_nonnegative_integer(decoded.professional_version) and decoded.professional_version != 1:
 		return {"ok":false, "reason":"unsupported"}
+	if decoded.has("professional_transport_version") and _is_nonnegative_integer(decoded.professional_transport_version) and decoded.professional_transport_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("education_version") and _is_nonnegative_integer(decoded.education_version) and decoded.education_version != 1:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("demographics_version") and _is_nonnegative_integer(decoded.demographics_version) and decoded.demographics_version != 1:
@@ -171,6 +173,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("career_version") != state.has("career_catalog") or (state.has("career_version") and state.get("education_version") != 1):
 		return false
 	if state.has("professional_version") != (state.has("professional_registry") and state.has("professional_next_id")) or (state.has("professional_version") and state.get("career_version") != 1):
+		return false
+	if state.has("professional_transport_version") and state.get("professional_version") != 1:
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -632,6 +636,11 @@ func _valid_careers(state: Dictionary) -> bool:
 			var manifest: Dictionary = ship.career_manifest
 			if not manifest.is_empty() and key == str(ship.id) + "|" + str(manifest.track) + "|" + ("1" if bool(manifest.certified) else "0"):
 				on_ship += int(manifest.quantity)
+			var named_id: String = str(ship.get("professional_passenger_id", ""))
+			if not named_id.is_empty():
+				var worker: Dictionary = state.get("professional_registry", {}).get(named_id, {})
+				if not worker.is_empty() and key == str(ship.id) + "|" + str(worker.track) + "|1":
+					on_ship += 1
 		if int(departures[key]) - int(arrivals.get(key, 0)) != on_ship:
 			return false
 	for key in arrivals:
@@ -641,19 +650,34 @@ func _valid_careers(state: Dictionary) -> bool:
 
 
 func _valid_professionals(state: Dictionary) -> bool:
-	# A roster entry reserves ONE existing certified adult. It does not add a
-	# second person to the station cohort and cannot travel as anonymous cargo.
+	# One real adult/certificate at a station, or one real ship berth at sea.
+	# Replay all professional journal events through historical locations:
+	# previous work/wages remain attributable to the source station after
+	# a worker relocates, without rewriting immutable prior ledger entries.
 	if state.professional_version != ProfessionalScript.VERSION or not state.get("professional_registry") is Dictionary or not _is_nonnegative_integer(state.get("professional_next_id")):
 		return false
 	var roster: Dictionary = state.professional_registry
 	if roster.size() > ProfessionalScript.MAX_PROFESSIONALS or int(state.professional_next_id) != roster.size() + 1:
 		return false
-	var reserved: Dictionary = {}
-	for id in roster:
-		if not id is String or id != "professional_%d" % (reserved.size() + 1):
-			# Dictionary enumeration can differ on load; validate numeric IDs below.
-			if not str(id).begins_with("professional_"):
+	var transports: Dictionary = {}
+	for ship in state.ships:
+		if not state.has("professional_transport_version"):
+			if ship.has("professional_passenger_id"):
 				return false
+			continue
+		if state.professional_transport_version != ProfessionalScript.TRANSPORT_VERSION or not ship.get("professional_passenger_id") is String:
+			return false
+		var passenger_id: String = str(ship.professional_passenger_id)
+		if passenger_id.is_empty():
+			continue
+		if transports.has(passenger_id) or not roster.has(passenger_id) or ship.owner != state.player_faction_id or int(ship.get("settler_passengers", 0)) != 1 or not ship.get("career_manifest", {}).is_empty() or str(ship.get("settler_source_station_id", "")).is_empty():
+			return false
+		transports[passenger_id] = str(ship.id)
+	var reserved: Dictionary = {}
+	var resident_ids: Dictionary = {}
+	for id in roster:
+		if not id is String or not str(id).begins_with("professional_"):
+			return false
 		var person: Variant = roster[id]
 		if not person is Dictionary or person.size() != 12 or person.get("id") != id or not ProfessionalScript.WORK.has(person.get("track")) or not person.get("station_id") is String or not person.get("role") is String or not person.get("active") is bool or not person.get("status") is String:
 			return false
@@ -664,42 +688,55 @@ func _valid_professionals(state: Dictionary) -> bool:
 				return false
 		if int(person.experience) != int(person.work_events) or int(person.skill) != mini(5, int(int(person.experience) / ProfessionalScript.XP_PER_SKILL)) or int(person.salary_paid) > int(person.salary_due) or int(person.salary_due) % ProfessionalScript.SALARY != 0 or int(person.last_salary_tick) > int(state.tick):
 			return false
+		if str(person.station_id).is_empty():
+			if not transports.has(id) or bool(person.active) or str(person.status) != "In transit":
+				return false
+			continue
+		if transports.has(id):
+			return false
 		var station: Dictionary = {}
 		for candidate in state.stations:
-			if candidate.id == person.station_id:
+			if str(candidate.id) == str(person.station_id):
 				station = candidate
 				break
 		if station.is_empty() or station.owner != state.player_faction_id or not station.get("careers") is Dictionary:
 			return false
 		var key := str(person.station_id) + "|" + str(person.track)
 		reserved[key] = int(reserved.get(key, 0)) + 1
-		if int(reserved[key]) > int(station.careers.licensed.get(person.track, 0)):
+		if int(reserved[key]) > 1 or int(reserved[key]) > int(station.careers.licensed.get(person.track, 0)):
 			return false
-		var cohort: Dictionary = state.population.stations.get(person.station_id, {})
-		if cohort.is_empty() or int(cohort.cohorts.assigned_workers) < int(reserved[key]):
+		resident_ids[str(person.station_id)] = int(resident_ids.get(str(person.station_id), 0)) + 1
+		var cohort: Dictionary = state.population.stations.get(str(person.station_id), {})
+		if cohort.is_empty() or int(cohort.cohorts.assigned_workers) < int(resident_ids[str(person.station_id)]):
 			return false
 	for n in range(1, int(state.professional_next_id)):
 		if not roster.has("professional_%d" % n):
 			return false
 	var replay: Dictionary = {}
 	var work_by_recipe: Dictionary = {}
+	var professional_departures: Dictionary = {}
+	var professional_arrivals: Dictionary = {}
+	var credential_departures: Dictionary = {}
+	var credential_arrivals: Dictionary = {}
 	for event in state.ledger:
 		var kind: String = str(event.get("kind", ""))
+		if kind in ["career_transfer_departure", "career_transfer_arrival"] and int(event.get("price", 0)) == 1:
+			var travel_key := str(event.get("ship_id", "")) + "|" + str(event.get("station_id", "")) + "|" + str(event.get("ware_id", ""))
+			var bucket: Dictionary = credential_departures if kind == "career_transfer_departure" else credential_arrivals
+			bucket[travel_key] = int(bucket.get(travel_key, 0)) + int(event.get("quantity", 0))
 		if not kind.begins_with("professional_"):
 			continue
-		if kind not in ["professional_appoint", "professional_assign", "professional_unassign", "professional_due", "professional_payroll", "professional_work"]:
+		if kind not in ["professional_appoint", "professional_assign", "professional_unassign", "professional_due", "professional_payroll", "professional_work", "professional_board", "professional_arrive"]:
 			return false
 		var id: String = str(event.get("ware_id", ""))
 		if not roster.has(id) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick) or not _is_nonnegative_integer(event.get("quantity")) or int(event.quantity) != 1 or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")):
 			return false
 		var person: Dictionary = roster[id]
-		if str(event.get("station_id", "")) != str(person.station_id):
-			return false
 		var tick: int = int(event.tick)
 		if kind == "professional_appoint":
-			if replay.has(id) or event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0:
+			if replay.has(id) or event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0 or not event.get("station_id") is String or str(event.station_id).is_empty():
 				return false
-			replay[id] = {"active":true, "last":tick, "tick":tick, "due":0, "paid":0, "work":0}
+			replay[id] = {"active":true, "last":tick, "tick":tick, "due":0, "paid":0, "work":0, "station":str(event.station_id), "ship":""}
 			continue
 		if not replay.has(id):
 			return false
@@ -707,6 +744,26 @@ func _valid_professionals(state: Dictionary) -> bool:
 		if tick < int(acc.tick):
 			return false
 		acc.tick = tick
+		if kind == "professional_board":
+			if not state.has("professional_transport_version") or acc.active or not str(acc.ship).is_empty() or str(acc.station).is_empty() or str(event.station_id) != str(acc.station) or str(event.ship_id).is_empty() or int(event.price) != 0 or int(event.amount) != 0:
+				return false
+			var key := str(event.ship_id) + "|" + str(event.station_id) + "|" + str(person.track)
+			professional_departures[key] = int(professional_departures.get(key, 0)) + 1
+			acc.station = ""
+			acc.ship = str(event.ship_id)
+			acc.last = tick
+			continue
+		if kind == "professional_arrive":
+			if not state.has("professional_transport_version") or acc.active or str(acc.ship).is_empty() or str(acc.ship) != str(event.ship_id) or str(event.station_id).is_empty() or int(event.price) != 0 or int(event.amount) != 0:
+				return false
+			var key := str(event.ship_id) + "|" + str(event.station_id) + "|" + str(person.track)
+			professional_arrivals[key] = int(professional_arrivals.get(key, 0)) + 1
+			acc.station = str(event.station_id)
+			acc.ship = ""
+			acc.last = tick
+			continue
+		if str(acc.station).is_empty() or str(event.station_id) != str(acc.station) or not str(acc.ship).is_empty():
+			return false
 		if kind in ["professional_assign", "professional_unassign"]:
 			var enabling: bool = kind == "professional_assign"
 			if event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0 or bool(acc.active) == enabling:
@@ -727,14 +784,24 @@ func _valid_professionals(state: Dictionary) -> bool:
 			if not acc.active or int(acc.due) != int(acc.paid) or recipe not in ProfessionalScript.WORK[person.track].recipes or int(event.price) != 0 or int(event.amount) != 0:
 				return false
 			acc.work = int(acc.work) + 1
-			var key := str(person.station_id) + "|" + recipe
+			var key := str(event.station_id) + "|" + recipe
 			work_by_recipe[key] = int(work_by_recipe.get(key, 0)) + 1
 	for id in roster:
 		if not replay.has(id):
 			return false
 		var person: Dictionary = roster[id]
 		var acc: Dictionary = replay[id]
-		if bool(person.active) != bool(acc.active) or int(person.last_salary_tick) != int(acc.last) or int(person.salary_due) != int(acc.due) or int(person.salary_paid) != int(acc.paid) or int(person.work_events) != int(acc.work):
+		if bool(person.active) != bool(acc.active) or str(person.station_id) != str(acc.station) or int(person.last_salary_tick) != int(acc.last) or int(person.salary_due) != int(acc.due) or int(person.salary_paid) != int(acc.paid) or int(person.work_events) != int(acc.work):
+			return false
+		if transports.has(id) != (not str(acc.ship).is_empty()):
+			return false
+		if transports.has(id) and str(transports[id]) != str(acc.ship):
+			return false
+	for key in professional_departures:
+		if int(professional_departures[key]) > int(credential_departures.get(key, 0)):
+			return false
+	for key in professional_arrivals:
+		if int(professional_arrivals[key]) > int(credential_arrivals.get(key, 0)):
 			return false
 	for key in work_by_recipe:
 		var tokens: Array = str(key).split("|")
