@@ -55,6 +55,8 @@ func assign(world: RefCounted, ship_id: String, destination_id: String) -> Dicti
 		return {"ok":false, "message":"Choose an actual owned station with a completed wastewater recycling module."}
 	if int(ship.cargo_capacity) < 1:
 		return {"ok":false, "message":"This ship has no physical cargo bay for waste."}
+	if world.livestock.has_living_animals(ship):
+		return {"ok":false, "message":"Living animals cannot travel alongside hazardous waste; unload them into a completed enclosure first."}
 	if int(ship.get("settler_passengers", 0)) != 0 or not ship.get("career_manifest", {}).is_empty() or not ship.get("professional_passenger_ids", []).is_empty():
 		return {"ok":false, "message":"Complete civilian transport before assigning a bio-waste hauler."}
 	if bool(ship.waste_transport.enabled) and str(ship.waste_transport.destination_id) == destination_id:
@@ -65,6 +67,7 @@ func assign(world: RefCounted, ship_id: String, destination_id: String) -> Dicti
 	world.build_supply.stop(ship)
 	world.station_supply.stop(ship)
 	world.biosurvey.stop(ship)
+	world.livestock.stop(ship)
 	stop(ship)
 	ship.waste_transport.enabled = true
 	ship.waste_transport.destination_id = destination_id
