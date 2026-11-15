@@ -2657,6 +2657,22 @@ func _open_education_screen(station_id: String) -> void:
 	board_button.name = "CareerBoardButton"
 	board_button.pressed.connect(_career_board_graduates)
 	transport_row.add_child(board_button)
+	var employment_row := HBoxContainer.new()
+	employment_row.add_theme_constant_override("separation", 6)
+	column.add_child(employment_row)
+	employment_row.add_child(_label("REAL PROFESSIONAL WORK", 13, ACCENT))
+	var employ_button := _button("Employ graduate")
+	employ_button.name = "ProfessionalAppointButton"
+	employ_button.pressed.connect(_professional_appoint)
+	employment_row.add_child(employ_button)
+	var pause_button := _button("Off duty")
+	pause_button.name = "ProfessionalUnassignButton"
+	pause_button.pressed.connect(_professional_unassign)
+	employment_row.add_child(pause_button)
+	var resume_button := _button("Return to duty")
+	resume_button.name = "ProfessionalAssignButton"
+	resume_button.pressed.connect(_professional_assign)
+	employment_row.add_child(resume_button)
 	column.add_child(_wrapped_label("One real resident mentor and a genuine workplace are required per course. Study notes, energy, and salaries are consumed every 60 ticks. Boarding transfers already qualified adults into actual ship passenger berths; finish the voyage using Ship & Crew > Disembark / return. All qualifications stay with the existing people.", 12, MUTED))
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -2703,6 +2719,8 @@ func _update_education_screen() -> void:
 	rows.append("Real resident adults: %d · School-age youths: %d\nFaction credits: %d · Physical station stock: Energy %d, Recorded Data %d, Research Notes %d\nOne instructor supervises up to %d concurrent learners. Appointing adults changes assignments, never headcount." % [int(cohort.cohorts.assigned_workers), int(cohort.cohorts.students), int(world.state.starting_credits), int(station.stock.get("energy_cells", 0)), int(station.stock.get("recorded_data", 0)), int(station.stock.get("research_notes", 0)), world.education.STUDENTS_PER_TEACHER])
 	rows.append_array(world.education.report(world, education_station_id))
 	rows.append_array(world.careers.report(world, education_station_id))
+	rows.append_array(world.professionals.report(world, education_station_id))
+	rows.append("Professional employment is currently wired to completed engineering and agricultural production only. Other graduate professions await real work-event integration. One named adult remains part of the same existing station population.")
 	rows.append("Practical completions confirm supervised local workplace training, not instant ship skill or a captain assignment. Only explicit qualified passenger boarding transfers credentials to another owned residence.")
 	var selected_ship := ""
 	if career_ship_picker.selected >= 0:
@@ -2758,6 +2776,25 @@ func _career_board_graduates() -> void:
 		return
 	var ship_id: String = str(career_ship_picker.get_item_metadata(career_ship_picker.selected))
 	_education_action_result(world.careers.board_qualified(world, ship_id, _career_selected_track(), int(education_quantity.value), career_certified_toggle.button_pressed))
+
+
+func _professional_appoint() -> void:
+	_education_action_result(world.professionals.appoint(world, education_station_id, _career_selected_track()))
+
+
+func _professional_worker_for_track() -> String:
+	for worker in world.state.professional_registry.values():
+		if str(worker.station_id) == education_station_id and str(worker.track) == _career_selected_track():
+			return str(worker.id)
+	return ""
+
+
+func _professional_unassign() -> void:
+	_education_action_result(world.professionals.set_active(world, _professional_worker_for_track(), false))
+
+
+func _professional_assign() -> void:
+	_education_action_result(world.professionals.set_active(world, _professional_worker_for_track(), true))
 
 
 func _close_education_screen() -> void:
