@@ -23,9 +23,11 @@ func prepare(target: Dictionary) -> Error:
 			recycler = recipe
 			break
 	if recycler.is_empty() or recycler.outputs != {"potable_water":1, "fertile_soil":1}:
+		printerr("Salt migration found unexpected recycler recipe: ", recycler)
 		return ERR_INVALID_DATA
 	for station in target.stations:
 		if station.stock.has("salt"):
+			printerr("Salt migration encountered pre-existing station salt: ", station.id)
 			return ERR_ALREADY_IN_USE
 	for ship in target.ships:
 		if ship.cargo.has("salt"):
