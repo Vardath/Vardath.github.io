@@ -4986,7 +4986,7 @@ func _run() -> void:
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok, "new students reach the physical player-owned school and its actual warehouse")
 	if p35c_books_required > 0:
 		_expect(p35c_world.transfer_player_station("ship_001", "player_station_2", "recorded_data", p35c_books_required, true).ok, "paid archive media is delivered from ship cargo into real classroom stock, not credited magically")
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "new arrivals' real family residence is stocked with existing factory food, water, medicine and bought energy")
+	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3), "new arrivals' real family residence is stocked with existing factory food, water, medicine and bought energy")
 	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.settlement.disembark(p35c_world, "ship_001", 2).ok, "two paid incoming adults take real powered beds with their original NPC source population debited exactly once")
 	p35c_world.advance_ticks(60)
@@ -4995,10 +4995,10 @@ func _run() -> void:
 	for course_round in range(6):
 		if not p35c_campus.education.courses.has("engineering_college"):
 			break
-		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "real physical school life support and electricity are supplied during theory block %d" % course_round)
+		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3), "real physical school life support and electricity are supplied during theory block %d" % course_round)
 		p35c_world.advance_ticks(60)
 	_expect(p35c_campus.education.qualified.engineering_college == 2 and not p35c_campus.education.courses.has("engineering_college"), "five paid teaching periods produce a second existing real theory graduate with original historical records")
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "the final academic instruction cycle exhausts its physical energy, so the practicum must be genuinely repowered before enrollment")
+	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3), "the final academic instruction cycle exhausts its physical energy, so the practicum must be genuinely repowered before enrollment")
 	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
 	var p35c_practice_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_2")
 	var p35c_practice_start: Dictionary = p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2) if p35c_practice_dock.ok else {"ok":false,"message":"Workship could not dock"}
@@ -5009,7 +5009,7 @@ func _run() -> void:
 	for practice_round in range(5):
 		if not p35c_campus.careers.apprenticeships.has("engineering_college"):
 			break
-		var p35c_practice_stocked: bool = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8)
+		var p35c_practice_stocked: bool = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3)
 		if not p35c_practice_stocked and int(p35c_factory.stock.get("potable_water", 0)) < maxi(0, 8 - int(p35c_campus.stock.get("potable_water", 0))):
 			# The old factory's full warehouse halts the ice extraction
 			# and purification chain. Physically load food aboard the same
@@ -5030,7 +5030,7 @@ func _run() -> void:
 					printerr("P35C INDUSTRIAL WATER RESTART LIMITED stock=", p35c_factory.stock, " recipes=", p35c_factory.production, " capacity=", p35c_factory.storage_capacity, " deposits=", p35c_factory.deposits)
 				if p35c_world.dock_ship("ship_001", "player_station_2").ok:
 					_expect(p35c_world.transfer_player_station("ship_001", "player_station_2", "food_rations", p35c_shift_food, true).ok, "school receives the physical food removed from the congested industrial warehouse, conserving ship and station stock")
-				p35c_practice_stocked = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8)
+				p35c_practice_stocked = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3)
 		if not p35c_practice_stocked:
 			printerr("P35C PRACTICE RESUPPLY BLOCKED round=", practice_round, " source=", p35c_factory.stock, " campus=", p35c_campus.stock, " ship=", p35c_ship.cargo, " source_vol=", p35c_world.station_volume("player_station_1"), " ship_vol=", p35c_world.cargo_volume("ship_001"), " campus_vol=", p35c_world.station_volume("player_station_2"))
 		_expect(p35c_practice_stocked, "both genuine apprentices receive real recorded work materials, electricity and residence during paid practical block %d" % practice_round)
@@ -5060,7 +5060,7 @@ func _run() -> void:
 	_expect(p35c_world.state.professional_registry.size() == 2 and p35c_world.professionals.available(p35c_world, "player_station_1", "engineering_college") == 0 and p35c_world.population.total_people(p35c_world) >= p35c_people, "identifying two real adult colleagues consumes no new population, diplomas, ship crews or extra graduate slots")
 	# The destination campus is serviced before the departure. At admission
 	# the original field-tested real habitat must still be powered.
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "shared professional transport's destination receives real cargo and bought electricity before the crossing")
+	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 3), "shared professional transport's destination receives real cargo and bought electricity before the crossing")
 	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
 	_expect(p35c_world.habitation.operational_capacity(p35c_campus, p35c_world.state.habitation_catalog) >= 4, "future destination family housing has genuinely completed another finite powered maintenance cycle")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok, "the transport ship returns to the real employer to collect both named engineers")
