@@ -972,10 +972,7 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 
 
 func _valid_animal_feed(state: Dictionary) -> bool:
-	var passed: bool = AnimalFeedAudit.new().valid(state)
-	if not passed:
-		printerr("Pass37D audit failed: feed_version=", state.get("animal_feed_version"), " catalogue=", state.get("animal_feed_catalog", {}).keys(), " quarantine=", state.get("animal_quarantine", {}))
-	return passed
+	return AnimalFeedAudit.new().valid(state)
 
 
 func _valid_livestock(state: Dictionary) -> bool:
