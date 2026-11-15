@@ -5505,6 +5505,25 @@ func _run() -> void:
 		var p37b_build_station: Dictionary = p37b._find_station(str(p37b_build_site.station_id))
 		_expect(p37b.dock_ship("ship_001", str(p37b_build_station.id)).ok and not p37b.transfer_player_station("ship_001", str(p37b_build_station.id), "sunlace_seed_capsule", 1, true).ok and int(p37b_build_station.stock.get("sunlace_seed_capsule", 0)) == 0, "an unbuilt gene-bank plot may NOT accept dangerous or delicate biological cargo before physical containment is constructed")
 	_expect(save_store.save_game(test_root + "/pass37b-construction-pending.json", p37b.snapshot()) == OK, "unfunded biological construction cannot mint crops, genetic records or power")
+	# Now commission those exact modules using actual NPC alloys and solar
+	# power, transported by the collecting ship rather than injected goods.
+	_expect(p37b.queue_fly_to("ship_001", "vellum_gate"), "the original surveying ship begins a real cross-sector journey to acquire building alloys")
+	p37b.advance_ticks(30)
+	_expect(p37b.dock_ship("ship_001", "vellum_foundry").ok and p37b.trade("ship_001", "vellum_foundry", "alloy_plates", 32, true).ok, "thirty-two paid, physically available NPC alloy units enter the original ship cargo")
+	_expect(p37b.queue_fly_to("ship_001", "hearthreach"), "ship returns to the genuine botanical construction site through the star network")
+	p37b.advance_ticks(30)
+	_expect(p37b.dock_ship("ship_001", "hearth_exchange").ok and p37b.trade("ship_001", "hearth_exchange", "energy_cells", 12, true).ok, "eleven real construction power cells and one operating cell are financed by existing player money")
+	_expect(p37b.dock_ship("ship_001", str(p37b_build_site.station_id)).ok and p37b.construction.deliver(p37b, "ship_001", str(p37b_build_site.id)).ok, "player physically unloads all paid gene bank and orchard build materials into the builder's real storage")
+	p37b.advance_ticks(105)
+	var p37b_finished_station: Dictionary = p37b._find_station(str(p37b_build_site.station_id))
+	_expect(int(p37b_build_site.completed) == 2 and p37b.biosurvey.has_gene_bank(p37b_finished_station) and p37b_finished_station.production.any(func(m): return m.recipe_id == "sunlace_hydroponics"), "NPC builder commissions both physical, paid biological modules before accepting any biological specimen")
+	_expect(p37b.dock_ship("ship_001", str(p37b_finished_station.id)).ok and p37b.transfer_player_station("ship_001", str(p37b_finished_station.id), "sunlace_seed_capsule", 2, true).ok and p37b.transfer_player_station("ship_001", str(p37b_finished_station.id), "energy_cells", 1, true).ok, "the same two collected seed capsules reach completed powered containment by a real docked ship")
+	p37b.advance_ticks(28)
+	_expect(int(p37b_finished_station.stock.get("biogene_record", 0)) == 1 and int(p37b_finished_station.stock.get("sunlace_seed_capsule", 0)) == 1 and int(p37b_finished_station.stock.get("sunlace_fruit", 0)) == 0, "one actual seed is archived using genuine power, and a second retained growing starter cannot produce fruit without real water, soil and power")
+	_expect(save_store.save_game(test_root + "/pass37b-physical-gene-bank.json", p37b.snapshot()) == OK, "finished biological gene banking, physical cargo transport, paid construction and conserved reserves pass strict save audits")
+	var p37b_final_saved: Dictionary = save_store.load_game(test_root + "/pass37b-physical-gene-bank.json")
+	var p37b_final_restore = WorldScript.new()
+	_expect(p37b_final_saved.get("ok", false) and p37b_final_restore.restore_snapshot(p37b_final_saved.state) == OK and p37b_final_restore.snapshot() == p37b.snapshot(), "real archived genes, site depletion, nutrition catalog and construction survive reload without minting extra specimens")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
