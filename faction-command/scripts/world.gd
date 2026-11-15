@@ -17,6 +17,7 @@ const HabitationScript = preload("res://scripts/habitation.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const SettlementScript = preload("res://scripts/settlement.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
+const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -36,6 +37,7 @@ var habitation = HabitationScript.new()
 var provisions = ProvisionsScript.new()
 var settlement = SettlementScript.new()
 var ecology = EcologyScript.new()
+var salt_recovery = SaltRecoveryScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -95,6 +97,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 	if settlement.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	if ecology.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
+	if salt_recovery.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	if demographics.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
@@ -156,6 +160,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = ecology.prepare(restored)
+	if result != OK:
+		return result
+	result = salt_recovery.prepare(restored)
 	if result != OK:
 		return result
 	result = demographics.prepare(restored)
@@ -457,6 +464,7 @@ func _tick_production(station: Dictionary) -> void:
 			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
+		salt_recovery.record_cycle(self, station, str(module.recipe_id))
 		professionals.record_production(self, station, str(module.recipe_id))
 		blocked = _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
