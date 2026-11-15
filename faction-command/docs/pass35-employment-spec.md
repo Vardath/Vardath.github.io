@@ -1,6 +1,6 @@
 # Faction Command — Pass 35: employment identity and professional experience
 
-Status: Pass 35A implementation on draft branch (professional identity, two real local jobs, payroll, production XP, basic mobile controls). This is NOT full Pass 35. CI must be checked at final PR head; no physical-handset QA.
+Status: Pass 35A merged on main; Pass 35B implements one-at-a-time named professional travel through real ships and fully provisioned residences on PR #19 (Android debug v25 target). This remains a partial Pass 35: named ship employment, multiple concurrent named passengers, four additional professions and physical-device QA are outstanding. Check exact final PR CI before merge.
 Base: main at Pass 34, e58507438477a82821b573521e5d09e0dcb49ad9.
 
 ## Goal
@@ -30,3 +30,9 @@ Species-specific life support, health and elder mortality, NPC-run education, ch
 
 ## Implementation checkpoint
 This document is the next scoped work package only. Pass 34 is the last merged implementation; do not advance the journal to 'Pass 35 completed' until game code, tests, both CI jobs and postmerge verification exist.
+
+## Pass 35B implementation checkpoint
+
+The original resident ID travels in the **same existing settler berth count** using `professional_passenger_id`, while `professional_registry[id].station_id` is empty only during ship transit. That record is returned to a physically eligible receiving player station on disembark. Academic and practical counters move through the existing permanent career-transfer ledger entries, with new per-ID professional board/arrival entries and location-aware wage/XP history replay. No new person, qualification, ship or skill is minted. Boarding suspends duty and future salary assessments, retains accrued arrears and real work XP, and blocks ordinary passenger mixing. A failed housing admission retains the ID and passenger record on the ship. Versioned additive ship migration preserves historic saves. Only one named passenger per ship and one certified track per named person are supported.
+
+After Pass 35B, the next implementation gate is **Pass 35C**: support multiple identified professionals safely (capacity- and identity-bounded), give actual ship-based work contracts/events, then connect navigator, management, archive/research and civilian safety employment to corresponding genuine work completion. Multi-credential people, specialized medical/elder health and species-specific habitats require their own saved models and cannot be asserted as implemented.
