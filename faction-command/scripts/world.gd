@@ -135,7 +135,9 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if livestock.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
-	if animal_feed.prepare(new_state) != OK:
+	var feed_prepare_result: Error = animal_feed.prepare(new_state)
+	if feed_prepare_result != OK:
+		printerr("Pass37D feed bootstrap: code=", feed_prepare_result, " data=", animal_feed.definitions().keys(), " prior livestock=", new_state.get("livestock_version"), " prior wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
 		return ERR_INVALID_DATA
 	state = new_state
 	return OK
