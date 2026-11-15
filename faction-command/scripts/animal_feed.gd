@@ -42,8 +42,9 @@ func definitions() -> Dictionary:
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
 	if not data is Dictionary or data.get("schema_version") != VERSION or not data.get("scope") is String or not data.get("wares") is Array or not data.get("recipes") is Array or not data.get("blueprints") is Dictionary:
 		return {}
-	printerr("Pass37D feed schema check: size=", data.wares.size(), "/", data.recipes.size(), "/", data.blueprints.size(), " speciesEqual=", data.get("species_feed") == FEED_BY_SPECIES, " bonusEqual=", data.get("animal_feed_bonus") == {"breeding_step":2,"maturation_step":2}, " vetEqual=", data.get("veterinary") == {"medical_supplies_per_two_animals":1,"energy_cells_per_treatment":1})
-	if data.wares.size() != WARE_IDS.size() or data.recipes.size() != RECIPE_IDS.size() or data.blueprints.size() != RECIPE_IDS.size() or data.get("species_feed") != FEED_BY_SPECIES or data.get("animal_feed_bonus") != {"breeding_step":2, "maturation_step":2} or data.get("veterinary") != {"medical_supplies_per_two_animals":1,"energy_cells_per_treatment":1}:
+	if data.wares.size() != WARE_IDS.size() or data.recipes.size() != RECIPE_IDS.size() or data.blueprints.size() != RECIPE_IDS.size() or data.get("species_feed") != FEED_BY_SPECIES or not data.get("animal_feed_bonus") is Dictionary or not data.get("veterinary") is Dictionary:
+		return {}
+	if data.animal_feed_bonus.size() != 2 or not _integer(data.animal_feed_bonus.get("breeding_step"), 2, 2) or not _integer(data.animal_feed_bonus.get("maturation_step"), 2, 2) or data.veterinary.size() != 2 or not _integer(data.veterinary.get("medical_supplies_per_two_animals"), 1, 1) or not _integer(data.veterinary.get("energy_cells_per_treatment"), 1, 1):
 		return {}
 	for i in range(WARE_IDS.size()):
 		var ware: Variant = data.wares[i]
