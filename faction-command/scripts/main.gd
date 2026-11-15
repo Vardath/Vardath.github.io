@@ -2687,6 +2687,10 @@ func _open_education_screen(station_id: String) -> void:
 	career_named_worker_picker.custom_minimum_size = Vector2(190, 44)
 	career_named_worker_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	employment_row.add_child(career_named_worker_picker)
+	var register_button := _button("Identify graduate")
+	register_button.name = "ProfessionalRegisterButton"
+	register_button.pressed.connect(_professional_register)
+	employment_row.add_child(register_button)
 	var employ_button := _button("Employ graduate")
 	employ_button.name = "ProfessionalAppointButton"
 	employ_button.pressed.connect(_professional_appoint)
@@ -2835,6 +2839,10 @@ func _professional_board_named() -> void:
 
 func _on_career_track_change(_index: int) -> void:
 	_update_education_screen()
+
+
+func _professional_register() -> void:
+	_education_action_result(world.professionals.register_graduate(world, education_station_id, _career_selected_track()))
 
 
 func _professional_appoint() -> void:
