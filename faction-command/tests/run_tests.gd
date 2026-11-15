@@ -5010,6 +5010,23 @@ func _run() -> void:
 		if not p35c_campus.careers.apprenticeships.has("engineering_college"):
 			break
 		var p35c_practice_stocked: bool = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8)
+		if not p35c_practice_stocked and int(p35c_factory.stock.get("potable_water", 0)) < maxi(0, 8 - int(p35c_campus.stock.get("potable_water", 0))):
+			# The old factory's full warehouse halts the ice extraction
+			# and purification chain. Physically load food aboard the same
+			# ship to free storage, let the REAL ice/solar/water modules
+			# run, and deliver that food to the school rather than delete
+			# or sell a virtual pile of goods.
+			var p35c_shift_food: int = mini(12, int(p35c_factory.stock.get("food_rations", 0)))
+			var p35c_room: int = maxi(0, int(p35c_ship.cargo_capacity) - p35c_world.cargo_volume("ship_001"))
+			p35c_shift_food = mini(p35c_shift_food, p35c_room)
+			if p35c_shift_food > 0 and p35c_world.dock_ship("ship_001", "player_station_1").ok:
+				_expect(p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", p35c_shift_food, false).ok, "moving actual source food into ship cargo frees industrial storage to reactivate its blocked ice, solar and water production")
+				p35c_world.advance_ticks(120)
+				if int(p35c_factory.stock.get("potable_water", 0)) < 6:
+					printerr("P35C INDUSTRIAL WATER RESTART LIMITED stock=", p35c_factory.stock, " recipes=", p35c_factory.production, " capacity=", p35c_factory.storage_capacity, " deposits=", p35c_factory.deposits)
+				if p35c_world.dock_ship("ship_001", "player_station_2").ok:
+					_expect(p35c_world.transfer_player_station("ship_001", "player_station_2", "food_rations", p35c_shift_food, true).ok, "school receives the physical food removed from the congested industrial warehouse, conserving ship and station stock")
+				p35c_practice_stocked = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8)
 		if not p35c_practice_stocked:
 			printerr("P35C PRACTICE RESUPPLY BLOCKED round=", practice_round, " source=", p35c_factory.stock, " campus=", p35c_campus.stock, " ship=", p35c_ship.cargo, " source_vol=", p35c_world.station_volume("player_station_1"), " ship_vol=", p35c_world.cargo_volume("ship_001"), " campus_vol=", p35c_world.station_volume("player_station_2"))
 		_expect(p35c_practice_stocked, "both genuine apprentices receive real recorded work materials, electricity and residence during paid practical block %d" % practice_round)
