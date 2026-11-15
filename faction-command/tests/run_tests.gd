@@ -5788,6 +5788,50 @@ func _run() -> void:
 	var p37d_clinic_reloaded = WorldScript.new()
 	_expect(p37d_clinic_saved.get("ok", false) and p37d_clinic_reloaded.restore_snapshot(p37d_clinic_saved.state) == OK and p37d_clinic_reloaded.snapshot() == p37d_clinic.snapshot(), "after treatment the exact living fauna population, completed paid clinic and waste receipts survive save/reload")
 
+	# The source crop starts with genuine Pass 37B biome genetics, not
+	# directly spawned fruit. Farm water/soil below are controlled fixtures
+	# to isolate this downstream crop/feed production integration.
+	var p37d_crop = WorldScript.new()
+	_expect(p37d_crop.restore_snapshot(p37b.snapshot()) == OK, "crop-to-feed integration starts from a previously paid, built gene bank and biological orchard, with real native seed provenance")
+	_disable_npc_trading(p37d_crop)
+	var p37d_crop_farm: Dictionary = p37d_crop._find_station(str(p37b_finished_station.id))
+	_expect(p37d_crop.dock_ship("ship_001", "hearth_exchange").ok and p37d_crop.trade("ship_001", "hearth_exchange", "energy_cells", 4, true).ok and p37d_crop.biosurvey.assign(p37d_crop, "ship_001", "hearthreach").ok, "a third Liora seed capsule must be acquired through actual survey with another paid Energy Cell")
+	p37d_crop.advance_ticks(18)
+	_expect(int(p37d_crop._find_ship("ship_001").cargo.get("sunlace_seed_capsule", 0)) == 1, "one additional finite seed was genuinely collected, with native reserve and paired power receipts")
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_crop_farm.id)).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_crop_farm.id), "sunlace_seed_capsule", 1, true).ok, "third native seed is transferred through the existing physical ship and station containment system")
+	# Clearly controlled farm-input fixture: water and soil are existing
+	# manufacturable wares. Neither raw Sunlace fruit nor tailored nectar
+	# is injected. The orchard must perform its real forty-tick recipe.
+	p37d_crop_farm.stock.potable_water = 12
+	p37d_crop_farm.stock.fertile_soil = 6
+	p37d_crop_farm.stock.energy_cells = 5
+	p37d_crop.advance_ticks(45)
+	_expect(int(p37d_crop_farm.stock.get("sunlace_fruit", 0)) >= 3 and p37d_crop_farm.production.any(func(m): return m.recipe_id == "sunlace_hydroponics" and int(m.cycles) >= 1), "actual cultivated Sunlace fruit appears only after the real biological orchard consumes supplied water, soil and energy over forty ticks")
+	_expect(save_store.save_game(test_root + "/pass37d-source-grown-sunlace.json", p37d_crop.snapshot()) == OK, "provenance-audited Sunlace crop from a genetically sourced, physically built orchard survives saving")
+	var p37d_nectar_quote: Dictionary = p37d_crop.construction.quote(p37d_crop, "hearthreach", {"dustwhistle_nectar_blender":1}, "all", [])
+	_expect(p37d_nectar_quote.ok and int(p37d_nectar_quote.fee) == 1100 and int(p37d_nectar_quote.materials.alloy_plates) == 14 and int(p37d_nectar_quote.materials.energy_cells) == 3, "the new 1,100-credit species-specific nectar refinery has actual metal, power and builder requirements")
+	var p37d_nectar_build: Dictionary = p37d_crop.construction.place(p37d_crop, "hearthreach", {"dustwhistle_nectar_blender":1}, "all", [])
+	var p37d_nectar_site: Dictionary = p37d_crop.construction.find_site(p37d_crop, str(p37d_nectar_build.get("site_id", "")))
+	_expect(p37d_nectar_build.ok and not p37d_nectar_site.is_empty(), "player commissions a genuine dedicated animal-feed factory; it is not operational until paid materials arrive")
+	_expect(p37d_crop.queue_fly_to("ship_001", "vellum_gate"), "original botanical survey ship begins a real trip to purchase animal-feed factory alloys")
+	p37d_crop.advance_ticks(30)
+	_expect(p37d_crop.dock_ship("ship_001", "vellum_foundry").ok and p37d_crop.trade("ship_001", "vellum_foundry", "alloy_plates", 14, true).ok, "fourteen real alloy units are bought from the NPC foundry for the feed factory")
+	_expect(p37d_crop.queue_fly_to("ship_001", "hearthreach"), "same ship returns with paid factory materials on the normal galactic route")
+	p37d_crop.advance_ticks(30)
+	_expect(p37d_crop.dock_ship("ship_001", "hearth_exchange").ok and p37d_crop.trade("ship_001", "hearth_exchange", "energy_cells", 3, true).ok, "three additional physical power units are purchased for refinery construction")
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_nectar_site.station_id)).ok and p37d_crop.construction.deliver(p37d_crop, "ship_001", str(p37d_nectar_site.id)).ok, "all actual bought refinery construction wares are delivered into the hired builder site rather than minted")
+	p37d_crop.advance_ticks(75)
+	var p37d_nectar_station: Dictionary = p37d_crop._find_station(str(p37d_nectar_site.station_id))
+	_expect(int(p37d_nectar_site.completed) == 1 and p37d_nectar_station.production.any(func(m): return m.recipe_id == "dustwhistle_nectar_blender"), "external builder commissions the nectar refinery on a separate player-controlled station")
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_crop_farm.id)).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_crop_farm.id), "sunlace_fruit", 2, false).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_crop_farm.id), "potable_water", 1, false).ok, "ship loads two actually orchard-grown fruit and one physical unit of water at the genetic farm")
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_nectar_station.id)).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_nectar_station.id), "sunlace_fruit", 2, true).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_nectar_station.id), "potable_water", 1, true).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_nectar_station.id), "energy_cells", 1, true).ok, "cultivated source crop, processed water and power are delivered as independent finite cargo to the completed feed refinery")
+	p37d_crop.advance_ticks(25)
+	_expect(int(p37d_nectar_station.stock.dustwhistle_nectar) == 5 and int(p37d_nectar_station.stock.sunlace_fruit) == 0 and int(p37d_nectar_station.stock.potable_water) == 0 and int(p37d_nectar_station.stock.energy_cells) == 0, "one genuine 24-tick nectar refinery cycle consumes exactly two existing fruit, one water and one power to yield five physical species-feed units")
+	_expect(save_store.save_game(test_root + "/pass37d-real-botanical-nectar.json", p37d_crop.snapshot()) == OK, "fully executed source-certified orchard-to-species-feed chain survives strict biological and manufactured-output save auditing")
+	var p37d_nectar_saved: Dictionary = save_store.load_game(test_root + "/pass37d-real-botanical-nectar.json")
+	var p37d_nectar_reload = WorldScript.new()
+	_expect(p37d_nectar_saved.get("ok", false) and p37d_nectar_reload.restore_snapshot(p37d_nectar_saved.state) == OK and p37d_nectar_reload.snapshot() == p37d_crop.snapshot(), "delivered crop and made-to-recipe livestock feed reload without an extra source, energy, seed or finished feed item")
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
