@@ -151,6 +151,7 @@ func _strip_ecology(state: Dictionary) -> void:
 		station.stock.erase("salt")
 		station.erase("waste_buyer_species_id")
 		station.get("buy_prices", {}).erase("organic_waste")
+		station.get("buy_prices", {}).erase("salt")
 
 
 func _strip_provisions(state: Dictionary) -> void:
@@ -5039,7 +5040,21 @@ func _run() -> void:
 	p35c_world.advance_ticks(20)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "energy_cells", 20, true).ok, "the new water recycler's warehouse stores forty-eight imported waste units and twenty paid power units, not free production stock")
 	p35c_world.advance_ticks(310)
-	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20, "twenty real 15-tick biowaste and energy conversions create at least twenty water and twenty recovered soil without inventing inputs")
+	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20 and int(p35c_recycler.stock.get("salt", 0)) >= 20, "twenty real wastewater conversions yield water, soil AND separate recovered mineral salt from actual biological waste and energy")
+	# Three physically stored output wares fill an 80-volume recycler
+	# sooner. Sell the first REAL recovered salt batch at a distant
+	# biological market to free space for the subsequent sixteen cycles.
+	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "salt", 20, false).ok, "first twenty recovered salt units are physically loaded into the same ship rather than disappearing from reactor storage")
+	_expect(p35c_world.queue_fly_to("ship_001", "vellum_gate"), "salt is transported through actual connected sectors to a Mycoran biochemical buyer")
+	p35c_world.advance_ticks(40)
+	var p35c_salt_market_price: int = int(p35c_world._find_station("vellum_foundry").buy_prices.get("salt", 0))
+	_expect(p35c_salt_market_price == 10, "Mycoran buyers pay ten credits per actual recovered salt unit based on their independently modelled cultural valuation")
+	var p35c_salt_sell: Dictionary = p35c_world.trade("ship_001", "vellum_foundry", "salt", 20, false) if p35c_world.dock_ship("ship_001", "vellum_foundry").ok else {"ok":false}
+	if not p35c_salt_sell.ok:
+		printerr("P35C REAL SALT EXPORT BLOCKED result=", p35c_salt_sell, " market=", p35c_world._find_station("vellum_foundry").stock, " cargo=", p35c_ship.cargo)
+	_expect(p35c_salt_sell.ok, "a real solvent alien buyer purchases the original recovered salt; credits and cargo are conserved without inventing goods")
+	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "the recycled-water ship returns to its own sector to collect further wastewater")
+	p35c_world.advance_ticks(40)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "remaining eight genuine school wastewater units are hauled to the plant for a second batch")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "eight already stored industrial wastewater units join the same recycling chain rather than appearing from nothing")
 	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "another physical energy shipment is needed to finish recycling the full sixty-four wastewater units")
@@ -5249,6 +5264,7 @@ func _run() -> void:
 		p36_prev_station.stock.erase("salt")
 		p36_prev_station.erase("waste_buyer_species_id")
 		p36_prev_station.buy_prices.erase("organic_waste")
+		p36_prev_station.buy_prices.erase("salt")
 	for p36_ware_i in range(p36_prior.wares.size() - 1, -1, -1):
 		if str(p36_prior.wares[p36_ware_i].id) == "salt":
 			p36_prior.wares.remove_at(p36_ware_i)
