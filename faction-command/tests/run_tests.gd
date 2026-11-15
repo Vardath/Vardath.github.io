@@ -5009,7 +5009,10 @@ func _run() -> void:
 	for practice_round in range(5):
 		if not p35c_campus.careers.apprenticeships.has("engineering_college"):
 			break
-		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "both genuine apprentices receive real recorded work materials, electricity and residence during paid practical block %d" % practice_round)
+		var p35c_practice_stocked: bool = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8)
+		if not p35c_practice_stocked:
+			printerr("P35C PRACTICE RESUPPLY BLOCKED round=", practice_round, " source=", p35c_factory.stock, " campus=", p35c_campus.stock, " ship=", p35c_ship.cargo, " source_vol=", p35c_world.station_volume("player_station_1"), " ship_vol=", p35c_world.cargo_volume("ship_001"), " campus_vol=", p35c_world.station_volume("player_station_2"))
+		_expect(p35c_practice_stocked, "both genuine apprentices receive real recorded work materials, electricity and residence during paid practical block %d" % practice_round)
 		p35c_world.advance_ticks(60)
 	_expect(int(p35c_campus.careers.licensed.engineering_college) == 2 and p35c_campus.careers.apprenticeships.is_empty(), "four supervised paid production training blocks certify exactly two original adult engineers without generating extra people")
 	_expect(save_store.save_game(test_root + "/pass35c-two-real-practical-graduates.json", p35c_world.snapshot()) == OK, "two genuinely trained certificates and original NPC population provenance survive strict real-education-and-workplace save validation")
