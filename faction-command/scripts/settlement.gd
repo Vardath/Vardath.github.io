@@ -79,8 +79,8 @@ func board(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var station: Dictionary = _docked(world, ship)
 	if station.is_empty() or station.owner == world.state.player_faction_id or not world.state.crew_pools.has(str(station.id)):
 		return {"ok":false, "message":"Dock an owned ship at a non-hostile NPC recruitment station."}
-	if not ship.get("career_manifest", {}).is_empty():
-		return {"ok":false, "message":"Transfer or deliver the existing credentialed passengers first."}
+	if not ship.get("career_manifest", {}).is_empty() or not str(ship.get("professional_passenger_id", "")).is_empty():
+		return {"ok":false, "message":"Transfer or deliver the existing named/credentialed passengers first."}
 	if quantity < 1 or quantity > MAX_BATCH or quantity > free_berths(world, ship):
 		return {"ok":false, "message":"Not enough unoccupied ship berths for this group."}
 	if int(world.state.relations.get(str(station.owner), 0)) < -25:
@@ -107,8 +107,8 @@ func evacuate(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var station: Dictionary = _docked(world, ship)
 	if station.is_empty() or station.owner != world.state.player_faction_id:
 		return {"ok":false, "message":"Dock your owned ship at an existing player colony to evacuate residents."}
-	if not ship.get("career_manifest", {}).is_empty():
-		return {"ok":false, "message":"Transfer or deliver credentialed passengers before boarding ordinary rescue groups."}
+	if not ship.get("career_manifest", {}).is_empty() or not str(ship.get("professional_passenger_id", "")).is_empty():
+		return {"ok":false, "message":"Transfer or deliver named/credentialed passengers before boarding ordinary rescue groups."}
 	if quantity < 1 or quantity > MAX_BATCH or quantity > free_berths(world, ship) or not _manifest_compatible(ship, str(station.id)):
 		return {"ok":false, "message":"Choose an available transport berth, and do not mix passengers from different sources."}
 	var record: Dictionary = world.population.station_cohort(world, str(station.id))
@@ -140,6 +140,8 @@ func _clear_manifest(ship: Dictionary, quantity: int) -> void:
 
 func disembark(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
 	var ship: Dictionary = world._find_ship(ship_id)
+	if not ship.is_empty() and not str(ship.get("professional_passenger_id", "")).is_empty():
+		return world.professionals.disembark_named(world, ship_id, quantity)
 	if not ship.is_empty() and not ship.get("career_manifest", {}).is_empty():
 		return world.careers.settle_qualified(world, ship_id, quantity)
 	var station: Dictionary = _docked(world, ship)
