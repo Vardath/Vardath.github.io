@@ -1,5 +1,5 @@
 name: Faction Command foundation
-# Pass 35C1: verify 1,941+ live regressions and signed Android v26, multi-person named transport and actual touch controls.
+# Pass 36: verify 1,990+ checks and signed Android v27, finite wastewater salt, owned waste haulers and species-dependent bio-buyers.
 on:
   push:
     paths:
@@ -117,8 +117,8 @@ jobs:
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='26'" package-info.txt
-          grep -F "versionName='0.1.26-debug'" package-info.txt
+          grep -F "versionCode='27'" package-info.txt
+          grep -F "versionName='0.1.27-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
