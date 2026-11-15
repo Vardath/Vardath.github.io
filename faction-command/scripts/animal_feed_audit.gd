@@ -47,7 +47,7 @@ func valid(state: Dictionary) -> bool:
 			return false
 		var station: Dictionary = station_map[parts[0]]
 		var animal: Dictionary = species[parts[1]]
-		if station.owner != state.player_faction_id or FeedScript.new().clinic_count(station) < 0:
+		if station.owner != state.player_faction_id:
 			return false
 		var has_pen := false
 		for module in station.production:
