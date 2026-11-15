@@ -1,5 +1,5 @@
 name: Faction Command foundation
-# Pass 37A: verify 1,990+ prior checks, species-specific biology and signed Android v28.
+# Pass 37B: finite botanical sampling, physical seedbank production, save compatibility and signed Android v29.
 on:
   push:
     paths:
@@ -117,8 +117,8 @@ jobs:
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='28'" package-info.txt
-          grep -F "versionName='0.1.28-debug'" package-info.txt
+          grep -F "versionCode='29'" package-info.txt
+          grep -F "versionName='0.1.29-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
