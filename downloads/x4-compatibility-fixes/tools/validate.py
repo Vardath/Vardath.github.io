@@ -513,38 +513,44 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             apply_patch(E.fromstring(b'<mdscript><cues><cue name="EnsurePermanentCrew"><actions><do_if value="true"/></actions></cue></cues></mdscript>'),patch)
 
-    def test_chc_null_target_repeated_exact_attributes_do_not_ambiguously_match(self):
-        """Log-grounded; Workshop XML unavailable; synthetic repeated attributes."""
+    def test_chc_context_scoped_optional_null_lookups_are_single_match(self):
+        """Only named context is patched; upstream Workshop source unavailable."""
         p='extensions/kuertee_crime_has_consequences/md/kuertee_chc.xml'
         patch=E.parse(str(MOD/p)).getroot()
         ops=[x for x in patch if isinstance(x.tag,str)]
-        self.assertEqual(len(ops),7)
-        target="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact"
-        for op in ops[:6]:
+        self.assertEqual(len(ops),3)
+        for op in ops:
             self.assertEqual(op.tag,'replace')
-            self.assertEqual(op.get('sel'),target)
             self.assertEqual(op.get('silent'),'true')
-            self.assertEqual(op.text,'@$kCHC_object.trueowner.headquarters')
-        self.assertEqual(ops[-1].get('sel'),
+        self.assertEqual(ops[0].get('sel'),
+                         "/mdscript//cue[@name='ResolveObjectToShipStation']//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact")
+        self.assertEqual(ops[1].get('sel'),
+                         "/mdscript//library[@name='ResolveObjectToShipStation']//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact")
+        self.assertEqual(ops[2].get('sel'),
                          "/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value")
-        self.assertEqual(ops[-1].text,'@$kCHC_object.toplevelcommander')
-        original=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="Init"><actions><set_value name="$One" exact="$kCHC_object.trueowner.headquarters"/><set_value name="$Two" exact="$kCHC_object.trueowner.headquarters"/><do_if value="$kCHC_object.toplevelcommander"><set_value name="$Branch" exact="true"/></do_if><set_value name="$Unchanged" exact="true"/></actions></cue></cues></mdscript>')
-        merged=apply_patch(original,patch)
-        actions=merged.xpath(".//cue[@name='Init']/actions")[0]
-        self.assertEqual(len(actions),4)
-        self.assertEqual([x.get('exact') for x in actions[:2]],
-                         ['@$kCHC_object.trueowner.headquarters']*2)
-        self.assertEqual(actions[2].get('value'),'@$kCHC_object.toplevelcommander')
-        self.assertEqual(actions[2][0].get('name'),'$Branch')
-        self.assertEqual(canonical(actions[3]),canonical(original.xpath(".//set_value[@name='$Unchanged']")[0]))
-        # A third repeated original also gets patched, rather than failing
-        # with the 1.0.8 'multiple matching nodes' error.
-        third=copy.deepcopy(original)
-        third.xpath('.//actions')[0].insert(2,E.fromstring(b'<set_value name="$Three" exact="$kCHC_object.trueowner.headquarters"/>'))
-        transformed=apply_patch(third,patch)
-        self.assertEqual(len(transformed.xpath(".//set_value[@exact='@$kCHC_object.trueowner.headquarters']")),3)
-        # Later silent operations are no-ops and do not overwrite any valid owner.
-        self.assertEqual(len(transformed.xpath(".//set_value[@exact='$kCHC_object.trueowner.headquarters']")),0)
+        for op in ops[:2]:
+            self.assertEqual(op.text,'@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(ops[2].text,'@$kCHC_object.toplevelcommander')
+        # Two possible MD layouts are tested separately. A named context
+        # does not select an unrelated duplicate exact expression elsewhere.
+        cue=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="ResolveObjectToShipStation"><actions><set_value name="$HQ" exact="$kCHC_object.trueowner.headquarters"/><do_if value="$kCHC_object.toplevelcommander"><set_value name="$Original" exact="true"/></do_if></actions></cue><cue name="Elsewhere"><actions><set_value name="$Other" exact="$kCHC_object.trueowner.headquarters"/></actions></cue></cues></mdscript>')
+        merged=apply_patch(cue,patch)
+        self.assertEqual(merged.xpath(".//cue[@name='ResolveObjectToShipStation']//set_value[@name='$HQ']")[0].get('exact'),
+                         '@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(merged.xpath(".//cue[@name='Elsewhere']//set_value")[0].get('exact'),
+                         '$kCHC_object.trueowner.headquarters')
+        self.assertEqual(merged.xpath(".//cue[@name='ResolveObjectToShipStation']//do_if")[0].get('value'),
+                         '@$kCHC_object.toplevelcommander')
+        lib=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="Any"><actions><set_value name="$Unrelated" exact="$kCHC_object.trueowner.headquarters"/></actions></cue></cues><libraries><library name="ResolveObjectToShipStation"><actions><set_value name="$HQ" exact="$kCHC_object.trueowner.headquarters"/></actions></library></libraries></mdscript>')
+        merged=apply_patch(lib,patch)
+        self.assertEqual(merged.xpath(".//library[@name='ResolveObjectToShipStation']//set_value")[0].get('exact'),
+                         '@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(merged.xpath(".//cue[@name='Any']//set_value")[0].get('exact'),
+                         '$kCHC_object.trueowner.headquarters')
+        # Fail closed on unknown cue structures instead of modifying any
+        # other repeated expression or overwriting a valid stored target.
+        unchanged=E.fromstring(b'<mdscript><cues><cue name="Unknown"><actions><set_value name="$X" exact="$kCHC_object.trueowner.headquarters"/></actions></cue></cues></mdscript>')
+        self.assertEqual(canonical(apply_patch(unchanged,patch)),canonical(unchanged))
 
     def test_chc_optional_workshop_dependency(self):
         root=E.parse(str(MOD/'content.xml')).getroot()
@@ -612,7 +618,7 @@ def validate(cache, archive=None):
             'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS | {envoy_path,chc_path}),
             'single_match_operations':len(counts),'contract_tests':count,
             'result':'partial',
-            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.','Kuertee CHC 9.02 original XML unavailable; repeated first-match optional guards are synthetic-verified only and require runtime confirmation.','Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.','Kuertee CHC 9.02 original XML unavailable; named-context optional guards are synthetic-verified only and may silently not apply to unknown upstream structures.','Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()
