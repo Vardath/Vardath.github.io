@@ -127,6 +127,8 @@ func _strip_demographics(state: Dictionary) -> void:
 
 func _strip_ecology(state: Dictionary) -> void:
 	_strip_demographics(state)
+	state.erase("biota_version")
+	state.erase("biota_catalog")
 	state.erase("salt_recovery_version")
 	state.erase("salt_recovery_catalog")
 	state.erase("waste_cultures_version")
@@ -5361,6 +5363,54 @@ func _run() -> void:
 	_expect(not p35c_world.waste_transport.assign(p35c_world, "ship_001", "player_station_3").ok, "ships carrying two distinct named passengers cannot simultaneously be commandeered for autonomous hazardous waste hauling")
 	p36_haul.waste_transport.stop(p36_haul_ship)
 	_expect(not p36_haul_ship.waste_transport.enabled and p36_haul_ship.role == "Unassigned" and p36_haul_ship.cargo == p36_haul_reload._find_ship("ship_001").cargo and p36_haul_ship.orders == p36_haul_reload._find_ship("ship_001").orders, "stopping a job does not delete any already carried waste, crew, equipment or queued ship order")
+
+	# Pass 37A — Biological reference catalogue without phantom livestock.
+	# No species provenance exists for old settlers, so taste/nutrition is
+	# assessed explicitly for a named consumer, never inferred by faction.
+	var p37_world = WorldScript.new()
+	_expect(p37_world.load_starter() == OK, "starter includes safe Pass 37A biological definitions")
+	var p37_defs: Dictionary = p37_world.biota.definitions()
+	_expect(not p37_defs.is_empty() and p37_defs.species.size() == 4 and p37_defs.organisms.size() >= 15 and p37_defs.cultures.size() == 4, "original plants, animals, fungus, microorganisms and alien food consumers load from verified biological catalogue")
+	_expect(p37_defs.organisms.any(func(o): return o.kind == "fauna" and o.roles.has("livestock") and o.harvest_byproducts.has("leather") and o.harvest_byproducts.has("fur")), "animal husbandry includes physically harvestable leather and fur in future lifecycle recipes")
+	_expect(p37_defs.organisms.any(func(o): return o.roles.has("pet") and o.harvest_byproducts.has("feathers")) and p37_defs.organisms.any(func(o): return o.roles.has("pest") and o.containment_hazard == "invasive"), "the same organism catalogue distinguishes companions, feather resources and invasive pests")
+	var p37_good: Dictionary = p37_world.biota.evaluate("aeralith", "sunlace_fruit")
+	var p37_treat: Dictionary = p37_world.biota.evaluate("aeralith", "glaze_nectar")
+	var p37_bitter: Dictionary = p37_world.biota.evaluate("aeralith", "bitter_skyroot")
+	var p37_poor: Dictionary = p37_world.biota.evaluate("aeralith", "ash_dustkelp")
+	_expect(p37_good.tasty and p37_good.nourishing and p37_good.safe, "Aeralith Sunlace Fruit: tasty and nutritious")
+	_expect(p37_treat.tasty and not p37_treat.nourishing, "Aeralith Glaze Nectar: tasty but nutritionally inadequate")
+	_expect(not p37_bitter.tasty and p37_bitter.nourishing, "Aeralith Bitter Skyroot: nutritious but repulsive")
+	_expect(not p37_poor.tasty and not p37_poor.nourishing, "Aeralith Ash Dustkelp: neither nutritious nor pleasant")
+	var p37_aeralith_truffle: Dictionary = p37_world.biota.evaluate("aeralith", "mycelune_truffle")
+	var p37_mycoran_truffle: Dictionary = p37_world.biota.evaluate("mycoran", "mycelune_truffle")
+	_expect(not p37_aeralith_truffle.nourishing and not p37_aeralith_truffle.tasty and not p37_aeralith_truffle.safe and p37_mycoran_truffle.nourishing and p37_mycoran_truffle.tasty and p37_mycoran_truffle.safe, "one real organism is poisonous and repulsive to Aeralith but safe, nutritious and delicious to Mycoran")
+	var p37_aeralith_grain: Dictionary = p37_world.biota.evaluate("aeralith", "flintgrain")
+	var p37_kethric_grain: Dictionary = p37_world.biota.evaluate("kethric", "flintgrain")
+	_expect(p37_kethric_grain.nourishing and p37_kethric_grain.tasty and not p37_aeralith_grain.nourishing and not p37_aeralith_grain.tasty, "mineral-dependent Kethric nutrition and flavors differ from aerial fruit eaters")
+	var p37_frontier_base: Dictionary = p37_world.biota.evaluate("lumeni", "mirealgae")
+	var p37_frontier_culture: Dictionary = p37_world.biota.evaluate("lumeni", "mirealgae", "frontier")
+	_expect(p37_frontier_culture.taste_score == p37_frontier_base.taste_score + 12 and p37_frontier_culture.nutrition_score == p37_frontier_base.nutrition_score and p37_frontier_culture.safe == p37_frontier_base.safe, "faction cuisine changes acquired liking but not biological nutrition or toxicity")
+	_expect(p37_world.biota.evaluate("mycoran", "velvet_sporecat").edible == false and not p37_world.biota.evaluate("mycoran", "velvet_sporecat").consume_allowed and not p37_world.biota.evaluate("kethric", "coilvine").consume_allowed, "pet and pest classification does not silently grant a safe food supply")
+	_expect(p37_world.biota.evaluate("unknown_species", "sunlace_fruit").is_empty() and p37_world.biota.evaluate("lumeni", "nonexistent").is_empty() and p37_world.biota.evaluate("lumeni", "mirealgae", "unknown_culture").is_empty(), "unknown organism, culture and species are rejected, not assigned default biological tastes")
+	var p37_starter: Dictionary = p37_world.snapshot()
+	_expect(p37_starter.biota_version == 1 and p37_starter.biota_catalog == p37_defs and p37_world.biota.prepare(p37_starter) == OK, "reference catalogue is versioned and deterministic without inventing specimens or foods")
+	var p37_old: Dictionary = p37_world.snapshot()
+	p37_old.erase("biota_version")
+	p37_old.erase("biota_catalog")
+	var p37_migration = WorldScript.new()
+	_expect(p37_migration.restore_snapshot(p37_old) == OK and p37_migration.state.biota_version == 1, "actual Pass 36 save gains a catalogue by additive migration only")
+	var p37_migrated_no_catalog: Dictionary = p37_migration.snapshot()
+	p37_migrated_no_catalog.erase("biota_version")
+	p37_migrated_no_catalog.erase("biota_catalog")
+	_expect(p37_migrated_no_catalog == p37_old, "migration conserves every pre-existing ship, order, crew, settler, warehouse unit, credit, salary and historical research datum")
+	_expect(save_store.save_game(test_root + "/pass37-biota.json", p37_world.snapshot()) == OK and save_store.load_game(test_root + "/pass37-biota.json").get("ok", false), "biological reference catalogue survives strict save and reload")
+	var p37_forged: Dictionary = p37_world.snapshot()
+	p37_forged.biota_catalog.organisms[0].nutrients.sugar = 99
+	_expect(save_store.save_game(test_root + "/pass37-forged-biota.json", p37_forged) != OK, "tampered organism nutrient values cannot bypass canonical catalog save audit")
+	var p37_future: Dictionary = p37_world.snapshot()
+	p37_future.biota_version = 2
+	_expect(save_store.save_game(test_root + "/pass37-future-biota.json", p37_future) != OK, "unknown future biological save versions are rejected")
+	_expect(p37_world._find_ware("sunlace_fruit").is_empty() and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
