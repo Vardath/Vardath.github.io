@@ -44,6 +44,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("settler_passengers")
 	copy.erase("settler_source_station_id")
 	copy.erase("career_manifest")
+	copy.erase("professional_passenger_id")
 	return copy
 
 
@@ -53,6 +54,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("settler_passengers")
 		ship.erase("settler_source_station_id")
 		ship.erase("career_manifest")
+		ship.erase("professional_passenger_id")
 	return copy
 
 
@@ -87,6 +89,7 @@ func _without_progression(ships: Array) -> Array:
 
 
 func _strip_careers(state: Dictionary) -> void:
+	state.erase("professional_transport_version")
 	state.erase("professional_version")
 	state.erase("professional_registry")
 	state.erase("professional_next_id")
@@ -96,6 +99,7 @@ func _strip_careers(state: Dictionary) -> void:
 		station.erase("careers")
 	for ship in state.get("ships", []):
 		ship.erase("career_manifest")
+		ship.erase("professional_passenger_id")
 
 
 func _strip_education(state: Dictionary) -> void:
@@ -4754,6 +4758,143 @@ func _run() -> void:
 			_expect(is_instance_valid(screen.education_info) and screen.education_info.text.contains("PROFESSIONAL EMPLOYMENT") and screen.education_info.text.contains("professional_1"), "wages and genuine named professional records are inspectable on the Android map")
 			if screen.find_child("CloseEducationButton", true, false) != null:
 				screen.find_child("CloseEducationButton", true, false).pressed.emit()
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 35B: certified named adults must travel in a REAL ship berth, retain
+	# all prior paid production XP and debts, and arrive as the SAME worker.
+	var p35b_legacy: Dictionary = p35_world.snapshot()
+	p35b_legacy.erase("professional_transport_version")
+	for vessel in p35b_legacy.ships:
+		vessel.erase("professional_passenger_id")
+	_expect(save_store.save_game(test_root + "/pass35a-before-named-travel.json", p35b_legacy) == OK, "legacy Pass 35A saves without named passenger metadata remain valid")
+	var p35b_old = WorldScript.new()
+	_expect(p35b_old.restore_snapshot(p35b_legacy) == OK and p35b_old.state.professional_transport_version == 1 and p35b_old.state.professional_registry.has("professional_1") and str(p35b_old._find_ship("ship_001").professional_passenger_id).is_empty(), "real previous professional identity is migrated without deleting work or adding phantom passengers")
+	var p35b_world = WorldScript.new()
+	_expect(p35b_world.restore_snapshot(p35_world.snapshot()) == OK, "named professional transport scenario inherits real paid Pass 35A graduate and source colony")
+	_disable_npc_trading(p35b_world)
+	var p35b_worker: Dictionary = p35b_world.state.professional_registry.get("professional_1", {})
+	var p35b_ship: Dictionary = p35b_world._find_ship("ship_001")
+	var p35b_source: Dictionary = p35b_world._find_station("player_station_1")
+	var p35b_dest: Dictionary = p35b_world._find_station("player_station_2")
+	var p35b_people: int = p35b_world.population.total_people(p35b_world)
+	var p35b_xp: int = int(p35b_worker.experience)
+	var p35b_earned: int = int(p35b_worker.salary_paid)
+	var p35b_owed: int = int(p35b_worker.salary_due)
+	_expect(p35b_source.careers.licensed.engineering_college == 1 and p35b_world.dock_ship("ship_001", "player_station_1").ok, "a physically commissioned source and a genuinely docked passenger ship are available")
+	_expect(not p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_999").ok, "nonexistent professional can never board")
+	_expect(not p35b_world.professionals.board_named(p35b_world, "npc_builder_001", "professional_1").ok, "faction NPC builder cannot steal the player's named resident")
+	var p35b_supply_ok: bool = _replenish_practical_station(p35b_world, "player_station_1", "player_station_2", 5)
+	if not p35b_supply_ok:
+		printerr("P35B DIAGNOSTIC FAILED SUPPLY destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " source=", p35b_source.stock)
+	_expect(p35b_supply_ok, "physical prior-producer stock and paid solar power genuinely provision the destination before a named employee's arrival")
+	# Habitats do not become operational at the instant stock is delivered:
+	# advance the REAL scheduled 60-tick upkeep, which debits finite energy,
+	# water, food and medicine and only then powers their commissioned beds.
+	var p35b_until_service: int = 60 - int(p35b_world.state.tick) % 60
+	p35b_world.advance_ticks(p35b_until_service)
+	_expect(p35b_world.habitation.operational_capacity(p35b_dest, p35b_world.state.habitation_catalog) >= 1 and p35b_world.provisions.missing_provision(p35b_world, p35b_dest, p35b_world.demographics.residents(p35b_world.population.station_cohort(p35b_world, "player_station_2")) + 1).is_empty(), "delivered real solar energy actually powers the intended residence in a funded scheduled service cycle")
+	_expect(p35b_world.dock_ship("ship_001", "player_station_1").ok, "qualified employee travels only after ship is back at the actual source station")
+	# Paid solar purchase and physical resupply cost real simulation ticks;
+	# capture the AFTER-supply baseline, never assume no factory production,
+	# wages or legitimate family births happened while transport was stocked.
+	p35b_people = p35b_world.population.total_people(p35b_world)
+	p35b_xp = int(p35b_worker.experience)
+	p35b_earned = int(p35b_worker.salary_paid)
+	p35b_owed = int(p35b_worker.salary_due)
+	var p35b_before_board: Dictionary = p35b_world.snapshot()
+	_expect(p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_1").ok, "an existing professional boards exactly one real ship passenger berth and is off the company payroll during travel")
+	_expect(int(p35b_ship.settler_passengers) == 1 and p35b_ship.professional_passenger_id == "professional_1" and p35b_worker.station_id == "" and not p35b_worker.active and p35b_worker.status == "In transit", "one named in-transit identity is linked to one physical ship rather than duplicated in the source housing")
+	_expect(int(p35b_source.careers.licensed.engineering_college) == 0 and int(p35b_source.education.qualified.engineering_college) == 0 and p35b_world.population.total_people(p35b_world) == p35b_people, "physical boarding moves both the adult and its two prior professional credentials without inflating population")
+	_expect(not p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_1").ok and not p35b_world.settlement.evacuate(p35b_world, "ship_001", 1).ok and not p35b_world.settlement.board(p35b_world, "ship_001", 1).ok, "no duplicate boarding, regular evacuation or NPC settler mixing into the protected named passenger manifest")
+	_expect(save_store.save_game(test_root + "/pass35b-named-at-source.json", p35b_world.snapshot()) == OK, "docked source ship with named credentialed worker is save-valid and source population is conserved")
+	_expect(p35b_world.queue_fly_to("ship_001", "hearthreach"), "named professional must physically traverse the galaxy graph on their own ship")
+	p35b_world.advance_ticks(20)
+	_expect(p35b_ship.sector == "hearthreach" and p35b_ship.professional_passenger_id == "professional_1" and p35b_world.population.total_people(p35b_world) == p35b_people and int(p35b_worker.salary_due) == p35b_owed, "physical sector crossing retains exactly one professional passenger with no fictitious journey salaries or XP")
+	_expect(save_store.save_game(test_root + "/pass35b-named-midvoyage.json", p35b_world.snapshot()) == OK, "named working adult in cross-sector travel remains strictly serializable with original qualifications")
+	var p35b_saved: Dictionary = save_store.load_game(test_root + "/pass35b-named-midvoyage.json")
+	var p35b_reload = WorldScript.new()
+	_expect(p35b_saved.get("ok", false) and p35b_reload.restore_snapshot(p35b_saved.state) == OK and p35b_reload.snapshot() == p35b_world.snapshot(), "exact saved named passenger, ship, source, professional XP and wage arrears restore unchanged in another sector")
+	_expect(p35b_reload.queue_fly_to("ship_001", str(p35b_dest.sector)), "named passenger returns through actual gates to the destination sector")
+	p35b_reload.advance_ticks(20)
+	_expect(p35b_reload.dock_ship("ship_001", "player_station_2").ok, "the actual qualified employee reaches another physically built owned residence")
+	var p35b_at_destination: Dictionary = p35b_reload.snapshot()
+	var p35b_ui_arrival = MainScene.instantiate()
+	p35b_ui_arrival.save_path = test_root + "/ui-pass35b-disembark-action.json"
+	root.add_child(p35b_ui_arrival)
+	await process_frame
+	p35b_ui_arrival.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(p35b_ui_arrival.world.restore_snapshot(p35b_at_destination) == OK, "Android screen loads a real single named passenger docked at a compatible destination")
+	p35b_ui_arrival._open_crew_screen()
+	var p35b_ui_disembark_button: Button = p35b_ui_arrival.find_child("DisembarkSettlersButton", true, false)
+	_expect(p35b_ui_disembark_button != null and not p35b_ui_disembark_button.disabled, "Android Ship & Crew gives a clickable legal disembark action for the real named professional")
+	if p35b_ui_disembark_button != null and not p35b_ui_disembark_button.disabled:
+		p35b_ui_disembark_button.pressed.emit()
+		_expect(p35b_ui_arrival.world.state.professional_registry.professional_1.station_id == "player_station_2" and p35b_ui_arrival.world._find_ship("ship_001").professional_passenger_id == "" and p35b_ui_arrival.world.population.total_people(p35b_ui_arrival.world) == p35b_people, "tapping the actual Android Disembark control delivers the original named professional once, retaining headcount")
+		_expect(save_store.save_game(test_root + "/pass35b-ui-arrival.json", p35b_ui_arrival.world.snapshot()) == OK, "touch-driven named employee arrival remains valid under strict source and career ledger checks")
+	p35b_ui_arrival.queue_free()
+	await process_frame
+	var p35b_arrival_result: Dictionary = p35b_reload.settlement.disembark(p35b_reload, "ship_001", 1)
+	if not p35b_arrival_result.ok:
+		var arrival_station: Dictionary = p35b_reload._find_station("player_station_2")
+		var arrival_people: Dictionary = p35b_reload.population.station_cohort(p35b_reload, "player_station_2")
+		printerr("P35B ARRIVAL DIAGNOSTIC:", p35b_arrival_result, " stock=", arrival_station.stock, " residents=", arrival_people.cohorts, " needs=", p35b_reload.provisions.missing_provision(p35b_reload, arrival_station, p35b_reload.demographics.residents(arrival_people) + 1), " power=", p35b_reload.habitation.operational_capacity(arrival_station, p35b_reload.state.habitation_catalog))
+	_expect(p35b_arrival_result.ok, "the existing Ship & Crew Disembark action resolves a single named professional manifest into a powered and supplied receiving colony")
+	var p35b_arrived: Dictionary = p35b_reload.state.professional_registry.professional_1
+	_expect(p35b_arrived.station_id == "player_station_2" and not p35b_arrived.active and p35b_arrived.experience == p35b_xp and p35b_arrived.salary_paid == p35b_earned and p35b_arrived.salary_due == p35b_owed, "stable original professional ID, historical productive XP and unpaid/paid wages survive legitimate ship travel")
+	_expect(p35b_reload._find_ship("ship_001").professional_passenger_id == "" and int(p35b_reload._find_ship("ship_001").settler_passengers) == 0 and p35b_reload.population.total_people(p35b_reload) == p35b_people and int(p35b_reload._find_station("player_station_2").careers.licensed.engineering_college) == 1, "arrival empties the transport berth and counts exactly one resident and one real practical licence at the receiving station")
+	_expect(not p35b_reload.professionals.set_active(p35b_reload, "professional_1", true).ok, "the arrived engineer cannot start earning XP in a school without a physically working engineering workstation")
+	_expect(save_store.save_game(test_root + "/pass35b-named-arrival.json", p35b_reload.snapshot()) == OK, "new source/destination education, practical, workforce and immutable professional ledgers reconcile after live travel")
+	var p35b_fake_ship: Dictionary = p35b_world.snapshot()
+	p35b_fake_ship.ships[0].professional_passenger_id = "professional_999"
+	_expect(save_store.save_game(test_root + "/pass35b-forged-passenger.json", p35b_fake_ship) != OK, "an invented named passenger ID cannot pass the ship manifest audit")
+	var p35b_clone: Dictionary = p35b_world.snapshot()
+	p35b_clone.ships[0].professional_passenger_id = ""
+	_expect(save_store.save_game(test_root + "/pass35b-orphaned-person.json", p35b_clone) != OK, "a professional missing from both an owned station and a physical ship is rejected")
+	var p35b_forced_work: Dictionary = p35b_world.snapshot()
+	p35b_forced_work.professional_registry.professional_1.active = true
+	_expect(save_store.save_game(test_root + "/pass35b-ghost-payroll.json", p35b_forced_work) != OK, "an in-transit employee cannot secretly remain on a station's paid active workforce")
+	var p35b_future: Dictionary = p35b_world.snapshot()
+	p35b_future.professional_transport_version = 2
+	_expect(save_store.save_game(test_root + "/pass35b-unknown-named-travel.json", p35b_future) != OK, "unknown professional transport version never silently drops named workers")
+	var p35b_board_ui = MainScene.instantiate()
+	p35b_board_ui.save_path = test_root + "/ui-pass35b-board-action.json"
+	root.add_child(p35b_board_ui)
+	await process_frame
+	p35b_board_ui.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(p35b_board_ui.world.restore_snapshot(p35b_before_board) == OK, "Android map reloads a genuine employed professional and docked boarding ship")
+	p35b_board_ui._open_map_station("player_station_1")
+	var p35b_map_career_tab: Button = p35b_board_ui.find_child("InspectorTab_Careers", true, false)
+	if p35b_map_career_tab != null:
+		p35b_map_career_tab.pressed.emit()
+	var p35b_map_career_action: Button = p35b_board_ui.find_child("InspectorAction_careers", true, false)
+	if p35b_map_career_action != null:
+		p35b_map_career_action.pressed.emit()
+	var p35b_board_button: Button = p35b_board_ui.find_child("ProfessionalBoardNamedButton", true, false)
+	_expect(p35b_board_button != null and p35b_board_ui.career_ship_picker != null, "original map Careers panel offers a real touch named boarding button and docked ship picker")
+	if p35b_board_button != null:
+		for p35b_choice in range(p35b_board_ui.career_track_picker.item_count):
+			if str(p35b_board_ui.career_track_picker.get_item_metadata(p35b_choice)) == "engineering_college":
+				p35b_board_ui.career_track_picker.select(p35b_choice)
+				break
+		p35b_board_button.pressed.emit()
+		_expect(p35b_board_ui.world._find_ship("ship_001").professional_passenger_id == "professional_1" and p35b_board_ui.education_feedback.text.contains("boarded"), "tapping Board named worker actually moves the correct real graduate and preserves source training records")
+		_expect(save_store.save_game(test_root + "/pass35b-ui-board.json", p35b_board_ui.world.snapshot()) == OK, "touch-driven named boarding creates a strictly valid physical in-transit professional")
+	p35b_board_ui.queue_free()
+	await process_frame
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass35b-named-transport.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p35b_world.snapshot()) == OK, "original Android ship management screen reloads a real named passenger mid-journey")
+	screen._open_crew_screen()
+	_expect(screen.crew_info.text.contains("NAMED PROFESSIONAL PASSENGER") and screen.crew_info.text.contains("professional_1"), "Ship & Crew phone-sized panel shows immutable named passenger identity, profession, XP and salary ledger")
+	screen.find_child("CloseCrewButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
 

@@ -1,10 +1,11 @@
 extends RefCounted
-## Pass 35A: named, station-local professionals reserved from existing adults.
-## Every professional is ALREADY counted in assigned_workers and licensed.
-## Do not add these records to population totals or teleport them as ship crew.
-## Named professional travel and other workplaces follow in later increments.
+## Pass 35B: conserved certified adults can travel as identifiable ship passengers.
+## While settled they are ALREADY counted in a resident adult cohort and local
+## theory/practical licences. While aboard they occupy ONE existing berth, are
+## removed from the station cohort, and retain their stable employment history.
 
 const VERSION := 1
+const TRANSPORT_VERSION := 1
 const SALARY_INTERVAL := 60
 const SALARY := 8
 const XP_PER_SKILL := 25
@@ -15,16 +16,33 @@ const WORK := {
 }
 
 
+func initialize_ship(ship: Dictionary) -> void:
+	ship["professional_passenger_id"] = ""
+
+
 func prepare(target: Dictionary) -> Error:
 	if target.has("professional_version"):
 		if int(target.professional_version) != VERSION or not target.get("professional_registry") is Dictionary or not target.get("professional_next_id") is int:
 			return ERR_UNAVAILABLE
-		return OK
-	if target.has("professional_registry") or target.has("professional_next_id") or int(target.get("career_version", 0)) != 1:
+	elif target.has("professional_registry") or target.has("professional_next_id") or int(target.get("career_version", 0)) != 1:
 		return ERR_INVALID_DATA
-	target["professional_registry"] = {}
-	target["professional_next_id"] = 1
-	target["professional_version"] = VERSION
+	else:
+		target["professional_registry"] = {}
+		target["professional_next_id"] = 1
+		target["professional_version"] = VERSION
+	if target.has("professional_transport_version"):
+		if int(target.professional_transport_version) != TRANSPORT_VERSION:
+			return ERR_UNAVAILABLE
+		for ship in target.ships:
+			if not ship.get("professional_passenger_id") is String:
+				return ERR_INVALID_DATA
+		return OK
+	for ship in target.ships:
+		if ship.has("professional_passenger_id"):
+			return ERR_ALREADY_IN_USE
+	for ship in target.ships:
+		initialize_ship(ship)
+	target["professional_transport_version"] = TRANSPORT_VERSION
 	return OK
 
 
@@ -87,7 +105,7 @@ func set_active(world: RefCounted, worker_id: String, enabled: bool) -> Dictiona
 	var station: Dictionary = world._find_station(str(worker.station_id))
 	if station.is_empty() or station.owner != world.state.player_faction_id:
 		return {"ok":false, "message":"The employing station is unavailable."}
-	if enabled and (not _has_workplace(station, str(worker.track))):
+	if enabled and not _has_workplace(station, str(worker.track)):
 		return {"ok":false, "message":"This profession needs its genuine existing workstation."}
 	worker.active = enabled
 	worker.last_salary_tick = int(world.state.tick)
@@ -139,6 +157,93 @@ func tick(world: RefCounted) -> void:
 		world._record_transaction("professional_payroll", str(worker.track), str(station.id), str(id), 1, debt, -debt)
 		if worker.status == "Salary in arrears":
 			worker.status = "Awaiting completed work"
+
+
+
+## A professional is OFF the station payroll while in transit. Boarding an
+## active employee creates an explicit duty-termination event first.
+func board_named(world: RefCounted, ship_id: String, worker_id: String) -> Dictionary:
+	var ship: Dictionary = world._find_ship(ship_id)
+	var origin: Dictionary = world.settlement._docked(world, ship)
+	var worker: Dictionary = world.state.professional_registry.get(worker_id, {})
+	if origin.is_empty() or origin.owner != world.state.player_faction_id or worker.is_empty() or worker.station_id != origin.id:
+		return {"ok":false, "message":"Dock an owned ship at the real professional's current residential station."}
+	if int(ship.settler_passengers) != 0 or not ship.get("career_manifest", {}).is_empty() or not str(ship.get("professional_passenger_id", "")).is_empty() or world.settlement.free_berths(world, ship) < 1:
+		return {"ok":false, "message":"The ship needs an unused physical passenger berth and no other civilian manifest."}
+	var cohort: Dictionary = world.population.station_cohort(world, str(origin.id))
+	if cohort.is_empty() or int(cohort.cohorts.assigned_workers) < 1 or int(origin.education.qualified.get(worker.track, 0)) < 1 or int(origin.careers.licensed.get(worker.track, 0)) < 1:
+		return {"ok":false, "message":"The source must have that already counted adult and both earned qualifications."}
+	var remaining: int = int(cohort.cohorts.assigned_workers) - 1
+	if remaining < int(origin.education.teachers) + world.education._active_adults(origin) + world.careers._active_count(origin):
+		return {"ok":false, "message":"Current teachers, students and apprentices need their own resident adults."}
+	var children: int = int(cohort.cohorts.children) + int(cohort.cohorts.students)
+	if remaining * 2 < children:
+		return {"ok":false, "message":"Dependent children must retain enough resident adult caregivers."}
+	if bool(worker.active):
+		worker.active = false
+		worker.last_salary_tick = int(world.state.tick)
+		world._record_transaction("professional_unassign", str(worker.track), str(origin.id), worker_id, 1, 0, 0)
+	origin.education.qualified[worker.track] = int(origin.education.qualified[worker.track]) - 1
+	origin.education.certificates_total = int(origin.education.certificates_total) - 1
+	origin.careers.licensed[worker.track] = int(origin.careers.licensed[worker.track]) - 1
+	cohort.cohorts.assigned_workers = remaining
+	if world.demographics.residents(cohort) == 0:
+		world.settlement._initialize_welfare(cohort)
+	ship.settler_passengers = 1
+	ship.settler_source_station_id = str(origin.id)
+	ship.professional_passenger_id = worker_id
+	worker.station_id = ""
+	worker.status = "In transit"
+	worker.last_salary_tick = int(world.state.tick)
+	world._record_transaction("career_transfer_departure", ship_id, str(origin.id), str(worker.track), 1, 1, 0)
+	world._record_transaction("professional_board", ship_id, str(origin.id), worker_id, 1, 0, 0)
+	return {"ok":true, "message":"%s boarded %s as one named certified passenger. Existing skills, qualifications and wage debt travel unchanged." % [worker_id, ship.name]}
+
+
+func disembark_named(world: RefCounted, ship_id: String, quantity: int) -> Dictionary:
+	var ship: Dictionary = world._find_ship(ship_id)
+	var destination: Dictionary = world.settlement._docked(world, ship)
+	var worker_id: String = str(ship.get("professional_passenger_id", ""))
+	var worker: Dictionary = world.state.professional_registry.get(worker_id, {})
+	if destination.is_empty() or destination.owner != world.state.player_faction_id or quantity != 1 or worker.is_empty() or not str(worker.station_id).is_empty() or int(ship.settler_passengers) != 1:
+		return {"ok":false, "message":"Dock the ship with its one documented professional at a supplied owned residence."}
+	var cohort: Dictionary = world.population.station_cohort(world, str(destination.id))
+	if cohort.is_empty() or _local_count(world, str(destination.id), str(worker.track)) > 0:
+		return {"ok":false, "message":"The receiving station has no compatible free professional post or resident ledger."}
+	var occupied: int = world.demographics.residents(cohort)
+	if world.habitation.operational_capacity(destination, world.state.habitation_catalog) < occupied + 1:
+		return {"ok":false, "message":"The professional needs a real available powered residential berth."}
+	var missing: String = world.provisions.missing_provision(world, destination, occupied + 1)
+	if not missing.is_empty():
+		return {"ok":false, "message":"The destination needs physical " + missing + " for the next resident service."}
+	if int(cohort.cohorts.assigned_workers) >= 1000000:
+		return {"ok":false, "message":"The destination workforce register is full."}
+	destination.education.qualified[worker.track] = int(destination.education.qualified[worker.track]) + 1
+	destination.education.certificates_total = int(destination.education.certificates_total) + 1
+	destination.careers.licensed[worker.track] = int(destination.careers.licensed[worker.track]) + 1
+	cohort.cohorts.assigned_workers = int(cohort.cohorts.assigned_workers) + 1
+	cohort.resident_status = "Awaiting service"
+	cohort.resident_shortage = ""
+	cohort.resident_alert_cycles = 0
+	worker.station_id = str(destination.id)
+	worker.active = false
+	worker.status = "Off duty"
+	worker.last_salary_tick = int(world.state.tick)
+	world._record_transaction("career_transfer_arrival", ship_id, str(destination.id), str(worker.track), 1, 1, 0)
+	world._record_transaction("professional_arrive", ship_id, str(destination.id), worker_id, 1, 0, 0)
+	world.settlement._clear_manifest(ship, 1)
+	ship.professional_passenger_id = ""
+	return {"ok":true, "message":"%s settled at %s with exactly the original identity, practicum, work XP and wage history. Start an actual local job separately." % [worker_id, destination.name]}
+
+
+func passenger_report(world: RefCounted, ship: Dictionary) -> String:
+	var id: String = str(ship.get("professional_passenger_id", ""))
+	if id.is_empty():
+		return ""
+	var person: Dictionary = world.state.professional_registry.get(id, {})
+	if person.is_empty():
+		return ""
+	return "NAMED PROFESSIONAL PASSENGER: %s · %s · skill %d/5 · %d genuine work cycles · unpaid salary %d CR. One physical passenger berth; disembark at a powered and stocked player residence." % [id, person.role, int(person.skill), int(person.work_events), int(person.salary_due) - int(person.salary_paid)]
 
 
 func report(world: RefCounted, station_id: String) -> Array[String]:
