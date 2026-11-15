@@ -393,6 +393,7 @@ func _station_reservations(station: Dictionary) -> Dictionary:
 		var people: int = demographics.residents(resident) if state.has("demographics_version") else int(resident.get("cohorts", {}).get("assigned_workers", 0))
 		var housing_needs: Dictionary = provisions.facility_needs(self, station, mini(1000000, people + 2))
 		reserved["potable_water"] = maxi(int(reserved.get("potable_water", 0)), maxi(3, int(housing_needs.get("potable_water", 0)) + 1))
+		reserved["energy_cells"] = maxi(int(reserved.get("energy_cells", 0)), maxi(3, int(housing_needs.get("energy_cells", 0)) + 1))
 	return reserved
 
 
