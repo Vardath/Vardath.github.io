@@ -133,6 +133,13 @@ func site_for_sector(world: RefCounted, sector_id: String) -> Dictionary:
 	return {}
 
 
+func has_gene_bank(station: Dictionary) -> bool:
+	for module in station.get("production", []):
+		if str(module.get("recipe_id", "")) == "bio_gene_bank":
+			return true
+	return false
+
+
 func stop(ship: Dictionary) -> void:
 	if not ship.has("bio_survey"):
 		return
