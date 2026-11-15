@@ -5648,7 +5648,7 @@ func _run() -> void:
 	p37c_fake_birth.stations.back().stock.dustwhistle_larva += 1
 	_expect(save_store.save_game(test_root + "/pass37c-fabricated-juvenile.json", p37c_fake_birth) != OK, "forged extra juvenile cannot bypass the source/birth/death biological population ledger")
 	var p37c_fake_feather: Dictionary = p37c_fed.snapshot()
-	p37c_fake_feather.stations.back().stock.dustwhistle_feathers += 100
+	p37c_fake_feather.stations.back().stock.dustwhistle_feathers += 1
 	_expect(save_store.save_game(test_root + "/pass37c-fabricated-feathers.json", p37c_fake_feather) != OK, "feathers cannot exceed actual recorded post-feeding shedding receipts")
 	p37c_fed.advance_ticks(120)
 	_expect(int(p37c_fed_pen.stock.dustwhistle_moth) == 3 and int(p37c_fed_pen.stock.dustwhistle_larva) == 0 and int(p37c_fed.state.livestock_care[str(p37c_fed_pen.id) + "|dustwhistle"].juvenile_ages.size()) == 0, "one real two-cycle-fed juvenile matures into exactly one adult without a duplicated person or creature")
@@ -5678,6 +5678,18 @@ func _run() -> void:
 	var p37c_grazer_leather_before: int = _total_ware(p37c_grazer.state, "emberhorn_leather")
 	_expect(p37c_grazer.livestock.slaughter(p37c_grazer, str(p37c_grazer_pen.id)).ok and int(p37c_grazer_pen.stock.emberhorn_grazer) == 1 and int(p37c_grazer_pen.stock.emberhorn_leather) == p37c_grazer_leather_before + 1 and int(p37c_grazer_pen.stock.organic_waste) == 1, "producing one real leather hide irreversibly removes one actual living adult, consumes paid power and returns counted recyclable biowaste")
 	_expect(save_store.save_game(test_root + "/pass37c-real-emberhorn-leather.json", p37c_grazer.snapshot()) == OK, "legitimate provenance-preserving terminal leather, two native captures, animal capacity, fees and trade all survive strict save auditing")
+	var p37c_real_hide_saved: Dictionary = save_store.load_game(test_root + "/pass37c-real-emberhorn-leather.json")
+	var p37c_real_hide_restored = WorldScript.new()
+	_expect(p37c_real_hide_saved.get("ok", false) and p37c_real_hide_restored.restore_snapshot(p37c_real_hide_saved.state) == OK and p37c_real_hide_restored.snapshot() == p37c_grazer.snapshot(), "wild capture, paid habitat, terminal leather and one surviving animal reload with no livestock duplication")
+	var p37c_no_power: Dictionary = p37c_grazer.snapshot()
+	_expect(not p37c_grazer.livestock.slaughter(p37c_grazer, str(p37c_grazer_pen.id)).ok and p37c_grazer.snapshot() == p37c_no_power, "a second terminal hide cannot be processed without separately delivered physical energy and must not debit living adults on failure")
+	var p37c_inspector = ObjectInspectorScript.new()
+	_expect(p37c_inspector.tabs(p37c_grazer, "station", str(p37c_grazer_pen.id)).has("Husbandry") and not p37c_inspector.tabs(p37c_grazer, "npc_station", "cinder_depot").has("Husbandry"), "the mobile station inspector exposes safe animal husbandry only on directly owned real stations")
+	_expect(p37c_inspector.content(p37c_grazer, "station", str(p37c_grazer_pen.id), "Husbandry", "", "ship_001", "cinder_veil").contains("1 adults"), "Android Husbandry tab shows actual remaining adult, juveniles and completed feeding cycles")
+	_expect(p37c_inspector.actions(p37c_grazer, "sector", "cinder_veil", "Biology").any(func(x): return x.id == "wildlife_capture") and p37c_inspector.actions(p37c_grazer, "station", str(p37c_grazer_pen.id), "Husbandry").any(func(x): return x.id == "livestock_slaughter"), "owned contextual map actions include physically authorised wildlife collection and optional manual leather processing")
+	p37c.advance_ticks(120)
+	_expect(int(p37c_dust_station.stock.dustwhistle_moth) == 1 and int(p37c_dust_station.stock.dustwhistle_feathers) == 0 and int(p37c_dust_station.stock.organic_waste) == 0 and p37c.state.ledger.any(func(e): return e.kind == "livestock_death" and e.ware_id == "dustwhistle_moth"), "three completely unfunded husbandry service periods cause one real counted adult death, not unlimited welfare or free manure")
+	_expect(save_store.save_game(test_root + "/pass37c-starved-animals.json", p37c.snapshot()) == OK, "a genuine welfare-related animal death conserves the collected native population and survives strict save accounting")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
