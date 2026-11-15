@@ -29,6 +29,10 @@ func targets(world: RefCounted, station: Dictionary) -> Dictionary:
 		var base: Dictionary = world._find_recipe(str(module.recipe_id))
 		if base.is_empty():
 			continue
+		if bool(base.get("livestock_service", false)) or bool(base.get("manual_animal_care", false)):
+			# Individual animals require actual headcount-priced support, not a
+			# generic catalyst factory or permanently operating clinic.
+			continue
 		var recipe: Dictionary = world.research.adjusted_recipe(world.state, base, station.owner == world.state.player_faction_id)
 		var source := str(recipe.get("source", ""))
 		var deposit: Dictionary = recipe.get("deposit", {})
@@ -43,6 +47,17 @@ func targets(world: RefCounted, station: Dictionary) -> Dictionary:
 			if bool(recipe.get("catalog_source", false)) and station.has("archive") and ware_id == "recorded_data":
 				continue
 			catalysts[ware_id] = maxi(int(catalysts.get(ware_id, 0)), int(recipe.catalysts[ware_id]))
+	# Live livestock consumes species feed, water and electricity for each
+	# existing animal; the demand is a transportable ware target, not stock.
+	for animal in world.state.get("livestock_catalog", {}).get("animals", []):
+		var heads: int = world.livestock._headcount(station, animal)
+		if heads < 1:
+			continue
+		var feed_id: String = world.animal_feed.feed_for(str(animal.id))
+		for ware_id in [feed_id, "potable_water"]:
+			demand[ware_id] = float(demand.get(ware_id, 0.0)) + float(heads) / float(world.livestock.CARE_TICKS)
+		var electrical_load: int = maxi(1, int(ceil(float(heads) / float(animal.capacity_per_enclosure))))
+		demand["energy_cells"] = float(demand.get("energy_cells", 0.0)) + float(electrical_load) / float(world.livestock.CARE_TICKS)
 	var needed_ids: Array = demand.keys()
 	for ware_id in catalysts:
 		if ware_id not in needed_ids:
@@ -74,7 +89,7 @@ func protected_stock(world: RefCounted, station: Dictionary, ware_id: String) ->
 	var working_inputs := 0
 	for module in station.get("production", []):
 		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
-		if not recipe.is_empty():
+		if not recipe.is_empty() and not bool(recipe.get("livestock_service", false)) and not bool(recipe.get("manual_animal_care", false)):
 			working_inputs += int(recipe.inputs.get(ware_id, 0)) * 2
 	return maxi(int(needed.get(ware_id, 0)), working_inputs + int(catalysts.get(ware_id, 0)))
 
@@ -82,7 +97,10 @@ func protected_stock(world: RefCounted, station: Dictionary, ware_id: String) ->
 func has_inputs(world: RefCounted, station: Dictionary) -> bool:
 	for module in station.get("production", []):
 		var recipe: Dictionary = world._find_recipe(str(module.recipe_id))
-		if not recipe.is_empty() and (not recipe.inputs.is_empty() or not recipe.get("catalysts", {}).is_empty()):
+		if not recipe.is_empty() and not bool(recipe.get("livestock_service", false)) and not bool(recipe.get("manual_animal_care", false)) and (not recipe.inputs.is_empty() or not recipe.get("catalysts", {}).is_empty()):
+			return true
+	for animal in world.state.get("livestock_catalog", {}).get("animals", []):
+		if world.livestock._headcount(station, animal) > 0:
 			return true
 	return false
 

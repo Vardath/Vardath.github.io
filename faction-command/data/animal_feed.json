@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "scope": "Pass 37D: two species-tailored physical feed wares made solely from the real Liora seedbank fruit and Lumin culture biomass. A manual veterinary clinic spends preexisting medical supplies and power. Two physical animal-material fabrication chains. Legacy Food Rations remain emergency/ordinary baseline feed, no automatic phantom nutrition.",
+  "wares": [
+    {
+      "id": "emberhorn_fodder",
+      "name": "Emberhorn Mycelial Fodder",
+      "volume": 1
+    },
+    {
+      "id": "dustwhistle_nectar",
+      "name": "Dustwhistle Sunlace Nectar Feed",
+      "volume": 1
+    },
+    {
+      "id": "emberhorn_woven_cloth",
+      "name": "Woven Emberhorn Cloth",
+      "volume": 1
+    },
+    {
+      "id": "dustwhistle_insulation",
+      "name": "Dustwhistle Thermal Insulation",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "emberhorn_fodder_mill",
+      "name": "Emberhorn Mycelial Fodder Mill",
+      "cycle_ticks": 28,
+      "inputs": {
+        "mirealgae_biomass": 2,
+        "food_rations": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "emberhorn_fodder": 5
+      }
+    },
+    {
+      "id": "dustwhistle_nectar_blender",
+      "name": "Dustwhistle Nectar Refinery",
+      "cycle_ticks": 24,
+      "inputs": {
+        "sunlace_fruit": 2,
+        "potable_water": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "dustwhistle_nectar": 5
+      }
+    },
+    {
+      "id": "emberhorn_fibre_loom",
+      "name": "Emberhorn Fibre Loom",
+      "cycle_ticks": 30,
+      "inputs": {
+        "emberhorn_fur": 2,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "emberhorn_woven_cloth": 1
+      }
+    },
+    {
+      "id": "dustwhistle_insulation_press",
+      "name": "Dustwhistle Insulation Press",
+      "cycle_ticks": 32,
+      "inputs": {
+        "dustwhistle_feathers": 2,
+        "alloy_plates": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "dustwhistle_insulation": 1
+      }
+    },
+    {
+      "id": "animal_veterinary_clinic",
+      "name": "Species-Aware Veterinary Clinic",
+      "cycle_ticks": 60,
+      "inputs": {
+        "medical_supplies": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "organic_waste": 1
+      },
+      "manual_animal_care": true
+    }
+  ],
+  "blueprints": {
+    "emberhorn_fodder_mill": {
+      "fee": 1050,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 13,
+        "energy_cells": 3
+      },
+      "storage": 85
+    },
+    "dustwhistle_nectar_blender": {
+      "fee": 1100,
+      "ticks": 26,
+      "materials": {
+        "alloy_plates": 14,
+        "energy_cells": 3
+      },
+      "storage": 85
+    },
+    "emberhorn_fibre_loom": {
+      "fee": 900,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 12,
+        "energy_cells": 3
+      },
+      "storage": 75
+    },
+    "dustwhistle_insulation_press": {
+      "fee": 950,
+      "ticks": 24,
+      "materials": {
+        "alloy_plates": 12,
+        "energy_cells": 3
+      },
+      "storage": 75
+    },
+    "animal_veterinary_clinic": {
+      "fee": 1500,
+      "ticks": 36,
+      "materials": {
+        "alloy_plates": 18,
+        "energy_cells": 5
+      },
+      "storage": 65
+    }
+  },
+  "species_feed": {
+    "emberhorn": "emberhorn_fodder",
+    "dustwhistle": "dustwhistle_nectar"
+  },
+  "animal_feed_bonus": {
+    "breeding_step": 2,
+    "maturation_step": 2
+  },
+  "veterinary": {
+    "medical_supplies_per_two_animals": 1,
+    "energy_cells_per_treatment": 1
+  }
+}

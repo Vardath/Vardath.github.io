@@ -67,6 +67,19 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 				"Husbandry":
 					if kind == "station":
 						var pasture: Dictionary = world._find_station(id)
+						if world.animal_feed.clinic_count(pasture) == 0 and pasture.production.any(func(module): return str(module.recipe_id) in world.livestock.RECIPE_IDS):
+							options.append({"id":"animal_build_clinic", "label":"Commission veterinary clinic at this station"})
+						for animal in world.state.livestock_catalog.animals:
+							if world.livestock._headcount(pasture, animal) < 1:
+								continue
+							var group_id: String = str(animal.id)
+							if world.animal_feed.is_quarantined(world, id, group_id):
+								options.append({"id":"animal_treat_" + group_id, "label":"Veterinary treatment/release: " + str(animal.name)})
+							else:
+								options.append({"id":"animal_quarantine_" + group_id, "label":"Quarantine " + str(animal.name)})
+								var care_status: Dictionary = world.state.livestock_care.get(str(id) + "|" + group_id, {})
+								if int(care_status.get("shortages", 0)) > 0:
+									options.append({"id":"animal_treat_" + group_id, "label":"Treat stressed " + str(animal.name)})
 						var grazer: Dictionary = world.livestock.species_by_id(world, "emberhorn")
 						if world.livestock.pen_count(pasture, grazer) > 0 and int(pasture.stock.get("emberhorn_grazer", 0)) > 0:
 							options.append({"id":"livestock_slaughter", "label":"Process one Emberhorn for leather"})
@@ -191,7 +204,7 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 		var station: Dictionary = world._find_station(id)
 		match tab:
 			"Husbandry":
-				return world.livestock.report(world, station) + "\n\nCompleted pens provide 4 Emberhorn or 6 Dustwhistle places per module. Every 60 ticks animals consume one physical Food Ration and Potable Water per head plus station power, then create organic waste. Fed adults can shed renewable fur or feathers and breed counted juveniles. Missing care eventually causes actual animal loss, never free material. Processing leather uses one existing adult and one Energy Cell."
+				return world.livestock.report(world, station) + "\n\n" + world.animal_feed.report(world, station) + "\n\nEvery 60 ticks each live animal consumes one tailored feed OR one baseline ration, one real water and station energy, yielding conserved organic waste. Species-tailored feed is made only from genuinely grown Sunlace fruit or Mirealgae biomass and accelerates breeding and maturation. A completed clinic consumes physical medicine and electricity when a stressed/quarantined group is treated. Quarantine blocks live-animal transfers, reproduction and leather harvest; it does not halt water, food or manure collection."
 			"Trade":
 				var markets: Array[String] = []
 				for ware in world.state.wares:

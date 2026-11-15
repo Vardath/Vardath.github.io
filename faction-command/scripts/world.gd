@@ -23,6 +23,7 @@ const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const BiotaScript = preload("res://scripts/biota.gd")
 const BioSurveyScript = preload("res://scripts/biosurvey.gd")
 const LivestockScript = preload("res://scripts/livestock.gd")
+const AnimalFeedScript = preload("res://scripts/animal_feed.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -48,6 +49,7 @@ var waste_transport = WasteTransportScript.new()
 var biota = BiotaScript.new()
 var biosurvey = BioSurveyScript.new()
 var livestock = LivestockScript.new()
+var animal_feed = AnimalFeedScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -133,6 +135,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if livestock.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if animal_feed.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -215,6 +219,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = livestock.prepare(restored)
+	if result != OK:
+		return result
+	result = animal_feed.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -495,6 +502,9 @@ func _tick_production(station: Dictionary) -> void:
 		if recipe.is_empty():
 			module.status = "Invalid recipe"
 			continue
+		if bool(recipe.get("manual_animal_care", false)):
+			module.status = "Veterinary care by explicit action"
+			continue
 		if bool(recipe.get("livestock_service", false)):
 			# Husbandry is cohort-based: per-head feed, waste and biological
 			# yields are counted in Livestock.tick_station, not generic factories.
@@ -537,7 +547,7 @@ func production_report(station_id: String) -> Array:
 		if recipe.is_empty():
 			continue
 		recipe = research.adjusted_recipe(state, recipe, station.owner == state.player_faction_id)
-		var reason := str(module.status) if bool(recipe.get("livestock_service", false)) else _production_block_reason(station, recipe, reservations)
+		var reason := str(module.status) if bool(recipe.get("livestock_service", false)) or bool(recipe.get("manual_animal_care", false)) else _production_block_reason(station, recipe, reservations)
 		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "catalysts":recipe.get("catalysts", {}).duplicate(true), "catalog_source":bool(recipe.get("catalog_source", false)), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
 	return reports
 
@@ -593,6 +603,10 @@ func transfer_player_station(ship_id: String, station_id: String, ware_id: Strin
 	var cargo := int(ship.cargo.get(ware_id, 0))
 	var stock := int(station.stock.get(ware_id, 0))
 	if to_station:
+		if livestock.is_live(ware_id):
+			var incoming_species: Dictionary = livestock._animal_by_adult(self, ware_id)
+			if not incoming_species.is_empty() and animal_feed.is_quarantined(self, station_id, str(incoming_species.id)):
+				return {"ok":false, "message":"This animal habitat is quarantined. New live animals cannot enter until genuine veterinary release."}
 		if livestock.is_live(ware_id) and not livestock.can_unload(station, ware_id, quantity):
 			return {"ok":false, "message":"Live animal transfer requires the correct completed enclosure and available habitat capacity."}
 		if ware_id in biosurvey.SAMPLES and not biosurvey.has_gene_bank(station):
@@ -604,6 +618,10 @@ func transfer_player_station(ship_id: String, station_id: String, ware_id: Strin
 		if ship.has("player_trader") and ship.player_trader.phase == "to_destination" and ship.player_trader.ware_id == ware_id:
 			ship.player_trader.managed_quantity = maxi(0, int(ship.player_trader.managed_quantity) - quantity)
 	else:
+		if livestock.is_live(ware_id):
+			var exiting_species: Dictionary = livestock._animal_by_adult(self, ware_id)
+			if not exiting_species.is_empty() and animal_feed.is_quarantined(self, station_id, str(exiting_species.id)):
+				return {"ok":false, "message":"Live-animal withdrawal is prohibited while this herd is quarantined."}
 		if ware_id in livestock.YOUNG_WARES:
 			return {"ok":false, "message":"Juveniles must mature in their protected station habitat before interstellar transport."}
 		if stock < quantity or cargo_volume(ship_id) + quantity * int(ware.volume) > int(ship.cargo_capacity):

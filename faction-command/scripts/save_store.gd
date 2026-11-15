@@ -15,6 +15,8 @@ const BiotaScript = preload("res://scripts/biota.gd")
 const BioSurveyScript = preload("res://scripts/biosurvey.gd")
 const LivestockScript = preload("res://scripts/livestock.gd")
 const LivestockAudit = preload("res://scripts/livestock_audit.gd")
+const AnimalFeedScript = preload("res://scripts/animal_feed.gd")
+const AnimalFeedAudit = preload("res://scripts/animal_feed_audit.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -151,6 +153,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("livestock_version") and _is_nonnegative_integer(decoded.livestock_version) and decoded.livestock_version != 1:
 		return {"ok":false, "reason":"unsupported"}
+	if decoded.has("animal_feed_version") and _is_nonnegative_integer(decoded.animal_feed_version) and decoded.animal_feed_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
@@ -194,6 +198,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("biosurvey_version") != (state.has("biosurvey_catalog") and state.has("biosurvey_sites")) or (state.has("biosurvey_version") and state.get("biota_version") != 1):
 		return false
 	if state.has("livestock_version") != (state.has("livestock_catalog") and state.has("livestock_sites") and state.has("livestock_care") and state.has("livestock_transit")) or (state.has("livestock_version") and state.get("biosurvey_version") != 1):
+		return false
+	if state.has("animal_feed_version") != (state.has("animal_feed_catalog") and state.has("animal_quarantine")) or (state.has("animal_feed_version") and state.get("livestock_version") != 1):
 		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
@@ -329,6 +335,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("biosurvey_version") and not _valid_biosurvey(state):
 		return false
 	if state.has("livestock_version") and not _valid_livestock(state):
+		return false
+	if state.has("animal_feed_version") and not _valid_animal_feed(state):
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
@@ -961,6 +969,10 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 	# completed recycler receipts with no other declared source.
 	return total_stock <= total_recovered
 
+
+
+func _valid_animal_feed(state: Dictionary) -> bool:
+	return AnimalFeedAudit.new().valid(state)
 
 
 func _valid_livestock(state: Dictionary) -> bool:

@@ -851,12 +851,36 @@ func _execute_inspector_action(action_id: String) -> void:
 				if capture_result.ok:
 					_save_current_game()
 				_refresh_world_display()
+		"animal_build_clinic":
+			if kind == "station":
+				var clinic_build: Dictionary = world.construction.extend_completed_station(world, object_id, {"animal_veterinary_clinic":1})
+				if clinic_build.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(clinic_build.message)
 		"livestock_slaughter":
 			if kind == "station":
 				var harvest_result: Dictionary = world.livestock.slaughter(world, object_id)
 				if harvest_result.ok:
 					_save_current_game()
 				_refresh_world_display()
+				detail_body.text += "\n" + str(harvest_result.message)
+		"animal_quarantine_emberhorn", "animal_quarantine_dustwhistle":
+			if kind == "station":
+				var isolate_id: String = action_id.trim_prefix("animal_quarantine_")
+				var isolation: Dictionary = world.animal_feed.set_quarantine(world, object_id, isolate_id)
+				if isolation.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(isolation.message)
+		"animal_treat_emberhorn", "animal_treat_dustwhistle":
+			if kind == "station":
+				var treatment_id: String = action_id.trim_prefix("animal_treat_")
+				var treatment: Dictionary = world.animal_feed.treat(world, object_id, treatment_id)
+				if treatment.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(treatment.message)
 
 
 func _open_trade_for_station(station_id: String) -> void:
