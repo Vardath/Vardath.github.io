@@ -20,6 +20,7 @@ const EcologyScript = preload("res://scripts/ecology.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
+const ProfessionalWorkersScript = preload("res://scripts/professional_workers.gd")
 
 var state: Dictionary = {}
 var npc_trade = NPCTradeScript.new()
@@ -38,6 +39,7 @@ var ecology = EcologyScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
+var professionals = ProfessionalWorkersScript.new()
 
 
 func load_starter(origin_faction_id: String = "auroran") -> Error:
@@ -100,6 +102,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if careers.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	if professionals.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -161,6 +165,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = careers.prepare(restored)
+	if result != OK:
+		return result
+	result = professionals.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -286,6 +293,7 @@ func advance_ticks(count: int) -> void:
 		demographics.tick(self)
 		education.tick(self)
 		careers.tick(self)
+		professionals.tick(self)
 		archives.tick(self)
 		research.tick(self)
 		shipyard.tick(self)
@@ -436,6 +444,7 @@ func _tick_production(station: Dictionary) -> void:
 			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
+		professionals.record_production(self, station, str(module.recipe_id))
 		blocked = _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
 			module.status = blocked

@@ -63,8 +63,17 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 					if kind == "station":
 						options.append({"id":"builds", "label":"Manage builds"})
 				"Education", "Careers":
-					if kind == "station" and not world._find_station(id).get("education", {}).get("modules", []).is_empty():
-						options.append({"id":"careers" if tab == "Careers" else "education", "label":"Manage practical careers" if tab == "Careers" else "Manage staffed education"})
+					if kind == "station":
+						var outpost: Dictionary = world._find_station(id)
+						var school: bool = not outpost.get("education", {}).get("modules", []).is_empty()
+						var professionals: bool = false
+						if tab == "Careers" and world.state.has("professional_version"):
+							for track in world.professionals.WORK:
+								if int(outpost.careers.licensed.get(track, 0)) > 0 or world.professionals._has_workplace(outpost, track) or world.professionals._local_count(world, id, track) > 0:
+									professionals = true
+									break
+						if school or professionals:
+							options.append({"id":"careers" if tab == "Careers" else "education", "label":"Manage practical careers" if tab == "Careers" else "Manage staffed education"})
 				"Research":
 					if kind == "station" and world.research.has_lab(world._find_station(id)):
 						options.append({"id":"research", "label":"Open research"})
@@ -212,6 +221,8 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 				return "%s\nKnown available workers: %d\nChildren: %d · Students: %d · Assigned: %d\nHousing: %d physical · %d powered · %d occupied · %d free powered beds\nShelter deficit: %d\nLife support: %s\nConsumption/60 ticks: Energy %d · Water %d · Food %d · Medical %d\nResident share: Water %d · Food %d · Medical %d (additional to module baseline)\nResident status: %s · Critical cycles: %d\n%s\n%s\nNew births are medically gated in Family Habitats; immigration still uses real passenger ships, while staffed on-site Education modules provide paid foundational learning." % [station.name, int(cohort.cohorts.available_workers), int(cohort.cohorts.children), int(cohort.cohorts.students), occupied, int(cohort.hab_capacity), powered, occupied, free_beds, deficit, cohort.housing_status, int(needs.get("energy_cells", 0)), int(needs.get("potable_water", 0)), int(needs.get("food_rations", 0)), int(needs.get("medical_supplies", 0)), int(resident_needs.get("potable_water", 0)), int(resident_needs.get("food_rations", 0)), int(resident_needs.get("medical_supplies", 0)), str(cohort.get("resident_status", "Unoccupied")), int(cohort.get("resident_alert_cycles", 0)), "Next shortage: " + shortage if not shortage.is_empty() else "No current service-stock shortages", "Emergency response: resupply or dock an owned ship and use Ship & Crew > Evacuate residents." if deficit > 0 or int(cohort.get("resident_alert_cycles", 0)) > 0 else "Residents are conserved through supply cycles."] + "\n" + ecology_status + "\n" + family_info
 			"Careers":
 				var history: Array[String] = world.careers.report(world, id)
+				if world.state.has("professional_version"):
+					history.append_array(world.professionals.report(world, id))
 				return "%s\\n%s\\nAll apprenticeships and credentialed personnel remain tied to actual existing adult cohorts. Only explicitly boarded graduates travel with their original qualification records. Each 60-tick practice period spends real workplace records, power and salaries; issued workplace attestations do not create captains or crew XP." % [station.name, "\\n\\n".join(history) if not history.is_empty() else "No practical work recorded."]
 			"Education":
 				var school: Array[String] = world.education.report(world, id)

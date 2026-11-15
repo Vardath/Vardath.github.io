@@ -87,6 +87,9 @@ func _without_progression(ships: Array) -> Array:
 
 
 func _strip_careers(state: Dictionary) -> void:
+	state.erase("professional_version")
+	state.erase("professional_registry")
+	state.erase("professional_next_id")
 	state.erase("career_version")
 	state.erase("career_catalog")
 	for station in state.get("stations", []):
@@ -4680,6 +4683,77 @@ func _run() -> void:
 	_expect(screen.education_feedback.text.contains("boarded") and screen.world._find_ship("ship_001").career_manifest.get("track", "") == "engineering_college" and screen.world._find_station("player_station_2").education.qualified.engineering_college == 0, "tapping Board graduates actually moves one existing certified engineer and typed credentials onto the ship without generating an unlisted person")
 	_expect(save_store.save_game(test_root + "/pass34-ui-certified-board.json", screen.world.snapshot()) == OK, "map-first Android graduate transfer action results in a strictly valid on-ship qualification state")
 	screen.find_child("CloseEducationButton", true, false).pressed.emit()
+	screen.queue_free()
+	await process_frame
+
+
+	# Pass 35A: a named worker is a reservation of one existing certified
+	# adult, not a new citizen or captain. Pay and XP must have real evidence.
+	var p35_world = WorldScript.new()
+	_expect(p35_world.restore_snapshot(p34_flight_restore.snapshot()) == OK, "Pass 34 saved engineers migrate additively to empty Pass 35 professional identity records")
+	_disable_npc_trading(p35_world)
+	# Passenger arrival marks housing Awaiting service until a genuine 60-tick
+	# rationed resident cycle runs. Employment must not bypass that gate.
+	p35_world.advance_ticks(60)
+	var p35_home: Dictionary = p35_world._find_station("player_station_1")
+	var p35_headcount: int = p35_world.population.total_people(p35_world)
+	var p35_licences: int = int(p35_home.careers.licensed.engineering_college)
+	var p35_credits: int = _total_credits(p35_world.state)
+	_expect(p35_world.state.professional_version == 1 and p35_world.state.professional_registry.is_empty() and p35_world.state.professional_next_id == 1, "no retroactive named specialists or ghost employment on old saves")
+	_expect(p35_world.professionals._has_workplace(p35_home, "engineering_college"), "an already constructed and operated real engineering factory hosts the local job")
+	_expect(not p35_world.professionals.appoint(p35_world, "player_station_1", "flight_academy").ok, "unimplemented navigator work cannot generate imaginary sector-crossing XP")
+	var p35_contract: Dictionary = p35_world.professionals.appoint(p35_world, "player_station_1", "engineering_college")
+	_expect(p35_contract.ok and p35_contract.get("id", "") == "professional_1", "one existing practicum-certified resident is identified for actual engineering work")
+	var p35_person: Dictionary = p35_world.state.professional_registry.get("professional_1", {})
+	_expect(not p35_person.is_empty() and p35_person.role == "Engineer" and int(p35_person.skill) == 0 and p35_world.population.total_people(p35_world) == p35_headcount and int(p35_home.careers.licensed.engineering_college) == p35_licences, "named specialist is reserved from an existing licensed adult without minting people, ranks or diplomas")
+	_expect(not p35_world.professionals.appoint(p35_world, "player_station_1", "engineering_college").ok, "one physical graduate cannot be duplicated into multiple engineering employment contracts")
+	_expect(not p35_world.careers.board_qualified(p35_world, "ship_001", "engineering_college", 1, true).ok, "aggregate passenger boarding cannot remove a resident whose named professional identity is reserved")
+	_expect(save_store.save_game(test_root + "/pass35-contracted-engineer.json", p35_world.snapshot()) == OK, "the initial contracted worker with a real graduate source passes strict save auditing")
+	p35_world.advance_ticks(60)
+	_expect(int(p35_person.salary_due) == 8 and int(p35_person.salary_paid) == 8 and p35_world.state.ledger.any(func(e): return e.kind == "professional_payroll" and e.ware_id == "professional_1" and int(e.amount) == -8), "exactly one professional pay period conserves real money into the employer station and records its wage evidence")
+	_expect(_total_credits(p35_world.state) == p35_credits, "professional wages move real credits without credit creation")
+	_expect(p35_person.work_events == p35_person.experience and int(p35_person.skill) == mini(5, int(int(p35_person.experience) / 25)), "earned engineering experience is exclusively the counted completed production-work events")
+	_expect(save_store.save_game(test_root + "/pass35-paid-engineer.json", p35_world.snapshot()) == OK, "paid professional work plus salary records reconcile with production and certified residents")
+	_expect(p35_world.professionals.set_active(p35_world, "professional_1", false).ok, "professional may leave an employment contract without losing his or her original resident identity")
+	var p35_paid_before: int = int(p35_person.salary_due)
+	p35_world.advance_ticks(60)
+	_expect(int(p35_person.salary_due) == p35_paid_before and p35_world.population.total_people(p35_world) == p35_headcount, "off-duty professionals receive no new wages and cannot duplicate citizens")
+	_expect(p35_world.professionals.set_active(p35_world, "professional_1", true).ok, "the same employee can return to a genuine existing workstation with their original XP")
+	_expect(save_store.save_game(test_root + "/pass35-reassigned.json", p35_world.snapshot()) == OK, "professional leave and reassignment are consistent with persisted ledger evidence")
+	var p35_reopen = WorldScript.new()
+	var p35_saved: Dictionary = save_store.load_game(test_root + "/pass35-reassigned.json")
+	_expect(p35_saved.get("ok", false) and p35_reopen.restore_snapshot(p35_saved.state) == OK and p35_reopen.snapshot() == p35_world.snapshot(), "identity, historical work XP, paid salaries, status and contracts survive reload exactly")
+	var p35_forged_xp: Dictionary = p35_world.snapshot()
+	p35_forged_xp.professional_registry.professional_1.experience += 100
+	_expect(save_store.save_game(test_root + "/pass35-forged-xp.json", p35_forged_xp) != OK, "unsupported XP inflation is rejected by the professional production ledger")
+	var p35_forged_salary: Dictionary = p35_world.snapshot()
+	p35_forged_salary.professional_registry.professional_1.salary_paid += 8
+	_expect(save_store.save_game(test_root + "/pass35-forged-wage.json", p35_forged_salary) != OK, "fake professional salary payments fail financial reconciliation")
+	var p35_forged_id: Dictionary = p35_world.snapshot()
+	p35_forged_id.professional_next_id += 1
+	_expect(save_store.save_game(test_root + "/pass35-invented-identity.json", p35_forged_id) != OK, "extra professional identities without existing licences and appoint events cannot be saved")
+	var p35_future: Dictionary = p35_world.snapshot()
+	p35_future.professional_version = 2
+	_expect(save_store.save_game(test_root + "/pass35-unsupported-professional-format.json", p35_future) != OK, "future professional schema must never silently erase living workers or credentials")
+	screen = MainScene.instantiate()
+	screen.save_path = test_root + "/ui-pass35-employment.json"
+	root.add_child(screen)
+	await process_frame
+	screen.find_child("StartGameButton", true, false).pressed.emit()
+	await process_frame
+	_expect(screen.world.restore_snapshot(p35_world.snapshot()) == OK, "Android map panel can load a real employed engineer without creating separate ship crew")
+	screen._open_map_station("player_station_1")
+	var p35_career_tab: Button = screen.find_child("InspectorTab_Careers", true, false)
+	_expect(p35_career_tab != null, "an owned production station without a school still displays the professional Careers inspector tab")
+	if p35_career_tab != null:
+		p35_career_tab.pressed.emit()
+		_expect(screen.find_child("InspectorAction_careers", true, false) != null, "a professional employer with no classroom exposes its usable map-first career management action")
+		if screen.find_child("InspectorAction_careers", true, false) != null:
+			screen.find_child("InspectorAction_careers", true, false).pressed.emit()
+			_expect(screen.find_child("ProfessionalAppointButton", true, false) != null and screen.find_child("ProfessionalUnassignButton", true, false) != null and screen.find_child("ProfessionalAssignButton", true, false) != null, "real workplace employment, off-duty and return-to-work controls are touch accessible")
+			_expect(is_instance_valid(screen.education_info) and screen.education_info.text.contains("PROFESSIONAL EMPLOYMENT") and screen.education_info.text.contains("professional_1"), "wages and genuine named professional records are inspectable on the Android map")
+			if screen.find_child("CloseEducationButton", true, false) != null:
+				screen.find_child("CloseEducationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
 

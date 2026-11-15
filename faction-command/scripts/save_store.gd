@@ -11,6 +11,7 @@ const EcologyScript = preload("res://scripts/ecology.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
+const ProfessionalScript = preload("res://scripts/professional_workers.gd")
 const PersonnelScript = preload("res://scripts/personnel.gd")
 
 
@@ -123,6 +124,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("career_version") and _is_nonnegative_integer(decoded.career_version) and decoded.career_version != 1:
 		return {"ok":false, "reason":"unsupported"}
+	if decoded.has("professional_version") and _is_nonnegative_integer(decoded.professional_version) and decoded.professional_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("education_version") and _is_nonnegative_integer(decoded.education_version) and decoded.education_version != 1:
 		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("demographics_version") and _is_nonnegative_integer(decoded.demographics_version) and decoded.demographics_version != 1:
@@ -166,6 +169,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("education_version") != state.has("education_catalog") or (state.has("education_version") and state.get("demographics_version") != 1):
 		return false
 	if state.has("career_version") != state.has("career_catalog") or (state.has("career_version") and state.get("education_version") != 1):
+		return false
+	if state.has("professional_version") != (state.has("professional_registry") and state.has("professional_next_id")) or (state.has("professional_version") and state.get("career_version") != 1):
 		return false
 	if state.get("schema_version", 0) != 1 or not _is_nonnegative_integer(state.get("tick")) or not _is_nonnegative_integer(state.get("starting_credits")):
 		return false
@@ -284,7 +289,9 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("education_version") and not _valid_education(state):
 		return false
-	return not state.has("career_version") or _valid_careers(state)
+	if state.has("career_version") and not _valid_careers(state):
+		return false
+	return not state.has("professional_version") or _valid_professionals(state)
 
 
 func _valid_settlement(state: Dictionary) -> bool:
@@ -629,6 +636,118 @@ func _valid_careers(state: Dictionary) -> bool:
 			return false
 	for key in arrivals:
 		if not departures.has(key):
+			return false
+	return true
+
+
+func _valid_professionals(state: Dictionary) -> bool:
+	# A roster entry reserves ONE existing certified adult. It does not add a
+	# second person to the station cohort and cannot travel as anonymous cargo.
+	if state.professional_version != ProfessionalScript.VERSION or not state.get("professional_registry") is Dictionary or not _is_nonnegative_integer(state.get("professional_next_id")):
+		return false
+	var roster: Dictionary = state.professional_registry
+	if roster.size() > ProfessionalScript.MAX_PROFESSIONALS or int(state.professional_next_id) != roster.size() + 1:
+		return false
+	var reserved: Dictionary = {}
+	for id in roster:
+		if not id is String or id != "professional_%d" % (reserved.size() + 1):
+			# Dictionary enumeration can differ on load; validate numeric IDs below.
+			if not str(id).begins_with("professional_"):
+				return false
+		var person: Variant = roster[id]
+		if not person is Dictionary or person.size() != 12 or person.get("id") != id or not ProfessionalScript.WORK.has(person.get("track")) or not person.get("station_id") is String or not person.get("role") is String or not person.get("active") is bool or not person.get("status") is String:
+			return false
+		if person.role != ProfessionalScript.WORK[person.track].role or str(person.status).length() > 96:
+			return false
+		for field in ["experience", "skill", "work_events", "salary_due", "salary_paid", "last_salary_tick"]:
+			if not _is_nonnegative_integer(person.get(field)):
+				return false
+		if int(person.experience) != int(person.work_events) or int(person.skill) != mini(5, int(int(person.experience) / ProfessionalScript.XP_PER_SKILL)) or int(person.salary_paid) > int(person.salary_due) or int(person.salary_due) % ProfessionalScript.SALARY != 0 or int(person.last_salary_tick) > int(state.tick):
+			return false
+		var station: Dictionary = {}
+		for candidate in state.stations:
+			if candidate.id == person.station_id:
+				station = candidate
+				break
+		if station.is_empty() or station.owner != state.player_faction_id or not station.get("careers") is Dictionary:
+			return false
+		var key := str(person.station_id) + "|" + str(person.track)
+		reserved[key] = int(reserved.get(key, 0)) + 1
+		if int(reserved[key]) > int(station.careers.licensed.get(person.track, 0)):
+			return false
+		var cohort: Dictionary = state.population.stations.get(person.station_id, {})
+		if cohort.is_empty() or int(cohort.cohorts.assigned_workers) < int(reserved[key]):
+			return false
+	for n in range(1, int(state.professional_next_id)):
+		if not roster.has("professional_%d" % n):
+			return false
+	var replay: Dictionary = {}
+	var work_by_recipe: Dictionary = {}
+	for event in state.ledger:
+		var kind: String = str(event.get("kind", ""))
+		if not kind.begins_with("professional_"):
+			continue
+		if kind not in ["professional_appoint", "professional_assign", "professional_unassign", "professional_due", "professional_payroll", "professional_work"]:
+			return false
+		var id: String = str(event.get("ware_id", ""))
+		if not roster.has(id) or not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick) or not _is_nonnegative_integer(event.get("quantity")) or int(event.quantity) != 1 or not _is_nonnegative_integer(event.get("price")) or not _is_number(event.get("amount")):
+			return false
+		var person: Dictionary = roster[id]
+		if str(event.get("station_id", "")) != str(person.station_id):
+			return false
+		var tick: int = int(event.tick)
+		if kind == "professional_appoint":
+			if replay.has(id) or event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0:
+				return false
+			replay[id] = {"active":true, "last":tick, "tick":tick, "due":0, "paid":0, "work":0}
+			continue
+		if not replay.has(id):
+			return false
+		var acc: Dictionary = replay[id]
+		if tick < int(acc.tick):
+			return false
+		acc.tick = tick
+		if kind in ["professional_assign", "professional_unassign"]:
+			var enabling: bool = kind == "professional_assign"
+			if event.ship_id != person.track or int(event.price) != 0 or int(event.amount) != 0 or bool(acc.active) == enabling:
+				return false
+			acc.active = enabling
+			acc.last = tick
+		elif kind == "professional_due":
+			if event.ship_id != person.track or not acc.active or tick != int(acc.last) + ProfessionalScript.SALARY_INTERVAL or int(event.price) != ProfessionalScript.SALARY or int(event.amount) != 0:
+				return false
+			acc.last = tick
+			acc.due = int(acc.due) + ProfessionalScript.SALARY
+		elif kind == "professional_payroll":
+			if event.ship_id != person.track or not acc.active or int(event.price) < 1 or int(event.amount) != -int(event.price) or int(acc.paid) + int(event.price) > int(acc.due):
+				return false
+			acc.paid = int(acc.paid) + int(event.price)
+		elif kind == "professional_work":
+			var recipe: String = str(event.get("ship_id", ""))
+			if not acc.active or int(acc.due) != int(acc.paid) or recipe not in ProfessionalScript.WORK[person.track].recipes or int(event.price) != 0 or int(event.amount) != 0:
+				return false
+			acc.work = int(acc.work) + 1
+			var key := str(person.station_id) + "|" + recipe
+			work_by_recipe[key] = int(work_by_recipe.get(key, 0)) + 1
+	for id in roster:
+		if not replay.has(id):
+			return false
+		var person: Dictionary = roster[id]
+		var acc: Dictionary = replay[id]
+		if bool(person.active) != bool(acc.active) or int(person.last_salary_tick) != int(acc.last) or int(person.salary_due) != int(acc.due) or int(person.salary_paid) != int(acc.paid) or int(person.work_events) != int(acc.work):
+			return false
+	for key in work_by_recipe:
+		var tokens: Array = str(key).split("|")
+		if tokens.size() != 2:
+			return false
+		var produced := 0
+		for station in state.stations:
+			if str(station.id) != tokens[0]:
+				continue
+			for module in station.production:
+				if str(module.recipe_id) == tokens[1]:
+					produced += int(module.cycles)
+		if produced < int(work_by_recipe[key]):
 			return false
 	return true
 
