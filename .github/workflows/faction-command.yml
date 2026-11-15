@@ -1,5 +1,5 @@
 name: Faction Command foundation
-# Pass 34 FINAL PR HEAD: verify 1,773 Godot headless assertions on the complete code, design, README and progress journal, and build a signed Android v23 APK including the compiled careers engine and protected passenger UI.
+# Pass 35A: run the complete Godot test suite and build signed Android debug v24, including the professional-worker engine, conserved career records and touch employment controls.
 on:
   push:
     paths:
@@ -110,14 +110,15 @@ jobs:
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/demographics.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/education.gdc'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/careers.gdc'
+          unzip -l FactionCommand-debug.apk | grep -F 'assets/scripts/professional_workers.gdc'
           unzip -p FactionCommand-debug.apk assets/data/education.json | cmp - ../data/education.json
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/provisions.json'
           unzip -l FactionCommand-debug.apk | grep -F 'assets/data/habitation.json'
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs FactionCommand-debug.apk
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging FactionCommand-debug.apk | tee package-info.txt
           grep -F "package: name='io.github.vardath.factioncommand.debug'" package-info.txt
-          grep -F "versionCode='23'" package-info.txt
-          grep -F "versionName='0.1.23-debug'" package-info.txt
+          grep -F "versionCode='24'" package-info.txt
+          grep -F "versionName='0.1.24-debug'" package-info.txt
           grep -F "'arm64-v8a'" package-info.txt
           grep -F "'armeabi-v7a'" package-info.txt
           sha256sum FactionCommand-debug.apk > FactionCommand-debug.apk.sha256
