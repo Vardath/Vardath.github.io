@@ -34,8 +34,10 @@ func definitions() -> Dictionary:
 			return {}
 		if not site.get("safety") is String or site.safety not in ["clean_botanical", "contained_microbe"]:
 			return {}
-		if not site.get("initial_reserve") is int or not site.get("collection_ticks") is int or not site.get("energy_cost") is int or not site.get("min_crew") is int:
-			return {}
+		for key in ["initial_reserve", "collection_ticks", "energy_cost", "min_crew"]:
+			var value: Variant = site.get(key, null)
+			if not (value is int or value is float) or not is_finite(float(value)) or float(value) != floor(float(value)):
+				return {}
 		if int(site.initial_reserve) < 1 or int(site.initial_reserve) > 1000 or int(site.collection_ticks) < 2 or int(site.collection_ticks) > 1000 or int(site.energy_cost) != 1 or int(site.min_crew) != 2:
 			return {}
 		if site.sample_ware_id == "sunlace_seed_capsule" and site.organism_id != "sunlace_fruit":
@@ -45,7 +47,7 @@ func definitions() -> Dictionary:
 		ids[site.id] = true
 	for i in range(parsed.recipes.size()):
 		var recipe: Variant = parsed.recipes[i]
-		if not recipe is Dictionary or recipe.get("id") != RECIPE_IDS[i] or not recipe.get("name") is String or not recipe.get("cycle_ticks") is int or int(recipe.cycle_ticks) < 1:
+		if not recipe is Dictionary or recipe.get("id") != RECIPE_IDS[i] or not recipe.get("name") is String or not (recipe.get("cycle_ticks") is int or recipe.get("cycle_ticks") is float) or int(recipe.cycle_ticks) < 1:
 			return {}
 		if not recipe.get("inputs") is Dictionary or not recipe.get("outputs") is Dictionary or not recipe.get("catalysts", {}) is Dictionary:
 			return {}
