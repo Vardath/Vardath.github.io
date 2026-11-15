@@ -129,6 +129,8 @@ func _strip_ecology(state: Dictionary) -> void:
 	_strip_demographics(state)
 	state.erase("salt_recovery_version")
 	state.erase("salt_recovery_catalog")
+	state.erase("waste_cultures_version")
+	state.erase("waste_cultures_catalog")
 	state.erase("waste_transport_version")
 	for ship in state.get("ships", []):
 		ship.erase("waste_transport")
@@ -147,6 +149,8 @@ func _strip_ecology(state: Dictionary) -> void:
 		station.stock.erase("organic_waste")
 		station.stock.erase("fertile_soil")
 		station.stock.erase("salt")
+		station.erase("waste_buyer_species_id")
+		station.get("buy_prices", {}).erase("organic_waste")
 
 
 func _strip_provisions(state: Dictionary) -> void:
@@ -5215,6 +5219,61 @@ func _run() -> void:
 	if p35c_double_location.professional_registry.has("professional_2"):
 		p35c_double_location.professional_registry.professional_2.station_id = "player_station_2"
 	_expect(save_store.save_game(test_root + "/pass35c-double-location.json", p35c_double_location) != OK, "a single adult cannot exist simultaneously at the original classroom and on a travelling ship")
+
+
+	# Pass 36: real biomedical refuse becomes a three-output production
+	# input; buyer SPECIES drives market interest but existing generic
+	# organic_waste has no invented individual source-species provenance.
+	var p36_fresh = WorldScript.new()
+	_expect(p36_fresh.load_starter() == OK, "fresh galaxy adds salt, an idle waste haul contract and original species-demand markets without a new game")
+	var p36_myc: Dictionary = p36_fresh._find_station("vellum_foundry")
+	var p36_freshship: Dictionary = p36_fresh._find_ship("ship_001")
+	_expect(int(p36_fresh.state.get("salt_recovery_version", 0)) == 1 and int(p36_fresh.state.get("waste_transport_version", 0)) == 1 and int(p36_fresh.state.get("waste_cultures_version", 0)) == 1, "species demand, salt recovery and waste hauling each have independently versioned save migrations")
+	_expect(int(p36_fresh._find_ware("salt").volume) == 1 and p36_fresh._find_recipe("water_recycling").outputs == {"potable_water":1, "fertile_soil":1, "salt":1}, "every genuine wastewater cycle recovers separately storable water, soil and salt using the existing two waste and one energy inputs")
+	_expect(_total_ware(p36_fresh.state, "salt") == 0 and _total_ware(p36_fresh.state, "organic_waste") == 0, "startup does not mint salt, biosolids or fake alien waste inventories")
+	_expect(p36_myc.get("waste_buyer_species_id", "") == "mycoran" and int(p36_myc.buy_prices.get("organic_waste", 0)) == 12 and p36_fresh.waste_cultures.buyer_report(p36_fresh, "vellum_foundry").contains("Mycoran"), "a Mycoran biological market buys existing generic waste for real credits, independent of the station's political owner")
+	_expect(int(p36_fresh._find_station("hearth_exchange").buy_prices.get("organic_waste", 0)) == 2 and int(p36_fresh._find_station("cinder_depot").buy_prices.get("organic_waste", 0)) == 7 and int(p36_fresh._find_station("verdant_hub").buy_prices.get("organic_waste", 0)) == 5, "different biological buyers legitimately value unclassified organic waste differently")
+	_expect(not p36_fresh.waste_transport.assign(p36_fresh, "ship_001", "hearth_exchange").ok and not p36_fresh.waste_transport.assign(p36_fresh, "npc_logistics_001", "vellum_foundry").ok and not p36_fresh.waste_transport.assign(p36_fresh, "ship_001", "player_station_1").ok, "waste collector cannot be assigned to foreign ships, unowned destinations or a nonexistent recycling facility")
+	_expect(p36_freshship.waste_transport == p36_fresh.waste_transport._empty_job(), "waste hauling starts disabled and does not overwrite orders or cargo on migration")
+	_expect(save_store.save_game(test_root + "/pass36-starter.json", p36_fresh.snapshot()) == OK, "species-market metadata, empty salt and idle waste jobs pass strict starter save auditing")
+	var p36_prior: Dictionary = p36_fresh.snapshot()
+	p36_prior.erase("salt_recovery_version")
+	p36_prior.erase("salt_recovery_catalog")
+	p36_prior.erase("waste_transport_version")
+	p36_prior.erase("waste_cultures_version")
+	p36_prior.erase("waste_cultures_catalog")
+	for p36_prev_ship in p36_prior.ships:
+		p36_prev_ship.erase("waste_transport")
+		p36_prev_ship.cargo.erase("salt")
+	for p36_prev_station in p36_prior.stations:
+		p36_prev_station.stock.erase("salt")
+		p36_prev_station.erase("waste_buyer_species_id")
+		p36_prev_station.buy_prices.erase("organic_waste")
+	for p36_ware_i in range(p36_prior.wares.size() - 1, -1, -1):
+		if str(p36_prior.wares[p36_ware_i].id) == "salt":
+			p36_prior.wares.remove_at(p36_ware_i)
+	for p36_prior_recipe in p36_prior.recipes:
+		if p36_prior_recipe.id == "water_recycling":
+			p36_prior_recipe.outputs.erase("salt")
+	_expect(save_store.save_game(test_root + "/pass36-previous-ecology.json", p36_prior) == OK, "previous save with the original two-product recycler, no alien premiums and no new jobs remains readable")
+	var p36_prior_load: Dictionary = save_store.load_game(test_root + "/pass36-previous-ecology.json")
+	var p36_upgraded = WorldScript.new()
+	_expect(p36_prior_load.get("ok", false) and p36_upgraded.restore_snapshot(p36_prior_load.state) == OK and int(p36_upgraded.state.salt_recovery_version) == 1 and int(p36_upgraded.state.waste_transport_version) == 1 and int(p36_upgraded.state.waste_cultures_version) == 1, "one-time versioned migration adds new salt, an empty job and original NPC buyer cultures without overwriting saved property")
+	_expect(_total_ware(p36_upgraded.state, "salt") == 0 and p36_upgraded._find_ship("ship_001").cargo == p36_prior.ships[0].cargo and p36_upgraded._find_ship("ship_001").orders == p36_prior.ships[0].orders and _total_credits(p36_upgraded.state) == _total_credits(p36_prior), "old-save migration preserves every existing ship cargo, queued order and credit with zero retroactive reclaimed salt")
+	_expect(save_store.save_game(test_root + "/pass36-migrated.json", p36_upgraded.snapshot()) == OK, "migrated alien buyer quotes, salt recipe and ship job can immediately be re-saved")
+	var p36_future_market: Dictionary = p36_fresh.snapshot()
+	p36_future_market.waste_cultures_version = 2
+	_expect(save_store.save_game(test_root + "/pass36-unknown-bio-market.json", p36_future_market) != OK, "unrecognized future alien species market definitions cannot be saved as current biology")
+	var p36_false_species: Dictionary = p36_fresh.snapshot()
+	for p36_station in p36_false_species.stations:
+		if p36_station.id == "vellum_foundry":
+			p36_station.waste_buyer_species_id = "made_up"
+	_expect(save_store.save_game(test_root + "/pass36-false-species.json", p36_false_species) != OK, "forging the species identity of an NPC biological buyer fails the audited market catalogue")
+	var p36_forced_salt: Dictionary = p36_fresh.snapshot()
+	for p36_station in p36_forced_salt.stations:
+		if p36_station.id == "hearth_exchange":
+			p36_station.stock.salt += 1
+	_expect(save_store.save_game(test_root + "/pass36-phantom-salt.json", p36_forced_salt) != OK, "recovered salt cannot appear in warehouses without a completed physical waste-recycling cycle")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
