@@ -4692,6 +4692,9 @@ func _run() -> void:
 	var p35_world = WorldScript.new()
 	_expect(p35_world.restore_snapshot(p34_flight_restore.snapshot()) == OK, "Pass 34 saved engineers migrate additively to empty Pass 35 professional identity records")
 	_disable_npc_trading(p35_world)
+	# Passenger arrival marks housing Awaiting service until a genuine 60-tick
+	# rationed resident cycle runs. Employment must not bypass that gate.
+	p35_world.advance_ticks(60)
 	var p35_home: Dictionary = p35_world._find_station("player_station_1")
 	var p35_headcount: int = p35_world.population.total_people(p35_world)
 	var p35_licences: int = int(p35_home.careers.licensed.engineering_college)
