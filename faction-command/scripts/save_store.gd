@@ -873,8 +873,6 @@ func _valid_ecology(state: Dictionary) -> bool:
 			return false
 	for recipe in expected.recipes:
 		var desired_recipe: Dictionary = recipe.duplicate(true)
-		if state.has("salt_recovery_version") and recipe.id == "water_recycling":
-			desired_recipe.outputs["salt"] = 1
 		var found := false
 		for present in state.recipes:
 			if present.id == recipe.id:
@@ -916,7 +914,7 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 					cycles += int(module.cycles)
 			var station_key: String = str(event.station_id)
 			receipts[station_key] = int(receipts.get(station_key, 0)) + 1
-			if int(receipts[station_key]) > cycles:
+			if int(receipts[station_key]) > int(cycles / SaltRecoveryScript.SALT_CYCLES):
 				return false
 			break
 		if not found_station:
