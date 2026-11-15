@@ -518,6 +518,7 @@ func _build_ui() -> void:
 	role_picker.add_item("Station supplier")
 	role_picker.add_item("Waste hauler")
 	role_picker.add_item("Bio survey")
+	role_picker.add_item("Wildlife collector")
 	role_picker.item_selected.connect(_on_role_selected)
 	property_list.add_child(role_picker)
 	role_hint = _wrapped_label("", 12, MUTED)
@@ -841,6 +842,19 @@ func _execute_inspector_action(action_id: String) -> void:
 				var survey_result: Dictionary = world.biosurvey.assign(world, active_player_ship_id, object_id)
 				order_feedback.text = str(survey_result.message)
 				if survey_result.ok:
+					_save_current_game()
+				_refresh_world_display()
+		"wildlife_capture":
+			if kind == "sector" and object_id == selected_sector:
+				var capture_result: Dictionary = world.livestock.assign(world, active_player_ship_id, object_id)
+				order_feedback.text = str(capture_result.message)
+				if capture_result.ok:
+					_save_current_game()
+				_refresh_world_display()
+		"livestock_slaughter":
+			if kind == "station":
+				var harvest_result: Dictionary = world.livestock.slaughter(world, object_id)
+				if harvest_result.ok:
 					_save_current_game()
 				_refresh_world_display()
 
@@ -1249,6 +1263,11 @@ func _on_role_selected(index: int) -> void:
 		order_feedback.text = str(result.message)
 		if result.ok:
 			_save_current_game()
+	elif index == 6:
+		var capture_result: Dictionary = world.livestock.assign(world, str(ship.id), selected_sector)
+		order_feedback.text = str(capture_result.message)
+		if capture_result.ok:
+			_save_current_game()
 	_refresh_world_display()
 
 
@@ -1276,8 +1295,10 @@ func _refresh_world_display() -> void:
 	ship_button.text = "◈   " + str(ship.name)
 	_refresh_property_picker()
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
-	role_picker.select(5 if ship.bio_survey.enabled else (4 if ship.waste_transport.enabled else (3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))))
-	if ship.bio_survey.enabled:
+	role_picker.select(6 if ship.wildlife_capture.enabled else (5 if ship.bio_survey.enabled else (4 if ship.waste_transport.enabled else (3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0))))))
+	if ship.wildlife_capture.enabled:
+		role_hint.text = "Collecting live wildlife at %s: %d work ticks remain. Requires stasis power, crew and cargo space." % [str(ship.wildlife_capture.site_id), int(ship.wildlife_capture.ticks_remaining)]
+	elif ship.bio_survey.enabled:
 		role_hint.text = "Surveying %s: %d work ticks remain. Real crew, cargo energy and finite native stock are required." % [str(ship.bio_survey.site_id), int(ship.bio_survey.ticks_remaining)]
 	elif ship.waste_transport.enabled:
 		role_hint.text = "Collecting real residential waste for a stocked wastewater recycler, via ordinary cargo and sector routes."
