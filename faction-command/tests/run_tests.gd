@@ -5284,6 +5284,63 @@ func _run() -> void:
 			p36_station.stock.salt += 1
 	_expect(save_store.save_game(test_root + "/pass36-phantom-salt.json", p36_forced_salt) != OK, "recovered salt cannot appear in warehouses without a completed physical waste-recycling cycle")
 
+
+	# Pass 36: a biological culture's quote must pay actual station credits
+	# for waste physically produced by actual fed and housed residents.
+	var p36_real_biomass = WorldScript.new()
+	_expect(p36_real_biomass.restore_snapshot(settled_restore.snapshot()) == OK, "alien organic-waste sale starts from a historically paid and provisioned residential colony")
+	_disable_npc_trading(p36_real_biomass)
+	var p36_bio_home: Dictionary = p36_real_biomass._find_station("player_station_1")
+	var p36_bio_funds: int = _total_credits(p36_real_biomass.state)
+	var p36_bio_player_cash: int = int(p36_real_biomass.state.starting_credits)
+	var p36_bio_tick: int = 60 - int(p36_real_biomass.state.tick) % 60
+	p36_real_biomass.state.tick += p36_bio_tick
+	p36_real_biomass.habitation.tick(p36_real_biomass)
+	p36_real_biomass.settlement.tick(p36_real_biomass)
+	_expect(int(p36_bio_home.stock.get("organic_waste", 0)) >= 2, "living people first consume real water and food before producing at least two units of saleable biowaste")
+	_expect(p36_real_biomass.dock_ship("ship_001", "player_station_1").ok and p36_real_biomass.transfer_player_station("ship_001", "player_station_1", "organic_waste", 2, false).ok, "two existing biological waste units are physically loaded into ship cargo at their residential source")
+	_expect(p36_real_biomass.queue_fly_to("ship_001", "vellum_gate"), "alien buyer's demand cannot teleport wastewater: the cargo must travel through actual sector gates")
+	p36_real_biomass.advance_ticks(40)
+	var p36_bio_buyer: Dictionary = p36_real_biomass._find_station("vellum_foundry")
+	var p36_bio_buyer_credits: int = int(p36_bio_buyer.credits)
+	_expect(p36_real_biomass.dock_ship("ship_001", "vellum_foundry").ok and p36_real_biomass.trade("ship_001", "vellum_foundry", "organic_waste", 2, false).ok, "Mycoran station genuinely buys two units of a different colony's waste at the real culturally desirable price")
+	_expect(int(p36_real_biomass.state.starting_credits) == p36_bio_player_cash + 24 and int(p36_bio_buyer.credits) == p36_bio_buyer_credits - 24 and int(p36_bio_buyer.stock.organic_waste) >= 2 and _total_credits(p36_real_biomass.state) == p36_bio_funds, "buyer pays 24 existing credits for physical cargo; the alien's budget, cargo, provenance-agnostic species quote and global money conserve correctly")
+	_expect(save_store.save_game(test_root + "/pass36-actual-alien-waste-sale.json", p36_real_biomass.snapshot()) == OK, "unclassified, resident-generated foreign biowaste purchases save without fabricating species-of-origin claims")
+	# A real robotically controlled ship can now find residential waste at
+	# its OWN source and haul it to an OWNED recycling station, leaving
+	# existing orders/cargo/crew intact and without an extra payroll claim.
+	var p36_haul = WorldScript.new()
+	_expect(p36_haul.restore_snapshot(p31_colony.snapshot()) == OK, "autonomous waste-haul test loads the genuinely constructed and powered Pass 31 recycling factory")
+	_disable_npc_trading(p36_haul)
+	var p36_haul_source: Dictionary = p36_haul._find_station("player_station_1")
+	var p36_haul_recycler: Dictionary = p36_haul._find_station("player_station_2")
+	var p36_haul_ship: Dictionary = p36_haul._find_ship("ship_001")
+	var p36_available_waste: int = int(p36_haul_source.stock.get("organic_waste", 0))
+	_expect(p36_available_waste >= 1 and p36_haul.waste_transport._recycles(p36_haul_recycler), "the old inhabited station has genuinely collected waste and the receiving player owns a completed recycling module")
+	var p36_haul_pre: Dictionary = p36_haul.snapshot()
+	_expect(p36_haul.waste_transport.assign(p36_haul, "ship_001", "player_station_2").ok and p36_haul_ship.role == "Waste Hauler" and p36_haul_ship.waste_transport.enabled, "the player can assign a persistent autonomous collector to a genuine wastewater treatment module")
+	var p36_haul_start_credits: int = _total_credits(p36_haul.state)
+	var p36_haul_source_before: int = int(p36_haul_source.stock.organic_waste)
+	var p36_haul_dest_before: int = int(p36_haul_recycler.stock.organic_waste)
+	p36_haul.advance_ticks(3)
+	_expect(int(p36_haul_ship.waste_transport.delivered_total) >= 1 and int(p36_haul_ship.waste_transport.trips) >= 1, "real ongoing waste ship automatically picks up from a genuinely inhabited station and delivers to a distinct owned recycler")
+	var p36_haul_delivered: int = int(p36_haul_ship.waste_transport.delivered_total)
+	_expect(int(p36_haul_source.stock.organic_waste) == p36_haul_source_before - p36_haul_delivered and int(p36_haul_recycler.stock.organic_waste) == p36_haul_dest_before + p36_haul_delivered and _total_credits(p36_haul.state) == p36_haul_start_credits, "haul moves exactly the counted wastewater between physical warehouses with no created cargo or credits")
+	_expect(p36_haul.state.ledger.any(func(e): return e.kind == "waste_collected" and e.ship_id == "ship_001" and int(e.quantity) >= 1) and p36_haul.state.ledger.any(func(e): return e.kind == "waste_delivered" and e.ship_id == "ship_001" and int(e.quantity) >= 1), "the same source and destination cargo movement has visible timestamped wasteload pickup and delivery ledger receipts")
+	_expect(save_store.save_game(test_root + "/pass36-real-haul.json", p36_haul.snapshot()) == OK, "source, ship, recipient, return route and cumulative physically verified hauler count pass strict save integrity")
+	var p36_haul_read: Dictionary = save_store.load_game(test_root + "/pass36-real-haul.json")
+	var p36_haul_reload = WorldScript.new()
+	_expect(p36_haul_read.get("ok", false) and p36_haul_reload.restore_snapshot(p36_haul_read.state) == OK and p36_haul_reload.snapshot() == p36_haul.snapshot(), "active repeatable real waste hauling contract and physical stock restore across save/reload exactly")
+	var p36_job_fake: Dictionary = p36_haul.snapshot()
+	p36_job_fake.ships[0].waste_transport.delivered_total += 100
+	_expect(save_store.save_game(test_root + "/pass36-phantom-haul.json", p36_job_fake) != OK, "fake delivered wastewater totals without actual trade/transfer receipts are rejected")
+	var p36_job_future: Dictionary = p36_haul.snapshot()
+	p36_job_future.waste_transport_version = 2
+	_expect(save_store.save_game(test_root + "/pass36-unknown-hauling.json", p36_job_future) != OK, "unknown future waste-hauler save format cannot silently mutate ship assignments")
+	_expect(not p35c_world.waste_transport.assign(p35c_world, "ship_001", "player_station_3").ok, "ships carrying two distinct named passengers cannot simultaneously be commandeered for autonomous hazardous waste hauling")
+	p36_haul.waste_transport.stop(p36_haul_ship)
+	_expect(not p36_haul_ship.waste_transport.enabled and p36_haul_ship.role == "Unassigned" and p36_haul_ship.cargo == p36_haul_reload._find_ship("ship_001").cargo and p36_haul_ship.orders == p36_haul_reload._find_ship("ship_001").orders, "stopping a job does not delete any already carried waste, crew, equipment or queued ship order")
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
