@@ -5832,6 +5832,34 @@ func _run() -> void:
 	var p37d_nectar_reload = WorldScript.new()
 	_expect(p37d_nectar_saved.get("ok", false) and p37d_nectar_reload.restore_snapshot(p37d_nectar_saved.state) == OK and p37d_nectar_reload.snapshot() == p37d_crop.snapshot(), "delivered crop and made-to-recipe livestock feed reload without an extra source, energy, seed or finished feed item")
 
+	# Now finish the supply chain: another genuinely captured live moth,
+	# real alloys for a separate aviary, and autonomous interstation
+	# transport of the five physically manufactured nectar units.
+	var p37d_aviary_build: Dictionary = p37d_crop.construction.place(p37d_crop, "hearthreach", {"dustwhistle_aviary":1}, "all", [])
+	var p37d_aviary_site: Dictionary = p37d_crop.construction.find_site(p37d_crop, str(p37d_aviary_build.get("site_id", "")))
+	_expect(p37d_aviary_build.ok and not p37d_aviary_site.is_empty(), "a new finite animal-nutrition consumer is a separately funded, as-yet-unbuilt pollinator habitat")
+	_expect(p37d_crop.dock_ship("ship_001", "hearth_exchange").ok and p37d_crop.trade("ship_001", "hearth_exchange", "energy_cells", 14, true).ok, "real purchased stasis power covers the additional moth expedition and six-unit aviary build")
+	_expect(p37d_crop.livestock.assign(p37d_crop, "ship_001", "hearthreach").ok, "same physical ship collects a live pollinator to consume the actually manufactured nectar")
+	p37d_crop.advance_ticks(28)
+	_expect(int(p37d_crop._find_ship("ship_001").cargo.get("dustwhistle_moth", 0)) == 1 and int(p37d_crop.state.livestock_sites.liora_dustwhistle) == 15, "captured live adult permanently reduces a finite native wild quota and requires continuing stasis electricity")
+	_expect(p37d_crop.queue_fly_to("ship_001", "vellum_gate"), "animal transport routes to the NPC foundry without teleporting the captive")
+	p37d_crop.advance_ticks(30)
+	_expect(p37d_crop.dock_ship("ship_001", "vellum_foundry").ok and p37d_crop.trade("ship_001", "vellum_foundry", "alloy_plates", 19, true).ok, "actual 19 alloy units for the avian habitat are bought using remaining player funds")
+	_expect(p37d_crop.queue_fly_to("ship_001", "hearthreach"), "same animal-carrying ship returns to its funded building site over the map's connected sectors")
+	p37d_crop.advance_ticks(30)
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_aviary_site.station_id)).ok and p37d_crop.construction.deliver(p37d_crop, "ship_001", str(p37d_aviary_site.id)).ok, "paid metal and electricity physically reach the new aviary while the captured adult remains conserved in ship stasis")
+	p37d_crop.advance_ticks(90)
+	var p37d_aviary_station: Dictionary = p37d_crop._find_station(str(p37d_aviary_site.station_id))
+	_expect(int(p37d_aviary_site.completed) == 1 and p37d_crop.livestock.capacity(p37d_aviary_station, p37d_crop.livestock.species_by_id(p37d_crop, "dustwhistle")) == 6, "external builder completes six realistic habitat places after paid construction time")
+	_expect(p37d_crop.dock_ship("ship_001", str(p37d_aviary_station.id)).ok and p37d_crop.transfer_player_station("ship_001", str(p37d_aviary_station.id), "dustwhistle_moth", 1, true).ok, "living moth is transferred once from interstellar ship stasis to its completed staffed, fed habitat")
+	var p37d_feed_at_source: int = int(p37d_nectar_station.stock.dustwhistle_nectar)
+	_expect(p37d_crop.station_supply.assign(p37d_crop, "ship_001", str(p37d_aviary_station.id), 0).ok, "the original ship may switch to autonomous supply for its new animal husbandry consumer without any NPC purchase allowance")
+	p37d_crop.advance_ticks(32)
+	_expect(int(p37d_aviary_station.stock.dustwhistle_nectar) >= 1 and int(p37d_nectar_station.stock.dustwhistle_nectar) < p37d_feed_at_source, "the real autonomous supplier physically moves orchard-derived nectar from one owned factory into another occupied animal habitat")
+	p37d_crop.advance_ticks(32)
+	_expect(p37d_crop.state.ledger.any(func(e): return e.kind == "animal_feed_used" and e.ware_id == "dustwhistle_nectar" and e.station_id == p37d_aviary_station.id) and int(p37d_aviary_station.stock.organic_waste) >= 1, "moth care consumes specially made nectar alongside water/electricity and records only genuinely sustained organic waste")
+	_expect(save_store.save_game(test_root + "/pass37d-complete-nectar-to-moth.json", p37d_crop.snapshot()) == OK, "captured fauna, actual agricultural crop, built feed refinery, NPC-paid aviary, automatic nectar transport and fed live care survive save audits without phantom food")
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
