@@ -25,7 +25,7 @@ func definitions() -> Dictionary:
 		ids[species.id] = true
 	for i in range(BUYER_IDS.size()):
 		var station: Variant = parsed.stations[i]
-		if not station is Dictionary or station.get("station_id") != BUYER_IDS[i] or not ids.has(station.get("buyer_species_id")) or not station.get("reason") is String or not (station.get("organic_waste_buy_price") is int or station.get("organic_waste_buy_price") is float) or int(station.organic_waste_buy_price) < 1 or int(station.organic_waste_buy_price) > 100:
+		if not station is Dictionary or station.get("station_id") != BUYER_IDS[i] or not ids.has(station.get("buyer_species_id")) or not station.get("reason") is String or not (station.get("organic_waste_buy_price") is int or station.get("organic_waste_buy_price") is float) or int(station.organic_waste_buy_price) < 1 or int(station.organic_waste_buy_price) > 100 or not (station.get("salt_buy_price") is int or station.get("salt_buy_price") is float) or int(station.salt_buy_price) < 1 or int(station.salt_buy_price) > 100:
 			return {}
 	for affinity in parsed.future_cross_species_affinities:
 		if not affinity is Dictionary or not ids.has(affinity.get("recipient_species_id")) or not ids.has(affinity.get("origin_species_id")) or affinity.recipient_species_id == affinity.origin_species_id or not affinity.get("appeal") is String:
@@ -58,8 +58,11 @@ func prepare(target: Dictionary) -> Error:
 			station["waste_buyer_species_id"] = str(binding.buyer_species_id)
 			# Only NPC stations can buy from the player; existing prices (if
 			# any) are preserved. Neither buyer credits nor stock are minted.
-			if station.owner != target.player_faction_id and not station.buy_prices.has("organic_waste"):
-				station.buy_prices["organic_waste"] = int(binding.organic_waste_buy_price)
+			if station.owner != target.player_faction_id:
+				if not station.buy_prices.has("organic_waste"):
+					station.buy_prices["organic_waste"] = int(binding.organic_waste_buy_price)
+				if not station.buy_prices.has("salt"):
+					station.buy_prices["salt"] = int(binding.salt_buy_price)
 	target["waste_cultures_catalog"] = catalog(defs)
 	target["waste_cultures_version"] = VERSION
 	return OK
@@ -81,5 +84,6 @@ func buyer_report(world: RefCounted, station_id: String) -> String:
 				species_name = str(species.name)
 				break
 		var offer := int(station.buy_prices.get("organic_waste", 0))
-		return "%s bio-market: %s\nUnclassified organic waste: %s\n%s\nIndividual species-of-origin premiums require verified species-tagged waste lots and are not yet offered." % [species_name, station.name, "%d CR/unit" % offer if offer > 0 else "No current purchase quote", str(binding.reason)]
+		var salt_offer := int(station.buy_prices.get("salt", 0))
+		return "%s bio-market: %s\nUnclassified organic waste: %s\nRecovered mineral salt: %s\n%s\nIndividual species-of-origin premiums require verified species-tagged waste lots and are not yet offered." % [species_name, station.name, "%d CR/unit" % offer if offer > 0 else "No current purchase quote", "%d CR/unit" % salt_offer if salt_offer > 0 else "No current purchase quote", str(binding.reason)]
 	return ""
