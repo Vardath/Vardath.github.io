@@ -11,6 +11,7 @@ const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
+const BiotaScript = preload("res://scripts/biota.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -181,6 +182,8 @@ func _valid_world(state: Dictionary) -> bool:
 		return false
 	if state.has("waste_transport_version") and (not state.has("salt_recovery_version") or not state.has("station_supply_version")):
 		return false
+	if state.has("biota_version") != state.has("biota_catalog") or (state.has("biota_version") and state.get("waste_cultures_version") != 1):
+		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
 	if state.has("education_version") != state.has("education_catalog") or (state.has("education_version") and state.get("demographics_version") != 1):
@@ -309,6 +312,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("waste_cultures_version") and not _valid_waste_cultures(state):
 		return false
 	if state.has("waste_transport_version") and not _valid_waste_transport(state):
+		return false
+	if state.has("biota_version") and not _valid_biota(state):
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
@@ -940,6 +945,15 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 	# Future consumption/trading may reduce stock, but cannot exceed
 	# completed recycler receipts with no other declared source.
 	return total_stock <= total_recovered
+
+
+func _valid_biota(state: Dictionary) -> bool:
+	if state.get("biota_version") != BiotaScript.VERSION or not state.get("biota_catalog") is Dictionary:
+		return false
+	var expected: Dictionary = BiotaScript.new().definitions()
+	# Species identities are a reference catalogue only. No historical
+	# stock, residential identity, animal inventory or drugs are spawned.
+	return not expected.is_empty() and state.biota_catalog == expected
 
 
 func _valid_waste_cultures(state: Dictionary) -> bool:
