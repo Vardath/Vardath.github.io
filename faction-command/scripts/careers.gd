@@ -207,7 +207,10 @@ func board_qualified(world: RefCounted, ship_id: String, track: String, quantity
 	var record: Dictionary = world.population.station_cohort(world, str(station.id))
 	var already: int = int(station.education.qualified.get(track, 0))
 	var licensed: int = int(station.careers.licensed.get(track, 0))
-	if already < quantity or (certified and licensed < quantity) or (not certified and already - licensed < quantity):
+	# Named professionals remain actual resident adults: aggregate passenger
+	# transfers must never remove them or their reserved certificates.
+	var reserved := world.professionals._local_count(world, str(station.id), track) if certified and world.state.has("professional_version") and world.professionals.WORK.has(track) else 0
+	if already < quantity or (certified and licensed - reserved < quantity) or (not certified and already - licensed < quantity):
 		return {"ok":false, "message":"The departing adults must already hold the selected genuine local theory and practical records."}
 	if int(record.cohorts.assigned_workers) - quantity < int(station.education.teachers) + world.education._active_adults(station) + _active_count(station):
 		return {"ok":false, "message":"Do not leave enrolled students, mentors or practical trainees without their own remaining adults."}
