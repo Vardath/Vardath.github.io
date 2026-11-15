@@ -20,6 +20,7 @@ const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
+const BiotaScript = preload("res://scripts/biota.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -42,6 +43,7 @@ var ecology = EcologyScript.new()
 var salt_recovery = SaltRecoveryScript.new()
 var waste_cultures = WasteCulturesScript.new()
 var waste_transport = WasteTransportScript.new()
+var biota = BiotaScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -120,6 +122,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 	if waste_prepare_result != OK:
 		printerr("Waste transport starter migration rejected: ", waste_prepare_result, " ship count=", new_state.ships.size())
 		return ERR_INVALID_DATA
+	if biota.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	state = new_state
 	return OK
 
@@ -193,6 +197,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = waste_transport.prepare(restored)
+	if result != OK:
+		return result
+	result = biota.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
