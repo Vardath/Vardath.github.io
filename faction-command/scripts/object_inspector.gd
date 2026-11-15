@@ -63,8 +63,17 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 					if kind == "station":
 						options.append({"id":"builds", "label":"Manage builds"})
 				"Education", "Careers":
-					if kind == "station" and not world._find_station(id).get("education", {}).get("modules", []).is_empty():
-						options.append({"id":"careers" if tab == "Careers" else "education", "label":"Manage practical careers" if tab == "Careers" else "Manage staffed education"})
+					if kind == "station":
+						var outpost: Dictionary = world._find_station(id)
+						var school: bool = not outpost.get("education", {}).get("modules", []).is_empty()
+						var professionals: bool = false
+						if tab == "Careers" and world.state.has("professional_version"):
+							for track in world.professionals.WORK:
+								if int(outpost.careers.licensed.get(track, 0)) > 0 or world.professionals._has_workplace(outpost, track) or world.professionals._local_count(world, id, track) > 0:
+									professionals = true
+									break
+						if school or professionals:
+							options.append({"id":"careers" if tab == "Careers" else "education", "label":"Manage practical careers" if tab == "Careers" else "Manage staffed education"})
 				"Research":
 					if kind == "station" and world.research.has_lab(world._find_station(id)):
 						options.append({"id":"research", "label":"Open research"})
