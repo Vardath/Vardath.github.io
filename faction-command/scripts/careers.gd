@@ -209,7 +209,7 @@ func board_qualified(world: RefCounted, ship_id: String, track: String, quantity
 	var licensed: int = int(station.careers.licensed.get(track, 0))
 	# Named professionals remain actual resident adults: aggregate passenger
 	# transfers must never remove them or their reserved certificates.
-	var reserved := world.professionals._local_count(world, str(station.id), track) if certified and world.state.has("professional_version") and world.professionals.WORK.has(track) else 0
+	var reserved: int = world.professionals._local_count(world, str(station.id), track) if certified and world.state.has("professional_version") and world.professionals.WORK.has(track) else 0
 	if already < quantity or (certified and licensed - reserved < quantity) or (not certified and already - licensed < quantity):
 		return {"ok":false, "message":"The departing adults must already hold the selected genuine local theory and practical records."}
 	if int(record.cohorts.assigned_workers) - quantity < int(station.education.teachers) + world.education._active_adults(station) + _active_count(station):
