@@ -100,7 +100,9 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if ecology.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
-	if salt_recovery.prepare(new_state) != OK:
+	var salt_prepare_result: Error = salt_recovery.prepare(new_state)
+	if salt_prepare_result != OK:
+		printerr("Salt recovery starter migration rejected: ", salt_prepare_result, " ecology=", new_state.get("ecology_version"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
 		return ERR_INVALID_DATA
 	if demographics.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
@@ -110,7 +112,9 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if professionals.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
-	if waste_transport.prepare(new_state) != OK:
+	var waste_prepare_result: Error = waste_transport.prepare(new_state)
+	if waste_prepare_result != OK:
+		printerr("Waste transport starter migration rejected: ", waste_prepare_result, " ship count=", new_state.ships.size())
 		return ERR_INVALID_DATA
 	state = new_state
 	return OK
