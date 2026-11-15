@@ -5095,9 +5095,9 @@ func _run() -> void:
 	var p35c_ledger_old: Dictionary = p35c_world.state.professional_registry
 	_expect(p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("salary_paid", -1) == p35c_ledger_old.get("professional_1", {}).get("salary_paid", -2) and p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("experience", -1) == p35c_ledger_old.get("professional_2", {}).get("experience", -2), "two unique professionals retain prior wage and experience records without magical transit payroll")
 	var p35c_new_births: int = 0
-	for original in p35c_world.state.population.stations:
-		var before_cohort: Dictionary = p35c_world.state.population.stations[original]
-		var after_cohort: Dictionary = p35c_multi_restore.state.population.stations[original]
+	for p35c_station_id in p35c_world.state.population.stations:
+		var before_cohort: Dictionary = p35c_world.state.population.stations[p35c_station_id]
+		var after_cohort: Dictionary = p35c_multi_restore.state.population.stations[p35c_station_id]
 		p35c_new_births += int(after_cohort.family.births_total) - int(before_cohort.family.births_total)
 	_expect(p35c_multi_restore.population.total_people(p35c_multi_restore) == p35c_people_before + p35c_new_births and _total_credits(p35c_multi_restore.state) == p35c_credits_before, "all moving people and real traded money are conserved; only independently serviced recorded births can increase headcount")
 	_expect(p35c_multi_restore.professionals.set_active(p35c_multi_restore, "professional_1", true).ok, "a newly settled qualified adult can begin genuine paid work only at their physically existing industrial workstation")
