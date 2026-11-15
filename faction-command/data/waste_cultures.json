@@ -28,25 +28,29 @@
       "station_id": "hearth_exchange",
       "buyer_species_id": "aeralith",
       "organic_waste_buy_price": 2,
-      "reason": "Trace volatile compounds recovered for controlled atmospheric craft."
+      "reason": "Trace volatile compounds recovered for controlled atmospheric craft.",
+      "salt_buy_price": 3
     },
     {
       "station_id": "vellum_foundry",
       "buyer_species_id": "mycoran",
       "organic_waste_buy_price": 12,
-      "reason": "Foreign biosolids are sometimes prized as aromatic fungal fermentation substrates."
+      "reason": "Foreign biosolids may be treasured as aromatic fungal fermentation feedstock, while mineral-rich recovered salt is prized for controlled spore cultivation.",
+      "salt_buy_price": 10
     },
     {
       "station_id": "cinder_depot",
       "buyer_species_id": "kethric",
       "organic_waste_buy_price": 7,
-      "reason": "Catalytic recovery and bioleaching of rare industrial feedstocks."
+      "reason": "Catalytic recovery and bioleaching of rare industrial feedstocks.",
+      "salt_buy_price": 6
     },
     {
       "station_id": "verdant_hub",
       "buyer_species_id": "lumeni",
       "organic_waste_buy_price": 5,
-      "reason": "Bioreactor culture, composting and soil restoration."
+      "reason": "Bioreactor culture, composting and soil restoration.",
+      "salt_buy_price": 5
     }
   ],
   "future_cross_species_affinities": [
