@@ -857,6 +857,23 @@ func _execute_inspector_action(action_id: String) -> void:
 				if harvest_result.ok:
 					_save_current_game()
 				_refresh_world_display()
+				detail_body.text += "\n" + str(harvest_result.message)
+		"animal_quarantine_emberhorn", "animal_quarantine_dustwhistle":
+			if kind == "station":
+				var isolate_id: String = action_id.trim_prefix("animal_quarantine_")
+				var isolation: Dictionary = world.animal_feed.set_quarantine(world, object_id, isolate_id)
+				if isolation.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(isolation.message)
+		"animal_treat_emberhorn", "animal_treat_dustwhistle":
+			if kind == "station":
+				var treatment_id: String = action_id.trim_prefix("animal_treat_")
+				var treatment: Dictionary = world.animal_feed.treat(world, object_id, treatment_id)
+				if treatment.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(treatment.message)
 
 
 func _open_trade_for_station(station_id: String) -> void:
