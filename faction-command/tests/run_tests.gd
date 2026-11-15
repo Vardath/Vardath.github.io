@@ -45,6 +45,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("settler_source_station_id")
 	copy.erase("career_manifest")
 	copy.erase("professional_passenger_id")
+	copy.erase("professional_passenger_ids")
 	return copy
 
 
@@ -55,6 +56,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("settler_source_station_id")
 		ship.erase("career_manifest")
 		ship.erase("professional_passenger_id")
+		ship.erase("professional_passenger_ids")
 	return copy
 
 
@@ -100,6 +102,7 @@ func _strip_careers(state: Dictionary) -> void:
 	for ship in state.get("ships", []):
 		ship.erase("career_manifest")
 		ship.erase("professional_passenger_id")
+		ship.erase("professional_passenger_ids")
 
 
 func _strip_education(state: Dictionary) -> void:
@@ -4768,6 +4771,7 @@ func _run() -> void:
 	p35b_legacy.erase("professional_transport_version")
 	for vessel in p35b_legacy.ships:
 		vessel.erase("professional_passenger_id")
+		vessel.erase("professional_passenger_ids")
 	_expect(save_store.save_game(test_root + "/pass35a-before-named-travel.json", p35b_legacy) == OK, "legacy Pass 35A saves without named passenger metadata remain valid")
 	var p35b_old = WorldScript.new()
 	_expect(p35b_old.restore_snapshot(p35b_legacy) == OK and p35b_old.state.professional_transport_version == 1 and p35b_old.state.professional_registry.has("professional_1") and str(p35b_old._find_ship("ship_001").professional_passenger_id).is_empty(), "real previous professional identity is migrated without deleting work or adding phantom passengers")
@@ -4857,7 +4861,7 @@ func _run() -> void:
 	p35b_forced_work.professional_registry.professional_1.active = true
 	_expect(save_store.save_game(test_root + "/pass35b-ghost-payroll.json", p35b_forced_work) != OK, "an in-transit employee cannot secretly remain on a station's paid active workforce")
 	var p35b_future: Dictionary = p35b_world.snapshot()
-	p35b_future.professional_transport_version = 2
+	p35b_future.professional_transport_version = 3
 	_expect(save_store.save_game(test_root + "/pass35b-unknown-named-travel.json", p35b_future) != OK, "unknown professional transport version never silently drops named workers")
 	var p35b_board_ui = MainScene.instantiate()
 	p35b_board_ui.save_path = test_root + "/ui-pass35b-board-action.json"
