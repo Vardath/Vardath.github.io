@@ -1,10 +1,12 @@
-# Vardath Compatibility Fixes 1.0.8
+# Vardath Compatibility Fixes 1.0.9
 
-**Source coverage (1.0.8):** The 14 November session proves the 1.0.7 Personal Envoy cue-selector failed to match. This release replaces that selector with the exact log-recorded failing `do_if` expression, guarding only the missing actor read; it also adds two optional null lookups for Kuertee Crime Has Consequences. Original XML for **both Workshop 9.02/1.21 extensions remains unavailable**, so the two new diffs have X4-schema and synthetic-source tests, not complete source-based validation. Eleven earlier diffs remain source-validated, two GalaxyTrader URLs are unavailable. CI intentionally reports partial validation even when green. No runtime claims.
+**1.0.9 validation:** The new HeadHunter null-faction-representative guard is checked against exact pinned Workshop XML and the bundled original interaction is preserved. The updated Kuertee Crime Has Consequences guard addresses the 1.0.8 repeated XPath matching failure using successive first-match selectors; **Kuertee's original Workshop XML is unavailable**, so this remains synthetic-fixture and schema validated only until X4 confirms correct application. Previous Personal Envoy $PilotActor errors are absent in the new log; its working guard is unchanged. CI records `result: partial` due to unavailable Kuertee/Envoy/GalaxyTrader sources and lack of runtime X4 testing. No UI changes.
 
 
 
-[Download](Vardath_Compatibility_Fixes_1.0.8.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+[Download](Vardath_Compatibility_Fixes_1.0.9.zip) · [Current findings and live checks](vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Three-mod update](../x4-updates/X4_Hyperion_Tours_Update_2026-11-10.zip)
+
+**1.0.9 (15 November 2026):** Based on `debug(20261115-001437).log`: 33,274 tagged errors. The repeated HeadHunter `Speaky` call had `$FactionRep == null`, so the native `start_script` now runs only for an operational NPC representative; other bounty logic remains unchanged. The new CHC patch replaces duplicate-value nodes individually instead of applying a broad ambiguous XPath. Personal Envoy is confirmed quiet in this recording. [Full log audit](LOG_AUDIT_2026-11-15_001437.md).
 
 **1.0.8 (14 November 2026):** Updated from the newly supplied `debug(20261114-085351).log` (183,176 lines): the previous Envoy guard was **not applied** (explicit `No matching node`), and its missing `$PilotActor` error repeats 5,319 times. A new exact expression guard replaces the single logged `do_if` expression while preserving crew actions. Kuertee Crime Has Consequences has 2,064 null-target property errors; two exact logged expressions now use safe optional reads. [Full log audit](LOG_AUDIT_2026-11-14_085351.md). Both new overlays are log-grounded but not yet merged against original Workshop XML, and the game has not been run to test them. **Version 1.0.8 supersedes the failed Envoy guard.**
 

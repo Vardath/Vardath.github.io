@@ -422,6 +422,19 @@ class Contracts(unittest.TestCase):
         self.assertEqual(canonical(self.one(p,".//cue[@name='DeathWatcher']")),canonical(self.one(p,".//cue[@name='DeathWatcher']",False)))
         self.assertFalse(actions.xpath('.//reward_player|.//transfer_money_to_player|.//set_faction_relation'))
 
+    def test_headhunter_speaky_guard_preserves_native_interaction(self):
+        """Pinned upstream 2992233767: do not pass null actor to start_script."""
+        p='extensions/chillheadhunter/md/headhuntermd.xml'
+        old=self.one(p,".//cue[@name='Speaky']/actions/start_script",False)
+        guard=self.one(p,".//cue[@name='Speaky']/actions/do_if")
+        self.assertEqual(guard.get('value'),'@$FactionRep.isclass.npc')
+        self.assertEqual(len(guard),1)
+        self.assertEqual(canonical(guard[0]),canonical(old))
+        self.assertFalse(expr(guard.get('value'),{'@$FactionRep.isclass.npc':False}))
+        self.assertTrue(expr(guard.get('value'),{'@$FactionRep.isclass.npc':True}))
+        self.assertEqual(canonical(self.one(p,".//cue[@name='PayoutEffect']/actions")),
+                         canonical(self.one(p,".//cue[@name='PayoutEffect']/actions",False)))
+
     def test_rescue_late_update_does_not_replay_consumed_cleanup(self):
         p='extensions/kuertee_emergent_missions/md/kuertee_emergent_missions_rescue.xml'
         condition=self.one(p,".//cue[@name='kEMissions_Rescue_UpdateMission']//do_if[@value='not $Count_Rescues']/do_if")
@@ -500,28 +513,38 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             apply_patch(E.fromstring(b'<mdscript><cues><cue name="EnsurePermanentCrew"><actions><do_if value="true"/></actions></cue></cues></mdscript>'),patch)
 
-    def test_chc_null_object_optional_lookups_preserve_valid_branch(self):
-        """The two 9.02 expressions are supplied by native log line 515/522."""
+    def test_chc_null_target_repeated_exact_attributes_do_not_ambiguously_match(self):
+        """Log-grounded; Workshop XML unavailable; synthetic repeated attributes."""
         p='extensions/kuertee_crime_has_consequences/md/kuertee_chc.xml'
         patch=E.parse(str(MOD/p)).getroot()
         ops=[x for x in patch if isinstance(x.tag,str)]
-        self.assertEqual(len(ops),2)
-        self.assertEqual(ops[0].get('sel'),
-                         "/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact")
-        self.assertEqual(ops[0].text,'@$kCHC_object.trueowner.headquarters')
-        self.assertEqual(ops[1].get('sel'),
+        self.assertEqual(len(ops),7)
+        target="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact"
+        for op in ops[:6]:
+            self.assertEqual(op.tag,'replace')
+            self.assertEqual(op.get('sel'),target)
+            self.assertEqual(op.get('silent'),'true')
+            self.assertEqual(op.text,'@$kCHC_object.trueowner.headquarters')
+        self.assertEqual(ops[-1].get('sel'),
                          "/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value")
-        self.assertEqual(ops[1].text,'@$kCHC_object.toplevelcommander')
-        fixture=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="Init"><cues><cue name="ResolveObjectToShipStation"><actions><set_value name="$HQ" exact="$kCHC_object.trueowner.headquarters"/><do_if value="$kCHC_object.toplevelcommander"><set_value name="$Branch" exact="true"/></do_if><set_value name="$Preserved" exact="true"/></actions></cue></cues></cue></cues></mdscript>')
-        merged=apply_patch(fixture,patch)
-        actions=merged.xpath(".//cue[@name='ResolveObjectToShipStation']/actions")[0]
-        self.assertEqual(len(actions),3)
-        self.assertEqual(actions[0].get('exact'),'@$kCHC_object.trueowner.headquarters')
-        self.assertEqual(actions[1].get('value'),'@$kCHC_object.toplevelcommander')
-        self.assertEqual(actions[1][0].get('name'),'$Branch')
-        self.assertEqual(actions[2].get('name'),'$Preserved')
-        with self.assertRaises(ValueError):
-            apply_patch(E.fromstring(b'<mdscript><cues><cue name="ResolveObjectToShipStation"><actions/></cue></cues></mdscript>'),patch)
+        self.assertEqual(ops[-1].text,'@$kCHC_object.toplevelcommander')
+        original=E.fromstring(b'<mdscript name="kuertee_chc"><cues><cue name="Init"><actions><set_value name="$One" exact="$kCHC_object.trueowner.headquarters"/><set_value name="$Two" exact="$kCHC_object.trueowner.headquarters"/><do_if value="$kCHC_object.toplevelcommander"><set_value name="$Branch" exact="true"/></do_if><set_value name="$Unchanged" exact="true"/></actions></cue></cues></mdscript>')
+        merged=apply_patch(original,patch)
+        actions=merged.xpath(".//cue[@name='Init']/actions")[0]
+        self.assertEqual(len(actions),4)
+        self.assertEqual([x.get('exact') for x in actions[:2]],
+                         ['@$kCHC_object.trueowner.headquarters']*2)
+        self.assertEqual(actions[2].get('value'),'@$kCHC_object.toplevelcommander')
+        self.assertEqual(actions[2][0].get('name'),'$Branch')
+        self.assertEqual(canonical(actions[3]),canonical(original.xpath(".//set_value[@name='$Unchanged']")[0]))
+        # A third repeated original also gets patched, rather than failing
+        # with the 1.0.8 'multiple matching nodes' error.
+        third=copy.deepcopy(original)
+        third.xpath('.//actions')[0].insert(2,E.fromstring(b'<set_value name="$Three" exact="$kCHC_object.trueowner.headquarters"/>'))
+        transformed=apply_patch(third,patch)
+        self.assertEqual(len(transformed.xpath(".//set_value[@exact='@$kCHC_object.trueowner.headquarters']")),3)
+        # Later silent operations are no-ops and do not overwrite any valid owner.
+        self.assertEqual(len(transformed.xpath(".//set_value[@exact='$kCHC_object.trueowner.headquarters']")),0)
 
     def test_chc_optional_workshop_dependency(self):
         root=E.parse(str(MOD/'content.xml')).getroot()
@@ -585,11 +608,11 @@ def validate(cache, archive=None):
             for name,data in expected.items():
                 if z.read(name)!=data:raise ValueError('Archive source mismatch '+name)
             members=sorted(expected)
-    return {'version':'1.0.8','reference_files':len(original),'diff_files':len(patched)+2,'source_validated_diff_files':len(patched),
+    return {'version':'1.0.9','reference_files':len(original),'diff_files':len(patched)+2,'source_validated_diff_files':len(patched),
             'untested_upstream_diffs':sorted(MISSING_SOURCE_PATHS | {envoy_path,chc_path}),
             'single_match_operations':len(counts),'contract_tests':count,
             'result':'partial',
-            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.','Kuertee CHC 9.02 original XML unavailable; two null-object expressions are synthetic-verified only.','Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
+            'archive_members':len(members),'runtime_tested':False,'limitations':['Personal Envoy v1.21 original XML unavailable; new exact-logged-expression do_if guard is synthetic-verified only.','Kuertee CHC 9.02 original XML unavailable; repeated first-match optional guards are synthetic-verified only and require runtime confirmation.','Neither new Workshop patch has been demonstrated to apply to original XML or tested in native X4.','No X4 executable, save or merged installed catalogs available.','Tests apply patches to exact pinned references, not the effective installed load order.','Native runtime, reload and same-frame event behavior require in-game acceptance.']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source-cache',type=Path);parser.add_argument('--zip',type=Path);parser.add_argument('--report',type=Path);args=parser.parse_args()

@@ -1,5 +1,16 @@
 # Version history
 
+## 1.0.9 — 2026-11-15 — HeadHunter and CHC source-aware guards
+
+- **HeadHunter (Workshop 2992233767):** Source-pinned `Speaky` cue at `start_script object="$FactionRep"` (error line 342) is called 158 times with a null representative in the supplied log. Wrap only that native `start_script` in `do_if value="@$FactionRep.isclass.npc"`; preserve its original script, line pool, delay, interactive flag and the bounty payout and tracking cues. Validator checks the patched file against the exact pinned Workshop source, and verifies the entire original `start_script` is unchanged inside the guard.
+- **Crime Has Consequences (Workshop 3627879558):** 1.0.8's broad `set_value` XPath matches multiple identical expressions, causing X4 to skip the patch; 988 property-lookup errors remain. Replace **one** remaining identical original expression per operation with a safe optional lookup, repeating up to six operations marked `silent` so installations with fewer duplicates do not raise unmatched-selector errors. The existing `do_if` optional commander lookup is retained. This patch cannot be proved against original source, only synthetic repeated-node fixtures; the next X4 run must confirm absence of `Multiple matching nodes` and errors.
+- **Personal Envoy Auto (Workshop 3744204222):** All `$PilotActor` errors are gone in the new 195,038-line recording, consistent with the 1.0.8 exact-expression guard. No further Envoy changes.
+- **Spectrum Super Ship (Workshop 3576089734):** 9,542 missing-macro records for `extensions/ccmod/assets/units/size_xl/macros/ccsupership_macro`. Its Steam Workshop page warns of incompatibility and broken blueprints in X4 8.0; user game uses 9.0. Do **not** substitute a dummy ship or delete serialized vessels in the player's live save. The user-supplied 35760889734 has one extra 8.
+- **Other high-impact outside-source issues:** 19,654 missing empty character-model references, 677 `fs_destroyer` invalid meshsources, 213 insufficient UI table height warnings, 185 missing ShipGenerators, 267 stale mission-ID queries, and 13 research-menu onUpdate script exceptions. No ungrounded asset overrides.
+- Archive contains all prior compatibility diffs. CI validation remains `partial` (native X4 runtime unavailable; 2 pinned GalaxyTrader source URLs missing; Envoy and CHC original XML unverified).
+
+
+
 ## 1.0.8 — 2026-11-14 — exact log-targeted guards
 
 - **Personal Envoy Auto (Workshop 3744204222, v1.21):** X4 explicitly logs that Compatibility Fixes 1.0.7's absolute cue selector matched no node. Its original `EnsurePermanentCrew` still emits 5,319 missing `$PilotActor` errors in the new session, with the exact failing action `<do_if>` at line 409, expression `$CrewKept and $PilotActor and $PilotActor.exists`. The replacement diff targets the **exact original expression** anywhere in the MD script, with `$CrewKept and @$PilotActor.exists` so only an existing actor satisfies the branch. It no longer prepends a null actor or assumes a cue tree structure. It does not spawn, delete or reassign crew.

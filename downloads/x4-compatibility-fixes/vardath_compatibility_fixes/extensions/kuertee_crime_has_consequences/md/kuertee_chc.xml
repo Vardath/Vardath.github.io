@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-  <!-- Crime Has Consequences 9.02: ResolveObjectToShipStation receives
-       a null $kCHC_object. Optional lookups preserve the existing outputs
-       and commander path for live objects; no alternate owner is invented. -->
-  <replace sel="/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters']/@exact">@$kCHC_object.trueowner.headquarters</replace>
-  <replace sel="/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value">@$kCHC_object.toplevelcommander</replace>
+  <!-- CHC 9.02: 1.0.8's broad XPath matched multiple nodes and X4 skipped it.
+       Select one unguarded exact expression per operation. Each successful
+       replacement removes its own attribute from the next match set.
+       Silent later repetitions handle versions containing fewer copies.
+       Existing crime, ownership and commander actions are preserved. -->
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="(/mdscript//set_value[@exact='$kCHC_object.trueowner.headquarters'])[1]/@exact" silent="true">@$kCHC_object.trueowner.headquarters</replace>
+  <replace sel="/mdscript//do_if[@value='$kCHC_object.toplevelcommander']/@value" silent="true">@$kCHC_object.toplevelcommander</replace>
 </diff>

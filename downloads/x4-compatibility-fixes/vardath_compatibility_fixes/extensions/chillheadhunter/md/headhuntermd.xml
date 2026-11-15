@@ -11,4 +11,16 @@
       <cancel_cue cue="Watcher"/>
     </actions>
   </replace>
+  <!-- HeadHunter 2992233767: logged Speaky actor was null in line 342.
+       Keep the original interaction if the faction representative is an NPC;
+       skip only the impossible start_script call otherwise. -->
+  <replace sel="/mdscript//cue[@name='Speaky']/actions/start_script">
+    <do_if value="@$FactionRep.isclass.npc">
+      <start_script object="$FactionRep" name="'player.interaction'">
+        <param name="Line" value="[2013,2111,5023].random"/>
+        <param name="MaxQueueDelay" value="10s"/>
+        <param name="interactive" value="false"/>
+      </start_script>
+    </do_if>
+  </replace>
 </diff>
