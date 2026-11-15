@@ -4790,6 +4790,12 @@ func _run() -> void:
 	if not p35b_supply_ok:
 		printerr("P35B DIAGNOSTIC FAILED SUPPLY destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " source=", p35b_source.stock)
 	_expect(p35b_supply_ok, "physical prior-producer stock and paid solar power genuinely provision the destination before a named employee's arrival")
+	# Habitats do not become operational at the instant stock is delivered:
+	# advance the REAL scheduled 60-tick upkeep, which debits finite energy,
+	# water, food and medicine and only then powers their commissioned beds.
+	var p35b_until_service: int = 60 - int(p35b_world.state.tick) % 60
+	p35b_world.advance_ticks(p35b_until_service)
+	_expect(p35b_world.habitation.operational_capacity(p35b_dest, p35b_world.state.habitation_catalog) >= 1 and p35b_world.provisions.missing_provision(p35b_world, p35b_dest, p35b_world.demographics.residents(p35b_world.population.station_cohort(p35b_world, "player_station_2")) + 1).is_empty(), "delivered real solar energy actually powers the intended residence in a funded scheduled service cycle")
 	_expect(p35b_world.dock_ship("ship_001", "player_station_1").ok, "qualified employee travels only after ship is back at the actual source station")
 	# Paid solar purchase and physical resupply cost real simulation ticks;
 	# capture the AFTER-supply baseline, never assume no factory production,
