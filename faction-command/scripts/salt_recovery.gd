@@ -22,8 +22,7 @@ func prepare(target: Dictionary) -> Error:
 		if recipe.id == "water_recycling":
 			recycler = recipe
 			break
-	if recycler.is_empty() or recycler.outputs != {"potable_water":1, "fertile_soil":1}:
-		printerr("Salt migration found unexpected recycler recipe: ", recycler)
+	if recycler.is_empty() or not recycler.get("outputs") is Dictionary or recycler.outputs.size() != 2 or float(recycler.outputs.get("potable_water", 0)) != 1.0 or float(recycler.outputs.get("fertile_soil", 0)) != 1.0:
 		return ERR_INVALID_DATA
 	for station in target.stations:
 		if station.stock.has("salt"):
