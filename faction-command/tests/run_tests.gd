@@ -129,7 +129,27 @@ func _strip_demographics(state: Dictionary) -> void:
 		record.erase("family")
 
 
+func _strip_animal_feed(state: Dictionary) -> void:
+	for key in ["animal_feed_version", "animal_feed_catalog", "animal_quarantine"]:
+		state.erase(key)
+	for ship in state.get("ships", []):
+		for id in ["emberhorn_fodder", "dustwhistle_nectar", "emberhorn_woven_cloth", "dustwhistle_insulation"]:
+			ship.get("cargo", {}).erase(id)
+	for station in state.get("stations", []):
+		for id in ["emberhorn_fodder", "dustwhistle_nectar", "emberhorn_woven_cloth", "dustwhistle_insulation"]:
+			station.get("stock", {}).erase(id)
+	for i in range(state.get("wares", []).size() - 1, -1, -1):
+		if str(state.wares[i].id) in ["emberhorn_fodder", "dustwhistle_nectar", "emberhorn_woven_cloth", "dustwhistle_insulation"]:
+			state.wares.remove_at(i)
+	for i in range(state.get("recipes", []).size() - 1, -1, -1):
+		if str(state.recipes[i].id) in ["emberhorn_fodder_mill", "dustwhistle_nectar_blender", "emberhorn_fibre_loom", "dustwhistle_insulation_press", "animal_veterinary_clinic"]:
+			state.recipes.remove_at(i)
+	for id in ["emberhorn_fodder_mill", "dustwhistle_nectar_blender", "emberhorn_fibre_loom", "dustwhistle_insulation_press", "animal_veterinary_clinic"]:
+		state.get("construction_blueprints", {}).erase(id)
+
+
 func _strip_livestock(state: Dictionary) -> void:
+	_strip_animal_feed(state)
 	for key in ["livestock_version", "livestock_catalog", "livestock_sites", "livestock_care", "livestock_transit"]:
 		state.erase(key)
 	for ship in state.get("ships", []):
@@ -617,7 +637,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 25, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 29, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -846,7 +866,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 17, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 22, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
