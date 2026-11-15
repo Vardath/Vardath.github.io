@@ -104,6 +104,7 @@ func assign(world: RefCounted, ship_id: String, station_id: String, budget_limit
 		return {"ok":true, "message":"Purchase limit updated. Existing cargo and orders are retained."}
 	ship.player_trader.enabled = false
 	world.build_supply.stop(ship)
+	world.waste_transport.stop(ship)
 	ship.station_supply = _empty_job()
 	ship.station_supply.enabled = true
 	ship.station_supply.station_id = station_id

@@ -17,6 +17,9 @@ const HabitationScript = preload("res://scripts/habitation.gd")
 const ProvisionsScript = preload("res://scripts/provisions.gd")
 const SettlementScript = preload("res://scripts/settlement.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
+const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
+const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
+const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -36,6 +39,9 @@ var habitation = HabitationScript.new()
 var provisions = ProvisionsScript.new()
 var settlement = SettlementScript.new()
 var ecology = EcologyScript.new()
+var salt_recovery = SaltRecoveryScript.new()
+var waste_cultures = WasteCulturesScript.new()
+var waste_transport = WasteTransportScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -96,6 +102,12 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	if ecology.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
+	var salt_prepare_result: Error = salt_recovery.prepare(new_state)
+	if salt_prepare_result != OK:
+		printerr("Salt recovery starter migration rejected: ", salt_prepare_result, " ecology=", new_state.get("ecology_version"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
+		return ERR_INVALID_DATA
+	if waste_cultures.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
 	if demographics.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	if education.prepare(new_state) != OK:
@@ -103,6 +115,10 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 	if careers.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	if professionals.prepare(new_state) != OK:
+		return ERR_INVALID_DATA
+	var waste_prepare_result: Error = waste_transport.prepare(new_state)
+	if waste_prepare_result != OK:
+		printerr("Waste transport starter migration rejected: ", waste_prepare_result, " ship count=", new_state.ships.size())
 		return ERR_INVALID_DATA
 	state = new_state
 	return OK
@@ -158,6 +174,12 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	result = ecology.prepare(restored)
 	if result != OK:
 		return result
+	result = salt_recovery.prepare(restored)
+	if result != OK:
+		return result
+	result = waste_cultures.prepare(restored)
+	if result != OK:
+		return result
 	result = demographics.prepare(restored)
 	if result != OK:
 		return result
@@ -168,6 +190,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = professionals.prepare(restored)
+	if result != OK:
+		return result
+	result = waste_transport.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -287,6 +312,8 @@ func advance_ticks(count: int) -> void:
 				build_supply.tick(self, ship)
 			if ship.has("station_supply"):
 				station_supply.tick(self, ship)
+			if ship.has("waste_transport"):
+				waste_transport.tick(self, ship)
 		construction.tick(self)
 		habitation.tick(self)
 		settlement.tick(self)
@@ -318,6 +345,7 @@ func set_player_trader(ship_id: String, enabled: bool) -> bool:
 		return false
 	build_supply.stop(ship)
 	station_supply.stop(ship)
+	waste_transport.stop(ship)
 	ship.player_trader.enabled = enabled
 	ship.role = "Autonomous Trader" if enabled else "Unassigned"
 	return true
@@ -457,6 +485,7 @@ func _tick_production(station: Dictionary) -> void:
 			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
+		salt_recovery.record_cycle(self, station, module)
 		professionals.record_production(self, station, str(module.recipe_id))
 		blocked = _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():

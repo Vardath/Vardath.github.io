@@ -46,6 +46,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("career_manifest")
 	copy.erase("professional_passenger_id")
 	copy.erase("professional_passenger_ids")
+	copy.erase("waste_transport")
 	return copy
 
 
@@ -57,6 +58,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("career_manifest")
 		ship.erase("professional_passenger_id")
 		ship.erase("professional_passenger_ids")
+		ship.erase("waste_transport")
 	return copy
 
 
@@ -125,10 +127,18 @@ func _strip_demographics(state: Dictionary) -> void:
 
 func _strip_ecology(state: Dictionary) -> void:
 	_strip_demographics(state)
+	state.erase("salt_recovery_version")
+	state.erase("salt_recovery_catalog")
+	state.erase("waste_cultures_version")
+	state.erase("waste_cultures_catalog")
+	state.erase("waste_transport_version")
+	for ship in state.get("ships", []):
+		ship.erase("waste_transport")
+		ship.cargo.erase("salt")
 	state.erase("ecology_version")
 	state.erase("ecology_catalog")
 	for index in range(state.get("wares", []).size() - 1, -1, -1):
-		if state.wares[index].id in ["organic_waste", "fertile_soil"]:
+		if state.wares[index].id in ["organic_waste", "fertile_soil", "salt"]:
 			state.wares.remove_at(index)
 	for index in range(state.get("recipes", []).size() - 1, -1, -1):
 		if state.recipes[index].id in ["water_recycling", "soil_agriculture"]:
@@ -138,6 +148,10 @@ func _strip_ecology(state: Dictionary) -> void:
 	for station in state.get("stations", []):
 		station.stock.erase("organic_waste")
 		station.stock.erase("fertile_soil")
+		station.stock.erase("salt")
+		station.erase("waste_buyer_species_id")
+		station.get("buy_prices", {}).erase("organic_waste")
+		station.get("buy_prices", {}).erase("salt")
 
 
 func _strip_provisions(state: Dictionary) -> void:
@@ -554,7 +568,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 12, "starter economy includes four markets, four archives, six original wares, four provisions and two ecological resources")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 13, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -954,7 +968,7 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
-		for ecology_ware in ["organic_waste", "fertile_soil"]:
+		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
 			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
 			migrated_stock.erase(ecology_ware)
 		for provision_ware in ["ice", "potable_water", "food_rations", "medical_supplies"]:
@@ -2439,7 +2453,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 4, "property panel offers manual, trader, build supply and station supply roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 5, "property panel offers manual, trading, construction supply, station supply and bio-waste collection roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -5026,7 +5040,14 @@ func _run() -> void:
 	p35c_world.advance_ticks(20)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "energy_cells", 20, true).ok, "the new water recycler's warehouse stores forty-eight imported waste units and twenty paid power units, not free production stock")
 	p35c_world.advance_ticks(310)
-	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20, "twenty real 15-tick biowaste and energy conversions create at least twenty water and twenty recovered soil without inventing inputs")
+	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20 and int(p35c_recycler.stock.get("salt", 0)) >= 5, "twenty genuine wastewater cycles yield twenty water, twenty fertile soil and at least five separately storable concentrated salt byproducts")
+	# One recovered-salt unit per FOUR real cycles gives a conservative
+	# mineral concentration. The eighty-volume recycler must still have
+	# space for the next sixteen waste and sixteen energy units. The first
+	# five salt units are MOVED to actual ship cargo, never deleted.
+	var p35c_salt_first: int = int(p35c_recycler.stock.get("salt", 0))
+	_expect(p35c_salt_first >= 5 and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "salt", p35c_salt_first, false).ok, "recoverable salt is physically removed to an actual passenger ship, freeing the exact recycling warehouse space required for the remaining wastewater batch")
+	_expect(int(p35c_ship.cargo.get("salt", 0)) == p35c_salt_first and int(p35c_recycler.stock.get("salt", 0)) == 0, "all early salt remains in ship inventory until deliberately stored or sold later, with no ghost wares or trade credit")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "remaining eight genuine school wastewater units are hauled to the plant for a second batch")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "eight already stored industrial wastewater units join the same recycling chain rather than appearing from nothing")
 	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "another physical energy shipment is needed to finish recycling the full sixty-four wastewater units")
@@ -5206,6 +5227,140 @@ func _run() -> void:
 	if p35c_double_location.professional_registry.has("professional_2"):
 		p35c_double_location.professional_registry.professional_2.station_id = "player_station_2"
 	_expect(save_store.save_game(test_root + "/pass35c-double-location.json", p35c_double_location) != OK, "a single adult cannot exist simultaneously at the original classroom and on a travelling ship")
+
+
+	# Pass 36: real biomedical refuse becomes a three-output production
+	# input; buyer SPECIES drives market interest but existing generic
+	# organic_waste has no invented individual source-species provenance.
+	var p36_fresh = WorldScript.new()
+	_expect(p36_fresh.load_starter() == OK, "fresh galaxy adds salt, an idle waste haul contract and original species-demand markets without a new game")
+	var p36_myc: Dictionary = p36_fresh._find_station("vellum_foundry")
+	var p36_freshship: Dictionary = p36_fresh._find_ship("ship_001")
+	_expect(int(p36_fresh.state.get("salt_recovery_version", 0)) == 1 and int(p36_fresh.state.get("waste_transport_version", 0)) == 1 and int(p36_fresh.state.get("waste_cultures_version", 0)) == 1, "species demand, salt recovery and waste hauling each have independently versioned save migrations")
+	_expect(int(p36_fresh._find_ware("salt").volume) == 1 and int(p36_fresh._find_recipe("water_recycling").outputs.get("potable_water", 0)) == 1 and int(p36_fresh._find_recipe("water_recycling").outputs.get("fertile_soil", 0)) == 1 and p36_fresh._find_recipe("water_recycling").outputs.size() == 2 and int(p36_fresh.salt_recovery.SALT_CYCLES) == 4, "every physical wastewater cycle restores water and soil, and every fourth genuinely completed cycle additionally concentrates one storable salt unit")
+	_expect(_total_ware(p36_fresh.state, "salt") == 0 and _total_ware(p36_fresh.state, "organic_waste") == 0, "startup does not mint salt, biosolids or fake alien waste inventories")
+	_expect(p36_myc.get("waste_buyer_species_id", "") == "mycoran" and int(p36_myc.buy_prices.get("organic_waste", 0)) == 12 and p36_fresh.waste_cultures.buyer_report(p36_fresh, "vellum_foundry").contains("Mycoran"), "a Mycoran biological market buys existing generic waste for real credits, independent of the station's political owner")
+	_expect(int(p36_fresh._find_station("hearth_exchange").buy_prices.get("organic_waste", 0)) == 2 and int(p36_fresh._find_station("cinder_depot").buy_prices.get("organic_waste", 0)) == 7 and int(p36_fresh._find_station("verdant_hub").buy_prices.get("organic_waste", 0)) == 5, "different biological buyers legitimately value unclassified organic waste differently")
+	_expect(not p36_fresh.waste_transport.assign(p36_fresh, "ship_001", "hearth_exchange").ok and not p36_fresh.waste_transport.assign(p36_fresh, "npc_logistics_001", "vellum_foundry").ok and not p36_fresh.waste_transport.assign(p36_fresh, "ship_001", "player_station_1").ok, "waste collector cannot be assigned to foreign ships, unowned destinations or a nonexistent recycling facility")
+	_expect(p36_freshship.waste_transport == p36_fresh.waste_transport._empty_job(), "waste hauling starts disabled and does not overwrite orders or cargo on migration")
+	_expect(save_store.save_game(test_root + "/pass36-starter.json", p36_fresh.snapshot()) == OK, "species-market metadata, empty salt and idle waste jobs pass strict starter save auditing")
+	var p36_prior: Dictionary = p36_fresh.snapshot()
+	p36_prior.erase("salt_recovery_version")
+	p36_prior.erase("salt_recovery_catalog")
+	p36_prior.erase("waste_transport_version")
+	p36_prior.erase("waste_cultures_version")
+	p36_prior.erase("waste_cultures_catalog")
+	for p36_prev_ship in p36_prior.ships:
+		p36_prev_ship.erase("waste_transport")
+		p36_prev_ship.cargo.erase("salt")
+	for p36_prev_station in p36_prior.stations:
+		p36_prev_station.stock.erase("salt")
+		p36_prev_station.erase("waste_buyer_species_id")
+		p36_prev_station.buy_prices.erase("organic_waste")
+		p36_prev_station.buy_prices.erase("salt")
+	for p36_ware_i in range(p36_prior.wares.size() - 1, -1, -1):
+		if str(p36_prior.wares[p36_ware_i].id) == "salt":
+			p36_prior.wares.remove_at(p36_ware_i)
+	for p36_prior_recipe in p36_prior.recipes:
+		if p36_prior_recipe.id == "water_recycling":
+			p36_prior_recipe.outputs.erase("salt")
+	_expect(save_store.save_game(test_root + "/pass36-previous-ecology.json", p36_prior) == OK, "previous save with the original two-product recycler, no alien premiums and no new jobs remains readable")
+	var p36_prior_load: Dictionary = save_store.load_game(test_root + "/pass36-previous-ecology.json")
+	var p36_upgraded = WorldScript.new()
+	_expect(p36_prior_load.get("ok", false) and p36_upgraded.restore_snapshot(p36_prior_load.state) == OK and int(p36_upgraded.state.salt_recovery_version) == 1 and int(p36_upgraded.state.waste_transport_version) == 1 and int(p36_upgraded.state.waste_cultures_version) == 1, "one-time versioned migration adds new salt, an empty job and original NPC buyer cultures without overwriting saved property")
+	_expect(_total_ware(p36_upgraded.state, "salt") == 0 and p36_upgraded._find_ship("ship_001").cargo == p36_prior.ships[0].cargo and p36_upgraded._find_ship("ship_001").orders == p36_prior.ships[0].orders and _total_credits(p36_upgraded.state) == _total_credits(p36_prior), "old-save migration preserves every existing ship cargo, queued order and credit with zero retroactive reclaimed salt")
+	_expect(save_store.save_game(test_root + "/pass36-migrated.json", p36_upgraded.snapshot()) == OK, "migrated alien buyer quotes, salt recipe and ship job can immediately be re-saved")
+	var p36_future_market: Dictionary = p36_fresh.snapshot()
+	p36_future_market.waste_cultures_version = 2
+	_expect(save_store.save_game(test_root + "/pass36-unknown-bio-market.json", p36_future_market) != OK, "unrecognized future alien species market definitions cannot be saved as current biology")
+	var p36_false_species: Dictionary = p36_fresh.snapshot()
+	for p36_station in p36_false_species.stations:
+		if p36_station.id == "vellum_foundry":
+			p36_station.waste_buyer_species_id = "made_up"
+	_expect(save_store.save_game(test_root + "/pass36-false-species.json", p36_false_species) != OK, "forging the species identity of an NPC biological buyer fails the audited market catalogue")
+	var p36_forced_salt: Dictionary = p36_fresh.snapshot()
+	for p36_station in p36_forced_salt.stations:
+		if p36_station.id == "hearth_exchange":
+			p36_station.stock.salt += 1
+	_expect(save_store.save_game(test_root + "/pass36-phantom-salt.json", p36_forced_salt) != OK, "recovered salt cannot appear in warehouses without a completed physical waste-recycling cycle")
+
+
+	# Pass 36: a biological culture's quote must pay actual station credits
+	# for waste physically produced by actual fed and housed residents.
+	var p36_real_biomass = WorldScript.new()
+	_expect(p36_real_biomass.restore_snapshot(settled_restore.snapshot()) == OK, "alien organic-waste sale starts from a historically paid and provisioned residential colony")
+	_disable_npc_trading(p36_real_biomass)
+	var p36_bio_home: Dictionary = p36_real_biomass._find_station("player_station_1")
+	var p36_bio_funds: int = _total_credits(p36_real_biomass.state)
+	var p36_bio_player_cash: int = int(p36_real_biomass.state.starting_credits)
+	var p36_bio_tick: int = 60 - int(p36_real_biomass.state.tick) % 60
+	p36_real_biomass.state.tick += p36_bio_tick
+	p36_real_biomass.habitation.tick(p36_real_biomass)
+	p36_real_biomass.settlement.tick(p36_real_biomass)
+	_expect(int(p36_bio_home.stock.get("organic_waste", 0)) >= 2, "living people first consume real water and food before producing at least two units of saleable biowaste")
+	_expect(p36_real_biomass.dock_ship("ship_001", "player_station_1").ok and p36_real_biomass.transfer_player_station("ship_001", "player_station_1", "organic_waste", 2, false).ok, "two existing biological waste units are physically loaded into ship cargo at their residential source")
+	_expect(p36_real_biomass.queue_fly_to("ship_001", "vellum_gate"), "alien buyer's demand cannot teleport wastewater: the cargo must travel through actual sector gates")
+	p36_real_biomass.advance_ticks(40)
+	var p36_bio_buyer: Dictionary = p36_real_biomass._find_station("vellum_foundry")
+	var p36_bio_buyer_credits: int = int(p36_bio_buyer.credits)
+	var p36_actual_player_before_sale: int = int(p36_real_biomass.state.starting_credits)
+	var p36_actual_money_before_sale: int = _total_credits(p36_real_biomass.state)
+	_expect(p36_real_biomass.dock_ship("ship_001", "vellum_foundry").ok and p36_real_biomass.trade("ship_001", "vellum_foundry", "organic_waste", 2, false).ok, "Mycoran station genuinely buys two units of a different colony's waste at the real culturally desirable price")
+	_expect(int(p36_real_biomass.state.starting_credits) == p36_actual_player_before_sale + 24 and int(p36_bio_buyer.credits) == p36_bio_buyer_credits - 24 and int(p36_bio_buyer.stock.organic_waste) >= 2 and _total_credits(p36_real_biomass.state) == p36_actual_money_before_sale, "buyer pays 24 existing credits for physical cargo; the alien's budget, cargo, provenance-agnostic species quote and global money conserve correctly")
+	_expect(save_store.save_game(test_root + "/pass36-actual-alien-waste-sale.json", p36_real_biomass.snapshot()) == OK, "unclassified, resident-generated foreign biowaste purchases save without fabricating species-of-origin claims")
+	# A real robotically controlled ship can now find residential waste at
+	# its OWN source and haul it to an OWNED recycling station, leaving
+	# existing orders/cargo/crew intact and without an extra payroll claim.
+	var p36_haul = WorldScript.new()
+	_expect(p36_haul.restore_snapshot(p31_colony.snapshot()) == OK, "autonomous waste-haul test loads the genuinely constructed and powered Pass 31 recycling factory")
+	_disable_npc_trading(p36_haul)
+	var p36_haul_source: Dictionary = p36_haul._find_station("player_station_1")
+	var p36_haul_recycler: Dictionary = p36_haul._find_station("player_station_2")
+	var p36_haul_ship: Dictionary = p36_haul._find_ship("ship_001")
+	var p36_available_waste: int = int(p36_haul_source.stock.get("organic_waste", 0))
+	_expect(p36_available_waste >= 1 and p36_haul.waste_transport._recycles(p36_haul_recycler), "the old inhabited station has genuinely collected waste and the receiving player owns a completed recycling module")
+	var p36_haul_pre: Dictionary = p36_haul.snapshot()
+	_expect(p36_haul.waste_transport.assign(p36_haul, "ship_001", "player_station_2").ok and p36_haul_ship.role == "Waste Hauler" and p36_haul_ship.waste_transport.enabled, "the player can assign a persistent autonomous collector to a genuine wastewater treatment module")
+	var p36_haul_start_credits: int = _total_credits(p36_haul.state)
+	var p36_haul_source_before: int = int(p36_haul_source.stock.organic_waste)
+	var p36_haul_dest_before: int = int(p36_haul_recycler.stock.organic_waste)
+	var p36_organic_before: int = _total_ware(p36_haul.state, "organic_waste")
+	var p36_svc_before: int = 0
+	for p36_receipt in p36_haul.state.ledger:
+		if p36_receipt.kind == "resident_biowaste":
+			p36_svc_before += int(p36_receipt.quantity)
+	var p36_recycle_before: int = 0
+	for p36_module in p36_haul_recycler.production:
+		if p36_module.recipe_id == "water_recycling":
+			p36_recycle_before += int(p36_module.cycles)
+	p36_haul.advance_ticks(3)
+	_expect(int(p36_haul_ship.waste_transport.delivered_total) >= 1 and int(p36_haul_ship.waste_transport.trips) >= 1, "real ongoing waste ship automatically picks up from a genuinely inhabited station and delivers to a distinct owned recycler")
+	var p36_haul_delivered: int = int(p36_haul_ship.waste_transport.delivered_total)
+	var p36_svc_after: int = 0
+	for p36_receipt in p36_haul.state.ledger:
+		if p36_receipt.kind == "resident_biowaste":
+			p36_svc_after += int(p36_receipt.quantity)
+	var p36_recycle_after: int = 0
+	for p36_module in p36_haul_recycler.production:
+		if p36_module.recipe_id == "water_recycling":
+			p36_recycle_after += int(p36_module.cycles)
+	var p36_waste_serviced: int = p36_svc_after - p36_svc_before
+	var p36_waste_recycled: int = p36_recycle_after - p36_recycle_before
+	_expect(int(p36_haul_source.stock.organic_waste) == p36_haul_source_before - p36_haul_delivered + p36_waste_serviced and int(p36_haul_recycler.stock.organic_waste) == p36_haul_dest_before + p36_haul_delivered - 2 * p36_waste_recycled and _total_ware(p36_haul.state, "organic_waste") == p36_organic_before + p36_waste_serviced - 2 * p36_waste_recycled and _total_credits(p36_haul.state) == p36_haul_start_credits, "automatic haul conserves each physical waste unit, accounting separately for actual serviced-resident waste creation and legitimate recycling consumption without minting wares or credits")
+	_expect(p36_haul.state.ledger.any(func(e): return e.kind == "waste_collected" and e.ship_id == "ship_001" and int(e.quantity) >= 1) and p36_haul.state.ledger.any(func(e): return e.kind == "waste_delivered" and e.ship_id == "ship_001" and int(e.quantity) >= 1), "the same source and destination cargo movement has visible timestamped wasteload pickup and delivery ledger receipts")
+	_expect(save_store.save_game(test_root + "/pass36-real-haul.json", p36_haul.snapshot()) == OK, "source, ship, recipient, return route and cumulative physically verified hauler count pass strict save integrity")
+	var p36_haul_read: Dictionary = save_store.load_game(test_root + "/pass36-real-haul.json")
+	var p36_haul_reload = WorldScript.new()
+	_expect(p36_haul_read.get("ok", false) and p36_haul_reload.restore_snapshot(p36_haul_read.state) == OK and p36_haul_reload.snapshot() == p36_haul.snapshot(), "active repeatable real waste hauling contract and physical stock restore across save/reload exactly")
+	var p36_job_fake: Dictionary = p36_haul.snapshot()
+	p36_job_fake.ships[0].waste_transport.delivered_total += 100
+	_expect(save_store.save_game(test_root + "/pass36-phantom-haul.json", p36_job_fake) != OK, "fake delivered wastewater totals without actual trade/transfer receipts are rejected")
+	var p36_job_future: Dictionary = p36_haul.snapshot()
+	p36_job_future.waste_transport_version = 2
+	_expect(save_store.save_game(test_root + "/pass36-unknown-hauling.json", p36_job_future) != OK, "unknown future waste-hauler save format cannot silently mutate ship assignments")
+	_expect(not p35c_world.waste_transport.assign(p35c_world, "ship_001", "player_station_3").ok, "ships carrying two distinct named passengers cannot simultaneously be commandeered for autonomous hazardous waste hauling")
+	p36_haul.waste_transport.stop(p36_haul_ship)
+	_expect(not p36_haul_ship.waste_transport.enabled and p36_haul_ship.role == "Unassigned" and p36_haul_ship.cargo == p36_haul_reload._find_ship("ship_001").cargo and p36_haul_ship.orders == p36_haul_reload._find_ship("ship_001").orders, "stopping a job does not delete any already carried waste, crew, equipment or queued ship order")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:

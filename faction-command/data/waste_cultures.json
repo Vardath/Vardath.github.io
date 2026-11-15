@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "scope": "Unclassified mixed organic waste is currently traded. Species-of-origin premiums are reserved until inhabitants and individual waste lots have auditable species provenance.",
+  "species": [
+    {
+      "id": "aeralith",
+      "name": "Aeralith",
+      "notes": "Atmospheric navigators; seek unusual trace minerals and organic scent precursors rather than bulk refuse."
+    },
+    {
+      "id": "mycoran",
+      "name": "Mycoran",
+      "notes": "Spore-linked communities for whom foreign fermentation can be culturally desirable, though not universally safe."
+    },
+    {
+      "id": "kethric",
+      "name": "Kethric",
+      "notes": "Mineral-tolerant industrial biochemists who recover exotic catalysts from biological residues."
+    },
+    {
+      "id": "lumeni",
+      "name": "Lumeni",
+      "notes": "Wetland-adapted agricultural cultures using fermented organic feedstocks in controlled ecological systems."
+    }
+  ],
+  "stations": [
+    {
+      "station_id": "hearth_exchange",
+      "buyer_species_id": "aeralith",
+      "organic_waste_buy_price": 2,
+      "reason": "Trace volatile compounds recovered for controlled atmospheric craft.",
+      "salt_buy_price": 3
+    },
+    {
+      "station_id": "vellum_foundry",
+      "buyer_species_id": "mycoran",
+      "organic_waste_buy_price": 12,
+      "reason": "Foreign biosolids may be treasured as aromatic fungal fermentation feedstock, while mineral-rich recovered salt is prized for controlled spore cultivation.",
+      "salt_buy_price": 10
+    },
+    {
+      "station_id": "cinder_depot",
+      "buyer_species_id": "kethric",
+      "organic_waste_buy_price": 7,
+      "reason": "Catalytic recovery and bioleaching of rare industrial feedstocks.",
+      "salt_buy_price": 6
+    },
+    {
+      "station_id": "verdant_hub",
+      "buyer_species_id": "lumeni",
+      "organic_waste_buy_price": 5,
+      "reason": "Bioreactor culture, composting and soil restoration.",
+      "salt_buy_price": 5
+    }
+  ],
+  "future_cross_species_affinities": [
+    {
+      "recipient_species_id": "mycoran",
+      "origin_species_id": "aeralith",
+      "appeal": "Rare airborne organic compounds used in ceremonial scent cultivation."
+    },
+    {
+      "recipient_species_id": "lumeni",
+      "origin_species_id": "kethric",
+      "appeal": "Specialized mineral-microbe substrates for controlled crop biochemistry."
+    },
+    {
+      "recipient_species_id": "kethric",
+      "origin_species_id": "mycoran",
+      "appeal": "Unusual spore-derived catalysts valuable in material refining."
+    },
+    {
+      "recipient_species_id": "aeralith",
+      "origin_species_id": "lumeni",
+      "appeal": "Distinctive brine and volatile floral metabolites valued in perfumery."
+    }
+  ]
+}
