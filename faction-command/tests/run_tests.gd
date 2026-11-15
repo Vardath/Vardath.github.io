@@ -1037,7 +1037,7 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
-		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record", "emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers"]:
+		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record", "emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers", "emberhorn_fodder", "dustwhistle_nectar", "emberhorn_woven_cloth", "dustwhistle_insulation"]:
 			_expect(int(migrated_stock.get(bioware_id, -1)) == 0, "pre-logistics NPC migration creates no free planetary specimen or crop: " + str(old_station.id) + " / " + bioware_id)
 			migrated_stock.erase(bioware_id)
 		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
