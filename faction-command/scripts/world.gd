@@ -485,7 +485,7 @@ func _tick_production(station: Dictionary) -> void:
 			deposits[deposit.resource] = int(deposits[deposit.resource]) - int(deposit.quantity)
 		module.progress = 0
 		module.cycles = int(module.cycles) + 1
-		salt_recovery.record_cycle(self, station, str(module.recipe_id))
+		salt_recovery.record_cycle(self, station, module)
 		professionals.record_production(self, station, str(module.recipe_id))
 		blocked = _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
