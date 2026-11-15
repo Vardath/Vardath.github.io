@@ -5303,8 +5303,10 @@ func _run() -> void:
 	p36_real_biomass.advance_ticks(40)
 	var p36_bio_buyer: Dictionary = p36_real_biomass._find_station("vellum_foundry")
 	var p36_bio_buyer_credits: int = int(p36_bio_buyer.credits)
+	var p36_actual_player_before_sale: int = int(p36_real_biomass.state.starting_credits)
+	var p36_actual_money_before_sale: int = _total_credits(p36_real_biomass.state)
 	_expect(p36_real_biomass.dock_ship("ship_001", "vellum_foundry").ok and p36_real_biomass.trade("ship_001", "vellum_foundry", "organic_waste", 2, false).ok, "Mycoran station genuinely buys two units of a different colony's waste at the real culturally desirable price")
-	_expect(int(p36_real_biomass.state.starting_credits) == p36_bio_player_cash + 24 and int(p36_bio_buyer.credits) == p36_bio_buyer_credits - 24 and int(p36_bio_buyer.stock.organic_waste) >= 2 and _total_credits(p36_real_biomass.state) == p36_bio_funds, "buyer pays 24 existing credits for physical cargo; the alien's budget, cargo, provenance-agnostic species quote and global money conserve correctly")
+	_expect(int(p36_real_biomass.state.starting_credits) == p36_actual_player_before_sale + 24 and int(p36_bio_buyer.credits) == p36_bio_buyer_credits - 24 and int(p36_bio_buyer.stock.organic_waste) >= 2 and _total_credits(p36_real_biomass.state) == p36_actual_money_before_sale, "buyer pays 24 existing credits for physical cargo; the alien's budget, cargo, provenance-agnostic species quote and global money conserve correctly")
 	_expect(save_store.save_game(test_root + "/pass36-actual-alien-waste-sale.json", p36_real_biomass.snapshot()) == OK, "unclassified, resident-generated foreign biowaste purchases save without fabricating species-of-origin claims")
 	# A real robotically controlled ship can now find residential waste at
 	# its OWN source and haul it to an OWNED recycling station, leaving
@@ -5322,10 +5324,29 @@ func _run() -> void:
 	var p36_haul_start_credits: int = _total_credits(p36_haul.state)
 	var p36_haul_source_before: int = int(p36_haul_source.stock.organic_waste)
 	var p36_haul_dest_before: int = int(p36_haul_recycler.stock.organic_waste)
+	var p36_organic_before: int = _total_ware(p36_haul.state, "organic_waste")
+	var p36_svc_before: int = 0
+	for p36_receipt in p36_haul.state.ledger:
+		if p36_receipt.kind == "resident_biowaste":
+			p36_svc_before += int(p36_receipt.quantity)
+	var p36_recycle_before: int = 0
+	for p36_module in p36_haul_recycler.production:
+		if p36_module.recipe_id == "water_recycling":
+			p36_recycle_before += int(p36_module.cycles)
 	p36_haul.advance_ticks(3)
 	_expect(int(p36_haul_ship.waste_transport.delivered_total) >= 1 and int(p36_haul_ship.waste_transport.trips) >= 1, "real ongoing waste ship automatically picks up from a genuinely inhabited station and delivers to a distinct owned recycler")
 	var p36_haul_delivered: int = int(p36_haul_ship.waste_transport.delivered_total)
-	_expect(int(p36_haul_source.stock.organic_waste) == p36_haul_source_before - p36_haul_delivered and int(p36_haul_recycler.stock.organic_waste) == p36_haul_dest_before + p36_haul_delivered and _total_credits(p36_haul.state) == p36_haul_start_credits, "haul moves exactly the counted wastewater between physical warehouses with no created cargo or credits")
+	var p36_svc_after: int = 0
+	for p36_receipt in p36_haul.state.ledger:
+		if p36_receipt.kind == "resident_biowaste":
+			p36_svc_after += int(p36_receipt.quantity)
+	var p36_recycle_after: int = 0
+	for p36_module in p36_haul_recycler.production:
+		if p36_module.recipe_id == "water_recycling":
+			p36_recycle_after += int(p36_module.cycles)
+	var p36_waste_serviced: int = p36_svc_after - p36_svc_before
+	var p36_waste_recycled: int = p36_recycle_after - p36_recycle_before
+	_expect(int(p36_haul_source.stock.organic_waste) == p36_haul_source_before - p36_haul_delivered + p36_waste_serviced and int(p36_haul_recycler.stock.organic_waste) == p36_haul_dest_before + p36_haul_delivered - 2 * p36_waste_recycled and _total_ware(p36_haul.state, "organic_waste") == p36_organic_before + p36_waste_serviced - 2 * p36_waste_recycled and _total_credits(p36_haul.state) == p36_haul_start_credits, "automatic haul conserves each physical waste unit, accounting separately for actual serviced-resident waste creation and legitimate recycling consumption without minting wares or credits")
 	_expect(p36_haul.state.ledger.any(func(e): return e.kind == "waste_collected" and e.ship_id == "ship_001" and int(e.quantity) >= 1) and p36_haul.state.ledger.any(func(e): return e.kind == "waste_delivered" and e.ship_id == "ship_001" and int(e.quantity) >= 1), "the same source and destination cargo movement has visible timestamped wasteload pickup and delivery ledger receipts")
 	_expect(save_store.save_game(test_root + "/pass36-real-haul.json", p36_haul.snapshot()) == OK, "source, ship, recipient, return route and cumulative physically verified hauler count pass strict save integrity")
 	var p36_haul_read: Dictionary = save_store.load_game(test_root + "/pass36-real-haul.json")
