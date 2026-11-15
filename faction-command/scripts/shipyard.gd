@@ -127,6 +127,8 @@ func _assemble_ship(world: RefCounted, order: Dictionary, wharf: Dictionary) -> 
 		world.settlement.initialize_ship(vessel)
 	if world.state.has("career_version"):
 		world.careers.initialize_ship(vessel)
+	if world.state.has("professional_transport_version"):
+		world.professionals.initialize_ship(vessel)
 	return vessel
 
 
