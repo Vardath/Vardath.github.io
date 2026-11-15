@@ -3227,6 +3227,10 @@ func _update_trade_screen() -> void:
 	trade_info.text = "%s\n%s  ·  %s\nShip: %s  ·  %s\nCargo: %d / %d  ·  Storage: %d / %d\n%s: %d in cargo / %d at station\nStation sells: %s  ·  buys: %s\nStation credits: %d" % [station.name, _faction_name(str(station.owner)), _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0)), buy_price, sell_price, int(station.credits)]
 	if own_station:
 		trade_info.text = "%s\nYour station  ·  %s\nShip: %s  ·  %s\nCargo: %d / %d  ·  Storage: %d / %d\n%s: %d in cargo / %d at station\nTransfers between your ship and station are free." % [station.name, _sector_name(str(station.sector)), _sector_name(str(ship.sector)), docked, world.cargo_volume(str(ship.id)), int(ship.cargo_capacity), world.station_volume(str(station.id)), int(station.storage_capacity), ware.name, int(ship.cargo.get(ware.id, 0)), int(station.stock.get(ware.id, 0))]
+	if world.state.has("waste_cultures_version"):
+		var alien_market: String = world.waste_cultures.buyer_report(world, str(station.id))
+		if not alien_market.is_empty():
+			trade_info.text += "\n\nALIEN BIO-MARKET\n" + alien_market
 	var production_lines: Array[String] = []
 	for report in world.production_report(str(station.id)):
 		var inputs: Array[String] = []
