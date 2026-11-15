@@ -4751,8 +4751,9 @@ func _run() -> void:
 		if screen.find_child("InspectorAction_careers", true, false) != null:
 			screen.find_child("InspectorAction_careers", true, false).pressed.emit()
 			_expect(screen.find_child("ProfessionalAppointButton", true, false) != null and screen.find_child("ProfessionalUnassignButton", true, false) != null and screen.find_child("ProfessionalAssignButton", true, false) != null, "real workplace employment, off-duty and return-to-work controls are touch accessible")
-			_expect(screen.education_info.text.contains("PROFESSIONAL EMPLOYMENT") and screen.education_info.text.contains("professional_1"), "wages and genuine named professional records are inspectable on the Android map")
-			screen.find_child("CloseEducationButton", true, false).pressed.emit()
+			_expect(is_instance_valid(screen.education_info) and screen.education_info.text.contains("PROFESSIONAL EMPLOYMENT") and screen.education_info.text.contains("professional_1"), "wages and genuine named professional records are inspectable on the Android map")
+			if screen.find_child("CloseEducationButton", true, false) != null:
+				screen.find_child("CloseEducationButton", true, false).pressed.emit()
 	screen.queue_free()
 	await process_frame
 
