@@ -4785,7 +4785,6 @@ func _run() -> void:
 	_expect(p35b_source.careers.licensed.engineering_college == 1 and p35b_world.dock_ship("ship_001", "player_station_1").ok, "a physically commissioned source and a genuinely docked passenger ship are available")
 	_expect(not p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_999").ok, "nonexistent professional can never board")
 	_expect(not p35b_world.professionals.board_named(p35b_world, "npc_builder_001", "professional_1").ok, "faction NPC builder cannot steal the player's named resident")
-	printerr("P35B DIAGNOSTIC BEFORE SUPPLY source=", p35b_source.stock, " destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " sectors=", p35b_source.sector, "/", p35b_dest.sector, "/", p35b_ship.sector)
 	var p35b_supply_ok: bool = _replenish_practical_station(p35b_world, "player_station_1", "player_station_2", 5)
 	if not p35b_supply_ok:
 		printerr("P35B DIAGNOSTIC FAILED SUPPLY destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " source=", p35b_source.stock)
