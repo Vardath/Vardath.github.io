@@ -5,7 +5,8 @@ extends RefCounted
 
 const VERSION := 1
 const SALT_WARE := {"id":"salt", "name":"Recovered Mineral Salt", "volume":1}
-const SALT_CATALOG := {"ware_id":"salt", "recipe_id":"water_recycling", "quantity_per_cycle":1}
+const SALT_CATALOG := {"ware_id":"salt", "recipe_id":"water_recycling", "cycle_interval":4, "quantity":1}
+const SALT_CYCLES := 4
 const RECOVERY_EVENT := "salt_recovered"
 
 
@@ -35,15 +36,24 @@ func prepare(target: Dictionary) -> Error:
 	target.wares.append(SALT_WARE.duplicate(true))
 	for station in target.stations:
 		station.stock["salt"] = 0
-	recycler.outputs["salt"] = 1
 	target["salt_recovery_version"] = VERSION
 	target["salt_recovery_catalog"] = SALT_CATALOG.duplicate(true)
 	return OK
 
 
-func record_cycle(world: RefCounted, station: Dictionary, recipe_id: String) -> void:
-	if recipe_id != "water_recycling" or int(world.state.get("salt_recovery_version", 0)) != VERSION:
+func record_cycle(world: RefCounted, station: Dictionary, module: Dictionary) -> void:
+	if str(module.get("recipe_id", "")) != "water_recycling" or int(world.state.get("salt_recovery_version", 0)) != VERSION:
 		return
-	# Called only AFTER the ordinary production recipe has actually
-	# consumed waste and energy, and placed all three outputs into stock.
+	# One real concentrated mineral-salt unit per FOUR successful
+	# wastewater cycles: eight physical waste units and four paid energy
+	# cells are consumed before a unit can be recovered. The ordinary
+	# water and soil outputs remain unmodified and finite.
+	if int(module.get("cycles", 0)) < 1 or int(module.cycles) % SALT_CYCLES != 0:
+		return
+	if int(world.station_volume(str(station.id))) + 1 > int(station.storage_capacity):
+		# Preserve output/storage conservation. With the vanilla recycler's
+		# 3 input / 2 output volumes, each physical cycle frees at least
+		# one slot for this occasional salt byproduct.
+		return
+	station.stock["salt"] = int(station.stock.get("salt", 0)) + 1
 	world._record_transaction(RECOVERY_EVENT, "", str(station.id), "salt", 1, 0, 0)
