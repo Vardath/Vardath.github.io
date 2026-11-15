@@ -3,6 +3,23 @@
 An original, offline-first space faction management game for Android landscape,
 built with Godot 4. The authoritative design is [Faction Command.md](../Faction%20Command.md).
 
+## Pass 37A experimental: original biological catalogue
+
+The game now contains a versioned *reference catalogue* of fifteen original
+organisms: edible plants, breeding animals, fungi, microorganisms, companions,
+pollinators, pests and exotic wildlife. It also contains species-dependent
+digestion, flavor response and toxicity profiles for the Aeralith, Mycoran,
+Kethric and Lumeni, with independently applied cultural taste adjustments.
+
+These records are a **simulation foundation**, not available food cargo, live
+pets, breeding stock, seed shipments, planetary collection jobs, medical
+effects or a species-tagged citizen census. The evaluator can compare one
+explicitly named organism and consumer species without changing the existing
+Food Rations ware, adult/child counts, ships, trade balances, recycling,
+waste haulers or conserved quantities. New and old saves store an additive,
+canonical version-1 catalogue. Live cultivation and dietary provisioning
+require later, resource-backed phases.
+
 ## Station population, residential construction and life support
 
 The first resident workforce ledger and **three buildable residential
