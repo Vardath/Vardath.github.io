@@ -5524,6 +5524,17 @@ func _run() -> void:
 	var p37b_final_saved: Dictionary = save_store.load_game(test_root + "/pass37b-physical-gene-bank.json")
 	var p37b_final_restore = WorldScript.new()
 	_expect(p37b_final_saved.get("ok", false) and p37b_final_restore.restore_snapshot(p37b_final_saved.state) == OK and p37b_final_restore.snapshot() == p37b.snapshot(), "real archived genes, site depletion, nutrition catalog and construction survive reload without minting extra specimens")
+	# Independently prove the second organism can be collected by the
+	# SAME ordinary ship-navigation system; no cargo is credited remotely.
+	var p37b_mire = WorldScript.new()
+	_expect(p37b_mire.load_starter("auroran") == OK, "a second biological survey starts from a real neutral-border home faction")
+	_disable_npc_trading(p37b_mire)
+	_expect(p37b_mire.dock_ship("ship_001", "hearth_exchange").ok and p37b_mire.trade("ship_001", "hearth_exchange", "energy_cells", 1, true).ok, "Mirealgae survey purchases its own one real solar Energy Cell")
+	_expect(p37b_mire.biosurvey.assign(p37b_mire, "ship_001", "verdant_trace").ok, "player orders an actual intersectoral expedition to the distinct Lumin Marsh microbial source")
+	p37b_mire.advance_ticks(75)
+	_expect(p37b_mire._find_ship("ship_001").sector == "verdant_trace" and int(p37b_mire._find_ship("ship_001").cargo.get("mirealgae_culture_capsule", 0)) == 1 and int(p37b_mire._find_ship("ship_001").cargo.get("energy_cells", 0)) == 0, "ordinary galaxy route and 24 actual culture sampling ticks produce exactly one physical Mirealgae capsule at the destination")
+	_expect(int(p37b_mire.state.biosurvey_sites.lumin_marsh_samples) == 19 and int(p37b_mire.state.biosurvey_sites.liora_sunlace_orbit) == 16 and not p37b_mire._find_ship("ship_001").bio_survey.enabled, "expedition exhausts only its own environment's finite native reserve, leaving unrelated organisms untouched")
+	_expect(save_store.save_game(test_root + "/pass37b-real-mirealgae.json", p37b_mire.snapshot()) == OK, "second intersectoral native sample, energy receipt and complete route pass audited save validation")
 
 	var directory := DirAccess.open(test_root)
 	if directory != null:
