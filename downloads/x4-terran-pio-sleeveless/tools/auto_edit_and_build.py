@@ -15,6 +15,7 @@ import json
 import math
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import traceback
@@ -292,16 +293,71 @@ def choose_armature():
     return candidates[0]
 
 
-def sources_in(directory):
-    def lookup(name):
-        p = directory / name
+def unpack_rar_if_needed(directory):
+    """Find blends.rar, then extract to a private local staging directory."""
+    archive = next((p for p in (
+        directory / "blends.rar",
+        Path.home() / "Downloads" / "blends.rar",
+        Path.home() / "Desktop" / "blends.rar",
+    ) if p.is_file()), None)
+    if archive is None:
+        return None
+    destination = directory / "_input_from_blends_rar"
+    destination.mkdir(parents=True, exist_ok=True)
+    cmds = []
+    for p in (
+        Path(os.environ.get("ProgramFiles", "")) / "7-Zip" / "7z.exe",
+        Path(os.environ.get("ProgramFiles(x86)", "")) / "7-Zip" / "7z.exe",
+    ):
         if p.is_file():
-            return p
-        matches = list(directory.rglob(name))
-        return matches[0] if matches else None
+            cmds.append([str(p), "x", "-y", "-o" + str(destination), str(archive)])
+    for p in (
+        Path(os.environ.get("ProgramFiles", "")) / "WinRAR" / "WinRAR.exe",
+        Path(os.environ.get("ProgramFiles(x86)", "")) / "WinRAR" / "WinRAR.exe",
+    ):
+        if p.is_file():
+            cmds.append([str(p), "x", "-o+", "-inul", str(archive), str(destination) + os.sep])
+    if shutil.which("tar"):
+        cmds.append(["tar", "-xf", str(archive), "-C", str(destination)])
+    for cmd in cmds:
+        try:
+            proc = subprocess.run(cmd, text=True, stdout=subprocess.PIPE,
+                                  stderr=subprocess.STDOUT, timeout=180)
+            if proc.returncode == 0 and any(destination.rglob("*.blend")):
+                log("Extracted Blender projects from " + str(archive))
+                return destination
+        except (OSError, subprocess.TimeoutExpired):
+            continue
+    return None
+
+
+def sources_in(directory):
+    base = unpack_rar_if_needed(directory)
+    roots = [directory]
+    if base is not None:
+        roots.insert(0, base)
+    # The RAR may omit the separately supplied Yisha model.
+    for path in (Path.home() / "Downloads", Path.home() / "Desktop"):
+        if path.is_dir():
+            roots.append(path)
+
+    def lookup(name):
+        for root in roots:
+            exact = root / name
+            if exact.is_file():
+                return exact
+            # Avoid scanning a user's entire Downloads tree.
+            if root == directory or root == base:
+                match = next(root.rglob(name), None)
+                if match:
+                    return match
+        return None
+
     donor = lookup("yishabody.blend")
     if donor is None:
-        raise ValueError("Cannot find yishabody.blend in the supplied source folder")
+        raise ValueError(
+            "Cannot locate yishabody.blend. Place it alongside blends.rar "
+            "or next to the builder batch file.")
     sources = [lookup(name) for name in CANDIDATES]
     return donor, [p for p in sources if p is not None]
 
