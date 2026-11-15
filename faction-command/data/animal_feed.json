@@ -79,8 +79,13 @@
       "id": "animal_veterinary_clinic",
       "name": "Species-Aware Veterinary Clinic",
       "cycle_ticks": 60,
-      "inputs": {},
-      "outputs": {},
+      "inputs": {
+        "medical_supplies": 1,
+        "energy_cells": 1
+      },
+      "outputs": {
+        "organic_waste": 1
+      },
       "manual_animal_care": true
     }
   ],
