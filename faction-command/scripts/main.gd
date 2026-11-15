@@ -109,6 +109,8 @@ var station_supply_budget: SpinBox
 var station_supply_info: Label
 var station_supply_feedback: Label
 var station_supply_stop_button: Button
+var waste_collection_button: Button
+var waste_collection_stop_button: Button
 var plan_screen: Control
 var plan_mode: OptionButton
 var plan_module_counts: Dictionary = {}
@@ -514,6 +516,7 @@ func _build_ui() -> void:
 	role_picker.add_item("Auto trader")
 	role_picker.add_item("Build supplier")
 	role_picker.add_item("Station supplier")
+	role_picker.add_item("Waste hauler")
 	role_picker.item_selected.connect(_on_role_selected)
 	property_list.add_child(role_picker)
 	role_hint = _wrapped_label("", 12, MUTED)
@@ -990,6 +993,9 @@ func _show_ship() -> void:
 			detail_body.text += " · Deliver to site"
 		elif not str(supply.wait_reason).is_empty():
 			detail_body.text += " · " + str(supply.wait_reason)
+	if ship.waste_transport.enabled:
+		var waste: Dictionary = ship.waste_transport
+		detail_body.text += "\n\nWASTE HAULING\nRecycler " + _station_name(str(waste.destination_id)) + "\n" + str(waste.wait_reason) + "\nDelivered: %d units over %d completed journeys." % [int(waste.delivered_total), int(waste.trips)]
 	if ship.station_supply.enabled:
 		var supply: Dictionary = ship.station_supply
 		detail_body.text += "\n\nStation supply\n%s · %s\nSpent: %d / %d CR" % [_station_name(str(supply.station_id)), ship.status, int(supply.spent), int(supply.budget_limit)]
@@ -1227,6 +1233,9 @@ func _on_role_selected(index: int) -> void:
 	elif index == 3:
 		_open_trade()
 		trade_feedback.text = "Select one of your stations, then choose Supply inputs."
+	elif index == 4:
+		_open_trade()
+		trade_feedback.text = "Select an owned wastewater recycling station, then open Supply inputs and choose Collect waste."
 	_refresh_world_display()
 
 
@@ -1254,8 +1263,10 @@ func _refresh_world_display() -> void:
 	ship_button.text = "◈   " + str(ship.name)
 	_refresh_property_picker()
 	ship_brief.text = "%s  ·  %s\n%s" % [ship["class"], ship.status, _sector_name(str(ship.sector))]
-	role_picker.select(3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0)))
-	if ship.station_supply.enabled:
+	role_picker.select(4 if ship.waste_transport.enabled else (3 if ship.station_supply.enabled else (2 if ship.build_supply.enabled else (1 if ship.player_trader.enabled else 0))))
+	if ship.waste_transport.enabled:
+		role_hint.text = "Collecting real residential waste for a stocked wastewater recycler, via ordinary cargo and sector routes."
+	elif ship.station_supply.enabled:
 		role_hint.text = "Supplying a station within your purchase allowance."
 	elif ship.build_supply.enabled:
 		role_hint.text = "Supplying a build site using your cargo and credits."
@@ -3046,9 +3057,9 @@ func _open_station_supply() -> void:
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation", 10)
 	panel.add_child(column)
-	column.add_child(_label("STATION INPUT SUPPLY", 22, TEXT))
+	column.add_child(_label("STATION LOGISTICS · INPUTS & WASTE", 22, TEXT))
 	column.add_child(_wrapped_label("%s · %s" % [station.name, _sector_name(str(station.sector))], 14, MUTED))
-	column.add_child(_wrapped_label("%s uses matching cargo, collects surplus from your stations or buys inputs within this limit. Current orders finish and the existing ship role is replaced." % _player_ship().name, 14, TEXT))
+	column.add_child(_wrapped_label("%s can import real inputs OR collect residential wastewater for a completed recycler. Both roles use actual cargo and flight orders. Assigning either replaces the existing automatic role but preserves queued movement and cargo." % _player_ship().name, 14, TEXT))
 	column.add_child(_label("MAXIMUM PURCHASE SPEND FOR THIS ASSIGNMENT (CR)", 12, ACCENT))
 	station_supply_budget = SpinBox.new()
 	station_supply_budget.name = "StationSupplyBudget"
@@ -3090,6 +3101,18 @@ func _open_station_supply() -> void:
 	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	close_button.pressed.connect(_close_station_supply)
 	actions.add_child(close_button)
+	var waste_row := HFlowContainer.new()
+	waste_row.add_theme_constant_override("h_separation", 8)
+	waste_row.add_theme_constant_override("v_separation", 8)
+	column.add_child(waste_row)
+	waste_collection_button = _button("Collect residential waste")
+	waste_collection_button.name = "AssignWasteCollectorButton"
+	waste_collection_button.pressed.connect(_assign_waste_transport)
+	waste_row.add_child(waste_collection_button)
+	waste_collection_stop_button = _button("Stop waste transport")
+	waste_collection_stop_button.name = "StopWasteCollectorButton"
+	waste_collection_stop_button.pressed.connect(_stop_waste_transport)
+	waste_row.add_child(waste_collection_stop_button)
 	_update_station_supply_screen()
 
 
@@ -3102,6 +3125,9 @@ func _update_station_supply_screen() -> void:
 	var ship: Dictionary = _player_ship()
 	var active_here: bool = ship.station_supply.enabled and ship.station_supply.station_id == station.id
 	station_supply_stop_button.disabled = not active_here
+	var waste_active: bool = ship.waste_transport.enabled and ship.waste_transport.destination_id == station.id
+	waste_collection_button.disabled = not world.waste_transport._recycles(station)
+	waste_collection_stop_button.disabled = not ship.waste_transport.enabled
 	var desired: Dictionary = world.station_supply.targets(world, station)
 	var rows: Array[String] = []
 	for ware_id in desired:
@@ -3114,7 +3140,19 @@ func _update_station_supply_screen() -> void:
 		lines.append("SUPPLIER\n%s · %s\nSpent: %d / %d CR" % [ship.name, ship.status, int(ship.station_supply.spent), int(ship.station_supply.budget_limit)])
 	else:
 		lines.append("No ship assigned to this station.")
-	lines.append("The limit is a cap, not an upfront payment. Set it to zero to use only carried cargo or surplus from your own stations. Working stock and reusable sources at those stations are protected.")
+	lines.append("The purchase cap applies only to the input-supply role. Waste collection never manufactures stock or buys waste: it hauls actual surplus organic wastewater from other owned residential stations, keeping source recycler inputs protected.")
+	var waste_sources: Array[String] = []
+	for source in world.state.stations:
+		if source.owner != world.state.player_faction_id or source.id == station.id:
+			continue
+		var available: int = maxi(0, int(source.stock.get("organic_waste", 0)) - world.station_supply.protected_stock(world, source, "organic_waste"))
+		if available > 0:
+			waste_sources.append("%s: %d collection-ready" % [source.name, available])
+	lines.append("WASTEWATER & SALT\nAt this station: %d organic waste · %d reclaimed salt · recycler %s\n%s" % [int(station.stock.get("organic_waste", 0)), int(station.stock.get("salt", 0)), "built" if world.waste_transport._recycles(station) else "not built", "Source stock: " + ", ".join(waste_sources) if not waste_sources.is_empty() else "No source waste available yet"])
+	if waste_active:
+		lines.append("WASTE HAULER\n%s · %s\nLoaded for delivery: %d · Delivered: %d in %d completed runs" % [ship.name, ship.status, int(ship.waste_transport.managed_quantity), int(ship.waste_transport.delivered_total), int(ship.waste_transport.trips)])
+	elif ship.waste_transport.enabled:
+		lines.append("This ship is collecting for another recycler: " + _station_name(str(ship.waste_transport.destination_id)))
 	station_supply_info.text = "\n\n".join(lines)
 
 
@@ -3123,6 +3161,28 @@ func _assign_station_supply() -> void:
 	var result: Dictionary = world.station_supply.assign(world, str(ship.id), _trade_station_id(), int(station_supply_budget.value))
 	station_supply_feedback.text = str(result.message)
 	if result.ok:
+		if not _save_current_game():
+			station_supply_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_station_supply_screen()
+
+
+func _assign_waste_transport() -> void:
+	var ship: Dictionary = _player_ship()
+	var result: Dictionary = world.waste_transport.assign(world, str(ship.id), _trade_station_id())
+	station_supply_feedback.text = str(result.message)
+	if result.ok:
+		if not _save_current_game():
+			station_supply_feedback.text += " Save failed."
+		_refresh_world_display()
+	_update_station_supply_screen()
+
+
+func _stop_waste_transport() -> void:
+	var ship: Dictionary = _player_ship()
+	if ship.waste_transport.enabled:
+		world.waste_transport.stop(ship)
+		station_supply_feedback.text = "Waste hauling stopped. All collected waste remains in the ship's ordinary cargo; queued orders finish."
 		if not _save_current_game():
 			station_supply_feedback.text += " Save failed."
 		_refresh_world_display()
