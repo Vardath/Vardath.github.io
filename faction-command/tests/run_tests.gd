@@ -5049,7 +5049,12 @@ func _run() -> void:
 	p35c_world.advance_ticks(40)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", 12, false).ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 12, true).ok, "existing factory stock is physically rearranged so all purchased life-support energy fits without bypassing warehouse volume")
 	p35c_world.advance_ticks(60)
-	_expect(p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog) >= 2 and p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.settlement.disembark(p35c_world, "ship_001", 2).ok, "two already trained engineers settle once into a real functioning 8-bed industrial habitat")
+	var p35c_factory_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_1")
+	var p35c_family_admission: Dictionary = p35c_world.settlement.disembark(p35c_world, "ship_001", 2) if p35c_factory_dock.ok else {"ok":false, "message":"Ship docking failed"}
+	if not p35c_family_admission.ok:
+		var p35c_factory_rec: Dictionary = p35c_world.population.station_cohort(p35c_world, "player_station_1")
+		printerr("P35C INDUSTRIAL SETTLEMENT BLOCKED ", p35c_family_admission, " stock=", p35c_factory.stock, " housing=", p35c_factory.habitation, " power=", p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog), " shortages=", p35c_world.provisions.missing_provision(p35c_world, p35c_factory, p35c_world.demographics.residents(p35c_factory_rec) + 2), " ship=", p35c_ship.cargo)
+	_expect(p35c_world.habitation.operational_capacity(p35c_factory, p35c_world.state.habitation_catalog) >= 2 and p35c_family_admission.ok, "two already trained engineers settle once into a real functioning 8-bed industrial habitat")
 	p35c_world.advance_ticks(60)
 	_expect(p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok and p35c_world.professionals.appoint(p35c_world, "player_station_1", "engineering_college").ok, "the two paid and proven industrial residents receive two distinct professional IDs on the SAME genuine license track")
 	_expect(p35c_world.state.professional_registry.size() == 2 and p35c_world.professionals.available(p35c_world, "player_station_1", "engineering_college") == 0 and p35c_world.population.total_people(p35c_world) >= p35c_people, "identifying two real adult colleagues consumes no new population, diplomas, ship crews or extra graduate slots")
