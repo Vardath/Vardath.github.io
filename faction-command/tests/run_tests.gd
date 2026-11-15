@@ -4774,7 +4774,7 @@ func _run() -> void:
 		vessel.erase("professional_passenger_ids")
 	_expect(save_store.save_game(test_root + "/pass35a-before-named-travel.json", p35b_legacy) == OK, "legacy Pass 35A saves without named passenger metadata remain valid")
 	var p35b_old = WorldScript.new()
-	_expect(p35b_old.restore_snapshot(p35b_legacy) == OK and p35b_old.state.professional_transport_version == 1 and p35b_old.state.professional_registry.has("professional_1") and str(p35b_old._find_ship("ship_001").professional_passenger_id).is_empty(), "real previous professional identity is migrated without deleting work or adding phantom passengers")
+	_expect(p35b_old.restore_snapshot(p35b_legacy) == OK and p35b_old.state.professional_transport_version == 2 and p35b_old.state.professional_registry.has("professional_1") and str(p35b_old._find_ship("ship_001").professional_passenger_id).is_empty(), "real previous professional identity is migrated without deleting work or adding phantom passengers")
 	var p35b_world = WorldScript.new()
 	_expect(p35b_world.restore_snapshot(p35_world.snapshot()) == OK, "named professional transport scenario inherits real paid Pass 35A graduate and source colony")
 	_disable_npc_trading(p35b_world)
@@ -4812,6 +4812,22 @@ func _run() -> void:
 	_expect(int(p35b_ship.settler_passengers) == 1 and p35b_ship.professional_passenger_id == "professional_1" and p35b_worker.station_id == "" and not p35b_worker.active and p35b_worker.status == "In transit", "one named in-transit identity is linked to one physical ship rather than duplicated in the source housing")
 	_expect(int(p35b_source.careers.licensed.engineering_college) == 0 and int(p35b_source.education.qualified.engineering_college) == 0 and p35b_world.population.total_people(p35b_world) == p35b_people, "physical boarding moves both the adult and its two prior professional credentials without inflating population")
 	_expect(not p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_1").ok and not p35b_world.settlement.evacuate(p35b_world, "ship_001", 1).ok and not p35b_world.settlement.board(p35b_world, "ship_001", 1).ok, "no duplicate boarding, regular evacuation or NPC settler mixing into the protected named passenger manifest")
+	# Pass 35C1: saved v25 ships with exactly ONE legacy named field must
+	# migrate to a v26 list of the SAME original passenger, not clone them.
+	var p35c_v25_in_flight: Dictionary = p35b_world.snapshot()
+	p35c_v25_in_flight.professional_transport_version = 1
+	for vessel in p35c_v25_in_flight.ships:
+		vessel.erase("professional_passenger_ids")
+	_expect(save_store.save_game(test_root + "/pass35c-v25-single-person.json", p35c_v25_in_flight) == OK, "real version-one professional passengers remain accepted without new list fields")
+	var p35c_upgraded = WorldScript.new()
+	_expect(p35c_upgraded.restore_snapshot(p35c_v25_in_flight) == OK and p35c_upgraded.state.professional_transport_version == 2 and p35c_upgraded._find_ship("ship_001").professional_passenger_ids == ["professional_1"] and p35c_upgraded.population.total_people(p35c_upgraded) == p35b_people and p35c_upgraded.state.professional_registry.professional_1.experience == p35b_xp, "version 1 to version 2 migration retains exactly the original in-flight professional, XP, captain, physical berth and population")
+	_expect(save_store.save_game(test_root + "/pass35c-v25-upgraded.json", p35c_upgraded.snapshot()) == OK, "the formerly one-field passenger survives strict version-two identity and credential ledger auditing")
+	var p35c_clone_manifest: Dictionary = p35b_world.snapshot()
+	p35c_clone_manifest.ships[0].professional_passenger_ids.append("professional_1")
+	_expect(save_store.save_game(test_root + "/pass35c-duplicated-passenger-ids.json", p35c_clone_manifest) != OK, "passenger array cannot duplicate a single existing professional identity in two seats")
+	var p35c_missing_legacy_mirror: Dictionary = p35b_world.snapshot()
+	p35c_missing_legacy_mirror.ships[0].professional_passenger_id = ""
+	_expect(save_store.save_game(test_root + "/pass35c-conflicting-passenger-alias.json", p35c_missing_legacy_mirror) != OK, "migration compatibility mirror cannot disagree with the original passenger array")
 	_expect(save_store.save_game(test_root + "/pass35b-named-at-source.json", p35b_world.snapshot()) == OK, "docked source ship with named credentialed worker is save-valid and source population is conserved")
 	_expect(p35b_world.queue_fly_to("ship_001", "hearthreach"), "named professional must physically traverse the galaxy graph on their own ship")
 	p35b_world.advance_ticks(20)
