@@ -121,8 +121,9 @@ func register_graduate(world: RefCounted, station_id: String, track: String) -> 
 		return {"ok":false, "message":"Every practical certificate is already assigned to an identified person, or no real graduate exists."}
 	if int(cohort.cohorts.assigned_workers) < 1 or int(station.education.qualified.get(track, 0)) < _local_count(world, station_id, track) + 1:
 		return {"ok":false, "message":"No distinct qualified, present resident adult is available for identity registration."}
-	if cohort.resident_status != "Provisioned" or world.habitation.operational_capacity(station, world.state.habitation_catalog) < world.demographics.residents(cohort):
-		return {"ok":false, "message":"Registration requires actual provisioned, powered resident accommodation."}
+	# The graduate is already physically registered and certified by prior
+	# paid instruction. A temporary water/power outage must not erase their
+	# name or force them into a fabricated employment contract.
 	var number: int = int(world.state.professional_next_id)
 	var id := "professional_%d" % number
 	if world.state.professional_registry.has(id):
