@@ -5048,7 +5048,9 @@ func _run() -> void:
 	var p35c_register_two: Dictionary = p35c_world.professionals.register_graduate(p35c_world, "player_station_2", "engineering_college")
 	_expect(p35c_register_one.ok and p35c_register_two.ok and p35c_register_one.id == "professional_1" and p35c_register_two.id == "professional_2", "two distinct authentic paid-practice graduates are identified while still physically residing at their original school")
 	_expect(not p35c_world.professionals.register_graduate(p35c_world, "player_station_2", "engineering_college").ok and p35c_world.population.total_people(p35c_world) == p35c_people_before and _total_credits(p35c_world.state) == p35c_credits_before, "two certificates can register exactly two adults, without adding people, funds or unearned diplomas")
-	_expect(not p35c_world.state.professional_registry.professional_1.active and not p35c_world.state.professional_registry.professional_2.active and p35c_world.state.professional_registry.professional_1.work_events == 0 and p35c_world.state.professional_registry.professional_2.salary_due == 0, "professional identity alone does not award a phantom factory job, work XP or salaries")
+	var p35c_id_one: Dictionary = p35c_world.state.professional_registry.get("professional_1", {})
+	var p35c_id_two: Dictionary = p35c_world.state.professional_registry.get("professional_2", {})
+	_expect(not p35c_id_one.is_empty() and not p35c_id_two.is_empty() and not p35c_id_one.get("active", true) and not p35c_id_two.get("active", true) and int(p35c_id_one.get("work_events", -1)) == 0 and int(p35c_id_two.get("salary_due", -1)) == 0, "professional identity alone does not award a phantom factory job, work XP or salaries")
 	_expect(save_store.save_game(test_root + "/pass35c-two-registered-real-graduates.json", p35c_world.snapshot()) == OK, "both independent named certifications are reconciled against actual paid classroom and practicum ledger entries")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok, "the same owned transport remains physically docked at the school of its now named crew")
 	_expect(p35c_world.professionals.board_named(p35c_world, "ship_001", "professional_1").ok, "the first actual named engineer boards one ordinary passenger berth from a stocked and staffed school")
@@ -5095,22 +5097,26 @@ func _run() -> void:
 	var p35c_ledger_old: Dictionary = p35c_world.state.professional_registry
 	_expect(p35c_multi_restore.state.professional_registry.get("professional_1", {}).get("salary_paid", -1) == p35c_ledger_old.get("professional_1", {}).get("salary_paid", -2) and p35c_multi_restore.state.professional_registry.get("professional_2", {}).get("experience", -1) == p35c_ledger_old.get("professional_2", {}).get("experience", -2), "two unique professionals retain prior wage and experience records without magical transit payroll")
 	var p35c_new_births: int = 0
-	for p35c_station_id in p35c_world.state.population.stations:
-		var before_cohort: Dictionary = p35c_world.state.population.stations[p35c_station_id]
-		var after_cohort: Dictionary = p35c_multi_restore.state.population.stations[p35c_station_id]
-		p35c_new_births += int(after_cohort.family.births_total) - int(before_cohort.family.births_total)
+	if p35c_multi_restore.state.has("population"):
+		for p35c_station_id in p35c_world.state.population.stations:
+			var before_cohort: Dictionary = p35c_world.state.population.stations[p35c_station_id]
+			var after_cohort: Dictionary = p35c_multi_restore.state.population.stations.get(p35c_station_id, {})
+			if not after_cohort.is_empty():
+				p35c_new_births += int(after_cohort.family.births_total) - int(before_cohort.family.births_total)
 	_expect(p35c_multi_restore.population.total_people(p35c_multi_restore) == p35c_people_before + p35c_new_births and _total_credits(p35c_multi_restore.state) == p35c_credits_before, "all moving people and real traded money are conserved; only independently serviced recorded births can increase headcount")
 	_expect(p35c_multi_restore.professionals.set_active(p35c_multi_restore, "professional_1", true).ok, "a newly settled qualified adult can begin genuine paid work only at their physically existing industrial workstation")
-	_expect(p35c_multi_restore.state.professional_registry.professional_1.experience == 0, "registration and transfer grant no free production experience; the first actual factory completion is required")
+	_expect(int(p35c_multi_restore.state.get("professional_registry", {}).get("professional_1", {}).get("experience", -1)) == 0, "registration and transfer grant no free production experience; the first actual factory completion is required")
 	_expect(save_store.save_game(test_root + "/pass35c-two-person-complete.json", p35c_multi_restore.snapshot()) == OK, "two authentic graduates and one legitimately employed specialist pass strict professional, education, transaction and population save checks")
 	var p35c_fake_id: Dictionary = p35c_world.snapshot()
-	p35c_fake_id.ships[0].professional_passenger_ids[1] = "professional_1"
+	if p35c_fake_id.ships[0].professional_passenger_ids.size() >= 2:
+		p35c_fake_id.ships[0].professional_passenger_ids[1] = "professional_1"
 	_expect(save_store.save_game(test_root + "/pass35c-forged-double-id.json", p35c_fake_id) != OK, "duplicating one professional into two fully occupied berths is always rejected")
 	var p35c_fake_berth: Dictionary = p35c_world.snapshot()
 	p35c_fake_berth.ships[0].settler_passengers = 3
 	_expect(save_store.save_game(test_root + "/pass35c-forged-third-seat.json", p35c_fake_berth) != OK, "fake third person without a genuine ID and original academy provenance cannot ride in a named group")
 	var p35c_double_location: Dictionary = p35c_world.snapshot()
-	p35c_double_location.professional_registry.professional_2.station_id = "player_station_2"
+	if p35c_double_location.professional_registry.has("professional_2"):
+		p35c_double_location.professional_registry.professional_2.station_id = "player_station_2"
 	_expect(save_store.save_game(test_root + "/pass35c-double-location.json", p35c_double_location) != OK, "a single adult cannot exist simultaneously at the original classroom and on a travelling ship")
 
 	var directory := DirAccess.open(test_root)
