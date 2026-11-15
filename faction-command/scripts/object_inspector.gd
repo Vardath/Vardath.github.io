@@ -67,6 +67,8 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 				"Husbandry":
 					if kind == "station":
 						var pasture: Dictionary = world._find_station(id)
+						if world.animal_feed.clinic_count(pasture) == 0 and pasture.production.any(func(module): return str(module.recipe_id) in world.livestock.RECIPE_IDS):
+							options.append({"id":"animal_build_clinic", "label":"Commission veterinary clinic at this station"})
 						for animal in world.state.livestock_catalog.animals:
 							if world.livestock._headcount(pasture, animal) < 1:
 								continue
