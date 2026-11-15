@@ -64,6 +64,7 @@ func assign(world: RefCounted, ship_id: String, destination_id: String) -> Dicti
 	ship.player_trader.enabled = false
 	world.build_supply.stop(ship)
 	world.station_supply.stop(ship)
+	world.biosurvey.stop(ship)
 	stop(ship)
 	ship.waste_transport.enabled = true
 	ship.waste_transport.destination_id = destination_id
