@@ -46,6 +46,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("career_manifest")
 	copy.erase("professional_passenger_id")
 	copy.erase("professional_passenger_ids")
+	copy.erase("waste_transport")
 	return copy
 
 
@@ -57,6 +58,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("career_manifest")
 		ship.erase("professional_passenger_id")
 		ship.erase("professional_passenger_ids")
+		ship.erase("waste_transport")
 	return copy
 
 
@@ -125,10 +127,16 @@ func _strip_demographics(state: Dictionary) -> void:
 
 func _strip_ecology(state: Dictionary) -> void:
 	_strip_demographics(state)
+	state.erase("salt_recovery_version")
+	state.erase("salt_recovery_catalog")
+	state.erase("waste_transport_version")
+	for ship in state.get("ships", []):
+		ship.erase("waste_transport")
+		ship.cargo.erase("salt")
 	state.erase("ecology_version")
 	state.erase("ecology_catalog")
 	for index in range(state.get("wares", []).size() - 1, -1, -1):
-		if state.wares[index].id in ["organic_waste", "fertile_soil"]:
+		if state.wares[index].id in ["organic_waste", "fertile_soil", "salt"]:
 			state.wares.remove_at(index)
 	for index in range(state.get("recipes", []).size() - 1, -1, -1):
 		if state.recipes[index].id in ["water_recycling", "soil_agriculture"]:
@@ -138,6 +146,7 @@ func _strip_ecology(state: Dictionary) -> void:
 	for station in state.get("stations", []):
 		station.stock.erase("organic_waste")
 		station.stock.erase("fertile_soil")
+		station.stock.erase("salt")
 
 
 func _strip_provisions(state: Dictionary) -> void:
