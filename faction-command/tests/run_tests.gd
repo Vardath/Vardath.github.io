@@ -5622,6 +5622,63 @@ func _run() -> void:
 	_expect(int(p37c_dust_station.stock.dustwhistle_moth) == 2 and int(p37c_dust_station.stock.dustwhistle_feathers) == 0 and int(p37c_dust_station.stock.organic_waste) == 0, "animals cannot manufacture feathers, waste or offspring while their real food and water are unavailable")
 	_expect(save_store.save_game(test_root + "/pass37c-unfed-aviary.json", p37c.snapshot()) == OK, "real captured moths in an underprovisioned but safe station remain counted and survive ordinary save/reload")
 
+	# Deterministic husbandry-unit fixture: the adults and completed enclosure
+	# above are genuinely collected/constructed. Only feed/water/power are
+	# directly supplied in this ISOLATED test fixture, to test physiological
+	# lifecycle independently from the existing paid Pass 31 food factories.
+	# Do not describe these test-provision units as physically traded goods.
+	var p37c_fed = WorldScript.new()
+	_expect(p37c_fed.restore_snapshot(p37c.snapshot()) == OK, "husbandry unit fixture starts with two real captured adults in an actual completed environmental aviary")
+	_disable_npc_trading(p37c_fed)
+	var p37c_fed_pen: Dictionary = p37c_fed._find_station(str(p37c_dust_station.id))
+	p37c_fed_pen.stock.food_rations = 24
+	p37c_fed_pen.stock.potable_water = 24
+	p37c_fed_pen.stock.energy_cells = 12
+	var p37c_energy_pre: int = int(p37c_fed_pen.stock.energy_cells)
+	p37c_fed.advance_ticks(60)
+	_expect(int(p37c_fed_pen.stock.food_rations) == 22 and int(p37c_fed_pen.stock.potable_water) == 22 and int(p37c_fed_pen.stock.energy_cells) == p37c_energy_pre - 1 and int(p37c_fed_pen.stock.organic_waste) == 2, "two housed animals pay exactly two existing food, two water and one electricity to generate two real recyclable manure units")
+	_expect(int(p37c_fed_pen.stock.dustwhistle_feathers) == 0 and int(p37c_fed_pen.stock.dustwhistle_larva) == 0, "the first successful feeding period does not immediately create feathers or embryos")
+	p37c_fed.advance_ticks(60)
+	_expect(int(p37c_fed_pen.stock.dustwhistle_feathers) == 2 and int(p37c_fed_pen.stock.organic_waste) == 4, "fed Dustwhistle moths shed two renewable plumage units only after two completed paid husbandry periods")
+	p37c_fed.advance_ticks(120)
+	_expect(int(p37c_fed_pen.stock.dustwhistle_moth) == 2 and int(p37c_fed_pen.stock.dustwhistle_larva) == 1 and int(p37c_fed_pen.stock.dustwhistle_feathers) == 4, "two real nourished breeding adults require four completed care periods to produce one living juvenile within six habitat berths")
+	_expect(int(p37c_fed.state.livestock_care[str(p37c_fed_pen.id) + "|dustwhistle"].juvenile_ages.size()) == 1 and int(p37c_fed_pen.stock.organic_waste) == 8 and p37c_fed.state.ledger.any(func(e): return e.kind == "livestock_birth" and e.ware_id == "dustwhistle_larva"), "new young is counted by age, recorded in the same physical stock as its parent colony, and manure tracks paid live-feed service")
+	_expect(save_store.save_game(test_root + "/pass37c-fed-breeding-fixture.json", p37c_fed.snapshot()) == OK, "audited juvenile births, feed/water/power receipts, recycling outputs and renewable plumage are structurally save-safe")
+	var p37c_fake_birth: Dictionary = p37c_fed.snapshot()
+	p37c_fake_birth.stations.back().stock.dustwhistle_larva += 1
+	_expect(save_store.save_game(test_root + "/pass37c-fabricated-juvenile.json", p37c_fake_birth) != OK, "forged extra juvenile cannot bypass the source/birth/death biological population ledger")
+	var p37c_fake_feather: Dictionary = p37c_fed.snapshot()
+	p37c_fake_feather.stations.back().stock.dustwhistle_feathers += 100
+	_expect(save_store.save_game(test_root + "/pass37c-fabricated-feathers.json", p37c_fake_feather) != OK, "feathers cannot exceed actual recorded post-feeding shedding receipts")
+	p37c_fed.advance_ticks(120)
+	_expect(int(p37c_fed_pen.stock.dustwhistle_moth) == 3 and int(p37c_fed_pen.stock.dustwhistle_larva) == 0 and int(p37c_fed.state.livestock_care[str(p37c_fed_pen.id) + "|dustwhistle"].juvenile_ages.size()) == 0, "one real two-cycle-fed juvenile matures into exactly one adult without a duplicated person or creature")
+	_expect(save_store.save_game(test_root + "/pass37c-grown-fixture.json", p37c_fed.snapshot()) == OK, "livestock maturation and later renewable material receipts remain save-auditable")
+
+	# An entirely separate *physically funded* Emberhorn journey demonstrates
+	# that leather consumes a living adult, not a renewable shedding timer.
+	var p37c_grazer = WorldScript.new()
+	_expect(p37c_grazer.load_starter("auroran") == OK, "second animal species can be captured by a fresh independent faction")
+	_disable_npc_trading(p37c_grazer)
+	_expect(p37c_grazer.dock_ship("ship_001", "hearth_exchange").ok and p37c_grazer.trade("ship_001", "hearth_exchange", "energy_cells", 20, true).ok, "the Emberhorn expedition buys twenty actual stasis and construction Energy Cells from a real supplier")
+	_expect(p37c_grazer.livestock.assign(p37c_grazer, "ship_001", "cinder_veil").ok, "a non-hostile wild-grazer expedition travels from Auroran home territory to the Ravel basalt preserve")
+	p37c_grazer.advance_ticks(80)
+	_expect(p37c_grazer._find_ship("ship_001").sector == "cinder_veil" and int(p37c_grazer._find_ship("ship_001").cargo.get("emberhorn_grazer", 0)) == 1 and int(p37c_grazer.state.livestock_sites.cinder_veil_emberhorn) == 11, "first native grazer is taken in real cargo after sector travel, crewed capture ticks and depleted wild capacity")
+	_expect(p37c_grazer.livestock.assign(p37c_grazer, "ship_001", "cinder_veil").ok, "breeding a herd needs the capture of another actually existing grazer")
+	p37c_grazer.advance_ticks(36)
+	_expect(int(p37c_grazer._find_ship("ship_001").cargo.get("emberhorn_grazer", 0)) == 2 and int(p37c_grazer.state.livestock_sites.cinder_veil_emberhorn) == 10, "a second counted native grazer occupies an additional four units of ship cargo volume")
+	var p37c_grazer_build: Dictionary = p37c_grazer.construction.place(p37c_grazer, "cinder_veil", {"emberhorn_paddock":1}, "all", [])
+	var p37c_grazer_site: Dictionary = p37c_grazer.construction.find_site(p37c_grazer, str(p37c_grazer_build.get("site_id", "")))
+	_expect(p37c_grazer_build.ok and not p37c_grazer_site.is_empty(), "real 1600-credit contract orders a species-appropriate basalt paddock rather than a universal pet storage crate")
+	_expect(p37c_grazer.dock_ship("ship_001", "cinder_depot").ok and p37c_grazer.trade("ship_001", "cinder_depot", "alloy_plates", 22, true).ok, "same ship buys 22 units of locally available real NPC construction alloys in the animal's native sector")
+	_expect(p37c_grazer.dock_ship("ship_001", str(p37c_grazer_site.station_id)).ok and p37c_grazer.construction.deliver(p37c_grazer, "ship_001", str(p37c_grazer_site.id)).ok, "animal transporter physically delivers paid metal and power to the hired builder")
+	p37c_grazer.advance_ticks(95)
+	var p37c_grazer_pen: Dictionary = p37c_grazer._find_station(str(p37c_grazer_site.station_id))
+	_expect(int(p37c_grazer_site.completed) == 1 and p37c_grazer.livestock.capacity(p37c_grazer_pen, p37c_grazer.livestock.species_by_id(p37c_grazer, "emberhorn")) == 4, "NPC builder completes a genuine four-berth grazer habitat before animal unloading")
+	_expect(p37c_grazer.dock_ship("ship_001", str(p37c_grazer_pen.id)).ok and p37c_grazer.transfer_player_station("ship_001", str(p37c_grazer_pen.id), "emberhorn_grazer", 2, true).ok and p37c_grazer.transfer_player_station("ship_001", str(p37c_grazer_pen.id), "energy_cells", 1, true).ok, "two previously wild adults physically arrive in their commissioned paddock alongside one actual hide-processing power cell")
+	var p37c_grazer_leather_before: int = _total_ware(p37c_grazer.state, "emberhorn_leather")
+	_expect(p37c_grazer.livestock.slaughter(p37c_grazer, str(p37c_grazer_pen.id)).ok and int(p37c_grazer_pen.stock.emberhorn_grazer) == 1 and int(p37c_grazer_pen.stock.emberhorn_leather) == p37c_grazer_leather_before + 1 and int(p37c_grazer_pen.stock.organic_waste) == 1, "producing one real leather hide irreversibly removes one actual living adult, consumes paid power and returns counted recyclable biowaste")
+	_expect(save_store.save_game(test_root + "/pass37c-real-emberhorn-leather.json", p37c_grazer.snapshot()) == OK, "legitimate provenance-preserving terminal leather, two native captures, animal capacity, fees and trade all survive strict save auditing")
+
 	var directory := DirAccess.open(test_root)
 	if directory != null:
 		for file_name in directory.get_files():
