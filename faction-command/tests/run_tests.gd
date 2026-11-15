@@ -5000,7 +5000,7 @@ func _run() -> void:
 		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3), "real physical school life support and electricity are supplied during theory block %d" % course_round)
 		p35c_world.advance_ticks(60)
 	_expect(p35c_campus.education.qualified.engineering_college == 2 and not p35c_campus.education.courses.has("engineering_college"), "five paid teaching periods produce a second existing real theory graduate with original historical records")
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 4), "the final academic instruction cycle exhausts its physical energy, so the practicum must be genuinely repowered before enrollment")
+	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3), "the final academic instruction cycle exhausts its physical energy, so the practicum must be genuinely repowered before enrollment")
 	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
 	var p35c_practice_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_2")
 	var p35c_practice_start: Dictionary = p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2) if p35c_practice_dock.ok else {"ok":false,"message":"Workship could not dock"}
