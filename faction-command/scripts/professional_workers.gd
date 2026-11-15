@@ -87,7 +87,7 @@ func set_active(world: RefCounted, worker_id: String, enabled: bool) -> Dictiona
 	var station: Dictionary = world._find_station(str(worker.station_id))
 	if station.is_empty() or station.owner != world.state.player_faction_id:
 		return {"ok":false, "message":"The employing station is unavailable."}
-	if enabled and (not _has_workplace(station, str(worker.track)) or available(world, str(worker.station_id), str(worker.track)) < 0):
+	if enabled and (not _has_workplace(station, str(worker.track))):
 		return {"ok":false, "message":"This profession needs its genuine existing workstation."}
 	worker.active = enabled
 	worker.last_salary_tick = int(world.state.tick)
