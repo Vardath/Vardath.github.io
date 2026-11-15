@@ -4791,6 +4791,13 @@ func _run() -> void:
 		printerr("P35B DIAGNOSTIC FAILED SUPPLY destination=", p35b_dest.stock, " shipcargo=", p35b_ship.cargo, " source=", p35b_source.stock)
 	_expect(p35b_supply_ok, "physical prior-producer stock and paid solar power genuinely provision the destination before a named employee's arrival")
 	_expect(p35b_world.dock_ship("ship_001", "player_station_1").ok, "qualified employee travels only after ship is back at the actual source station")
+	# Paid solar purchase and physical resupply cost real simulation ticks;
+	# capture the AFTER-supply baseline, never assume no factory production,
+	# wages or legitimate family births happened while transport was stocked.
+	p35b_people = p35b_world.population.total_people(p35b_world)
+	p35b_xp = int(p35b_worker.experience)
+	p35b_earned = int(p35b_worker.salary_paid)
+	p35b_owed = int(p35b_worker.salary_due)
 	_expect(p35b_world.professionals.board_named(p35b_world, "ship_001", "professional_1").ok, "an existing professional boards exactly one real ship passenger berth and is off the company payroll during travel")
 	_expect(int(p35b_ship.settler_passengers) == 1 and p35b_ship.professional_passenger_id == "professional_1" and p35b_worker.station_id == "" and not p35b_worker.active and p35b_worker.status == "In transit", "one named in-transit identity is linked to one physical ship rather than duplicated in the source housing")
 	_expect(int(p35b_source.careers.licensed.engineering_college) == 0 and int(p35b_source.education.qualified.engineering_college) == 0 and p35b_world.population.total_people(p35b_world) == p35b_people, "physical boarding moves both the adult and its two prior professional credentials without inflating population")
@@ -4806,7 +4813,12 @@ func _run() -> void:
 	_expect(p35b_reload.queue_fly_to("ship_001", str(p35b_dest.sector)), "named passenger returns through actual gates to the destination sector")
 	p35b_reload.advance_ticks(20)
 	_expect(p35b_reload.dock_ship("ship_001", "player_station_2").ok, "the actual qualified employee reaches another physically built owned residence")
-	_expect(p35b_reload.settlement.disembark(p35b_reload, "ship_001", 1).ok, "the existing Ship & Crew Disembark action resolves a single named professional manifest into a powered and supplied receiving colony")
+	var p35b_arrival_result: Dictionary = p35b_reload.settlement.disembark(p35b_reload, "ship_001", 1)
+	if not p35b_arrival_result.ok:
+		var arrival_station: Dictionary = p35b_reload._find_station("player_station_2")
+		var arrival_people: Dictionary = p35b_reload.population.station_cohort(p35b_reload, "player_station_2")
+		printerr("P35B ARRIVAL DIAGNOSTIC:", p35b_arrival_result, " stock=", arrival_station.stock, " residents=", arrival_people.cohorts, " needs=", p35b_reload.provisions.missing_provision(p35b_reload, arrival_station, p35b_reload.demographics.residents(arrival_people) + 1), " power=", p35b_reload.habitation.operational_capacity(arrival_station, p35b_reload.state.habitation_catalog))
+	_expect(p35b_arrival_result.ok, "the existing Ship & Crew Disembark action resolves a single named professional manifest into a powered and supplied receiving colony")
 	var p35b_arrived: Dictionary = p35b_reload.state.professional_registry.professional_1
 	_expect(p35b_arrived.station_id == "player_station_2" and not p35b_arrived.active and p35b_arrived.experience == p35b_xp and p35b_arrived.salary_paid == p35b_earned and p35b_arrived.salary_due == p35b_owed, "stable original professional ID, historical productive XP and unpaid/paid wages survive legitimate ship travel")
 	_expect(p35b_reload._find_ship("ship_001").professional_passenger_id == "" and int(p35b_reload._find_ship("ship_001").settler_passengers) == 0 and p35b_reload.population.total_people(p35b_reload) == p35b_people and int(p35b_reload._find_station("player_station_2").careers.licensed.engineering_college) == 1, "arrival empties the transport berth and counts exactly one resident and one real practical licence at the receiving station")
