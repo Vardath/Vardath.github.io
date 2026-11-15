@@ -2656,8 +2656,10 @@ func _open_education_screen(station_id: String) -> void:
 	mentor_button.name = "CareerPracticumButton"
 	mentor_button.pressed.connect(_career_practicum_start)
 	careers_row.add_child(mentor_button)
-	var transport_row := HBoxContainer.new()
-	transport_row.add_theme_constant_override("separation", 6)
+	var transport_row := HFlowContainer.new()
+	transport_row.add_theme_constant_override("h_separation", 6)
+	transport_row.add_theme_constant_override("v_separation", 6)
+	transport_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	column.add_child(transport_row)
 	career_ship_picker = OptionButton.new()
 	career_ship_picker.name = "CareerShipPicker"
@@ -2678,8 +2680,10 @@ func _open_education_screen(station_id: String) -> void:
 	named_transfer_button.name = "ProfessionalBoardNamedButton"
 	named_transfer_button.pressed.connect(_professional_board_named)
 	transport_row.add_child(named_transfer_button)
-	var employment_row := HBoxContainer.new()
-	employment_row.add_theme_constant_override("separation", 6)
+	var employment_row := HFlowContainer.new()
+	employment_row.add_theme_constant_override("h_separation", 6)
+	employment_row.add_theme_constant_override("v_separation", 6)
+	employment_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	column.add_child(employment_row)
 	employment_row.add_child(_label("REAL PROFESSIONAL WORK", 13, ACCENT))
 	career_named_worker_picker = OptionButton.new()
