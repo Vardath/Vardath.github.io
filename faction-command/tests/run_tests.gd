@@ -5000,42 +5000,69 @@ func _run() -> void:
 		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3), "real physical school life support and electricity are supplied during theory block %d" % course_round)
 		p35c_world.advance_ticks(60)
 	_expect(p35c_campus.education.qualified.engineering_college == 2 and not p35c_campus.education.courses.has("engineering_college"), "five paid teaching periods produce a second existing real theory graduate with original historical records")
-	_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3), "the final academic instruction cycle exhausts its physical energy, so the practicum must be genuinely repowered before enrollment")
+	# The school has two real academic graduates, but its existing water
+	# budget ran out. To fund four further practicum cycles we now use the
+	# game's already implemented wastewater recycler on a GENUINE third
+	# station, constructed with real alloys, solar cells and NPC builder fees.
+	# The initial actual 24 ship + 32 campus + 8 factory waste units supply
+	# 64 biosolids -> 32 water plus 32 fertile soil at 2 waste/1 energy each.
+	var p35c_waste_site: Dictionary = p35c_world.construction.place(p35c_world, "copper_wake", {"water_recycling":1}, "all", [])
+	_expect(p35c_waste_site.ok, "a funded real 80-volume wastewater recycler station is ordered with exact 16 alloy, 3 energy and builder payment")
+	var p35c_build_alloy: int = int(p35c_factory.stock.get("alloy_plates", 0))
+	var p35c_build_power: int = int(p35c_factory.stock.get("energy_cells", 0))
+	_expect(p35c_build_alloy >= 16 and p35c_build_power >= 3, "existing industry has manufactured all sixteen recycler alloys and three physical construction energy cells")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "alloy_plates", 16, false).ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "energy_cells", 3, false).ok, "the already owned cargo ship loads real manufacturer stock to pay the external recycler's construction materials")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.construction.deliver(p35c_world, "ship_001", str(p35c_waste_site.site_id)).ok, "recycler build storage receives only the sixteen factory alloys and three paid energy cells carried by the ship")
+	p35c_world.advance_ticks(120)
+	var p35c_recycler: Dictionary = p35c_world._find_station("player_station_3")
+	_expect(int(p35c_world.construction.find_site(p35c_world, str(p35c_waste_site.site_id)).completed) == 1 and p35c_recycler.production.any(func(m): return m.recipe_id == "water_recycling") and int(p35c_recycler.storage_capacity) == 80, "NPC builder really completes a standalone wastewater module with finite eighty-unit storage before anything is recycled")
+	var p35c_ship_waste: int = int(p35c_ship.cargo.get("organic_waste", 0))
+	_expect(p35c_ship_waste >= 24 and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 24, true).ok, "twenty-four previous passengers' real shipboard biowaste is delivered into the new recycling module, freeing cargo capacity")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "organic_waste", 24, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 24, true).ok, "twenty-four units of genuinely recorded school resident waste move to the recycler in physical ship cargo")
+	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "the recycled water's operating energy is sourced across the real galaxy and not gifted to the plant")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "energy_cells", 20, true).ok, "first twenty solar cells for the historical waste conversion are purchased from the real NPC energy market")
+	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "paid recycler power is carried back on the genuine intersector shipping lane")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "energy_cells", 20, true).ok, "the new water recycler's warehouse stores forty-eight imported waste units and twenty paid power units, not free production stock")
+	p35c_world.advance_ticks(310)
+	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20, "twenty real 15-tick biowaste and energy conversions create at least twenty water and twenty recovered soil without inventing inputs")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "remaining eight genuine school wastewater units are hauled to the plant for a second batch")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "eight already stored industrial wastewater units join the same recycling chain rather than appearing from nothing")
+	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "another physical energy shipment is needed to finish recycling the full sixty-four wastewater units")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "energy_cells", 16, true).ok, "sixteen more energy units are bought from an actual NPC market at its published credits price")
+	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "paid solar shipment returns to the actual recycler rather than bypassing space travel")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "energy_cells", 16, true).ok, "second recycling batch fits exactly in the previously emptied eighty-unit warehouse")
+	p35c_world.advance_ticks(185)
+	var p35c_water_produced: int = int(p35c_recycler.stock.get("potable_water", 0))
+	var p35c_soil_produced: int = int(p35c_recycler.stock.get("fertile_soil", 0))
+	_expect(p35c_water_produced >= 32 and p35c_soil_produced >= 32 and int(p35c_recycler.stock.get("organic_waste", 0)) == 0, "the full sixty-four genuinely produced biowaste inputs yield thirty-two real water and thirty-two fertilizer units, consuming the purchased power")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "potable_water", 32, false).ok and p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "potable_water", 32, true).ok, "the engineer's school is physically supplied with thirty-two original bio-recycled water units using the real shared ship")
+	# Deliver separately to keep the 116-unit family school warehouse below
+	# its true capacity, accounting for paid books and recovered waste.
+	var p35c_food_needed: int = maxi(0, 33 - int(p35c_campus.stock.get("food_rations", 0)))
+	var p35c_med_needed: int = maxi(0, 12 - int(p35c_campus.stock.get("medical_supplies", 0)))
+	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", p35c_food_needed, false).ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "medical_supplies", p35c_med_needed, false).ok, "source factories load only the actual necessary food and medical products for five funded study and housing cycles")
+	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "food_rations", p35c_food_needed, true).ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "medical_supplies", p35c_med_needed, true).ok, "school receives the real food and medicine from that cargo transfer without exceeding actual storage")
+	var p35c_power_needed: int = maxi(0, 18 - int(p35c_campus.stock.get("energy_cells", 0)))
+	_expect(p35c_power_needed > 0 and p35c_world.queue_fly_to("ship_001", "hearthreach"), "practical school electricity is acquired separately from the paying solar market")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "hearth_exchange").ok and p35c_world.trade("ship_001", "hearth_exchange", "energy_cells", p35c_power_needed, true).ok, "a real trade for the exact deficient study and habitat energy quantity debits player funds")
+	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "the powered school receives its materials only by physically delivering solar cargo")
+	p35c_world.advance_ticks(20)
+	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "energy_cells", p35c_power_needed, true).ok, "all engineering practical lesson electricity fits alongside the delivered water, actual food and archived paper media")
 	p35c_world.advance_ticks(60 - int(p35c_world.state.tick) % 60)
 	var p35c_practice_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_2")
-	var p35c_practice_start: Dictionary = p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2) if p35c_practice_dock.ok else {"ok":false,"message":"Workship could not dock"}
+	var p35c_practice_start: Dictionary = p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2) if p35c_practice_dock.ok else {"ok":false,"message":"Real laboratory ship is not docked"}
 	if not p35c_practice_start.ok:
 		var p35c_cohort: Dictionary = p35c_world.population.station_cohort(p35c_world, "player_station_2")
-		printerr("P35C PAID PRACTICUM START BLOCKED ", p35c_practice_start, " adults=", p35c_cohort.cohorts, " housing=", p35c_cohort.resident_status, " teachers=", p35c_campus.education.teachers, " stock=", p35c_campus.stock, " ship=", p35c_ship.get("captain_profile", {}), " worksite=", p35c_world.careers._workplace(p35c_world, p35c_campus, "engineering_college"), " candidates=", p35c_world.careers.candidates(p35c_world, "player_station_2", "engineering_college"))
-	_expect(p35c_practice_start.ok, "two distinct existing academic graduates begin a real paid practical engineering course at a working ship laboratory")
+		printerr("P35C PAID PRACTICUM STILL BLOCKED ", p35c_practice_start, " source=", p35c_campus.stock, " residents=", p35c_cohort.cohorts, " status=", p35c_cohort.resident_status, " habitat=", p35c_campus.habitation, " pilot=", p35c_ship.get("captain_profile", {}))
+	_expect(p35c_practice_start.ok, "both existing theory graduates begin an authentic 240-tick paid practical engineering course after being provided by an entirely real water-recycling supply chain")
 	for practice_round in range(5):
 		if not p35c_campus.careers.apprenticeships.has("engineering_college"):
 			break
-		var p35c_practice_stocked: bool = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3)
-		if not p35c_practice_stocked and int(p35c_factory.stock.get("potable_water", 0)) < maxi(0, 8 - int(p35c_campus.stock.get("potable_water", 0))):
-			# The old factory's full warehouse halts the ice extraction
-			# and purification chain. Physically load food aboard the same
-			# ship to free storage, let the REAL ice/solar/water modules
-			# run, and deliver that food to the school rather than delete
-			# or sell a virtual pile of goods.
-			var p35c_shift_food: int = mini(24, int(p35c_factory.stock.get("food_rations", 0)))
-			var p35c_room: int = maxi(0, int(p35c_ship.cargo_capacity) - p35c_world.cargo_volume("ship_001"))
-			var p35c_campus_room: int = maxi(0, int(p35c_campus.storage_capacity) - p35c_world.station_volume("player_station_2"))
-			# Free enough source space for solar and geological extraction
-			# before these first high-output modules refill the warehouse.
-			# Leave twelve destination units for subsequent water/medicine.
-			p35c_shift_food = mini(p35c_shift_food, mini(p35c_room, maxi(0, p35c_campus_room - 12)))
-			if p35c_shift_food > 0 and p35c_world.dock_ship("ship_001", "player_station_1").ok:
-				_expect(p35c_world.transfer_player_station("ship_001", "player_station_1", "food_rations", p35c_shift_food, false).ok, "moving actual source food into ship cargo frees industrial storage to reactivate its blocked ice, solar and water production")
-				p35c_world.advance_ticks(120)
-				if int(p35c_factory.stock.get("potable_water", 0)) < 6:
-					printerr("P35C INDUSTRIAL WATER RESTART LIMITED stock=", p35c_factory.stock, " recipes=", p35c_factory.production, " capacity=", p35c_factory.storage_capacity, " deposits=", p35c_factory.deposits)
-				if p35c_world.dock_ship("ship_001", "player_station_2").ok:
-					_expect(p35c_world.transfer_player_station("ship_001", "player_station_2", "food_rations", p35c_shift_food, true).ok, "school receives the physical food removed from the congested industrial warehouse, conserving ship and station stock")
-				p35c_practice_stocked = _replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8, 3)
-		if not p35c_practice_stocked:
-			printerr("P35C PRACTICE RESUPPLY BLOCKED round=", practice_round, " source=", p35c_factory.stock, " campus=", p35c_campus.stock, " ship=", p35c_ship.cargo, " source_vol=", p35c_world.station_volume("player_station_1"), " ship_vol=", p35c_world.cargo_volume("ship_001"), " campus_vol=", p35c_world.station_volume("player_station_2"))
-		_expect(p35c_practice_stocked, "both genuine apprentices receive real recorded work materials, electricity and residence during paid practical block %d" % practice_round)
 		p35c_world.advance_ticks(60)
 	_expect(int(p35c_campus.careers.licensed.engineering_college) == 2 and p35c_campus.careers.apprenticeships.is_empty(), "four supervised paid production training blocks certify exactly two original adult engineers without generating extra people")
 	_expect(save_store.save_game(test_root + "/pass35c-two-real-practical-graduates.json", p35c_world.snapshot()) == OK, "two genuinely trained certificates and original NPC population provenance survive strict real-education-and-workplace save validation")
