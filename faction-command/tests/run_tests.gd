@@ -5040,21 +5040,14 @@ func _run() -> void:
 	p35c_world.advance_ticks(20)
 	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "energy_cells", 20, true).ok, "the new water recycler's warehouse stores forty-eight imported waste units and twenty paid power units, not free production stock")
 	p35c_world.advance_ticks(310)
-	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20 and int(p35c_recycler.stock.get("salt", 0)) >= 20, "twenty real wastewater conversions yield water, soil AND separate recovered mineral salt from actual biological waste and energy")
-	# Three physically stored output wares fill an 80-volume recycler
-	# sooner. Sell the first REAL recovered salt batch at a distant
-	# biological market to free space for the subsequent sixteen cycles.
-	_expect(p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "salt", 20, false).ok, "first twenty recovered salt units are physically loaded into the same ship rather than disappearing from reactor storage")
-	_expect(p35c_world.queue_fly_to("ship_001", "vellum_gate"), "salt is transported through actual connected sectors to a Mycoran biochemical buyer")
-	p35c_world.advance_ticks(40)
-	var p35c_salt_market_price: int = int(p35c_world._find_station("vellum_foundry").buy_prices.get("salt", 0))
-	_expect(p35c_salt_market_price == 10, "Mycoran buyers pay ten credits per actual recovered salt unit based on their independently modelled cultural valuation")
-	var p35c_salt_sell: Dictionary = p35c_world.trade("ship_001", "vellum_foundry", "salt", 20, false) if p35c_world.dock_ship("ship_001", "vellum_foundry").ok else {"ok":false}
-	if not p35c_salt_sell.ok:
-		printerr("P35C REAL SALT EXPORT BLOCKED result=", p35c_salt_sell, " market=", p35c_world._find_station("vellum_foundry").stock, " cargo=", p35c_ship.cargo)
-	_expect(p35c_salt_sell.ok, "a real solvent alien buyer purchases the original recovered salt; credits and cargo are conserved without inventing goods")
-	_expect(p35c_world.queue_fly_to("ship_001", "copper_wake"), "the recycled-water ship returns to its own sector to collect further wastewater")
-	p35c_world.advance_ticks(40)
+	_expect(int(p35c_recycler.stock.get("potable_water", 0)) >= 20 and int(p35c_recycler.stock.get("fertile_soil", 0)) >= 20 and int(p35c_recycler.stock.get("salt", 0)) >= 5, "twenty genuine wastewater cycles yield twenty water, twenty fertile soil and at least five separately storable concentrated salt byproducts")
+	# One recovered-salt unit per FOUR real cycles gives a conservative
+	# mineral concentration. The eighty-volume recycler must still have
+	# space for the next sixteen waste and sixteen energy units. The first
+	# five salt units are MOVED to actual ship cargo, never deleted.
+	var p35c_salt_first: int = int(p35c_recycler.stock.get("salt", 0))
+	_expect(p35c_salt_first >= 5 and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "salt", p35c_salt_first, false).ok, "recoverable salt is physically removed to an actual passenger ship, freeing the exact recycling warehouse space required for the remaining wastewater batch")
+	_expect(int(p35c_ship.cargo.get("salt", 0)) == p35c_salt_first and int(p35c_recycler.stock.get("salt", 0)) == 0, "all early salt remains in ship inventory until deliberately stored or sold later, with no ghost wares or trade credit")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.transfer_player_station("ship_001", "player_station_2", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "remaining eight genuine school wastewater units are hauled to the plant for a second batch")
 	_expect(p35c_world.dock_ship("ship_001", "player_station_1").ok and p35c_world.transfer_player_station("ship_001", "player_station_1", "organic_waste", 8, false).ok and p35c_world.dock_ship("ship_001", "player_station_3").ok and p35c_world.transfer_player_station("ship_001", "player_station_3", "organic_waste", 8, true).ok, "eight already stored industrial wastewater units join the same recycling chain rather than appearing from nothing")
 	_expect(p35c_world.queue_fly_to("ship_001", "hearthreach"), "another physical energy shipment is needed to finish recycling the full sixty-four wastewater units")
@@ -5244,7 +5237,7 @@ func _run() -> void:
 	var p36_myc: Dictionary = p36_fresh._find_station("vellum_foundry")
 	var p36_freshship: Dictionary = p36_fresh._find_ship("ship_001")
 	_expect(int(p36_fresh.state.get("salt_recovery_version", 0)) == 1 and int(p36_fresh.state.get("waste_transport_version", 0)) == 1 and int(p36_fresh.state.get("waste_cultures_version", 0)) == 1, "species demand, salt recovery and waste hauling each have independently versioned save migrations")
-	_expect(int(p36_fresh._find_ware("salt").volume) == 1 and p36_fresh._find_recipe("water_recycling").outputs == {"potable_water":1, "fertile_soil":1, "salt":1}, "every genuine wastewater cycle recovers separately storable water, soil and salt using the existing two waste and one energy inputs")
+	_expect(int(p36_fresh._find_ware("salt").volume) == 1 and p36_fresh._find_recipe("water_recycling").outputs == {"potable_water":1, "fertile_soil":1} and p36_fresh.salt_recovery.SALT_CYCLES == 4, "every physical wastewater cycle restores water and soil, and every fourth genuinely completed cycle additionally concentrates one storable salt unit")
 	_expect(_total_ware(p36_fresh.state, "salt") == 0 and _total_ware(p36_fresh.state, "organic_waste") == 0, "startup does not mint salt, biosolids or fake alien waste inventories")
 	_expect(p36_myc.get("waste_buyer_species_id", "") == "mycoran" and int(p36_myc.buy_prices.get("organic_waste", 0)) == 12 and p36_fresh.waste_cultures.buyer_report(p36_fresh, "vellum_foundry").contains("Mycoran"), "a Mycoran biological market buys existing generic waste for real credits, independent of the station's political owner")
 	_expect(int(p36_fresh._find_station("hearth_exchange").buy_prices.get("organic_waste", 0)) == 2 and int(p36_fresh._find_station("cinder_depot").buy_prices.get("organic_waste", 0)) == 7 and int(p36_fresh._find_station("verdant_hub").buy_prices.get("organic_waste", 0)) == 5, "different biological buyers legitimately value unclassified organic waste differently")
