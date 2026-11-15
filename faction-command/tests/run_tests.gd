@@ -48,6 +48,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("professional_passenger_ids")
 	copy.erase("waste_transport")
 	copy.erase("bio_survey")
+	copy.erase("wildlife_capture")
 	return copy
 
 
@@ -61,6 +62,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("professional_passenger_ids")
 		ship.erase("waste_transport")
 		ship.erase("bio_survey")
+		ship.erase("wildlife_capture")
 	return copy
 
 
@@ -127,7 +129,28 @@ func _strip_demographics(state: Dictionary) -> void:
 		record.erase("family")
 
 
+func _strip_livestock(state: Dictionary) -> void:
+	for key in ["livestock_version", "livestock_catalog", "livestock_sites", "livestock_care", "livestock_transit"]:
+		state.erase(key)
+	for ship in state.get("ships", []):
+		ship.erase("wildlife_capture")
+		for id in ["emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers"]:
+			ship.get("cargo", {}).erase(id)
+	for station in state.get("stations", []):
+		for id in ["emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers"]:
+			station.get("stock", {}).erase(id)
+	for i in range(state.get("wares", []).size() - 1, -1, -1):
+		if state.wares[i].id in ["emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers"]:
+			state.wares.remove_at(i)
+	for i in range(state.get("recipes", []).size() - 1, -1, -1):
+		if state.recipes[i].id in ["emberhorn_paddock", "dustwhistle_aviary"]:
+			state.recipes.remove_at(i)
+	for recipe_id in ["emberhorn_paddock", "dustwhistle_aviary"]:
+		state.get("construction_blueprints", {}).erase(recipe_id)
+
+
 func _strip_biosurvey(state: Dictionary) -> void:
+	_strip_livestock(state)
 	state.erase("biosurvey_version")
 	state.erase("biosurvey_catalog")
 	state.erase("biosurvey_sites")
@@ -594,7 +617,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 18, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 25, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -823,7 +846,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 15, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 17, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -994,7 +1017,7 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
-		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record", "emberhorn_grazer", "emberhorn_calf", "emberhorn_fur", "emberhorn_leather", "dustwhistle_moth", "dustwhistle_larva", "dustwhistle_feathers"]:
 			_expect(int(migrated_stock.get(bioware_id, -1)) == 0, "pre-logistics NPC migration creates no free planetary specimen or crop: " + str(old_station.id) + " / " + bioware_id)
 			migrated_stock.erase(bioware_id)
 		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
@@ -2482,7 +2505,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 6, "property panel offers manual, trading, construction supply, station supply, waste collection and bio survey roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 7, "property panel includes seven mutually exclusive command roles, including live-wildlife capture")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -5444,7 +5467,7 @@ func _run() -> void:
 	var p37_future: Dictionary = p37_world.snapshot()
 	p37_future.biota_version = 2
 	_expect(save_store.save_game(test_root + "/pass37-future-biota.json", p37_future) != OK, "unknown future biological save versions are rejected")
-	_expect(_total_ware(p37_world.state, "sunlace_fruit") == 0 and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
+	_expect(_total_ware(p37_world.state, "sunlace_fruit") == 0 and _total_ware(p37_world.state, "emberhorn_grazer") == 0, "catalogue-only Pass 37A does not magically create edible stock or livestock")
 
 	# Pass 37B: a counted orbital wild population moves into ship cargo
 	# only after physical travel, staffed sampling time, and paid energy.
