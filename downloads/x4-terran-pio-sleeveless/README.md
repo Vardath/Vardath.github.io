@@ -1,3 +1,5 @@
+> **Update — 15 November 2026:** The installable **[Terran and Pioneer Short Skirts v1.0](../x4-terran-pioneer-short-skirts/)** is now available, with four edited and exported body models. Sleeves remain unchanged. Blender and file validation passed; in-game testing is still pending. The sleeveless specification and experimental tools below describe the earlier, unfinished project.
+
 # Vardath — Terran / Pioneer sleeveless shorter dresses
 
 **Status: asset editing and in-game validation blocked; this is an incomplete mod project, NOT an installable clothing-mod release.** This directory holds the source-controlled specification, tools and tests for the final stand-alone X4 extension. It deliberately contains no dummy XAC files and does not modify the base game.

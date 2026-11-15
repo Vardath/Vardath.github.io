@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_pio_f_crew_uniform_01.xac",
+      "bytes": 518013,
+      "valid": true,
+      "skeleton_and_materials_preserved": true,
+      "other_meshes_and_weights_unchanged": true,
+      "skirt_weights_normalized": true
+    },
+    {
+      "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_pio_f_diplomat_suit_01.xac",
+      "bytes": 481031,
+      "valid": true,
+      "skeleton_and_materials_preserved": true,
+      "other_meshes_and_weights_unchanged": true,
+      "skirt_weights_normalized": true
+    },
+    {
+      "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_ter_f_crew_uniform_01.xac",
+      "bytes": 518013,
+      "valid": true,
+      "skeleton_and_materials_preserved": true,
+      "other_meshes_and_weights_unchanged": true,
+      "skirt_weights_normalized": true
+    },
+    {
+      "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_ter_f_diplomat_suit_01.xac",
+      "bytes": 481031,
+      "valid": true,
+      "skeleton_and_materials_preserved": true,
+      "other_meshes_and_weights_unchanged": true,
+      "skirt_weights_normalized": true
+    }
+  ],
+  "blender_round_trip": "all four exported files reimported and rendered",
+  "in_game_test": "not performed"
+}
