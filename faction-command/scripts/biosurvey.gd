@@ -190,6 +190,7 @@ func assign(world: RefCounted, ship_id: String, sector_id: String) -> Dictionary
 	world.build_supply.stop(ship)
 	world.station_supply.stop(ship)
 	world.waste_transport.stop(ship)
+	world.livestock.stop(ship)
 	stop(ship)
 	ship.bio_survey = {"enabled":true, "site_id":str(site.id), "phase":"to_site", "ticks_remaining":int(site.collection_ticks), "wait_reason":""}
 	ship.role = "Bio Survey"

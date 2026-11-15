@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "scope": "Finite living animals: actual non-hostile captured adults from two known planetary sources; pens consume real food/water/power, produce manure and renewable materials, breed finite juveniles and mature only after fed cycles. Ship stasis consumes power. No species-driven human food, pet ownership, disease diffusion or unrestricted trade yet.",
+  "care_interval_ticks": 60,
+  "ship_stasis_interval_ticks": 60,
+  "shortage_cycles_before_death": 3,
+  "animals": [
+    {
+      "id": "emberhorn",
+      "species_id": "emberhorn_grazer",
+      "name": "Emberhorn Grazer",
+      "site_id": "cinder_veil_emberhorn",
+      "site_name": "Cindara Basalt Grazing Preserve",
+      "sector_id": "cinder_veil",
+      "wild_reserve": 12,
+      "capture_ticks": 36,
+      "adult_ware": "emberhorn_grazer",
+      "young_ware": "emberhorn_calf",
+      "material_ware": "emberhorn_fur",
+      "enclosure_recipe": "emberhorn_paddock",
+      "enclosure_name": "Basalt Grazing Paddock",
+      "capacity_per_enclosure": 4,
+      "renewable_interval": 3,
+      "breeding_interval": 5,
+      "maturity_cycles": 3,
+      "habitat": "Hot dry basalt grassland; specialist environmental containment",
+      "terminal_ware": "emberhorn_leather"
+    },
+    {
+      "id": "dustwhistle",
+      "species_id": "dustwhistle_moth",
+      "name": "Dustwhistle Moth",
+      "site_id": "liora_dustwhistle",
+      "site_name": "Liora Pollinator Sanctuary",
+      "sector_id": "hearthreach",
+      "wild_reserve": 16,
+      "capture_ticks": 28,
+      "adult_ware": "dustwhistle_moth",
+      "young_ware": "dustwhistle_larva",
+      "material_ware": "dustwhistle_feathers",
+      "enclosure_recipe": "dustwhistle_aviary",
+      "enclosure_name": "Liora Pollinator Aviary",
+      "capacity_per_enclosure": 6,
+      "renewable_interval": 2,
+      "breeding_interval": 4,
+      "maturity_cycles": 2,
+      "habitat": "Nectar-filtered sealed pollen aviary; humidity and stable life support",
+      "terminal_ware": ""
+    }
+  ],
+  "wares": [
+    {
+      "id": "emberhorn_grazer",
+      "name": "Live Emberhorn Grazer",
+      "volume": 4
+    },
+    {
+      "id": "emberhorn_calf",
+      "name": "Live Emberhorn Calf",
+      "volume": 2
+    },
+    {
+      "id": "emberhorn_fur",
+      "name": "Shed Emberhorn Fur",
+      "volume": 1
+    },
+    {
+      "id": "emberhorn_leather",
+      "name": "Processed Emberhorn Leather",
+      "volume": 1
+    },
+    {
+      "id": "dustwhistle_moth",
+      "name": "Live Dustwhistle Moth",
+      "volume": 2
+    },
+    {
+      "id": "dustwhistle_larva",
+      "name": "Live Dustwhistle Larva",
+      "volume": 1
+    },
+    {
+      "id": "dustwhistle_feathers",
+      "name": "Shed Dustwhistle Plumage",
+      "volume": 1
+    }
+  ],
+  "recipes": [
+    {
+      "id": "emberhorn_paddock",
+      "name": "Basalt Grazing Paddock",
+      "cycle_ticks": 60,
+      "inputs": {
+        "food_rations": 1,
+        "potable_water": 1,
+        "energy_cells": 1
+      },
+      "catalysts": {
+        "emberhorn_grazer": 1
+      },
+      "outputs": {
+        "organic_waste": 1
+      },
+      "livestock_service": true
+    },
+    {
+      "id": "dustwhistle_aviary",
+      "name": "Liora Pollinator Aviary",
+      "cycle_ticks": 60,
+      "inputs": {
+        "food_rations": 1,
+        "potable_water": 1,
+        "energy_cells": 1
+      },
+      "catalysts": {
+        "dustwhistle_moth": 1
+      },
+      "outputs": {
+        "organic_waste": 1
+      },
+      "livestock_service": true
+    }
+  ],
+  "blueprints": {
+    "emberhorn_paddock": {
+      "fee": 1600,
+      "ticks": 38,
+      "materials": {
+        "alloy_plates": 22,
+        "energy_cells": 7
+      },
+      "storage": 130
+    },
+    "dustwhistle_aviary": {
+      "fee": 1450,
+      "ticks": 34,
+      "materials": {
+        "alloy_plates": 19,
+        "energy_cells": 6
+      },
+      "storage": 120
+    }
+  }
+}

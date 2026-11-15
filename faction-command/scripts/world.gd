@@ -22,6 +22,7 @@ const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const BiotaScript = preload("res://scripts/biota.gd")
 const BioSurveyScript = preload("res://scripts/biosurvey.gd")
+const LivestockScript = preload("res://scripts/livestock.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -46,6 +47,7 @@ var waste_cultures = WasteCulturesScript.new()
 var waste_transport = WasteTransportScript.new()
 var biota = BiotaScript.new()
 var biosurvey = BioSurveyScript.new()
+var livestock = LivestockScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
 var careers = CareersScript.new()
@@ -128,7 +130,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 		return ERR_INVALID_DATA
 	var biological_result: Error = biosurvey.prepare(new_state)
 	if biological_result != OK:
-		printerr("Pass37B startup diagnostic: biosurvey result=", biological_result, " definitions keys=", biosurvey.definitions().keys(), " biota_version=", new_state.get("biota_version", "missing"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
+		return ERR_INVALID_DATA
+	if livestock.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	state = new_state
 	return OK
@@ -209,6 +212,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = biosurvey.prepare(restored)
+	if result != OK:
+		return result
+	result = livestock.prepare(restored)
 	if result != OK:
 		return result
 	state = restored
@@ -321,6 +327,7 @@ func advance_ticks(count: int) -> void:
 			_tick_ship(ship)
 		for station in state.get("stations", []):
 			_tick_production(station)
+			livestock.tick_station(self, station)
 		for ship in state.get("ships", []):
 			if ship.has("autotrader") or ship.has("player_trader"):
 				npc_trade.tick(self, ship)
@@ -332,6 +339,9 @@ func advance_ticks(count: int) -> void:
 				waste_transport.tick(self, ship)
 			if ship.has("bio_survey"):
 				biosurvey.tick(self, ship)
+			if ship.has("wildlife_capture"):
+				livestock.tick_capture(self, ship)
+				livestock.tick_transit(self, ship)
 		construction.tick(self)
 		habitation.tick(self)
 		settlement.tick(self)
@@ -365,6 +375,7 @@ func set_player_trader(ship_id: String, enabled: bool) -> bool:
 	station_supply.stop(ship)
 	waste_transport.stop(ship)
 	biosurvey.stop(ship)
+	livestock.stop(ship)
 	ship.player_trader.enabled = enabled
 	ship.role = "Autonomous Trader" if enabled else "Unassigned"
 	return true
@@ -484,6 +495,10 @@ func _tick_production(station: Dictionary) -> void:
 		if recipe.is_empty():
 			module.status = "Invalid recipe"
 			continue
+		if bool(recipe.get("livestock_service", false)):
+			# Husbandry is cohort-based: per-head feed, waste and biological
+			# yields are counted in Livestock.tick_station, not generic factories.
+			continue
 		recipe = research.adjusted_recipe(state, recipe, station.owner == state.player_faction_id)
 		var blocked := _production_block_reason(station, recipe, reservations)
 		if not blocked.is_empty():
@@ -522,7 +537,7 @@ func production_report(station_id: String) -> Array:
 		if recipe.is_empty():
 			continue
 		recipe = research.adjusted_recipe(state, recipe, station.owner == state.player_faction_id)
-		var reason := _production_block_reason(station, recipe, reservations)
+		var reason := str(module.status) if bool(recipe.get("livestock_service", false)) else _production_block_reason(station, recipe, reservations)
 		reports.append({"name": recipe.name, "status": "Running" if reason.is_empty() else reason, "progress": int(module.progress), "duration": int(recipe.cycle_ticks), "cycles": int(module.cycles), "inputs": recipe.inputs.duplicate(true), "outputs": recipe.outputs.duplicate(true), "catalysts":recipe.get("catalysts", {}).duplicate(true), "catalog_source":bool(recipe.get("catalog_source", false)), "source": str(recipe.get("source", "")), "deposit": recipe.get("deposit", {}).duplicate(true)})
 	return reports
 
@@ -578,6 +593,8 @@ func transfer_player_station(ship_id: String, station_id: String, ware_id: Strin
 	var cargo := int(ship.cargo.get(ware_id, 0))
 	var stock := int(station.stock.get(ware_id, 0))
 	if to_station:
+		if livestock.is_live(ware_id) and not livestock.can_unload(station, ware_id, quantity):
+			return {"ok":false, "message":"Live animal transfer requires the correct completed enclosure and available habitat capacity."}
 		if ware_id in biosurvey.SAMPLES and not biosurvey.has_gene_bank(station):
 			return {"ok":false, "message":"Biological specimens require a completed containment/gene-bank module at the receiving station."}
 		if cargo < quantity or station_volume(station_id) + quantity * int(ware.volume) > int(station.storage_capacity):
@@ -587,10 +604,21 @@ func transfer_player_station(ship_id: String, station_id: String, ware_id: Strin
 		if ship.has("player_trader") and ship.player_trader.phase == "to_destination" and ship.player_trader.ware_id == ware_id:
 			ship.player_trader.managed_quantity = maxi(0, int(ship.player_trader.managed_quantity) - quantity)
 	else:
+		if ware_id in livestock.YOUNG_WARES:
+			return {"ok":false, "message":"Juveniles must mature in their protected station habitat before interstellar transport."}
 		if stock < quantity or cargo_volume(ship_id) + quantity * int(ware.volume) > int(ship.cargo_capacity):
 			return {"ok":false, "message":"Not enough station stock or ship cargo space."}
 		station.stock[ware_id] = stock - quantity
 		ship.cargo[ware_id] = cargo + quantity
+	if livestock.is_live(ware_id):
+		if to_station:
+			livestock.ensure_station(self, station_id, ware_id)
+			if int(ship.cargo.get(ware_id, 0)) == 0:
+				var live_species: Dictionary = livestock._animal_by_adult(self, ware_id)
+				if not live_species.is_empty():
+					state.livestock_transit.erase(livestock._transit_key(ship_id, str(live_species.id)))
+		else:
+			livestock.ensure_transit(self, ship_id, ware_id)
 	_record_transaction("transfer_in" if to_station else "transfer_out", ship_id, station_id, ware_id, quantity, 0, 0)
 	return {"ok":true, "message":"Transferred %d %s." % [quantity, ware.name]}
 

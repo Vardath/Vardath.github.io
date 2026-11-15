@@ -27,7 +27,7 @@ func tabs(world: RefCounted, kind: String, id: String) -> Array[String]:
 				return result
 			result = ["Info", "Trade", "Cargo", "Production", "Population"]
 			if kind == "station":
-				result.append_array(["Construction", "Research", "Education", "Careers"])
+				result.append_array(["Construction", "Research", "Education", "Careers", "Husbandry"])
 			if station.has("archive"):
 				result.append("History")
 		"site":
@@ -53,14 +53,23 @@ func actions(world: RefCounted, kind: String, id: String, tab: String) -> Array[
 		"sector":
 			if tab == "Assets":
 				options.append({"id":"open_sector", "label":"Open sector map"})
-			elif tab == "Biology" and not world.biosurvey.site_for_sector(world, id).is_empty():
-				options.append({"id":"bio_survey", "label":"Send active ship to survey"})
+			elif tab == "Biology":
+				if not world.biosurvey.site_for_sector(world, id).is_empty():
+					options.append({"id":"bio_survey", "label":"Send active ship to botanical survey"})
+				if not world.livestock.species_for_sector(world, id).is_empty():
+					options.append({"id":"wildlife_capture", "label":"Send active ship for wildlife collection"})
 		"station", "npc_station":
 			match tab:
 				"Info", "Trade", "Cargo":
 					options.append({"id":"station_trade", "label":"Open station trade"})
 				"Population":
 					options.append({"id":"population", "label":"Population overview"})
+				"Husbandry":
+					if kind == "station":
+						var pasture: Dictionary = world._find_station(id)
+						var grazer: Dictionary = world.livestock.species_by_id(world, "emberhorn")
+						if world.livestock.pen_count(pasture, grazer) > 0 and int(pasture.stock.get("emberhorn_grazer", 0)) > 0:
+							options.append({"id":"livestock_slaughter", "label":"Process one Emberhorn for leather"})
 				"Construction":
 					if kind == "station":
 						options.append({"id":"builds", "label":"Manage builds"})
@@ -144,10 +153,14 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 		if tab == "Orders":
 			return _target_route(world, active_ship_id, id)
 		if tab == "Biology":
+			var lines: Array[String] = []
 			var site: Dictionary = world.biosurvey.site_for_sector(world, id)
-			if site.is_empty():
-				return "No surveyed orbital biological collection sites in this sector. More planets, animals, survey tools and exotic biomes are planned."
-			return "%s\nOriginal organism: %s\nRemaining native samples: %d / %d\nSurvey: %d ticks, %d Energy Cell, %d existing crew\nRequires physical cargo, lawful sector access and delivery to a built gene-bank module. No stock appears until an actual ship completes collection." % [site.name, site.organism_id, int(world.state.biosurvey_sites.get(str(site.id), 0)), int(site.initial_reserve), int(site.collection_ticks), int(site.energy_cost), int(site.min_crew)]
+			if not site.is_empty():
+				lines.append("%s\nPlant/microbe: %s\nWild samples remaining: %d / %d\nSurvey duration %d ticks. Requires 2 existing crew, 1 physical Energy Cell, cargo and completed gene-bank containment at destination." % [site.name, site.organism_id, int(world.state.biosurvey_sites.get(str(site.id), 0)), int(site.initial_reserve), int(site.collection_ticks)])
+			var animal: Dictionary = world.livestock.species_for_sector(world, id)
+			if not animal.is_empty():
+				lines.append("%s\nLive animal: %s\nWild adult quota: %d / %d\nCapture %d ticks + 1 Energy Cell. Captives consume ship stasis power every 60 ticks and require a completed %s enclosure to unload. Living colonies consume actual food, water and electricity." % [animal.site_name, animal.name, int(world.state.livestock_sites.get(str(animal.site_id), 0)), int(animal.wild_reserve), int(animal.capture_ticks), animal.enclosure_name])
+			return "\n\n".join(lines) if not lines.is_empty() else "No accessible biological field sites surveyed here."
 		var assets: Array[String] = []
 		for station in world.state.stations:
 			if station.sector == id:
@@ -177,6 +190,8 @@ func content(world: RefCounted, kind: String, id: String, tab: String, info_text
 	if kind in ["station", "npc_station"]:
 		var station: Dictionary = world._find_station(id)
 		match tab:
+			"Husbandry":
+				return world.livestock.report(world, station) + "\n\nCompleted pens provide 4 Emberhorn or 6 Dustwhistle places per module. Every 60 ticks animals consume one physical Food Ration and Potable Water per head plus station power, then create organic waste. Fed adults can shed renewable fur or feathers and breed counted juveniles. Missing care eventually causes actual animal loss, never free material. Processing leather uses one existing adult and one Energy Cell."
 			"Trade":
 				var markets: Array[String] = []
 				for ware in world.state.wares:

@@ -106,6 +106,7 @@ func assign(world: RefCounted, ship_id: String, station_id: String, budget_limit
 	world.build_supply.stop(ship)
 	world.waste_transport.stop(ship)
 	world.biosurvey.stop(ship)
+	world.livestock.stop(ship)
 	ship.station_supply = _empty_job()
 	ship.station_supply.enabled = true
 	ship.station_supply.station_id = station_id
