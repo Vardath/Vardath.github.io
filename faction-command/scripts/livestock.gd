@@ -378,11 +378,14 @@ func tick_station(world: RefCounted, station: Dictionary) -> void:
 			continue
 		care.ticks = 0
 		var food: int = n
+		var tailored_id: String = world.animal_feed.feed_for(str(animal.id))
+		var tailored: bool = int(station.stock.get(tailored_id, 0)) >= n
+		var food_id: String = tailored_id if tailored else "food_rations"
 		var water: int = n
 		var power: int = maxi(1, int(ceil(float(n) / float(animal.capacity_per_enclosure))))
 		var current_volume: int = world.station_volume(str(station.id))
 		var projected: int = current_volume - food - water - power + n
-		var nourished: bool = int(station.stock.get("food_rations", 0)) >= food and int(station.stock.get("potable_water", 0)) >= water and int(station.stock.get("energy_cells", 0)) >= power and projected <= int(station.storage_capacity)
+		var nourished: bool = int(station.stock.get(food_id, 0)) >= food and int(station.stock.get("potable_water", 0)) >= water and int(station.stock.get("energy_cells", 0)) >= power and projected <= int(station.storage_capacity)
 		if not nourished:
 			care.shortages = int(care.shortages) + 1
 			care.last_status = "Needs live-animal feed, water, power or waste capacity (%d / %d)" % [int(care.shortages), HUNGER_LIMIT]
@@ -395,8 +398,12 @@ func tick_station(world: RefCounted, station: Dictionary) -> void:
 					care.juvenile_ages.pop_front()
 				care.shortages = 0
 				world._record_transaction("livestock_death", "", str(station.id), victim, 1, 0, 0)
+				if _headcount(station, animal) == 0:
+					world.state.animal_quarantine.erase(key)
 			continue
-		station.stock.food_rations = int(station.stock.food_rations) - food
+		station.stock[food_id] = int(station.stock[food_id]) - food
+		if tailored:
+			world._record_transaction("animal_feed_used", "", str(station.id), food_id, food, 0, 0)
 		station.stock.potable_water = int(station.stock.potable_water) - water
 		station.stock.energy_cells = int(station.stock.energy_cells) - power
 		station.stock.organic_waste = int(station.stock.get("organic_waste", 0)) + n
@@ -406,7 +413,7 @@ func tick_station(world: RefCounted, station: Dictionary) -> void:
 		world._record_transaction("livestock_manure", "", str(station.id), str(animal.adult_ware), n, 0, 0)
 		care.fed_cycles = int(care.fed_cycles) + 1
 		care.shortages = 0
-		care.last_status = "Fed %d live animals; collected %d organic waste" % [n, n]
+		care.last_status = "%s: fed %d animals; collected %d organic waste" % ["Tailored nutrition" if tailored else "Baseline rations", n, n]
 		for module in modules:
 			module.progress = 0
 			module.cycles = int(module.cycles) + 1
@@ -416,7 +423,8 @@ func tick_station(world: RefCounted, station: Dictionary) -> void:
 		var old_ages: Array = care.juvenile_ages.duplicate()
 		var updated_ages: Array = []
 		for juvenile_age in old_ages:
-			var next_age: int = mini(int(animal.maturity_cycles), int(juvenile_age) + 1)
+			var growth_step: int = 2 if tailored else 1
+			var next_age: int = mini(int(animal.maturity_cycles), int(juvenile_age) + growth_step)
 			var adult_volume: int = int(world._find_ware(str(animal.adult_ware)).volume)
 			var young_volume: int = int(world._find_ware(str(animal.young_ware)).volume)
 			if next_age >= int(animal.maturity_cycles) and world.station_volume(str(station.id)) + adult_volume - young_volume <= int(station.storage_capacity):
@@ -437,8 +445,8 @@ func tick_station(world: RefCounted, station: Dictionary) -> void:
 				world._record_transaction("livestock_shed", "", str(station.id), str(animal.material_ware), shed, 0, 0)
 		# New juveniles only appear when two real adults have both received
 		# enough successful feeding cycles and the habitat can house them.
-		if adults >= 2:
-			care.birth_progress = mini(int(animal.breeding_interval), int(care.birth_progress) + 1)
+		if adults >= 2 and not world.animal_feed.is_quarantined(world, str(station.id), str(animal.id)):
+			care.birth_progress = mini(int(animal.breeding_interval), int(care.birth_progress) + (2 if tailored else 1))
 			var young_volume: int = int(world._find_ware(str(animal.young_ware)).volume)
 			if int(care.birth_progress) >= int(animal.breeding_interval) and _headcount(station, animal) < capacity(station, animal) and world.station_volume(str(station.id)) + young_volume <= int(station.storage_capacity):
 				station.stock[str(animal.young_ware)] = int(station.stock.get(str(animal.young_ware), 0)) + 1
@@ -456,6 +464,8 @@ func slaughter(world: RefCounted, station_id: String) -> Dictionary:
 		return {"ok":false, "message":"An owned, physically completed Emberhorn paddock is required."}
 	if int(station.stock.get(str(animal.adult_ware), 0)) < 1:
 		return {"ok":false, "message":"No live adult Emberhorn is available for terminal harvest."}
+	if world.animal_feed.is_quarantined(world, station_id, "emberhorn"):
+		return {"ok":false, "message":"Terminal animal harvesting is prohibited during veterinary quarantine."}
 	if int(station.stock.get("energy_cells", 0)) < 1:
 		return {"ok":false, "message":"One real Energy Cell is required for hide processing."}
 	var adult_volume: int = int(world._find_ware(str(animal.adult_ware)).volume)
