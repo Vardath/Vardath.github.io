@@ -12,6 +12,7 @@ const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
 const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const BiotaScript = preload("res://scripts/biota.gd")
+const BioSurveyScript = preload("res://scripts/biosurvey.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
 const CareersScript = preload("res://scripts/careers.gd")
@@ -144,6 +145,8 @@ func _read_one(path: String) -> Dictionary:
 		return {"ok": false, "reason": "unsupported"}
 	if decoded.has("waste_cultures_version") and _is_nonnegative_integer(decoded.waste_cultures_version) and decoded.waste_cultures_version != 1:
 		return {"ok":false, "reason":"unsupported"}
+	if decoded.has("biosurvey_version") and _is_nonnegative_integer(decoded.biosurvey_version) and decoded.biosurvey_version != 1:
+		return {"ok":false, "reason":"unsupported"}
 	if decoded.has("settlement_version") and _is_nonnegative_integer(decoded.settlement_version) and decoded.settlement_version not in [1, 2]:
 		return {"ok": false, "reason": "unsupported"}
 	if not _valid_world(decoded):
@@ -183,6 +186,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("waste_transport_version") and (not state.has("salt_recovery_version") or not state.has("station_supply_version")):
 		return false
 	if state.has("biota_version") != state.has("biota_catalog") or (state.has("biota_version") and state.get("waste_cultures_version") != 1):
+		return false
+	if state.has("biosurvey_version") != (state.has("biosurvey_catalog") and state.has("biosurvey_sites")) or (state.has("biosurvey_version") and state.get("biota_version") != 1):
 		return false
 	if state.has("demographics_version") != state.has("demographics_catalog") or (state.has("demographics_version") and state.get("ecology_version") != 1):
 		return false
@@ -314,6 +319,8 @@ func _valid_world(state: Dictionary) -> bool:
 	if state.has("waste_transport_version") and not _valid_waste_transport(state):
 		return false
 	if state.has("biota_version") and not _valid_biota(state):
+		return false
+	if state.has("biosurvey_version") and not _valid_biosurvey(state):
 		return false
 	if state.has("demographics_version") and not _valid_demographics(state):
 		return false
@@ -945,6 +952,115 @@ func _valid_salt_recovery(state: Dictionary) -> bool:
 	# Future consumption/trading may reduce stock, but cannot exceed
 	# completed recycler receipts with no other declared source.
 	return total_stock <= total_recovered
+
+
+
+func _valid_biosurvey(state: Dictionary) -> bool:
+	if state.get("biosurvey_version") != BioSurveyScript.VERSION or not state.get("biosurvey_catalog") is Dictionary or not state.get("biosurvey_sites") is Dictionary:
+		return false
+	var defs: Dictionary = BioSurveyScript.new().definitions()
+	if defs.is_empty() or state.biosurvey_catalog != defs or state.biosurvey_sites.size() != defs.sites.size():
+		return false
+	var expected_ware: Dictionary = {}
+	for ware in defs.wares:
+		expected_ware[str(ware.id)] = ware
+	for ware in state.wares:
+		if expected_ware.has(str(ware.id)) and ware != expected_ware[str(ware.id)]:
+			return false
+	for item_id in expected_ware:
+		if not state.wares.any(func(w): return w.id == item_id):
+			return false
+	for recipe in defs.recipes:
+		if not state.recipes.any(func(r): return r.id == recipe.id and r == recipe):
+			return false
+		if state.construction_blueprints.get(recipe.id, {}) != defs.blueprints[recipe.id]:
+			return false
+	var available_sources: Dictionary = {}
+	var collected: Dictionary = {}
+	var valid_ships: Dictionary = {}
+	for ship in state.ships:
+		valid_ships[str(ship.id)] = ship
+	for site in defs.sites:
+		if not _is_nonnegative_integer(state.biosurvey_sites.get(str(site.id))) or int(state.biosurvey_sites[site.id]) > int(site.initial_reserve):
+			return false
+		available_sources[str(site.id)] = site
+		collected[str(site.id)] = 0
+	var energy_receipts: Dictionary = {}
+	var sample_receipts: Dictionary = {}
+	for event in state.ledger:
+		var kind: String = str(event.get("kind", ""))
+		if kind not in ["bio_collected", "bio_survey_energy"]:
+			continue
+		var site_id: String = str(event.get("station_id", ""))
+		var ship_id: String = str(event.get("ship_id", ""))
+		if not available_sources.has(site_id) or not valid_ships.has(ship_id) or valid_ships[ship_id].owner != state.player_faction_id:
+			return false
+		var site: Dictionary = available_sources[site_id]
+		if not _is_nonnegative_integer(event.get("tick")) or int(event.tick) > int(state.tick) or not _is_nonnegative_integer(event.get("quantity")) or int(event.quantity) != 1 or int(event.get("price", -1)) != 0 or int(event.get("amount", -1)) != 0:
+			return false
+		if (kind == "bio_collected" and str(event.get("ware_id", "")) != str(site.sample_ware_id)) or (kind == "bio_survey_energy" and str(event.get("ware_id", "")) != "energy_cells"):
+			return false
+		var receipt_key: String = "%s|%s|%d" % [ship_id, site_id, int(event.tick)]
+		var receipts: Dictionary = sample_receipts if kind == "bio_collected" else energy_receipts
+		receipts[receipt_key] = int(receipts.get(receipt_key, 0)) + 1
+		if kind == "bio_collected":
+			collected[site_id] = int(collected[site_id]) + 1
+	if energy_receipts != sample_receipts:
+		return false
+	for site in defs.sites:
+		if int(state.biosurvey_sites[site.id]) + int(collected[site.id]) != int(site.initial_reserve):
+			return false
+	var present: Dictionary = {}
+	for ware in defs.wares:
+		present[str(ware.id)] = 0
+	for station in state.stations:
+		for id in present:
+			if not _is_nonnegative_integer(station.stock.get(id, 0)):
+				return false
+			present[id] = int(present[id]) + int(station.stock.get(id, 0))
+	for ship in state.ships:
+		for id in present:
+			if not _is_nonnegative_integer(ship.cargo.get(id, 0)):
+				return false
+			present[id] = int(present[id]) + int(ship.cargo.get(id, 0))
+		if ship.owner == state.player_faction_id:
+			if not ship.get("bio_survey") is Dictionary:
+				return false
+			var job: Dictionary = ship.bio_survey
+			var canonical: Dictionary = BioSurveyScript.new()._empty_job()
+			if not job.has("enabled") or not job.enabled is bool or not job.get("site_id") is String or not job.get("phase") is String or not job.get("wait_reason") is String or not _is_nonnegative_integer(job.get("ticks_remaining")):
+				return false
+			if not bool(job.enabled):
+				if job != canonical or ship.role == "Bio Survey":
+					return false
+			else:
+				var site_id: String = str(job.site_id)
+				if ship.role != "Bio Survey" or not available_sources.has(site_id) or job.phase not in ["to_site", "collecting"] or int(job.ticks_remaining) > int(available_sources[site_id].collection_ticks):
+					return false
+				if int(state.biosurvey_sites[site_id]) < 1:
+					return false
+		elif ship.has("bio_survey"):
+			return false
+	if int(present.get("sunlace_seed_capsule", 0)) > int(collected.get("liora_sunlace_orbit", 0)):
+		return false
+	if int(present.get("mirealgae_culture_capsule", 0)) > int(collected.get("lumin_marsh_samples", 0)):
+		return false
+	var completions: Dictionary = {}
+	for recipe_id in BioSurveyScript.RECIPE_IDS:
+		completions[recipe_id] = 0
+	for station in state.stations:
+		for module in station.production:
+			if completions.has(str(module.recipe_id)):
+				completions[str(module.recipe_id)] = int(completions[str(module.recipe_id)]) + int(module.cycles)
+	# All bio products presently originate solely from paid built modules;
+	# there is no NPC stock, free historical crop or off-book producer.
+	if int(present.get("sunlace_fruit", 0)) > int(completions["sunlace_hydroponics"]) * 3:
+		return false
+	if int(present.get("mirealgae_biomass", 0)) > int(completions["mirealgae_bioreactor"]) * 3:
+		return false
+	if int(present.get("biogene_record", 0)) > int(completions["bio_gene_bank"]):
+		return false
+	return true
 
 
 func _valid_biota(state: Dictionary) -> bool:
