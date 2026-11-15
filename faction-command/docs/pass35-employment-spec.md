@@ -1,6 +1,6 @@
 # Faction Command — Pass 35: employment identity and professional experience
 
-Status: implementation specification; NOT implemented or CI-verified.
+Status: Pass 35A implementation on draft branch (professional identity, two real local jobs, payroll, production XP, basic mobile controls). This is NOT full Pass 35. CI must be checked at final PR head; no physical-handset QA.
 Base: main at Pass 34, e58507438477a82821b573521e5d09e0dcb49ad9.
 
 ## Goal
