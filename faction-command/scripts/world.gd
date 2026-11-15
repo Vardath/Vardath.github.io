@@ -18,6 +18,7 @@ const ProvisionsScript = preload("res://scripts/provisions.gd")
 const SettlementScript = preload("res://scripts/settlement.gd")
 const EcologyScript = preload("res://scripts/ecology.gd")
 const SaltRecoveryScript = preload("res://scripts/salt_recovery.gd")
+const WasteCulturesScript = preload("res://scripts/waste_cultures.gd")
 const WasteTransportScript = preload("res://scripts/waste_transport.gd")
 const DemographicsScript = preload("res://scripts/demographics.gd")
 const EducationScript = preload("res://scripts/education.gd")
@@ -39,6 +40,7 @@ var provisions = ProvisionsScript.new()
 var settlement = SettlementScript.new()
 var ecology = EcologyScript.new()
 var salt_recovery = SaltRecoveryScript.new()
+var waste_cultures = WasteCulturesScript.new()
 var waste_transport = WasteTransportScript.new()
 var demographics = DemographicsScript.new()
 var education = EducationScript.new()
@@ -103,6 +105,8 @@ func load_starter(origin_faction_id: String = "auroran") -> Error:
 	var salt_prepare_result: Error = salt_recovery.prepare(new_state)
 	if salt_prepare_result != OK:
 		printerr("Salt recovery starter migration rejected: ", salt_prepare_result, " ecology=", new_state.get("ecology_version"), " wares=", new_state.wares.size(), " recipes=", new_state.recipes.size())
+		return ERR_INVALID_DATA
+	if waste_cultures.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
 	if demographics.prepare(new_state) != OK:
 		return ERR_INVALID_DATA
@@ -171,6 +175,9 @@ func restore_snapshot(snapshot: Dictionary) -> Error:
 	if result != OK:
 		return result
 	result = salt_recovery.prepare(restored)
+	if result != OK:
+		return result
+	result = waste_cultures.prepare(restored)
 	if result != OK:
 		return result
 	result = demographics.prepare(restored)
