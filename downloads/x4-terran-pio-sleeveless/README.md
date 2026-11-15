@@ -35,3 +35,13 @@ A complete deliverable will be a single `extensions/vardath_terran_pio_sleeveles
 ## No claim of a completed playable mod
 
 As of 2026-11-15, the core body geometry has not been edited, and no .xac replacement asset has been exported or tested. The source tools and metadata are not a playable mod and should not be installed as one.
+
+## Automated local Blender build (experimental, not a finished downloadable mod)
+
+The \`build_on_windows.bat\` entry point uses **Blender installed on your own Windows computer** with X4 XAC Tools 0.6.2 enabled. Put the source projects \`terran dress 1.blend\`, \`uniform1.blend\`, \`uniform2.blend\`, \`uniformcrew1.blend\`, \`uniformdiplomat1.blend\` and \`yishabody.blend\` in the same directory as the batch file or any subdirectory. Then run the batch file. The source Blender project files are **not** redistributed by this repository.
+
+The Blender program attempts real face cuts at the hem and on the arm sleeves, transplants weighted arm/leg surface geometry from the Yisha body, exports XAC replacement assets via the installed add-on, and merges the files into a *new* X4 extension. If geometry is unrecognised or bone mappings are incompatible, it deliberately stops instead of installing broken uniforms. This has **not been verified against the uploaded .blend models**, since the local binary-processing runtime was unavailable. It is a best-effort automated builder, **not** a prebuilt playable mod or guarantee of correct in-game visuals. Inspect and compare skin colour and animations, especially for non-Caucasian Terran models, before adopting as final.
+
+Blender 5.1 is preferred. The script does not install Blender, and XAC Tools must be enabled in the Blender version run by the batch file. The generated extension is installed to \`X4 Foundations/extensions/vardath_terran_pio_sleeveless\`, and a ZIP and build report are created alongside the input files. It refuses to overwrite an existing extension.
+
+The GitHub Actions test checks Python syntax and synthetic archive packaging only; a green workflow does **not** establish that character models import, export or render properly.
