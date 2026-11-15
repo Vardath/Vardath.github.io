@@ -851,6 +851,13 @@ func _execute_inspector_action(action_id: String) -> void:
 				if capture_result.ok:
 					_save_current_game()
 				_refresh_world_display()
+		"animal_build_clinic":
+			if kind == "station":
+				var clinic_build: Dictionary = world.construction.extend_completed_station(world, object_id, {"animal_veterinary_clinic":1})
+				if clinic_build.ok:
+					_save_current_game()
+				_refresh_world_display()
+				detail_body.text += "\n" + str(clinic_build.message)
 		"livestock_slaughter":
 			if kind == "station":
 				var harvest_result: Dictionary = world.livestock.slaughter(world, object_id)
