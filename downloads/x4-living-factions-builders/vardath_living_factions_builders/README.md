@@ -1,3 +1,11 @@
+# Current release — 16 November 2026
+
+1.79: L and XL builders are discovered directly by this extension, without requiring Hyperion. Builder-request patches preserve Civilian Economy hub exclusions in either load order. Includes the previously installed 1.78 malformed-receipt guards. Payroll rates, existing contracts and saved balances are unchanged.
+
+Validated statically; restart X4 after installation. A fresh gameplay log is still needed for runtime confirmation.
+
+## Earlier release notes
+
 # v1.75 — Independent native Logbook receipts
 
 Verified paid journal records now reach the normal General Logbook through an independent MD consumer. The shared saved cursor prevents duplicate receipts when Occupations is also installed, and recovers the latest twenty recorded payments once without transferring money again. Clear Logbook filters and search for `Vardath Payment`; allow the bounded five-second polling interval. Native transaction entries and rates/debts/SETA accounting remain unchanged. Protected UI stays enabled. Runtime confirmation is pending.

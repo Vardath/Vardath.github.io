@@ -1,8 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Vardath_BuilderContracts" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <!-- The contract ledger is global MD savegame state, NOT a temporary cue var.
-         Resetting this tick after each run must never reset this ledger. -->
     <cue name="ContractBilling" instantiate="true" checkinterval="1min">
       <conditions>
         <check_value value="player.age ge 1min" />
@@ -11,26 +9,14 @@
         <do_if value="not md.$VardathBuilderContracts?">
           <set_value name="md.$VardathBuilderContracts" exact="table[]" />
         </do_if>
-        <!-- First settle already registered contracts. Only active contract ships
-             are sampled: no galaxy station search, no free/idle-ship wage. -->
         <do_for_each name="$Builder" in="md.$VardathBuilderContracts.keys.list">
           <set_value name="$Contract" exact="md.$VardathBuilderContracts.{$Builder}" />
           <do_if value="not $Contract.$Closing">
             <do_if value="$Builder.exists and $Builder.isplayerowned and $Contract.$BuildModule.exists and $Contract.$Station.exists and not $Contract.$Station.isplayerowned and $Contract.$Faction != faction.ownerless and $Contract.$Faction.hasrelation.dock.{faction.player} and $Builder.constructionmodule == $Contract.$BuildModule and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count gt 0)">
-              <!-- X4 only sets buildmodule.constructionvessel once the builder
-                   has deployed. Ship.constructionmodule is the actual assigned
-                   build module, including transit and material waiting. -->
-              <!-- Bill the FULL game-time interval since the preceding sample.
-                   SETA advances player.age, so delayed payroll ticks must not
-                   discard elapsed minutes. The existing $Delta gt 0s guard
-                   rejects zero or negative intervals after a clock discontinuity.
-                   Payment remains restricted to a still-valid NPC build contract. -->
               <set_value name="$Delta" exact="player.age - $Contract.$LastSample" />
               <do_if value="$Delta gt 0s">
                 <set_value name="$Contract.$Elapsed" exact="$Contract.$Elapsed + $Delta" />
                 <do_if value="$Contract.$BuildModule.isbuilding">
-                  <!-- Integer centi-credit arithmetic avoids fractional-money conversion errors while preserving SETA elapsed time. -->
-                  <!-- Actual construction is required for a completion reputation award. -->
                   <set_value name="$Contract.$SawConstruction" exact="true" />
                   <set_value name="$Contract.$Earned" exact="$Contract.$Earned + ((($Delta / 1h)f * 10000000)i * 1ct)" />
                 </do_if>
@@ -39,10 +25,6 @@
                 </do_else>
               </do_if>
               <set_value name="$Contract.$LastSample" exact="player.age" />
-              <!-- Pay earned wages every minute, not after an entire hour.
-                   Hourly rates remain unchanged; this is real-time settlement
-                   of the sampled interval. The saved ledger prevents duplicate
-                   payment on save/reload. -->
               <do_if value="$Contract.$Earned gt 0Cr">
                 <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned" />
                 <set_value name="$Contract.$Earned" exact="0Cr" />
@@ -50,16 +32,9 @@
               </do_if>
             </do_if>
             <do_else>
-              <!-- The assigned job ended or changed. Settle the remaining
-                   fractional hour, close, and never accrue on that job again. -->
               <set_value name="$Contract.$Owed" exact="$Contract.$Owed + $Contract.$Earned" />
               <set_value name="$Contract.$Earned" exact="0Cr" />
               <set_value name="$Contract.$Elapsed" exact="0s" />
-              <!-- A completed station build, with real sampled construction,
-                   earns a small, ONE-TIME reputation reward. No reward for
-                   accepting a job, travel-only work, cancellations with
-                   queued work, player stations, or now-hostile employers.
-                   Mark inside persisted ledger before applying reputation. -->
               <do_if value="$Contract.$SawConstruction and not $Contract.$RepGranted and $Contract.$Station.exists and $Contract.$Station.buildstorage.exists and $Contract.$Faction != faction.ownerless and $Contract.$Station.trueowner == $Contract.$Faction and $Contract.$Faction.hasrelation.dock.{faction.player} and ($Contract.$Station.buildstorage.builds.queued.count + $Contract.$Station.buildstorage.builds.inprogress.count == 0)">
                 <set_value name="$Contract.$RepGranted" exact="true" />
                 <add_faction_relation faction="faction.player" otherfaction="$Contract.$Faction" value="0.00064" reason="relationchangereason.missioncompleted" />
@@ -67,11 +42,6 @@
               <set_value name="$Contract.$Closing" exact="true" />
             </do_else>
           </do_if>
-          <!-- Mission rewards are paid directly to the player, as in the
-               base game's mission reward code. An NPC faction's treasury
-               cannot silently block earned construction fees. Clear the
-               recorded debt before awarding it, so a saved ledger can never
-               pay this credit twice. -->
           <do_if value="$Contract.$Owed gt 0Cr">
             <set_value name="$Payout" exact="$Contract.$Owed" />
             <set_value name="$Contract.$Owed" exact="0Cr" />
@@ -92,12 +62,7 @@
             <remove_value name="md.$VardathBuilderContracts.{$Builder}" />
           </do_if>
         </do_for_each>
-        <!-- Discover contracts through the ship's actual assigned buildmodule.
-             Do not require a deployed constructionvessel or primarypurpose filter:
-             those can suppress genuine paid assignments.
-             The player must own the ship; the station must be owned by an NPC
-             faction and have a real queued/in-progress construction project. -->
-        <find_ship name="$Builders" owner="faction.player" class="class.ship_xl" space="player.galaxy" multiple="true" />
+        <find_ship name="$Builders" owner="faction.player" class="[class.ship_l, class.ship_xl]" space="player.galaxy" multiple="true" />
         <do_for_each name="$Builder" in="$Builders">
           <do_if value="not md.$VardathBuilderContracts.{$Builder}? and $Builder.constructionmodule.exists">
             <set_value name="$BuildModule" exact="$Builder.constructionmodule" />
@@ -115,9 +80,6 @@
               <set_value name="$Contract.$Closing" exact="false" />
               <set_value name="$Contract.$SawConstruction" exact="false" />
               <set_value name="$Contract.$RepGranted" exact="false" />
-              <!-- Pay the one-time hire fee immediately on contract
-                   registration, not after the ship arrives or the faction
-                   treasury allows a transfer. -->
               <set_value name="$Payout" exact="$Contract.$Owed" />
               <set_value name="$Contract.$Owed" exact="0Cr" />
               <set_value name="$MoneyBefore" exact="player.money" />
@@ -178,7 +140,7 @@
     </cue>
     <cue name="PaymentReceiptsV22" instantiate="true" checkinterval="5s">
       <conditions>
-        <check_value value="player.entity.$vardath_income? and player.entity.$vardath_income.count gt 0 and (not player.entity.$vardath_income_logged_seq? or @player.entity.$vardath_income_seq gt player.entity.$vardath_income_logged_seq)" />
+        <check_value value="typeof @player.entity.$vardath_income == datatype.list and player.entity.$vardath_income.count gt 0 and (not player.entity.$vardath_income_logged_seq? or @player.entity.$vardath_income_seq gt player.entity.$vardath_income_logged_seq)" />
       </conditions>
       <actions>
         <do_if value="not player.entity.$vardath_income_logged_seq?">
@@ -186,12 +148,16 @@
         </do_if>
         <set_value name="$written" exact="0" />
         <do_for_each name="$receipt" in="player.entity.$vardath_income">
-          <do_if value="$receipt.{1} gt player.entity.$vardath_income_logged_seq and $receipt.{5} gt 0">
-            <set_value name="player.entity.$vardath_income_logged_seq" exact="$receipt.{1}" />
-            <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" />
-            <set_value name="$written" exact="$written + 1" />
-            <do_if value="$written ge 5">
-              <break />
+          <do_if value="typeof $receipt == datatype.list">
+            <do_if value="$receipt.count ge 8">
+              <do_if value="$receipt.{1} gt player.entity.$vardath_income_logged_seq and $receipt.{5} gt 0">
+                <set_value name="player.entity.$vardath_income_logged_seq" exact="$receipt.{1}" />
+                <write_to_logbook category="general" title="'Vardath Payment: ' + $receipt.{4}" text="'%1; %2; paid %3; receipt #%4; original game time %5 seconds'.[$receipt.{7}, $receipt.{8}, $receipt.{5} * 1Cr, $receipt.{1}, $receipt.{2}]" money="$receipt.{5} * 1Cr" />
+                <set_value name="$written" exact="$written + 1" />
+                <do_if value="$written ge 5">
+                  <break />
+                </do_if>
+              </do_if>
             </do_if>
           </do_if>
         </do_for_each>

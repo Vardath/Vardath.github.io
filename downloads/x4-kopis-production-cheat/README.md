@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Kopis Production Cheat: download current release](vardath_kopis_production_cheat_latest.zip)
+
+Content version: **117**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Cradle of Humanity (required); Tides of Avarice (required); Sector Explorer (optional)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # v1.16 — Astrid braking state and spacesuit transition guards
 
 The new log contains 11,240 failed reads/writes of braking state on a ship component. Ships do not have entity blackboards. The controller now stores its deadline on a persistent MD cue and clears it whenever the player leaves the actual yacht controls, enters a suit or is in native transit. Normal flight-assist/input/boost/autopilot checks remain. The 2.5-second stop target needs in-game confirmation after this fix.

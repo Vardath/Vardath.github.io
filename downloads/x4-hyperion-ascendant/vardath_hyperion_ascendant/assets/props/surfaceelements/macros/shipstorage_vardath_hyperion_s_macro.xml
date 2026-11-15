@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<macros>
+  <macro name="shipstorage_vardath_hyperion_s_macro" class="dockingbay">
+    <component ref="generic_dockingbay"/>
+    <properties>
+      <identification name="{995510,11}" description="{995510,12}"/>
+      <dock capacity="1000" storage="1"/>
+      <room walkable="0"/>
+      <docksize tags="dock_s"/>
+    </properties>
+  </macro>
+</macros>

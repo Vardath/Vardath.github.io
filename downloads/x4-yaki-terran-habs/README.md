@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Yaki Terran Habitats: download current release](vardath_yaki_terran_habs_latest.zip)
+
+Content version: **123**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Cradle of Humanity (required)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # v1.23 — Direct native construction-plan macro access
 
 The latest log shows a construction entry cannot be materialised as a script variable. The retrofit now uses the native pattern `$CurrentPlan.{$PlanIndex}.macro` directly and schedules no expansion if any entry cannot be read. This closes the repeated-addition risk from a failed plan inspection. Existing stations/modules are not deleted or moved. Runtime confirmation remains pending.

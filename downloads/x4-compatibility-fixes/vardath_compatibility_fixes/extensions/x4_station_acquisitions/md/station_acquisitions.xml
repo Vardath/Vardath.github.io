@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/mdscript//cue[@name='Background']/actions" pos="prepend">
+    <do_if value="typeof @md.X4SA.State.$Work.$queue != datatype.list">
+      <set_value name="md.X4SA.State.$Work.$queue" exact="[]" />
+      <set_value name="md.X4SA.State.$Work.$index" exact="1" />
+      <set_value name="md.X4SA.State.$Work.$next" exact="0s" />
+    </do_if>
+    <do_if value="typeof @md.X4SA.State.$Work.$seen != datatype.list">
+      <set_value name="md.X4SA.State.$Work.$seen" exact="[]" />
+    </do_if>
+    <do_if value="typeof @md.X4SA.State.$Work.$contexts != datatype.list">
+      <set_value name="md.X4SA.State.$Work.$contexts" exact="[]" />
+    </do_if>
+  </add>
+</diff>

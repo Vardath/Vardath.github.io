@@ -1,3 +1,11 @@
+# Current release — 16 November 2026
+
+1.0.11: Publishes the local Inventory Collector, Emergent Missions and Station Acquisition fixes from 1.0.10. This extension has no dependency on other Vardath mods. Repairs to third-party stale patch files are distributed separately as the 2026-11-16 compatibility repair bundle, because those files belong to the affected mods themselves.
+
+Validated statically; restart X4 after installation. A fresh gameplay log is still needed for runtime confirmation.
+
+## Earlier release notes
+
 # Vardath Compatibility Fixes 1.0.6
 
 **CI source coverage notice (1.0.6):** The release ZIP and 11 XML diffs are source-checked and 19 contract tests are run, with two GalaxyTrader tests skipped because the previous pinned upstream GitHub URLs now return HTTP 404. The two unchanged GalaxyTrader patches remain packaged but their application to the installed game build is not revalidated. The CI workflow is green with a deliberately recorded `result: partial`; this does not mean complete upstream or in-game validation.

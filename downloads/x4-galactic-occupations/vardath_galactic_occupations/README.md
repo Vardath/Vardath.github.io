@@ -1,3 +1,11 @@
+# Current release — 16 November 2026
+
+0.5.7: Publishes the already-installed tour/scope and catalogue guards from the local log repairs. All required runtime scripts and the native-income adapter are bundled here; Living Factions is not required.
+
+Validated statically; restart X4 after installation. A fresh gameplay log is still needed for runtime confirmation.
+
+## Earlier release notes
+
 # Galactic Occupations 0.4.8 development build
 
 Thirteen persistent, autonomous ship behaviours, plus a queued single-station hacking command. Author: Vardath. Updated 10 November 2026. **X4 runtime verification remains pending.** Static validation and mocked tests do not establish NPC pathing, weapon hits, native panel effects, live payments or save/load execution.

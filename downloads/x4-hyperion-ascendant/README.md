@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Hyperion Ascendant: download current release](vardath_hyperion_ascendant_latest.zip)
+
+Content version: **104**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Hyperion Pack (required); Cradle of Humanity - Yaki crew (required); More X3 Sectors - Reunion (optional)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Hyperion Ascendant 1.0.2
 
 [Download the updated extension](Hyperion_Ascendant_1.0.2.zip) · [All three current extensions](../x4-updates/X4_Hyperion_Builder_Update_2026-11-10.zip) · [Configuration](vardath_hyperion_ascendant/README.md) · [Log review and live checks](vardath_hyperion_ascendant/LOG_REVIEW_1.0.2.md)

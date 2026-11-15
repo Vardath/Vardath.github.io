@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Universal Cargo Teleportation: download current release](vardath_universal_cargo_teleport_latest.zip)
+
+Content version: **101**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: No other extensions required.
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Universal Cargo Teleport 1.01 — native trade recovery
 
 A player-owned ship attempts the existing 30 km dockless native trade path. If the engine rejects an undocked attempt and reports **zero goods transferred**, it receives one normal docking retry. That partner then uses the normal docking path for one game hour, avoiding repeated unsuccessful wireless attempts. If docking is unavailable, native failure handling remains in charge.

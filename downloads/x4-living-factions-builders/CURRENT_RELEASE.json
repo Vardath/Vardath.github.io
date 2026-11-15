@@ -1,0 +1,86 @@
+{
+  "mod": "vardath_living_factions_builders",
+  "name": "Vardath - Living Factions and Builders",
+  "version": "179",
+  "verified": "2026-11-16",
+  "download": "vardath_living_factions_builders_latest.zip",
+  "sha256": "d8373bcbc59194c7163a2992ac763d0a4a3fc2ebe832105b3278b0e107c82d6e",
+  "dependencies": [
+    {
+      "id": "ego_dlc_terran",
+      "optional": "false",
+      "name": "Cradle of Humanity"
+    }
+  ],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "aiscripts/build.buildstorage.xml",
+      "sha256": "68fe04902c2fb088d9fc83bf05d42c44ec439054e136b4d656fd32a1a870f94c"
+    },
+    {
+      "path": "aiscripts/order.build.find.task.xml",
+      "sha256": "70a59ebe4d02119fdd5f9d5702d619666d3279f8a58570a73673d71114075df5"
+    },
+    {
+      "path": "ATTRIBUTION.md",
+      "sha256": "c978969da5f3be9254491ff3c182f6722f9ccbedb44603048e867ceebd48559a"
+    },
+    {
+      "path": "content.xml",
+      "sha256": "043ae4414c8277e90c7d67f5b10161a098bd71833da7215c43fb0fddd4c5f446"
+    },
+    {
+      "path": "libraries/character_macros.xml",
+      "sha256": "d4bd94f88c76c507d28e25bd89dc43ee0dfb25a7904286e9dd272a887cb11510"
+    },
+    {
+      "path": "libraries/gamestarts.xml",
+      "sha256": "8e6d1e0d4da6979b9ae5838178583dbe88148abf3041aa4bf62b3108fba72cc9"
+    },
+    {
+      "path": "libraries/loadouts.xml",
+      "sha256": "235712a5bfadeb04f84f579ee752634d08050f799bb14479c48d58da7004fdc7"
+    },
+    {
+      "path": "libraries/modules.xml",
+      "sha256": "a28d306b126b7fce0a52a4e44edc8d32ba2cefc9b57b4b81c5e64f42288d7cae"
+    },
+    {
+      "path": "libraries/parameters.xml",
+      "sha256": "eebfeba8d1d45fc82ca5770ee0264b7a292c26987f86723aa26e6978c2a5431a"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "md/factionlogic_economy.xml",
+      "sha256": "890cfe07f2fcc3eaeb55ec8c67b198799758316d2eaca40eced2fcd16473d1dc"
+    },
+    {
+      "path": "md/vardath_builder_contracts.xml",
+      "sha256": "35764aac7242a108b9c7d00e70c7214295a0160935393dfc73479a93c3e8866d"
+    },
+    {
+      "path": "md/vardath_faction_build_requests.xml",
+      "sha256": "8eba92939aa97720fc7a0bbf5b98c9dee8facaf219c43eeecafd071fe9cfe322"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4d41cae97169200ed030afa258b723efb56d9b52dd234b3d8e872da99df963d6"
+    },
+    {
+      "path": "t/0001-l044.xml",
+      "sha256": "7825d15bd39947d0fe93e95b3b610671decebb88b59e6c29c7b5c1aaaf055347"
+    },
+    {
+      "path": "ui/vardath_income_ledger.lua",
+      "sha256": "94c327b8b630ebf934c60ce938531a246f4f63467d03a7fc99cd1b987ec5dec9"
+    },
+    {
+      "path": "ui.xml",
+      "sha256": "06ef8bb72647901f69c922f2a18facbcee4c9140c5a1c2b75f4b65b66edf3c89"
+    }
+  ]
+}

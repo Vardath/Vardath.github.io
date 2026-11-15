@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Galactic Occupations: download current release](vardath_galactic_occupations_latest.zip)
+
+Content version: **57**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Sector Explorer (optional); Auto Trade Subscriptions (optional)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Galactic Occupations 0.5.6 — safe player EVA/boarding recovery, multilingual occupations
 
 [Download Occupations](Galactic_Occupations_0.5.6.zip) · [All three updated mods](../x4-updates/) · [Log findings and live checks](vardath_galactic_occupations/LOG_REVIEW_0.4.8.md)

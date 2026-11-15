@@ -1,0 +1,160 @@
+{
+  "mod": "vardath_kopis_production_cheat",
+  "name": "Vardath - Kopis Production Cheat",
+  "version": "117",
+  "verified": "2026-11-16",
+  "download": "vardath_kopis_production_cheat_latest.zip",
+  "sha256": "ee6439b49073cf8223f03af07126006fcf45c5bfd087bca8265c649399e97aba",
+  "dependencies": [
+    {
+      "id": "ego_dlc_terran",
+      "optional": "false",
+      "name": "Cradle of Humanity"
+    },
+    {
+      "id": "ego_dlc_pirate",
+      "optional": "false",
+      "name": "Tides of Avarice"
+    },
+    {
+      "id": "ws_2074838459",
+      "optional": "true",
+      "name": "Sector Explorer"
+    }
+  ],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "assets/fx/weaponfx/macros/bullet_vardath_astrid_tours_beam_macro.xml",
+      "sha256": "fd09fb1f56bc88cd19441502bf734bfc444480edb021d778c7f4cc68763c17ec"
+    },
+    {
+      "path": "assets/fx/weaponfx/macros/bullet_vardath_astrid_tours_laser_macro.xml",
+      "sha256": "646505de5b056b77c72ebba169a9e88ed0e8f7c2b5a0e7fd0718ea06a52a45e0"
+    },
+    {
+      "path": "assets/fx/weaponfx/macros/bullet_vardath_kopis_beam_macro.xml",
+      "sha256": "bb3c95ee29491c2549945d1f9d894b35e9d76239cfb169480145b12125064628"
+    },
+    {
+      "path": "assets/fx/weaponfx/macros/bullet_vardath_kopis_laser_macro.xml",
+      "sha256": "22b1b6aa41a3a26f1f3e9a63f2706e1e8361d1f5d22d644268caa4747f2bbbf0"
+    },
+    {
+      "path": "assets/props/engines/macros/engine_vardath_astrid_tours_macro.xml",
+      "sha256": "9b1cdd9b90adf38e89e6f2ea5cf55cef233827904aca22fd949fbc78ab3b2749"
+    },
+    {
+      "path": "assets/props/weaponsystems/energy/macros/turret_vardath_kopis_beam_macro.xml",
+      "sha256": "8985146e41f8d46465cfa8e9a8ffff66786e02a95b1653cf60fb0ef2eb0584a9"
+    },
+    {
+      "path": "assets/props/weaponsystems/energy/turret_vardath_kopis_s.xml",
+      "sha256": "5921cfa039048d4a85b8c9d76e5a38396601a13aab5aadc7f5eb5b283cb9342e"
+    },
+    {
+      "path": "assets/props/weaponsystems/standard/macros/turret_vardath_astrid_tours_macro.xml",
+      "sha256": "9b22c96fe38a2cf0417c1dedf07e0ec89699d6457c1e74876b30fef5f2959059"
+    },
+    {
+      "path": "assets/props/weaponsystems/standard/macros/weapon_vardath_astrid_tours_macro.xml",
+      "sha256": "4a63c0856ec52e61cff7c61252a905be6cd784050d15f902b2ad475a6f10cc7b"
+    },
+    {
+      "path": "assets/props/weaponsystems/standard/macros/weapon_vardath_kopis_beam_macro.xml",
+      "sha256": "b9df89f66d1b5e08f2b6dcdee7132f1ae7aac30db7909d360350a26c17079906"
+    },
+    {
+      "path": "assets/props/weaponsystems/standard/macros/weapon_vardath_kopis_laser_macro.xml",
+      "sha256": "4363f5811058b32791cb00ef4acd1a92c3305994cf02faf17c18179029fbab95"
+    },
+    {
+      "path": "assets/units/size_m/macros/ship_vardath_astrid_tours_macro.xml",
+      "sha256": "ab840c059380aae753c4728976cc0d20836c2f0f454b7c415730f5f699a52d8c"
+    },
+    {
+      "path": "assets/units/size_s/macros/ship_vardath_kopis_factory_macro.xml",
+      "sha256": "fd57f0d05e1d389ecf49c704317ea0da25ba3bb10eccbf7636a486dc49d59cc5"
+    },
+    {
+      "path": "assets/units/size_s/macros/storage_vardath_kopis_container_macro.xml",
+      "sha256": "606c94ebe76ab6bebe94e3a09374e30c9994f6f3e8b38d807f3651bcc64b63e9"
+    },
+    {
+      "path": "assets/units/size_s/macros/storage_vardath_kopis_liquid_macro.xml",
+      "sha256": "8ff93dbdf6d394970bc66264abe23cd27217661fd6a3bdcb03f237f566a300ad"
+    },
+    {
+      "path": "assets/units/size_s/macros/storage_vardath_kopis_solid_macro.xml",
+      "sha256": "30ee251c795798d71c1d34419aecf8f4100c002ddd1effd626a394e4267bd0d8"
+    },
+    {
+      "path": "assets/units/size_s/ship_vardath_kopis_factory.xml",
+      "sha256": "0ba74849a54f06f96866f06beba7ea18690d17b17b6f6826f713b7b85c93c12d"
+    },
+    {
+      "path": "ASTRID_TOURS.md",
+      "sha256": "b8e6cdfc8f9f9221c38d87c6b48027ee74bd3d777fd1b6593d03b906f9f264aa"
+    },
+    {
+      "path": "content.xml",
+      "sha256": "3ba79e397119bcc9e421690248bdeb3a438e040c3f6fa4fdad6bb5f073e62e76"
+    },
+    {
+      "path": "index/components.xml",
+      "sha256": "8aa3c7ccd2d1769680c9727f44626add468b202e814bd42742c8b8d00357c7a9"
+    },
+    {
+      "path": "index/macros.xml",
+      "sha256": "8d89b026e3ddac27b377c23934a5b524760e77fa2067814cf1e49260d4d1804a"
+    },
+    {
+      "path": "libraries/loadouts.xml",
+      "sha256": "528551b42d28d68bdaa5c94c88df7f7b92a183d8ab6f962ae132b0337be793c0"
+    },
+    {
+      "path": "libraries/people.xml",
+      "sha256": "ce7719e7067a6dd834b779d6436289cc08edb33170cd94c9ba340be3079f5b97"
+    },
+    {
+      "path": "libraries/wares.xml",
+      "sha256": "b22ace096b6f4fe12534d5e82dcfe7a6be288301c558fff02760f6836ae4cf93"
+    },
+    {
+      "path": "md/vardath_astrid_builder_start.xml",
+      "sha256": "31e3a9e11f628d4b0a48f0e55d652384fe6908050b89416c9be2ca65bac9566b"
+    },
+    {
+      "path": "md/vardath_astrid_tours.xml",
+      "sha256": "f9ee1cd6e36df2a90957820e2211cf7799e0c83fbf6286013eed985170e84c33"
+    },
+    {
+      "path": "md/vardath_kopis_auto_main_weapon.xml",
+      "sha256": "5fc2bd177a6ae584cdb4225d7fd35f64a0682e495990f88ed761714415583f3d"
+    },
+    {
+      "path": "md/vardath_kopis_builder_start.xml",
+      "sha256": "1b2c4387d72cd73695a54495036d6461667afd59014a08759aa57b2c5f4e6226"
+    },
+    {
+      "path": "md/vardath_kopis_mobile_forge.xml",
+      "sha256": "c840d44341baa11f75b9181d04be170009a34902b85634344465153152b5125b"
+    },
+    {
+      "path": "md/vardath_kopis_recover_main_weapon_v109.xml",
+      "sha256": "d6790d0363884954ac38ea955fb10980a3466106d26a86c6caf40670f6ad4959"
+    },
+    {
+      "path": "md/vardath_kopis_restore_main_weapon.xml",
+      "sha256": "db4646359ec4e96ee921ce6e236cd3d785e6b82aecb3ddeafe5a3222a3885074"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4d38488867d9902280f79ab9500186348ae8c01cb500e26986b40dcb7d2f8415"
+    },
+    {
+      "path": "t/0001-l044.xml",
+      "sha256": "f0bb9c69c964b2befd63ba3a9dbda4f19d47396c005cd04de1a196c019de76ce"
+    }
+  ]
+}

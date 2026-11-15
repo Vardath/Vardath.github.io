@@ -1,0 +1,25 @@
+{
+  "mod": "vardath_xr_no_vro_fix",
+  "name": "Vardath - XR ShipPack without VRO Fix",
+  "version": "100",
+  "verified": "2026-11-16",
+  "download": "vardath_xr_no_vro_fix_latest.zip",
+  "sha256": "1c52e183f01bf1a030da5d91700e262a81360f9934e99a0dfcfa0ff7727cec18",
+  "dependencies": [
+    {
+      "id": "ws_1905655811",
+      "optional": "false"
+    }
+  ],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "content.xml",
+      "sha256": "48e2c356253bba3342dd8f46c7c45ea396a32af4caa8817a93a6c9dcec77bef8"
+    },
+    {
+      "path": "libraries/shipgroups.xml",
+      "sha256": "0fdf5264a2f39dfc6e0e575cfd6d0b456188bf808720cd8a72c4d627089996bf"
+    }
+  ]
+}

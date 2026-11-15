@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath Compatibility Fixes: download current release](vardath_compatibility_fixes_latest.zip)
+
+Content version: **111**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Cradle of Humanity — Terran Cadet tutorial (optional); Fly-by Looting (optional); Research Blueprints Mod (optional); GalaxyTrader MK3 (optional); GalaxyTrader MK3 manual release (optional); Crime Has Consequences (optional); Personal Envoy Auto (optional); Inventory Collector (optional); Head Hunter (optional); Emergent Missions (optional); Station Acquisition (optional)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Vardath Compatibility Fixes 1.0.9
 
 **1.0.9 validation:** The new HeadHunter null-faction-representative guard is checked against exact pinned Workshop XML and the bundled original interaction is preserved. The updated Kuertee Crime Has Consequences guard addresses the 1.0.8 repeated XPath matching failure using named-cue/library scoped selectors; **Kuertee's original Workshop XML is unavailable**, so this remains synthetic-fixture and schema validated only until X4 confirms correct application. Previous Personal Envoy $PilotActor errors are absent in the new log; its working guard is unchanged. CI records `result: partial` due to unavailable Kuertee/Envoy/GalaxyTrader sources and lack of runtime X4 testing. No UI changes.

@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="109" date="2026-11-15" save="0" sync="false" description="X4 9.00 compatibility: source-verified HeadHunter absent-representative guard, revised CHC null-target guards, preserved Envoy and other fixes. No UI replacement.">
-  <dependency version="900"/>
-  <dependency id="ego_dlc_terran" optional="true" name="Cradle of Humanity — Terran Cadet tutorial"/>
-  <dependency id="ws_1683358279" optional="true" name="Fly-by Looting"/>
-  <dependency id="ws_2961007180" optional="true" name="Research Blueprints Mod"/>
-  <dependency id="ws_3715175855" optional="true" name="GalaxyTrader MK3"/>
-  <dependency id="GalaxyTraderMK3" optional="true" name="GalaxyTrader MK3 manual release"/>
-  <dependency id="ws_3627879558" optional="true" name="Crime Has Consequences"/>
-  <dependency id="ws_3744204222" optional="true" name="Personal Envoy Auto"/>
-  <text language="44" name="Vardath Compatibility Fixes" description="Targeted X4 9.00 compatibility guards; keep Protected UI and Inventory Collector enabled."/>
-<dependency id="ws_2063916598" optional="true" name="Inventory Collector"/><dependency id="ws_2992233767" optional="true" name="Head Hunter"/><dependency id="ws_3627916728" optional="true" name="Emergent Missions"/></content>
+<content id="vardath_compatibility_fixes" name="Vardath Compatibility Fixes" author="Vardath" version="111" date="2026-11-16" save="0" sync="false" description="Targeted X4 9.00 script guards including Inventory Collector, Emergent Missions and Station Acquisition repairs. Independent of other Vardath mods. Third-party stale-patch updates are distributed separately.">
+  <dependency version="900" />
+  <dependency id="ego_dlc_terran" optional="true" name="Cradle of Humanity — Terran Cadet tutorial" />
+  <dependency id="ws_1683358279" optional="true" name="Fly-by Looting" />
+  <dependency id="ws_2961007180" optional="true" name="Research Blueprints Mod" />
+  <dependency id="ws_3715175855" optional="true" name="GalaxyTrader MK3" />
+  <dependency id="GalaxyTraderMK3" optional="true" name="GalaxyTrader MK3 manual release" />
+  <dependency id="ws_3627879558" optional="true" name="Crime Has Consequences" />
+  <dependency id="ws_3744204222" optional="true" name="Personal Envoy Auto" />
+  <text language="44" name="Vardath Compatibility Fixes" description="Targeted X4 9.00 compatibility guards; keep Protected UI and Inventory Collector enabled." />
+  <dependency id="ws_2063916598" optional="true" name="Inventory Collector" />
+  <dependency id="ws_2992233767" optional="true" name="Head Hunter" />
+  <dependency id="ws_3627916728" optional="true" name="Emergent Missions" />
+  <dependency id="ws_3834371871" optional="true" name="Station Acquisition" />
+</content>

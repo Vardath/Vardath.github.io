@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/materiallibrary">
+    <collection name="shortskirts">
+      <material name="argon_female_arms" shader="p1_skin_blend" blendmode="NONE" preview="none">
+        <properties>
+          <property type="BitMap" name="smooth_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_smooth" />
+          <property type="BitMap" name="diffuse_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_diff" />
+          <property type="BitMap" name="diffuse2_map" value="assets\characters\argon\textures\char_arg_f_arm_afr_01_diff" />
+          <property type="BitMap" name="diffuse3_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_diff" />
+          <property type="BitMap" name="normal_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_normal" />
+          <property type="BitMap" name="normal2_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_normal" />
+          <property type="BitMap" name="normal3_map" value="assets\characters\argon\textures\char_arg_f_arm_cau_01_normal" />
+          <property type="Float" name="smoothness" value="1.0" />
+          <property type="Float" name="metallness" value="0.0" />
+        </properties>
+      </material>
+    </collection>
+  </add>
+</diff>

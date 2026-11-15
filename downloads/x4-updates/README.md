@@ -1,4 +1,12 @@
-# X4 Hyperion builder and capacity update — 10 November 2026
+# Current releases — 16 November 2026
+
+[All twelve current mod downloads and compatibility report](COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+[Third-party compatibility repairs](../x4-local-compatibility-repairs/).
+
+---
+
+# X4 Hyperion builder and capacity update â€” 10 November 2026
 
 [Download all three changed extensions](X4_Hyperion_Builder_Update_2026-11-10.zip)
 
@@ -14,7 +22,7 @@ Only Hyperion Ascendant changes in this release; Occupations 0.4.8 and Compatibi
 
 459 Occupations Python contracts, 91 Lua mocks, 42 Hyperion contracts and 15 Compatibility contracts pass. Current ZIP/source comparisons, pinned native references and the existing seven-extension static audit pass. **No X4 engine, user save or merged installed mod catalog was available:** ship-module attachment, storage/launch, L construction, replenishment and save/load execution still require live acceptance.
 
-[Current log review and reproducible in-game checks](../x4-hyperion-ascendant/vardath_hyperion_ascendant/LOG_REVIEW_1.0.2.md) · [Remaining third-party errors and compatibility scope](../x4-compatibility-fixes/vardath_compatibility_fixes/REVIEW_1.0.1.md) · [Hyperion tests and limitations](../x4-hyperion-ascendant/vardath_hyperion_ascendant/README.md)
+[Current log review and reproducible in-game checks](../x4-hyperion-ascendant/vardath_hyperion_ascendant/LOG_REVIEW_1.0.2.md) Â· [Remaining third-party errors and compatibility scope](../x4-compatibility-fixes/vardath_compatibility_fixes/REVIEW_1.0.1.md) Â· [Hyperion tests and limitations](../x4-hyperion-ascendant/vardath_hyperion_ascendant/README.md)
 
 The new 215715 log confirms thirty uniquely keyed, balance-matched payments totalling 55,424,000 Cr, and successful previous gate-recovery dispatch. It does not establish a crash cause or prove the new code runs in-game. No UI protection is disabled.
 

@@ -1,3 +1,11 @@
+# Current release — 16 November 2026
+
+1.17: Standalone Kopis and Astrid startup. Removed the unused requirement for Living Factions and Builders. The ships, crew, weapons, maintenance and braking controller are supplied by this extension. Required Egosoft DLC remains required.
+
+Validated statically; restart X4 after installation. A fresh gameplay log is still needed for runtime confirmation.
+
+## Earlier release notes
+
 # v1.16 — Astrid braking state and spacesuit transition guards
 
 The new log contains 11,240 failed reads/writes of braking state on a ship component. Ships do not have entity blackboards. The controller now stores its deadline on a persistent MD cue and clears it whenever the player leaves the actual yacht controls, enters a suit or is in native transit. Normal flight-assist/input/boost/autopilot checks remain. The 2.5-second stop target needs in-game confirmation after this fix.

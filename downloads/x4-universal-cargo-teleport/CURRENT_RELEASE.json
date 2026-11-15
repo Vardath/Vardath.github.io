@@ -1,0 +1,28 @@
+{
+  "mod": "vardath_universal_cargo_teleport",
+  "name": "Vardath - Universal Cargo Teleportation",
+  "version": "101",
+  "verified": "2026-11-16",
+  "download": "vardath_universal_cargo_teleport_latest.zip",
+  "sha256": "858a8b037e11e2100d5fad220811b1965a7a70deae1d069def026ca46526ba7e",
+  "dependencies": [],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "aiscripts/order.trade.perform.xml",
+      "sha256": "cf111f42ca564f7b002b562b03e242ecd05097f4902e65b2e21292dab955c338"
+    },
+    {
+      "path": "aiscripts/order.trade.wareexchange.ship.xml",
+      "sha256": "2867521bbd0272648ee7ab87a5bfda499f7c48af8a5cf9bcd317761390627f87"
+    },
+    {
+      "path": "content.xml",
+      "sha256": "2339dabc9847567cd220c347afdfe44aa18fd00b2cc15b19d97d66d5b8a0bd17"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4b263d1c13aba21b135d364f1f0f6ebdeacdc362a45af8d1adf75cfcb4401e86"
+    }
+  ]
+}

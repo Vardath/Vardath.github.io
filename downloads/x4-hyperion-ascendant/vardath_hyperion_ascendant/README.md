@@ -1,3 +1,11 @@
+# Current release — 16 November 2026
+
+1.0.4: Independent Hyperion extension. Removed the optional Living Factions dependency and retired its cross-extension payroll patch. Living Factions 1.79 now discovers L builders itself when independently installed. Hyperion construction works through native orders without that mod.
+
+Validated statically; restart X4 after installation. A fresh gameplay log is still needed for runtime confirmation.
+
+## Earlier release notes
+
 # Hyperion Ascendant 1.0.2
 
 A separate upgraded L-class Hyperion builder with expanded storage and slow consumable/drone replenishment, plus a targeted repair for the original Hyperion story's cached gate routing. Requires X4 9.00, **Hyperion Pack** and **Cradle of Humanity** for Yaki crew. More X3 Sectors – Reunion is optional; routing uses the actual installed gate network.

@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Terran and Pioneer Short Skirts: download current release](terran_pioneer_short_skirts_latest.zip)
+
+Content version: **130**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: ego_dlc_terran (required)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Terran and Pioneer Short Skirts — 1.3
 
 [Download version 1.3](Terran_Pioneer_Short_Skirts_v1.3.zip)

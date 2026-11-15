@@ -1,0 +1,41 @@
+{
+  "mod": "terran_pioneer_short_skirts",
+  "name": "Terran and Pioneer Short Skirts",
+  "version": "130",
+  "verified": "2026-11-16",
+  "download": "terran_pioneer_short_skirts_latest.zip",
+  "sha256": "7503e560c16a86f6ac1262114bf6674b603eba15d15e59e76ae857a70eb1ba17",
+  "dependencies": [
+    {
+      "id": "ego_dlc_terran",
+      "optional": "false"
+    }
+  ],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "content.xml",
+      "sha256": "093fe63f019f0f889921c90104f162f559c636d01eb6e6c7d00e865a76110b64"
+    },
+    {
+      "path": "ext_01.cat",
+      "sha256": "7232b3fe8f31f3d5d3852464f88201220608e0ff74e4824d7f6bba4e57a3622c"
+    },
+    {
+      "path": "ext_01.dat",
+      "sha256": "99adc88805a09e25af54a67a285a75bbbd41dee42a3555822c720a1db7aa563c"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "49422991197c59958f7d617fdc389edefc3b2a75ac702067cd378bf84021eafc"
+    },
+    {
+      "path": "subst_01.cat",
+      "sha256": "f4cb1a26325c0e23bcb7bac60855962c585fb2b7d25adf35a172667e9bd5f6ab"
+    },
+    {
+      "path": "subst_01.dat",
+      "sha256": "662e53320a5a4f83f3c57b191ffe17aaf27c1cdf763656583de6865e522096fe"
+    }
+  ]
+}

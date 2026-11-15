@@ -1,0 +1,283 @@
+[
+  {
+    "mod": "chillheadhunter",
+    "file": "md/chillheadhunter.xml",
+    "accepted_before": [
+      "4fec5acddfae67891471c2033d7ec952179842af8dfd66de1c9f4fab40a2350d",
+      "adee013faea862b3b50d35eee095073595c6a7f885a3b71109aadfe24c1d0ccf"
+    ],
+    "after": "4fec5acddfae67891471c2033d7ec952179842af8dfd66de1c9f4fab40a2350d",
+    "allow_missing": false
+  },
+  {
+    "mod": "chillheadhunter",
+    "file": "md/headhunterhunted.xml",
+    "accepted_before": [
+      "1f069f6a02bea383e2ff7eac2a8c1e5d76411308ce0a89295f8ea818234e2b49",
+      "f65fa1cc617b13bb6a9732defa0fb30b074d1c877f693527b99fa577d5a571d9"
+    ],
+    "after": "f65fa1cc617b13bb6a9732defa0fb30b074d1c877f693527b99fa577d5a571d9",
+    "allow_missing": false
+  },
+  {
+    "mod": "chillheadhunter",
+    "file": "md/headhuntermd.xml",
+    "accepted_before": [
+      "6127ffdc1526d61822d83ace854b8ebe491b6888cb914b937b21ccf2cc0a12c0",
+      "ea954312534cd1578116dd85098da6e1b1d7775e44a38f4f4ec2158e384869e1"
+    ],
+    "after": "6127ffdc1526d61822d83ace854b8ebe491b6888cb914b937b21ccf2cc0a12c0",
+    "allow_missing": false
+  },
+  {
+    "mod": "chillheadhunter",
+    "file": "ui.xml",
+    "accepted_before": [
+      "d604e02880a52ddb374d9961d6a4432f0121e357a99a989f2b9c7ab62d7b6b2a"
+    ],
+    "after": "d604e02880a52ddb374d9961d6a4432f0121e357a99a989f2b9c7ab62d7b6b2a",
+    "allow_missing": true
+  },
+  {
+    "mod": "chillheadhunter",
+    "file": "ui/headhunter.lua",
+    "accepted_before": [
+      "7b117778a204fb8cd0808bbce51ea9577c6abe95788076846241a48c73ad1dcf"
+    ],
+    "after": "7b117778a204fb8cd0808bbce51ea9577c6abe95788076846241a48c73ad1dcf",
+    "allow_missing": true
+  },
+  {
+    "mod": "civilian_economy",
+    "file": "aiscripts/build.buildstorage.xml",
+    "accepted_before": [
+      "983043c70c6d3af9f3f1830df8fbff8e297129974ae388faedcad5b0e7a60ff9",
+      "dd7efd61b7dc08e014b72603ccc8d66cb940530d9440cd1b218133e7e5f4aaca"
+    ],
+    "after": "983043c70c6d3af9f3f1830df8fbff8e297129974ae388faedcad5b0e7a60ff9",
+    "allow_missing": false
+  },
+  {
+    "mod": "ebi_pirate_chaos_conflict",
+    "file": "libraries/factions.xml",
+    "accepted_before": [
+      "24ec636ee7de4ffdd5300f64bc700044354114105441f9797a937f8e3b4fd2a3",
+      "e4370b0ee9433032c5887de842e987161f72325b3cee77997b0d391426460eaf"
+    ],
+    "after": "e4370b0ee9433032c5887de842e987161f72325b3cee77997b0d391426460eaf",
+    "allow_missing": false
+  },
+  {
+    "mod": "ebi_pirate_chaos_conflict",
+    "file": "libraries/jobs.xml",
+    "accepted_before": [
+      "9644dd900fd2ceea893b277d7b7c9cbd47fcaab857538d426896d9f4e38ddf38",
+      "c0d0e8ff1048119ab686fd94a7cecff0dd340aa1abfba25f8a1cbe0aef6eb105",
+      "d05898d60a7bea7ce8bc3474a0c7f7073bfb2d5b9d64d8bbdf61270e10d314a8",
+      "e46281c8d2ca3e90cf9578617a755a0ee54beee88ebc158784b7eb262ec81754"
+    ],
+    "after": "e46281c8d2ca3e90cf9578617a755a0ee54beee88ebc158784b7eb262ec81754",
+    "allow_missing": false
+  },
+  {
+    "mod": "gramstonships",
+    "file": "libraries/shipgroups.xml",
+    "accepted_before": [
+      "38320e444842bec6fd2de77c89ac4d8a10d5a36e5279fa8fa2d9dea2147722eb",
+      "7037fd279f47e196d7bda14dd9cc1630667c6ceec93b3c3e5b7f305f2caef532"
+    ],
+    "after": "7037fd279f47e196d7bda14dd9cc1630667c6ceec93b3c3e5b7f305f2caef532",
+    "allow_missing": false
+  },
+  {
+    "mod": "jp_anotherexplorer",
+    "file": "aiscripts/order.assist.xml",
+    "accepted_before": [
+      "51d095bc08cc72e5ebb11b0b662f3a5926ee72851768185cc796b1dba763f5c8",
+      "cbe16cd26cdfa6c82605b83aed2d6b63cb14e760ef63550d50734c07d0ce68f6"
+    ],
+    "after": "51d095bc08cc72e5ebb11b0b662f3a5926ee72851768185cc796b1dba763f5c8",
+    "allow_missing": false
+  },
+  {
+    "mod": "jp_spiralexplorer",
+    "file": "aiscripts/order.assist.xml",
+    "accepted_before": [
+      "cfcd7c00b85b67b9b259d5f328d5f39706621bf26fa4346e845978b52a216c86",
+      "cfed6bdad83024d3a006fe199beb754cc5b0f1df4b8fa7da5539113644d34d71"
+    ],
+    "after": "cfed6bdad83024d3a006fe199beb754cc5b0f1df4b8fa7da5539113644d34d71",
+    "allow_missing": false
+  },
+  {
+    "mod": "kk4duy_trader_seminars",
+    "file": "libraries/stock.xml",
+    "accepted_before": [
+      "032e6148224bf714e3b89fe5d55911577924e2befed98078914c05143d89b46e",
+      "8b4efa17a2daf39d8098a21f93934674b2b8cf029133f1caaf439c2588073d80"
+    ],
+    "after": "8b4efa17a2daf39d8098a21f93934674b2b8cf029133f1caaf439c2588073d80",
+    "allow_missing": false
+  },
+  {
+    "mod": "koha",
+    "file": "assets/units/size_s/koha.xml",
+    "accepted_before": [
+      "77dfe0caa9a61e869ad029103442e1e9aca0311a53b480e5ae1fee1eb09e83a2",
+      "fa84a6c5a9023f1c5bf01db65ac66822eb3b8939b16de567ba37204c04b0d8bb"
+    ],
+    "after": "77dfe0caa9a61e869ad029103442e1e9aca0311a53b480e5ae1fee1eb09e83a2",
+    "allow_missing": false
+  },
+  {
+    "mod": "kuertee_crime_has_consequences",
+    "file": "aiscripts/kuertee_chc_interrupts.xml",
+    "accepted_before": [
+      "2e7144f3bc711ed186d08012030cf10d500f94063e786c710d1a077e69d1bc6b",
+      "af85818b10de1f01d994e2dde8d9424bb1b0fe90f72ec45aee8cc2dd6c267d2b"
+    ],
+    "after": "2e7144f3bc711ed186d08012030cf10d500f94063e786c710d1a077e69d1bc6b",
+    "allow_missing": false
+  },
+  {
+    "mod": "kuertee_crime_has_consequences",
+    "file": "md/kuertee_chc.xml",
+    "accepted_before": [
+      "5fe0d8743dfefeb87ea0b1c14101fa7914c6b7e0944ced354c76020638c98fca",
+      "758f57d3c7d883bcad721c1dd9a2c6092746cac2f76033403fd8637754bf945f",
+      "816c85823df31c33341b3f3ecbe062d89afab058b59037a5fcc6ede71ca249c4"
+    ],
+    "after": "816c85823df31c33341b3f3ecbe062d89afab058b59037a5fcc6ede71ca249c4",
+    "allow_missing": false
+  },
+  {
+    "mod": "kuertee_crime_has_consequences",
+    "file": "md/notifications.xml",
+    "accepted_before": [
+      "179ee53b1d93e17a6764ab64d3407f48fb8697f08167cbd7b402c2768dc293c6",
+      "3ad0a46dae7d8f51a7ed5eeab0bcd0ecd0f3b8bd5580aef9bfa40e629213f74b"
+    ],
+    "after": "179ee53b1d93e17a6764ab64d3407f48fb8697f08167cbd7b402c2768dc293c6",
+    "allow_missing": false
+  },
+  {
+    "mod": "reputations_and_professions",
+    "file": "aiscripts/move.seekenemies.xml",
+    "accepted_before": [
+      "a249db093b9dc7ba20a06e104946baf683ead3544f258f53c500f6a650ef8e8d",
+      "b0942fdd73f09c1eab59074bc73eb524e39dff0a820b7e6da5062c55860f4fa5"
+    ],
+    "after": "b0942fdd73f09c1eab59074bc73eb524e39dff0a820b7e6da5062c55860f4fa5",
+    "allow_missing": false
+  },
+  {
+    "mod": "rescuerangers",
+    "file": "md/fleet_reconstitution.xml",
+    "accepted_before": [
+      "0477378882287fbd3bafda48a46957d1dbc3cbe50629bc206174ae25c2c909ad",
+      "3c793d6ab9ce3c2624400a38113ccbd101d26baa988824803758239c14af4d10"
+    ],
+    "after": "3c793d6ab9ce3c2624400a38113ccbd101d26baa988824803758239c14af4d10",
+    "allow_missing": false
+  },
+  {
+    "mod": "sobers_timeunleashed",
+    "file": "t/0001.xml",
+    "accepted_before": [
+      "62c4992d1d1f42f1f74ba694f8c72cebe445d8549ad8dcec5a04fa24881ee3af",
+      "ced173f6a6b6d034236590bd5e14ad3f98762640a475c67e7c59ca21389fa989"
+    ],
+    "after": "ced173f6a6b6d034236590bd5e14ad3f98762640a475c67e7c59ca21389fa989",
+    "allow_missing": false
+  },
+  {
+    "mod": "upb_equipmentmod_and_recruit_srv",
+    "file": "md/upb_emrs_setup_run.xml",
+    "accepted_before": [
+      "3fe075cef0d0058084c31f7bd6c4d1ef7f2cc4787a5e88c3d8fe76a7f220c198",
+      "9e27e017139cd97e6b7c65252672066b695dbe211dc2dca6ad5d818b6c3bc946"
+    ],
+    "after": "9e27e017139cd97e6b7c65252672066b695dbe211dc2dca6ad5d818b6c3bc946",
+    "allow_missing": false
+  },
+  {
+    "mod": "x4_pilottraining",
+    "file": "aiscripts/interrupt.disengage.xml",
+    "accepted_before": [
+      "0d8fb2b81c3cd0e36063d7714e957814c1fda539d821eac8569372e21f4eef35",
+      "3d3dd5c2e971a3dc6dd5c9479d61b6f4a73bac1c6add1fe129ed20d13b21e2a9"
+    ],
+    "after": "3d3dd5c2e971a3dc6dd5c9479d61b6f4a73bac1c6add1fe129ed20d13b21e2a9",
+    "allow_missing": false
+  },
+  {
+    "mod": "x4_pilottraining",
+    "file": "aiscripts/lib.target.selection.xml",
+    "accepted_before": [
+      "13d265a9c5489ca601474bec956ad17fe9ff267c1304882dc4836073339f9898",
+      "467e6ab52b11c784f3c32304a3fc6ce618a9a1aa87948e4e8357e2d6eea86d6c"
+    ],
+    "after": "467e6ab52b11c784f3c32304a3fc6ce618a9a1aa87948e4e8357e2d6eea86d6c",
+    "allow_missing": false
+  },
+  {
+    "mod": "yaki_evolution",
+    "file": "libraries/factions.xml",
+    "accepted_before": [
+      "373bb005e84d7120dc23ab5f07b04e692ab83d2026db7ce193a88df85885ee44",
+      "a59b57a980717fdad5caf79a67b18031b9410e135675e799b3c3344d6d70c8b1"
+    ],
+    "after": "a59b57a980717fdad5caf79a67b18031b9410e135675e799b3c3344d6d70c8b1",
+    "allow_missing": false
+  },
+  {
+    "mod": "yaki_evolution",
+    "file": "libraries/god.xml",
+    "accepted_before": [
+      "5096bb06ba7527d1e3b278d5d9fc8ed99e6f123c17cff32fb53af51cb724223f",
+      "e7194a8a9ff8e83870bd54beed0b5a7e67af59897989a8768ce08713ef08d990"
+    ],
+    "after": "e7194a8a9ff8e83870bd54beed0b5a7e67af59897989a8768ce08713ef08d990",
+    "allow_missing": false
+  },
+  {
+    "mod": "yaki_evolution",
+    "file": "libraries/modules.xml",
+    "accepted_before": [
+      "75b3bc74b0c393fd405f514c415c78f7d28335cba44ab2430b04c72120edbcd5",
+      "cc7f8743e438c04785adf0465d5cc292fc5ecdaeda4c4c74b48fa94791d2a9f9"
+    ],
+    "after": "75b3bc74b0c393fd405f514c415c78f7d28335cba44ab2430b04c72120edbcd5",
+    "allow_missing": false
+  },
+  {
+    "mod": "yaki_evolution",
+    "file": "libraries/stationgroups.xml",
+    "accepted_before": [
+      "44dfa3c23816ccf2bb7815fc6156c8e032e2621659adf70cfc31d4cf5de36021",
+      "6cbc4b9cbcba973e555cced76b5549da0503c0735a50dc50989555bb67fce5fc"
+    ],
+    "after": "6cbc4b9cbcba973e555cced76b5549da0503c0735a50dc50989555bb67fce5fc",
+    "allow_missing": false
+  },
+  {
+    "mod": "yaki_evolution",
+    "file": "libraries/stations.xml",
+    "accepted_before": [
+      "9cce34cd1b1be1bbf583c6facf195ba746ab43ffa26dc3094738bfcaba20701d",
+      "db1fedb158b78b08bac21afeaa918bcc09351e31969e07b4ec9ac3f2bf92b3b7"
+    ],
+    "after": "9cce34cd1b1be1bbf583c6facf195ba746ab43ffa26dc3094738bfcaba20701d",
+    "allow_missing": false
+  },
+  {
+    "mod": "z_ram_noshiplimits",
+    "file": "libraries/wares.xml",
+    "accepted_before": [
+      "81227465adc6a42e48fbbee96684ce5927a8e2dcdd45a8a1d39451d15727e820",
+      "dcc238ac8edf1393ba96e2e56b79a9ee43ff9f7ae8af576e5694fd17ed08bb88"
+    ],
+    "after": "dcc238ac8edf1393ba96e2e56b79a9ee43ff9f7ae8af576e5694fd17ed08bb88",
+    "allow_missing": false
+  }
+]

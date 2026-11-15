@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Faction Camouflage for All Player Ships: download current release](vardath_faction_camouflage_latest.zip)
+
+Content version: **102**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Mod Support APIs (required)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # Vardath Faction Camouflage 1.02 — all player-owned ships
 
 [Download the installable extension](Vardath_Faction_Camouflage_1.02.zip)

@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.approach" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <params>
     <param name="target" />
     <param name="distance" default="3km" />
@@ -11,6 +11,15 @@
       </do_if>
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
+      </do_if>
+      <do_if value="typeof @player.entity.$vgo_objects.{this.ship}.$vgo_scope != datatype.list">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_home.exists and player.entity.$vgo_objects.{this.ship}.$vgo_range? and player.entity.$vgo_objects.{this.ship}.$vgo_risk?">
+          <run_script name="'vardath.go.scope'" />
+        </do_if>
+        <do_if value="typeof @player.entity.$vgo_objects.{this.ship}.$vgo_scope != datatype.list">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Operating range unavailable after load; reissue this occupation order'" />
+          <return value="false" />
+        </do_if>
       </do_if>
       <do_if value="not $target.exists">
         <return value="false" />

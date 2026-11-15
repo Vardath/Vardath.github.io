@@ -1,3 +1,17 @@
+# Current installed release — 16 November 2026
+
+[Vardath - Living Factions and Builders: download current release](vardath_living_factions_builders_latest.zip)
+
+Content version: **179**. This ZIP and the source folder match the verified local installation. No other Vardath mod is required.
+
+External dependencies: Cradle of Humanity (required)
+
+[Exact file checksums and requirements](CURRENT_RELEASE.json). [Compatibility and independence audit](../x4-updates/COMPATIBILITY_AND_INDEPENDENCE_2026-11-16.md).
+
+Restart X4 after replacing an installed extension. Static checks passed; in-game verification of the newest fixes is pending. Older downloads below are retained for reference.
+
+---
+
 # v1.77 — Native payment callback safety
 
 The shared Galactic Occupations / Builders native-income Lua handler now validates receipt sequence IDs, saved binding keys, record types and totals before looking up actual transaction IDs. A malformed save import can no longer throw a nil-key exception on each `Vardath.NativeIncome.Payment` event. All actual credits, rates, deposits, ledger entries, crew and contracts are left untouched. This builds on 1.76 integer-cent SETA payroll; runtime verification still requires a new debug log.

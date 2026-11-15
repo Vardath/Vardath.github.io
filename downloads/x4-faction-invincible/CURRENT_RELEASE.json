@@ -1,0 +1,24 @@
+{
+  "mod": "vardath_faction_invincible",
+  "name": "Vardath - Player Faction Invincible",
+  "version": "103",
+  "verified": "2026-11-16",
+  "download": "vardath_faction_invincible_latest.zip",
+  "sha256": "f246e38f5c07c7cbc2b43c08bfe42731bbcf9bc484868e55eb23e66174e3d86f",
+  "dependencies": [],
+  "requires_other_vardath_mods": false,
+  "files": [
+    {
+      "path": "content.xml",
+      "sha256": "4f99c8dc5effe75749cf405fbab6ba72ae6b1f71df2b2c59fa2b2bc4d1f40afa"
+    },
+    {
+      "path": "md/vardath_faction_invincible.xml",
+      "sha256": "105348e5c2472657b293fb5b64c35e20638647f4bf20ac3744bddc284447d4a0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d763578cc9fbed3fce0b73fecba17c528a7708a5ae1296604265fbff9cf0c009"
+    }
+  ]
+}

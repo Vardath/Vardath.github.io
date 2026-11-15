@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="5" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<aiscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="vardath.go.tourcatalogue" version="6" xsi:noNamespaceSchemaLocation="aiscripts.xsd">
   <attention min="unknown">
     <actions>
       <do_if value="not player.entity.$vgo_objects?">
@@ -8,7 +8,16 @@
       <do_if value="not player.entity.$vgo_objects.{this.ship}?">
         <set_value name="player.entity.$vgo_objects.{this.ship}" exact="table[]" />
       </do_if>
-      <do_if value="not player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue? or @player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until lt player.age">
+      <do_if value="typeof @player.entity.$vgo_objects.{this.ship}.$vgo_scope != datatype.list">
+        <do_if value="@player.entity.$vgo_objects.{this.ship}.$vgo_home.exists and player.entity.$vgo_objects.{this.ship}.$vgo_range? and player.entity.$vgo_objects.{this.ship}.$vgo_risk?">
+          <run_script name="'vardath.go.scope'" />
+        </do_if>
+        <do_if value="typeof @player.entity.$vgo_objects.{this.ship}.$vgo_scope != datatype.list">
+          <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_status" exact="'Operating range unavailable after load; reissue this occupation order'" />
+          <return value="[]" />
+        </do_if>
+      </do_if>
+      <do_if value="typeof @player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue != datatype.list or @player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until lt player.age">
         <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" landmark="true" />
         <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" multiple="true" datavault="true" append="true" />
         <find_object name="$catalogue" space="player.entity.$vgo_objects.{this.ship}.$vgo_scope" class="class.anomaly" multiple="true" append="true" />
@@ -29,22 +38,22 @@
       <!-- A cached POI may have been destroyed or uninstantiated since its discovery.
            Prune it every time the catalogue is read; expire the cache so the next
            call discovers replacements. Never inspect .sector on an invalid object. -->
-      <set_value name="$live" exact="[]"/>
+      <set_value name="$live" exact="[]" />
       <do_for_each name="$poi" in="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue">
         <do_if value="not $poi.exists">
-          <continue/>
+          <continue />
         </do_if>
         <do_if value="not $poi.sector.exists">
-          <continue/>
+          <continue />
         </do_if>
         <do_if value="$poi.ishostileto.{this.ship} or $live.indexof.{$poi}">
-          <continue/>
+          <continue />
         </do_if>
-        <append_to_list name="$live" exact="$poi"/>
+        <append_to_list name="$live" exact="$poi" />
       </do_for_each>
       <do_if value="$live.count != player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue.count">
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" exact="$live"/>
-        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until" exact="0s"/>
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" exact="$live" />
+        <set_value name="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue_until" exact="0s" />
       </do_if>
       <return value="player.entity.$vgo_objects.{this.ship}.$vgo_tour_catalogue" />
     </actions>
