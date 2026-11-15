@@ -381,6 +381,19 @@ func _station_reservations(station: Dictionary) -> Dictionary:
 			if bool(recipe.get("catalog_source", false)) and station.has("archive") and ware_id == "recorded_data":
 				continue
 			reserved[ware_id] = maxi(int(reserved.get(ware_id, 0)), int(recipe.catalysts[ware_id]))
+	# Family and crew habitats must not become uninhabitable because a
+	# downstream food/medical factory consumed the last locally purified
+	# water in the preceding tick. Keep a physically produced minimum
+	# buffer for the next paid housing cycle and a small incoming group;
+	# this is a real stock reservation, NOT free supplies or replenishment.
+	# Applies to owned inhabited-capable stations; vacant industrial
+	# stations without real habitats receive no protective allocation.
+	if station.owner == state.player_faction_id and not station.get("habitation", []).is_empty() and state.has("provisions_version"):
+		var resident: Dictionary = population.station_cohort(self, str(station.id))
+		var people: int = demographics.residents(resident) if state.has("demographics_version") else int(resident.get("cohorts", {}).get("assigned_workers", 0))
+		var housing_needs: Dictionary = provisions.facility_needs(self, station, mini(1000000, people + 2))
+		reserved["potable_water"] = maxi(int(reserved.get("potable_water", 0)), maxi(3, int(housing_needs.get("potable_water", 0)) + 1))
+		reserved["energy_cells"] = maxi(int(reserved.get("energy_cells", 0)), maxi(3, int(housing_needs.get("energy_cells", 0)) + 1))
 	return reserved
 
 

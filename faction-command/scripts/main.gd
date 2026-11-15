@@ -100,6 +100,7 @@ var education_info: Label
 var education_feedback: Label
 var career_track_picker: OptionButton
 var career_ship_picker: OptionButton
+var career_named_worker_picker: OptionButton
 var career_certified_toggle: CheckButton
 var trade_station_actions: HBoxContainer
 var trade_station_supply_button: Button
@@ -2649,13 +2650,16 @@ func _open_education_screen(station_id: String) -> void:
 		career_track_picker.add_item(str(world.state.education_catalog[track].name))
 		career_track_picker.set_item_metadata(career_track_picker.item_count - 1, track)
 	career_track_picker.select(0)
+	career_track_picker.item_selected.connect(_on_career_track_change)
 	careers_row.add_child(career_track_picker)
 	var mentor_button := _button("Begin practice")
 	mentor_button.name = "CareerPracticumButton"
 	mentor_button.pressed.connect(_career_practicum_start)
 	careers_row.add_child(mentor_button)
-	var transport_row := HBoxContainer.new()
-	transport_row.add_theme_constant_override("separation", 6)
+	var transport_row := HFlowContainer.new()
+	transport_row.add_theme_constant_override("h_separation", 6)
+	transport_row.add_theme_constant_override("v_separation", 6)
+	transport_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	column.add_child(transport_row)
 	career_ship_picker = OptionButton.new()
 	career_ship_picker.name = "CareerShipPicker"
@@ -2676,10 +2680,21 @@ func _open_education_screen(station_id: String) -> void:
 	named_transfer_button.name = "ProfessionalBoardNamedButton"
 	named_transfer_button.pressed.connect(_professional_board_named)
 	transport_row.add_child(named_transfer_button)
-	var employment_row := HBoxContainer.new()
-	employment_row.add_theme_constant_override("separation", 6)
+	var employment_row := HFlowContainer.new()
+	employment_row.add_theme_constant_override("h_separation", 6)
+	employment_row.add_theme_constant_override("v_separation", 6)
+	employment_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	column.add_child(employment_row)
 	employment_row.add_child(_label("REAL PROFESSIONAL WORK", 13, ACCENT))
+	career_named_worker_picker = OptionButton.new()
+	career_named_worker_picker.name = "ProfessionalWorkerPicker"
+	career_named_worker_picker.custom_minimum_size = Vector2(190, 44)
+	career_named_worker_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	employment_row.add_child(career_named_worker_picker)
+	var register_button := _button("Identify graduate")
+	register_button.name = "ProfessionalRegisterButton"
+	register_button.pressed.connect(_professional_register)
+	employment_row.add_child(register_button)
 	var employ_button := _button("Employ graduate")
 	employ_button.name = "ProfessionalAppointButton"
 	employ_button.pressed.connect(_professional_appoint)
@@ -2692,7 +2707,7 @@ func _open_education_screen(station_id: String) -> void:
 	resume_button.name = "ProfessionalAssignButton"
 	resume_button.pressed.connect(_professional_assign)
 	employment_row.add_child(resume_button)
-	column.add_child(_wrapped_label("One real resident mentor and a genuine workplace are required per course. Study notes, energy, and salaries are consumed every 60 ticks. Boarding transfers already qualified adults into actual ship passenger berths; finish the voyage using Ship & Crew > Disembark / return. All qualifications stay with the existing people.", 12, MUTED))
+	column.add_child(_wrapped_label("Named employees are reserved from real certified adult residents. Select a specific employee, then board them into a genuine free berth; multiple named graduates may share one ship only from the same source. Salary stops while travelling. The Ship & Crew passenger quantity selects how many named people disembark in manifest order at a powered, provisioned residence.", 12, MUTED))
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -2739,7 +2754,7 @@ func _update_education_screen() -> void:
 	rows.append_array(world.education.report(world, education_station_id))
 	rows.append_array(world.careers.report(world, education_station_id))
 	rows.append_array(world.professionals.report(world, education_station_id))
-	rows.append("Professional employment is currently wired to completed engineering and agricultural production only. Other graduate professions await real work-event integration. One named adult remains part of the same existing station population.")
+	rows.append("Engineers and agricultural stewards gain paid work experience only from genuine completed production cycles, one XP for at most one real worker per physical cycle. Other professional roles await real work events. Each named resident is counted once.")
 	rows.append("Practical completions confirm supervised local workplace training, not instant ship skill or a captain assignment. Only explicit qualified passenger boarding transfers credentials to another owned residence.")
 	var selected_ship := ""
 	if career_ship_picker.selected >= 0:
@@ -2760,6 +2775,28 @@ func _update_education_screen() -> void:
 	else:
 		career_ship_picker.disabled = false
 	career_ship_picker.select(selection)
+	var current_worker := ""
+	if is_instance_valid(career_named_worker_picker) and career_named_worker_picker.selected >= 0:
+		current_worker = str(career_named_worker_picker.get_item_metadata(career_named_worker_picker.selected))
+	career_named_worker_picker.clear()
+	var worker_choice := 0
+	var candidates: Array = world.state.professional_registry.keys()
+	candidates.sort()
+	for id in candidates:
+		var person: Dictionary = world.state.professional_registry[id]
+		if str(person.station_id) != education_station_id or str(person.track) != _career_selected_track():
+			continue
+		career_named_worker_picker.add_item("%s · XP %d · %s" % [id, int(person.experience), "On duty" if person.active else "Off duty"])
+		career_named_worker_picker.set_item_metadata(career_named_worker_picker.item_count - 1, str(id))
+		if str(id) == current_worker:
+			worker_choice = career_named_worker_picker.item_count - 1
+	if career_named_worker_picker.item_count == 0:
+		career_named_worker_picker.add_item("No named staff for track")
+		career_named_worker_picker.set_item_metadata(0, "")
+		career_named_worker_picker.disabled = true
+	else:
+		career_named_worker_picker.disabled = false
+	career_named_worker_picker.select(worker_choice)
 	education_info.text = "\n\n".join(rows)
 
 
@@ -2804,14 +2841,32 @@ func _professional_board_named() -> void:
 	_education_action_result(world.professionals.board_named(world, ship_id, _professional_worker_for_track()))
 
 
+func _on_career_track_change(_index: int) -> void:
+	_update_education_screen()
+
+
+func _professional_register() -> void:
+	_education_action_result(world.professionals.register_graduate(world, education_station_id, _career_selected_track()))
+
+
 func _professional_appoint() -> void:
 	_education_action_result(world.professionals.appoint(world, education_station_id, _career_selected_track()))
 
 
 func _professional_worker_for_track() -> String:
-	for worker in world.state.professional_registry.values():
-		if str(worker.station_id) == education_station_id and str(worker.track) == _career_selected_track():
-			return str(worker.id)
+	if is_instance_valid(career_named_worker_picker) and career_named_worker_picker.selected >= 0:
+		var selected_id: String = str(career_named_worker_picker.get_item_metadata(career_named_worker_picker.selected))
+		var selected: Dictionary = world.state.professional_registry.get(selected_id, {})
+		if not selected.is_empty() and str(selected.station_id) == education_station_id and str(selected.track) == _career_selected_track():
+			return selected_id
+	# Older tests and scripts can set the career picker directly without
+	# sending a UI selection signal; retain deterministic single-worker use.
+	var ids: Array = world.state.professional_registry.keys()
+	ids.sort()
+	for id in ids:
+		var person: Dictionary = world.state.professional_registry[id]
+		if str(person.station_id) == education_station_id and str(person.track) == _career_selected_track():
+			return str(id)
 	return ""
 
 
