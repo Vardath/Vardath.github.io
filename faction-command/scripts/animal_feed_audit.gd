@@ -61,10 +61,11 @@ func valid(state: Dictionary) -> bool:
 	var treatment: Dictionary = {}
 	var clinical_med: Dictionary = {}
 	var clinical_power: Dictionary = {}
+	var clinical_waste: Dictionary = {}
 	var animal_by_feed: Dictionary = {"emberhorn_fodder":"emberhorn", "dustwhistle_nectar":"dustwhistle"}
 	for event in state.ledger:
 		var kind: String = str(event.get("kind", ""))
-		if kind not in ["animal_feed_used", "animal_treatment_medical", "animal_treatment_energy", "animal_treated", "livestock_feed"]:
+		if kind not in ["animal_feed_used", "animal_treatment_medical", "animal_treatment_energy", "animal_treatment_waste", "animal_treated", "livestock_feed"]:
 			continue
 		var station_id: String = str(event.get("station_id", ""))
 		var ship_id: String = str(event.get("ship_id", ""))
@@ -99,6 +100,10 @@ func valid(state: Dictionary) -> bool:
 					if n != 1:
 						return false
 					_record(clinical_power, key, n)
+				"animal_treatment_waste":
+					if n != 1:
+						return false
+					_record(clinical_waste, key, n)
 				"animal_treatment_medical":
 					if n > 1000000:
 						return false
@@ -106,7 +111,7 @@ func valid(state: Dictionary) -> bool:
 	for key in receipt_special:
 		if int(receipt_special[key]) != int(receipt_existing.get(key, -1)):
 			return false
-	if treatment != clinical_power or treatment.size() != clinical_med.size():
+	if treatment != clinical_power or treatment != clinical_waste or treatment.size() != clinical_med.size():
 		return false
 	for key in clinical_med:
 		if not treatment.has(key) or int(clinical_med[key]) < int(treatment[key]):
