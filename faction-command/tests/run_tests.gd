@@ -47,6 +47,7 @@ func _without_settlement(ship: Dictionary) -> Dictionary:
 	copy.erase("professional_passenger_id")
 	copy.erase("professional_passenger_ids")
 	copy.erase("waste_transport")
+	copy.erase("bio_survey")
 	return copy
 
 
@@ -59,6 +60,7 @@ func _without_settlement_ships(ships: Array) -> Array:
 		ship.erase("professional_passenger_id")
 		ship.erase("professional_passenger_ids")
 		ship.erase("waste_transport")
+		ship.erase("bio_survey")
 	return copy
 
 
@@ -592,7 +594,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 13, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 18, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -821,7 +823,7 @@ func _run() -> void:
 		var new_station: Dictionary = production_upgrade._find_station(str(old_station.id))
 		_expect(new_station.credits == old_station.credits and new_station.stock.energy_cells == old_station.stock.energy_cells and new_station.stock.alloy_plates == old_station.stock.alloy_plates, "production upgrade preserves existing stock and station credits: " + str(old_station.id))
 		_expect(int(new_station.stock.ore) == 0, "production upgrade does not add free ware stock: " + str(old_station.id))
-	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 12, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
+	_expect(production_upgrade._find_station("cinder_depot").deposits.ore == 1200 and production_upgrade.state.recipes.size() == 15, "production upgrade adds the original finite deposit, four civilian manufacturing recipes and two ecology recipes")
 	_expect(not production_upgrade._find_station("hearth_exchange").sell_prices.has("energy_cells"), "production upgrade preserves existing market rules")
 	_expect(save_store.save_game(trading_legacy_path, production_upgrade.snapshot()) == OK, "upgraded production state saves successfully")
 	var invalid_production: Dictionary = production_world.snapshot()
@@ -992,6 +994,9 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
+		for bioware_id in ["sunlace_seed_capsule", "mirealgae_culture_capsule", "sunlace_fruit", "mirealgae_biomass", "biogene_record"]:
+			_expect(int(migrated_stock.get(bioware_id, -1)) == 0, "pre-logistics NPC migration creates no free planetary specimen or crop: " + str(old_station.id) + " / " + bioware_id)
+			migrated_stock.erase(bioware_id)
 		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
 			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
 			migrated_stock.erase(ecology_ware)
@@ -2477,7 +2482,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 5, "property panel offers manual, trading, construction supply, station supply and bio-waste collection roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 6, "property panel offers manual, trading, construction supply, station supply, waste collection and bio survey roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
@@ -3528,7 +3533,7 @@ func _run() -> void:
 	_expect(inspector_model.tabs(inspector_world, "npc_ship", "npc_builder_001") == ["Info"], "NPC traffic is inspectable without accessible player crew or command tabs")
 	_expect(inspector_model.tabs(inspector_world, "ship", "npc_builder_001").is_empty(), "an NPC ship ID cannot be forged as an owned ship selection")
 	_expect(inspector_model.tabs(inspector_world, "npc_ship", "ship_001").is_empty(), "a player ship cannot be mislabelled as foreign traffic")
-	_expect(inspector_model.tabs(inspector_world, "sector", "hearthreach") == ["Info", "Orders", "Assets"], "sector map shows descriptive, route and asset views")
+	_expect(inspector_model.tabs(inspector_world, "sector", "hearthreach") == ["Info", "Orders", "Assets", "Biology"], "sector map shows descriptive, route, asset and legitimate biology views")
 	_expect(inspector_model.tabs(inspector_world, "sector", "not_a_sector").is_empty(), "unknown sector does not get valid command tabs")
 	_expect(inspector_model.tabs(inspector_world, "npc_station", "hearth_exchange") == ["Info", "Trade", "Cargo", "Production", "Population"], "NPC stations show their market and civic details without owning the station")
 	_expect(inspector_model.tabs(inspector_world, "station", "hearth_exchange").is_empty(), "NPC station cannot be selected as player property")
@@ -5439,7 +5444,7 @@ func _run() -> void:
 	var p37_future: Dictionary = p37_world.snapshot()
 	p37_future.biota_version = 2
 	_expect(save_store.save_game(test_root + "/pass37-future-biota.json", p37_future) != OK, "unknown future biological save versions are rejected")
-	_expect(p37_world._find_ware("sunlace_fruit").is_empty() and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
+	_expect(_total_ware(p37_world.state, "sunlace_fruit") == 0 and p37_world._find_ware("emberhorn_grazer").is_empty(), "catalogue-only Pass 37A does not magically create edible stock or livestock")
 
 	# Pass 37B: a counted orbital wild population moves into ship cargo
 	# only after physical travel, staffed sampling time, and paid energy.
