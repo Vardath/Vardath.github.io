@@ -4998,7 +4998,12 @@ func _run() -> void:
 		_expect(_replenish_practical_station(p35c_world, "player_station_1", "player_station_2", 8), "real physical school life support and electricity are supplied during theory block %d" % course_round)
 		p35c_world.advance_ticks(60)
 	_expect(p35c_campus.education.qualified.engineering_college == 2 and not p35c_campus.education.courses.has("engineering_college"), "five paid teaching periods produce a second existing real theory graduate with original historical records")
-	_expect(p35c_world.dock_ship("ship_001", "player_station_2").ok and p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2).ok, "two distinct existing academic graduates begin a real paid practical engineering course at a working ship laboratory")
+	var p35c_practice_dock: Dictionary = p35c_world.dock_ship("ship_001", "player_station_2")
+	var p35c_practice_start: Dictionary = p35c_world.careers.start(p35c_world, "player_station_2", "engineering_college", 2) if p35c_practice_dock.ok else {"ok":false,"message":"Workship could not dock"}
+	if not p35c_practice_start.ok:
+		var p35c_cohort: Dictionary = p35c_world.population.station_cohort(p35c_world, "player_station_2")
+		printerr("P35C PAID PRACTICUM START BLOCKED ", p35c_practice_start, " adults=", p35c_cohort.cohorts, " housing=", p35c_cohort.resident_status, " teachers=", p35c_campus.education.teachers, " stock=", p35c_campus.stock, " ship=", p35c_ship.get("captain_profile", {}), " worksite=", p35c_world.careers._workplace(p35c_world, p35c_campus, "engineering_college"), " candidates=", p35c_world.careers.candidates(p35c_world, "player_station_2", "engineering_college"))
+	_expect(p35c_practice_start.ok, "two distinct existing academic graduates begin a real paid practical engineering course at a working ship laboratory")
 	for practice_round in range(5):
 		if not p35c_campus.careers.apprenticeships.has("engineering_college"):
 			break
