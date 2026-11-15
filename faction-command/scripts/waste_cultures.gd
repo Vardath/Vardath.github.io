@@ -25,7 +25,7 @@ func definitions() -> Dictionary:
 		ids[species.id] = true
 	for i in range(BUYER_IDS.size()):
 		var station: Variant = parsed.stations[i]
-		if not station is Dictionary or station.get("station_id") != BUYER_IDS[i] or not ids.has(station.get("buyer_species_id")) or not station.get("reason") is String or not station.get("organic_waste_buy_price") is int or int(station.organic_waste_buy_price) < 1 or int(station.organic_waste_buy_price) > 100:
+		if not station is Dictionary or station.get("station_id") != BUYER_IDS[i] or not ids.has(station.get("buyer_species_id")) or not station.get("reason") is String or not (station.get("organic_waste_buy_price") is int or station.get("organic_waste_buy_price") is float) or int(station.organic_waste_buy_price) < 1 or int(station.organic_waste_buy_price) > 100:
 			return {}
 	for affinity in parsed.future_cross_species_affinities:
 		if not affinity is Dictionary or not ids.has(affinity.get("recipient_species_id")) or not ids.has(affinity.get("origin_species_id")) or affinity.recipient_species_id == affinity.origin_species_id or not affinity.get("appeal") is String:
