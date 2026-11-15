@@ -1,38 +1,50 @@
 {
-  "checks": [
+  "version": "1.1",
+  "models": [
     {
       "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_pio_f_crew_uniform_01.xac",
-      "bytes": 518013,
-      "valid": true,
-      "skeleton_and_materials_preserved": true,
-      "other_meshes_and_weights_unchanged": true,
-      "skirt_weights_normalized": true
+      "passed": true,
+      "hem_cm": 81.81,
+      "extra_trim_cm": 3.81,
+      "skeleton_unchanged": true,
+      "legs_and_shoes_unchanged": true
     },
     {
       "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_pio_f_diplomat_suit_01.xac",
-      "bytes": 481031,
-      "valid": true,
-      "skeleton_and_materials_preserved": true,
-      "other_meshes_and_weights_unchanged": true,
-      "skirt_weights_normalized": true
+      "passed": true,
+      "hem_cm": 81.81,
+      "extra_trim_cm": 3.81,
+      "skeleton_unchanged": true,
+      "legs_and_shoes_unchanged": true
     },
     {
       "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_ter_f_crew_uniform_01.xac",
-      "bytes": 518013,
-      "valid": true,
-      "skeleton_and_materials_preserved": true,
-      "other_meshes_and_weights_unchanged": true,
-      "skirt_weights_normalized": true
+      "passed": true,
+      "hem_cm": 81.81,
+      "extra_trim_cm": 3.81,
+      "skeleton_unchanged": true,
+      "legs_and_shoes_unchanged": true
     },
     {
       "asset": "extensions/ego_dlc_terran/assets/characters/terran/bodies/char_ter_f_diplomat_suit_01.xac",
-      "bytes": 481031,
-      "valid": true,
-      "skeleton_and_materials_preserved": true,
-      "other_meshes_and_weights_unchanged": true,
-      "skirt_weights_normalized": true
+      "passed": true,
+      "hem_cm": 81.81,
+      "extra_trim_cm": 3.81,
+      "skeleton_unchanged": true,
+      "legs_and_shoes_unchanged": true
     }
   ],
-  "blender_round_trip": "all four exported files reimported and rendered",
-  "in_game_test": "not performed"
+  "validation": [
+    "All four XAC files exported and reimported in Blender",
+    "Finite vertex data, triangle indices and normalized bone weights checked",
+    "Original skeletons, legs and shoes preserved",
+    "Skirt cut edges bridged to existing lining, no open hem edges",
+    "Rest and bent-arm geometry renders reviewed",
+    "All referenced arm textures found in installed game catalogs"
+  ],
+  "limits": [
+    "Not tested in a running X4 session; inspect NPC walking, gestures and skin tone in game",
+    "Old donor provides light and dark arm textures; adaptive material uses light donor texture for the third skin palette",
+    "Original distant LODs remain removed, as in version 1.0"
+  ]
 }

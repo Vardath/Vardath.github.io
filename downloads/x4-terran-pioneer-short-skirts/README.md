@@ -1,23 +1,23 @@
-# Terran and Pioneer Short Skirts — 1.0
+# Terran and Pioneer Short Skirts — 1.1
 
-[Download the installable mod](Terran_Pioneer_Short_Skirts_v1.0.zip)
+[Download version 1.1](Terran_Pioneer_Short_Skirts_v1.1.zip)
 
-Shortens the four female Terran/Pioneer crew and diplomatic skirt models to mid-thigh. Includes edited XAC assets packaged as an X4 extension. Requires Cradle of Humanity. Sleeves are unchanged.
+Female Terran and Pioneer crew/diplomat outfits now have elbow-length sleeves with fitted Argon civilian lower arms and hands. All four skirts are **another 1½ inches (3.81 cm) shorter than version 1.0**. The original shoulders, legs, shoes and skeletons remain. No crop-top clothing is included; pilot suits are unchanged.
 
-## Install
+## Install or update
 
-Extract the ZIP and copy `terran_pioneer_short_skirts` into your `X4 Foundations/extensions` folder. Enable **Terran and Pioneer Short Skirts** in the game's Extensions menu.
+Close X4. Extract the ZIP and copy `terran_pioneer_short_skirts` into `X4 Foundations/extensions`, replacing the existing mod files. Keep **Terran and Pioneer Short Skirts** enabled. Requires Cradle of Humanity.
 
 ## Preview
 
-![Shortened skirt geometry](Short_Skirt_Preview.png)
+![Version 1.1 geometry preview](Short_Sleeves_Preview.png)
 
-Blender geometry preview with simplified colors; the mod retains the original game materials.
+Blender geometry preview with simplified colors, not an in-game screenshot.
 
-## Validation and compatibility
+## Validation and limitations
 
-All four exported models were reimported and rendered in Blender. Archive checksums, skeletons, materials, untouched meshes, triangle indices and normalized bone weights passed checks. **Not yet tested in-game.** Check walking and standing NPCs for clipping. [Validation report](validation.json).
+All four exported models passed archive, skeleton, mesh index, finite-coordinate and normalized skin-weight checks and were reimported in Blender. The new skirt hems are closed against their lining. Standing and bent-arm geometry previews were checked. **Not yet tested in-game**: inspect walking, gestures and skin matching after restarting X4. [Validation report](validation.json).
 
-The original long-skirt distance meshes are removed, so the edited full-detail models remain visible at every distance. This can modestly increase rendering cost. Other mods replacing these same body assets may conflict. Remove this extension to restore the original outfits.
+The donor supplies light and dark skin textures. The adaptive arm material uses the light donor texture for the third skin palette, so exact matching across all NPC complexions is not guaranteed. As in 1.0, distant LODs are removed, so full-detail bodies remain at distance. Other mods replacing these same bodies can conflict.
 
-[Full installation and release notes](README.txt)
+[Full installation notes](README.txt) · [Previous version 1.0](Terran_Pioneer_Short_Skirts_v1.0.zip)

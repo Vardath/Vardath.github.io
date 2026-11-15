@@ -1,35 +1,17 @@
-TERRAN AND PIONEER SHORT SKIRTS — 1.0
+TERRAN AND PIONEER SHORT SKIRTS — 1.1
 
-INSTALL
-Close X4. Copy the terran_pioneer_short_skirts folder into:
-D:\SteamLibrary\steamapps\common\X4 Foundations\extensions\
-The resulting path must be extensions\terran_pioneer_short_skirts\content.xml.
-Start X4 and ensure Terran and Pioneer Short Skirts is enabled in Extensions.
-Requires Cradle of Humanity. Works with the existing uniform assignments.
+Four female crew/diplomat outfits: Terran crew, Terran diplomat, Pioneer crew, Pioneer diplomat.
+Skirts are 1.5 inches (3.81 cm) shorter than version 1.0, with a finished lined hem.
+Sleeves now end at the elbow. Exposed lower arms and hands come from the Argon female civilian crop-top model, fitted and weighted to the original Terran skeleton. No crop-top clothing is included. Shoulders, legs and shoes retain their original geometry. Pilot suits are unchanged.
 
-CHANGES
-Four actual edited XAC models: female Terran crew, Terran diplomat,
-Pioneer crew, and Pioneer diplomat. Skirts end at mid-thigh, about 22 cm
-above the original lowest hem. The lower band is removed and a thin
-inner lining finishes the new hem. Original game materials, skin, shoes,
-skeleton, and all other body meshes are preserved. Sleeves are unchanged.
-Characters using these shared bodies, including applicable story NPCs,
-receive the shorter skirts. Pilot suits are unchanged.
+INSTALL / UPDATE
+Close X4. Copy terran_pioneer_short_skirts into X4 Foundations/extensions, replacing files in the existing folder. Keep the same mod enabled. Requires Cradle of Humanity. No new game required by this cosmetic mod.
+The package includes subst_01.cat/dat (models) and ext_01.cat/dat (arm material).
 
-The replacement models are packaged in subst_01.cat/dat, not a builder.
-The original long-skirt LODs are removed, so the edited full-detail body
-is used at all distances; this can modestly increase rendering cost.
+VALIDATION / LIMITS
+All four models passed XAC parsing, vertex/index/weight checks and Blender reimport. Rest and bent-arm previews use simplified colors, not game textures. No in-game test has been performed. Inspect sleeves during gestures/walking and skin matching under game lighting.
+The donor has light and dark skin textures. Its adaptive material uses the light donor texture for the third skin palette; exact tone matching across every NPC is not guaranteed.
+As in 1.0, original distant LODs are removed; full-detail models remain at distance. Other mods replacing these same four bodies can conflict.
 
-COMPATIBILITY AND REMOVAL
-Other mods replacing the same four body XAC files can conflict.
-Disable/remove this extension to restore the original bodies.
-No save-game scripts or character assignment changes are included.
-
-VALIDATION
-All four models exported and reimported in Blender 5.3 with X4 XAC Tools
-0.6.2. Archive checksums, XAC parsing, triangle indices, skin weights,
-original skeleton/materials and untouched body meshes checked.
-Not yet tested in a running X4 game. Check standing and walking NPCs
-in-game for animation clipping before treating this as fully game-tested.
-The supplied preview is a geometry render, not an in-game screenshot;
-its simplified colors do not represent the original game textures.
+ROLLBACK
+Disable this mod to restore base-game outfits. To restore 1.0, replace the folder with the supplied original backup (do not leave the new ext_01 catalog pair mixed into 1.0).
