@@ -563,7 +563,7 @@ func _run() -> void:
 	var economy = WorldScript.new()
 	_expect(economy.load_starter() == OK, "starter economy loads")
 	_disable_npc_trading(economy)
-	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 12, "starter economy includes four markets, four archives, six original wares, four provisions and two ecological resources")
+	_expect(economy.state.stations.size() == 8 and economy.state.wares.size() == 13, "starter economy includes four markets, four archives and original, provision, recycled-soil, waste and recovered-salt wares")
 	# Isolate the conservation check to trading; production has explicit
 	# resource sources and sinks that are tested separately below.
 	for station in economy.state.stations:
@@ -963,7 +963,7 @@ func _run() -> void:
 		migrated_stock.erase("blank_media")
 		migrated_stock.erase("recorded_data")
 		migrated_stock.erase("research_notes")
-		for ecology_ware in ["organic_waste", "fertile_soil"]:
+		for ecology_ware in ["organic_waste", "fertile_soil", "salt"]:
 			_expect(int(migrated_stock.get(ecology_ware, -1)) == 0, "legacy NPC markets do not acquire free recovered ecological stocks: " + str(old_station.id) + " / " + ecology_ware)
 			migrated_stock.erase(ecology_ware)
 		for provision_ware in ["ice", "potable_water", "food_rations", "medical_supplies"]:
@@ -2448,7 +2448,7 @@ func _run() -> void:
 	_expect(screen.map_view.size.y >= 250.0, "galaxy map has usable height at landscape resolution")
 	var footer_control: Control = screen.find_child("MainFooter", true, false)
 	_expect(footer_control.global_position.y + footer_control.size.y <= float(root.size.y), "property and construction controls leave the footer within the viewport")
-	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 4, "property panel offers manual, trader, build supply and station supply roles")
+	_expect(screen.find_child("RolePicker", true, false) != null and screen.role_picker.item_count == 5, "property panel offers manual, trading, construction supply, station supply and bio-waste collection roles")
 	screen.role_picker.select(1)
 	screen.role_picker.item_selected.emit(1)
 	_expect(screen.world.state.ships[0].player_trader.enabled and screen.role_hint.text.contains("credits"), "selecting trader enables it and explains its use of player funds")
