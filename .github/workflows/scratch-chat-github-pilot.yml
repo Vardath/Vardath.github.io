@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - 'Scratch-Chat/capability/github_pilot.py'
+      - 'Scratch-Chat/capability/dialogue_corpus.py'
       - 'Scratch-Chat/capability/readiness_gate.py'
       - 'Scratch-Chat/tests/test_readiness_gate.py'
       - 'Scratch-Chat/capability/generation_probes.py'
@@ -44,6 +45,20 @@ jobs:
         run: python -m unittest discover -s tests -p "test_probe_scoring.py" -v
       - name: Test fail-closed readiness gate
         run: python -m unittest discover -s tests -p "test_readiness_gate.py" -v
+      - name: Build original dialogue seed and validate split isolation
+        run: |
+          python -m capability.dialogue_corpus --out data/dialogue-seed > dialogue-seed-manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('data/dialogue-seed')
+          sets=[]
+          for split in ('train','validation','test'):
+              rows=[json.loads(x) for x in (d/(split+'.jsonl')).read_text().splitlines()]
+              assert rows and all(isinstance(r['text'],str) and r['text'] for r in rows)
+              sets.append({r['family'] for r in rows})
+          assert not (sets[0]&sets[1] or sets[0]&sets[2] or sets[1]&sets[2])
+          PY
       - name: Download and provenance-record GitHub corpus
         run: python -m capability.github_pilot --out data/github-pilot
       - name: Train from random initialization
@@ -52,7 +67,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 2100 --width 64 --layers 2 --heads 4 \
+            --steps 2400 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
@@ -88,6 +103,7 @@ jobs:
           cp github-pilot-probes.json training-results/github-pilot-probes.json
           cp github-pilot-probe-scores.json training-results/github-pilot-probe-scores.json
           cp data/github-pilot/source.json training-results/github-pilot-source.json
+          cp data/dialogue-seed/source.json training-results/dialogue-seed-source.json
           cp github-pilot-readiness.json training-results/github-pilot-readiness.json
           python -c 'import json,os,pathlib; e=json.loads(pathlib.Path("github-pilot-evaluation.json").read_text()); pathlib.Path("training-results/github-pilot-status.json").write_text(json.dumps({"run_id":os.environ["GITHUB_RUN_ID"],"commit":os.environ["GITHUB_SHA"],"state":"completed","checkpoint_artifact":"scratch-chat-github-pilot","evaluation":e},indent=2))'
           git config user.name 'github-actions[bot]'
@@ -123,6 +139,8 @@ jobs:
             Scratch-Chat/checkpoints/github-pilot.pt
             Scratch-Chat/data/github-pilot/tokenizer.json
             Scratch-Chat/data/github-pilot/source.json
+            Scratch-Chat/data/dialogue-seed/
+            Scratch-Chat/dialogue-seed-manifest.json
             Scratch-Chat/github-pilot-train.json
             Scratch-Chat/github-pilot-evaluation.json
             Scratch-Chat/github-pilot-probes.json
