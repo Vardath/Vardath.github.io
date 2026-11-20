@@ -1,0 +1,62 @@
+{
+  "purpose": "direct standalone conversation probes; not an intelligence score",
+  "questions": 6,
+  "flagged_answers": 6,
+  "human_review_required": true,
+  "results": [
+    {
+      "category": "greeting",
+      "prompt": "Hi there, can we talk about something new?",
+      "answer": "                                                ",
+      "flags": [
+        "blank_or_whitespace_only"
+      ],
+      "elapsed_seconds": 0.053
+    },
+    {
+      "category": "factual",
+      "prompt": "Explain what causes a rainbow.",
+      "answer": "A                                               ",
+      "flags": [
+        "extremely_short"
+      ],
+      "elapsed_seconds": 0.038
+    },
+    {
+      "category": "reasoning",
+      "prompt": "If I have four apples and give away two, how many remain?",
+      "answer": "                                                ",
+      "flags": [
+        "blank_or_whitespace_only"
+      ],
+      "elapsed_seconds": 0.044
+    },
+    {
+      "category": "instructions",
+      "prompt": "Write exactly three short sentences about forests.",
+      "answer": "                                                ",
+      "flags": [
+        "blank_or_whitespace_only"
+      ],
+      "elapsed_seconds": 0.046
+    },
+    {
+      "category": "explanation",
+      "prompt": "What is the difference between a planet and a star?",
+      "answer": "                                                ",
+      "flags": [
+        "blank_or_whitespace_only"
+      ],
+      "elapsed_seconds": 0.043
+    },
+    {
+      "category": "uncertainty",
+      "prompt": "Tell me a fact that you are unsure about.",
+      "answer": "                                                ",
+      "flags": [
+        "blank_or_whitespace_only"
+      ],
+      "elapsed_seconds": 0.056
+    }
+  ]
+}
