@@ -14,7 +14,7 @@
     "train_loss": 3.159264,
     "validation": {
       "loss": 3.211487,
-      "perplexity": 24.815952,
+      "perplexity": 24.81595,
       "tokens_evaluated": 2048
     }
   }
