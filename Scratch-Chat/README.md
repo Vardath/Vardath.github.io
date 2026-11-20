@@ -122,3 +122,17 @@ Step 4 adds masked-answer supervised chat training (`capability/instruct.py`) wi
 Windows: `21-v04-Prepare-Chat-Pilot.cmd`, `22-v04-Train-Chat-Pilot.cmd`, `23-v04-Evaluate-Chat.cmd`, and `24-v04-Chat-Pilot.cmd`. The ZIP already includes the best pilot checkpoint, so run evaluation/chat directly if you only want to inspect it. Do not re-train over an existing checkpoint accidentally.
 
 **Remaining language-model work:** obtain and train on a substantial broad text corpus, increase model capacity only when compute/data justify it, instruction-tune the actually pretrained base model, and demonstrate satisfactory responses to previously unseen questions. Number of additional development iterations cannot be accurately forecast without usable training data and compute.
+
+## Step 5: new standalone neural architecture and resumable training
+
+`capability/modern_model.py` implements a **second, independent from-scratch transformer architecture**, using causal self-attention with rotary positional embeddings (RoPE), RMSNorm and SwiGLU. No weights or tokenizer were downloaded from a pretrained model. Older models and checkpoints are unchanged and remain loadable by their original tools.
+
+`capability/modern_train.py` trains the new architecture from random initialization on the existing tokenizer and prepared corpus, with persistent optimizer and sampling states. It deliberately refuses to start the normal-sized run unless at least 1,000,000 **training tokens** are present. This is only a minimum safety guard, **not enough data for strong conversation**. A typical general-purpose language model needs far more data and compute.
+
+- `25-v05-Train-Modern.cmd`: 256-width, 8-layer, 8-head model (about 7.9 million parameters when trained with a 4096-token vocabulary), 2,048 context allocation, 256-token training windows, CPU. Before running it, prepare an appropriately licensed text corpus. The bundled 51-record sample is intentionally rejected.
+- `26-v05-Evaluate-Modern.cmd`: independently evaluate the held-out validation and test sets after training.
+- `python -m pytest -q`: run all automated tests including modern architecture, causal isolation, gradients, checkpoint recovery and minimum corpus safeguards.
+
+**Do not treat the smoke checkpoint as a useful conversational model.** `v05-modern-smoke.pt` is only 148,160 parameters and has seen 3,008 training tokens. The measured loss reduction on 116 held-out tokens proves the update mechanism works, not that it can converse. The 7.9M configuration was instantiated and parameter-counted, not fully trained. See `STEP5_MODEL_REPORT.md`.
+
+JANUS integration is deferred until actual free-form conversation demonstrates the language model is useful. The recovered Mindcore application is not part of this package.
