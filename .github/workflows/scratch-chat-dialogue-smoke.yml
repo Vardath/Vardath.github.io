@@ -1,0 +1,63 @@
+name: Scratch Chat original dialogue training smoke test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Scratch-Chat/capability/dialogue_corpus.py'
+      - 'Scratch-Chat/capability/modern_train.py'
+      - 'Scratch-Chat/capability/deepthort_bridge.py'
+      - 'Scratch-Chat/tests/test_dialogue_corpus.py'
+      - '.github/workflows/scratch-chat-dialogue-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  original-dialogue-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: Scratch-Chat
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU runtime
+        run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Validate original dialogue and bridge regression tests
+        run: |
+          python -m unittest discover -s tests -p 'test_dialogue_corpus.py' -v
+          python -m unittest discover -s tests -p 'test_deepthort_bridge.py' -v
+      - name: Build CC0 dialogue and tokenizer
+        run: |
+          python -m capability.dialogue_corpus --out data/dialogue-smoke
+          python -m capability.github_pilot --out data/tokenizer-source
+      - name: Train separate random-initialized dialogue checkpoint
+        run: |
+          python -m capability.modern_train train --corpus data/dialogue-smoke --tokenizer data/tokenizer-source/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt --steps 40 --width 64 --layers 2 --heads 4 --context-size 128 --seq-len 16 --batch 2 --grad-accum 1 --threads 2 --save-every 20 --eval-every 20 --min-train-tokens 0 --quiet > dialogue-smoke-train.json
+      - name: Evaluate isolated held-out task families
+        run: |
+          python -m capability.modern_train evaluate --corpus data/dialogue-smoke --tokenizer data/tokenizer-source/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt > dialogue-smoke-evaluation.json
+      - name: Exercise real DeepThorT JSON-line process interface
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          p = subprocess.run([sys.executable,'-m','capability.deepthort_bridge','--checkpoint','checkpoints/dialogue-smoke.pt','--tokenizer','data/tokenizer-source/tokenizer.json'], input='{"method":"health"}\n{"method":"chat","messages":[{"role":"user","content":"Hello"}],"max_new_tokens":8}\n{"method":"unknown"}\n', text=True, capture_output=True, timeout=90, check=True)
+          rows=[json.loads(x) for x in p.stdout.splitlines()]
+          assert len(rows)==3, (p.stdout,p.stderr)
+          assert rows[0]['ok'] and rows[0]['ready_for_conversation'] is False
+          assert rows[1]['ok'] and isinstance(rows[1]['response'],str)
+          assert rows[2]['ok'] is False
+          print(json.dumps({'protocol_pass':True,'responses':len(rows),'conversational_readiness':False}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scratch-chat-original-dialogue-smoke
+          retention-days: 30
+          path: |
+            Scratch-Chat/checkpoints/dialogue-smoke.pt
+            Scratch-Chat/data/tokenizer-source/tokenizer.json
+            Scratch-Chat/data/dialogue-smoke/source.json
+            Scratch-Chat/dialogue-smoke-train.json
+            Scratch-Chat/dialogue-smoke-evaluation.json
