@@ -7,6 +7,8 @@ on:
     paths:
       - 'Scratch-Chat/capability/github_pilot.py'
       - 'Scratch-Chat/capability/readiness_gate.py'
+      - 'Scratch-Chat/capability/deepthort_bridge.py'
+      - 'Scratch-Chat/tests/test_deepthort_bridge.py'
       - '.github/workflows/scratch-chat-github-pilot.yml'
 
 permissions:
@@ -26,6 +28,8 @@ jobs:
           python-version: '3.11'
       - name: Install CPU PyTorch
         run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Test DeepThorT integration bridge
+        run: python -m unittest discover -s tests -p 'test_deepthort_bridge.py' -v
       - name: Download and provenance-record GitHub corpus
         run: python -m capability.github_pilot --out data/github-pilot
       - name: Train from random initialization
