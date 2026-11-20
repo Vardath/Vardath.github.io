@@ -20,6 +20,16 @@ def assess(report: dict, *, corpus_kind: str = "literary-pilot", probe_scores: d
             raise ValueError("Invalid held-out loss")
         if metrics.get("tokens_evaluated", 0) < 1000:
             raise ValueError("Insufficient held-out tokens")
+    if probe_scores is not None:
+        if not isinstance(probe_scores, dict):
+            raise ValueError("Malformed probe scores")
+        checks = probe_scores.get("checks")
+        if not isinstance(checks, dict) or not checks or any(type(v) is not bool for v in checks.values()):
+            raise ValueError("Missing or invalid boolean probe checks")
+        if probe_scores.get("total") != len(checks) or probe_scores.get("passed") != sum(checks.values()):
+            raise ValueError("Inconsistent probe totals")
+        if probe_scores.get("checkpoint_step") != report.get("checkpoint_step"):
+            raise ValueError("Probe scores do not match evaluated checkpoint")
     return {
         "ready_for_conversation": False,
         "training_completed": True,
