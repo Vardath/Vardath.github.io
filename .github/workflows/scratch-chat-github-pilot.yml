@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: scratch-chat-pilot
+  cancel-in-progress: false
+
 jobs:
   github-text-pilot:
     runs-on: ubuntu-latest
@@ -40,7 +44,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 600 --width 64 --layers 2 --heads 4 \
+            --steps 900 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
@@ -68,9 +72,30 @@ jobs:
           python -c 'import json,os,pathlib; e=json.loads(pathlib.Path("github-pilot-evaluation.json").read_text()); pathlib.Path("training-results/github-pilot-status.json").write_text(json.dumps({"run_id":os.environ["GITHUB_RUN_ID"],"commit":os.environ["GITHUB_SHA"],"state":"completed","checkpoint_artifact":"scratch-chat-github-pilot","evaluation":e},indent=2))'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add training-results/
-          git commit -m 'Record Scratch Chat GitHub pilot training results [skip ci]' || exit 0
-          git push origin HEAD:main
+          # Rebase the publication onto the latest main so concurrent commits do not discard results.
+          # The output files are untracked by Git until staged; preserve them across fetch.
+          cp -r training-results /tmp/scratch-chat-training-results
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p training-results
+            cp /tmp/scratch-chat-training-results/* training-results/
+            git add training-results/
+            if git diff --cached --quiet; then
+              echo "Training results already published"
+              break
+            fi
+            git commit -m 'Record Scratch Chat GitHub pilot training results [skip ci]'
+            if git push origin HEAD:main; then
+              echo "Published training results"
+              break
+            fi
+            if [ "$attempt" = 5 ]; then
+              echo "Failed to publish results after five attempts" >&2
+              exit 1
+            fi
+            sleep $((attempt * 3))
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: scratch-chat-github-pilot
