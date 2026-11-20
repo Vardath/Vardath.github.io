@@ -39,3 +39,7 @@ The original v0.1 checkpoint remains separate and usable. See `STEP2_TRAINING_RE
 ## Step 4: independent supervised chat training
 
 The best included v0.4 pilot checkpoint has 496,032 original parameters, trained from random initialization on 35 toy dialogs with best held-out validation loss at step 100. Eight validation and eight test dialogs were not included in this supervised training run. The actual responses still contain repeated nonsensical words. **Do not describe this model as a capable general chat engine.** Neither JANUS integration nor release preparation is part of the active scope. See `STEP4_TRAINING_REPORT.md`.
+
+## Step 5 independent neural architecture
+
+New model code, resumable training and measured smoke results are documented in [STEP5_MODEL_REPORT.md](STEP5_MODEL_REPORT.md). The bundled `v05-modern-smoke.pt` is a fresh random-initialized test model trained for just 30 updates. **It does not provide useful chat**, and the 7.9M configuration has not been broadly pretrained. Original and older fine-tuned checkpoints are preserved; no API, JANUS or Mindcore integration has been attempted.
