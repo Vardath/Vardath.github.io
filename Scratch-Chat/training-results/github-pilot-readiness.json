@@ -1,14 +1,14 @@
 {
   "ready_for_conversation": false,
   "training_completed": true,
-  "checkpoint_step": 1800,
+  "checkpoint_step": 2100,
   "parameters": 139968,
-  "held_out_validation_loss": 3.176461,
-  "held_out_test_loss": 3.187714,
+  "held_out_validation_loss": 3.133385,
+  "held_out_test_loss": 3.14745,
   "development_probes": {
     "assessment_type": "fixed_probe_development_checks",
     "ready_for_conversation": false,
-    "checkpoint_step": 1800,
+    "checkpoint_step": 2100,
     "checks": {
       "basic_fact": false,
       "instruction": false,

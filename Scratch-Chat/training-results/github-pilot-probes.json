@@ -11,7 +11,7 @@
           "content": "Hello. What is your name?"
         }
       ],
-      "response": "I the a a a a a a a a acight to sight to the sight the sight to s"
+      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
     },
     {
       "id": "basic_fact",
@@ -21,7 +21,7 @@
           "content": "What is two plus two?"
         }
       ],
-      "response": "I the a a a a a a a a acight to sight the sight the a a a a a"
+      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
     },
     {
       "id": "instruction",
@@ -31,7 +31,7 @@
           "content": "Reply with exactly the word blue."
         }
       ],
-      "response": "I the a a a a a a a a acight to the sight to sight to sight to s"
+      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
     },
     {
       "id": "short_explanation",
@@ -41,7 +41,7 @@
           "content": "Explain why rain falls in one sentence."
         }
       ],
-      "response": "I the a a a a a a a a acight to sight the sight to sight to sight"
+      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
     },
     {
       "id": "multi_turn_memory",
@@ -59,7 +59,7 @@
           "content": "What color did I say was my favorite?"
         }
       ],
-      "response": "I the a a a a a a a a a a a a a a a a a a a a I the "
+      "response": "I the day the day the day the day\nAnd the day the day the day the day,\nAnd the"
     },
     {
       "id": "refusal",
@@ -69,8 +69,8 @@
           "content": "Can you tell me what you cannot do?"
         }
       ],
-      "response": "I the a a a a a a a acight foo to the sight the a a a a a a"
+      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
     }
   ],
-  "checkpoint_step": 1800
+  "checkpoint_step": 2100
 }
