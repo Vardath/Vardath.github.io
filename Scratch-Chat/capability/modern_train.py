@@ -121,6 +121,7 @@ def main():
         t.add_argument('--'+name,type=int,default=kw)
     t.add_argument('--lr',type=float,default=3e-4)
     t.add_argument('--resume',action='store_true')
+    t.add_argument('--quiet',action='store_true',help='Emit only final JSON for CI automation')
     e=s.add_parser('evaluate')
     e.add_argument('--corpus',type=Path,required=True)
     e.add_argument('--tokenizer',type=Path,required=True)
