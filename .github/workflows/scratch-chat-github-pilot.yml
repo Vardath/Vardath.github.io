@@ -10,6 +10,8 @@ on:
       - 'Scratch-Chat/capability/github_pilot.py'
       - 'Scratch-Chat/capability/readiness_gate.py'
       - 'Scratch-Chat/capability/generation_probes.py'
+      - 'Scratch-Chat/capability/probe_scoring.py'
+      - 'Scratch-Chat/tests/test_probe_scoring.py'
       - 'Scratch-Chat/capability/deepthort_bridge.py'
       - 'Scratch-Chat/tests/test_deepthort_bridge.py'
       - '.github/workflows/scratch-chat-github-pilot.yml'
@@ -37,6 +39,8 @@ jobs:
         run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
       - name: Test DeepThorT integration bridge
         run: python -m unittest discover -s tests -p "test_deepthort_bridge.py" -v
+      - name: Test scored generation diagnostics
+        run: python -m unittest discover -s tests -p "test_probe_scoring.py" -v
       - name: Download and provenance-record GitHub corpus
         run: python -m capability.github_pilot --out data/github-pilot
       - name: Train from random initialization
@@ -45,7 +49,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 1200 --width 64 --layers 2 --heads 4 \
+            --steps 1500 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
@@ -63,11 +67,14 @@ jobs:
             --checkpoint checkpoints/github-pilot.pt \
             --tokenizer data/github-pilot/tokenizer.json \
             --output github-pilot-probes.json
+      - name: Score generated answers against fixed development checks
+        run: python -m capability.probe_scoring --probes github-pilot-probes.json --output github-pilot-probe-scores.json
       - name: Validate machine-readable training reports
         run: |
           python -m json.tool github-pilot-train.json > /dev/null
           python -m json.tool github-pilot-evaluation.json > /dev/null
           python -m json.tool github-pilot-probes.json > /dev/null
+          python -m json.tool github-pilot-probe-scores.json > /dev/null
       - name: Assess conversational readiness without conflating language loss with dialogue ability
         run: python -m capability.readiness_gate --evaluation github-pilot-evaluation.json --output github-pilot-readiness.json
       - name: Publish verified metrics to repository
@@ -76,6 +83,7 @@ jobs:
           cp github-pilot-train.json training-results/github-pilot-train.json
           cp github-pilot-evaluation.json training-results/github-pilot-evaluation.json
           cp github-pilot-probes.json training-results/github-pilot-probes.json
+          cp github-pilot-probe-scores.json training-results/github-pilot-probe-scores.json
           cp data/github-pilot/source.json training-results/github-pilot-source.json
           cp github-pilot-readiness.json training-results/github-pilot-readiness.json
           python -c 'import json,os,pathlib; e=json.loads(pathlib.Path("github-pilot-evaluation.json").read_text()); pathlib.Path("training-results/github-pilot-status.json").write_text(json.dumps({"run_id":os.environ["GITHUB_RUN_ID"],"commit":os.environ["GITHUB_SHA"],"state":"completed","checkpoint_artifact":"scratch-chat-github-pilot","evaluation":e},indent=2))'
@@ -115,5 +123,6 @@ jobs:
             Scratch-Chat/github-pilot-train.json
             Scratch-Chat/github-pilot-evaluation.json
             Scratch-Chat/github-pilot-probes.json
+            Scratch-Chat/github-pilot-probe-scores.json
             Scratch-Chat/github-pilot-readiness.json
           retention-days: 30
