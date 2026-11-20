@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'Scratch-Chat/capability/github_pilot.py'
+      - 'Scratch-Chat/capability/readiness_gate.py'
       - '.github/workflows/scratch-chat-github-pilot.yml'
 
 permissions:
@@ -49,12 +50,15 @@ jobs:
         run: |
           python -m json.tool github-pilot-train.json > /dev/null
           python -m json.tool github-pilot-evaluation.json > /dev/null
+      - name: Assess conversational readiness without conflating language loss with dialogue ability
+        run: python -m capability.readiness_gate --evaluation github-pilot-evaluation.json --output github-pilot-readiness.json
       - name: Publish verified metrics to repository
         run: |
           mkdir -p training-results
           cp github-pilot-train.json training-results/github-pilot-train.json
           cp github-pilot-evaluation.json training-results/github-pilot-evaluation.json
           cp data/github-pilot/source.json training-results/github-pilot-source.json
+          cp github-pilot-readiness.json training-results/github-pilot-readiness.json
           python -c 'import json,os,pathlib; e=json.loads(pathlib.Path("github-pilot-evaluation.json").read_text()); pathlib.Path("training-results/github-pilot-status.json").write_text(json.dumps({"run_id":os.environ["GITHUB_RUN_ID"],"commit":os.environ["GITHUB_SHA"],"state":"completed","checkpoint_artifact":"scratch-chat-github-pilot","evaluation":e},indent=2))'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -70,4 +74,5 @@ jobs:
             Scratch-Chat/data/github-pilot/source.json
             Scratch-Chat/github-pilot-train.json
             Scratch-Chat/github-pilot-evaluation.json
+            Scratch-Chat/github-pilot-readiness.json
           retention-days: 30
