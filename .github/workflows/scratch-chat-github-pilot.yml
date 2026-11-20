@@ -2,6 +2,11 @@ name: Scratch Chat GitHub text training pilot
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Scratch-Chat/capability/github_pilot.py'
+      - '.github/workflows/scratch-chat-github-pilot.yml'
 
 permissions:
   contents: read
