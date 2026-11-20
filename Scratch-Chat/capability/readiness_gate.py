@@ -4,10 +4,11 @@ Loss reduction on literary text is not evidence of conversational ability.
 """
 import argparse
 import json
+import math
 from pathlib import Path
 
 
-def assess(report: dict, *, corpus_kind: str = "literary-pilot") -> dict:
+def assess(report: dict, *, corpus_kind: str = "literary-pilot", probe_scores: dict | None = None) -> dict:
     if not isinstance(report, dict) or "results" not in report:
         raise ValueError("Missing held-out evaluation")
     results = report["results"]
@@ -15,6 +16,8 @@ def assess(report: dict, *, corpus_kind: str = "literary-pilot") -> dict:
         metrics = results.get(split)
         if not isinstance(metrics, dict) or not isinstance(metrics.get("loss"), (int, float)):
             raise ValueError("Missing held-out " + split + " loss")
+        if not math.isfinite(metrics["loss"]) or metrics["loss"] < 0:
+            raise ValueError("Invalid held-out loss")
         if metrics.get("tokens_evaluated", 0) < 1000:
             raise ValueError("Insufficient held-out tokens")
     return {
@@ -24,6 +27,7 @@ def assess(report: dict, *, corpus_kind: str = "literary-pilot") -> dict:
         "parameters": report.get("parameters"),
         "held_out_validation_loss": results["validation"]["loss"],
         "held_out_test_loss": results["test"]["loss"],
+        "development_probes": probe_scores,
         "reason": (
             "Only literary next-token prediction has been measured. "
             "A diverse licensed corpus, independent dialogue evaluation, "
@@ -38,8 +42,10 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--evaluation", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--probe-scores", type=Path)
     a = p.parse_args()
-    verdict = assess(json.loads(a.evaluation.read_text(encoding="utf-8")))
+    scores = json.loads(a.probe_scores.read_text(encoding="utf-8")) if a.probe_scores else None
+    verdict = assess(json.loads(a.evaluation.read_text(encoding="utf-8")), probe_scores=scores)
     a.output.parent.mkdir(parents=True, exist_ok=True)
     a.output.write_text(json.dumps(verdict, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(verdict, indent=2))
