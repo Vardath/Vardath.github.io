@@ -1,6 +1,6 @@
 {
   "checkpoint": "checkpoints/github-pilot.pt",
-  "steps": 900,
+  "steps": 1200,
   "parameters": 139968,
   "train_tokens": 638872,
   "validation_tokens": 36551,
@@ -10,11 +10,11 @@
       "perplexity": 544.544335,
       "tokens_evaluated": 2048
     },
-    "step": 900,
-    "train_loss": 3.315552,
+    "step": 1200,
+    "train_loss": 3.273204,
     "validation": {
-      "loss": 3.432167,
-      "perplexity": 30.943627,
+      "loss": 3.341515,
+      "perplexity": 28.261905,
       "tokens_evaluated": 2048
     }
   }

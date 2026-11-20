@@ -1,15 +1,15 @@
 {
-  "checkpoint_step": 900,
+  "checkpoint_step": 1200,
   "parameters": 139968,
   "results": {
     "validation": {
-      "loss": 3.401114,
-      "perplexity": 29.997504,
+      "loss": 3.297531,
+      "perplexity": 27.045775,
       "tokens_evaluated": 20000
     },
     "test": {
-      "loss": 3.424582,
-      "perplexity": 30.7098,
+      "loss": 3.315982,
+      "perplexity": 27.54943,
       "tokens_evaluated": 20000
     }
   }

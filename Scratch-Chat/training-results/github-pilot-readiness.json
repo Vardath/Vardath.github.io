@@ -1,9 +1,9 @@
 {
   "ready_for_conversation": false,
   "training_completed": true,
-  "checkpoint_step": 900,
+  "checkpoint_step": 1200,
   "parameters": 139968,
-  "held_out_validation_loss": 3.401114,
-  "held_out_test_loss": 3.424582,
+  "held_out_validation_loss": 3.297531,
+  "held_out_test_loss": 3.315982,
   "reason": "Only literary next-token prediction has been measured. A diverse licensed corpus, independent dialogue evaluation, multi-turn tests and human assessment are required."
 }
