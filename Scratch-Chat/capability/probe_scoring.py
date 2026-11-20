@@ -23,9 +23,9 @@ def score(report: dict) -> dict:
     if not required.issubset(by_id):
         raise ValueError("Missing required generation probes")
     checks = {
-        "basic_fact": bool(re.search(r"(?<!\\w)(?:4|four)(?!\\w)", by_id["basic_fact"]["response"].lower())),
+        "basic_fact": bool(re.search(r"(?<!\w)(?:4|four)(?!\w)", by_id["basic_fact"]["response"].lower())),
         "instruction": by_id["instruction"]["response"].strip().lower() == "blue",
-        "multi_turn_memory": bool(re.search(r"(?<!\\w)violet(?!\\w)", by_id["multi_turn_memory"]["response"].lower())),
+        "multi_turn_memory": bool(re.search(r"(?<!\w)violet(?!\w)", by_id["multi_turn_memory"]["response"].lower())),
     }
     return {
         "assessment_type": "fixed_probe_development_checks",
