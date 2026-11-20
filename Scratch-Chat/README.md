@@ -136,3 +136,24 @@ Windows: `21-v04-Prepare-Chat-Pilot.cmd`, `22-v04-Train-Chat-Pilot.cmd`, `23-v04
 **Do not treat the smoke checkpoint as a useful conversational model.** `v05-modern-smoke.pt` is only 148,160 parameters and has seen 3,008 training tokens. The measured loss reduction on 116 held-out tokens proves the update mechanism works, not that it can converse. The 7.9M configuration was instantiated and parameter-counted, not fully trained. See `STEP5_MODEL_REPORT.md`.
 
 JANUS integration is deferred until actual free-form conversation demonstrates the language model is useful. The recovered Mindcore application is not part of this package.
+
+---
+
+## Step 7 — Vardath Scratch Chat standalone, not DeepThorT
+
+`DeepThorT` names the future autonomous project application. The independently
+trained language model is still **Vardath Scratch Chat**. The historical v0.6
+checkpoint format identifier is retained solely for backwards compatibility.
+
+Step 7 adds a local API for the modern transformer checkpoint, configurable
+generation, direct-generated-response probes, and a trainer capable of reading
+SHA-256-validated memory-mapped token files. It also supports CUDA and mixed
+precision *when supported by the host*, with CPU remaining the default.
+
+- Run `30-v07-Run-Modern-Chat-API.cmd` to start a localhost-only experimental API.
+- Run `31-v07-Measure-Actual-Chat.cmd` to inspect generated answers directly.
+- Read `STEP7_IMPLEMENTATION_AND_CAPABILITY_REPORT.md` for actual measurements.
+
+**The model does not yet answer open-ended questions coherently.** It needs
+substantial genuine language pretraining, not more API or interface work.
+Do not confuse the 54 passing engineering tests with chat capability.
