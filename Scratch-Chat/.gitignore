@@ -1,0 +1,16 @@
+# Do not publish private/large training material or weights in the public site repo
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.log
+*.pt
+*.safetensors
+*.gguf
+data/downloads/
+data/wikitext2/
+data/prepared/
+data/token-cache/
+reports/local-*/
+*.partial
