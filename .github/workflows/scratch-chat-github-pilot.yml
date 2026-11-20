@@ -9,7 +9,7 @@ on:
       - '.github/workflows/scratch-chat-github-pilot.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   github-text-pilot:
@@ -45,6 +45,29 @@ jobs:
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
             > github-pilot-evaluation.json
+      - name: Publish verified metrics to repository
+        run: |
+          mkdir -p training-results
+          cp github-pilot-train.json training-results/github-pilot-train.json
+          cp github-pilot-evaluation.json training-results/github-pilot-evaluation.json
+          cp data/github-pilot/source.json training-results/github-pilot-source.json
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          evaluation = json.loads(Path('github-pilot-evaluation.json').read_text())
+          Path('training-results/github-pilot-status.json').write_text(json.dumps({
+            'run_id': os.environ['GITHUB_RUN_ID'],
+            'commit': os.environ['GITHUB_SHA'],
+            'state': 'completed',
+            'checkpoint_artifact': 'scratch-chat-github-pilot',
+            'evaluation': evaluation
+          }, indent=2))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add training-results/
+          git commit -m 'Record Scratch Chat GitHub pilot training results' || exit 0
+          git push origin HEAD:main
       - uses: actions/upload-artifact@v4
         with:
           name: scratch-chat-github-pilot
