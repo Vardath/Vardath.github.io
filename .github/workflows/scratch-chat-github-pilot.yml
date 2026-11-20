@@ -9,6 +9,7 @@ on:
     paths:
       - 'Scratch-Chat/capability/github_pilot.py'
       - 'Scratch-Chat/capability/dialogue_corpus.py'
+      - 'Scratch-Chat/tests/test_dialogue_corpus.py'
       - 'Scratch-Chat/capability/readiness_gate.py'
       - 'Scratch-Chat/tests/test_readiness_gate.py'
       - 'Scratch-Chat/capability/generation_probes.py'
@@ -45,6 +46,8 @@ jobs:
         run: python -m unittest discover -s tests -p "test_probe_scoring.py" -v
       - name: Test fail-closed readiness gate
         run: python -m unittest discover -s tests -p "test_readiness_gate.py" -v
+      - name: Test dialogue corpus provenance and leakage
+        run: python -m unittest discover -s tests -p "test_dialogue_corpus.py" -v
       - name: Build original dialogue seed and validate split isolation
         run: |
           python -m capability.dialogue_corpus --out data/dialogue-seed > dialogue-seed-manifest.json
@@ -67,7 +70,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 2400 --width 64 --layers 2 --heads 4 \
+            --steps 2700 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
