@@ -4,12 +4,12 @@
   "results": {
     "validation": {
       "loss": 4.00976,
-      "perplexity": 55.133616,
+      "perplexity": 55.133615,
       "tokens_evaluated": 20000
     },
     "test": {
       "loss": 4.04313,
-      "perplexity": 57.004516,
+      "perplexity": 57.004515,
       "tokens_evaluated": 20000
     }
   }
