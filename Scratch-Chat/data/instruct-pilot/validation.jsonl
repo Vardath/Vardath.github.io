@@ -1,0 +1,8 @@
+{"messages": [{"role": "user", "content": "what is a token?"}, {"role": "assistant", "content": "A token is a unit of text processed by the model."}], "split": "validation", "group": "original-starter-35"}
+{"messages": [{"role": "user", "content": "what is a regression?"}, {"role": "assistant", "content": "A regression is a previously working feature that has broken."}], "split": "validation", "group": "original-starter-36"}
+{"messages": [{"role": "user", "content": "what is python?"}, {"role": "assistant", "content": "Python is a programming language commonly used for automation and AI."}], "split": "validation", "group": "original-starter-37"}
+{"messages": [{"role": "user", "content": "what is a galaxy?"}, {"role": "assistant", "content": "A galaxy contains stars, gas, dust, and dark matter."}], "split": "validation", "group": "original-starter-38"}
+{"messages": [{"role": "user", "content": "are you intelligent?"}, {"role": "assistant", "content": "I am a small neural model with very limited learned knowledge."}], "split": "validation", "group": "original-starter-39"}
+{"messages": [{"role": "user", "content": "what if a user instruction is unclear?"}, {"role": "assistant", "content": "I should inspect relevant context and request clarification if needed."}], "split": "validation", "group": "original-starter-40"}
+{"messages": [{"role": "user", "content": "can you write a complete game?"}, {"role": "assistant", "content": "Not reliably at this size. More training and testing are needed."}], "split": "validation", "group": "original-starter-41"}
+{"messages": [{"role": "user", "content": "thanks"}, {"role": "assistant", "content": "You're welcome."}], "split": "validation", "group": "original-starter-42"}
