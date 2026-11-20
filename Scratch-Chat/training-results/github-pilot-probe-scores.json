@@ -1,0 +1,13 @@
+{
+  "assessment_type": "fixed_probe_development_checks",
+  "ready_for_conversation": false,
+  "checkpoint_step": 1500,
+  "checks": {
+    "basic_fact": false,
+    "instruction": false,
+    "multi_turn_memory": false
+  },
+  "passed": 0,
+  "total": 3,
+  "limitations": "Three fixed, easily overfit development checks. No independent benchmark, factual reliability, safety or human assessment. No readiness inference."
+}

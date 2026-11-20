@@ -11,7 +11,7 @@
           "content": "Hello. What is your name?"
         }
       ],
-      "response": "I the the a a a a a a a apight\nI the a a a a the the a the the s"
+      "response": "I the to to to to to to to to to to sight to sight to to to to to to to "
     },
     {
       "id": "basic_fact",
@@ -21,7 +21,7 @@
           "content": "What is two plus two?"
         }
       ],
-      "response": "I the a a a a a a a a apight\nI the a a a the the a a a a s"
+      "response": "I the to to to to to to to to to sight to sight to to to to to to to to "
     },
     {
       "id": "instruction",
@@ -31,7 +31,7 @@
           "content": "Reply with exactly the word blue."
         }
       ],
-      "response": "I the a a a a a a a a apight\nI the the the a a sight sight the s"
+      "response": "I the to to to to to to to to to sight to to to to to to sight to to to "
     },
     {
       "id": "short_explanation",
@@ -41,7 +41,7 @@
           "content": "Explain why rain falls in one sentence."
         }
       ],
-      "response": "I the the a a a a a a a apight\nI the the a sight the sight the a s"
+      "response": "I the to to to to to to to to to to to to to to to to sight to to to to "
     },
     {
       "id": "multi_turn_memory",
@@ -59,7 +59,7 @@
           "content": "What color did I say was my favorite?"
         }
       ],
-      "response": "the sight the the the the a sight the sight I the the sight the sight I I the "
+      "response": "I the to to to to to to to to to to to to to to to to to to to to to to "
     },
     {
       "id": "refusal",
@@ -69,8 +69,8 @@
           "content": "Can you tell me what you cannot do?"
         }
       ],
-      "response": "I the a a a a a a a apight\nI the a a a the a a a a a sight"
+      "response": "I the to to to to to to to to to to sight to to to to to to to to to to "
     }
   ],
-  "checkpoint_step": 1200
+  "checkpoint_step": 1500
 }
