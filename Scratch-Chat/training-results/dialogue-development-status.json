@@ -1,0 +1,34 @@
+{
+  "project": "Scratch Chat original random-initialization dialogue model",
+  "updated_utc": "2026-11-20T23:42:00Z",
+  "last_verified_run": {
+    "id": 44827995370,
+    "conclusion": "success",
+    "commit": "8bdaf6c6353d9cefc5eac42223a165cad0331e7a",
+    "artifact_id": 14675515651,
+    "artifact_sha256": "79583377f782b641c4d64722ff798fe03ea8385643aa202586209e72d568bc98",
+    "steps": 40,
+    "training_data_examples": 18,
+    "checks": "tokenizer provenance, held-out evaluation, JSON-line bridge health/chat/error passed",
+    "capability_scores": "not reported in completed run"
+  },
+  "next_run": {
+    "trigger_commit": "ae838ad6c9f47a68aae7b50a0f2c0b69de2d22c6",
+    "execution": "unverified",
+    "new_checks": [
+      "arithmetic",
+      "instruction",
+      "multi-turn recall",
+      "tool boundary"
+    ]
+  },
+  "readiness": "not ready",
+  "blockers": [
+    "18 examples cannot establish conversational ability",
+    "no independently verified capability pass",
+    "no tool invocation interface",
+    "no licensed large-scale dialogue corpus",
+    "no confirmed GPU allocation"
+  ],
+  "notes": "Shakespeare pilot excluded from conversational readiness evidence. Training remains from random initialization. CPU Actions are bounded smoke tests."
+}
