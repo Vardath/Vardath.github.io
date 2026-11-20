@@ -6,6 +6,7 @@ on:
     paths:
       - 'Scratch-Chat/capability/dialogue_corpus.py'
       - 'Scratch-Chat/capability/dialogue_tokenizer.py'
+      - 'Scratch-Chat/capability/dialogue_acceptance.py'
       - 'Scratch-Chat/capability/modern_train.py'
       - 'Scratch-Chat/capability/deepthort_bridge.py'
       - 'Scratch-Chat/tests/test_dialogue_corpus.py'
@@ -52,6 +53,10 @@ jobs:
           assert rows[2]['ok'] is False
           print(json.dumps({'protocol_pass':True,'responses':len(rows),'conversational_readiness':False}))
           PY
+      - name: Run independent held-out multi-turn and tool-boundary diagnostics
+        run: |
+          python -m capability.dialogue_acceptance --checkpoint checkpoints/dialogue-smoke.pt --tokenizer data/dialogue-smoke/tokenizer.json --output dialogue-acceptance.json
+          python -m json.tool dialogue-acceptance.json > /dev/null
       - uses: actions/upload-artifact@v4
         with:
           name: scratch-chat-original-dialogue-smoke
@@ -63,3 +68,4 @@ jobs:
             Scratch-Chat/dialogue-tokenizer-provenance.json
             Scratch-Chat/dialogue-smoke-train.json
             Scratch-Chat/dialogue-smoke-evaluation.json
+            Scratch-Chat/dialogue-acceptance.json
