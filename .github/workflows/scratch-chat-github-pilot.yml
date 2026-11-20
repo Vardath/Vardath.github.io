@@ -49,7 +49,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 1500 --width 64 --layers 2 --heads 4 \
+            --steps 1800 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
@@ -76,7 +76,7 @@ jobs:
           python -m json.tool github-pilot-probes.json > /dev/null
           python -m json.tool github-pilot-probe-scores.json > /dev/null
       - name: Assess conversational readiness without conflating language loss with dialogue ability
-        run: python -m capability.readiness_gate --evaluation github-pilot-evaluation.json --output github-pilot-readiness.json
+        run: python -m capability.readiness_gate --evaluation github-pilot-evaluation.json --probe-scores github-pilot-probe-scores.json --output github-pilot-readiness.json
       - name: Publish verified metrics to repository
         run: |
           mkdir -p training-results
