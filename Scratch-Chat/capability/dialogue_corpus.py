@@ -20,6 +20,36 @@ SPLITS = {"train": ("arithmetic", "format", "conversation", "uncertainty"),
           "validation": ("explanation",),
           "test": ("reasoning",)}
 
+def validate(out: Path):
+    """Check manifest digests, split isolation and duplicate dialogue leakage."""
+    manifest = json.loads((out / "source.json").read_text(encoding="utf-8"))
+    if manifest.get("license") != "CC0-1.0":
+        raise ValueError("Unexpected dialogue provenance")
+    families_seen = set()
+    texts_seen = set()
+    for split in ("train", "validation", "test"):
+        payload = (out / (split + ".jsonl")).read_bytes()
+        if hashlib.sha256(payload).hexdigest() != manifest["sha256"][split]:
+            raise ValueError("Corpus digest mismatch: " + split)
+        rows = [json.loads(line) for line in payload.decode("utf-8").splitlines()]
+        if len(rows) != manifest["examples"][split] or not rows:
+            raise ValueError("Corpus count mismatch: " + split)
+        families = set()
+        for row in rows:
+            if set(row) != {"text", "family"} or not isinstance(row["text"], str) or not isinstance(row["family"], str):
+                raise ValueError("Malformed dialogue row")
+            if not row["text"].startswith("User: ") or "\\nAssistant: " not in row["text"]:
+                raise ValueError("Malformed dialogue turns")
+            if row["text"] in texts_seen:
+                raise ValueError("Dialogue leakage across rows or splits")
+            texts_seen.add(row["text"])
+            families.add(row["family"])
+        if families & families_seen:
+            raise ValueError("Task family leakage between splits")
+        families_seen.update(families)
+    return {"validated": True, "examples": len(texts_seen), "families": len(families_seen)}
+
+
 def build(out: Path):
     out.mkdir(parents=True, exist_ok=True)
     hashes = {}
@@ -37,6 +67,7 @@ def build(out: Path):
                 "examples": {s: sum(len(FAMILIES[f]) for f in fs) for s, fs in SPLITS.items()},
                 "sha256": hashes, "warning": "Tiny authored seed; insufficient for a capable conversational model."}
     (out / "source.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    validate(out)
     return manifest
 
 if __name__ == "__main__":
