@@ -14,7 +14,7 @@ permissions:
 jobs:
   github-text-pilot:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 75
     defaults:
       run:
         working-directory: Scratch-Chat
@@ -33,10 +33,10 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 30 --width 64 --layers 2 --heads 4 \
+            --steps 300 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
-            --grad-accum 1 --threads 2 --save-every 10 \
-            --eval-every 10 --min-train-tokens 1000 --quiet \
+            --grad-accum 1 --threads 2 --save-every 50 \
+            --eval-every 50 --min-train-tokens 1000 --quiet \
             > github-pilot-train.json
       - name: Evaluate held-out splits
         run: |
