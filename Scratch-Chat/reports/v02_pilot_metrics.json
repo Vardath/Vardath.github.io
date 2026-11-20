@@ -1,0 +1,16 @@
+{
+  "model": "v0.2 small pilot",
+  "parameters": 496032,
+  "context_capacity": 1024,
+  "training_steps": 120,
+  "training_tokens": 3008,
+  "validation_tokens": 117,
+  "test_tokens": 145,
+  "initial_training_loss_step_1": 6.4744,
+  "final_training_loss_step_120": 3.384482,
+  "validation_loss_step_120": 3.601951,
+  "test_loss_step_120": 3.931055,
+  "test_perplexity": 50.960719,
+  "unseen_generated_continuation_example": " and coi, is weights a not exit.",
+  "conclusion": "Pretraining and checkpoint pipeline works; the model is not a capable assistant."
+}
