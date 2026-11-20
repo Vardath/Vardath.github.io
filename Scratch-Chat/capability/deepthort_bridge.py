@@ -60,7 +60,7 @@ def respond(model, tok, messages, *, max_new_tokens=64):
             break
         ids.append(nxt)
         generated.append(nxt)
-    return tok.decode(generated)
+    return b''.join(tok.byte_values[i] for i in generated).decode('utf-8', errors='replace')
 
 
 def serve(model, tok, checkpoint_state):
