@@ -36,7 +36,7 @@ jobs:
             --steps 30 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 10 \
-            --eval-every 10 --min-train-tokens 1000 \
+            --eval-every 10 --min-train-tokens 1000 --quiet \
             > github-pilot-train.json
       - name: Evaluate held-out splits
         run: |
