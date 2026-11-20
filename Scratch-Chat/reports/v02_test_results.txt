@@ -1,0 +1,25 @@
+test_completion (test_api.APITests.test_completion) ... ok
+test_models (test_api.APITests.test_models) ... ok
+test_streaming_rejected_explicitly (test_api.APITests.test_streaming_rejected_explicitly) ... ok
+test_chat_fields_preserved (test_capability.CorpusTests.test_chat_fields_preserved) ... ok
+test_provenance_dedup_and_group_boundaries (test_capability.CorpusTests.test_provenance_dedup_and_group_boundaries) ... ok
+test_reject_unlicensed_corpus (test_capability.CorpusTests.test_reject_unlicensed_corpus) ... ok
+test_bytes_unambiguous (test_capability.TokenizerTests.test_bytes_unambiguous) ... ok
+test_file_format (test_capability.TokenizerTests.test_file_format) ... ok
+test_no_merges_still_lossless (test_capability.TokenizerTests.test_no_merges_still_lossless) ... ok
+test_actual_trained_weights (test_core.ScratchChatTests.test_actual_trained_weights) ... ok
+test_chat_prompt_ends_with_assistant_marker (test_core.ScratchChatTests.test_chat_prompt_ends_with_assistant_marker) ... ok
+test_model_causality (test_core.ScratchChatTests.test_model_causality) ... ok
+test_train_targets_only_assistant (test_core.ScratchChatTests.test_train_targets_only_assistant) ... ok
+test_unicode_round_trip (test_core.ScratchChatTests.test_unicode_round_trip) ... ok
+test_10m_scale_config_and_gradients (test_pretrain.PretrainingTests.test_10m_scale_config_and_gradients) ... ok
+test_memory_mapped_corpus_equivalent_and_integrity_check (test_pretrain.PretrainingTests.test_memory_mapped_corpus_equivalent_and_integrity_check) ... ok
+test_pack_and_eval (test_pretrain.PretrainingTests.test_pack_and_eval) ... ok
+test_reject_changed_tokenizer_on_resume (test_pretrain.PretrainingTests.test_reject_changed_tokenizer_on_resume) ... ok
+test_reproducible_resume_with_optimizer_and_rng (test_pretrain.PretrainingTests.test_reproducible_resume_with_optimizer_and_rng) ... ok
+test_role_ids_not_accidentally_text_and_no_external_weights (test_pretrain.PretrainingTests.test_role_ids_not_accidentally_text_and_no_external_weights) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.693s
+
+OK
