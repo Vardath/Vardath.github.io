@@ -45,28 +45,21 @@ jobs:
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
             > github-pilot-evaluation.json
+      - name: Validate machine-readable training reports
+        run: |
+          python -m json.tool github-pilot-train.json > /dev/null
+          python -m json.tool github-pilot-evaluation.json > /dev/null
       - name: Publish verified metrics to repository
         run: |
           mkdir -p training-results
           cp github-pilot-train.json training-results/github-pilot-train.json
           cp github-pilot-evaluation.json training-results/github-pilot-evaluation.json
           cp data/github-pilot/source.json training-results/github-pilot-source.json
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          evaluation = json.loads(Path('github-pilot-evaluation.json').read_text())
-          Path('training-results/github-pilot-status.json').write_text(json.dumps({
-            'run_id': os.environ['GITHUB_RUN_ID'],
-            'commit': os.environ['GITHUB_SHA'],
-            'state': 'completed',
-            'checkpoint_artifact': 'scratch-chat-github-pilot',
-            'evaluation': evaluation
-          }, indent=2))
-          PY
+          python -c 'import json,os,pathlib; e=json.loads(pathlib.Path("github-pilot-evaluation.json").read_text()); pathlib.Path("training-results/github-pilot-status.json").write_text(json.dumps({"run_id":os.environ["GITHUB_RUN_ID"],"commit":os.environ["GITHUB_SHA"],"state":"completed","checkpoint_artifact":"scratch-chat-github-pilot","evaluation":e},indent=2))'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add training-results/
-          git commit -m 'Record Scratch Chat GitHub pilot training results' || exit 0
+          git commit -m 'Record Scratch Chat GitHub pilot training results [skip ci]' || exit 0
           git push origin HEAD:main
       - uses: actions/upload-artifact@v4
         with:
