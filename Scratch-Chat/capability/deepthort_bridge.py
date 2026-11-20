@@ -36,18 +36,23 @@ def load_model(checkpoint: Path, tokenizer: Path):
 def respond(model, tok, messages, *, max_new_tokens=64):
     if not isinstance(messages, list) or not messages:
         raise ValueError("messages must be a nonempty array")
-    if not 1 <= max_new_tokens <= 512:
+    if not isinstance(max_new_tokens, int) or isinstance(max_new_tokens, bool) or not 1 <= max_new_tokens <= 512:
         raise ValueError("max_new_tokens must be 1..512")
+    if len(messages) > 128:
+        raise ValueError("Too many messages (maximum 128)")
     prompt = ""
     for item in messages:
         if not isinstance(item, dict) or item.get("role") not in ("system", "user", "assistant") or not isinstance(item.get("content"), str):
             raise ValueError("Invalid message")
+        if len(item["content"]) > 16000:
+            raise ValueError("Message exceeds 16000 characters")
         prompt += item["role"].capitalize() + ": " + item["content"] + "\n"
     prompt += "Assistant: "
     ids = tok.encode(prompt)
     if not ids:
         raise ValueError("Empty prompt")
     generated = []
+    stop_markers = (b"\nUser:", b"\nSystem:", b"\nAssistant:")
     eos = tok.special.get("<|eos|>")
     for _ in range(max_new_tokens):
         x = torch.tensor([ids[-model.cfg.context_size:]], dtype=torch.long)
@@ -60,7 +65,9 @@ def respond(model, tok, messages, *, max_new_tokens=64):
             break
         ids.append(nxt)
         generated.append(nxt)
-    return b''.join(tok.byte_values[i] for i in generated).decode('utf-8', errors='replace')
+        if any(marker in b"".join(tok.byte_values[i] for i in generated) for marker in stop_markers):
+            break
+    return b''.join(tok.byte_values[i] for i in generated).split(b'\nUser:', 1)[0].split(b'\nSystem:', 1)[0].split(b'\nAssistant:', 1)[0].decode('utf-8', errors='replace')
 
 
 def serve(model, tok, checkpoint_state):
