@@ -11,7 +11,7 @@
           "content": "Hello. What is your name?"
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
+      "response": "I the dight the dight the dight.\n\nKING CHARD II:\nI sight the dight si"
     },
     {
       "id": "basic_fact",
@@ -21,7 +21,7 @@
           "content": "What is two plus two?"
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
+      "response": "I the dight the dight the dight.\n\nKING CHARD II:\nI she sight the dight"
     },
     {
       "id": "instruction",
@@ -31,7 +31,7 @@
           "content": "Reply with exactly the word blue."
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
+      "response": "I the dight the dight the dight.\n\nKING OLET:\nI she sight sight sight "
     },
     {
       "id": "short_explanation",
@@ -41,7 +41,7 @@
           "content": "Explain why rain falls in one sentence."
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
+      "response": "I the dight the dight the dight\nI s sight the dight sight sight sight\nI "
     },
     {
       "id": "multi_turn_memory",
@@ -59,7 +59,7 @@
           "content": "What color did I say was my favorite?"
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day,\nAnd the"
+      "response": "I the dight the dight sight sight\nI she sight the dight the dight I I s"
     },
     {
       "id": "refusal",
@@ -69,8 +69,8 @@
           "content": "Can you tell me what you cannot do?"
         }
       ],
-      "response": "I the day the day the day the day\nAnd the day the day the day the day the day"
+      "response": "I the dight the dight the dight.\n\nKING CHARD II:\nI she sight the dight"
     }
   ],
-  "checkpoint_step": 2100
+  "checkpoint_step": 2400
 }

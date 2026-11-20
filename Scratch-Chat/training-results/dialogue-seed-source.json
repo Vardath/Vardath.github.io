@@ -1,0 +1,17 @@
+{
+  "license": "CC0-1.0",
+  "origin": "Original examples authored for this repository",
+  "purpose": "Data-format and split-isolation smoke test only",
+  "split_policy": "Disjoint task families; no family shared across splits",
+  "examples": {
+    "train": 12,
+    "validation": 3,
+    "test": 3
+  },
+  "sha256": {
+    "train": "7432573cf8169bedb8790eacda4d4f007a715735a47ba4461f554ea87a50d4a1",
+    "validation": "e4fd7c547f757bb31f6660a12904da26c7667d6969312b4425e04c784100a1d9",
+    "test": "fdad62a190b2bbd4146b19af9f67a583d31149c0a95e5d09f96926f564fdbe98"
+  },
+  "warning": "Tiny authored seed; insufficient for a capable conversational model."
+}

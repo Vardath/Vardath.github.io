@@ -1,7 +1,7 @@
 {
   "assessment_type": "fixed_probe_development_checks",
   "ready_for_conversation": false,
-  "checkpoint_step": 2100,
+  "checkpoint_step": 2400,
   "checks": {
     "basic_fact": false,
     "instruction": false,
