@@ -38,7 +38,7 @@ def validate(out: Path):
         for row in rows:
             if set(row) != {"text", "family"} or not isinstance(row["text"], str) or not isinstance(row["family"], str):
                 raise ValueError("Malformed dialogue row")
-            if not row["text"].startswith("User: ") or "\\nAssistant: " not in row["text"]:
+            if not row["text"].startswith("User: ") or "\nAssistant: " not in row["text"]:
                 raise ValueError("Malformed dialogue turns")
             if row["text"] in texts_seen:
                 raise ValueError("Dialogue leakage across rows or splits")
