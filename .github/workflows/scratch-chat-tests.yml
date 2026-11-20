@@ -1,0 +1,36 @@
+name: Scratch Chat source tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'Scratch-Chat/**'
+      - '.github/workflows/scratch-chat-tests.yml'
+  pull_request:
+    paths:
+      - 'Scratch-Chat/**'
+      - '.github/workflows/scratch-chat-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: Scratch-Chat
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: Scratch-Chat/requirements.txt
+      - name: Install CPU PyTorch
+        run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Run existing test suite
+        run: python -m unittest discover -s tests -v
+      - name: Check Python source compiles
+        run: python -m compileall -q capability vardath_chat
