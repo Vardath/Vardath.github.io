@@ -1,9 +1,6 @@
-step 10 training 5.972547 held-out 5.971452
-step 20 training 5.803291 held-out 5.786686
-step 30 training 5.655385 held-out 5.637605
 {
   "checkpoint": "checkpoints/github-pilot.pt",
-  "steps": 30,
+  "steps": 300,
   "parameters": 139968,
   "train_tokens": 638872,
   "validation_tokens": 36551,
@@ -13,11 +10,11 @@ step 30 training 5.655385 held-out 5.637605
       "perplexity": 544.544335,
       "tokens_evaluated": 2048
     },
-    "step": 30,
-    "train_loss": 5.655385,
+    "step": 300,
+    "train_loss": 3.832026,
     "validation": {
-      "loss": 5.637605,
-      "perplexity": 280.789413,
+      "loss": 4.009384,
+      "perplexity": 55.112895,
       "tokens_evaluated": 2048
     }
   }
