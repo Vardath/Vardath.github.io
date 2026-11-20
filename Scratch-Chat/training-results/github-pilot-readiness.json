@@ -5,5 +5,6 @@
   "parameters": 139968,
   "held_out_validation_loss": 3.232042,
   "held_out_test_loss": 3.244583,
+  "development_probes": null,
   "reason": "Only literary next-token prediction has been measured. A diverse licensed corpus, independent dialogue evaluation, multi-turn tests and human assessment are required."
 }
