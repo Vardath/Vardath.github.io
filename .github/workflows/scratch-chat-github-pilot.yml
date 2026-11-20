@@ -2,6 +2,8 @@ name: Scratch Chat GitHub text training pilot
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '37 2 * * *'
   push:
     branches: [main]
     paths:
@@ -38,7 +40,7 @@ jobs:
             --corpus data/github-pilot \
             --tokenizer data/github-pilot/tokenizer.json \
             --checkpoint checkpoints/github-pilot.pt \
-            --steps 300 --width 64 --layers 2 --heads 4 \
+            --steps 600 --width 64 --layers 2 --heads 4 \
             --context-size 128 --seq-len 64 --batch 2 \
             --grad-accum 1 --threads 2 --save-every 50 \
             --eval-every 50 --min-train-tokens 1000 --quiet \
