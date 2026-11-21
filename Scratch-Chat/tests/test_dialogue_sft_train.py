@@ -34,6 +34,8 @@ class SFTTrainTests(unittest.TestCase):
             result = run(train, valid, checkpoint, vocab_size=16, steps=1,
                          width=16, layers=1, heads=2, context_size=16)
             self.assertEqual(result["steps"], 1)
+            self.assertEqual(result["validation_supervised_tokens"], 2)
+            self.assertEqual(torch.load(checkpoint, weights_only=True)["validation_supervised_tokens"], 2)
             state = torch.load(checkpoint, weights_only=True)
             self.assertTrue(state["origin"].startswith("random initialization"))
             result = run(train, valid, checkpoint, vocab_size=16, steps=2,
