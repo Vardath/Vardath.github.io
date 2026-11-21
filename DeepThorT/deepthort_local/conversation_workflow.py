@@ -82,6 +82,27 @@ class ConversationStore:
                prompt_characters=len(prompt),attachments=len(attachments),legacy_job=source_job_id)
         return n
 
+    def cancel_chat_requests(self, chat_id: str, reason: str = 'Stopped by user') -> list[int]:
+        """Atomically revoke all unfinished replies in a chat, never requeue them.
+
+        This does not delete messages, prompts, drafts or any approved jobs.
+        Asynchronous/late worker results must check state before saving.
+        """
+        if not isinstance(chat_id, str) or not chat_id or not isinstance(reason, str) or not reason.strip():
+            raise ValueError('Chat identifier and cancellation reason required')
+        with self._db() as db:
+            ids = [int(row[0]) for row in db.execute(
+                "SELECT id FROM conversation_requests WHERE chat_id=? "
+                "AND state IN ('pending','running','waiting_sources') ORDER BY id", (chat_id,))]
+            if ids:
+                db.execute("UPDATE conversation_requests SET state='cancelled',detail=?,"
+                           "updated_at=CURRENT_TIMESTAMP WHERE chat_id=? "
+                           "AND state IN ('pending','running','waiting_sources')", (reason,chat_id))
+        for ident in ids:
+            record(self.path.parent,'conversation','conversation_cancelled',request_id=ident,
+                   reason=reason[:200])
+        return ids
+
     def get(self, ident):
         with self._db() as db:
             row=db.execute('SELECT * FROM conversation_requests WHERE id=?',(ident,)).fetchone()
