@@ -109,3 +109,16 @@ The user supplied `Screenshot (468).png` and `DeepThorT-Diagnostics-20261122-075
 
 **Verification:** 163 Linux/Xvfb local tests pass and the v17 ZIP integrity and JavaScript syntax checks pass. These are scripted tests; a technically complete model-authored Xenon PE draft, Windows inference success, X4 installability and gameplay remain unverified. The complete 40-pass run has already exhausted its cached responses; test the new strategy by requesting a **new draft plan** after installing v17. Do not increase the number of passes or claim success without analyzing the next planning telemetry.
 
+
+
+## v18 — chat close and inference stop (22 November 2026)
+
+The user reported that pressing Retry in an old chat occupied the single-flight local ONNX worker so a newly opened chat could not proceed, and there was no way to close a chat tab or cancel its running conversation. v18 was built from v17 **without altering** the original layout, 40-attempt planning rules, JANUS/Sentinel architecture or approval gates.
+
+The Chats toolbar now has **Close chat**, which archives the tab, stops its pending/running/waiting-source conversation requests and preserves durable transcript/drafts. Right-click the chat tabs to reopen archived chats. The existing lower action row now has **Stop reply**, which cancels only the selected chat's outstanding conversation requests, not approved jobs or other chats. A cancelled request remains cancelled across restarts, rather than becoming pending automatically.
+
+If the cancelled request owns the currently running ONNX model, the desktop terminates its supervised Node/worker process and restarts a fresh supervised model **after confirmed process exit**; another queued chat can run after the model reloads. The source planner checks for cancellation between passes and late HTTP errors/results are ignored when the original request is no longer active. This is a process-level cancellation, not instant asynchronous interruption of the ONNX pipeline. Existing work queue cancellation controls remain separate. Stop AI still pauses the model globally; use Stop reply for definitive per-chat cancellation.
+
+**Validation:** 170 local Python tests passed when run as isolated modules under Xvfb (7 new cancellation tests). The single-process all-test run hit existing Tkinter asynchronous teardown crashes and is **not** claimed to have passed. Live Windows worker termination, automatic reload and subsequent successful reply have not been tested on the user's PC. The v18 ZIP was integrity-checked and packaged without model weights, state or user projects. GitHub is source-synchronized, with blob hashes checked against the ZIP. Do not claim Github CI is green without its actual status result.
+
+Next real-world check: open two chats, start a long response in A, queue B, select A and press Stop reply (or Close chat); confirm A is cancelled, the old ONNX process exits, the new model reloads, and B progresses. Confirm closing/reopening chat retains the full transcript. If this fails, export diagnostics and inspect relevant events; do not silently increase retry limits or redesign the interface.
