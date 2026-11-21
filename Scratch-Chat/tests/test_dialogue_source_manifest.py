@@ -1,5 +1,9 @@
+import hashlib
+import json
+import tempfile
 import unittest
-from capability.dialogue_source_manifest import validate_manifest
+from pathlib import Path
+from capability.dialogue_source_manifest import validate_manifest, verify_split_files
 
 H = lambda char: char * 64
 
@@ -45,6 +49,31 @@ class SourceManifestTests(unittest.TestCase):
         self.data["train_records"] = 0
         with self.assertRaises(ValueError):
             validate_manifest(self.data)
+
+
+    def test_verified_files_and_cross_split_duplicates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            examples = {
+                "train": [{"messages": [{"role": "user", "content": "alpha"}]}],
+                "validation": [{"messages": [{"role": "user", "content": "beta"}]}],
+                "test": [{"messages": [{"role": "user", "content": "gamma"}]}],
+            }
+            for split, records in examples.items():
+                raw = "".join(json.dumps(record) + "\\n" for record in records).encode()
+                (root / (split + ".jsonl")).write_bytes(raw)
+                self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
+                self.data[split + "_records"] = len(records)
+            self.assertTrue(verify_split_files(self.data, root))
+            self.data["validation_sha256"] = self.data["train_sha256"]
+            with self.assertRaises(ValueError):
+                verify_split_files(self.data, root)
+            self.data["validation_sha256"] = hashlib.sha256((root / "validation.jsonl").read_bytes()).hexdigest()
+            raw = (root / "train.jsonl").read_bytes()
+            (root / "test.jsonl").write_bytes(raw)
+            self.data["test_sha256"] = hashlib.sha256(raw).hexdigest()
+            with self.assertRaises(ValueError):
+                verify_split_files(self.data, root)
 
 
 if __name__ == "__main__":
