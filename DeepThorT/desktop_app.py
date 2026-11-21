@@ -27,7 +27,7 @@ from urllib.request import ProxyHandler, Request, build_opener
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.chat_timeline import merged_chat_timeline
-from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, file_step_prompt, verified_x4_pe_plan, build_budgeted_file_step_prompt, validate_generated_x4_xml, validate_project_plan, PlanError, project_kind
+from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, PlanError, project_kind
 from deepthort_local.x4_sources import (inspect_x4_sources, automatic_x4_preflight, is_x4_inspection_request, x4_request_in_context,
                                       format_x4_inspection, x4_evidence_for_prompt,
                                         likely_installations, find_catalog_tool, catalog_extraction_command)
@@ -74,7 +74,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='11.0',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='10.9.1',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -105,6 +105,9 @@ class DeepThorTDesktop(tk.Tk):
         self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
+        self.reply_stage = ''
+        self.reply_started = 0.0
+        self.reply_outcome = None
         self.active_started = 0.0
         self.queue_paused = False
         self.project = None
@@ -152,6 +155,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(125, self._handle_events)
         self.after(1000, self._scheduler)
         self.after(2200, self._poll_server)
+        self.after(1000, self._poll_reply_notice)
         self.after(2000, self._process_snapshot)
         self.after(1500, self._auto_start_if_installed)
         self.after(700, self._start_sentinel)
@@ -227,7 +231,13 @@ class DeepThorTDesktop(tk.Tk):
         self.attachment_status=tk.StringVar(value='No attachments; text, DOCX, PDF and images supported')
         ttk.Label(chat,textvariable=self.attachment_status,style='Muted.TLabel').pack(anchor='w',pady=2)
         self.chat_connection=tk.StringVar(value="AI offline: use Start AI or Self-diagnose to check setup")
-        tk.Label(chat,textvariable=self.chat_connection,bg=BG,fg=YELLOW,anchor="w").pack(fill="x",pady=(2,4))
+        tk.Label(chat,textvariable=self.chat_connection,bg=BG,fg=YELLOW,anchor="w").pack(fill="x",pady=(2,3))
+        # A reply has its own lifecycle. Model health (AI: ready) must never
+        # overwrite the visible waiting/generation/validation notification.
+        self.reply_notice=tk.StringVar(value='No reply pending.')
+        self.reply_banner=tk.Label(chat,textvariable=self.reply_notice,bg=PANEL,fg=YELLOW,
+                         justify='left',anchor='w',wraplength=900,padx=9,pady=5)
+        self.reply_banner.pack(fill='x',pady=(0,4))
         self.chat_tabs=ttk.Notebook(chat);self.chat_tabs.pack(fill='x',pady=4)
         self.chat_tabs.bind('<<NotebookTabChanged>>',self._chat_changed)
         self.chat_history=self._text(chat,readonly=True,height=13,font=('Segoe UI',10))
@@ -642,6 +652,62 @@ class DeepThorTDesktop(tk.Tk):
         self._preview('New file, not created. Go to Chats and describe what it should contain.')
         self.tabs.select(0);self.input.focus_set()
 
+    # ----------- truthful, persistent reply-activity notification -----------
+    def _set_reply_stage(self, ident, stage):
+        """Only the UI thread may update Tk. Ignore late events from old turns."""
+        if ident != self.active_conversation:
+            return
+        self.reply_stage=str(stage)[:180]
+        self._render_reply_notice()
+
+    def _render_reply_notice(self):
+        if not hasattr(self,'reply_notice'):
+            return
+        active=self.active_conversation
+        if active is not None:
+            req=self.conversations.get(active)
+            mode='Draft plan' if req and req['mode']=='draft_plan' else 'Reply'
+            elapsed=max(0,int(time.monotonic()-self.reply_started)) if self.reply_started else 0
+            stage=self.reply_stage or 'Preparing local request'
+            health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
+            if health.get('inference_busy') and stage.startswith('Waiting for local model'):
+                stage='Local ONNX model is generating a response (output is unavailable until completion)'
+            current_chat=bool(req and req['chat_id']==self.current_chat)
+            prefix='' if current_chat else 'Other chat — '
+            self.reply_notice.set(f'{prefix}{mode} #{active} IN PROGRESS — {stage} '
+                                  f'| elapsed {elapsed//60}m {elapsed%60:02d}s. '
+                                  'No executable job is queued until plan approval.')
+            return
+        try:
+            current=self.conversations.thread(self.current_chat,50) if self.current_chat else []
+            outstanding=next((r for r in reversed(current) if r['state'] in
+                       ('pending','waiting_sources','running')),None)
+        except (OSError,ValueError):
+            outstanding=None
+        if outstanding:
+            detail=str(outstanding.get('detail') or '')[:170]
+            state=outstanding['state']
+            if state=='pending':
+                label='WAITING FOR REPLY — queued for local AI'
+            elif state=='waiting_sources':
+                label='WAITING FOR X4 REFERENCE EXTRACTION/VERIFICATION'
+            else:
+                label='PROCESSING — restoring active request status'
+            self.reply_notice.set(f'{label} (request #{outstanding["id"]}). {detail}')
+        elif self.active_job is not None:
+            self.reply_notice.set(f'APPROVED PROJECT JOB #{self.active_job} IN PROGRESS. '
+                                  'Open Work queue or Processes for actual progress.')
+        elif self.reply_outcome is not None and self.reply_outcome['chat_id']==self.current_chat:
+            self.reply_notice.set(self.reply_outcome['message'])
+        else:
+            self.reply_notice.set('No reply pending. Model availability is shown above.')
+
+    def _poll_reply_notice(self):
+        try:
+            self._render_reply_notice()
+        finally:
+            self.after(1000,self._poll_reply_notice)
+
     # ----------- conversation and explicit plan approval ------------
     def _migrate_unapproved_requests(self):
         """Move pre-10.4 queued chat/plan/edit records out of the execution queue.
@@ -688,6 +754,8 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showerror('Cannot save conversation',str(exc));return
         self.input.delete('1.0','end')
         self._reload_chat()
+        self.reply_outcome=None
+        self._render_reply_notice()
         self.status.set(f'{"Draft plan" if kind=="draft_plan" else "Chat"} #{ident} saved. No job was queued.')
         # First read-only discovery starts on the user's INITIAL prompt, even if
         # the local ONNX model is still loading. The original request is retained.
@@ -724,7 +792,8 @@ class DeepThorTDesktop(tk.Tk):
         if not failed:
             messagebox.showinfo('Nothing to retry','There is no failed conversation request in this chat.');return
         if self.conversations.change(failed['id'],'pending','Retry requested by user',allowed=('failed',)):
-            self._reload_chat()
+            self.reply_outcome=None
+            self._reload_chat();self._render_reply_notice()
 
     def _approve_conversation_plan(self):
         """The only GUI path that turns a draft into an executable build job."""
@@ -772,6 +841,10 @@ class DeepThorTDesktop(tk.Tk):
         if not self.conversations.change(ident,'running','Local model processing conversation',allowed=('pending',)):
             return
         self.active_conversation=ident
+        self.reply_started=time.monotonic()
+        self.reply_stage='Preparing attached files and local context'
+        self.reply_outcome=None
+        self._render_reply_notice()
         self._log(f'Local conversation #{ident} started ({request["mode"]}); no executable job.')
         def work():
             try:
@@ -789,6 +862,7 @@ class DeepThorTDesktop(tk.Tk):
                     if not line:raise RuntimeError('Local vision model did not produce a caption')
                     original+='\n\nAttached image description: '+json.loads(line.split('IMAGE_CAPTION_JSON: ',1)[1])['caption']
                     paths=[x for x in paths if classify(x)!='image']
+                self.events.put(('conversation_stage',ident,'Preparing the complete request and attachment context'))
                 prompt=composed_prompt(original,paths)
                 # X4 source inspection is part of the INITIAL request, never a
                 # manual task delegated back to the user or an AI hallucination.
@@ -797,6 +871,7 @@ class DeepThorTDesktop(tk.Tk):
                 x4_context=x4_request_in_context(original,project_dir=request['project'],
                                                   previous_prompts=prior)
                 if x4_context:
+                    self.events.put(('conversation_stage',ident,'Inspecting installed X4 files and verified vanilla XML'))
                     record(STATE,'desktop','x4_auto_preflight_started',request_id=ident,mode=request['mode'])
                     report=automatic_x4_preflight(
                         project_dir=request['project'],app_root=ROOT,game_dir=self.x4_game_dir,
@@ -811,16 +886,8 @@ class DeepThorTDesktop(tk.Tk):
                     if request['mode']=='chat' and is_x4_inspection_request(original,x4_context=x4_context):
                         self.events.put(('x4_inspection_reply',ident,report))
                         return
-                    if request['mode']=='draft_plan' and project_kind(request['prompt'])=='x4' and re.search(r'\b(?:xenon\s+pe|pe\s+(?:xenon|corvette|ship))\b', request['prompt'], re.I):
-                        # Verified domain planning is deterministic: do not waste ten
-                        # minutes asking the 1.5B model to rediscover six XML stages.
-                        # This only creates a reviewable DRAFT, never a queue job.
-                        plan=verified_x4_pe_plan(request['prompt'],report)
-                        record(STATE,'desktop','x4_verified_plan_prepared',request_id=ident,
-                               file_stages=len(plan),source_references_verified=True)
-                        self.events.put(('conversation_reply',ident,json.dumps({'files':plan})))
-                        return
                     if request['mode']=='draft_plan':
+                        self.events.put(('conversation_stage',ident,'Selecting verified X4 evidence within the model context limit'))
                         original_evidence=x4_evidence_for_prompt(report)
                         prompt=build_budgeted_plan_prompt(
                             prompt,self.inventory,x4_evidence=original_evidence,
@@ -837,10 +904,12 @@ class DeepThorTDesktop(tk.Tk):
                 if len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
                 session=request['chat_id'] if request['mode']=='chat' else 'planning-'+request['chat_id']
+                self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
                 if request['mode']=='chat':
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 else:
                     answer=self.client.chat(session,prompt,max_tokens=640)
+                self.events.put(('conversation_stage',ident,'Model finished; verifying reply and project requirements'))
                 self.events.put(('conversation_reply',ident,answer))
             except Exception as exc:
                 record(STATE,'desktop','conversation_worker_exception',level='ERROR',request_id=ident,
@@ -851,7 +920,8 @@ class DeepThorTDesktop(tk.Tk):
     def _conversation_reply(self,ident,answer):
         req=self.conversations.get(ident)
         if not req or req['state']!='running':return
-        self.active_conversation=None
+        self._set_reply_stage(ident,'Checking the response against the original requirements')
+        outcome='REPLY RECEIVED — local model finished.'
         if req['mode']=='draft_plan':
             try:
                 validated=parse_build_plan(answer,Path(req['project']),request=req['prompt'])
@@ -859,16 +929,51 @@ class DeepThorTDesktop(tk.Tk):
                 self.conversations.change(ident,'responded',
                     f'Draft #{draft_id} ready; discuss, revise or explicitly approve it',
                     response=answer,allowed=('running',))
+                outcome=f'DRAFT PLAN #{draft_id} READY — review and explicitly approve before any job runs.'
                 self._log(f'Draft #{draft_id} generated in Chats; NO job queued.')
             except Exception as exc:
-                self.conversations.change(ident,'failed','Invalid proposal: '+str(exc),
-                    response=answer,allowed=('running',))
-                self._log(f'Planning requires revision: {exc}')
+                # Preserve the failed model output as a separate local chat history
+                # record. Salvage a *draft*, not a job, only with VERIFIED X4 sources.
+                recovered=False
+                if project_kind(req['prompt'])=='x4':
+                    try:
+                        report=self.x4_report or {}
+                        if not report.get('ready_for_planning'):
+                            report=automatic_x4_preflight(project_dir=req['project'],app_root=ROOT,
+                                game_dir=self.x4_game_dir,reference_dir=self.x4_reference_dir,
+                                catalog_tool=self.x4_catalog_tool)
+                        from deepthort_local.agent_plan import source_grounded_pe_plan
+                        fixed=source_grounded_pe_plan(req['prompt'],report)
+                        rendered=json.dumps({'files':fixed},ensure_ascii=False)
+                        validated=parse_build_plan(rendered,Path(req['project']),request=req['prompt'])
+                        draft_id=self.conversations.save_draft(ident,validated)
+                        self.conversations.change(ident,'responded',
+                            f'Model proposal rejected; source-grounded fallback draft #{draft_id} prepared for approval',
+                            response=rendered,allowed=('running',))
+                        record(STATE,'desktop','x4_draft_salvaged',request_id=ident,
+                               model_rejection=str(exc)[:320],draft_id=draft_id,
+                               verified_pe=True)
+                        self._log(f'Model plan rejected: {exc}; verified X4 draft #{draft_id} substituted. No job queued.')
+                        outcome=(f'DRAFT PLAN #{draft_id} READY — local model output failed validation; '
+                                 'verified-source fallback prepared. Review it before approval.')
+                        recovered=True
+                    except (ValueError, KeyError, TypeError, OSError) as recovery_error:
+                        record(STATE,'desktop','x4_draft_salvage_blocked',request_id=ident,
+                               reason=str(recovery_error)[:500])
+                if not recovered:
+                    self.conversations.change(ident,'failed','Invalid proposal: '+str(exc),
+                        response=answer,allowed=('running',))
+                    self._log(f'Planning requires revision: {exc}')
+                    outcome='DRAFT FAILED — model proposal did not pass validation. No job was queued.'
         else:
             self.conversations.change(ident,'responded','Local conversation replied',
                                       response=answer,allowed=('running',))
+        self.active_conversation=None
+        self.reply_stage=''
+        self.reply_outcome={'chat_id':req['chat_id'],'message':outcome}
         if req['chat_id']==self.current_chat and req['project']==self._project_key():
             self._reload_chat()
+        self._render_reply_notice()
         self.status.set('Conversation updated. Project work requires explicit plan approval.')
 
     def _conversation_error(self,ident,error):
@@ -877,6 +982,10 @@ class DeepThorTDesktop(tk.Tk):
             self.conversations.change(ident,'failed','Local model request failed: '+error[:500],
                                       allowed=('running',))
         self.active_conversation=None
+        self.reply_stage=''
+        self.reply_outcome={'chat_id':req['chat_id'] if req else self.current_chat,
+             'message':f'REPLY FAILED — {str(error)[:180]}. Request preserved for retry.'}
+        self._render_reply_notice()
         self._log(f'Conversation #{ident} failed: {error[:300]}')
         if req and req['chat_id']==self.current_chat:self._reload_chat()
 
@@ -1129,12 +1238,7 @@ class DeepThorTDesktop(tk.Tk):
                     dest=safe_target(project,step['path'])
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     if len(old)>3500:raise RuntimeError('Existing file too large for safe one-pass local edit. Split the file.')
-                    evidence = (x4_evidence_for_prompt(self.x4_report)
-                                if project_kind(prompt)=='x4' and self.x4_report and
-                                self.x4_report.get('ready_for_planning') else '')
-                    request=build_budgeted_file_step_prompt(
-                        prompt,step['path'],step['description'],old,steps,
-                        evidence=evidence,max_chars=MAX_INFERENCE_PROMPT)
+                    request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     answer=self.client.chat(j['chat_id'],request,max_tokens=768)
                     self.events.put(('job_answer',jobid,answer))
                     return
@@ -1235,34 +1339,6 @@ class DeepThorTDesktop(tk.Tk):
                 code=strip_single_code_fence(answer)
                 if not code.strip() or len(code)>280_000:
                     self.jobs.change(jobid,'needs_input','Model supplied empty/oversized code. Ask for correction.',result=answer,allowed=('running',))
-                elif step['path'].casefold().endswith('.xml') and project_kind(j['prompt']) == 'x4':
-                    try:
-                        validate_generated_x4_xml(step['path'],code)
-                    except PlanError as exc:
-                        self.jobs.change(jobid,'needs_input','Generated XML failed static validation: '+str(exc),
-                                         result=answer,allowed=('running',))
-                        self.jobs.set_step(step['id'],'failed','Invalid XML; no file was written')
-                        self._log(f'Job #{jobid}: rejected malformed source: {exc}')
-                        self._refresh_jobs();self._reload_chat()
-                        return
-                    # Valid XML still needs human review or previously explicit auto-save approval.
-                    if jobid in self.auto_save_allowed:
-                        try:
-                            dest=apply_approved_file(Path(j['project']),step['path'],code,STATE/'backups')
-                            self.jobs.set_step(step['id'],'saved','Auto-save approved; XML syntax checked, not tested in X4')
-                            self.jobs.change(jobid,'queued',f'Saved {step["path"]}; next stage queued',result=answer,allowed=('running',))
-                            self._log(f'Job #{jobid}: saved {dest}; backup created; game behavior NOT verified.')
-                            self._refresh_files()
-                        except Exception as e:
-                            self.jobs.change(jobid,'needs_input','Cannot save proposed file: '+str(e),result=answer,allowed=('running',))
-                    else:
-                        self.proposed=(step['path'],code);self.proposal_job=jobid;self.proposal_step=step['id']
-                        self.jobs.set_step(step['id'],'proposed','XML syntax checked; awaiting user review')
-                        self.jobs.change(jobid,'waiting_approval',f'Review proposed {step["path"]} (XML syntax valid, X4 untested)',result=answer,allowed=('running',))
-                        self.file_title.set('Proposed: '+step['path'])
-                        self._preview('PROPOSED CODE — edit below before approving\n\n'+code)
-                        self.tabs.select(2)
-                        messagebox.showinfo('Build needs file review',f'Job #{jobid} proposed {step["path"]}. Review its content and approve saving. X4 functionality is unverified.')
                 elif jobid in self.auto_save_allowed:
                     try:
                         dest=apply_approved_file(Path(j['project']),step['path'],code,STATE/'backups')
@@ -1336,13 +1412,6 @@ class DeepThorTDesktop(tk.Tk):
         target,_=self.proposed
         code=self.file_preview.get('1.0','end-1c')
         if code.startswith('PROPOSED CODE —'):code=code.split('\n',2)[-1]
-        parent = self.jobs.get(self.proposal_job) if self.proposal_job is not None else None
-        if (parent and project_kind(parent['prompt'])=='x4' and target.casefold().endswith('.xml')):
-            try:
-                validate_generated_x4_xml(target,code)
-            except PlanError as exc:
-                messagebox.showerror('Invalid X4 XML — write blocked',str(exc),parent=self)
-                return
         if not messagebox.askyesno('Approve this file write',
                    f'Write the reviewed code to:\n{self.project / target}\n\n'
                    'Existing files will be backed up. This does NOT execute the code.',parent=self):return
@@ -2036,7 +2105,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Supervision: 20% CPU cap, 20% RAM commit limit, idle priority under DeepThorT.exe\n"
               f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
-              f'Last actual ONNX stage: {(self.current_loading_stage or 'none observed')[:200]}\n'
+              f'Last actual ONNX stage: {(self.current_loading_stage or "none observed")[:200]}\n'
               'Inference output is only known at completion; no fictitious token progress.')
         active_health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
         if active_health.get('inference_busy'):
@@ -2044,7 +2113,7 @@ class DeepThorTDesktop(tk.Tk):
                      f"{active_health.get('inference_elapsed_seconds',0)}s; "
                      f"maximum {active_health.get('inference_max_tokens') or '?'} output tokens. "
                      'Real token progress is unavailable until the model returns.\n')
-        text+=f"\nActive conversation request: {self.active_conversation or 'none'}\n"
+        text+=f"\nActive conversation request: {self.active_conversation or 'none'} | Stage: {self.reply_stage or 'none'}\n"
         text+='\nJANUS Sentinel: '+str(sentinel_health.get('state','not started'))+(
             ' | '+str(sentinel_health.get('detail','')) if sentinel_health else '')+'\n'
         text+='JANUS worker PID: '+str(worker_pid or 'not running')+' | Sentinel PID: '+str(sentinel_health.get('sentinel_pid') or 'not running')+'\n'
@@ -2107,6 +2176,7 @@ class DeepThorTDesktop(tk.Tk):
                     for x in self.files.get_children():self.files.delete(x)
                     for path in event[2]:self.files.insert('','end',text=path)
                     self._log(f'Project file inventory refreshed: {len(event[2])} visible files.')
+            elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
             elif kind=='conversation_reply':self._conversation_reply(event[1],event[2])
             elif kind=='conversation_error':self._conversation_error(event[1],event[2])
             elif kind=='job_plan':self._job_plan(event[1],event[2])
@@ -2117,12 +2187,8 @@ class DeepThorTDesktop(tk.Tk):
                 detail=event[1] if kind=='health_detail' else None
                 if isinstance(detail,dict):
                     self.last_server_health=detail
-                    if self.active_conversation is not None and detail.get('inference_busy'):
-                        elapsed=int(detail.get('inference_elapsed_seconds') or 0)
-                        self._set_connection_status(
-                            f'AI is generating a reply for conversation #{self.active_conversation}: '
-                            f'{elapsed//60}m {elapsed%60:02d}s. '
-                            'The 20% CPU cap makes inference slow. No token count until completion.')
+                    if self.active_conversation is not None:
+                        self._render_reply_notice()
                 is_ready=(bool(detail.get('ready')) if isinstance(detail,dict) else bool(event[1]))
                 if isinstance(detail,dict) and not is_ready and self.node_loading:
                     stage=str(detail.get('stage') or 'Initializing local ONNX model')[:240]
@@ -2160,7 +2226,8 @@ class DeepThorTDesktop(tk.Tk):
                     c=self.active_conversation
                     self.conversations.change(c,'pending','Model process exited; will retry when available',allowed=('running',))
                     self.active_conversation=None
-                    self._reload_chat()
+                    self.reply_stage=''
+                    self._reload_chat();self._render_reply_notice()
                 if self.active_job is not None:
                     j=self.active_job
                     self.jobs.change(j,'paused','Model process exited during inference',allowed=('running',))
