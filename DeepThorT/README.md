@@ -1,3 +1,25 @@
+# DeepThorT v18 — close chats and genuinely stop their local inference (22 November 2026)
+
+**Source base:** v17. No changes to the existing JANUS/Sentinel architecture, model choice, planner criteria, 40-pass limit, explicit plan approval, project file generation, or window layout. The original button rows remain where they were.
+
+**Observed problem:** Retrying an old planning conversation occupied the only ONNX model worker, leaving a new chat queued. v17 had no Close Chat or Stop Reply control; Stop AI paused an unfinished request for automatic retry, so it was not equivalent to cancelling it. The model server is single-flight.
+
+**Repairs:**
+
+- **Close chat** button in the existing chat toolbar. It asks for confirmation, cancels that chat's unfinished replies, hides its tab and **preserves** conversation history and drafts. Right-click the chat tabs to reopen a closed chat. It does not erase approved build jobs.
+- **Stop reply** button in the existing lower chat-action row. Cancels pending/running/waiting-source conversation requests only in the selected chat. They remain cancelled after restart; they are not silently requeued.
+- A running ONNX generation cannot be cancelled simply by disconnecting an HTTP request. DeepThorT terminates its **supervised** ONNX server/worker process, waits for process-exit notification, then automatically restarts a new supervised model for the next queued conversation. The original model initialization time is still required. Model weights, job queue and source files remain intact.
+- Completed replies or network errors arriving after cancellation cannot overwrite a cancelled conversation or clear the next chat's current reply. The planning loop checks for cancellation between model passes, ensuring a cancelled 40-pass request does not continue making new calls.
+- Existing session state remains in its SQLite files. Closing a tab is an archive action, **not deletion**; approval and execution jobs retain their existing separate controls.
+
+**Verification:** 170 Python tests passed when run in isolated modules under Xvfb, including seven new chat/cancellation tests. The monolithic GUI test discovery run encountered the earlier Tkinter teardown / async-cleanup crash; therefore do not claim that particular run was green. Tests use mocked model processes; a real Windows worker termination and reload still need an on-PC test. The interface is unchanged except for two buttons and a right-click archive/reopen menu; a screenshot-sized (1138×765) geometry test confirmed action buttons remain visible.
+
+**Installation:** Close DeepThorT and extract `DeepThorT_Desktop_v18_Windows.zip` over `D:\deepthort`. Preserve `models`, `state`, `node_modules`, `cache`, `reference` and all project directories. No new installs, cloud service or source-editing permission is introduced.
+
+**How to recover from an old running chat:** Open that chat, click **Stop reply** or **Close chat**, then open/select the other chat. Cancelling an active ONNX response causes a real model worker restart; the new chat can run once the model is ready. **Stop AI** remains a global pause; use **Stop reply** for permanent cancellation of the selected request. To stop already-approved jobs, use Work queue → Cancel selected or Processes → Cancel running job.
+
+---
+
 # DeepThorT v17 — targeted model-authored plan revisions (22 November 2026)
 
 **Source base:** v16; original v10.9 interface geometry, approval rules, JANUS/Sentinel, offline Qwen ONNX inference, local state, resource settings and Windows launcher are unchanged.
