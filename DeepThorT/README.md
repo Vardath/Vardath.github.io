@@ -1,3 +1,19 @@
+# DeepThorT v13 — model-authored plans, bounded self-correction (21 November 2026)
+
+**Source base:** v12 (which preserved the original v10.9 interface). This release does not add controls, rearrange panes, replace JANUS/Sentinel, change local ONNX inference, or alter the CPU/memory supervisor. It retains existing user state, model files and approved-job boundaries.
+
+**Why v13:** The 21 November 14:07 diagnostics showed a *hardcoded Xenon PE fallback draft* was substituted after the actual model-generated draft failed validation. That is NOT evidence the AI can plan software by itself. The v11/v12 fallback has therefore been removed, not renamed or disguised.
+
+**Planner changes:** Every source path and description in a new draft must originate in actual local model output. Incomplete proposals can be extended or corrected over at most four separate model calls, using validator feedback and actual verified X4 source candidate information. Each pass uses its own inference context to avoid exceeding the small ONNX model's message limit. A repeated identical answer stops early, not after multiple wasted attempts. The complete original specification remains preserved and included in revision requests; genuinely oversized requirements fail explicitly instead of being silently trimmed. If a valid plan is not produced, the request remains retryable and **no draft or executable job is substituted**. Approval is still required before any work is queued.
+
+**Safety and technical validation:** Legacy *source-grounded fallback* drafts from v11/v12 cannot be approved; their chat records are retained. X4 plans now require appropriate asset registration and independent projectile definitions for the per-hit PE test, reject obvious L/XL equipment candidates on the M-class PE, and require component registration if proposing a new component. The read-only evidence scan ranks M-class candidates before L-class destroyer candidates, but filename class remains *a hypothesis*, not proven equipment compatibility. Initial model-generated Android/game plans are checked for real source files, build configuration, gameplay, interface and test coverage, not a single generic stub. The new validator does not guarantee a project will work; actual source inspection, code generation and build/game tests are still required.
+
+**Observed evidence:** 144 Python regression tests pass locally under Xvfb, including the pre-existing v12 GUI layout tests, multi-pass model-authored draft tests, X4 source-ranking checks, Android game planning checks, and old fallback approval prevention. The live Windows Qwen ONNX model and installed X4 game are unavailable in this test environment: **no real AI plan or Xenon PE mod has yet been produced/verified by this build**. The 1.5B model may remain slow or incapable of a complex plan. Model quality and long specifications are still limits.
+
+**Install:** Fully close DeepThorT, then extract over `D:\deepthort`. Preserve all existing `state`, `models`, `node_modules`, `cache`, `reference`, and project directories. Restart the usual `DeepThorT.exe`. The old source-grounded PE draft will be rejected if you try to approve it; request a fresh draft so the actual model must plan. The existing reply activity appears in the original status row. No local game data or user files were included in this release ZIP.
+
+---
+
 # DeepThorT v12 — restore original v10.9 window layout
 
 The extra v11 reply-status banner was removed because it clipped the bottom action buttons at Windows display sizes. Waiting, generation, validation, and failure notices now appear in the **existing** status row, preserving the original vertical geometry. No new controls or tabs were added. All v11 safeguards and X4 planning fixes remain.
