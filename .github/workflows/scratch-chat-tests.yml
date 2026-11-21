@@ -32,10 +32,31 @@ jobs:
         run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
       - name: Run checkpoint-independent dialogue and protocol tests
         run: |
-          python -m unittest discover -s tests -p 'test_dialogue*.py' -v
-          python -m unittest discover -s tests -p 'test_deepthort_bridge.py' -v
-          python -m unittest discover -s tests -p 'test_readiness_gate.py' -v
-          python -m unittest discover -s tests -p 'test_probe_scoring.py' -v
+          python - <<'PY'
+          import subprocess, sys
+          patterns = [
+              'test_dialogue*.py',
+              'test_audit_near_duplicates.py',
+              'test_prepare_dialogue_splits.py',
+              'test_independent_acceptance.py',
+              'test_deepthort_jsonl_transport.py',
+              'test_deepthort_bridge.py',
+              'test_readiness_gate.py',
+              'test_probe_scoring.py',
+          ]
+          failed = []
+          for pattern in patterns:
+              print(f"::group::Scratch Chat {pattern}", flush=True)
+              result = subprocess.run([sys.executable, '-m', 'unittest', 'discover',
+                                       '-s', 'tests', '-p', pattern, '-v'], check=False)
+              print('::endgroup::', flush=True)
+              if result.returncode:
+                  print(f"::error title=Scratch Chat test failure::{pattern} exited {result.returncode}", flush=True)
+                  failed.append(pattern)
+          if failed:
+              print("Failing suites: " + ", ".join(failed), flush=True)
+              sys.exit(1)
+          PY
       # Legacy full-suite tests require additional optional packages and a locally
       # trained starter.pt checkpoint; do not report them as passing in this job.
       # Run those separately with explicit fixtures before promoting readiness.
