@@ -1,3 +1,17 @@
+# DeepThorT v15 — allow up to 40 self-correction passes (21 November 2026)
+
+**Source base:** v14. No UI layout changes, no JANUS/Sentinel modifications, no new cloud/model providers, no resource-limit changes. The same standalone Windows launcher, chat/approval boundary, local ONNX model and user-state folders remain in place.
+
+**Observed failure:** `DeepThorT-Diagnostics-20261121-155708.zip` and the 15:57 screenshot show a real 41-minute local planning run that exhausted four attempts. All four model requests finished; none passed the X4 plan validator. The desktop passed `max_rounds=4`, and the planning module rejected limits above 8. No approved X4 execution job was created.
+
+**Repair:** Normal model planning now allows **up to 40 attempts**, displays the pass count in the existing activity status, and **returns immediately** when a complete plan passes validation. An identical *invalid* model answer no longer causes premature termination; instead, specific corrective feedback is sent for the next pass. When a fragment would exceed 24 distinct files, it is rejected transactionally without corrupting prior model-proposed steps, giving later passes a chance to succeed. The original user request remains unmodified and must fit into each model prompt. No prewritten Xenon PE plan is ever inserted; actual job execution still requires explicit user approval. If 40 attempts fail, the saved request remains retryable and no plan or job is automatically approved.
+
+**Verification:** `xvfb-run -a python -m unittest discover -s tests -q` → **153 tests, OK** (five new v15 tests covering 40 attempts, early success, repeated failures, source-plan overflow recovery and desktop budget wiring). Full source compiles. Tkinter/SQLite cleanup warnings remain in the headless test output. Actual Windows inference success, valid model-authored X4 plan, game XML generation and in-game behavior are **not verified**. The existing local Qwen ONNX model took approximately 9–12 minutes per planning request in the reported diagnostic run; 40 failures could therefore take hours if allowed to continue. The user can close/retry as before, but a running draft-planning thread is not claimed to survive application shutdown.
+
+**Installation:** Close DeepThorT, extract v15 over `D:\deepthort`, preserve all local `models`, `state`, `node_modules`, `cache`, `reference` and project workspaces, then use **Retry failed reply**. No re-extraction of the game's reference data is required if existing data is valid.
+
+---
+
 # DeepThorT v14 — bounded planning revision context (21 November 2026)
 
 **Source base:** v13, retaining the original v10.9 interface, JANUS/Sentinel, local ONNX model, resource limits, chat/work-queue approval boundary and all user state. No new application features or UI layout changes.
