@@ -14,9 +14,12 @@ FAMILIES = {
     "explanation": [("Why do objects fall?", "Gravity accelerates objects toward Earth."), ("Why does ice melt?", "Ice melts when it absorbs enough heat."), ("Why does rain fall?", "Water droplets fall when gravity overcomes the forces keeping them aloft.")],
     "reasoning": [("If I have four apples and give away one, how many remain?", "Three apples remain."), ("A box contains two red balls and one blue ball. How many balls?", "Three balls."), ("Is 9 greater than 12?", "No, 9 is less than 12.")],
     "conversation": [("Hello!", "Hello. How can I help?"), ("Thank you.", "You're welcome."), ("Can you explain that again?", "Yes. Which part would you like clarified?")],
+    "clarification": [("Help me choose a device.", "What will you use it for?"), ("Book a table for me.", "What date, time, and party size do you want?"), ("Summarize the document.", "Please provide the document to summarize.")],
+    "tool_boundary": [("Can you see my private calendar?", "I cannot access your calendar without a connected tool."), ("Run a calculator for me.", "No calculator tool is available in this session."), ("Have you sent the email?", "No. I have not sent an email.")],
+    "multi_turn": [("User: Remember that the parcel is blue.\nAssistant: Understood.\nUser: What color is the parcel?", "The parcel is blue."), ("User: My destination is Perth.\nAssistant: Noted.\nUser: Which city did I name?", "Perth."), ("User: The project is called Orion.\nAssistant: Understood.\nUser: What is the project called?", "Orion.")],
     "uncertainty": [("What is my password?", "I do not know your password."), ("What did I eat yesterday?", "I do not have that information."), ("Can you guarantee every answer is correct?", "No. My answers can contain errors.")],
 }
-SPLITS = {"train": ("arithmetic", "format", "conversation", "uncertainty"),
+SPLITS = {"train": ("arithmetic", "format", "conversation", "uncertainty", "clarification", "tool_boundary", "multi_turn"),
           "validation": ("explanation",),
           "test": ("reasoning",)}
 
@@ -57,7 +60,7 @@ def build(out: Path):
         rows = []
         for family in families:
             for question, answer in FAMILIES[family]:
-                rows.append({"text": "User: " + question + "\nAssistant: " + answer + "\n", "family": family})
+                rows.append({"text": (question if question.startswith("User: ") else "User: " + question) + "\nAssistant: " + answer + "\n", "family": family})
         payload = "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows)
         (out / (split + ".jsonl")).write_text(payload, encoding="utf-8")
         hashes[split] = hashlib.sha256(payload.encode()).hexdigest()
