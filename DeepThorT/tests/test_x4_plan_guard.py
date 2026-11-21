@@ -20,6 +20,8 @@ VALID = [
  {'path':'assets/props/WeaponSystems/macros/vardath_pe_gun.xml','description':'Select fast-firing compatible vanilla forward weapon and create a unique upgraded macro with 50,000 damage per hit; inspect vanilla equipment refs'},
  {'path':'assets/props/WeaponSystems/macros/vardath_pe_turret.xml','description':'Select compatible vanilla turret based on weapon connection map with 50,000 per-hit damage and high firing rate; inspect base PE references'},
  {'path':'md/vardath_pe_ownership.xml','description':'Use Mission Director to check player-owned ship ownership and, if absent, spawn after 60 seconds; cancel when owned; no duplicates after save/load, inspect reference files'},
+ {'path':'assets/props/WeaponSystems/bullet/macros/vardath_pe_bullet.xml','description':'Create a unique bullet macro from vanilla M-class projectile references to apply 50,000 per successful hit without modifying other ships'},
+ {'path':'index/macros.xml','description':'Register the independently named new PE ship, M-class weapon, M-class turret and bullet macro names against verified installed game resource paths'},
 ]
 
 class X4PlanGuardTests(unittest.TestCase):
@@ -42,8 +44,23 @@ class X4PlanGuardTests(unittest.TestCase):
   for idx,word in [(1,'10x'),(3,'50,000'),(4,'60 seconds')]:
    bad=[dict(x) for x in VALID]
    bad[idx]['description']=bad[idx]['description'].replace(word,'ordinary')
-   if idx==3:bad[2]['description']=bad[2]['description'].replace('50,000','ordinary')
+   if idx==3:
+    for step in bad:step['description']=step['description'].replace('50,000','ordinary')
    with self.assertRaises(PlanError):validate_project_plan(bad,REQUEST)
+ def test_rejects_missing_asset_registrations_and_independent_bullet(self):
+  for missing_path in ('index/macros.xml','assets/props/WeaponSystems/bullet/macros/vardath_pe_bullet.xml'):
+   subset=[step for step in VALID if step['path']!=missing_path]
+   with self.subTest(missing_path=missing_path),self.assertRaises(PlanError):
+    validate_project_plan(subset,REQUEST)
+  new_component={'path':'assets/units/size_m/vardath_pe.xml',
+     'description':'Register isolated player PE component with verified vanilla connections'}
+  with self.assertRaisesRegex(PlanError,'index/components.xml'):
+   validate_project_plan(VALID+[new_component],REQUEST)
+  l_class=[dict(step) for step in VALID]
+  l_class[2]['description']+=' vanilla weapon_arg_l_destroyer_01_mk1_macro'
+  with self.assertRaisesRegex(PlanError,'L/XL-class'):
+   validate_project_plan(l_class,REQUEST)
+
  def test_no_x4_writes_from_generic_plan_even_with_forged_approval_key(self):
   q=JobStore(self.root/'state/jobs.sqlite3')
   with self.assertRaises(PlanError):
