@@ -10,7 +10,7 @@ class DialogueCorpusTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d)
             build(out)
-            self.assertEqual(validate(out)["examples"], 18)
+            self.assertEqual(validate(out)["examples"], sum(len(v) for v in __import__("capability.dialogue_corpus", fromlist=["FAMILIES"]).FAMILIES.values()))
 
     def test_mutated_split_fails_digest(self):
         with tempfile.TemporaryDirectory() as d:
@@ -30,7 +30,7 @@ class DialogueCorpusTests(unittest.TestCase):
             p = out / "test.jsonl"
             rows = [json.loads(line) for line in p.read_text().splitlines()]
             rows[0] = row
-            payload = "".join(json.dumps(x, ensure_ascii=False) + "\\n" for x in rows)
+            payload = "".join(json.dumps(x, ensure_ascii=False) + "\n" for x in rows)
             p.write_text(payload, encoding="utf-8")
             manifest_path = out / "source.json"
             manifest = json.loads(manifest_path.read_text())
