@@ -84,21 +84,27 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         optimizer.step()
     model.eval()
     with torch.no_grad():
-        losses = []
+        weighted_loss = 0.0
+        supervised_tokens = 0
         for ids, labels in valid:
             loss = assistant_causal_loss(
                 model(torch.tensor([ids])), torch.tensor([labels]))
-            losses.append(float(loss))
-    metric = sum(losses) / len(losses)
+            count = sum(y != -100 for y in labels[1:])
+            weighted_loss += float(loss) * count
+            supervised_tokens += count
+    # Token-weighted corpus loss, not an average of differently sized examples.
+    metric = weighted_loss / supervised_tokens
     atomic_save({"format": FORMAT, "immutable": immutable, "step": steps,
                  "model_state": model.state_dict(),
                  "optimizer_state": optimizer.state_dict(),
                  "rng_state": torch.get_rng_state(),
                  "validation_assistant_loss": metric,
+                 "validation_supervised_tokens": supervised_tokens,
                  "origin": "random initialization; no pretrained weights"}, checkpoint)
     return {"steps": steps, "validation_assistant_loss": metric,
             "parameters": model.parameter_count, "train_examples": len(train),
-            "validation_examples": len(valid)}
+            "validation_examples": len(valid),
+            "validation_supervised_tokens": supervised_tokens}
 
 
 if __name__ == "__main__":
