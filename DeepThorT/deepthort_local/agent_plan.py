@@ -14,12 +14,40 @@ class PlanError(ValueError):
 
 
 def project_kind(request: str) -> str:
-    return 'x4' if re.search(r'\b(?:x4(?::?\s+foundations)?|egosoft|xenon\s+pe)\b', request or '', re.I) else 'general'
+    request = request or ''
+    if re.search(r'\b(?:x4(?::?\s+foundations)?|egosoft|xenon\s+pe)\b', request, re.I):
+        return 'x4'
+    if re.search(r'\b(?:game|faction command|apk)\b', request, re.I) and re.search(
+            r'\b(?:build|make|create|develop|implement|game|android)\b', request, re.I):
+        return 'android_game' if re.search(r'\b(?:android|apk)\b', request, re.I) else 'game'
+    return 'general'
 
 
 def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
     """Fail closed on known domain-specific omissions. Never infer game IDs."""
-    if project_kind(request) != 'x4':
+    kind = project_kind(request)
+    if kind == 'general':
+        return steps
+    if kind in ('game', 'android_game'):
+        paths = [str(s['path']).replace('\\', '/').casefold() for s in steps]
+        details = ' '.join(str(s['description']) for s in steps).casefold()
+        joined = ' '.join(paths) + ' ' + details
+        missing = []
+        if len(steps) < 4:
+            missing.append('multiple substantive project files rather than a single stub')
+        if not any(re.search(r'\.(?:kt|java|gd|cs|js|ts|tsx|py|lua|rs|cpp|c|h)$', p) for p in paths):
+            missing.append('actual game source code, not just documentation')
+        if not re.search(r'gameplay|game logic|simulation|game loop|entity|sector|combat|movement|turn logic', joined):
+            missing.append('gameplay or simulation implementation')
+        if not re.search(r'interface|ui|screen|scene|view|menu|input', joined):
+            missing.append('playable interface or scene/input implementation')
+        if kind == 'android_game' and not re.search(
+            r'gradle|androidmanifest|project\.godot|export_presets|unity|android build|apk build', joined):
+            missing.append('a genuine Android-compatible game build configuration')
+        if not re.search(r'test|validation|verify|acceptance', joined):
+            missing.append('verification and test plan')
+        if missing:
+            raise PlanError('Game plan is incomplete: ' + '; '.join(missing) + '. No work was queued.')
         return steps
     paths = [str(s['path']).replace('\\', '/').casefold() for s in steps]
     notes = ' '.join(str(s['description']) for s in steps).casefold()
@@ -58,6 +86,23 @@ def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
             missing.append('four-times base speed')
         if re.search(r'\b10\s*(?:x|times)\b', request, re.I) and not re.search(r'\b10\s*(?:x|times)\b', combined, re.I):
             missing.append('ten-times cargo capacity')
+        # Asset registration and independent projectile definitions are
+        # dependency checks, not a prewritten plan. The local model must choose
+        # the actual file paths and explain how source definitions are reused.
+        new_asset_macros = any(p.startswith('assets/') and '/macros/' in p for p in paths)
+        if new_asset_macros and 'index/macros.xml' not in paths:
+            missing.append('index/macros.xml for independently named asset macros')
+        new_components = any(p.startswith('assets/units/') and p.endswith('.xml')
+                             and '/macros/' not in p for p in paths)
+        if new_components and 'index/components.xml' not in paths:
+            missing.append('index/components.xml to register a new component or reuse the vanilla component instead')
+        if re.search(r'\b50[\s,_.]*000\b|\b50k\b', request, re.I):
+            if not any(re.search(r'bullet|projectile', p) for p in paths):
+                missing.append('independent projectile/bullet definition for per-hit damage')
+        # Verified PE slots are M-class. L/XL capital-class candidates from
+        # an alphabetical catalog scan cannot be used as PE equipment.
+        if re.search(r'\b(?:weapon|turret)_[a-z0-9]+_(?:l|xl)_', notes):
+            missing.append('reject L/XL-class weapon or turret source references on the M-class PE')
     if any(p.endswith('.py') for p in paths):
         missing.append('X4 installable extension XML rather than Python application entrypoints')
     if missing:
@@ -65,7 +110,8 @@ def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
     return steps
 
 
-def parse_build_plan(text: str, project: str | Path, *, request: str = '') -> list[dict]:
+def parse_build_plan(text: str, project: str | Path, *, request: str = '',
+                     fragment: bool = False) -> list[dict]:
     raw = text.strip()
     if raw.startswith('```'):
         raw = re.sub(r'^```(?:json)?\s*', '', raw, flags=re.I)
@@ -98,14 +144,14 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '') -> li
             raise PlanError('Duplicate file path in model plan')
         paths.add(rel.casefold())
         validated.append({'path': rel, 'description': desc.strip()})
-    return validate_project_plan(validated, request)
+    return validated if fragment else validate_project_plan(validated, request)
 
 
 def build_plan_prompt(request: str, inventory: dict | None = None, *, x4_evidence: str = '') -> str:
     tools = ', '.join(x['name'] for x in (inventory or {}).get('tools', []) if x.get('found'))
     header = ('Return ONLY valid JSON with a "files" array. Each entry needs "path" '
               'and "description". Choose concrete relative source files ordered by dependency, '
-              'up to 24; no absolute paths or shell/install commands. Do not confuse an example '
+              'up to 5 in this first pass; subsequent passes will complete the plan. No absolute paths or shell/install commands. Do not confuse an example '
               'format with the actual project type. Do NOT invent verified game asset identifiers.\n')
     if project_kind(request) == 'x4':
         domain = ('''This project is an X4: Foundations EXTENSION, not a Python app. NEVER output src/main.py.
@@ -113,6 +159,11 @@ Propose actual X4 XML file stages, including content.xml, ship macro/asset patch
 The plan descriptions must explain how vanilla definitions and existing connection slots will be inspected, equipment verified, what needs an extracted game reference, and how all numeric user requirements (e.g. 50,000/hit, 4x speed, 10x cargo, 60-second replacement) will be validated. Do not fabricate the exact vanilla IDs.
 If the available evidence cannot justify a trustworthy plan, return ONLY {"blocked":"Which X4 game definitions or extracted reference files must be inspected before selecting equipment"}; never output a generic fallback plan.
 ''')
+    elif project_kind(request) in ('game', 'android_game'):
+        domain = ('This request is for a functioning game, not a mockup. Inspect the existing '
+                  'project if present; choose actual source, gameplay simulation, screens, '
+                  'build configuration and verification files appropriate to the specified '
+                  'engine and platform. Do not replace the user design with a generic demo.\n')
     else:
         domain = ('Select source files appropriate to the USER project language/framework. '
                   'Do not default to Python unless the request demands Python.\n')
@@ -192,55 +243,113 @@ def file_step_prompt(user_request: str, path: str, description: str, existing: s
             f'\nEXISTING CONTENT:\n{existing}\nReturn the complete file text.')
 
 
-def source_grounded_pe_plan(request: str, report: dict) -> list[dict]:
-    """Recover a *review-only* X4 PE draft after an invalid small-model answer.
+def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
+                          x4_evidence: str = '', max_chars: int = 7500) -> str:
+    """Request another *model-authored* plan fragment, never synthesize files.
 
-    Never infer actual ship identifiers from chat history or catalog filenames.
-    A local preflight must have inspected the exact vanilla PE macro, physical
-    connection slots and real weapon/turret definitions. This returns file
-    intentions, NOT executable game assets or user approval to write them.
+    The saved user specification is immutable. Only supporting context (old
+    descriptions and secondary evidence) may be shortened for the small model.
     """
-    if not re.search(r'\b(?:xenon\s+pe|pe\s+(?:xenon|corvette|ship))\b',request or '',re.I):
-        raise PlanError('Only an explicitly requested Xenon PE can use this fallback plan')
-    if not isinstance(report,dict) or not (report.get('ready_for_planning')
-        and report.get('pe_macro_verified') and report.get('pe_component_verified')
-        and report.get('weapon_candidates') and report.get('turret_candidates')
-        and report.get('pe_component_connections')):
-        raise PlanError('Actual PE macro, component slots and weapon/turret XML must be verified first')
-    pe=next((x for x in report.get('ship_candidates',[])
-             if 'ship_xen_m_corvette_02_a_macro' in ' '.join(x.get('identifiers',[]))),None)
-    if not pe:
-        raise PlanError('Verified PE macro source is not present in the inspected ship candidates')
-    ship_file=pe['file']
-    comp_file=report.get('pe_component_file')
-    if not comp_file:
-        raise PlanError('Verified PE component XML path is unavailable')
-    gun=report['weapon_candidates'][0]['file']
-    turret=report['turret_candidates'][0]['file']
-    slot_count=len(report['pe_component_connections'])
-    return [
-        {'path':'content.xml','description':
-          'Create stand-alone Vardath Xenon PE X4 extension metadata, with no unrelated game overrides; validate the installed X4 version and extension loading.'},
-        {'path':'assets/units/size_m/macros/vardath_xen_pe_macro.xml','description':
-          f'Inspect verified vanilla PE macro {ship_file} and component {comp_file}; clone into an isolated player-only macro with 10x cargo/storage, and preserve actual equipment connections. '
-          f'Reconcile all {slot_count} identified PE connection tags without inventing equipment IDs.'},
-        {'path':'assets/units/size_m/vardath_xen_pe.xml','description':
-          f'Create or register an isolated PE component from verified vanilla source {comp_file}, keeping functional connection tags. '
-          'Improve 4x base speed with correctly compatible propulsion and improve acceleration, handling, turning and braking; verify actual installed engine definitions.'},
-        {'path':'assets/props/WeaponSystems/macros/vardath_pe_weapon_macro.xml','description':
-          f'Inspect source weapon XML {gun} and PE connections, then create a separate compatible high-fire-rate main weapon; 50,000 damage per successful hit, not DPS. '
-          'Do not alter all vanilla ships.'},
-        {'path':'assets/props/WeaponSystems/macros/vardath_pe_turret_macro.xml','description':
-          f'Inspect source turret XML {turret} and original PE turret connection tags, then create a separate high-fire-rate compatible turret; 50,000 damage per successful hit. '
-          'Do not affect ordinary faction equipment.'},
-        {'path':'index/macros.xml','description':
-          'Register the dedicated PE, engine/equipment and turret macros using verified installed-game index conventions. Do not register generic Python applications.'},
-        {'path':'md/vardath_xen_pe.xml','description':
-          'Create a save-safe Mission Director 60-second player-owned ownership monitor and replacement spawn; equip the separate PE variant with validated main weapon and turret connections. '
-          'Spawn exactly one after 60 seconds when the player no longer owns one, including existing saves, without duplication.'},
-        {'path':'README.md','description':
-          'Document installation, source evidence, static XML and game-asset validation, 10x cargo, 4x speed/handling, 50,000 per-hit weapons/turrets, ownership respawn, and outstanding in-game verification.'},
-    ]
+    header = (
+        'Your previous project plan was incomplete or invalid. REVISE IT YOURSELF. '
+        'Return ONLY JSON {"files":[{"path":"...","description":"..."}]}, '
+        'with 1 to 6 NEW files or replacements of existing paths. '
+        'Every path must be a real relative source file, never generic placeholders. '
+        'Use the installed project evidence, not guesses. '
+        'Existing paths are retained unless you replace them; do NOT repeat unchanged files. '
+        'Do not invent any implementation or claim tests passed.\n'
+    )
+    problems = str(problems).strip()[:1300]
+    base = header + 'VALIDATOR FINDINGS:\n' + problems + '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n'
+    if len(base) >= max_chars:
+        raise PlanError('Complete original specification and correction instructions do not fit '
+                        f'within {max_chars:,} characters; no specification was truncated.')
+    available = max_chars - len(base)
+    evidence = []
+    for line in (x4_evidence or '').splitlines():
+        line = re.sub(r'\s+SHA\s+[0-9a-fA-F]{8,64}$', '', line.strip())
+        if not line: continue
+        item = 'VERIFIED CANDIDATE: ' + line + '\n'
+        if len(item) <= available:
+            evidence.append(item)
+            available -= len(item)
+    prior = []
+    for step in steps:
+        # Path knowledge is essential for merging; descriptions are optional.
+        item = f"EXISTING: {step['path']}"
+        detail = ' — ' + str(step['description'])[:150]
+        item += (detail if len(item + detail + '\n') <= available else '') + '\n'
+        if len(item) <= available:
+            prior.append(item)
+            available -= len(item)
+        else:
+            raise PlanError('Existing plan paths cannot fit alongside the complete original '
+                            'specification. Nothing was removed or approved.')
+    result = base + ''.join(prior) + ''.join(evidence)
+    assert request in result and len(result) <= max_chars
+    return result
+
+
+def generate_model_plan(client, session: str, request: str, project: str | Path,
+                        first_prompt: str, *, x4_evidence: str = '',
+                        max_chars: int = 7500, max_rounds: int = 4,
+                        stage=None) -> tuple[str, list[dict]]:
+    """Generate a complete plan through bounded, evidence-driven model revisions.
+
+    No file intentions are hardcoded here. Each proposed path/description must
+    originate in local model output. The validator can reject or request more;
+    it never manufactures a substitute plan. No executable work is queued.
+    """
+    if not 1 <= max_rounds <= 8:
+        raise ValueError('max_rounds must be 1..8')
+    if len(first_prompt) > max_chars:
+        raise PlanError('Initial planning request exceeds the model context limit')
+    all_steps: dict[str, dict] = {}
+    failures = []
+    seen_answers = set()
+    prompt = first_prompt
+    for round_no in range(1, max_rounds + 1):
+        if stage:
+            stage(f'Local model planning — pass {round_no}/{max_rounds}; '
+                  f'{len(all_steps)} model-proposed files retained')
+        # A fresh request session prevents previous 7K-character planning inputs
+        # from polluting the next call or crossing chat/project boundaries.
+        answer = client.chat(f'{session}-{round_no}', prompt, max_tokens=640)
+        if answer.strip() in seen_answers:
+            raise PlanError('The local model repeated an identical proposal instead of '
+                            'correcting the identified errors. No substitute plan was created; '
+                            'the original request is preserved for retry.')
+        seen_answers.add(answer.strip())
+        try:
+            fragment = parse_build_plan(answer, project, fragment=True)
+            if project_kind(request) == 'x4' and any(
+                x['path'].lower().endswith('.py') for x in fragment):
+                raise PlanError('An X4 extension cannot use generic Python app files')
+            for entry in fragment:
+                all_steps[entry['path'].casefold()] = entry
+            if len(all_steps) > 24:
+                raise PlanError('The plan now exceeds the maximum of 24 files')
+            try:
+                approved_shape = validate_project_plan(list(all_steps.values()), request)
+            except PlanError as exc:
+                finding = str(exc)
+            else:
+                # The draft is still only a proposal; user must approve to execute.
+                return json.dumps({'files': approved_shape}, ensure_ascii=False), approved_shape
+        except PlanError as exc:
+            finding = str(exc)
+        failures.append(finding)
+        if round_no == max_rounds:
+            break
+        if stage:
+            stage(f'Planning pass {round_no} rejected: {finding[:140]}; asking model to correct it')
+        prompt = build_revision_prompt(
+            request, list(all_steps.values()), finding, x4_evidence=x4_evidence,
+            max_chars=max_chars)
+    raise PlanError(
+        f'Local model could not produce a validated plan after {max_rounds} attempts. '
+        f'Last problem: {failures[-1][:650]}. No substitute plan was created; '
+        'the original request remains available for retry.')
 
 
 def budgeted_file_step_prompt(user_request: str, path: str, description: str,
