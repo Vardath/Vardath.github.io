@@ -1,6 +1,6 @@
 {
-  "run_id": "44851639403",
-  "commit": "c70f73f38fc9abf050f6dcf5d1e000ffae5b5af5",
+  "run_id": "44851644879",
+  "commit": "bf1616beacff3932772435815770c96221e45df2",
   "state": "completed",
   "checkpoint_artifact": "scratch-chat-github-pilot",
   "evaluation": {
@@ -9,12 +9,12 @@
     "results": {
       "validation": {
         "loss": 3.062591,
-        "perplexity": 21.382899,
+        "perplexity": 21.382897,
         "tokens_evaluated": 20000
       },
       "test": {
         "loss": 3.068315,
-        "perplexity": 21.505629,
+        "perplexity": 21.505627,
         "tokens_evaluated": 20000
       }
     }
