@@ -16,12 +16,9 @@ jobs:
         working-directory: DeepThorT
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install headless display and Tk
+      - name: Install headless display and matching system Python Tk bindings
         run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
       - name: Compile Python sources
-        run: python -m compileall -q .
+        run: /usr/bin/python3 -m compileall -q .
       - name: Run regression tests under Xvfb
-        run: xvfb-run -a python -m unittest discover -s tests -q
+        run: xvfb-run -a /usr/bin/python3 -m unittest discover -s tests -q
