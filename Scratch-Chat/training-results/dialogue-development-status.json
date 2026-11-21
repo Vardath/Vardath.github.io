@@ -1,40 +1,28 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T00:23:00Z",
+  "updated_utc": "2026-11-21T02:20:00Z",
   "last_verified_run": {
-    "id": 44838816592,
+    "id": 44851644849,
     "conclusion": "success",
-    "commit": "667ae4623af7661a06a673a855642997c3dfc295",
-    "artifact_id": 14680240171,
-    "artifact_sha256": "2f8286936ec792d22c07edfa2e51f44e67b659911cf3fb4b936bcad3c5b51207",
-    "steps": 40,
-    "training_data_examples": 18,
-    "capability_scores": {
-      "passed": 0,
-      "total": 4
-    },
-    "generated_responses": [
-      "",
-      "",
-      "",
-      ""
-    ],
-    "checks": "corpus validation, isolated tokenizer, checkpoint, held-out evaluation, JSONL bridge and acceptance process succeeded"
+    "commit": "bf1616beacff3932772435815770c96221e45df2",
+    "steps": 80,
+    "training_data_examples": 27,
+    "artifact_id": 14685252895,
+    "checks": "all workflow stages passed: corpus tests, isolated tokenizer, training, evaluation, JSONL subprocess, independent diagnostic execution and artifact upload",
+    "capability_scores": "not extracted from artifact; do not infer 0/4 or any score"
   },
   "next_run": {
-    "trigger_commit": "763566039c3294ab43d93a72dc486706de7b5c48",
-    "execution": "not yet verified",
-    "steps": 80,
-    "training_examples": 27,
-    "change": "Three new original CC0 train families: clarification, tool boundary, multi-turn recall; held-out families unchanged"
+    "trigger_commit": "02b048655efbe8b952bf36eae0d61bafb1b3c914",
+    "execution": "pending verification",
+    "change": "Evaluation now refuses substituted train/validation/tokenizer inputs; added regression tests and CI step"
   },
   "readiness": "not ready",
   "blockers": [
-    "27 original examples remain insufficient for conversational competence",
-    "0/4 independent development checks passed in previous run",
-    "no actual tool invocation interface",
-    "no independently audited large licensed corpus",
-    "no confirmed GPU allocation"
+    "Only 27 original seed examples; not sufficient for conversation",
+    "Latest capability results exist in artifact but score not retrieved; do not claim conversational progress",
+    "No actual tool invocation interface",
+    "No independently audited large licensed corpus",
+    "No confirmed GPU allocation"
   ],
-  "notes": "Shakespeare pilot excluded from conversational readiness evidence. Training remains from random initialization. CPU Actions are bounded smoke tests."
+  "notes": "Shakespeare excluded from conversational readiness. CPU bounded smoke only. Original random initialization retained. Evaluation now checks immutable checkpoint data hashes."
 }
