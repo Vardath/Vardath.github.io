@@ -366,7 +366,21 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                   f'{len(all_steps)} model-proposed files retained')
         # A fresh request session prevents previous 7K-character planning inputs
         # from polluting the next call or crossing chat/project boundaries.
-        answer = client.chat(f'{session}-{round_no}', prompt, max_tokens=640)
+        # Each completed pass is already stored by LocalModelClient.chat in
+        # sessions.sqlite3. An interrupted 40-pass run must replay those exact
+        # model outputs locally, not spend another hour regenerating them.
+        # Only reuse when the full revision prompt is identical; changed source
+        # evidence or user instructions always require a fresh model answer.
+        round_session = f'{session}-{round_no}'
+        lookup = getattr(client, 'completed_exchange', None)
+        cached = lookup(round_session, prompt) if callable(lookup) else None
+        if cached is not None:
+            answer = cached
+            if stage:
+                stage(f'Planning pass {round_no}/{max_rounds} restored from '
+                      'a completed local inference; no model time consumed')
+        else:
+            answer = client.chat(round_session, prompt, max_tokens=640)
         if answer.strip() in seen_answers:
             # Do not abort a long planning task just because the small model
             # repeated an earlier INVALID answer. Record concrete feedback and
