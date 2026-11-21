@@ -1,18 +1,17 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T03:38:00Z",
+  "updated_utc": "2026-11-21T04:11:00Z",
   "last_verified_run": {
-    "id": 44855364827,
+    "id": 44862170370,
     "conclusion": "success",
-    "commit": "02b048655efbe8b952bf36eae0d61bafb1b3c914",
+    "commit": "67926badb4b8d616d81d19157db486968d7752ae",
     "steps": 80,
-    "checks": "GitHub Actions completed successfully; capability scores not retrieved",
-    "capability_scores": "unverified; no readiness claim"
+    "capability_scores": "not retrieved; no conversational readiness claim"
   },
   "next_run": {
-    "trigger_commit": "67926badb4b8d616d81d19157db486968d7752ae",
-    "execution": "pending verification",
-    "change": "Checkpoint now binds train, validation, test, and tokenizer hashes; regression test covers test-set tampering"
+    "trigger_commit": "c9da14a98175f1ec0c45b5504c0a0e49d28e4ec3",
+    "execution": "not yet verified",
+    "change": "Checkpoint-independent dialogue, bridge, readiness and scoring CI; source/compute acquisition gate documented at Scratch-Chat/DIALOGUE_DATA_AND_GPU_PLAN.md"
   },
   "readiness": "not ready",
   "blockers": [
@@ -23,5 +22,12 @@
     "No confirmed GPU allocation",
     "No large-scale GPU training or independent multi-turn/tool-use acceptance demonstrated"
   ],
-  "notes": "Shakespeare excluded from conversational readiness. CPU bounded smoke only. Original random initialization retained. Evaluation now checks immutable checkpoint data hashes."
+  "notes": "80-step dialogue smoke passed, but independent conversational scores unverified. No Shakespeare-only progress claims. No GPU allocation. Full legacy test failures tracked separately.",
+  "source_ci_failure": {
+    "run_id": 44862176915,
+    "conclusion": "failure",
+    "diagnosis": "Full unittest discovery imports pytest-dependent tests without pytest, requires absent checkpoints/starter.pt, and fails to start legacy API server; six errors.",
+    "remedy_commit": "c9da14a98175f1ec0c45b5504c0a0e49d28e4ec3",
+    "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
+  }
 }
