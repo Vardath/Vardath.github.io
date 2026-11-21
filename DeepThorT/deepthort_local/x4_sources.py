@@ -148,6 +148,19 @@ def inspect_x4_sources(*, project_dir=None, game_dir=None, reference_dir=None,
                 if not candidates:candidates=_selected_files(ref,sub,500)
                 turrets=[p for p in candidates if 'turret' in p.name.lower()]
                 weapons=[p for p in candidates if 'weapon' in p.name.lower()]
+                # The PE component has medium slots. An alphabetical prefix
+                # previously selected Argon L destroyer equipment as if it
+                # were a useful candidate. Prefer medium-class identifiers,
+                # but retain everything as UNVERIFIED compatibility candidates
+                # until the actual connection tags are inspected.
+                def candidate_priority(path):
+                    name=path.name.lower()
+                    medium=bool(re.search(r'(^|[_/])m([_/]|$)',name))
+                    capital=bool(re.search(r'(^|[_/])(?:l|xl)([_/]|$)',name)) or '/capital/' in path.as_posix().lower()
+                    return (0 if medium else 2 if capital else 1,
+                            0 if 'xen' in name else 1, name)
+                weapons.sort(key=candidate_priority)
+                turrets.sort(key=candidate_priority)
                 paths=(weapons[:limit//2]+turrets[:limit//2])[:limit]
             elif category in ('storage','engine'):
                 paths=[]
