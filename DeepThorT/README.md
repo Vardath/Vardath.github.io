@@ -1,3 +1,24 @@
+# DeepThorT v17 — targeted model-authored plan revisions (22 November 2026)
+
+**Source base:** v16; original v10.9 interface geometry, approval rules, JANUS/Sentinel, offline Qwen ONNX inference, local state, resource settings and Windows launcher are unchanged.
+
+**Observed failure:** The 07:57 diagnostic ZIP from 22 November records another 40 completed local model planning calls for the Xenon PE project without a validated plan. The model responded to each request, but the validator still listed missing X4 deliverables. No work was approved, queued or generated. The export intentionally omits the raw proposals, so it cannot establish which individual replies were malformed. Raising the timeout or attempt limit again would not solve this result.
+
+**Repairs (model remains solely responsible for proposing files):**
+
+- The first request asks the model for up to two short, concrete file descriptions, rather than up to five. Each subsequent repair asks for **one or two files**, reducing the chance of incomplete JSON within the existing 640-token output allowance.
+- The unchanged project validator identifies the current unmet criteria. Later requests explicitly focus on **one missing criterion at a time**, rotating even when no model output has been accepted. All instructions and original specifications remain in the model's input; previously proposed file paths and source candidates are preserved and included where the context window permits.
+- Accept a single structurally valid JSON plan object embedded in a model response with prefatory prose. Reject malformed, ambiguous or multiply embedded objects. No plan step is fabricated or inferred from text.
+- Record privacy-safe planning telemetry in `state/logs/planner.jsonl`: pass number, reply length, number of retained/new/revised files, remaining validation gaps, duplicate/JSON rejection and current focus. No raw private prompt, model reply or file contents are written to diagnostic logs.
+- The 40-attempt maximum and **immediate stop once a complete plan validates** remain unchanged. An unsuccessful plan cannot be approved or executed, and no hardcoded Xenon PE plan is substituted.
+- An existing GUI test now waits until its background planner finishes before deleting its temporary test fixture, correcting a non-production test cleanup race.
+
+**Local tests:** `xvfb-run -a python -m unittest discover -s tests -q` -> **163 tests OK**, including five new targeted-planning tests. Tests use scripted replies; **actual 1.5B model success is still unverified**. This release does not claim to have built the PE mod, loaded it in X4 or implemented an autonomous game developer. If the model continues to fail, the new safe planning diagnostics identify whether output formatting, repeats or missing requirements are the blocker.
+
+**Installation:** Fully close DeepThorT, extract `DeepThorT_Desktop_v17_Windows.zip` over `D:\deepthort`, keeping all `models`, `state`, `node_modules`, `reference`, `cache` and project files. The 40-pass run already failed, so request a **new draft plan** (not a stale replay). For a genuinely interrupted and incomplete run, `Retry failed reply` may recover completed identical passes from SQLite.
+
+---
+
 # DeepThorT v16 — avoid lost long-running inference and resume interrupted plans (21 November 2026)
 
 **Source base:** v15, with the v10.9 interface geometry unchanged. No new panels,
