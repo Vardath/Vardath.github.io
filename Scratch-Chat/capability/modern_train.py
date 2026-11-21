@@ -93,11 +93,21 @@ def train(*, corpus:Path, tokenizer_path:Path, output:Path, steps:int=500,
             'train_tokens':len(train_ids),'validation_tokens':len(valid_ids),'metrics':metrics}
 
 
+def verify_evaluation_corpus(immutable: dict, corpus: Path, tokenizer_path: Path):
+    """Fail closed if held-out evaluation is paired with different training inputs."""
+    for key, path in (("corpus_hash", corpus / "train.jsonl"),
+                      ("validation_hash", corpus / "validation.jsonl"),
+                      ("tokenizer_hash", tokenizer_path)):
+        if immutable.get(key) != file_hash(path):
+            raise ValueError(f"Evaluation input mismatch: {key}")
+
+
 def evaluate(*,checkpoint:Path,tokenizer_path:Path,corpus:Path):
     tok=ByteBPE.load(tokenizer_path)
     state=torch.load(checkpoint,map_location='cpu',weights_only=True)
-    if state.get('format')!=FORMAT or state['immutable']['tokenizer_hash']!=file_hash(tokenizer_path):
-        raise ValueError('Incompatible model or tokenizer')
+    if state.get('format')!=FORMAT:
+        raise ValueError('Incompatible model format')
+    verify_evaluation_corpus(state['immutable'], corpus, tokenizer_path)
     cfg=ModernConfig(**state['config'])
     model=ModernScratchTransformer(cfg).eval()
     model.load_state_dict(state['model_state'])
