@@ -1,20 +1,18 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T02:20:00Z",
+  "updated_utc": "2026-11-21T03:38:00Z",
   "last_verified_run": {
-    "id": 44851644849,
+    "id": 44855364827,
     "conclusion": "success",
-    "commit": "bf1616beacff3932772435815770c96221e45df2",
+    "commit": "02b048655efbe8b952bf36eae0d61bafb1b3c914",
     "steps": 80,
-    "training_data_examples": 27,
-    "artifact_id": 14685252895,
-    "checks": "all workflow stages passed: corpus tests, isolated tokenizer, training, evaluation, JSONL subprocess, independent diagnostic execution and artifact upload",
-    "capability_scores": "not extracted from artifact; do not infer 0/4 or any score"
+    "checks": "GitHub Actions completed successfully; capability scores not retrieved",
+    "capability_scores": "unverified; no readiness claim"
   },
   "next_run": {
-    "trigger_commit": "02b048655efbe8b952bf36eae0d61bafb1b3c914",
+    "trigger_commit": "67926badb4b8d616d81d19157db486968d7752ae",
     "execution": "pending verification",
-    "change": "Evaluation now refuses substituted train/validation/tokenizer inputs; added regression tests and CI step"
+    "change": "Checkpoint now binds train, validation, test, and tokenizer hashes; regression test covers test-set tampering"
   },
   "readiness": "not ready",
   "blockers": [
@@ -22,7 +20,8 @@
     "Latest capability results exist in artifact but score not retrieved; do not claim conversational progress",
     "No actual tool invocation interface",
     "No independently audited large licensed corpus",
-    "No confirmed GPU allocation"
+    "No confirmed GPU allocation",
+    "No large-scale GPU training or independent multi-turn/tool-use acceptance demonstrated"
   ],
   "notes": "Shakespeare excluded from conversational readiness. CPU bounded smoke only. Original random initialization retained. Evaluation now checks immutable checkpoint data hashes."
 }
