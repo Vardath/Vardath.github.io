@@ -1,8 +1,9 @@
-DEEPTHORT DESKTOP v13 — AI-authored planning repair
-Based on v12 with the v10.9 interface arrangement preserved.
-The app no longer substitutes a hardcoded Xenon PE plan. It requests bounded revisions
-from its local model; only validated model-authored drafts may be approved.
-Close the program before extracting into D:\deepthort. Keep state, models,
-node_modules, reference, cache, and your project directories.
-The v13 package contains code only, not models, state, or game assets.
-No actual Windows ONNX planning or X4 in-game verification was available here.
+DEEPTHORT DESKTOP v14 — planning revision context repair
+Based directly on v13, preserving the v10.9 user interface and existing architecture.
+Fixes v13's `Existing plan paths cannot fit` error without trimming the original specification
+or replacing the local model's proposal with a predefined Xenon PE plan.
+All previously proposed steps remain in the in-memory plan and are validated before approval.
+
+Close DeepThorT, extract this ZIP over D:\deepthort, keep your local models/state/
+reference/cache/node_modules directories and project files. Restart and request a fresh draft.
+The installed Windows model and X4 game still require actual local verification.
