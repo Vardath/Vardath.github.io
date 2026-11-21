@@ -18,3 +18,9 @@ Group train/validation/test by original conversation, source document and templa
 ## Verified CI and current limitation
 
 GitHub Actions **Scratch Chat source tests** run [44900943285](https://github.com/Vardath/Vardath.github.io/actions/runs/44900943285) completed successfully for commit `d6b84f5da9102ca530ad7b233b7c39b691aa37c6`. This verifies scoped source tests, **not** an independently trained conversational model or DeepThorT acceptance. Large licensed corpus, GPU training, and external multi-turn/tool-call acceptance remain outstanding.
+
+## Admission gate implementation (2026-11-22)
+
+`capability/dialogue_source_manifest.py` now rejects incomplete, unapproved, unhashed, or empty-split source manifests. `tests/test_dialogue_source_manifest.py` covers approval, missing license, invalid hashes, identical split hashes, and zero records. **This is a metadata structure gate only**: it does not verify license authenticity, scan privacy, hash actual files, or detect content-level cross-split duplicates. Those checks must be implemented before any external corpus is admitted. No external corpus was ingested, and no new model training or acceptance test was run in this pass.
+
+Commits: `6f2d9dbd2d8bd258f19d56cb90ce4354bd0be7f6`, `090ac1b6f1d50b50575ae9c2bd8a817a248c349b`. Latest pre-change combined status for `afcd8b0` had no status checks; source CI run `44905549853` was previously queued and its conclusion remains unverified here.
