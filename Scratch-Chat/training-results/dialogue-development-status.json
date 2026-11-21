@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T06:14:48Z",
+  "updated_utc": "2026-11-21T07:31:00Z",
   "last_verified_run": {
     "id": 44862170370,
     "conclusion": "success",
@@ -22,7 +22,7 @@
     "No confirmed GPU allocation",
     "No large-scale GPU training or independent multi-turn/tool-use acceptance demonstrated"
   ],
-  "notes": "No new dialogue-training experiment. Last verified dialogue training remains 80-step smoke #44862170370. No independent conversational score established. Data admission improved but no external data ingested.",
+  "notes": "Verified three preceding near-duplicate source CI runs succeeded. Added trainable-format precursor and regression tests, not a conversational capability improvement.",
   "source_ci_failure": {
     "run_id": 44862176915,
     "conclusion": "failure",
@@ -31,22 +31,18 @@
     "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
   },
   "latest_source_ci": {
-    "run_id": 44871910585,
+    "run_id": 44874685881,
     "conclusion": "success",
-    "commit": "16089e1c7b5087206056b7c58174c1bb981d054f",
-    "scope": "checkpoint-independent tests; not full legacy suite"
+    "commit": "65602a17934ca507c154498e3150d2cca2eaebdc",
+    "scope": "checkpoint-independent source tests"
   },
   "new_milestone": {
-    "feature": "Cross-split lexical near-duplicate screening with minimum 12-token threshold and regression tests",
+    "feature": "Deterministic explicit chat serialization with assistant-only character spans and reserved-token rejection",
     "commits": [
-      "f1be3749ecd72d1fe28c2ad84118b6cff12ee3d1",
-      "7b0e3a797345f89782be43e4d306223e0d461235"
+      "bf48c3db4fe6c7dd798a71ff8872ef74867a7482",
+      "f0b44f5f805b909fe766c920d8321642ff611435"
     ],
-    "scope": "Screen token-multiset Jaccard >=0.85 across splits; semantic and PII auditing remain outstanding",
-    "execution": "Source CI queued/in progress, not yet verified",
-    "run_ids": [
-      44874663100,
-      44874675847
-    ]
+    "limitations": "Not wired to model tokenizer/training loss; character spans require tokenizer offset alignment; no new data admitted or training conducted",
+    "execution": "Follow-on source CI pending verification"
   }
 }
