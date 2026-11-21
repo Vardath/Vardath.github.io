@@ -74,7 +74,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='11',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='12',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -156,6 +156,8 @@ class DeepThorTDesktop(tk.Tk):
         self.after(1000, self._scheduler)
         self.after(2200, self._poll_server)
         self.after(1000, self._poll_reply_notice)
+        # Preserve the original button arrangement when Windows reduces window height.
+        self.bind('<Configure>', self._fit_chat_to_window)
         self.after(2000, self._process_snapshot)
         self.after(1500, self._auto_start_if_installed)
         self.after(700, self._start_sentinel)
@@ -230,14 +232,12 @@ class DeepThorTDesktop(tk.Tk):
                        bg=BG,fg=TEXT,selectcolor=PANEL,activebackground=BG,activeforeground=TEXT).pack(side='right')
         self.attachment_status=tk.StringVar(value='No attachments; text, DOCX, PDF and images supported')
         ttk.Label(chat,textvariable=self.attachment_status,style='Muted.TLabel').pack(anchor='w',pady=2)
-        self.chat_connection=tk.StringVar(value="AI offline: use Start AI or Self-diagnose to check setup")
-        tk.Label(chat,textvariable=self.chat_connection,bg=BG,fg=YELLOW,anchor="w").pack(fill="x",pady=(2,3))
-        # A reply has its own lifecycle. Model health (AI: ready) must never
-        # overwrite the visible waiting/generation/validation notification.
-        self.reply_notice=tk.StringVar(value='No reply pending.')
-        self.reply_banner=tk.Label(chat,textvariable=self.reply_notice,bg=PANEL,fg=YELLOW,
-                         justify='left',anchor='w',wraplength=900,padx=9,pady=5)
-        self.reply_banner.pack(fill='x',pady=(0,4))
+        # Reuse the original v10.9 connection/status line. A separate packed
+        # banner pushes the two bottom action rows below the window on Windows.
+        self._model_connection_message="AI offline: use Start AI or Self-diagnose to check setup"
+        self.chat_connection=tk.StringVar(value=self._model_connection_message)
+        self.reply_notice=self.chat_connection  # compatibility for existing status checks
+        tk.Label(chat,textvariable=self.chat_connection,bg=BG,fg=YELLOW,anchor="w").pack(fill="x",pady=(2,4))
         self.chat_tabs=ttk.Notebook(chat);self.chat_tabs.pack(fill='x',pady=4)
         self.chat_tabs.bind('<<NotebookTabChanged>>',self._chat_changed)
         self.chat_history=self._text(chat,readonly=True,height=13,font=('Segoe UI',10))
@@ -249,6 +249,7 @@ class DeepThorTDesktop(tk.Tk):
         self.input=self._text(chat,height=12,font=('Segoe UI',11));self.input.pack(fill='both',expand=False)
         self.input.bind('<Control-Return>',lambda e:self._send())
         ca=ttk.Frame(chat);ca.pack(fill='x',pady=7)
+        self.chat_actions=ca
         chat_controls=ttk.Frame(ca);chat_controls.pack(fill='x',pady=(0,3))
         plan_controls=ttk.Frame(ca);plan_controls.pack(fill='x')
         ttk.Button(chat_controls,text='Send message',command=self._send).pack(side='left')
@@ -652,6 +653,22 @@ class DeepThorTDesktop(tk.Tk):
         self._preview('New file, not created. Go to Chats and describe what it should contain.')
         self.tabs.select(0);self.input.focus_set()
 
+    def _fit_chat_to_window(self, event):
+        """Shrink only the editor's visible rows if the existing controls would clip.
+
+        Both text widgets remain scrollable; tabs, buttons and control order stay
+        unchanged. At the original 860px window height the v10.9 row count (12)
+        is preserved. Keep the two action rows accessible on shorter displays.
+        """
+        if event.widget is not self or not hasattr(self,'input'):
+            return
+        height=max(0,self.winfo_height())
+        if height < 100:
+            return
+        target=max(3, min(12, 12 - max(0,(860-height+19)//20)))
+        if int(self.input.cget('height')) != target:
+            self.input.configure(height=target)
+
     # ----------- truthful, persistent reply-activity notification -----------
     def _set_reply_stage(self, ident, stage):
         """Only the UI thread may update Tk. Ignore late events from old turns."""
@@ -674,9 +691,9 @@ class DeepThorTDesktop(tk.Tk):
                 stage='Local ONNX model is generating a response (output is unavailable until completion)'
             current_chat=bool(req and req['chat_id']==self.current_chat)
             prefix='' if current_chat else 'Other chat — '
-            self.reply_notice.set(f'{prefix}{mode} #{active} IN PROGRESS — {stage} '
-                                  f'| elapsed {elapsed//60}m {elapsed%60:02d}s. '
-                                  'No executable job is queued until plan approval.')
+            # One concise line; the original label must not grow vertically.
+            self.reply_notice.set(f'{prefix}{mode} #{active} IN PROGRESS — '
+                                  f'{stage[:98]} | {elapsed//60}m {elapsed%60:02d}s')
             return
         try:
             current=self.conversations.thread(self.current_chat,50) if self.current_chat else []
@@ -700,7 +717,8 @@ class DeepThorTDesktop(tk.Tk):
         elif self.reply_outcome is not None and self.reply_outcome['chat_id']==self.current_chat:
             self.reply_notice.set(self.reply_outcome['message'])
         else:
-            self.reply_notice.set('No reply pending. Model availability is shown above.')
+            self.reply_notice.set(getattr(self,'_model_connection_message',
+                'AI offline: use Start AI or Self-diagnose to check setup'))
 
     def _poll_reply_notice(self):
         try:
@@ -1893,8 +1911,11 @@ class DeepThorTDesktop(tk.Tk):
                 and re.search(r'\b(?:deepthort|yourself|the app|the ai|this app|the model)\b',text)))
 
     def _set_connection_status(self, message):
+        # Health updates must not replace an active reply notification.
+        # On idle, this is the original v10.9 connection-status text.
+        self._model_connection_message=str(message)
         if hasattr(self, 'chat_connection'):
-            self.chat_connection.set(message)
+            self._render_reply_notice()
 
     def _diagnose(self, prompt=None):
         info = inspect_local_setup(ROOT)
