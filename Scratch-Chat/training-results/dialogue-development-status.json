@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T04:11:00Z",
+  "updated_utc": "2026-11-21T05:39:00Z",
   "last_verified_run": {
     "id": 44862170370,
     "conclusion": "success",
@@ -29,5 +29,20 @@
     "diagnosis": "Full unittest discovery imports pytest-dependent tests without pytest, requires absent checkpoints/starter.pt, and fails to start legacy API server; six errors.",
     "remedy_commit": "c9da14a98175f1ec0c45b5504c0a0e49d28e4ec3",
     "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
+  },
+  "latest_source_ci": {
+    "run_id": 44864894432,
+    "conclusion": "success",
+    "commit": "7c25afb74bfd4a2b1abf185f8d133c75a455a5f0",
+    "scope": "checkpoint-independent tests only; legacy full suite not green"
+  },
+  "new_milestone": {
+    "feature": "External dialogue admission validator and regression tests",
+    "commits": [
+      "b9913d2247de6bd697b61160abaf8cf95b99c403",
+      "07d2bf6de2bc303e28b05ea8c605ddf48d13cc9b"
+    ],
+    "scope": "Explicit approved provenance, SHA-256 checks, schema and exact cross-split deduplication; no external dataset ingested",
+    "execution": "follow-on CI not yet verified"
   }
 }
