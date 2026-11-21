@@ -6,6 +6,7 @@ X4 extensions must never be approved as generic Python entrypoints.
 from __future__ import annotations
 import json
 import re
+from .flight_recorder import record
 from pathlib import Path
 from .workspace import safe_target
 
@@ -123,8 +124,22 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
         raw = re.sub(r'\s*```$', '', raw)
     try:
         data = json.loads(raw)
-    except ValueError as e:
-        raise PlanError('Model did not return a valid JSON plan; review and retry.') from e
+    except ValueError:
+        # A small local model may prefix an otherwise valid plan with prose.
+        # Accept only one complete JSON object with our exact known schema;
+        # never infer a missing bracket, path, description, or file intention.
+        decoder = json.JSONDecoder()
+        embedded = []
+        for match in re.finditer(r'\{', raw):
+            try:
+                candidate, end = decoder.raw_decode(raw, match.start())
+            except ValueError:
+                continue
+            if isinstance(candidate, dict) and set(candidate) in ({'files'}, {'blocked'}):
+                embedded.append((candidate, match.start(), end))
+        if len(embedded) != 1:
+            raise PlanError('Model did not return one complete valid JSON plan object; review and retry.')
+        data = embedded[0][0]
     if isinstance(data, dict) and 'blocked' in data:
         raise PlanError('Plan needs source inspection: ' + str(data.get('blocked', 'game references unavailable'))[:500])
     if not isinstance(data, dict) or set(data) != {'files'}:
@@ -156,7 +171,7 @@ def build_plan_prompt(request: str, inventory: dict | None = None, *, x4_evidenc
     tools = ', '.join(x['name'] for x in (inventory or {}).get('tools', []) if x.get('found'))
     header = ('Return ONLY valid JSON with a "files" array. Each entry needs "path" '
               'and "description". Choose concrete relative source files ordered by dependency, '
-              'up to 5 in this first pass; subsequent passes will complete the plan. No absolute paths or shell/install commands. Do not confuse an example '
+              'up to 2 in this first pass; subsequent passes will complete the plan. Keep each description short and concrete. No absolute paths or shell/install commands. Do not confuse an example '
               'format with the actual project type. Do NOT invent verified game asset identifiers.\n')
     if project_kind(request) == 'x4':
         domain = ('''This project is an X4: Foundations EXTENSION, not a Python app. NEVER output src/main.py.
@@ -248,9 +263,38 @@ def file_step_prompt(user_request: str, path: str, description: str, existing: s
             f'\nEXISTING CONTENT:\n{existing}\nReturn the complete file text.')
 
 
+def remaining_plan_gaps(steps: list[dict], request: str) -> list[str]:
+    """Extract the existing validator's unmet criteria for targeted model feedback.
+
+    Nothing is added to the plan here. Validator findings (not a hardcoded
+    ship or game file template) determine what the model should investigate.
+    """
+    try:
+        validate_project_plan(steps, request)
+        return []
+    except PlanError as exc:
+        message = str(exc)
+        for prefix in ('Plan does not cover the X4 specification: ',
+                       'Game plan is incomplete: '):
+            if message.startswith(prefix):
+                message = message[len(prefix):]
+                break
+        message = message.split('. No work', 1)[0]
+        message = message.split('. No work has', 1)[0]
+        return [gap.strip().removesuffix('.') for gap in message.split(';') if gap.strip()]
+
+
+def planning_focus(steps: list[dict], request: str, pass_number: int) -> str:
+    """Rotate specific unsatisfied criteria even when invalid output adds no files."""
+    gaps = remaining_plan_gaps(steps, request)
+    specific = [g for g in gaps if not g.startswith(('at least four ', 'multiple substantive '))]
+    pool = specific or gaps
+    return pool[(max(1, pass_number) - 2) % len(pool)] if pool else 'correct the rejected output format'
+
+
 def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
                           x4_evidence: str = '', max_chars: int = 7500,
-                          path_window: int = 0) -> str:
+                          path_window: int = 0, focus: str = '') -> str:
     """Ask the model to repair its own proposal within a bounded context.
 
     Never truncate the original specification or alter/drop accumulated plan
@@ -263,15 +307,20 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
     header = (
         'Your previous project plan was incomplete or invalid. REVISE IT YOURSELF. '
         'Return ONLY JSON {"files":[{"path":"...","description":"..."}]}, '
-        'with 1 to 6 NEW files or corrections of existing paths. '
+        'with 1 or 2 NEW files or corrections of existing paths; concise descriptions. '
         'Every path must be a real relative source file. '
         'Previous plan steps remain saved and are merged with your corrections; '
         'only a bounded selection of paths may appear below. '
         'Do not repeat unchanged files. Use verified source evidence; never guess IDs. '
         'Do not claim any testing or construction has occurred.\n'
     )
-    findings = str(problems).strip()[:1300]
-    base = (header + 'VALIDATOR FINDINGS:\n' + findings +
+    findings = str(problems).strip()[:850]
+    target = ('PRIMARY TARGET FOR THIS PASS (a criterion still missing from the '
+              'accumulated plan): ' + focus[:180] + '\n'
+              'Propose a source file addressing this target. Do not repeat an '
+              'existing unchanged file. If a file already exists, improve its description. '
+              'Do not write a complete essay or repeat the entire specification.\n') if focus else ''
+    base = (header + target + 'VALIDATOR FINDINGS:\n' + findings +
             '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n')
     if len(base) >= max_chars:
         raise PlanError('Complete original specification and correction instructions do not fit '
@@ -361,9 +410,10 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     seen_answers = set()
     prompt = first_prompt
     for round_no in range(1, max_rounds + 1):
+        focus = planning_focus(list(all_steps.values()), request, round_no)
         if stage:
             stage(f'Local model planning — pass {round_no}/{max_rounds}; '
-                  f'{len(all_steps)} model-proposed files retained')
+                  f'{len(all_steps)} files retained; next gap: {focus[:82]}')
         # A fresh request session prevents previous 7K-character planning inputs
         # from polluting the next call or crossing chat/project boundaries.
         # Each completed pass is already stored by LocalModelClient.chat in
@@ -381,7 +431,10 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                       'a completed local inference; no model time consumed')
         else:
             answer = client.chat(round_session, prompt, max_tokens=640)
-        if answer.strip() in seen_answers:
+        count_before = len(all_steps)
+        revised_count = 0
+        repeated = answer.strip() in seen_answers
+        if repeated:
             # Do not abort a long planning task just because the small model
             # repeated an earlier INVALID answer. Record concrete feedback and
             # give the model another opportunity to correct it. No step is
@@ -402,6 +455,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                 # every remaining revision fail, regardless of its quality.
                 candidate_steps = dict(all_steps)
                 for entry in fragment:
+                    if candidate_steps.get(entry['path'].casefold()) != entry:
+                        revised_count += 1
                     candidate_steps[entry['path'].casefold()] = entry
                 if len(candidate_steps) > 24:
                     raise PlanError('The proposed additions would exceed the '
@@ -418,13 +473,31 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
             except PlanError as exc:
                 finding = str(exc)
         failures.append(finding)
+        gaps = remaining_plan_gaps(list(all_steps.values()), request)
+        # Only counts and bounded criteria go into diagnostics, never the
+        # private original specification, proposed paths or model replies.
+        db = getattr(client, 'db', None)
+        if db is not None:
+            record(Path(db).parent, 'planner', 'model_plan_pass',
+                   pass_number=round_no, max_attempts=max_rounds,
+                   proposed_file_count=len(all_steps),
+                   net_new_files=len(all_steps) - count_before,
+                   revised_file_entries=revised_count,
+                   remaining_gap_count=len(gaps),
+                   response_characters=len(answer),
+                   rejected_duplicate=repeated,
+                   invalid_json='JSON' in finding or 'json' in finding,
+                   focus_category=focus[:120])
         if round_no == max_rounds:
             break
+        next_focus = planning_focus(list(all_steps.values()), request, round_no + 1)
         if stage:
-            stage(f'Planning pass {round_no} rejected: {finding[:140]}; asking model to correct it')
+            stage(f'Planning pass {round_no} rejected: {finding[:100]}; '
+                  f'{len(all_steps)} files, {len(gaps)} gaps; '
+                  f'next correction: {next_focus[:90]}')
         prompt = build_revision_prompt(
             request, list(all_steps.values()), finding, x4_evidence=x4_evidence,
-            max_chars=max_chars, path_window=round_no - 1)
+            max_chars=max_chars, path_window=round_no - 1, focus=next_focus)
     raise PlanError(
         f'Local model could not produce a validated plan after {max_rounds} attempts. '
         f'Last problem: {failures[-1][:650]}. No substitute plan was created; '
