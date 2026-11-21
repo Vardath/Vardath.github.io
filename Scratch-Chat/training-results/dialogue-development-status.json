@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T00:23:00Z",
+  "updated_utc": "2026-11-21T01:40:00Z",
   "last_verified_run": {
     "id": 44838816592,
     "conclusion": "success",
@@ -23,7 +23,7 @@
   },
   "next_run": {
     "trigger_commit": "763566039c3294ab43d93a72dc486706de7b5c48",
-    "execution": "not yet verified",
+    "execution": "Awaiting verification after test repair",
     "steps": 80,
     "training_examples": 27,
     "change": "Three new original CC0 train families: clarification, tool boundary, multi-turn recall; held-out families unchanged"
@@ -34,7 +34,30 @@
     "0/4 independent development checks passed in previous run",
     "no actual tool invocation interface",
     "no independently audited large licensed corpus",
-    "no confirmed GPU allocation"
+    "no confirmed GPU allocation",
+    "Latest 80-step run failed before training; test repair must pass before training metrics can be reported"
   ],
-  "notes": "Shakespeare pilot excluded from conversational readiness evidence. Training remains from random initialization. CPU Actions are bounded smoke tests."
+  "notes": "Shakespeare pilot excluded from conversational readiness evidence. Training remains from random initialization. CPU Actions are bounded smoke tests.",
+  "latest_failed_runs": [
+    {
+      "id": 44843558080,
+      "workflow": "original dialogue smoke",
+      "failed_step": "Validate original dialogue and bridge regression tests"
+    },
+    {
+      "id": 44843568333,
+      "workflow": "source tests",
+      "failed_step": "Run existing test suite"
+    },
+    {
+      "id": 44843551707,
+      "workflow": "Shakespeare pilot",
+      "failed_step": "Test dialogue corpus provenance and leakage"
+    }
+  ],
+  "latest_diagnosis": "Corpus expanded from 18 to 27 examples, but test_dialogue_corpus.py still asserted 18. Corrected assertion to derive count from FAMILIES; repaired duplicate-test payload newline generation. Root cause inferred from code and failed step, not independently confirmed from raw logs.",
+  "remediation_commits": [
+    "c70f73f38fc9abf050f6dcf5d1e000ffae5b5af5",
+    "bf1616beacff3932772435815770c96221e45df2"
+  ]
 }
