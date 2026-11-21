@@ -1,3 +1,19 @@
+## v16 update — 21 November 2026 (17:22 diagnostics)
+
+**Current packaged release: v16.** Built strictly from the v15 Windows ZIP, preserving UI geometry, launcher, installed ONNX model, JANUS, Sentinel, existing approval gates and saved state.
+
+The new diagnostics show conversation #15 began X4 model planning at 16:05 local time. Six calls completed in roughly 8–10 minutes each. Its seventh request began 17:00:26 local time, then `LocalModelClient` raised `TimeoutError` at exactly 900 seconds (17:15:26), while the ONNX worker returned its answer at 17:15:41 — 15 seconds after the HTTP client disconnected. A manual retry at 17:21 dispatched conversation #15 again, but v15's in-memory planner did not reuse the six completed passes. No approved X4 jobs or finished mod were present.
+
+v16 fixes exactly this class of failure: `deepthort_local/client.py` increases its local inference socket timeout from 900 to 3600 seconds and exposes `completed_exchange(session,prompt)` for a matching, fully saved local model answer in the existing `state/sessions.sqlite3`. `deepthort_local/agent_plan.py` replays only exact prior completed pass inputs on a retry/restart, rebuilding its accumulated model-authored plan; any new/changed source evidence or user prompt forces fresh inference. A pass that timed out before its answer was saved must still be regenerated. This does not guarantee successful planning, prevent all future timeouts or create a prewritten fallback.
+
+Source diff from v15 is restricted to `deepthort_local/client.py`, `deepthort_local/agent_plan.py`, `tests/test_inference_recovery_v16.py`, `README.md`, and `START HERE.txt`. The Windows launcher and all other files are unchanged. Five targeted tests passed; 158 tests passed in the successful full Xvfb suite. One earlier full-suite run was affected by a pre-existing GUI temporary-folder cleanup race. Archive CRC and byte-for-byte GitHub source hashes were verified. **Live Windows ONNX inference, generated Xenon PE XML, X4 gameplay and GitHub Actions green status are not established by these tests.**
+
+On Windows, close the application, extract v16 over `D:\deepthort` without deleting `state`, `models`, `reference`, `cache`, `node_modules` or project folders; restart and use **Retry failed reply** on the original Xenon PE request. If identical saved source references/prompt are present, the first six completed model passes should be replayed without another expensive inference; the unrecorded seventh must be generated again.
+
+Do not weaken the model-authored plan validator, 40-pass allowance or explicit approval. Preserve sequential version naming: next genuine repair release is v17.
+
+---
+
 ## v15 update — 21 November 2026 (15:57 diagnostic)
 The user explicitly required **at least 40 independent local-model attempts** for generating/revising an X4 plan, **stopping immediately when validation succeeds**. Screenshot 467 and `DeepThorT-Diagnostics-20261121-155708.zip` confirm v14 made four complete, unsuccessful ONNX inference calls in approximately 41 minutes and then stopped at the hard-coded desktop limit. The parser also rejected max_rounds >8. v15 sets the planner and desktop to 40, does not prematurely abort upon an identical invalid reply, and avoids poisoning the retained plan with an oversized (more than 24 file) candidate. The initial user specification and explicit approval boundary remain unchanged. No canned plan was inserted. Five new tests pass; total local headless tests **153, OK**. This verifies control flow only, not the model's ability to invent a technically sound plan or produce a working mod. Existing v14 GUI design and JANUS/Sentinel code are untouched. A 40-pass run may take several hours on the user's CPU; persistence across UI exit is not established. GitHub CI remains unverified until an actual check conclusion is inspected.
 
