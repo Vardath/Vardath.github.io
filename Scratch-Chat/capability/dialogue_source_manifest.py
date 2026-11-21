@@ -55,6 +55,7 @@ def verify_split_files(data, root):
     root = Path(root)
     seen = {}
     seen_dialogue = {}
+    seen_family = {}
     for split in ("train", "validation", "test"):
         path = root / (split + ".jsonl")
         raw = path.read_bytes()
@@ -88,6 +89,19 @@ def verify_split_files(data, root):
                 if role not in ("system", "user", "assistant", "tool") or not isinstance(content, str) or not content.strip():
                     raise ValueError(f"{split} record {index} has invalid role/content")
                 normalized.append((role, " ".join(content.split()).casefold()))
+            # An upstream conversation or template family must not straddle
+            # evaluation boundaries, even if its individual turns differ.
+            for family_field in ("conversation_id", "source_conversation_id", "template_family_id"):
+                family = record.get(family_field)
+                if family is None:
+                    continue
+                if not isinstance(family, str) or not family.strip():
+                    raise ValueError(f"{split} record {index} has invalid {family_field}")
+                family_key = (family_field, data["source_id"], family.strip())
+                previous = seen_family.get(family_key)
+                if previous is not None and previous[0] != split:
+                    raise ValueError(f"Cross-split conversation/template family leakage: {previous[1]} and {split}:{index}")
+                seen_family[family_key] = (split, f"{split}:{index}")
             key = json.dumps(normalized, ensure_ascii=False)
             if key in seen_dialogue:
                 raise ValueError(f"Repeated normalized dialogue: {seen_dialogue[key]} and {split}:{index}")
