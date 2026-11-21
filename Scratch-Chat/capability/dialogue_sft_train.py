@@ -48,6 +48,10 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
                        heads=heads, context_size=context_size)
     train = read_examples(train_path, vocab_size, context_size)
     valid = read_examples(validation_path, vocab_size, context_size)
+    # Validation must not contain any training sequence, even under different row IDs.
+    train_sequences = {tuple(ids) for ids, _ in train}
+    if any(tuple(ids) in train_sequences for ids, _ in valid):
+        raise ValueError("Train/validation sequence contamination")
     immutable = {"train_sha256": file_hash(train_path),
                  "validation_sha256": file_hash(validation_path),
                  "config": asdict(cfg), "lr": lr, "seed": seed}
