@@ -40,6 +40,7 @@ def train(*, corpus:Path, tokenizer_path:Path, output:Path, steps:int=500,
                      width=width,layers=layers,heads=heads)
     immutable={'corpus_hash':file_hash(corpus/'train.jsonl'),
                'validation_hash':file_hash(corpus/'validation.jsonl'),
+               'test_hash':file_hash(corpus/'test.jsonl'),
                'tokenizer_hash':file_hash(tokenizer_path),
                'seq_len':seq_len,'batch':batch,'grad_accum':grad_accum,'lr':lr,'seed':seed}
     if resume and not output.exists():
@@ -97,6 +98,7 @@ def verify_evaluation_corpus(immutable: dict, corpus: Path, tokenizer_path: Path
     """Fail closed if held-out evaluation is paired with different training inputs."""
     for key, path in (("corpus_hash", corpus / "train.jsonl"),
                       ("validation_hash", corpus / "validation.jsonl"),
+                      ("test_hash", corpus / "test.jsonl"),
                       ("tokenizer_hash", tokenizer_path)):
         if immutable.get(key) != file_hash(path):
             raise ValueError(f"Evaluation input mismatch: {key}")
