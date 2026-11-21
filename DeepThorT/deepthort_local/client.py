@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 MODEL_ID = 'deepthort-qwen-coder-onnx'
 
 class LocalModelClient:
-    def __init__(self, state_db: str | Path, base_url: str = 'http://127.0.0.1:8765', timeout: int = 900):
+    def __init__(self, state_db: str | Path, base_url: str = 'http://127.0.0.1:8765', timeout: int = 3600):
         url = urlparse(base_url)
         if url.scheme != 'http' or url.hostname != '127.0.0.1' or url.username or url.password or url.query or url.fragment or url.path not in ('','/') or not url.port:
             raise ValueError('Only literal http://127.0.0.1:<port> is allowed')
@@ -79,6 +79,27 @@ class LocalModelClient:
         with self._connect() as conn:
             conn.executemany('INSERT INTO messages(session_id,role,content) VALUES(?,?,?)',
                               ((session_id,'user',prompt),(session_id,'assistant',report)))
+
+    def completed_exchange(self, session_id: str, prompt: str) -> str | None:
+        """Reuse an already completed *identical* model pass after interruption.
+
+        Draft planning uses distinct session IDs per pass, and chat() writes both
+        messages in one SQLite transaction only when a complete answer arrives.
+        Comparing the exact saved input prevents carrying answers into changed
+        specifications, references or model correction prompts. No new inference,
+        approval, or source-file writes are triggered here.
+        """
+        self.history(session_id)  # Validate the session identifier.
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError('prompt required')
+        with self._connect() as conn:
+            rows = conn.execute(
+                'SELECT role,content FROM messages WHERE session_id=? '
+                'ORDER BY id DESC LIMIT 2', (session_id,)).fetchall()
+        if (len(rows) == 2 and rows[0][0] == 'assistant' and rows[1] == ('user', prompt)
+                and isinstance(rows[0][1], str) and rows[0][1].strip()):
+            return rows[0][1]
+        return None
 
     def chat(self,session_id:str,prompt:str,max_tokens:int=96,*,visible_prompt:str|None=None):
         if not isinstance(prompt,str) or not prompt.strip(): raise ValueError('prompt required')
