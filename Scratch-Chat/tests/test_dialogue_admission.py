@@ -60,5 +60,33 @@ class AdmissionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "duplicate dialogue"):
             self.run_audit()
 
+
+    def test_cross_split_lexical_near_duplicate_rejected(self):
+        train = json.loads(self.paths["train"].read_text())
+        test = json.loads(self.paths["test"].read_text())
+        train["messages"] = [
+            {"role": "user", "content": "Explain how the station manager allocates food and water supplies to the arriving crews today."},
+            {"role": "assistant", "content": "The station manager tracks each crew and assigns food and water according to their requirements."}]
+        test["messages"] = [
+            {"role": "user", "content": "Explain how the station manager allocates food and water supplies to arriving crews today."},
+            {"role": "assistant", "content": "The station manager tracks each crew and assigns food and water according to their requirements."}]
+        for split, row in (("train", train), ("test", test)):
+            self.paths[split].write_text(json.dumps(row) + "\n", encoding="utf-8")
+            self.metadata["sha256"][split] = hashlib.sha256(self.paths[split].read_bytes()).hexdigest()
+        self.write_manifest()
+        with self.assertRaisesRegex(ValueError, "near-duplicate dialogue"):
+            self.run_audit()
+
+    def test_short_common_phrases_not_falsely_rejected(self):
+        train = json.loads(self.paths["train"].read_text())
+        test = json.loads(self.paths["test"].read_text())
+        train["messages"] = [{"role": "user", "content": "Hello"}, {"role": "assistant", "content": "Hi"}]
+        test["messages"] = [{"role": "user", "content": "Hello"}, {"role": "assistant", "content": "Goodbye"}]
+        for split, row in (("train", train), ("test", test)):
+            self.paths[split].write_text(json.dumps(row) + "\n", encoding="utf-8")
+            self.metadata["sha256"][split] = hashlib.sha256(self.paths[split].read_bytes()).hexdigest()
+        self.write_manifest()
+        self.assertEqual(self.run_audit()["splits"]["test"]["count"], 1)
+
 if __name__ == "__main__":
     unittest.main()
