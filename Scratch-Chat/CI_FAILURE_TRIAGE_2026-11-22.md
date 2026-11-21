@@ -1,0 +1,7 @@
+# Scratch Chat CI failure triage — 2026-11-22
+
+GitHub Actions source-tests run [44955467765](https://github.com/Vardath/Vardath.github.io/actions/runs/44955467765) on commit e9e0b230 completed **failure**. The unit-tests job installed PyTorch successfully, then failed at "Run checkpoint-independent dialogue and protocol tests"; compilation was skipped. The same workflow also failed on 44955460214 and 44955453052. Earlier progress reports that found no commit statuses did not establish successful CI.
+
+Commit 3cdcf4ec changes the workflow to run each suite independently, with GitHub Actions error annotations and a final nonzero exit when any suite fails. It additionally includes previously omitted near-duplicate, split-preparation, independent subprocess acceptance, and JSONL transport tests. This is diagnosis and coverage, **not** a fix for the unknown failing assertion. Read the new run's annotated suite names and output before editing the responsible implementation. Never relax assertions just to turn CI green.
+
+The separate original-dialogue smoke workflow already contains an 80-step random-initialized CC0 pilot with held-out task-family evaluation and a real JSONL subprocess bridge; it is not proof of general conversational competence. Do not repeat Shakespeare-only experiments. Do not treat CI CPU as large-scale pretraining. External datasets remain pending verified license/provenance approval; no external training or independent DeepThorT application acceptance is claimed in this milestone.
