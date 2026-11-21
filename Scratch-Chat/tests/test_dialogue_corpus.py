@@ -3,14 +3,14 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from capability.dialogue_corpus import build, validate
+from capability.dialogue_corpus import FAMILIES, build, validate
 
 class DialogueCorpusTests(unittest.TestCase):
     def test_original_corpus_passes(self):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d)
             build(out)
-            self.assertEqual(validate(out)["examples"], sum(len(v) for v in __import__("capability.dialogue_corpus", fromlist=["FAMILIES"]).FAMILIES.values()))
+            self.assertEqual(validate(out)["examples"], sum(len(v) for v in FAMILIES.values()))
 
     def test_mutated_split_fails_digest(self):
         with tempfile.TemporaryDirectory() as d:
