@@ -1,3 +1,40 @@
+# DeepThorT v16 — avoid lost long-running inference and resume interrupted plans (21 November 2026)
+
+**Source base:** v15, with the v10.9 interface geometry unchanged. No new panels,
+model providers, approval rules, JANUS/Sentinel changes or canned X4 plans.
+
+The 17:22 diagnostic export showed a planning inference timed out after 900 seconds
+at 17:15:26 Brisbane time. The local ONNX worker returned a valid response only
+15 seconds later, but Python's HTTP client had already disconnected and the
+model answer was discarded. Earlier passes had each taken 8½–10 minutes.
+
+**Corrections:**
+
+- Local HTTP inference read timeout is now **3600 seconds**, not 900 seconds.
+  The desktop still reports elapsed inference time and Stop AI remains available.
+- During 40-pass planning, completed local-model exchanges are recovered from
+  the **existing** `state/sessions.sqlite3` database on retry/restart. They are
+  reused only if their exact preceding prompt matches, so changed requirements
+  or source evidence force new inference. Unfinished passes are generated anew.
+- The approved-work queue and generated files remain untouched. There is still
+  no hardcoded PE plan, no synthetic success and no execution without approval.
+- No additional persistence copies of user prompts, model output or credentials.
+
+**Verification:** 158 Python tests passed on a local Xvfb run, including five
+new timeout/restart recovery regression tests. One initial full-suite run hit
+an existing asynchronous Tkinter temporary-folder cleanup race; the subsequent
+full-suite run passed. This verifies code paths, **not** live Windows ONNX
+inference, the Xenon PE mod or X4 gameplay.
+
+**Installation:** Close DeepThorT, extract this ZIP into `D:\deepthort`, and
+retain `models`, `state`, `cache`, `node_modules`,
+`reference` and project files. Restart and **Retry failed reply** on the
+original Xenon PE conversation to reuse previously completed pass data when
+its exact saved prompts match. If the conversation had already reached all
+40 failed passes, submit a new draft request instead.
+
+---
+
 # DeepThorT v15 — allow up to 40 self-correction passes (21 November 2026)
 
 **Source base:** v14. No UI layout changes, no JANUS/Sentinel modifications, no new cloud/model providers, no resource-limit changes. The same standalone Windows launcher, chat/approval boundary, local ONNX model and user-state folders remain in place.
