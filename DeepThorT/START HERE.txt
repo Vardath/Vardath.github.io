@@ -1,15 +1,18 @@
-DEEPTHORT DESKTOP v17 — targeted self-correction for model-authored plans
-Based on v16. NO interface changes, new cloud models, altered approval gates,
-JANUS/Sentinel changes, canned mod plans, or automatic work execution.
+DEEPTHORT DESKTOP v18 — close chats and stop local replies
+Based on v17. The original interface, planner, JANUS/Sentinel, offline ONNX model,
+and approval workflow are preserved.
 
-New: the local model plans with one or two concrete files at a time and
-receives a different missing-requirement focus on successive failed attempts.
-The same 40-pass ceiling applies, with immediate stop on a valid plan.
-Non-sensitive per-pass progress is now exported in state/logs/planner.jsonl.
+Use Close chat to archive a tab and cancel its unfinished chat requests.
+Right-click a chat tab to reopen archived conversations. Chat history is retained.
+Use Stop reply to cancel only the selected chat's running or queued response.
+When cancelling active ONNX generation, the supervised model is stopped and
+reloaded for other chats; ONNX initialization may take time. No cancelled
+request is automatically restarted. Existing approved work queue jobs use
+separate cancellation controls in Work queue and Processes.
 
-Close DeepThorT; extract into D:\deepthort, preserving your models, state,
-reference, cache, node_modules and project folders. Start a NEW draft plan
-for the Xenon PE after the previously exhausted 40-pass attempt.
+Close DeepThorT, extract into D:\deepthort, and preserve models/state/
+node_modules/cache/reference and all user project folders.
 
-163 local automated tests passed. Real Windows model success, mod building,
-and X4 gameplay are not verified.
+170 tests passed in separate per-module runs. Full single-process discovery has
+Tkinter teardown warnings/crashes under Xvfb; live Windows cancellation/reload
+remains unverified. No model or cloud provider was added.
