@@ -1,3 +1,7 @@
+# DeepThorT v12 — restore original v10.9 window layout
+
+The extra v11 reply-status banner was removed because it clipped the bottom action buttons at Windows display sizes. Waiting, generation, validation, and failure notices now appear in the **existing** status row, preserving the original vertical geometry. No new controls or tabs were added. All v11 safeguards and X4 planning fixes remain.
+
 # DeepThorT Desktop v11 — repairs based on the original v10.9
 
 This package is rebuilt from the **original v10.9 Windows ZIP**. This v11 release keeps v10.9 as its code baseline. The original workflow and model backend are retained.
