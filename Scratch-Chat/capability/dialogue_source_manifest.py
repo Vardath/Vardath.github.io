@@ -54,6 +54,7 @@ def verify_split_files(data, root):
     validate_manifest(data)
     root = Path(root)
     seen = {}
+    seen_dialogue = {}
     for split in ("train", "validation", "test"):
         path = root / (split + ".jsonl")
         raw = path.read_bytes()
@@ -73,6 +74,24 @@ def verify_split_files(data, root):
             if canonical in seen:
                 raise ValueError(f"Duplicate record across or within splits: {seen[canonical]} and {split}:{index}")
             seen[canonical] = f"{split}:{index}"
+            # Ignore record-level provenance/IDs when checking conversational
+            # contamination: identical messages with different metadata must
+            # not be placed in separate splits.
+            messages = record.get("messages")
+            if not isinstance(messages, list) or not messages:
+                raise ValueError(f"{split} record {index} lacks nonempty messages")
+            normalized = []
+            for message in messages:
+                if not isinstance(message, dict):
+                    raise ValueError(f"{split} record {index} has malformed message")
+                role, content = message.get("role"), message.get("content")
+                if role not in ("system", "user", "assistant", "tool") or not isinstance(content, str) or not content.strip():
+                    raise ValueError(f"{split} record {index} has invalid role/content")
+                normalized.append((role, " ".join(content.split()).casefold()))
+            key = json.dumps(normalized, ensure_ascii=False)
+            if key in seen_dialogue:
+                raise ValueError(f"Repeated normalized dialogue: {seen_dialogue[key]} and {split}:{index}")
+            seen_dialogue[key] = f"{split}:{index}"
     return True
 
 
