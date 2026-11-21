@@ -56,6 +56,7 @@ def verify_split_files(data, root):
     seen = {}
     seen_dialogue = {}
     seen_family = {}
+    seen_prompts = {}
     for split in ("train", "validation", "test"):
         path = root / (split + ".jsonl")
         raw = path.read_bytes()
@@ -102,6 +103,16 @@ def verify_split_files(data, root):
                 if previous is not None and previous[0] != split:
                     raise ValueError(f"Cross-split conversation/template family leakage: {previous[1]} and {split}:{index}")
                 seen_family[family_key] = (split, f"{split}:{index}")
+            # A repeated user prompt with different assistant answers can leak
+            # the evaluation task even when full dialogues are distinct.
+            # Compare user turns only; exclude system boilerplate and answers.
+            prompt = tuple(content for role, content in normalized if role == "user")
+            if not prompt:
+                raise ValueError(f"{split} record {index} has no user turn")
+            previous_prompt = seen_prompts.get(prompt)
+            if previous_prompt is not None and previous_prompt[0] != split:
+                raise ValueError(f"Cross-split repeated user prompt: {previous_prompt[1]} and {split}:{index}")
+            seen_prompts[prompt] = (split, f"{split}:{index}")
             key = json.dumps(normalized, ensure_ascii=False)
             if key in seen_dialogue:
                 raise ValueError(f"Repeated normalized dialogue: {seen_dialogue[key]} and {split}:{index}")
