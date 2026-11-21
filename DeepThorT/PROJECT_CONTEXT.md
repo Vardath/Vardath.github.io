@@ -1,10 +1,10 @@
 # DeepThorT — verified project context and continuity handover
-Last reviewed: 21 November 2026 (Australia/Brisbane). Updated for v13.
+Last reviewed: 21 November 2026 (Australia/Brisbane). Updated for v14.
 
 ## Read before editing
 DeepThorT is the user's **local Windows autonomous project developer**, descended from the JANUS/Mindcore work. It is NOT merely an X4 mod generator, and the standalone **Vardath Scratch Chat** language-model project is separate. The Xenon PE assignment is a small but technically demanding acceptance test before the larger *Faction Command* Android game.
 
-**Do not rebuild, rename, redesign, or alter working code based on a summary.** Read the original v10.9 source, the current v12 files, the diagnostic export, and the specific screenshot/log before any changes. Audit the actual call paths, UI geometry and tests. Historical assistant assertions are not proof.
+**Do not rebuild, rename, redesign, or alter working code based on a summary.** Read the original v10.9 source, the current v14 files, the diagnostic export, and the specific screenshot/log before any changes. Audit the actual call paths, UI geometry and tests. Historical assistant assertions are not proof.
 
 Original JANUS reference (read-only): `D:\vardath work`. Mindcore predecessor: `D:\mindcore`. Current DeepThorT installation: `D:\deepthort`. X4 test project: `D:\x4mods`. GitHub source: `Vardath/Vardath.github.io/DeepThorT`. Preserve these boundaries; do not modify original JANUS to repair DeepThorT.
 
@@ -30,7 +30,7 @@ The separate `mindcore setup.md` document records the JANUS/Mindcore objective a
 - **v10.7–v10.8:** Found the actual game and XML extraction tools; inspection became part of the original request, with explicit permission required for extraction. Actual local extraction and source verification later succeeded.
 - **v10.9:** Repaired combined X4 inference input exceeding the 7,500-character limit (7,566 characters). Preserve the full user specification and verified reference identifiers.
 - **v11:** Rebuilt from the original v10.9, not the discarded v11.0 path. Added reply-lifecycle status and source-verified Xenon PE draft recovery. An added reply-status banner unexpectedly pushed action buttons below the Windows window.
-- **v12 (current packaged build):** Removes the extra banner, displays reply activity in the original status line, and adjusts prompt-editor height to keep original buttons accessible. **No user Windows screenshot verifying v12 yet.** Do not confuse local GUI tests with user acceptance.
+- **v12 (historical packaged build):** Removes the extra banner, displays reply activity in the original status line, and adjusts prompt-editor height to keep original buttons accessible. **No user Windows screenshot verifying v12 yet.** Do not confuse local GUI tests with user acceptance.
 
 Local archive inventory inspected: original `DeepThorT_Desktop_v10_9_Windows.zip` (67 entries), v11 (68), v12 (69). v12 differs from v10.9 in eight paths: `README.md`, `START HERE.txt`, `desktop_app.py`, `deepthort_local/agent_plan.py`, `janus_worker.py`, `tests/test_reply_activity_v11.py`, `tests/test_layout_v12.py`, `tests/test_janus_recursive_societies.py`. The JANUS worker change (first counsel timing) is unrelated to the visible UI defect; audit it separately, do not assume it was needed.
 
@@ -58,7 +58,7 @@ This document is a continuity record **only**. It makes no changes to the applic
 
 ## v13 planning repair (21 November 2026)
 
-**Current packaged release: v13.** Built from v12 without changes to JANUS/Sentinel or the window geometry. Tested local ZIP: `DeepThorT_Desktop_v13_Windows.zip`. Exact source is committed to `Vardath/Vardath.github.io/DeepThorT`; latest repository code changes are v13.
+**Historical packaged release: v13.** Built from v12 without changes to JANUS/Sentinel or the window geometry. Tested local ZIP: `DeepThorT_Desktop_v13_Windows.zip`. Exact source is committed to `Vardath/Vardath.github.io/DeepThorT`; latest repository code changes are v13.
 
 The user explicitly rejected accepting the hardcoded Xenon PE fallback as evidence of independent planning. The v12 diagnostic export `DeepThorT-Diagnostics-20261121-140740.zip` confirmed that the eight-step plan was **substituted from source_grounded_pe_plan**, after the real local model output was rejected. The v13 code removes that fallback entirely.
 
@@ -69,3 +69,16 @@ X4 planning validation now checks resource macro indexes, projectile/bullet defi
 Verification: **144 local automated tests passed under Xvfb**, including the existing v12 UI layout checks. The ZIP integrity check passed. The nine changed GitHub files were compared by exact git blob hashes to the tested ZIP. **No actual Windows/Qwen inference or game-generated PE mod is proven; no live GitHub CI pass has been confirmed.** The original 1.5B local model may fail after bounded attempts. This release fixes misleading fallback behavior and planning orchestration; it does not prove autonomous development competence.
 
 Next acceptance test: create a fresh X4 Xenon PE draft from the existing saved request, inspect the model-authored steps and confirm all model revision passes. Do not approve unless the plan is technically credible. Then execute after explicit approval, validate generated source, and finally verify in X4. Preserve the user specification, state and v10.9-based window layout. Next release naming is **v14**.
+
+
+## v14 planning-context repair (21 November 2026)
+
+**Current packaged release: v14.** Source base: v13 with the v10.9 layout, JANUS/Sentinel components, local offline ONNX model, resource budget, existing workflow and user state unchanged. ZIP: `DeepThorT_Desktop_v14_Windows.zip`.
+
+The user's 15:07 diagnostic ZIP and screenshot show a **real v13 model planning attempt** (#13, original specification 3,839 characters) ran from 04:57 to 05:06 UTC and failed inside `build_revision_prompt` with `PlanError: Existing plan paths cannot fit alongside the complete original specification`. The model's earlier output was not saved as an approved draft. Zero executable X4 jobs were queued. The root cause was v13's attempt to include all model-proposed file paths and source evidence in every 7,500-character revision request; it aborted before another model correction.
+
+v14 changes **only** the revision prompt budget in `deepthort_local/agent_plan.py` (plus README/install instructions and regression tests). It **always retains the full original specification**; prior proposed paths and descriptions remain in local accumulated state, subject to full validation. A bounded selection of complete paths is shown to the model and rotated on later passes, with an explicit omitted-count disclosure; verified source evidence is added only as space permits. No fallback plan is fabricated and approval remains explicit. Full specifications exceeding the limit still fail safely.
+
+Tests: `xvfb-run -a python -m unittest discover -s tests -q` gave **148 passing tests** (144 previous plus 4 v14 regression tests). ZIP integrity passed; compared with v13, only `README.md`, `START HERE.txt`, `deepthort_local/agent_plan.py` changed and `tests/test_revision_context_v14.py` was added. Some Tkinter/SQLite ResourceWarnings persisted in the headless test output. **No Windows ONNX runtime/real model-plan acceptance, working Xenon PE mod or actual game validation has been demonstrated by v14.** Verify separately before claiming success. GitHub CI must also be checked independently.
+
+The failure fixed here is in **context packing**, not in Qwen's ability to plan complicated software; the latter remains an open acceptance test. Do not substitute a hardcoded X4 blueprint or alter the UI to mask this.
