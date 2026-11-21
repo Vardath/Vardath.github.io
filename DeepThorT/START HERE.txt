@@ -1,14 +1,15 @@
-DEEPTHORT DESKTOP v16 — long-inference timeout and interrupted-plan recovery
-Based on v15 with the original interface, local ONNX model, JANUS/Sentinel and
-explicit plan approval unchanged.
-Fix: 15-minute HTTP timeout raised to 60 minutes (the 17:15 output arrived
-15 seconds after the old limit). Saved completed planning passes are reused
-when their exact model input matches, so interrupted 40-pass planning can resume
-without regenerating completed responses. Unfinished passes are retried.
-No prewritten X4 plans or automatic execution were added.
+DEEPTHORT DESKTOP v17 — targeted self-correction for model-authored plans
+Based on v16. NO interface changes, new cloud models, altered approval gates,
+JANUS/Sentinel changes, canned mod plans, or automatic work execution.
 
-Close DeepThorT and extract into D:\deepthort. KEEP all models, state,
-reference, cache, node_modules and project directories. Restart and select
-Retry failed reply on the existing Xenon PE conversation.
-158 local tests passed on the verified full-suite run. Real Windows ONNX and
-X4 in-game behavior remain unverified.
+New: the local model plans with one or two concrete files at a time and
+receives a different missing-requirement focus on successive failed attempts.
+The same 40-pass ceiling applies, with immediate stop on a valid plan.
+Non-sensitive per-pass progress is now exported in state/logs/planner.jsonl.
+
+Close DeepThorT; extract into D:\deepthort, preserving your models, state,
+reference, cache, node_modules and project folders. Start a NEW draft plan
+for the Xenon PE after the previously exhausted 40-pass attempt.
+
+163 local automated tests passed. Real Windows model success, mod building,
+and X4 gameplay are not verified.
