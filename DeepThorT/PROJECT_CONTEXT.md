@@ -1,3 +1,6 @@
+## v15 update — 21 November 2026 (15:57 diagnostic)
+The user explicitly required **at least 40 independent local-model attempts** for generating/revising an X4 plan, **stopping immediately when validation succeeds**. Screenshot 467 and `DeepThorT-Diagnostics-20261121-155708.zip` confirm v14 made four complete, unsuccessful ONNX inference calls in approximately 41 minutes and then stopped at the hard-coded desktop limit. The parser also rejected max_rounds >8. v15 sets the planner and desktop to 40, does not prematurely abort upon an identical invalid reply, and avoids poisoning the retained plan with an oversized (more than 24 file) candidate. The initial user specification and explicit approval boundary remain unchanged. No canned plan was inserted. Five new tests pass; total local headless tests **153, OK**. This verifies control flow only, not the model's ability to invent a technically sound plan or produce a working mod. Existing v14 GUI design and JANUS/Sentinel code are untouched. A 40-pass run may take several hours on the user's CPU; persistence across UI exit is not established. GitHub CI remains unverified until an actual check conclusion is inspected.
+
 # DeepThorT — verified project context and continuity handover
 Last reviewed: 21 November 2026 (Australia/Brisbane). Updated for v14.
 
