@@ -52,7 +52,7 @@ class JanusWorker:
         self._stopping=False
         self._counsel=LocalCounsel(Path(state_db).parent/'janus-counsel.sqlite3')
         self._counsel_thread=None
-        self._last_counsel_attempt=0.0
+        self._last_counsel_attempt=time.monotonic()-300.0
 
     def observe_once(self) -> dict:
         # Full deterministic 11x7 society cycles continue while the ONNX
