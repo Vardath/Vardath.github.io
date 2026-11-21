@@ -10,6 +10,7 @@ on:
       - 'Scratch-Chat/capability/modern_train.py'
       - 'Scratch-Chat/capability/deepthort_bridge.py'
       - 'Scratch-Chat/tests/test_dialogue_corpus.py'
+      - 'Scratch-Chat/tests/test_dialogue_evaluation_binding.py'
       - '.github/workflows/scratch-chat-dialogue-smoke.yml'
 permissions:
   contents: read
@@ -30,6 +31,7 @@ jobs:
       - name: Validate original dialogue and bridge regression tests
         run: |
           python -m unittest discover -s tests -p 'test_dialogue_corpus.py' -v
+          python -m unittest discover -s tests -p 'test_dialogue_evaluation_binding.py' -v
           python -m unittest discover -s tests -p 'test_deepthort_bridge.py' -v
       - name: Build CC0 dialogue and train isolated tokenizer on training split
         run: |
