@@ -2105,7 +2105,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Supervision: 20% CPU cap, 20% RAM commit limit, idle priority under DeepThorT.exe\n"
               f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
-              f'Last actual ONNX stage: {(self.current_loading_stage or 'none observed')[:200]}\n'
+              f'Last actual ONNX stage: {(self.current_loading_stage or "none observed")[:200]}\n'
               'Inference output is only known at completion; no fictitious token progress.')
         active_health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
         if active_health.get('inference_busy'):
