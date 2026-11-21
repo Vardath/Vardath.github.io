@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T08:06:00Z",
+  "updated_utc": "2026-11-21T08:50:00Z",
   "last_verified_run": {
     "id": 44862170370,
     "conclusion": "success",
@@ -9,8 +9,8 @@
     "capability_scores": "not retrieved; no conversational readiness claim"
   },
   "next_run": {
-    "trigger_commit": "10ec94d8f7b2c7553d4711f75b5ff0d0d8bfdc97",
-    "execution": "source tests triggered by Scratch-Chat push path; pending verification"
+    "trigger_commit": "a8d02b829ce33d175056058c5c45c70697ecab97",
+    "execution": "push expected to trigger scoped source CI; verification pending"
   },
   "readiness": "not ready",
   "blockers": [
@@ -30,17 +30,20 @@
     "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
   },
   "latest_source_ci": {
-    "run_id": 44880661086,
+    "run_ids": [
+      44883374062,
+      44883380659
+    ],
     "conclusion": "success",
-    "scope": "checkpoint-independent source tests; no model quality implication"
+    "scope": "checkpoint-independent source tests, before new SFT loss commits"
   },
   "new_milestone": {
-    "feature": "Strict ByteBPE assistant-only token labels (-100 ignored), UTF-8 byte offsets, rejection of crossing boundary tokens",
+    "feature": "Causally shifted assistant-only PyTorch cross-entropy with -100 masking, fail-closed checks and regression tests",
     "commits": [
-      "8da08bcc1dd9a34bb2693c029828e995cdbb3003",
-      "10ec94d8f7b2c7553d4711f75b5ff0d0d8bfdc97"
+      "7f0b24bdff3f4906dbc71f2744070b590fc2d1a6",
+      "a8d02b829ce33d175056058c5c45c70697ecab97"
     ],
-    "limitations": "Not yet connected to gradient training or independently evaluated; no external corpus admitted",
-    "execution": "Follow-on CI unverified"
+    "limitations": "Loss helper not yet called by existing gradient training loop; no new training or conversation scores",
+    "execution": "Follow-on CI not yet verified"
   }
 }
