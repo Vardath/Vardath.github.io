@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T05:39:00Z",
+  "updated_utc": "2026-11-21T06:14:48Z",
   "last_verified_run": {
     "id": 44862170370,
     "conclusion": "success",
@@ -22,7 +22,7 @@
     "No confirmed GPU allocation",
     "No large-scale GPU training or independent multi-turn/tool-use acceptance demonstrated"
   ],
-  "notes": "80-step dialogue smoke passed, but independent conversational scores unverified. No Shakespeare-only progress claims. No GPU allocation. Full legacy test failures tracked separately.",
+  "notes": "No new dialogue-training experiment. Last verified dialogue training remains 80-step smoke #44862170370. No independent conversational score established. Data admission improved but no external data ingested.",
   "source_ci_failure": {
     "run_id": 44862176915,
     "conclusion": "failure",
@@ -31,18 +31,22 @@
     "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
   },
   "latest_source_ci": {
-    "run_id": 44864894432,
+    "run_id": 44871910585,
     "conclusion": "success",
-    "commit": "7c25afb74bfd4a2b1abf185f8d133c75a455a5f0",
-    "scope": "checkpoint-independent tests only; legacy full suite not green"
+    "commit": "16089e1c7b5087206056b7c58174c1bb981d054f",
+    "scope": "checkpoint-independent tests; not full legacy suite"
   },
   "new_milestone": {
-    "feature": "External dialogue admission validator and regression tests",
+    "feature": "Cross-split lexical near-duplicate screening with minimum 12-token threshold and regression tests",
     "commits": [
-      "b9913d2247de6bd697b61160abaf8cf95b99c403",
-      "07d2bf6de2bc303e28b05ea8c605ddf48d13cc9b"
+      "f1be3749ecd72d1fe28c2ad84118b6cff12ee3d1",
+      "7b0e3a797345f89782be43e4d306223e0d461235"
     ],
-    "scope": "Explicit approved provenance, SHA-256 checks, schema and exact cross-split deduplication; no external dataset ingested",
-    "execution": "follow-on CI not yet verified"
+    "scope": "Screen token-multiset Jaccard >=0.85 across splits; semantic and PII auditing remain outstanding",
+    "execution": "Source CI queued/in progress, not yet verified",
+    "run_ids": [
+      44874663100,
+      44874675847
+    ]
   }
 }
