@@ -27,7 +27,7 @@ from urllib.request import ProxyHandler, Request, build_opener
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.chat_timeline import merged_chat_timeline
-from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, PlanError, project_kind
+from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
 from deepthort_local.x4_sources import (inspect_x4_sources, automatic_x4_preflight, is_x4_inspection_request, x4_request_in_context,
                                       format_x4_inspection, x4_evidence_for_prompt,
                                         likely_installations, find_catalog_tool, catalog_extraction_command)
@@ -941,7 +941,7 @@ class DeepThorTDesktop(tk.Tk):
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
-                        max_rounds=4,
+                        max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)))
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
