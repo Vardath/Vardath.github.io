@@ -1,5 +1,5 @@
 # DeepThorT — verified project context and continuity handover
-Last reviewed: 21 November 2026 (Australia/Brisbane).
+Last reviewed: 21 November 2026 (Australia/Brisbane). Updated for v13.
 
 ## Read before editing
 DeepThorT is the user's **local Windows autonomous project developer**, descended from the JANUS/Mindcore work. It is NOT merely an X4 mod generator, and the standalone **Vardath Scratch Chat** language-model project is separate. The Xenon PE assignment is a small but technically demanding acceptance test before the larger *Faction Command* Android game.
@@ -54,3 +54,18 @@ The 21 November diagnostic export `DeepThorT-Diagnostics-20261121-124052.zip` su
 5. Keep this status document factual and up to date. Record what changed and what tests prove; preserve previous versions as rollback points.
 
 This document is a continuity record **only**. It makes no changes to the application, and its statements must be checked against actual code and diagnostics before future implementation.
+
+
+## v13 planning repair (21 November 2026)
+
+**Current packaged release: v13.** Built from v12 without changes to JANUS/Sentinel or the window geometry. Tested local ZIP: `DeepThorT_Desktop_v13_Windows.zip`. Exact source is committed to `Vardath/Vardath.github.io/DeepThorT`; latest repository code changes are v13.
+
+The user explicitly rejected accepting the hardcoded Xenon PE fallback as evidence of independent planning. The v12 diagnostic export `DeepThorT-Diagnostics-20261121-140740.zip` confirmed that the eight-step plan was **substituted from source_grounded_pe_plan**, after the real local model output was rejected. The v13 code removes that fallback entirely.
+
+v13 requires the local model to author every proposed source-file path and its description. The model can extend or correct its plan over up to four bounded inference calls. Structural/domain checks produce specific feedback; the full original specification and selected verified local X4 references are retained in revision calls. Old v11/v12 fallback drafts cannot be approved. If the model fails, the request fails truthfully and no substitute draft or execution job is created.
+
+X4 planning validation now checks resource macro indexes, projectile/bullet definitions for the 50,000-per-hit PE test, component registration when creating new components, and obvious L/XL equipment mismatches with an M-class PE. X4 evidence candidate ordering now prefers M-class names rather than alphabetical L-class destroyer candidates; this ranking does not itself prove tag compatibility. For Android game planning, generic README-only plans are rejected in favor of native build configuration, gameplay code, user interface and test coverage. **These are validation requirements, NOT hardcoded file-stage plans.**
+
+Verification: **144 local automated tests passed under Xvfb**, including the existing v12 UI layout checks. The ZIP integrity check passed. The nine changed GitHub files were compared by exact git blob hashes to the tested ZIP. **No actual Windows/Qwen inference or game-generated PE mod is proven; no live GitHub CI pass has been confirmed.** The original 1.5B local model may fail after bounded attempts. This release fixes misleading fallback behavior and planning orchestration; it does not prove autonomous development competence.
+
+Next acceptance test: create a fresh X4 Xenon PE draft from the existing saved request, inspect the model-authored steps and confirm all model revision passes. Do not approve unless the plan is technically credible. Then execute after explicit approval, validate generated source, and finally verify in X4. Preserve the user specification, state and v10.9-based window layout. Next release naming is **v14**.
