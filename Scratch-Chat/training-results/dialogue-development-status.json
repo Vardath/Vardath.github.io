@@ -1,6 +1,6 @@
 {
   "project": "Scratch Chat original random-initialization dialogue model",
-  "updated_utc": "2026-11-21T07:31:00Z",
+  "updated_utc": "2026-11-21T08:06:00Z",
   "last_verified_run": {
     "id": 44862170370,
     "conclusion": "success",
@@ -9,9 +9,8 @@
     "capability_scores": "not retrieved; no conversational readiness claim"
   },
   "next_run": {
-    "trigger_commit": "c9da14a98175f1ec0c45b5504c0a0e49d28e4ec3",
-    "execution": "not yet verified",
-    "change": "Checkpoint-independent dialogue, bridge, readiness and scoring CI; source/compute acquisition gate documented at Scratch-Chat/DIALOGUE_DATA_AND_GPU_PLAN.md"
+    "trigger_commit": "10ec94d8f7b2c7553d4711f75b5ff0d0d8bfdc97",
+    "execution": "source tests triggered by Scratch-Chat push path; pending verification"
   },
   "readiness": "not ready",
   "blockers": [
@@ -31,18 +30,17 @@
     "limitation": "Scoped source CI is not equivalent to full legacy suite passing"
   },
   "latest_source_ci": {
-    "run_id": 44874685881,
+    "run_id": 44880661086,
     "conclusion": "success",
-    "commit": "65602a17934ca507c154498e3150d2cca2eaebdc",
-    "scope": "checkpoint-independent source tests"
+    "scope": "checkpoint-independent source tests; no model quality implication"
   },
   "new_milestone": {
-    "feature": "Deterministic explicit chat serialization with assistant-only character spans and reserved-token rejection",
+    "feature": "Strict ByteBPE assistant-only token labels (-100 ignored), UTF-8 byte offsets, rejection of crossing boundary tokens",
     "commits": [
-      "bf48c3db4fe6c7dd798a71ff8872ef74867a7482",
-      "f0b44f5f805b909fe766c920d8321642ff611435"
+      "8da08bcc1dd9a34bb2693c029828e995cdbb3003",
+      "10ec94d8f7b2c7553d4711f75b5ff0d0d8bfdc97"
     ],
-    "limitations": "Not wired to model tokenizer/training loss; character spans require tokenizer offset alignment; no new data admitted or training conducted",
-    "execution": "Follow-on source CI pending verification"
+    "limitations": "Not yet connected to gradient training or independently evaluated; no external corpus admitted",
+    "execution": "Follow-on CI unverified"
   }
 }
