@@ -13,6 +13,11 @@ class PlanError(ValueError):
     pass
 
 
+# Maximum number of independent local-model planning passes. A validated
+# proposal returns immediately; invalid/repeated proposals can be revised.
+MAX_PLAN_ATTEMPTS = 40
+
+
 def project_kind(request: str) -> str:
     request = request or ''
     if re.search(r'\b(?:x4(?::?\s+foundations)?|egosoft|xenon\s+pe)\b', request, re.I):
@@ -339,7 +344,7 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
 
 def generate_model_plan(client, session: str, request: str, project: str | Path,
                         first_prompt: str, *, x4_evidence: str = '',
-                        max_chars: int = 7500, max_rounds: int = 4,
+                        max_chars: int = 7500, max_rounds: int = MAX_PLAN_ATTEMPTS,
                         stage=None) -> tuple[str, list[dict]]:
     """Generate a complete plan through bounded, evidence-driven model revisions.
 
@@ -347,8 +352,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     originate in local model output. The validator can reject or request more;
     it never manufactures a substitute plan. No executable work is queued.
     """
-    if not 1 <= max_rounds <= 8:
-        raise ValueError('max_rounds must be 1..8')
+    if not 1 <= max_rounds <= MAX_PLAN_ATTEMPTS:
+        raise ValueError(f'max_rounds must be 1..{MAX_PLAN_ATTEMPTS}')
     if len(first_prompt) > max_chars:
         raise PlanError('Initial planning request exceeds the model context limit')
     all_steps: dict[str, dict] = {}
@@ -363,28 +368,41 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
         # from polluting the next call or crossing chat/project boundaries.
         answer = client.chat(f'{session}-{round_no}', prompt, max_tokens=640)
         if answer.strip() in seen_answers:
-            raise PlanError('The local model repeated an identical proposal instead of '
-                            'correcting the identified errors. No substitute plan was created; '
-                            'the original request is preserved for retry.')
-        seen_answers.add(answer.strip())
-        try:
-            fragment = parse_build_plan(answer, project, fragment=True)
-            if project_kind(request) == 'x4' and any(
-                x['path'].lower().endswith('.py') for x in fragment):
-                raise PlanError('An X4 extension cannot use generic Python app files')
-            for entry in fragment:
-                all_steps[entry['path'].casefold()] = entry
-            if len(all_steps) > 24:
-                raise PlanError('The plan now exceeds the maximum of 24 files')
+            # Do not abort a long planning task just because the small model
+            # repeated an earlier INVALID answer. Record concrete feedback and
+            # give the model another opportunity to correct it. No step is
+            # added and no approval is possible from a repeated invalid draft.
+            finding = ('The last proposal exactly repeats an earlier rejected '
+                       'answer. It contributed no valid new files. Supply '
+                       'different source-backed files or corrections that '
+                       'address the validator findings; do not repeat unchanged JSON.')
+        else:
+            seen_answers.add(answer.strip())
             try:
-                approved_shape = validate_project_plan(list(all_steps.values()), request)
+                fragment = parse_build_plan(answer, project, fragment=True)
+                if project_kind(request) == 'x4' and any(
+                    x['path'].lower().endswith('.py') for x in fragment):
+                    raise PlanError('An X4 extension cannot use generic Python app files')
+                # Merge transactionally. A bad fragment cannot permanently
+                # poison the retained plan with >24 distinct paths and make
+                # every remaining revision fail, regardless of its quality.
+                candidate_steps = dict(all_steps)
+                for entry in fragment:
+                    candidate_steps[entry['path'].casefold()] = entry
+                if len(candidate_steps) > 24:
+                    raise PlanError('The proposed additions would exceed the '
+                                    '24-file plan limit. Correct existing paths '
+                                    'rather than adding more unrelated files.')
+                all_steps = candidate_steps
+                try:
+                    approved_shape = validate_project_plan(list(all_steps.values()), request)
+                except PlanError as exc:
+                    finding = str(exc)
+                else:
+                    # Still only a draft. Execution requires explicit approval.
+                    return json.dumps({'files': approved_shape}, ensure_ascii=False), approved_shape
             except PlanError as exc:
                 finding = str(exc)
-            else:
-                # The draft is still only a proposal; user must approve to execute.
-                return json.dumps({'files': approved_shape}, ensure_ascii=False), approved_shape
-        except PlanError as exc:
-            finding = str(exc)
         failures.append(finding)
         if round_no == max_rounds:
             break
