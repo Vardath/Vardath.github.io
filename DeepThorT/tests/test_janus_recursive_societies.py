@@ -169,6 +169,22 @@ class PersistentCoordinators(unittest.TestCase):
         with self.assertRaises(ValueError):
             adviser.request(society='cloud',goal='a',problem='x',evidence='x')
 
+    def test_first_local_counsel_runs_after_fresh_boot(self):
+        ident=self.jobs.submit('workspace','chat1','build','Make a game')
+        self.jobs.change(ident,'failed','Build failed: no Godot')
+        # New hosts can have a monotonic clock value below the five-minute
+        # cooldown. That must not postpone the very first request.
+        with patch('janus_worker.time.monotonic',return_value=15.0):
+            worker=JanusWorker(self.janus_path,self.jobs_path,self.games,
+                game_probe=lambda:False)
+            with patch.object(worker._counsel,'request',return_value='Check Godot setup'):
+                worker.observe_once()
+                self.assertIsNotNone(worker._counsel_thread)
+                worker._counsel_thread.join(timeout=4)
+                self.assertFalse(worker._counsel_thread.is_alive())
+        self.assertTrue(any(x['origin']=='local_model' for x in self.janus.recommendations()))
+        self.assertFalse(self.janus.actions())
+
     def test_worker_background_counsel_is_only_advice(self):
         ident=self.jobs.submit('workspace','chat1','build','Make a game')
         self.jobs.change(ident,'failed','Build failed: no Godot')
