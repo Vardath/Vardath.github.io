@@ -1,14 +1,28 @@
-DEEPTHORT DESKTOP v11.0 — SOURCE-GROUNDED X4 PLANNING HOTFIX
+DEEPTHORT DESKTOP v11 — repair of the original v10.9
+Close DeepThorT; preserve state, models, node_modules, cache, reference.
+Extract files over D:\deepthort and start DeepThorT.exe.
+The Chats tab has a persistent reply/wait/generate/validate notification.
+The PE plan remains an explicitly approvable draft; no code executes without approval.
 
-1. Quit DeepThorT completely.
-2. Extract the contents of this update ZIP into D:\deepthort and overwrite app files.
-3. Do not remove models, state, node_modules, cache, reference or your project folders.
-4. Launch D:\deepthort\DeepThorT.exe.
-5. Select D:\x4mods and submit the original Xenon PE request using Draft project plan.
-6. If verified PE sources are present, a six-file X4 XML draft appears without a slow AI planning pass.
-7. Review it and use Approve plan & queue only if it matches your project requirements.
-8. Generated XML is statically checked before saving, but NOT verified in X4.
-9. Export diagnostics for any further failures.
+DEEPTHORT DESKTOP v10.9 — X4 combined-prompt size fix
 
-This ZIP updates DeepThorT only; it does not contain the finished Xenon PE mod.
-All model data and saved conversations remain in the existing installation.
+DEEPTHORT DESKTOP v10.8 — AUTOMATIC GAME SOURCE INSPECTION
+
+1. Close DeepThorT completely.
+2. Extract every ZIP file directly to D:\deepthort over application files.
+3. KEEP models, state, node_modules, cache and reference folders.
+4. Double-click D:\deepthort\DeepThorT.exe.
+5. Select D:\x4mods in the left Project Workspace, then paste your original
+   Xenon PE specification into Chats and click Draft project plan.
+6. Inspection now begins automatically on that first prompt. You do not need
+   to click Computer & Tools / Inspect X4 sources beforehand.
+7. If the game's XML is packed, approve official local extraction only if you
+   want DeepThorT to read the references; the app resumes the saved request.
+   If no extractor is installed, provide XRCatTool.exe from Egosoft X Tools.
+8. Discuss/review the completed plan. Only explicit approval creates work.
+9. For failures, click Export diagnostics and attach that ZIP.
+
+No cloud inference, no llama.cpp. Your model and saved work are preserved.
+20% CPU/committed-RAM limits remain; disk busy is not hard-capped.
+
+If a previous X4 draft failed with 7,566 > 7,500 characters, open the same chat and click Retry failed reply after updating. The full prompt was saved; X4 references should be reused. Never approve an inaccurate plan.
