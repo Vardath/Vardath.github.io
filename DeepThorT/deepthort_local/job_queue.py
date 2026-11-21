@@ -243,6 +243,8 @@ class ChatRegistry:
             db.execute('''CREATE TABLE IF NOT EXISTS chat_threads (
                 id TEXT PRIMARY KEY, project TEXT NOT NULL, title TEXT NOT NULL,
                 created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)''')
+            if 'closed' not in {col[1] for col in db.execute('PRAGMA table_info(chat_threads)')}:
+                db.execute('ALTER TABLE chat_threads ADD COLUMN closed INTEGER NOT NULL DEFAULT 0')
     @contextmanager
     def _conn(self):
         db=sqlite3.connect(self.path,timeout=20)
@@ -256,7 +258,19 @@ class ChatRegistry:
         return ident
     def list(self, project: str):
         with self._conn() as db:
-            return db.execute('SELECT id,title FROM chat_threads WHERE project=? ORDER BY rowid',(project,)).fetchall()
+            return db.execute('SELECT id,title FROM chat_threads WHERE project=? AND closed=0 ORDER BY rowid',(project,)).fetchall()
+    def closed(self, project: str):
+        with self._conn() as db:
+            return db.execute('SELECT id,title FROM chat_threads WHERE project=? AND closed=1 ORDER BY rowid',(project,)).fetchall()
+    def close(self, ident: str, project: str) -> bool:
+        """Hide the tab, not its durable messages, drafts or approved work."""
+        with self._conn() as db:
+            return bool(db.execute('UPDATE chat_threads SET closed=1 WHERE id=? AND project=? AND closed=0',
+                                   (ident,project)).rowcount)
+    def reopen(self, ident: str, project: str) -> bool:
+        with self._conn() as db:
+            return bool(db.execute('UPDATE chat_threads SET closed=0 WHERE id=? AND project=? AND closed=1',
+                                   (ident,project)).rowcount)
     def rename(self, ident: str, title: str):
         if not title.strip(): raise ValueError('Title required')
         with self._conn() as db:
