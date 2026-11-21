@@ -192,106 +192,77 @@ def file_step_prompt(user_request: str, path: str, description: str, existing: s
             f'\nEXISTING CONTENT:\n{existing}\nReturn the complete file text.')
 
 
-def verified_x4_pe_plan(request: str, report: dict) -> list[dict]:
-    """Source-gated, deterministic PE draft when the 1.5B planner cannot plan.
+def source_grounded_pe_plan(request: str, report: dict) -> list[dict]:
+    """Recover a *review-only* X4 PE draft after an invalid small-model answer.
 
-    This is a FILE PLAN, not generated game code or a claim of compatibility.
-    It deliberately uses no speculative vanilla IDs. The inspected sources
-    still have to be read and copied/adapted during each implementation step.
-    Neither this function nor its caller may enqueue a job without approval.
+    Never infer actual ship identifiers from chat history or catalog filenames.
+    A local preflight must have inspected the exact vanilla PE macro, physical
+    connection slots and real weapon/turret definitions. This returns file
+    intentions, NOT executable game assets or user approval to write them.
     """
-    if project_kind(request) != 'x4' or not re.search(
-        r'\b(?:xenon\s+pe|pe\s+(?:xenon|corvette|ship))\b', request, re.I
-    ):
-        raise PlanError('Verified PE template applies only to an explicit Xenon PE request')
-    if not report or not report.get('ready_for_planning') or not (
-        report.get('pe_macro_verified') and report.get('pe_component_verified')
+    if not re.search(r'\b(?:xenon\s+pe|pe\s+(?:xenon|corvette|ship))\b',request or '',re.I):
+        raise PlanError('Only an explicitly requested Xenon PE can use this fallback plan')
+    if not isinstance(report,dict) or not (report.get('ready_for_planning')
+        and report.get('pe_macro_verified') and report.get('pe_component_verified')
         and report.get('weapon_candidates') and report.get('turret_candidates')
-        and report.get('pe_component_connections')
-    ):
-        raise PlanError('Vanilla Xenon PE ship, component connections, weapon and turret sources must be verified first')
-    # Source paths are real preflight observations, not assumed macro names.
-    ship = next((v for v in report['ship_candidates'] if
-                 'ship_xen_m_corvette_02_a_macro' in v.get('identifiers', [])), None)
-    if not ship:
-        raise PlanError('Inspected PE macro is missing from the candidate report')
-    weapon = report['weapon_candidates'][0]['file']
-    turret = report['turret_candidates'][0]['file']
-    component = report.get('pe_component_file', '')
-    slots = ', '.join(v['name'] + ' (' + v['tags'] + ')' for v in report['pe_component_connections'][:8])
-    steps = [
-        {'path': 'content.xml',
-         'description': 'Create a complete installable X4 extension manifest with a unique ID, correct content metadata, dependencies and safe enablement; preserve existing saves. Validate XML before installation.'},
-        {'path': 'assets/units/size_m/macros/vardath_xenon_pe_macro.xml',
-         'description': f'Inspect vanilla PE macro from {ship["file"]} and original hull references; create an isolated player-usable PE ship variant, 10x original cargo storage, 4x original speed and improved handling. Do not edit or replace the NPC vanilla PE.'},
-        {'path': 'assets/units/size_m/vardath_xenon_pe.xml',
-         'description': f'Inspect vanilla PE component {component} and reproduce compatible weapon and turret connection mappings: {slots[:260]}. Preserve actual hardpoints and ship geometry; no invented connections.'},
-        {'path': 'assets/props/WeaponSystems/laser/macros/vardath_pe_weapon_macro.xml',
-         'description': f'Inspect original weapon candidate {weapon}; select the compatible best-performing high-fire-rate forward weapon from installed vanilla definitions and create a separate custom macro for 50,000 damage per successful weapon hit (not just DPS). Confirm all weapon equipment connections.'},
-        {'path': 'assets/props/WeaponSystems/turret/macros/vardath_pe_turret_macro.xml',
-         'description': f'Inspect vanilla turret candidate {turret} and original PE turret connection tags. Create a compatible fast-firing custom turret with 50,000 damage per successful turret hit and ensure proper installed equipment, not just decorative asset slots.'},
-        {'path': 'md/vardath_pe_ownership.xml',
-         'description': 'Implement X4 Mission Director player-faction ownership monitor: after 60 seconds without a player-owned PE, spawn exactly one owned, equipped custom PE; avoid repeated spawning, support loading existing saves, and verify ownership/faction/creation logic using vanilla MD examples. Include installation and automated XML/connection validation criteria.'},
+        and report.get('pe_component_connections')):
+        raise PlanError('Actual PE macro, component slots and weapon/turret XML must be verified first')
+    pe=next((x for x in report.get('ship_candidates',[])
+             if 'ship_xen_m_corvette_02_a_macro' in ' '.join(x.get('identifiers',[]))),None)
+    if not pe:
+        raise PlanError('Verified PE macro source is not present in the inspected ship candidates')
+    ship_file=pe['file']
+    comp_file=report.get('pe_component_file')
+    if not comp_file:
+        raise PlanError('Verified PE component XML path is unavailable')
+    gun=report['weapon_candidates'][0]['file']
+    turret=report['turret_candidates'][0]['file']
+    slot_count=len(report['pe_component_connections'])
+    return [
+        {'path':'content.xml','description':
+          'Create stand-alone Vardath Xenon PE X4 extension metadata, with no unrelated game overrides; validate the installed X4 version and extension loading.'},
+        {'path':'assets/units/size_m/macros/vardath_xen_pe_macro.xml','description':
+          f'Inspect verified vanilla PE macro {ship_file} and component {comp_file}; clone into an isolated player-only macro with 10x cargo/storage, and preserve actual equipment connections. '
+          f'Reconcile all {slot_count} identified PE connection tags without inventing equipment IDs.'},
+        {'path':'assets/units/size_m/vardath_xen_pe.xml','description':
+          f'Create or register an isolated PE component from verified vanilla source {comp_file}, keeping functional connection tags. '
+          'Improve 4x base speed with correctly compatible propulsion and improve acceleration, handling, turning and braking; verify actual installed engine definitions.'},
+        {'path':'assets/props/WeaponSystems/macros/vardath_pe_weapon_macro.xml','description':
+          f'Inspect source weapon XML {gun} and PE connections, then create a separate compatible high-fire-rate main weapon; 50,000 damage per successful hit, not DPS. '
+          'Do not alter all vanilla ships.'},
+        {'path':'assets/props/WeaponSystems/macros/vardath_pe_turret_macro.xml','description':
+          f'Inspect source turret XML {turret} and original PE turret connection tags, then create a separate high-fire-rate compatible turret; 50,000 damage per successful hit. '
+          'Do not affect ordinary faction equipment.'},
+        {'path':'index/macros.xml','description':
+          'Register the dedicated PE, engine/equipment and turret macros using verified installed-game index conventions. Do not register generic Python applications.'},
+        {'path':'md/vardath_xen_pe.xml','description':
+          'Create a save-safe Mission Director 60-second player-owned ownership monitor and replacement spawn; equip the separate PE variant with validated main weapon and turret connections. '
+          'Spawn exactly one after 60 seconds when the player no longer owns one, including existing saves, without duplication.'},
+        {'path':'README.md','description':
+          'Document installation, source evidence, static XML and game-asset validation, 10x cargo, 4x speed/handling, 50,000 per-hit weapons/turrets, ownership respawn, and outstanding in-game verification.'},
     ]
-    return validate_project_plan(steps, request)
 
 
-def build_budgeted_file_step_prompt(user_request: str, path: str, description: str,
-                                    existing: str, siblings: list[dict], *,
-                                    evidence: str = '', max_chars: int = 7500) -> str:
-    """Bound a coding step without dropping the complete approved specification.
+def budgeted_file_step_prompt(user_request: str, path: str, description: str,
+                              existing: str, siblings: list[dict], *, max_chars: int=7500) -> str:
+    """Keep full user specification and current-file goal, compress only plan metadata.
 
-    The current file, current step and original request are immutable. Discard
-    less-important sibling detail and optional auxiliary evidence first; if the
-    essentials do not fit, stop rather than silently removing user constraints.
+    Truncation of user instructions or existing source is never permitted.
     """
-    compact_header = ('Generate ONLY the complete file content; no markdown or commentary. '
-                      'Do not invent vanilla game IDs, source inspections or tests. '
-                      'Preserve the complete project requirements.\n')
-    core = (compact_header + 'PROJECT REQUEST:\n' + user_request +
-            '\nCURRENT FILE: ' + path + '\nSTEP GOAL: ' + description +
-            '\nEXISTING FILE:\n' + existing + '\n')
-    if len(core) > max_chars:
-        raise PlanError(f'The unchanged approved request and file-step instructions need '
-                        f'{len(core):,} characters (limit {max_chars:,}); no requirements were discarded.')
-    remaining = max_chars - len(core)
-    lines = [f"{s['path']}" for s in siblings if s['path'] != path]
-    extra = '\nOTHER APPROVED FILE STAGES: ' + ', '.join(lines)
-    if len(extra) <= remaining:
-        core += extra
-        remaining -= len(extra)
-    if evidence and remaining > 30:
-        prefix = '\nVERIFIED GAME REFERENCE HINTS (read actual XML when implementing):\n'
-        selected=[]
-        for line in evidence.splitlines():
-            if line.strip() and len(prefix + '\n'.join(selected + [line])) <= remaining:
-                selected.append(line)
-        if selected:
-            core += prefix + '\n'.join(selected)
-    assert len(core) <= max_chars and user_request in core and description in core
-    return core
-
-
-def validate_generated_x4_xml(path: str, content: str) -> None:
-    """Reject clearly broken model-generated XML before any approved write.
-
-    This is a syntax/shape check, NOT a claim that the resulting extension
-    works in X4. Game-specific macro IDs still require live reference checks.
-    """
-    if not path.casefold().endswith('.xml'):
-        return
-    import xml.etree.ElementTree as ET
-    if not content.strip() or content.lstrip().startswith('```'):
-        raise PlanError(f'{path}: expected raw XML, not a markdown/empty response')
-    if re.search(r'(?i)\b(?:TODO|INSERT[_ ]HERE|REPLACE[_ ]ME|YOUR[_ -]?ID)\b', content):
-        raise PlanError(f'{path}: generated XML still contains unimplemented placeholders')
-    try:
-        root = ET.fromstring(content)
-    except ET.ParseError as exc:
-        raise PlanError(f'{path}: incomplete or malformed XML ({exc})') from exc
-    tag = root.tag.split('}')[-1]
-    expected = ('content',) if path.casefold() == 'content.xml' else (
-        ('mdscript', 'diff') if path.casefold().startswith('md/') else
-        ('macros', 'components', 'diff') if '/macros/' in path.casefold() or path.casefold().startswith('assets/') else ())
-    if expected and tag not in expected:
-        raise PlanError(f'{path}: expected XML root {expected}, received <{tag}>')
+    full=file_step_prompt(user_request,path,description,existing,siblings)
+    if len(full)<=max_chars:
+        return full
+    core=(f'Generate ONLY the complete source file; no markdown or patch. Do not claim testing.\n'
+          f'ORIGINAL PROJECT REQUIREMENTS (full):\n{user_request}\n'
+          f'CURRENT FILE: {path}\nSTEP GOAL: {description}\n'
+          f'EXISTING CONTENT (full):\n{existing}\n'
+          'Return the complete file text. Verify references from installed sources; never fabricate IDs.\n')
+    if len(core)>max_chars:
+        raise PlanError(f'Full specification, current goal and existing content require {len(core):,} '
+                        f'characters; model limit is {max_chars:,}. No user requirements were shortened.')
+    overview='OTHER PLANNED FILE PATHS:\n'
+    for item in siblings:
+        line=str(item['path'])+'\n'
+        if len(core)+len(overview)+len(line)<=max_chars:
+            overview+=line
+    return core+overview
