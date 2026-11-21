@@ -105,6 +105,10 @@ class DeepThorTDesktop(tk.Tk):
         self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
+        # A cancelled reply must release the single-flight ONNX worker before
+        # another chat can run. Restart is requested only for this intervention.
+        self._restart_cancelled_node_pid = None
+        self._quitting = False
         self.reply_stage = ''
         self.reply_started = 0.0
         self.reply_outcome = None
@@ -225,6 +229,7 @@ class DeepThorTDesktop(tk.Tk):
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
         ttk.Button(chatbar,text='Rename chat',command=self._rename_chat).pack(side='left',padx=5)
+        ttk.Button(chatbar,text='Close chat',command=self._close_chat).pack(side='left',padx=3)
         ttk.Button(chatbar,text='Attach files…',command=self._add_attachments).pack(side='left',padx=5)
         ttk.Button(chatbar,text='Clear attachments',command=self._clear_attachments).pack(side='left',padx=5)
         self.attach_file=tk.BooleanVar(value=False)
@@ -240,6 +245,7 @@ class DeepThorTDesktop(tk.Tk):
         tk.Label(chat,textvariable=self.chat_connection,bg=BG,fg=YELLOW,anchor="w").pack(fill="x",pady=(2,4))
         self.chat_tabs=ttk.Notebook(chat);self.chat_tabs.pack(fill='x',pady=4)
         self.chat_tabs.bind('<<NotebookTabChanged>>',self._chat_changed)
+        self.chat_tabs.bind('<Button-3>',self._chat_tab_menu)
         self.chat_history=self._text(chat,readonly=True,height=13,font=('Segoe UI',10))
         self.chat_history.pack(fill='both',expand=True)
         for role,color in (('user',ACCENT),('assistant',GREEN),('warning',YELLOW)):
@@ -255,6 +261,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(chat_controls,text='Send message',command=self._send).pack(side='left')
         ttk.Button(chat_controls,text='Diagnose AI',command=self._diagnose).pack(side='left',padx=5)
         ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left',padx=5)
+        ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
@@ -589,6 +596,91 @@ class DeepThorTDesktop(tk.Tk):
         name=simpledialog.askstring('Rename chat','New chat title:',parent=self)
         if name:
             self.chats.rename(self.current_chat,name);self._refresh_chats()
+    def _chat_tab_menu(self, event):
+        """Reopen archived chats without adding another permanently packed row."""
+        menu=tk.Menu(self,tearoff=False)
+        menu.add_command(label='Close selected chat',command=self._close_chat)
+        archived=self.chats.closed(self._project_key())
+        if archived:
+            menu.add_separator()
+            for ident,title in archived[-15:]:
+                menu.add_command(label='Reopen: '+title[:48],
+                                 command=lambda ident=ident:self._reopen_chat(ident))
+        try:menu.tk_popup(event.x_root,event.y_root)
+        finally:menu.grab_release()
+
+    def _reopen_chat(self, ident):
+        if self.chats.reopen(ident,self._project_key()):
+            self.current_chat=ident
+            self._refresh_chats()
+            self._log('Closed chat reopened; its existing history was preserved.')
+
+    def _interrupt_cancelled_inference(self):
+        """Terminate supervised single-flight ONNX inference and reload it once.
+
+        A Python HTTP request cannot cancel a running ONNX generator. Killing its
+        supervised server/worker is the real interruption boundary; a new server
+        will be started *after* the old process exits, never concurrently.
+        """
+        proc=self.node
+        if not proc or proc.poll() is not None:
+            return
+        self._restart_cancelled_node_pid=proc.pid
+        self.node_ready=False
+        self.node_loading=False
+        self.node_started=0.0
+        self.model_status.set('AI: stopping cancelled reply')
+        self._set_connection_status('Cancelling local inference; other chats will resume after model reload.')
+        try:
+            proc.terminate()
+        except OSError as exc:
+            self._restart_cancelled_node_pid=None
+            self._log('Could not stop ONNX worker: '+str(exc))
+            self._set_connection_status('ONNX cancellation failed; use Stop AI and inspect Processes.')
+
+    def _cancel_chat_replies(self, chat_id, *, reason):
+        active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
+        active_in_chat=bool(active and active['chat_id']==chat_id)
+        cancelled=self.conversations.cancel_chat_requests(chat_id,reason)
+        if active_in_chat:
+            self.active_conversation=None
+            self.reply_stage=''
+            self._interrupt_cancelled_inference()
+        if cancelled:
+            self._log(f'Stopped {len(cancelled)} unfinished reply request(s) in chat; no retry will be queued.')
+        self.reply_outcome={'chat_id':chat_id,'message':f'STOPPED — {len(cancelled)} request(s) cancelled; history retained.'}
+        self._render_reply_notice()
+        return cancelled
+
+    def _stop_chat_reply(self):
+        if not self.current_chat:return
+        cancelled=self._cancel_chat_replies(self.current_chat,reason='Stopped by user; retry requires explicit action')
+        if not cancelled:
+            messagebox.showinfo('No active reply','This chat has no running or waiting reply.',parent=self)
+        self._reload_chat()
+
+    def _close_chat(self):
+        """Close the visible tab and stop only its conversation, not approved jobs."""
+        chat_id=self.current_chat
+        if not chat_id:return
+        active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
+        running=bool(active and active['chat_id']==chat_id)
+        pending=any(r['state'] in ('pending','running','waiting_sources')
+                    for r in self.conversations.thread(chat_id,limit=1000))
+        detail=(' Its outstanding replies will be stopped, including current ONNX generation. '
+                'The model must reload before other chats can proceed.' if running else
+                ' Its queued replies will be cancelled.' if pending else '')
+        if not messagebox.askyesno('Close chat',
+            'Close this chat tab?'+detail+'\n\n'
+            'History and drafts are preserved and can be reopened with a right-click '
+            'on the chat tabs. Approved work queue jobs are not deleted.',parent=self):
+            return
+        self._cancel_chat_replies(chat_id,reason='Chat closed by user; no automatic retry')
+        if self.chats.close(chat_id,self._project_key()):
+            self.current_chat=None
+            self._refresh_chats()
+            self._log('Chat tab closed; durable history retained and approved jobs untouched.')
+
     def _reload_chat(self):
         if not self.current_chat:return
         self._show(self.chat_history,'')
@@ -876,7 +968,11 @@ class DeepThorTDesktop(tk.Tk):
         self._render_reply_notice()
         self._log(f'Local conversation #{ident} started ({request["mode"]}); no executable job.')
         def work():
+            def cancelled():
+                current=self.conversations.get(ident)
+                return not current or current['state']!='running'
             try:
+                if cancelled():return
                 original=request['prompt']
                 paths=json.loads(request.get('attachments') or '[]')
                 # No Tk calls on background threads.
@@ -891,6 +987,7 @@ class DeepThorTDesktop(tk.Tk):
                     if not line:raise RuntimeError('Local vision model did not produce a caption')
                     original+='\n\nAttached image description: '+json.loads(line.split('IMAGE_CAPTION_JSON: ',1)[1])['caption']
                     paths=[x for x in paths if classify(x)!='image']
+                if cancelled():return
                 self.events.put(('conversation_stage',ident,'Preparing the complete request and attachment context'))
                 prompt=composed_prompt(original,paths)
                 original_evidence=''
@@ -906,6 +1003,7 @@ class DeepThorTDesktop(tk.Tk):
                     report=automatic_x4_preflight(
                         project_dir=request['project'],app_root=ROOT,game_dir=self.x4_game_dir,
                         reference_dir=self.x4_reference_dir,catalog_tool=self.x4_catalog_tool)
+                    if cancelled():return
                     self.events.put(('x4_auto_report', report))
                     record(STATE,'desktop','x4_auto_preflight_complete',request_id=ident,
                            game_found=bool(report['game_dir']),references_ready=report['ready_for_planning'],
@@ -933,6 +1031,7 @@ class DeepThorTDesktop(tk.Tk):
                     prompt=build_plan_prompt(prompt,self.inventory)
                 if len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
+                if cancelled():return
                 session=request['chat_id'] if request['mode']=='chat' else f'plan-{ident}-{request["chat_id"]}'
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
                 if request['mode']=='chat':
@@ -942,9 +1041,11 @@ class DeepThorTDesktop(tk.Tk):
                         self.client, session, original, request['project'], prompt,
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
                         max_rounds=MAX_PLAN_ATTEMPTS,
-                        stage=lambda message: self.events.put(('conversation_stage',ident,message)))
+                        stage=lambda message: self.events.put(('conversation_stage',ident,message)),
+                        cancelled=cancelled)
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
+                if cancelled():return
                 self.events.put(('conversation_stage',ident,'Model finished; verifying reply and project requirements'))
                 self.events.put(('conversation_reply',ident,answer))
             except Exception as exc:
@@ -987,9 +1088,16 @@ class DeepThorTDesktop(tk.Tk):
 
     def _conversation_error(self,ident,error):
         req=self.conversations.get(ident)
-        if req and req['state']=='running':
-            self.conversations.change(ident,'failed','Local model request failed: '+error[:500],
-                                      allowed=('running',))
+        # A terminated old HTTP call may report an error *after* cancellation
+        # and after another chat has become active. It must not clear that chat.
+        if not req or req['state']!='running':
+            return
+        self.conversations.change(ident,'failed','Local model request failed: '+error[:500],
+                                  allowed=('running',))
+        if self.active_conversation is not None and self.active_conversation!=ident:
+            # A different conversation owns the model now. Keep its status.
+            self._log(f'Late error recorded for conversation #{ident}; current reply was not disturbed.')
+            return
         self.active_conversation=None
         self.reply_stage=''
         self.reply_outcome={'chat_id':req['chat_id'] if req else self.current_chat,
@@ -2026,7 +2134,7 @@ class DeepThorTDesktop(tk.Tk):
                 try:
                     for line in process.stdout:self.events.put(('log','[AI] '+line.rstrip()))
                 except Exception as e:self.events.put(('log','AI log error: '+str(e)))
-                self.events.put(('node_end',process.poll()))
+                self.events.put(('node_end',process.poll(),process.pid))
             threading.Thread(target=output,daemon=True).start()
         except Exception as e:
             self.last_ai_error=str(e)
@@ -2035,6 +2143,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Could not start local model: '+str(e))
             if not automatic:messagebox.showerror('Start AI failed',str(e))
     def _stop_ai(self):
+        self._restart_cancelled_node_pid=None  # Explicit global stop overrides automatic reload.
         if self.active_conversation is not None:
             self.conversations.change(self.active_conversation,'pending',
                 'Paused by user; will retry when local AI starts',allowed=('running',))
@@ -2213,7 +2322,7 @@ class DeepThorTDesktop(tk.Tk):
                           'This does not prove a crash; inspect CPU/RAM in Processes, or Stop AI and diagnose.')
                     if detail.get('phase')=='failed':
                         self.last_ai_error=str(detail.get('error') or 'ONNX worker failure')
-                if is_ready and self.node and self.node.poll() is None:
+                if is_ready and self.node and self.node.poll() is None and self._restart_cancelled_node_pid is None:
                     newly_ready=not self.node_ready
                     if newly_ready:
                         self._log('Local AI ready: 127.0.0.1:8765; offline.')
@@ -2223,6 +2332,20 @@ class DeepThorTDesktop(tk.Tk):
                     if not (isinstance(detail,dict) and detail.get('inference_busy')):
                         self._set_connection_status('AI READY — chat replies run outside the execution queue. Jobs need plan approval.')
             elif kind=='node_end':
+                exited_pid=event[2] if len(event)>2 else (self.node.pid if self.node else None)
+                # An old process must never change the status of a newer server.
+                if self.node and exited_pid is not None and exited_pid!=self.node.pid:
+                    continue
+                if self._restart_cancelled_node_pid is not None and exited_pid==self._restart_cancelled_node_pid:
+                    self._restart_cancelled_node_pid=None
+                    self.node=None
+                    self.node_ready=False;self.node_loading=False;self.node_started=0.0
+                    self.model_status.set('AI: restarting after reply cancellation')
+                    self._set_connection_status('Reply stopped. Reloading local AI for other queued chats.')
+                    self._log('Cancelled ONNX worker exited; starting a fresh supervised model for other chats.')
+                    if not self._quitting:
+                        self.after(350,lambda:self._start_ai(automatic=True))
+                    continue
                 was_loading=self.node_loading
                 self._log('AI process exited. Exit status: '+str(event[1]))
                 if was_loading:
@@ -2281,6 +2404,8 @@ class DeepThorTDesktop(tk.Tk):
                 messagebox.showerror('Tool error',event[3])
         self.after(125,self._handle_events)
     def _quit(self):
+        self._quitting=True
+        self._restart_cancelled_node_pid=None
         record(STATE,'desktop','desktop_shutdown',active_job=self.active_job,active_conversation=self.active_conversation)
         if self.active_conversation is not None:
             self.conversations.change(self.active_conversation,'pending',
