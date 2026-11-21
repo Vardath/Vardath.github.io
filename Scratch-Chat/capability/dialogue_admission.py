@@ -26,6 +26,7 @@ def audit(manifest_path, train_path, validation_path, test_path):
         raise ValueError("Source is not explicitly approved under an admitted license")
     results = {}
     seen_ids, seen_dialogues = set(), set()
+    split_signatures = []
     for split, path in (("train", train_path), ("validation", validation_path), ("test", test_path)):
         raw = Path(path).read_bytes()
         digest = hashlib.sha256(raw).hexdigest()
@@ -54,11 +55,22 @@ def audit(manifest_path, train_path, validation_path, test_path):
             if normalized in seen_dialogues:
                 raise ValueError(f"{split}: cross-split or within-split duplicate dialogue")
             seen_dialogues.add(normalized)
+            # Cross-split lexical near-duplicate screening; not semantic deduplication.
+            from collections import Counter
+            tokens = Counter(re.findall(r"\w+", canonical(" ".join(m["content"] for m in messages))))
+            for prior_split, prior_tokens in split_signatures:
+                if prior_split == split or min(sum(tokens.values()), sum(prior_tokens.values())) < 12:
+                    continue
+                overlap = sum((tokens & prior_tokens).values())
+                union = sum((tokens | prior_tokens).values())
+                if union and overlap / union >= 0.85:
+                    raise ValueError(f"{split}: near-duplicate dialogue across {prior_split} split")
+            split_signatures.append((split, tokens))
             count += 1
         if not count:
             raise ValueError(f"{split}: empty split")
         results[split] = {"count": count, "sha256": digest}
-    return {"approved_source": manifest["source_id"], "license": manifest["license"], "splits": results, "status": "exact-duplicate-and-provenance-check-passed", "limitations": "Near-duplicate, PII, consent and source-license audits still require independent review"}
+    return {"approved_source": manifest["source_id"], "license": manifest["license"], "splits": results, "status": "exact-duplicate-and-provenance-check-passed", "limitations": "Lexical similarity is not semantic deduplication; PII, consent and source-license audits still require independent review"}
 
 def main():
     parser = argparse.ArgumentParser()
