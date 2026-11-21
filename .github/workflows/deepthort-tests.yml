@@ -23,5 +23,29 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
       - name: Compile Python sources
         run: python -m compileall -q .
-      - name: Run regression tests under Xvfb
-        run: xvfb-run -a python -m unittest discover -s tests -q
+      - name: Run regression tests under Xvfb (isolated GUI modules)
+        run: |
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path.cwd()
+          env = dict(os.environ)
+          env["PYTHONPATH"] = os.pathsep.join((str(root / "tests"), str(root)))
+          modules = sorted((root / "tests").glob("test_*.py"))
+          failures = []
+          for file in modules:
+              module = "tests." + file.stem
+              print("Running", module, flush=True)
+              result = subprocess.run(
+                  ["xvfb-run", "-a", sys.executable, "-m", "unittest", module, "-q"],
+                  env=env, check=False)
+              if result.returncode:
+                  failures.append(module)
+          if failures:
+              print("Failed modules:", ", ".join(failures), flush=True)
+              sys.exit(1)
+          print("All test modules passed in isolated GUI processes.", flush=True)
+          PY
