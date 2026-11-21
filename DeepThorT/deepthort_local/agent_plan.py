@@ -244,48 +244,95 @@ def file_step_prompt(user_request: str, path: str, description: str, existing: s
 
 
 def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
-                          x4_evidence: str = '', max_chars: int = 7500) -> str:
-    """Request another *model-authored* plan fragment, never synthesize files.
+                          x4_evidence: str = '', max_chars: int = 7500,
+                          path_window: int = 0) -> str:
+    """Ask the model to repair its own proposal within a bounded context.
 
-    The saved user specification is immutable. Only supporting context (old
-    descriptions and secondary evidence) may be shortened for the small model.
+    Never truncate the original specification or alter/drop accumulated plan
+    steps. The small model sees a whole-path subset when its context cannot
+    hold the entire plan. The full plan remains in ``generate_model_plan`` and
+    is revalidated before a draft can ever be approved. A later revision can
+    rotate the subset instead of failing just because the model proposed many
+    long paths. No files/plan steps are manufactured here.
     """
     header = (
         'Your previous project plan was incomplete or invalid. REVISE IT YOURSELF. '
         'Return ONLY JSON {"files":[{"path":"...","description":"..."}]}, '
-        'with 1 to 6 NEW files or replacements of existing paths. '
-        'Every path must be a real relative source file, never generic placeholders. '
-        'Use the installed project evidence, not guesses. '
-        'Existing paths are retained unless you replace them; do NOT repeat unchanged files. '
-        'Do not invent any implementation or claim tests passed.\n'
+        'with 1 to 6 NEW files or corrections of existing paths. '
+        'Every path must be a real relative source file. '
+        'Previous plan steps remain saved and are merged with your corrections; '
+        'only a bounded selection of paths may appear below. '
+        'Do not repeat unchanged files. Use verified source evidence; never guess IDs. '
+        'Do not claim any testing or construction has occurred.\n'
     )
-    problems = str(problems).strip()[:1300]
-    base = header + 'VALIDATOR FINDINGS:\n' + problems + '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n'
+    findings = str(problems).strip()[:1300]
+    base = (header + 'VALIDATOR FINDINGS:\n' + findings +
+            '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n')
     if len(base) >= max_chars:
         raise PlanError('Complete original specification and correction instructions do not fit '
                         f'within {max_chars:,} characters; no specification was truncated.')
-    available = max_chars - len(base)
-    evidence = []
-    for line in (x4_evidence or '').splitlines():
-        line = re.sub(r'\s+SHA\s+[0-9a-fA-F]{8,64}$', '', line.strip())
-        if not line: continue
-        item = 'VERIFIED CANDIDATE: ' + line + '\n'
-        if len(item) <= available:
-            evidence.append(item)
-            available -= len(item)
-    prior = []
-    for step in steps:
-        # Path knowledge is essential for merging; descriptions are optional.
-        item = f"EXISTING: {step['path']}"
-        detail = ' — ' + str(step['description'])[:150]
-        item += (detail if len(item + detail + '\n') <= available else '') + '\n'
-        if len(item) <= available:
-            prior.append(item)
-            available -= len(item)
-        else:
-            raise PlanError('Existing plan paths cannot fit alongside the complete original '
-                            'specification. Nothing was removed or approved.')
-    result = base + ''.join(prior) + ''.join(evidence)
+
+    # The original request, accumulated steps and full inspected evidence are
+    # authoritative in local state. Context selection is NOT a state mutation.
+    # Reserve space for a truthful omitted-path count before fitting entries.
+    # Use entire paths (never incomplete/ambiguous file names).
+    remaining = max_chars - len(base)
+    if path_window < 0:
+        raise ValueError('path_window must be nonnegative')
+    path_list = [str(step['path']) for step in steps]
+    manifest_header = f'PREVIOUS MODEL-PROPOSED PATHS (total {len(path_list)}; saved locally):\n'
+    omitted_reserve = 130
+    manifest_lines = []
+    selected_indices = set()
+    if len(manifest_header) + omitted_reserve <= remaining and path_list:
+        # Rotate first position in later passes if the manifest is too large.
+        begin = path_window % len(path_list)
+        ordered_indices = list(range(begin, len(path_list))) + list(range(begin))
+        used = len(manifest_header) + omitted_reserve
+        for index in ordered_indices:
+            line = path_list[index] + '\n'
+            if used + len(line) <= remaining:
+                manifest_lines.append(line)
+                selected_indices.add(index)
+                used += len(line)
+        manifest = manifest_header + ''.join(manifest_lines)
+    else:
+        manifest = ''
+    omitted = len(path_list) - len(selected_indices)
+    if omitted:
+        warning = (f'{omitted} other existing paths are omitted from THIS model context '
+                   'only; all are retained for merging and validation.\n')
+        # This warning must fit even if the request left very little space.
+        if len(manifest) + len(warning) > remaining:
+            manifest = ''
+        if len(warning) <= remaining - len(manifest):
+            manifest += warning
+    remaining -= len(manifest)
+
+    evidence_header = 'VERIFIED SOURCE CANDIDATES (inspect before selecting):\n'
+    evidence_lines = []
+    if remaining >= len(evidence_header):
+        # Deduplicate and prefer game connections before secondary candidates.
+        raw = [re.sub(r'\s+SHA\s+[0-9a-fA-F]{8,64}$', '', item.strip())
+               for item in (x4_evidence or '').splitlines() if item.strip()]
+        priority = ('PE connection:', 'ship_candidates:', 'weapon_candidates:',
+                    'turret_candidates:', 'storage_candidates:')
+        essential = []
+        for category in priority:
+            line = next((item for item in raw if item.startswith(category)), None)
+            if line is not None and line not in essential:
+                essential.append(line)
+        ordered = essential + [item for item in raw if item not in essential]
+        used = len(evidence_header)
+        for line in ordered:
+            item = line + '\n'
+            if used + len(item) <= remaining:
+                evidence_lines.append(item)
+                used += len(item)
+        evidence = evidence_header + ''.join(evidence_lines) if evidence_lines else ''
+    else:
+        evidence = ''
+    result = base + manifest + evidence
     assert request in result and len(result) <= max_chars
     return result
 
@@ -345,7 +392,7 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
             stage(f'Planning pass {round_no} rejected: {finding[:140]}; asking model to correct it')
         prompt = build_revision_prompt(
             request, list(all_steps.values()), finding, x4_evidence=x4_evidence,
-            max_chars=max_chars)
+            max_chars=max_chars, path_window=round_no - 1)
     raise PlanError(
         f'Local model could not produce a validated plan after {max_rounds} attempts. '
         f'Last problem: {failures[-1][:650]}. No substitute plan was created; '
