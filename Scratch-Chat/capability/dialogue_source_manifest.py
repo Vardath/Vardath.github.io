@@ -3,6 +3,7 @@
 This module validates a source manifest; it never downloads or approves data.
 """
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -45,12 +46,48 @@ def validate_manifest(data):
     return True
 
 
+def verify_split_files(data, root):
+    """Verify on-disk bytes, JSONL records and cross-split exact examples.
+
+    This is not a semantic near-duplicate or provenance audit.
+    """
+    validate_manifest(data)
+    root = Path(root)
+    seen = {}
+    for split in ("train", "validation", "test"):
+        path = root / (split + ".jsonl")
+        raw = path.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        if digest != data[split + "_sha256"]:
+            raise ValueError(f"{split} file SHA-256 mismatch")
+        lines = raw.decode("utf-8").splitlines()
+        if len(lines) != data[split + "_records"]:
+            raise ValueError(f"{split} record count mismatch")
+        for index, line in enumerate(lines, 1):
+            if not line.strip():
+                raise ValueError(f"{split} blank record {index}")
+            record = json.loads(line)
+            if not isinstance(record, dict) or not record:
+                raise ValueError(f"{split} record {index} is not a nonempty object")
+            canonical = json.dumps(record, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+            if canonical in seen:
+                raise ValueError(f"Duplicate record across or within splits: {seen[canonical]} and {split}:{index}")
+            seen[canonical] = f"{split}:{index}"
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest", type=Path)
+    parser.add_argument("--verify-files", type=Path, help="Directory containing train.jsonl, validation.jsonl, test.jsonl")
     args = parser.parse_args()
-    validate_manifest(json.loads(args.manifest.read_text(encoding="utf-8")))
-    print("Manifest structure accepted; provenance and license still require human verification.")
+    data = json.loads(args.manifest.read_text(encoding="utf-8"))
+    validate_manifest(data)
+    if args.verify_files is not None:
+        verify_split_files(data, args.verify_files)
+        print("Split bytes, record counts and exact JSONL duplicates checked; semantic and license review remain required.")
+    else:
+        print("Manifest structure accepted; provenance and license still require human verification.")
 
 
 if __name__ == "__main__":
