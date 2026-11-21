@@ -27,7 +27,7 @@ from urllib.request import ProxyHandler, Request, build_opener
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.chat_timeline import merged_chat_timeline
-from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, PlanError, project_kind
+from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, PlanError, project_kind
 from deepthort_local.x4_sources import (inspect_x4_sources, automatic_x4_preflight, is_x4_inspection_request, x4_request_in_context,
                                       format_x4_inspection, x4_evidence_for_prompt,
                                         likely_installations, find_catalog_tool, catalog_extraction_command)
@@ -74,7 +74,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='12',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='13',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -819,6 +819,17 @@ class DeepThorTDesktop(tk.Tk):
         if not draft:
             messagebox.showinfo('No draft plan',
                 'Use Draft project plan first, discuss any uncertainties in Chats, then approve it.');return
+        original_turn=self.conversations.get(draft['request_id'])
+        if original_turn and 'fallback' in (original_turn.get('detail') or '').lower():
+            # v11/v12 could save prewritten, non-model drafts. Retain their chat
+            # history but never allow them to be mistaken for model-authored work.
+            self.conversations.discard(draft['id'])
+            messagebox.showwarning('Old generated template blocked',
+                'This earlier plan was substituted by a built-in fallback, not authored '
+                'by the local AI. It has been removed from approval. '
+                'Please request a new model-generated plan.',parent=self)
+            self._reload_chat()
+            return
         try:
             if project_kind(draft['original_prompt'])=='x4':
                 refs=inspect_x4_sources(project_dir=draft['project'],
@@ -882,6 +893,7 @@ class DeepThorTDesktop(tk.Tk):
                     paths=[x for x in paths if classify(x)!='image']
                 self.events.put(('conversation_stage',ident,'Preparing the complete request and attachment context'))
                 prompt=composed_prompt(original,paths)
+                original_evidence=''
                 # X4 source inspection is part of the INITIAL request, never a
                 # manual task delegated back to the user or an AI hallucination.
                 prior=[r['prompt'] for r in self.conversations.thread(request['chat_id'],10)
@@ -921,12 +933,18 @@ class DeepThorTDesktop(tk.Tk):
                     prompt=build_plan_prompt(prompt,self.inventory)
                 if len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
-                session=request['chat_id'] if request['mode']=='chat' else 'planning-'+request['chat_id']
+                session=request['chat_id'] if request['mode']=='chat' else f'plan-{ident}-{request["chat_id"]}'
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
                 if request['mode']=='chat':
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 else:
-                    answer=self.client.chat(session,prompt,max_tokens=640)
+                    answer, _ = generate_model_plan(
+                        self.client, session, original, request['project'], prompt,
+                        x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
+                        max_rounds=4,
+                        stage=lambda message: self.events.put(('conversation_stage',ident,message)))
+                    record(STATE,'desktop','model_plan_validated',request_id=ident,
+                           model_authored=True,files=len(_),prewritten_fallback=False)
                 self.events.put(('conversation_stage',ident,'Model finished; verifying reply and project requirements'))
                 self.events.put(('conversation_reply',ident,answer))
             except Exception as exc:
@@ -950,39 +968,12 @@ class DeepThorTDesktop(tk.Tk):
                 outcome=f'DRAFT PLAN #{draft_id} READY — review and explicitly approve before any job runs.'
                 self._log(f'Draft #{draft_id} generated in Chats; NO job queued.')
             except Exception as exc:
-                # Preserve the failed model output as a separate local chat history
-                # record. Salvage a *draft*, not a job, only with VERIFIED X4 sources.
-                recovered=False
-                if project_kind(req['prompt'])=='x4':
-                    try:
-                        report=self.x4_report or {}
-                        if not report.get('ready_for_planning'):
-                            report=automatic_x4_preflight(project_dir=req['project'],app_root=ROOT,
-                                game_dir=self.x4_game_dir,reference_dir=self.x4_reference_dir,
-                                catalog_tool=self.x4_catalog_tool)
-                        from deepthort_local.agent_plan import source_grounded_pe_plan
-                        fixed=source_grounded_pe_plan(req['prompt'],report)
-                        rendered=json.dumps({'files':fixed},ensure_ascii=False)
-                        validated=parse_build_plan(rendered,Path(req['project']),request=req['prompt'])
-                        draft_id=self.conversations.save_draft(ident,validated)
-                        self.conversations.change(ident,'responded',
-                            f'Model proposal rejected; source-grounded fallback draft #{draft_id} prepared for approval',
-                            response=rendered,allowed=('running',))
-                        record(STATE,'desktop','x4_draft_salvaged',request_id=ident,
-                               model_rejection=str(exc)[:320],draft_id=draft_id,
-                               verified_pe=True)
-                        self._log(f'Model plan rejected: {exc}; verified X4 draft #{draft_id} substituted. No job queued.')
-                        outcome=(f'DRAFT PLAN #{draft_id} READY — local model output failed validation; '
-                                 'verified-source fallback prepared. Review it before approval.')
-                        recovered=True
-                    except (ValueError, KeyError, TypeError, OSError) as recovery_error:
-                        record(STATE,'desktop','x4_draft_salvage_blocked',request_id=ident,
-                               reason=str(recovery_error)[:500])
-                if not recovered:
-                    self.conversations.change(ident,'failed','Invalid proposal: '+str(exc),
-                        response=answer,allowed=('running',))
-                    self._log(f'Planning requires revision: {exc}')
-                    outcome='DRAFT FAILED — model proposal did not pass validation. No job was queued.'
+                # Never replace a rejected model plan with a hardcoded plan.
+                # The user's plan approval must assess the model's own result.
+                self.conversations.change(ident,'failed','Invalid proposal: '+str(exc),
+                    response=answer,allowed=('running',))
+                self._log(f'Planning requires revision: {exc}. No substitute draft was created.')
+                outcome='DRAFT FAILED — model proposal did not pass validation. No job was queued.'
         else:
             self.conversations.change(ident,'responded','Local conversation replied',
                                       response=answer,allowed=('running',))
