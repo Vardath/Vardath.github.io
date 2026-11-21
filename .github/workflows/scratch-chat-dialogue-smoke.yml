@@ -37,7 +37,7 @@ jobs:
           python -m capability.dialogue_tokenizer --corpus data/dialogue-smoke --output data/dialogue-smoke/tokenizer.json > dialogue-tokenizer-provenance.json
       - name: Train separate random-initialized dialogue checkpoint
         run: |
-          python -m capability.modern_train train --corpus data/dialogue-smoke --tokenizer data/dialogue-smoke/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt --steps 40 --width 64 --layers 2 --heads 4 --context-size 128 --seq-len 16 --batch 2 --grad-accum 1 --threads 2 --save-every 20 --eval-every 20 --min-train-tokens 0 --quiet > dialogue-smoke-train.json
+          python -m capability.modern_train train --corpus data/dialogue-smoke --tokenizer data/dialogue-smoke/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt --steps 80 --width 64 --layers 2 --heads 4 --context-size 128 --seq-len 16 --batch 2 --grad-accum 1 --threads 2 --save-every 40 --eval-every 40 --min-train-tokens 0 --quiet > dialogue-smoke-train.json
       - name: Evaluate isolated held-out task families
         run: |
           python -m capability.modern_train evaluate --corpus data/dialogue-smoke --tokenizer data/dialogue-smoke/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt > dialogue-smoke-evaluation.json
