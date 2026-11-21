@@ -1,3 +1,17 @@
+# DeepThorT v14 — bounded planning revision context (21 November 2026)
+
+**Source base:** v13, retaining the original v10.9 interface, JANUS/Sentinel, local ONNX model, resource limits, chat/work-queue approval boundary and all user state. No new application features or UI layout changes.
+
+**Repair:** The 15:07 diagnostics and screenshot showed `build_revision_prompt` throwing `PlanError: Existing plan paths cannot fit alongside the complete original specification` on the first correction after a model-generated plan. The old implementation allocated prompt space for verified evidence and verbose existing-step descriptions, then aborted when the accumulated paths would not fit the 7,500-character request window. This rejected the planning attempt **before the local model could attempt a correction**.
+
+v14 preserves the full original user specification on every planning pass and keeps every previously model-proposed step in local accumulated state. Only the **revision request's auxiliary context** is budgeted: it supplies complete existing file paths that fit, marks how many were omitted from that model context, rotates the path selection across passes, and fits source evidence only in the remaining space. All saved steps still merge and face the normal full-plan validator; no predefined PE plan or unrequested file is inserted. A genuinely overlarge complete specification still fails safely without truncation.
+
+**Observed validation:** `xvfb-run -a python -m unittest discover -s tests -q` → 148 tests, OK; four new v14 regression cases reproduce oversized path context, verified evidence budgeting, successful model-revision continuation, and safe rejection of genuinely oversized full specifications. Some pre-existing Tkinter/SQLite cleanup warnings occur during headless GUI tests. No live Windows inference, user-side layout, independently adequate Xenon PE plan, approved executable mod job or X4 gameplay has been verified. Future acceptance tests must establish those separately.
+
+**Installation:** Close DeepThorT and extract v14 over `D:\deepthort`, preserving local `models`, `state`, `node_modules`, `cache`, `reference` and project workspaces. User approval is still mandatory before any planned job executes.
+
+---
+
 # DeepThorT v13 — model-authored plans, bounded self-correction (21 November 2026)
 
 **Source base:** v12 (which preserved the original v10.9 interface). This release does not add controls, rearrange panes, replace JANUS/Sentinel, change local ONNX inference, or alter the CPU/memory supervisor. It retains existing user state, model files and approved-job boundaries.
