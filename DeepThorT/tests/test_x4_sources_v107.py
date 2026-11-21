@@ -65,6 +65,21 @@ class X4SourcesTests(unittest.TestCase):
         self.assertIn('VERIFIED LOCAL X4 REFERENCE CANDIDATES',prompt)
         self.assertIn('not necessarily PE',prompt)
 
+    def test_medium_weapon_candidates_precede_l_class_destroyer_sources(self):
+        self._write_ref('assets/units/size_m/macros/ship_xen_m_corvette_02_a_macro.xml', 'ship_xen_m_corvette_02_a_macro')
+        macro=self.ref/'assets/units/size_m/macros/ship_xen_m_corvette_02_a_macro.xml'
+        macro.write_text('<macros><macro name="ship_xen_m_corvette_02_a_macro"><component ref="ship_xen_m_corvette_02_a"/></macro></macros>')
+        comp=self.ref/'assets/units/size_m/ship_xen_m_corvette_02_a.xml'
+        comp.write_text('<components><component name="ship_xen_m_corvette_02_a"><connection name="gun" tags="weapon medium"/><connection name="turret" tags="turret medium"/></component></components>')
+        self._write_ref('assets/props/WeaponSystems/capital/macros/weapon_arg_l_destroyer_macro.xml','weapon_arg_l_destroyer_macro')
+        self._write_ref('assets/props/WeaponSystems/laser/macros/weapon_gen_m_laser_macro.xml','weapon_gen_m_laser_macro')
+        self._write_ref('assets/props/WeaponSystems/capital/macros/turret_arg_l_dumbfire_macro.xml','turret_arg_l_dumbfire_macro')
+        self._write_ref('assets/props/WeaponSystems/turret/macros/turret_gen_m_laser_macro.xml','turret_gen_m_laser_macro')
+        result=inspect_x4_sources(game_dir=self.game,reference_dir=self.ref)
+        self.assertTrue(result['ready_for_planning'])
+        self.assertIn('_m_',result['weapon_candidates'][0]['file'])
+        self.assertIn('_m_',result['turret_candidates'][0]['file'])
+
     def test_fake_malformed_and_oversized_sources_are_not_claimed_as_evidence(self):
         invalid=self._write_ref('assets/units/size_m/macros/ship_xen_m_corvette_02_a_macro.xml','ship_xen_m_corvette_02_a_macro')
         invalid.write_text('<not xml')
