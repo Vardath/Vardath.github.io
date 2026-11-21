@@ -48,7 +48,7 @@ class BudgetedPlanningTests(unittest.TestCase):
             build_budgeted_plan_prompt(huge, x4_evidence=EVIDENCE)
 
     @unittest.skipUnless(os.name == 'nt' or os.environ.get('DISPLAY'), 'GUI required')
-    def test_draft_request_with_x4_evidence_skips_slow_planner_and_waits_for_approval(self):
+    def test_draft_request_with_x4_evidence_dispatches_under_7500(self):
         import desktop_app as appmod
         with tempfile.TemporaryDirectory() as t:
             root=Path(t);project=root/'x4mods';project.mkdir()
@@ -78,14 +78,13 @@ class BudgetedPlanningTests(unittest.TestCase):
                     ui.client.chat=lambda session,prompt,**kw: captured.append(prompt) or '{"files":[]}'
                     ui._execute_conversation(ui.conversations.get(req))
                     deadline=time.monotonic()+5
-                    while ui.conversations.get(req)['state']=='running' and time.monotonic()<deadline:
+                    while not captured and time.monotonic()<deadline:
                         ui._handle_events();time.sleep(.02)
-                    self.assertEqual(ui.conversations.get(req)['state'],'responded')
-                    self.assertEqual(captured,[])  # deterministic verified PE planning
+                    self.assertTrue(captured)
                     self.assertGreater(len(build_plan_prompt(SPEC,x4_evidence=EVIDENCE)),7500)
-                    draft=ui.conversations.latest_draft(ui.current_chat,str(project))
-                    self.assertIsNotNone(draft)
-                    self.assertEqual(len(draft['steps']),6)
+                    self.assertIn(SPEC,captured[0])
+                    self.assertIn('PE connection:',captured[0])
+                    self.assertLessEqual(len(captured[0]),7500)
                     self.assertEqual(ui.jobs.items(str(project)),[])
                 finally:ui._quit()
 
