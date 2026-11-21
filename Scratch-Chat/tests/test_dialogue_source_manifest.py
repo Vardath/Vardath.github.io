@@ -104,5 +104,21 @@ class SourceManifestTests(unittest.TestCase):
                 verify_split_files(self.data, root)
 
 
+    def test_conversation_family_leakage_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            records = {
+                "train": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "First question"}]}],
+                "validation": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "Different turn"}]}],
+                "test": [{"source_conversation_id": "thread-99", "messages": [{"role": "user", "content": "Independent question"}]}],
+            }
+            for split, examples in records.items():
+                raw = "".join(json.dumps(item) + "\\n" for item in examples).encode()
+                (root / (split + ".jsonl")).write_bytes(raw)
+                self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
+                self.data[split + "_records"] = len(examples)
+            with self.assertRaisesRegex(ValueError, "family leakage"):
+                verify_split_files(self.data, root)
+
 if __name__ == "__main__":
     unittest.main()
