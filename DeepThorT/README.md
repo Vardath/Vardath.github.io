@@ -1,0 +1,345 @@
+# DeepThorT Desktop v11.0 — verified X4 plan recovery and XML guard (21 November 2026)
+
+**Fixes based on the 12:40 diagnostics:** Verified Xenon PE X4 projects no longer wait for the small ONNX model to produce a structurally valid six-file plan. After actual vanilla PE macro, component connection, weapon and turret reference checks pass, the app prepares a source-informed **draft** containing the X4 extension manifest, ship macro and component, separate forward weapon and turret macro files, and a Mission Director respawn watcher. No executable job is queued until the user explicitly approves the draft. The draft names no unverified vanilla equipment identifiers.
+
+Approved build-file prompts now preserve the full original specification and current file-stage requirement while reducing sibling-stage context and optional evidence to fit the local model's 7,500-character input budget. If the immutable requirements alone exceed the budget, the app reports the limitation instead of trimming the user's specifications. All model-produced X4 XML is syntax/shape checked before auto-save or manual file approval. Malformed or placeholder-containing XML cannot be written from the build flow. These are **static safeguards**, not in-game verification.
+
+**Install:** Close DeepThorT. Unzip the complete package over `D:\deepthort`, replacing application source, scripts, desktop launcher, and binary. Preserve the existing `models`, `state`, `node_modules`, `cache`, `reference`, and user project folders; none of those directories are part of this ZIP. Relaunch `DeepThorT.exe`. Open `D:\x4mods`, use the original Xenon PE request in **Draft project plan**, review the six-stage draft, and approve only if it matches the intended mod. Source discovery and game-file extraction retain their existing approval requirements. **Do not copy the ZIP into the X4 extensions directory:** this ZIP updates the assistant, not the mod.
+
+**Verification:** 126 Python regression tests passed using a virtual-display environment on Linux. Windows UI, performance and real X4 game behavior remain unverified on the user's computer. The existing 20% CPU/memory limits remain unchanged; there is no universal hard 20% disk activity cap. The 1.5B model's ability to generate a correctly functioning X4 extension is still unproven.
+
+---
+
+# DeepThorT Desktop v10.9 — X4 planning input-budget fix (21 November 2026)
+
+**Diagnosis from `DeepThorT-Diagnostics-20261121-122349.zip`:** DeepThorT correctly detected the installed X4 game, ran the previously approved XML extraction, and reported verified PE macro/component and weapon/turret reference candidates. It resumed the original draft-plan request, but the app built a **7,566-character inference prompt**, 66 characters above its own 7,500-character cap. The conversation then failed before the model was called. It did **not** create an executable job or an X4 mod. This is an input-assembly bug, not a failure of the user's specification or a reason to extract the assets again.
+
+## Changes
+
+- In X4 planning, preserve **the complete original request** and prioritize the verified PE connection tags and actual ship, weapon and turret reference identifiers. If the attached inspection details make the combined prompt too long, fit complete reference lines into the remaining space instead of rejecting the entire request or truncating an identifier. Short provenance SHA snippets can be omitted from the model's context; the complete inspected files and their hashes remain intact in the local reference directory.
+- Ensure inspected-reference summaries prefer the PE connections and at least one example of each essential macro class before optional candidates. No partial XML path or ID is sent as evidence.
+- Fail closed with a specific message if even the complete user request plus essential reference lines cannot fit. This fix does **not** silently summarize, cut or drop user requirements. Very large instructions still need a future multi-pass context-management system.
+- Record that the original user specification was preserved and the final bounded model-input size in the automatic diagnostic log.
+- Keep X4 source preflight, extraction approval, chat/plan separation, and the user's separate **Approve plan & queue** step unchanged.
+
+## Install and retry without retyping
+
+1. Fully close DeepThorT. Optionally back up `D:\deepthort\state` first.
+2. Extract this ZIP directly into `D:\deepthort`, replacing **application code** and `DeepThorT.exe`.
+3. Keep `state`, `models`, `node_modules`, `cache`, and `reference` folders. The game XML references already extracted should be reused; do not extract them again unless DeepThorT identifies missing files.
+4. Open `DeepThorT.exe`, select your existing X4 project and chat, then click **Retry failed reply**. The original full prompt was saved by v10.8; no need to paste it again. The existing plan is not automatically approved.
+5. Review any proposed X4 extension plan carefully. A valid plan needs extension metadata, ship/equipment XML, respawn MD logic, 50,000 damage/hit, 4× speed, 10× cargo, handling improvements, and a 60-second ownership check. **Only** click Approve plan & queue if the plan is technically credible and meets your requirements.
+6. If it still produces an invalid proposal, export diagnostics and send the ZIP. The 1.5B local model's ability to create a correct complete mod is not established by passing these infrastructure tests.
+
+**Verification:** 121 automated tests passed, including a GUI test of the previously-failing combined prompt boundary and preservation of source references. Python compilation and ONNX JavaScript syntax checks passed. Real inference on the user's Windows PC and X4 mod generation were not performed in the test environment. Existing 20% CPU/committed-memory settings are unchanged; no hard 20% disk-activity ceiling is claimed.
+
+---
+
+# DeepThorT Desktop v10.8 — Automatic X4 inspection from the first prompt
+
+**Repair based on `DeepThorT-Diagnostics-20261121-120413.zip`:** The game was not being inspected by the chat workflow when the user asked DeepThorT to examine it. v10.7 offered a separate Computer & Tools button, and blocked the project plan with instructions to press it. That is not an autonomous source inspection.
+
+**v10.8 changes**
+- An X4 request now starts a bounded **read-only** inspection as soon as the user submits the initial chat or draft-plan prompt, *even before the local model is ready*. It lists the selected project files, detects known Steam/GOG installations, paired CAT/DAT files, and previously extracted vanilla XML references.
+- The conversational worker repeats the inspection and uses verified PE macro, component connection, weapon and turret references rather than asking the model to invent or inspect them. Follow-ups like **"examine it"** inherit the selected `x4mods` project and recent X4 chat context; explicit inspection questions get a real local report without calling Qwen.
+- If CAT/DAT archives are present but extracted XML is missing, the app finds an already-installed official `XRCatTool.exe`. If found, it **asks one explicit permission** to extract only relevant XML to `D:\deepthort\reference\x4`. After a successful extraction, DeepThorT verifies the actual references and **automatically resumes the original saved conversation or plan request**. The requested mod is never added to the execution queue without separate plan approval.
+- If the game installation cannot be located, DeepThorT opens a folder chooser **as part of the original request** (not a separate inspect command). If the official extraction tool is absent, it asks for its path. Downloading/installing an extractor is NOT automatic and still requires the user's authorisation.
+- Extraction is deferred while a configured game is running to respect gaming priority. An extraction denied by the user or interrupted by an app restart **does not silently execute or repeat**; the original request is retained for explicit retry.
+- The new source-discovery, tool-consent, worker-state and conversation transitions are included in Export diagnostics.
+- Existing chats, model weights, project files, approved work and JANUS/Sentinel states are preserved. There is **no installer and no cloud provider** in this update.
+
+**Use it**
+1. Close DeepThorT. Extract the ZIP directly into `D:\deepthort` and replace app code. Keep `state`, `models`, `node_modules`, `cache` and `reference` directories untouched.
+2. Double-click `D:\deepthort\DeepThorT.exe`, select `D:\x4mods` on the left, and use Chats → **Draft project plan** with the original Xenon PE specification. You do NOT have to open Computer & Tools first. Even when the model is still loading, source discovery begins immediately.
+3. If asked, permit a specific **read-only catalog extraction to separate reference files** (not a game modification). If X4 or the official tool cannot be located, the app will ask for the missing location, not tell you to inspect it yourself.
+4. Once verified sources are available, the saved plan request is submitted to the local model. Review any draft carefully. Only **Approve plan & queue** can authorise a mod-building job.
+5. If inspection fails, click Export diagnostics and send the ZIP; X4 preflight events should show what was found and what was missing.
+
+**Validation:** 117 local automated tests pass (including GUI tests using a virtual display). Real X4 catalog extraction and PE equipment inspection on the owner's Windows PC still require validation. The existing resource limits remain; a strict universal 20% disk busy ceiling is still not implemented. The local 1.5B model's ability to produce a correct full extension is not yet demonstrated.
+
+---
+
+# DeepThorT Desktop v10.7 — X4 source discovery and approved extraction
+
+**Why this update exists:** the submitted `DeepThorT-Diagnostics-20261121-114522.zip` and screenshot show that Qwen finished the X4 planning request, but the resulting plan lacked actual X4 ship/equipment definitions. v10.6 correctly prevented a bad approval; it did not know how to locate the missing source data.
+
+**Changes implemented:**
+- **Computer & Tools → Inspect X4 sources** searches only named Steam/GOG game locations and bounded XML folders (no full-drive scan, no installer, no game writes). It distinguishes CAT/DAT catalog *indexes* from usable extracted XML sources.
+- **Choose X4 game folder** lets you select the installed X4 directory containing `X4.exe` and numbered `.cat`/`.dat` archives when automatic discovery is insufficient.
+- **Choose extracted X4 XML** lets you point to a pre-existing reference directory with `assets/`, `index/`, and `libraries/`. It is read-only.
+- **Extract X4 XML (approval required)** accepts the official Egosoft `XRCatTool.exe` only after you explicitly select or locate it. Shows the full read location, output directory and tool path; waits for explicit approval, then filters extracted XML to ship, equipment, libraries, indexes and MD. Output is under `D:\deepthort\reference\x4`, never into the X4 game installation. The app will not download a catalog tool on its own.
+- Inspects the *actual extracted file content* for the Xenon PE ship macro `ship_xen_m_corvette_02_a_macro`, its referenced component's real weapon/turret connection tags, candidate weapon macros and turret macros. The published PE name is only used as a lookup hint; installed definitions must be verified before being trusted.
+- Includes verified reference file paths, macro names and short SHA-256 fingerprints in an X4 project-planning request. **When the sources are missing, the app tells you what is needed instead of using Qwen to invent names or propose `src/main.py`.** A plan with insufficient verified sources also cannot be approved after restart.
+- Existing chat history, unapproved drafts, JANUS/Sentinel records, local AI model and queued approved work are retained. No new mod was generated by this update.
+
+**How to use for your Xenon PE mod**
+
+1. Close the app. Extract this ZIP over `D:\deepthort`, replacing code and launcher files, **but preserve the existing `state`, `models`, `node_modules`, `cache`, and any `reference` directory**.
+2. Open `DeepThorT.exe`. Select the **Computer & Tools** tab and click **Inspect X4 sources**.
+3. If no X4 installation is found, click **Choose X4 game folder** and select the folder containing `X4.exe`.
+4. If it has game catalogs but no extracted XML, either select a previously extracted vanilla reference folder or click **Extract X4 XML (approval required)** and choose the Egosoft catalog tool. You can download X Tools from Steam or the official link below (registration/ownership may be required). Close games before extraction because 20% disk active time is NOT hard-enforced.
+5. Inspect the report: it must verify the exact PE macro, its component connections, and real weapon/turret candidate XML. Then return to Chats and submit **Draft project plan** again. Review the proposal; do NOT approve anything inaccurate.
+6. If it still reports a blockage or incorrect plan, click **Export diagnostics** and upload the ZIP. The app must not change game files or queue unapproved work.
+
+Official tool: https://www.egosoft.com/download/x4/bonus_en.php. The X Catalog Tool can extract catalog XML. Command flags follow the public documentation at https://x4wiki.com/en/pages/tool-catalog .
+
+**Limits:** This is a real reference-inspection and approval-gated extraction path. It is not proof that the 1.5B local model can correctly generate a custom ship extension, select the highest-firing-rate compatible weapons, install it, or test the final mod in X4. Those steps still require verification. A strict universal 20% disk active-time ceiling is unavailable. The original 20% Windows CPU and committed-memory caps remain unchanged and require device-level validation.
+
+**Checks:** 105 Python regression tests passed in the headless GUI environment, including 9 tests for source inspection, extraction command restrictions and real GUI plan blocking. Windows GUI binary is present but actual extraction and game inspection are untested on your PC.
+
+---
+
+# DeepThorT Desktop v10.6 — Source-aware plan validation hotfix
+
+**Issue investigated:** User's first X4 Xenon PE plan consisted only of `src/main.py` and was correctly rejected with No. The supplied diagnostic ZIP confirmed the local ONNX model actually loaded and produced that 130-character generic plan. The application must not treat valid JSON/path safety as evidence of an adequate engineering plan.
+
+**Fixed:**
+- Removed `src/main.py` from the planner's embedded JSON example; projects must use files relevant to their actual language/toolchain.
+- Added specific X4 extension planning instructions: game-source inspection, `content.xml`, ship/equipment XML, Mission Director respawn logic, vanilla slot compatibility and explicit numeric requirements.
+- Reject plans that don't cover X4 extension structure, the Xenon PE's cargo/weapons/turrets/speed/handling/ownership and any explicitly requested 50,000-per-hit, 4x speed, 10x cargo and 60-second replacement values.
+- Require the model to identify missing X4 asset references rather than invent game identifiers. **This does not implement X4 CAT archive extraction. Actual game-file inspection still requires access to the game assets and possibly an extraction tool.**
+- Validate both when generating a draft *and* when converting it into an executable queue job.
+- Choosing No now discards the pending draft; previous invalid X4 drafts are automatically revoked on upgrade, without changing saved chats, model weights, or user project files.
+- The proposal output cap is 640 tokens instead of 384 for complex JSON drafts; with an old CPU and 20% limit, planning will take longer.
+
+**Installation:** Close DeepThorT, extract the entire update ZIP directly over `D:\deepthort` and preserve `models`, `node_modules`, `state` and `cache`. Launch `DeepThorT.exe`. Use Draft project plan again. An incomplete X4 proposal should now be marked **failed / needs source inspection**, not presented as a valid plan for approval. The rejection reason appears in chat and diagnostics.
+
+**No guarantee:** The local 1.5B model has not been proven capable of independently inspecting X4's packed game definitions, creating the mod correctly, or running an in-game verification. No mod was generated in this update. The 20% CPU and RAM limits are unchanged; a universal hard disk activity limit remains unavailable.
+
+---
+
+# DeepThorT v10.5 — Chronological Chats & Observable Inference (21 November 2026)
+
+**Fix for the user's latest diagnostic ZIP** (`DeepThorT-Diagnostics-20261121-105654.zip`): the offline Qwen 1.5B ONNX model reached **ready in 66 seconds** at approximately 00:55:01 UTC. The first migrated chat request was dispatched and a real model HTTP request began at approximately 00:55:02 UTC. It asked for up to **384 output tokens** and had **not finished** when the ZIP was exported at 00:57:00 UTC. This is not evidence of a dead queue or of a successful response; generation may be slow at the enforced 20% CPU cap. Two earlier pre-approval chat jobs were successfully migrated to non-executable conversation requests. None was approved work.
+
+## Repairs
+
+- **Oldest-first conversation display, newest at the bottom.** The GUI now merges historical self-diagnostics, the durable conversation inbox and approved build status messages by actual timestamps, rather than displaying *all* messages from the model-history database first. It also restores the original timestamps of old work-queue messages that v10.4 migrated, so messages written yesterday no longer appear as though first sent during migration.
+- **No repeated messages.** Completed prompts that appear in both SQLite histories are deduplicated as full user/assistant pairs, not by matching all repeated text; separately repeated legitimate messages remain visible.
+- **Faster ordinary chat requests.** New conversational answers use a maximum of 128 generated tokens rather than 384. Project planning remains at 384 tokens. Repeated local diagnostic dumps stay visible but are excluded from the model's input context, avoiding CPU-intensive reprocessing of multi-page telemetry with each response. Existing stored conversations are preserved and unchanged.
+- **Actual inference activity.** The local-only server's `/health` now distinguishes `ready` (model initialized) from `inference_busy` (currently generating), reporting time elapsed and requested token cap. The desktop updates the Chats status banner and Processes tab while a request is running. A bounded `inference_still_running` log event is recorded approximately every 30 seconds; it does **not** invent token-by-token progress.
+- **No repeated readiness log spam.** The `model_ready_event` is recorded only once on transition to ready, instead of at every subsequent health check.
+- **Deterministic self-diagnosis.** It now reports whether a live generation request is in progress, separate from whether model startup finished.
+
+## Upgrade
+
+Close DeepThorT **fully** before changing its files. Optionally back up `D:\deepthort\state` first. Extract the entire v10.5 ZIP directly into `D:\deepthort`, replacing application source files and `DeepThorT.exe`. **Do not delete** your existing `state`, `models`, `node_modules`, or `cache` directories. Launch `D:\deepthort\DeepThorT.exe` normally. This package does not contain or re-download Qwen weights.
+
+The current implementation's 20% CPU and committed-memory caps are unchanged. Universal disk-activity 20% hard enforcement is still not implemented. Inference speed and the first real completed model reply on the user's Windows PC remain to be measured. If chat does not finish, use **Export diagnostics** after the Processes tab displays a running inference duration, and submit the ZIP for diagnosis.
+
+**Verification:** 89 Python tests passed in a Linux virtual desktop (including real GUI chronology tests, persistent-timestamp repair and model-history context filtering). A standalone Node.js test using a fake ONNX worker verified that `/health` reports an accepted request while it is being processed and returns to idle afterward. JavaScript syntax and Python compilation checks passed. These checks do not imply that the real model answered successfully on the user's machine.
+
+---
+
+# DeepThorT v10.4 — Chat-first workflow, approved jobs only, improved diagnostics
+
+**Send message is conversation, NOT a work-queue submission.** Your large prompt is saved in a separate persistent conversation inbox while the local AI loads. JANUS answers it when the model becomes ready. Ordinary messages, including project discussions and uncertainty resolution, do not authorize code execution or file changes.
+
+**Plan approval workflow**
+
+1. In **Chats**, discuss the project. Use the **left Project Workspace panel** to choose a folder and inspect its files; it is not an approval control.
+2. Click **Draft project plan** with your agreed specification. The draft stays in Chats, not in Work queue. The current local model attempts to produce a bounded, validated list of source-file stages; invalid results are reported, not executed.
+3. If anything is wrong, discuss it and request another draft. Requesting a new draft invalidates the old unapproved proposal to prevent stale approval.
+4. Click **Approve plan & queue** only after reviewing the displayed steps. A separate confirmation dialog requires your explicit approval. This is the **only normal GUI action that creates an executable project-build job**.
+5. In **Work queue**, JANUS can then generate the approved files. Individual writes and execution of verification commands still require their own approvals. No download or installation is implicitly authorized.
+
+**Existing user messages are preserved:** On the first v10.4 launch, old queued `chat`, `plan` and `edit` records from v10.3 are copied into `state/conversations.sqlite3` and their former work-queue entries are marked non-executable. This process is restart-safe and idempotent. Legacy unapproved build jobs without reviewed file steps are held for advice instead of being automatically launched. The other original databases are not deleted.
+
+**Your first diagnostic ZIP** (`DeepThorT-Diagnostics-20261121-104159.zip`) showed two chat jobs stuck in the work queue and no active job. The ONNX service had reached file access `done: onnx/model_q4.onnx` but had not emitted a model-ready event; its last real stage event was 213 seconds earlier. The file-reading event is NOT proof of finished ONNX session initialization. This export does not establish a post-readiness queue-dispatch failure. The original user's model may subsequently have completed initialization, but that is not established by this ZIP.
+
+**Better automatic logs:** The support ZIP now includes only safe conversation status/length metadata (no raw prompts), and 60-second per-process CPU and private/resident memory samples where Windows exposes them. Sentinel groups recurring “local AI still loading” warnings into one issue instead of creating a distinct record for each changing elapsed-second value. The exact reason the model takes several minutes to initialize remains unverified until the next PC diagnostic contains resource measurements and, ideally, a model-ready/error event.
+
+**Upgrade:** Close DeepThorT and extract the entire v10.4 Windows ZIP directly over `D:\deepthort` so `DeepThorT.exe` and `desktop_app.py` sit in that root. Keep `D:\deepthort\state`, `models`, `node_modules` and `cache`; the ZIP omits those directories. Double-click **DeepThorT.exe**. No command prompt and no model re-download are required for this code update. Before an app update, copying `state` to a backup location is prudent.
+
+**Verification:** 82 Python unit/GUI regression tests passed in the available Linux virtual display, including simulated offline model replies, draft-review-to-job dispatch, migration, persistent chats, diagnostic ZIP privacy and Sentinel warning deduplication. This validates the code paths but does **not** claim Qwen has initialized successfully or that long-running autonomous game development is verified on your specific Windows PC. The configured 20% CPU/committed-memory supervisor remains; a universal Windows 20%-disk-activity hard limit is still not implemented.
+
+---
+
+# DeepThorT v10.3 — Automatic diagnostics and queue-dispatch repair
+
+**The diagnostic recorder now runs automatically.** It writes bounded, rotating diagnostic logs under `D:\deepthort\state\logs` whenever DeepThorT is open, including JANUS and Sentinel child processes, ONNX model startup stages, model request timings, queue transitions, scheduler blocking reasons, background exceptions, and resource snapshots. It does not send any data to an external service. Logs rotate at 3 MB per component with up to three older copies. The recorder is designed to avoid substantial disk activity.
+
+## To send one diagnostic file
+
+1. Start `DeepThorT.exe` normally. Wait for the issue to occur, or try one queued chat message.
+2. Click **Export diagnostics** at the top of the application (works even if Qwen is not responding).
+3. Save the ZIP, preferably in `D:\deepthort`. The suggested name starts `DeepThorT-Diagnostics-`.
+4. Attach that **one ZIP** to your ChatGPT conversation. There is no need to copy PowerShell output or send multiple screenshots.
+
+The ZIP contains application/queue/JANUS/Sentinel/ONNX logs, job states and transitions, selected process failures, and checks for required files. It does **not** include full conversations, model weights or copied SQLite databases. **Review it before sharing:** filenames, error messages and short excerpts from approved build commands may contain private project information. Do not use the ZIP as a backup of your conversations or model files.
+
+## Queue repair
+
+The job scheduler previously selected only the currently visible project. A saved task from another project could remain queued indefinitely even after the ONNX model became ready. It now dispatches the oldest eligible queued job across all projects. Logging also records whether dispatch is blocked by model readiness, a stopped process, paused queue, active work, or an installer. GUI callback exceptions no longer disappear into an invisible command window, and a failed scheduler iteration reschedules itself. This does not guarantee Qwen's response quality or that it will finish quickly at the 20% CPU limit.
+
+**Installation:** Close the old app, extract the entire v10.3 ZIP directly into `D:\deepthort` over the existing program files, keep `state`, `models`, `node_modules` and `cache` intact, and double-click `DeepThorT.exe`. No new model download is needed. Actual Windows behavior and real Qwen model inference still require on-PC verification.
+
+**Verification:** 74 automated tests passed in the available Linux virtual desktop, including a simulated loaded-model queue dispatch across projects, diagnostic ZIP privacy checks, and Node.js syntax checks. This is evidence for code paths, not a claim that we ran the full ONNX model on your machine.
+
+---
+
+# DeepThorT v10.2 — Local Model Loading and Focus-Stealing Fixes
+
+This update preserves the existing 11-core JANUS/Sentinel runtimes, job queue, project data and offline Qwen2.5-Coder-1.5B model. It combines the v10.1 change that prevents `tasklist.exe` console flashes with the new **isolated ONNX loader worker thread**. The local HTTP server now responds to `/health` during the whole load, with the current model stage, elapsed time, time since a real model-loading event, and a four-minute no-progress warning. The desktop displays the real loading stage in Chats, Processes and its built-in self-diagnosis, instead of an unexplained loading indicator. When the ONNX worker exits with an error, the server exits with failure and shows the actual exception rather than silently hanging.
+
+**Install:** Close DeepThorT completely, then extract this ZIP directly into `D:\deepthort`, replacing existing program files. Preserve the existing `state`, `models`, `node_modules` and `cache` folders. Open `D:\deepthort\DeepThorT.exe`. No model re-download is required. You can use **Diagnose AI** and the **Processes** tab to inspect real stage data; a model still loading after several minutes is not automatically presumed working. If the worker crashes, send the new diagnostic text or process log so the cause can be corrected.
+
+**Verification:** 69 automated tests passed, including two real Node.js integration tests with a controlled mock model worker. The full 1.9 GB Qwen ONNX model was **not available** in the build environment. This update makes stalled initialization diagnosable and avoids the earlier console flashes, but it does **not guarantee faster inference** or prove the model starts on your particular Windows PC. The overall 20% CPU and committed-RAM supervision remains configured and a universal hard 20% disk-busy cap remains unsupported.
+
+---
+
+# DeepThorT v10.1 — Invisible Background-Process Fix
+
+**Fix for repeated focus-stealing command prompt flashes.** The previous v10 game detector used `tasklist.exe` every few seconds to identify running games. In a GUI application, those spawned console processes could flash windows or take keyboard focus. v10.1 now uses native Windows Toolhelp32 process enumeration, which creates no new process/window. The resource-capped Python GUI process is also launched with `CREATE_NO_WINDOW`, and JANUS cancellation helpers hide any `taskkill.exe` process. Sentinel and JANUS remain enabled; their persistent state is unchanged.
+
+Install: close DeepThorT; unzip this package directly into `D:\deepthort`, replacing program files. **Do not delete** your existing `state`, `models`, or `node_modules` directories. Launch `DeepThorT.exe` as usual. This update does not require a model re-download.
+
+This patch was regression-tested in the build environment but has **not** been validated on your physical Windows desktop. If another process still steals focus, identify its executable name in Task Manager/Process Explorer and check the `Processes` tab for repeated restarts.
+
+---
+
+# DeepThorT Desktop v10 — dual recursive JANUS/Sentinel societies
+
+DeepThorT v10 is a **native-window desktop coding workspace** with a Windows GUI-subsystem `DeepThorT.exe` entry point. You do **not** need to type Python or PowerShell commands for normal use. It runs a locally installed Qwen2.5-Coder-1.5B-Instruct model with ONNX Runtime via Transformers.js, **not Meta Llama, llama.cpp or Ollama**. It makes no cloud-model inference calls and has no fallback model.
+
+**Important distinction:** The GUI, job queue, project-file generation workflow, approval gates, computer inspection and real command/test verification have automated tests. Local Qwen/Florence/Diffusers inference performance and actual Windows launch have **not** been verified on your physical PC. A 1.5B model running on an old CPU under a 20% cap does not have ChatGPT/OpenCode-level reasoning or high-quality image-generation capacity; the app is a bounded project assistant, not an independently validated autonomous game factory.
+
+## Installing over your existing setup (D:\\deepthort)
+
+1. Close earlier DeepThorT or standalone server windows.
+2. Download the **v10 Windows ZIP**. Extract **the entire ZIP directly into `D:\\deepthort`**, replacing program files if Windows asks. `DeepThorT.exe`, `desktop_app.py`, `install.ps1` and the `deepthort_local` folder must all sit together directly under `D:\\deepthort`, *not* a nested `DeepThorT_Desktop_v7` folder.
+3. Keep your existing `models`, `node_modules` and `state` directories. This update's ZIP does not include or overwrite them, so your model download and conversations remain.
+4. Double-click `D:\\deepthort\\DeepThorT.exe`. It opens an ordinary Windows desktop window without a command shell. The launcher uses the Python/Node.js already installed on your PC; it is not a self-contained runtime installer.
+5. In the window, click **Install AI** if your local Qwen ONNX model is missing, then **Start AI**. Model installation involves an explicit approval and an initial download; inference afterwards is offline. Your current model cache can be reused.
+6. An installed local model now starts automatically on launch; while it loads, messages can be queued. Click **Diagnose AI** in Chats or **Self-diagnose** in the title bar for an offline setup report if it does not become ready. In Chat, **Send message** submits your message and displays it immediately; replies appear when the model completes. Typed requests such as "Please diagnose DeepThorT" are answered from local system checks even if the AI cannot start. Click **Choose folder…** to select or create a local project workspace. **Chats** has a large scrollable input; use **Queue request**, **Plan project**, **Build project (staged)** or **Propose file edit**. `Ctrl+Enter` queues the prompt.
+7. Use **Work queue** for queued/running/paused/failed work, staged build plans, cancellations and approval. Use **File review** to approve each proposed edit (backups are written). For a staged build, approve the plan, approve generated files as required, then explicitly approve **Verify build** to execute a locally detected real test/build command. Only a successful check may mark a build completed.
+8. Use **Processes** to see actual supervised process IDs, sampled CPU/memory and live event logs. **Computer & Tools** scans CPU/GPU/RAM/drives/free storage and known development tools. Review any proposed tool installation; no program installs without approval.
+9. Use **Files & Images** to attach documents/photos, analyze an image with an optionally installed local Florence ONNX vision model, and request images with an optionally installed local Stable Diffusion 1.5 CPU engine. The image capabilities require **separate optional model downloads**, explicit approvals, and substantial CPU/RAM/disk space; they are **not** supplied in the ZIP. Image creation under a 20% CPU ceiling may take an impractically long time, and results are not guaranteed to be high quality.
+
+## Working components and constraints
+
+- **Separate persistent chats** stored locally in SQLite, with names, history, large prompt editor and explicit full-prompt storage. The input editor can store long project briefs, but **the tiny model accepts a limited per-call context (~7,500 characters)**: the app does not pretend it can reason over a 250,000-character prompt in one request.
+- **Durable jobs/steps** and explicit queue states. Crash-interrupted work is recovered as paused, not falsely marked finished. Pause/cancel controls terminate the supervised local model/tool process where applicable; partial tool writes cannot always be rolled back automatically.
+- **Project planning**, strictly scoped local file writes and backup-before-edit. A staged multi-file build is verified by real local build/test commands when available; model-generated claims are not accepted as proof.
+- **Local computer discovery** for common tools and drives. Install suggestions are drawn from a fixed reviewed catalogue and require confirmation. Scanning does not mean that every installed program is supported for automated use.
+- **Document ingestion:** plain text/JSON/Markdown/code and DOCX; optional PDF reader installation from the GUI. Image reading uses separate Florence-2 ONNX weights; Qwen alone **cannot see pixels**. Image generation requires local diffusion weights; Qwen **orchestrates** the engine, rather than producing pixels itself.
+- **Offline inference** after approved initial downloads. No external AI API and no fallback provider. External package/model installers, when approved, use the internet.
+
+## Gaming-first resource rules and limitations
+
+- The `DeepThorT.exe` GUI launcher installs a **Windows Job Object 20% aggregate CPU hard cap** on DeepThorT and the child processes it directly supervises. It uses idle process priority and fails closed if the cap cannot be established.
+- The Windows Job Object also limits combined **committed memory** to 20% of installed physical RAM, with a launch-time free-RAM headroom check. This is **not** an absolute physical working-set measurement or all-cache/RAM ceiling; memory-mapped weights and OS file cache can behave differently.
+- CPU inference does not use the RX 480 GPU by default, so the graphics card is left available for games.
+- **No universal hard cap of 20% disk active time is implemented or guaranteed on Windows 10.** The game detector and cooperative disk gate defer bulk/project operations when configured game processes are found, but model paging, external installers, OS caching, and other I/O can still interfere with games. Do downloads/installations with games closed.
+- Running installed programs and build commands may execute untrusted code: use projects you trust. The app asks before installing software, writing to project files and running verification commands.
+- Resource limits and game responsiveness **need real Windows testing** on your system before trusting them for unattended operation.
+
+## Troubleshooting
+
+- If the window will not open, check `D:\\deepthort\\state\\launch-error.txt` for the launch exception, and make sure `DeepThorT.exe`, `desktop_launcher.py`, `desktop_app.py` and `deepthort_local` share the same parent folder. The GUI launcher will attempt a Windows error dialog rather than leaving a command shell.
+- If you see “AI not installed”, use **Install AI** and wait for its output in **Processes**. If the runtime is already running independently at `127.0.0.1:8765`, close it: DeepThorT refuses to attach to a server outside its supervised resource budget.
+- Use the **Processes** tab to inspect actual errors rather than retrying downloads blindly.
+- Existing `state` is valuable history. Back it up before reinstallations, and do not delete it to troubleshoot.
+
+## Test evidence
+
+Under a Linux virtual-display harness, the Tk GUI rendered and the **27-source-test suite passed**, including a staged plan→approved file writes→real test execution→verified completion path using a **stubbed model response**. Python compile checks and Node JavaScript syntax checks passed; the `DeepThorT.exe` PE header identifies a Windows x64 GUI-subsystem executable. These checks **do not establish** physical Windows compatibility, ONNX model quality, image diffusion quality, or completion of a real autonomous game-building task.
+
+## v8 — Chat and startup repair (21 November 2026)
+
+**What the user observed:** A message appeared as a queue item and received no reply because the model had never been started. The Processes tab accurately showed `Model server PID: not running`. The queue is a storage mechanism, not a substitute for inference.
+
+**Changes:**
+- Automatically attempt to launch an already-installed, fully local Qwen ONNX model on GUI startup and when a message is sent. No downloads or remote inference without approval.
+- Display the user's submitted message in Chats immediately; show the actual answer after local inference. Pending prompts remain persisted in the job queue.
+- Label the send control **Send message** instead of **Queue request**. A connection-status banner shows whether the model is loading, ready, missing or failed.
+- **Self-diagnose** top-bar control and **Diagnose AI** chat control work without a running neural model. They inspect Node, ONNX dependencies, the model-file size and the server program.
+- An explicit typed request such as **Please diagnose DeepThorT** produces a persistent deterministic diagnostic, clearly labelled **not a generated AI response**.
+- A failed model process shows its actual recent output in an error dialog and in Processes, rather than stopping without explanation.
+- After successful approved AI installation, DeepThorT attempts to start the model and process queued work. Removed a duplicate installation-completed event.
+
+**Upgrade existing installation:** Close DeepThorT. Extract the entire **v8** ZIP directly into `D:\deepthort`, overwriting application files. **Do not delete `state`, `models`, or `node_modules`**; the update ZIP deliberately excludes all three so existing conversation histories, weights and dependencies are retained. Double-click `D:\deepthort\DeepThorT.exe`. The executable is a GUI launcher and does not open a command shell. If the AI fails to start, click **Self-diagnose**, and inspect the Processes log.
+
+**Verification boundary:** 35 automated tests passed under a headless GUI harness, including the real chat queue/UI pipeline with a **stubbed** model response, and deterministic offline diagnosis. The actual Qwen ONNX weights, loading performance and Windows CPU/RAM enforcement are not proven on the user's PC. Image generation remains optional and independently unverified.
+
+## v8.1 — Model loading visibility
+
+The model server now reports a startup notice, real loader events when available, and a best-effort 30-second heartbeat; its readiness message reports initialization elapsed time. The desktop shows elapsed load time instead of an indefinite `AI: loading…` label, and prompts a Processes-tab inspection after three minutes without declaring the model ready. The chat queue remains persisted; no CPU/RAM limits are relaxed and no remote inference is added.
+
+If startup takes an unusually long time, open **Processes**, check that **Qwen inference** has a process ID and inspect the process log for `[AI LOAD FAILED]` or an exit code. **Stop AI** if it is clearly stalled. Replacing the model or allowing higher CPU use requires a separate decision.
+
+
+## v9 — JANUS coordinator + independent Sentinel watchdog
+
+This update introduces a **simplified original JANUS-style eleven-role coordinator**, not an import of the existing full JANUS system. Every ten-second cycle observes actual queued/running/failed tasks and approved subprocesses, reads the **previous Front state** and recent observations, then persists the next seven specialist projections, two hemispheres, Front and Interface to `state/janus.sqlite3`. It can work while the ONNX language model is offline and does not call the cloud or invent progress. It provides deterministic supervisory continuity, **not equivalent neural reasoning or validated autonomy**.
+
+`JANUS & Sentinel` is the eighth workspace tab. It displays real JANUS cycles, Front focus, approved subprocess ledger, watchdog PID/health/restarts, and durable logs. **Pause JANUS** and **Resume JANUS** control dispatching of new approved work; **Cancel selected approved process** requests cancellation from the actual worker. Under `Computer & Tools`, explicit approval of a project check now queues a command for the JANUS worker, which records process ID, output log and exit status. Only approved known command vectors are accepted. User confirmation is still required for installs, file writes and verification commands.
+
+`janus_sentinel.py` is a **separate local process**, supervised with JANUS and model inside the same Windows Job Object (20% aggregate CPU and 20% installed-RAM-sized committed-memory limit). It monitors the worker and desktop heartbeat. After a genuine JANUS worker exit, it retries with a maximum of three launches per ten-minute window, unless an interrupted approved action is detected—then it blocks automatic restart and asks for review. A live-but-stalled worker is never killed automatically, because it may be executing a real tool. If the desktop heartbeat goes stale, Sentinel pauses JANUS instead of continuing unattended work; resumption requires user action. It can warn when the ONNX model has spent more than four minutes loading, but **does not kill/reload a slow model automatically**.
+
+**Not a duplicate commander.** Sentinel is a read-only observer of work with bounded failure recovery, not an independent JANUS personality or a second process authorized to modify project files. Two competing autonomous executors would risk repeated tasks and inconsistent state.
+
+**Important limitations:** If the entire GUI or its Windows Job Object is terminated, this in-job watchdog does **not** keep running or restart the application. On restart, all in-progress JANUS approved processes are marked `needs_attention`, with no automatic retry. The model still needs to load; Qwen inference speed on the user's Windows machine is unverified, and this edition does not turn the small model into a ChatGPT/OpenCode-equivalent system. A universally enforced maximum of 20% disk busy-time is also **not supported by this package**. Windows 10 behavior still needs an on-device launch/response test before unattended operation can be considered reliable.
+
+**Verification:** 49 tests passed under a Linux virtual-display harness, including UI tab creation, explicit approval, deterministic eleven-role cycles, persistent state, actual subprocess execution and exit-code capture, watchdog crash-restart limit, stale worker non-destructive alert, stale GUI heartbeat safety pause, and no replay of interrupted tools. The executable is still a Windows GUI-subsystem launcher and starts the packaged Python desktop application. No Node/Qwen weights or physical PC were available in the test container.
+
+**Upgrade:** Close DeepThorT; extract v9 ZIP directly into `D:\deepthort` and replace application files. The ZIP intentionally excludes `state`, `models`, and `node_modules`; do not delete those folders. Open `DeepThorT.exe`, then `JANUS & Sentinel`. The application does not require command-shell interaction for normal use.
+
+## v10 — Two persistent eleven-core recursive societies (21 November 2026)
+
+**Core engine, not just eleven GUI labels.** DeepThorT now runs a dedicated JANUS
+worker with 11 top-level cores in the owner's canonical order, each executing a
+seven-faculty Fano processor. Every core retains state/weights, active faculty,
+quiescence, peer revisions, bounded intuition and externalizable appraisal. The
+seven specialist cores reconsider peer outputs; both hemispheres integrate all
+seven specialist streams; Front receives the hemispheres; Interface receives
+only Front. Prior Front and observations are recalled in the next sensory cycle,
+never fed backwards from Interface as a direct new thought.
+
+**Sentinel is also a full separate eleven-core society** with 77 internal
+faculties, separate persisted cognition, and a supervisory goal. It monitors
+JANUS cycles and worker health, actual queue states, project-task drift, stale
+running work, model load health and approved-process outcomes. It keeps its own
+observations, Front and revisions; it never masquerades as JANUS or gains its
+file/tool execution privileges. On genuine worker crashes it uses bounded
+restart policy; active unverified tool commands block automatic replay.
+
+JANUS persists its own primary goal and generates alternatives when real jobs
+fail. Both societies may occasionally consult the **same local Qwen ONNX model**
+for suggestions when it is loaded, not during games. Advisory requests share a
+lease to prevent concurrent background generation. Suggestions are saved in
+SQLite, clearly marked as unverified, and **never execute themselves**.
+Approval of installations, code writes and commands remains with the user.
+
+In **JANUS & Sentinel**, use **Set primary goal…** to retain the specification
+across restarts. Click **Inspect 22 core states** to see the actual two-society
+readouts and each internal Fano processor. Evidence-based repair suggestions and
+watchdog warnings appear in the same tab and in the bottom status area.
+
+Cognitive state is stored in existing `state/janus.sqlite3` and
+`state/sentinel.sqlite3` (additive migrations preserve v9 records). Local
+advisory locking uses `state/janus-counsel.sqlite3`. Do **not** delete `state`
+when upgrading. Work and model processes inherit the same capped Windows job.
+Games slow the JANUS worker polling, defer tool execution and suppress new
+background model advice. Actual 20% CPU/committed-memory Windows enforcement
+still needs confirmation on the owner's machine; a universal hard 20% disk
+busy-time cap is not implemented.
+
+**Boundary:** This is a standalone *offline port of the JANUS 1|3|7 recursive
+processing architecture*, adapted from `Vardath/JANUS-privatebuild`'s
+`server_v2/topology.py`, `senses.py`, `recursive_core.py`, and `intuition.py`.
+It is NOT a copy of the full original JANUS server/account/global federation,
+nor proof of human-like conscious thought. The small Qwen model is not proven
+capable of large unattended projects. If the desktop closes or Windows kills
+its resource-constrained job, execution stops; only durable state survives.
+A separate true background Windows service, robust model-loading on the user's
+hardware, production-grade autonomous replanning, and independently verified
+whole-project completion remain to be developed.
+
+**Verification:** 60 Python regression tests passed in an X virtual desktop,
+including 11x7 processing, Fano lines, storage persistence, goal retention,
+peer routing, two independent societies, approval-only tool execution,
+failure remediation proposals, restart limits, task-drift detection and
+prolonged-work warnings. The Windows x64 GUI executable format is validated,
+but physical-machine ONNX model inference and end-to-end autonomous coding
+have not been verified.

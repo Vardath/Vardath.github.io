@@ -1,0 +1,169 @@
+"""JANUS's local execution worker, launched as a capped child of DeepThorT.exe.
+
+No model/cloud calls; no shell execution. It observes persistent work and can run
+only commands explicitly authorized in the GUI and saved in JanusStore.
+"""
+from __future__ import annotations
+import argparse
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+import hashlib
+import threading
+from pathlib import Path
+
+from deepthort_local.disk_gate import DiskGate
+from deepthort_local.janus_engine import JanusStore
+from deepthort_local.janus_counsel import LocalCounsel
+from deepthort_local.job_queue import JobStore
+from deepthort_local.flight_recorder import record,install_crash_hooks
+
+
+def stop_tree(proc: subprocess.Popen) -> None:
+    if proc.poll() is not None:return
+    if os.name=='nt':
+        try:subprocess.run(['taskkill.exe','/T','/F','/PID',str(proc.pid)],timeout=8,
+                           stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=False,
+                           creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0)
+        except (OSError,subprocess.TimeoutExpired):proc.terminate()
+    else:
+        try:os.killpg(proc.pid,signal.SIGTERM)
+        except (ProcessLookupError, PermissionError):proc.terminate()
+    try:proc.wait(timeout=6)
+    except subprocess.TimeoutExpired:
+        proc.kill();proc.wait(timeout=4)
+
+
+class JanusWorker:
+    def __init__(self, state_db: str | Path, jobs_db: str | Path, games_file: str | Path,
+                 *, game_probe=None):
+        install_crash_hooks(Path(state_db).parent,'janus_worker')
+        record(Path(state_db).parent,'janus_worker','worker_initialized',pid=os.getpid())
+        self.store=JanusStore(state_db)
+        self.jobs_db=Path(jobs_db)
+        self.game_gate=DiskGate(game_names_path=games_file,
+                                game_flag=Path(state_db).parent/'game-active.flag',
+                                game_probe=game_probe)
+        self.logs=Path(state_db).parent/'janus-process-logs'
+        self.logs.mkdir(parents=True,exist_ok=True)
+        self._stopping=False
+        self._counsel=LocalCounsel(Path(state_db).parent/'janus-counsel.sqlite3')
+        self._counsel_thread=None
+        self._last_counsel_attempt=0.0
+
+    def observe_once(self) -> dict:
+        # Full deterministic 11x7 society cycles continue while the ONNX
+        # model is offline. Optional advice never gains execution authority.
+        gaming=self.game_gate.gaming()
+        state=self.store.tick(self.jobs_db,gaming=gaming)
+        if not gaming and not self._stopping and not state.get('paused'):
+            self._consider_local_alternatives(state)
+        return state
+
+    def _consider_local_alternatives(self, state: dict) -> None:
+        if state.get('decision') not in (
+              'inspect_failure_and_propose_repair','diagnose_failure_and_propose_alternatives',
+              'request_approval_or_guidance'):
+            return
+        if self._counsel_thread is not None and self._counsel_thread.is_alive():return
+        if time.monotonic()-self._last_counsel_attempt<300:return
+        # Do not compete with the interactive model while it handles a chat.
+        jobs=self.store.observe_jobs(self.jobs_db)
+        if any(j['state']=='running' for j in jobs):return
+        candidates=self.store.recommendations(10)
+        current=candidates[0] if candidates else None
+        if not current:return
+        key='model-'+current['evidence_key']
+        if any(a['evidence_key']==key for a in candidates):return
+        self._last_counsel_attempt=time.monotonic()
+        def work():
+            text=self._counsel.request(society='janus',goal=state.get('goal',''),
+                 problem=current['problem'],evidence=current['proposal'])
+            if text:
+                self.store.recommend(evidence_key=key,job_id=current['job_id'],
+                     problem=current['problem'],proposal=text,origin='local_model')
+        self._counsel_thread=threading.Thread(target=work,name='JANUS-local-reasoning',daemon=True)
+        self._counsel_thread.start()
+
+    def execute_next_approved(self) -> int | None:
+        if self.store.status()['paused'] or self.game_gate.gaming():
+            return None
+        action=self.store.claim_next_action()
+        if action is None:return None
+        ident=action['id']
+        record(self.jobs_db.parent,'janus_worker','approved_action_claimed',action_id=ident,kind=action['kind'])
+        cmd=json.loads(action['argv_json'])
+        log_path=self.logs/f'action-{ident}.log'
+        try:
+            with open(log_path,'ab',buffering=0) as logfile:
+                flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
+                proc=subprocess.Popen(cmd,cwd=action['cwd'],stdin=subprocess.DEVNULL,
+                    stdout=logfile,stderr=subprocess.STDOUT,shell=False,
+                    creationflags=flags,start_new_session=(os.name!='nt'))
+                self.store.update_action(ident,'running',detail='Approved process running',
+                                         pid=proc.pid,output_file=str(log_path))
+                while proc.poll() is None:
+                    fresh=self.store.action(ident)
+                    if fresh is None or fresh['cancel_requested'] or self._stopping:
+                        stop_tree(proc)
+                        self.store.update_action(ident,'cancelled',detail='User cancellation or engine shutdown',returncode=proc.returncode)
+                        return ident
+                    if self.game_gate.gaming():
+                        stop_tree(proc)
+                        self.store.update_action(ident,'paused',detail='Game detected; stopped process to protect responsiveness. Inspect partial changes before rerun.',returncode=proc.returncode)
+                        self._update_parent_job(action,'needs_input','Verification interrupted for gaming; inspect partial effects')
+                        return ident
+                    time.sleep(.25)
+                code=proc.returncode
+            status='succeeded' if code==0 else 'failed'
+            record(self.jobs_db.parent,'janus_worker','approved_action_finished',action_id=ident,exit_code=code,status=status)
+            self.store.update_action(ident,status,detail=f'Approved process exited {code}; read log for evidence',returncode=code)
+            if action['kind']=='verification':
+                if code==0:
+                    self._update_parent_job(action,'complete','Verified: JANUS approved process exited 0; see process log')
+                else:
+                    self._update_parent_job(action,'needs_input',f'Build verification exited {code}; inspect JANUS process log')
+        except Exception as exc:
+            record(self.jobs_db.parent,'janus_worker','approved_action_failed',level='ERROR',action_id=ident,
+                   error_type=type(exc).__name__,error=str(exc))
+            self.store.update_action(ident,'failed',detail=f'Failed to start/run process: {type(exc).__name__}: {exc}')
+            self._update_parent_job(action,'needs_input',f'JANUS engine failed: {type(exc).__name__}: {exc}')
+        return ident
+
+    def _update_parent_job(self, action: dict, state: str, detail: str) -> None:
+        if action['job_id'] is not None:
+            JobStore(self.jobs_db).change(int(action['job_id']),state,detail,allowed=('running',))
+
+    def run(self, interval: float = 10.0, *, once: bool = False):
+        if not 1 <= interval <= 60:raise ValueError('Interval must be between 1 and 60 seconds')
+        self.store.recover_interrupted_actions()
+        self.store.append_event('JANUS engine started; local-only cognition and approved process runner')
+        def shutdown(*_):self._stopping=True
+        signal.signal(signal.SIGTERM,shutdown)
+        if hasattr(signal,'SIGINT'):signal.signal(signal.SIGINT,shutdown)
+        while not self._stopping:
+            self.observe_once()
+            self.execute_next_approved()
+            if once:break
+            # During a game, reduce wakeups and SQLite writes. Keep a bounded
+            # heartbeat so Sentinel can distinguish sleep from a dead worker.
+            end=time.monotonic()+(max(interval,45.0) if self.game_gate.gaming() else interval)
+            while not self._stopping and time.monotonic()<end:
+                time.sleep(min(.25,end-time.monotonic()))
+        self.store.append_event('JANUS engine stopped; durable state preserved')
+
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument('--state',required=True)
+    p.add_argument('--jobs',required=True)
+    p.add_argument('--games',required=True)
+    p.add_argument('--interval',type=float,default=10.0)
+    p.add_argument('--once',action='store_true')
+    a=p.parse_args()
+    JanusWorker(a.state,a.jobs,a.games).run(a.interval,once=a.once)
+
+if __name__=='__main__':main()

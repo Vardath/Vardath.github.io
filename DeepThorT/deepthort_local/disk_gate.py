@@ -1,0 +1,150 @@
+"""Cooperative background file-transfer throttle for DeepThorT's work engine.
+
+IMPORTANT: this is NOT a disk busy-time cap and does not constrain unrelated
+I/O done by the ONNX runtime, Git, build tools, paging, or other child processes.
+Use this for explicitly controlled bulk reads/copies/writes; the work engine
+must pause other disk-heavy jobs when a game is detected.
+"""
+from __future__ import annotations
+import ctypes
+from ctypes import wintypes
+import os
+import time
+from pathlib import Path
+from typing import Callable
+
+
+def configured_game_names(path: str | Path) -> frozenset[str]:
+    p = Path(path)
+    if not p.exists():
+        return frozenset()
+    return frozenset(line.strip().casefold() for line in p.read_text(encoding='utf-8').splitlines()
+                     if line.strip() and not line.lstrip().startswith('#'))
+
+
+def _windows_process_names() -> frozenset[str]:
+    """Enumerate executable names through native Win32 APIs.
+
+    Never start tasklist.exe, PowerShell, cmd.exe or any other child process.
+    The old tasklist polling spawned a *visible console window* every few
+    seconds from the GUI-subsystem DeepThorT.exe and stole keyboard focus.
+    """
+    if os.name != 'nt':
+        return frozenset()
+
+    # Win32 PROCESSENTRY32W layout; ULONG_PTR is pointer-sized on x86/x64.
+    class ProcessEntry32W(ctypes.Structure):
+        _fields_ = (
+            ('dwSize', wintypes.DWORD),
+            ('cntUsage', wintypes.DWORD),
+            ('th32ProcessID', wintypes.DWORD),
+            ('th32DefaultHeapID', ctypes.c_size_t),
+            ('th32ModuleID', wintypes.DWORD),
+            ('cntThreads', wintypes.DWORD),
+            ('th32ParentProcessID', wintypes.DWORD),
+            ('pcPriClassBase', wintypes.LONG),
+            ('dwFlags', wintypes.DWORD),
+            ('szExeFile', wintypes.WCHAR * 260),
+        )
+
+    kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
+    snapshot = kernel32.CreateToolhelp32Snapshot
+    snapshot.argtypes = (wintypes.DWORD, wintypes.DWORD)
+    snapshot.restype = wintypes.HANDLE
+    first = kernel32.Process32FirstW
+    first.argtypes = (wintypes.HANDLE, ctypes.POINTER(ProcessEntry32W))
+    first.restype = wintypes.BOOL
+    next_entry = kernel32.Process32NextW
+    next_entry.argtypes = (wintypes.HANDLE, ctypes.POINTER(ProcessEntry32W))
+    next_entry.restype = wintypes.BOOL
+    close = kernel32.CloseHandle
+    close.argtypes = (wintypes.HANDLE,)
+    close.restype = wintypes.BOOL
+
+    # TH32CS_SNAPPROCESS = 0x00000002. Does not request elevated privileges.
+    handle = snapshot(0x00000002, 0)
+    if not handle or handle == ctypes.c_void_p(-1).value:
+        raise OSError(ctypes.get_last_error(), 'Could not inspect running programs')
+    try:
+        entry = ProcessEntry32W()
+        entry.dwSize = ctypes.sizeof(entry)
+        if not first(handle, ctypes.byref(entry)):
+            raise OSError(ctypes.get_last_error(), 'Could not enumerate processes')
+        names = set()
+        while True:
+            if entry.szExeFile:
+                names.add(entry.szExeFile.casefold())
+            if not next_entry(handle, ctypes.byref(entry)):
+                break  # ERROR_NO_MORE_FILES is normal at the end of a snapshot.
+        return frozenset(names)
+    finally:
+        close(handle)
+
+
+def games_running(game_names: frozenset[str]) -> bool:
+    """Detect configured games without spawning a console or stealing focus.
+
+    On Windows API failure, fail safe: pause background disk operations until
+    a subsequent check succeeds rather than assuming no game is running.
+    """
+    if not game_names or os.name != 'nt':
+        return False
+    try:
+        return not _windows_process_names().isdisjoint(game_names)
+    except (OSError, AttributeError, ValueError):
+        return True
+
+
+class DiskGate:
+    def __init__(self, bytes_per_second: int = 1_048_576,
+                 game_names_path: str | Path = 'game_executables.txt',
+                 game_flag: str | Path = 'state/game-active.flag',
+                 game_probe: Callable[[], bool] | None = None):
+        if not 1 <= bytes_per_second <= 10 * 1024 * 1024:
+            raise ValueError('Background disk work limit must be 1..10 MiB/s')
+        self.bytes_per_second = bytes_per_second
+        self.game_flag = Path(game_flag)
+        self.game_names_path = Path(game_names_path)
+        self.game_probe = game_probe
+        self._next_check = 0.0
+        self._last_result = False
+        self._next_transfer = time.monotonic()
+
+    def gaming(self) -> bool:
+        if self.game_flag.is_file():
+            return True
+        now = time.monotonic()
+        if now >= self._next_check:
+            self._last_result = (self.game_probe() if self.game_probe is not None else
+                                 games_running(configured_game_names(self.game_names_path)))
+            self._next_check = now + 5.0
+        return self._last_result
+
+    def wait_for_non_game(self) -> None:
+        while self.gaming():
+            time.sleep(2.0)
+
+    def pace(self, total_io_bytes: int) -> None:
+        """Throttle self-controlled bulk I/O (read + write bytes), not disk busy time."""
+        if total_io_bytes < 0:
+            raise ValueError('I/O byte count must not be negative')
+        self.wait_for_non_game()
+        now = time.monotonic()
+        self._next_transfer = max(now, self._next_transfer) + total_io_bytes / self.bytes_per_second
+        remaining = self._next_transfer - now
+        if remaining > 0:
+            time.sleep(remaining)
+
+    def copy_file(self, source: str | Path, destination: str | Path,
+                  chunk_size: int = 64 * 1024) -> None:
+        if not 1 <= chunk_size <= 64 * 1024:
+            raise ValueError('Chunk size must be <= 64 KiB')
+        self.wait_for_non_game()
+        with open(source, 'rb') as src, open(destination, 'wb') as dst:
+            while True:
+                self.wait_for_non_game()
+                chunk = src.read(chunk_size)
+                if not chunk:
+                    return
+                self.pace(len(chunk) * 2)  # Account for both read + write
+                dst.write(chunk)

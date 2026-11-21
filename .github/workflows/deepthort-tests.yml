@@ -1,0 +1,27 @@
+name: DeepThorT tests
+on:
+  push:
+    paths:
+      - 'DeepThorT/**'
+      - '.github/workflows/deepthort-tests.yml'
+  pull_request:
+    paths:
+      - 'DeepThorT/**'
+      - '.github/workflows/deepthort-tests.yml'
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: DeepThorT
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install headless display and Tk
+        run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
+      - name: Compile Python sources
+        run: python -m compileall -q .
+      - name: Run regression tests under Xvfb
+        run: xvfb-run -a python -m unittest discover -s tests -q

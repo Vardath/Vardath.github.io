@@ -1,0 +1,14 @@
+DEEPTHORT DESKTOP v11.0 — SOURCE-GROUNDED X4 PLANNING HOTFIX
+
+1. Quit DeepThorT completely.
+2. Extract the contents of this update ZIP into D:\deepthort and overwrite app files.
+3. Do not remove models, state, node_modules, cache, reference or your project folders.
+4. Launch D:\deepthort\DeepThorT.exe.
+5. Select D:\x4mods and submit the original Xenon PE request using Draft project plan.
+6. If verified PE sources are present, a six-file X4 XML draft appears without a slow AI planning pass.
+7. Review it and use Approve plan & queue only if it matches your project requirements.
+8. Generated XML is statically checked before saving, but NOT verified in X4.
+9. Export diagnostics for any further failures.
+
+This ZIP updates DeepThorT only; it does not contain the finished Xenon PE mod.
+All model data and saved conversations remain in the existing installation.
