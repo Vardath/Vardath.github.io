@@ -1,6 +1,8 @@
-DEEPTHORT DESKTOP v12 — v11 status-row layout regression correction
-Restore the original v10.9 Chat layout: reply activity uses its existing status row, not a new banner.
-All other v11 behavior retained. Preserve local state, models, node_modules, reference, cache.
-
-DEEPTHORT DESKTOP v12 — v11 status-row layout regression correction
-Restore the original v10.9 Chat layout: reply activity uses its existing status row, not a new banner.
+DEEPTHORT DESKTOP v13 — AI-authored planning repair
+Based on v12 with the v10.9 interface arrangement preserved.
+The app no longer substitutes a hardcoded Xenon PE plan. It requests bounded revisions
+from its local model; only validated model-authored drafts may be approved.
+Close the program before extracting into D:\deepthort. Keep state, models,
+node_modules, reference, cache, and your project directories.
+The v13 package contains code only, not models, state, or game assets.
+No actual Windows ONNX planning or X4 in-game verification was available here.
