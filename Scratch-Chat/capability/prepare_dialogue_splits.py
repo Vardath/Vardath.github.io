@@ -14,8 +14,8 @@ def prepare(source, output, *, seed="scratch-chat-v1", train_fraction=0.9, valid
     if not (0 < validation_fraction < 1 and 0 < train_fraction < 1 and train_fraction + validation_fraction < 1):
         raise ValueError("Invalid split fractions")
     source, output = Path(source), Path(output)
-    records = []
     groups = defaultdict(list)
+    prompt_owner = {}
     for line_number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
             raise ValueError(f"Blank record at line {line_number}")
@@ -34,8 +34,12 @@ def prepare(source, output, *, seed="scratch-chat-v1", train_fraction=0.9, valid
         prompts = "\n".join(" ".join(m["content"].split()).casefold() for m in messages if m["role"] == "user")
         if not prompts:
             raise ValueError("Missing user prompt")
-        records.append(record)
-        groups[family or "prompt:" + prompts].append(record)
+        group_key = family or "prompt:" + prompts
+        previous = prompt_owner.get(prompts)
+        if previous is not None and previous != group_key:
+            raise ValueError(f"Same user prompt assigned to different upstream families at line {line_number}")
+        prompt_owner[prompts] = group_key
+        groups[group_key].append(record)
     if len(groups) < 3:
         raise ValueError("At least three independent conversation groups required")
     ranked = sorted(groups, key=lambda key: hashlib.sha256((seed + ":" + key).encode()).hexdigest())
