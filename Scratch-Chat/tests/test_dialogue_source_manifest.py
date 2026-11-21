@@ -113,7 +113,7 @@ class SourceManifestTests(unittest.TestCase):
                 "test": [{"source_conversation_id": "thread-99", "messages": [{"role": "user", "content": "Independent question"}]}],
             }
             for split, examples in records.items():
-                raw = "".join(json.dumps(item) + "\\n" for item in examples).encode()
+                raw = "".join(json.dumps(item) + "\n" for item in examples).encode()
                 (root / (split + ".jsonl")).write_bytes(raw)
                 self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
                 self.data[split + "_records"] = len(examples)
