@@ -86,6 +86,13 @@ class BudgetedPlanningTests(unittest.TestCase):
                     self.assertIn('PE connection:',captured[0])
                     self.assertLessEqual(len(captured[0]),7500)
                     self.assertEqual(ui.jobs.items(str(project)),[])
+                    # Wait for the background planner to finish before the
+                    # temporary fixture is removed. Merely seeing its first
+                    # model call leaves that worker free to recreate state/.
+                    deadline=time.monotonic()+5
+                    while ui.conversations.get(req)['state']=='running' and time.monotonic()<deadline:
+                        ui._handle_events();time.sleep(.02)
+                    self.assertNotEqual(ui.conversations.get(req)['state'],'running')
                 finally:ui._quit()
 
 if __name__=='__main__':unittest.main()
