@@ -76,5 +76,33 @@ class SourceManifestTests(unittest.TestCase):
                 verify_split_files(self.data, root)
 
 
+    def test_metadata_disguised_dialogue_duplicate_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            records = {
+                "train": [{"id": "a", "messages": [{"role": "user", "content": "Hello   WORLD"}, {"role": "assistant", "content": "Hi"}]}],
+                "validation": [{"id": "b", "messages": [{"role": "user", "content": "hello world"}, {"role": "assistant", "content": "Hi"}]}],
+                "test": [{"id": "c", "messages": [{"role": "user", "content": "Different"}, {"role": "assistant", "content": "Other"}]}],
+            }
+            for split, examples in records.items():
+                raw = "".join(json.dumps(item) + "\\n" for item in examples).encode()
+                (root / (split + ".jsonl")).write_bytes(raw)
+                self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
+                self.data[split + "_records"] = len(examples)
+            with self.assertRaisesRegex(ValueError, "Repeated normalized dialogue"):
+                verify_split_files(self.data, root)
+
+    def test_missing_messages_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for split in ("train", "validation", "test"):
+                raw = (json.dumps({"id": split}) + "\\n").encode()
+                (root / (split + ".jsonl")).write_bytes(raw)
+                self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
+                self.data[split + "_records"] = 1
+            with self.assertRaisesRegex(ValueError, "lacks nonempty messages"):
+                verify_split_files(self.data, root)
+
+
 if __name__ == "__main__":
     unittest.main()
