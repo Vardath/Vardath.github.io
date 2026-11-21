@@ -1,4 +1,4 @@
-"""v10.9 regression checks: show truthful reply activity and recover only validated X4 PE drafts."""
+"""Preserve reply notices; reject invalid AI plans rather than substituting templates."""
 import json
 import os
 import tempfile
@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from deepthort_local.agent_plan import (source_grounded_pe_plan,
+from deepthort_local.agent_plan import (
     budgeted_file_step_prompt, parse_build_plan, PlanError)
 
 REQUEST=('Create X4 Foundations player owned Xenon PE mod with 10x cargo, '
@@ -33,28 +33,9 @@ def verified_report():
 
 
 class SourceGroundedPlanning(unittest.TestCase):
-    def test_verified_necessary_before_recovery(self):
-        for missing in ['ready_for_planning','pe_macro_verified','pe_component_file','turret_candidates']:
-            report=verified_report()
-            report.pop(missing)
-            with self.subTest(missing=missing),self.assertRaises(PlanError):
-                source_grounded_pe_plan(REQUEST, report)
-
-    def test_recovery_is_an_x4_only_draft_with_full_constraints(self):
-        with tempfile.TemporaryDirectory() as root:
-            plan=source_grounded_pe_plan(REQUEST,verified_report())
-            parsed=parse_build_plan(json.dumps({'files':plan}),Path(root),request=REQUEST)
-            self.assertEqual(plan,parsed)
-            joined=' '.join(x['description'] for x in plan)
-            for constraint in ['10x','4x','50,000','60-second','player-owned']:
-                self.assertIn(constraint,joined)
-            self.assertIn('content.xml',[s['path'] for s in plan])
-            self.assertTrue(any(s['path'].startswith('md/') for s in plan))
-            self.assertFalse(any(s['path'].endswith('.py') for s in plan))
-
-    def test_unrelated_requests_do_not_use_pe_fallback(self):
-        with self.assertRaises(PlanError):
-            source_grounded_pe_plan('Create an X4 Argon ship mod',verified_report())
+    def test_predefined_fallback_not_imported(self):
+        from deepthort_local import agent_plan
+        self.assertFalse(hasattr(agent_plan, 'source_grounded_pe_plan'))
 
     def test_budgeted_code_prompt_preserves_complete_spec_and_existing_file(self):
         full=REQUEST+' extra exact details'*140
@@ -113,7 +94,7 @@ class ReplyActivityGui(unittest.TestCase):
         self.app._set_reply_stage(req['id']+100,'WRONG LATE MESSAGE')
         self.assertNotIn('WRONG',self.app.reply_notice.get())
 
-    def test_verified_salvage_generates_only_approved_draft(self):
+    def test_invalid_model_answer_never_becomes_a_draft(self):
         req=self.app.conversations.submit(self.app.current_chat,str(self.project),'draft_plan',REQUEST)
         self.app.conversations.change(req,'running','Local model processing conversation',allowed=('pending',))
         self.app.active_conversation=req
@@ -122,11 +103,11 @@ class ReplyActivityGui(unittest.TestCase):
         self.app._conversation_reply(req,json.dumps({'files':[
              {'path':'src/main.py','description':'Generate generic Python program'}]}))
         saved=self.app.conversations.get(req)
-        self.assertEqual(saved['state'],'responded')
-        self.assertIsNotNone(self.app.conversations.latest_draft(self.app.current_chat,str(self.project)))
+        self.assertEqual(saved['state'],'failed')
+        self.assertIsNone(self.app.conversations.latest_draft(self.app.current_chat,str(self.project)))
         self.assertEqual(self.app.jobs.items(str(self.project)),[])
-        self.assertIn('source fallback',self.app.reply_notice.get().lower()) if False else self.assertIn('fallback',self.app.reply_notice.get().lower())
-        self.assertIn('DRAFT IMPLEMENTATION PLAN',self.app.chat_history.get('1.0','end'))
+        self.assertIn('DRAFT FAILED',self.app.reply_notice.get())
+        self.assertNotIn('DRAFT IMPLEMENTATION PLAN',self.app.chat_history.get('1.0','end'))
 
     def test_unverified_source_prevents_salvage_and_shows_failure(self):
         req=self.app.conversations.submit(self.app.current_chat,str(self.project),'draft_plan',REQUEST)
