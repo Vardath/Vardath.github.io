@@ -49,7 +49,7 @@ def example_index(step, count, seed):
 
 def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         width=64, layers=2, heads=4, context_size=256, lr=0.0003,
-        seed=2026, resume=False):
+        seed=2026, resume=False, tokenizer_path=None):
     if steps < 1 or lr <= 0:
         raise ValueError("Invalid SFT controls")
     torch.set_num_threads(2)
@@ -62,7 +62,8 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
     train_sequences = {tuple(ids) for ids, _ in train}
     if any(tuple(ids) in train_sequences for ids, _ in valid):
         raise ValueError("Train/validation sequence contamination")
-    immutable = {"train_sha256": file_hash(train_path),
+    immutable = {"tokenizer_hash": file_hash(tokenizer_path) if tokenizer_path is not None else None,
+                 "train_sha256": file_hash(train_path),
                  "validation_sha256": file_hash(validation_path),
                  "config": asdict(cfg), "lr": lr, "seed": seed,
                  "sampling": "seeded-shuffle-per-epoch-v1"}
@@ -135,9 +136,11 @@ if __name__ == "__main__":
     p.add_argument("--learning-rate", type=float, default=0.0003)
     p.add_argument("--seed", type=int, default=2026)
     p.add_argument("--resume", action="store_true")
+    p.add_argument("--tokenizer", type=Path)
     a = p.parse_args()
     print(json.dumps(run(a.train, a.validation, a.checkpoint,
                          vocab_size=a.vocab_size, steps=a.steps,
                          width=a.width, layers=a.layers, heads=a.heads,
                          context_size=a.context_size, lr=a.learning_rate,
-                         seed=a.seed, resume=a.resume), indent=2))
+                         seed=a.seed, resume=a.resume,
+                         tokenizer_path=a.tokenizer), indent=2))
