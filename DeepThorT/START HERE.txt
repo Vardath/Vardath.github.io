@@ -1,24 +1,9 @@
-DEEPTHORT DESKTOP v21 — model JSON recovery under long prompts
-Built from v20. The existing JANUS Interface, chat layout, 40-pass budget,
-approval controls and local model are unchanged.
-Malformed model plan JSON now triggers one-entry recovery with a larger
-output allowance, retaining the complete user request.
-The model may remain slow; a valid plan is not yet proven on Windows.
-
-DEEPTHORT DESKTOP v20 — JANUS read-only Interface + planning reliability
-Based on v19. Existing interface, JANUS and Sentinel, approval workflow,
-local ONNX model and 40-pass planning limits are retained.
-In Chats, ask JANUS, report status to receive an immediate recorded-state
-reply even while Qwen is generating in another conversation.
-JANUS cannot replace unrestricted language generation without another model.
-No automatic approval or file execution has been added.
-
-DEEPTHORT DESKTOP v19 — JANUS idle timer and model contention repair
-Built on v18. Original desktop layout and chat cancellation remain unchanged.
-
-Close DeepThorT before extracting over D:\deepthort.
-Preserve the models, state, node_modules, cache, reference, and project folders.
-The local model and JANUS reasoning architecture are unchanged.
-This update does not provide JANUS with general chat generation while Qwen is busy.
-
-See README.md for the exact corrections and verification limits.
+DEEPTHORT DESKTOP v22 — LOCAL CAPABILITY LIBRARY FOUNDATION
+Built from the verified v21 source. The existing interface and local Qwen model are unchanged.
+Draft project plan now inspects bounded, selected-project references before inference,
+stores file hashes and neutral summaries locally, and may use grounded evidence when context fits.
+Unverified procedures are never treated as successful. No tools are executed automatically.
+Full user requirements, explicit approval, and 40-pass planning limits remain unchanged.
+Read CAPABILITY_LIBRARY.md for capabilities, commands, limits and future implementation passes.
+Close DeepThorT before replacing app files. Preserve state, models, cache, reference,
+node_modules and selected project directories. Do not overwrite user workspaces.
