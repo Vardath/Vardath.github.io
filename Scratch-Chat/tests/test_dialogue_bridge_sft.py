@@ -1,6 +1,5 @@
 """Regression checks for Scratch Chat SFT/DeepThorT format compatibility."""
 import unittest
-from unittest.mock import patch
 import torch
 from capability.deepthort_bridge import respond
 
@@ -26,7 +25,7 @@ class BridgeSFTTests(unittest.TestCase):
     def test_sft_prompt_matches_training_format(self):
         tok = FakeTokenizer()
         self.assertEqual(respond(FakeModel(), tok, [{"role": "user", "content": "Hello"}]), "")
-        self.assertEqual(tok.last_prompt, "<|im_start|>user\\nHello<|im_end|>\\n<|im_start|>assistant\\n")
+        self.assertEqual(tok.last_prompt, "<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n")
 
     def test_reserved_delimiter_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "Reserved"):
