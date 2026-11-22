@@ -33,6 +33,24 @@ class NearDuplicateAuditTests(unittest.TestCase):
             self.write(root, "test", ["Calculate seven plus eleven"])
             self.assertTrue(audit(root)["passed"])
 
+    def test_index_matches_exhaustive_reference(self):
+        from capability.audit_near_duplicates import normalize, shingles
+        prompts = ["the old engine requires regular maintenance today",
+                   "the old engine requires regular maintenance tomorrow",
+                   "how do bees pollinate the flowers",
+                   "how do bees pollinate the flowers",
+                   "calculate seven plus eleven",
+                   "describe cargo ships and stations"]
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for split, values in zip(("train", "validation", "test"),
+                                     (prompts[:2], prompts[2:4], prompts[4:])):
+                self.write(root, split, values)
+            result = audit(root, threshold=0.6)
+            self.assertEqual(result["candidate_pairs"], 2)
+            self.assertTrue(result["passed"])
+            self.assertEqual(len(result["findings"]), 0)
+
     def test_invalid_threshold_rejected(self):
         with self.assertRaises(ValueError):
             audit(".", threshold=0)
