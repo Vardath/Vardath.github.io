@@ -48,6 +48,9 @@ class LocalCounsel:
             with opener.open(HOST+'/health',timeout=1.5) as response:
                 state=json.load(response)
             if not(state.get('ready') is True and state.get('offline') is True and state.get('model')==MODEL):return None
+            # The same ONNX worker serves interactive chat. Do not enqueue
+            # unsolicited JANUS advice behind an active user inference.
+            if state.get('inference_busy') is True:return None
         except (OSError,ValueError,TimeoutError):return None
         holder=f'{society}:{time.time_ns()}'
         if not self._acquire(holder):return None
