@@ -1,3 +1,9 @@
+## v27 semantic reconciliation and verified-source fingerprints
+
+The v26 requirement candidate index is extended with explicit conflict and `REQ-N` dependency inspection, acceptance-check candidates and static Python source-interface checks. The requirements are never replaced or reworded in the source index; ambiguous equivalence is not inferred. The model remains responsible for designing files, and only user-approved test commands can verify outcomes. Hash snapshots prevent reusing test evidence after a source edit, while static interface failures require another approved check. Full details and read-only inspection commands: `SEMANTIC_RECONCILIATION.md`.
+
+---
+
 # DeepThorT v26 — requirement intelligence and measured planning performance
 
 ## Scope of this implementation
