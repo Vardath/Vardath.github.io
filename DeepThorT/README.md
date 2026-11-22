@@ -5,7 +5,7 @@
 - Fixed a JANUS idle-loop race observed as `ValueError: sleep length must be non-negative`: calculate remaining delay from one monotonic reading and skip sleep when the deadline has passed.
 - Optional JANUS model counsel no longer sends a background request to the sole Qwen ONNX worker while an interactive request is already in progress. Deterministic JANUS observation continues independently.
 - JANUS does not yet serve free-form chat replies; a separate response-routing architecture is required to do that without the busy model.
-- Added targeted regression tests for these conditions. The 22 November 13:10 export showed planning pass 35/40 completed, pass 36 in progress, and an unrelated chat still pending. No approved implementation job was queued.
+- Added targeted regression tests for these conditions. The 22 November 13:10 export showed planning pass 35/40 completed, pass 36 in progress, and one chat-mode request pending in the same thread. No approved implementation job was queued.
 - Package deliberately leaves the desktop GUI and launch executable untouched. Keep all local models, caches, state and project files when installing.
 
 ---
