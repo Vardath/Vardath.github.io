@@ -19,7 +19,7 @@ class JanusInterfaceTests(unittest.TestCase):
     def test_explicit_addressee_not_unrelated_conversation(self):
         for prompt in ('JANUS, report status', '@Janus: what are you doing?', 'janus why is Qwen busy?'):
             self.assertTrue(addressed_to_janus(prompt), prompt)
-        for prompt in ('What is JANUS?', 'Explain JANUS architecture', 'Build an X4 mod', ''):
+        for prompt in ('What is JANUS?', 'JANUS is a Roman deity', 'Explain JANUS architecture', 'Build an X4 mod', ''):
             self.assertFalse(addressed_to_janus(prompt), prompt)
 
     def test_local_reply_is_factual_and_read_only(self):
