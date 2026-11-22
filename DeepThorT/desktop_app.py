@@ -1681,6 +1681,7 @@ class DeepThorTDesktop(tk.Tk):
         # tool processes block NEW test execution. May resume after restart.
         if (not self._project_work_is_enabled() or self.queue_paused
             or self._auto_verification_in_flight is not None
+            or self._auto_tool_active is not None or bool(self._auto_tool_queue)
             or self.active_job is not None or self.active_conversation is not None
             or self.disk_gate.gaming()
             or any(p and p.poll() is None for p in
@@ -2386,7 +2387,9 @@ class DeepThorTDesktop(tk.Tk):
         if not self._quitting:
             self.after(2200,self._automatic_tool_tick)
         if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
-        if self.queue_paused or self._auto_tool_active or not self._auto_tool_queue or self.disk_gate.gaming():return
+        if (self.queue_paused or self._auto_tool_active or
+            self._auto_verification_in_flight is not None or not self._auto_tool_queue or
+            self.disk_gate.gaming()):return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
         plan=self._auto_tool_queue.pop(0)
