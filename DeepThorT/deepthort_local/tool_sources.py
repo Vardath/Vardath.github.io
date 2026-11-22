@@ -18,7 +18,18 @@ OFFICIAL_SOURCES = {
     'Android Studio': ('Google', 'https://developer.android.com/studio'),
     'Node.js': ('OpenJS Foundation', 'https://nodejs.org/en/download'),
     'Python': ('Python Software Foundation', 'https://www.python.org/downloads/windows/'),
+    'Java': ('Eclipse Adoptium', 'https://adoptium.net/installation/'),
+    'FFmpeg': ('FFmpeg', 'https://ffmpeg.org/download.html'),
+    'Audacity': ('Audacity', 'https://www.audacityteam.org/download/'),
+    'LibreOffice': ('The Document Foundation', 'https://www.libreoffice.org/download/download-libreoffice/'),
+    'Inkscape': ('Inkscape', 'https://inkscape.org/release/'),
+    'GIMP': ('GIMP', 'https://www.gimp.org/downloads/'),
+    'Krita': ('KDE', 'https://krita.org/en/download/'),
+    'FreeCAD': ('FreeCAD', 'https://www.freecad.org/downloads.php'),
+    'Pandoc': ('Pandoc', 'https://pandoc.org/installing.html'),
+    '7-Zip': ('7-Zip', 'https://www.7-zip.org/download.html'),
 }
+
 
 
 def official_source(name: str):
@@ -34,7 +45,10 @@ def official_source(name: str):
         return None
     if p.hostname not in {'www.blender.org','godotengine.org','git-scm.com',
                           'code.visualstudio.com','unity.com',
-                          'developer.android.com','nodejs.org','www.python.org'}:
+                          'developer.android.com','nodejs.org','www.python.org',
+                          'adoptium.net','ffmpeg.org','www.audacityteam.org',
+                          'www.libreoffice.org','inkscape.org','www.gimp.org',
+                          'krita.org','www.freecad.org','pandoc.org','www.7-zip.org'}:
         return None
     return {'name': name, 'publisher': publisher, 'url': url,
             'package_id': INSTALL_CATALOG[name][0],

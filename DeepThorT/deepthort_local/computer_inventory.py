@@ -54,7 +54,18 @@ INSTALL_CATALOG = {
     'Android Studio': ('Google.AndroidStudio', 'Android development IDE'),
     'Node.js': ('OpenJS.NodeJS.LTS', 'JavaScript runtime'),
     'Python': ('Python.Python.3.13', 'Python runtime'),
+    'Java': ('EclipseAdoptium.Temurin.21.JDK', 'Java 21 LTS development kit'),
+    'FFmpeg': ('Gyan.FFmpeg', 'Audio/video encoding'),
+    'Audacity': ('Audacity.Audacity', 'Audio editing'),
+    'LibreOffice': ('TheDocumentFoundation.LibreOffice', 'Office and document layout'),
+    'Inkscape': ('Inkscape.Inkscape', 'Vector graphics'),
+    'GIMP': ('GIMP.GIMP', 'Raster image editor'),
+    'Krita': ('KDE.Krita', 'Painting and illustration'),
+    'FreeCAD': ('FreeCAD.FreeCAD', 'Parametric CAD'),
+    'Pandoc': ('JohnMacFarlane.Pandoc', 'Document conversion'),
+    '7-Zip': ('7zip.7zip', 'Archive tool'),
 }
+
 
 
 @dataclass
@@ -268,7 +279,7 @@ def format_inventory(data: dict) -> str:
 
 
 def plan_tool_needs(task: str, inventory: dict):
-    """Conservative local advisory, not an autonomous dependency installer."""
+    """Deterministic local tool needs; may feed bounded approved software automation."""
     phrase = task.casefold()
     needed = []
     if any(word in phrase for word in ('android','apk','mobile game')):

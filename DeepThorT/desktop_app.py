@@ -1,8 +1,10 @@
 """DeepThorT desktop v9: offline coding workspace with visible, durable work.
 
 This is a supervised local coding assistant, not a verified autonomous game builder.
-No program is downloaded, installed, executed or project file modified without
-specific human approval. All AI inference is local to 127.0.0.1.
+Routine trusted-catalog software installation/upgrade uses a visible persistent
+user preference; Windows elevation remains under UAC. Source edits, arbitrary
+scripts and unverified tools retain their separate safeguards. All AI inference
+is local to 127.0.0.1.
 """
 from __future__ import annotations
 
@@ -58,6 +60,10 @@ from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
 from deepthort_local.tool_sources import official_source
+from deepthort_local.software_autonomy import (
+    load_policy, set_policy, project_tool_plans, verify_plan, audit_record,
+    already_attempted, MIN_FREE_BYTES)
+
 from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
@@ -92,7 +98,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='38',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='39',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -118,6 +124,16 @@ class DeepThorTDesktop(tk.Tk):
         self._pending_package_inspection = None
         self.last_package_inspection = None
         self._pending_reviewed_install = None
+        self._autonomy_policy = load_policy(STATE/'routine-software-policy.json')
+        self._auto_tool_history = read_snapshot(STATE/'routine-software-history.json') or {}
+        self._auto_tool_queue = []
+        self._auto_tool_active = None
+        self._auto_tool_waiting = []
+        prior_auto = read_snapshot(STATE/'last-routine-software.json')
+        if isinstance(prior_auto,dict) and prior_auto.get('status')=='launch_requested':
+            prior_auto['status']='interrupted_unverified'
+            prior_auto['reusable_approval']=False
+            save_snapshot(STATE/'last-routine-software.json',prior_auto)
         # Never replay installation permissions after app restart. A prior
         # launch may still have a child installer running: state is unknown.
         prior_install=read_snapshot(STATE/'last-reviewed-install.json')
@@ -194,6 +210,7 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs()
         self.after(125, self._handle_events)
         self.after(1000, self._scheduler)
+        self.after(1700, self._automatic_tool_tick)
         self.after(2200, self._poll_server)
         self.after(1000, self._poll_reply_notice)
         # Preserve the original button arrangement when Windows reduces window height.
@@ -203,7 +220,9 @@ class DeepThorTDesktop(tk.Tk):
         self.after(700, self._start_sentinel)
         self.after(3000, self._refresh_janus_view)
         self.protocol('WM_DELETE_WINDOW',self._quit)
-        self._log('Desktop opened. No cloud models or llama.cpp. App installers and external tool execution need approval.')
+        self._log('Desktop opened. Local ONNX only. Routine catalog tool management: '+
+                  ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
+                  '; arbitrary scripts and third-party installations remain controlled.')
         self._log('Select a project and use Computer & Tools to inspect this machine. Auto-save happens only after specific consent.')
         self._refresh_inventory()
 
@@ -214,6 +233,8 @@ class DeepThorTDesktop(tk.Tk):
         s.configure('TLabel',background=BG,foreground=TEXT,font=('Segoe UI',10))
         s.configure('Muted.TLabel',background=BG,foreground=MUTED)
         s.configure('TButton',padding=(10,6),font=('Segoe UI',10),background='#243448',foreground=TEXT,borderwidth=0)
+        s.configure('TCheckbutton',background=BG,foreground=TEXT,font=('Segoe UI',10))
+        s.map('TCheckbutton',background=[('active',BG)],foreground=[('disabled',MUTED)])
         s.map('TButton',background=[('active','#34465c')])
         s.configure('TNotebook',background=BG,borderwidth=0)
         s.configure('TNotebook.Tab',padding=(12,8),background=PANEL,foreground=MUTED)
@@ -399,13 +420,20 @@ class DeepThorTDesktop(tk.Tk):
         self.machine_text=self._text(hardware_tab,readonly=True,height=20)
         self.machine_text.pack(fill='both',expand=True)
         action=ttk.Frame(hardware_tab);action.pack(fill='x',pady=(9,4))
-        ttk.Label(action,text='Optional installation — always ask first:',style='Muted.TLabel').pack(side='left',padx=4)
+        ttk.Label(action,text='Local software tools:',style='Muted.TLabel').pack(side='left',padx=4)
         self.install_choice=tk.StringVar(value='Godot')
         self.install_menu=ttk.Combobox(action,textvariable=self.install_choice,values=sorted(INSTALL_CATALOG),state='readonly',width=20)
         self.install_menu.pack(side='left',padx=5)
-        ttk.Button(action,text='Review & approve install…',command=self._approve_tool_install).pack(side='left',padx=3)
+        ttk.Button(action,text='Install selected catalog tool…',command=self._approve_tool_install).pack(side='left',padx=3)
         ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3)
         ttk.Button(action,text='Search packages online…',command=self._search_online_tools).pack(side='left',padx=3)
+        autonomy=ttk.Frame(hardware_tab);autonomy.pack(fill='x',pady=(2,6))
+        self.autonomy_enabled=tk.BooleanVar(value=self._autonomy_policy['enabled'])
+        self.autonomy_upgrades=tk.BooleanVar(value=self._autonomy_policy['allow_upgrades'])
+        ttk.Checkbutton(autonomy,text='Automatically manage routine project tools',
+                        variable=self.autonomy_enabled,command=self._set_tool_autonomy).pack(side='left',padx=3)
+        ttk.Checkbutton(autonomy,text='Allow tool upgrades',
+                        variable=self.autonomy_upgrades,command=self._set_tool_autonomy).pack(side='left',padx=12)
         checks=ttk.Frame(hardware_tab);checks.pack(fill='x',pady=(3,10))
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
@@ -416,8 +444,8 @@ class DeepThorTDesktop(tk.Tk):
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
         ttk.Label(acquire,text='Discovered software — separate review:',style='Muted.TLabel').pack(side='left',padx=4)
         ttk.Button(acquire,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=5)
-        ttk.Button(acquire,text='Review inspected install…',command=self._approve_inspected_install).pack(side='left',padx=5)
-        tk.Label(hardware_tab,text='No automatic installations. New tools require exact ID, fresh inspection and typed consent.',
+        ttk.Button(acquire,text='Install inspected package…',command=self._approve_inspected_install).pack(side='left',padx=5)
+        tk.Label(hardware_tab,text='After approving a build plan, recognised project tools can install/upgrade automatically. Windows UAC remains active. Unknown software is never automatically executed.',
                  bg=BG,fg=MUTED,wraplength=750).pack(anchor='w',pady=(0,7))
 
         # MEDIA: explicit local file and image handling. No cloud image calls.
@@ -1021,6 +1049,8 @@ class DeepThorTDesktop(tk.Tk):
         self.reply_outcome=None
         self._render_reply_notice()
         self.status.set(f'{"Draft plan" if kind=="draft_plan" else "Chat"} #{ident} saved. No job was queued.')
+        # Software provisioning begins only after approval of a real build job,
+        # not when merely asking for a draft plan or revising a prompt.
         # First read-only discovery starts on the user's INITIAL prompt, even if
         # the local ONNX model is still loading. The original request is retained.
         if project_kind(prompt)=='x4' or x4_request_in_context(
@@ -1137,6 +1167,8 @@ class DeepThorTDesktop(tk.Tk):
                    request_id=root_request_id,error_type=type(exc).__name__,detail=str(exc)[:450])
             messagebox.showerror('Cannot approve milestone',str(exc),parent=self)
             return
+        if self._routine_tools_enabled():
+            self._autonomy_queue_request(req['prompt'],state['project'])
         self._log(f'Explicitly approved milestone {ordinal}/{state["milestones_total"]}; '
                   f'queued job #{jobid} ({len(milestone["steps"])} scoped files).')
         self._refresh_jobs();self._reload_chat();self.tabs.select(1)
@@ -1199,6 +1231,8 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as exc:
             record(STATE,'desktop','plan_approval_failed',level='ERROR',error=str(exc))
             messagebox.showerror('Cannot queue approved plan',str(exc));return
+        if self._routine_tools_enabled():
+            self._autonomy_queue_request(draft['original_prompt'],draft['project'])
         self._log(f'User explicitly approved draft #{draft["id"]}. Created job #{jobid} with {len(draft["steps"])} steps.')
         self._reload_chat();self._refresh_jobs();self.tabs.select(1)
         self.status.set(f'Approved plan became job #{jobid}; files require review.')
@@ -1511,7 +1545,10 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Approve project plan',
                 f'Approve these {len(plan)} bounded file steps?\n\n{summary[:2000]}\n\n'
                 'This does not approve downloading/installing software or executing tools.',parent=self):return
-        self.jobs.resume(j['id']);self._log(f"Build plan #{j['id']} approved. The queue will work on its first file.")
+        self.jobs.resume(j['id'])
+        if self._routine_tools_enabled():
+            self._autonomy_queue_request(j['prompt'],str(self.project))
+        self._log(f"Build plan #{j['id']} approved. The queue will work on its first file.")
         self._refresh_jobs()
 
     def _verification_command(self,project):
@@ -2112,6 +2149,121 @@ class DeepThorTDesktop(tk.Tk):
         self._log('User approved X4 XML extraction; launching official XRCatTool with path filters.')
         self._start_command(cmd,cwd=ROOT,label='Extract X4 reference XML',kind='x4_extraction')
 
+    def _routine_tools_enabled(self):
+        policy=getattr(self,'_autonomy_policy',None)
+        return isinstance(policy,dict) and policy.get('enabled') is True
+
+    def _set_tool_autonomy(self):
+        """One standing local preference, not a new confirmation for each tool."""
+        enabled=self.autonomy_enabled.get()
+        upgrades=self.autonomy_upgrades.get()
+        try:
+            policy=set_policy(STATE/'routine-software-policy.json',
+                              enabled=enabled,allow_upgrades=upgrades)
+        except (OSError,ValueError) as exc:
+            self.autonomy_enabled.set(self._autonomy_policy['enabled'])
+            self.autonomy_upgrades.set(self._autonomy_policy['allow_upgrades'])
+            messagebox.showwarning('Could not save preference',str(exc),parent=self)
+            return
+        self._autonomy_policy=policy
+        if not enabled:
+            self._auto_tool_queue.clear()
+            self._auto_tool_waiting.clear()
+        record(STATE,'desktop','routine_tool_policy_changed',enabled=enabled,upgrades=upgrades)
+        self._log('Routine project software management '+('ENABLED' if enabled else 'DISABLED')+
+                  ('; approved upgrades allowed.' if enabled and upgrades else '.'))
+
+    def _autonomy_queue_request(self,prompt,project):
+        """Only original user BUILD/EDIT requests can trigger catalog provisioning."""
+        if not self._autonomy_policy['enabled'] or str(self.project)!=project:return
+        if not isinstance(self.inventory,dict):
+            if len(self._auto_tool_waiting)<8:
+                self._auto_tool_waiting.append((prompt,project))
+            self._refresh_inventory()
+            return
+        try:
+            plans=project_tool_plans(prompt,self.inventory,project,self._autonomy_policy,
+                           self._auto_tool_history,which=shutil.which)
+            pending={(p['package_id'],p['operation']) for p in self._auto_tool_queue}
+            if self._auto_tool_active:
+                pending.add((self._auto_tool_active['package_id'],self._auto_tool_active['operation']))
+            for plan in plans:
+                ident=(plan['package_id'],plan['operation'])
+                if ident not in pending and len(self._auto_tool_queue)<12:
+                    self._auto_tool_queue.append(plan)
+                    pending.add(ident)
+                    self._log('Project tool queued: '+plan['name']+' ('+plan['operation']+
+                              '); Windows UAC may request elevation. No arbitrary installer commands.')
+        except (OSError,ValueError,TypeError) as exc:
+            self._log('Routine tool management unavailable: '+str(exc))
+
+    def _record_automatic_software(self,plan,status,exit_code=None):
+        row=audit_record(plan,status,exit_code=exit_code)
+        if not save_snapshot(STATE/'last-routine-software.json',row):
+            raise OSError('Could not record the supervised software action; no new action authorized')
+        history=dict(self._auto_tool_history)
+        history[row['package_id']+':'+row['operation']]=row
+        # Bound future desktop snapshots, do not retain unlimited history.
+        if len(history)>90:
+            history=dict(list(history.items())[-90:])
+        if not save_snapshot(STATE/'routine-software-history.json',history):
+            raise OSError('Could not persist the routine software action history')
+        self._auto_tool_history=history
+        return row
+
+    def _automatic_tool_tick(self):
+        """Bounded serial dispatch. No child starts unless policy and state allow."""
+        if not self._quitting:
+            self.after(2200,self._automatic_tool_tick)
+        if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
+        if self.queue_paused or self._auto_tool_active or not self._auto_tool_queue or self.disk_gate.gaming():return
+        if self.install_process and self.install_process.poll() is None:return
+        if self.tool_process and self.tool_process.poll() is None:return
+        plan=self._auto_tool_queue.pop(0)
+        try:
+            if str(self.project)!=plan['project']:
+                self._log('Routine software work deferred: project changed; no command run.')
+                return
+            if plan['operation']=='upgrade' and not self._autonomy_policy['allow_upgrades']:
+                self._log('Routine tool upgrade blocked by current preference.')
+                return
+            verify_plan(plan,which=shutil.which)
+            if shutil.disk_usage(ROOT).free<MIN_FREE_BYTES:
+                self._log('Routine tool installation deferred: less than 1 GiB free.')
+                self._auto_tool_queue.insert(0,plan)
+                return
+            if already_attempted(self._auto_tool_history.get(plan['package_id']+':'+plan['operation']),
+                                 plan['package_id'],plan['operation']):
+                return
+            self._record_automatic_software(plan,'launch_requested')
+            self._auto_tool_active=plan
+            if not self._start_command(plan['argv'],cwd=ROOT,
+                     label='Routine '+plan['operation']+' '+plan['name'],kind='automatic_software'):
+                self._record_automatic_software(plan,'failed')
+                self._auto_tool_active=None
+                return
+            self._log('Routine '+plan['operation']+' launched via fixed WinGet catalog ID '+
+                      plan['package_id']+'. Standard Windows UAC remains in force.')
+        except (OSError,ValueError,TypeError) as exc:
+            self._auto_tool_active=None
+            self._log('Routine software action did not launch: '+str(exc))
+
+    def _automatic_tool_finished(self,code):
+        plan=self._auto_tool_active
+        self._auto_tool_active=None
+        if not plan:
+            self._log('Unmatched automatic software result; inspect Processes.')
+            return
+        status='completed_unverified' if code==0 else 'failed'
+        try:
+            self._record_automatic_software(plan,status,exit_code=code)
+        except (OSError,ValueError,TypeError) as exc:
+            self._log('Routine software audit could not be persisted: '+str(exc))
+        self._log('Routine '+plan['operation']+' '+plan['package_id']+': '+status+
+                  '; follow-up tool scan is required for actual capability verification.')
+        if code==0:
+            self._refresh_inventory()
+
     def _plan_tools(self):
         if self.inventory is None:
             messagebox.showinfo('Scan first','Click Scan this computer first.');return
@@ -2122,8 +2274,8 @@ class DeepThorTDesktop(tk.Tk):
         if not needs:
             messagebox.showinfo('No specific tools identified','No exact tool category could be inferred. Use Plan project for a staged review.');return
         summary='\n'.join(('Installed: ' if n['found'] else 'Missing: ')+n['name']+(' (can request installation)' if n['proposed_install'] else '') for n in needs)
-        self._log('Project tool inventory checked; no software installed automatically.')
-        messagebox.showinfo('Suggested local tools — advisory only',summary+'\n\nReview the Computer & Tools tab before approving any installation.')
+        self._log('Project tool needs identified; routine catalog tools are managed during BUILD/EDIT submissions when enabled.')
+        messagebox.showinfo('Project tool needs',summary+'\n\nSubmit a BUILD/EDIT job to manage recognised tools automatically when the routine policy is enabled. Unknown tools remain manual.')
     # -------- Verified, supervised local application capability acquisition --------
     def _available_learnable_tools(self):
         if not isinstance(self.inventory,dict):
@@ -2349,13 +2501,13 @@ class DeepThorTDesktop(tk.Tk):
         except (ValueError,OSError) as exc:
             messagebox.showwarning('Cannot search packages',str(exc),parent=self)
             return
-        if not messagebox.askyesno('Approve online software search',
+        if not (DeepThorTDesktop._routine_tools_enabled(self) or messagebox.askyesno('Approve online software search',
             'This queries the Windows Package Manager community catalog over the internet.\n'
             'It may contact the catalog provider and accept its source agreements.\n\n'
             'Query: '+name.strip()+'\nSource: winget\nMaximum results: 20\n\n'
             'No software is downloaded or installed. Search results are untrusted '
             'information; installing any package requires a separate reviewed action.\n\n'
-            'Approve this exact network search?',parent=self):
+            'Approve this exact network search?',parent=self)):
             self._log('Online package search was declined by user.')
             return
         if self._start_command(cmd,cwd=ROOT,label='Online winget search',kind='tool'):
@@ -2382,13 +2534,13 @@ class DeepThorTDesktop(tk.Tk):
         except (ValueError,OSError) as exc:
             messagebox.showwarning('Invalid package ID',str(exc),parent=self)
             return
-        if not messagebox.askyesno('Approve exact package inspection',
+        if not (DeepThorTDesktop._routine_tools_enabled(self) or messagebox.askyesno('Approve exact package inspection',
             f'Package ID: {package_id}\nCatalog: winget\nCommand:\n'
             f'{subprocess.list2cmdline(cmd)}\n\n'
             'This contacts the Windows Package Manager catalog over the internet '
             'to retrieve untrusted package metadata. The result is saved as an '
             'inspection receipt, NOT approval to download or install.\n\n'
-            'Approve this one read-only query?',parent=self):
+            'Approve this one read-only query?',parent=self)):
             self._log('Exact-package metadata inspection declined.')
             return
         # Set before the thread starts: prevents interleaved inspection results.
@@ -2468,7 +2620,8 @@ class DeepThorTDesktop(tk.Tk):
                 'Saved receipts are informational and cannot approve execution.',parent=self)
             return
         try:
-            plan=prepare_reviewed_install(self.last_package_inspection)
+            plan=prepare_reviewed_install(self.last_package_inspection,
+                   standing_policy=DeepThorTDesktop._routine_tools_enabled(self))
             if shutil.disk_usage(ROOT).free < 1024**3:
                 raise ValueError('Less than 1 GiB disk space available; installation is blocked')
         except (OSError,ValueError) as exc:
@@ -2492,34 +2645,44 @@ class DeepThorTDesktop(tk.Tk):
                  'package license terms. No upgrade, force, hash bypass or model-created '
                  'shell command is permitted. There is no automatic rollback.\n\n'
                  'Have you checked the publisher, license and purpose yourself?')
-        if not messagebox.askyesno('Review an UNVERIFIED third-party installation',
-                                    details,parent=self):
+        if not (DeepThorTDesktop._routine_tools_enabled(self) or
+                messagebox.askyesno('Review an UNVERIFIED third-party installation',
+                                    details,parent=self)):
             self._log('Inspected package installation review declined.')
             return
-        phrase=exact_consent_phrase(plan)
-        consent=simpledialog.askstring('Type exact installation approval',
-            'To approve THIS ONE installation, type exactly:\n'+phrase+'\n\n'
-            'Any other text cancels. No previous approval can be reused.',parent=self)
-        if consent!=phrase:
-            self._log('Reviewed installation declined: exact typed consent not provided.')
-            messagebox.showinfo('Installation cancelled',
-                'No installer was started. The exact approval phrase did not match.',parent=self)
-            return
+        if DeepThorTDesktop._routine_tools_enabled(self):
+            # The user explicitly chose the exact package by ID, inspected its
+            # metadata and clicked 'Install inspected package'. Their standing
+            # preference authorizes this action; Windows UAC still governs elevation.
+            consent=None
+            authorization='explicit_install_click'
+        else:
+            phrase=exact_consent_phrase(plan)
+            consent=simpledialog.askstring('Type exact installation approval',
+                'To approve THIS ONE installation, type exactly:\n'+phrase+'\n\n'
+                'Any other text cancels. No previous approval can be reused.',parent=self)
+            if consent!=phrase:
+                self._log('Reviewed installation declined: exact typed consent not provided.')
+                messagebox.showinfo('Installation cancelled',
+                    'No installer was started. The exact approval phrase did not match.',parent=self)
+                return
+            authorization='typed'
         try:
-            audit=approval_receipt(plan,consent=consent,status='launch_requested')
+            audit=approval_receipt(plan,consent=consent,status='launch_requested',authorization=authorization)
             if not save_snapshot(STATE/'last-reviewed-install.json',audit):
                 raise OSError('Could not persist the installation audit; no install started')
         except (OSError,ValueError) as exc:
             messagebox.showerror('Approval not recorded',str(exc),parent=self)
             return
         self._pending_reviewed_install={'plan':plan,'consent':consent,
+                                        'authorization':authorization,
                                         'argv':list(plan['argv'])}
         if not self._start_command(list(plan['argv']),cwd=ROOT,
                                    label='Install inspected '+plan['package_id'],kind='reviewed_install'):
             self._complete_inspected_install(None)
             return
-        self._log('User typed explicit consent for '+plan['package_id']+' '+plan['version']+
-                  '. WinGet process queued; success and publisher authenticity NOT verified.')
+        self._log('Installation authorized by '+authorization+' for '+plan['package_id']+' '+plan['version']+
+                  '. WinGet queued; success and publisher authenticity are NOT verified.')
         self.tabs.select(4)
 
     def _complete_inspected_install(self,exit_code):
@@ -2530,7 +2693,8 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Unexpected inspected-install result: no matching active approval.')
             return
         status='completed_unverified' if exit_code==0 else 'failed'
-        audit=approval_receipt(pending['plan'],consent=pending['consent'],status=status)
+        audit=approval_receipt(pending['plan'],consent=pending['consent'],status=status,
+                               authorization=pending.get('authorization','typed'))
         audit['exit_code']=exit_code
         saved=save_snapshot(STATE/'last-reviewed-install.json',audit)
         self._log('Inspected package '+pending['plan']['package_id']+': '+status+
@@ -2552,10 +2716,10 @@ class DeepThorTDesktop(tk.Tk):
         try:cmd=winget_command(name)
         except (OSError,ValueError) as e:messagebox.showerror('Cannot install',str(e));return
         package,purpose=INSTALL_CATALOG[name]
-        if not messagebox.askyesno('Approve Windows software installation',
+        if not (DeepThorTDesktop._routine_tools_enabled(self) or messagebox.askyesno('Approve Windows software installation',
             f'Install program: {name}\nPurpose: {purpose}\nPackage ID: {package}\nSource: Windows Package Manager (winget)\n\n'
             f'Command:\n{" ".join(cmd)}\n\nThis downloads external software and may ask for Windows elevation. '
-            'No model-generated shell command is accepted.\n\nDo you APPROVE this specific installation?',parent=self):
+            'No model-generated shell command is accepted.\n\nDo you APPROVE this specific installation?',parent=self)):
             self._log(f'Installation of {name} declined by user.')
             return
         self.tabs.select(4)
@@ -2603,17 +2767,21 @@ class DeepThorTDesktop(tk.Tk):
                 from collections import deque
                 captured=deque(maxlen=300)
                 inspecting=(kind=='package_inspection')
+                automatic=(kind=='automatic_software')
                 output_bytes=0
                 truncated=False
-                flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
+                # Do not conceal native WinGet/installer windows or Windows UAC
+                # for standing-policy software actions. No runas/UAC bypass.
+                flags=(getattr(subprocess,'CREATE_NO_WINDOW',0)
+                       if os.name=='nt' and kind not in ('automatic_software','reviewed_install','installation') else 0)
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,shell=False) as proc:
-                    if kind in ('installation','reviewed_install'):self.install_process=proc
+                    if kind in ('installation','reviewed_install','automatic_software'):self.install_process=proc
                     else:self.tool_process=proc
                     # Bounded network inspection and user-approved third-party setup.
                     # A timed-out installer may have launched child processes; its
                     # receipt remains UNVERIFIED and requires manual inspection.
-                    max_runtime = 90 if inspecting else 3600 if kind=='reviewed_install' else None
+                    max_runtime = 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else None
                     timer=(threading.Timer(max_runtime,
                             lambda: proc.kill() if proc.poll() is None else None)
                            if max_runtime is not None else None)
@@ -2628,6 +2796,12 @@ class DeepThorTDesktop(tk.Tk):
                                         proc.kill()
                                         break
                                     captured.append(line.rstrip('\r\n'))
+                                elif automatic:
+                                    output_bytes+=len(line.encode('utf-8',errors='replace'))
+                                    if output_bytes>2*1024*1024:
+                                        truncated=True
+                                        proc.kill()
+                                        break
                                 elif kind=='verification':
                                     captured.append(line.rstrip()[:2000])
                                 self.events.put(('log',f'[{label}] {line.rstrip()[:2000]}'))
@@ -2639,7 +2813,7 @@ class DeepThorTDesktop(tk.Tk):
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
-                if kind in ('installation','reviewed_install'):self.install_process=None
+                if kind in ('installation','reviewed_install','automatic_software'):self.install_process=None
                 else:self.tool_process=None
         threading.Thread(target=worker,daemon=True).start()
         return True
@@ -3062,6 +3236,12 @@ class DeepThorTDesktop(tk.Tk):
                        missing_count=len((snapshot.get('engine_preflight') or {}).get('missing_prerequisites',[])))
                 found=sum(x['found'] for x in self.inventory['tools'])
                 self._log(f'Local capability scan complete: {found} tools detected; {len(self.inventory["drives"])} fixed drives. No installs performed.')
+                if self._auto_tool_waiting and self._autonomy_policy['enabled']:
+                    pending=self._auto_tool_waiting[:]
+                    self._auto_tool_waiting.clear()
+                    for prompt, project in pending:
+                        if str(self.project)==project:
+                            self._autonomy_queue_request(prompt,project)
             elif kind=='inventory_error':
                 self._log('Computer scan problem: '+event[1]);self._show(self.machine_text,'Discovery error: '+event[1])
             elif kind=='x4_auto_report':
@@ -3207,6 +3387,7 @@ class DeepThorTDesktop(tk.Tk):
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
                 if tooltype=='installation' and code==0:self._refresh_inventory()
                 if tooltype=='reviewed_install':self._complete_inspected_install(code)
+                if tooltype=='automatic_software':self._automatic_tool_finished(code)
                 if tooltype=='package_inspection':
                     self._receive_package_inspection(code,verification_output)
                 if tooltype=='x4_extraction' and code==0:
@@ -3257,12 +3438,14 @@ class DeepThorTDesktop(tk.Tk):
                         except Exception as exc:
                             self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()
-                if code!=0 and tooltype!='package_inspection':
+                if code!=0 and tooltype not in ('package_inspection','automatic_software'):
                     messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
                 self._log(f'{event[1]} error: {event[3]}')
                 if event[2]=='reviewed_install':
                     self._complete_inspected_install(None)
+                if event[2]=='automatic_software':
+                    self._automatic_tool_finished(None)
                 if event[2]=='package_inspection':
                     self._pending_package_inspection=None
                     self.last_package_inspection=None

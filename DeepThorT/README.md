@@ -1,3 +1,58 @@
+# DeepThorT v39 — routine tools without repeated prompts (23 November 2026)
+
+**Inference remains local Qwen through ONNX.** JANUS, Sentinel, the Windows launcher,
+local inference server, resource priorities and existing projects are unchanged.
+
+## Routine software management
+
+**Computer & Tools → Automatically manage routine project tools** is enabled on
+first use of this v39 package, reflecting the owner's stated preference for
+uninterrupted job execution. The switch is persistent in
+`state/routine-software-policy.json` and can be disabled at any time. A second
+switch controls automatic upgrades. These are standing local preferences, not
+an opportunity for model output or web text to run arbitrary commands.
+
+After a **real build plan is approved and queued**, DeepThorT uses its local
+heuristic tool inventory and a fixed, reviewed WinGet ID catalog to queue up to
+three relevant installs/upgrades. Only one installation runs at a time.
+Automatic upgrades are attempted at most once per package every 14 days; other
+attempts are throttled. The program avoids installations while a configured
+game is running, the queue is paused, a tool process is busy, or disk free space
+is below 1 GiB. It records `state/last-routine-software.json` and a bounded
+`state/routine-software-history.json` before launch and after completion.
+A WinGet exit code of zero is recorded as `completed_unverified`; it is not a
+verified working tool. Interruption on restart cannot be mistaken for success.
+
+The command uses exact local WinGet package IDs with no shell, no `--all`,
+`--force`, `--override`, `--ignore-security-hash`, `--silent` or `--scope user`.
+DeepThorT does **not** attempt to elevate itself, bypass Windows UAC or block
+normal system elevation confirmation. The Windows installer can still ask for
+other interaction or fail; that outcome is logged, not silently overridden.
+
+WinGet packages from outside the curated catalog can be searched and inspected
+using the existing controls. With routine management enabled, clicking
+**Install inspected package…** after a fresh validated exact-ID inspection
+uses the standing preference and **the explicit button click** instead of
+another Yes/typed phrase. An audit correctly records that authorization source.
+With routine management disabled, the older two-step manual review remains.
+Unknown packages are **not** automatically selected or executed from model/web
+search results. WinGet catalog metadata and its SHA are untrusted, not
+independent publisher identity or malware proof. Always apply ordinary system
+security judgment before choosing an unknown package.
+
+**A project plan, source file edit, or arbitrary generated script is not yet
+silently approved**: these retain established review boundaries. Reducing those
+repeated gates using project-scoped, reversible task permissions is a top item
+in `NEXT_STEPS.md`.
+
+The user guide (`USER_GUIDE.html`, F1), development roadmap (`NEXT_STEPS.md`)
+and diagnostic tests (`TEST_RESULTS_V39.md`) are included with the Windows ZIP.
+Keep `state`, `models`, `node_modules`, `cache`, `reference` and existing project
+folders when updating; back up `state` first. No actual Windows install/UAC
+acceptance test has yet been performed for v39. See `PROJECT_CONTEXT_V39.md`.
+
+---
+
 # DeepThorT v38 — supervised exact-version installation of inspected software (23 November 2026)
 
 DeepThorT's **only coding-language model** remains local Qwen running under **ONNX** via its existing loopback inference server. No cloud model, separate training pipeline or external conversational AI has been added. JANUS and Sentinel coordinate and supervise; they are not a replacement inference engine.

@@ -1,143 +1,108 @@
-# DeepThorT — development handover and next steps (v38, 23 November 2026)
+# DeepThorT next steps — v39 (23 November 2026)
 
-**Baseline:** `DeepThorT_Desktop_v34_Windows.zip` (134 files, ZIP CRC clean). This version adds contextual UI help and offline documentation; it does not replace the local Qwen runtime, JANUS/Sentinel topology or approval gates. Install to `D:\deepthort` without deleting `state`, `models`, `reference`, `cache`, `node_modules`, custom projects or existing launcher data. Back up `state` before upgrade. Read `USER_GUIDE.html` in the install root (F1 in the desktop).
+**Current runtime:** local Qwen ONNX with JANUS coordinator/Sentinel watchdog.
+No Scratch Chat integration or paid/cloud model fallback. User preference:
+**do useful project work without interrupting for every routine action.**
+Windows elevation, when required, must continue through the normal UAC prompt.
 
-## Completed in v38 (fourth pass)
+## Implemented through v39
 
-- **ONNX remains the sole local coding-language inference backend.** The local
-  Qwen/ONNX server and original launcher have not been replaced or modified.
-- The `Review inspected install…` control in Computer & Tools can construct
-  ONE exact-version WinGet install proposal from an inspection completed in
-  the current desktop session. It never uses AI-written argv or shell commands.
-- The plan requires one valid, recent (2h) exact-ID inspection with a pinned
-  version, complete manifest SHA256, HTTPS installer URL and publisher/homepage,
-  no rejected unsafe URL, recognized installer type, and at least 1 GiB of free
-  disk on the application volume. It refuses inspection when games/tools run.
-- User sees claimed metadata, license, exact CLI command and limitations.
-  Two fresh explicit steps are needed: consent dialog and typed confirmation
-  `INSTALL vendor.package`. Approval is recorded BEFORE trying to launch the
-  installer; it is never automatically resumed from disk after restart.
-- Fixed command requests `--scope user`, pins exact ID/version/source,
-  adds `--no-upgrade`, and avoids shell, force, custom override, hash bypass,
-  and arbitrary download URLs. Package agreements and the community catalog
-  remain unverified; some installers may ask for UAC despite user scope.
-- `state/last-reviewed-install.json` preserves one bounded, non-reusable audit.
-  A zero WinGet exit is marked `completed_unverified` until separately tested;
-  no independent publisher verification or safe rollback is claimed. The
-  WinGet parent process is bounded to 60 minutes; child installers may outlive
-  a terminated parent and require manual inspection.
-- Added `deepthort_local/reviewed_install.py`, GUI integration,
-  `tests/test_reviewed_install_v38.py`, new screenshot and guide updates.
-  Synthetic Linux tests do not certify actual Windows winget installation.
+- Eight-tab desktop, offline illustrated guide/F1, passive hover tooltips.
+- Durable chat/work queue, indexed long specifications, JANUS/Sentinel status,
+  engine/source inspection, exact project proposals and supervised tests.
+- WinGet search and exact-ID metadata inspection, trusted fixed-ID catalog
+  expanded to software for games, applications, literature, music/video, CAD
+  and graphic design.
+- **Standing routine software policy:** on by default for this requested
+  release, visible and revocable in Computer & Tools. After actual **build
+  plan approval**, known required tools can install/upgrade without further
+  DeepThorT confirmations. Upgrades are throttled, UAC is not bypassed.
+- **Inspected external packages:** user selects the exact ID and clicks
+  **Install inspected package…** after inspection; standing policy avoids
+  an additional Yes and typed phrase. Unknown packages are never chosen for
+  installation automatically. Manual mode still offers v38 approvals.
+- Audit records distinguish package-manager exit success from independent
+  installation, authenticity and application-function verification.
 
-## Completed in v37 (third pass)
+## Priority 1 — Make project creation genuinely continuous
 
-- Added `Computer & Tools > Inspect package ID…`, an explicitly approved,
-  read-only **exact-ID** WinGet show request with `--source winget`. The dialog
-  never installs/downloads anything and does not promote discovered packages
-  to the fixed installer allowlist.
-- `online_tool_search.py` validates ASCII package IDs before building fixed
-  argv; inspects bounded output with exact ID, claimed publisher and version;
-  rejects duplicate/conflicting headers, malformed SHA256, unsafe informational
-  URLs, control characters and oversized fields. The output is attributed to
-  a specific approved command and SHA256 digest. All manifest identities are
-  treated as **untrusted catalog claims**, not independent verification.
-- A report of at most 64 KiB is collected with a 90-second runtime cap. On
-  completion the UI displays the limited metadata and saves a non-authorizing
-  receipt in `state/last-package-inspection.json`. Failed/inconclusive results
-  replace the last receipt state to prevent stale evidence looking current.
-- The `regression_cli.py` test harness now isolates subprocess groups and kills
-  descendants on timeout; two new `tests/test_regression_cli_v37.py` tests cover
-  normal completion and a child holding stdout open. This fixes a local
-  reporting/hang hazard but not the underlying Tkinter teardown warnings.
-- New `tests/test_online_tool_inspection_v37.py` validates refusal and consent,
-  precise argv, injection rejection, output validation, mismatched commands and
-  saved non-authorizing receipts. Test evidence is in `TEST_RESULTS_V37.md`.
-- The offline guide and screenshot were updated for the new control; v36 is
-  otherwise preserved. The screenshot comes from a synthetic desktop without
-  an installed Windows WinGet instance or active Qwen inference.
+1. **Project-scoped standing permissions**: one explicit project decision
+   authorizes bounded file writes, deterministic tests, format checks and
+   specified build steps, instead of separate file/test confirmations. Keep
+   source diffs, Git/versioned snapshots, undo/rollback and clear stop controls.
+   Require elevated/restricted permissions only for meaningful boundaries:
+   installation that triggers Windows UAC, destructive deletes, credential
+   access, payments, publishing or changes outside the selected project.
+2. **Durable autonomous task graph**: requirement -> artifact -> build -> test
+   -> result, with minimal context passed to ONNX, dependency waits, bounded
+   retries, stall detection, recovery after restart, and accurate on-screen
+   active/blocked/completed evidence. Never claim completion merely because
+   a script exits or a model proposes code.
+3. **Tool bootstrap and verification**: after installing a package, locate
+   its real executable and version; run low-impact capability probes, link it
+   to the actual project, capture evidence and retry stalled plan steps.
+   Detect PATH changes/restarts and show exactly what remains unavailable.
+4. **Smarter requirements-to-tool resolution**: go beyond broad keyword
+   matches. Infer target OS/engine, artifact format, license and resource
+   needs, enumerate missing dependencies, choose verified adapters, compare
+   installed versions and avoid changing a project's pinned toolchain.
 
-## Completed in v36 (second pass)
+## Priority 2 — Broader trusted software acquisition
 
-- Fixed two older regression test setups that incorrectly enrolled Python through a symlink on the Linux GitHub Actions Python installation. Both now use the real resolved executable path without weakening DeepThorT's protection against untrusted symlink executable paths.
-- Added a deliberately **read-only Windows Package Manager network search** with an explicit per-query consent dialog, fixed argv (`winget search --query ... --source winget --count 20`), bounded query validation and no shell evaluation. Results appear in the existing activity log. No automatic installer action or new install catalog approval is inferred from search results.
-- New `tests/test_online_tool_search_v36.py` tests consent, refusal, game priority, input validation and fixed command structure. Live Windows winget network behavior remains to be tested by the user.
+5. Expand beyond the fixed WinGet catalog with read-only official docs,
+   signed manifest metadata and trusted repository evidence. Match publisher
+   identity against independently sourced provenance; store source citations
+   and expiry. Treat the web/model as untrusted input, not commands.
+6. Download to a quarantine with disk/time/size quotas. Independently check
+   signed SHA-256 provenance/Authenticode where available; do not rely solely
+   on a checksum claimed by the same catalog. Support Windows Defender and
+   real UAC. No silent elevation bypass, force/hash overrides or arbitrary
+   command templates. Maintain audit, cancellation and rollback plans.
+7. Use safe package updates only when compatible with an existing project.
+   Expose a user-visible **pause all automated work** control and scheduled
+   maintenance windows; do not upgrade in the middle of a running build/game.
 
-## Completed in v35
+## Priority 3 — App-specific creation skills
 
-- `deepthort_local/ui_help.py`: passive, delayed, non-focus-grabbing Tk hover tooltips on existing buttons, controls, main text areas, work/process trees and notebook tabs; no network or model activity. Existing UI retained; added `User guide` top button and F1 shortcut.
-- `USER_GUIDE.html`: self-contained illustrated offline guide with a schematic layout, all eight tabs, permission flows, creation categories, tool acquisition and troubleshooting. Schematic illustration is *not* a live screenshot.
-- `deepthort_local/tool_sources.py`: fixed, reviewed publisher URLs for existing `INSTALL_CATALOG` entries, with no arbitrary model-supplied download URLs; optional `Find official tool page…` asks before opening a browser. This is informational only, not a download or installation.
-- Expanded read-only software inventory/advisory associations for documents/books, audio/video, graphics and CAD. Only original eight fixed Windows Package Manager package IDs remain eligible for an approved install.
-- Tests in `tests/test_ui_help_v35.py` cover catalog source constraints, advisory categories and GUI help behavior under a virtual display. **Full isolated regression: 430 tests passed across 53 modules**; see `TEST_RESULTS_V35.md`/`.json`.
+8. Versioned adapters: Blender .blend/GLB/render; Godot scenes/build/export;
+   X4 macro/XML and in-game behavior; RimWorld defs/assemblies; Android
+   SDK/Gradle/ADB; Python/Node/.NET; LibreOffice/Pandoc book/EPUB/PDF;
+   FFmpeg/Audacity media; Krita/GIMP/Inkscape art; FreeCAD CAD models.
+9. GUI-only application controller with window identity, confirmed elements,
+   screenshots, user-visible action logs and accessible cancellation. Never
+   blindly click model-hallucinated screen coordinates.
+10. Independent artifact acceptance: test playable games in the actual engine,
+    APK on emulator/device, mod save compatibility, multimedia exports and
+    geometry, document rendering, and source citations. Track unresolved bugs
+    before declaring a job done.
 
-## Ordered, acceptance-gated development backlog
+## Priority 4 — Robustness and trust
 
-### P0 — Windows acceptance of v38, and rigorous GUI usability
+11. Windows Job Objects and separate low-privilege task workers, resource
+    budgets, game priority, logs, safe input/source hashing and recovery.
+12. Add end-to-end Windows WinGet/UAC/package-signature tests and resolve
+    intermittent Tkinter test teardown warnings. Complete `TEST_RESULTS_V39`.
+13. Benchmark ONNX speed, prompt budget, JSON validity and multi-step task
+    completion under 20% CPU/RAM limits. Optimize model use without changing
+    the model family or sending prompts to an online LLM.
 
-1. Test actual Windows startup and 20%-resource/game priority with installed ONNX model; verify F1 guide and all tab/button tooltips at 1320×860 and 1138×765, including keyboard/screen-reader behavior. Fix clipping if necessary without removing original chat controls.
-2. Verify source/ZIP parity, SHA-256 and GitHub CI status; fix any real failing workflows. Tkinter combined-process teardown remains an existing limitation even if isolated modules pass.
-3. Run a small disposable project through local Qwen -> plan -> human approval -> source write -> authorized test -> persisted evidence -> restart. Collect diagnostics and observed runtimes.
-4. If v38 tests are green, start next pass from v38, not from earlier source; do not overwrite unrelated GitHub other projects’ commits.
+## Hard limits today
 
-### P1 — Safe *online* software/tool discovery and consent-controlled install (v38+)
+Routine automation currently knows a **fixed curated list of WinGet IDs** and
+is activated only from approved build jobs or an explicit install button.
+It does not browse arbitrary websites to find installers, verify independent
+publisher signatures, choose unknown packages automatically, or operate most
+third-party GUIs. The existing plan/file/test gates still interrupt long jobs.
+No real Windows UAC, installation, application automation or full game
+acceptance has been demonstrated in the Linux test environment. A successful
+WinGet process exit is `completed_unverified` until app-level tests confirm.
 
-1. Continue the already introduced consented search plus exact-ID show inspection into a **capability resolver** from actual user requirements (artifact type, target OS, file formats, licenses, required tools, compatible versions and installed tool identity). Record a candidate dependency graph rather than keyword match only. Include resource needs (available disk/RAM and games running).
-2. Extend v36's user-confirmed winget catalog search to richer **explicit online-search consent** scoped to query/project, with independent **read-only research** using trusted upstream repositories, official documentation and package-manager metadata. Store source URL, version, publisher, retrieval time, license and evidence. Treat search results/pages as hostile data; never execute instructions from them. No browser takeover or unapproved network access.
-3. Compare discovered packages to existing software. Validate package IDs and publisher identity against signed catalog data, official domains and independent provenance; disallow sponsored/mirrored/shortened/untrusted downloads as automatic installer candidates. Reject insecure URLs, redirects to unknown origins and mutable unpinned installers.
-4. Present a detailed **download consent** review (publisher, exact URL, version, size, expected checksum/signature, destination, network use and potential data handling) before fetching. Download to a quarantined temporary directory with hard size/time/disk quotas, rate limiting and cancellation; verify SHA-256 when an independent trusted digest exists, Authenticode signature where applicable, and content type. A checksum from the same untrusted source is not strong provenance evidence. Unsigned/unverifiable installers need explicit exception or a blocked state.
-5. Show a separate **installation authorization** with exact executable, arguments, elevation requirements, scope, expected writes/network effects and uninstall/rollback plan. Never silently elevate, run shell snippets from search results, or automatically accept arbitrary licensing terms. Enforce game priority and measured CPU/RAM/disk budgets; record post-install executable and capability probe, then source/evidence hashes.
-6. Preserve reviewable local receipts and recovery: failed downloads/installs must not be marked successful; detect stale packages after updates, resume only if the content identity remains valid and do not repeat elevated actions after crash without approval. Test on a Windows VM or disposable environment before enabling production installers.
+## Testing later on the target PC
 
-### P2 — Genuine app use, not merely executable detection
-
-- Create versioned adapters for **CLI and GUI-only applications**. Primary targets: Blender (background `.py` API and tested `.blend`/GLB output), Godot (GDScript, scenes, editor, GUT/Android export), X4/Egosoft tools (vanilla assets/macros/MD and in-game verification), Android SDK/Gradle/ADB, Krita/GIMP/Inkscape, LibreOffice/Pandoc, FFmpeg/Audacity, FreeCAD, browsers and test frameworks.
-- Use official per-version API docs, local executable `--help`, example projects and observed results; cache only attributed, hash-verified evidence. Model-authored scripts must be built in small verified stages, with full-source diffs, lint/parse tests, small safe integration tests, and explicit action approvals.
-- Add permissioned GUI operator with application/window identity, screenshots, element discovery, focus validation, confirmation before edits/sends, unexpected-modal handling and automatic stop on ambiguous targets. Never treat hallucinated coordinates as verified controls.
-- Add sandboxed process isolation (Windows low-privilege token, Job Objects, restricted filesystem/network and temporary workspace), rollback, reproducible toolchain snapshots, and tests for hostile project files.
-
-### P3 — Project breadth: what DeepThorT should be able to deliver
-
-| Work category | Examples | Evidence required |
-|---|---|---|
-| Games/mods | X4, RimWorld, 2D/3D games, mobile games, assets, AI behaviors | Real engine launch, schema/asset checks, automated behavior tests and playable build |
-| Mobile/desktop/web | Android APK, Windows app, website, extension, API/service | Build output, installation, smoke tests, cross-platform test matrix |
-| Literature/research | Book/manuscript, encyclopedia, citations, EPUB/PDF | Complete source provenance, structure/repetition checks, document render review |
-| Audio/video | Music, podcasts, voiceover, short films, motion graphics | Real playable exports, waveform/codec inspection, content and rights checks |
-| Art/design | Logo/vector, textures, 3D models, animation, CAD, 3D print | Image/model previews, geometry/manifold/unit checks, compatible exported files |
-| Data/science | Analysis, dashboards, simulation, financial reports, notebooks | Reproducible inputs/calculations, data validation, uncertainty and visual checks |
-| Automation/business | Data workflows, reports, documents, integrations | Dry run, scoped credentials, action logs, idempotence, rollback and user signoff |
-
-### P4 — Long-horizon autonomy, compliance and model efficiency
-
-1. Establish durable subproject graphs, explicit requirement-to-artifact-to-test coverage, semantic conflict review, change impact analysis, reversible Git checkpoints, and independent completion criteria; never silently edit the user's design.
-2. Model ability assessment: benchmark offline Qwen context/prefill, tokens/sec, JSON validity, long-plan failure rates and success against small verified tasks. Maintain true local-only operation, no paid/cloud fallbacks, unless user changes the requirement.
-3. Add a principled task prioritizer and autonomous *approved* work queue, with watchdog-based stall detection, bounded retries and restart continuity; zero-progress loops must stop with a diagnosis. Preserve game priority and the existing supervisor roles.
-4. Create engine-specific acceptance harnesses and manual quality-review protocols. Cross-check deliverables independently: code compiling or XML parsing is insufficient proof of a working game/mod.
-5. Add an offline searchable help assistant grounded in versioned docs, keyboard navigation, per-button "why disabled?" explanations, actionable error messages and user-configurable tooltip delay/accessibility.
-
-## Open limitations (do not claim complete)
-
-- v38 can look up arbitrary name queries inside the Windows Package Manager `winget` catalog only after user approval. It does **not** independently research arbitrary web sources, fetch/download vendor installers, or automatically install apps from search results. v38 can additionally launch an exact-version WinGet install of an inspected third-party package after a separate metadata review and typed approval.
-- v38 does **not** give Qwen a larger ONNX inference context or improve generation speed. Large specification input storage is separate from model context.
-- Scripts approved for execution are **not sandboxed**. They can access resources available to the user; inspection alone is not a malware guarantee.
-- Real Windows Blender/Godot/X4/Android end-to-end acceptance is not yet proven. Do not claim games/mods complete based on synthetic tests or static XML alone.
-- Combined-process Tkinter teardown has an existing race; module-isolated test execution is the documented workaround, not a claimed production fix.
-- Existing JANUS/Sentinel core behavior and model/resource architecture are retained; v35–v36 changes are UI help, a curated publisher lookup and advisory tool coverage.
-
-## Next-run minimal report
-
-After installing v38, report (a) whether F1/hover help works in each tab, (b) whether selecting an official tool page opens the expected URL without an install, (c) any failed known-tool installation with the exact installer output, (d) whether real Windows Qwen replies/plan approvals execute and pass one small test, and (e) a fresh **Export diagnostics** ZIP. Avoid changing production X4 mods as a first installer test.
-
-For the online search test, use **Search packages online…**, enter `FreeCAD`,
- confirm the query, and check Processes. Copy the exact package ID from results.
- Choose **Inspect package ID…**, paste that ID, and approve ONE metadata query.
- The package should display its claimed publisher/version and persist a
- non-authorizing receipt. Verify cancellation on another query. **No download or installation should occur if the review is declined.
- Test **Review inspected install…** and decline the consent or intentionally
- type a wrong confirmation phrase. Do not authorize an actual installer on
- the primary PC as an initial smoke test. Only use a disposable Windows VM or
- a trusted package you deliberately want installed to verify the full path.** Send the diagnostic ZIP if WinGet output does
- not match the conservative parser. Test only on the real Windows PC; Linux tests
- use synthetic output. A network response and `winget show` are not evidence
- that the publisher or installer is trustworthy.
+Close and back up `D:\deepthort\state`; install the full v39 ZIP over
+`D:\deepthort` without deleting `models`, `state`, `cache`, `node_modules`,
+`reference` or user projects. Open F1 and the new preference checkboxes.
+Approve a disposable project's plan containing a missing recognised tool;
+confirm no DeepThorT per-tool dialog, normal Windows elevation when required,
+serial queue logs and persistent status. Test opt-out and upgrades separately.
+Export a diagnostics ZIP for any failure. Use a VM for unknown packages.

@@ -20,7 +20,7 @@ class OfficialSourceTests(unittest.TestCase):
     def test_no_model_url_or_unrecognized_package_allowed(self):
         for payload in ('https://untrusted.invalid/setup.exe','Godot.exe','',None):
             self.assertIsNone(official_source(payload))
-    def test_new_category_advice_is_non_installing(self):
+    def test_new_category_advice_is_curated_for_routine_installation(self):
         inventory = {'tools': []}
         examples = [('write a novel and EPUB', 'Pandoc'),
                     ('make a podcast audio recording', 'Audacity'),
@@ -31,7 +31,7 @@ class OfficialSourceTests(unittest.TestCase):
             with self.subTest(request=request):
                 row = {x['name']: x for x in plan_tool_needs(request,inventory)}
                 self.assertIn(expected,row)
-                self.assertFalse(row[expected]['proposed_install'])
+                self.assertTrue(row[expected]['proposed_install'])
 
 @unittest.skipUnless(os.name == 'nt' or os.environ.get('DISPLAY'), 'Tk display required')
 class DesktopHelpTests(unittest.TestCase):

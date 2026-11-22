@@ -25,7 +25,7 @@ INSTALLER_REQUIRED = {'msi', 'msix', 'exe', 'inno', 'nullsoft', 'burn', 'wix', '
 VERSION_PATTERN = re.compile(r'[A-Za-z0-9][A-Za-z0-9._+\-]{0,80}\Z')
 
 
-def prepare_reviewed_install(inspection: dict, *, now: datetime | None = None, which=None) -> dict:
+def prepare_reviewed_install(inspection: dict, *, now: datetime | None = None, which=None, standing_policy: bool = False) -> dict:
     """Return an exact-version fixed command proposal; never execute it.
 
     Fails closed when inspection is missing, stale, inconclusive, or unpinned.
@@ -82,12 +82,15 @@ def prepare_reviewed_install(inspection: dict, *, now: datetime | None = None, w
     output_sha = inspection.get('output_sha256')
     if not isinstance(output_sha, str) or not SHA256_PATTERN.fullmatch(output_sha):
         raise ValueError('Inspection output digest is missing or malformed')
-    # No download, upgrade or elevation bypass; use system WinGet hashing.
+    # Never bypass UAC, WinGet source checks or installer hash verification.
+    # A standing policy permits upgrading the *same* exact inspected package ID;
+    # no --silent, --force, --scope=user, --all or arbitrary installer args.
     argv = [_winget(which), 'install', '--id', package_id,
-            '--exact', '--version', version, '--source', 'winget',
-            '--scope', 'user', '--no-upgrade',
-            '--accept-source-agreements', '--accept-package-agreements',
-            '--disable-interactivity']
+            '--exact', '--version', version, '--source', 'winget']
+    if not standing_policy:
+        argv += ['--scope','user','--no-upgrade']
+    argv += ['--accept-source-agreements', '--accept-package-agreements',
+             '--disable-interactivity']
     details = {'schema':'deepthort-reviewed-install-plan-v1',
                'package_id':package_id,'name':name,'claimed_publisher':publisher,
                'version':version,'publisher_url':publisher_url,
@@ -97,7 +100,9 @@ def prepare_reviewed_install(inspection: dict, *, now: datetime | None = None, w
                'license_url':inspection.get('license_url',''),
                'inspected_at':raw_time,'inspection_output_sha256':output_sha.lower(),
                'argv':argv,'approval':False,'install_started':False,
-               'scope':'user (requested; WinGet installer may still request elevation)',
+               'standing_policy_mode':bool(standing_policy),
+               'scope':('installer default; Windows UAC remains active' if standing_policy else
+                        'user (requested; WinGet installer may still request elevation)'),
                'notes':'Unverified community catalog metadata. User must independently review the publisher and license.'}
     details['plan_sha256'] = hashlib.sha256(
         json.dumps(details,sort_keys=True,ensure_ascii=False).encode('utf-8')).hexdigest()
@@ -108,7 +113,7 @@ def exact_consent_phrase(plan: dict) -> str:
     return 'INSTALL ' + plan['package_id']
 
 
-def approval_receipt(plan: dict, *, consent: str, status: str) -> dict:
+def approval_receipt(plan: dict, *, consent: str|None, status: str, authorization: str = 'typed') -> dict:
     """Persist a bounded audit of the one command, not reusable permission."""
     if not isinstance(plan,dict) or plan.get('schema') != 'deepthort-reviewed-install-plan-v1':
         raise ValueError('Invalid installation plan')
@@ -118,14 +123,27 @@ def approval_receipt(plan: dict, *, consent: str, status: str) -> dict:
     if plan.get('plan_sha256')!=expected_digest:
         raise ValueError('Reviewed installation plan changed after preview')
     fixed_args=['install','--id',plan['package_id'],'--exact',
-                '--version',plan['version'],'--source','winget','--scope','user',
-                '--no-upgrade','--accept-source-agreements',
-                '--accept-package-agreements','--disable-interactivity']
+                '--version',plan['version'],'--source','winget']
+    if plan.get('standing_policy_mode') is True:
+        fixed_args += ['--accept-source-agreements',
+                       '--accept-package-agreements','--disable-interactivity']
+    elif plan.get('standing_policy_mode') is False:
+        fixed_args += ['--scope','user','--no-upgrade',
+                       '--accept-source-agreements','--accept-package-agreements',
+                       '--disable-interactivity']
+    else:
+        raise ValueError('Unrecognized installation permission mode')
     if (not isinstance(plan.get('argv'),list) or len(plan['argv'])!=len(fixed_args)+1
         or plan['argv'][1:]!=fixed_args):
         raise ValueError('Reviewed install command differs from fixed allowed arguments')
-    if consent != exact_consent_phrase(plan):
-        raise ValueError('Installation requires a fresh exact typed approval')
+    if authorization == 'typed':
+        if plan.get('standing_policy_mode') is not False or consent != exact_consent_phrase(plan):
+            raise ValueError('Installation requires a fresh exact typed approval')
+    elif authorization == 'explicit_install_click':
+        if plan.get('standing_policy_mode') is not True or consent is not None:
+            raise ValueError('Installation button permission does not match standing-policy plan')
+    else:
+        raise ValueError('Invalid authorization source')
     if status not in {'approved_not_started','launch_requested','running','completed_unverified','failed','cancelled','interrupted_unverified'}:
         raise ValueError('Invalid install state')
     return {'schema':'deepthort-reviewed-install-audit-v1',
@@ -137,7 +155,7 @@ def approval_receipt(plan: dict, *, consent: str, status: str) -> dict:
             'manifest_installer_sha256':plan['manifest_installer_sha256'],
             'plan_sha256':plan['plan_sha256'],
             'argv':list(plan['argv']),'status':status,
-            'reusable_approval':False,
+            'reusable_approval':False,'authorization_source':authorization,
             'observed_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),
             'publisher_verified_independently':False,
             'installation_verified_independently':False}

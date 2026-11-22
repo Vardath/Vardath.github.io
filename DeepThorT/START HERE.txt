@@ -1,3 +1,32 @@
+DEEPTHORT DESKTOP v39 — ROUTINE TOOL AUTONOMY, ONNX ONLY
+
+This update honours the preference to avoid confirmation for every routine
+software action. By default, Computer & Tools > Automatically manage routine
+project tools and Allow tool upgrades are enabled. These visible settings
+persist in state and may be switched off independently.
+
+After you approve a genuine project build plan, DeepThorT can install/upgrade
+recognized required tools using known fixed WinGet package IDs. No repeated
+DeepThorT approval dialog is required. It does not bypass Windows UAC, conceal
+system elevation requests, execute arbitrary model-generated installers or
+perform unapproved uninstalls. Unknown software needs an exact-ID inspection
+and an explicit click on Install inspected package; the consent typing is
+omitted only when standing routine management is enabled. A package may still
+be untrustworthy: WinGet metadata alone is not publisher verification.
+
+Results and pending/interrupted states are saved in state/last-routine-software.json
+and routine-software-history.json. A successful WinGet exit is NOT a confirmed
+working application. Existing plan/file-write and generated-script safeguards
+remain; see NEXT_STEPS.md for expanded project-scoped autonomy.
+
+The model remains local Qwen ONNX. Nothing in this release uses Scratch Chat or
+an online inference service. F1 opens USER_GUIDE.html.
+
+Close DeepThorT, back up D:\deepthort\state and extract this entire ZIP over
+D:\deepthort while preserving models, state, projects, cache, reference,
+node_modules and custom files. Real WinGet / Windows UAC acceptance remains
+unverified until your tests. No installer was run during Linux CI tests.
+
 DEEPTHORT DESKTOP v38 — ONNX model, supervised exact package installation
 
 DeepThorT's sole local conversational/coding inference is Qwen via ONNX. This
