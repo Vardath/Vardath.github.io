@@ -27,6 +27,8 @@ def audit(manifest_path, train_path, validation_path, test_path):
         raise ValueError("Source is not explicitly approved under an admitted license")
     results = {}
     seen_ids, seen_dialogues = set(), set()
+    prompt_splits = {}
+    family_splits = {}
     split_signatures = []
     token_index = defaultdict(set)
     for split, path in (("train", train_path), ("validation", validation_path), ("test", test_path)):
@@ -57,6 +59,21 @@ def audit(manifest_path, train_path, validation_path, test_path):
             if normalized in seen_dialogues:
                 raise ValueError(f"{split}: cross-split or within-split duplicate dialogue")
             seen_dialogues.add(normalized)
+            # Preserve upstream conversation and template-family isolation.
+            for field in ("conversation_id", "source_conversation_id", "template_family_id"):
+                family = record.get(field)
+                if family is not None:
+                    if not isinstance(family, str) or not family.strip():
+                        raise ValueError(f"{split}: invalid {field}")
+                    key = (field, family.strip())
+                    previous = family_splits.setdefault(key, split)
+                    if previous != split:
+                        raise ValueError(f"{split}: {field} leaks across {previous} split")
+            # Prevent distinct answers to identical held-out user prompts.
+            prompt = tuple(canonical(m["content"]) for m in messages if m["role"] == "user")
+            previous = prompt_splits.setdefault(prompt, split)
+            if previous != split:
+                raise ValueError(f"{split}: duplicate user prompt across {previous} split")
             # Exact indexed candidate retrieval: any positive multiset Jaccard
             # pair shares at least one token. Avoid comparing unrelated records.
             tokens = Counter(re.findall(r"\w+", canonical(" ".join(m["content"] for m in messages))))
