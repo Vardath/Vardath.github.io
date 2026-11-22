@@ -1,3 +1,39 @@
+# DeepThorT v40 — approved project work without repeated file/test prompts (23 November 2026)
+
+**Sole coding model: local Qwen2.5-Coder ONNX.** Original JANUS/Sentinel, gaming
+limits, eight-tab interface, Windows launcher and installed state are preserved.
+
+An explicit approval of a draft, legacy plan or hierarchical milestone may now
+issue a durable, exact-file **project authority grant** when Work queue >
+**Continue approved file steps and fixed tests without repeated prompts** is
+enabled (default on, visible and revocable). Each grant binds the job ID,
+project directory, full planned file list, plan digest and pre-write SHA-256
+fingerprints. Source writes still use atomic replace and timestamped backups.
+Changed files, protected paths, revoked/expired/missing grants, or incompatible
+plans fail closed and return to manual file review.
+
+After every planned file is saved and its SHA-256 recorded, DeepThorT may run a
+known local Python/Godot/X4/npm/.NET verification command without another
+dialog, provided the project, file receipts, queue, JANUS, game and process
+gates permit it. These tests execute project code with your normal Windows
+user permissions; they are not sandboxed. Tests running before a preference
+change or grant revocation may need to be stopped separately. A failed test
+requires inspection, not a blind automatic retry.
+
+Unknown software installs, arbitrary learned recipes, generated script
+execution outside fixed tests, destructive operations and publishing do NOT
+inherit this grant. The separate v39 curated WinGet routine-tool policy and
+native Windows UAC remain unchanged.
+
+**Do not replace or delete the existing `DeepThorT.exe`, ONNX models, state,
+node_modules, references, caches or projects.** Install v40 as a source overlay
+over an existing v39 Windows installation unless a separately verified full
+bundle is provided. See `PROJECT_CONTEXT_V40.md` and
+`tests/test_project_authority_v40.py`. Live Windows execution and genuine
+game acceptance remain unverified until the owner's tests.
+
+---
+
 # DeepThorT v39 — routine tools without repeated prompts (23 November 2026)
 
 **Inference remains local Qwen through ONNX.** JANUS, Sentinel, the Windows launcher,

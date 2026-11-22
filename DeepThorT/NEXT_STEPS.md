@@ -1,3 +1,57 @@
+# DeepThorT next steps — v40 (23 November 2026)
+
+**Current source:** local Qwen ONNX, JANUS/Sentinel, v39 curated routine
+WinGet tool management plus **v40 job-scoped reversible file saves and fixed
+test execution** after one explicit project-plan approval. Toggle in Work queue
+(default enabled); revoke any selected job. Native Windows UAC remains active.
+See `PROJECT_CONTEXT_V40.md` for exact scope and Windows test procedure.
+
+## Implemented in this pass
+
+- Durable exact-job grants with project directory, plan SHA, exact file paths,
+  existing-target fingerprints, 30-day lifetime and revocation.
+- Atomic project writes with timestamped backups, saved-artifact SHA receipts,
+  conflict rejection and fallback to manual review for unsafe files.
+- Fixed-profile local testing after all recorded files match on disk; no
+  per-test dialog, no model-made shell invocation and no blind failure retry.
+- Explicit game, queue, JANUS, running-tool and active-model gating.
+- Existing milestone and user-approval boundaries remain unchanged.
+
+## Highest priorities remaining
+
+1. **Task graph v41:** persistent requirement -> files -> actual build -> tests
+   -> bounded diagnosis -> repair -> retest; classify blocked/failed, prevent
+   duplicate actions after restart, and make progress evidence prominent.
+2. **Git/version snapshots and undo:** user-visible diffs, per-file and
+   checkpoint rollback, multi-file transaction repair, and safe invalidation
+   of authorization when the scope or selected project changes.
+3. **Post-install tool verification:** locate the executable, inspect real
+   version and capability, reconcile PATH changes/restarts, and link verified
+   tools to the waiting project task rather than trusting a WinGet exit code.
+4. **True dependency resolution:** infer engines/formats/versions from large
+   specifications, compare project pins and installed software; move beyond
+   simple keywords and fixed WinGet catalog.
+5. **Trusted source acquisition:** official publisher identity, independent
+   Authenticode/signature provenance, bounded quarantine, Defender checks,
+   safe rollback and audited install/uninstall boundaries. Unknown software
+   must not run just because a model says to download it.
+6. **Versioned creation adapters and GUI automation:** Godot/Android, Blender,
+   X4/RimWorld, books, graphics, audio/video, CAD; confirmed window identity
+   and cancel/inspect controls rather than guessing screen coordinates.
+7. **End-to-end acceptance:** actual APK in emulator/device, playable game,
+   mod save compatibility, media rendering and source-backed requirements.
+8. **Windows and CPU benchmarks:** test ONNX inference speed, UAC, installation
+   controls, v40 grants, v39 catalogue, pause/restart and 20% resource limits.
+   Linux CI is NOT proof of these hardware behaviors.
+
+**Hard limits:** v40 still needs one approval for each separate milestone,
+does not automatically repair arbitrary failures, and does not sandbox
+generated project tests. No real Windows game/autonomous-build acceptance has
+been demonstrated. Preserve `state`, `models`, `reference`, `cache`,
+`node_modules`, original executable and all user projects during upgrade.
+
+---
+
 # DeepThorT next steps — v39 (23 November 2026)
 
 **Current runtime:** local Qwen ONNX with JANUS coordinator/Sentinel watchdog.

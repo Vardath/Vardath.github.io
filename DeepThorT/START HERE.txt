@@ -1,3 +1,26 @@
+DEEPTHORT DESKTOP v40 — PROJECT-BOUND AUTONOMOUS FILE AND TEST STAGES
+
+The same local Qwen ONNX/JANUS/Sentinel application, not Scratch Chat.
+A single approved project plan or milestone now grants exact, reversible
+file saves and fixed local verification tests when Work queue >
+Continue approved file steps and fixed tests without repeated prompts
+is enabled. This visible preference is ON by default, as requested.
+Each grant is limited to one already approved job, its exact project
+files, original SHA-256 state and a 30-day expiry. Cancelled/changed
+paths require manual review. Use Revoke selected job automation to stop
+future automatic actions, or Pause queue / Stop tool to stop new/running work.
+
+Tests execute code from the selected project with your Windows user
+permissions; they are not sandboxed. No claim of finished gameplay is made
+just because a local test exits successfully. This pass does not silently
+execute arbitrary downloaded tools or scripts. Windows UAC is unaffected.
+
+Overlay source files on D:\\deepthort while CLOSED; retain existing v39
+DeepThorT.exe, models, state, cache, reference, node_modules and projects.
+Back up state first. Read PROJECT_CONTEXT_V40.md for the acceptance test.
+An overlay is not a standalone installer or replacement full model bundle.
+Windows hardware/runtime acceptance is still required.
+
 DEEPTHORT DESKTOP v39 — ROUTINE TOOL AUTONOMY, ONNX ONLY
 
 This update honours the preference to avoid confirmation for every routine

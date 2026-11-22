@@ -51,7 +51,7 @@ class RealGuiQueueTests(unittest.TestCase):
      app._approve_conversation_plan()
      records=app.jobs.items(str(proj));self.assertEqual(len(records),1)
      job=records[0];ident=job['id']
-     app.auto_save_allowed.add(ident)
+     self.assertTrue((d/'state'/'project-grants'/f'job-{ident}.json').is_file())
      def tick(timeout=8):
       end=time.monotonic()+timeout
       while time.monotonic()<end:
@@ -69,7 +69,7 @@ class RealGuiQueueTests(unittest.TestCase):
      self.assertEqual((proj/'main.py').read_text(),'print("hello")\n')
      self.assertTrue((proj/'test_main.py').is_file())
      self.assertEqual(app.jobs.get(ident)['state'],'waiting_verification')
-     app.job_tree.selection_set(str(ident));app._verify_build()
+     app._project_work_once()
      for state in tick():
       if state in ('complete','needs_input'):break
      self.assertEqual(app.jobs.get(ident)['state'],'complete')

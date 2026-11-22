@@ -202,6 +202,20 @@ class JobStore:
                 'Legacy unapproved build: discuss a plan in Chats and explicitly approve it',allowed=('queued',))
         return len(entries)
 
+    def pending_verifications(self, limit: int = 40) -> list[dict]:
+        """Find approved builds awaiting real tests across all project workspaces.
+
+        This is a durable query; the GUI separately checks an explicit active
+        project-scoped grant, exact source fingerprints and process/game gates.
+        """
+        if not 1 <= limit <= 100:
+            raise ValueError('Verification query limit must be 1..100')
+        with self._conn() as db:
+            db.row_factory = sqlite3.Row
+            return [dict(row) for row in db.execute(
+                "SELECT * FROM jobs WHERE mode='build' AND state='waiting_verification' "
+                "ORDER BY id LIMIT ?", (limit,))]
+
     def pending_conversation_jobs(self):
         """Legacy pre-approval messages for lossless, idempotent v10.4 migration."""
         with self._conn() as db:

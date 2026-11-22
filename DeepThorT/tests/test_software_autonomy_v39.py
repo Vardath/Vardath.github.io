@@ -98,7 +98,8 @@ class DesktopIntegrationTests(unittest.TestCase):
         obj=MagicMock()
         obj._autonomy_policy=default_policy()
         obj._auto_tool_history={};obj._auto_tool_queue=[];obj._auto_tool_active=None
-        obj._auto_tool_waiting=[];obj.project=Path('/tmp/example-project')
+        obj._auto_tool_waiting=[];obj._auto_verification_in_flight=None
+        obj.project=Path('/tmp/example-project')
         obj.inventory={'tools':[]};obj.queue_paused=False
         obj._quitting=False;obj.install_process=None;obj.tool_process=None
         obj.disk_gate.gaming.return_value=False
@@ -150,11 +151,12 @@ class DesktopIntegrationTests(unittest.TestCase):
     def test_automatic_operation_defers_for_game_pause_or_low_disk(self):
         from desktop_app import DeepThorTDesktop
         plan=make_plan('FreeCAD','upgrade','/tmp/example-project',which=WHICH)
-        for kind in ('game','pause','low-disk','already-running'):
+        for kind in ('game','pause','low-disk','already-running','auto-verification'):
             obj=self.mockapp();obj._auto_tool_queue=[plan]
             if kind=='game':obj.disk_gate.gaming.return_value=True
             if kind=='pause':obj.queue_paused=True
             if kind=='already-running':obj.tool_process=MagicMock();obj.tool_process.poll.return_value=None
+            if kind=='auto-verification':obj._auto_verification_in_flight=99
             with self.subTest(kind=kind),tempfile.TemporaryDirectory() as temp, \
                  patch('desktop_app.STATE',Path(temp)), \
                  patch('desktop_app.shutil.which',side_effect=WHICH), \

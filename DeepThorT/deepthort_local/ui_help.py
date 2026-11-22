@@ -40,6 +40,8 @@ TOOLTIPS = {
     'Resume selected': 'Retry or resume a selected paused/blocked job, subject to its current permissions.',
     'Review legacy plan': 'Review an older build plan with the same explicit-approval safeguards.',
     'Verify build': 'Run a specifically approved static check or project test; a pass is not automatically proof of gameplay.',
+    'Continue approved file steps and fixed tests without repeated prompts': 'For a newly approved build plan, permit exact project-file writes with backups and fixed local tests. Project tests execute with your Windows user rights; turn off BEFORE plan approval for individual reviews.',
+    'Revoke selected job automation': 'Revoke further automatic file writes and tests for the selected approved build. Already-running tests may need Stop tool in Processes.',
     'Load prompt into editor': 'Copy the selected queued job request back to the chat editor for editing.',
     'Apply approved change': 'After reviewing the proposed file, write the approved content with backup and workspace checks.',
     'Add task': 'Create a durable manual task for the selected project.',
