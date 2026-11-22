@@ -11,6 +11,14 @@ from capability.bpe import ByteBPE
 def encode_assistant_labels(record, tokenizer):
     text = record["text"]
     spans = record["assistant_char_spans"]
+    endings = record.get("assistant_termination_char_spans", [])
+    if not isinstance(endings, list) or (endings and len(endings) != len(spans)):
+        raise ValueError("Invalid assistant termination spans")
+    for start, end in endings:
+        if not (isinstance(start, int) and isinstance(end, int)
+                and text[start:end] == "<|im_end|>"):
+            raise ValueError("Invalid assistant termination marker")
+    spans = sorted(spans + endings, key=lambda pair: pair[0])
     if not isinstance(text, str) or not isinstance(spans, list):
         raise ValueError("Invalid serialized conversation")
     byte_spans = []
