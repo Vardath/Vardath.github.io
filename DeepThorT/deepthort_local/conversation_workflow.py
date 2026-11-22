@@ -10,6 +10,7 @@ import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
 from .flight_recorder import record
+from .specification_library import MAX_STORED_REQUEST_CHARS
 
 VALID_MODES = {'chat', 'draft_plan'}
 VALID_STATES = {'pending', 'running', 'waiting_sources', 'responded', 'failed', 'cancelled'}
@@ -64,7 +65,7 @@ class ConversationStore:
     def submit(self, chat_id, project, mode, prompt, attachments=(), source_job_id=None):
         if mode not in VALID_MODES or not isinstance(prompt,str) or not prompt.strip() or not chat_id:
             raise ValueError('Invalid conversation request')
-        if len(prompt) > 250_000: raise ValueError('Conversation prompt exceeds storage limit')
+        if len(prompt) > MAX_STORED_REQUEST_CHARS: raise ValueError(f'Specification exceeds local storage safety ceiling ({MAX_STORED_REQUEST_CHARS:,} characters)')
         if len(attachments)>8: raise ValueError('Too many attachments')
         with self._db() as db:
             if source_job_id is not None:
