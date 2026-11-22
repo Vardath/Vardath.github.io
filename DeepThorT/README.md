@@ -1,3 +1,39 @@
+# DeepThorT v28 — requirement-linked source contracts and real test-output guards (22 November 2026)
+
+**Source base:** v27. Original window layout, offline Qwen ONNX model and resource profile, JANUS/Sentinel, original user requirements, milestone approval, stop/close chat controls, and Windows launcher are unchanged.
+
+- `deepthort_local/acceptance_contracts.py` adds explicit, auditable model-declared Python `provides:` / `uses:` and test `verifies: REQ-N` intentions, always linked to actual source requirement labels. Missing labels, unsafe/non-test verification claims or missing planned providers are rejected. Present Python source/test files are parsed without importing/executing them. An absent planned file remains pending. Unlinked labelled requirements and ambiguous source phrases remain visible rather than being treated as implemented or silently interpreted.
+- Hierarchical roadmap creation checks contract declarations; approved verification reconciliation blocks confirmed missing exports/imports or empty test stubs. Repair requires a fresh approved test. The existing milestone approval dialog reports counts without adding any controls.
+- `deepthort_local/verification_evidence.py` inspects bounded output from user-approved verification operations. An exit-zero `unittest discover` or `dotnet test` with **zero evidenced passing tests** is not accepted. Godot editor loading is explicitly labelled editor validation, not gameplay proof. Approved check summaries are hash-linked to existing file snapshots; older snapshots remain readable.
+- Large specification storage, exact source sections, 40 planning attempts, milestone limits and explicit approvals are unchanged. No built-in X4 plan, fake acceptance tests, cloud dependencies or autonomous process permissions were added.
+
+Read `ACCEPTANCE_CONTRACTS.md` for the read-only audit command, precise evidence levels and remaining limitations.
+
+**Validation:** 18 focused v28 tests pass. Full-suite results are reported separately after a complete run. Live Windows ONNX/X4 gameplay/Android validation is not established by local tests.
+
+**Install:** Close DeepThorT, extract v28 over `D:\deepthort`, retain the existing `state`, `models`, `node_modules`, `cache`, `reference` and game/project folders. Back up `state` first.
+
+---
+
+# DeepThorT v27 — conservative semantic reconciliation and fresh verification evidence (22 November 2026)
+
+**Source base:** v26, preserving the original desktop interface, Windows launcher, local ONNX model, JANUS/Sentinel, state and approval controls. No external service or new model dependency was added.
+
+- New `semantic_reconciliation.py` identifies narrowly provable conflicts between explicit mandatory requirements and impossible matching numeric bounds in the *original exact specification*. It rejects a new hierarchical roadmap when these source demands contradict, rather than inventing a resolution or approving both.
+- Explicit `REQ-N: ...; depends-on: REQ-M` declarations are validated for unknown references, duplicate IDs and cycles. No semantic dependencies are guessed from prose. Model-declared **file** dependencies retain the v26 scheduling behavior.
+- An inspectable acceptance checklist preserves exact source wording and anchored offsets, labels each criterion `unverified`, and does not mistake a linked plan file for successful implementation.
+- Read-only Python AST inspection flags syntax errors or missing local exports in files actually present in the approved workspace. This check never executes code and explicitly distinguishes pending sources and uncheckable external/dynamic APIs.
+- On desktop-approved verification exit 0, SHA-256 fingerprints of the actual planned files are attached to the job's verification result. Edited/deleted sources invalidate that evidence; verified milestones and dependent later stages are conservatively demoted and require a fresh explicitly approved test. Legacy verification records remain supported but cannot retroactively gain snapshots.
+- Broken static local Python interfaces return an approved job to `waiting_verification` instead of silently accepting a previously green test. A repair requires re-running the test, not merely changing files.
+- A read-only command-line inspector is available: `python -m deepthort_local.semantic_reconciliation requirements <file>` and `python -m deepthort_local.semantic_reconciliation interfaces <project> <plan.json>`.
+- Full specification storage, incremental section review, 40 model attempts and immediate stop on validated plans are unchanged. No hardcoded X4 mod plan has been introduced.
+
+**Verification:** 311 tests passed in the local Python/Xvfb regression suite, including 32 new v27 tests. ZIP integrity and launcher comparison were checked. Windows ONNX runtime, real X4 gameplay and Android compilation are **not** verified by these results. See `SEMANTIC_RECONCILIATION.md` for exact scope and remaining limitations.
+
+**Install:** Exit DeepThorT, extract v27 over `D:\deepthort`; keep `state`, `models`, `node_modules`, `cache`, `reference` and projects. Back up `state` before upgrades. Do not treat acceptance candidates or static checks as proof that the complete game works.
+
+---
+
 # DeepThorT v26 — Pass 5, requirement candidates and explicit dependency intelligence (22 November 2026)
 
 **Source base: v25.** This pass retains the existing Windows launcher, desktop geometry, local ONNX model and resource caps, JANUS/Sentinel, 40 planning attempts, source-fingerprint guards and approval/verification workflow.
