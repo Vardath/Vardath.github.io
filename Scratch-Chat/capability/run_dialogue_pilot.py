@@ -50,7 +50,7 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
     metrics = train(labeled / "train.jsonl", labeled / "validation.jsonl",
                     checkpoint, vocab_size=vocab_size, steps=steps,
                     width=width, layers=layers, heads=heads,
-                    context_size=context_size, seed=seed)
+                    context_size=context_size, seed=seed, tokenizer_path=tokenizer_path)
     report = {"manifest": str(manifest_path), "source_id": manifest["source_id"],
               "source_revision": manifest["revision"],
               "serialized": serialized_provenance, "tokenizer": tokenizer_info,
