@@ -1,3 +1,21 @@
+# DeepThorT v26 — Pass 5, requirement candidates and explicit dependency intelligence (22 November 2026)
+
+**Source base: v25.** This pass retains the existing Windows launcher, desktop geometry, local ONNX model and resource caps, JANUS/Sentinel, 40 planning attempts, source-fingerprint guards and approval/verification workflow.
+
+- Added exact-source, hash-checked candidate requirement IDs to hierarchical roadmaps. Explicit list entries and headings are distinguished from retained unstructured text; no source is shortened or discarded. Candidate-to-file links mean **review scope**, not semantic proof of correct implementation.
+- Model-authored descriptions can optionally declare `; depends-on: path/to/file.ext`; missing or self-referential paths and cycles are rejected, and roadmap milestones are ordered topologically without inventing dependencies. The section-review prompt teaches this optional syntax. Existing v25 roadmaps remain readable.
+- Added a read-only `python -m deepthort_local.planning_metrics PATH_TO_STATE_LOGS` performance report for earlier locally logged inference/planning activity; no user prompts, generated answers, secrets or paths are included in the reported metrics.
+- Optimized the file dependency sorter for thousands of model-authored proposals using a stable heap-based topological algorithm. **This does not prove any speed improvement in actual local-model inference.**
+- No new interface elements, cloud calls, autonomous execution permissions or fake success/fallback plans.
+
+Implementation details, measured historical reference data, limitations, and the next development priorities: `PLANNING_INTELLIGENCE.md`.
+
+**Verification:** Tests run locally under an X virtual display. Actual Windows inference, X4 gameplay, Android compilation and GitHub Actions CI remain independently unverified until checked on the target environment.
+
+**Installation:** Close DeepThorT, extract this release over `D:\deepthort`, and preserve `state`, `models`, `node_modules`, `cache`, `reference` and all project directories. Existing saved specifications and roadmaps remain intact.
+
+---
+
 # DeepThorT v25 — hierarchical project milestones with exact source traceability (22 November 2026)
 
 **Source base:** v24. The original interface, Windows launcher, Qwen2.5-Coder ONNX model, gaming resource limits, JANUS/Sentinel, chat cancellation, user confirmation and stored state remain intact. This is Pass 4 of the Capability Library/development roadmap.
