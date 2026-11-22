@@ -64,7 +64,8 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         raise ValueError("Train/validation sequence contamination")
     immutable = {"train_sha256": file_hash(train_path),
                  "validation_sha256": file_hash(validation_path),
-                 "config": asdict(cfg), "lr": lr, "seed": seed,\n                 "sampling": "seeded-shuffle-per-epoch-v1"}
+                 "config": asdict(cfg), "lr": lr, "seed": seed,
+                 "sampling": "seeded-shuffle-per-epoch-v1"}
     random.seed(seed)
     torch.manual_seed(seed)
     model = ModernScratchTransformer(cfg)
@@ -114,7 +115,10 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
     return {"steps": steps, "validation_assistant_loss": metric,
             "parameters": model.parameter_count, "train_examples": len(train),
             "validation_examples": len(valid),
-            "validation_supervised_tokens": supervised_tokens,\n            "train_examples_visited": min(steps, len(train)),\n            "train_epochs_completed": steps // len(train),\n            "sampling": "seeded-shuffle-per-epoch-v1"}
+            "validation_supervised_tokens": supervised_tokens,
+            "train_examples_visited": min(steps, len(train)),
+            "train_epochs_completed": steps // len(train),
+            "sampling": "seeded-shuffle-per-epoch-v1"}
 
 
 if __name__ == "__main__":
