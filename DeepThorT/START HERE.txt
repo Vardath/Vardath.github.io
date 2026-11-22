@@ -1,3 +1,55 @@
+DEEPTHORT DESKTOP v34 — supervised execution robustness and crash-state diagnostics
+
+Based on v33: original UI, JANUS/Sentinel, offline Qwen, model settings and all approval gates retained.
+New learned-tool actions are pinned to the reviewed executable/script/input/output state.
+Changed queued inputs are blocked, not silently launched. Untrusted scripts are NOT sandboxed.
+JANUS tool runtime 60 min, verification 120 min, 8 MB process-log ceiling and 150 MB disk-free check.
+Approved scripts still require separate SOURCE WRITE and COMMAND EXECUTION approvals.
+Export diagnostics now includes read-only state database health.
+See APPROVAL_SAFETY_V34.md for tests, limitations, and recovery steps.
+Fully close the app, back up state, extract into D:\deepthort; preserve models, state,
+node_modules, cache, reference and all project folders.
+
+DEEPTHORT DESKTOP v33 — supervised automation SCRIPT learning
+
+Based on v32. JANUS/Sentinel, offline ONNX Qwen, launcher, approval controls and
+window geometry retained. v32 CLI learning is still supported.
+
+Computer & Tools: Scan this computer → Investigate app… → Learn procedure…
+If Qwen returns a script candidate, the FIRST Run learned procedure… reviews all
+source and asks permission to WRITE ONE FILE, without running the application.
+Click Run learned procedure… AGAIN to separately approve the exact command.
+No automatic execution. Model-generated scripts run with your Windows permissions
+if you explicitly authorize the command: review them carefully.
+
+Exit before installing over D:\deepthort. Preserve state, models, cache,
+node_modules, references and projects. See TOOL_ACQUISITION.md and README.md.
+
+DEEPTHORT DESKTOP v32 — supervised application capability acquisition
+Based on v31, with the original launcher, local model, JANUS/Sentinel and approval gates.
+Computer & Tools: Scan this computer → Investigate app… (approve help) → Learn procedure…
+(wait for local Qwen candidate) → Run learned procedure… (approve exact command).
+Check the result through Run learned procedure… again. A zero-exit command alone is not verified.
+No automatically executed model-generated commands; no generic GUI app control.
+Install into D:\deepthort while preserving state, models, node_modules, cache, references and projects.
+See TOOL_ACQUISITION.md for details.
+
+DEEPTHORT DESKTOP v31 — X4/engine diagnostic evidence repair
+Original interface, launcher, local Qwen model and approval controls retained.
+Install into D:\deepthort without deleting state, models, reference, cache or projects.
+Select the relevant X4 extension. In Computer & Tools run Scan this computer and
+Inspect X4 sources, then Export diagnostics. The ZIP includes bounded PE source
+identifiers, readiness flags and blockers, not raw XML or private documents.
+No mod/gameplay or model inference is claimed verified by this release.
+See DIAGNOSTIC_INSPECTION_V31.md for details.
+
+DEEPTHORT DESKTOP v30 — local engine preflight and X4 source-link checks
+Preserves the v29 interface, local model, JANUS/Sentinel and existing approval controls.
+Start in D:\deepthort after preserving models/state/references/projects.
+Computer & Tools > Scan this computer shows real engine readiness. No tool is run automatically.
+Large original specifications remain intact; no mod/game behavior is claimed verified.
+For details, see ENGINE_ENVIRONMENT.md.
+
 DEEPTHORT DESKTOP v29 — engine-specific acceptance evidence
 
 Building on v28 with the same interface, installed local model, JANUS/Sentinel,

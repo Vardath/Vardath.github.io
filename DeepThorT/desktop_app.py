@@ -27,11 +27,13 @@ from urllib.request import ProxyHandler, Request, build_opener
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.capability_library import CapabilityLibrary, attach_capability_context
+from deepthort_local.tool_acquisition import ToolAcquisition
 from deepthort_local.specification_library import SpecificationIndex, generate_indexed_plan, MAX_STORED_REQUEST_CHARS
 from deepthort_local.hierarchical_planning import HierarchicalPlanStore
 from deepthort_local.semantic_reconciliation import capture_verified_sources
 from deepthort_local.verification_evidence import assess_verification, attach_verification
 from deepthort_local.engine_acceptance import audit_engine_project
+from deepthort_local.engine_environment import godot_executable
 from deepthort_local.large_input import imported_source, resolve_import
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
@@ -46,6 +48,8 @@ from deepthort_local.disk_gate import DiskGate
 from deepthort_local.job_queue import ChatRegistry, JobStore
 from deepthort_local.conversation_workflow import ConversationStore
 from deepthort_local.flight_recorder import record, install_crash_hooks, export_diagnostics
+from deepthort_local.diagnostic_evidence import (summarize_x4_report, summarize_inventory,
+    save_snapshot, read_snapshot, matches_project)
 from deepthort_local.process_metrics import Meter
 from deepthort_local.janus_engine import JanusStore
 from deepthort_local.janus_interface import addressed_to_janus, janus_state_reply
@@ -82,7 +86,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='27',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='34',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -137,6 +141,7 @@ class DeepThorTDesktop(tk.Tk):
         self.meter=Meter()
         self.client = LocalModelClient(STATE/'sessions.sqlite3')
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
+        self.tool_learning = ToolAcquisition(STATE/'tool_acquisition.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
@@ -156,6 +161,7 @@ class DeepThorTDesktop(tk.Tk):
         self.x4_reference_dir = ''
         self.x4_catalog_tool = ''
         self.x4_report = None
+        self._x4_report_project = None
         try:
             x4_settings=json.loads(self.x4_settings_file.read_text('utf-8'))
             if isinstance(x4_settings,dict):
@@ -360,6 +366,9 @@ class DeepThorTDesktop(tk.Tk):
         hwbar=ttk.Frame(hardware_tab);hwbar.pack(fill='x',pady=7)
         ttk.Button(hwbar,text='Scan this computer',command=self._refresh_inventory).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Check tools needed for prompt',command=self._plan_tools).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Investigate app…',command=self._investigate_tool).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Learn procedure…',command=self._draft_tool_procedure).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
         ttk.Button(xr,text='Choose X4 game folder…',command=self._choose_x4_game).pack(side='left',padx=3)
@@ -451,7 +460,26 @@ class DeepThorTDesktop(tk.Tk):
         try:
             status=local_server_status(timeout=.6)
             counts=self.jobs.count(self._project_key())
-            state={'model_pid':self.node.pid if self.node and self.node.poll() is None else None,
+            saved_x4 = read_snapshot(STATE/'last-x4-inspection.json')
+            if (self.x4_report and (getattr(self,'_x4_report_project',None)==str(self.project)
+                 or matches_project(saved_x4, self.project))):
+                x4_snapshot = summarize_x4_report(self.x4_report,
+                    game_dir=self.x4_game_dir, reference_dir=self.x4_reference_dir,
+                    project_dir=self.project)
+            elif matches_project(saved_x4, self.project):
+                x4_snapshot = saved_x4
+            else:
+                x4_snapshot = summarize_x4_report(None, game_dir=self.x4_game_dir,
+                    reference_dir=self.x4_reference_dir, project_dir=self.project)
+            saved_inventory = read_snapshot(STATE/'last-engine-inventory.json')
+            if self.inventory and matches_project(summarize_inventory(self.inventory),self.project):
+                inventory_snapshot = summarize_inventory(self.inventory)
+            elif matches_project(saved_inventory,self.project):
+                inventory_snapshot = saved_inventory
+            else:
+                inventory_snapshot = summarize_inventory(None)
+            state={'x4_source_inspection':x4_snapshot, 'engine_readiness_scan':inventory_snapshot,
+                   'model_pid':self.node.pid if self.node and self.node.poll() is None else None,
                    'model_ready':self.node_ready,'model_loading':self.node_loading,
                    'model_status':status,'active_job':self.active_job,
                    'queue_paused':self.queue_paused,'visible_project_jobs':counts,
@@ -1167,6 +1195,26 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                learning=self.tool_learning.learning_request(ident)
+                if learning:
+                    self.events.put(('conversation_stage',ident,
+                                     'Preparing approved local tool help for model-authored procedure'))
+                    source_prompt=self.tool_learning.learning_prompt(ident,self.janus)
+                    if cancelled():return
+                    self.events.put(('conversation_stage',ident,'Drafting UNVERIFIED tool procedure using local model'))
+                    response=self.client.chat(f'tool-learn-{ident}-{request["chat_id"]}',
+                                              source_prompt,max_tokens=768,visible_prompt=original)
+                    if cancelled():return
+                    recipe_id=self.tool_learning.propose_recipe(ident,response)
+                    if cancelled():return
+                    self.events.put(('conversation_reply',ident,
+                         f'LOCAL TOOL PROCEDURE CANDIDATE #{recipe_id} SAVED (NOT RUN).\n'
+                         f'Tool: {learning["name"]}\nGoal: {learning["goal"]}\n'
+                         'Computer & Tools → Run learned procedure… will first offer a full '
+                         'script review if code was proposed, then separately ask to approve '
+                         'execution. Procedure is not verified until a '
+                         'matching approved execution produces a checked artifact.'))
+                    return
                 paths=json.loads(request.get('attachments') or '[]')
                 # No Tk calls on background threads.
                 pictures=[x for x in paths if classify(x)=='image']
@@ -1195,7 +1243,9 @@ class DeepThorTDesktop(tk.Tk):
                     try:
                         discovery=self.capabilities.inspect_project(request['project'])
                         capability_evidence=self.capabilities.retrieval_context(
-                            request['project'],original,max_chars=1000)
+                            request['project'],original,max_chars=650)
+                        capability_evidence += self.tool_learning.context(
+                            request['project'],self.janus,original,max_chars=350)
                         record(STATE,'desktop','capability_discovery_completed',
                                request_id=ident,files_scanned=discovery['files_scanned'],
                                references_indexed=discovery['references_indexed'],
@@ -1442,7 +1492,9 @@ class DeepThorTDesktop(tk.Tk):
     def _verification_command(self,project):
         # Only deterministic local test entry points. No model-created shell commands.
         if (project/'project.godot').exists():
-            godot=shutil.which('godot.exe') or shutil.which('godot')
+            # Real file discovery: a registry install hint is not executable.
+            # This also supports a manually configured GODOT_EXECUTABLE path.
+            godot=godot_executable(tools=getattr(self,'inventory',None))
             if not godot:return None
             # Only use a test framework confirmed to exist in the project.
             # Otherwise report only editor load, not passing gameplay tests.
@@ -1847,9 +1899,12 @@ class DeepThorTDesktop(tk.Tk):
     def _refresh_inventory(self):
         self._show(self.machine_text,'Scanning computer hardware, drives and known program locations…')
         path=self.project
+        game_dir=self.x4_game_dir
+        reference_dir=self.x4_reference_dir
         def worker():
             try:
-                inventory=scan_computer(ROOT,path,include_gpu=not self.disk_gate.gaming())
+                inventory=scan_computer(ROOT,path,include_gpu=not self.disk_gate.gaming(),
+                    x4_game_dir=game_dir,x4_reference_dir=reference_dir)
                 self.events.put(('inventory',inventory))
             except Exception as exc:self.events.put(('inventory_error',str(exc)))
         threading.Thread(target=worker,daemon=True).start()
@@ -2044,6 +2099,181 @@ class DeepThorTDesktop(tk.Tk):
         summary='\n'.join(('Installed: ' if n['found'] else 'Missing: ')+n['name']+(' (can request installation)' if n['proposed_install'] else '') for n in needs)
         self._log('Project tool inventory checked; no software installed automatically.')
         messagebox.showinfo('Suggested local tools — advisory only',summary+'\n\nReview the Computer & Tools tab before approving any installation.')
+    # -------- Verified, supervised local application capability acquisition --------
+    def _available_learnable_tools(self):
+        if not isinstance(self.inventory,dict):
+            raise ValueError('Click Scan this computer first')
+        return self.tool_learning.discover(self.inventory.get('tools',[]))
+
+    def _select_learnable_tool(self):
+        found=self._available_learnable_tools()
+        if not found:
+            raise ValueError('No supported command-line applications with verified executable paths found')
+        names=[row['name'] for row in found]
+        choice=simpledialog.askstring('Choose local application',
+              'Available tools: '+', '.join(names)+'\n\nEnter a tool name exactly:',parent=self)
+        if choice is None:return None
+        name=next((n for n in names if n.casefold()==choice.strip().casefold()),None)
+        if not name:
+            raise ValueError('Select one of the listed, actually installed applications')
+        return name
+
+    def _investigate_tool(self):
+        if not self.project:
+            messagebox.showinfo('Project needed','Select the project in which this app will be used.',parent=self);return
+        try:
+            name=self._select_learnable_tool()
+            if name is None:return
+            evidence=self.tool_learning.probe_evidence(name,self.janus)
+            if evidence:
+                messagebox.showinfo(name+' local help (approved)',
+                    evidence['excerpt'][:1900]+'\n\nThis describes the interface only; no task was tested.',parent=self)
+                return
+            cmd=self.tool_learning.probe_command(name)
+            if self.disk_gate.gaming():
+                raise ValueError('Gaming priority: defer running tool help until the game is closed')
+            if not messagebox.askyesno('Approve local application investigation',
+                    'Run the installed app with its bounded command-line help flag?\n\n'
+                    'Project: '+str(self.project)+'\nCommand: '+subprocess.list2cmdline(cmd)+
+                    '\n\nThis starts a real local application; help output is untrusted documentation. '
+                    'No generated commands or project scripts will be run.\n\nApprove?',parent=self):return
+            ident=self.tool_learning.authorize_probe(name,self.project,self.janus,user_approved=True)
+            self._log(f'User approved {name} help discovery as JANUS action #{ident}.')
+            self.tabs.select(5)
+            self._show_janus_status()
+        except (ValueError,OSError,PermissionError,WorkspaceError) as exc:
+            messagebox.showwarning('Tool investigation unavailable',str(exc),parent=self)
+
+    def _draft_tool_procedure(self):
+        if not self.project or not self.current_chat:
+            messagebox.showinfo('Project/chat needed','Select a project and chat first.',parent=self);return
+        try:
+            name=self._select_learnable_tool()
+            if name is None:return
+            evidence=self.tool_learning.probe_evidence(name,self.janus)
+            if not evidence:
+                raise ValueError('Run Investigate app and let JANUS finish the help probe first')
+            goal=simpledialog.askstring('Learn a specific app capability',
+                    f'Describe what {name} should do in this project. '
+                    'DeepThorT will draft a candidate, NOT run it:',parent=self)
+            if goal is None:return
+            if not 5<=len(goal.strip())<=1000:
+                raise ValueError('Provide a concrete task (5–1000 characters)')
+            prompt=f'Learn to use {name} for: {goal.strip()}'
+            ident=self.conversations.submit(self.current_chat,self._project_key(),
+                                            'chat',prompt)
+            self.tool_learning.start_learning(ident,name,self.project,goal)
+            self._reload_chat()
+            self.reply_outcome=None
+            self._render_reply_notice()
+            self._log(f'Tool learning request #{ident} queued for local ONNX; no tool has run.')
+            self.tabs.select(0)
+        except (ValueError,OSError,PermissionError) as exc:
+            messagebox.showwarning('Cannot draft tool procedure',str(exc),parent=self)
+
+    def _approve_learned_script(self, review: dict) -> bool:
+        """Full, scrollable proposed SOURCE and diff, not a truncated yes/no box.
+
+        This modal approves writing one workspace file, never running it.
+        The separate command approval must happen on a later interaction.
+        """
+        dialog=tk.Toplevel(self)
+        dialog.title('Review UNTRUSTED generated automation script — write only')
+        dialog.transient(self)
+        w=max(490,min(1020,self.winfo_screenwidth()-100))
+        h=max(380,min(720,self.winfo_screenheight()-120))
+        dialog.geometry(f'{w}x{h}')
+        dialog.protocol('WM_DELETE_WINDOW',dialog.destroy)
+        ttk.Label(dialog,text=f'PROJECT FILE: {review["path"]} — NOT YET APPROVED OR RUN',
+                  wraplength=w-60).pack(anchor='w',padx=12,pady=(12,4))
+        ttk.Label(dialog,text='Review the entire generated source, including imports and file operations. '
+                  'An approved script may later execute with your user permissions. '
+                  'This dialog only writes the file; it does not execute it.',
+                  wraplength=w-60).pack(anchor='w',padx=12,pady=(0,8))
+        body=ttk.Frame(dialog);body.pack(fill='both',expand=True,padx=12,pady=4)
+        text=tk.Text(body,wrap='none',font=('Consolas',10),undo=False)
+        y=ttk.Scrollbar(body,orient='vertical',command=text.yview)
+        x=ttk.Scrollbar(body,orient='horizontal',command=text.xview)
+        text.configure(yscrollcommand=y.set,xscrollcommand=x.set)
+        text.grid(row=0,column=0,sticky='nsew')
+        y.grid(row=0,column=1,sticky='ns')
+        x.grid(row=1,column=0,sticky='ew')
+        body.grid_rowconfigure(0,weight=1);body.grid_columnconfigure(0,weight=1)
+        warning='\n'.join('- '+w for w in review.get('risk_warnings',[]))
+        text.insert('1.0','SCRIPT REVIEW — NOT SANDBOXED\n'+warning+
+                    '\n\nCOMPLETE PROPOSED SOURCE\n'+review['source']+
+                    '\n\nFILE CHANGE / BACKUP PREVIEW\n'+review['diff'])
+        text.configure(state='disabled')
+        approved=[False]
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12)
+        def consent():
+            approved[0]=True;dialog.destroy()
+        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right')
+        ttk.Button(buttons,text='Approve WRITE ONLY',command=consent).pack(side='right',padx=8)
+        dialog.grab_set()
+        self.wait_window(dialog)
+        return approved[0]
+
+    def _run_learned_procedure(self):
+        if not self.project:
+            messagebox.showinfo('Project needed','Choose the project before running an app recipe.',parent=self);return
+        try:
+            rows=self.tool_learning.recipes(self.project)
+            if not rows:
+                raise ValueError('No tool recipe candidates. Investigate an app and Learn procedure first.')
+            summary='\n'.join(f"#{r['id']} {r['name']}: {r['title']} [{r['status']}]" for r in rows[:14])
+            ident=simpledialog.askinteger('Select learned procedure',
+                  summary+'\n\nEnter the recipe ID to review / check:',parent=self,minvalue=1)
+            if ident is None:return
+            row=next((r for r in rows if r['id']==ident),None)
+            if row is None:raise ValueError('Recipe ID not found in selected project')
+            if row['action_id']:
+                result=self.tool_learning.reconcile(ident,self.project,self.janus)
+                if result['status'] in ('running_or_queued','artifact_produced','command_completed'):
+                    messagebox.showinfo('Learned app result',result['status']+'\n'+result['evidence'],parent=self)
+                    if result['status']=='running_or_queued':return
+            if self.tool_learning.script_needs_review(ident,self.project):
+                review=self.tool_learning.script_review(ident,self.project)
+                if not self._approve_learned_script(review):
+                    self._log(f'Generated script for recipe #{ident} NOT approved; no file or action changed.')
+                    return
+                dest=self.tool_learning.stage_script(ident,self.project,STATE/'backups',
+                                                      user_approved=True,
+                                                      expected_proposal_sha=review['proposal_sha'],
+                                                      expected_existing_sha=review['existing_sha'])
+                self._log(f'User approved the generated script file {dest.name} for recipe #{ident}; '
+                          'command execution still requires separate approval.')
+                messagebox.showinfo('Script staged — NOT executed',
+                     f'Approved source saved to {dest}.\n\n'
+                     'No application has run. Inspect the saved script, then choose '
+                     'Run learned procedure… again to review and authorize its command.',parent=self)
+                return
+            if self.disk_gate.gaming():
+                raise ValueError('Gaming priority: do not run this application while a game is active')
+            input_file=''
+            if '{{input}}' in row['args_json']:
+                input_file=simpledialog.askstring('Select recipe input',
+                       'Enter the relative path of an existing input file in the project:',parent=self)
+                if not input_file:return
+            preview=self.tool_learning.preview_recipe(ident,self.project,input_file=input_file)
+            if not messagebox.askyesno('Approve exact learned command',
+                f"UNVERIFIED model-proposed recipe #{ident}: {preview['title']}\n\n"
+                f"Purpose: {preview['purpose']}\n\n"
+                f"Project: {self.project}\n\nCommand:\n"
+                +subprocess.list2cmdline(preview['argv'])[:2500]+
+                f"\n\nExpected output: {preview['artifact'] or '(none; informational only)'}\n\n"
+                'This executes a REAL application with the exact command shown. '
+                'Project scripts could modify files. No shell is used. '
+                'Only approve code and projects you trust.\n\nAPPROVE?',parent=self):return
+            action=self.tool_learning.authorize_recipe(ident,self.project,self.janus,
+                             user_approved=True,input_file=input_file,
+                             expected_argv=preview['argv'])
+            self._log(f'Approved learned recipe #{ident} as JANUS process #{action}; output is not yet verified.')
+            self.tabs.select(5)
+            self._show_janus_status()
+        except (ValueError,OSError,PermissionError,WorkspaceError) as exc:
+            messagebox.showwarning('Cannot run learned procedure',str(exc),parent=self)
+
     def _approve_tool_install(self):
         name=self.install_choice.get()
         if name not in INSTALL_CATALOG:return
@@ -2527,14 +2757,33 @@ class DeepThorTDesktop(tk.Tk):
                     self.recent_ai_logs=self.recent_ai_logs[-24:]
             elif kind=='inventory':
                 self.inventory=event[1]
+                try:
+                    enrolled=self.tool_learning.discover(self.inventory.get('tools',[]))
+                    record(STATE,'desktop','tools_discovered_for_learning',count=len(enrolled))
+                except (ValueError,OSError) as exc:
+                    self._log('Tool learning inventory unavailable: '+str(exc)[:180])
                 self._show(self.machine_text,format_inventory(self.inventory))
                 (STATE/'computer-inventory.json').write_text(json.dumps(self.inventory,indent=2),encoding='utf-8')
+                snapshot=summarize_inventory(self.inventory)
+                save_snapshot(STATE/'last-engine-inventory.json',snapshot)
+                record(STATE,'desktop','engine_inventory_snapshot',
+                       tools_detected=snapshot.get('tools_detected',0),
+                       project_engine=(snapshot.get('engine_preflight') or {}).get('engine','unknown'),
+                       missing_count=len((snapshot.get('engine_preflight') or {}).get('missing_prerequisites',[])))
                 found=sum(x['found'] for x in self.inventory['tools'])
                 self._log(f'Local capability scan complete: {found} tools detected; {len(self.inventory["drives"])} fixed drives. No installs performed.')
             elif kind=='inventory_error':
                 self._log('Computer scan problem: '+event[1]);self._show(self.machine_text,'Discovery error: '+event[1])
             elif kind=='x4_auto_report':
                 self.x4_report=event[1]
+                self._x4_report_project=str(self.project)
+                snapshot=summarize_x4_report(self.x4_report,
+                    game_dir=self.x4_game_dir,reference_dir=self.x4_reference_dir,project_dir=self.project)
+                save_snapshot(STATE/'last-x4-inspection.json',snapshot)
+                record(STATE,'desktop','x4_inspection_evidence',
+                       ready=snapshot['ready_for_planning'], pe_macro=snapshot['pe_macro_verified'],
+                       pe_slots=snapshot['pe_component_verified'],
+                       candidates=snapshot['candidate_counts'],blocked=snapshot['blocked_reasons'])
                 if self.x4_report.get('game_dir') and not self.x4_game_dir:
                     self.x4_game_dir=self.x4_report['game_dir'];self._save_x4_paths()
                 if self.x4_report.get('reference_dir') and not self.x4_reference_dir:
@@ -2558,6 +2807,14 @@ class DeepThorTDesktop(tk.Tk):
                 self._reload_chat()
             elif kind=='x4_sources':
                 self.x4_report=event[1]
+                self._x4_report_project=str(self.project)
+                snapshot=summarize_x4_report(self.x4_report,
+                    game_dir=self.x4_game_dir,reference_dir=self.x4_reference_dir,project_dir=self.project)
+                save_snapshot(STATE/'last-x4-inspection.json',snapshot)
+                record(STATE,'desktop','x4_inspection_evidence',
+                       ready=snapshot['ready_for_planning'], pe_macro=snapshot['pe_macro_verified'],
+                       pe_slots=snapshot['pe_component_verified'],
+                       candidates=snapshot['candidate_counts'],blocked=snapshot['blocked_reasons'])
                 if self.x4_report.get('game_dir') and not self.x4_game_dir:
                     self.x4_game_dir=self.x4_report['game_dir'];self._save_x4_paths()
                 self._show(self.x4_source_info,format_x4_inspection(self.x4_report))

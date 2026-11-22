@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .janus_cognition import CORE_NAMES, SenseFrame, process_society
+from .action_guards import validate_guards
 APPROVED_KINDS = frozenset({'verification', 'tool'})
 ACTION_STATES = frozenset({'approved', 'running', 'succeeded', 'failed', 'cancelled', 'paused', 'needs_attention'})
 
@@ -54,7 +55,8 @@ class JanusStore:
                 output_file TEXT NOT NULL DEFAULT '',
                 pid INTEGER, returncode INTEGER, cancel_requested INTEGER NOT NULL DEFAULT 0,
                 started_at TEXT, finished_at TEXT,
-                detail TEXT NOT NULL DEFAULT 'Waiting for engine');
+                detail TEXT NOT NULL DEFAULT 'Waiting for engine',
+                input_guards_json TEXT NOT NULL DEFAULT '[]');
               CREATE INDEX IF NOT EXISTS janus_action_status ON janus_actions(status,id);
               CREATE TABLE IF NOT EXISTS janus_goals (
                 singleton INTEGER PRIMARY KEY CHECK(singleton=1),
@@ -70,6 +72,10 @@ class JanusStore:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 stamp TEXT NOT NULL, message TEXT NOT NULL);
             ''')
+            # Preserve every historical action when upgrading an existing database.
+            columns={row[1] for row in db.execute('PRAGMA table_info(janus_actions)')}
+            if 'input_guards_json' not in columns:
+                db.execute("ALTER TABLE janus_actions ADD COLUMN input_guards_json TEXT NOT NULL DEFAULT '[]'")
             db.execute("INSERT OR IGNORE INTO janus_status(singleton,updated_at) VALUES(1,?)", (utc_now(),))
             db.execute("INSERT OR IGNORE INTO janus_goals(singleton,updated_at) VALUES(1,?)", (utc_now(),))
 
@@ -148,7 +154,8 @@ class JanusStore:
 
     def add_approved_action(self, *, argv: Sequence[str], cwd: str | Path,
                             label: str, kind: str, job_id: int | None = None,
-                            user_approved: bool = False) -> int:
+                            user_approved: bool = False,
+                            input_guards: list[dict] | None = None) -> int:
         """The GUI must call this only *after* an affirmative user confirmation.
 
         This is not callable by a free-form model/tool plan without an approval.
@@ -161,14 +168,16 @@ class JanusStore:
             raise ValueError('Command requires a bounded argument vector')
         if not label or len(label)>180:
             raise ValueError('Invalid process label')
+        guards = validate_guards(input_guards)
         working = Path(cwd).resolve(strict=True)
         if not working.is_dir():
             raise ValueError('Working directory must be an existing folder')
         with self.connect() as db:
             ident=db.execute('''INSERT INTO janus_actions(
-                job_id,kind,label,cwd,argv_json,approved_at,approval_source)
-                VALUES (?,?,?,?,?,?,?)''',
-                (job_id,kind,label,str(working),json.dumps(list(argv)),utc_now(),'desktop-user-confirmation')).lastrowid
+                job_id,kind,label,cwd,argv_json,approved_at,approval_source,input_guards_json)
+                VALUES (?,?,?,?,?,?,?,?)''',
+                (job_id,kind,label,str(working),json.dumps(list(argv)),utc_now(),
+                 'desktop-user-confirmation',json.dumps(guards))).lastrowid
         self.append_event(f'Approved process #{ident}: {label}')
         return ident
 

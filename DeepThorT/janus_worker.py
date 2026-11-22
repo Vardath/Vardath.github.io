@@ -6,6 +6,7 @@ only commands explicitly authorized in the GUI and saved in JanusStore.
 from __future__ import annotations
 import argparse
 import json
+import shutil
 import os
 import signal
 import subprocess
@@ -17,9 +18,18 @@ from pathlib import Path
 
 from deepthort_local.disk_gate import DiskGate
 from deepthort_local.janus_engine import JanusStore
+from deepthort_local.action_guards import verify_guards
+from deepthort_local.state_health import MIN_FREE_BYTES
 from deepthort_local.janus_counsel import LocalCounsel
 from deepthort_local.job_queue import JobStore
 from deepthort_local.flight_recorder import record,install_crash_hooks
+
+# Hard stop for a forgotten or misbehaving approved process. Never assume that
+# exit code 0 implies tested game behavior. These bounds do not change model
+# inference timeouts; they apply only to JANUS child processes.
+MAX_TOOL_SECONDS = 3600
+MAX_VERIFICATION_SECONDS = 7200
+MAX_ACTION_LOG_BYTES = 8_000_000
 
 
 def stop_tree(proc: subprocess.Popen) -> None:
@@ -98,8 +108,24 @@ class JanusWorker:
         cmd=json.loads(action['argv_json'])
         log_path=self.logs/f'action-{ident}.log'
         try:
-            with open(log_path,'ab',buffering=0) as logfile:
+            # Recheck approved executable/script/input/output snapshots at the
+            # last responsible moment, not only when the user clicked Approve.
+            # Old actions contain the default [] and retain historic behavior.
+            verify_guards(json.loads(action.get('input_guards_json') or '[]'))
+            if shutil.disk_usage(self.logs).free < MIN_FREE_BYTES:
+                raise ValueError('Less than 150 MB disk space; approved process not launched')
+        except (ValueError, OSError, TypeError, json.JSONDecodeError) as exc:
+            reason=f'Approved input changed; process NOT started: {exc}'
+            self.store.update_action(ident,'needs_attention',detail=reason)
+            self._update_parent_job(action,'needs_input',reason)
+            record(self.jobs_db.parent,'janus_worker','approved_preflight_blocked',
+                   level='WARNING',action_id=ident,reason=str(exc)[:250])
+            return ident
+        try:
+            with open(log_path,'xb',buffering=0) as logfile:
                 flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
+                started=time.monotonic()
+                deadline=MAX_VERIFICATION_SECONDS if action['kind']=='verification' else MAX_TOOL_SECONDS
                 proc=subprocess.Popen(cmd,cwd=action['cwd'],stdin=subprocess.DEVNULL,
                     stdout=logfile,stderr=subprocess.STDOUT,shell=False,
                     creationflags=flags,start_new_session=(os.name!='nt'))
@@ -111,6 +137,18 @@ class JanusWorker:
                         stop_tree(proc)
                         self.store.update_action(ident,'cancelled',detail='User cancellation or engine shutdown',returncode=proc.returncode)
                         return ident
+                    if time.monotonic()-started>deadline:
+                        stop_tree(proc)
+                        reason=f'Approved process exceeded {deadline}s runtime; inspect partial changes before retry'
+                        self.store.update_action(ident,'needs_attention',detail=reason,returncode=proc.returncode)
+                        self._update_parent_job(action,'needs_input',reason)
+                        return ident
+                    if log_path.stat().st_size>MAX_ACTION_LOG_BYTES:
+                        stop_tree(proc)
+                        reason='Approved process exceeded 8 MB output log; inspect partial changes before retry'
+                        self.store.update_action(ident,'needs_attention',detail=reason,returncode=proc.returncode)
+                        self._update_parent_job(action,'needs_input',reason)
+                        return ident
                     if self.game_gate.gaming():
                         stop_tree(proc)
                         self.store.update_action(ident,'paused',detail='Game detected; stopped process to protect responsiveness. Inspect partial changes before rerun.',returncode=proc.returncode)
@@ -118,6 +156,11 @@ class JanusWorker:
                         return ident
                     time.sleep(.25)
                 code=proc.returncode
+            if log_path.stat().st_size>MAX_ACTION_LOG_BYTES:
+                reason='Approved process produced more than 8 MB output; execution NOT verified'
+                self.store.update_action(ident,'needs_attention',detail=reason,returncode=code)
+                self._update_parent_job(action,'needs_input',reason)
+                return ident
             status='succeeded' if code==0 else 'failed'
             record(self.jobs_db.parent,'janus_worker','approved_action_finished',action_id=ident,exit_code=code,status=status)
             self.store.update_action(ident,status,detail=f'Approved process exited {code}; read log for evidence',returncode=code)

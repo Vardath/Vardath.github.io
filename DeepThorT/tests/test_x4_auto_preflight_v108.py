@@ -104,7 +104,10 @@ class X4AutoGuiTests(X4InitialInspectionTests):
         req=app.conversations.submit(app.current_chat,str(self.project),'chat','Examine it')
         app.client.chat=lambda *args,**kwargs: (_ for _ in ()).throw(AssertionError('No AI call for local inspection'))
         app._execute_conversation(app.conversations.get(req))
-        limit=time.monotonic()+4
+        # Under the combined GUI suite the background preflight can be delayed
+        # by other test windows; wait for its actual completion rather than
+        # assuming every worker is scheduled within four wall-clock seconds.
+        limit=time.monotonic()+12
         while time.monotonic()<limit and app.conversations.get(req)['state']!='responded':
             app._handle_events();time.sleep(.02)
         self.assertEqual(app.conversations.get(req)['state'],'responded')

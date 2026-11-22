@@ -169,6 +169,13 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
         'storage': {},
         'installation_checks': {},
     }
+    # On-demand, read-only recovery health; no state file is modified.
+    try:
+        from .state_health import inspect_state
+        summary['state_health']=inspect_state(state)
+    except (OSError,ValueError) as exc:
+        summary['state_health']={'issues':['State health inspection unavailable'],
+                                 'error_type':type(exc).__name__}
     if app_root:
         root=Path(app_root)
         for name in ('DeepThorT.exe','desktop_app.py','inference_server.mjs','inference_worker.mjs',

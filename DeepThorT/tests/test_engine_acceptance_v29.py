@@ -188,7 +188,9 @@ class DesktopCommandSelection(unittest.TestCase):
             (root/'addons/gut').mkdir(parents=True)
             (root/'addons/gut/gut_cmdln.gd').write_text('extends SceneTree\n')
             (root/'tests').mkdir();(root/'tests/test_one.gd').write_text('extends GutTest\nfunc test_thing():\n  pass\n')
-            with patch.object(app.shutil,'which',return_value='/tools/godot'):
+            actual=root/'godot'
+            actual.write_bytes(b'local mocked executable')
+            with patch.object(app.shutil,'which',return_value=str(actual)):
                 cmd=app.DeepThorTDesktop._verification_command(None,root)
             self.assertIn('-gexit',cmd)
             self.assertIn('addons/gut/gut_cmdln.gd',cmd)
@@ -198,7 +200,9 @@ class DesktopCommandSelection(unittest.TestCase):
         import desktop_app as app
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);(root/'project.godot').write_text('config_version=5')
-            with patch.object(app.shutil,'which',return_value='/tools/godot'):
+            actual=root/'godot'
+            actual.write_bytes(b'local mocked executable')
+            with patch.object(app.shutil,'which',return_value=str(actual)):
                 self.assertIn('--editor',app.DeepThorTDesktop._verification_command(None,root))
             (root/'project.godot').unlink();(root/'content.xml').write_text('<content id="a"/>')
             self.assertTrue(any('engine_acceptance_cli.py' in arg for arg in

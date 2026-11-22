@@ -155,6 +155,26 @@ def _x4(root: Path, planned: set[str], max_files: int) -> dict:
             declared = {entry.get('name') for entry in obj.iter(tag)}
             if obj.tag != 'diff' and name not in declared:
                 issues.append(_issue(index_name,'index_name_not_defined',f'{name} absent from {rel}'))
+    # A newly declared full asset macro/component must have a name-to-path
+    # registration. A diff patch against a vanilla asset is deliberately not
+    # considered a new definition and must not be given a fabricated index.
+    registered = {'macro':set(), 'component':set()}
+    for index_name,kind in (('index/macros.xml','macro'),('index/components.xml','component')):
+        index = parsed.get(index_name)
+        if index is not None:
+            registered[kind].update((entry.get('name') or '').casefold()
+                                    for entry in index.iter('entry') if entry.get('name'))
+    for relative, document in parsed.items():
+        if document.tag == 'diff' or not relative.startswith('assets/'):
+            continue
+        for kind,subdir in (('macro','/macros/'),('component','/components/')):
+            if subdir not in '/' + relative:
+                continue
+            elements = [item for item in document.iter(kind) if item.get('name')]
+            for item in elements[:100]:
+                name = item.get('name', '')
+                if name.casefold() not in registered[kind]:
+                    issues.append(_issue(relative,f'local_{kind}_not_indexed',name))
     return {'engine':'x4_extension','issues':issues,'pending':pending,
             'observations':observations,'source_hashes':fingerprints}
 

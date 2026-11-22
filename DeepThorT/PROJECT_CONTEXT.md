@@ -216,3 +216,8 @@ v26 builds directly on the tested and committed v25 hierarchical roadmap without
 - Source package: `DeepThorT_Desktop_v26_Windows.zip`, docs: `PLANNING_INTELLIGENCE.md`. Preserve `state`, `models`, `reference`, `node_modules`, `cache` and project folders on install.
 
 **Next priorities:** genuine semantic requirement reconciliation and acceptance criteria, interface/API dependency checks using actual project source and compiler evidence, measured Windows inference acceleration and an in-game Xenon PE acceptance test before Faction Command. Do not claim the model has built a verified game or proven semantic requirement coverage.
+
+
+## v34 — supervised execution preflight and crash hardening (22 November 2026)
+
+Built from packaged v33 without altering the original desktop layout, local model, JANUS/Sentinel topology or approval rules. Added pre-execution file guards to learned-tool commands, script-review snapshot enforcement, finite JANUS tool/process budgets, low-disk stop, crash-safe unique temporary writes, internal-symlink refusal, SQLite state-integrity metadata in diagnostic exports, and an isolated regression runner. 423 local tests passed across 52 isolated modules. Detailed source: APPROVAL_SAFETY_V34.md and PROJECT_CONTEXT_V34.md. Critical limits: approved scripts are not OS-sandboxed; Windows/Blender/Godot/X4 gameplay not tested. The combined Tkinter test lifecycle race is still unresolved.

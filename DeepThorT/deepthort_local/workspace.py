@@ -4,8 +4,10 @@ No autonomous writes. No files outside the selected workspace, including symlink
 """
 from __future__ import annotations
 import difflib
+import hashlib
 import os
 import shutil
+import tempfile
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -13,6 +15,7 @@ SKIP_DIRS = frozenset({'.git', '.venv', 'venv', 'node_modules', 'models', 'dist'
                        'build', '__pycache__', '.next', '.cache', '.idea', '.vs'})
 MAX_READ_BYTES = 180_000
 MAX_WRITE_BYTES = 220_000
+_NO_EXPECTATION = object()
 
 class WorkspaceError(ValueError):
     pass
@@ -28,6 +31,14 @@ def safe_target(root: str | Path, relative: str, *, must_exist: bool = False) ->
     base = Path(root).expanduser().resolve(strict=True)
     if not base.is_dir():
         raise WorkspaceError('Project folder is missing')
+    # A symlink *inside* the workspace can redirect an apparently approved
+    # filename to another project file. Reject symlink components, not just
+    # symlinks that escape the project root.
+    current=base
+    for part in rel.parts:
+        current=current/part
+        if current.is_symlink():
+            raise WorkspaceError('Symlink paths are not approved edit targets')
     target = (base / rel).resolve(strict=False)
     try:
         target.relative_to(base)
@@ -98,13 +109,35 @@ def diff_preview(old: str, new: str, relative: str) -> str:
 
 
 def apply_approved_file(root: str | Path, relative: str, contents: str,
-                        backup_root: str | Path) -> Path:
+                        backup_root: str | Path, *,
+                        expected_existing_sha=_NO_EXPECTATION) -> Path:
     """Write only after GUI approval, with a time-stamped backup of an existing file."""
     if not isinstance(contents, str) or not contents.strip() or len(contents.encode('utf-8')) > MAX_WRITE_BYTES:
         raise WorkspaceError('Proposed file is empty or exceeds 220 KB')
     target = safe_target(root, relative)
-    if target.exists() and not target.is_file():
-        raise WorkspaceError('Target is not a regular file')
+    if target.exists() and (not target.is_file() or target.is_symlink()):
+        raise WorkspaceError('Target is not a regular, non-symlink file')
+    # When a caller has shown a specific old file in an approval dialog, a
+    # background edit must not silently turn that consent into an overwrite of
+    # different contents. None means the user reviewed a nonexistent target.
+    def check_expected():
+        if expected_existing_sha is _NO_EXPECTATION:
+            return
+        if not target.exists():
+            if expected_existing_sha is not None:
+                raise WorkspaceError('File changed since review: it is now missing')
+            return
+        if expected_existing_sha is None:
+            raise WorkspaceError('File changed since review: it was created')
+        if not target.is_file() or target.is_symlink():
+            raise WorkspaceError('File changed since review: unsafe target')
+        h=hashlib.sha256()
+        with target.open('rb') as existing:
+            for chunk in iter(lambda: existing.read(1024*1024),b''):
+                h.update(chunk)
+        if h.hexdigest()!=expected_existing_sha:
+            raise WorkspaceError('File changed since review; reapprove the new diff')
+    check_expected()
     if target.exists():
         previous = read_project_file(root, relative)
         if previous == contents:
@@ -113,12 +146,16 @@ def apply_approved_file(root: str | Path, relative: str, contents: str,
         archive.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(target, archive)
     target.parent.mkdir(parents=True, exist_ok=True)
-    tmp = target.with_name(target.name+'.deepthort-tmp')
-    if tmp.exists():
-        raise WorkspaceError('An unfinished temporary file already exists; inspect it manually')
+    # A unique exclusive temp name prevents a previous interrupted write from
+    # permanently blocking this file. Only this invocation's temp is removed.
+    fd, name = tempfile.mkstemp(prefix=target.name+'.deepthort-',suffix='.tmp',dir=target.parent)
+    tmp=Path(name)
     try:
-        with tmp.open('x', encoding='utf-8', newline='') as f:
+        with os.fdopen(fd,'w',encoding='utf-8',newline='') as f:
             f.write(contents)
+            f.flush()
+            os.fsync(f.fileno())
+        check_expected()
         os.replace(tmp, target)
     finally:
         if tmp.exists():

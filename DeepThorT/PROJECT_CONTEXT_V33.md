@@ -1,0 +1,7 @@
+# DeepThorT v33 continuation (22 November 2026)
+
+Base: `/mnt/data/DeepThorT_Desktop_v32_Windows.zip`. Previous GitHub source commits for v30–v32 were reported outstanding; do not claim synchronization unless actual commits are verified. Working source release: `DeepThorT_Desktop_v33_Windows.zip`.
+
+Implemented: model-generated compact `.py`/`.gd` automation script candidates, versioned SQLite migration and exact script fingerprint, full source/diff modal with separate WRITE ONLY approval, safe project atomic writer with backups, separate second explicit command approval through JANUS, and rejection of changed scripts or stale executable/log/artifacts. The v32 command-only path is unchanged. Desktop logs now correctly identify version 33. Code changed in `deepthort_local/tool_acquisition.py` and `desktop_app.py`. Tests in `tests/test_generated_scripts_v33.py` and `tests/test_generated_scripts_gui_v33.py`. Documentation updated. 408 local tests passed across 50 isolated modules.
+
+Still not proven: Windows-on-PC UI model inference, full Blender/Godot project operations, actual X4 Xenon PE mod success and game play. The current small model may truncate JSON/script output. Existing combined-process Tk teardown warnings remain. Next passes should add app-specific API adapters + automatic creation of *small, testable* per-file scripts via verified staged plans; then test Windows tool acquisition with a fresh diagnostic ZIP when actual installation evidence is needed. Preserve interface/approval and the user's project specifications.

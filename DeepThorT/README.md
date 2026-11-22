@@ -1,3 +1,97 @@
+# DeepThorT v34 — defensive execution preflight and recovery (22 November 2026)
+
+**Source base:** v33; user requested proactive safeguards before a Windows test. See [APPROVAL_SAFETY_V34.md](APPROVAL_SAFETY_V34.md) for detailed risk matrix and test steps.
+
+- New approved learned-tool actions pin the detected executable, generated script, selected input and expected output file state. JANUS revalidates these before launch; changed inputs leave the action at `needs_attention` without execution. Existing queued legacy actions are not retroactively pinned.
+- Generated-script review is bound to the actual draft and preexisting file hashes; a changed proposal or external file edit must be reviewed again before write. Source review explicitly warns that Python/GDScript are **not sandboxed**.
+- JANUS processes now have conservative elapsed-time and output-log budgets (tool 60 minutes; verification 120 minutes; 8 MB log); less than 150 MB free disk space blocks a new launch. These limits do not guarantee absence of partial changes.
+- Project writes use unique exclusive temporary files and retain backups. Internal symlink edit targets are rejected. Export diagnostics now contains read-only bounded SQLite `quick_check`/free-disk metadata without raw database rows.
+- `regression_cli.py` isolates GUI test modules, handles stale Linux display settings and offers an optional JSON report. It does not cure the old combined-process Tkinter race.
+- JANUS/Sentinel topology, offline Qwen, resource caps, original interface layout, 40-attempt planning process and approval gates are unchanged. Real Windows app/tool execution and X4/Godot/Android acceptance require on-PC tests.
+
+---
+
+# DeepThorT v33 — model-authored automation scripts with separate file and command approvals (22 November 2026)
+
+**Base:** v32. This release closes the script-authoring gap in local tool acquisition, without adding another UI panel, replacing JANUS/Sentinel, changing the ONNX model or permitting autonomous command execution.
+
+- **Learn procedure…** can now accept an optional local-model-authored `script` object (`path`, full `source`) in addition to the CLI recipe. The program persists the candidate source and SHA-256 in `state/tool_acquisition.sqlite3`. It does **not** write the script when the model replies. The local small model is given up to 768 output tokens for this bounded draft; longer scripts may still fail and should use the existing staged source-workflow instead.
+- **Run learned procedure…**, first selection: a **scrollable, full-source/diff review** offers **Approve WRITE ONLY** or Cancel. Approving writes just the project-relative `.py`/`.gd` source via the existing atomic writer with backups, and returns without scheduling an application. The source can be reviewed again in project files.
+- **Run learned procedure…**, second selection: separately show the exact installed executable and command-line arguments; only affirmative user confirmation queues the supervised JANUS operation. Script and output artifact cannot be the same file.
+- Generated Python is syntax-parsed before it can become a candidate. Supported script types are Python/Blender `.py` and Godot `.gd`; arbitrary shell scripts, external paths, model-proposed shell expressions, code-execution flags, missing scripts, symlink escapes and unapproved/changed source are rejected or require reapproval. Static syntax checks do **not** establish that a script is safe or correct: project scripts run with the user's operating-system permissions when explicitly approved.
+- Previously installed v32 SQLite recipes are retained and migrated in place; legacy command-only recipes still operate without new steps. Replacing a candidate or changing its executable/script invalidates earlier evidence.
+- Existing JANUS gaming pause, process limits, cancellation, artifact/procedure evidence and user-controlled approval remain intact. This is not GUI-only app automation and has not operated Blender or Godot on the user's Windows machine.
+
+**Validation:** 408 regression tests passed across 50 separate test modules under a Linux virtual desktop, including 9 new generated-script and desktop approval tests, plus a real approved Python script generating an artifact. Single-process Tkinter teardown remains a known unresolved issue; Windows UI/model/script quality and full game integration are not confirmed.
+
+**Install:** Exit the application, back up state, extract the ZIP over `D:\deepthort`, and keep existing models, `state`, `node_modules`, `cache`, `reference` and project folders. Scripts already staged in a workspace are not removed. See `TOOL_ACQUISITION.md` and `PROJECT_CONTEXT_V33.md`.
+
+---
+
+# DeepThorT v32 — supervised tool acquisition and reusable command recipes (22 November 2026)
+
+**Base:** v31. This release fills the first operational gap between detecting installed apps and using their actual interfaces. It adds `deepthort_local/tool_acquisition.py`, a durable per-project local recipe registry, and three controls in the existing Computer & Tools toolbar. No external service, general-purpose shell, new model, or automatic tool permission was added.
+
+- Real installed CLI executables are enrolled from scans; registry-only hints are not treated as runnable programs.
+- Per-app bounded help is queried through explicitly approved JANUS processes. Limited adjacent documentation is read without launching a tool.
+- The local ONNX model can create a compact recipe *candidate* for a concrete task; it is saved, not executed.
+- Actual commands run only after reviewing the exact argv and confirming; existing JANUS worker supervision, gaming priority and cancel controls apply.
+- A successful approved command must have a new or changed project artifact and intact action/log/tool fingerprints before its narrowly scoped result is retained. Zero-exit without an artifact is not a verified production workflow.
+- Only current artifact-level results are surfaced to future planning. No blanket claim of application capability, generated code correctness, game behavior or autonomous unrestricted GUI operation.
+- The original v31 interface layout, JANUS/Sentinel architecture, model, 40-attempt planning workflow, source approvals and Windows launcher are otherwise unchanged.
+
+**Validation:** 399 automated tests passed across 48 isolated modules. These include one *real* JANUS-supervised Python help command and one user-approved local Python script that produced a file, with evidence checked after execution. GUI behavior was tested under a virtual display. Live Windows tool execution, model-generated recipe quality, Blender export and game-engine acceptance remain unverified. The existing combined-process Tkinter teardown race remains.
+
+See `TOOL_ACQUISITION.md` for operation, constraints and test scope. Real Windows CLI probes/operation and game-engine testing remain outstanding.
+
+---
+
+# DeepThorT v31 — inspection evidence in diagnostics (22 November 2026)
+
+**Source base:** v30. The 21:28 Windows export confirmed a healthy local Qwen worker but only a generic “X4 reference candidates found” activity message. It did not export PE macro/component/slot evidence or project engine readiness; `desktop_init` had also retained the old version 27 label. v31 corrects those diagnostic blind spots without changing inference, planning, approval, installed tool execution, JANUS/Sentinel or the window.
+
+- X4 source inspections record and persist bounded evidence: PE macro and component verification, actual connection slot tags, weapon/turret candidate file identifiers and hashes, paired catalog count, readiness and explicit blockers.
+- Computer & Tools scans record project engine status and missing prerequisites in a privacy-reduced, project-scoped snapshot.
+- Export diagnostics adds both snapshots to `summary.json`. Results are tied to the selected project and remain available after restart, but are not revalidated during export; changed assets still need a fresh scan.
+- Paths are reduced to their basename and a fingerprint; no model weights, raw source XML, chat prompts or entire machine inventory are newly copied into the support ZIP.
+- `desktop_init` now records version 31 rather than the stale version 27.
+- Five new regression tests; **373 tests passed across 46 isolated modules**. The existing monolithic Tkinter teardown crash remains. No live Windows ONNX, Xenon PE mod, or gameplay test occurred.
+
+Install v31 over `D:\deepthort` while preserving `state`, `models`, `reference`, `cache`, `node_modules` and projects. Run the two existing scans in the correct X4 project before exporting fresh diagnostics. See `DIAGNOSTIC_INSPECTION_V31.md`.
+
+---
+
+# DeepThorT v30 — installed-engine preflight and X4 source-link evidence (22 November 2026)
+
+**Source base:** v29, preserving the original Windows launcher, JANUS, Sentinel,
+local ONNX worker, project approvals, existing interface and 40-attempt plan
+limit. This pass adds read-only discovery and source-backed X4 registration
+checks rather than asserting successful live gameplay.
+
+- Existing **Computer & Tools → Scan this computer** now reports discovered
+  X4/Godot/Android prerequisites from real local paths. The scan remains
+  background/read-only, and no program is run or installed automatically.
+- Godot verification can use a genuine `GODOT_EXECUTABLE` path, an existing
+  PATH program or a discovered concrete executable. A registry install hint
+  or folder no longer counts as a runnable engine.
+- Full new X4 asset macro/component definitions require explicit local index
+  registration. Extracted vanilla macro/component indexes can be consulted
+  for explicit `ref` identifiers, with unknown DLC/mod references left
+  unresolved—not invented or falsely declared invalid.
+- `engine_environment_cli.py` provides a read-only local readiness report.
+  Its findings are observational, not runtime/gameplay acceptance evidence.
+- **Validation:** 368 automated tests across 45 isolated modules passed.
+  The monolithic Tkinter run still crashed in the established cross-thread
+  teardown path, so it was not counted as green. No live Windows Godot, X4,
+  Android APK or save-game test was performed.
+
+**Install:** Close DeepThorT; extract this ZIP over `D:\deepthort`, preserving
+`state`, `models`, `node_modules`, `cache`, `reference` and every project. Select
+your X4 project, use **Scan this computer**, and export diagnostics to inspect
+actual engine/source readiness. See `ENGINE_ENVIRONMENT.md` for scope.
+
+---
+
 # DeepThorT v29 — engine-aware static audits and tested-result guards (22 November 2026)
 
 **Source base:** v28, retaining its original interface, desktop launcher, Qwen

@@ -187,8 +187,22 @@ def _gpu_names():
     except (OSError,subprocess.TimeoutExpired): return []
 
 
-def scan_computer(install_dir: str | Path, project_dir: str | Path | None = None, *, include_gpu: bool = True):
+def scan_computer(install_dir: str | Path, project_dir: str | Path | None = None, *, include_gpu: bool = True,
+                  x4_game_dir=None, x4_reference_dir=None):
     total, available = _physical_memory()
+    detected_tools = [asdict(t) for t in detect_tools()]
+    project_preflight = None
+    # The Scan this computer action already runs in a background thread.
+    # This is a read-only project probe; never start or install an engine.
+    if project_dir and Path(project_dir).is_dir():
+        try:
+            from .engine_environment import inspect_engine_environment
+            project_preflight = inspect_engine_environment(
+                project_dir,tools={'tools':detected_tools},
+                x4_game_dir=x4_game_dir,x4_reference_dir=x4_reference_dir)
+        except (OSError,ValueError) as exc:
+            project_preflight = {'engine':'unknown','missing_prerequisites':[],
+                                 'static_clean':False,'error':str(exc)[:250]}
     return {
         'hostname': platform.node(), 'operating_system': platform.platform(),
         'application_folder': str(Path(install_dir).resolve()),
@@ -197,7 +211,8 @@ def scan_computer(install_dir: str | Path, project_dir: str | Path | None = None
         'ram_bytes': total, 'free_ram_bytes': available,
         'deepthort_max_cpu_percent':20, 'deepthort_max_memory_commit_bytes':total//5,
         'gpu': _gpu_names() if include_gpu else [], 'drives': _drives(),
-        'tools': [asdict(t) for t in detect_tools()],
+        'tools': detected_tools,
+        'engine_preflight': project_preflight,
         'privacy':'Local scan only. No network calls, installs or recursive drive searches.'
     }
 
@@ -219,6 +234,27 @@ def format_inventory(data: dict) -> str:
     for t in data['tools']:
         s.append(f"  {'[Found]' if t['found'] else '[Missing]'} {t['name']} — {t['purpose']}" +
                  (f" — {t['location']} ({t['source']})" if t['found'] else ''))
+    preflight = data.get('engine_preflight')
+    if preflight and preflight.get('engine') != 'general':
+        s.extend(['','Selected project engine readiness (read-only):',
+                  f"  Type: {preflight.get('engine', 'unknown')}",
+                  f"  Static issues: {preflight.get('static_issues','unknown')}; "
+                  f"pending planned files: {preflight.get('static_pending','unknown')}"])
+        for name,path in preflight.get('tools', {}).items():
+            s.append(f"  {name}: {path or 'not found'}")
+        for missing in preflight.get('missing_prerequisites', []):
+            s.append('  Missing: '+missing)
+        links=preflight.get('x4_reference_links')
+        if links:
+            s.append('  X4 extracted source links: '+(
+                f"{links.get('resolved_vanilla_count',0)} verified vanilla; "
+                f"{links.get('resolved_local_count',0)} local; "
+                f"{links.get('unresolved_count',0)} unresolved" if not links.get('error')
+                else 'not fully inspected — '+links['error']))
+            s.append('  Unresolved references may require DLC or other extensions.')
+        if preflight.get('error'):
+            s.append('  Inspection issue: '+preflight['error'])
+        s.append('  This does not certify a build, test, APK or playable game.')
     s.extend(['', data['privacy']])
     return '\n'.join(s)
 
