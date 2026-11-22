@@ -1,3 +1,13 @@
+## v25 — hierarchical milestones and original-requirement traceability
+
+After v24's full specification section review, v25 builds a durable milestone
+roadmap from only model-authored file proposals. Milestone stages are capped,
+linked to exact original section fingerprints, and explicitly approved in order.
+No milestone is verified without the existing approved project test mechanism.
+See `HIERARCHICAL_DEVELOPMENT.md` for the integration and current limitations.
+
+---
+
 # Capability Library — Pass 3: approved test receipts and large specifications (v24)
 
 This pass connects verification receipts to the v23 source-backed reference index. It **does not automatically execute any tool**, assert that an entire game runs, or retrain the neural model.
