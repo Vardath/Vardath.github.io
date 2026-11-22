@@ -37,6 +37,16 @@ def read_examples(path, vocab_size, context_size):
     return rows
 
 
+def example_index(step, count, seed):
+    """Stable seeded epoch shuffle, independent of model and optimizer RNG."""
+    if step < 0 or count < 1:
+        raise ValueError("Invalid sampling controls")
+    epoch, position = divmod(step, count)
+    order = list(range(count))
+    random.Random(f"{seed}:{epoch}").shuffle(order)
+    return order[position]
+
+
 def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         width=64, layers=2, heads=4, context_size=256, lr=0.0003,
         seed=2026, resume=False):
@@ -74,7 +84,7 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
     if steps <= start:
         raise ValueError("Target steps must exceed saved step")
     for step in range(start + 1, steps + 1):
-        ids, labels = train[(step - 1) % len(train)]
+        ids, labels = train[example_index(step - 1, len(train), seed)]
         model.train()
         optimizer.zero_grad(set_to_none=True)
         loss = assistant_causal_loss(
@@ -104,7 +114,7 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
     return {"steps": steps, "validation_assistant_loss": metric,
             "parameters": model.parameter_count, "train_examples": len(train),
             "validation_examples": len(valid),
-            "validation_supervised_tokens": supervised_tokens}
+            "validation_supervised_tokens": supervised_tokens,\n            "train_examples_visited": min(steps, len(train)),\n            "train_epochs_completed": steps // len(train),\n            "sampling": "seeded-shuffle-per-epoch-v1"}
 
 
 if __name__ == "__main__":
