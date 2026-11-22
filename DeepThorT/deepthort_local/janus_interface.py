@@ -12,7 +12,7 @@ import re
 
 def addressed_to_janus(prompt: str) -> bool:
     """Only route an explicitly addressed chat turn; ordinary chats stay on Qwen."""
-    return bool(re.match(r'^\s*(?:@janus|janus)\b(?=\s|[:!?.,]|$)', prompt or '', re.I))
+    return bool(re.match(r'^\s*(?:@janus\b|janus(?:\s*[:,!?]\s*|\s+(?:what|why|how|status|report|show|tell|help|please|can|could|would|will|are|do|stop|pause|resume|start|check|explain)\b|\s*$))', prompt or '', re.I))
 
 
 def janus_state_reply(prompt: str, *, status: dict, goal: str,
