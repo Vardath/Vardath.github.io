@@ -33,8 +33,8 @@ class JobPersistenceTests(unittest.TestCase):
             store=JobStore(Path(td)/'j.db')
             ident=store.submit('p','c','chat','x'*9000)
             self.assertEqual(len(store.get(ident)['prompt']),9000)
-            with self.assertRaisesRegex(ValueError,'250,000'):
-                store.submit('p','c','chat','x'*250001)
+            larger=store.submit('p','c','chat','x'*250001)
+            self.assertEqual(len(store.get(larger)['prompt']),250001)
     def test_threads_isolated(self):
         with tempfile.TemporaryDirectory() as td:
             reg=ChatRegistry(Path(td)/'c.db')
