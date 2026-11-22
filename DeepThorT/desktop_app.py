@@ -2388,7 +2388,7 @@ class DeepThorTDesktop(tk.Tk):
             self.after(2200,self._automatic_tool_tick)
         if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
         if (self.queue_paused or self._auto_tool_active or
-            self._auto_verification_in_flight is not None or not self._auto_tool_queue or
+            getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
             self.disk_gate.gaming()):return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
