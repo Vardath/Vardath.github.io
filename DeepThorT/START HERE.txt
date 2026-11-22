@@ -1,9 +1,13 @@
-DEEPTHORT DESKTOP v22 — LOCAL CAPABILITY LIBRARY FOUNDATION
-Built from the verified v21 source. The existing interface and local Qwen model are unchanged.
-Draft project plan now inspects bounded, selected-project references before inference,
-stores file hashes and neutral summaries locally, and may use grounded evidence when context fits.
-Unverified procedures are never treated as successful. No tools are executed automatically.
-Full user requirements, explicit approval, and 40-pass planning limits remain unchanged.
-Read CAPABILITY_LIBRARY.md for capabilities, commands, limits and future implementation passes.
-Close DeepThorT before replacing app files. Preserve state, models, cache, reference,
-node_modules and selected project directories. Do not overwrite user workspaces.
+DEEPTHORT DESKTOP v23 — Capability Library Pass 2
+
+This release adds read-only indexing and retrieval of local documentation and code examples
+inside the selected project. Quoted references are untrusted facts, not executable instructions.
+Stored procedure candidates cannot become verified workflows without real, scoped checks.
+
+Close DeepThorT. Extract all v23 files over D:\deepthort, preserving state, models,
+node_modules, cache, reference, and all project folders. Do not delete the existing SQLite state.
+The existing desktop UI, model and launcher are unchanged. Use Draft project plan to
+trigger bounded local reference inspection; external engines are not executed.
+
+Details and commands: CAPABILITY_LIBRARY.md
+Tests: 212 passed locally; Windows ONNX and game-engine execution not verified.
