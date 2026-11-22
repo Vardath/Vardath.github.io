@@ -1,3 +1,15 @@
+# DeepThorT v19 — JANUS worker runtime correction (22 November 2026)
+
+**Source base:** v18. This is a minimal diagnostics-driven correction, not a change to the existing interface, planning system, model, approvals, or JANUS topology.
+
+- Fixed a JANUS idle-loop race observed as `ValueError: sleep length must be non-negative`: calculate remaining delay from one monotonic reading and skip sleep when the deadline has passed.
+- Optional JANUS model counsel no longer sends a background request to the sole Qwen ONNX worker while an interactive request is already in progress. Deterministic JANUS observation continues independently.
+- JANUS does not yet serve free-form chat replies; a separate response-routing architecture is required to do that without the busy model.
+- Added targeted regression tests for these conditions. The 22 November 13:10 export showed planning pass 35/40 completed, pass 36 in progress, and an unrelated chat still pending. No approved implementation job was queued.
+- Package deliberately leaves the desktop GUI and launch executable untouched. Keep all local models, caches, state and project files when installing.
+
+---
+
 # DeepThorT v18 — close chats and genuinely stop their local inference (22 November 2026)
 
 **Source base:** v17. No changes to the existing JANUS/Sentinel architecture, model choice, planner criteria, 40-pass limit, explicit plan approval, project file generation, or window layout. The original button rows remain where they were.
