@@ -129,6 +129,8 @@ class SpecificationIndex:
           'This section is NOT the entire project. All sections must be reviewed before approval. '
           'Propose 1 or 2 concrete source files relevant to ONLY the supplied section. '
           'Return exactly {"files":[{"path":"relative/path.ext","description":"what this file implements"}]}. '
+          'If a file has a SPECIFIED, exact dependency on another source file, you may append '
+          '"; depends-on: relative/other.ext" to its description; never invent dependencies. '
           'No markdown, no invented game IDs, no claims of execution. Do not modify the original specification.\n'
           f'UNMODIFIED SPECIFICATION SECTION {row["ordinal"]+1} (chars {row["start"]}:{row["end"]}):\n')
         prompt=context+row['text']+'\nEND OF SPECIFICATION SECTION.\n'
