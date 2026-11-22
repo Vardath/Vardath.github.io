@@ -11,6 +11,7 @@ import uuid
 import json
 from pathlib import Path
 from .flight_recorder import record
+from .specification_library import MAX_STORED_REQUEST_CHARS
 
 STATES = {'queued', 'running', 'responded', 'waiting_approval', 'needs_input', 'complete', 'failed', 'cancelled', 'paused', 'waiting_verification'}
 TERMINAL = {'complete', 'failed', 'cancelled', 'responded'}
@@ -85,7 +86,7 @@ class JobStore:
                target: str | None = None, attachments: list[str] | tuple[str,...] = ()) -> int:
         if mode not in ('chat','edit','plan','build','vision','image') or not prompt.strip() or not chat_id:
             raise ValueError('Invalid job data')
-        if len(prompt)>250_000: raise ValueError('Prompt exceeds 250,000-character storage limit')
+        if len(prompt)>MAX_STORED_REQUEST_CHARS: raise ValueError(f'Prompt exceeds local storage safety ceiling ({MAX_STORED_REQUEST_CHARS:,} characters)')
         if len(attachments)>8: raise ValueError('At most eight attachments per job')
         from .media_tools import validate_attachment
         attachments=[str(validate_attachment(p)) for p in attachments]
