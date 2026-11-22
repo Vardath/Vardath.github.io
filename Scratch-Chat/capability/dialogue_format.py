@@ -19,7 +19,7 @@ def serialize(messages):
     """
     if not isinstance(messages, list) or len(messages) < 2:
         raise ValueError("At least two messages required")
-    parts, spans, position = [], [], 0
+    parts, spans, termination_spans, position = [], [], [], 0
     for message in messages:
         if not isinstance(message, dict) or message.get("role") not in VALID_ROLES:
             raise ValueError("Invalid role")
@@ -33,10 +33,12 @@ def serialize(messages):
         parts.extend((prefix, content, suffix))
         if message["role"] == "assistant":
             spans.append([position + len(prefix), position + len(prefix) + len(content)])
+            termination_spans.append([position + len(prefix) + len(content), position + len(prefix) + len(content) + len("<|im_end|>")])
         position += len(prefix) + len(content) + len(suffix)
     if not spans or not any(m["role"] == "user" for m in messages):
         raise ValueError("Missing user or assistant")
-    return {"text": "".join(parts), "assistant_char_spans": spans}
+    return {"text": "".join(parts), "assistant_char_spans": spans,
+            "assistant_termination_char_spans": termination_spans}
 
 
 def export(input_path, output_path):
