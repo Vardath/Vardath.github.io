@@ -28,6 +28,7 @@ from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.capability_library import CapabilityLibrary, attach_capability_context
 from deepthort_local.specification_library import SpecificationIndex, generate_indexed_plan, MAX_STORED_REQUEST_CHARS
+from deepthort_local.hierarchical_planning import HierarchicalPlanStore
 from deepthort_local.large_input import imported_source, resolve_import
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
@@ -78,7 +79,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='22',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='25',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -134,6 +135,7 @@ class DeepThorTDesktop(tk.Tk):
         self.client = LocalModelClient(STATE/'sessions.sqlite3')
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
+        self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
         self.conversations.invalidate_incompatible_drafts()
@@ -1020,9 +1022,74 @@ class DeepThorTDesktop(tk.Tk):
             self.reply_outcome=None
             self._reload_chat();self._render_reply_notice()
 
+    def _approve_hierarchical_milestone(self, root_request_id):
+        """Explicit, per-milestone approval using the original toolbar button."""
+        req=self.conversations.get(root_request_id)
+        if not req or req['state']!='responded' or req['mode']!='draft_plan':
+            messagebox.showwarning('Milestone roadmap unavailable',
+                'The source plan is not in a completed, reviewable state.',parent=self)
+            return
+        try:
+            state=self.hierarchies.reconcile_jobs(
+                self.specifications,root_request_id,req['prompt'],self.jobs)
+            if state['chat_id']!=self.current_chat or state['project']!=str(Path(self._project_key()).resolve()):
+                raise PlanError('Milestone roadmap belongs to another chat or project')
+            if state['complete']:
+                messagebox.showinfo('Milestones completed',
+                    f'All {state["milestones_total"]} milestones have approved verification records. '
+                    'This does not prove every game requirement is satisfied.',parent=self)
+                return
+            ordinal=state['next_approvable']
+            if ordinal is None:
+                messagebox.showinfo('Next milestone is blocked',
+                    state['blocked_reason']+'\n\nFinish and verify the previous milestone before proceeding.',parent=self)
+                return
+            milestone=self.hierarchies.milestone(
+                self.specifications,root_request_id,req['prompt'],ordinal)
+            display='\n'.join(f"{i}. {step['path']}: {step['description']}"
+                               for i,step in enumerate(milestone['steps'],1))
+            section_ids=', '.join(str(i) for i in milestone['source_sections'])
+            if not messagebox.askyesno('Approve this milestone for execution?',
+                f"Milestone {ordinal}/{state['milestones_total']}: {milestone['title']}\n"
+                f"Master specification SHA-256: {state['specification_sha256'][:24]}…\n"
+                f"Exact source sections: {section_ids}\n\n"
+                f"FILES ({len(milestone['steps'])}):\n{display[:2300]}\n\n"
+                'This is an independently scoped milestone. The full original specification '
+                'is preserved, but Qwen will only receive the listed exact source sections '
+                'while generating these files. Later milestones remain blocked until an '
+                'approved verification check succeeds.\n\n'
+                'Queue this milestone? Individual file changes still require review. '
+                'No software installations or test commands are approved here.',parent=self):
+                self._log(f'Milestone {ordinal}: user declined approval; no files changed.')
+                return
+            jobid=self.jobs.submit_approved_milestone_build(
+                milestone['project'],milestone['chat_id'],milestone['scope_prompt'],
+                milestone['steps'],milestone['approval_key'],
+                master_prompt=req['prompt'], master_steps=milestone['master_steps'])
+            self.hierarchies.link_job(
+                self.specifications,root_request_id,req['prompt'],ordinal,jobid)
+        except Exception as exc:
+            record(STATE,'desktop','hierarchical_milestone_approval_error',level='ERROR',
+                   request_id=root_request_id,error_type=type(exc).__name__,detail=str(exc)[:450])
+            messagebox.showerror('Cannot approve milestone',str(exc),parent=self)
+            return
+        self._log(f'Explicitly approved milestone {ordinal}/{state["milestones_total"]}; '
+                  f'queued job #{jobid} ({len(milestone["steps"])} scoped files).')
+        self._refresh_jobs();self._reload_chat();self.tabs.select(1)
+        self.status.set(f'Milestone {ordinal} queued as job #{jobid}; later milestones require verification.')
+
     def _approve_conversation_plan(self):
-        """The only GUI path that turns a draft into an executable build job."""
+        """The only GUI path that turns a draft or milestone into a build job."""
         draft=self.conversations.latest_draft(self.current_chat,self._project_key())
+        root_id=self.hierarchies.latest_for_chat(self.current_chat,self._project_key())
+        if root_id and (draft is None or root_id>draft['request_id']):
+            # Revoked/failed attempts must not revive a historical roadmap.
+            previous=self.conversations.thread(self.current_chat,1000)
+            recent=max((r['id'] for r in previous if r['mode']=='draft_plan'
+                        and r['project']==self._project_key()),default=None)
+            if root_id==recent:
+                self._approve_hierarchical_milestone(root_id)
+                return
         if not draft:
             messagebox.showinfo('No draft plan',
                 'Use Draft project plan first, discuss any uncertainties in Chats, then approve it.');return
@@ -1133,7 +1200,7 @@ class DeepThorTDesktop(tk.Tk):
                        if r['id']!=ident]
                 x4_context=x4_request_in_context(original,project_dir=request['project'],
                                                   previous_prompts=prior)
-                if x4_context:
+                if x4_context and not (request['mode']=='draft_plan' and project_kind(original)=='android_game'):
                     self.events.put(('conversation_stage',ident,'Inspecting installed X4 files and verified vanilla XML'))
                     record(STATE,'desktop','x4_auto_preflight_started',request_id=ident,mode=request['mode'])
                     report=automatic_x4_preflight(
@@ -1180,7 +1247,8 @@ class DeepThorTDesktop(tk.Tk):
                         self.client,self.specifications,ident,session,original,
                         request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
-                        cancelled=cancelled)
+                        cancelled=cancelled, hierarchy=self.hierarchies,
+                        chat_id=request['chat_id'])
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -1206,13 +1274,35 @@ class DeepThorTDesktop(tk.Tk):
         outcome='REPLY RECEIVED — local model finished.'
         if req['mode']=='draft_plan':
             try:
-                validated=parse_build_plan(answer,Path(req['project']),request=req['prompt'])
-                draft_id=self.conversations.save_draft(ident,validated)
-                self.conversations.change(ident,'responded',
-                    f'Draft #{draft_id} ready; discuss, revise or explicitly approve it',
-                    response=answer,allowed=('running',))
-                outcome=f'DRAFT PLAN #{draft_id} READY — review and explicitly approve before any job runs.'
-                self._log(f'Draft #{draft_id} generated in Chats; NO job queued.')
+                # Existing model plan parsing accepts one complete JSON object
+                # preceded by explanatory prose. Do not regress that behavior.
+                try:
+                    structured=json.loads(answer)
+                except (ValueError,TypeError):
+                    structured={}
+                is_hierarchy=(isinstance(structured,dict) and 'hierarchy_ready' in structured)
+                if is_hierarchy:
+                    if len(req['prompt'])<=MAX_INFERENCE_PROMPT-1000:
+                        raise PlanError('Model returned an untrusted roadmap marker; no indexed plan exists')
+                    verified=self.hierarchies.status(self.specifications,ident,req['prompt'])
+                    if structured['hierarchy_ready']!=verified:
+                        raise PlanError('Roadmap marker does not match the saved, fully indexed requirements')
+                    self.conversations.change(ident,'responded',
+                        f'Hierarchical roadmap ready: {verified["milestones_total"]} sequential, '
+                        'individually approvable milestones; no jobs queued',
+                        response=answer,allowed=('running',))
+                    outcome=(f'ROADMAP READY — {verified["milestones_total"]} milestones, '
+                             f'{verified["sections_reviewed"]} exact sections traced. '
+                             'Review and approve the FIRST milestone individually. No job was queued.')
+                    self._log(f'Hierarchical roadmap request #{ident} prepared; no jobs queued.')
+                else:
+                    validated=parse_build_plan(answer,Path(req['project']),request=req['prompt'])
+                    draft_id=self.conversations.save_draft(ident,validated)
+                    self.conversations.change(ident,'responded',
+                        f'Draft #{draft_id} ready; discuss, revise or explicitly approve it',
+                        response=answer,allowed=('running',))
+                    outcome=f'DRAFT PLAN #{draft_id} READY — review and explicitly approve before any job runs.'
+                    self._log(f'Draft #{draft_id} generated in Chats; NO job queued.')
             except Exception as exc:
                 # Never replace a rejected model plan with a hardcoded plan.
                 # The user's plan approval must assess the model's own result.
@@ -2534,6 +2624,19 @@ class DeepThorTDesktop(tk.Tk):
                         f'Verified: test command exited 0 ({label})' if code==0 else
                         f'Build test failed with exit {code}; inspect Processes log and repair the project',
                         allowed=('running',))
+                    job=self.jobs.get(job_id)
+                    if job and str(job.get('approval_key') or '').startswith('milestone:'):
+                        try:
+                            root_id=int(job['approval_key'].split(':')[1])
+                            root_req=self.conversations.get(root_id)
+                            if root_req:
+                                summary=self.hierarchies.reconcile_jobs(
+                                    self.specifications,root_id,root_req['prompt'],self.jobs)
+                                self._log(f'Milestone roadmap #{root_id}: '
+                                          f'{summary["milestones_verified"]}/{summary["milestones_total"]} '
+                                          'milestones verified; no automatic approval of next milestone.')
+                        except Exception as exc:
+                            self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()
                 if code!=0:messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
