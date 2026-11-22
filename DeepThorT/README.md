@@ -1,3 +1,17 @@
+# DeepThorT v20 — JANUS local Interface + planning-revision reliability (22 November 2026)
+
+**Source:** v19, retaining the original desktop interface and Windows launcher. This release does **not** add a second neural model, change the 20% gaming CPU profile, or give JANUS permission to approve/execute work.
+
+**JANUS while Qwen is occupied:** In the existing Chats input, address a message explicitly to `JANUS` or `@JANUS` (e.g. `JANUS, report status`). JANUS now replies immediately using its saved Front/Interface status, Sentinel oversight state, existing approved-job counts and ONNX availability. It does not wait for Qwen and does not interrupt another chat. These are **read-only factual reports, not free-form AI language generation**. Ordinary chat still queues for Qwen; JANUS cannot independently explain arbitrary subjects or write complete project plans with its current deterministic architecture. Actions still require existing explicit approval controls.
+
+**Planning:** The 40-pass limit, early stop on validated success and the complete original specification on **every** planning request remain intact. Revision requests now include the purpose/description of a few relevant previously model-authored files, target a missing criterion for more than one pass before rotating, and reject a rewrite that would remove previously satisfied criteria. Smaller model output budgets (384 tokens normally rather than 640; up to 640 after suitable malformed-JSON failures) and shorter fixed prompt instructions can reduce unnecessary inference, but no Windows speedup or valid Xenon PE plan has been demonstrated. No fixed or fabricated PE plan is substituted.
+
+**Tests:** 181 tests passed in a Linux virtual-display run (`xvfb-run -a python -m unittest discover -s tests -q`). Tkinter/SQLite teardown warnings still occur. No live Windows inference, cancellation, X4 gameplay, Android build, or GitHub CI success is asserted by this test result.
+
+**Install:** Exit DeepThorT, extract the package to `D:\deepthort` with application files overwritten; keep `state`, `models`, `node_modules`, `reference`, `cache` and project directories. Test an addressed JANUS reply while Qwen plans, then request a fresh draft plan to assess actual speed/quality.
+
+---
+
 # DeepThorT v19 — JANUS worker runtime correction (22 November 2026)
 
 **Source base:** v18. This is a minimal diagnostics-driven correction, not a change to the existing interface, planning system, model, approvals, or JANUS topology.
