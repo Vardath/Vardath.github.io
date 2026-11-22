@@ -1,3 +1,11 @@
+## v27 addendum — reconciled source requirements and fresh verification (22 November 2026)
+
+The v26 roadmap now performs a *conservative* check for precisely conflicting original mandatory instructions and user-declared `REQ-N` links before a new roadmap is committed. An explicit conflict stops approval; DeepThorT will not silently choose one version of the user's request. Source candidate links remain auditable, not verified implementation. See `SEMANTIC_RECONCILIATION.md`.
+
+New build verification results include fingerprints of the generated files *at the time an approved test succeeds*. If a source changes afterward, stale verification cannot unlock a later milestone; already verified downstream milestones may require re-verification. The existing Verify build control still requires explicit consent. Older v25/v26 records cannot be retroactively assigned hashes.
+
+---
+
 # DeepThorT hierarchical development — v25 (Pass 4, first implementation)
 
 ## What was implemented
