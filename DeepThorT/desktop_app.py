@@ -29,6 +29,8 @@ from deepthort_local.client import LocalModelClient
 from deepthort_local.capability_library import CapabilityLibrary, attach_capability_context
 from deepthort_local.specification_library import SpecificationIndex, generate_indexed_plan, MAX_STORED_REQUEST_CHARS
 from deepthort_local.hierarchical_planning import HierarchicalPlanStore
+from deepthort_local.semantic_reconciliation import capture_verified_sources
+from deepthort_local.verification_evidence import assess_verification, attach_verification
 from deepthort_local.large_input import imported_source, resolve_import
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
@@ -79,7 +81,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='25',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='27',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -1049,10 +1051,18 @@ class DeepThorTDesktop(tk.Tk):
             display='\n'.join(f"{i}. {step['path']}: {step['description']}"
                                for i,step in enumerate(milestone['steps'],1))
             section_ids=', '.join(str(i) for i in milestone['source_sections'])
+            contracts=self.hierarchies.acceptance_contract_report(
+                self.specifications,root_request_id,req['prompt'])
+            acceptance_summary=(f"Declared source contracts: {contracts['model_declared_contracts']}; "
+                f"labelled requirements without test links: "
+                f"{len(contracts['unlinked_labelled_requirements'])}; "
+                f"current static issues: {len(contracts['issues'])}. "
+                'These are planning checks, NOT proof of correct behavior.\n\n')
             if not messagebox.askyesno('Approve this milestone for execution?',
                 f"Milestone {ordinal}/{state['milestones_total']}: {milestone['title']}\n"
                 f"Master specification SHA-256: {state['specification_sha256'][:24]}…\n"
                 f"Exact source sections: {section_ids}\n\n"
+                +acceptance_summary+
                 f"FILES ({len(milestone['steps'])}):\n{display[:2300]}\n\n"
                 'This is an independently scoped milestone. The full original specification '
                 'is preserved, but Qwen will only receive the listed exact source sections '
@@ -2069,6 +2079,8 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Tool already running','Wait or stop the current tool process first.');return False
         def worker():
             try:
+                from collections import deque
+                captured=deque(maxlen=300)
                 flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,shell=False) as proc:
@@ -2076,9 +2088,12 @@ class DeepThorTDesktop(tk.Tk):
                     else:self.tool_process=proc
                     if proc.stdout:
                         for line in proc.stdout:
+                            if kind=='verification':
+                                captured.append(line.rstrip()[:2000])
                             self.events.put(('log',f'[{label}] {line.rstrip()}'))
                     code=proc.wait()
-                self.events.put(('tool_end',label,kind,code,job_id))
+                result={'argv':list(cmd),'lines':list(captured)} if kind=='verification' else None
+                self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
                 if kind=='installation':self.install_process=None
@@ -2611,7 +2626,8 @@ class DeepThorTDesktop(tk.Tk):
                 self.installing=False;self.model_status.set('AI: installation failed')
                 self._log('Installation failed: '+event[1]);messagebox.showerror('Install failed',event[1])
             elif kind=='tool_end':
-                label,tooltype,code,job_id=event[1:]
+                label,tooltype,code,job_id=event[1:5]
+                verification_output=event[5] if len(event)>5 else None
                 self._log(f'{label} ended, exit code {code}. '+('Succeeded.' if code==0 else 'Check output for failure.'))
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
                 if tooltype=='installation' and code==0:self._refresh_inventory()
@@ -2620,10 +2636,32 @@ class DeepThorTDesktop(tk.Tk):
                 if tooltype=='x4_preflight_extraction' and job_id is not None:
                     self._x4_preflight_extract_finished(job_id,code)
                 if tooltype=='verification' and job_id is not None:
-                    self.jobs.change(job_id,'complete' if code==0 else 'needs_input',
-                        f'Verified: test command exited 0 ({label})' if code==0 else
-                        f'Build test failed with exit {code}; inspect Processes log and repair the project',
-                        allowed=('running',))
+                    snapshot=None
+                    check=None
+                    if isinstance(verification_output,dict):
+                        check=assess_verification(verification_output.get('argv') or [],
+                                                  code,verification_output.get('lines') or [])
+                    if code==0 and (check is None or check['accepted']):
+                        try:
+                            current_job=self.jobs.get(job_id)
+                            if current_job is None:
+                                raise ValueError('Approved job is missing')
+                            snapshot=capture_verified_sources(
+                                current_job['project'],self.jobs.steps(job_id))
+                            if check is not None:
+                                snapshot=attach_verification(snapshot,check,verification_output['argv'])
+                        except (OSError,ValueError) as exc:
+                            self._log(f'Approved test exited 0 but source evidence was not captured: {exc}')
+                    if code==0 and snapshot is not None:
+                        assurance=('; '+check['assurance'] if check is not None else '')
+                        self.jobs.change(job_id,'complete',
+                            f'Verified: test command exited 0 ({label}); source hashes captured{assurance}',
+                            result=json.dumps(snapshot,sort_keys=True),allowed=('running',))
+                    else:
+                        failure=(check['reason'] if check is not None and not check['accepted'] else
+                                 f'Build test failed with exit {code}; inspect Processes log and repair the project'
+                                 if code else 'Test exited 0 but source snapshot failed; verify generated files and rerun the approved test')
+                        self.jobs.change(job_id,'needs_input',failure,allowed=('running',))
                     job=self.jobs.get(job_id)
                     if job and str(job.get('approval_key') or '').startswith('milestone:'):
                         try:
