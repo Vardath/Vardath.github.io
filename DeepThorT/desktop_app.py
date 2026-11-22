@@ -172,7 +172,7 @@ class DeepThorTDesktop(tk.Tk):
         self.attachments = []
         self.imported_spec_source = None
         self.image_photo = None
-                self.chat_ids = []
+        self.chat_ids = []
         self.current_chat = None
         self.inventory = None
         self.meter=Meter()
@@ -1964,8 +1964,8 @@ class DeepThorTDesktop(tk.Tk):
                           'fixed local verification will be scheduled automatically.')
             else:
                 messagebox.showinfo('Build requires verification',
-                    f'Job #{jobid} saved {saved} proposed files.\\n\\n'
-                    'Source generation is NOT proof of a working app or game.\\n'
+                    f'Job #{jobid} saved {saved} proposed files.\n\n'
+                    'Source generation is NOT proof of a working app or game.\n'
                     'Select Verify build to run a separately approved local test.')
         self._refresh_jobs()
 
@@ -2020,7 +2020,7 @@ class DeepThorTDesktop(tk.Tk):
                             f'Review proposed {step["path"]} ({len(self.jobs.steps(jobid))} planned files)',
                             result=answer, allowed=('running',))
                         self.file_title.set('Proposed: ' + step['path'])
-                        self._preview('PROPOSED CODE — edit below before approving\\n\\n' + code)
+                        self._preview('PROPOSED CODE — edit below before approving\n\n' + code)
                         self.tabs.select(2)
                         messagebox.showinfo('Build needs file review',
                             f'Job #{jobid} proposed {step["path"]}. Review it and approve saving. '
