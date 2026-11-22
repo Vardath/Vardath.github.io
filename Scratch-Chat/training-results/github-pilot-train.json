@@ -11,7 +11,7 @@
       "tokens_evaluated": 2048
     },
     "step": 2700,
-    "train_loss": 2.84999,
+    "train_loss": 2.849989,
     "validation": {
       "loss": 3.0902,
       "perplexity": 21.981481,
