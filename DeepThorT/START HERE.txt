@@ -1,18 +1,9 @@
-DEEPTHORT DESKTOP v18 — close chats and stop local replies
-Based on v17. The original interface, planner, JANUS/Sentinel, offline ONNX model,
-and approval workflow are preserved.
+DEEPTHORT DESKTOP v19 — JANUS idle timer and model contention repair
+Built on v18. Original desktop layout and chat cancellation remain unchanged.
 
-Use Close chat to archive a tab and cancel its unfinished chat requests.
-Right-click a chat tab to reopen archived conversations. Chat history is retained.
-Use Stop reply to cancel only the selected chat's running or queued response.
-When cancelling active ONNX generation, the supervised model is stopped and
-reloaded for other chats; ONNX initialization may take time. No cancelled
-request is automatically restarted. Existing approved work queue jobs use
-separate cancellation controls in Work queue and Processes.
+Close DeepThorT before extracting over D:\deepthort.
+Preserve the models, state, node_modules, cache, reference, and project folders.
+The local model and JANUS reasoning architecture are unchanged.
+This update does not provide JANUS with general chat generation while Qwen is busy.
 
-Close DeepThorT, extract into D:\deepthort, and preserve models/state/
-node_modules/cache/reference and all user project folders.
-
-170 tests passed in separate per-module runs. Full single-process discovery has
-Tkinter teardown warnings/crashes under Xvfb; live Windows cancellation/reload
-remains unverified. No model or cloud provider was added.
+See README.md for the exact corrections and verification limits.
