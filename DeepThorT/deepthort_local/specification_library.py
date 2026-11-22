@@ -175,7 +175,7 @@ class SpecificationIndex:
 
 def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, session: str,
                           original: str, project: str | Path, *, max_rounds: int=40,
-                          stage=None, cancelled=None) -> tuple[str,list[dict]]:
+                          stage=None, cancelled=None, hierarchy=None, chat_id: str = '') -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -210,6 +210,14 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         raise PlanError(f'Large specification stored without truncation: {progress["reviewed"]}/{progress["sections"]} '
                         f'sections reviewed; {progress["pending"]} still require model inspection. '
                         'No complete plan or executable work approved. Retry to continue saved progress.')
+    # The indexed source is now a master specification, not a file-stage plan.
+    # A hierarchy must be explicitly reviewed and approved one milestone at a
+    # time; never bypass the old 24-stage queue by submitting one giant job.
+    if hierarchy is not None:
+        if not chat_id:
+            raise ValueError('Hierarchical planning requires a durable chat identifier')
+        summary=hierarchy.prepare(index,request_id,original,project,chat_id=chat_id)
+        return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:
         raise PlanError(f'All {progress["sections"]} specification sections reviewed, but the model proposed '
