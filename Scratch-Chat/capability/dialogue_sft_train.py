@@ -128,8 +128,16 @@ if __name__ == "__main__":
     p.add_argument("--checkpoint", type=Path, required=True)
     p.add_argument("--vocab-size", type=int, required=True)
     p.add_argument("--steps", type=int, default=10)
+    p.add_argument("--width", type=int, default=64)
+    p.add_argument("--layers", type=int, default=2)
+    p.add_argument("--heads", type=int, default=4)
+    p.add_argument("--context-size", type=int, default=256)
+    p.add_argument("--learning-rate", type=float, default=0.0003)
+    p.add_argument("--seed", type=int, default=2026)
     p.add_argument("--resume", action="store_true")
     a = p.parse_args()
     print(json.dumps(run(a.train, a.validation, a.checkpoint,
                          vocab_size=a.vocab_size, steps=a.steps,
-                         resume=a.resume), indent=2))
+                         width=a.width, layers=a.layers, heads=a.heads,
+                         context_size=a.context_size, lr=a.learning_rate,
+                         seed=a.seed, resume=a.resume), indent=2))
