@@ -1040,6 +1040,7 @@ class DeepThorTDesktop(tk.Tk):
                         record(STATE,'desktop','capability_discovery_completed',
                                request_id=ident,files_scanned=discovery['files_scanned'],
                                references_indexed=discovery['references_indexed'],
+                               local_reference_documents=discovery.get('reference_documents_indexed',0),
                                tools_detected=len(discovery['tools_detected']),
                                evidence_characters=len(capability_evidence))
                     except Exception as discovery_error:
