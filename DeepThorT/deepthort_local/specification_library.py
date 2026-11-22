@@ -131,6 +131,10 @@ class SpecificationIndex:
           'Return exactly {"files":[{"path":"relative/path.ext","description":"what this file implements"}]}. '
           'If a file has a SPECIFIED, exact dependency on another source file, you may append '
           '"; depends-on: relative/other.ext" to its description; never invent dependencies. '
+          'When a user requirement is explicitly labelled REQ-N and you propose a genuine test file, '
+          'append "; verifies: REQ-N"; for Python API files use "; provides: Symbol" or '
+          '"; uses: path/to/provider.py::Symbol" only when this is a real intended contract. '
+          'These declarations require source inspection later and never prove acceptance. '
           'No markdown, no invented game IDs, no claims of execution. Do not modify the original specification.\n'
           f'UNMODIFIED SPECIFICATION SECTION {row["ordinal"]+1} (chars {row["start"]}:{row["end"]}):\n')
         prompt=context+row['text']+'\nEND OF SPECIFICATION SECTION.\n'
