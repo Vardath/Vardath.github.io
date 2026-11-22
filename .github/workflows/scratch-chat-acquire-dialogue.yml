@@ -11,6 +11,8 @@ on:
       - 'Scratch-Chat/tests/test_audit_dolly_quarantine.py'
       - 'Scratch-Chat/capability/stage_dolly_review.py'
       - 'Scratch-Chat/tests/test_stage_dolly_review.py'
+      - 'Scratch-Chat/capability/audit_dialogue_splits.py'
+      - 'Scratch-Chat/tests/test_audit_dialogue_splits.py'
       - '.github/workflows/scratch-chat-acquire-dialogue.yml'
 permissions:
   contents: read
@@ -32,6 +34,8 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_audit_dolly_quarantine.py' -v
       - name: Test review staging offline
         run: python -m unittest discover -s tests -p 'test_stage_dolly_review.py' -v
+      - name: Test independent cross-split leakage audit
+        run: python -m unittest discover -s tests -p 'test_audit_dialogue_splits.py' -v
       - name: Acquire pinned external JSONL as unapproved candidate
         run: python -m capability.acquire_dolly_quarantine --output acquisition/dolly-candidate
       - name: Verify hashes and quarantine status
@@ -51,6 +55,8 @@ jobs:
         run: python -m capability.audit_dolly_quarantine acquisition/dolly-candidate --output acquisition/dolly-candidate/content-audit.json
       - name: Stage filtered and group-isolated review partitions (NOT training data)
         run: python -m capability.stage_dolly_review acquisition/dolly-candidate --output acquisition/dolly-review
+      - name: Independently audit review split overlap (fail closed)
+        run: python -m capability.audit_dialogue_splits acquisition/dolly-review/review_splits --output acquisition/dolly-review/independent-leakage-audit.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
