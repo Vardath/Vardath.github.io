@@ -1,3 +1,19 @@
+## v25 — Hierarchical development foundation (22 November 2026)
+
+**Current packaged release: DeepThorT v25.** Built from the verified v24 Windows ZIP with the executable, desktop launcher, model, JANUS/Sentinel, approval controls, resource restrictions and original UI preserved. New source: `deepthort_local/hierarchical_planning.py`; tests: `test_hierarchical_planning_v25.py`, `test_hierarchical_gui_v25.py`; reference: `HIERARCHICAL_DEVELOPMENT.md`.
+
+v24 reviewed large specifications in exact sections but failed after merging more than 24 model-proposed file stages. v25 closes that post-review blocker: once all source sections are model-reviewed, a durable roadmap groups **only model-authored** file proposals into independent milestones (default <=12 files, max 24 per job), with source section SHA-256 traceability. The aggregate plan is validated before staging. Conflicting paths, missing trace links, changed source or model proposals, and overly large exact source scopes block approval. Roadmaps persist separately in `state/hierarchical_plans.sqlite3`. No roadmap creation queues work.
+
+The **existing** `Approve plan & queue` control now explicitly confirms only the next milestone in the same chat/project. Each generated file retains individual review; later milestones remain locked until the prior approved build job has recorded both saved file stages and a successful, explicitly approved verification run. Restart/idempotency checks reject wrong job identities and repeated approvals. Each model request receives unmodified, numbered source-section excerpts within the inference limit; the full original remains preserved in the existing specification database. Sequential dependencies are conservative verification gates, not learned software architecture. Very large shared-file scopes remain blocked for model reconciliation; this release is not evidence of game correctness.
+
+A Faction Command / Android game citing X4 as inspiration is no longer misclassified as an X4 extension requiring extracted source assets; actual X4 mods remain subject to existing source verification.
+
+**Validation:** 263 local Python tests passed under Xvfb (including 28 new hierarchical/desktop integration tests); the 92-file v25 ZIP passed CRC check; the Windows executable and desktop launcher are byte-for-byte unchanged from v24. GitHub CI and actual Windows ONNX inference, Android building and X4 gameplay have not yet been verified. No test result can be promoted into a claim of a working game.
+
+**Next priorities:** Pass 5 benchmarks and semantic requirement IDs, model-authored dependency/API interfaces, safe reuse of earlier verified code and real-engine acceptance tests. Preserve the original specification and explicit approval boundaries.
+
+---
+
 ## v24 update — 22 November 2026: million-word input, Pass 3 approved evidence
 
 **Packaged v24:** DeepThorT_Desktop_v24_Windows.zip; 88 files; SHA-256 `41c895f6893dab747b22998db22921b98916e41a0e7d413c1d9e43669303250b`. Built from v23 with the exact original Windows launcher (byte-for-byte unchanged). All 235 local Linux virtual-display tests passed; Tkinter/SQLite cleanup warnings remain. Live Windows model, X4 gameplay and game-engine builds are not yet validated.
