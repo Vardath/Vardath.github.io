@@ -89,7 +89,7 @@ class SourceManifestTests(unittest.TestCase):
                 (root / (split + ".jsonl")).write_bytes(raw)
                 self.data[split + "_sha256"] = hashlib.sha256(raw).hexdigest()
                 self.data[split + "_records"] = len(examples)
-            with self.assertRaisesRegex(ValueError, "Repeated normalized dialogue"):
+            with self.assertRaisesRegex(ValueError, "Repeated normalized dialogue|Cross-split repeated user prompt"):
                 verify_split_files(self.data, root)
 
     def test_missing_messages_rejected(self):
