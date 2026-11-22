@@ -19,6 +19,8 @@ from pathlib import Path
 
 from .agent_plan import PlanError, validate_project_plan
 from .specification_library import sha
+from .requirements_intelligence import (requirement_candidates, dependency_order,
+                                       declared_dependencies, check_dependency_schedule)
 from .workspace import safe_target
 
 MAX_MILESTONE_FILES = 12       # comfortably below the existing 24-file queue limit
@@ -51,6 +53,18 @@ class HierarchicalPlanStore:
                   scope_sha256 TEXT NOT NULL,
                   state TEXT NOT NULL DEFAULT 'planned', job_id INTEGER,
                   PRIMARY KEY(request_id,ordinal));
+                CREATE TABLE IF NOT EXISTS hierarchy_requirements (
+                  request_id INTEGER NOT NULL, requirement_id TEXT NOT NULL,
+                  section_ordinal INTEGER NOT NULL, start_char INTEGER NOT NULL,
+                  end_char INTEGER NOT NULL, source_sha256 TEXT NOT NULL,
+                  kind TEXT NOT NULL,
+                  PRIMARY KEY(request_id,requirement_id));
+                CREATE INDEX IF NOT EXISTS hierarchy_req_section
+                  ON hierarchy_requirements(request_id,section_ordinal);
+                CREATE TABLE IF NOT EXISTS hierarchy_dependencies (
+                  request_id INTEGER NOT NULL, file_path TEXT NOT NULL,
+                  requires_path TEXT NOT NULL,
+                  PRIMARY KEY(request_id,file_path,requires_path));
                 CREATE TABLE IF NOT EXISTS hierarchy_trace (
                   request_id INTEGER NOT NULL, section_ordinal INTEGER NOT NULL,
                   section_sha256 TEXT NOT NULL,
@@ -148,6 +162,9 @@ class HierarchicalPlanStore:
         rows = self._source_rows(index, request_id, original)
         source_digest=sha(original)
         steps, refs = self._collect(rows, project)
+        # File ordering changes only when the local model has explicitly
+        # described its dependency using a depends-on: path declaration.
+        ordered_steps, dependencies = dependency_order(steps)
         if len(steps) < 1:
             raise PlanError('No model-authored file proposals to divide into milestones')
         validate_project_plan(steps, original) # aggregate safeguards remain mandatory
@@ -167,7 +184,7 @@ class HierarchicalPlanStore:
         groups = []
         current = []
         current_refs = set()
-        for step in steps:
+        for step in ordered_steps:
             step_refs = refs[step['path'].casefold()]
             source_chars = sum(sizes[r] for r in step_refs)
             if source_chars > MAX_SCOPE_SOURCE_CHARS:
@@ -186,6 +203,7 @@ class HierarchicalPlanStore:
             groups.append((current, sorted(current_refs)))
         if not groups:
             raise PlanError('No valid hierarchical milestones could be created')
+        check_dependency_schedule(groups, dependencies)
         if len(groups) > 100_000:
             raise PlanError('Too many milestones for the current local roadmap index')
 
@@ -205,11 +223,18 @@ class HierarchicalPlanStore:
         if {r[0] for r in rows} != {r[1] for r in trace_rows}:
             raise PlanError('Requirements traceability is incomplete: at least one section lacks a model-authored implementation step')
 
+        candidates = requirement_candidates(original, rows)
+        if rows and not candidates:
+            raise PlanError('No identifiable source requirement candidates; original is retained')
         with self._db() as db:
             db.execute('INSERT INTO hierarchy_roots(request_id,chat_id,project,source_sha256,model_steps_sha256,section_count,milestone_count) VALUES(?,?,?,?,?,?,?)',
                        (request_id,chat_id,project,source_digest,digest,len(rows),len(groups)))
             db.executemany('INSERT INTO hierarchy_milestones(request_id,ordinal,title,steps_json,section_ordinals_json,scope_sha256) VALUES(?,?,?,?,?,?)',milestone_rows)
             db.executemany('INSERT INTO hierarchy_trace(request_id,section_ordinal,section_sha256,path,milestone_ordinal) VALUES(?,?,?,?,?)',trace_rows)
+            db.executemany('INSERT INTO hierarchy_requirements(request_id,requirement_id,section_ordinal,start_char,end_char,source_sha256,kind) VALUES (?,?,?,?,?,?,?)',
+               [(request_id,r['id'],r['section_ordinal'],r['start_char'],r['end_char'],r['sha256'],r['kind']) for r in candidates])
+            db.executemany('INSERT INTO hierarchy_dependencies(request_id,file_path,requires_path) VALUES(?,?,?)',
+               [(request_id,file,required) for file,deps in dependencies.items() for required in deps])
         return self.status(index, request_id, original)
 
     def _checked(self, index, request_id: int, original: str):
@@ -251,6 +276,16 @@ class HierarchicalPlanStore:
                 observed_paths[key]=expected
         if set(observed_paths)!=set(path_index):
             raise PlanError('Milestone roadmap does not cover the full model-authored plan')
+        # Stored dependency edges must agree with the current model plan.
+        declared = declared_dependencies(master_steps)
+        with self._db() as db:
+            dependency_rows = db.execute('SELECT file_path,requires_path FROM hierarchy_dependencies WHERE request_id=?', (request_id,)).fetchall()
+        expected_edges={(file,dep) for file,deps in declared.items() for dep in deps}
+        if expected_edges != {(r['file_path'],r['requires_path']) for r in dependency_rows}:
+            raise PlanError('Recorded file dependency graph does not match model-authored descriptions')
+        for file,dependency in expected_edges:
+            if observed_paths[dependency.casefold()] > observed_paths[file.casefold()]:
+                raise PlanError('File dependency scheduled after its dependent: '+file)
         expected_trace={(s_id,rows[s_id][3],step['path'],observed_paths[step['path'].casefold()])
                         for step in master_steps for s_id in ref_index[step['path'].casefold()]}
         actual_trace={(t['section_ordinal'],t['section_sha256'],t['path'],t['milestone_ordinal']) for t in trace}
@@ -349,6 +384,42 @@ class HierarchicalPlanStore:
                     db.execute("UPDATE hierarchy_milestones SET state='verified' WHERE request_id=? AND ordinal=? AND state='queued' AND job_id=?",
                                (request_id,m['ordinal'],job['id']))
         return self.status(index,request_id,original)
+
+    def requirement_report(self, index, request_id: int, original: str, *, limit: int = 500) -> dict:
+        """Auditable candidates: file links indicate review scope, not proof of implementation."""
+        self._checked(index,request_id,original)
+        if not 1<=limit<=10000:
+            raise ValueError('Requirement report limit must be 1..10000')
+        with self._db() as db:
+            stored=db.execute('SELECT requirement_id,section_ordinal,start_char,end_char,source_sha256,kind '
+                'FROM hierarchy_requirements WHERE request_id=? ORDER BY section_ordinal,start_char',
+                (request_id,)).fetchall()
+            trace=db.execute('SELECT section_ordinal,path,milestone_ordinal FROM hierarchy_trace WHERE request_id=?',
+                             (request_id,)).fetchall()
+        by_section={}
+        for link in trace:
+            by_section.setdefault(link['section_ordinal'],[]).append(
+                {'path':link['path'],'milestone':link['milestone_ordinal']})
+        results=[]
+        for row in stored:
+            start,end=row['start_char'],row['end_char']
+            if sha(original[start:end])!=row['source_sha256']:
+                raise PlanError('A requirement candidate no longer matches its exact source text')
+            if len(results)<limit:
+                results.append({'id':row['requirement_id'], 'section':row['section_ordinal']+1,
+                                'start_char':start,'end_char':end,'kind':row['kind'],
+                                'excerpt':original[start:min(end,start+180)].strip(),
+                                'candidate_file_intentions':by_section.get(row['section_ordinal'],[])})
+        return {'candidate_count':len(stored),'shown':len(results),
+                'requirements':results,
+                'trace_level':'source-scope association only; semantic implementation NOT verified'}
+
+    def dependency_report(self, index, request_id: int, original: str) -> list[dict]:
+        self._checked(index,request_id,original)
+        with self._db() as db:
+            rows=db.execute('SELECT file_path,requires_path FROM hierarchy_dependencies '
+                            'WHERE request_id=? ORDER BY file_path,requires_path',(request_id,)).fetchall()
+        return [dict(row) for row in rows]
 
     def coverage(self, index, request_id: int, original: str) -> list[dict]:
         """Inspectable section->source file->milestone trace (not semantic proof)."""
