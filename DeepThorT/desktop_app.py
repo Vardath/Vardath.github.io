@@ -58,6 +58,7 @@ from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
 from deepthort_local.tool_sources import official_source
+from deepthort_local.online_tool_search import winget_search_command
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
 
@@ -89,7 +90,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='35',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='36',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -392,6 +393,7 @@ class DeepThorTDesktop(tk.Tk):
         self.install_menu.pack(side='left',padx=5)
         ttk.Button(action,text='Review & approve install…',command=self._approve_tool_install).pack(side='left',padx=3)
         ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3)
+        ttk.Button(action,text='Search packages online…',command=self._search_online_tools).pack(side='left',padx=3)
         checks=ttk.Frame(hardware_tab);checks.pack(fill='x',pady=(3,10))
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
@@ -2314,6 +2316,35 @@ class DeepThorTDesktop(tk.Tk):
             return
         webbrowser.open(source['url'])
         self._log(f'User opened official vendor page for {name}; no install was initiated.')
+
+    def _search_online_tools(self):
+        """Consent-gated, read-only search: results are not approved installers."""
+        if self.disk_gate.gaming():
+            messagebox.showwarning('Gaming priority',
+                'A configured game is running. Online package search is deferred.',parent=self)
+            return
+        name=simpledialog.askstring('Search for installed-tool alternatives',
+            'Enter a software name or capability to search in the Windows Package Manager catalog:',
+            parent=self)
+        if name is None:
+            return
+        try:
+            cmd=winget_search_command(name)
+        except (ValueError,OSError) as exc:
+            messagebox.showwarning('Cannot search packages',str(exc),parent=self)
+            return
+        if not messagebox.askyesno('Approve online software search',
+            'This queries the Windows Package Manager community catalog over the internet.\n'
+            'It may contact the catalog provider and accept its source agreements.\n\n'
+            'Query: '+name.strip()+'\nSource: winget\nMaximum results: 20\n\n'
+            'No software is downloaded or installed. Search results are untrusted '
+            'information; installing any package requires a separate reviewed action.\n\n'
+            'Approve this exact network search?',parent=self):
+            self._log('Online package search was declined by user.')
+            return
+        if self._start_command(cmd,cwd=ROOT,label='Online winget search',kind='tool'):
+            self._log('Approved read-only online package search: '+name.strip())
+            self.tabs.select(4)
 
     def _approve_tool_install(self):
         name=self.install_choice.get()

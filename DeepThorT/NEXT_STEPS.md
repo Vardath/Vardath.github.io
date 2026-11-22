@@ -2,6 +2,12 @@
 
 **Baseline:** `DeepThorT_Desktop_v34_Windows.zip` (134 files, ZIP CRC clean). This version adds contextual UI help and offline documentation; it does not replace the local Qwen runtime, JANUS/Sentinel topology or approval gates. Install to `D:\deepthort` without deleting `state`, `models`, `reference`, `cache`, `node_modules`, custom projects or existing launcher data. Back up `state` before upgrade. Read `USER_GUIDE.html` in the install root (F1 in the desktop).
 
+## Completed in v36 (second pass)
+
+- Fixed two older regression test setups that incorrectly enrolled Python through a symlink on the Linux GitHub Actions Python installation. Both now use the real resolved executable path without weakening DeepThorT's protection against untrusted symlink executable paths.
+- Added a deliberately **read-only Windows Package Manager network search** with an explicit per-query consent dialog, fixed argv (`winget search --query ... --source winget --count 20`), bounded query validation and no shell evaluation. Results appear in the existing activity log. No automatic installer action or new install catalog approval is inferred from search results.
+- New `tests/test_online_tool_search_v36.py` tests consent, refusal, game priority, input validation and fixed command structure. Live Windows winget network behavior remains to be tested by the user.
+
 ## Completed in v35
 
 - `deepthort_local/ui_help.py`: passive, delayed, non-focus-grabbing Tk hover tooltips on existing buttons, controls, main text areas, work/process trees and notebook tabs; no network or model activity. Existing UI retained; added `User guide` top button and F1 shortcut.
@@ -12,17 +18,17 @@
 
 ## Ordered, acceptance-gated development backlog
 
-### P0 — Windows acceptance of v35, and rigorous GUI usability
+### P0 — Windows acceptance of v36, and rigorous GUI usability
 
 1. Test actual Windows startup and 20%-resource/game priority with installed ONNX model; verify F1 guide and all tab/button tooltips at 1320×860 and 1138×765, including keyboard/screen-reader behavior. Fix clipping if necessary without removing original chat controls.
 2. Verify source/ZIP parity, SHA-256 and GitHub CI status; fix any real failing workflows. Tkinter combined-process teardown remains an existing limitation even if isolated modules pass.
 3. Run a small disposable project through local Qwen -> plan -> human approval -> source write -> authorized test -> persisted evidence -> restart. Collect diagnostics and observed runtimes.
-4. If v35 tests are green, start next pass from v35, not from earlier source; do not overwrite unrelated GitHub `Scratch-Chat` updates.
+4. If v36 tests are green, start next pass from v36, not from earlier source; do not overwrite unrelated GitHub `Scratch-Chat` updates.
 
 ### P1 — Safe *online* software/tool discovery and consent-controlled install (v36+)
 
-1. Build a **capability resolver** from actual user requirements (artifact type, target OS, file formats, licenses, required tools, compatible versions and installed tool identity). Record a candidate dependency graph rather than keyword match only. Include resource needs (available disk/RAM and games running).
-2. Add **explicit online-search consent** scoped to query/project, with independent **read-only research** using trusted upstream repositories, official documentation and package-manager metadata. Store source URL, version, publisher, retrieval time, license and evidence. Treat search results/pages as hostile data; never execute instructions from them. No browser takeover or unapproved network access.
+1. Continue the already introduced consented winget query into a **capability resolver** from actual user requirements (artifact type, target OS, file formats, licenses, required tools, compatible versions and installed tool identity). Record a candidate dependency graph rather than keyword match only. Include resource needs (available disk/RAM and games running).
+2. Extend v36's user-confirmed winget catalog search to richer **explicit online-search consent** scoped to query/project, with independent **read-only research** using trusted upstream repositories, official documentation and package-manager metadata. Store source URL, version, publisher, retrieval time, license and evidence. Treat search results/pages as hostile data; never execute instructions from them. No browser takeover or unapproved network access.
 3. Compare discovered packages to existing software. Validate package IDs and publisher identity against signed catalog data, official domains and independent provenance; disallow sponsored/mirrored/shortened/untrusted downloads as automatic installer candidates. Reject insecure URLs, redirects to unknown origins and mutable unpinned installers.
 4. Present a detailed **download consent** review (publisher, exact URL, version, size, expected checksum/signature, destination, network use and potential data handling) before fetching. Download to a quarantined temporary directory with hard size/time/disk quotas, rate limiting and cancellation; verify SHA-256 when an independent trusted digest exists, Authenticode signature where applicable, and content type. A checksum from the same untrusted source is not strong provenance evidence. Unsigned/unverifiable installers need explicit exception or a blocked state.
 5. Show a separate **installation authorization** with exact executable, arguments, elevation requirements, scope, expected writes/network effects and uninstall/rollback plan. Never silently elevate, run shell snippets from search results, or automatically accept arbitrary licensing terms. Enforce game priority and measured CPU/RAM/disk budgets; record post-install executable and capability probe, then source/evidence hashes.
@@ -57,13 +63,15 @@
 
 ## Open limitations (do not claim complete)
 
-- v35 does **not** discover arbitrary tools on the internet, download vendor installers directly or automatically install apps based on a model proposal. Only the existing fixed winget installation catalog can install after explicit user review.
-- v35 does **not** give Qwen a larger ONNX inference context or improve generation speed. Large specification input storage is separate from model context.
+- v36 can look up arbitrary name queries inside the Windows Package Manager `winget` catalog only after user approval. It does **not** independently research arbitrary web sources, fetch/download vendor installers, or automatically install apps from search results. Only the original fixed winget installation catalog can install after a separate exact-package approval.
+- v36 does **not** give Qwen a larger ONNX inference context or improve generation speed. Large specification input storage is separate from model context.
 - Scripts approved for execution are **not sandboxed**. They can access resources available to the user; inspection alone is not a malware guarantee.
 - Real Windows Blender/Godot/X4/Android end-to-end acceptance is not yet proven. Do not claim games/mods complete based on synthetic tests or static XML alone.
 - Combined-process Tkinter teardown has an existing race; module-isolated test execution is the documented workaround, not a claimed production fix.
-- Existing JANUS/Sentinel core behavior and model/resource architecture are retained; v35 changes are UI help, a curated publisher lookup and advisory tool coverage.
+- Existing JANUS/Sentinel core behavior and model/resource architecture are retained; v35–v36 changes are UI help, a curated publisher lookup and advisory tool coverage.
 
 ## Next-run minimal report
 
-After installing v35, report (a) whether F1/hover help works in each tab, (b) whether selecting an official tool page opens the expected URL without an install, (c) any failed known-tool installation with the exact installer output, (d) whether real Windows Qwen replies/plan approvals execute and pass one small test, and (e) a fresh **Export diagnostics** ZIP. Avoid changing production X4 mods as a first installer test.
+After installing v36, report (a) whether F1/hover help works in each tab, (b) whether selecting an official tool page opens the expected URL without an install, (c) any failed known-tool installation with the exact installer output, (d) whether real Windows Qwen replies/plan approvals execute and pass one small test, and (e) a fresh **Export diagnostics** ZIP. Avoid changing production X4 mods as a first installer test.
+
+For the online search test, use **Search packages online…**, enter `FreeCAD`, confirm the query, and check the Processes log for candidates. No installation should occur. Cancel a second query to verify consent refusal.

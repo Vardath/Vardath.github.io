@@ -1,3 +1,16 @@
+# DeepThorT v36 — consented online package lookup and cross-platform regression repair (22 November 2026)
+
+**Base:** Complete v35 release (illustrated offline manual, hover tooltips and fixed publisher-source lookup). v36 adds a read-only online catalog lookup and corrects two preexisting Linux CI test fixtures without relaxing tool executable validation. Original local Qwen model, JANUS/Sentinel, UI geometry, all state, gaming/resource limits and explicit source/command approvals are unchanged.
+
+- **Computer & Tools → Search packages online…:** asks for a bounded software name, displays consent describing network/catalog access, then runs `winget search --query ... --source winget --count 20` through the existing supervised desktop process log. The query cannot install or download. It does not automatically trust catalog results, allow arbitrary URLs or add installable package IDs. A search result requires further independent review before any future generalized install implementation.
+- `deepthort_local/online_tool_search.py` produces only a fixed command vector, rejects control characters/option-like input, and requires a real available winget executable. No model-generated shell code, script execution or automatic cloud model use.
+- `tests/test_execution_safety_v34.py` and `tests/test_generated_scripts_v33.py` now resolve `sys.executable` in their fixtures: GitHub's setup-python binary can be a symlink and DeepThorT correctly refuses to enroll symlink tools. This is a test-environment repair, not a weakening of the production guard.
+- New `tests/test_online_tool_search_v36.py`, updated tooltip and `USER_GUIDE.html`. Install over `D:\deepthort` without deleting models, state, cache, references, node_modules or projects. See `NEXT_STEPS.md` for the prioritized capability backlog.
+
+**Validation:** full isolated regression and GitHub Actions status must be checked and reported separately; neither substitutes for live Windows winget/tool/game acceptance.
+
+---
+
 # DeepThorT v35 — user guidance and reviewed publisher links (22 November 2026)
 
 **Base:** unmodified v34 Windows launcher, JANUS/Sentinel, offline local Qwen inference,

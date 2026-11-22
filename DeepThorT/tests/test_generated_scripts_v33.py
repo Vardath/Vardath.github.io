@@ -21,7 +21,7 @@ class GeneratedScriptTests(unittest.TestCase):
         self.project=self.root/'project';self.project.mkdir()
         self.store=ToolAcquisition(self.root/'learn.sqlite3')
         self.janus=JanusStore(self.root/'janus.sqlite3')
-        self.store.discover([{'name':'Python','location':sys.executable}])
+        self.store.discover([{'name':'Python','location':str(Path(sys.executable).resolve(strict=True))}])
         act=self.store.authorize_probe('Python',self.project,self.janus,user_approved=True)
         log=self.root/'help.log';log.write_text('usage: python options --help\n')
         self.janus.update_action(act,'succeeded',detail='help',returncode=0,output_file=str(log))

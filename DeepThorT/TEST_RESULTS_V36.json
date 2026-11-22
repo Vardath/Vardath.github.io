@@ -1,0 +1,13 @@
+{
+  "version": 36,
+  "date": "2026-11-22",
+  "python_compile": "passed",
+  "focused_tests": 26,
+  "focused_result": "passed",
+  "janus_sentinel_isolated": 11,
+  "janus_sentinel_result": "passed",
+  "v35_baseline_tests": 430,
+  "v36_full_local": "incomplete-harness-stalled-after-24-modules",
+  "github_ci": "requires-independent-check",
+  "windows_runtime": "unverified"
+}

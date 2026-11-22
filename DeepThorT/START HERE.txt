@@ -1,3 +1,14 @@
+DEEPTHORT DESKTOP v36 — online package SEARCH with explicit consent
+Based on full v35. Same local Qwen, JANUS/Sentinel, window, saved state and approvals.
+Computer & Tools: Search packages online... queries the winget catalog after
+reviewing the exact search term and network access. Search does NOT download,
+install or authorize a newly found package. Result text is untrusted.
+Existing install catalog and its separate approval remain unchanged.
+Fixed older Linux CI test fixtures for symlinked Python interpreter paths.
+See USER_GUIDE.html and NEXT_STEPS.md in the installation root.
+Exit DeepThorT, back up state, then extract over D:\deepthort preserving models,
+state, cache, node_modules, references and all project folders.
+
 DEEPTHORT DESKTOP v35 — contextual help, offline visual guide and reviewed tool sources
 
 Preserves v34's local model, JANUS/Sentinel, interface, resource caps and approval gates.

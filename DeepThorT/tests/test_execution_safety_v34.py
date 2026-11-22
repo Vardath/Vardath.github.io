@@ -26,7 +26,7 @@ class SupervisedExecutionTests(unittest.TestCase):
         self.project=self.root/'project';self.project.mkdir()
         self.janus=JanusStore(self.root/'janus.sqlite3')
         self.library=ToolAcquisition(self.root/'library.sqlite3')
-        self.library.discover([{'name':'Python','location':sys.executable}])
+        self.library.discover([{'name':'Python','location':str(Path(sys.executable).resolve(strict=True))}])
         action=self.library.authorize_probe('Python',self.project,self.janus,user_approved=True)
         self.assertTrue(json.loads(self.janus.action(action)['input_guards_json']))
         log=self.root/'probe.log';log.write_text('python --help\n')
