@@ -1,0 +1,48 @@
+name: Scratch Chat quarantined dialogue acquisition
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Scratch-Chat/capability/acquire_dolly_quarantine.py'
+      - 'Scratch-Chat/capability/import_dolly_candidate.py'
+      - 'Scratch-Chat/tests/test_acquire_dolly_quarantine.py'
+      - '.github/workflows/scratch-chat-acquire-dialogue.yml'
+permissions:
+  contents: read
+jobs:
+  acquire-quarantine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: Scratch-Chat
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate acquisition logic offline
+        run: python -m unittest discover -s tests -p 'test_acquire_dolly_quarantine.py' -v
+      - name: Acquire pinned external JSONL as unapproved candidate
+        run: python -m capability.acquire_dolly_quarantine --output acquisition/dolly-candidate
+      - name: Verify hashes and quarantine status
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p=Path('acquisition/dolly-candidate')
+          m=json.loads((p/'acquisition.json').read_text())
+          assert m['training_allowed'] is False
+          assert m['status']=='QUARANTINED_NOT_APPROVED'
+          assert hashlib.sha256((p/'upstream.jsonl').read_bytes()).hexdigest()==m['raw_sha256']
+          assert hashlib.sha256((p/'quarantined.jsonl').read_bytes()).hexdigest()==m['converted']['output_sha256']
+          print('Verified quarantined bytes and source hashes; NOT approved for training')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scratch-chat-dolly-quarantine
+          retention-days: 14
+          if-no-files-found: warn
+          path: Scratch-Chat/acquisition/dolly-candidate/
