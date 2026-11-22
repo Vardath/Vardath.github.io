@@ -188,3 +188,17 @@ If the cancelled request owns the currently running ONNX model, the desktop term
 **Validation:** 170 local Python tests passed when run as isolated modules under Xvfb (7 new cancellation tests). The single-process all-test run hit existing Tkinter asynchronous teardown crashes and is **not** claimed to have passed. Live Windows worker termination, automatic reload and subsequent successful reply have not been tested on the user's PC. The v18 ZIP was integrity-checked and packaged without model weights, state or user projects. GitHub is source-synchronized, with blob hashes checked against the ZIP. Do not claim Github CI is green without its actual status result.
 
 Next real-world check: open two chats, start a long response in A, queue B, select A and press Stop reply (or Close chat); confirm A is cancelled, the old ONNX process exits, the new model reloads, and B progresses. Confirm closing/reopening chat retains the full transcript. If this fails, export diagnostics and inspect relevant events; do not silently increase retry limits or redesign the interface.
+
+
+## v26 update — 22 November 2026 (Pass 5, first implementation)
+
+v26 builds directly on the tested and committed v25 hierarchical roadmap without modifying the Windows executable, launcher, desktop layout, chat controls, local Qwen ONNX worker, JANUS/Sentinel, the 40-attempt maximum or explicit approval gates. Ten changed/new source, test and documentation files are committed in `DeepThorT/`.
+
+- `deepthort_local/requirements_intelligence.py` creates stable, verbatim SHA-256-checked candidate requirement spans from the original fully indexed source. Explicit bullets/headings and unstructured prose are preserved; candidate-to-file links are review scope, never proof of correct implementation.
+- Model file descriptions can optionally declare `depends-on: relative/path.ext`. Roadmap preparation rejects absent/self-referential/cyclic dependencies, orders files by a stable topological sort, and persists exact edges. Existing v25 roadmaps remain accessible. Missing or incorrect architecture cannot be inferred reliably from descriptions alone.
+- `deepthort_local/planning_metrics.py` reports only numeric timing/progress from existing local rotating logs without reading raw prompts or responses. The prior 2026-11-22 16:27 diagnostics show historical median ~539.59s/model reply, 45 planner passes and only six adding files; not a controlled v26 speed benchmark.
+- Stable heap-based dependency ordering improves CPU-side roadmap scalability. Live ONNX generation throughput and actual game-building correctness are unverified.
+- `xvfb-run -a python -m unittest discover -s tests -q` passed **279 tests** locally. The 97-file ZIP archive passes integrity checks; the Windows executable and launcher are byte-identical to v25. Tkinter/SQLite cleanup warnings remain non-failing.
+- Source package: `DeepThorT_Desktop_v26_Windows.zip`, docs: `PLANNING_INTELLIGENCE.md`. Preserve `state`, `models`, `reference`, `node_modules`, `cache` and project folders on install.
+
+**Next priorities:** genuine semantic requirement reconciliation and acceptance criteria, interface/API dependency checks using actual project source and compiler evidence, measured Windows inference acceleration and an in-game Xenon PE acceptance test before Faction Command. Do not claim the model has built a verified game or proven semantic requirement coverage.
