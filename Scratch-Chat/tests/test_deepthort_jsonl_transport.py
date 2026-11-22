@@ -46,6 +46,21 @@ class JSONLineTransportTests(unittest.TestCase):
         self.assertFalse(results[2]["ok"])
         self.assertTrue(results[3]["ok"])
 
+    def test_rejects_malformed_turn_order_and_recovers(self):
+        bad = [
+            [{"role": "assistant", "content": "orphan"}],
+            [{"role": "user", "content": "one"}, {"role": "user", "content": "two"}],
+            [{"role": "user", "content": "one"}, {"role": "system", "content": "late"}],
+            [{"role": "user", "content": "one"}, {"role": "assistant", "content": "two"}],
+        ]
+        requests = [{"method": "chat", "messages": messages, "max_new_tokens": 1} for messages in bad]
+        requests.append({"method": "health"})
+        responses = self.exchange(requests)
+        for response in responses[:-1]:
+            self.assertFalse(response["ok"], response)
+            self.assertIsInstance(response["error"], str)
+        self.assertTrue(responses[-1]["ok"])
+
     def test_malformed_json_and_unknown_method(self):
         results = self.exchange(['{bad json', {"method": "unknown"}, {"method": "health"}])
         self.assertFalse(results[0]["ok"])
