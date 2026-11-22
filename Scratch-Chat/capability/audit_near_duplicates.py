@@ -41,15 +41,30 @@ def audit(directory, threshold=0.8):
             if not tokens:
                 raise ValueError(f"empty normalized prompt: {path}:{number}")
             records.append((split, number, shingles(tokens)))
+    # Inverted shingle index avoids the quadratic all-pairs scan on large corpora.
+    # Any pair with positive Jaccard must share at least one shingle, so this
+    # candidate generation is exact (not approximate locality-sensitive hashing).
+    from collections import defaultdict
+    index = defaultdict(list)
     findings = []
-    for i, (split_a, line_a, a) in enumerate(records):
-        for split_b, line_b, b in records[i + 1:]:
+    candidate_pairs = 0
+    for i, (split_b, line_b, b) in enumerate(records):
+        candidates = set()
+        for shingle in b:
+            candidates.update(index[shingle])
+        for j in sorted(candidates):
+            split_a, line_a, a = records[j]
             if split_a == split_b:
                 continue
-            similarity = len(a & b) / len(a | b)
+            candidate_pairs += 1
+            intersection = len(a & b)
+            union = len(a) + len(b) - intersection
+            similarity = intersection / union if union else 0.0
             if similarity >= threshold:
                 findings.append({"a": f"{split_a}:{line_a}", "b": f"{split_b}:{line_b}", "jaccard": round(similarity, 6)})
-    return {"passed": not findings, "records": len(records), "threshold": threshold, "findings": findings}
+        for shingle in b:
+            index[shingle].append(i)
+    return {"passed": not findings, "records": len(records), "threshold": threshold, "findings": findings, "candidate_pairs": candidate_pairs}
 
 
 def main():
