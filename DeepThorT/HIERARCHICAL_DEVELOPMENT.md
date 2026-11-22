@@ -43,3 +43,8 @@ Ordinary plans that fit the old single-plan flow still use the existing draft ap
 ## Further passes
 
 **Pass 5** should add semantically identifiable requirement IDs, deliberate model-authored subsystem/API dependency graphs, project-wide invariant reconciliation, retrieval of previous verified interfaces when implementing later milestones, adaptive prompt budgets, and measured inference/build benchmarks. It should then verify actual Xenon PE mod output and progress toward Faction Command. None of these acceptance results should be presumed from this release.
+
+
+## v26 extension — conservative requirement IDs and explicit dependencies
+
+After completing all indexed section reviews, v26 additionally records exact anchored candidate requirement spans and optional model-authored `depends-on: relative/file.ext` declarations. Unknown or cyclic dependencies are rejected. File intentions are stably topologically ordered and persisted before approval. `requirement_report()` and `dependency_report()` provide inspectable, hash-checked evidence; these associations **do not establish that code implements each requirement**. The original sequential milestone verification gate remains. Legacy roadmaps from v25 still load without candidate rows. See `PLANNING_INTELLIGENCE.md`.
