@@ -17,14 +17,14 @@ class AssistantLabelsTest(unittest.TestCase):
         ])
         encoded = encode_assistant_labels(row, tok)
         selected = tok.decode([x for x in encoded["labels"] if x != -100])
-        self.assertEqual(selected, "First answerFinal answer")
+        self.assertEqual(selected, "First answer<|im_end|>Final answer<|im_end|>")
         self.assertEqual(len(encoded["labels"]), len(encoded["input_ids"]))
 
     def test_unicode_byte_offsets(self):
         tok = ByteBPE()
         row = serialize([{"role": "user", "content": "café?"}, {"role": "assistant", "content": "Oui ☕"}])
         encoded = encode_assistant_labels(row, tok)
-        self.assertEqual(tok.decode([x for x in encoded["labels"] if x != -100]), "Oui ☕")
+        self.assertEqual(tok.decode([x for x in encoded["labels"] if x != -100]), "Oui ☕<|im_end|>")
 
     def test_rejects_invalid_span(self):
         with self.assertRaises(ValueError):
