@@ -95,7 +95,7 @@ class ProjectAuthorityTests(unittest.TestCase):
         self.save_step()
         self.assertTrue(list(self.backups.rglob('ship.py')))
         self.assertEqual(file.read_text('utf-8').splitlines()[0],
-                         'def build_ship()')
+                         'def build_ship():')
 
     def test_changed_generated_file_denies_automatic_test(self):
         self.issue()

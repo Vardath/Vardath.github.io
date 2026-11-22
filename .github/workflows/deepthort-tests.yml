@@ -49,3 +49,58 @@ jobs:
               sys.exit(1)
           print("All test modules passed in isolated GUI processes.", flush=True)
           PY
+      - name: Package v40 source overlay (only after all tests pass)
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import zipfile
+          from pathlib import Path
+
+          root = Path.cwd()
+          output = root / 'DeepThorT_v40_SourceOverlay.zip'
+          excluded = {'.git', '__pycache__', '.pytest_cache', 'node_modules',
+                      'models', 'state', 'cache', '.venv', 'venv'}
+          if (root / 'DeepThorT.exe').exists():
+              raise SystemExit('Standalone Windows executable must not be repackaged as a source overlay')
+          pinned_onnx = 'ca28f9fc0965a4f9a78b035d547c806e886451e738a6bbf4ab9ff517682b7345'
+          current = hashlib.sha256((root / 'inference_server.mjs').read_bytes()).hexdigest()
+          if current != pinned_onnx:
+              raise SystemExit('ONNX server differs from v39; overlay safety requirement failed')
+          files = sorted((p for p in root.rglob('*') if p.is_file()
+              and p != output and not any(part in excluded for part in p.relative_to(root).parts)),
+              key=lambda p: p.relative_to(root).as_posix())
+          manifest = {
+              'release': 'DeepThorT v40 project-scoped work',
+              'kind': 'SOURCE OVERLAY: install over an existing v39 Windows application',
+              'full_windows_installation': False,
+              'preserve_existing': ['DeepThorT.exe', 'models', 'state', 'node_modules',
+                                    'reference', 'cache', 'user projects'],
+              'v39_windows_launcher_sha256': 'fbd7368a5e7e4f1d1fa247918958d90a853c02360743b140e954aee8e48dc95d',
+              'onnx_server_sha256': current,
+              'file_count': len(files),
+              'files': [{
+                  'path': p.relative_to(root).as_posix(),
+                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+              } for p in files],
+          }
+          with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
+              for p in files:
+                  archive.write(p, p.relative_to(root).as_posix())
+              archive.writestr('DeepThorT_v40_OverlayManifest.json',
+                              json.dumps(manifest, indent=2, sort_keys=True))
+          with zipfile.ZipFile(output) as archive:
+              corrupt = archive.testzip()
+              if corrupt:
+                  raise SystemExit('Overlay ZIP CRC failure: ' + corrupt)
+          print('Overlay:', output.name, output.stat().st_size, 'bytes',
+                'SHA-256', hashlib.sha256(output.read_bytes()).hexdigest(),
+                'source files', len(files), flush=True)
+          PY
+      - name: Upload DeepThorT v40 source overlay
+        uses: actions/upload-artifact@v4
+        with:
+          name: DeepThorT-v40-source-overlay
+          path: DeepThorT/DeepThorT_v40_SourceOverlay.zip
+          if-no-files-found: error
+          retention-days: 90
