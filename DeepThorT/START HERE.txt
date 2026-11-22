@@ -1,4 +1,5 @@
-DEEPTHORT DESKTOP v25 — hierarchical development (Pass 4)
+DEEPTHORT DESKTOP v26 — Pass 5 requirement intelligence and dependency ordering
+Prior version: v25 — hierarchical development (Pass 4)
 Based on v24, with original GUI, model, launcher, state and approval controls preserved.
 
 Large specifications remain stored exactly and are processed as numbered sections.
@@ -16,3 +17,6 @@ specification, or Ctrl+Shift+O. The full file remains untruncated in local state
 Keep your existing state, models, node_modules, cache, reference and projects.
 See HIERARCHICAL_DEVELOPMENT.md for limits, traceability and outstanding work.
 No claim is made that an entire Android game or X4 mod has been built/tested.
+
+Optional offline timing report: python -m deepthort_local.planning_metrics state\logs
+See PLANNING_INTELLIGENCE.md for verification levels and limitations.
