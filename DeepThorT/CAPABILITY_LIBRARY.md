@@ -1,3 +1,44 @@
+# Capability Library — Pass 2 local reference learning (v23)
+
+This builds on the v22 observation/procedure database. **Implemented, not aspirational:**
+
+- Auto-discovery reads at most 200 eligible workspace file entries, indexes at most 20 matching documentation or example files (each at most 48,000 bytes), and never executes project code. It looks for `README`, common text documentation inside `docs`, `manual`, `api`, `guides`, etc., and code examples inside `examples`, `samples`, or `tutorials`.
+- The SQLite `local_references` table stores only project identity, relative source path, SHA-256, byte count, documentation/example classification, an **unverified** source-version label, selection origin and index time. It does **not** store source contents.
+- Retrieval reopens and re-hashes each file. Removed, edited, escaped, binary, oversized and suspiciously named files are excluded. Relevant lines are selected by deterministic text matching and quoted with source path, line, hash prefix and source-version label.
+- Lines resembling credentials or attempts to override the user's instructions are excluded. All returned text is **untrusted reference data**, not authority; project requirements and model/approval policy always take precedence. This filtering is conservative and not a complete defense against malicious documents. Review external documentation before adding it locally.
+- The existing `Draft project plan` flow invokes discovery and can append a small reference excerpt to the **first** local-model planning request when the remaining 7,500-character limit permits; no original requirement or X4 verified source evidence is truncated. The source text is not inserted in subsequent correction passes yet.
+- Version labels supplied by the user are metadata, **not proof** that a document matches a particular engine release. Neither source text nor a well-formed XML/JSON file proves a tool workflow actually works. The current library is read-only and never upgrades candidates to `verified_workflow` on its own.
+
+## Commands (from the installed DeepThorT directory)
+
+```powershell
+# Automatically inspect known manifests plus local docs/examples in the project
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 inspect D:\x4mods
+
+# List only current hash-matching local reference sources
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 references D:\x4mods
+
+# Preview attributed excerpts for one request, without running a model
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 reference-context D:\x4mods "X4 Mission Director XML"
+
+# Explicitly include an allowed local document or source example omitted by auto discovery
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 index-reference D:\x4mods docs\api.md --version 1.0
+```
+
+Explicit indexing is confined to the selected project and accepted text/source extensions. If the project contains more than 200 eligible files, auto-discovery may miss documents; explicitly index relevant sources rather than expanding the background scan without bounds. The version string is not externally verified.
+
+## Next architectural passes
+
+**Pass 3:** Execute *approved* engine/build/test tools under existing supervision, collect real exit codes, artifact hashes and tool versions, and link passing receipts to candidate procedures. A source-file existence check alone is not a successful build or game test.
+
+**Pass 4:** Hierarchical planning for large games, with scoped subsystem requirements and evidence retrieval at each milestone instead of 40 repetitions of an entire project.
+
+**Pass 5:** Benchmark time and correctness for Xenon PE and an Android game prototype under actual Windows gaming-resource limits. Do not infer speedup from unit tests.
+
+---
+
+## Historical v22 foundation
+
 # DeepThorT Capability Library — v22 foundation
 
 This is the first working increment of a general-purpose **investigate → evidence → plan → test → reuse** system. It does not give the local 1.5B model new weights or make it capable of autonomous game development on its own.
