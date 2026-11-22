@@ -1,3 +1,17 @@
+## v28 — Acceptance contracts and approved test evidence (22 November 2026)
+
+**Current packaged release: DeepThorT v28.** Based strictly on the packaged v27 source. GitHub now includes both v27's previously uncommitted files and the v28 changes. The Windows launcher, GUI arrangement, offline ONNX model, JANUS/Sentinel topology, 40-pass planning limit, user-approval controls and existing state layout are preserved.
+
+Implemented source: `deepthort_local/acceptance_contracts.py` supports model-declared `provides: Symbol`, `uses: path.py::Symbol`, and `verifies: REQ-N` intentions. These must refer to actually proposed files and exact user-written requirement labels. Static AST inspection checks source that exists without importing/running it; missing planned files are pending, not verified. The hierarchical roadmap and milestone approval dialog report contract state; concrete missing exports/imports or empty declared test source block verification until repaired and a fresh test is approved. User ambiguity flags are advisory only.
+
+`deepthort_local/verification_evidence.py` now analyzes bounded actual output from an **already user-approved** verification process. `unittest discover` / `dotnet test` success with zero evidenced passing tests fails the verification gate; Godot editor loading is labelled editor-load only, not gameplay. Successful process checks attach separate assurance metadata and command/output hashes to v27's source-file snapshots. Legacy snapshots remain readable without retroactive test-level claims. A later source edit invalidates verification.
+
+**Tests:** 329 tests passed over 43 isolated Python test modules under Xvfb, including 18 v28 tests. The monolithic run had one repeat of the pre-existing asynchronous X4 GUI test race; do not call that run fully green. The v28 ZIP contains 104 files and passed its CRC/integrity check. All 14 changed/new v27+v28 source, test and documentation files were verified against the GitHub version. Live Windows inference, X4 gameplay and Android/Godot game execution are unverified.
+
+**Next architecture:** Turn explicit accepted requirements into engine-specific executable acceptance harnesses (Godot/GDScript, Android builds, X4 XML and MD fixtures), record actual artifact- and behavior-level evidence, and evaluate model-produced code rather than source declarations alone. Do not change user specifications or invent any default Xenon PE plan. Continue from v28, maintaining per-milestone approval and verified progress.
+
+---
+
 ## v25 — Hierarchical development foundation (22 November 2026)
 
 **Current packaged release: DeepThorT v25.** Built from the verified v24 Windows ZIP with the executable, desktop launcher, model, JANUS/Sentinel, approval controls, resource restrictions and original UI preserved. New source: `deepthort_local/hierarchical_planning.py`; tests: `test_hierarchical_planning_v25.py`, `test_hierarchical_gui_v25.py`; reference: `HIERARCHICAL_DEVELOPMENT.md`.
