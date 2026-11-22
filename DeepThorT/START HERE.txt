@@ -1,24 +1,18 @@
-DEEPTHORT DESKTOP v24 — large specifications and approval-backed test evidence
+DEEPTHORT DESKTOP v25 — hierarchical development (Pass 4)
+Based on v24, with original GUI, model, launcher, state and approval controls preserved.
 
-Preserves the original desktop interface, Windows launcher, offline Qwen, JANUS/Sentinel,
-explicit approvals, state, model files, and 40-attempt planning batches.
+Large specifications remain stored exactly and are processed as numbered sections.
+When all model-proposed sections pass structural and aggregate validation, the
+system creates a persistent roadmap of bounded milestones. No work is queued.
 
-The small 250,000-character storage limits are raised to 120,000,000 characters.
-This does NOT enlarge the ONNX context window; enormous specifications are stored
-intact and processed in hash-checked, resumable model sections. Incomplete section
-coverage cannot produce an approved plan.
+Select the same chat/project and click "Approve plan & queue" to explicitly
+approve only the next milestone. Each proposed file still requires review.
+After all files are saved, approve "Verify build" and let the checked test run.
+Only a verified prior milestone can unlock the next independently approved one.
 
-To import a large TXT/MD/JSON/YAML specification without pasting it into Tk:
-right-click inside the Chats prompt editor -> Import large specification,
-or press Ctrl+Shift+O. You can add extra requirements in the text editor.
+To import a large specification: right-click prompt editor -> Import large
+specification, or Ctrl+Shift+O. The full file remains untruncated in local state.
 
-Approved JANUS project checks are recorded as evidence (not proof of correct games).
-Procedure promotion requires current artifacts plus approved successful test receipts.
-See CAPABILITY_LIBRARY.md for the supported command and evidence scopes.
-
-Install: EXIT DeepThorT first; extract this ZIP into D:\deepthort, retaining your
-existing state/, models/, node_modules/, cache/, reference/ and project folders.
-Back up state/ before importing enormous specifications. No game, APK or mod is
-considered built merely because a plan or test receipt exists.
-
-Next: hierarchical project milestones and requirements traceability (Pass 4).
+Keep your existing state, models, node_modules, cache, reference and projects.
+See HIERARCHICAL_DEVELOPMENT.md for limits, traceability and outstanding work.
+No claim is made that an entire Android game or X4 mod has been built/tested.
