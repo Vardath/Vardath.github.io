@@ -1,13 +1,24 @@
-DEEPTHORT DESKTOP v23 — Capability Library Pass 2
+DEEPTHORT DESKTOP v24 — large specifications and approval-backed test evidence
 
-This release adds read-only indexing and retrieval of local documentation and code examples
-inside the selected project. Quoted references are untrusted facts, not executable instructions.
-Stored procedure candidates cannot become verified workflows without real, scoped checks.
+Preserves the original desktop interface, Windows launcher, offline Qwen, JANUS/Sentinel,
+explicit approvals, state, model files, and 40-attempt planning batches.
 
-Close DeepThorT. Extract all v23 files over D:\deepthort, preserving state, models,
-node_modules, cache, reference, and all project folders. Do not delete the existing SQLite state.
-The existing desktop UI, model and launcher are unchanged. Use Draft project plan to
-trigger bounded local reference inspection; external engines are not executed.
+The small 250,000-character storage limits are raised to 120,000,000 characters.
+This does NOT enlarge the ONNX context window; enormous specifications are stored
+intact and processed in hash-checked, resumable model sections. Incomplete section
+coverage cannot produce an approved plan.
 
-Details and commands: CAPABILITY_LIBRARY.md
-Tests: 212 passed locally; Windows ONNX and game-engine execution not verified.
+To import a large TXT/MD/JSON/YAML specification without pasting it into Tk:
+right-click inside the Chats prompt editor -> Import large specification,
+or press Ctrl+Shift+O. You can add extra requirements in the text editor.
+
+Approved JANUS project checks are recorded as evidence (not proof of correct games).
+Procedure promotion requires current artifacts plus approved successful test receipts.
+See CAPABILITY_LIBRARY.md for the supported command and evidence scopes.
+
+Install: EXIT DeepThorT first; extract this ZIP into D:\deepthort, retaining your
+existing state/, models/, node_modules/, cache/, reference/ and project folders.
+Back up state/ before importing enormous specifications. No game, APK or mod is
+considered built merely because a plan or test receipt exists.
+
+Next: hierarchical project milestones and requirements traceability (Pass 4).
