@@ -64,7 +64,7 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         raise ValueError("Train/validation sequence contamination")
     immutable = {"train_sha256": file_hash(train_path),
                  "validation_sha256": file_hash(validation_path),
-                 "config": asdict(cfg), "lr": lr, "seed": seed}
+                 "config": asdict(cfg), "lr": lr, "seed": seed,\n                 "sampling": "seeded-shuffle-per-epoch-v1"}
     random.seed(seed)
     torch.manual_seed(seed)
     model = ModernScratchTransformer(cfg)
