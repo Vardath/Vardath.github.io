@@ -151,8 +151,12 @@ class JanusWorker:
             # During a game, reduce wakeups and SQLite writes. Keep a bounded
             # heartbeat so Sentinel can distinguish sleep from a dead worker.
             end=time.monotonic()+(max(interval,45.0) if self.game_gate.gaming() else interval)
-            while not self._stopping and time.monotonic()<end:
-                time.sleep(min(.25,end-time.monotonic()))
+            while not self._stopping:
+                # Read the deadline clock once: it can cross the deadline between
+                # two reads, otherwise time.sleep() receives a negative value.
+                remaining=end-time.monotonic()
+                if remaining<=0:break
+                time.sleep(min(.25,remaining))
         self.store.append_event('JANUS engine stopped; durable state preserved')
 
 
