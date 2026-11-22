@@ -299,6 +299,22 @@ class DevelopmentCycleStore:
             self._event(db, job_id, 'needs_attention', reason)
         return self.get(job_id)
 
+    def invalidate(self, job_id: int, reason: str) -> bool:
+        """A user-confirmed rollback makes *all prior* test evidence obsolete.
+
+        This is distinct from a retry/block: even a formerly verified cycle
+        must no longer report success after source files have been restored.
+        """
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            current=db.execute('SELECT phase FROM cycles WHERE job_id=?', (job_id,)).fetchone()
+            if current is None:return False
+            db.execute('UPDATE cycles SET phase=?,updated_at=CURRENT_TIMESTAMP WHERE job_id=?',
+                       ('needs_attention',job_id))
+            self._event(db,job_id,'needs_attention',
+                        'Previous cycle evidence invalidated: '+str(reason)[:350])
+            return True
+
     def interrupted(self) -> list[int]:
         """Do NOT restart a test/repair whose child process may have survived."""
         with self._db() as db:

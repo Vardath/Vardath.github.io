@@ -1,0 +1,67 @@
+{
+  "schema": "deepthort-v42-source-digest-v1",
+  "v41_main": "63fbcbb1620ee84a718a00a883dba98bc4e0ba9c",
+  "source_files": [
+    {
+      "path": "desktop_app.py",
+      "sha256": "d7b87ca2a209222287c0a226daba7e38b4a5dfdf9107b9b37fa8089d284fa812"
+    },
+    {
+      "path": "deepthort_local/development_cycle.py",
+      "sha256": "ef8cca62518199114ef04e984d5443839bdd048ce7254bbca348464ea7cdfdc9"
+    },
+    {
+      "path": "deepthort_local/hierarchical_planning.py",
+      "sha256": "64c449df4fbb359033f3f697915063817e43845fa0a9e9444e4e6d24a1a11c99"
+    },
+    {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "102629c0066b6758aa4c6c422f48a6ce393c2f055d98e2e07ec081cf7957d209"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3841cb2e0f6e68eb15473c6dcf2a8dbf74e6e77126439c1f60bffcedc229659e"
+    },
+    {
+      "path": "START HERE.txt",
+      "sha256": "e86b02d5c1853797887cf5adbffeb09f502be0baa1885f3f8b946e62edd1e6df"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "43c3634878014a863e419bb63fd4deba883616f0d31c54e5502eef645dfde8f0"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "02f30a26a9217083adf0da25c5ac23483373845d2d41475c629d275f90cdbd42"
+    },
+    {
+      "path": "deepthort_local/task_graph.py",
+      "sha256": "476d7f6f84654f553c10203623d0d49de69625eda57d847c9fadd40e127f7cb3"
+    },
+    {
+      "path": "deepthort_local/source_checkpoints.py",
+      "sha256": "d4b25a72a2e1a95bcf234781de42546e68df25e99a8e087a05cd009cee4609a6"
+    },
+    {
+      "path": "tests/test_task_graph_v42.py",
+      "sha256": "d7934933b94162b0b808b83b867e1416c2bb9078513ffea0a014310b8e5a626d"
+    },
+    {
+      "path": "tests/test_source_checkpoints_v42.py",
+      "sha256": "68f962ef23f76abdcef6d895457d269813a27a407a70cd6555020a961aa32ae9"
+    },
+    {
+      "path": "tests/test_task_graph_gui_v42.py",
+      "sha256": "307f79cb5981dcfedc7a4352e79770153eba93f6bf019c82f8984169abb3f4a2"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V42.md",
+      "sha256": "5ef7f985c2360312f9f7ea66e296e4556a79f2dd9b17f044831a6fc8ce4b6447"
+    },
+    {
+      "path": "TEST_RESULTS_V42.md",
+      "sha256": "153719b57b7b430c7e1c61df98e330338602fde177e21c5c259ae8222442d5ec"
+    }
+  ],
+  "assurance": "Exact v42 changed source; CI checks byte digests before any tests"
+}

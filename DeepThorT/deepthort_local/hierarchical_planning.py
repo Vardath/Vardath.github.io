@@ -529,6 +529,54 @@ class HierarchicalPlanStore:
         root,_,_,steps=self._checked(index,request_id,original)
         return audit_python_interfaces(root['project'],steps)
 
+    def graph_provenance(self, request_id: int, scoped_paths: list[str],
+                         *, limit: int = 96) -> dict:
+        """Bounded, read-only links to ALREADY persisted exact source requirements.
+
+        The source was originally checked by the indexed hierarchical planner;
+        this view never reads/prompts with an entire million-character book.
+        A trace says which approved file was INTENDED to address a requirement,
+        not that implementation or gameplay has passed acceptance.
+        """
+        if not isinstance(request_id,int) or request_id<1 or not 1<=limit<=128:
+            raise PlanError('Invalid hierarchical graph root or display limit')
+        if not isinstance(scoped_paths,list) or not 1<=len(scoped_paths)<=24 or any(
+                not isinstance(p,str) for p in scoped_paths):
+            raise PlanError('Hierarchical graph must contain exact approved files')
+        chosen={p.casefold():p for p in scoped_paths}
+        with self._db() as db:
+            root=db.execute('SELECT source_sha256,project FROM hierarchy_roots WHERE request_id=?',
+                            (request_id,)).fetchone()
+            if root is None:raise PlanError('Hierarchical graph root has no stored approval evidence')
+            traces=db.execute('SELECT section_ordinal,path FROM hierarchy_trace WHERE request_id=?',
+                              (request_id,)).fetchall()
+            linked={}
+            for row in traces:
+                if row['path'].casefold() in chosen:
+                    linked.setdefault(row['section_ordinal'],set()).add(chosen[row['path'].casefold()])
+            saved=db.execute('SELECT requirement_id,section_ordinal,source_sha256,kind '
+                             'FROM hierarchy_requirements WHERE request_id=? ORDER BY section_ordinal,requirement_id',
+                             (request_id,)).fetchall()
+            requirements=[];n=0
+            for row in saved:
+                files=sorted(linked.get(row['section_ordinal'],()))
+                if not files:continue
+                n+=1
+                if len(requirements)<limit:
+                    requirements.append({'id':row['requirement_id'],
+                        'section':row['section_ordinal']+1,
+                        'source_sha256':row['source_sha256'],
+                        'kind':row['kind'], 'files':files})
+            deps=db.execute('SELECT file_path,requires_path FROM hierarchy_dependencies '
+                            'WHERE request_id=?',(request_id,)).fetchall()
+        return {'root_source_sha256':root['source_sha256'],'root_project':root['project'],
+                'requirements':requirements,'total_linked_requirements':n,
+                'truncated':n>limit,
+                'declared_file_dependencies':[{'file_path':x['file_path'],
+                    'requires_path':x['requires_path']} for x in deps
+                    if x['file_path'].casefold() in chosen],
+                'assurance':'exact source-scope trace, NOT proof of implemented requirements'}
+
     def requirement_report(self, index, request_id: int, original: str, *, limit: int = 500) -> dict:
         """Auditable candidates: file links indicate review scope, not proof of implementation."""
         self._checked(index,request_id,original)

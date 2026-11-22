@@ -41,6 +41,7 @@ TOOLTIPS = {
     'Review legacy plan': 'Review an older build plan with the same explicit-approval safeguards.',
     'Verify build': 'Run a specifically approved static check or project test; a pass is not automatically proof of gameplay.',
     'Continue approved file steps and fixed tests without repeated prompts': 'After explicit plan approval, save exact approved files, run fixed tests, and attempt at most two one-file ONNX repairs followed by retests. Tests run under your Windows user rights and are NOT sandboxed; disable before approval for individual review.',
+    'Restore source checkpoint…': 'Explicitly restore an older version of this approved job source. Confirms exact files and hashes; newly created files are quarantined, previous approvals/tests become invalid and a new approved plan is needed.',
     'Revoke selected job automation': 'Revoke future automatic source writes, local ONNX repairs and tests for this specific approved job. Already-running tests must be stopped separately in Processes.',
     'Load prompt into editor': 'Copy the selected queued job request back to the chat editor for editing.',
     'Apply approved change': 'After reviewing the proposed file, write the approved content with backup and workspace checks.',
@@ -86,7 +87,7 @@ TOOLTIPS = {
 
 TABS = {
     'Chats': 'Manage saved conversations, submit instructions, draft a plan and request a file revision.',
-    'Work queue': 'Inspect durable approved jobs, real test/repair attempts, failures and saved-file evidence. Pause, cancel or revoke automatic work.',
+    'Work queue': 'Inspect approved task dependencies, real tests/repairs, source revisions and blockers. Explicit rollback quarantines new files and invalidates old approvals.',
     'File review': 'Inspect proposed file contents and differences before accepting a write.',
     'Tasks': 'Keep durable manual project tasks; do not confuse task checkmarks with test evidence.',
     'Processes': 'See actual events, output and process cancellation controls.',
