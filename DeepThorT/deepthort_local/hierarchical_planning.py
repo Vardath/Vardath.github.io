@@ -23,6 +23,7 @@ from .requirements_intelligence import (requirement_candidates, dependency_order
                                        declared_dependencies, check_dependency_schedule)
 from .workspace import safe_target
 from .acceptance_contracts import inspect_model_contracts, source_ambiguities
+from .engine_acceptance import audit_engine_project
 from .semantic_reconciliation import (reconcile_explicit_requirements,
     acceptance_candidates, audit_python_interfaces, verified_sources_current,
     declared_requirement_dependencies)
@@ -340,6 +341,12 @@ class HierarchicalPlanStore:
                         summary['blocked_reason']=(f'Milestone {m["ordinal"]} static Python interface error: '
                             f'{issue["kind"]} in {issue["path"]}; repair source and rerun approved verification')
                     else:
+                        engine = audit_engine_project(root['project'],json.loads(m['steps_json']))
+                        if engine['issues']:
+                            issue=engine['issues'][0]
+                            summary['blocked_reason']=(f'Milestone {m["ordinal"]} engine artifact: '
+                                f'{issue["code"]} in {issue["path"]}; repair and retest')
+                            break
                         requirements=requirement_candidates(original,rows)
                         contracts=inspect_model_contracts(root['project'],master_steps,original,requirements)
                         if contracts['issues']:
@@ -462,6 +469,13 @@ class HierarchicalPlanStore:
                     jobs.change(job['id'],'waiting_verification',
                         'Static Python interface checks failed: '
                         +str(blockers[0])[:350]+'; repair source then rerun approved verification',
+                        allowed=('complete',))
+                    continue
+                engine=audit_engine_project(root['project'],expected_steps)
+                if engine['issues'] or engine['pending']:
+                    issue=(engine['issues'] or [{'path':engine['pending'][0],'code':'pending_artifact'}])[0]
+                    jobs.change(job['id'],'waiting_verification',
+                        f'Engine artifact audit: {issue["code"]} in {issue["path"]}; repair source and rerun approved verification',
                         allowed=('complete',))
                     continue
                 criteria=requirement_candidates(original,self._source_rows(index,request_id,original))
