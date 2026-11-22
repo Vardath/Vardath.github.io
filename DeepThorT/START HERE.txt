@@ -1,3 +1,11 @@
+DEEPTHORT DESKTOP v20 — JANUS read-only Interface + planning reliability
+Based on v19. Existing interface, JANUS and Sentinel, approval workflow,
+local ONNX model and 40-pass planning limits are retained.
+In Chats, ask JANUS, report status to receive an immediate recorded-state
+reply even while Qwen is generating in another conversation.
+JANUS cannot replace unrestricted language generation without another model.
+No automatic approval or file execution has been added.
+
 DEEPTHORT DESKTOP v19 — JANUS idle timer and model contention repair
 Built on v18. Original desktop layout and chat cancellation remain unchanged.
 

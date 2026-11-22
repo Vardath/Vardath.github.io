@@ -41,6 +41,7 @@ from deepthort_local.conversation_workflow import ConversationStore
 from deepthort_local.flight_recorder import record, install_crash_hooks, export_diagnostics
 from deepthort_local.process_metrics import Meter
 from deepthort_local.janus_engine import JanusStore
+from deepthort_local.janus_interface import addressed_to_janus, janus_state_reply
 from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
@@ -863,6 +864,40 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as exc:
             messagebox.showerror('Cannot save conversation',str(exc));return
         self.input.delete('1.0','end')
+        # JANUS's existing Front/Interface can report observed project state
+        # without claiming to be a second language model. Explicitly addressed
+        # chat requests bypass the occupied ONNX worker and work queue.
+        if kind=='chat' and addressed_to_janus(prompt) and not attachments:
+            try:
+                actions=self.janus.actions(limit=1)
+                recommendations=self.janus.recommendations(limit=1)
+                answer=janus_state_reply(
+                    prompt, status=self.janus.status(), goal=self.janus.goal(),
+                    sentinel=self.sentinel.snapshot(),
+                    job_counts=self.jobs.count(self._project_key()),
+                    model_health=self.last_server_health,
+                    active_reply=self.active_conversation is not None,
+                    latest_action=actions[0] if actions else None,
+                    latest_recommendation=recommendations[0] if recommendations else None)
+                if self.conversations.change(ident,'responded',
+                        'JANUS Interface supplied observed local state; no model inference',
+                        response=answer,allowed=('pending',)):
+                    record(STATE,'desktop','janus_interface_reply',request_id=ident,
+                           model_called=False,approved_job_queued=False)
+                    self._reload_chat()
+                    self.reply_outcome={'chat_id':self.current_chat,
+                          'message':'JANUS replied from recorded state; Qwen was not used.'}
+                    self._render_reply_notice()
+                    self.status.set('JANUS Interface responded locally; no work was approved or queued.')
+                    return
+            except Exception as exc:
+                # Never silently fall through to Qwen and block the user. This
+                # failed local request stays visible with its original text.
+                self.conversations.change(ident,'failed',
+                    'JANUS Interface status unavailable: '+str(exc)[:300],allowed=('pending',))
+                self._reload_chat()
+                self.status.set('JANUS Interface status unavailable; inspect JANUS & Sentinel.')
+                return
         self._reload_chat()
         self.reply_outcome=None
         self._render_reply_notice()
