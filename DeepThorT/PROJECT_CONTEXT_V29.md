@@ -1,7 +1,7 @@
 # DeepThorT — v29 handover (22 November 2026)
 
 This handover accompanies the v29 Windows ZIP and preserves development continuity
-if the GitHub repository has not been synchronized.
+alongside its verified GitHub source.
 
 **Base:** Complete tested v28 Windows package, existing original desktop UI,
 launcher, JANUS/Sentinel, Qwen ONNX worker, resource limits, SQLite state,
@@ -22,19 +22,20 @@ recognize GUT and Kotlin/Java annotated tests; they do not prove coverage.
 
 **Verification:** 351 tests passed across 44 isolated Xvfb Python test modules.
 The single-process run ended with the preexisting X4 GUI async timing race; do
-not claim the monolithic run passed. 108-file release ZIP passed CRC, and the
+not claim the monolithic run passed. 109-file release ZIP passed CRC, and the
 Windows executable, desktop launcher and ONNX worker were compared byte-for-byte
 with v28. 40 final focused tests passed. No Windows/X4/Godot/Android live run.
 
 **Artifacts:** `DeepThorT_Desktop_v29_Windows.zip` (full application source),
-`DeepThorT_v29_SourceSync.json` (11 changed/additional files), and
+`DeepThorT_v29_SourceSync.json` (12 changed/additional files), and
 `DeepThorT_v29_Git.patch` (apply to the v28 GitHub DeepThorT folder).
 
 **GitHub:** Work repo is `Vardath/Vardath.github.io`, under `/DeepThorT`.
-The v28 repository was already synchronized. **v29 was not yet committed** at
-handover. The repository also has concurrent Scratch Chat updates: do not reset
-or replace the main branch. Apply only v29 DeepThorT changes on top of the
-current HEAD, review differences, commit then check CI before claiming green.
+All 12 v29 changed/additional source, test and documentation files have now
+been committed and verified byte-for-byte against the release. The repository
+also has concurrent Scratch Chat updates; do not reset or replace the main
+branch. No GitHub status checks or associated workflow runs were returned
+for the final commit, so CI is not confirmed green.
 
 **Next:** Real machine acceptance: run audited Xenon PE extension against the
 installed extracted vanilla X4 files, check actual macro/item connections,
