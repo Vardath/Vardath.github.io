@@ -23,6 +23,9 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
     verify_split_files(manifest, splits)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError("Output directory must be new/empty; do not overwrite checkpoints")
+    if (width < 1 or layers < 1 or heads < 1 or width % heads != 0
+            or context_size < 2):
+        raise ValueError("Invalid model capacity controls")
     if steps < 1 or merges < 0:
         raise ValueError("Invalid training controls")
     output.mkdir(parents=True, exist_ok=True)
@@ -53,6 +56,9 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
               "serialized": serialized_provenance, "tokenizer": tokenizer_info,
               "labels": labeled_info, "training": metrics,
               "checkpoint": str(checkpoint),
+              "model_controls": {"width": width, "layers": layers,
+                                 "heads": heads, "context_size": context_size,
+                                 "seed": seed, "steps": steps, "merges": merges},
               "test_used_for_training_or_selection": False,
               "acceptance_passed": False,
               "limitations": "CPU pilot only; independent multi-turn and real DeepThorT JSONL acceptance required"}
@@ -68,9 +74,17 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--steps", type=int, default=10)
     parser.add_argument("--merges", type=int, default=128)
+    parser.add_argument("--width", type=int, default=64)
+    parser.add_argument("--layers", type=int, default=2)
+    parser.add_argument("--heads", type=int, default=4)
+    parser.add_argument("--context-size", type=int, default=256)
+    parser.add_argument("--seed", type=int, default=2026)
     args = parser.parse_args()
     print(json.dumps(run_pipeline(args.manifest, args.splits, args.output,
-                                  steps=args.steps, merges=args.merges), indent=2))
+                                  steps=args.steps, merges=args.merges,
+                                  width=args.width, layers=args.layers,
+                                  heads=args.heads, context_size=args.context_size,
+                                  seed=args.seed), indent=2))
 
 
 if __name__ == "__main__":
