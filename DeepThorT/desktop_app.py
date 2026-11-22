@@ -27,6 +27,8 @@ from urllib.request import ProxyHandler, Request, build_opener
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
 from deepthort_local.capability_library import CapabilityLibrary, attach_capability_context
+from deepthort_local.specification_library import SpecificationIndex, generate_indexed_plan, MAX_STORED_REQUEST_CHARS
+from deepthort_local.large_input import imported_source, resolve_import
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
 from deepthort_local.x4_sources import (inspect_x4_sources, automatic_x4_preflight, is_x4_inspection_request, x4_request_in_context,
@@ -122,6 +124,7 @@ class DeepThorTDesktop(tk.Tk):
         self.proposal_job = None
         self.proposal_step = None
         self.attachments = []
+        self.imported_spec_source = None
         self.image_photo = None
         self.auto_save_allowed = set()  # In-memory explicit consent per job, never assumed after restart.
         self.chat_ids = []
@@ -130,6 +133,7 @@ class DeepThorTDesktop(tk.Tk):
         self.meter=Meter()
         self.client = LocalModelClient(STATE/'sessions.sqlite3')
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
+        self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
         self.conversations.invalidate_incompatible_drafts()
@@ -257,6 +261,11 @@ class DeepThorTDesktop(tk.Tk):
                  bg=BG,fg=MUTED,font=('Segoe UI',9)).pack(anchor='w',pady=(7,3))
         self.input=self._text(chat,height=12,font=('Segoe UI',11));self.input.pack(fill='both',expand=False)
         self.input.bind('<Control-Return>',lambda e:self._send())
+        # Keyboard/context-menu access avoids another button row in the
+        # original window geometry, which users need for remote desktop.
+        self.input.bind('<Control-Shift-O>',self._import_large_specification)
+        self.input.bind('<Control-Shift-o>',self._import_large_specification)
+        self.input.bind('<Button-3>',self._show_spec_import_menu)
         ca=ttk.Frame(chat);ca.pack(fill='x',pady=7)
         self.chat_actions=ca
         chat_controls=ttk.Frame(ca);chat_controls.pack(fill='x',pady=(0,3))
@@ -458,6 +467,19 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showerror('Export failed',str(error),parent=self)
 
     def _chat_line(self,role,message):
+        # The durable database owns full text, NOT the timeline widget. Millions
+        # of words rendered into Tk on every tab switch would hang Windows.
+        # Every preview explicitly states what remains stored and how much.
+        if len(message)>12000:
+            from hashlib import sha256
+            original_length=len(message)
+            fingerprint=sha256(message.encode('utf-8')).hexdigest()[:20]
+            message=(f'[LARGE STORED TEXT — {original_length:,} characters; '
+                     f'SHA-256 prefix {fingerprint}; this is a display PREVIEW only. '
+                     'The complete original remains in local SQLite. No text was '
+                     'removed from the saved request.]\n\n'
+                     +message[:3500]+'\n\n[... DISPLAY ONLY: middle not rendered ...]\n\n'
+                     +message[-1200:])
         self.chat_history.config(state='normal')
         label='You' if role=='user' else 'DeepThorT' if role=='assistant' else 'Notice'
         self.chat_history.insert('end',f'{label}:\n',role if role in ('user','assistant') else 'warning')
@@ -844,9 +866,45 @@ class DeepThorTDesktop(tk.Tk):
     def _send(self):
         self._queue_input('chat')
 
+    def _show_spec_import_menu(self,event):
+        menu=tk.Menu(self,tearoff=False)
+        menu.add_command(label='Import large specification (TXT / MD / JSON)…',
+                         command=self._import_large_specification)
+        if self.imported_spec_source:
+            menu.add_command(label='Clear imported specification',
+                             command=self._clear_imported_specification)
+        menu.tk_popup(event.x_root,event.y_root)
+        menu.grab_release()
+
+    def _import_large_specification(self,event=None):
+        chosen=filedialog.askopenfilename(parent=self,title='Import full offline project specification',
+            filetypes=[('Text specifications','*.txt *.md *.rst *.json *.yaml *.yml'),('All files','*.*')])
+        if not chosen:return 'break'
+        try:
+            source=imported_source(chosen)
+        except (OSError,ValueError,UnicodeError) as exc:
+            messagebox.showerror('Cannot import specification',str(exc),parent=self)
+            return 'break'
+        self.imported_spec_source=source
+        self.attachment_status.set(
+            f'FULL specification selected: {Path(chosen).name} ({source["characters"]:,} characters). '
+            'Type extra requirements below or draft the plan. Source remains read-only.')
+        self.status.set('Specification selected and hash-checked; no work queued.')
+        return 'break'
+
+    def _clear_imported_specification(self):
+        self.imported_spec_source=None
+        self.attachment_status.set('No imported specification; text, DOCX, PDF and images supported')
+
     def _queue_input(self,mode):
         """Accept conversation requests, NEVER create executable jobs here."""
         prompt=self.input.get('1.0','end').strip()
+        if self.imported_spec_source:
+            try:
+                prompt=resolve_import(self.imported_spec_source,prompt)
+            except (OSError,ValueError,UnicodeError) as exc:
+                messagebox.showerror('Specification source changed or is unreadable',str(exc),parent=self)
+                return
         if not prompt:return
         if mode=='chat' and self._is_local_diagnostic_request(prompt):
             self.input.delete('1.0','end')
@@ -866,6 +924,7 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as exc:
             messagebox.showerror('Cannot save conversation',str(exc));return
         self.input.delete('1.0','end')
+        self._clear_imported_specification()
         # JANUS's existing Front/Interface can report observed project state
         # without claiming to be a second language model. Explicitly addressed
         # chat requests bypass the occupied ONNX worker and work queue.
@@ -922,14 +981,33 @@ class DeepThorTDesktop(tk.Tk):
                     record(STATE,'desktop','x4_initial_scan_error',request_id=ident,
                            level='ERROR',error=str(exc))
             threading.Thread(target=scan_initial,daemon=True,name='X4InitialPromptScan').start()
-        if len(prompt)>MAX_INFERENCE_PROMPT:
-            self.conversations.change(ident,'failed',
-               f'This local model accepts at most {MAX_INFERENCE_PROMPT:,} characters per inference. '
-               'Your full prompt is saved; divide it into shorter requests.',allowed=('pending',))
-            self._reload_chat()
-            messagebox.showwarning('Prompt saved but exceeds model context',
-                'Your complete prompt was preserved in Chats, NOT the Work queue. '
-                'Split it into smaller messages or revise the plan.')
+        # Large requests are persisted in full. Their section index contains
+        # only offsets, SHA-256 hashes and model-authored scoped proposals.
+        # It is NOT an inference truncation or an approval shortcut.
+        if len(prompt) > MAX_INFERENCE_PROMPT - 1000:
+            try:
+                progress = self.specifications.index(ident,prompt)
+                record(STATE,'desktop','large_specification_indexed',request_id=ident,
+                       characters=progress['characters'],sections=progress['sections'])
+                if kind == 'chat':
+                    message = (f'Your full {progress["characters"]:,}-character specification was saved '
+                               f'without truncation and indexed into {progress["sections"]:,} sections. '
+                               'No single response can reliably address it all. '
+                               'Use Draft project plan to process the sections in resumable batches; '
+                               'no plan or execution has been approved.')
+                    self.conversations.change(ident,'responded',
+                        'Full large specification stored and indexed; no model inference',
+                        response=message,allowed=('pending',))
+                    self._reload_chat()
+                else:
+                    self.status.set(f'Large specification indexed: {progress["sections"]:,} exact sections; '
+                                    'planning is resumable, no work approved.')
+            except Exception as exc:
+                self.conversations.change(ident,'failed',
+                    'Could not index large specification: '+str(exc)[:400],allowed=('pending',))
+                self._reload_chat()
+                messagebox.showerror('Specification indexing failed',str(exc))
+                return
         if not self.node_ready and not self.node_loading and not self.installing:
             self._auto_start_if_installed()
 
@@ -1026,7 +1104,10 @@ class DeepThorTDesktop(tk.Tk):
                     paths=[x for x in paths if classify(x)!='image']
                 if cancelled():return
                 self.events.put(('conversation_stage',ident,'Preparing the complete request and attachment context'))
-                prompt=composed_prompt(original,paths)
+                large_spec = len(original) > MAX_INFERENCE_PROMPT - 1000
+                if large_spec and paths:
+                    raise ValueError('Large specification indexed, but attached documents need separate scoped extraction; no attachments were silently omitted.')
+                prompt=original if large_spec else composed_prompt(original,paths)
                 original_evidence=''
                 capability_evidence=''
                 if request['mode']=='draft_plan':
@@ -1069,7 +1150,7 @@ class DeepThorTDesktop(tk.Tk):
                     if request['mode']=='chat' and is_x4_inspection_request(original,x4_context=x4_context):
                         self.events.put(('x4_inspection_reply',ident,report))
                         return
-                    if request['mode']=='draft_plan':
+                    if request['mode']=='draft_plan' and not large_spec:
                         self.events.put(('conversation_stage',ident,'Selecting verified X4 evidence within the model context limit'))
                         original_evidence=x4_evidence_for_prompt(report)
                         prompt=build_budgeted_plan_prompt(
@@ -1082,18 +1163,24 @@ class DeepThorTDesktop(tk.Tk):
                     else:
                         prompt += ('\n\nLOCAL X4 FILE INSPECTION (verified):\n'
                                    +x4_evidence_for_prompt(report))
-                elif request['mode']=='draft_plan':
+                elif request['mode']=='draft_plan' and not large_spec:
                     prompt=build_plan_prompt(prompt,self.inventory)
-                if request['mode']=='draft_plan':
+                if request['mode']=='draft_plan' and not large_spec:
                     prompt=attach_capability_context(prompt,capability_evidence,
                                                      max_chars=MAX_INFERENCE_PROMPT)
-                if len(prompt)>MAX_INFERENCE_PROMPT:
+                if not large_spec and len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
                 if cancelled():return
                 session=request['chat_id'] if request['mode']=='chat' else f'plan-{ident}-{request["chat_id"]}'
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
-                if request['mode']=='chat':
+                if request['mode']=='chat' and not large_spec:
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
+                elif large_spec:
+                    answer, _ = generate_indexed_plan(
+                        self.client,self.specifications,ident,session,original,
+                        request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
+                        stage=lambda message: self.events.put(('conversation_stage',ident,message)),
+                        cancelled=cancelled)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -1199,7 +1286,7 @@ class DeepThorTDesktop(tk.Tk):
         step_text='\n'.join(f"{i+1}. [{x['state']}] {x['path']}: {x['description']}" for i,x in enumerate(steps)) or '(No plan yet)'
         detail=(f"Job #{job['id']} | {job['state']} | {job['mode']}\n"
                 f"Created: {job['created_at']}\nProject: {job['project']}\nTarget: {job['target'] or '-'}\n"
-                f"Message: {job['detail']}\n\nPLAN STEPS:\n{step_text}\n\nREQUEST:\n{job['prompt']}\n\nRESULT:\n{job['result']}\n\nEVENTS:\n{events}")
+                f"Message: {job['detail']}\n\nPLAN STEPS:\n{step_text}\n\nREQUEST:\n{job['prompt'][:8000] + (' [DISPLAY PREVIEW ONLY; full request is stored in SQLite]' if len(job['prompt'])>8000 else '')}\n\nRESULT:\n{job['result']}\n\nEVENTS:\n{events}")
         self._show(self.job_details,detail)
     def _cancel_active(self):
         if self.active_job is None:return
