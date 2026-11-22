@@ -31,6 +31,7 @@ from deepthort_local.specification_library import SpecificationIndex, generate_i
 from deepthort_local.hierarchical_planning import HierarchicalPlanStore
 from deepthort_local.semantic_reconciliation import capture_verified_sources
 from deepthort_local.verification_evidence import assess_verification, attach_verification
+from deepthort_local.engine_acceptance import audit_engine_project
 from deepthort_local.large_input import imported_source, resolve_import
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
@@ -1442,7 +1443,29 @@ class DeepThorTDesktop(tk.Tk):
         # Only deterministic local test entry points. No model-created shell commands.
         if (project/'project.godot').exists():
             godot=shutil.which('godot.exe') or shutil.which('godot')
-            return ([godot,'--headless','--path',str(project),'--editor','--quit'] if godot else None)
+            if not godot:return None
+            # Only use a test framework confirmed to exist in the project.
+            # Otherwise report only editor load, not passing gameplay tests.
+            gut=project/'addons/gut/gut_cmdln.gd'
+            dirs=[]
+            if gut.is_file():
+                for name in ('test','tests'):
+                    base=project/name
+                    if base.is_dir() and any(p.is_file() and p.stat().st_size<=220_000 and
+                           re.search(r'(?m)^\s*func\s+test_\w+\s*\(',p.read_text(encoding='utf-8',errors='replace'))
+                           for p in list(base.rglob('test_*.gd'))[:100]):
+                        dirs.append('res://'+name)
+            if dirs:
+                return [godot,'--headless','--path',str(project),'-s',
+                        'addons/gut/gut_cmdln.gd','-gdir='+','.join(dirs),
+                        '-ginclude_subdirs','-gexit']
+            return [godot,'--headless','--path',str(project),'--editor','--quit']
+        if (project/'content.xml').is_file():
+            # Prefer actual approved tests when present; the independent X4
+            # artifact audit is also required before marking the job complete.
+            if (project/'tests').is_dir() or list(project.glob('test_*.py')):
+                return [sys.executable,'-m','unittest','discover']
+            return [sys.executable,str(ROOT/'engine_acceptance_cli.py'),str(project),'--summary']
         if (project/'package.json').exists(): return ['npm.cmd' if os.name=='nt' else 'npm','test']
         if (project/'pyproject.toml').exists() or (project/'tests').is_dir() or list(project.glob('test_*.py')):
             return [sys.executable,'-m','unittest','discover']
@@ -2649,7 +2672,10 @@ class DeepThorTDesktop(tk.Tk):
                             snapshot=capture_verified_sources(
                                 current_job['project'],self.jobs.steps(job_id))
                             if check is not None:
-                                snapshot=attach_verification(snapshot,check,verification_output['argv'])
+                                engine=audit_engine_project(current_job['project'],
+                                                            self.jobs.steps(job_id))
+                                snapshot=attach_verification(snapshot,check,
+                                    verification_output['argv'],engine_report=engine)
                         except (OSError,ValueError) as exc:
                             self._log(f'Approved test exited 0 but source evidence was not captured: {exc}')
                     if code==0 and snapshot is not None:
