@@ -38,6 +38,7 @@ jobs:
           import subprocess, sys
           patterns = [
               'test_dialogue*.py',
+              'test_assistant_termination_training.py',
               'test_dialogue_admission_index.py',
               'test_import_dolly_candidate.py',
               'test_audit_near_duplicates.py',
