@@ -1,3 +1,23 @@
+# DeepThorT v25 — hierarchical project milestones with exact source traceability (22 November 2026)
+
+**Source base:** v24. The original interface, Windows launcher, Qwen2.5-Coder ONNX model, gaming resource limits, JANUS/Sentinel, chat cancellation, user confirmation and stored state remain intact. This is Pass 4 of the Capability Library/development roadmap.
+
+**What changed:** `deepthort_local/hierarchical_planning.py` persists a complete-section roadmap in SQLite. After the local model has reviewed every numbered section of an imported large specification, the system combines only **model-authored** file proposals, validates the aggregate plan, traces each file to its original section hashes, detects contradictory descriptions of shared files and groups the output into independently approved milestones. A milestone normally holds at most 12 files; it never bypasses the existing 24-file stage cap. Model input uses exact, labelled source-section excerpts, rather than cutting or overwriting the full original specification.
+
+**Approval and verification:** A complete roadmap appears in Chats without queuing work. `Approve plan & queue` now offers one milestone at a time when the current chat has an active roadmap. Each milestone requires explicit user confirmation, individual file review and a separately approved test run. The next milestone is blocked until the prior milestone's actual job is verified (successful approved test exit and saved files). A successful command exit is not proof that an entire game works.
+
+**Data integrity:** Existing or changed specifications and model responses cannot silently reuse a stale roadmap. Every indexed specification section must have a model-proposed file trace. Conflicts, missing section reviews, unbound files, changed fingerprints, wrong job identities and excessive inference scopes stop approval. Roadmap state survives application restart. Sequential gates are cautious scheduling, not independent AI discovery of complete software dependencies.
+
+**Game project classification:** An Android/Faction Command game which refers to X4 as inspiration is no longer incorrectly routed into X4 extension preflight. Actual X4 mod projects retain the existing source inspection and validation gates.
+
+**Local verification:** 263 Python tests passed under Xvfb, including 28 new hierarchical and GUI integration tests. Tests use scripted model outputs and controlled verification records; real Windows ONNX planning, Android compilation, X4 mod execution and gameplay remain unverified. Tkinter/SQLite teardown warnings from older releases remain in test output.
+
+**Installation:** Close DeepThorT; extract v25 over `D:\deepthort`; preserve `state`, `models`, `node_modules`, `reference`, `cache` and your projects. For very large specifications, use **Ctrl+Shift+O** to import the full local text. Once all sections are reviewed and the roadmap is ready, approve the next milestone in the existing Chats panel; verify each before proceeding. No blanket multi-milestone execution permission is granted.
+
+**Details and limitations:** See `HIERARCHICAL_DEVELOPMENT.md`. This is a working hierarchical execution foundation, not a verified autonomous game developer. Performance benchmarking, semantic requirement extraction and deliberate subsystem dependency planning are future work.
+
+---
+
 # DeepThorT v24 — large specifications + verified procedure evidence (22 November 2026)
 
 **Source base:** v23 (Capability Library Pass 2). The original desktop layout, Windows launcher, JANUS/Sentinel architecture, locally installed ONNX model, resource limits, cancellation controls, explicit draft approval and 40-attempt limit remain intact. This release implements the first evidence-backed part of Pass 3 while removing the previous small text-storage and immediate-inference-input rejection behavior.
