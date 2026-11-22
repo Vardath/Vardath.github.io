@@ -2,8 +2,8 @@
 
 This is a supervised local coding assistant, not a verified autonomous game builder.
 Routine trusted-catalog software installation/upgrade uses a visible persistent
-user preference; Windows elevation remains under UAC. Source edits, arbitrary
-scripts and unverified tools retain their separate safeguards. All AI inference
+user preference; Windows elevation remains under UAC. Approved source edits and fixed tests may use job-bound, reversible authority;
+arbitrary scripts and unverified tools retain separate safeguards. All AI inference
 is local to 127.0.0.1.
 """
 from __future__ import annotations
@@ -64,6 +64,10 @@ from deepthort_local.software_autonomy import (
     load_policy, set_policy, project_tool_plans, verify_plan, audit_record,
     already_attempted, MIN_FREE_BYTES)
 
+from deepthort_local.project_authority import (
+    GrantError, load_policy as load_project_policy, set_policy as set_project_policy,
+    issue_grant, authorize_file, record_file, authorize_test, revoke_grant)
+
 from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
@@ -98,7 +102,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='39',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='40',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -125,6 +129,8 @@ class DeepThorTDesktop(tk.Tk):
         self.last_package_inspection = None
         self._pending_reviewed_install = None
         self._autonomy_policy = load_policy(STATE/'routine-software-policy.json')
+        self._project_policy = load_project_policy(STATE/'project-work-policy.json')
+        self._auto_verification_in_flight = None
         self._auto_tool_history = read_snapshot(STATE/'routine-software-history.json') or {}
         self._auto_tool_queue = []
         self._auto_tool_active = None
@@ -166,8 +172,7 @@ class DeepThorTDesktop(tk.Tk):
         self.attachments = []
         self.imported_spec_source = None
         self.image_photo = None
-        self.auto_save_allowed = set()  # In-memory explicit consent per job, never assumed after restart.
-        self.chat_ids = []
+                self.chat_ids = []
         self.current_chat = None
         self.inventory = None
         self.meter=Meter()
@@ -211,6 +216,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(125, self._handle_events)
         self.after(1000, self._scheduler)
         self.after(1700, self._automatic_tool_tick)
+        self.after(1900, self._project_work_tick)
         self.after(2200, self._poll_server)
         self.after(1000, self._poll_reply_notice)
         # Preserve the original button arrangement when Windows reduces window height.
@@ -222,7 +228,8 @@ class DeepThorTDesktop(tk.Tk):
         self.protocol('WM_DELETE_WINDOW',self._quit)
         self._log('Desktop opened. Local ONNX only. Routine catalog tool management: '+
                   ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
-                  '; arbitrary scripts and third-party installations remain controlled.')
+                  '; bounded project work: '+('ENABLED' if self._project_policy['enabled'] else 'OFF')+
+                   '; arbitrary scripts and third-party installations remain controlled.')
         self._log('Select a project and use Computer & Tools to inspect this machine. Auto-save happens only after specific consent.')
         self._refresh_inventory()
 
@@ -343,6 +350,12 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(qt,text='Review legacy plan',command=self._approve_build_plan).pack(side='left',padx=3)
         ttk.Button(qt,text='Verify build',command=self._verify_build).pack(side='left',padx=3)
         ttk.Button(qt,text='Load prompt into editor',command=self._load_job_prompt).pack(side='left',padx=3)
+        workbar=ttk.Frame(queue_tab);workbar.pack(fill='x',pady=(0,5))
+        self.project_work_enabled=tk.BooleanVar(value=self._project_policy['enabled'])
+        ttk.Checkbutton(workbar,text='Continue approved file steps and fixed tests without repeated prompts',
+                        variable=self.project_work_enabled,command=self._set_project_work_policy).pack(side='left',padx=3)
+        ttk.Button(workbar,text='Revoke selected job automation',
+                   command=self._revoke_selected_project_work).pack(side='left',padx=8)
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
             self.job_tree.heading(column,text=title);self.job_tree.column(column,width=width,stretch=column=='detail')
@@ -359,7 +372,8 @@ class DeepThorTDesktop(tk.Tk):
         self.file_preview=self._text(files_tab,height=25,wrap='none')
         self.file_preview.pack(fill='both',expand=True)
         self._preview('Select a file on the left.\n\nRequest a proposed edit in Chats.\n'
-                      'Every file modification requires explicit approval; a backup is made first.')
+                      'Approved unattended jobs may save only exact authorized files with backups; '
+                       'other changes require individual file review.')
 
         # TASK BOARD (distinct from execution queue)
         tbar=ttk.Frame(tasks_tab);tbar.pack(fill='x',pady=9)
@@ -1152,8 +1166,11 @@ class DeepThorTDesktop(tk.Tk):
                 'is preserved, but Qwen will only receive the listed exact source sections '
                 'while generating these files. Later milestones remain blocked until an '
                 'approved verification check succeeds.\n\n'
-                'Queue this milestone? Individual file changes still require review. '
-                'No software installations or test commands are approved here.',parent=self):
+                'Queue this milestone? With unattended project work enabled, this approval '
+                 'authorizes reversible writes for these exact planned files and fixed local '
+                 'tests, which can execute generated code with your Windows user rights. '
+                'Switch unattended work OFF in Work queue before approving to keep per-file/test '
+                 'confirmations. Tool installs follow a separate policy and normal UAC.',parent=self):
                 self._log(f'Milestone {ordinal}: user declined approval; no files changed.')
                 return
             jobid=self.jobs.submit_approved_milestone_build(
@@ -1167,6 +1184,7 @@ class DeepThorTDesktop(tk.Tk):
                    request_id=root_request_id,error_type=type(exc).__name__,detail=str(exc)[:450])
             messagebox.showerror('Cannot approve milestone',str(exc),parent=self)
             return
+        self._grant_project_job(jobid)
         if self._routine_tools_enabled():
             self._autonomy_queue_request(req['prompt'],state['project'])
         self._log(f'Explicitly approved milestone {ordinal}/{state["milestones_total"]}; '
@@ -1218,8 +1236,12 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Approve this plan for execution?',
             f"Project: {draft['project']}\n\n{summary[:3600]}\n\n"
             'Approve these file-generation stages and place them into the execution queue?\n'
-            'No external installations or test commands are approved by this step.\n'
-            'Individual generated file changes still require review.',parent=self):
+            'With unattended project work enabled, this ONE approval also authorizes exact '
+            'planned file writes with backups and fixed local project tests.\n'
+            'These tests can execute generated code with your Windows user rights. Disable '
+            'unattended work in Work queue BEFORE approving if you want each file '
+            'and test confirmed separately. Software installation has its own '
+            'policy; Windows UAC remains active.',parent=self):
             self.conversations.discard(draft['id'])
             self._log(f'User rejected draft #{draft["id"]}; it cannot be queued. No files changed.')
             self._reload_chat()
@@ -1231,11 +1253,12 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as exc:
             record(STATE,'desktop','plan_approval_failed',level='ERROR',error=str(exc))
             messagebox.showerror('Cannot queue approved plan',str(exc));return
+        self._grant_project_job(jobid)
         if self._routine_tools_enabled():
             self._autonomy_queue_request(draft['original_prompt'],draft['project'])
         self._log(f'User explicitly approved draft #{draft["id"]}. Created job #{jobid} with {len(draft["steps"])} steps.')
         self._reload_chat();self._refresh_jobs();self.tabs.select(1)
-        self.status.set(f'Approved plan became job #{jobid}; files require review.')
+        self.status.set(f'Approved plan became job #{jobid}; auto-work authority is listed in Work queue.')
 
     def _execute_conversation(self,request):
         ident=request['id']
@@ -1544,8 +1567,12 @@ class DeepThorTDesktop(tk.Tk):
         summary='\n'.join(f"{n+1}. {x['path']}: {x['description'][:100]}" for n,x in enumerate(plan))
         if not messagebox.askyesno('Approve project plan',
                 f'Approve these {len(plan)} bounded file steps?\n\n{summary[:2000]}\n\n'
-                'This does not approve downloading/installing software or executing tools.',parent=self):return
+                'With unattended project work enabled, this single approval also authorizes '
+                'exact file writes with backups and fixed local project tests. Tests '
+                'may execute generated code with your Windows user rights. Software '
+                'installation still has a separate policy and normal UAC.',parent=self):return
         self.jobs.resume(j['id'])
+        self._grant_project_job(j['id'])
         if self._routine_tools_enabled():
             self._autonomy_queue_request(j['prompt'],str(self.project))
         self._log(f"Build plan #{j['id']} approved. The queue will work on its first file.")
@@ -1585,6 +1612,107 @@ class DeepThorTDesktop(tk.Tk):
             return [sys.executable,'-m','unittest','discover']
         if list(project.glob('*.sln')): return ['dotnet','test','--no-restore']
         return None
+
+    def _project_work_is_enabled(self):
+        return bool(getattr(self, '_project_policy', {}).get('enabled') is True)
+
+    def _set_project_work_policy(self):
+        try:
+            self._project_policy = set_project_policy(
+                STATE/'project-work-policy.json', bool(self.project_work_enabled.get()))
+        except (OSError, ValueError) as exc:
+            self.project_work_enabled.set(self._project_work_is_enabled())
+            messagebox.showerror('Could not save project work setting', str(exc), parent=self)
+            return
+        self._log('Unattended approved project steps ' + (
+            'ENABLED for job-bound grants' if self._project_work_is_enabled()
+            else 'DISABLED; manual file/test review remains available'))
+        self._refresh_jobs()
+
+    def _grant_project_job(self, jobid):
+        if not self._project_work_is_enabled():
+            return
+        job = self.jobs.get(jobid)
+        try:
+            grant = issue_grant(STATE/'project-grants', job, self.jobs.steps(jobid))
+            self._log(f"Job #{jobid}: unattended authority granted for "
+                      f"{len(grant['files'])} exact files and fixed local project tests. "
+                      "Existing files fingerprinted; source backups retained.")
+            record(STATE, 'desktop', 'project_authority_issued', job_id=jobid,
+                   paths=len(grant['files']), plan_sha256=grant['plan_sha256'])
+        except (GrantError, ValueError, OSError) as exc:
+            # Never fabricate a grant when project scope/plan is incompatible.
+            self._log(f'Job #{jobid}: no unattended grant: {exc}. '
+                      'Individual file/test review remains required.')
+            record(STATE, 'desktop', 'project_authority_declined', job_id=jobid,
+                   reason=str(exc)[:400])
+
+    def _revoke_selected_project_work(self):
+        job = self._selected_job()
+        if not job:
+            messagebox.showinfo('Select approved job',
+                'Select an approved build in Work queue first.', parent=self)
+            return
+        try:
+            result = revoke_grant(STATE/'project-grants', job['id'])
+        except OSError as exc:
+            messagebox.showerror('Cannot revoke grant', str(exc), parent=self)
+            return
+        self._log(f'Job #{job["id"]}: ' + (
+            'unattended authority REVOKED; subsequent file/test actions need review.'
+            if result else 'no active unattended authority found.'))
+        if self._auto_verification_in_flight == job['id']:
+            self._log('Already running test may continue. Stop tool / install process to interrupt it.')
+        self._refresh_jobs()
+
+    def _project_work_tick(self):
+        try:
+            self._project_work_once()
+        except Exception as exc:
+            record(STATE, 'desktop', 'project_work_scheduler_error', level='ERROR',
+                   error_type=type(exc).__name__, detail=str(exc)[:500])
+            self._log('Unattended project scheduler problem: ' + str(exc)[:200])
+        finally:
+            if not self._quitting:
+                self.after(1800, self._project_work_tick)
+
+    def _project_work_once(self):
+        # Paused work, JANUS, foreground games, active model requests and other
+        # tool processes block NEW test execution. May resume after restart.
+        if (not self._project_work_is_enabled() or self.queue_paused
+            or self._auto_verification_in_flight is not None
+            or self.active_job is not None or self.active_conversation is not None
+            or self.disk_gate.gaming()
+            or any(p and p.poll() is None for p in
+                   (self.tool_process, self.install_process, self.media_process))
+            or self.janus.status().get('paused')):
+            return
+        for job in self.jobs.pending_verifications(limit=40):
+            project = Path(job['project'])
+            cmd = self._verification_command(project)
+            if not cmd:
+                continue
+            try:
+                authorize_test(STATE/'project-grants', job, self.jobs.steps(job['id']),
+                               list(cmd), enabled=True)
+            except (GrantError, OSError, ValueError):
+                continue
+            if not self.jobs.change(job['id'], 'running',
+                    'Running recognized verification under job-bound authority',
+                    allowed=('waiting_verification',)):
+                continue
+            self._auto_verification_in_flight = job['id']
+            if not self._start_command(cmd, cwd=project,
+                    label=f"Verify job #{job['id']} (standing project authority)",
+                    kind='verification', job_id=job['id']):
+                self._auto_verification_in_flight = None
+                self.jobs.change(job['id'], 'waiting_verification',
+                    'Test did not launch; prior grant remains intact', allowed=('running',))
+                return
+            self._log(f"Job #{job['id']}: queued fixed local test using "
+                      'project-scoped standing authority, not model-supplied commands.')
+            self._refresh_jobs()
+            return
 
     def _verify_build(self):
         if any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)):
@@ -1818,11 +1946,27 @@ class DeepThorTDesktop(tk.Tk):
             self.jobs.change(jobid,'needs_input','Some file stages are incomplete; review the plan',allowed=('running',))
         else:
             self.jobs.change(jobid,'waiting_verification',f'{saved} source files saved with backups. Awaiting actual project tests.',allowed=('running',))
-            self._log(f'Job #{jobid}: {saved} file stages saved; NOT verified. Choose Verify build.')
+            self._log(f'Job #{jobid}: {saved} file stages saved; NOT verified.')
             self.tabs.select(1)
-            messagebox.showinfo('Build requires verification',f'Job #{jobid} saved {saved} proposed files.\n\n'
-                'Source generation is NOT proof of a working app or game.\n'
-                'Select the job in Work queue and click Verify build to run an approved test.')
+            unattended_test = False
+            if self._project_work_is_enabled():
+                cmd = self._verification_command(Path(j['project']))
+                if cmd:
+                    candidate = self.jobs.get(jobid)
+                    try:
+                        unattended_test = authorize_test(
+                            STATE/'project-grants', candidate, self.jobs.steps(jobid),
+                            list(cmd), enabled=True)
+                    except (GrantError, OSError, ValueError):
+                        unattended_test = False
+            if unattended_test:
+                self._log(f'Job #{jobid}: saved-file fingerprints match; '
+                          'fixed local verification will be scheduled automatically.')
+            else:
+                messagebox.showinfo('Build requires verification',
+                    f'Job #{jobid} saved {saved} proposed files.\\n\\n'
+                    'Source generation is NOT proof of a working app or game.\\n'
+                    'Select Verify build to run a separately approved local test.')
         self._refresh_jobs()
 
     def _job_answer(self,jobid,answer):
@@ -1838,23 +1982,49 @@ class DeepThorTDesktop(tk.Tk):
                 code=strip_single_code_fence(answer)
                 if not code.strip() or len(code)>280_000:
                     self.jobs.change(jobid,'needs_input','Model supplied empty/oversized code. Ask for correction.',result=answer,allowed=('running',))
-                elif jobid in self.auto_save_allowed:
-                    try:
-                        dest=apply_approved_file(Path(j['project']),step['path'],code,STATE/'backups')
-                        self.jobs.set_step(step['id'],'saved','Auto-save approved for this job; not yet tested')
-                        self.jobs.change(jobid,'queued',f'Saved {step["path"]}; next stage queued',result=answer,allowed=('running',))
-                        self._log(f'Job #{jobid}: saved {dest} under prior explicit project approval; backup created.')
-                        self._refresh_files()
-                    except Exception as e:
-                        self.jobs.change(jobid,'needs_input','Cannot save proposed file: '+str(e),result=answer,allowed=('running',))
                 else:
-                    self.proposed=(step['path'],code);self.proposal_job=jobid;self.proposal_step=step['id']
-                    self.jobs.set_step(step['id'],'proposed','Awaiting user file review')
-                    self.jobs.change(jobid,'waiting_approval',f'Review proposed {step["path"]} ({len(self.jobs.steps(jobid))} planned files)',result=answer,allowed=('running',))
-                    self.file_title.set('Proposed: '+step['path'])
-                    self._preview('PROPOSED CODE — edit below before approving\n\n'+code)
-                    self.tabs.select(2)
-                    messagebox.showinfo('Build needs file review',f'Job #{jobid} proposed {step["path"]}. Review it and approve saving. The next stage will queue automatically.')
+                    authority = None
+                    if self._project_work_is_enabled():
+                        try:
+                            authority = authorize_file(STATE/'project-grants', j,
+                                self.jobs.steps(jobid), step, enabled=True)
+                        except (GrantError, OSError, ValueError) as exc:
+                            # No generic auto-write permission is inferred.
+                            self._log(f'Job #{jobid}: manual review for '
+                                      f'{step["path"]}: {str(exc)[:180]}')
+                    if authority is not None:
+                        try:
+                            dest = apply_approved_file(Path(j['project']), step['path'], code,
+                                STATE/'backups', expected_existing_sha=authority['before_sha256'])
+                            evidence = record_file(STATE/'project-grants', j,
+                                self.jobs.steps(jobid), step, enabled=True)
+                            self.jobs.set_step(step['id'], 'saved',
+                                'Job-authorized reversible write; SHA-256 recorded; not tested')
+                            self.jobs.change(jobid, 'queued',
+                                f'Saved {step["path"]}; next exact approved stage queued',
+                                result=answer, allowed=('running',))
+                            self._log(f'Job #{jobid}: authorized source write {dest}; '
+                                      f'SHA256 {evidence["sha256"][:16]}…; backup retained.')
+                            self._refresh_files()
+                        except (GrantError, WorkspaceError, OSError, ValueError) as exc:
+                            self.jobs.change(jobid, 'needs_input',
+                                'Automatic file write needs attention: ' + str(exc),
+                                result=answer, allowed=('running',))
+                            self._log(f'Job #{jobid}: unattended write failed closed: {exc}')
+                    else:
+                        self.proposed = (step['path'], code)
+                        self.proposal_job = jobid
+                        self.proposal_step = step['id']
+                        self.jobs.set_step(step['id'], 'proposed', 'Awaiting individual file review')
+                        self.jobs.change(jobid, 'waiting_approval',
+                            f'Review proposed {step["path"]} ({len(self.jobs.steps(jobid))} planned files)',
+                            result=answer, allowed=('running',))
+                        self.file_title.set('Proposed: ' + step['path'])
+                        self._preview('PROPOSED CODE — edit below before approving\\n\\n' + code)
+                        self.tabs.select(2)
+                        messagebox.showinfo('Build needs file review',
+                            f'Job #{jobid} proposed {step["path"]}. Review it and approve saving. '
+                            'The next stage will queue automatically.')
         elif j['mode']=='vision':
             self.jobs.change(jobid,'responded','Local image was described by vision model',result=answer,allowed=('running',))
             self._show(self.image_info,answer)
@@ -2781,7 +2951,7 @@ class DeepThorTDesktop(tk.Tk):
                     # Bounded network inspection and user-approved third-party setup.
                     # A timed-out installer may have launched child processes; its
                     # receipt remains UNVERIFIED and requires manual inspection.
-                    max_runtime = 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else None
+                    max_runtime = 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else 7200 if kind=='verification' else None
                     timer=(threading.Timer(max_runtime,
                             lambda: proc.kill() if proc.poll() is None else None)
                            if max_runtime is not None else None)
@@ -3394,6 +3564,10 @@ class DeepThorTDesktop(tk.Tk):
                     self._inspect_x4_sources()
                 if tooltype=='x4_preflight_extraction' and job_id is not None:
                     self._x4_preflight_extract_finished(job_id,code)
+                was_auto_verification=(tooltype=='verification' and job_id is not None
+                                       and self._auto_verification_in_flight==job_id)
+                if was_auto_verification:
+                    self._auto_verification_in_flight=None
                 if tooltype=='verification' and job_id is not None:
                     snapshot=None
                     check=None
@@ -3439,8 +3613,16 @@ class DeepThorTDesktop(tk.Tk):
                             self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()
                 if code!=0 and tooltype not in ('package_inspection','automatic_software'):
-                    messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
+                    if was_auto_verification:
+                        self._log(f'Unattended job #{job_id} test failed; inspect Processes/Work queue. '
+                                  'No automatic retry or success was inferred.')
+                    else:
+                        messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
+                was_auto_error=(len(event)>4 and event[4] is not None and
+                                event[4]==self._auto_verification_in_flight and
+                                event[2]=='verification')
+                if was_auto_error:self._auto_verification_in_flight=None
                 self._log(f'{event[1]} error: {event[3]}')
                 if event[2]=='reviewed_install':
                     self._complete_inspected_install(None)
@@ -3457,7 +3639,8 @@ class DeepThorTDesktop(tk.Tk):
                 if len(event)>4 and event[4] is not None:
                     self.jobs.change(event[4],'needs_input','Test process failed to launch: '+event[3],allowed=('running',))
                     self._refresh_jobs()
-                messagebox.showerror('Tool error',event[3])
+                if not was_auto_error:
+                    messagebox.showerror('Tool error',event[3])
         self.after(125,self._handle_events)
     def _quit(self):
         self._quitting=True
