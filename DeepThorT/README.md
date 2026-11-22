@@ -1,3 +1,17 @@
+# DeepThorT v22 — local Capability Library foundation (22 November 2026)
+
+**Source base:** v21. No GUI layout change, no JANUS/Sentinel replacement, no model or inference changes, no automatic project writes, no extra cloud dependencies. Original approval and 40-attempt planning safeguards remain in place.
+
+**New working foundation:** `deepthort_local/capability_library.py` maintains a local SQLite database (`state/capabilities.sqlite3`) for bounded observations of a selected project's manifests/configuration, file hashes and explicitly marked candidate procedures. The Draft project plan handler now performs read-only project discovery before model inference and can add small source-grounded references to the *first* planning prompt when the existing 7,500-character budget permits. The user's full specification and existing X4 evidence always take priority. Discovered project files are observations, **not** proof that a workflow works. A read-only XML/JSON/existence check can mark a procedure `artifact_checked`, but not as an execution-tested workflow. Nonverified candidates are never inserted into the model prompt. This stage does not automatically learn how to operate arbitrary tools or produce a game.
+
+**Privacy and safety:** No project document body is copied into planning context, no tool is automatically launched, no project file is changed, and no observed candidate is silently promoted to working. Evidence is checked for staleness at retrieval. Local SQLite state should be preserved during updates and excluded from Git. Command-line developer inspection is documented in `CAPABILITY_LIBRARY.md`.
+
+**Tests:** The new `test_capability_library_v22.py` covers discovery, persistence, offline behavior, scope, stale evidence, rejection of unverified procedures, deterministic artifact checks and prompt-budget preservation. A full regression run under Xvfb reported 197 tests passed; known preexisting Tkinter/SQLite cleanup warnings remain. Windows live ONNX speed/plan quality, full game engine execution and end-to-end autonomous learning remain unverified.
+
+**Next passes:** (1) bounded retrieved documentation excerpts with source provenance, (2) authorized real build/test execution and workflow verification receipts, (3) hierarchical, dependency-aware game planning and measured performance. See `CAPABILITY_LIBRARY.md`.
+
+---
+
 # DeepThorT v21 — malformed-JSON planning recovery (22 November 2026)
 
 **Source base:** v20. This is a narrow fix for `DeepThorT-Diagnostics-20261122-162725.zip` and does not alter the desktop layout, JANUS/Sentinel, ONNX worker, gaming limits, project approval, or the user's stored state.
