@@ -53,6 +53,25 @@ def audit(manifest_path, train_path, validation_path, test_path):
             for msg in messages:
                 if not isinstance(msg, dict) or msg.get("role") not in ROLES or not isinstance(msg.get("content"), str) or not msg["content"].strip():
                     raise ValueError(f"{split}: invalid message")
+            # Reject malformed supervision: an assistant answer must follow a user
+            # request, and tool output must not appear without a preceding assistant.
+            # System messages are only permitted at the beginning.
+            if messages[0]["role"] not in ("system", "user"):
+                raise ValueError(f"{split}: conversation must begin with system or user")
+            last = None
+            for position, msg in enumerate(messages):
+                role = msg["role"]
+                if role == "system" and position != 0:
+                    raise ValueError(f"{split}: system message after conversation start")
+                if role == "assistant" and last not in ("user", "tool"):
+                    raise ValueError(f"{split}: assistant message without user/tool context")
+                if role == "tool" and last != "assistant":
+                    raise ValueError(f"{split}: orphan tool result")
+                if role == "user" and last == "user":
+                    raise ValueError(f"{split}: consecutive user turns without response")
+                last = role
+            if last != "assistant":
+                raise ValueError(f"{split}: conversation must end with assistant answer")
             if not any(m["role"] == "user" for m in messages) or not any(m["role"] == "assistant" for m in messages):
                 raise ValueError(f"{split}: missing user/assistant turns")
             normalized = json.dumps([(m["role"], canonical(m["content"])) for m in messages], ensure_ascii=False)
