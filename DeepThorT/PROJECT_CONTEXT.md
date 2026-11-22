@@ -1,3 +1,15 @@
+## v23 update — 22 November 2026: Capability Library Pass 2 local reference learning
+
+**Current packaged release: v23.** Built from the exact v22 ZIP, with seven changes/additions only: `deepthort_local/reference_learning.py` (new), `tests/test_reference_learning_v23.py` (new), `deepthort_local/capability_library.py`, `desktop_app.py`, `README.md`, `START HERE.txt`, and `CAPABILITY_LIBRARY.md`. The untouched Windows executable and all other package entries match v22. Full local Xvfb regression: **212 tests passed** (197 prior, 15 new), with the preexisting Tk/SQLite teardown warnings. Windows ONNX inference, actual game builds, self-directed discovery of online references, and autonomous workflow verification are **NOT proven**.
+
+**Implemented:** The selected workspace's bounded existing scan (200 eligible paths) now indexes up to 20 local documentation/example text files, maximum 48 KB each, with hash and source provenance in the existing `state/capabilities.sqlite3`. No document body is persisted. Retrieval reopens/re-hashes sources and returns limited relevant lines, attributed by path, line number, hash prefix, and optional user-provided version label (explicitly UNVERIFIED). Credential-like and clear instruction-override lines are omitted; all excerpts are untrusted source data. It reads sources only and does not execute tools, alter project files, or approve unverified procedures. CLI: `python -m deepthort_local.capability_library --db state\capabilities.sqlite3 inspect <project>`, `references <project>`, `reference-context <project> "<request>"`, `index-reference <project> <relative-file> --version <label>`.
+
+**Planning:** Draft planning may include small hash-verified relevant excerpts in the first model input when the 7,500-character budget permits; it never truncates original requirements or verified X4 preflight evidence. Later revision passes do not yet independently retrieve new excerpts. This is **Pass 2**, not autonomous tool mastery. Original JANUS/Sentinel, 40-pass limit, UI, approvals and offline ONNX inference are unchanged.
+
+**Next priority: Pass 3** — integrate only explicitly approved/supervised build/test tools with actual exit statuses, tool versions and artifact hashes, then promote scoped procedures only when tests genuinely pass. After that: Pass 4 dependency-aware hierarchical planning for games; Pass 5 on-PC performance and acceptance benchmarks. Do not claim a working X4 mod or Android game without actual verification.
+
+---
+
 ## v22 update — 22 November 2026: Capability Library foundation (first of several passes)
 
 **Current packaged release: v22.** New read-only `deepthort_local/capability_library.py`, `CAPABILITY_LIBRARY.md`, test module and a small draft-plan handler integration in the existing `desktop_app.py`. All six changed/added files were verified by Git blob SHA against `DeepThorT_Desktop_v22_Windows.zip`; the original Windows launcher is unchanged. 197 local tests passed using Xvfb. Live Windows inference, GitHub CI, game-engine builds and full autonomous learning have not been demonstrated.
