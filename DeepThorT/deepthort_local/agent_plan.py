@@ -306,7 +306,8 @@ def revision_focus(steps: list[dict], request: str, pass_number: int,
 
 def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
                           x4_evidence: str = '', max_chars: int = 7500,
-                          path_window: int = 0, focus: str = '') -> str:
+                          path_window: int = 0, focus: str = '',
+                          format_recovery: bool = False) -> str:
     """Ask the model to repair its own proposal within a bounded context.
 
     Never truncate the original specification or alter/drop accumulated plan
@@ -323,6 +324,18 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
         'Earlier model files are retained locally. Verify game IDs; never invent them. '
         'Do not claim execution or testing.\n'
     )
+    if format_recovery:
+        # Repeated malformed responses have dominated actual Windows inference.
+        # Ask for a single complete object, not another long truncated batch.
+        # This does NOT generate a plan or weaken the normal validator.
+        header = (
+            'FORMAT RECOVERY: Previous response was not complete JSON. '
+            'Return exactly ONE complete JSON object with ONE file: '
+            '{"files":[{"path":"relative/file.ext","description":"one concrete step"}]}. '
+            'Use a relevant path and a brief description (under 160 characters). '
+            'Close all braces and brackets. No prose, markdown, or repeated files. '
+            'Previous accepted files are retained locally.\n'
+        )
     findings = str(problems).split('. No work',1)[0].strip()[:560]
     target = ('PRIMARY TARGET FOR THIS PASS (a criterion still missing from the '
               'accumulated plan): ' + focus[:180] + '\n'
@@ -431,9 +444,11 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     all_steps: dict[str, dict] = {}
     failures = []
     seen_answers = set()
+    invalid_format_answers = set()
     prompt = first_prompt
     previous_focus = ''
     stagnant_on_focus = 0
+    malformed_streak = 0
     for round_no in range(1, max_rounds + 1):
         if cancelled is not None and cancelled():
             raise PlanError('Planning stopped by user; original request is preserved')
@@ -459,10 +474,13 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                 stage(f'Planning pass {round_no}/{max_rounds} restored from '
                       'a completed local inference; no model time consumed')
         else:
-            # Most observed v19 JSON fragments were 300–750 characters.
-            # Bound the generation budget to reduce needless decoding; if a
-            # previous long fragment was malformed, allow a larger correction.
-            tokens = 640 if (failures and 'JSON' in failures[-1] and len(prompt) < 5000) else 384
+            # The original 5K prompt-length gate was unreachable in practice:
+            # real X4 revisions are ~7K and repeatedly returned malformed JSON
+            # with a hard 384-token ceiling. Scale the output budget based on
+            # consecutive format failures, independent of input length. A
+            # compact one-file recovery request avoids unnecessary long output.
+            tokens = (768 if malformed_streak >= 2 else
+                      640 if malformed_streak else 384)
             answer = client.chat(round_session, prompt, max_tokens=tokens)
         if cancelled is not None and cancelled():
             raise PlanError('Planning stopped by user; no later passes will run')
@@ -474,10 +492,15 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
             # repeated an earlier INVALID answer. Record concrete feedback and
             # give the model another opportunity to correct it. No step is
             # added and no approval is possible from a repeated invalid draft.
-            finding = ('The last proposal exactly repeats an earlier rejected '
-                       'answer. It contributed no valid new files. Supply '
-                       'different source-backed files or corrections that '
-                       'address the validator findings; do not repeat unchanged JSON.')
+            if answer.strip() in invalid_format_answers:
+                finding = ('Model did not return one complete valid JSON plan object; '
+                           'it repeats an earlier rejected malformed response. Return one '
+                           'new, short, complete JSON object.')
+            else:
+                finding = ('The last proposal exactly repeats an earlier rejected '
+                           'answer. It contributed no valid new files. Supply '
+                           'different source-backed files or corrections that '
+                           'address the validator findings; do not repeat unchanged JSON.')
         else:
             seen_answers.add(answer.strip())
             try:
@@ -517,6 +540,18 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                     return json.dumps({'files': approved_shape}, ensure_ascii=False), approved_shape
             except PlanError as exc:
                 finding = str(exc)
+        # Valid partial JSON need not pass the full project validator yet;
+        # count only structural format errors, never missing X4 requirements.
+        malformed = finding.startswith((
+            'Model did not return one complete valid JSON plan object',
+            'Plan must contain only a \"files\" array',
+            'Plan requires 1..24 files',
+            'Every file must specify path and description',
+            'Invalid step path or description',
+        ))
+        if malformed:
+            invalid_format_answers.add(answer.strip())
+        malformed_streak = malformed_streak + 1 if malformed else 0
         failures.append(finding)
         gaps = remaining_plan_gaps(list(all_steps.values()), request)
         # Only counts and bounded criteria go into diagnostics, never the
@@ -535,7 +570,9 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                    complete_specification_included=(request in prompt),
                    rejected_duplicate=repeated,
                    invalid_json='JSON' in finding or 'json' in finding,
-                   focus_category=focus[:120])
+                   focus_category=focus[:120],
+                   output_token_budget=(0 if cached is not None else tokens),
+                   format_failure_streak=malformed_streak)
         if round_no == max_rounds:
             break
         if previous_focus == focus and len(all_steps) == count_before and revised_count == 0:
@@ -553,7 +590,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                   f'next correction: {next_focus[:90]}')
         prompt = build_revision_prompt(
             request, list(all_steps.values()), finding, x4_evidence=x4_evidence,
-            max_chars=max_chars, path_window=round_no - 1, focus=next_focus)
+            max_chars=max_chars, path_window=round_no - 1, focus=next_focus,
+            format_recovery=malformed_streak > 0)
     raise PlanError(
         f'Local model could not produce a validated plan after {max_rounds} attempts. '
         f'Last problem: {failures[-1][:650]}. No substitute plan was created; '
