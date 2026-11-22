@@ -1,3 +1,19 @@
+# DeepThorT v23 — Capability Library Pass 2: local reference learning (22 November 2026)
+
+**Source base:** verified v22 Windows package. This release preserves the desktop interface, launcher, JANUS/Sentinel, local ONNX model, 40-attempt plan approval rules, resource profile and existing local state. No new download, arbitrary command execution, cloud request or autonomous project file write is introduced.
+
+**Implemented:** `deepthort_local/reference_learning.py` adds a separate hash-locked SQLite index of local project documentation and examples. `CapabilityLibrary.inspect_project` automatically indexes at most 20 qualifying text documents or code examples among the existing bounded workspace scan (up to 200 eligible project files); an explicit offline CLI command may select an additional allowed source from the selected project. Document bodies are **not saved** in SQLite. On retrieval, each source is reopened from the selected workspace, checked against its saved SHA-256 and read-only size/type restrictions, and ranked against the user's request. At most one short relevant passage per source is quoted with its path, line number, SHA prefix, and unverified version label. Credential-looking lines and obvious instruction-override text are omitted. Every excerpt is labelled **untrusted quoted reference data** and is never mistaken for validated instructions or a proved workflow.
+
+**Planning integration:** v22's existing pre-plan discovery now finds these references and includes small, relevant excerpts in the optional capability context of the **initial draft-plan request** when sufficient space remains. It always preserves the complete original project requirements, the X4 preflight evidence and the 7,500-character planning limit. Unverified procedure candidates remain excluded. No new fields or controls appear in the window. The later 40-pass correction prompts do not yet have independent document retrieval; this is intentionally left to the hierarchical-planning pass.
+
+**Offline developer CLI:** `python -m deepthort_local.capability_library --db state\capabilities.sqlite3 references D:\x4mods`; `reference-context D:\x4mods "Mission Director XML"`; and `index-reference D:\x4mods docs\api.md --version 1.0`. Version is a user-supplied, unverified label. See `CAPABILITY_LIBRARY.md` for full examples and limitations.
+
+**Verification:** Full local Xvfb regression suite: **212 tests passed**, comprising the v22 baseline's 197 and 15 new reference-index tests. The tests cover persistence, project isolation, bounded discovery, staleness, path/symlink guards, secret/instruction filtering, context budget, offline mode and version provenance. The suite has pre-existing Tkinter/SQLite teardown warnings. Live Windows inference, model plan success, engine builds, and independent workflow verification remain untested. This release is **Pass 2 only**, not a claim that the agent can autonomously build games.
+
+**Next:** Pass 3 attaches authorized build/test results and tool-version evidence to procedures before qualifying any workflow as verified. Pass 4 adds hierarchical, dependency-aware planning; Pass 5 measures real inference and game-engine outcomes.
+
+---
+
 # DeepThorT v22 — local Capability Library foundation (22 November 2026)
 
 **Source base:** v21. No GUI layout change, no JANUS/Sentinel replacement, no model or inference changes, no automatic project writes, no extra cloud dependencies. Original approval and 40-attempt planning safeguards remain in place.
