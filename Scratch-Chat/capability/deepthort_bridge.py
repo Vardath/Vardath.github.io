@@ -42,6 +42,22 @@ def respond(model, tok, messages, *, max_new_tokens=64):
         raise ValueError("max_new_tokens must be 1..512")
     if len(messages) > 128:
         raise ValueError("Too many messages (maximum 128)")
+    # Validate the full conversation before generating tokens.
+    roles = []
+    for item in messages:
+        if not isinstance(item, dict) or item.get("role") not in ("system", "user", "assistant") or not isinstance(item.get("content"), str):
+            raise ValueError("Invalid message")
+        roles.append(item["role"])
+    start = 1 if roles[0] == "system" else 0
+    if "system" in roles[start:]:
+        raise ValueError("System message must be first")
+    if not roles[start:] or roles[start] != "user":
+        raise ValueError("Conversation must begin with user message")
+    for previous, current in zip(roles[start:], roles[start + 1:]):
+        if previous == current:
+            raise ValueError("Consecutive identical dialogue roles")
+    if roles[-1] != "user":
+        raise ValueError("Last message must be user before generation")
     prompt = ""
     for item in messages:
         if not isinstance(item, dict) or item.get("role") not in ("system", "user", "assistant") or not isinstance(item.get("content"), str):
