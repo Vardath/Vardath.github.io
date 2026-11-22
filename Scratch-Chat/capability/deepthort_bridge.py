@@ -48,18 +48,18 @@ def respond(model, tok, messages, *, max_new_tokens=64):
             raise ValueError("Invalid message")
         if len(item["content"]) > 16000:
             raise ValueError("Message exceeds 16000 characters")
-        if model.chat_format == "sft":
+        if getattr(model, "chat_format", "legacy") == "sft":
             if "<|im_start|>" in item["content"] or "<|im_end|>" in item["content"]:
                 raise ValueError("Reserved chat delimiter")
             prompt += "<|im_start|>" + item["role"] + "\n" + item["content"] + "<|im_end|>\n"
         else:
             prompt += item["role"].capitalize() + ": " + item["content"] + "\n"
-    prompt += "<|im_start|>assistant\n" if model.chat_format == "sft" else "Assistant: "
+    prompt += "<|im_start|>assistant\n" if getattr(model, "chat_format", "legacy") == "sft" else "Assistant: "
     ids = tok.encode(prompt)
     if not ids:
         raise ValueError("Empty prompt")
     generated = []
-    stop_markers = (b"<|im_end|>", b"<|im_start|>") if model.chat_format == "sft" else (b"\nUser:", b"\nSystem:", b"\nAssistant:")
+    stop_markers = (b"<|im_end|>", b"<|im_start|>") if getattr(model, "chat_format", "legacy") == "sft" else (b"\nUser:", b"\nSystem:", b"\nAssistant:")
     eos = tok.special.get("<|eos|>")
     for _ in range(max_new_tokens):
         x = torch.tensor([ids[-model.cfg.context_size:]], dtype=torch.long)
