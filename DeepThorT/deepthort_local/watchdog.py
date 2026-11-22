@@ -322,7 +322,7 @@ class JanusSentinel:
         js=JanusStore(self.janus_db)
         jobs=js.observe_jobs(self.jobs_db)
         jobcounts={state:sum(job['state']==state for job in jobs) for state in
-                   ('queued','running','needs_input','waiting_approval','failed','complete')}
+                   ('queued','running','needs_input','waiting_approval','waiting_verification','waiting_repair','failed','complete')}
         goal=js.goal() or 'Monitor user-directed work and verify completion'
         janus_focus=str(j.get('last_focus') or '')
         janus_decision=str(j.get('last_action') or '')

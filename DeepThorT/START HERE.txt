@@ -1,3 +1,30 @@
+# DeepThorT v41 — bounded local diagnose/repair/retest development cycle
+
+Version 41 adds a durable per-approved-job build/test/failure/repair/retest
+loop on top of v40's scoped file grants. After a recognized fixed project
+test fails with source-level diagnostics, DeepThorT can ask its **existing
+local Qwen ONNX model** to replace ONE small approved project file, save
+that file through the existing backup writer with SHA-256 conflict checks,
+and retest. Each job permits up to **3 tests and 2 repairs**. Ambiguous
+diagnostics, model errors, unsafe paths, stop/pause/revocation, and interrupted
+uncertain work require review rather than automatically guessing.
+
+The Work queue and Processes tab report real attempts, not synthetic token
+progress. The original JANUS/Sentinel, Windows resource budget, eight-tab UI,
+model and v39 WinGet safety behavior are preserved. Recognized local project
+tests still execute project code under your Windows account and are **NOT
+sandboxed**. Separate milestones, arbitrary external software, installer
+permissions and publishing are not authorized by this cycle.
+
+This release is a **source overlay** for an existing v40/v39 installation,
+not a complete Windows installer. Back up `D:\deepthort\state`; overlay the
+ZIP, preserving `DeepThorT.exe`, `models`, `state`, `node_modules`, `cache`,
+`reference` and project files. Inspect `PROJECT_CONTEXT_V41.md` for the exact
+first Windows test. Physical PC, Qwen code quality and gameplay are not proven
+by GitHub CI. See `TEST_RESULTS_V41.md` and `NEXT_STEPS.md`.
+
+---
+
 DEEPTHORT DESKTOP v40 — PROJECT-BOUND AUTONOMOUS FILE AND TEST STAGES
 
 The same local Qwen ONNX/JANUS/Sentinel application, not Scratch Chat.

@@ -259,3 +259,67 @@ def revoke_grant(folder: Path, job_id: int) -> bool:
     row['events'].append({'kind': 'revoked', 'at': row['revoked_at']})
     _write_grant(folder, row)
     return True
+
+
+def authorize_repair(folder: Path, job: dict, steps: list[dict],
+                     step: dict, *, enabled: bool) -> dict:
+    """Permit one further replacement ONLY of a currently saved approved file.
+
+    This is not a new write capability: its checked baseline is the SHA-256
+    captured by the prior approved file write. Changed files fail closed.
+    """
+    row = _active(folder, job, steps, enabled)
+    if job.get('state') != 'running' or step.get('state') != 'saved':
+        raise GrantError('Only a running repair for an already saved stage is eligible')
+    project = Path(job['project']).resolve(strict=True)
+    relative, target = _safe_auto_path(project, step['path'])
+    entry = next((x for x in row['files'] if x['path'] == relative
+                  and x['step_id'] == step['id']), None)
+    if not entry or not entry.get('written_sha256'):
+        raise GrantError('No saved-file receipt for this approved repair target')
+    if int(entry.get('repairs') or 0) >= 2:
+        raise GrantError('Per-file approved repair budget exhausted')
+    if _sha(target) != entry['written_sha256']:
+        raise GrantError('Approved source changed since the last recorded write')
+    return {'path': relative, 'before_sha256': entry['written_sha256']}
+
+
+def record_repair(folder: Path, job: dict, steps: list[dict],
+                  step: dict, *, enabled: bool) -> dict:
+    """Advance the exact approved file receipt after an atomic backup/write.
+
+    A crash after file replacement but before receipt persistence blocks
+    further automatic work rather than assuming the write was authorized.
+    """
+    row = _active(folder, job, steps, enabled)
+    project = Path(job['project']).resolve(strict=True)
+    relative, target = _safe_auto_path(project, step['path'])
+    entry = next((x for x in row['files'] if x['path'] == relative
+                  and x['step_id'] == step['id']), None)
+    if not entry or not entry.get('written_sha256') or int(entry.get('repairs') or 0) >= 2:
+        raise GrantError('No eligible approved source repair receipt')
+    current = _sha(target)
+    if not current or current == entry['written_sha256']:
+        raise GrantError('No changed source file was actually saved')
+    entry['written_sha256'] = current
+    entry['repairs'] = int(entry.get('repairs') or 0) + 1
+    row['events'].append({'kind': 'source_repair_saved_unverified', 'path': relative,
+                          'sha256': current, 'at': datetime.now(timezone.utc).isoformat()})
+    _write_grant(folder, row)
+    return {'path': relative, 'sha256': current, 'repair_count': entry['repairs']}
+
+
+def authorize_repair_context(folder: Path, job: dict, steps: list[dict], *, enabled: bool) -> bool:
+    """Check every saved file receipt before allowing the model to diagnose it.
+
+    This does not itself grant or execute a filesystem change.
+    """
+    row = _active(folder, job, steps, enabled)
+    if job.get('state') != 'waiting_repair' or any(s.get('state') != 'saved' for s in steps):
+        raise GrantError('Repair can start only for a complete, saved approved build')
+    project = Path(job['project']).resolve(strict=True)
+    for entry in row['files']:
+        target = _safe_auto_path(project, entry['path'])[1]
+        if not entry.get('written_sha256') or _sha(target) != entry['written_sha256']:
+            raise GrantError('Approved file was changed outside the development cycle')
+    return True

@@ -1,3 +1,35 @@
+# DeepThorT next steps — after v41 (23 November 2026)
+
+**Implemented:** Durable approved-job test/diagnose/repair/retest loop, with
+3-test/2-repair budget, exact file source receipts, ONNX-only repair proposals,
+backup writes, shutdown interruption protection, queue/game/JANUS gates and
+visible evidence. Source file size for unattended repair is deliberately
+small to stay inside the 768-token local ONNX output ceiling. No general
+autonomous task dependency graph yet. No cloud model or Scratch Chat.
+
+**Priority v42:** Persistent DAG of requirements, tools, artifacts and test
+acceptance contracts; versioned source checkpoints with rollback and approval
+invalidations. Include a durable execution lease so subprocesses cannot be
+silently replayed after interruption, and distinguish blocked dependencies
+from actual source failures.
+
+**Priority v43:** Post-WinGet executable discovery, real version/capability
+checks, PATH reloading, and project-specific unblock/retry decisions. Do not
+trust successful installer exit as proof of a working application.
+
+**Then:** More capable but deterministic application adapters (Godot/Android,
+X4/RimWorld, Blender, documents/media), evidence-backed launch/test tools,
+reliable GUI automation, actual APK and game acceptance. Preserve all earlier
+source and authorization constraints. Benchmark Qwen repair quality under
+the Windows 20% resource cap; user test logs are still required.
+
+**Constraints:** Max 768 new tokens per ONNX response; no arbitrary model
+commands, silent elevation bypass or unsafe new installations. A complete
+Python/Godot/X4 static test is not automatic proof of working gameplay. Always
+keep `D:\deepthort\state`, original Windows launcher, models and projects.
+
+---
+
 # DeepThorT next steps — v40 (23 November 2026)
 
 **Current source:** local Qwen ONNX, JANUS/Sentinel, v39 curated routine

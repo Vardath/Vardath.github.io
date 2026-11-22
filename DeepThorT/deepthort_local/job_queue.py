@@ -13,7 +13,7 @@ from pathlib import Path
 from .flight_recorder import record
 from .specification_library import MAX_STORED_REQUEST_CHARS
 
-STATES = {'queued', 'running', 'responded', 'waiting_approval', 'needs_input', 'complete', 'failed', 'cancelled', 'paused', 'waiting_verification'}
+STATES = {'queued', 'running', 'responded', 'waiting_approval', 'needs_input', 'complete', 'failed', 'cancelled', 'paused', 'waiting_verification', 'waiting_repair'}
 TERMINAL = {'complete', 'failed', 'cancelled', 'responded'}
 
 class JobStore:
@@ -254,7 +254,7 @@ class JobStore:
                    detail=detail[:500],result_characters=len(result) if result else 0)
             return True
     def cancel(self, ident: int) -> bool:
-        return self.change(ident,'cancelled','Cancelled by user',allowed=('queued','running','paused','needs_input','waiting_approval','waiting_verification'))
+        return self.change(ident,'cancelled','Cancelled by user',allowed=('queued','running','paused','needs_input','waiting_approval','waiting_verification','waiting_repair'))
     def resume(self, ident: int) -> bool:
         return self.change(ident,'queued','Requeued by user',allowed=('paused','failed','needs_input','waiting_verification'))
     def events(self, ident: int, limit: int = 40):

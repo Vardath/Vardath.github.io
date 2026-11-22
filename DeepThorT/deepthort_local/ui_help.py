@@ -40,8 +40,8 @@ TOOLTIPS = {
     'Resume selected': 'Retry or resume a selected paused/blocked job, subject to its current permissions.',
     'Review legacy plan': 'Review an older build plan with the same explicit-approval safeguards.',
     'Verify build': 'Run a specifically approved static check or project test; a pass is not automatically proof of gameplay.',
-    'Continue approved file steps and fixed tests without repeated prompts': 'For a newly approved build plan, permit exact project-file writes with backups and fixed local tests. Project tests execute with your Windows user rights; turn off BEFORE plan approval for individual reviews.',
-    'Revoke selected job automation': 'Revoke further automatic file writes and tests for the selected approved build. Already-running tests may need Stop tool in Processes.',
+    'Continue approved file steps and fixed tests without repeated prompts': 'After explicit plan approval, save exact approved files, run fixed tests, and attempt at most two one-file ONNX repairs followed by retests. Tests run under your Windows user rights and are NOT sandboxed; disable before approval for individual review.',
+    'Revoke selected job automation': 'Revoke future automatic source writes, local ONNX repairs and tests for this specific approved job. Already-running tests must be stopped separately in Processes.',
     'Load prompt into editor': 'Copy the selected queued job request back to the chat editor for editing.',
     'Apply approved change': 'After reviewing the proposed file, write the approved content with backup and workspace checks.',
     'Add task': 'Create a durable manual task for the selected project.',
@@ -86,7 +86,7 @@ TOOLTIPS = {
 
 TABS = {
     'Chats': 'Manage saved conversations, submit instructions, draft a plan and request a file revision.',
-    'Work queue': 'Inspect real persisted jobs, pause/resume dispatch and run approved verification.',
+    'Work queue': 'Inspect durable approved jobs, real test/repair attempts, failures and saved-file evidence. Pause, cancel or revoke automatic work.',
     'File review': 'Inspect proposed file contents and differences before accepting a write.',
     'Tasks': 'Keep durable manual project tasks; do not confuse task checkmarks with test evidence.',
     'Processes': 'See actual events, output and process cancellation controls.',
@@ -99,7 +99,7 @@ AREA_TIPS = {
     'files': 'Project file tree. Select a file to preview or include it in the next request.',
     'chat_history': 'Saved chat transcript and replies. A model answer is not an approved file edit.',
     'input': 'Type project requirements here. Ctrl+Enter sends; Ctrl+Shift+O imports a large TXT/MD specification.',
-    'job_tree': 'Persisted work queue. Select a job before cancelling, resuming or verifying it.',
+    'job_tree': 'Select a saved job to inspect actual cycle state, test/repair budgets, latest diagnostic evidence and cancel/revoke controls.',
     'task_tree': 'Persistent task list for this workspace.',
     'activity': 'Timestamped operational events and tool activity; consult this when a task stalls.',
     'janus_action_tree': 'Real JANUS actions, approval states and tool/verification results.',

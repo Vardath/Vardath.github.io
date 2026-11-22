@@ -66,7 +66,12 @@ from deepthort_local.software_autonomy import (
 
 from deepthort_local.project_authority import (
     GrantError, load_policy as load_project_policy, set_policy as set_project_policy,
-    issue_grant, authorize_file, record_file, authorize_test, revoke_grant)
+    issue_grant, authorize_file, record_file, authorize_test, revoke_grant,
+    authorize_repair_context, authorize_repair, record_repair)
+
+from deepthort_local.development_cycle import (
+    DevelopmentCycleStore, CycleError, build_repair_prompt, parse_repair_response,
+    MAX_TEST_ATTEMPTS, MAX_REPAIR_ATTEMPTS)
 
 from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
@@ -102,7 +107,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='40',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='41',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -131,6 +136,7 @@ class DeepThorTDesktop(tk.Tk):
         self._autonomy_policy = load_policy(STATE/'routine-software-policy.json')
         self._project_policy = load_project_policy(STATE/'project-work-policy.json')
         self._auto_verification_in_flight = None
+        self._stopped_auto_tests = set()
         self._auto_tool_history = read_snapshot(STATE/'routine-software-history.json') or {}
         self._auto_tool_queue = []
         self._auto_tool_active = None
@@ -182,6 +188,11 @@ class DeepThorTDesktop(tk.Tk):
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
+        self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
+        interrupted_cycles = self.cycles.interrupted()
+        if interrupted_cycles:
+            record(STATE,'desktop','development_cycles_interrupted',
+                   count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
         self.conversations.invalidate_incompatible_drafts()
         self._migrate_unapproved_requests()
@@ -356,6 +367,8 @@ class DeepThorTDesktop(tk.Tk):
                         variable=self.project_work_enabled,command=self._set_project_work_policy).pack(side='left',padx=3)
         ttk.Button(workbar,text='Revoke selected job automation',
                    command=self._revoke_selected_project_work).pack(side='left',padx=8)
+        ttk.Label(queue_tab,text='v41: failed local tests can trigger up to 2 ONNX file repairs and 3 tests per approved job; each change keeps a backup.',
+                  style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
             self.job_tree.heading(column,text=title);self.job_tree.column(column,width=width,stretch=column=='detail')
@@ -550,6 +563,7 @@ class DeepThorTDesktop(tk.Tk):
                    'model_ready':self.node_ready,'model_loading':self.node_loading,
                    'model_status':status,'active_job':self.active_job,
                    'queue_paused':self.queue_paused,'visible_project_jobs':counts,
+                   'development_cycles':self.cycles.summary(self._project_key()),
                    'current_project_name':Path(self._project_key()).name,
                    'sentinel_pid':self.sentinel_process.pid if self.sentinel_process and self.sentinel_process.poll() is None else None,
                    'loading_stage':self.current_loading_stage, 'last_ai_error':self.last_ai_error,
@@ -1168,8 +1182,8 @@ class DeepThorTDesktop(tk.Tk):
                 'approved verification check succeeds.\n\n'
                 'Queue this milestone? With unattended project work enabled, this approval '
                  'authorizes reversible writes for these exact planned files and fixed local '
-                 'tests, which can execute generated code with your Windows user rights. '
-                'Switch unattended work OFF in Work queue before approving to keep per-file/test '
+                 'tests plus up to two bounded ONNX repairs (maximum three tests). '
+                'Tests run generated code with your Windows user rights. Switch unattended work OFF in Work queue before approval to keep per-file/test '
                  'confirmations. Tool installs follow a separate policy and normal UAC.',parent=self):
                 self._log(f'Milestone {ordinal}: user declined approval; no files changed.')
                 return
@@ -1237,7 +1251,7 @@ class DeepThorTDesktop(tk.Tk):
             f"Project: {draft['project']}\n\n{summary[:3600]}\n\n"
             'Approve these file-generation stages and place them into the execution queue?\n'
             'With unattended project work enabled, this ONE approval also authorizes exact '
-            'planned file writes with backups and fixed local project tests.\n'
+            'planned file writes with backups, fixed local project tests, and up to two repairs after failed tests.\n'
             'These tests can execute generated code with your Windows user rights. Disable '
             'unattended work in Work queue BEFORE approving if you want each file '
             'and test confirmed separately. Software installation has its own '
@@ -1490,6 +1504,11 @@ class DeepThorTDesktop(tk.Tk):
         project=self._project_key()
         rows=[j for j in self.jobs.items(project) if j['mode'] not in ('chat','plan','edit')]
         for j in rows:
+            cycle=self.cycles.get(j['id'])
+            if cycle:
+                j['detail'] += (f" [Cycle: {cycle['phase']}; "
+                                f"tests {cycle['tests']}/{MAX_TEST_ATTEMPTS}; "
+                                f"repairs {cycle['repairs']}/{MAX_REPAIR_ATTEMPTS}]")
             if j['id']==self.active_job:
                 detail=f"{j['detail']} — {int(time.monotonic()-self.active_started)}s elapsed"
             else:detail=j['detail']
@@ -1515,6 +1534,15 @@ class DeepThorTDesktop(tk.Tk):
                 self.file_title.set('Review pending job: '+str(target))
                 self._preview('PROPOSED CODE — edit below before approving\n\n'+self.proposed[1])
         events='\n'.join(f'[{stamp}] {note}' for stamp,note in self.jobs.events(job['id']))
+        cycle=self.cycles.get(job['id'])
+        if cycle:
+            cycle_log='\n'.join(f"[{e['stamp']}] {e['phase']}: {e['message']}"
+                                for e in reversed(self.cycles.events(job['id'])))
+            events += (f"\n\nDEVELOPMENT CYCLE: {cycle['phase']} | "
+                f"tests {cycle['tests']}/{MAX_TEST_ATTEMPTS} | "
+                f"repairs {cycle['repairs']}/{MAX_REPAIR_ATTEMPTS}"
+                f"\nLAST DIAGNOSTIC (local evidence):\n{cycle['diagnostic'][-1600:]}"
+                f"\nCYCLE EVENTS:\n{cycle_log}")
         steps=self.jobs.steps(job['id'])
         step_text='\n'.join(f"{i+1}. [{x['state']}] {x['path']}: {x['description']}" for i,x in enumerate(steps)) or '(No plan yet)'
         detail=(f"Job #{job['id']} | {job['state']} | {job['mode']}\n"
@@ -1529,25 +1557,51 @@ class DeepThorTDesktop(tk.Tk):
         if not j:return
         self._cancel_id(j['id'])
     def _cancel_id(self,ident):
-        j=self.jobs.get(ident)
-        if not j or j['state'] not in ('queued','running','paused','needs_input','waiting_approval'):
+        job=self.jobs.get(ident)
+        if not job or job['state'] not in (
+                'queued','running','paused','needs_input','waiting_approval',
+                'waiting_verification','waiting_repair'):
             return
-        if j['state']=='running':
+        if job['state']=='running' and self._auto_verification_in_flight==ident:
+            if not messagebox.askyesno('Stop approved project test',
+                    'Cancel this running local project verification?\n\n'
+                    'Generated files and backups remain. The incomplete test will NOT '
+                    'start a repair automatically.',parent=self):
+                return
+            self._stopped_auto_tests.add(ident)
+            self.jobs.cancel(ident)
+            if self.tool_process and self.tool_process.poll() is None:
+                self.tool_process.terminate()
+            self._log(f'Job #{ident}: cancelled local test; local Qwen stays running.')
+        elif job['state']=='running' and self.active_job==ident:
             if not messagebox.askyesno('Cancel local inference',
-                     'Cancel this running job?\n\nThe ONNX server must be stopped to interrupt CPU inference; '
-                     'you can click Start AI afterwards to continue other queued jobs.',parent=self):return
+                    'Cancel this active job? The ONNX worker will stop, but previous '
+                    'approved files and backups remain.',parent=self):
+                return
+            cycle=self.cycles.get(ident)
+            if cycle and cycle['phase']=='repairing':
+                try:self.cycles.block(ident,'User cancelled local repair before acceptance')
+                except CycleError:pass
             self.jobs.cancel(ident)
             if self.media_process and self.media_process.poll() is None:
                 self.media_process.terminate()
-                self._log(f'Job #{ident}: stopped local media subprocess.')
             elif self.node and self.node.poll() is None:
                 self.node.terminate()
                 self.node_ready=False;self.node_loading=False
                 self.model_status.set('AI: stopped after cancellation')
             self.active_job=None
-            self._log(f'Job #{ident} cancelled; interrupted local inference.')
+            self._log(f'Job #{ident}: stopped active local inference.')
         else:
-            self.jobs.cancel(ident);self._log(f'Job #{ident} cancelled.')
+            if job['state']=='running':
+                messagebox.showinfo('Process still running',
+                    'Use Processes > Stop tool / install process for this running task.',parent=self)
+                return
+            cycle=self.cycles.get(ident)
+            if cycle and cycle['phase'] in ('repair_ready','repairing','testing','repair_saved'):
+                try:self.cycles.block(ident,'User cancelled approved job')
+                except CycleError:pass
+            self.jobs.cancel(ident)
+            self._log(f'Job #{ident} cancelled; approved files and backups kept.')
         self._refresh_jobs();self._job_selected()
     def _resume_job(self):
         j=self._selected_job()
@@ -1568,7 +1622,7 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Approve project plan',
                 f'Approve these {len(plan)} bounded file steps?\n\n{summary[:2000]}\n\n'
                 'With unattended project work enabled, this single approval also authorizes '
-                'exact file writes with backups and fixed local project tests. Tests '
+                'exact file writes with backups, fixed local project tests and up to two same-file repairs. Tests '
                 'may execute generated code with your Windows user rights. Software '
                 'installation still has a separate policy and normal UAC.',parent=self):return
         self.jobs.resume(j['id'])
@@ -1676,9 +1730,81 @@ class DeepThorTDesktop(tk.Tk):
             if not self._quitting:
                 self.after(1800, self._project_work_tick)
 
+    def _claim_autonomous_repair(self, job):
+        """Launch one local Qwen proposal; this does not write project files."""
+        jobid=job['id']
+        steps=self.jobs.steps(jobid)
+        authorize_repair_context(STATE/'project-grants',job,steps,enabled=True)
+        cycle=self.cycles.get(jobid)
+        if not cycle or cycle['phase']!='repair_ready':
+            raise CycleError('No authorized bounded repair is pending')
+        prompt,candidates=build_repair_prompt(job,steps,cycle['diagnostic'])
+        self.cycles.claim_repair(jobid)
+        if not self.jobs.change(jobid,'running',
+                'Diagnosing test failure with local ONNX (bounded repair)',
+                allowed=('waiting_repair',)):
+            self.cycles.block(jobid,'Repair was not claimed by the expected job state')
+            raise CycleError('Repair job state changed before generation')
+        self.active_job=jobid
+        self.active_started=time.monotonic()
+        self._log(f"Job #{jobid}: local ONNX repair {cycle['repairs']+1}/{MAX_REPAIR_ATTEMPTS} "
+                  f"after test {cycle['tests']}/{MAX_TEST_ATTEMPTS}. "
+                  'Only exact approved file replacements can be saved.')
+        self._refresh_jobs()
+        def worker():
+            try:
+                result=self.client.chat(job['chat_id'],prompt,max_tokens=768)
+                self.events.put(('repair_answer',jobid,result,candidates))
+            except Exception as exc:
+                record(STATE,'desktop','repair_model_error',level='ERROR',job_id=jobid,
+                       error_type=type(exc).__name__,detail=str(exc)[:400])
+                self.events.put(('repair_error',jobid,str(exc)))
+        threading.Thread(target=worker,daemon=True).start()
+
+    def _repair_answer(self,jobid,answer,candidates):
+        job=self.jobs.get(jobid)
+        if not job or job['state']!='running' or self.active_job!=jobid:
+            self._log(f'Ignored stale or cancelled repair response for job #{jobid}.')
+            return
+        self.active_job=None
+        try:
+            target,code=parse_repair_response(answer,candidates)
+            steps=self.jobs.steps(jobid)
+            matching=[x for x in steps if x['path']==target and x['state']=='saved']
+            if len(matching)!=1:
+                raise CycleError('Local model selected an unavailable approved file')
+            stage=matching[0]
+            authority=authorize_repair(STATE/'project-grants',job,steps,stage,enabled=True)
+            dest=apply_approved_file(Path(job['project']),target,code,
+                STATE/'backups',expected_existing_sha=authority['before_sha256'])
+            receipt=record_repair(STATE/'project-grants',job,steps,stage,enabled=True)
+            self.cycles.finish_repair(jobid,target,receipt['sha256'])
+            self.jobs.change(jobid,'waiting_verification',
+                f'Repair saved with backup: {target}; retest not yet run',allowed=('running',))
+            self._log(f'Job #{jobid}: one authorized repair saved to {dest}; '
+                      f'SHA256 {receipt["sha256"][:16]}…; retest will be scheduled when idle.')
+            self._refresh_files()
+        except (CycleError,GrantError,WorkspaceError,OSError,ValueError) as exc:
+            self._block_repair(jobid,'Repair rejected: '+str(exc))
+        self._refresh_jobs()
+
+    def _repair_error(self,jobid,message):
+        job=self.jobs.get(jobid)
+        if not job or job['state']!='running' or self.active_job!=jobid:
+            return
+        self.active_job=None
+        self._block_repair(jobid,'Local ONNX repair failed: '+str(message)[:350])
+        self._refresh_jobs()
+
+    def _block_repair(self,jobid,reason):
+        try:self.cycles.block(jobid,reason)
+        except CycleError:pass
+        self.jobs.change(jobid,'needs_input',reason[:700],allowed=('running','waiting_repair'))
+        self._log(f'Job #{jobid}: autonomous repair blocked; {reason[:250]}')
+        self.status.set(f'Job #{jobid} needs attention. See Work queue / Development cycle evidence.')
+
     def _project_work_once(self):
-        # Paused work, JANUS, foreground games, active model requests and other
-        # tool processes block NEW test execution. May resume after restart.
+        """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
             or self._auto_verification_in_flight is not None
             or self._auto_tool_active is not None or bool(self._auto_tool_queue)
@@ -1688,30 +1814,57 @@ class DeepThorTDesktop(tk.Tk):
                    (self.tool_process, self.install_process, self.media_process))
             or self.janus.status().get('paused')):
             return
+        # Only previously failed, observed local tests of approved jobs can
+        # enter a bounded repair. Every candidate is checked against its grant.
+        if self.node_ready and self.node and self.node.poll() is None:
+            for jobid in self.cycles.pending_repairs(limit=20):
+                job=self.jobs.get(jobid)
+                if not job or job['state']!='waiting_repair':
+                    continue
+                try:
+                    self._claim_autonomous_repair(job)
+                except (CycleError,GrantError,WorkspaceError,OSError,ValueError) as exc:
+                    self._block_repair(jobid,'Repair cannot start safely: '+str(exc))
+                    self._refresh_jobs()
+                return
+        # Tests are deterministic fixed profiles from the v40 authorization
+        # framework, never commands supplied by diagnostics or the model.
         for job in self.jobs.pending_verifications(limit=40):
-            project = Path(job['project'])
-            cmd = self._verification_command(project)
+            project=Path(job['project'])
+            cmd=self._verification_command(project)
             if not cmd:
                 continue
+            steps=self.jobs.steps(job['id'])
             try:
-                authorize_test(STATE/'project-grants', job, self.jobs.steps(job['id']),
-                               list(cmd), enabled=True)
-            except (GrantError, OSError, ValueError):
+                authorize_test(STATE/'project-grants',job,steps,list(cmd),enabled=True)
+                self.cycles.begin_test(job,steps,list(cmd))
+            except GrantError:
+                continue  # Project needs manual review or authority was revoked.
+            except (CycleError,OSError,ValueError) as exc:
+                self.jobs.change(job['id'],'needs_input',
+                    'Autonomous test blocked: '+str(exc)[:450],
+                    allowed=('waiting_verification',))
+                self._log(f"Job #{job['id']}: test requires attention: {exc}")
+                self._refresh_jobs()
                 continue
-            if not self.jobs.change(job['id'], 'running',
-                    'Running recognized verification under job-bound authority',
+            if not self.jobs.change(job['id'],'running',
+                    'Running recorded fixed verification attempt',
                     allowed=('waiting_verification',)):
+                self.cycles.block(job['id'],'Job changed state before test launch')
                 continue
-            self._auto_verification_in_flight = job['id']
-            if not self._start_command(cmd, cwd=project,
-                    label=f"Verify job #{job['id']} (standing project authority)",
-                    kind='verification', job_id=job['id']):
-                self._auto_verification_in_flight = None
-                self.jobs.change(job['id'], 'waiting_verification',
-                    'Test did not launch; prior grant remains intact', allowed=('running',))
+            self._auto_verification_in_flight=job['id']
+            if not self._start_command(cmd,cwd=project,
+                    label=f"Verify job #{job['id']} (development cycle)",
+                    kind='verification',job_id=job['id']):
+                self._auto_verification_in_flight=None
+                self.cycles.block(job['id'],'Could not launch test; result is unknown')
+                self.jobs.change(job['id'],'needs_input',
+                    'Automatic test did not launch; manual inspection required',allowed=('running',))
+                self._refresh_jobs()
                 return
-            self._log(f"Job #{job['id']}: queued fixed local test using "
-                      'project-scoped standing authority, not model-supplied commands.')
+            cycle=self.cycles.get(job['id'])
+            self._log(f"Job #{job['id']}: test {cycle['tests']}/{MAX_TEST_ATTEMPTS} "
+                      'running under a job-bound fixed command; not yet verified.')
             self._refresh_jobs()
             return
 
@@ -2063,7 +2216,7 @@ class DeepThorTDesktop(tk.Tk):
                 self.tabs.select(0)
             self._log(f'Job #{jobid} finished. Response stored; no build/test success is implied.')
             self.bell()
-        self.status.set(f'Job #{jobid} finished. Review results in Chats or Work queue.')
+        self.status.set(f'Job #{jobid} updated. Review real progress in Chats or Work queue.')
         self._refresh_jobs();self._reload_chat()
     def _job_error(self,jobid,reason):
         j=self.jobs.get(jobid)
@@ -3138,8 +3291,11 @@ class DeepThorTDesktop(tk.Tk):
         procs=[p for p in (self.tool_process,self.install_process,self.media_process) if p and p.poll() is None]
         if not procs:return
         if messagebox.askyesno('Stop process','Stop the running tool or installation? Partial changes from an installer cannot be automatically rolled back.',parent=self):
+            if (self._auto_verification_in_flight is not None and
+                self.tool_process in procs):
+                self._stopped_auto_tests.add(self._auto_verification_in_flight)
             for p in procs:p.terminate()
-            self._log('User stopped external tool/installer process.')
+            self._log('User stopped external tool/installer process; no automatic repair will follow a stopped test.')
 
     @staticmethod
     def _is_local_diagnostic_request(text):
@@ -3289,6 +3445,10 @@ class DeepThorTDesktop(tk.Tk):
                 'Paused by user; will retry when local AI starts',allowed=('running',))
             self.active_conversation=None
         if self.active_job is not None:
+            cycle=self.cycles.get(self.active_job)
+            if cycle and cycle['phase']=='repairing':
+                try:self.cycles.block(self.active_job,'User stopped local model during repair')
+                except CycleError:pass
             self.jobs.change(self.active_job,'paused','Model stopped by user before result; resume this job when ready',allowed=('running',))
             self.active_job=None;self._refresh_jobs()
         if self.media_process and self.media_process.poll() is None:
@@ -3374,6 +3534,14 @@ class DeepThorTDesktop(tk.Tk):
                      f"{active_health.get('inference_elapsed_seconds',0)}s; "
                      f"maximum {active_health.get('inference_max_tokens') or '?'} output tokens. "
                      'Real token progress is unavailable until the model returns.\n')
+        cycle_job=self.active_job or self._auto_verification_in_flight
+        if cycle_job is not None:
+            cycle=self.cycles.get(cycle_job)
+            if cycle:
+                text += (f"\nAUTONOMOUS DEVELOPMENT CYCLE — JOB #{cycle_job}: {cycle['phase']}\n"
+                         f"  tests {cycle['tests']}/{MAX_TEST_ATTEMPTS}; "
+                         f"repairs {cycle['repairs']}/{MAX_REPAIR_ATTEMPTS}; "
+                         'observed attempts, not guaranteed progress\n')
         text+=f"\nActive conversation request: {self.active_conversation or 'none'} | Stage: {self.reply_stage or 'none'}\n"
         text+='\nJANUS Sentinel: '+str(sentinel_health.get('state','not started'))+(
             ' | '+str(sentinel_health.get('detail','')) if sentinel_health else '')+'\n'
@@ -3477,6 +3645,8 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='build_files_done':self._build_files_done(event[1])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
             elif kind=='job_error':self._job_error(event[1],event[2])
+            elif kind=='repair_answer':self._repair_answer(event[1],event[2],event[3])
+            elif kind=='repair_error':self._repair_error(event[1],event[2])
             elif kind in ('health', 'health_detail'):
                 detail=event[1] if kind=='health_detail' else None
                 if isinstance(detail,dict):
@@ -3591,11 +3761,34 @@ class DeepThorTDesktop(tk.Tk):
                                     verification_output['argv'],engine_report=engine)
                         except (OSError,ValueError) as exc:
                             self._log(f'Approved test exited 0 but source evidence was not captured: {exc}')
-                    if code==0 and snapshot is not None:
+                    outcome=(code==0 and snapshot is not None)
+                    cycle_result=None
+                    was_stopped=(was_auto_verification and job_id in self._stopped_auto_tests)
+                    if was_stopped:
+                        self._stopped_auto_tests.discard(job_id)
+                        try:self.cycles.block(job_id,'User explicitly stopped the test; no automatic repair')
+                        except CycleError:pass
+                        outcome=False
+                    elif was_auto_verification:
+                        try:
+                            cycle_result=self.cycles.finish_test(job_id,code,outcome,
+                                (verification_output or {}).get('lines') or [],
+                                reason=(check['reason'] if check and not check['accepted'] else ''))
+                        except (CycleError,OSError,ValueError) as exc:
+                            self._log(f'Job #{job_id}: durable test outcome was not recorded: {exc}')
+                    if outcome and (not was_auto_verification or
+                                    cycle_result and cycle_result['phase']=='verified'):
                         assurance=('; '+check['assurance'] if check is not None else '')
                         self.jobs.change(job_id,'complete',
                             f'Verified: test command exited 0 ({label}); source hashes captured{assurance}',
                             result=json.dumps(snapshot,sort_keys=True),allowed=('running',))
+                    elif was_auto_verification and cycle_result and cycle_result['phase']=='repair_ready':
+                        self.jobs.change(job_id,'waiting_repair',
+                            f'Test {cycle_result["tests"]}/{MAX_TEST_ATTEMPTS} failed; '
+                            'bounded local ONNX repair available (not yet executed)',
+                            allowed=('running',))
+                        self._log(f'Job #{job_id}: test failure recorded; next idle step may '
+                                  'propose one bounded repair. See Work queue evidence.')
                     else:
                         failure=(check['reason'] if check is not None and not check['accepted'] else
                                  f'Build test failed with exit {code}; inspect Processes log and repair the project'
@@ -3617,15 +3810,20 @@ class DeepThorTDesktop(tk.Tk):
                     self._refresh_jobs()
                 if code!=0 and tooltype not in ('package_inspection','automatic_software'):
                     if was_auto_verification:
-                        self._log(f'Unattended job #{job_id} test failed; inspect Processes/Work queue. '
-                                  'No automatic retry or success was inferred.')
+                        self._log(f'Unattended job #{job_id} test returned a failure; inspect the '
+                                  'durable cycle record for a bounded repair or manual blocker.')
                     else:
                         messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
                 was_auto_error=(len(event)>4 and event[4] is not None and
                                 event[4]==self._auto_verification_in_flight and
                                 event[2]=='verification')
-                if was_auto_error:self._auto_verification_in_flight=None
+                if was_auto_error:
+                    self._auto_verification_in_flight=None
+                    self._stopped_auto_tests.discard(event[4])
+                    try:self.cycles.block(event[4],
+                        'Test process failed to launch: '+str(event[3])[:250])
+                    except CycleError:pass
                 self._log(f'{event[1]} error: {event[3]}')
                 if event[2]=='reviewed_install':
                     self._complete_inspected_install(None)
