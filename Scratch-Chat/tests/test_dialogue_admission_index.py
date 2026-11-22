@@ -35,8 +35,8 @@ class IndexedAdmissionTests(unittest.TestCase):
             mp.write_text(json.dumps(manifest))
             args = (mp, paths["train"], paths["validation"], paths["test"])
             self.assertEqual(dialogue_admission.audit(*args)["splits"]["test"]["count"], 1)
-            test["messages"][0]["content"] = train["messages"][0]["content"]
-            test["messages"][1]["content"] = train["messages"][1]["content"] + " novel"
+            test["messages"][0]["content"] = train["messages"][0]["content"] + " novel"
+            test["messages"][1]["content"] = train["messages"][1]["content"] + " variation"
             paths["test"].write_text(json.dumps(test) + "\n")
             manifest["sha256"]["test"] = hashlib.sha256(paths["test"].read_bytes()).hexdigest()
             mp.write_text(json.dumps(manifest))
