@@ -18,7 +18,9 @@ _REQUIRES = re.compile(r'(?:^|[;\n])\s*(provides|uses|verifies)\s*:\s*([^;\n]+)'
 _REQ_LABEL = re.compile(r'^\s*(?:[-*+]\s*)?REQ[-_ ](\d{1,6})\s*[.:]', re.I)
 _REFS = re.compile(r'(?i)^REQ[-_ ](\d{1,6})$')
 _SYMBOL = re.compile(r'^[A-Za-z_]\w*$')
-_TEST_PATH = re.compile(r'(^|/)(?:test_[^/]+\.py|[^/]+_test\.py|[^/]+\.(?:test|spec)\.[jt]sx?|tests?/[^/]+\.gd)$', re.I)
+_GODOT_TEST = re.compile(r'(?m)^\s*func\s+test_[A-Za-z_0-9]+\s*\(')
+_ANDROID_TEST = re.compile(r'(?m)^\s*@Test\b')
+_TEST_PATH = re.compile(r'(^|/)(?:test_[^/]+\.py|[^/]+_test\.py|[^/]+\.(?:test|spec)\.[jt]sx?|tests?/(?:[^/]+/)*test_[^/]+\.gd|(?:src/)?(?:test|androidTest)/(?:[^/]+/)*[^/]+\.(?:kt|java))$', re.I)
 _AMBIGUOUS = re.compile(r'(?i)(?<!\w)(?:maybe|perhaps|approximately|roughly|as needed|if possible|or similar|and/or|etc\.)(?!\w)')
 
 
@@ -149,7 +151,10 @@ def inspect_model_contracts(project: str | Path, steps: list[dict], original: st
                     exports.update(t.id for t in targets if isinstance(t,ast.Name))
         parses[rel]={'state':'source_present','sha256':hashlib.sha256(data).hexdigest(),
                      'tree':tree,'exports':exports,
-                     'tests':_test_count(tree) if tree is not None else None}
+                     'tests':(_test_count(tree) if tree is not None else
+                              len(_GODOT_TEST.findall(source)) if rel.endswith('.gd') and
+                                  re.search(r'(?m)^\s*extends\s+GutTest\b',source) else
+                              len(_ANDROID_TEST.findall(source)) if rel.endswith(('.kt','.java')) else None)}
     checks=[]
     issues=[]
     for decl in declarations:
@@ -163,9 +168,12 @@ def inspect_model_contracts(project: str | Path, steps: list[dict], original: st
                         'Declared export absent from existing source')
             elif kind=='verifies':
                 count=source['tests']
-                status=('static_test_discovered' if count is not None and count>0 else
-                        'no_test_cases_found' if count is not None else 'test_runner_not_statically_supported')
-                reason=f'{count} syntactically discoverable Python test(s)' if count is not None else 'Unverified non-Python test source'
+                if count is None:
+                    status='test_runner_not_statically_supported'
+                    reason='No supported static test discovery for this format'
+                else:
+                    status=('static_test_discovered' if count>0 else 'no_test_cases_found')
+                    reason=f'{count} syntactically discoverable test case(s); execution not proven'
             elif kind=='uses':
                 provider=parses.get(decl['provider'],{'state':'pending_source'})
                 if provider['state']=='source_present':
