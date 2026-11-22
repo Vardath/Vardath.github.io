@@ -7,10 +7,10 @@ from pathlib import Path
 
 class SFTCLIContractTests(unittest.TestCase):
     def test_help_exposes_architecture_and_reproducibility(self):
-        script = Path(__file__).resolve().parent / "dialogue_sft_train.py"
+        project_root = Path(__file__).resolve().parent.parent
         result = subprocess.run(
-            [sys.executable, str(script), "--help"],
-            capture_output=True, text=True, timeout=30,
+            [sys.executable, "-m", "capability.dialogue_sft_train", "--help"],
+            capture_output=True, text=True, timeout=30, cwd=project_root,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         for flag in ("--width", "--layers", "--heads", "--context-size",
