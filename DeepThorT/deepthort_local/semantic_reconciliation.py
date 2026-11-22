@@ -312,19 +312,43 @@ def verified_sources_current(project: str | Path, steps: list[dict], snapshot: d
             return False
         evidence=snapshot.get('verification')
         if evidence is None:return True
-        if not isinstance(evidence,dict) or set(evidence)!={
-                'assurance','test_count','output_sha256','argv_sha256'}:
+        if not isinstance(evidence,dict):
+            return False
+        required={'assurance','test_count','output_sha256','argv_sha256'}
+        engine_keys={'engine','engine_sources'}
+        if not required.issubset(evidence) or set(evidence)-required not in (set(),engine_keys):
             return False
         if evidence['assurance'] not in ('process_exit_only','python_tests_passed',
-                                          'dotnet_tests_passed','editor_load_only'):
+                                          'dotnet_tests_passed','editor_load_only',
+                                          'godot_gut_tests_passed','x4_static_xml_passed'):
             return False
-        if (evidence['assurance'] in ('python_tests_passed','dotnet_tests_passed') and
+        if (evidence['assurance'] in ('python_tests_passed','dotnet_tests_passed','godot_gut_tests_passed') and
             (not isinstance(evidence['test_count'],int) or evidence['test_count']<1)):
             return False
         if any(not isinstance(evidence[k],str) or
                not re.fullmatch(r'[0-9a-f]{64}',evidence[k])
                for k in ('output_sha256','argv_sha256')):
             return False
+        if 'engine_sources' in evidence:
+            import hashlib
+            from .engine_acceptance import audit_engine_project
+            if evidence['engine'] not in ('x4_extension','godot','android_gradle','general'):
+                return False
+            hashes=evidence['engine_sources']
+            if not isinstance(hashes,dict) or len(hashes)>256:
+                return False
+            base=Path(project).resolve(strict=True)
+            for rel,digest in hashes.items():
+                if not isinstance(rel,str) or not isinstance(digest,str) or not re.fullmatch(r'[0-9a-f]{64}',digest):
+                    return False
+                path=safe_target(base,rel,must_exist=True)
+                if path.stat().st_size>2_000_000 or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
+                    return False
+            # Detect newly broken references as well as changed audited files.
+            report=audit_engine_project(base,steps)
+            if (report['engine']!=evidence['engine'] or report['issues'] or report['pending'] or
+                    report['source_hashes']!=hashes):
+                return False
         return True
     except (OSError, ValueError, WorkspaceError):
         return False
