@@ -1,3 +1,39 @@
+# DeepThorT v29 — engine-aware static audits and tested-result guards (22 November 2026)
+
+**Source base:** v28, retaining its original interface, desktop launcher, Qwen
+ONNX model, JANUS/Sentinel, gaming limits, full original specification, 40-pass
+planner, cancellation, versioned milestone store and explicit approval controls.
+
+- New `deepthort_local/engine_acceptance.py`: bounded read-only X4 XML/index and
+  local macro/component registration validation; Godot main-scene/resource
+  validation; Android Gradle manifest checks. Existing XML in earlier milestones
+  is included; external vanilla/DLC references are not falsely treated as local.
+- The existing approved **Verify build** flow prefers actual Python project
+  tests for X4 when present, otherwise uses the static X4 auditor. Godot uses
+  an installed GUT runner when actual test scripts exist, with an explicit
+  nonempty passing-suite requirement. Editor loading remains editor-only.
+- Model-described `verifies: REQ-N` test contracts now recognize local GUT/GDScript
+  test functions and Kotlin/Java `@Test` annotations without executing them.
+- Successful approved checks bind their engine artifact fingerprints into the
+  milestone's verification snapshot, so changes to previously inspected index,
+  scene or manifest files invalidate stale evidence.
+- All tests run against synthetic files and mocked process output. There is no
+  claim of completed Xenon PE gameplay, an exported Android game, engine-level
+  acceptance, free-form JANUS conversation, or improvement to live ONNX latency.
+
+See `ENGINE_ACCEPTANCE.md` for exact checks, supported paths, CLI usage and
+remaining work. No new installer, UI button, external service or model is added.
+
+**Verification:** 351 tests passed across 44 isolated test modules under Xvfb.
+The single-process run still hits the old X4 GUI worker timing race; its result
+is **not** counted as passed. Live Windows and CI verification remain outstanding.
+
+**Install:** Close DeepThorT; extract v29 over `D:\deepthort` preserving
+`models`, `state`, `reference`, `cache`, `node_modules` and project folders.
+Back up `state` before updating. This ZIP does not include model or user data.
+
+---
+
 # DeepThorT v28 — requirement-linked source contracts and real test-output guards (22 November 2026)
 
 **Source base:** v27. Original window layout, offline Qwen ONNX model and resource profile, JANUS/Sentinel, original user requirements, milestone approval, stop/close chat controls, and Windows launcher are unchanged.
