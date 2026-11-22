@@ -1,17 +1,15 @@
-DEEPTHORT DESKTOP v28 — explicit source contracts and verification evidence
-Based on v27, preserving the original interface, 40-pass planning and JANUS/Sentinel.
+DEEPTHORT DESKTOP v29 — engine-specific acceptance evidence
 
-In a hierarchical plan the model can declare Python exports/imports and a test
-file's explicit REQ-N linkage. Missing source remains pending; a concrete mismatch
-blocks subsequent verified milestone promotion. Ambiguous phrases are advisory.
+Building on v28 with the same interface, installed local model, JANUS/Sentinel,
+40-attempt planning and explicit approval gates.
 
-An exit-zero Python unittest discovery that ran ZERO tests no longer counts as a
-verified build; Godot editor startup is explicitly not gameplay validation.
-All approved test evidence remains bound to tested file fingerprints.
+New offline X4 XML/macro index, Godot scene/resource and Android manifest audits.
+On a project with the GUT test runner installed, Verify build can run real
+GDScript tests after approval; it refuses 0-test or incomplete success reports.
+A Godot editor load is NOT gameplay verification. Static X4 XML checks are NOT
+proof that the mod works in-game or that a PE is correctly equipped.
 
-Inspect contracts WITHOUT running code:
-  python -m deepthort_local.acceptance_contracts PROJECT PLAN.json SPECIFICATION.txt
+Read ENGINE_ACCEPTANCE.md and README.md for details.
 
-See ACCEPTANCE_CONTRACTS.md and SEMANTIC_RECONCILIATION.md for exact boundaries.
-No new tools, cloud access, game-engine validation or execution permissions added.
-Preserve state, models, node_modules, reference, cache and your projects.
+Close DeepThorT before updating D:\deepthort. Preserve state, models, cache,
+node_modules, references and all project folders. Back up state first.
