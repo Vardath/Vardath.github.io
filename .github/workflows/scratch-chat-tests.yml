@@ -30,6 +30,8 @@ jobs:
           cache-dependency-path: Scratch-Chat/requirements.txt
       - name: Install CPU PyTorch
         run: python -m pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Compile source before running tests
+        run: python -m compileall -q capability vardath_chat
       - name: Run checkpoint-independent dialogue and protocol tests
         run: |
           python - <<'PY'
