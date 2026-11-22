@@ -86,7 +86,8 @@ class AdmissionTests(unittest.TestCase):
             self.paths[split].write_text(json.dumps(row) + "\n", encoding="utf-8")
             self.metadata["sha256"][split] = hashlib.sha256(self.paths[split].read_bytes()).hexdigest()
         self.write_manifest()
-        self.assertEqual(self.run_audit()["splits"]["test"]["count"], 1)
+        with self.assertRaisesRegex(ValueError, "duplicate user prompt"):
+            self.run_audit()
 
     def rewrite_row(self, split, transform):
         row = json.loads(self.paths[split].read_text())
