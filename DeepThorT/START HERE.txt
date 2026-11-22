@@ -1,22 +1,17 @@
-DEEPTHORT DESKTOP v26 — Pass 5 requirement intelligence and dependency ordering
-Prior version: v25 — hierarchical development (Pass 4)
-Based on v24, with original GUI, model, launcher, state and approval controls preserved.
+DEEPTHORT DESKTOP v28 — explicit source contracts and verification evidence
+Based on v27, preserving the original interface, 40-pass planning and JANUS/Sentinel.
 
-Large specifications remain stored exactly and are processed as numbered sections.
-When all model-proposed sections pass structural and aggregate validation, the
-system creates a persistent roadmap of bounded milestones. No work is queued.
+In a hierarchical plan the model can declare Python exports/imports and a test
+file's explicit REQ-N linkage. Missing source remains pending; a concrete mismatch
+blocks subsequent verified milestone promotion. Ambiguous phrases are advisory.
 
-Select the same chat/project and click "Approve plan & queue" to explicitly
-approve only the next milestone. Each proposed file still requires review.
-After all files are saved, approve "Verify build" and let the checked test run.
-Only a verified prior milestone can unlock the next independently approved one.
+An exit-zero Python unittest discovery that ran ZERO tests no longer counts as a
+verified build; Godot editor startup is explicitly not gameplay validation.
+All approved test evidence remains bound to tested file fingerprints.
 
-To import a large specification: right-click prompt editor -> Import large
-specification, or Ctrl+Shift+O. The full file remains untruncated in local state.
+Inspect contracts WITHOUT running code:
+  python -m deepthort_local.acceptance_contracts PROJECT PLAN.json SPECIFICATION.txt
 
-Keep your existing state, models, node_modules, cache, reference and projects.
-See HIERARCHICAL_DEVELOPMENT.md for limits, traceability and outstanding work.
-No claim is made that an entire Android game or X4 mod has been built/tested.
-
-Optional offline timing report: python -m deepthort_local.planning_metrics state\logs
-See PLANNING_INTELLIGENCE.md for verification levels and limitations.
+See ACCEPTANCE_CONTRACTS.md and SEMANTIC_RECONCILIATION.md for exact boundaries.
+No new tools, cloud access, game-engine validation or execution permissions added.
+Preserve state, models, node_modules, reference, cache and your projects.
