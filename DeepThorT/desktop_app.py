@@ -18,6 +18,7 @@ import threading
 import time
 import tkinter as tk
 import traceback
+import webbrowser
 from datetime import datetime
 from pathlib import Path
 from tkinter import filedialog, messagebox, simpledialog, ttk
@@ -55,6 +56,8 @@ from deepthort_local.janus_engine import JanusStore
 from deepthort_local.janus_interface import addressed_to_janus, janus_state_reply
 from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
+from deepthort_local.ui_help import install_tooltips
+from deepthort_local.tool_sources import official_source
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
 
@@ -86,7 +89,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='34',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='35',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -171,6 +174,8 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError, ValueError):pass
         self._theme()
         self._make_ui()
+        self._tooltip_handles = install_tooltips(self)
+        self.bind_all('<F1>',lambda _event: self._open_user_guide(),add='+')
         self._restore_project()
         self._refresh_chats()
         self._refresh_jobs()
@@ -217,6 +222,7 @@ class DeepThorTDesktop(tk.Tk):
         tk.Label(top,text='DeepThorT',font=('Segoe UI Semibold',21),bg=BG,fg=ACCENT).pack(side='left')
         tk.Label(top,text='  •  OFFLINE / PERSISTENT',font=('Segoe UI',9),bg=BG,fg=MUTED).pack(side='left',pady=(9,0))
         ttk.Button(top,text='Install AI',command=self._install_ai).pack(side='right',padx=4)
+        ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
         ttk.Button(top,text='Self-diagnose',command=self._diagnose).pack(side='right',padx=4)
         ttk.Button(top,text='Export diagnostics',command=self._export_diagnostics).pack(side='right',padx=4)
         ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
@@ -385,6 +391,7 @@ class DeepThorTDesktop(tk.Tk):
         self.install_menu=ttk.Combobox(action,textvariable=self.install_choice,values=sorted(INSTALL_CATALOG),state='readonly',width=20)
         self.install_menu.pack(side='left',padx=5)
         ttk.Button(action,text='Review & approve install…',command=self._approve_tool_install).pack(side='left',padx=3)
+        ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3)
         checks=ttk.Frame(hardware_tab);checks.pack(fill='x',pady=(3,10))
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
@@ -2210,6 +2217,7 @@ class DeepThorTDesktop(tk.Tk):
             approved[0]=True;dialog.destroy()
         ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right')
         ttk.Button(buttons,text='Approve WRITE ONLY',command=consent).pack(side='right',padx=8)
+        dialog._tooltip_handles = install_tooltips(dialog)
         dialog.grab_set()
         self.wait_window(dialog)
         return approved[0]
@@ -2273,6 +2281,39 @@ class DeepThorTDesktop(tk.Tk):
             self._show_janus_status()
         except (ValueError,OSError,PermissionError,WorkspaceError) as exc:
             messagebox.showwarning('Cannot run learned procedure',str(exc),parent=self)
+
+    def _open_user_guide(self):
+        """Open shipped documentation locally; never fetch a remote help page."""
+        guide = ROOT / 'USER_GUIDE.html'
+        if not guide.is_file():
+            messagebox.showwarning('Guide missing',
+                'USER_GUIDE.html is missing from the DeepThorT installation. '
+                'Re-extract the full release ZIP without deleting your state.',parent=self)
+            return
+        try:
+            if not webbrowser.open(guide.resolve().as_uri()):
+                messagebox.showinfo('Open user guide',
+                    'Open this local file in your browser:\n'+str(guide),parent=self)
+        except (OSError,ValueError) as exc:
+            messagebox.showerror('Guide unavailable',str(exc),parent=self)
+
+    def _find_official_tool_page(self):
+        """Vendor information only. Never silently download, run or install."""
+        name=self.install_choice.get()
+        source=official_source(name)
+        if source is None:
+            messagebox.showinfo('Source unavailable',
+                'No reviewed official download source for that catalog selection.',parent=self)
+            return
+        if not messagebox.askyesno('Open official software page',
+            f'Software: {name}\nPublisher: {source["publisher"]}\n'
+            f'Official page: {source["url"]}\n\n'
+            'This opens your browser on an external website. No file will be '
+            'downloaded or executed by DeepThorT. Installations still require '
+            'separate approval.\n\nOpen this page?',parent=self):
+            return
+        webbrowser.open(source['url'])
+        self._log(f'User opened official vendor page for {name}; no install was initiated.')
 
     def _approve_tool_install(self):
         name=self.install_choice.get()

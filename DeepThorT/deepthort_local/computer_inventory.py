@@ -33,6 +33,14 @@ TOOL_SPECS = {
     'Docker': ('Isolated local build environments', ('docker.exe',), ('Docker',)),
     'Render CLI': ('Render hosting deployment; requires network', ('render.exe',), ('Render',)),
     '7-Zip': ('Project archive tools', ('7z.exe',), ('7-Zip',)),
+    'FFmpeg': ('Video/audio encoding and media pipelines', ('ffmpeg.exe',), ('FFmpeg',)),
+    'Audacity': ('Audio recording and editing', ('audacity.exe',), ('Audacity',)),
+    'LibreOffice': ('Office documents, spreadsheets and book layout', ('soffice.exe',), ('LibreOffice',)),
+    'Inkscape': ('SVG and vector illustration', ('inkscape.exe',), ('Inkscape',)),
+    'GIMP': ('Raster graphics and image editing', ('gimp.exe',), ('GIMP',)),
+    'Krita': ('Painting, illustration and animation', ('krita.exe',), ('Krita',)),
+    'FreeCAD': ('CAD models and 3D printing', ('FreeCAD.exe',), ('FreeCAD',)),
+    'Pandoc': ('Document conversion and publishing', ('pandoc.exe',), ('Pandoc',)),
 }
 
 # Users can choose which software to install. There is no inference-driven command
@@ -275,6 +283,18 @@ def plan_tool_needs(task: str, inventory: dict):
         needed.extend(['Python','Git'])
     if any(word in phrase for word in ('c#','dotnet','csharp')):
         needed.extend(['.NET SDK','Git'])
+    if any(word in phrase for word in ('book','novel','manuscript','ebook','epub','document','spreadsheet','presentation')):
+        needed.extend(['LibreOffice','Pandoc'])
+    if any(word in phrase for word in ('podcast','voiceover','soundtrack','audio','recording','music')):
+        needed.extend(['Audacity','FFmpeg'])
+    if any(word in phrase for word in ('video','movie','film','video editing','cinematic')):
+        needed.extend(['FFmpeg','Blender'])
+    if any(word in phrase for word in ('svg','vector graphic','logo','illustration','drawing','painting')):
+        needed.extend(['Inkscape','Krita','GIMP'])
+    if any(word in phrase for word in ('3d print','3d-print','cad','engineering drawing','mechanical design')):
+        needed.extend(['FreeCAD','Blender'])
+    if any(word in phrase for word in ('unity','unreal','simulation')):
+        needed.extend(['Unity Hub','Blender','Git'])
     seen=set(); needed=[x for x in needed if not (x in seen or seen.add(x))]
     installed = {t['name']:t['found'] for t in inventory.get('tools',[])}
     return [{'name':x,'found':installed.get(x,False),

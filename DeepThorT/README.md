@@ -1,3 +1,33 @@
+# DeepThorT v35 — user guidance and reviewed publisher links (22 November 2026)
+
+**Base:** unmodified v34 Windows launcher, JANUS/Sentinel, offline local Qwen inference,
+resource limits, source-backed approval controls and persisted project state.
+
+- Added passive, delayed hover explanations for existing desktop controls and major
+  interface areas, including per-tab Notebook help. The **User guide** button and
+  **F1** open the offline `USER_GUIDE.html` (schematic + genuine GUI screenshot).
+- Included `NEXT_STEPS.md` with prioritized capability backlog and Windows acceptance
+  plan. No assets load from the web to display the guide.
+- Added a reviewed official publisher page lookup for the eight fixed winget catalog
+  entries, with a separate confirmation before opening a browser. This **does not**
+  download or install anything. Existing fixed-package winget installation still
+  requires its own explicit review and authorization.
+- Expanded passive tool inventory and task category hints for documents, audio/video,
+  graphics and CAD. These categories are **not** enrolled as executable recipes or
+  automatic installers.
+- The original desktop geometry, local model, persistent plans, JANUS/Sentinel and
+  approval policy are unchanged. v35 does not offer autonomous internet tool research,
+  sandboxing, full GUI control or guaranteed end-to-end game delivery.
+
+**Installation:** Close the application; back up `D:\deepthort\state`, then extract
+`DeepThorT_Desktop_v35_Windows.zip` over `D:\deepthort`, preserving all `models`,
+`state`, `node_modules`, `cache`, `reference` and project folders. Press F1 for guide.
+
+**Verification and gaps:** See `NEXT_STEPS.md` and `PROJECT_CONTEXT_V35.md` for the
+current isolated regression report, Windows acceptance checklist and unfinished work.
+
+---
+
 # DeepThorT v34 — defensive execution preflight and recovery (22 November 2026)
 
 **Source base:** v33; user requested proactive safeguards before a Windows test. See [APPROVAL_SAFETY_V34.md](APPROVAL_SAFETY_V34.md) for detailed risk matrix and test steps.

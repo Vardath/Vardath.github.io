@@ -1,3 +1,18 @@
+DEEPTHORT DESKTOP v35 — contextual help, offline visual guide and reviewed tool sources
+
+Preserves v34's local model, JANUS/Sentinel, interface, resource caps and approval gates.
+Open USER_GUIDE.html in your web browser, click User guide, or press F1 in the app.
+Hover existing buttons, tabs, tool selectors and major text areas for explanations.
+Computer & Tools: select one of the fixed installation catalog entries, then use
+Find official tool page... to open its reviewed publisher site after confirmation.
+Opening the web page does NOT download or install anything. Review & approve install...
+remains a separate, user-approved Windows Package Manager action.
+NEXT_STEPS.md contains the ordered roadmap for true online discovery, safe download,
+consent-controlled installation, application integration and real game acceptance.
+Close DeepThorT before updating D:\deepthort. Back up state and preserve models,
+state, node_modules, cache, reference and all project folders. No Windows runtime
+or real engine execution is claimed verified by Linux headless GUI tests.
+
 DEEPTHORT DESKTOP v34 — supervised execution robustness and crash-state diagnostics
 
 Based on v33: original UI, JANUS/Sentinel, offline Qwen, model settings and all approval gates retained.
