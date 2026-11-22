@@ -26,6 +26,7 @@ from urllib.request import ProxyHandler, Request, build_opener
 
 from deepthort_local.diagnostics import inspect_local_setup, format_diagnostic
 from deepthort_local.client import LocalModelClient
+from deepthort_local.capability_library import CapabilityLibrary, attach_capability_context
 from deepthort_local.chat_timeline import merged_chat_timeline
 from deepthort_local.agent_plan import parse_build_plan, build_plan_prompt, build_budgeted_plan_prompt, budgeted_file_step_prompt, validate_project_plan, generate_model_plan, MAX_PLAN_ATTEMPTS, PlanError, project_kind
 from deepthort_local.x4_sources import (inspect_x4_sources, automatic_x4_preflight, is_x4_inspection_request, x4_request_in_context,
@@ -75,7 +76,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='13',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='22',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -128,6 +129,7 @@ class DeepThorTDesktop(tk.Tk):
         self.inventory = None
         self.meter=Meter()
         self.client = LocalModelClient(STATE/'sessions.sqlite3')
+        self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
         self.conversations.invalidate_incompatible_drafts()
@@ -1026,6 +1028,23 @@ class DeepThorTDesktop(tk.Tk):
                 self.events.put(('conversation_stage',ident,'Preparing the complete request and attachment context'))
                 prompt=composed_prompt(original,paths)
                 original_evidence=''
+                capability_evidence=''
+                if request['mode']=='draft_plan':
+                    # Read-only, bounded inventory of the SELECTED workspace.
+                    # A project document is observed evidence, not an approved skill.
+                    # Discovery failures may not block pre-existing planning.
+                    try:
+                        discovery=self.capabilities.inspect_project(request['project'])
+                        capability_evidence=self.capabilities.retrieval_context(
+                            request['project'],original,max_chars=1000)
+                        record(STATE,'desktop','capability_discovery_completed',
+                               request_id=ident,files_scanned=discovery['files_scanned'],
+                               references_indexed=discovery['references_indexed'],
+                               tools_detected=len(discovery['tools_detected']),
+                               evidence_characters=len(capability_evidence))
+                    except Exception as discovery_error:
+                        record(STATE,'desktop','capability_discovery_unavailable',level='WARNING',
+                               request_id=ident,error_type=type(discovery_error).__name__)
                 # X4 source inspection is part of the INITIAL request, never a
                 # manual task delegated back to the user or an AI hallucination.
                 prior=[r['prompt'] for r in self.conversations.thread(request['chat_id'],10)
@@ -1064,6 +1083,9 @@ class DeepThorTDesktop(tk.Tk):
                                    +x4_evidence_for_prompt(report))
                 elif request['mode']=='draft_plan':
                     prompt=build_plan_prompt(prompt,self.inventory)
+                if request['mode']=='draft_plan':
+                    prompt=attach_capability_context(prompt,capability_evidence,
+                                                     max_chars=MAX_INFERENCE_PROMPT)
                 if len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
                 if cancelled():return
