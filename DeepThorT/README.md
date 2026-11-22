@@ -1,3 +1,36 @@
+# DeepThorT v37 — exact WinGet inspection receipts (23 November 2026)
+
+**Base:** Full v36 Windows release. This pass adds `Inspect package ID…` under
+Computer & Tools to make user-approved online discovery more precise. An exact,
+validated WinGet `vendor.package` ID is inspected using `winget show --id ...
+--exact --source winget --locale en-US`. Network consent is obtained separately
+for every inspection. The process has a 90-second timeout and a 64 KiB output
+budget, and it cannot download or install anything.
+
+The inspection result is parsed conservatively: expected ID, unambiguous package
+header, claimed publisher/version, optional manifest SHA256 and HTTPS-only
+informational URLs. Invalid fields or conflicting reports are not accepted.
+A privacy-reduced receipt is saved to `state/last-package-inspection.json` and
+shown in the UI, labelled **UNVERIFIED CATALOG METADATA — NOT INSTALL
+AUTHORIZATION**. Installer SHA256 supplied by the same catalog is not an
+independent checksum. Non-English CLI output may fail closed and can still be
+reviewed in Processes.
+
+The regression runner also now terminates the isolated Linux test process
+**group** after a timeout; previously grandchildren could keep pipes open and
+hang an otherwise isolated suite. This is test-runner hardening, not an
+autonomous worker or production Sentinel change.
+
+The fixed eight-package installer catalog, separate installation consent,
+JANUS/Sentinel, local Qwen worker and other UI behavior are preserved. Newly
+inspected package IDs are **never** passed to the installer in v37. Existing
+user-approved script execution is not sandboxed. No actual WinGet requests,
+Windows installation, real X4 mod or Android build has been verified by the
+synthetic Linux tests. See `USER_GUIDE.html`, `NEXT_STEPS.md`,
+`PROJECT_CONTEXT_V37.md` and `TEST_RESULTS_V37.md`.
+
+---
+
 # DeepThorT v36 — consented online package lookup and cross-platform regression repair (22 November 2026)
 
 **Base:** Complete v35 release (illustrated offline manual, hover tooltips and fixed publisher-source lookup). v36 adds a read-only online catalog lookup and corrects two preexisting Linux CI test fixtures without relaxing tool executable validation. Original local Qwen model, JANUS/Sentinel, UI geometry, all state, gaming/resource limits and explicit source/command approvals are unchanged.

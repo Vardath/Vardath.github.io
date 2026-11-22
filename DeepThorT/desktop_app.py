@@ -58,7 +58,8 @@ from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
 from deepthort_local.tool_sources import official_source
-from deepthort_local.online_tool_search import winget_search_command
+from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
+    validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
 
@@ -90,7 +91,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='36',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='37',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -113,6 +114,8 @@ class DeepThorTDesktop(tk.Tk):
         self.installing = False
         self.install_process = None
         self.tool_process = None
+        self._pending_package_inspection = None
+        self.last_package_inspection = None
         self.media_process = None
         self.sentinel_process = None
         self._sentinel_started = False
@@ -401,6 +404,7 @@ class DeepThorTDesktop(tk.Tk):
             values=('Git: status','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
+        ttk.Button(checks,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=10)
         tk.Label(hardware_tab,text='No background installs. Local program discovery does not grant execution permission.',
                  bg=BG,fg=MUTED,wraplength=750).pack(anchor='w',pady=(0,7))
 
@@ -2346,6 +2350,79 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Approved read-only online package search: '+name.strip())
             self.tabs.select(4)
 
+    def _inspect_package_id(self):
+        """Request explicit consent for a *single* read-only winget show probe."""
+        if self.disk_gate.gaming():
+            messagebox.showwarning('Gaming priority',
+                'A configured game is running. Package inspection is deferred.',parent=self)
+            return
+        if self._pending_package_inspection:
+            messagebox.showinfo('Inspection in progress',
+                'Finish or cancel the previous package inspection first.',parent=self)
+            return
+        package_id=simpledialog.askstring('Inspect an exact WinGet package',
+            'Enter an exact package ID from search results, for example FreeCAD.FreeCAD:\n'
+            'This only reads catalog metadata. It does not download or install.',parent=self)
+        if package_id is None:return
+        try:
+            package_id=validate_package_id(package_id.strip())
+            cmd=winget_show_command(package_id)
+        except (ValueError,OSError) as exc:
+            messagebox.showwarning('Invalid package ID',str(exc),parent=self)
+            return
+        if not messagebox.askyesno('Approve exact package inspection',
+            f'Package ID: {package_id}\nCatalog: winget\nCommand:\n'
+            f'{subprocess.list2cmdline(cmd)}\n\n'
+            'This contacts the Windows Package Manager catalog over the internet '
+            'to retrieve untrusted package metadata. The result is saved as an '
+            'inspection receipt, NOT approval to download or install.\n\n'
+            'Approve this one read-only query?',parent=self):
+            self._log('Exact-package metadata inspection declined.')
+            return
+        # Set before the thread starts: prevents interleaved inspection results.
+        self._pending_package_inspection={'package_id':package_id,'argv':list(cmd)}
+        if not self._start_command(cmd,cwd=ROOT,
+                                   label='Inspect package '+package_id,kind='package_inspection'):
+            self._pending_package_inspection=None
+            return
+        self._log('Read-only inspection approved for exact winget ID '+package_id)
+        self.tabs.select(4)
+
+    def _receive_package_inspection(self, code, output):
+        """Reconcile one completed bounded CLI report; NEVER grant install rights."""
+        pending=self._pending_package_inspection
+        self._pending_package_inspection=None
+        if not pending:
+            self._log('Unmatched package inspection result ignored.')
+            return
+        try:
+            if not isinstance(output,dict) or output.get('truncated'):
+                raise ValueError('Package inspection output missing or exceeded safety budget')
+            if output.get('argv')!=pending['argv']:
+                raise ValueError('Package inspection command does not match approval')
+            receipt=inspect_show_output(pending['package_id'],
+                '\n'.join(output.get('lines') or []),exit_code=code)
+            self.last_package_inspection=receipt
+            saved=save_snapshot(STATE/'last-package-inspection.json',receipt)
+            self._log('Read-only package inspection accepted for '+receipt['package_id']+
+                      ' — claimed publisher '+receipt['publisher']+', version '+receipt['version']+
+                      ('. Receipt saved.' if saved else '. Receipt could not be saved.'))
+            record(STATE,'desktop','read_only_winget_inspection',
+                   id=receipt['package_id'],version=receipt['version'],
+                   output_sha256=receipt['output_sha256'],saved=saved)
+            messagebox.showinfo('Unverified WinGet package details',
+                format_inspection(receipt),parent=self)
+        except (ValueError,TypeError,OSError) as exc:
+            self.last_package_inspection=None
+            save_snapshot(STATE/'last-package-inspection.json',
+                {'schema':'deepthort-winget-show-inspection-v1',
+                 'package_id':pending['package_id'],
+                 'state':'inconclusive','install_authorized':False,
+                 'download_authorized':False,'reason':str(exc)[:240]})
+            self._log('Package inspection was not accepted: '+str(exc))
+            messagebox.showwarning('Package inspection inconclusive',
+                str(exc)+'\n\nReview the Processes log. No package was downloaded or installed.',parent=self)
+
     def _approve_tool_install(self):
         name=self.install_choice.get()
         if name not in INSTALL_CATALOG:return
@@ -2406,18 +2483,35 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 from collections import deque
                 captured=deque(maxlen=300)
+                inspecting=(kind=='package_inspection')
+                output_bytes=0
+                truncated=False
                 flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,shell=False) as proc:
                     if kind=='installation':self.install_process=proc
                     else:self.tool_process=proc
-                    if proc.stdout:
-                        for line in proc.stdout:
-                            if kind=='verification':
-                                captured.append(line.rstrip()[:2000])
-                            self.events.put(('log',f'[{label}] {line.rstrip()}'))
-                    code=proc.wait()
-                result={'argv':list(cmd),'lines':list(captured)} if kind=='verification' else None
+                    # Read-only network lookup must not run forever if the catalog hangs.
+                    timer=threading.Timer(90,lambda: proc.kill() if proc.poll() is None else None) if inspecting else None
+                    if timer:timer.start()
+                    try:
+                        if proc.stdout:
+                            for line in proc.stdout:
+                                if inspecting:
+                                    output_bytes+=len(line.encode('utf-8',errors='replace'))
+                                    if output_bytes>MAX_INSPECTION_BYTES or len(captured)>=300:
+                                        truncated=True
+                                        proc.kill()
+                                        break
+                                    captured.append(line.rstrip('\r\n'))
+                                elif kind=='verification':
+                                    captured.append(line.rstrip()[:2000])
+                                self.events.put(('log',f'[{label}] {line.rstrip()[:2000]}'))
+                        code=proc.wait()
+                    finally:
+                        if timer:timer.cancel()
+                result=({'argv':list(cmd),'lines':list(captured),'truncated':truncated}
+                        if kind in ('verification','package_inspection') else None)
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
@@ -2980,9 +3074,14 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='tool_end':
                 label,tooltype,code,job_id=event[1:5]
                 verification_output=event[5] if len(event)>5 else None
-                self._log(f'{label} ended, exit code {code}. '+('Succeeded.' if code==0 else 'Check output for failure.'))
+                self._log(f'{label} ended, exit code {code}. '+
+                          ('Checking untrusted package metadata (not installation authorization).'
+                           if tooltype=='package_inspection' and code==0 else
+                           'Succeeded.' if code==0 else 'Check output for failure.'))
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
                 if tooltype=='installation' and code==0:self._refresh_inventory()
+                if tooltype=='package_inspection':
+                    self._receive_package_inspection(code,verification_output)
                 if tooltype=='x4_extraction' and code==0:
                     self._inspect_x4_sources()
                 if tooltype=='x4_preflight_extraction' and job_id is not None:
@@ -3031,9 +3130,13 @@ class DeepThorTDesktop(tk.Tk):
                         except Exception as exc:
                             self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()
-                if code!=0:messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
+                if code!=0 and tooltype!='package_inspection':
+                    messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
                 self._log(f'{event[1]} error: {event[3]}')
+                if event[2]=='package_inspection':
+                    self._pending_package_inspection=None
+                    self.last_package_inspection=None
                 if event[2]=='x4_preflight_extraction' and len(event)>4 and event[4] is not None:
                     self.conversations.change(event[4],'failed',
                         'Could not launch approved X4 source extraction: '+str(event[3]),

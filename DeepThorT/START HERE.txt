@@ -1,3 +1,23 @@
+DEEPTHORT DESKTOP v37 — exact package inspection, no auto-install
+
+Built on complete v36 with all existing JANUS/Sentinel, offline Qwen, user-approval,
+20% resource budget, and gaming-priority protections retained.
+Computer & Tools > Search packages online... -> copy exact vendor.package ID ->
+Inspect package ID... -> approve ONE read-only network metadata lookup.
+A completed inspection shows the claimed publisher, version, homepage, installer
+URL and manifest SHA256 when supplied, plus a saved read-only receipt in state.
+These values are UNTRUSTED catalog metadata, NOT proof of publisher identity,
+installer safety, license or permission to download/install anything.
+Only the original eight separately approved installation catalog entries can
+install software. Unknown packages remain inspection-only.
+Local safety tests cover malformed IDs, untrusted URLs, truncated output,
+spoofed package headers, command mismatch, cancellation and game priority.
+Read USER_GUIDE.html and NEXT_STEPS.md. No Windows runtime or live winget
+inspection is established by the Linux test suite.
+
+Before updating: fully exit DeepThorT; back up D:\deepthort\state; extract over
+D:\deepthort preserving models, state, node_modules, cache, references, projects.
+
 DEEPTHORT DESKTOP v36 — online package SEARCH with explicit consent
 Based on full v35. Same local Qwen, JANUS/Sentinel, window, saved state and approvals.
 Computer & Tools: Search packages online... queries the winget catalog after

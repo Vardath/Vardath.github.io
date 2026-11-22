@@ -9,11 +9,46 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import signal
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+
+
+def run_isolated(cmd, *, cwd, env, timeout):
+    """Run one module in a new process group, killing its *children* on timeout.
+
+    On Linux xvfb-run spawns Xvfb and possibly desktop helper processes. Killing
+    only the wrapper can leave descendants holding stdout pipes, defeating a
+    normal `subprocess.run(timeout=...)` and hanging the whole regression suite.
+    """
+    opts = ({'start_new_session':True} if os.name!='nt' else
+            {'creationflags':getattr(subprocess,'CREATE_NEW_PROCESS_GROUP',0)})
+    proc=subprocess.Popen(cmd,cwd=cwd,env=env,text=True,encoding='utf-8',
+            errors='replace',stdout=subprocess.PIPE,stderr=subprocess.STDOUT,**opts)
+    try:
+        stdout, _ = proc.communicate(timeout=timeout)
+        return proc.returncode,stdout,False
+    except subprocess.TimeoutExpired:
+        if os.name!='nt':
+            try:os.killpg(proc.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+        else:
+            # taskkill /T is Windows's standard child-tree termination route.
+            # This is only the isolated test subprocess, never an app/game.
+            try:subprocess.run(['taskkill','/PID',str(proc.pid),'/T','/F'],
+                    stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
+                    timeout=5,check=False)
+            except (OSError,subprocess.TimeoutExpired):pass
+        if proc.poll() is None:proc.kill()
+        try:
+            stdout, _ = proc.communicate(timeout=3)
+        except subprocess.TimeoutExpired:
+            stdout='[Timed-out test process retained a pipe unexpectedly]'
+        return proc.returncode, stdout, True
 
 
 def main(argv=None) -> int:
@@ -40,15 +75,14 @@ def main(argv=None) -> int:
         if os.name!='nt' and shutil.which('xvfb-run'):
             cmd=['xvfb-run','-a',*cmd]
         try:
-            run=subprocess.run(cmd,cwd=root,env=env,text=True,encoding='utf-8',errors='replace',
-                               stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
-                               timeout=args.timeout)
-            m=re.search(r'Ran\s+(\d+)\s+tests?',run.stdout)
+            code, output, timed_out=run_isolated(cmd,cwd=root,env=env,timeout=args.timeout)
+            m=re.search(r'Ran\s+(\d+)\s+tests?',output)
             count=int(m.group(1)) if m else 0
-            success=(run.returncode==0 and count>0 and re.search(r'\bOK\b',run.stdout) is not None)
-            excerpt=run.stdout[-3000:] if not success else ''
-        except subprocess.TimeoutExpired:
-            count=0;success=False;excerpt=f'Module timed out at {args.timeout}s'
+            success=(not timed_out and code==0 and count>0 and re.search(r'\bOK\b',output) is not None)
+            excerpt=(f'Module timed out at {args.timeout}s; process group killed\n'
+                     if timed_out else '')+(output[-2600:] if not success else '')
+        except OSError as exc:
+            count=0;success=False;excerpt='Could not launch module: '+str(exc)[:500]
         total+=count
         result.append({'module':module,'tests':count,'passed':success,'error_tail':excerpt})
         print(f'{"PASS" if success else "FAIL"} {module} ({count} tests)',flush=True)
