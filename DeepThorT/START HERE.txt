@@ -1,3 +1,28 @@
+DEEPTHORT DESKTOP v38 — ONNX model, supervised exact package installation
+
+DeepThorT's sole local conversational/coding inference is Qwen via ONNX. This
+release does NOT use an alternative training engine or external LLM. The
+original Windows launcher, ONNX model server, JANUS/Sentinel, game-priority
+and 20%-resource profile are unchanged.
+
+Computer & Tools > Search packages online... > Inspect package ID... >
+Review inspected install... Only recently inspected exact WinGet IDs with
+catalog SHA256, version and HTTPS publisher + installer information can reach
+an explicit installation review. Confirm the full metadata (UNVERIFIED) and
+fixed pinned WinGet command; type exactly INSTALL vendor.package to proceed.
+A new audit is saved to state/last-reviewed-install.json. No previous approval
+can be reused after restart. The same catalog-supplied checksum does not prove
+an installer is safe; real user verification and OS prompts still matter.
+
+User guide: USER_GUIDE.html (F1). Development queue: NEXT_STEPS.md.
+Windows installation has NOT been physically exercised in this development
+pass. Test new package installations only with software you trust and after
+reviewing the publisher/license. No automatic downloading/installing occurs.
+
+Close app first, back up D:\deepthort\state, extract full ZIP over
+D:\deepthort. Preserve state, models, node_modules, reference, cache,
+projects, and any existing installed tools.
+
 DEEPTHORT DESKTOP v37 — exact package inspection, no auto-install
 
 Built on complete v36 with all existing JANUS/Sentinel, offline Qwen, user-approval,

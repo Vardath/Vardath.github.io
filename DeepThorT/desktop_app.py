@@ -58,6 +58,7 @@ from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
 from deepthort_local.tool_sources import official_source
+from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
@@ -91,7 +92,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='37',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='38',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -116,6 +117,14 @@ class DeepThorTDesktop(tk.Tk):
         self.tool_process = None
         self._pending_package_inspection = None
         self.last_package_inspection = None
+        self._pending_reviewed_install = None
+        # Never replay installation permissions after app restart. A prior
+        # launch may still have a child installer running: state is unknown.
+        prior_install=read_snapshot(STATE/'last-reviewed-install.json')
+        if isinstance(prior_install,dict) and prior_install.get('status')=='launch_requested':
+            prior_install['status']='interrupted_unverified'
+            prior_install['reusable_approval']=False
+            save_snapshot(STATE/'last-reviewed-install.json',prior_install)
         self.media_process = None
         self.sentinel_process = None
         self._sentinel_started = False
@@ -404,8 +413,11 @@ class DeepThorTDesktop(tk.Tk):
             values=('Git: status','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
-        ttk.Button(checks,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=10)
-        tk.Label(hardware_tab,text='No background installs. Local program discovery does not grant execution permission.',
+        acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
+        ttk.Label(acquire,text='Discovered software — separate review:',style='Muted.TLabel').pack(side='left',padx=4)
+        ttk.Button(acquire,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=5)
+        ttk.Button(acquire,text='Review inspected install…',command=self._approve_inspected_install).pack(side='left',padx=5)
+        tk.Label(hardware_tab,text='No automatic installations. New tools require exact ID, fresh inspection and typed consent.',
                  bg=BG,fg=MUTED,wraplength=750).pack(anchor='w',pady=(0,7))
 
         # MEDIA: explicit local file and image handling. No cloud image calls.
@@ -2356,9 +2368,9 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Gaming priority',
                 'A configured game is running. Package inspection is deferred.',parent=self)
             return
-        if self._pending_package_inspection:
-            messagebox.showinfo('Inspection in progress',
-                'Finish or cancel the previous package inspection first.',parent=self)
+        if self._pending_package_inspection or isinstance(self._pending_reviewed_install,dict):
+            messagebox.showinfo('Software review in progress',
+                'Finish the previous inspection or installation before trying again.',parent=self)
             return
         package_id=simpledialog.askstring('Inspect an exact WinGet package',
             'Enter an exact package ID from search results, for example FreeCAD.FreeCAD:\n'
@@ -2422,6 +2434,113 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Package inspection was not accepted: '+str(exc))
             messagebox.showwarning('Package inspection inconclusive',
                 str(exc)+'\n\nReview the Processes log. No package was downloaded or installed.',parent=self)
+
+    def _windows_reviewed_install_enabled(self):
+        return os.name=='nt'
+
+    def _approve_inspected_install(self):
+        """Separate explicit approval for one exact-version community catalog install.
+
+        No local ONNX/LLM model text can authorize this action. The inspection
+        must come from the current desktop session and remain fresh. This does
+        not independently authenticate a publisher or attest the installer.
+        """
+        if not self._windows_reviewed_install_enabled():
+            messagebox.showwarning('Windows required',
+                'Reviewed WinGet installations are available only on Windows.',parent=self)
+            return
+        if self.disk_gate.gaming():
+            messagebox.showwarning('Gaming priority',
+                'A configured game is running. Installation is deferred.',parent=self)
+            return
+        if self._pending_package_inspection or self._pending_reviewed_install:
+            messagebox.showwarning('Review already in progress',
+                'Finish the current inspection or installation before trying again.',parent=self)
+            return
+        if ((self.install_process and self.install_process.poll() is None) or
+            (self.tool_process and self.tool_process.poll() is None)):
+            messagebox.showwarning('Tool already running',
+                'Stop or finish the current tool operation before installation.',parent=self)
+            return
+        if not self.last_package_inspection:
+            messagebox.showinfo('Inspect first',
+                'Use Inspect package ID… to obtain a fresh, exact-ID report in this session. '
+                'Saved receipts are informational and cannot approve execution.',parent=self)
+            return
+        try:
+            plan=prepare_reviewed_install(self.last_package_inspection)
+            if shutil.disk_usage(ROOT).free < 1024**3:
+                raise ValueError('Less than 1 GiB disk space available; installation is blocked')
+        except (OSError,ValueError) as exc:
+            messagebox.showwarning('Installation review unavailable',str(exc),parent=self)
+            return
+        command=subprocess.list2cmdline(plan['argv'])
+        details=(f"Program: {plan['name']}\nExact WinGet ID: {plan['package_id']}\n"
+                 f"Version PIN: {plan['version']}\nClaimed publisher: {plan['claimed_publisher']}\n"
+                 f"Claimed publisher page: {plan['publisher_url']}\n"
+                 f"Installer URL (catalog claim): {plan['installer_url']}\n"
+                 f"Catalog installer SHA256: {plan['manifest_installer_sha256']}\n"
+                 f"License: {plan['license'] or '(not supplied)'}\n"
+                 f"License page: {plan['license_url'] or '(not supplied)'}\n\n"
+                 f"Exact command:\n{command}\n\n"
+                 'WARNING: Publisher, version, URL and SHA256 come from the community '
+                 'catalog and have NOT been independently verified. This WILL download '
+                 'and run a third-party installer, potentially requiring a Windows UAC '
+                 'confirmation. It requests user scope but some packages may not support it. '
+                 'WinGet checks its manifest hashes; this is not a malware sandbox. '
+                 'By proceeding you agree that WinGet may accept the repository and '
+                 'package license terms. No upgrade, force, hash bypass or model-created '
+                 'shell command is permitted. There is no automatic rollback.\n\n'
+                 'Have you checked the publisher, license and purpose yourself?')
+        if not messagebox.askyesno('Review an UNVERIFIED third-party installation',
+                                    details,parent=self):
+            self._log('Inspected package installation review declined.')
+            return
+        phrase=exact_consent_phrase(plan)
+        consent=simpledialog.askstring('Type exact installation approval',
+            'To approve THIS ONE installation, type exactly:\n'+phrase+'\n\n'
+            'Any other text cancels. No previous approval can be reused.',parent=self)
+        if consent!=phrase:
+            self._log('Reviewed installation declined: exact typed consent not provided.')
+            messagebox.showinfo('Installation cancelled',
+                'No installer was started. The exact approval phrase did not match.',parent=self)
+            return
+        try:
+            audit=approval_receipt(plan,consent=consent,status='launch_requested')
+            if not save_snapshot(STATE/'last-reviewed-install.json',audit):
+                raise OSError('Could not persist the installation audit; no install started')
+        except (OSError,ValueError) as exc:
+            messagebox.showerror('Approval not recorded',str(exc),parent=self)
+            return
+        self._pending_reviewed_install={'plan':plan,'consent':consent,
+                                        'argv':list(plan['argv'])}
+        if not self._start_command(list(plan['argv']),cwd=ROOT,
+                                   label='Install inspected '+plan['package_id'],kind='reviewed_install'):
+            self._complete_inspected_install(None)
+            return
+        self._log('User typed explicit consent for '+plan['package_id']+' '+plan['version']+
+                  '. WinGet process queued; success and publisher authenticity NOT verified.')
+        self.tabs.select(4)
+
+    def _complete_inspected_install(self,exit_code):
+        """Terminal audit; WinGet exit 0 is not independent install verification."""
+        pending=self._pending_reviewed_install
+        self._pending_reviewed_install=None
+        if not pending:
+            self._log('Unexpected inspected-install result: no matching active approval.')
+            return
+        status='completed_unverified' if exit_code==0 else 'failed'
+        audit=approval_receipt(pending['plan'],consent=pending['consent'],status=status)
+        audit['exit_code']=exit_code
+        saved=save_snapshot(STATE/'last-reviewed-install.json',audit)
+        self._log('Inspected package '+pending['plan']['package_id']+': '+status+
+                  ('; audit saved.' if saved else '; audit persistence FAILED.'))
+        if exit_code==0:
+            self._refresh_inventory()
+            messagebox.showinfo('WinGet exited successfully — verify software',
+                'WinGet returned exit code 0. Independently verify the program is installed, '
+                'trusted and functions before giving it a project task. No actual app '
+                'capability check has been performed.',parent=self)
 
     def _approve_tool_install(self):
         name=self.install_choice.get()
@@ -2489,10 +2608,15 @@ class DeepThorTDesktop(tk.Tk):
                 flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,shell=False) as proc:
-                    if kind=='installation':self.install_process=proc
+                    if kind in ('installation','reviewed_install'):self.install_process=proc
                     else:self.tool_process=proc
-                    # Read-only network lookup must not run forever if the catalog hangs.
-                    timer=threading.Timer(90,lambda: proc.kill() if proc.poll() is None else None) if inspecting else None
+                    # Bounded network inspection and user-approved third-party setup.
+                    # A timed-out installer may have launched child processes; its
+                    # receipt remains UNVERIFIED and requires manual inspection.
+                    max_runtime = 90 if inspecting else 3600 if kind=='reviewed_install' else None
+                    timer=(threading.Timer(max_runtime,
+                            lambda: proc.kill() if proc.poll() is None else None)
+                           if max_runtime is not None else None)
                     if timer:timer.start()
                     try:
                         if proc.stdout:
@@ -2515,7 +2639,7 @@ class DeepThorTDesktop(tk.Tk):
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
-                if kind=='installation':self.install_process=None
+                if kind in ('installation','reviewed_install'):self.install_process=None
                 else:self.tool_process=None
         threading.Thread(target=worker,daemon=True).start()
         return True
@@ -3077,9 +3201,12 @@ class DeepThorTDesktop(tk.Tk):
                 self._log(f'{label} ended, exit code {code}. '+
                           ('Checking untrusted package metadata (not installation authorization).'
                            if tooltype=='package_inspection' and code==0 else
+                           'WinGet exited 0; installation and publisher are not independently verified.'
+                           if tooltype=='reviewed_install' and code==0 else
                            'Succeeded.' if code==0 else 'Check output for failure.'))
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
                 if tooltype=='installation' and code==0:self._refresh_inventory()
+                if tooltype=='reviewed_install':self._complete_inspected_install(code)
                 if tooltype=='package_inspection':
                     self._receive_package_inspection(code,verification_output)
                 if tooltype=='x4_extraction' and code==0:
@@ -3134,6 +3261,8 @@ class DeepThorTDesktop(tk.Tk):
                     messagebox.showwarning('Tool reported failure',f'{label} failed, exit code {code}. See Processes log.')
             elif kind=='tool_error':
                 self._log(f'{event[1]} error: {event[3]}')
+                if event[2]=='reviewed_install':
+                    self._complete_inspected_install(None)
                 if event[2]=='package_inspection':
                     self._pending_package_inspection=None
                     self.last_package_inspection=None

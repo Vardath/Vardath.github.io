@@ -29,6 +29,7 @@ SHOW_FIELDS = {
     'Installer Url': 'installer_url',
     'Installer URL': 'installer_url',
     'Installer SHA256': 'installer_sha256',
+    'SHA256': 'installer_sha256',
     'Installer Type': 'installer_type',
     'Description': 'description',
 }
@@ -152,6 +153,7 @@ def inspect_show_output(package_id: str, output: str, *, exit_code=0) -> dict:
         'homepage':fields.get('homepage',''),
         'publisher_url':fields.get('publisher_url',''),
         'license':fields.get('license',''),
+        'license_url':fields.get('license_url',''),
         'installer_url':fields.get('installer_url',''),
         'installer_sha256_manifest':sha.lower(),
         'installer_type':fields.get('installer_type',''),

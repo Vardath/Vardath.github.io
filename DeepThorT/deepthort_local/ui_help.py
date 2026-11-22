@@ -59,6 +59,7 @@ TOOLTIPS = {
     'Learn procedure…': 'Ask the offline model to draft an application procedure using observed help and documentation. Proposal only.',
     'Run learned procedure…': 'Review a proposed script or command. File writing and command execution each require separate consent.',
     'Search packages online…': 'With your separate consent, query the official Windows Package Manager catalog for up to 20 package candidates. Does not download or install software.',
+    'Review inspected install…': 'After a recent exact-ID inspection, review the unverified publisher, pinned version, license and exact WinGet command. Download/installation requires a fresh confirmation and typed approval. No automatic installation.',
     'Inspect package ID…': 'With separate consent, look up ONE exact WinGet package ID and review claimed publisher, version, installer hash and URLs. Saves a read-only receipt; never installs.',
     'Find official tool page…': 'Open a reviewed vendor download page for the selected catalog tool, after confirmation. No download or installation is performed.',
     'Inspect X4 sources': 'Read-only examination of game files and selected extracted XML; does not certify an X4 mod in-game.',

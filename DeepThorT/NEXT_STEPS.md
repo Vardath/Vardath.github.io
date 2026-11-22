@@ -1,6 +1,34 @@
-# DeepThorT — development handover and next steps (v37, 23 November 2026)
+# DeepThorT — development handover and next steps (v38, 23 November 2026)
 
 **Baseline:** `DeepThorT_Desktop_v34_Windows.zip` (134 files, ZIP CRC clean). This version adds contextual UI help and offline documentation; it does not replace the local Qwen runtime, JANUS/Sentinel topology or approval gates. Install to `D:\deepthort` without deleting `state`, `models`, `reference`, `cache`, `node_modules`, custom projects or existing launcher data. Back up `state` before upgrade. Read `USER_GUIDE.html` in the install root (F1 in the desktop).
+
+## Completed in v38 (fourth pass)
+
+- **ONNX remains the sole local coding-language inference backend.** The local
+  Qwen/ONNX server and original launcher have not been replaced or modified.
+- The `Review inspected install…` control in Computer & Tools can construct
+  ONE exact-version WinGet install proposal from an inspection completed in
+  the current desktop session. It never uses AI-written argv or shell commands.
+- The plan requires one valid, recent (2h) exact-ID inspection with a pinned
+  version, complete manifest SHA256, HTTPS installer URL and publisher/homepage,
+  no rejected unsafe URL, recognized installer type, and at least 1 GiB of free
+  disk on the application volume. It refuses inspection when games/tools run.
+- User sees claimed metadata, license, exact CLI command and limitations.
+  Two fresh explicit steps are needed: consent dialog and typed confirmation
+  `INSTALL vendor.package`. Approval is recorded BEFORE trying to launch the
+  installer; it is never automatically resumed from disk after restart.
+- Fixed command requests `--scope user`, pins exact ID/version/source,
+  adds `--no-upgrade`, and avoids shell, force, custom override, hash bypass,
+  and arbitrary download URLs. Package agreements and the community catalog
+  remain unverified; some installers may ask for UAC despite user scope.
+- `state/last-reviewed-install.json` preserves one bounded, non-reusable audit.
+  A zero WinGet exit is marked `completed_unverified` until separately tested;
+  no independent publisher verification or safe rollback is claimed. The
+  WinGet parent process is bounded to 60 minutes; child installers may outlive
+  a terminated parent and require manual inspection.
+- Added `deepthort_local/reviewed_install.py`, GUI integration,
+  `tests/test_reviewed_install_v38.py`, new screenshot and guide updates.
+  Synthetic Linux tests do not certify actual Windows winget installation.
 
 ## Completed in v37 (third pass)
 
@@ -45,14 +73,14 @@
 
 ## Ordered, acceptance-gated development backlog
 
-### P0 — Windows acceptance of v37, and rigorous GUI usability
+### P0 — Windows acceptance of v38, and rigorous GUI usability
 
 1. Test actual Windows startup and 20%-resource/game priority with installed ONNX model; verify F1 guide and all tab/button tooltips at 1320×860 and 1138×765, including keyboard/screen-reader behavior. Fix clipping if necessary without removing original chat controls.
 2. Verify source/ZIP parity, SHA-256 and GitHub CI status; fix any real failing workflows. Tkinter combined-process teardown remains an existing limitation even if isolated modules pass.
 3. Run a small disposable project through local Qwen -> plan -> human approval -> source write -> authorized test -> persisted evidence -> restart. Collect diagnostics and observed runtimes.
-4. If v37 tests are green, start next pass from v37, not from earlier source; do not overwrite unrelated GitHub `Scratch-Chat` updates.
+4. If v38 tests are green, start next pass from v38, not from earlier source; do not overwrite unrelated GitHub other projects’ commits.
 
-### P1 — Safe *online* software/tool discovery and consent-controlled install (v37+)
+### P1 — Safe *online* software/tool discovery and consent-controlled install (v38+)
 
 1. Continue the already introduced consented search plus exact-ID show inspection into a **capability resolver** from actual user requirements (artifact type, target OS, file formats, licenses, required tools, compatible versions and installed tool identity). Record a candidate dependency graph rather than keyword match only. Include resource needs (available disk/RAM and games running).
 2. Extend v36's user-confirmed winget catalog search to richer **explicit online-search consent** scoped to query/project, with independent **read-only research** using trusted upstream repositories, official documentation and package-manager metadata. Store source URL, version, publisher, retrieval time, license and evidence. Treat search results/pages as hostile data; never execute instructions from them. No browser takeover or unapproved network access.
@@ -90,8 +118,8 @@
 
 ## Open limitations (do not claim complete)
 
-- v37 can look up arbitrary name queries inside the Windows Package Manager `winget` catalog only after user approval. It does **not** independently research arbitrary web sources, fetch/download vendor installers, or automatically install apps from search results. Only the original fixed winget installation catalog can install after a separate exact-package approval.
-- v37 does **not** give Qwen a larger ONNX inference context or improve generation speed. Large specification input storage is separate from model context.
+- v38 can look up arbitrary name queries inside the Windows Package Manager `winget` catalog only after user approval. It does **not** independently research arbitrary web sources, fetch/download vendor installers, or automatically install apps from search results. v38 can additionally launch an exact-version WinGet install of an inspected third-party package after a separate metadata review and typed approval.
+- v38 does **not** give Qwen a larger ONNX inference context or improve generation speed. Large specification input storage is separate from model context.
 - Scripts approved for execution are **not sandboxed**. They can access resources available to the user; inspection alone is not a malware guarantee.
 - Real Windows Blender/Godot/X4/Android end-to-end acceptance is not yet proven. Do not claim games/mods complete based on synthetic tests or static XML alone.
 - Combined-process Tkinter teardown has an existing race; module-isolated test execution is the documented workaround, not a claimed production fix.
@@ -99,14 +127,17 @@
 
 ## Next-run minimal report
 
-After installing v37, report (a) whether F1/hover help works in each tab, (b) whether selecting an official tool page opens the expected URL without an install, (c) any failed known-tool installation with the exact installer output, (d) whether real Windows Qwen replies/plan approvals execute and pass one small test, and (e) a fresh **Export diagnostics** ZIP. Avoid changing production X4 mods as a first installer test.
+After installing v38, report (a) whether F1/hover help works in each tab, (b) whether selecting an official tool page opens the expected URL without an install, (c) any failed known-tool installation with the exact installer output, (d) whether real Windows Qwen replies/plan approvals execute and pass one small test, and (e) a fresh **Export diagnostics** ZIP. Avoid changing production X4 mods as a first installer test.
 
 For the online search test, use **Search packages online…**, enter `FreeCAD`,
  confirm the query, and check Processes. Copy the exact package ID from results.
  Choose **Inspect package ID…**, paste that ID, and approve ONE metadata query.
  The package should display its claimed publisher/version and persist a
- non-authorizing receipt. Verify cancellation on another query. **No download
- or installation should occur.** Send the diagnostic ZIP if WinGet output does
+ non-authorizing receipt. Verify cancellation on another query. **No download or installation should occur if the review is declined.
+ Test **Review inspected install…** and decline the consent or intentionally
+ type a wrong confirmation phrase. Do not authorize an actual installer on
+ the primary PC as an initial smoke test. Only use a disposable Windows VM or
+ a trusted package you deliberately want installed to verify the full path.** Send the diagnostic ZIP if WinGet output does
  not match the conservative parser. Test only on the real Windows PC; Linux tests
  use synthetic output. A network response and `winget show` are not evidence
  that the publisher or installer is trustworthy.
