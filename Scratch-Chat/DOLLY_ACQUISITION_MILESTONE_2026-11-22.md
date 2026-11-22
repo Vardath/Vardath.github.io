@@ -1,0 +1,7 @@
+# Scratch Chat external dialogue acquisition milestone — 2026-11-22
+
+Previous Scratch Chat source-test workflow run [45003211713](https://github.com/Vardath/Vardath.github.io/actions/runs/45003211713) completed successfully for commit d5b4755. This was source validation, not model acceptance.
+
+Implemented a bounded, standard-library Hugging Face Dolly acquisition script in capability/acquire_dolly_quarantine.py. It queries upstream metadata, resolves a 40-character commit SHA, requires one JSONL source file, downloads through that immutable revision, checks a 32 MiB cap, hashes raw bytes, converts role-tagged records using the existing importer, and records provenance with training_allowed=false. New tests mock the network and check pinning, hashes, refusal to overwrite, and fail-closed metadata. A new GitHub Actions workflow attempts real network acquisition and uploads a 14-day quarantine artifact. Actual upstream availability, license, privacy and suitability remain to be verified from the workflow and independent review.
+
+This is **not approval or training**. Do not use quarantined examples in training or claim conversational progress. After a successful acquisition, review license/attribution and privacy, group/deduplicate splits, then run bounded original-weight SFT and independent multi-turn/tool-use/DeepThorT integration acceptance. No GPU access or capability gain is claimed.
