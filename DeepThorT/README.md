@@ -1,3 +1,19 @@
+# DeepThorT v21 — malformed-JSON planning recovery (22 November 2026)
+
+**Source base:** v20. This is a narrow fix for `DeepThorT-Diagnostics-20261122-162725.zip` and does not alter the desktop layout, JANUS/Sentinel, ONNX worker, gaming limits, project approval, or the user's stored state.
+
+**Observed:** In a live resumed Xenon PE draft request, the first pass yielded 7 model-authored files, but the following 9 passes generated structurally invalid JSON and retained no additional valid files. The number of missing requirements remained at 10. The Python planner limited all of these ~7,000-character input prompts to 384 output tokens. Its supposed increase to 640 tokens was gated on the input being shorter than 5,000 characters and therefore never applied here. A fixed output cap may truncate generated JSON, although raw model output is absent from the export, so truncation is plausible rather than proven.
+
+**Correction:** On a malformed response, the planner now requests exactly one complete, short JSON file entry on the next revision, keeps the entire original specification, and increases the output allowance to 640 tokens for the first consecutive format failure and 768 for repeated failures. Input length no longer blocks that correction. Repeated malformed answers remain format failures, rather than resetting the output budget. A valid partial proposal resets the escalation; all valid model-authored files stay in the retained plan. This does not manufacture X4 file steps or grant execution permission. The 40-pass maximum and early stop upon complete validation remain unchanged.
+
+**Privacy-safe diagnostics:** Each pass now records its requested token budget and consecutive format-failure count without saving the model's private answer text. Historical cached responses may be replayed when their exact prompt matches; a changed recovery prompt requires fresh inference.
+
+**Verification:** 185 Python tests passed under Xvfb (`xvfb-run -a python -m unittest discover -s tests -q`), including 4 new budget/format/recovery tests. Pre-existing Tkinter/SQLite teardown warnings remain in test output. Tests do not prove that the model can produce a fully valid X4 plan or that live Windows inference is faster; larger token budgets can also increase individual generation time.
+
+**Installation:** Exit DeepThorT before extracting into `D:\deepthort`. Preserve `models`, `state`, `node_modules`, `cache`, `reference` and project folders. Test the current failed draft via Retry if desired; completed passes can be reused only when their exact prompts match. Do not approve a plan until the application has validated it.
+
+---
+
 # DeepThorT v20 — JANUS local Interface + planning-revision reliability (22 November 2026)
 
 **Source:** v19, retaining the original desktop interface and Windows launcher. This release does **not** add a second neural model, change the 20% gaming CPU profile, or give JANUS permission to approve/execute work.
