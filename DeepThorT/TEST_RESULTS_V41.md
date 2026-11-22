@@ -14,6 +14,11 @@
 - `python -m compileall -q .` passed for source. Local standalone runs use
   Linux/Python 3.13 and are *not* Windows hardware acceptance.
 
+A repeat `main`-branch regression exposed a rapid same-size Python source
+rewrite reusing timestamp-matched bytecode. v41 now isolates Python unittest
+cache directories per run; the deterministic cache regression and the full
+main-branch suite must pass again before the amended release is declared green.
+
 ## GitHub Actions
 
 Validate this exact v41 source commit through `.github/workflows/deepthort-tests.yml`:

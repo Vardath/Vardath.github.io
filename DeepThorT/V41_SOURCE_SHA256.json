@@ -4,7 +4,7 @@
   "source_files": [
     {
       "path": "desktop_app.py",
-      "sha256": "7146d0c167945e8e7e88ac0c7365ace9a6919818036b4a072ebc5eb8d4553715"
+      "sha256": "89fae4a81f41df88de33af2811b87492b1bf4c5e0b644b4e61018027e1e6e333"
     },
     {
       "path": "deepthort_local/job_queue.py",
@@ -40,7 +40,7 @@
     },
     {
       "path": "deepthort_local/development_cycle.py",
-      "sha256": "d6904d2131daba8074aaf3b692e700c7011294ccf9cd3b0c2336d0e9e7775309"
+      "sha256": "0e044b3c318759ba4463306eda74dc893a3570b2555418c35bf377f810951c1f"
     },
     {
       "path": "tests/test_development_cycle_v41.py",
@@ -52,11 +52,15 @@
     },
     {
       "path": "PROJECT_CONTEXT_V41.md",
-      "sha256": "a343c2d1baae06697eb551bb0035520fde16db114d1a3cf516697e611f34eaa6"
+      "sha256": "ef9766439c3bd4eea26d802dc8424531a134bb532cb6214e27954df9e83471a5"
     },
     {
       "path": "TEST_RESULTS_V41.md",
-      "sha256": "fcfb961de1400e3ec024f812a5dd76ba384f993e4d43f3e482b862fb382f3515"
+      "sha256": "6295ea6252c670bb2aa59ac5be8ae33d9c7405e128656c686a0a72bebdcb643c"
+    },
+    {
+      "path": "tests/test_python_bytecode_isolation_v41.py",
+      "sha256": "58847694f68268d779ec4ff851450094b8ad976261c4ed919a88285d4f65b0bd"
     }
   ],
   "assurance": "Source SHA256 integrity only; not runtime/gameplay acceptance"

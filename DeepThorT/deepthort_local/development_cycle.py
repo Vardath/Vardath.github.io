@@ -9,8 +9,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import sqlite3
+import sys
+import uuid
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -23,6 +26,26 @@ MAX_REPAIR_FILE_CHARS = 1800  # ONNX server hard limit: <=768 response tokens
 MAX_DIAGNOSTIC_CHARS = 2200
 MAX_REPAIR_PROMPT_CHARS = 6600
 
+
+
+
+def isolated_verification_environment(argv: list[str], state: str | Path,
+                                      job_id: int) -> dict[str, str] | None:
+    """Use a unique Python bytecode cache for each real unittest verification.
+
+    CPython's normal timestamp+size .pyc invalidation can reuse stale code when
+    a generated repair changes operators but keeps identical file size and
+    the source was replaced within the same filesystem timestamp resolution.
+    A new private cache prefix makes retests read the actual current sources.
+    Never alter PYTHONPATH, arbitrary commands, OS elevation or project files.
+    """
+    if (argv != [sys.executable, '-m', 'unittest', 'discover']
+            or type(job_id) is not int or job_id < 1):
+        return None
+    parent = Path(state).resolve() / 'verification-pycache'
+    parent.mkdir(parents=True, exist_ok=True)
+    cache = parent / f'job-{job_id}-{uuid.uuid4().hex}'
+    return {**os.environ, 'PYTHONPYCACHEPREFIX': str(cache)}
 
 class CycleError(ValueError):
     pass

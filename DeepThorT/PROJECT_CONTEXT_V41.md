@@ -48,7 +48,11 @@ external general agent loop, arbitrary tool invocation, or change to the model.
    does not accidentally terminate the ONNX model. Uncertain in-flight tests
    or model repairs after a crash are marked **needs_attention** on restart,
    never silently replayed or labelled successful.
-6. The original JANUS/Sentinel roles remain separate. Both completed tests
+6. Python `unittest discover` runs under a **new private bytecode cache prefix**
+   for every verification attempt. This prevents a same-size, rapid source
+   rewrite from loading stale timestamp-matched `.pyc` and giving a false
+   retest result. No user source or existing bytecode cache is deleted.
+7. The original JANUS/Sentinel roles remain separate. Both completed tests
    and blocked/awaiting repair states are visible as actual work evidence.
 
 ## Limitations (important)

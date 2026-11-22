@@ -71,7 +71,7 @@ from deepthort_local.project_authority import (
 
 from deepthort_local.development_cycle import (
     DevelopmentCycleStore, CycleError, build_repair_prompt, parse_repair_response,
-    MAX_TEST_ATTEMPTS, MAX_REPAIR_ATTEMPTS)
+    MAX_TEST_ATTEMPTS, MAX_REPAIR_ATTEMPTS, isolated_verification_environment)
 
 from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
@@ -3100,8 +3100,11 @@ class DeepThorTDesktop(tk.Tk):
                 # for standing-policy software actions. No runas/UAC bypass.
                 flags=(getattr(subprocess,'CREATE_NO_WINDOW',0)
                        if os.name=='nt' and kind not in ('automatic_software','reviewed_install','installation') else 0)
+                verified_env=(isolated_verification_environment(list(cmd),STATE,job_id)
+                              if kind=='verification' and job_id is not None else None)
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
-                        text=True,encoding='utf-8',errors='replace',creationflags=flags,shell=False) as proc:
+                        text=True,encoding='utf-8',errors='replace',creationflags=flags,
+                        shell=False,env=verified_env) as proc:
                     if kind in ('installation','reviewed_install','automatic_software'):self.install_process=proc
                     else:self.tool_process=proc
                     # Bounded network inspection and user-approved third-party setup.
