@@ -99,41 +99,77 @@ class JobStore:
             return i
     def submit_approved_build(self, project: str, chat_id: str, prompt: str,
                               steps: list[dict], approval_key: str) -> int:
-        """Atomically queue a user-approved plan; retries cannot duplicate a job."""
-        if not project or project == '(general)' or not chat_id or not prompt.strip():
-            raise ValueError('An approved build requires a project and prompt')
+        """Original single-draft approval boundary, unchanged in meaning."""
         if not approval_key.startswith('draft:') or not approval_key[6:].isdigit():
             raise ValueError('Approved build requires a durable draft identifier')
-        if not isinstance(steps, list) or not 1 <= len(steps) <= 24:
+        if not isinstance(steps,list) or not 1<=len(steps)<=24:
             raise ValueError('Approved plan requires 1..24 file stages')
-        # Second authorization boundary: a GUI bug must not queue domain-wrong plans.
         from .agent_plan import validate_project_plan
-        validate_project_plan(steps, prompt)
+        validate_project_plan(steps,prompt)
+        return self._record_approved_build(project,chat_id,prompt,steps,approval_key)
+
+    def submit_approved_milestone_build(self, project: str, chat_id: str,
+                                        scoped_prompt: str, steps: list[dict],
+                                        approval_key: str, *, master_prompt: str,
+                                        master_steps: list[dict]) -> int:
+        """One explicitly approved milestone, checked against full master plan.
+
+        This never silently downgrades full-project validation to a subset.
+        The hierarchy caller must also validate exact section hashes and
+        dependency/verification status before this operation.
+        """
+        import re
+        from .agent_plan import validate_project_plan
+        if not re.fullmatch(r'milestone:[1-9][0-9]*:[1-9][0-9]*:[0-9a-f]{16}',approval_key or ''):
+            raise ValueError('Hierarchical job needs a durable milestone approval identifier')
+        if not isinstance(steps,list) or not 1<=len(steps)<=24 or len(scoped_prompt)>6500:
+            raise ValueError('Milestone needs 1..24 bounded file stages and a scoped prompt')
+        validate_project_plan(master_steps,master_prompt)
+        indexed={str(s['path']).casefold():s for s in master_steps}
+        if (len(indexed)!=len(master_steps) or
+            any(indexed.get(str(s.get('path','')).casefold())!=s for s in steps)):
+            raise ValueError('Milestone step does not belong to the validated master plan')
+        if not scoped_prompt.startswith('HIERARCHICAL MILESTONE '):
+            raise ValueError('Missing traceable milestone scope')
+        return self._record_approved_build(project,chat_id,scoped_prompt,steps,approval_key)
+
+    def _record_approved_build(self, project: str, chat_id: str, prompt: str,
+                               steps: list[dict], approval_key: str) -> int:
+        if not project or project == '(general)' or not chat_id or not prompt.strip():
+            raise ValueError('An approved build requires a project and prompt')
+        if not isinstance(steps,list) or not 1<=len(steps)<=24:
+            raise ValueError('Approved plan requires 1..24 file stages')
         from .workspace import safe_target
-        validated = []
-        seen = set()
+        validated=[]
+        seen=set()
         for step in steps:
-            target = safe_target(Path(project), step['path'])
-            rel = target.relative_to(Path(project).resolve()).as_posix()
-            if not isinstance(step['description'], str) or not 3 <= len(step['description']) <= 1000:
+            target=safe_target(Path(project),step['path'])
+            rel=target.relative_to(Path(project).resolve()).as_posix()
+            if not isinstance(step['description'],str) or not 3<=len(step['description'])<=1000:
                 raise ValueError('Invalid file stage')
-            if rel.casefold() in seen: raise ValueError('Repeated file in approved plan')
+            if rel.casefold() in seen:
+                raise ValueError('Repeated file in approved plan')
             seen.add(rel.casefold())
-            validated.append((rel, step['description']))
+            validated.append((rel,step['description']))
         with self._conn() as db:
-            old = db.execute('SELECT id FROM jobs WHERE approval_key=?', (approval_key,)).fetchone()
-            if old: return int(old[0])
-            ident = db.execute(
+            previous=db.execute('SELECT id FROM jobs WHERE approval_key=?',(approval_key,)).fetchone()
+            if previous:
+                existing=db.execute('SELECT project,chat_id,prompt FROM jobs WHERE id=?',(previous[0],)).fetchone()
+                saved=db.execute('SELECT path,description FROM job_steps WHERE job_id=? ORDER BY sequence',(previous[0],)).fetchall()
+                if existing!=(project,chat_id,prompt) or list(saved)!=validated:
+                    raise ValueError('Existing approval key is bound to a different milestone')
+                return int(previous[0])
+            ident=db.execute(
                 "INSERT INTO jobs(project,chat_id,mode,prompt,approval_key,detail) "
                 "VALUES(?,?,'build',?,?,'User-approved plan; ready to execute')",
-                (project, chat_id, prompt, approval_key)).lastrowid
-            for n, (path, description) in enumerate(validated):
+                (project,chat_id,prompt,approval_key)).lastrowid
+            for n,(path,description) in enumerate(validated):
                 db.execute('INSERT INTO job_steps(job_id,sequence,path,description) VALUES(?,?,?,?)',
-                           (ident, n, path, description))
+                           (ident,n,path,description))
             db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',
-                       (ident, f'Explicit approval of {approval_key}; {len(steps)} validated file stages'))
-        record(self.path.parent, 'queue', 'approved_plan_submitted', job_id=ident,
-               approval_key=approval_key, stages=len(validated))
+                       (ident,f'Explicit approval of {approval_key}; {len(steps)} validated file stages'))
+        record(self.path.parent,'queue','approved_plan_submitted',job_id=ident,
+               approval_key=approval_key,stages=len(validated))
         return ident
 
     def get(self, ident: int):
