@@ -18,6 +18,16 @@ Do not weaken the model-authored plan validator, 40-pass allowance or explicit a
 The user explicitly required **at least 40 independent local-model attempts** for generating/revising an X4 plan, **stopping immediately when validation succeeds**. Screenshot 467 and `DeepThorT-Diagnostics-20261121-155708.zip` confirm v14 made four complete, unsuccessful ONNX inference calls in approximately 41 minutes and then stopped at the hard-coded desktop limit. The parser also rejected max_rounds >8. v15 sets the planner and desktop to 40, does not prematurely abort upon an identical invalid reply, and avoids poisoning the retained plan with an oversized (more than 24 file) candidate. The initial user specification and explicit approval boundary remain unchanged. No canned plan was inserted. Five new tests pass; total local headless tests **153, OK**. This verifies control flow only, not the model's ability to invent a technically sound plan or produce a working mod. Existing v14 GUI design and JANUS/Sentinel code are untouched. A 40-pass run may take several hours on the user's CPU; persistence across UI exit is not established. GitHub CI remains unverified until an actual check conclusion is inspected.
 
 # DeepThorT — verified project context and continuity handover
+
+## v20 — JANUS Interface and planning changes (22 November 2026)
+
+- Source baseline: v19. The desktop geometry, ONNX implementation, JANUS/Sentinel core processors, 20% gaming CPU design, 40-pass bound and explicit work-approval gates remain unchanged.
+- Address an ordinary chat message explicitly to JANUS or @JANUS to obtain a read-only report from current JANUS Front/Interface, Sentinel, queue and ONNX status even when Qwen is busy. This is a deterministic factual Interface, **not general-purpose free-form language generation or permission to execute work**; unaddressed chat is still handled by Qwen.
+- Model-authored plan revisions now show purposes of selected existing proposed files, hold a specific unmet criterion briefly before rotating, and reject rewrites of existing steps that would lose previously satisfied validator criteria.
+- Full original user specifications remain included in every planning inference. Regular plan-generation token budget is 384 instead of 640, with a bounded longer retry for certain invalid JSON. Any speedup on Windows must be measured; none has been confirmed.
+- Eight new tests, 181 total local tests passed under Linux X virtual display. The launcher is identical to v19. Real Windows operation, a successful Xenon PE mod, and GitHub CI remain unverified at release packaging. A prior v19 diagnostic showed 35/40 model passes and nine remaining X4 planning gaps.
+- Local artifact: DeepThorT_Desktop_v20_Windows.zip. Install only while the old desktop process is closed; preserve state, models, references and user projects.
+
 Last reviewed: 21 November 2026 (Australia/Brisbane). Updated for v14.
 
 ## Read before editing
