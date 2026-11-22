@@ -88,5 +88,28 @@ class AdmissionTests(unittest.TestCase):
         self.write_manifest()
         self.assertEqual(self.run_audit()["splits"]["test"]["count"], 1)
 
+    def rewrite_row(self, split, transform):
+        row = json.loads(self.paths[split].read_text())
+        transform(row)
+        self.paths[split].write_text(json.dumps(row) + "\n", encoding="utf-8")
+        self.metadata["sha256"][split] = hashlib.sha256(self.paths[split].read_bytes()).hexdigest()
+        self.write_manifest()
+
+    def test_same_user_prompt_different_answer_rejected(self):
+        self.rewrite_row("test", lambda row: row["messages"].__setitem__(0, {"role": "user", "content": "Question train"}))
+        with self.assertRaisesRegex(ValueError, "duplicate user prompt"):
+            self.run_audit()
+
+    def test_shared_upstream_family_rejected(self):
+        self.rewrite_row("train", lambda row: row.update({"template_family_id": "family-42"}))
+        self.rewrite_row("test", lambda row: row.update({"template_family_id": "family-42"}))
+        with self.assertRaisesRegex(ValueError, "template_family_id leaks"):
+            self.run_audit()
+
+    def test_distinct_families_pass(self):
+        self.rewrite_row("train", lambda row: row.update({"source_conversation_id": "a"}))
+        self.rewrite_row("test", lambda row: row.update({"source_conversation_id": "b"}))
+        self.assertEqual(self.run_audit()["splits"]["test"]["count"], 1)
+
 if __name__ == "__main__":
     unittest.main()
