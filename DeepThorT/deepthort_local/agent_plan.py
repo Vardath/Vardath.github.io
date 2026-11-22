@@ -292,6 +292,18 @@ def planning_focus(steps: list[dict], request: str, pass_number: int) -> str:
     return pool[(max(1, pass_number) - 2) % len(pool)] if pool else 'correct the rejected output format'
 
 
+
+def revision_focus(steps: list[dict], request: str, pass_number: int,
+                   previous: str, stalled: int) -> str:
+    """Give a missing criterion two attempts before rotating, not 40 repeats."""
+    gaps = remaining_plan_gaps(steps, request)
+    if previous and previous in gaps:
+        if stalled < 2:
+            return previous
+        return gaps[(gaps.index(previous) + 1) % len(gaps)]
+    return planning_focus(steps, request, 2)
+
+
 def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
                           x4_evidence: str = '', max_chars: int = 7500,
                           path_window: int = 0, focus: str = '') -> str:
@@ -305,23 +317,23 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
     long paths. No files/plan steps are manufactured here.
     """
     header = (
-        'Your previous project plan was incomplete or invalid. REVISE IT YOURSELF. '
-        'Return ONLY JSON {"files":[{"path":"...","description":"..."}]}, '
-        'with 1 or 2 NEW files or corrections of existing paths; concise descriptions. '
-        'Every path must be a real relative source file. '
-        'Previous plan steps remain saved and are merged with your corrections; '
-        'only a bounded selection of paths may appear below. '
-        'Do not repeat unchanged files. Use verified source evidence; never guess IDs. '
-        'Do not claim any testing or construction has occurred.\n'
+        'Revise your incomplete plan. Return ONLY JSON '
+        '{"files":[{"path":"relative/file.xml","description":"precise implementation"}]}. '
+        'Propose 1–2 new files or substantive corrections; no unchanged entries. '
+        'Earlier model files are retained locally. Verify game IDs; never invent them. '
+        'Do not claim execution or testing.\n'
     )
-    findings = str(problems).strip()[:850]
+    findings = str(problems).split('. No work',1)[0].strip()[:560]
     target = ('PRIMARY TARGET FOR THIS PASS (a criterion still missing from the '
               'accumulated plan): ' + focus[:180] + '\n'
               'Propose a source file addressing this target. Do not repeat an '
               'existing unchanged file. If a file already exists, improve its description. '
               'Do not write a complete essay or repeat the entire specification.\n') if focus else ''
-    base = (header + target + 'VALIDATOR FINDINGS:\n' + findings +
-            '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n')
+    # Keep the complete original requirement text in EVERY model revision.
+    # The user explicitly requires this; narrow the validator's focus and
+    # optional metadata instead of dropping pieces of the specification.
+    base = header + target + 'VALIDATOR FINDINGS:\n' + findings + \
+           '\nORIGINAL SPECIFICATION (COMPLETE):\n' + request + '\n'
     if len(base) >= max_chars:
         raise PlanError('Complete original specification and correction instructions do not fit '
                         f'within {max_chars:,} characters; no specification was truncated.')
@@ -334,7 +346,16 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
     if path_window < 0:
         raise ValueError('path_window must be nonnegative')
     path_list = [str(step['path']) for step in steps]
-    manifest_header = f'PREVIOUS MODEL-PROPOSED PATHS (total {len(path_list)}; saved locally):\n'
+    manifest_header = f'PREVIOUS MODEL-PROPOSED FILES (total {len(path_list)}; saved locally):\n'
+    # The old manifest contained paths alone. The model consequently had no
+    # information about what each existing file was intended to implement,
+    # frequently overwrote good descriptions and lost validated coverage.
+    # Reserve a few complete, focus-relevant descriptions before plain paths.
+    terms = {word for word in re.findall(r'[a-z]{4,}', focus.casefold())
+             if word not in ('this','that','with','from','file','files','plan','missing')}
+    related = sorted(range(len(steps)), key=lambda i: (
+        -sum(term in (steps[i]['path']+' '+steps[i]['description']).casefold() for term in terms), i))
+    detailed_indices = set(related[:3]) if focus else set()
     omitted_reserve = 130
     manifest_lines = []
     selected_indices = set()
@@ -344,7 +365,9 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
         ordered_indices = list(range(begin, len(path_list))) + list(range(begin))
         used = len(manifest_header) + omitted_reserve
         for index in ordered_indices:
-            line = path_list[index] + '\n'
+            detail = str(steps[index]['description']).replace('\n', ' ').strip()
+            line = (path_list[index] + '\n  purpose: ' + detail[:170] + '\n'
+                    if index in detailed_indices else path_list[index] + '\n')
             if used + len(line) <= remaining:
                 manifest_lines.append(line)
                 selected_indices.add(index)
@@ -409,10 +432,14 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     failures = []
     seen_answers = set()
     prompt = first_prompt
+    previous_focus = ''
+    stagnant_on_focus = 0
     for round_no in range(1, max_rounds + 1):
         if cancelled is not None and cancelled():
             raise PlanError('Planning stopped by user; original request is preserved')
-        focus = planning_focus(list(all_steps.values()), request, round_no)
+        focus = ('' if round_no == 1 else revision_focus(
+            list(all_steps.values()), request, round_no,
+            previous_focus, stagnant_on_focus))
         if stage:
             stage(f'Local model planning — pass {round_no}/{max_rounds}; '
                   f'{len(all_steps)} files retained; next gap: {focus[:82]}')
@@ -432,7 +459,11 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                 stage(f'Planning pass {round_no}/{max_rounds} restored from '
                       'a completed local inference; no model time consumed')
         else:
-            answer = client.chat(round_session, prompt, max_tokens=640)
+            # Most observed v19 JSON fragments were 300–750 characters.
+            # Bound the generation budget to reduce needless decoding; if a
+            # previous long fragment was malformed, allow a larger correction.
+            tokens = 640 if (failures and 'JSON' in failures[-1] and len(prompt) < 5000) else 384
+            answer = client.chat(round_session, prompt, max_tokens=tokens)
         if cancelled is not None and cancelled():
             raise PlanError('Planning stopped by user; no later passes will run')
         count_before = len(all_steps)
@@ -466,6 +497,16 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                     raise PlanError('The proposed additions would exceed the '
                                     '24-file plan limit. Correct existing paths '
                                     'rather than adding more unrelated files.')
+                # A rewrite of existing descriptions must not erase coverage
+                # already established by an earlier accepted model proposal.
+                # Newly introduced files can create fresh registration dependencies
+                # and are therefore permitted to add *conditional* gaps.
+                before = set(remaining_plan_gaps(list(all_steps.values()), request))
+                after = set(remaining_plan_gaps(list(candidate_steps.values()), request))
+                has_new_paths = any(key not in all_steps for key in candidate_steps)
+                if not has_new_paths and after - before:
+                    raise PlanError('Revision would remove already satisfied requirements: '
+                                    + '; '.join(sorted(after-before)))
                 all_steps = candidate_steps
                 try:
                     approved_shape = validate_project_plan(list(all_steps.values()), request)
@@ -489,12 +530,23 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                    revised_file_entries=revised_count,
                    remaining_gap_count=len(gaps),
                    response_characters=len(answer),
+                   input_characters=len(prompt),
+                   original_specification_characters=len(request),
+                   complete_specification_included=(request in prompt),
                    rejected_duplicate=repeated,
                    invalid_json='JSON' in finding or 'json' in finding,
                    focus_category=focus[:120])
         if round_no == max_rounds:
             break
-        next_focus = planning_focus(list(all_steps.values()), request, round_no + 1)
+        if previous_focus == focus and len(all_steps) == count_before and revised_count == 0:
+            stagnant_on_focus += 1
+        elif previous_focus == focus and focus in remaining_plan_gaps(list(all_steps.values()), request):
+            stagnant_on_focus += 1
+        else:
+            stagnant_on_focus = 0
+        previous_focus = focus
+        next_focus = revision_focus(list(all_steps.values()), request, round_no + 1,
+                                    previous_focus, stagnant_on_focus)
         if stage:
             stage(f'Planning pass {round_no} rejected: {finding[:100]}; '
                   f'{len(all_steps)} files, {len(gaps)} gaps; '
