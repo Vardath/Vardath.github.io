@@ -1,3 +1,15 @@
+## v22 update — 22 November 2026: Capability Library foundation (first of several passes)
+
+**Current packaged release: v22.** New read-only `deepthort_local/capability_library.py`, `CAPABILITY_LIBRARY.md`, test module and a small draft-plan handler integration in the existing `desktop_app.py`. All six changed/added files were verified by Git blob SHA against `DeepThorT_Desktop_v22_Windows.zip`; the original Windows launcher is unchanged. 197 local tests passed using Xvfb. Live Windows inference, GitHub CI, game-engine builds and full autonomous learning have not been demonstrated.
+
+**Implemented:** Selected-project manifest/configuration observations, SHA-256 source fingerprints, bounded scanning, installed tool presence (no execution), local `state/capabilities.sqlite3` persistence, stale evidence exclusion, bounded model context injection if it fits behind all original user requirements and X4 evidence, unverified procedure candidates, and deterministic file-artifact XML/JSON/existence checks explicitly labelled as artifact checks rather than verified workflows. No downloaded documentation, commands, automatic project edits, pretrained model changes, interface redesign or automatic game build features have been added.
+
+**Planned next passes:** (1) securely ingest and retrieve bounded relevant project/installed-tool documentation, with provenance and source instructions quarantined as untrusted data; (2) integrate authorized actual build/test execution, versioned test receipts and verified workflow promotion with the existing job/approval system; (3) hierarchical project/subsystem planning with safe dependency resolution and repeatable Faction Command acceptance benchmarking. These stages are *not yet implemented*. Do not claim that v22 autonomously learns all new software or builds games. Do not alter JANUS/Sentinel or release numbering to implement these.
+
+See `CAPABILITY_LIBRARY.md` and `tests/test_capability_library_v22.py`. **Do not overwrite local `state`, `models`, `node_modules`, `reference`, `cache` or projects during installation.**
+
+---
+
 ## v16 update — 21 November 2026 (17:22 diagnostics)
 
 **Current packaged release: v16.** Built strictly from the v15 Windows ZIP, preserving UI geometry, launcher, installed ONNX model, JANUS, Sentinel, existing approval gates and saved state.
