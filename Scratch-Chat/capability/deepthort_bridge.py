@@ -12,23 +12,25 @@ from pathlib import Path
 import torch
 from capability.bpe import ByteBPE
 from capability.modern_model import ModernConfig, ModernScratchTransformer
-from capability.modern_train import FORMAT
+from capability.modern_train import FORMAT as PRETRAIN_FORMAT
+from capability.dialogue_sft_train import FORMAT as SFT_FORMAT
 from capability.pretrain import file_hash
 
 
 def load_model(checkpoint: Path, tokenizer: Path):
     tok = ByteBPE.load(tokenizer)
     state = torch.load(checkpoint, map_location="cpu", weights_only=True)
-    if state.get("format") != FORMAT:
+    if state.get("format") not in (PRETRAIN_FORMAT, SFT_FORMAT):
         raise ValueError("Incompatible Scratch Chat checkpoint")
     if state.get("immutable", {}).get("tokenizer_hash") != file_hash(tokenizer):
         raise ValueError("Checkpoint tokenizer mismatch")
-    cfg = ModernConfig(**state["config"])
+    cfg = ModernConfig(**(state["immutable"]["config"] if state["format"] == SFT_FORMAT else state["config"]))
     if cfg.vocab_size != tok.vocab_size:
         raise ValueError("Tokenizer vocabulary size mismatch")
     model = ModernScratchTransformer(cfg)
     model.load_state_dict(state["model_state"], strict=True)
     model.eval()
+    model.chat_format = "sft" if state["format"] == SFT_FORMAT else "legacy"
     return model, tok, state
 
 
@@ -46,13 +48,18 @@ def respond(model, tok, messages, *, max_new_tokens=64):
             raise ValueError("Invalid message")
         if len(item["content"]) > 16000:
             raise ValueError("Message exceeds 16000 characters")
-        prompt += item["role"].capitalize() + ": " + item["content"] + "\n"
-    prompt += "Assistant: "
+        if model.chat_format == "sft":
+            if "<|im_start|>" in item["content"] or "<|im_end|>" in item["content"]:
+                raise ValueError("Reserved chat delimiter")
+            prompt += "<|im_start|>" + item["role"] + "\n" + item["content"] + "<|im_end|>\n"
+        else:
+            prompt += item["role"].capitalize() + ": " + item["content"] + "\n"
+    prompt += "<|im_start|>assistant\n" if model.chat_format == "sft" else "Assistant: "
     ids = tok.encode(prompt)
     if not ids:
         raise ValueError("Empty prompt")
     generated = []
-    stop_markers = (b"\nUser:", b"\nSystem:", b"\nAssistant:")
+    stop_markers = (b"<|im_end|>", b"<|im_start|>") if model.chat_format == "sft" else (b"\nUser:", b"\nSystem:", b"\nAssistant:")
     eos = tok.special.get("<|eos|>")
     for _ in range(max_new_tokens):
         x = torch.tensor([ids[-model.cfg.context_size:]], dtype=torch.long)
@@ -67,7 +74,10 @@ def respond(model, tok, messages, *, max_new_tokens=64):
         generated.append(nxt)
         if any(marker in b"".join(tok.byte_values[i] for i in generated) for marker in stop_markers):
             break
-    return b''.join(tok.byte_values[i] for i in generated).split(b'\nUser:', 1)[0].split(b'\nSystem:', 1)[0].split(b'\nAssistant:', 1)[0].decode('utf-8', errors='replace')
+    raw = b"".join(tok.byte_values[i] for i in generated)
+    for marker in stop_markers:
+        raw = raw.split(marker, 1)[0]
+    return raw.decode("utf-8", errors="replace")
 
 
 def serve(model, tok, checkpoint_state):
