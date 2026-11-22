@@ -59,7 +59,7 @@ def audit(manifest_path, train_path, validation_path, test_path):
             seen_dialogues.add(normalized)
             # Exact indexed candidate retrieval: any positive multiset Jaccard
             # pair shares at least one token. Avoid comparing unrelated records.
-            tokens = Counter(re.findall(r"\\w+", canonical(" ".join(m["content"] for m in messages))))
+            tokens = Counter(re.findall(r"\w+", canonical(" ".join(m["content"] for m in messages))))
             token_count = sum(tokens.values())
             candidates = set()
             for token in tokens:
