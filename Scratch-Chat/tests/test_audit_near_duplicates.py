@@ -44,12 +44,12 @@ class NearDuplicateAuditTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             for split, values in zip(("train", "validation", "test"),
-                                     (prompts[:2], prompts[2:4], prompts[4:])):
+                                     ([prompts[0], prompts[2]], [prompts[1], prompts[3]], prompts[4:])):
                 self.write(root, split, values)
             result = audit(root, threshold=0.6)
             self.assertEqual(result["candidate_pairs"], 2)
-            self.assertTrue(result["passed"])
-            self.assertEqual(len(result["findings"]), 0)
+            self.assertFalse(result["passed"])
+            self.assertEqual(len(result["findings"]), 2)
 
     def test_invalid_threshold_rejected(self):
         with self.assertRaises(ValueError):
