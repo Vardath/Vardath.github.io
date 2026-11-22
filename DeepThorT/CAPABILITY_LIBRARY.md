@@ -1,3 +1,34 @@
+# Capability Library — Pass 3: approved test receipts and large specifications (v24)
+
+This pass connects verification receipts to the v23 source-backed reference index. It **does not automatically execute any tool**, assert that an entire game runs, or retrain the neural model.
+
+- `ToolEvidenceIndex` indexes only already-authorized JANUS verification runs. Each observation includes the approval record, action ID, fixed GUI test label, return status/exit code and SHA-256 of the process log. Runtime credentials, raw command arguments and untrusted logs are not copied into LLM prompts. Stale/modified logs and actions are ignored.
+- `CapabilityLibrary.verify_workflow` requires an existing checked artifact in the same project, its unchanged SHA-256, and a successful JANUS test action, approved by the desktop user, from a fixed supported project-test profile. A general successful command or installation is **not sufficient**. Verification is explicitly linked rather than automatically promoted, and a later artifact/test change invalidates it.
+- Current verification evidence means **syntax/existence of an artifact and successful exit of a project test command**. It is not proof of correct game rules, user satisfaction, Android APK acceptance, or in-game behavior.
+- `SpecificationIndex` stores exact section offsets and hashes for full, potentially multi-million-word user requirements saved in durable Conversations state. A large specification's incomplete model review is **never a validated plan**, even if a few proposed files parse correctly.
+- `large_input.py` enables source-preserving import of local UTF-8 TXT/MD/RST/JSON/YAML via the editor right-click menu or Ctrl+Shift+O. Its hash is checked again when the message is submitted. Original text stays in SQLite; the GUI displays a labelled preview.
+
+## Associate a successful approved JANUS test with a procedure
+
+From `D:\deepthort`, using the existing CLI (replace IDs and paths with the actual ones):
+
+```powershell
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 candidate x4 "Check extension XML" "Validate a user-owned X4 extension artifact" "Create content.xml" "Check artifact" "Run approved project tests"
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 check-artifact 1 D:\x4mods content.xml --check xml
+# After you explicitly approve a supported test through JANUS & Sentinel / Computer & Tools,
+# use its finished JANUS action ID (not an arbitrary process ID):
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 verify-workflow 1 D:\x4mods state\janus.sqlite3 42
+python -m deepthort_local.capability_library --db state\capabilities.sqlite3 procedures
+```
+
+An unconnected successful process is merely observed test evidence. It is not promoted automatically. Candidate procedures need independent, source-backed review and genuinely relevant tests.
+
+## Next
+
+Pass 4 should give each subsystem of a large game its own bounded requirements and acceptance tests, reconcile contradictory model-proposed paths, maintain cross-subsystem dependencies and record actual milestones. It also needs a scalable requirements-completeness/traceability ledger. The 40-pass single-draft loop and the 24-file implementation executor are insufficient for a million-word game design even with lossless storage. Actual performance and game-engine acceptance need benchmarking on Windows.
+
+---
+
 # Capability Library — Pass 2 local reference learning (v23)
 
 This builds on the v22 observation/procedure database. **Implemented, not aspirational:**
