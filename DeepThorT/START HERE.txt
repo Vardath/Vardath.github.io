@@ -1,3 +1,24 @@
+DEEPTHORT DESKTOP v42 — VERSIONED SOURCE CHECKPOINTS AND EVIDENCE TASK GRAPH
+
+Continues v41 ONNX coding model and JANUS/Sentinel, same 8-tab Windows app.
+Approve an actual build plan once. DeepThorT can now record source and tool
+prerequisites, real test evidence and bounded action leases. Files get an
+original baseline checkpoint plus revision snapshots after saved files and
+approved automatic repairs. Inspect Work queue and Restore source checkpoint…
+ONLY with explicit confirmation; this invalidates the old plan and test
+results, and quarantines files newly created since the chosen revision.
+
+Native Windows UAC is not bypassed. Model-generated tests may execute
+untrusted project code under your normal Windows account (not sandboxed).
+The exact source plan and permission checks still govern every action.
+
+CLOSE DEEPTHORT; back up D:\deepthort\state. Extract this SOURCE OVERLAY
+into D:\deepthort. Preserve the existing DeepThorT.exe, Qwen ONNX models,
+state, user projects, cache, reference, node_modules and all custom files.
+This is not a new full installer and does not contain the original binary.
+
+Read PROJECT_CONTEXT_V42.md for the safe Windows acceptance test.
+
 # DeepThorT v41 — bounded local diagnose/repair/retest development cycle
 
 Version 41 adds a durable per-approved-job build/test/failure/repair/retest

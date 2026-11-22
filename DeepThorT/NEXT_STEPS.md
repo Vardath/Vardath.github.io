@@ -1,3 +1,19 @@
+# DeepThorT next steps — after v42 (23 November 2026)
+
+**Completed:** v42 adds an exact approved-job dependency DAG at `state/task-graph.sqlite3`, evidence-linked source/test/tool prerequisites, persisted source-hash/task progress, interrupted-action leases, bounded multi-file versioned checkpoints and explicit rollback with quarantine. The original ONNX-only v41 three-test/two-repair cycle, v40 project grants, JANUS/Sentinel and Windows gaming controls remain. Full details in `PROJECT_CONTEXT_V42.md`.
+
+**Priority v43 — close the tool-bootstrap gap:** locate executables after curated WinGet installs, inspect real installed versions, check known low-impact command/API capabilities and PATH refresh requirements. Link probe evidence to each blocked approved graph node, with explicit non-arbitrary retry/unblock rules and no trust in WinGet exit codes alone. Preserve UAC and the v42 task-lease boundaries.
+
+**Priority v44:** safely coordinate *multiple* separately approved hierarchical milestones, requirement trace propagation and observed prerequisites; multi-file crash reconciliation and optional Git snapshots/undo without re-writing history, per-commit conflict detection and source hash receipts. Do not auto-approve an unrelated milestone.
+
+**Later:** vetted official software provenance and signature validation, sandboxed/permission-bounded untrusted project tests, Godot/Android SDK/Blender/X4/RimWorld adapters, verified artifact builds and real engine/device/gameplay acceptance, ONNX performance measurements with the gaming cap.
+
+**Current limits:** A graph records approved intention and execution evidence, **not guaranteed semantic coverage** of a million-character specification. v42 only probes test-executable existence, not installed version/capability. Up to 24 source files/4MB per checkpoint and 60 revisions per job. Manual rollback quarantines newly created files but is sequential; an interruption requires emergency checkpoint inspection. No paid/cloud LLM, Scratch Chat substitution, silent elevation bypass, arbitrary downloaded installer/script or unauthorized publishing.
+
+**Windows acceptance:** keep D:\deepthort\state, Qwen ONNX model, original launcher, user projects, reference/cache/node_modules. Back up state and test on a disposable project first. Use Work queue to see the task graph; confirm a tested job, choose its approval-baseline checkpoint, verify source restore and approval invalidation. Read full `PROJECT_CONTEXT_V42.md` before enabling on important projects.
+
+---
+
 # DeepThorT next steps — after v41 (23 November 2026)
 
 **Implemented:** Durable approved-job test/diagnose/repair/retest loop, with

@@ -9,6 +9,7 @@ is local to 127.0.0.1.
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 import uuid
 import os
@@ -69,6 +70,9 @@ from deepthort_local.project_authority import (
     issue_grant, authorize_file, record_file, authorize_test, revoke_grant,
     authorize_repair_context, authorize_repair, record_repair)
 
+from deepthort_local.task_graph import TaskGraphStore, GraphError
+from deepthort_local.source_checkpoints import SourceCheckpoints, CheckpointError
+
 from deepthort_local.development_cycle import (
     DevelopmentCycleStore, CycleError, build_repair_prompt, parse_repair_response,
     MAX_TEST_ATTEMPTS, MAX_REPAIR_ATTEMPTS, isolated_verification_environment)
@@ -107,7 +111,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='41',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='42',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -137,6 +141,8 @@ class DeepThorTDesktop(tk.Tk):
         self._project_policy = load_project_policy(STATE/'project-work-policy.json')
         self._auto_verification_in_flight = None
         self._stopped_auto_tests = set()
+        self._graph_test_leases = {}
+        self._graph_repair_leases = {}
         self._auto_tool_history = read_snapshot(STATE/'routine-software-history.json') or {}
         self._auto_tool_queue = []
         self._auto_tool_active = None
@@ -189,6 +195,15 @@ class DeepThorTDesktop(tk.Tk):
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
+        self.graphs = TaskGraphStore(STATE/'task-graph.sqlite3')
+        self.checkpoints = SourceCheckpoints(STATE/'source-checkpoints')
+        interrupted_graph_actions = self.graphs.interrupted()
+        for interrupted_id in set(interrupted_graph_actions):
+            j = self.jobs.get(interrupted_id)
+            if j and j['state'] not in ('complete','cancelled','failed'):
+                self.jobs.change(interrupted_id,'needs_input',
+                    'Interrupted graph lease: inspect source/test evidence; do not replay blindly',
+                    allowed=('queued','running','paused','waiting_verification','waiting_repair','needs_input'))
         interrupted_cycles = self.cycles.interrupted()
         if interrupted_cycles:
             record(STATE,'desktop','development_cycles_interrupted',
@@ -367,7 +382,10 @@ class DeepThorTDesktop(tk.Tk):
                         variable=self.project_work_enabled,command=self._set_project_work_policy).pack(side='left',padx=3)
         ttk.Button(workbar,text='Revoke selected job automation',
                    command=self._revoke_selected_project_work).pack(side='left',padx=8)
-        ttk.Label(queue_tab,text='v41: failed local tests can trigger up to 2 ONNX file repairs and 3 tests per approved job; each change keeps a backup.',
+        restorebar=ttk.Frame(queue_tab);restorebar.pack(fill='x',pady=(0,3))
+        ttk.Button(restorebar,text='Restore source checkpoint…',
+                   command=self._restore_source_checkpoint).pack(side='left',padx=3)
+        ttk.Label(queue_tab,text='v42: approved work has an evidence-backed task graph and source revisions; restore requires confirmation and revokes prior approval.',
                   style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
@@ -564,6 +582,7 @@ class DeepThorTDesktop(tk.Tk):
                    'model_status':status,'active_job':self.active_job,
                    'queue_paused':self.queue_paused,'visible_project_jobs':counts,
                    'development_cycles':self.cycles.summary(self._project_key()),
+                   'task_graph':self.graphs.summary(self._project_key()),
                    'current_project_name':Path(self._project_key()).name,
                    'sentinel_pid':self.sentinel_process.pid if self.sentinel_process and self.sentinel_process.poll() is None else None,
                    'loading_stage':self.current_loading_stage, 'last_ai_error':self.last_ai_error,
@@ -1504,6 +1523,11 @@ class DeepThorTDesktop(tk.Tk):
         project=self._project_key()
         rows=[j for j in self.jobs.items(project) if j['mode'] not in ('chat','plan','edit')]
         for j in rows:
+            graph=self.graphs.status(j['id'])
+            if graph:
+                ready=sum(node['state'] in ('approved','available','saved','passed','recorded')
+                          for node in graph['nodes'])
+                j['detail']+=f' [Graph: {ready}/{len(graph["nodes"])} observed]'
             cycle=self.cycles.get(j['id'])
             if cycle:
                 j['detail'] += (f" [Cycle: {cycle['phase']}; "
@@ -1543,6 +1567,21 @@ class DeepThorTDesktop(tk.Tk):
                 f"repairs {cycle['repairs']}/{MAX_REPAIR_ATTEMPTS}"
                 f"\nLAST DIAGNOSTIC (local evidence):\n{cycle['diagnostic'][-1600:]}"
                 f"\nCYCLE EVENTS:\n{cycle_log}")
+        graph=self.graphs.status(job['id'])
+        if graph:
+            graph_lines='\n'.join('  '+node['node']+' ['+node['state']+'] '+node['title']+
+                (' — '+node['note'] if node['note'] else '') for node in graph['nodes'])
+            deps='\n'.join('  '+edge['node']+' <- '+edge['depends_on'] for edge in graph['edges'])
+            events+='\n\nTASK GRAPH ('+graph['state']+'):\n'+graph_lines+'\nDEPENDENCIES:\n'+deps
+        try:
+            revisions=self.checkpoints.list(job['id'])
+            if revisions:
+                last=revisions[-1]
+                events+=(f'\n\nSOURCE CHECKPOINTS: {len(revisions)} immutable revisions; '
+                         f'latest {last["id"]} ({last["reason"]}). '
+                         'Use Restore source checkpoint… to select an earlier source state.')
+        except CheckpointError as exc:
+            events+='\n\nCHECKPOINT INTEGRITY ERROR: '+str(exc)
         steps=self.jobs.steps(job['id'])
         step_text='\n'.join(f"{i+1}. [{x['state']}] {x['path']}: {x['description']}" for i,x in enumerate(steps)) or '(No plan yet)'
         detail=(f"Job #{job['id']} | {job['state']} | {job['mode']}\n"
@@ -1582,6 +1621,10 @@ class DeepThorTDesktop(tk.Tk):
             if cycle and cycle['phase']=='repairing':
                 try:self.cycles.block(ident,'User cancelled local repair before acceptance')
                 except CycleError:pass
+            lease=self._graph_repair_leases.pop(ident,None)
+            if lease:
+                try:self.graphs.finish_action(lease,ident,'interrupted')
+                except GraphError:pass
             self.jobs.cancel(ident)
             if self.media_process and self.media_process.poll() is None:
                 self.media_process.terminate()
@@ -1605,6 +1648,11 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs();self._job_selected()
     def _resume_job(self):
         j=self._selected_job()
+        if j and (graph:=self.graphs.status(j['id'])) and graph['state']=='invalidated':
+            messagebox.showwarning('Previous plan was invalidated',
+                'This source was restored or this approval was invalidated. '
+                'Create and explicitly approve a new plan before running more work.',parent=self)
+            return
         if j and self.jobs.resume(j['id']):
             self._log(f"Job #{j['id']} resumed by user.");self._refresh_jobs()
     def _load_job_prompt(self):
@@ -1688,13 +1736,43 @@ class DeepThorTDesktop(tk.Tk):
             return
         job = self.jobs.get(jobid)
         try:
-            grant = issue_grant(STATE/'project-grants', job, self.jobs.steps(jobid))
+            steps=self.jobs.steps(jobid)
+            grant = issue_grant(STATE/'project-grants', job, steps)
+            try:
+                self.checkpoints.capture(job,steps,'approval_baseline',baseline=True)
+                self.graphs.create(job,steps)
+                key=str(job.get('approval_key') or '')
+                if key.startswith('milestone:'):
+                    rootid=int(key.split(':')[1])
+                    rootreq=self.conversations.get(rootid)
+                    # The master request is already validated before milestone approval.
+                    # Do not force a million-character rehash through the small gaming
+                    # budget on every milestone; the durable indexed source remains
+                    # available for full review and linking in a future pass.
+                    if rootreq and len(rootreq.get('prompt') or '')<=2_000_000:
+                        provenance=self.hierarchies.graph_provenance(
+                            rootid,[st['path'] for st in steps])
+                        actual_hash=hashlib.sha256(rootreq['prompt'].encode('utf-8')).hexdigest()
+                        if (provenance['root_source_sha256']!=actual_hash or
+                            provenance['root_project']!=str(Path(job['project']).resolve())):
+                            raise GraphError('Milestone requirement root hash or project changed')
+                        self.graphs.attach_hierarchy(job,steps,provenance)
+                        if provenance['truncated']:
+                            self._log(f'Job #{jobid}: requirement graph shows only the first '
+                                      f'{len(provenance["requirements"])} of '
+                                      f'{provenance["total_linked_requirements"]} exact source traces; '
+                                      'the complete indexed hierarchy is preserved elsewhere.')
+            except (CheckpointError,GraphError,WorkspaceError,OSError,ValueError):
+                revoke_grant(STATE/'project-grants',jobid)
+                if self.graphs.exists(jobid):
+                    self.graphs.invalidate(jobid,'Initial graph/checkpoint approval evidence incomplete')
+                raise
             self._log(f"Job #{jobid}: unattended authority granted for "
                       f"{len(grant['files'])} exact files and fixed local project tests. "
                       "Existing files fingerprinted; source backups retained.")
             record(STATE, 'desktop', 'project_authority_issued', job_id=jobid,
                    paths=len(grant['files']), plan_sha256=grant['plan_sha256'])
-        except (GrantError, ValueError, OSError) as exc:
+        except (GrantError, GraphError, CheckpointError, ValueError, OSError) as exc:
             # Never fabricate a grant when project scope/plan is incompatible.
             self._log(f'Job #{jobid}: no unattended grant: {exc}. '
                       'Individual file/test review remains required.')
@@ -1719,6 +1797,61 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Already running test may continue. Stop tool / install process to interrupt it.')
         self._refresh_jobs()
 
+    def _restore_source_checkpoint(self):
+        job=self._selected_job()
+        if not job or job['mode']!='build':
+            messagebox.showinfo('Select an approved build','Choose a build in Work queue.',parent=self)
+            return
+        if (self.active_job is not None or self._auto_verification_in_flight is not None
+            or self.active_conversation is not None or self.disk_gate.gaming()
+            or any(p and p.poll() is None for p in
+                   (self.tool_process,self.media_process,self.install_process))):
+            messagebox.showwarning('Work is active',
+                'Stop active work and finish gaming before restoring source files.',parent=self)
+            return
+        try:
+            revisions=self.checkpoints.list(job['id'])
+            if len(revisions)<2:
+                raise CheckpointError('No prior revision to restore; approved baseline is the only snapshot')
+            labels='\n'.join(f'{i+1}. {r["reason"]} — {r["id"]}'
+                             for i,r in enumerate(revisions))
+            index=simpledialog.askinteger('Restore source checkpoint',
+                f'Choose a revision number from this exact approved job:\n\n{labels[-2800:]}\n\n'
+                '1 is the original approval baseline.',parent=self,
+                minvalue=1,maxvalue=len(revisions))
+            if index is None:return
+            selected=revisions[index-1]['id']
+            steps=self.jobs.steps(job['id'])
+            review=self.checkpoints.restore_preview(job,steps,selected)
+            detail='\n'.join(review['changed'][:24])
+            if not messagebox.askyesno('Confirm irreversible authorization invalidation',
+                f'Roll back {len(review["changed"])} exact project source files?\n\n{detail}\n\n'
+                'Files created since the selected revision will be QUARANTINED, not deleted. '
+                'A separate recovery snapshot will be kept. This revokes unattended permissions '
+                'and invalidates prior test/verification results; a new plan approval is required. '
+                'Do not continue until the restored program has been retested.',parent=self):
+                return
+            # Revoke authority BEFORE changing any project file.
+            revoke_grant(STATE/'project-grants',job['id'])
+            self.graphs.invalidate(job['id'],'User explicitly restored an older source revision')
+            try:self.cycles.invalidate(job['id'],'Source checkpoint restored; old tests no longer valid')
+            except (CycleError,OSError):pass
+            self.jobs.change(job['id'],'needs_input',
+                'Source rollback requested; old build verification invalid. New plan approval required',
+                allowed=('queued','paused','waiting_verification','waiting_repair',
+                         'needs_input','complete','failed','cancelled'))
+            receipt=self.checkpoints.rollback(job,steps,selected,explicit_approval=True)
+            self._log(f'Job #{job["id"]}: restored source checkpoint {selected}; '
+                      f'{len(receipt["actions"])} changes; emergency {receipt["emergency"]}. '
+                      'Permission and previous verification invalidated.')
+            self.status.set('Source checkpoint restored. Prior verification is invalid; approve a new plan.')
+            self._refresh_files();self._refresh_jobs();self._job_selected()
+        except (CheckpointError,GraphError,GrantError,WorkspaceError,OSError,ValueError) as exc:
+            self._log('Source checkpoint restoration refused or incomplete: '+str(exc))
+            messagebox.showerror('Source restore needs inspection',
+                str(exc)+'\n\nIf rollback began, inspect its emergency checkpoint under state/source-checkpoints.',
+                parent=self)
+
     def _project_work_tick(self):
         try:
             self._project_work_once()
@@ -1739,7 +1872,16 @@ class DeepThorTDesktop(tk.Tk):
         if not cycle or cycle['phase']!='repair_ready':
             raise CycleError('No authorized bounded repair is pending')
         prompt,candidates=build_repair_prompt(job,steps,cycle['diagnostic'])
-        self.cycles.claim_repair(jobid)
+        lease=None
+        if self.graphs.exists(jobid):
+            lease=self.graphs.begin_action(job,steps,'repair','verify')
+        try:self.cycles.claim_repair(jobid)
+        except BaseException:
+            if lease:
+                try:self.graphs.finish_action(lease,jobid,'blocked')
+                except GraphError:pass
+            raise
+        if lease:self._graph_repair_leases[jobid]=lease
         if not self.jobs.change(jobid,'running',
                 'Diagnosing test failure with local ONNX (bounded repair)',
                 allowed=('waiting_repair',)):
@@ -1775,16 +1917,30 @@ class DeepThorTDesktop(tk.Tk):
                 raise CycleError('Local model selected an unavailable approved file')
             stage=matching[0]
             authority=authorize_repair(STATE/'project-grants',job,steps,stage,enabled=True)
+            if self.graphs.exists(jobid):
+                if not self.checkpoints.list(jobid):
+                    raise CheckpointError('Repair requires an intact v42 source baseline')
             dest=apply_approved_file(Path(job['project']),target,code,
                 STATE/'backups',expected_existing_sha=authority['before_sha256'])
             receipt=record_repair(STATE/'project-grants',job,steps,stage,enabled=True)
+            if self.graphs.exists(jobid):
+                self.graphs.record_repaired_artifact(job,steps,stage,receipt['sha256'])
+                check=self.checkpoints.capture(job,steps,'repair_saved')
+                if check['files'].get(receipt['path'])!=receipt['sha256']:
+                    raise CheckpointError('Repaired source changed before the checkpoint was recorded')
             self.cycles.finish_repair(jobid,target,receipt['sha256'])
+            lease=self._graph_repair_leases.pop(jobid,None)
+            if lease:self.graphs.finish_action(lease,jobid,'saved')
             self.jobs.change(jobid,'waiting_verification',
                 f'Repair saved with backup: {target}; retest not yet run',allowed=('running',))
             self._log(f'Job #{jobid}: one authorized repair saved to {dest}; '
                       f'SHA256 {receipt["sha256"][:16]}…; retest will be scheduled when idle.')
             self._refresh_files()
-        except (CycleError,GrantError,WorkspaceError,OSError,ValueError) as exc:
+        except (CycleError,GraphError,CheckpointError,GrantError,WorkspaceError,OSError,ValueError) as exc:
+            lease=self._graph_repair_leases.pop(jobid,None)
+            if lease:
+                try:self.graphs.finish_action(lease,jobid,'interrupted')
+                except GraphError:pass
             self._block_repair(jobid,'Repair rejected: '+str(exc))
         self._refresh_jobs()
 
@@ -1793,6 +1949,10 @@ class DeepThorTDesktop(tk.Tk):
         if not job or job['state']!='running' or self.active_job!=jobid:
             return
         self.active_job=None
+        lease=self._graph_repair_leases.pop(jobid,None)
+        if lease:
+            try:self.graphs.finish_action(lease,jobid,'blocked')
+            except GraphError:pass
         self._block_repair(jobid,'Local ONNX repair failed: '+str(message)[:350])
         self._refresh_jobs()
 
@@ -1835,12 +1995,20 @@ class DeepThorTDesktop(tk.Tk):
             if not cmd:
                 continue
             steps=self.jobs.steps(job['id'])
+            lease=None
             try:
                 authorize_test(STATE/'project-grants',job,steps,list(cmd),enabled=True)
+                if self.graphs.exists(job['id']):
+                    self.graphs.ready_to_test(job,steps,list(cmd))
+                    lease=self.graphs.begin_action(job,steps,'test','verify')
                 self.cycles.begin_test(job,steps,list(cmd))
+                if lease:self._graph_test_leases[job['id']]=lease
             except GrantError:
                 continue  # Project needs manual review or authority was revoked.
-            except (CycleError,OSError,ValueError) as exc:
+            except (CycleError,GraphError,CheckpointError,OSError,ValueError) as exc:
+                if lease:
+                    try:self.graphs.finish_action(lease,job['id'],'blocked')
+                    except GraphError:pass
                 self.jobs.change(job['id'],'needs_input',
                     'Autonomous test blocked: '+str(exc)[:450],
                     allowed=('waiting_verification',))
@@ -1851,6 +2019,10 @@ class DeepThorTDesktop(tk.Tk):
                     'Running recorded fixed verification attempt',
                     allowed=('waiting_verification',)):
                 self.cycles.block(job['id'],'Job changed state before test launch')
+                if lease:
+                    self._graph_test_leases.pop(job['id'],None)
+                    try:self.graphs.finish_action(lease,job['id'],'interrupted')
+                    except GraphError:pass
                 continue
             self._auto_verification_in_flight=job['id']
             if not self._start_command(cmd,cwd=project,
@@ -1858,6 +2030,10 @@ class DeepThorTDesktop(tk.Tk):
                     kind='verification',job_id=job['id']):
                 self._auto_verification_in_flight=None
                 self.cycles.block(job['id'],'Could not launch test; result is unknown')
+                if lease:
+                    self._graph_test_leases.pop(job['id'],None)
+                    try:self.graphs.finish_action(lease,job['id'],'interrupted')
+                    except GraphError:pass
                 self.jobs.change(job['id'],'needs_input',
                     'Automatic test did not launch; manual inspection required',allowed=('running',))
                 self._refresh_jobs()
@@ -1873,6 +2049,11 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Tool already running',
                 'A local tool, installation or media task is already running. Verification will remain queued for manual approval.');return
         j=self._selected_job()
+        if j and (graph:=self.graphs.status(j['id'])) and graph['state']=='invalidated':
+            messagebox.showwarning('Old approval invalidated',
+                'The previous source checkpoint has been restored. Approve a NEW build plan '
+                'before further verification.',parent=self)
+            return
         if not j or j['mode']!='build' or j['state']!='waiting_verification':
             messagebox.showinfo('Nothing to verify','Select a build whose files were generated but not tested.');return
         project=Path(j['project']);cmd=self._verification_command(project)
@@ -1941,6 +2122,15 @@ class DeepThorTDesktop(tk.Tk):
 
     def _execute_job(self,j):
         jobid=j['id']
+        if j['mode']=='build':
+            graph=self.graphs.status(jobid)
+            if graph and graph['state']=='invalidated':
+                self.jobs.change(jobid,'needs_input',
+                    'Previous graph approval was invalidated; approve a NEW project plan',
+                    allowed=('queued',))
+                self._log(f'Job #{jobid}: cancelled old plan execution after source rollback.')
+                self._refresh_jobs()
+                return
         record(STATE,'desktop','job_claim_attempt',job_id=jobid,mode=j['mode'])
         if not self.jobs.change(jobid,'running','Processing local job',allowed=('queued',)):
             return
@@ -2148,10 +2338,27 @@ class DeepThorTDesktop(tk.Tk):
                                       f'{step["path"]}: {str(exc)[:180]}')
                     if authority is not None:
                         try:
-                            dest = apply_approved_file(Path(j['project']), step['path'], code,
-                                STATE/'backups', expected_existing_sha=authority['before_sha256'])
-                            evidence = record_file(STATE/'project-grants', j,
-                                self.jobs.steps(jobid), step, enabled=True)
+                            steps_now=self.jobs.steps(jobid)
+                            lease=None
+                            if self.graphs.exists(jobid):
+                                # Graph lease is recorded BEFORE filesystem mutation.
+                                lease=self.graphs.begin_action(j,steps_now,'write',f'file:{step["id"]}')
+                            try:
+                                dest = apply_approved_file(Path(j['project']), step['path'], code,
+                                    STATE/'backups', expected_existing_sha=authority['before_sha256'])
+                                evidence = record_file(STATE/'project-grants', j,
+                                    self.jobs.steps(jobid), step, enabled=True)
+                                if lease:
+                                    self.graphs.record_artifact(j,self.jobs.steps(jobid),step,evidence['sha256'])
+                                    check=self.checkpoints.capture(j,self.jobs.steps(jobid),'artifact_saved')
+                                    if check['files'].get(evidence['path'])!=evidence['sha256']:
+                                        raise CheckpointError('Source changed between approval and checkpoint receipt')
+                                    self.graphs.finish_action(lease,jobid,'saved')
+                            except BaseException:
+                                if lease:
+                                    try:self.graphs.finish_action(lease,jobid,'interrupted')
+                                    except GraphError:pass
+                                raise
                             self.jobs.set_step(step['id'], 'saved',
                                 'Job-authorized reversible write; SHA-256 recorded; not tested')
                             self.jobs.change(jobid, 'queued',
@@ -2160,7 +2367,7 @@ class DeepThorTDesktop(tk.Tk):
                             self._log(f'Job #{jobid}: authorized source write {dest}; '
                                       f'SHA256 {evidence["sha256"][:16]}…; backup retained.')
                             self._refresh_files()
-                        except (GrantError, WorkspaceError, OSError, ValueError) as exc:
+                        except (GrantError, GraphError, CheckpointError, WorkspaceError, OSError, ValueError) as exc:
                             self.jobs.change(jobid, 'needs_input',
                                 'Automatic file write needs attention: ' + str(exc),
                                 result=answer, allowed=('running',))
@@ -2245,8 +2452,28 @@ class DeepThorTDesktop(tk.Tk):
         if self.proposal_job is not None:
             parent=self.jobs.get(self.proposal_job)
             if parent and parent['mode']=='build' and self.proposal_step is not None:
-                self.jobs.set_step(self.proposal_step,'saved','User approved; not yet tested')
-                self.jobs.change(self.proposal_job,'queued',f'Saved {target}; next build stage queued',allowed=('waiting_approval',))
+                if self.graphs.exists(parent['id']):
+                    steps=self.jobs.steps(parent['id'])
+                    matching=[x for x in steps if x['id']==self.proposal_step and x['path']==target]
+                    try:
+                        if len(matching)!=1:raise GraphError('Manual review step no longer matches approved graph')
+                        receipt=record_file(STATE/'project-grants',parent,steps,matching[0],enabled=True)
+                        self.graphs.record_artifact(parent,steps,matching[0],receipt['sha256'])
+                        check=self.checkpoints.capture(parent,steps,'manual_review_save')
+                        if check['files'].get(receipt['path'])!=receipt['sha256']:
+                            raise CheckpointError('Manually reviewed source changed before checkpoint evidence')
+                    except (GrantError,GraphError,CheckpointError,WorkspaceError,OSError,ValueError) as exc:
+                        self.jobs.change(parent['id'],'needs_input',
+                            'Manually reviewed source was saved, but graph/approval evidence failed: '+str(exc)[:240],
+                            allowed=('waiting_approval',))
+                        self._log(f'Job #{parent["id"]}: manual source saved; graph must be reconciled: {exc}')
+                    else:
+                        self.jobs.set_step(self.proposal_step,'saved','User approved; graph SHA recorded; not yet tested')
+                        self.jobs.change(self.proposal_job,'queued',
+                            f'Saved {target}; graph evidence recorded; next stage queued',allowed=('waiting_approval',))
+                else:
+                    self.jobs.set_step(self.proposal_step,'saved','User approved; not yet tested')
+                    self.jobs.change(self.proposal_job,'queued',f'Saved {target}; next build stage queued',allowed=('waiting_approval',))
             else:
                 self.jobs.change(self.proposal_job,'waiting_verification','User saved proposed file; code NOT tested',allowed=('waiting_approval',))
         self._log('User-approved project file saved: '+str(dest))
@@ -3764,9 +3991,23 @@ class DeepThorTDesktop(tk.Tk):
                                     verification_output['argv'],engine_report=engine)
                         except (OSError,ValueError) as exc:
                             self._log(f'Approved test exited 0 but source evidence was not captured: {exc}')
+                    current_job=self.jobs.get(job_id)
                     outcome=(code==0 and snapshot is not None)
                     cycle_result=None
                     was_stopped=(was_auto_verification and job_id in self._stopped_auto_tests)
+                    if was_auto_verification:
+                        lease=self._graph_test_leases.pop(job_id,None)
+                        if lease:
+                            try:
+                                self.graphs.finish_action(lease,job_id,
+                                    'interrupted' if was_stopped else 'passed' if outcome else 'failed')
+                                if not was_stopped and self.graphs.exists(job_id):
+                                    self.graphs.test_finished(current_job,self.jobs.steps(job_id),
+                                        bool(outcome),snapshot if outcome else None,
+                                        check['assurance'] if check else '')
+                            except (GraphError,OSError,ValueError) as exc:
+                                self._log(f'Job #{job_id}: task graph test evidence incomplete: {exc}')
+                                outcome=False
                     if was_stopped:
                         self._stopped_auto_tests.discard(job_id)
                         try:self.cycles.block(job_id,'User explicitly stopped the test; no automatic repair')
@@ -3823,6 +4064,10 @@ class DeepThorTDesktop(tk.Tk):
                                 event[2]=='verification')
                 if was_auto_error:
                     self._auto_verification_in_flight=None
+                    lease=self._graph_test_leases.pop(event[4],None)
+                    if lease:
+                        try:self.graphs.finish_action(lease,event[4],'interrupted')
+                        except GraphError:pass
                     self._stopped_auto_tests.discard(event[4])
                     try:self.cycles.block(event[4],
                         'Test process failed to launch: '+str(event[3])[:250])

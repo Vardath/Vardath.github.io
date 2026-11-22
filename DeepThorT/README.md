@@ -1,3 +1,11 @@
+# DeepThorT v42 — evidence-backed task dependencies and source rollback (23 November 2026)
+
+**Local Qwen ONNX only; original JANUS, Sentinel, eight-tab desktop and Windows gaming constraints preserved.** After an explicitly approved plan, a persisted task graph records linked requirements, exact source artifacts, observed verification tools and real test evidence without fabricating success. Source checkpoints preserve the approved baseline and successive generated/ONNX-repaired file revisions under `state/source-checkpoints`. Work queue has a deliberately explicit **Restore source checkpoint…** action which safely quarantines newly created files and invalidates the old plan approval, graph and tests. External edits and corrupt/missing checkpoint blobs block restoration. Job-bound action leases prevent silent replay after interruption.
+
+**Install as an overlay over an existing v41 install**; preserve `DeepThorT.exe`, `models`, `state`, `node_modules`, `cache`, `reference`, projects and user files. The ZIP is NOT a standalone Windows installer. Tests run as the user and are not sandboxed. Read `PROJECT_CONTEXT_V42.md` and `TEST_RESULTS_V42.md`. Windows end-to-end acceptance remains outstanding.
+
+---
+
 # DeepThorT v41 — bounded local diagnose/repair/retest development cycle
 
 Version 41 adds a durable per-approved-job build/test/failure/repair/retest
