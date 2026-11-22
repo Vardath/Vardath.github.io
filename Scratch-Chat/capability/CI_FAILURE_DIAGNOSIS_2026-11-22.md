@@ -1,0 +1,7 @@
+# Scratch Chat CI diagnosis — 2026-11-22
+
+Verified GitHub Actions run 44958336270 (source tests, head 3cdcf4e) completed **failure**. Job 137011334021 installed PyTorch successfully. The checkpoint-independent dialogue suite ran 37 tests, with 36 passing and one failing: `test_metadata_disguised_dialogue_duplicate_rejected`. The implementation correctly rejected the contaminated cross-split prompt, raising `ValueError: Cross-split repeated user prompt: train:1 and validation:1`; the test incorrectly required only `Repeated normalized dialogue`. The seven other separately executed suites passed (3 + 2 + 3 + 2 + 6 + 5 + 4 tests). Compilation was skipped because the prior step failed. NumPy was absent, causing a PyTorch warning, not the test failure.
+
+Commit f016fb9 updates the assertion to accept either legitimate duplicate-detection guard while still requiring a ValueError. This is a test-expectation repair, not a relaxation of dataset validation. New push CI must be checked independently before claiming green.
+
+Remaining capability gates: licensed revision-pinned substantial dialogue corpus; decontaminated splits; original-weight dialogue training and reproducible checkpoint; independent multi-turn/tool-use scores; actual DeepThorT process integration. No conversational success is inferred from these unit tests. GitHub-hosted CPU remains appropriate for bounded tests/pilots only.
