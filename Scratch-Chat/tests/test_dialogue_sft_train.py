@@ -22,6 +22,35 @@ class SFTTrainTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 read_examples(p, 16, 16)
 
+    def test_resumed_training_matches_uninterrupted_weights(self):
+        """A checkpoint resume must reproduce the exact original-weight trajectory."""
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            train, valid = root / "train.jsonl", root / "valid.jsonl"
+            write_rows(train, [
+                {"input_ids": [1, 2, 3, 4], "labels": [-100, -100, 3, 4]},
+                {"input_ids": [1, 2, 5, 6], "labels": [-100, -100, 5, 6]},
+                {"input_ids": [1, 2, 7, 8], "labels": [-100, -100, 7, 8]},
+            ])
+            write_rows(valid, [
+                {"input_ids": [1, 9, 10, 11], "labels": [-100, -100, 10, 11]}
+            ])
+            settings = dict(vocab_size=16, width=16, layers=1, heads=2,
+                            context_size=16, seed=42)
+            uninterrupted = root / "full.pt"
+            resumed = root / "resume.pt"
+            run(train, valid, uninterrupted, steps=5, **settings)
+            run(train, valid, resumed, steps=2, **settings)
+            run(train, valid, resumed, steps=5, resume=True, **settings)
+            a = torch.load(uninterrupted, weights_only=True)
+            b = torch.load(resumed, weights_only=True)
+            self.assertEqual(a["step"], b["step"])
+            self.assertEqual(a["immutable"], b["immutable"])
+            self.assertEqual(a["validation_assistant_loss"], b["validation_assistant_loss"])
+            for name, tensor in a["model_state"].items():
+                self.assertTrue(torch.equal(tensor, b["model_state"][name]), name)
+            self.assertTrue(torch.equal(a["rng_state"], b["rng_state"]))
+
     def test_train_resume_and_provenance(self):
         with tempfile.TemporaryDirectory() as d:
             train, valid, checkpoint = (Path(d) / x for x in ("train.jsonl", "valid.jsonl", "pilot.pt"))
