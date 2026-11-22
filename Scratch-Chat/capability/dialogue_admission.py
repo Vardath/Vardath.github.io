@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import unicodedata
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROLES = {"system", "user", "assistant", "tool"}
@@ -27,6 +28,7 @@ def audit(manifest_path, train_path, validation_path, test_path):
     results = {}
     seen_ids, seen_dialogues = set(), set()
     split_signatures = []
+    token_index = defaultdict(set)
     for split, path in (("train", train_path), ("validation", validation_path), ("test", test_path)):
         raw = Path(path).read_bytes()
         digest = hashlib.sha256(raw).hexdigest()
@@ -55,17 +57,25 @@ def audit(manifest_path, train_path, validation_path, test_path):
             if normalized in seen_dialogues:
                 raise ValueError(f"{split}: cross-split or within-split duplicate dialogue")
             seen_dialogues.add(normalized)
-            # Cross-split lexical near-duplicate screening; not semantic deduplication.
-            from collections import Counter
-            tokens = Counter(re.findall(r"\w+", canonical(" ".join(m["content"] for m in messages))))
-            for prior_split, prior_tokens in split_signatures:
-                if prior_split == split or min(sum(tokens.values()), sum(prior_tokens.values())) < 12:
+            # Exact indexed candidate retrieval: any positive multiset Jaccard
+            # pair shares at least one token. Avoid comparing unrelated records.
+            tokens = Counter(re.findall(r"\\w+", canonical(" ".join(m["content"] for m in messages))))
+            token_count = sum(tokens.values())
+            candidates = set()
+            for token in tokens:
+                candidates.update(token_index[token])
+            for prior_index in sorted(candidates):
+                prior_split, prior_tokens, prior_count = split_signatures[prior_index]
+                if prior_split == split or min(token_count, prior_count) < 12:
                     continue
                 overlap = sum((tokens & prior_tokens).values())
-                union = sum((tokens | prior_tokens).values())
+                union = token_count + prior_count - overlap
                 if union and overlap / union >= 0.85:
                     raise ValueError(f"{split}: near-duplicate dialogue across {prior_split} split")
-            split_signatures.append((split, tokens))
+            index = len(split_signatures)
+            split_signatures.append((split, tokens, token_count))
+            for token in tokens:
+                token_index[token].add(index)
             count += 1
         if not count:
             raise ValueError(f"{split}: empty split")
