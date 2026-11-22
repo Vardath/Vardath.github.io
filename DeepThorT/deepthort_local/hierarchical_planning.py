@@ -22,6 +22,10 @@ from .specification_library import sha
 from .requirements_intelligence import (requirement_candidates, dependency_order,
                                        declared_dependencies, check_dependency_schedule)
 from .workspace import safe_target
+from .acceptance_contracts import inspect_model_contracts, source_ambiguities
+from .semantic_reconciliation import (reconcile_explicit_requirements,
+    acceptance_candidates, audit_python_interfaces, verified_sources_current,
+    declared_requirement_dependencies)
 
 MAX_MILESTONE_FILES = 12       # comfortably below the existing 24-file queue limit
 MAX_SCOPE_SOURCE_CHARS = 4400 # exact excerpts, no truncation
@@ -226,6 +230,17 @@ class HierarchicalPlanStore:
         candidates = requirement_candidates(original, rows)
         if rows and not candidates:
             raise PlanError('No identifiable source requirement candidates; original is retained')
+        declared_requirement_dependencies(original,candidates)
+        reconciliation = reconcile_explicit_requirements(original, candidates)
+        # Validate only explicit, model-authored test and public-API declarations.
+        # Missing source remains pending; no test is performed or assumed here.
+        inspect_model_contracts(project,ordered_steps,original,candidates)
+        if reconciliation['blocking_conflicts']:
+            issue = reconciliation['blocking_conflicts'][0]
+            raise PlanError('Original specification contains conflicting explicit requirements '
+                f'in sections {issue["left"]["section"]} and {issue["right"]["section"]}: '
+                f'{issue["left"]["source"]!r} versus {issue["right"]["source"]!r}. '
+                'These exact source demands need user clarification before approval; no files queued.')
         with self._db() as db:
             db.execute('INSERT INTO hierarchy_roots(request_id,chat_id,project,source_sha256,model_steps_sha256,section_count,milestone_count) VALUES(?,?,?,?,?,?,?)',
                        (request_id,chat_id,project,source_digest,digest,len(rows),len(groups)))
@@ -294,7 +309,7 @@ class HierarchicalPlanStore:
         return root,rows,milestone_rows,master_steps
 
     def status(self, index, request_id: int, original: str) -> dict:
-        root, rows, milestones, _ = self._checked(index,request_id,original)
+        root, rows, milestones, master_steps = self._checked(index,request_id,original)
         verified = sum(m['state']=='verified' for m in milestones)
         summary={
             'request_id': request_id, 'chat_id': root['chat_id'],
@@ -304,6 +319,7 @@ class HierarchicalPlanStore:
             'milestones_queued': sum(m['state']=='queued' for m in milestones),
             'complete': verified == len(milestones), 'next_approvable': None,
             'blocked_reason': '',
+            'acceptance_confirmed': False,  # A green build is not proof that requirements were met.
         }
         for m in milestones:
             if m['state'] == 'verified':
@@ -315,6 +331,21 @@ class HierarchicalPlanStore:
                     summary['blocked_reason']=f'Milestone {m["ordinal"]} depends on verified completion of milestone {m["ordinal"]-1}'
             else:
                 summary['blocked_reason']=f'Milestone {m["ordinal"]} has job #{m["job_id"]}; verification required'
+                if m['state']=='queued':
+                    static=audit_python_interfaces(root['project'], master_steps)
+                    errors=[issue for issue in static['issues'] if issue['kind'] in
+                            ('source_parse_error','missing_local_export')]
+                    if errors:
+                        issue=errors[0]
+                        summary['blocked_reason']=(f'Milestone {m["ordinal"]} static Python interface error: '
+                            f'{issue["kind"]} in {issue["path"]}; repair source and rerun approved verification')
+                    else:
+                        requirements=requirement_candidates(original,rows)
+                        contracts=inspect_model_contracts(root['project'],master_steps,original,requirements)
+                        if contracts['issues']:
+                            issue=contracts['issues'][0]
+                            summary['blocked_reason']=(f'Milestone {m["ordinal"]} static contract: '
+                                f'{issue["state"]} in {issue["path"]}; repair and retest')
             break
         return summary
 
@@ -356,20 +387,62 @@ class HierarchicalPlanStore:
                 raise PlanError('Milestone was already queued')
 
     def reconcile_jobs(self,index,request_id: int,original: str,jobs) -> dict:
-        """Only the existing approved verification path can advance the roadmap.
+        """Advance only fresh, approved build tests; revoke stale downstream work.
 
-        A saved file or tool exit claim from the model is never enough. A failed
-        test, cancelled job, or unapproved tool command cannot promote status.
+        A source snapshot is captured by the desktop after an approved test
+        command actually exits 0. A later source edit invalidates that test.
+        Legacy v25/v26 jobs without snapshots remain readable, but cannot gain
+        stronger historical guarantees retroactively.
         """
-        root,_,milestones,_=self._checked(index,request_id,original)
-        for m in milestones:
-            if m['state']!='queued' or not m['job_id']:
+        root,_,milestones,master_steps=self._checked(index,request_id,original)
+        for i,m in enumerate(milestones):
+            if m['state'] not in ('queued','verified') or not m['job_id']:
                 continue
             job=jobs.get(m['job_id'])
             if not job:
                 continue
-            saved_steps=jobs.steps(job['id'])
             expected_steps=json.loads(m['steps_json'])
+            saved_snapshot=None
+            if job.get('result'):
+                try:
+                    saved_snapshot=json.loads(job['result'])
+                except (ValueError,TypeError):
+                    saved_snapshot={'invalid': True}
+            if saved_snapshot is not None and not verified_sources_current(
+                    root['project'],expected_steps,saved_snapshot):
+                reason=('Verified source files changed or verification evidence is invalid; '
+                        'run an explicitly approved build check again')
+                if job['state']=='complete':
+                    jobs.change(job['id'],'waiting_verification',reason,allowed=('complete',))
+                if m['state']=='verified':
+                    # A dependent milestone's previous green result may no
+                    # longer apply after the dependency changed. Recheck it.
+                    for later in milestones[i:]:
+                        if later['state']!='verified':
+                            continue
+                        with self._db() as db:
+                            db.execute("UPDATE hierarchy_milestones SET state='queued' "
+                                       "WHERE request_id=? AND ordinal=? AND state='verified'",
+                                       (request_id,later['ordinal']))
+                        if later['job_id'] and later['job_id']!=job['id']:
+                            dependent=jobs.get(later['job_id'])
+                            if dependent and dependent['state']=='complete':
+                                jobs.change(dependent['id'],'waiting_verification',
+                                    'A prerequisite milestone changed; rerun approved verification',
+                                    allowed=('complete',))
+                continue
+            if m['state']=='verified':
+                continue
+            # Never promote a later milestone when the immediately preceding
+            # one is no longer verified, including after any stale evidence.
+            if m['ordinal']>1:
+                with self._db() as db:
+                    predecessor=db.execute(
+                        'SELECT state FROM hierarchy_milestones WHERE request_id=? AND ordinal=?',
+                        (request_id,m['ordinal']-1)).fetchone()
+                if predecessor is None or predecessor['state']!='verified':
+                    continue
+            saved_steps=jobs.steps(job['id'])
             expected_key=(f'milestone:{request_id}:{m["ordinal"]}:{sha(original)[:16]}')
             ok=(job['state']=='complete' and job['mode']=='build' and
                 job['project']==root['project'] and job['chat_id']==root['chat_id'] and
@@ -380,10 +453,67 @@ class HierarchicalPlanStore:
                 [(s['path'],s['description']) for s in saved_steps] ==
                 [(s['path'],s['description']) for s in expected_steps])
             if ok:
+                static = audit_python_interfaces(root['project'], master_steps)
+                # Only existing source gives a hard error; absent planned code
+                # stays unverified and is never represented as a static pass.
+                blockers=[finding for finding in static['issues'] if finding['kind'] in
+                    ('source_parse_error','missing_local_export')]
+                if blockers:
+                    jobs.change(job['id'],'waiting_verification',
+                        'Static Python interface checks failed: '
+                        +str(blockers[0])[:350]+'; repair source then rerun approved verification',
+                        allowed=('complete',))
+                    continue
+                criteria=requirement_candidates(original,self._source_rows(index,request_id,original))
+                contract_review=inspect_model_contracts(root['project'],master_steps,original,criteria)
+                if contract_review['issues']:
+                    issue=contract_review['issues'][0]
+                    jobs.change(job['id'],'waiting_verification',
+                        'Declared acceptance/interface contract not present in source: '
+                        +str(issue)[:340]+'; repair and rerun approved verification',
+                        allowed=('complete',))
+                    continue
                 with self._db() as db:
-                    db.execute("UPDATE hierarchy_milestones SET state='verified' WHERE request_id=? AND ordinal=? AND state='queued' AND job_id=?",
+                    db.execute("UPDATE hierarchy_milestones SET state='verified' "
+                               "WHERE request_id=? AND ordinal=? AND state='queued' AND job_id=?",
                                (request_id,m['ordinal'],job['id']))
         return self.status(index,request_id,original)
+
+    def semantic_report(self, index, request_id: int, original: str, *, limit: int = 500) -> dict:
+        """Exact-source contradiction findings; no automatic resolution."""
+        self._checked(index, request_id, original)
+        if not 1 <= limit <= 10000:
+            raise ValueError('Semantic report limit must be 1..10000')
+        with self._db() as db:
+            rows=db.execute('SELECT requirement_id,section_ordinal,start_char,end_char,source_sha256 '
+                'FROM hierarchy_requirements WHERE request_id=? ORDER BY section_ordinal,start_char',
+                (request_id,)).fetchall()
+        candidates=[]
+        for r in rows:
+            if sha(original[r['start_char']:r['end_char']]) != r['source_sha256']:
+                raise PlanError('Requirement evidence no longer matches the original specification')
+            candidates.append({'id':r['requirement_id'],'section_ordinal':r['section_ordinal'],
+                'start_char':r['start_char'],'end_char':r['end_char']})
+        if not candidates:
+            candidates=requirement_candidates(original,self._source_rows(index,request_id,original))
+        conflicts=reconcile_explicit_requirements(original,candidates)
+        acceptance=acceptance_candidates(original,candidates,limit=limit)
+        explicit_edges=declared_requirement_dependencies(original,candidates)
+        return {**conflicts,'acceptance':acceptance,
+                'advisory_ambiguities':source_ambiguities(original,candidates),
+                'explicit_requirement_dependencies':explicit_edges,
+                'status':'conservative exact-match review; no semantic completeness or test success claimed'}
+
+    def acceptance_contract_report(self, index, request_id: int, original: str) -> dict:
+        """Static test/API declarations, traced back to exact user requirements."""
+        root,rows,_,steps=self._checked(index,request_id,original)
+        candidates=requirement_candidates(original,rows)
+        return inspect_model_contracts(root['project'],steps,original,candidates)
+
+    def interface_report(self, index, request_id: int, original: str) -> dict:
+        """Read-only local Python module audit, not a runtime/build pass."""
+        root,_,_,steps=self._checked(index,request_id,original)
+        return audit_python_interfaces(root['project'],steps)
 
     def requirement_report(self, index, request_id: int, original: str, *, limit: int = 500) -> dict:
         """Auditable candidates: file links indicate review scope, not proof of implementation."""
