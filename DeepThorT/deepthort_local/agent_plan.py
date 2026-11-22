@@ -21,6 +21,16 @@ MAX_PLAN_ATTEMPTS = 40
 
 def project_kind(request: str) -> str:
     request = request or ''
+    # A new Android game may cite X4 as an inspiration; it must not be forced
+    # through the unrelated X4 extension preflight/validator on that basis.
+    actual_android_game = re.search(
+        r'\b(?:faction command|android\s+(?:2d\s+)?game|mobile\s+(?:2d\s+)?game|'
+        r'game\s+(?:for\s+)?android)\b', request, re.I)
+    explicit_x4_mod = re.search(
+        r'\b(?:x4\s+(?:foundations\s+)?(?:mod|extension)|mod\s+for\s+x4|xenon\s+pe)\b',
+        request, re.I)
+    if actual_android_game and not explicit_x4_mod:
+        return 'android_game'
     if re.search(r'\b(?:x4(?::?\s+foundations)?|egosoft|xenon\s+pe)\b', request, re.I):
         return 'x4'
     if re.search(r'\b(?:game|faction command|apk)\b', request, re.I) and re.search(
