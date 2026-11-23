@@ -56,7 +56,7 @@ jobs:
             {"method":"unknown"},
             {"method":"health"}
           ]
-          payload="".join(json.dumps(x)+"\\n" for x in requests[:6])+"{malformed\\n"+json.dumps(requests[6])+"\\n"
+          payload="".join(json.dumps(x)+"\n" for x in requests[:6])+"{malformed\n"+json.dumps(requests[6])+"\n"
           p=subprocess.run([sys.executable,"-m","capability.deepthort_bridge","--checkpoint","checkpoints/dialogue-smoke.pt","--tokenizer","data/dialogue-smoke/tokenizer.json"],input=payload,text=True,capture_output=True,timeout=90,check=True)
           rows=[json.loads(x) for x in p.stdout.splitlines()]
           assert len(rows)==8,(p.stdout,p.stderr)
