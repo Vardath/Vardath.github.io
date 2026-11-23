@@ -50,6 +50,7 @@ jobs:
               'test_probe_scoring.py',
               'test_pilot_artifact_hashes.py',
               'test_answer_leakage_audit.py',
+              'test_capacity_plan.py',
           ]
           failed = []
           for pattern in patterns:
