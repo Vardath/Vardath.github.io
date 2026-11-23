@@ -59,11 +59,13 @@ def evaluate(cases_path, predictions_path):
     details = {}
     for identifier, case in cases.items():
         messages = case.get("messages")
-        if not isinstance(messages, list) or len(messages) < 1 or messages[-1].get("role") != "user":
+        if not isinstance(messages, list) or not messages or not isinstance(messages[-1], dict) or messages[-1].get("role") != "user":
             raise ValueError(f"{identifier}: evaluation prompt must end in user turn")
         if not all(isinstance(m, dict) and m.get("role") in ("system", "user", "assistant", "tool")
                    and isinstance(m.get("content"), str) for m in messages):
             raise ValueError(f"{identifier}: invalid messages")
+        if not isinstance(predictions[identifier], dict):
+            raise ValueError(f"{identifier}: prediction must be an object")
         details[identifier] = score_case(case, predictions[identifier].get("response"))
     passed = sum(int(x["passed"]) for x in details.values())
     return {"passed": passed, "total": len(details), "pass_rate": passed / len(details),
