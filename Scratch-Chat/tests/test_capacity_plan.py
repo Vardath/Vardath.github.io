@@ -14,7 +14,7 @@ class CapacityPlanTests(unittest.TestCase):
 
     def test_rejects_invalid_rope_head(self):
         with self.assertRaises(ValueError):
-            estimate(300, 48, 2, 8, 256)
+            estimate(300, 40, 2, 8, 256)
 
     def test_optimizer_lower_bound(self):
         result = estimate(300, 64, 2, 4, 256)
