@@ -55,9 +55,9 @@ class SourceManifestTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             examples = {
-                "train": [{"messages": [{"role": "user", "content": "alpha"}]}],
-                "validation": [{"messages": [{"role": "user", "content": "beta"}]}],
-                "test": [{"messages": [{"role": "user", "content": "gamma"}]}],
+                "train": [{"messages": [{"role": "user", "content": "alpha"}, {"role": "assistant", "content": "one"}]}],
+                "validation": [{"messages": [{"role": "user", "content": "beta"}, {"role": "assistant", "content": "two"}]}],
+                "test": [{"messages": [{"role": "user", "content": "gamma"}, {"role": "assistant", "content": "three"}]}],
             }
             for split, records in examples.items():
                 raw = "".join(json.dumps(record) + "\n" for record in records).encode()
@@ -108,9 +108,9 @@ class SourceManifestTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             records = {
-                "train": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "First question"}]}],
-                "validation": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "Different turn"}]}],
-                "test": [{"source_conversation_id": "thread-99", "messages": [{"role": "user", "content": "Independent question"}]}],
+                "train": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "First question"}, {"role": "assistant", "content": "First reply"}]}],
+                "validation": [{"source_conversation_id": "thread-42", "messages": [{"role": "user", "content": "Different turn"}, {"role": "assistant", "content": "Second reply"}]}],
+                "test": [{"source_conversation_id": "thread-99", "messages": [{"role": "user", "content": "Independent question"}, {"role": "assistant", "content": "Third reply"}]}],
             }
             for split, examples in records.items():
                 raw = "".join(json.dumps(item) + "\n" for item in examples).encode()
