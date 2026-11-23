@@ -366,7 +366,8 @@ class SpecificationIndex:
 def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, session: str,
                           original: str, project: str | Path, *, max_rounds: int=40,
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
-                          continuous: bool = False) -> tuple[str,list[dict]]:
+                          continuous: bool = False,
+                          neural_council: bool = False, inspected_evidence: str = '') -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -448,7 +449,8 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 client,index,hierarchy,request_id,session,original,project,
                 chat_id=chat_id,
                 max_rounds=(max_rounds if continuous else max_rounds-section_calls),
-                stage=stage,cancelled=cancelled,continuous=continuous)
+                stage=stage,cancelled=cancelled,continuous=continuous,
+                neural_council=neural_council,inspected_evidence=inspected_evidence)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:

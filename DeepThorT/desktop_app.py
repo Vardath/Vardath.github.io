@@ -89,6 +89,7 @@ from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_co
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
 from deepthort_local.inspection_exclusions import InspectionExclusions
+from deepthort_local.project_source_view import relevant_x4_sources, read_verified_x4_source
 from deepthort_local.plan_continuation import PlanContinuation
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
@@ -121,7 +122,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='49',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='50',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -260,6 +261,8 @@ class DeepThorTDesktop(tk.Tk):
         self.x4_catalog_tool = ''
         self.x4_report = None
         self._x4_report_project = None
+        self._file_rows = {}
+        self._visible_project_paths = []
         try:
             x4_settings=json.loads(self.x4_settings_file.read_text('utf-8'))
             if isinstance(x4_settings,dict):
@@ -342,6 +345,11 @@ class DeepThorTDesktop(tk.Tk):
                   bg=PANEL,fg=MUTED,justify='left',wraplength=255)
         self.project_label.pack(anchor='w',padx=11,pady=(5,8))
         ttk.Button(left,text='Refresh project files',command=self._refresh_files).pack(fill='x',padx=10,pady=3)
+        ttk.Button(left,text='Auto-discover X4 sources',command=self._inspect_x4_sources).pack(fill='x',padx=10,pady=3)
+        self.show_all_project_files=tk.BooleanVar(value=True)
+        tk.Checkbutton(left,text='Show all workspace files',variable=self.show_all_project_files,
+                       command=self._render_project_files,bg=PANEL,fg=TEXT,selectcolor=PANEL,
+                       activebackground=PANEL,activeforeground=TEXT).pack(anchor='w',padx=10)
         tk.Label(left,text='PROJECT FILES',fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(9,4))
         self.files=ttk.Treeview(left,show='tree',selectmode='browse');self.files.pack(fill='both',expand=True,padx=9,pady=(0,8))
         self.files.bind('<<TreeviewSelect>>',self._on_file)
@@ -775,9 +783,16 @@ class DeepThorTDesktop(tk.Tk):
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
         for row in self.files.get_children():self.files.delete(row)
         self.project_label.config(text=str(self.project))
+        self.show_all_project_files.set('x4' not in self.project.name.casefold())
         self.settings_file.write_text(json.dumps({'project':str(self.project)},indent=2),encoding='utf-8')
         self._log('Selected project: '+str(self.project))
+        self._x4_report_project = None  # Never display source evidence from the previous output workspace.
+        self.x4_report = None
+        self._file_rows.clear()
+        self._visible_project_paths = []
         self._refresh_files();self._refresh_tasks();self._refresh_chats();self._refresh_jobs();self._refresh_inventory()
+        if 'x4' in self.project.name.casefold() and not self.disk_gate.gaming():
+            self._inspect_x4_sources()  # Read-only, bounded automatic installation/reference lookup.
     def _refresh_chats(self):
         project=self._project_key()
         threads=self.chats.list(project)
@@ -936,6 +951,75 @@ class DeepThorTDesktop(tk.Tk):
                 self.events.put(('files',target,paths))
             except Exception as e:self.events.put(('log','Project scan failed: '+str(e)))
         threading.Thread(target=worker,daemon=True).start()
+    def _current_project_file_scope(self):
+        """Files an existing plan/job actually named, not a guess at an X4 asset."""
+        allowed=set()
+        if self.current_file:
+            allowed.add(str(self.current_file).casefold())
+        try:
+            for job in self.jobs.items(str(self.project),limit=30):
+                if job['state'] in ('cancelled','failed'):
+                    continue
+                for step in self.jobs.steps(job['id']):
+                    allowed.add(step['path'].casefold())
+        except (OSError,ValueError):
+            pass
+        try:
+            if self.current_chat:
+                for request in self.conversations.thread(self.current_chat,limit=12):
+                    if request['mode']!='draft_plan':
+                        continue
+                    for step in self.specifications.merged_steps(request['id'],request['prompt']):
+                        allowed.add(step['path'].casefold())
+        except (OSError,ValueError):
+            # Incomplete roadmaps may have conflicting model proposals: never
+            # turn conflicting source into an approved or assumed file scope.
+            pass
+        return allowed
+
+    def _render_project_files(self):
+        """Live project files and a short *read-only* verified game-reference list.
+
+        The selected workspace is the OUTPUT folder. Reference files are never
+        copied there, entered into the approval queue or made writable.
+        """
+        if not self.project:
+            return
+        for row in self.files.get_children():
+            self.files.delete(row)
+        self._file_rows.clear()
+        visible=self.inspection_exclusions.filter(self.project,self._visible_project_paths)
+        if not self.show_all_project_files.get():
+            active=self._current_project_file_scope()
+            visible=[path for path in visible if path.casefold() in active]
+        for path in visible:
+            row=self.files.insert('','end',text=path)
+            self._file_rows[row]=('project',path)
+        if (not isinstance(self.x4_report,dict) or
+                self._x4_report_project!=str(self.project)):
+            return
+        entries=[item for item in relevant_x4_sources(self.x4_report)
+                 if '__reference_x4__/'+item['file'] not in
+                    self.inspection_exclusions.paths(self.project)]
+        if entries:
+            parent=self.files.insert('','end',text='X4 GAME REFERENCES (read-only)',open=True)
+            self._file_rows[parent]=('heading',None)
+            for entry in entries:
+                row=self.files.insert(parent,'end',text=entry['role']+': '+entry['file'])
+                self._file_rows[row]=('x4_reference',entry)
+
+    def _hide_x4_reference(self, entry):
+        """Hide a reference from inspection; never delete or change game XML."""
+        if not self.project:
+            return
+        try:
+            self.inspection_exclusions.exclude(self.project,'__reference_x4__/'+entry['file'])
+        except (ValueError,OSError) as exc:
+            messagebox.showerror('Cannot hide reference',str(exc),parent=self)
+            return
+        self._render_project_files()
+        self._log('Hidden read-only X4 reference from inspection: '+entry['file'])
+
     def _project_file_context_menu(self, event):
         """Right-click inspection list. Never mutate a project/game file."""
         row=self.files.identify_row(event.y)
@@ -943,10 +1027,13 @@ class DeepThorTDesktop(tk.Tk):
             self.files.selection_set(row)
             self.files.focus(row)
         menu=tk.Menu(self,tearoff=False)
-        if row and self.project:
-            relative=self.files.item(row,'text')
+        kind,value=self._file_rows.get(row,('project',self.files.item(row,'text') if row else None))
+        if row and self.project and kind=='project':
             menu.add_command(label='Exclude from inspection (keep file on disk)',
-                             command=lambda r=relative:self._exclude_project_file(r))
+                             command=lambda r=value:self._exclude_project_file(r))
+        elif row and self.project and kind=='x4_reference':
+            menu.add_command(label='Hide X4 reference (game file unchanged)',
+                             command=lambda e=value:self._hide_x4_reference(e))
         menu.add_command(label='Restore excluded project files…',command=self._restore_project_files)
         menu.add_separator()
         menu.add_command(label='Refresh project file list',command=self._refresh_files)
@@ -960,9 +1047,7 @@ class DeepThorTDesktop(tk.Tk):
             self.capabilities.exclude_project_paths(self.project,[relative])
         except (ValueError,OSError) as exc:
             messagebox.showerror('Inspection exclusion failed',str(exc),parent=self);return
-        for row in self.files.get_children():
-            if self.files.item(row,'text').casefold()==relative.casefold():
-                self.files.delete(row)
+        self._render_project_files()
         if self.current_file and self.current_file.casefold()==relative.casefold():
             self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
             self.file_title.set('File excluded from inspection (unchanged on disk)')
@@ -1006,7 +1091,23 @@ class DeepThorTDesktop(tk.Tk):
     def _on_file(self,_event=None):
         chosen=self.files.selection()
         if not chosen or not self.project:return
-        name=self.files.item(chosen[0],'text')
+        kind,value=self._file_rows.get(chosen[0],('project',self.files.item(chosen[0],'text')))
+        if kind=='heading':
+            return
+        if kind=='x4_reference':
+            self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
+            self.attach_file.set(False)
+            self.file_title.set('Read-only X4 source: '+value['file'])
+            try:
+                contents=read_verified_x4_source(value)
+                self._preview('EXTRACTED VANILLA REFERENCE — INSPECTION ONLY. '
+                              'NOT AN OUTPUT FILE; cannot edit or queue.\n'
+                              'Source: '+value['reference_dir']+'\n'
+                              'SHA-256: '+value['sha256']+'\n\n'+contents)
+            except (OSError,ValueError,UnicodeError) as exc:
+                self._preview('Reference unavailable or changed: '+str(exc))
+            return
+        name=value
         self.current_file=name;self.proposed=None;self.proposal_job=None;self.proposal_step=None
         self.file_title.set('Preview: '+name)
         try:self._preview(read_project_file(self.project,name))
@@ -1497,6 +1598,7 @@ class DeepThorTDesktop(tk.Tk):
                        if r['id']!=ident]
                 x4_context=x4_request_in_context(original,project_dir=request['project'],
                                                   previous_prompts=prior)
+                inspected_x4_evidence = ''
                 if x4_context and not (request['mode']=='draft_plan' and project_kind(original)=='android_game'):
                     self.events.put(('conversation_stage',ident,'Inspecting installed X4 files and verified vanilla XML'))
                     record(STATE,'desktop','x4_auto_preflight_started',request_id=ident,mode=request['mode'])
@@ -1512,6 +1614,7 @@ class DeepThorTDesktop(tk.Tk):
                     if not report['ready_for_planning']:
                         self.events.put(('x4_preflight_needed', ident, report))
                         return
+                    inspected_x4_evidence=x4_evidence_for_prompt(report)
                     if request['mode']=='chat' and is_x4_inspection_request(original,x4_context=x4_context):
                         self.events.put(('x4_inspection_reply',ident,report))
                         return
@@ -1546,7 +1649,9 @@ class DeepThorTDesktop(tk.Tk):
                         request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
                         cancelled=cancelled, hierarchy=self.hierarchies,
-                        chat_id=request['chat_id'],continuous=True)
+                        chat_id=request['chat_id'],continuous=True,
+                        neural_council=bool(x4_context),
+                        inspected_evidence=inspected_x4_evidence)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -2825,8 +2930,10 @@ class DeepThorTDesktop(tk.Tk):
         project=self.project;game=self.x4_game_dir;ref=self.x4_reference_dir
         def worker():
             try:
-                result=inspect_x4_sources(project_dir=project,game_dir=game,reference_dir=ref)
-                self.events.put(('x4_sources',result))
+                result=automatic_x4_preflight(
+                    project_dir=project,app_root=ROOT,game_dir=game,reference_dir=ref,
+                    catalog_tool=self.x4_catalog_tool)
+                self.events.put(('x4_sources',result,str(project)))
             except Exception as exc:self.events.put(('x4_sources_error',str(exc)))
         threading.Thread(target=worker,daemon=True,name='X4Inspection').start()
 
@@ -2835,6 +2942,8 @@ class DeepThorTDesktop(tk.Tk):
         req=self.conversations.get(ident)
         if not req or req['state']!='running':return
         self.x4_report=report
+        self._x4_report_project=str(self.project)
+        self._render_project_files()
         game=report.get('game_dir')
         if game and not self.x4_game_dir:
             self.x4_game_dir=game;self._save_x4_paths()
@@ -4268,6 +4377,7 @@ class DeepThorTDesktop(tk.Tk):
                 if self.x4_report.get('reference_dir') and not self.x4_reference_dir:
                     self.x4_reference_dir=self.x4_report['reference_dir'];self._save_x4_paths()
                 self._show(self.x4_source_info,format_x4_inspection(self.x4_report))
+                self._render_project_files()
                 self._log('X4 initial-request preflight: game '+
                           ('found' if self.x4_report['game_dir'] else 'not found')+
                           ', extracted references '+
@@ -4285,6 +4395,8 @@ class DeepThorTDesktop(tk.Tk):
                     'X4 extraction verification failed: '+event[2],allowed=('waiting_sources',))
                 self._reload_chat()
             elif kind=='x4_sources':
+                if len(event)>2 and str(self.project)!=str(event[2]):
+                    continue  # Stale background scan from a different selected project
                 self.x4_report=event[1]
                 self._x4_report_project=str(self.project)
                 snapshot=summarize_x4_report(self.x4_report,
@@ -4296,16 +4408,19 @@ class DeepThorTDesktop(tk.Tk):
                        candidates=snapshot['candidate_counts'],blocked=snapshot['blocked_reasons'])
                 if self.x4_report.get('game_dir') and not self.x4_game_dir:
                     self.x4_game_dir=self.x4_report['game_dir'];self._save_x4_paths()
+                if self.x4_report.get('reference_dir') and not self.x4_reference_dir:
+                    self.x4_reference_dir=self.x4_report['reference_dir'];self._save_x4_paths()
                 self._show(self.x4_source_info,format_x4_inspection(self.x4_report))
+                self._render_project_files()
                 self._log('X4 source inspection: '+('reference candidates found' if self.x4_report['ready_for_planning'] else 'vanilla references not yet available'))
             elif kind=='x4_sources_error':
                 self._show(self.x4_source_info,'X4 inspection failed: '+event[1])
                 self._log('X4 inspection failed: '+event[1])
             elif kind=='files':
                 if event[1]==self.project:
-                    for x in self.files.get_children():self.files.delete(x)
+                    self._visible_project_paths = event[2]
+                    self._render_project_files()
                     visible=self.inspection_exclusions.filter(self.project,event[2])
-                    for path in visible:self.files.insert('','end',text=path)
                     self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
                               f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])

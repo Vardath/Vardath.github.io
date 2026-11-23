@@ -1,3 +1,15 @@
+# After v50 — next development steps
+
+1. **Test source discovery on the real Windows installation.** Verify exact X4 game and extracted reference directories and PE macro/component SHA receipts; recover from missing extracted XML through existing explicitly approved official XRCatTool path. Never treat `D:\x4mods` as vanilla XML.
+2. **Benchmark neural council quality under the same 20% Windows cap.** Compare v49/v50 acceptance closure per model call on the exact nine X4 deficits, inspect counsel suggestions, and diagnose out-of-window/context failures. If it stalls, try independent testable subcontracts with source-backed evidence, not longer unproductive loops.
+3. **Expand council beyond indexed X4 planning.** Persist cognitive hypotheses, counterexamples and verified hypothesis outcomes in JANUS/Sentinel for approved build/retest, code, Android and documentation projects. Ensure factual errors are rejected by external tests, not peer agreement.
+4. **Improve resource-scoped model flexibility.** Only after measured A/B comparisons, optionally launch a better local model as a child of the same capped supervisor; never restore uncapped Llama/llama.cpp subprocesses or cloud inference by default.
+5. **Verified end-to-end mod build and playtest.** Complete and approve actual X4 PE extension and non-destructive disposable staging, then review in-game evidence rather than static XML alone. Preserve user's game install, saves, equipment and current play.
+
+20% aggregate Windows CPU/committed-memory policy, existing original launcher, no automatic UAC bypass, separate milestone approvals and project-scoped authority remain unchanged. This is not yet a months-long complete autonomous game production pipeline.
+
+---
+
 # DeepThorT next steps — after v49 (23 November 2026)
 
 **Verified v49 scope:** Long indexed specifications can traverse multiple 40-call review/correction batches while *objective* coverage progresses, and pause on 8 consecutive correction calls without a closed acceptance check. Durable per-call acceptance receipts, original sections and model-authored file proposals are retained across restart and explicit retry. There is still no newly approved source file, game process, or test until the user authorizes the relevant milestone. The diagnostics prompting this change had 40 actual correction requests, 9 persistent missing checks and zero generated files.

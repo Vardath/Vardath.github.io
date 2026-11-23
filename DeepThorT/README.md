@@ -1,3 +1,15 @@
+# DeepThorT v50 — active JANUS/Sentinel neural consultation and X4 source workset (23 November 2026)
+
+**First:** JANUS and Sentinel's eleven-core Fano societies remain independent deterministic persistent coordinators; v50 adds real sequential reasoning consultations by the *same* already-capped local Qwen ONNX model for a stuck X4 plan. JANUS proposes concrete alternative hypotheses; Sentinel challenges the evidence; neither can approve, execute or fabricate success. Only the actual X4 validator and an approved build can establish progress. New responses are persisted and visible as recommendations. They are **not separate trained neural models**.
+
+**Project files:** `D:\x4mods` is a mod **output workspace**, not the installed X4 game's source. X4 has already supported automatic Steam/GOG installation and extracted-reference detection, but previous versions kept verified vanilla XML invisible in the sidebar. v50 auto-discovers references for selected X4 workspaces, displays only a small useful set of hash-verified vanilla XML in a separately labelled **read-only** tree group, and lets the user preview or hide references without altering X4. The new **Show all workspace files** toggle defaults off in X4 folders; files explicitly named by a local plan or approved job stay in the editable project list, unrelated files are not shown until toggled. Choose **Auto-discover X4 sources** if necessary; missing extracted XML still requires approved extraction. There is no guessing/modification of game files or automatic filing of fictitious project files.
+
+**Safety and limits:** Same Qwen2.5-Coder-1.5B ONNX, same Windows 20% aggregate cap, original launcher, JANUS/Sentinel societies, eight Tk tabs, game prioritization, versioned checkpoints, no arbitrary autonomous installations or model swap, no approval bypass. Two additional neural council calls per qualifying X4 stall use the same supervised model worker; this may be slow but is bounded and persistence-backed. Council hypotheses remain unverified until genuine tests. No actual live Qwen or native Windows X4 playtest is claimed. See `PROJECT_CONTEXT_V50.md` and `TEST_RESULTS_V50.md`.
+
+**Install:** Close DeepThorT, back up `D:\deepthort\state`, and extract this verified source overlay over your existing v49 Windows install. Preserve `DeepThorT.exe`, `models`, `state`, `reference`, `cache`, `node_modules` and all projects. Source overlay is not a standalone installer.
+
+---
+
 # DeepThorT v49 — productive long-running X4 planning (23 November 2026)
 
 **Evidence:** The 23 November 2026 14:43 diagnostics showed an indexed Xenon PE request running for approximately 79 minutes. All 40 correction calls completed, but all **9 X4 plan validator checks remained unsatisfied**, with no authorized files produced. The local Qwen model was still operating at about 18.4% CPU with ~2.2 GiB resident memory; extending this failed correction loop alone would not have created a mod.
