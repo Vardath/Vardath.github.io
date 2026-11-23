@@ -1,3 +1,7 @@
+DeepThorT v49 — productive long-project planning
+Large specifications now advance through additional 40-call batches when accepted sections or X4 validator checks genuinely improve. Eight consecutive unproductive corrections pause, preserving progress instead of repeating the same dead end. This is planning, not automatic project approval or full autonomous game production. The original 20% Windows CPU/memory safeguards remain.
+To upgrade: close DeepThorT, back up D:\deepthort\state, extract the v49 SOURCE OVERLAY into D:\deepthort; preserve DeepThorT.exe, models, node_modules, state, reference, cache and projects.
+
 DeepThorT v48 — indexed X4 roadmap retry fix
 
 For a long X4 specification that repeatedly showed REPLY FAILED even though all sections were already reviewed, retry now requests targeted local-model corrections and persists useful model-proposed files. It does not silently approve incomplete plans. The 40-pass planning budget, local Qwen model and 20% CPU cap are unchanged. The startup diagnostic version field now identifies v48 accurately.

@@ -1,3 +1,20 @@
+# DeepThorT v49 — productive long-running X4 planning (23 November 2026)
+
+**Evidence:** The 23 November 2026 14:43 diagnostics showed an indexed Xenon PE request running for approximately 79 minutes. All 40 correction calls completed, but all **9 X4 plan validator checks remained unsatisfied**, with no authorized files produced. The local Qwen model was still operating at about 18.4% CPU with ~2.2 GiB resident memory; extending this failed correction loop alone would not have created a mod.
+
+**v49 corrections:**
+- Desktop indexed planning now automatically continues into additional **40-model-call batches** if the previous batch verified *real progress*: a source section reviewed or an X4 acceptance check closed. The 40 counter measures **one batch**, not the permitted project lifetime or file count. All original specification text and reviewed sections remain in SQLite between launches. Cancellation remains available.
+- After **eight consecutive unproductive X4 corrections**, the current active run pauses with a specific status instead of burning hours/days rewriting the same unresolved requirements. A user-requested retry may resume saved proposals; unsuccessful calls are never presented as completed work.
+- Progress is measured by previously unmet acceptance checks that actually close, not by tokens generated or descriptions rewritten. Audit records survive app restarts. Corrections may not reopen satisfied X4 requirements, including by adding new assets without their matching registration entries.
+- The focused ONNX correction input now shows only one missing acceptance goal, up to three related saved file descriptions, and **one exact unchanged original specification section**, rather than nine competing objectives in one reply.
+- GUI startup version marker now reads 49.
+
+**Scope and limitations:** This is automatically continued **planning** of indexed large requirements, *not* unrestricted multi-month unattended application development. Existing explicit build/milestone approvals, file backups, resource constraints and game testing limitations remain. If the 1.5B local model cannot solve even one acceptance check, progress-based control deliberately stops and the model, evidence or strategy must change. A completed plan remains unbuilt until actually approved and executed. No new cloud model, inference engine or Windows resource allowance is introduced.
+
+**Upgrade:** Close DeepThorT; back up `D:\deepthort\state`; extract this source overlay into `D:\deepthort`. Keep `DeepThorT.exe`, ONNX `models`, `state`, `node_modules`, `cache`, references and projects.
+
+---
+
 # DeepThorT v48 — repair incomplete indexed X4 plans (23 November 2026)
 
 **Fix for `REPLY FAILED` after retrying a fully reviewed large X4 specification:** Previously, once a 7,422-character request had been indexed and its sections reviewed, the hierarchical roadmap validator could reject missing `content.xml`, `md/*.xml`, asset/equipment XML and ship-behaviour coverage **without making another Qwen model request**. A retry raised the same failure in seconds. v48 now re-opens exact saved section evidence, asks the local ONNX model for a focused JSON correction, validates and persists new model-authored proposals, then rechecks the complete original X4 specification. The existing 40-call budget applies; incomplete corrections are retained for future retries. No generated mod files are written before explicit plan approval.

@@ -1,3 +1,15 @@
+# DeepThorT next steps — after v49 (23 November 2026)
+
+**Verified v49 scope:** Long indexed specifications can traverse multiple 40-call review/correction batches while *objective* coverage progresses, and pause on 8 consecutive correction calls without a closed acceptance check. Durable per-call acceptance receipts, original sections and model-authored file proposals are retained across restart and explicit retry. There is still no newly approved source file, game process, or test until the user authorizes the relevant milestone. The diagnostics prompting this change had 40 actual correction requests, 9 persistent missing checks and zero generated files.
+
+**High priority v50:** Improve the local 1.5B model's X4 planning correctness, not merely its retry budget: test actual source-specific model outputs, durable per-criterion contracts and conditional narrowing, report which of the 9 checks stay unresolved, verify real PE macro/connection references against installed X4. Add a fallback to smaller independent subplans with explicit requirement coverage; never fabricate X4 identifiers or allow incomplete proposals to masquerade as a working mod. After completion, build and validate a real extension in `D:\x4mods` under explicit approval.
+
+**Long-project roadmap:** Plan a *project-scoped* autonomous task scheduler that carries approved design → code → test → diagnosis → repair → retest across restarts, with evidence, milestones, resource monitoring, backups and bounded retries. Currently **automated continuation is only for indexed planning**, not autonomous approval of later milestones or unattended X4/RimWorld/Android playtesting. The user's 20% Windows CPU/commit cap and foreground-game priority must remain enforced across all spawned children; GPU usage still needs a separate guard.
+
+**Windows acceptance:** Run v49 on the actual 20% capped Windows installation with Qwen ONNX. Look for "batch 2" only after measurable progress. If it pauses after 8 zero-gain corrections, compare before/after missing-check lists and capture logs. Check Stop reply/cancel, app restart, original spec hashes, no unauthorized files, and absence of false project-approval states.
+
+---
+
 # DeepThorT next steps — after v48 (23 November 2026)
 
 v48 closes a blocking path in indexed X4 planning: when all source sections have been reviewed but the combined roadmap is still missing mandatory X4 files/behaviours, retry runs model-authored, scope-bound corrections instead of failing instantly from unchanged cached proposals. Source sections remain exact and indexed; structurally safe corrections are persisted and still require current full-domain validation and individual approval. v48 also corrects the stale startup version field.

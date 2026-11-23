@@ -66,6 +66,13 @@ class SpecificationIndex:
                   section_ordinal INTEGER NOT NULL, source_sha256 TEXT NOT NULL,
                   prompt_sha256 TEXT NOT NULL,
                   PRIMARY KEY(request_id,serial));
+                CREATE TABLE IF NOT EXISTS specification_revision_outcomes (
+                  request_id INTEGER NOT NULL, serial INTEGER NOT NULL,
+                  source_sha256 TEXT NOT NULL, before_gaps INTEGER NOT NULL,
+                  after_gaps INTEGER NOT NULL, checks_closed INTEGER NOT NULL,
+                  checks_opened INTEGER NOT NULL, total_files INTEGER NOT NULL,
+                  accepted INTEGER NOT NULL, made_progress INTEGER NOT NULL,
+                  PRIMARY KEY(request_id,serial));
             ''')
 
     @contextmanager
@@ -186,6 +193,50 @@ class SpecificationIndex:
                 (request_id,serial,ordinal,sha(original),sha(prompt)))
         return serial
 
+    def record_revision_outcome(self, request_id: int, original: str, serial: int,
+                                before: list[str], after: list[str], *,
+                                file_count: int, accepted: bool) -> dict:
+        """Persist objective validator progress, not merely model activity.
+
+        A changed description or extra proposed file does not count as
+        acceptance progress until an actual previously unmet check closes.
+        Review history is retained across a manual retry or application restart.
+        """
+        self._verified_rows(request_id, original)
+        before_set, after_set = set(before), set(after)
+        closed, opened = before_set-after_set, after_set-before_set
+        with self._db() as db:
+            attempt = db.execute('SELECT source_sha256 FROM specification_revision_attempts '
+                                 'WHERE request_id=? AND serial=?',
+                                 (request_id,serial)).fetchone()
+            if not attempt or attempt[0] != sha(original):
+                raise ValueError('Revision attempt is not part of this exact specification')
+            db.execute("""INSERT INTO specification_revision_outcomes
+                (request_id,serial,source_sha256,before_gaps,after_gaps,
+                 checks_closed,checks_opened,total_files,accepted,made_progress)
+                VALUES (?,?,?,?,?,?,?,?,?,?)""",
+                (request_id,serial,sha(original),len(before_set),len(after_set),
+                 len(closed),len(opened),file_count,int(accepted),
+                 int(bool(closed) and not opened)))
+        return self.roadmap_stall_status(request_id, original)
+
+    def roadmap_stall_status(self, request_id: int, original: str) -> dict:
+        self._verified_rows(request_id,original)
+        with self._db() as db:
+            history = db.execute("""SELECT serial,made_progress,checks_closed,
+                checks_opened,after_gaps,total_files FROM specification_revision_outcomes
+                WHERE request_id=? AND source_sha256=? ORDER BY serial DESC""",
+                (request_id,sha(original))).fetchall()
+        consecutive=0
+        for _,progress,*_ in history:
+            if progress: break
+            consecutive+=1
+        return {'recorded_attempts':len(history),
+                'unproductive_in_a_row':consecutive,
+                'last_gap_count':history[0][4] if history else None,
+                'last_file_count':history[0][5] if history else None,
+                'checks_closed_total':sum(row[2] for row in history if row[1])}
+
     def merge_model_revision(self, request_id: int, original: str, ordinal: int,
                              answer: str, *, project: str | Path) -> bool:
         """Persist ONLY a structurally valid model correction to one exact section.
@@ -228,8 +279,13 @@ class SpecificationIndex:
         before = set(remaining_plan_gaps(combined(own.values()),original))
         after = set(remaining_plan_gaps(combined(new.values()),original))
         new_paths = set(new)-set(own)
-        if not new_paths and after-before:
-            raise PlanError('Correction would remove satisfied X4 requirements: '+
+        if after-before:
+            # New paths must not be used to excuse replacing already accepted
+            # descriptions with regressions. This guards against oscillating
+            # coverage during many hours of low-resource ONNX revisions. A
+            # newly required index must be proposed in the SAME correction as
+            # the asset that introduced it.
+            raise PlanError('Correction would introduce unmet X4 requirements: '+
                             '; '.join(sorted(after-before)))
         with self._db() as db:
             cursor=db.execute('UPDATE specification_sections SET steps_json=? '
@@ -309,7 +365,8 @@ class SpecificationIndex:
 
 def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, session: str,
                           original: str, project: str | Path, *, max_rounds: int=40,
-                          stage=None, cancelled=None, hierarchy=None, chat_id: str = '') -> tuple[str,list[dict]]:
+                          stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
+                          continuous: bool = False) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -324,16 +381,27 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             stage(f'Recovered {inherited} already reviewed large-document sections '
                   'from exact matching local historical state; not a build approval')
     section_calls=0
-    for attempt in range(max_rounds):
+    section_batch=0
+    reviewed_this_batch=0
+    consecutive_invalid=0
+    while True:
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; indexed specification remains saved')
         row=index.next_section(request_id,original)
         if row is None:
             break
+        if section_calls >= (section_batch+1)*max_rounds:
+            if not continuous or not reviewed_this_batch:
+                break
+            section_batch += 1
+            reviewed_this_batch = 0
+            if stage:
+                stage(f'Indexed source checkpoint saved after {section_calls} model calls; '
+                      'starting another 40-call batch because reviewed sections advanced')
         if stage:
             stage(f'Large-document review: section {row["ordinal"]+1}/{row["total"]}; '
-                  f'model calls in this batch {attempt+1}/{max_rounds} '
-                  '(not a file count or total-project limit)')
+                  f'model call {(section_calls % max_rounds)+1}/{max_rounds} in batch '
+                  f'{section_batch+1} (not a file count or total-project limit)')
         prompt=index.model_prompt(request_id,original)
         exchange=f'{session}-spec-{row["ordinal"]}-{row["attempts"]}'
         lookup=getattr(client,'completed_exchange',None)
@@ -345,8 +413,15 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             raise PlanError('Planning stopped by user; no additional sections marked complete')
         try:
             index.save_response(request_id,original,row['ordinal'],response,project=project)
+            reviewed_this_batch+=1
+            consecutive_invalid=0
         except PlanError as exc:
+            consecutive_invalid+=1
             if stage:stage(f'Large specification section {row["ordinal"]+1} rejected: {exc}')
+            if continuous and consecutive_invalid>=8:
+                raise PlanError('Large-document review paused after 8 invalid model replies '
+                    'without a reviewed section. Original sections and saved proposals '
+                    'remain intact; further identical inference is not productive.') from exc
     progress=index.status(request_id,original)
     if progress['pending']:
         raise PlanError(f'Large specification stored without truncation: {progress["reviewed"]}/{progress["sections"]} '
@@ -371,8 +446,9 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             from .indexed_roadmap_repair import repair_indexed_roadmap
             summary=repair_indexed_roadmap(
                 client,index,hierarchy,request_id,session,original,project,
-                chat_id=chat_id,max_rounds=max_rounds-section_calls,
-                stage=stage,cancelled=cancelled)
+                chat_id=chat_id,
+                max_rounds=(max_rounds if continuous else max_rounds-section_calls),
+                stage=stage,cancelled=cancelled,continuous=continuous)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:

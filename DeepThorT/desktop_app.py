@@ -121,7 +121,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='48',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='49',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -1546,7 +1546,7 @@ class DeepThorTDesktop(tk.Tk):
                         request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
                         cancelled=cancelled, hierarchy=self.hierarchies,
-                        chat_id=request['chat_id'])
+                        chat_id=request['chat_id'],continuous=True)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -1687,9 +1687,9 @@ class DeepThorTDesktop(tk.Tk):
             return
         self.active_conversation=None
         self.reply_stage=''
-        planning_incomplete = str(error).startswith('Indexed X4 roadmap remains incomplete')
+        planning_incomplete = str(error).startswith(('Indexed X4 roadmap ', 'Large-document review paused', 'Large specification stored without truncation'))
         notice = ('PLAN STILL INCOMPLETE — reviewed sections and valid corrections saved; '
-                  'retry continues missing X4 files.' if planning_incomplete else
+                  'review acceptance gaps before retrying; no source was built.' if planning_incomplete else
                   f'REPLY FAILED — {str(error)[:180]}. Request preserved for retry.')
         self.reply_outcome={'chat_id':req['chat_id'] if req else self.current_chat,
              'message':notice}
