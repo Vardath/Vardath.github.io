@@ -1,4 +1,5 @@
 import json
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,7 +13,7 @@ class NearDuplicateAuditTests(unittest.TestCase):
             for prompt in prompts:
                 f.write(json.dumps({"messages": [
                     {"role": "user", "content": prompt},
-                    {"role": "assistant", "content": "Acknowledged."}
+                    {"role": "assistant", "content": hashlib.sha256(prompt.encode("utf-8")).hexdigest()}
                 ]}) + "\n")
 
     def test_normalized_near_duplicate_across_splits_fails(self):
