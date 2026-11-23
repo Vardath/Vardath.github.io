@@ -71,6 +71,7 @@ jobs:
           python -m capability.dialogue_acceptance --checkpoint checkpoints/dialogue-smoke.pt --tokenizer data/dialogue-smoke/tokenizer.json --output dialogue-acceptance.json
           python -m json.tool dialogue-acceptance.json > /dev/null
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: scratch-chat-original-dialogue-smoke
           retention-days: 30
