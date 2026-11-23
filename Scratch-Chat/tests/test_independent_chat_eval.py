@@ -26,5 +26,14 @@ class IndependentChatEvalTests(unittest.TestCase):
             preds.write_text(json.dumps({"id":"multi-turn-1","response":"You said hello."})+"\n",encoding="utf-8")
             self.assertEqual(evaluate(cases,preds)["passed"],1)
 
+    def test_malformed_last_message_is_rejected_cleanly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cases, preds = Path(tmp)/"cases.jsonl", Path(tmp)/"predictions.jsonl"
+            preds.write_text(json.dumps({"id":"bad","response":"hello"})+"\\n",encoding="utf-8")
+            for bad in (None, "user", 3, [], {"content":"hello"}):
+                cases.write_text(json.dumps({"id":"bad","messages":[bad],"expected":"hello"})+"\\n",encoding="utf-8")
+                with self.subTest(bad=bad), self.assertRaises(ValueError):
+                    evaluate(cases,preds)
+
 if __name__ == "__main__":
     unittest.main()
