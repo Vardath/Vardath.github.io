@@ -1,3 +1,23 @@
+DEEPTHORT v53 — RUN LATEST TEST
+
+Open Processes and click Run latest test. The app uses LATEST_TEST.json
+from this source update to choose the latest shipped acceptance checks.
+Each future update can replace that profile while keeping the same button.
+A report and verified diagnostic ZIP are saved automatically under:
+  D:\deepthort\state\latest-tests
+  D:\deepthort\diagnostics
+No Save As dialog, project file edits or game launch are required.
+Stop latest test cancels outstanding checks. The council ONNX may take
+several minutes to load under the shared 30% CPU resource cap.
+An inconclusive concurrent-model test is not proof of a failure.
+
+DeepThorT v52 — diagnostic export and JANUS model visibility.
+Export diagnostics now verifies the ZIP before claiming success. A second verified copy is always in D:\deepthort\diagnostics; exact selected/retained paths and SHA-256 are in state\last-diagnostic-export.json. Use Processes > Locate latest diagnostics to find it later, or open the folder from the save-success dialog.
+JANUS/Sentinel now display a specific secondary ONNX wait reason (primary loading/stopped, model loading, shared cap, RAM, current inference, or repeated crash). Processes > Retry JANUS model manually restarts failed secondary startup attempts without interrupting an active interpretation. Instructions remain saved, no approved build is rewritten, and the two workers still share ONE 30% CPU cap.
+Close DeepThorT, back up D:\deepthort\state, extract v52 source overlay into D:\deepthort replacing source files. Preserve executable, models, state, node_modules, reference, cache and projects. Read PROJECT_CONTEXT_V52.md and TEST_RESULTS_V52.md. Actual Windows worker startup/behavior still needs testing.
+
+---
+
 DeepThorT v51 — two local Qwen ONNX workers under ONE capped Windows process tree.
 Reported hardware: 40 GB RAM. Shared ceiling: 30% total system CPU, maximum 30% job committed memory (adaptive downward if RAM low); NOT 30% per model.
 Type an instruction in Chats and choose 'Instruction to JANUS' (Ctrl+Shift+Return) while the implementation model works. The original is saved; JANUS and Sentinel use secondary local ONNX for a next-step recommendation and separate challenge. Only future UNAPPROVED planning steps may consume that advice. View or retry it in JANUS & Sentinel > Instruction inbox. Changes to approved work need another approved plan.

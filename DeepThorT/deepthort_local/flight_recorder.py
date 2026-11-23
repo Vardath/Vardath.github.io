@@ -13,6 +13,9 @@ from logging.handlers import RotatingFileHandler
 import os
 from pathlib import Path
 import platform
+import tempfile
+import hashlib
+import shutil
 import re
 import sqlite3
 import sys
@@ -142,7 +145,7 @@ def _db_summary(dbpath, kind):
             for table in ('janus_status','janus_events','janus_actions'):
                 if table in existing:
                     cols=[x[1] for x in conn.execute(f'PRAGMA table_info({table})')]
-                    safe=[x for x in ('id','state','detail','last_focus','cycle','updated_at','stamp','level','kind','status','returncode','pid') if x in cols]
+                    safe=[x for x in ('id','state','detail','last_focus','cycle','paused','updated_at','stamp','level','kind','status','returncode','pid') if x in cols]
                     if safe:
                         output[table]=[dict(x) for x in conn.execute(f'SELECT {",".join(safe)} FROM {table} ORDER BY rowid DESC LIMIT 40')]
         if kind=='sentinel':
@@ -153,6 +156,62 @@ def _db_summary(dbpath, kind):
                     if safe:
                         output[table]=[dict(x) for x in conn.execute(f'SELECT {",".join(safe)} FROM {table} ORDER BY rowid DESC LIMIT 40')]
     return scrub(output)
+
+
+def verify_diagnostics_archive(path):
+    """Verify completed ZIP, CRC and readable summary before reporting success."""
+    path = Path(path)
+    if not path.is_file() or path.stat().st_size < 120:
+        raise OSError('Diagnostic ZIP is missing or too small')
+    with zipfile.ZipFile(path, 'r') as z:
+        names=z.namelist()
+        if 'summary.json' not in names:
+            raise ValueError('Diagnostic ZIP lacks summary.json')
+        bad=z.testzip()
+        if bad:
+            raise ValueError('Diagnostic ZIP has a corrupt member: '+bad)
+        info=json.loads(z.read('summary.json'))
+        if not isinstance(info,dict) or info.get('diagnostics_format') != 1:
+            raise ValueError('Unrecognized diagnostic format')
+    return {'path':str(path.resolve()),'size':path.stat().st_size,
+            'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+
+
+def retain_diagnostic_copy(source, backup, receipt_path):
+    """Always keep a predictable copy and an exact path receipt.
+
+    Does not invent a success if the primary export or retained copy is missing.
+    """
+    src=verify_diagnostics_archive(source)
+    target=Path(backup)
+    target.parent.mkdir(parents=True,exist_ok=True)
+    if Path(src['path']) != target.resolve():
+        fd,tmp=tempfile.mkstemp(prefix='.deepthort-diagnostic-',suffix='.zip',dir=target.parent)
+        try:
+            with os.fdopen(fd,'wb') as out, open(source,'rb') as inp:
+                shutil.copyfileobj(inp,out)
+                out.flush();os.fsync(out.fileno())
+            verify_diagnostics_archive(tmp)
+            os.replace(tmp,target)
+        finally:
+            if os.path.exists(tmp):os.unlink(tmp)
+    retained=verify_diagnostics_archive(target)
+    if src['sha256'] != retained['sha256']:
+        raise ValueError('Retained diagnostic copy failed SHA-256 comparison')
+    receipt={'chosen_path':src['path'],'retained_path':retained['path'],
+             'sha256':src['sha256'],'bytes':src['size'],
+             'saved_utc':dt.datetime.now(dt.timezone.utc).isoformat()}
+    destination=Path(receipt_path)
+    destination.parent.mkdir(parents=True,exist_ok=True)
+    fd,tmp=tempfile.mkstemp(prefix='.diagnostic-receipt-',suffix='.json',dir=destination.parent)
+    try:
+        with os.fdopen(fd,'w',encoding='utf-8') as out:
+            json.dump(receipt,out,indent=2)
+            out.flush();os.fsync(out.fileno())
+        os.replace(tmp,destination)
+    finally:
+        if os.path.exists(tmp):os.unlink(tmp)
+    return receipt
 
 
 def export_diagnostics(state, destination, *, app_root=None, app_state=None):
@@ -188,19 +247,27 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
         try: summary['storage'][name]=_db_summary(state/f'{name}.sqlite3',name)
         except Exception as error: summary['storage'][name]={'inspection_error': scrub(str(error))}
     summary=scrub(summary)
-    with zipfile.ZipFile(destination,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-        z.writestr('summary.json',json.dumps(summary,indent=2,ensure_ascii=False,default=str))
-        logs=state/'logs'
-        if logs.is_dir():
-            for item in sorted(logs.glob('*.jsonl*')):
-                if item.is_file() and item.stat().st_size <= LOG_BYTES+5000:
-                    z.write(item,arcname='logs/'+item.name)
-        # Preserve existing action output logs only as short redacted tails; arbitrary tools
-        # can output credentials or entire file contents, so NEVER include raw files.
-        for item in sorted((state/'janus-process-logs').glob('action-*.log'))[-20:]:
-            if item.is_file():
-                with item.open('rb') as handle:
-                    if item.stat().st_size>4096:handle.seek(-4096,2)
-                    tail=handle.read().decode('utf-8',errors='replace')
-                z.writestr('action-output-tails/'+item.name+'.redacted.txt', scrub(tail))
+    fd,temp_path=tempfile.mkstemp(prefix='.deepthort-export-',suffix='.zip',dir=destination.parent)
+    os.close(fd)
+    try:
+        with zipfile.ZipFile(temp_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+            z.writestr('summary.json',json.dumps(summary,indent=2,ensure_ascii=False,default=str))
+            logs=state/'logs'
+            if logs.is_dir():
+                for item in sorted(logs.glob('*.jsonl*')):
+                    if item.is_file() and item.stat().st_size <= LOG_BYTES+5000:
+                        z.write(item,arcname='logs/'+item.name)
+            # Preserve existing action output logs only as short redacted tails; arbitrary tools
+            # can output credentials or entire file contents, so NEVER include raw files.
+            for item in sorted((state/'janus-process-logs').glob('action-*.log'))[-20:]:
+                if item.is_file():
+                    with item.open('rb') as handle:
+                        if item.stat().st_size>4096:handle.seek(-4096,2)
+                        tail=handle.read().decode('utf-8',errors='replace')
+                    z.writestr('action-output-tails/'+item.name+'.redacted.txt', scrub(tail))
+        verify_diagnostics_archive(temp_path)
+        os.replace(temp_path,destination)
+        verify_diagnostics_archive(destination)
+    finally:
+        if os.path.exists(temp_path):os.unlink(temp_path)
     return destination

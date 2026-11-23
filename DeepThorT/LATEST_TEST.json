@@ -1,0 +1,14 @@
+{
+  "schema": "deepthort-latest-test-v1",
+  "id": "v55-janus-instruction-handoff",
+  "title": "v55: dual ONNX, JANUS health and real instruction handoff",
+  "checks": [
+    "shared_cap",
+    "primary_onnx",
+    "council_onnx",
+    "janus_core",
+    "janus_inbox",
+    "council_inference",
+    "concurrent_status"
+  ]
+}

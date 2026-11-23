@@ -1,0 +1,7 @@
+# DeepThorT v56 — accessible JANUS instruction recovery
+
+Baseline: exact v55 source-overlay files. The 23 Nov user corrected the previous guidance: only a Chats **Retry failed reply** button was visible; JANUS inbox instructions could not be selected/retried in practice. The v55 code actually had a small fixed-height popup with its retry button under the tree and text widgets, and JANUS tab's one-row toolbar could overflow at display scaling. The user interface therefore did not fulfill the intended workflow on their Windows display.
+
+v56: a directly accessible, project-scoped JANUS instruction retry button on its own short toolbar row; durable SQLite transaction retries the newest failed neural interpretation only, preserving project boundaries. A DPI-aware resizable inbox places retry controls above the selectable/scrollable list, selects the newest item, and shows project/state details. Clear UX distinction between Chats reply retry and JANUS advisory instruction retry. No new approvals or source writes. Updated tooltips, guide, startup-version marker, tests and release evidence. Model and 30% shared Windows supervisor unchanged.
+
+Acceptance remaining: verify on actual 40 GB Windows PC with display scale and 30% capped two ONNX processes, then inspect actual translated action and handoff. Requeue is not proof of model comprehension, and the Xenon PE planning validator still has nine unmet checks. No automatic game test or complete mod is claimed.

@@ -307,6 +307,14 @@ class JanusSentinel:
                 detail='JANUS launched; awaiting first cycle'
             else:
                 status='needs_attention';detail='JANUS restart limit or launch error; inspect Sentinel events'
+        elif worker_alive and bool(j.get('paused')):
+            # JANUS intentionally pauses after lost desktop heartbeats or an explicit
+            # Pause JANUS action. A frozen cycle is EXPECTED while paused: do not
+            # misdiagnose it as a worker hang or restart an approved process.
+            status='paused'
+            detail='JANUS is paused; resume explicitly in JANUS & Sentinel when safe'
+            self.warned_stale=False
+            self.last_healthy_monotonic=now
         elif worker_alive and now-self.last_healthy_monotonic>self.stall_after:
             status='needs_attention'
             detail=f'JANUS cycle unchanged for {int(now-self.last_healthy_monotonic)}s; process alive, NOT killed automatically'
@@ -326,7 +334,7 @@ class JanusSentinel:
         goal=js.goal() or 'Monitor user-directed work and verify completion'
         janus_focus=str(j.get('last_focus') or '')
         janus_decision=str(j.get('last_action') or '')
-        off_task=bool((jobcounts['queued'] or jobcounts['running']) and
+        off_task=bool(not j.get('paused') and (jobcounts['queued'] or jobcounts['running']) and
                        janus_focus in ('idle','startup') and cycle>=2)
         # A running model at 20% CPU may legitimately need many minutes; detect
         # prolonged lack of evidence, never terminate an active process on age alone.

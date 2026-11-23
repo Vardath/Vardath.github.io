@@ -1,0 +1,58 @@
+{
+  "release": "v55",
+  "schema": "deepthort-v55-source-digest-v1",
+  "source_files": [
+    {
+      "path": ".github/workflows/deepthort-tests.yml",
+      "sha256": "953359ac79f5aa38591110f4e8832ff32f2f5373f39a3c2bf0812d1b1636383f"
+    },
+    {
+      "path": "desktop_app.py",
+      "sha256": "312b887a1408c3df764260c041824e0272c97d177e0594b3d5b7cc2260bb4633"
+    },
+    {
+      "path": "deepthort_local/dual_onnx.py",
+      "sha256": "cef9438fa1822805f1dd3ff9fa48b2aaa764a5d86ab2184d789f76c56c921d05"
+    },
+    {
+      "path": "deepthort_local/instruction_inbox.py",
+      "sha256": "869fa1d079decaae919246c3f61eb1f2e3696f7e077f97afa158e2088a3f83fd"
+    },
+    {
+      "path": "LATEST_TEST.json",
+      "sha256": "03f0a3dc7b9236e19a524e51622caa3a4cb650364caec5b50260cf36352ea4c0"
+    },
+    {
+      "path": "tests/test_janus_handoff_v55.py",
+      "sha256": "0e15eaeeb21709a2a3944dfaa1bc2275dc7ec30e10b4080e1f13db0c214bd4a2"
+    },
+    {
+      "path": "tests/test_latest_acceptance_v53.py",
+      "sha256": "1b457c71718906602ec020d535b0da76ceec8d62d2cab7f4297f41109803765a"
+    },
+    {
+      "path": "tests/test_janus_core_visibility_v54.py",
+      "sha256": "a8153a30e7de57ffa22c873a478b8539b3279b27b0ef4a15f0545223a9ac94fd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1e5a6410a7d81e5cf1bbd1840007c8544028756eb0b38eacdcc44697408627ab"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "e154eb278a80f5c3c24ad15e3e74e4631374a501c9ce75f133ce1b41cad8ff98"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "3515b42e11072b268d8511d49bfeee9bd0ff3267c2c00ce8d0b8ab6fe5bb226f"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V55.md",
+      "sha256": "b78881fabae3aa064a35505cbb3620c2fe19dc13b4e5f89e35e6bf548c2227a2"
+    },
+    {
+      "path": "TEST_RESULTS_V55.md",
+      "sha256": "3e17f7dd98d747a6148eafd82aafbb82ae3bca884e06ae6c89f8f13576cc1db2"
+    }
+  ]
+}

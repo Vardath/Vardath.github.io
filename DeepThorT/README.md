@@ -1,3 +1,54 @@
+# DeepThorT v56 — visible JANUS instruction retry (23 November 2026)
+
+**Usability fix:** Chats → Retry failed reply retries only an ordinary failed conversation, NOT a JANUS instruction. The earlier documentation incorrectly told the user to select an inbox row and click Retry failed interpretation, even though the fixed-size popup could hide its bottom-row buttons on a scaled display.
+
+The JANUS & Sentinel tab now has an always-visible **Retry latest failed JANUS instruction** button, adjacent to **Instruction inbox…** and separate from the Chats retry button. The action finds the most recent FAILED neural interpretation for the selected project and atomically requeues read-only JANUS/Sentinel inference. It preserves the exact message, other projects' instructions, already staged advice, original chat requests, approved builds, game files and source files. If no failed instruction exists in the selected project, it explains the distinction instead of silently doing nothing.
+
+The inbox popup now places retry/review controls ABOVE the file list and details, uses an adaptive window size and scrollbar, preselects the most recent instruction, and shows its project, state and original text. If the current workspace has no instructions but a different workspace does, it shows those other entries read-only until explicitly selected. No changes to the 30% shared Windows cap, models or underlying council inference were made. No live Windows model run is claimed; GUI and persistence regressions are tested under Xvfb.
+
+**Upgrade:** Close DeepThorT; back up `D:\deepthort\state`; extract the v56 source overlay over the v55 installation. Preserve DeepThorT.exe, ONNX models, state, node_modules, references and projects. In JANUS & Sentinel click **Retry latest failed JANUS instruction**, then monitor the inbox and use **Run latest test**. The user does not need to select a row merely to retry the latest failed interpretation.
+
+---
+
+# DeepThorT v55 — verified JANUS handoff status and bounded neural JSON recovery
+
+The 23 Nov 22:18/22:23 Windows diagnostics revealed a false positive: the JANUS inbox probe reported passed when a saved instruction had actually failed Qwen JSON interpretation. `Run latest test` now classifies a failed neural translation as BLOCKED, staged advice or pending instructions as INCONCLUSIVE, and only actual delivered-to-planner advice as PASSED. It never exports the original instruction text.
+
+JANUS and Sentinel each get one bounded structure-only retry if their Qwen reply is malformed or a fenced JSON object. Unsafe, invalid or unapproved changes remain prohibited. The nine Xenon PE planning gaps are still unresolved; no claim of a working mod or game playtest. No model, executable, RAM or CPU-cap changes.
+
+**Upgrade:** back up `D:\deepthort\state`, close DeepThorT, extract v55 source overlay over the v54 Windows installation. Preserve the exe, models, node_modules, state, references and all projects. See `PROJECT_CONTEXT_V55.md`.
+
+---
+
+# DeepThorT v54 — JANUS coordinator diagnostic and pause-safe Sentinel
+
+The Windows v53 acceptance ZIP (23 Nov 18:06) passed all six checks for shared Job Object, two ready supervised ONNX models, real council inference and simultaneous inference. Separately, 11-core JANUS showed cycle 1473 unchanged since 21 Nov. v54 distinguishes an intentional safety pause from a truly stale cycle in `Run latest test`, includes the pause flag in diagnostics and prevents Sentinel from reporting paused JANUS as a hung worker. No automatic unsafe resume or worker replay.
+
+# DeepThorT v53 — one-click evolving acceptance tests
+
+**New Processes controls:** **Run latest test** and **Stop latest test**. The latest packaged `LATEST_TEST.json` selects a fixed, audited suite of local, bounded checks. New releases can update the manifest or add a separately tested adapter without adding another button. Manifest values cannot execute model-created commands, download software, change project files, start a game, or override permissions.
+
+**Current v53 suite:** verify Windows capped-supervisor membership, primary Qwen ONNX readiness and PID, secondary JANUS/Sentinel Qwen readiness and supervised PID, durable inbox readability, one bounded local advisory model health inference, and whether simultaneous main/council inference was actually observed. The suite never interrupts an active implementation request or steals an occupied JANUS worker. An idle primary model produces an **inconclusive** concurrency check, not a fabricated success. A council load may take up to 180 seconds; user can cancel the remaining checks. Verification of a Windows Job Object does not independently measure an actual 30% CPU rate.
+
+**Automatic evidence:** no Save As dialog. Each run writes `D:\deepthort\state\latest-tests\LatestTest-*.json` and `latest.json`, plus a verified ZIP at `D:\deepthort\diagnostics\DeepThorT-LatestTest-*.zip`. `state\last-diagnostic-export.json` records its location/hash; **Processes → Locate latest diagnostics** can open the folder. The ZIP excludes raw chat input and model weights, but still inspect before sharing.
+
+**Limitations:** This release adds a repeatable Windows acceptance harness, not automated X4 gameplay or a guaranteed functional second ONNX model. Source checks are covered by Linux tests; real Windows memory, 30% Job rate, dual-model performance and the parent Windows executable require your local run.
+
+**Upgrade:** Close DeepThorT; back up `D:\deepthort\state`; extract the source overlay over the existing v52 installation, preserving `DeepThorT.exe`, models, node modules, state, cache, references and user projects.
+
+---
+
+# DeepThorT v52 — verified diagnostics and JANUS wait-state visibility
+
+- Export diagnostics now verifies ZIP/summary and retains a second copy in `D:\deepthort\diagnostics`, even when Save As selects another location; `state/last-diagnostic-export.json` records both exact paths and SHA-256. The success dialog can open the selected folder. Processes > Locate latest diagnostics also works after restart.
+- JANUS secondary ONNX now reports whether it awaits primary model readiness, shared cap verification, sufficient free RAM, model load completion or a completed inference. Processes > Retry JANUS model resets exhausted startup attempts without interrupting an ongoing council reply. The council refuses any unmanaged service occupying port 8766.
+- User instructions remain durable. JANUS/Sentinel proposals remain advisory; approved jobs remain untouched. Two Qwen ONNX workers still share one 30% supervisor budget. The original Windows executable, models and state are retained.
+- No Windows telemetry from this reported failed export was uploaded: the exact prior path and secondary-worker cause remain unknown. Please verify on Windows after updating.
+
+**Install:** Close DeepThorT; back up `D:\deepthort\state`; extract the source overlay into `D:\deepthort`. Never delete existing executable, models, state, node_modules or projects.
+
+---
+
 # DeepThorT v51 — parallel JANUS instruction processing (23 November 2026)
 
 **Hardware context:** user reports 40 GB of system RAM. DeepThorT can now start **two copies of the SAME local Qwen2.5-Coder-1.5B ONNX weights**, as two Node child processes on 127.0.0.1:8765 (implementation) and :8766 (JANUS/Sentinel advisory). No cloud endpoint or separate Llama/Ollama process is introduced. The secondary worker starts only when the primary is ready, genuine capped Windows Job membership is confirmed and available RAM is sufficient. When missing/unavailable, new instructions remain queued. The two workers **share one Windows Job Object 30% system CPU hard cap and at-most-30% physical-RAM-sized committed-memory cap**, not 30% each. Under foreground RAM pressure the launch cap may be smaller to retain the reserve. The existing launcher sources enforce the new caps and MUST be installed; real Windows verification of the original `DeepThorT.exe` invoking the upgraded scripts remains outstanding.

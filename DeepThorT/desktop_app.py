@@ -57,14 +57,14 @@ from deepthort_local.quiet_playtest import (
     is_capped_windows_process, PLAYTEST_SECONDS, QuietPressureGuard, WindowsPressureSampler)
 from deepthort_local.job_queue import ChatRegistry, JobStore
 from deepthort_local.conversation_workflow import ConversationStore
-from deepthort_local.flight_recorder import record, install_crash_hooks, export_diagnostics
+from deepthort_local.flight_recorder import record, install_crash_hooks, export_diagnostics, retain_diagnostic_copy, verify_diagnostics_archive
 from deepthort_local.diagnostic_evidence import (summarize_x4_report, summarize_inventory,
     save_snapshot, read_snapshot, matches_project)
 from deepthort_local.process_metrics import Meter
 from deepthort_local.janus_engine import JanusStore
 from deepthort_local.janus_interface import addressed_to_janus, janus_state_reply
 from deepthort_local.instruction_inbox import InstructionInbox, InstructionError
-from deepthort_local.dual_onnx import council_can_start, memory_room, windows_memory, local_health as council_health, deliberate_instruction
+from deepthort_local.dual_onnx import council_can_start, memory_room, windows_memory, local_health as council_health, deliberate_instruction, council_wait_reason, council_port_occupied
 from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
@@ -92,6 +92,7 @@ from deepthort_local.online_tool_search import (winget_search_command, winget_sh
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
 from deepthort_local.inspection_exclusions import InspectionExclusions
 from deepthort_local.project_source_view import relevant_x4_sources, read_verified_x4_source
+from deepthort_local.latest_acceptance import (load_test, run_checks, check_record, save_result, report_summary, LatestTestError)
 from deepthort_local.plan_continuation import PlanContinuation
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
@@ -124,7 +125,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='51',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='56',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -141,7 +142,12 @@ class DeepThorTDesktop(tk.Tk):
         self._council_busy = False
         self._council_retry_at = 0.0
         self._council_restarts = 0
+        self._latest_test_thread = None
+        self._latest_test_cancel = threading.Event()
+        self._latest_test_stage = 'idle'
+        self._latest_test_last = None
         self._council_health_checking = False
+        self._last_council_health = None
         self.node_ready = False
         self.node_loading = False
         self.node_started = 0.0
@@ -341,6 +347,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
         ttk.Button(top,text='Self-diagnose',command=self._diagnose).pack(side='right',padx=4)
         ttk.Button(top,text='Export diagnostics',command=self._export_diagnostics).pack(side='right',padx=4)
+        ttk.Button(top,text='Run latest test',command=self._run_latest_test).pack(side='right',padx=4)
         ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
         ttk.Button(top,text='Start AI',command=self._start_ai).pack(side='right',padx=4)
         self.model_status=tk.StringVar(value='AI: not started')
@@ -493,14 +500,24 @@ class DeepThorTDesktop(tk.Tk):
         pbar=ttk.Frame(process_tab);pbar.pack(fill='x',pady=3)
         ttk.Button(pbar,text='Cancel running job',command=self._cancel_active).pack(side='left',padx=3)
         ttk.Button(pbar,text='Stop tool / install process',command=self._cancel_tool).pack(side='left',padx=3)
+        ttk.Button(pbar,text='Locate latest diagnostics',command=self._locate_diagnostics).pack(side='left',padx=3)
+        ttk.Button(pbar,text='Retry JANUS model',command=self._retry_council).pack(side='left',padx=3)
+        ttk.Button(pbar,text='Run latest test',command=self._run_latest_test).pack(side='left',padx=3)
+        ttk.Button(pbar,text='Stop latest test',command=self._stop_latest_test).pack(side='left',padx=3)
         tk.Label(process_tab,text='ACTIVITY AND WORK LOG (actual events)',bg=BG,fg=MUTED).pack(anchor='w',pady=(10,4))
         self.activity=self._text(process_tab,readonly=True,height=18)
         self.activity.pack(fill='both',expand=True)
 
-        # JANUS coordinator and bounded read-only Sentinel watchdog.
-        janus_bar=ttk.Frame(janus_tab);janus_bar.pack(fill='x',pady=7)
+        # JANUS: keep instruction controls on a short, visible row even when
+        # Windows DPI scaling makes the original long toolbar overflow.
+        instruction_bar=ttk.Frame(janus_tab);instruction_bar.pack(fill='x',pady=(7,1))
+        ttk.Button(instruction_bar,text='Instruction inbox…',command=self._show_instruction_inbox).pack(side='left',padx=3)
+        ttk.Button(instruction_bar,text='Retry latest failed JANUS instruction',
+                   command=self._retry_latest_janus_instruction).pack(side='left',padx=3)
+        ttk.Label(instruction_bar,text='Separate from Chats → Retry failed reply',
+                  style='Muted.TLabel').pack(side='left',padx=5)
+        janus_bar=ttk.Frame(janus_tab);janus_bar.pack(fill='x',pady=(2,7))
         ttk.Button(janus_bar,text='Refresh status',command=self._show_janus_status).pack(side='left',padx=3)
-        ttk.Button(janus_bar,text='Instruction inbox…',command=self._show_instruction_inbox).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Set primary goal…',command=self._set_janus_goal).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Inspect 22 core states',command=self._inspect_janus_cores).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Pause JANUS',command=lambda:self._set_janus_paused(True)).pack(side='left',padx=3)
@@ -650,6 +667,9 @@ class DeepThorTDesktop(tk.Tk):
             state={'x4_source_inspection':x4_snapshot, 'engine_readiness_scan':inventory_snapshot,
                    'model_pid':self.node.pid if self.node and self.node.poll() is None else None,
                    'model_ready':self.node_ready,'model_loading':self.node_loading,
+                   'council_state':self._council_status(),
+                   'council_health':self._last_council_health,
+                   'council_pid':self.council_node.pid if self.council_node and self.council_node.poll() is None else None,
                    'model_status':status,'active_job':self.active_job,
                    'queue_paused':self.queue_paused,'visible_project_jobs':counts,
                    'development_cycles':self.cycles.summary(self._project_key()),
@@ -662,15 +682,285 @@ class DeepThorTDesktop(tk.Tk):
                    'active_conversation':self.active_conversation,
                    'pending_conversations':len([x for x in self.conversations.thread(self.current_chat) if x['state']=='pending'])}
             record(STATE,'desktop','diagnostics_export_requested')
-            export_diagnostics(STATE,Path(dest),app_root=ROOT,app_state=state)
-            self._log('Diagnostic ZIP saved: '+str(dest))
-            messagebox.showinfo('Diagnostic ZIP created',
-                'The diagnostic file is ready:\n'+str(dest)+'\n\n'
-                'Attach that one ZIP in ChatGPT for troubleshooting. It contains local logs and metadata; '
-                'review it before sharing. Full prompts and model weights are excluded.',parent=self)
+            exported=export_diagnostics(STATE,Path(dest),app_root=ROOT,app_state=state)
+            receipt=retain_diagnostic_copy(exported,ROOT/'diagnostics'/base.name,
+                                          STATE/'last-diagnostic-export.json')
+            self._log('Diagnostic ZIP verified: '+receipt['chosen_path']+
+                '; retained copy: '+receipt['retained_path'])
+            record(STATE,'desktop','diagnostics_export_verified',
+                   path=receipt['chosen_path'], retained=receipt['retained_path'],
+                   bytes=receipt['bytes'],sha256=receipt['sha256'])
+            if messagebox.askyesno('Diagnostic ZIP verified',
+                'The diagnostic ZIP was created and checked.\n\n'
+                'Selected location:\n'+receipt['chosen_path']+'\n\n'
+                'Retained copy:\n'+receipt['retained_path']+'\n\n'
+                'The paths are recorded in state/last-diagnostic-export.json.\n'
+                'Open the selected folder now?\n\n'
+                'Inspect the ZIP before uploading; raw prompts and model weights are excluded.',parent=self):
+                self._open_diagnostic_folder(Path(receipt['chosen_path']).parent)
         except Exception as error:
             record(STATE,'desktop','diagnostics_export_failed',level='ERROR',error=str(error))
-            messagebox.showerror('Export failed',str(error),parent=self)
+            messagebox.showerror('Export or verification failed',
+                str(error)+'\n\nCheck the selected folder and '+str(ROOT/'diagnostics')+
+                '. A success message is shown only for verified ZIP files.',parent=self)
+
+    @staticmethod
+    def _open_diagnostic_folder(folder):
+        """Never open uploaded data, only the already-selected folder."""
+        folder=Path(folder)
+        if not folder.is_dir():raise FileNotFoundError('Diagnostic folder no longer exists: '+str(folder))
+        if os.name=='nt':
+            os.startfile(str(folder))
+        else:
+            # Non-Windows CI has no shell explorer; the exact path is in the receipt.
+            pass
+
+    def _locate_diagnostics(self):
+        """Show last verified paths even after a GUI restart."""
+        receipt_path=STATE/'last-diagnostic-export.json'
+        try:
+            receipt=json.loads(receipt_path.read_text(encoding='utf-8'))
+            paths=[Path(receipt['chosen_path']),Path(receipt['retained_path'])]
+            valid=next((path for path in paths if path.is_file()),None)
+            if valid is None:
+                raise FileNotFoundError('Neither recorded diagnostic ZIP exists at its saved path')
+            proof=verify_diagnostics_archive(valid)
+            if proof['sha256']!=receipt['sha256']:
+                raise ValueError('Diagnostic ZIP changed since it was exported')
+            if messagebox.askyesno('Locate diagnostic ZIP',
+                'Verified diagnostic archive:\n'+str(valid)+'\n\n'
+                'Original selection:\n'+receipt['chosen_path']+'\n\n'
+                'Retained copy:\n'+receipt['retained_path']+'\n\n'
+                'Open the containing folder?',parent=self):
+                self._open_diagnostic_folder(valid.parent)
+        except (OSError,ValueError,KeyError,TypeError) as error:
+            messagebox.showwarning('Diagnostics not located',
+                str(error)+'\n\nUse Export diagnostics to create a new verified ZIP.',parent=self)
+
+    def _run_latest_test(self):
+        """One user action: fixed local checks, detailed report and ZIP receipt.
+
+        A new LATEST_TEST.json changes future acceptance checks without a new
+        UI control or an ability to execute arbitrary model-authored commands.
+        """
+        if self._latest_test_thread and self._latest_test_thread.is_alive():
+            self.tabs.select(4)
+            self._log('Latest acceptance test already running: '+self._latest_test_stage)
+            return
+        try:
+            manifest=load_test(ROOT/'LATEST_TEST.json')
+        except (OSError,ValueError) as error:
+            messagebox.showerror('Latest test unavailable',str(error),parent=self)
+            return
+        self._latest_test_cancel=threading.Event()
+        self._latest_test_stage='starting'
+        self._latest_test_last=None
+        self.tabs.select(4)  # Existing Processes tab
+        self._log('Starting '+manifest['title']+'; no files will be edited or programs installed.')
+        record(STATE,'desktop','latest_test_started',test_id=manifest['id'],project_name=Path(self._project_key()).name)
+        # Launch only an ALREADY-configured, capped model child via the
+        # existing supervisor. Never launch an uncapped or unrelated service.
+        if 'council_onnx' in manifest['checks'] and self.node_ready and not self.council_ready:
+            self._start_council()
+        cancel=self._latest_test_cancel
+        primary_proc=self.node
+        expected_primary=primary_proc.pid if primary_proc and primary_proc.poll() is None else None
+        council_proc=self.council_node
+        expected_council=council_proc.pid if council_proc and council_proc.poll() is None else None
+        inbox=self.instruction_inbox
+        council_busy_at_start=bool(self._council_busy)
+        observed={'simultaneous':False, 'secondary_verified':False}
+
+        def supervisor_probe():
+            from deepthort_local.quiet_playtest import is_capped_windows_process
+            member=is_capped_windows_process()
+            return {'status':'passed' if member else 'blocked',
+                    'detail':('Desktop runs in a Windows Job Object. Actual 30% throughput must still be sampled on Windows.'
+                        if member else 'No capped Windows Job Object detected: restart through the approved DeepThorT.exe launcher.'),
+                    'evidence':{'thread_cpu_cap': bool(member)}}
+
+        def primary_probe():
+            health=local_server_status(timeout=2)
+            if not expected_primary or not primary_proc or primary_proc.poll() is not None:
+                return {'status':'blocked','detail':'Primary model is not running as the supervised desktop child.'}
+            if not health or health.get('ready') is not True or health.get('pid')!=expected_primary:
+                return {'status':'blocked','detail':'Primary ONNX is unavailable, loading, or does not match its supervised PID.'}
+            return {'status':'passed','detail':'Primary ONNX health is ready and bound to its supervised child process.',
+                    'evidence':{'pid':expected_primary,'busy':bool(health.get('inference_busy'))}}
+
+        def council_probe():
+            if not expected_primary:
+                return {'status':'blocked','detail':'Primary supervised ONNX not running; start it before this acceptance test.'}
+            from deepthort_local.quiet_playtest import is_capped_windows_process
+            if not is_capped_windows_process():
+                return {'status':'blocked','detail':'Shared CPU Job Object not verified; secondary model will not be started.'}
+            from deepthort_local.dual_onnx import windows_memory, memory_room
+            memory=windows_memory()
+            if not memory or not memory_room(total=memory[0],available=memory[1]):
+                return {'status':'blocked','detail':'Insufficient available RAM for second ONNX; test stops here without forcing a launch.'}
+            # On resource-constrained Windows the second model may take several
+            # minutes to load. The test waits without freezing Tk or killing it.
+            from deepthort_local.dual_onnx import local_health
+            target=time.monotonic()+180
+            while not cancel.is_set() and time.monotonic()<target:
+                proc=self.council_node
+                if proc and proc.poll() is None:
+                    value=local_health(timeout=1.5)
+                    if isinstance(value,dict) and value.get('ready') is True and value.get('pid')==proc.pid:
+                        observed['secondary_verified']=True
+                        return {'status':'passed','detail':'Independent JANUS/Sentinel Qwen worker ready on loopback and its PID matches our supervised child.',
+                                'evidence':{'pid':proc.pid,'local_role':'council'}}
+                elif proc and proc.poll() is not None:
+                    return {'status':'blocked','detail':'Second ONNX worker exited (code '+str(proc.poll())+'). Open Processes for the reason.'}
+                cancel.wait(3)
+            if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped while checking secondary ONNX'}
+            return {'status':'blocked','detail':'Secondary ONNX did not become ready within 180 seconds. '+self._council_status()[:230]}
+
+        def janus_core_probe():
+            # Independent of the neural council. The persistent 11-core JANUS
+            # execution coordinator can be paused while both ONNX models work.
+            # Report the actual SQLite pause flag rather than guessing from
+            # a stale cycle. No state is changed by this read-only check.
+            from datetime import datetime, timezone
+            try:
+                value=self.janus.status()
+            except (OSError,ValueError,TypeError) as error:
+                return {'status':'inconclusive','detail':'Could not read JANUS coordinator state: '+type(error).__name__}
+            cycle=int(value.get('cycle') or 0)
+            if value.get('paused'):
+                return {'status':'blocked','detail':'JANUS coordinator is PAUSED. In JANUS & Sentinel select Resume JANUS when safe; a paused cycle is not a model failure.',
+                        'evidence':{'janus_cycle':cycle,'janus_paused':True}}
+            stamp=value.get('updated_at')
+            try:
+                observed=datetime.fromisoformat(str(stamp))
+                if observed.tzinfo is None:observed=observed.replace(tzinfo=timezone.utc)
+                age=max(0,int((datetime.now(timezone.utc)-observed).total_seconds()))
+            except (ValueError,TypeError,OverflowError):
+                return {'status':'inconclusive','detail':'JANUS is unpaused but its last-cycle timestamp cannot be verified.',
+                        'evidence':{'janus_cycle':cycle,'janus_paused':False}}
+            if cycle<=0 or age>120:
+                return {'status':'blocked','detail':f'JANUS coordinator is unpaused but its cycle evidence is stale ({age}s, cycle {cycle}). Check Sentinel events and worker logs.',
+                        'evidence':{'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}}
+            return {'status':'passed','detail':f'JANUS coordinator is unpaused and recorded cycle {cycle} within the last {age}s.',
+                    'evidence':{'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}}
+
+        def inbox_probe():
+            # Check completed translation and checkpoint delivery, not just
+            # SQLite readability. No user/model text is put in diagnostics.
+            from deepthort_local.instruction_inbox import inbox_acceptance
+            return inbox_acceptance(inbox.list(None,limit=100))
+
+        def council_inference_probe():
+            if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped'}
+            if not observed['secondary_verified']:
+                return {'status':'blocked','detail':'Cannot test independent inference without a verified council worker.'}
+            if council_busy_at_start or self._council_busy:
+                return {'status':'inconclusive','detail':'JANUS is already processing a real instruction; this test will not interrupt it.'}
+            # Reserve shared council worker so the normal instruction loop
+            # cannot enqueue an inference during this small diagnostic.
+            self._council_busy=True
+            try:
+                import urllib.request
+                from deepthort_local.dual_onnx import MODEL, COUNCIL_HOST, local_health
+                proc=self.council_node
+                health=local_health(timeout=1.5)
+                if not proc or proc.poll() is not None or not health or health.get('pid')!=proc.pid or not health.get('ready'):
+                    return {'status':'blocked','detail':'Council model changed or is no longer healthy; refusing an unverified connection.'}
+                before=local_server_status(timeout=1.5) or {}
+                began=time.monotonic()
+                req=urllib.request.Request(COUNCIL_HOST+'/v1/chat/completions',
+                    data=json.dumps({'model':MODEL,'messages':[
+                      {'role':'system','content':'You are performing a local health test. Reply briefly with READY.'},
+                      {'role':'user','content':'Return READY for supervised inference testing.'}],
+                      'max_tokens':20,'stream':False}).encode('utf-8'),method='POST',
+                    headers={'Content-Type':'application/json'})
+                opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
+                try:
+                    with opener.open(req,timeout=150) as resp:
+                        answer=json.load(resp)['choices'][0]['message']['content']
+                except (OSError,TimeoutError,ValueError,KeyError,IndexError,TypeError) as error:
+                    if cancel.is_set():
+                        return {'status':'cancelled','detail':'Latest test cancelled during secondary inference.'}
+                    return {'status':'blocked','detail':'Council inference did not complete: '+type(error).__name__+'. Worker output remains in diagnostics.'}
+                if cancel.is_set():return {'status':'cancelled','detail':'Test cancelled during inference; the council reply is not used.'}
+                if not isinstance(answer,str) or not answer.strip():
+                    return {'status':'failed','detail':'The supervised council model returned an empty response.'}
+                after=local_server_status(timeout=1.5) or {}
+                observed['simultaneous']=bool(before.get('inference_busy') or after.get('inference_busy'))
+                return {'status':'passed','detail':('Council returned a small real local response; '+
+                    ('primary was busy during this probe.' if observed['simultaneous'] else
+                     'primary was idle, so simultaneous inference remains unproven.')),
+                    'evidence':{'elapsed_seconds':round(time.monotonic()-began,1),
+                                'busy':observed['simultaneous']}}
+            finally:
+                self._council_busy=False
+
+        def concurrency_probe():
+            return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
+                    'detail':('Both workers were active during the council response.'
+                        if observed['simultaneous'] else
+                        'Dual-worker simultaneous inference not established by this run; main ONNX was not observed generating during council response.')}
+
+        probes={'shared_cap':supervisor_probe,'primary_onnx':primary_probe,
+                'council_onnx':council_probe,'janus_inbox':inbox_probe,'janus_core':janus_core_probe,
+                'council_inference':council_inference_probe,'concurrent_status':concurrency_probe}
+
+        def worker():
+            try:
+                result=run_checks(manifest,probes,cancelled=cancel,
+                   notify=lambda name:self.events.put(('latest_test_progress',name)))
+                report=save_result(STATE/'latest-tests',result)
+                # Diagnostic ZIP is generated automatically; no Save As dialog.
+                stamp=datetime.now().strftime('%Y%m%d-%H%M%S')
+                dest=ROOT/'diagnostics'/('DeepThorT-LatestTest-'+stamp+'.zip')
+                exported=export_diagnostics(STATE,dest,app_root=ROOT,
+                     app_state={'latest_acceptance':result,
+                                'model_pid':expected_primary,
+                                'council_pid':self.council_node.pid if self.council_node else None})
+                receipt=retain_diagnostic_copy(exported,dest,STATE/'last-diagnostic-export.json')
+                self.events.put(('latest_test_completed',result,str(report),receipt['retained_path']))
+            except Exception as error:
+                record(STATE,'desktop','latest_test_failed',level='ERROR',error=str(error)[:800])
+                self.events.put(('latest_test_error',type(error).__name__+': '+str(error)[:350]))
+        self._latest_test_thread=threading.Thread(target=worker,daemon=True,name='LatestAcceptanceTest')
+        self._latest_test_thread.start()
+
+    def _stop_latest_test(self):
+        if not self._latest_test_thread or not self._latest_test_thread.is_alive():
+            self._log('There is no running latest test to stop.')
+            return
+        self._latest_test_cancel.set()
+        self._latest_test_stage='stop requested'
+        self._log('Latest test stop requested. An in-flight bounded ONNX health call may still finish before the report is saved.')
+
+    def _council_status(self):
+        proc=self.council_node
+        alive=bool(proc and proc.poll() is None)
+        from deepthort_local.quiet_playtest import is_capped_windows_process
+        return council_wait_reason(primary_ready=self.node_ready,
+            primary_loading=self.node_loading,council_running=alive,
+            council_ready=self.council_ready,council_busy=self._council_busy,
+            health=self._last_council_health,memory=windows_memory(),
+            capped=is_capped_windows_process(),restarts=self._council_restarts)
+
+    def _retry_council(self):
+        """Explicit, advisory-only retry: never interrupt an active model reply."""
+        if self._council_busy:
+            messagebox.showinfo('JANUS still working',
+                'The secondary model is processing an instruction. Retry is not allowed while inference is active.',parent=self)
+            return
+        if self.council_node and self.council_node.poll() is None:
+            if self.council_ready:
+                messagebox.showinfo('JANUS model ready','Secondary ONNX is already available.',parent=self)
+                return
+            self.council_node.terminate()
+            self.council_node=None
+        self.council_ready=False
+        self._last_council_health=None
+        self._council_restarts=0
+        self._council_retry_at=time.monotonic()+3
+        self._log('Manual council ONNX retry requested; '+self._council_status())
+        self.status.set(self._council_status())
 
     def _chat_line(self,role,message):
         # The durable database owns full text, NOT the timeline widget. Millions
@@ -1399,47 +1689,102 @@ class DeepThorTDesktop(tk.Tk):
         self.input.delete('1.0','end')
         self._clear_imported_specification()
         self._reload_chat()
-        self.status.set(f'JANUS instruction #{ident} saved. Active coding continues uninterrupted.')
-        self._log(f'JANUS instruction #{ident} queued for the secondary local ONNX model; no job approved.')
+        self.status.set(f'JANUS instruction #{ident} saved. '+self._council_status())
+        self._log(f'JANUS instruction #{ident} saved; '+self._council_status()+' No job approved.')
         record(STATE,'desktop','janus_instruction_queued',instruction_id=ident,
                project_name=self.project.name,characters=len(message),approval_granted=False)
 
+    def _retry_latest_janus_instruction(self):
+        """One-click, project-scoped retry of failed ADVISORY inference only."""
+        if not self.project:
+            messagebox.showinfo('Choose a project',
+                'Select the project associated with the JANUS instruction first.', parent=self)
+            return
+        try:
+            ident=self.instruction_inbox.retry_latest_failed(str(self.project))
+        except (OSError,ValueError,InstructionError) as exc:
+            messagebox.showerror('JANUS retry unavailable',str(exc),parent=self)
+            return
+        if ident is None:
+            messagebox.showinfo('No failed JANUS interpretation',
+                'There are no failed neural interpretations to retry in the selected project.\n\n'
+                'Chats → Retry failed reply handles conversation replies, not JANUS instructions. '
+                'Open Instruction inbox… to inspect existing entries.', parent=self)
+            return
+        self.status.set(f'JANUS instruction #{ident} requeued for neural interpretation. '
+                        +self._council_status())
+        self._log(f'JANUS instruction #{ident} requeued; no chat reply, approved plan or source file changed.')
+        record(STATE,'desktop','janus_instruction_requeued',instruction_id=ident,
+               project_name=self.project.name,scope_changed=False,approval_granted=False)
+
     def _show_instruction_inbox(self):
-        """Expose the actual proposals and approval boundaries, never auto-execute."""
+        """Readable, DPI-tolerant inbox controls separate from chat retry."""
         project=str(self.project) if self.project else None
-        items=self.instruction_inbox.list(project,limit=24)
+        items=self.instruction_inbox.list(project,limit=100)
+        showing_other_projects=False
+        if not items and project:
+            # Old instructions can belong to another selected workspace. Show
+            # them for review rather than claiming that no instructions exist.
+            items=self.instruction_inbox.list(None,limit=100)
+            showing_other_projects=bool(items)
         if not items:
-            messagebox.showinfo('JANUS instruction inbox','No saved instructions for this project.',parent=self)
+            messagebox.showinfo('JANUS instruction inbox','No saved JANUS instructions yet.',parent=self)
             return
         window=tk.Toplevel(self)
         window.title('JANUS instruction inbox — advisory, not executed')
-        window.geometry('860x490')
-        tree=ttk.Treeview(window,columns=('id','state','chat','action'),show='headings',height=8)
-        for c,w in (('id',55),('state',140),('chat',100),('action',490)):
+        window.resizable(True,True)
+        width=max(500,min(1000,window.winfo_screenwidth()-80))
+        height=max(330,min(690,window.winfo_screenheight()-100))
+        window.geometry(f'{width}x{height}')
+        description=('No instructions matched the selected project; showing other project instructions. '
+                     'Switch to the original workspace to use the main-tab retry control.'
+                     if showing_other_projects else
+                     'Select an instruction below. Retry only reprocesses failed JANUS advice; it does not retry Chat.')
+        ttk.Label(window,text=description,wraplength=max(450,width-45),
+                  style='Muted.TLabel').pack(fill='x',padx=10,pady=(8,2))
+        # Commands are ABOVE the scrollable list and details, not under two
+        # height-constrained panels where DPI scaling can hide them.
+        toolbar=ttk.Frame(window);toolbar.pack(fill='x',padx=10,pady=(3,1))
+        actions=ttk.Frame(window);actions.pack(fill='x',padx=10,pady=(1,5))
+        selected_status=tk.StringVar(value='No instruction selected')
+        ttk.Label(window,textvariable=selected_status,style='Muted.TLabel').pack(
+            fill='x',padx=12,pady=(0,3))
+        table_frame=ttk.Frame(window);table_frame.pack(fill='x',padx=10,pady=2)
+        tree=ttk.Treeview(table_frame,columns=('id','state','chat','action'),
+                          show='headings',height=6,selectmode='browse')
+        for c,w in (('id',55),('state',135),('chat',100),('action',460)):
             tree.heading(c,text=c.capitalize());tree.column(c,width=w,stretch=c=='action')
-        tree.pack(fill='x',padx=10,pady=8)
-        details=tk.Text(window,height=12,wrap='word')
-        details.pack(fill='both',expand=True,padx=10,pady=8)
+        scrollbar=ttk.Scrollbar(table_frame,orient='vertical',command=tree.yview)
+        tree.configure(yscrollcommand=scrollbar.set)
+        tree.pack(side='left',fill='both',expand=True)
+        scrollbar.pack(side='right',fill='y')
+        details=tk.Text(window,height=7,wrap='word')
+        details.pack(fill='both',expand=True,padx=10,pady=(4,9))
+        lookup={str(x['id']):x for x in items}
         for item in items:
             tree.insert('','end',iid=str(item['id']),values=(item['id'],item['state'],
                 item['chat_id'][-12:],item['next_action'][:155] or item['original'][:155]))
-        lookup={str(x['id']):x for x in items}
         def selected():
             ids=tree.selection()
             return lookup.get(ids[0]) if ids else None
         def refresh_detail(_event=None):
             item=selected()
+            details.configure(state='normal')
             details.delete('1.0','end')
             if item:
-                details.insert('1.0',f"ORIGINAL USER MESSAGE (never replaced):\n{item['original']}\n\n"
+                selected_status.set(f"Selected instruction #{item['id']} — {item['state']}")
+                details.insert('1.0',f"PROJECT: {item['project']}\n"
+                    f"ORIGINAL USER MESSAGE (never replaced):\n{item['original']}\n\n"
                     f"JANUS PROPOSED ACTION:\n{item['next_action'] or '(pending)'}\n\n"
                     f"SENTINEL TEST:\n{item['verification'] or '(pending)'}\n\n"
                     f"STATE: {item['state']}\n{item['reason']}")
+            else:
+                selected_status.set('No instruction selected')
+            details.configure(state='disabled')
         tree.bind('<<TreeviewSelect>>',refresh_detail)
-        buttons=ttk.Frame(window);buttons.pack(fill='x',padx=10,pady=8)
         def review():
             item=selected()
-            if not item or item['state']!='needs_review':return
+            if not item or item['state']!='needs_review' or not item['next_action']:return
             if messagebox.askyesno('Approve PLANNING guidance only',
                     'Allow this instruction to inform the NEXT UNAPPROVED planning pass?\n\n'
                     'This does not authorize source edits, tool execution or changes to an '
@@ -1450,16 +1795,18 @@ class DeepThorTDesktop(tk.Tk):
             item=selected()
             if item and self.instruction_inbox.dismiss(item['id']):
                 tree.set(str(item['id']),'state','dismissed');item['state']='dismissed';refresh_detail()
-        ttk.Button(buttons,text='Approve guidance for NEXT draft plan',command=review).pack(side='left',padx=4)
         def retry():
             item=selected()
             if item and self.instruction_inbox.retry_interpretation(item['id']):
-                tree.set(str(item['id']),'state','pending');item['state']='pending';refresh_detail()
-        ttk.Button(buttons,text='Retry failed interpretation',command=retry).pack(side='left',padx=4)
-        ttk.Button(buttons,text='Dismiss selected',command=dismiss).pack(side='left',padx=4)
-        ttk.Button(buttons,text='Close',command=window.destroy).pack(side='right',padx=4)
+                tree.set(str(item['id']),'state','pending');item['state']='pending';item['reason']='';refresh_detail()
+                self._log(f'JANUS instruction #{item["id"]} requeued for neural interpretation; no source changes.')
+        ttk.Button(toolbar,text='Retry selected failed interpretation',command=retry).pack(side='left',padx=3)
+        ttk.Button(toolbar,text='Close',command=window.destroy).pack(side='right',padx=3)
+        ttk.Button(actions,text='Approve guidance for NEXT draft plan',command=review).pack(side='left',padx=3)
+        ttk.Button(actions,text='Dismiss selected',command=dismiss).pack(side='left',padx=3)
         if items:
-            tree.selection_set(str(items[0]['id']));refresh_detail()
+            tree.selection_set(str(items[0]['id']));tree.focus(str(items[0]['id']))
+            tree.see(str(items[0]['id']));refresh_detail()
 
     def _next_janus_guidance(self, project: str, chat_id: str) -> str:
         """Consume only staged advice at a non-executable model planning boundary."""
@@ -1476,8 +1823,8 @@ class DeepThorTDesktop(tk.Tk):
         if not council_can_start():
             return  # Low RAM or uncapped session; inbox remains saved.
         # Refuse an externally bound port. We only trust our own Popen child.
-        if council_health() is not None:
-            self._log('Council ONNX port is already occupied; refusing another unmanaged model.')
+        if council_port_occupied():
+            self._log('Council ONNX port 8766 is already occupied; refusing another unmanaged model.')
             self._council_retry_at=time.monotonic()+120
             return
         node=shutil.which('node')
@@ -1489,6 +1836,7 @@ class DeepThorTDesktop(tk.Tk):
                 stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
                 env=env,creationflags=flags)
             self.council_node=proc;self.council_ready=False
+            self._last_council_health=None
             self._log('Starting second supervised local Qwen ONNX for JANUS/Sentinel (port 8766).')
             record(STATE,'desktop','council_worker_started',pid=proc.pid,shared_cpu_cap_percent=30,
                    shared_ram_commit_cap_percent=30,no_new_windows_job=True)
@@ -1504,6 +1852,7 @@ class DeepThorTDesktop(tk.Tk):
             if proc and proc.poll() is not None:
                 self._log(f'Secondary ONNX exited ({proc.poll()}); instructions remain durable.')
                 self.council_node=None;self.council_ready=False
+                self._last_council_health=None
                 self._council_restarts+=1
                 self._council_retry_at=time.monotonic()+120
             mem=windows_memory()
@@ -4160,6 +4509,7 @@ class DeepThorTDesktop(tk.Tk):
                   f'Supervisor focus: {watch_front.get("focus", "startup")} | {watch["detail"]}\n'
                   f'Sentinel PID: {watch["sentinel_pid"] or "none"} | JANUS PID: {watch["janus_pid"] or "none"} | Restarts: {watch["restart_count"]}\n'
                   f'Work queue: {counts}\n'
+                  f'Neural instruction inbox: {self._council_status()}\n'
                   'Both use retained observations and separate Front states. Local Qwen may propose corrections; proposals cannot execute themselves.\n'
                   'Only explicitly approved tools/file changes run. Watchdog never duplicates execution.')
             self._show(self.janus_status_text,text)
@@ -4467,6 +4817,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
               f"Supervision: 30% aggregate CPU cap, 30% RAM commit limit under DeepThorT.exe\n"
               f"Second ONNX: {'ready' if self.council_ready else 'loading' if council_pid else 'not running'} | PID {council_pid or 'none'}; same cap as primary\n"
+              f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
               f"Isolated GUI: {'running' if self._gui_test_active else 'inactive'}; separate desktop, project-owned window metadata only\n"
@@ -4497,6 +4848,7 @@ class DeepThorTDesktop(tk.Tk):
                          f"repairs {cycle['repairs']}/{MAX_REPAIR_ATTEMPTS}; "
                          'observed attempts, not guaranteed progress\n')
         text+=f"\nActive conversation request: {self.active_conversation or 'none'} | Stage: {self.reply_stage or 'none'}\n"
+        text+='\nLATEST TEST: '+self._latest_test_stage+' | Run latest test uses the shipped LATEST_TEST.json; results under state/latest-tests and diagnostics.\n'
         text+='\nJANUS Sentinel: '+str(sentinel_health.get('state','not started'))+(
             ' | '+str(sentinel_health.get('detail','')) if sentinel_health else '')+'\n'
         text+='JANUS worker PID: '+str(worker_pid or 'not running')+' | Sentinel PID: '+str(sentinel_health.get('sentinel_pid') or 'not running')+'\n'
@@ -4514,8 +4866,23 @@ class DeepThorTDesktop(tk.Tk):
                 if event[1].startswith('[AI] '):
                     self.recent_ai_logs.append(event[1][5:])
                     self.recent_ai_logs=self.recent_ai_logs[-24:]
+            elif kind=='latest_test_progress':
+                self._latest_test_stage=event[1]
+                self._log('Latest test: checking '+event[1].replace('_',' '))
+            elif kind=='latest_test_completed':
+                self._latest_test_last=event[1]
+                self._latest_test_stage=event[1]['outcome']
+                self._log(report_summary(event[1])+' | Report: '+event[2]+' | ZIP: '+event[3])
+                record(STATE,'desktop','latest_test_completed',test_id=event[1]['test_id'],
+                       outcome=event[1]['outcome'],report_path=event[2],zip_path=event[3])
+                self.status.set('Latest test '+event[1]['outcome'].upper()+': report and ZIP saved in diagnostics.')
+            elif kind=='latest_test_error':
+                self._latest_test_stage='failed to save'
+                self._log('Latest test could not save its full report: '+event[1])
+                self.status.set('Latest test error: '+event[1])
             elif kind=='council_health':
                 self._council_health_checking=False
+                self._last_council_health=event[1] if isinstance(event[1],dict) else None
                 proc=self.council_node
                 self.council_ready=bool(proc and proc.poll() is None and isinstance(event[1],dict)
                     and event[1].get('ready') is True and event[1].get('role')=='council'
@@ -4938,6 +5305,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(125,self._handle_events)
     def _quit(self):
         self._quitting=True
+        self._latest_test_cancel.set()
         self._restart_cancelled_node_pid=None
         record(STATE,'desktop','desktop_shutdown',active_job=self.active_job,active_conversation=self.active_conversation)
         if self.active_conversation is not None:

@@ -1,3 +1,49 @@
+# DeepThorT v56 next acceptance
+
+1. Install the v56 source overlay. Select the original X4 mods workspace and click **JANUS & Sentinel → Retry latest failed JANUS instruction**. It should requeue the the most recent failed interpretation for that workspace, without using Chats → Retry failed reply or selecting an inbox row. The button is visible at the top of the JANUS tab on high-DPI displays.
+2. Open **Instruction inbox…**. The newest row is selected, the retry control is above the table, and the original text and state can be read. Confirm it transitions from `needs_review` to `pending`, then `interpreting`, then `staged` or `needs_review` depending on the actual Qwen result. A retry is not proof of a successful neural translation.
+3. Run the one-click test. A staged instruction remains inconclusive until an eligible unapproved planning checkpoint receives it. Do not claim a mod was built or tested.
+4. If translation still fails, diagnose actual Qwen structured output and scope-specific handoff. Continue X4 decomposition into source-verified individual components; do not simply raise zero-gain planning retries.
+5. Keep 30% shared CPU/commit-memory resource cap, two ONNX workers, JANUS/Sentinel review boundaries and original executable/state intact. Validate real Windows DPI/layout and disabled model cases after deployment.
+
+---
+
+# DeepThorT v55 follow-up
+
+**Verified by v54 Windows logs:** JANUS coordinator advances (cycle 1806), both Qwen models ready, council single inference healthy, but the first JANUS user instruction FAILED JSON parsing and never reached planning; the inbox smoke test incorrectly reported success. v55 fixes visibility and retries one bounded format correction.
+
+**Next Windows test:** click Run latest test. If `janus_inbox` is BLOCKED with a failed interpretation, open JANUS & Sentinel → Instruction inbox, select it and Retry interpretation. Re-run the test after a fresh unapproved plan checkpoint; a fully handed instruction should report PASSED. Do not confuse an INCONCLUSIVE idle/concurrent test with an error.
+
+**Next development priority:** diagnose and change the X4 plan generation strategy: break the nine unsatisfied requirements into independently verifiable source-specific subplans; have JANUS use verified PE macro/slot assets and Sentinel check each against evidence before aggregating a roadmap. Actual mod build, X4 save/profile/game tests and long-running implementation remain future work. Do not increase repeated zero-gain attempts.
+
+---
+
+# DeepThorT v54 next steps
+
+1. Install the v54 source overlay over v53, preserving `state`, models, executable and projects.
+2. Click **Run latest test**. If `janus_core` is blocked with PAUSED, inspect whether safety pause was intentional; choose JANUS & Sentinel → **Resume JANUS** when safe. Then run the test again.
+3. If JANUS is unpaused and stale, diagnose `janus_worker.py` process sampling/SQLite waits with targeted Windows instrumentation. Do not claim the secondary Qwen worker is the same as the deterministic 11-core JANUS coordinator.
+4. Check real JANUS instruction translation from a user message and downstream safe checkpoint handoff. Exercise longer dual-model inference and measure aggregate CPU/memory; the latest smoke check confirms process membership, not measured 30% throughput.
+5. Restore full end-to-end X4 PE mod plan and gameplay validation; no autonomous mod execution evidenced yet.
+
+# After v53 — acceptance testing without repeated instructions
+
+**Implemented:** Processes → **Run latest test** loads `LATEST_TEST.json`, performs only shipped, fixed local probes, records structured outcomes, automatically generates a verified diagnostic ZIP and preserves a JSON report. **Stop latest test** requests cancellation. This profile is replaceable on every future source-overlay release. Current profile checks dual ONNX availability, shared Job membership and actual second-worker inference; it does not claim real simultaneous generation without observing both workers busy. The action never launches a game, edits project files, installs tools or elevates privileges.
+
+**Immediate Windows acceptance:** install v53 over v52; start primary AI; press Run latest test once, allow up to several minutes for council startup and inference, and share the saved `D:\deepthort\diagnostics\DeepThorT-LatestTest-*.zip`. Check whether Windows Job membership and second worker PID are verified. A test can be **inconclusive** when the primary is not busy during the advisory probe; that does not mean the second model failed. Use Stop latest test to prevent further steps. The 30% rate still needs independent native measurement rather than an inferred 'is in some Job' check.
+
+**Next release:** Update the packaged `LATEST_TEST.json` for whatever new capability needs acceptance, implement and test new probe identifiers as required, and keep output/ZIP stable. Add native Windows Job CPU-rate introspection, response-latency measurements during actual concurrent inference, comprehensive end-to-end resumed planning, and game-specific disposable test profiles. Treat out-of-cap processes, unknown programs and user-generated project tests as separate approval boundaries.
+
+---
+
+# DeepThorT next steps — after v52
+
+**Next Windows checks:** Export diagnostics from v52, inspect both path receipts and `D:\deepthort\diagnostics`; confirm the saved ZIP appears. Send a new JANUS instruction while the main worker is busy; check the exact council status in JANUS & Sentinel and Processes. If it does not load, use Retry JANUS model once after verifying the shared Job Object. Export that verified ZIP. Test actual simultaneous CPU/physical memory use at 40 GB RAM and 30% shared job cap; don't confuse an idle/pending instruction with a completed interpretation.
+
+**Further priorities:** Correct council model startup using actual port, PID, worker and load error evidence from Windows. Add richer sequential planning checkpoints, real end-to-end X4 file generation and game-specific acceptance, and safer resumed multi-milestone work. Never extend unreliable retries without independent evidence of progress. Preserve user permissions and saved files.
+
+---
+
 # DeepThorT next steps — after v51 dual local ONNX (23 November 2026)
 
 1. **Physical Windows acceptance (priority):** Confirm the preserved `DeepThorT.exe` actually executes the updated source launcher; verify real Win32 Job Object hard CPU rate 3000 (30%) and aggregate job committed-memory ceiling, both model server PIDs' membership in that same job, no child process escapes and normal game priority. On the user's 40 GB RAM computer, observe CPU/working-set/private memory during simultaneous implementation and JANUS/Sentinel advisory inference. If the executable hardcodes an old 20% launcher, rebuild the trusted GUI launcher rather than pretending the source overlay changed it.

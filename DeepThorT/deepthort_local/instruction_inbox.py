@@ -138,6 +138,29 @@ class InstructionInbox:
             db.commit()
             return bool(changed)
 
+    def retry_latest_failed(self, project: str) -> int | None:
+        """Requeue only the latest failed neural interpretation in one workspace.
+
+        This does not retry a chat response, alter an approved project plan or
+        execute a model-generated action.  A single SQLite transaction avoids
+        races with the background council worker.
+        """
+        project_key = canonical_project(project)
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row = db.execute("SELECT id FROM instructions WHERE project=? AND "
+                "state='needs_review' AND next_action='' ORDER BY id DESC LIMIT 1",
+                (project_key,)).fetchone()
+            if row is None:
+                db.commit()
+                return None
+            ident = int(row['id'])
+            changed = db.execute("UPDATE instructions SET state='pending',reason='',updated_at=? "
+                "WHERE id=? AND project=? AND state='needs_review' AND next_action=''",
+                (now(), ident, project_key)).rowcount
+            db.commit()
+            return ident if changed else None
+
     def review(self, ident: int, *, allow_planning: bool) -> bool:
         with self.connect() as db:
             changed=db.execute("UPDATE instructions SET state=?,updated_at=? WHERE id=? AND state='needs_review' "
@@ -160,3 +183,36 @@ class InstructionInbox:
                 rows=db.execute('SELECT * FROM instructions WHERE project=? ORDER BY id DESC LIMIT ?',
                                 (canonical_project(project), max(1,min(limit,100))))
             return [dict(x) for x in rows]
+
+
+def inbox_acceptance(items: list[dict]) -> dict:
+    """Read-only evidence of translation/handoff, never just SQLite readability.
+
+    A healthy empty inbox is not evidence of a functioning handoff. The summary
+    excludes all user text and all model responses from diagnostics.
+    """
+    from collections import Counter
+    counts=Counter(str(item.get('state') or 'unknown') for item in items)
+    evidence={'count':len(items),'state_counts':dict(sorted(counts.items()))}
+    if not items:
+        return {'status':'inconclusive','detail':'JANUS inbox readable but no instruction has been submitted; handoff not tested.',
+                'evidence':evidence}
+    latest=items[0]
+    state=str(latest.get('state') or '')
+    if state=='handed_to_planner':
+        return {'status':'passed','detail':'Latest JANUS instruction was translated and handed to a planning checkpoint; no claim of implementation.',
+                'evidence':evidence}
+    if state=='needs_review' and not str(latest.get('next_action') or '').strip():
+        return {'status':'blocked','detail':'Latest JANUS instruction failed neural interpretation. Use JANUS & Sentinel → Retry latest failed instruction; no handoff occurred.',
+                'evidence':evidence}
+    if state=='needs_review':
+        return {'status':'inconclusive','detail':'Latest JANUS translation requires explicit user review before planning can use it.',
+                'evidence':evidence}
+    if state=='staged':
+        return {'status':'inconclusive','detail':'Latest JANUS advice is staged, but no eligible planning checkpoint has consumed it yet.',
+                'evidence':evidence}
+    if state in ('pending','interpreting'):
+        return {'status':'inconclusive','detail':'JANUS instruction is queued or being interpreted; no verified translation/handoff yet.',
+                'evidence':evidence}
+    return {'status':'inconclusive','detail':'Latest JANUS instruction state is '+state[:40]+'; no verified new handoff.',
+            'evidence':evidence}
