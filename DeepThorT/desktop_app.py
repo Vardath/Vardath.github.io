@@ -199,6 +199,10 @@ class DeepThorTDesktop(tk.Tk):
         # A cancelled reply must release the single-flight ONNX worker before
         # another chat can run. Restart is requested only for this intervention.
         self._restart_cancelled_node_pid = None
+        self._explicit_model_stop = False
+        self._unexpected_model_exits = 0
+        self._model_transport_retries = {}
+        self._model_transport_waiting = False
         self._quitting = False
         self.reply_stage = ''
         self.reply_started = 0.0
@@ -938,10 +942,9 @@ class DeepThorTDesktop(tk.Tk):
         if row:
             self.files.selection_set(row)
             self.files.focus(row)
-        choice=self.files.selection()
         menu=tk.Menu(self,tearoff=False)
-        if choice and self.project:
-            relative=self.files.item(choice[0],'text')
+        if row and self.project:
+            relative=self.files.item(row,'text')
             menu.add_command(label='Exclude from inspection (keep file on disk)',
                              command=lambda r=relative:self._exclude_project_file(r))
         menu.add_command(label='Restore excluded project files…',command=self._restore_project_files)
@@ -1550,7 +1553,8 @@ class DeepThorTDesktop(tk.Tk):
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
                         max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
-                        cancelled=cancelled,continuation=self.plan_continuations)
+                        cancelled=cancelled,continuation=self.plan_continuations,
+                        chat_id=request['chat_id'])
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
                 if cancelled():return
@@ -1559,7 +1563,11 @@ class DeepThorTDesktop(tk.Tk):
             except Exception as exc:
                 record(STATE,'desktop','conversation_worker_exception',level='ERROR',request_id=ident,
                        error_type=type(exc).__name__,stack=traceback.format_exc()[-12000:])
-                self.events.put(('conversation_error',ident,str(exc)))
+                if isinstance(exc, (ConnectionResetError, ConnectionAbortedError,
+                                    BrokenPipeError, TimeoutError)):
+                    self.events.put(('conversation_transport_lost',ident,type(exc).__name__,str(exc)))
+                else:
+                    self.events.put(('conversation_error',ident,str(exc)))
         threading.Thread(target=work,daemon=True,name=f'Conversation-{ident}').start()
 
     def _conversation_reply(self,ident,answer):
@@ -1615,6 +1623,55 @@ class DeepThorTDesktop(tk.Tk):
             self._reload_chat()
         self._render_reply_notice()
         self.status.set('Conversation updated. Project work requires explicit plan approval.')
+
+    def _conversation_transport_lost(self, ident, error_type, error):
+        """Pause failed localhost inference; never replay while worker is busy.
+
+        No completed answer is assumed. Exact saved per-pass exchanges will be
+        restored by the planner if inference later restarts successfully.
+        """
+        req = self.conversations.get(ident)
+        if not req or req['state'] != 'running':
+            return
+        count = self._model_transport_retries.get(ident, 0) + 1
+        self._model_transport_retries[ident] = count
+        record(STATE, 'desktop', 'onnx_transport_interrupted', level='WARNING',
+               request_id=ident, error_type=error_type, retry_count=count,
+               server_exit_code=(self.node.poll() if self.node else None),
+               note='Model exit cause is not established by an HTTP reset')
+        if count > 2:
+            self._conversation_error(ident,
+                'ONNX connection failed repeatedly; stopped after two supervised recovery attempts. '
+                'Inspect Processes and export diagnostics. Last transport error: '+str(error)[:180])
+            return
+        self.conversations.change(ident, 'pending',
+            f'ONNX connection interrupted ({error_type}); saved exchanges will resume when '
+            'the local model is ready. No new build authorization.', allowed=('running',))
+        if self.active_conversation == ident:
+            self.active_conversation = None
+            self.reply_stage = ''
+        self.node_ready = False
+        self._model_transport_waiting = True
+        self._log(f'Conversation #{ident}: local ONNX transport reset, recovery {count}/2. '
+                  'Request retained; waiting for a healthy, idle supervised worker.')
+        self._reload_chat(); self._render_reply_notice()
+        # A still-live worker may be finishing the old request; only the health
+        # poll can declare it idle. A dead worker is handled by node_end.
+        if self.node and self.node.poll() is None:
+            self.after(3000, self._resume_transport_if_idle)
+
+    def _resume_transport_if_idle(self):
+        if self._explicit_model_stop or self._quitting or not self.node or self.node.poll() is not None:
+            return
+        health = local_server_status()
+        if isinstance(health, dict) and health.get('ready') and not health.get('inference_busy'):
+            self._model_transport_waiting = False
+            self.node_ready = True
+            self._log('ONNX worker verified healthy and idle after transport interruption; '
+                      'resuming saved planning requests.')
+        elif isinstance(health, dict) and health.get('inference_busy'):
+            self.after(5000, self._resume_transport_if_idle)
+        # A missing/unhealthy server needs node_end/restart diagnosis.
 
     def _conversation_error(self,ident,error):
         req=self.conversations.get(ident)
@@ -2325,6 +2382,7 @@ class DeepThorTDesktop(tk.Tk):
         gate = ('paused' if self.queue_paused else
                 'tool_busy' if tool_busy else
                 'active_job' if self.active_job is not None else
+                'model_transport_wait' if self._model_transport_waiting else
                 'model_not_ready' if not self.node_ready else
                 'model_process_not_running' if not model_alive else 'dispatch_enabled')
         now=time.monotonic()
@@ -3991,10 +4049,14 @@ class DeepThorTDesktop(tk.Tk):
             if not automatic:messagebox.showinfo('Install AI runtime','Node.js or ONNX dependencies missing. Click Install AI.')
             return
         try:
+            if not automatic:
+                self._unexpected_model_exits = 0
+            self._explicit_model_stop = False
             kwargs={'creationflags':getattr(subprocess,'CREATE_NO_WINDOW',0)} if os.name=='nt' else {}
             self.node=subprocess.Popen([node,str(ROOT/'inference_server.mjs')],cwd=str(ROOT),
                     stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace',bufsize=1,**kwargs)
             self.node_ready=False;self.node_loading=True
+            self._model_transport_waiting=False
             self.node_started=time.monotonic()
             self.recent_ai_logs=[]
             self.last_ai_error=''
@@ -4015,6 +4077,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Could not start local model: '+str(e))
             if not automatic:messagebox.showerror('Start AI failed',str(e))
     def _stop_ai(self):
+        self._explicit_model_stop = True
         self._restart_cancelled_node_pid=None  # Explicit global stop overrides automatic reload.
         if self.active_conversation is not None:
             self.conversations.change(self.active_conversation,'pending',
@@ -4244,6 +4307,8 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
             elif kind=='conversation_reply':self._conversation_reply(event[1],event[2])
             elif kind=='conversation_error':self._conversation_error(event[1],event[2])
+            elif kind=='conversation_transport_lost':
+                self._conversation_transport_lost(event[1],event[2],event[3])
             elif kind=='job_plan':self._job_plan(event[1],event[2])
             elif kind=='build_files_done':self._build_files_done(event[1])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
@@ -4272,7 +4337,10 @@ class DeepThorTDesktop(tk.Tk):
                     newly_ready=not self.node_ready
                     if newly_ready:
                         self._log('Local AI ready: 127.0.0.1:8765; offline.')
-                    self.node_ready=True;self.node_loading=False;self.model_status.set('AI: ready')
+                    if not self._model_transport_waiting or not detail or not detail.get('inference_busy'):
+                        self._model_transport_waiting=False
+                        self.node_ready=True
+                    self.node_loading=False;self.model_status.set('AI: ready')
                     if newly_ready:
                         record(STATE,'desktop','model_ready_event',model_pid=self.node.pid,health=detail or {})
                     if not (isinstance(detail,dict) and detail.get('inference_busy')):
@@ -4293,7 +4361,13 @@ class DeepThorTDesktop(tk.Tk):
                         self.after(350,lambda:self._start_ai(automatic=True))
                     continue
                 was_loading=self.node_loading
+                unexpected = (not was_loading and not self._explicit_model_stop
+                              and not self._quitting)
                 self._log('AI process exited. Exit status: '+str(event[1]))
+                record(STATE,'desktop','onnx_supervised_process_exit',level='WARNING',
+                       exit_code=event[1],unexpected=unexpected,
+                       was_loading=was_loading,
+                       note='HTTP ConnectionResetError alone cannot establish OOM or a Windows job kill')
                 if was_loading:
                     self.last_ai_error='\n'.join(self.recent_ai_logs[-12:]) or f'Local inference process exited with code {event[1]}'
                 self.node_ready=False;self.node_loading=False;self.node_started=0.0
@@ -4313,6 +4387,21 @@ class DeepThorTDesktop(tk.Tk):
                     j=self.active_job
                     self.jobs.change(j,'paused','Model process exited during inference',allowed=('running',))
                     self.active_job=None;self._refresh_jobs()
+                if unexpected:
+                    self._unexpected_model_exits += 1
+                    if self._unexpected_model_exits <= 2:
+                        self._set_connection_status(
+                            f'ONNX exited unexpectedly; supervised restart '
+                            f'{self._unexpected_model_exits}/2 is scheduled. '
+                            'Progress and completed passes remain saved.')
+                        self._log('Unexpected local ONNX exit; attempting bounded, '
+                                  'game-capped relaunch without changing the 40-pass budget.')
+                        self.after(5000,lambda:self._start_ai(automatic=True)
+                                   if not self._explicit_model_stop and not self._quitting else None)
+                    else:
+                        self._set_connection_status('Repeated ONNX exits: automatic restart stopped. '
+                          'Inspect model, RAM/commit limit and Windows events; no result was fabricated.')
+                        self._log('ONNX restarted twice but continued exiting; stopped automatically.')
             elif kind=='install_done':
                 self.installing=False;self.model_status.set('AI: installed')
                 self._log('Local AI installed. Starting the model now.')

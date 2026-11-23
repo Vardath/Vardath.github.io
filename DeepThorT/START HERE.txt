@@ -1,3 +1,13 @@
+DEEPTHORT V47 — 23 NOVEMBER 2026
+40 PLAN PASSES = model attempts per planning run, not 40 files or a file-size limit.
+Large-document section attempts = model calls spent reviewing source sections;
+more batches may continue without losing saved section progress.
+Old complete responses can be restored only when the original session databases
+still exist and the project, instructions, chat and full model input match.
+A reset local ONNX connection pauses the request until a healthy model is ready.
+Unexpected exits have two supervised restarts, still under the same 20% cap.
+Do not delete or replace D:\deepthort\state; preserve all models and projects.
+
 DEEPTHORT V46 — 23 November 2026
 Right-click any row under Project files (left) to Exclude from inspection (keep on disk).
 Right-click again, even on empty space, to restore excluded files.

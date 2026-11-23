@@ -92,6 +92,61 @@ class SpecificationIndex:
                                     for i,(start,end) in enumerate(spans)])
         return self.status(request_id,original)
 
+    def inherit_exact_progress(self, request_id: int, original: str,
+                               project: str | Path, chat_id: str) -> int:
+        """Recover old indexed sections only from the exact original workspace.
+
+        A diagnostic ZIP deliberately omits user instructions and model outputs,
+        so it cannot be used for reconstruction. This uses the existing local
+        SQLite state, with source-section hashes and current path validation.
+        No approval or executable action is inherited.
+        """
+        conversations_path = self.path.parent / 'conversations.sqlite3'
+        if not chat_id or not conversations_path.is_file():
+            return 0
+        self.index(request_id, original)
+        with sqlite3.connect(conversations_path, timeout=20) as db:
+            candidates = [int(ident) for ident, saved_project in db.execute(
+                'SELECT id,project FROM conversation_requests '
+                'WHERE id<>? AND chat_id=? AND mode=? AND prompt=? AND attachments=? '
+                'ORDER BY id DESC',
+                (request_id,chat_id,'draft_plan',original,'[]'))
+                if str(Path(saved_project).resolve()).casefold() ==
+                   str(Path(project).resolve()).casefold()]
+        if not candidates:
+            return 0
+        dest = self._verified_rows(request_id, original)
+        if any(row[5] for row in dest):
+            return 0
+        for old_id in candidates:
+            try:
+                source = self._verified_rows(old_id, original)
+            except ValueError:
+                continue
+            if len(source) != len(dest):
+                continue
+            valid = []
+            for row in source:
+                if not row[5]:
+                    continue
+                try:
+                    steps = json.loads(row[5])
+                    checked = parse_build_plan(json.dumps({'files':steps}),project,fragment=True)
+                    if checked != steps or (project_kind(original)=='x4' and any(
+                            e['path'].lower().endswith('.py') for e in checked)):
+                        continue
+                except (ValueError,PlanError):
+                    continue
+                if row[0] != dest[row[0]][0] or row[3] != dest[row[0]][3]:
+                    continue
+                valid.append((row[5],request_id,row[0]))
+            if valid:
+                with self._db() as db:
+                    db.executemany('UPDATE specification_sections SET steps_json=? '
+                                   'WHERE request_id=? AND ordinal=? AND steps_json=\'\'', valid)
+                return len(valid)
+        return 0
+
     def _verified_rows(self, request_id: int, original: str):
         with self._db() as db:
             meta=db.execute('SELECT source_sha256,character_count,section_count FROM specification_index WHERE request_id=?',(request_id,)).fetchone()
@@ -190,6 +245,11 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
     if not 1<=max_rounds<=40:
         raise ValueError('Planning attempts must be 1..40')
     index.index(request_id,original)
+    if chat_id:
+        inherited=index.inherit_exact_progress(request_id,original,project,chat_id)
+        if inherited and stage:
+            stage(f'Recovered {inherited} already reviewed large-document sections '
+                  'from exact matching local historical state; not a build approval')
     for attempt in range(max_rounds):
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; indexed specification remains saved')
@@ -197,8 +257,9 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         if row is None:
             break
         if stage:
-            stage(f'Large specification section {row["ordinal"]+1}/{row["total"]}; '
-                  f'local inference pass {attempt+1}/{max_rounds}')
+            stage(f'Large-document review: section {row["ordinal"]+1}/{row["total"]}; '
+                  f'model calls in this batch {attempt+1}/{max_rounds} '
+                  '(not a file count or total-project limit)')
         prompt=index.model_prompt(request_id,original)
         exchange=f'{session}-spec-{row["ordinal"]}-{row["attempts"]}'
         lookup=getattr(client,'completed_exchange',None)

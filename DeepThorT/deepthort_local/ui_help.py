@@ -30,7 +30,7 @@ TOOLTIPS = {
     'Diagnose AI': 'Inspect the local inference setup and explain problems starting or using Qwen.',
     'Retry failed reply': 'Retry an unsuccessful conversation reply. Exact previously saved successful model passes may be reused.',
     'Stop reply': 'Stop the current model response; unrelated approved tasks are not automatically cancelled.',
-    'Draft project plan': 'Ask Qwen to draft a staged implementation plan from your instructions; no work is approved yet.',
+    'Draft project plan': 'Ask Qwen to draft a staged implementation plan. 40 attempts means model planning calls in one batch, not 40 files. Large specifications use numbered sections and resumable review batches. No work is approved yet.',
     'Approve plan & queue': 'Review the proposed plan and explicitly authorize the next milestone. Later milestones remain gated.',
     'Revise existing file': 'Propose a change to a selected project file. Review the diff before approving the write.',
     'Pause queue': 'Pause dispatch of new queue jobs. Already-running work may continue until separately stopped.',

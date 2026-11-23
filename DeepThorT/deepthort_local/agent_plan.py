@@ -440,7 +440,8 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
 def generate_model_plan(client, session: str, request: str, project: str | Path,
                         first_prompt: str, *, x4_evidence: str = '',
                         max_chars: int = 7500, max_rounds: int = MAX_PLAN_ATTEMPTS,
-                        stage=None, cancelled=None, continuation=None) -> tuple[str, list[dict]]:
+                        stage=None, cancelled=None, continuation=None,
+                        chat_id: str = '') -> tuple[str, list[dict]]:
     """Generate a complete plan through bounded, evidence-driven model revisions.
 
     No file intentions are hardcoded here. Each proposed path/description must
@@ -491,6 +492,13 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
         round_session = f'{session}-{round_no}'
         lookup = getattr(client, 'completed_exchange', None)
         cached = lookup(round_session, prompt) if callable(lookup) else None
+        if cached is None and chat_id:
+            restore = getattr(client, 'historical_plan_exchange', None)
+            if callable(restore):
+                cached = restore(prompt, project=project, request=request, chat_id=chat_id)
+                if cached is not None and stage:
+                    stage('Recovered an exact-input, pre-v46 completed model reply ' 
+                          'from local session history; checking current plan rules')
         if cached is not None:
             answer = cached
             if stage:

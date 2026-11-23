@@ -1,6 +1,7 @@
 """Persist local-only coding-chat messages; no external inference endpoints."""
 from __future__ import annotations
 import json
+import re
 import time
 from .flight_recorder import record
 import sqlite3
@@ -99,6 +100,57 @@ class LocalModelClient:
         if (len(rows) == 2 and rows[0][0] == 'assistant' and rows[1] == ('user', prompt)
                 and isinstance(rows[0][1], str) and rows[0][1].strip()):
             return rows[0][1]
+        return None
+
+    def historical_plan_exchange(self, prompt: str, *, project: str | Path,
+                                 request: str, chat_id: str) -> str | None:
+        """Reclaim pre-v46 answers from the owner's existing SQLite history.
+
+        Historical logs contain no model text and are never interpreted as a
+        plan. Reuse requires one saved complete prompt/answer pair plus a
+        matching durable conversation (project, original user request, chat).
+        An old partial JSON fragment still faces current path and X4 checks.
+        """
+        if not all(isinstance(x, str) and x for x in (prompt, request, chat_id)):
+            return None
+        conversation_db = self.db.parent / 'conversations.sqlite3'
+        if not conversation_db.is_file():
+            return None
+        project_key = str(Path(project).resolve()).casefold()
+        with sqlite3.connect(conversation_db, timeout=20) as conversations:
+            eligible = {
+                int(row[0]) for row in conversations.execute(
+                    'SELECT id, project FROM conversation_requests '
+                    'WHERE mode=? AND prompt=? AND chat_id=? AND attachments=?',
+                    ('draft_plan', request, chat_id, '[]'))
+                if str(Path(row[1]).resolve()).casefold() == project_key
+            }
+        if not eligible:
+            return None
+        with self._connect() as conn:
+            # The adjacency of the two records is essential: never use the
+            # assistant reply from an unrelated prompt in the same session.
+            candidates = conn.execute("""SELECT u.session_id, a.content
+                FROM messages AS u JOIN messages AS a
+                ON a.id = u.id+1 AND a.session_id=u.session_id
+                WHERE u.role='user' AND a.role='assistant' AND u.content=?
+                AND u.session_id LIKE 'plan-%' ORDER BY u.id DESC LIMIT 300""",
+                (prompt,)).fetchall()
+        for session, answer in candidates:
+            match = re.fullmatch(r'plan-(\d+)-(.+)', session)
+            if not match or int(match.group(1)) not in eligible:
+                continue
+            suffix = match.group(2)
+            # Both original one-session v15 plans and later per-pass sessions.
+            if suffix != chat_id and not (suffix.startswith(chat_id + '-') and
+                    suffix[len(chat_id)+1:].isdigit()):
+                continue
+            if isinstance(answer, str) and answer.strip():
+                record(self.db.parent, 'model_client', 'historical_plan_exchange_restored',
+                       old_request_id=int(match.group(1)),
+                       prompt_sha256=__import__('hashlib').sha256(prompt.encode('utf-8')).hexdigest()[:16],
+                       response_characters=len(answer))
+                return answer
         return None
 
     def chat(self,session_id:str,prompt:str,max_tokens:int=96,*,visible_prompt:str|None=None):
