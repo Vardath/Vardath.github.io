@@ -1,0 +1,9 @@
+# Scratch Chat milestone — 2026-11-24: distinguish legacy pilot from repaired multi-turn seed
+
+Verified historical run 45257993758: original-dialogue-smoke failed at DeepThorT JSON-line transport; 80-step random-initialized training and held-out task-family evaluation commands succeeded, but semantic acceptance did not execute. Source-test run 45258019585 passed. No newer successful run has been established by this pass. The GitHub connector's commit-workflow lookup filters pull-request events, so an empty result cannot establish that push workflows did not run.
+
+**Critical training-data distinction:** The dialogue smoke workflow still invokes `capability.dialogue_corpus`, whose source defines 27 tiny single-turn/faux-multi-turn examples, *not* the separately authored 24 four-message repaired CC0 conversations in `data/original_cc0_multiturn_20261124.jsonl`. Therefore its 80-step checkpoint is **not evidence of training on the repaired multi-turn seed**. This distinction must remain explicit in reports.
+
+Commit bae5905 adds the repaired seed's existing split-isolation and readiness regression suites to the bounded dialogue smoke workflow before training. This is a validation improvement, not a new training corpus or semantic acceptance. The push modifies the workflow and should trigger a follow-on run; outcome remains unverified until its job conclusion is inspected.
+
+Next: integrate the repaired seed into a properly grouped, contamination-audited training format; acquire substantially more appropriately licensed dialogues with pinned provenance; fit tokenizer exclusively on training data; train original random weights with reproducible checkpoint manifests; independently evaluate multi-turn and tool use; exercise the installed DeepThorT host rather than only its subprocess bridge. CPU Actions remain pilot-only; no GPU allocation or external corpus license has been verified.
