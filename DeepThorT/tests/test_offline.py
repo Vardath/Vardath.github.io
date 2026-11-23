@@ -42,7 +42,7 @@ class Tests(unittest.TestCase):
             self.assertTrue(make.called)
     def test_ram_math(self):
         gib=1024**3
-        self.assertEqual(calculate_ram_limit(16*gib, 10*gib),16*gib//5)
+        self.assertEqual(calculate_ram_limit(16*gib, 10*gib),16*gib*3//10)
         with self.assertRaises(RuntimeError): calculate_ram_limit(16*gib,3*gib)
     def test_no_uncapped_launch(self):
         if os.name!='nt':

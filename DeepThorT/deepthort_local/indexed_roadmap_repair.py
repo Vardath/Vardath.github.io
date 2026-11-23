@@ -35,7 +35,8 @@ def _choose_section(rows, original: str, focus: str, turn: int) -> int:
 
 
 def _prompt(rows, original: str, ordinal: int, focus: str,
-            gaps: list[str], steps: list[dict], *, neural_review: dict | None = None) -> str:
+            gaps: list[str], steps: list[dict], *, neural_review: dict | None = None,
+            new_instruction: str = '') -> str:
     """One validator goal per ONNX call; retain the verbatim original section.
 
     The v48 prompt listed every gap and every file while seeking one change.
@@ -71,6 +72,8 @@ def _prompt(rows, original: str, ordinal: int, focus: str,
     tail='\nVERBATIM ORIGINAL SOURCE SECTION END.\n'
     guidance=limited_guidance(neural_review)
     advisory=('\n' + guidance + '\n') if guidance else ''
+    if new_instruction:
+        advisory+='\nJANUS PLANNING CHECKPOINT (advisory only):\n'+new_instruction[:1300]+'\n'
     prompt=header+advisory+original[row[1]:row[2]]+tail
     if len(prompt)>MAX_MODEL_INPUT:
         # Only optional advisory summaries may be dropped. Never truncate an
@@ -89,7 +92,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
                            max_rounds: int, stage=None, cancelled=None,
                            continuous: bool = False,
                            neural_council: bool = False,
-                           inspected_evidence: str = ''):
+                           inspected_evidence: str = '', guidance_getter=None):
     if max_rounds <= 0:
         raise PlanError('All 40 planning calls were consumed reviewing the source. '
                         'Retry to continue correcting the incomplete X4 roadmap.')
@@ -123,7 +126,17 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         else:
             focus=gaps[(i//2)%len(gaps)]
         ordinal=_choose_section(rows,original,focus,i)
+        # Dynamic guidance can arrive between ONNX model requests. The
+        # source specification remains unchanged, and correction validator
+        # still decides whether the proposed X4 file is valid.
         prompt=_prompt(rows,original,ordinal,focus,gaps,steps,neural_review=review)
+        # Do NOT mark an instruction delivered if the model input cannot fit
+        # it alongside the exact original section and mandatory X4 evidence.
+        if guidance_getter and len(prompt)<MAX_MODEL_INPUT-1700:
+            extra=guidance_getter()
+            if extra:
+                prompt=_prompt(rows,original,ordinal,focus,gaps,steps,
+                               neural_review=review,new_instruction=extra)
         serial=index.reserve_revision_attempt(request_id,original,ordinal,prompt)
         if stage:
             stage(f'Indexed roadmap correction {(i % max_rounds)+1}/{max_rounds} '

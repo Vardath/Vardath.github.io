@@ -1,3 +1,10 @@
+DeepThorT v51 — two local Qwen ONNX workers under ONE capped Windows process tree.
+Reported hardware: 40 GB RAM. Shared ceiling: 30% total system CPU, maximum 30% job committed memory (adaptive downward if RAM low); NOT 30% per model.
+Type an instruction in Chats and choose 'Instruction to JANUS' (Ctrl+Shift+Return) while the implementation model works. The original is saved; JANUS and Sentinel use secondary local ONNX for a next-step recommendation and separate challenge. Only future UNAPPROVED planning steps may consume that advice. View or retry it in JANUS & Sentinel > Instruction inbox. Changes to approved work need another approved plan.
+Close DeepThorT, back up D:\deepthort\state, extract v51 source overlay directly into D:\deepthort and replace source files; preserve DeepThorT.exe, models, state, node_modules, reference, cache and projects. Native Windows launcher/job-cap and dual-model runtime acceptance still require testing. Read PROJECT_CONTEXT_V51.md.
+
+---
+
 DeepThorT v49 — productive long-project planning
 Large specifications now advance through additional 40-call batches when accepted sections or X4 validator checks genuinely improve. Eight consecutive unproductive corrections pause, preserving progress instead of repeating the same dead end. This is planning, not automatic project approval or full autonomous game production. The original 20% Windows CPU/memory safeguards remain.
 To upgrade: close DeepThorT, back up D:\deepthort\state, extract the v49 SOURCE OVERLAY into D:\deepthort; preserve DeepThorT.exe, models, node_modules, state, reference, cache and projects.

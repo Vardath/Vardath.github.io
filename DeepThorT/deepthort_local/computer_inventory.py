@@ -232,7 +232,7 @@ def scan_computer(install_dir: str | Path, project_dir: str | Path | None = None
         'project_folder': str(Path(project_dir).resolve()) if project_dir else None,
         'cpu': _cpu_name(), 'logical_processors': os.cpu_count(),
         'ram_bytes': total, 'free_ram_bytes': available,
-        'deepthort_max_cpu_percent':20, 'deepthort_max_memory_commit_bytes':total//5,
+        'deepthort_max_cpu_percent':30, 'deepthort_max_memory_commit_bytes':total*3//10,
         'gpu': _gpu_names() if include_gpu else [], 'drives': _drives(),
         'tools': detected_tools,
         'engine_preflight': project_preflight,
@@ -247,8 +247,8 @@ def format_inventory(data: dict) -> str:
          f"Current project: {data['project_folder'] or 'None selected'}",'',
          f"CPU: {data['cpu']} ({data['logical_processors']} logical processors)",
          f"Installed RAM: {gib(data['ram_bytes'])} | Available: {gib(data['free_ram_bytes'])}",
-         f"DeepThorT memory-commit budget: {gib(data['deepthort_max_memory_commit_bytes'])} (20%)",
-         'DeepThorT CPU cap: 20% of whole system (when launched via DeepThorT.exe)',
+         f"DeepThorT memory-commit budget: {gib(data['deepthort_max_memory_commit_bytes'])} (30%)",
+         'DeepThorT CPU cap: 30% of whole system (when launched via DeepThorT.exe)',
          'Disk usage: low-priority / game-aware, NOT an enforced 20% disk bandwidth cap',
          f"GPU: {', '.join(data['gpu']) if data['gpu'] else 'Not detected / optional scan skipped'}", '', 'Disks:']
     for d in data['drives']:

@@ -63,6 +63,8 @@ from deepthort_local.diagnostic_evidence import (summarize_x4_report, summarize_
 from deepthort_local.process_metrics import Meter
 from deepthort_local.janus_engine import JanusStore
 from deepthort_local.janus_interface import addressed_to_janus, janus_state_reply
+from deepthort_local.instruction_inbox import InstructionInbox, InstructionError
+from deepthort_local.dual_onnx import council_can_start, memory_room, windows_memory, local_health as council_health, deliberate_instruction
 from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
@@ -122,7 +124,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='50',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='51',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -134,6 +136,12 @@ class DeepThorTDesktop(tk.Tk):
         self.configure(bg=BG)
         self.events = queue.Queue()
         self.node = None
+        self.council_node = None
+        self.council_ready = False
+        self._council_busy = False
+        self._council_retry_at = 0.0
+        self._council_restarts = 0
+        self._council_health_checking = False
         self.node_ready = False
         self.node_loading = False
         self.node_started = 0.0
@@ -252,6 +260,7 @@ class DeepThorTDesktop(tk.Tk):
         self.chats = ChatRegistry(STATE/'chats.sqlite3')
         self.tasks = TaskBoard(STATE/'tasks.sqlite3')
         self.janus = JanusStore(STATE/'janus.sqlite3')
+        self.instruction_inbox = InstructionInbox(STATE/'janus-instruction-inbox-v51.sqlite3')
         self.sentinel = SentinelStore(STATE/'sentinel.sqlite3')
         self.disk_gate = DiskGate(game_names_path=ROOT/'game_executables.txt',game_flag=STATE/'game-active.flag')
         self.settings_file = STATE/'desktop.json'
@@ -290,6 +299,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(1500, self._auto_start_if_installed)
         self.after(700, self._start_sentinel)
         self.after(3000, self._refresh_janus_view)
+        self.after(3900, self._council_tick)
         self.protocol('WM_DELETE_WINDOW',self._quit)
         self._log('Desktop opened. Local ONNX only. Routine catalog tool management: '+
                   ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
@@ -393,6 +403,7 @@ class DeepThorTDesktop(tk.Tk):
                  bg=BG,fg=MUTED,font=('Segoe UI',9)).pack(anchor='w',pady=(7,3))
         self.input=self._text(chat,height=12,font=('Segoe UI',11));self.input.pack(fill='both',expand=False)
         self.input.bind('<Control-Return>',lambda e:self._send())
+        self.input.bind('<Control-Shift-Return>',lambda e:(self._queue_janus_instruction(),'break')[1])
         # Keyboard/context-menu access avoids another button row in the
         # original window geometry, which users need for remote desktop.
         self.input.bind('<Control-Shift-O>',self._import_large_specification)
@@ -406,6 +417,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(chat_controls,text='Diagnose AI',command=self._diagnose).pack(side='left',padx=5)
         ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left',padx=5)
         ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=5)
+        ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
@@ -443,7 +455,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(guibar,text='Stop isolated GUI test',
                    command=self._stop_isolated_gui).pack(side='left',padx=3)
         ttk.Label(queue_tab,text='v45: Windows programs can be observed on a separate desktop with no input takeover. '
-                  'Shares the original 20% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
+                  'Shares the original 30% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
                   style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
@@ -488,6 +500,7 @@ class DeepThorTDesktop(tk.Tk):
         # JANUS coordinator and bounded read-only Sentinel watchdog.
         janus_bar=ttk.Frame(janus_tab);janus_bar.pack(fill='x',pady=7)
         ttk.Button(janus_bar,text='Refresh status',command=self._show_janus_status).pack(side='left',padx=3)
+        ttk.Button(janus_bar,text='Instruction inbox…',command=self._show_instruction_inbox).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Set primary goal…',command=self._set_janus_goal).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Inspect 22 core states',command=self._inspect_janus_cores).pack(side='left',padx=3)
         ttk.Button(janus_bar,text='Pause JANUS',command=lambda:self._set_janus_paused(True)).pack(side='left',padx=3)
@@ -577,7 +590,7 @@ class DeepThorTDesktop(tk.Tk):
             'Installation and heavy generation should run when games are closed.')
 
         foot=ttk.Frame(self);foot.pack(fill='x',padx=13,pady=(0,8))
-        self.status=tk.StringVar(value='Idle • 20% total CPU allocation + 20% memory-commit budget')
+        self.status=tk.StringVar(value='Idle • 30% total CPU allocation + 30% memory-commit budget')
         ttk.Label(foot,textvariable=self.status,style='Muted.TLabel').pack(side='left')
         ttk.Label(foot,text='GPU inference off · Offline generation · No cloud fallback',style='Muted.TLabel').pack(side='right')
 
@@ -762,7 +775,7 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Install offline image generator',
             'Install CPU PyTorch, Diffusers and Stable Diffusion 1.5 model weights?\n\n'
             'This downloads several GB and can use substantial temporary disk space and memory. '
-            'Inference will run offline and CPU-only under the 20% launcher limits.\n\n'
+            'Inference will run offline and CPU-only under the 30% launcher limits.\n\n'
             'It can be extremely slow and can fail if physical RAM usage exceeds the allowed budget.\n'
             'Approve this one-time installation?',parent=self):return
         self.tabs.select(4)
@@ -1367,6 +1380,170 @@ class DeepThorTDesktop(tk.Tk):
         if not self.node_ready and not self.node_loading and not self.installing:
             self._auto_start_if_installed()
 
+    def _queue_janus_instruction(self):
+        """Record new user guidance immediately; never interrupt current coding."""
+        if not self.project or not self.current_chat:
+            messagebox.showinfo('Choose a project',
+                'Select a project to associate the instruction with its development plan.',parent=self)
+            return
+        message=self.input.get('1.0','end').strip()
+        if self.imported_spec_source:
+            try:message=resolve_import(self.imported_spec_source,message)
+            except (OSError,ValueError,UnicodeError) as exc:
+                messagebox.showerror('Instruction source changed',str(exc),parent=self);return
+        if not message:return
+        try:
+            ident=self.instruction_inbox.enqueue(str(self.project),self.current_chat,message)
+        except (InstructionError,OSError,ValueError) as exc:
+            messagebox.showerror('Cannot save instruction',str(exc),parent=self);return
+        self.input.delete('1.0','end')
+        self._clear_imported_specification()
+        self._reload_chat()
+        self.status.set(f'JANUS instruction #{ident} saved. Active coding continues uninterrupted.')
+        self._log(f'JANUS instruction #{ident} queued for the secondary local ONNX model; no job approved.')
+        record(STATE,'desktop','janus_instruction_queued',instruction_id=ident,
+               project_name=self.project.name,characters=len(message),approval_granted=False)
+
+    def _show_instruction_inbox(self):
+        """Expose the actual proposals and approval boundaries, never auto-execute."""
+        project=str(self.project) if self.project else None
+        items=self.instruction_inbox.list(project,limit=24)
+        if not items:
+            messagebox.showinfo('JANUS instruction inbox','No saved instructions for this project.',parent=self)
+            return
+        window=tk.Toplevel(self)
+        window.title('JANUS instruction inbox — advisory, not executed')
+        window.geometry('860x490')
+        tree=ttk.Treeview(window,columns=('id','state','chat','action'),show='headings',height=8)
+        for c,w in (('id',55),('state',140),('chat',100),('action',490)):
+            tree.heading(c,text=c.capitalize());tree.column(c,width=w,stretch=c=='action')
+        tree.pack(fill='x',padx=10,pady=8)
+        details=tk.Text(window,height=12,wrap='word')
+        details.pack(fill='both',expand=True,padx=10,pady=8)
+        for item in items:
+            tree.insert('','end',iid=str(item['id']),values=(item['id'],item['state'],
+                item['chat_id'][-12:],item['next_action'][:155] or item['original'][:155]))
+        lookup={str(x['id']):x for x in items}
+        def selected():
+            ids=tree.selection()
+            return lookup.get(ids[0]) if ids else None
+        def refresh_detail(_event=None):
+            item=selected()
+            details.delete('1.0','end')
+            if item:
+                details.insert('1.0',f"ORIGINAL USER MESSAGE (never replaced):\n{item['original']}\n\n"
+                    f"JANUS PROPOSED ACTION:\n{item['next_action'] or '(pending)'}\n\n"
+                    f"SENTINEL TEST:\n{item['verification'] or '(pending)'}\n\n"
+                    f"STATE: {item['state']}\n{item['reason']}")
+        tree.bind('<<TreeviewSelect>>',refresh_detail)
+        buttons=ttk.Frame(window);buttons.pack(fill='x',padx=10,pady=8)
+        def review():
+            item=selected()
+            if not item or item['state']!='needs_review':return
+            if messagebox.askyesno('Approve PLANNING guidance only',
+                    'Allow this instruction to inform the NEXT UNAPPROVED planning pass?\n\n'
+                    'This does not authorize source edits, tool execution or changes to an '
+                    'approved plan. Changes of scope require a NEW plan approval.',parent=window):
+                if self.instruction_inbox.review(item['id'],allow_planning=True):
+                    tree.set(str(item['id']),'state','staged');item['state']='staged';refresh_detail()
+        def dismiss():
+            item=selected()
+            if item and self.instruction_inbox.dismiss(item['id']):
+                tree.set(str(item['id']),'state','dismissed');item['state']='dismissed';refresh_detail()
+        ttk.Button(buttons,text='Approve guidance for NEXT draft plan',command=review).pack(side='left',padx=4)
+        def retry():
+            item=selected()
+            if item and self.instruction_inbox.retry_interpretation(item['id']):
+                tree.set(str(item['id']),'state','pending');item['state']='pending';refresh_detail()
+        ttk.Button(buttons,text='Retry failed interpretation',command=retry).pack(side='left',padx=4)
+        ttk.Button(buttons,text='Dismiss selected',command=dismiss).pack(side='left',padx=4)
+        ttk.Button(buttons,text='Close',command=window.destroy).pack(side='right',padx=4)
+        if items:
+            tree.selection_set(str(items[0]['id']));refresh_detail()
+
+    def _next_janus_guidance(self, project: str, chat_id: str) -> str:
+        """Consume only staged advice at a non-executable model planning boundary."""
+        guidance=self.instruction_inbox.next_guidance(project,chat_id)
+        if guidance:
+            record(STATE,'desktop','janus_instruction_handed_to_planning',
+                project_name=Path(project).name,chat_id=chat_id,characters=len(guidance),
+                approved_job_changed=False)
+        return guidance
+
+    def _start_council(self):
+        if not self.node_ready or not self.node or self.node.poll() is not None:return
+        if self.council_node and self.council_node.poll() is None:return
+        if not council_can_start():
+            return  # Low RAM or uncapped session; inbox remains saved.
+        # Refuse an externally bound port. We only trust our own Popen child.
+        if council_health() is not None:
+            self._log('Council ONNX port is already occupied; refusing another unmanaged model.')
+            self._council_retry_at=time.monotonic()+120
+            return
+        node=shutil.which('node')
+        if not node:return
+        try:
+            env=dict(os.environ,DEEPTHORT_ROLE='council',DEEPTHORT_COUNCIL_PORT='8766')
+            flags=getattr(subprocess,'CREATE_NO_WINDOW',0)
+            proc=subprocess.Popen([node,str(ROOT/'inference_server.mjs')],cwd=str(ROOT),
+                stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
+                env=env,creationflags=flags)
+            self.council_node=proc;self.council_ready=False
+            self._log('Starting second supervised local Qwen ONNX for JANUS/Sentinel (port 8766).')
+            record(STATE,'desktop','council_worker_started',pid=proc.pid,shared_cpu_cap_percent=30,
+                   shared_ram_commit_cap_percent=30,no_new_windows_job=True)
+        except OSError as exc:
+            self._log('Secondary ONNX unavailable; JANUS instructions saved: '+str(exc)[:180])
+            self._council_retry_at=time.monotonic()+120
+
+    def _council_tick(self):
+        """Never blocks Tk or the primary implementation model."""
+        try:
+            if self._quitting:return
+            proc=self.council_node
+            if proc and proc.poll() is not None:
+                self._log(f'Secondary ONNX exited ({proc.poll()}); instructions remain durable.')
+                self.council_node=None;self.council_ready=False
+                self._council_restarts+=1
+                self._council_retry_at=time.monotonic()+120
+            mem=windows_memory()
+            if (self.council_node and self.council_node.poll() is None and
+                mem and mem[1]<max(3*1024**3,mem[0]//10)):
+                self._log('Pausing council ONNX: RAM pressure; implementation model remains active.')
+                self.council_node.terminate()
+                self.council_ready=False
+                self._council_retry_at=time.monotonic()+180
+            if (self.council_node is None and self.node_ready and
+                self._council_restarts<3 and time.monotonic()>=self._council_retry_at):
+                self._start_council()
+            if (self.council_node and self.council_node.poll() is None and
+                not self._council_health_checking):
+                self._council_health_checking=True
+                def probe():
+                    value=council_health(timeout=1.2)
+                    self.events.put(('council_health',value))
+                threading.Thread(target=probe,daemon=True,name='CouncilHealth').start()
+            if self.council_ready and not self._council_busy:
+                item=self.instruction_inbox.claim()
+                if item:
+                    self._council_busy=True
+                    def counsel():
+                        try:
+                            # Query the stored project exactly, not a generated
+                            # path guess. If case differs, omit the counts; the
+                            # instruction's original project binding is authoritative.
+                            summary='Existing approved stages must not be changed without a fresh plan approval.'
+                            result=deliberate_instruction(item['original'],project=item['project'],
+                                                           work_summary=summary)
+                            self.events.put(('council_instruction_ready',item['id'],result))
+                        except Exception as exc:
+                            self.events.put(('council_instruction_failed',item['id'],str(exc)[:500]))
+                    threading.Thread(target=counsel,daemon=True,name='JanusInstructionCouncil').start()
+        except Exception as exc:
+            record(STATE,'desktop','council_tick_failed',level='ERROR',error=str(exc)[:350])
+        finally:
+            if not self._quitting:self.after(3600,self._council_tick)
+
     def _retry_conversation(self):
         rows=self.conversations.thread(self.current_chat)
         failed=next((r for r in reversed(rows) if r['state']=='failed'),None)
@@ -1641,6 +1818,11 @@ class DeepThorTDesktop(tk.Tk):
                 if cancelled():return
                 session=request['chat_id'] if request['mode']=='chat' else f'plan-{ident}-{request["chat_id"]}'
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
+                if request['mode']=='draft_plan' and not large_spec:
+                    # This is a NEW draft, never an approved file-writing job.
+                    if len(prompt)<MAX_INFERENCE_PROMPT-2400:
+                        extra=self._next_janus_guidance(request['project'],request['chat_id'])
+                        if extra:prompt+='\n\n'+extra
                 if request['mode']=='chat' and not large_spec:
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 elif large_spec:
@@ -1651,7 +1833,8 @@ class DeepThorTDesktop(tk.Tk):
                         cancelled=cancelled, hierarchy=self.hierarchies,
                         chat_id=request['chat_id'],continuous=True,
                         neural_council=bool(x4_context),
-                        inspected_evidence=inspected_x4_evidence)
+                        inspected_evidence=inspected_x4_evidence,
+                        guidance_getter=lambda: self._next_janus_guidance(request['project'],request['chat_id']))
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -1980,7 +2163,7 @@ class DeepThorTDesktop(tk.Tk):
         try:
             if not is_capped_windows_process():
                 raise QuietPlaytestError('Only available under the capped Windows DeepThorT.exe launcher. '
-                    'A Python development launch cannot guarantee the shared 20% CPU/memory limit.')
+                    'A Python development launch cannot guarantee the shared 30% CPU/memory limit.')
             project=Path(self.project or '')
             exe=godot_executable(tools=getattr(self,'inventory',None))
             if not exe:
@@ -4088,7 +4271,7 @@ class DeepThorTDesktop(tk.Tk):
                  +f"Generation elapsed: {local_status.get('inference_elapsed_seconds',0)}s; "
                  +f"output limit: {local_status.get('inference_max_tokens','?')} tokens.\n"
                  +'This is an accepted local request, not yet a finished reply. '
-                 +'At the 20% CPU limit it may take several minutes.')
+                 +'At the 30% CPU limit it may take several minutes.')
         self.client.record_local_exchange(self.current_chat, prompt or 'Run local DeepThorT self-diagnosis', report)
         self._reload_chat()
         self._log('Local self-diagnosis requested; no model call or cloud connection used.')
@@ -4174,7 +4357,7 @@ class DeepThorTDesktop(tk.Tk):
             self.recent_ai_logs=[]
             self.last_ai_error=''
             self.model_status.set('AI: loading…')
-            self._set_connection_status('AI loading under 20% CPU cap. Conversations stay separate from approved jobs.')
+            self._set_connection_status('AI loading under 30% CPU cap. Conversations stay separate from approved jobs.')
             self._log('Starting offline ONNX model. CPU-only; loading may take time.')
             process=self.node
             def output():
@@ -4206,6 +4389,11 @@ class DeepThorTDesktop(tk.Tk):
         if self.media_process and self.media_process.poll() is None:
             self.media_process.terminate()
         if self.node and self.node.poll() is None:self.node.terminate()
+        if self.council_node and self.council_node.poll() is None:self.council_node.terminate()
+        self.council_node=None
+        self.council_ready=False
+        self._council_busy=False
+        self._council_restarts=0
         self.node_ready=False;self.node_loading=False;self.node_started=0.0
         self.model_status.set('AI: stopped')
         self._set_connection_status('AI stopped. Start it to resume pending chat replies and approved jobs.')
@@ -4246,7 +4434,9 @@ class DeepThorTDesktop(tk.Tk):
             worker_pid=sentinel_health.get('janus_pid')
         except (OSError,ValueError):
             sentinel_health={};worker_pid=None
+        council_pid=self.council_node.pid if self.council_node and self.council_node.poll() is None else None
         measured=self.meter.read({'DeepThorT UI':os.getpid(),
+            **({'Qwen JANUS/Sentinel':council_pid} if council_pid else {}),
             **({'Qwen inference':model_pid} if model_pid else {}),
             **({'JANUS Sentinel':self.sentinel_process.pid} if self.sentinel_process and self.sentinel_process.poll() is None else {}),
             **({'JANUS worker':worker_pid} if worker_pid else {}),
@@ -4275,7 +4465,9 @@ class DeepThorTDesktop(tk.Tk):
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
-              f"Supervision: 20% aggregate CPU cap, 20% RAM commit limit under DeepThorT.exe\n"
+              f"Supervision: 30% aggregate CPU cap, 30% RAM commit limit under DeepThorT.exe\n"
+              f"Second ONNX: {'ready' if self.council_ready else 'loading' if council_pid else 'not running'} | PID {council_pid or 'none'}; same cap as primary\n"
+              f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
               f"Isolated GUI: {'running' if self._gui_test_active else 'inactive'}; separate desktop, project-owned window metadata only\n"
               f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
@@ -4322,6 +4514,30 @@ class DeepThorTDesktop(tk.Tk):
                 if event[1].startswith('[AI] '):
                     self.recent_ai_logs.append(event[1][5:])
                     self.recent_ai_logs=self.recent_ai_logs[-24:]
+            elif kind=='council_health':
+                self._council_health_checking=False
+                proc=self.council_node
+                self.council_ready=bool(proc and proc.poll() is None and isinstance(event[1],dict)
+                    and event[1].get('ready') is True and event[1].get('role')=='council'
+                    and event[1].get('pid')==proc.pid)
+            elif kind=='council_instruction_ready':
+                self._council_busy=False
+                ident,result=event[1],event[2]
+                if self.instruction_inbox.finish(ident,result['janus'],result['sentinel'],
+                        result['next_action'],result['verification'],needs_review=result['needs_review']):
+                    item=next((x for x in self.instruction_inbox.list(limit=100) if x['id']==ident),None)
+                    self.janus.recommend(f'instruction-{ident}',
+                        'Interpret user instruction at next safe planning step',result['next_action'],origin='local_model')
+                    self.sentinel.recommend(f'instruction-{ident}',
+                        'Independent instruction verification',result['verification'],origin='local_model')
+                    self._log(f'JANUS instruction #{ident}: '+
+                        ('needs user planning review' if result['needs_review'] else 'staged for next draft checkpoint'))
+                    record(STATE,'desktop','janus_instruction_interpreted',instruction_id=ident,
+                           needs_review=result['needs_review'],files_changed=0)
+            elif kind=='council_instruction_failed':
+                self._council_busy=False
+                if self.instruction_inbox.fail(event[1],event[2]):
+                    self._log(f'JANUS instruction #{event[1]} needs review; council inference failed: {event[2]}')
             elif kind=='inventory':
                 self.inventory=event[1]
                 try:
@@ -4734,7 +4950,7 @@ class DeepThorTDesktop(tk.Tk):
             self.gui_tests.interrupt_stale()
         if self._quiet_test_active is not None:
             self.quiet_tests.interrupt_stale()
-        for proc in (self.node,self.tool_process,self.install_process,self.media_process,self.sentinel_process):
+        for proc in (self.node,self.council_node,self.tool_process,self.install_process,self.media_process,self.sentinel_process):
             if proc and proc.poll() is None:
                 try:proc.terminate()
                 except OSError:pass

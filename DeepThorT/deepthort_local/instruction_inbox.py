@@ -1,0 +1,162 @@
+"""Durable, source-preserving instructions for parallel JANUS deliberation.
+
+A new user message is recorded without waiting for the implementation model.
+The council produces *advice*, never a file write, build authorization or edit of
+an already approved plan. Guidance is consumed only at a NEW planning checkpoint.
+"""
+from __future__ import annotations
+
+import sqlite3
+from datetime import datetime, timezone
+from contextlib import contextmanager
+from pathlib import Path
+
+
+class InstructionError(ValueError):
+    pass
+
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec='seconds')
+
+
+def canonical_project(path: str) -> str:
+    if not isinstance(path, str) or not path.strip():
+        raise InstructionError('A selected project folder is required')
+    return str(Path(path).resolve()).casefold()
+
+
+class InstructionInbox:
+    def __init__(self, path: str | Path):
+        self.path = Path(path)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with self.connect() as db:
+            db.executescript('''
+                CREATE TABLE IF NOT EXISTS instructions (
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  project TEXT NOT NULL,
+                  chat_id TEXT NOT NULL,
+                  original TEXT NOT NULL,
+                  state TEXT NOT NULL DEFAULT 'pending',
+                  janus_advice TEXT NOT NULL DEFAULT '',
+                  sentinel_review TEXT NOT NULL DEFAULT '',
+                  next_action TEXT NOT NULL DEFAULT '',
+                  verification TEXT NOT NULL DEFAULT '',
+                  reason TEXT NOT NULL DEFAULT '',
+                  created_at TEXT NOT NULL,
+                  updated_at TEXT NOT NULL,
+                  handed_at TEXT);
+                CREATE INDEX IF NOT EXISTS instructions_next
+                  ON instructions (state, project, chat_id, id);
+            ''')
+            # No inference output can be trusted after a process crash. Replay
+            # interpretation only: it has never executed an external action.
+            db.execute("UPDATE instructions SET state='pending', reason='Interpretation interrupted; retry read-only', "
+                       "updated_at=? WHERE state='interpreting'", (now(),))
+
+    @contextmanager
+    def connect(self):
+        db = sqlite3.connect(self.path, timeout=15)
+        db.row_factory = sqlite3.Row
+        db.execute('PRAGMA busy_timeout=15000')
+        try:
+            with db:
+                yield db
+        finally:
+            db.close()
+
+    def enqueue(self, project: str, chat_id: str, original: str) -> int:
+        if not isinstance(chat_id, str) or not chat_id or len(chat_id)>150:
+            raise InstructionError('A valid chat is required')
+        if not isinstance(original, str) or not original.strip() or len(original)>2_000_000:
+            raise InstructionError('Instruction must contain 1..2,000,000 characters')
+        with self.connect() as db:
+            row=db.execute('INSERT INTO instructions (project,chat_id,original,created_at,updated_at) '
+                'VALUES(?,?,?,?,?)',(canonical_project(project),chat_id,original,now(),now()))
+            db.commit()
+            return int(row.lastrowid)
+
+    def claim(self) -> dict | None:
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row=db.execute("SELECT * FROM instructions WHERE state='pending' ORDER BY id LIMIT 1").fetchone()
+            if row:
+                db.execute("UPDATE instructions SET state='interpreting', updated_at=? WHERE id=? AND state='pending'",
+                           (now(),row['id']))
+            db.commit()
+        return dict(row) if row else None
+
+    def finish(self, ident: int, janus: str, sentinel: str, action: str,
+               verification: str, *, needs_review: bool=False) -> bool:
+        if not action or not isinstance(action,str):
+            raise InstructionError('The council must supply a meaningful proposed next action')
+        with self.connect() as db:
+            changed=db.execute("UPDATE instructions SET state=?,janus_advice=?,sentinel_review=?,"
+                "next_action=?,verification=?,updated_at=? WHERE id=? AND state='interpreting'",
+                ('needs_review' if needs_review else 'staged',str(janus)[:2000],str(sentinel)[:2000],
+                 action[:900],str(verification)[:800],now(),ident)).rowcount
+            db.commit()
+            return bool(changed)
+
+    def fail(self, ident: int, error: str) -> bool:
+        with self.connect() as db:
+            changed=db.execute("UPDATE instructions SET state='needs_review',reason=?,updated_at=? "
+                "WHERE id=? AND state='interpreting'",(str(error)[:500],now(),ident)).rowcount
+            db.commit()
+            return bool(changed)
+
+    def next_guidance(self, project: str, chat_id: str) -> str:
+        """Atomic, ONE-TIME delivery to a not-yet-approved model planning pass.
+
+        Consuming guidance is not a change to the approved scope and cannot
+        queue jobs; the next prompt must keep all original requirements intact.
+        """
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row=db.execute("SELECT * FROM instructions WHERE state='staged' AND project=? "
+                "AND chat_id=? ORDER BY id LIMIT 1",(canonical_project(project),chat_id)).fetchone()
+            if row:
+                db.execute("UPDATE instructions SET state='handed_to_planner',handed_at=?,updated_at=? "
+                           "WHERE id=? AND state='staged'",(now(),now(),row['id']))
+            db.commit()
+        if not row:return ''
+        # The implementation model receives JANUS's translation, NOT a
+        # second verbatim copy of the user's message. The full original stays
+        # inspectable in SQLite for accountability and future revisions.
+        return (f'JANUS NEXT-ACTION TRANSLATION #{row["id"]} (advisory; not approval):\n'
+                f'{row["next_action"][:700]}\n'
+                f'SENTINEL ACCEPTANCE CHECK: {row["verification"][:500]}\n'
+                'Keep the initial project specification intact. This translation '
+                'does not authorize new files, permissions or scope changes; '
+                'obtain a new approved plan before executing any such changes.\n')[:1900]
+
+    def retry_interpretation(self, ident: int) -> bool:
+        """Retry read-only inference after a model error, not project execution."""
+        with self.connect() as db:
+            changed=db.execute("UPDATE instructions SET state='pending', reason='', updated_at=? "
+                "WHERE id=? AND state='needs_review' AND next_action=''",(now(),ident)).rowcount
+            db.commit()
+            return bool(changed)
+
+    def review(self, ident: int, *, allow_planning: bool) -> bool:
+        with self.connect() as db:
+            changed=db.execute("UPDATE instructions SET state=?,updated_at=? WHERE id=? AND state='needs_review' "
+                "AND next_action!=''",('staged' if allow_planning else 'dismissed',now(),ident)).rowcount
+            db.commit()
+            return bool(changed)
+
+    def dismiss(self, ident: int) -> bool:
+        with self.connect() as db:
+            changed=db.execute("UPDATE instructions SET state='dismissed',updated_at=? "
+                "WHERE id=? AND state IN ('pending','staged','needs_review')",(now(),ident)).rowcount
+            db.commit()
+            return bool(changed)
+
+    def list(self, project: str | None=None, limit:int=30) -> list[dict]:
+        with self.connect() as db:
+            if project is None:
+                rows=db.execute('SELECT * FROM instructions ORDER BY id DESC LIMIT ?', (max(1,min(limit,100)),))
+            else:
+                rows=db.execute('SELECT * FROM instructions WHERE project=? ORDER BY id DESC LIMIT ?',
+                                (canonical_project(project), max(1,min(limit,100))))
+            return [dict(x) for x in rows]

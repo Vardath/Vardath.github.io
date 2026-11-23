@@ -19,103 +19,94 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install headless display and Tk
+      - name: Install Tk and isolated test display
         run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
-      - name: Compile Python sources
-        run: python -m compileall -q .
-      - name: Verify v50 source SHA-256 integrity
+      - name: Compile all Python and check both ONNX server scripts
+        run: |
+          python -m compileall -q .
+          node --check inference_server.mjs
+          node --check inference_worker.mjs
+      - name: Verify v51 exact-source SHA-256 and pinned ONNX implementation
         run: |
           python - <<'PY'
           import hashlib
           import json
           from pathlib import Path
-          root = Path.cwd()
-          manifest = json.loads((root / 'V50_SOURCE_SHA256.json').read_text('utf-8'))
-          assert manifest['schema']=='deepthort-v50-source-digest-v1'
+          root=Path.cwd()
+          manifest=json.loads((root/'V51_SOURCE_SHA256.json').read_text('utf-8'))
+          assert manifest['schema']=='deepthort-v51-source-digest-v1'
           for item in manifest['source_files']:
-              file = root / item['path']
-              if hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
-                  raise SystemExit('Source SHA-256 mismatch: ' + item['path'])
-          print('Verified', len(manifest['source_files']), 'v50 source SHA-256 digests')
+              target=root/item['path']
+              if hashlib.sha256(target.read_bytes()).hexdigest()!=item['sha256']:
+                  raise SystemExit('v51 source SHA mismatch: '+item['path'])
+          pin_worker='a80bd59f17f8f453b57e5035798bfca1cf840d5ead2a87d81f462b5402fb353f'
+          pin_server='525a2e49836036aa7fd6c3d0967500b18dd7a1653a3f39ac1d7a07f97405628b'
+          for path,pinned in (('inference_worker.mjs',pin_worker),('inference_server.mjs',pin_server)):
+              if hashlib.sha256((root/path).read_bytes()).hexdigest()!=pinned:
+                  raise SystemExit('ONNX implementation changed without v51 review: '+path)
+          print('Verified',len(manifest['source_files']),'changed/new sources and both pinned ONNX JavaScript programs')
           PY
-      - name: Run regression tests under Xvfb (isolated GUI modules)
+      - name: Run all isolated Python and Tk regressions under Xvfb
         run: |
           python - <<'PY'
-          import os
-          import subprocess
-          import sys
+          import os,re,subprocess,sys
           from pathlib import Path
-
-          root = Path.cwd()
-          env = dict(os.environ)
-          env["PYTHONPATH"] = os.pathsep.join((str(root / "tests"), str(root)))
-          modules = sorted((root / "tests").glob("test_*.py"))
-          failures = []
+          root=Path.cwd()
+          env=dict(os.environ)
+          env['PYTHONPATH']=os.pathsep.join((str(root/'tests'),str(root)))
+          modules=sorted((root/'tests').glob('test_*.py'))
+          failures=[];count=0
           for file in modules:
-              module = "tests." + file.stem
-              print("Running", module, flush=True)
-              result = subprocess.run(
-                  ["xvfb-run", "-a", sys.executable, "-m", "unittest", module, "-q"],
-                  env=env, check=False)
-              if result.returncode:
-                  failures.append(module)
-          if failures:
-              print("Failed modules:", ", ".join(failures), flush=True)
-              sys.exit(1)
-          print("All test modules passed in isolated GUI processes.", flush=True)
+              module='tests.'+file.stem
+              print('Running',module,flush=True)
+              result=subprocess.run(['xvfb-run','-a',sys.executable,'-m','unittest',module,'-q'],
+                                    env=env,check=False,text=True,capture_output=True)
+              print(result.stdout[-4000:]+result.stderr[-4000:],flush=True)
+              count+=sum(map(int,re.findall(r'Ran (\d+) tests?',result.stderr)))
+              if result.returncode:failures.append(module)
+          print('Tests:',count,'Modules:',len(modules),'Failed:',failures,flush=True)
+          if failures:sys.exit(1)
           PY
-      - name: Package v50 source overlay (only after all tests pass)
+      - name: Package v51 source overlay only after successful tests
         run: |
           python - <<'PY'
-          import hashlib
-          import json
-          import zipfile
+          import hashlib,json,zipfile
           from pathlib import Path
-
-          root = Path.cwd()
-          output = root / 'DeepThorT_v50_SourceOverlay.zip'
-          excluded = {'.git', '__pycache__', '.pytest_cache', 'node_modules',
-                      'models', 'state', 'cache', '.venv', 'venv'}
-          if (root / 'DeepThorT.exe').exists():
-              raise SystemExit('Standalone Windows executable must not be repackaged as a source overlay')
-          pinned_onnx = 'ca28f9fc0965a4f9a78b035d547c806e886451e738a6bbf4ab9ff517682b7345'
-          current = hashlib.sha256((root / 'inference_server.mjs').read_bytes()).hexdigest()
-          if current != pinned_onnx:
-              raise SystemExit('ONNX server differs from v39; overlay safety requirement failed')
-          files = sorted((p for p in root.rglob('*') if p.is_file()
-              and p != output and not any(part in excluded for part in p.relative_to(root).parts)),
-              key=lambda p: p.relative_to(root).as_posix())
-          manifest = {
-              'release': 'DeepThorT v50 neural JANUS Sentinel and read-only X4 source workset',
-              'kind': 'SOURCE OVERLAY: install over an existing v48 Windows application',
-              'full_windows_installation': False,
-              'preserve_existing': ['DeepThorT.exe', 'models', 'state', 'node_modules',
-                                    'reference', 'cache', 'user projects'],
-              'v39_windows_launcher_sha256': 'fbd7368a5e7e4f1d1fa247918958d90a853c02360743b140e954aee8e48dc95d',
-              'onnx_server_sha256': current,
-              'file_count': len(files),
-              'files': [{
-                  'path': p.relative_to(root).as_posix(),
-                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
-              } for p in files],
-          }
-          with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
-              for p in files:
-                  archive.write(p, p.relative_to(root).as_posix())
-              archive.writestr('DeepThorT_v50_OverlayManifest.json',
-                              json.dumps(manifest, indent=2, sort_keys=True))
+          root=Path.cwd()
+          output=root/'DeepThorT_v51_SourceOverlay.zip'
+          excluded={'.git','__pycache__','.pytest_cache','node_modules','models','state','cache','.venv','venv'}
+          if (root/'DeepThorT.exe').exists():
+              raise SystemExit('Original Windows executable must never be replaced by this source overlay')
+          files=sorted((p for p in root.rglob('*') if p.is_file() and p!=output
+              and not any(part in excluded for part in p.relative_to(root).parts)
+              and not p.name.endswith('_OverlayManifest.json')),
+              key=lambda p:p.relative_to(root).as_posix())
+          manifest={'release':'DeepThorT v51 concurrent council ONNX and durable instruction inbox',
+                    'kind':'SOURCE OVERLAY: install over existing v50 Windows application',
+                    'full_windows_installation':False,
+                    'preserve_existing':['DeepThorT.exe','models','state','node_modules','reference','cache','user projects'],
+                    'two_local_onnx_ports':[8765,8766],
+                    'shared_job_cpu_ceiling_percent':30,
+                    'shared_job_commit_ceiling_percent':30,
+                    'windows_acceptance_required':True,
+                    'file_count':len(files),
+                    'files':[{'path':p.relative_to(root).as_posix(),
+                              'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]}
+          with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED) as archive:
+              for p in files:archive.write(p,p.relative_to(root).as_posix())
+              archive.writestr('DeepThorT_v51_OverlayManifest.json',json.dumps(manifest,indent=2,sort_keys=True))
           with zipfile.ZipFile(output) as archive:
-              corrupt = archive.testzip()
-              if corrupt:
-                  raise SystemExit('Overlay ZIP CRC failure: ' + corrupt)
-          print('Overlay:', output.name, output.stat().st_size, 'bytes',
-                'SHA-256', hashlib.sha256(output.read_bytes()).hexdigest(),
-                'source files', len(files), flush=True)
+              bad=archive.testzip()
+              if bad:raise SystemExit('Overlay ZIP CRC failure: '+bad)
+              if len(manifest['files'])!=manifest['file_count']:
+                  raise SystemExit('Overlay manifest file count mismatch')
+          print('Overlay',output.name,'bytes',output.stat().st_size,'sha256',
+                hashlib.sha256(output.read_bytes()).hexdigest(),'source files',len(files),flush=True)
           PY
-      - name: Upload DeepThorT v50 source overlay
+      - name: Upload DeepThorT v51 source overlay
         uses: actions/upload-artifact@v4
         with:
-          name: DeepThorT-v50-source-overlay
-          path: DeepThorT/DeepThorT_v50_SourceOverlay.zip
+          name: DeepThorT-v51-source-overlay
+          path: DeepThorT/DeepThorT_v51_SourceOverlay.zip
           if-no-files-found: error
           retention-days: 90

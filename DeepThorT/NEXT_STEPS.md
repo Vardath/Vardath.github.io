@@ -1,3 +1,14 @@
+# DeepThorT next steps — after v51 dual local ONNX (23 November 2026)
+
+1. **Physical Windows acceptance (priority):** Confirm the preserved `DeepThorT.exe` actually executes the updated source launcher; verify real Win32 Job Object hard CPU rate 3000 (30%) and aggregate job committed-memory ceiling, both model server PIDs' membership in that same job, no child process escapes and normal game priority. On the user's 40 GB RAM computer, observe CPU/working-set/private memory during simultaneous implementation and JANUS/Sentinel advisory inference. If the executable hardcodes an old 20% launcher, rebuild the trusted GUI launcher rather than pretending the source overlay changed it.
+2. **Instruction routing acceptance:** While a genuine long model plan is running, click Instruction to JANUS. Verify the original full message persists, second Qwen completes JANUS and Sentinel turns, a safe next planning pass receives only the translation, and approved source contracts are never modified. Test full stop, crash, server port conflict, restart/retry, a scope-changing instruction, long instructions and project/chat switching. Compare actual validator gap closure; don't treat a neural proposal as completed implementation.
+3. **Improve cognitive authority carefully:** JANUS should select next measurable tasks and Sentinel challenge hypotheses against test evidence. Persist failed hypotheses, avoid duplicated instructions, report plans blocked by lack of true tool/engine evidence; no auto approval from a model response.
+4. **Production development:** Advance approved implementation milestones safely, working-source tests, disposable X4/RimWorld playtests, Android builds and verified user-facing deliverables. The present v51 release does NOT complete whole games autonomously for months.
+
+**Design constraints:** One shared 30% Windows CPU / at-most-30% committed-memory Job Object, with adaptive lower memory cap if foreground games consume RAM. Two Qwen model instances, not a new stronger LLM. The independent JANUS and Sentinel societies persist with seven internal Fano faculties per each of eleven cores, and their neural consultation shares the second model sequentially. No cloud inference, no undocumented UAC bypass, no external uncapped model. Eight original GUI tabs, source snapshots, user approval boundaries, no automatic project deletion or changed save-game states.
+
+---
+
 # After v50 — next development steps
 
 1. **Test source discovery on the real Windows installation.** Verify exact X4 game and extracted reference directories and PE macro/component SHA receipts; recover from missing extracted XML through existing explicitly approved official XRCatTool path. Never treat `D:\x4mods` as vanilla XML.

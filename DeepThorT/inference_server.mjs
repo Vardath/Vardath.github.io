@@ -5,7 +5,9 @@ import { mkdirSync, appendFileSync, existsSync, renameSync, unlinkSync, statSync
 import { join } from 'node:path';
 import { Worker } from 'node:worker_threads';
 
-const PORT = Number(process.env.DEEPTHORT_TEST_PORT || 8765);
+const PORT = Number(process.env.DEEPTHORT_COUNCIL_PORT || process.env.DEEPTHORT_TEST_PORT || 8765);
+const ROLE = process.env.DEEPTHORT_ROLE === 'council' ? 'council' : 'implementation';
+if (ROLE === 'council' && PORT !== 8766) throw new Error('Council ONNX must run only on port 8766');
 const MODEL = 'deepthort-qwen-coder-onnx';
 const start = Date.now();
 let ready = false;
@@ -19,7 +21,7 @@ let activeInference = null; // Safe metadata only; never holds a prompt.
 const pending = new Map();
 // Durable, bounded model-only diagnostics. Do not log prompt text or generated replies.
 const LOGDIR=join(process.cwd(),'state','logs');
-const LOGPATH=join(LOGDIR,'onnx.jsonl');
+const LOGPATH=join(LOGDIR, ROLE === 'council' ? 'onnx-council.jsonl' : 'onnx.jsonl');
 function event(name, fields={}) {
   try {
     mkdirSync(LOGDIR,{recursive:true});
@@ -30,7 +32,7 @@ function event(name, fields={}) {
       component:'onnx',event:name,...fields})+'\n');
   } catch { /* diagnostics cannot interrupt model */ }
 }
-event('model_server_start',{port:PORT});
+event('model_server_start',{port:PORT,role:ROLE});
 
 function reply(res, status, value) {
   res.writeHead(status, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
@@ -90,7 +92,7 @@ worker.on('message', (m) => {
 });
 worker.on('error',e=>fatal(e?.stack || String(e)));
 worker.on('exit',code=>{if (!stopping) fatal(`ONNX worker exited (code ${code}); no local model is available`);});
-const status = () => ({ready,offline:true,model:MODEL,phase,stage,
+const status = () => ({ready,offline:true,model:MODEL,role:ROLE,pid:process.pid,phase,stage,
   inference_busy:busy,
   inference_elapsed_seconds:activeInference ? Math.max(0,Math.floor((Date.now()-activeInference.started)/1000)) : 0,
   inference_max_tokens:activeInference?.max ?? null,

@@ -367,7 +367,8 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           original: str, project: str | Path, *, max_rounds: int=40,
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
-                          neural_council: bool = False, inspected_evidence: str = '') -> tuple[str,list[dict]]:
+                          neural_council: bool = False, inspected_evidence: str = '',
+                          guidance_getter=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -404,6 +405,13 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                   f'model call {(section_calls % max_rounds)+1}/{max_rounds} in batch '
                   f'{section_batch+1} (not a file count or total-project limit)')
         prompt=index.model_prompt(request_id,original)
+        # A new user message may arrive while the first ONNX inference runs.
+        # JANUS/Sentinel advice joins ONLY this NEW planning pass. Never
+        # mutate the indexed original or the approved build-stage contract.
+        if guidance_getter and len(prompt)<5800:
+            advice=guidance_getter()
+            if advice and len(prompt)+len(advice)+2<=7900:
+                prompt+='\n\n'+advice
         exchange=f'{session}-spec-{row["ordinal"]}-{row["attempts"]}'
         lookup=getattr(client,'completed_exchange',None)
         response=lookup(exchange,prompt) if callable(lookup) else None
@@ -450,7 +458,8 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 chat_id=chat_id,
                 max_rounds=(max_rounds if continuous else max_rounds-section_calls),
                 stage=stage,cancelled=cancelled,continuous=continuous,
-                neural_council=neural_council,inspected_evidence=inspected_evidence)
+                neural_council=neural_council,inspected_evidence=inspected_evidence,
+                guidance_getter=guidance_getter)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:
