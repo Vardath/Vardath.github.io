@@ -43,6 +43,7 @@ jobs:
               'test_import_dolly_candidate.py',
               'test_audit_near_duplicates.py',
               'test_prepare_dialogue_splits.py',
+              'test_immutable_dialogue_splits.py',
               'test_independent_acceptance.py',
               'test_deepthort_jsonl_transport.py',
               'test_deepthort_bridge.py',
