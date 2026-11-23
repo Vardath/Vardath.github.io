@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 
 from capability.dialogue_source_manifest import verify_split_files
+from capability.audit_near_duplicates import audit as audit_near_duplicates
 from capability.dialogue_format import export as serialize
 from capability.dialogue_tokenizer import build as fit_tokenizer
 from capability.dialogue_labels import export as label
@@ -17,10 +18,17 @@ from capability.dialogue_sft_train import run as train
 
 
 def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
-                 context_size=256, width=64, layers=2, heads=4, seed=2026):
+                 context_size=256, width=64, layers=2, heads=4, seed=2026,
+                 duplicate_threshold=0.8):
     manifest_path, splits, output = map(Path, (manifest_path, splits, output))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     verify_split_files(manifest, splits)
+    # Independent lexical leakage screening is mandatory, before allocating
+    # output or fitting the tokenizer. Exact checks alone miss near-duplicates.
+    contamination = audit_near_duplicates(splits, threshold=duplicate_threshold)
+    if not contamination["passed"]:
+        raise ValueError("Cross-split lexical near-duplicates detected: "
+                         + json.dumps(contamination["findings"][:10]))
     if output.exists() and any(output.iterdir()):
         raise FileExistsError("Output directory must be new/empty; do not overwrite checkpoints")
     if (width < 1 or layers < 1 or heads < 1 or width % heads != 0
@@ -54,6 +62,7 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
     report = {"manifest": str(manifest_path), "source_id": manifest["source_id"],
               "source_revision": manifest["revision"],
               "serialized": serialized_provenance, "tokenizer": tokenizer_info,
+              "lexical_contamination_audit": contamination,
               "labels": labeled_info, "training": metrics,
               "checkpoint": str(checkpoint),
               "model_controls": {"width": width, "layers": layers,
@@ -79,12 +88,14 @@ def main():
     parser.add_argument("--heads", type=int, default=4)
     parser.add_argument("--context-size", type=int, default=256)
     parser.add_argument("--seed", type=int, default=2026)
+    parser.add_argument("--duplicate-threshold", type=float, default=0.8)
     args = parser.parse_args()
     print(json.dumps(run_pipeline(args.manifest, args.splits, args.output,
                                   steps=args.steps, merges=args.merges,
                                   width=args.width, layers=args.layers,
                                   heads=args.heads, context_size=args.context_size,
-                                  seed=args.seed), indent=2))
+                                  seed=args.seed,
+                                  duplicate_threshold=args.duplicate_threshold), indent=2))
 
 
 if __name__ == "__main__":
