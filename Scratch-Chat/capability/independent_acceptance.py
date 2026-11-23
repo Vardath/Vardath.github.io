@@ -63,14 +63,17 @@ def evaluate(command, cases=CASES, timeout=120):
         except json.JSONDecodeError:
             reply = None
         passed, detail = grade(case, reply)
-        results.append({"id": case["id"], "passed": passed, "detail": detail})
+        results.append({"id": case["id"], "passed": passed, "detail": detail,
+                        "request": case["request"], "response": reply})
     passed = (completed.returncode == 0 and len(lines) == len(cases)
               and all(item["passed"] for item in results))
     return {"passed": passed, "exit_code": completed.returncode,
             "response_lines": len(lines), "expected_lines": len(cases),
             "stderr_tail": completed.stderr[-1000:], "results": results,
             "scope": "bounded transport, context recall and arithmetic; not general conversational readiness",
-            "tool_use_evaluated": False}
+            "tool_use_evaluated": False,
+            "conversation_ready": False,
+            "acceptance_scope": "diagnostic only: tool-call execution and real DeepThorT host integration untested"}
 
 
 def main():
