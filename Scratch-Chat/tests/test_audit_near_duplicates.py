@@ -48,9 +48,10 @@ class NearDuplicateAuditTests(unittest.TestCase):
                                      ([prompts[0], prompts[2]], [prompts[1], prompts[3]], prompts[4:])):
                 self.write(root, split, values)
             result = audit(root, threshold=0.6)
-            self.assertEqual(result["candidate_pairs"], 2)
+            self.assertEqual(result["candidate_pairs"], 3)
             self.assertFalse(result["passed"])
-            self.assertEqual(len(result["findings"]), 2)
+            self.assertEqual(len(result["findings"]), 3)
+            self.assertEqual(sorted(f["kind"] for f in result["findings"]), ["answer", "prompt", "prompt"])
 
     def test_invalid_threshold_rejected(self):
         with self.assertRaises(ValueError):
