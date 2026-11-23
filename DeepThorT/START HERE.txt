@@ -1,3 +1,7 @@
+DeepThorT v48 — indexed X4 roadmap retry fix
+
+For a long X4 specification that repeatedly showed REPLY FAILED even though all sections were already reviewed, retry now requests targeted local-model corrections and persists useful model-proposed files. It does not silently approve incomplete plans. The 40-pass planning budget, local Qwen model and 20% CPU cap are unchanged. The startup diagnostic version field now identifies v48 accurately.
+
 DEEPTHORT V47 — 23 NOVEMBER 2026
 40 PLAN PASSES = model attempts per planning run, not 40 files or a file-size limit.
 Large-document section attempts = model calls spent reviewing source sections;

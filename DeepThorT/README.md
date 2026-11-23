@@ -1,3 +1,13 @@
+# DeepThorT v48 — repair incomplete indexed X4 plans (23 November 2026)
+
+**Fix for `REPLY FAILED` after retrying a fully reviewed large X4 specification:** Previously, once a 7,422-character request had been indexed and its sections reviewed, the hierarchical roadmap validator could reject missing `content.xml`, `md/*.xml`, asset/equipment XML and ship-behaviour coverage **without making another Qwen model request**. A retry raised the same failure in seconds. v48 now re-opens exact saved section evidence, asks the local ONNX model for a focused JSON correction, validates and persists new model-authored proposals, then rechecks the complete original X4 specification. The existing 40-call budget applies; incomplete corrections are retained for future retries. No generated mod files are written before explicit plan approval.
+
+**Diagnostics correction:** The v47 release inherited a stale `desktop_init` version marker of `46`. A v47 application could therefore log version `46`. v48 records `48`; check release files/commit, not the old marker, to determine installed source version.
+
+**Resource policy unchanged:** local Qwen ONNX; no alternate model, no cloud fallback, 20% Windows process-tree CPU cap; long planning sessions permitted. v48 does not purport to resolve ONNX worker exits not observed in the new 12:04 diagnostics.
+
+---
+
 # DeepThorT v47 — historical recovery and ONNX transport safeguards (23 November 2026)
 
 **Planning attempt counters:** Standard project planning uses at most **40 model-generation passes per invocation**. These are attempts to find and repair missing pieces in a plan, NOT a maximum of 40 source files. Oversized imported specifications are divided into numbered source-preserving sections, using **up to 40 model calls per processing batch**; unfinished sections can continue in another batch without modifying the stored specification. The counters show model effort, not proven output or completion. No new limit on long sessions or workspace file size was introduced.

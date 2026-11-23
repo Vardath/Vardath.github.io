@@ -121,7 +121,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='46',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='48',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -1687,8 +1687,12 @@ class DeepThorTDesktop(tk.Tk):
             return
         self.active_conversation=None
         self.reply_stage=''
+        planning_incomplete = str(error).startswith('Indexed X4 roadmap remains incomplete')
+        notice = ('PLAN STILL INCOMPLETE — reviewed sections and valid corrections saved; '
+                  'retry continues missing X4 files.' if planning_incomplete else
+                  f'REPLY FAILED — {str(error)[:180]}. Request preserved for retry.')
         self.reply_outcome={'chat_id':req['chat_id'] if req else self.current_chat,
-             'message':f'REPLY FAILED — {str(error)[:180]}. Request preserved for retry.'}
+             'message':notice}
         self._render_reply_notice()
         self._log(f'Conversation #{ident} failed: {error[:300]}')
         if req and req['chat_id']==self.current_chat:self._reload_chat()

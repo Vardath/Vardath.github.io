@@ -1,3 +1,13 @@
+# DeepThorT next steps — after v48 (23 November 2026)
+
+v48 closes a blocking path in indexed X4 planning: when all source sections have been reviewed but the combined roadmap is still missing mandatory X4 files/behaviours, retry runs model-authored, scope-bound corrections instead of failing instantly from unchanged cached proposals. Source sections remain exact and indexed; structurally safe corrections are persisted and still require current full-domain validation and individual approval. v48 also corrects the stale startup version field.
+
+**Next acceptance:** Install the v48 overlay, retry the existing 7,422-character Xenon PE request in `D:\x4mods`, observe actual model correction passes and whether Qwen can supply X4-valid XML file intentions. The local test suite uses scripted model replies; it does not prove the actual 1.5B model will satisfy every missing requirement. Export new diagnostics if still blocked. The 20% Windows process-tree CPU cap and original 40-call budget remain unchanged.
+
+**Other priorities:** Instrument a real ONNX process exit with exit code and memory-commit telemetry, verify GPU/contention behavior, and build end-to-end X4 mod execution/playtest after reliable model plans and approvals. No source files may be fabricated to make a validator pass; full original specifications must remain preserved.
+
+---
+
 # DeepThorT next steps — after v47 (23 November 2026)
 
 v47 restores eligible, exact-input old planning replies and exact-hash large-document sections from surviving local SQLite state; pauses local ONNX transport failures rather than losing them; prevents busy-worker duplicate submission and performs at most two supervised crash restarts, all under the existing 20% cap. Complete model-output loss remains unrecoverable without a user-provided source: older redacted diagnostic logs contain no reply text. 40 is a per-batch inference-attempt budget, not a file limit or maximum runtime.

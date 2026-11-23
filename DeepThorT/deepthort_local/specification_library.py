@@ -11,7 +11,8 @@ import json
 import sqlite3
 from pathlib import Path
 from contextlib import contextmanager
-from .agent_plan import PlanError, parse_build_plan, validate_project_plan, project_kind
+from .agent_plan import (PlanError, parse_build_plan, validate_project_plan,
+                         project_kind, remaining_plan_gaps)
 
 # A practical local storage ceiling, not an inference-context limit. Millions
 # of ordinary-language words fit, subject to available memory and disk space.
@@ -60,6 +61,11 @@ class SpecificationIndex:
                   section_sha256 TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0,
                   steps_json TEXT NOT NULL DEFAULT '',
                   PRIMARY KEY(request_id,ordinal));
+                CREATE TABLE IF NOT EXISTS specification_revision_attempts (
+                  request_id INTEGER NOT NULL, serial INTEGER NOT NULL,
+                  section_ordinal INTEGER NOT NULL, source_sha256 TEXT NOT NULL,
+                  prompt_sha256 TEXT NOT NULL,
+                  PRIMARY KEY(request_id,serial));
             ''')
 
     @contextmanager
@@ -167,6 +173,73 @@ class SpecificationIndex:
                 'characters':len(original),'sha256':sha(original),
                 'model_attempts':sum(row[4] for row in rows)}
 
+    def reserve_revision_attempt(self, request_id: int, original: str,
+                                 ordinal: int, prompt: str) -> int:
+        """Number a scoped model call durably; invalid answers are not replayed forever."""
+        rows = self._verified_rows(request_id, original)
+        if not 0 <= ordinal < len(rows) or not rows[ordinal][5]:
+            raise ValueError('Only fully indexed, already reviewed sections can be revised')
+        with self._db() as db:
+            serial = db.execute('SELECT COALESCE(MAX(serial),0)+1 FROM '
+                'specification_revision_attempts WHERE request_id=?',(request_id,)).fetchone()[0]
+            db.execute('INSERT INTO specification_revision_attempts VALUES (?,?,?,?,?)',
+                (request_id,serial,ordinal,sha(original),sha(prompt)))
+        return serial
+
+    def merge_model_revision(self, request_id: int, original: str, ordinal: int,
+                             answer: str, *, project: str | Path) -> bool:
+        """Persist ONLY a structurally valid model correction to one exact section.
+
+        The original section text and its digest never change. Existing model
+        proposals survive unless the model explicitly revises the same path,
+        and a rewrite cannot erase coverage already present. No authorization.
+        """
+        rows = self._verified_rows(request_id, original)
+        if not rows or any(not row[5] for row in rows) or not 0 <= ordinal < len(rows):
+            raise ValueError('Every section must be indexed before correcting the roadmap')
+        proposal = parse_build_plan(answer, project, fragment=True)
+        if project_kind(original)=='x4' and any(step['path'].casefold().endswith('.py') for step in proposal):
+            raise PlanError('X4 extension plan may not introduce generic Python app files')
+        own = {item['path'].casefold(): item for item in json.loads(rows[ordinal][5])}
+        others = {}
+        for row in rows:
+            if row[0]==ordinal:continue
+            for item in json.loads(row[5]):
+                others.setdefault(item['path'].casefold(),item)
+        new = dict(own)
+        for step in proposal:
+            key=step['path'].casefold()
+            if key in others:
+                if others[key] != step:
+                    raise PlanError('Corrected file conflicts with a proposal in another reviewed section: '+step['path'])
+                # Do not attach one file to multiple 3,200-character scopes
+                # merely because the model repeats a previously accepted step.
+                continue
+            new[key]=step
+        if len(new)>24:
+            raise PlanError('Corrected section exceeds 24 model-authored file entries')
+        if new==own:return False
+        def combined(own_steps):
+            merged={}
+            for row in rows:
+                for item in (own_steps if row[0]==ordinal else json.loads(row[5])):
+                    merged[item['path'].casefold()]=item
+            return list(merged.values())
+        before = set(remaining_plan_gaps(combined(own.values()),original))
+        after = set(remaining_plan_gaps(combined(new.values()),original))
+        new_paths = set(new)-set(own)
+        if not new_paths and after-before:
+            raise PlanError('Correction would remove satisfied X4 requirements: '+
+                            '; '.join(sorted(after-before)))
+        with self._db() as db:
+            cursor=db.execute('UPDATE specification_sections SET steps_json=? '
+                'WHERE request_id=? AND ordinal=? AND steps_json=?',
+                (json.dumps(list(new.values()),ensure_ascii=False),request_id,
+                 ordinal,rows[ordinal][5]))
+            if cursor.rowcount!=1:
+                raise ValueError('Section changed during model correction; retry with current state')
+        return True
+
     def next_section(self, request_id: int, original: str):
         rows=self._verified_rows(request_id,original)
         for ordinal,start,end,digest,attempts,steps in rows:
@@ -250,6 +323,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         if inherited and stage:
             stage(f'Recovered {inherited} already reviewed large-document sections '
                   'from exact matching local historical state; not a build approval')
+    section_calls=0
     for attempt in range(max_rounds):
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; indexed specification remains saved')
@@ -266,6 +340,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         response=lookup(exchange,prompt) if callable(lookup) else None
         if response is None:
             response=client.chat(exchange,prompt,max_tokens=640)
+        section_calls+=1
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; no additional sections marked complete')
         try:
@@ -283,7 +358,21 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
     if hierarchy is not None:
         if not chat_id:
             raise ValueError('Hierarchical planning requires a durable chat identifier')
-        summary=hierarchy.prepare(index,request_id,original,project,chat_id=chat_id)
+        try:
+            summary=hierarchy.prepare(index,request_id,original,project,chat_id=chat_id)
+        except PlanError as exc:
+            # A v46 indexed X4 plan could have all sections "reviewed" but none
+            # of the required extension files. Retrying immediately raised the
+            # SAME error without calling the model. Correct the saved plan
+            # using additional scoped, model-authored revisions instead.
+            if (project_kind(original)!='x4' or
+                    not str(exc).startswith('Plan does not cover the X4 specification: ')):
+                raise
+            from .indexed_roadmap_repair import repair_indexed_roadmap
+            summary=repair_indexed_roadmap(
+                client,index,hierarchy,request_id,session,original,project,
+                chat_id=chat_id,max_rounds=max_rounds-section_calls,
+                stage=stage,cancelled=cancelled)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:
