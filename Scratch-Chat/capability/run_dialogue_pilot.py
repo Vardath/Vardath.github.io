@@ -6,6 +6,7 @@ or substitutes pretrained weights. This is a bounded CPU pilot, not acceptance.
 Run from Scratch-Chat root: python -m capability.run_dialogue_pilot ...
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -15,6 +16,15 @@ from capability.dialogue_format import export as serialize
 from capability.dialogue_tokenizer import build as fit_tokenizer
 from capability.dialogue_labels import export as label
 from capability.dialogue_sft_train import run as train
+
+
+def sha256_file(path):
+    """Hash immutable training artifacts without loading large checkpoints into RAM."""
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 
 def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
@@ -65,6 +75,11 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
               "lexical_contamination_audit": contamination,
               "labels": labeled_info, "training": metrics,
               "checkpoint": str(checkpoint),
+              "artifact_sha256": {"manifest": sha256_file(manifest_path),
+                                  "tokenizer": sha256_file(tokenizer_path),
+                                  "checkpoint": sha256_file(checkpoint)},
+              "split_sha256": {split: sha256_file(splits / (split + ".jsonl"))
+                               for split in ("train", "validation", "test")},
               "model_controls": {"width": width, "layers": layers,
                                  "heads": heads, "context_size": context_size,
                                  "seed": seed, "steps": steps, "merges": merges},
