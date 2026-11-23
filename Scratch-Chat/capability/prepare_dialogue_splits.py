@@ -14,6 +14,8 @@ def prepare(source, output, *, seed="scratch-chat-v1", train_fraction=0.9, valid
     if not (0 < validation_fraction < 1 and 0 < train_fraction < 1 and train_fraction + validation_fraction < 1):
         raise ValueError("Invalid split fractions")
     source, output = Path(source), Path(output)
+    if output.exists() and any(output.iterdir()):
+        raise FileExistsError("Refusing to overwrite existing dialogue split artifacts")
     groups = defaultdict(list)
     prompt_owner = {}
     for line_number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), 1):
