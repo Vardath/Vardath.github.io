@@ -54,8 +54,9 @@ class NearDuplicateAuditTests(unittest.TestCase):
             self.assertEqual(sorted(f["kind"] for f in result["findings"]), ["answer", "prompt", "prompt"])
 
     def test_invalid_threshold_rejected(self):
-        with self.assertRaises(ValueError):
-            audit(".", threshold=0)
+        for threshold in (0, -1, 1.01, float('nan'), float('inf'), -float('inf')):
+            with self.subTest(threshold=threshold), self.assertRaises(ValueError):
+                audit('.', threshold=threshold)
 
 
 if __name__ == "__main__":
