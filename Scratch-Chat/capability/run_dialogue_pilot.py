@@ -32,7 +32,6 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
                  duplicate_threshold=0.8):
     manifest_path, splits, output = map(Path, (manifest_path, splits, output))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    verify_split_files(manifest, splits)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError("Output directory must be new/empty; do not overwrite checkpoints")
     if (width < 1 or layers < 1 or heads < 1 or width % heads != 0
@@ -40,6 +39,9 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
         raise ValueError("Invalid model capacity controls")
     if steps < 1 or merges < 0:
         raise ValueError("Invalid training controls")
+    # Validate cheap controls and overwrite protection before reading large split files.
+    # The manifest is parsed first so a missing or malformed manifest still fails closed.
+    verify_split_files(manifest, splits)
     # Independent lexical leakage screening is mandatory, before allocating
     # output or fitting the tokenizer. Exact checks alone miss near-duplicates.
     contamination = audit_near_duplicates(splits, threshold=duplicate_threshold)
