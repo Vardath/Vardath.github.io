@@ -32,7 +32,7 @@ def _read(path: Path, *, max_bytes: int = MAX_BYTES) -> tuple[bytes, str]:
     return data, hashlib.sha256(data).hexdigest()
 
 
-def _xml(path: Path) -> tuple[ET.Element, str]:
+def read_asset_xml(path: Path) -> tuple[ET.Element, str]:
     data, digest = _read(path)
     # No DTD, entity expansion, or external resources accepted in this audit.
     if re.search(rb'<!\s*(?:DOCTYPE|ENTITY)\b', data, re.I):
@@ -87,7 +87,7 @@ def _x4(root: Path, planned: set[str], max_files: int) -> dict:
         if not target.is_file():
             pending.append(rel);continue
         try:
-            element, digest = _xml(target)
+            element, digest = read_asset_xml(target)
             parsed[rel] = element
             fingerprints[rel] = digest
         except (ET.ParseError, OSError, UnicodeError, ValueError) as exc:
@@ -101,12 +101,23 @@ def _x4(root: Path, planned: set[str], max_files: int) -> dict:
         elif rel in ('index/macros.xml', 'index/components.xml'):
             if element.tag not in ('index', 'diff'):
                 issues.append(_issue(rel, 'index_root_invalid', f'Expected index/diff, got {element.tag}'))
+    registered = {'macro':set(), 'component':set()}
+    manifest = parsed.get('content.xml')
+    packages = {root.name.casefold()}
+    if manifest is not None and manifest.get('id'):
+        packages.add(manifest.get('id').casefold())
     for index_name, tag in (('index/macros.xml', 'macro'), ('index/components.xml', 'component')):
         tree = parsed.get(index_name)
-        if tree is None or tree.tag != 'index':
+        if tree is None or tree.tag not in ('index','diff'):
             continue
         seen = set()
-        entries = list(tree.iter('entry'))
+        entries = tree.findall('entry') if tree.tag == 'index' else [
+            entry for op in tree.findall('add') if op.get('sel') == '/index'
+            for entry in op.findall('entry')]
+        if tree.tag == 'diff' and any(op.tag != 'add' or op.get('sel') != '/index' for op in tree):
+            # Evaluating arbitrary selectors requires the combined game index.
+            # A later replace/remove could undo an otherwise valid local binding.
+            pending.append(index_name+' (resolve diff against game index)')
         if len(entries) > 1600:
             issues.append(_issue(index_name,'index_too_many_entries','Bounded audit: 1600 entries per index'))
             continue
@@ -120,9 +131,9 @@ def _x4(root: Path, planned: set[str], max_files: int) -> dict:
             seen.add(name.casefold())
             # A real index can reference base-game assets, other extensions or
             # this extension. Only a self-prefixed value is asserted local.
-            local_prefix = f'extensions/{root.name}/'
-            if value.lower().startswith(local_prefix.lower()):
-                rel = value[len(local_prefix):] + ('' if value.endswith('.xml') else '.xml')
+            parts = value.split('/',2)
+            if len(parts)==3 and parts[0].casefold()=='extensions' and parts[1].casefold() in packages:
+                rel = parts[2] + ('' if value.endswith('.xml') else '.xml')
                 explicit_local = True
             elif value.startswith('assets/'):
                 rel = value + ('' if value.endswith('.xml') else '.xml')
@@ -142,38 +153,34 @@ def _x4(root: Path, planned: set[str], max_files: int) -> dict:
                 continue
             if rel not in fingerprints:
                 try:
-                    obj, digest = _xml(target)
+                    obj, digest = read_asset_xml(target)
                     fingerprints[rel] = digest
                 except (ET.ParseError, OSError, UnicodeError, ValueError) as exc:
                     issues.append(_issue(rel,'xml_invalid',str(exc)));continue
             else:
                 obj = parsed.get(rel)
                 if obj is None:
-                    try: obj, _ = _xml(target)
+                    try: obj, _ = read_asset_xml(target)
                     except (ET.ParseError, OSError, ValueError) as exc:
                         issues.append(_issue(rel,'xml_invalid',str(exc)));continue
-            declared = {entry.get('name') for entry in obj.iter(tag)}
-            if obj.tag != 'diff' and name not in declared:
+            declared = {entry.get('name') for entry in obj.findall(tag)} if obj.tag == tag+'s' else set()
+            if name in declared:
+                registered[tag].add((name, target))
+                observations.append({'path':index_name,'code':'local_'+tag+'_binding_verified','name':name,'target':rel})
+            elif obj.tag != 'diff':
                 issues.append(_issue(index_name,'index_name_not_defined',f'{name} absent from {rel}'))
     # A newly declared full asset macro/component must have a name-to-path
     # registration. A diff patch against a vanilla asset is deliberately not
     # considered a new definition and must not be given a fabricated index.
-    registered = {'macro':set(), 'component':set()}
-    for index_name,kind in (('index/macros.xml','macro'),('index/components.xml','component')):
-        index = parsed.get(index_name)
-        if index is not None:
-            registered[kind].update((entry.get('name') or '').casefold()
-                                    for entry in index.iter('entry') if entry.get('name'))
     for relative, document in parsed.items():
         if document.tag == 'diff' or not relative.startswith('assets/'):
             continue
         for kind,subdir in (('macro','/macros/'),('component','/components/')):
-            if subdir not in '/' + relative:
+            if subdir not in '/' + relative and document.tag != kind+'s':
                 continue
-            elements = [item for item in document.iter(kind) if item.get('name')]
-            for item in elements[:100]:
+            for item in document.findall(kind):
                 name = item.get('name', '')
-                if name.casefold() not in registered[kind]:
+                if not name or (name, _local(root,relative)) not in registered[kind]:
                     issues.append(_issue(relative,f'local_{kind}_not_indexed',name))
     return {'engine':'x4_extension','issues':issues,'pending':pending,
             'observations':observations,'source_hashes':fingerprints}
@@ -269,7 +276,7 @@ def _android_gradle(root:Path, planned:set[str], max_files:int)->dict:
         if not target.is_file():
             pending.append(rel);continue
         try:
-            element,digest=_xml(target)
+            element,digest=read_asset_xml(target)
             fingerprints[rel]=digest
             if element.tag!='manifest':
                 issues.append(_issue(rel,'android_manifest_invalid','Expected <manifest> root'))

@@ -10,10 +10,11 @@ from contextlib import closing
 import hashlib
 import json
 import sqlite3
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from contextlib import contextmanager
-from .agent_plan import (PlanError, parse_build_plan, validate_project_plan,
+from .agent_plan import (PlanError, VanillaSourceCollision, parse_build_plan, validate_project_plan,
                          incompatible_x4_path, project_kind, remaining_plan_gaps)
+from .x4_variant import VariantSource
 
 # A practical local storage ceiling, not an inference-context limit. Millions
 # of ordinary-language words fit, subject to available memory and disk space.
@@ -78,6 +79,14 @@ class SpecificationIndex:
                   request_id INTEGER NOT NULL, ordinal INTEGER NOT NULL,
                   section_sha256 TEXT NOT NULL, steps_json TEXT NOT NULL,
                   PRIMARY KEY(request_id,ordinal,section_sha256,steps_json));
+                CREATE TABLE IF NOT EXISTS variant_collisions (
+                  request_id INTEGER NOT NULL, ordinal INTEGER NOT NULL,
+                  source_path TEXT NOT NULL, source_digest TEXT NOT NULL,
+                  failed_attempt INTEGER NOT NULL, PRIMARY KEY(request_id,ordinal));
+                CREATE TABLE IF NOT EXISTS variant_bindings (
+                  project TEXT NOT NULL, package TEXT NOT NULL, source_path TEXT NOT NULL,
+                  source_digest TEXT NOT NULL, macro_name TEXT NOT NULL,
+                  PRIMARY KEY(project,package,source_path,source_digest,macro_name));
             ''')
 
     @contextmanager
@@ -330,9 +339,15 @@ class SpecificationIndex:
         steps = self.merged_steps(ident, original)
         foreign = sum(incompatible_x4_path(step['path'],original) for step in steps)
         gaps = remaining_plan_gaps(steps, original)
+        with self._db() as db:
+            bindings = db.execute('SELECT package,source_path,source_digest,macro_name FROM variant_bindings '
+                                  'WHERE project=?', (str(Path(project).resolve()),)).fetchall()
+        pairs = sum(all(step in steps for step in VariantSource(package,PurePosixPath(path),digest).steps(name))
+                    for package,path,digest,name in bindings)
         return {'status':'blocked' if foreign or gaps or status['pending'] else 'passed',
                 'detail':f"Draft #{ident}: {status['reviewed']}/{status['sections']} sections reviewed, "
-                         f"{foreign} incompatible paths, {len(gaps)} open planning checks. Build and playtest require separate evidence."}
+                         f"{foreign} incompatible paths, {len(gaps)} open planning checks, {pairs} source-backed ship/index pairs planned. "
+                         "Build and playtest require separate evidence."}
 
     def recover_x4_draft(self, request_id: int, original: str) -> int:
         """Retain each prior draft verbatim before removing foreign paths from active planning."""
@@ -383,20 +398,40 @@ class SpecificationIndex:
             raise ValueError('Section and instructions exceed inference limit; source preserved')
         return prompt
 
+    def pending_variant(self, request_id, row, original, evidence):
+        with self._db() as db:
+            record = db.execute('SELECT source_path,source_digest,failed_attempt FROM variant_collisions '
+                                'WHERE request_id=? AND ordinal=?', (request_id,row['ordinal'])).fetchone()
+        if record and 0 <= row['attempts'] - record[2] < 2:
+            source = VariantSource.inspected(original, evidence, record[0])
+            if source and source.digest == record[1]:
+                return source
+        return None
+
     def save_response(self, request_id: int, original: str, ordinal: int, response: str,
-                      *, project: str | Path, inspected_evidence: str='') -> list[dict]:
+                      *, project: str | Path, inspected_evidence: str='', variant=None) -> list[dict]:
         # Model-authored data only. Invalid format increments attempts but does
         # not mark the section reviewed, and can be retried safely.
         row=self.next_section(request_id,original)
         if row is None or row['ordinal']!=ordinal:
             raise ValueError('Only next unreviewed section may be completed')
         parsed=None
+        collision=None
         try:
+            if variant is not None:
+                response = variant.proposal(response, inspected_evidence)
             parsed=parse_build_plan(response,project,request=original,fragment=True,inspected_evidence=inspected_evidence)
+        except VanillaSourceCollision as exc:
+            collision=VariantSource.inspected(original, inspected_evidence, exc.path)
+            raise
         finally:
             with self._db() as db:
                 db.execute('UPDATE specification_sections SET attempts=attempts+1 WHERE request_id=? AND ordinal=?',
                            (request_id,ordinal))
+                if collision:
+                    db.execute('INSERT OR REPLACE INTO variant_collisions SELECT request_id,ordinal,?,?,attempts '
+                               'FROM specification_sections WHERE request_id=? AND ordinal=? AND steps_json=?',
+                               (str(collision.path),collision.digest,request_id,ordinal,''))
         if parsed is not None:
             with self._db() as db:
                 db.execute('BEGIN IMMEDIATE')
@@ -412,7 +447,31 @@ class SpecificationIndex:
                                      (json.dumps(parsed),request_id,ordinal,'')).rowcount
                 if not changed:
                     raise PlanError('Another reviewer already completed this section')
+                if variant:
+                    db.execute('INSERT OR IGNORE INTO variant_bindings VALUES (?,?,?,?,?)',
+                               (str(Path(project).resolve()),variant.package,str(variant.path),variant.digest,
+                                PurePosixPath(parsed[0]['path']).stem))
         return parsed
+
+    def render_planned_variant(self, project, relative, steps, reference_dir):
+        """Supply a new file to the normal Build approval path only for the exact recorded pair."""
+        if not reference_dir or not (relative=='index/macros.xml' or '/macros/' in relative):
+            return None
+        approved = {step['path']:step['description'] for step in steps}
+        with self._db() as db:
+            bindings = db.execute('SELECT package,source_path,source_digest,macro_name FROM variant_bindings '
+                                  'WHERE project=?', (str(Path(project).resolve()),)).fetchall()
+        for package, source, digest, name in bindings:
+            variant = VariantSource(package,PurePosixPath(source),digest)
+            pair = variant.steps(name)
+            if relative not in (pair[0]['path'], pair[1]['path']):
+                continue
+            if any(approved.get(step['path'])!=step['description'] for step in pair):
+                continue
+            if relative=='index/macros.xml' and any('/macros/' in p and p!=pair[0]['path'] for p in approved):
+                continue
+            return variant.render(name,relative,reference_dir)
+        return None
 
     def merged_steps(self, request_id: int, original: str) -> list[dict]:
         rows=self._verified_rows(request_id,original)
@@ -476,9 +535,14 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             stage(f'Large-document review: section {row["ordinal"]+1}/{row["total"]}; '
                   f'model call {(section_calls % max_rounds)+1}/{max_rounds} in batch '
                   f'{section_batch+1} (not a file count or total-project limit)')
-        prompt=(index.model_prompt(request_id,original,inspected_evidence=inspected_evidence)
-                if x4 else index.model_prompt(request_id,original))
-        if x4 and last_rejection:
+        variant = index.pending_variant(request_id,row,original,inspected_evidence) if x4 else None
+        if variant:
+            prompt = variant.prompt()
+        elif x4:
+            prompt = index.model_prompt(request_id,original,inspected_evidence=inspected_evidence)
+        else:
+            prompt = index.model_prompt(request_id,original)
+        if x4 and last_rejection and not variant:
             note = '\nPrevious proposal rejected: ' + last_rejection[:240]
             if len(prompt+note) <= 7500:
                 prompt += note
@@ -495,14 +559,16 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         lookup=getattr(client,'completed_exchange',None)
         response=lookup(exchange,prompt) if callable(lookup) else None
         if response is None:
-            response=client.chat(exchange,prompt,max_tokens=224 if x4 else 640)
+            response=client.chat(exchange,prompt,max_tokens=64 if variant else (224 if x4 else 640))
         if checkpoint:
             checkpoint.received(instruction, exchange, prompt, response)
         section_calls+=1
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; no additional sections marked complete')
         try:
-            index.save_response(request_id,original,row['ordinal'],response,project=project,inspected_evidence=inspected_evidence)
+            options = {'variant':variant} if variant else {}
+            index.save_response(request_id,original,row['ordinal'],response,project=project,
+                                inspected_evidence=inspected_evidence,**options)
             reviewed_this_batch+=1
             consecutive_invalid=0
             last_rejection=''

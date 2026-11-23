@@ -125,7 +125,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='57',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='58',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -3140,6 +3140,11 @@ class DeepThorTDesktop(tk.Tk):
                         return
                     project=Path(j['project'])
                     dest=safe_target(project,step['path'])
+                    if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
+                        candidate=self.specifications.render_planned_variant(project,step['path'],steps,self.x4_reference_dir)
+                        if candidate is not None:
+                            self.events.put(('job_answer',jobid,candidate))
+                            return
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     if len(old)>3500:raise RuntimeError('Existing file too large for safe one-pass local edit. Split the file.')
                     request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)

@@ -1,3 +1,9 @@
+# DeepThorT v58 for Windows
+
+The indexed X4 planner can recover when the local model picks the original ship as the destination for an independent variant. It asks the model to choose a fresh identifier and records a paired ship definition and index entry. An approved Build can derive those two files from the inspected vanilla XML. The static checker resolves each new registration to the on-disk declaration.
+
+In the Windows PE benchmark, the model reviewed all three specification sections and proposed four files. Ten planning checks remained open. A separate two-file test verified the generated variant against the real PE. See TEST_RESULTS_V58.md for the comparison with the existing OpenCode extension.
+
 # DeepThorT v57 for Windows
 
 The indexed X4 planner now brings inspected game references into its file proposals and checks whether proposed paths belong inside an extension. Retrying a legacy draft keeps the original specification and an archive of incompatible proposals. The Processes tab's **Run latest test** reports the selected project's pending sections, incompatible paths and open planning checks.

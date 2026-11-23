@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "v57-source-backed-planning",
-  "title": "v57 X4 draft coverage, JANUS handoff and worker health",
+  "id": "v58-ship-variant-registration",
+  "title": "v58 ship variant planning, JANUS handoff and worker health",
   "checks": [
     "shared_cap",
     "primary_onnx",

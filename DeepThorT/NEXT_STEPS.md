@@ -1,3 +1,7 @@
+# Continue from v58
+
+Use TEST_RESULTS_V58.md and PROJECT_CONTEXT_V58.md to resume the independent PE benchmark. The planner now selects a separate ship identity and can register that asset. Its first full-roadmap correction repeated the base macro proposal and closed zero of ten checks. The next benchmark should test whether the system can inspect an actual asteroid mesh and PE component, record their dimensions, and plan a distinct component and collision asset from those measurements. Keep the OpenCode build as a read-only comparator and run future DeepThorT builds in their own workspace.
+
 # Continue from v57
 
 Read PROJECT_CONTEXT_V57.md and TEST_RESULTS_V57.md first. Re-run the PE draft on a disposable copy of request 28, preserving the original state. Compare accepted native paths and open checks per section. When a model chooses a vanilla macro as the output for an independent variant, require a new asset identifier and verify the reference chain before proceeding. Track crew, wharf, consumable and hull geometry requirements separately. A validated draft still needs generated files, static checks, geometric inspection and a controlled X4 acceptance run.

@@ -13,6 +13,18 @@ from .workspace import safe_target
 class PlanError(ValueError):
     pass
 
+class VanillaSourceCollision(PlanError):
+    """A single proposed output would replace an inspected game definition."""
+
+    def __init__(self, path: str):
+        self.path = path
+        super().__init__('The proposed output shadows an inspected vanilla source. Choose a new variant filename: '+path)
+
+
+def extension_id(request: str) -> str:
+    match = re.search(r'(?im)^\s*(?:[-*]\s*)?(?:independent extension|extension id)\s*:\s*`?([a-z0-9_-]+)`?\s*$', request)
+    return match[1].lower() if match else ''
+
 
 # Maximum number of independent local-model planning passes. A validated
 # proposal returns immediately; invalid/repeated proposals can be revised.
@@ -51,9 +63,9 @@ def incompatible_x4_path(path: str, request: str='') -> bool:
 
 def _x4_output_path(relative: str, request: str, evidence: str) -> str:
     """Accept a packaging prefix only when its extension ID matches the user's explicit ID."""
-    identity = re.search(r'(?im)^\s*(?:[-*]\s*)?(?:independent extension|extension id)\s*:\s*`?([a-z0-9_-]+)`?\s*$', request)
+    identity = extension_id(request)
     wrapper = re.fullmatch(r'(?:content/x4/|x4/)?extensions/([^/]+)/(.+)', relative, re.I)
-    if wrapper and identity and wrapper[1].casefold()==identity[1].casefold():
+    if wrapper and identity and wrapper[1].casefold()==identity:
         inner = wrapper[2].casefold()
         if inner=='content.xml' or inner.startswith(('assets/','libraries/','md/','index/','t/','ui/','maps/','aiscripts/')):
             relative = wrapper[2]
@@ -67,7 +79,7 @@ def _x4_output_path(relative: str, request: str, evidence: str) -> str:
         for line in evidence.splitlines():
             match = re.match(r'\w+_candidates:\s+(.+?) IDs ', line)
             if match and relative.casefold()==match[1].casefold():
-                raise PlanError('The proposed output shadows an inspected vanilla source. Choose a new variant filename: '+relative)
+                raise VanillaSourceCollision(relative)
     return relative
 
 
@@ -229,7 +241,12 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
             raise PlanError('Unsafe file path in model plan: ' + str(e)) from e
         rel = dest.relative_to(Path(project).resolve()).as_posix()
         if x4:
-            canonical = _x4_output_path(rel,request,inspected_evidence)
+            try:
+                canonical = _x4_output_path(rel,request,inspected_evidence)
+            except VanillaSourceCollision as exc:
+                if len(steps) != 1:
+                    raise PlanError(str(exc)) from exc
+                raise
             if rel != canonical:
                 try:
                     rel = safe_target(Path(project), canonical).relative_to(Path(project).resolve()).as_posix()
