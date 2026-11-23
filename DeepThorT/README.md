@@ -1,3 +1,15 @@
+# DeepThorT v46 — project inspection controls and recoverable planning (23 November 2026)
+
+**Current change:** Right-click any file in the left Project files list → **Exclude from inspection (keep file on disk)**. It disappears from the table and automatic project-document/manifest indexing; the actual file in the selected project or installed game remains unchanged. Right-click → **Restore excluded project files…** to restore individual files or all. Exclusions are saved in `state/project-inspection-exclusions-v46.json`, scoped to the selected directory and retained across restarts. They are not a prohibition against an explicitly approved plan writing a named file; approvals remain separate.
+
+When an unapproved draft project plan fails after multiple local ONNX passes, DeepThorT preserves accepted, structurally checked model-authored file proposals in `state/planning-continuations/`. A new attempt with the **exact same project, specification, effective prompt/attachments and X4 evidence** recovers these proposals rather than starting empty. Every resumed plan must still pass the complete game/X4 plan validator and user approval. No source files are created by planning, no canned X4 plans are substituted, and the 40-pass per-invocation budget is unchanged. More time spent thinking is acceptable under the 20% capped launcher.
+
+**Output separation:** Selecting `D:\x4mods` sets the project workspace where approved source files are written; DeepThorT’s internal SQLite planning and process-recovery files intentionally remain under its own `state` directory. Excluding a source file from *inspection* is not deleting, moving, reinstalling or uninstalling a mod.
+
+**Diagnostic scope:** This pass addresses loss of valid partial project proposals across different planning requests; it does not prove independent model quality or fix every local ONNX connection reset. Real Windows acceptance remains required. See `PROJECT_CONTEXT_V46.md` and `TEST_RESULTS_V46.md`.
+
+---
+
 # DeepThorT v45 — isolated Windows GUI smoke tests
 
 Work queue now has **Isolated GUI smoke test…** and **Stop isolated GUI test**. You can explicitly approve a trusted, project-local Windows `.exe` to launch on a separate Win32 desktop without changing your foreground focus or sending keyboard/mouse input. The process is low priority, limited to 25 seconds and runs under DeepThorT.exe’s existing **shared** 20% CPU Job Object with a nested cleanup job. The app can still produce sound and use GPU; it is NOT a VM/security sandbox, nor an automated gameplay or graphical correctness proof. The Processes tab and diagnostic receipts show actual project-window titles, geometry, responsiveness and exit status. Unclear or unsupported Win32 desktop operations fail closed. Native Windows testing is still required.

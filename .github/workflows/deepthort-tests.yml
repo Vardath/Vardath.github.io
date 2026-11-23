@@ -23,20 +23,20 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
       - name: Compile Python sources
         run: python -m compileall -q .
-      - name: Verify v45 source SHA-256 integrity
+      - name: Verify v46 source SHA-256 integrity
         run: |
           python - <<'PY'
           import hashlib
           import json
           from pathlib import Path
           root = Path.cwd()
-          manifest = json.loads((root / 'V45_SOURCE_SHA256.json').read_text('utf-8'))
-          assert manifest['schema']=='deepthort-v45-source-digest-v1'
+          manifest = json.loads((root / 'V46_SOURCE_SHA256.json').read_text('utf-8'))
+          assert manifest['schema']=='deepthort-v46-source-digest-v1'
           for item in manifest['source_files']:
               file = root / item['path']
               if hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
                   raise SystemExit('Source SHA-256 mismatch: ' + item['path'])
-          print('Verified', len(manifest['source_files']), 'v45 source SHA-256 digests')
+          print('Verified', len(manifest['source_files']), 'v46 source SHA-256 digests')
           PY
       - name: Run regression tests under Xvfb (isolated GUI modules)
         run: |
@@ -64,7 +64,7 @@ jobs:
               sys.exit(1)
           print("All test modules passed in isolated GUI processes.", flush=True)
           PY
-      - name: Package v45 source overlay (only after all tests pass)
+      - name: Package v46 source overlay (only after all tests pass)
         run: |
           python - <<'PY'
           import hashlib
@@ -73,7 +73,7 @@ jobs:
           from pathlib import Path
 
           root = Path.cwd()
-          output = root / 'DeepThorT_v45_SourceOverlay.zip'
+          output = root / 'DeepThorT_v46_SourceOverlay.zip'
           excluded = {'.git', '__pycache__', '.pytest_cache', 'node_modules',
                       'models', 'state', 'cache', '.venv', 'venv'}
           if (root / 'DeepThorT.exe').exists():
@@ -86,8 +86,8 @@ jobs:
               and p != output and not any(part in excluded for part in p.relative_to(root).parts)),
               key=lambda p: p.relative_to(root).as_posix())
           manifest = {
-              'release': 'DeepThorT v45 quiet headless Godot scene testing',
-              'kind': 'SOURCE OVERLAY: install over an existing v44 Windows application',
+              'release': 'DeepThorT v46 planning continuity and inspection controls',
+              'kind': 'SOURCE OVERLAY: install over an existing v45 Windows application',
               'full_windows_installation': False,
               'preserve_existing': ['DeepThorT.exe', 'models', 'state', 'node_modules',
                                     'reference', 'cache', 'user projects'],
@@ -102,7 +102,7 @@ jobs:
           with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
               for p in files:
                   archive.write(p, p.relative_to(root).as_posix())
-              archive.writestr('DeepThorT_v45_OverlayManifest.json',
+              archive.writestr('DeepThorT_v46_OverlayManifest.json',
                               json.dumps(manifest, indent=2, sort_keys=True))
           with zipfile.ZipFile(output) as archive:
               corrupt = archive.testzip()
@@ -112,10 +112,10 @@ jobs:
                 'SHA-256', hashlib.sha256(output.read_bytes()).hexdigest(),
                 'source files', len(files), flush=True)
           PY
-      - name: Upload DeepThorT v45 source overlay
+      - name: Upload DeepThorT v46 source overlay
         uses: actions/upload-artifact@v4
         with:
-          name: DeepThorT-v45-source-overlay
-          path: DeepThorT/DeepThorT_v45_SourceOverlay.zip
+          name: DeepThorT-v46-source-overlay
+          path: DeepThorT/DeepThorT_v46_SourceOverlay.zip
           if-no-files-found: error
           retention-days: 90

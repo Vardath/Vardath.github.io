@@ -88,6 +88,8 @@ from deepthort_local.development_cycle import (
 from deepthort_local.reviewed_install import (prepare_reviewed_install, exact_consent_phrase, approval_receipt)
 from deepthort_local.online_tool_search import (winget_search_command, winget_show_command,
     validate_package_id, inspect_show_output, format_inspection, MAX_INSPECTION_BYTES)
+from deepthort_local.inspection_exclusions import InspectionExclusions
+from deepthort_local.plan_continuation import PlanContinuation
 from deepthort_local.workspace import (WorkspaceError, apply_approved_file,
         list_project_files, read_project_file, safe_target, strip_single_code_fence)
 
@@ -119,7 +121,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='45',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='46',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -219,6 +221,8 @@ class DeepThorTDesktop(tk.Tk):
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
         self.tool_learning = ToolAcquisition(STATE/'tool_acquisition.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
+        self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
+        self.plan_continuations = PlanContinuation(STATE)
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
@@ -337,6 +341,10 @@ class DeepThorTDesktop(tk.Tk):
         tk.Label(left,text='PROJECT FILES',fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(9,4))
         self.files=ttk.Treeview(left,show='tree',selectmode='browse');self.files.pack(fill='both',expand=True,padx=9,pady=(0,8))
         self.files.bind('<<TreeviewSelect>>',self._on_file)
+        self.files.bind('<Button-3>',self._project_file_context_menu)
+        # On macOS Ctrl+click is the conventional secondary click.
+        if sys.platform == 'darwin':
+            self.files.bind('<Control-Button-1>',self._project_file_context_menu)
         ttk.Button(left,text='Propose new project file…',command=self._new_file).pack(fill='x',padx=10,pady=(0,11))
 
         self.tabs=ttk.Notebook(right);self.tabs.pack(fill='both',expand=True)
@@ -761,6 +769,7 @@ class DeepThorTDesktop(tk.Tk):
     def _set_project(self,path):
         self.project=Path(path).resolve()
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
+        for row in self.files.get_children():self.files.delete(row)
         self.project_label.config(text=str(self.project))
         self.settings_file.write_text(json.dumps({'project':str(self.project)},indent=2),encoding='utf-8')
         self._log('Selected project: '+str(self.project))
@@ -919,10 +928,78 @@ class DeepThorTDesktop(tk.Tk):
                 if self.disk_gate.gaming():
                     self.events.put(('log','Game active: heavy project file scan deferred.'))
                     return
-                paths=list_project_files(target)
+                paths=self.inspection_exclusions.filter(target,list_project_files(target))
                 self.events.put(('files',target,paths))
             except Exception as e:self.events.put(('log','Project scan failed: '+str(e)))
         threading.Thread(target=worker,daemon=True).start()
+    def _project_file_context_menu(self, event):
+        """Right-click inspection list. Never mutate a project/game file."""
+        row=self.files.identify_row(event.y)
+        if row:
+            self.files.selection_set(row)
+            self.files.focus(row)
+        choice=self.files.selection()
+        menu=tk.Menu(self,tearoff=False)
+        if choice and self.project:
+            relative=self.files.item(choice[0],'text')
+            menu.add_command(label='Exclude from inspection (keep file on disk)',
+                             command=lambda r=relative:self._exclude_project_file(r))
+        menu.add_command(label='Restore excluded project files…',command=self._restore_project_files)
+        menu.add_separator()
+        menu.add_command(label='Refresh project file list',command=self._refresh_files)
+        try:menu.tk_popup(event.x_root,event.y_root)
+        finally:menu.grab_release()
+
+    def _exclude_project_file(self, relative):
+        if not self.project:return
+        try:
+            self.inspection_exclusions.exclude(self.project,relative)
+            self.capabilities.exclude_project_paths(self.project,[relative])
+        except (ValueError,OSError) as exc:
+            messagebox.showerror('Inspection exclusion failed',str(exc),parent=self);return
+        for row in self.files.get_children():
+            if self.files.item(row,'text').casefold()==relative.casefold():
+                self.files.delete(row)
+        if self.current_file and self.current_file.casefold()==relative.casefold():
+            self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
+            self.file_title.set('File excluded from inspection (unchanged on disk)')
+            self._preview('Removed from the inspection list only. Original file remains in '
+                          +str(self.project)+'. Right-click and restore to inspect it again.')
+        record(STATE,'desktop','project_file_excluded_from_inspection',
+               project_name=self.project.name,excluded_total=len(self.inspection_exclusions.paths(self.project)))
+        self._log('Excluded '+relative+' from future project inspection (file remains on disk).')
+
+    def _restore_project_files(self):
+        if not self.project:return
+        try:excluded=sorted(self.inspection_exclusions.paths(self.project))
+        except (OSError,ValueError) as exc:
+            messagebox.showerror('Inspection exclusions unavailable',str(exc),parent=self);return
+        if not excluded:
+            messagebox.showinfo('No excluded files','All project files are visible in inspection.',parent=self)
+            return
+        dlg=tk.Toplevel(self);dlg.title('Restore excluded project files');dlg.geometry('580x370')
+        dlg.transient(self);dlg.configure(bg=BG)
+        tk.Label(dlg,text='Select file(s) to inspect again. No project files are modified.',
+                 bg=BG,fg=TEXT,wraplength=550).pack(anchor='w',padx=12,pady=8)
+        frame=ttk.Frame(dlg);frame.pack(fill='both',expand=True,padx=12,pady=4)
+        sc=ttk.Scrollbar(frame,orient='vertical')
+        names=tk.Listbox(frame,selectmode='extended',bg=INPUT,fg=TEXT,
+                         selectbackground='#31465c',yscrollcommand=sc.set)
+        for relative in excluded:names.insert('end',relative)
+        names.pack(side='left',fill='both',expand=True);sc.configure(command=names.yview)
+        sc.pack(side='right',fill='y')
+        bar=ttk.Frame(dlg);bar.pack(fill='x',padx=12,pady=12)
+        def restore(selected):
+            try:
+                for relative in selected:self.inspection_exclusions.restore(self.project,relative)
+            except (OSError,ValueError) as exc:
+                messagebox.showerror('Restore failed',str(exc),parent=dlg);return
+            dlg.destroy();self._refresh_files()
+        ttk.Button(bar,text='Restore selected',command=lambda:restore(
+            [excluded[i] for i in names.curselection()])).pack(side='left',padx=3)
+        ttk.Button(bar,text='Restore all',command=lambda:restore(excluded)).pack(side='left',padx=3)
+        ttk.Button(bar,text='Cancel',command=dlg.destroy).pack(side='right')
+
     def _on_file(self,_event=None):
         chosen=self.files.selection()
         if not chosen or not self.project:return
@@ -1396,7 +1473,8 @@ class DeepThorTDesktop(tk.Tk):
                     # A project document is observed evidence, not an approved skill.
                     # Discovery failures may not block pre-existing planning.
                     try:
-                        discovery=self.capabilities.inspect_project(request['project'])
+                        discovery=self.capabilities.inspect_project(
+                            request['project'],exclude_paths=self.inspection_exclusions.paths(request['project']))
                         capability_evidence=self.capabilities.retrieval_context(
                             request['project'],original,max_chars=650)
                         capability_evidence += self.tool_learning.context(
@@ -1421,7 +1499,8 @@ class DeepThorTDesktop(tk.Tk):
                     record(STATE,'desktop','x4_auto_preflight_started',request_id=ident,mode=request['mode'])
                     report=automatic_x4_preflight(
                         project_dir=request['project'],app_root=ROOT,game_dir=self.x4_game_dir,
-                        reference_dir=self.x4_reference_dir,catalog_tool=self.x4_catalog_tool)
+                        reference_dir=self.x4_reference_dir,catalog_tool=self.x4_catalog_tool,
+                        exclude_project_paths=self.inspection_exclusions.paths(request['project']))
                     if cancelled():return
                     self.events.put(('x4_auto_report', report))
                     record(STATE,'desktop','x4_auto_preflight_complete',request_id=ident,
@@ -1471,7 +1550,7 @@ class DeepThorTDesktop(tk.Tk):
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
                         max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
-                        cancelled=cancelled)
+                        cancelled=cancelled,continuation=self.plan_continuations)
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
                 if cancelled():return
@@ -4158,8 +4237,10 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='files':
                 if event[1]==self.project:
                     for x in self.files.get_children():self.files.delete(x)
-                    for path in event[2]:self.files.insert('','end',text=path)
-                    self._log(f'Project file inventory refreshed: {len(event[2])} visible files.')
+                    visible=self.inspection_exclusions.filter(self.project,event[2])
+                    for path in visible:self.files.insert('','end',text=path)
+                    self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
+                              f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
             elif kind=='conversation_reply':self._conversation_reply(event[1],event[2])
             elif kind=='conversation_error':self._conversation_error(event[1],event[2])

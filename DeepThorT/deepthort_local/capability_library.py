@@ -116,7 +116,8 @@ class CapabilityLibrary:
         finally:
             db.close()
 
-    def inspect_project(self, root: str | Path, *, limit: int = MAX_DISCOVERY_FILES) -> dict:
+    def inspect_project(self, root: str | Path, *, limit: int = MAX_DISCOVERY_FILES,
+                        exclude_paths=()) -> dict:
         """Index bounded selected-workspace manifests; never run project code.
 
         Only files that pass the workspace symlink/escape constraints are read.
@@ -127,7 +128,8 @@ class CapabilityLibrary:
             raise WorkspaceError('Selected project folder is missing')
         if not 1 <= limit <= MAX_DISCOVERY_FILES:
             raise ValueError('Invalid project discovery limit')
-        files = list_project_files(base, limit=limit)
+        excluded = {str(p).replace('\\', '/').casefold() for p in exclude_paths}
+        files = [p for p in list_project_files(base, limit=limit) if p.casefold() not in excluded]
         selected = [p for p in files if is_manifest(p)][:24]
         key = project_key(base)
         observed = []
@@ -168,6 +170,24 @@ class CapabilityLibrary:
                 'reference_documents_eligible': references['eligible'],
                 'approved_test_actions_observed': action_count,
                 'tools_detected': [tool for tool in TOOLS if shutil.which(tool)]}
+
+    def exclude_project_paths(self, root: str | Path, paths) -> None:
+        """Immediately purge indexed read-only project evidence for excluded files.
+
+        Files on disk, approved actions and manually authored references are
+        never changed. Auto-indexed documents are removed from memory too.
+        """
+        base=Path(root).resolve(strict=True)
+        relative={str(p).replace('\\','/').casefold() for p in paths}
+        if not relative:return
+        with self._connect() as db:
+            records=db.execute('SELECT relative_path FROM observations WHERE project_key=?',
+                               (project_key(base),)).fetchall()
+            for record in records:
+                if record['relative_path'].casefold() in relative:
+                    db.execute('DELETE FROM observations WHERE project_key=? AND relative_path=?',
+                               (project_key(base),record['relative_path']))
+        self.references.forget_auto_project_paths(base,relative)
 
     def observations(self, root: str | Path, *, limit: int = 12) -> list[dict]:
         """Exclude changed, deleted or escaped files even if SQLite contains an old row."""

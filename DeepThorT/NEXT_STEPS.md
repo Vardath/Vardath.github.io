@@ -1,3 +1,13 @@
+# Next steps — after v46 (23 November 2026)
+
+**v46 implemented:** project-scoped, non-destructive right-click file inspection exclusions (UI + source-backed manifest/reference discovery + X4 project preview); restore excluded files; resume structurally valid model-authored partial plans after interrupted or unsuccessful planning attempts, keyed by selected workspace, complete specification, exact effective prompt/attachments and vanilla X4 evidence. Keep the 40-pass budget and the original 20% gaming-first cap; no shortcut plan templates or unapproved file writes. The original Windows install and user files remain unchanged.
+
+**Next:** Investigate local ONNX connection resets with physical Windows logs and model runtime resource telemetry. Add a user-visible view of retained partial plan progress (without implying plan approval). Continue deeper X4-specific validation and an engine-aware mod test profile. Distinguish process crashes, client timeout, Windows committed-memory pressure and malformed output before changing inference budgets. Implement Godot scripted gameplay assertions next, then protected X4/RimWorld test profiles.
+
+**Acceptance:** Test right-click file exclusion/restore and refresh across restart in `D:\x4mods`; verify original files stay byte-identical. Reissue the same failed Xenon PE request and check that partial valid files carry forward; a changed spec or attachment must not reuse them. Observe the 20% Windows job cap and file output path separately from `state` caches. Linux GUI tests cannot prove physical-Windows behavior.
+
+---
+
 # DeepThorT next steps — after v45 (23 November 2026)
 
 **Implemented:** User-approved project-local Windows `.exe` runs on a new **non-input Win32 desktop**, limited to 25 seconds, low priority, *same parent job-wide 20% CPU cap* and nested kill-on-close cleanup. Read-only window metadata and outcome receipts; pressure preemption and stop controls; no global keyboard/mouse simulation. Program executable hashes must match at launch; the test is not automatically replayed after crash. Project code runs with the current Windows account permissions. Native Windows acceptance remains outstanding; the implementation does not cap GPU, mute arbitrary GUI audio or guarantee rendering on the alternate desktop.

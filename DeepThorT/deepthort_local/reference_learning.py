@@ -179,6 +179,17 @@ class ReferenceIndex:
         return {'indexed': len(indexed), 'eligible': len(suitable),
                 'bounded': len(suitable) > limit}
 
+    def forget_auto_project_paths(self, root: str | Path, paths) -> None:
+        """Purge auto-indexed references only; do not affect hand-added ones."""
+        base=Path(root).resolve(strict=True)
+        excluded={str(p).casefold() for p in paths}
+        with self._conn() as db:
+            rows=db.execute("SELECT relative_path FROM local_references WHERE project_key=? AND origin='auto'",(_project_id(base),)).fetchall()
+            for row in rows:
+                if row['relative_path'].casefold() in excluded:
+                    db.execute("DELETE FROM local_references WHERE project_key=? AND relative_path=? AND origin='auto'",
+                        (_project_id(base),row['relative_path']))
+
     def current(self, root: str | Path) -> list[dict]:
         """Reject stale, deleted, changed and symlink-escaped references."""
         base = Path(root).resolve(strict=True)

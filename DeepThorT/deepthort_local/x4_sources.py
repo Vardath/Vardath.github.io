@@ -327,7 +327,8 @@ def catalog_extraction_command(tool, game_dir, output_dir):
 
 
 def automatic_x4_preflight(*, project_dir=None, app_root=None, game_dir=None,
-                           reference_dir=None, catalog_tool=None, discover_roots=()):
+                           reference_dir=None, catalog_tool=None, discover_roots=(),
+                           exclude_project_paths=()):
     """Read-only evidence discovery from an initial X4 request, never an install.
 
     Project files, game installation and previously extracted references are inspected
@@ -347,10 +348,12 @@ def automatic_x4_preflight(*, project_dir=None, app_root=None, game_dir=None,
                                 reference_dir=refs, discover_roots=roots)
     report['automatic_preflight'] = True
     report['project_files'] = []
+    excluded={str(x).replace('\\','/').casefold() for x in exclude_project_paths}
     if project:
         # Bounded, read-only project inventory. Never crawl full game drives.
         try:
             for item in sorted(project.iterdir(), key=lambda p:p.name.casefold())[:90]:
+                if item.name.casefold() in excluded:continue
                 if item.is_file():
                     report['project_files'].append(item.name[:180])
                 elif item.is_dir() and item.name.casefold() in ('extensions','md','libraries','assets'):

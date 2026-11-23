@@ -1,3 +1,12 @@
+DEEPTHORT V46 — 23 November 2026
+Right-click any row under Project files (left) to Exclude from inspection (keep on disk).
+Right-click again, even on empty space, to restore excluded files.
+The selected project folder is the destination for APPROVED generated source.
+DeepThorT's state and partial planning checkpoints remain in its own state folder.
+Long, resource-capped ONNX planning sessions are supported; validated partial file proposals
+are retained for retries of an identical specification/project/reference context.
+No mod/game file is deleted by project inspection exclusion.
+
 DEEPTHORT v45 — BACKGROUND WINDOWS GUI SMOKE TEST
 
 New Work queue controls: Isolated GUI smoke test… and Stop isolated GUI test.

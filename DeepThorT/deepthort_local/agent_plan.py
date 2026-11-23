@@ -440,7 +440,7 @@ def build_revision_prompt(request: str, steps: list[dict], problems: str, *,
 def generate_model_plan(client, session: str, request: str, project: str | Path,
                         first_prompt: str, *, x4_evidence: str = '',
                         max_chars: int = 7500, max_rounds: int = MAX_PLAN_ATTEMPTS,
-                        stage=None, cancelled=None) -> tuple[str, list[dict]]:
+                        stage=None, cancelled=None, continuation=None) -> tuple[str, list[dict]]:
     """Generate a complete plan through bounded, evidence-driven model revisions.
 
     No file intentions are hardcoded here. Each proposed path/description must
@@ -451,7 +451,20 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
         raise ValueError(f'max_rounds must be 1..{MAX_PLAN_ATTEMPTS}')
     if len(first_prompt) > max_chars:
         raise PlanError('Initial planning request exceeds the model context limit')
-    all_steps: dict[str, dict] = {}
+    recovered = continuation.load(project,request,x4_evidence,context=first_prompt) if continuation else []
+    all_steps: dict[str, dict] = {x['path'].casefold():x for x in recovered}
+    # Even a structurally valid saved fragment is not a validated project plan.
+    # Re-evaluate the full current specification before accepting any draft.
+    if recovered:
+        if stage:stage(f'Restored {len(recovered)} prior model-authored file proposals '
+                       'for this exact project, specification and X4 evidence; revalidating')
+        try:
+            validated=validate_project_plan(list(all_steps.values()),request)
+        except PlanError:
+            pass
+        else:
+            if continuation:continuation.clear(project,request,x4_evidence,context=first_prompt)
+            return json.dumps({'files':validated},ensure_ascii=False),validated
     failures = []
     seen_answers = set()
     invalid_format_answers = set()
@@ -541,12 +554,15 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                     raise PlanError('Revision would remove already satisfied requirements: '
                                     + '; '.join(sorted(after-before)))
                 all_steps = candidate_steps
+                if continuation and revised_count:
+                    continuation.save(project,request,x4_evidence,list(all_steps.values()),context=first_prompt)
                 try:
                     approved_shape = validate_project_plan(list(all_steps.values()), request)
                 except PlanError as exc:
                     finding = str(exc)
                 else:
                     # Still only a draft. Execution requires explicit approval.
+                    if continuation:continuation.clear(project,request,x4_evidence,context=first_prompt)
                     return json.dumps({'files': approved_shape}, ensure_ascii=False), approved_shape
             except PlanError as exc:
                 finding = str(exc)
