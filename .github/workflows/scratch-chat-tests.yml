@@ -53,6 +53,7 @@ jobs:
               'test_answer_leakage_audit.py',
               'test_capacity_plan.py',
               'test_source_snapshot.py',
+              'test_original_multiturn_seed_pipeline.py',
           ]
           failed = []
           for pattern in patterns:
