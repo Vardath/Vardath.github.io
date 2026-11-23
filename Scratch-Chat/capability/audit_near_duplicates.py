@@ -1,4 +1,4 @@
-"""Fail-closed lexical near-duplicate audit for prepared dialogue splits.
+"""Fail-closed prompt and assistant-answer near-duplicate audit for dialogue splits.
 
 This is a screening aid, not semantic paraphrase detection or license approval.
 """
@@ -40,7 +40,12 @@ def audit(directory, threshold=0.8):
             tokens = normalize(" ".join(prompts))
             if not tokens:
                 raise ValueError(f"empty normalized prompt: {path}:{number}")
-            records.append((split, number, shingles(tokens)))
+            answers = [m["content"] for m in messages if isinstance(m, dict) and m.get("role") == "assistant" and isinstance(m.get("content"), str)]
+            answer_tokens = normalize(" ".join(answers))
+            if not answer_tokens:
+                raise ValueError(f"empty normalized assistant answer: {path}:{number}")
+            records.append((split, number, "prompt", shingles(tokens)))
+            records.append((split, number, "answer", shingles(answer_tokens)))
     # Inverted shingle index avoids the quadratic all-pairs scan on large corpora.
     # Any pair with positive Jaccard must share at least one shingle, so this
     # candidate generation is exact (not approximate locality-sensitive hashing).
@@ -48,23 +53,23 @@ def audit(directory, threshold=0.8):
     index = defaultdict(list)
     findings = []
     candidate_pairs = 0
-    for i, (split_b, line_b, b) in enumerate(records):
+    for i, (split_b, line_b, kind_b, b) in enumerate(records):
         candidates = set()
         for shingle in b:
             candidates.update(index[shingle])
         for j in sorted(candidates):
-            split_a, line_a, a = records[j]
-            if split_a == split_b:
+            split_a, line_a, kind_a, a = records[j]
+            if split_a == split_b or kind_a != kind_b:
                 continue
             candidate_pairs += 1
             intersection = len(a & b)
             union = len(a) + len(b) - intersection
             similarity = intersection / union if union else 0.0
             if similarity >= threshold:
-                findings.append({"a": f"{split_a}:{line_a}", "b": f"{split_b}:{line_b}", "jaccard": round(similarity, 6)})
+                findings.append({"a": f"{split_a}:{line_a}", "b": f"{split_b}:{line_b}", "kind": kind_b, "jaccard": round(similarity, 6)})
         for shingle in b:
             index[shingle].append(i)
-    return {"passed": not findings, "records": len(records), "threshold": threshold, "findings": findings, "candidate_pairs": candidate_pairs}
+    return {"passed": not findings, "records": len(records) // 2, "threshold": threshold, "findings": findings, "candidate_pairs": candidate_pairs}
 
 
 def main():
