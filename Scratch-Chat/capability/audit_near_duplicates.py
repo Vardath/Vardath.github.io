@@ -4,6 +4,7 @@ This is a screening aid, not semantic paraphrase detection or license approval.
 """
 import argparse
 import json
+import math
 import re
 import unicodedata
 from pathlib import Path
@@ -21,7 +22,7 @@ def shingles(tokens, width=3):
 
 
 def audit(directory, threshold=0.8):
-    if not 0 < threshold <= 1:
+    if not isinstance(threshold, (int, float)) or not math.isfinite(threshold) or not 0 < threshold <= 1:
         raise ValueError("threshold must be in (0,1]")
     directory = Path(directory)
     records = []
