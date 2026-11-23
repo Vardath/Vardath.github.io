@@ -90,6 +90,22 @@ def verify_split_files(data, root):
                 if role not in ("system", "user", "assistant", "tool") or not isinstance(content, str) or not content.strip():
                     raise ValueError(f"{split} record {index} has invalid role/content")
                 normalized.append((role, " ".join(content.split()).casefold()))
+            # Fail closed on invalid chat supervision before tokenizer fitting.
+            # A tool reply is meaningful only after an assistant tool invocation;
+            # a complete sample must end in an assistant answer.
+            roles = [role for role, _ in normalized]
+            if roles[0] not in ("system", "user") or roles[-1] != "assistant":
+                raise ValueError(f"{split} record {index} has invalid conversation boundaries")
+            for position, role in enumerate(roles):
+                previous = roles[position - 1] if position else None
+                if role == "system" and position != 0:
+                    raise ValueError(f"{split} record {index} has misplaced system message")
+                if role == "assistant" and previous not in ("user", "tool"):
+                    raise ValueError(f"{split} record {index} has orphan assistant reply")
+                if role == "tool" and previous != "assistant":
+                    raise ValueError(f"{split} record {index} has orphan tool result")
+                if role == "user" and previous == "user":
+                    raise ValueError(f"{split} record {index} has consecutive user turns")
             # An upstream conversation or template family must not straddle
             # evaluation boundaries, even if its individual turns differ.
             for family_field in ("conversation_id", "source_conversation_id", "template_family_id"):
