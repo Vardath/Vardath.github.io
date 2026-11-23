@@ -48,6 +48,7 @@ jobs:
               'test_deepthort_bridge.py',
               'test_readiness_gate.py',
               'test_probe_scoring.py',
+              'test_pilot_artifact_hashes.py',
           ]
           failed = []
           for pattern in patterns:
