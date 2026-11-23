@@ -35,17 +35,17 @@ def run_pipeline(manifest_path, splits, output, *, steps=10, merges=128,
     verify_split_files(manifest, splits)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError("Output directory must be new/empty; do not overwrite checkpoints")
+    if (width < 1 or layers < 1 or heads < 1 or width % heads != 0
+            or context_size < 2):
+        raise ValueError("Invalid model capacity controls")
+    if steps < 1 or merges < 0:
+        raise ValueError("Invalid training controls")
     # Independent lexical leakage screening is mandatory, before allocating
     # output or fitting the tokenizer. Exact checks alone miss near-duplicates.
     contamination = audit_near_duplicates(splits, threshold=duplicate_threshold)
     if not contamination["passed"]:
         raise ValueError("Cross-split lexical near-duplicates detected: "
                          + json.dumps(contamination["findings"][:10]))
-    if (width < 1 or layers < 1 or heads < 1 or width % heads != 0
-            or context_size < 2):
-        raise ValueError("Invalid model capacity controls")
-    if steps < 1 or merges < 0:
-        raise ValueError("Invalid training controls")
     output.mkdir(parents=True, exist_ok=True)
     serialized = output / "serialized"
     serialized.mkdir()
