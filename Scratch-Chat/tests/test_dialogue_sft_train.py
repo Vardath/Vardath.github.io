@@ -51,6 +51,24 @@ class SFTTrainTests(unittest.TestCase):
                 self.assertTrue(torch.equal(tensor, b["model_state"][name]), name)
             self.assertTrue(torch.equal(a["rng_state"], b["rng_state"]))
 
+    def test_resume_rejects_corrupted_step_and_rng(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            train, valid, checkpoint = (root / name for name in ("train.jsonl", "valid.jsonl", "pilot.pt"))
+            write_rows(train, [{"input_ids": [1, 2, 3, 4], "labels": [-100, -100, 3, 4]}])
+            write_rows(valid, [{"input_ids": [1, 5, 6, 7], "labels": [-100, -100, 6, 7]}])
+            opts = dict(vocab_size=16, width=16, layers=1, heads=2, context_size=16)
+            run(train, valid, checkpoint, steps=1, **opts)
+            original = torch.load(checkpoint, weights_only=True)
+            for bad_step in (-1, 0, "1", True):
+                torch.save(dict(original, step=bad_step), checkpoint)
+                with self.assertRaisesRegex(ValueError, "checkpoint step"):
+                    run(train, valid, checkpoint, steps=2, resume=True, **opts)
+            for bad_rng in (None, torch.tensor([1, 2], dtype=torch.uint8)):
+                torch.save(dict(original, rng_state=bad_rng), checkpoint)
+                with self.assertRaisesRegex(ValueError, "RNG state"):
+                    run(train, valid, checkpoint, steps=2, resume=True, **opts)
+
     def test_train_resume_and_provenance(self):
         with tempfile.TemporaryDirectory() as d:
             train, valid, checkpoint = (Path(d) / x for x in ("train.jsonl", "valid.jsonl", "pilot.pt"))
