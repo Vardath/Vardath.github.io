@@ -8,6 +8,7 @@ to untrusted hosts, no credentials, no archive extraction.
 import argparse
 import hashlib
 import json
+import ipaddress
 import os
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -21,8 +22,16 @@ def validate_url(url):
     parsed = urlsplit(url)
     if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.fragment:
         raise ValueError("Only credential-free HTTPS URLs without fragments are accepted")
-    if parsed.hostname.lower() in ("localhost",) or parsed.hostname.endswith(".local"):
+    host = parsed.hostname.lower().rstrip(".")
+    if host == "localhost" or host.endswith(".localhost") or host.endswith(".local"):
         raise ValueError("Local destinations are forbidden")
+    try:
+        address = ipaddress.ip_address(host)
+    except ValueError:
+        pass  # A public DNS name; network egress policy must still protect DNS rebinding.
+    else:
+        if not address.is_global:
+            raise ValueError("Non-public IP destinations are forbidden")
     return url
 
 def acquire(url, expected_sha256, destination, *, max_bytes=100_000_000):
