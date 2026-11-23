@@ -1,0 +1,7 @@
+# Scratch Chat CI diagnosis — 2026-11-23
+
+Latest verified source-test run [45108330942](https://github.com/Vardath/Vardath.github.io/actions/runs/45108330942) failed in the checkpoint-independent dialogue/protocol test step. Previous runs 45102209739 and 45108318270 also failed; this is not a green baseline. The Actions jobs endpoint identifies the failing step but not its individual traceback in this inspection.
+
+Source inspection found a deterministic regression: test_dialogue_pipeline.PipelineTests.test_refuses_overwrite_even_with_validated_manifest patches manifest verification and supplies no split files; the newly inserted near-duplicate audit attempted to read those files *before* checking whether output already contained a checkpoint. Consequently FileNotFoundError would supersede the expected FileExistsError. Commit acedaef379a9dd3733b78fb7b4c70b95b50db6b1 restores the non-overwrite guard immediately after manifest verification and before lexical audit. The guard still precedes output allocation and training.
+
+This is a source-level diagnosis, not proof it is the only CI failure. Follow-on push CI must be inspected. No new training, approved dataset, checkpoint or conversational acceptance is claimed. Dolly remains quarantined. Next: inspect test failures, source licensing and privacy admission, obtain independently split dialogue, train original random weights, and run real multi-turn/tool-use JSONL acceptance.
