@@ -12,6 +12,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROLES = {"system", "user", "assistant", "tool"}
+# These bytes are structural delimiters in the chat serialization, not user text.
+RESERVED_CHAT_MARKERS = ("<|im_start|>", "<|im_end|>", "<|assistant|>", "<|user|>", "<|system|>", "<|tool|>")
 LICENSES = {"CC0-1.0", "CC-BY-4.0", "Apache-2.0"}
 
 def canonical(text):
@@ -53,6 +55,9 @@ def audit(manifest_path, train_path, validation_path, test_path):
             for msg in messages:
                 if not isinstance(msg, dict) or msg.get("role") not in ROLES or not isinstance(msg.get("content"), str) or not msg["content"].strip():
                     raise ValueError(f"{split}: invalid message")
+            for msg in messages:
+                if any(marker in msg["content"] for marker in RESERVED_CHAT_MARKERS):
+                    raise ValueError(f"{split}: reserved chat delimiter in message content")
             # Reject malformed supervision: an assistant answer must follow a user
             # request, and tool output must not appear without a preceding assistant.
             # System messages are only permitted at the beginning.
