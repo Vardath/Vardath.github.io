@@ -33,6 +33,10 @@ jobs:
           python -m unittest discover -s tests -p 'test_dialogue_corpus.py' -v
           python -m unittest discover -s tests -p 'test_dialogue_evaluation_binding.py' -v
           python -m unittest discover -s tests -p 'test_deepthort_bridge.py' -v
+      - name: Validate repaired four-message CC0 seed independently of legacy pilot corpus
+        run: |
+          python -m unittest discover -s tests -p 'test_original_multiturn_seed_pipeline.py' -v
+          python -m unittest discover -s tests -p 'test_dialogue_readiness.py' -v
       - name: Build CC0 dialogue and train isolated tokenizer on training split
         run: |
           python -m capability.dialogue_corpus --out data/dialogue-smoke
