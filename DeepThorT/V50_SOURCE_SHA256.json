@@ -38,6 +38,10 @@
       "sha256": "7b54945ec90a01877d3ca180e55a0a1a599fa5dfb4bb795e9b9119c793dce9a1"
     },
     {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "ab5e1a21ee3fa998fce5bbacb2c50a57106e4fbc31a43dbfef9c3ce0a467f379"
+    },
+    {
       "path": "desktop_app.py",
       "sha256": "00eb2ebdb25aecb58ba6b3ebb210e4110eac44933ac48bafc1f2588a9475c6fd"
     },

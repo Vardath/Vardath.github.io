@@ -19,6 +19,8 @@ TOOLTIPS = {
     'Export diagnostics': 'Save a local support ZIP with bounded health/log evidence. Nothing is uploaded automatically.',
     'Choose folder…': 'Select the project directory DeepThorT may inspect and use for explicitly approved file work.',
     'Refresh project files': 'Update the project file tree from disk; no project files are modified.',
+    'Auto-discover X4 sources': 'Read-only lookup of the installed X4 game and previously extracted vanilla XML. Relevant verified references appear in the project sidebar; packed catalogs require separate approved extraction. Nothing is copied into your mod output folder.',
+    'Show all workspace files': 'Reveal or hide unrelated files in the selected OUTPUT workspace. With this unchecked, the sidebar focuses on paths named by current plans/jobs plus a separate read-only X4 reference shortlist. No disk files are deleted or moved.',
     'Propose new project file…': 'Stage a new project file proposal for review. Saving to the project requires specific approval.',
     '+ New chat': 'Start a separate persistent conversation; your other chats remain available.',
     'Rename chat': 'Change the name of the selected saved conversation.',
