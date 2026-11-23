@@ -1,3 +1,13 @@
+# DeepThorT next steps — after v45 (23 November 2026)
+
+**Implemented:** User-approved project-local Windows `.exe` runs on a new **non-input Win32 desktop**, limited to 25 seconds, low priority, *same parent job-wide 20% CPU cap* and nested kill-on-close cleanup. Read-only window metadata and outcome receipts; pressure preemption and stop controls; no global keyboard/mouse simulation. Program executable hashes must match at launch; the test is not automatically replayed after crash. Project code runs with the current Windows account permissions. Native Windows acceptance remains outstanding; the implementation does not cap GPU, mute arbitrary GUI audio or guarantee rendering on the alternate desktop.
+
+**Next v46:** Godot native scripted gameplay probe adapter: physics/scene assertions, simulation-time bounded steps, telemetry on player interactions and collision, optional offscreen screenshots only if supported without foreground changes, reversible test profiles; no fabricated graphical assertions. Explicit, fixed test contracts, not model-provided arbitrary commands.
+
+**Then:** Isolated emulator (ADB APK install/launch with owned AVD), X4/RimWorld disposable mod/profile staging with log capture and save restoration, visual window automation only in an actually isolated session/VM. Protect the user's currently running Steam/game process and never commandeer input or assume X4/RimWorld are headless. Guard GPU/audio budgets with actual evidence before allowing graphics-heavy unattended launches. Avoid silent UAC bypass, unknown binaries, cloud inference, or replacing ONNX/JANUS/Sentinel architecture.
+
+---
+
 # DeepThorT next steps — after v44 (23 November 2026)
 
 **Delivered v44:** An explicit, quiet Godot scene-simulation action under Work queue, backed by persisted run receipts and bounded resource pressure checks. It uses a fixed Godot `--headless --path ... --quit-after 360` command for a declared main scene; no game window, dummy audio, no input/focus injection. Starts from an existing `DeepThorT.exe` capped Windows Job Object, so the headless game shares the SAME aggregate 20% CPU and RAM-commit budgets; it does **not** get its own 20%. Child is idle priority. Safe real scene results are clearly labelled `headless_smoke_passed`, not verified interactive gameplay. Foreground game workloads are allowed, but the test is automatically preempted if system RAM reserve drops below 10% or system CPU exceeds 90% for three consecutive samples while a game is detected. OS cannot enforce a simple aggregate 20% GPU-use cap here. Tests execute project scripts as the current Windows user; they are **not sandboxed**.

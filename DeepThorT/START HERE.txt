@@ -1,3 +1,12 @@
+DEEPTHORT v45 — BACKGROUND WINDOWS GUI SMOKE TEST
+
+New Work queue controls: Isolated GUI smoke test… and Stop isolated GUI test.
+Select a trusted project-local .exe, review explicit consent. DeepThorT runs it for 25 seconds on another Windows desktop, low priority, without focus or global input takeover. Window identity, responsiveness and exit status go to Processes and diagnostics. It shares the EXISTING 20% CPU cap. This is NOT a VM, graphics/playability proof or guarantee that audio stays silent. GPU use is not capped. Current-user file privileges still apply.
+
+Only use the existing capped DeepThorT.exe launcher. Back up D:\deepthort\state and overlay source while preserving binaries, ONNX model, state, projects, node_modules and references. Read PROJECT_CONTEXT_V45.md.
+
+---
+
 DEEPTHORT v44 — QUIET GODOT SCENE CHECK
 
 Existing DeepThorT.exe launcher and local ONNX remain unchanged. Extract source overlay over D:\deepthort; preserve DeepThorT.exe, state, models, node_modules, cache, references and projects.

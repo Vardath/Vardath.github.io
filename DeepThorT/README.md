@@ -1,3 +1,11 @@
+# DeepThorT v45 — isolated Windows GUI smoke tests
+
+Work queue now has **Isolated GUI smoke test…** and **Stop isolated GUI test**. You can explicitly approve a trusted, project-local Windows `.exe` to launch on a separate Win32 desktop without changing your foreground focus or sending keyboard/mouse input. The process is low priority, limited to 25 seconds and runs under DeepThorT.exe’s existing **shared** 20% CPU Job Object with a nested cleanup job. The app can still produce sound and use GPU; it is NOT a VM/security sandbox, nor an automated gameplay or graphical correctness proof. The Processes tab and diagnostic receipts show actual project-window titles, geometry, responsiveness and exit status. Unclear or unsupported Win32 desktop operations fail closed. Native Windows testing is still required.
+
+**Update**: Close DeepThorT, back up `D:\deepthort\state`, then extract the v45 source overlay over your existing v44 Windows install. Keep `DeepThorT.exe`, ONNX model, state, node_modules, cache, references and all projects untouched. Read `PROJECT_CONTEXT_V45.md` for first-use acceptance.
+
+---
+
 ## v44 — Quiet background Godot scene simulation
 
 DeepThorT can now launch a project's declared Godot main scene **headlessly** from Work queue → **Quiet Godot scene test**, while the user works in other programs or plays a foreground game. It uses no display, audio or interactive input, starts under the existing **shared** Windows Job Object resource cap and is throttled by IDLE priority and a pressure preemption guard. Select **Stop quiet test** to cancel; receipts appear in diagnostics and Processes.

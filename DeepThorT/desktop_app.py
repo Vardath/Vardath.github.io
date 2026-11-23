@@ -49,6 +49,9 @@ from deepthort_local.media_tools import (classify, validate_attachment, composed
 from deepthort_local.computer_inventory import (INSTALL_CATALOG, format_inventory,
         plan_tool_needs, scan_computer, winget_command)
 from deepthort_local.disk_gate import DiskGate
+from deepthort_local.isolated_gui import (
+    IsolatedGuiStore, IsolatedGuiError, plan_isolated_gui, run_isolated_gui,
+    assert_plan_unchanged)
 from deepthort_local.quiet_playtest import (
     QuietTestStore, QuietPlaytestError, plan_godot_scene, quiet_creationflags,
     is_capped_windows_process, PLAYTEST_SECONDS, QuietPressureGuard, WindowsPressureSampler)
@@ -116,7 +119,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='44',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='45',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -163,6 +166,13 @@ class DeepThorTDesktop(tk.Tk):
         self._quiet_test_stopped = False
         self._quiet_test_stop_reason = ''
         self._quiet_test_active = None
+        self.gui_tests = IsolatedGuiStore(STATE/'isolated-gui-v45.json')
+        stale_gui = self.gui_tests.interrupt_stale()
+        if stale_gui:
+            record(STATE,'desktop','isolated_gui_interrupted',
+                   executable=stale_gui.get('executable_name'))
+        self._gui_test_active = None
+        self._gui_test_stop = threading.Event()
         self._manual_catalog_install = None
         prior_auto = read_snapshot(STATE/'last-routine-software.json')
         if isinstance(prior_auto,dict) and prior_auto.get('status')=='launch_requested':
@@ -407,7 +417,13 @@ class DeepThorTDesktop(tk.Tk):
                    command=self._run_quiet_scene).pack(side='left',padx=7)
         ttk.Button(restorebar,text='Stop quiet test',
                    command=self._stop_quiet_scene).pack(side='left',padx=3)
-        ttk.Label(queue_tab,text='v44: quiet Godot runs headlessly (no audio/display/input), shares the existing 20% CPU job cap; this is scene smoke testing, NOT visual gameplay.',
+        guibar=ttk.Frame(queue_tab);guibar.pack(fill='x',pady=(0,3))
+        ttk.Button(guibar,text='Isolated GUI smoke test…',
+                   command=self._run_isolated_gui).pack(side='left',padx=3)
+        ttk.Button(guibar,text='Stop isolated GUI test',
+                   command=self._stop_isolated_gui).pack(side='left',padx=3)
+        ttk.Label(queue_tab,text='v45: Windows programs can be observed on a separate desktop with no input takeover. '
+                  'Shares the original 20% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
                   style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
@@ -606,6 +622,7 @@ class DeepThorTDesktop(tk.Tk):
                    'development_cycles':self.cycles.summary(self._project_key()),
                    'task_graph':self.graphs.summary(self._project_key()),
                    'quiet_scene_tests':self.quiet_tests.snapshot(),
+                   'isolated_gui_tests':self.gui_tests.snapshot(),
                    'current_project_name':Path(self._project_key()).name,
                    'sentinel_pid':self.sentinel_process.pid if self.sentinel_process and self.sentinel_process.poll() is None else None,
                    'loading_stage':self.current_loading_stage, 'last_ai_error':self.last_ai_error,
@@ -1708,7 +1725,7 @@ class DeepThorTDesktop(tk.Tk):
         if self._quitting or self.queue_paused:
             self._log('Quiet scene test deferred: the work queue is paused.')
             return
-        if self._quiet_test_active or any(p and p.poll() is None for p in
+        if self._gui_test_active or self._quiet_test_active or any(p and p.poll() is None for p in
             (self.tool_process,self.install_process,self.media_process)):
             self._log('Quiet scene test deferred: another tool/process is active.')
             return
@@ -1753,6 +1770,61 @@ class DeepThorTDesktop(tk.Tk):
             # Launch may still be in flight. Worker will see stop flag before Popen.
             self._log('Quiet test cancellation requested; launch not yet confirmed.')
         self._log('Quiet scene test stopping; no automatic replay.')
+
+    def _run_isolated_gui(self):
+        """User-approved program on a separate Windows desktop, no input injection."""
+        if self._quitting or self.queue_paused:
+            self._log('Isolated GUI test deferred: work queue paused or desktop closing.')
+            return
+        if self._gui_test_active or self._quiet_test_active or self.active_job is not None or \
+                self._auto_verification_in_flight is not None or self._auto_tool_active or self._tool_probe_active or \
+                any(p and p.poll() is None for p in
+                    (self.tool_process, self.install_process, self.media_process)):
+            self._log('Isolated GUI test deferred: another supervised action is running.')
+            return
+        try:
+            if not is_capped_windows_process():
+                raise IsolatedGuiError('Requires Windows and the capped DeepThorT.exe launcher.')
+            if not self.project or not Path(self.project).is_dir():
+                raise IsolatedGuiError('Select a project directory first.')
+            chosen=filedialog.askopenfilename(parent=self,title='Select project-local Windows .exe to observe',
+                initialdir=str(self.project),filetypes=[('Windows programs','*.exe')])
+            if not chosen:return
+            plan=plan_isolated_gui(self.project,chosen)
+            if not messagebox.askyesno('Approve background Windows program smoke test',
+                'Launch this project executable on a separate Windows desktop for up to 25 seconds?\n\n'
+                +plan.executable+'\n\n'
+                'It will run with your current Windows account permissions. This is NOT a security sandbox. '
+                'It may access project files, use GPU and fail if the app needs the input desktop. '
+                'No keyboard, mouse or foreground window will be manipulated by DeepThorT. '
+                'A nested job terminates the child process tree at the end.\n\n'
+                'Only run an executable you trust.',parent=self):
+                return
+            assert_plan_unchanged(plan)
+            self.gui_tests.begin(plan)
+            self._gui_test_stop=threading.Event()
+            self._gui_test_active=plan
+            def runner():
+                try:
+                    result=run_isolated_gui(plan,self._gui_test_stop,
+                                             foreground_game=self.disk_gate.gaming)
+                except (OSError,ValueError,RuntimeError) as exc:
+                    result={'status':'launch_failed','detail':str(exc)[:250],'windows':[]}
+                except BaseException as exc:
+                    result={'status':'launch_failed','detail':'Native GUI supervision error: '+str(exc)[:200],
+                            'windows':[]}
+                self.events.put(('isolated_gui_done',result))
+            threading.Thread(target=runner,daemon=True,name='isolated-gui-v45').start()
+            self._log('Isolated GUI smoke test started: '+Path(plan.executable).name+
+                      '; no desktop switching/input; no visual/gameplay acceptance implied.')
+        except (IsolatedGuiError,OSError,ValueError) as exc:
+            self._log('Isolated GUI test blocked: '+str(exc))
+            self.status.set('Isolated GUI test blocked: '+str(exc)[:150])
+
+    def _stop_isolated_gui(self):
+        if self._gui_test_active:
+            self._gui_test_stop.set()
+            self._log('Isolated GUI test cancellation requested; nested process job will close.')
 
     def _verification_command(self,project):
         # Only deterministic local test entry points. No model-created shell commands.
@@ -2041,6 +2113,7 @@ class DeepThorTDesktop(tk.Tk):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
             or self.__dict__.get('_quiet_test_active') is not None
+            or self.__dict__.get('_gui_test_active') is not None
             or self._auto_verification_in_flight is not None
             or self._auto_tool_active is not None or bool(self._auto_tool_queue)
             or self.active_job is not None or self.active_conversation is not None
@@ -2120,7 +2193,7 @@ class DeepThorTDesktop(tk.Tk):
             return
 
     def _verify_build(self):
-        if self.__dict__.get('_quiet_test_active') is not None:
+        if self.__dict__.get('_quiet_test_active') is not None or self.__dict__.get('_gui_test_active') is not None:
             self._log('Manual verification deferred while quiet scene test is running')
             return
         if any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)):
@@ -2166,7 +2239,8 @@ class DeepThorTDesktop(tk.Tk):
             self.after(1100,self._scheduler)
 
     def _scheduler_once(self):
-        tool_busy=(self.__dict__.get('_quiet_test_active') is not None or
+        tool_busy=(self.__dict__.get('_gui_test_active') is not None or
+                   self.__dict__.get('_quiet_test_active') is not None or
                    any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
         model_alive=bool(self.node and self.node.poll() is None)
         gate = ('paused' if self.queue_paused else
@@ -2847,7 +2921,8 @@ class DeepThorTDesktop(tk.Tk):
         if not self._quitting:
             self.after(2200,self._automatic_tool_tick)
         if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
-        if (self.queue_paused or self.__dict__.get('_quiet_test_active') is not None or self._auto_tool_active or
+        if (self.queue_paused or self.__dict__.get('_quiet_test_active') is not None
+            or self.__dict__.get('_gui_test_active') is not None or self._auto_tool_active or
             getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
             self.disk_gate.gaming()):return
         if self.install_process and self.install_process.poll() is None:return
@@ -2917,6 +2992,7 @@ class DeepThorTDesktop(tk.Tk):
             self.after(2400,self._tool_probe_tick)
         if (self._quitting or not self._tool_probe_queue or self._tool_probe_active
             or self.__dict__.get('_quiet_test_active') is not None
+            or self.__dict__.get('_gui_test_active') is not None
             or self.queue_paused or self.disk_gate.gaming()
             or self._auto_tool_active or self._auto_verification_in_flight is not None
             or self.active_job is not None or self.active_conversation is not None
@@ -3457,6 +3533,9 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'JANUS approved process #{action_id} queued. Sentinel monitors worker health; results are written to the JANUS tab.')
         self._show_janus_status()
     def _start_command(self,cmd,*,cwd,label,kind,job_id=None):
+        if self.__dict__.get('_gui_test_active') is not None:
+            self._log('Isolated GUI test owns the tool slot; deferred: '+label)
+            return False
         if kind!='quiet_playtest' and self.__dict__.get('_quiet_test_active') is not None:
             self._log('A quiet headless test already owns the tool slot; deferred: '+label)
             return False
@@ -3943,10 +4022,19 @@ class DeepThorTDesktop(tk.Tk):
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
               f"Supervision: 20% aggregate CPU cap, 20% RAM commit limit under DeepThorT.exe\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
+              f"Isolated GUI: {'running' if self._gui_test_active else 'inactive'}; separate desktop, project-owned window metadata only\n"
               f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
               f'Last actual ONNX stage: {(self.current_loading_stage or "none observed")[:200]}\n'
               'Inference output is only known at completion; no fictitious token progress.')
+        gui_history=self.gui_tests.snapshot()['history']
+        if gui_history:
+            last=gui_history[-1]
+            text+=(f"\nLATEST ISOLATED GUI TEST: {last['status']} — "
+                   f"{last.get('executable_name','project program')}; {last.get('detail','')}\n")
+            for win in last.get('windows',[])[:6]:
+                text+=f"  Project window: {win.get('title','')[:100]} {win.get('bounds',[])}"+(
+                    ' [not responding]\n' if win.get('hung') else '\n')
         active_health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
         if active_health.get('inference_busy'):
             text += (f"\nLOCAL AI GENERATION: running "
@@ -4152,6 +4240,18 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='install_error':
                 self.installing=False;self.model_status.set('AI: installation failed')
                 self._log('Installation failed: '+event[1]);messagebox.showerror('Install failed',event[1])
+            elif kind=='isolated_gui_done':
+                result=event[1] if isinstance(event[1],dict) else {
+                    'status':'launch_failed','detail':'Malformed worker result','windows':[]}
+                receipt=self.gui_tests.finish(result)
+                self._gui_test_active=None
+                self._gui_test_stop.set()
+                if receipt:
+                    self._log('Isolated GUI: '+receipt['status']+'; '+receipt['detail']+
+                              f"; {len(receipt.get('windows', []))} project windows observed. "
+                              'No gameplay acceptance implied.')
+                    self.status.set('Isolated GUI: '+receipt['status']+
+                                    '; details in Processes and diagnostics.')
             elif kind=='tool_end':
                 label,tooltype,code,job_id=event[1:5]
                 verification_output=event[5] if len(event)>5 else None
@@ -4340,6 +4440,9 @@ class DeepThorTDesktop(tk.Tk):
                 'Application closed; will retry when model is available',allowed=('running',))
         if self.active_job is not None:
             self.jobs.change(self.active_job,'paused','Application closed before reply; resume to retry',allowed=('running',))
+        if self._gui_test_active is not None:
+            self._gui_test_stop.set()
+            self.gui_tests.interrupt_stale()
         if self._quiet_test_active is not None:
             self.quiet_tests.interrupt_stale()
         for proc in (self.node,self.tool_process,self.install_process,self.media_process,self.sentinel_process):
