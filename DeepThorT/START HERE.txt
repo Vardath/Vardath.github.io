@@ -1,3 +1,22 @@
+DEEPTHORT DESKTOP v43 — VERIFIED EXECUTABLE DISCOVERY AFTER INSTALL
+
+DeepThorT can now check where a fixed-catalog tool was installed and whether
+its CLI version command actually works. A successful installer exit alone
+is no longer reported as a working tool. After WinGet exits, check the
+Processes log and Computer & Tools inventory for version_verified,
+located_only, not_found or probe_failed. Safe background checks do not
+open GUI-only applications. Existing approved project tests may use the newly
+located executable. This is NOT yet interactive mod/game playtesting.
+
+CLOSE DEEPTHORT. Back up D:\deepthort\state. Extract this SOURCE OVERLAY
+into D:\deepthort. Preserve DeepThorT.exe, Qwen ONNX models, state,
+user projects, cache, reference, node_modules and all custom files.
+No second LLM, no cloud service, no silent UAC bypass or unknown installs.
+
+Read PROJECT_CONTEXT_V43.md and PLAYTEST_ACCEPTANCE_V43.md first.
+
+---
+
 DEEPTHORT DESKTOP v42 — VERSIONED SOURCE CHECKPOINTS AND EVIDENCE TASK GRAPH
 
 Continues v41 ONNX coding model and JANUS/Sentinel, same 8-tab Windows app.

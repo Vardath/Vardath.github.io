@@ -1,3 +1,30 @@
+# DeepThorT next steps — after v43 (23 November 2026)
+
+**Implemented in v43:** durable independent detection of known installed CLI
+executable versions following approved catalog WinGet installations; bounded,
+fixed flags and version parsing; serial game-aware background probes; current-
+session PATH recovery and stale-file detection; separate `located_only` for
+GUI applications; registry entries alone no longer count as executables. This
+is an evidence probe, not app signature verification or gameplay.
+
+**Priority v44:** one real, instrumented project run/launch acceptance adapter,
+prefer Godot and Windows programs. Verify real artifact, approved safe staging,
+process/window identity, bounded input and observation, crash/output logs,
+retry/stop and restore checkpoint. An app simply opening is not playtested.
+
+**Priority v45+:** Android SDK/Gradle/device readiness after installations,
+APK build and ADB/emulator playtest; X4/RimWorld disposable mod staging,
+actual game startup/log and save-interaction checks; separate Blender etc.
+Explicitly preserve originals and keep game performance caps. Build tests
+are not a security sandbox and must not be treated as in-game acceptance.
+
+**Unchanged:** Sole local Qwen ONNX, no cloud fallback, original eight-tab GUI,
+JANUS/Sentinel, offline project grants, original Windows launcher and models.
+Real Windows deployment, WinGet/UAC and user GPU/CPU benchmarks remain untested
+in Linux CI. See PROJECT_CONTEXT_V43.md and PLAYTEST_ACCEPTANCE_V43.md.
+
+---
+
 # DeepThorT next steps — after v42 (23 November 2026)
 
 **Completed:** v42 adds an exact approved-job dependency DAG at `state/task-graph.sqlite3`, evidence-linked source/test/tool prerequisites, persisted source-hash/task progress, interrupted-action leases, bounded multi-file versioned checkpoints and explicit rollback with quarantine. The original ONNX-only v41 three-test/two-repair cycle, v40 project grants, JANUS/Sentinel and Windows gaming controls remain. Full details in `PROJECT_CONTEXT_V42.md`.

@@ -142,7 +142,11 @@ def detect_tools(*, which=None, known_locations=None, registry=None):
                 if label.casefold() in name or any(h in name for h in hints_low):
                     location, source = folder or '(installed; executable path not found)', 'Windows installed-app registry'
                     break
-        inventory.append(Tool(label, purpose, bool(location), location, source))
+        # A Windows uninstall entry may contain only a directory or a descriptive
+        # string. That is NOT proof the relevant executable can be launched.
+        # Keep the metadata for display, but do not mark the tool usable.
+        actual_file = bool(location and Path(location).is_file())
+        inventory.append(Tool(label, purpose, actual_file, location, source))
     return inventory
 
 

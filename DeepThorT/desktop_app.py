@@ -61,6 +61,8 @@ from deepthort_local.watchdog import SentinelStore
 from deepthort_local.tasks import TaskBoard
 from deepthort_local.ui_help import install_tooltips
 from deepthort_local.tool_sources import official_source
+from deepthort_local.tool_verification import (ToolVerificationStore, verify_catalog_tool,
+    refreshed_path)
 from deepthort_local.software_autonomy import (
     load_policy, set_policy, project_tool_plans, verify_plan, audit_record,
     already_attempted, MIN_FREE_BYTES)
@@ -111,7 +113,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='42',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='43',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -147,6 +149,10 @@ class DeepThorTDesktop(tk.Tk):
         self._auto_tool_queue = []
         self._auto_tool_active = None
         self._auto_tool_waiting = []
+        self._tool_verification = ToolVerificationStore(STATE/'tool-verification-v43.json')
+        self._tool_probe_queue = []
+        self._tool_probe_active = None
+        self._manual_catalog_install = None
         prior_auto = read_snapshot(STATE/'last-routine-software.json')
         if isinstance(prior_auto,dict) and prior_auto.get('status')=='launch_requested':
             prior_auto['status']='interrupted_unverified'
@@ -242,6 +248,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(125, self._handle_events)
         self.after(1000, self._scheduler)
         self.after(1700, self._automatic_tool_tick)
+        self.after(2300, self._tool_probe_tick)
         self.after(1900, self._project_work_tick)
         self.after(2200, self._poll_server)
         self.after(1000, self._poll_reply_notice)
@@ -2720,6 +2727,7 @@ class DeepThorTDesktop(tk.Tk):
         if not enabled:
             self._auto_tool_queue.clear()
             self._auto_tool_waiting.clear()
+            self._tool_probe_queue.clear()
         record(STATE,'desktop','routine_tool_policy_changed',enabled=enabled,upgrades=upgrades)
         self._log('Routine project software management '+('ENABLED' if enabled else 'DISABLED')+
                   ('; approved upgrades allowed.' if enabled and upgrades else '.'))
@@ -2815,7 +2823,69 @@ class DeepThorTDesktop(tk.Tk):
         self._log('Routine '+plan['operation']+' '+plan['package_id']+': '+status+
                   '; follow-up tool scan is required for actual capability verification.')
         if code==0:
+            self._queue_catalog_verification(plan['name'],project=plan['project'],
+                plan_sha256=plan['plan_sha256'],install_exit_code=code)
             self._refresh_inventory()
+
+    def _queue_catalog_verification(self,name,*,project='',plan_sha256='',install_exit_code=None):
+        """Queue only catalog checks. Never run model-selected programs."""
+        if name not in INSTALL_CATALOG:return
+        if any(row['name']==name for row in self._tool_probe_queue):return
+        if isinstance(self._tool_probe_active,dict) and self._tool_probe_active['name']==name:return
+        if len(self._tool_probe_queue)>=12:
+            self._log('Post-install verification queue is full; use Scan this computer.')
+            return
+        self._tool_probe_queue.append(dict(name=name,project=str(project or ''),
+               plan_sha256=plan_sha256,install_exit_code=install_exit_code))
+        self._log('Post-install capability check queued for '+name+
+                  '; the version probe will not bypass Windows UAC or open a GUI app.')
+
+    def _tool_probe_tick(self):
+        if not self._quitting:
+            self.after(2400,self._tool_probe_tick)
+        if (self._quitting or not self._tool_probe_queue or self._tool_probe_active
+            or self.queue_paused or self.disk_gate.gaming()
+            or self._auto_tool_active or self._auto_verification_in_flight is not None
+            or self.active_job is not None or self.active_conversation is not None
+            or any(p and p.poll() is None for p in
+                   (self.install_process,self.tool_process,self.media_process))):
+            return
+        request=self._tool_probe_queue.pop(0)
+        self._tool_probe_active=request
+        def worker():
+            try:
+                row=verify_catalog_tool(request['name'],project=request['project'],
+                    install_plan_sha256=request['plan_sha256'],
+                    install_exit_code=request['install_exit_code'])
+                self.events.put(('tool_probe_done',row))
+            except Exception as exc:
+                self.events.put(('tool_probe_error',request['name'],str(exc)[:280]))
+        threading.Thread(target=worker,daemon=True).start()
+
+    def _tool_probe_finished(self,row):
+        self._tool_probe_active=None
+        try:self._tool_verification.record(row)
+        except (ValueError,OSError) as exc:
+            self._log('Tool probe evidence not saved: '+str(exc))
+            return
+        status=row['status']
+        self._log('Independent tool check '+row['tool']+': '+status+
+                  (('; '+row['version']) if row['version'] else '')+
+                  (('; '+row['executable']) if row['executable'] else '')+
+                  '. This is NOT publisher-signature verification or application playtesting.')
+        if status=='version_verified':
+            # Make a newly installed CLI discoverable to fixed project tests in
+            # this desktop session; persist neither system nor registry PATH.
+            exe=Path(row['executable'])
+            folder=str(exe.parent)
+            current=os.environ.get('PATH','').split(os.pathsep)
+            if folder.casefold() not in {x.casefold() for x in current}:
+                os.environ['PATH']=os.pathsep.join([*current,folder])
+            if row['tool']=='Godot':
+                os.environ.setdefault('GODOT_EXECUTABLE',str(exe))
+            self._log('Verified tool available to eligible fixed project checks. '
+                      'Existing approved jobs can resume when their other prerequisites permit.')
+        self._refresh_inventory()
 
     def _plan_tools(self):
         if self.inventory is None:
@@ -3277,7 +3347,8 @@ class DeepThorTDesktop(tk.Tk):
             return
         self.tabs.select(4)
         self._log(f'Approved installation of {name} via winget package ID {package}.')
-        self._start_command(cmd,cwd=ROOT,label=f'Install {name}',kind='installation')
+        if self._start_command(cmd,cwd=ROOT,label=f'Install {name}',kind='installation'):
+            self._manual_catalog_install=name
     def _run_project_check(self):
         if not self.project:
             messagebox.showinfo('Project needed','Choose a project folder before running local tools.');return
@@ -3797,7 +3868,17 @@ class DeepThorTDesktop(tk.Tk):
                     record(STATE,'desktop','tools_discovered_for_learning',count=len(enrolled))
                 except (ValueError,OSError) as exc:
                     self._log('Tool learning inventory unavailable: '+str(exc)[:180])
-                self._show(self.machine_text,format_inventory(self.inventory))
+                summary=format_inventory(self.inventory)
+                proof_notes=[]
+                for tool in self.inventory.get('tools',[]):
+                    result=self._tool_verification.get(tool['name'])
+                    if result:
+                        current=self._tool_verification.current(tool['name'])
+                        status='version verified' if current else ('stale/changed' if result['status']=='version_verified' else result['status'].replace('_',' '))
+                        proof_notes.append(f"  {tool['name']}: {status}"+
+                            (f" — {result['version']}" if current else ''))
+                if proof_notes:summary+='\n\nPost-install CLI checks (NOT playtesting):\n'+'\n'.join(proof_notes)
+                self._show(self.machine_text,summary)
                 (STATE/'computer-inventory.json').write_text(json.dumps(self.inventory,indent=2),encoding='utf-8')
                 snapshot=summarize_inventory(self.inventory)
                 save_snapshot(STATE/'last-engine-inventory.json',snapshot)
@@ -3813,6 +3894,11 @@ class DeepThorTDesktop(tk.Tk):
                     for prompt, project in pending:
                         if str(self.project)==project:
                             self._autonomy_queue_request(prompt,project)
+            elif kind=='tool_probe_done':
+                self._tool_probe_finished(event[1])
+            elif kind=='tool_probe_error':
+                self._tool_probe_active=None
+                self._log('Post-install version verification error for '+event[1]+': '+event[2])
             elif kind=='inventory_error':
                 self._log('Computer scan problem: '+event[1]);self._show(self.machine_text,'Discovery error: '+event[1])
             elif kind=='x4_auto_report':
@@ -3958,8 +4044,24 @@ class DeepThorTDesktop(tk.Tk):
                            if tooltype=='reviewed_install' and code==0 else
                            'Succeeded.' if code==0 else 'Check output for failure.'))
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
-                if tooltype=='installation' and code==0:self._refresh_inventory()
-                if tooltype=='reviewed_install':self._complete_inspected_install(code)
+                if tooltype=='installation':
+                    name=self._manual_catalog_install
+                    self._manual_catalog_install=None
+                    if code==0:
+                        if name in INSTALL_CATALOG:
+                            self._queue_catalog_verification(name,project=str(self.project or ''),
+                                install_exit_code=code)
+                        self._refresh_inventory()
+                if tooltype=='reviewed_install':
+                    pending=self._pending_reviewed_install
+                    if code==0 and isinstance(pending,dict):
+                        package_id=pending.get('plan',{}).get('package_id')
+                        for name,(catalog_id,_purpose) in INSTALL_CATALOG.items():
+                            if package_id==catalog_id:
+                                self._queue_catalog_verification(name,
+                                     project=str(self.project or ''),install_exit_code=code)
+                                break
+                    self._complete_inspected_install(code)
                 if tooltype=='automatic_software':self._automatic_tool_finished(code)
                 if tooltype=='package_inspection':
                     self._receive_package_inspection(code,verification_output)

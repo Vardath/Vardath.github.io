@@ -1,3 +1,11 @@
+# DeepThorT v43 — independent post-install tool verification (23 November 2026)
+
+**Continues the v42 ONNX + JANUS/Sentinel project workflow, without introducing another model.** After a fixed-catalog WinGet installation exits, v43 finds real executables, checks bounded known command-line version output, saves durable evidence and makes newly verified CLI tools available to the *current desktop process* for previously authorized project tests. Registry-only installed-app entries no longer count as usable tools. GUI applications are located but are **not automatically opened** for probing. Inspect `Computer & Tools` and the `Processes` log; receipts live at `state/tool-verification-v43.json`. See `PROJECT_CONTEXT_V43.md` and `PLAYTEST_ACCEPTANCE_V43.md`.
+
+**Important:** A successful version probe is not proof that an app is playable, that a mod works in-game, or that the publisher is trusted. A true install/launch/playtest adapter is still a subsequent development target. Keep your existing Windows UAC, project approval gates, resource caps, model and game profiles. This is a **SOURCE OVERLAY** for an existing v42 Windows install; preserve `DeepThorT.exe`, `state`, `models`, `node_modules`, `cache`, `reference` and user projects.
+
+---
+
 # DeepThorT v42 — evidence-backed task dependencies and source rollback (23 November 2026)
 
 **Local Qwen ONNX only; original JANUS, Sentinel, eight-tab desktop and Windows gaming constraints preserved.** After an explicitly approved plan, a persisted task graph records linked requirements, exact source artifacts, observed verification tools and real test evidence without fabricating success. Source checkpoints preserve the approved baseline and successive generated/ONNX-repaired file revisions under `state/source-checkpoints`. Work queue has a deliberately explicit **Restore source checkpoint…** action which safely quarantines newly created files and invalidates the old plan approval, graph and tests. External edits and corrupt/missing checkpoint blobs block restoration. Job-bound action leases prevent silent replay after interruption.

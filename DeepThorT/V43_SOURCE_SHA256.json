@@ -1,0 +1,54 @@
+{
+  "schema": "deepthort-v43-source-digest-v1",
+  "source_files": [
+    {
+      "path": "desktop_app.py",
+      "sha256": "01ce36bd2f93f26598d421da256a742ce326daf68b70701bb865fd4fa84bfd5c"
+    },
+    {
+      "path": "deepthort_local/tool_verification.py",
+      "sha256": "eebd99d8a5823806bdcb9744cafe5972feda8e04ce5835c7e5b8042f48a2c3b6"
+    },
+    {
+      "path": "deepthort_local/computer_inventory.py",
+      "sha256": "1f9d44941ef89df1fc5aea1aa785c37c804bbc325e344f4e56f2029d420f6b3e"
+    },
+    {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "102629c0066b6758aa4c6c422f48a6ce393c2f055d98e2e07ec081cf7957d209"
+    },
+    {
+      "path": "tests/test_tool_verification_v43.py",
+      "sha256": "ff24af809b9f4f11071a12453dc46d8efe2465ca2bdfa0a356d0fce604319e2d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a103c7b9179b75bcc17a3c15e353cdbfe49ae9bf6b69d13d098d8a847dc62fd8"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "ad8f763469ee82ce664bc9b584531312260cccd305a6df9d15a097e208e45539"
+    },
+    {
+      "path": "START HERE.txt",
+      "sha256": "bba903fb207a69a60a8bab04bd36c672e41e7c0a8eb97092dd370c7a232f9bbe"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "f64228303e178ac2c9d22b4c1a0287306fc02a1e13b3572a0870f009e564f11c"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V43.md",
+      "sha256": "46583ab1a7d1ce19589569cc709d33e9acf442d0c146f688d6a1fa4836e48245"
+    },
+    {
+      "path": "TEST_RESULTS_V43.md",
+      "sha256": "d42d06f5847516eb727ecb783a5de63fdf0c9ca34b342d9b356df1e9e0e4160d"
+    },
+    {
+      "path": "PLAYTEST_ACCEPTANCE_V43.md",
+      "sha256": "bb74ca263da95b610272f076a17f3b302310503805c65109b6629e68a9d9b03a"
+    }
+  ],
+  "v42_baseline_commit": "b9d20ceb40077437b05612fe3a4e83a9ed8446f7"
+}
