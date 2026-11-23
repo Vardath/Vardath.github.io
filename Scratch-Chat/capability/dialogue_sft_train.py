@@ -80,7 +80,14 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         model.load_state_dict(state["model_state"])
         optimizer.load_state_dict(state["optimizer_state"])
         torch.set_rng_state(state["rng_state"])
-        start = int(state["step"])
+        saved_step = state.get("step")
+        if type(saved_step) is not int or saved_step < 1:
+            raise ValueError("Invalid SFT checkpoint step; refusing unsafe resume")
+        rng_state = state.get("rng_state")
+        if (not isinstance(rng_state, torch.Tensor) or rng_state.dtype != torch.uint8
+                or rng_state.ndim != 1 or rng_state.numel() != torch.get_rng_state().numel()):
+            raise ValueError("Invalid SFT checkpoint RNG state; refusing unsafe resume")
+        start = saved_step
     elif checkpoint.exists():
         raise FileExistsError("Checkpoint exists; explicitly resume")
     if steps <= start:
