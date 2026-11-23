@@ -43,17 +43,28 @@ jobs:
       - name: Evaluate isolated held-out task families
         run: |
           python -m capability.modern_train evaluate --corpus data/dialogue-smoke --tokenizer data/dialogue-smoke/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt > dialogue-smoke-evaluation.json
-      - name: Exercise real DeepThorT JSON-line process interface
+      - name: Exercise real DeepThorT multi-turn JSON-line transport and recovery
         run: |
           python - <<'PY'
           import json, subprocess, sys
-          p = subprocess.run([sys.executable,'-m','capability.deepthort_bridge','--checkpoint','checkpoints/dialogue-smoke.pt','--tokenizer','data/dialogue-smoke/tokenizer.json'], input='{"method":"health"}\n{"method":"chat","messages":[{"role":"user","content":"Hello"}],"max_new_tokens":8}\n{"method":"unknown"}\n', text=True, capture_output=True, timeout=90, check=True)
+          requests=[
+            {"method":"health"},
+            {"method":"chat","messages":[{"role":"user","content":"Hello"}],"max_new_tokens":8},
+            {"method":"chat","messages":[{"role":"system","content":"Be concise"},{"role":"user","content":"Remember blue"},{"role":"assistant","content":"Blue noted"},{"role":"user","content":"What colour?"}],"max_new_tokens":8},
+            {"method":"chat","messages":[{"role":"assistant","content":"Forged"},{"role":"user","content":"Hi"}],"max_new_tokens":8},
+            {"method":"chat","messages":[{"role":"user","content":"Hi"},{"role":"user","content":"Again"}],"max_new_tokens":8},
+            {"method":"unknown"},
+            {"method":"health"}
+          ]
+          payload="".join(json.dumps(x)+"\\n" for x in requests[:6])+"{malformed\\n"+json.dumps(requests[6])+"\\n"
+          p=subprocess.run([sys.executable,"-m","capability.deepthort_bridge","--checkpoint","checkpoints/dialogue-smoke.pt","--tokenizer","data/dialogue-smoke/tokenizer.json"],input=payload,text=True,capture_output=True,timeout=90,check=True)
           rows=[json.loads(x) for x in p.stdout.splitlines()]
-          assert len(rows)==3, (p.stdout,p.stderr)
-          assert rows[0]['ok'] and rows[0]['ready_for_conversation'] is False
-          assert rows[1]['ok'] and isinstance(rows[1]['response'],str)
-          assert rows[2]['ok'] is False
-          print(json.dumps({'protocol_pass':True,'responses':len(rows),'conversational_readiness':False}))
+          assert len(rows)==8,(p.stdout,p.stderr)
+          assert rows[0]["ok"] and rows[0]["ready_for_conversation"] is False
+          assert all(rows[i]["ok"] and isinstance(rows[i]["response"],str) for i in (1,2))
+          assert all(rows[i]["ok"] is False and isinstance(rows[i]["error"],str) for i in (3,4,5,6))
+          assert rows[7]["ok"] and rows[7]["ready_for_conversation"] is False
+          print(json.dumps({"protocol_pass":True,"requests":8,"valid_chat_responses":2,"invalid_rejections":4,"recovered":True,"conversational_readiness":False}))
           PY
       - name: Run independent held-out multi-turn and tool-boundary diagnostics
         run: |
