@@ -49,6 +49,7 @@ jobs:
               'test_readiness_gate.py',
               'test_probe_scoring.py',
               'test_pilot_artifact_hashes.py',
+              'test_answer_leakage_audit.py',
           ]
           failed = []
           for pattern in patterns:
