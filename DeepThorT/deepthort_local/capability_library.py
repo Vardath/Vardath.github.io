@@ -7,6 +7,7 @@ No shell commands, downloads, tool invocations or project writes occur here.
 """
 from __future__ import annotations
 
+from contextlib import closing
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
@@ -279,7 +280,7 @@ class CapabilityLibrary:
         if hashlib.sha256(artifact.read_bytes()).hexdigest()!=row['validation_sha256']:
             raise ValueError('Checked artifact changed since its validation')
         db_path=Path(janus_db).resolve(strict=True)
-        with sqlite3.connect(f'file:{db_path.as_posix()}?mode=ro',uri=True,timeout=15) as con:
+        with closing(sqlite3.connect(f'file:{db_path.as_posix()}?mode=ro',uri=True,timeout=15)) as con, con:
             con.row_factory=sqlite3.Row
             action=con.execute('SELECT * FROM janus_actions WHERE id=?',(action_id,)).fetchone()
         if action is None or action['status']!='succeeded' or action['returncode']!=0:
@@ -343,8 +344,8 @@ class CapabilityLibrary:
                 return False
             if hashlib.sha256(log.read_bytes()).hexdigest()!=evidence['log_sha256']:
                 return False
-            with sqlite3.connect(f'file:{Path(evidence["janus_db"]).resolve(strict=True).as_posix()}?mode=ro',
-                                 uri=True,timeout=5) as db:
+            with closing(sqlite3.connect(f'file:{Path(evidence["janus_db"]).resolve(strict=True).as_posix()}?mode=ro',
+                                 uri=True,timeout=5)) as db, db:
                 db.row_factory=sqlite3.Row
                 action=db.execute('SELECT * FROM janus_actions WHERE id=?',
                                   (evidence['action_id'],)).fetchone()

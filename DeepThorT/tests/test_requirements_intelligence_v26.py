@@ -1,4 +1,5 @@
 """v26 requirements and model-declared dependency planning regressions."""
+from contextlib import closing
 import json
 import sqlite3
 import tempfile
@@ -121,21 +122,21 @@ class RoadmapIntegrationTests(unittest.TestCase):
 
     def test_tampered_requirement_fingerprint_is_detected(self):
         self.plan([{'path':f'code/{i}.py','description':f'Implement {i}'} for i in range(3)])
-        with sqlite3.connect(self.plans.path) as db:
+        with closing(sqlite3.connect(self.plans.path)) as db, db:
             db.execute("UPDATE hierarchy_requirements SET source_sha256=? WHERE request_id=?",('bad',7))
         with self.assertRaisesRegex(PlanError,'candidate'):
             self.plans.requirement_report(self.index,7,self.original)
 
     def test_dependency_must_not_be_injected_in_saved_roadmap(self):
         self.plan([{'path':f'code/{i}.py','description':f'Implement {i}'} for i in range(3)])
-        with sqlite3.connect(self.plans.path) as db:
+        with closing(sqlite3.connect(self.plans.path)) as db, db:
             db.execute("INSERT INTO hierarchy_dependencies VALUES (?,?,?)",(7,'code/1.py','code/0.py'))
         with self.assertRaisesRegex(PlanError,'dependency graph'):
             self.plans.status(self.index,7,self.original)
 
     def test_legacy_v25_roadmap_with_no_candidate_rows_remains_accessible(self):
         self.plan([{'path':f'code/{i}.py','description':f'Implement {i}'} for i in range(3)])
-        with sqlite3.connect(self.plans.path) as db:
+        with closing(sqlite3.connect(self.plans.path)) as db, db:
             db.execute('DELETE FROM hierarchy_requirements WHERE request_id=7')
         self.assertEqual(self.plans.status(self.index,7,self.original)['milestones_total'],3)
         self.assertEqual(self.plans.requirement_report(self.index,7,self.original)['candidate_count'],0)

@@ -12,6 +12,7 @@ class JanusPanelTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             with patch.object(mod,'STATE',Path(d)/'state'),patch.object(mod.DeepThorTDesktop,'_refresh_inventory',lambda self:None):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     titles=[app.tabs.tab(x,'text') for x in app.tabs.tabs()]
                     self.assertIn('JANUS & Sentinel',titles)
@@ -31,6 +32,7 @@ class JanusPanelTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             with patch.object(mod,'STATE',Path(d)/'state'),patch.object(mod.DeepThorTDesktop,'_refresh_inventory',lambda self:None):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     app.project=Path(d)
                     app.check_choice.set('Git: status')

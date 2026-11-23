@@ -1,4 +1,5 @@
 """v18: closing a chat actually cancels inference without deleting history or jobs."""
+from contextlib import closing
 import os
 import sqlite3
 import tempfile
@@ -16,7 +17,7 @@ class ChatLifecycleStoreTests(unittest.TestCase):
     def test_existing_chat_registry_migrates_without_losing_threads(self):
         with tempfile.TemporaryDirectory() as td:
             p=Path(td)/'chats.db'
-            with sqlite3.connect(p) as db:
+            with closing(sqlite3.connect(p)) as db, db:
                 db.execute('CREATE TABLE chat_threads (id TEXT PRIMARY KEY, project TEXT, title TEXT, created_at TEXT)')
                 db.execute("INSERT INTO chat_threads VALUES ('old','p','Original','2026-11-21')")
             registry=ChatRegistry(p)

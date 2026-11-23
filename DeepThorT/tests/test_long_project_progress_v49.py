@@ -18,7 +18,7 @@ def proposal(*entries):
 COMPLETE = proposal(
     ('content.xml', 'X4 extension metadata and PE macro references checked against original installed vanilla game'),
     ('md/pe_monitor.xml', 'Mission Director ownership check: player-owned PE ship respawn and full equipment retention'),
-    ('libraries/pe_ship.xml', 'X4 ship macro equipment connections, installed vanilla speed and handling, cargo storage, forward weapons, turrets'))
+    ('libraries/pe_ship.xml', 'Xenon PE ship macro equipment connections, installed vanilla speed and handling, cargo storage, forward weapons, turrets'))
 
 
 class Model:

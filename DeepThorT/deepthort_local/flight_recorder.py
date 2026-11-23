@@ -6,6 +6,7 @@ The user may export a diagnostic ZIP from the desktop UI for troubleshooting.
 """
 from __future__ import annotations
 
+from contextlib import closing
 import datetime as dt
 import json
 import logging
@@ -71,6 +72,17 @@ class _JSONFormatter(logging.Formatter):
         return json.dumps(payload, ensure_ascii=False, default=str)
 
 
+class _WindowsRotatingHandler(RotatingFileHandler):
+    """Release the Windows file lock between events so another process can rotate the log."""
+    def emit(self, event):
+        try:
+            super().emit(event)
+        finally:
+            if self.stream is not None:
+                self.stream.close()
+                self.stream = None
+
+
 def _logger(state, component):
     path = Path(state).resolve() / 'logs'
     key = (str(path), component)
@@ -81,7 +93,8 @@ def _logger(state, component):
             logger = logging.getLogger(name)
             logger.setLevel(logging.DEBUG)
             logger.propagate = False
-            handler = RotatingFileHandler(path / f'{component}.jsonl', maxBytes=LOG_BYTES,
+            handler_type = _WindowsRotatingHandler if os.name == 'nt' else RotatingFileHandler
+            handler = handler_type(path / f'{component}.jsonl', maxBytes=LOG_BYTES,
                                            backupCount=LOG_COPIES, encoding='utf-8', delay=True)
             handler.setFormatter(_JSONFormatter())
             logger.addHandler(handler)
@@ -119,7 +132,7 @@ def install_crash_hooks(state, component):
 def _db_summary(dbpath, kind):
     if not Path(dbpath).is_file(): return {'exists': False}
     output = {'exists': True, 'file_bytes': Path(dbpath).stat().st_size}
-    with sqlite3.connect(f'file:{Path(dbpath).resolve().as_posix()}?mode=ro', uri=True, timeout=1.5) as conn:
+    with closing(sqlite3.connect(f'file:{Path(dbpath).resolve().as_posix()}?mode=ro', uri=True, timeout=1.5)) as conn, conn:
         conn.row_factory=sqlite3.Row
         existing={row[0] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
         if kind=='jobs' and 'jobs' in existing:

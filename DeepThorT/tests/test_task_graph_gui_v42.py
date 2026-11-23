@@ -24,6 +24,7 @@ class GraphGuiTests(unittest.TestCase):
                  patch.object(mod.messagebox,'showerror'),\
                  patch.object(mod.simpledialog,'askinteger',return_value=1):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     app._set_project(project)
                     local=FakeLocalModel();app.client.chat=local.chat

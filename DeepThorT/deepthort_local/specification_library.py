@@ -6,13 +6,14 @@ A long specification is NEVER approved until every indexed section has been
 processed and the accumulated model-authored proposal passes validation.
 """
 from __future__ import annotations
+from contextlib import closing
 import hashlib
 import json
 import sqlite3
 from pathlib import Path
 from contextlib import contextmanager
 from .agent_plan import (PlanError, parse_build_plan, validate_project_plan,
-                         project_kind, remaining_plan_gaps)
+                         incompatible_x4_path, project_kind, remaining_plan_gaps)
 
 # A practical local storage ceiling, not an inference-context limit. Millions
 # of ordinary-language words fit, subject to available memory and disk space.
@@ -73,6 +74,10 @@ class SpecificationIndex:
                   checks_opened INTEGER NOT NULL, total_files INTEGER NOT NULL,
                   accepted INTEGER NOT NULL, made_progress INTEGER NOT NULL,
                   PRIMARY KEY(request_id,serial));
+                CREATE TABLE IF NOT EXISTS retired_section_proposals (
+                  request_id INTEGER NOT NULL, ordinal INTEGER NOT NULL,
+                  section_sha256 TEXT NOT NULL, steps_json TEXT NOT NULL,
+                  PRIMARY KEY(request_id,ordinal,section_sha256,steps_json));
             ''')
 
     @contextmanager
@@ -118,7 +123,7 @@ class SpecificationIndex:
         if not chat_id or not conversations_path.is_file():
             return 0
         self.index(request_id, original)
-        with sqlite3.connect(conversations_path, timeout=20) as db:
+        with closing(sqlite3.connect(conversations_path, timeout=20)) as db, db:
             candidates = [int(ident) for ident, saved_project in db.execute(
                 'SELECT id,project FROM conversation_requests '
                 'WHERE id<>? AND chat_id=? AND mode=? AND prompt=? AND attachments=? '
@@ -145,14 +150,17 @@ class SpecificationIndex:
                 try:
                     steps = json.loads(row[5])
                     checked = parse_build_plan(json.dumps({'files':steps}),project,fragment=True)
-                    if checked != steps or (project_kind(original)=='x4' and any(
-                            e['path'].lower().endswith('.py') for e in checked)):
+                    if checked != steps:
                         continue
+                    if project_kind(original) == 'x4':
+                        checked = [step for step in checked if not incompatible_x4_path(step['path'],original)]
+                        if not checked:
+                            continue
                 except (ValueError,PlanError):
                     continue
                 if row[0] != dest[row[0]][0] or row[3] != dest[row[0]][3]:
                     continue
-                valid.append((row[5],request_id,row[0]))
+                valid.append((json.dumps(checked, ensure_ascii=False),request_id,row[0]))
             if valid:
                 with self._db() as db:
                     db.executemany('UPDATE specification_sections SET steps_json=? '
@@ -187,6 +195,7 @@ class SpecificationIndex:
         if not 0 <= ordinal < len(rows) or not rows[ordinal][5]:
             raise ValueError('Only fully indexed, already reviewed sections can be revised')
         with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
             serial = db.execute('SELECT COALESCE(MAX(serial),0)+1 FROM '
                 'specification_revision_attempts WHERE request_id=?',(request_id,)).fetchone()[0]
             db.execute('INSERT INTO specification_revision_attempts VALUES (?,?,?,?,?)',
@@ -238,7 +247,7 @@ class SpecificationIndex:
                 'checks_closed_total':sum(row[2] for row in history if row[1])}
 
     def merge_model_revision(self, request_id: int, original: str, ordinal: int,
-                             answer: str, *, project: str | Path) -> bool:
+                             answer: str, *, project: str | Path, inspected_evidence: str='') -> bool:
         """Persist ONLY a structurally valid model correction to one exact section.
 
         The original section text and its digest never change. Existing model
@@ -248,9 +257,7 @@ class SpecificationIndex:
         rows = self._verified_rows(request_id, original)
         if not rows or any(not row[5] for row in rows) or not 0 <= ordinal < len(rows):
             raise ValueError('Every section must be indexed before correcting the roadmap')
-        proposal = parse_build_plan(answer, project, fragment=True)
-        if project_kind(original)=='x4' and any(step['path'].casefold().endswith('.py') for step in proposal):
-            raise PlanError('X4 extension plan may not introduce generic Python app files')
+        proposal = parse_build_plan(answer, project, request=original, fragment=True, inspected_evidence=inspected_evidence)
         own = {item['path'].casefold(): item for item in json.loads(rows[ordinal][5])}
         others = {}
         for row in rows:
@@ -304,7 +311,51 @@ class SpecificationIndex:
                         'attempts':attempts,'total':len(rows),'text':original[start:end]}
         return None
 
-    def model_prompt(self, request_id: int, original: str, *, max_chars: int=7500) -> str:
+    def x4_draft_probe(self, project: str) -> dict:
+        """Inspect the latest indexed draft in the selected workspace without changing its state."""
+        conversations = self.path.parent/'conversations.sqlite3'
+        if conversations.is_file():
+            with closing(sqlite3.connect(self.path.resolve().as_uri()+'?mode=ro', uri=True)) as db:
+                db.execute('ATTACH DATABASE ? AS history', (conversations.resolve().as_uri()+'?mode=ro',))
+                row = db.execute("SELECT c.id,c.prompt FROM history.conversation_requests c "
+                                 "JOIN specification_index s ON s.request_id=c.id "
+                                 "WHERE c.mode='draft_plan' AND c.project=? COLLATE NOCASE ORDER BY c.id DESC LIMIT 1",
+                                 (str(Path(project).resolve()),)).fetchone()
+        else:
+            row = None
+        if not row or project_kind(row[1]) != 'x4':
+            return {'status':'inconclusive','detail':'No current indexed X4 draft in this workspace.'}
+        ident, original = row
+        status = self.status(ident, original)
+        steps = self.merged_steps(ident, original)
+        foreign = sum(incompatible_x4_path(step['path'],original) for step in steps)
+        gaps = remaining_plan_gaps(steps, original)
+        return {'status':'blocked' if foreign or gaps or status['pending'] else 'passed',
+                'detail':f"Draft #{ident}: {status['reviewed']}/{status['sections']} sections reviewed, "
+                         f"{foreign} incompatible paths, {len(gaps)} open planning checks. Build and playtest require separate evidence."}
+
+    def recover_x4_draft(self, request_id: int, original: str) -> int:
+        """Retain each prior draft verbatim before removing foreign paths from active planning."""
+        self._verified_rows(request_id, original)
+        retired = 0
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            rows = db.execute('SELECT ordinal,section_sha256,steps_json FROM specification_sections '
+                              "WHERE request_id=? AND steps_json!=''", (request_id,)).fetchall()
+            for ordinal, digest, raw in rows:
+                steps = json.loads(raw)
+                kept = [step for step in steps if not incompatible_x4_path(step['path'],original)]
+                if len(kept) == len(steps):
+                    continue
+                db.execute('INSERT OR IGNORE INTO retired_section_proposals VALUES (?,?,?,?)',
+                           (request_id, ordinal, digest, raw))
+                db.execute('UPDATE specification_sections SET steps_json=? WHERE request_id=? AND ordinal=?',
+                           (json.dumps(kept, ensure_ascii=False) if kept else '', request_id, ordinal))
+                retired += len(steps) - len(kept)
+        return retired
+
+    def model_prompt(self, request_id: int, original: str, *, max_chars: int=7500,
+                     inspected_evidence: str='') -> str:
         row=self.next_section(request_id,original)
         if row is None:
             raise ValueError('Every section is already reviewed')
@@ -322,12 +373,18 @@ class SpecificationIndex:
           'No markdown, no invented game IDs, no claims of execution. Do not modify the original specification.\n'
           f'UNMODIFIED SPECIFICATION SECTION {row["ordinal"]+1} (chars {row["start"]}:{row["end"]}):\n')
         prompt=context+row['text']+'\nEND OF SPECIFICATION SECTION.\n'
+        if project_kind(original) == 'x4':
+            from .indexed_roadmap_repair import x4_section_prompt
+            proposals = self.merged_steps(request_id, original)
+            prompt = x4_section_prompt(row, inspected_evidence, max_chars,
+                                       [step['path'] for step in proposals],
+                                       remaining_plan_gaps(proposals, original))
         if len(prompt)>max_chars:
             raise ValueError('Section and instructions exceed inference limit; source preserved')
         return prompt
 
     def save_response(self, request_id: int, original: str, ordinal: int, response: str,
-                      *, project: str | Path) -> list[dict]:
+                      *, project: str | Path, inspected_evidence: str='') -> list[dict]:
         # Model-authored data only. Invalid format increments attempts but does
         # not mark the section reviewed, and can be retried safely.
         row=self.next_section(request_id,original)
@@ -335,17 +392,26 @@ class SpecificationIndex:
             raise ValueError('Only next unreviewed section may be completed')
         parsed=None
         try:
-            parsed=parse_build_plan(response,project,fragment=True)
-            if project_kind(row['text'])=='x4' and any(e['path'].lower().endswith('.py') for e in parsed):
-                raise PlanError('X4 extension cannot be built from generic Python app files')
+            parsed=parse_build_plan(response,project,request=original,fragment=True,inspected_evidence=inspected_evidence)
         finally:
             with self._db() as db:
                 db.execute('UPDATE specification_sections SET attempts=attempts+1 WHERE request_id=? AND ordinal=?',
                            (request_id,ordinal))
         if parsed is not None:
             with self._db() as db:
-                db.execute('UPDATE specification_sections SET steps_json=? WHERE request_id=? AND ordinal=? AND steps_json=?',
-                           (json.dumps(parsed),request_id,ordinal,''))
+                db.execute('BEGIN IMMEDIATE')
+                if project_kind(original) == 'x4':
+                    siblings = db.execute("SELECT steps_json FROM specification_sections WHERE request_id=? "
+                                          "AND ordinal<>? AND steps_json<>''", (request_id,ordinal))
+                    assigned = {step['path'].casefold(): step for (raw,) in siblings for step in json.loads(raw)}
+                    for step in parsed:
+                        other = assigned.get(step['path'].casefold())
+                        if other is not None and other != step:
+                            raise PlanError('Another section already owns a different proposal for '+step['path'])
+                changed = db.execute('UPDATE specification_sections SET steps_json=? WHERE request_id=? AND ordinal=? AND steps_json=?',
+                                     (json.dumps(parsed),request_id,ordinal,'')).rowcount
+                if not changed:
+                    raise PlanError('Another reviewer already completed this section')
         return parsed
 
     def merged_steps(self, request_id: int, original: str) -> list[dict]:
@@ -368,7 +434,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -382,10 +448,16 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         if inherited and stage:
             stage(f'Recovered {inherited} already reviewed large-document sections '
                   'from exact matching local historical state; not a build approval')
+    x4 = project_kind(original) == 'x4'
+    if x4 and (hierarchy is None or not hierarchy.has_roadmap(request_id)):
+        retired = index.recover_x4_draft(request_id, original)
+        if retired and stage:
+            stage(f'Retained {retired} incompatible old file proposals in draft history; resuming X4 review')
     section_calls=0
     section_batch=0
     reviewed_this_batch=0
     consecutive_invalid=0
+    last_rejection=''
     while True:
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; indexed specification remains saved')
@@ -404,7 +476,12 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             stage(f'Large-document review: section {row["ordinal"]+1}/{row["total"]}; '
                   f'model call {(section_calls % max_rounds)+1}/{max_rounds} in batch '
                   f'{section_batch+1} (not a file count or total-project limit)')
-        prompt=index.model_prompt(request_id,original)
+        prompt=(index.model_prompt(request_id,original,inspected_evidence=inspected_evidence)
+                if x4 else index.model_prompt(request_id,original))
+        if x4 and last_rejection:
+            note = '\nPrevious proposal rejected: ' + last_rejection[:240]
+            if len(prompt+note) <= 7500:
+                prompt += note
         # A new user message may arrive while the first ONNX inference runs.
         # JANUS/Sentinel advice joins ONLY this NEW planning pass. Never
         # mutate the indexed original or the approved build-stage contract.
@@ -413,19 +490,25 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             if advice and len(prompt)+len(advice)+2<=7900:
                 prompt+='\n\n'+advice
         exchange=f'{session}-spec-{row["ordinal"]}-{row["attempts"]}'
+        if checkpoint:
+            prompt, instruction = checkpoint.attach(prompt, 7500)
         lookup=getattr(client,'completed_exchange',None)
         response=lookup(exchange,prompt) if callable(lookup) else None
         if response is None:
-            response=client.chat(exchange,prompt,max_tokens=640)
+            response=client.chat(exchange,prompt,max_tokens=224 if x4 else 640)
+        if checkpoint:
+            checkpoint.received(instruction, exchange, prompt, response)
         section_calls+=1
         if cancelled and cancelled():
             raise PlanError('Planning stopped by user; no additional sections marked complete')
         try:
-            index.save_response(request_id,original,row['ordinal'],response,project=project)
+            index.save_response(request_id,original,row['ordinal'],response,project=project,inspected_evidence=inspected_evidence)
             reviewed_this_batch+=1
             consecutive_invalid=0
+            last_rejection=''
         except PlanError as exc:
             consecutive_invalid+=1
+            last_rejection=str(exc)
             if stage:stage(f'Large specification section {row["ordinal"]+1} rejected: {exc}')
             if continuous and consecutive_invalid>=8:
                 raise PlanError('Large-document review paused after 8 invalid model replies '
@@ -459,7 +542,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 max_rounds=(max_rounds if continuous else max_rounds-section_calls),
                 stage=stage,cancelled=cancelled,continuous=continuous,
                 neural_council=neural_council,inspected_evidence=inspected_evidence,
-                guidance_getter=guidance_getter)
+                guidance_getter=guidance_getter, checkpoint=checkpoint, council_provider=council_provider)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:

@@ -1,3 +1,7 @@
+DeepThorT v57 Windows source update
+
+Close DeepThorT before applying the source overlay to D:\deepthort. Open it with your existing launcher. In Processes, Run latest test checks the current indexed X4 draft. In JANUS & Sentinel, Instruction inbox shows literal replies and planning advice. The new checks operate on the selected workspace.
+
 DEEPTHORT v53 — RUN LATEST TEST
 
 Open Processes and click Run latest test. The app uses LATEST_TEST.json

@@ -1,3 +1,7 @@
+# Continue from v57
+
+Read PROJECT_CONTEXT_V57.md and TEST_RESULTS_V57.md first. Re-run the PE draft on a disposable copy of request 28, preserving the original state. Compare accepted native paths and open checks per section. When a model chooses a vanilla macro as the output for an independent variant, require a new asset identifier and verify the reference chain before proceeding. Track crew, wharf, consumable and hull geometry requirements separately. A validated draft still needs generated files, static checks, geometric inspection and a controlled X4 acceptance run.
+
 # DeepThorT v56 next acceptance
 
 1. Install the v56 source overlay. Select the original X4 mods workspace and click **JANUS & Sentinel → Retry latest failed JANUS instruction**. It should requeue the the most recent failed interpretation for that workspace, without using Chats → Retry failed reply or selecting an inbox row. The button is visible at the top of the JANUS tab on high-DPI displays.

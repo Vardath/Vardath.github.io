@@ -122,7 +122,12 @@ class InterfaceAuditTests(unittest.TestCase):
     def test_symlink_escape_is_blocked(self):
         with tempfile.TemporaryDirectory() as outside:
             (Path(outside)/'secret.py').write_text('SECRET=True\n')
-            (self.root/'src/provider.py').symlink_to(Path(outside)/'secret.py')
+            try:
+                (self.root/'src/provider.py').symlink_to(Path(outside)/'secret.py')
+            except OSError as error:
+                if getattr(error,'winerror',None)==1314:
+                    self.skipTest('Windows user cannot create the symlink fixture')
+                raise
             with self.assertRaises(ValueError):
                 audit_python_interfaces(self.root,self.steps)
 

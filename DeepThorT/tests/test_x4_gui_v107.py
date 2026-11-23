@@ -13,6 +13,7 @@ class X4DesktopSmokeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);project=root/'x4mods';project.mkdir()
             with patch.object(mod,'STATE',root/'state'),\
+                 patch('deepthort_local.x4_sources.likely_installations',return_value=[]),\
                  patch.object(mod.DeepThorTDesktop,'_refresh_inventory',lambda self:None),\
                  patch.object(mod.messagebox,'showwarning'),\
                  patch.object(mod.messagebox,'showerror'),\

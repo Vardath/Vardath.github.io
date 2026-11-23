@@ -269,8 +269,13 @@ def x4_evidence_for_prompt(report):
     for key in ('ship_candidates','weapon_candidates','turret_candidates','storage_candidates'):
         for entry in report[key][:3]:
             items.append(f"{key}: {entry['file']} IDs {', '.join(entry['identifiers'][:3])} SHA {entry['sha256'][:12]}")
-    result=[]
+    # Reserve a complete record from each available category before filling
+    # the window with alternate candidates from the same equipment family.
+    first = {}
     for line in items:
+        first.setdefault(line.partition(':')[0], line)
+    result=[]
+    for line in dict.fromkeys([*first.values(), *items]):
         if len('\n'.join(result+[line]))>1800:
             continue
         result.append(line)

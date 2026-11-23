@@ -1,6 +1,7 @@
 """v34: approvals cannot silently outlive changed files or runaway child tools."""
 from __future__ import annotations
 
+from contextlib import closing
 import hashlib
 import json
 import os
@@ -145,7 +146,7 @@ class SupervisedExecutionTests(unittest.TestCase):
 
     def test_legacy_janus_database_upgrades_in_place(self):
         db=self.root/'old-janus.sqlite3'
-        with sqlite3.connect(db) as c:
+        with closing(sqlite3.connect(db)) as c, c:
             c.execute('''CREATE TABLE janus_actions (id INTEGER PRIMARY KEY AUTOINCREMENT,
                 job_id INTEGER,kind TEXT,label TEXT,cwd TEXT,argv_json TEXT,approved_at TEXT,
                 approval_source TEXT,status TEXT DEFAULT 'approved',output_file TEXT DEFAULT '',

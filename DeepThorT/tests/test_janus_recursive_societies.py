@@ -1,4 +1,5 @@
 """DeepThorT v10 canonical recursive societies and supervisory boundary checks."""
+from contextlib import closing
 import json
 import sqlite3
 import sys
@@ -136,7 +137,7 @@ class PersistentCoordinators(unittest.TestCase):
         ident=self.jobs.submit('workspace','chat1','build','Write game')
         self.jobs.change(ident,'running','Generating code')
         old=(datetime.now(timezone.utc)-timedelta(hours=1)).strftime('%Y-%m-%d %H:%M:%S')
-        with sqlite3.connect(self.jobs_path) as db:
+        with closing(sqlite3.connect(self.jobs_path)) as db, db:
             db.execute('UPDATE jobs SET updated_at=? WHERE id=?',(old,ident))
         worker=self.sentinel(work_stall_after=120)
         try:

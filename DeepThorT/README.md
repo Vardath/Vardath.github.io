@@ -1,3 +1,9 @@
+# DeepThorT v57 for Windows
+
+The indexed X4 planner now brings inspected game references into its file proposals and checks whether proposed paths belong inside an extension. Retrying a legacy draft keeps the original specification and an archive of incompatible proposals. The Processes tab's **Run latest test** reports the selected project's pending sections, incompatible paths and open planning checks.
+
+JANUS can answer a literal reply request in the instruction inbox. Planning advice remains staged until a completed implementation-model exchange contains the full advice. See PROJECT_CONTEXT_V57.md for the Windows replay and TEST_RESULTS_V57.md for release evidence.
+
 # DeepThorT v56 — visible JANUS instruction retry (23 November 2026)
 
 **Usability fix:** Chats → Retry failed reply retries only an ordinary failed conversation, NOT a JANUS instruction. The earlier documentation incorrectly told the user to select an inbox row and click Retry failed interpretation, even though the fixed-size popup could hide its bottom-row buttons on a scaled display.

@@ -6,6 +6,7 @@ an already approved plan. Guidance is consumed only at a NEW planning checkpoint
 """
 from __future__ import annotations
 
+import hashlib
 import sqlite3
 from datetime import datetime, timezone
 from contextlib import contextmanager
@@ -48,6 +49,9 @@ class InstructionInbox:
                   handed_at TEXT);
                 CREATE INDEX IF NOT EXISTS instructions_next
                   ON instructions (state, project, chat_id, id);
+                CREATE TABLE IF NOT EXISTS planner_exchange_receipts (
+                  instruction_id INTEGER PRIMARY KEY, session TEXT NOT NULL,
+                  prompt_sha256 TEXT NOT NULL, reply_sha256 TEXT NOT NULL);
             ''')
             # No inference output can be trusted after a process crash. Replay
             # interpretation only: it has never executed an external action.
@@ -98,6 +102,13 @@ class InstructionInbox:
             db.commit()
             return bool(changed)
 
+    def finish_reply(self, ident: int, reply: str) -> bool:
+        if not isinstance(reply,str) or not reply.strip() or len(reply)>160:
+            raise InstructionError('A bounded JANUS reply is required')
+        with self.connect() as db:
+            return bool(db.execute("UPDATE instructions SET state='replied',janus_advice=?,updated_at=? "
+                                   "WHERE id=? AND state='interpreting'",(reply,now(),ident)).rowcount)
+
     def fail(self, ident: int, error: str) -> bool:
         with self.connect() as db:
             changed=db.execute("UPDATE instructions SET state='needs_review',reason=?,updated_at=? "
@@ -123,12 +134,19 @@ class InstructionInbox:
         # The implementation model receives JANUS's translation, NOT a
         # second verbatim copy of the user's message. The full original stays
         # inspectable in SQLite for accountability and future revisions.
+        return self._guidance_text(row)
+
+    @staticmethod
+    def _guidance_text(row) -> str:
         return (f'JANUS NEXT-ACTION TRANSLATION #{row["id"]} (advisory; not approval):\n'
                 f'{row["next_action"][:700]}\n'
                 f'SENTINEL ACCEPTANCE CHECK: {row["verification"][:500]}\n'
                 'Keep the initial project specification intact. This translation '
                 'does not authorize new files, permissions or scope changes; '
                 'obtain a new approved plan before executing any such changes.\n')[:1900]
+
+    def planning_checkpoint(self, project: str, chat_id: str):
+        return PlanningCheckpoint(self, canonical_project(project), chat_id)
 
     def retry_interpretation(self, ident: int) -> bool:
         """Retry read-only inference after a model error, not project execution."""
@@ -178,11 +196,44 @@ class InstructionInbox:
     def list(self, project: str | None=None, limit:int=30) -> list[dict]:
         with self.connect() as db:
             if project is None:
-                rows=db.execute('SELECT * FROM instructions ORDER BY id DESC LIMIT ?', (max(1,min(limit,100)),))
+                rows=db.execute('SELECT i.*,r.prompt_sha256 FROM instructions i LEFT JOIN planner_exchange_receipts r '
+                                'ON r.instruction_id=i.id ORDER BY i.id DESC LIMIT ?', (max(1,min(limit,100)),))
             else:
-                rows=db.execute('SELECT * FROM instructions WHERE project=? ORDER BY id DESC LIMIT ?',
+                rows=db.execute('SELECT i.*,r.prompt_sha256 FROM instructions i LEFT JOIN planner_exchange_receipts r '
+                                'ON r.instruction_id=i.id WHERE project=? ORDER BY i.id DESC LIMIT ?',
                                 (canonical_project(project), max(1,min(limit,100))))
             return [dict(x) for x in rows]
+
+
+class PlanningCheckpoint:
+    """Attach advice at the next fitting call and acknowledge its actual reply atomically."""
+    def __init__(self, inbox, project, chat_id):
+        self.inbox, self.project, self.chat_id = inbox, project, chat_id
+
+    def attach(self, prompt, limit):
+        with self.inbox.connect() as db:
+            row = db.execute("SELECT * FROM instructions WHERE state='staged' AND project=? "
+                             "AND chat_id=? ORDER BY id LIMIT 1", (self.project,self.chat_id)).fetchone()
+        if row:
+            full = prompt + '\n\n' + self.inbox._guidance_text(row)
+            if len(full) <= limit:
+                return full, row['id']
+        return prompt, None
+
+    def received(self, ident, session, prompt, reply):
+        if ident is None or not isinstance(reply, str) or not reply.strip():
+            return
+        with self.inbox.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row = db.execute("SELECT * FROM instructions WHERE id=? AND project=? AND chat_id=? AND state='staged'",
+                             (ident,self.project,self.chat_id)).fetchone()
+            if row is None or not prompt.endswith('\n\n' + self.inbox._guidance_text(row)):
+                return
+            db.execute('INSERT INTO planner_exchange_receipts VALUES (?,?,?,?)',
+                       (ident, session, hashlib.sha256(prompt.encode()).hexdigest(),
+                        hashlib.sha256(reply.encode()).hexdigest()))
+            db.execute("UPDATE instructions SET state='handed_to_planner',handed_at=?,updated_at=? WHERE id=?",
+                       (now(),now(),ident))
 
 
 def inbox_acceptance(items: list[dict]) -> dict:
@@ -199,7 +250,13 @@ def inbox_acceptance(items: list[dict]) -> dict:
                 'evidence':evidence}
     latest=items[0]
     state=str(latest.get('state') or '')
+    if state=='replied':
+        return {'status':'inconclusive','detail':'JANUS answered the literal reply request. This message did not request a planning handoff.',
+                'evidence':evidence}
     if state=='handed_to_planner':
+        if not latest.get('prompt_sha256'):
+            return {'status':'inconclusive','detail':'Legacy planning handoff has no confirmed model exchange receipt.',
+                    'evidence':evidence}
         return {'status':'passed','detail':'Latest JANUS instruction was translated and handed to a planning checkpoint; no claim of implementation.',
                 'evidence':evidence}
     if state=='needs_review' and not str(latest.get('next_action') or '').strip():

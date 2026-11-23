@@ -125,7 +125,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='56',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='57',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -768,6 +768,7 @@ class DeepThorTDesktop(tk.Tk):
         council_proc=self.council_node
         expected_council=council_proc.pid if council_proc and council_proc.poll() is None else None
         inbox=self.instruction_inbox
+        test_project=self._project_key()
         council_busy_at_start=bool(self._council_busy)
         observed={'simultaneous':False, 'secondary_verified':False}
 
@@ -848,7 +849,7 @@ class DeepThorTDesktop(tk.Tk):
             # Check completed translation and checkpoint delivery, not just
             # SQLite readability. No user/model text is put in diagnostics.
             from deepthort_local.instruction_inbox import inbox_acceptance
-            return inbox_acceptance(inbox.list(None,limit=100))
+            return inbox_acceptance(inbox.list(test_project,limit=100))
 
         def council_inference_probe():
             if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped'}
@@ -902,6 +903,7 @@ class DeepThorTDesktop(tk.Tk):
                         'Dual-worker simultaneous inference not established by this run; main ONNX was not observed generating during council response.')}
 
         probes={'shared_cap':supervisor_probe,'primary_onnx':primary_probe,
+                'x4_indexed_draft':lambda: self.specifications.x4_draft_probe(test_project),
                 'council_onnx':council_probe,'janus_inbox':inbox_probe,'janus_core':janus_core_probe,
                 'council_inference':council_inference_probe,'concurrent_status':concurrency_probe}
 
@@ -1773,10 +1775,12 @@ class DeepThorTDesktop(tk.Tk):
             details.delete('1.0','end')
             if item:
                 selected_status.set(f"Selected instruction #{item['id']} — {item['state']}")
+                response = (f"JANUS REPLY:\n{item['janus_advice']}" if item['state']=='replied' else
+                            f"JANUS PROPOSED ACTION:\n{item['next_action'] or '(pending)'}\n\n"
+                            f"SENTINEL TEST:\n{item['verification'] or '(pending)'}")
                 details.insert('1.0',f"PROJECT: {item['project']}\n"
                     f"ORIGINAL USER MESSAGE (never replaced):\n{item['original']}\n\n"
-                    f"JANUS PROPOSED ACTION:\n{item['next_action'] or '(pending)'}\n\n"
-                    f"SENTINEL TEST:\n{item['verification'] or '(pending)'}\n\n"
+                    f"{response}\n\n"
                     f"STATE: {item['state']}\n{item['reason']}")
             else:
                 selected_status.set('No instruction selected')
@@ -1808,14 +1812,15 @@ class DeepThorTDesktop(tk.Tk):
             tree.selection_set(str(items[0]['id']));tree.focus(str(items[0]['id']))
             tree.see(str(items[0]['id']));refresh_detail()
 
-    def _next_janus_guidance(self, project: str, chat_id: str) -> str:
-        """Consume only staged advice at a non-executable model planning boundary."""
-        guidance=self.instruction_inbox.next_guidance(project,chat_id)
-        if guidance:
-            record(STATE,'desktop','janus_instruction_handed_to_planning',
-                project_name=Path(project).name,chat_id=chat_id,characters=len(guidance),
-                approved_job_changed=False)
-        return guidance
+    def _planning_council_client(self):
+        from deepthort_local.dual_onnx import COUNCIL_HOST
+        proc = self.council_node
+        if self._council_busy or not proc or proc.poll() is not None:
+            return None
+        health = council_health() or {}
+        if health.get('pid') != proc.pid or not health.get('ready') or health.get('inference_busy'):
+            return None
+        return LocalModelClient(STATE/'sessions.sqlite3', base_url=COUNCIL_HOST)
 
     def _start_council(self):
         if not self.node_ready or not self.node or self.node.poll() is not None:return
@@ -2167,11 +2172,8 @@ class DeepThorTDesktop(tk.Tk):
                 if cancelled():return
                 session=request['chat_id'] if request['mode']=='chat' else f'plan-{ident}-{request["chat_id"]}'
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
-                if request['mode']=='draft_plan' and not large_spec:
-                    # This is a NEW draft, never an approved file-writing job.
-                    if len(prompt)<MAX_INFERENCE_PROMPT-2400:
-                        extra=self._next_janus_guidance(request['project'],request['chat_id'])
-                        if extra:prompt+='\n\n'+extra
+                checkpoint = (self.instruction_inbox.planning_checkpoint(request['project'],request['chat_id'])
+                              if request['mode']=='draft_plan' or large_spec else None)
                 if request['mode']=='chat' and not large_spec:
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 elif large_spec:
@@ -2182,8 +2184,8 @@ class DeepThorTDesktop(tk.Tk):
                         cancelled=cancelled, hierarchy=self.hierarchies,
                         chat_id=request['chat_id'],continuous=True,
                         neural_council=bool(x4_context),
-                        inspected_evidence=inspected_x4_evidence,
-                        guidance_getter=lambda: self._next_janus_guidance(request['project'],request['chat_id']))
+                        inspected_evidence=inspected_x4_evidence,council_provider=self._planning_council_client,
+                        checkpoint=checkpoint)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -2191,7 +2193,7 @@ class DeepThorTDesktop(tk.Tk):
                         max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
                         cancelled=cancelled,continuation=self.plan_continuations,
-                        chat_id=request['chat_id'])
+                        chat_id=request['chat_id'], checkpoint=checkpoint)
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
                 if cancelled():return
@@ -3142,6 +3144,9 @@ class DeepThorTDesktop(tk.Tk):
                     if len(old)>3500:raise RuntimeError('Existing file too large for safe one-pass local edit. Split the file.')
                     request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     answer=self.client.chat(j['chat_id'],request,max_tokens=768)
+                    if dest.suffix.casefold()=='.svg':
+                        from deepthort_local.media_tools import standalone_svg
+                        answer=standalone_svg(answer)
                     self.events.put(('job_answer',jobid,answer))
                     return
                 if j['mode']=='edit':
@@ -4890,7 +4895,11 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='council_instruction_ready':
                 self._council_busy=False
                 ident,result=event[1],event[2]
-                if self.instruction_inbox.finish(ident,result['janus'],result['sentinel'],
+                if 'reply' in result:
+                    if self.instruction_inbox.finish_reply(ident,result['reply']):
+                        self.status.set('JANUS replied: '+result['reply'])
+                        self._log(f'JANUS reply #{ident} is available in the instruction inbox.')
+                elif self.instruction_inbox.finish(ident,result['janus'],result['sentinel'],
                         result['next_action'],result['verification'],needs_review=result['needs_review']):
                     item=next((x for x in self.instruction_inbox.list(limit=100) if x['id']==ident),None)
                     self.janus.recommend(f'instruction-{ident}',

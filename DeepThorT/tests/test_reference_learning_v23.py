@@ -1,4 +1,5 @@
 """v23: attributed, hash-locked read-only documentation/example learning."""
+from contextlib import closing
 from pathlib import Path
 import json
 import sqlite3
@@ -72,7 +73,7 @@ class ReferenceLearningV23(unittest.TestCase):
     def test_database_contains_no_document_body_or_private_text(self):
         (self.project/'docs'/'api.md').write_text('Godot exports are configured with export presets.\n')
         self.library.inspect_project(self.project)
-        with sqlite3.connect(self.db) as db:
+        with closing(sqlite3.connect(self.db)) as db, db:
             columns=[r[1] for r in db.execute('PRAGMA table_info(local_references)')]
             dump=''.join(str(row) for row in db.execute('SELECT * FROM local_references'))
         self.assertNotIn('text',columns)

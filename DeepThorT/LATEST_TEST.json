@@ -1,13 +1,14 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "v55-janus-instruction-handoff",
-  "title": "v55: dual ONNX, JANUS health and real instruction handoff",
+  "id": "v57-source-backed-planning",
+  "title": "v57 X4 draft coverage, JANUS handoff and worker health",
   "checks": [
     "shared_cap",
     "primary_onnx",
     "council_onnx",
     "janus_core",
     "janus_inbox",
+    "x4_indexed_draft",
     "council_inference",
     "concurrent_status"
   ]

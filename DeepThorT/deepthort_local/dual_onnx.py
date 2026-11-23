@@ -120,6 +120,24 @@ def deliberate_instruction(original: str, *, project: str, work_summary: str='',
     if len(original)>5600:
         raise ValueError('Long JANUS instruction saved intact but exceeds the model window; use indexed draft planning or review it in the inbox')
     ask=asker or _ask
+    # A literal reply has an observable acceptance criterion and needs no
+    # project advice. Never turn a greeting/echo test into a build action.
+    literal = re.fullmatch(
+        r'(?:(?:hi|hello|hey)\s+janus[,.!]\s*)?(?:(?:this is (?:a |an )?test)[,.!]\s*)?'
+        r'(?:please\s+)?(?:reply|respond)(?:\s+with)?(?:\s+exactly)?\s*[:,]?\s+([^\r\n]{1,160})',
+        original.strip(), re.I)
+    if literal:
+        requested = literal.group(1).strip()
+        if len(requested)>1 and requested[0] in ('"',"'") and requested[-1]==requested[0]:
+            requested = requested[1:-1]
+        if requested:
+            answer = ask([{'role':'system','content':'You are JANUS. Follow the requested output format.'},
+                          {'role':'user','content':'Copy the text between the delimiters exactly. Output only the text, '
+                                                   'with no delimiters or explanation.\nBEGIN\n'+requested+'\nEND'}],
+                         min(192,2*len(requested)+8)).strip()
+            if answer != requested:
+                raise ValueError('JANUS reply differed from the requested text; the message is available for retry')
+            return {'reply':answer}
     system=('You are JANUS, a local engineering coordinator. The implementation model is busy. '
             'Interpret the user request into the NEXT testable step for the existing project. '
             'Do not write source code or claim you executed work. Never invent game identifiers. '

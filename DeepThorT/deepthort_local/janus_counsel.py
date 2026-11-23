@@ -7,6 +7,7 @@ Both societies share a SQLite lease to avoid simultaneous background requests.
 """
 from __future__ import annotations
 
+from contextlib import closing
 import json
 import sqlite3
 import time
@@ -21,13 +22,13 @@ class LocalCounsel:
     def __init__(self, lease_db: str | Path):
         self.path=Path(lease_db)
         self.path.parent.mkdir(parents=True,exist_ok=True)
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('''CREATE TABLE IF NOT EXISTS counsel_lease (
                 singleton INTEGER PRIMARY KEY CHECK(singleton=1),
                 holder TEXT NOT NULL, expires_at REAL NOT NULL)''')
 
     def _acquire(self, holder: str) -> bool:
-        with sqlite3.connect(self.path,timeout=3) as db:
+        with closing(sqlite3.connect(self.path,timeout=3)) as db, db:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute('SELECT holder,expires_at FROM counsel_lease WHERE singleton=1').fetchone()
             if row and row[1]>time.time():return False
@@ -37,7 +38,7 @@ class LocalCounsel:
             return True
 
     def _release(self, holder: str):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('DELETE FROM counsel_lease WHERE singleton=1 AND holder=?',(holder,))
 
     def request(self, *, society: str, goal: str, problem: str, evidence: str) -> str | None:

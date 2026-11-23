@@ -1,4 +1,5 @@
 """v25 exact-source hierarchical roadmaps, stage approvals, and verified gating."""
+from contextlib import closing
 import json
 import sqlite3
 import tempfile
@@ -163,7 +164,7 @@ class RoadmapCase(unittest.TestCase):
 
     def test_tampered_requirement_trace_is_rejected(self):
         self._roadmap()
-        with sqlite3.connect(self.hierarchy.path) as db:
+        with closing(sqlite3.connect(self.hierarchy.path)) as db, db:
             db.execute('DELETE FROM hierarchy_trace WHERE request_id=? AND section_ordinal=0',(self.req,))
         with self.assertRaisesRegex(PlanError,'trace'):
             self.hierarchy.status(self.index,self.req,self.original)
@@ -277,7 +278,7 @@ class RoadmapCase(unittest.TestCase):
 
     def test_model_description_changed_after_roadmap_is_rejected(self):
         self._roadmap()
-        with sqlite3.connect(self.index.path) as db:
+        with closing(sqlite3.connect(self.index.path)) as db, db:
             db.execute('UPDATE specification_sections SET steps_json=? WHERE request_id=? AND ordinal=1',
                 (json.dumps([{'path':'src/module2.py','description':'Rewritten unapproved intent'}]),self.req))
         with self.assertRaisesRegex(PlanError,'stale'):

@@ -29,7 +29,7 @@ def planned(items):
 CORRECTION=planned([
     ('content.xml','Create X4 extension metadata for Xenon PE based on original installed vanilla game references and ship macro connection mapping'),
     ('md/player_pe.xml','Mission Director XML for Xenon PE player-owned ship ownership check, replacement respawn, and handling of existing equipment'),
-    ('libraries/pe_equipment.xml','X4 ship equipment and cargo storage, speed and handling, forward weapon and turret upgrades using inspected vanilla definitions'),
+    ('libraries/pe_equipment.xml','Xenon PE ship equipment and cargo storage, speed and handling, forward weapon and turret upgrades using inspected vanilla definitions'),
 ])
 
 

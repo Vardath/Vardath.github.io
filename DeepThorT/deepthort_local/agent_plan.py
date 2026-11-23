@@ -39,6 +39,38 @@ def project_kind(request: str) -> str:
     return 'general'
 
 
+def incompatible_x4_path(path: str, request: str='') -> bool:
+    """Identify application scaffolding that cannot be loaded as X4 extension content."""
+    rel = path.replace('\\', '/').casefold()
+    if rel.startswith(('tools/','tests/')) and rel in request.replace('\\','/').casefold().split('`'):
+        return False  # A deliberately named companion script is a separate deliverable.
+    return (rel.startswith(('src/main/', 'src/test/', 'app/src/', 'content/x4/', 'x4/extensions/',
+                            'game/extensions/', 'x4 foundations/extensions/'))
+            or rel.endswith(('.py', '.java', '.kt', '.cpp', '.cs', '.class')))
+
+
+def _x4_output_path(relative: str, request: str, evidence: str) -> str:
+    """Accept a packaging prefix only when its extension ID matches the user's explicit ID."""
+    identity = re.search(r'(?im)^\s*(?:[-*]\s*)?(?:independent extension|extension id)\s*:\s*`?([a-z0-9_-]+)`?\s*$', request)
+    wrapper = re.fullmatch(r'(?:content/x4/|x4/)?extensions/([^/]+)/(.+)', relative, re.I)
+    if wrapper and identity and wrapper[1].casefold()==identity[1].casefold():
+        inner = wrapper[2].casefold()
+        if inner=='content.xml' or inner.startswith(('assets/','libraries/','md/','index/','t/','ui/','maps/','aiscripts/')):
+            relative = wrapper[2]
+        else:
+            raise PlanError('The packaged proposal does not identify a recognized extension destination: '+relative)
+    if incompatible_x4_path(relative,request):
+        raise PlanError('The X4 specification requires an extension-relative output. Rejected application path: '+relative)
+    if re.search(r'independent (?:ship|variant|extension)',request,re.I):
+        # A matching game-relative path would override an inspected vanilla
+        # definition even inside a separate extension directory.
+        for line in evidence.splitlines():
+            match = re.match(r'\w+_candidates:\s+(.+?) IDs ', line)
+            if match and relative.casefold()==match[1].casefold():
+                raise PlanError('The proposed output shadows an inspected vanilla source. Choose a new variant filename: '+relative)
+    return relative
+
+
 def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
     """Fail closed on known domain-specific omissions. Never infer game IDs."""
     kind = project_kind(request)
@@ -82,6 +114,14 @@ def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
         missing.append('inspection/verification of installed vanilla game definitions')
     # PE-specific requirements are mandatory only when that ship is requested.
     if re.search(r'\bxenon\s+pe\b|\bpe\s+(?:xenon|corvette|ship)\b', request or '', re.I):
+        # A manifest or README mentioning a weapon, mesh or timer cannot
+        # implement it. Bind coverage to proposed game assets and MD scripts.
+        def scoped(prefixes):
+            return ' '.join(p+' '+s['description'].casefold() for p,s in zip(paths,steps)
+                            if p.startswith(prefixes) and p.endswith('.xml'))
+        assets = scoped(('assets/', 'libraries/'))
+        mission = scoped(('md/',))
+        combined = assets + ' ' + mission
         requirements = (
             ('ship variant / macro and equipment connection mapping', r'\b(?:pe|corvette)\b', r'connection|macro|ship'),
             ('cargo storage increase', r'cargo|storage', None),
@@ -91,14 +131,31 @@ def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
             ('player-owned ownership check and respawn', r'player.owned|ownership|player ship|owned ship|player faction', r'spawn|respawn|replacement'),
         )
         for label, first, second in requirements:
-            if not re.search(first, combined, re.I) or (second and not re.search(second, combined, re.I)):
+            scope = mission if label.startswith('player-owned') else assets
+            if label == 'cargo storage increase' and not re.search(r'(?i)\b(?:cargo|storage)\s+(?:capacity|storage|increase)|\b(?:increase|more|[\d.]+\s*[×x])\s+(?:the\s+)?cargo\b', request):
+                continue
+            if not re.search(first, scope, re.I) or (second and not re.search(second, scope, re.I)):
                 missing.append(label)
+        if re.search(r'asteroid', request, re.I) and re.search(r'mesh|geometry', request, re.I):
+            geometry = scoped(('assets/',))
+            if not all(re.search(p,geometry) for p in ('asteroid', 'mesh|geometry|model', 'scal|siz')):
+                missing.append('scaled asteroid mesh and ship geometry under assets/')
+        if re.search(r'crew', request, re.I) and re.search(r'replace lost crew', request, re.I):
+            if not re.search(r'crew',mission) or not re.search(r'replenish|replace|restock|refill',mission):
+                missing.append('Mission Director crew replacement')
+        if re.search(r'replenish',request,re.I) and re.search(r'consumables?', request, re.I):
+            if not re.search(r'consumable|satellite|drone|flares',mission) or not re.search(r'replenish|restock|refill',mission):
+                missing.append('Mission Director consumable replenishment')
+        if re.search(r'blueprints?',request,re.I) and re.search(r'wharfs?|wharves',request,re.I):
+            if not re.search(r'blueprints?',combined) or not re.search(r'wharf|wharves|production',combined):
+                missing.append('wharf production and blueprint access')
         # Only demand numerical specifications the user actually requested.
         if re.search(r'\b50[\s,_.]*000\b|\b50k\b', request, re.I) and not re.search(r'\b50[\s,_.]*000\b|\b50k\b', combined, re.I):
             missing.append('50,000 damage per successful weapon/turret hit')
         if re.search(r'\b60\s*(?:seconds?|secs?)\b|\b1\s*min(?:ute)?\b', request, re.I) and not re.search(r'\b60\s*(?:seconds?|secs?)\b|\b1\s*min(?:ute)?\b', combined, re.I):
             missing.append('60-second ownership-monitor respawn timer')
-        if re.search(r'\b4\s*(?:x|times)\b|\bquadrupl', request, re.I) and not re.search(r'\b4\s*(?:x|times)\b|\bquadrupl', combined, re.I):
+        fourfold = r'\b4\s*(?:×|x\b|times\b)|\bquadrupl'
+        if re.search(fourfold, request, re.I) and not re.search(fourfold, combined, re.I):
             missing.append('four-times base speed')
         if re.search(r'\b10\s*(?:x|times)\b', request, re.I) and not re.search(r'\b10\s*(?:x|times)\b', combined, re.I):
             missing.append('ten-times cargo capacity')
@@ -119,15 +176,15 @@ def validate_project_plan(steps: list[dict], request: str) -> list[dict]:
         # an alphabetical catalog scan cannot be used as PE equipment.
         if re.search(r'\b(?:weapon|turret)_[a-z0-9]+_(?:l|xl)_', notes):
             missing.append('reject L/XL-class weapon or turret source references on the M-class PE')
-    if any(p.endswith('.py') for p in paths):
-        missing.append('X4 installable extension XML rather than Python application entrypoints')
+    if any(incompatible_x4_path(p,request) for p in paths):
+        missing.append('installable X4 extension layout (remove unrelated application source paths)')
     if missing:
         raise PlanError('Plan does not cover the X4 specification: ' + '; '.join(missing) + '. No work has been queued. Provide extracted vanilla references or inspect the installed X4 assets before trusting equipment identifiers.')
     return steps
 
 
 def parse_build_plan(text: str, project: str | Path, *, request: str = '',
-                     fragment: bool = False) -> list[dict]:
+                     fragment: bool = False, inspected_evidence: str = '') -> list[dict]:
     raw = text.strip()
     if raw.startswith('```'):
         raw = re.sub(r'^```(?:json)?\s*', '', raw, flags=re.I)
@@ -159,6 +216,7 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
         raise PlanError('Plan requires 1..24 files')
     paths = set()
     validated = []
+    x4 = project_kind(request) == 'x4'
     for step in steps:
         if not isinstance(step, dict) or set(step) != {'path', 'description'}:
             raise PlanError('Every file must specify path and description')
@@ -170,6 +228,13 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
         except Exception as e:
             raise PlanError('Unsafe file path in model plan: ' + str(e)) from e
         rel = dest.relative_to(Path(project).resolve()).as_posix()
+        if x4:
+            canonical = _x4_output_path(rel,request,inspected_evidence)
+            if rel != canonical:
+                try:
+                    rel = safe_target(Path(project), canonical).relative_to(Path(project).resolve()).as_posix()
+                except ValueError as exc:
+                    raise PlanError('Unsafe extension-relative output path') from exc
         if rel.casefold() in paths:
             raise PlanError('Duplicate file path in model plan')
         paths.add(rel.casefold())
@@ -441,7 +506,7 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                         first_prompt: str, *, x4_evidence: str = '',
                         max_chars: int = 7500, max_rounds: int = MAX_PLAN_ATTEMPTS,
                         stage=None, cancelled=None, continuation=None,
-                        chat_id: str = '') -> tuple[str, list[dict]]:
+                        chat_id: str = '', checkpoint=None) -> tuple[str, list[dict]]:
     """Generate a complete plan through bounded, evidence-driven model revisions.
 
     No file intentions are hardcoded here. Each proposed path/description must
@@ -453,6 +518,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     if len(first_prompt) > max_chars:
         raise PlanError('Initial planning request exceeds the model context limit')
     recovered = continuation.load(project,request,x4_evidence,context=first_prompt) if continuation else []
+    if project_kind(request) == 'x4':
+        recovered = [step for step in recovered if not incompatible_x4_path(step['path'],request)]
     all_steps: dict[str, dict] = {x['path'].casefold():x for x in recovered}
     # Even a structurally valid saved fragment is not a validated project plan.
     # Re-evaluate the full current specification before accepting any draft.
@@ -490,6 +557,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
         # Only reuse when the full revision prompt is identical; changed source
         # evidence or user instructions always require a fresh model answer.
         round_session = f'{session}-{round_no}'
+        if checkpoint:
+            prompt, instruction = checkpoint.attach(prompt, max_chars)
         lookup = getattr(client, 'completed_exchange', None)
         cached = lookup(round_session, prompt) if callable(lookup) else None
         if cached is None and chat_id:
@@ -513,6 +582,8 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
             tokens = (768 if malformed_streak >= 2 else
                       640 if malformed_streak else 384)
             answer = client.chat(round_session, prompt, max_tokens=tokens)
+        if checkpoint:
+            checkpoint.received(instruction, round_session, prompt, answer)
         if cancelled is not None and cancelled():
             raise PlanError('Planning stopped by user; no later passes will run')
         count_before = len(all_steps)
@@ -535,10 +606,7 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
         else:
             seen_answers.add(answer.strip())
             try:
-                fragment = parse_build_plan(answer, project, fragment=True)
-                if project_kind(request) == 'x4' and any(
-                    x['path'].lower().endswith('.py') for x in fragment):
-                    raise PlanError('An X4 extension cannot use generic Python app files')
+                fragment = parse_build_plan(answer, project, request=request, fragment=True, inspected_evidence=x4_evidence)
                 # Merge transactionally. A bad fragment cannot permanently
                 # poison the retained plan with >24 distinct paths and make
                 # every remaining revision fail, regardless of its quality.

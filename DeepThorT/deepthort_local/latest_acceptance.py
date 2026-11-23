@@ -18,7 +18,7 @@ from typing import Callable
 
 SCHEMA = 'deepthort-latest-test-v1'
 ALLOWED = frozenset({'shared_cap', 'primary_onnx', 'council_onnx',
-                     'janus_inbox', 'janus_core', 'concurrent_status', 'council_inference'})
+                     'janus_inbox', 'janus_core', 'concurrent_status', 'council_inference','x4_indexed_draft'})
 STATUSES = frozenset({'passed', 'failed', 'blocked', 'inconclusive', 'cancelled'})
 
 

@@ -64,6 +64,7 @@ class ToolAcquisitionDesktopTests(unittest.TestCase):
                  patch.object(mod.messagebox,'showwarning') as warnings, \
                  patch.object(mod.messagebox,'showerror'):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     app._set_project(project)
                     app.inventory={'tools':[{'name':'Blender','location':str(fakeexe),'found':True,'source':'PATH'}]}
@@ -97,6 +98,7 @@ class ToolAcquisitionDesktopTests(unittest.TestCase):
                  patch.object(mod.DeepThorTDesktop,'_refresh_inventory',lambda app:None), \
                  patch.object(mod.DeepThorTDesktop,'_auto_start_if_installed'):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     app._set_project(project)
                     app.tool_learning.discover([{'name':'Blender','location':str(fakeexe),'found':True}])

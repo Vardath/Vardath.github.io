@@ -1,5 +1,6 @@
 """Persist local-only coding-chat messages; no external inference endpoints."""
 from __future__ import annotations
+from contextlib import closing
 import json
 import re
 import time
@@ -117,7 +118,7 @@ class LocalModelClient:
         if not conversation_db.is_file():
             return None
         project_key = str(Path(project).resolve()).casefold()
-        with sqlite3.connect(conversation_db, timeout=20) as conversations:
+        with closing(sqlite3.connect(conversation_db, timeout=20)) as conversations, conversations:
             eligible = {
                 int(row[0]) for row in conversations.execute(
                     'SELECT id, project FROM conversation_requests '

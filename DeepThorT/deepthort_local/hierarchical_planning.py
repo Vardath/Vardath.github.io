@@ -253,6 +253,10 @@ class HierarchicalPlanStore:
                [(request_id,file,required) for file,deps in dependencies.items() for required in deps])
         return self.status(index, request_id, original)
 
+    def has_roadmap(self, request_id: int) -> bool:
+        with self._db() as db:
+            return db.execute('SELECT 1 FROM hierarchy_roots WHERE request_id=?', (request_id,)).fetchone() is not None
+
     def _checked(self, index, request_id: int, original: str):
         rows = self._source_rows(index,request_id,original)
         source_digest=sha(original)

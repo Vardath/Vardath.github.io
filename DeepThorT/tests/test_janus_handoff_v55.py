@@ -75,7 +75,10 @@ class ReadonlyHandoffStatusTests(unittest.TestCase):
         self.assertEqual(self.health()['status'],'inconclusive')
         self.assertEqual(self.db.next_guidance(self.project,'other'), '')
         self.assertEqual(self.health()['status'],'inconclusive')
-        self.assertTrue(self.db.next_guidance(self.project,'chat'))
+        checkpoint=self.db.planning_checkpoint(self.project,'chat')
+        prompt, offered=checkpoint.attach('Plan the next file',7500)
+        self.assertEqual(self.health()['status'],'inconclusive')
+        checkpoint.received(offered,'example-session',prompt,'A model reply')
         self.assertEqual(self.health()['status'],'passed')
 
     def test_review_and_pending_are_reported_without_false_success(self):

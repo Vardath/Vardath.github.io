@@ -31,6 +31,7 @@ class RealGuiQueueTests(unittest.TestCase):
         patch.object(mod.messagebox,'showinfo'),patch.object(mod.messagebox,'showwarning'),\
         patch.object(mod.messagebox,'showerror'):
     app=mod.DeepThorTDesktop()
+    app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
     try:
      app._set_project(proj)
      client=FakeLocalModel();app.client.chat=client.chat

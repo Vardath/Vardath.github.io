@@ -1,5 +1,6 @@
 """v33: generated app scripts are never written or executed without two approvals."""
 from __future__ import annotations
+from contextlib import closing
 import hashlib
 import json
 import sqlite3
@@ -107,7 +108,7 @@ class GeneratedScriptTests(unittest.TestCase):
         # An installed v32 database already has this table; the v33 columns
         # must be added instead of silently replacing user recipes.
         db=self.root/'old.sqlite3'
-        with sqlite3.connect(db) as connection:
+        with closing(sqlite3.connect(db)) as connection, connection:
             connection.execute('''CREATE TABLE learned_recipes(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,
                 project_key TEXT NOT NULL,title TEXT NOT NULL,purpose TEXT NOT NULL,

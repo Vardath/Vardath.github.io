@@ -1,4 +1,5 @@
 import tempfile,unittest
+from contextlib import closing
 from pathlib import Path
 from deepthort_local.agent_plan import parse_build_plan,PlanError
 from deepthort_local.job_queue import JobStore
@@ -27,7 +28,7 @@ class AgentPlanTests(unittest.TestCase):
   import sqlite3
   with tempfile.TemporaryDirectory() as td:
    db=Path(td)/'q.sqlite3'
-   with sqlite3.connect(db) as c:
+   with closing(sqlite3.connect(db)) as c, c:
     c.execute('''CREATE TABLE jobs (id INTEGER PRIMARY KEY AUTOINCREMENT,project TEXT NOT NULL,chat_id TEXT NOT NULL,
        mode TEXT NOT NULL CHECK(mode IN ('chat','edit','plan')),target TEXT,prompt TEXT NOT NULL,
        state TEXT NOT NULL DEFAULT 'queued',detail TEXT NOT NULL DEFAULT 'Waiting for model',

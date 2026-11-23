@@ -21,6 +21,7 @@ class ScriptGuiApprovalTests(unittest.TestCase):
                  patch.object(mod.messagebox,'showwarning') as warning, \
                  patch.object(mod.messagebox,'askyesno',return_value=True):
                 app=mod.DeepThorTDesktop()
+                app.disk_gate.gaming = lambda: False  # This fixture exercises an idle gaming PC.
                 try:
                     app._set_project(project)
                     app.inventory={'tools':[{'name':'Python','location':str(exe),'found':True}]}

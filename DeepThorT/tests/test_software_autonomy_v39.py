@@ -150,7 +150,7 @@ class DesktopIntegrationTests(unittest.TestCase):
 
     def test_automatic_operation_defers_for_game_pause_or_low_disk(self):
         from desktop_app import DeepThorTDesktop
-        plan=make_plan('FreeCAD','upgrade','/tmp/example-project',which=WHICH)
+        plan=make_plan('FreeCAD','upgrade',str(Path('/tmp/example-project')),which=WHICH)
         for kind in ('game','pause','low-disk','already-running','auto-verification'):
             obj=self.mockapp();obj._auto_tool_queue=[plan]
             if kind=='game':obj.disk_gate.gaming.return_value=True

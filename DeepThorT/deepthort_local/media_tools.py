@@ -19,6 +19,27 @@ TEXT_EXT = {'.py','.js','.ts','.tsx','.jsx','.html','.css','.json','.md','.txt',
             '.java','.kt','.sh','.ps1','.bat','.cmd','.gitignore','.rst'}
 IMAGE_EXT = {'.png','.jpg','.jpeg','.webp','.bmp','.gif'}
 DOCUMENT_EXT = {'.pdf','.docx'}
+
+
+def standalone_svg(response: str) -> str:
+    """Validate generated SVG. Restore an omitted namespace on a simple shape drawing."""
+    from .workspace import strip_single_code_fence
+    source = strip_single_code_fence(response)
+    root_tag = '{http://www.w3.org/2000/svg}svg'
+    try:
+        root = ET.fromstring(source)
+    except ET.ParseError as exc:
+        raise ValueError(f'The generated SVG is not well-formed XML: {exc}') from exc
+    if root.tag == root_tag:
+        return source
+    simple_shapes = {'svg','g','circle','ellipse','rect','path','line','polyline','polygon','title','desc'}
+    start = re.match(r'(\s*(?:<\?xml\s+[^?]*\?>\s*)?<svg)(?=[\s/>])', source)
+    if (start and root.tag == 'svg' and 'xmlns' not in source
+            and all(node.tag in simple_shapes for node in root.iter())):
+        corrected = source[:start.end()] + ' xmlns="http://www.w3.org/2000/svg"' + source[start.end():]
+        if ET.fromstring(corrected).tag == root_tag:
+            return corrected
+    raise ValueError('Expected a standalone SVG root in the http://www.w3.org/2000/svg namespace')
 SUPPORTED = TEXT_EXT | IMAGE_EXT | DOCUMENT_EXT
 MAX_FILE_BYTES = 24*1024*1024
 MAX_EXTRACT_CHARS = 9_000

@@ -1,5 +1,6 @@
 """v34 diagnostics: corrupt state must be reported without leaking database data."""
 from __future__ import annotations
+from contextlib import closing
 import json
 import sqlite3
 import tempfile
@@ -16,7 +17,7 @@ class HealthTests(unittest.TestCase):
         self.root=Path(self.t.name);self.state=self.root/'state';self.state.mkdir()
     def test_valid_database_does_not_leak_rows(self):
         database=self.state/'janus.sqlite3'
-        with sqlite3.connect(database) as conn:
+        with closing(sqlite3.connect(database)) as conn, conn:
             conn.execute('CREATE TABLE private (secret TEXT)')
             conn.execute('INSERT INTO private VALUES (?)',('very_sensitive_chat_content',))
         info=inspect_state(self.state)
