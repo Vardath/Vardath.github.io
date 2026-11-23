@@ -1,3 +1,5 @@
+**v44 implementation status:** A real headless Godot scene smoke-test runner now exists; this document's remaining acceptance criteria are still unimplemented. A `headless_smoke_passed` result is only evidence that the launched process exited zero, not that any scene mechanic or graphical behaviour was correct. Visible playtests and X4/RimWorld game execution still need separate platform adapters.
+
 # DeepThorT build, install, launch and playtest acceptance contract
 
 **Status: forward design, NOT an implemented v43 playtesting feature.**

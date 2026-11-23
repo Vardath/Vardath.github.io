@@ -1,3 +1,11 @@
+DEEPTHORT v44 — QUIET GODOT SCENE CHECK
+
+Existing DeepThorT.exe launcher and local ONNX remain unchanged. Extract source overlay over D:\deepthort; preserve DeepThorT.exe, state, models, node_modules, cache, references and projects.
+
+For a Godot project with project.godot and a declared main scene, select the project, then Work queue > Quiet Godot scene test. It launches a short HEADLESS simulation: no game window/audio/input and no foreground takeover. All child CPU use is shared inside DeepThorT's original 20% Job Object, with low process priority. It may run while you play another game, subject to resource-pressure preemption. Stop quiet test cancels. Inspect the Processes tab/diagnostics for actual result. This is not interactive gameplay verification.
+
+DO NOT run DeepThorT with python desktop_app.py for production: the resource caps require the original GUI-subsystem DeepThorT.exe supervisor. The test will refuse an uncapped session.
+
 DEEPTHORT DESKTOP v43 — VERIFIED EXECUTABLE DISCOVERY AFTER INSTALL
 
 DeepThorT can now check where a fixed-catalog tool was installed and whether

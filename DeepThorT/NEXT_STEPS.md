@@ -1,3 +1,14 @@
+# DeepThorT next steps — after v44 (23 November 2026)
+
+**Delivered v44:** An explicit, quiet Godot scene-simulation action under Work queue, backed by persisted run receipts and bounded resource pressure checks. It uses a fixed Godot `--headless --path ... --quit-after 360` command for a declared main scene; no game window, dummy audio, no input/focus injection. Starts from an existing `DeepThorT.exe` capped Windows Job Object, so the headless game shares the SAME aggregate 20% CPU and RAM-commit budgets; it does **not** get its own 20%. Child is idle priority. Safe real scene results are clearly labelled `headless_smoke_passed`, not verified interactive gameplay. Foreground game workloads are allowed, but the test is automatically preempted if system RAM reserve drops below 10% or system CPU exceeds 90% for three consecutive samples while a game is detected. OS cannot enforce a simple aggregate 20% GPU-use cap here. Tests execute project scripts as the current Windows user; they are **not sandboxed**.
+
+**Next v45:** Implement bounded, actively supervised launch of generated Windows GUI programs with test-account isolation and explicit permission to interact with windows. Use window-handle identity, foreground focus checks, screenshot/process/log evidence, process-tree stopping and failure classification. Never control keyboard/mouse globally while the user is working or gaming. For actual hidden graphical scenes use a separate session/virtual display or an engine-provided offscreen harness; a hidden window alone is not a safe isolation technique.
+
+**Next v46:** Godot gameplay-specific scripted probes and scene telemetry (actual collision/movement logic) with assertion logs and reversible saves. Android emulator isolated instances and X4/RimWorld disposable test profiles follow. Real game builds, install/staging and reboot-safe game testing need independent receipts and version checks. Do not playtest X4 and RimWorld invisibly by merely suppressing the window; they can require rendering, Steam or interactive input and cannot be assumed to work headlessly.
+
+**Validation still required:** Real Windows 10/11 and GPU contention, actual Godot executable and game scenes, parent/child Windows Job cap membership, user input focus while playing, RAM pressure and alternate game process detection; CI mocks and a simulated process do not establish those outcomes. Keep the original model, state, launcher, WinGet UAC and project permissions.
+
+---
 # DeepThorT next steps — after v43 (23 November 2026)
 
 **Implemented in v43:** durable independent detection of known installed CLI

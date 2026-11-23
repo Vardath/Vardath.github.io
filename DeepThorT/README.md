@@ -1,3 +1,9 @@
+## v44 — Quiet background Godot scene simulation
+
+DeepThorT can now launch a project's declared Godot main scene **headlessly** from Work queue → **Quiet Godot scene test**, while the user works in other programs or plays a foreground game. It uses no display, audio or interactive input, starts under the existing **shared** Windows Job Object resource cap and is throttled by IDLE priority and a pressure preemption guard. Select **Stop quiet test** to cancel; receipts appear in diagnostics and Processes.
+
+This only executes the Godot scene and examines exit status/output; it **does not** confirm graphics, input, physics correctness, actual playability, X4/RimWorld behaviour, or Android emulation. It requires a locally installed Godot executable and a `run/main_scene` in `project.godot`. It does not install games or stage mods. Generated scene scripts run with normal user permissions, not inside a sandbox. Never assume a 20% GPU or disk cap.
+
 # DeepThorT v43 — independent post-install tool verification (23 November 2026)
 
 **Continues the v42 ONNX + JANUS/Sentinel project workflow, without introducing another model.** After a fixed-catalog WinGet installation exits, v43 finds real executables, checks bounded known command-line version output, saves durable evidence and makes newly verified CLI tools available to the *current desktop process* for previously authorized project tests. Registry-only installed-app entries no longer count as usable tools. GUI applications are located but are **not automatically opened** for probing. Inspect `Computer & Tools` and the `Processes` log; receipts live at `state/tool-verification-v43.json`. See `PROJECT_CONTEXT_V43.md` and `PLAYTEST_ACCEPTANCE_V43.md`.

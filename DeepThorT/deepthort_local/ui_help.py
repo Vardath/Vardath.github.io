@@ -41,6 +41,8 @@ TOOLTIPS = {
     'Review legacy plan': 'Review an older build plan with the same explicit-approval safeguards.',
     'Verify build': 'Run a specifically approved static check or project test; a pass is not automatically proof of gameplay.',
     'Continue approved file steps and fixed tests without repeated prompts': 'After explicit plan approval, save exact approved files, run fixed tests, and attempt at most two one-file ONNX repairs followed by retests. Tests run under your Windows user rights and are NOT sandboxed; disable before approval for individual review.',
+    'Quiet Godot scene test': 'Runs the selected Godot project main scene in a headless, audio-free, no-focus background process. Requires the capped Windows launcher; shared 20% job CPU cap, IDLE priority and foreground pressure preemption. Records only a scene smoke result, NOT visual gameplay. Scene scripts run with your user privileges.',
+    'Stop quiet test': 'Immediately request termination of the current headless Godot test. Does not stop your foreground game or other apps. No automatic replay.',
     'Restore source checkpoint…': 'Explicitly restore an older version of this approved job source. Confirms exact files and hashes; newly created files are quarantined, previous approvals/tests become invalid and a new approved plan is needed.',
     'Revoke selected job automation': 'Revoke future automatic source writes, local ONNX repairs and tests for this specific approved job. Already-running tests must be stopped separately in Processes.',
     'Load prompt into editor': 'Copy the selected queued job request back to the chat editor for editing.',

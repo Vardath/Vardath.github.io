@@ -49,6 +49,9 @@ from deepthort_local.media_tools import (classify, validate_attachment, composed
 from deepthort_local.computer_inventory import (INSTALL_CATALOG, format_inventory,
         plan_tool_needs, scan_computer, winget_command)
 from deepthort_local.disk_gate import DiskGate
+from deepthort_local.quiet_playtest import (
+    QuietTestStore, QuietPlaytestError, plan_godot_scene, quiet_creationflags,
+    is_capped_windows_process, PLAYTEST_SECONDS, QuietPressureGuard, WindowsPressureSampler)
 from deepthort_local.job_queue import ChatRegistry, JobStore
 from deepthort_local.conversation_workflow import ConversationStore
 from deepthort_local.flight_recorder import record, install_crash_hooks, export_diagnostics
@@ -113,7 +116,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='43',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='44',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -152,6 +155,14 @@ class DeepThorTDesktop(tk.Tk):
         self._tool_verification = ToolVerificationStore(STATE/'tool-verification-v43.json')
         self._tool_probe_queue = []
         self._tool_probe_active = None
+        self.quiet_tests = QuietTestStore(STATE/'quiet-playtests-v44.json')
+        stale_quiet = self.quiet_tests.interrupt_stale()
+        if stale_quiet:
+            record(STATE,'desktop','quiet_test_interrupted',
+                   project_name=Path(stale_quiet['project']).name)
+        self._quiet_test_stopped = False
+        self._quiet_test_stop_reason = ''
+        self._quiet_test_active = None
         self._manual_catalog_install = None
         prior_auto = read_snapshot(STATE/'last-routine-software.json')
         if isinstance(prior_auto,dict) and prior_auto.get('status')=='launch_requested':
@@ -392,7 +403,11 @@ class DeepThorTDesktop(tk.Tk):
         restorebar=ttk.Frame(queue_tab);restorebar.pack(fill='x',pady=(0,3))
         ttk.Button(restorebar,text='Restore source checkpoint…',
                    command=self._restore_source_checkpoint).pack(side='left',padx=3)
-        ttk.Label(queue_tab,text='v42: approved work has an evidence-backed task graph and source revisions; restore requires confirmation and revokes prior approval.',
+        ttk.Button(restorebar,text='Quiet Godot scene test',
+                   command=self._run_quiet_scene).pack(side='left',padx=7)
+        ttk.Button(restorebar,text='Stop quiet test',
+                   command=self._stop_quiet_scene).pack(side='left',padx=3)
+        ttk.Label(queue_tab,text='v44: quiet Godot runs headlessly (no audio/display/input), shares the existing 20% CPU job cap; this is scene smoke testing, NOT visual gameplay.',
                   style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
@@ -590,6 +605,7 @@ class DeepThorTDesktop(tk.Tk):
                    'queue_paused':self.queue_paused,'visible_project_jobs':counts,
                    'development_cycles':self.cycles.summary(self._project_key()),
                    'task_graph':self.graphs.summary(self._project_key()),
+                   'quiet_scene_tests':self.quiet_tests.snapshot(),
                    'current_project_name':Path(self._project_key()).name,
                    'sentinel_pid':self.sentinel_process.pid if self.sentinel_process and self.sentinel_process.poll() is None else None,
                    'loading_stage':self.current_loading_stage, 'last_ai_error':self.last_ai_error,
@@ -1687,6 +1703,57 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f"Build plan #{j['id']} approved. The queue will work on its first file.")
         self._refresh_jobs()
 
+    def _run_quiet_scene(self):
+        """User-initiated fixed CLI headless scene check; no GUI/game focus changes."""
+        if self._quitting or self.queue_paused:
+            self._log('Quiet scene test deferred: the work queue is paused.')
+            return
+        if self._quiet_test_active or any(p and p.poll() is None for p in
+            (self.tool_process,self.install_process,self.media_process)):
+            self._log('Quiet scene test deferred: another tool/process is active.')
+            return
+        if self.active_job is not None or self._auto_verification_in_flight is not None:
+            self._log('Quiet scene test deferred: an approved job/test is active.')
+            return
+        try:
+            if not is_capped_windows_process():
+                raise QuietPlaytestError('Only available under the capped Windows DeepThorT.exe launcher. '
+                    'A Python development launch cannot guarantee the shared 20% CPU/memory limit.')
+            project=Path(self.project or '')
+            exe=godot_executable(tools=getattr(self,'inventory',None))
+            if not exe:
+                raise QuietPlaytestError('Godot executable not found; run the v43 tool check first.')
+            plan=plan_godot_scene(project,exe)
+            # A scene executes user/project code with normal user privileges.
+            # The click is the explicit choice; there is no model-selected command.
+            self.quiet_tests.begin(plan)
+            self._quiet_test_active=plan
+            self._quiet_test_stopped=False
+            self._quiet_test_stop_reason=''
+            if not self._start_command(list(plan.argv),cwd=plan.project,
+                    label='Quiet Godot scene simulation',kind='quiet_playtest'):
+                self.quiet_tests.finish(None,error='The process was not launched')
+                self._quiet_test_active=None
+                return
+            self._log(f'{plan.display()}. No visual assertions; game window and audio are disabled. '
+                      'Input focus will remain with the foreground application.')
+        except (QuietPlaytestError,OSError,ValueError) as exc:
+            self._log('Quiet scene test unavailable: '+str(exc))
+            self.status.set('Quiet scene test blocked: '+str(exc)[:150])
+
+    def _stop_quiet_scene(self):
+        if self._quiet_test_active is None:
+            return
+        self._quiet_test_stopped=True
+        self._quiet_test_stop_reason='User stopped quiet test'
+        p=self.tool_process
+        if p and p.poll() is None:
+            p.terminate()
+        else:
+            # Launch may still be in flight. Worker will see stop flag before Popen.
+            self._log('Quiet test cancellation requested; launch not yet confirmed.')
+        self._log('Quiet scene test stopping; no automatic replay.')
+
     def _verification_command(self,project):
         # Only deterministic local test entry points. No model-created shell commands.
         if (project/'project.godot').exists():
@@ -1973,6 +2040,7 @@ class DeepThorTDesktop(tk.Tk):
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
+            or self.__dict__.get('_quiet_test_active') is not None
             or self._auto_verification_in_flight is not None
             or self._auto_tool_active is not None or bool(self._auto_tool_queue)
             or self.active_job is not None or self.active_conversation is not None
@@ -2052,6 +2120,9 @@ class DeepThorTDesktop(tk.Tk):
             return
 
     def _verify_build(self):
+        if self.__dict__.get('_quiet_test_active') is not None:
+            self._log('Manual verification deferred while quiet scene test is running')
+            return
         if any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)):
             messagebox.showwarning('Tool already running',
                 'A local tool, installation or media task is already running. Verification will remain queued for manual approval.');return
@@ -2095,7 +2166,8 @@ class DeepThorTDesktop(tk.Tk):
             self.after(1100,self._scheduler)
 
     def _scheduler_once(self):
-        tool_busy=any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))
+        tool_busy=(self.__dict__.get('_quiet_test_active') is not None or
+                   any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
         model_alive=bool(self.node and self.node.poll() is None)
         gate = ('paused' if self.queue_paused else
                 'tool_busy' if tool_busy else
@@ -2775,7 +2847,7 @@ class DeepThorTDesktop(tk.Tk):
         if not self._quitting:
             self.after(2200,self._automatic_tool_tick)
         if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
-        if (self.queue_paused or self._auto_tool_active or
+        if (self.queue_paused or self.__dict__.get('_quiet_test_active') is not None or self._auto_tool_active or
             getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
             self.disk_gate.gaming()):return
         if self.install_process and self.install_process.poll() is None:return
@@ -2844,6 +2916,7 @@ class DeepThorTDesktop(tk.Tk):
         if not self._quitting:
             self.after(2400,self._tool_probe_tick)
         if (self._quitting or not self._tool_probe_queue or self._tool_probe_active
+            or self.__dict__.get('_quiet_test_active') is not None
             or self.queue_paused or self.disk_gate.gaming()
             or self._auto_tool_active or self._auto_verification_in_flight is not None
             or self.active_job is not None or self.active_conversation is not None
@@ -3384,6 +3457,9 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'JANUS approved process #{action_id} queued. Sentinel monitors worker health; results are written to the JANUS tab.')
         self._show_janus_status()
     def _start_command(self,cmd,*,cwd,label,kind,job_id=None):
+        if kind!='quiet_playtest' and self.__dict__.get('_quiet_test_active') is not None:
+            self._log('A quiet headless test already owns the tool slot; deferred: '+label)
+            return False
         if (self.install_process and self.install_process.poll() is None) or (self.tool_process and self.tool_process.poll() is None):
             messagebox.showwarning('Tool already running','Wait or stop the current tool process first.');return False
         def worker():
@@ -3396,21 +3472,55 @@ class DeepThorTDesktop(tk.Tk):
                 truncated=False
                 # Do not conceal native WinGet/installer windows or Windows UAC
                 # for standing-policy software actions. No runas/UAC bypass.
-                flags=(getattr(subprocess,'CREATE_NO_WINDOW',0)
+                flags=(quiet_creationflags() if kind=='quiet_playtest' else
+                       getattr(subprocess,'CREATE_NO_WINDOW',0)
                        if os.name=='nt' and kind not in ('automatic_software','reviewed_install','installation') else 0)
+                if kind=='quiet_playtest' and self._quiet_test_stopped:
+                    self.events.put(('tool_end',label,kind,-1,job_id,
+                                     {'argv':list(cmd),'lines':['Stopped before launch']}))
+                    return
                 verified_env=(isolated_verification_environment(list(cmd),STATE,job_id)
                               if kind=='verification' and job_id is not None else None)
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,
-                        shell=False,env=verified_env) as proc:
+                        shell=False,env=verified_env,
+                        stdin=subprocess.DEVNULL if kind=='quiet_playtest' else None) as proc:
+                    if kind=='quiet_playtest' and self._quiet_test_stopped:
+                        proc.terminate()
+                    if kind=='quiet_playtest' and not self._quiet_test_stopped:
+                        def background_pressure():
+                            sampler=WindowsPressureSampler()
+                            guard=QuietPressureGuard()
+                            while proc.poll() is None and not self._quiet_test_stopped:
+                                time.sleep(3.0)
+                                if proc.poll() is not None or self._quiet_test_stopped:
+                                    break
+                                game=self.disk_gate.gaming()
+                                cpu,ram=sampler.read()
+                                reason=guard.should_preempt(game_active=game,
+                                                             cpu_busy_percent=cpu,
+                                                             ram_available_percent=ram)
+                                if reason:
+                                    self._quiet_test_stop_reason=reason
+                                    self._quiet_test_stopped=True
+                                    self.events.put(('log','Quiet test preempted: '+reason))
+                                    try:proc.terminate()
+                                    except OSError:pass
+                                    break
+                        threading.Thread(target=background_pressure,daemon=True).start()
                     if kind in ('installation','reviewed_install','automatic_software'):self.install_process=proc
                     else:self.tool_process=proc
                     # Bounded network inspection and user-approved third-party setup.
                     # A timed-out installer may have launched child processes; its
                     # receipt remains UNVERIFIED and requires manual inspection.
-                    max_runtime = 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else 7200 if kind=='verification' else None
-                    timer=(threading.Timer(max_runtime,
-                            lambda: proc.kill() if proc.poll() is None else None)
+                    max_runtime = PLAYTEST_SECONDS if kind=='quiet_playtest' else 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else 7200 if kind=='verification' else None
+                    def on_timeout():
+                        if proc.poll() is None:
+                            if kind=='quiet_playtest':
+                                self._quiet_test_stop_reason='Headless test exceeded 120-second runtime budget'
+                                self._quiet_test_stopped=True
+                            proc.kill()
+                    timer=(threading.Timer(max_runtime,on_timeout)
                            if max_runtime is not None else None)
                     if timer:timer.start()
                     try:
@@ -3429,14 +3539,19 @@ class DeepThorTDesktop(tk.Tk):
                                         truncated=True
                                         proc.kill()
                                         break
-                                elif kind=='verification':
+                                elif kind in ('verification','quiet_playtest'):
+                                    output_bytes += len(line.encode('utf-8',errors='replace'))
+                                    if kind=='quiet_playtest' and output_bytes>128*1024:
+                                        truncated=True
+                                        proc.kill()
+                                        break
                                     captured.append(line.rstrip()[:2000])
                                 self.events.put(('log',f'[{label}] {line.rstrip()[:2000]}'))
                         code=proc.wait()
                     finally:
                         if timer:timer.cancel()
                 result=({'argv':list(cmd),'lines':list(captured),'truncated':truncated}
-                        if kind in ('verification','package_inspection') else None)
+                        if kind in ('verification','package_inspection','quiet_playtest') else None)
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
@@ -3595,6 +3710,8 @@ class DeepThorTDesktop(tk.Tk):
             if (self._auto_verification_in_flight is not None and
                 self.tool_process in procs):
                 self._stopped_auto_tests.add(self._auto_verification_in_flight)
+            if self._quiet_test_active is not None and self.tool_process in procs:
+                self._quiet_test_stopped=True
             for p in procs:p.terminate()
             self._log('User stopped external tool/installer process; no automatic repair will follow a stopped test.')
 
@@ -3824,7 +3941,8 @@ class DeepThorTDesktop(tk.Tk):
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
-              f"Supervision: 20% CPU cap, 20% RAM commit limit, idle priority under DeepThorT.exe\n"
+              f"Supervision: 20% aggregate CPU cap, 20% RAM commit limit under DeepThorT.exe\n"
+              f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
               f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
               f'Last actual ONNX stage: {(self.current_loading_stage or "none observed")[:200]}\n'
@@ -4044,6 +4162,20 @@ class DeepThorTDesktop(tk.Tk):
                            if tooltype=='reviewed_install' and code==0 else
                            'Succeeded.' if code==0 else 'Check output for failure.'))
                 self.status.set(f'{label}: exit code {code} (see Processes log)')
+                if tooltype=='quiet_playtest':
+                    stopped=self._quiet_test_stopped
+                    lines=(verification_output or {}).get('lines') if isinstance(verification_output,dict) else []
+                    reason=self._quiet_test_stop_reason
+                    receipt=self.quiet_tests.finish(code,lines=lines or [],
+                        stopped=stopped and not reason,preempted=(reason if reason and
+                        reason!='User stopped quiet test' else ''),
+                        error='Excessive process output' if isinstance(verification_output,dict)
+                        and verification_output.get('truncated') else '')
+                    self._quiet_test_active=None
+                    self._quiet_test_stopped=False
+                    self._quiet_test_stop_reason=''
+                    self._log('Quiet scene check '+(receipt['status'] if receipt else 'finished without receipt')+
+                              '; headless engine result only, not verified visual gameplay.')
                 if tooltype=='installation':
                     name=self._manual_catalog_install
                     self._manual_catalog_install=None
@@ -4154,7 +4286,7 @@ class DeepThorTDesktop(tk.Tk):
                         except Exception as exc:
                             self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()
-                if code!=0 and tooltype not in ('package_inspection','automatic_software'):
+                if code!=0 and tooltype not in ('package_inspection','automatic_software','quiet_playtest'):
                     if was_auto_verification:
                         self._log(f'Unattended job #{job_id} test returned a failure; inspect the '
                                   'durable cycle record for a bounded repair or manual blocker.')
@@ -4174,6 +4306,12 @@ class DeepThorTDesktop(tk.Tk):
                     try:self.cycles.block(event[4],
                         'Test process failed to launch: '+str(event[3])[:250])
                     except CycleError:pass
+                if event[2]=='quiet_playtest':
+                    self.quiet_tests.finish(None,error=str(event[3]),
+                                          stopped=self._quiet_test_stopped)
+                    self._quiet_test_active=None
+                    self._quiet_test_stopped=False
+                    self._quiet_test_stop_reason=''
                 self._log(f'{event[1]} error: {event[3]}')
                 if event[2]=='reviewed_install':
                     self._complete_inspected_install(None)
@@ -4190,7 +4328,7 @@ class DeepThorTDesktop(tk.Tk):
                 if len(event)>4 and event[4] is not None:
                     self.jobs.change(event[4],'needs_input','Test process failed to launch: '+event[3],allowed=('running',))
                     self._refresh_jobs()
-                if not was_auto_error:
+                if not was_auto_error and event[2]!='quiet_playtest':
                     messagebox.showerror('Tool error',event[3])
         self.after(125,self._handle_events)
     def _quit(self):
@@ -4202,6 +4340,8 @@ class DeepThorTDesktop(tk.Tk):
                 'Application closed; will retry when model is available',allowed=('running',))
         if self.active_job is not None:
             self.jobs.change(self.active_job,'paused','Application closed before reply; resume to retry',allowed=('running',))
+        if self._quiet_test_active is not None:
+            self.quiet_tests.interrupt_stale()
         for proc in (self.node,self.tool_process,self.install_process,self.media_process,self.sentinel_process):
             if proc and proc.poll() is None:
                 try:proc.terminate()
