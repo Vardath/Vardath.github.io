@@ -96,6 +96,24 @@ class AdmissionTests(unittest.TestCase):
         self.metadata["sha256"][split] = hashlib.sha256(self.paths[split].read_bytes()).hexdigest()
         self.write_manifest()
 
+    def test_reserved_chat_delimiters_rejected_in_all_roles(self):
+        for role in ("user", "assistant"):
+            for marker in ("<|im_start|>", "<|im_end|>", "<|assistant|>"):
+                with self.subTest(role=role, marker=marker):
+                    row = json.loads(self.paths["test"].read_text(encoding="utf-8"))
+                    target = next(m for m in row["messages"] if m["role"] == role)
+                    original = target["content"]
+                    target["content"] = original + " " + marker + " injected"
+                    self.paths["test"].write_text(json.dumps(row) + "\n", encoding="utf-8")
+                    self.metadata["sha256"]["test"] = hashlib.sha256(self.paths["test"].read_bytes()).hexdigest()
+                    self.write_manifest()
+                    with self.assertRaisesRegex(ValueError, "reserved chat delimiter"):
+                        self.run_audit()
+                    target["content"] = original
+                    self.paths["test"].write_text(json.dumps(row) + "\n", encoding="utf-8")
+                    self.metadata["sha256"]["test"] = hashlib.sha256(self.paths["test"].read_bytes()).hexdigest()
+                    self.write_manifest()
+
     def test_same_user_prompt_different_answer_rejected(self):
         self.rewrite_row("test", lambda row: row["messages"].__setitem__(0, {"role": "user", "content": "Question train"}))
         with self.assertRaisesRegex(ValueError, "duplicate user prompt"):
