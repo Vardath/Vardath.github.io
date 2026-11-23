@@ -77,9 +77,6 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         state = torch.load(checkpoint, map_location="cpu", weights_only=True)
         if state.get("format") != FORMAT or state.get("immutable") != immutable:
             raise ValueError("SFT resume provenance mismatch")
-        model.load_state_dict(state["model_state"])
-        optimizer.load_state_dict(state["optimizer_state"])
-        torch.set_rng_state(state["rng_state"])
         saved_step = state.get("step")
         if type(saved_step) is not int or saved_step < 1:
             raise ValueError("Invalid SFT checkpoint step; refusing unsafe resume")
@@ -87,6 +84,9 @@ def run(train_path, validation_path, checkpoint, *, vocab_size, steps=10,
         if (not isinstance(rng_state, torch.Tensor) or rng_state.dtype != torch.uint8
                 or rng_state.ndim != 1 or rng_state.numel() != torch.get_rng_state().numel()):
             raise ValueError("Invalid SFT checkpoint RNG state; refusing unsafe resume")
+        model.load_state_dict(state["model_state"])
+        optimizer.load_state_dict(state["optimizer_state"])
+        torch.set_rng_state(rng_state)
         start = saved_step
     elif checkpoint.exists():
         raise FileExistsError("Checkpoint exists; explicitly resume")
