@@ -23,6 +23,10 @@ class IndependentAcceptanceTests(unittest.TestCase):
                  {"id": "invalid", "kind": "error", "request": {"method": "invalid"}}]
         result = evaluate([sys.executable, "-c", script], cases=cases, timeout=10)
         self.assertTrue(result["passed"], result)
+        self.assertEqual(result["results"][0]["request"], cases[0]["request"])
+        self.assertEqual(result["results"][0]["response"]["model"], "vardath-scratch-chat")
+        self.assertFalse(result["conversation_ready"])
+        self.assertFalse(result["tool_use_evaluated"])
 
     def test_fails_closed_on_missing_response(self):
         cases = [{"id": "health", "kind": "health", "request": {"method": "health"}}]
