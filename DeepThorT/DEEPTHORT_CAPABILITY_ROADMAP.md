@@ -47,3 +47,6 @@ Schema 3 supports GDScript declarations, literal resource dependencies (includin
 
 ### Progress — web and C# source intelligence
 Schema 4 adds lexical JS/TS/C# declaration retrieval, exact unambiguous relative module edges and unique C# namespace hints. This is conservative static analysis, not compiler-aware navigation; complex syntax can be omitted. Next priority 3: schema-validated repository tool interface and bounded JANUS tool-use loop. Language-server support and measured benchmark remain outstanding.
+
+### Progress — typed agent tool interface
+Priority 3 begins with a strict read-only repository tool registry and up to three adaptive JANUS selection turns using the existing council worker. Exact current source observations feed implementation/repair within the existing prompt budget; ordinary approval and Sentinel review remain unchanged. Next: persistent tool receipt inspection, diagnostic/diff actions and reviewed execution integration. No arbitrary shell or external tool capability added yet.

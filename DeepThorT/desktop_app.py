@@ -3287,6 +3287,22 @@ class DeepThorTDesktop(tk.Tk):
                 advisor=self._planning_council_client()
                 if advisor is not None:
                     try:
+                        from deepthort_local.agent_repository_tools import RepositoryTools,gather
+                        from deepthort_local.specification_guard import master_for_job
+                        room=min(1200,MAX_INFERENCE_PROMPT-len(recovery_prompt)-400)
+                        if room>=200 and not self.disk_gate.gaming():
+                            excluded=self.inspection_exclusions.paths(job['project'])
+                            stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming() or self._superseded_build(job)
+                            self.repository_index.refresh(job['project'],exclude=excluded,cancelled=stopped)
+                            recovery_prompt+=gather(RepositoryTools(self.repository_index,job['project'],exclude=excluded,
+                                focus=next(iter(candidates)),cancelled=stopped),
+                                ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
+                                session=f'repair-tools-{jobid}-{cycle["repairs"]}',original=master_for_job(job,self.conversations,self.hierarchies,self.specifications),
+                                goal=cycle['diagnostic'],seed=recovery_prompt[len(prompt):],budget=room,
+                                stage=lambda text:self.events.put(('log',text)))
+                    except (ValueError,OSError) as error:
+                        self.events.put(('log','Agent repository investigation unavailable: '+str(error)[:160]))
+                    try:
                         original=job['prompt']
                         focus=cycle['diagnostic']+' '+ ' '.join(candidates)
                         source=select_source_section(original,focus)
@@ -3928,6 +3944,19 @@ class DeepThorTDesktop(tk.Tk):
                                     exclude=excluded,budget=budget,cancelled=stopped)
                                 request+=context
                                 if context:self.events.put(('log',f'Job #{jobid}: verified repository interface context attached.'))
+                                room=min(1200,MAX_INFERENCE_PROMPT-len(request)-300)
+                                if room>=200 and not stopped():
+                                    advisor=self._planning_council_client()
+                                    if advisor is not None:
+                                        try:
+                                            from deepthort_local.agent_repository_tools import RepositoryTools,gather
+                                            from deepthort_local.reasoning_council import ReasoningCouncil
+                                            request+=gather(RepositoryTools(self.repository_index,project,exclude=excluded,
+                                                focus=step['path'],cancelled=lambda:stopped() or self._superseded_build(j)),
+                                                ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
+                                                session=f'build-tools-{jobid}-{step["id"]}',original=original,goal=focus,
+                                                seed=context,budget=room,stage=lambda text:self.events.put(('log',text)))
+                                        finally:advisor.release()
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
                     def transform(answer):
