@@ -244,6 +244,8 @@ class DeepThorTDesktop(tk.Tk):
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
         from deepthort_local.technical_research import ResearchStore
         self.technical_research=ResearchStore(STATE/'technical-research.sqlite3')
+        from deepthort_local.discovery_catalog import DiscoveryStore
+        self.discovery_catalog=DiscoveryStore(STATE/'discovery-catalog.sqlite3')
         self.tool_learning = ToolAcquisition(STATE/'tool_acquisition.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
@@ -573,6 +575,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(action,text='Install selected catalog tool…',command=self._approve_tool_install).pack(side='left',padx=3)
         ttk.Button(action,text='Find official tool page…',command=self._find_official_tool_page).pack(side='left',padx=3)
         ttk.Button(action,text='Search packages online…',command=self._search_online_tools).pack(side='left',padx=3)
+        ttk.Button(action,text='Discovered packages…',command=self._show_discovered_packages).pack(side='left',padx=3)
         autonomy=ttk.Frame(hardware_tab);autonomy.pack(fill='x',pady=(2,6))
         self.autonomy_enabled=tk.BooleanVar(value=self._autonomy_policy['enabled'])
         self.autonomy_upgrades=tk.BooleanVar(value=self._autonomy_policy['allow_upgrades'])
@@ -3649,6 +3652,25 @@ class DeepThorTDesktop(tk.Tk):
                             except (ValueError,OSError,KeyError) as research_error:
                                 guidance=''
                                 self.events.put(('log','Technical research unavailable: '+str(research_error)[:250]))
+                        if (not guidance and os.name=='nt' and self._routine_tools_enabled()
+                                and self._project_work_is_enabled() and self.active_job==jobid
+                                and not self._quitting and not self.disk_gate.gaming()):
+                            try:
+                                authorize_file(STATE/'project-grants',self.jobs.get(jobid),steps,step,enabled=True)
+                                from deepthort_local.discovery_catalog import discover
+                                advisor=self._planning_council_client()
+                                try:
+                                    rows=discover(self.discovery_catalog,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                                        advisor or self.client,session=f'build-{jobid}-step-{step["id"]}',
+                                        project=j['project'],master=original,goal=focus,failure=str(error),baseline=_sha(dest),
+                                        cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j)
+                                            or self.disk_gate.gaming() or not self._routine_tools_enabled(),
+                                        stage=lambda message:self.events.put(('log',message)))
+                                finally:
+                                    if advisor is not None:advisor.release()
+                                if rows:self.events.put(('log',f'JANUS found {len(rows)} unverified software candidates; see Computer & Tools / Discovered packages. No installation authorized.'))
+                            except (ValueError,OSError,KeyError,subprocess.SubprocessError) as discovery_error:
+                                self.events.put(('log','Software discovery unavailable: '+str(discovery_error)[:250]))
                         if guidance and len(request)+len(guidance)+2<=MAX_INFERENCE_PROMPT:
                             try:
                                 answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}-research',
@@ -4732,6 +4754,18 @@ class DeepThorTDesktop(tk.Tk):
         webbrowser.open(source['url'])
         self._log(f'User opened official vendor page for {name}; no install was initiated.')
 
+    def _show_discovered_packages(self):
+        if not self.project:return
+        rows=self.discovery_catalog.recent(self._project_key())
+        if not rows:
+            messagebox.showinfo('Software discovery','No persisted discovery candidates for this project.',parent=self)
+            return
+        ids={r['package_id'] for r in rows}
+        choice=simpledialog.askstring('Unverified discovery candidates',
+            '\n'.join(r['name']+' — '+r['package_id'] for r in rows)+
+            '\n\nEnter one exact ID to inspect its current catalog metadata. Nothing will be installed.',parent=self)
+        if choice is not None and choice.strip() in ids:self._inspect_package_id(choice.strip())
+
     def _search_online_tools(self):
         """Consent-gated, read-only search: results are not approved installers."""
         if self.disk_gate.gaming():
@@ -4761,7 +4795,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Approved read-only online package search: '+name.strip())
             self.tabs.select(4)
 
-    def _inspect_package_id(self):
+    def _inspect_package_id(self, selected_id=None):
         """Request explicit consent for a *single* read-only winget show probe."""
         if self.disk_gate.gaming():
             messagebox.showwarning('Gaming priority',
@@ -4771,7 +4805,7 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showinfo('Software review in progress',
                 'Finish the previous inspection or installation before trying again.',parent=self)
             return
-        package_id=simpledialog.askstring('Inspect an exact WinGet package',
+        package_id=selected_id or simpledialog.askstring('Inspect an exact WinGet package',
             'Enter an exact package ID from search results, for example FreeCAD.FreeCAD:\n'
             'This only reads catalog metadata. It does not download or install.',parent=self)
         if package_id is None:return

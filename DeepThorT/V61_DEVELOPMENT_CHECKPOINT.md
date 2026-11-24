@@ -83,3 +83,7 @@ After ordinary reviewed code generation exhausts its correction attempts, an app
 ## Unfamiliar local application enrollment
 
 The Computer & Tools learning pipeline now accepts explicitly selected unfamiliar executable files without adding a hardcoded catalog entry. Enrollment binds the exact file stat identity and one documented help flag, persists across restarts, and invalidates older help/recipe evidence on changes. Shell launchers and arbitrary flags are rejected. Help execution and learned recipes retain the existing explicit command approval and artifact reconciliation boundaries. Sentinel independently reviews new procedure candidates against the user's learning goal. Enrollment tests added; live Windows application testing outstanding.
+
+## Failure-triggered unfamiliar software discovery
+
+Under the standing routine-tool preference, a failed approved unattended source stage with no research guidance may ask JANUS to select one fixed generic capability query or NONE. WinGet search is read-only, limited to 20 results, 64 KiB and a 45-second timer. Only a public category string leaves the machine. Parsed exact IDs and output fingerprints persist for the selected project; the Discovered packages control offers fresh exact-ID inspection using the existing reviewed install workflow. Discovery is not installation consent or functional proof. The first path is limited to English table output and the existing catalog. New regression tests committed, not yet executed.
