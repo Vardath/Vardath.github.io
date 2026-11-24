@@ -3068,7 +3068,7 @@ class DeepThorTDesktop(tk.Tk):
             return [sys.executable,str(ROOT/'engine_acceptance_cli.py'),str(project),'--summary']
         if (project/'package.json').exists(): return ['npm.cmd' if os.name=='nt' else 'npm','test']
         if (project/'pyproject.toml').exists() or (project/'tests').is_dir() or list(project.glob('test_*.py')):
-            return [sys.executable,'-m','unittest','discover']
+            return [sys.executable,'-m','unittest','discover','-v']
         if list(project.glob('*.sln')): return ['dotnet','test','--no-restore']
         return None
 
@@ -6462,6 +6462,21 @@ class DeepThorTDesktop(tk.Tk):
                     if isinstance(verification_output,dict):
                         check=assess_verification(verification_output.get('argv') or [],
                                                   code,verification_output.get('lines') or [])
+                    if isinstance(verification_output,dict):
+                        try:
+                            from deepthort_local.test_execution_trace import build_trace
+                            from deepthort_local.specification_guard import master_for_job
+                            from deepthort_local.regression_guard import stable
+                            traced_job=self.jobs.get(job_id)
+                            if (traced_job and not self._superseded_build(traced_job) and verification_output.get('regression_scope')
+                                and stable(verification_output['regression_scope'],verification_output['regression_before'],verification_output['regression_after'])):
+                                master=master_for_job(traced_job,self.conversations,self.hierarchies,self.specifications)
+                                trace=build_trace(traced_job,self.jobs.steps(job_id),master,verification_output,code)
+                                if not save_snapshot(STATE/'test-execution-traces'/f'job-{job_id}.json',trace):
+                                    raise OSError('Could not persist test trace')
+                                self._log(f"Job #{job_id}: named test evidence: {trace['counts']}; linked requirement evidence: {trace['requirement_counts']}.")
+                        except (ValueError,OSError,KeyError,TypeError) as error:
+                            self._log(f'Job #{job_id}: named test trace unavailable: {error}')
                     if code==0 and (check is None or check['accepted']):
                         try:
                             current_job=self.jobs.get(job_id)

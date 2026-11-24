@@ -18,7 +18,7 @@ class FakeLocalModel:
    return json.dumps({'files':[{'path':'main.py','description':'A Python hello world script'},
                               {'path':'test_main.py','description':'A regression test for the script'}]})
   if 'CURRENT FILE: main.py' in prompt:return 'print("hello")\n'
-  if 'CURRENT FILE: test_main.py' in prompt:return 'import unittest\nclass TestMain(unittest.TestCase):\n    def test_hello(self):\n        self.assertTrue(True)\n'
+  if 'CURRENT FILE: test_main.py' in prompt:return 'import unittest, io, contextlib, runpy\nclass TestMain(unittest.TestCase):\n    def test_hello(self):\n        output = io.StringIO()\n        with contextlib.redirect_stdout(output):\n            runpy.run_path(\"main.py\")\n        self.assertEqual(output.getvalue(), \"hello\\n\")\n'
   return 'Unexpected model prompt'
 
 class RealGuiQueueTests(unittest.TestCase):
@@ -78,7 +78,7 @@ class RealGuiQueueTests(unittest.TestCase):
      self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in client.calls),3)
      reviews=[p for p in client.calls if p.startswith('SENTINEL: independently guard')]
      for path in ('main.py','test_main.py'):
-      for kind in ('plan','code'):
+      for kind in ('plan','behavior_test' if path=='test_main.py' else 'code'):
        self.assertTrue(any(f'REVIEW KIND: {kind}; intended step: {path}' in p for p in reviews), (path,kind))
     finally:app._quit()
 

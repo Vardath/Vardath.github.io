@@ -90,7 +90,7 @@ class FullGuiDevelopmentCycleTests(unittest.TestCase):
                     self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in model.calls),4)
                     reviews=[p for p in model.calls if p.startswith('SENTINEL: independently guard')]
                     for path in ('main.py','test_main.py'):
-                        for kind in ('plan','code'):
+                        for kind in ('plan','behavior_test' if path=='test_main.py' else 'code'):
                             self.assertTrue(any(f'REVIEW KIND: {kind}; intended step: {path}' in p for p in reviews),(path,kind))
                     self.assertTrue(any('REVIEW KIND: repair;' in p for p in reviews))
                 finally:

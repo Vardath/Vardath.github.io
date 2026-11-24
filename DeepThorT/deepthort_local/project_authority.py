@@ -230,7 +230,7 @@ def recognized_test_command(argv: list[str], project: Path) -> bool:
     if not isinstance(argv, list) or not argv or any(not isinstance(a, str) for a in argv):
         return False
     project = Path(project).resolve(strict=True)
-    if argv == [sys.executable, '-m', 'unittest', 'discover']:
+    if argv in ([sys.executable, '-m', 'unittest', 'discover'], [sys.executable, '-m', 'unittest', 'discover', '-v']):
         return True
     if argv == ['npm.cmd' if sys.platform == 'win32' else 'npm', 'test']:
         return True

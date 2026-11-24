@@ -39,7 +39,7 @@ def isolated_verification_environment(argv: list[str], state: str | Path,
     A new private cache prefix makes retests read the actual current sources.
     Never alter PYTHONPATH, arbitrary commands, OS elevation or project files.
     """
-    if (argv != [sys.executable, '-m', 'unittest', 'discover']
+    if (argv not in ([sys.executable, '-m', 'unittest', 'discover'], [sys.executable, '-m', 'unittest', 'discover', '-v'])
             or type(job_id) is not int or job_id < 1):
         return None
     parent = Path(state).resolve() / 'verification-pycache'
