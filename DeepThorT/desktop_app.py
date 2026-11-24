@@ -2291,8 +2291,12 @@ class DeepThorTDesktop(tk.Tk):
                             workflow['goal'],proposal,kind=kind,cancelled=stale,
                             amendments=self.conversations.amendment_history(source['id']),
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    recovery=self.workflow_drafts.recovery(ident)
+                    if recovery:
+                        from deepthort_local.workflow_recovery import verify_recovery
+                        verify_recovery(self.tool_workflows,recovery,source['project'])
                     proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
-                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,
+                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,
                         stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     if stale():raise ValueError('Workflow specification superseded')
                     self.workflow_drafts.save(ident,proposal,manifest)
@@ -3230,6 +3234,22 @@ class DeepThorTDesktop(tk.Tk):
             self._log(workflow_message)
             return
         if self.tool_workflows.busy():return
+        if self.node_ready and self.node and self.node.poll() is None and self.project:
+            from deepthort_local.workflow_recovery import next_recovery
+            recovery=next_recovery(self.tool_workflows,self.conversations,self.workflow_drafts,self._project_key())
+            if recovery:
+                binding=recovery['specification']
+                prior=self.workflow_drafts.latest(binding)
+                # Do not hide an unrelated pending design or approval.
+                if not prior or prior['state']=='approved':
+                    goal='Complete remaining workflow stages: '+ '; '.join(x['title']+' -> '+x['output'] for x in recovery['remaining'])
+                    goal=goal[:900]
+                    request_id=self.conversations.submit(binding['chat_id'],binding['project'],'chat','Recover blocked tool workflow #'+str(recovery['workflow_id']))
+                    self.workflow_drafts.queue(request_id,binding,goal)
+                    self.workflow_drafts.bind_recovery(request_id,recovery)
+                    self._log(f'JANUS recovery draft #{request_id} queued; checked outputs retained, no replacement command approved.')
+                    self._reload_chat()
+                    return
         # Only previously failed, observed local tests of approved jobs can
         # enter a bounded repair. Every candidate is checked against its grant.
         if self.node_ready and self.node and self.node.poll() is None:
@@ -4718,7 +4738,9 @@ class DeepThorTDesktop(tk.Tk):
                     'Sentinel reviewed this proposal against the stored specification. '
                     'Commands run with your Windows permissions, not in a sandbox. '
                     'Approve this exact sequence?\n\n'+details,parent=self):return
-                updated=freeze(self.tool_learning,self.project,proposal['stages']);updated['specification']=binding
+                recovery=self.workflow_drafts.recovery(previous['request_id'])
+                updated=freeze(self.tool_learning,self.project,proposal['stages'],continuation=bool(recovery));updated['specification']=binding
+                if recovery:updated['recovery']=recovery
                 if not current_source(binding,self.conversations) or updated!=manifest:
                     raise ValueError('Specification, source or tool changed; draft again')
                 ident=self.tool_workflows.approve(manifest,user_approved=True)

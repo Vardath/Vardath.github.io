@@ -62,9 +62,9 @@ def artifact(root,relative):
     return {'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'scope':scope}
 
 
-def freeze(acquisition,project,steps):
+def freeze(acquisition,project,steps,*,continuation=False):
     root=Path(project).resolve(strict=True)
-    if not 2<=len(steps)<=MAX_STAGES:raise ValueError('Workflow requires 2–12 ordered recipes')
+    if not (1 if continuation else 2)<=len(steps)<=MAX_STAGES:raise ValueError('Invalid workflow stage count')
     result=[]
     outputs={}
     protected=set()
@@ -125,9 +125,25 @@ class ToolWorkflows:
                     FOREIGN KEY(workflow_id) REFERENCES tool_workflows(id));
             """)
 
+    def get(self,ident):
+        with self.janus.connect() as db:
+            db.row_factory=sqlite3.Row
+            row=db.execute('SELECT * FROM tool_workflows WHERE id=?',(ident,)).fetchone()
+            return dict(row) if row else None
+
     def approve(self,manifest,*,user_approved=False):
         if user_approved is not True:raise PermissionError('Whole workflow must be explicitly approved')
+        if manifest.get('recovery'):
+            from .workflow_recovery import verify_recovery
+            verify_recovery(self,manifest['recovery'],manifest['project'])
         with self.janus.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if manifest.get('recovery'):
+                parent=manifest['recovery']['workflow_id']
+                # Unique successor even across duplicate UI approval or restart.
+                for existing in db.execute('SELECT manifest FROM tool_workflows WHERE project=?',(manifest['project'],)):
+                    if json.loads(existing[0]).get('recovery',{}).get('workflow_id')==parent:
+                        raise ValueError('A continuation has already been approved for this failed workflow')
             ident=db.execute('INSERT INTO tool_workflows(project,manifest,manifest_sha,created_at) VALUES(?,?,?,?)',
                     (manifest['project'],json.dumps(manifest,ensure_ascii=False),digest(manifest),utc_now())).lastrowid
             db.executemany('INSERT INTO tool_workflow_stages(workflow_id,ordinal) VALUES(?,?)',
@@ -184,6 +200,9 @@ class ToolWorkflows:
                     if conversations is None or not current_source(manifest['specification'],conversations):
                         self.stop(ident)
                         return f'Workflow #{ident}: specification superseded; remaining operations cancelled'
+                if manifest.get('recovery'):
+                    from .workflow_recovery import verify_recovery
+                    verify_recovery(self,manifest['recovery'],run['project'])
                 project=run['project'];rows=self.stages(ident);stages=manifest['stages']
                 if len(rows)!=len(stages):raise ValueError('Workflow stage count changed')
                 prior={}
