@@ -79,7 +79,19 @@ def assess_verification(command: list[str], exit_code: int,
             result.update(assurance='x4_static_xml_passed',
                           reason='X4 local XML/index audit passed; no in-game execution or behavior proven')
     elif godot_editor:
-        result.update(assurance='editor_load_only',reason='Godot editor loaded successfully; no gameplay test proved')
+        from .godot_integration import engine_errors
+        if engine_errors(lines):result.update(accepted=False,assurance='failed',reason='Godot editor reported errors despite zero exit')
+        else:result.update(assurance='editor_load_only',reason='Godot editor loaded successfully; no gameplay test proved')
+    else:
+        from .godot_integration import is_profile,assess,engine_errors
+        if is_profile(command):
+            try:
+                if engine_errors(lines):raise ValueError('Godot reported errors despite zero exit')
+                observed=assess(command,lines)
+                result.update(assurance='godot_scene_instantiated',reason='Declared scene instantiated and processed 12 frames; gameplay not proven',
+                              observed=observed)
+            except (ValueError,TypeError,KeyError) as error:
+                result.update(accepted=False,assurance='failed',reason=str(error))
     return result
 
 
@@ -95,6 +107,11 @@ def attach_verification(snapshot: dict, assessment: dict, command: list[str], *,
         'argv_sha256':hashlib.sha256(json.dumps(command,ensure_ascii=False,
                             separators=(',',':')).encode()).hexdigest(),
     }
+    if assessment['assurance']=='godot_scene_instantiated':
+        if not isinstance(assessment.get('integration'),dict):
+            raise ValueError('Scene integration requires stable project input evidence')
+        result['verification']['integration']=assessment['integration']
+        result['verification']['scene_observed']=assessment['observed']
     if engine_report is not None:
         # Engine inspection is a *separate* static assurance. Include the exact
         # files it examined so later changes invalidate the evidence.

@@ -246,6 +246,8 @@ def recognized_test_command(argv: list[str], project: Path) -> bool:
         return False
     if argv[4:] == ['--editor', '--quit']:
         return True
+    from .godot_integration import recognized
+    if recognized(argv,project):return True
     return (len(argv) == 8 and argv[4:6] == ['-s', 'addons/gut/gut_cmdln.gd']
             and argv[6].startswith('-gdir=res://') and '..' not in argv[6]
             and argv[7] == '-ginclude_subdirs') or (

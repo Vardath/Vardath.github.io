@@ -3052,6 +3052,13 @@ class DeepThorTDesktop(tk.Tk):
                 return [godot,'--headless','--path',str(project),'-s',
                         'addons/gut/gut_cmdln.gd','-gdir='+','.join(dirs),
                         '-ginclude_subdirs','-gexit']
+            # First import/editor pass remains available for a fresh project.
+            # Once the engine has created its local cache, verify the actual
+            # declared scene rather than treating editor startup as runtime.
+            if (project/'.godot').is_dir():
+                from deepthort_local.godot_integration import command
+                try:return command(project,godot)
+                except (ValueError,OSError):pass
             return [godot,'--headless','--path',str(project),'--editor','--quit']
         if (project/'content.xml').is_file():
             # Prefer actual approved tests when present; the independent X4
@@ -5557,6 +5564,9 @@ class DeepThorTDesktop(tk.Tk):
                               if kind=='verification' and job_id is not None else None)
                 regression_scope=None
                 regression_before=None
+                integration_before=None
+                from deepthort_local.godot_integration import is_profile,inputs
+                integration=(kind=='verification' and is_profile(list(cmd)))
                 if kind=='verification' and job_id is not None:
                     from deepthort_local.regression_guard import scope_for,capture
                     current_job=self.jobs.get(job_id)
@@ -5565,6 +5575,7 @@ class DeepThorTDesktop(tk.Tk):
                         raise ValueError('User amended specification before test launch')
                     regression_scope=scope_for(current_job,self.jobs,self.conversations,self.hierarchies,self.specifications)
                     regression_before=capture(regression_scope)
+                    if integration:integration_before=inputs(cwd,list(cmd))
                     record(STATE,'desktop','regression_baseline_captured',job_id=job_id,
                            protected_files=len(regression_before),affected_files=len(regression_scope['affected']),
                            linked_tests_present=len(regression_scope['linked_tests_present']),
@@ -5605,7 +5616,7 @@ class DeepThorTDesktop(tk.Tk):
                     # Bounded network inspection and user-approved third-party setup.
                     # A timed-out installer may have launched child processes; its
                     # receipt remains UNVERIFIED and requires manual inspection.
-                    max_runtime = PLAYTEST_SECONDS if kind=='quiet_playtest' else 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else 7200 if kind=='verification' else None
+                    max_runtime = PLAYTEST_SECONDS if kind=='quiet_playtest' or integration else 90 if inspecting else 3600 if kind in ('reviewed_install','automatic_software') else 7200 if kind=='verification' else None
                     def on_timeout():
                         if proc.poll() is None:
                             if kind=='quiet_playtest':
@@ -5633,7 +5644,7 @@ class DeepThorTDesktop(tk.Tk):
                                         break
                                 elif kind in ('verification','quiet_playtest'):
                                     output_bytes += len(line.encode('utf-8',errors='replace'))
-                                    if kind=='quiet_playtest' and output_bytes>128*1024:
+                                    if (kind=='quiet_playtest' or integration) and (output_bytes>128*1024 or (integration and len(captured)>=300)):
                                         truncated=True
                                         proc.kill()
                                         break
@@ -5648,6 +5659,9 @@ class DeepThorTDesktop(tk.Tk):
                     result['regression_scope']=regression_scope
                     result['regression_before']=regression_before
                     result['regression_after']=capture(regression_scope)
+                if integration_before is not None:
+                    result['integration_before']=integration_before
+                    result['integration_after']=inputs(cwd,list(cmd))
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
@@ -6444,6 +6458,13 @@ class DeepThorTDesktop(tk.Tk):
                             if check is not None:
                                 engine=audit_engine_project(current_job['project'],
                                                             self.jobs.steps(job_id))
+                                if check['assurance']=='godot_scene_instantiated':
+                                    from deepthort_local.godot_integration import current
+                                    integration=verification_output.get('integration_before')
+                                    if (verification_output.get('truncated') or integration!=verification_output.get('integration_after')
+                                        or not current(current_job['project'],integration)):
+                                        raise ValueError('Godot scene integration inputs changed or evidence incomplete')
+                                    check['integration']=integration
                                 snapshot=attach_verification(snapshot,check,
                                     verification_output['argv'],engine_report=engine)
                         except (OSError,ValueError) as exc:

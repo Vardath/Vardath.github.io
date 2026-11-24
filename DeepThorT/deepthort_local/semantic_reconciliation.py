@@ -316,11 +316,21 @@ def verified_sources_current(project: str | Path, steps: list[dict], snapshot: d
             return False
         required={'assurance','test_count','output_sha256','argv_sha256'}
         engine_keys={'engine','engine_sources'}
-        if not required.issubset(evidence) or set(evidence)-required not in (set(),engine_keys):
+        extras=set(evidence)-required
+        integration_keys={'integration','scene_observed'}
+        if not required.issubset(evidence) or extras not in (set(),engine_keys,integration_keys,engine_keys|integration_keys):
             return False
+        if evidence['assurance']=='godot_scene_instantiated':
+            from .godot_integration import current,FRAMES
+            if not integration_keys.issubset(evidence) or not current(project,evidence['integration']):return False
+            observed=evidence['scene_observed']
+            if (not isinstance(observed,dict) or observed.get('frames')!=FRAMES or
+                observed.get('scene')!=evidence['integration']['argv'][-1] or
+                type(observed.get('nodes')) is not int or observed['nodes']<1):return False
+        elif extras&integration_keys:return False
         if evidence['assurance'] not in ('process_exit_only','python_tests_passed',
                                           'dotnet_tests_passed','editor_load_only',
-                                          'godot_gut_tests_passed','x4_static_xml_passed'):
+                                          'godot_gut_tests_passed','x4_static_xml_passed','godot_scene_instantiated'):
             return False
         if (evidence['assurance'] in ('python_tests_passed','dotnet_tests_passed','godot_gut_tests_passed') and
             (not isinstance(evidence['test_count'],int) or evidence['test_count']<1)):
