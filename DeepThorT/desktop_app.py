@@ -276,6 +276,8 @@ class DeepThorTDesktop(tk.Tk):
         self.chats = ChatRegistry(STATE/'chats.sqlite3')
         self.tasks = TaskBoard(STATE/'tasks.sqlite3')
         self.janus = JanusStore(STATE/'janus.sqlite3')
+        from deepthort_local.tool_workflows import ToolWorkflows
+        self.tool_workflows=ToolWorkflows(self.janus)
         self.instruction_inbox = InstructionInbox(STATE/'janus-instruction-inbox-v51.sqlite3')
         self.sentinel = SentinelStore(STATE/'sentinel.sqlite3')
         self.disk_gate = DiskGate(game_names_path=ROOT/'game_executables.txt',game_flag=STATE/'game-active.flag')
@@ -557,6 +559,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Enroll app…',command=self._enroll_learning_tool).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Learn procedure…',command=self._draft_tool_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
         ttk.Button(xr,text='Choose X4 game folder…',command=self._choose_x4_game).pack(side='left',padx=3)
@@ -3191,6 +3194,11 @@ class DeepThorTDesktop(tk.Tk):
                    (self.tool_process, self.install_process, self.media_process))
             or self.janus.status().get('paused')):
             return
+        workflow_message=self.tool_workflows.tick(enabled=True)
+        if workflow_message:
+            self._log(workflow_message)
+            return
+        if self.tool_workflows.busy():return
         # Only previously failed, observed local tests of approved jobs can
         # enter a bounded repair. Every candidate is checked against its grant.
         if self.node_ready and self.node and self.node.poll() is None:
@@ -3358,7 +3366,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _scheduler_once(self):
         if self.__dict__.get('_native_draft_busy'):return
-        tool_busy=(self.__dict__.get('_gui_test_active') is not None or
+        tool_busy=(self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or
                    any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
         model_alive=bool(self.node and self.node.poll() is None)
@@ -4660,6 +4668,51 @@ class DeepThorTDesktop(tk.Tk):
         dialog.grab_set()
         self.wait_window(dialog)
         return approved[0]
+
+    def _tool_workflow_dialog(self):
+        if not self.project:return
+        from deepthort_local.tool_workflows import freeze
+        try:
+            runs=self.tool_workflows.list(self.project)
+            active=[r for r in runs if r['state']=='active']
+            if active:
+                row=active[0]
+                summary='\n'.join(f"Stage {s['ordinal']}: {s['state']}" for s in self.tool_workflows.stages(row['id']))
+                if messagebox.askyesno('Active tool workflow',
+                    f"Workflow #{row['id']}\n{summary}\n\nStop this workflow and cancel its current process?",parent=self):
+                    self.tool_workflows.stop(row['id'])
+                return
+            rows=self.tool_learning.recipes(self.project)
+            if len(rows)<2:raise ValueError('Learn at least two output-producing tool recipes first')
+            choices={r['id']:r for r in rows}
+            text='\n'.join(f"#{r['id']} {r['name']}: {r['title']} → {r['artifact']}" for r in rows[:30])
+            entered=simpledialog.askstring('Compose ordered tool workflow',
+                text+'\n\nEnter 2–12 recipe IDs in order, separated by commas:',parent=self)
+            if not entered:return
+            ids=[int(x.strip()) for x in entered.split(',')]
+            if not 2<=len(ids)<=12 or any(x not in choices for x in ids):raise ValueError('Choose listed recipe IDs')
+            steps=[]
+            for ident in ids:
+                row=choices[ident]
+                inp=''
+                if '{{input}}' in json.loads(row['args_json']):
+                    inp=simpledialog.askstring('Workflow input',
+                        f"Recipe #{ident}: enter an existing project file or an earlier stage's exact output path.",parent=self)
+                    if not inp:return
+                steps.append({'recipe_id':ident,'input':inp})
+            manifest=freeze(self.tool_learning,self.project,steps)
+            details='\n\n'.join(f"{i}. {s['title']}\n{subprocess.list2cmdline(s['argv'])}\nOutput: {s['output']}"
+                for i,s in enumerate(manifest['stages'],1))
+            if not messagebox.askyesno('Approve exact multi-tool workflow',
+                'The following applications will run sequentially with your Windows permissions. '
+                'They are not sandboxed. Each declared output must be new; earlier checked output '
+                'hashes are pinned. Only approve trusted tools and scripts.\n\n'+details,parent=self):return
+            if freeze(self.tool_learning,self.project,steps)!=manifest:
+                raise ValueError('Tool or input changed during approval')
+            ident=self.tool_workflows.approve(manifest,user_approved=True)
+            self._log(f'Approved tool workflow #{ident}; unattended project work must be enabled for dispatch.')
+        except (ValueError,OSError,KeyError,PermissionError) as error:
+            messagebox.showwarning('Workflow unavailable',str(error),parent=self)
 
     def _run_learned_procedure(self):
         if not self.project:

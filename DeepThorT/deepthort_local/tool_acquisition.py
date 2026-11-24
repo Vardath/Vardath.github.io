@@ -578,7 +578,7 @@ class ToolAcquisition:
                 (sha,stamp(),int(recipe_id)))
         return dest
 
-    def _build_recipe_command(self, row: dict, input_file: str='') -> list[str]:
+    def _build_recipe_command(self, row: dict, input_file: str='', *, allow_future_input=False) -> list[str]:
         root=Path(row['project_root']).resolve(strict=True)
         tool=self.tool(row['name'])
         if row['executable_signature']!=tool['executable_signature']:
@@ -602,7 +602,7 @@ class ToolAcquisition:
                 output.append(str(safe_target(root,artifact,must_exist=False)))
             elif arg=='{{input}}':
                 if not input_file:raise ValueError('An input placeholder requires an existing selected file')
-                output.append(str(safe_target(root,input_file,must_exist=True)))
+                output.append(str(safe_target(root,input_file,must_exist=not allow_future_input)))
             elif arg=='{{script}}':
                 if script_file is None:raise ValueError('No approved generated script for this recipe')
                 output.append(str(script_file))
