@@ -254,19 +254,24 @@ def recognized_test_command(argv: list[str], project: Path) -> bool:
             and argv[7:] == ['-ginclude_subdirs', '-gexit'])
 
 
-def authorize_test(folder: Path, job: dict, steps: list[dict],
-                   argv: list[str], *, enabled: bool) -> bool:
+def authorize_verification_sources(folder: Path, job: dict, steps: list[dict], *, enabled: bool) -> bool:
     row = _active(folder, job, steps, enabled)
     if job.get('state') != 'waiting_verification' or not steps or any(
             step.get('state') != 'saved' for step in steps):
         raise GrantError('File stages are not all saved and awaiting verification')
     project = Path(job['project']).resolve(strict=True)
-    if not recognized_test_command(argv, project):
-        raise GrantError('Test command does not match a fixed supported profile')
     for entry in row['files']:
         target = _safe_auto_path(project, entry['path'])[1]
         if not entry.get('written_sha256') or _sha(target) != entry['written_sha256']:
             raise GrantError('A generated source file changed or lacks saved-file evidence')
+    return True
+
+
+def authorize_test(folder: Path, job: dict, steps: list[dict],
+                   argv: list[str], *, enabled: bool) -> bool:
+    authorize_verification_sources(folder,job,steps,enabled=enabled)
+    if not recognized_test_command(argv,Path(job['project']).resolve(strict=True)):
+        raise GrantError('Test command does not match a fixed supported profile')
     return True
 
 

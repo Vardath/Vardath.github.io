@@ -71,3 +71,7 @@ New Python files that exceed one-pass prompt capacity or exhaust reviewed genera
 ## Structured new-file decomposition
 
 New XML/SVG, JSON and TOML files now support model-authored ordered units after bounded whole-file generation fails. XML uses an exact model-proposed root envelope, with complete child fragments, preserving namespaces and attributes. JSON checks duplicate keys and merges same-kind root fragments; TOML validates each fragment and the entire assembled document. Every unit and complete result is reviewed, and normal authorized staged-source save/verification still applies. Tests added; live Windows inference remains unverified.
+
+## Missing fixed verifier recovery
+
+An approved verification waiting job now detects missing Godot, npm/Node.js or dotnet executables from the fixed verification profile. With its source grant intact and selected project matching, it first requests an independent catalog probe. Only fresh absence evidence and standing catalog policy permit installation, using the existing cooldown and native UAC. A verified existing binary can restore session discovery; unsupported catalog tools remain blocked instead of invoking model-selected commands. Source remains unchanged while tool acquisition is pending. The 12 source decomposition tests passed against exact repository blobs at 221e53e3; new verifier recovery tests are committed, not yet executed. Windows end-to-end verification is outstanding.

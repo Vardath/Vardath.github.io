@@ -175,6 +175,7 @@ class DeepThorTDesktop(tk.Tk):
         self._auto_tool_queue = []
         self._auto_tool_active = None
         self._auto_tool_waiting = []
+        self._verifier_recovery_notes={}
         self._tool_verification = ToolVerificationStore(STATE/'tool-verification-v43.json')
         self._tool_probe_queue = []
         self._tool_probe_active = None
@@ -3172,6 +3173,7 @@ class DeepThorTDesktop(tk.Tk):
             or self.__dict__.get('_gui_test_active') is not None
             or self._auto_verification_in_flight is not None
             or self._auto_tool_active is not None or bool(self._auto_tool_queue)
+            or self._tool_probe_active is not None or bool(self._tool_probe_queue)
             or self.active_job is not None or self.active_conversation is not None
             or self.disk_gate.gaming()
             or any(p and p.poll() is None for p in
@@ -3198,9 +3200,14 @@ class DeepThorTDesktop(tk.Tk):
             if self._block_superseded_build(job):continue
             project=Path(job['project'])
             cmd=self._verification_command(project)
+            steps=self.jobs.steps(job['id'])
+            from deepthort_local.verifier_recovery import missing_verifier
+            missing=missing_verifier(project,cmd)
+            if missing:
+                self._recover_missing_verifier(job,steps,missing)
+                continue
             if not cmd:
                 continue
-            steps=self.jobs.steps(job['id'])
             lease=None
             try:
                 authorize_test(STATE/'project-grants',job,steps,list(cmd),enabled=True)
@@ -3249,6 +3256,47 @@ class DeepThorTDesktop(tk.Tk):
                       'running under a job-bound fixed command; not yet verified.')
             self._refresh_jobs()
             return
+
+    def _recover_missing_verifier(self,job,steps,name):
+        from deepthort_local.project_authority import authorize_verification_sources
+        from deepthort_local.verifier_recovery import recovery_action,install_plan
+        if os.name!='nt':return
+        if str(self.project)!=job['project']:return
+        try:
+            authorize_verification_sources(STATE/'project-grants',job,steps,enabled=self._project_work_is_enabled())
+            if self._superseded_build(job):return
+            receipt=self._tool_verification.get(name)
+            action,reason=recovery_action(name,self._autonomy_policy,self._auto_tool_history,receipt)
+            note=(name,action,reason)
+            if self._verifier_recovery_notes.get(job['id'])!=note:
+                self._verifier_recovery_notes[job['id']]=note
+                self._log(f"Job #{job['id']}: missing verification tool {name}; {reason}. Source remains unchanged.")
+                record(STATE,'desktop','verifier_recovery',job_id=job['id'],tool=name,action=action)
+            if action=='probe':
+                self._queue_catalog_verification(name,project=job['project'])
+            elif action=='install':
+                plan=install_plan(name,job['project'],self._autonomy_policy,self._auto_tool_history,
+                                  receipt,which=shutil.which)
+                if not self._auto_tool_active and len(self._auto_tool_queue)<12 and not any(
+                        p['package_id']==plan['package_id'] for p in self._auto_tool_queue):
+                    self._auto_tool_queue.append(plan)
+            elif action=='restore':
+                current=self._tool_verification.current(name)
+                if not current:
+                    # Changed binary must receive another real capability probe.
+                    self._queue_catalog_verification(name,project=job['project'])
+                    return
+                exe=Path(current['executable'])
+                folder=str(exe.parent)
+                entries=os.environ.get('PATH','').split(os.pathsep)
+                if folder.casefold() not in {p.casefold() for p in entries}:
+                    os.environ['PATH']=os.pathsep.join([*entries,folder])
+                if name=='Godot':os.environ['GODOT_EXECUTABLE']=str(exe)
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            note=(name,'blocked',str(error)[:250])
+            if self._verifier_recovery_notes.get(job['id'])!=note:
+                self._verifier_recovery_notes[job['id']]=note
+                self._log(f"Job #{job['id']}: verifier recovery blocked: {error}")
 
     def _verify_build(self):
         if self.__dict__.get('_quiet_test_active') is not None or self.__dict__.get('_gui_test_active') is not None:
@@ -4291,6 +4339,7 @@ class DeepThorTDesktop(tk.Tk):
         if (self.queue_paused or self.__dict__.get('_quiet_test_active') is not None
             or self.__dict__.get('_gui_test_active') is not None or self._auto_tool_active or
             getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
+            self.active_job is not None or self.active_conversation is not None or self._tool_probe_active is not None or
             self.disk_gate.gaming()):return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
