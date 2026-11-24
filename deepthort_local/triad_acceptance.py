@@ -4,7 +4,7 @@ import threading
 from .triad_profiles import PROFILES
 
 def resident_roles(health,pid):
-    if not isinstance(health,dict) or health.get('pid')!=pid or health.get('ready') is not True or health.get('offline') is not True:
+    if not isinstance(health,dict) or health.get('pid')!=pid or health.get('ready') is not True or health.get('offline') is not True or health.get('backend')!='native-openvino-ir-cpu':
         raise ValueError('Triad broker not ready or not the supervised child')
     models=health.get('models')
     if not isinstance(models,dict) or set(models)!=set(PROFILES):raise ValueError('Three model records required')

@@ -1,21 +1,21 @@
 """Triad setup diagnostics; read only."""
 from pathlib import Path
-from .triad_profiles import PROFILES,model_path,runtime_path,ready
-MODEL_RELPATH=Path('models/triad')/PROFILES['implementation'][2]
-MIN_MODEL_BYTES=PROFILES['implementation'][4]
+from .triad_profiles import PROFILES,model_path,runtime_path,ready,total_weights
+MODEL_RELPATH=Path('models/triad-openvino/implementation/openvino_model.bin')
+MIN_MODEL_BYTES=PROFILES['implementation'][3]
 def inspect_local_setup(root:Path,*,node_path=None):
     root=Path(root)
-    size=sum(model_path(r,root).stat().st_size for r in PROFILES if model_path(r,root).is_file())
+    size=sum((model_path(r,root)/'openvino_model.bin').stat().st_size for r in PROFILES if (model_path(r,root)/'openvino_model.bin').is_file())
     components={'node':True,'transformers':runtime_path(root).is_file(),'model':ready(root),'server':(root/'triad_server.py').is_file()}
     return {'ready_to_launch':all(components.values()),'components':components,
-            'issues':[] if all(components.values()) else ['Install all three verified GGUF files and the pinned CPU runtime.'],
-            'model_size_bytes':size,'model_path':str(root/'models/triad'),'node_path':'Python broker'}
+            'issues':[] if all(components.values()) else ['Install all three verified OpenVINO IR files and the pinned CPU runtime.'],
+            'model_size_bytes':size,'model_path':str(root/'models/triad-openvino'),'node_path':'Python broker'}
 def format_diagnostic(info: dict, *, model_running: bool, model_ready: bool,
                       model_loading: bool, queued: int, recent_logs: list[str] | None = None, loading_seconds: int = 0) -> str:
     if model_ready and model_running:
         condition = 'AI is responding on the supervised local server.'
     elif model_loading and model_running:
-        condition = 'AI process started; local GGUF weights are loading. This can be slow at a 30% CPU limit.'
+        condition = 'AI process started; local OpenVINO IR weights are loading. This can be slow at a 30% CPU limit.'
     elif model_running:
         condition = 'AI process is running but has not passed its local health check.'
     else:
@@ -24,7 +24,7 @@ def format_diagnostic(info: dict, *, model_running: bool, model_ready: bool,
              f'Waiting chat/jobs: {queued}',
              f'Python broker: {"available" if info["components"]["node"] else "missing"}',
              f'Triad CPU runtime: {"available" if info["components"]["transformers"] else "missing"}',
-             f'Model weights: {info["model_size_bytes"] / 1e9:.2f} GB / three model files',
+             f'Model weights: {info["model_size_bytes"] / 1e9:.2f} GB / three native IR model directories',
              f'Inference script: {"available" if info["components"]["server"] else "missing"}', '']
     if model_loading and model_running:
         elapsed=max(0,int(loading_seconds))

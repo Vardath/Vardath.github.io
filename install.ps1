@@ -1,5 +1,2 @@
-$ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
-& py -3 .\download_model.py
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-Write-Host 'Triad installed. Start via py -3 .\desktop_launcher.py'
+Write-Host 'Start Triad using START TRIAD.cmd and click Install AI. Installation is performed inside the shared capped desktop job.'

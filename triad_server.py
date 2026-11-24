@@ -1,4 +1,4 @@
-"""Three resident CPU GGUF processes, all-or-nothing readiness, no swapping."""
+"""Three resident native OpenVINO CPU processes, all-or-nothing readiness, no swapping."""
 import json
 import os
 import secrets
@@ -28,19 +28,8 @@ def validate(body,default):
     return role,[{'role':m['role'],'content':m['content']} for m in messages],tokens
 
 def command(role,port,key):
-    return [str(runtime_path()),'--model',str(model_path(role)),'--alias',role,
-            '--host','127.0.0.1','--port',str(port),'--api-key',key,
-            '--ctx-size','4096','--threads','2','--threads-batch','2','--parallel','1',
-            '--n-gpu-layers','0','--load-mode','none','--batch-size','128','--ubatch-size','64','--jinja','--no-webui']
-
-def verify_cli(help_text):
-    import re
-    required=[x for x in command('implementation',1,'redacted') if x.startswith('--')]
-    missing=[x for x in required if not re.search(r'(?<![\w-])'+re.escape(x)+r'(?![\w-])',help_text)]
-    if missing:raise RuntimeError('Pinned runtime does not advertise required flags: '+', '.join(missing))
-    if not re.search(r'(?<![\w-])none(?![\w-])',help_text):
-        raise RuntimeError('Runtime does not advertise non-mapped loading mode')
-    return True
+    if role not in PROFILES:raise ValueError('Unknown role')
+    return [str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),role,str(port),key]
 
 def admission(cap,available,total,weights):
     # Minimum allowance for all weights plus modest runtime overhead.
@@ -70,35 +59,29 @@ class Pool:
         self.set_stage(f'Triad memory: job cap {cap/2**30:.2f} GiB; free RAM {available/2**30:.2f} GiB; weights {weights/2**30:.2f} GiB')
         admission(cap,available,total,weights)
         logs=ROOT/'state'/'logs'
-        # Probe the installed native executable before allocating any weights.
-        # Same root cap and nested cleanup as the real model processes.
-        self.set_stage('Checking native CPU runtime version')
-        with child_server([str(runtime_path()),'--version'],runtime_path().parent,logs/'triad-runtime-version.log') as (_,alive):
-            deadline=time.monotonic()+60
+        self.set_stage('Checking installed native OpenVINO CPU runtime')
+        with child_server([str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),'--probe'],ROOT,logs/'triad-runtime-version.log') as (_,alive):
+            deadline=time.monotonic()+120
             while alive() and time.monotonic()<deadline:time.sleep(.25)
-            if alive():raise RuntimeError('Native version check timed out')
-            if alive.code()!=0:raise RuntimeError('Native runtime failed before loading weights: '+alive.failure())
-        # Sequential startup only, NOT sequential inference or unloading.
-        # Check exact installed CLI before allocating any model. No unsafe
-        # fallback to mapped weights or unbounded loading.
-        with child_server([str(runtime_path()),'--help'],runtime_path().parent,logs/'triad-runtime-help.log') as (_,alive):
-            deadline=time.monotonic()+60
-            while alive() and time.monotonic()<deadline:time.sleep(.25)
-            if alive():raise RuntimeError('Native help check timed out')
-            if alive.code()!=0:raise RuntimeError('Native help failed: '+alive.failure())
-        help_text=(logs/'triad-runtime-help.log').read_text(encoding='utf-8',errors='replace')
-        verify_cli(help_text)
+            if alive():raise RuntimeError('OpenVINO CPU probe timed out')
+            if alive.code()!=0:raise RuntimeError('OpenVINO probe failed: '+alive.failure())
+        # Sequential initialization, simultaneous resident model processes.
         for role,p in PROFILES.items():
             self.set_stage('Loading '+role+': '+p[0])
             port=free_port();key=secrets.token_hex(32)
-            pid,alive=stack.enter_context(child_server(command(role,port,key),runtime_path().parent,logs/f'triad-{role}-native.log'))
+            pid,alive=stack.enter_context(child_server(command(role,port,key),ROOT,logs/f'triad-{role}-native.log'))
             self.children[role]=(port,key,pid,alive)
             deadline=time.monotonic()+900
             while time.monotonic()<deadline:
                 for name,c in self.children.items():
                     if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure())
                 try:
-                    if request(port,'/health',key).get('status')=='ok':break
+                    value=request(port,'/health',key)
+                    actual_pid=value.get('pid')
+                    if (value.get('status')=='ok' and value.get('role')==role
+                            and value.get('backend')=='native-openvino-ir-cpu' and alive.member(actual_pid)):
+                        self.children[role]=(port,key,actual_pid,alive)
+                        break
                 except (OSError,ValueError):pass
                 time.sleep(1)
             else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')
@@ -112,13 +95,14 @@ class Pool:
             if not self.healthy():raise RuntimeError('Resident model exited')
             result=request(port,'/v1/chat/completions',key,
                 {'model':role,'messages':messages,'max_tokens':tokens,'temperature':0,'stream':False,
-                 'chat_template_kwargs':{'enable_thinking':False}},timeout=3600)
+                 },timeout=3600)
+            if result.get('model')!=role:raise ValueError('Worker role mismatch')
             answer=result['choices'][0]['message']['content']
             if not isinstance(answer,str) or not answer.strip():raise ValueError('Model returned no final text')
             if not self.healthy():raise RuntimeError('A resident model exited during inference')
             return answer
     def status(self,council):
-        return {'model':MODEL_ID,'offline':True,'ready':self.healthy(),
+        return {'model':MODEL_ID,'backend':'native-openvino-ir-cpu','offline':True,'ready':self.healthy(),
             'role':'council' if council else 'implementation','pid':os.getpid(),
             'phase':'ready' if self.healthy() else 'loading','stage':self.stage,
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),

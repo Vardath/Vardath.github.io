@@ -105,11 +105,11 @@ from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = '#121822','#1b2532','#182333','#e8eef8','#a9b6c8','#6fb7ff'
 GREEN, YELLOW = '#79cfad','#ffcd78'
-MAX_INFERENCE_PROMPT = 7500  # current GGUF endpoint requires <=8000 / message
+MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
 
 
 def local_server_status(timeout=1.3):
-    """Fetch actual local GGUF readiness/stage without accepting cloud addresses."""
+    """Fetch actual local OpenVINO IR readiness/stage without accepting cloud addresses."""
     try:
         opener = build_opener(ProxyHandler({}))
         with opener.open(Request('http://127.0.0.1:8765/health',headers={'Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']}), timeout=timeout) as r:
@@ -219,7 +219,7 @@ class DeepThorTDesktop(tk.Tk):
         self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
-        # A cancelled reply must release the single-flight GGUF worker before
+        # A cancelled reply must release the single-flight OpenVINO IR worker before
         # another chat can run. Restart is requested only for this intervention.
         self._restart_cancelled_node_pid = None
         self._explicit_model_stop = False
@@ -335,7 +335,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(3000, self._refresh_janus_view)
         self.after(3900, self._council_tick)
         self.protocol('WM_DELETE_WINDOW',self._quit)
-        self._log('Desktop opened. Local GGUF only. Routine catalog tool management: '+
+        self._log('Desktop opened. Native OpenVINO text inference only. Routine catalog tool management: '+
                   ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
                   '; bounded project work: '+('ENABLED' if self._project_policy['enabled'] else 'OFF')+
                    '; arbitrary scripts and third-party installations remain controlled.')
@@ -820,7 +820,7 @@ class DeepThorTDesktop(tk.Tk):
 
         def janus_core_probe():
             # Independent of the neural council. The persistent 11-core JANUS
-            # execution coordinator can be paused while both GGUF models work.
+            # execution coordinator can be paused while all three OpenVINO IR models work.
             # Report the actual SQLite pause flag rather than guessing from
             # a stale cycle. No state is changed by this read-only check.
             from datetime import datetime, timezone
@@ -898,7 +898,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         self._latest_test_cancel.set()
         self._latest_test_stage='stop requested'
-        self._log('Latest test stop requested. An in-flight bounded GGUF health call may still finish before the report is saved.')
+        self._log('Latest test stop requested. An in-flight bounded OpenVINO IR health call may still finish before the report is saved.')
 
     def _council_status(self):
         proc=self.council_node
@@ -918,7 +918,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         if self.council_node and self.council_node.poll() is None:
             if self.council_ready:
-                messagebox.showinfo('JANUS model ready','Secondary GGUF is already available.',parent=self)
+                messagebox.showinfo('JANUS model ready','Secondary OpenVINO IR is already available.',parent=self)
                 return
             self.council_node.terminate()
             self.council_node=None
@@ -926,7 +926,7 @@ class DeepThorTDesktop(tk.Tk):
         self._last_council_health=None
         self._council_restarts=0
         self._council_retry_at=time.monotonic()+3
-        self._log('Manual council GGUF retry requested; '+self._council_status())
+        self._log('Manual council OpenVINO IR retry requested; '+self._council_status())
         self.status.set(self._council_status())
 
     def _chat_line(self,role,message):
@@ -1121,9 +1121,9 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Closed chat reopened; its existing history was preserved.')
 
     def _interrupt_cancelled_inference(self):
-        """Terminate supervised single-flight GGUF inference and reload it once.
+        """Terminate supervised single-flight OpenVINO IR inference and reload it once.
 
-        A Python HTTP request cannot cancel a running GGUF generator. Killing its
+        A Python HTTP request cannot cancel a running OpenVINO IR generator. Killing its
         supervised server/worker is the real interruption boundary; a new server
         will be started *after* the old process exits, never concurrently.
         """
@@ -1140,8 +1140,8 @@ class DeepThorTDesktop(tk.Tk):
             proc.terminate()
         except OSError as exc:
             self._restart_cancelled_node_pid=None
-            self._log('Could not stop GGUF worker: '+str(exc))
-            self._set_connection_status('GGUF cancellation failed; use Stop AI and inspect Processes.')
+            self._log('Could not stop OpenVINO IR worker: '+str(exc))
+            self._set_connection_status('OpenVINO IR cancellation failed; use Stop AI and inspect Processes.')
 
     def _cancel_chat_replies(self, chat_id, *, reason):
         active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
@@ -1172,7 +1172,7 @@ class DeepThorTDesktop(tk.Tk):
         running=bool(active and active['chat_id']==chat_id)
         pending=any(r['state'] in ('pending','running','waiting_sources')
                     for r in self.conversations.thread(chat_id,limit=1000))
-        detail=(' Its outstanding replies will be stopped, including current GGUF generation. '
+        detail=(' Its outstanding replies will be stopped, including current OpenVINO IR generation. '
                 'The model must reload before other chats can proceed.' if running else
                 ' Its queued replies will be cancelled.' if pending else '')
         if not messagebox.askyesno('Close chat',
@@ -1440,7 +1440,7 @@ class DeepThorTDesktop(tk.Tk):
             stage=self.reply_stage or 'Preparing local request'
             health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
             if health.get('inference_busy') and stage.startswith('Waiting for local model'):
-                stage='Local GGUF model is generating a response (output is unavailable until completion)'
+                stage='Local OpenVINO IR model is generating a response (output is unavailable until completion)'
             current_chat=bool(req and req['chat_id']==self.current_chat)
             prefix='' if current_chat else 'Other chat — '
             # One concise line; the original label must not grow vertically.
@@ -1573,7 +1573,7 @@ class DeepThorTDesktop(tk.Tk):
         self._clear_imported_specification()
         # JANUS's existing Front/Interface can report observed project state
         # without claiming to be a second language model. Explicitly addressed
-        # chat requests bypass the occupied GGUF worker and work queue.
+        # chat requests bypass the occupied OpenVINO IR worker and work queue.
         if kind=='chat' and addressed_to_janus(prompt) and not attachments:
             try:
                 actions=self.janus.actions(limit=1)
@@ -1612,7 +1612,7 @@ class DeepThorTDesktop(tk.Tk):
         # Software provisioning begins only after approval of a real build job,
         # not when merely asking for a draft plan or revising a prompt.
         # First read-only discovery starts on the user's INITIAL prompt, even if
-        # the local GGUF model is still loading. The original request is retained.
+        # the local OpenVINO IR model is still loading. The original request is retained.
         if project_kind(prompt)=='x4' or x4_request_in_context(
                 prompt,project_dir=self._project_key(),
                 previous_prompts=[r['prompt'] for r in self.conversations.thread(self.current_chat,10)]):
@@ -1907,7 +1907,7 @@ class DeepThorTDesktop(tk.Tk):
             if self._quitting:return
             proc=self.council_node
             if proc and proc.poll() is not None:
-                self._log(f'Secondary GGUF exited ({proc.poll()}); instructions remain durable.')
+                self._log(f'Secondary OpenVINO IR exited ({proc.poll()}); instructions remain durable.')
                 self.council_node=None;self.council_ready=False
                 self._last_council_health=None
                 self._council_restarts+=1
@@ -2177,7 +2177,7 @@ class DeepThorTDesktop(tk.Tk):
                 'approved verification check succeeds.\n\n'
                 'Queue this milestone? With unattended project work enabled, this approval '
                  'authorizes reversible writes for these exact planned files and fixed local '
-                 'tests plus up to two bounded GGUF repairs (maximum three tests). '
+                 'tests plus up to two bounded OpenVINO IR repairs (maximum three tests). '
                 'Tests run generated code with your Windows user rights. Switch unattended work OFF in Work queue before approval to keep per-file/test '
                  'confirmations. Tool installs follow a separate policy and normal UAC.',parent=self):
                 self._log(f'Milestone {ordinal}: user declined approval; no files changed.')
@@ -2656,18 +2656,18 @@ class DeepThorTDesktop(tk.Tk):
                note='Model exit cause is not established by an HTTP reset')
         if count > 2:
             self._conversation_error(ident,
-                'GGUF connection failed repeatedly; stopped after two supervised recovery attempts. '
+                'OpenVINO IR connection failed repeatedly; stopped after two supervised recovery attempts. '
                 'Inspect Processes and export diagnostics. Last transport error: '+str(error)[:180])
             return
         self.conversations.change(ident, 'pending',
-            f'GGUF connection interrupted ({error_type}); saved exchanges will resume when '
+            f'OpenVINO IR connection interrupted ({error_type}); saved exchanges will resume when '
             'the local model is ready. No new build authorization.', allowed=('running',))
         if self.active_conversation == ident:
             self.active_conversation = None
             self.reply_stage = ''
         self.node_ready = False
         self._model_transport_waiting = True
-        self._log(f'Conversation #{ident}: local GGUF transport reset, recovery {count}/2. '
+        self._log(f'Conversation #{ident}: local OpenVINO IR transport reset, recovery {count}/2. '
                   'Request retained; waiting for a healthy, idle supervised worker.')
         self._reload_chat(); self._render_reply_notice()
         # A still-live worker may be finishing the old request; only the health
@@ -2682,7 +2682,7 @@ class DeepThorTDesktop(tk.Tk):
         if isinstance(health, dict) and health.get('ready') and not health.get('inference_busy'):
             self._model_transport_waiting = False
             self.node_ready = True
-            self._log('GGUF worker verified healthy and idle after transport interruption; '
+            self._log('OpenVINO IR worker verified healthy and idle after transport interruption; '
                       'resuming saved planning requests.')
         elif isinstance(health, dict) and health.get('inference_busy'):
             self.after(5000, self._resume_transport_if_idle)
@@ -2829,7 +2829,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Job #{ident}: cancelled local test; local Triad stays running.')
         elif job['state']=='running' and self.active_job==ident:
             if not messagebox.askyesno('Cancel local inference',
-                    'Cancel this active job? The GGUF worker will stop, but previous '
+                    'Cancel this active job? The OpenVINO IR worker will stop, but previous '
                     'approved files and backups remain.',parent=self):
                 return
             cycle=self.cycles.get(ident)
@@ -3217,13 +3217,13 @@ class DeepThorTDesktop(tk.Tk):
             raise
         if lease:self._graph_repair_leases[jobid]=lease
         if not self.jobs.change(jobid,'running',
-                'Diagnosing test failure with local GGUF (bounded repair)',
+                'Diagnosing test failure with local OpenVINO IR (bounded repair)',
                 allowed=('waiting_repair',)):
             self.cycles.block(jobid,'Repair was not claimed by the expected job state')
             raise CycleError('Repair job state changed before generation')
         self.active_job=jobid
         self.active_started=time.monotonic()
-        self._log(f"Job #{jobid}: local GGUF repair {cycle['repairs']+1}/{MAX_REPAIR_ATTEMPTS} "
+        self._log(f"Job #{jobid}: local OpenVINO IR repair {cycle['repairs']+1}/{MAX_REPAIR_ATTEMPTS} "
                   f"after test {cycle['tests']}/{MAX_TEST_ATTEMPTS}. "
                   'Only exact approved file replacements can be saved.')
         self._refresh_jobs()
@@ -3367,7 +3367,7 @@ class DeepThorTDesktop(tk.Tk):
         if lease:
             try:self.graphs.finish_action(lease,jobid,'blocked')
             except GraphError:pass
-        self._block_repair(jobid,'Local GGUF repair failed: '+str(message)[:350])
+        self._block_repair(jobid,'Local OpenVINO IR repair failed: '+str(message)[:350])
         self._refresh_jobs()
 
     def _block_repair(self,jobid,reason):
@@ -4988,7 +4988,7 @@ class DeepThorTDesktop(tk.Tk):
             self._reload_chat()
             self.reply_outcome=None
             self._render_reply_notice()
-            self._log(f'Tool learning request #{ident} queued for local GGUF; no tool has run.')
+            self._log(f'Tool learning request #{ident} queued for local OpenVINO IR; no tool has run.')
             self.tabs.select(0)
         except (ValueError,OSError,PermissionError) as exc:
             messagebox.showwarning('Cannot draft tool procedure',str(exc),parent=self)
@@ -5464,7 +5464,7 @@ class DeepThorTDesktop(tk.Tk):
     def _approve_inspected_install(self):
         """Separate explicit approval for one exact-version community catalog install.
 
-        No local GGUF/LLM model text can authorize this action. The inspection
+        No local OpenVINO IR/LLM model text can authorize this action. The inspection
         must come from the current desktop session and remain fresh. This does
         not independently authenticate a publisher or attest the installer.
         """
@@ -5968,7 +5968,7 @@ class DeepThorTDesktop(tk.Tk):
             report+='\nJANUS/SENTINEL CHECK: diagnostic unavailable: '+str(exc)
         local_status=local_server_status(timeout=0.75)
         if isinstance(local_status,dict) and self.node_loading:
-            report += ('\n\nGGUF WORKER STATUS (direct localhost measurement)\n'
+            report += ('\n\nOpenVINO IR WORKER STATUS (direct localhost measurement)\n'
                 + 'Phase: '+str(local_status.get('phase') or 'unknown')+'\n'
                 + 'Stage: '+str(local_status.get('stage') or 'unknown')+'\n'
                 + 'Time since model initialization began: '+str(local_status.get('loading_seconds',0))+'s\n'
@@ -6009,7 +6009,7 @@ class DeepThorTDesktop(tk.Tk):
         if self.disk_gate.gaming():
             messagebox.showwarning('Game active','Finish gaming before installation and downloading.');return
         if not messagebox.askyesno('Approve Triad installation',
-             'Download the three SHA256-verified GGUF models (~8.91 GB) and pinned CPU runtime?\n'
+             'Download the three publisher-hash-verified OpenVINO IR models (~7.58 GB) and pinned CPU runtime?\n'
              'Files stay in this separate Triad folder. Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
         def worker():
@@ -6060,7 +6060,7 @@ class DeepThorTDesktop(tk.Tk):
             self.last_ai_error=''
             self.model_status.set('AI: loading…')
             self._set_connection_status('AI loading under 30% CPU cap. Conversations stay separate from approved jobs.')
-            self._log('Starting three resident GGUF models, CPU-only, shared 30% cap.')
+            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 30% cap.')
             process=self.node
             def output():
                 try:
@@ -6108,7 +6108,7 @@ class DeepThorTDesktop(tk.Tk):
         elif self.node_loading:
             elapsed = max(0, int(time.monotonic()-self.node_started)) if self.node_started else 0
             self.model_status.set(f'AI: loading {elapsed//60}m {elapsed%60:02d}s')
-            stage=(self.current_loading_stage or 'Waiting for local GGUF status')[:150]
+            stage=(self.current_loading_stage or 'Waiting for local OpenVINO IR status')[:150]
             if elapsed >= 180:
                 self._set_connection_status(
                     f'AI loading {elapsed//60}m {elapsed%60:02d}s — {stage}. '
@@ -6177,9 +6177,9 @@ class DeepThorTDesktop(tk.Tk):
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
               f"Isolated GUI: {'running' if self._gui_test_active else 'inactive'}; separate desktop, project-owned window metadata only\n"
-              f"GPU: CPU-only GGUF inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
+              f"GPU: CPU-only OpenVINO IR inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
-              f'Last actual GGUF stage: {(self.current_loading_stage or "none observed")[:200]}\n'
+              f'Last actual OpenVINO IR stage: {(self.current_loading_stage or "none observed")[:200]}\n'
               'Inference output is only known at completion; no fictitious token progress.')
         gui_history=self.gui_tests.snapshot()['history']
         if gui_history:
@@ -6387,16 +6387,16 @@ class DeepThorTDesktop(tk.Tk):
                         self._render_reply_notice()
                 is_ready=(bool(detail.get('ready')) if isinstance(detail,dict) else bool(event[1]))
                 if isinstance(detail,dict) and not is_ready and self.node_loading:
-                    stage=str(detail.get('stage') or 'Initializing local GGUF model')[:240]
+                    stage=str(detail.get('stage') or 'Initializing local OpenVINO IR model')[:240]
                     self.current_loading_stage=stage
                     if stage!=self._last_health_stage:
                         self._last_health_stage=stage
-                        self._log('GGUF startup stage: '+stage)
+                        self._log('OpenVINO IR startup stage: '+stage)
                     if detail.get('stalled'):
-                        self._set_connection_status('GGUF has not reported a new stage for over four minutes. '
+                        self._set_connection_status('OpenVINO IR has not reported a new stage for over four minutes. '
                           'This does not prove a crash; inspect CPU/RAM in Processes, or Stop AI and diagnose.')
                     if detail.get('phase')=='failed':
-                        self.last_ai_error=str(detail.get('error') or 'GGUF worker failure')
+                        self.last_ai_error=str(detail.get('error') or 'OpenVINO IR worker failure')
                 if is_ready and self.node and self.node.poll() is None and self._restart_cancelled_node_pid is None:
                     newly_ready=not self.node_ready
                     if newly_ready:
@@ -6420,7 +6420,7 @@ class DeepThorTDesktop(tk.Tk):
                     self.node_ready=False;self.node_loading=False;self.node_started=0.0
                     self.model_status.set('AI: restarting after reply cancellation')
                     self._set_connection_status('Reply stopped. Reloading local AI for other queued chats.')
-                    self._log('Cancelled GGUF worker exited; starting a fresh supervised model for other chats.')
+                    self._log('Cancelled OpenVINO IR worker exited; starting a fresh supervised model for other chats.')
                     if not self._quitting:
                         self.after(350,lambda:self._start_ai(automatic=True))
                     continue
@@ -6455,22 +6455,22 @@ class DeepThorTDesktop(tk.Tk):
                     self._unexpected_model_exits += 1
                     if self._unexpected_model_exits <= 2:
                         self._set_connection_status(
-                            f'GGUF exited unexpectedly; supervised restart '
+                            f'OpenVINO IR exited unexpectedly; supervised restart '
                             f'{self._unexpected_model_exits}/2 is scheduled. '
                             'Progress and completed passes remain saved.')
-                        self._log('Unexpected local GGUF exit; attempting bounded, '
+                        self._log('Unexpected local OpenVINO IR exit; attempting bounded, '
                                   'game-capped relaunch without changing the 40-pass budget.')
                         self.after(5000,lambda:self._start_ai(automatic=True)
                                    if not self._explicit_model_stop and not self._quitting else None)
                     else:
-                        self._set_connection_status('Repeated GGUF exits: automatic restart stopped. '
+                        self._set_connection_status('Repeated OpenVINO IR exits: automatic restart stopped. '
                           'Inspect model, RAM/commit limit and Windows events; no result was fabricated.')
-                        self._log('GGUF restarted twice but continued exiting; stopped automatically.')
+                        self._log('OpenVINO IR restarted twice but continued exiting; stopped automatically.')
             elif kind=='install_done':
                 self.installing=False;self.model_status.set('AI: installed')
                 self._log('Local AI installed. Starting the model now.')
                 self._auto_start_if_installed()
-                messagebox.showinfo('Installed','GGUF coding model installed. DeepThorT is starting the model automatically; your queued chat will resume when ready.')
+                messagebox.showinfo('Installed','OpenVINO IR coding model installed. DeepThorT is starting the model automatically; your queued chat will resume when ready.')
             elif kind=='install_error':
                 self.installing=False;self.model_status.set('AI: installation failed')
                 self._log('Installation failed: '+event[1]);messagebox.showerror('Install failed',event[1])
@@ -6638,7 +6638,7 @@ class DeepThorTDesktop(tk.Tk):
                     elif was_auto_verification and cycle_result and cycle_result['phase']=='repair_ready':
                         self.jobs.change(job_id,'waiting_repair',
                             f'Test {cycle_result["tests"]}/{MAX_TEST_ATTEMPTS} failed; '
-                            'bounded local GGUF repair available (not yet executed)',
+                            'bounded local OpenVINO IR repair available (not yet executed)',
                             allowed=('running',))
                         self._log(f'Job #{job_id}: test failure recorded; next idle step may '
                                   'propose one bounded repair. See Work queue evidence.')

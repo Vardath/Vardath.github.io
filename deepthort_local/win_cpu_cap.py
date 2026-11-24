@@ -162,8 +162,16 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         if not ok:
             raise OSError(ctypes.get_last_error(), f"{action} failed. Child will not run without CPU cap")
 
-    job = create_job(None, None)
+    # A named, unpredictable root is needed by nested resident workers.
+    # QueryInformationJobObject(NULL) would otherwise report the innermost
+    # cleanup job rather than this actual shared CPU/memory budget.
+    import secrets
+    job_name = 'Local\\DeepThorT-Triad-' + secrets.token_hex(24)
+    job = create_job(None, job_name)
     check(job, "CreateJobObjectW")
+    if ctypes.get_last_error() == 183:
+        close(job)
+        raise RuntimeError('Unexpected root job name collision')
     process = ProcessInfo()
     launched = False
     try:
@@ -179,9 +187,15 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         si = StartupInfo()
         si.cb = ctypes.sizeof(si)
         cmdline = ctypes.create_unicode_buffer(subprocess.list2cmdline(list(command)))
-        check(create_process(None, cmdline, None, None, False,
-                             CREATE_SUSPENDED | IDLE_PRIORITY_CLASS | CREATE_NO_WINDOW,
-                             None, cwd, ctypes.byref(si), ctypes.byref(process)), "Create suspended child")
+        previous = os.environ.get('DEEPTHORT_TRIAD_ROOT_JOB')
+        os.environ['DEEPTHORT_TRIAD_ROOT_JOB'] = job_name
+        try:
+            check(create_process(None, cmdline, None, None, False,
+                                 CREATE_SUSPENDED | IDLE_PRIORITY_CLASS | CREATE_NO_WINDOW,
+                                 None, cwd, ctypes.byref(si), ctypes.byref(process)), "Create suspended child")
+        finally:
+            if previous is None:os.environ.pop('DEEPTHORT_TRIAD_ROOT_JOB',None)
+            else:os.environ['DEEPTHORT_TRIAD_ROOT_JOB']=previous
         launched = True
         try:
             check(assign(job, process.hProcess), "Assign child to capped Job Object")
