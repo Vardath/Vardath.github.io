@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from pathlib import Path
 
@@ -30,12 +31,28 @@ def _stat_digest(path: Path) -> str:
 
 def _file_digest(path: Path) -> str:
     _regular(path)
-    if path.stat().st_size > MAX_HASH_BYTES:
+    def identity(s):
+        return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
+    before=path.stat()
+    if before.st_size > MAX_HASH_BYTES:
         raise ValueError('File exceeds approved hash-check limit')
     h = hashlib.sha256()
+    total=0
     with path.open('rb') as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b''):
+        if identity(os.fstat(f.fileno()))!=identity(before):
+            raise ValueError('File changed while opening for hash check')
+        while True:
+            chunk=f.read(min(1024*1024,MAX_HASH_BYTES-total+1))
+            if not chunk:break
+            total+=len(chunk)
+            if total>MAX_HASH_BYTES:
+                raise ValueError('File exceeds approved hash-check limit')
             h.update(chunk)
+        if total!=before.st_size or identity(os.fstat(f.fileno()))!=identity(before):
+            raise ValueError('File changed during hash check')
+    _regular(path)
+    if identity(path.stat())!=identity(before):
+        raise ValueError('File changed during hash check')
     return h.hexdigest()
 
 

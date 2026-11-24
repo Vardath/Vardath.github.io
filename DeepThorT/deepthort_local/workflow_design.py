@@ -121,7 +121,18 @@ def inventory(acquisition,project,goal,*,required_output=None):
         if len(json.dumps(selected+[r],ensure_ascii=False))>2300:continue
         selected.append(r)
         if len(selected)>=12:break
-    files=sorted(list_project_files(root,limit=500),key=lambda x:(rank(x),x))[:30]
+    from .native_inputs import list_native_inputs
+    # Keep the text editor's smaller inventory unchanged. Native inputs use
+    # the workflow's independently bounded, content-hashable file inventory.
+    native=list_native_inputs(root)
+    paths=set(list_project_files(root,limit=500))|set(native)
+    native_set=set(native)
+    target_kind=artifact_type(required_output)['kind'] if required_output else None
+    def input_order(path):
+        kind=artifact_type(path)['kind']
+        relevant_native=path in native_set and target_kind not in (None,'source') and kind==target_kind
+        return (rank(path),0 if relevant_native else 1,path)
+    files=sorted(paths,key=input_order)[:30]
     while len(json.dumps(files,ensure_ascii=False))>850:files.pop()
     return selected,files
 
