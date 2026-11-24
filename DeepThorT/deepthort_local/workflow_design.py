@@ -196,6 +196,35 @@ class WorkflowDrafts:
             db.execute('CREATE TABLE IF NOT EXISTS workflow_recovery_drafts(workflow_id INTEGER PRIMARY KEY,request_id INTEGER UNIQUE NOT NULL,snapshot TEXT NOT NULL)')
             db.execute('CREATE TABLE IF NOT EXISTS mixed_workflow_drafts(request_id INTEGER PRIMARY KEY,task TEXT NOT NULL)')
             db.execute('CREATE TABLE IF NOT EXISTS workflow_resolution_attempts(evidence TEXT PRIMARY KEY)')
+            db.execute("""CREATE TABLE IF NOT EXISTS workflow_resume_evidence(
+                request_id INTEGER PRIMARY KEY, observed TEXT NOT NULL, seen TEXT NOT NULL,
+                attempts INTEGER NOT NULL DEFAULT 0)""")
+    def observe_resume(self,request_id,tokens):
+        tokens=sorted(set(tokens))
+        with sqlite3.connect(self.path) as db:
+            db.execute('BEGIN IMMEDIATE')
+            row=db.execute('SELECT seen FROM workflow_resume_evidence WHERE request_id=?',(request_id,)).fetchone()
+            if row:
+                seen=sorted(set(json.loads(row[0]))|set(tokens))
+                db.execute('UPDATE workflow_resume_evidence SET observed=?,seen=? WHERE request_id=?',
+                           (json.dumps(tokens),json.dumps(seen),request_id))
+            else:
+                db.execute('INSERT INTO workflow_resume_evidence VALUES(?,?,?,0)',
+                           (request_id,json.dumps(tokens),json.dumps(tokens)))
+    def reserve_resume(self,request_id,tokens):
+        tokens=set(tokens)
+        with sqlite3.connect(self.path) as db:
+            db.execute('BEGIN IMMEDIATE')
+            row=db.execute('SELECT seen,attempts FROM workflow_resume_evidence WHERE request_id=?',(request_id,)).fetchone()
+            if not row:
+                encoded=json.dumps(sorted(tokens))
+                db.execute('INSERT INTO workflow_resume_evidence VALUES(?,?,?,0)',(request_id,encoded,encoded))
+                return False
+            seen=set(json.loads(row[0]))
+            if row[1]>=3 or not tokens-seen:return False
+            db.execute('UPDATE workflow_resume_evidence SET observed=?,seen=?,attempts=attempts+1 WHERE request_id=?',
+                       (json.dumps(sorted(tokens)),json.dumps(sorted(seen|tokens)),request_id))
+            return True
     def reserve_resolution(self,evidence):
         with sqlite3.connect(self.path) as db:
             return bool(db.execute('INSERT OR IGNORE INTO workflow_resolution_attempts VALUES(?)',(evidence,)).rowcount)

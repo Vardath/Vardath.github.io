@@ -2343,10 +2343,17 @@ class DeepThorTDesktop(tk.Tk):
                     if recovery:
                         from deepthort_local.workflow_recovery import verify_recovery
                         verify_recovery(self.tool_workflows,recovery,source['project'])
-                    proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
-                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,mixed_task=mixed_task,
-                        stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    prior=json.loads(workflow['proposal']) if workflow['state']=='missing' and workflow['proposal'] else None
+                    try:
+                        proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                            self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,mixed_task=mixed_task,
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    except ValueError:
+                        if prior is None or stale():raise
+                        proposal,manifest=prior,None
                     if stale():raise ValueError('Workflow specification superseded')
+                    if prior and len(proposal['missing'])>=len(prior['missing']):
+                        proposal,manifest=prior,None
                     self.workflow_drafts.save(ident,proposal,manifest)
                     from deepthort_local.workflow_design import learn_missing
                     from deepthort_local.workflow_resolution import resolve
@@ -2367,6 +2374,9 @@ class DeepThorTDesktop(tk.Tk):
                         cancelled=stale,stage=lambda message:self.events.put(('conversation_stage',ident,message)),
                         recovery=recovery,mixed_task=mixed_task)
                     if stale():raise ValueError('Workflow specification superseded')
+                    if proposal['missing']:
+                        from deepthort_local.workflow_resume import observations
+                        self.workflow_drafts.observe_resume(ident,observations(self.tool_learning,self.janus,source['project'],proposal))
                     self.events.put(('conversation_reply',ident,'JANUS workflow draft saved; no execution approved.\n'+
                         json.dumps(proposal,indent=2,ensure_ascii=False)+'\nMissing stage learning results (not executed):\n'+
                         json.dumps(learned,indent=2,ensure_ascii=False)+'\nUnverified discovered packages (no installation authorized):\n'+
@@ -3312,6 +3322,20 @@ class DeepThorTDesktop(tk.Tk):
             return
         if self.tool_workflows.busy():return
         if self.node_ready and self.node and self.node.poll() is None and self.project:
+            # Capability checks are throttled, and only the current project's
+            # newest reviewed missing draft can be requeued.
+            if time.monotonic()-self.__dict__.get('_workflow_resume_checked',-60)>=15:
+                self._workflow_resume_checked=time.monotonic()
+                try:
+                    from deepthort_local.workflow_resume import resume
+                    source=self.conversations.latest_project_request(self.current_chat,self._project_key())
+                    resumed=resume(self.workflow_drafts,self.conversations,self.tool_learning,self.janus,source)
+                    if resumed:
+                        self._log(f'Workflow draft #{resumed} resumed on new capability evidence; no command authorized.')
+                        self._reload_chat()
+                        return
+                except (ValueError,OSError,KeyError,TypeError) as error:
+                    self._log('Workflow capability recovery unavailable: '+str(error)[:200])
             from deepthort_local.workflow_recovery import next_recovery
             recovery=next_recovery(self.tool_workflows,self.conversations,self.workflow_drafts,self._project_key())
             if recovery:
