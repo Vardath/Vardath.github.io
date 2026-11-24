@@ -6,6 +6,7 @@ outputs of earlier stages. This is not a process or filesystem sandbox.
 """
 from __future__ import annotations
 import hashlib
+import io
 import json
 import sqlite3
 import tomllib
@@ -41,7 +42,7 @@ def artifact(root,relative):
     elif suffix=='.toml':
         tomllib.loads(data.decode('utf-8'));scope='TOML parse'
     elif suffix in ('.zip','.apk'):
-        with zipfile.ZipFile(path) as z:
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
             entries=z.infolist()
             if not entries or len(entries)>4000 or sum(x.file_size for x in entries)>64_000_000:
                 raise ValueError('Archive exceeds validation bounds')
@@ -55,6 +56,9 @@ def artifact(root,relative):
                     raise ValueError('Archive contains encrypted or symlink member')
             if z.testzip() is not None:raise ValueError('Archive CRC failed')
         scope='archive structure and CRC (not installability)'
+    else:
+        from .artifact_media_checks import media_scope
+        scope=media_scope(suffix,data) or scope
     return {'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'scope':scope}
 
 
@@ -161,6 +165,7 @@ class ToolWorkflows:
         action=self.janus.action(row['action_id'])
         if not action:raise ValueError('Missing prior action')
         _,log_sha,_=_approved_result(action,stage['argv'],project,kind='tool')
+        verify_guards([g for g in json.loads(action['input_guards_json']) if g['kind']!='absent'])
         if rec['log_sha256']!=log_sha or rec['artifact']!=artifact(project,stage['output']):
             raise ValueError('Prior checked output or process log changed')
         return rec

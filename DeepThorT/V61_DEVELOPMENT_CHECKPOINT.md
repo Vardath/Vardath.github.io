@@ -91,3 +91,7 @@ Under the standing routine-tool preference, a failed approved unattended source 
 ## Persistent multi-tool workflows
 
 Tool workflows combines 2–12 existing learned recipes into one explicitly approved ordered command manifest. Existing inputs and scripts are pinned, declared outputs must be absent, and predecessor outputs are SHA-256-bound to successor inputs. Dispatch inserts the action and workflow receipt in the same JANUS SQLite transaction, avoiding orphan actions across crashes. XML/SVG, JSON, TOML and ZIP/APK receive bounded structural checks; other outputs are nonempty/hash evidence only, not functional acceptance. Each stage requires successful exact process evidence; altered outputs/logs or interrupted actions block progression. The initial UI composes recipes explicitly and uses the unattended-work scheduler, not model-generated shell commands. Tests committed; full integration remains unverified.
+
+## Bounded mesh and texture checks
+
+Tool workflows now check PNG chunk structure/CRCs/dimensions and OBJ finite numeric geometry and face index ranges. Neither proves texture rendering, geometry correctness, topology, collision or gameplay. ZIP checking uses the same captured bytes as the artifact fingerprint. Historical input/tool guards are rechecked before accepting a predecessor receipt, and routine installers defer during active tool-workflow processes. Regression tests added; execution not yet established.

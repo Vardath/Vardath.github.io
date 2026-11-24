@@ -4412,6 +4412,7 @@ class DeepThorTDesktop(tk.Tk):
             getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
             self.active_job is not None or self.active_conversation is not None or self._tool_probe_active is not None or
             self.disk_gate.gaming()):return
+        if self.tool_workflows.busy():return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
         plan=self._auto_tool_queue.pop(0)
