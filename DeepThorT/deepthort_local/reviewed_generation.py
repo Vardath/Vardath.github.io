@@ -30,7 +30,14 @@ def generate_reviewed(client,session,prompt,review,*,max_chars=7500,
         answer=lookup(call_id,request) if callable(lookup) else None
         if answer is None:answer=client.chat(call_id,request,max_tokens=max_tokens)
         if cancelled and cancelled():raise SpecificationRejected('Reviewed generation cancelled')
-        candidate=transform(answer) if transform else answer
+        try:
+            candidate=transform(answer) if transform else answer
+            if not isinstance(candidate,str) or not candidate.strip():
+                raise ValueError('Empty or invalid generated source')
+        except ValueError as exc:
+            feedback='Output format rejected: '+str(exc)
+            if stage:stage(f'Candidate {n+1}/{attempts} format rejected; retrying with correction')
+            continue
         fingerprint=sha(candidate)
         if fingerprint in seen:
             feedback='The previous rejected proposal was repeated unchanged. Use a different implementation preserving the exact original requirements. '+feedback

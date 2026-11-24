@@ -171,3 +171,138 @@ def stage_existing(client,council,advisor,*,session,path,goal,scope,master_sha,s
     _check_cancel(cancelled)
     return {'source':assembled,'before_sha256':sha(source),'after_sha256':sha(assembled),
             'changed_ranges':changes,'ranges':len(spans),'master_sha256':master_sha}
+
+
+def _unit_plan(answer):
+    text=answer.strip()
+    if text.startswith('\x60\x60\x60'):
+        lines=text.splitlines()
+        if len(lines)<3 or lines[-1].strip()!='\x60\x60\x60':
+            raise StageError('Incomplete unit-plan fence')
+        text='\n'.join(lines[1:-1])
+    try:data=json.loads(text)
+    except ValueError as exc:raise StageError('JANUS unit plan is not complete JSON') from exc
+    if not isinstance(data,dict) or set(data)!={'units'} or not isinstance(data['units'],list):
+        raise StageError('Expected one ordered units array')
+    units=data['units']
+    if not 2<=len(units)<=8 or any(not isinstance(x,str) or not 5<=len(x.strip())<=240 for x in units):
+        raise StageError('Expected 2..8 small implementation goals')
+    units=[x.strip() for x in units]
+    if len(set(x.casefold() for x in units))!=len(units):
+        raise StageError('Repeated decomposition goal')
+    return units
+
+
+def _python_interface(source):
+    """Observed top-level declarations, not invented or proven runtime APIs."""
+    tree=ast.parse(source)
+    names=[]
+    descriptions=[]
+    def targets(node):
+        if isinstance(node,ast.Name):return [node.id]
+        if isinstance(node,(ast.Tuple,ast.List)):
+            return [name for child in node.elts for name in targets(child)]
+        return []
+    for node in tree.body:
+        if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef)):
+            names.append(node.name)
+            descriptions.append(('async ' if isinstance(node,ast.AsyncFunctionDef) else '')+
+                                'def '+node.name+'('+ast.unparse(node.args)+')')
+        elif isinstance(node,ast.ClassDef):
+            names.append(node.name)
+            methods=[x.name+'('+ast.unparse(x.args)+')' for x in node.body
+                     if isinstance(x,(ast.FunctionDef,ast.AsyncFunctionDef))]
+            descriptions.append('class '+node.name+': '+', '.join(methods))
+        elif isinstance(node,(ast.Assign,ast.AnnAssign)):
+            for target in node.targets if isinstance(node,ast.Assign) else [node.target]:
+                names.extend(targets(target))
+                descriptions.extend('binding '+x for x in targets(target))
+        elif isinstance(node,(ast.Import,ast.ImportFrom)):
+            for alias in node.names:
+                if alias.name=='*':raise StageError('Wildcard import obscures assembled interfaces')
+                name=alias.asname or alias.name.split('.')[0]
+                names.append(name)
+                descriptions.append('import '+name)
+    return set(names),descriptions
+
+
+def stage_new_python(client,council,advisor,*,session,path,goal,scope,master_sha,
+                     review,cancelled=None,stage=None):
+    """Assemble a NEW approved Python file from model-authored complete units."""
+    if PurePosixPath(path).suffix.casefold()!='.py':
+        raise StageError('New-file unit assembly currently supports Python only')
+    if not goal.strip() or len(goal)>1000 or not scope.strip() or len(scope)>2600:
+        raise StageError('New-file decomposition needs exact bounded requirements')
+    identity=sha(json.dumps({'schema':'staged-new-python-v1','path':path,'goal':goal,
+                            'scope':scope,'master':master_sha},sort_keys=True,ensure_ascii=False))
+    prefix=(f'APPROVED NEW FILE: {path}\nEXACT FILE GOAL: {goal}\n'
+            f'COMPLETE SPECIFICATION SHA-256: {master_sha}\n'
+            f'APPROVED REQUIREMENT CONTEXT:\n{scope}\n')
+    ask=('JANUS: decompose this ONE Python file into 2 to 8 ordered small implementation units. '
+         'Each unit must be a complete top-level Python fragment, with imports and prerequisites '
+         'before their uses. No new file paths, external commands, placeholders or scope changes. '
+         'Return only JSON {"units":["small exact goal","next small exact goal"]}. '
+         'Keep every goal short enough for an individual implementation call.\n'+prefix)
+    feedback=''
+    units=None
+    for attempt in range(2):
+        _check_cancel(cancelled)
+        request=ask+('\nCorrect this rejected plan: '+feedback[:400] if feedback else '')
+        try:
+            proposed=_unit_plan(council._run(advisor,role=f'JANUS_NEW_UNITS_{attempt}',
+                       session=session,evidence_sha=sha(identity+sha(request)),prompt=request,stage=stage))
+            review(json.dumps({'file':path,'ordered_units':proposed},ensure_ascii=False),'plan')
+        except ValueError as exc:
+            feedback=str(exc)
+            continue
+        units=proposed
+        break
+    if not units:raise StageError('No valid bounded implementation unit plan: '+feedback[:300])
+    saved=[]
+    names=set()
+    interfaces=[]
+    for i,unit in enumerate(units):
+        _check_cancel(cancelled)
+        if stage:stage(f'JANUS implementing {path}: unit {i+1}/{len(units)}')
+        context=json.dumps({'completed':units[:i],'next':units[i+1:],
+                            'observed_interfaces':interfaces},ensure_ascii=False)
+        if len(context)>1800:
+            # Do not present a partial interface inventory as complete.
+            raise StageError('Assembled interfaces exceed bounded context; split the approved file')
+        request=('Implement ONLY the specified unit as complete top-level Python source. '
+                 'Return code only. Use the observed earlier interfaces; do not redefine them. '
+                 'No TODO, placeholder implementation or other file. '
+                 'The entire source will be assembled and checked, not executed here.\n'+prefix+
+                 f'UNIT {i+1}/{len(units)}: {unit}\n'
+                 f'ORDERED UNIT AND OBSERVED INTERFACE CONTEXT:\n{context}')
+        feedback=''
+        accepted=None
+        for attempt in range(2):
+            _check_cancel(cancelled)
+            prompt=request+('\nCorrection needed: '+feedback[:350] if feedback else '')
+            try:
+                fragment=_replacement(_call(client,f'{session}-unit-{i+1}-{attempt+1}-{sha(prompt)[:16]}',
+                                               prompt,768),'\n')
+                validate_source(path,fragment)
+                new_names,new_interfaces=_python_interface(fragment)
+                if names.intersection(new_names):
+                    raise StageError('Unit redefines prior top-level names: '+', '.join(sorted(names&new_names)))
+                validate_source(path,'\n'.join(saved+[fragment]))
+                review(f'New file unit {i+1}: {unit}\n{fragment}','code')
+            except ValueError as exc:
+                feedback=str(exc)
+                continue
+            accepted=fragment
+            names.update(new_names)
+            interfaces.extend(new_interfaces)
+            break
+        if accepted is None:
+            raise StageError(f'Implementation unit {i+1} failed: '+feedback[:300])
+        saved.append(accepted)
+    assembled='\n'.join(saved)
+    validate_source(path,assembled)
+    _check_cancel(cancelled)
+    review(assembled,'code')
+    _check_cancel(cancelled)
+    return {'source':assembled,'before_sha256':None,'after_sha256':sha(assembled),
+            'changed_ranges':len(saved),'ranges':len(saved),'master_sha256':master_sha}

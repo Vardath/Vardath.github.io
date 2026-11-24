@@ -3497,8 +3497,8 @@ class DeepThorTDesktop(tk.Tk):
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     from deepthort_local.reviewed_generation import generate_reviewed
                     from deepthort_local.specification_guard import SpecificationRejected
-                    def decompose_existing():
-                        from deepthort_local.staged_source import stage_existing
+                    def decompose_source():
+                        from deepthort_local.staged_source import stage_existing,stage_new_python
                         from deepthort_local.recovery_council import select_source_section
                         from deepthort_local.amendment_context import revision_context
                         from deepthort_local.reasoning_council import ReasoningCouncil
@@ -3507,8 +3507,8 @@ class DeepThorTDesktop(tk.Tk):
                         # a staged result must never fall into an unbound manual write.
                         current=self.jobs.get(jobid)
                         approved=authorize_file(STATE/'project-grants',current,steps,step,enabled=self._project_work_is_enabled())
-                        raw=dest.read_bytes().decode('utf-8')
-                        if hashlib.sha256(raw.encode('utf-8')).hexdigest()!=approved['before_sha256']:
+                        raw=dest.read_bytes().decode('utf-8') if dest.is_file() else None
+                        if (hashlib.sha256(raw.encode('utf-8')).hexdigest() if raw is not None else None)!=approved['before_sha256']:
                             raise PlanError('Source changed before decomposition')
                         scope=prompt if len(prompt)<=1800 else select_source_section(prompt,focus,1800)
                         if amendments:
@@ -3525,17 +3525,20 @@ class DeepThorTDesktop(tk.Tk):
                                     finally:
                                         if lease is not None:lease.release()
                             return Advisor()
-                        result=stage_existing(self.client,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
-                            ask_advisor(),session=f'build-{jobid}-step-{step["id"]}',path=step['path'],
+                        arguments=dict(session=f'build-{jobid}-step-{step["id"]}',path=step['path'],
                             goal=step['description'],scope=scope,master_sha=hashlib.sha256(original.encode('utf-8')).hexdigest(),
-                            source=raw,review=guard,
-                            cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j),
+                            review=guard,cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j),
                             stage=lambda message:self.events.put(('log',message)))
+                        council=ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3')
+                        if raw is None:
+                            result=stage_new_python(self.client,council,ask_advisor(),**arguments)
+                        else:
+                            result=stage_existing(self.client,council,ask_advisor(),source=raw,**arguments)
                         result['step_id']=step['id']
                         if _sha(dest)!=result['before_sha256']:raise PlanError('Source changed during decomposition')
                         self.events.put(('staged_source_answer',jobid,result))
                     if len(old)>3500:
-                        decompose_existing()
+                        decompose_source()
                         return
                     try:
                         try:
@@ -3543,8 +3546,8 @@ class DeepThorTDesktop(tk.Tk):
                         except PlanError:
                             request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     except PlanError:
-                        if dest.is_file():
-                            decompose_existing()
+                        if dest.is_file() or dest.suffix.casefold()=='.py':
+                            decompose_source()
                             return
                         raise
                     def transform(answer):
@@ -3564,8 +3567,8 @@ class DeepThorTDesktop(tk.Tk):
                             cancelled=lambda:self._quitting or self.active_job!=jobid,
                             stage=lambda message:self.events.put(('log',message)))
                     except SpecificationRejected:
-                        if dest.is_file() and self.active_job==jobid and not self._quitting:
-                            decompose_existing()
+                        if (dest.is_file() or dest.suffix.casefold()=='.py') and self.active_job==jobid and not self._quitting:
+                            decompose_source()
                             return
                         raise
                     self.events.put(('job_answer',jobid,answer))
