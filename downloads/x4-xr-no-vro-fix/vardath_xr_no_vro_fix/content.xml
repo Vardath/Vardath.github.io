@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf8'?>
-<content id="vardath_xr_no_vro_fix" name="Vardath - XR ShipPack without VRO Fix" author="Vardath" version="100" date="2026-11-15" save="false" enabled="1" description="Removes unavailable VRO ship selections from XR ShipPack 3.20. Use only when VRO is disabled."><dependency id="ws_1905655811" optional="false" /></content>

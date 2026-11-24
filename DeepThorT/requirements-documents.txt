@@ -1,2 +1,0 @@
-# Optional local PDF text extraction. Explicit installation only.
-pypdf==7.1.1

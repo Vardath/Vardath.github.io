@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<content id="vardath_faction_camouflage" name="Vardath - Faction Camouflage for All Player Ships" description="Choose native X4 faction cover from the ship right-click menu. No reputation edits, automatic exposure recovery, or mission overrides. Requires Mod Support APIs." author="Vardath" version="102" date="2026-11-12" save="0" enabled="1">
-  <dependency version="800"/>
-  <dependency id="ws_2042901274" name="Mod Support APIs"/>
-</content>

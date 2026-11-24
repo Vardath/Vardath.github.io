@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<diff>
-  <!-- Personal Envoy Auto 1.21: failing log expression at do_if line 409.
-       The earlier absolute cue path was NOT found in the installed XML.
-       Guard only the missing actor read; do not mutate saved crew. -->
-  <replace sel="/mdscript//do_if[@value='$CrewKept and $PilotActor and $PilotActor.exists']/@value">$CrewKept and @$PilotActor.exists</replace>
-</diff>

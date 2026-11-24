@@ -1,3 +1,0 @@
-# Games are prioritized by DeepThorT's future task scheduler.
-X4.exe
-RimWorldWin64.exe

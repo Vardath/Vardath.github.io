@@ -1,2 +1,0 @@
-# The only runtime dependency. All model weights are trained locally; no weights are downloaded.
-torch>=2.2,<3

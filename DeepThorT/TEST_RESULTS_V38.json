@@ -1,9 +1,0 @@
-{
-  "version": 38,
-  "date": "2026-11-23",
-  "local_focus": {"modules": 8, "tests": 75, "result": "passed", "command": "xvfb-run -a python -m unittest -q tests.test_reviewed_install_v38 tests.test_online_tool_inspection_v37 tests.test_online_tool_search_v36 tests.test_ui_help_v35 tests.test_execution_safety_v34 tests.test_tool_acquisition_v32 tests.test_state_health_v34 tests.test_regression_cli_v37"},
-  "local_full_suite": {"result": "incomplete", "modules_confirmed_passed_before_stall": 24, "reason": "preexisting JANUS/Sentinel isolated regression stall"},
-  "actual_windows_winget_install_tested": false,
-  "actual_windows_onnx_tested": false,
-  "github_ci": "to_be_checked_after_commit"
-}

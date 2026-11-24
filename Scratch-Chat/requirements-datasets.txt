@@ -1,3 +1,0 @@
--r requirements.txt
-# Optional official Hugging Face WikiText loader, only for data acquisition.
-datasets>=3.0,<5
