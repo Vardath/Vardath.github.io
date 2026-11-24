@@ -17,6 +17,8 @@ class TriadTests(unittest.TestCase):
             argv=command(role,12345,'test')
             self.assertIn(PROFILES[role][2],argv[2])
             self.assertIn('--no-mmap',argv)
+            self.assertEqual(argv[argv.index('--batch-size')+1],'128')
+            self.assertEqual(argv[argv.index('--ubatch-size')+1],'64')
             self.assertEqual(argv[argv.index('--n-gpu-layers')+1],'0')
     def test_invalid_request(self):
         with self.assertRaises(ValueError):validate({'triad_role':'other'},'janus')

@@ -31,7 +31,7 @@ def command(role,port,key):
     return [str(runtime_path()),'--model',str(model_path(role)),'--alias',role,
             '--host','127.0.0.1','--port',str(port),'--api-key',key,
             '--ctx-size','4096','--threads','2','--threads-batch','2','--parallel','1',
-            '--n-gpu-layers','0','--no-mmap','--jinja','--no-webui']
+            '--n-gpu-layers','0','--no-mmap','--batch-size','128','--ubatch-size','64','--jinja','--no-webui']
 
 def admission(cap,available,total,weights):
     # Minimum allowance for all weights plus modest runtime overhead.
@@ -56,22 +56,34 @@ class Pool:
     def set_stage(self,message):
         self.stage=message;print(message,flush=True)
     def start(self,stack):
-        admission(*verify_root_cap(),total_weights())
+        cap,available,total=verify_root_cap()
+        weights=total_weights()
+        self.set_stage(f'Triad memory: job cap {cap/2**30:.2f} GiB; free RAM {available/2**30:.2f} GiB; weights {weights/2**30:.2f} GiB')
+        admission(cap,available,total,weights)
+        logs=ROOT/'state'/'logs'
+        # Probe the installed native executable before allocating any weights.
+        # Same root cap and nested cleanup as the real model processes.
+        self.set_stage('Checking native CPU runtime version')
+        with child_server([str(runtime_path()),'--version'],runtime_path().parent,logs/'triad-runtime-version.log') as (_,alive):
+            deadline=time.monotonic()+60
+            while alive() and time.monotonic()<deadline:time.sleep(.25)
+            if alive():raise RuntimeError('Native version check timed out')
+            if alive.code()!=0:raise RuntimeError('Native runtime failed before loading weights: '+alive.failure())
         # Sequential startup only, NOT sequential inference or unloading.
         for role,p in PROFILES.items():
             self.set_stage('Loading '+role+': '+p[0])
             port=free_port();key=secrets.token_hex(32)
-            pid,alive=stack.enter_context(child_server(command(role,port,key),ROOT))
+            pid,alive=stack.enter_context(child_server(command(role,port,key),runtime_path().parent,logs/f'triad-{role}-native.log'))
             self.children[role]=(port,key,pid,alive)
             deadline=time.monotonic()+900
             while time.monotonic()<deadline:
-                if not all(c[3]() for c in self.children.values()):
-                    raise RuntimeError('A resident model exited; combined memory/runtime may be insufficient')
+                for name,c in self.children.items():
+                    if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure())
                 try:
                     if request(port,'/health',key).get('status')=='ok':break
                 except (OSError,ValueError):pass
                 time.sleep(1)
-            else:raise RuntimeError('Startup timed out: '+role)
+            else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')
         self.ready=True;self.set_stage('All three models resident; independent inference enabled')
     def healthy(self):
         return self.ready and len(self.children)==3 and all(c[3]() for c in self.children.values())
@@ -133,7 +145,15 @@ def main():
         servers=[stack.enter_context(ThreadingHTTPServer(('127.0.0.1',p),handler(pool,token,p==8766))) for p in (8765,8766)]
         for server in servers:
             threading.Thread(target=server.serve_forever,daemon=True).start()
-        pool.start(stack)
-        while pool.healthy():time.sleep(1)
-        raise RuntimeError('Resident model exited; shutting down all three, no fallback')
+        try:
+            pool.start(stack)
+            while pool.healthy():time.sleep(1)
+            for name,c in pool.children.items():
+                if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure().split('\n',1)[0])
+            raise RuntimeError('Resident model exited; shutting down all three, no fallback')
+        finally:
+            # Stop serving before closing Windows sockets, avoiding misleading
+            # serve_forever exceptions during a failed startup.
+            pool.ready=False
+            for server in servers:server.shutdown()
 if __name__=='__main__':main()
