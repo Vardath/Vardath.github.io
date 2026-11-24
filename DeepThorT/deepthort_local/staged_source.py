@@ -207,7 +207,8 @@ def _python_interface(source):
         if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef)):
             names.append(node.name)
             descriptions.append(('async ' if isinstance(node,ast.AsyncFunctionDef) else '')+
-                                'def '+node.name+'('+ast.unparse(node.args)+')')
+                                'def '+node.name+'('+ast.unparse(node.args)+')'+
+                                (' -> '+ast.unparse(node.returns) if node.returns else '')+':')
         elif isinstance(node,ast.ClassDef):
             names.append(node.name)
             methods=[x.name+'('+ast.unparse(x.args)+')' for x in node.body
