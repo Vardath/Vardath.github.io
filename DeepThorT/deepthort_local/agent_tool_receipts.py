@@ -62,6 +62,6 @@ class ToolReceipts:
         for row in rows:
             request=row['request'];result=row['result']
             lines.append(f"#{row['id']} {request['tool']}: {len(result['items'])} observations; "
-                         +('included in model context' if row['delivered'] else 'observed, not included')
+                         +('selected for model context' if row['delivered'] else 'observed, not selected')
                          +f"; SHA256 {row['sha256'][:16]}")
         return '\n'.join(lines)
