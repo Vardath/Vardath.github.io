@@ -3361,12 +3361,13 @@ class DeepThorTDesktop(tk.Tk):
                             cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
-                    if amendments and self._project_work_is_enabled() and len(original)<=3000 and dest.is_file():
+                    if amendments and self._project_work_is_enabled() and dest.is_file():
                         from deepthort_local.selective_redevelopment import candidate_for,review_retention
                         from deepthort_local.reasoning_council import ReasoningCouncil
                         try:
                             candidate=candidate_for(j,step,jobs=self.jobs,conversations=self.conversations,
-                                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants')
+                                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants',
+                                hierarchies=self.hierarchies,index=self.specifications)
                         except (ValueError,OSError,KeyError):
                             candidate=None
                         if candidate:
@@ -3532,9 +3533,10 @@ class DeepThorTDesktop(tk.Tk):
             if hashlib.sha256(original.encode('utf-8')).hexdigest()!=review['spec_sha256']:
                 raise PlanError('Retention review refers to an older specification')
             candidate=candidate_for(job,step,jobs=self.jobs,conversations=self.conversations,
-                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants')
+                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants',
+                hierarchies=self.hierarchies,index=self.specifications)
             if not candidate or any(candidate[k]!=review[k] for k in
-                    ('source_sha256','prior_job_id','prior_step_id','path')):
+                    ('source_sha256','prior_job_id','prior_step_id','path','dependency_sha256')):
                 raise PlanError('Previously reviewed source or its historical evidence changed')
             if not self.graphs.exists(jobid):raise GraphError('Retention needs a new approved graph')
             lease=self.graphs.begin_action(job,steps,'retain',f'file:{stepid}')
