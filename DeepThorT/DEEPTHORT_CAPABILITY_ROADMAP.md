@@ -92,3 +92,7 @@ Baseline 35ec99d2 CI/Pages green (907 tests, 144 modules). New document evidence
 
 ### Progress — reusable typed workflow skill patterns
 Baseline adfe553f CI/Pages green (916 tests, 145 modules). Existing checked workflow history now provides versioned typed dataflow patterns to JANUS workflow design, revalidating manifests, process/artifact receipts and current offered tool/format inventory. No old arguments, paths, scripts or recipe IDs are replayed. Existing freeze, Sentinel review and approval remain mandatory. Six regression cases. Same-workspace only; explicit portable sharing and parameterized rebinding remain next. Model evaluation proposal recorded separately; current ONNX weights and runtime unchanged. Representative manual retrieval benchmark remains backlog.
+
+
+### PRIORITY OVERRIDE — model quality before further features
+Owner requests reliable correctness over speed and actual model benchmarking before other priorities. Separate pinned ONNX evaluation runner, independent 14-case fixed-oracle suite and actual hosted CPU model matrix added (baseline 1.5B Q4, Coder 3B Q4, Qwen3 4B Q4F16). No production model/runtime change. Require Windows capped feasibility and real multi-file tasks before promotion. See MODEL_EVALUATION_PLAN.md. Skill portability and other features deferred until evaluation.

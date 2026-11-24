@@ -17,3 +17,6 @@
 *.pth
 *.zip
 *.exe
+
+# Separate experimental weights and results
+benchmark-local/

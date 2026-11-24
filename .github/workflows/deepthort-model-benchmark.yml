@@ -1,0 +1,52 @@
+name: DeepThorT model benchmark
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/deepthort-model-benchmark.yml'
+      - 'DeepThorT/model_benchmark.mjs'
+      - 'DeepThorT/model_benchmark_score.py'
+      - 'DeepThorT/benchmarks/**'
+permissions:
+  contents: read
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        profile: [baseline, coder3b, qwen3-4b]
+    defaults:
+      run:
+        working-directory: DeepThorT
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install same pinned Transformers.js runtime
+        run: npm install --no-audit --no-fund
+      - name: Verify independent scoring
+        run: python -m unittest tests.test_model_benchmark_v61 -q
+      - name: Run real CPU ONNX inference (synthetic tasks only)
+        run: node model_benchmark.mjs ${{ matrix.profile }} prepare-hosted
+      - name: Score actual generated answers
+        if: always()
+        run: |
+          if [ -f benchmark-local/results/${{ matrix.profile }}.json ]; then
+            python model_benchmark_score.py benchmark-local/results/${{ matrix.profile }}.json
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: model-benchmark-${{ matrix.profile }}
+          path: DeepThorT/benchmark-local/results/
+          if-no-files-found: warn
+          retention-days: 30
