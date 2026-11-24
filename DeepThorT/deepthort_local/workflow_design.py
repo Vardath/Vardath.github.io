@@ -156,6 +156,14 @@ class WorkflowDrafts:
                 state TEXT NOT NULL DEFAULT 'pending')""")
             db.execute('CREATE TABLE IF NOT EXISTS workflow_gap_candidates(evidence TEXT PRIMARY KEY,result TEXT NOT NULL)')
             db.execute('CREATE TABLE IF NOT EXISTS workflow_recovery_drafts(workflow_id INTEGER PRIMARY KEY,request_id INTEGER UNIQUE NOT NULL,snapshot TEXT NOT NULL)')
+            db.execute('CREATE TABLE IF NOT EXISTS mixed_workflow_drafts(request_id INTEGER PRIMARY KEY,task TEXT NOT NULL)')
+    def bind_mixed(self,request_id,task):
+        with sqlite3.connect(self.path) as db:
+            db.execute('INSERT INTO mixed_workflow_drafts VALUES(?,?)',(request_id,json.dumps(task)))
+    def mixed(self,request_id):
+        with sqlite3.connect(self.path) as db:
+            row=db.execute('SELECT task FROM mixed_workflow_drafts WHERE request_id=?',(request_id,)).fetchone()
+            return json.loads(row[0]) if row else None
     def recovery_seen(self,workflow_id):
         with sqlite3.connect(self.path) as db:
             return bool(db.execute('SELECT 1 FROM workflow_recovery_drafts WHERE workflow_id=?',(workflow_id,)).fetchone())
@@ -197,7 +205,7 @@ class WorkflowDrafts:
         with sqlite3.connect(self.path) as db:
             db.execute('UPDATE workflow_drafts SET state=? WHERE request_id=?',(state,request_id))
 
-def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None):
+def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None):
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal)
     if recovery:
@@ -224,6 +232,8 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
             f'OBSERVED INPUT PATHS: {json.dumps(files,ensure_ascii=False)}\n'
             f'INSTALLED LEARNABLE TOOLS: {json.dumps(installed,ensure_ascii=False)}. '
             'When a missing capability matches one of these tools, use its exact name.')
+    if mixed_task:
+        prompt+='\nREQUIRED EXACT ARTIFACT: '+mixed_task['output']+'; one stage is allowed if sufficient.'
     if recovery:
         # Include exact observed completed outputs and bounded failure evidence.
         # Do not include the entire predecessor manifest in a small model prompt.
@@ -245,11 +255,15 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
         try:
             result=council._run(client,role=f'JANUS_WORKFLOW_{attempt}',session=f'workflow-{request["id"]}',
                                 evidence_sha=sha(text),prompt=text,stage=stage)
-            proposal=parse_draft(result,recipes,files,continuation=bool(recovery))
+            proposal=parse_draft(result,recipes,files,continuation=bool(recovery or mixed_task))
             manifest=None
             if not proposal['missing']:
-                manifest=freeze(acquisition,binding['project'],proposal['stages'],continuation=bool(recovery))
+                manifest=freeze(acquisition,binding['project'],proposal['stages'],continuation=bool(recovery or mixed_task))
                 manifest['specification']=binding
+                if mixed_task:
+                    from .mixed_roadmap import require_output
+                    require_output(mixed_task,manifest)
+                    manifest['mixed_task']=mixed_task
                 if recovery:manifest['recovery']=recovery
             review(json.dumps({'proposal':proposal,'manifest':manifest},ensure_ascii=False),'plan')
             if cancelled and cancelled():raise ValueError('Workflow design cancelled')

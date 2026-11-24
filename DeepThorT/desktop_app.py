@@ -253,6 +253,8 @@ class DeepThorTDesktop(tk.Tk):
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         from deepthort_local.roadmap_runs import RoadmapRuns
         self.roadmap_runs=RoadmapRuns(STATE/'roadmap-runs.sqlite3')
+        from deepthort_local.mixed_roadmap import MixedRoadmaps
+        self.mixed_roadmaps=MixedRoadmaps(STATE/'mixed-roadmaps.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
         self.graphs = TaskGraphStore(STATE/'task-graph.sqlite3')
@@ -2045,7 +2047,10 @@ class DeepThorTDesktop(tk.Tk):
         if not self._project_work_is_enabled():
             messagebox.showinfo('Unattended work disabled','Enable approved unattended project work first.',parent=self)
             return
-        try:review=manifest(self.hierarchies,self.specifications,req)
+        try:
+            review=manifest(self.hierarchies,self.specifications,req)
+            mixed=self.mixed_roadmaps.get(req['id'],review['manifest_sha256'])
+            if mixed:review['mixed_sha']=mixed['sha']
         except (ValueError,OSError) as error:
             messagebox.showwarning('Roadmap approval blocked',str(error),parent=self)
             return
@@ -2063,6 +2068,10 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('end',f"Milestone {item['ordinal']}: {item['title']}\n")
             for step in item['steps']:view.insert('end',f"  {step['path']}: {step['description']}\n")
             view.insert('end','\n')
+        if mixed:
+            view.insert('end','REQUIRED EXTERNAL ARTIFACTS (commands require separate review):\n')
+            for task in mixed['tasks']:
+                view.insert('end',f"  After milestone {task['after']}: {task['goal']} -> {task['output']}\n")
         view.configure(state='disabled')
         accepted=[False]
         def consent():accepted[0]=True;dialog.destroy()
@@ -2073,8 +2082,11 @@ class DeepThorTDesktop(tk.Tk):
         if not accepted[0]:return
         try:
             latest=self.conversations.latest_project_request(req['chat_id'],req['project'])
-            if not latest or latest['id']!=req['id'] or manifest(self.hierarchies,self.specifications,latest)!=review:
-                raise PlanError('Roadmap changed during review')
+            if not latest or latest['id']!=req['id']:raise PlanError('Roadmap changed during review')
+            current=manifest(self.hierarchies,self.specifications,latest)
+            current_mixed=self.mixed_roadmaps.get(req['id'],current['manifest_sha256'])
+            if current_mixed:current['mixed_sha']=current_mixed['sha']
+            if current!=review:raise PlanError('Roadmap changed during review')
             self.roadmap_runs.approve(review)
             self._log(f"Roadmap #{req['id']} approved for automatic sequential advancement.")
             record(STATE,'desktop','whole_roadmap_approved',request_id=req['id'],
@@ -2093,6 +2105,22 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.roadmap_tool_bridge import gate
                 before=(self.hierarchies.status(self.specifications,ident,req['prompt'])['milestones_total']+1
                         if result['complete'] else result['milestone']['ordinal'])
+                if run.get('mixed_sha'):
+                    from deepthort_local.mixed_roadmap import pending_task
+                    mixed=self.mixed_roadmaps.get(ident,result['manifest_sha256'])
+                    if not mixed or mixed['sha']!=run['mixed_sha']:raise PlanError('Mixed roadmap approval changed')
+                    task=pending_task(mixed,self.tool_workflows,before)
+                    if task:
+                        if not self.mixed_roadmaps.request_for(task['id']):
+                            from deepthort_local.workflow_design import source_binding
+                            goal=task['goal']+'; required artifact: '+task['output']
+                            rid=self.conversations.submit(req['chat_id'],req['project'],'chat','Design required roadmap artifact: '+goal)
+                            self.workflow_drafts.queue(rid,source_binding(req),goal)
+                            self.workflow_drafts.bind_mixed(rid,task)
+                            self.mixed_roadmaps.bind_request(task['id'],rid)
+                            self._log(f"JANUS drafting required artifact {task['output']} before milestone {before}.")
+                            return True
+                        continue
                 if gate(self.tool_workflows,ident,result['manifest_sha256'],before):continue
                 if result['complete']:
                     self.roadmap_runs.change(ident,'complete','All approved milestones have current verification')
@@ -2138,7 +2166,14 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.roadmap_runs import manifest as roadmap_manifest
             before=state['milestones_total']+1 if state['complete'] else state['next_approvable']
             if before is not None:
-                blocked=gate(self.tool_workflows,root_request_id,roadmap_manifest(self.hierarchies,self.specifications,req)['manifest_sha256'],before)
+                code_sha=roadmap_manifest(self.hierarchies,self.specifications,req)['manifest_sha256']
+                mixed=self.mixed_roadmaps.get(root_request_id,code_sha)
+                if mixed:
+                    from deepthort_local.mixed_roadmap import pending_task
+                    task=pending_task(mixed,self.tool_workflows,before)
+                    if task:
+                        messagebox.showinfo('Required artifact pending',f"{task['output']} is required. Use Roadmap automation to prepare and approve its workflow.",parent=self);return
+                blocked=gate(self.tool_workflows,root_request_id,code_sha,before)
                 if blocked:
                     messagebox.showinfo('Tool workflow pending',blocked,parent=self);return
             if state['complete']:
@@ -2303,11 +2338,12 @@ class DeepThorTDesktop(tk.Tk):
                             amendments=self.conversations.amendment_history(source['id']),
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     recovery=self.workflow_drafts.recovery(ident)
+                    mixed_task=self.workflow_drafts.mixed(ident)
                     if recovery:
                         from deepthort_local.workflow_recovery import verify_recovery
                         verify_recovery(self.tool_workflows,recovery,source['project'])
                     proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
-                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,
+                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,mixed_task=mixed_task,
                         stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     if stale():raise ValueError('Workflow specification superseded')
                     self.workflow_drafts.save(ident,proposal,manifest)
@@ -2472,6 +2508,17 @@ class DeepThorTDesktop(tk.Tk):
                         geometry_report=geometry_report,
                         checkpoint=checkpoint, reviewer=review_plan if request['mode']=='draft_plan' else None,
                         prior_steps=prior_steps,amendments=amendments)
+                    if request['mode']=='draft_plan' and self._project_work_is_enabled() and self.hierarchies.has_roadmap(ident):
+                        from deepthort_local.mixed_roadmap import assess
+                        from deepthort_local.reasoning_council import ReasoningCouncil
+                        def review_artifacts(exact,proposed,ordinal):
+                            self._sentinel_alignment(original,request['project'],session,
+                                f'External artifact assessment section {ordinal}',json.dumps(proposed,ensure_ascii=False),
+                                section=exact,kind='plan',cancelled=cancelled,amendments=amendments,
+                                stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        assess(self.mixed_roadmaps,self.hierarchies,self.specifications,request,
+                               ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,review_artifacts,
+                               cancelled=cancelled,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -3262,6 +3309,9 @@ class DeepThorTDesktop(tk.Tk):
                     request_id=self.conversations.submit(binding['chat_id'],binding['project'],'chat','Recover blocked tool workflow #'+str(recovery['workflow_id']))
                     self.workflow_drafts.queue(request_id,binding,goal)
                     self.workflow_drafts.bind_recovery(request_id,recovery)
+                    parent=self.tool_workflows.get(recovery['workflow_id'])
+                    task=json.loads(parent['manifest']).get('mixed_task')
+                    if task:self.workflow_drafts.bind_mixed(request_id,task)
                     self._log(f'JANUS recovery draft #{request_id} queued; checked outputs retained, no replacement command approved.')
                     self._reload_chat()
                     return
@@ -4754,14 +4804,24 @@ class DeepThorTDesktop(tk.Tk):
                     'Commands run with your Windows permissions, not in a sandbox. '
                     'Approve this exact sequence?\n\n'+details,parent=self):return
                 recovery=self.workflow_drafts.recovery(previous['request_id'])
-                updated=freeze(self.tool_learning,self.project,proposal['stages'],continuation=bool(recovery));updated['specification']=binding
+                mixed_task=self.workflow_drafts.mixed(previous['request_id'])
+                updated=freeze(self.tool_learning,self.project,proposal['stages'],continuation=bool(recovery or mixed_task));updated['specification']=binding
                 if recovery:updated['recovery']=recovery
+                if mixed_task:
+                    from deepthort_local.mixed_roadmap import require_output
+                    require_output(mixed_task,updated);updated['mixed_task']=mixed_task
                 if not current_source(binding,self.conversations) or updated!=manifest:
                     raise ValueError('Specification, source or tool changed; draft again')
                 from deepthort_local.roadmap_tool_bridge import make_binding
                 from deepthort_local.roadmap_runs import eligible_successor
                 run=self.roadmap_runs.get(source['id'])
-                if recovery:
+                if mixed_task:
+                    if not run or not run.get('mixed_sha'):raise ValueError('Required artifact roadmap is not approved')
+                    mixed=self.mixed_roadmaps.get(source['id'],run['manifest_sha256'])
+                    if not mixed or mixed['sha']!=run['mixed_sha'] or mixed_task not in mixed['tasks']:
+                        raise ValueError('Artifact obligation changed')
+                    manifest['roadmap']=make_binding(run,source,self.hierarchies,self.specifications,manifest,mixed_task['after'])
+                elif recovery:
                     parent=self.tool_workflows.get(recovery['workflow_id'])
                     old_link=json.loads(parent['manifest']).get('roadmap')
                     if old_link:
@@ -4806,6 +4866,9 @@ class DeepThorTDesktop(tk.Tk):
             if len(goal.strip())>900:raise ValueError('Use a focused workflow objective (up to 900 characters)')
             ident=self.conversations.submit(self.current_chat,self._project_key(),'chat','Design tool workflow: '+goal.strip())
             self.workflow_drafts.queue(ident,binding,goal.strip())
+            if previous and previous['state']=='missing':
+                task=self.workflow_drafts.mixed(previous['request_id'])
+                if task:self.workflow_drafts.bind_mixed(ident,task)
             self._reload_chat();self._log(f'JANUS workflow design #{ident} queued; no commands authorized.')
         except (ValueError,OSError,KeyError,TypeError) as error:
             messagebox.showwarning('Workflow design unavailable',str(error),parent=self)

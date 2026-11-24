@@ -46,6 +46,8 @@ class RoadmapRuns:
                   ordinal INTEGER NOT NULL, job_id INTEGER,
                   state TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
             ''')
+            if 'mixed_sha' not in {r[1] for r in db.execute('PRAGMA table_info(roadmap_runs)')}:
+                db.execute('ALTER TABLE roadmap_runs ADD COLUMN mixed_sha TEXT')
 
     @contextmanager
     def db(self):
@@ -71,11 +73,13 @@ class RoadmapRuns:
             if old and old['manifest_sha256']!=reviewed['manifest_sha256']:
                 raise PlanError('Roadmap changed; create a new revision rather than replace consent')
             if old and old['state']=='complete':raise PlanError('Roadmap already completed')
+            if old and old['mixed_sha']!=reviewed.get('mixed_sha'):raise PlanError('Artifact obligations changed; create a new revision')
             db.execute('''INSERT INTO roadmap_runs(request_id,project,chat_id,manifest_sha256,state,detail)
                 VALUES(?,?,?,?,'active','User approved complete ordered roadmap')
                 ON CONFLICT(request_id) DO UPDATE SET state='active',detail='User renewed roadmap consent',
                 updated_at=CURRENT_TIMESTAMP''',
                 (reviewed['request_id'],reviewed['project'],reviewed['chat_id'],reviewed['manifest_sha256']))
+            db.execute('UPDATE roadmap_runs SET mixed_sha=? WHERE request_id=?',(reviewed.get('mixed_sha'),reviewed['request_id']))
 
     def change(self,ident,state,detail):
         if state not in ('paused','blocked','complete','superseded'):raise ValueError('Invalid roadmap state')
