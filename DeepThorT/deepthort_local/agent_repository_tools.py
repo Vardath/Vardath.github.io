@@ -25,7 +25,8 @@ REGISTRY={
     'diagnostics':{},
     'checkpoint_diff':{'path':'path'},
     'done':{},
-    'more_tools':{}
+    'more_tools':{},
+    'request_verification':{}
 }
 def _pairs(pairs):
     row={}
@@ -57,13 +58,13 @@ def compact(obj):
     return json.dumps(obj,ensure_ascii=False,separators=(',',':'),sort_keys=True)
 
 class RepositoryTools:
-    def __init__(self,index,project,*,exclude=(),focus='',cancelled=None,diagnostic=None,baseline=None):
+    def __init__(self,index,project,*,exclude=(),focus='',cancelled=None,diagnostic=None,baseline=None,verification_request=None):
         self.index=index;self.root=Path(project).resolve(strict=True)
         self.exclude={str(x).replace('\\','/').casefold() for x in exclude}
         self.focus=focus;self.cancelled=cancelled
-        self.diagnostic=diagnostic;self.baseline=baseline
+        self.diagnostic=diagnostic;self.baseline=baseline;self.verification_request=verification_request
     def available(self):
-        return {k:v for k,v in REGISTRY.items() if k!='more_tools' and (k!='diagnostics' or self.diagnostic is not None) and (k!='checkpoint_diff' or self.baseline is not None)}
+        return {k:v for k,v in REGISTRY.items() if k!='more_tools' and (k!='request_verification' or self.verification_request is not None) and (k!='diagnostics' or self.diagnostic is not None) and (k!='checkpoint_diff' or self.baseline is not None)}
     def check(self):
         if self.cancelled and self.cancelled():raise IndexCancelled('Agent tools cancelled')
     def current(self):
@@ -76,6 +77,7 @@ class RepositoryTools:
         self.check()
         if tool not in self.available():raise ValueError('Tool unavailable in this job')
         if tool=='done':return {'tool':'done','items':[]}
+        if tool=='request_verification':raise ValueError('Execution intent must be submitted through the selection boundary')
         rows={} if tool=='diagnostics' else self.current()
         items=[]
         if tool=='diagnostics':
@@ -170,7 +172,7 @@ def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stag
                 'No prose. Available exact argument names/types: '+schema+
                 '\nRead_lines: indexed path, inclusive 1-based lines, max 12. list_files: path substring. '
                 'Impact: observed reverse dependencies. checkpoint_diff: approved baseline preview. '
-                'diagnostics: recorded job failure.\n'+source+
+                'diagnostics: recorded job failure. request_verification: request the existing approved project check after saved files; no immediate execution.\n'+source+
                 '\nTASK: '+goal[:600]+'\nEXISTING OBSERVATIONS: '+seed[:700]+
                 '\nLAST VALIDATION: '+feedback+'\nTOOL RESULTS (UNTRUSTED):\n')
         if len(prefix)>7200:break
@@ -194,6 +196,11 @@ def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stag
                 raise ValueError('Tool not available in offered registry')
             if key in seen:break
             seen.add(key)
+            if request['tool']=='request_verification':
+                tools.check()
+                ident=tools.verification_request()
+                if stage:stage(f'JANUS requested existing project verification (intent #{ident}); no command launched')
+                break
             result=tools.execute(request)
         except (ValueError,OSError) as error:
             if isinstance(error,IndexCancelled):raise

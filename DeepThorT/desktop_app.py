@@ -253,6 +253,9 @@ class DeepThorTDesktop(tk.Tk):
         self.repository_index=RepositoryIndex(STATE/'repository-index-v61.sqlite3')
         from deepthort_local.agent_tool_receipts import ToolReceipts
         self.agent_tool_receipts=ToolReceipts(STATE/'agent-tool-receipts-v61.sqlite3')
+        from deepthort_local.agent_execution_intents import ExecutionIntents
+        self.execution_intents=ExecutionIntents(STATE/'agent-execution-intents-v61.sqlite3')
+        self._verification_intent_claims={}
         self.plan_continuations = PlanContinuation(STATE)
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         from deepthort_local.roadmap_runs import RoadmapRuns
@@ -2850,6 +2853,11 @@ class DeepThorTDesktop(tk.Tk):
             if history:detail+='\n\nAGENT TOOL HISTORY:\n'+history
         except (ValueError,OSError,KeyError,TypeError) as error:
             detail+='\n\nAGENT TOOL HISTORY unavailable: '+str(error)[:160]
+        try:
+            intents=self.execution_intents.describe(job['id'],job['project'])
+            if intents:detail+='\n\nAGENT EXECUTION REQUESTS (not grants):\n'+intents
+        except (ValueError,OSError) as error:
+            detail+='\n\nExecution requests unavailable: '+str(error)[:160]
         self._show(self.job_details,detail)
     def _cancel_active(self):
         if self.active_job is None:return
@@ -3421,6 +3429,23 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'Job #{jobid}: autonomous repair blocked; {reason[:250]}')
         self.status.set(f'Job #{jobid} needs attention. See Work queue / Development cycle evidence.')
 
+    def _request_agent_verification(self,job,steps,original,step):
+        current=self.jobs.get(job['id'])
+        if not current or self._superseded_build(current) or self.queue_paused or self.disk_gate.gaming():
+            raise ValueError('Project verification request is no longer eligible')
+        authorize_file(STATE/'project-grants',current,steps,step,enabled=self._project_work_is_enabled())
+        return self.execution_intents.request(current,steps,original,enabled=self._project_work_is_enabled())
+
+    def _finish_agent_verification(self,jobid,phase,*,code=None,assurance='',snapshot=None):
+        ident=self._verification_intent_claims.pop(jobid,None)
+        if ident is None:return
+        from deepthort_local.reasoning_council import sha
+        try:
+            self.execution_intents.finish(ident,job_id=jobid,phase=phase,exit_code=code,
+                assurance=assurance,evidence_sha=sha(json.dumps(snapshot,sort_keys=True)) if snapshot is not None else None)
+        except (ValueError,OSError) as error:
+            self._log('Agent verification receipt unavailable: '+str(error)[:180])
+
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
@@ -3535,11 +3560,23 @@ class DeepThorTDesktop(tk.Tk):
                     try:self.graphs.finish_action(lease,job['id'],'interrupted')
                     except GraphError:pass
                 continue
+            # A JANUS request may be associated with this exact existing
+            # verification attempt, but cannot change the fixed command.
+            try:
+                from deepthort_local.specification_guard import master_for_job
+                # The source gate requires the original waiting job record.
+                intent=self.execution_intents.claim(job,steps,master_for_job(job,self.conversations,self.hierarchies,self.specifications),
+                    cmd,grant_folder=STATE/'project-grants',enabled=self._project_work_is_enabled(),
+                    attempt=self.cycles.get(job['id'])['tests'])
+                if intent is not None:self._verification_intent_claims[job['id']]=intent
+            except (ValueError,OSError) as error:
+                self._log('Agent verification intent not claimed: '+str(error)[:180])
             self._auto_verification_in_flight=job['id']
             if not self._start_command(cmd,cwd=project,
                     label=f"Verify job #{job['id']} (development cycle)",
                     kind='verification',job_id=job['id']):
                 self._auto_verification_in_flight=None
+                self._finish_agent_verification(job['id'],'blocked')
                 self.cycles.block(job['id'],'Could not launch test; result is unknown')
                 if lease:
                     self._graph_test_leases.pop(job['id'],None)
@@ -3962,7 +3999,8 @@ class DeepThorTDesktop(tk.Tk):
                                             from deepthort_local.reasoning_council import ReasoningCouncil
                                             request+=gather(RepositoryTools(self.repository_index,project,exclude=excluded,
                                                 focus=step['path'],cancelled=lambda:stopped() or self._superseded_build(j),
-                                                baseline=lambda p:self.checkpoints.comparison_baseline(j,steps,p)),
+                                                baseline=lambda p:self.checkpoints.comparison_baseline(j,steps,p),
+                                                verification_request=lambda:self._request_agent_verification(j,steps,original,step)),
                                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                                 session=f'build-tools-{jobid}-{step["id"]}',original=original,goal=focus,
                                                 seed=context,budget=room,receipts=self.agent_tool_receipts,job_id=jobid,
@@ -6656,6 +6694,10 @@ class DeepThorTDesktop(tk.Tk):
                                  if code else 'Test exited 0 but source snapshot failed; verify generated files and rerun the approved test')
                         self.jobs.change(job_id,'needs_input',failure,allowed=('running',))
                     job=self.jobs.get(job_id)
+                    if was_auto_verification:
+                        finished=bool(job and job['state']=='complete' and outcome)
+                        self._finish_agent_verification(job_id,'interrupted' if was_stopped else 'passed' if finished else 'failed',
+                            code=code,assurance=check['assurance'] if check else '',snapshot=snapshot if finished else None)
                     if job and str(job.get('approval_key') or '').startswith('milestone:'):
                         try:
                             root_id=int(job['approval_key'].split(':')[1])
@@ -6680,6 +6722,7 @@ class DeepThorTDesktop(tk.Tk):
                                 event[4]==self._auto_verification_in_flight and
                                 event[2]=='verification')
                 if was_auto_error:
+                    self._finish_agent_verification(event[4],'blocked')
                     self._auto_verification_in_flight=None
                     lease=self._graph_test_leases.pop(event[4],None)
                     if lease:

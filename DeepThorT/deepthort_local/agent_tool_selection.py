@@ -14,7 +14,8 @@ KEYWORDS={
     'impact':{'impact','dependencies','dependency','dependent','dependents','break','regression','affected','import','imports'},
     'list_files':{'files','file','folder','directory','path','paths','locate','list','layout'},
     'diagnostics':{'failed','failure','error','errors','traceback','assertionerror','test','diagnostic','repair','crash'},
-    'checkpoint_diff':{'diff','compare','baseline','checkpoint','changed','change','previous','regression','difference'}
+    'checkpoint_diff':{'diff','compare','baseline','checkpoint','changed','change','previous','regression','difference'},
+    'request_verification':{'verify','verification','test','tests','validate','check','retest','regression'}
 }
 # Explicit evidence is more useful to the implementation model than a
 # long directory listing; ties prefer newer observations.

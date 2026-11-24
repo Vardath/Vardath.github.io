@@ -65,3 +65,6 @@ AnythingLLM provides workspace-scoped document RAG, embedding and reranking, fle
 
 ### Progress — intelligent tool selection
 Task-aware permitted-tool shortlist, adaptive ranking from observed result shapes, explicit full-registry fallback, complete-record context packing and stale-observation rejection implemented. Three-turn limit preserved. Character budgets are conservative rather than exact tokenizer counts; actual token savings and selection accuracy require a live model benchmark. Next priority: typed structured execution requests through existing authority and queue (not arbitrary shell), then project document knowledge retrieval.
+
+### Progress — structured execution request foundation
+JANUS may request the already approved fixed project verification operation through a typed no-argument intent. Job/plan/spec binding, scheduler authorization, coalescing, result receipts and interruption handling are implemented. This first intent does not change the ordinary scheduler or permit arbitrary commands; additional reviewed operation types remain backlog. Next priority 5: workspace-scoped document knowledge retrieval (AnythingLLM comparison), starting with bounded local text ingestion and cited chunks.
