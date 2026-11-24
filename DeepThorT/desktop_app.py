@@ -3231,7 +3231,10 @@ class DeepThorTDesktop(tk.Tk):
         cycle=self.cycles.get(jobid)
         if not cycle or cycle['phase']!='repair_ready':
             raise CycleError('No authorized bounded repair is pending')
-        prompt,candidates=build_repair_prompt(job,steps,cycle['diagnostic'])
+        from deepthort_local.behavior_tests import repairable_steps
+        repair_steps=repairable_steps(steps)
+        if not repair_steps:raise CycleError('Only test files remain; inspect the test failure without automatically changing assertions')
+        prompt,candidates=build_repair_prompt(job,repair_steps,cycle['diagnostic'])
         lease=None
         if self.graphs.exists(jobid):
             lease=self.graphs.begin_action(job,steps,'repair','verify')
@@ -3316,6 +3319,8 @@ class DeepThorTDesktop(tk.Tk):
             return
         try:
             target,code=parse_repair_response(answer,candidates)
+            from deepthort_local.behavior_tests import protected_test
+            if protected_test(target):raise CycleError('Automatic repair cannot rewrite a test oracle')
             steps=self.jobs.steps(jobid)
             matching=[x for x in steps if x['path']==target and x['state']=='saved']
             if len(matching)!=1:
@@ -3778,7 +3783,12 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.specification_amendments import root_request_for_job
                     amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
                     focus=step['path']+': '+step['description']
+                    from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
+                    behavior_test=bool(test_kind(step['path']))
                     def guard(proposal,kind):
+                        if behavior_test and kind=='code':
+                            validate_behavior_test(step['path'],proposal)
+                            kind='behavior_test'
                         return self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
                             kind=kind,stage=lambda message:self.events.put(('log',message)),
                             cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
@@ -3821,6 +3831,7 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.specification_guard import SpecificationRejected
                     from deepthort_local.structured_source import FORMATS,stage_new_document
                     def decompose_source(research_guidance=''):
+                        if behavior_test:raise PlanError('Behavior test needs complete-source review; split the approved test plan')
                         from deepthort_local.staged_source import stage_existing,stage_new_python
                         from deepthort_local.recovery_council import select_source_section
                         from deepthort_local.amendment_context import revision_context
@@ -3864,6 +3875,7 @@ class DeepThorTDesktop(tk.Tk):
                         if _sha(dest)!=result['before_sha256']:raise PlanError('Source changed during decomposition')
                         self.events.put(('staged_source_answer',jobid,result))
                     if len(old)>3500:
+                        if behavior_test:raise PlanError('Large test requires a separately reviewed smaller approved test file; no partial test oracle replacement')
                         decompose_source()
                         return
                     try:
@@ -3876,6 +3888,11 @@ class DeepThorTDesktop(tk.Tk):
                             decompose_source()
                             return
                         raise
+                    if behavior_test:
+                        extra=test_guidance(project,step,steps)
+                        if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
+                            raise PlanError('Behavior test context exceeds bound; split the approved test file')
+                        request+=extra
                     def transform(answer):
                         if dest.suffix.casefold()=='.svg':
                             from deepthort_local.media_tools import standalone_svg
@@ -4121,6 +4138,13 @@ class DeepThorTDesktop(tk.Tk):
                     self._refresh_jobs()
                     return
                 code=answer if staged is not None else strip_single_code_fence(answer)
+                try:
+                    from deepthort_local.behavior_tests import validate as validate_behavior_test
+                    validate_behavior_test(step['path'],code)
+                except ValueError as error:
+                    self.jobs.change(jobid,'needs_input','Behavior test rejected: '+str(error),allowed=('running',))
+                    self._refresh_jobs()
+                    return
                 if staged is not None:
                     try:
                         from deepthort_local.project_authority import _sha
