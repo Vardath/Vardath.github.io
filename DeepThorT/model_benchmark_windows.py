@@ -40,7 +40,7 @@ def main():
     profiles = json.loads((ROOT/'benchmarks/profiles.json').read_text())
     parser = argparse.ArgumentParser()
     parser.add_argument('profile', choices=profiles)
-    parser.add_argument('--suite', choices=['all', 'project'], default='all')
+    parser.add_argument('--suite', choices=['all', 'project', 'project-fenced', 'dual'], default='all')
     args = parser.parse_args()
     if os.name != 'nt':
         raise SystemExit('Windows Job Object required')
@@ -63,7 +63,15 @@ def main():
         query = kernel.QueryInformationJobObject
         query.argtypes = (wintypes.HANDLE, ctypes.c_int, ctypes.c_void_p, wintypes.DWORD, ctypes.c_void_p)
         query.restype = wintypes.BOOL
-        suffix = '-project' if args.suite == 'project' else ''
+        suffix = '' if args.suite == 'all' else '-' + args.suite
+        command = [node, str(ROOT/'model_benchmark.mjs'), args.profile, 'offline', args.suite]
+        if args.suite == 'dual':
+            if args.profile != 'baseline':
+                raise SystemExit('The production worker currently selects the baseline model')
+            single = ROOT/'benchmark-local/results/baseline.json'
+            if not single.is_file() or not json.loads(single.read_text(encoding='utf-8')).get('complete'):
+                raise SystemExit('Complete the single-worker baseline first')
+            command = [node, str(ROOT/'model_benchmark_dual.mjs')]
         path = ROOT/'benchmark-local/results'/(args.profile + suffix + '-windows-job.json')
         path.parent.mkdir(parents=True, exist_ok=True)
         started = time.monotonic()
@@ -92,7 +100,7 @@ def main():
             if not finished:
                 production_check()
         os.environ['DEEPTHORT_BENCH_PYTHON'] = sys.executable
-        return run_capped([node, str(ROOT/'model_benchmark.mjs'), args.profile, 'offline', args.suite],
+        return run_capped(command,
                           cwd=str(ROOT), percent=30, ram_percent=30, observe=observe)
     finally:
         kernel.CloseHandle(handle)

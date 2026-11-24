@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { join } from 'node:path';
 
-export async function runProjectBenchmark(root, generate, report, save) {
+export async function runProjectBenchmark(root, generate, report, save, allowSingleFence = false) {
   function oracle(request) {
     const child = spawnSync(process.env.DEEPTHORT_BENCH_PYTHON || (process.platform === 'win32' ? 'python' : 'python3'),
       ['-B', join(root, 'model_benchmark_project.py')], {
@@ -12,7 +12,7 @@ export async function runProjectBenchmark(root, generate, report, save) {
   }
   const spec = oracle({op: 'spec'});
   const rows = [];
-  report.project = {stages: rows, complete: false};
+  report.project = {stages: rows, complete: false, allow_single_json_fence:allowSingleFence};
   let built = {};
   for (const stage of ['build', 'amend', 'repair']) {
     const before = stage === 'build' ? {} : stage === 'amend' ? built : spec.seed;
@@ -30,8 +30,9 @@ export async function runProjectBenchmark(root, generate, report, save) {
     for (let i=0; i<2; i++) {
       const began = Date.now();
       const answer = await generate(messages);
-      const verdict = oracle({op:'judge', stage, before, answer});
-      row.attempts.push({answer, diagnostic:verdict.diagnostic, elapsed_ms:Date.now()-began});
+      const match = allowSingleFence && /^\s*\x60{3}json[ \t]*\r?\n([\s\S]*?)\r?\n\x60{3}\s*$/i.exec(answer);
+      const verdict = oracle({op:'judge', stage, before, answer:match ? match[1] : answer});
+      row.attempts.push({answer, unwrapped:!!match, diagnostic:verdict.diagnostic, elapsed_ms:Date.now()-began});
       row.passed = verdict.passed;
       save();
       if (verdict.passed) {

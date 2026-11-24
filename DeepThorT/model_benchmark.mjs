@@ -8,12 +8,12 @@ const root = dirname(fileURLToPath(import.meta.url));
 const profiles = JSON.parse(readFileSync(join(root,'benchmarks','profiles.json'),'utf8'));
 const cases = JSON.parse(readFileSync(join(root,'benchmarks','cases.json'),'utf8'));
 const [profile, mode, suite = 'all'] = process.argv.slice(2);
-if (!['all', 'project'].includes(suite)) throw Error('Unknown benchmark suite');
+if (!['all', 'project', 'project-fenced'].includes(suite)) throw Error('Unknown benchmark suite');
 if (!Object.hasOwn(profiles,profile) || !['offline','prepare-hosted'].includes(mode)) throw Error('Usage: node model_benchmark.mjs PROFILE offline|prepare-hosted');
 if (mode==='prepare-hosted' && process.env.GITHUB_ACTIONS!=='true') throw Error('Hosted mode is only for the synthetic GitHub benchmark');
 const spec=profiles[profile];
 const work=join(root,'benchmark-local');
-const out=join(work,'results',profile+(suite === 'project' ? '-project' : '')+'.json');
+const out=join(work,'results',profile+(suite === 'all' ? '' : '-'+suite)+'.json');
 mkdirSync(dirname(out),{recursive:true});
 env.allowRemoteModels=mode==='prepare-hosted';
 env.allowLocalModels=mode==='offline';
@@ -48,7 +48,7 @@ try {
     if (typeof answer !== 'string' || !answer.trim()) throw Error('No generated answer');
     return answer;
   }
-  for(const item of suite === 'project' ? [] : cases){
+  for(const item of suite === 'all' ? cases : []){
     const began=Date.now();
     try{
       const answer = await generate([{role:'user', content:item.prompt}]);
@@ -59,7 +59,7 @@ try {
     save();
     console.log('BENCHMARK_CASE',profile,item.id,report.results.at(-1).error?'inference error':'generated',report.results.at(-1).elapsed_ms+'ms');
   }
-  await runProjectBenchmark(root, generate, report, save);
+  await runProjectBenchmark(root, generate, report, save, suite === 'project-fenced');
   await gen.dispose();
   report.complete=true;
 }catch(error){

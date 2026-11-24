@@ -146,10 +146,30 @@ def score_case(case,result):
 def score(report):
     observed={r['id']:r for r in report['results']}
     rows=[{'id':c['id'],'category':c['category'],'status':score_case(c,observed[c['id']]) if c['id'] in observed else 'not_run'} for c in CASES]
-    return {'profile':report['profile'],'complete':report.get('complete',False),
+    result = {'profile':report['profile'],'complete':report.get('complete',False),
             'passed':sum(r['status']=='pass' for r in rows),'total':len(rows),
             'startup_ms':report.get('startup_ms'),'peak_rss_bytes':report.get('peak_rss_bytes'),
             'failure':report.get('failure'),'cases':rows}
+    if 'project' in report:
+        stages = report['project']['stages']
+        result['project'] = {
+            'complete':report['project']['complete'],
+            'verified_stages':sum(row['passed'] for row in stages),
+            'total_stages':3,
+            'stages':[{'stage':row['stage'], 'passed':row['passed'],
+                       'attempts':len(row.get('attempts', [])),
+                       'skipped':row.get('skipped')} for row in stages],
+        }
+    # Diagnostic only. Keep the predeclared strict acceptance counts above.
+    fenced = re.compile(r'\s*\x60{3}(?:json|python)?[ \t]*\r?\n(.*?)\r?\n\x60{3}\s*', re.S | re.I)
+    wrappers = []
+    for case, row in zip(CASES, rows):
+        answer = observed.get(case['id'], {}).get('answer', '')
+        match = fenced.fullmatch(answer)
+        if row['status'] != 'pass' and match and score_case(case, {'answer':match[1]}) == 'pass':
+            wrappers.append(case['id'])
+    result['diagnostic_pass_if_single_fence_removed'] = wrappers
+    return result
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('report',type=Path);args=p.parse_args()

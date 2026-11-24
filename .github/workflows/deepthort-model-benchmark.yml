@@ -6,7 +6,10 @@ on:
       - '.github/workflows/deepthort-model-benchmark.yml'
       - 'DeepThorT/model_benchmark.mjs'
       - 'DeepThorT/model_benchmark_score.py'
-      - 'DeepThorT/benchmarks/**'
+      - 'DeepThorT/model_benchmark_project.py'
+      - 'DeepThorT/model_benchmark_project.mjs'
+      - 'DeepThorT/benchmarks/cases.json'
+      - 'DeepThorT/benchmarks/profiles.json'
 permissions:
   contents: read
 jobs:
@@ -34,7 +37,7 @@ jobs:
       - name: Install same pinned Transformers.js runtime
         run: npm install --no-audit --no-fund --onnxruntime-node-install-cuda=skip
       - name: Verify independent scoring
-        run: python -m unittest tests.test_model_benchmark_v61 -q
+        run: python -m unittest tests.test_model_benchmark_v61 tests.test_model_project_benchmark -q
       - name: Run real CPU ONNX inference (synthetic tasks only)
         run: node model_benchmark.mjs ${{ matrix.profile }} prepare-hosted
       - name: Score actual generated answers
