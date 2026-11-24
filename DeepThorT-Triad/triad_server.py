@@ -31,7 +31,16 @@ def command(role,port,key):
     return [str(runtime_path()),'--model',str(model_path(role)),'--alias',role,
             '--host','127.0.0.1','--port',str(port),'--api-key',key,
             '--ctx-size','4096','--threads','2','--threads-batch','2','--parallel','1',
-            '--n-gpu-layers','0','--no-mmap','--batch-size','128','--ubatch-size','64','--jinja','--no-webui']
+            '--n-gpu-layers','0','--load-mode','none','--batch-size','128','--ubatch-size','64','--jinja','--no-webui']
+
+def verify_cli(help_text):
+    import re
+    required=[x for x in command('implementation',1,'redacted') if x.startswith('--')]
+    missing=[x for x in required if not re.search(r'(?<![\w-])'+re.escape(x)+r'(?![\w-])',help_text)]
+    if missing:raise RuntimeError('Pinned runtime does not advertise required flags: '+', '.join(missing))
+    if not re.search(r'(?<![\w-])none(?![\w-])',help_text):
+        raise RuntimeError('Runtime does not advertise non-mapped loading mode')
+    return True
 
 def admission(cap,available,total,weights):
     # Minimum allowance for all weights plus modest runtime overhead.
@@ -70,6 +79,15 @@ class Pool:
             if alive():raise RuntimeError('Native version check timed out')
             if alive.code()!=0:raise RuntimeError('Native runtime failed before loading weights: '+alive.failure())
         # Sequential startup only, NOT sequential inference or unloading.
+        # Check exact installed CLI before allocating any model. No unsafe
+        # fallback to mapped weights or unbounded loading.
+        with child_server([str(runtime_path()),'--help'],runtime_path().parent,logs/'triad-runtime-help.log') as (_,alive):
+            deadline=time.monotonic()+60
+            while alive() and time.monotonic()<deadline:time.sleep(.25)
+            if alive():raise RuntimeError('Native help check timed out')
+            if alive.code()!=0:raise RuntimeError('Native help failed: '+alive.failure())
+        help_text=(logs/'triad-runtime-help.log').read_text(encoding='utf-8',errors='replace')
+        verify_cli(help_text)
         for role,p in PROFILES.items():
             self.set_stage('Loading '+role+': '+p[0])
             port=free_port();key=secrets.token_hex(32)

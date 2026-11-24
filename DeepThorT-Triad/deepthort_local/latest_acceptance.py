@@ -17,8 +17,7 @@ from pathlib import Path
 from typing import Callable
 
 SCHEMA = 'deepthort-latest-test-v1'
-ALLOWED = frozenset({'shared_cap', 'primary_onnx', 'council_onnx',
-                     'janus_inbox', 'janus_core', 'concurrent_status', 'council_inference','x4_indexed_draft'})
+ALLOWED = frozenset({'shared_cap','triad_residency','triad_inference','concurrent_status','janus_core'})
 STATUSES = frozenset({'passed', 'failed', 'blocked', 'inconclusive', 'cancelled'})
 
 
@@ -62,7 +61,7 @@ def check_record(name: str, status: str, detail: str, *, evidence: dict | None =
                                        'council_busy', 'pending_count', 'count',
                                        'available_gib', 'installed_gib', 'elapsed_seconds',
                                        'local_role', 'http_status', 'thread_cpu_cap',
-                                       'janus_cycle','janus_paused','age_seconds'}}}
+                                       'janus_cycle','janus_paused','age_seconds','models','role_results','simultaneous_roles','job_cap_bytes','available_bytes'}}}
 
 
 def run_checks(definition: dict, checks: dict[str, Callable[[], dict]],

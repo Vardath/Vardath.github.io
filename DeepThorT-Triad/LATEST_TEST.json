@@ -1,15 +1,12 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "v60-component-attachment",
-  "title": "v60 component drafts, ship planning and worker health",
+  "id": "triad-resident-roles-v1",
+  "title": "Triad shared cap, three resident models and concurrent inference",
   "checks": [
     "shared_cap",
-    "primary_onnx",
-    "council_onnx",
+    "triad_residency",
     "janus_core",
-    "janus_inbox",
-    "x4_indexed_draft",
-    "council_inference",
+    "triad_inference",
     "concurrent_status"
   ]
 }

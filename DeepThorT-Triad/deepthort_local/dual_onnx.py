@@ -1,9 +1,4 @@
-"""Two concurrent local ONNX processes, one Windows Job Object budget.
-
-JANUS and Sentinel share the SECOND model sequentially. They never create
-independent Windows jobs or grant approvals. The original implementation model
-stays on 127.0.0.1:8765; advisory model listens only on 127.0.0.1:8766.
-"""
+"""Compatibility client for the Triad broker. JANUS and Sentinel use distinct resident GGUF processes."""
 from __future__ import annotations
 
 import ctypes
@@ -63,7 +58,7 @@ def _ask(messages: list[dict], max_tokens: int=300, *, role='janus') -> str:
     opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
     with opener.open(request,timeout=7200) as response:
         answer=json.load(response)['choices'][0]['message']['content']
-    if not isinstance(answer,str) or not answer.strip():raise ValueError('No local ONNX response')
+    if not isinstance(answer,str) or not answer.strip():raise ValueError('No local GGUF response')
     return answer.strip()
 
 
@@ -193,15 +188,15 @@ def council_wait_reason(*, primary_ready:bool, primary_loading:bool,
                         restarts:int=0) -> str:
     """A specific, user-visible explanation; does not claim unverified readiness."""
     if council_busy:return 'JANUS/Sentinel: interpreting a saved instruction; model inference may take several minutes.'
-    if council_ready:return 'JANUS/Sentinel secondary ONNX: ready for saved instructions.'
+    if council_ready:return 'JANUS/Sentinel Triad council: ready for saved instructions.'
     if council_running:
         h=health if isinstance(health,dict) else {}
-        return ('JANUS/Sentinel secondary ONNX: loading — '+
+        return ('JANUS/Sentinel Triad council: loading — '+
                 str(h.get('stage') or 'waiting for local health response')[:110]+
                 (f" ({h.get('loading_seconds')}s)" if isinstance(h.get('loading_seconds'),int) else ''))
     if not primary_ready:
-        return ('JANUS/Sentinel waiting for primary ONNX to finish loading.' if primary_loading else
-                'JANUS/Sentinel waiting: primary ONNX is not running/ready. Use Start AI or Diagnose AI.')
+        return ('JANUS/Sentinel waiting for Triad broker to finish loading.' if primary_loading else
+                'JANUS/Sentinel waiting: Triad broker is not running/ready. Use Start AI or Diagnose AI.')
     if restarts>=3:
         return 'JANUS/Sentinel stopped after three worker exits. Inspect Processes, then use Retry JANUS model.'
     if not capped:
@@ -210,5 +205,5 @@ def council_wait_reason(*, primary_ready:bool, primary_loading:bool,
         return 'JANUS/Sentinel waiting: Windows RAM availability could not be measured.'
     if not memory_room(total=memory[0],available=memory[1]):
         return (f'JANUS/Sentinel waiting for RAM headroom: {memory[1]/GIB:.1f} GiB free; '
-                'secondary model needs >=6 GiB available and >=24 GiB installed.')
-    return 'JANUS/Sentinel queued to start secondary ONNX (port 8766).'
+                'waiting for the three-model broker.')
+    return 'JANUS/Sentinel waiting for authenticated Triad council readiness (port 8766).'

@@ -105,11 +105,11 @@ from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = '#121822','#1b2532','#182333','#e8eef8','#a9b6c8','#6fb7ff'
 GREEN, YELLOW = '#79cfad','#ffcd78'
-MAX_INFERENCE_PROMPT = 7500  # current ONNX endpoint requires <=8000 / message
+MAX_INFERENCE_PROMPT = 7500  # current GGUF endpoint requires <=8000 / message
 
 
 def local_server_status(timeout=1.3):
-    """Fetch actual local ONNX readiness/stage without accepting cloud addresses."""
+    """Fetch actual local GGUF readiness/stage without accepting cloud addresses."""
     try:
         opener = build_opener(ProxyHandler({}))
         with opener.open(Request('http://127.0.0.1:8765/health',headers={'Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']}), timeout=timeout) as r:
@@ -219,7 +219,7 @@ class DeepThorTDesktop(tk.Tk):
         self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
-        # A cancelled reply must release the single-flight ONNX worker before
+        # A cancelled reply must release the single-flight GGUF worker before
         # another chat can run. Restart is requested only for this intervention.
         self._restart_cancelled_node_pid = None
         self._explicit_model_stop = False
@@ -335,7 +335,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(3000, self._refresh_janus_view)
         self.after(3900, self._council_tick)
         self.protocol('WM_DELETE_WINDOW',self._quit)
-        self._log('Desktop opened. Local ONNX only. Routine catalog tool management: '+
+        self._log('Desktop opened. Local GGUF only. Routine catalog tool management: '+
                   ('ENABLED' if self._autonomy_policy['enabled'] else 'OFF')+
                   '; bounded project work: '+('ENABLED' if self._project_policy['enabled'] else 'OFF')+
                    '; arbitrary scripts and third-party installations remain controlled.')
@@ -796,68 +796,31 @@ class DeepThorTDesktop(tk.Tk):
         self.tabs.select(4)  # Existing Processes tab
         self._log('Starting '+manifest['title']+'; no files will be edited or programs installed.')
         record(STATE,'desktop','latest_test_started',test_id=manifest['id'],project_name=Path(self._project_key()).name)
-        # Launch only an ALREADY-configured, capped model child via the
-        # existing supervisor. Never launch an uncapped or unrelated service.
-        if 'council_onnx' in manifest['checks'] and self.node_ready and not self.council_ready:
-            self._start_council()
         cancel=self._latest_test_cancel
         primary_proc=self.node
         expected_primary=primary_proc.pid if primary_proc and primary_proc.poll() is None else None
-        council_proc=self.council_node
-        expected_council=council_proc.pid if council_proc and council_proc.poll() is None else None
-        inbox=self.instruction_inbox
-        test_project=self._project_key()
-        council_busy_at_start=bool(self._council_busy)
-        observed={'simultaneous':False, 'secondary_verified':False}
-
+        observed={'simultaneous':False,'resident':False}
+        from deepthort_local.triad_acceptance import resident_roles,smoke
         def supervisor_probe():
-            from deepthort_local.quiet_playtest import is_capped_windows_process
-            member=is_capped_windows_process()
-            return {'status':'passed' if member else 'blocked',
-                    'detail':('Desktop runs in a Windows Job Object. Actual 30% throughput must still be sampled on Windows.'
-                        if member else 'No capped Windows Job Object detected: restart through the approved DeepThorT.exe launcher.'),
-                    'evidence':{'thread_cpu_cap': bool(member)}}
-
-        def primary_probe():
-            health=local_server_status(timeout=2)
-            if not expected_primary or not primary_proc or primary_proc.poll() is not None:
-                return {'status':'blocked','detail':'Primary model is not running as the supervised desktop child.'}
-            if not health or health.get('ready') is not True or health.get('pid')!=expected_primary:
-                return {'status':'blocked','detail':'Primary ONNX is unavailable, loading, or does not match its supervised PID.'}
-            return {'status':'passed','detail':'Primary ONNX health is ready and bound to its supervised child process.',
-                    'evidence':{'pid':expected_primary,'busy':bool(health.get('inference_busy'))}}
-
-        def council_probe():
-            if not expected_primary:
-                return {'status':'blocked','detail':'Primary supervised ONNX not running; start it before this acceptance test.'}
-            from deepthort_local.quiet_playtest import is_capped_windows_process
-            if not is_capped_windows_process():
-                return {'status':'blocked','detail':'Shared CPU Job Object not verified; secondary model will not be started.'}
-            from deepthort_local.dual_onnx import windows_memory, memory_room
-            memory=windows_memory()
-            if not memory or not memory_room(total=memory[0],available=memory[1]):
-                return {'status':'blocked','detail':'Insufficient available RAM for second ONNX; test stops here without forcing a launch.'}
-            # On resource-constrained Windows the second model may take several
-            # minutes to load. The test waits without freezing Tk or killing it.
-            from deepthort_local.dual_onnx import local_health
-            target=time.monotonic()+180
-            while not cancel.is_set() and time.monotonic()<target:
-                proc=self.council_node
-                if proc and proc.poll() is None:
-                    value=local_health(timeout=1.5)
-                    if isinstance(value,dict) and value.get('ready') is True and value.get('pid')==proc.pid:
-                        observed['secondary_verified']=True
-                        return {'status':'passed','detail':'All three resident model processes ready through our supervised broker.',
-                                'evidence':{'pid':proc.pid,'local_role':'council'}}
-                elif proc and proc.poll() is not None:
-                    return {'status':'blocked','detail':'Second ONNX worker exited (code '+str(proc.poll())+'). Open Processes for the reason.'}
-                cancel.wait(3)
-            if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped while checking secondary ONNX'}
-            return {'status':'blocked','detail':'Secondary ONNX did not become ready within 180 seconds. '+self._council_status()[:230]}
+            from deepthort_local.triad_job import verify_root_cap
+            try:cap,available,total=verify_root_cap()
+            except (OSError,RuntimeError) as error:return {'status':'blocked','detail':str(error)}
+            return {'status':'passed','detail':'Inherited shared CPU hard cap and aggregate memory commit limit verified.',
+                    'evidence':{'job_cap_bytes':cap,'available_bytes':available}}
+        def health():
+            if not primary_proc or primary_proc.poll() is not None:return None
+            return local_server_status(timeout=1.5)
+        def residency_probe():
+            try:models=resident_roles(health(),expected_primary)
+            except (ValueError,OSError,TypeError,KeyError) as error:
+                return {'status':'blocked','detail':str(error)}
+            observed['resident']=True
+            return {'status':'passed','detail':'Three distinct model child PIDs ready in the supervised Triad broker.',
+                    'evidence':{'models':{r:{'name':m['name'],'pid':m['pid']} for r,m in models.items()}}}
 
         def janus_core_probe():
             # Independent of the neural council. The persistent 11-core JANUS
-            # execution coordinator can be paused while both ONNX models work.
+            # execution coordinator can be paused while both GGUF models work.
             # Report the actual SQLite pause flag rather than guessing from
             # a stale cycle. No state is changed by this read-only check.
             from datetime import datetime, timezone
@@ -883,66 +846,31 @@ class DeepThorTDesktop(tk.Tk):
             return {'status':'passed','detail':f'JANUS coordinator is unpaused and recorded cycle {cycle} within the last {age}s.',
                     'evidence':{'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}}
 
-        def inbox_probe():
-            # Check completed translation and checkpoint delivery, not just
-            # SQLite readability. No user/model text is put in diagnostics.
-            from deepthort_local.instruction_inbox import inbox_acceptance
-            return inbox_acceptance(inbox.list(test_project,limit=100))
-
-        def council_inference_probe():
-            if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped'}
-            if not observed['secondary_verified']:
-                return {'status':'blocked','detail':'Cannot test independent inference without a verified council worker.'}
+        def triad_inference_probe():
+            if not observed['resident']:return {'status':'blocked','detail':'All three models must be ready first'}
+            if self.active_job is not None or self.active_conversation is not None:
+                return {'status':'inconclusive','detail':'Active real work; synthetic test not started'}
             with self._council_lock:
-                if council_busy_at_start or self._council_busy:
-                    return {'status':'inconclusive','detail':'JANUS is already processing a real instruction; this test will not interrupt it.'}
+                if self._council_busy:return {'status':'inconclusive','detail':'Council busy'}
                 self._council_busy=True
             try:
-                import urllib.request
-                from deepthort_local.dual_onnx import MODEL, COUNCIL_HOST, local_health
-                proc=self.council_node
-                health=local_health(timeout=1.5)
-                if not proc or proc.poll() is not None or not health or health.get('pid')!=proc.pid or not health.get('ready'):
-                    return {'status':'blocked','detail':'Council model changed or is no longer healthy; refusing an unverified connection.'}
-                before=local_server_status(timeout=1.5) or {}
-                began=time.monotonic()
-                req=urllib.request.Request(COUNCIL_HOST+'/v1/chat/completions',
-                    data=json.dumps({'model':MODEL,'messages':[
-                      {'role':'system','content':'You are performing a local health test. Reply briefly with READY.'},
-                      {'role':'user','content':'Return READY for supervised inference testing.'}],
-                      'max_tokens':20,'stream':False}).encode('utf-8'),method='POST',
-                    headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']})
-                opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
-                try:
-                    with opener.open(req,timeout=150) as resp:
-                        answer=json.load(resp)['choices'][0]['message']['content']
-                except (OSError,TimeoutError,ValueError,KeyError,IndexError,TypeError) as error:
-                    if cancel.is_set():
-                        return {'status':'cancelled','detail':'Latest test cancelled during secondary inference.'}
-                    return {'status':'blocked','detail':'Council inference did not complete: '+type(error).__name__+'. Worker output remains in diagnostics.'}
-                if cancel.is_set():return {'status':'cancelled','detail':'Test cancelled during inference; the council reply is not used.'}
-                if not isinstance(answer,str) or not answer.strip():
-                    return {'status':'failed','detail':'The supervised council model returned an empty response.'}
-                after=local_server_status(timeout=1.5) or {}
-                observed['simultaneous']=bool(before.get('inference_busy') or after.get('inference_busy'))
-                return {'status':'passed','detail':('Council returned a small real local response; '+
-                    ('primary was busy during this probe.' if observed['simultaneous'] else
-                     'primary was idle, so simultaneous inference remains unproven.')),
-                    'evidence':{'elapsed_seconds':round(time.monotonic()-began,1),
-                                'busy':observed['simultaneous']}}
-            finally:
-                self._council_busy=False
-
+                def ask(role,word):
+                    body={'model':MODEL_ID,'triad_role':role,'messages':[{'role':'user','content':'Return exactly '+word+' and nothing else.'}],'max_tokens':32,'stream':False}
+                    req=Request('http://127.0.0.1:8765/v1/chat/completions',data=json.dumps(body).encode(),
+                        headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']})
+                    with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
+                        reply=json.load(response)
+                    if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
+                    return reply['choices'][0]['message']['content']
+                result,observed['simultaneous']=smoke(health,ask,expected_primary,cancel)
+                return result
+            finally:self._council_busy=False
         def concurrency_probe():
             return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
-                    'detail':('Both workers were active during the council response.'
-                        if observed['simultaneous'] else
-                        'Dual-worker simultaneous inference not established by this run; main ONNX was not observed generating during council response.')}
-
-        probes={'shared_cap':supervisor_probe,'primary_onnx':primary_probe,
-                'x4_indexed_draft':lambda: self.specifications.x4_draft_probe(test_project),
-                'council_onnx':council_probe,'janus_inbox':inbox_probe,'janus_core':janus_core_probe,
-                'council_inference':council_inference_probe,'concurrent_status':concurrency_probe}
+                    'detail':'All three role busy flags observed simultaneously.' if observed['simultaneous'] else 'Simultaneous activity across all three roles not observed.'}
+        probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+                'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
+                'concurrent_status':concurrency_probe}
 
         def worker():
             try:
@@ -970,7 +898,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         self._latest_test_cancel.set()
         self._latest_test_stage='stop requested'
-        self._log('Latest test stop requested. An in-flight bounded ONNX health call may still finish before the report is saved.')
+        self._log('Latest test stop requested. An in-flight bounded GGUF health call may still finish before the report is saved.')
 
     def _council_status(self):
         proc=self.council_node
@@ -990,7 +918,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         if self.council_node and self.council_node.poll() is None:
             if self.council_ready:
-                messagebox.showinfo('JANUS model ready','Secondary ONNX is already available.',parent=self)
+                messagebox.showinfo('JANUS model ready','Secondary GGUF is already available.',parent=self)
                 return
             self.council_node.terminate()
             self.council_node=None
@@ -998,7 +926,7 @@ class DeepThorTDesktop(tk.Tk):
         self._last_council_health=None
         self._council_restarts=0
         self._council_retry_at=time.monotonic()+3
-        self._log('Manual council ONNX retry requested; '+self._council_status())
+        self._log('Manual council GGUF retry requested; '+self._council_status())
         self.status.set(self._council_status())
 
     def _chat_line(self,role,message):
@@ -1193,9 +1121,9 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Closed chat reopened; its existing history was preserved.')
 
     def _interrupt_cancelled_inference(self):
-        """Terminate supervised single-flight ONNX inference and reload it once.
+        """Terminate supervised single-flight GGUF inference and reload it once.
 
-        A Python HTTP request cannot cancel a running ONNX generator. Killing its
+        A Python HTTP request cannot cancel a running GGUF generator. Killing its
         supervised server/worker is the real interruption boundary; a new server
         will be started *after* the old process exits, never concurrently.
         """
@@ -1212,8 +1140,8 @@ class DeepThorTDesktop(tk.Tk):
             proc.terminate()
         except OSError as exc:
             self._restart_cancelled_node_pid=None
-            self._log('Could not stop ONNX worker: '+str(exc))
-            self._set_connection_status('ONNX cancellation failed; use Stop AI and inspect Processes.')
+            self._log('Could not stop GGUF worker: '+str(exc))
+            self._set_connection_status('GGUF cancellation failed; use Stop AI and inspect Processes.')
 
     def _cancel_chat_replies(self, chat_id, *, reason):
         active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
@@ -1244,7 +1172,7 @@ class DeepThorTDesktop(tk.Tk):
         running=bool(active and active['chat_id']==chat_id)
         pending=any(r['state'] in ('pending','running','waiting_sources')
                     for r in self.conversations.thread(chat_id,limit=1000))
-        detail=(' Its outstanding replies will be stopped, including current ONNX generation. '
+        detail=(' Its outstanding replies will be stopped, including current GGUF generation. '
                 'The model must reload before other chats can proceed.' if running else
                 ' Its queued replies will be cancelled.' if pending else '')
         if not messagebox.askyesno('Close chat',
@@ -1512,7 +1440,7 @@ class DeepThorTDesktop(tk.Tk):
             stage=self.reply_stage or 'Preparing local request'
             health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
             if health.get('inference_busy') and stage.startswith('Waiting for local model'):
-                stage='Local ONNX model is generating a response (output is unavailable until completion)'
+                stage='Local GGUF model is generating a response (output is unavailable until completion)'
             current_chat=bool(req and req['chat_id']==self.current_chat)
             prefix='' if current_chat else 'Other chat — '
             # One concise line; the original label must not grow vertically.
@@ -1645,7 +1573,7 @@ class DeepThorTDesktop(tk.Tk):
         self._clear_imported_specification()
         # JANUS's existing Front/Interface can report observed project state
         # without claiming to be a second language model. Explicitly addressed
-        # chat requests bypass the occupied ONNX worker and work queue.
+        # chat requests bypass the occupied GGUF worker and work queue.
         if kind=='chat' and addressed_to_janus(prompt) and not attachments:
             try:
                 actions=self.janus.actions(limit=1)
@@ -1665,12 +1593,12 @@ class DeepThorTDesktop(tk.Tk):
                            model_called=False,approved_job_queued=False)
                     self._reload_chat()
                     self.reply_outcome={'chat_id':self.current_chat,
-                          'message':'JANUS replied from recorded state; Qwen was not used.'}
+                          'message':'JANUS replied from recorded state; Triad was not used.'}
                     self._render_reply_notice()
                     self.status.set('JANUS Interface responded locally; no work was approved or queued.')
                     return
             except Exception as exc:
-                # Never silently fall through to Qwen and block the user. This
+                # Never silently fall through to Triad and block the user. This
                 # failed local request stays visible with its original text.
                 self.conversations.change(ident,'failed',
                     'JANUS Interface status unavailable: '+str(exc)[:300],allowed=('pending',))
@@ -1684,7 +1612,7 @@ class DeepThorTDesktop(tk.Tk):
         # Software provisioning begins only after approval of a real build job,
         # not when merely asking for a draft plan or revising a prompt.
         # First read-only discovery starts on the user's INITIAL prompt, even if
-        # the local ONNX model is still loading. The original request is retained.
+        # the local GGUF model is still loading. The original request is retained.
         if project_kind(prompt)=='x4' or x4_request_in_context(
                 prompt,project_dir=self._project_key(),
                 previous_prompts=[r['prompt'] for r in self.conversations.thread(self.current_chat,10)]):
@@ -1979,7 +1907,7 @@ class DeepThorTDesktop(tk.Tk):
             if self._quitting:return
             proc=self.council_node
             if proc and proc.poll() is not None:
-                self._log(f'Secondary ONNX exited ({proc.poll()}); instructions remain durable.')
+                self._log(f'Secondary GGUF exited ({proc.poll()}); instructions remain durable.')
                 self.council_node=None;self.council_ready=False
                 self._last_council_health=None
                 self._council_restarts+=1
@@ -2244,12 +2172,12 @@ class DeepThorTDesktop(tk.Tk):
                 +acceptance_summary+
                 f"FILES ({len(milestone['steps'])}):\n{display[:2300]}\n\n"
                 'This is an independently scoped milestone. The full original specification '
-                'is preserved, but Qwen will only receive the listed exact source sections '
+                'is preserved, but Triad will only receive the listed exact source sections '
                 'while generating these files. Later milestones remain blocked until an '
                 'approved verification check succeeds.\n\n'
                 'Queue this milestone? With unattended project work enabled, this approval '
                  'authorizes reversible writes for these exact planned files and fixed local '
-                 'tests plus up to two bounded ONNX repairs (maximum three tests). '
+                 'tests plus up to two bounded GGUF repairs (maximum three tests). '
                 'Tests run generated code with your Windows user rights. Switch unattended work OFF in Work queue before approval to keep per-file/test '
                  'confirmations. Tool installs follow a separate policy and normal UAC.',parent=self):
                 self._log(f'Milestone {ordinal}: user declined approval; no files changed.')
@@ -2728,18 +2656,18 @@ class DeepThorTDesktop(tk.Tk):
                note='Model exit cause is not established by an HTTP reset')
         if count > 2:
             self._conversation_error(ident,
-                'ONNX connection failed repeatedly; stopped after two supervised recovery attempts. '
+                'GGUF connection failed repeatedly; stopped after two supervised recovery attempts. '
                 'Inspect Processes and export diagnostics. Last transport error: '+str(error)[:180])
             return
         self.conversations.change(ident, 'pending',
-            f'ONNX connection interrupted ({error_type}); saved exchanges will resume when '
+            f'GGUF connection interrupted ({error_type}); saved exchanges will resume when '
             'the local model is ready. No new build authorization.', allowed=('running',))
         if self.active_conversation == ident:
             self.active_conversation = None
             self.reply_stage = ''
         self.node_ready = False
         self._model_transport_waiting = True
-        self._log(f'Conversation #{ident}: local ONNX transport reset, recovery {count}/2. '
+        self._log(f'Conversation #{ident}: local GGUF transport reset, recovery {count}/2. '
                   'Request retained; waiting for a healthy, idle supervised worker.')
         self._reload_chat(); self._render_reply_notice()
         # A still-live worker may be finishing the old request; only the health
@@ -2754,7 +2682,7 @@ class DeepThorTDesktop(tk.Tk):
         if isinstance(health, dict) and health.get('ready') and not health.get('inference_busy'):
             self._model_transport_waiting = False
             self.node_ready = True
-            self._log('ONNX worker verified healthy and idle after transport interruption; '
+            self._log('GGUF worker verified healthy and idle after transport interruption; '
                       'resuming saved planning requests.')
         elif isinstance(health, dict) and health.get('inference_busy'):
             self.after(5000, self._resume_transport_if_idle)
@@ -2898,10 +2826,10 @@ class DeepThorTDesktop(tk.Tk):
             self.jobs.cancel(ident)
             if self.tool_process and self.tool_process.poll() is None:
                 self.tool_process.terminate()
-            self._log(f'Job #{ident}: cancelled local test; local Qwen stays running.')
+            self._log(f'Job #{ident}: cancelled local test; local Triad stays running.')
         elif job['state']=='running' and self.active_job==ident:
             if not messagebox.askyesno('Cancel local inference',
-                    'Cancel this active job? The ONNX worker will stop, but previous '
+                    'Cancel this active job? The GGUF worker will stop, but previous '
                     'approved files and backups remain.',parent=self):
                 return
             cycle=self.cycles.get(ident)
@@ -3267,7 +3195,7 @@ class DeepThorTDesktop(tk.Tk):
                 self.after(1800, self._project_work_tick)
 
     def _claim_autonomous_repair(self, job):
-        """Launch one local Qwen proposal; this does not write project files."""
+        """Launch one local Triad proposal; this does not write project files."""
         jobid=job['id']
         steps=self.jobs.steps(jobid)
         authorize_repair_context(STATE/'project-grants',job,steps,enabled=True)
@@ -3289,13 +3217,13 @@ class DeepThorTDesktop(tk.Tk):
             raise
         if lease:self._graph_repair_leases[jobid]=lease
         if not self.jobs.change(jobid,'running',
-                'Diagnosing test failure with local ONNX (bounded repair)',
+                'Diagnosing test failure with local GGUF (bounded repair)',
                 allowed=('waiting_repair',)):
             self.cycles.block(jobid,'Repair was not claimed by the expected job state')
             raise CycleError('Repair job state changed before generation')
         self.active_job=jobid
         self.active_started=time.monotonic()
-        self._log(f"Job #{jobid}: local ONNX repair {cycle['repairs']+1}/{MAX_REPAIR_ATTEMPTS} "
+        self._log(f"Job #{jobid}: local GGUF repair {cycle['repairs']+1}/{MAX_REPAIR_ATTEMPTS} "
                   f"after test {cycle['tests']}/{MAX_TEST_ATTEMPTS}. "
                   'Only exact approved file replacements can be saved.')
         self._refresh_jobs()
@@ -3439,7 +3367,7 @@ class DeepThorTDesktop(tk.Tk):
         if lease:
             try:self.graphs.finish_action(lease,jobid,'blocked')
             except GraphError:pass
-        self._block_repair(jobid,'Local ONNX repair failed: '+str(message)[:350])
+        self._block_repair(jobid,'Local GGUF repair failed: '+str(message)[:350])
         self._refresh_jobs()
 
     def _block_repair(self,jobid,reason):
@@ -3863,7 +3791,7 @@ class DeepThorTDesktop(tk.Tk):
                             'Return only the image description (no explanation):\n'+prompt,
                             max_tokens=160).strip()
                         if 5<len(draft)<1500:
-                            self.events.put(('log',f'Image job #{jobid}: image prompt prepared by local Qwen model.'))
+                            self.events.put(('log',f'Image job #{jobid}: image prompt prepared by local Triad model.'))
                             prompt=draft
                     command=cli_image_args(sys.executable,ROOT/'run_image.py',modeldir,prompt,output_path,384,384,15)
                     output=self._capture_media_process(command,'Image generation')
@@ -5060,7 +4988,7 @@ class DeepThorTDesktop(tk.Tk):
             self._reload_chat()
             self.reply_outcome=None
             self._render_reply_notice()
-            self._log(f'Tool learning request #{ident} queued for local ONNX; no tool has run.')
+            self._log(f'Tool learning request #{ident} queued for local GGUF; no tool has run.')
             self.tabs.select(0)
         except (ValueError,OSError,PermissionError) as exc:
             messagebox.showwarning('Cannot draft tool procedure',str(exc),parent=self)
@@ -5536,7 +5464,7 @@ class DeepThorTDesktop(tk.Tk):
     def _approve_inspected_install(self):
         """Separate explicit approval for one exact-version community catalog install.
 
-        No local ONNX/LLM model text can authorize this action. The inspection
+        No local GGUF/LLM model text can authorize this action. The inspection
         must come from the current desktop session and remain fresh. This does
         not independently authenticate a publisher or attest the installer.
         """
@@ -6040,7 +5968,7 @@ class DeepThorTDesktop(tk.Tk):
             report+='\nJANUS/SENTINEL CHECK: diagnostic unavailable: '+str(exc)
         local_status=local_server_status(timeout=0.75)
         if isinstance(local_status,dict) and self.node_loading:
-            report += ('\n\nONNX WORKER STATUS (direct localhost measurement)\n'
+            report += ('\n\nGGUF WORKER STATUS (direct localhost measurement)\n'
                 + 'Phase: '+str(local_status.get('phase') or 'unknown')+'\n'
                 + 'Stage: '+str(local_status.get('stage') or 'unknown')+'\n'
                 + 'Time since model initialization began: '+str(local_status.get('loading_seconds',0))+'s\n'
@@ -6180,7 +6108,7 @@ class DeepThorTDesktop(tk.Tk):
         elif self.node_loading:
             elapsed = max(0, int(time.monotonic()-self.node_started)) if self.node_started else 0
             self.model_status.set(f'AI: loading {elapsed//60}m {elapsed%60:02d}s')
-            stage=(self.current_loading_stage or 'Waiting for local ONNX status')[:150]
+            stage=(self.current_loading_stage or 'Waiting for local GGUF status')[:150]
             if elapsed >= 180:
                 self._set_connection_status(
                     f'AI loading {elapsed//60}m {elapsed%60:02d}s — {stage}. '
@@ -6209,9 +6137,13 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError):
             sentinel_health={};worker_pid=None
         council_pid=self.council_node.pid if self.council_node and self.council_node.poll() is None else None
+        model_health=self.last_server_health if isinstance(self.last_server_health,dict) else {}
+        resident=model_health.get('models',{}) if model_health.get('pid')==model_pid and model_pid else {}
+        if not isinstance(resident,dict):resident={}
+        roles={r:m['pid'] for r,m in resident.items() if isinstance(m,dict) and m.get('resident') and type(m.get('pid')) is int}
         measured=self.meter.read({'DeepThorT UI':os.getpid(),
-            **({'Qwen JANUS/Sentinel':council_pid} if council_pid else {}),
-            **({'Qwen inference':model_pid} if model_pid else {}),
+            **({'Triad broker':model_pid} if model_pid else {}),
+            **{r+' model':pid for r,pid in roles.items()},
             **({'JANUS Sentinel':self.sentinel_process.pid} if self.sentinel_process and self.sentinel_process.poll() is None else {}),
             **({'JANUS worker':worker_pid} if worker_pid else {}),
             **({'Build / tool':tool.pid} if tool else {}),
@@ -6240,14 +6172,14 @@ class DeepThorTDesktop(tk.Tk):
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
               f"Supervision: 30% aggregate CPU cap, 30% RAM commit limit under DeepThorT.exe\n"
-              f"Second ONNX: {'ready' if self.council_ready else 'loading' if council_pid else 'not running'} | PID {council_pid or 'none'}; same cap as primary\n"
+              f"Resident models: {len(roles)}/3 | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"
               f"Quiet Godot: {'running' if self._quiet_test_active else 'inactive'}; headless, dummy audio; low priority, no visual proof\n"
               f"Isolated GUI: {'running' if self._gui_test_active else 'inactive'}; separate desktop, project-owned window metadata only\n"
-              f"GPU: CPU-only ONNX inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
+              f"GPU: CPU-only GGUF inference | Disk: game-aware cooperative gate, no strict 20% cap\n"
               f"Measured resource use (tracked PIDs only):\n{actual or '  Not available on this OS'}\n"
-              f'Last actual ONNX stage: {(self.current_loading_stage or "none observed")[:200]}\n'
+              f'Last actual GGUF stage: {(self.current_loading_stage or "none observed")[:200]}\n'
               'Inference output is only known at completion; no fictitious token progress.')
         gui_history=self.gui_tests.snapshot()['history']
         if gui_history:
@@ -6455,16 +6387,16 @@ class DeepThorTDesktop(tk.Tk):
                         self._render_reply_notice()
                 is_ready=(bool(detail.get('ready')) if isinstance(detail,dict) else bool(event[1]))
                 if isinstance(detail,dict) and not is_ready and self.node_loading:
-                    stage=str(detail.get('stage') or 'Initializing local ONNX model')[:240]
+                    stage=str(detail.get('stage') or 'Initializing local GGUF model')[:240]
                     self.current_loading_stage=stage
                     if stage!=self._last_health_stage:
                         self._last_health_stage=stage
-                        self._log('ONNX startup stage: '+stage)
+                        self._log('GGUF startup stage: '+stage)
                     if detail.get('stalled'):
-                        self._set_connection_status('ONNX has not reported a new stage for over four minutes. '
+                        self._set_connection_status('GGUF has not reported a new stage for over four minutes. '
                           'This does not prove a crash; inspect CPU/RAM in Processes, or Stop AI and diagnose.')
                     if detail.get('phase')=='failed':
-                        self.last_ai_error=str(detail.get('error') or 'ONNX worker failure')
+                        self.last_ai_error=str(detail.get('error') or 'GGUF worker failure')
                 if is_ready and self.node and self.node.poll() is None and self._restart_cancelled_node_pid is None:
                     newly_ready=not self.node_ready
                     if newly_ready:
@@ -6488,7 +6420,7 @@ class DeepThorTDesktop(tk.Tk):
                     self.node_ready=False;self.node_loading=False;self.node_started=0.0
                     self.model_status.set('AI: restarting after reply cancellation')
                     self._set_connection_status('Reply stopped. Reloading local AI for other queued chats.')
-                    self._log('Cancelled ONNX worker exited; starting a fresh supervised model for other chats.')
+                    self._log('Cancelled GGUF worker exited; starting a fresh supervised model for other chats.')
                     if not self._quitting:
                         self.after(350,lambda:self._start_ai(automatic=True))
                     continue
@@ -6523,22 +6455,22 @@ class DeepThorTDesktop(tk.Tk):
                     self._unexpected_model_exits += 1
                     if self._unexpected_model_exits <= 2:
                         self._set_connection_status(
-                            f'ONNX exited unexpectedly; supervised restart '
+                            f'GGUF exited unexpectedly; supervised restart '
                             f'{self._unexpected_model_exits}/2 is scheduled. '
                             'Progress and completed passes remain saved.')
-                        self._log('Unexpected local ONNX exit; attempting bounded, '
+                        self._log('Unexpected local GGUF exit; attempting bounded, '
                                   'game-capped relaunch without changing the 40-pass budget.')
                         self.after(5000,lambda:self._start_ai(automatic=True)
                                    if not self._explicit_model_stop and not self._quitting else None)
                     else:
-                        self._set_connection_status('Repeated ONNX exits: automatic restart stopped. '
+                        self._set_connection_status('Repeated GGUF exits: automatic restart stopped. '
                           'Inspect model, RAM/commit limit and Windows events; no result was fabricated.')
-                        self._log('ONNX restarted twice but continued exiting; stopped automatically.')
+                        self._log('GGUF restarted twice but continued exiting; stopped automatically.')
             elif kind=='install_done':
                 self.installing=False;self.model_status.set('AI: installed')
                 self._log('Local AI installed. Starting the model now.')
                 self._auto_start_if_installed()
-                messagebox.showinfo('Installed','ONNX coding model installed. DeepThorT is starting the model automatically; your queued chat will resume when ready.')
+                messagebox.showinfo('Installed','GGUF coding model installed. DeepThorT is starting the model automatically; your queued chat will resume when ready.')
             elif kind=='install_error':
                 self.installing=False;self.model_status.set('AI: installation failed')
                 self._log('Installation failed: '+event[1]);messagebox.showerror('Install failed',event[1])
@@ -6706,7 +6638,7 @@ class DeepThorTDesktop(tk.Tk):
                     elif was_auto_verification and cycle_result and cycle_result['phase']=='repair_ready':
                         self.jobs.change(job_id,'waiting_repair',
                             f'Test {cycle_result["tests"]}/{MAX_TEST_ATTEMPTS} failed; '
-                            'bounded local ONNX repair available (not yet executed)',
+                            'bounded local GGUF repair available (not yet executed)',
                             allowed=('running',))
                         self._log(f'Job #{job_id}: test failure recorded; next idle step may '
                                   'propose one bounded repair. See Work queue evidence.')
