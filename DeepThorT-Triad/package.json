@@ -1,0 +1,10 @@
+{
+  "name": "deepthort-offline-onnx-coder",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Qwen2.5 Coder 1.5B CPU-only ONNX Runtime inference for DeepThorT",
+  "engines": {"node": ">=20"},
+  "dependencies": {"@huggingface/transformers": "3.8.1"},
+  "scripts": {"start": "node inference_server.mjs"}
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "deepthort-v50-source-digest-v1",
+  "source_files": [
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "22c208c80f7713953a55495d0ccb71a00be47ed94f2c45a18e02d13506f42e82"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V50.md",
+      "sha256": "2d398f8cd6258e5ce5074d49d34be6a730c331b00be9e3c753582ab1008d48d0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b918889175a67b73df86a0380ae89de2355a02a5897150c3f181fea6d6950801"
+    },
+    {
+      "path": "TEST_RESULTS_V50.md",
+      "sha256": "8f67f13d5a8839cd5ecad10ff3531a32ef1704c6b4bd9ed99a5d3e299f3db211"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "a2326f7c98c2336c8ff4c86cc78460061962bb2cf0e6a9a876162dcf394d7642"
+    },
+    {
+      "path": "deepthort_local/indexed_roadmap_repair.py",
+      "sha256": "1f59e55c022890bc081ccbb8939b4fba64c88ef40c0293aa630705e40df008b8"
+    },
+    {
+      "path": "deepthort_local/project_source_view.py",
+      "sha256": "3fb4f0ef2b9ba3bf0963b938985b20ed38efd339916e72ce137c8ffb064aa518"
+    },
+    {
+      "path": "deepthort_local/reasoning_council.py",
+      "sha256": "bd26b4e4822b2773d1eea46da53794600ef61dbfa480f58704e6854257670d2a"
+    },
+    {
+      "path": "deepthort_local/specification_library.py",
+      "sha256": "7b54945ec90a01877d3ca180e55a0a1a599fa5dfb4bb795e9b9119c793dce9a1"
+    },
+    {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "ab5e1a21ee3fa998fce5bbacb2c50a57106e4fbc31a43dbfef9c3ce0a467f379"
+    },
+    {
+      "path": "desktop_app.py",
+      "sha256": "00eb2ebdb25aecb58ba6b3ebb210e4110eac44933ac48bafc1f2588a9475c6fd"
+    },
+    {
+      "path": "tests/test_neural_council_and_x4_refs_v50.py",
+      "sha256": "4a875a1def1403ebd910920c5cc84ddd60cb762199234b6831d7584b17f4a697"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "deepthort-v48-source-digest-v1",
+  "source_files": [
+    {
+      "path": "desktop_app.py",
+      "sha256": "903e00698c0b4f39f45cd8798cb181a5ccf255499b97b0cffd6b67cc773c3540"
+    },
+    {
+      "path": "deepthort_local/specification_library.py",
+      "sha256": "b1c4d10a4684660b63d800bb81952cab9816834f6ca553d9f1e2c053f5ad151f"
+    },
+    {
+      "path": "deepthort_local/indexed_roadmap_repair.py",
+      "sha256": "7c6034c9e8ebdac4f47614411c459b964bfe7f22967cbc50d10364c83846b09c"
+    },
+    {
+      "path": "tests/test_indexed_roadmap_repair_v48.py",
+      "sha256": "897f679d9c31e14e81d512673e505f6acb7876683ce688069b63bc275b61c9ec"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V48.md",
+      "sha256": "f7a395fa8b3c33474da79de2ad8a785dc46c7b7f4a7c6db4a1ddfedb8cf83c69"
+    },
+    {
+      "path": "TEST_RESULTS_V48.md",
+      "sha256": "faf276280e401ade28b6f39fe84e30038e0b1050e1f6d362609c3cbf4ec4ea4f"
+    },
+    {
+      "path": "README.md",
+      "sha256": "29036e6061853707d7415fb7ee29c435b7324159412e6eb7dd39dc202e57b7d9"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "2732d031b972d7a1a5246337f80c9ec5d13e7ff6ffd0836f6cf54f84f119c6fb"
+    },
+    {
+      "path": "START HERE.txt",
+      "sha256": "bb23a3bcab452042d0376f94eb67810371d993ad47b70a7c832017154898a5cc"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "bb48599e0407349d26c434b37e55aac94b8c63f8c199f7a80c42a246434f84d5"
+    }
+  ]
+}

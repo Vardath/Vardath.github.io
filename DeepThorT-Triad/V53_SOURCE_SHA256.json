@@ -1,0 +1,79 @@
+{
+  "baseline_main": "e63194c5f0313ca14ee4adae5c2ab4ac0ecabc0e",
+  "description": "v52 source-level fixes and v53 one-click acceptance harness",
+  "schema": "deepthort-v53-source-digest-v1",
+  "source_files": [
+    {
+      "path": ".github/workflows/deepthort-tests.yml",
+      "sha256": "839a4654c728771e6f1493d7f23c0bd7c17100af2e29d9e1640e7c94ef229835"
+    },
+    {
+      "path": "LATEST_TEST.json",
+      "sha256": "db0edc26cdb009e4cc4da88cef7e68e17b2132c6c52100b4eaa100c08bdc6fee"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "35ec13afb0578a8350d46923cbc3b1d7faaba350e6032a3009ae1b57abd74645"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V52.md",
+      "sha256": "02300027bedb5e4517bfff7fee2a112df945a34028e570f91914b8a30d75d547"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V53.md",
+      "sha256": "a3c06ebe2c1f9899c5bda69c5deb8ce6bd39cc0db70718e8c547214fc3599028"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6a38480ec1dac2e0d487187c3140b03fa81b076daf1e46a89858ea5145787919"
+    },
+    {
+      "path": "START HERE.txt",
+      "sha256": "02f394b56547cb885ddeac7195d24f2b9799a727337f85374059eec2cd2a4b3c"
+    },
+    {
+      "path": "TEST_RESULTS_V52.md",
+      "sha256": "b952cf6e13b129f98d4ef7025deaf35c78a976337a2b8f778ce7c340a3a53cd2"
+    },
+    {
+      "path": "TEST_RESULTS_V53.md",
+      "sha256": "2333cefeb555635ee9f5b48c1be1b805b9f4cc30d1a5f1e2f9da8292eafce22e"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "93e631f55e478a57868d93b6f526ca2ee8d1f1db96d95ab94b82e586150a6f14"
+    },
+    {
+      "path": "V52_SOURCE_SHA256.json",
+      "sha256": "69a0f76dc2a5f51039815ac90d8d4109191f5dce91fdb6982348d12859712fdd"
+    },
+    {
+      "path": "deepthort_local/dual_onnx.py",
+      "sha256": "f8e5708556c694de324dc0c87ea2be24398e8345307909ab74c38ab7c018ed99"
+    },
+    {
+      "path": "deepthort_local/flight_recorder.py",
+      "sha256": "17f7a8b9a005b0977f1fcbaca1369a89f5a277dbfd746ca20be7651d6a9c193b"
+    },
+    {
+      "path": "deepthort_local/latest_acceptance.py",
+      "sha256": "aab5e8465ac5bdfebc973553dfda9aefbc31bb0ada22d4d93368bdf0e900ef38"
+    },
+    {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "2a0b1c43ef54ff2a67e79f231d2bbe167b16598022acfeb7ffec202d81ad3488"
+    },
+    {
+      "path": "desktop_app.py",
+      "sha256": "326596d9475aedc4754537fa1fb3634b0b9284b85398ba0aebc043a3517ad7b2"
+    },
+    {
+      "path": "tests/test_diagnostics_council_v52.py",
+      "sha256": "227d8b9ef6279fc526ff85bf7b710d0bc87bfc07c9c57573df92da1324bb2fff"
+    },
+    {
+      "path": "tests/test_latest_acceptance_v53.py",
+      "sha256": "218c23d71930641b2e6109b0d32bb6027d5c1757537810a20b93166df701fbfa"
+    }
+  ]
+}

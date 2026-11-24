@@ -1,0 +1,182 @@
+{
+  "schema": "deepthort-v57-source-digest-v1",
+  "release": "v57",
+  "source_files": [
+    {
+      "path": "LATEST_TEST.json",
+      "sha256": "c6f495fc2d2ed3cc78b3a82d37d1fd112291ac24f15e05b60bf2c973d966eee2"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "5636912afd2d277807656c79df1a11c57b21bcc77bef9f4fec7129f37a94cf57"
+    },
+    {
+      "path": "PROJECT_CONTEXT_V57.md",
+      "sha256": "c45391d7cbf6cd7754ce35bf0eeebd0dd2a37f31f4af9939bcae049a61a28f65"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e5a840f09cad0b7673237a2417f831fe526fdb40b101308392239c2c9818bf67"
+    },
+    {
+      "path": "START HERE.txt",
+      "sha256": "ff74cbe6a70f50e331c21e681d1bd957ca18372cbd53a257c7c1c644105a9e3a"
+    },
+    {
+      "path": "TEST_RESULTS_V57.md",
+      "sha256": "2a1da4eda34917393745040799a627e298032b8922149b5d982273bc5b03c98e"
+    },
+    {
+      "path": "USER_GUIDE.html",
+      "sha256": "4b31556360053741d39c7a83be36591c91ed7d3458ab6557b2e89b43eb00d58c"
+    },
+    {
+      "path": "deepthort_local/agent_plan.py",
+      "sha256": "70ea4a1a79485fe4519e4cf462c780788a14114fb6043057e15706751431de43"
+    },
+    {
+      "path": "deepthort_local/capability_library.py",
+      "sha256": "1e9789ae6806eac5daf2d8b2c3b7a1bd0de539dc4ddc258cb3a4163d9cd64982"
+    },
+    {
+      "path": "deepthort_local/client.py",
+      "sha256": "e0e5f5a47936b7123a5d281c367a12908b71d7098776fa3b3ebaf161ad6dd4c8"
+    },
+    {
+      "path": "deepthort_local/dual_onnx.py",
+      "sha256": "2a2c40f61856f3317522e0d7fdcacd09191c7fc798ac18ae9a403ec0b02bd3a4"
+    },
+    {
+      "path": "deepthort_local/flight_recorder.py",
+      "sha256": "7a6d7d9292b9fb985f6d6e8893f0b31635a6d282ac00b12bf3ad7df983f2f3ed"
+    },
+    {
+      "path": "deepthort_local/hierarchical_planning.py",
+      "sha256": "ad4a3e8f99c18812de63b1b0f54523dc0e3e0dc70ce5361f23af998d74f598b4"
+    },
+    {
+      "path": "deepthort_local/indexed_roadmap_repair.py",
+      "sha256": "f7afe447ef75f3c648dcde93681793fdedc722e3e5ab377a78d78e18a0180378"
+    },
+    {
+      "path": "deepthort_local/instruction_inbox.py",
+      "sha256": "9ceb3348aaa21b857fc712d80149b2dbfd8c92852aae55b2733731d9850df4ba"
+    },
+    {
+      "path": "deepthort_local/janus_counsel.py",
+      "sha256": "2a92daa208841237d5ee7328ea007bb0cf9a8fa090f960a217261f84478661bc"
+    },
+    {
+      "path": "deepthort_local/latest_acceptance.py",
+      "sha256": "6bb4c38f383bd39cf20918d6981ab63ecdfa0417aa46863ff7145d982f007d6d"
+    },
+    {
+      "path": "deepthort_local/media_tools.py",
+      "sha256": "3056d6201a67dd138155c1839b5359e4480948dae73161d8acdf55ed0034621f"
+    },
+    {
+      "path": "deepthort_local/specification_library.py",
+      "sha256": "8f68e646b92ae0a75886af37e037513872328f2892c928c64d1e42c95a728e5c"
+    },
+    {
+      "path": "deepthort_local/x4_sources.py",
+      "sha256": "2cf90a909d3eb4a9de64bd0a122fc57cfd56ae3a556c3f29656cd49d443a285a"
+    },
+    {
+      "path": "desktop_app.py",
+      "sha256": "8dcc9998355373ad8ec7db763639cfa7ee7e5e61cd1632170371b3af84bbde4d"
+    },
+    {
+      "path": "tests/test_agent_plan.py",
+      "sha256": "ec940c9d5b4c856f6515a2e222ef9d2d07e5deb10d8e086d923aafc58b06185d"
+    },
+    {
+      "path": "tests/test_chat_close_stop_v18.py",
+      "sha256": "61f7f5cb5e979f4321ef4e920c4c4d878c34bdeeaddbcb604d11b0a51cb8d8c0"
+    },
+    {
+      "path": "tests/test_development_cycle_gui_v41.py",
+      "sha256": "757ba18b2f19379ceea3fd9228e4127a664b4dc21a3f274953bff010bea46da3"
+    },
+    {
+      "path": "tests/test_execution_safety_v34.py",
+      "sha256": "ac331889e98854efc3940496f8bd4a5f777da781a35a3c85510992166a45eb4d"
+    },
+    {
+      "path": "tests/test_generated_scripts_gui_v33.py",
+      "sha256": "a16b2720d713a63ab0038c019be243c777cff098bb1edc21b5f3ffc4f2a9d630"
+    },
+    {
+      "path": "tests/test_generated_scripts_v33.py",
+      "sha256": "b23a5158e21fd76e78a7ce284831dfcb843e8921ff5fe25e5d725648ecf2046a"
+    },
+    {
+      "path": "tests/test_gui_flow.py",
+      "sha256": "84917382957ce0f0bcb8d01069903b7dc73cd4e156f2fc575a38475b8474c4c9"
+    },
+    {
+      "path": "tests/test_hierarchical_planning_v25.py",
+      "sha256": "a912d1b3dab71c7b5d0ae771be99888910fa864dddc89d2fc62ab6c6f46b03dc"
+    },
+    {
+      "path": "tests/test_indexed_roadmap_repair_v48.py",
+      "sha256": "f7bde2348b11f36e8f6aec98d17105907b5b40bc941894579c4aa73b8d1a9f19"
+    },
+    {
+      "path": "tests/test_janus_core_visibility_v54.py",
+      "sha256": "f9ef4249a17134230a33143511c4ff1ada229267ed608f4c39fda3d9f1fe138f"
+    },
+    {
+      "path": "tests/test_janus_gui.py",
+      "sha256": "2d5138c5aa751566852db2ed2c85d57e9c5a8a0132fb5174c3ee2616a01b11b8"
+    },
+    {
+      "path": "tests/test_janus_handoff_v55.py",
+      "sha256": "a7aed69e46cfa439b0e1c52521fe9eaaf0110823384cb40e81104238aa837f74"
+    },
+    {
+      "path": "tests/test_janus_recursive_societies.py",
+      "sha256": "cbe3d91c8379889ab24661e4b9fcf61516f7aeb9c2e8055e587dfbc04033b911"
+    },
+    {
+      "path": "tests/test_long_project_progress_v49.py",
+      "sha256": "88a798b55424bba5d519a1fd12feb39b4e7806bcc06561ac6f80b6d4ddc0801e"
+    },
+    {
+      "path": "tests/test_reference_learning_v23.py",
+      "sha256": "06143e8e49fcd7a74c4dc65e07db031f7882017b8c5c584e60daeeb9351309f2"
+    },
+    {
+      "path": "tests/test_requirements_intelligence_v26.py",
+      "sha256": "0962bf3420f789e526b8eb28d43eb2202629c076f040471ccfb5fc6a78de7aee"
+    },
+    {
+      "path": "tests/test_semantic_reconciliation_v27.py",
+      "sha256": "ab5ae06f093e022c5e5d6383994e0a7afd0e9e2eda8002e6c5b6a798f8a069fd"
+    },
+    {
+      "path": "tests/test_software_autonomy_v39.py",
+      "sha256": "cfb5e2bc5748cbc0732c4987a9683a127b5677d797c60506f98d036bf42f587e"
+    },
+    {
+      "path": "tests/test_source_backed_planning_v57.py",
+      "sha256": "e07ef51f350bbd2274e30612b59492fd5eb1643d1029e152bc1cc69f25439b60"
+    },
+    {
+      "path": "tests/test_state_health_v34.py",
+      "sha256": "5afe239cbc731be1e166d73091a1e31928f41e21699b24d1898c7d8ce12cb2f6"
+    },
+    {
+      "path": "tests/test_task_graph_gui_v42.py",
+      "sha256": "da2b2705687179f5a0101015799ed3ec8a7a86ddd7e938f25514d289871db50a"
+    },
+    {
+      "path": "tests/test_tool_acquisition_integration_v32.py",
+      "sha256": "48c9ac144c8775796b44832e660ed30d3152ecc22951e85faaa899a1a7779e3c"
+    },
+    {
+      "path": "tests/test_x4_gui_v107.py",
+      "sha256": "24603dfd459c3ef834d90f96ca57cf9101ccc76abee301ecab7f2f4c34cbd9d4"
+    }
+  ]
+}

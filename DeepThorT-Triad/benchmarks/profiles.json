@@ -1,0 +1,40 @@
+{
+  "baseline": {
+    "repo": "onnx-community/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "09095b13833b4fdd110df2648aad430cb42a7c4a",
+    "dtype": "q4",
+    "weights": [
+      "onnx/model_q4.onnx"
+    ]
+  },
+  "coder3b": {
+    "repo": "onnx-community/Qwen2.5-Coder-3B-Instruct",
+    "revision": "8a73f297ce5cd63aedf6bea2c0aec2bff8ea55b5",
+    "dtype": "q4",
+    "weights": [
+      "onnx/model_q4.onnx",
+      "onnx/model_q4.onnx_data"
+    ]
+  },
+  "qwen3-4b": {
+    "repo": "onnx-community/Qwen3-4B-ONNX",
+    "revision": "21d7994e6b4736786dce45b3eef15dd58304e4b3",
+    "dtype": "q4f16",
+    "weights": [
+      "onnx/model_q4f16.onnx",
+      "onnx/model_q4f16.onnx_data",
+      "onnx/model_q4f16.onnx_data_1"
+    ],
+    "no_think": true
+  },
+  "qwen3-4b-2507": {
+    "repo": "onnx-community/Qwen3-4B-Instruct-2507-ONNX",
+    "revision": "41a4dd4d147229f83043afb98a4d4c803b8bfcbb",
+    "dtype": "q4",
+    "weights": [
+      "onnx/model_q4.onnx",
+      "onnx/model_q4.onnx_data",
+      "onnx/model_q4.onnx_data_1"
+    ]
+  }
+}
