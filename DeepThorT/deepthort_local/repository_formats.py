@@ -2,7 +2,8 @@
 import re
 from xml.parsers import expat
 
-SUFFIXES={'.gd','.tscn','.tres','.xml'}
+from .repository_code_formats import SUFFIXES as CODE_SUFFIXES, parse as parse_code
+SUFFIXES={'.gd','.tscn','.tres','.xml'}|CODE_SUFFIXES
 IDENT=re.compile(r'[A-Za-z_][A-Za-z0-9_.-]{0,179}\Z')
 RESOURCE=re.compile(r'res://[A-Za-z0-9_./ -]{1,240}\Z')
 TOKEN=re.compile(r"""#[^\n]*|r?\"\"\"|r?\'\'\'|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_]\w*|[^\s]""")
@@ -94,4 +95,5 @@ def xml(data):
     return result
 
 def parse(data,suffix):
+    if suffix in CODE_SUFFIXES:return parse_code(data,suffix)
     return xml(data) if suffix=='.xml' else godot(data,suffix)

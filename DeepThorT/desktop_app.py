@@ -3916,7 +3916,8 @@ class DeepThorTDesktop(tk.Tk):
                         if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
                             raise PlanError('Behavior test context exceeds bound; split the approved test file')
                         request+=extra
-                    if dest.suffix.casefold() in ('.py','.gd','.xml','.tscn','.tres') and not self.disk_gate.gaming():
+                    from deepthort_local.repository_index import SUPPORTED_SUFFIXES
+                    if dest.suffix.casefold() in SUPPORTED_SUFFIXES and not self.disk_gate.gaming():
                         try:
                             excluded=self.inspection_exclusions.paths(project)
                             stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()

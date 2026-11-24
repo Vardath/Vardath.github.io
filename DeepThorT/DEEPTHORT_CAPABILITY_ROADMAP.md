@@ -44,3 +44,6 @@ Added observed call spellings, hash-checked short function excerpts, local-impor
 
 ### Progress — Godot and XML repository intelligence
 Schema 3 supports GDScript declarations, literal resource dependencies (including TSCN/TRES), typed unique XML macro/component references, stale-source filtering, and generation/regression context integration. Next: JavaScript/TypeScript and C# declarations and conservative module links; later language-server integration and measured end-to-end benchmark.
+
+### Progress — web and C# source intelligence
+Schema 4 adds lexical JS/TS/C# declaration retrieval, exact unambiguous relative module edges and unique C# namespace hints. This is conservative static analysis, not compiler-aware navigation; complex syntax can be omitted. Next priority 3: schema-validated repository tool interface and bounded JANUS tool-use loop. Language-server support and measured benchmark remain outstanding.

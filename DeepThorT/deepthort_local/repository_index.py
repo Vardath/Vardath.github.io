@@ -22,7 +22,7 @@ MAX_BYTES=32*1024*1024
 MAX_ENTRIES=16000
 MAX_SYMBOLS=200
 MAX_IMPORTS=100
-INDEX_SCHEMA=3
+INDEX_SCHEMA=4
 from .repository_formats import SUFFIXES as EXTRA_SUFFIXES, parse as parse_format
 SUPPORTED_SUFFIXES={'.py'}|EXTRA_SUFFIXES
 MAX_REFERENCES=300
@@ -189,7 +189,7 @@ class RepositoryIndex:
             try:
                 if hashlib.sha256(_read(root,p,excluded)).hexdigest()!=sha:continue
                 value=json.loads(meta)
-                if value.get('schema')!=INDEX_SCHEMA or value['parse'] not in ('python_ast','godot_lexical','xml_static'):continue
+                if value.get('schema')!=INDEX_SCHEMA or value['parse'] not in ('python_ast','godot_lexical','xml_static','js_lexical','cs_lexical'):continue
                 result[p]=(sha,value)
             except (ValueError,OSError,KeyError):continue
         return result
@@ -203,11 +203,19 @@ class RepositoryIndex:
             if module.endswith('.__init__'):module=module[:-9]
             modules.setdefault(module,[]).append(p)
         edges={p:set() for p in rows}
-        definitions={}
+        from .repository_code_formats import module_targets
+        definitions={};namespaces={};paths=set(rows)
         for p,(_,meta) in rows.items():
+            for namespace in meta.get('namespaces',[]):namespaces.setdefault(namespace,set()).add(p)
             for kind,name in meta.get('definitions',[]):
                 definitions.setdefault((kind,name),[]).append(p)
         for p,(_,meta) in rows.items():
+            for spec in meta.get('module_paths',[]):
+                matches=module_targets(p,spec,paths)
+                if len(matches)==1 and matches[0]!=p:edges[p].add(matches[0])
+            for namespace in meta.get('namespace_uses',[]):
+                matches=namespaces.get(namespace,set())
+                if len(matches)==1:edges[p].update(matches-{p})
             for target in meta.get('resource_paths',[]):
                 if target in rows and target!=p:edges[p].add(target)
             for kind,name in meta.get('xml_refs',[]):
@@ -244,7 +252,7 @@ class RepositoryIndex:
         related=seen|{dep for p in seen for dep in edges[p]}
         return {'changed':sorted(starts),'dependents':sorted(seen-starts),
                 'source_hashes':{p:rows[p][0] for p in sorted(related)},
-                'scope':'Observed Python imports, literal Godot resources and unique typed XML references; dynamic references not resolved'}
+                'scope':'Observed Python imports, Godot resources, typed XML references, relative JS/TS modules and unique C# namespace hints; dynamic references not resolved'}
 
     def references(self,project,name,*,exclude=(),cancelled=None,limit=20):
         """Observed call syntax, not resolved runtime targets."""
