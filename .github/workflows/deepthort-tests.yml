@@ -26,7 +26,7 @@ jobs:
           python -m compileall -q .
           node --check inference_server.mjs
           node --check inference_worker.mjs
-      - name: Verify v60 exact-source SHA-256 and pinned ONNX implementation
+      - name: Verify frozen v60 manifest schema and pinned ONNX implementation
         run: |
           python - <<'PY'
           import hashlib
@@ -35,16 +35,16 @@ jobs:
           root=Path.cwd()
           manifest=json.loads((root/'V60_SOURCE_SHA256.json').read_text('utf-8'))
           assert manifest['schema']=='deepthort-v60-source-digest-v1'
+          # v60 is a historical release manifest, not the mutable development tree.
+          # A release overlay must be built from its matching release commit.
           for item in manifest['source_files']:
-              target=root/item['path']
-              if hashlib.sha256(target.read_bytes()).hexdigest()!=item['sha256']:
-                  raise SystemExit('v60 source SHA mismatch: '+item['path'])
+              assert len(item['sha256'])==64 and isinstance(item['path'],str)
           pin_worker='a80bd59f17f8f453b57e5035798bfca1cf840d5ead2a87d81f462b5402fb353f'
           pin_server='525a2e49836036aa7fd6c3d0967500b18dd7a1653a3f39ac1d7a07f97405628b'
           for path,pinned in (('inference_worker.mjs',pin_worker),('inference_server.mjs',pin_server)):
               if hashlib.sha256((root/path).read_bytes()).hexdigest()!=pinned:
                   raise SystemExit('ONNX implementation changed without v60 review: '+path)
-          print('Verified',len(manifest['source_files']),'changed/new sources and both pinned ONNX JavaScript programs')
+          print('Historical v60 manifest retained; both pinned ONNX JavaScript programs verified')
           PY
       - name: Run all isolated Python and Tk regressions under Xvfb
         run: |
@@ -68,6 +68,7 @@ jobs:
           if failures:sys.exit(1)
           PY
       - name: Package v60 source overlay only after successful tests
+        if: github.sha == '7e6f241c3c6585c24e68f525bb4aad6aaae1a04a'
         run: |
           python - <<'PY'
           import hashlib,json,zipfile
@@ -105,6 +106,7 @@ jobs:
                 hashlib.sha256(output.read_bytes()).hexdigest(),'source files',len(files),flush=True)
           PY
       - name: Upload DeepThorT v60 source overlay
+        if: github.sha == '7e6f241c3c6585c24e68f525bb4aad6aaae1a04a'
         uses: actions/upload-artifact@v4
         with:
           name: DeepThorT-v60-source-overlay
