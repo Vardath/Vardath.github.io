@@ -21,6 +21,10 @@ jobs:
           python-version: '3.11'
       - name: Install Tk and isolated test display
         run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
+      - name: Install pinned local PDF parser for acceptance tests
+        run: |
+          python -m pip install --no-deps -r requirements-documents.txt
+          python -I -c "import pypdf; assert pypdf.__version__ == '7.1.1'"
       - name: Compile all Python and check both ONNX server scripts
         run: |
           python -m compileall -q .

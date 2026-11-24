@@ -19,6 +19,7 @@ import zipfile
 
 from .reference_learning import BLOCKED_LINES, BLOCKED_NAMES, DOC_FOLDERS, STOP
 from .workspace import SKIP_DIRS, safe_target
+from .pdf_knowledge import pdf_lines, MAX_PDF_BYTES
 
 MAX_BYTES = 512 * 1024
 MAX_XML = 2 * 1024 * 1024
@@ -28,7 +29,9 @@ MAX_FRAGMENTS = 4096
 MAX_POSTINGS = 50000
 FRAGMENT_CHARS = 280
 TEXT_SUFFIXES = frozenset({'.txt', '.md', '.rst', '.adoc'})
-SUFFIXES = TEXT_SUFFIXES | {'.docx'}
+SUFFIXES = TEXT_SUFFIXES | {'.docx', '.pdf'}
+PDF_LOCATOR = 'pdf-page-line-v1'
+MAX_PDF_SEARCH = 2
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 
 
@@ -60,14 +63,17 @@ def _name(root, relative):
 
 
 def _read(path):
+    limit = MAX_PDF_BYTES if path.suffix.casefold() == '.pdf' else MAX_BYTES
     with path.open('rb') as stream:
-        raw = stream.read(MAX_BYTES + 1)
-    if not raw or len(raw) > MAX_BYTES:
+        raw = stream.read(limit + 1)
+    if not raw or len(raw) > limit:
         raise ValueError('Document empty or exceeds byte budget')
     return raw
 
 
 def _extract(raw, suffix):
+    if suffix == '.pdf':
+        return PDF_LOCATOR, pdf_lines(raw)
     if suffix in TEXT_SUFFIXES:
         if b'\0' in raw:
             raise ValueError('Binary data in text document')
@@ -109,7 +115,8 @@ def _extract(raw, suffix):
 def _fragments(lines):
     postings = 0
     result = []
-    for number, line in enumerate(lines, 1):
+    for number, row in enumerate(lines, 1):
+        line = row[2] if isinstance(row, tuple) else row
         # Check the entire original line before splitting, so a blocked phrase
         # cannot evade the filter merely by crossing an excerpt boundary.
         if len(line) > 4000 or BLOCKED_LINES.search(line) or any(
@@ -166,6 +173,10 @@ class DocumentKnowledge:
             raise ValueError('Invalid document enrollment origin')
         key = _key(root)
         relative, path = _name(root, relative)
+        # PDFs must be explicitly enrolled; ordinary workspace scans do not
+        # start an external parser for an arbitrary newly discovered file.
+        if path.suffix.casefold() == '.pdf' and origin != 'explicit':
+            return 'excluded'
         raw = _read(path)
         digest = _digest(raw)
         with self._db() as db:
@@ -222,6 +233,8 @@ class DocumentKnowledge:
                 continue
             try:
                 relative, path = _name(root, relative)
+                if path.suffix.casefold() == '.pdf':
+                    continue
                 if path.suffix.casefold() in TEXT_SUFFIXES and path.stat().st_size <= 48000:
                     continue
                 seen.add(relative)
@@ -296,6 +309,7 @@ class DocumentKnowledge:
                 'ORDER BY score DESC,t.path,t.number,t.start LIMIT 80',
                 (key, *terms)).fetchall()
         results, loaded, used = [], {}, {}
+        pdf_count = 0
         for path, digest, locator, number, start, end, score in rows:
             if cancelled and cancelled():
                 return []
@@ -307,6 +321,10 @@ class DocumentKnowledge:
                     _, target = _name(root, path)
                     raw = _read(target)
                     if _digest(raw) == digest:
+                        if target.suffix.casefold() == '.pdf':
+                            if pdf_count >= MAX_PDF_SEARCH:
+                                continue
+                            pdf_count += 1
                         actual, lines = _extract(raw, target.suffix.casefold())
                         if actual == locator:
                             loaded[path] = lines
@@ -315,14 +333,20 @@ class DocumentKnowledge:
             lines = loaded[path]
             if lines is None or not 1 <= number <= len(lines):
                 continue
-            line = lines[number - 1]
+            row = lines[number - 1]
+            line = row[2] if locator == PDF_LOCATOR else row
             if BLOCKED_LINES.search(line) or not 0 <= start < end <= len(line):
                 continue
             excerpt = line[start:end]
             if not set(terms).intersection(_terms(excerpt)):
                 continue
-            results.append(dict(path=path, sha256=digest, locator=locator, number=number,
-                                start_char=start + 1, end_char=end, excerpt=excerpt))
+            hit = dict(path=path, sha256=digest, locator=locator, number=number,
+                       start_char=start + 1, end_char=end, excerpt=excerpt)
+            if locator == PDF_LOCATOR:
+                hit.update(page=row[0], extracted_line=row[1])
+            if cancelled and cancelled():
+                return []
+            results.append(hit)
             used[path] = used.get(path, 0) + 1
             if len(results) == limit:
                 break

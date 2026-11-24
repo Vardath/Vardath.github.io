@@ -480,7 +480,7 @@ def main(argv: list[str] | None = None) -> int:
     context = commands.add_parser('reference-context', help='Show small attributed local source excerpts')
     context.add_argument('project')
     context.add_argument('request')
-    knowledge_index = commands.add_parser('knowledge-index', help='Enroll a bounded local text or DOCX document')
+    knowledge_index = commands.add_parser('knowledge-index', help='Enroll a bounded local text, DOCX or PDF document')
     knowledge_index.add_argument('project')
     knowledge_index.add_argument('relative_path')
     knowledge_search = commands.add_parser('knowledge-search', help='Retrieve exact document excerpts')
