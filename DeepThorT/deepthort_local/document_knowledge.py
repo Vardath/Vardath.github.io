@@ -10,6 +10,7 @@ from contextlib import contextmanager
 import hashlib
 import io
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -35,6 +36,8 @@ TEXT_SUFFIXES = frozenset({'.txt', '.md', '.rst', '.adoc'})
 SUFFIXES = TEXT_SUFFIXES | {'.docx', '.pdf'}
 PDF_LOCATOR = 'pdf-page-line-v1'
 MAX_PDF_SEARCH = 2
+MAX_CANDIDATES_PER_DOCUMENT = 8
+MAX_EXTRACTED_DOCUMENTS = 16
 W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 
 
@@ -46,9 +49,27 @@ def _digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def _words(text):
+    return [w for w in re.findall(r'[^\W\d_][\w-]{2,}', text.casefold(), re.UNICODE)
+            if w not in STOP and len(w) <= 80]
+
+
 def _terms(text):
-    words = set(re.findall(r'[^\W\d_][\w-]{2,}', text.casefold(), re.UNICODE))
-    return sorted({_digest(w.encode())[:24] for w in words if w not in STOP and len(w) <= 80})
+    return sorted({_digest(w.encode())[:24] for w in _words(text)})
+
+
+def _query_terms(text):
+    # Preserve user order instead of taking the first hashes alphabetically.
+    return list(dict.fromkeys(_digest(w.encode())[:24] for w in _words(text)))[:24]
+
+
+def _phrase_bonus(excerpt, query):
+    # Adjacent query terms in the actual excerpt are a small tie-breaker.
+    # This is lexical ranking, not semantic verification.
+    requested = _words(query)[:24]
+    actual = _words(excerpt)
+    pairs = set(zip(actual, actual[1:]))
+    return min(3, sum(pair in pairs for pair in set(zip(requested, requested[1:]))))
 
 
 def _name(root, relative):
@@ -294,7 +315,13 @@ class DocumentKnowledge:
         discovered, bounded = discover_documents(root, cancelled=cancelled) if candidates is None else (list(candidates), True)
         seen = set()
         counts = {'indexed': 0, 'unchanged': 0, 'excluded': 0, 'skipped': 0, 'bounded': bounded}
-        for relative in sorted(set(discovered))[:MAX_DISCOVERY_ENTRIES]:
+        with self._db() as db:
+            known = {r[0] for r in db.execute('SELECT path FROM knowledge_docs_v1 WHERE project=?', (key,))}
+            forgotten = {r[0] for r in db.execute('SELECT path FROM knowledge_removed_v1 WHERE project=?', (key,))}
+        # Give previously unseen manuals a chance on every bounded scan.
+        # Forgotten sources must not consume the per-pass enrollment budget.
+        ordered = sorted(set(discovered) - forgotten, key=lambda p: (p in known, p))
+        for relative in ordered[:MAX_DISCOVERY_ENTRIES]:
             if cancelled and cancelled():
                 counts['bounded'] = True
                 return counts
@@ -375,40 +402,78 @@ class DocumentKnowledge:
     def search(self, root, query, *, exclude=(), limit=5, cancelled=None):
         if not isinstance(query, str) or not 1 <= limit <= 8:
             raise ValueError('Invalid document search')
-        terms = _terms(query[:2400])[:24]
+        query = query[:2400]
+        terms = _query_terms(query)
         if not terms:
             return []
         key = _key(root)
         excluded = {str(p).replace('\\', '/').casefold() for p in exclude}
         marks = ','.join('?' for _ in terms)
-        # Query only matching postings, with a deterministic bounded candidate
-        # set. Recheck the exact source bytes before using any stored positions.
+        # Weight rare query terms more strongly than ubiquitous manual words.
+        # Restrict each document to its own best candidates before global
+        # ordering, so repetition cannot starve other documents.
+        if cancelled and cancelled():
+            return []
         with self._db() as db:
-            rows = db.execute(
-                'SELECT t.path,d.sha,d.locator,t.number,t.start,t.end,count(*) AS score '
-                'FROM knowledge_terms_v1 t JOIN knowledge_docs_v1 d '
-                'ON d.project=t.project AND d.path=t.path '
-                f'WHERE t.project=? AND t.term IN ({marks}) '
-                'GROUP BY t.path,d.sha,d.locator,t.number,t.start,t.end '
-                'ORDER BY score DESC,t.path,t.number,t.start LIMIT 80',
-                (key, *terms)).fetchall()
-        results, loaded, used = [], {}, {}
+            # SQLite progress callbacks prevent a large index query from
+            # monopolizing an operation after cancellation.
+            if cancelled:
+                db.set_progress_handler(lambda: int(bool(cancelled())), 5000)
+            try:
+                docs = db.execute('SELECT path,fragments FROM knowledge_docs_v1 WHERE project=?',
+                                  (key,)).fetchall()
+                allowed = [(path, count) for path, count in docs if path.casefold() not in excluded]
+                if not allowed:
+                    return []
+                paths = [path for path, _ in allowed]
+                total_fragments = sum(count for _, count in allowed)
+                path_marks = ','.join('?' for _ in paths)
+                frequencies = dict(db.execute(
+                    f'SELECT term,count(*) FROM knowledge_terms_v1 WHERE project=? '
+                    f'AND path IN ({path_marks}) AND term IN ({marks}) GROUP BY term',
+                    (key, *paths, *terms)).fetchall())
+                weights = {term: max(1, round(100 * (1 + math.log(
+                    (total_fragments + 1) / (frequencies.get(term, 0) + 1)))))
+                    for term in terms}
+                db.create_function('knowledge_weight', 1, lambda term: weights.get(term, 0),
+                                   deterministic=True)
+                rows = db.execute(
+                    'WITH scores AS (SELECT t.path,d.sha,d.locator,t.number,t.start,t.end,'
+                    'sum(knowledge_weight(t.term)) AS score FROM knowledge_terms_v1 t '
+                    'JOIN knowledge_docs_v1 d ON d.project=t.project AND d.path=t.path '
+                    f'WHERE t.project=? AND t.path IN ({path_marks}) AND t.term IN ({marks}) '
+                    'GROUP BY t.path,d.sha,d.locator,t.number,t.start,t.end), '
+                    'ranked AS (SELECT *,row_number() OVER (PARTITION BY path '
+                    'ORDER BY score DESC,number,start) AS position FROM scores) '
+                    'SELECT path,sha,locator,number,start,end,score FROM ranked '
+                    'WHERE position<=? ORDER BY score DESC,position,path,number,start',
+                    (key, *paths, *terms, MAX_CANDIDATES_PER_DOCUMENT)).fetchall()
+            except sqlite3.OperationalError:
+                if cancelled and cancelled():
+                    return []
+                raise
+            finally:
+                db.set_progress_handler(None, 0)
+        candidates, loaded = [], {}
         pdf_count = 0
+        extracted_count = 0
+        termset = set(terms)
         for path, digest, locator, number, start, end, score in rows:
             if cancelled and cancelled():
                 return []
-            if path.casefold() in excluded or used.get(path, 0) >= 2:
-                continue
             if path not in loaded:
                 loaded[path] = None
                 try:
                     _, target = _name(root, path)
                     raw = _read(target)
                     if _digest(raw) == digest:
+                        if extracted_count >= MAX_EXTRACTED_DOCUMENTS:
+                            continue
                         if target.suffix.casefold() == '.pdf':
                             if pdf_count >= MAX_PDF_SEARCH:
                                 continue
                             pdf_count += 1
+                        extracted_count += 1
                         actual, lines = _extract(raw, target.suffix.casefold())
                         if actual == locator:
                             loaded[path] = lines
@@ -422,18 +487,48 @@ class DocumentKnowledge:
             if BLOCKED_LINES.search(line) or not 0 <= start < end <= len(line):
                 continue
             excerpt = line[start:end]
-            if not set(terms).intersection(_terms(excerpt)):
+            matched = termset.intersection(_terms(excerpt))
+            if not matched:
                 continue
             hit = dict(path=path, sha256=digest, locator=locator, number=number,
                        start_char=start + 1, end_char=end, excerpt=excerpt)
             if locator == PDF_LOCATOR:
                 hit.update(page=row[0], extracted_line=row[1])
-            if cancelled and cancelled():
-                return []
-            results.append(hit)
-            used[path] = used.get(path, 0) + 1
-            if len(results) == limit:
-                break
+            # Recompute the lexical score from the actual source, not merely
+            # from persisted postings, and favour coherent adjacent terms.
+            actual_score = sum(weights[t] for t in matched) + 40 * _phrase_bonus(excerpt, query)
+            candidates.append((actual_score, hit))
+        if cancelled and cancelled():
+            return []
+        # First choose distinct useful sources; duplicates cannot fill the
+        # context. The second pass allows a second relevant line per manual.
+        ranked = sorted(candidates, key=lambda row: (-row[0], row[1]['path'],
+                                                      row[1]['number'], row[1]['start_char']))
+        results, used, snippets = [], {}, set()
+        for per_path in (1, 2):
+            for _, hit in ranked:
+                path = hit['path']
+                normalized = ' '.join(hit['excerpt'].casefold().split())
+                if used.get(path, 0) >= per_path or normalized in snippets:
+                    continue
+                if cancelled and cancelled():
+                    return []
+                # A source may have been forgotten or changed during extraction.
+                # Revalidate each chosen digest and enrollment before returning.
+                with self._db() as db:
+                    current = db.execute('SELECT sha FROM knowledge_docs_v1 WHERE project=? AND path=?',
+                                         (key, path)).fetchone()
+                try:
+                    _, target = _name(root, path)
+                    if not current or current[0] != hit['sha256'] or _digest(_read(target)) != hit['sha256']:
+                        continue
+                except (OSError, ValueError):
+                    continue
+                results.append(hit)
+                used[path] = used.get(path, 0) + 1
+                snippets.add(normalized)
+                if len(results) >= limit:
+                    return results
         return results
 
     def context(self, root, query, *, max_chars=640, exclude=()):
