@@ -162,6 +162,11 @@ class ToolWorkflows:
             db.row_factory=sqlite3.Row
             return [dict(r) for r in db.execute('SELECT * FROM tool_workflow_stages WHERE workflow_id=? ORDER BY ordinal',(ident,))]
 
+    def roadmap_members(self,request_id):
+        with self.janus.connect() as db:
+            db.row_factory=sqlite3.Row
+            return [dict(r) for r in db.execute("SELECT * FROM tool_workflows WHERE json_extract(manifest,'$.roadmap.request_id')=? ORDER BY id",(request_id,))]
+
     def busy(self):
         with self.janus.connect() as db:
             return bool(db.execute("""SELECT 1 FROM tool_workflow_stages s JOIN janus_actions a ON a.id=s.action_id
@@ -186,7 +191,7 @@ class ToolWorkflows:
             raise ValueError('Prior checked output or process log changed')
         return rec
 
-    def tick(self,*,enabled=True,conversations=None):
+    def tick(self,*,enabled=True,conversations=None,roadmap_ready=None):
         if not enabled or self.janus.status().get('paused'):return None
         for run in reversed(self.list()):
             if run['state']!='active':continue
@@ -203,6 +208,8 @@ class ToolWorkflows:
                 if manifest.get('recovery'):
                     from .workflow_recovery import verify_recovery
                     verify_recovery(self,manifest['recovery'],run['project'])
+                if manifest.get('roadmap') and (roadmap_ready is None or not roadmap_ready(manifest['roadmap'])):
+                    continue
                 project=run['project'];rows=self.stages(ident);stages=manifest['stages']
                 if len(rows)!=len(stages):raise ValueError('Workflow stage count changed')
                 prior={}

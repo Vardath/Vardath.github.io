@@ -2090,6 +2090,10 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 result=eligible_successor(run,req,self.conversations,self.hierarchies,self.specifications,self.jobs)
                 if result is None:continue
+                from deepthort_local.roadmap_tool_bridge import gate
+                before=(self.hierarchies.status(self.specifications,ident,req['prompt'])['milestones_total']+1
+                        if result['complete'] else result['milestone']['ordinal'])
+                if gate(self.tool_workflows,ident,result['manifest_sha256'],before):continue
                 if result['complete']:
                     self.roadmap_runs.change(ident,'complete','All approved milestones have current verification')
                     self._log(f'Roadmap #{ident}: milestones verified; full user acceptance not implied.')
@@ -2130,6 +2134,13 @@ class DeepThorTDesktop(tk.Tk):
                 self.specifications,root_request_id,req['prompt'],self.jobs)
             if state['chat_id']!=self.current_chat or state['project']!=str(Path(self._project_key()).resolve()):
                 raise PlanError('Milestone roadmap belongs to another chat or project')
+            from deepthort_local.roadmap_tool_bridge import gate
+            from deepthort_local.roadmap_runs import manifest as roadmap_manifest
+            before=state['milestones_total']+1 if state['complete'] else state['next_approvable']
+            if before is not None:
+                blocked=gate(self.tool_workflows,root_request_id,roadmap_manifest(self.hierarchies,self.specifications,req)['manifest_sha256'],before)
+                if blocked:
+                    messagebox.showinfo('Tool workflow pending',blocked,parent=self);return
             if state['complete']:
                 messagebox.showinfo('Milestones completed',
                     f'All {state["milestones_total"]} milestones have approved verification records. '
@@ -3229,7 +3240,11 @@ class DeepThorTDesktop(tk.Tk):
                    (self.tool_process, self.install_process, self.media_process))
             or self.janus.status().get('paused')):
             return
-        workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations)
+        def roadmap_ready(link):
+            from deepthort_local.roadmap_tool_bridge import boundary_open
+            return boundary_open(link,self.conversations.get(link['request_id']),self.roadmap_runs.get(link['request_id']),
+                self.conversations,self.hierarchies,self.specifications,self.jobs)
+        workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations,roadmap_ready=roadmap_ready)
         if workflow_message:
             self._log(workflow_message)
             return
@@ -4743,6 +4758,35 @@ class DeepThorTDesktop(tk.Tk):
                 if recovery:updated['recovery']=recovery
                 if not current_source(binding,self.conversations) or updated!=manifest:
                     raise ValueError('Specification, source or tool changed; draft again')
+                from deepthort_local.roadmap_tool_bridge import make_binding
+                from deepthort_local.roadmap_runs import eligible_successor
+                run=self.roadmap_runs.get(source['id'])
+                if recovery:
+                    parent=self.tool_workflows.get(recovery['workflow_id'])
+                    old_link=json.loads(parent['manifest']).get('roadmap')
+                    if old_link:
+                        link=make_binding(run,source,self.hierarchies,self.specifications,manifest,old_link['after'])
+                        if link!=old_link:raise ValueError('Recovery roadmap boundary changed')
+                        manifest['roadmap']=link
+                elif run and run['state'] in ('active','paused') and messagebox.askyesno('Attach workflow to roadmap',
+                    'Make this workflow a required stage between code milestones? The roadmap will wait for its checked outputs before advancing.',parent=self):
+                    state=self.hierarchies.reconcile_jobs(self.specifications,source['id'],source['prompt'],self.jobs)
+                    first=state['milestones_total'] if state['complete'] else (state['next_approvable'] or 1)-1
+                    after=simpledialog.askinteger('Roadmap boundary','Run after how many verified code milestones? 0 means before the first. Future inputs must already exist at approval.',parent=self,minvalue=max(0,first),maxvalue=state['milestones_total'])
+                    if after is None:return
+                    link=make_binding(run,source,self.hierarchies,self.specifications,manifest,after)
+                    # Never attach behind a successor that was already queued during a modal dialog.
+                    if after<state['milestones_total']:
+                        successor=self.hierarchies.milestone(self.specifications,source['id'],source['prompt'],after+1)
+                        if successor['job_id'] is not None:raise ValueError('Successor already queued; choose a later boundary')
+                    if not current_source(binding,self.conversations):raise ValueError('Specification changed during approval')
+                    if not messagebox.askyesno('Approve required roadmap stage',f'Run after milestone {after}; block later milestones until outputs are checked?',parent=self):return
+                    if after<state['milestones_total'] and self.hierarchies.milestone(self.specifications,source['id'],source['prompt'],after+1)['job_id'] is not None:
+                        raise ValueError('Successor started during review; choose a later boundary')
+                    current_run=self.roadmap_runs.get(source['id'])
+                    if make_binding(current_run,source,self.hierarchies,self.specifications,manifest,after)!=link or not current_source(binding,self.conversations):
+                        raise ValueError('Roadmap changed during review')
+                    manifest['roadmap']=link
                 ident=self.tool_workflows.approve(manifest,user_approved=True)
                 self.workflow_drafts.mark(previous['request_id'],'approved')
                 self._log(f'JANUS-designed workflow #{ident} approved.')
