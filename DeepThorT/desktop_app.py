@@ -618,6 +618,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_head,text='Attach documents / pictures…',command=self._add_attachments).pack(side='left',padx=3)
         ttk.Button(media_head,text='Clear selection',command=self._clear_attachments).pack(side='left',padx=3)
         ttk.Button(media_head,text='Read selected image',command=self._analyze_image).pack(side='left',padx=3)
+        ttk.Button(media_head,text='Project knowledge…',command=self._open_project_knowledge).pack(side='left',padx=3)
         self.media_summary=tk.StringVar(value='Choose files; local model downloads are opt-in.')
         ttk.Label(media_tab,textvariable=self.media_summary,style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=6)
@@ -1073,6 +1074,15 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as e:messagebox.showerror('Cannot queue',str(e));return
         self._log(f'{mode.capitalize()} job #{ident} queued; inference runs locally.')
         self._refresh_jobs()
+    def _open_project_knowledge(self):
+        if not self.project:
+            messagebox.showinfo('Choose project','Select a project workspace first.',parent=self);return
+        from deepthort_local.knowledge_dialog import KnowledgeDialog
+        old=getattr(self,'_knowledge_dialog',None)
+        if old is not None and old.window.winfo_exists():
+            old.window.lift();return
+        self._knowledge_dialog=KnowledgeDialog(self)
+
     def _install_pdf_reader(self):
         if self.disk_gate.gaming():
             messagebox.showinfo('Gaming priority','Close your game before installing packages.');return
@@ -1080,7 +1090,7 @@ class DeepThorTDesktop(tk.Tk):
             'Install the local pypdf Python package?\n\nThis is only for extracting selectable PDF text. '
             'Scanned PDF images still need OCR and may not be readable.\n\nApprove?',parent=self):return
         self.tabs.select(4)
-        self._start_command([sys.executable,'-m','pip','install','--no-input','pypdf>=5,<7'],
+        self._start_command([sys.executable,'-m','pip','install','--no-input','--no-deps','-r',str(ROOT/'requirements-documents.txt')],
                             cwd=ROOT,label='Install pypdf',kind='installation')
     def _install_vision(self):
         if self.disk_gate.gaming():

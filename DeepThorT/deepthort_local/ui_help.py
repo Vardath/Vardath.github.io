@@ -9,6 +9,14 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Project knowledge…': 'Open the current workspace document library; enroll, discover, search, reindex or forget local references without editing source files.',
+    'Refresh knowledge': 'Recheck exact source fingerprints and list current or stale knowledge entries.',
+    'Discover documents': 'Perform a bounded read-only scan for eligible workspace manuals; PDFs require explicit enrollment.',
+    'Enroll documents…': 'Select supported files inside this workspace and index their reference text locally.',
+    'Reindex selected': 'Re-read selected source documents and update their exact index evidence.',
+    'Forget selected': 'Remove selected knowledge index entries without deleting original files.',
+    'Search knowledge': 'Retrieve current quoted excerpts with file and line or page citations.',
+    'Stop knowledge operation': 'Stop at the next bounded document or extraction boundary; completed entries remain saved.',
     "Review / materialize native draft": "Review the exact staged native assets and materialize only approved matching files into the project. This is not gameplay verification.",
     "Amend specification": "Append an explicit user correction to the current specification. Previous instructions remain in force except where overridden; old build approvals become stale.",
     "Roadmap automation": "Review and approve an exact ordered roadmap once, or pause its automatic advancement. Each successor requires current verification of predecessors.",

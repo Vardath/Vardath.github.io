@@ -167,7 +167,7 @@ class CapabilityLibrary:
         # Pass 2: source-backed documents. Pass 3: already-approved local
         # verification actions are observed, NEVER executed or promoted here.
         references = self.references.index_project(base, candidates=files)
-        knowledge = self.knowledge.refresh(base, files, exclude=excluded)
+        knowledge = self.knowledge.refresh(base, exclude=excluded)
         action_count=self.tool_evidence.scan(base,self.path.parent/'janus.sqlite3')
         return {'project_key': key, 'files_scanned': len(files), 'references_indexed': len(observed),
                 'reference_documents_indexed': references['indexed'],

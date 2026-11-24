@@ -23,8 +23,11 @@ from .pdf_knowledge import pdf_lines, MAX_PDF_BYTES
 
 MAX_BYTES = 512 * 1024
 MAX_XML = 2 * 1024 * 1024
-MAX_DOCUMENTS = 16
-MAX_AUTO = 8
+MAX_DOCUMENTS = 64
+MAX_AUTO = 24
+MAX_PROJECT_POSTINGS = 1_000_000
+MAX_DISCOVERY_ENTRIES = 3000
+MAX_DISCOVERY_DEPTH = 12
 MAX_FRAGMENTS = 4096
 MAX_POSTINGS = 50000
 FRAGMENT_CHARS = 280
@@ -134,6 +137,64 @@ def _fragments(lines):
     return result
 
 
+def discover_documents(root, *, cancelled=None):
+    """Bounded, independent scan of documentation files, including manuals
+    above the ordinary workspace preview ceiling. No symlink traversal.
+    A partial scan is not evidence that previously indexed files disappeared.
+    """
+    base = Path(root).resolve(strict=True)
+    pending = [(base, 0)]
+    found = []
+    visited = 0
+    bounded = False
+    while pending:
+        if cancelled and cancelled():
+            return found, True
+        folder, depth = pending.pop()
+        try:
+            with os.scandir(folder) as entries:
+                batch = []
+                for entry in entries:
+                    visited += 1
+                    if visited > MAX_DISCOVERY_ENTRIES:
+                        bounded = True
+                        break
+                    batch.append(entry)
+        except OSError:
+            bounded = True
+            continue
+        for entry in sorted(batch, key=lambda e: e.name.casefold(), reverse=True):
+            name = entry.name
+            if name.startswith('.') or name.casefold() in SKIP_DIRS or BLOCKED_NAMES.search(name):
+                continue
+            try:
+                if entry.is_symlink() or getattr(entry, 'is_junction', lambda: False)():
+                    continue
+                if entry.is_dir(follow_symlinks=False):
+                    if depth < MAX_DISCOVERY_DEPTH:
+                        pending.append((Path(entry.path), depth + 1))
+                    else:
+                        bounded = True
+                    continue
+                if not entry.is_file(follow_symlinks=False):
+                    continue
+                path = Path(entry.path)
+                relative = path.relative_to(base).as_posix()
+                if path.suffix.casefold() not in SUFFIXES or path.suffix.casefold() == '.pdf':
+                    continue
+                if not (any(x.casefold() in DOC_FOLDERS for x in Path(relative).parts[:-1])
+                        or name.casefold().startswith(('readme', 'manual', 'guide'))):
+                    continue
+                size = entry.stat(follow_symlinks=False).st_size
+                if 0 < size <= MAX_BYTES and (path.suffix.casefold() == '.docx' or size > 48000):
+                    found.append(relative)
+            except OSError:
+                bounded = True
+        if visited > MAX_DISCOVERY_ENTRIES:
+            break
+    return sorted(found), bounded
+
+
 class DocumentKnowledge:
     def __init__(self, db_path):
         self.path = Path(db_path)
@@ -168,9 +229,11 @@ class DocumentKnowledge:
         db.execute('DELETE FROM knowledge_terms_v1 WHERE project=? AND path=?', (key, path))
         db.execute('DELETE FROM knowledge_docs_v1 WHERE project=? AND path=?', (key, path))
 
-    def index(self, root, relative, *, origin='explicit'):
+    def index(self, root, relative, *, origin='explicit', cancelled=None):
         if origin not in ('explicit', 'auto'):
             raise ValueError('Invalid document enrollment origin')
+        if cancelled and cancelled():
+            raise ValueError('Document indexing cancelled')
         key = _key(root)
         relative, path = _name(root, relative)
         # PDFs must be explicitly enrolled; ordinary workspace scans do not
@@ -202,6 +265,12 @@ class DocumentKnowledge:
             fragments = _fragments(lines)
             if not fragments:
                 raise ValueError('No supported searchable document text')
+            if cancelled and cancelled():
+                raise ValueError('Document indexing cancelled')
+            existing_postings = db.execute('SELECT count(*) FROM knowledge_terms_v1 WHERE project=? AND path<>?',
+                                           (key, relative)).fetchone()[0]
+            if existing_postings + sum(len(row[3]) for row in fragments) > MAX_PROJECT_POSTINGS:
+                raise ValueError('Project posting quota reached; remove unused documents')
             self._delete(db, key, relative)
             stored_origin = 'explicit' if origin == 'explicit' or (old and old[1] == 'explicit') else 'auto'
             db.execute('INSERT INTO knowledge_docs_v1 VALUES (?,?,?,?,?,?)',
@@ -209,10 +278,12 @@ class DocumentKnowledge:
             db.executemany('INSERT INTO knowledge_terms_v1 VALUES (?,?,?,?,?,?)',
                            ((key, relative, number, start, end, term)
                             for number, start, end, terms in fragments for term in terms))
+            if cancelled and cancelled():
+                raise ValueError('Document indexing cancelled')
             db.execute('DELETE FROM knowledge_removed_v1 WHERE project=? AND path=?', (key, relative))
         return 'indexed'
 
-    def refresh(self, root, candidates, *, exclude=()):
+    def refresh(self, root, candidates=None, *, exclude=(), cancelled=None):
         """Extend existing short-reference discovery; only large text/DOCX here.
 
         Ordinary short text references retain their existing behavior. Explicit
@@ -220,10 +291,15 @@ class DocumentKnowledge:
         """
         excluded = {str(p).replace('\\', '/').casefold() for p in exclude}
         key = _key(root)
+        discovered, bounded = discover_documents(root, cancelled=cancelled) if candidates is None else (list(candidates), True)
         seen = set()
-        counts = {'indexed': 0, 'unchanged': 0, 'excluded': 0, 'skipped': 0}
-        for relative in sorted(set(candidates))[:200]:
+        counts = {'indexed': 0, 'unchanged': 0, 'excluded': 0, 'skipped': 0, 'bounded': bounded}
+        for relative in sorted(set(discovered))[:MAX_DISCOVERY_ENTRIES]:
+            if cancelled and cancelled():
+                counts['bounded'] = True
+                return counts
             if len(seen) >= MAX_AUTO:
+                counts['bounded'] = True
                 break
             if relative.casefold() in excluded:
                 continue
@@ -238,7 +314,7 @@ class DocumentKnowledge:
                 if path.suffix.casefold() in TEXT_SUFFIXES and path.stat().st_size <= 48000:
                     continue
                 seen.add(relative)
-                status = self.index(root, relative, origin='auto')
+                status = self.index(root, relative, origin='auto', cancelled=cancelled)
                 counts[status] += 1
             except (OSError, ValueError):
                 counts['skipped'] += 1
@@ -246,8 +322,16 @@ class DocumentKnowledge:
             db.execute('BEGIN IMMEDIATE')
             for (path,) in db.execute("SELECT path FROM knowledge_docs_v1 WHERE project=? AND origin='auto'",
                                       (key,)).fetchall():
-                if path not in seen or path.casefold() in excluded:
+                # A bounded or caller-supplied scan is not a complete snapshot.
+                # Stale rows still cannot be retrieved; discard deleted auto
+                # paths to reclaim capacity without evicting unseen valid ones.
+                if path.casefold() in excluded or (not counts['bounded'] and path not in seen):
                     self._delete(db, key, path)
+                elif path not in seen:
+                    try:
+                        _name(root, path)
+                    except (OSError, ValueError):
+                        self._delete(db, key, path)
         return counts
 
     def forget_inspection_paths(self, root, paths):
