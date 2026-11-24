@@ -1,0 +1,7 @@
+# Local coding model evaluation (proposal, not a model change)
+
+Current baseline: Qwen2.5-Coder-1.5B-Instruct ONNX, existing dual worker architecture, pinned Transformers.js, CPU only. Keep current model and state intact until an alternative passes acceptance. ONNX is a runtime/model format, not the neural model.
+
+Candidates: Qwen2.5-Coder-3B-Instruct ONNX Q4 (https://huggingface.co/onnx-community/Qwen2.5-Coder-3B-Instruct), Qwen3-4B ONNX (https://huggingface.co/onnx-community/Qwen3-4B-ONNX), and Qwen3.5-4B (https://huggingface.co/Qwen/Qwen3.5-4B; compatible export/runtime must be checked independently). Qwen2.5-Coder-7B may be a later candidate if memory permits. Qwen3-Coder-Next has 80B total parameters despite 3B active per token; it is not a 3B memory-footprint model.
+
+Acceptance: compare same quantization/runtime where possible, on fixed independent coding tasks, original-spec and amendment interpretation, exact JSON tool requests, project planning, multi-file changes, behavioral test validity, repair and evidence rejection. Record pass rates, time to verified result, peak aggregate committed memory, working set, startup, token rate, failures, gaming preemption and both-worker resource usage. Reject candidate if shared 30% caps, offline-only operation or existing Windows compatibility fail. Do not silently download, activate or migrate model weights. A separate approved evaluation build is required; no change to pinned runtime in this pass.

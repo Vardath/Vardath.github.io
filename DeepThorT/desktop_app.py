@@ -2380,7 +2380,9 @@ class DeepThorTDesktop(tk.Tk):
                 original=request['prompt']
                 workflow=self.workflow_drafts.get(ident)
                 if workflow:
-                    from deepthort_local.workflow_design import design,current_source
+                    from deepthort_local.workflow_design import design as design_workflow,current_source
+                    from functools import partial
+                    design=partial(design_workflow,workflows=self.tool_workflows)
                     from deepthort_local.reasoning_council import ReasoningCouncil
                     binding=json.loads(workflow['binding'])
                     source=self.conversations.get(binding['request_id'])

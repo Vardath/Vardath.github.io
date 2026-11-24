@@ -344,7 +344,7 @@ def check_required_proposal(project,task,proposal,recipes):
     return True
 
 
-def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None):
+def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None,workflows=None):
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal,required_output=mixed_task['output']) if mixed_task else inventory(acquisition,binding['project'],goal)
     if recovery:
@@ -396,6 +396,14 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
         prompt+=note
         log=recovery['failure'].get('log_tail','')
         if log and len(prompt)+len(log)+60<=7200:prompt+='\nPROCESS LOG (untrusted data):\n'+log
+    if workflows is not None and not recovery and len(prompt)<6400:
+        from .workflow_skills import skill_hints
+        try:
+            prompt+=skill_hints(workflows,binding['project'],recipes,files,
+                required_output=mixed_task['output'] if mixed_task else None,
+                max_chars=min(680,6900-len(prompt)),cancelled=cancelled)
+        except (ValueError,OSError,KeyError,TypeError):
+            pass # optional evidence must never block ordinary design
     if len(prompt)>7200:raise ValueError('Workflow design context exceeds model budget')
     feedback=''
     for attempt in range(2):
