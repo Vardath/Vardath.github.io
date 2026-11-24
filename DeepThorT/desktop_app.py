@@ -2340,16 +2340,33 @@ class DeepThorTDesktop(tk.Tk):
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     recovery=self.workflow_drafts.recovery(ident)
                     mixed_task=self.workflow_drafts.mixed(ident)
+                    script_repair=None
                     if recovery:
                         from deepthort_local.workflow_recovery import verify_recovery
                         verify_recovery(self.tool_workflows,recovery,source['project'])
+                        from deepthort_local.workflow_script_repair import repair
+                        try:
+                            script_repair=repair(self.workflow_drafts,self.tool_learning,self.tool_workflows,self.client,
+                                request=source,recovery=recovery,review=review,cancelled=stale,
+                                stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        except (ValueError,OSError,KeyError,TypeError) as error:
+                            if stale():raise
+                            self.events.put(('log','Automation script repair unavailable: '+str(error)[:200]))
                     prior=json.loads(workflow['proposal']) if workflow['state']=='missing' and workflow['proposal'] else None
                     try:
                         proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                             self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,recovery=recovery,mixed_task=mixed_task,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     except ValueError:
-                        if prior is None or stale():raise
+                        if stale():raise
+                        if prior is None and script_repair:
+                            failed=recovery['remaining'][0]
+                            gaps=[{'capability':failed['tool'],'goal':failed['title'],'output':failed['output']}]
+                            if mixed_task and mixed_task['output']!=failed['output']:
+                                gaps.append({'capability':'remaining workflow','goal':mixed_task['goal'][:240],'output':mixed_task['output']})
+                            prior={'stages':[],'missing':gaps}
+                            review(json.dumps(prior,ensure_ascii=False),'plan')
+                        if prior is None:raise
                         proposal,manifest=prior,None
                     if stale():raise ValueError('Workflow specification superseded')
                     if prior and len(proposal['missing'])>=len(prior['missing']):
@@ -2379,7 +2396,8 @@ class DeepThorTDesktop(tk.Tk):
                         self.workflow_drafts.observe_resume(ident,observations(self.tool_learning,self.janus,source['project'],proposal))
                     self.events.put(('conversation_reply',ident,'JANUS workflow draft saved; no execution approved.\n'+
                         json.dumps(proposal,indent=2,ensure_ascii=False)+'\nMissing stage learning results (not executed):\n'+
-                        json.dumps(learned,indent=2,ensure_ascii=False)+'\nUnverified discovered packages (no installation authorized):\n'+
+                        json.dumps(learned,indent=2,ensure_ascii=False)+'\nAutomation script repair (separate source approval required):\n'+
+                        json.dumps(script_repair,indent=2,ensure_ascii=False)+'\nUnverified discovered packages (no installation authorized):\n'+
                         json.dumps(discovered,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
                     return
                 learning=self.tool_learning.learning_request(ident)

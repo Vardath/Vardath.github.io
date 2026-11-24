@@ -348,6 +348,12 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal,required_output=mixed_task['output']) if mixed_task else inventory(acquisition,binding['project'],goal)
     if recovery:
+        # Never immediately replay the exact failed recipe merely because it
+        # remains in the learning library. A distinct reviewed alternative is needed.
+        if recovery['failure']['status']=='failed' and recovery['remaining']:
+            failed=recovery['remaining'][0]
+            recipes=[r for r in recipes if (r['title'],r['tool'],r['output'])!=
+                     (failed['title'],failed['tool'],failed['output'])]
         preserved=[x['output'] for x in recovery['prefix']]
         files=list(dict.fromkeys(preserved+files))
         while len(json.dumps(files,ensure_ascii=False))>850 and len(files)>len(preserved):files.pop()
