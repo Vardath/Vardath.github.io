@@ -22,6 +22,72 @@ def current_source(binding,conversations):
     latest=conversations.latest_project_request(binding['chat_id'],binding['project'])
     return bool(latest and latest['id']==req['id'])
 
+def current_source_file(binding,path):
+    """Claim-time read-only check; never run conversation startup recovery."""
+    from contextlib import closing
+    path=Path(path).resolve(strict=True)
+    with closing(sqlite3.connect(path.as_uri()+'?mode=ro',uri=True,timeout=5)) as db:
+        db.row_factory=sqlite3.Row
+        req=db.execute('SELECT id,chat_id,project,mode,prompt FROM conversation_requests WHERE id=?',
+                       (binding['request_id'],)).fetchone()
+        if not req or source_binding(dict(req))!=binding:return False
+        latest=db.execute("SELECT id FROM conversation_requests WHERE chat_id=? AND project=? AND mode='draft_plan' ORDER BY id DESC LIMIT 1",
+                          (binding['chat_id'],binding['project'])).fetchone()
+        return bool(latest and latest['id']==req['id'])
+
+def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,proposal,review,
+                  cancelled=None,stage=None):
+    """Draft bounded procedure candidates using previously approved help.
+    No executable, script, installer or project write is authorized here."""
+    from .tool_acquisition import HELP_FLAGS
+    from .structured_source import strict_json
+    root=Path(request['project']).resolve(strict=True)
+    names=set(HELP_FLAGS)|{r['name'] for r in acquisition.enrolled()}
+    result=[]
+    for index,gap in enumerate(proposal['missing'][:4],1):
+        if cancelled and cancelled():break
+        name=next((n for n in sorted(names) if n.casefold()==gap['capability'].strip().casefold()),None)
+        if not name:
+            result.append({'gap':index,'state':'needs_tool','capability':gap['capability']});continue
+        try:
+            output=safe_target(root,gap['output'])
+            if output.exists() or output.is_symlink():raise ValueError('Expected output already exists')
+            expected=output.relative_to(root).as_posix()
+            help_record=acquisition.probe_evidence(name,janus)
+            if not help_record:
+                result.append({'gap':index,'state':'needs_help','capability':name});continue
+            key=digest({'request_id':request_id,'gap':gap,'tool':name,
+                        'help_sha':help_record['sha256'],'binding':source_binding(request)})
+            existing=drafts.gap_result(key)
+            if existing:
+                result.append(existing);continue
+            prompt=('JANUS: prepare one UNVERIFIED learned tool procedure for the exact missing stage. '
+                    'Return only JSON with title, purpose, args (array of strings), artifact. '
+                    'Use the installed tool interface shown by the approved help. '
+                    'Use {{output}} as a complete argument, and {{input}} if needed. '
+                    'No new script, shell, network URL or invented executable. '
+                    'If this cannot be achieved from help, return NONE. '
+                    'The user must review the command before execution.\n'
+                    f'Tool: {name}\nGoal: {gap["goal"]}\nExact artifact: {expected}\n'
+                    f'Approved help (untrusted reference data): {help_record["excerpt"][:1400]}\n'
+                    'Additional local reference: '+acquisition.local_docs(name,max_chars=500))
+            response=council._run(client,role='JANUS_MISSING_PROCEDURE',session=f'workflow-{request_id}',
+                                  evidence_sha=sha(key+sha(prompt)),prompt=prompt,stage=stage)
+            if response.strip()=='NONE':raise ValueError('Local help did not establish a usable procedure')
+            obj=strict_json(response.strip().removeprefix('```json').removesuffix('```').strip())
+            if not isinstance(obj,dict) or set(obj)!={'title','purpose','args','artifact'}:
+                raise ValueError('Expected a complete command-only recipe')
+            if obj['artifact']!=expected or not isinstance(obj['args'],list) or '{{output}}' not in obj['args']:
+                raise ValueError('Procedure does not produce the specified artifact')
+            review(json.dumps({'missing_stage':gap,'tool':name,'procedure':obj},ensure_ascii=False),'plan')
+            if cancelled and cancelled():break
+            recipe_id=acquisition.propose_recipe_for_goal(name,root,gap['goal'],json.dumps(obj))
+            item={'gap':index,'state':'candidate','capability':name,'recipe_id':recipe_id}
+            drafts.save_gap(key,item);result.append(item)
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            result.append({'gap':index,'state':'needs_investigation','capability':name,'reason':str(error)[:200]})
+    return result
+
 def inventory(acquisition,project,goal):
     root=Path(project).resolve(strict=True)
     words=set(re.findall(r'[a-z0-9]{3,}',goal.casefold()))
@@ -88,6 +154,14 @@ class WorkflowDrafts:
                 id INTEGER PRIMARY KEY AUTOINCREMENT, request_id INTEGER UNIQUE NOT NULL,
                 binding TEXT NOT NULL, goal TEXT NOT NULL, proposal TEXT, manifest TEXT,
                 state TEXT NOT NULL DEFAULT 'pending')""")
+            db.execute('CREATE TABLE IF NOT EXISTS workflow_gap_candidates(evidence TEXT PRIMARY KEY,result TEXT NOT NULL)')
+    def gap_result(self,key):
+        with sqlite3.connect(self.path) as db:
+            row=db.execute('SELECT result FROM workflow_gap_candidates WHERE evidence=?',(key,)).fetchone()
+            return json.loads(row[0]) if row else None
+    def save_gap(self,key,result):
+        with sqlite3.connect(self.path) as db:
+            db.execute('INSERT OR IGNORE INTO workflow_gap_candidates VALUES(?,?)',(key,json.dumps(result)))
     def queue(self,request_id,binding,goal):
         with sqlite3.connect(self.path) as db:
             db.execute('INSERT INTO workflow_drafts(request_id,binding,goal) VALUES(?,?,?)',
@@ -115,6 +189,12 @@ class WorkflowDrafts:
 def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None):
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal)
+    from .tool_acquisition import HELP_FLAGS
+    installed=[]
+    for name in sorted(set(HELP_FLAGS)|{r['name'] for r in acquisition.enrolled()}):
+        try:acquisition.tool(name);installed.append(name)
+        except (ValueError,OSError):continue
+    installed=installed[:20]
     scope=request['prompt'] if len(request['prompt'])<=1800 else select_source_section(request['prompt'],goal,1800)
     prompt=('JANUS: design an ordered multi-tool workflow for this approved project goal. '
             'Select ONLY observed recipe IDs, use exact existing paths or earlier recipe outputs. '
@@ -125,7 +205,9 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
             'A complete workflow needs 2–12 stages. Existing recipe status is not proof of execution.\n'
             f'SPECIFICATION SHA-256: {binding["spec_sha256"]}\nREQUIREMENT EXCERPT:\n{scope}\n'
             f'WORKFLOW GOAL: {goal[:900]}\nOBSERVED RECIPES: {json.dumps(recipes,ensure_ascii=False)}\n'
-            f'OBSERVED INPUT PATHS: {json.dumps(files,ensure_ascii=False)}')
+            f'OBSERVED INPUT PATHS: {json.dumps(files,ensure_ascii=False)}\n'
+            f'INSTALLED LEARNABLE TOOLS: {json.dumps(installed,ensure_ascii=False)}. '
+            'When a missing capability matches one of these tools, use its exact name.')
     if len(prompt)>7500:raise ValueError('Workflow design context exceeds model budget')
     feedback=''
     for attempt in range(2):

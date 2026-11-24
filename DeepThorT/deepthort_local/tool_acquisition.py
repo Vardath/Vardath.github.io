@@ -402,6 +402,15 @@ class ToolAcquisition:
     def propose_recipe(self, request_id: int, raw: str) -> int:
         req=self.learning_request(request_id)
         if not req:raise ValueError('No saved learning request')
+        return self._propose_recipe(req,raw)
+
+    def propose_recipe_for_goal(self,name,project,goal,raw):
+        self.tool(name)
+        root=Path(project).resolve(strict=True)
+        if not root.is_dir() or not isinstance(goal,str) or not goal.strip():raise ValueError('Missing recipe goal')
+        return self._propose_recipe({'name':name,'project_root':str(root),'goal':goal},raw)
+
+    def _propose_recipe(self, req, raw):
         if not isinstance(raw,str) or len(raw)>12_000:raise ValueError('Recipe response is invalid or oversized')
         try:
             obj=json.loads(raw.strip().removeprefix('```json').removesuffix('```').strip())

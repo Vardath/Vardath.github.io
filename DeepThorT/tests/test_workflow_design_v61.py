@@ -2,7 +2,7 @@ import tempfile
 import unittest
 import json
 from pathlib import Path
-from deepthort_local.workflow_design import parse_draft,source_binding,current_source,WorkflowDrafts
+from deepthort_local.workflow_design import parse_draft,source_binding,current_source,current_source_file,WorkflowDrafts
 from deepthort_local.conversation_workflow import ConversationStore
 
 class WorkflowDesignTests(unittest.TestCase):
@@ -26,6 +26,10 @@ class WorkflowDesignTests(unittest.TestCase):
             store.queue(20,binding,'Generate mesh')
             self.assertEqual(WorkflowDrafts(store.path).latest(binding)['goal'],'Generate mesh')
             self.assertTrue(current_source(binding,c))
+            c.change(ident,'running','testing')
+            self.assertTrue(current_source_file(binding,c.path))
+            self.assertEqual(c.get(ident)['state'],'running')
             c.amend_project('chat',t,'Use a different mesh')
             self.assertFalse(current_source(binding,c))
+            self.assertFalse(current_source_file(binding,c.path))
 if __name__=='__main__':unittest.main()

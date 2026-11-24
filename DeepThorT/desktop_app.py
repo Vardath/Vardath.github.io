@@ -2296,8 +2296,15 @@ class DeepThorTDesktop(tk.Tk):
                         stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     if stale():raise ValueError('Workflow specification superseded')
                     self.workflow_drafts.save(ident,proposal,manifest)
+                    from deepthort_local.workflow_design import learn_missing
+                    learned=learn_missing(self.workflow_drafts,self.tool_learning,self.janus,
+                        ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,
+                        request_id=ident,request=source,proposal=proposal,review=review,cancelled=stale,
+                        stage=lambda message:self.events.put(('conversation_stage',ident,message))) if proposal['missing'] else []
+                    if stale():raise ValueError('Workflow specification superseded')
                     self.events.put(('conversation_reply',ident,'JANUS workflow draft saved; no execution approved.\n'+
-                        json.dumps(proposal,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
+                        json.dumps(proposal,indent=2,ensure_ascii=False)+'\nMissing stage learning results (not executed):\n'+
+                        json.dumps(learned,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
                     return
                 learning=self.tool_learning.learning_request(ident)
                 if learning:

@@ -217,10 +217,9 @@ class JanusStore:
                     valid=wf['state']=='active'
                     if binding and valid:
                         try:
-                            from .conversation_workflow import ConversationStore
-                            from .workflow_design import current_source
+                            from .workflow_design import current_source_file
                             source_path=self.path.parent/'conversations.sqlite3'
-                            valid=source_path.is_file() and current_source(binding,ConversationStore(source_path))
+                            valid=source_path.is_file() and current_source_file(binding,source_path)
                         except (ValueError,OSError,sqlite3.Error,KeyError):valid=False
                     if not valid:
                         db.execute("UPDATE janus_actions SET status='cancelled',cancel_requested=1,detail='Workflow consent superseded' WHERE id=? AND status='approved'",(row['id'],))
