@@ -3497,6 +3497,7 @@ class DeepThorTDesktop(tk.Tk):
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     from deepthort_local.reviewed_generation import generate_reviewed
                     from deepthort_local.specification_guard import SpecificationRejected
+                    from deepthort_local.structured_source import FORMATS,stage_new_document
                     def decompose_source():
                         from deepthort_local.staged_source import stage_existing,stage_new_python
                         from deepthort_local.recovery_council import select_source_section
@@ -3531,7 +3532,8 @@ class DeepThorTDesktop(tk.Tk):
                             stage=lambda message:self.events.put(('log',message)))
                         council=ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3')
                         if raw is None:
-                            result=stage_new_python(self.client,council,ask_advisor(),**arguments)
+                            generator=stage_new_document if dest.suffix.casefold() in FORMATS else stage_new_python
+                            result=generator(self.client,council,ask_advisor(),**arguments)
                         else:
                             result=stage_existing(self.client,council,ask_advisor(),source=raw,**arguments)
                         result['step_id']=step['id']
@@ -3546,7 +3548,7 @@ class DeepThorTDesktop(tk.Tk):
                         except PlanError:
                             request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     except PlanError:
-                        if dest.is_file() or dest.suffix.casefold()=='.py':
+                        if dest.is_file() or dest.suffix.casefold() in FORMATS|{'.py'}:
                             decompose_source()
                             return
                         raise
@@ -3567,7 +3569,7 @@ class DeepThorTDesktop(tk.Tk):
                             cancelled=lambda:self._quitting or self.active_job!=jobid,
                             stage=lambda message:self.events.put(('log',message)))
                     except SpecificationRejected:
-                        if (dest.is_file() or dest.suffix.casefold()=='.py') and self.active_job==jobid and not self._quitting:
+                        if (dest.is_file() or dest.suffix.casefold() in FORMATS|{'.py'}) and self.active_job==jobid and not self._quitting:
                             decompose_source()
                             return
                         raise

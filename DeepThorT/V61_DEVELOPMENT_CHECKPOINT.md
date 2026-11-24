@@ -67,3 +67,7 @@ Existing oversized Build files and rejected complete-file generation now enter a
 ## New-file unit assembly and isolated tests
 
 New Python files that exceed one-pass prompt capacity or exhaust reviewed generation can now use JANUS-authored ordered units. Each complete top-level fragment is parsed, reviewed and checked against observed prior interfaces; duplicate bindings and invalid syntax trigger bounded correction. The assembled whole file must compile and receive Sentinel review before the existing authorized new-file write. Unsupported new-file formats still require normal generation or an approved decomposition into smaller files. The four original staged-source tests passed using exact repository blobs d9dd57a4922d0b39b053e2bbd67c68fc1e6eac74 and e1dd4e57a2fe00e4449ae692ae015d64ec900a31. New unit tests committed; full CI/Windows live inference remains outstanding.
+
+## Structured new-file decomposition
+
+New XML/SVG, JSON and TOML files now support model-authored ordered units after bounded whole-file generation fails. XML uses an exact model-proposed root envelope, with complete child fragments, preserving namespaces and attributes. JSON checks duplicate keys and merges same-kind root fragments; TOML validates each fragment and the entire assembled document. Every unit and complete result is reviewed, and normal authorized staged-source save/verification still applies. Tests added; live Windows inference remains unverified.
