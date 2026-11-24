@@ -313,10 +313,13 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             council=ReasoningCouncil(index.path.parent/'reasoning-council-v50.sqlite3')
             observed=json.dumps({'unmet':remaining,'inspection':inspected_evidence[:700],
                                   'proposals':new_steps},ensure_ascii=False)
+            recovery_feedback=feedback
+            if review and review.get('accepted') is False:
+                recovery_feedback+='\nPrior Sentinel rejection: '+review.get('sentinel','')[:240]
             try:
                 review=reframe(council,advisor,session=session,original=original,
                     project=project,source_section=context_section,focus=target,
-                    observed=observed,feedback=feedback,revision=serial,
+                    observed=observed,feedback=recovery_feedback,revision=serial,
                     stage=stage,cancelled=cancelled)
                 if stage:
                     stage('Sentinel accepted retranslation as advice' if review['accepted']

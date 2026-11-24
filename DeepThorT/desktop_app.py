@@ -128,6 +128,7 @@ class DeepThorTDesktop(tk.Tk):
         record(STATE,'desktop','desktop_init',version='60',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
+        self._last_planning_recovery = -60.0
         self._last_telemetry_at = 0.0
         self._last_activity_message = None
         self._last_activity_at = 0.0
@@ -1453,6 +1454,8 @@ class DeepThorTDesktop(tk.Tk):
         if ident != self.active_conversation:
             return
         self.reply_stage=str(stage)[:180]
+        # Durable progress lets both coordinators see planning, not just builds.
+        self.conversations.change(ident,'running',self.reply_stage,allowed=('running',))
         self._render_reply_notice()
 
     def _render_reply_notice(self):
@@ -3098,6 +3101,18 @@ class DeepThorTDesktop(tk.Tk):
             if j:
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
                 self._execute_job(j)
+                return
+            if (not games and self._project_work_is_enabled() and
+                    not self.janus.status().get('paused') and
+                    now-self._last_planning_recovery>=60):
+                self._last_planning_recovery=now
+                from deepthort_local.planning_recovery import resume_stalled_draft
+                recovered=resume_stalled_draft(self.conversations.path,self.specifications)
+                if recovered:
+                    record(STATE,'desktop','janus_automatic_planning_recovery',**recovered)
+                    self._log(f"JANUS resumed draft #{recovered['request_id']} from recorded progress "
+                              f"(bounded recovery {recovered['attempt']}/2). No build approved.")
+                    self._reload_chat()
 
     def _execute_job(self,j):
         jobid=j['id']

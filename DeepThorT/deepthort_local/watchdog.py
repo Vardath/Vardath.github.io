@@ -329,12 +329,16 @@ class JanusSentinel:
         # recommendations; JANUS remains the sole executor of approved work.
         js=JanusStore(self.janus_db)
         jobs=js.observe_jobs(self.jobs_db)
+        from .planning_recovery import observe_planning
+        plans=observe_planning(self.jobs_db)
+        active_plans=[p for p in plans if p['state'] in ('pending','running')]
+        failed_plans=[p for p in plans if p['state']=='failed']
         jobcounts={state:sum(job['state']==state for job in jobs) for state in
                    ('queued','running','needs_input','waiting_approval','waiting_verification','waiting_repair','failed','complete')}
         goal=js.goal() or 'Monitor user-directed work and verify completion'
         janus_focus=str(j.get('last_focus') or '')
         janus_decision=str(j.get('last_action') or '')
-        off_task=bool(not j.get('paused') and (jobcounts['queued'] or jobcounts['running']) and
+        off_task=bool(not j.get('paused') and (jobcounts['queued'] or jobcounts['running'] or active_plans) and
                        janus_focus in ('idle','startup') and cycle>=2)
         # A running model at 20% CPU may legitimately need many minutes; detect
         # prolonged lack of evidence, never terminate an active process on age alone.
@@ -353,6 +357,8 @@ class JanusSentinel:
         elif stalled_jobs:
             warning=f'Jobs {stalled_jobs[:8]} have no recorded progress for over {int(self.work_stall_after/60)} minutes; inspect the model and logs. No automatic restart.'
             if status=='running':status='warning';detail=warning
+        elif failed_plans and not active_plans:
+            warning=f"Draft #{failed_plans[0]['id']} is incomplete; check JANUS retranslation and recorded recovery evidence."
         elif status in ('needs_attention','warning'):
             warning=detail
         elif jobcounts['failed'] or jobcounts['needs_input']:
@@ -363,13 +369,15 @@ class JanusSentinel:
         observation={'worker_state':status,'janus_cycle':cycle,'janus_focus':janus_focus,
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
-            'failed':bool(jobcounts['failed']),
+            'failed':bool(jobcounts['failed'] or failed_plans),
+            'planning_counts':{state:sum(p['state']==state for p in plans)
+                              for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),
             'warning':warning,
             'active_actions':sum(a['status']=='running' for a in js.actions(40)),
             'game_detected':bool(janus_observation.get('game_detected'))}
         focus='task_drift' if off_task else ('worker_health' if status!='running' else
-               'failed_work' if jobcounts['failed'] or jobcounts['needs_input'] else 'task_adherence')
+               'failed_work' if jobcounts['failed'] or jobcounts['needs_input'] or failed_plans else 'task_adherence')
         decision='report_and_request_guidance' if warning else 'monitor_and_verify'
         alternatives=(['Inspect verified logs','Ask for guidance before retrying',
                        'Preserve existing task and approved-action state'] if warning else
@@ -381,7 +389,7 @@ class JanusSentinel:
             self.store.recommend('sentinel-'+case_key,warning,
                                  '; '.join(alternatives))
             if (not self.stopping and not observation['game_detected'] and
-                not any(job['state']=='running' for job in jobs) and
+                not active_plans and not any(job['state']=='running' for job in jobs) and
                 (self._counsel_thread is None or not self._counsel_thread.is_alive()) and
                 time.monotonic()-self._last_counsel_attempt>=600):
                 key='model-'+case_key

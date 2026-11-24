@@ -256,6 +256,11 @@ class JanusStore:
             return {'paused':True,'cycle':old['cycle'],'focus':old['last_focus'],
                     'decision':'user_paused'}
         jobs=self.observe_jobs(job_db)
+        from .planning_recovery import observe_planning
+        plans=observe_planning(job_db)
+        active_plans=[p for p in plans if p['state'] in ('pending','running')]
+        failed_plans=[p for p in plans if p['state']=='failed']
+        source_wait=[p for p in plans if p['state']=='waiting_sources']
         actions=self.actions(limit=100)
         counts={state:sum(j['state']==state for j in jobs) for state in (
             'queued','running','paused','needs_input','waiting_approval','waiting_verification','failed','complete')}
@@ -268,7 +273,9 @@ class JanusStore:
         # Keep a concrete user goal; choosing a new job does not overwrite it.
         pinned_goal=self.goal()
         current=in_progress[0] if in_progress else awaiting[0] if awaiting else failures[0] if failures else None
-        goal=pinned_goal or (f"Finish job #{current['id']}: {current['mode']} for {current['project']}" if current else 'Await user-directed work')
+        plan=next(iter(active_plans or source_wait or failed_plans),None)
+        goal=pinned_goal or (f"Finish draft #{plan['id']} for {plan['project']}" if plan and (active_plans or not current)
+             else f"Finish job #{current['id']}: {current['mode']} for {current['project']}" if current else 'Await user-directed work')
         alerts=[]
         if gaming and (in_progress or active or approved):
             focus='gaming_priority'; decision='defer_disk_heavy_work'
@@ -276,6 +283,9 @@ class JanusStore:
         elif active:
             focus=f"approved_process_{active[0]['id']}";decision='monitor_process_and_verify_exit'
             alternatives=['Wait for verifiable exit status','Check log for errors']
+        elif active_plans:
+            focus=f"draft_{active_plans[0]['id']}_planning";decision='monitor_requirements_and_reframe_failed_steps'
+            alternatives=['Observe indexed progress','Retranslate failed objectives against original requirements','Use Sentinel review before changing strategy']
         elif awaiting:
             focus=f"job_{awaiting[0]['id']}_requires_user";decision='request_approval_or_guidance'
             alternatives=['Report the exact blocked step','Ask user to review the proposed action or revise the specification']
@@ -294,8 +304,15 @@ class JanusStore:
         elif failures:
             focus=f"job_{failures[0]['id']}_failed";decision='diagnose_failure_and_propose_alternatives'
             alternatives=['Identify the failure from the queue detail','Propose an alternative implementation','Request approval for any new tool or file write']
+        elif source_wait:
+            focus=f"draft_{source_wait[0]['id']}_waiting_sources";decision='inspect_missing_source_evidence'
+            alternatives=['Preserve original requirements','Wait for required source inspection']
+        elif failed_plans:
+            focus=f"draft_{failed_plans[0]['id']}_failed";decision='diagnose_and_reframe_incomplete_plan'
+            alternatives=['Review durable planning failures','Resume only eligible bounded recovery','Keep unresolved acceptance checks visible']
         else:
             focus='idle';decision='sleep_until_new_evidence';alternatives=['Monitor for new evidence']
+        if failed_plans:alerts.append('Unfinished draft planning requires evidence-based recovery')
         if failures or action_failed:
             alerts.append('Prioritize documented failure and verification before advancing')
         if awaiting:alerts.append('User decision required')
@@ -304,7 +321,10 @@ class JanusStore:
         previous_observation=json.loads(old['last_observation'] or '{}')
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
-        observation={'counts':counts,'failed':bool(failures or action_failed),
+        observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans),
+            'planning_counts':{state:sum(p['state']==state for p in plans)
+                              for state in ('pending','running','waiting_sources','failed')},
+            'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
             'waiting_approval':bool(awaiting),'requires_user':bool(awaiting),
             'pending_approved_actions':len(approved),'active_actions':len(active),
             'game_detected':bool(gaming),
