@@ -3495,22 +3495,79 @@ class DeepThorTDesktop(tk.Tk):
                             self.events.put(('job_answer',jobid,candidate))
                             return
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
-                    if len(old)>3500:raise RuntimeError('Existing file too large for safe one-pass local edit. Split the file.')
                     from deepthort_local.reviewed_generation import generate_reviewed
+                    from deepthort_local.specification_guard import SpecificationRejected
+                    def decompose_existing():
+                        from deepthort_local.staged_source import stage_existing
+                        from deepthort_local.recovery_council import select_source_section
+                        from deepthort_local.amendment_context import revision_context
+                        from deepthort_local.reasoning_council import ReasoningCouncil
+                        from deepthort_local.project_authority import _sha
+                        # Require the existing approved unattended write boundary;
+                        # a staged result must never fall into an unbound manual write.
+                        current=self.jobs.get(jobid)
+                        approved=authorize_file(STATE/'project-grants',current,steps,step,enabled=self._project_work_is_enabled())
+                        raw=dest.read_bytes().decode('utf-8')
+                        if hashlib.sha256(raw.encode('utf-8')).hexdigest()!=approved['before_sha256']:
+                            raise PlanError('Source changed before decomposition')
+                        scope=prompt if len(prompt)<=1800 else select_source_section(prompt,focus,1800)
+                        if amendments:
+                            extra=revision_context(original,amendments,focus,max_chars=750)
+                            if extra:scope+='\n'+extra
+                        def ask_advisor():
+                            # Acquire/release around each reasoning call, not for the
+                            # whole operation, so Sentinel can use its worker too.
+                            owner=self
+                            class Advisor:
+                                def chat(self,session,prompt,max_tokens):
+                                    lease=owner._planning_council_client()
+                                    try:return (lease or owner.client).chat(session,prompt,max_tokens=max_tokens)
+                                    finally:
+                                        if lease is not None:lease.release()
+                            return Advisor()
+                        result=stage_existing(self.client,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                            ask_advisor(),session=f'build-{jobid}-step-{step["id"]}',path=step['path'],
+                            goal=step['description'],scope=scope,master_sha=hashlib.sha256(original.encode('utf-8')).hexdigest(),
+                            source=raw,review=guard,
+                            cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j),
+                            stage=lambda message:self.events.put(('log',message)))
+                        result['step_id']=step['id']
+                        if _sha(dest)!=result['before_sha256']:raise PlanError('Source changed during decomposition')
+                        self.events.put(('staged_source_answer',jobid,result))
+                    if len(old)>3500:
+                        decompose_existing()
+                        return
                     try:
-                        request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500)
+                        try:
+                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500)
+                        except PlanError:
+                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     except PlanError:
-                        request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
+                        if dest.is_file():
+                            decompose_existing()
+                            return
+                        raise
                     def transform(answer):
                         if dest.suffix.casefold()=='.svg':
                             from deepthort_local.media_tools import standalone_svg
                             answer=standalone_svg(answer)
                         return strip_single_code_fence(answer)
-                    answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}',
-                        request,lambda candidate:guard(candidate,'code'),
-                        max_chars=MAX_INFERENCE_PROMPT,transform=transform,
-                        cancelled=lambda:self._quitting or self.active_job!=jobid,
-                        stage=lambda message:self.events.put(('log',message)))
+                    def review_candidate(candidate):
+                        from deepthort_local.staged_source import validate_source,StageError
+                        try:validate_source(step['path'],candidate)
+                        except StageError as error:raise SpecificationRejected(str(error)) from error
+                        return guard(candidate,'code')
+                    try:
+                        answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}',
+                            request,review_candidate,
+                            max_chars=MAX_INFERENCE_PROMPT,transform=transform,
+                            cancelled=lambda:self._quitting or self.active_job!=jobid,
+                            stage=lambda message:self.events.put(('log',message)))
+                    except SpecificationRejected:
+                        if dest.is_file() and self.active_job==jobid and not self._quitting:
+                            decompose_existing()
+                            return
+                        raise
                     self.events.put(('job_answer',jobid,answer))
                     return
                 if j['mode']=='edit':
@@ -3665,7 +3722,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Job #{jobid}: retention blocked: '+str(error))
         self._refresh_jobs()
 
-    def _job_answer(self,jobid,answer):
+    def _job_answer(self,jobid,answer,*,staged=None):
         j=self.jobs.get(jobid)
         if not j or j['state']!='running':
             self._log(f'Ignored stale answer for cancelled/paused job #{jobid}.');return
@@ -3678,7 +3735,21 @@ class DeepThorTDesktop(tk.Tk):
             if not step:
                 self.jobs.change(jobid,'needs_input','No active step; inspect build plan',result=answer,allowed=('running',))
             else:
-                code=strip_single_code_fence(answer)
+                code=answer if staged is not None else strip_single_code_fence(answer)
+                if staged is not None:
+                    try:
+                        from deepthort_local.project_authority import _sha
+                        from deepthort_local.specification_guard import master_for_job
+                        master=master_for_job(j,self.conversations,self.hierarchies,self.specifications)
+                        if (staged['step_id']!=step['id'] or
+                                staged['master_sha256']!=hashlib.sha256(master.encode('utf-8')).hexdigest() or
+                                staged['after_sha256']!=hashlib.sha256(code.encode('utf-8')).hexdigest() or
+                                staged['before_sha256']!=_sha(safe_target(j['project'],step['path']))):
+                            raise PlanError('Staged source, step or specification changed before save')
+                    except (ValueError,OSError,KeyError) as error:
+                        self.jobs.change(jobid,'needs_input','Staged source rejected: '+str(error),allowed=('running',))
+                        self._refresh_jobs()
+                        return
                 if not code.strip() or len(code)>280_000:
                     self.jobs.change(jobid,'needs_input','Model supplied empty/oversized code. Ask for correction.',result=answer,allowed=('running',))
                 else:
@@ -3691,6 +3762,11 @@ class DeepThorTDesktop(tk.Tk):
                             # No generic auto-write permission is inferred.
                             self._log(f'Job #{jobid}: manual review for '
                                       f'{step["path"]}: {str(exc)[:180]}')
+                    if staged is not None and (authority is None or authority['before_sha256']!=staged['before_sha256']):
+                        self.jobs.change(jobid,'needs_input','Staged source approval or baseline changed; no file written',
+                                         allowed=('running',))
+                        self._refresh_jobs()
+                        return
                     if authority is not None:
                         try:
                             steps_now=self.jobs.steps(jobid)
@@ -3716,6 +3792,10 @@ class DeepThorTDesktop(tk.Tk):
                                 raise
                             self.jobs.set_step(step['id'], 'saved',
                                 'Job-authorized reversible write; SHA-256 recorded; not tested')
+                            if staged is not None:
+                                record(STATE,'desktop','staged_source_saved',job_id=jobid,step_id=step['id'],
+                                    changed_ranges=staged['changed_ranges'],ranges=staged['ranges'],
+                                    before_sha256=staged['before_sha256'],after_sha256=staged['after_sha256'])
                             self.jobs.change(jobid, 'queued',
                                 f'Saved {step["path"]}; next exact approved stage queued',
                                 result=answer, allowed=('running',))
@@ -5540,6 +5620,7 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='job_plan':self._job_plan(event[1],event[2])
             elif kind=='build_files_done':self._build_files_done(event[1])
             elif kind=='retained_artifact':self._retain_artifact(event[1],event[2],event[3])
+            elif kind=='staged_source_answer':self._job_answer(event[1],event[2]['source'],staged=event[2])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
             elif kind=='job_error':self._job_error(event[1],event[2])
             elif kind=='repair_answer':self._repair_answer(event[1],event[2],event[3])
