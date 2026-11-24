@@ -252,6 +252,9 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
                     rel = safe_target(Path(project), canonical).relative_to(Path(project).resolve()).as_posix()
                 except ValueError as exc:
                     raise PlanError('Unsafe extension-relative output path') from exc
+        from .artifact_types import require_text_target
+        try:require_text_target(rel)
+        except ValueError as exc:raise PlanError(str(exc)) from exc
         if rel.casefold() in paths:
             raise PlanError('Duplicate file path in model plan')
         paths.add(rel.casefold())
@@ -264,7 +267,8 @@ def build_plan_prompt(request: str, inventory: dict | None = None, *, x4_evidenc
     header = ('Return ONLY valid JSON with a "files" array. Each entry needs "path" '
               'and "description". Choose concrete relative source files ordered by dependency, '
               'up to 2 in this first pass; subsequent passes will complete the plan. Keep each description short and concrete. No absolute paths or shell/install commands. Do not confuse an example '
-              'format with the actual project type. Do NOT invent verified game asset identifiers.\n')
+              'format with the actual project type. Do NOT invent verified game asset identifiers. '
+              'Plan text source and asset-generation scripts here, not binary images, models, audio, executables or packages. Native outputs require a separate artifact workflow.\n')
     if project_kind(request) == 'x4':
         domain = ('''This project is an X4: Foundations EXTENSION, not a Python app. NEVER output src/main.py.
 Propose actual X4 XML file stages, including content.xml, ship macro/asset patches, separate customised weapons/turret macro definitions and a Mission Director md/*.xml ownership watcher when the user requests respawning.

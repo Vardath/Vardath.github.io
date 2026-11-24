@@ -33,7 +33,8 @@ def parse_tasks(answer,roadmap,section):
         output=safe_target(root,task['output']).relative_to(root).as_posix()
         if output.casefold() in paths:raise ValueError('Artifact collides with text-source plan; reconcile the file plan')
         if safe_target(root,output).exists():raise ValueError('Artifact already exists; do not silently replace it')
-        result.append({'after':after,'goal':task['goal'].strip(),'output':output,'section':section})
+        from .artifact_types import artifact_type
+        result.append({'after':after,'goal':task['goal'].strip(),'output':output,'section':section,'artifact_type':artifact_type(output)})
     return result
 
 
@@ -157,13 +158,24 @@ def pending_task(plan,workflows,before):
             if run['state']=='complete':
                 check_complete(workflows,run)
                 outputs={s['output'] for s in manifest['stages']}
-                if task['output'] in outputs:break
+                if task['output'] in outputs:
+                    from .artifact_types import require_checked_receipt
+                    rows=workflows.stages(run['id'])
+                    for step,row in zip(manifest['stages'],rows):
+                        if step['output']==task['output']:
+                            require_checked_receipt(task,json.loads(row['receipt'])['artifact'])
+                            break
+                    else:raise ValueError('Required artifact receipt missing')
+                    break
             matches.append(run)
         else:return task
     return None
 
 
 def require_output(task,manifest):
+    info=task.get('artifact_type')
+    if info and info['verification']!='structural':
+        raise ValueError('Required artifact lacks a supported format verifier; learn or add one before approval')
     if task['output'] not in {s['output'] for s in manifest['stages']}:
         raise ValueError('Workflow does not produce the exact required roadmap artifact')
     return True

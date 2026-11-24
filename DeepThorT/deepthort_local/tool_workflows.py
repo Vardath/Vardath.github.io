@@ -41,7 +41,7 @@ def artifact(root,relative):
         strict_json(data.decode('utf-8-sig'));scope='JSON parse and unique keys'
     elif suffix=='.toml':
         tomllib.loads(data.decode('utf-8'));scope='TOML parse'
-    elif suffix in ('.zip','.apk'):
+    elif suffix in ('.zip','.apk','.aab','.jar'):
         with zipfile.ZipFile(io.BytesIO(data)) as z:
             entries=z.infolist()
             if not entries or len(entries)>4000 or sum(x.file_size for x in entries)>64_000_000:
@@ -54,6 +54,8 @@ def artifact(root,relative):
                 names.add(name.casefold())
                 if entry.flag_bits&1 or (entry.external_attr>>16)&0o170000==0o120000:
                     raise ValueError('Archive contains encrypted or symlink member')
+            if suffix=='.apk' and 'androidmanifest.xml' not in names:raise ValueError('APK missing AndroidManifest.xml')
+            if suffix=='.aab' and 'base/manifest/androidmanifest.xml' not in names:raise ValueError('AAB missing base manifest')
             if z.testzip() is not None:raise ValueError('Archive CRC failed')
         scope='archive structure and CRC (not installability)'
     else:

@@ -2071,7 +2071,8 @@ class DeepThorTDesktop(tk.Tk):
         if mixed:
             view.insert('end','REQUIRED EXTERNAL ARTIFACTS (commands require separate review):\n')
             for task in mixed['tasks']:
-                view.insert('end',f"  After milestone {task['after']}: {task['goal']} -> {task['output']}\n")
+                info=task.get('artifact_type',{})
+                view.insert('end',f"  After milestone {task['after']}: {task['goal']} -> {task['output']} [{info.get('kind','artifact')}; {info.get('verification','legacy check')}]\n")
         view.configure(state='disabled')
         accepted=[False]
         def consent():accepted[0]=True;dialog.destroy()
@@ -3647,6 +3648,8 @@ class DeepThorTDesktop(tk.Tk):
                             cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
+                    from deepthort_local.artifact_types import require_text_target
+                    require_text_target(step['path'])
                     if amendments and self._project_work_is_enabled() and dest.is_file():
                         from deepthort_local.selective_redevelopment import candidate_for,review_retention
                         from deepthort_local.reasoning_council import ReasoningCouncil
@@ -3975,6 +3978,12 @@ class DeepThorTDesktop(tk.Tk):
             if not step:
                 self.jobs.change(jobid,'needs_input','No active step; inspect build plan',result=answer,allowed=('running',))
             else:
+                from deepthort_local.artifact_types import require_text_target
+                try:require_text_target(step['path'])
+                except ValueError as error:
+                    self.jobs.change(jobid,'needs_input',str(error),allowed=('running',))
+                    self._refresh_jobs()
+                    return
                 code=answer if staged is not None else strip_single_code_fence(answer)
                 if staged is not None:
                     try:

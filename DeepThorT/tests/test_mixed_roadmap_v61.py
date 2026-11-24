@@ -2,6 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from deepthort_local.mixed_roadmap import parse_tasks,MixedRoadmaps,pending_task,require_output
+from deepthort_local.artifact_types import artifact_type
 import json
 
 class Workflows:
@@ -12,7 +13,7 @@ class MixedRoadmapTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as t:
             plan={'project':t,'schedule':[{'steps':[{'path':'main.py'}]}]}
             task={'after':1,'goal':'Render required texture','output':'texture.png'}
-            self.assertEqual(parse_tasks(json.dumps({'artifacts':[task]}),plan,2),[dict(task,section=2)])
+            self.assertEqual(parse_tasks(json.dumps({'artifacts':[task]}),plan,2),[dict(task,section=2,artifact_type=artifact_type('texture.png'))])
             for change in ({'after':2},{'output':'main.py'},{'output':'../bad.png'}):
                 with self.assertRaises(ValueError):
                     parse_tasks(json.dumps({'artifacts':[dict(task,**change)]}),plan,2)
