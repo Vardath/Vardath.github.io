@@ -13,3 +13,7 @@ The root Job Object now has a random name and is checked by actual membership an
 
 ### Python compatibility repair
 OpenVINO GenAI 2026.4.1.0 has no Python 3.15 Windows wheel. The installer now checks x64 Python 3.10–3.13, prefers the current supported interpreter or the explicit Python launcher selectors (3.13 first), and preserves incompatible private environments with an `openvino-env-incompatible-` name before creating a new one. Install Python 3.13 x64 from python.org if no supported Python is installed. No change to the selected models, shared Job Object cap, or original DeepThorT. Windows real model acceptance is still required.
+
+
+### Automatic runtime bootstrap
+Install AI now provisions private CPython 3.13.17 x64 from the official pinned CPython NuGet package if no compatible interpreter exists. It checks the catalog SHA-512, extracts only the tools directory with bounded path validation, tests the interpreter, and builds the isolated OpenVINO environment. No global Python or PATH changes. Previous incompatible environments are preserved. A runtime-only preflight is available under the shared Windows job. No production model or cap changes.

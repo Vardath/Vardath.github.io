@@ -1,0 +1,37 @@
+name: Triad installer Windows preflight
+on:
+  push:
+    branches: [deepthort-triad-download]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-runtime:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Compile installer and run regression tests
+        run: |
+          python -m py_compile download_model.py
+          python -m unittest discover -s tests -p test_triad_runtime_python.py -v
+      - name: Exercise actual private Python and OpenVINO under the cap
+        shell: pwsh
+        run: |
+          @'
+          import sys
+          from pathlib import Path
+          from deepthort_local.win_cpu_cap import run_capped
+          if sys.argv[1:] == ["--inside"]:
+              import download_model as installer
+              installer.choose_runtime_python = installer.provision_private_python
+              installer.install_runtime()
+          else:
+              raise SystemExit(run_capped([sys.executable, str(Path(__file__).resolve()), "--inside"], cwd=str(Path(__file__).resolve().parent), percent=30, ram_percent=30))
+          '@ | Set-Content -Encoding utf8 triad_ci_bootstrap.py
+          python triad_ci_bootstrap.py
