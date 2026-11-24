@@ -242,6 +242,8 @@ class DeepThorTDesktop(tk.Tk):
         self.meter=Meter()
         self.client = LocalModelClient(STATE/'sessions.sqlite3')
         self.capabilities = CapabilityLibrary(STATE/'capabilities.sqlite3')
+        from deepthort_local.technical_research import ResearchStore
+        self.technical_research=ResearchStore(STATE/'technical-research.sqlite3')
         self.tool_learning = ToolAcquisition(STATE/'tool_acquisition.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
@@ -3546,7 +3548,7 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.reviewed_generation import generate_reviewed
                     from deepthort_local.specification_guard import SpecificationRejected
                     from deepthort_local.structured_source import FORMATS,stage_new_document
-                    def decompose_source():
+                    def decompose_source(research_guidance=''):
                         from deepthort_local.staged_source import stage_existing,stage_new_python
                         from deepthort_local.recovery_council import select_source_section
                         from deepthort_local.amendment_context import revision_context
@@ -3563,6 +3565,8 @@ class DeepThorTDesktop(tk.Tk):
                         if amendments:
                             extra=revision_context(original,amendments,focus,max_chars=750)
                             if extra:scope+='\n'+extra
+                        if research_guidance and len(scope)+len(research_guidance)+2<=2600:
+                            scope+='\n\n'+research_guidance
                         def ask_advisor():
                             # Acquire/release around each reasoning call, not for the
                             # whole operation, so Sentinel can use its worker too.
@@ -3616,9 +3620,40 @@ class DeepThorTDesktop(tk.Tk):
                             max_chars=MAX_INFERENCE_PROMPT,transform=transform,
                             cancelled=lambda:self._quitting or self.active_job!=jobid,
                             stage=lambda message:self.events.put(('log',message)))
-                    except SpecificationRejected:
+                    except SpecificationRejected as error:
+                        from deepthort_local.technical_research import research_recovery
+                        from deepthort_local.reasoning_council import ReasoningCouncil
+                        from deepthort_local.project_authority import _sha
+                        guidance=''
+                        if self._project_work_is_enabled() and self.active_job==jobid and not self._quitting:
+                            try:
+                                authorize_file(STATE/'project-grants',self.jobs.get(jobid),steps,step,enabled=True)
+                                evidence=self.capabilities.retrieval_context(project,focus+' '+str(error),max_chars=900)
+                                advisor=self._planning_council_client()
+                                try:
+                                    guidance=research_recovery(self.technical_research,
+                                        ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor or self.client,
+                                        session=f'build-{jobid}-step-{step["id"]}',master=original,goal=focus,
+                                        failure=str(error),local_context=evidence,baseline=_sha(dest),
+                                        online=True,stage=lambda message:self.events.put(('log',message)),
+                                        cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j))
+                                finally:
+                                    if advisor is not None:advisor.release()
+                                if guidance:guard(guidance,'plan')
+                            except (ValueError,OSError,KeyError) as research_error:
+                                guidance=''
+                                self.events.put(('log','Technical research unavailable: '+str(research_error)[:250]))
+                        if guidance and len(request)+len(guidance)+2<=MAX_INFERENCE_PROMPT:
+                            try:
+                                answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}-research',
+                                    request+'\n\n'+guidance,review_candidate,max_chars=MAX_INFERENCE_PROMPT,
+                                    attempts=1,transform=transform,
+                                    cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j))
+                                self.events.put(('job_answer',jobid,answer))
+                                return
+                            except SpecificationRejected:pass
                         if (dest.is_file() or dest.suffix.casefold() in FORMATS|{'.py'}) and self.active_job==jobid and not self._quitting:
-                            decompose_source()
+                            decompose_source(guidance)
                             return
                         raise
                     self.events.put(('job_answer',jobid,answer))
