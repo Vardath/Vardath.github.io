@@ -3334,6 +3334,7 @@ class DeepThorTDesktop(tk.Tk):
                         self._log(f'Workflow draft #{resumed} resumed on new capability evidence; no command authorized.')
                         self._reload_chat()
                         return
+                    if self._recover_workflow_tool(source):return
                 except (ValueError,OSError,KeyError,TypeError) as error:
                     self._log('Workflow capability recovery unavailable: '+str(error)[:200])
             from deepthort_local.workflow_recovery import next_recovery
@@ -3430,6 +3431,33 @@ class DeepThorTDesktop(tk.Tk):
                       'running under a job-bound fixed command; not yet verified.')
             self._refresh_jobs()
             return
+
+    def _recover_workflow_tool(self,source):
+        if os.name!='nt' or not self._routine_tools_enabled() or not self._project_work_is_enabled():
+            return False
+        from deepthort_local.workflow_acquisition import next_operation
+        operation=next_operation(self.workflow_drafts,self.conversations,self.tool_learning,
+            self._tool_verification,source,self._autonomy_policy,self._auto_tool_history,which=shutil.which)
+        if not operation:return False
+        name=operation['name']
+        if operation['action']=='probe':
+            self._queue_catalog_verification(name,project=source['project'])
+            return True
+        if operation['action']=='restore':
+            current=operation['receipt']
+            rows=self.tool_learning.discover([{'name':name,'location':current['executable'],'found':True}])
+            if rows:self._log('Workflow capability restored from verified executable: '+name+'; approved help still required.')
+            return bool(rows)
+        plan=operation['plan']
+        if len(self._auto_tool_queue)>=12:return False
+        if any(p['package_id']==plan['package_id'] for p in self._auto_tool_queue):return False
+        # Keep origin outside the sealed catalog plan; verify_plan must still
+        # validate the original exact command and hash unchanged.
+        origins=self.__dict__.setdefault('_workflow_install_origins',{})
+        origins[plan['plan_sha256']]=(source['id'],operation['request_id'],name)
+        self._auto_tool_queue.append(plan)
+        self._log('Missing workflow tool queued from approved catalog: '+name)
+        return True
 
     def _recover_missing_verifier(self,job,steps,name):
         from deepthort_local.project_authority import authorize_verification_sources
@@ -4580,6 +4608,14 @@ class DeepThorTDesktop(tk.Tk):
         if self.tool_process and self.tool_process.poll() is None:return
         plan=self._auto_tool_queue.pop(0)
         try:
+            origin=self.__dict__.get('_workflow_install_origins',{}).get(plan['plan_sha256'])
+            if origin:
+                from deepthort_local.workflow_acquisition import still_required
+                source=self.conversations.get(origin[0])
+                if (not self._project_work_is_enabled() or not still_required(self.workflow_drafts,self.conversations,source,origin[1],origin[2])):
+                    self.__dict__['_workflow_install_origins'].pop(plan['plan_sha256'],None)
+                    self._log('Workflow tool installation no longer required; cancelled before launch.')
+                    return
             if str(self.project)!=plan['project']:
                 self._log('Routine software work deferred: project changed; no command run.')
                 return
@@ -4595,6 +4631,7 @@ class DeepThorTDesktop(tk.Tk):
                                  plan['package_id'],plan['operation']):
                 return
             self._record_automatic_software(plan,'launch_requested')
+            self.__dict__.get('_workflow_install_origins',{}).pop(plan['plan_sha256'],None)
             self._auto_tool_active=plan
             if not self._start_command(plan['argv'],cwd=ROOT,
                      label='Routine '+plan['operation']+' '+plan['name'],kind='automatic_software'):
