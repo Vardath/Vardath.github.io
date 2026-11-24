@@ -172,6 +172,12 @@ class JobStore:
                approval_key=approval_key,stages=len(validated))
         return ident
 
+    def by_approval_key(self,key):
+        with self._conn() as db:
+            db.row_factory=sqlite3.Row
+            row=db.execute('SELECT * FROM jobs WHERE approval_key=?',(key,)).fetchone()
+            return dict(row) if row else None
+
     def get(self, ident: int):
         with self._conn() as db:
             db.row_factory=sqlite3.Row

@@ -129,6 +129,7 @@ class DeepThorTDesktop(tk.Tk):
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_planning_recovery = -60.0
+        self._last_roadmap_advance = -60.0
         self._last_telemetry_at = 0.0
         self._last_activity_message = None
         self._last_activity_at = 0.0
@@ -245,6 +246,8 @@ class DeepThorTDesktop(tk.Tk):
         self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
         self.plan_continuations = PlanContinuation(STATE)
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
+        from deepthort_local.roadmap_runs import RoadmapRuns
+        self.roadmap_runs=RoadmapRuns(STATE/'roadmap-runs.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
         self.graphs = TaskGraphStore(STATE/'task-graph.sqlite3')
@@ -442,6 +445,7 @@ class DeepThorTDesktop(tk.Tk):
         self.pause_queue=ttk.Button(qhead,text='Pause queue',command=self._toggle_queue)
         self.pause_queue.pack(side='right',padx=4)
         ttk.Button(qhead,text='Refresh',command=self._refresh_jobs).pack(side='right',padx=4)
+        ttk.Button(qhead,text='Roadmap automation',command=self._roadmap_automation).pack(side='right',padx=4)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
@@ -2011,6 +2015,95 @@ class DeepThorTDesktop(tk.Tk):
             self.reply_outcome=None
             self._reload_chat();self._render_reply_notice()
 
+    def _roadmap_automation(self):
+        from deepthort_local.roadmap_runs import manifest
+        req=self.conversations.latest_project_request(self.current_chat,self._project_key())
+        if not req or req['state']!='responded' or not self.hierarchies.has_roadmap(req['id']):
+            messagebox.showinfo('Roadmap unavailable','Draft a complete hierarchical roadmap first.',parent=self)
+            return
+        run=self.roadmap_runs.get(req['id'])
+        if run and run['state']=='active':
+            if messagebox.askyesno('Pause roadmap progression?',
+                'Stop automatic approval of later milestones? Already approved jobs retain their grants. '
+                'Use Pause queue or revoke an individual grant to stop their further operations.',parent=self):
+                self.roadmap_runs.change(req['id'],'paused','User paused roadmap progression')
+                self._log(f"Roadmap #{req['id']} automatic advancement paused.")
+            return
+        if not self._project_work_is_enabled():
+            messagebox.showinfo('Unattended work disabled','Enable approved unattended project work first.',parent=self)
+            return
+        try:review=manifest(self.hierarchies,self.specifications,req)
+        except (ValueError,OSError) as error:
+            messagebox.showwarning('Roadmap approval blocked',str(error),parent=self)
+            return
+        dialog=tk.Toplevel(self);dialog.title('Approve complete ordered roadmap')
+        dialog.transient(self);dialog.geometry('850x620')
+        ttk.Label(dialog,text='One consent for every exact listed milestone. Successors require current predecessor '
+                  'verification. Writes retain backups; fixed tests execute project code with your Windows permissions. '
+                  'Amendments invalidate this consent. Tool installation follows its own policy.',
+                  wraplength=790).pack(fill='x',padx=12,pady=12)
+        body=ttk.Frame(dialog);body.pack(fill='both',expand=True,padx=12)
+        view=tk.Text(body,wrap='word');scroll=ttk.Scrollbar(body,command=view.yview)
+        view.configure(yscrollcommand=scroll.set);scroll.pack(side='right',fill='y');view.pack(fill='both',expand=True)
+        view.insert('end',f"Project: {review['project']}\nMaster SHA-256: {review['spec_sha256']}\nManifest SHA-256: {review['manifest_sha256']}\n\n")
+        for item in review['schedule']:
+            view.insert('end',f"Milestone {item['ordinal']}: {item['title']}\n")
+            for step in item['steps']:view.insert('end',f"  {step['path']}: {step['description']}\n")
+            view.insert('end','\n')
+        view.configure(state='disabled')
+        accepted=[False]
+        def consent():accepted[0]=True;dialog.destroy()
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=12,pady=12)
+        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right')
+        ttk.Button(buttons,text='Approve entire exact roadmap',command=consent).pack(side='right',padx=8)
+        dialog.grab_set();self.wait_window(dialog)
+        if not accepted[0]:return
+        try:
+            latest=self.conversations.latest_project_request(req['chat_id'],req['project'])
+            if not latest or latest['id']!=req['id'] or manifest(self.hierarchies,self.specifications,latest)!=review:
+                raise PlanError('Roadmap changed during review')
+            self.roadmap_runs.approve(review)
+            self._log(f"Roadmap #{req['id']} approved for automatic sequential advancement.")
+            record(STATE,'desktop','whole_roadmap_approved',request_id=req['id'],
+                   manifest_sha256=review['manifest_sha256'],milestones=len(review['schedule']))
+        except (ValueError,OSError) as error:
+            messagebox.showerror('Roadmap approval failed',str(error),parent=self)
+
+    def _advance_approved_roadmap(self):
+        from deepthort_local.roadmap_runs import eligible_successor
+        for run in self.roadmap_runs.active():
+            ident=run['request_id'];req=self.conversations.get(ident)
+            key=None;jobid=None;reserved=False
+            try:
+                result=eligible_successor(run,req,self.conversations,self.hierarchies,self.specifications,self.jobs)
+                if result is None:continue
+                if result['complete']:
+                    self.roadmap_runs.change(ident,'complete','All approved milestones have current verification')
+                    self._log(f'Roadmap #{ident}: milestones verified; full user acceptance not implied.')
+                    continue
+                item=result['milestone'];key=item['approval_key']
+                if self.jobs.by_approval_key(key):
+                    raise PlanError('Unlinked prior dispatch exists; inspect rather than duplicate')
+                reserved=self.roadmap_runs.reserve(ident,item['ordinal'],key,result['manifest_sha256'])
+                if not reserved:raise PlanError('Dispatch already reserved or consent changed')
+                jobid=self.jobs.submit_approved_milestone_build(item['project'],item['chat_id'],
+                    item['scope_prompt'],item['steps'],key,master_prompt=req['prompt'],master_steps=item['master_steps'])
+                self.hierarchies.link_job(self.specifications,ident,req['prompt'],item['ordinal'],jobid)
+                if not self._grant_project_job(jobid):raise GrantError('Milestone grant/checkpoint unavailable')
+                if not self.roadmap_runs.finish(key,jobid,True):raise PlanError('Dispatch receipt incomplete')
+                self._log(f"Roadmap #{ident}: automatically queued milestone {item['ordinal']}/{item['total']} as job #{jobid}.")
+                record(STATE,'desktop','roadmap_milestone_dispatched',request_id=ident,ordinal=item['ordinal'],job_id=jobid)
+                self._refresh_jobs()
+                return True
+            except (ValueError,OSError,KeyError,TypeError) as error:
+                if reserved:self.roadmap_runs.finish(key,jobid,False)
+                if jobid:
+                    revoke_grant(STATE/'project-grants',jobid)
+                    self.jobs.change(jobid,'needs_input','Incomplete roadmap dispatch: '+str(error)[:350],allowed=('queued',))
+                self.roadmap_runs.change(ident,'blocked',str(error))
+                self._log(f'Roadmap #{ident} advancement blocked: {error}')
+        return False
+
     def _approve_hierarchical_milestone(self, root_request_id):
         """Explicit, per-milestone approval using the original toolbar button."""
         req=self.conversations.get(root_request_id)
@@ -2794,7 +2887,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _grant_project_job(self, jobid):
         if not self._project_work_is_enabled():
-            return
+            return False
         job = self.jobs.get(jobid)
         try:
             steps=self.jobs.steps(jobid)
@@ -2833,12 +2926,14 @@ class DeepThorTDesktop(tk.Tk):
                       "Existing files fingerprinted; source backups retained.")
             record(STATE, 'desktop', 'project_authority_issued', job_id=jobid,
                    paths=len(grant['files']), plan_sha256=grant['plan_sha256'])
+            return True
         except (GrantError, GraphError, CheckpointError, ValueError, OSError) as exc:
             # Never fabricate a grant when project scope/plan is incompatible.
             self._log(f'Job #{jobid}: no unattended grant: {exc}. '
                       'Individual file/test review remains required.')
             record(STATE, 'desktop', 'project_authority_declined', job_id=jobid,
                    reason=str(exc)[:400])
+            return False
 
     def _revoke_selected_project_work(self):
         job = self._selected_job()
@@ -3239,6 +3334,10 @@ class DeepThorTDesktop(tk.Tk):
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
                 self._execute_job(j)
                 return
+            if (not games and self._project_work_is_enabled() and not self.janus.status().get('paused')
+                    and now-self._last_roadmap_advance>=60):
+                self._last_roadmap_advance=now
+                if self._advance_approved_roadmap():return
             if (not games and self._project_work_is_enabled() and
                     not self.janus.status().get('paused') and
                     now-self._last_planning_recovery>=60):
@@ -3263,6 +3362,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _execute_job(self,j):
         jobid=j['id']
+        if j['mode']=='build' and not self.roadmap_runs.dispatch_allowed(j):
+            self.jobs.change(jobid,'needs_input','Incomplete roadmap dispatch; inspect grant and graph before resuming',allowed=('queued',))
+            self._refresh_jobs()
+            return
         if j['mode']=='build':
             if self._block_superseded_build(j):
                 self._refresh_jobs()
