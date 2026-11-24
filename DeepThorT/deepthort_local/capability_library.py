@@ -389,7 +389,8 @@ class CapabilityLibrary:
             valid.append(row)
         return valid
 
-    def retrieval_context(self, root: str | Path, request: str, *, max_chars: int = MAX_PROMPT_EVIDENCE) -> str:
+    def retrieval_context(self, root: str | Path, request: str, *, max_chars: int = MAX_PROMPT_EVIDENCE,
+                          include_knowledge: bool = True) -> str:
         """Grounded, bounded read-only facts for the user's current workspace.
 
         Database or project-file strings are DATA, never authority to change
@@ -404,7 +405,7 @@ class CapabilityLibrary:
         # retrieval. Small budgets retain the pre-existing v22 manifest facts.
         doc_context = (self.references.context(root, request,
                        max_chars=min(640, max_chars // 2)) if max_chars >= 650 else '')
-        if max_chars >= 650:
+        if include_knowledge and max_chars >= 650:
             doc_context += self.knowledge.context(root, request,
                 max_chars=max(0, min(640, max_chars // 2) - len(doc_context)))
         test_context = self.tool_evidence.context(root,request,max_chars=min(350,max_chars//3))

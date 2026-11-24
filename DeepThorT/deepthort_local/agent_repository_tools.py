@@ -13,6 +13,7 @@ from .repository_index import _read, IndexCancelled
 from .reasoning_council import sha
 from .specification_guard import review_source
 from .agent_tool_selection import shortlist,pack
+from .document_review import review_documents
 
 MAX_CALLS=3
 MAX_RESULT=1100
@@ -150,7 +151,7 @@ class RepositoryTools:
             except (OSError,ValueError,KeyError):return False
         return True
 
-def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stage=None,receipts=None,job_id=None):
+def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stage=None,receipts=None,job_id=None,amendments=()):
     """At most three local reasoning turns; rejected calls cannot execute.
 
     Each observation is re-read, and only current complete records enter the
@@ -216,6 +217,17 @@ def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stag
         if receipts is not None:
             ident=receipts.record(job_id=job_id,project=tools.root,spec_sha=sha(original),
                 session=session,turn=turn,request=request,result=result)
+        if request['tool']=='document_search' and result['items']:
+            # Do not show unreviewed document excerpts even to the next JANUS
+            # selection turn. Review exact complete records as a bounded batch.
+            suitable=review_documents(council,client,project=tools.root,original=original,
+                goal=goal,session=session,evidence=compact(result),
+                current=lambda:tools.valid(result,request),amendments=amendments,
+                cancelled=tools.cancelled,stage=stage)
+            tools.check()
+            if not suitable:
+                feedback='Sentinel withheld document evidence; investigate another source'
+                continue
         observations.append((request,result,ident))
         if stage:stage('JANUS repository tool '+request['tool']+' returned '+str(len(result['items']))+' observations; SHA256 '+sha(compact(result))[:16])
     output=header

@@ -2516,7 +2516,7 @@ class DeepThorTDesktop(tk.Tk):
                         discovery=self.capabilities.inspect_project(
                             request['project'],exclude_paths=self.inspection_exclusions.paths(request['project']))
                         capability_evidence=self.capabilities.retrieval_context(
-                            request['project'],original,max_chars=650)
+                            request['project'],original,max_chars=650,include_knowledge=False)
                         capability_evidence += self.tool_learning.context(
                             request['project'],self.janus,original,max_chars=350)
                         record(STATE,'desktop','capability_discovery_completed',
@@ -2574,6 +2574,25 @@ class DeepThorTDesktop(tk.Tk):
                 if request['mode']=='draft_plan' and not large_spec:
                     prompt=attach_capability_context(prompt,capability_evidence,
                                                      max_chars=MAX_INFERENCE_PROMPT)
+                    room=min(640,MAX_INFERENCE_PROMPT-len(prompt)-300)
+                    if room>=240 and not cancelled() and not self.disk_gate.gaming():
+                        advisor=self._planning_council_client()
+                        try:
+                            if advisor is not None:
+                                from deepthort_local.document_review import reviewed_context
+                                from deepthort_local.reasoning_council import ReasoningCouncil
+                                prompt+=reviewed_context(self.capabilities.knowledge,
+                                    ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
+                                    project=request['project'],original=original,goal=original,
+                                    session=f'plan-documents-{ident}',max_chars=room,
+                                    exclude=self.inspection_exclusions.paths(request['project']),
+                                    amendments=self.conversations.amendment_history(ident),
+                                    cancelled=lambda:cancelled() or self.disk_gate.gaming(),
+                                    stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        except (ValueError,OSError,RuntimeError) as error:
+                            self.events.put(('log','Optional document review unavailable: '+type(error).__name__))
+                        finally:
+                            if advisor is not None:advisor.release()
                 if not large_spec and len(prompt)>MAX_INFERENCE_PROMPT:
                     raise ValueError(f'Model input of {len(prompt):,} characters exceeds {MAX_INFERENCE_PROMPT:,}; original is saved')
                 if cancelled():return
@@ -3314,6 +3333,7 @@ class DeepThorTDesktop(tk.Tk):
                     try:
                         from deepthort_local.agent_repository_tools import RepositoryTools,gather
                         from deepthort_local.specification_guard import master_for_job
+                        from deepthort_local.specification_amendments import root_request_for_job
                         room=min(1200,MAX_INFERENCE_PROMPT-len(recovery_prompt)-400)
                         if room>=200 and not self.disk_gate.gaming():
                             excluded=self.inspection_exclusions.paths(job['project'])
@@ -3327,7 +3347,9 @@ class DeepThorTDesktop(tk.Tk):
                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                 session=f'repair-tools-{jobid}-{cycle["repairs"]}',original=master_for_job(job,self.conversations,self.hierarchies,self.specifications),
                                 goal=cycle['diagnostic'],seed=recovery_prompt[len(prompt):],budget=room,
-                                receipts=self.agent_tool_receipts,job_id=jobid,stage=lambda text:self.events.put(('log',text)))
+                                receipts=self.agent_tool_receipts,job_id=jobid,
+                                amendments=self.conversations.amendment_history(root_request_for_job(job,self.conversations)),
+                                stage=lambda text:self.events.put(('log',text)))
                     except (ValueError,OSError) as error:
                         self.events.put(('log','Agent repository investigation unavailable: '+str(error)[:160]))
                     try:
@@ -4016,7 +4038,7 @@ class DeepThorTDesktop(tk.Tk):
                                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                                 session=f'build-tools-{jobid}-{step["id"]}',original=original,goal=focus,
                                                 seed=context,budget=room,receipts=self.agent_tool_receipts,job_id=jobid,
-                                                stage=lambda text:self.events.put(('log',text)))
+                                                amendments=amendments,stage=lambda text:self.events.put(('log',text)))
                                         finally:advisor.release()
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
@@ -4044,9 +4066,18 @@ class DeepThorTDesktop(tk.Tk):
                         if self._project_work_is_enabled() and self.active_job==jobid and not self._quitting:
                             try:
                                 authorize_file(STATE/'project-grants',self.jobs.get(jobid),steps,step,enabled=True)
-                                evidence=self.capabilities.retrieval_context(project,focus+' '+str(error),max_chars=900)
+                                evidence=self.capabilities.retrieval_context(project,focus+' '+str(error),max_chars=900,include_knowledge=False)
                                 advisor=self._planning_council_client()
                                 try:
+                                    if advisor is not None and not self.disk_gate.gaming():
+                                        from deepthort_local.document_review import reviewed_context
+                                        evidence+=reviewed_context(self.capabilities.knowledge,
+                                            ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
+                                            project=project,original=original,goal=focus+' '+str(error),
+                                            session=f'build-documents-{jobid}-{step["id"]}',max_chars=max(0,900-len(evidence)),
+                                            exclude=self.inspection_exclusions.paths(project),amendments=amendments,
+                                            cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j) or self.disk_gate.gaming(),
+                                            stage=lambda message:self.events.put(('log',message)))
                                     guidance=research_recovery(self.technical_research,
                                         ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor or self.client,
                                         session=f'build-{jobid}-step-{step["id"]}',master=original,goal=focus,
