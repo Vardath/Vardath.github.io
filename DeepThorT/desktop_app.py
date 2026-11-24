@@ -1866,14 +1866,14 @@ class DeepThorTDesktop(tk.Tk):
             tree.selection_set(str(items[0]['id']));tree.focus(str(items[0]['id']))
             tree.see(str(items[0]['id']));refresh_detail()
 
-    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None):
+    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=()):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
         try:
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
-                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage)
+                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments)
             record(STATE,'desktop','sentinel_specification_review',kind_reviewed=kind,
                 accepted=review['accepted'],evidence_sha=review['evidence_sha'],
                 original_sha=review['original_sha'],proposal_sha=review['proposal_sha'],runtime_verified=False)
@@ -2287,6 +2287,7 @@ class DeepThorTDesktop(tk.Tk):
                 checkpoint = (self.instruction_inbox.planning_checkpoint(request['project'],request['chat_id'])
                               if request['mode']=='draft_plan' or large_spec else None)
                 prior_steps=[]
+                amendments=self.conversations.amendment_history(ident) if request['mode']=='draft_plan' else []
                 if request['mode']=='draft_plan':
                     from deepthort_local.amendment_context import predecessor_steps,attach_history
                     prior_steps=predecessor_steps(self.conversations,self.specifications,self.hierarchies,ident)
@@ -2302,7 +2303,7 @@ class DeepThorTDesktop(tk.Tk):
                             item['path']+': '+item['description'],
                             json.dumps(item,ensure_ascii=False),section=section,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)),
-                            cancelled=cancelled)
+                            cancelled=cancelled,amendments=amendments)
                 if request['mode']=='chat' and not large_spec:
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 elif large_spec:
@@ -2316,7 +2317,7 @@ class DeepThorTDesktop(tk.Tk):
                         inspected_evidence=inspected_x4_evidence,council_provider=self._planning_council_client,
                         geometry_report=geometry_report,
                         checkpoint=checkpoint, reviewer=review_plan if request['mode']=='draft_plan' else None,
-                        prior_steps=prior_steps)
+                        prior_steps=prior_steps,amendments=amendments)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,
@@ -2988,10 +2989,12 @@ class DeepThorTDesktop(tk.Tk):
                 result=self.client.chat(job['chat_id'],recovery_prompt,max_tokens=768)
                 from deepthort_local.specification_guard import master_for_job
                 master=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
+                from deepthort_local.specification_amendments import root_request_for_job
+                amendments=self.conversations.amendment_history(root_request_for_job(job,self.conversations))
                 self._sentinel_alignment(master,job['project'],f'repair-{jobid}',
                     'Repair approved test failure: '+cycle['diagnostic'][:300],result,kind='repair',
                     cancelled=lambda:self._quitting or self.active_job!=jobid,
-                    stage=lambda message:self.events.put(('log',message)))
+                    stage=lambda message:self.events.put(('log',message)),amendments=amendments)
                 self.events.put(('repair_answer',jobid,result,candidates))
             except Exception as exc:
                 record(STATE,'desktop','repair_model_error',level='ERROR',job_id=jobid,
@@ -3349,11 +3352,13 @@ class DeepThorTDesktop(tk.Tk):
                     project=Path(j['project'])
                     from deepthort_local.specification_guard import master_for_job
                     original=master_for_job(j,self.conversations,self.hierarchies,self.specifications)
+                    from deepthort_local.specification_amendments import root_request_for_job
+                    amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
                     focus=step['path']+': '+step['description']
                     def guard(proposal,kind):
                         return self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
                             kind=kind,stage=lambda message:self.events.put(('log',message)),
-                            cancelled=lambda:self._quitting or self.active_job!=jobid)
+                            cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
                     if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):

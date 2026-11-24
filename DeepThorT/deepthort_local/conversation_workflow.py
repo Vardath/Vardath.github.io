@@ -106,7 +106,7 @@ class ConversationStore:
 
     def amend_project(self,chat_id,project,amendment,*,attachments=()):
         """Explicit user operation: atomically save revision and queue a new draft."""
-        from .specification_amendments import render_revision,sha
+        from .specification_amendments import render_revision,revision_matches,sha
         if not chat_id or not project or project=='(general)' or not isinstance(amendment,str) or not amendment.strip():
             raise ValueError('A selected project, chat and explicit amendment are required')
         with self._db() as db:
@@ -128,7 +128,7 @@ class ConversationStore:
                     raise ValueError('Prior amendment history is inconsistent')
             if prior and (not history or history[-1]['request_id']!=parent['id']
                     or sha(parent['prompt'])!=prior['effective_sha256']
-                    or parent['prompt']!=render_revision(original,[r['amendment'] for r in history])):
+                    or not revision_matches(parent['prompt'],original,[r['amendment'] for r in history])):
                 raise ValueError('Prior effective specification no longer matches its history')
             if not prior and history:raise ValueError('Amendment chain is inconsistent')
             effective=render_revision(original,[r['amendment'] for r in history]+[amendment])

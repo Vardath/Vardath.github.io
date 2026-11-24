@@ -40,4 +40,21 @@ class AmendmentContextTests(unittest.TestCase):
             import json
             self.assertEqual(json.loads(store.get(third)['attachments']),['a.txt','b.txt','c.txt'])
 
+    def test_revision_context_has_latest_correction_and_relevant_prior(self):
+        from deepthort_local.specification_amendments import render_revision,sha,revision_matches,PRECEDENCE,PRECEDENCE_CHECKPOINT
+        from deepthort_local.amendment_context import revision_context,attach_revision_context
+        original='Build space game with mining.'
+        amendments=['Change mining equipment.', 'Add pirate factions.', 'Increase sectors to 200.']
+        effective=render_revision(original,amendments)
+        history=[{'ordinal':n,'amendment':a,'amendment_sha256':sha(a)}
+                 for n,a in enumerate(amendments,1)]
+        note=revision_context(effective,history,'mining sectors',max_chars=500)
+        self.assertIn('Increase sectors to 200.',note)
+        self.assertIn('Change mining equipment.',note)
+        self.assertLess(note.index('Amendment 1'),note.index('Amendment 3'))
+        self.assertTrue(revision_matches(effective.replace(PRECEDENCE,PRECEDENCE_CHECKPOINT,1),original,amendments))
+        self.assertEqual(attach_revision_context('unchanged source',effective,history,max_chars=30),'unchanged source')
+        history[-1]['amendment_sha256']='corrupt'
+        with self.assertRaises(ValueError):revision_context(effective,history)
+
 if __name__=='__main__':unittest.main()

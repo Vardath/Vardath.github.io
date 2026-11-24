@@ -14,9 +14,21 @@ PRECEDENCE=(
     'USER SPECIFICATION REVISION: The verbatim original and amendments below '
     'are all authoritative user input. Where they conflict, the newest explicit '
     'amendment wins ONLY for the affected requirement. Preserve every other '
-    'original requirement and all compatible completed work, unless the user explicitly directs otherwise. The earlier plan '
+    'original requirement and all compatible completed work. The earlier plan '
     'is historical evidence, not authority to ignore a newer instruction.\n'
 )
+
+
+# The brief checkpoint variant was already committed. Recognize it without
+# rewriting any stored effective specification or its recorded digest.
+PRECEDENCE_CHECKPOINT=PRECEDENCE.replace(
+    'original requirement and all compatible completed work.',
+    'original requirement and all compatible completed work, unless the user explicitly directs otherwise.')
+
+
+def revision_matches(effective,original,amendments):
+    expected=render_revision(original,amendments)
+    return effective==expected or effective==expected.replace(PRECEDENCE,PRECEDENCE_CHECKPOINT,1)
 
 
 def sha(text):

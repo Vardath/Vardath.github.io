@@ -65,3 +65,49 @@ def historical_context(project,steps,focus='',*,max_chars=1400):
 def attach_history(prompt,project,steps,focus='',*,max_chars=7500):
     history=historical_context(project,steps,focus,max_chars=min(1400,max_chars-len(prompt)-2))
     return prompt+'\n\n'+history if history else prompt
+
+
+def revision_context(original,history,focus='',*,max_chars=1300):
+    """Chronological exact excerpts from the recorded amendment ledger.
+
+    Always prioritize the newest correction and use remaining space for earlier
+    relevant corrections. A bounded excerpt is labelled, never a replacement
+    for the complete immutable revision. No model summaries are trusted here.
+    """
+    if not history:return ''
+    import re
+    from .recovery_council import select_source_section
+    words=set(re.findall(r'[a-z0-9_]{4,}',str(focus).casefold()))
+    checked=[]
+    for n,row in enumerate(history,1):
+        text=row['amendment']
+        if row['ordinal']!=n or sha(text)!=row['amendment_sha256'] or text not in original:
+            raise PlanError('Recorded user amendment is inconsistent with current specification')
+        checked.append((n,text))
+    header=('USER AMENDMENTS (exact stored text or labelled excerpts; newest explicit '
+            'correction wins only where it conflicts; preserve all unaffected requirements):\n')
+    if max_chars<len(header)+100:return ''
+    newest=checked[-1]
+    ranked=[newest]+sorted(checked[:-1],key=lambda x:(
+        -sum(w in x[1].casefold() for w in words),-x[0]))
+    selected=[]
+    room=max_chars-len(header)
+    for n,text in ranked:
+        label=f'Amendment {n}: '
+        if len(label)+len(text)+1<=room:
+            entry=label+text+'\n'
+        elif n==newest[0] and room>=340:
+            limit=min(3200,room-len(label)-35)
+            excerpt=select_source_section(text,focus,limit)
+            entry=label+'[verbatim excerpt, not complete] '+excerpt+'\n'
+            if len(entry)>room:continue
+        else:continue
+        selected.append((n,entry))
+        room-=len(entry)
+    if not selected:return ''
+    return header+''.join(x[1] for x in sorted(selected))
+
+
+def attach_revision_context(prompt,original,history,focus='',*,max_chars=7500):
+    context=revision_context(original,history,focus,max_chars=min(1300,max_chars-len(prompt)-2))
+    return prompt+'\n\n'+context if context else prompt

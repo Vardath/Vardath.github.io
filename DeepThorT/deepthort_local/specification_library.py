@@ -572,7 +572,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=()) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=(), amendments=()) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -621,6 +621,9 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             prompt = index.model_prompt(request_id,original,inspected_evidence=inspected_evidence)
         else:
             prompt = index.model_prompt(request_id,original)
+        if amendments and not variant:
+            from .amendment_context import attach_revision_context
+            prompt=attach_revision_context(prompt,original,amendments,row['text'],max_chars=7500)
         if prior_steps and not variant:
             from .amendment_context import attach_history
             prompt=attach_history(prompt,project,prior_steps,row['text'],max_chars=7500)

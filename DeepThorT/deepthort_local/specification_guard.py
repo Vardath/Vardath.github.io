@@ -69,13 +69,23 @@ def review_source(original,focus,section=''):
 
 
 def inspect_proposal(council,client,*,original,project,session,focus,proposal,
-                     section='',kind='plan',stage=None,cancelled=None):
+                     section='',kind='plan',stage=None,cancelled=None,amendments=()):
     """Review every candidate chunk; ambiguous verdicts never count as acceptance."""
     if kind not in ('plan','code','repair'):
         raise ValueError('Unsupported review operation')
     if not isinstance(proposal,str) or not proposal.strip() or len(proposal)>280000:
         raise PlanError('Sentinel cannot review empty or oversized work')
     source=review_source(original,focus,section)
+    if amendments and len(original)>MAX_SOURCE_CHARS:
+        from .amendment_context import revision_context
+        context=revision_context(original,amendments,focus,max_chars=1100)
+        if context:
+            # Retain exact original intent and relevant excerpt; make room for
+            # authoritative revision evidence instead of expanding the window.
+            root=original[:950]
+            selected=section or select_source_section(original,focus,850)
+            if len(selected)>850:selected=select_source_section(selected,focus,850)
+            source='ORIGINAL BEGINNING (verbatim):\n'+root+'\nRELEVANT SECTION (verbatim):\n'+selected+'\n'+context
     original_hash=sha(original)
     candidate_hash=sha(proposal)
     facts={'schema':'sentinel-spec-v1','project':str(Path(project).resolve()),
