@@ -38,3 +38,6 @@ Verbose Python verification requires named passing observations for approved sup
 
 ### Progress — repository intelligence foundation
 Implemented bounded persistent Python AST metadata, hash-checked retrieval, exact indexed-module import ranking, stale/deleted source removal and generation/repair context integration. Next: richer symbol reference/call graph and source excerpt selection, then GDScript/XML and other supported languages. No performance parity claim; benchmark end-to-end multi-file repair before claiming improvement.
+
+### Progress — Python reference and impact analysis
+Added observed call spellings, hash-checked short function excerpts, local-import reverse impact and regression input protection. Next extend the indexed languages to GDScript and XML with format-appropriate reference semantics; dynamic call targets and full language-server support remain open.

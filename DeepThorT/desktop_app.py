@@ -5634,6 +5634,20 @@ class DeepThorTDesktop(tk.Tk):
                     if self._superseded_build(current_job):
                         raise ValueError('User amended specification before test launch')
                     regression_scope=scope_for(current_job,self.jobs,self.conversations,self.hierarchies,self.specifications)
+                    # Preserve the fixed full-project test profile. Observed
+                    # Python import dependencies only expand protected inputs.
+                    if not self.disk_gate.gaming():
+                        try:
+                            excluded=self.inspection_exclusions.paths(current_job['project'])
+                            stopped=lambda:self._quitting or self.disk_gate.gaming() or self._superseded_build(current_job)
+                            self.repository_index.refresh(current_job['project'],exclude=excluded,cancelled=stopped)
+                            impact=self.repository_index.impact(current_job['project'],
+                                [s['path'] for s in self.jobs.steps(job_id)],exclude=excluded,cancelled=stopped)
+                            regression_scope['protected']=sorted(set(regression_scope['protected'])|set(impact['source_hashes']))
+                            regression_scope['observed_python_dependents']=impact['dependents']
+                            self.events.put(('log',f"Job #{job_id}: observed Python import impact: {len(impact['dependents'])} dependent files."))
+                        except (ValueError,OSError) as error:
+                            self.events.put(('log','Repository impact unavailable: '+str(error)[:160]))
                     regression_before=capture(regression_scope)
                     if integration:integration_before=inputs(cwd,list(cmd))
                     record(STATE,'desktop','regression_baseline_captured',job_id=job_id,

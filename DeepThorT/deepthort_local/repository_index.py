@@ -22,6 +22,8 @@ MAX_BYTES=32*1024*1024
 MAX_ENTRIES=16000
 MAX_SYMBOLS=200
 MAX_IMPORTS=100
+INDEX_SCHEMA=2
+MAX_REFERENCES=300
 SKIP=set(SKIP_DIRS)|{'state','backups','cache','vendor','site-packages','env'}
 _SECRET_NAMES={'secrets.py','credentials.py','passwords.py','local_settings.py','settings_local.py'}
 
@@ -58,7 +60,7 @@ def _parse(data):
         text=data.decode('utf-8-sig')
         tree=ast.parse(text)
     except (UnicodeError,SyntaxError,ValueError,RecursionError):
-        return {'symbols':[],'imports':[],'parse':'unparsed'}
+        return {'symbols':[],'imports':[],'references':[],'parse':'unparsed','schema':INDEX_SCHEMA}
     lines=text.splitlines()
     symbols=[]
     imports=[]
@@ -81,17 +83,26 @@ def _parse(data):
                 # signatures instead of presenting a truncated false API.
                 if len(signature)<=320:
                     symbols.append({'name':name,'kind':kind,'line':node.lineno,
-                                    'signature':signature})
+                                    'signature':signature,'end_line':node.end_lineno})
                 if isinstance(node,ast.ClassDef):visit(node.body,name+'.')
     try:visit(tree.body)
-    except (ValueError,RecursionError):return {'symbols':[],'imports':[],'parse':'unparsed'}
+    except (ValueError,RecursionError):return {'symbols':[],'imports':[],'references':[],'parse':'unparsed','schema':INDEX_SCHEMA}
     for node in ast.walk(tree):
         if len(imports)>=MAX_IMPORTS:break
         if isinstance(node,ast.Import):
             imports.extend({'module':a.name,'name':'','level':0,'line':node.lineno} for a in node.names[:MAX_IMPORTS-len(imports)])
         elif isinstance(node,ast.ImportFrom):
             imports.extend({'module':node.module or '','name':a.name,'level':node.level,'line':node.lineno} for a in node.names[:MAX_IMPORTS-len(imports)])
-    return {'symbols':symbols,'imports':imports,'parse':'python_ast'}
+    references=[]
+    for node in ast.walk(tree):
+        if len(references)>=MAX_REFERENCES:break
+        if not isinstance(node,ast.Call):continue
+        target=node.func;parts=[]
+        while isinstance(target,ast.Attribute) and len(parts)<8:
+            parts.append(target.attr);target=target.value
+        if isinstance(target,ast.Name):
+            references.append({'name':'.'.join([target.id,*reversed(parts)]),'line':node.lineno})
+    return {'symbols':symbols,'imports':imports,'references':references,'parse':'python_ast','schema':INDEX_SCHEMA}
 
 class RepositoryIndex:
     def __init__(self,path):
@@ -148,7 +159,7 @@ class RepositoryIndex:
                     except (OSError,ValueError):complete=False;continue
                     total+=len(raw);sha=hashlib.sha256(raw).hexdigest()
                     old=cached.get(rel)
-                    if old and old[0]==sha:meta=old[1];reused+=1
+                    if old and old[0]==sha and json.loads(old[1]).get('schema')==INDEX_SCHEMA:meta=old[1];reused+=1
                     else:meta=json.dumps(_parse(raw),ensure_ascii=False)
                     rows.append((key,rel,sha,meta))
                 else:continue
@@ -161,6 +172,87 @@ class RepositoryIndex:
                 db.execute('INSERT OR REPLACE INTO repo_python_status VALUES(?,?,?,?)',
                            (key,int(complete),len(rows),total))
             return {'files':len(rows),'bytes':total,'reused':reused,'complete':complete}
+
+    def _current_rows(self,project,exclude,cancelled):
+        root=Path(project).resolve(strict=True)
+        excluded={str(p).replace('\\','/').casefold() for p in exclude}
+        with closing(sqlite3.connect(self.path,timeout=5)) as db:
+            rows=db.execute('SELECT path,sha,metadata FROM repo_python_files WHERE project=?',(str(root),)).fetchall()
+        result={}
+        for p,sha,meta in rows:
+            if cancelled and cancelled():raise IndexCancelled('Repository graph cancelled')
+            try:
+                if hashlib.sha256(_read(root,p,excluded)).hexdigest()!=sha:continue
+                value=json.loads(meta)
+                if value.get('schema')!=INDEX_SCHEMA or value['parse']!='python_ast':continue
+                result[p]=(sha,value)
+            except (ValueError,OSError,KeyError):continue
+        return result
+
+    @staticmethod
+    def _edges(rows):
+        modules={}
+        for p in rows:
+            module=p[:-3].replace('/','.')
+            if module.endswith('.__init__'):module=module[:-9]
+            modules.setdefault(module,[]).append(p)
+        edges={p:set() for p in rows}
+        for p,(_,meta) in rows.items():
+            package=p[:-3].replace('/','.').split('.')[:-1]
+            for imp in meta['imports']:
+                level=imp['level']
+                if level:
+                    if level>len(package):continue
+                    parent='.'.join(package[:len(package)-level+1])
+                    module='.'.join(x for x in (parent,imp['module']) if x)
+                else:module=imp['module']
+                for name in (module,'.'.join(x for x in (module,imp['name']) if x)):
+                    matches=modules.get(name,[])
+                    if len(matches)==1 and matches[0]!=p:edges[p].add(matches[0])
+        return edges
+
+    def impact(self,project,changed,*,exclude=(),cancelled=None):
+        """Transitive observed local imports, never a complete runtime graph."""
+        rows=self._current_rows(project,exclude,cancelled)
+        edges=self._edges(rows)
+        reverse={p:set() for p in edges}
+        for p,targets in edges.items():
+            for target in targets:reverse[target].add(p)
+        starts=set(changed)&set(rows)
+        seen=set(starts);pending=list(starts)
+        while pending:
+            if cancelled and cancelled():raise IndexCancelled('Repository impact cancelled')
+            for dependent in reverse[pending.pop()]:
+                if dependent not in seen:seen.add(dependent);pending.append(dependent)
+        # Also capture direct imported dependencies of the affected sources.
+        related=seen|{dep for p in seen for dep in edges[p]}
+        return {'changed':sorted(starts),'dependents':sorted(seen-starts),
+                'source_hashes':{p:rows[p][0] for p in sorted(related)},
+                'scope':'Observed local Python imports only; dynamic references not resolved'}
+
+    def references(self,project,name,*,exclude=(),cancelled=None,limit=20):
+        """Observed call syntax, not resolved runtime targets."""
+        rows=self._current_rows(project,exclude,cancelled)
+        result=[]
+        for p,(sha,meta) in sorted(rows.items()):
+            for call in meta.get('references',[]):
+                if call['name']==name or call['name'].rsplit('.',1)[-1]==name:
+                    result.append({'path':p,'sha256':sha,**call})
+                    if len(result)>=max(1,min(limit,100)):return result
+        return result
+
+    def excerpt(self,project,row,*,exclude=(),budget=500):
+        root=Path(project).resolve(strict=True)
+        excluded={str(p).replace('\\','/').casefold() for p in exclude}
+        raw=_read(root,row['path'],excluded)
+        if hashlib.sha256(raw).hexdigest()!=row['sha256']:raise ValueError('Indexed source changed')
+        # Reparse before trusting source boundaries; excerpts are exact lines.
+        actual=next((s for s in _parse(raw)['symbols'] if s['name']==row['name'] and s['line']==row['line']),None)
+        if not actual or actual['kind']!='function':return ''
+        start,end=actual['line'],actual['end_line']
+        if end-start>12:return ''
+        text='\n'.join(raw.decode('utf-8-sig').splitlines()[start-1:end])
+        return text if len(text)<=budget else ''
 
     def search(self,project,query,*,focus='',omit=(),exclude=(),limit=8,cancelled=None):
         root=Path(project).resolve(strict=True)
@@ -190,6 +282,10 @@ class RepositoryIndex:
                 for m in (module,'.'.join(x for x in (module,imp['name']) if x)):
                     paths=modules.get(m,[])
                     if len(paths)==1:dependencies.add(paths[0])
+        # Reverse import relationships are a ranking hint; returned bytes
+        # are independently checked. Do not treat call spellings as binding.
+        metadata={p:(sha,json.loads(meta)) for p,sha,meta in rows if not _excluded(p,excluded)}
+        reverse={p for p,targets in self._edges(metadata).items() if focus in targets}
         ranked=[]
         for p,sha,meta in rows:
             if cancelled and cancelled():raise IndexCancelled('Repository retrieval cancelled')
@@ -199,6 +295,7 @@ class RepositoryIndex:
             for symbol in row['symbols']:
                 score=path_score+6*len(words&tokens(symbol['name']))+len(words&tokens(symbol['signature']))
                 if p in dependencies:score+=8
+                if p in reverse:score+=5
                 if score>0:ranked.append((score,p,sha,symbol))
         ranked.sort(key=lambda x:(-x[0],x[1],x[3]['line']))
         found=[];fresh={}
@@ -221,4 +318,16 @@ class RepositoryIndex:
         for r in rows:
             line=f"{r['path']}:{r['line']} [{r['sha256'][:12]}] {r['name']}: {r['signature']}\n"
             if len(output)+len(line)<=budget:output+=line
-        return output if output!=header else ''
+        if output==header:return ''
+        # At most one complete short function, never a cropped replacement.
+        for r in rows:
+            if cancelled and cancelled():raise IndexCancelled('Repository excerpt cancelled')
+            remaining=budget-len(output)
+            if remaining<180:break
+            try:excerpt=self.excerpt(project,r,exclude=exclude,budget=min(500,remaining-100))
+            except (ValueError,OSError):continue
+            if excerpt:
+                block=f"\nExact short function {r['path']}:{r['line']} [{r['sha256'][:12]}] (read-only):\n{excerpt}\n"
+                if len(output)+len(block)<=budget:output+=block
+                break
+        return output
