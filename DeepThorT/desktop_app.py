@@ -4842,6 +4842,24 @@ class DeepThorTDesktop(tk.Tk):
                     return
                 verified_env=(isolated_verification_environment(list(cmd),STATE,job_id)
                               if kind=='verification' and job_id is not None else None)
+                regression_scope=None
+                regression_before=None
+                if kind=='verification' and job_id is not None:
+                    from deepthort_local.regression_guard import scope_for,capture
+                    current_job=self.jobs.get(job_id)
+                    if not current_job:raise ValueError('Verification job is missing')
+                    if self._superseded_build(current_job):
+                        raise ValueError('User amended specification before test launch')
+                    regression_scope=scope_for(current_job,self.jobs,self.conversations,self.hierarchies,self.specifications)
+                    regression_before=capture(regression_scope)
+                    record(STATE,'desktop','regression_baseline_captured',job_id=job_id,
+                           protected_files=len(regression_before),affected_files=len(regression_scope['affected']),
+                           linked_tests_present=len(regression_scope['linked_tests_present']),
+                           linked_tests_pending=len(regression_scope['linked_tests_pending']))
+                    self.events.put(('log',f'Job #{job_id}: regression scope protects {len(regression_before)} files; '
+                        f'{len(regression_scope["affected"])} affected file intentions, '
+                        f'{len(regression_scope["linked_tests_present"])} related test files present. '
+                        'Running fixed full-project check; individual test execution is not assumed.'))
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,
                         shell=False,env=verified_env,
@@ -4913,6 +4931,10 @@ class DeepThorTDesktop(tk.Tk):
                         if timer:timer.cancel()
                 result=({'argv':list(cmd),'lines':list(captured),'truncated':truncated}
                         if kind in ('verification','package_inspection','quiet_playtest') else None)
+                if regression_scope is not None:
+                    result['regression_scope']=regression_scope
+                    result['regression_before']=regression_before
+                    result['regression_after']=capture(regression_scope)
                 self.events.put(('tool_end',label,kind,code,job_id,result))
             except Exception as e:self.events.put(('tool_error',label,kind,str(e),job_id))
             finally:
@@ -5693,6 +5715,16 @@ class DeepThorTDesktop(tk.Tk):
                             current_job=self.jobs.get(job_id)
                             if current_job is None:
                                 raise ValueError('Approved job is missing')
+                            if self._superseded_build(current_job):
+                                raise ValueError('User amended specification during verification')
+                            from deepthort_local.regression_guard import stable
+                            if not isinstance(verification_output,dict) or not verification_output.get('regression_scope'):
+                                raise ValueError('No pre-test regression source baseline')
+                            if not stable(verification_output['regression_scope'],
+                                          verification_output['regression_before'],verification_output['regression_after']):
+                                raise ValueError('Project source changed during verification; rerun against stable files')
+                            record(STATE,'desktop','regression_source_stable',job_id=job_id,
+                                   protected_files=len(verification_output['regression_before']))
                             snapshot=capture_verified_sources(
                                 current_job['project'],self.jobs.steps(job_id))
                             if check is not None:
@@ -5759,7 +5791,7 @@ class DeepThorTDesktop(tk.Tk):
                                     self.specifications,root_id,root_req['prompt'],self.jobs)
                                 self._log(f'Milestone roadmap #{root_id}: '
                                           f'{summary["milestones_verified"]}/{summary["milestones_total"]} '
-                                          'milestones verified; no automatic approval of next milestone.')
+                                          'milestones verified; subsequent dispatch requires approved roadmap or manual consent.')
                         except Exception as exc:
                             self._log(f'Milestone verification reconciliation needs attention: {exc}')
                     self._refresh_jobs()

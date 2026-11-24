@@ -55,3 +55,7 @@ Retention now resolves the exact amendment chain from a previously tested reques
 ## Explicit whole-roadmap execution
 
 Roadmap automation reviews the complete ordered manifest before explicit hash-bound user consent. Idle dispatch reconciles previous milestones and requires current source-backed verification (not process exit alone). A reserved dispatch receipt prevents an interrupted approval from running an orphan; each successor requires its exact job link, new grant, graph and checkpoint. Pause prevents later approvals, and user amendments invalidate old consent. New tests committed but not yet executed; Windows integration remains outstanding.
+
+## Regression-aware test dispatch
+
+Before a fixed verification command launches, derive reverse transitive declared dependency impact, related test paths by explicit dependency or common indexed source section, and the current plus completed predecessor source scope. Capture actual hashes before and after execution; refuse verification if the protected bytes change or a new amendment supersedes the job. Run the existing fixed project-wide test profile, rather than trusting model-generated commands or claiming that a planned related test actually ran. Diagnostic logs distinguish affected intentions and present/pending related test files. New tests committed; full integration not yet verified.
