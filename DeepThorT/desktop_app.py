@@ -2073,6 +2073,8 @@ class DeepThorTDesktop(tk.Tk):
             for task in mixed['tasks']:
                 info=task.get('artifact_type',{})
                 view.insert('end',f"  After milestone {task['after']}: {task['goal']} -> {task['output']} [{info.get('kind','artifact')}; {info.get('verification','legacy check')}]\n")
+                if task.get('acceptance'):
+                    view.insert('end','    Required measurable checks: '+json.dumps(task['acceptance'],ensure_ascii=False)+'\n')
         view.configure(state='disabled')
         accepted=[False]
         def consent():accepted[0]=True;dialog.destroy()

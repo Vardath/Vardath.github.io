@@ -23,7 +23,7 @@ def parse_tasks(answer,roadmap,section):
     root=Path(roadmap['project']).resolve(strict=True)
     result=[]
     for task in data['artifacts']:
-        if not isinstance(task,dict) or set(task)!={'after','goal','output'}:
+        if not isinstance(task,dict) or set(task) not in ({'after','goal','output'},{'after','goal','output','acceptance'}):
             raise ValueError('Expected boundary, goal and output')
         after=task['after']
         if type(after) is not int or not 0<=after<=len(roadmap['schedule']):
@@ -34,7 +34,11 @@ def parse_tasks(answer,roadmap,section):
         if output.casefold() in paths:raise ValueError('Artifact collides with text-source plan; reconcile the file plan')
         if safe_target(root,output).exists():raise ValueError('Artifact already exists; do not silently replace it')
         from .artifact_types import artifact_type
-        result.append({'after':after,'goal':task['goal'].strip(),'output':output,'section':section,'artifact_type':artifact_type(output)})
+        entry={'after':after,'goal':task['goal'].strip(),'output':output,'section':section,'artifact_type':artifact_type(output)}
+        if 'acceptance' in task:
+            from .artifact_acceptance import validate
+            entry['acceptance']=validate(output,task['acceptance'])
+        result.append(entry)
     return result
 
 
@@ -108,6 +112,9 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
                     'already represented by the code-file plan. Examples include mesh conversion, raster textures, '
                     'rendering, packaging. Do not invent requirements or treat ordinary code as an external artifact. '
                     'Return ONLY JSON {"artifacts":[{"after":0,"goal":"specific required operation","output":"relative/file"}]}. '
+                    'Optional acceptance object ONLY for explicitly requested measurable properties: PNG/DDS width,height; '
+                    'OBJ min_vertices,min_faces; WAV channels,sample_rate,min_frames; ZIP/APK/AAB/JAR required_members (array of exact filenames). '
+                    'Do not invent numeric targets. Omit acceptance when no supported criterion is explicit. '
                     'Use an empty array if no separate artifact is required. after=N means after verified milestone N '
                     'and before N+1; 0 means before code. Maximum three artifacts. '
                     f'Total milestones: {len(roadmap["schedule"])}. '
@@ -133,7 +140,7 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
             key=task['output'].casefold()
             if key in tasks:
                 old=tasks[key]
-                if any(old[k]!=task[k] for k in ('after','goal','output')):
+                if any(old.get(k)!=task.get(k) for k in ('after','goal','output','acceptance')):
                     raise ValueError('Conflicting artifact requirements; reconcile the roadmap')
                 old['sections'].append(task['section'])
             else:tasks[key]={k:v for k,v in task.items() if k!='section'}|{'sections':[task['section']]}
@@ -176,6 +183,9 @@ def require_output(task,manifest):
     info=task.get('artifact_type')
     if info and info['verification']!='structural':
         raise ValueError('Required artifact lacks a supported format verifier; learn or add one before approval')
+    if 'acceptance' in task:
+        from .artifact_acceptance import validate
+        validate(task['output'],task['acceptance'])
     if task['output'] not in {s['output'] for s in manifest['stages']}:
         raise ValueError('Workflow does not produce the exact required roadmap artifact')
     return True

@@ -143,6 +143,9 @@ class ToolWorkflows:
 
     def approve(self,manifest,*,user_approved=False):
         if user_approved is not True:raise PermissionError('Whole workflow must be explicitly approved')
+        if manifest.get('mixed_task') and 'acceptance' in manifest['mixed_task']:
+            from .mixed_roadmap import require_output
+            require_output(manifest['mixed_task'],manifest)
         if manifest.get('recovery'):
             from .workflow_recovery import verify_recovery
             verify_recovery(self,manifest['recovery'],manifest['project'])
@@ -199,6 +202,12 @@ class ToolWorkflows:
         verify_guards([g for g in json.loads(action['input_guards_json']) if g['kind']!='absent'])
         if rec['log_sha256']!=log_sha or rec['artifact']!=artifact(project,stage['output']):
             raise ValueError('Prior checked output or process log changed')
+        run=self.get(row['workflow_id'])
+        manifest=json.loads(run['manifest'])
+        if digest(manifest)!=run['manifest_sha']:raise ValueError('Acceptance manifest changed')
+        from .artifact_acceptance import stage_acceptance
+        expected=stage_acceptance(project,stage,manifest.get('mixed_task'),rec['artifact'])
+        if rec.get('acceptance')!=expected:raise ValueError('Artifact acceptance receipt missing or changed')
         return rec
 
     def tick(self,*,enabled=True,conversations=None,roadmap_ready=None):
@@ -237,6 +246,9 @@ class ToolWorkflows:
                         # inputs AFTER execution too; the new output must exist.
                         verify_guards([g for g in json.loads(action['input_guards_json']) if g['kind']!='absent'])
                         receipt={'log_sha256':log_sha,'artifact':artifact(project,stage['output'])}
+                        from .artifact_acceptance import stage_acceptance
+                        checked=stage_acceptance(project,stage,manifest.get('mixed_task'),receipt['artifact'])
+                        if checked is not None:receipt['acceptance']=checked
                         with self.janus.connect() as db:
                             db.execute("UPDATE tool_workflow_stages SET state='checked',receipt=? WHERE workflow_id=? AND ordinal=? AND state='dispatched'",
                                        (json.dumps(receipt),ident,ordinal))
