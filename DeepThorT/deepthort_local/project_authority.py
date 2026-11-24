@@ -205,6 +205,26 @@ def record_file(folder: Path, job: dict, steps: list[dict], step: dict,
     return {'path': relative, 'sha256': sha}
 
 
+def record_retained_file(folder,job,steps,step,expected_sha,prior_job_id,review_sha,*,enabled):
+    """Record a newly authorized unchanged artifact without claiming a write."""
+    checked=authorize_file(folder,job,steps,step,enabled=enabled)
+    if (not expected_sha or checked['before_sha256']!=expected_sha or
+            not isinstance(review_sha,str) or len(review_sha)!=64 or
+            type(prior_job_id) is not int or prior_job_id==job['id']):
+        raise GrantError('Retention evidence does not match the new approval baseline')
+    row=_active(folder,job,steps,enabled)
+    project=Path(job['project']).resolve(strict=True)
+    rel,target=_safe_auto_path(project,step['path'])
+    if _sha(target)!=expected_sha:raise GrantError('Retained source changed during review')
+    entry=next(x for x in row['files'] if x['step_id']==step['id'] and x['path']==rel)
+    if entry.get('written_sha256') is not None:raise GrantError('Stage already has a source receipt')
+    entry['written_sha256']=expected_sha
+    row['events'].append({'kind':'file_retained_unverified','path':rel,'sha256':expected_sha,
+        'prior_job_id':prior_job_id,'review_sha256':review_sha,'at':datetime.now(timezone.utc).isoformat()})
+    _write_grant(folder,row)
+    return {'path':rel,'sha256':expected_sha}
+
+
 def recognized_test_command(argv: list[str], project: Path) -> bool:
     """Exact bounded profiles already offered by the desktop, no shell recipe."""
     if not isinstance(argv, list) or not argv or any(not isinstance(a, str) for a in argv):

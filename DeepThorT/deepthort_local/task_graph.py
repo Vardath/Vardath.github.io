@@ -299,7 +299,7 @@ class TaskGraphStore:
         return True
 
     def begin_action(self,job,steps,kind,node):
-        if kind not in ('test','repair','write'):
+        if kind not in ('test','repair','write','retain'):
             raise GraphError('Unknown executable graph operation')
         lease=uuid.uuid4().hex
         with self._db() as db:

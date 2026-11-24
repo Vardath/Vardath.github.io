@@ -3361,6 +3361,29 @@ class DeepThorTDesktop(tk.Tk):
                             cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
+                    if amendments and self._project_work_is_enabled() and len(original)<=3000 and dest.is_file():
+                        from deepthort_local.selective_redevelopment import candidate_for,review_retention
+                        from deepthort_local.reasoning_council import ReasoningCouncil
+                        try:
+                            candidate=candidate_for(j,step,jobs=self.jobs,conversations=self.conversations,
+                                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants')
+                        except (ValueError,OSError,KeyError):
+                            candidate=None
+                        if candidate:
+                            advisor=self._planning_council_client()
+                            try:
+                                retained=review_retention(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                                    advisor or self.client,original=original,project=project,
+                                    session=f'build-{jobid}',step=step,candidate=candidate,
+                                    stage=lambda message:self.events.put(('log',message)),
+                                    cancelled=lambda:self._quitting or self.active_job!=jobid)
+                            finally:
+                                if advisor is not None:
+                                    release=getattr(advisor,'release',None)
+                                    if callable(release):release()
+                            if retained:
+                                self.events.put(('retained_artifact',jobid,step['id'],retained))
+                                return
                     if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
                         candidate=self.specifications.render_planned_variant(project,step['path'],steps,self.x4_reference_dir)
                         if candidate is not None:
@@ -3487,6 +3510,54 @@ class DeepThorTDesktop(tk.Tk):
                     f'Job #{jobid} saved {saved} proposed files.\n\n'
                     'Source generation is NOT proof of a working app or game.\n'
                     'Select Verify build to run a separately approved local test.')
+        self._refresh_jobs()
+
+    def _retain_artifact(self,jobid,stepid,review):
+        from deepthort_local.selective_redevelopment import candidate_for
+        from deepthort_local.project_authority import record_retained_file
+        from deepthort_local.specification_guard import master_for_job
+        job=self.jobs.get(jobid)
+        if not job or job['state']!='running' or self.active_job!=jobid:return
+        self.active_job=None
+        if self._block_superseded_build(job):
+            self._refresh_jobs()
+            return
+        lease=None
+        try:
+            step=self.jobs.next_step(jobid)
+            steps=self.jobs.steps(jobid)
+            if not step or step['id']!=stepid:raise PlanError('Retention stage changed')
+            if not self._project_work_is_enabled():raise GrantError('Unattended work disabled')
+            original=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
+            if hashlib.sha256(original.encode('utf-8')).hexdigest()!=review['spec_sha256']:
+                raise PlanError('Retention review refers to an older specification')
+            candidate=candidate_for(job,step,jobs=self.jobs,conversations=self.conversations,
+                graphs=self.graphs,checkpoints=self.checkpoints,grants=STATE/'project-grants')
+            if not candidate or any(candidate[k]!=review[k] for k in
+                    ('source_sha256','prior_job_id','prior_step_id','path')):
+                raise PlanError('Previously reviewed source or its historical evidence changed')
+            if not self.graphs.exists(jobid):raise GraphError('Retention needs a new approved graph')
+            lease=self.graphs.begin_action(job,steps,'retain',f'file:{stepid}')
+            receipt=record_retained_file(STATE/'project-grants',job,steps,step,review['source_sha256'],
+                review['prior_job_id'],review['evidence_sha'],enabled=True)
+            self.graphs.record_artifact(job,steps,step,receipt['sha256'])
+            check=self.checkpoints.capture(job,steps,'artifact_saved')
+            if check['files'].get(receipt['path'])!=receipt['sha256']:
+                raise CheckpointError('Retained bytes changed before checkpoint')
+            self.graphs.finish_action(lease,jobid,'saved')
+            lease=None
+            self.jobs.set_step(stepid,'saved','Retained exact prior source; Sentinel reviewed new specification; new test required')
+            self.jobs.change(jobid,'queued',f"Retained {step['path']} without rewriting; next approved stage queued",allowed=('running',))
+            record(STATE,'desktop','selective_redevelopment_retained',job_id=jobid,
+                   prior_job_id=review['prior_job_id'],source_sha256=receipt['sha256'],
+                   review_sha256=review['evidence_sha'],runtime_verified=False)
+            self._log(f"Job #{jobid}: retained {step['path']} unchanged; fresh verification required.")
+        except (ValueError,OSError,KeyError) as error:
+            if lease:
+                try:self.graphs.finish_action(lease,jobid,'interrupted')
+                except GraphError:pass
+            self.jobs.change(jobid,'needs_input','Retention evidence needs reconciliation: '+str(error),allowed=('running',))
+            self._log(f'Job #{jobid}: retention blocked: '+str(error))
         self._refresh_jobs()
 
     def _job_answer(self,jobid,answer):
@@ -5341,6 +5412,7 @@ class DeepThorTDesktop(tk.Tk):
                 self._conversation_transport_lost(event[1],event[2],event[3])
             elif kind=='job_plan':self._job_plan(event[1],event[2])
             elif kind=='build_files_done':self._build_files_done(event[1])
+            elif kind=='retained_artifact':self._retain_artifact(event[1],event[2],event[3])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
             elif kind=='job_error':self._job_error(event[1],event[2])
             elif kind=='repair_answer':self._repair_answer(event[1],event[2],event[3])
