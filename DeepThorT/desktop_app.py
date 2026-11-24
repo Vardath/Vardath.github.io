@@ -2345,9 +2345,18 @@ class DeepThorTDesktop(tk.Tk):
                         from deepthort_local.workflow_recovery import verify_recovery
                         verify_recovery(self.tool_workflows,recovery,source['project'])
                         from deepthort_local.workflow_script_repair import repair
+                        def api_reference(tool,script,error,goal):
+                            from deepthort_local.application_research import documentation
+                            receipt=self._tool_verification.current(tool)
+                            version=receipt.get('version','') if receipt else ''
+                            return documentation(self.technical_research,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                                self.client,tool=tool,source=script,error=error,goal=goal,version=version,
+                                online=self._routine_tools_enabled() and self._project_work_is_enabled() and not self.disk_gate.gaming(),
+                                cancelled=lambda:stale() or self.disk_gate.gaming(),
+                                stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                         try:
                             script_repair=repair(self.workflow_drafts,self.tool_learning,self.tool_workflows,self.client,
-                                request=source,recovery=recovery,review=review,cancelled=stale,
+                                request=source,recovery=recovery,review=review,cancelled=stale,research=api_reference,
                                 stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                         except (ValueError,OSError,KeyError,TypeError) as error:
                             if stale():raise

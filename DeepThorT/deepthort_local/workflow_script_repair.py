@@ -15,7 +15,7 @@ from .workflow_design import source_binding
 from .tool_acquisition import SCRIPT_SUFFIXES
 from .structured_source import strict_json
 
-def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancelled=None,stage=None):
+def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancelled=None,stage=None,research=None):
     def check():
         if cancelled and cancelled():raise ValueError('Script repair cancelled')
         verify_recovery(workflows,recovery,request['project'])
@@ -78,6 +78,14 @@ def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancell
             '\nRecorded failure:\n'+failure['log_tail'][-1200:]+
             '\nApproved local help:\n'+help_record['excerpt'][:700]+
             '\nLocal documentation:\n'+acquisition.local_docs(recipe['name'],max_chars=400))
+    if research:
+        check()
+        try:
+            reference=research(recipe['name'],source,failure['log_tail'],goal)
+        except (ValueError,OSError):reference=''
+        check()
+        if reference and len(prompt)+len(reference)+30<=7200:
+            prompt+='\nAPI REFERENCE DATA:\n'+reference
     if len(prompt)>7200:raise ValueError('Repair prompt exceeds context')
     if stage:stage('JANUS drafting a replacement for the failed automation script; no execution')
     check()

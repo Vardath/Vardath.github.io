@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock
 from deepthort_local.janus_engine import JanusStore
+from deepthort_local.conversation_workflow import ConversationStore
 from deepthort_local.tool_acquisition import ToolAcquisition
 from deepthort_local.tool_workflows import ToolWorkflows,freeze
 from deepthort_local.workflow_design import WorkflowDrafts,source_binding
@@ -26,14 +27,14 @@ class ScriptRepairTests(unittest.TestCase):
             dict(title='Write data script',purpose='Write data',args=['{{script}}','{{output}}'],artifact='result.json',
                  script=dict(path='tools/create.py',source='raise RuntimeError("fixture")\n'))))
         self.a.stage_script(self.recipe,self.root,root/'backups',user_approved=True)
-        self.request=dict(id=1,chat_id='chat',project=str(self.root),mode='draft_plan',prompt='Create JSON data')
+        conversations=ConversationStore(root/'conversations.sqlite3')
+        self.request=conversations.get(conversations.submit('chat',str(self.root),'draft_plan','Create JSON data'))
         manifest=freeze(self.a,self.root,[{'recipe_id':self.recipe,'input':''}],continuation=True)
         manifest['specification']=source_binding(self.request)
         self.run=self.w.approve(manifest,user_approved=True)
-        conversations=Mock();conversations.get.return_value=self.request
-        conversations.latest_project_request.return_value=self.request
         self.w.tick(conversations=conversations)
         action=self.j.claim_next_action()
+        self.assertIsNotNone(action)
         log=root/'failure.log';log.write_text('RuntimeError: fixture')
         self.log=log
         self.j.update_action(action['id'],'failed',detail='script failed',returncode=1,output_file=str(log))
