@@ -132,6 +132,10 @@ class ToolAcquisition:
                     script_saved_sha TEXT NOT NULL DEFAULT '',
                     script_saved_at TEXT,
                     UNIQUE(name,project_key,title));
+                CREATE TABLE IF NOT EXISTS enrolled_tools (
+                    name TEXT PRIMARY KEY, executable TEXT NOT NULL,
+                    executable_signature TEXT NOT NULL, help_flag TEXT NOT NULL,
+                    enrolled_at TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS learning_requests (
                     request_id INTEGER PRIMARY KEY, name TEXT NOT NULL,
                     project_root TEXT NOT NULL, goal TEXT NOT NULL);
@@ -203,6 +207,46 @@ class ToolAcquisition:
             out.append({'name':name,'path':resolved,'verified_executable':True})
         return out
 
+    def enroll(self,name,executable,help_flag,*,user_approved=False):
+        """Enroll an explicitly selected unfamiliar executable, not a command."""
+        if user_approved is not True:raise PermissionError('Explicit executable enrollment required')
+        if not isinstance(name,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 ._+()-]{1,79}',name):
+            raise ValueError('Enter a short descriptive application name')
+        if name.casefold() in {x.casefold() for x in HELP_FLAGS}:
+            raise ValueError('Use the built-in discovery entry for this tool')
+        if help_flag not in ('--help','-h','-help','/?'):
+            raise ValueError('Select one documented help flag')
+        file=Path(executable)
+        if not file.is_absolute() or file.suffix.casefold()!='.exe' or file.name.casefold() in SHELL_LAUNCHERS:
+            raise ValueError('Select an actual non-shell Windows executable')
+        ident=signature(file)
+        resolved=str(file.resolve(strict=True))
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            other=db.execute('SELECT name FROM enrolled_tools WHERE lower(name)=lower(?) AND name<>?',(name,name)).fetchone()
+            if other:raise ValueError('An enrollment with this name already exists')
+            old=db.execute('SELECT * FROM enrolled_tools WHERE name=?',(name,)).fetchone()
+            changed=not old or (old['executable'],old['executable_signature'],old['help_flag'])!=(resolved,ident,help_flag)
+            if changed:
+                db.execute("UPDATE learned_recipes SET status='candidate',action_id=NULL,approved_argv=NULL,log_file=NULL,log_sha=NULL,artifact_after=NULL WHERE name=?",(name,))
+                db.execute('DELETE FROM learned_tools WHERE name=?',(name,))
+            db.execute('INSERT OR REPLACE INTO enrolled_tools VALUES(?,?,?,?,?)',(name,resolved,ident,help_flag,stamp()))
+            db.execute('INSERT OR IGNORE INTO learned_tools(name,executable,executable_signature,detected_at) VALUES(?,?,?,?)',
+                       (name,resolved,ident,stamp()))
+        return {'name':name,'path':resolved,'verified_executable':True}
+
+    def enrolled(self):
+        """Changed executables are excluded until the user explicitly re-enrolls."""
+        with self._db() as db:
+            rows=[dict(r) for r in db.execute('SELECT * FROM enrolled_tools ORDER BY name LIMIT 100')]
+        result=[]
+        for row in rows:
+            try:
+                if signature(row['executable'])==row['executable_signature']:
+                    result.append({'name':row['name'],'path':row['executable'],'verified_executable':True})
+            except (ValueError,OSError):continue
+        return result
+
     def tool(self,name: str) -> dict:
         with self._db() as db:
             row=db.execute('SELECT * FROM learned_tools WHERE name=?',(name,)).fetchone()
@@ -215,7 +259,12 @@ class ToolAcquisition:
 
     def probe_command(self, name: str) -> list[str]:
         tool=self.tool(name)
-        return [tool['executable'],*HELP_FLAGS[name]]
+        if name in HELP_FLAGS:return [tool['executable'],*HELP_FLAGS[name]]
+        with self._db() as db:
+            row=db.execute('SELECT * FROM enrolled_tools WHERE name=?',(name,)).fetchone()
+        if not row or row['executable_signature']!=tool['executable_signature'] or row['executable']!=tool['executable']:
+            raise ValueError('Unfamiliar tool enrollment changed')
+        return [tool['executable'],row['help_flag']]
 
     def authorize_probe(self, name: str, project: str | Path, janus, *, user_approved: bool=False) -> int:
         if not user_approved:
@@ -237,6 +286,7 @@ class ToolAcquisition:
         tool=self.tool(name)
         if not tool['probe_action']:
             return None
+        if json.loads(tool['probe_argv'] or '[]')!=self.probe_command(name):return None
         act=_action_info(janus,tool['probe_action'])
         try:
             output, sha, log=_approved_result(act,json.loads(tool['probe_argv']),tool['probe_cwd'],kind='tool')

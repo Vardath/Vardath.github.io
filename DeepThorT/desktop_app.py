@@ -552,6 +552,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Scan this computer',command=self._refresh_inventory).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Check tools needed for prompt',command=self._plan_tools).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Investigate app…',command=self._investigate_tool).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Enroll app…',command=self._enroll_learning_tool).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Learn procedure…',command=self._draft_tool_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
@@ -2278,6 +2279,11 @@ class DeepThorTDesktop(tk.Tk):
                     response=self.client.chat(f'tool-learn-{ident}-{request["chat_id"]}',
                                               source_prompt,max_tokens=768,visible_prompt=original)
                     if cancelled():return
+                    # A recipe is an unverified candidate, not a user-approved action.
+                    # Review the actual user goal and the candidate before persisting it.
+                    self._sentinel_alignment(original,request['project'],f'tool-learn-{ident}',
+                        learning['goal'],response,kind='plan',cancelled=cancelled,
+                        stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     recipe_id=self.tool_learning.propose_recipe(ident,response)
                     if cancelled():return
                     self.events.put(('conversation_reply',ident,
@@ -4500,10 +4506,28 @@ class DeepThorTDesktop(tk.Tk):
         self._log('Project tool needs identified; routine catalog tools are managed during BUILD/EDIT submissions when enabled.')
         messagebox.showinfo('Project tool needs',summary+'\n\nSubmit a BUILD/EDIT job to manage recognised tools automatically when the routine policy is enabled. Unknown tools remain manual.')
     # -------- Verified, supervised local application capability acquisition --------
+    def _enroll_learning_tool(self):
+        path=filedialog.askopenfilename(parent=self,title='Select an installed application executable',
+                                       filetypes=[('Windows executable','*.exe')])
+        if not path:return
+        name=simpledialog.askstring('Enroll local application','Descriptive application name:',parent=self)
+        if not name:return
+        flag=simpledialog.askstring('Documented help flag',
+            'Enter the documented read-only help flag for this tool: --help, -h, -help or /?',parent=self)
+        if not flag:return
+        if not messagebox.askyesno('Enroll exact local executable',
+            f'Application: {name}\nExecutable: {path}\nHelp flag: {flag}\n\n'
+            'Enrollment does not run the program or authorize installation. Help and learned commands '
+            'remain individually reviewed. Re-enroll if the executable is updated. Continue?',parent=self):return
+        try:
+            row=self.tool_learning.enroll(name,path,flag,user_approved=True)
+            self._log('Enrolled unfamiliar application '+row['name']+'; Investigate app to obtain actual help evidence.')
+        except (ValueError,OSError,PermissionError) as error:
+            messagebox.showerror('Enrollment rejected',str(error),parent=self)
+
     def _available_learnable_tools(self):
-        if not isinstance(self.inventory,dict):
-            raise ValueError('Click Scan this computer first')
-        return self.tool_learning.discover(self.inventory.get('tools',[]))
+        found=self.tool_learning.discover((self.inventory or {}).get('tools',[]))
+        return found+self.tool_learning.enrolled()
 
     def _select_learnable_tool(self):
         found=self._available_learnable_tools()
