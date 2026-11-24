@@ -88,7 +88,7 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
             result.append({'gap':index,'state':'needs_investigation','capability':name,'reason':str(error)[:200]})
     return result
 
-def inventory(acquisition,project,goal):
+def inventory(acquisition,project,goal,*,required_output=None):
     root=Path(project).resolve(strict=True)
     words=set(re.findall(r'[a-z0-9]{3,}',goal.casefold()))
     def rank(text):return -sum(word in text.casefold() for word in words)
@@ -106,7 +106,15 @@ def inventory(acquisition,project,goal):
                              'purpose':row['purpose'],'input_required':'{{input}}' in args,
                              'output':row['artifact'],'status':row['status']})
         except (ValueError,OSError,KeyError):continue
-    eligible.sort(key=lambda r:(rank(r['title']+' '+r['purpose']),r['recipe_id']))
+    from .artifact_types import artifact_type
+    target_format=artifact_type(required_output)['format'] if required_output else None
+    def order(row):
+        # A learned recipe is bound to its exact output; matching only its
+        # format does not authorize retargeting it to another filename.
+        priority=0 if required_output and row['output']==required_output else (
+            1 if target_format and artifact_type(row['output'])['format']==target_format else 2)
+        return (priority,rank(row['title']+' '+row['purpose']+' '+row['output']),row['recipe_id'])
+    eligible.sort(key=order)
     # Bound the full inventory rather than allowing the model to select hidden IDs.
     selected=[]
     for r in eligible:
@@ -205,9 +213,34 @@ class WorkflowDrafts:
         with sqlite3.connect(self.path) as db:
             db.execute('UPDATE workflow_drafts SET state=? WHERE request_id=?',(state,request_id))
 
+def check_required_proposal(project,task,proposal,recipes):
+    """Require explicit coverage even when a workflow has unresolved tools.
+    This is draft validation, not execution or approval of a missing procedure."""
+    root=Path(project).resolve(strict=True)
+    target=safe_target(root,task['output']).relative_to(root).as_posix()
+    if target!=task['output']:raise ValueError('Required artifact path is not canonical')
+    from .artifact_types import artifact_type
+    info=artifact_type(target)
+    if task.get('artifact_type',info)!=info:raise ValueError('Required artifact format metadata changed')
+    known={r['recipe_id']:r for r in recipes}
+    outputs={known[s['recipe_id']]['output'] for s in proposal['stages']}
+    occupied={p.casefold() for p in outputs}
+    for gap in proposal['missing']:
+        path=safe_target(root,gap['output'])
+        relative=path.relative_to(root).as_posix()
+        if relative!=gap['output']:raise ValueError('Missing artifact path must be canonical')
+        if path.exists() or path.is_symlink() or relative.casefold() in occupied:
+            raise ValueError('Missing artifact collides with an existing or proposed output')
+        occupied.add(relative.casefold())
+        outputs.add(relative)
+    if target not in outputs:
+        raise ValueError('Draft must explicitly produce or identify a missing procedure for '+target)
+    return True
+
+
 def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None):
     binding=source_binding(request)
-    recipes,files=inventory(acquisition,binding['project'],goal)
+    recipes,files=inventory(acquisition,binding['project'],goal,required_output=mixed_task['output']) if mixed_task else inventory(acquisition,binding['project'],goal)
     if recovery:
         preserved=[x['output'] for x in recovery['prefix']]
         files=list(dict.fromkeys(preserved+files))
@@ -233,7 +266,11 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
             f'INSTALLED LEARNABLE TOOLS: {json.dumps(installed,ensure_ascii=False)}. '
             'When a missing capability matches one of these tools, use its exact name.')
     if mixed_task:
+        from .artifact_types import artifact_type
+        info=artifact_type(mixed_task['output'])
         prompt+='\nREQUIRED EXACT ARTIFACT: '+mixed_task['output']+'; one stage is allowed if sufficient.'
+        prompt+='\nFORMAT: '+info['format']+'; KIND: '+info['kind']+'; VERIFICATION: '+info['verification']+'.'
+        prompt+=' A recipe output cannot be renamed. If no suitable producer exists, list the exact required artifact as missing; include any necessary intermediate artifacts separately.'
     if recovery:
         # Include exact observed completed outputs and bounded failure evidence.
         # Do not include the entire predecessor manifest in a small model prompt.
@@ -256,6 +293,7 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
             result=council._run(client,role=f'JANUS_WORKFLOW_{attempt}',session=f'workflow-{request["id"]}',
                                 evidence_sha=sha(text),prompt=text,stage=stage)
             proposal=parse_draft(result,recipes,files,continuation=bool(recovery or mixed_task))
+            if mixed_task:check_required_proposal(binding['project'],mixed_task,proposal,recipes)
             manifest=None
             if not proposal['missing']:
                 manifest=freeze(acquisition,binding['project'],proposal['stages'],continuation=bool(recovery or mixed_task))
