@@ -17,20 +17,39 @@ def fn(k,name,args,result):
     f=getattr(k,name);f.argtypes=args;f.restype=result;return f
 def check(ok,label):
     if not ok:raise OSError(ctypes.get_last_error(),label+' failed; no uncapped launch')
+def in_job(k,process,job):
+    member=wintypes.BOOL()
+    check(fn(k,'IsProcessInJob',[wintypes.HANDLE,wintypes.HANDLE,ctypes.POINTER(wintypes.BOOL)],wintypes.BOOL)(
+        process,job,ctypes.byref(member)),'Process job membership')
+    return bool(member.value)
+
 def verify_root_cap():
     k=kernel()
-    query=fn(k,'QueryInformationJobObject',[wintypes.HANDLE,ctypes.c_int,ctypes.c_void_p,wintypes.DWORD,ctypes.c_void_p],wintypes.BOOL)
-    limits=ExtendedLimitInfo();cpu=CpuRate();mem=MemoryStatus();mem.dwLength=ctypes.sizeof(mem)
-    check(fn(k,'GlobalMemoryStatusEx',[ctypes.POINTER(MemoryStatus)],wintypes.BOOL)(ctypes.byref(mem)),'Memory inspection')
-    check(query(None,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),'Inherited job limits')
-    check(query(None,JobObjectCpuRateControlInformation,ctypes.byref(cpu),ctypes.sizeof(cpu),None),'Inherited CPU cap')
-    required=CPU_RATE_CONTROL_ENABLE|CPU_RATE_CONTROL_HARD_CAP
-    if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=3000
-            or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_JOB_MEMORY
-            or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*30//100
-            or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE):
-        raise RuntimeError('Inherited job is not the required CPU/commit cap')
-    return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
+    import re
+    name=os.environ.get('DEEPTHORT_TRIAD_ROOT_JOB','')
+    if not re.fullmatch(r'Local\\DeepThorT-Triad-[0-9a-f]{48}',name):
+        raise RuntimeError('Named shared Triad Job Object missing; restart with START TRIAD.cmd')
+    H=wintypes.HANDLE
+    open_job=fn(k,'OpenJobObjectW',[wintypes.DWORD,wintypes.BOOL,wintypes.LPCWSTR],H)
+    close=fn(k,'CloseHandle',[H],wintypes.BOOL)
+    job=open_job(0x0004,False,name)  # JOB_OBJECT_QUERY only
+    check(job,'Open shared root Job Object')
+    try:
+        current=fn(k,'GetCurrentProcess',[],H)()
+        if not in_job(k,current,job):raise RuntimeError('Process is outside the shared Triad job')
+        query=fn(k,'QueryInformationJobObject',[H,ctypes.c_int,ctypes.c_void_p,wintypes.DWORD,ctypes.c_void_p],wintypes.BOOL)
+        limits=ExtendedLimitInfo();cpu=CpuRate();mem=MemoryStatus();mem.dwLength=ctypes.sizeof(mem)
+        check(fn(k,'GlobalMemoryStatusEx',[ctypes.POINTER(MemoryStatus)],wintypes.BOOL)(ctypes.byref(mem)),'Memory inspection')
+        check(query(job,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),'Inherited job limits')
+        check(query(job,JobObjectCpuRateControlInformation,ctypes.byref(cpu),ctypes.sizeof(cpu),None),'Inherited CPU cap')
+        required=CPU_RATE_CONTROL_ENABLE|CPU_RATE_CONTROL_HARD_CAP
+        if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=3000
+                or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_JOB_MEMORY
+                or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*30//100
+                or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE):
+            raise RuntimeError('Inherited job is not the required CPU/commit cap')
+        return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
+    finally:close(job)
 @contextmanager
 def child_server(command,cwd,log_path):
     verify_root_cap()
@@ -99,8 +118,17 @@ def child_server(command,cwd,log_path):
             if '--api-key' in command:tail=tail.replace(command[command.index('--api-key')+1],'[redacted]')
             if len(command[-1])==64 and all(c in '0123456789abcdef' for c in command[-1]):tail=tail.replace(command[-1],'[redacted]')
             return f'exit 0x{value:08X} ({hints.get(value,"see native log")}); {log_path.name}\n{tail or "(no native output)"}'
+        def member(pid):
+            if type(pid) is not int or pid<=0:return False
+            # Windows venv python.exe may be a redirector. Verify the real
+            # serving interpreter is inside this exact child cleanup job.
+            handle=fn(k,'OpenProcess',[D,wintypes.BOOL,D],H)(0x0400,False,pid)
+            if not handle:return False
+            try:return in_job(k,handle,job)
+            finally:close(handle)
         alive.code=code
         alive.failure=failure
+        alive.member=member
         yield int(proc.dwProcessId),alive
     finally:
         if launched:

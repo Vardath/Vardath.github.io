@@ -77,8 +77,11 @@ class Pool:
                     if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure())
                 try:
                     value=request(port,'/health',key)
-                    if (value.get('status')=='ok' and value.get('role')==role and value.get('pid')==pid
-                            and value.get('backend')=='native-openvino-ir-cpu'):break
+                    actual_pid=value.get('pid')
+                    if (value.get('status')=='ok' and value.get('role')==role
+                            and value.get('backend')=='native-openvino-ir-cpu' and alive.member(actual_pid)):
+                        self.children[role]=(port,key,actual_pid,alive)
+                        break
                 except (OSError,ValueError):pass
                 time.sleep(1)
             else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')

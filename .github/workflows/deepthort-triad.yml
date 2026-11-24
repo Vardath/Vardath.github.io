@@ -20,3 +20,29 @@ jobs:
           python-version: '3.11'
       - run: python -m compileall -q .
       - run: python -m unittest discover -s tests -p test_triad_resident.py -v
+  native-windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: DeepThorT-Triad
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned native runtime in isolated venv
+        run: |
+          python -m venv runtime/openvino-env
+          & runtime/openvino-env/Scripts/python.exe -m pip --isolated install --only-binary=:all: --index-url https://pypi.org/simple openvino-genai==2026.4.1.0
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise real native OpenVINO CPU inside shared and nested jobs
+        run: |
+          & runtime/openvino-env/Scripts/python.exe triad_runtime_preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: triad-native-preflight
+          path: DeepThorT-Triad/state/logs/triad-ci-native-preflight.log
+          if-no-files-found: warn

@@ -98,7 +98,7 @@ def main():
         engine=Engine(args[1])
         result=engine.generate([{'role':'user','content':'What is 2 + 2? Answer only with the number.'}],16)
         print('Synthetic reply:',result[:100],flush=True)
-        if '4' not in result:raise RuntimeError('Synthetic arithmetic reply failed')
+        if result.strip() not in ('4','4.'):raise RuntimeError('Synthetic arithmetic reply failed')
         return
     if len(args)!=3 or args[0] not in PROFILES or not args[1].isdigit() or len(args[2])!=64:
         raise SystemExit('Use supervised Triad broker')
