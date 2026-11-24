@@ -88,7 +88,11 @@ class FullGuiDevelopmentCycleTests(unittest.TestCase):
                                      (2,1,'verified'))
                     self.assertTrue(list((root/'state'/'backups').rglob('main.py')))
                     self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in model.calls),4)
-                    self.assertGreaterEqual(sum(p.startswith('SENTINEL: independently guard') for p in model.calls),7)
+                    reviews=[p for p in model.calls if p.startswith('SENTINEL: independently guard')]
+                    for path in ('main.py','test_main.py'):
+                        for kind in ('plan','code'):
+                            self.assertTrue(any(f'REVIEW KIND: {kind}; intended step: {path}' in p for p in reviews),(path,kind))
+                    self.assertTrue(any('REVIEW KIND: repair;' in p for p in reviews))
                 finally:
                     app._quit()
 

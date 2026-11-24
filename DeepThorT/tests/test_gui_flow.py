@@ -76,7 +76,10 @@ class RealGuiQueueTests(unittest.TestCase):
       if state in ('complete','needs_input'):break
      self.assertEqual(app.jobs.get(ident)['state'],'complete')
      self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in client.calls),3)
-     self.assertGreaterEqual(sum(p.startswith('SENTINEL: independently guard') for p in client.calls),6)
+     reviews=[p for p in client.calls if p.startswith('SENTINEL: independently guard')]
+     for path in ('main.py','test_main.py'):
+      for kind in ('plan','code'):
+       self.assertTrue(any(f'REVIEW KIND: {kind}; intended step: {path}' in p for p in reviews), (path,kind))
     finally:app._quit()
 
 if __name__=='__main__':unittest.main()

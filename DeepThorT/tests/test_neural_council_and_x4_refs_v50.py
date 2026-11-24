@@ -116,7 +116,13 @@ class NeuralCouncil(unittest.TestCase):
             self.assertEqual(steps,[])
             self.assertIn('hierarchy_ready',json.loads(answer))
             self.assertEqual(len(model.calls),6)  # 3 corrections, 2 neural turns, 1 correction
-            self.assertIn('SENTINEL',model.calls[-1][1])
+            self.assertIn('Sentinel accepted as advice',model.calls[-1][1])
+            self.assertTrue(any(p.startswith('SENTINEL: independently inspect') for _,p,_ in model.calls))
+            final_prompt=model.calls[-1][1]
+            import re
+            exact=re.search(r'VERBATIM ORIGINAL SOURCE SECTION \d+/\d+ BEGIN\n(.*?)\nVERBATIM ORIGINAL SOURCE SECTION END\.',final_prompt,re.S).group(1)
+            self.assertIn(exact,original)
+            self.assertNotIn('JANUS RETRANSLATED',exact)
             self.assertFalse(remaining_plan_gaps(index.merged_steps(5,original),original))
             self.assertTrue((root/'reasoning-council-v50.sqlite3').exists())
             self.assertTrue((root/'janus.sqlite3').exists())

@@ -131,7 +131,8 @@ def _prompt(rows, original: str, ordinal: int, focus: str,
     advisory=('\n' + guidance + '\n') if guidance else ''
     if new_instruction:
         advisory+='\nJANUS PLANNING CHECKPOINT (advisory only):\n'+new_instruction[:1300]+'\n'
-    prompt=header+advisory+original[row[1]:row[2]]+tail
+    # Keep all generated guidance outside the verbatim source boundary.
+    prompt=header+original[row[1]:row[2]]+tail+advisory
     if len(prompt)>MAX_MODEL_INPUT:
         # Only optional advisory summaries may be dropped. Never truncate an
         # original source section or silently abbreviate a user requirement.
