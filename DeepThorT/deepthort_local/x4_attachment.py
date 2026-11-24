@@ -1,8 +1,10 @@
 """Assemble an independent ship-component draft from inspected vanilla geometry."""
 from __future__ import annotations
 import copy
+from collections import defaultdict
 import hashlib
 import io
+import itertools
 import json
 import math
 from pathlib import Path, PurePosixPath
@@ -36,12 +38,12 @@ def protected(component):
     return anchors
 
 
-def placements(hull,origin,rock,anchors):
+def placements(hull,origin,rock,anchors,contact=None):
     """Screen upper/rear candidates against static boxes and nominal axis-aligned approach rays."""
     mid=[origin[i]+(hull['min'][i]+hull['max'][i])/2 for i in range(3)]
     span=hull['dimensions']
     result=[]
-    for rear in (.22,.30,.36):
+    for rear in (.12,.16,.20,.24,.30,.36):
         for lift in (.32,.48,.64,.75):
             center=(mid[0],mid[1]+lift*span[1],mid[2]-rear*span[2])
             offset=[center[i]-(rock['min'][i]+rock['max'][i])/2 for i in range(3)]
@@ -58,13 +60,78 @@ def placements(hull,origin,rock,anchors):
             overlap=[min(hi[i],origin[i]+hull['max'][i])-max(lo[i],origin[i]+hull['min'][i]) for i in range(3)]
             clearance,nearest=min(gaps)
             if clearance>=2 and min(overlap)>2:
-                result.append(dict(offset=offset,min_gap=clearance,nearest=nearest,box_overlap=overlap))
+                proof=contact(offset) if contact is not None else None
+                if contact is not None and proof is None:continue
+                result.append(dict(offset=offset,min_gap=clearance,nearest=nearest,box_overlap=overlap,
+                                   crossing_triangles=proof))
                 break
     return result
 
 
 def _xml(root):
     return ET.tostring(root,encoding='utf-8',xml_declaration=True)
+
+
+def _triangles(raw,shift):
+    points=[]
+    faces=[]
+    for line in _obj_geometry(raw).splitlines():
+        tag,*coords=line.split()
+        if tag==b'v':points.append(tuple(float(v)+d for v,d in zip(coords,shift)))
+        elif tag==b'f':faces.append(tuple(points[int(i)-1] for i in coords))
+    return faces
+
+
+def _sub(a,b):
+    return tuple(x-y for x,y in zip(a,b))
+
+
+def _dot(a,b):
+    return sum(x*y for x,y in zip(a,b))
+
+
+def _cross(a,b):
+    return (a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0])
+
+
+def _cuts(a,b,tri):
+    # Interior segment/triangle crossing. Box overlap and tangency alone are insufficient.
+    v,w,x=tri
+    edge=_sub(b,a)
+    e,f=_sub(w,v),_sub(x,v)
+    p=_cross(edge,f)
+    det=_dot(e,p)
+    if abs(det)<1e-8:return False
+    t=_sub(a,v)
+    u=_dot(t,p)/det
+    if not 0<u<1:return False
+    q=_cross(t,e)
+    return 0<_dot(edge,q)/det<1-u and 0<_dot(f,q)/det<1
+
+
+def contact_checker(hull,rock,cell):
+    def cells(tri):
+        return itertools.product(*(range(math.floor(min(axis)/cell),math.floor(max(axis)/cell)+1)
+                                   for axis in zip(*tri)))
+    grid=defaultdict(list)
+    entries=0
+    for i,tri in enumerate(hull):
+        for key in cells(tri):
+            entries+=1
+            if entries>1_000_000:raise GeometryError('Hull exceeds triangle index budget')
+            grid[key].append(i)
+    def check(offset):
+        pairs=0
+        for j,local in enumerate(rock):
+            tri=[tuple(x+y for x,y in zip(v,offset)) for v in local]
+            for i in sorted({i for key in cells(tri) for i in grid.get(key,())}):
+                pairs+=1
+                if pairs>500_000:raise GeometryError('Placement exceeds triangle comparison budget')
+                other=hull[i]
+                if any(_cuts(tri[k],tri[k-1],other) or _cuts(other[k],other[k-1],tri) for k in range(3)):
+                    return [i,j]
+        return None
+    return check
 
 
 def preview_obj(parts):
@@ -119,7 +186,10 @@ def make_draft(game,ship_path,rock,ship,package,variant,chosen=None):
         bounds.append(info)
     box={key:[func(m[key][i] for m in bounds) for i in range(3)] for key,func in [('min',min),('max',max)]}
     anchors=protected(component)
-    options=placements(ship,position(main),box,anchors)
+    hull_triangles=_triangles(_read(table,ship['mesh']),position(main))
+    rock_triangles=_triangles(fitted[part_name+'-lod0.xmf'],(0,0,0))
+    contact=contact_checker(hull_triangles,rock_triangles,max(ship['dimensions'])/24)
+    options=placements(ship,position(main),box,anchors,contact)
     if not options:raise GeometryError('No candidate passed the protected-connection checks')
     if chosen is None:return options
     if chosen not in options:raise GeometryError('Selected placement no longer resolves')

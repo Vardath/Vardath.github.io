@@ -1,6 +1,6 @@
 # DeepThorT v60 for Windows
 
-On the independent PE request, the local planner can now assemble the fitted asteroid into a new ship component. It offers the model upper-rear offsets screened against measured cockpit, elevator, dock, weapon, turret and engine connections. The resulting source bundle includes the registered macro and component, four visual detail levels on the benchmark ship, a resized collision XMF and an OBJ preview showing both main shapes together. In the project sidebar choose **Export latest draft mesh**, then save the component draft with a .zip filename.
+On the independent PE request, the local planner can now assemble the fitted asteroid into a new ship component. It offers the model upper-rear offsets with verified visual surface contact, screened against measured cockpit, elevator, dock, weapon, turret and engine connections. The resulting source bundle includes the registered macro and component, four visual detail levels on the benchmark ship, a resized collision XMF and an OBJ preview showing both main shapes together. In the project sidebar choose **Export latest draft mesh**, then save the component draft with a .zip filename.
 
 # DeepThorT v59 for Windows
 

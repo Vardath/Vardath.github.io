@@ -7,12 +7,18 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-from deepthort_local.x4_attachment import make_draft, placements, protected
+from deepthort_local.x4_attachment import contact_checker, make_draft, placements, protected
 from deepthort_local.x4_geometry import GeometryError, mesh_positions
 from tests.test_x4_geometry_v59 import make_mesh
 
 
 class AttachmentTests(unittest.TestCase):
+    def test_box_overlap_requires_an_actual_triangle_crossing(self):
+        check=contact_checker([[(0,0,0),(4,0,0),(0,4,0)]],
+                              [[(3,3,-1),(3,3,1),(4,3,1)]],1)
+        self.assertIsNone(check((0,0,0)))
+        self.assertEqual(check((-2,-2,0)),[0,0])
+
     def test_reject_missing_protected_connections(self):
         with self.assertRaisesRegex(GeometryError,'Missing protected'):
             protected(ET.fromstring('<component><connections/></component>'))
@@ -47,7 +53,7 @@ class AttachmentTests(unittest.TestCase):
             table={p:(None,0,len(b),None) for p,b in files.items()}
             ship=dict(mesh_positions(raw)[0],mesh=ship_dir+'/part_main-lod0.xmf')
             args=(root,ship_path,dict(component=rock_path,mesh=rock_dir+'/part_main-lod0.xmf',scale=.8),ship,'example','example_macro')
-            with patch('deepthort_local.x4_attachment._catalog_key',return_value=()),patch('deepthort_local.x4_attachment._entries',return_value=table),patch('deepthort_local.x4_attachment._read',side_effect=lambda _,p:files[p]):
+            with patch('deepthort_local.x4_attachment.contact_checker',return_value=lambda offset:[0,0]),patch('deepthort_local.x4_attachment._catalog_key',return_value=()),patch('deepthort_local.x4_attachment._entries',return_value=table),patch('deepthort_local.x4_attachment._read',side_effect=lambda _,p:files[p]):
                 options=make_draft(*args)
                 bundle=make_draft(*args,chosen=options[0])
                 with zipfile.ZipFile(io.BytesIO(bundle)) as z:

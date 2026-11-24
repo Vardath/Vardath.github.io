@@ -12,11 +12,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "553abf914666a05a0ff04f929c860fb83415f09ff7ccdc3b22a15c6a9ba7c011"
+      "sha256": "d2ee5823923e108a7dee3605742111ddb470ae9ab5c1225944c9265011f2da7f"
     },
     {
       "path": "TEST_RESULTS_V60.md",
-      "sha256": "d3b9d2436bfc25f36b95ba7dff05ae1a10f9a1c331215152d99c41e216f53040"
+      "sha256": "2120e2e8d241f575362602c0ab4f3bcba238e5d4b2149d7e024a96fa86522b76"
     },
     {
       "path": "deepthort_local/specification_library.py",
@@ -28,7 +28,7 @@
     },
     {
       "path": "deepthort_local/x4_attachment.py",
-      "sha256": "e3955d35f6ee334481168566fbd7b56540b41b15bd032600626c139cedab09ab"
+      "sha256": "58cbbcea1805989f83d030453ad949327203781c0b384831cfb02e1594be17c4"
     },
     {
       "path": "deepthort_local/x4_geometry.py",
@@ -40,7 +40,7 @@
     },
     {
       "path": "tests/test_x4_attachment_v60.py",
-      "sha256": "7b6019f3a1b88aa4b8177d62ce589fe1c7487c6fc6d954b4fb4a7b927cc7d58d"
+      "sha256": "61f2fa8951bfc6b6eadc7cdb1cd5163675e1dbe98a1b7dcdb6d33f245e1952dc"
     }
   ]
 }
