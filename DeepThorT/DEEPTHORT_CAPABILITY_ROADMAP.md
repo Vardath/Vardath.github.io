@@ -68,3 +68,7 @@ Task-aware permitted-tool shortlist, adaptive ranking from observed result shape
 
 ### Progress — structured execution request foundation
 JANUS may request the already approved fixed project verification operation through a typed no-argument intent. Job/plan/spec binding, scheduler authorization, coalescing, result receipts and interruption handling are implemented. This first intent does not change the ordinary scheduler or permit arbitrary commands; additional reviewed operation types remain backlog. Next priority 5: workspace-scoped document knowledge retrieval (AnythingLLM comparison), starting with bounded local text ingestion and cited chunks.
+
+
+### Progress — local document knowledge foundation
+Added bounded, incremental project-scoped lexical indexing for UTF-8 TXT/MD/RST/ADOC and main-text DOCX. Persist hashed term postings and exact source positions, not document bodies; rehash and re-extract before retrieval. Existing reference scan enrolls eligible larger text/DOCX files, with explicit local CLI enrollment/removal and stale status. JANUS can request `document_search` through the existing bounded repository tool loop; planning receives context only within its existing optional evidence budget. DOCX citations identify extracted paragraph positions, not physical pages. PDF extraction, larger corpus discovery, dedicated desktop document controls, measured retrieval quality, and separately reviewed Sentinel document evidence remain next. No new model, shell authority or cloud dependency.

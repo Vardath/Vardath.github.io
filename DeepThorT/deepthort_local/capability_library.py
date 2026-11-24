@@ -20,6 +20,7 @@ from pathlib import Path
 
 from .workspace import WorkspaceError, list_project_files, safe_target
 from .reference_learning import ReferenceIndex
+from .document_knowledge import DocumentKnowledge
 from .tool_evidence import ToolEvidenceIndex
 
 MAX_EVIDENCE_BYTES = 60_000
@@ -80,6 +81,7 @@ class CapabilityLibrary:
         self.path = Path(db_path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.references = ReferenceIndex(self.path)
+        self.knowledge = DocumentKnowledge(self.path)
         self.tool_evidence = ToolEvidenceIndex(self.path)
         with self._connect() as db:
             db.executescript('''
@@ -165,10 +167,12 @@ class CapabilityLibrary:
         # Pass 2: source-backed documents. Pass 3: already-approved local
         # verification actions are observed, NEVER executed or promoted here.
         references = self.references.index_project(base, candidates=files)
+        knowledge = self.knowledge.refresh(base, files, exclude=excluded)
         action_count=self.tool_evidence.scan(base,self.path.parent/'janus.sqlite3')
         return {'project_key': key, 'files_scanned': len(files), 'references_indexed': len(observed),
                 'reference_documents_indexed': references['indexed'],
                 'reference_documents_eligible': references['eligible'],
+                'knowledge_documents': knowledge,
                 'approved_test_actions_observed': action_count,
                 'tools_detected': [tool for tool in TOOLS if shutil.which(tool)]}
 
@@ -189,6 +193,7 @@ class CapabilityLibrary:
                     db.execute('DELETE FROM observations WHERE project_key=? AND relative_path=?',
                                (project_key(base),record['relative_path']))
         self.references.forget_auto_project_paths(base,relative)
+        self.knowledge.forget_inspection_paths(base,relative)
 
     def observations(self, root: str | Path, *, limit: int = 12) -> list[dict]:
         """Exclude changed, deleted or escaped files even if SQLite contains an old row."""
@@ -399,6 +404,9 @@ class CapabilityLibrary:
         # retrieval. Small budgets retain the pre-existing v22 manifest facts.
         doc_context = (self.references.context(root, request,
                        max_chars=min(640, max_chars // 2)) if max_chars >= 650 else '')
+        if max_chars >= 650:
+            doc_context += self.knowledge.context(root, request,
+                max_chars=max(0, min(640, max_chars // 2) - len(doc_context)))
         test_context = self.tool_evidence.context(root,request,max_chars=min(350,max_chars//3))
         neutral_budget = max_chars - len(doc_context) - len(test_context)
         scored = []
@@ -472,6 +480,17 @@ def main(argv: list[str] | None = None) -> int:
     context = commands.add_parser('reference-context', help='Show small attributed local source excerpts')
     context.add_argument('project')
     context.add_argument('request')
+    knowledge_index = commands.add_parser('knowledge-index', help='Enroll a bounded local text or DOCX document')
+    knowledge_index.add_argument('project')
+    knowledge_index.add_argument('relative_path')
+    knowledge_search = commands.add_parser('knowledge-search', help='Retrieve exact document excerpts')
+    knowledge_search.add_argument('project')
+    knowledge_search.add_argument('request')
+    knowledge_list = commands.add_parser('knowledge-list', help='Show current/stale enrolled documents')
+    knowledge_list.add_argument('project')
+    knowledge_remove = commands.add_parser('knowledge-remove', help='Forget an indexed document without deleting its file')
+    knowledge_remove.add_argument('project')
+    knowledge_remove.add_argument('relative_path')
     args = parser.parse_args(argv)
     lib = CapabilityLibrary(args.db)
     if args.action == 'inspect':
@@ -496,6 +515,14 @@ def main(argv: list[str] | None = None) -> int:
                           for row in lib.references.current(args.project)], indent=2))
     elif args.action == 'reference-context':
         print(lib.references.context(args.project, args.request))
+    elif args.action == 'knowledge-index':
+        print(lib.knowledge.index(args.project, args.relative_path))
+    elif args.action == 'knowledge-search':
+        print(json.dumps(lib.knowledge.search(args.project, args.request), indent=2))
+    elif args.action == 'knowledge-list':
+        print(json.dumps(lib.knowledge.documents(args.project), indent=2))
+    elif args.action == 'knowledge-remove':
+        return 0 if lib.knowledge.remove(args.project, args.relative_path) else 1
     else:
         print(json.dumps([{k: row[k] for k in ('id','domain','title','status','validation_scope')}
                           for row in lib.procedures()], indent=2))
