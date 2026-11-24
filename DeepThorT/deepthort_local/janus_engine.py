@@ -238,6 +238,10 @@ class JanusStore:
                                and json.loads(row['input_guards_json'])==plan['guards'] and row['cwd']==plan['project'])
                         if binding and valid:
                             valid=current_source_file(binding,self.path.parent/'conversations.sqlite3')
+                        if valid and plan.get('automatic_authority'):
+                            from .asset_import_probe import claim_auto_authority
+                            if not claim_auto_authority(self,plan,plan['automatic_authority']):
+                                return None
                     except (ValueError,OSError,sqlite3.Error,KeyError,TypeError):valid=False
                     if not valid:
                         db.execute("UPDATE janus_actions SET status='cancelled',cancel_requested=1,detail='Asset probe approval changed or superseded' WHERE id=?",(row['id'],))

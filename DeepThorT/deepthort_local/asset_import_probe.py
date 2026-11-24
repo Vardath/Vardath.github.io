@@ -83,9 +83,21 @@ def plan(workflows,acquisition,workflow_id,ordinal,tool):
     target=safe_target(run['project'],stage['output'],must_exist=True)
     if target.suffix.casefold() not in SUPPORTED.get(tool,set()):
         raise ValueError('Unsupported application and artifact format combination')
+    template=command_template(acquisition,run['project'],stage['output'],tool)
+    pin=snapshot_file(target)
+    if pin['expected']!=receipt['sha256']:raise ValueError('Checked artifact changed')
+    guards=[template['guards'][0],pin,*template['guards'][1:]]
+    validate_guards(guards)
+    return {'workflow_id':workflow_id,'ordinal':ordinal,'manifest_sha':run['manifest_sha'],
+            'specification':manifest.get('specification'),'project':run['project'],'tool':tool,
+            'output':stage['output'],'artifact_sha256':receipt['sha256'],'argv':template['argv'],'guards':guards}
+
+def command_template(acquisition,project,output,tool):
+    target=safe_target(project,output)
+    if target.suffix.casefold() not in SUPPORTED.get(tool,set()):
+        raise ValueError('Unsupported application and artifact format combination')
     exe=Path(acquisition.tool(tool)['executable']).resolve(strict=True)
-    guards=[snapshot_file(exe,kind='stat'),snapshot_file(target)]
-    if guards[1]['expected']!=receipt['sha256']:raise ValueError('Checked artifact changed')
+    guards=[snapshot_file(exe,kind='stat')]
     if tool=='Blender':
         script=PROBE_ROOT/'blender_probe.py'
         argv=[str(exe),'--background','--factory-startup','--disable-autoexec','--python-exit-code','19',
@@ -97,9 +109,60 @@ def plan(workflows,acquisition,workflow_id,ordinal,tool):
         argv=[str(exe),'--headless','--path',str(PROBE_ROOT),'--script',str(script),'--',str(target)]
     guards.append(snapshot_file(script))
     validate_guards(guards)
-    return {'workflow_id':workflow_id,'ordinal':ordinal,'manifest_sha':run['manifest_sha'],
-            'specification':manifest.get('specification'),'project':run['project'],'tool':tool,
-            'output':stage['output'],'artifact_sha256':receipt['sha256'],'argv':argv,'guards':guards}
+    return {'tool':tool,'output':output,'argv':argv,'guards':guards}
+
+def import_templates(acquisition,manifest):
+    task=manifest.get('mixed_task') or {}
+    if not task.get('imports'):return []
+    if not manifest.get('specification'):raise ValueError('Automatic import needs a specification binding')
+    if sum(s['output']==task['output'] for s in manifest['stages'])!=1:
+        raise ValueError('Automatic import needs exactly one producer')
+    return [command_template(acquisition,manifest['project'],task['output'],tool)
+            for tool in validate_imports(task['output'],task['imports'])]
+
+def auto_template(approved):
+    # Same fixed command and executable/script/config pins; the checked output
+    # gets its actual byte hash only after production.
+    return {'tool':approved['tool'],'output':approved['output'],'argv':approved['argv'],
+            'guards':[approved['guards'][0],*approved['guards'][2:]]}
+
+def auto_authority(workflows,approved,roadmap,mixed):
+    run=workflows.get(approved['workflow_id'])
+    if not run or run['state']!='complete' or run['manifest_sha']!=approved['manifest_sha']:
+        raise ValueError('Automatic import producer changed')
+    manifest=json.loads(run['manifest'])
+    if digest(manifest)!=run['manifest_sha'] or manifest['project']!=approved['project']:
+        raise ValueError('Automatic import manifest changed')
+    link=manifest.get('roadmap') or {}
+    task=manifest.get('mixed_task') or {}
+    binding=manifest.get('specification')
+    if (not binding or binding!=approved['specification'] or not link or
+        roadmap['state']!='active' or link['request_id']!=roadmap['request_id'] or
+        link['manifest_sha256']!=roadmap['manifest_sha256'] or link['project']!=roadmap['project'] or
+        not mixed or mixed['sha']!=roadmap.get('mixed_sha') or mixed['request_id']!=roadmap['request_id']
+        or mixed['code_sha']!=roadmap['manifest_sha256'] or task not in mixed['tasks']
+        or approved['tool'] not in task.get('imports',[]) or approved['output']!=task['output']
+        or auto_template(approved) not in manifest.get('auto_imports',[])):
+        raise ValueError('No current reviewed automatic import authority')
+    from .workflow_design import current_source_file
+    if not current_source_file(binding,workflows.janus.path.parent/'conversations.sqlite3'):
+        raise ValueError('Automatic import specification superseded')
+    return {'request_id':roadmap['request_id'],'code_sha':roadmap['manifest_sha256'],'mixed_sha':mixed['sha']}
+
+def claim_auto_authority(janus,approved,authority):
+    from .project_authority import load_policy
+    from .roadmap_runs import RoadmapRuns
+    from .mixed_roadmap import MixedRoadmaps
+    from .tool_workflows import ToolWorkflows
+    state=janus.path.parent
+    if not load_policy(state/'project-work-policy.json')['enabled'] or janus.status().get('paused'):
+        return False
+    if not (state/'roadmap-runs.sqlite3').is_file() or not (state/'mixed-roadmaps.sqlite3').is_file():
+        raise ValueError('Automatic import roadmap database missing')
+    roadmap=RoadmapRuns(state/'roadmap-runs.sqlite3').get(authority['request_id'])
+    if not roadmap or roadmap['state']!='active':return False
+    mixed=MixedRoadmaps(state/'mixed-roadmaps.sqlite3').get(authority['request_id'],authority['code_sha'])
+    return auto_authority(ToolWorkflows(janus),approved,roadmap,mixed)==authority
 
 class AssetProbes:
     def __init__(self,workflows):
@@ -110,18 +173,36 @@ class AssetProbes:
                 action_id INTEGER PRIMARY KEY, plan TEXT NOT NULL, plan_sha TEXT NOT NULL)''')
     def queue(self,approved,acquisition,*,user_approved=False):
         if user_approved is not True:raise PermissionError('Approve exact application smoke test')
+        return self._queue(approved,acquisition)
+    def queue_required(self,approved,acquisition,roadmap,mixed,*,enabled=False):
+        if enabled is not True:raise PermissionError('Unattended project work disabled')
+        authority=auto_authority(self.workflows,approved,roadmap,mixed)
+        if not claim_auto_authority(self.janus,approved,authority):
+            raise ValueError('Automatic import authority is not active')
+        pending=required_imports(self.workflows,self.workflows.get(approved['workflow_id']))
+        if not any(p['tool']==approved['tool'] and p['ordinal']==approved['ordinal'] and p['status']=='needs_approval' for p in pending):
+            return None  # failed/cancelled/interrupted tests need deliberate review
+        return self._queue(approved,acquisition,authority=authority)
+    def _queue(self,approved,acquisition,authority=None):
         if plan(self.workflows,acquisition,approved['workflow_id'],approved['ordinal'],approved['tool'])!=approved:
             raise ValueError('Asset or executable changed during approval')
         verify_guards(approved['guards'])
+        stored=dict(approved)
+        if authority:stored['automatic_authority']=authority
         with self.janus.connect() as db:
             db.execute('BEGIN IMMEDIATE')
             if db.execute("SELECT 1 FROM janus_actions WHERE status IN ('approved','running') LIMIT 1").fetchone():
                 raise ValueError('Wait for existing approved processes')
+            if authority:
+                # Durable, one attempt for each exact requirement, even on restart.
+                if db.execute("""SELECT 1 FROM asset_probe_runs WHERE json_extract(plan,'$.workflow_id')=?
+                    AND json_extract(plan,'$.ordinal')=? AND json_extract(plan,'$.tool')=? LIMIT 1""",
+                    (approved['workflow_id'],approved['ordinal'],approved['tool'])).fetchone():return None
             ident=db.execute("""INSERT INTO janus_actions(kind,label,cwd,argv_json,approved_at,approval_source,input_guards_json)
                 VALUES('tool',?,?,?,?,'desktop-user-confirmation',?)""",
                 ('Asset import smoke test: '+approved['tool'],approved['project'],json.dumps(approved['argv']),
                  utc_now(),json.dumps(approved['guards']))).lastrowid
-            db.execute('INSERT INTO asset_probe_runs VALUES(?,?,?)',(ident,json.dumps(approved),digest(approved)))
+            db.execute('INSERT INTO asset_probe_runs VALUES(?,?,?)',(ident,json.dumps(stored),digest(stored)))
         return ident
     def recent(self,project):
         with self.janus.connect() as db:

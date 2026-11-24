@@ -2124,6 +2124,25 @@ class DeepThorTDesktop(tk.Tk):
                                 pending=required_imports(self.tool_workflows,producer)
                                 if pending:
                                     item=pending[0]
+                                    # Only a newly reviewed fixed command may be dispatched automatically.
+                                    producer_manifest=json.loads(producer['manifest'])
+                                    if (item['status']=='needs_approval' and producer_manifest.get('auto_imports')
+                                        and self._project_work_is_enabled() and not self.queue_paused
+                                        and not self.disk_gate.gaming() and not self.janus.status().get('paused')
+                                        and self.active_job is None and self.active_conversation is None
+                                        and not any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))
+                                        and self._auto_verification_in_flight is None and self._auto_tool_active is None
+                                        and not self._auto_tool_queue and self._tool_probe_active is None and not self._tool_probe_queue
+                                        and self.__dict__.get('_quiet_test_active') is None and self.__dict__.get('_gui_test_active') is None):
+                                        from deepthort_local.asset_import_probe import AssetProbes,plan
+                                        try:
+                                            approved=plan(self.tool_workflows,self.tool_learning,item['workflow_id'],item['ordinal'],item['tool'])
+                                            action=AssetProbes(self.tool_workflows).queue_required(approved,self.tool_learning,run,mixed,enabled=True)
+                                            if action:
+                                                self._log(f"Roadmap #{ident}: approved required {item['tool']} import queued as JANUS process #{action}.")
+                                                return True
+                                        except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
+                                            item={**item,'status':'manual_review: '+str(error)[:160]}
                                     note=(ident,item['workflow_id'],item['tool'],item['output'],item['status'])
                                     if self.__dict__.get('_last_required_import_note')!=note:
                                         self._last_required_import_note=note
@@ -4927,6 +4946,14 @@ class DeepThorTDesktop(tk.Tk):
                 proposal=json.loads(previous['proposal'])
                 details='\n\n'.join(f"{i}. {s['title']}\n{subprocess.list2cmdline(s['argv'])}\nOutput: {s['output']}"
                     for i,s in enumerate(manifest['stages'],1))
+                from deepthort_local.asset_import_probe import import_templates
+                auto_imports=[]
+                try:auto_imports=import_templates(self.tool_learning,manifest)
+                except (ValueError,OSError,KeyError,TypeError) as error:
+                    details+='\n\nRequired import commands unavailable: '+str(error)[:200]+'. Review those checks separately once tools are available.'
+                if auto_imports:
+                    details+='\n\nRequired fixed import checks (automatically run after the checked outputs exist if unattended project work is enabled):\n'+'\n'.join(
+                        subprocess.list2cmdline(p['argv']) for p in auto_imports)
                 if not messagebox.askyesno('Review JANUS workflow',
                     'Sentinel reviewed this proposal against the stored specification. '
                     'Commands run with your Windows permissions, not in a sandbox. '
@@ -4975,6 +5002,10 @@ class DeepThorTDesktop(tk.Tk):
                     if make_binding(current_run,source,self.hierarchies,self.specifications,manifest,after)!=link or not current_source(binding,self.conversations):
                         raise ValueError('Roadmap changed during review')
                     manifest['roadmap']=link
+                if auto_imports:
+                    if not manifest.get('roadmap') or import_templates(self.tool_learning,manifest)!=auto_imports:
+                        raise ValueError('Required import executable or script changed during approval')
+                    manifest['auto_imports']=auto_imports
                 ident=self.tool_workflows.approve(manifest,user_approved=True)
                 self.workflow_drafts.mark(previous['request_id'],'approved')
                 self._log(f'JANUS-designed workflow #{ident} approved.')
