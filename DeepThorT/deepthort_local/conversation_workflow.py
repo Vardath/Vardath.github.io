@@ -90,7 +90,21 @@ class ConversationStore:
                prompt_characters=len(prompt),attachments=len(attachments),legacy_job=source_job_id)
         return n
 
-    def amend_project(self,chat_id,project,amendment):
+    def latest_project_request(self,chat_id,project):
+        with self._db() as db:
+            row=db.execute("SELECT * FROM conversation_requests WHERE chat_id=? AND project=? "
+                "AND mode='draft_plan' ORDER BY id DESC LIMIT 1",(chat_id,project)).fetchone()
+            return dict(row) if row else None
+
+    def historical_draft(self,request_id):
+        """Return prior plan regardless of approval/discard state; evidence only."""
+        with self._db() as db:
+            row=db.execute('SELECT * FROM project_drafts WHERE request_id=? ORDER BY id DESC LIMIT 1',
+                           (request_id,)).fetchone()
+            if not row:return None
+            result=dict(row);result['steps']=json.loads(result['steps_json']);return result
+
+    def amend_project(self,chat_id,project,amendment,*,attachments=()):
         """Explicit user operation: atomically save revision and queue a new draft."""
         from .specification_amendments import render_revision,sha
         if not chat_id or not project or project=='(general)' or not isinstance(amendment,str) or not amendment.strip():
@@ -118,9 +132,11 @@ class ConversationStore:
                 raise ValueError('Prior effective specification no longer matches its history')
             if not prior and history:raise ValueError('Amendment chain is inconsistent')
             effective=render_revision(original,[r['amendment'] for r in history]+[amendment])
+            combined=list(dict.fromkeys(json.loads(parent['attachments'])+list(attachments)))
+            if len(combined)>8:raise ValueError('Amended plan exceeds eight retained attachments; review the attachments first')
             ident=db.execute("INSERT INTO conversation_requests(chat_id,project,mode,prompt,attachments,detail) "
                 "VALUES(?,?,'draft_plan',?,?,?)",
-                (chat_id,project,effective,root['attachments'],'Explicit user amendment; revised plan required')).lastrowid
+                (chat_id,project,effective,json.dumps(combined),'Explicit user amendment; revised plan required')).lastrowid
             db.execute("INSERT INTO specification_amendments(request_id,parent_request_id,root_request_id,ordinal,"
                 "original_sha256,amendment,amendment_sha256,effective_sha256) VALUES(?,?,?,?,?,?,?,?)",
                 (ident,parent['id'],root_id,len(history)+1,sha(original),amendment,sha(amendment),sha(effective)))

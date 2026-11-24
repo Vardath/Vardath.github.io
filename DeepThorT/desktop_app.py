@@ -1589,8 +1589,14 @@ class DeepThorTDesktop(tk.Tk):
         kind='chat' if mode=='chat' else 'draft_plan'
         try:
             attachments=[str(validate_attachment(x)) for x in self.attachments]
-            ident=self.conversations.submit(self.current_chat,self._project_key(),kind,prompt,
-                                            attachments=attachments)
+            previous=self.conversations.latest_project_request(self.current_chat,self._project_key()) if kind=='draft_plan' else None
+            if previous:
+                ident=self.conversations.amend_project(self.current_chat,self._project_key(),prompt,
+                                                       attachments=attachments)
+                self._log(f'Continued existing specification as revision #{ident}; original requirements preserved.')
+            else:
+                ident=self.conversations.submit(self.current_chat,self._project_key(),kind,prompt,
+                                                attachments=attachments)
         except Exception as exc:
             messagebox.showerror('Cannot save conversation',str(exc));return
         self.input.delete('1.0','end')
@@ -1696,7 +1702,8 @@ class DeepThorTDesktop(tk.Tk):
                 return
         if not amendment:return
         try:
-            ident=self.conversations.amend_project(self.current_chat,self._project_key(),amendment)
+            ident=self.conversations.amend_project(self.current_chat,self._project_key(),amendment,
+                attachments=[str(validate_attachment(x)) for x in self.attachments])
         except (OSError,ValueError) as exc:
             messagebox.showerror('Cannot save amendment',str(exc),parent=self)
             return
@@ -2279,6 +2286,16 @@ class DeepThorTDesktop(tk.Tk):
                 self.events.put(('conversation_stage',ident,'Waiting for local model inference (response not yet returned)'))
                 checkpoint = (self.instruction_inbox.planning_checkpoint(request['project'],request['chat_id'])
                               if request['mode']=='draft_plan' or large_spec else None)
+                prior_steps=[]
+                if request['mode']=='draft_plan':
+                    from deepthort_local.amendment_context import predecessor_steps,attach_history
+                    prior_steps=predecessor_steps(self.conversations,self.specifications,self.hierarchies,ident)
+                    if prior_steps and not large_spec:
+                        prompt=attach_history(prompt,request['project'],prior_steps,original[-1500:],
+                                              max_chars=MAX_INFERENCE_PROMPT)
+                    if prior_steps:
+                        record(STATE,'desktop','amendment_prior_plan_loaded',request_id=ident,
+                               historical_steps=len(prior_steps),approvals_inherited=False)
                 def review_plan(proposed,section=''):
                     for item in proposed:
                         self._sentinel_alignment(original,request['project'],session,
@@ -2298,7 +2315,8 @@ class DeepThorTDesktop(tk.Tk):
                         neural_council=bool(x4_context),
                         inspected_evidence=inspected_x4_evidence,council_provider=self._planning_council_client,
                         geometry_report=geometry_report,
-                        checkpoint=checkpoint, reviewer=review_plan if request['mode']=='draft_plan' else None)
+                        checkpoint=checkpoint, reviewer=review_plan if request['mode']=='draft_plan' else None,
+                        prior_steps=prior_steps)
                 else:
                     answer, _ = generate_model_plan(
                         self.client, session, original, request['project'], prompt,

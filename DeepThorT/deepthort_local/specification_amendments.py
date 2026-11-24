@@ -14,7 +14,7 @@ PRECEDENCE=(
     'USER SPECIFICATION REVISION: The verbatim original and amendments below '
     'are all authoritative user input. Where they conflict, the newest explicit '
     'amendment wins ONLY for the affected requirement. Preserve every other '
-    'original requirement and all compatible completed work. The earlier plan '
+    'original requirement and all compatible completed work, unless the user explicitly directs otherwise. The earlier plan '
     'is historical evidence, not authority to ignore a newer instruction.\n'
 )
 
