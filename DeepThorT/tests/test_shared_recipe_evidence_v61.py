@@ -25,8 +25,9 @@ class SharedRecipeEvidenceTests(unittest.TestCase):
         self.source=self.project/'source.py';self.source.write_text('print(1)')
 
     def recipe(self,output):
-        self.store.start_learning(1,'Python',self.project,'Produce requested file')
-        return self.store.propose_recipe(1,json.dumps(dict(title='Generate output',purpose='Produce requested file',
+        request_id=len(self.janus.actions())+1
+        self.store.start_learning(request_id,'Python',self.project,'Produce requested file')
+        return self.store.propose_recipe(request_id,json.dumps(dict(title='Generate '+output,purpose='Produce requested file',
                             args=['{{input}}','{{output}}'],artifact=output)))
 
     def run_recipe(self,ident):
