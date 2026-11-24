@@ -39,7 +39,7 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
                   cancelled=None,stage=None):
     """Draft bounded procedure candidates using previously approved help.
     No executable, script, installer or project write is authorized here."""
-    from .tool_acquisition import HELP_FLAGS
+    from .tool_acquisition import HELP_FLAGS,SCRIPT_SUFFIXES
     from .structured_source import strict_json
     root=Path(request['project']).resolve(strict=True)
     names=set(HELP_FLAGS)|{r['name'] for r in acquisition.enrolled()}
@@ -79,12 +79,30 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
                         'help_sha':help_record['sha256'],'binding':source_binding(request)})
             existing=drafts.gap_result(key)
             if existing:
-                result.append(existing);continue
+                item=dict(existing)
+                if item['state'] in ('candidate','needs_script_review'):
+                    row=acquisition._recipe_row(item['recipe_id'],root)
+                    if row['artifact']!=expected or row['name']!=name:
+                        raise ValueError('Stored procedure no longer matches missing stage')
+                    if item.get('recipe_sha') and item['recipe_sha']!=digest(
+                        [row['args_json'],row['artifact'],row['script_path'],row['script_sha'],row['executable_signature']]):
+                        raise ValueError('Stored procedure changed; review its new source separately')
+                    item['state']='needs_script_review' if acquisition.script_needs_review(item['recipe_id'],root) else 'candidate'
+                result.append(item);continue
+            script_suffixes=SCRIPT_SUFFIXES.get(name,set())
+            script_instruction=(
+                'If command arguments alone cannot perform the operation, include optional script: '
+                '{"path":"new project-relative filename","source":"complete source"}; '
+                'allowed suffixes: '+', '.join(sorted(script_suffixes))+
+                '. Use {{script}} as a complete argument. Script must accept the actual input/output arguments '
+                'from the command and must not write unrelated files. Use a new path and at most 6000 UTF-8 bytes. '
+                'The complete source will need separate approval before writing. '
+                if script_suffixes else 'No generated script for this application. ')
             prompt=('JANUS: prepare one UNVERIFIED learned tool procedure for the exact missing stage. '
                     'Return only JSON with title, purpose, args (array of strings), artifact. '
                     'Use the installed tool interface shown by the approved help. '
                     'Use {{output}} as a complete argument, and {{input}} if needed. '
-                    'No new script, shell, network URL or invented executable. '
+                    'No shell, network URL or invented executable. '+script_instruction+
                     'If this cannot be achieved from help, return NONE. '
                     'The user must review the command before execution.\n'
                     f'Tool: {name}\nGoal: {gap["goal"]}\nExact artifact: {expected}\n'
@@ -94,14 +112,39 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
                                   evidence_sha=sha(key+sha(prompt)),prompt=prompt,stage=stage)
             if response.strip()=='NONE':raise ValueError('Local help did not establish a usable procedure')
             obj=strict_json(response.strip().removeprefix('```json').removesuffix('```').strip())
-            if not isinstance(obj,dict) or set(obj)!={'title','purpose','args','artifact'}:
-                raise ValueError('Expected a complete command-only recipe')
+            required={'title','purpose','args','artifact'}
+            if not isinstance(obj,dict) or set(obj) not in (required,required|{'script'}):
+                raise ValueError('Expected a complete recipe with optional automation script')
             if obj['artifact']!=expected or not isinstance(obj['args'],list) or '{{output}}' not in obj['args']:
                 raise ValueError('Procedure does not produce the specified artifact')
+            if 'script' in obj:
+                script=obj['script']
+                if not script_suffixes or not isinstance(script,dict) or set(script)!={'path','source'}:
+                    raise ValueError('Unsupported automation script proposal')
+                if not isinstance(script['path'],str) or not isinstance(script['source'],str):
+                    raise ValueError('Invalid automation script path or source')
+                script_path=safe_target(root,script['path'])
+                if (script_path.suffix.casefold() not in script_suffixes or script_path.exists() or
+                        script_path.is_symlink() or script_path==output):
+                    raise ValueError('Automation script must be a new, supported project file')
+                if '{{script}}' not in obj['args']:raise ValueError('Script requires explicit command placeholder')
+                if not 0<len(script['source'].encode('utf-8'))<=6000:
+                    raise ValueError('Automation script exceeds source bound')
+                if any(r.get('script_path') and safe_target(root,r['script_path'])==script_path
+                       for r in acquisition.recipes(root,include_stale=True)):
+                    raise ValueError('Automation script path collides with another recipe')
             review(json.dumps({'missing_stage':gap,'tool':name,'procedure':obj},ensure_ascii=False),'plan')
             if cancelled and cancelled():break
+            if not isinstance(obj['title'],str):raise ValueError('Invalid procedure title')
+            if any(r['name']==name and r['title'].strip().casefold()==obj['title'].strip().casefold()
+                   for r in acquisition.recipes(root,include_stale=True)):
+                raise ValueError('Procedure title already exists; choose a distinct recipe')
             recipe_id=acquisition.propose_recipe_for_goal(name,root,gap['goal'],json.dumps(obj))
-            item={'gap':index,'state':'candidate','capability':name,'recipe_id':recipe_id}
+            row=acquisition._recipe_row(recipe_id,root)
+            recipe_sha=digest([row['args_json'],row['artifact'],row['script_path'],row['script_sha'],row['executable_signature']])
+            item={'gap':index,'state':'needs_script_review' if 'script' in obj else 'candidate',
+                  'capability':name,'recipe_id':recipe_id,'recipe_sha':recipe_sha}
+            if 'script' in obj:item['script_path']=row['script_path']
             drafts.save_gap(key,item);result.append(item)
         except (ValueError,OSError,KeyError,TypeError) as error:
             result.append({'gap':index,'state':'needs_investigation','capability':name,'reason':str(error)[:200]})
