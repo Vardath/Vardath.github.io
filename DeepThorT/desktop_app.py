@@ -2783,8 +2783,8 @@ class DeepThorTDesktop(tk.Tk):
                 parent=self)
 
     def _project_work_tick(self):
-        if self.__dict__.get('_native_draft_busy'):return
         try:
+            if self.__dict__.get('_native_draft_busy'):return
             self._project_work_once()
         except Exception as exc:
             record(STATE, 'desktop', 'project_work_scheduler_error', level='ERROR',
