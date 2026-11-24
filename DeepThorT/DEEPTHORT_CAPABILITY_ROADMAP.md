@@ -32,3 +32,6 @@ Each pass requires actual source integration, adversarial regression tests, gree
 
 ## Current limits
 This pass does not run OpenCode, LLM, Codex, Cursor or Claude Code side-by-side. The actual ONNX model's end-to-end ability and native Windows/Godot/Blender functionality remain unproven. Priority is capability and evidence, not adding more models or duplicating features already implemented.
+
+### Progress update — named Python evidence
+Verbose Python verification requires named passing observations for approved supported test files, a persisted trace digest and current regression inputs, and displays current/stale evidence in Work queue. GUT/.NET/npm named receipts and reviewed unlabelled requirement mapping remain backlog. Next high-leverage pass: repository intelligence (priority 2).

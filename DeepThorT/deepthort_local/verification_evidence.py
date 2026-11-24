@@ -40,7 +40,11 @@ def assess_verification(command: list[str], exit_code: int,
         counts=[int(m) for m in _UNITTEST.findall(lines)]
         count=counts[-1] if counts else 0
         result['test_count']=count
-        if count<1 or not re.search(r'(?m)^OK(?:\s*\([^\n]*\))?\s*$',lines):
+        verbose=args[1:]==['-m','unittest','discover','-v']
+        from .test_execution_trace import named_results
+        named=named_results(lines.splitlines()) if verbose else {}
+        if (count<1 or not re.search(r'(?m)^OK\s*$',lines) or
+            (verbose and (len(counts)!=1 or len(named)!=count or any(v!='passed' for v in named.values())))):
             result.update(accepted=False,assurance='unverified',
                           reason='Python unittest produced no evidenced passing test cases')
         else:
@@ -107,6 +111,9 @@ def attach_verification(snapshot: dict, assessment: dict, command: list[str], *,
         'argv_sha256':hashlib.sha256(json.dumps(command,ensure_ascii=False,
                             separators=(',',':')).encode()).hexdigest(),
     }
+    if 'named_tests' in assessment:
+        if assessment['assurance']!='python_tests_passed':raise ValueError('Named unittest receipt requires Python verification')
+        result['verification']['named_tests']=assessment['named_tests']
     if assessment['assurance']=='godot_scene_instantiated':
         if not isinstance(assessment.get('integration'),dict):
             raise ValueError('Scene integration requires stable project input evidence')

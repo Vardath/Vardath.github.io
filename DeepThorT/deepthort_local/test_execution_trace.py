@@ -42,7 +42,7 @@ def build_trace(job,steps,original,output,exit_code):
     # A truncated tail is not a complete run. Positive claims require a
     # matching nonempty summary and exact unique names.
     counts=[int(m[1]) for line in lines if (m:=SUMMARY.match(line.strip()))]
-    complete=bool(counts and counts[-1]==len(observed) and not output.get('truncated'))
+    complete=bool(verbose and len(counts)==1 and counts[0]>0 and counts[0]==len(observed) and not output.get('truncated'))
     rows=[]
     links={}
     candidates=requirement_candidates(original,[(i,start,end) for i,(start,end) in enumerate(sections(original))])
@@ -89,3 +89,53 @@ def build_trace(job,steps,original,output,exit_code):
             'counts':dict(Counter(t['status'] for f in rows for t in f['tests'])),
             'requirement_counts':dict(Counter(r['status'] for r in requirements)),
             'scope':'Exact observed unittest names; file-level declared links only, no proof of semantic coverage'}
+
+
+def fingerprint(trace):
+    return hashlib.sha256(json.dumps(trace,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+
+def current_sources(project,hashes):
+    try:
+        if not isinstance(hashes,dict) or not 1<=len(hashes)<=10000:return False
+        root=Path(project).resolve(strict=True)
+        for rel,expected in hashes.items():
+            target=safe_target(root,rel,must_exist=True)
+            if target.stat().st_size>220000 or hashlib.sha256(target.read_bytes()).hexdigest()!=expected:return False
+        return True
+    except (OSError,ValueError,TypeError):return False
+
+def receipt(trace,assessment,command):
+    if (command[1:]!=['-m','unittest','discover','-v'] or not assessment.get('accepted')
+        or assessment.get('assurance')!='python_tests_passed' or not trace.get('complete_named_run')
+        or trace['exit_code']!=0
+        or trace['argv_sha256']!=hashlib.sha256(json.dumps(command).encode()).hexdigest()):
+        raise ValueError('Named test execution receipt is incomplete')
+    if any(t['status']!='passed' for f in trace['files'] for t in f['tests']):
+        raise ValueError('Approved behavioral tests lack passing named execution evidence')
+    if any(f['state']!='written' for f in trace['files'] if test_kind(f['path'])=='python'):
+        raise ValueError('Approved Python test file has no discoverable validated cases')
+    return {'trace_sha256':fingerprint(trace),'spec_sha256':trace['spec_sha256'],
+            'source_hashes':trace['source_hashes'],'counts':trace['counts'],
+            'requirement_counts':trace['requirement_counts']}
+
+def describe(trace,job,original):
+    if (trace['job_id']!=job['id'] or trace['project']!=str(Path(job['project']).resolve())
+        or trace['spec_sha256']!=hashlib.sha256(original.encode()).hexdigest()
+        or not current_sources(job['project'],trace['source_hashes'])):
+        return 'STALE — source or specification changed; rerun verification.'
+    lines=['Current named test observations (not semantic coverage):']
+    if job['state']=='complete':
+        try:
+            proof=json.loads(job['result'])['verification']['named_tests']
+            if proof['trace_sha256']!=fingerprint(trace):raise ValueError('Trace differs')
+            lines.append('Bound to completed verification receipt.')
+        except (ValueError,KeyError,TypeError):lines.append('Diagnostic only; not bound to current accepted verification.')
+    else:lines.append('Diagnostic only; job not complete.')
+    lines.append('Test results: '+json.dumps(trace['counts'],sort_keys=True))
+    lines.append('Requirement links: '+json.dumps(trace['requirement_counts'],sort_keys=True))
+    for row in trace['requirements'][:50]:
+        lines.append(row['label']+': '+row['status']+' — '+', '.join(row['test_files']))
+    for f in trace['files'][:24]:
+        for t in f['tests'][:30]:lines.append(t['test']+': '+t['status'])
+    lines.append('Unlabelled requirement candidates: '+str(trace['unlabelled_candidates']))
+    return '\n'.join(lines)

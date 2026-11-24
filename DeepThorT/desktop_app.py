@@ -2831,6 +2831,16 @@ class DeepThorTDesktop(tk.Tk):
         detail=(f"Job #{job['id']} | {job['state']} | {job['mode']}\n"
                 f"Created: {job['created_at']}\nProject: {job['project']}\nTarget: {job['target'] or '-'}\n"
                 f"Message: {job['detail']}\n\nPLAN STEPS:\n{step_text}\n\nREQUEST:\n{job['prompt'][:8000] + (' [DISPLAY PREVIEW ONLY; full request is stored in SQLite]' if len(job['prompt'])>8000 else '')}\n\nRESULT:\n{job['result']}\n\nEVENTS:\n{events}")
+        if job['mode']=='build':
+            try:
+                from deepthort_local.test_execution_trace import describe
+                from deepthort_local.specification_guard import master_for_job
+                trace=read_snapshot(STATE/'test-execution-traces'/f"job-{job['id']}.json")
+                if trace:
+                    if self._superseded_build(job):detail+='\n\nNAMED TEST TRACE: STALE — specification superseded'
+                    else:detail+='\n\nNAMED TEST TRACE:\n'+describe(trace,job,master_for_job(job,self.conversations,self.hierarchies,self.specifications))
+            except (ValueError,OSError,KeyError,TypeError) as error:
+                detail+='\n\nNAMED TEST TRACE unavailable: '+str(error)[:200]
         self._show(self.job_details,detail)
     def _cancel_active(self):
         if self.active_job is None:return
@@ -6459,6 +6469,7 @@ class DeepThorTDesktop(tk.Tk):
                 if tooltype=='verification' and job_id is not None:
                     snapshot=None
                     check=None
+                    trace=None
                     if isinstance(verification_output,dict):
                         check=assess_verification(verification_output.get('argv') or [],
                                                   code,verification_output.get('lines') or [])
@@ -6472,10 +6483,13 @@ class DeepThorTDesktop(tk.Tk):
                                 and stable(verification_output['regression_scope'],verification_output['regression_before'],verification_output['regression_after'])):
                                 master=master_for_job(traced_job,self.conversations,self.hierarchies,self.specifications)
                                 trace=build_trace(traced_job,self.jobs.steps(job_id),master,verification_output,code)
+                                if len(json.dumps(trace,ensure_ascii=False).encode())>96000:
+                                    raise ValueError('Named test trace exceeds current storage bound')
                                 if not save_snapshot(STATE/'test-execution-traces'/f'job-{job_id}.json',trace):
                                     raise OSError('Could not persist test trace')
                                 self._log(f"Job #{job_id}: named test evidence: {trace['counts']}; linked requirement evidence: {trace['requirement_counts']}.")
                         except (ValueError,OSError,KeyError,TypeError) as error:
+                            trace=None
                             self._log(f'Job #{job_id}: named test trace unavailable: {error}')
                     if code==0 and (check is None or check['accepted']):
                         try:
@@ -6504,9 +6518,14 @@ class DeepThorTDesktop(tk.Tk):
                                         or not current(current_job['project'],integration)):
                                         raise ValueError('Godot scene integration inputs changed or evidence incomplete')
                                     check['integration']=integration
+                                if verification_output['argv']==[sys.executable,'-m','unittest','discover','-v']:
+                                    from deepthort_local.test_execution_trace import receipt
+                                    if trace is None:raise ValueError('No durable named unittest trace')
+                                    check['named_tests']=receipt(trace,check,verification_output['argv'])
                                 snapshot=attach_verification(snapshot,check,
                                     verification_output['argv'],engine_report=engine)
                         except (OSError,ValueError) as exc:
+                            snapshot=None
                             self._log(f'Approved test exited 0 but source evidence was not captured: {exc}')
                     current_job=self.jobs.get(job_id)
                     outcome=(code==0 and snapshot is not None)

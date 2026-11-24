@@ -318,8 +318,20 @@ def verified_sources_current(project: str | Path, steps: list[dict], snapshot: d
         engine_keys={'engine','engine_sources'}
         extras=set(evidence)-required
         integration_keys={'integration','scene_observed'}
-        if not required.issubset(evidence) or extras not in (set(),engine_keys,integration_keys,engine_keys|integration_keys):
+        named_keys={'named_tests'}
+        if not required.issubset(evidence) or extras not in (set(),engine_keys,integration_keys,engine_keys|integration_keys,named_keys,engine_keys|named_keys):
             return False
+        if 'named_tests' in evidence:
+            from .test_execution_trace import current_sources
+            named=evidence['named_tests']
+            if (evidence['assurance']!='python_tests_passed' or not isinstance(named,dict) or
+                set(named)!={'trace_sha256','spec_sha256','source_hashes','counts','requirement_counts'} or
+                any(not isinstance(named[k],str) or not re.fullmatch(r'[0-9a-f]{64}',named[k]) for k in ('trace_sha256','spec_sha256')) or
+                not current_sources(project,named['source_hashes']) or
+                any(named['source_hashes'].get(k)!=v for k,v in expected['files'].items())):return False
+            for key in ('counts','requirement_counts'):
+                if not isinstance(named[key],dict) or any(type(v) is not int or v<0 for v in named[key].values()):return False
+            if set(named['counts'])-{'passed'}:return False
         if evidence['assurance']=='godot_scene_instantiated':
             from .godot_integration import current,FRAMES
             if not integration_keys.issubset(evidence) or not current(project,evidence['integration']):return False
