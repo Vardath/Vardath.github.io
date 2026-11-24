@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install same pinned Transformers.js runtime
-        run: npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund --onnxruntime-node-install-cuda=skip
       - name: Verify independent scoring
         run: python -m unittest tests.test_model_benchmark_v61 -q
       - name: Run real CPU ONNX inference (synthetic tasks only)

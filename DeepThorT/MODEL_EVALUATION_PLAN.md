@@ -20,3 +20,7 @@ On the actual updated Windows installation, close DeepThorT and both workers fir
     py -3 model_benchmark_score.py benchmark-local/results/baseline.json
 
 Repeat with coder3b and qwen3-4b. The download verifies pinned file hashes and stores experimental files separately. Offline Windows inference uses the existing Job Object 30% CPU/commit limits. Single-worker test does not establish dual-worker feasibility. Do not run simultaneously with production or games. No automatic model activation. Next: compare actual results, troubleshoot load failures, add realistic multi-file project and autonomous repair tests, verify both-worker Windows resource feasibility before promotion.
+
+
+### First hosted attempt
+Run 45487080395 failed before model inference for all three profiles: ONNX Runtime 1.21.0 installer attempted to fetch unnecessary Linux CUDA binaries and received HTTP 404. Normal source CI 45487080483 passed 927 tests across 147 modules. Benchmark-only installation now explicitly skips CUDA using the installer-recommended option; production dependencies unchanged. Rerun all three profiles; no model scores yet.
