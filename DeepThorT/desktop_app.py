@@ -3160,6 +3160,16 @@ class DeepThorTDesktop(tk.Tk):
                     not self.janus.status().get('paused') and
                     now-self._last_planning_recovery>=60):
                 self._last_planning_recovery=now
+                from deepthort_local.interrupted_build import resume_interrupted
+                recovered_build=resume_interrupted(self.jobs,self.graphs,self.checkpoints,self.cycles,
+                    STATE/'project-grants',enabled=True)
+                if recovered_build:
+                    record(STATE,'desktop','interrupted_build_reconciled',**recovered_build)
+                    self._log(f"JANUS resumed approved build #{recovered_build['job_id']}; "
+                              f"{recovered_build['saved']} saved stages reconciled; "
+                              f"{recovered_build['planned']} stages remaining.")
+                    self._refresh_jobs()
+                    return
                 from deepthort_local.planning_recovery import resume_stalled_draft
                 recovered=resume_stalled_draft(self.conversations.path,self.specifications)
                 if recovered:

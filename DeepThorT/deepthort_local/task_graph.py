@@ -373,6 +373,15 @@ class TaskGraphStore:
                                   'Prior process/write may have survived interruption; manual inspection required')
             return [j for _,j,_ in rows]
 
+    def recovery_snapshot(self,job,steps):
+        """Validate the sealed graph's job/plan binding before restart recovery."""
+        with self._db() as db:
+            self._assert_bound(db,job,steps)
+            if db.execute("SELECT 1 FROM leases WHERE job_id=? AND status IN ('running','interrupted')",
+                          (job['id'],)).fetchone():
+                raise GraphError('Prior graph action is uncertain; recovery cannot replay it')
+        return self.status(job['id'])
+
     def status(self,jobid):
         with self._db() as db:
             row=db.execute('SELECT state FROM graphs WHERE job_id=?',(jobid,)).fetchone()

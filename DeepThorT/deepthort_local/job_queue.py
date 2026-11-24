@@ -191,6 +191,25 @@ class JobStore:
                 params.extend(skip_modes)
             row=db.execute(sql+' ORDER BY id LIMIT 1',params).fetchone()
             return dict(row) if row else None
+    def interrupted_builds(self,limit=40):
+        from .interrupted_build import INTERRUPTED
+        with self._conn() as db:
+            db.row_factory=sqlite3.Row
+            return [dict(r) for r in db.execute(
+                "SELECT * FROM jobs WHERE mode='build' AND state='paused' AND detail=? ORDER BY id LIMIT ?",
+                (INTERRUPTED,limit))]
+
+    def requeue_interrupted_build(self,ident):
+        from .interrupted_build import INTERRUPTED
+        detail='Restart recovery: approved source, grant and task graph agree; resume inference'
+        with self._conn() as db:
+            changed=db.execute("UPDATE jobs SET state='queued',detail=?,updated_at=CURRENT_TIMESTAMP "
+                "WHERE id=? AND mode='build' AND state='paused' AND detail=?",
+                (detail,ident,INTERRUPTED)).rowcount
+            if changed:
+                db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',(ident,detail))
+        return bool(changed)
+
     def freeze_unapproved_legacy_builds(self):
         """Prevent pre-approval v10.3 builds from auto-executing after upgrade."""
         with self._conn() as db:
