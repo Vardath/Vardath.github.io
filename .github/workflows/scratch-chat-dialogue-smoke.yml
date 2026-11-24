@@ -6,6 +6,9 @@ on:
     paths:
       - 'Scratch-Chat/capability/dialogue_corpus.py'
       - 'Scratch-Chat/capability/dialogue_tokenizer.py'
+      - 'Scratch-Chat/capability/prepare_chat_training.py'
+      - 'Scratch-Chat/capability/prepare_dialogue_splits.py'
+      - 'Scratch-Chat/data/original_cc0_multiturn_20261124.jsonl'
       - 'Scratch-Chat/capability/dialogue_acceptance.py'
       - 'Scratch-Chat/capability/modern_train.py'
       - 'Scratch-Chat/capability/deepthort_bridge.py'
@@ -37,9 +40,10 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_original_multiturn_seed_pipeline.py' -v
           python -m unittest discover -s tests -p 'test_dialogue_readiness.py' -v
-      - name: Build CC0 dialogue and train isolated tokenizer on training split
+      - name: Audit and convert repaired CC0 multi-turn conversations; fit train-only tokenizer
         run: |
-          python -m capability.dialogue_corpus --out data/dialogue-smoke
+          python -m capability.prepare_dialogue_splits data/original_cc0_multiturn_20261124.jsonl data/repaired-splits --seed original-cc0-20261124
+          python -m capability.prepare_chat_training data/repaired-splits data/dialogue-smoke > dialogue-chat-conversion.json
           python -m capability.dialogue_tokenizer --corpus data/dialogue-smoke --output data/dialogue-smoke/tokenizer.json > dialogue-tokenizer-provenance.json
       - name: Train separate random-initialized dialogue checkpoint
         run: |
@@ -82,7 +86,9 @@ jobs:
           path: |
             Scratch-Chat/checkpoints/dialogue-smoke.pt
             Scratch-Chat/data/dialogue-smoke/tokenizer.json
-            Scratch-Chat/data/dialogue-smoke/source.json
+            Scratch-Chat/data/dialogue-smoke/provenance.json
+            Scratch-Chat/dialogue-chat-conversion.json
+            Scratch-Chat/data/repaired-splits/split_report.json
             Scratch-Chat/dialogue-tokenizer-provenance.json
             Scratch-Chat/dialogue-smoke-train.json
             Scratch-Chat/dialogue-smoke-evaluation.json
