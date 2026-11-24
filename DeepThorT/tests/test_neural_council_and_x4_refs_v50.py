@@ -88,11 +88,11 @@ class NeuralCouncil(unittest.TestCase):
             def __init__(self):self.calls=[]
             def chat(self,session,prompt,*,max_tokens):
                 self.calls.append((session,prompt,max_tokens))
-                if 'JANUS / ACTIVE REASONING' in prompt:
-                    return 'Try verifying the PE MD mission first; cite actual source'
-                if 'SENTINEL / INDEPENDENT' in prompt:
-                    return 'Do not claim ship slots verified without original component XML'
-                if 'UNVERIFIED JANUS HYPOTHESES' in prompt:
+                if prompt.startswith('JANUS: translate the original requirement'):
+                    return 'Plan an independent PE variant and MD respawn; verify exact vanilla equipment connections before build.'
+                if prompt.startswith('SENTINEL: independently inspect'):
+                    return 'ACCEPT\nDo not claim ship slots verified without original component XML.'
+                if 'JANUS RETRANSLATED NEXT TASK' in prompt:
                     return json.dumps({'files':[
                         {'path':'content.xml','description':'X4 extension metadata validated with installed vanilla PE game references'},
                         {'path':'md/pe_spawn.xml','description':'Mission Director PE player-owned ship respawn and preservation of equipment'},

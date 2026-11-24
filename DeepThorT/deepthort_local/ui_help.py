@@ -9,6 +9,13 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    "Review / materialize native draft": "Review the exact staged native assets and materialize only approved matching files into the project. This is not gameplay verification.",
+    "Amend specification": "Append an explicit user correction to the current specification. Previous instructions remain in force except where overridden; old build approvals become stale.",
+    "Roadmap automation": "Review and approve an exact ordered roadmap once, or pause its automatic advancement. Each successor requires current verification of predecessors.",
+    "Enroll app…": "Register an explicitly selected installed Windows executable and documented help flag for later investigation. This does not run or install it.",
+    "Tool workflows…": "Review and approve an ordered sequence of existing learned tool recipes, or stop an active workflow. Outputs are checked between stages.",
+    "JANUS workflow…": "Ask JANUS to propose a specification-bound tool workflow, identify missing procedures, or review a finished draft. No model proposal authorizes execution.",
+    "Discovered packages…": "Inspect exact package IDs from persisted read-only software discovery. Installation requires a separate action.",
     'User guide': 'Open the illustrated offline user guide in your default browser (F1). No internet connection is needed.',
     'Cancel': 'Dismiss this review without authorizing a change or command.',
     'Approve WRITE ONLY': 'Save the exact reviewed script in the selected workspace with a backup. This does not run the script.',

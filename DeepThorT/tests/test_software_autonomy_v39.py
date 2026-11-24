@@ -99,6 +99,8 @@ class DesktopIntegrationTests(unittest.TestCase):
         obj._autonomy_policy=default_policy()
         obj._auto_tool_history={};obj._auto_tool_queue=[];obj._auto_tool_active=None
         obj._auto_tool_waiting=[];obj._auto_verification_in_flight=None
+        obj.active_job=None;obj.active_conversation=None;obj._tool_probe_active=None
+        obj.tool_workflows.busy.return_value=False
         obj.project=Path('/tmp/example-project')
         obj.inventory={'tools':[]};obj.queue_paused=False
         obj._quitting=False;obj.install_process=None;obj.tool_process=None

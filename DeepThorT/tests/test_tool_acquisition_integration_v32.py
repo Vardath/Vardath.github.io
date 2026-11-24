@@ -110,7 +110,11 @@ class ToolAcquisitionDesktopTests(unittest.TestCase):
                     model_reply=json.dumps({'title':'Generate asset','purpose':'Create exported project asset',
                                              'args':['--background','--version'],'artifact':''})
                     req=app.conversations.get(rid)
-                    with patch.object(app.client,'chat',return_value=model_reply):
+                    def model(session,prompt,**kwargs):
+                        if prompt.startswith('SENTINEL: independently guard'):
+                            return 'ACCEPT\nCandidate only; no execution authorized.'
+                        return model_reply
+                    with patch.object(app.client,'chat',side_effect=model) as inference:
                         app._execute_conversation(req)
                         deadline=time.monotonic()+4
                         while app.conversations.get(rid)['state']=='running' and time.monotonic()<deadline:
@@ -118,6 +122,7 @@ class ToolAcquisitionDesktopTests(unittest.TestCase):
                             app._handle_events()
                         app._handle_events()
                     self.assertEqual(app.conversations.get(rid)['state'],'responded')
+                    self.assertTrue(any(call.args[1].startswith('SENTINEL: independently guard') for call in inference.call_args_list))
                     self.assertEqual(app.tool_learning.recipes(project)[0]['status'],'candidate')
                     self.assertEqual(len(app.janus.actions()),1)  # only help was approved
                     self.assertEqual(len(app.jobs.items(str(project))),0)

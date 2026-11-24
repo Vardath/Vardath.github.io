@@ -13,6 +13,7 @@ class FakeLocalModel:
  def __init__(self):self.calls=[]
  def chat(self,thread,prompt,max_tokens=384):
   self.calls.append(prompt)
+  if prompt.startswith('SENTINEL: independently guard'):return 'ACCEPT\nFixture proposal fits the requested Python project.'
   if 'Return ONLY valid JSON' in prompt:
    return json.dumps({'files':[{'path':'main.py','description':'A Python hello world script'},
                               {'path':'test_main.py','description':'A regression test for the script'}]})
@@ -74,7 +75,8 @@ class RealGuiQueueTests(unittest.TestCase):
      for state in tick():
       if state in ('complete','needs_input'):break
      self.assertEqual(app.jobs.get(ident)['state'],'complete')
-     self.assertEqual(len(client.calls),3)
+     self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in client.calls),3)
+     self.assertGreaterEqual(sum(p.startswith('SENTINEL: independently guard') for p in client.calls),6)
     finally:app._quit()
 
 if __name__=='__main__':unittest.main()

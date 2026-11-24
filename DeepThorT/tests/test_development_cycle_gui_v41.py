@@ -12,6 +12,8 @@ class LocalFakeModel:
     def __init__(self):self.calls=[]
     def chat(self,thread,prompt,max_tokens=384):
         self.calls.append(prompt)
+        if prompt.startswith('SENTINEL: independently guard'):
+            return 'ACCEPT\nFixture proposal fits the addition program; test must determine correctness.'
         if 'You are repairing one file' in prompt:
             return json.dumps({'path':'main.py','code':'def add(a, b):\n    return a + b\n'})
         if 'Return ONLY valid JSON' in prompt:
@@ -85,7 +87,8 @@ class FullGuiDevelopmentCycleTests(unittest.TestCase):
                     self.assertEqual((cycle['tests'],cycle['repairs'],cycle['phase']),
                                      (2,1,'verified'))
                     self.assertTrue(list((root/'state'/'backups').rglob('main.py')))
-                    self.assertEqual(len(model.calls),4)  # plan, 2 files, 1 repair
+                    self.assertEqual(sum(not p.startswith('SENTINEL: independently guard') for p in model.calls),4)
+                    self.assertGreaterEqual(sum(p.startswith('SENTINEL: independently guard') for p in model.calls),7)
                 finally:
                     app._quit()
 
