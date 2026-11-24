@@ -5,6 +5,7 @@ audibility, installability or general functional acceptance.
 """
 from __future__ import annotations
 import hashlib
+import math
 import os
 import struct
 import zipfile
@@ -13,11 +14,13 @@ from .workspace import safe_target
 from .action_guards import MAX_HASH_BYTES
 from .large_artifacts import identity,BoundedReader,MAX_CHUNKS
 from .artifact_media_checks import unpack_at
+from .artifact_content_checks import PNG_CONTENT,OBJ_EXTENTS,png_content,obj_extents,MAX_PIXELS,MAX_COLORS
 
 RULES={
-    '.png':{'width':(1,16384),'height':(1,16384)},
+    '.png':{'width':(1,16384),'height':(1,16384),'min_visible_pixels':(1,MAX_PIXELS),
+            'min_distinct_visible_colors':(1,MAX_COLORS)},
     '.dds':{'width':(1,16384),'height':(1,16384)},
-    '.obj':{'min_vertices':(1,10000000),'min_faces':(1,10000000)},
+    '.obj':{'min_vertices':(1,10000000),'min_faces':(1,10000000),**{name:(0,1e12) for name in OBJ_EXTENTS}},
     '.wav':{'channels':(1,32),'sample_rate':(1,768000),'min_frames':(1,100000000)},
     '.zip':{'required_members':None},'.apk':{'required_members':None},
     '.aab':{'required_members':None},'.jar':{'required_members':None},
@@ -28,7 +31,7 @@ class AcceptanceMismatch(ValueError):
     pass
 
 def validate(output,checks):
-    if not isinstance(checks,dict) or not checks or len(checks)>4:
+    if not isinstance(checks,dict) or not checks or len(checks)>8:
         raise ValueError('Expected nonempty bounded artifact acceptance checks')
     allowed=RULES.get(PurePosixPath(output).suffix.casefold(),{})
     for name,value in checks.items():
@@ -41,14 +44,22 @@ def validate(output,checks):
                     any(ord(c)<32 for c in member)):
                     raise ValueError('Unsafe required archive member')
             if len(set(value))!=len(value):raise ValueError('Duplicate required archive member')
+        elif name in OBJ_EXTENTS:
+            if type(value) not in (int,float) or not 0<=value<=1e12 or not math.isfinite(value):
+                raise ValueError('Invalid OBJ extent criterion: '+name)
         elif type(value) is not int or not allowed[name][0]<=value<=allowed[name][1]:
             raise ValueError('Invalid numeric artifact criterion: '+name)
+    for axis in 'xyz':
+        if checks.get('min_extent_'+axis,0)>checks.get('max_extent_'+axis,1e12):
+            raise ValueError('Contradictory OBJ extent criteria')
     return checks
 
-def measure(reader,stream,suffix):
+def measure(reader,stream,suffix,checks=None):
     if suffix=='.png':
         width,height=unpack_at('>II',reader,16)
-        return {'width':width,'height':height}
+        result={'width':width,'height':height}
+        if PNG_CONTENT.intersection(checks or {}):result.update(png_content(reader))
+        return result
     if suffix=='.dds':
         height,width=unpack_at('<II',reader,12)
         return {'width':width,'height':height}
@@ -62,7 +73,9 @@ def measure(reader,stream,suffix):
             fields=line.lstrip().split(None,1)
             if fields and fields[0]==b'v':vertices+=1
             elif fields and fields[0]==b'f':faces+=1
-        return {'min_vertices':vertices,'min_faces':faces}
+        result={'min_vertices':vertices,'min_faces':faces}
+        if OBJ_EXTENTS.intersection(checks or {}):result.update(obj_extents(stream))
+        return result
     if suffix=='.wav':
         pos=12;fmt=None;payload=None;chunks=0
         while pos<len(reader):
@@ -94,7 +107,7 @@ def verify(project,output,checks,structural):
     original=identity(before)
     with path.open('rb') as stream:
         if identity(os.fstat(stream.fileno()))!=original:raise ValueError('Artifact changed')
-        measured=measure(BoundedReader(stream,before.st_size),stream,path.suffix.casefold())
+        measured=measure(BoundedReader(stream,before.st_size),stream,path.suffix.casefold(),checks)
         stream.seek(0)
         hasher=hashlib.sha256();total=0
         while True:
@@ -115,7 +128,7 @@ def verify(project,output,checks,structural):
             if absent:raise AcceptanceMismatch('Artifact acceptance failed: missing archive members '+', '.join(absent)[:200])
             observed[name]=list(wanted)
         else:
-            if (actual<wanted if name.startswith('min_') else actual!=wanted):
+            if (actual<wanted if name.startswith('min_') else actual>wanted if name.startswith('max_') else actual!=wanted):
                 raise AcceptanceMismatch(f'Artifact acceptance failed: {name} expected {wanted}, observed {actual}')
             observed[name]=actual
     return {'artifact_sha256':structural['sha256'],'checks':checks,'observed':observed,
