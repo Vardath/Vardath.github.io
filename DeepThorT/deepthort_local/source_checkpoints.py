@@ -223,3 +223,22 @@ class SourceCheckpoints:
         return {'emergency':emergency['id'],'restored_checkpoint':checkpoint_id,
                 'receipt':receipt['id'],'actions':actions,
                 'assurance':'Source hashes restored only; tests and permissions MUST be reapproved'}
+
+
+    def comparison_baseline(self,job,steps,relative):
+        """Exact immutable approval baseline only; no restoration or write."""
+        records=self.list(job['id'])
+        self._verify_binding(job,steps,records)
+        row=records[0]
+        if row['reason']!='approval_baseline' or relative not in row['files']:
+            raise CheckpointError('Path has no approved source baseline')
+        expected=row['files'][relative]
+        if expected is None:return {'checkpoint':row['id'],'sha256':None,'text':''}
+        if not isinstance(expected,str) or len(expected)!=64 or any(c not in '0123456789abcdef' for c in expected):
+            raise CheckpointError('Invalid source baseline hash')
+        blob=self._job_dir(job['id'])/'objects'/expected
+        if not blob.is_file() or blob.is_symlink() or blob.stat().st_size>MAX_READ_BYTES:
+            raise CheckpointError('Baseline source unavailable')
+        data=blob.read_bytes()
+        if _digest(data)!=expected:raise CheckpointError('Baseline source corruption')
+        return {'checkpoint':row['id'],'sha256':expected,'text':data.decode('utf-8')}

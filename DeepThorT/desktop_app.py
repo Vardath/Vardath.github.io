@@ -251,6 +251,8 @@ class DeepThorTDesktop(tk.Tk):
         self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
         from deepthort_local.repository_index import RepositoryIndex
         self.repository_index=RepositoryIndex(STATE/'repository-index-v61.sqlite3')
+        from deepthort_local.agent_tool_receipts import ToolReceipts
+        self.agent_tool_receipts=ToolReceipts(STATE/'agent-tool-receipts-v61.sqlite3')
         self.plan_continuations = PlanContinuation(STATE)
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         from deepthort_local.roadmap_runs import RoadmapRuns
@@ -2843,6 +2845,11 @@ class DeepThorTDesktop(tk.Tk):
                     else:detail+='\n\nNAMED TEST TRACE:\n'+describe(trace,job,master_for_job(job,self.conversations,self.hierarchies,self.specifications))
             except (ValueError,OSError,KeyError,TypeError) as error:
                 detail+='\n\nNAMED TEST TRACE unavailable: '+str(error)[:200]
+        try:
+            history=self.agent_tool_receipts.describe(job['id'],job['project'])
+            if history:detail+='\n\nAGENT TOOL HISTORY:\n'+history
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            detail+='\n\nAGENT TOOL HISTORY unavailable: '+str(error)[:160]
         self._show(self.job_details,detail)
     def _cancel_active(self):
         if self.active_job is None:return
@@ -3295,11 +3302,13 @@ class DeepThorTDesktop(tk.Tk):
                             stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming() or self._superseded_build(job)
                             self.repository_index.refresh(job['project'],exclude=excluded,cancelled=stopped)
                             recovery_prompt+=gather(RepositoryTools(self.repository_index,job['project'],exclude=excluded,
-                                focus=next(iter(candidates)),cancelled=stopped),
+                                focus=next(iter(candidates)),cancelled=stopped,
+                                diagnostic=lambda:(self.cycles.get(jobid) or {}).get('diagnostic',''),
+                                baseline=lambda p:self.checkpoints.comparison_baseline(job,steps,p)),
                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                 session=f'repair-tools-{jobid}-{cycle["repairs"]}',original=master_for_job(job,self.conversations,self.hierarchies,self.specifications),
                                 goal=cycle['diagnostic'],seed=recovery_prompt[len(prompt):],budget=room,
-                                stage=lambda text:self.events.put(('log',text)))
+                                receipts=self.agent_tool_receipts,job_id=jobid,stage=lambda text:self.events.put(('log',text)))
                     except (ValueError,OSError) as error:
                         self.events.put(('log','Agent repository investigation unavailable: '+str(error)[:160]))
                     try:
@@ -3952,10 +3961,12 @@ class DeepThorTDesktop(tk.Tk):
                                             from deepthort_local.agent_repository_tools import RepositoryTools,gather
                                             from deepthort_local.reasoning_council import ReasoningCouncil
                                             request+=gather(RepositoryTools(self.repository_index,project,exclude=excluded,
-                                                focus=step['path'],cancelled=lambda:stopped() or self._superseded_build(j)),
+                                                focus=step['path'],cancelled=lambda:stopped() or self._superseded_build(j),
+                                                baseline=lambda p:self.checkpoints.comparison_baseline(j,steps,p)),
                                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                                 session=f'build-tools-{jobid}-{step["id"]}',original=original,goal=focus,
-                                                seed=context,budget=room,stage=lambda text:self.events.put(('log',text)))
+                                                seed=context,budget=room,receipts=self.agent_tool_receipts,job_id=jobid,
+                                                stage=lambda text:self.events.put(('log',text)))
                                         finally:advisor.release()
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
