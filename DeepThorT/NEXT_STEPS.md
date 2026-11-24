@@ -1,3 +1,7 @@
+# Continue from v59
+
+The full PE request now produces a measured LOD0 visual intermediate. Start from PROJECT_CONTEXT_V59.md and TEST_RESULTS_V59.md. The next milestone is a separate ship component with a bound rock part, a position measured against the cockpit and docking connections, and consistent lower LOD and collision geometry. The latest full-roadmap correction repeated the ship macro after receiving the mesh measurements. Test a focused component-edit operation and verify its resulting files.
+
 # Continue from v58
 
 Use TEST_RESULTS_V58.md and PROJECT_CONTEXT_V58.md to resume the independent PE benchmark. The planner now selects a separate ship identity and can register that asset. Its first full-roadmap correction repeated the base macro proposal and closed zero of ten checks. The next benchmark should test whether the system can inspect an actual asteroid mesh and PE component, record their dimensions, and plan a distinct component and collision asset from those measurements. Keep the OpenCode build as a read-only comparator and run future DeepThorT builds in their own workspace.

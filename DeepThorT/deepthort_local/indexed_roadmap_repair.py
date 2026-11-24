@@ -190,7 +190,10 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         if not gaps:
             return hierarchy.prepare(index,request_id,original,project,chat_id=chat_id)
         # Keep a focus for two attempts; rotate when the model fails to improve.
-        if previous_focus in gaps and stagnation < 2:
+        geometry_gap='scaled asteroid mesh and ship geometry under assets/'
+        if i==0 and geometry_gap in gaps and inspected_evidence.startswith('Native visual mesh:'):
+            focus=geometry_gap
+        elif previous_focus in gaps and stagnation < 2:
             focus=previous_focus
         else:
             focus=gaps[(i//2)%len(gaps)]

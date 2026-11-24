@@ -1,3 +1,7 @@
+# DeepThorT v59 for Windows
+
+The indexed X4 planner can now measure a vanilla PE hull and ore asteroids from native LOD0 vertices. For the independent PE hull request, the local model selects an inspected rock and DeepThorT records a uniformly fitted visual mesh in the draft. Use **Export latest draft mesh** in the project sidebar to save XMF or Wavefront OBJ to a new file. The OBJ contains positions and triangle faces in native axes.
+
 # DeepThorT v58 for Windows
 
 The indexed X4 planner can recover when the local model picks the original ship as the destination for an independent variant. It asks the model to choose a fresh identifier and records a paired ship definition and index entry. An approved Build can derive those two files from the inspected vanilla XML. The static checker resolves each new registration to the on-disk declaration.

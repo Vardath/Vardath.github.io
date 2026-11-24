@@ -83,6 +83,10 @@ class SpecificationIndex:
                   request_id INTEGER NOT NULL, ordinal INTEGER NOT NULL,
                   source_path TEXT NOT NULL, source_digest TEXT NOT NULL,
                   failed_attempt INTEGER NOT NULL, PRIMARY KEY(request_id,ordinal));
+                CREATE TABLE IF NOT EXISTS mesh_drafts (
+                  project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
+                  note TEXT NOT NULL, digest TEXT NOT NULL, name TEXT NOT NULL, mesh BLOB NOT NULL,
+                  PRIMARY KEY(project,request_id,fingerprint));
                 CREATE TABLE IF NOT EXISTS variant_bindings (
                   project TEXT NOT NULL, package TEXT NOT NULL, source_path TEXT NOT NULL,
                   source_digest TEXT NOT NULL, macro_name TEXT NOT NULL,
@@ -347,7 +351,8 @@ class SpecificationIndex:
         return {'status':'blocked' if foreign or gaps or status['pending'] else 'passed',
                 'detail':f"Draft #{ident}: {status['reviewed']}/{status['sections']} sections reviewed, "
                          f"{foreign} incompatible paths, {len(gaps)} open planning checks, {pairs} source-backed ship/index pairs planned. "
-                         "Build and playtest require separate evidence."}
+                         + ("Measured visual mesh saved. " if self.latest_mesh(project) else "")
+                         + "Build and playtest require separate evidence."}
 
     def recover_x4_draft(self, request_id: int, original: str) -> int:
         """Retain each prior draft verbatim before removing foreign paths from active planning."""
@@ -407,6 +412,15 @@ class SpecificationIndex:
             if source and source.digest == record[1]:
                 return source
         return None
+
+    def latest_mesh(self,project):
+        with self._db() as db:
+            row=db.execute('SELECT request_id,name,note,digest,mesh FROM mesh_drafts '
+                           "WHERE project=? AND name<>'' ORDER BY request_id DESC,rowid DESC LIMIT 1",
+                           (str(Path(project).resolve()),)).fetchone()
+        if row and hashlib.sha256(row[4]).hexdigest()!=row[3]:
+            raise PlanError('Saved mesh failed its checksum')
+        return row
 
     def save_response(self, request_id: int, original: str, ordinal: int, response: str,
                       *, project: str | Path, inspected_evidence: str='', variant=None) -> list[dict]:
@@ -493,7 +507,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None, checkpoint=None, council_provider=None) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -602,6 +616,23 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                     not str(exc).startswith('Plan does not cover the X4 specification: ')):
                 raise
             from .indexed_roadmap_repair import repair_indexed_roadmap
+            if (geometry_report and geometry_report.get('pe_component_verified') and
+                    'ship_xen_m_corvette_02_a_macro' in original.lower() and
+                    'scaled asteroid mesh and ship geometry under assets/' in remaining_plan_gaps(index.merged_steps(request_id,original),original)
+                    and (continuous or section_calls<max_rounds)):
+                from .x4_geometry import stage_geometry
+                try:
+                    note,used=stage_geometry(client,index,request_id,session,original,project,
+                                             geometry_report,cancelled,stage)
+                except (OSError,ValueError) as error:
+                    note='Geometry inspection unavailable: '+str(error)[:180]
+                    used=0
+                    if stage:stage(note)
+                if cancelled and cancelled():raise PlanError('Planning cancelled')
+                inspected_evidence=note+'\n'+inspected_evidence
+                section_calls+=used
+                if not continuous and section_calls>=max_rounds:
+                    raise PlanError(note+' Full roadmap remains pending.')
             summary=repair_indexed_roadmap(
                 client,index,hierarchy,request_id,session,original,project,
                 chat_id=chat_id,

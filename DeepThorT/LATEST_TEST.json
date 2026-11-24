@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "v58-ship-variant-registration",
-  "title": "v58 ship variant planning, JANUS handoff and worker health",
+  "id": "v59-measured-mesh-draft",
+  "title": "v59 native mesh drafts, ship planning and worker health",
   "checks": [
     "shared_cap",
     "primary_onnx",

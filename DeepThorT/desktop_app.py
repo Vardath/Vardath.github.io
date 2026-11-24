@@ -125,7 +125,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='58',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='59',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -363,6 +363,7 @@ class DeepThorTDesktop(tk.Tk):
         self.project_label.pack(anchor='w',padx=11,pady=(5,8))
         ttk.Button(left,text='Refresh project files',command=self._refresh_files).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Auto-discover X4 sources',command=self._inspect_x4_sources).pack(fill='x',padx=10,pady=3)
+        ttk.Button(left,text='Export latest draft mesh',command=self._export_draft_mesh).pack(fill='x',padx=10,pady=3)
         self.show_all_project_files=tk.BooleanVar(value=True)
         tk.Checkbutton(left,text='Show all workspace files',variable=self.show_all_project_files,
                        command=self._render_project_files,bg=PANEL,fg=TEXT,selectcolor=PANEL,
@@ -2130,6 +2131,7 @@ class DeepThorTDesktop(tk.Tk):
                 x4_context=x4_request_in_context(original,project_dir=request['project'],
                                                   previous_prompts=prior)
                 inspected_x4_evidence = ''
+                geometry_report = None
                 if x4_context and not (request['mode']=='draft_plan' and project_kind(original)=='android_game'):
                     self.events.put(('conversation_stage',ident,'Inspecting installed X4 files and verified vanilla XML'))
                     record(STATE,'desktop','x4_auto_preflight_started',request_id=ident,mode=request['mode'])
@@ -2146,6 +2148,7 @@ class DeepThorTDesktop(tk.Tk):
                         self.events.put(('x4_preflight_needed', ident, report))
                         return
                     inspected_x4_evidence=x4_evidence_for_prompt(report)
+                    geometry_report=report
                     if request['mode']=='chat' and is_x4_inspection_request(original,x4_context=x4_context):
                         self.events.put(('x4_inspection_reply',ident,report))
                         return
@@ -2185,6 +2188,7 @@ class DeepThorTDesktop(tk.Tk):
                         chat_id=request['chat_id'],continuous=True,
                         neural_council=bool(x4_context),
                         inspected_evidence=inspected_x4_evidence,council_provider=self._planning_council_client,
+                        geometry_report=geometry_report,
                         checkpoint=checkpoint)
                 else:
                     answer, _ = generate_model_plan(
@@ -3466,6 +3470,24 @@ class DeepThorTDesktop(tk.Tk):
         self.x4_settings_file.write_text(json.dumps({
             'game_dir':self.x4_game_dir,'reference_dir':self.x4_reference_dir,
             'catalog_tool':self.x4_catalog_tool},indent=2),encoding='utf-8')
+
+    def _export_draft_mesh(self):
+        if not self.project:return
+        try:
+            row=self.specifications.latest_mesh(self.project)
+            if not row:
+                messagebox.showinfo('Draft mesh','No measured mesh has been saved for this project.',parent=self)
+                return
+            ident,name,note,_,data=row
+            dest=filedialog.asksaveasfilename(title=f'Export visual mesh from request {ident}',
+                initialfile=name+'_fitted-lod0.xmf',defaultextension='.xmf',
+                filetypes=[('X4 mesh','*.xmf'),('Wavefront geometry','*.obj')],parent=self)
+            if dest:
+                from deepthort_local.x4_geometry import export_mesh
+                export_mesh(Path(dest),data)
+                self._log(note+' Exported to '+dest)
+        except (ValueError,OSError) as exc:
+            messagebox.showerror('Mesh export',str(exc),parent=self)
 
     def _inspect_x4_sources(self):
         self._show(self.x4_source_info,'Inspecting known X4 paths and selected XML references (read-only)…')

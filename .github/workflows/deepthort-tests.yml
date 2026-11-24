@@ -26,24 +26,24 @@ jobs:
           python -m compileall -q .
           node --check inference_server.mjs
           node --check inference_worker.mjs
-      - name: Verify v58 exact-source SHA-256 and pinned ONNX implementation
+      - name: Verify v59 exact-source SHA-256 and pinned ONNX implementation
         run: |
           python - <<'PY'
           import hashlib
           import json
           from pathlib import Path
           root=Path.cwd()
-          manifest=json.loads((root/'V58_SOURCE_SHA256.json').read_text('utf-8'))
-          assert manifest['schema']=='deepthort-v58-source-digest-v1'
+          manifest=json.loads((root/'V59_SOURCE_SHA256.json').read_text('utf-8'))
+          assert manifest['schema']=='deepthort-v59-source-digest-v1'
           for item in manifest['source_files']:
               target=root/item['path']
               if hashlib.sha256(target.read_bytes()).hexdigest()!=item['sha256']:
-                  raise SystemExit('v58 source SHA mismatch: '+item['path'])
+                  raise SystemExit('v59 source SHA mismatch: '+item['path'])
           pin_worker='a80bd59f17f8f453b57e5035798bfca1cf840d5ead2a87d81f462b5402fb353f'
           pin_server='525a2e49836036aa7fd6c3d0967500b18dd7a1653a3f39ac1d7a07f97405628b'
           for path,pinned in (('inference_worker.mjs',pin_worker),('inference_server.mjs',pin_server)):
               if hashlib.sha256((root/path).read_bytes()).hexdigest()!=pinned:
-                  raise SystemExit('ONNX implementation changed without v58 review: '+path)
+                  raise SystemExit('ONNX implementation changed without v59 review: '+path)
           print('Verified',len(manifest['source_files']),'changed/new sources and both pinned ONNX JavaScript programs')
           PY
       - name: Run all isolated Python and Tk regressions under Xvfb
@@ -67,22 +67,22 @@ jobs:
           print('Tests:',count,'Modules:',len(modules),'Failed:',failures,flush=True)
           if failures:sys.exit(1)
           PY
-      - name: Package v58 source overlay only after successful tests
+      - name: Package v59 source overlay only after successful tests
         run: |
           python - <<'PY'
           import hashlib,json,zipfile
           from pathlib import Path
           root=Path.cwd()
-          output=root/'DeepThorT_v58_SourceOverlay.zip'
+          output=root/'DeepThorT_v59_SourceOverlay.zip'
           excluded={'.git','__pycache__','.pytest_cache','node_modules','models','state','cache','.venv','venv'}
           if (root/'DeepThorT.exe').exists():
               raise SystemExit('Original Windows executable must never be replaced by this source overlay')
           files=sorted((p for p in root.rglob('*') if p.is_file() and p!=output
               and not any(part in excluded for part in p.relative_to(root).parts)
               and not p.name.endswith('_OverlayManifest.json')
-              and p.name not in ('_patch_v58.py','run_regression_v58.py')),
+              and p.name not in ('_patch_v59.py','run_regression_v59.py')),
               key=lambda p:p.relative_to(root).as_posix())
-          manifest={'release':'DeepThorT v58 source-backed X4 ship variants',
+          manifest={'release':'DeepThorT v59 native X4 visual mesh drafts',
                     'kind':'SOURCE OVERLAY: install over existing Windows installation',
                     'full_windows_installation':False,
                     'preserve_existing':['DeepThorT.exe','models','state','node_modules','reference','cache','user projects'],
@@ -95,7 +95,7 @@ jobs:
                               'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]}
           with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED) as archive:
               for p in files:archive.write(p,p.relative_to(root).as_posix())
-              archive.writestr('DeepThorT_v58_OverlayManifest.json',json.dumps(manifest,indent=2,sort_keys=True))
+              archive.writestr('DeepThorT_v59_OverlayManifest.json',json.dumps(manifest,indent=2,sort_keys=True))
           with zipfile.ZipFile(output) as archive:
               bad=archive.testzip()
               if bad:raise SystemExit('Overlay ZIP CRC failure: '+bad)
@@ -104,10 +104,10 @@ jobs:
           print('Overlay',output.name,'bytes',output.stat().st_size,'sha256',
                 hashlib.sha256(output.read_bytes()).hexdigest(),'source files',len(files),flush=True)
           PY
-      - name: Upload DeepThorT v58 source overlay
+      - name: Upload DeepThorT v59 source overlay
         uses: actions/upload-artifact@v4
         with:
-          name: DeepThorT-v58-source-overlay
-          path: DeepThorT/DeepThorT_v58_SourceOverlay.zip
+          name: DeepThorT-v59-source-overlay
+          path: DeepThorT/DeepThorT_v59_SourceOverlay.zip
           if-no-files-found: error
           retention-days: 90
