@@ -3,15 +3,17 @@ import { readFileSync, writeFileSync, mkdirSync, renameSync, existsSync } from '
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { env, pipeline } from '@huggingface/transformers';
+import { runProjectBenchmark } from './model_benchmark_project.mjs';
 const root = dirname(fileURLToPath(import.meta.url));
 const profiles = JSON.parse(readFileSync(join(root,'benchmarks','profiles.json'),'utf8'));
 const cases = JSON.parse(readFileSync(join(root,'benchmarks','cases.json'),'utf8'));
-const [profile, mode] = process.argv.slice(2);
+const [profile, mode, suite = 'all'] = process.argv.slice(2);
+if (!['all', 'project'].includes(suite)) throw Error('Unknown benchmark suite');
 if (!Object.hasOwn(profiles,profile) || !['offline','prepare-hosted'].includes(mode)) throw Error('Usage: node model_benchmark.mjs PROFILE offline|prepare-hosted');
 if (mode==='prepare-hosted' && process.env.GITHUB_ACTIONS!=='true') throw Error('Hosted mode is only for the synthetic GitHub benchmark');
 const spec=profiles[profile];
 const work=join(root,'benchmark-local');
-const out=join(work,'results',profile+'.json');
+const out=join(work,'results',profile+(suite === 'project' ? '-project' : '')+'.json');
 mkdirSync(dirname(out),{recursive:true});
 env.allowRemoteModels=mode==='prepare-hosted';
 env.allowLocalModels=mode==='offline';
@@ -33,17 +35,23 @@ try {
     for(const file of spec.weights) if(!existsSync(join(env.localModelPath,spec.repo,file))) throw Error('Missing experimental weight '+file+'; prepare separately');
   }
   const gen=await pipeline('text-generation',spec.repo,{revision:spec.revision,device:'cpu',dtype:spec.dtype,
+    use_external_data_format: spec.weights.length - 1,
     session_options:{intraOpNumThreads:1,interOpNumThreads:1,enableCpuMemArena:false}});
   env.allowRemoteModels=false;
   report.startup_ms=Date.now()-start; save();
-  for(const item of cases){
+  async function generate(messages) {
+    const turns = messages.map((turn, i) => spec.no_think && i === messages.length-1
+      ? {...turn, content:turn.content+'\n/no_think'} : turn);
+    const generated = await gen(turns, {max_new_tokens:768, do_sample:false});
+    const value = generated?.[0]?.generated_text;
+    const answer = Array.isArray(value) ? value.at(-1)?.content : value;
+    if (typeof answer !== 'string' || !answer.trim()) throw Error('No generated answer');
+    return answer;
+  }
+  for(const item of suite === 'project' ? [] : cases){
     const began=Date.now();
     try{
-      const messages=[{role:'user',content:item.prompt+(spec.no_think?'\n/no_think':'')}];
-      const generated=await gen(messages,{max_new_tokens:768,do_sample:false});
-      const value=generated?.[0]?.generated_text;
-      const answer=Array.isArray(value)?value.at(-1)?.content:value;
-      if(typeof answer!=='string'||!answer.trim()) throw Error('No generated answer');
+      const answer = await generate([{role:'user', content:item.prompt}]);
       report.results.push({id:item.id,answer:answer.slice(0,16000),elapsed_ms:Date.now()-began});
     }catch(error){
       report.results.push({id:item.id,error:String(error?.message||error).slice(0,500),elapsed_ms:Date.now()-began});
@@ -51,6 +59,7 @@ try {
     save();
     console.log('BENCHMARK_CASE',profile,item.id,report.results.at(-1).error?'inference error':'generated',report.results.at(-1).elapsed_ms+'ms');
   }
+  await runProjectBenchmark(root, generate, report, save);
   await gen.dispose();
   report.complete=true;
 }catch(error){

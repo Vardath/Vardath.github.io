@@ -16,7 +16,7 @@ import ctypes
 import os
 import subprocess
 from ctypes import wintypes
-from typing import Sequence
+from typing import Callable, Sequence
 
 CPU_RATE_CONTROL_ENABLE = 0x1
 CPU_RATE_CONTROL_HARD_CAP = 0x4
@@ -119,7 +119,8 @@ class ProcessInfo(ctypes.Structure):
 
 
 def run_capped(command: Sequence[str], cwd: str | None = None,
-               percent: int = 30, ram_percent: int = 30, free_reserve_percent: int = 10) -> int:
+               percent: int = 30, ram_percent: int = 30, free_reserve_percent: int = 10,
+               observe: Callable[[int, int, bool], None] | None = None) -> int:
     if os.name != "nt":
         raise RuntimeError("The 30% hard-cap supervisor requires Windows; refusing uncapped launch")
     if not 1 <= percent <= 30:
@@ -184,11 +185,18 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         launched = True
         try:
             check(assign(job, process.hProcess), "Assign child to capped Job Object")
+            if observe:
+                observe(job, ram_cap_bytes, False)
             if resume(process.hThread) == 0xFFFFFFFF:
                 raise OSError(ctypes.get_last_error(), "ResumeThread failed")
-            code = wait(process.hProcess, INFINITE)
+            code = wait(process.hProcess, 5000 if observe else INFINITE)
+            while observe and code == 258:  # WAIT_TIMEOUT
+                observe(job, ram_cap_bytes, False)
+                code = wait(process.hProcess, 5000)
             if code != 0:
                 raise OSError(ctypes.get_last_error(), "WaitForSingleObject failed")
+            if observe:
+                observe(job, ram_cap_bytes, True)
             out = DWORD()
             check(exit_code(process.hProcess, ctypes.byref(out)), "GetExitCodeProcess")
             return int(out.value)

@@ -22,7 +22,8 @@ def bounded(v):
     if isinstance(v,(str,list,tuple,range)) and len(v)>256:raise Unsupported('value budget')
     return v
 
-def code_result(source,name,args):
+def code_result(source,name,args,dependencies=None):
+    functions = {**BUILTINS, **(dependencies or {})}
     if len(source)>8000:raise Unsupported('source size')
     source=source.strip()
     fence=re.fullmatch(r'\x60{3}(?:python)?\s*\n(.*?)\n\x60{3}',source,re.S)
@@ -40,7 +41,7 @@ def code_result(source,name,args):
           ast.UnaryOp,ast.Compare,ast.BoolOp,ast.IfExp,ast.Subscript,ast.Call,
           ast.Load,ast.Store,ast.And,ast.Or,ast.Not,ast.USub,*OPS.keys())
     if any(not isinstance(n,safe) or isinstance(n,ast.Call) and
-           (not isinstance(n.func,ast.Name) or n.func.id not in BUILTINS or n.keywords)
+           (not isinstance(n.func,ast.Name) or n.func.id not in functions or n.keywords)
            for n in ast.walk(tree)):raise Unsupported('unsupported syntax')
     values=dict(zip([a.arg for a in fn.args.args],args))
     steps=0
@@ -81,7 +82,7 @@ def code_result(source,name,args):
             name=n.func.id
             a=[expr(x) for x in n.args]
             if name=='range' and any(type(x) is not int or abs(x)>256 for x in a):raise Unsupported('range budget')
-            result=BUILTINS[name](*a)
+            result=functions[name](*a)
             if name=='enumerate':result=list(result)
             return bounded(result)
         raise Unsupported('expression '+type(n).__name__)
