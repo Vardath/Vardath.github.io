@@ -41,3 +41,6 @@ Implemented bounded persistent Python AST metadata, hash-checked retrieval, exac
 
 ### Progress — Python reference and impact analysis
 Added observed call spellings, hash-checked short function excerpts, local-import reverse impact and regression input protection. Next extend the indexed languages to GDScript and XML with format-appropriate reference semantics; dynamic call targets and full language-server support remain open.
+
+### Progress — Godot and XML repository intelligence
+Schema 3 supports GDScript declarations, literal resource dependencies (including TSCN/TRES), typed unique XML macro/component references, stale-source filtering, and generation/regression context integration. Next: JavaScript/TypeScript and C# declarations and conservative module links; later language-server integration and measured end-to-end benchmark.

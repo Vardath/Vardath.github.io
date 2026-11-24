@@ -3916,7 +3916,7 @@ class DeepThorTDesktop(tk.Tk):
                         if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
                             raise PlanError('Behavior test context exceeds bound; split the approved test file')
                         request+=extra
-                    if dest.suffix.casefold()=='.py' and not self.disk_gate.gaming():
+                    if dest.suffix.casefold() in ('.py','.gd','.xml','.tscn','.tres') and not self.disk_gate.gaming():
                         try:
                             excluded=self.inspection_exclusions.paths(project)
                             stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
@@ -5644,8 +5644,8 @@ class DeepThorTDesktop(tk.Tk):
                             impact=self.repository_index.impact(current_job['project'],
                                 [s['path'] for s in self.jobs.steps(job_id)],exclude=excluded,cancelled=stopped)
                             regression_scope['protected']=sorted(set(regression_scope['protected'])|set(impact['source_hashes']))
-                            regression_scope['observed_python_dependents']=impact['dependents']
-                            self.events.put(('log',f"Job #{job_id}: observed Python import impact: {len(impact['dependents'])} dependent files."))
+                            regression_scope['observed_repository_dependents']=impact['dependents']
+                            self.events.put(('log',f"Job #{job_id}: observed repository dependency impact: {len(impact['dependents'])} dependent files."))
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository impact unavailable: '+str(error)[:160]))
                     regression_before=capture(regression_scope)
