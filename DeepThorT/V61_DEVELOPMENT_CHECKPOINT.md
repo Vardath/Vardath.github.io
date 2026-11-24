@@ -135,3 +135,5 @@ Baseline CI 45346209755 passed 770 tests across 114 modules. Workflow design now
 ## Streaming verification of larger native outputs
 
 Baseline CI 45346785676 passed 773 tests across 115 modules. Workflow artifacts over the prior 16,000,000-byte limit now have a bounded seek/stream verifier for PNG, WAV, GLB, DDS, PE EXE/DLL and ZIP/APK/AAB/JAR, up to the existing 32,000,000-byte content-hash guard ceiling. PNG CRC and SHA-256 use bounded blocks; GLB metadata and WAV/GLB chunk counts have explicit limits; archives retain the same entry, path, CRC and decompressed-size checks. No unverified large format falls back to nonempty-byte acceptance. Small-file receipt scopes stay compatible; ordinary mutation during streaming is rejected. This is structural evidence, not decoded or functional acceptance. Four regression cases committed; Windows acceptance pending.
+
+CI run 45348418966 caught the original GLB header reader's implicit zero-offset argument in both small and large tests. Corrected the streaming helper to retain the original default argument; no test was removed or weakened.

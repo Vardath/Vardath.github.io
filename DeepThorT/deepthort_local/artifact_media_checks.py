@@ -7,7 +7,7 @@ import zlib
 PNG_SIGNATURE=b'\x89PNG\r\n\x1a\n'
 
 
-def unpack_at(fmt,data,offset):
+def unpack_at(fmt,data,offset=0):
     # Works with bytes and the bounded seek-based large-artifact reader.
     size=struct.calcsize(fmt)
     return struct.unpack(fmt,data[offset:offset+size])
