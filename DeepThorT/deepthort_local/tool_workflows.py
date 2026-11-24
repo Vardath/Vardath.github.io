@@ -170,7 +170,7 @@ class ToolWorkflows:
             raise ValueError('Prior checked output or process log changed')
         return rec
 
-    def tick(self,*,enabled=True):
+    def tick(self,*,enabled=True,conversations=None):
         if not enabled or self.janus.status().get('paused'):return None
         for run in reversed(self.list()):
             if run['state']!='active':continue
@@ -179,6 +179,11 @@ class ToolWorkflows:
                 manifest=json.loads(run['manifest'])
                 if digest(manifest)!=run['manifest_sha'] or manifest['project']!=run['project']:
                     raise ValueError('Approved workflow manifest changed')
+                if manifest.get('specification'):
+                    from .workflow_design import current_source
+                    if conversations is None or not current_source(manifest['specification'],conversations):
+                        self.stop(ident)
+                        return f'Workflow #{ident}: specification superseded; remaining operations cancelled'
                 project=run['project'];rows=self.stages(ident);stages=manifest['stages']
                 if len(rows)!=len(stages):raise ValueError('Workflow stage count changed')
                 prior={}

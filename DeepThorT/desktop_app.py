@@ -278,6 +278,8 @@ class DeepThorTDesktop(tk.Tk):
         self.janus = JanusStore(STATE/'janus.sqlite3')
         from deepthort_local.tool_workflows import ToolWorkflows
         self.tool_workflows=ToolWorkflows(self.janus)
+        from deepthort_local.workflow_design import WorkflowDrafts
+        self.workflow_drafts=WorkflowDrafts(STATE/'workflow-drafts.sqlite3')
         self.instruction_inbox = InstructionInbox(STATE/'janus-instruction-inbox-v51.sqlite3')
         self.sentinel = SentinelStore(STATE/'sentinel.sqlite3')
         self.disk_gate = DiskGate(game_names_path=ROOT/'game_executables.txt',game_flag=STATE/'game-active.flag')
@@ -560,6 +562,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Learn procedure…',command=self._draft_tool_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
         ttk.Button(xr,text='Choose X4 game folder…',command=self._choose_x4_game).pack(side='left',padx=3)
@@ -2275,6 +2278,27 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                workflow=self.workflow_drafts.get(ident)
+                if workflow:
+                    from deepthort_local.workflow_design import design,current_source
+                    from deepthort_local.reasoning_council import ReasoningCouncil
+                    binding=json.loads(workflow['binding'])
+                    source=self.conversations.get(binding['request_id'])
+                    def stale():return cancelled() or not current_source(binding,self.conversations)
+                    if stale():raise ValueError('Workflow specification superseded')
+                    def review(proposal,kind):
+                        self._sentinel_alignment(source['prompt'],source['project'],f'workflow-draft-{ident}',
+                            workflow['goal'],proposal,kind=kind,cancelled=stale,
+                            amendments=self.conversations.amendment_history(source['id']),
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    proposal,manifest=design(self.tool_learning,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                        self.client,request=source,goal=workflow['goal'],review=review,cancelled=stale,
+                        stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    if stale():raise ValueError('Workflow specification superseded')
+                    self.workflow_drafts.save(ident,proposal,manifest)
+                    self.events.put(('conversation_reply',ident,'JANUS workflow draft saved; no execution approved.\n'+
+                        json.dumps(proposal,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
+                    return
                 learning=self.tool_learning.learning_request(ident)
                 if learning:
                     self.events.put(('conversation_stage',ident,
@@ -3194,7 +3218,7 @@ class DeepThorTDesktop(tk.Tk):
                    (self.tool_process, self.install_process, self.media_process))
             or self.janus.status().get('paused')):
             return
-        workflow_message=self.tool_workflows.tick(enabled=True)
+        workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations)
         if workflow_message:
             self._log(workflow_message)
             return
@@ -4669,6 +4693,49 @@ class DeepThorTDesktop(tk.Tk):
         dialog.grab_set()
         self.wait_window(dialog)
         return approved[0]
+
+    def _design_tool_workflow(self):
+        from deepthort_local.workflow_design import source_binding,current_source
+        from deepthort_local.tool_workflows import freeze
+        if not self.project or not self.current_chat:return
+        try:
+            source=self.conversations.latest_project_request(self.current_chat,self._project_key())
+            binding=source_binding(source)
+            previous=self.workflow_drafts.latest(binding)
+            if previous and previous['state']=='review':
+                manifest=json.loads(previous['manifest'])
+                proposal=json.loads(previous['proposal'])
+                details='\n\n'.join(f"{i}. {s['title']}\n{subprocess.list2cmdline(s['argv'])}\nOutput: {s['output']}"
+                    for i,s in enumerate(manifest['stages'],1))
+                if not messagebox.askyesno('Review JANUS workflow',
+                    'Sentinel reviewed this proposal against the stored specification. '
+                    'Commands run with your Windows permissions, not in a sandbox. '
+                    'Approve this exact sequence?\n\n'+details,parent=self):return
+                updated=freeze(self.tool_learning,self.project,proposal['stages']);updated['specification']=binding
+                if not current_source(binding,self.conversations) or updated!=manifest:
+                    raise ValueError('Specification, source or tool changed; draft again')
+                ident=self.tool_workflows.approve(manifest,user_approved=True)
+                self.workflow_drafts.mark(previous['request_id'],'approved')
+                self._log(f'JANUS-designed workflow #{ident} approved.')
+                return
+            if previous and previous['state']=='pending':
+                req=self.conversations.get(previous['request_id'])
+                if req and req['state'] in ('pending','running'):
+                    messagebox.showinfo('Workflow design','JANUS design request is already queued.',parent=self);return
+            if previous and previous['state']=='missing':
+                gaps=json.loads(previous['proposal'])['missing']
+                messagebox.showinfo('Missing workflow capabilities',
+                    '\n'.join(g['capability']+': '+g['goal']+' → '+g['output'] for g in gaps)+
+                    '\n\nAcquire or learn the required procedures, then draft again.',parent=self)
+            goal=simpledialog.askstring('JANUS workflow design','What artifact or task should the workflow produce? '
+                'The original project specification remains authoritative.',parent=self)
+            if not goal:return
+            if len(goal.strip())>900:raise ValueError('Use a focused workflow objective (up to 900 characters)')
+            ident=self.conversations.submit(self.current_chat,self._project_key(),'chat','Design tool workflow: '+goal.strip())
+            self.workflow_drafts.queue(ident,binding,goal.strip())
+            self._reload_chat();self._log(f'JANUS workflow design #{ident} queued; no commands authorized.')
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            messagebox.showwarning('Workflow design unavailable',str(error),parent=self)
 
     def _tool_workflow_dialog(self):
         if not self.project:return

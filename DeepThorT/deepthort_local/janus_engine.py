@@ -206,6 +206,26 @@ class JanusStore:
             db.row_factory=sqlite3.Row
             row=db.execute("SELECT * FROM janus_actions WHERE status='approved' AND cancel_requested=0 ORDER BY id LIMIT 1").fetchone()
             if row is None:return None
+            # A workflow designed against a stored specification must not start
+            # an obsolete queued process after a user amendment or restart.
+            exists=db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='tool_workflow_stages'").fetchone()
+            if exists:
+                wf=db.execute('SELECT w.id,w.state,w.manifest FROM tool_workflow_stages s JOIN tool_workflows w ON w.id=s.workflow_id WHERE s.action_id=?',(row['id'],)).fetchone()
+                if wf:
+                    manifest=json.loads(wf['manifest'])
+                    binding=manifest.get('specification')
+                    valid=wf['state']=='active'
+                    if binding and valid:
+                        try:
+                            from .conversation_workflow import ConversationStore
+                            from .workflow_design import current_source
+                            source_path=self.path.parent/'conversations.sqlite3'
+                            valid=source_path.is_file() and current_source(binding,ConversationStore(source_path))
+                        except (ValueError,OSError,sqlite3.Error,KeyError):valid=False
+                    if not valid:
+                        db.execute("UPDATE janus_actions SET status='cancelled',cancel_requested=1,detail='Workflow consent superseded' WHERE id=? AND status='approved'",(row['id'],))
+                        db.execute("UPDATE tool_workflows SET state='cancelled',detail='Workflow consent superseded' WHERE id=? AND state='active'",(wf['id'],))
+                        return None
             updated=db.execute("UPDATE janus_actions SET status='running', started_at=?, detail='Engine starting approved process' WHERE id=? AND status='approved'",(utc_now(),row['id']))
             return dict(row) if updated.rowcount else None
 
