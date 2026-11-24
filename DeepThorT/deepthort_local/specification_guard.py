@@ -57,6 +57,10 @@ def review_source(original,focus,section=''):
     # Always retain the beginning (project identity/objective), independently
     # of terms in a possibly off-task proposal. The second excerpt is exact.
     root=original[:1100]
+    if original.startswith('USER SPECIFICATION REVISION:'):
+        # The newest amendment must not disappear merely because the old
+        # specification fills the small model's context window.
+        root=original[:750]+'\nNEWEST REVISION TAIL (verbatim):\n'+original[-850:]
     selected=section or select_source_section(original,focus,1800)
     if len(selected)>1800:
         selected=select_source_section(selected,focus,1800)
@@ -83,6 +87,7 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
         if cancelled and cancelled():raise PlanError('Sentinel review cancelled')
         prompt=('SENTINEL: independently guard the ORIGINAL user specification. '
                 'Evaluate the meaning and intended outcome of the proposed work, not just matching words. '
+                'Explicit later USER AMENDMENTS override only conflicting earlier requirements; preserve all others. '
                 'Reject substitutions of the project domain, incompatible features, contradictions or removal '
                 'of required behavior. An individual file or intermediate step may implement only part of the project. '
                 'Do not reject legitimate shared infrastructure just because it is generic. '

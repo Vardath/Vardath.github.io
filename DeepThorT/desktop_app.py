@@ -429,6 +429,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left',padx=5)
         ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=5)
         ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=5)
+        ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
@@ -1570,6 +1571,11 @@ class DeepThorTDesktop(tk.Tk):
                 messagebox.showerror('Specification source changed or is unreadable',str(exc),parent=self)
                 return
         if not prompt:return
+        if mode=='chat' and prompt.casefold().startswith('amend:'):
+            self.input.delete('1.0','end');self.input.insert('1.0',prompt.split(':',1)[1].strip())
+            self._clear_imported_specification()
+            self._amend_project_specification()
+            return
         if mode=='chat' and self._is_local_diagnostic_request(prompt):
             self.input.delete('1.0','end')
             self._diagnose(prompt=prompt)
@@ -1676,6 +1682,42 @@ class DeepThorTDesktop(tk.Tk):
                 return
         if not self.node_ready and not self.node_loading and not self.installing:
             self._auto_start_if_installed()
+
+    def _amend_project_specification(self):
+        """Explicit correction from the input box; never reinterpret ordinary chat as permission."""
+        if not self.project or not self.current_chat:
+            messagebox.showinfo('Choose project and chat','Select the project with its original specification.',parent=self)
+            return
+        amendment=self.input.get('1.0','end').strip()
+        if self.imported_spec_source:
+            try:amendment=resolve_import(self.imported_spec_source,amendment)
+            except (OSError,ValueError,UnicodeError) as exc:
+                messagebox.showerror('Amendment source unreadable',str(exc),parent=self)
+                return
+        if not amendment:return
+        try:
+            ident=self.conversations.amend_project(self.current_chat,self._project_key(),amendment)
+        except (OSError,ValueError) as exc:
+            messagebox.showerror('Cannot save amendment',str(exc),parent=self)
+            return
+        self.input.delete('1.0','end')
+        self._clear_imported_specification()
+        self._log(f'User amendment saved as specification revision #{ident}. Original and prior plans retained. '
+                  'Older approved builds cannot save additional files or launch further verification.')
+        self._reload_chat();self._refresh_jobs()
+        self.status.set(f'User amendment #{ident} saved; revised plan queued for JANUS and Sentinel review.')
+
+    def _superseded_build(self,job):
+        from deepthort_local.specification_amendments import job_is_superseded
+        return job_is_superseded(job,self.conversations)
+
+    def _block_superseded_build(self,job):
+        if not self._superseded_build(job):return False
+        self.jobs.change(job['id'],'needs_input',
+            'User amended the specification; retain completed files and approve a revised plan',
+            allowed=('queued','running','paused','waiting_approval','waiting_verification','waiting_repair','needs_input'))
+        self._log(f"Job #{job['id']} superseded by a user amendment; no further old-plan write.")
+        return True
 
     def _queue_janus_instruction(self):
         """Record new user guidance immediately; never interrupt current coding."""
@@ -1965,7 +2007,8 @@ class DeepThorTDesktop(tk.Tk):
     def _approve_hierarchical_milestone(self, root_request_id):
         """Explicit, per-milestone approval using the original toolbar button."""
         req=self.conversations.get(root_request_id)
-        if not req or req['state']!='responded' or req['mode']!='draft_plan':
+        if (not req or req['state']!='responded' or req['mode']!='draft_plan'
+                or self.conversations.amendment_supersedes(root_request_id,req['chat_id'],req['project'])):
             messagebox.showwarning('Milestone roadmap unavailable',
                 'The source plan is not in a completed, reviewable state.',parent=self)
             return
@@ -2113,7 +2156,12 @@ class DeepThorTDesktop(tk.Tk):
         def work():
             def cancelled():
                 current=self.conversations.get(ident)
-                return not current or current['state']!='running'
+                if not current or current['state']!='running':return True
+                if (current['mode']=='draft_plan' and
+                        self.conversations.amendment_supersedes(ident,current['chat_id'],current['project'])):
+                    self.events.put(('conversation_error',ident,'Superseded by a newer user amendment; prior progress retained'))
+                    return True
+                return False
             try:
                 if cancelled():return
                 original=request['prompt']
@@ -2278,6 +2326,9 @@ class DeepThorTDesktop(tk.Tk):
     def _conversation_reply(self,ident,answer):
         req=self.conversations.get(ident)
         if not req or req['state']!='running':return
+        if req['mode']=='draft_plan' and self.conversations.amendment_supersedes(ident,req['chat_id'],req['project']):
+            self._conversation_error(ident,'Superseded by a newer user amendment; previous response not approved')
+            return
         self._set_reply_stage(ident,'Checking the response against the original requirements')
         outcome='REPLY RECEIVED — local model finished.'
         if req['mode']=='draft_plan':
@@ -2936,6 +2987,14 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Ignored stale or cancelled repair response for job #{jobid}.')
             return
         self.active_job=None
+        if self._block_superseded_build(job):
+            lease=self._graph_repair_leases.pop(jobid,None)
+            if lease:
+                try:self.graphs.finish_action(lease,jobid,'blocked')
+                except GraphError:pass
+            self.cycles.block(jobid,'User amended specification before repair write')
+            self._refresh_jobs()
+            return
         try:
             target,code=parse_repair_response(answer,candidates)
             steps=self.jobs.steps(jobid)
@@ -3010,6 +3069,7 @@ class DeepThorTDesktop(tk.Tk):
                 job=self.jobs.get(jobid)
                 if not job or job['state']!='waiting_repair':
                     continue
+                if self._block_superseded_build(job):continue
                 try:
                     self._claim_autonomous_repair(job)
                 except (CycleError,GrantError,WorkspaceError,OSError,ValueError) as exc:
@@ -3019,6 +3079,7 @@ class DeepThorTDesktop(tk.Tk):
         # Tests are deterministic fixed profiles from the v40 authorization
         # framework, never commands supplied by diagnostics or the model.
         for job in self.jobs.pending_verifications(limit=40):
+            if self._block_superseded_build(job):continue
             project=Path(job['project'])
             cmd=self._verification_command(project)
             if not cmd:
@@ -3088,6 +3149,7 @@ class DeepThorTDesktop(tk.Tk):
             return
         if not j or j['mode']!='build' or j['state']!='waiting_verification':
             messagebox.showinfo('Nothing to verify','Select a build whose files were generated but not tested.');return
+        if self._block_superseded_build(j):return
         project=Path(j['project']);cmd=self._verification_command(project)
         if not cmd:
             messagebox.showwarning('Verification needs attention',
@@ -3181,6 +3243,9 @@ class DeepThorTDesktop(tk.Tk):
     def _execute_job(self,j):
         jobid=j['id']
         if j['mode']=='build':
+            if self._block_superseded_build(j):
+                self._refresh_jobs()
+                return
             graph=self.graphs.status(jobid)
             if graph and graph['state']=='invalidated':
                 self.jobs.change(jobid,'needs_input',
@@ -3369,6 +3434,9 @@ class DeepThorTDesktop(tk.Tk):
         j=self.jobs.get(jobid)
         if not j or j['state']!='running':return
         self.active_job=None
+        if self._block_superseded_build(j):
+            self._refresh_jobs()
+            return
         steps=self.jobs.steps(jobid)
         saved=sum(x['state']=='saved' for x in steps)
         if saved!=len(steps):
@@ -3404,6 +3472,9 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Ignored stale answer for cancelled/paused job #{jobid}.');return
         self.active_job=None
         if j['mode']=='build':
+            if self._block_superseded_build(j):
+                self._refresh_jobs()
+                return
             step=self.jobs.next_step(jobid)
             if not step:
                 self.jobs.change(jobid,'needs_input','No active step; inspect build plan',result=answer,allowed=('running',))
@@ -3531,6 +3602,8 @@ class DeepThorTDesktop(tk.Tk):
                    f'Write the reviewed code to:\n{self.project / target}\n\n'
                    'Existing files will be backed up. This does NOT execute the code.',parent=self):return
         try:
+            if self.proposal_job is not None and self._block_superseded_build(self.jobs.get(self.proposal_job)):
+                raise PlanError('This file proposal belongs to the pre-amendment plan')
             dest=apply_approved_file(self.project,target,code,STATE/'backups')
         except Exception as e:
             self._log('File write refused: '+str(e));messagebox.showerror('Write blocked',str(e));return

@@ -48,6 +48,13 @@ class ConversationStore:
                     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
                     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
                 CREATE INDEX IF NOT EXISTS project_draft_thread ON project_drafts(chat_id,id);
+                CREATE TABLE IF NOT EXISTS specification_amendments (
+                    request_id INTEGER PRIMARY KEY, parent_request_id INTEGER NOT NULL,
+                    root_request_id INTEGER NOT NULL, ordinal INTEGER NOT NULL,
+                    original_sha256 TEXT NOT NULL, amendment TEXT NOT NULL,
+                    amendment_sha256 TEXT NOT NULL, effective_sha256 TEXT NOT NULL,
+                    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE(root_request_id,ordinal));
             ''')
             # An interrupted model call must be visible and explicitly retryable.
             db.execute("UPDATE conversation_requests SET state='pending', detail='Recovered after app restart; waiting for local AI' WHERE state='running'")
@@ -82,6 +89,65 @@ class ConversationStore:
         record(self.path.parent,'conversation','conversation_saved',request_id=n,mode=mode,
                prompt_characters=len(prompt),attachments=len(attachments),legacy_job=source_job_id)
         return n
+
+    def amend_project(self,chat_id,project,amendment):
+        """Explicit user operation: atomically save revision and queue a new draft."""
+        from .specification_amendments import render_revision,sha
+        if not chat_id or not project or project=='(general)' or not isinstance(amendment,str) or not amendment.strip():
+            raise ValueError('A selected project, chat and explicit amendment are required')
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            parent=db.execute("SELECT * FROM conversation_requests WHERE chat_id=? AND project=? "
+                "AND mode='draft_plan' ORDER BY id DESC LIMIT 1",(chat_id,project)).fetchone()
+            if parent is None:raise ValueError('No original project specification in this chat; draft one first')
+            prior=db.execute('SELECT * FROM specification_amendments WHERE request_id=?',(parent['id'],)).fetchone()
+            root_id=prior['root_request_id'] if prior else parent['id']
+            root=db.execute('SELECT * FROM conversation_requests WHERE id=?',(root_id,)).fetchone()
+            if not root or root['chat_id']!=chat_id or root['project']!=project:
+                raise ValueError('Original specification binding is invalid')
+            history=db.execute('SELECT * FROM specification_amendments WHERE root_request_id=? ORDER BY ordinal',
+                               (root_id,)).fetchall()
+            original=root['prompt']
+            for n,row in enumerate(history,1):
+                if (row['ordinal']!=n or row['original_sha256']!=sha(original)
+                    or row['amendment_sha256']!=sha(row['amendment'])):
+                    raise ValueError('Prior amendment history is inconsistent')
+            if prior and (not history or history[-1]['request_id']!=parent['id']
+                    or sha(parent['prompt'])!=prior['effective_sha256']
+                    or parent['prompt']!=render_revision(original,[r['amendment'] for r in history])):
+                raise ValueError('Prior effective specification no longer matches its history')
+            if not prior and history:raise ValueError('Amendment chain is inconsistent')
+            effective=render_revision(original,[r['amendment'] for r in history]+[amendment])
+            ident=db.execute("INSERT INTO conversation_requests(chat_id,project,mode,prompt,attachments,detail) "
+                "VALUES(?,?,'draft_plan',?,?,?)",
+                (chat_id,project,effective,root['attachments'],'Explicit user amendment; revised plan required')).lastrowid
+            db.execute("INSERT INTO specification_amendments(request_id,parent_request_id,root_request_id,ordinal,"
+                "original_sha256,amendment,amendment_sha256,effective_sha256) VALUES(?,?,?,?,?,?,?,?)",
+                (ident,parent['id'],root_id,len(history)+1,sha(original),amendment,sha(amendment),sha(effective)))
+            # Preserve all source and plan rows, but prevent approval of outdated drafts.
+            db.execute("UPDATE project_drafts SET state='discarded',updated_at=CURRENT_TIMESTAMP "
+                "WHERE chat_id=? AND project=? AND state='draft'",(chat_id,project))
+            db.execute("UPDATE conversation_requests SET state='cancelled',detail='Superseded by explicit user amendment',"
+                "updated_at=CURRENT_TIMESTAMP WHERE chat_id=? AND project=? AND mode='draft_plan' "
+                "AND id<? AND state='pending'",(chat_id,project,ident))
+        record(self.path.parent,'conversation','specification_amended',request_id=ident,
+               parent_request_id=parent['id'],root_request_id=root_id,ordinal=len(history)+1,
+               amendment_sha256=sha(amendment),approval_granted=False)
+        return ident
+
+    def amendment_supersedes(self,request_id,chat_id,project):
+        with self._db() as db:
+            return bool(db.execute("SELECT 1 FROM specification_amendments a "
+                "JOIN conversation_requests c ON c.id=a.request_id "
+                "WHERE c.chat_id=? AND c.project=? AND a.request_id>? LIMIT 1",
+                (chat_id,project,request_id)).fetchone())
+
+    def amendment_history(self,request_id):
+        with self._db() as db:
+            row=db.execute('SELECT root_request_id FROM specification_amendments WHERE request_id=?',(request_id,)).fetchone()
+            if not row:return []
+            return [dict(x) for x in db.execute('SELECT * FROM specification_amendments '
+                'WHERE root_request_id=? AND request_id<=? ORDER BY ordinal',(row[0],request_id))]
 
     def cancel_chat_requests(self, chat_id: str, reason: str = 'Stopped by user') -> list[int]:
         """Atomically revoke all unfinished replies in a chat, never requeue them.
