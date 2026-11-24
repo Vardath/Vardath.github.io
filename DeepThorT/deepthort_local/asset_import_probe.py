@@ -1,0 +1,113 @@
+"""Explicitly approved application import smoke tests for checked artifacts.
+
+Fixed bundled scripts only. A successful import does not establish rendering,
+project integration, gameplay or safe execution of untrusted native assets.
+"""
+from __future__ import annotations
+import json
+import sqlite3
+from pathlib import Path
+from .workspace import safe_target
+from .action_guards import snapshot_file,verify_guards,validate_guards
+from .tool_workflows import digest
+from .tool_acquisition import _approved_result
+from .janus_engine import utc_now
+
+PROBE_ROOT=Path(__file__).resolve().parent/'asset_probes'
+SUPPORTED={'Blender':{'.obj','.glb','.png'},'Godot':{'.glb','.png'}}
+MARKER='DEEPTHORT_ASSET_PROBE '
+
+def plan(workflows,acquisition,workflow_id,ordinal,tool):
+    run=workflows.get(workflow_id)
+    if not run or run['state']!='complete':raise ValueError('Select a completed checked workflow')
+    manifest=json.loads(run['manifest'])
+    if digest(manifest)!=run['manifest_sha']:raise ValueError('Workflow manifest changed')
+    if type(ordinal) is not int or not 1<=ordinal<=len(manifest['stages']):
+        raise ValueError('Invalid artifact stage')
+    row=workflows.stages(workflow_id)[ordinal-1]
+    if row['state']!='checked':raise ValueError('Artifact lacks a checked stage receipt')
+    stage=manifest['stages'][ordinal-1]
+    receipt=workflows._check_receipt(run['project'],stage,row)['artifact']
+    target=safe_target(run['project'],stage['output'],must_exist=True)
+    if target.suffix.casefold() not in SUPPORTED.get(tool,set()):
+        raise ValueError('Unsupported application and artifact format combination')
+    exe=Path(acquisition.tool(tool)['executable']).resolve(strict=True)
+    guards=[snapshot_file(exe,kind='stat'),snapshot_file(target)]
+    if guards[1]['expected']!=receipt['sha256']:raise ValueError('Checked artifact changed')
+    if tool=='Blender':
+        script=PROBE_ROOT/'blender_probe.py'
+        argv=[str(exe),'--background','--factory-startup','--disable-autoexec','--python-exit-code','19',
+              '--python',str(script),'--',str(target)]
+    else:
+        script=PROBE_ROOT/'godot_probe.gd'
+        config=PROBE_ROOT/'project.godot'
+        guards.append(snapshot_file(config))
+        argv=[str(exe),'--headless','--path',str(PROBE_ROOT),'--script',str(script),'--',str(target)]
+    guards.append(snapshot_file(script))
+    validate_guards(guards)
+    return {'workflow_id':workflow_id,'ordinal':ordinal,'manifest_sha':run['manifest_sha'],
+            'specification':manifest.get('specification'),'project':run['project'],'tool':tool,
+            'output':stage['output'],'artifact_sha256':receipt['sha256'],'argv':argv,'guards':guards}
+
+class AssetProbes:
+    def __init__(self,workflows):
+        self.workflows=workflows
+        self.janus=workflows.janus
+        with self.janus.connect() as db:
+            db.execute('''CREATE TABLE IF NOT EXISTS asset_probe_runs(
+                action_id INTEGER PRIMARY KEY, plan TEXT NOT NULL, plan_sha TEXT NOT NULL)''')
+    def queue(self,approved,acquisition,*,user_approved=False):
+        if user_approved is not True:raise PermissionError('Approve exact application smoke test')
+        if plan(self.workflows,acquisition,approved['workflow_id'],approved['ordinal'],approved['tool'])!=approved:
+            raise ValueError('Asset or executable changed during approval')
+        verify_guards(approved['guards'])
+        with self.janus.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if db.execute("SELECT 1 FROM janus_actions WHERE status IN ('approved','running') LIMIT 1").fetchone():
+                raise ValueError('Wait for existing approved processes')
+            ident=db.execute("""INSERT INTO janus_actions(kind,label,cwd,argv_json,approved_at,approval_source,input_guards_json)
+                VALUES('tool',?,?,?,?,'desktop-user-confirmation',?)""",
+                ('Asset import smoke test: '+approved['tool'],approved['project'],json.dumps(approved['argv']),
+                 utc_now(),json.dumps(approved['guards']))).lastrowid
+            db.execute('INSERT INTO asset_probe_runs VALUES(?,?,?)',(ident,json.dumps(approved),digest(approved)))
+        return ident
+    def recent(self,project):
+        with self.janus.connect() as db:
+            rows=db.execute('SELECT action_id,plan FROM asset_probe_runs ORDER BY action_id DESC LIMIT 100').fetchall()
+        return [(ident,json.loads(raw)) for ident,raw in rows if json.loads(raw)['project']==str(Path(project).resolve())]
+    def result(self,ident):
+        with self.janus.connect() as db:
+            row=db.execute('SELECT plan,plan_sha FROM asset_probe_runs WHERE action_id=?',(ident,)).fetchone()
+        if not row:raise ValueError('Unknown asset probe')
+        approved=json.loads(row[0])
+        if digest(approved)!=row[1]:raise ValueError('Asset probe plan changed')
+        action=self.janus.action(ident)
+        if not action:raise ValueError('Asset probe action missing')
+        if action['status']!='succeeded':
+            return {'status':action['status'],'detail':action['detail'],'import_verified':False}
+        if json.loads(action['input_guards_json'])!=approved['guards']:raise ValueError('Asset test guards changed')
+        verify_guards(approved['guards'])
+        run=self.workflows.get(approved['workflow_id'])
+        if not run or run['state']!='complete' or run['manifest_sha']!=approved['manifest_sha']:
+            raise ValueError('Original workflow changed')
+        manifest=json.loads(run['manifest'])
+        if digest(manifest)!=run['manifest_sha']:raise ValueError('Original manifest changed')
+        ordinal=approved['ordinal']
+        receipt=self.workflows._check_receipt(run['project'],manifest['stages'][ordinal-1],
+                                             self.workflows.stages(run['id'])[ordinal-1])
+        if receipt['artifact']['sha256']!=approved['artifact_sha256']:raise ValueError('Tested artifact changed')
+        log,sha,_=_approved_result(action,approved['argv'],approved['project'],kind='tool')
+        lines=log.decode('utf-8',errors='replace').splitlines()
+        matches=[line[len(MARKER):] for line in lines if line.startswith(MARKER)]
+        if len(matches)!=1:raise ValueError('Application did not emit one import result')
+        result=json.loads(matches[0])
+        kind='image' if Path(approved['output']).suffix.casefold()=='.png' else 'mesh'
+        expected={'kind','width','height'} if kind=='image' else {'kind','meshes','vertices'}
+        if (not isinstance(result,dict) or set(result)!=expected or result['kind']!=kind or
+            any(type(result[k]) is not int or result[k]<=0 for k in expected-{'kind'})):
+            raise ValueError('Application did not report valid loaded content')
+        if any('SCRIPT ERROR:' in l or l.startswith(('ERROR:','Error:','Traceback (most recent call last):')) for l in lines):
+            raise ValueError('Application log contains errors despite zero exit')
+        return {'status':'import_checked','import_verified':True,'observed':result,
+                'artifact_sha256':approved['artifact_sha256'],'log_sha256':sha,
+                'scope':'Application import smoke test only; not rendering or project integration'}

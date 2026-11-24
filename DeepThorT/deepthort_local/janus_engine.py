@@ -225,6 +225,23 @@ class JanusStore:
                         db.execute("UPDATE janus_actions SET status='cancelled',cancel_requested=1,detail='Workflow consent superseded' WHERE id=? AND status='approved'",(row['id'],))
                         db.execute("UPDATE tool_workflows SET state='cancelled',detail='Workflow consent superseded' WHERE id=? AND state='active'",(wf['id'],))
                         return None
+            probe_table=db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='asset_probe_runs'").fetchone()
+            if probe_table:
+                probe=db.execute('SELECT plan,plan_sha FROM asset_probe_runs WHERE action_id=?',(row['id'],)).fetchone()
+                if probe:
+                    try:
+                        from .tool_workflows import digest
+                        from .workflow_design import current_source_file
+                        plan=json.loads(probe['plan'])
+                        binding=plan.get('specification')
+                        valid=(digest(plan)==probe['plan_sha'] and json.loads(row['argv_json'])==plan['argv']
+                               and json.loads(row['input_guards_json'])==plan['guards'] and row['cwd']==plan['project'])
+                        if binding and valid:
+                            valid=current_source_file(binding,self.path.parent/'conversations.sqlite3')
+                    except (ValueError,OSError,sqlite3.Error,KeyError,TypeError):valid=False
+                    if not valid:
+                        db.execute("UPDATE janus_actions SET status='cancelled',cancel_requested=1,detail='Asset probe approval changed or superseded' WHERE id=?",(row['id'],))
+                        return None
             updated=db.execute("UPDATE janus_actions SET status='running', started_at=?, detail='Engine starting approved process' WHERE id=? AND status='approved'",(utc_now(),row['id']))
             return dict(row) if updated.rowcount else None
 

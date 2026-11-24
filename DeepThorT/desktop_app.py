@@ -565,6 +565,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Asset import check…',command=self._asset_import_check).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
         ttk.Button(xr,text='Choose X4 game folder…',command=self._choose_x4_game).pack(side='left',padx=3)
@@ -4985,6 +4986,44 @@ class DeepThorTDesktop(tk.Tk):
             self._reload_chat();self._log(f'JANUS workflow design #{ident} queued; no commands authorized.')
         except (ValueError,OSError,KeyError,TypeError) as error:
             messagebox.showwarning('Workflow design unavailable',str(error),parent=self)
+
+    def _asset_import_check(self):
+        if not self.project:return
+        from deepthort_local.asset_import_probe import AssetProbes,plan
+        from deepthort_local.workflow_design import current_source
+        try:
+            store=AssetProbes(self.tool_workflows)
+            recent=store.recent(self.project)
+            if recent and messagebox.askyesno('Asset import check','Review the latest import check result? Choose No to prepare a new test.',parent=self):
+                ident=recent[0][0]
+                result=store.result(ident)
+                messagebox.showinfo('Asset import evidence',json.dumps(result,indent=2,ensure_ascii=False),parent=self)
+                return
+            runs=[r for r in self.tool_workflows.list(self.project) if r['state']=='complete']
+            if not runs:raise ValueError('Complete a checked tool workflow first')
+            summary='\n'.join(f"#{r['id']}: {', '.join(s['output'] for s in json.loads(r['manifest'])['stages'])[:150]}" for r in runs[:10])
+            ident=simpledialog.askinteger('Select checked workflow',summary+'\nWorkflow ID:',parent=self,minvalue=1)
+            if ident is None:return
+            if ident not in {r['id'] for r in runs}:raise ValueError('Select a completed workflow')
+            stages=json.loads(self.tool_workflows.get(ident)['manifest'])['stages']
+            ordinal=simpledialog.askinteger('Select artifact','\n'.join(f"{i}. {s['output']}" for i,s in enumerate(stages,1)),parent=self,minvalue=1,maxvalue=len(stages))
+            if ordinal is None:return
+            tool=simpledialog.askstring('Application','Enter Blender or Godot (installed and discovered):',parent=self)
+            if tool is None:return
+            approved=plan(self.tool_workflows,self.tool_learning,ident,ordinal,tool.strip())
+            binding=approved['specification']
+            if binding and not current_source(binding,self.conversations):raise ValueError('Specification superseded')
+            if self.disk_gate.gaming():raise ValueError('Gaming priority: wait before checking an asset')
+            if not messagebox.askyesno('Approve exact asset import test',
+                'Run a fixed headless application import smoke test. Native imports are not sandboxed. '
+                'No project integration or gameplay is proven.\n\n'+subprocess.list2cmdline(approved['argv']),parent=self):return
+            if (self._project_key()!=approved['project'] or self.disk_gate.gaming() or
+                (binding and not current_source(binding,self.conversations))):
+                raise ValueError('Project or specification changed during review')
+            action=store.queue(approved,self.tool_learning,user_approved=True)
+            self._log(f'Asset import check queued as JANUS process #{action}; use Asset import check to review result.')
+        except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
+            messagebox.showwarning('Asset import check unavailable',str(error),parent=self)
 
     def _tool_workflow_dialog(self):
         if not self.project:return
