@@ -14,6 +14,7 @@ TOOLTIPS = {
     "Roadmap automation": "Review and approve an exact ordered roadmap once, or pause its automatic advancement. Each successor requires current verification of predecessors.",
     "Enroll app…": "Register an explicitly selected installed Windows executable and documented help flag for later investigation. This does not run or install it.",
     "Tool workflows…": "Review and approve an ordered sequence of existing learned tool recipes, or stop an active workflow. Outputs are checked between stages.",
+    "Asset import check…": "Review a required or optional headless Blender/Godot import test for a checked asset, approve its exact command, and inspect actual load evidence. Required imports hold roadmap advancement until verified.",
     "JANUS workflow…": "Ask JANUS to propose a specification-bound tool workflow, identify missing procedures, or review a finished draft. No model proposal authorizes execution.",
     "Discovered packages…": "Inspect exact package IDs from persisted read-only software discovery. Installation requires a separate action.",
     'User guide': 'Open the illustrated offline user guide in your default browser (F1). No internet connection is needed.',

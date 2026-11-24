@@ -2076,6 +2076,8 @@ class DeepThorTDesktop(tk.Tk):
                 view.insert('end',f"  After milestone {task['after']}: {task['goal']} -> {task['output']} [{info.get('kind','artifact')}; {info.get('verification','legacy check')}]\n")
                 if task.get('acceptance'):
                     view.insert('end','    Required measurable checks: '+json.dumps(task['acceptance'],ensure_ascii=False)+'\n')
+                if task.get('imports'):
+                    view.insert('end','    Required application imports: '+', '.join(task['imports'])+'\n')
         view.configure(state='disabled')
         accepted=[False]
         def consent():accepted[0]=True;dialog.destroy()
@@ -2115,6 +2117,18 @@ class DeepThorTDesktop(tk.Tk):
                     if not mixed or mixed['sha']!=run['mixed_sha']:raise PlanError('Mixed roadmap approval changed')
                     task=pending_task(mixed,self.tool_workflows,before)
                     if task:
+                        if task.get('imports'):
+                            from deepthort_local.asset_import_probe import required_imports
+                            for producer in self.tool_workflows.roadmap_members(ident):
+                                if producer['state']!='complete' or json.loads(producer['manifest']).get('mixed_task')!=task:continue
+                                pending=required_imports(self.tool_workflows,producer)
+                                if pending:
+                                    item=pending[0]
+                                    note=(ident,item['workflow_id'],item['tool'],item['output'],item['status'])
+                                    if self.__dict__.get('_last_required_import_note')!=note:
+                                        self._last_required_import_note=note
+                                        self._log(f"Roadmap #{ident}: {item['tool']} import of {item['output']} required ({item['status']}). Use Computer & Tools / Asset import check to review.")
+                                    break
                         if not self.mixed_roadmaps.request_for(task['id']):
                             from deepthort_local.workflow_design import source_binding
                             goal=task['goal']+'; required artifact: '+task['output']
@@ -4989,32 +5003,43 @@ class DeepThorTDesktop(tk.Tk):
 
     def _asset_import_check(self):
         if not self.project:return
-        from deepthort_local.asset_import_probe import AssetProbes,plan
+        from deepthort_local.asset_import_probe import AssetProbes,plan,required_imports
         from deepthort_local.workflow_design import current_source
         try:
             store=AssetProbes(self.tool_workflows)
+            runs=[r for r in self.tool_workflows.list(self.project) if r['state']=='complete']
+            pending=[]
+            for run in runs:
+                manifest=json.loads(run['manifest'])
+                binding=manifest.get('specification')
+                if not binding or not current_source(binding,self.conversations):continue
+                pending.extend(required_imports(self.tool_workflows,run))
+            needed=next((p for p in pending if p['status'] not in ('approved','running')),None)
             recent=store.recent(self.project)
-            if recent and messagebox.askyesno('Asset import check','Review the latest import check result? Choose No to prepare a new test.',parent=self):
+            if not needed and recent and messagebox.askyesno('Asset import check','Review the latest import check result? Choose No to prepare a new test.',parent=self):
                 ident=recent[0][0]
                 result=store.result(ident)
                 messagebox.showinfo('Asset import evidence',json.dumps(result,indent=2,ensure_ascii=False),parent=self)
                 return
-            runs=[r for r in self.tool_workflows.list(self.project) if r['state']=='complete']
-            if not runs:raise ValueError('Complete a checked tool workflow first')
-            summary='\n'.join(f"#{r['id']}: {', '.join(s['output'] for s in json.loads(r['manifest'])['stages'])[:150]}" for r in runs[:10])
-            ident=simpledialog.askinteger('Select checked workflow',summary+'\nWorkflow ID:',parent=self,minvalue=1)
-            if ident is None:return
-            if ident not in {r['id'] for r in runs}:raise ValueError('Select a completed workflow')
-            stages=json.loads(self.tool_workflows.get(ident)['manifest'])['stages']
-            ordinal=simpledialog.askinteger('Select artifact','\n'.join(f"{i}. {s['output']}" for i,s in enumerate(stages,1)),parent=self,minvalue=1,maxvalue=len(stages))
-            if ordinal is None:return
-            tool=simpledialog.askstring('Application','Enter Blender or Godot (installed and discovered):',parent=self)
-            if tool is None:return
+            if needed:
+                ident,ordinal,tool=needed['workflow_id'],needed['ordinal'],needed['tool']
+            else:
+                if not runs:raise ValueError('Complete a checked tool workflow first')
+                summary='\n'.join(f"#{r['id']}: {', '.join(s['output'] for s in json.loads(r['manifest'])['stages'])[:150]}" for r in runs[:10])
+                ident=simpledialog.askinteger('Select checked workflow',summary+'\nWorkflow ID:',parent=self,minvalue=1)
+                if ident is None:return
+                if ident not in {r['id'] for r in runs}:raise ValueError('Select a completed workflow')
+                stages=json.loads(self.tool_workflows.get(ident)['manifest'])['stages']
+                ordinal=simpledialog.askinteger('Select artifact','\n'.join(f"{i}. {s['output']}" for i,s in enumerate(stages,1)),parent=self,minvalue=1,maxvalue=len(stages))
+                if ordinal is None:return
+                tool=simpledialog.askstring('Application','Enter Blender or Godot (installed and discovered):',parent=self)
+                if tool is None:return
             approved=plan(self.tool_workflows,self.tool_learning,ident,ordinal,tool.strip())
             binding=approved['specification']
             if binding and not current_source(binding,self.conversations):raise ValueError('Specification superseded')
             if self.disk_gate.gaming():raise ValueError('Gaming priority: wait before checking an asset')
             if not messagebox.askyesno('Approve exact asset import test',
+                ('Required roadmap import: '+needed['output']+' in '+needed['tool']+'\n\n' if needed else '')+
                 'Run a fixed headless application import smoke test. Native imports are not sandboxed. '
                 'No project integration or gameplay is proven.\n\n'+subprocess.list2cmdline(approved['argv']),parent=self):return
             if (self._project_key()!=approved['project'] or self.disk_gate.gaming() or

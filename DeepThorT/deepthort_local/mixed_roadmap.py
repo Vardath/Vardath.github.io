@@ -23,7 +23,7 @@ def parse_tasks(answer,roadmap,section):
     root=Path(roadmap['project']).resolve(strict=True)
     result=[]
     for task in data['artifacts']:
-        if not isinstance(task,dict) or set(task) not in ({'after','goal','output'},{'after','goal','output','acceptance'}):
+        if not isinstance(task,dict) or not {'after','goal','output'}<=set(task) or set(task)-{'after','goal','output','acceptance','imports'}:
             raise ValueError('Expected boundary, goal and output')
         after=task['after']
         if type(after) is not int or not 0<=after<=len(roadmap['schedule']):
@@ -38,6 +38,9 @@ def parse_tasks(answer,roadmap,section):
         if 'acceptance' in task:
             from .artifact_acceptance import validate
             entry['acceptance']=validate(output,task['acceptance'])
+        if 'imports' in task:
+            from .asset_import_probe import validate_imports
+            entry['imports']=validate_imports(output,task['imports'])
         result.append(entry)
     return result
 
@@ -117,6 +120,9 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
                     'OBJ min_vertices,min_faces and min_extent_x,max_extent_x (also y,z; raw Cartesian units, no scene transforms); '
                     'WAV channels,sample_rate,min_frames; ZIP/APK/AAB/JAR required_members (array of exact filenames). '
                     'Do not invent numeric targets. Omit acceptance when no supported criterion is explicit. '
+                    'Optional imports array: Blender for OBJ/GLB/PNG; Godot for GLB/PNG. Include only when '
+                    'the artifact is intended for that application in the user specification. This requires a real '
+                    'headless import smoke check before later milestones, not a rendering or gameplay test. '
                     'Use an empty array if no separate artifact is required. after=N means after verified milestone N '
                     'and before N+1; 0 means before code. Maximum three artifacts. '
                     f'Total milestones: {len(roadmap["schedule"])}. '
@@ -142,7 +148,7 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
             key=task['output'].casefold()
             if key in tasks:
                 old=tasks[key]
-                if any(old.get(k)!=task.get(k) for k in ('after','goal','output','acceptance')):
+                if any(old.get(k)!=task.get(k) for k in ('after','goal','output','acceptance','imports')):
                     raise ValueError('Conflicting artifact requirements; reconcile the roadmap')
                 old['sections'].append(task['section'])
             else:tasks[key]={k:v for k,v in task.items() if k!='section'}|{'sections':[task['section']]}
@@ -175,6 +181,8 @@ def pending_task(plan,workflows,before):
                             require_checked_receipt(task,json.loads(row['receipt'])['artifact'])
                             break
                     else:raise ValueError('Required artifact receipt missing')
+                    from .asset_import_probe import required_imports
+                    if required_imports(workflows,run):return task
                     break
             matches.append(run)
         else:return task
@@ -188,6 +196,9 @@ def require_output(task,manifest):
     if 'acceptance' in task:
         from .artifact_acceptance import validate
         validate(task['output'],task['acceptance'])
+    if 'imports' in task:
+        from .asset_import_probe import validate_imports
+        validate_imports(task['output'],task['imports'])
     if task['output'] not in {s['output'] for s in manifest['stages']}:
         raise ValueError('Workflow does not produce the exact required roadmap artifact')
     return True

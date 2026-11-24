@@ -71,4 +71,9 @@ def gate(workflows,request_id,manifest_sha,before):
         if run['state']!='complete':
             return f"Roadmap waiting for tool workflow #{run['id']} ({run['state']}) after milestone {link['after']}"
         check_complete(workflows,run)
+        from .asset_import_probe import required_imports
+        pending=required_imports(workflows,run)
+        if pending:
+            item=pending[0]
+            return f"Roadmap waiting for {item['tool']} import of {item['output']} ({item['status']})"
     return None
