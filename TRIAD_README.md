@@ -9,3 +9,7 @@ The original Windows Job Object remains shared: 30% CPU and 30% aggregate commit
 Old Qwen release history/manuals and previous benchmark files are inherited historical artifacts, not this edition's acceptance results. 
 
 The root Job Object now has a random name and is checked by actual membership and limit values even inside a nested cleanup job. A Windows virtual-environment launcher can have a different PID from the real serving interpreter; health must identify a PID belonging to the exact child job. Windows CI runs a real native OpenVINO numerical preflight under the shared cap, not a full three-model inference benchmark.
+
+
+### Python compatibility repair
+OpenVINO GenAI 2026.4.1.0 has no Python 3.15 Windows wheel. The installer now checks x64 Python 3.10–3.13, prefers the current supported interpreter or the explicit Python launcher selectors (3.13 first), and preserves incompatible private environments with an `openvino-env-incompatible-` name before creating a new one. Install Python 3.13 x64 from python.org if no supported Python is installed. No change to the selected models, shared Job Object cap, or original DeepThorT. Windows real model acceptance is still required.

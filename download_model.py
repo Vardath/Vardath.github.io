@@ -6,7 +6,6 @@ import shutil
 import subprocess
 import sys
 import time
-import venv
 from pathlib import Path
 from urllib.request import urlopen,Request
 from deepthort_local.triad_profiles import ROOT,PROFILES,RUNTIME_VERSION,REQUIRED,OPTIONAL,model_path,runtime_path
@@ -76,14 +75,57 @@ def download(url,path,meta,gate):
     if not verify(part,meta,gate):raise ValueError('Incomplete or invalid publisher file: '+path.name)
     os.replace(part,path)
 
+# OpenVINO GenAI 2026.4.1.0 publishes Windows x64 wheels for these
+# interpreters. Do not use the newest installed Python indiscriminately.
+SUPPORTED_RUNTIME_MINORS=(13,12,11,10)
+
+def probe_python(command):
+    try:
+        result=subprocess.run([*command,'-I','-c',
+            'import json,sys,struct,platform; print(json.dumps([sys.executable, list(sys.version_info[:2]), struct.calcsize("P"), platform.machine()]))'],
+            check=True,capture_output=True,text=True,timeout=20,
+            env={**os.environ,'PYTHON_MANAGER_AUTOMATIC_INSTALL':'0'})
+        exe,version,pointer_size,machine=json.loads(result.stdout.strip())
+        if (version[0]==3 and version[1] in SUPPORTED_RUNTIME_MINORS
+                and pointer_size==8 and machine.casefold() in ('amd64','x86_64')):
+            return Path(exe)
+    except (OSError,ValueError,TypeError,IndexError,subprocess.SubprocessError):
+        pass
+    return None
+
+def choose_runtime_python():
+    current=probe_python([sys.executable])
+    if current:return current
+    launcher=shutil.which('py')
+    if launcher:
+        for minor in SUPPORTED_RUNTIME_MINORS:
+            candidate=probe_python([launcher,'-3.'+str(minor)])
+            if candidate:return candidate
+    raise RuntimeError('OpenVINO requires supported x64 Python 3.13, 3.12, 3.11 or 3.10. '
+        'Install Python 3.13 x64 from python.org (include the Python launcher), '
+        'then click Install AI again. Python 3.15 cannot install this runtime.')
+
+def ensure_runtime_environment(exe):
+    if exe.is_file() and probe_python([str(exe)]):
+        return
+    base=choose_runtime_python()
+    environment=exe.parent.parent
+    if environment.exists():
+        # Keep the failed environment; no recursive deletion and no changes to
+        # model weights or project state. A fresh venv is required for a new ABI.
+        backup=environment.with_name(environment.name+'-incompatible-'+str(time.time_ns()))
+        environment.rename(backup)
+        print('Preserved incompatible runtime:',backup,flush=True)
+    print('Creating private OpenVINO runtime using',base,flush=True)
+    subprocess.run([str(base),'-I','-m','venv',str(environment)],check=True)
+    if not exe.is_file() or not probe_python([str(exe)]):
+        raise RuntimeError('New virtual environment did not use a supported x64 Python')
+
 def install_runtime():
-    if sys.version_info<(3,10) or sys.maxsize<=2**32:
-        raise RuntimeError('Python 3.10+ x64 required')
     exe=runtime_path()
-    if not exe.is_file():
-        venv.EnvBuilder(with_pip=True).create(exe.parent.parent)
     marker=ROOT/'runtime/openvino-verified.json'
     if marker.exists():marker.unlink()
+    ensure_runtime_environment(exe)
     # Use isolated venv, never alter original DeepThorT or global Python.
     subprocess.run([str(exe),'-m','pip','--isolated','install','--only-binary=:all:',
         '--index-url','https://pypi.org/simple','openvino-genai=='+RUNTIME_VERSION],check=True)
