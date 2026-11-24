@@ -27,9 +27,32 @@ def digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
 
+def archive_scope(stream,suffix):
+    with zipfile.ZipFile(stream) as z:
+        entries=z.infolist()
+        if not entries or len(entries)>4000 or sum(x.file_size for x in entries)>64_000_000:
+            raise ValueError('Archive exceeds validation bounds')
+        names=set()
+        for entry in entries:
+            name=entry.filename.replace('\\','/')
+            if name.startswith('/') or ':' in name or '..' in name.split('/') or name.casefold() in names:
+                raise ValueError('Archive contains unsafe or duplicate path')
+            names.add(name.casefold())
+            if entry.flag_bits&1 or (entry.external_attr>>16)&0o170000==0o120000:
+                raise ValueError('Archive contains encrypted or symlink member')
+        if suffix=='.apk' and 'androidmanifest.xml' not in names:raise ValueError('APK missing AndroidManifest.xml')
+        if suffix=='.aab' and 'base/manifest/androidmanifest.xml' not in names:raise ValueError('AAB missing base manifest')
+        if z.testzip() is not None:raise ValueError('Archive CRC failed')
+    return 'archive structure and CRC (not installability)'
+
+
 def artifact(root,relative):
     path=safe_target(root,relative,must_exist=True)
-    if not 0<path.stat().st_size<=MAX_ARTIFACT:raise ValueError('Artifact empty or exceeds check bound')
+    size=path.stat().st_size
+    if size>MAX_ARTIFACT:
+        from .large_artifacts import verify_large_artifact
+        return verify_large_artifact(path,archive_scope)
+    if not 0<size<=MAX_ARTIFACT:raise ValueError('Artifact empty or exceeds check bound')
     data=path.read_bytes()
     if not 0<len(data)<=MAX_ARTIFACT:raise ValueError('Artifact size changed')
     suffix=path.suffix.casefold()
@@ -42,22 +65,7 @@ def artifact(root,relative):
     elif suffix=='.toml':
         tomllib.loads(data.decode('utf-8'));scope='TOML parse'
     elif suffix in ('.zip','.apk','.aab','.jar'):
-        with zipfile.ZipFile(io.BytesIO(data)) as z:
-            entries=z.infolist()
-            if not entries or len(entries)>4000 or sum(x.file_size for x in entries)>64_000_000:
-                raise ValueError('Archive exceeds validation bounds')
-            names=set()
-            for entry in entries:
-                name=entry.filename.replace('\\','/')
-                if name.startswith('/') or ':' in name or '..' in name.split('/') or name.casefold() in names:
-                    raise ValueError('Archive contains unsafe or duplicate path')
-                names.add(name.casefold())
-                if entry.flag_bits&1 or (entry.external_attr>>16)&0o170000==0o120000:
-                    raise ValueError('Archive contains encrypted or symlink member')
-            if suffix=='.apk' and 'androidmanifest.xml' not in names:raise ValueError('APK missing AndroidManifest.xml')
-            if suffix=='.aab' and 'base/manifest/androidmanifest.xml' not in names:raise ValueError('AAB missing base manifest')
-            if z.testzip() is not None:raise ValueError('Archive CRC failed')
-        scope='archive structure and CRC (not installability)'
+        scope=archive_scope(io.BytesIO(data),suffix)
     else:
         from .artifact_media_checks import media_scope
         scope=media_scope(suffix,data) or scope
