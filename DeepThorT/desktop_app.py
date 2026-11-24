@@ -249,6 +249,8 @@ class DeepThorTDesktop(tk.Tk):
         self.tool_learning = ToolAcquisition(STATE/'tool_acquisition.sqlite3')
         self.specifications = SpecificationIndex(STATE/'specification_index.sqlite3')
         self.inspection_exclusions = InspectionExclusions(STATE/'project-inspection-exclusions-v46.json')
+        from deepthort_local.repository_index import RepositoryIndex
+        self.repository_index=RepositoryIndex(STATE/'repository-index-v61.sqlite3')
         self.plan_continuations = PlanContinuation(STATE)
         self.hierarchies = HierarchicalPlanStore(STATE/'hierarchical_plans.sqlite3')
         from deepthort_local.roadmap_runs import RoadmapRuns
@@ -3271,6 +3273,17 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.recovery_council import reframe, select_source_section, append_guidance
                 from deepthort_local.reasoning_council import ReasoningCouncil
                 recovery_prompt=prompt
+                try:
+                    if not self.disk_gate.gaming():
+                        excluded=self.inspection_exclusions.paths(job['project'])
+                        stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
+                        budget=min(1000,MAX_INFERENCE_PROMPT-len(prompt)-300)
+                        if budget>=160:
+                            self.repository_index.refresh(job['project'],exclude=excluded,cancelled=stopped)
+                            recovery_prompt+=self.repository_index.context(job['project'],cycle['diagnostic'],
+                                focus=next(iter(candidates)),omit=list(candidates),exclude=excluded,budget=budget,cancelled=stopped)
+                except (ValueError,OSError) as error:
+                    self.events.put(('log','Repair repository context unavailable: '+str(error)[:160]))
                 advisor=self._planning_council_client()
                 if advisor is not None:
                     try:
@@ -3284,7 +3297,7 @@ class DeepThorTDesktop(tk.Tk):
                             observed=observed,feedback=cycle['diagnostic'],revision=cycle['repairs']+1,
                             stage=lambda text:self.events.put(('log',text)),
                             cancelled=lambda:self._quitting or self.active_job!=jobid)
-                        recovery_prompt=append_guidance(prompt,review,MAX_INFERENCE_PROMPT)
+                        recovery_prompt=append_guidance(recovery_prompt,review,MAX_INFERENCE_PROMPT)
                         self.janus.recommend(evidence_key='repair-'+review['evidence_sha'][:40],
                             problem='Failed approved verification',proposal=review['janus'],origin='local_model')
                         self.sentinel.recommend(evidence_key='repair-'+review['evidence_sha'][:40],
@@ -3903,6 +3916,19 @@ class DeepThorTDesktop(tk.Tk):
                         if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
                             raise PlanError('Behavior test context exceeds bound; split the approved test file')
                         request+=extra
+                    if dest.suffix.casefold()=='.py' and not self.disk_gate.gaming():
+                        try:
+                            excluded=self.inspection_exclusions.paths(project)
+                            stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
+                            budget=min(1100,MAX_INFERENCE_PROMPT-len(request)-300)
+                            if budget>=160:
+                                self.repository_index.refresh(project,exclude=excluded,cancelled=stopped)
+                                context=self.repository_index.context(project,focus,focus=step['path'],omit=[step['path']],
+                                    exclude=excluded,budget=budget,cancelled=stopped)
+                                request+=context
+                                if context:self.events.put(('log',f'Job #{jobid}: verified repository interface context attached.'))
+                        except (ValueError,OSError) as error:
+                            self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
                     def transform(answer):
                         if dest.suffix.casefold()=='.svg':
                             from deepthort_local.media_tools import standalone_svg

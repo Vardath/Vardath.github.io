@@ -35,3 +35,6 @@ This pass does not run OpenCode, LLM, Codex, Cursor or Claude Code side-by-side.
 
 ### Progress update — named Python evidence
 Verbose Python verification requires named passing observations for approved supported test files, a persisted trace digest and current regression inputs, and displays current/stale evidence in Work queue. GUT/.NET/npm named receipts and reviewed unlabelled requirement mapping remain backlog. Next high-leverage pass: repository intelligence (priority 2).
+
+### Progress — repository intelligence foundation
+Implemented bounded persistent Python AST metadata, hash-checked retrieval, exact indexed-module import ranking, stale/deleted source removal and generation/repair context integration. Next: richer symbol reference/call graph and source excerpt selection, then GDScript/XML and other supported languages. No performance parity claim; benchmark end-to-end multi-file repair before claiming improvement.
