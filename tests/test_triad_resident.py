@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch,Mock
-from triad_server import validate,admission,command,Pool
+from triad_server import validate,admission,command,Pool,verify_cli
 from deepthort_local.triad_profiles import PROFILES,role_for_council,MODEL_ID
 
 class TriadTests(unittest.TestCase):
@@ -16,7 +16,8 @@ class TriadTests(unittest.TestCase):
             self.assertEqual(validate(body,'implementation')[0],role)
             argv=command(role,12345,'test')
             self.assertIn(PROFILES[role][2],argv[2])
-            self.assertIn('--no-mmap',argv)
+            self.assertNotIn('--no-mmap',argv)
+            self.assertEqual(argv[argv.index('--load-mode')+1],'none')
             self.assertEqual(argv[argv.index('--batch-size')+1],'128')
             self.assertEqual(argv[argv.index('--ubatch-size')+1],'64')
             self.assertEqual(argv[argv.index('--n-gpu-layers')+1],'0')
@@ -33,3 +34,21 @@ class TriadTests(unittest.TestCase):
         p.children['sentinel']=(10,'secret',3,lambda:False)
         self.assertFalse(p.healthy())
         with self.assertRaises(RuntimeError):p.infer('janus',[],2)
+
+    def test_cli_contract(self):
+        flags=[x for x in command('implementation',1,'key') if x.startswith('--')]
+        self.assertTrue(verify_cli(' '.join(flags)+' none'))
+        with self.assertRaises(RuntimeError):verify_cli(' '.join(x for x in flags if x!='--load-mode')+' none')
+    def test_residency_rejects_shared_pid(self):
+        from deepthort_local.triad_acceptance import resident_roles
+        p=Pool();p.ready=True
+        p.children={r:(10,'secret',i+10,lambda:True) for i,r in enumerate(PROFILES)}
+        h=p.status(False)
+        self.assertEqual(set(resident_roles(h,h['pid'])),set(PROFILES))
+        h['models']['sentinel']['pid']=h['models']['janus']['pid']
+        with self.assertRaises(ValueError):resident_roles(h,h['pid'])
+    def test_current_manifest(self):
+        from deepthort_local.latest_acceptance import load_test
+        from pathlib import Path
+        m=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
+        self.assertEqual(m['checks'],['shared_cap','triad_residency','janus_core','triad_inference','concurrent_status'])
