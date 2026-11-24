@@ -1,3 +1,7 @@
+# Continue from v60
+
+Read TEST_RESULTS_V60.md for the latest independent benchmark. Integrate the verified component bundle with approved Build milestones, retaining its file hashes and replacing the superseded macro proposal through normal reconciliation. Check physics and docking in an isolated game test before certifying clearance. Production, crew, equipment and respawn still need implementation.
+
 # Continue from v59
 
 The full PE request now produces a measured LOD0 visual intermediate. Start from PROJECT_CONTEXT_V59.md and TEST_RESULTS_V59.md. The next milestone is a separate ship component with a bound rock part, a position measured against the cockpit and docking connections, and consistent lower LOD and collision geometry. The latest full-roadmap correction repeated the ship macro after receiving the mesh measurements. Test a focused component-edit operation and verify its resulting files.

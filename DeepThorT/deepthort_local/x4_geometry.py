@@ -25,6 +25,10 @@ def export_mesh(target,data):
         data=_obj_geometry(data)
     elif target.suffix.lower()!='.xmf':
         raise GeometryError('Choose an .xmf or .obj filename')
+    export_new_file(target,data)
+
+
+def export_new_file(target,data):
     with tempfile.NamedTemporaryFile(dir=target.parent,delete=False) as f:
         temp=Path(f.name)
     try:

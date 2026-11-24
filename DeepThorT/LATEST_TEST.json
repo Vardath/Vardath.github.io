@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "v59-measured-mesh-draft",
-  "title": "v59 native mesh drafts, ship planning and worker health",
+  "id": "v60-component-attachment",
+  "title": "v60 component drafts, ship planning and worker health",
   "checks": [
     "shared_cap",
     "primary_onnx",

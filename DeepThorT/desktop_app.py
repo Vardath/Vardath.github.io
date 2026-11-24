@@ -125,7 +125,7 @@ class DeepThorTDesktop(tk.Tk):
         super().__init__()
         STATE.mkdir(exist_ok=True)
         install_crash_hooks(STATE, 'desktop')
-        record(STATE,'desktop','desktop_init',version='59',pid=os.getpid())
+        record(STATE,'desktop','desktop_init',version='60',pid=os.getpid())
         self._last_queue_gate = None
         self._last_queue_gate_at = 0.0
         self._last_telemetry_at = 0.0
@@ -3481,8 +3481,15 @@ class DeepThorTDesktop(tk.Tk):
             ident,name,note,_,data=row
             dest=filedialog.asksaveasfilename(title=f'Export visual mesh from request {ident}',
                 initialfile=name+'_fitted-lod0.xmf',defaultextension='.xmf',
-                filetypes=[('X4 mesh','*.xmf'),('Wavefront geometry','*.obj')],parent=self)
+                filetypes=[('X4 mesh','*.xmf'),('Wavefront geometry','*.obj'),('Component draft','*.zip')],parent=self)
             if dest:
+                if Path(dest).suffix.lower()=='.zip':
+                    bundle=self.specifications.latest_attachment(self.project,ident)
+                    if not bundle:raise ValueError('No component draft available for this request.')
+                    from deepthort_local.x4_geometry import export_new_file
+                    export_new_file(Path(dest),bundle)
+                    self._log('Exported measured component draft to '+dest)
+                    return
                 from deepthort_local.x4_geometry import export_mesh
                 export_mesh(Path(dest),data)
                 self._log(note+' Exported to '+dest)

@@ -87,6 +87,10 @@ class SpecificationIndex:
                   project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
                   note TEXT NOT NULL, digest TEXT NOT NULL, name TEXT NOT NULL, mesh BLOB NOT NULL,
                   PRIMARY KEY(project,request_id,fingerprint));
+                CREATE TABLE IF NOT EXISTS attachment_drafts (
+                  project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
+                  note TEXT NOT NULL,digest TEXT NOT NULL,bundle BLOB NOT NULL,
+                  PRIMARY KEY(project,request_id,fingerprint));
                 CREATE TABLE IF NOT EXISTS variant_bindings (
                   project TEXT NOT NULL, package TEXT NOT NULL, source_path TEXT NOT NULL,
                   source_digest TEXT NOT NULL, macro_name TEXT NOT NULL,
@@ -422,6 +426,13 @@ class SpecificationIndex:
             raise PlanError('Saved mesh failed its checksum')
         return row
 
+    def latest_attachment(self,project,request_id):
+        with self._db() as db:
+            row=db.execute('SELECT digest,bundle FROM attachment_drafts WHERE project=? AND request_id=? '
+                           'ORDER BY rowid DESC LIMIT 1',(str(Path(project).resolve()),request_id)).fetchone()
+        if row and hashlib.sha256(row[1]).hexdigest()!=row[0]:raise PlanError('Draft bundle checksum mismatch')
+        return row[1] if row else None
+
     def save_response(self, request_id: int, original: str, ordinal: int, response: str,
                       *, project: str | Path, inspected_evidence: str='', variant=None) -> list[dict]:
         # Model-authored data only. Invalid format increments attempts but does
@@ -626,8 +637,19 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                                              geometry_report,cancelled,stage)
                 except (OSError,ValueError) as error:
                     note='Geometry inspection unavailable: '+str(error)[:180]
-                    used=0
+                    used=1
                     if stage:stage(note)
+                if note.startswith('Native visual mesh:') and (continuous or section_calls+used<max_rounds):
+                    from .x4_attachment import stage_attachment
+                    try:
+                        attachment,extra=stage_attachment(client,index,request_id,session,original,project,
+                                                         geometry_report,cancelled,stage)
+                    except (OSError,ValueError) as error:
+                        attachment='Attachment needs inspection: '+str(error)[:180]
+                        extra=1
+                        if stage:stage(attachment)
+                    note+=' '+attachment
+                    used+=extra
                 if cancelled and cancelled():raise PlanError('Planning cancelled')
                 inspected_evidence=note+'\n'+inspected_evidence
                 section_calls+=used

@@ -1,0 +1,46 @@
+{
+  "schema": "deepthort-v60-source-digest-v1",
+  "release": "v60",
+  "source_files": [
+    {
+      "path": "LATEST_TEST.json",
+      "sha256": "5176c57aef38755defba53c7b7dbe22a7c720835c89138b2629025d5aaaf0b65"
+    },
+    {
+      "path": "NEXT_STEPS.md",
+      "sha256": "9f3c33c17ef1466f70e0fe542faa801331b1657e2f84da43f1cace377ca08170"
+    },
+    {
+      "path": "README.md",
+      "sha256": "553abf914666a05a0ff04f929c860fb83415f09ff7ccdc3b22a15c6a9ba7c011"
+    },
+    {
+      "path": "TEST_RESULTS_V60.md",
+      "sha256": "d3b9d2436bfc25f36b95ba7dff05ae1a10f9a1c331215152d99c41e216f53040"
+    },
+    {
+      "path": "deepthort_local/specification_library.py",
+      "sha256": "47a2507428ad65902240b8dbaa803513f5974d2a85fc4291539b90b34433af3e"
+    },
+    {
+      "path": "deepthort_local/ui_help.py",
+      "sha256": "65a8d1dad773ad2017a3b3e092ae0da52726ec1ff1822b5ab8dbf9a119818c9b"
+    },
+    {
+      "path": "deepthort_local/x4_attachment.py",
+      "sha256": "e3955d35f6ee334481168566fbd7b56540b41b15bd032600626c139cedab09ab"
+    },
+    {
+      "path": "deepthort_local/x4_geometry.py",
+      "sha256": "c1656e731eeac89bea6b959ab7d8c3c4ef08b7864c35111b5551bf9af0ea0c4c"
+    },
+    {
+      "path": "desktop_app.py",
+      "sha256": "b8977b9f60e00d56c7ed99894acb5d7df0b55ea3401fa9456ac46515d4116025"
+    },
+    {
+      "path": "tests/test_x4_attachment_v60.py",
+      "sha256": "7b6019f3a1b88aa4b8177d62ce589fe1c7487c6fc6d954b4fb4a7b927cc7d58d"
+    }
+  ]
+}

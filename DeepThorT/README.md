@@ -1,3 +1,7 @@
+# DeepThorT v60 for Windows
+
+On the independent PE request, the local planner can now assemble the fitted asteroid into a new ship component. It offers the model upper-rear offsets screened against measured cockpit, elevator, dock, weapon, turret and engine connections. The resulting source bundle includes the registered macro and component, four visual detail levels on the benchmark ship, a resized collision XMF and an OBJ preview showing both main shapes together. In the project sidebar choose **Export latest draft mesh**, then save the component draft with a .zip filename.
+
 # DeepThorT v59 for Windows
 
 The indexed X4 planner can now measure a vanilla PE hull and ore asteroids from native LOD0 vertices. For the independent PE hull request, the local model selects an inspected rock and DeepThorT records a uniformly fitted visual mesh in the draft. Use **Export latest draft mesh** in the project sidebar to save XMF or Wavefront OBJ to a new file. The OBJ contains positions and triangle faces in native axes.
