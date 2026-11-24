@@ -1818,7 +1818,7 @@ class DeepThorTDesktop(tk.Tk):
             tree.see(str(items[0]['id']));refresh_detail()
 
     def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None):
-        from deepthort_local.specification_guard import inspect_proposal
+        from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
         try:
@@ -1835,7 +1835,22 @@ class DeepThorTDesktop(tk.Tk):
                 self.janus.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
                     problem='Sentinel rejected a proposed '+kind+' against original specification',
                     proposal=review['reason'],origin='local_model')
-                raise PlanError('Sentinel rejected work against original specification: '+review['reason'])
+                from deepthort_local.recovery_council import reframe,select_source_section,accepted_guidance
+                advice=''
+                try:
+                    source=section or select_source_section(original,focus)
+                    if len(source)>3200:source=select_source_section(source,focus)
+                    reframed=reframe(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                        advisor or self.client,session=session,project=project,original=original,
+                        source_section=source,focus=focus,observed=proposal,
+                        feedback=review['reason'],revision=0,stage=stage,cancelled=cancelled)
+                    advice=accepted_guidance(reframed)
+                    record(STATE,'desktop','sentinel_rejection_retranslated',kind_reviewed=kind,
+                           accepted=reframed['accepted'],evidence_sha=reframed['evidence_sha'])
+                except (ValueError,OSError) as error:
+                    if stage:stage('JANUS could not retranslate rejected proposal: '+type(error).__name__)
+                raise SpecificationRejected('Sentinel rejected work against original specification: '+
+                    review['reason']+('\n'+advice if advice else ''))
             return review
         finally:
             if advisor is not None:
@@ -2243,8 +2258,8 @@ class DeepThorTDesktop(tk.Tk):
                         max_rounds=MAX_PLAN_ATTEMPTS,
                         stage=lambda message: self.events.put(('conversation_stage',ident,message)),
                         cancelled=cancelled,continuation=self.plan_continuations,
-                        chat_id=request['chat_id'], checkpoint=checkpoint)
-                    if request['mode']=='draft_plan':review_plan(_)
+                        chat_id=request['chat_id'], checkpoint=checkpoint,
+                        reviewer=review_plan if request['mode']=='draft_plan' else None)
                     record(STATE,'desktop','model_plan_validated',request_id=ident,
                            model_authored=True,files=len(_),prewritten_fallback=False)
                 if cancelled():return
@@ -3256,12 +3271,21 @@ class DeepThorTDesktop(tk.Tk):
                             return
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     if len(old)>3500:raise RuntimeError('Existing file too large for safe one-pass local edit. Split the file.')
-                    request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
-                    answer=self.client.chat(j['chat_id'],request,max_tokens=768)
-                    if dest.suffix.casefold()=='.svg':
-                        from deepthort_local.media_tools import standalone_svg
-                        answer=standalone_svg(answer)
-                    guard(strip_single_code_fence(answer),'code')
+                    from deepthort_local.reviewed_generation import generate_reviewed
+                    try:
+                        request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500)
+                    except PlanError:
+                        request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
+                    def transform(answer):
+                        if dest.suffix.casefold()=='.svg':
+                            from deepthort_local.media_tools import standalone_svg
+                            answer=standalone_svg(answer)
+                        return strip_single_code_fence(answer)
+                    answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}',
+                        request,lambda candidate:guard(candidate,'code'),
+                        max_chars=MAX_INFERENCE_PROMPT,transform=transform,
+                        cancelled=lambda:self._quitting or self.active_job!=jobid,
+                        stage=lambda message:self.events.put(('log',message)))
                     self.events.put(('job_answer',jobid,answer))
                     return
                 if j['mode']=='edit':

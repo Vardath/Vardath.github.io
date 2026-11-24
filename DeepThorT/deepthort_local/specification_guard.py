@@ -16,6 +16,10 @@ MAX_PROPOSAL_CHARS=2200
 MAX_SOURCE_CHARS=3000
 
 
+class SpecificationRejected(PlanError):
+    """A semantic refusal, distinct from transport or filesystem errors."""
+
+
 def master_for_job(job, conversations, hierarchies, index):
     """Resolve original source through the actual approved job, not its paraphrase."""
     key=job.get('approval_key') or ''
@@ -102,5 +106,5 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
 def require_alignment(council,client,**kwargs):
     review=inspect_proposal(council,client,**kwargs)
     if not review['accepted']:
-        raise PlanError('Sentinel rejected work against original specification: '+review['reason'])
+        raise SpecificationRejected('Sentinel rejected work against original specification: '+review['reason'])
     return review

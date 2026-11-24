@@ -621,7 +621,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             prompt = index.model_prompt(request_id,original,inspected_evidence=inspected_evidence)
         else:
             prompt = index.model_prompt(request_id,original)
-        if x4 and last_rejection and not variant:
+        if last_rejection and not variant:
             note = '\nPrevious proposal rejected: ' + last_rejection[:240]
             if len(prompt+note) <= 7500:
                 prompt += note

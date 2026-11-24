@@ -523,7 +523,7 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
                         first_prompt: str, *, x4_evidence: str = '',
                         max_chars: int = 7500, max_rounds: int = MAX_PLAN_ATTEMPTS,
                         stage=None, cancelled=None, continuation=None,
-                        chat_id: str = '', checkpoint=None) -> tuple[str, list[dict]]:
+                        chat_id: str = '', checkpoint=None, reviewer=None) -> tuple[str, list[dict]]:
     """Generate a complete plan through bounded, evidence-driven model revisions.
 
     No file intentions are hardcoded here. Each proposed path/description must
@@ -537,6 +537,13 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
     recovered = continuation.load(project,request,x4_evidence,context=first_prompt) if continuation else []
     if project_kind(request) == 'x4':
         recovered = [step for step in recovered if not incompatible_x4_path(step['path'],request)]
+    if reviewer and recovered:
+        accepted=[]
+        for item in recovered:
+            try:reviewer([item])
+            except PlanError:continue
+            accepted.append(item)
+        recovered=accepted
     all_steps: dict[str, dict] = {x['path'].casefold():x for x in recovered}
     # Even a structurally valid saved fragment is not a validated project plan.
     # Re-evaluate the full current specification before accepting any draft.
@@ -624,6 +631,7 @@ def generate_model_plan(client, session: str, request: str, project: str | Path,
             seen_answers.add(answer.strip())
             try:
                 fragment = parse_build_plan(answer, project, request=request, fragment=True, inspected_evidence=x4_evidence)
+                if reviewer:reviewer(fragment)
                 # Merge transactionally. A bad fragment cannot permanently
                 # poison the retained plan with >24 distinct paths and make
                 # every remaining revision fail, regardless of its quality.
