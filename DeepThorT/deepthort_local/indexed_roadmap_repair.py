@@ -14,6 +14,7 @@ from .agent_plan import PlanError, VanillaSourceCollision, remaining_plan_gaps
 from .x4_variant import VariantSource
 from .flight_recorder import record
 from .reasoning_council import ReasoningCouncil, limited_guidance
+from .recovery_council import reframe, accepted_guidance
 
 MAX_MODEL_INPUT = 7500
 MAX_UNPRODUCTIVE_CALLS = 8  # Stalled corrections should not burn days of CPU.
@@ -125,7 +126,8 @@ def _prompt(rows, original: str, ordinal: int, focus: str,
         f'VERBATIM ORIGINAL SOURCE SECTION {ordinal+1}/{len(rows)} BEGIN\n'
     )
     tail='\nVERBATIM ORIGINAL SOURCE SECTION END.\n'
-    guidance=limited_guidance(neural_review)
+    guidance=(accepted_guidance(neural_review) if neural_review and 'accepted' in neural_review
+              else limited_guidance(neural_review))
     advisory=('\n' + guidance + '\n') if guidance else ''
     if new_instruction:
         advisory+='\nJANUS PLANNING CHECKPOINT (advisory only):\n'+new_instruction[:1300]+'\n'
@@ -173,7 +175,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
     batch_progress=False
     batch_number=1
     review=None
-    consulted=False
+    consulted_at=-1
     feedback=''
     while True:
         if i >= max_rounds*batch_number:
@@ -208,7 +210,8 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         # Dynamic guidance can arrive between ONNX model requests. The
         # source specification remains unchanged, and correction validator
         # still decides whether the proposed X4 file is valid.
-        options = dict(neural_review=review, inspected_evidence=inspected_evidence, feedback=feedback)
+        options = dict(neural_review=review if review and review.get('focus',focus)==focus else None,
+                       inspected_evidence=inspected_evidence, feedback=feedback)
         prompt=_prompt(rows,original,ordinal,focus,gaps,steps,**options)
         # Do NOT mark an instruction delivered if the model input cannot fit
         # it alongside the exact original section and mandatory X4 evidence.
@@ -286,6 +289,8 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             stagnation=0
             stalled_this_batch=0
             previous_focus=''
+            review=None
+            consulted_at=-1
             continue
         stalled_this_batch+=1
         stagnation=stagnation+1 if previous_focus==focus else 1
@@ -294,28 +299,43 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         # after evidenced stagnation. Same already-supervised ONNX worker, one
         # request at a time. No second model process, external tool or authority.
         # Advice only informs the *next* validated correction, never marks success.
-        wants_review = neural_council and not consulted and stalled_this_batch>=3 and i<max_rounds*batch_number
+        wants_review = (neural_council and stalled_this_batch>=3
+                        and (consulted_at<0 or stalled_this_batch-consulted_at>=3)
+                        and i<max_rounds*batch_number)
         advisor = (council_provider() if council_provider else client) if wants_review else None
         if wants_review and advisor is None and stage:
             stage('Council worker unavailable or handling another instruction. Planning can continue.')
         if advisor is not None:
-            consulted=True
-            context_section=original[rows[ordinal][1]:rows[ordinal][2]]
+            consulted_at=stalled_this_batch
+            target=focus if focus in remaining else remaining[0]
+            selected=_choose_section(new_rows,original,target,resume_cursor+i)
+            context_section=original[new_rows[selected][1]:new_rows[selected][2]]
             council=ReasoningCouncil(index.path.parent/'reasoning-council-v50.sqlite3')
+            observed=json.dumps({'unmet':remaining,'inspection':inspected_evidence[:700],
+                                  'proposals':new_steps},ensure_ascii=False)
             try:
-                review=council.deliberate(
-                    advisor,session=session,original=original,project=project,
-                    gaps=remaining,saved_steps=new_steps,source_section=context_section,
-                    inspected_evidence=inspected_evidence,stage=stage,cancelled=cancelled)
-            except OSError as error:
-                # Losing the advisory service cannot erase accepted planning work.
+                review=reframe(council,advisor,session=session,original=original,
+                    project=project,source_section=context_section,focus=target,
+                    observed=observed,feedback=feedback,revision=serial,
+                    stage=stage,cancelled=cancelled)
                 if stage:
-                    stage('Council inference unavailable: '+type(error).__name__)
+                    stage('Sentinel accepted retranslation as advice' if review['accepted']
+                          else 'Sentinel rejected retranslation; preserving original requirements')
+                if review['accepted']:
+                    previous_focus=target
+                    stagnation=0
+            except (OSError,ValueError) as error:
+                if stage:
+                    stage('Council recovery unavailable: '+type(error).__name__)
                 review=None
+            finally:
+                release=getattr(advisor,'release',None)
+                if callable(release):release()
         if advisor is not None and review:
             record(index.path.parent,'planner','janus_sentinel_neural_review',
                    request_id=request_id,evidence_hash=review['evidence_sha'][:20],
                    roles_reviewed=2,verified=False,files_written=0,
+                   retranslation_accepted=review.get('accepted',False),
                    advisor='supervised local ONNX')
             # Publish their distinct neural analyses to the existing JANUS &
             # Sentinel tab. These are hypotheses, not approvals or test results.
@@ -324,10 +344,10 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             key=review['evidence_sha'][:40]
             JanusStore(index.path.parent/'janus.sqlite3').recommend(
                 evidence_key='neural-'+key,origin='local_model',
-                problem=remaining[0],proposal=review['janus'])
+                problem=review.get('focus',remaining[0]),proposal=review['janus'])
             SentinelStore(index.path.parent/'sentinel.sqlite3').recommend(
                 evidence_key='neural-'+key,origin='local_model',
-                finding=remaining[0],proposal=review['sentinel'])
+                finding=review.get('focus',remaining[0]),proposal=review['sentinel'])
         if stalled_this_batch>=MAX_UNPRODUCTIVE_CALLS:
             raise PlanError('Indexed X4 roadmap paused for lack of verified progress '
                             f'after {stalled_this_batch} consecutive correction calls. '

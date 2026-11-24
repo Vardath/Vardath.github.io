@@ -140,6 +140,7 @@ class DeepThorTDesktop(tk.Tk):
         self.council_node = None
         self.council_ready = False
         self._council_busy = False
+        self._council_lock = threading.Lock()
         self._council_retry_at = 0.0
         self._council_restarts = 0
         self._latest_test_thread = None
@@ -857,11 +858,10 @@ class DeepThorTDesktop(tk.Tk):
             if cancel.is_set():return {'status':'cancelled','detail':'Latest test stopped'}
             if not observed['secondary_verified']:
                 return {'status':'blocked','detail':'Cannot test independent inference without a verified council worker.'}
-            if council_busy_at_start or self._council_busy:
-                return {'status':'inconclusive','detail':'JANUS is already processing a real instruction; this test will not interrupt it.'}
-            # Reserve shared council worker so the normal instruction loop
-            # cannot enqueue an inference during this small diagnostic.
-            self._council_busy=True
+            with self._council_lock:
+                if council_busy_at_start or self._council_busy:
+                    return {'status':'inconclusive','detail':'JANUS is already processing a real instruction; this test will not interrupt it.'}
+                self._council_busy=True
             try:
                 import urllib.request
                 from deepthort_local.dual_onnx import MODEL, COUNCIL_HOST, local_health
@@ -1816,13 +1816,21 @@ class DeepThorTDesktop(tk.Tk):
 
     def _planning_council_client(self):
         from deepthort_local.dual_onnx import COUNCIL_HOST
-        proc = self.council_node
-        if self._council_busy or not proc or proc.poll() is not None:
-            return None
-        health = council_health() or {}
-        if health.get('pid') != proc.pid or not health.get('ready') or health.get('inference_busy'):
-            return None
-        return LocalModelClient(STATE/'sessions.sqlite3', base_url=COUNCIL_HOST)
+        with self._council_lock:
+            proc = self.council_node
+            if self._council_busy or not proc or proc.poll() is not None:
+                return None
+            health = council_health() or {}
+            if health.get('pid') != proc.pid or not health.get('ready') or health.get('inference_busy'):
+                return None
+            client=LocalModelClient(STATE/'sessions.sqlite3', base_url=COUNCIL_HOST)
+            self._council_busy=True
+        owner=self
+        class LeasedClient:
+            def __getattr__(self,name):return getattr(client,name)
+            def release(self):
+                with owner._council_lock:owner._council_busy=False
+        return LeasedClient()
 
     def _start_council(self):
         if not self.node_ready or not self.node or self.node.poll() is not None:return
@@ -1879,10 +1887,12 @@ class DeepThorTDesktop(tk.Tk):
                     value=council_health(timeout=1.2)
                     self.events.put(('council_health',value))
                 threading.Thread(target=probe,daemon=True,name='CouncilHealth').start()
-            if self.council_ready and not self._council_busy:
-                item=self.instruction_inbox.claim()
-                if item:
-                    self._council_busy=True
+            item=None
+            with self._council_lock:
+                if self.council_ready and not self._council_busy:
+                    item=self.instruction_inbox.claim()
+                    if item:self._council_busy=True
+            if item:
                     def counsel():
                         try:
                             # Query the stored project exactly, not a generated
@@ -2826,7 +2836,36 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs()
         def worker():
             try:
-                result=self.client.chat(job['chat_id'],prompt,max_tokens=768)
+                from deepthort_local.recovery_council import reframe, select_source_section, append_guidance
+                from deepthort_local.reasoning_council import ReasoningCouncil
+                recovery_prompt=prompt
+                advisor=self._planning_council_client()
+                if advisor is not None:
+                    try:
+                        original=job['prompt']
+                        focus=cycle['diagnostic']+' '+ ' '.join(candidates)
+                        source=select_source_section(original,focus)
+                        observed='\n'.join(path+':\n'+code for path,code in candidates.items())
+                        review=reframe(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
+                            session=f"repair-{jobid}",project=job['project'],original=original,
+                            source_section=source,focus='Repair failed approved verification',
+                            observed=observed,feedback=cycle['diagnostic'],revision=cycle['repairs']+1,
+                            stage=lambda text:self.events.put(('log',text)),
+                            cancelled=lambda:self._quitting or self.active_job!=jobid)
+                        recovery_prompt=append_guidance(prompt,review,MAX_INFERENCE_PROMPT)
+                        self.janus.recommend(evidence_key='repair-'+review['evidence_sha'][:40],
+                            problem='Failed approved verification',proposal=review['janus'],origin='local_model')
+                        self.sentinel.recommend(evidence_key='repair-'+review['evidence_sha'][:40],
+                            finding='Review failed verification retranslation',proposal=review['sentinel'],origin='local_model')
+                        record(STATE,'desktop','repair_retranslation',job_id=jobid,
+                               accepted=review['accepted'],guidance_delivered=recovery_prompt!=prompt)
+                    except (ValueError,OSError) as error:
+                        self.events.put(('log','Council recovery unavailable: '+type(error).__name__))
+                    finally:
+                        release=getattr(advisor,'release',None)
+                        if callable(release):release()
+                if self._quitting or self.active_job!=jobid:return
+                result=self.client.chat(job['chat_id'],recovery_prompt,max_tokens=768)
                 self.events.put(('repair_answer',jobid,result,candidates))
             except Exception as exc:
                 record(STATE,'desktop','repair_model_error',level='ERROR',job_id=jobid,
