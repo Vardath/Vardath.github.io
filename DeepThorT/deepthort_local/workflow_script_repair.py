@@ -22,7 +22,10 @@ def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancell
         if recovery['specification']!=source_binding(request):raise ValueError('Repair specification changed')
     check()
     failure=recovery['failure']
-    if failure['status']!='failed' or not failure.get('returncode') or failure['partial_output_present']:
+    rejected=failure.get('rejected_artifact')
+    failed=failure['status']=='failed' and bool(failure.get('returncode'))
+    mismatch=bool(rejected and rejected['archived'] and failure['status']=='succeeded' and failure.get('returncode')==0)
+    if not (failed or mismatch) or failure['partial_output_present']:
         return None
     if not failure.get('log_sha256') or not failure.get('log_tail'):return None
     run=workflows.get(recovery['workflow_id'])
@@ -32,7 +35,7 @@ def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancell
     row=workflows.stages(run['id'])[ordinal-1]
     action=workflows.janus.action(row['action_id'])
     if (not action or action['kind']!='tool' or action['approval_source']!='desktop-user-confirmation'
-        or action['status']!='failed' or action['returncode']!=failure['returncode']
+        or action['status']!=failure['status'] or action['returncode']!=failure['returncode']
         or json.loads(action['argv_json'])!=step['argv']
         or Path(action['cwd']).resolve()!=Path(request['project']).resolve()):
         raise ValueError('Failed action does not match the approved stage')
@@ -55,7 +58,7 @@ def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancell
     help_record=acquisition.probe_evidence(recipe['name'],workflows.janus)
     if not help_record:return None
     key=digest(['script-repair-v1',recovery['manifest_sha'],ordinal,failure['log_sha256'],old_sha,
-                help_record['sha256'],source_binding(request)])
+                help_record['sha256'],source_binding(request),rejected])
     existing=drafts.gap_result(key)
     if existing:
         current=acquisition._recipe_row(existing['recipe_id'],root)
@@ -78,6 +81,8 @@ def repair(drafts,acquisition,workflows,client,*,request,recovery,review,cancell
             '\nRecorded failure:\n'+failure['log_tail'][-1200:]+
             '\nApproved local help:\n'+help_record['excerpt'][:700]+
             '\nLocal documentation:\n'+acquisition.local_docs(recipe['name'],max_chars=400))
+    if rejected:
+        prompt+='\nMEASURABLE ACCEPTANCE FAILURE: '+json.dumps(rejected['rejection'],ensure_ascii=False)
     if research:
         check()
         try:

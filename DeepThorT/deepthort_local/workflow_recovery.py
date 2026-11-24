@@ -53,7 +53,16 @@ def recovery_snapshot(workflows,ident):
                         # Bounded diagnostic excerpt, never executable instructions.
                         failure['log_tail']=data[-1800:].decode('utf-8',errors='replace')
                 target=safe_target(run['project'],stage['output'])
-                failure['partial_output_present']=target.exists() or target.is_symlink()
+                if row['state']=='rejected':
+                    from .artifact_rejection import rejection
+                    rejected=rejection(workflows,ident)
+                    if not rejected or not rejected['archived']:
+                        raise ValueError('Review and preserve rejected artifact before recovery')
+                    failure['rejected_artifact']=rejected
+                    # The successor may now produce the required path; the
+                    # immutable rejected bytes remain separately verifiable.
+                    failure['partial_output_present']=False
+                else:failure['partial_output_present']=target.exists() or target.is_symlink()
     if failure is None:raise ValueError('No incomplete workflow stage')
     return {'workflow_id':ident,'manifest_sha':run['manifest_sha'],
             'depth':1+(inherited['depth'] if inherited else 0),

@@ -246,8 +246,20 @@ class ToolWorkflows:
                         # inputs AFTER execution too; the new output must exist.
                         verify_guards([g for g in json.loads(action['input_guards_json']) if g['kind']!='absent'])
                         receipt={'log_sha256':log_sha,'artifact':artifact(project,stage['output'])}
-                        from .artifact_acceptance import stage_acceptance
-                        checked=stage_acceptance(project,stage,manifest.get('mixed_task'),receipt['artifact'])
+                        from .artifact_acceptance import stage_acceptance,AcceptanceMismatch
+                        try:
+                            checked=stage_acceptance(project,stage,manifest.get('mixed_task'),receipt['artifact'])
+                        except AcceptanceMismatch as error:
+                            # Distinguish a real property mismatch from an
+                            # interrupted process or unverifiable file.
+                            receipt['rejection']={'detail':str(error),'checks':manifest['mixed_task']['acceptance']}
+                            with self.janus.connect() as db:
+                                db.execute('BEGIN IMMEDIATE')
+                                db.execute("UPDATE tool_workflow_stages SET state='rejected',receipt=? WHERE workflow_id=? AND ordinal=? AND state='dispatched'",
+                                           (json.dumps(receipt),ident,ordinal))
+                                db.execute("UPDATE tool_workflows SET state='blocked',detail=? WHERE id=? AND state='active'",
+                                           (str(error)[:500],ident))
+                            return f'Workflow #{ident} blocked: {error}'
                         if checked is not None:receipt['acceptance']=checked
                         with self.janus.connect() as db:
                             db.execute("UPDATE tool_workflow_stages SET state='checked',receipt=? WHERE workflow_id=? AND ordinal=? AND state='dispatched'",

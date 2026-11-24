@@ -350,7 +350,7 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
     if recovery:
         # Never immediately replay the exact failed recipe merely because it
         # remains in the learning library. A distinct reviewed alternative is needed.
-        if recovery['failure']['status']=='failed' and recovery['remaining']:
+        if (recovery['failure']['status']=='failed' or recovery['failure'].get('rejected_artifact')) and recovery['remaining']:
             failed=recovery['remaining'][0]
             recipes=[r for r in recipes if (r['title'],r['tool'],r['output'])!=
                      (failed['title'],failed['tool'],failed['output'])]

@@ -23,6 +23,10 @@ RULES={
     '.aab':{'required_members':None},'.jar':{'required_members':None},
 }
 
+class AcceptanceMismatch(ValueError):
+    """Only a measured discrepancy, never a changed file or parser error."""
+    pass
+
 def validate(output,checks):
     if not isinstance(checks,dict) or not checks or len(checks)>4:
         raise ValueError('Expected nonempty bounded artifact acceptance checks')
@@ -108,11 +112,11 @@ def verify(project,output,checks,structural):
         actual=measured[name]
         if name=='required_members':
             absent=[member for member in wanted if member not in actual]
-            if absent:raise ValueError('Artifact acceptance failed: missing archive members '+', '.join(absent)[:200])
+            if absent:raise AcceptanceMismatch('Artifact acceptance failed: missing archive members '+', '.join(absent)[:200])
             observed[name]=list(wanted)
         else:
             if (actual<wanted if name.startswith('min_') else actual!=wanted):
-                raise ValueError(f'Artifact acceptance failed: {name} expected {wanted}, observed {actual}')
+                raise AcceptanceMismatch(f'Artifact acceptance failed: {name} expected {wanted}, observed {actual}')
             observed[name]=actual
     return {'artifact_sha256':structural['sha256'],'checks':checks,'observed':observed,
             'scope':'Specified measurable properties only; functional acceptance not established'}

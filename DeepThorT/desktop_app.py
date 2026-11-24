@@ -4999,6 +4999,27 @@ class DeepThorTDesktop(tk.Tk):
                     f"Workflow #{row['id']}\n{summary}\n\nStop this workflow and cancel its current process?",parent=self):
                     self.tool_workflows.stop(row['id'])
                 return
+            from deepthort_local.artifact_rejection import rejection,preserve
+            from deepthort_local.workflow_design import current_source
+            for run in runs:
+                if run['state']!='blocked':continue
+                plan=rejection(self.tool_workflows,run['id'])
+                if not plan or plan['archived']:continue
+                if not plan['specification'] or not current_source(plan['specification'],self.conversations):continue
+                if self.disk_gate.gaming() or self.active_job is not None or self.active_conversation is not None or any(
+                    p and p.poll() is None for p in (self.install_process,self.tool_process,self.media_process)):
+                    raise ValueError('Wait until project and local processes are idle')
+                if not messagebox.askyesno('Preserve rejected artifact for repair',
+                    plan['rejection']['detail']+'\n\nPreserve exact rejected bytes:\n'+plan['source']+
+                    '\n→ '+plan['archive']+'\n\nRelease the required filename for a new reviewed continuation? '
+                    'No producer or script runs now.',parent=self):return
+                if (not current_source(plan['specification'],self.conversations) or self.disk_gate.gaming()
+                    or self._project_key()!=plan['project'] or self.active_job is not None or self.active_conversation is not None
+                    or any(p and p.poll() is None for p in (self.install_process,self.tool_process,self.media_process))):
+                    raise ValueError('Project or process state changed during review')
+                dest=preserve(self.tool_workflows,plan,user_approved=True)
+                self._log('Rejected artifact preserved: '+str(dest)+'; JANUS can draft a corrected continuation.')
+                return
             rows=self.tool_learning.recipes(self.project)
             if len(rows)<2:raise ValueError('Learn at least two output-producing tool recipes first')
             choices={r['id']:r for r in rows}

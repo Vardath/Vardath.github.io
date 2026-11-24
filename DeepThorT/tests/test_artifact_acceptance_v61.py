@@ -62,5 +62,7 @@ class AcceptanceTests(unittest.TestCase):
         j.update_action(a['id'],'succeeded',detail='ok',returncode=0,output_file=str(log))
         self.assertIn('acceptance failed',w.tick())
         self.assertEqual(w.get(ident)['state'],'blocked')
-        self.assertIsNone(w.stages(ident)[0]['receipt'])
+        row=w.stages(ident)[0]
+        self.assertEqual(row['state'],'rejected')
+        self.assertIn('rejection',json.loads(row['receipt']))
 if __name__=='__main__':unittest.main()
