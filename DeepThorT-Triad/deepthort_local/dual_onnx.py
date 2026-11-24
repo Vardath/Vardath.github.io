@@ -1,4 +1,4 @@
-"""Compatibility client for the Triad broker. JANUS and Sentinel use distinct resident GGUF processes."""
+"""Compatibility client for the Triad broker. JANUS and Sentinel use distinct resident OpenVINO IR processes."""
 from __future__ import annotations
 
 import ctypes
@@ -58,7 +58,7 @@ def _ask(messages: list[dict], max_tokens: int=300, *, role='janus') -> str:
     opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
     with opener.open(request,timeout=7200) as response:
         answer=json.load(response)['choices'][0]['message']['content']
-    if not isinstance(answer,str) or not answer.strip():raise ValueError('No local GGUF response')
+    if not isinstance(answer,str) or not answer.strip():raise ValueError('No local OpenVINO IR response')
     return answer.strip()
 
 

@@ -97,6 +97,7 @@ def child_server(command,cwd,log_path):
                 stream.seek(max(0,log_path.stat().st_size-4096))
                 tail=stream.read().decode('utf-8',errors='replace').strip()
             if '--api-key' in command:tail=tail.replace(command[command.index('--api-key')+1],'[redacted]')
+            if len(command[-1])==64 and all(c in '0123456789abcdef' for c in command[-1]):tail=tail.replace(command[-1],'[redacted]')
             return f'exit 0x{value:08X} ({hints.get(value,"see native log")}); {log_path.name}\n{tail or "(no native output)"}'
         alive.code=code
         alive.failure=failure

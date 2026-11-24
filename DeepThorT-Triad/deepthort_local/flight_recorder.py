@@ -253,7 +253,8 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
         from .triad_profiles import PROFILES,model_path,runtime_path
         for name in ('START TRIAD.cmd','desktop_app.py','triad_server.py',
                      str(runtime_path(root).relative_to(root)),
-                     *(str(model_path(role,root).relative_to(root)) for role in PROFILES)):
+                     *(str((model_path(role,root)/'openvino_model.bin').relative_to(root)) for role in PROFILES),
+                     *(str((model_path(role,root)/'verified-install.json').relative_to(root)) for role in PROFILES)):
             target=root/name
             summary['installation_checks'][name]={'exists':target.exists(),
                  'file_bytes':target.stat().st_size if target.is_file() else None}
