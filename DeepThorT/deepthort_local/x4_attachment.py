@@ -247,7 +247,7 @@ def make_draft(game,ship_path,rock,ship,package,variant,chosen=None):
 
 def stage_attachment(client,index,ident,session,original,project,report,cancelled=None,stage=None):
     project=str(Path(project).resolve())
-    mesh=index.latest_mesh(project)
+    mesh=index.latest_mesh(project,ident)
     if not mesh or mesh[0]!=ident:return '',0
     package=extension_id(original)
     if not re.fullmatch(r'[a-z0-9_][a-z0-9_-]*',package):return '',0
@@ -266,14 +266,21 @@ def stage_attachment(client,index,ident,session,original,project,report,cancelle
     candidates=make_draft(*args)
     fingerprint=hashlib.sha256(repr((mesh[3],variants[0],_catalog_key(game),candidates)).encode()).hexdigest()
     scope=(project,ident,fingerprint)
+    if cancelled and cancelled():raise GeometryError('Placement cancelled')
     with index._db() as db:
+        db.execute('BEGIN IMMEDIATE')
         saved=db.execute('SELECT note FROM attachment_drafts WHERE project=? AND request_id=? AND fingerprint=?',scope).fetchone()
-    if saved:return saved[0],0
+        if saved:return saved[0],0
+        db.execute('INSERT OR IGNORE INTO attachment_attempts VALUES (?,?,?,0)',scope)
+        attempt=db.execute('SELECT attempts FROM attachment_attempts WHERE project=? AND request_id=? AND fingerprint=?',scope).fetchone()[0]
+        if attempt>=2:return 'Attachment selection exhausted two bounded attempts; review required.',0
+        db.execute('UPDATE attachment_attempts SET attempts=attempts+1 WHERE project=? AND request_id=? AND fingerprint=?',scope)
     options={str(i):p for i,p in enumerate(candidates,1)}
     prompt=('Choose an upper-rear rock attachment on the inspected ship. Prefer more separation from protected connections. '
             'Reply with the option number only.\n'+'\n'.join(f"{i}. XYZ {tuple(round(v,2) for v in p['offset'])}, clearance {p['min_gap']:.2f}" for i,p in options.items()))
     if cancelled and cancelled():raise GeometryError('Placement cancelled')
-    exchange=session+'-attach-'+fingerprint[:12]
+    if attempt:prompt+='\nReturn only one digit from the displayed choices.'
+    exchange=session+'-attach-'+fingerprint[:12]+('-retry' if attempt else '')
     lookup=getattr(client,'completed_exchange',None)
     reply=lookup(exchange,prompt) if callable(lookup) else None
     if reply is None:reply=client.chat(exchange,prompt,max_tokens=16)

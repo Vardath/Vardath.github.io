@@ -161,7 +161,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
                            continuous: bool = False,
                            neural_council: bool = False,
                            inspected_evidence: str = '', guidance_getter=None, checkpoint=None,
-                           council_provider=None):
+                           council_provider=None, after_variant=None):
     if max_rounds <= 0:
         raise PlanError('All 40 planning calls were consumed reviewing the source. '
                         'Retry to continue correcting the incomplete X4 roadmap.')
@@ -252,6 +252,12 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         except (ValueError,PlanError) as exc:
             feedback=str(exc)
             if stage:stage('Rejected proposed X4 roadmap correction: '+str(exc)[:160])
+        if applied and variant is not None and after_variant and i<max_rounds*batch_number:
+            note,used=after_variant()
+            i+=used
+            if note:
+                inspected_evidence=note+'\n'+inspected_evidence
+                if stage:stage(note)
         new_rows=index._verified_rows(request_id,original)
         new_steps,_=hierarchy._collect(new_rows,project)
         remaining=remaining_plan_gaps(new_steps,original)

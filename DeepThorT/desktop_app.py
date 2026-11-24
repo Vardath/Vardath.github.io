@@ -364,6 +364,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(left,text='Refresh project files',command=self._refresh_files).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Auto-discover X4 sources',command=self._inspect_x4_sources).pack(fill='x',padx=10,pady=3)
         ttk.Button(left,text='Export latest draft mesh',command=self._export_draft_mesh).pack(fill='x',padx=10,pady=3)
+        ttk.Button(left,text='Review / materialize native draft',command=self._materialize_native_draft).pack(fill='x',padx=10,pady=3)
         self.show_all_project_files=tk.BooleanVar(value=True)
         tk.Checkbutton(left,text='Show all workspace files',variable=self.show_all_project_files,
                        command=self._render_project_files,bg=PANEL,fg=TEXT,selectcolor=PANEL,
@@ -2782,6 +2783,7 @@ class DeepThorTDesktop(tk.Tk):
                 parent=self)
 
     def _project_work_tick(self):
+        if self.__dict__.get('_native_draft_busy'):return
         try:
             self._project_work_once()
         except Exception as exc:
@@ -3022,6 +3024,7 @@ class DeepThorTDesktop(tk.Tk):
             self.after(1100,self._scheduler)
 
     def _scheduler_once(self):
+        if self.__dict__.get('_native_draft_busy'):return
         tool_busy=(self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or
                    any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
@@ -3470,6 +3473,55 @@ class DeepThorTDesktop(tk.Tk):
         self.x4_settings_file.write_text(json.dumps({
             'game_dir':self.x4_game_dir,'reference_dir':self.x4_reference_dir,
             'catalog_tool':self.x4_catalog_tool},indent=2),encoding='utf-8')
+
+    def _materialize_native_draft(self):
+        """Explicit native-asset milestone; not installation into the game."""
+        if not self.project:return
+        if (self.active_job is not None or self.active_conversation is not None
+                or self.__dict__.get('_native_draft_busy')):
+            messagebox.showinfo('Workspace busy','Finish active work before materializing the native draft.',parent=self)
+            return
+        from deepthort_local.agent_plan import extension_id
+        from deepthort_local.native_bundle import review_bundle, materialize_bundle
+        import zipfile
+        project=Path(self.project).resolve()
+        self._native_draft_busy=True
+        try:
+            row=self.specifications.latest_mesh(project)
+            if not row:raise ValueError('No measured draft in this workspace')
+            ident=row[0]
+            request=self.conversations.get(ident)
+            if not request or Path(request['project']).resolve()!=project:
+                raise ValueError('Saved draft request does not match this workspace')
+            package=extension_id(request['prompt'])
+            blob=self.specifications.latest_attachment(project,ident)
+            if not blob:raise ValueError('No saved attachment bundle for this request')
+            review=review_bundle(blob,package,project)
+            if review['conflicts']:
+                raise ValueError('Existing files differ. Nothing was written: '+', '.join(review['conflicts'][:6]))
+            if not messagebox.askyesno('Approve native artifact milestone?',
+                f"Request #{ident}: {package}\nDestination extension root: {project}\n"
+                f"Bundle SHA-256: {review['bundle_sha256']}\n"
+                f"{len(review['files'])} native assets/index files; {review['matching']} already identical.\n\n"
+                'Create missing files only in this workspace. Existing differing files will never be overwritten. '
+                'This is source preparation, not a complete mod, game installation or playtest. '
+                'Approve this exact bundle?',parent=self):
+                return
+            if self.active_job is not None or self.active_conversation is not None:
+                raise ValueError('Work became active during review; retry when idle')
+            result=materialize_bundle(blob,package,project,review)
+            record(STATE,'desktop','native_bundle_materialized',request_id=ident,
+                   bundle_sha256=result['bundle_sha256'],files_verified=result['verified'],
+                   files_created=result['created'],runtime_verified=False)
+            self._log(f"Native draft #{ident}: {result['created']} files created; {result['verified']} byte-verified. Gameplay remains untested.")
+            self._refresh_files()
+            messagebox.showinfo('Native milestone saved',
+                f"{result['verified']} native asset files verified in the selected workspace. "
+                'Resume planning for remaining requirements.',parent=self)
+        except (OSError,ValueError,zipfile.BadZipFile) as exc:
+            messagebox.showerror('Native draft not materialized',str(exc),parent=self)
+        finally:
+            self._native_draft_busy=False
 
     def _export_draft_mesh(self):
         if not self.project:return

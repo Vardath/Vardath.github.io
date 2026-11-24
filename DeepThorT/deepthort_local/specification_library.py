@@ -87,6 +87,9 @@ class SpecificationIndex:
                   project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
                   note TEXT NOT NULL, digest TEXT NOT NULL, name TEXT NOT NULL, mesh BLOB NOT NULL,
                   PRIMARY KEY(project,request_id,fingerprint));
+                CREATE TABLE IF NOT EXISTS attachment_attempts (
+                  project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
+                  attempts INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(project,request_id,fingerprint));
                 CREATE TABLE IF NOT EXISTS attachment_drafts (
                   project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
                   note TEXT NOT NULL,digest TEXT NOT NULL,bundle BLOB NOT NULL,
@@ -462,11 +465,15 @@ class SpecificationIndex:
                 return source
         return None
 
-    def latest_mesh(self,project):
+    def latest_mesh(self,project,request_id=None):
         with self._db() as db:
-            row=db.execute('SELECT request_id,name,note,digest,mesh FROM mesh_drafts '
-                           "WHERE project=? AND name<>'' ORDER BY request_id DESC,rowid DESC LIMIT 1",
-                           (str(Path(project).resolve()),)).fetchone()
+            sql = ("SELECT request_id,name,note,digest,mesh FROM mesh_drafts "
+                   "WHERE project=? AND name<>''")
+            args = [str(Path(project).resolve())]
+            if request_id is not None:
+                sql += ' AND request_id=?'
+                args.append(request_id)
+            row=db.execute(sql+' ORDER BY request_id DESC,rowid DESC LIMIT 1',args).fetchone()
         if row and hashlib.sha256(row[4]).hexdigest()!=row[3]:
             raise PlanError('Saved mesh failed its checksum')
         return row
@@ -700,13 +707,26 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 section_calls+=used
                 if not continuous and section_calls>=max_rounds:
                     raise PlanError(note+' Full roadmap remains pending.')
+            def after_variant():
+                if (not geometry_report or not geometry_report.get('pe_component_verified')
+                        or 'ship_xen_m_corvette_02_a_macro' not in original.lower()
+                        or not index.latest_mesh(project,request_id)):
+                    return '',0
+                from .x4_attachment import stage_attachment
+                try:
+                    return stage_attachment(client,index,request_id,session,original,project,
+                                            geometry_report,cancelled,stage)
+                except (OSError,ValueError) as error:
+                    return 'Attachment needs inspection: '+str(error)[:180],1
+
             summary=repair_indexed_roadmap(
                 client,index,hierarchy,request_id,session,original,project,
                 chat_id=chat_id,
                 max_rounds=(max_rounds if continuous else max_rounds-section_calls),
                 stage=stage,cancelled=cancelled,continuous=continuous,
                 neural_council=neural_council,inspected_evidence=inspected_evidence,
-                guidance_getter=guidance_getter, checkpoint=checkpoint, council_provider=council_provider)
+                guidance_getter=guidance_getter, checkpoint=checkpoint, council_provider=council_provider,
+                after_variant=after_variant)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:
