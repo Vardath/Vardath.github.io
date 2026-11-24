@@ -56,8 +56,12 @@ def validate_source(path,source):
     suffix=PurePosixPath(path).suffix.casefold()
     try:
         if suffix=='.py':compile(source,path,'exec',dont_inherit=True)
-        elif suffix in ('.xml','.svg'):ET.fromstring(source)
-        elif suffix=='.json':json.loads(source)
+        elif suffix in ('.xml','.svg'):
+            from .structured_source import _xml
+            _xml(source)
+        elif suffix=='.json':
+            from .structured_source import strict_json
+            strict_json(source)
         elif suffix=='.toml':tomllib.loads(source)
     except (SyntaxError,ValueError,ET.ParseError) as exc:
         raise StageError('Assembled source syntax rejected: '+str(exc)[:220]) from exc

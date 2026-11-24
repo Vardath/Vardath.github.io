@@ -46,7 +46,14 @@ class StructuredSourceTests(unittest.TestCase):
                    ['[project]\nname="space"','[economy]\nmining=true'])
         self.assertTrue(tomllib.loads(source)['economy']['mining'])
 
+    def test_toml_key_scope_cannot_change_silently(self):
+        with self.assertRaisesRegex(StageError,'key scope'):
+            assemble('.toml',None,['[economy]\nmining=true','sectors=200'])
+        source,_=assemble('.toml',None,['sectors=200','[economy]\nmining=true'])
+        self.assertEqual(tomllib.loads(source),{'sectors':200,'economy':{'mining':True}})
+
     def test_reject_invalid_envelope_and_duplicate_keys(self):
+        with self.assertRaises(StageError):_envelope('<!DOCTYPE root [<!ENTITY x "abc">]><root><!--DEEPTHORT_UNITS--></root>')
         with self.assertRaises(StageError):_envelope('<root><nested><!--DEEPTHORT_UNITS--></nested></root>')
         with self.assertRaises(StageError):strict_json('{"a":{"b":1,"b":2}}')
         with self.assertRaises(StageError):strict_json('{"x":NaN}')

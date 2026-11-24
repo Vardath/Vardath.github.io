@@ -38,9 +38,9 @@ def _xml(text):
 def _envelope(text):
     if not isinstance(text,str) or len(text)>1200 or text.count(MARKER)!=1:
         raise StageError('Expected one bounded XML root with a single unit marker')
+    _xml(text)
     try:root=ET.fromstring(text,parser=ET.XMLParser(target=ET.TreeBuilder(insert_comments=True)))
     except ET.ParseError as exc:raise StageError('Invalid XML envelope') from exc
-    _xml(text)
     if (len(root)!=1 or root[0].tag is not ET.Comment or
             root[0].text!='DEEPTHORT_UNITS' or (root.text or '').strip() or
             (root[0].tail or '').strip()):
@@ -105,10 +105,31 @@ def assemble(suffix,envelope,fragments):
             {'root':'object','keys':list(output)} if envelope=='object' else
             {'root':'array','items':len(output)})
     if suffix=='.toml':
+        # Check semantic merge, not just syntax: a bare key following a table
+        # header would otherwise silently move into that previous table.
+        expected={}
+        def merge(target,part):
+            for key,value in part.items():
+                if key not in target:target[key]=value
+                elif isinstance(target[key],dict) and isinstance(value,dict):
+                    merge(target[key],value)
+                else:raise StageError('TOML unit redefines earlier value: '+key)
         for part in fragments:
-            if not tomllib.loads(part):raise StageError('Empty TOML unit')
+            parsed=tomllib.loads(part)
+            if not parsed:raise StageError('Empty TOML unit')
+            merge(expected,parsed)
         result='\n'.join(fragments)
         data=tomllib.loads(result)
+        def same(left,right):
+            if type(left) is not type(right):return False
+            if isinstance(left,dict):
+                return left.keys()==right.keys() and all(same(left[k],right[k]) for k in left)
+            if isinstance(left,list):return len(left)==len(right) and all(same(a,b) for a,b in zip(left,right))
+            # NaN is valid TOML, and must compare without a false mismatch.
+            if isinstance(left,float) and left!=left:return right!=right
+            return left==right
+        if not same(data,expected):
+            raise StageError('TOML concatenation changes key scope; return explicit compatible tables')
         def paths(table,prefix=''):
             out=[]
             for key,value in table.items():
