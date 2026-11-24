@@ -2349,14 +2349,28 @@ class DeepThorTDesktop(tk.Tk):
                     if stale():raise ValueError('Workflow specification superseded')
                     self.workflow_drafts.save(ident,proposal,manifest)
                     from deepthort_local.workflow_design import learn_missing
-                    learned=learn_missing(self.workflow_drafts,self.tool_learning,self.janus,
+                    from deepthort_local.workflow_resolution import resolve
+                    def public_discovery(gap,key,cancelled):
+                        from deepthort_local.discovery_catalog import discover
+                        return discover(self.discovery_catalog,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                            self.client,session='workflow-gap-'+key,project=source['project'],master=source['prompt'],
+                            goal=gap['goal'],failure='Missing workflow capability: '+gap['capability'],baseline=key,
+                            cancelled=lambda:stale() or self.disk_gate.gaming() or not self._routine_tools_enabled()
+                                or not self._project_work_is_enabled(),
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    proposal,manifest,learned,discovered=resolve(self.workflow_drafts,self.tool_learning,self.janus,
                         ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,
-                        request_id=ident,request=source,proposal=proposal,review=review,cancelled=stale,
-                        stage=lambda message:self.events.put(('conversation_stage',ident,message))) if proposal['missing'] else []
+                        request_id=ident,request=source,goal=workflow['goal'],proposal=proposal,manifest=manifest,
+                        review=review,design=design,learn=learn_missing,discovery=public_discovery,
+                        online=os.name=='nt' and self._routine_tools_enabled() and self._project_work_is_enabled()
+                            and not self.disk_gate.gaming(),
+                        cancelled=stale,stage=lambda message:self.events.put(('conversation_stage',ident,message)),
+                        recovery=recovery,mixed_task=mixed_task)
                     if stale():raise ValueError('Workflow specification superseded')
                     self.events.put(('conversation_reply',ident,'JANUS workflow draft saved; no execution approved.\n'+
                         json.dumps(proposal,indent=2,ensure_ascii=False)+'\nMissing stage learning results (not executed):\n'+
-                        json.dumps(learned,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
+                        json.dumps(learned,indent=2,ensure_ascii=False)+'\nUnverified discovered packages (no installation authorized):\n'+
+                        json.dumps(discovered,indent=2,ensure_ascii=False)+'\nReview under Computer & Tools / JANUS workflow.'))
                     return
                 learning=self.tool_learning.learning_request(ident)
                 if learning:

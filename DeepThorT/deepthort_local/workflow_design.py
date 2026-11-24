@@ -43,13 +43,32 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
     from .structured_source import strict_json
     root=Path(request['project']).resolve(strict=True)
     names=set(HELP_FLAGS)|{r['name'] for r in acquisition.enrolled()}
+    installed=[]
+    for tool_name in sorted(names):
+        try:acquisition.tool(tool_name);installed.append(tool_name)
+        except (ValueError,OSError):continue
+    installed=installed[:20]
     result=[]
     for index,gap in enumerate(proposal['missing'][:4],1):
         if cancelled and cancelled():break
         name=next((n for n in sorted(names) if n.casefold()==gap['capability'].strip().casefold()),None)
-        if not name:
-            result.append({'gap':index,'state':'needs_tool','capability':gap['capability']});continue
         try:
+            # A generic capability is not an executable name. Let JANUS
+            # select only a current installed name, then review that mapping.
+            if name not in installed:
+                if installed and name is None:
+                    selection=('JANUS: choose an installed tool for the missing artifact stage, or NONE. '
+                        'Return only one exact name from the list or NONE. No command or installation.\n'
+                        'Installed names: '+json.dumps(installed,ensure_ascii=False)+'\n'
+                        'Missing stage: '+json.dumps(gap,ensure_ascii=False))
+                    chosen=council._run(client,role='JANUS_MISSING_TOOL',session=f'workflow-{request_id}',
+                        evidence_sha=sha(selection+sha(request['prompt'])),prompt=selection,stage=stage).strip()
+                    if chosen in installed:
+                        review(json.dumps({'missing_stage':gap,'selected_installed_tool':chosen},ensure_ascii=False),'plan')
+                        name=chosen
+                if name not in installed:
+                    result.append({'gap':index,'state':'needs_tool','capability':gap['capability']});continue
+            if cancelled and cancelled():break
             output=safe_target(root,gap['output'])
             if output.exists() or output.is_symlink():raise ValueError('Expected output already exists')
             expected=output.relative_to(root).as_posix()
@@ -176,6 +195,10 @@ class WorkflowDrafts:
             db.execute('CREATE TABLE IF NOT EXISTS workflow_gap_candidates(evidence TEXT PRIMARY KEY,result TEXT NOT NULL)')
             db.execute('CREATE TABLE IF NOT EXISTS workflow_recovery_drafts(workflow_id INTEGER PRIMARY KEY,request_id INTEGER UNIQUE NOT NULL,snapshot TEXT NOT NULL)')
             db.execute('CREATE TABLE IF NOT EXISTS mixed_workflow_drafts(request_id INTEGER PRIMARY KEY,task TEXT NOT NULL)')
+            db.execute('CREATE TABLE IF NOT EXISTS workflow_resolution_attempts(evidence TEXT PRIMARY KEY)')
+    def reserve_resolution(self,evidence):
+        with sqlite3.connect(self.path) as db:
+            return bool(db.execute('INSERT OR IGNORE INTO workflow_resolution_attempts VALUES(?)',(evidence,)).rowcount)
     def bind_mixed(self,request_id,task):
         with sqlite3.connect(self.path) as db:
             db.execute('INSERT INTO mixed_workflow_drafts VALUES(?,?)',(request_id,json.dumps(task)))
