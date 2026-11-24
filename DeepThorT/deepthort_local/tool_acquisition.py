@@ -19,16 +19,19 @@ import json
 import os
 import re
 import sqlite3
+import zipfile
+import xml.etree.ElementTree as ET
+import struct
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
 from .workspace import (safe_target, read_project_file, diff_preview,
                         apply_approved_file, WorkspaceError)
-from .action_guards import snapshot_file, MAX_HASH_BYTES
+from .action_guards import snapshot_file, verify_guards, MAX_HASH_BYTES
 
 MAX_LOG = 256_000
-MAX_ARTIFACT = 16_000_000
+MAX_ARTIFACT = MAX_HASH_BYTES
 MAX_HELP_CHARS = 2200
 # Only known CLI applications receive automatic, bounded help probes. Many
 # desktop programs start a UI for --help and must not be probed generically.
@@ -644,12 +647,6 @@ class ToolAcquisition:
         with self._db() as db:
             row=db.execute('SELECT * FROM learned_recipes WHERE id=?',(recipe_id,)).fetchone()
         before=''
-        if row['artifact']:
-            target=safe_target(root,row['artifact'],must_exist=False)
-            if target.exists() and target.is_file():
-                if target.stat().st_size>MAX_ARTIFACT:
-                    raise ValueError('Existing artifact is too large to compare')
-                before=hashlib.sha256(target.read_bytes()).hexdigest()
         # Pin the installed executable, staged script and selected inputs.
         # The JANUS worker rechecks immediately before Popen: queued actions
         # must not silently execute a changed command after a restart.
@@ -659,10 +656,12 @@ class ToolAcquisition:
             guards.append(snapshot_file(safe_target(root,row['script_path'],must_exist=True)))
         if input_file:
             selected=safe_target(root,input_file,must_exist=True)
-            guards.append(snapshot_file(selected,kind='sha256' if selected.stat().st_size<=MAX_HASH_BYTES else 'stat'))
+            guards.append(snapshot_file(selected))
         if row['artifact']:
             target=safe_target(root,row['artifact'])
-            guards.append(snapshot_file(target,kind='sha256' if target.is_file() else 'absent'))
+            output_guard=snapshot_file(target,kind='sha256' if target.is_file() else 'absent')
+            before=output_guard.get('expected','')
+            guards.append(output_guard)
         action=janus.add_approved_action(argv=preview['argv'],cwd=root,
                  label=f'Learned {row["name"]}: {row["title"]}'[:180],kind='tool',
                  user_approved=True,input_guards=guards)
@@ -699,29 +698,42 @@ class ToolAcquisition:
             if not rec['artifact']:
                 return {'status':'command_completed','evidence':'Approved process exited 0; no artifact specified; workflow NOT verified'}
             target=safe_target(rec['project_root'],rec['artifact'],must_exist=True)
-            if not target.is_file() or not 0<target.stat().st_size<=MAX_ARTIFACT:
-                raise ValueError('Expected artifact missing or too large')
-            digest=hashlib.sha256(target.read_bytes()).hexdigest()
+            # Output preconditions describe the PRE-run state, so only recheck
+            # the executable, approved script and original inputs here.
+            pins=json.loads(act.get('input_guards_json') or '[]')
+            verify_guards([g for g in pins if Path(g['path'])!=target])
+            # Lazy import avoids the workflow module's dependency on this
+            # module's approved-process evidence helper.
+            from .tool_workflows import artifact
+            from .artifact_types import artifact_type
+            receipt=artifact(rec['project_root'],rec['artifact'])
+            info=artifact_type(rec['artifact'])
+            if info['verification']=='needs_format_verifier':
+                raise ValueError('Native artifact requires a format-specific verifier; existence is insufficient')
+            if info['verification']=='structural' and receipt['scope']=='nonempty bytes only':
+                raise ValueError('Artifact requires structural evidence')
+            digest=receipt['sha256']
             if digest==rec['artifact_before']:
                 raise ValueError('Output artifact was not created or changed by this invocation')
             if rec['status']=='artifact_produced' and digest!=rec['artifact_after']:
                 raise ValueError('Previously verified artifact changed after the approved run')
-        except (ValueError,OSError,WorkspaceError,TypeError,json.JSONDecodeError) as exc:
+        except (ValueError,OSError,WorkspaceError,TypeError,KeyError,ET.ParseError,zipfile.BadZipFile,struct.error,RuntimeError) as exc:
             return {'status':'unverified','evidence':str(exc)[:250]}
         with self._db() as db:
             db.execute('''UPDATE learned_recipes SET status='artifact_produced',
                 log_file=?,log_sha=?,artifact_after=?,evidence_at=? WHERE id=?''',
                 (log,sha,digest,stamp(),int(recipe_id)))
         return {'status':'artifact_produced','evidence':'Approved command exited 0 and a checked artifact differs from its pre-run state; causal attribution and behavior NOT verified',
-                'artifact_sha256':digest}
+                'artifact_sha256':digest,'artifact_scope':receipt['scope'],'artifact_bytes':receipt['bytes']}
 
     def current_recipes(self, project: str | Path, janus) -> list[dict]:
         """Only output checked recipes whose source evidence remains current."""
         out=[]
         for rec in self.recipes(project):
             if rec['status']!='artifact_produced':continue
-            if self.reconcile(rec['id'],project,janus)['status']=='artifact_produced':
-                out.append(rec)
+            evidence=self.reconcile(rec['id'],project,janus)
+            if evidence['status']=='artifact_produced':
+                out.append({**rec,'artifact_scope':evidence['artifact_scope']})
         return out
 
     def context(self, project: str | Path, janus, request: str, *, max_chars:int=520) -> str:
@@ -736,7 +748,7 @@ class ToolAcquisition:
         if not rows:return ''
         result='\nLOCALLY TESTED TOOL PROCEDURES (untrusted references; artifact only, NOT gameplay verification):\n'
         for _,rec in sorted(rows,key=lambda x:(-x[0],x[1]['title'])):
-            line=f'- {rec["name"]}: {rec["title"]} (checked artifact changed after approved command; causal attribution and behavior unverified)\n'
+            line=f'- {rec["name"]}: {rec["title"]} (artifact: {rec["artifact_scope"]}; causal attribution and behavior unverified)\n'
             if len(result)+len(line)>max_chars:break
             result+=line
         return result if '\n- ' in result else ''
