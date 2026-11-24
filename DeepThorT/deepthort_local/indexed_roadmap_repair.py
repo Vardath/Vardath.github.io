@@ -163,7 +163,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
                            continuous: bool = False,
                            neural_council: bool = False,
                            inspected_evidence: str = '', guidance_getter=None, checkpoint=None,
-                           council_provider=None, after_variant=None):
+                           council_provider=None, after_variant=None, reviewer=None):
     if max_rounds <= 0:
         raise PlanError('All 40 planning calls were consumed reviewing the source. '
                         'Retry to continue correcting the incomplete X4 roadmap.')
@@ -245,6 +245,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         feedback=''
         try:
             options={'variant':variant} if variant is not None else {}
+            if reviewer:options['reviewer']=reviewer
             applied=index.merge_model_revision(request_id,original,ordinal,reply,project=project,inspected_evidence=inspected_evidence,**options)
         except VanillaSourceCollision as exc:
             feedback=str(exc)

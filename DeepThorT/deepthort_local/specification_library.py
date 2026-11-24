@@ -304,7 +304,7 @@ class SpecificationIndex:
                               (request_id,)).rowcount == 1
 
     def merge_model_revision(self, request_id: int, original: str, ordinal: int,
-                             answer: str, *, project: str | Path, inspected_evidence: str='', variant=None) -> bool:
+                             answer: str, *, project: str | Path, inspected_evidence: str='', variant=None, reviewer=None) -> bool:
         """Persist ONLY a structurally valid model correction to one exact section.
 
         The original section text and its digest never change. Existing model
@@ -336,6 +336,7 @@ class SpecificationIndex:
         if len(new)>24:
             raise PlanError('Corrected section exceeds 24 model-authored file entries')
         if new==own:return False
+        if reviewer:reviewer(proposal,original[rows[ordinal][1]:rows[ordinal][2]])
         def combined(own_steps):
             merged={}
             for row in rows:
@@ -486,7 +487,7 @@ class SpecificationIndex:
         return row[1] if row else None
 
     def save_response(self, request_id: int, original: str, ordinal: int, response: str,
-                      *, project: str | Path, inspected_evidence: str='', variant=None) -> list[dict]:
+                      *, project: str | Path, inspected_evidence: str='', variant=None, reviewer=None) -> list[dict]:
         # Model-authored data only. Invalid format increments attempts but does
         # not mark the section reviewed, and can be retried safely.
         row=self.next_section(request_id,original)
@@ -498,6 +499,7 @@ class SpecificationIndex:
             if variant is not None:
                 response = variant.proposal(response, inspected_evidence)
             parsed=parse_build_plan(response,project,request=original,fragment=True,inspected_evidence=inspected_evidence)
+            if reviewer:reviewer(parsed,row['text'])
         except VanillaSourceCollision as exc:
             collision=VariantSource.inspected(original, inspected_evidence, exc.path)
             raise
@@ -570,7 +572,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -644,6 +646,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
             raise PlanError('Planning stopped by user; no additional sections marked complete')
         try:
             options = {'variant':variant} if variant else {}
+            if reviewer:options['reviewer']=reviewer
             index.save_response(request_id,original,row['ordinal'],response,project=project,
                                 inspected_evidence=inspected_evidence,**options)
             reviewed_this_batch+=1
@@ -726,7 +729,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 stage=stage,cancelled=cancelled,continuous=continuous,
                 neural_council=neural_council,inspected_evidence=inspected_evidence,
                 guidance_getter=guidance_getter, checkpoint=checkpoint, council_provider=council_provider,
-                after_variant=after_variant)
+                after_variant=after_variant, reviewer=reviewer)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:
