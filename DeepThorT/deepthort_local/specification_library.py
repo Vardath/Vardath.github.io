@@ -91,6 +91,10 @@ class SpecificationIndex:
                   project TEXT NOT NULL, request_id INTEGER NOT NULL, fingerprint TEXT NOT NULL,
                   note TEXT NOT NULL,digest TEXT NOT NULL,bundle BLOB NOT NULL,
                   PRIMARY KEY(project,request_id,fingerprint));
+                CREATE TABLE IF NOT EXISTS roadmap_variant_recovery (
+                  request_id INTEGER PRIMARY KEY, ordinal INTEGER NOT NULL,
+                  source_path TEXT NOT NULL, source_digest TEXT NOT NULL,
+                  attempts INTEGER NOT NULL DEFAULT 0);
                 CREATE TABLE IF NOT EXISTS variant_bindings (
                   project TEXT NOT NULL, package TEXT NOT NULL, source_path TEXT NOT NULL,
                   source_digest TEXT NOT NULL, macro_name TEXT NOT NULL,
@@ -263,8 +267,41 @@ class SpecificationIndex:
                 'last_file_count':history[0][5] if history else None,
                 'checks_closed_total':sum(row[2] for row in history if row[1])}
 
+    def revision_cursor(self, request_id, original):
+        """Count reserved attempts, including interrupted ones, for retry rotation."""
+        self._verified_rows(request_id, original)
+        with self._db() as db:
+            return db.execute('SELECT COUNT(*) FROM specification_revision_attempts '
+                              'WHERE request_id=? AND source_sha256=?',
+                              (request_id, sha(original))).fetchone()[0]
+
+    def remember_roadmap_collision(self, request_id, original, ordinal, source):
+        self._verified_rows(request_id, original)
+        with self._db() as db:
+            db.execute('INSERT OR IGNORE INTO roadmap_variant_recovery VALUES (?,?,?,?,0)',
+                       (request_id, ordinal, str(source.path), source.digest))
+
+    def pending_roadmap_variant(self, request_id, original, evidence):
+        self._verified_rows(request_id, original)
+        with self._db() as db:
+            row = db.execute('SELECT ordinal,source_path,source_digest,attempts '
+                             'FROM roadmap_variant_recovery WHERE request_id=?',
+                             (request_id,)).fetchone()
+        if row and row[3] < 2:
+            source = VariantSource.inspected(original, evidence, row[1])
+            if source and source.digest == row[2]:
+                return row[0], source
+        return None
+
+    def reserve_variant_recovery(self, request_id):
+        """Consume the bounded retry before starting inference, not after it."""
+        with self._db() as db:
+            return db.execute('UPDATE roadmap_variant_recovery SET attempts=attempts+1 '
+                              'WHERE request_id=? AND attempts<2',
+                              (request_id,)).rowcount == 1
+
     def merge_model_revision(self, request_id: int, original: str, ordinal: int,
-                             answer: str, *, project: str | Path, inspected_evidence: str='') -> bool:
+                             answer: str, *, project: str | Path, inspected_evidence: str='', variant=None) -> bool:
         """Persist ONLY a structurally valid model correction to one exact section.
 
         The original section text and its digest never change. Existing model
@@ -274,6 +311,8 @@ class SpecificationIndex:
         rows = self._verified_rows(request_id, original)
         if not rows or any(not row[5] for row in rows) or not 0 <= ordinal < len(rows):
             raise ValueError('Every section must be indexed before correcting the roadmap')
+        if variant is not None:
+            answer = variant.proposal(answer, inspected_evidence)
         proposal = parse_build_plan(answer, project, request=original, fragment=True, inspected_evidence=inspected_evidence)
         own = {item['path'].casefold(): item for item in json.loads(rows[ordinal][5])}
         others = {}
@@ -318,6 +357,12 @@ class SpecificationIndex:
                  ordinal,rows[ordinal][5]))
             if cursor.rowcount!=1:
                 raise ValueError('Section changed during model correction; retry with current state')
+            if variant is not None:
+                db.execute('INSERT OR IGNORE INTO variant_bindings VALUES (?,?,?,?,?)',
+                           (str(Path(project).resolve()), variant.package, str(variant.path),
+                            variant.digest, PurePosixPath(proposal[0]['path']).stem))
+                db.execute('UPDATE roadmap_variant_recovery SET attempts=2 WHERE request_id=?',
+                           (request_id,))
         return True
 
     def next_section(self, request_id: int, original: str):

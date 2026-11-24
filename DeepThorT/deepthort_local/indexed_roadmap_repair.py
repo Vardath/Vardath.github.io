@@ -10,7 +10,8 @@ import json
 import re
 from pathlib import Path
 
-from .agent_plan import PlanError, remaining_plan_gaps
+from .agent_plan import PlanError, VanillaSourceCollision, remaining_plan_gaps
+from .x4_variant import VariantSource
 from .flight_recorder import record
 from .reasoning_council import ReasoningCouncil, limited_guidance
 
@@ -164,6 +165,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
     if max_rounds <= 0:
         raise PlanError('All 40 planning calls were consumed reviewing the source. '
                         'Retry to continue correcting the incomplete X4 roadmap.')
+    resume_cursor=index.revision_cursor(request_id,original)
     previous_focus=''
     stagnation=0
     stalled_this_batch=0
@@ -196,8 +198,13 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         elif previous_focus in gaps and stagnation < 2:
             focus=previous_focus
         else:
-            focus=gaps[(i//2)%len(gaps)]
-        ordinal=_choose_section(rows,original,focus,i)
+            focus=gaps[((resume_cursor+i)//2)%len(gaps)]
+        ordinal=_choose_section(rows,original,focus,resume_cursor+i)
+        pending=index.pending_roadmap_variant(request_id,original,inspected_evidence)
+        variant=None
+        if pending and index.reserve_variant_recovery(request_id):
+            ordinal,variant=pending
+            focus='independent source-backed ship identity and registration'
         # Dynamic guidance can arrive between ONNX model requests. The
         # source specification remains unchanged, and correction validator
         # still decides whether the proposed X4 file is valid.
@@ -210,7 +217,10 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             if extra:
                 prompt=_prompt(rows,original,ordinal,focus,gaps,steps,
                                new_instruction=extra,**options)
-        if checkpoint:
+        instruction=None
+        if variant is not None:
+            prompt=variant.prompt()
+        elif checkpoint:
             prompt, instruction = checkpoint.attach(prompt, MAX_MODEL_INPUT)
         serial=index.reserve_revision_attempt(request_id,original,ordinal,prompt)
         if stage:
@@ -222,8 +232,8 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         lookup=getattr(client,'completed_exchange',None)
         reply=lookup(round_session,prompt) if callable(lookup) else None
         if reply is None:
-            reply=client.chat(round_session,prompt,max_tokens=768 if stagnation else 640)
-        if checkpoint:
+            reply=client.chat(round_session,prompt,max_tokens=64 if variant is not None else (768 if stagnation else 640))
+        if checkpoint and instruction is not None:
             checkpoint.received(instruction, round_session, prompt, reply)
         if cancelled and cancelled():
             raise PlanError('Planning stopped; no pending model correction was saved')
@@ -231,7 +241,14 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
         applied=False
         feedback=''
         try:
-            applied=index.merge_model_revision(request_id,original,ordinal,reply,project=project,inspected_evidence=inspected_evidence)
+            options={'variant':variant} if variant is not None else {}
+            applied=index.merge_model_revision(request_id,original,ordinal,reply,project=project,inspected_evidence=inspected_evidence,**options)
+        except VanillaSourceCollision as exc:
+            feedback=str(exc)
+            source=VariantSource.inspected(original,inspected_evidence,exc.path)
+            if source is not None:
+                index.remember_roadmap_collision(request_id,original,ordinal,source)
+                if stage:stage('Vanilla source collision saved; next correction can choose an independent identity.')
         except (ValueError,PlanError) as exc:
             feedback=str(exc)
             if stage:stage('Rejected proposed X4 roadmap correction: '+str(exc)[:160])
