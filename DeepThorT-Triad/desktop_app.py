@@ -971,7 +971,10 @@ class DeepThorTDesktop(tk.Tk):
         def visual_backend_probe():
             from deepthort_local.visual_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
-        probes={'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        def video_render_probe():
+            from deepthort_local.render_probe import native_exercise
+            return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        probes={'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -2420,6 +2423,40 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                if request['mode']=='chat' and original.strip().lower().startswith('/render '):
+                    from deepthort_local.video_render import render
+                    from deepthort_local.video_planning import load_plan
+                    from deepthort_local.local_speech import json_read
+                    match=re.fullmatch(r'/render\s+([1-9][0-9]{0,11})(?:\s+([0-9a-f]{20}))?',original.strip(),re.IGNORECASE)
+                    if not match:raise ValueError('Use /render REQUEST_ID [narration identity suffix]')
+                    if json.loads(request.get('attachments') or '[]'):raise ValueError('Render uses reviewed scene assets, not attachments')
+                    source=self.conversations.get(int(match[1]))
+                    if (not source or source['state']!='responded' or source['mode']!='chat'
+                            or source['project']!=request['project'] or source['chat_id']!=request['chat_id']
+                            or source['project']=='(general)'):
+                        raise ValueError('Choose a completed /video draft in this same project and chat')
+                    plan=load_plan(STATE/'video-plans'/f"request-{source['id']}.json",source)
+                    prefix=f"request-{source['id']}-"
+                    audio_base=STATE/'video-audio'
+                    choices=[p for p in audio_base.glob(prefix+'*') if p.is_dir() and not p.is_symlink()
+                             and (p/'narration.json').is_file() and re.fullmatch(r'[0-9a-f]{20}',p.name[len(prefix):])]
+                    if match[2]:choices=[p for p in choices if p.name==prefix+match[2].lower()]
+                    if len(choices)!=1:
+                        raise ValueError('Generate a complete narration first, or choose its exact 20-character folder suffix: '+', '.join(p.name[len(prefix):] for p in choices[:12]))
+                    def stopped():
+                        current=self.conversations.get(source['id'])
+                        return (cancelled() or self._quitting or self.queue_paused or self.disk_gate.gaming()
+                                or not current or current['state']!='responded' or current['prompt']!=source['prompt'])
+                    result,folder=render(STATE/'video-renders',source,plan,choices[0],STATE/'video-visuals',
+                        cancelled=stopped,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    if stopped():return
+                    v=result['verification']
+                    answer=(f"Rendered local MP4: {v['width']}x{v['height']}, {v['fps']} fps, {v['duration_seconds']:.2f}s.\n"
+                            f"Video: {folder/'video.mp4'}\nSubtitles: {folder/'captions.srt'}\nCredits: {folder/'credits.json'}\n"
+                            'Full decode, stream format, frame count, audio duration and non-silence checked. '
+                            'Subtitles have approximate intra-scene timing. Visual quality, speech intelligibility, factual accuracy and publication rights still require review. Nothing uploaded.')
+                    self.events.put(('conversation_reply',ident,answer))
+                    return
                 if request['mode']=='chat' and original.strip().lower().startswith('/visuals '):
                     from deepthort_local.video_visuals import assign,status
                     from deepthort_local.video_planning import load_plan

@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V29: scene visuals, local speech and live memory",
+  "title": "Triad V30: measured video rendering, scene visuals, speech and live memory",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -17,6 +17,7 @@
     "live_memory",
     "application_workflow",
     "speech_backend",
-    "visual_backend"
+    "visual_backend",
+    "video_render"
   ]
 }

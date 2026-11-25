@@ -44,6 +44,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_application_workflow_v27.py -v
       - run: python -m unittest discover -s tests -p test_local_speech_v28.py -v
       - run: python -m unittest discover -s tests -p test_video_visuals_v29.py -v
+      - run: python -m unittest discover -s tests -p test_video_render_v30.py -v
       - run: python -m unittest discover -s tests -p test_workflow_acquisition_v61.py -v
   native-windows:
     runs-on: windows-latest
@@ -93,6 +94,12 @@ jobs:
           python -m unittest discover -s tests -p test_video_visuals_v29.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python visual_preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Actual capped MP4 render
+        run: |
+          python -m unittest discover -s tests -p test_video_render_v30.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python render_preflight.py
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Supervised Windows stdio MCP lifecycle
         run: |
