@@ -195,3 +195,35 @@ V25: V24 local Windows acceptance passed 12/12 in 225.74 s at 00:21 AEST on 26 N
 
 ### Triad V26 — indexed operational memory coverage
 V26: V25 actual Windows acceptance passed 12/12 in 222.97 seconds at 00:32 AEST, 26 Nov 2026; all 23 databases healthy and live ownership/prices/advice-only passed. Extend scoped recall to indexed roadmap correction, X4 measured geometry selection, attachment placement and JANUS/Sentinel stagnation recovery, with exact section where available, bounded whole records and independent evidence identity. Existing validators, measured candidates and cancellation are preserved; reuse the already leased advisor for recovery recall. No memory authorizes file writes or establishes in-game correctness. Regression fixture uses real index, governed store and actual model-call boundaries with synthetic measurements/scripted replies, not real X4 asset validation. Remaining workflow-originated probe/restore and generic manual/unbound actions tracked separately; multimedia production follows scoped probe integration. No model, cap or original DeepThorT changes.
+
+
+## V27 capability reset — 26 November 2026
+
+Reassessment of the original documented LLM, OpenCode, Aider, Codex, Cursor, Claude Code and AnythingLLM comparison (not a new hands-on benchmark). Prior memory investment is sufficient for now; no further memory-only passes unless a demonstrated failure blocks practical work. Deliver working outputs with independent acceptance rather than count framework features.
+
+| Area | Implemented / remaining |
+|---|---|
+| Local agents, task plans, persistent context, scoped recall | Substantial infrastructure and live relevance acceptance; retain and repair regressions. General semantic contradiction detection and measured live long-project performance are still incomplete. |
+| Repository intelligence and tool bus | Scoped lexical/AST and multi-language static indexing, read-only tool receipts, bounded JANUS loop, fixed verification intent. Remaining: compiler/language-server diagnostics/navigation, richer reviewed edit/execute tools and measured multi-file repair. |
+| AnythingLLM-style project knowledge | Text/DOCX/PDF text-layer cited retrieval and separate review in existing source; still needs OCR, larger/ranged ingestion, measured real manuals, broader integrations and long-spec coverage. |
+| Skills and integrations | Portable checked procedure/workflow patterns and local HTTP/stdio MCP with scoped calls. Real third-party connectors and task-oriented adapters not yet established; no arbitrary plugins. |
+| Application and artifact production (highest) | Catalog acquisition and reviewed CLI workflow foundation; finish real Blender/Godot/Android, documents/spreadsheets/slides/PDFs, archive/package workflows, mod installation/test and multimedia. V27 introduces explicit video outline and scene script draft; TTS, stock/generated assets, timeline, FFmpeg rendering and independent audiovisual checks remain. |
+| Git-aware development | Checkpoint source/diff evidence exists; actual Git status/diff/log, safe multi-file transaction, rollback, worktree isolation, explicit commit/push remain. |
+| GUI and visual/computer interaction | Quiet Godot and isolated GUI smoke exist; screenshots, visual observation, verified isolated interaction, OCR, real app use and safe cancellation remain. |
+| Execution and operations | Shared Windows CPU/commit cap, process supervision and approval gates exist; true restricted execution/network/credential boundaries, disk/GPU guarantees and robust recurring jobs remain. |
+| Test/verification | Named Python evidence exists; GUT/.NET/npm, integration and negative tests, real mod/game and application acceptance remain. |
+| User-facing access | Existing desktop queue and diagnostics; headless CLI, authenticated local API, scheduled jobs, richer linked diff/progress and easy finished artifact delivery remain. |
+| Comparison and release | Actual same-hardware task completion, resource/timing results, installer migration/rollback and user guide remain. No claim of parity with hosted assistants. |
+
+### Practical implementation sequence
+
+1. V27: scoped workflow capability check/restore completion plus video production planning (implemented).
+2. TTS adapter with real local synthesis and audio validation; then visual asset sourcing/generation and rights manifest; timeline and FFmpeg rendering with playable-file verification. Actual Windows acceptance: narrated video from a user brief, not just scripted fixtures. Deliver in bounded passes.
+3. Parallel broader capability track after a playable video milestone: general finished document, spreadsheet and presentation creation/editing/export with real artifact checks; app discovery/actual use with Blender, Godot, Android and mod tools, not just command suggestions.
+4. Git-aware read-only evidence, transactional multi-file edits/rollback, isolated worktrees and explicit Git authority; richer repository/language diagnostics and multi-language test runners.
+5. Safe visual/GUI observation and interaction; restricted processes/network and credential handling, scheduling, headless CLI/API and external integration improvements.
+6. Real-world end-to-end benchmarks for software, X4/RimWorld mods, Faction Command and mixed media/document tasks. Reprioritize demonstrated blockers before new features, keep CI and test coverage, preserve original requirements and three models.
+
+The exact sequence is provisional; user requests and actual test failures override. See VIDEO_PRODUCTION_ROADMAP.md for detailed multimedia acceptance. Do not use memory-only work as a substitute for missing output capabilities.
+
+V27: V26 local acceptance passed 12/12 in 228.66 seconds at 00:45 AEST, 26 Nov 2026. V26 source and Windows CI green. Owner directs return to practical application capabilities rather than further memory-only passes. Finish outstanding workflow-originated capability probe and restore review with existing dispatch gate, fresh operation identity, policy and specification rechecks before the probe and before queue launch. Introduce explicit /video chat planning in a selected project: actual JANUS outline and scene narration/visual directions, Sentinel review at each stage, exact request-bound immutable local draft manifest, cached model-pass recovery and explicit unresolved research/asset-source intent. No images, audio, rendering, external research or uploads occur. Initial limits 15–300s, 1–8 scenes, 3200-character brief; no attachment ingestion yet. Add a distinct application_workflow acceptance probe (scripted roles/receipts, not live end-to-end video) as the 13th check. No model/cap changes.

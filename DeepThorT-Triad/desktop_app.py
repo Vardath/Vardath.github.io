@@ -962,7 +962,10 @@ class DeepThorTDesktop(tk.Tk):
                 return exercise(health,expected_primary,cancel,
                     notify=lambda stage:self.events.put(('latest_test_progress','live memory: '+stage)))
             finally:self._council_busy=False
-        probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        def application_workflow_probe():
+            from deepthort_local.application_workflow_probe import exercise
+            return exercise()
+        probes={'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -2411,6 +2414,24 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                if request['mode']=='chat' and original.strip().lower().startswith('/video '):
+                    from deepthort_local.video_planning import create_plan,save_plan,describe
+                    from deepthort_local.reasoning_council import ReasoningCouncil
+                    if request['project']=='(general)':raise ValueError('Select a project before planning a video')
+                    if json.loads(request.get('attachments') or '[]'):
+                        raise ValueError('Video attachment ingestion is not implemented yet; describe assets in the brief')
+                    def video_review(proposal,focus):
+                        return self._sentinel_alignment(original,request['project'],f'video-{ident}',
+                            focus,json.dumps(proposal,ensure_ascii=False),kind='plan',cancelled=cancelled,
+                            memory_chat=request['chat_id'],
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    plan=create_plan(self.client,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                        request,review=video_review,cancelled=cancelled,
+                        stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    if cancelled():return
+                    path=save_plan(STATE/'video-plans',request,plan)
+                    self.events.put(('conversation_reply',ident,describe(plan,path)))
+                    return
                 workflow=self.workflow_drafts.get(ident)
                 if workflow:
                     from deepthort_local.workflow_design import design as design_workflow,current_source
@@ -3760,8 +3781,18 @@ class DeepThorTDesktop(tk.Tk):
             self._tool_verification,source,self._autonomy_policy,self._auto_tool_history,which=shutil.which)
         if not operation:return False
         name=operation['name']
+        if operation['action'] in ('probe','restore'):
+            from deepthort_local.workflow_acquisition import review_recovery
+            if not review_recovery(operation,source,self.conversations,self.workflow_drafts,
+                    self._dispatch_memory_review,
+                    lambda:next_operation(self.workflow_drafts,self.conversations,self.tool_learning,
+                        self._tool_verification,source,self._autonomy_policy,self._auto_tool_history,which=shutil.which),
+                    enabled=lambda:self._routine_tools_enabled() and self._project_work_is_enabled()
+                        and not self.queue_paused and not self.disk_gate.gaming()):
+                return True
         if operation['action']=='probe':
-            self._queue_catalog_verification(name,project=source['project'])
+            self._queue_catalog_verification(name,project=source['project'],
+                workflow_origin=(source['id'],operation['request_id'],name))
             return True
         if operation['action']=='restore':
             current=operation['receipt']
@@ -5069,7 +5100,7 @@ class DeepThorTDesktop(tk.Tk):
                 plan_sha256=plan['plan_sha256'],install_exit_code=code)
             self._refresh_inventory()
 
-    def _queue_catalog_verification(self,name,*,project='',plan_sha256='',install_exit_code=None):
+    def _queue_catalog_verification(self,name,*,project='',plan_sha256='',install_exit_code=None,workflow_origin=None):
         """Queue only catalog checks. Never run model-selected programs."""
         if name not in INSTALL_CATALOG:return
         if any(row['name']==name for row in self._tool_probe_queue):return
@@ -5078,7 +5109,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Post-install verification queue is full; use Scan this computer.')
             return
         self._tool_probe_queue.append(dict(name=name,project=str(project or ''),
-               plan_sha256=plan_sha256,install_exit_code=install_exit_code))
+               plan_sha256=plan_sha256,install_exit_code=install_exit_code,workflow_origin=workflow_origin))
         self._log('Post-install capability check queued for '+name+
                   '; the version probe will not bypass Windows UAC or open a GUI app.')
 
@@ -5095,6 +5126,14 @@ class DeepThorTDesktop(tk.Tk):
                    (self.install_process,self.tool_process,self.media_process))):
             return
         request=self._tool_probe_queue.pop(0)
+        origin=request.get('workflow_origin')
+        if origin:
+            from deepthort_local.workflow_acquisition import still_required
+            source=self.conversations.get(origin[0])
+            if (not self._routine_tools_enabled() or not self._project_work_is_enabled()
+                or not still_required(self.workflow_drafts,self.conversations,source,origin[1],origin[2])):
+                self._log('Workflow capability probe no longer required; cancelled before launch.')
+                return
         self._tool_probe_active=request
         def worker():
             try:

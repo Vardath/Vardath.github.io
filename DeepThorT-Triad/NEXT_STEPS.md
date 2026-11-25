@@ -1,3 +1,11 @@
+# Triad V27 — practical capability reset and video planning
+
+V27: V26 local acceptance passed 12/12 in 228.66 seconds at 00:45 AEST, 26 Nov 2026. V26 source and Windows CI green. Owner directs return to practical application capabilities rather than further memory-only passes. Finish outstanding workflow-originated capability probe and restore review with existing dispatch gate, fresh operation identity, policy and specification rechecks before the probe and before queue launch. Introduce explicit /video chat planning in a selected project: actual JANUS outline and scene narration/visual directions, Sentinel review at each stage, exact request-bound immutable local draft manifest, cached model-pass recovery and explicit unresolved research/asset-source intent. No images, audio, rendering, external research or uploads occur. Initial limits 15–300s, 1–8 scenes, 3200-character brief; no attachment ingestion yet. Add a distinct application_workflow acceptance probe (scripted roles/receipts, not live end-to-end video) as the 13th check. No model/cap changes.
+
+Next: implement actual local TTS synthesis and verification, then visual sourcing and rendering. Continue broader backlog in the V27 capability reset section of DEEPTHORT_CAPABILITY_ROADMAP.md.
+
+---
+
 # Triad V26 — indexed operational memory coverage
 
 V26: V25 actual Windows acceptance passed 12/12 in 222.97 seconds at 00:32 AEST, 26 Nov 2026; all 23 databases healthy and live ownership/prices/advice-only passed. Extend scoped recall to indexed roadmap correction, X4 measured geometry selection, attachment placement and JANUS/Sentinel stagnation recovery, with exact section where available, bounded whole records and independent evidence identity. Existing validators, measured candidates and cancellation are preserved; reuse the already leased advisor for recovery recall. No memory authorizes file writes or establishes in-game correctness. Regression fixture uses real index, governed store and actual model-call boundaries with synthetic measurements/scripted replies, not real X4 asset validation. Remaining workflow-originated probe/restore and generic manual/unbound actions tracked separately; multimedia production follows scoped probe integration. No model, cap or original DeepThorT changes.

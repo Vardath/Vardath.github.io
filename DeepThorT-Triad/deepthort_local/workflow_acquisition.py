@@ -48,3 +48,26 @@ def next_operation(drafts,conversations,acquisition,verification,source,policy,h
 
 def still_required(drafts,conversations,source,request_id,name):
     return (name,request_id) in required_tools(drafts,conversations,source)
+
+
+def review_recovery(operation,source,conversations,drafts,review,next_current,*,enabled):
+    """Review exact workflow-originated probe/restore; no install authorization.
+    A changed receipt, missing requirement or policy invalidates the decision.
+    """
+    if operation['action'] not in ('probe','restore'):
+        raise ValueError('Not a workflow capability check')
+    binding=source_binding(source)
+    name=operation['name'];ident=operation['request_id']
+    if not enabled() or not still_required(drafts,conversations,source,ident,name):
+        raise ValueError('Workflow capability check no longer required')
+    proposal={'action':operation['action'],'tool':name,
+              'purpose':'Fixed catalog version probe or restore existing verified executable; no installation'}
+    if operation['action']=='restore':
+        proposal['receipt']=operation['receipt']
+    if not review(binding,[ident,operation], 'Workflow capability '+operation['action']+' '+name,
+                  'workflow_capability_'+operation['action'],proposal):
+        return False
+    if (not enabled() or not still_required(drafts,conversations,source,ident,name)
+            or next_current()!=operation):
+        raise ValueError('Workflow capability or evidence changed during review')
+    return True
