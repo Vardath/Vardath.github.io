@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V27: application planning, acquisition and live Sentinel relevance",
+  "title": "Triad V28: local speech synthesis, application workflow and live memory",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -15,6 +15,7 @@
     "task_mcp",
     "mcp_stdio",
     "live_memory",
-    "application_workflow"
+    "application_workflow",
+    "speech_backend"
   ]
 }

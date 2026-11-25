@@ -965,7 +965,10 @@ class DeepThorTDesktop(tk.Tk):
         def application_workflow_probe():
             from deepthort_local.application_workflow_probe import exercise
             return exercise()
-        probes={'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        def speech_backend_probe():
+            from deepthort_local.speech_probe import native_exercise
+            return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        probes={'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -2414,6 +2417,39 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                if request['mode']=='chat' and (original.strip().lower()=='/voices' or original.strip().lower().startswith('/narrate ')):
+                    from deepthort_local.local_speech import WindowsSpeech,narrate
+                    from deepthort_local.video_planning import load_plan
+                    def speech_stopped():
+                        return cancelled() or self._quitting or self.queue_paused or self.disk_gate.gaming()
+                    if json.loads(request.get('attachments') or '[]'):
+                        raise ValueError('Speech commands do not accept attachments')
+                    backend=WindowsSpeech()
+                    if original.strip().lower()=='/voices':
+                        voices=backend.voices(speech_stopped)
+                        answer='Installed offline Windows desktop speech voices:\n'+(
+                            '\n'.join(v['name']+' — '+v['culture']+' — '+v['gender'] for v in voices)
+                            if voices else 'No enabled voices were found.')
+                    else:
+                        match=re.fullmatch(r'/narrate\s+([1-9][0-9]{0,11})(?:\s*\|\s*(.{1,200}))?',original.strip(),re.IGNORECASE)
+                        if not match:raise ValueError('Use /narrate REQUEST_ID or /narrate REQUEST_ID | exact voice name')
+                        source=self.conversations.get(int(match[1]))
+                        if (not source or source['state']!='responded' or source['mode']!='chat'
+                                or source['project']!=request['project'] or source['chat_id']!=request['chat_id']
+                                or source['project']=='(general)'):
+                            raise ValueError('Choose a completed /video draft in this same project and chat')
+                        plan=load_plan(STATE/'video-plans'/f"request-{source['id']}.json",source)
+                        result,path=narrate(STATE/'video-audio',source,plan,voice_name=(match[2] or '').strip(),
+                            backend=backend,cancelled=speech_stopped,
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        answer=(f"Local narration generated: {len(result['scenes'])} verified non-silent WAV scenes. "
+                                f"Actual duration {result['total_seconds']:.2f}s; target {result['target_seconds']}s.\n"
+                                f"Voice: {result['identity']['voice']['name']}\n"
+                                f"Audio folder: {path.parent}\nManifest: {path}\n"
+                                'Speech intelligibility, factual claims, usage rights and video rendering remain unverified.')
+                    if cancelled():return
+                    self.events.put(('conversation_reply',ident,answer))
+                    return
                 if request['mode']=='chat' and original.strip().lower().startswith('/video '):
                     from deepthort_local.video_planning import create_plan,save_plan,describe
                     from deepthort_local.reasoning_council import ReasoningCouncil
