@@ -95,11 +95,50 @@ def collaboration(health,ask,pid,cancelled,notify=None):
         'not their values, and do not list correct fields. '
         'Return exactly one JSON object, with keys "verdict" (string "reject" or "accept") '
         'and "fields" (array of field-name strings, empty when all match). No explanation or extra keys.')
-    status,review=call("reject_defect","sentinel",SPEC+" Review this candidate independently: "+json.dumps(BAD)+review_instruction,192,lambda x:review_ok(x,"reject",{"speed","owner"}))
+    def audit(stage,candidate):
+        differences={k for k,v in EXPECTED.items() if type(candidate[k]) is not type(v) or candidate[k]!=v}
+        verdict="reject" if differences else "accept"
+        status,review=call(stage,"sentinel",SPEC+" Review this candidate independently: "+json.dumps(candidate)+review_instruction,192,
+                           lambda x:review_ok(x,verdict,differences))
+        if status=="passed" or status!="failed":return status,review
+        # Preserve the original failed holistic verdict. A separate bounded
+        # audit must independently derive every required value and compare it
+        # to the observed value; do not supply the expected values or defect list.
+        stages[stage]["recovery"]="field_by_field"
+        found=[]
+        for field in EXPECTED:
+            value=candidate[field]
+            def valid(obj,field=field,value=value):
+                required=EXPECTED[field]
+                match=type(value) is type(required) and value==required
+                return (set(obj)=={"required","verdict"} and
+                        type(obj["required"]) is type(required) and obj["required"]==required and
+                        obj["verdict"]==("match" if match else "mismatch"))
+            prompt=(SPEC+" Audit ONLY the field "+json.dumps(field)+
+                    ". The candidate value is "+json.dumps(value)+
+                    ". Derive the required value from the original instructions and amendment, then compare. "
+                    'Return only JSON with keys "required" (the required value, correct JSON type) '
+                    'and "verdict" ("match" if the candidate equals the requirement, otherwise "mismatch").')
+            state,answer=call(stage+"_"+field,"sentinel",prompt,96,valid)
+            if state!="passed":
+                stages[stage]["recovery_status"]=state
+                return state,None
+            if answer["verdict"]=="mismatch":found.append(field)
+        # The aggregate verdict is explicitly program-derived from validated
+        # independent Sentinel judgments, not a replacement model response.
+        recovered={"verdict":"reject" if found else "accept","fields":found}
+        if not review_ok(recovered,verdict,differences):
+            stages[stage]["recovery_status"]="failed"
+            return "failed",None
+        stages[stage]["recovery_status"]="passed"
+        stages[stage]["aggregate_verdict"]=recovered["verdict"]
+        stages[stage]["aggregate_fields"]=found
+        return "passed",recovered
+    status,review=audit("reject_defect",BAD)
     if status!="passed":return finish(status,"Sentinel did not independently reject both seeded defects")
     status,artifact=call("repair","implementation",SPEC+" Defective candidate: "+json.dumps(BAD)+" JANUS plan: "+json.dumps(plan)+" Sentinel review: "+json.dumps(review)+" Repair it. Return the final five-key JSON object only.",160,correct_manifest)
     if status!="passed":return finish(status,"Implementation repair failed independent manifest validation")
-    status,_=call("verify_repair","sentinel",SPEC+" Review this repaired candidate independently: "+json.dumps(artifact)+review_instruction,192,lambda x:review_ok(x,"accept",set()))
+    status,_=audit("verify_repair",artifact)
     if status!="passed":return finish(status,"Sentinel did not verify the independently valid repair",artifact)
     try:
         final=health();end_models=resident_roles(final,pid)
@@ -108,4 +147,7 @@ def collaboration(health,ask,pid,cancelled,notify=None):
             return finish("inconclusive","Workers changed or memory recovery occurred during collaboration",artifact)
     except Exception:
         return finish("blocked","Workers unavailable after collaboration",artifact)
-    return finish("passed","JANUS planned amendment, Sentinel rejected both defects, implementation repaired, independent validator and Sentinel accepted; same three workers retained.",artifact)
+    recovered=any(row.get("recovery_status")=="passed" for row in stages.values())
+    detail=("JANUS planned amendment, Sentinel rejected both defects, implementation repaired, independent validator and Sentinel accepted; same three workers retained.")
+    if recovered:detail+=" Holistic review failed; validated field-by-field recovery succeeded (see stages)."
+    return finish("passed",detail,artifact)
