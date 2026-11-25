@@ -50,8 +50,43 @@ def verify_root_cap():
             raise RuntimeError('Inherited job is not the required CPU/commit cap')
         return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
     finally:close(job)
+CONTROL_RESERVE_BYTES=1024**3
+
+def worker_budget(root_limit):
+    if type(root_limit) is not int or root_limit<=CONTROL_RESERVE_BYTES:
+        raise RuntimeError('Insufficient shared commit allowance for protected model workers')
+    return root_limit-CONTROL_RESERVE_BYTES
+
 @contextmanager
-def child_server(command,cwd,log_path):
+def model_group():
+    """Nested aggregate worker commit cap, leaving room for desktop/broker.
+
+    The group is not a separate CPU budget. Every member remains in the
+    original 35% root job, and individual cleanup jobs remain nested below it.
+    """
+    root_limit,_,_=verify_root_cap()
+    budget=worker_budget(root_limit)
+    k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
+    create=fn(k,'CreateJobObjectW',[P,wintypes.LPCWSTR],H)
+    setinfo=fn(k,'SetInformationJobObject',[H,ctypes.c_int,P,D],wintypes.BOOL)
+    query=fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)
+    close=fn(k,'CloseHandle',[H],wintypes.BOOL)
+    group=create(None,None);check(group,'Create shared model-memory group')
+    try:
+        limits=ExtendedLimitInfo()
+        limits.BasicLimitInformation.LimitFlags=JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE|JOB_OBJECT_LIMIT_JOB_MEMORY
+        limits.JobMemoryLimit=budget
+        check(setinfo(group,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits)),'Set aggregate model-memory cap')
+        readback=ExtendedLimitInfo()
+        check(query(group,JobObjectExtendedLimitInformation,ctypes.byref(readback),ctypes.sizeof(readback),None),'Read model-memory cap')
+        if readback.JobMemoryLimit!=budget or (readback.BasicLimitInformation.LimitFlags&limits.BasicLimitInformation.LimitFlags)!=limits.BasicLimitInformation.LimitFlags:
+            raise RuntimeError('Model-memory cap readback failed')
+        print(f'Protected worker group: {budget/2**30:.2f} GiB; control reserve {CONTROL_RESERVE_BYTES/2**30:.2f} GiB',flush=True)
+        yield group,budget
+    finally:close(group)
+
+@contextmanager
+def child_server(command,cwd,log_path,*,group=None):
     verify_root_cap()
     import msvcrt
     log_path=Path(log_path)
@@ -92,6 +127,9 @@ def child_server(command,cwd,log_path):
             finally:
                 os.set_handle_inheritable(out,False)
                 os.set_handle_inheritable(inp,False)
+        if group is not None:
+            check(assign(group,proc.hProcess),'Assign model to shared model-memory job')
+            if not in_job(k,proc.hProcess,group):raise RuntimeError('Model-memory group membership missing')
         check(assign(job,proc.hProcess),'Assign model to nested cleanup job')
         if resume(proc.hThread)==0xFFFFFFFF:raise OSError('Model resume failed')
         def alive():
@@ -124,7 +162,7 @@ def child_server(command,cwd,log_path):
             # serving interpreter is inside this exact child cleanup job.
             handle=fn(k,'OpenProcess',[D,wintypes.BOOL,D],H)(0x0400,False,pid)
             if not handle:return False
-            try:return in_job(k,handle,job)
+            try:return in_job(k,handle,job) and (group is None or in_job(k,handle,group))
             finally:close(handle)
         alive.code=code
         alive.failure=failure

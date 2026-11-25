@@ -65,7 +65,7 @@ def smoke(health,ask,pid,cancelled):
     evidence['memory_retries']=max(0,int(final.get('memory_retries',0))-int(initial.get('memory_retries',0)))
     passed=all(v['status']=='passed' for v in individual.values()) and all(v=='passed' for v in statuses.values())
     detail='Individual: '+', '.join(r+' '+v['status'] for r,v in individual.items())+'; simultaneous requests: '+', '.join(r+' '+v for r,v in statuses.items())
-    if evidence['serial_memory_mode']:detail+='; memory-pressure serial mode (all models resident)'
+    if evidence['serial_memory_mode']:detail+='; protected serial mode (all models resident)'
     # Observing overlapping calls before an allocation failure does not prove
     # successful concurrent inference if they subsequently required serial retry.
     return {'status':'passed' if passed else 'failed','detail':detail,'evidence':evidence},overlap and not evidence['serial_memory_mode']
