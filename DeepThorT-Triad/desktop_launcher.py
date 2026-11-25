@@ -8,16 +8,16 @@ import os
 import sys
 import traceback
 from pathlib import Path
-from deepthort_local.win_cpu_cap import run_capped
+from deepthort_local.win_cpu_cap import run_capped,MAX_CPU_PERCENT,MAX_RAM_PERCENT
 from deepthort_local.flight_recorder import record, install_crash_hooks
 
 if __name__ == '__main__':
     base = Path(__file__).resolve().parent
     install_crash_hooks(base / 'state', 'launcher')
-    record(base / 'state','launcher','launcher_started',cpu_cap=40,ram_cap=40)
+    record(base / 'state','launcher','launcher_started',cpu_cap=MAX_CPU_PERCENT,ram_cap=MAX_RAM_PERCENT)
     try:
         result = run_capped([sys.executable, str(base / 'desktop_app.py')],
-                            cwd=str(base), percent=40, ram_percent=40)
+                            cwd=str(base), percent=MAX_CPU_PERCENT, ram_percent=MAX_RAM_PERCENT)
     except BaseException:
         details = traceback.format_exc()
         record(base/'state','launcher','launcher_exception',level='ERROR',stack=details[-12000:])
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         if os.name=='nt':
             try:
                 ctypes.windll.user32.MessageBoxW(0,
-                    'DeepThorT could not start within the configured 40% CPU / RAM limits.\n\n'
+                    'DeepThorT could not start within the configured 40% CPU / up to 50% RAM-sized commit limits.\n\n'
                     + details[-1250:] + '\n\nDetails: state\\launch-error.txt',
                     'DeepThorT - Startup Error',0x10)
             except Exception:

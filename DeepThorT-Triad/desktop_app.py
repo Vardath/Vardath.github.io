@@ -649,7 +649,7 @@ class DeepThorTDesktop(tk.Tk):
             'Installation and heavy generation should run when games are closed.')
 
         foot=ttk.Frame(self);foot.pack(fill='x',padx=13,pady=(0,8))
-        self.status=tk.StringVar(value='Idle • 40% total CPU allocation + 40% memory-commit budget')
+        self.status=tk.StringVar(value='Idle • 40% total CPU ceiling + up to 50% RAM-sized commit budget')
         ttk.Label(foot,textvariable=self.status,style='Muted.TLabel').pack(side='left')
         ttk.Label(foot,text='GPU inference off · Offline generation · No cloud fallback',style='Muted.TLabel').pack(side='right')
 
@@ -1151,7 +1151,7 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Install offline image generator',
             'Install CPU PyTorch, Diffusers and Stable Diffusion 1.5 model weights?\n\n'
             'This downloads several GB and can use substantial temporary disk space and memory. '
-            'Inference will run offline and CPU-only under the 40% launcher limits.\n\n'
+            'Inference will run offline and CPU-only under the 40% CPU / up to 50% RAM-sized commit limits.\n\n'
             'It can be extremely slow and can fail if physical RAM usage exceeds the allowed budget.\n'
             'Approve this one-time installation?',parent=self):return
         self.tabs.select(4)
@@ -3237,7 +3237,7 @@ class DeepThorTDesktop(tk.Tk):
         try:
             if not is_capped_windows_process():
                 raise QuietPlaytestError('Only available under the capped Windows DeepThorT.exe launcher. '
-                    'A Python development launch cannot guarantee the shared 40% CPU/memory limit.')
+                    'A Python development launch cannot guarantee the shared 40% CPU / up to 50% RAM-sized commit limit.')
             project=Path(self.project or '')
             exe=godot_executable(tools=getattr(self,'inventory',None))
             if not exe:
@@ -6819,7 +6819,7 @@ class DeepThorTDesktop(tk.Tk):
             self.last_ai_error=''
             self.model_status.set('AI: loading…')
             self._set_connection_status('AI loading under 40% CPU cap. Conversations stay separate from approved jobs.')
-            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 40% cap.')
+            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 40% CPU and up to 50% RAM-sized commit cap.')
             process=self.node
             def output():
                 try:
@@ -6930,7 +6930,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
-              f"Supervision: 40% aggregate CPU cap, 40% RAM commit limit under DeepThorT.exe\n"
+              f"Supervision: 40% aggregate CPU cap, up to 50% RAM-sized commit limit under DeepThorT.exe\n"
               f"Resident models: {len(roles)}/3 | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"

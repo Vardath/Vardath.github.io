@@ -5,7 +5,7 @@ No model weights, no private data, no inference service or unrestricted process.
 import os
 import sys
 from pathlib import Path
-from deepthort_local.win_cpu_cap import run_capped
+from deepthort_local.win_cpu_cap import run_capped,MAX_CPU_PERCENT,MAX_RAM_PERCENT,calculate_ram_limit
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget
 
 ROOT=Path(__file__).resolve().parent
@@ -19,7 +19,8 @@ def inner():
     cfg=bounded_scheduler(genai)
     assert cfg.max_num_seqs==1 and cfg.num_kv_blocks==256 and not cfg.enable_prefix_caching
     cap,free,total=verify_root_cap()
-    print('Root commit budget:',cap,'total physical:',total,flush=True)
+    if not 0<cap<=total*MAX_RAM_PERCENT//100:raise RuntimeError('Root commit ceiling mismatch')
+    print('Root commit budget:',cap,'total physical:',total,'CPU ceiling:',MAX_CPU_PERCENT,'memory ceiling:',MAX_RAM_PERCENT,flush=True)
     # Exercise a real nested job, rather than only mocked source tests.
     log=ROOT/'state/logs/triad-ci-native-preflight.log'
     with model_group() as (group,budget):
@@ -34,4 +35,4 @@ def inner():
 
 if __name__=='__main__':
     if sys.argv[1:]==['--inside']:raise SystemExit(inner())
-    raise SystemExit(run_capped([sys.executable,str(Path(__file__).resolve()),'--inside'],cwd=str(ROOT),percent=40,ram_percent=40))
+    raise SystemExit(run_capped([sys.executable,str(Path(__file__).resolve()),'--inside'],cwd=str(ROOT),percent=MAX_CPU_PERCENT,ram_percent=MAX_RAM_PERCENT))
