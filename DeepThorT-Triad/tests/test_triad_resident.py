@@ -1,13 +1,20 @@
 import unittest
 from pathlib import Path
 from triad_server import validate,admission,command,Pool
-from deepthort_local.triad_profiles import PROFILES,role_for_council,MODEL_ID,model_path
+from deepthort_local.triad_profiles import PROFILES,role_for_council,MODEL_ID,MODEL_SET_DIR,model_path
 from deepthort_local.triad_acceptance import resident_roles
 
 class TriadTests(unittest.TestCase):
     def test_three_pinned_ir_models(self):
         self.assertEqual(len({p[1] for p in PROFILES.values()}),3)
-        self.assertTrue(all(len(p[2])==40 and p[1].startswith('OpenVINO/') for p in PROFILES.values()))
+        self.assertTrue(all(len(p[2])==40 for p in PROFILES.values()))
+        self.assertEqual({p[1] for p in PROFILES.values()},{
+            'HarmenWessels/granite-4.1-3b-int4-cw-code-ov',
+            'OpenVINO/DeepSeek-R1-Distill-Qwen-1.5B-int4-ov',
+            'OpenVINO/Qwen3-1.7B-int4-ov'})
+        self.assertEqual(MODEL_SET_DIR,'triad-openvino-compact-v1')
+        self.assertTrue(all(model_path(r).parent.name==MODEL_SET_DIR for r in PROFILES))
+        self.assertTrue(all('triad-openvino' not in model_path(r).parts for r in PROFILES))
         self.assertEqual(len({model_path(r) for r in PROFILES}),3)
     def test_routing(self):
         self.assertEqual(role_for_council('SENTINEL_SPEC_0'),'sentinel')

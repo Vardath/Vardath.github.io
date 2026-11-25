@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-resident-roles-v1",
-  "title": "Triad shared cap, three resident models and concurrent inference",
+  "id": "triad-compact-resident-v2",
+  "title": "Triad compact models: shared cap, residency and actual role replies",
   "checks": [
     "shared_cap",
     "triad_residency",
