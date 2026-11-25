@@ -96,3 +96,15 @@ Baseline adfe553f CI/Pages green (916 tests, 145 modules). Existing checked work
 
 ### PRIORITY OVERRIDE — model quality before further features
 Owner requests reliable correctness over speed and actual model benchmarking before other priorities. Separate pinned ONNX evaluation runner, independent 14-case fixed-oracle suite and actual hosted CPU model matrix added (baseline 1.5B Q4, Coder 3B Q4, Qwen3 4B Q4F16). No production model/runtime change. Require Windows capped feasibility and real multi-file tasks before promotion. See MODEL_EVALUATION_PLAN.md. Skill portability and other features deferred until evaluation.
+
+
+## Triad priority reset — 25 November 2026 (V13)
+The owner directs capability development first, not further full project benchmarking. Triad V12.2 local acceptance passed all six selected checks, following V10/V11 collaboration acceptance. Current Triad configuration supersedes the historical single-model/30% references above: Granite 4.1 3B, SmolLM3-3B JANUS, Qwen3-4B Sentinel, pinned native CPU OpenVINO, shared 40% CPU/committed-memory ceiling. Original DeepThorT remains separate and untouched. The PE and Faction Command comparisons are later evaluations, not the immediate objective.
+
+1. Priority 5/9: human-readable task-named persistent journals, durable role/evidence records, scoped recall and restart recovery. V13 foundation records queue/step transitions and actual Sentinel reviews, JANUS retranslations and implementation candidate hashes in existing jobs.sqlite3; regenerates named Markdown journals and supplies bounded same-spec historical context to production generation/review/retranslation. No edits to journals are trusted as instructions; no new model, approval or execution authority. Next improve project/chat planning and tool/verification evidence coverage, portable learning with explicit scope, compact memory for very long specs, retention/search UX and measured recall quality.
+2. Resume priority 6: portable typed skill manifests and parameter rebinding on existing checked workflow recipes; resource permission and version validation; no untrusted auto-execution. Local MCP discovery/typed capability adapters next.
+3. Priority 7: broader app interoperability, discovery and verified procedures for CLI, Blender, Godot, Android and document/media tools; actual tool use and checks, not just recommendations.
+4. Priority 4: Git-aware status/diff, bounded multi-file transactions, rollback and isolated worktrees; no destructive Git operations or implicit push.
+5. Priority 8/9: visual evidence, safe isolated application interaction, robust process lifecycle, scheduling, measured resource limits and isolation.
+6. Priority 1/2/5: remaining test runners, language-server/symbol navigation, context compaction, semantic retrieval quality and independent evidence assessment. Preserve authoritative requirements and amendments.
+7. Priority 10: authenticated local API, headless CLI, durable scheduler, integrated progress/diagnostics and search. Then priority 11: comparative practical benchmarks on same tasks/hardware. Do not claim feature parity without measurement.

@@ -503,6 +503,7 @@ class DeepThorTDesktop(tk.Tk):
         self.job_tree.bind('<<TreeviewSelect>>',self._job_selected)
         self.job_details=self._text(queue_tab,readonly=True,height=10)
         self.job_details.pack(fill='both',expand=False,pady=(6,0))
+        ttk.Button(queue_tab,text='Open selected task journal folder',command=self._open_task_journal).pack(anchor='w')
 
         # FILE REVIEW
         fhead=ttk.Frame(files_tab);fhead.pack(fill='x',pady=7)
@@ -918,9 +919,12 @@ class DeepThorTDesktop(tk.Tk):
                 return exercise(health,expected_primary,cancel,
                     notify=lambda stage:self.events.put(('latest_test_progress','production_review: '+stage)))
             finally:self._council_busy=False
+        def task_memory_probe():
+            from deepthort_local.task_memory_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe}
 
         def worker():
             try:
@@ -1886,14 +1890,18 @@ class DeepThorTDesktop(tk.Tk):
             tree.selection_set(str(items[0]['id']));tree.focus(str(items[0]['id']))
             tree.see(str(items[0]['id']));refresh_detail()
 
-    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=()):
+    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
+        memory=self.jobs.memory_context(memory_job,original,focus,600) if memory_job else ''
         try:
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
-                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments)
+                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
+            if memory_job:
+                self.jobs.remember(memory_job['id'],'sentinel',focus,review['original_sha'],review['evidence_sha'],
+                    ('Accepted as advice; runtime untested: ' if review['accepted'] else 'Rejected: ')+review['reason'])
             record(STATE,'desktop','sentinel_specification_review',kind_reviewed=kind,
                 accepted=review['accepted'],evidence_sha=review['evidence_sha'],
                 original_sha=review['original_sha'],proposal_sha=review['proposal_sha'],runtime_verified=False)
@@ -1912,7 +1920,10 @@ class DeepThorTDesktop(tk.Tk):
                     reframed=reframe(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                         advisor or self.client,session=session,project=project,original=original,
                         source_section=source,focus=focus,observed=proposal,
-                        feedback=review['reason'],revision=0,stage=stage,cancelled=cancelled)
+                        feedback=review['reason'],revision=0,stage=stage,cancelled=cancelled,memory=memory)
+                    if memory_job:
+                        self.jobs.remember(memory_job['id'],'janus',focus,review['original_sha'],reframed['evidence_sha'],
+                            ('Retranslation accepted as advice: ' if reframed['accepted'] else 'Retranslation not accepted: ')+reframed['janus'])
                     advice=accepted_guidance(reframed)
                     record(STATE,'desktop','sentinel_rejection_retranslated',kind_reviewed=kind,
                            accepted=reframed['accepted'],evidence_sha=reframed['evidence_sha'])
@@ -2852,7 +2863,16 @@ class DeepThorTDesktop(tk.Tk):
             if intents:detail+='\n\nAGENT EXECUTION REQUESTS (not grants):\n'+intents
         except (ValueError,OSError) as error:
             detail+='\n\nExecution requests unavailable: '+str(error)[:160]
+        journal=self.jobs.journal(job['id'])
+        if journal:detail+='\n\nPERSISTENT TASK JOURNAL:\n'+str(journal)
         self._show(self.job_details,detail)
+    def _open_task_journal(self):
+        job=self._selected_job()
+        if not job:return
+        journal=self.jobs.journal(job['id'])
+        if journal:
+            try:os.startfile(str(journal.parent))
+            except (OSError,AttributeError) as error:self._log('Task journal: '+str(journal))
     def _cancel_active(self):
         if self.active_job is None:return
         self._cancel_id(self.active_job)
@@ -3349,7 +3369,7 @@ class DeepThorTDesktop(tk.Tk):
                 self._sentinel_alignment(master,job['project'],f'repair-{jobid}',
                     'Repair approved test failure: '+cycle['diagnostic'][:300],result,kind='repair',
                     cancelled=lambda:self._quitting or self.active_job!=jobid,
-                    stage=lambda message:self.events.put(('log',message)),amendments=amendments)
+                    stage=lambda message:self.events.put(('log',message)),amendments=amendments,memory_job=job)
                 self.events.put(('repair_answer',jobid,result,candidates))
             except Exception as exc:
                 record(STATE,'desktop','repair_model_error',level='ERROR',job_id=jobid,
@@ -3874,7 +3894,7 @@ class DeepThorTDesktop(tk.Tk):
                             kind='behavior_test'
                         return self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
                             kind=kind,stage=lambda message:self.events.put(('log',message)),
-                            cancelled=lambda:self._quitting or self.active_job!=jobid,amendments=amendments)
+                            cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j),amendments=amendments,memory_job=j)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
                     from deepthort_local.artifact_types import require_text_target
@@ -4007,12 +4027,18 @@ class DeepThorTDesktop(tk.Tk):
                                         finally:advisor.release()
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
+                    memory=self.jobs.memory_context(j,original,focus,
+                        min(700,max(0,MAX_INFERENCE_PROMPT-len(request)-300)))
+                    if memory:request+=memory
                     def transform(answer):
                         if dest.suffix.casefold()=='.svg':
                             from deepthort_local.media_tools import standalone_svg
                             answer=standalone_svg(answer)
                         return strip_single_code_fence(answer)
                     def review_candidate(candidate):
+                        from deepthort_local.reasoning_council import sha
+                        self.jobs.remember(jobid,'implementation',focus,sha(original),sha(candidate),
+                            'Proposed source for review; no file write or runtime verification inferred.')
                         from deepthort_local.staged_source import validate_source,StageError
                         try:validate_source(step['path'],candidate)
                         except StageError as error:raise SpecificationRejected(str(error)) from error

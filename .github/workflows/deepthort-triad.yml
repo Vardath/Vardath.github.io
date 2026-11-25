@@ -27,6 +27,8 @@ jobs:
       - run: python -m unittest discover -s tests -p test_production_review_v11.py -v
       - run: python -m unittest discover -s tests -p test_specification_guard_v61.py -v
       - run: python -m unittest discover -s tests -p test_reviewed_generation_v61.py -v
+      - run: python -m unittest discover -s tests -p test_task_memory_v13.py -v
+      - run: python -m unittest discover -s tests -p test_job_queue.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15

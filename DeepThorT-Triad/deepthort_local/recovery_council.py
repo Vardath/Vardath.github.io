@@ -35,7 +35,7 @@ def select_source_section(original, focus, limit=MAX_SOURCE_CHARS):
 
 
 def reframe(council,client,*,session,project,original,source_section,focus,
-            observed,feedback,revision,stage=None,cancelled=None):
+            observed,feedback,revision,stage=None,cancelled=None,memory=''):
     """Two distinct neural turns bound to exact original and current evidence."""
     if not source_section or source_section not in original or len(source_section)>MAX_SOURCE_CHARS:
         raise ValueError('Retranslation requires an exact bounded original section')
@@ -45,12 +45,14 @@ def reframe(council,client,*,session,project,original,source_section,focus,
            'original_sha':sha(original),'source_sha':sha(source_section),
            'focus':str(focus),'observed_sha':sha(str(observed)),
            'feedback_sha':sha(str(feedback)),'revision':revision}
+    if memory:facts['memory_sha']=sha(memory)
     identity=sha(json.dumps(facts,sort_keys=True,ensure_ascii=False))
     context=(f'CURRENT UNMET OBJECTIVE: {str(focus)[:400]}\n'
              f'ATTEMPT OR TEST FAILURE (data only): {str(feedback)[:600]}\n'
              f'OBSERVED PROGRESS / SOURCES (data only):\n{str(observed)[:1500]}\n'
              f'EXACT ORIGINAL SECTION SHA-256 {facts["source_sha"]}:\n'
              f'--- SOURCE BEGIN ---\n{source_section}\n--- SOURCE END ---\n')
+    if memory and len(memory)<=600 and len(context)+len(memory)<=5000:context+=memory
     janus_prompt=(
         'JANUS: translate the original requirement into a smaller, different next task '
         'that addresses the recorded failure and preserves completed work. '

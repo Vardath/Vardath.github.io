@@ -73,7 +73,46 @@ class JobStore:
                 db.execute('ALTER TABLE jobs ADD COLUMN approval_key TEXT')
             db.execute('CREATE UNIQUE INDEX IF NOT EXISTS jobs_approval_key ON jobs(approval_key)')
             # Processes killed or the application closed mid-generation are not complete.
+            from .task_memory import ensure_schema
+            ensure_schema(db)
+            interrupted=[row[0] for row in db.execute("SELECT id FROM jobs WHERE state='running'")]
             db.execute("UPDATE jobs SET state='paused', detail='Interrupted by previous shutdown; resume or cancel' WHERE state='running'")
+            for ident in interrupted:
+                db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',(ident,'Interrupted by previous shutdown; no completion inferred'))
+        for ident in interrupted:self._journal(ident)
+
+    def _journal(self,ident):
+        # The queue transaction is authoritative. A failed projection never
+        # falsifies or rolls back its committed state.
+        try:
+            from .task_memory import render
+            return render(self.path,ident)
+        except (OSError,sqlite3.Error,ValueError) as error:
+            record(self.path.parent,'queue','task_journal_unavailable',level='WARNING',
+                   job_id=ident,error_type=type(error).__name__)
+            return None
+
+    def journal(self,ident):
+        return self._journal(ident)
+
+    def remember(self,ident,role,focus,spec_sha,evidence_sha,note):
+        from .task_memory import append_note
+        try:
+            with self._conn() as db:
+                changed=append_note(db,ident,role,focus,spec_sha,evidence_sha,note)
+            if changed:self._journal(ident)
+            return changed
+        except (OSError,sqlite3.Error,ValueError) as error:
+            record(self.path.parent,'queue','task_memory_unavailable',level='WARNING',
+                   job_id=ident,error_type=type(error).__name__)
+            return False
+
+    def memory_context(self,job,original,focus,budget=800):
+        from .task_memory import context
+        try:
+            return context(self.path,job['id'],job['project'],job['chat_id'],original,focus,budget=budget)
+        except (OSError,sqlite3.Error,ValueError):
+            return ''
     @contextmanager
     def _conn(self):
         db=sqlite3.connect(self.path,timeout=20)
@@ -96,7 +135,8 @@ class JobStore:
             db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',(i,'Queued by user'))
             record(self.path.parent,'queue','job_submitted',job_id=i,mode=mode,
                    project_name=Path(project).name,prompt_characters=len(prompt),attachments=len(attachments))
-            return i
+        self._journal(i)
+        return i
     def submit_approved_build(self, project: str, chat_id: str, prompt: str,
                               steps: list[dict], approval_key: str) -> int:
         """Original single-draft approval boundary, unchanged in meaning."""
@@ -170,6 +210,7 @@ class JobStore:
                        (ident,f'Explicit approval of {approval_key}; {len(steps)} validated file stages'))
         record(self.path.parent,'queue','approved_plan_submitted',job_id=ident,
                approval_key=approval_key,stages=len(validated))
+        self._journal(ident)
         return ident
 
     def by_approval_key(self,key):
@@ -214,6 +255,7 @@ class JobStore:
                 (detail,ident,INTERRUPTED)).rowcount
             if changed:
                 db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',(ident,detail))
+        if changed:self._journal(ident)
         return bool(changed)
 
     def freeze_unapproved_legacy_builds(self):
@@ -277,7 +319,8 @@ class JobStore:
             db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',(ident,detail[:4000]))
             record(self.path.parent,'queue','job_transition',job_id=ident,from_state=row[0],to_state=state,
                    detail=detail[:500],result_characters=len(result) if result else 0)
-            return True
+        self._journal(ident)
+        return True
     def cancel(self, ident: int) -> bool:
         return self.change(ident,'cancelled','Cancelled by user',allowed=('queued','running','paused','needs_input','waiting_approval','waiting_verification','waiting_repair'))
     def resume(self, ident: int) -> bool:
@@ -295,6 +338,7 @@ class JobStore:
                            (ident,n,step['path'],step['description']))
             db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',
                        (ident,f'Validated plan with {len(steps)} bounded file steps'))
+        self._journal(ident)
     def steps(self, ident: int):
         with self._conn() as db:
             db.row_factory=sqlite3.Row
@@ -305,7 +349,12 @@ class JobStore:
         if state not in ('planned','proposed','saved','verified','failed','skipped'):
             raise ValueError('Invalid step state')
         with self._conn() as db:
+            row=db.execute('SELECT job_id,path FROM job_steps WHERE id=?',(step_id,)).fetchone()
             db.execute('UPDATE job_steps SET state=?,outcome=? WHERE id=?',(state,outcome,step_id))
+            if row:
+                db.execute('INSERT INTO job_events(job_id,note) VALUES(?,?)',
+                    (row[0],f'File {row[1]}: {state}; {outcome[:500]}'))
+        if row:self._journal(row[0])
 
     def count(self, project: str):
         with self._conn() as db:

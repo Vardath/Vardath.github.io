@@ -98,7 +98,7 @@ def parse_source_verdict(answer):
 
 
 def inspect_proposal(council,client,*,original,project,session,focus,proposal,
-                     section='',kind='plan',stage=None,cancelled=None,amendments=()):
+                     section='',kind='plan',stage=None,cancelled=None,amendments=(),memory=''):
     """Review every candidate chunk; ambiguous verdicts never count as acceptance."""
     if kind not in ('plan','code','repair','behavior_test'):
         raise ValueError('Unsupported review operation')
@@ -120,6 +120,7 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
     facts={'schema':'sentinel-spec-v3','project':str(Path(project).resolve()),
            'original_sha':original_hash,'source_sha':sha(source),
            'proposal_sha':candidate_hash,'focus_sha':sha(focus),'kind':kind}
+    if memory:facts['memory_sha']=sha(memory)
     identity=sha(json.dumps(facts,sort_keys=True))
     substantive=kind in ('code','repair','behavior_test')
     # Do not let a small direct-answer verdict authorize substantive source.
@@ -167,6 +168,8 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
                     '"reason" (a concise, nonempty explanation naming the specific source identifiers '
                     'and mismatches, or why the visible source satisfies the step). No other keys.\n'
                     +source+f'\nSTEP: {focus[:500]}\nSOURCE PORTION {n+1}/{len(chunks)}:\n{chunk}')
+        if memory and len(memory)<=600 and len(prompt)+len(memory)<=7000:
+            prompt+=memory
         if len(prompt)>7500:raise PlanError('Sentinel review exceeds local context')
         answer=council._run(client,role=f'SENTINEL_SPEC_{n}',session=session,
                             evidence_sha=identity,prompt=prompt,stage=stage,

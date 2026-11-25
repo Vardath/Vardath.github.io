@@ -1,3 +1,9 @@
+# Triad V13 capability development — current priority
+
+Read DEEPTHORT_CAPABILITY_ROADMAP.md, especially the Triad priority reset at the end. Owner requests capability development before full project benchmarks. Preserve V12.2 three models, native CPU OpenVINO, 40% shared cap, original specification/amendment governance and existing interface. V13 introduces task-named local Markdown journals and evidence-bound task memory; validate journal persistence, restart and scope isolation first. Next extend memory to planning, tool receipts and verification traces, then portable typed skills / parameter rebinding and local MCP/application adapters, Git-aware transactions, visual verification, and remaining roadmap gaps. No edits to original DeepThorT. Historical NEXT_STEPS below describe prior original DeepThorT checkpoints, not the current Triad configuration.
+
+---
+
 # Continue from v60
 
 Read TEST_RESULTS_V60.md for the latest independent benchmark. Integrate the verified component bundle with approved Build milestones, retaining its file hashes and replacing the superseded macro proposal through normal reconciliation. Check physics and docking in an isolated game test before certifying clearance. Production, crew, equipment and respawn still need implementation.
