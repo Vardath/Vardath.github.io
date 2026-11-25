@@ -43,9 +43,9 @@ def verify_root_cap():
         check(query(job,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),'Inherited job limits')
         check(query(job,JobObjectCpuRateControlInformation,ctypes.byref(cpu),ctypes.sizeof(cpu),None),'Inherited CPU cap')
         required=CPU_RATE_CONTROL_ENABLE|CPU_RATE_CONTROL_HARD_CAP
-        if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=3000
+        if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=3500
                 or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_JOB_MEMORY
-                or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*30//100
+                or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*35//100
                 or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE):
             raise RuntimeError('Inherited job is not the required CPU/commit cap')
         return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
