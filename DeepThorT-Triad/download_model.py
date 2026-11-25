@@ -1,12 +1,16 @@
 """Explicit Triad-only installation; runtime probe precedes large downloads."""
 import hashlib
+import base64
+import stat
+import tempfile
+import zipfile
+from urllib.parse import urlsplit
 import json
 import os
 import shutil
 import subprocess
 import sys
 import time
-import venv
 from pathlib import Path
 from urllib.request import urlopen,Request
 from deepthort_local.triad_profiles import ROOT,PROFILES,RUNTIME_VERSION,REQUIRED,OPTIONAL,model_path,runtime_path
@@ -76,16 +80,155 @@ def download(url,path,meta,gate):
     if not verify(part,meta,gate):raise ValueError('Incomplete or invalid publisher file: '+path.name)
     os.replace(part,path)
 
+# OpenVINO GenAI 2026.4.1.0 publishes Windows x64 wheels for these
+# interpreters. Do not use the newest installed Python indiscriminately.
+SUPPORTED_RUNTIME_MINORS=(13,12,11,10)
+PRIVATE_PYTHON_VERSION='3.13.17'
+NUGET_ROOT='https://api.nuget.org/v3-flatcontainer/python/'+PRIVATE_PYTHON_VERSION+'/'
+NUGET_NAME='python.'+PRIVATE_PYTHON_VERSION+'.nupkg'
+MAX_PYTHON_PACKAGE=40*1024**2
+MAX_PYTHON_EXPANDED=160*1024**2
+
+def probe_python(command):
+    try:
+        result=subprocess.run([*command,'-I','-c',
+            'import json,sys,struct,platform; print(json.dumps([sys.executable, list(sys.version_info[:2]), struct.calcsize("P"), platform.machine()]))'],
+            check=True,capture_output=True,text=True,timeout=20,
+            env={**os.environ,'PYTHON_MANAGER_AUTOMATIC_INSTALL':'0'})
+        exe,version,pointer_size,machine=json.loads(result.stdout.strip())
+        if (version[0]==3 and version[1] in SUPPORTED_RUNTIME_MINORS
+                and pointer_size==8 and machine.casefold() in ('amd64','x86_64')):
+            return Path(exe)
+    except (OSError,ValueError,TypeError,IndexError,subprocess.SubprocessError):
+        pass
+    return None
+
+def _metadata(url):
+    address=urlsplit(url)
+    if address.scheme!='https' or address.netloc!='api.nuget.org':
+        raise ValueError('Unexpected Python package metadata host')
+    with urlopen(Request(url,headers={'User-Agent':'DeepThorT-Triad/3'}),timeout=60) as response:
+        data=response.read(1024**2+1)
+    if len(data)>1024**2:raise ValueError('Python metadata too large')
+    return json.loads(data)
+
+def python_package_hash():
+    # Exact official CPython package from NuGet. The catalog provides the
+    # SHA-512 for the immutable package, independent of the archive download.
+    leaf=_metadata('https://api.nuget.org/v3/registration5-semver1/python/'+PRIVATE_PYTHON_VERSION+'.json')
+    catalog=leaf['catalogEntry']
+    data=_metadata(catalog) if isinstance(catalog,str) else catalog
+    if data['id'].casefold()!='python' or data['version']!=PRIVATE_PYTHON_VERSION:
+        raise ValueError('Unexpected Python package identity')
+    if data['packageHashAlgorithm'].casefold()!='sha512':
+        raise ValueError('Unexpected Python package hash algorithm')
+    expected=base64.b64decode(data['packageHash'],validate=True)
+    if len(expected)!=64:raise ValueError('Invalid Python package hash')
+    return expected
+
+def extract_python_package(archive,dest):
+    """Extract only tools/ into a fresh private directory; no archive paths escape."""
+    with zipfile.ZipFile(archive) as z:
+        selected=[];seen=set();total=0
+        for member in z.infolist():
+            name=member.filename
+            if not name.startswith('tools/'):continue
+            relative=name[len('tools/'):]
+            if not relative:continue
+            parts=relative.rstrip('/').split('/')
+            if ('\\' in relative or any(not p or p in ('.','..') or ':' in p or
+                 p.endswith((' ','.')) or p.casefold().split('.')[0] in
+                 {'con','prn','aux','nul',*(f'com{i}' for i in range(1,10)),*(f'lpt{i}' for i in range(1,10))}
+                 for p in parts) or stat.S_ISLNK(member.external_attr>>16)):
+                raise ValueError('Unsafe Python package member')
+            key='/'.join(parts).casefold()
+            if key in seen:raise ValueError('Duplicate Python package member')
+            seen.add(key);total+=member.file_size
+            if len(seen)>20000 or total>MAX_PYTHON_EXPANDED:
+                raise ValueError('Python package exceeds extraction budget')
+            selected.append((member,parts))
+        if 'python.exe' not in seen or 'python313.dll' not in seen:
+            raise ValueError('Missing Python runtime binaries')
+        for member,parts in selected:
+            target=dest.joinpath(*parts)
+            if member.is_dir():target.mkdir(parents=True,exist_ok=True);continue
+            target.parent.mkdir(parents=True,exist_ok=True)
+            with z.open(member) as src,target.open('xb') as out:
+                shutil.copyfileobj(src,out,1024*1024)
+
+def provision_private_python():
+    if os.name!='nt':raise RuntimeError('Automatic private Python requires Windows x64')
+    base=ROOT/'runtime'/('cpython-'+PRIVATE_PYTHON_VERSION+'-x64')
+    exe=base/'python.exe'
+    if exe.is_file() and probe_python([str(exe)]):return exe
+    base.parent.mkdir(parents=True,exist_ok=True)
+    from deepthort_local.triad_job import verify_root_cap
+    verify_root_cap()
+    gate=DiskGate(bytes_per_second=3*1024**2,game_names_path=ROOT/'game_executables.txt',game_flag=ROOT/'state/game-active.flag')
+    gate.wait_for_non_game()
+    print('Preparing private CPython '+PRIVATE_PYTHON_VERSION+' x64; no global Python changes.',flush=True)
+    expected=python_package_hash()
+    with tempfile.TemporaryDirectory(prefix='python-bootstrap-',dir=base.parent) as temporary:
+        stage=Path(temporary)
+        archive=stage/NUGET_NAME
+        digest=hashlib.sha512();size=0
+        with urlopen(Request(NUGET_ROOT+NUGET_NAME,headers={'User-Agent':'DeepThorT-Triad/3'}),timeout=120) as response,archive.open('xb') as out:
+            for block in iter(lambda:response.read(256*1024),b''):
+                gate.wait_for_non_game()
+                size+=len(block)
+                if size>MAX_PYTHON_PACKAGE:raise ValueError('Python download exceeds budget')
+                digest.update(block);out.write(block);gate.pace(len(block))
+        if digest.digest()!=expected:raise ValueError('CPython package SHA-512 mismatch')
+        unpacked=stage/'python';unpacked.mkdir()
+        extract_python_package(archive,unpacked)
+        # Verify the package's ABI before moving to its final location.
+        if not probe_python([str(unpacked/'python.exe')]):
+            raise RuntimeError('Downloaded CPython could not start as supported x64 Python')
+        if base.exists():base.rename(base.with_name(base.name+'-incompatible-'+str(time.time_ns())))
+        unpacked.rename(base)
+    if not probe_python([str(exe)]):raise RuntimeError('Private Python failed final probe')
+    return exe
+
+def choose_runtime_python():
+    current=probe_python([sys.executable])
+    if current:return current
+    launcher=shutil.which('py')
+    if launcher:
+        for minor in SUPPORTED_RUNTIME_MINORS:
+            candidate=probe_python([launcher,'-3.'+str(minor)])
+            if candidate:return candidate
+    return provision_private_python()
+
+def ensure_runtime_environment(exe):
+    if exe.is_file() and probe_python([str(exe)]):
+        return
+    base=choose_runtime_python()
+    environment=exe.parent.parent
+    if environment.exists():
+        # Keep the failed environment; no recursive deletion and no changes to
+        # model weights or project state. A fresh venv is required for a new ABI.
+        backup=environment.with_name(environment.name+'-incompatible-'+str(time.time_ns()))
+        environment.rename(backup)
+        print('Preserved incompatible runtime:',backup,flush=True)
+    print('Creating private OpenVINO runtime using',base,flush=True)
+    subprocess.run([str(base),'-I','-m','venv','--without-pip',str(environment)],check=True)
+    # CPython's reduced NuGet distribution can have pip but no bundled
+    # ensurepip wheels. Use its pip to install into the new private venv.
+    if probe_python([str(exe)]):
+        result=subprocess.run([str(exe),'-I','-m','ensurepip','--upgrade'],check=False)
+        if result.returncode:
+            subprocess.run([str(base),'-I','-m','pip','--isolated','--python',str(exe),'install',
+                '--only-binary=:all:','--index-url','https://pypi.org/simple','pip==25.3'],check=True)
+    if not exe.is_file() or not probe_python([str(exe)]):
+        raise RuntimeError('New virtual environment did not use a supported x64 Python')
+
 def install_runtime():
-    if sys.version_info<(3,10) or sys.maxsize<=2**32:
-        raise RuntimeError('Python 3.10+ x64 required')
     exe=runtime_path()
-    if not exe.is_file():
-        venv.EnvBuilder(with_pip=True).create(exe.parent.parent)
     marker=ROOT/'runtime/openvino-verified.json'
     if marker.exists():marker.unlink()
+    ensure_runtime_environment(exe)
     # Use isolated venv, never alter original DeepThorT or global Python.
-    subprocess.run([str(exe),'-m','pip','--isolated','install','--only-binary=:all:',
+    subprocess.run([str(exe),'-I','-m','pip','--isolated','install','--only-binary=:all:',
         '--index-url','https://pypi.org/simple','openvino-genai=='+RUNTIME_VERSION],check=True)
     subprocess.run([str(exe),'-I',str(ROOT/'triad_openvino_worker.py'),'--probe'],cwd=ROOT,check=True)
     atomic_json(marker,{'version':RUNTIME_VERSION,'backend':'native-openvino-ir-cpu'})
@@ -96,6 +239,8 @@ def main():
     gate=DiskGate(bytes_per_second=3*1024**2,game_names_path=ROOT/'game_executables.txt',game_flag=ROOT/'state/game-active.flag')
     gate.wait_for_non_game()
     install_runtime()
+    if sys.argv[1:]==['--runtime-only']:
+        print('Verified native OpenVINO runtime (no model downloads).',flush=True);return
     manifests={r:manifest(r) for r in PROFILES}
     need=sum(sum(x['size'] for x in m['files'].values()) for m in manifests.values())
     # Conservative free disk estimate (existing valid files may be reused).

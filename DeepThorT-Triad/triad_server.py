@@ -8,6 +8,8 @@ import time
 from contextlib import ExitStack
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.request import Request,build_opener,ProxyHandler
+from urllib.error import HTTPError
+from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
 from deepthort_local.triad_profiles import ROOT,PROFILES,MODEL_ID,model_path,runtime_path,ready,total_weights
 from deepthort_local.triad_job import verify_root_cap,child_server
 
@@ -44,12 +46,19 @@ def request(port,path,key,body=None,timeout=2):
     req=Request(f'http://127.0.0.1:{port}'+path,
         data=json.dumps(body).encode() if body is not None else None,
         headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
-    with build_opener(ProxyHandler({})).open(req,timeout=timeout) as r:
-        return json.loads(r.read(2_000_000))
+    try:
+        with build_opener(ProxyHandler({})).open(req,timeout=timeout) as r:
+            return json.loads(r.read(2_000_000))
+    except HTTPError as error:
+        raise http_failure(error,include_detail=bool(body and synthetic(body.get('model'),body.get('messages')))) from None
 
 class Pool:
     def __init__(self):
         self.children={};self.locks={r:threading.Lock() for r in PROFILES}
+        self.admission_lock=threading.Condition()
+        self.generating=set()
+        self.serial_memory_mode=False
+        self.memory_retries=0
         self.stage='Checking combined memory';self.started=time.monotonic();self.ready=False
     def set_stage(self,message):
         self.stage=message;print(message,flush=True)
@@ -88,26 +97,53 @@ class Pool:
         self.ready=True;self.set_stage('All three models resident; independent inference enabled')
     def healthy(self):
         return self.ready and len(self.children)==3 and all(c[3]() for c in self.children.values())
-    def infer(self,role,messages,tokens):
-        if not self.healthy():raise RuntimeError('All three models must be resident')
-        with self.locks[role]:
+    def _generate(self,role,messages,tokens):
+        # Three resident models remain loaded. On proven allocation failure,
+        # stop admitting overlapping native calls for the rest of this session.
+        with self.admission_lock:
+            while self.serial_memory_mode and self.generating:
+                if not self.healthy():raise WorkerFailure('worker_exit')
+                self.admission_lock.wait(.5)
+            if not self.healthy():raise WorkerFailure('worker_exit')
+            self.generating.add(role)
+        try:
             port,key,pid,alive=self.children[role]
-            if not self.healthy():raise RuntimeError('Resident model exited')
             result=request(port,'/v1/chat/completions',key,
-                {'model':role,'messages':messages,'max_tokens':tokens,'temperature':0,'stream':False,
-                 },timeout=3600)
+                {'model':role,'messages':messages,'max_tokens':tokens,'temperature':0,'stream':False},timeout=3600)
             if result.get('model')!=role:raise ValueError('Worker role mismatch')
             answer=result['choices'][0]['message']['content']
             if not isinstance(answer,str) or not answer.strip():raise ValueError('Model returned no final text')
-            if not self.healthy():raise RuntimeError('A resident model exited during inference')
+            if not self.healthy():raise WorkerFailure('worker_exit')
             return answer
+        except WorkerFailure as error:
+            if error.code=='memory_pressure':
+                with self.admission_lock:
+                    self.serial_memory_mode=True
+            raise
+        finally:
+            with self.admission_lock:
+                self.generating.discard(role)
+                self.admission_lock.notify_all()
+    def infer(self,role,messages,tokens):
+        if not self.healthy():raise WorkerFailure('worker_exit')
+        with self.locks[role]:
+            try:return self._generate(role,messages,tokens)
+            except WorkerFailure as error:
+                if error.code!='memory_pressure' or not self.healthy():raise
+                with self.admission_lock:
+                    self.memory_retries+=1
+                print('Native memory pressure:',role,'; retrying once with exclusive generation, all weights resident',flush=True)
+                return self._generate(role,messages,tokens)
     def status(self,council):
+        with self.admission_lock:
+            active=set(self.generating);serial=self.serial_memory_mode;retries=self.memory_retries
         return {'model':MODEL_ID,'backend':'native-openvino-ir-cpu','offline':True,'ready':self.healthy(),
             'role':'council' if council else 'implementation','pid':os.getpid(),
             'phase':'ready' if self.healthy() else 'loading','stage':self.stage,
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),
             'loading_seconds':int(time.monotonic()-self.started),'stalled':False,'error':None,
-            'models':{r:{'name':PROFILES[r][0],'pid':c[2],'resident':c[3](),'busy':self.locks[r].locked()} for r,c in self.children.items()}}
+            'serial_memory_mode':serial,'memory_retries':retries,
+            'models':{r:{'name':PROFILES[r][0],'pid':c[2],'resident':c[3](),'busy':self.locks[r].locked(),'generating':r in active} for r,c in self.children.items()}}
 
 def handler(pool,token,council):
     class Handler(BaseHTTPRequestHandler):
@@ -132,8 +168,10 @@ def handler(pool,token,council):
                 role,messages,tokens=validate(json.loads(self.rfile.read(size)),'janus' if council else 'implementation')
                 answer=pool.infer(role,messages,tokens)
                 self.reply(200,{'model':MODEL_ID,'triad_role':role,'choices':[{'message':{'role':'assistant','content':answer},'finish_reason':'stop'}]})
+            except WorkerFailure as e:
+                self.reply(500,{'error':e.code,'code':e.code,'detail':e.detail})
             except Exception as e:
-                self.reply(500,{'error':str(e)[:500]})
+                self.reply(500,{'error':'native_error','code':'native_error','detail':type(e).__name__})
     return Handler
 
 def main():

@@ -1,4 +1,4 @@
-"""Windows resource supervisor: 30% system CPU and <=30% physical-RAM-sized job commit cap.
+"""Windows resource supervisor: 35% system CPU and <=35% physical-RAM-sized job commit cap.
 
 A Windows Job Object encloses the child process AND all its descendants;
 launch DeepThorT's ROOT process under it to limit the entire application.
@@ -41,7 +41,7 @@ class MemoryStatus(ctypes.Structure):
 
 
 def calculate_ram_limit(total_physical: int, available_physical: int,
-                        ram_percent: int = 30, free_reserve_percent: int = 10) -> int:
+                        ram_percent: int = 35, free_reserve_percent: int = 10) -> int:
     """Reject launching if model would jeopardise RAM reserved for foreground games.
 
     JobObjectMemoryLimit caps committed private bytes (not physical working set).
@@ -51,13 +51,13 @@ def calculate_ram_limit(total_physical: int, available_physical: int,
     """
     if total_physical <= 0 or not 0 <= available_physical <= total_physical:
         raise ValueError("Invalid physical RAM values")
-    if not 1 <= ram_percent <= 30 or not 0 <= free_reserve_percent <= 80:
-        raise ValueError("RAM cap must be 1..30% and reserve 0..80%")
+    if not 1 <= ram_percent <= 35 or not 0 <= free_reserve_percent <= 80:
+        raise ValueError("RAM cap must be 1..35% and reserve 0..80%")
     ceiling = total_physical * ram_percent // 100
     reserve = total_physical * free_reserve_percent // 100
     # The Job limit is a ceiling, not an allocation. A running foreground
     # game can use much of RAM: allow a smaller *safe* capped job rather than
-    # refusing to launch because its full theoretical 30% is unavailable.
+    # refusing to launch because its full theoretical 35% is unavailable.
     limit = min(ceiling, max(0, available_physical-reserve))
     minimum = min(2 * 1024**3, total_physical // 10)
     if limit < minimum:
@@ -119,14 +119,14 @@ class ProcessInfo(ctypes.Structure):
 
 
 def run_capped(command: Sequence[str], cwd: str | None = None,
-               percent: int = 30, ram_percent: int = 30, free_reserve_percent: int = 10,
+               percent: int = 35, ram_percent: int = 35, free_reserve_percent: int = 10,
                observe: Callable[[int, int, bool], None] | None = None) -> int:
     if os.name != "nt":
-        raise RuntimeError("The 30% hard-cap supervisor requires Windows; refusing uncapped launch")
-    if not 1 <= percent <= 30:
-        raise ValueError("This gaming-safe launcher cannot exceed 30% CPU")
-    if not 1 <= ram_percent <= 30:
-        raise ValueError("This gaming-safe launcher cannot exceed 30% RAM")
+        raise RuntimeError("The 35% hard-cap supervisor requires Windows; refusing uncapped launch")
+    if not 1 <= percent <= 35:
+        raise ValueError("This gaming-safe launcher cannot exceed 35% CPU")
+    if not 1 <= ram_percent <= 35:
+        raise ValueError("This gaming-safe launcher cannot exceed 35% RAM")
     if not command or not all(isinstance(x, str) and x for x in command):
         raise ValueError("Nonempty argument vector required")
     kernel = ctypes.WinDLL("kernel32", use_last_error=True)
@@ -183,7 +183,7 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         limits.JobMemoryLimit = ram_cap_bytes
         check(set_job(job, JobObjectExtendedLimitInformation, ctypes.byref(limits), ctypes.sizeof(limits)), "Set job-wide RAM cap, idle priority and kill-on-close")
         cap = CpuRate(CPU_RATE_CONTROL_ENABLE | CPU_RATE_CONTROL_HARD_CAP, percent * 100)
-        check(set_job(job, JobObjectCpuRateControlInformation, ctypes.byref(cap), ctypes.sizeof(cap)), "Set hard 30% CPU cap")
+        check(set_job(job, JobObjectCpuRateControlInformation, ctypes.byref(cap), ctypes.sizeof(cap)), "Set hard 35% CPU cap")
         si = StartupInfo()
         si.cb = ctypes.sizeof(si)
         cmdline = ctypes.create_unicode_buffer(subprocess.list2cmdline(list(command)))

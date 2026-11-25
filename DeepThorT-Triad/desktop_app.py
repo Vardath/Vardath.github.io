@@ -494,7 +494,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(guibar,text='Stop isolated GUI test',
                    command=self._stop_isolated_gui).pack(side='left',padx=3)
         ttk.Label(queue_tab,text='v45: Windows programs can be observed on a separate desktop with no input takeover. '
-                  'Shares the original 30% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
+                  'Shares the original 35% CPU job cap; NOT visual proof, VM isolation or game playtesting.', 
                   style='Muted.TLabel').pack(anchor='w',pady=(0,5))
         self.job_tree=ttk.Treeview(queue_tab,columns=('state','mode','chat','detail'),show='headings',height=12)
         for column,title,width in (('state','Status',125),('mode','Type',70),('chat','Chat',120),('detail','Work and progress',540)):
@@ -645,7 +645,7 @@ class DeepThorTDesktop(tk.Tk):
             'Installation and heavy generation should run when games are closed.')
 
         foot=ttk.Frame(self);foot.pack(fill='x',padx=13,pady=(0,8))
-        self.status=tk.StringVar(value='Idle • 30% total CPU allocation + 30% memory-commit budget')
+        self.status=tk.StringVar(value='Idle • 35% total CPU allocation + 35% memory-commit budget')
         ttk.Label(foot,textvariable=self.status,style='Muted.TLabel').pack(side='left')
         ttk.Label(foot,text='GPU inference off · Offline generation · No cloud fallback',style='Muted.TLabel').pack(side='right')
 
@@ -858,8 +858,13 @@ class DeepThorTDesktop(tk.Tk):
                     body={'model':MODEL_ID,'triad_role':role,'messages':[{'role':'user','content':'Return exactly '+word+' and nothing else.'}],'max_tokens':32,'stream':False}
                     req=Request('http://127.0.0.1:8765/v1/chat/completions',data=json.dumps(body).encode(),
                         headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']})
-                    with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
-                        reply=json.load(response)
+                    from urllib.error import HTTPError
+                    from deepthort_local.triad_errors import http_failure
+                    try:
+                        with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
+                            reply=json.load(response)
+                    except HTTPError as error:
+                        raise http_failure(error,include_detail=True) from None
                     if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
                     return reply['choices'][0]['message']['content']
                 result,observed['simultaneous']=smoke(health,ask,expected_primary,cancel)
@@ -867,7 +872,7 @@ class DeepThorTDesktop(tk.Tk):
             finally:self._council_busy=False
         def concurrency_probe():
             return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
-                    'detail':'All three role busy flags observed simultaneously.' if observed['simultaneous'] else 'Simultaneous activity across all three roles not observed.'}
+                    'detail':'All three native generation calls observed simultaneously.' if observed['simultaneous'] else 'Simultaneous native generation not observed; requests may have been serialized to protect memory.'}
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe}
@@ -1041,7 +1046,7 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Install offline image generator',
             'Install CPU PyTorch, Diffusers and Stable Diffusion 1.5 model weights?\n\n'
             'This downloads several GB and can use substantial temporary disk space and memory. '
-            'Inference will run offline and CPU-only under the 30% launcher limits.\n\n'
+            'Inference will run offline and CPU-only under the 35% launcher limits.\n\n'
             'It can be extremely slow and can fail if physical RAM usage exceeds the allowed budget.\n'
             'Approve this one-time installation?',parent=self):return
         self.tabs.select(4)
@@ -2910,7 +2915,7 @@ class DeepThorTDesktop(tk.Tk):
         try:
             if not is_capped_windows_process():
                 raise QuietPlaytestError('Only available under the capped Windows DeepThorT.exe launcher. '
-                    'A Python development launch cannot guarantee the shared 30% CPU/memory limit.')
+                    'A Python development launch cannot guarantee the shared 35% CPU/memory limit.')
             project=Path(self.project or '')
             exe=godot_executable(tools=getattr(self,'inventory',None))
             if not exe:
@@ -5981,7 +5986,7 @@ class DeepThorTDesktop(tk.Tk):
                  +f"Generation elapsed: {local_status.get('inference_elapsed_seconds',0)}s; "
                  +f"output limit: {local_status.get('inference_max_tokens','?')} tokens.\n"
                  +'This is an accepted local request, not yet a finished reply. '
-                 +'At the 30% CPU limit it may take several minutes.')
+                 +'At the 35% CPU limit it may take several minutes.')
         self.client.record_local_exchange(self.current_chat, prompt or 'Run local DeepThorT self-diagnosis', report)
         self._reload_chat()
         self._log('Local self-diagnosis requested; no model call or cloud connection used.')
@@ -6059,8 +6064,8 @@ class DeepThorTDesktop(tk.Tk):
             self.recent_ai_logs=[]
             self.last_ai_error=''
             self.model_status.set('AI: loading…')
-            self._set_connection_status('AI loading under 30% CPU cap. Conversations stay separate from approved jobs.')
-            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 30% cap.')
+            self._set_connection_status('AI loading under 35% CPU cap. Conversations stay separate from approved jobs.')
+            self._log('Starting three resident OpenVINO IR models, CPU-only, shared 35% cap.')
             process=self.node
             def output():
                 try:
@@ -6171,7 +6176,7 @@ class DeepThorTDesktop(tk.Tk):
               f"Current approved job: {('#'+str(active['id'])+' '+active['mode']+' ('+str(elapsed)+'s elapsed)') if active else 'none'}\n"
               f"Local tool PID: {tool.pid if tool else 'none'} | Installer PID: {install.pid if install else 'none'} | Media PID: {media.pid if media and media.poll() is None else 'none'}\n"
               f"Queue: {'paused' if self.queue_paused else 'running if model ready'}; pending: {self.jobs.count(self._project_key()).get('queued',0)}\n"
-              f"Supervision: 30% aggregate CPU cap, 30% RAM commit limit under DeepThorT.exe\n"
+              f"Supervision: 35% aggregate CPU cap, 35% RAM commit limit under DeepThorT.exe\n"
               f"Resident models: {len(roles)}/3 | "+', '.join(r+' PID '+str(pid) for r,pid in roles.items())+'\n'
               f'Council detail: {self._council_status()}\n'
               f"JANUS instructions: {len(self.instruction_inbox.list(str(self.project) if self.project else None,limit=100))} recent saved\n"

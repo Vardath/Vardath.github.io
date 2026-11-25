@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from importlib.metadata import version
 from deepthort_local.triad_profiles import PROFILES,RUNTIME_VERSION,model_path,installed_files
 from deepthort_local.triad_job import verify_root_cap
+from deepthort_local.triad_errors import native_error,synthetic
 
 def probe():
     import openvino as ov
@@ -77,6 +78,7 @@ def serve(role,port,key):
         def do_POST(self):
             if not self.authorized():return self.reply(403,{'error':'Unauthorized'})
             if self.path!='/v1/chat/completions':return self.reply(404,{'error':'Not found'})
+            messages=None
             try:
                 n=int(self.headers.get('Content-Length','0'))
                 if not 1<=n<=80000:raise ValueError('Invalid request length')
@@ -87,7 +89,11 @@ def serve(role,port,key):
                 if selected!=role:raise ValueError('Wrong worker role')
                 with engine.lock:answer=engine.generate(messages,tokens)
                 self.reply(200,{'model':role,'choices':[{'message':{'role':'assistant','content':answer}}]})
-            except Exception as e:self.reply(500,{'error':str(e)[:500]})
+            except Exception as e:
+                code=native_error(e)
+                detail=str(e)[:500] if synthetic(role,messages) else type(e).__name__
+                print('Native inference failure:',role,code,detail,flush=True)
+                self.reply(500,{'error':code,'code':code,'detail':detail})
     with ThreadingHTTPServer(('127.0.0.1',port),Handler) as server:server.serve_forever()
 
 def main():
