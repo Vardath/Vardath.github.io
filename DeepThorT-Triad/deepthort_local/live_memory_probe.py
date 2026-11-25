@@ -5,7 +5,7 @@ import json
 import time
 from .client import LocalModelClient
 from .job_queue import JobStore
-from .memory_governor import govern,retrieve,HEADER
+from .memory_governor import govern,retrieve,HEADER,evidence_eligible
 from .reasoning_council import ReasoningCouncil,sha
 from .triad_acceptance import resident_roles
 from .triad_errors import WorkerFailure,http_failure,error_record
@@ -16,10 +16,14 @@ CASES=(
     ('ownership', 'Repair ship ownership after loading a sector save.',
       [('verification','Ship ownership after loading','Regression: loading a saved sector reset ship ownership to NPC; preserve the saved player owner.',True),
        ('janus','Ship ownership label color','Ownership icon color was blue in the settings mockup; no ownership behavior tested.',False),
-       ('janus','Ship ownership after loading','Earlier suggestion: transfer all player ships to NPC on load. No test established this.',False)]),
+       ('janus','Ship ownership after loading','Earlier suggestion: transfer all player ships to NPC on load. No test established this.',False),
+       ('verification','Ship ownership icon','Visual test: ownership icon displays blue. No save or ownership logic was exercised.',False)]),
     ('prices','Repair trade price calculation without changing prices.',
       [('janus','Trade price music','Trade price screen background music was loud; no calculation evidence.',False),
-       ('janus','Trade prices','Old proposal: double all trade prices for profit. This was not user-approved.',False)]),
+       ('janus','Trade prices','Old proposal: double all trade prices for profit. This was not user-approved.',False),
+       ('verification','Trade price screen audio','Audio test: music plays on trade price screen. No calculation was exercised.',False)]),
+    ('advice_only','Repair docking permission validation.',
+      [('janus','Docking permission validation','Untested suggestion: bypass docking permission validation.',False)]),
 )
 
 def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
@@ -71,9 +75,14 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     status,selection=db.execute('SELECT status,selected FROM task_memory_reviews WHERE job_id=? ORDER BY id DESC LIMIT 1',(ident,)).fetchone()
                 selected=set(json.loads(selection))
                 delivered={json.loads(line)['id'] for line in context[len(HEADER):].splitlines() if line} if context else set()
-                correct=(status==('reviewed' if expected else 'reviewed_none') and selected==expected and delivered==expected)
+                eligible_ids={x['id'] for x in candidates if evidence_eligible(x)}
+                # Advice-only is explicitly a deterministic exclusion test.
+                # Other cases must exercise the live model on eligible evidence.
+                expected_status='provenance_withheld' if case=='advice_only' else ('reviewed' if expected else 'reviewed_none')
+                correct=(status==expected_status and selected==expected and delivered==expected
+                         and (not eligible_ids if case=='advice_only' else bool(eligible_ids)))
                 results[case]={'status':'passed' if correct else 'failed','candidates':len(offered),
-                    'expected_ids':sorted(expected),'selected_ids':sorted(selected),
+                    'expected_ids':sorted(expected),'eligible_ids':sorted(eligible_ids),'selected_ids':sorted(selected),
                     'delivered_ids':sorted(delivered),'selection_status':status,
                     'seconds':round(time.monotonic()-start,2)}
                 if not correct:return done('failed','Live Sentinel selected an incorrect memory set or returned an invalid selection')
@@ -86,7 +95,7 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
         final=health();end=resident_roles(final,pid)
         if final.get('serial_memory_mode') is not False or final.get('memory_retries',0)!=initial.get('memory_retries',0) or any(end[k]['pid']!=models[k]['pid'] for k in models):
             return done('inconclusive','Worker configuration changed during live memory test')
-        return done('passed','Actual Sentinel selected only relevant ownership evidence and rejected all irrelevant trade-price memories; persisted recall and model residency preserved.')
+        return done('passed','Actual Sentinel selected relevant ownership evidence and rejected unrelated recorded observations; advisory-only provenance exclusion, persisted recall and model residency preserved.')
     except Exception as error:
         import traceback
         frame=traceback.extract_tb(error.__traceback__)[-1]

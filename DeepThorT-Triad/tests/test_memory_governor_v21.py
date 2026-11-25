@@ -1,5 +1,5 @@
 import unittest
-from deepthort_local.memory_governor import parse_selection,parse_challenge,fit,HEADER,govern,retrieve
+from deepthort_local.memory_governor import parse_selection,parse_challenge,fit,HEADER,govern,retrieve,evidence_eligible
 from deepthort_local.memory_governor_probe import exercise
 class MemoryGovernorTests(unittest.TestCase):
     def test_integration(self):
@@ -76,3 +76,11 @@ class MemoryGovernorTests(unittest.TestCase):
         for invalid in ([row('N1')],[row('N1'),row('N1')],[row('N1'),row('N9')],
                         [row('N1'),row('N2',direct='true')],[row('N1'),row('N2','MADE_UP')]):
             with self.assertRaises(ValueError):parse_challenge(answer(invalid),{'N1','N2'})
+
+    def test_provenance_gate_not_controlled_by_note_text(self):
+        for kind in ('historical_janus','historical_implementation','unknown'):
+            self.assertFalse(evidence_eligible(dict(kind=kind,observation='Verified observation: passed.')))
+        self.assertFalse(evidence_eligible(dict(kind='historical_sentinel',observation='Accepted as advice; runtime untested: approved')))
+        self.assertTrue(evidence_eligible(dict(kind='historical_sentinel',observation='Rejected: mismatched source')))
+        for kind in ('historical_verification','historical_queue_state','historical_repository_receipt','historical_mcp_receipt'):
+            self.assertTrue(evidence_eligible(dict(kind=kind,observation='Historical observation')))

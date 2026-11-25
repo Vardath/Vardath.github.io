@@ -85,10 +85,26 @@ class LiveMemoryHarnessTests(unittest.TestCase):
                 if 'SENTINEL MEMORY CHALLENGE.' in prompt:
                     return json.dumps({'checks':[dict(id=x['id'],
                         basis='PROPOSAL' if 'proposal:' in x['observation'] or 'suggestion:' in x['observation'] else 'OBSERVATION',
-                        direct='music' not in x['observation'] and 'icon color' not in x['observation'],
+                        direct=x['observation'].startswith('Regression:'),
                         compatible=True) for x in rows]})
                 return json.dumps({'keep':[x['id'] for x in rows],'reason':'Overbroad selection'})
         with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
             result=exercise(health,123,threading.Event(),client_factory=ProposalMistakenForUseful)
         self.assertEqual(result['status'],'passed',result)
         self.assertEqual(result['evidence']['memory_cases']['prices']['selected_ids'],[])
+
+    def test_advisory_only_never_calls_model(self):
+        from unittest.mock import patch
+        class RejectAdviceExposure(Fixture):
+            def chat_as(self,role,session,prompt,max_tokens):
+                rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+                if any(x['kind'] in ('historical_janus','historical_implementation') for x in rows):
+                    raise AssertionError('Advisory notes leaked into evidence review')
+                return super().chat_as(role,session,prompt,max_tokens)
+        with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
+            result=exercise(health,123,threading.Event(),client_factory=RejectAdviceExposure)
+        self.assertEqual(result['status'],'passed',result)
+        case=result['evidence']['memory_cases']['advice_only']
+        self.assertEqual(case['selection_status'],'provenance_withheld')
+        self.assertEqual(case['eligible_ids'],[])
+        self.assertEqual(case['selected_ids'],[])
