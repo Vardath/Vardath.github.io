@@ -11,7 +11,7 @@ RUNTIME_VERSION='2026.4.1.0'
 # name, publisher repository, exact revision, model.bin minimum bytes
 PROFILES={
  'implementation':('Granite 4.1 3B INT4 code-calibrated','HarmenWessels/granite-4.1-3b-int4-cw-code-ov','0e0f06a3823a72ab3755ecf9715050b5125cf5a4',1_700_000_000),
- 'janus':('DeepSeek-R1-Distill-Qwen-1.5B INT4','OpenVINO/DeepSeek-R1-Distill-Qwen-1.5B-int4-ov','2b0c1510bd75adf4dc3910025b32a973ca9edc8a',1_300_000_000),
+ 'janus':('SmolLM3-3B INT4','HarmenWessels/SmolLM3-3B-int4-symg128-ov','2fa313c463ddcaac532d0ddfc6daa76b08991573',1_600_000_000),
  'sentinel':('Qwen3-1.7B INT4','OpenVINO/Qwen3-1.7B-int4-ov','6f32d81e9deebeca30bb5490a7176cf4fa8c79e3',1_100_000_000),
 }
 REQUIRED=frozenset(('config.json','tokenizer_config.json','openvino_model.xml','openvino_model.bin',
@@ -19,7 +19,10 @@ REQUIRED=frozenset(('config.json','tokenizer_config.json','openvino_model.xml','
 OPTIONAL=frozenset(('generation_config.json','openvino_config.json','tokenizer.json','added_tokens.json',
     'special_tokens_map.json','merges.txt','vocab.json','tokenizer.model','chat_template.jinja',
     'chat_template_original.jinja','README.md','LICENSE','LICENSE.txt'))
-def model_path(role,root=ROOT):return Path(root)/'models'/MODEL_SET_DIR/role
+def model_path(role,root=ROOT):
+    # Preserve the former DeepSeek directory and both unchanged role directories.
+    PROFILES[role]
+    return Path(root)/'models'/MODEL_SET_DIR/('janus-smollm3' if role=='janus' else role)
 def runtime_path(root=ROOT):
     return Path(root)/'runtime'/'openvino-env'/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
 def role_for_council(role):

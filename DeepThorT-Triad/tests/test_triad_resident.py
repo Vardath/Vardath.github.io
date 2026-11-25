@@ -10,12 +10,15 @@ class TriadTests(unittest.TestCase):
         self.assertTrue(all(len(p[2])==40 for p in PROFILES.values()))
         self.assertEqual({p[1] for p in PROFILES.values()},{
             'HarmenWessels/granite-4.1-3b-int4-cw-code-ov',
-            'OpenVINO/DeepSeek-R1-Distill-Qwen-1.5B-int4-ov',
+            'HarmenWessels/SmolLM3-3B-int4-symg128-ov',
             'OpenVINO/Qwen3-1.7B-int4-ov'})
         self.assertEqual(MODEL_SET_DIR,'triad-openvino-compact-v1')
         self.assertTrue(all(model_path(r).parent.name==MODEL_SET_DIR for r in PROFILES))
         self.assertTrue(all('triad-openvino' not in model_path(r).parts for r in PROFILES))
         self.assertEqual(len({model_path(r) for r in PROFILES}),3)
+        self.assertEqual(model_path('janus').name,'janus-smollm3')
+        self.assertEqual(model_path('implementation').name,'implementation')
+        self.assertEqual(model_path('sentinel').name,'sentinel')
     def test_routing(self):
         self.assertEqual(role_for_council('SENTINEL_SPEC_0'),'sentinel')
         self.assertEqual(role_for_council('JANUS_WORKFLOW'),'janus')
