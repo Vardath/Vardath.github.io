@@ -76,4 +76,7 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
             return done('inconclusive','Worker configuration changed during live memory test')
         return done('passed','Actual Sentinel selected only relevant ownership evidence and rejected all irrelevant trade-price memories; persisted recall and model residency preserved.')
     except Exception as error:
-        return done('cancelled' if cancelled.is_set() else 'blocked','Live memory probe unavailable: '+type(error).__name__)
+        import traceback
+        frame=traceback.extract_tb(error.__traceback__)[-1]
+        # Synthetic fixture only; report exception type and exact source location, not private model content.
+        return done('cancelled' if cancelled.is_set() else 'blocked','Live memory probe unavailable: '+type(error).__name__+' at '+Path(frame.filename).name+':'+str(frame.lineno))
