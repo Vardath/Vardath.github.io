@@ -1,3 +1,9 @@
+# Triad V19 — current checkpoint
+
+Install over verified V18 and run nine focused checks. Local MCP PLAN uses JANUS and Sentinel for a selected paused approved job; one exact user-confirmed invocation, durable task receipt, no replay. Test uses scripted role outputs and real loopback, not live model inference. Next: supervised local server lifecycle and broader transport support, typed application adapters, automatic task-specific planning, bounded verified result recall. Preserve existing models, cap and original DeepThorT.
+
+---
+
 # Triad V18 — current checkpoint
 
 Install over verified V17; run eight focused checks. Local MCP now supports user-reviewed single calls with fresh scalar schema validation, exact argument binding and durable project receipts. Next integrate JANUS tool selection, Sentinel review, task binding and bounded result recall; expand transport support and supervised server lifecycle. External servers are not sandboxed or governed by Triad's cap. No changes to original DeepThorT or model profiles.

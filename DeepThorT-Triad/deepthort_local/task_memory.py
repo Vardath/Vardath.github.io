@@ -78,6 +78,22 @@ def tool_observations(path,job_id,project,spec_sha=None):
     except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):
         return []
 
+def mcp_observations(path,job_id,project,chat_id,spec_sha=None):
+    ledger=Path(path).parent/'janus.sqlite3'
+    if not ledger.is_file():return []
+    try:
+        db=_open(ledger)
+        try:
+            rows=db.execute("""SELECT id,tool,state,task_spec_sha,task_review_sha,args_sha,result_sha
+                FROM local_mcp_calls WHERE task_id=? AND project=? AND task_chat=?
+                ORDER BY id DESC LIMIT 20""",(job_id,str(Path(project).resolve()),chat_id)).fetchall()
+            return [{'receipt':r['id'],'tool':r['tool'],'state':r['state'],
+                'spec_sha':r['task_spec_sha'],'review_sha':r['task_review_sha'],
+                'args_sha':r['args_sha'],'result_sha':r['result_sha']}
+                for r in rows if spec_sha is None or r['task_spec_sha']==spec_sha]
+        finally:db.close()
+    except (OSError,ValueError,sqlite3.Error):return []
+
 def render(path,job_id):
     with _LOCK:
         db=_open(path)
@@ -117,6 +133,9 @@ def render(path,job_id):
         lines.extend(['','## Historical repository tool receipts (not current source proof)'])
         for observation in tool_observations(path,job_id,job['project']):
             lines.append('- '+json.dumps(observation,ensure_ascii=False,sort_keys=True))
+        lines.extend(['','## Task MCP receipts (historical server observations; no runtime proof)'])
+        for observation in mcp_observations(path,job_id,job['project'],job['chat_id']):
+            lines.append('- '+json.dumps(observation,ensure_ascii=True,sort_keys=True))
         return write_journal(dest,lines)
 
 def write_journal(dest,lines):
@@ -165,6 +184,9 @@ def context(path,job_id,project,chat_id,original,focus,*,budget=800):
     for observation in tool_observations(path,job_id,project,digest):
         observation['evidence']=observation['evidence'][:16]
         entries.append(observation)
+    for row in mcp_observations(path,job_id,project,chat_id,digest):
+        entries.insert(0,{'mcp_receipt':row['receipt'],'tool':row['tool'],'state':row['state'],
+                          'historical_result_hash':(row['result_sha'] or '')[:16]})
     result=header
     for entry in entries:
         line=json.dumps(entry,ensure_ascii=True,separators=(',',':'))+'\n'

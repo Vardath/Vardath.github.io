@@ -72,6 +72,12 @@ class MCPCalls:
                 id INTEGER PRIMARY KEY,project TEXT NOT NULL,endpoint TEXT NOT NULL,
                 tool TEXT NOT NULL,schema_sha TEXT NOT NULL,args_sha TEXT NOT NULL,
                 state TEXT NOT NULL,result_sha TEXT,created REAL NOT NULL,finished REAL)""")
+            db.execute('BEGIN IMMEDIATE')
+            cols={row[1] for row in db.execute('PRAGMA table_info(local_mcp_calls)')}
+            for name,typ in (('task_id','INTEGER'),('task_spec_sha','TEXT'),('task_chat','TEXT'),
+                             ('task_nonce','TEXT'),('task_review_sha','TEXT')):
+                if name not in cols:db.execute('ALTER TABLE local_mcp_calls ADD COLUMN '+name+' '+typ)
+            db.execute('CREATE UNIQUE INDEX IF NOT EXISTS mcp_task_once ON local_mcp_calls(task_nonce) WHERE task_nonce IS NOT NULL')
     def prepare(self,project,url,name,args):
         root=str(Path(project).resolve(strict=True))
         endpoint(url)
@@ -84,11 +90,22 @@ class MCPCalls:
             raise ValueError('Arguments must be a bounded JSON object')
         return {'project':root,'endpoint':url,'tool':name,'schema_sha':tool['schema_sha'],
                 'catalog_sha':record['fingerprint'],'arguments':args}
-    def call(self,proposal,*,expected_sha,user_approved=False,cancelled=None):
+    def call(self,proposal,*,expected_sha,user_approved=False,cancelled=None,task=None,task_current=None):
         if user_approved is not True:raise PermissionError('Exact tool call approval required')
         # Copy via JSON and bind all fields to the reviewed proposal.
         proposal=strict_json(json.dumps(proposal,ensure_ascii=True,allow_nan=False))
-        if digest(proposal)!=expected_sha:raise ValueError('Approved tool call changed')
+        if task is not None:
+            task=strict_json(json.dumps(task,ensure_ascii=True,allow_nan=False))
+            if (not isinstance(task,dict) or set(task)!={'job_id','spec_sha','chat_id','nonce','review_sha'}
+                or type(task['job_id']) is not int or task['job_id']<1
+                or not isinstance(task['chat_id'],str)
+                or any(not isinstance(task[k],str) or not re.fullmatch(r'[a-f0-9]{64}',task[k])
+                       for k in ('spec_sha','nonce','review_sha')) or not callable(task_current)):
+                raise ValueError('Invalid MCP task binding')
+        approved=proposal if task is None else {'call':proposal,'task':task}
+        if digest(approved)!=expected_sha:raise ValueError('Approved tool call changed')
+        if task is not None and not task_current(task,proposal):
+            raise ValueError('Task or specification changed')
         current=self.prepare(proposal['project'],proposal['endpoint'],proposal['tool'],proposal['arguments'])
         if current!=proposal:raise ValueError('Project discovery changed; review again')
         client=Discovery(proposal['endpoint'],cancelled)
@@ -100,17 +117,26 @@ class MCPCalls:
         if self.prepare(proposal['project'],proposal['endpoint'],proposal['tool'],proposal['arguments'])!=proposal:
             raise ValueError('Catalog changed during verification')
         client.remaining()
+        if task is not None and not task_current(task,proposal):
+            raise ValueError('Task or specification changed during verification')
         with self.janus.connect() as db:
             db.execute('BEGIN IMMEDIATE')
             if db.execute('SELECT count(*) FROM local_mcp_calls WHERE project=?',(proposal['project'],)).fetchone()[0]>=MAX_RECEIPTS:
                 raise ValueError('MCP receipt quota reached')
-            ident=db.execute("""INSERT INTO local_mcp_calls(project,endpoint,tool,schema_sha,args_sha,state,created)
-                VALUES(?,?,?,?,?,'dispatching',?)""",(proposal['project'],proposal['endpoint'],proposal['tool'],
-                    proposal['schema_sha'],digest(proposal['arguments']),time.time())).lastrowid
+            if task is not None and db.execute('SELECT 1 FROM local_mcp_calls WHERE task_nonce=?',(task['nonce'],)).fetchone():
+                raise ValueError('This reviewed MCP operation has already been dispatched; inspect receipt')
+            binding=(None,)*5 if task is None else (task['job_id'],task['spec_sha'],task['chat_id'],task['nonce'],task['review_sha'])
+            ident=db.execute("""INSERT INTO local_mcp_calls(project,endpoint,tool,schema_sha,args_sha,state,created,
+                task_id,task_spec_sha,task_chat,task_nonce,task_review_sha)
+                VALUES(?,?,?,?,?,'dispatching',?,?,?,?,?,?)""",(proposal['project'],proposal['endpoint'],proposal['tool'],
+                    proposal['schema_sha'],digest(proposal['arguments']),time.time(),*binding)).lastrowid
         state='outcome_unknown';result_sha=None
         try:
             # The discovery API still refuses calls; this one guarded path
             # performs exactly one request. No retry even on timeout.
+            if task is not None and not task_current(task,proposal):
+                state='not_dispatched'
+                raise ValueError('Task changed before dispatch')
             result=client._exchange('tools/call',{'name':proposal['tool'],'arguments':proposal['arguments']})
             if not isinstance(result.get('content'),list) or type(result.get('isError',False)) is not bool:
                 raise ValueError('Malformed MCP call result')

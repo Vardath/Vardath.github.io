@@ -937,9 +937,12 @@ class DeepThorTDesktop(tk.Tk):
         def mcp_calls_probe():
             from deepthort_local.mcp_calls_probe import exercise
             return exercise()
+        def task_mcp_probe():
+            from deepthort_local.task_mcp_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe}
 
         def worker():
             try:
@@ -3486,6 +3489,7 @@ class DeepThorTDesktop(tk.Tk):
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
+            or getattr(self,'_mcp_discovery_active',False)
             or self.__dict__.get('_quiet_test_active') is not None
             or self.__dict__.get('_gui_test_active') is not None
             or self._auto_verification_in_flight is not None
@@ -3766,6 +3770,7 @@ class DeepThorTDesktop(tk.Tk):
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
         if gate=='dispatch_enabled':
+            if getattr(self,'_mcp_discovery_active',False):return
             if self.active_conversation is None:
                 incoming=self.conversations.next_pending()
                 if incoming:
@@ -5280,6 +5285,70 @@ class DeepThorTDesktop(tk.Tk):
         except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
             messagebox.showwarning('Asset import check unavailable',str(error),parent=self)
 
+    def _plan_task_mcp(self):
+        from deepthort_local.task_mcp import plan,snapshot
+        from deepthort_local.mcp_calls import MCPCalls
+        from deepthort_local.reasoning_council import ReasoningCouncil
+        job=self._selected_job()
+        try:
+            if not job or job['project']!=self._project_key() or job['chat_id']!=self.current_chat:
+                raise ValueError('Select the approved job in Work and its original project/chat first')
+            snapshot(self.jobs,self.conversations,self.hierarchies,self.specifications,job['id'])
+            if (self.disk_gate.gaming() or self.active_job is not None or self.active_conversation is not None
+                or getattr(self,'_mcp_discovery_active',False)):
+                raise ValueError('MCP planning requires idle project work and no gaming')
+            goal=simpledialog.askstring('Task MCP objective','What operation should JANUS investigate for this paused job?',parent=self)
+            if not goal:return
+            advisor=self._planning_council_client()
+            if not advisor:raise ValueError('JANUS and Sentinel must be ready and idle')
+            self._mcp_discovery_active=True
+            project=str(self.project);chat=self.current_chat
+            def stopped():
+                return self._quitting or self.disk_gate.gaming() or str(self.project)!=project or self.current_chat!=chat
+            def work():
+                ready=False
+                try:
+                    envelope=plan(MCPCalls(self.janus),ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                        advisor,self.jobs,self.conversations,self.hierarchies,self.specifications,
+                        job_id=job['id'],goal=goal,cancelled=stopped,stage=lambda msg:self.events.put(('log',msg)))
+                    self.events.put(('mcp_task_review',envelope,project,chat))
+                    ready=True
+                except Exception as error:self.events.put(('log','Task MCP plan not ready: '+str(error)[:240]))
+                finally:
+                    advisor.release()
+                    if not ready:self._mcp_discovery_active=False
+            threading.Thread(target=work,daemon=True,name='TaskMCPPlan').start()
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            messagebox.showwarning('MCP task plan unavailable',str(error),parent=self)
+
+    def _review_task_mcp(self,envelope,project,chat):
+        from deepthort_local.task_mcp import execute,current
+        from deepthort_local.mcp_calls import MCPCalls
+        from deepthort_local.tool_workflows import digest
+        task=envelope['task']
+        def stopped():
+            return self._quitting or self.disk_gate.gaming() or str(self.project)!=project or self.current_chat!=chat
+        if stopped() or not current(self.jobs,self.conversations,self.hierarchies,self.specifications,task,envelope['call']):
+            self._mcp_discovery_active=False
+            self._log('MCP proposal stale; no tool dispatched')
+            return
+        seal=digest(envelope)
+        if not messagebox.askyesno('Approve JANUS/Sentinel MCP operation?',
+            json.dumps(envelope,ensure_ascii=False,indent=2)+
+            '\n\nSentinel accepted as advice only. This trusted external server is not sandboxed or supervised; it can affect files outside the project. Approve this exact operation once?',parent=self):
+            self._mcp_discovery_active=False
+            return
+        def invoke():
+            try:
+                result=execute(MCPCalls(self.janus),self.jobs,self.conversations,self.hierarchies,self.specifications,
+                    envelope,expected_sha=seal,user_approved=True,cancelled=stopped)
+                self.events.put(('mcp_call_result',result))
+            except Exception as error:self.events.put(('log','Task MCP outcome not confirmed: '+type(error).__name__+'; inspect HISTORY and task journal'))
+            finally:
+                self.jobs.journal(task['job_id'])
+                self._mcp_discovery_active=False
+        threading.Thread(target=invoke,daemon=True,name='TaskMCPCall').start()
+
     def _local_mcp_dialog(self):
         from deepthort_local.local_mcp import LocalMCP,endpoint
         try:
@@ -5290,9 +5359,12 @@ class DeepThorTDesktop(tk.Tk):
             summary='\n'.join(r['endpoint']+' ('+str(len(r['tools']))+' tools; historical discovery): '+
                                ', '.join(x['name'] for x in r['tools'][:8]) for r in rows) or 'No discovered servers.'
             choice=simpledialog.askstring('Local MCP discovery',
-                summary[:2500]+'\n\nEnter DISCOVER, REMOVE, CALL or HISTORY.',parent=self)
+                summary[:2500]+'\n\nEnter DISCOVER, REMOVE, CALL, HISTORY or PLAN (selected paused build job).',parent=self)
             if not choice:return
             choice=choice.strip().upper()
+            if choice=='PLAN':
+                self._plan_task_mcp()
+                return
             if choice=='HISTORY':
                 from deepthort_local.mcp_calls import MCPCalls
                 history=MCPCalls(self.janus).history(project)
@@ -6599,6 +6671,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._conversation_reply(event[1],
                     'LOCAL X4 FILE INSPECTION (read-only, not model-generated):\n'+
                     format_x4_inspection(event[2]))
+            elif kind=='mcp_task_review':
+                self._review_task_mcp(event[1],event[2],event[3])
             elif kind=='mcp_call_result':
                 result=event[1]
                 messagebox.showinfo('MCP response — untrusted server data',

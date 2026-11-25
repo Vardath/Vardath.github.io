@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-mcp-calls-v18",
-  "title": "Triad V18: reviewed typed local MCP calls and persistent receipts",
+  "id": "triad-task-mcp-v19",
+  "title": "Triad V19: task-scoped JANUS/Sentinel MCP proposals and one-shot receipts",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -10,6 +10,7 @@
     "portable_skills",
     "portable_procedures",
     "local_mcp",
-    "mcp_calls"
+    "mcp_calls",
+    "task_mcp"
   ]
 }
