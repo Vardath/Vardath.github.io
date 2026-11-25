@@ -44,6 +44,14 @@ jobs:
       - run: python -m unittest discover -s tests -p test_application_workflow_v27.py -v
       - run: python -m unittest discover -s tests -p test_local_speech_v28.py -v
       - run: python -m unittest discover -s tests -p test_video_visuals_v29.py -v
+      - name: Provision FFmpeg for actual render test
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
+          ffmpeg -version
+          ffprobe -version
       - run: python -m unittest discover -s tests -p test_video_render_v30.py -v
       - run: python -m unittest discover -s tests -p test_workflow_acquisition_v61.py -v
   native-windows:
@@ -94,6 +102,18 @@ jobs:
           python -m unittest discover -s tests -p test_video_visuals_v29.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python visual_preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Provision FFmpeg for native render test
+        run: |
+          if (!(Get-Command ffmpeg.exe -ErrorAction SilentlyContinue) -or !(Get-Command ffprobe.exe -ErrorAction SilentlyContinue)) {
+            choco install ffmpeg --yes --no-progress
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            $env:Path = "$env:ChocolateyInstall\bin;$env:Path"
+            "$env:ChocolateyInstall\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          }
+          ffmpeg -version
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ffprobe -version
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Actual capped MP4 render
         run: |
