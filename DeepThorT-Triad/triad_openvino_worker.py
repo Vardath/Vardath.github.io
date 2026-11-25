@@ -105,18 +105,17 @@ class Engine:
         print('Resident native OpenVINO CPU model ready:',role,flush=True)
 
     def generate_raw(self,messages,tokens):
-        history=self.genai.ChatHistory()
-        for message in model_messages(self.role,messages):history.append(message)
-        # Keep exact-response smoke tests and the V7 baseline comparable.
-        # Reasoning recovery requests carry an explicit larger token budget.
-        if self.role in ('janus','sentinel'):
-            history.set_extra_context({'enable_thinking':thinking_enabled(self.role,tokens)})
-        # Bound by actual token count including the model's own chat template.
-        # Separate per-request histories prevent role/session KV contamination.
-        rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
-        encoded=self.tokenizer.encode(rendered,add_special_tokens=False)
-        count=int(encoded.input_ids.shape[-1])
-        if count+tokens>MAX_CONTEXT_TOKENS:raise ValueError(f'Input {count} + output {tokens} exceeds {MAX_CONTEXT_TOKENS}-token Triad profile; use indexed planning')
+        from deepthort_local.context_compaction import fit_native
+        def prepare(current):
+            history=self.genai.ChatHistory()
+            for message in model_messages(self.role,current):history.append(message)
+            if self.role in ('janus','sentinel'):
+                history.set_extra_context({'enable_thinking':thinking_enabled(self.role,tokens)})
+            rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
+            encoded=self.tokenizer.encode(rendered,add_special_tokens=False)
+            return history,int(encoded.input_ids.shape[-1])
+        history,count,removed=fit_native(messages,tokens,MAX_CONTEXT_TOKENS,prepare)
+        if removed:print('Native context compacted:',removed,'historical exchanges omitted;',count,'input tokens',flush=True)
         config=self.genai.GenerationConfig()
         config.max_new_tokens=tokens
         config.do_sample=False

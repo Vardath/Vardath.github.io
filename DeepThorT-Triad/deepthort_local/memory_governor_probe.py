@@ -71,7 +71,9 @@ def exercise():
         if search['status']!='passed':raise ValueError('Indexed search failed')
         consolidated=exercise_consolidation()
         if consolidated['status']!='passed':raise ValueError('Memory consolidation failed')
-        return {'status':'passed','detail':'Named test memory consolidation and contradiction detection, long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        compacted=exercise_context_compaction()
+        if compacted['status']!='passed':raise ValueError('Context compaction failed')
+        return {'status':'passed','detail':'Complete-exchange context compaction, named test memory consolidation and contradiction detection, long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
 
 
 def exercise_indexed():
@@ -322,3 +324,55 @@ def exercise_consolidation():
         if any('Conflicting' in x['observation'] for x in retrieve(jobs.path,**args)):
             raise ValueError('Deleted contradiction persisted')
         return {'status':'passed','detail':'Exact repeated traces deduplicated, same-baseline outcomes consolidated, contradictions surfaced, different baselines isolated, incomplete traces withheld and original history preserved.'}
+
+
+def exercise_context_compaction():
+    from .context_compaction import select_history,fit_native
+    from .client import LocalModelClient
+    from unittest.mock import patch
+    from types import SimpleNamespace
+    import io
+    with tempfile.TemporaryDirectory(prefix='triad-context-') as folder:
+        client=LocalModelClient(Path(folder)/'sessions.sqlite3')
+        def pair(u,a):return [{'role':'user','content':u},{'role':'assistant','content':a}]
+        older=pair('Docking clearance must remain unchanged.','Earlier docking tests failed.')
+        recent=pair('Correction: retain docking clearance for player ships.','Correction noted.')
+        unrelated=pair('Discuss paint palettes.','Blue and red.')
+        huge=pair('x'*8100,'Oversized prior answer')
+        diag=pair('Check computer','LOCAL COMPUTER DIAGNOSTIC '+ 'z'*3000)
+        rows=older+unrelated+huge+diag+recent
+        with client._connect() as db:
+            db.executemany('INSERT INTO messages(session_id,role,content) VALUES(?,?,?)',
+                [('fixture',r['role'],r['content']) for r in rows])
+            db.executemany('INSERT INTO messages(session_id,role,content) VALUES(?,?,?)',
+                [('other',r['role'],r['content']) for r in pair('OTHER CHAT PRIVATE','OTHER CHAT ANSWER')])
+        before=client.display_history('fixture')
+        prompt='Repair docking clearance without changing ownership.'
+        chosen=select_history(before,prompt,4800)
+        if chosen!=older+recent:raise ValueError('Relevant/recent history was not compacted correctly')
+        if select_history(before,prompt,5):raise ValueError('Tiny context budget admitted partial history')
+        payloads=[]
+        class Opener:
+            def open(self,request,timeout):
+                payloads.append(json.loads(request.data))
+                from .triad_profiles import MODEL_ID
+                return io.BytesIO(json.dumps({'model':MODEL_ID,'triad_role':payloads[-1]['triad_role'],
+                    'choices':[{'message':{'content':'fixture reply'}}]}).encode())
+        with patch('urllib.request.build_opener',return_value=Opener()):
+            client.chat('fixture',prompt,max_tokens=128)
+            client.chat_as('sentinel','fixture','Review exact evidence.',max_tokens=384)
+        if payloads[0]['messages'][1:-1]!=older+recent or payloads[0]['messages'][-1]['content']!=prompt:
+            raise ValueError('Actual client request did not preserve current prompt and compacted history')
+        if len(payloads[1]['messages'])!=2:raise ValueError('Independent review inherited historical replies')
+        if client.display_history('fixture')[:len(before)]!=before:
+            raise ValueError('Context compaction mutated the durable transcript')
+        full=[{'role':'system','content':'system'},*older,*recent,{'role':'user','content':prompt}]
+        def prepare(messages):return messages, sum(len(m['content']) for m in messages)
+        cap=sum(len(m['content']) for m in full[0:1]+full[3:])+16
+        fitted,count,removed=fit_native(full,16,cap,prepare)
+        if removed!=1 or fitted!=[full[0],*recent,full[-1]] or count+16>cap:
+            raise ValueError('Native context lost a correction or split an exchange')
+        try:fit_native(full,16,20,prepare)
+        except ValueError:pass
+        else:raise ValueError('Oversized active prompt was silently truncated')
+        return {'status':'passed','detail':'Compacted complete historical exchanges, retained current prompt, excluded diagnostics, isolated council review, preserved transcript and enforced native token budget with a scripted tokenizer.'}

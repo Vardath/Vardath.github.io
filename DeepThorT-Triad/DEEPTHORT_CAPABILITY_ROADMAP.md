@@ -187,3 +187,7 @@ V24: V23 local Windows acceptance passed 12/12 in 222.18 s at 00:05 AEST, 26 Nov
 
 ### Required end-to-end multimedia production
 See VIDEO_PRODUCTION_ROADMAP.md. User explicitly requires prompt-to-script-to-narration-to-licensed/generated imagery-to-rendered YouTube-ready video, with actual local acceptance.
+
+
+### Triad V25 — context compaction
+V25: V24 local Windows acceptance passed 12/12 in 225.74 s at 00:21 AEST on 26 Nov 2026; all 23 databases healthy, zero retries. Replace individual-message eviction with deterministic whole-exchange selection (recent and lexical relevance, max 3 pairs/4800 chars, last 100 stored messages). No fabricated summaries or transcript deletion. Explicit council calls receive only their fully bound evidence packet, preserving independent review; all current task text stays exact. At native generation preflight use actual tokenizer/template counts and remove oldest complete historical pairs only if needed; fail if authoritative current prompt alone exceeds the 4096-token cap. No output budget or resource changes. Scripted tokenizer and actual local client payload regression verifies preserved current request, transcript, diagnostic/cross-session exclusion and council isolation. This is bounded extractive compaction, not a general semantic summary or unlimited context. Existing task-governed memory and long-spec index remain authoritative. Remaining indexed repair/geometry integration and multimedia production (VIDEO_PRODUCTION_ROADMAP.md) follow; no claims of finished video generation.

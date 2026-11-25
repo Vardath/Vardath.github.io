@@ -171,9 +171,15 @@ class LocalModelClient:
                 'Compare actual evidence to requirements; never claim unverified execution.'
                 if role=='sentinel' else
                 'You are an offline coding assistant. Be concise, precise, and never claim unverified code execution.')
-        messages=[{'role':'system','content':system}, *self.inference_context(session_id),{'role':'user','content':prompt}]
-        # Prevent oversized prompts on limited-memory machines.
-        while sum(len(m['content']) for m in messages)>14000 and len(messages)>2: messages.pop(1)
+        from .context_compaction import select_history
+        # Explicit council calls have their full evidence packet already.
+        # Never carry older responses into a supposedly independent review.
+        history=[] if triad_role is not None else select_history(
+            self.display_history(session_id,max_messages=100),prompt,
+            14000-len(system)-len(prompt))
+        messages=[{'role':'system','content':system}, *history,{'role':'user','content':prompt}]
+        if len(prompt)>8000:
+            raise ValueError('Active prompt exceeds broker character limit; use indexed planning')
         payload=json.dumps({'model':MODEL_ID,'triad_role':role,'messages':messages,'max_tokens':max_tokens,'stream':False}).encode('utf8')
         req=urllib.request.Request(self.base_url+'/v1/chat/completions',data=payload,method='POST',headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ.get('DEEPTHORT_TRIAD_TOKEN','')})
         opener=urllib.request.build_opener(urllib.request.ProxyHandler({}))
