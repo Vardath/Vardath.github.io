@@ -233,6 +233,19 @@ def install_runtime():
     subprocess.run([str(exe),'-I',str(ROOT/'triad_openvino_worker.py'),'--probe'],cwd=ROOT,check=True)
     atomic_json(marker,{'version':RUNTIME_VERSION,'backend':'native-openvino-ir-cpu'})
 
+def read_smoke_result(log,role):
+    # The log is produced by the supervised, fixed synthetic probe, not by
+    # a model-authored command. Require its structured result and valid exit.
+    records=[line[len('TRIAD_SMOKE_RESULT '):] for line in
+             log.read_text(encoding='utf-8',errors='replace').splitlines()
+             if line.startswith('TRIAD_SMOKE_RESULT ')]
+    if len(records)!=1:raise RuntimeError('Missing or ambiguous native smoke receipt: '+role)
+    result=json.loads(records[0])
+    if (result.get('role')!=role or result.get('native_generation')!='passed'
+            or result.get('exact_arithmetic_reply') not in ('passed','failed')):
+        raise RuntimeError('Invalid native smoke receipt: '+role)
+    return result
+
 def main():
     from deepthort_local.triad_job import verify_root_cap
     verify_root_cap()
@@ -250,12 +263,15 @@ def main():
     # Conservative free disk estimate (existing valid files may be reused).
     if shutil.disk_usage(ROOT).free<need+512*1024**2:raise RuntimeError('Insufficient free disk space for IR downloads')
     # Validate small Sentinel before larger downloads. No arbitrary remote code.
+    warnings=[]
     for role in roles:
         m=manifests[role];base=model_path(role);base.mkdir(parents=True,exist_ok=True)
         print('Preparing',PROFILES[role][0],flush=True)
         for name,entry in sorted(m['files'].items()):
             download('https://huggingface.co/'+m['repo']+'/resolve/'+m['revision']+'/'+name,base/name,entry,gate)
         atomic_json(base/'verified-install.json',m)
+        smoke_receipt=base/'native-smoke.json'
+        if smoke_receipt.exists():smoke_receipt.unlink()
         # First real CPU load and one short synthetic generation before proceeding.
         # This is only a sequential installation smoke test; normal operation
         # requires all three independent model processes resident simultaneously.
@@ -266,8 +282,14 @@ def main():
             while alive() and time.monotonic()<deadline:time.sleep(1)
             if alive():raise RuntimeError('Model smoke test timed out: '+role)
             if alive.code()!=0:raise RuntimeError('Model smoke test failed: '+role+' '+alive.failure())
-        print('Verified native CPU inference:',role,flush=True)
+        result=read_smoke_result(log,role)
+        atomic_json(smoke_receipt,dict(result,repo=m['repo'],revision=m['revision'],runtime=RUNTIME_VERSION))
+        print('Verified native CPU generation:',role,flush=True)
+        if result['exact_arithmetic_reply']=='failed':
+            warnings.append(role)
+            print('QUALITY WARNING:',role,'did not return the exact expected arithmetic answer; installation continues.',flush=True)
     print('Selected native IR models installed and individually smoke-tested: '+', '.join(roles),flush=True)
+    if warnings:print('Exact-answer quality failures (NOT installation failures): '+', '.join(warnings)+'. Run latest test before using for development.',flush=True)
     if not args:print('Start AI for three-model residency under the shared cap.',flush=True)
 
 if __name__=='__main__':main()

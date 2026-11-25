@@ -40,11 +40,19 @@ def installed_files(role,root=ROOT):
         if not path.is_file() or path.stat().st_size!=size:raise ValueError('Model file missing or changed: '+name)
     if entries['openvino_model.bin']['size']<p[3]:raise ValueError('Incomplete weights')
     return entries
+def smoke_verified(role,root=ROOT):
+    record=json.loads((model_path(role,root)/'native-smoke.json').read_text(encoding='utf-8'))
+    p=PROFILES[role]
+    return (record.get('role')==role and record.get('repo')==p[1]
+            and record.get('revision')==p[2] and record.get('runtime')==RUNTIME_VERSION
+            and record.get('native_generation')=='passed'
+            and record.get('exact_arithmetic_reply') in ('passed','failed'))
+
 def ready(root=ROOT):
     try:
         marker=json.loads((Path(root)/'runtime/openvino-verified.json').read_text(encoding='utf-8'))
         return (runtime_path(root).is_file() and marker.get('version')==RUNTIME_VERSION
-                and all(installed_files(r,root) for r in PROFILES))
+                and all(installed_files(r,root) and smoke_verified(r,root) for r in PROFILES))
     except (OSError,ValueError,KeyError,TypeError):return False
 def total_weights(root=ROOT):
     return sum(sum(m['size'] for m in installed_files(r,root).values()) for r in PROFILES)
