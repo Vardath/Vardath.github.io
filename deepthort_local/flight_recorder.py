@@ -272,6 +272,16 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
                 for item in sorted(logs.glob('*.jsonl*')):
                     if item.is_file() and item.stat().st_size <= LOG_BYTES+5000:
                         z.write(item,arcname='logs/'+item.name)
+            # Native worker logs are essential when a process exits before
+            # reporting an HTTP error; include only bounded scrubbed tails.
+            for item in sorted(logs.glob('triad-*.log'))[:24]:
+                if item.is_file():
+                    try:
+                        with item.open('rb') as handle:
+                            handle.seek(max(0,item.stat().st_size-8192))
+                            tail=handle.read(8192).decode('utf-8',errors='replace')
+                        z.writestr('native-log-tails/'+item.name+'.txt',scrub(tail))
+                    except OSError:pass
             # Preserve existing action output logs only as short redacted tails; arbitrary tools
             # can output credentials or entire file contents, so NEVER include raw files.
             for item in sorted((state/'janus-process-logs').glob('action-*.log'))[-20:]:

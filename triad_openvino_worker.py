@@ -7,7 +7,7 @@ import os
 import json
 import secrets
 import threading
-from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
+from http.server import BaseHTTPRequestHandler,HTTPServer
 from importlib.metadata import version
 from deepthort_local.triad_profiles import PROFILES,RUNTIME_VERSION,model_path,installed_files
 from deepthort_local.triad_job import verify_root_cap
@@ -28,6 +28,17 @@ def probe():
     if not hasattr(genai,'ChatHistory'):raise RuntimeError('OpenVINO GenAI ChatHistory API missing')
     print('OpenVINO GenAI',version('openvino-genai'),'CPU numerical preflight passed',flush=True)
 
+def bounded_scheduler(genai):
+    # Explicit cache block ceiling rather than the latency-oriented default
+    # scheduler with unlimited prefill batch and persistent prefix cache.
+    cfg=genai.SchedulerConfig()
+    cfg.max_num_seqs=1
+    cfg.max_num_batched_tokens=128
+    cfg.num_kv_blocks=256
+    cfg.cache_size=0
+    cfg.enable_prefix_caching=False
+    return cfg
+
 class Engine:
     def __init__(self,role):
         import openvino_genai as genai
@@ -37,8 +48,14 @@ class Engine:
         self.role=role
         self.lock=threading.Lock()
         # Native IR directory only. No GGUF, remote code, or runtime fallback.
-        self.pipe=genai.LLMPipeline(str(model_path(role)),'CPU',
-            INFERENCE_NUM_THREADS=2,NUM_STREAMS=1,ENABLE_MMAP=False)
+        properties={'INFERENCE_NUM_THREADS':1,'NUM_STREAMS':1,'ENABLE_MMAP':False}
+        # Preserve the known-working hybrid Sentinel pipeline. Qwen and Phi
+        # are conventional attention models and need bounded cache/prefill.
+        if role in ('implementation','janus'):
+            properties['scheduler_config']=bounded_scheduler(genai)
+            properties['KV_CACHE_PRECISION']='u8'
+        self.pipe=genai.LLMPipeline(str(model_path(role)),'CPU',**properties)
+        print('Native profile:',role,'one CPU thread; bounded scheduler' if role!='sentinel' else 'one CPU thread; existing hybrid scheduler',flush=True)
         self.tokenizer=self.pipe.get_tokenizer()
         print('Resident native OpenVINO CPU model ready:',role,flush=True)
 
@@ -65,6 +82,9 @@ def serve(role,port,key):
     engine=Engine(role)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args):pass
+        def setup(self):
+            self.request.settimeout(30)
+            super().setup()
         def reply(self,status,body):
             data=json.dumps(body).encode()
             self.send_response(status);self.send_header('Content-Type','application/json')
@@ -94,10 +114,15 @@ def serve(role,port,key):
                 detail=str(e)[:500] if synthetic(role,messages) else type(e).__name__
                 print('Native inference failure:',role,code,detail,flush=True)
                 self.reply(500,{'error':code,'code':code,'detail':detail})
-    with ThreadingHTTPServer(('127.0.0.1',port),Handler) as server:server.serve_forever()
+    # Each model has one dedicated process; execute generation on the main
+    # interpreter thread, as in the passing installer smoke test. The broker
+    # owns asynchronous health/status and serial request admission.
+    with HTTPServer(('127.0.0.1',port),Handler) as server:server.serve_forever()
 
 def main():
     verify_root_cap()
+    import faulthandler
+    faulthandler.enable()
     args=sys.argv[1:]
     if args==['--probe']:probe();return
     if len(args)==2 and args[0]=='--smoke' and args[1] in PROFILES:

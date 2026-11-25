@@ -12,6 +12,10 @@ ROOT=Path(__file__).resolve().parent
 
 def inner():
     import time
+    import openvino_genai as genai
+    from triad_openvino_worker import bounded_scheduler
+    cfg=bounded_scheduler(genai)
+    assert cfg.max_num_seqs==1 and cfg.num_kv_blocks==256 and not cfg.enable_prefix_caching
     cap,free,total=verify_root_cap()
     print('Root commit budget:',cap,'total physical:',total,flush=True)
     # Exercise a real nested job, rather than only mocked source tests.

@@ -197,7 +197,7 @@ def main():
             pool.start(stack)
             while pool.healthy():time.sleep(1)
             for name,c in pool.children.items():
-                if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure().split('\n',1)[0])
+                if not c[3]():raise RuntimeError(f'Resident model {name} exited: '+c[3].failure())
             raise RuntimeError('Resident model exited; shutting down all three, no fallback')
         finally:
             # Stop serving before closing Windows sockets, avoiding misleading

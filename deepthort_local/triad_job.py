@@ -91,6 +91,10 @@ def child_server(command,cwd,log_path,*,group=None):
     import msvcrt
     log_path=Path(log_path)
     log_path.parent.mkdir(parents=True,exist_ok=True)
+    if log_path.is_file():
+        # Preserve one previous bounded native log across automatic restart.
+        try:os.replace(log_path,log_path.with_suffix('.previous.log'))
+        except OSError:pass
     k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
     create_job=fn(k,'CreateJobObjectW',[P,wintypes.LPCWSTR],H)
     set_job=fn(k,'SetInformationJobObject',[H,ctypes.c_int,P,D],wintypes.BOOL)
@@ -147,6 +151,7 @@ def child_server(command,cwd,log_path,*,group=None):
                    0xc000007b:'invalid executable or DLL architecture',
                    0xc000001d:'unsupported CPU instruction',
                    0xc0000005:'native access violation',
+                   0xc00000fd:'native stack overflow',
                    0xc0000017:'Windows could not allocate memory',
                    0xc000012d:'Windows commit limit reached'}
             # Only a bounded startup tail, with authentication key redacted.
