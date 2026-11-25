@@ -1,5 +1,5 @@
 import unittest
-from deepthort_local.memory_governor import parse_selection,fit,HEADER,govern,retrieve
+from deepthort_local.memory_governor import parse_selection,parse_challenge,fit,HEADER,govern,retrieve
 from deepthort_local.memory_governor_probe import exercise
 class MemoryGovernorTests(unittest.TestCase):
     def test_integration(self):
@@ -63,3 +63,16 @@ class MemoryGovernorTests(unittest.TestCase):
                     self.assertIn(fresh[0]['observation'],result)
                 else:
                     self.assertEqual(result,'')
+
+    def test_checklist_requires_complete_evidence_and_compatibility(self):
+        import json
+        def row(i,basis='OBSERVATION',direct=True,compatible=True):
+            return dict(id=i,basis=basis,direct=direct,compatible=compatible)
+        def answer(rows):return json.dumps({'checks':rows})
+        rows=[row('N1'),row('N2','PROPOSAL'),row('N3','DECISION',compatible=False)]
+        self.assertEqual(parse_challenge(answer(rows),{'N1','N2','N3'}),['N1'])
+        self.assertEqual(parse_challenge(answer([row('N1',direct=False)]),{'N1'}),[])
+        self.assertEqual(parse_challenge(answer([row('N1','UNKNOWN')]),{'N1'}),[])
+        for invalid in ([row('N1')],[row('N1'),row('N1')],[row('N1'),row('N9')],
+                        [row('N1'),row('N2',direct='true')],[row('N1'),row('N2','MADE_UP')]):
+            with self.assertRaises(ValueError):parse_challenge(answer(invalid),{'N1','N2'})

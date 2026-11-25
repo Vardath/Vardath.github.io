@@ -13,6 +13,11 @@ class Fixture:
         if role!='sentinel':raise AssertionError('Wrong model role')
         if max_tokens!=MEMORY_SELECTION_TOKENS or thinking_enabled(role,max_tokens):raise AssertionError('Memory selection must use bounded direct mode')
         rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+        if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+            return json.dumps({'checks':[{'id':x['id'],
+                'basis':'PROPOSAL' if 'suggestion:' in x['observation'] or 'proposal:' in x['observation'] else 'OBSERVATION',
+                'direct':x['observation'].startswith('Regression:'),
+                'compatible':True} for x in rows]})
         return json.dumps({'keep':[x['id'] for x in rows if x['observation'].startswith('Regression:')],'reason':'Fixture selector'})
 class Bad(Fixture):
     def chat_as(self,role,session,prompt,max_tokens):
@@ -56,6 +61,8 @@ class LiveMemoryHarnessTests(unittest.TestCase):
         class PersistentOverselection(OverselectThenReview):
             def chat_as(self,role,session,prompt,max_tokens):
                 rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+                if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+                    return json.dumps({'checks':[dict(id=x['id'],basis='OBSERVATION',direct=True,compatible=True) for x in rows]})
                 return json.dumps({'keep':[x['id'] for x in rows],'reason':'Overbroad selection'})
         class InvalidChallenge(Fixture):
             def chat_as(self,role,session,prompt,max_tokens):
@@ -69,3 +76,19 @@ class LiveMemoryHarnessTests(unittest.TestCase):
                 bad=exercise(health,123,threading.Event(),client_factory=client)
                 self.assertEqual(bad['status'],'failed',bad)
                 self.assertEqual(bad['evidence']['memory_cases']['ownership']['status'],'failed')
+
+    def test_proposal_veto_even_if_classified_direct_and_compatible(self):
+        from unittest.mock import patch
+        class ProposalMistakenForUseful(Fixture):
+            def chat_as(self,role,session,prompt,max_tokens):
+                rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+                if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+                    return json.dumps({'checks':[dict(id=x['id'],
+                        basis='PROPOSAL' if 'proposal:' in x['observation'] or 'suggestion:' in x['observation'] else 'OBSERVATION',
+                        direct='music' not in x['observation'] and 'icon color' not in x['observation'],
+                        compatible=True) for x in rows]})
+                return json.dumps({'keep':[x['id'] for x in rows],'reason':'Overbroad selection'})
+        with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
+            result=exercise(health,123,threading.Event(),client_factory=ProposalMistakenForUseful)
+        self.assertEqual(result['status'],'passed',result)
+        self.assertEqual(result['evidence']['memory_cases']['prices']['selected_ids'],[])

@@ -12,6 +12,10 @@ class FixtureClient:
     def __init__(self,keep):self.keep=keep;self.calls=[]
     def chat_as(self,role,session_id,prompt,max_tokens=240):
         self.calls.append((role,prompt))
+        if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+            rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+            return json.dumps({'checks':[{'id':r['id'],'basis':'OBSERVATION',
+                'direct':r['id'] in self.keep,'compatible':True} for r in rows]})
         return json.dumps({'keep':self.keep,'reason':'Relevant prior correction.'})
 
 def exercise():
