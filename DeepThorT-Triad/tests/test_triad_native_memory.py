@@ -61,6 +61,10 @@ class NativeMemoryTests(unittest.TestCase):
         from deepthort_local.triad_errors import native_error
         self.assertEqual(native_error(ValueError('Input 1500 + output 768 exceeds 2048-token Triad profile; use indexed planning')),'context_limit')
         self.assertEqual(native_error(RuntimeError("Check 'shape_size(shape) == 0 || m_ptr != nullptr' failed")),'native_error')
+        self.assertEqual(native_error(ValueError('Sentinel reasoning budget ended without completed thought block')),'reasoning_budget')
+        self.assertEqual(native_error(ValueError('Model exhausted its reasoning budget before a final answer')),'reasoning_budget')
+        self.assertEqual(native_error(ValueError('Empty model response')),'empty_answer')
+        self.assertEqual(native_error(ValueError('unrelated value')),'native_error')
 
     def test_process_local_telemetry_policy_blocks_sender_and_consent(self):
         import sys

@@ -1,3 +1,9 @@
+# Triad V22.2 — live memory inference repair
+
+V22.2 repair: actual Windows test 22:49 AEST passed 11/12; live ownership fixture was blocked after ~269 seconds by Sentinel native ValueError, with no selected IDs and all 23 DB checks clean. The exact exception was not retained, so reasoning-budget exhaustion is a hypothesis, not proof. Use the native worker's existing direct-answer mode (384 tokens, below the 512 thinking threshold) only for bounded memory ID selection; retain unchanged independent oracle, source-review thinking budgets, worker caps and all models. Explicitly classify incomplete reasoning/empty final answers at the native boundary and preserve allowlisted broker codes and case timing in the live test without raw text. No synthetic answers, no retries or relaxed relevance acceptance. Repeat all twelve local checks before continuing.
+
+---
+
 # Triad V22.1 — memory freshness checkpoint
 
 V22.1 memory freshness: re-read the complete bounded candidate packet immediately after Sentinel review (including cached verdicts) and withhold the entire packet if changed. Audit stale_packet_withheld; no automatic inference retry. A subsequent operation reviews the new packet. Regression cases cover deletion, mutation and addition during the neural turn. Historical records remain advisory; this does not validate live external source files or provide atomic isolation of later dispatch. Live V22 Windows acceptance remains pending.

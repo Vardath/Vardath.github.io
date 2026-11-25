@@ -3,7 +3,7 @@ import json
 import re
 from urllib.error import HTTPError
 
-CODES=frozenset(('memory_pressure','context_limit','native_error','invalid_request','transport_error','worker_exit'))
+CODES=frozenset(('memory_pressure','context_limit','native_error','invalid_request','transport_error','worker_exit','reasoning_budget','empty_answer'))
 WORDS={'implementation':'CODE_READY','janus':'PLAN_READY','sentinel':'REVIEW_READY'}
 
 def synthetic(role,messages):
@@ -16,6 +16,12 @@ def native_error(error):
         'cannot allocate memory','failed to allocate','allocation failed',
         'not enough storage','commitment limit','paging file is too small')):
         return 'memory_pressure'
+    # Exact local validation messages only; never expose generated text.
+    if isinstance(error,ValueError):
+        if text in ('sentinel reasoning budget ended without completed thought block',
+                    'model exhausted its reasoning budget before a final answer'):
+            return 'reasoning_budget'
+        if text=='empty model response':return 'empty_answer'
     if re.search(r'exceeds \d+-token triad profile',text):return 'context_limit'
     return 'native_error'
 

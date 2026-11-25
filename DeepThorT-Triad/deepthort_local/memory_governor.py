@@ -16,6 +16,9 @@ from .structured_source import strict_json
 MAX_CANDIDATES=8
 MAX_PACKET=2300
 MAX_CONTEXT=600
+# Memory selection is a bounded ID classification task. Leave Sentinel in
+# direct-answer mode (thinking is enabled at 512 tokens in the native worker).
+MEMORY_SELECTION_TOKENS=384
 STOP={'the','and','for','with','from','this','that','into','your','are','was','have','has','not','task','build','file','create','implement','approved','project','operation','memory','current'}
 
 def canonical(value):
@@ -145,7 +148,7 @@ def govern(jobs,council,client,*,project,chat_id,original,focus,scope,phase,
         if len(prompt)>7000:raise ValueError('Memory review exceeds local context')
         if stage:stage('Sentinel selecting relevant historical memory for '+phase)
         answer=council._run(client,role='SENTINEL_MEMORY_SELECT',session='memory-'+scope,
-            evidence_sha=sha(canonical(key)+sha(prompt)),prompt=prompt,stage=stage,max_tokens=512)
+            evidence_sha=sha(canonical(key)+sha(prompt)),prompt=prompt,stage=stage,max_tokens=MEMORY_SELECTION_TOKENS)
         answer_sha=sha(answer)
         try:
             keep=parse_selection(answer,{entry['id'] for entry in candidates})

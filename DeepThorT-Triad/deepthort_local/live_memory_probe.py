@@ -8,6 +8,8 @@ from .job_queue import JobStore
 from .memory_governor import govern,retrieve,HEADER
 from .reasoning_council import ReasoningCouncil,sha
 from .triad_acceptance import resident_roles
+from .triad_errors import WorkerFailure,http_failure,error_record
+from urllib.error import HTTPError
 
 SPEC='Synthetic space game. Player-owned ships must remain player-owned. Display sector labels in blue. Do not change trade prices.'
 CASES=(
@@ -21,7 +23,7 @@ CASES=(
 )
 
 def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
-    results={}
+    results={};case=None;start=None
     def done(status,detail):
         return {'status':status,'detail':detail,'evidence':{'memory_cases':results}}
     try:
@@ -54,7 +56,17 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                 start=time.monotonic()
                 args=dict(project=project,chat_id=chat,original=SPEC,focus=focus,scope='live-'+case,
                           phase='implementation',job_id=ident,budget=600,cancelled=cancelled.is_set)
-                context=govern(jobs,council,client,**args)
+                try:
+                    context=govern(jobs,council,client,**args)
+                except (HTTPError,WorkerFailure) as error:
+                    # Read the broker's allowlisted code, never raw native text.
+                    failure=http_failure(error) if isinstance(error,HTTPError) else error
+                    code=error_record(failure)['code']
+                    results[case]={'status':'blocked','candidates':len(offered),
+                        'expected_ids':sorted(expected),'error_code':code,
+                        'seconds':round(time.monotonic()-start,2)}
+                    return done('cancelled' if cancelled.is_set() else 'blocked',
+                                'Live Sentinel memory inference did not return a final answer: '+code)
                 with jobs._conn() as db:
                     status,selection=db.execute('SELECT status,selected FROM task_memory_reviews WHERE job_id=? ORDER BY id DESC LIMIT 1',(ident,)).fetchone()
                 selected=set(json.loads(selection))
