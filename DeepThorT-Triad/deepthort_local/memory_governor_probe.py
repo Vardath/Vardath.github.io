@@ -95,8 +95,14 @@ def exercise_indexed():
             focus=row['text'][:500]
             lookup=dict(project=str(project),chat_id='chat',original=original,focus=focus)
             candidates=retrieve(jobs.path,**lookup)
-            if len(candidates)!=1:raise ValueError('Indexed memory focus not isolated')
-            client=FixtureClient([candidates[0]['id']]);clients.append(client)
+            # Lexical overlap can surface both records (e.g. "preserve").
+            # The independent fixture selector uses the known evidence digest,
+            # not the ranking; the governor must deliver only that record.
+            expected=sha('alpha' if row['ordinal']==0 else 'beta')
+            matching=[entry['id'] for entry in candidates if entry['evidence']==expected]
+            if len(matching)!=1 or len(candidates)<2:
+                raise ValueError('Indexed memory fixture lacks expected competing records')
+            client=FixtureClient(matching);clients.append(client)
             callbacks.append(row.copy())
             return govern(jobs,council,client,**lookup,scope=f'indexed-{row["ordinal"]}-{row["attempts"]}',
                           phase='indexed_section_planning',section=row['text'],budget=budget)
