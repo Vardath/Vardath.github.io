@@ -1,7 +1,7 @@
 """Triad setup diagnostics; read only."""
 from pathlib import Path
-from .triad_profiles import PROFILES,model_path,runtime_path,ready,total_weights
-MODEL_RELPATH=Path('models/triad-openvino/implementation/openvino_model.bin')
+from .triad_profiles import PROFILES,MODEL_SET_DIR,model_path,runtime_path,ready,total_weights
+MODEL_RELPATH=Path('models')/MODEL_SET_DIR/'implementation'/'openvino_model.bin'
 MIN_MODEL_BYTES=PROFILES['implementation'][3]
 def inspect_local_setup(root:Path,*,node_path=None):
     root=Path(root)
@@ -9,7 +9,7 @@ def inspect_local_setup(root:Path,*,node_path=None):
     components={'node':True,'transformers':runtime_path(root).is_file(),'model':ready(root),'server':(root/'triad_server.py').is_file()}
     return {'ready_to_launch':all(components.values()),'components':components,
             'issues':[] if all(components.values()) else ['Install all three verified OpenVINO IR files and the pinned CPU runtime.'],
-            'model_size_bytes':size,'model_path':str(root/'models/triad-openvino'),'node_path':'Python broker'}
+            'model_size_bytes':size,'model_path':str(root/'models'/MODEL_SET_DIR),'node_path':'Python broker'}
 def format_diagnostic(info: dict, *, model_running: bool, model_ready: bool,
                       model_loading: bool, queued: int, recent_logs: list[str] | None = None, loading_seconds: int = 0) -> str:
     if model_ready and model_running:

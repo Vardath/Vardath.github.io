@@ -39,6 +39,20 @@ def bounded_scheduler(genai):
     cfg.enable_prefix_caching=False
     return cfg
 
+def final_text(role,answer):
+    if not isinstance(answer,str):raise ValueError('Native model did not return text')
+    answer=answer.strip()
+    # Reasoning-capable checkpoints may return their private scratch work
+    # before a real final answer. Preserve genuine final text; never invent
+    # a result or treat an unfinished reasoning block as a successful reply.
+    if role in ('janus','sentinel'):
+        if '</think>' in answer and (role=='janus' or answer.startswith('<think>') or answer.startswith('</think>')):
+            answer=answer.split('</think>',1)[1].strip()
+        elif answer.startswith('<think>'):
+            raise ValueError('Model exhausted its reasoning budget before a final answer')
+    if not answer:raise ValueError('Empty model response')
+    return answer
+
 class Engine:
     def __init__(self,role):
         import openvino_genai as genai
@@ -49,19 +63,25 @@ class Engine:
         self.lock=threading.Lock()
         # Native IR directory only. No GGUF, remote code, or runtime fallback.
         properties={'INFERENCE_NUM_THREADS':1,'NUM_STREAMS':1,'ENABLE_MMAP':False}
-        # Preserve the known-working hybrid Sentinel pipeline. Qwen and Phi
-        # are conventional attention models and need bounded cache/prefill.
-        if role in ('implementation','janus'):
-            properties['scheduler_config']=bounded_scheduler(genai)
-            properties['KV_CACHE_PRECISION']='u8'
+        # All three replacement checkpoints use conventional attention.
+        # Retain the shared worker-memory cap and explicit cache bounds.
+        properties['scheduler_config']=bounded_scheduler(genai)
+        properties['KV_CACHE_PRECISION']='u8'
         self.pipe=genai.LLMPipeline(str(model_path(role)),'CPU',**properties)
-        print('Native profile:',role,'one CPU thread; bounded scheduler' if role!='sentinel' else 'one CPU thread; existing hybrid scheduler',flush=True)
+        print('Native profile:',role,'one CPU thread; bounded scheduler',flush=True)
         self.tokenizer=self.pipe.get_tokenizer()
         print('Resident native OpenVINO CPU model ready:',role,flush=True)
 
     def generate(self,messages,tokens):
         history=self.genai.ChatHistory()
         for message in messages:history.append(message)
+        # Qwen3 must return directly for strict verification/JSON tasks.
+        if self.role=='sentinel':
+            history.set_extra_context({'enable_thinking':False})
+        # JANUS is a reasoning checkpoint. Its thought + final output both
+        # count against the existing 768-output / 4096-total hard limits.
+        if self.role=='janus':
+            tokens=min(768,tokens+256)
         # Bound by actual token count including the model's own chat template.
         # Separate per-request histories prevent role/session KV contamination.
         rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
@@ -74,9 +94,7 @@ class Engine:
         config.num_beams=1
         # Tokenized preflight is for length only; generate uses native history.
         out=self.pipe.generate(history,config)
-        answer=out.texts[0]
-        if not isinstance(answer,str) or not answer.strip():raise ValueError('Empty model response')
-        return answer
+        return final_text(self.role,out.texts[0])
 
 def serve(role,port,key):
     engine=Engine(role)

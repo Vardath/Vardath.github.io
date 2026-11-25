@@ -1,0 +1,51 @@
+name: Triad compact native model smoke
+on:
+  push:
+    branches: [deepthort-triad-download]
+    paths:
+      - 'deepthort_local/triad_profiles.py'
+      - 'triad_openvino_worker.py'
+      - 'download_model.py'
+      - '.github/workflows/triad-compact-model-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-model:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        role: [implementation, janus, sentinel]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Download and smoke-test one pinned model under 35 percent cap
+        shell: pwsh
+        env:
+          TRIAD_CI_ROLE: ${{ matrix.role }}
+        run: |
+          @'
+          import os,sys
+          from pathlib import Path
+          from deepthort_local.win_cpu_cap import run_capped
+          root=Path(__file__).resolve().parent
+          role=os.environ['TRIAD_CI_ROLE']
+          if role not in ('implementation','janus','sentinel'):
+              raise SystemExit('Invalid role')
+          raise SystemExit(run_capped([sys.executable,str(root/'download_model.py'),'--role',role],cwd=str(root),percent=35,ram_percent=35))
+          '@ | Set-Content -Encoding utf8 triad_ci_model.py
+          python triad_ci_model.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain native smoke output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: triad-smoke-${{ matrix.role }}
+          path: state/logs/triad-install-${{ matrix.role }}.log
+          if-no-files-found: warn

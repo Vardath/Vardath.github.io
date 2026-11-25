@@ -238,15 +238,19 @@ def main():
     verify_root_cap()
     gate=DiskGate(bytes_per_second=3*1024**2,game_names_path=ROOT/'game_executables.txt',game_flag=ROOT/'state/game-active.flag')
     gate.wait_for_non_game()
+    args=sys.argv[1:]
+    if args and args!=['--runtime-only'] and not (len(args)==2 and args[0]=='--role' and args[1] in PROFILES):
+        raise SystemExit('Usage: download_model.py [--runtime-only | --role implementation|janus|sentinel]')
     install_runtime()
-    if sys.argv[1:]==['--runtime-only']:
+    if args==['--runtime-only']:
         print('Verified native OpenVINO runtime (no model downloads).',flush=True);return
-    manifests={r:manifest(r) for r in PROFILES}
+    roles=(args[1],) if args else ('sentinel','janus','implementation')
+    manifests={r:manifest(r) for r in roles}
     need=sum(sum(x['size'] for x in m['files'].values()) for m in manifests.values())
     # Conservative free disk estimate (existing valid files may be reused).
     if shutil.disk_usage(ROOT).free<need+512*1024**2:raise RuntimeError('Insufficient free disk space for IR downloads')
     # Validate small Sentinel before larger downloads. No arbitrary remote code.
-    for role in ('sentinel','janus','implementation'):
+    for role in roles:
         m=manifests[role];base=model_path(role);base.mkdir(parents=True,exist_ok=True)
         print('Preparing',PROFILES[role][0],flush=True)
         for name,entry in sorted(m['files'].items()):
@@ -263,6 +267,7 @@ def main():
             if alive():raise RuntimeError('Model smoke test timed out: '+role)
             if alive.code()!=0:raise RuntimeError('Model smoke test failed: '+role+' '+alive.failure())
         print('Verified native CPU inference:',role,flush=True)
-    print('All three native IR models installed. Start AI for simultaneous residency.',flush=True)
+    print('Selected native IR models installed and individually smoke-tested: '+', '.join(roles),flush=True)
+    if not args:print('Start AI for three-model residency under the shared cap.',flush=True)
 
 if __name__=='__main__':main()
