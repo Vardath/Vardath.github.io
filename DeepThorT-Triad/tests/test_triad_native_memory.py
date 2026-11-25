@@ -61,3 +61,27 @@ class NativeMemoryTests(unittest.TestCase):
         from deepthort_local.triad_errors import native_error
         self.assertEqual(native_error(ValueError('Input 1500 + output 768 exceeds 2048-token Triad profile; use indexed planning')),'context_limit')
         self.assertEqual(native_error(RuntimeError("Check 'shape_size(shape) == 0 || m_ptr != nullptr' failed")),'native_error')
+
+    def test_process_local_telemetry_policy_blocks_sender_and_consent(self):
+        import sys
+        from deepthort_local.native_offline import disable_openvino_telemetry
+        class Checker:
+            def check(self,*args,**kwargs):raise AssertionError('Original consent checker called')
+        class Sender:
+            def send(self,*args,**kwargs):raise AssertionError('Original telemetry sender called')
+        with patch.dict(sys.modules,{
+            'openvino_telemetry.utils.opt_in_checker':SimpleNamespace(
+                OptInChecker=Checker,ConsentCheckResult=SimpleNamespace(DECLINED=0)),
+            'openvino_telemetry.utils.sender':SimpleNamespace(TelemetrySender=Sender)}):
+            disable_openvino_telemetry()
+            self.assertEqual(Checker().check(False),0)
+            self.assertIsNone(Sender().send('backend','event'))
+
+    def test_native_error_mode_preserves_existing_flags(self):
+        from deepthort_local import win_cpu_cap as cap
+        from unittest.mock import MagicMock
+        k=MagicMock()
+        k.GetErrorMode.return_value=0x10
+        with patch.object(cap.os,'name','nt'),patch.object(cap.ctypes,'WinDLL',return_value=k,create=True):
+            cap.suppress_native_error_dialogs()
+        k.SetErrorMode.assert_called_once_with(0x8013)

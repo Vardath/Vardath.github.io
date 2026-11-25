@@ -29,6 +29,21 @@ CREATE_SUSPENDED = 0x00000004
 CREATE_NO_WINDOW = 0x08000000  # Do not create a console for child Python.exe
 IDLE_PRIORITY_CLASS = 0x00000040
 INFINITE = 0xFFFFFFFF
+SEM_FAILCRITICALERRORS = 0x0001
+SEM_NOGPFAULTERRORBOX = 0x0002
+SEM_NOOPENFILEERRORBOX = 0x8000
+
+
+def suppress_native_error_dialogs():
+    # Windows children inherit this mode unless CREATE_DEFAULT_ERROR_MODE is
+    # requested. Keep Python/native logs and exit codes instead of modal errors.
+    if os.name != 'nt':return
+    kernel=ctypes.WinDLL('kernel32',use_last_error=True)
+    get_mode=kernel.GetErrorMode
+    get_mode.argtypes=[];get_mode.restype=wintypes.UINT
+    set_mode=kernel.SetErrorMode
+    set_mode.argtypes=[wintypes.UINT];set_mode.restype=wintypes.UINT
+    set_mode(get_mode() | SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOOPENFILEERRORBOX)
 
 class MemoryStatus(ctypes.Structure):
     _fields_ = [
@@ -129,6 +144,7 @@ def run_capped(command: Sequence[str], cwd: str | None = None,
         raise ValueError("This gaming-safe launcher cannot exceed 40% RAM")
     if not command or not all(isinstance(x, str) and x for x in command):
         raise ValueError("Nonempty argument vector required")
+    suppress_native_error_dialogs()
     kernel = ctypes.WinDLL("kernel32", use_last_error=True)
     HANDLE = wintypes.HANDLE
     DWORD = wintypes.DWORD

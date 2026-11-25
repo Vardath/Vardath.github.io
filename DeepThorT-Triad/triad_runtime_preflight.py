@@ -12,6 +12,8 @@ ROOT=Path(__file__).resolve().parent
 
 def inner():
     import time
+    from deepthort_local.native_offline import disable_openvino_telemetry
+    disable_openvino_telemetry()
     import openvino_genai as genai
     from triad_openvino_worker import bounded_scheduler
     cfg=bounded_scheduler(genai)

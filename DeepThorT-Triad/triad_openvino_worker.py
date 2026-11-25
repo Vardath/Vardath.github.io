@@ -14,6 +14,8 @@ from deepthort_local.triad_job import verify_root_cap
 from deepthort_local.triad_errors import native_error,synthetic
 
 def probe():
+    from deepthort_local.native_offline import disable_openvino_telemetry
+    disable_openvino_telemetry()
     import openvino as ov
     import openvino_genai as genai
     import numpy as np
@@ -78,6 +80,8 @@ def thinking_enabled(role,tokens):
 
 class Engine:
     def __init__(self,role):
+        from deepthort_local.native_offline import disable_openvino_telemetry
+        disable_openvino_telemetry()
         import openvino_genai as genai
         installed_files(role)
         if version('openvino-genai')!=RUNTIME_VERSION:raise RuntimeError('OpenVINO runtime version mismatch')
@@ -184,6 +188,8 @@ def serve(role,port,key):
     with HTTPServer(('127.0.0.1',port),Handler) as server:server.serve_forever()
 
 def main():
+    from deepthort_local.win_cpu_cap import suppress_native_error_dialogs
+    suppress_native_error_dialogs()
     verify_root_cap()
     import faulthandler
     faulthandler.enable()
