@@ -65,3 +65,10 @@ class ProductionTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'unexpected model or role'):
                     client.chat_as('sentinel','role-check','review',max_tokens=768)
             self.assertEqual(client.history('role-check'),[])
+
+    def test_ambiguous_seeded_review_is_not_successful_detection(self):
+        model=Model(['Possibly acceptable'])
+        result=exercise(health,100,threading.Event(),client_factory=lambda _:model)
+        self.assertEqual(result['status'],'failed')
+        self.assertEqual(result['evidence']['production_stages']['seeded_defect_review']['status'],'failed')
+        self.assertEqual(len(model.calls),1)

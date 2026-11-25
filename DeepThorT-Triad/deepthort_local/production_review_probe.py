@@ -16,6 +16,9 @@ ORIGINAL=("Create a synthetic XML ship manifest (not a real X4 game file). "
           "preserve the id and owner.")
 BAD='<ship id="demo_pe" owner="npc" speed="480"/>'
 
+class SeededReviewFailure(Exception):
+    pass
+
 def correct(text):
     try:
         validate_source('ship.xml',text)
@@ -50,9 +53,12 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     session='production-probe',focus=focus,proposal=candidate,kind='code',
                     cancelled=cancelled.is_set)
                 if candidate==BAD:
-                    stages['seeded_defect_review']={'status':'failed' if result['accepted'] else 'passed'}
-                    if result['accepted']:
-                        raise RuntimeError('Seeded defective source was falsely accepted')
+                    lines=result['reason'].splitlines()
+                    explicit_rejection=(not result['accepted'] and bool(lines) and
+                        lines[0].strip().upper()=='REJECT' and any(x.strip() for x in lines[1:]))
+                    stages['seeded_defect_review']={'status':'passed' if explicit_rejection else 'failed'}
+                    if not explicit_rejection:
+                        raise SeededReviewFailure('Seeded defect was not explicitly rejected with a reason')
                 else:
                     stages['generated_source_review']={'status':'passed' if result['accepted'] else 'failed'}
                 if not result['accepted']:raise SpecificationRejected(result['reason'])
@@ -76,8 +82,8 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     ORIGINAL+' Return only the complete XML source.',review,
                     attempts=3,max_tokens=192,transform=strip_single_code_fence,
                     cancelled=cancelled.is_set)
-            except RuntimeError:
-                return done('failed','Production guard falsely accepted seeded defective XML')
+            except SeededReviewFailure:
+                return done('failed','Production guard did not explicitly reject seeded defective XML with a reason')
             except SpecificationRejected:
                 return done('cancelled' if cancelled.is_set() else 'failed','Production review or regeneration did not produce accepted source')
             if cancelled.is_set():return done('cancelled','Test stopped')
