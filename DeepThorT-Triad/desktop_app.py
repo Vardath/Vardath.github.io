@@ -870,14 +870,15 @@ class DeepThorTDesktop(tk.Tk):
                     if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
                     return reply['choices'][0]['message']['content']
                 result,observed['simultaneous']=smoke(health,ask,expected_primary,cancel)
+                observed['inference_passed']=(result['status']=='passed')
                 return result
             finally:self._council_busy=False
         def concurrency_probe():
             return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
                     'detail':'All three native generation calls observed simultaneously.' if observed['simultaneous'] else 'Simultaneous native generation not observed; requests may have been serialized to protect memory.'}
         def collaboration_probe():
-            if not observed['resident'] or not observed['simultaneous']:
-                return {'status':'blocked','detail':'Residency and parallel inference must pass first'}
+            if not observed['resident'] or not observed['simultaneous'] or not observed.get('inference_passed'):
+                return {'status':'blocked','detail':'Residency, exact replies and parallel inference must pass first'}
             if self.active_job is not None or self.active_conversation is not None:
                 return {'status':'inconclusive','detail':'Active real work; collaboration test not started'}
             with self._council_lock:

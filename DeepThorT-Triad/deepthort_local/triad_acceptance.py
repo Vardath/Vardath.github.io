@@ -31,7 +31,12 @@ def smoke(health,ask,pid,cancelled):
         try:
             result=ask(role,WORDS[role])
             status='passed' if isinstance(result,str) and result.strip()==WORDS[role] else 'failed'
-            return {'status':status,'seconds':round(time.monotonic()-started,2)}
+            evidence={'status':status,'seconds':round(time.monotonic()-started,2)}
+            if status=='failed':
+                evidence['response_chars']=len(result) if isinstance(result,str) else None
+                evidence['response_kind']=('empty' if not isinstance(result,str) or not result.strip()
+                    else 'other_role_marker' if result.strip() in WORDS.values() else 'unexpected_text')
+            return evidence
         except Exception as error:
             return {'status':'blocked','seconds':round(time.monotonic()-started,2),'error':error_record(error)}
     individual={}

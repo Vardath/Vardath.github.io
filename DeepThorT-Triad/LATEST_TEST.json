@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-qwen4b-v8",
-  "title": "Triad V8: Qwen3-4B Sentinel direct review and bounded thinking recovery",
+  "id": "triad-qwen4b-v9",
+  "title": "Triad V9: Qwen3-4B reduced-memory parallel inference and independent audit",
   "checks": [
     "shared_cap",
     "triad_residency",

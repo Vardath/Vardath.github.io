@@ -16,7 +16,7 @@ def native_error(error):
         'cannot allocate memory','failed to allocate','allocation failed',
         'not enough storage','commitment limit','paging file is too small')):
         return 'memory_pressure'
-    if 'exceeds 4096-token' in text:return 'context_limit'
+    if re.search(r'exceeds \d+-token triad profile',text):return 'context_limit'
     return 'native_error'
 
 class WorkerFailure(RuntimeError):

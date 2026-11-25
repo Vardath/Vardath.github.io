@@ -28,13 +28,18 @@ def probe():
     if not hasattr(genai,'ChatHistory'):raise RuntimeError('OpenVINO GenAI ChatHistory API missing')
     print('OpenVINO GenAI',version('openvino-genai'),'CPU numerical preflight passed',flush=True)
 
+# Reduced reservation after V8 exhausted the protected worker allocation.
+MAX_CONTEXT_TOKENS=2048
+KV_BLOCKS=128
+PREFILL_BATCH_TOKENS=64
+
 def bounded_scheduler(genai):
     # Explicit cache block ceiling rather than the latency-oriented default
     # scheduler with unlimited prefill batch and persistent prefix cache.
     cfg=genai.SchedulerConfig()
     cfg.max_num_seqs=1
-    cfg.max_num_batched_tokens=128
-    cfg.num_kv_blocks=256
+    cfg.max_num_batched_tokens=PREFILL_BATCH_TOKENS
+    cfg.num_kv_blocks=KV_BLOCKS
     cfg.cache_size=0
     cfg.enable_prefix_caching=False
     return cfg
@@ -86,7 +91,9 @@ class Engine:
         properties['scheduler_config']=bounded_scheduler(genai)
         properties['KV_CACHE_PRECISION']='u8'
         self.pipe=genai.LLMPipeline(str(model_path(role)),'CPU',**properties)
-        print('Native profile:',role,'one CPU thread; bounded scheduler',flush=True)
+        print('Native profile:',role,'one CPU thread; bounded scheduler;',
+              'KV blocks',KV_BLOCKS,'prefill batch',PREFILL_BATCH_TOKENS,
+              'context limit',MAX_CONTEXT_TOKENS,flush=True)
         self.tokenizer=self.pipe.get_tokenizer()
         print('Resident native OpenVINO CPU model ready:',role,flush=True)
 
@@ -102,7 +109,7 @@ class Engine:
         rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
         encoded=self.tokenizer.encode(rendered,add_special_tokens=False)
         count=int(encoded.input_ids.shape[-1])
-        if count+tokens>4096:raise ValueError(f'Input {count} + output {tokens} exceeds 4096-token Triad profile; use indexed planning')
+        if count+tokens>MAX_CONTEXT_TOKENS:raise ValueError(f'Input {count} + output {tokens} exceeds {MAX_CONTEXT_TOKENS}-token Triad profile; use indexed planning')
         config=self.genai.GenerationConfig()
         config.max_new_tokens=tokens
         config.do_sample=False
