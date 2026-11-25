@@ -2,23 +2,9 @@ name: Scratch Chat GitHub text training pilot
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '37 2 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'Scratch-Chat/capability/github_pilot.py'
-      - 'Scratch-Chat/capability/dialogue_corpus.py'
-      - 'Scratch-Chat/tests/test_dialogue_corpus.py'
-      - 'Scratch-Chat/capability/readiness_gate.py'
-      - 'Scratch-Chat/tests/test_readiness_gate.py'
-      - 'Scratch-Chat/capability/generation_probes.py'
-      - 'Scratch-Chat/capability/probe_scoring.py'
-      - 'Scratch-Chat/tests/test_probe_scoring.py'
-      - 'Scratch-Chat/capability/deepthort_bridge.py'
-      - 'Scratch-Chat/tests/test_deepthort_bridge.py'
-      - '.github/workflows/scratch-chat-github-pilot.yml'
 
+# Legacy text-only baseline: explicit manual dispatch only.
+# Dialogue development uses scratch-chat-dialogue-smoke.yml.
 permissions:
   contents: write
 
