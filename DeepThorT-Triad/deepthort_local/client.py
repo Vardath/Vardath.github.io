@@ -178,7 +178,10 @@ class LocalModelClient:
                prompt_characters=len(prompt),context_characters=len(payload),max_tokens=max_tokens)
         try:
             with opener.open(req,timeout=self.timeout) as response:
-                content=json.load(response)['choices'][0]['message']['content']
+                reply=json.load(response)
+                if reply.get('model')!=MODEL_ID or reply.get('triad_role')!=role:
+                    raise ValueError('Local broker returned an unexpected model or role')
+                content=reply['choices'][0]['message']['content']
         except Exception as exc:
             record(self.db.parent,'model_client','request_failed',level='ERROR',
                    session_id=session_id[:36],seconds=round(time.monotonic()-started,2),

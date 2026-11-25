@@ -41,7 +41,7 @@ class SpecificationGuardTests(unittest.TestCase):
     def test_every_proposal_chunk_and_ambiguous_rejection(self):
         with tempfile.TemporaryDirectory() as t:
             c=ReasoningCouncil(Path(t)/'c.sqlite')
-            m=Model(['ACCEPT','Possibly acceptable'])
+            m=Model(['ACCEPT\nVisible portion aligns.','Possibly acceptable'])
             result=inspect_proposal(c,m,original='Build a space game',project=t,session='code',
                 focus='Game logic',proposal='a'*2200+'railway logic',kind='code')
             self.assertFalse(result['accepted'])

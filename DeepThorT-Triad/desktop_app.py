@@ -898,12 +898,27 @@ class DeepThorTDesktop(tk.Tk):
                         raise http_failure(error) from None
                     if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
                     return reply['choices'][0]['message']['content']
-                return collaboration(health,ask,expected_primary,cancel,
+                result=collaboration(health,ask,expected_primary,cancel,
                     notify=lambda stage:self.events.put(('latest_test_progress','triad_collaboration: '+stage)))
+                observed['collaboration_passed']=result['status']=='passed'
+                return result
+            finally:self._council_busy=False
+        def production_review_probe():
+            if not observed.get('collaboration_passed'):
+                return {'status':'blocked','detail':'Complete three-model collaboration must pass first'}
+            if self.active_job is not None or self.active_conversation is not None:
+                return {'status':'inconclusive','detail':'Active real work; production gate probe not started'}
+            with self._council_lock:
+                if self._council_busy:return {'status':'inconclusive','detail':'Council busy'}
+                self._council_busy=True
+            try:
+                from deepthort_local.production_review_probe import exercise
+                return exercise(health,expected_primary,cancel,
+                    notify=lambda stage:self.events.put(('latest_test_progress','production_review: '+stage)))
             finally:self._council_busy=False
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe}
 
         def worker():
             try:

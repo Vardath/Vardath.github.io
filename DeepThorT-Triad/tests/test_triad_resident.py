@@ -51,4 +51,4 @@ class TriadTests(unittest.TestCase):
     def test_current_manifest(self):
         from deepthort_local.latest_acceptance import load_test
         m=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
-        self.assertEqual(m['checks'],['shared_cap','triad_residency','janus_core','triad_inference','concurrent_status','triad_collaboration'])
+        self.assertEqual(m['checks'],['shared_cap','triad_residency','janus_core','triad_inference','concurrent_status','triad_collaboration','production_review'])

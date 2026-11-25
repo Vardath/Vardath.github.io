@@ -1,13 +1,14 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-qwen4b-v10-40percent",
-  "title": "Triad V10: Qwen3-4B at 40% shared resource cap and independent audit",
+  "id": "triad-production-review-v11",
+  "title": "Triad V11: production source review and bounded regeneration",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "triad_inference",
     "concurrent_status",
-    "triad_collaboration"
+    "triad_collaboration",
+    "production_review"
   ]
 }
