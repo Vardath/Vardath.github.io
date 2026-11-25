@@ -2,6 +2,7 @@ import io
 import json
 import threading
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from unittest.mock import patch
 from urllib.error import HTTPError
 from triad_server import Pool
@@ -82,6 +83,45 @@ class TriadInferenceRecovery(unittest.TestCase):
         p=make_pool()
         self.assertTrue(p.serial_memory_mode)
         self.assertEqual(p.status(False)['control_reserve_bytes'],1024**3)
+    def test_parallel_requires_protected_resident_pool(self):
+        p=make_pool();p.ready=False
+        with self.assertRaises(RuntimeError):p.activate_resident_pool()
+        p.worker_commit_limit=8*1024**3
+        p.children.pop('sentinel')
+        with self.assertRaises(RuntimeError):p.activate_resident_pool()
+        self.assertFalse(p.ready)
+        self.assertTrue(p.serial_memory_mode)
+
+    def test_all_three_roles_can_generate_in_parallel(self):
+        p=make_pool();p.ready=False;p.worker_commit_limit=8*1024**3
+        p.activate_resident_pool()
+        self.assertFalse(p.serial_memory_mode)
+        barrier=threading.Barrier(3)
+        def request(port,path,key,body,timeout):
+            barrier.wait(timeout=5)
+            with p.admission_lock:
+                self.assertEqual(p.generating,set(PROFILES))
+            barrier.wait(timeout=5)
+            return {'model':body['model'],'choices':[{'message':{'content':body['model']}}]}
+        with patch('triad_server.request',side_effect=request):
+            with ThreadPoolExecutor(max_workers=3) as executor:
+                futures={r:executor.submit(p.infer,r,[],2) for r in PROFILES}
+                self.assertEqual({r:f.result(timeout=10) for r,f in futures.items()},{r:r for r in PROFILES})
+        self.assertTrue(p.healthy())
+        self.assertFalse(p.serial_memory_mode)
+        self.assertEqual(p.generating,set())
+
+    def test_parallel_pressure_falls_back_with_explicit_status(self):
+        p=make_pool();p.ready=False;p.worker_commit_limit=8*1024**3
+        p.activate_resident_pool()
+        answer={'model':'janus','choices':[{'message':{'content':'ok'}}]}
+        with patch('triad_server.request',side_effect=[WorkerFailure('memory_pressure'),answer]):
+            self.assertEqual(p.infer('janus',[],2),'ok')
+        self.assertTrue(p.serial_memory_mode)
+        self.assertIn('protected serial generation',p.stage)
+        self.assertEqual(p.memory_retries,1)
+        self.assertTrue(p.healthy())
+
     def test_worker_budget_preserves_control_reserve(self):
         self.assertEqual(worker_budget(14*1024**3),13*1024**3)
         with self.assertRaises(RuntimeError):worker_budget(CONTROL_RESERVE_BYTES)

@@ -57,8 +57,9 @@ class Pool:
         self.children={};self.locks={r:threading.Lock() for r in PROFILES}
         self.admission_lock=threading.Condition()
         self.generating=set()
-        # Actual Windows tests exhausted the root job even at 35%. Admit
-        # one generation at a time until measured parallel safety is proven.
+        # Start protected. Enable parallel requests only after the compact
+        # workers are all resident in the verified shared memory group.
+        # A classified allocation failure restores serial mode for this session.
         self.serial_memory_mode=True
         self.worker_commit_limit=0
         self.memory_retries=0
@@ -98,7 +99,15 @@ class Pool:
                 except (OSError,ValueError):pass
                 time.sleep(1)
             else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')
-        self.ready=True;self.set_stage('All three models resident; protected serial generation enabled')
+        self.activate_resident_pool()
+    def activate_resident_pool(self):
+        if (self.worker_commit_limit<=0 or set(self.children)!=set(PROFILES)
+                or not all(c[3]() for c in self.children.values())):
+            raise RuntimeError('Parallel admission requires three live protected workers')
+        with self.admission_lock:
+            self.serial_memory_mode=False
+            self.ready=True
+            self.set_stage('All three compact models resident; parallel generation enabled, not yet validated')
     def healthy(self):
         return self.ready and len(self.children)==3 and all(c[3]() for c in self.children.values())
     def _generate(self,role,messages,tokens):
@@ -122,7 +131,9 @@ class Pool:
         except WorkerFailure as error:
             if error.code=='memory_pressure':
                 with self.admission_lock:
-                    self.serial_memory_mode=True
+                    if not self.serial_memory_mode:
+                        self.serial_memory_mode=True
+                        self.set_stage('Native memory pressure; protected serial generation for this session')
             raise
         finally:
             with self.admission_lock:
