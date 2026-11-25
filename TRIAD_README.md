@@ -17,3 +17,7 @@ OpenVINO GenAI 2026.4.1.0 has no Python 3.15 Windows wheel. The installer now ch
 
 ### Automatic runtime bootstrap
 Install AI now provisions private CPython 3.13.17 x64 from the official pinned CPython NuGet package if no compatible interpreter exists. It checks the catalog SHA-512, extracts only the tools directory with bounded path validation, tests the interpreter, and builds the isolated OpenVINO environment. No global Python or PATH changes. Previous incompatible environments are preserved. A runtime-only preflight is available under the shared Windows job. No production model or cap changes.
+
+
+### Concurrent inference recovery (25 November)
+Actual Windows installation passed native runtime and all three individual smoke tests. The resident acceptance confirmed shared cap and three distinct PIDs, but concurrent exact replies blocked implementation and JANUS. The earlier code discarded the native HTTP error reason, so memory pressure is a hypothesis, not established cause. New fixed synthetic acceptance checks individual and simultaneous requests separately, retains classified native failure details and distinguishes queued requests from active native generation. A positively classified allocation failure switches the broker to serial native generation while retaining all three weights; each affected request gets at most one retry after existing calls drain. Non-memory failures never retry automatically. Shared cap unchanged. This does not establish simultaneous successful generation when serial mode is active. Native Windows retest required.

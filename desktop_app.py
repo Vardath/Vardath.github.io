@@ -858,8 +858,13 @@ class DeepThorTDesktop(tk.Tk):
                     body={'model':MODEL_ID,'triad_role':role,'messages':[{'role':'user','content':'Return exactly '+word+' and nothing else.'}],'max_tokens':32,'stream':False}
                     req=Request('http://127.0.0.1:8765/v1/chat/completions',data=json.dumps(body).encode(),
                         headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']})
-                    with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
-                        reply=json.load(response)
+                    from urllib.error import HTTPError
+                    from deepthort_local.triad_errors import http_failure
+                    try:
+                        with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
+                            reply=json.load(response)
+                    except HTTPError as error:
+                        raise http_failure(error,include_detail=True) from None
                     if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
                     return reply['choices'][0]['message']['content']
                 result,observed['simultaneous']=smoke(health,ask,expected_primary,cancel)
@@ -867,7 +872,7 @@ class DeepThorTDesktop(tk.Tk):
             finally:self._council_busy=False
         def concurrency_probe():
             return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
-                    'detail':'All three role busy flags observed simultaneously.' if observed['simultaneous'] else 'Simultaneous activity across all three roles not observed.'}
+                    'detail':'All three native generation calls observed simultaneously.' if observed['simultaneous'] else 'Simultaneous native generation not observed; requests may have been serialized to protect memory.'}
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe}

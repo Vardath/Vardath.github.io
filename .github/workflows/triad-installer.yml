@@ -20,6 +20,8 @@ jobs:
         run: |
           python -m py_compile download_model.py
           python -m unittest discover -s tests -p test_triad_runtime_python.py -v
+          python -m unittest discover -s tests -p test_triad_inference_recovery.py -v
+          python -m unittest discover -s tests -p test_triad_resident.py -v
       - name: Exercise actual private Python and OpenVINO under the cap
         shell: pwsh
         run: |
