@@ -124,3 +124,7 @@ V15 local acceptance passed 5/5 on 25 November 2026 at 21:00 AEST. Extend existi
 
 ### V16.1 compatibility checkpoint
 Local V16 failed only portable procedures due to Windows file identity verification. Correct the shared action guard to compare native handle identities and path stat snapshots separately, with strict digest verification retained. Add Windows regression coverage; do not advance to MCP until the local test confirms the fix.
+
+
+### Triad V17 — local MCP capability discovery
+V16.1 actual Windows acceptance passed 6/6 at 21:13 AEST, 25 November 2026 (0.79 s). Implement first local MCP client layer, scoped to explicitly selected projects and explicitly approved already-running IPv4 loopback HTTP endpoints. Supports 2025-11-25 / negotiated 2025-06-18 handshake, initialization notification and paginated JSON tools/list. Store bounded tool names, parameter names/types/required flags and exact schema fingerprints in JANUS SQLite; no descriptions/defaults/project data sent or retained, no tool calls, no remote endpoints, no process launch, no inherited approval. Hardware Local MCP control discover/list/remove; historical inventory only. Real loopback transport acceptance uses a synthetic server, no third-party apps. External server resource use not governed by Triad cap. Next: modern protocol and transport compatibility, strict typed argument validation, current schema revalidation, scoped tool approvals and audited execution; then native application adapters and script portability. No model/runtime/cap changes.

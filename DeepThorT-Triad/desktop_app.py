@@ -580,6 +580,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Shared skills…',command=self._portable_skill_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Shared procedures…',command=self._portable_procedure_dialog).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Local MCP…',command=self._local_mcp_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Asset import check…',command=self._asset_import_check).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
@@ -930,9 +931,12 @@ class DeepThorTDesktop(tk.Tk):
         def portable_procedures_probe():
             from deepthort_local.portable_procedures_probe import exercise
             return exercise()
+        def local_mcp_probe():
+            from deepthort_local.local_mcp_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe}
 
         def worker():
             try:
@@ -5272,6 +5276,46 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Asset import check queued as JANUS process #{action}; use Asset import check to review result.')
         except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
             messagebox.showwarning('Asset import check unavailable',str(error),parent=self)
+
+    def _local_mcp_dialog(self):
+        from deepthort_local.local_mcp import LocalMCP,endpoint
+        try:
+            if not self.project:raise ValueError('Choose a project before local MCP discovery')
+            project=str(self.project)
+            catalog=LocalMCP(self.janus)
+            rows=catalog.list(project)
+            summary='\n'.join(r['endpoint']+' ('+str(len(r['tools']))+' tools; historical discovery): '+
+                               ', '.join(x['name'] for x in r['tools'][:8]) for r in rows) or 'No discovered servers.'
+            choice=simpledialog.askstring('Local MCP discovery',
+                summary[:2500]+'\n\nEnter DISCOVER or REMOVE. No tools can be called in this version.',parent=self)
+            if not choice:return
+            choice=choice.strip().upper()
+            if choice not in ('DISCOVER','REMOVE'):return
+            url=simpledialog.askstring('Local MCP endpoint','Enter the exact http://127.0.0.1:PORT/path endpoint of an already running trusted server:',parent=self)
+            if not url:return
+            url=url.strip();endpoint(url)
+            if choice=='REMOVE':
+                if messagebox.askyesno('Remove local catalog entry?','Forget this project discovery record?',parent=self):
+                    catalog.remove(project,url,user_approved=True)
+                return
+            if self.disk_gate.gaming():raise ValueError('Wait until gaming finishes before discovery')
+            if getattr(self,'_mcp_discovery_active',False):raise ValueError('Another MCP discovery is active')
+            if not messagebox.askyesno('Approve local MCP discovery?',
+                'Connect to '+url+' to negotiate the 2025 MCP protocol and list tools only. '
+                'No project files, prompts or credentials are sent; no tools are called. '
+                'This is an existing external local server, not a Triad-supervised process. Continue only if you trust it.',parent=self):return
+            self._mcp_discovery_active=True
+            def work():
+                try:
+                    result=catalog.discover(project,url,user_approved=True,
+                        cancelled=lambda:self._quitting or self.disk_gate.gaming())
+                    self.events.put(('log','Local MCP discovery saved: '+str(len(result['tools']))+' tool schemas; no execution'))
+                except Exception as error:
+                    self.events.put(('log','Local MCP discovery failed: '+type(error).__name__+' '+str(error)[:180]))
+                finally:self._mcp_discovery_active=False
+            threading.Thread(target=work,daemon=True,name='LocalMCPDiscovery').start()
+        except (ValueError,OSError,KeyError,TypeError) as error:
+            messagebox.showwarning('Local MCP unavailable',str(error),parent=self)
 
     def _portable_procedure_dialog(self):
         from deepthort_local.portable_procedures import PortableProcedures

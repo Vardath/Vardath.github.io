@@ -1,13 +1,14 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-portable-procedures-v16-1",
-  "title": "Triad V16.1: Windows file identity and reusable command templates",
+  "id": "triad-local-mcp-v17",
+  "title": "Triad V17: scoped local MCP JSON discovery and typed capability catalog",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "task_memory",
     "portable_skills",
-    "portable_procedures"
+    "portable_procedures",
+    "local_mcp"
   ]
 }

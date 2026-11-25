@@ -1,3 +1,9 @@
+# Triad V17 — current checkpoint
+
+Install over verified V16.1; run seven focused checks. Local MCP discovery supports approved already-running loopback JSON handshake servers. It does not call tools. Next implement current schema/argument verification and explicitly authorized tool invocation, expand protocol/transport support, then actual app adapters. Keep 40% cap and three models; external servers are not supervised by that cap. Original DeepThorT untouched.
+
+---
+
 # Triad V16.1 — Windows compatibility checkpoint
 
 V16 local acceptance 5/6: portable procedures failed opening a file for hash verification. Install V16.1 and rerun the six checks. Fix uses native Windows handle file identity without relaxing content guards. Resume MCP discovery only after local acceptance. Original DeepThorT and models/cap unchanged.
