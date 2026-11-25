@@ -58,7 +58,7 @@ class MemoryGovernorTests(unittest.TestCase):
                 fresh=retrieve(jobs.path,**lookup)
                 client=FixtureClient([fresh[0]['id']] if fresh else [])
                 result=govern(jobs,council,client,**args)
-                self.assertEqual(len(client.calls),1 if fresh else 0)
+                self.assertEqual(len(client.calls),2 if fresh else 0)
                 if fresh:
                     self.assertIn(fresh[0]['observation'],result)
                 else:

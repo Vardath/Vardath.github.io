@@ -37,11 +37,11 @@ def exercise():
             raise ValueError('Scoped relevance retrieval failed')
         client=FixtureClient([candidates[0]['id']]);council=ReasoningCouncil(root/'council.sqlite3')
         context=govern(jobs,council,client,**args)
-        if len(client.calls)!=1 or client.calls[0][0]!='sentinel':
+        if len(client.calls)!=2 or any(role!='sentinel' for role,_ in client.calls):
             raise ValueError('Memory review did not use Sentinel')
         if 'Earlier sector ownership' not in context or len(context)>600 or not context.startswith(HEADER):
             raise ValueError('Selected historical record was not delivered')
-        if any(word in client.calls[0][1]+context for word in ('STALE REVISION','OTHER PROJECT','OTHER CHAT','EDITED MARKDOWN INSTRUCTIONS','Unrelated railway')):
+        if any(word in ''.join(prompt for _,prompt in client.calls)+context for word in ('STALE REVISION','OTHER PROJECT','OTHER CHAT','EDITED MARKDOWN INSTRUCTIONS','Unrelated railway')):
             raise ValueError('Irrelevant or unauthorized memory leaked')
         reopened=JobStore(root/'jobs.sqlite3')
         cached=FixtureClient([])

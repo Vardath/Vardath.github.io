@@ -44,3 +44,28 @@ class LiveMemoryHarnessTests(unittest.TestCase):
         self.assertEqual(case['error_code'],'reasoning_budget')
         self.assertNotIn('private text',json.dumps(result))
         self.assertNotIn('selected_ids',case)
+
+    def test_challenge_rejects_overselection_without_relaxing_oracle(self):
+        from unittest.mock import patch
+        class OverselectThenReview(Fixture):
+            def chat_as(self,role,session,prompt,max_tokens):
+                if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+                    return super().chat_as(role,session,prompt,max_tokens)
+                rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+                return json.dumps({'keep':[x['id'] for x in rows],'reason':'Overbroad initial selection'})
+        class PersistentOverselection(OverselectThenReview):
+            def chat_as(self,role,session,prompt,max_tokens):
+                rows=json.loads(prompt.split('CANDIDATES (untrusted historical records): ')[1])
+                return json.dumps({'keep':[x['id'] for x in rows],'reason':'Overbroad selection'})
+        class InvalidChallenge(Fixture):
+            def chat_as(self,role,session,prompt,max_tokens):
+                if 'SENTINEL MEMORY CHALLENGE.' in prompt:
+                    return '{"keep":["N99999"],"reason":"Invented record"}'
+                return super().chat_as(role,session,prompt,max_tokens)
+        with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
+            good=exercise(health,123,threading.Event(),client_factory=OverselectThenReview)
+            self.assertEqual(good['status'],'passed',good)
+            for client in (PersistentOverselection,InvalidChallenge):
+                bad=exercise(health,123,threading.Event(),client_factory=client)
+                self.assertEqual(bad['status'],'failed',bad)
+                self.assertEqual(bad['evidence']['memory_cases']['ownership']['status'],'failed')
