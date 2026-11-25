@@ -20,7 +20,9 @@ class JobPersistenceTests(unittest.TestCase):
             self.assertTrue(db.change(a,'running','Started',allowed=('queued',)))
             self.assertTrue(db.change(a,'responded','Answer saved',result='hello',allowed=('running',)))
             self.assertEqual(db.get(a)['result'],'hello')
-            self.assertEqual(len(db.events(a)),5)
+            events=db.events(a)
+            self.assertEqual(len(events),6)
+            self.assertEqual(events[2][1],'Interrupted by previous shutdown; no completion inferred')
     def test_intervention(self):
         with tempfile.TemporaryDirectory() as td:
             j=JobStore(Path(td)/'j.db').submit('p','chat','plan','Plan my app')
