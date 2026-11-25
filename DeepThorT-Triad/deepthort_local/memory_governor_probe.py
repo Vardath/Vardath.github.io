@@ -73,7 +73,9 @@ def exercise():
         if consolidated['status']!='passed':raise ValueError('Memory consolidation failed')
         compacted=exercise_context_compaction()
         if compacted['status']!='passed':raise ValueError('Context compaction failed')
-        return {'status':'passed','detail':'Complete-exchange context compaction, named test memory consolidation and contradiction detection, long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        operations=exercise_indexed_operations()
+        if operations['status']!='passed':raise ValueError('Indexed operation memory failed')
+        return {'status':'passed','detail':'Indexed correction/geometry/attachment memory, complete-exchange context compaction, named test memory consolidation and contradiction detection, long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
 
 
 def exercise_indexed():
@@ -376,3 +378,93 @@ def exercise_context_compaction():
         except ValueError:pass
         else:raise ValueError('Oversized active prompt was silently truncated')
         return {'status':'passed','detail':'Compacted complete historical exchanges, retained current prompt, excluded diagnostics, isolated council review, preserved transcript and enforced native token budget with a scripted tokenizer.'}
+
+
+def exercise_indexed_operations():
+    """Real correction path plus measured geometry/placement fixtures."""
+    from .indexed_memory import append,recall
+    from .specification_library import SpecificationIndex,generate_indexed_plan
+    from .hierarchical_planning import HierarchicalPlanStore
+    from .x4_geometry import stage_geometry
+    from .x4_attachment import stage_attachment
+    from unittest.mock import patch
+    from types import SimpleNamespace
+    with tempfile.TemporaryDirectory(prefix='triad-indexed-ops-') as folder:
+        root=Path(folder);project=root/'x4mods';project.mkdir()
+        original=('Build an X4 Foundations mod for the Xenon PE ship. '
+                  'Keep the PE connection mapping and vanilla equipment references. '
+                  'Increase cargo storage, speed and handling, upgrade weapons and turrets, '
+                  'ensure player-owned ownership monitoring and respawn.\n'
+                  +'Important: preserve installed X4 and save compatibility.\n'*145)
+        index=SpecificationIndex(root/'spec.sqlite3')
+        hierarchy=HierarchicalPlanStore(root/'roadmap.sqlite3')
+        jobs=JobStore(root/'jobs.sqlite3');job=jobs.submit(str(project),'chat','plan',original)
+        jobs.remember(job,'verification','extension metadata content.xml',sha(original),sha('old'),
+                      'Earlier extension metadata content.xml check failed.')
+        council=ReasoningCouncil(root/'council.sqlite3');seen=[]
+        def provider(phase,identity,focus,section,budget,*,client=None):
+            seen.append((phase,identity,focus,section,budget,client))
+            candidates=retrieve(jobs.path,project=str(project),chat_id='chat',original=original,focus=focus)
+            return govern(jobs,council,FixtureClient([x['id'] for x in candidates if x['evidence']==sha('old')]),
+                          project=str(project),chat_id='chat',original=original,
+                          scope='ops-'+identity[:24],phase=phase,focus=focus,section=section,budget=budget)
+        class Planner:
+            def __init__(self,replies):self.replies=list(replies);self.calls=[]
+            def chat(self,session,prompt,max_tokens):
+                self.calls.append((session,prompt,max_tokens));return self.replies.pop(0)
+        index.index(1,original)
+        while (row:=index.next_section(1,original)) is not None:
+            index.save_response(1,original,row['ordinal'],json.dumps({'files':[{
+                'path':f'docs/section{row["ordinal"]}.txt','description':'Unfinished reference notes'}]}),project=project)
+        correction={'files':[
+            {'path':'content.xml','description':'Create X4 extension metadata for Xenon PE based on original installed vanilla game references and ship macro connection mapping'},
+            {'path':'md/player_pe.xml','description':'Mission Director XML for Xenon PE player-owned ship ownership check, replacement respawn, and handling of existing equipment'},
+            {'path':'libraries/pe_equipment.xml','description':'Xenon PE ship equipment and cargo storage, speed and handling, forward weapon and turret upgrades using inspected vanilla definitions'}]}
+        model=Planner([json.dumps(correction)])
+        generate_indexed_plan(model,index,1,'fixture',original,project,hierarchy=hierarchy,
+                              chat_id='chat',max_rounds=3,operation_memory=provider)
+        if len(model.calls)!=1 or not seen or seen[0][0]!='indexed_roadmap_correction':
+            raise ValueError('Indexed correction did not call governed memory')
+        if seen[0][3] not in original or seen[0][3] not in model.calls[0][1]:
+            raise ValueError('Correction lost exact source section')
+        with jobs._conn() as db:
+            if not db.execute("SELECT 1 FROM task_memory_reviews WHERE phase='indexed_roadmap_correction'").fetchone():
+                raise ValueError('Correction memory receipt absent')
+        report={'game_dir':str(root),'pe_component_file':'assets/ship.xml'}
+        fit_data={'candidates':[{'component':'assets/rock.xml','roundness':0.9}],
+                  'ship':{'component':'assets/ship.xml'}}
+        measured={'vertices':4,'uniform_scale':1.0,'dimensions':[1,1,1],'sha256':sha('mesh')}
+        with patch('deepthort_local.x4_geometry.inspect_fit',return_value=fit_data),patch(
+                'deepthort_local.x4_geometry.fitted_mesh',return_value=(b'mesh',measured)):
+            model=Planner(['rock'])
+            stage_geometry(model,index,1,'fixture',original,project,report,operation_memory=provider)
+        if not any(x[0]=='indexed_geometry_selection' for x in seen) or 'rock 0.90000' not in model.calls[0][1]:
+            raise ValueError('Geometry did not consult memory or lost measured choices')
+        mock_index=SimpleNamespace(path=index.path,_db=index._db,
+            latest_mesh=lambda *a:(1,'rock','note',sha('mesh')),
+            merged_steps=lambda *a:[{'path':'assets/macros/test_ship_macro.xml'}])
+        placement=[{'offset':[0,1,2],'min_gap':1.25}]
+        with patch('deepthort_local.x4_attachment.extension_id',return_value='test'),patch(
+                'deepthort_local.x4_attachment.inspect_fit',return_value=fit_data),patch(
+                'deepthort_local.x4_attachment.fitted_mesh',return_value=(b'mesh',measured)),patch(
+                'deepthort_local.x4_attachment._catalog_key',return_value=()),patch(
+                'deepthort_local.x4_attachment.make_draft',side_effect=lambda *a,**k:b'draft' if k else placement):
+            model=Planner(['1'])
+            stage_attachment(model,mock_index,1,'fixture',original,project,report,operation_memory=provider)
+        if not any(x[0]=='indexed_attachment_selection' for x in seen) or 'clearance 1.25' not in model.calls[0][1]:
+            raise ValueError('Attachment did not consult memory or lost measured choices')
+        prompt='exact measured option'
+        if append(prompt,provider,phase='indexed_budget_fixture',identity='budget',
+                  focus='extension metadata content.xml',limit=len(prompt))!=prompt:
+            raise ValueError('Memory displaced authoritative prompt')
+        stopped=[False]
+        def stop(*a,**k):stopped[0]=True;return ''
+        try:append(prompt,stop,phase='indexed_cancel_fixture',identity='cancel',
+                   focus='clearance',cancelled=lambda:stopped[0])
+        except ValueError:pass
+        else:raise ValueError('Cancellation during indexed recall ignored')
+        advisor=object()
+        recall(provider,phase='indexed_recovery_fixture',identity='recovery',
+               focus='extension metadata content.xml',section=original[:100],client=advisor)
+        if seen[-1][-1] is not advisor:raise ValueError('Leased advisor was not forwarded')
+        return {'status':'passed','detail':'Indexed correction, measured geometry and attachment fixtures, scoped audit, budget deferral, cancellation and advisor forwarding passed. Scripted model only.'}

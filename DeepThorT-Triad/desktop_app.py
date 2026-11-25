@@ -2680,6 +2680,11 @@ class DeepThorTDesktop(tk.Tk):
                             f'indexed-{ident}-{row["ordinal"]}-{row["attempts"]}',row['text'][:500],
                             'indexed_section_planning',section=row['text'],budget=budget,cancelled=cancelled,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    def indexed_operation_memory(phase,identity,focus,section,budget,*,client=None):
+                        return self._governed_memory(original,request['project'],request['chat_id'],
+                            f'indexed-op-{ident}-{identity[:24]}',focus,phase,section=section,
+                            budget=budget,cancelled=cancelled,client=client,
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     answer, _ = generate_indexed_plan(
                         self.planner_client,self.specifications,ident,session,original,
                         request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
@@ -2690,7 +2695,8 @@ class DeepThorTDesktop(tk.Tk):
                         inspected_evidence=inspected_x4_evidence,council_provider=self._planning_council_client,
                         geometry_report=geometry_report,
                         checkpoint=checkpoint, reviewer=review_plan if request['mode']=='draft_plan' else None,
-                        prior_steps=prior_steps,amendments=amendments,memory_provider=indexed_memory)
+                        prior_steps=prior_steps,amendments=amendments,memory_provider=indexed_memory,
+                        operation_memory=indexed_operation_memory)
                     if request['mode']=='draft_plan' and self._project_work_is_enabled() and self.hierarchies.has_roadmap(ident):
                         from deepthort_local.mixed_roadmap import assess
                         from deepthort_local.reasoning_council import ReasoningCouncil

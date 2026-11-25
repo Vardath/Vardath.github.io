@@ -245,7 +245,7 @@ def make_draft(game,ship_path,rock,ship,package,variant,chosen=None):
     return output.getvalue()
 
 
-def stage_attachment(client,index,ident,session,original,project,report,cancelled=None,stage=None):
+def stage_attachment(client,index,ident,session,original,project,report,cancelled=None,stage=None,*,operation_memory=None):
     project=str(Path(project).resolve())
     mesh=index.latest_mesh(project,ident)
     if not mesh or mesh[0]!=ident:return '',0
@@ -281,6 +281,11 @@ def stage_attachment(client,index,ident,session,original,project,report,cancelle
     if cancelled and cancelled():raise GeometryError('Placement cancelled')
     if attempt:prompt+='\nReturn only one digit from the displayed choices.'
     exchange=session+'-attach-'+fingerprint[:12]+('-retry' if attempt else '')
+    if operation_memory:
+        from .indexed_memory import append
+        prompt=append(prompt,operation_memory,phase='indexed_attachment_selection',
+                      identity=exchange,focus='Ship asteroid attachment placement protected connections docking clearance',
+                      cancelled=cancelled)
     lookup=getattr(client,'completed_exchange',None)
     reply=lookup(exchange,prompt) if callable(lookup) else None
     if reply is None:reply=client.chat(exchange,prompt,max_tokens=16)

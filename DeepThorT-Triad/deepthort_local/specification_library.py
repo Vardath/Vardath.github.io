@@ -572,7 +572,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=(), amendments=(), memory_provider=None) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=(), amendments=(), memory_provider=None, operation_memory=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -704,7 +704,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 from .x4_geometry import stage_geometry
                 try:
                     note,used=stage_geometry(client,index,request_id,session,original,project,
-                                             geometry_report,cancelled,stage)
+                                             geometry_report,cancelled,stage,operation_memory=operation_memory)
                 except (OSError,ValueError) as error:
                     note='Geometry inspection unavailable: '+str(error)[:180]
                     used=1
@@ -713,7 +713,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                     from .x4_attachment import stage_attachment
                     try:
                         attachment,extra=stage_attachment(client,index,request_id,session,original,project,
-                                                         geometry_report,cancelled,stage)
+                                                         geometry_report,cancelled,stage,operation_memory=operation_memory)
                     except (OSError,ValueError) as error:
                         attachment='Attachment needs inspection: '+str(error)[:180]
                         extra=1
@@ -733,7 +733,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 from .x4_attachment import stage_attachment
                 try:
                     return stage_attachment(client,index,request_id,session,original,project,
-                                            geometry_report,cancelled,stage)
+                                            geometry_report,cancelled,stage,operation_memory=operation_memory)
                 except (OSError,ValueError) as error:
                     return 'Attachment needs inspection: '+str(error)[:180],1
 
@@ -744,7 +744,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                 stage=stage,cancelled=cancelled,continuous=continuous,
                 neural_council=neural_council,inspected_evidence=inspected_evidence,
                 guidance_getter=guidance_getter, checkpoint=checkpoint, council_provider=council_provider,
-                after_variant=after_variant, reviewer=reviewer)
+                after_variant=after_variant, reviewer=reviewer,operation_memory=operation_memory)
         return json.dumps({'hierarchy_ready':summary},ensure_ascii=False), []
     steps=index.merged_steps(request_id,original)
     if len(steps)>24:

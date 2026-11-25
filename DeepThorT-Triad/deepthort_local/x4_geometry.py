@@ -233,7 +233,7 @@ def fitted_mesh(game,fit,choice):
     return output,dict(measured,uniform_scale=factor,source=rock['mesh'],sha256=hashlib.sha256(output).hexdigest())
 
 
-def stage_geometry(client,index,request_id,session,original,project,report,cancelled=None,stage=None):
+def stage_geometry(client,index,request_id,session,original,project,report,cancelled=None,stage=None,*,operation_memory=None):
     """Persist a model-selected visual intermediate with its measurements outside the game project."""
     fit=inspect_fit(report['game_dir'],report['pe_component_file'])
     key=hashlib.sha256(json.dumps([original,fit],sort_keys=True).encode()).hexdigest()
@@ -255,6 +255,11 @@ def stage_geometry(client,index,request_id,session,original,project,report,cance
         if prior[0].startswith('Second attempt:'):return prior[0],0
         prompt+=' Use just one name from the list, without explaining your choice.'
     exchange=f'{session}-geometry-{key[:16]}'+('-retry' if prior else '')
+    if operation_memory:
+        from .indexed_memory import append
+        prompt=append(prompt,operation_memory,phase='indexed_geometry_selection',
+                      identity=exchange,focus='Round natural ore asteroid mesh selection; scaled ship geometry and measured fit',
+                      cancelled=cancelled)
     lookup=getattr(client,'completed_exchange',None)
     reply=lookup(exchange,prompt) if callable(lookup) else None
     if reply is None:reply=client.chat(exchange,prompt,max_tokens=48)

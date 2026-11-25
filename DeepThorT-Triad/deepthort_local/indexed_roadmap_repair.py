@@ -164,7 +164,7 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
                            continuous: bool = False,
                            neural_council: bool = False,
                            inspected_evidence: str = '', guidance_getter=None, checkpoint=None,
-                           council_provider=None, after_variant=None, reviewer=None):
+                           council_provider=None, after_variant=None, reviewer=None,operation_memory=None):
     if max_rounds <= 0:
         raise PlanError('All 40 planning calls were consumed reviewing the source. '
                         'Retry to continue correcting the incomplete X4 roadmap.')
@@ -226,6 +226,12 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             prompt=variant.prompt()
         elif checkpoint:
             prompt, instruction = checkpoint.attach(prompt, MAX_MODEL_INPUT)
+        if operation_memory:
+            from .indexed_memory import append,sha
+            exact=original[rows[ordinal][1]:rows[ordinal][2]]
+            prompt=append(prompt,operation_memory,phase='indexed_roadmap_correction',
+                          identity=(request_id,ordinal,resume_cursor+i,sha(prompt)),
+                          focus=focus,section=exact,limit=MAX_MODEL_INPUT,cancelled=cancelled)
         serial=index.reserve_revision_attempt(request_id,original,ordinal,prompt)
         if stage:
             stage(f'Indexed roadmap correction {(i % max_rounds)+1}/{max_rounds} '
@@ -319,10 +325,14 @@ def repair_indexed_roadmap(client, index, hierarchy, request_id: int, session: s
             if review and review.get('accepted') is False:
                 recovery_feedback+='\nPrior Sentinel rejection: '+review.get('sentinel','')[:240]
             try:
+                from .indexed_memory import recall
+                memory=recall(operation_memory,phase='indexed_roadmap_recovery',
+                              identity=(request_id,serial,target),focus=target,section=context_section,
+                              cancelled=cancelled,client=advisor)
                 review=reframe(council,advisor,session=session,original=original,
                     project=project,source_section=context_section,focus=target,
                     observed=observed,feedback=recovery_feedback,revision=serial,
-                    stage=stage,cancelled=cancelled)
+                    stage=stage,cancelled=cancelled,memory=memory)
                 if stage:
                     stage('Sentinel accepted retranslation as advice' if review['accepted']
                           else 'Sentinel rejected retranslation; preserving original requirements')
