@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 from .workspace import list_project_files,safe_target
 from .tool_workflows import freeze,digest
@@ -243,7 +244,7 @@ def parse_draft(answer,recipes,files,*,continuation=False):
 class WorkflowDrafts:
     def __init__(self,path):
         self.path=Path(path)
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute("""CREATE TABLE IF NOT EXISTS workflow_drafts(
                 id INTEGER PRIMARY KEY AUTOINCREMENT, request_id INTEGER UNIQUE NOT NULL,
                 binding TEXT NOT NULL, goal TEXT NOT NULL, proposal TEXT, manifest TEXT,
@@ -257,7 +258,7 @@ class WorkflowDrafts:
                 attempts INTEGER NOT NULL DEFAULT 0)""")
     def observe_resume(self,request_id,tokens):
         tokens=sorted(set(tokens))
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute('SELECT seen FROM workflow_resume_evidence WHERE request_id=?',(request_id,)).fetchone()
             if row:
@@ -269,7 +270,7 @@ class WorkflowDrafts:
                            (request_id,json.dumps(tokens),json.dumps(tokens)))
     def reserve_resume(self,request_id,tokens):
         tokens=set(tokens)
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute('SELECT seen,attempts FROM workflow_resume_evidence WHERE request_id=?',(request_id,)).fetchone()
             if not row:
@@ -282,54 +283,54 @@ class WorkflowDrafts:
                        (json.dumps(sorted(tokens)),json.dumps(sorted(seen|tokens)),request_id))
             return True
     def reserve_resolution(self,evidence):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             return bool(db.execute('INSERT OR IGNORE INTO workflow_resolution_attempts VALUES(?)',(evidence,)).rowcount)
     def bind_mixed(self,request_id,task):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT INTO mixed_workflow_drafts VALUES(?,?)',(request_id,json.dumps(task)))
     def mixed(self,request_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT task FROM mixed_workflow_drafts WHERE request_id=?',(request_id,)).fetchone()
             return json.loads(row[0]) if row else None
     def recovery_seen(self,workflow_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             return bool(db.execute('SELECT 1 FROM workflow_recovery_drafts WHERE workflow_id=?',(workflow_id,)).fetchone())
     def bind_recovery(self,request_id,snapshot):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT INTO workflow_recovery_drafts VALUES(?,?,?)',(snapshot['workflow_id'],request_id,json.dumps(snapshot)))
     def recovery(self,request_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT snapshot FROM workflow_recovery_drafts WHERE request_id=?',(request_id,)).fetchone()
             return json.loads(row[0]) if row else None
     def gap_result(self,key):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT result FROM workflow_gap_candidates WHERE evidence=?',(key,)).fetchone()
             return json.loads(row[0]) if row else None
     def save_gap(self,key,result):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT OR IGNORE INTO workflow_gap_candidates VALUES(?,?)',(key,json.dumps(result)))
     def queue(self,request_id,binding,goal):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT INTO workflow_drafts(request_id,binding,goal) VALUES(?,?,?)',
                        (request_id,json.dumps(binding),goal))
     def get(self,request_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.row_factory=sqlite3.Row
             r=db.execute('SELECT * FROM workflow_drafts WHERE request_id=?',(request_id,)).fetchone()
             return dict(r) if r else None
     def save(self,request_id,proposal,manifest):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('UPDATE workflow_drafts SET proposal=?,manifest=?,state=? WHERE request_id=?',
                        (json.dumps(proposal),json.dumps(manifest) if manifest else None,
                         'missing' if proposal['missing'] else 'review',request_id))
     def latest(self,binding):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.row_factory=sqlite3.Row
             for r in db.execute('SELECT * FROM workflow_drafts ORDER BY id DESC LIMIT 100'):
                 if json.loads(r['binding'])==binding:return dict(r)
         return None
     def mark(self,request_id,state):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('UPDATE workflow_drafts SET state=? WHERE request_id=?',(state,request_id))
 
 def check_required_proposal(project,task,proposal,recipes):
