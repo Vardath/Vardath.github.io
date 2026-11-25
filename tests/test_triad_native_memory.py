@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
-from triad_openvino_worker import bounded_scheduler,final_text,smoke_result
+from triad_openvino_worker import bounded_scheduler,final_text,smoke_result,model_messages
 from deepthort_local.quiet_playtest import is_capped_windows_process
 
 class NativeMemoryTests(unittest.TestCase):
@@ -33,3 +33,13 @@ class NativeMemoryTests(unittest.TestCase):
         self.assertEqual(smoke_result('janus','<think>unfinished')['exact_arithmetic_reply'],'failed')
         self.assertEqual(smoke_result('janus','<think>calculate</think>4')['exact_arithmetic_reply'],'passed')
         with self.assertRaises(RuntimeError):smoke_result('janus',' ')
+
+    def test_smollm3_mode_preserves_user_and_system_text(self):
+        messages=[{'role':'system','content':'Preserve the original specification.'},{'role':'user','content':'Plan the next test.'}]
+        prepared=model_messages('janus',messages)
+        self.assertEqual(prepared[0]['content'],'Preserve the original specification.\n/no_think')
+        self.assertEqual(messages[0]['content'],'Preserve the original specification.')
+        self.assertEqual(prepared[1],messages[1])
+        self.assertEqual(model_messages('sentinel',messages),messages)
+        self.assertEqual(model_messages('implementation',messages),messages)
+        self.assertEqual(model_messages('janus',messages[1:])[0],{'role':'system','content':'/no_think'})

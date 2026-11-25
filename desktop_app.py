@@ -6014,7 +6014,7 @@ class DeepThorTDesktop(tk.Tk):
         if self.disk_gate.gaming():
             messagebox.showwarning('Game active','Finish gaming before installation and downloading.');return
         if not messagebox.askyesno('Approve Triad installation',
-             'Download the three revision-pinned OpenVINO IR models (~4.48 GB) and pinned CPU runtime?\n'
+             'Download the three revision-pinned OpenVINO IR models (~4.80 GB total; existing valid models reused) and pinned CPU runtime?\n'
              'Files stay in this separate Triad folder. Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
         def worker():

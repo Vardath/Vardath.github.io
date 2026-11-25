@@ -42,6 +42,12 @@ jobs:
           '@ | Set-Content -Encoding utf8 triad_ci_model.py
           python triad_ci_model.py
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Independently require exact JANUS answer
+        if: matrix.role == 'janus'
+        shell: pwsh
+        run: |
+          $receipt = Get-Content 'models/triad-openvino-compact-v1/janus-smollm3/native-smoke.json' -Raw | ConvertFrom-Json
+          if ($receipt.native_generation -ne 'passed' -or $receipt.exact_arithmetic_reply -ne 'passed') { throw 'JANUS exact answer quality failed; native installation is not sufficient' }
       - name: Retain native smoke output
         if: always()
         uses: actions/upload-artifact@v4

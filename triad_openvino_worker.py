@@ -53,6 +53,18 @@ def final_text(role,answer):
     if not answer:raise ValueError('Empty model response')
     return answer
 
+def model_messages(role,messages):
+    # Only SmolLM3 receives its documented system-level mode flag.
+    # Copy inputs so the durable user specification and caller history
+    # are never modified. Keep existing system instructions intact.
+    result=[dict(m) for m in messages]
+    if role=='janus':
+        if result and result[0]['role']=='system':
+            result[0]['content'] += '\n/no_think'
+        else:
+            result.insert(0,{'role':'system','content':'/no_think'})
+    return result
+
 class Engine:
     def __init__(self,role):
         import openvino_genai as genai
@@ -74,14 +86,11 @@ class Engine:
 
     def generate_raw(self,messages,tokens):
         history=self.genai.ChatHistory()
-        for message in messages:history.append(message)
-        # Qwen3 must return directly for strict verification/JSON tasks.
-        if self.role=='sentinel':
+        for message in model_messages(self.role,messages):history.append(message)
+        # SmolLM3 and Qwen3 use documented non-thinking modes for the
+        # coordinator and verifier's exact replies and JSON contracts.
+        if self.role in ('janus','sentinel'):
             history.set_extra_context({'enable_thinking':False})
-        # JANUS is a reasoning checkpoint. Its thought + final output both
-        # count against the existing 768-output / 4096-total hard limits.
-        if self.role=='janus':
-            tokens=min(768,tokens+256)
         # Bound by actual token count including the model's own chat template.
         # Separate per-request histories prevent role/session KV contamination.
         rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
@@ -164,7 +173,7 @@ def main():
         engine=Engine(args[1])
         # A nonempty real generation proves the runtime executes, not that
         # the checkpoint follows instructions. Never fabricate the expected 4.
-        raw=engine.generate_raw([{'role':'user','content':'What is 2 + 2? Answer only with the number.'}],128 if args[1]=='janus' else 16)
+        raw=engine.generate_raw([{'role':'user','content':'What is 2 + 2? Answer only with the number.'}],16)
         result=smoke_result(args[1],raw)
         print('Synthetic reply:',raw[:500],flush=True)
         print('TRIAD_SMOKE_RESULT '+json.dumps(result,sort_keys=True),flush=True)
