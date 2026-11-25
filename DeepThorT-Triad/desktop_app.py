@@ -940,9 +940,12 @@ class DeepThorTDesktop(tk.Tk):
         def task_mcp_probe():
             from deepthort_local.task_mcp_probe import exercise
             return exercise()
+        def mcp_stdio_probe():
+            from deepthort_local.mcp_stdio_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe}
 
         def worker():
             try:
@@ -5349,6 +5352,48 @@ class DeepThorTDesktop(tk.Tk):
                 self._mcp_discovery_active=False
         threading.Thread(target=invoke,daemon=True,name='TaskMCPCall').start()
 
+    def _supervised_stdio_dialog(self):
+        from deepthort_local.mcp_stdio import prepare,discover,StdioCatalog
+        from deepthort_local.tool_workflows import digest
+        from deepthort_local.structured_source import strict_json
+        try:
+            if not self.project:raise ValueError('Select a project')
+            project=str(self.project);catalog=StdioCatalog(self.janus)
+            rows=catalog.list(project)
+            summary='\n'.join(x['profile_sha'][:12]+': '+', '.join(t['name'] for t in x['tools'][:8]) for x in rows) or 'No stdio inventories.'
+            choice=simpledialog.askstring('Supervised stdio MCP',summary+'\n\nEnter DISCOVER or REMOVE.',parent=self)
+            if not choice:return
+            if choice.strip().upper()=='REMOVE':
+                prefix=simpledialog.askstring('Remove inventory','Enter a displayed hash prefix:',parent=self)
+                matches=[x for x in rows if prefix and x['profile_sha'].startswith(prefix.strip())]
+                if len(matches)==1 and messagebox.askyesno('Remove historical inventory?','Remove selected stdio catalog record?',parent=self):
+                    catalog.remove(project,matches[0]['profile_sha'],user_approved=True)
+                return
+            if choice.strip().upper()!='DISCOVER':return
+            if self.disk_gate.gaming() or self.active_job is not None or self.active_conversation is not None or getattr(self,'_mcp_discovery_active',False):
+                raise ValueError('Wait until gaming and active work finish')
+            executable=filedialog.askopenfilename(title='Select trusted installed MCP server executable',filetypes=[('Windows executable','*.exe')],parent=self)
+            if not executable:return
+            raw=simpledialog.askstring('Server arguments','Enter exact JSON string array, e.g. ["-I","D:\\\\server.py"]. No automatic installation.',initialvalue='[]',parent=self)
+            if raw is None:return
+            proposal=prepare(project,executable,strict_json(raw))
+            seal=digest(proposal)
+            if not messagebox.askyesno('Approve supervised MCP launch?',
+                json.dumps(proposal['argv'],ensure_ascii=False,indent=2)+'\nProject: '+project+
+                '\nOne discovery session only, 256 MiB nested commit limit, shared root CPU/commit cap. Trusted executable can access files; this is not a sandbox. No tool call. Proceed?',parent=self):return
+            self._mcp_discovery_active=True
+            def work():
+                try:
+                    result=discover(proposal,expected_sha=seal,user_approved=True,
+                        cancelled=lambda:self._quitting or self.disk_gate.gaming() or str(self.project)!=project)
+                    catalog.save(proposal,result)
+                    self.events.put(('log','Supervised stdio discovery: '+str(len(result['tools']))+' tools; process tree closed'))
+                except Exception as error:self.events.put(('log','Supervised stdio discovery failed: '+type(error).__name__+' '+str(error)[:180]))
+                finally:self._mcp_discovery_active=False
+            threading.Thread(target=work,daemon=True,name='SupervisedMCP').start()
+        except (ValueError,OSError,KeyError,TypeError,RuntimeError) as error:
+            messagebox.showwarning('Supervised MCP unavailable',str(error),parent=self)
+
     def _local_mcp_dialog(self):
         from deepthort_local.local_mcp import LocalMCP,endpoint
         try:
@@ -5359,9 +5404,12 @@ class DeepThorTDesktop(tk.Tk):
             summary='\n'.join(r['endpoint']+' ('+str(len(r['tools']))+' tools; historical discovery): '+
                                ', '.join(x['name'] for x in r['tools'][:8]) for r in rows) or 'No discovered servers.'
             choice=simpledialog.askstring('Local MCP discovery',
-                summary[:2500]+'\n\nEnter DISCOVER, REMOVE, CALL, HISTORY or PLAN (selected paused build job).',parent=self)
+                summary[:2500]+'\n\nEnter DISCOVER, REMOVE, CALL, HISTORY, PLAN or STDIO (supervised discovery).',parent=self)
             if not choice:return
             choice=choice.strip().upper()
+            if choice=='STDIO':
+                self._supervised_stdio_dialog()
+                return
             if choice=='PLAN':
                 self._plan_task_mcp()
                 return

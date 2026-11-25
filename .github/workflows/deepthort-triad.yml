@@ -37,6 +37,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_local_mcp_v17.py -v
       - run: python -m unittest discover -s tests -p test_mcp_calls_v18.py -v
       - run: python -m unittest discover -s tests -p test_task_mcp_v19.py -v
+      - run: python -m unittest discover -s tests -p test_mcp_stdio_v20.py -v
       - run: python -m unittest discover -s tests -p test_workflow_design_v61.py -v
   native-windows:
     runs-on: windows-latest
@@ -62,6 +63,12 @@ jobs:
           python -m unittest discover -s tests -p test_mcp_calls_v18.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_task_mcp_v19.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Supervised Windows stdio MCP lifecycle
+        run: |
+          python -m unittest discover -s tests -p test_mcp_stdio_v20.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python mcp_stdio_preflight.py
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Install pinned native runtime in isolated venv
         run: |

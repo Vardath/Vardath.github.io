@@ -86,7 +86,7 @@ def model_group():
     finally:close(group)
 
 @contextmanager
-def child_server(command,cwd,log_path,*,group=None):
+def child_server(command,cwd,log_path,*,group=None,memory_limit=None):
     verify_root_cap()
     import msvcrt
     log_path=Path(log_path)
@@ -110,7 +110,19 @@ def child_server(command,cwd,log_path,*,group=None):
     try:
         limits=ExtendedLimitInfo()
         limits.BasicLimitInformation.LimitFlags=JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+        if memory_limit is not None:
+            if type(memory_limit) is not int or not 1<=memory_limit<=512*1024**2:
+                raise ValueError('Invalid auxiliary child memory limit')
+            limits.BasicLimitInformation.LimitFlags|=JOB_OBJECT_LIMIT_JOB_MEMORY
+            limits.JobMemoryLimit=memory_limit
         check(set_job(job,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits)),'Set cleanup policy')
+        if memory_limit is not None:
+            observed=ExtendedLimitInfo()
+            check(fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)(
+                job,JobObjectExtendedLimitInformation,ctypes.byref(observed),ctypes.sizeof(observed),None),'Read auxiliary memory limit')
+            if (observed.JobMemoryLimit!=memory_limit or
+                observed.BasicLimitInformation.LimitFlags&limits.BasicLimitInformation.LimitFlags!=limits.BasicLimitInformation.LimitFlags):
+                raise RuntimeError('Auxiliary job limits did not match')
         si=StartupInfo();si.cb=ctypes.sizeof(si)
         cmd=ctypes.create_unicode_buffer(subprocess.list2cmdline(command))
         # CREATE_NO_WINDOW must not leave C/C++ stdout and stderr invalid.
@@ -135,6 +147,15 @@ def child_server(command,cwd,log_path,*,group=None):
             check(assign(group,proc.hProcess),'Assign model to shared model-memory job')
             if not in_job(k,proc.hProcess,group):raise RuntimeError('Model-memory group membership missing')
         check(assign(job,proc.hProcess),'Assign model to nested cleanup job')
+        if not in_job(k,proc.hProcess,job):raise RuntimeError('Nested cleanup membership missing')
+        # Auxiliary and model children must actually inherit the original
+        # root job, not simply have a valid cap in the launching process.
+        root=fn(k,'OpenJobObjectW',[D,wintypes.BOOL,wintypes.LPCWSTR],H)(
+            0x0004,False,os.environ['DEEPTHORT_TRIAD_ROOT_JOB'])
+        check(root,'Open inherited shared root')
+        try:
+            if not in_job(k,proc.hProcess,root):raise RuntimeError('Child is outside shared Triad root job')
+        finally:close(root)
         if resume(proc.hThread)==0xFFFFFFFF:raise OSError('Model resume failed')
         def alive():
             result=wait(proc.hProcess,0)

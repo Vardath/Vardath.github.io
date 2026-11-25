@@ -1,3 +1,9 @@
+# Triad V20 checkpoint
+
+V19 local 9/9 passed. V20 adds supervised one-shot stdio discovery through Local MCP > STDIO. Use an installed trusted executable and explicit argument array. Separate 256 MiB nested ceiling is inside the same 40% root job. No automatic installations or stdio calls yet. Run ten acceptance checks, then extend invocation, supervised lifecycle and app adapters. Preserve current models and original DeepThorT.
+
+---
+
 # Triad V19 — current checkpoint
 
 Install over verified V18 and run nine focused checks. Local MCP PLAN uses JANUS and Sentinel for a selected paused approved job; one exact user-confirmed invocation, durable task receipt, no replay. Test uses scripted role outputs and real loopback, not live model inference. Next: supervised local server lifecycle and broader transport support, typed application adapters, automatic task-specific planning, bounded verified result recall. Preserve existing models, cap and original DeepThorT.

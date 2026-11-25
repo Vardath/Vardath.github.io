@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-task-mcp-v19",
-  "title": "Triad V19: task-scoped JANUS/Sentinel MCP proposals and one-shot receipts",
+  "id": "triad-supervised-mcp-v20",
+  "title": "Triad V20: supervised local stdio discovery and cleanup",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -11,6 +11,7 @@
     "portable_procedures",
     "local_mcp",
     "mcp_calls",
-    "task_mcp"
+    "task_mcp",
+    "mcp_stdio"
   ]
 }
