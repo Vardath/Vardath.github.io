@@ -69,3 +69,10 @@ class TriadInferenceRecovery(unittest.TestCase):
         self.assertEqual(result['evidence']['individual_results']['janus']['error']['code'],'native_error')
         self.assertEqual(result['evidence']['concurrent_results']['janus']['error']['detail'],'fixed synthetic detail')
         self.assertFalse(overlap)
+
+    def test_serial_recovery_does_not_certify_concurrency(self):
+        p=make_pool();p.serial_memory_mode=True
+        result,overlap=smoke(lambda:p.status(False),lambda role,word:word,p.status(False)['pid'],threading.Event())
+        self.assertEqual(result['status'],'passed')
+        self.assertTrue(result['evidence']['serial_memory_mode'])
+        self.assertFalse(overlap)
