@@ -48,12 +48,10 @@ def file_hash(path,limit=MAX_FILE):
     return h.hexdigest()
 
 def tools():
-    names=('ffmpeg.exe','ffprobe.exe') if os.name=='nt' else ('ffmpeg','ffprobe')
-    found=[shutil.which(name) for name in names]
-    if not all(found):raise MissingTools('FFmpeg and FFprobe not found on PATH. Install the reviewed FFmpeg package or add its bin directory to PATH and restart Triad.')
-    paths=[Path(p).resolve(strict=True) for p in found]
-    if any(not p.is_file() for p in paths):raise MissingTools('FFmpeg installation incomplete')
-    return tuple(str(p) for p in paths)
+    from .video_tools import find_pair
+    found=find_pair()
+    if not found:raise MissingTools('FFmpeg and FFprobe not found in PATH or known WinGet package folders. Install the reviewed FFmpeg package, then retry.')
+    return found
 
 def native_runner(command,folder,cancelled=None,seconds=120):
     from .triad_job import verify_root_cap,child_server

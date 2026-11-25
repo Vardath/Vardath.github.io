@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V30: measured video rendering, scene visuals, speech and live memory",
+  "title": "Triad V30.1: renderer dependency recovery and measured video rendering",
   "checks": [
     "shared_cap",
     "triad_residency",

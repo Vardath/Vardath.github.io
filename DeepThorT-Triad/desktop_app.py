@@ -798,6 +798,10 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError) as error:
             messagebox.showerror('Latest test unavailable',str(error),parent=self)
             return
+        # Resolve a known required dependency before entering the non-installing
+        # test runner. Installation is a separate, explicitly approved action.
+        if 'video_render' in manifest['checks'] and self._offer_video_tools():
+            return
         self._latest_test_cancel=threading.Event()
         self._latest_test_stage='starting'
         self._latest_test_last=None
@@ -2424,7 +2428,7 @@ class DeepThorTDesktop(tk.Tk):
                 if cancelled():return
                 original=request['prompt']
                 if request['mode']=='chat' and original.strip().lower().startswith('/render '):
-                    from deepthort_local.video_render import render
+                    from deepthort_local.video_render import render,MissingTools
                     from deepthort_local.video_planning import load_plan
                     from deepthort_local.local_speech import json_read
                     match=re.fullmatch(r'/render\s+([1-9][0-9]{0,11})(?:\s+([0-9a-f]{20}))?',original.strip(),re.IGNORECASE)
@@ -2447,8 +2451,12 @@ class DeepThorTDesktop(tk.Tk):
                         current=self.conversations.get(source['id'])
                         return (cancelled() or self._quitting or self.queue_paused or self.disk_gate.gaming()
                                 or not current or current['state']!='responded' or current['prompt']!=source['prompt'])
-                    result,folder=render(STATE/'video-renders',source,plan,choices[0],STATE/'video-visuals',
-                        cancelled=stopped,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    try:
+                        result,folder=render(STATE/'video-renders',source,plan,choices[0],STATE/'video-visuals',
+                            cancelled=stopped,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    except MissingTools as error:
+                        if not stopped():self.events.put(('video_tools_required',ident,str(error)))
+                        return
                     if stopped():return
                     v=result['verification']
                     answer=(f"Rendered local MP4: {v['width']}x{v['height']}, {v['fps']} fps, {v['duration_seconds']:.2f}s.\n"
@@ -6270,8 +6278,29 @@ class DeepThorTDesktop(tk.Tk):
                 'trusted and functions before giving it a project task. No actual app '
                 'capability check has been performed.',parent=self)
 
-    def _approve_tool_install(self):
-        name=self.install_choice.get()
+    def _offer_video_tools(self):
+        from deepthort_local.video_render import tools,MissingTools
+        try:tools();return False
+        except MissingTools:pass
+        if (self._quitting or self.queue_paused or self.disk_gate.gaming()
+            or self.active_job is not None or self.active_conversation is not None
+            or self._auto_tool_active or self._tool_probe_active or self._dispatch_memory_busy()
+            or self.tool_workflows.busy()
+            or (self._latest_test_thread and self._latest_test_thread.is_alive())
+            or any(p and p.poll() is None for p in (self.install_process,self.tool_process,self.media_process))):
+            self._log('Video tools missing; acquisition deferred while another activity owns the slot.')
+            return False
+        if not messagebox.askyesno('Video renderer dependency missing',
+            'FFmpeg and FFprobe are required for video rendering.\n\n'
+            'Install the fixed reviewed Gyan.FFmpeg package using Windows Package Manager? '
+            'This is a separate installation, may download software and may show Windows UAC. '
+            'Once installation completes, run Latest Test or retry /render.\n\n'
+            'Choose No to leave software unchanged.',parent=self):return False
+        self._approve_tool_install(name='FFmpeg',explicit_approval=True)
+        return True
+
+    def _approve_tool_install(self,name=None,*,explicit_approval=False):
+        name=name or self.install_choice.get()
         if name not in INSTALL_CATALOG:return
         if self.install_process and self.install_process.poll() is None:
             messagebox.showinfo('Installer busy','Another approved installation is already running.');return
@@ -6280,7 +6309,7 @@ class DeepThorTDesktop(tk.Tk):
         try:cmd=winget_command(name)
         except (OSError,ValueError) as e:messagebox.showerror('Cannot install',str(e));return
         package,purpose=INSTALL_CATALOG[name]
-        if not (DeepThorTDesktop._routine_tools_enabled(self) or messagebox.askyesno('Approve Windows software installation',
+        if not (explicit_approval is True or DeepThorTDesktop._routine_tools_enabled(self) or messagebox.askyesno('Approve Windows software installation',
             f'Install program: {name}\nPurpose: {purpose}\nPackage ID: {package}\nSource: Windows Package Manager (winget)\n\n'
             f'Command:\n{" ".join(cmd)}\n\nThis downloads external software and may ask for Windows elevation. '
             'No model-generated shell command is accepted.\n\nDo you APPROVE this specific installation?',parent=self)):
@@ -7106,6 +7135,11 @@ class DeepThorTDesktop(tk.Tk):
                               f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
             elif kind=='conversation_reply':self._conversation_reply(event[1],event[2])
+            elif kind=='video_tools_required':
+                req=self.conversations.get(event[1])
+                if req and req['state']=='running' and self.active_conversation==event[1]:
+                    self._conversation_error(event[1],event[2])
+                    self._offer_video_tools()
             elif kind=='conversation_error':self._conversation_error(event[1],event[2])
             elif kind=='conversation_transport_lost':
                 self._conversation_transport_lost(event[1],event[2],event[3])
