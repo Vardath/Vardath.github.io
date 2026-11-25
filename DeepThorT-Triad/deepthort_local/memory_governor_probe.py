@@ -67,7 +67,9 @@ def exercise():
         if indexed['status']!='passed':raise ValueError('Indexed recall failed')
         dispatch=exercise_dispatch_gate()
         if dispatch['status']!='passed':raise ValueError('Dispatch review failed')
-        return {'status':'passed','detail':'Indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        search=exercise_search_index()
+        if search['status']!='passed':raise ValueError('Indexed search failed')
+        return {'status':'passed','detail':'Long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
 
 
 def exercise_indexed():
@@ -220,3 +222,49 @@ def exercise_dispatch_gate():
             raise ValueError('Unchanged approved workflow did not dispatch')
         workflows.stop(third)
     return {'status':'passed','detail':'Nonblocking one-shot dispatch review, changed-operation isolation, rejection and real workflow source/guard rechecks passed.'}
+
+
+def exercise_search_index():
+    """Legacy migration, long history, scope, restart and change invalidation."""
+    with tempfile.TemporaryDirectory(prefix='triad-term-index-') as folder:
+        root=Path(folder);jobs=JobStore(root/'jobs.sqlite3')
+        project=str(root/'space');chat='chat';spec='Preserve docking clearance.'
+        old=jobs.submit(project,chat,'plan',spec)
+        alien=jobs.submit(str(root/'other'),chat,'plan',spec)
+        other_chat=jobs.submit(project,'other','plan',spec)
+        digest=sha(spec)
+        with jobs._conn() as db:
+            def insert(job,role,focus,note,evidence,revision=digest):
+                return db.execute('INSERT INTO task_memory_notes(job_id,role,focus,spec_sha,evidence_sha,note) VALUES(?,?,?,?,?,?)',
+                    (job,role,focus,revision,sha(evidence),note)).lastrowid
+            oldest=insert(old,'verification','docking clearance','Clearance regression: preserve docking clearance.','oldest')
+            for i in range(1200):
+                insert(old,'verification','unrelated paint','Palette observation',f'paint-{i}')
+            for i in range(80):
+                insert(old,'janus','docking clearance','Proposed docking clearance changes',f'advice-{i}')
+            insert(alien,'verification','docking clearance','OTHER PROJECT','alien')
+            insert(other_chat,'verification','docking clearance','OTHER CHAT','chat')
+            insert(old,'verification','docking clearance','OTHER REVISION','revision',sha(spec+' revised'))
+        args=dict(project=project,chat_id=chat,original=spec,focus='docking clearance',job_id=old)
+        found=retrieve(jobs.path,**args)
+        if not found or found[0]['id']!='N'+str(oldest):
+            raise ValueError('Old relevant evidence lost behind newer history')
+        if any(x['observation'].startswith('OTHER') for x in found):raise ValueError('Index scope leak')
+        if len(found)>8 or len(json.dumps(found,ensure_ascii=True,separators=(',',':'),sort_keys=True))>2300:
+            raise ValueError('Index exceeded candidate budget')
+        reopened=JobStore(jobs.path)
+        if retrieve(reopened.path,**args)!=found:raise ValueError('Index changed across restart')
+        with reopened._conn() as db:
+            if db.execute('SELECT count(*) FROM memory_term_dirty_v23').fetchone()[0]!=3:
+                raise ValueError('Index did not isolate dirty scope')
+            db.execute('UPDATE task_memory_notes SET focus=?,note=? WHERE id=?',
+                ('paint palette','Repaint hull',oldest))
+            replacement=insert(old,'verification','docking clearance','New clearance observation','new')
+        updated=retrieve(reopened.path,**args)
+        if any(x['id']=='N'+str(oldest) for x in updated) or updated[0]['id']!='N'+str(replacement):
+            raise ValueError('Index did not reflect edited and inserted notes')
+        with reopened._conn() as db:db.execute('DELETE FROM task_memory_notes WHERE id=?',(replacement,))
+        final=retrieve(reopened.path,**args)
+        if any(x['id']=='N'+str(replacement) for x in final):raise ValueError('Deleted note remained searchable')
+        if any(x['kind']=='historical_verification' for x in final):raise ValueError('Unexpected evidence remained')
+        return {'status':'passed','detail':'1284 legacy notes, oldest relevant record, advisory flood, scope isolation, bounded packet, restart and insert/edit/delete invalidation passed.'}

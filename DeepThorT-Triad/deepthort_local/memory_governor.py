@@ -12,6 +12,7 @@ from pathlib import Path
 from .task_memory import sha,_open,tool_observations,mcp_observations
 from .specification_guard import review_source
 from .structured_source import strict_json
+from .memory_index import connect as open_index,ranked_notes,MAX_NOTE_SHORTLIST,terms,STOP
 
 MAX_CANDIDATES=8
 MAX_PACKET=2300
@@ -19,13 +20,8 @@ MAX_CONTEXT=600
 # Memory selection is a bounded ID classification task. Leave Sentinel in
 # direct-answer mode (thinking is enabled at 512 tokens in the native worker).
 MEMORY_SELECTION_TOKENS=384
-STOP={'the','and','for','with','from','this','that','into','your','are','was','have','has','not','task','build','file','create','implement','approved','project','operation','memory','current'}
-
 def canonical(value):
     return json.dumps(value,ensure_ascii=True,sort_keys=True,separators=(',',':'),allow_nan=False)
-
-def terms(value):
-    return {x for x in re.findall(r'[a-z0-9]{3,}',str(value).casefold()) if x not in STOP}
 
 def ensure_schema(db):
     db.execute("""CREATE TABLE IF NOT EXISTS task_memory_reviews(
@@ -42,31 +38,34 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
     if not isinstance(original,str) or not original.strip() or not chat_id or not project or project=='(general)':
         raise ValueError('Scoped memory retrieval requires original project specification and chat')
     if type(job_id) is not int or job_id<0:raise ValueError('Invalid memory task')
-    spec_sha=sha(original);words=terms(focus);ranked=[]
+    spec_sha=sha(original);words=terms(str(focus)[:500]);ranked=[]
     def add(ident,kind,title,note,evidence,score):
         ranked.append((score,ident,{'id':ident,'kind':kind,'focus':str(title)[:100],
             'observation':str(note)[:220],'evidence':str(evidence)[:64]}))
-    db=_open(path)
+    db=open_index(path)
     try:
-        db.execute('BEGIN')
         if job_id:
             current=db.execute('SELECT project,chat_id FROM jobs WHERE id=?',(job_id,)).fetchone()
             if not current or (current['project'],current['chat_id'])!=(str(project),chat_id):
                 raise ValueError('Memory task belongs to a different project or chat')
-        notes=db.execute("""SELECT n.id,n.job_id,n.role,n.focus,n.note,n.evidence_sha
-            FROM task_memory_notes n JOIN jobs j ON n.job_id=j.id
-            WHERE j.project=? AND j.chat_id=? AND n.spec_sha=?
-            ORDER BY n.id DESC LIMIT 300""",(str(project),chat_id,spec_sha)).fetchall()
-        for row in notes:
-            # Boilerplate approval/generation messages are not reusable knowledge.
+        seen_notes=set()
+        for row in ranked_notes(db,str(project),chat_id,spec_sha,words,job_id):
             if row['note'].startswith(('Proposed source for review;','Accepted as advice; runtime untested: All candidate portions accepted')):
                 continue
             title=row['focus'];note=row['note']
+            # Recompute from the authoritative row. Index entries are hints,
+            # never evidence or a substitute for checking the actual text.
             title_match=len(words&terms(title));body_match=len(words&terms(note))
             if not (title_match or body_match):continue
             score=title_match*5+body_match*2+(2 if job_id and row['job_id']==job_id else 0)
             if row['role']=='verification' or note.startswith('Rejected'):score+=2
+            key=(row['role'],row['evidence_sha'][:64],title[:100])
+            if key in seen_notes:continue
             add('N'+str(row['id']),'historical_'+row['role'],title,note,row['evidence_sha'],score)
+            if len(canonical([ranked[-1][2]]))>MAX_PACKET:
+                ranked.pop();continue
+            seen_notes.add(key)
+            if len(seen_notes)>=MAX_NOTE_SHORTLIST:break
         if job_id:
             steps=db.execute("""SELECT id,path,description,state,outcome FROM job_steps
                 WHERE job_id=? AND state IN ('saved','verified','failed') ORDER BY sequence LIMIT 64""",(job_id,)).fetchall()
@@ -76,6 +75,7 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
                 obs=row['state']+': '+row['outcome']
                 add('S'+str(row['id']),'historical_queue_state',row['path'],obs,
                     sha(canonical(dict(row))),overlap*5+(5 if row['state']=='failed' else 1))
+        db.commit()
     finally:db.close()
     if job_id:
         for row in tool_observations(path,job_id,project,spec_sha):
@@ -92,7 +92,7 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
                     sha(canonical(row)),overlap*4+3)
     # Whole records only. Tie-break by stable ID, not mutable model text.
     selected=[];seen=set()
-    for score,ident,entry in sorted(ranked,key=lambda row:(-row[0],row[1])):
+    for score,ident,entry in sorted(ranked,key=lambda row:(not evidence_eligible(row[2]),-row[0],row[1])):
         key=(entry['kind'],entry['evidence'],entry['focus'])
         if key in seen:continue
         if len(canonical(selected+[entry]))>MAX_PACKET:continue
@@ -175,7 +175,7 @@ def govern(jobs,council,client,*,project,chat_id,original,focus,scope,phase,
     focus=str(focus)[:500]
     candidates=retrieve(jobs.path,project=project,chat_id=chat_id,original=original,focus=focus,job_id=job_id)
     packet_sha=sha(canonical(candidates));spec_sha=sha(original)
-    key={'schema':'triad-governed-memory-v4','project':str(project),'chat':chat_id,
+    key={'schema':'triad-governed-memory-v5','project':str(project),'chat':chat_id,
          'job':job_id,'scope':scope,'phase':phase,'spec':spec_sha,'focus':sha(focus),'packet':packet_sha,'section':sha(section)}
     eligible=[entry for entry in candidates if evidence_eligible(entry)]
     # Bind excluded IDs in the durable decision even when no model is called.

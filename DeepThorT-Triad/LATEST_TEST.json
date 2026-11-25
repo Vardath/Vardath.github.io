@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V22.7: live relevance and workflow dispatch memory governance",
+  "title": "Triad V23: long-history indexed retrieval and live Sentinel relevance",
   "checks": [
     "shared_cap",
     "triad_residency",
