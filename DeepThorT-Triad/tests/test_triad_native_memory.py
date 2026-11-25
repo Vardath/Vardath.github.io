@@ -8,9 +8,9 @@ class NativeMemoryTests(unittest.TestCase):
     def test_scheduler_has_explicit_bounds(self):
         cfg=bounded_scheduler(SimpleNamespace(SchedulerConfig=SimpleNamespace))
         self.assertEqual(cfg.max_num_seqs,1)
-        self.assertEqual(cfg.max_num_batched_tokens,64)
-        self.assertEqual(cfg.num_kv_blocks,128)
-        self.assertEqual(MAX_CONTEXT_TOKENS,2048)
+        self.assertEqual(cfg.max_num_batched_tokens,128)
+        self.assertEqual(cfg.num_kv_blocks,256)
+        self.assertEqual(MAX_CONTEXT_TOKENS,4096)
         self.assertFalse(cfg.enable_prefix_caching)
     def test_named_root_validator_is_used(self):
         with patch('deepthort_local.triad_job.verify_root_cap',return_value=(14*1024**3,24*1024**3,40*1024**3)) as verify:
@@ -57,7 +57,7 @@ class NativeMemoryTests(unittest.TestCase):
         with patch.object(e,'generate_raw',return_value='unfinished reasoning'):
             with self.assertRaises(ValueError):e.generate([],768)
 
-    def test_reduced_context_error_stays_classified(self):
+    def test_context_errors_stay_classified(self):
         from deepthort_local.triad_errors import native_error
         self.assertEqual(native_error(ValueError('Input 1500 + output 768 exceeds 2048-token Triad profile; use indexed planning')),'context_limit')
         self.assertEqual(native_error(RuntimeError("Check 'shape_size(shape) == 0 || m_ptr != nullptr' failed")),'native_error')

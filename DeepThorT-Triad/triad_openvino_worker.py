@@ -28,10 +28,10 @@ def probe():
     if not hasattr(genai,'ChatHistory'):raise RuntimeError('OpenVINO GenAI ChatHistory API missing')
     print('OpenVINO GenAI',version('openvino-genai'),'CPU numerical preflight passed',flush=True)
 
-# Reduced reservation after V8 exhausted the protected worker allocation.
-MAX_CONTEXT_TOKENS=2048
-KV_BLOCKS=128
-PREFILL_BATCH_TOKENS=64
+# Full V8 scheduler restored for the authorized 40% resource trial.
+MAX_CONTEXT_TOKENS=4096
+KV_BLOCKS=256
+PREFILL_BATCH_TOKENS=128
 
 def bounded_scheduler(genai):
     # Explicit cache block ceiling rather than the latency-oriented default

@@ -32,4 +32,4 @@ def inner():
 
 if __name__=='__main__':
     if sys.argv[1:]==['--inside']:raise SystemExit(inner())
-    raise SystemExit(run_capped([sys.executable,str(Path(__file__).resolve()),'--inside'],cwd=str(ROOT),percent=35,ram_percent=35))
+    raise SystemExit(run_capped([sys.executable,str(Path(__file__).resolve()),'--inside'],cwd=str(ROOT),percent=40,ram_percent=40))

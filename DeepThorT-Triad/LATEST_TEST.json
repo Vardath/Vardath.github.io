@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-qwen4b-v9",
-  "title": "Triad V9: Qwen3-4B reduced-memory parallel inference and independent audit",
+  "id": "triad-qwen4b-v10-40percent",
+  "title": "Triad V10: Qwen3-4B at 40% shared resource cap and independent audit",
   "checks": [
     "shared_cap",
     "triad_residency",

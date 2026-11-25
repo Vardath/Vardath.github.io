@@ -43,9 +43,9 @@ def verify_root_cap():
         check(query(job,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),'Inherited job limits')
         check(query(job,JobObjectCpuRateControlInformation,ctypes.byref(cpu),ctypes.sizeof(cpu),None),'Inherited CPU cap')
         required=CPU_RATE_CONTROL_ENABLE|CPU_RATE_CONTROL_HARD_CAP
-        if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=3500
+        if ((cpu.ControlFlags&required)!=required or not 1<=cpu.CpuRate<=4000
                 or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_JOB_MEMORY
-                or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*35//100
+                or not 0<limits.JobMemoryLimit<=mem.ullTotalPhys*40//100
                 or not limits.BasicLimitInformation.LimitFlags&JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE):
             raise RuntimeError('Inherited job is not the required CPU/commit cap')
         return int(limits.JobMemoryLimit),int(mem.ullAvailPhys),int(mem.ullTotalPhys)
@@ -62,7 +62,7 @@ def model_group():
     """Nested aggregate worker commit cap, leaving room for desktop/broker.
 
     The group is not a separate CPU budget. Every member remains in the
-    original 35% root job, and individual cleanup jobs remain nested below it.
+    original 40% root job, and individual cleanup jobs remain nested below it.
     """
     root_limit,_,_=verify_root_cap()
     budget=worker_budget(root_limit)
