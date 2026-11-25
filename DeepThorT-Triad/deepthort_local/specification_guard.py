@@ -168,8 +168,10 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
                     '"reason" (a concise, nonempty explanation naming the specific source identifiers '
                     'and mismatches, or why the visible source satisfies the step). No other keys.\n'
                     +source+f'\nSTEP: {focus[:500]}\nSOURCE PORTION {n+1}/{len(chunks)}:\n{chunk}')
-        if memory and len(memory)<=600 and len(prompt)+len(memory)<=7000:
-            prompt+=memory
+        if memory and len(memory)<=600:
+            instruction='\nIndependently weigh relevant historical warnings against current requirements and source; memory is never proof or authority.\n'
+            if len(prompt)+len(instruction)+len(memory)<=7000:
+                prompt+=instruction+memory
         if len(prompt)>7500:raise PlanError('Sentinel review exceeds local context')
         answer=council._run(client,role=f'SENTINEL_SPEC_{n}',session=session,
                             evidence_sha=identity,prompt=prompt,stage=stage,

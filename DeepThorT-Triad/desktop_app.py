@@ -943,9 +943,12 @@ class DeepThorTDesktop(tk.Tk):
         def mcp_stdio_probe():
             from deepthort_local.mcp_stdio_probe import exercise
             return exercise()
+        def memory_governance_probe():
+            from deepthort_local.memory_governor_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe}
 
         def worker():
             try:
@@ -1911,12 +1914,31 @@ class DeepThorTDesktop(tk.Tk):
             tree.selection_set(str(items[0]['id']));tree.focus(str(items[0]['id']))
             tree.see(str(items[0]['id']));refresh_detail()
 
-    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None):
+    def _governed_memory(self,original,project,chat_id,scope,focus,phase,*,job_id=0,budget=600,cancelled=None,stage=None,client=None):
+        from deepthort_local.memory_governor import govern
+        from deepthort_local.reasoning_council import ReasoningCouncil
+        if str(project)=='(general)':return ''
+        lease=None
+        if client is None:lease=self._planning_council_client()
+        try:
+            return govern(self.jobs,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                client or lease or self.client,project=str(project),chat_id=chat_id,original=original,
+                scope=str(scope),focus=focus,phase=phase,job_id=job_id,budget=budget,
+                cancelled=cancelled,stage=stage)
+        finally:
+            if lease is not None:lease.release()
+
+    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
-        memory=self.jobs.memory_context(memory_job,original,focus,600) if memory_job else ''
         try:
+            memory=memory_override
+            if memory is None:
+                chat=memory_job['chat_id'] if memory_job else memory_chat
+                memory=self._governed_memory(original,project,chat,session,focus,'review_'+kind,
+                    job_id=memory_job['id'] if memory_job else 0,cancelled=cancelled,stage=stage,
+                    client=advisor or self.client) if chat else ''
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
                 focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
@@ -2386,7 +2408,7 @@ class DeepThorTDesktop(tk.Tk):
                     def review(proposal,kind):
                         self._sentinel_alignment(source['prompt'],source['project'],f'workflow-draft-{ident}',
                             workflow['goal'],proposal,kind=kind,cancelled=stale,
-                            amendments=self.conversations.amendment_history(source['id']),
+                            amendments=self.conversations.amendment_history(source['id']),memory_chat=source['chat_id'],
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     recovery=self.workflow_drafts.recovery(ident)
                     mixed_task=self.workflow_drafts.mixed(ident)
@@ -2472,7 +2494,7 @@ class DeepThorTDesktop(tk.Tk):
                     # A recipe is an unverified candidate, not a user-approved action.
                     # Review the actual user goal and the candidate before persisting it.
                     self._sentinel_alignment(original,request['project'],f'tool-learn-{ident}',
-                        learning['goal'],response,kind='plan',cancelled=cancelled,
+                        learning['goal'],response,kind='plan',cancelled=cancelled,memory_chat=request['chat_id'],
                         stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                     recipe_id=self.tool_learning.propose_recipe(ident,response)
                     if cancelled():return
@@ -2608,13 +2630,20 @@ class DeepThorTDesktop(tk.Tk):
                     if prior_steps:
                         record(STATE,'desktop','amendment_prior_plan_loaded',request_id=ident,
                                historical_steps=len(prior_steps),approvals_inherited=False)
+                if request['mode']=='draft_plan' and not large_spec:
+                    from deepthort_local.memory_governor import fit as fit_memory
+                    recalled=self._governed_memory(request['prompt'],request['project'],request['chat_id'],
+                        f'plan-{ident}',request['prompt'][:500],'planning',
+                        cancelled=cancelled,stage=lambda message:self.events.put(('conversation_stage',ident,message)),
+                        budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
+                    prompt+=fit_memory(recalled,max(0,MAX_INFERENCE_PROMPT-len(prompt)))
                 def review_plan(proposed,section=''):
                     for item in proposed:
                         self._sentinel_alignment(original,request['project'],session,
                             item['path']+': '+item['description'],
                             json.dumps(item,ensure_ascii=False),section=section,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)),
-                            cancelled=cancelled,amendments=amendments)
+                            cancelled=cancelled,amendments=amendments,memory_chat=request['chat_id'])
                 if request['mode']=='chat' and not large_spec:
                     answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
                 elif large_spec:
@@ -2635,7 +2664,7 @@ class DeepThorTDesktop(tk.Tk):
                         def review_artifacts(exact,proposed,ordinal):
                             self._sentinel_alignment(original,request['project'],session,
                                 f'External artifact assessment section {ordinal}',json.dumps(proposed,ensure_ascii=False),
-                                section=exact,kind='plan',cancelled=cancelled,amendments=amendments,
+                                section=exact,kind='plan',cancelled=cancelled,amendments=amendments,memory_chat=request['chat_id'],
                                 stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                         assess(self.mixed_roadmaps,self.hierarchies,self.specifications,request,
                                ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,review_artifacts,
@@ -3322,12 +3351,20 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 from deepthort_local.recovery_council import reframe, select_source_section, append_guidance
                 from deepthort_local.reasoning_council import ReasoningCouncil
-                recovery_prompt=prompt
+                from deepthort_local.specification_guard import master_for_job
+                from deepthort_local.memory_governor import fit as fit_memory
+                master=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
+                stopped_memory=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(job)
+                memory=self._governed_memory(master,job['project'],job['chat_id'],f'repair-{jobid}',
+                    cycle['diagnostic']+' '+' '.join(candidates),'repair',job_id=jobid,
+                    cancelled=stopped_memory,stage=lambda message:self.events.put(('log',message)),
+                    budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
+                recovery_prompt=prompt+fit_memory(memory,MAX_INFERENCE_PROMPT-len(prompt))
                 try:
                     if not self.disk_gate.gaming():
                         excluded=self.inspection_exclusions.paths(job['project'])
                         stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
-                        budget=min(1000,MAX_INFERENCE_PROMPT-len(prompt)-300)
+                        budget=min(1000,MAX_INFERENCE_PROMPT-len(recovery_prompt)-300)
                         if budget>=160:
                             self.repository_index.refresh(job['project'],exclude=excluded,cancelled=stopped)
                             recovery_prompt+=self.repository_index.context(job['project'],cycle['diagnostic'],
@@ -3359,7 +3396,7 @@ class DeepThorTDesktop(tk.Tk):
                     except (ValueError,OSError) as error:
                         self.events.put(('log','Agent repository investigation unavailable: '+str(error)[:160]))
                     try:
-                        original=job['prompt']
+                        original=master
                         focus=cycle['diagnostic']+' '+ ' '.join(candidates)
                         source=select_source_section(original,focus)
                         observed='\n'.join(path+':\n'+code for path,code in candidates.items())
@@ -3368,7 +3405,7 @@ class DeepThorTDesktop(tk.Tk):
                             source_section=source,focus='Repair failed approved verification',
                             observed=observed,feedback=cycle['diagnostic'],revision=cycle['repairs']+1,
                             stage=lambda text:self.events.put(('log',text)),
-                            cancelled=lambda:self._quitting or self.active_job!=jobid)
+                            cancelled=stopped_memory,memory=memory)
                         recovery_prompt=append_guidance(recovery_prompt,review,MAX_INFERENCE_PROMPT)
                         self.janus.recommend(evidence_key='repair-'+review['evidence_sha'][:40],
                             problem='Failed approved verification',proposal=review['janus'],origin='local_model')
@@ -3385,16 +3422,14 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.specification_guard import master_for_job
                 master=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
                 if self._superseded_build(job):return
-                memory=self.jobs.memory_context(job,master,cycle['diagnostic']+' '+' '.join(candidates),
-                    min(700,max(0,MAX_INFERENCE_PROMPT-len(recovery_prompt)-300)))
-                if memory:recovery_prompt+=memory
+                if stopped_memory():return
                 result=self.client.chat(job['chat_id'],recovery_prompt,max_tokens=768)
                 from deepthort_local.specification_amendments import root_request_for_job
                 amendments=self.conversations.amendment_history(root_request_for_job(job,self.conversations))
                 self._sentinel_alignment(master,job['project'],f'repair-{jobid}',
                     'Repair approved test failure: '+cycle['diagnostic'][:300],result,kind='repair',
-                    cancelled=lambda:self._quitting or self.active_job!=jobid,
-                    stage=lambda message:self.events.put(('log',message)),amendments=amendments,memory_job=job)
+                    cancelled=stopped_memory,
+                    stage=lambda message:self.events.put(('log',message)),amendments=amendments,memory_job=job,memory_override=memory)
                 self.events.put(('repair_answer',jobid,result,candidates))
             except Exception as exc:
                 record(STATE,'desktop','repair_model_error',level='ERROR',job_id=jobid,
@@ -3913,6 +3948,12 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.specification_amendments import root_request_for_job
                     amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
                     focus=step['path']+': '+step['description']
+                    stopped_memory=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j)
+                    from deepthort_local.memory_governor import fit as fit_memory
+                    step_memory=self._governed_memory(original,project,j['chat_id'],f'build-{jobid}-step-{step["id"]}',
+                        focus,'implementation',job_id=jobid,cancelled=stopped_memory,
+                        stage=lambda message:self.events.put(('log',message)))
+                    if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))
                     def guard(proposal,kind):
@@ -3921,7 +3962,7 @@ class DeepThorTDesktop(tk.Tk):
                             kind='behavior_test'
                         return self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
                             kind=kind,stage=lambda message:self.events.put(('log',message)),
-                            cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j),amendments=amendments,memory_job=j)
+                            cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory)
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
                     from deepthort_local.artifact_types import require_text_target
@@ -3978,6 +4019,7 @@ class DeepThorTDesktop(tk.Tk):
                         if amendments:
                             extra=revision_context(original,amendments,focus,max_chars=750)
                             if extra:scope+='\n'+extra
+                        scope+=fit_memory(step_memory,max(0,2600-len(scope)))
                         if research_guidance and len(scope)+len(research_guidance)+2<=2600:
                             scope+='\n\n'+research_guidance
                         def ask_advisor():
@@ -4010,7 +4052,7 @@ class DeepThorTDesktop(tk.Tk):
                         return
                     try:
                         try:
-                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500)
+                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500-len(step_memory))
                         except PlanError:
                             request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
                     except PlanError:
@@ -4023,6 +4065,7 @@ class DeepThorTDesktop(tk.Tk):
                         if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
                             raise PlanError('Behavior test context exceeds bound; split the approved test file')
                         request+=extra
+                    request+=fit_memory(step_memory,max(0,MAX_INFERENCE_PROMPT-len(request)))
                     from deepthort_local.repository_index import SUPPORTED_SUFFIXES
                     if dest.suffix.casefold() in SUPPORTED_SUFFIXES and not self.disk_gate.gaming():
                         try:
@@ -4054,9 +4097,6 @@ class DeepThorTDesktop(tk.Tk):
                                         finally:advisor.release()
                         except (ValueError,OSError) as error:
                             self.events.put(('log','Repository context unavailable: '+str(error)[:160]))
-                    memory=self.jobs.memory_context(j,original,focus,
-                        min(700,max(0,MAX_INFERENCE_PROMPT-len(request)-300)))
-                    if memory:request+=memory
                     def transform(answer):
                         if dest.suffix.casefold()=='.svg':
                             from deepthort_local.media_tools import standalone_svg

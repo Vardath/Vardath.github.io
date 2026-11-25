@@ -57,14 +57,17 @@ def plan(service,council,client,jobs,conversations,hierarchies,index,*,job_id,go
         revised=revision_context(original,amendments,goal,max_chars=900)
         if revised:source=original[:800]+'\n'+revised+'\n'+source[-700:]
     scope=job['prompt'][:800]
-    memory=jobs.memory_context(job,original,goal,500)
+    from .memory_governor import govern,fit
+    memory=govern(jobs,council,client,project=job['project'],chat_id=job['chat_id'],
+                  original=original,focus=goal,scope=f'mcp-job-{job_id}',phase='mcp_selection',
+                  job_id=job_id,budget=500,cancelled=cancelled,stage=stage)
     context=(source+'\nAPPROVED JOB SCOPE (excerpt): '+scope+'\nFOCUSED OBJECTIVE: '+goal+
              '\nHISTORICAL TOOL OFFERS (names/types only; not proof of behavior): '+json.dumps(offered,ensure_ascii=True))
     prompt=('JANUS: choose one offered MCP tool for the objective, or return {"choice":0,"arguments":{},"reason":"no suitable tool"}. '
             'Return only JSON with choice (integer offered ID), arguments (object), reason (short explanation). '
             'Use only declared scalar fields; do not invent paths or facts, do not claim execution. '
             'The user must separately authorize the exact call. If uncertain, choose 0.\n'+context)
-    if memory and len(prompt)+len(memory)<=6500:prompt+=memory
+    prompt+=fit(memory,max(0,6500-len(prompt)))
     if len(prompt)>7000:raise ValueError('MCP planning context too large')
     session=f'mcp-job-{job_id}'
     answer=council._run(client,role='JANUS_MCP_SELECTION',session=session,evidence_sha=sha(prompt),
@@ -100,6 +103,7 @@ def plan(service,council,client,jobs,conversations,hierarchies,index,*,job_id,go
                    'Return one JSON object with verdict ACCEPT or REJECT and a nonempty concise reason. '
                    'Acceptance is advice only; no permission or runtime proof.\n'+source+
                    '\nJOB SCOPE: '+scope+'\nOBJECTIVE: '+goal+'\nEXACT PROPOSAL: '+candidate)
+    review_prompt+=fit(memory,max(0,7000-len(review_prompt)))
     if len(review_prompt)>7000:raise ValueError('MCP review context too large')
     check()
     verdict=council._run(client,role='SENTINEL_MCP_REVIEW',session=session,evidence_sha=sha(review_prompt),

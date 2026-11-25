@@ -1,15 +1,15 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-supervised-mcp-v20",
-  "title": "Triad V20: supervised local stdio discovery and cleanup",
+  "id": "triad-governed-memory-v21",
+  "title": "Triad V21: mandatory scoped memory retrieval and Sentinel relevance review",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "task_memory",
+    "memory_governance",
     "portable_skills",
     "portable_procedures",
-    "local_mcp",
     "mcp_calls",
     "task_mcp",
     "mcp_stdio"

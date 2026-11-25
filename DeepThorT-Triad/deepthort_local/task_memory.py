@@ -106,6 +106,11 @@ def render(path,job_id):
             notes=db.execute('SELECT id,stamp,role,focus,spec_sha,evidence_sha,note FROM task_memory_notes WHERE job_id=? ORDER BY id DESC LIMIT ?',(job_id,MAX_NOTES)).fetchall()
             total_events=db.execute('SELECT count(*) FROM job_events WHERE job_id=?',(job_id,)).fetchone()[0]
             total_notes=db.execute('SELECT count(*) FROM task_memory_notes WHERE job_id=?',(job_id,)).fetchone()[0]
+            reviews=[]
+            if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='task_memory_reviews'").fetchone():
+                reviews=db.execute("""SELECT id,stamp,phase,spec_sha,status,candidate_count,selected,review_sha
+                    FROM task_memory_reviews WHERE job_id=? AND project=? AND chat_id=?
+                    ORDER BY id DESC LIMIT 60""",(job_id,job['project'],job['chat_id'])).fetchall()
         finally:db.close()
         folder,name=_name(job)
         root=Path(path).parent/'task-journals'/folder
@@ -136,6 +141,9 @@ def render(path,job_id):
         lines.extend(['','## Task MCP receipts (historical server observations; no runtime proof)'])
         for observation in mcp_observations(path,job_id,job['project'],job['chat_id']):
             lines.append('- '+json.dumps(observation,ensure_ascii=True,sort_keys=True))
+        lines.extend(['','## Sentinel memory relevance decisions (historical; no execution authority)'])
+        for review in reversed(reviews):
+            lines.append('- '+json.dumps(dict(review),ensure_ascii=True,sort_keys=True))
         return write_journal(dest,lines)
 
 def write_journal(dest,lines):

@@ -1,3 +1,9 @@
+# Triad V21 — memory-first checkpoint
+
+The owner approved Sentinel-governed memory as an architectural dependency. Install over V20; run ten checks. The common memory governor retrieves same project/chat/exact specification history, asks Sentinel to select relevant record IDs, persists selection receipts and supplies bounded original records to normal draft planning, implementation/staged source, repair, task MCP and related reviews. Empty/invalid/budget-deferred selections are recorded; historical data is not authority. V22 must cover remaining consequential operations, including verification dispatch, workflow acquisition and indexed long-spec planning, with source freshness and safe cross-revision review. Then improve search, consolidation and context compaction before resuming MCP. Scripted selection test is not live inference proof. Three models and 40% cap remain unchanged.
+
+---
+
 # Triad V20 checkpoint
 
 V19 local 9/9 passed. V20 adds supervised one-shot stdio discovery through Local MCP > STDIO. Use an installed trusted executable and explicit argument array. Separate 256 MiB nested ceiling is inside the same 40% root job. No automatic installations or stdio calls yet. Run ten acceptance checks, then extend invocation, supervised lifecycle and app adapters. Preserve current models and original DeepThorT.
