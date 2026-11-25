@@ -1,6 +1,6 @@
 import unittest
 from deepthort_local.memory_governor import parse_selection,parse_challenge,fit,HEADER,govern,retrieve,evidence_eligible
-from deepthort_local.memory_governor_probe import exercise
+from deepthort_local.memory_governor_probe import exercise,exercise_indexed
 class MemoryGovernorTests(unittest.TestCase):
     def test_integration(self):
         result=exercise();self.assertEqual(result['status'],'passed',result)
@@ -84,3 +84,6 @@ class MemoryGovernorTests(unittest.TestCase):
         self.assertTrue(evidence_eligible(dict(kind='historical_sentinel',observation='Rejected: mismatched source')))
         for kind in ('historical_verification','historical_queue_state','historical_repository_receipt','historical_mcp_receipt'):
             self.assertTrue(evidence_eligible(dict(kind=kind,observation='Historical observation')))
+
+    def test_indexed_planning_memory(self):
+        result=exercise_indexed();self.assertEqual(result['status'],'passed',result)

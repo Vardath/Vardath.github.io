@@ -63,4 +63,69 @@ def exercise():
             states={r[0] for r in db.execute('SELECT status FROM task_memory_reviews')}
         if not {'reviewed','invalid_selection_withheld','no_relevant_records'}<=states:
             raise ValueError('Missing durable memory review outcomes')
-        return {'status':'passed','detail':'Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        indexed=exercise_indexed()
+        if indexed['status']!='passed':raise ValueError('Indexed recall failed')
+        return {'status':'passed','detail':'Indexed section recall and cancellation passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+
+
+def exercise_indexed():
+    """Real indexed source + governed historical store, scripted neural roles."""
+    from .specification_library import SpecificationIndex,generate_indexed_plan
+    from .agent_plan import PlanError
+    with tempfile.TemporaryDirectory(prefix='triad-indexed-memory-') as folder:
+        root=Path(folder);project=root/'workspace';project.mkdir()
+        original=('Component alpha persistence. Preserve alpha records. '+'a'*2900+'\n'
+                  'Component beta rendering. Preserve beta layout. '+'b'*2900+'\n')
+        jobs=JobStore(root/'jobs.sqlite3')
+        old=jobs.submit(str(project),'chat','plan',original)
+        jobs.remember(old,'verification','alpha persistence',sha(original),sha('alpha'),
+                      'Alpha persistence regression: preserve stored alpha records.')
+        jobs.remember(old,'verification','beta rendering',sha(original),sha('beta'),
+                      'Beta rendering regression: preserve beta layout.')
+        index=SpecificationIndex(root/'spec.sqlite3')
+        council=ReasoningCouncil(root/'council.sqlite3')
+        callbacks=[];clients=[]
+        class Planner:
+            def __init__(self):self.prompts=[]
+            def chat(self,session,prompt,max_tokens):
+                self.prompts.append(prompt)
+                n=len(self.prompts)
+                return json.dumps({'files':[{'path':f'src/component{n}.py','description':f'Implement component {n}'}]})
+        def recall(row,budget):
+            focus=row['text'][:500]
+            lookup=dict(project=str(project),chat_id='chat',original=original,focus=focus)
+            candidates=retrieve(jobs.path,**lookup)
+            if len(candidates)!=1:raise ValueError('Indexed memory focus not isolated')
+            client=FixtureClient([candidates[0]['id']]);clients.append(client)
+            callbacks.append(row.copy())
+            return govern(jobs,council,client,**lookup,scope=f'indexed-{row["ordinal"]}-{row["attempts"]}',
+                          phase='indexed_section_planning',section=row['text'],budget=budget)
+        planner=Planner()
+        generate_indexed_plan(planner,index,1,'indexed',original,project,chat_id='chat',memory_provider=recall)
+        if len(callbacks)!=2 or len(planner.prompts)!=2:raise ValueError('Indexed section recall not executed twice')
+        for i,(row,prompt,client) in enumerate(zip(callbacks,planner.prompts,clients)):
+            required=('Alpha persistence regression' if i==0 else 'Beta rendering regression')
+            unrelated=('Beta rendering regression' if i==0 else 'Alpha persistence regression')
+            if row['text'] not in prompt or required not in prompt or unrelated in prompt or len(prompt)>7500:
+                raise ValueError('Indexed generation lost exact requirements or received wrong memory')
+            if len(client.calls)!=2:raise ValueError('Indexed memory not reviewed twice by Sentinel')
+        if index.status(1,original)['pending']:raise ValueError('Indexed coverage incomplete')
+        with jobs._conn() as db:
+            if db.execute('SELECT count(*) FROM jobs').fetchone()[0]!=1:
+                raise ValueError('Indexed recall created an unauthorized task')
+            if db.execute("SELECT count(*) FROM task_memory_reviews WHERE phase='indexed_section_planning' AND status='reviewed'").fetchone()[0]!=2:
+                raise ValueError('Indexed recall missing audit receipts')
+        # Cancellation while recalling must stop before the planner gets input.
+        stopped=[False]
+        def cancel_recall(row,budget):
+            stopped[0]=True
+            return ''
+        cancelled=Planner()
+        try:
+            generate_indexed_plan(cancelled,index,2,'cancel',original,project,
+                memory_provider=cancel_recall,cancelled=lambda:stopped[0])
+        except PlanError:pass
+        else:raise ValueError('Indexed recall cancellation not honored')
+        if cancelled.prompts or index.status(2,original)['reviewed']:
+            raise ValueError('Cancelled indexed review advanced')
+        return {'status':'passed','detail':'Indexed sections preserved exact source and received only section-relevant governed memory; cancellation and durable review receipts passed (scripted roles).'}

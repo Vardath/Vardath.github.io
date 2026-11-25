@@ -572,7 +572,7 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
                           stage=None, cancelled=None, hierarchy=None, chat_id: str = '',
                           continuous: bool = False,
                           neural_council: bool = False, inspected_evidence: str = '',
-                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=(), amendments=()) -> tuple[str,list[dict]]:
+                          guidance_getter=None, checkpoint=None, council_provider=None, geometry_report=None, reviewer=None, prior_steps=(), amendments=(), memory_provider=None) -> tuple[str,list[dict]]:
     """Consume exact sections; never substitute partial coverage for full approval.
 
     Each invocation remains bounded; successful sections resume from SQLite on
@@ -641,6 +641,15 @@ def generate_indexed_plan(client, index: SpecificationIndex, request_id: int, se
         exchange=f'{session}-spec-{row["ordinal"]}-{row["attempts"]}'
         if checkpoint:
             prompt, instruction = checkpoint.attach(prompt, 7500)
+        if memory_provider:
+            # Exact section and newest user instructions take precedence.
+            # Recall runs even with no remaining room, recording deferral.
+            from .memory_governor import fit
+            budget=min(600,max(0,7500-len(prompt)))
+            recalled=memory_provider(row,budget)
+            if cancelled and cancelled():
+                raise PlanError('Planning stopped during memory review; indexed specification remains saved')
+            prompt+=fit(recalled,budget)
         lookup=getattr(client,'completed_exchange',None)
         response=lookup(exchange,prompt) if callable(lookup) else None
         if response is None:

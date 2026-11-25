@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V22: live Sentinel relevance and expanded memory governance",
+  "title": "Triad V22.6: live Sentinel relevance and indexed planning memory governance",
   "checks": [
     "shared_cap",
     "triad_residency",
