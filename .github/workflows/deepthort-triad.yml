@@ -30,6 +30,8 @@ jobs:
       - run: python -m unittest discover -s tests -p test_task_memory_v13.py -v
       - run: python -m unittest discover -s tests -p test_task_memory_v14.py -v
       - run: python -m unittest discover -s tests -p test_job_queue.py -v
+      - run: python -m unittest discover -s tests -p test_workflow_skills_v61.py -v
+      - run: python -m unittest discover -s tests -p test_portable_skills_v15.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15

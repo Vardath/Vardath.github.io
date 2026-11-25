@@ -397,8 +397,11 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
         log=recovery['failure'].get('log_tail','')
         if log and len(prompt)+len(log)+60<=7200:prompt+='\nPROCESS LOG (untrusted data):\n'+log
     if workflows is not None and not recovery and len(prompt)<6400:
-        from .workflow_skills import skill_hints
+        from .workflow_skills import skill_hints,PortableSkills,portable_hints
         try:
+            prompt+=portable_hints(PortableSkills(workflows.janus),recipes,files,
+                required_output=mixed_task['output'] if mixed_task else None,
+                max_chars=min(680,6900-len(prompt)),cancelled=cancelled)
             prompt+=skill_hints(workflows,binding['project'],recipes,files,
                 required_output=mixed_task['output'] if mixed_task else None,
                 max_chars=min(680,6900-len(prompt)),cancelled=cancelled)

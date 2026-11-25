@@ -112,3 +112,132 @@ def skill_hints(workflows, project, recipes, files, *, required_output=None,
     if not hints:
         return ''
     return header+json.dumps(hints,ensure_ascii=True,separators=(',',':'))
+
+
+PORTABLE_SCHEMA='deepthort-portable-workflow-skill-v1'
+MAX_PORTABLE=128
+
+def validate_portable(skill):
+    if not isinstance(skill,dict) or set(skill)!={'schema','version','source_version','stages'} or skill['schema']!=PORTABLE_SCHEMA:
+        raise ValueError('Invalid portable skill manifest')
+    for key in ('version','source_version'):
+        if not isinstance(skill[key],str) or not re.fullmatch(r'[a-f0-9]{64}',skill[key]):
+            raise ValueError('Invalid skill fingerprint')
+    stages=skill['stages']
+    if not isinstance(stages,list) or not 1<=len(stages)<=MAX_STAGES:
+        raise ValueError('Invalid portable stage count')
+    for i,stage in enumerate(stages,1):
+        if not isinstance(stage,dict) or set(stage)!={'tool','input_format','output_format','from_stage'}:
+            raise ValueError('Invalid portable stage fields')
+        if not isinstance(stage['tool'],str) or not re.fullmatch(r'[A-Za-z0-9 ._+()-]{1,60}',stage['tool']):
+            raise ValueError('Invalid portable tool')
+        for key in ('input_format','output_format'):
+            if not isinstance(stage[key],str) or not re.fullmatch(r'[a-z0-9]{1,20}',stage[key]):
+                raise ValueError('Invalid portable format')
+        predecessor=stage['from_stage']
+        if stage['output_format']=='none' or (predecessor is not None and
+            (type(predecessor) is not int or not 1<=predecessor<i or
+             stage['input_format']!=stages[predecessor-1]['output_format'])):
+            raise ValueError('Invalid portable dependency')
+    body={k:v for k,v in skill.items() if k!='version'}
+    if digest(body)!=skill['version']:raise ValueError('Portable skill integrity mismatch')
+    return skill
+
+class PortableSkills:
+    """Explicit local sharing of checked shapes, not command or permission export."""
+    def __init__(self,janus):
+        self.janus=janus
+        with janus.connect() as db:
+            db.execute("""CREATE TABLE IF NOT EXISTS portable_workflow_skills(
+                version TEXT PRIMARY KEY, payload TEXT NOT NULL,
+                published TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)""")
+    def publish(self,workflows,run,project,*,user_approved=False,cancelled=None):
+        if user_approved is not True:raise PermissionError('Explicit skill sharing required')
+        source=checked_skill(workflows,run,project,cancelled=cancelled)
+        body={'schema':PORTABLE_SCHEMA,'source_version':source['version'],'stages':source['stages']}
+        skill=validate_portable({**body,'version':digest(body)})
+        with self.janus.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if db.execute('SELECT 1 FROM portable_workflow_skills WHERE version=?',(skill['version'],)).fetchone():
+                return skill
+            if db.execute('SELECT count(*) FROM portable_workflow_skills').fetchone()[0]>=MAX_PORTABLE:
+                raise ValueError('Portable skill library full; remove an old pattern')
+            db.execute('INSERT INTO portable_workflow_skills(version,payload) VALUES(?,?)',
+                       (skill['version'],json.dumps(skill,sort_keys=True)))
+        return skill
+    def list(self):
+        with self.janus.connect() as db:
+            rows=db.execute('SELECT version,payload FROM portable_workflow_skills ORDER BY published DESC,version LIMIT ?',(MAX_PORTABLE,)).fetchall()
+        result=[]
+        for version,payload in rows:
+            try:
+                if len(payload)>12000:continue
+                skill=validate_portable(json.loads(payload))
+                if version==skill['version']:result.append(skill)
+            except (ValueError,TypeError,KeyError):continue
+        return result
+    def remove(self,version,*,user_approved=False):
+        if user_approved is not True:raise PermissionError('Explicit removal required')
+        with self.janus.connect() as db:
+            return bool(db.execute('DELETE FROM portable_workflow_skills WHERE version=?',(version,)).rowcount)
+
+def rebind(skill,recipes,files,*,required_output=None,cancelled=None):
+    """Build at most one unambiguous candidate from CURRENT offered inventory.
+
+    No command execution, recipe mutation, file writes or approval. Ambiguous
+    input or recipe selections remain for JANUS; never guess.
+    """
+    stages=validate_portable(skill)['stages']
+    files=list(dict.fromkeys(files))
+    if len(recipes)>12 or len(files)>30:raise ValueError('Current inventory exceeds bound')
+    used=set();outputs=[];proposal=[]
+    for i,stage in enumerate(stages):
+        if cancelled and cancelled():return None
+        matches=[r for r in recipes if r['recipe_id'] not in used and
+                 r['tool']==stage['tool'] and _format(r['output'])==stage['output_format']
+                 and bool(r['input_required'])==(stage['input_format']!='none')
+                 and r['output'] not in files+outputs
+                 and (i!=len(stages)-1 or not required_output or r['output']==required_output)]
+        if len(matches)!=1:return None
+        recipe=matches[0]
+        if stage['from_stage'] is not None:
+            inp=outputs[stage['from_stage']-1]
+        elif stage['input_format']=='none':
+            inp=''
+        else:
+            inputs=[p for p in files if _format(p)==stage['input_format']]
+            if len(inputs)!=1:return None
+            inp=inputs[0]
+        if inp and _format(inp)!=stage['input_format']:return None
+        proposal.append({'recipe_id':recipe['recipe_id'],'input':inp})
+        used.add(recipe['recipe_id']);outputs.append(recipe['output'])
+    from .workflow_design import parse_draft
+    return parse_draft(json.dumps({'stages':proposal,'missing':[]}),recipes,files,continuation=len(stages)==1)
+
+def portable_hints(library,recipes,files,*,required_output=None,max_chars=680,cancelled=None):
+    if max_chars<120:return ''
+    header='\nSHARED HISTORICAL SKILLS (advisory; check current goal; no approval): '
+    hints=[];seen=set()
+    for skill in library.list()[:MAX_HISTORY]:
+        if cancelled and cancelled():return ''
+        try:
+            shape=skill['stages']
+            if required_output and shape[-1]['output_format']!=_format(required_output):continue
+            if not all(any(r['tool']==stage['tool'] and _format(r['output'])==stage['output_format']
+                and bool(r['input_required'])==(stage['input_format']!='none') for r in recipes)
+                and (stage['from_stage'] is not None or stage['input_format']=='none'
+                     or any(_format(p)==stage['input_format'] for p in files)) for stage in shape):continue
+            key=digest(shape)
+            if key in seen:continue
+            hint={'version':skill['version'][:16],'stages':shape}
+            rebound=rebind(skill,recipes,files,required_output=required_output,cancelled=cancelled)
+            if rebound:hint['candidate']=rebound['stages']
+            candidate=json.dumps(hints+[hint],ensure_ascii=True,separators=(',',':'))
+            if len(header)+len(candidate)>max_chars:
+                hint.pop('candidate',None)
+                candidate=json.dumps(hints+[hint],ensure_ascii=True,separators=(',',':'))
+                if len(header)+len(candidate)>max_chars:continue
+            hints.append(hint);seen.add(key)
+            if len(hints)>=MAX_HINTS:break
+        except (ValueError,OSError,TypeError,KeyError):continue
+    return header+json.dumps(hints,ensure_ascii=True,separators=(',',':')) if hints else ''

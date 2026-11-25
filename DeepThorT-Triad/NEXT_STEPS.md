@@ -1,3 +1,9 @@
+# Triad V15 — current checkpoint
+
+Install V15 over verified V14, run focused acceptance. Portable workflow patterns are explicitly shared through Hardware → Shared skills; they match current project recipe/input inventory, not old command lines. Next implement portable learned procedure templates and fresh parameter rebinding, then local MCP capability discovery and app adapters. Preserve V14 journals, original specification/approvals, native three-model CPU runtime and 40% cap.
+
+---
+
 # Triad V14 — current checkpoint
 
 Install the cumulative V14 update over V12.2 or V13; run the focused memory acceptance. Planning journals, tool receipts and named test evidence added to V13 task memory. Continue with portable typed workflow skills and parameter rebinding, richer scoped recall, MCP/app interoperability and Git-aware multi-file transactions. Preserve the tested three-model CPU runtime and 40% cap. Historical development notes follow.

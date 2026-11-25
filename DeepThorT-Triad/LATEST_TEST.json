@@ -1,11 +1,12 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-task-memory-v14",
-  "title": "Triad V14: task and planning journals with tool and test evidence",
+  "id": "triad-portable-skills-v15",
+  "title": "Triad V15: durable portable skills and current-project rebinding",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
-    "task_memory"
+    "task_memory",
+    "portable_skills"
   ]
 }

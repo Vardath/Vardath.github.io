@@ -578,6 +578,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Run learned procedure…',command=self._run_learned_procedure).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Shared skills…',command=self._portable_skill_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Asset import check…',command=self._asset_import_check).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
@@ -922,9 +923,12 @@ class DeepThorTDesktop(tk.Tk):
         def task_memory_probe():
             from deepthort_local.task_memory_probe import exercise
             return exercise()
+        def portable_skills_probe():
+            from deepthort_local.portable_skills_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe}
 
         def worker():
             try:
@@ -5264,6 +5268,47 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Asset import check queued as JANUS process #{action}; use Asset import check to review result.')
         except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
             messagebox.showwarning('Asset import check unavailable',str(error),parent=self)
+
+    def _portable_skill_dialog(self):
+        from deepthort_local.workflow_skills import PortableSkills
+        try:
+            library=PortableSkills(self.janus)
+            shared=library.list()
+            summary='\n'.join(s['version'][:16]+'  '+ ' -> '.join(x['tool']+' ('+x['output_format']+')' for x in s['stages'])
+                              for s in shared[:30]) or 'No shared skills yet.'
+            choice=simpledialog.askstring('Shared workflow skills',
+                summary+'\n\nEnter SHARE to publish a checked workflow from this project, or REMOVE to revoke a shared pattern.',parent=self)
+            if not choice:return
+            if choice.strip().upper()=='REMOVE':
+                prefix=simpledialog.askstring('Remove shared skill','Enter the displayed version prefix:',parent=self)
+                if not prefix:return
+                matches=[s for s in shared if s['version'].startswith(prefix.strip().lower())]
+                if len(matches)!=1:raise ValueError('Select one unique skill version')
+                if messagebox.askyesno('Remove shared pattern?','Remove future shared hints? Existing approved workflows are unchanged.',parent=self):
+                    library.remove(matches[0]['version'],user_approved=True)
+                return
+            if choice.strip().upper()!='SHARE' or not self.project:return
+            runs=[r for r in self.tool_workflows.list(self.project) if r['state']=='complete']
+            if not runs:raise ValueError('No completed workflows in this project')
+            ident=simpledialog.askinteger('Share checked workflow',
+                'Choose a completed workflow ID: '+', '.join(str(r['id']) for r in runs[:30]),parent=self,minvalue=1)
+            if ident is None:return
+            run=next((r for r in runs if r['id']==ident),None)
+            if not run:raise ValueError('Workflow not found in current completed inventory')
+            if self.disk_gate.gaming():raise ValueError('Wait until gaming is finished before checking receipts')
+            if not messagebox.askyesno('Share typed workflow pattern?',
+                'Recheck the completed workflow and share only tool names, file formats and dependency order with other local projects? No old paths, arguments, scripts or permissions are copied.',parent=self):return
+            project=str(self.project)
+            def publish():
+                try:
+                    skill=library.publish(self.tool_workflows,run,project,user_approved=True,
+                        cancelled=lambda:self._quitting or self.disk_gate.gaming())
+                    self.events.put(('log','Shared skill published: '+skill['version'][:16]))
+                except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
+                    self.events.put(('log','Shared skill not published: '+str(error)[:200]))
+            threading.Thread(target=publish,daemon=True,name='PortableSkillPublish').start()
+        except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
+            messagebox.showwarning('Shared skill unavailable',str(error),parent=self)
 
     def _tool_workflow_dialog(self):
         if not self.project:return
