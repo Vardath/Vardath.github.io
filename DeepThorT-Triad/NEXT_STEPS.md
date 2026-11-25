@@ -1,3 +1,9 @@
+# Triad V16 checkpoint
+
+Install over V15; run six focused checks. Shared procedures supports reviewed command-only templates derived from checked artifact receipts; fresh project output, input type and executable/help identity are validated. Next: local MCP capability discovery and typed application adapters; separately reviewed script portability and broader app operations remain pending. No change to models, runtime, cap or original DeepThorT.
+
+---
+
 # Triad V15 — current checkpoint
 
 Install V15 over verified V14, run focused acceptance. Portable workflow patterns are explicitly shared through Hardware → Shared skills; they match current project recipe/input inventory, not old command lines. Next implement portable learned procedure templates and fresh parameter rebinding, then local MCP capability discovery and app adapters. Preserve V14 journals, original specification/approvals, native three-model CPU runtime and 40% cap.

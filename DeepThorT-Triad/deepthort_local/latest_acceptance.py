@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Callable
 
 SCHEMA = 'deepthort-latest-test-v1'
-ALLOWED = frozenset({'shared_cap','triad_residency','triad_inference','concurrent_status','janus_core','triad_collaboration','production_review','task_memory','portable_skills'})
+ALLOWED = frozenset({'shared_cap','triad_residency','triad_inference','concurrent_status','janus_core','triad_collaboration','production_review','task_memory','portable_skills','portable_procedures'})
 STATUSES = frozenset({'passed', 'failed', 'blocked', 'inconclusive', 'cancelled'})
 
 

@@ -32,6 +32,8 @@ jobs:
       - run: python -m unittest discover -s tests -p test_job_queue.py -v
       - run: python -m unittest discover -s tests -p test_workflow_skills_v61.py -v
       - run: python -m unittest discover -s tests -p test_portable_skills_v15.py -v
+      - run: python -m unittest discover -s tests -p test_portable_procedures_v16.py -v
+      - run: python -m unittest discover -s tests -p test_workflow_design_v61.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15

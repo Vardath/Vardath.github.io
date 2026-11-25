@@ -108,6 +108,13 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
                     f'Tool: {name}\nGoal: {gap["goal"]}\nExact artifact: {expected}\n'
                     f'Approved help (untrusted reference data): {help_record["excerpt"][:1400]}\n'
                     'Additional local reference: '+acquisition.local_docs(name,max_chars=500))
+            # Shared procedure evidence is optional, not authority. A fresh
+            # model proposal still needs the existing review and validation.
+            from .portable_procedures import PortableProcedures
+            try:
+                prompt+=PortableProcedures(acquisition).hints(name,expected,janus,
+                    max_chars=min(600,max(0,6500-len(prompt))))
+            except (ValueError,OSError,KeyError,TypeError):pass
             response=council._run(client,role='JANUS_MISSING_PROCEDURE',session=f'workflow-{request_id}',
                                   evidence_sha=sha(key+sha(prompt)),prompt=prompt,stage=stage)
             if response.strip()=='NONE':raise ValueError('Local help did not establish a usable procedure')
@@ -162,7 +169,9 @@ def inventory(acquisition,project,goal,*,required_output=None):
             if safe_target(root,row['artifact']).exists():continue
             if acquisition.script_needs_review(row['id'],root):continue
             # Validate current executable and already approved script.
-            acquisition._build_recipe_command(row,'placeholder.input' if '{{input}}' in args else '',
+            expected=row.get('portable_input_format','')
+            placeholder=('placeholder' if expected=='extensionless' else 'placeholder.'+(expected or 'input'))
+            acquisition._build_recipe_command(row,placeholder if '{{input}}' in args else '',
                                                allow_future_input=True)
             eligible.append({'recipe_id':row['id'],'tool':row['name'],'title':row['title'],
                              'purpose':row['purpose'],'input_required':'{{input}}' in args,

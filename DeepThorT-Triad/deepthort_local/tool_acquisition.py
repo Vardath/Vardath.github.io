@@ -151,6 +151,7 @@ class ToolAcquisition:
                 ('script_sha', "TEXT NOT NULL DEFAULT ''"),
                 ('script_saved_sha', "TEXT NOT NULL DEFAULT ''"),
                 ('script_saved_at', 'TEXT'),
+                ('portable_input_format', "TEXT NOT NULL DEFAULT ''"),
             ):
                 if column not in cols:
                     db.execute(f'ALTER TABLE learned_recipes ADD COLUMN {column} {typ}')
@@ -407,13 +408,14 @@ class ToolAcquisition:
         if not req:raise ValueError('No saved learning request')
         return self._propose_recipe(req,raw)
 
-    def propose_recipe_for_goal(self,name,project,goal,raw):
+    def propose_recipe_for_goal(self,name,project,goal,raw,*,insert_only=False,portable_input_format=''):
         self.tool(name)
         root=Path(project).resolve(strict=True)
         if not root.is_dir() or not isinstance(goal,str) or not goal.strip():raise ValueError('Missing recipe goal')
-        return self._propose_recipe({'name':name,'project_root':str(root),'goal':goal},raw)
+        return self._propose_recipe({'name':name,'project_root':str(root),'goal':goal},raw,
+                                    insert_only=insert_only,portable_input_format=portable_input_format)
 
-    def _propose_recipe(self, req, raw):
+    def _propose_recipe(self, req, raw,*,insert_only=False,portable_input_format=''):
         if not isinstance(raw,str) or len(raw)>12_000:raise ValueError('Recipe response is invalid or oversized')
         try:
             obj=json.loads(raw.strip().removeprefix('```json').removesuffix('```').strip())
@@ -430,6 +432,10 @@ class ToolAcquisition:
         if not isinstance(artifact,str) or len(artifact)>320:
             raise ValueError('Invalid recipe output artifact')
         args=self._validate_args(obj['args'])
+        if portable_input_format and (not insert_only or
+            not re.fullmatch(r'[a-z0-9]{1,20}',portable_input_format) or
+            '{{input}}' not in args or portable_input_format=='none'):
+            raise ValueError('Invalid portable input format binding')
         script_path='';script_source='';script_sha=''
         if 'script' in obj:
             script=obj['script']
@@ -458,19 +464,24 @@ class ToolAcquisition:
                 raise ValueError('Output artifact must not overwrite the approved automation script')
         tool=self.tool(req['name'])
         with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if insert_only and db.execute('SELECT 1 FROM learned_recipes WHERE name=? AND project_key=? AND title=?',
+                (req['name'],_repo_key(req['project_root']),title.strip())).fetchone():
+                raise ValueError('A candidate with this title already exists; choose a new output')
             db.execute('''INSERT INTO learned_recipes(name,project_key,title,purpose,args_json,artifact,
-                executable_signature,project_root,script_path,script_source,script_sha)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?)
+                executable_signature,project_root,script_path,script_source,script_sha,portable_input_format)
+                VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
                 ON CONFLICT(name,project_key,title) DO UPDATE SET purpose=excluded.purpose,
                 args_json=excluded.args_json,artifact=excluded.artifact,
                 executable_signature=excluded.executable_signature,project_root=excluded.project_root,
                 script_path=excluded.script_path,script_source=excluded.script_source,
                 script_sha=excluded.script_sha,script_saved_sha='',script_saved_at=NULL,
+                portable_input_format=excluded.portable_input_format,
                 status='candidate',action_id=NULL,approved_argv=NULL,log_file=NULL,log_sha=NULL,
                 artifact_after=NULL,evidence_at=NULL''',
                 (req['name'],_repo_key(req['project_root']),title.strip(),purpose.strip(),
                  json.dumps(args),artifact,tool['executable_signature'],req['project_root'],
-                 script_path,script_source,script_sha))
+                 script_path,script_source,script_sha,portable_input_format))
             return int(db.execute('SELECT id FROM learned_recipes WHERE name=? AND project_key=? AND title=?',
                                   (req['name'],_repo_key(req['project_root']),title.strip())).fetchone()[0])
 
@@ -614,6 +625,10 @@ class ToolAcquisition:
                 output.append(str(safe_target(root,artifact,must_exist=False)))
             elif arg=='{{input}}':
                 if not input_file:raise ValueError('An input placeholder requires an existing selected file')
+                from .artifact_types import artifact_type
+                expected=row.get('portable_input_format','')
+                if expected and artifact_type(input_file)['format']!=expected:
+                    raise ValueError('Portable procedure input must retain its checked format: '+expected)
                 output.append(str(safe_target(root,input_file,must_exist=not allow_future_input)))
             elif arg=='{{script}}':
                 if script_file is None:raise ValueError('No approved generated script for this recipe')

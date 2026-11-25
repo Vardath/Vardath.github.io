@@ -579,6 +579,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(hwbar,text='Tool workflows…',command=self._tool_workflow_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='JANUS workflow…',command=self._design_tool_workflow).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Shared skills…',command=self._portable_skill_dialog).pack(side='left',padx=3)
+        ttk.Button(hwbar,text='Shared procedures…',command=self._portable_procedure_dialog).pack(side='left',padx=3)
         ttk.Button(hwbar,text='Asset import check…',command=self._asset_import_check).pack(side='left',padx=3)
         xr=ttk.Frame(hardware_tab);xr.pack(fill='x',pady=(4,4))
         ttk.Button(xr,text='Inspect X4 sources',command=self._inspect_x4_sources).pack(side='left',padx=3)
@@ -926,9 +927,12 @@ class DeepThorTDesktop(tk.Tk):
         def portable_skills_probe():
             from deepthort_local.portable_skills_probe import exercise
             return exercise()
+        def portable_procedures_probe():
+            from deepthort_local.portable_procedures_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe}
 
         def worker():
             try:
@@ -5268,6 +5272,51 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Asset import check queued as JANUS process #{action}; use Asset import check to review result.')
         except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
             messagebox.showwarning('Asset import check unavailable',str(error),parent=self)
+
+    def _portable_procedure_dialog(self):
+        from deepthort_local.portable_procedures import PortableProcedures
+        try:
+            if self.disk_gate.gaming():raise ValueError('Wait until gaming finishes before checking tool evidence')
+            library=PortableProcedures(self.tool_learning)
+            rows=library.list()
+            summary='\n'.join(r['version'][:12]+' '+r['tool']+' '+r['input_format']+' -> '+r['output_format'] for r in rows[:20]) or 'No shared procedures.'
+            choice=simpledialog.askstring('Shared procedures',summary+'\n\nEnter SHARE, BIND or REMOVE.',parent=self)
+            if not choice:return
+            choice=choice.strip().upper()
+            if choice=='SHARE':
+                if not self.project:raise ValueError('Select the source project')
+                recipes=[r for r in self.tool_learning.recipes(self.project) if r['action_id'] and not r['script_path']]
+                ident=simpledialog.askinteger('Select completed command',
+                    '\n'.join(str(r['id'])+' '+r['name']+': '+r['title'] for r in recipes[:20])+'\nRecipe ID:',parent=self,minvalue=1)
+                if ident is None:return
+                if ident not in [r['id'] for r in recipes]:raise ValueError('Select a current executed recipe')
+                row=library.preview(ident,self.project,self.janus)
+                if messagebox.askyesno('Share exact template?',
+                    json.dumps(row['args'],ensure_ascii=False)+'\n\n'+row['input_format']+' -> '+row['output_format']
+                    +'\nShare these literal arguments locally only if they contain no private information. No execution approval is shared.',parent=self):
+                    library.publish(ident,self.project,self.janus,expected_version=row['version'],user_approved=True)
+                    self._log('Portable procedure published: '+row['version'][:12])
+                return
+            if choice not in ('BIND','REMOVE'):return
+            prefix=simpledialog.askstring('Shared procedure','Enter the displayed version prefix:',parent=self)
+            if not prefix:return
+            matches=[r for r in rows if r['version'].startswith(prefix.strip().lower())]
+            if len(matches)!=1:raise ValueError('Select one unique shared procedure')
+            row=matches[0]
+            if choice=='REMOVE':
+                if messagebox.askyesno('Remove shared procedure?','Remove future sharing; existing candidates remain unchanged.',parent=self):
+                    library.remove(row['version'],user_approved=True)
+                return
+            if not self.project:raise ValueError('Select the destination project')
+            output=simpledialog.askstring('Bind new output','Enter a new project-relative .'+row['output_format']+' output:',parent=self)
+            if not output:return
+            if messagebox.askyesno('Create unverified recipe candidate?',
+                json.dumps(row['args'],ensure_ascii=False)+'\nOutput: '+output+
+                '\nInput format: '+row['input_format']+'\nNo execution is approved. Review the candidate through Run learned procedure.',parent=self):
+                ident=library.bind(row['version'],self.project,output,self.janus,user_approved=True)
+                self._log(f'Shared procedure rebound as unverified candidate #{ident}.')
+        except (ValueError,OSError,KeyError,TypeError,PermissionError) as error:
+            messagebox.showwarning('Shared procedure unavailable',str(error),parent=self)
 
     def _portable_skill_dialog(self):
         from deepthort_local.workflow_skills import PortableSkills

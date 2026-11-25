@@ -1,12 +1,13 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-portable-skills-v15",
-  "title": "Triad V15: durable portable skills and current-project rebinding",
+  "id": "triad-portable-procedures-v16",
+  "title": "Triad V16: reusable verified command templates and fresh candidate binding",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "task_memory",
-    "portable_skills"
+    "portable_skills",
+    "portable_procedures"
   ]
 }
