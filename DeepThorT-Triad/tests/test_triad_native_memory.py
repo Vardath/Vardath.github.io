@@ -85,3 +85,15 @@ class NativeMemoryTests(unittest.TestCase):
         with patch.object(cap.os,'name','nt'),patch.object(cap.ctypes,'WinDLL',return_value=k,create=True):
             cap.suppress_native_error_dialogs()
         k.SetErrorMode.assert_called_once_with(0x8013)
+
+    def test_probe_never_enumerates_gpu_devices(self):
+        import inspect
+        from triad_openvino_worker import probe
+        import ast
+        tree=ast.parse(inspect.getsource(probe))
+        self.assertFalse(any(isinstance(n,ast.Attribute) and n.attr in ('available_devices','get_available_devices')
+                             for n in ast.walk(tree)))
+        self.assertTrue(any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute)
+                           and n.func.attr=='compile_model' and len(n.args)>1
+                           and isinstance(n.args[1],ast.Constant) and n.args[1].value=='CPU'
+                           for n in ast.walk(tree)))

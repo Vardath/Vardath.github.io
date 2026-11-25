@@ -21,7 +21,10 @@ def probe():
     import numpy as np
     if version('openvino-genai')!=RUNTIME_VERSION:raise RuntimeError('Incorrect installed OpenVINO GenAI version')
     core=ov.Core()
-    if 'CPU' not in core.available_devices:raise RuntimeError('OpenVINO CPU device missing')
+    # available_devices probes every registered plugin, including Intel GPU.
+    # On this Windows machine its OpenCL loader is incompatible. Ask for CPU
+    # explicitly instead; actual CPU compilation below proves availability.
+    core.get_property('CPU','FULL_DEVICE_NAME')
     x=ov.opset13.parameter([1],ov.Type.f32)
     graph=ov.Model([ov.opset13.add(x,x)],[x])
     compiled=core.compile_model(graph,'CPU',{'INFERENCE_NUM_THREADS':1,'NUM_STREAMS':1})
