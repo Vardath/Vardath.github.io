@@ -34,6 +34,27 @@ class CollaborationTests(unittest.TestCase):
             answers=iter(replies)
             result=collaboration(health,lambda *args:json.dumps(next(answers)),100,threading.Event())
             self.assertEqual(result["status"],"failed")
+    def test_review_evidence_distinguishes_semantics_and_format(self):
+        replies=iter([json.dumps(EXPECTED),json.dumps({"verdict":"reject","fields":["owner"]})])
+        result=collaboration(health,lambda *a:next(replies),100,threading.Event())
+        self.assertEqual(result["status"],"failed")
+        review=result["evidence"]["collaboration_stages"]["reject_defect"]
+        self.assertEqual(review["reported_fields"],["owner"])
+        self.assertEqual(review["verdict"],"reject")
+        self.assertTrue(review["valid_review_shape"])
+        replies=iter([json.dumps(EXPECTED),"not JSON"])
+        result=collaboration(health,lambda *a:next(replies),100,threading.Event())
+        review=result["evidence"]["collaboration_stages"]["reject_defect"]
+        self.assertEqual(review["reason"],"invalid structured reply")
+        self.assertNotIn("not JSON",json.dumps(result))
+    def test_unknown_model_text_not_exported(self):
+        replies=iter([json.dumps(EXPECTED),json.dumps({"verdict":"private text","fields":["owner","private text"]})])
+        result=collaboration(health,lambda *a:next(replies),100,threading.Event())
+        review=result["evidence"]["collaboration_stages"]["reject_defect"]
+        self.assertEqual(review["reported_fields"],["owner"])
+        self.assertEqual(review["verdict"],"invalid")
+        self.assertFalse(review["valid_review_shape"])
+        self.assertNotIn("private text",json.dumps(result))
     def test_duplicate_keys_rejected(self):
         with self.assertRaises(ValueError):decode('{"speed":360,"speed":480}')
     def test_cancelled_and_serial_do_not_pass(self):

@@ -36,6 +36,17 @@ def review_ok(obj,verdict,fields):
             and isinstance(obj["fields"],list) and all(isinstance(x,str) for x in obj["fields"])
             and len(obj["fields"])==len(fields) and set(obj["fields"])==set(fields))
 
+def review_evidence(obj):
+    # Export only known field labels and enumerated verdicts, never model prose.
+    verdict=obj.get("verdict")
+    fields=obj.get("fields")
+    return {"verdict":verdict if verdict in ("accept","reject") else "invalid",
+            "reported_fields":sorted({x for x in fields if isinstance(x,str) and x in EXPECTED})
+                if isinstance(fields,list) else [],
+            "field_count":len(fields) if isinstance(fields,list) else None,
+            "valid_review_shape":set(obj)=={"verdict","fields"} and
+                isinstance(fields,list) and all(isinstance(x,str) and x in EXPECTED for x in fields)}
+
 def collaboration(health,ask,pid,cancelled,notify=None):
     stages={}
     def finish(status,detail,artifact=None):
@@ -55,10 +66,19 @@ def collaboration(health,ask,pid,cancelled,notify=None):
         try:
             current=health();resident_roles(current,pid)
             if current.get("serial_memory_mode") is not False:return "blocked",None
-            obj=decode(ask(role,prompt,tokens))
+            raw=ask(role,prompt,tokens)
             if cancelled.is_set():return "cancelled",None
-            stages[stage]={"role":role,"status":"passed" if validator(obj) else "failed"}
-            return stages[stage]["status"],obj
+            try:obj=decode(raw)
+            except (ValueError,TypeError):
+                stages[stage]={"role":role,"status":"failed","reason":"invalid structured reply",
+                    "response_chars":len(raw) if isinstance(raw,str) else None}
+                return "failed",None
+            entry={"role":role,"status":"passed" if validator(obj) else "failed"}
+            if stage in ("reject_defect","verify_repair"):
+                entry.update(review_evidence(obj))
+                if entry["status"]=="failed":entry["reason"]="review did not match independent validator"
+            stages[stage]=entry
+            return entry["status"],obj
         except (ValueError,TypeError,KeyError):
             stages[stage]={"role":role,"status":"failed","reason":"invalid structured reply"}
             return "failed",None
@@ -67,12 +87,19 @@ def collaboration(health,ask,pid,cancelled,notify=None):
             return "blocked",None
     status,plan=call("plan","janus",SPEC+" Return JSON only: an object of the five required final field values. Calculate the amended speed.",160,correct_manifest)
     if status!="passed":return finish(status,"JANUS plan did not satisfy amended specification")
-    review_instruction=' Return JSON only with verdict "reject" or "accept", and fields: an array of every incorrect field name, empty if correct.'
-    status,review=call("reject_defect","sentinel",SPEC+" Review this candidate independently: "+json.dumps(BAD)+review_instruction,128,lambda x:review_ok(x,"reject",{"speed","owner"}))
+    review_instruction=(
+        ' Act as an independent auditor, not a repair author. Apply the later amendment before reviewing. '
+        'Calculate the required speed from the base speed and current multiplier. '
+        'Compare each candidate field separately against the requirements: id, speed, owner, cargo, crew. '
+        'If any field differs, reject; if all match, accept. Report ALL mismatching field names, '
+        'not their values, and do not list correct fields. '
+        'Return exactly one JSON object, with keys "verdict" (string "reject" or "accept") '
+        'and "fields" (array of field-name strings, empty when all match). No explanation or extra keys.')
+    status,review=call("reject_defect","sentinel",SPEC+" Review this candidate independently: "+json.dumps(BAD)+review_instruction,192,lambda x:review_ok(x,"reject",{"speed","owner"}))
     if status!="passed":return finish(status,"Sentinel did not independently reject both seeded defects")
     status,artifact=call("repair","implementation",SPEC+" Defective candidate: "+json.dumps(BAD)+" JANUS plan: "+json.dumps(plan)+" Sentinel review: "+json.dumps(review)+" Repair it. Return the final five-key JSON object only.",160,correct_manifest)
     if status!="passed":return finish(status,"Implementation repair failed independent manifest validation")
-    status,_=call("verify_repair","sentinel",SPEC+" Review this repaired candidate independently: "+json.dumps(artifact)+review_instruction,128,lambda x:review_ok(x,"accept",set()))
+    status,_=call("verify_repair","sentinel",SPEC+" Review this repaired candidate independently: "+json.dumps(artifact)+review_instruction,192,lambda x:review_ok(x,"accept",set()))
     if status!="passed":return finish(status,"Sentinel did not verify the independently valid repair",artifact)
     try:
         final=health();end_models=resident_roles(final,pid)

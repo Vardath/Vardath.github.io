@@ -718,7 +718,8 @@ class DeepThorTDesktop(tk.Tk):
                    'sentinel_pid':self.sentinel_process.pid if self.sentinel_process and self.sentinel_process.poll() is None else None,
                    'loading_stage':self.current_loading_stage, 'last_ai_error':self.last_ai_error,
                    'active_conversation':self.active_conversation,
-                   'pending_conversations':len([x for x in self.conversations.thread(self.current_chat) if x['state']=='pending'])}
+                   'pending_conversations':len([x for x in self.conversations.thread(self.current_chat) if x['state']=='pending']),
+                   'latest_acceptance':self._latest_test_last}
             record(STATE,'desktop','diagnostics_export_requested')
             exported=export_diagnostics(STATE,Path(dest),app_root=ROOT,app_state=state)
             receipt=retain_diagnostic_copy(exported,ROOT/'diagnostics'/base.name,

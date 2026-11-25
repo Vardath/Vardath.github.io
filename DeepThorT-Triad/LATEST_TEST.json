@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-collaboration-v5",
-  "title": "Triad V5: parallel inference and independent specification repair",
+  "id": "triad-collaboration-v6",
+  "title": "Triad V6: parallel inference and explicit independent field review",
   "checks": [
     "shared_cap",
     "triad_residency",
