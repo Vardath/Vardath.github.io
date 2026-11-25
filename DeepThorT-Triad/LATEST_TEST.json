@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-task-memory-v13",
-  "title": "Triad V13: persistent task journal and scoped recall",
+  "id": "triad-task-memory-v14",
+  "title": "Triad V14: task and planning journals with tool and test evidence",
   "checks": [
     "shared_cap",
     "triad_residency",

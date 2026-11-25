@@ -3361,9 +3361,13 @@ class DeepThorTDesktop(tk.Tk):
                         release=getattr(advisor,'release',None)
                         if callable(release):release()
                 if self._quitting or self.active_job!=jobid:return
-                result=self.client.chat(job['chat_id'],recovery_prompt,max_tokens=768)
                 from deepthort_local.specification_guard import master_for_job
                 master=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
+                if self._superseded_build(job):return
+                memory=self.jobs.memory_context(job,master,cycle['diagnostic']+' '+' '.join(candidates),
+                    min(700,max(0,MAX_INFERENCE_PROMPT-len(recovery_prompt)-300)))
+                if memory:recovery_prompt+=memory
+                result=self.client.chat(job['chat_id'],recovery_prompt,max_tokens=768)
                 from deepthort_local.specification_amendments import root_request_for_job
                 amendments=self.conversations.amendment_history(root_request_for_job(job,self.conversations))
                 self._sentinel_alignment(master,job['project'],f'repair-{jobid}',
@@ -6646,6 +6650,11 @@ class DeepThorTDesktop(tk.Tk):
                                     raise ValueError('Named test trace exceeds current storage bound')
                                 if not save_snapshot(STATE/'test-execution-traces'/f'job-{job_id}.json',trace):
                                     raise OSError('Could not persist test trace')
+                                from deepthort_local.test_execution_trace import fingerprint
+                                self.jobs.remember(job_id,'verification','Named test execution',trace['spec_sha256'],fingerprint(trace),
+                                    'Historical named test observation; revalidate current sources before relying on it. Exit '+str(code)
+                                    +'; counts '+json.dumps(trace['counts'],sort_keys=True)
+                                    +'; requirement links '+json.dumps(trace['requirement_counts'],sort_keys=True))
                                 self._log(f"Job #{job_id}: named test evidence: {trace['counts']}; linked requirement evidence: {trace['requirement_counts']}.")
                         except (ValueError,OSError,KeyError,TypeError) as error:
                             trace=None

@@ -16,7 +16,7 @@ from pathlib import Path
 _LOCK=threading.RLock()
 MAX_EVENTS=500
 MAX_NOTES=250
-ROLES=frozenset(('janus','sentinel','implementation'))
+ROLES=frozenset(('janus','sentinel','implementation','verification'))
 
 def sha(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -64,6 +64,20 @@ def _bounded(value,limit):
     if len(value)<=limit:return value
     return value[:limit]+' [excerpt; full record in jobs.sqlite3]'
 
+def tool_observations(path,job_id,project,spec_sha=None):
+    """Re-use sealed existing tool receipts; never replay their arguments or output."""
+    ledger=Path(path).parent/'agent-tool-receipts-v61.sqlite3'
+    if not ledger.is_file():return []
+    from .agent_tool_receipts import ToolReceipts
+    try:
+        rows=ToolReceipts(ledger).recent(job_id,project,limit=20)
+        return [{'task':job_id,'tool':r['request']['tool'],'receipt':r['id'],
+                 'items':len(r['result']['items']),'delivered':r['delivered'],
+                 'evidence':r['sha256']} for r in rows
+                if spec_sha is None or r['spec_sha']==spec_sha]
+    except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):
+        return []
+
 def render(path,job_id):
     with _LOCK:
         db=_open(path)
@@ -100,15 +114,22 @@ def render(path,job_id):
             lines.extend([f"- {n['stamp']} UTC | {n['role']} | {_bounded(n['focus'],300)}",
                 f"  Spec: {n['spec_sha']} | Evidence: {n['evidence_sha']}",
                 f"  {_bounded(n['note'],1400)}"])
-        data=('\n'.join(lines)+'\n').encode('utf-8')
-        handle,tmp=tempfile.mkstemp(prefix='.journal-',suffix='.tmp',dir=root)
-        try:
-            with os.fdopen(handle,'wb') as f:
-                f.write(data);f.flush();os.fsync(f.fileno())
-            os.replace(tmp,dest)
-        finally:
-            if os.path.exists(tmp):os.unlink(tmp)
-        return dest
+        lines.extend(['','## Historical repository tool receipts (not current source proof)'])
+        for observation in tool_observations(path,job_id,job['project']):
+            lines.append('- '+json.dumps(observation,ensure_ascii=False,sort_keys=True))
+        return write_journal(dest,lines)
+
+def write_journal(dest,lines):
+    dest.parent.mkdir(parents=True,exist_ok=True)
+    data=('\n'.join(lines)+'\n').encode('utf-8')
+    handle,tmp=tempfile.mkstemp(prefix='.journal-',suffix='.tmp',dir=dest.parent)
+    try:
+        with os.fdopen(handle,'wb') as f:
+            f.write(data);f.flush();os.fsync(f.fileno())
+        os.replace(tmp,dest)
+    finally:
+        if os.path.exists(tmp):os.unlink(tmp)
+    return dest
 
 def context(path,job_id,project,chat_id,original,focus,*,budget=800):
     """Same project/chat, same exact master specification for role notes.
@@ -141,6 +162,9 @@ def context(path,job_id,project,chat_id,original,focus,*,budget=800):
     for _,_,_,row in sorted(ranked,key=lambda x:x[:3],reverse=True):
         entries.append({'task':row['job_id'],'role':row['role'],'focus':_bounded(row['focus'],130),
             'historical_note':_bounded(row['note'],220),'evidence':row['evidence_sha'][:16]})
+    for observation in tool_observations(path,job_id,project,digest):
+        observation['evidence']=observation['evidence'][:16]
+        entries.append(observation)
     result=header
     for entry in entries:
         line=json.dumps(entry,ensure_ascii=True,separators=(',',':'))+'\n'

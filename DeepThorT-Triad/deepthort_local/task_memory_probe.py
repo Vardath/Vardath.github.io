@@ -30,4 +30,22 @@ def exercise():
             return {'status':'failed','detail':'Cross-project memory leak'}
         if 'railway substitution' in second.memory_context(second.get(ident),spec+' Amendment: new scope','sector interfaces',900):
             return {'status':'failed','detail':'Old specification notes reused'}
-        return {'status':'passed','detail':'Task-named journal persisted; same-spec recall, project isolation and edited-journal distrust passed.'}
+        from .conversation_workflow import ConversationStore
+        from .agent_tool_receipts import ToolReceipts
+        conversations=ConversationStore(root/'conversations.sqlite3')
+        rid=conversations.submit('test-chat',project,'draft_plan',spec)
+        conversations.change(rid,'running','Inspect dependencies')
+        conversations.change(rid,'failed','Missing interface evidence')
+        reopened=ConversationStore(root/'conversations.sqlite3')
+        plan=reopened.journal(rid)
+        if not plan or 'Missing interface evidence' not in plan.read_text('utf-8'):
+            return {'status':'failed','detail':'Planning history missing after reopening'}
+        ledger=ToolReceipts(root/'agent-tool-receipts-v61.sqlite3')
+        ledger.record(job_id=ident,project=project,spec_sha=sha(spec),session='probe',turn=0,
+            request={'tool':'symbol_search'},result={'items':[]})
+        second.remember(ident,'verification','sector interfaces',sha(spec),sha('observed test'),
+            'Historical test observation; not current proof')
+        text=second.journal(ident).read_text('utf-8')
+        if 'symbol_search' not in text or 'Historical test observation' not in text:
+            return {'status':'failed','detail':'Tool or verification history missing'}
+        return {'status':'passed','detail':'Task and planning journals, sealed tool history, verification notes, restart recall and project/spec isolation passed.'}

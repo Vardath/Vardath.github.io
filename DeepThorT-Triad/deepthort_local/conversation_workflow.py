@@ -56,10 +56,22 @@ class ConversationStore:
                     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
                     UNIQUE(root_request_id,ordinal));
             ''')
+            from .planning_journal import ensure_schema
+            ensure_schema(db)
+            interrupted=[r[0] for r in db.execute("SELECT id FROM conversation_requests WHERE state IN ('running','waiting_sources') AND mode='draft_plan'")]
             # An interrupted model call must be visible and explicitly retryable.
             db.execute("UPDATE conversation_requests SET state='pending', detail='Recovered after app restart; waiting for local AI' WHERE state='running'")
             # Never silently repeat a previously approved extractor invocation.
             db.execute("UPDATE conversation_requests SET state='failed', detail='X4 source extraction was interrupted; please retry explicitly' WHERE state='waiting_sources'")
+        for ident in interrupted:self.journal(ident)
+
+    def journal(self,ident):
+        try:
+            from .planning_journal import render
+            return render(self.path,ident)
+        except (OSError,sqlite3.Error,ValueError,TypeError) as error:
+            record(self.path.parent,'conversation','planning_journal_unavailable',level='WARNING',request_id=ident,error_type=type(error).__name__)
+            return None
 
     @contextmanager
     def _db(self):
@@ -88,6 +100,7 @@ class ConversationStore:
                             (chat_id,project,mode,prompt,json.dumps(list(attachments)),source_job_id)).lastrowid
         record(self.path.parent,'conversation','conversation_saved',request_id=n,mode=mode,
                prompt_characters=len(prompt),attachments=len(attachments),legacy_job=source_job_id)
+        if mode=='draft_plan':self.journal(n)
         return n
 
     def latest_project_request(self,chat_id,project):
@@ -149,6 +162,8 @@ class ConversationStore:
         record(self.path.parent,'conversation','specification_amended',request_id=ident,
                parent_request_id=parent['id'],root_request_id=root_id,ordinal=len(history)+1,
                amendment_sha256=sha(amendment),approval_granted=False)
+        self.journal(parent['id'])
+        self.journal(ident)
         return ident
 
     def amendment_supersedes(self,request_id,chat_id,project):
@@ -237,6 +252,7 @@ class ConversationStore:
                               WHERE id=?''',(state,detail,response,ident))
         record(self.path.parent,'conversation','conversation_transition',request_id=ident,from_state=old['state'],
                to_state=state,detail=detail[:250],response_characters=len(response) if response else 0)
+        self.journal(ident)
         return True
 
     def save_draft(self, request_id, steps):
@@ -252,6 +268,7 @@ class ConversationStore:
             i=db.execute('''INSERT INTO project_drafts(request_id,chat_id,project,original_prompt,steps_json)
                             VALUES(?,?,?,?,?)''', (request_id,req['chat_id'],req['project'],req['prompt'],json.dumps(steps))).lastrowid
         record(self.path.parent,'conversation','draft_plan_saved',draft_id=i,request_id=request_id,steps=len(steps))
+        self.journal(request_id)
         return i
 
     def invalidate_incompatible_drafts(self):

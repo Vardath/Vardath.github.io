@@ -1,3 +1,9 @@
+# Triad V14 — current checkpoint
+
+Install the cumulative V14 update over V12.2 or V13; run the focused memory acceptance. Planning journals, tool receipts and named test evidence added to V13 task memory. Continue with portable typed workflow skills and parameter rebinding, richer scoped recall, MCP/app interoperability and Git-aware multi-file transactions. Preserve the tested three-model CPU runtime and 40% cap. Historical development notes follow.
+
+---
+
 # Triad V13 capability development — current priority
 
 Read DEEPTHORT_CAPABILITY_ROADMAP.md, especially the Triad priority reset at the end. Owner requests capability development before full project benchmarks. Preserve V12.2 three models, native CPU OpenVINO, 40% shared cap, original specification/amendment governance and existing interface. V13 introduces task-named local Markdown journals and evidence-bound task memory; validate journal persistence, restart and scope isolation first. Next extend memory to planning, tool receipts and verification traces, then portable typed skills / parameter rebinding and local MCP/application adapters, Git-aware transactions, visual verification, and remaining roadmap gaps. No edits to original DeepThorT. Historical NEXT_STEPS below describe prior original DeepThorT checkpoints, not the current Triad configuration.
