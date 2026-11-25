@@ -44,7 +44,7 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     jobs.remember(old,role,title,sha(SPEC),evidence,note)
                     if relevant:expected_evidence.add(evidence)
                 jobs.remember(old,'sentinel',focus,sha(SPEC+' revised'),sha('obsolete'),'Excluded older revision')
-                other=jobs.submit(str(root/'other-'+case),chat,'plan',SPEC)
+                other=jobs.submit(str(root/('other-'+case)),chat,'plan',SPEC)
                 jobs.remember(other,'sentinel',focus,sha(SPEC),sha('other'),'Excluded other project')
                 candidates=retrieve(jobs.path,project=project,chat_id=chat,original=SPEC,focus=focus,job_id=ident)
                 offered={x['id']:x['evidence'] for x in candidates}
