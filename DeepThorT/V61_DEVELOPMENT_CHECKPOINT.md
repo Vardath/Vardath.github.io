@@ -1,9 +1,3 @@
-DeepThorT 35% resource-cap update (2026-11-25)
-
-Close the application and all model workers. Back up state. Extract the source overlay over the existing installation, preserving the executable, model files, state, node_modules, cache, references and projects. Use START DEEPTHORT.cmd to launch the updated source supervisor, rather than a potentially frozen old executable. The shared CPU ceiling is 35% of total CPU; aggregate private committed memory is capped at up to 35% of installed physical RAM, lowered when free memory is insufficient, retaining the existing 10% reserve. No changes to models, ONNX runtime or approvals. These are not per-process allowances or physical working-set/disk hard caps. Actual Windows enforcement must be checked locally. Historical 30% descriptions in release notes refer to the old versions.
-
----
-
 # v61 development checkpoint — roadmap recovery
 
 Source-only change from v60. Windows diagnostics of 24 November show the active v60 installation still holds an old failed indexed draft, no active build and a failed JANUS instruction. This checkpoint does not claim an independently completed mod.

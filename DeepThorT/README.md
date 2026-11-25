@@ -1,9 +1,3 @@
-DeepThorT 35% resource-cap update (2026-11-25)
-
-Close the application and all model workers. Back up state. Extract the source overlay over the existing installation, preserving the executable, model files, state, node_modules, cache, references and projects. Use START DEEPTHORT.cmd to launch the updated source supervisor, rather than a potentially frozen old executable. The shared CPU ceiling is 35% of total CPU; aggregate private committed memory is capped at up to 35% of installed physical RAM, lowered when free memory is insufficient, retaining the existing 10% reserve. No changes to models, ONNX runtime or approvals. These are not per-process allowances or physical working-set/disk hard caps. Actual Windows enforcement must be checked locally. Historical 30% descriptions in release notes refer to the old versions.
-
----
-
 # DeepThorT v60 for Windows
 
 On the independent PE request, the local planner can now assemble the fitted asteroid into a new ship component. It offers the model upper-rear offsets with verified visual surface contact, screened against measured cockpit, elevator, dock, weapon, turret and engine connections. The resulting source bundle includes the registered macro and component, four visual detail levels on the benchmark ship, a resized collision XMF and an OBJ preview showing both main shapes together. In the project sidebar choose **Export latest draft mesh**, then save the component draft with a .zip filename.

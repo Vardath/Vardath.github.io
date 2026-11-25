@@ -1,9 +1,3 @@
-DeepThorT 35% resource-cap update (2026-11-25)
-
-Close the application and all model workers. Back up state. Extract the source overlay over the existing installation, preserving the executable, model files, state, node_modules, cache, references and projects. Use START DEEPTHORT.cmd to launch the updated source supervisor, rather than a potentially frozen old executable. The shared CPU ceiling is 35% of total CPU; aggregate private committed memory is capped at up to 35% of installed physical RAM, lowered when free memory is insufficient, retaining the existing 10% reserve. No changes to models, ONNX runtime or approvals. These are not per-process allowances or physical working-set/disk hard caps. Actual Windows enforcement must be checked locally. Historical 30% descriptions in release notes refer to the old versions.
-
----
-
 # Local coding model evaluation (proposal, not a model change)
 
 Current baseline: Qwen2.5-Coder-1.5B-Instruct ONNX, existing dual worker architecture, pinned Transformers.js, CPU only. Keep current model and state intact until an alternative passes acceptance. ONNX is a runtime/model format, not the neural model.

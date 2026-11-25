@@ -82,7 +82,7 @@ def main():
                     raise ctypes.WinError(ctypes.get_last_error())
             if (limits.BasicLimitInformation.LimitFlags & 512 == 0 or
                 not 0 < limits.JobMemoryLimit <= requested or
-                rate.ControlFlags & 5 != 5 or rate.CpuRate != 3500 or
+                rate.ControlFlags & 5 != 5 or rate.CpuRate != 3000 or
                 limits.PeakJobMemoryUsed > limits.JobMemoryLimit):
                 raise RuntimeError('Windows Job Object cap readback failed')
             elapsed = time.monotonic() - started
@@ -101,7 +101,7 @@ def main():
                 production_check()
         os.environ['DEEPTHORT_BENCH_PYTHON'] = sys.executable
         return run_capped(command,
-                          cwd=str(ROOT), percent=35, ram_percent=35, observe=observe)
+                          cwd=str(ROOT), percent=30, ram_percent=30, observe=observe)
     finally:
         kernel.CloseHandle(handle)
 
