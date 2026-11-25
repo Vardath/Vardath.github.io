@@ -65,7 +65,9 @@ def exercise():
             raise ValueError('Missing durable memory review outcomes')
         indexed=exercise_indexed()
         if indexed['status']!='passed':raise ValueError('Indexed recall failed')
-        return {'status':'passed','detail':'Indexed section recall and cancellation passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        dispatch=exercise_dispatch_gate()
+        if dispatch['status']!='passed':raise ValueError('Dispatch review failed')
+        return {'status':'passed','detail':'Indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
 
 
 def exercise_indexed():
@@ -135,3 +137,35 @@ def exercise_indexed():
         if cancelled.prompts or index.status(2,original)['reviewed']:
             raise ValueError('Cancelled indexed review advanced')
         return {'status':'passed','detail':'Indexed sections preserved exact source and received only section-relevant governed memory; cancellation and durable review receipts passed (scripted roles).'}
+
+
+def exercise_dispatch_gate():
+    """Non-blocking, one-shot dispatch review, with a deterministic test worker."""
+    from .dispatch_memory import DispatchMemoryGate
+    from threading import Event
+    import time
+    def wait(gate):
+        deadline=time.monotonic()+3
+        while gate.busy() and time.monotonic()<deadline:time.sleep(.005)
+        if gate.busy():raise ValueError('Dispatch review fixture stalled')
+    gate=DispatchMemoryGate();release=Event();entered=Event();calls=[]
+    def review():
+        calls.append('original');entered.set()
+        if not release.wait(3):raise ValueError('Fixture timeout')
+    if gate.check('original',review):raise ValueError('Dispatch allowed before review')
+    try:
+        if not entered.wait(3):raise ValueError('Review did not start')
+        if gate.check('other',lambda:calls.append('other')):raise ValueError('Concurrent dispatch allowed')
+    finally:release.set()
+    wait(gate)
+    if gate.check('changed',lambda:calls.append('changed')):raise ValueError('Stale review authorized changed operation')
+    wait(gate)
+    if not gate.check('changed',lambda:None):raise ValueError('Completed matching review not usable')
+    if calls!=['original','changed']:raise ValueError('Unexpected review calls')
+    def reject():raise ValueError('rejected')
+    if gate.check('reject',reject):raise ValueError('Rejected review prematurely accepted')
+    wait(gate)
+    try:gate.check('reject',lambda:None)
+    except ValueError:pass
+    else:raise ValueError('Rejected review authorized dispatch')
+    return {'status':'passed','detail':'Nonblocking one-shot dispatch review, changed-operation isolation and rejection passed.'}

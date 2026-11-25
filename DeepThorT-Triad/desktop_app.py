@@ -786,6 +786,9 @@ class DeepThorTDesktop(tk.Tk):
         A new LATEST_TEST.json changes future acceptance checks without a new
         UI control or an ability to execute arbitrary model-authored commands.
         """
+        if self._dispatch_memory_busy():
+            self._log('Latest test deferred: workflow memory review owns the inference slot.')
+            return
         if self._latest_test_thread and self._latest_test_thread.is_alive():
             self.tabs.select(4)
             self._log('Latest acceptance test already running: '+self._latest_test_stage)
@@ -3554,6 +3557,34 @@ class DeepThorTDesktop(tk.Tk):
         except (ValueError,OSError) as error:
             self._log('Agent verification receipt unavailable: '+str(error)[:180])
 
+    def _dispatch_memory_busy(self):
+        gate=self.__dict__.get('_dispatch_memory_gate')
+        return bool(gate and gate.busy())
+
+    def _dispatch_memory_review(self,binding,identity,focus,phase,proposal):
+        from deepthort_local.dispatch_memory import DispatchMemoryGate
+        from deepthort_local.workflow_design import current_source
+        from deepthort_local.reasoning_council import sha
+        source=self.conversations.get(binding['request_id'])
+        if not source or not current_source(binding,self.conversations):
+            raise ValueError('Workflow specification is no longer current')
+        key=sha(json.dumps([binding,identity,phase,proposal],sort_keys=True,ensure_ascii=False))
+        scope='dispatch-'+key[:32]
+        def stopped():
+            return (self._quitting or self.queue_paused or self.disk_gate.gaming()
+                    or not current_source(binding,self.conversations))
+        def review():
+            if stopped():raise ValueError('Workflow memory review cancelled')
+            memory=self._governed_memory(source['prompt'],source['project'],source['chat_id'],scope,
+                focus,phase,cancelled=stopped,stage=lambda message:self.events.put(('log',message)))
+            if memory:
+                self._sentinel_alignment(source['prompt'],source['project'],scope,focus,
+                    json.dumps(proposal,ensure_ascii=False),kind='plan',cancelled=stopped,
+                    memory_override=memory,stage=lambda message:self.events.put(('log',message)))
+            if stopped():raise ValueError('Workflow changed during memory review')
+        gate=self.__dict__.setdefault('_dispatch_memory_gate',DispatchMemoryGate())
+        return gate.check(key,review)
+
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
@@ -3575,7 +3606,14 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.roadmap_tool_bridge import boundary_open
             return boundary_open(link,self.conversations.get(link['request_id']),self.roadmap_runs.get(link['request_id']),
                 self.conversations,self.hierarchies,self.specifications,self.jobs)
-        workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations,roadmap_ready=roadmap_ready)
+        def workflow_memory(run,manifest,ordinal,stage,guards):
+            focus='Workflow '+stage['title']+' '+stage['output']
+            proposal={'approved_argv':stage['argv'],'declared_output':stage['output'],
+                      'purpose':'Execute exact approved workflow stage; do not substitute commands'}
+            return self._dispatch_memory_review(manifest['specification'],
+                [run['id'],run['manifest_sha'],ordinal,guards],focus,'workflow_dispatch',proposal)
+        workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations,roadmap_ready=roadmap_ready,
+            before_dispatch=workflow_memory)
         if workflow_message:
             self._log(workflow_message)
             return
@@ -3822,7 +3860,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _scheduler_once(self):
         if self.__dict__.get('_native_draft_busy'):return
-        tool_busy=(getattr(self,'_verification_preflight',False) or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
+        tool_busy=(getattr(self,'_verification_preflight',False) or self._dispatch_memory_busy() or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or
                    any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
         model_alive=bool(self.node and self.node.poll() is None)
@@ -4943,6 +4981,7 @@ class DeepThorTDesktop(tk.Tk):
         if not self._quitting:
             self.after(2200,self._automatic_tool_tick)
         if self._quitting or not self._autonomy_policy['enabled'] or os.name!='nt':return
+        if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
         if (self.queue_paused or self.__dict__.get('_quiet_test_active') is not None
             or self.__dict__.get('_gui_test_active') is not None or self._auto_tool_active or
             getattr(self, '_auto_verification_in_flight', None) is not None or not self._auto_tool_queue or
@@ -4975,6 +5014,18 @@ class DeepThorTDesktop(tk.Tk):
             if already_attempted(self._auto_tool_history.get(plan['package_id']+':'+plan['operation']),
                                  plan['package_id'],plan['operation']):
                 return
+            if origin:
+                from deepthort_local.workflow_design import source_binding
+                proposal={'approved_catalog_argv':plan['argv'],'package_id':plan['package_id'],
+                          'purpose':'Acquire exact currently required catalog tool; no new permission'}
+                if not self._dispatch_memory_review(source_binding(source),[origin,plan['plan_sha256']],
+                        'Install required workflow tool '+plan['name'],'workflow_install_dispatch',proposal):
+                    self._auto_tool_queue.insert(0,plan)
+                    return
+                if (not self._project_work_is_enabled() or not self._autonomy_policy['enabled']
+                        or not still_required(self.workflow_drafts,self.conversations,source,origin[1],origin[2])):
+                    raise ValueError('Workflow acquisition changed during memory review')
+                verify_plan(plan,which=shutil.which)
             self._record_automatic_software(plan,'launch_requested')
             self.__dict__.get('_workflow_install_origins',{}).pop(plan['plan_sha256'],None)
             self._auto_tool_active=plan
@@ -5023,7 +5074,7 @@ class DeepThorTDesktop(tk.Tk):
     def _tool_probe_tick(self):
         if not self._quitting:
             self.after(2400,self._tool_probe_tick)
-        if (self._quitting or not self._tool_probe_queue or self._tool_probe_active
+        if (self._quitting or self._dispatch_memory_busy() or not self._tool_probe_queue or self._tool_probe_active
             or self.__dict__.get('_quiet_test_active') is not None
             or self.__dict__.get('_gui_test_active') is not None
             or self.queue_paused or self.disk_gate.gaming()
@@ -6093,6 +6144,9 @@ class DeepThorTDesktop(tk.Tk):
             return False
         if (self.install_process and self.install_process.poll() is None) or (self.tool_process and self.tool_process.poll() is None):
             messagebox.showwarning('Tool already running','Wait or stop the current tool process first.');return False
+        if self._dispatch_memory_busy():
+            self._log('Workflow memory review owns the tool slot; deferred: '+label)
+            return False
         if getattr(self,'_verification_preflight',False):
             self._log('Verification preflight already owns the tool slot')
             return False

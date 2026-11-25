@@ -210,7 +210,7 @@ class ToolWorkflows:
         if rec.get('acceptance')!=expected:raise ValueError('Artifact acceptance receipt missing or changed')
         return rec
 
-    def tick(self,*,enabled=True,conversations=None,roadmap_ready=None):
+    def tick(self,*,enabled=True,conversations=None,roadmap_ready=None,before_dispatch=None):
         if not enabled or self.janus.status().get('paused'):return None
         for run in reversed(self.list()):
             if run['state']!='active':continue
@@ -274,6 +274,14 @@ class ToolWorkflows:
                         if pin['expected']!=producer['artifact']['sha256']:raise ValueError('Predecessor bytes changed')
                         guards.append(pin)
                     validate_guards(guards);verify_guards(guards)
+                    if before_dispatch is not None and manifest.get('specification'):
+                        if not before_dispatch(run,manifest,ordinal,stage,guards):return None
+                        # No approval or guard may be inherited from memory review.
+                        if not current_source(manifest['specification'],conversations):
+                            self.stop(ident)
+                            return f'Workflow #{ident}: specification changed during memory review'
+                        if manifest.get('roadmap') and (roadmap_ready is None or not roadmap_ready(manifest['roadmap'])):return None
+                        verify_guards(guards)
                     with self.janus.connect() as db:
                         db.execute('BEGIN IMMEDIATE')
                         current=db.execute('SELECT state,manifest_sha FROM tool_workflows WHERE id=?',(ident,)).fetchone()

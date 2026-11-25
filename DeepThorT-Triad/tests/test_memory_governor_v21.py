@@ -1,6 +1,6 @@
 import unittest
 from deepthort_local.memory_governor import parse_selection,parse_challenge,fit,HEADER,govern,retrieve,evidence_eligible
-from deepthort_local.memory_governor_probe import exercise,exercise_indexed
+from deepthort_local.memory_governor_probe import exercise,exercise_indexed,exercise_dispatch_gate
 class MemoryGovernorTests(unittest.TestCase):
     def test_integration(self):
         result=exercise();self.assertEqual(result['status'],'passed',result)
@@ -87,3 +87,6 @@ class MemoryGovernorTests(unittest.TestCase):
 
     def test_indexed_planning_memory(self):
         result=exercise_indexed();self.assertEqual(result['status'],'passed',result)
+
+    def test_dispatch_memory_gate(self):
+        result=exercise_dispatch_gate();self.assertEqual(result['status'],'passed',result)
