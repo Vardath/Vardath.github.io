@@ -13,6 +13,7 @@ from .task_memory import sha,_open,tool_observations,mcp_observations
 from .specification_guard import review_source
 from .structured_source import strict_json
 from .memory_index import connect as open_index,ranked_notes,MAX_NOTE_SHORTLIST,terms,STOP
+from .memory_consolidation import recall_group
 
 MAX_CANDIDATES=8
 MAX_PACKET=2300
@@ -48,7 +49,7 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
             current=db.execute('SELECT project,chat_id FROM jobs WHERE id=?',(job_id,)).fetchone()
             if not current or (current['project'],current['chat_id'])!=(str(project),chat_id):
                 raise ValueError('Memory task belongs to a different project or chat')
-        seen_notes=set()
+        seen_notes=set();seen_groups=set()
         for row in ranked_notes(db,str(project),chat_id,spec_sha,words,job_id):
             if row['note'].startswith(('Proposed source for review;','Accepted as advice; runtime untested: All candidate portions accepted')):
                 continue
@@ -59,9 +60,20 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
             if not (title_match or body_match):continue
             score=title_match*5+body_match*2+(2 if job_id and row['job_id']==job_id else 0)
             if row['role']=='verification' or note.startswith('Rejected'):score+=2
-            key=(row['role'],row['evidence_sha'][:64],title[:100])
+            consolidated=recall_group(db,row,str(project),chat_id,spec_sha)
+            if consolidated:
+                if consolidated['id'] in seen_groups:continue
+                seen_groups.add(consolidated['id'])
+                key=(row['role'],consolidated['evidence'],title[:100])
+                entry=consolidated
+            else:
+                # Exact repeat text is redundant in the recall packet, not
+                # deleted from the journal. Retain the first ranked receipt.
+                key=(row['role'],title,note)
+                entry={'id':'N'+str(row['id']),'kind':'historical_'+row['role'],
+                       'focus':title[:100],'observation':note[:220],'evidence':row['evidence_sha'][:64]}
             if key in seen_notes:continue
-            add('N'+str(row['id']),'historical_'+row['role'],title,note,row['evidence_sha'],score)
+            ranked.append((score,entry['id'],entry))
             if len(canonical([ranked[-1][2]]))>MAX_PACKET:
                 ranked.pop();continue
             seen_notes.add(key)
@@ -175,7 +187,7 @@ def govern(jobs,council,client,*,project,chat_id,original,focus,scope,phase,
     focus=str(focus)[:500]
     candidates=retrieve(jobs.path,project=project,chat_id=chat_id,original=original,focus=focus,job_id=job_id)
     packet_sha=sha(canonical(candidates));spec_sha=sha(original)
-    key={'schema':'triad-governed-memory-v5','project':str(project),'chat':chat_id,
+    key={'schema':'triad-governed-memory-v6','project':str(project),'chat':chat_id,
          'job':job_id,'scope':scope,'phase':phase,'spec':spec_sha,'focus':sha(focus),'packet':packet_sha,'section':sha(section)}
     eligible=[entry for entry in candidates if evidence_eligible(entry)]
     # Bind excluded IDs in the durable decision even when no model is called.

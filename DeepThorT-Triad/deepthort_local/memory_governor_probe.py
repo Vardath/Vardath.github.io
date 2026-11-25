@@ -69,7 +69,9 @@ def exercise():
         if dispatch['status']!='passed':raise ValueError('Dispatch review failed')
         search=exercise_search_index()
         if search['status']!='passed':raise ValueError('Indexed search failed')
-        return {'status':'passed','detail':'Long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
+        consolidated=exercise_consolidation()
+        if consolidated['status']!='passed':raise ValueError('Memory consolidation failed')
+        return {'status':'passed','detail':'Named test memory consolidation and contradiction detection, long-history term index, mutation invalidation, indexed section recall, cancellation and nonblocking dispatch review passed. Real scoped memory store, scripted Sentinel selection: relevance, source/record integrity, cross-project/chat/revision isolation, cached decisions, invalid-ID refusal and journal persistence passed. No live model inference.'}
 
 
 def exercise_indexed():
@@ -239,9 +241,9 @@ def exercise_search_index():
                     (job,role,focus,revision,sha(evidence),note)).lastrowid
             oldest=insert(old,'verification','docking clearance','Clearance regression: preserve docking clearance.','oldest')
             for i in range(1200):
-                insert(old,'verification','unrelated paint','Palette observation',f'paint-{i}')
+                insert(old,'verification','unrelated paint',f'Palette observation {i}',f'paint-{i}')
             for i in range(80):
-                insert(old,'janus','docking clearance','Proposed docking clearance changes',f'advice-{i}')
+                insert(old,'janus','docking clearance',f'Proposed docking clearance changes {i}',f'advice-{i}')
             insert(alien,'verification','docking clearance','OTHER PROJECT','alien')
             insert(other_chat,'verification','docking clearance','OTHER CHAT','chat')
             insert(old,'verification','docking clearance','OTHER REVISION','revision',sha(spec+' revised'))
@@ -268,3 +270,55 @@ def exercise_search_index():
         if any(x['id']=='N'+str(replacement) for x in final):raise ValueError('Deleted note remained searchable')
         if any(x['kind']=='historical_verification' for x in final):raise ValueError('Unexpected evidence remained')
         return {'status':'passed','detail':'1284 legacy notes, oldest relevant record, advisory flood, scope isolation, bounded packet, restart and insert/edit/delete invalidation passed.'}
+
+
+def exercise_consolidation():
+    from .memory_consolidation import record_trace,PREFIX
+    with tempfile.TemporaryDirectory(prefix='triad-memory-consolidation-') as folder:
+        root=Path(folder);project=str(root.resolve());jobs=JobStore(root/'jobs.sqlite3')
+        original='Preserve docking clearance.';digest=sha(original)
+        old=jobs.submit(project,'chat','plan',original)
+        current=jobs.submit(project,'chat','plan',original)
+        name='tests.test_docking.Cases.test_clearance'
+        def trace(job,status,baseline='one',run='a'):
+            h=sha(baseline)
+            return {'schema':'deepthort-test-execution-v1','job_id':job,'project':project,
+                'spec_sha256':digest,'source_hashes':{'tests/test_docking.py':h},
+                'argv_sha256':sha('command'),'complete_named_run':True,
+                'exit_code':0 if status=='passed' else 1,'output_sha256':sha(run),
+                'files':[{'path':'tests/test_docking.py','sha256':h,
+                          'tests':[{'test':name,'status':status}]}]}
+        first=trace(old,'passed')
+        if record_trace(jobs,jobs.get(old),original,first)!=1:raise ValueError('Observed result not recorded')
+        if record_trace(jobs,jobs.get(old),original,first)!=0:raise ValueError('Repeated trace duplicated')
+        second=trace(current,'passed',run='b')
+        record_trace(jobs,jobs.get(current),original,second)
+        args=dict(project=project,chat_id='chat',original=original,focus='Named test clearance')
+        rows=retrieve(jobs.path,**args)
+        if len(rows)!=1 or '2 recorded observation(s)' not in rows[0]['observation']:
+            raise ValueError('Repeated named results not consolidated')
+        initial=rows[0]['evidence']
+        failed=trace(current,'failed',run='c')
+        record_trace(jobs,jobs.get(current),original,failed)
+        rows=retrieve(jobs.path,**args)
+        if len(rows)!=1 or 'Conflicting named test outcomes' not in rows[0]['observation'] or rows[0]['evidence']==initial:
+            raise ValueError('Conflicting identical-baseline outcomes not surfaced')
+        record_trace(jobs,jobs.get(current),original,trace(current,'passed',baseline='two',run='d'))
+        rows=retrieve(jobs.path,**args)
+        if len(rows)!=2 or sum('Conflicting' in x['observation'] for x in rows)!=1:
+            raise ValueError('Distinct baseline wrongly treated as contradiction')
+        wrong=trace(current,'passed',run='e');wrong['complete_named_run']=False
+        if record_trace(jobs,jobs.get(current),original,wrong):raise ValueError('Incomplete trace promoted')
+        other=jobs.submit(project,'other','plan',original)
+        record_trace(jobs,jobs.get(other),original,trace(other,'failed',baseline='two'))
+        if retrieve(jobs.path,**args)!=rows:raise ValueError('Cross-chat claim affected recall')
+        reopened=JobStore(jobs.path)
+        if retrieve(reopened.path,**args)!=rows:raise ValueError('Consolidated recall changed after restart')
+        with jobs._conn() as db:
+            stored=db.execute('SELECT count(*) FROM task_memory_notes WHERE job_id IN (?,?) AND note LIKE ?', (old,current,PREFIX+'%')).fetchone()[0]
+            if stored!=4:raise ValueError('Consolidation destroyed original observations')
+            db.execute('DELETE FROM task_memory_notes WHERE job_id=? AND evidence_sha=?',
+                       (current,__import__('deepthort_local.test_execution_trace',fromlist=['fingerprint']).fingerprint(failed)))
+        if any('Conflicting' in x['observation'] for x in retrieve(jobs.path,**args)):
+            raise ValueError('Deleted contradiction persisted')
+        return {'status':'passed','detail':'Exact repeated traces deduplicated, same-baseline outcomes consolidated, contradictions surfaced, different baselines isolated, incomplete traces withheld and original history preserved.'}

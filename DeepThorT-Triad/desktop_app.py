@@ -7119,6 +7119,13 @@ class DeepThorTDesktop(tk.Tk):
                                     'Historical named test observation; revalidate current sources before relying on it. Exit '+str(code)
                                     +'; counts '+json.dumps(trace['counts'],sort_keys=True)
                                     +'; requirement links '+json.dumps(trace['requirement_counts'],sort_keys=True))
+                                from deepthort_local.memory_consolidation import record_trace
+                                import sqlite3
+                                try:
+                                    promoted=record_trace(self.jobs,traced_job,master,trace)
+                                    if promoted:self._log(f'Job #{job_id}: {promoted} source-bound historical named test observations recorded.')
+                                except (OSError,ValueError,KeyError,TypeError,sqlite3.Error) as error:
+                                    self._log('Named memory observation unavailable: '+type(error).__name__)
                                 self._log(f"Job #{job_id}: named test evidence: {trace['counts']}; linked requirement evidence: {trace['requirement_counts']}.")
                         except (ValueError,OSError,KeyError,TypeError) as error:
                             trace=None

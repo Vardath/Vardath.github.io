@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V23: long-history indexed retrieval and live Sentinel relevance",
+  "title": "Triad V24: memory consolidation and live Sentinel relevance",
   "checks": [
     "shared_cap",
     "triad_residency",
