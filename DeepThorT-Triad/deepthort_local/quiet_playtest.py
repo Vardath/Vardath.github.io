@@ -1,7 +1,7 @@
 """Quiet *headless* scene-simulation supervisor, deliberately not visual playtesting.
 
 Windows: process inherits the parent DeepThorT.exe's single CPU/memory Job Object.
-No extra 30% allocation is created. Never spawn a GUI game as a hidden process;
+No extra 35% allocation is created. Never spawn a GUI game as a hidden process;
 CREATE_NO_WINDOW is not sufficient to hide a GUI application. A headless Godot
 build has a dummy display/audio backend and cannot verify rendering, collision
 appearance, player input, docking or actual gameplay quality.
@@ -31,7 +31,7 @@ class QuietPlaytestError(ValueError):
 def is_capped_windows_process(*, os_name: str | None = None, probe=None) -> bool:
     """Fail-closed guard: Windows parent must already be in a limiting job.
 
-    Job membership alone does NOT prove that the right 30% CPU limits are set;
+    Job membership alone does NOT prove that the right 35% CPU limits are set;
     QueryInformationJobObject checks the job's active hard CPU cap. This guard
     does not run under the uncapped development/test flag.
     """
@@ -42,27 +42,10 @@ def is_capped_windows_process(*, os_name: str | None = None, probe=None) -> bool
     if probe is not None:
         return bool(probe())
     try:
-        from ctypes import wintypes
-        kernel = ctypes.WinDLL('kernel32',use_last_error=True)
-        getproc = kernel.GetCurrentProcess
-        getproc.argtypes = []
-        getproc.restype = wintypes.HANDLE
-        injob = kernel.IsProcessInJob
-        injob.argtypes = [wintypes.HANDLE,wintypes.HANDLE,ctypes.POINTER(wintypes.BOOL)]
-        injob.restype = wintypes.BOOL
-        member = wintypes.BOOL()
-        if not injob(getproc(),None,ctypes.byref(member)) or not member.value:
-            return False
-        class CpuRate(ctypes.Structure):
-            _fields_=[('ControlFlags',wintypes.DWORD),('CpuRate',wintypes.DWORD)]
-        query=kernel.QueryInformationJobObject
-        query.argtypes=[wintypes.HANDLE,ctypes.c_int,ctypes.c_void_p,wintypes.DWORD,ctypes.POINTER(wintypes.DWORD)]
-        query.restype=wintypes.BOOL
-        info=CpuRate();written=wintypes.DWORD()
-        if not query(None,15,ctypes.byref(info),ctypes.sizeof(info),ctypes.byref(written)):
-            return False
-        return bool((info.ControlFlags & 0x5) == 0x5 and 1<=info.CpuRate<=3000)
-    except (OSError,AttributeError,ValueError,TypeError):
+        from .triad_job import verify_root_cap
+        verify_root_cap()
+        return True
+    except (OSError,RuntimeError,AttributeError,ValueError,TypeError):
         return False
 
 

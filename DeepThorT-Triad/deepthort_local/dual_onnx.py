@@ -200,7 +200,7 @@ def council_wait_reason(*, primary_ready:bool, primary_loading:bool,
     if restarts>=3:
         return 'JANUS/Sentinel stopped after three worker exits. Inspect Processes, then use Retry JANUS model.'
     if not capped:
-        return 'JANUS/Sentinel blocked: DeepThorT is not inside its verified shared 30% CPU Job Object. Restart using the capped launcher.'
+        return 'JANUS/Sentinel blocked: DeepThorT is not inside its verified shared 35% CPU Job Object. Restart using the capped launcher.'
     if memory is None:
         return 'JANUS/Sentinel waiting: Windows RAM availability could not be measured.'
     if not memory_room(total=memory[0],available=memory[1]):
