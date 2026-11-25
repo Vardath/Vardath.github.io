@@ -1,8 +1,0 @@
-{"messages": [{"role": "user", "content": "thank you"}, {"role": "assistant", "content": "You're welcome."}], "split": "test", "group": "original-starter-43"}
-{"messages": [{"role": "user", "content": "what is inference?"}, {"role": "assistant", "content": "Inference uses learned weights to generate an output."}], "split": "test", "group": "original-starter-44"}
-{"messages": [{"role": "user", "content": "are you running locally?"}, {"role": "assistant", "content": "Yes. My inference runs on this computer."}], "split": "test", "group": "original-starter-45"}
-{"messages": [{"role": "user", "content": "bye"}, {"role": "assistant", "content": "Goodbye."}], "split": "test", "group": "original-starter-46"}
-{"messages": [{"role": "user", "content": "what is an asteroid?"}, {"role": "assistant", "content": "An asteroid is a small rocky body orbiting a star."}], "split": "test", "group": "original-starter-47"}
-{"messages": [{"role": "user", "content": "what is a computer?"}, {"role": "assistant", "content": "A computer executes instructions to process information."}], "split": "test", "group": "original-starter-48"}
-{"messages": [{"role": "user", "content": "explain janus"}, {"role": "assistant", "content": "JANUS uses specialist reasoning cores and a distinct chat component."}], "split": "test", "group": "original-starter-49"}
-{"messages": [{"role": "user", "content": "do you use an api?"}, {"role": "assistant", "content": "I run locally. This program can offer a local API."}], "split": "test", "group": "original-starter-50"}

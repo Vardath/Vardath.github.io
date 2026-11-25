@@ -1,6 +1,0 @@
-; Minimal isolated asset import project
-config_version=5
-[application]
-config/name="DeepThorT Asset Probe"
-[rendering]
-renderer/rendering_method="gl_compatibility"
