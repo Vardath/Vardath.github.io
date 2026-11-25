@@ -946,9 +946,22 @@ class DeepThorTDesktop(tk.Tk):
         def memory_governance_probe():
             from deepthort_local.memory_governor_probe import exercise
             return exercise()
+        def live_memory_probe():
+            if not observed['resident']:return {'status':'blocked','detail':'Resident models required'}
+            if self.active_job is not None or self.active_conversation is not None or getattr(self,'_verification_preflight',False):
+                return {'status':'inconclusive','detail':'Active real work; live memory test not started'}
+            if self.disk_gate.gaming():return {'status':'blocked','detail':'Gaming priority; live inference deferred'}
+            with self._council_lock:
+                if self._council_busy:return {'status':'inconclusive','detail':'Council busy'}
+                self._council_busy=True
+            try:
+                from deepthort_local.live_memory_probe import exercise
+                return exercise(health,expected_primary,cancel,
+                    notify=lambda stage:self.events.put(('latest_test_progress','live memory: '+stage)))
+            finally:self._council_busy=False
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
         def worker():
             try:
@@ -2399,12 +2412,19 @@ class DeepThorTDesktop(tk.Tk):
                 if workflow:
                     from deepthort_local.workflow_design import design as design_workflow,current_source
                     from functools import partial
+                    # Bind a scoped memory callback to every workflow design and
+                    # missing-procedure iteration, including resolution retries.
                     design=partial(design_workflow,workflows=self.tool_workflows)
                     from deepthort_local.reasoning_council import ReasoningCouncil
                     binding=json.loads(workflow['binding'])
                     source=self.conversations.get(binding['request_id'])
                     def stale():return cancelled() or not current_source(binding,self.conversations)
                     if stale():raise ValueError('Workflow specification superseded')
+                    def recall(goal,phase,budget):
+                        return self._governed_memory(source['prompt'],source['project'],source['chat_id'],
+                            f'workflow-{ident}',goal,phase,budget=budget,cancelled=stale,
+                            stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    design=partial(design,memory_provider=recall)
                     def review(proposal,kind):
                         self._sentinel_alignment(source['prompt'],source['project'],f'workflow-draft-{ident}',
                             workflow['goal'],proposal,kind=kind,cancelled=stale,
@@ -2466,7 +2486,7 @@ class DeepThorTDesktop(tk.Tk):
                     proposal,manifest,learned,discovered=resolve(self.workflow_drafts,self.tool_learning,self.janus,
                         ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,
                         request_id=ident,request=source,goal=workflow['goal'],proposal=proposal,manifest=manifest,
-                        review=review,design=design,learn=learn_missing,discovery=public_discovery,
+                        review=review,design=design,learn=partial(learn_missing,memory_provider=recall),discovery=public_discovery,
                         online=os.name=='nt' and self._routine_tools_enabled() and self._project_work_is_enabled()
                             and not self.disk_gate.gaming(),
                         cancelled=stale,stage=lambda message:self.events.put(('conversation_stage',ident,message)),
@@ -2486,6 +2506,11 @@ class DeepThorTDesktop(tk.Tk):
                     self.events.put(('conversation_stage',ident,
                                      'Preparing approved local tool help for model-authored procedure'))
                     source_prompt=self.tool_learning.learning_prompt(ident,self.janus)
+                    from deepthort_local.memory_governor import fit
+                    recalled=self._governed_memory(request['prompt'],request['project'],request['chat_id'],
+                        f'tool-learn-{ident}',learning['goal'],'procedure_learning',
+                        budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(source_prompt))),cancelled=cancelled)
+                    source_prompt+=fit(recalled,max(0,MAX_INFERENCE_PROMPT-len(source_prompt)))
                     if cancelled():return
                     self.events.put(('conversation_stage',ident,'Drafting UNVERIFIED tool procedure using local model'))
                     response=self.client.chat(f'tool-learn-{ident}-{request["chat_id"]}',
@@ -3527,6 +3552,8 @@ class DeepThorTDesktop(tk.Tk):
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
+            or getattr(self,'_verification_preflight',False)
+            or (self._latest_test_thread and self._latest_test_thread.is_alive())
             or getattr(self,'_mcp_discovery_active',False)
             or self.__dict__.get('_quiet_test_active') is not None
             or self.__dict__.get('_gui_test_active') is not None
@@ -3740,6 +3767,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._log(f"Job #{job['id']}: verifier recovery blocked: {error}")
 
     def _verify_build(self):
+        if getattr(self,'_verification_preflight',False):
+            self._log('Verification preflight already active');return
         if self.__dict__.get('_quiet_test_active') is not None or self.__dict__.get('_gui_test_active') is not None:
             self._log('Manual verification deferred while quiet scene test is running')
             return
@@ -3788,7 +3817,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _scheduler_once(self):
         if self.__dict__.get('_native_draft_busy'):return
-        tool_busy=(self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
+        tool_busy=(getattr(self,'_verification_preflight',False) or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or
                    any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)))
         model_alive=bool(self.node and self.node.poll() is None)
@@ -3808,6 +3837,7 @@ class DeepThorTDesktop(tk.Tk):
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
         if gate=='dispatch_enabled':
+            if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
             if self.active_conversation is None:
                 incoming=self.conversations.next_pending()
@@ -6058,6 +6088,10 @@ class DeepThorTDesktop(tk.Tk):
             return False
         if (self.install_process and self.install_process.poll() is None) or (self.tool_process and self.tool_process.poll() is None):
             messagebox.showwarning('Tool already running','Wait or stop the current tool process first.');return False
+        if getattr(self,'_verification_preflight',False):
+            self._log('Verification preflight already owns the tool slot')
+            return False
+        if kind=='verification' and job_id is not None:self._verification_preflight=True
         def worker():
             try:
                 from collections import deque
@@ -6088,6 +6122,23 @@ class DeepThorTDesktop(tk.Tk):
                     if not current_job:raise ValueError('Verification job is missing')
                     if self._superseded_build(current_job):
                         raise ValueError('User amended specification before test launch')
+                    from deepthort_local.specification_guard import master_for_job
+                    master=master_for_job(current_job,self.conversations,self.hierarchies,self.specifications)
+                    def stopped_memory():
+                        latest=self.jobs.get(job_id)
+                        return (self._quitting or self.disk_gate.gaming() or not latest or latest['state']!='running'
+                            or self._superseded_build(latest) or job_id in self._stopped_auto_tests)
+                    focus='Verification '+ ' '.join(str(x) for x in cmd[:8])+' '+ ' '.join(s['path'] for s in self.jobs.steps(job_id))[:350]
+                    memory=self._governed_memory(master,current_job['project'],current_job['chat_id'],
+                        f'verify-{job_id}',focus,'verification_dispatch',job_id=job_id,cancelled=stopped_memory,
+                        stage=lambda message:self.events.put(('log',message)))
+                    if memory:
+                        self._sentinel_alignment(master,cwd,f'verify-{job_id}',focus,
+                            json.dumps({'fixed_verification_command':list(cmd),'purpose':'Execute existing approved project verification; no replacement command'},ensure_ascii=False),
+                            kind='plan',cancelled=stopped_memory,memory_job=current_job,memory_override=memory,
+                            stage=lambda message:self.events.put(('log',message)))
+                    if stopped_memory() or self._verification_command(Path(cwd))!=list(cmd):
+                        raise ValueError('Verification task or fixed command changed during memory review')
                     regression_scope=scope_for(current_job,self.jobs,self.conversations,self.hierarchies,self.specifications)
                     # Preserve the fixed full-project test profile. Observed
                     # Python import dependencies only expand protected inputs.
@@ -6113,6 +6164,8 @@ class DeepThorTDesktop(tk.Tk):
                         f'{len(regression_scope["affected"])} affected file intentions, '
                         f'{len(regression_scope["linked_tests_present"])} related test files present. '
                         'Running fixed full-project check; individual test execution is not assumed.'))
+                if kind=='verification' and job_id is not None and stopped_memory():
+                    raise ValueError('Verification cancelled before dispatch')
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,
                         shell=False,env=verified_env,
@@ -6196,6 +6249,7 @@ class DeepThorTDesktop(tk.Tk):
             finally:
                 if kind in ('installation','reviewed_install','automatic_software'):self.install_process=None
                 else:self.tool_process=None
+                if kind=='verification' and job_id is not None:self._verification_preflight=False
         threading.Thread(target=worker,daemon=True).start()
         return True
     def _start_sentinel(self):

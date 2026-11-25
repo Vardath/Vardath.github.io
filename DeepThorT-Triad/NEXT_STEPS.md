@@ -1,3 +1,9 @@
+# Triad V22 — live memory acceptance checkpoint
+
+Install over verified V21. Run twelve focused checks, including actual Sentinel inference on competing historical records and empty relevance selection. The new live memory case reports expected/selected/delivered synthetic IDs and elapsed time; do not treat CI's scripted harness as real inference. Workflow design and procedure learning now use scoped memory callbacks, fixed verification checks recall relevant warnings before dispatch. Remaining indexed planning, workflow execution and installation gates need further integration; continue memory-first roadmap after live results. Original DeepThorT and all model settings unchanged.
+
+---
+
 # Triad V21 — memory-first checkpoint
 
 The owner approved Sentinel-governed memory as an architectural dependency. Install over V20; run ten checks. The common memory governor retrieves same project/chat/exact specification history, asks Sentinel to select relevant record IDs, persists selection receipts and supplies bounded original records to normal draft planning, implementation/staged source, repair, task MCP and related reviews. Empty/invalid/budget-deferred selections are recorded; historical data is not authority. V22 must cover remaining consequential operations, including verification dispatch, workflow acquisition and indexed long-spec planning, with source freshness and safe cross-revision review. Then improve search, consolidation and context compaction before resuming MCP. Scripted selection test is not live inference proof. Three models and 40% cap remain unchanged.

@@ -30,6 +30,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_task_memory_v13.py -v
       - run: python -m unittest discover -s tests -p test_task_memory_v14.py -v
       - run: python -m unittest discover -s tests -p test_memory_governor_v21.py -v
+      - run: python -m unittest discover -s tests -p test_live_memory_v22.py -v
       - run: python -m unittest discover -s tests -p test_job_queue.py -v
       - run: python -m unittest discover -s tests -p test_workflow_skills_v61.py -v
       - run: python -m unittest discover -s tests -p test_portable_skills_v15.py -v
@@ -68,6 +69,8 @@ jobs:
       - name: Windows governed memory
         run: |
           python -m unittest discover -s tests -p test_memory_governor_v21.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_live_memory_v22.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Supervised Windows stdio MCP lifecycle
         run: |

@@ -36,7 +36,7 @@ def current_source_file(binding,path):
         return bool(latest and latest['id']==req['id'])
 
 def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,proposal,review,
-                  cancelled=None,stage=None):
+                  cancelled=None,stage=None,memory_provider=None):
     """Draft bounded procedure candidates using previously approved help.
     No executable, script, installer or project write is authorized here."""
     from .tool_acquisition import HELP_FLAGS,SCRIPT_SUFFIXES
@@ -115,6 +115,10 @@ def learn_missing(drafts,acquisition,janus,council,client,*,request_id,request,p
                 prompt+=PortableProcedures(acquisition).hints(name,expected,janus,
                     max_chars=min(600,max(0,6500-len(prompt))))
             except (ValueError,OSError,KeyError,TypeError):pass
+            if memory_provider is not None:
+                from .memory_governor import fit
+                prompt+=fit(memory_provider(gap['goal']+' '+name+' '+expected,'procedure_learning',
+                    min(600,max(0,6500-len(prompt)))),max(0,6500-len(prompt)))
             response=council._run(client,role='JANUS_MISSING_PROCEDURE',session=f'workflow-{request_id}',
                                   evidence_sha=sha(key+sha(prompt)),prompt=prompt,stage=stage)
             if response.strip()=='NONE':raise ValueError('Local help did not establish a usable procedure')
@@ -353,7 +357,7 @@ def check_required_proposal(project,task,proposal,recipes):
     return True
 
 
-def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None,workflows=None):
+def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None,workflows=None,memory_provider=None):
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal,required_output=mixed_task['output']) if mixed_task else inventory(acquisition,binding['project'],goal)
     if recovery:
@@ -416,6 +420,9 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
                 max_chars=min(680,6900-len(prompt)),cancelled=cancelled)
         except (ValueError,OSError,KeyError,TypeError):
             pass # optional evidence must never block ordinary design
+    if memory_provider is not None:
+        from .memory_governor import fit
+        prompt+=fit(memory_provider(goal,'workflow_design',min(600,max(0,6900-len(prompt)))),max(0,6900-len(prompt)))
     if len(prompt)>7200:raise ValueError('Workflow design context exceeds model budget')
     feedback=''
     for attempt in range(2):

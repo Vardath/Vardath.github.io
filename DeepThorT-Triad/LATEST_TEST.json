@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-governed-memory-v21",
-  "title": "Triad V21: mandatory scoped memory retrieval and Sentinel relevance review",
+  "id": "triad-live-memory-v22",
+  "title": "Triad V22: live Sentinel relevance and expanded memory governance",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -10,8 +10,10 @@
     "memory_governance",
     "portable_skills",
     "portable_procedures",
+    "local_mcp",
     "mcp_calls",
     "task_mcp",
-    "mcp_stdio"
+    "mcp_stdio",
+    "live_memory"
   ]
 }
