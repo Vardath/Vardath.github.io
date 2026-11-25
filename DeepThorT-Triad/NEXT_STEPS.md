@@ -1,3 +1,9 @@
+# Triad V16.1 — Windows compatibility checkpoint
+
+V16 local acceptance 5/6: portable procedures failed opening a file for hash verification. Install V16.1 and rerun the six checks. Fix uses native Windows handle file identity without relaxing content guards. Resume MCP discovery only after local acceptance. Original DeepThorT and models/cap unchanged.
+
+---
+
 # Triad V16 checkpoint
 
 Install over V15; run six focused checks. Shared procedures supports reviewed command-only templates derived from checked artifact receipts; fresh project output, input type and executable/help identity are validated. Next: local MCP capability discovery and typed application adapters; separately reviewed script portability and broader app operations remain pending. No change to models, runtime, cap or original DeepThorT.

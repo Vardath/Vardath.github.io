@@ -33,6 +33,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_workflow_skills_v61.py -v
       - run: python -m unittest discover -s tests -p test_portable_skills_v15.py -v
       - run: python -m unittest discover -s tests -p test_portable_procedures_v16.py -v
+      - run: python -m unittest discover -s tests -p test_action_guards_v16_1.py -v
       - run: python -m unittest discover -s tests -p test_workflow_design_v61.py -v
   native-windows:
     runs-on: windows-latest
@@ -45,6 +46,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Windows file identity and portable procedures
+        run: |
+          python -m unittest discover -s tests -p test_action_guards_v16_1.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_portable_procedures_v16.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Install pinned native runtime in isolated venv
         run: |
           python -m venv runtime/openvino-env

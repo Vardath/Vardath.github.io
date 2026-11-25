@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-portable-procedures-v16",
-  "title": "Triad V16: reusable verified command templates and fresh candidate binding",
+  "id": "triad-portable-procedures-v16-1",
+  "title": "Triad V16.1: Windows file identity and reusable command templates",
   "checks": [
     "shared_cap",
     "triad_residency",

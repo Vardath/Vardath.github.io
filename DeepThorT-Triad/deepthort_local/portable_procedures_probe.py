@@ -28,9 +28,15 @@ def fixture(root):
 def exercise():
     with tempfile.TemporaryDirectory(prefix='triad-procedure-test-') as folder:
         root=Path(folder)
-        acq,janus,src,dest,recipe,exe=fixture(root)
+        try:
+            acq,janus,src,dest,recipe,exe=fixture(root)
+        except (ValueError,OSError) as exc:
+            return {'status':'failed','detail':'Procedure fixture precondition: '+type(exc).__name__+': '+str(exc)[:180]}
         library=PortableProcedures(acq)
-        row=library.preview(recipe,src,janus)
+        try:
+            row=library.preview(recipe,src,janus)
+        except (ValueError,OSError) as exc:
+            return {'status':'failed','detail':'Procedure evidence preview: '+type(exc).__name__+': '+str(exc)[:180]}
         if 'old-' in json.dumps(row) or str(root) in json.dumps(row):
             return {'status':'failed','detail':'Source paths leaked into portable template'}
         try:library.publish(recipe,src,janus,expected_version=row['version'])

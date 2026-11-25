@@ -120,3 +120,7 @@ V14 local acceptance passed all four checks on 25 November 2026 at 20:52 AEST. E
 
 ### Triad V16 — transferable command procedures
 V15 local acceptance passed 5/5 on 25 November 2026 at 21:00 AEST. Extend existing learned recipe system with explicit portable command-only templates, generated from current approved execution and meaningful artifact evidence plus checked help/executable identity. Whole path placeholders, simple flags/enums/numbers only; no source paths, old script source, recipe IDs or inherited authorization. New output and input format are checked; newly bound recipe is unverified and insert-only, requiring existing execution review and approval. Shared template hints enter the existing JANUS missing-procedure design path. Hardware tab Shared procedures publishes/rebinds/removes. Synthetic receipts exercise actual ledger and recipe code, not real application execution. Scripts remain project-local pending safe parameterization and separate source review; changed executable/help requires relearning. Next: local MCP capability discovery and typed app adapters, then reviewed script portability. Preserve V14 memory, V15 skills, three pinned models and 40% cap.
+
+
+### V16.1 compatibility checkpoint
+Local V16 failed only portable procedures due to Windows file identity verification. Correct the shared action guard to compare native handle identities and path stat snapshots separately, with strict digest verification retained. Add Windows regression coverage; do not advance to MCP until the local test confirms the fix.
