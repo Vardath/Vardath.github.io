@@ -20,6 +20,8 @@ jobs:
           python-version: '3.11'
       - run: python -m compileall -q .
       - run: python -m unittest discover -s tests -p test_triad_resident.py -v
+      - run: python -m unittest discover -s tests -p test_triad_collaboration.py -v
+      - run: python -m unittest discover -s tests -p test_triad_inference_recovery.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15

@@ -87,8 +87,8 @@ class ReasoningCouncil:
                  f'INSPECTED VANILLA EVIDENCE (candidate IDs do not prove compatibility): '
                  f'{inspected_evidence[:1400] or "no source evidence supplied"}')
         janus_prompt=(
-            'JANUS / ACTIVE REASONING. You are using the ONE local Qwen neural model, '
-            'not additional weights. Think through a concrete failing X4 planning constraint. '
+            'JANUS / ACTIVE REASONING. As the assigned local Triad planning role, '
+            'think through a concrete failing X4 planning constraint. '
             'Propose TWO materially different testable explanations or approaches for the FIRST unmet check: '
             f'{focus}. For each: what evidence would confirm it, and what smallest X4 XML file '
             'intention could address it? Distinguish VERIFIED facts from hypotheses. '
@@ -101,7 +101,7 @@ class ReasoningCouncil:
                         prompt=janus_prompt,stage=stage)
         if cancelled and cancelled():raise ValueError('Neural council cancelled before Sentinel turn')
         sentinel_prompt=(
-            'SENTINEL / INDEPENDENT NEURAL CRITIQUE. Same local ONNX model, separate role and inference. '
+            'SENTINEL / INDEPENDENT NEURAL CRITIQUE. Use your assigned independent Triad verification role. '
             'Challenge the JANUS hypotheses using ONLY recorded evidence; identify invented identifiers, '
             'unproven compatibility, safety risks, and the exact missing acceptance criterion. '
             'Choose ONE smallest testable alternative or report that verified XML is missing. '
@@ -111,7 +111,7 @@ class ReasoningCouncil:
         sentinel=self._run(client,role='SENTINEL',session=session,evidence_sha=identity,
                            prompt=sentinel_prompt,stage=stage)
         return {'evidence_sha':identity,'janus':janus,'sentinel':sentinel,
-                'verified':False,'model':'existing single ONNX worker'}
+                'verified':False,'model':'assigned local Triad roles'}
 
 
 def limited_guidance(review: dict | None, *, max_chars: int = 1000) -> str:

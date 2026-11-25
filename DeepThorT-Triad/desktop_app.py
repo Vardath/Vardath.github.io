@@ -801,6 +801,7 @@ class DeepThorTDesktop(tk.Tk):
         expected_primary=primary_proc.pid if primary_proc and primary_proc.poll() is None else None
         observed={'simultaneous':False,'resident':False}
         from deepthort_local.triad_acceptance import resident_roles,smoke
+        from deepthort_local.triad_collaboration import collaboration
         def supervisor_probe():
             from deepthort_local.triad_job import verify_root_cap
             try:cap,available,total=verify_root_cap()
@@ -873,9 +874,34 @@ class DeepThorTDesktop(tk.Tk):
         def concurrency_probe():
             return {'status':'passed' if observed['simultaneous'] else 'inconclusive',
                     'detail':'All three native generation calls observed simultaneously.' if observed['simultaneous'] else 'Simultaneous native generation not observed; requests may have been serialized to protect memory.'}
+        def collaboration_probe():
+            if not observed['resident'] or not observed['simultaneous']:
+                return {'status':'blocked','detail':'Residency and parallel inference must pass first'}
+            if self.active_job is not None or self.active_conversation is not None:
+                return {'status':'inconclusive','detail':'Active real work; collaboration test not started'}
+            with self._council_lock:
+                if self._council_busy:return {'status':'inconclusive','detail':'Council busy'}
+                self._council_busy=True
+            try:
+                def ask(role,prompt,tokens):
+                    body={'model':MODEL_ID,'triad_role':role,'messages':[{'role':'user','content':prompt}],'max_tokens':tokens,'stream':False}
+                    req=Request('http://127.0.0.1:8765/v1/chat/completions',data=json.dumps(body).encode(),
+                        headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['DEEPTHORT_TRIAD_TOKEN']})
+                    from urllib.error import HTTPError
+                    from deepthort_local.triad_errors import http_failure
+                    try:
+                        with build_opener(ProxyHandler({})).open(req,timeout=900) as response:
+                            reply=json.load(response)
+                    except HTTPError as error:
+                        raise http_failure(error) from None
+                    if reply.get('triad_role')!=role:raise ValueError('Wrong role response')
+                    return reply['choices'][0]['message']['content']
+                return collaboration(health,ask,expected_primary,cancel,
+                    notify=lambda stage:self.events.put(('latest_test_progress','triad_collaboration: '+stage)))
+            finally:self._council_busy=False
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe}
 
         def worker():
             try:

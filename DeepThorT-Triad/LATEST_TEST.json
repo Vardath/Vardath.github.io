@@ -1,12 +1,13 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-compact-parallel-v4",
-  "title": "Triad compact models: shared cap, residency, role replies and parallel inference",
+  "id": "triad-collaboration-v5",
+  "title": "Triad V5: parallel inference and independent specification repair",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "triad_inference",
-    "concurrent_status"
+    "concurrent_status",
+    "triad_collaboration"
   ]
 }
