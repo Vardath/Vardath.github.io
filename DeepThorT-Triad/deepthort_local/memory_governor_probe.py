@@ -168,4 +168,55 @@ def exercise_dispatch_gate():
     try:gate.check('reject',lambda:None)
     except ValueError:pass
     else:raise ValueError('Rejected review authorized dispatch')
-    return {'status':'passed','detail':'Nonblocking one-shot dispatch review, changed-operation isolation and rejection passed.'}
+    # Exercise the real workflow dispatch boundary as well as the gate.
+    from .tool_workflows import ToolWorkflows,freeze
+    from .janus_engine import JanusStore
+    from .workflow_design import source_binding
+    with tempfile.TemporaryDirectory(prefix='triad-workflow-memory-') as folder:
+        root=Path(folder);exe=root/'fixture.exe';exe.write_bytes(b'fixture')
+        class Recipes:
+            def _recipe_row(self,ident,project):
+                return {'id':ident,'title':'Produce checked output','name':'fixture',
+                        'artifact':f'out{ident}.json','args_json':'["{{output}}"]','script_path':''}
+            def _build_recipe_command(self,row,rel,*,allow_future_input=False):
+                return [str(exe),str(root/row['artifact'])]
+        source={'id':1,'chat_id':'chat','project':str(root.resolve()),'mode':'draft_plan',
+                'prompt':'Produce a checked JSON artifact.'}
+        class Conversations:
+            def get(self,ident):return source if ident==1 else None
+            def latest_project_request(self,chat,project):return source
+        conversations=Conversations()
+        janus=JanusStore(root/'janus.sqlite')
+        workflows=ToolWorkflows(janus)
+        manifest=freeze(Recipes(),root,[{'recipe_id':1,'input':''},{'recipe_id':2,'input':''}])
+        manifest['specification']=source_binding(source)
+        ident=workflows.approve(manifest,user_approved=True)
+        seen=[]
+        def deferred(run,approved,ordinal,stage,guards):
+            seen.append((run['id'],ordinal,stage['argv']))
+            return False
+        workflows.tick(conversations=conversations,before_dispatch=deferred)
+        if seen!=[(ident,1,manifest['stages'][0]['argv'])] or janus.actions():
+            raise ValueError('Workflow dispatched before memory review')
+        def change_source(*args):
+            source['prompt']='Amended requirements.'
+            return True
+        workflows.tick(conversations=conversations,before_dispatch=change_source)
+        if janus.actions() or workflows.get(ident)['state']!='cancelled':
+            raise ValueError('Workflow accepted a superseded specification')
+        manifest['specification']=source_binding(source)
+        second=workflows.approve(manifest,user_approved=True)
+        def change_guard(*args):
+            (root/'out1.json').write_text('{}',encoding='utf-8')
+            return True
+        workflows.tick(conversations=conversations,before_dispatch=change_guard)
+        if janus.actions() or workflows.get(second)['state']!='blocked':
+            raise ValueError('Workflow accepted a changed output guard')
+        (root/'out1.json').unlink()
+        third=workflows.approve(manifest,user_approved=True)
+        workflows.tick(conversations=conversations,before_dispatch=lambda *args:True)
+        actions=janus.actions()
+        if len(actions)!=1 or workflows.stages(third)[0]['state']!='dispatched':
+            raise ValueError('Unchanged approved workflow did not dispatch')
+        workflows.stop(third)
+    return {'status':'passed','detail':'Nonblocking one-shot dispatch review, changed-operation isolation, rejection and real workflow source/guard rechecks passed.'}

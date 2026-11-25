@@ -3606,14 +3606,19 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.roadmap_tool_bridge import boundary_open
             return boundary_open(link,self.conversations.get(link['request_id']),self.roadmap_runs.get(link['request_id']),
                 self.conversations,self.hierarchies,self.specifications,self.jobs)
+        workflow_review_pending=False
         def workflow_memory(run,manifest,ordinal,stage,guards):
+            nonlocal workflow_review_pending
             focus='Workflow '+stage['title']+' '+stage['output']
             proposal={'approved_argv':stage['argv'],'declared_output':stage['output'],
                       'purpose':'Execute exact approved workflow stage; do not substitute commands'}
-            return self._dispatch_memory_review(manifest['specification'],
+            ready=self._dispatch_memory_review(manifest['specification'],
                 [run['id'],run['manifest_sha'],ordinal,guards],focus,'workflow_dispatch',proposal)
+            workflow_review_pending=not ready
+            return ready
         workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations,roadmap_ready=roadmap_ready,
             before_dispatch=workflow_memory)
+        if workflow_review_pending:return
         if workflow_message:
             self._log(workflow_message)
             return

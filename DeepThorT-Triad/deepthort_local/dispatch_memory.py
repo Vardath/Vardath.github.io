@@ -4,6 +4,9 @@ Called by the desktop scheduler only; worker performs memory/adherence review,
 never executes commands. A changed operation cannot consume another result.
 """
 from threading import Thread, Lock
+from time import monotonic
+
+REVIEW_MAX_AGE_SECONDS=30
 
 class DispatchMemoryGate:
     def __init__(self):
@@ -20,7 +23,7 @@ class DispatchMemoryGate:
             if entry is not None:
                 if entry['state']=='pending':return False
                 self._entry=None
-                if entry['key']==key:
+                if entry['key']==key and monotonic()-entry['completed_at']<=REVIEW_MAX_AGE_SECONDS:
                     if entry['state']!='passed':
                         raise ValueError('Memory dispatch review blocked: '+entry['error'])
                     return True
@@ -33,7 +36,7 @@ class DispatchMemoryGate:
             except Exception as exc:
                 state,error='blocked',type(exc).__name__
             with self._lock:
-                entry['state']=state;entry['error']=error
+                entry['state']=state;entry['error']=error;entry['completed_at']=monotonic()
         try:Thread(target=worker,name='triad-memory-dispatch',daemon=True).start()
         except Exception:
             with self._lock:self._entry=None
