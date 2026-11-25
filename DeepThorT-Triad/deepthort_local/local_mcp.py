@@ -72,6 +72,9 @@ class Discovery:
         if method not in ('initialize','notifications/initialized','tools/list'):
             raise ValueError('MCP discovery does not permit this method')
         if notification!=(method=='notifications/initialized'):raise ValueError('Invalid discovery request')
+        return self._exchange(method,params,notification=notification)
+
+    def _exchange(self,method,params=None,*,notification=False):
         body={'jsonrpc':'2.0','method':method}
         if params is not None:body['params']=params
         if not notification:
@@ -119,6 +122,7 @@ class Discovery:
             raise ValueError('Server did not advertise tools')
         self.post('notifications/initialized',notification=True)
         tools=[];names=set();cursor=None;seen=set()
+        self.schemas={}
         for _ in range(MAX_PAGES):
             page=self.post('tools/list',{'cursor':cursor} if cursor is not None else {})
             if not isinstance(page.get('tools'),list):raise ValueError('Invalid MCP tool list')
@@ -126,6 +130,7 @@ class Discovery:
                 tool=typed_tool(item)
                 if tool['name'] in names:raise ValueError('Duplicate MCP tool name')
                 names.add(tool['name']);tools.append(tool)
+                self.schemas[tool['name']]=item['inputSchema']
                 if len(tools)>MAX_TOOLS:raise ValueError('MCP tool count exceeds bound')
             cursor=page.get('nextCursor')
             if cursor is None:break

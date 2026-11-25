@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-local-mcp-v17",
-  "title": "Triad V17: scoped local MCP JSON discovery and typed capability catalog",
+  "id": "triad-mcp-calls-v18",
+  "title": "Triad V18: reviewed typed local MCP calls and persistent receipts",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -9,6 +9,7 @@
     "task_memory",
     "portable_skills",
     "portable_procedures",
-    "local_mcp"
+    "local_mcp",
+    "mcp_calls"
   ]
 }

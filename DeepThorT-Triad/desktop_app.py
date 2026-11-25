@@ -934,9 +934,12 @@ class DeepThorTDesktop(tk.Tk):
         def local_mcp_probe():
             from deepthort_local.local_mcp_probe import exercise
             return exercise()
+        def mcp_calls_probe():
+            from deepthort_local.mcp_calls_probe import exercise
+            return exercise()
         probes={'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
-                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe}
+                'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe}
 
         def worker():
             try:
@@ -5287,16 +5290,53 @@ class DeepThorTDesktop(tk.Tk):
             summary='\n'.join(r['endpoint']+' ('+str(len(r['tools']))+' tools; historical discovery): '+
                                ', '.join(x['name'] for x in r['tools'][:8]) for r in rows) or 'No discovered servers.'
             choice=simpledialog.askstring('Local MCP discovery',
-                summary[:2500]+'\n\nEnter DISCOVER or REMOVE. No tools can be called in this version.',parent=self)
+                summary[:2500]+'\n\nEnter DISCOVER, REMOVE, CALL or HISTORY.',parent=self)
             if not choice:return
             choice=choice.strip().upper()
-            if choice not in ('DISCOVER','REMOVE'):return
+            if choice=='HISTORY':
+                from deepthort_local.mcp_calls import MCPCalls
+                history=MCPCalls(self.janus).history(project)
+                messagebox.showinfo('MCP historical receipts','\n'.join(
+                    f"#{x['id']} {x['tool']}: {x['state']} (not proof of correctness)" for x in history) or 'No calls recorded.',parent=self)
+                return
+            if choice not in ('DISCOVER','REMOVE','CALL'):return
             url=simpledialog.askstring('Local MCP endpoint','Enter the exact http://127.0.0.1:PORT/path endpoint of an already running trusted server:',parent=self)
             if not url:return
             url=url.strip();endpoint(url)
             if choice=='REMOVE':
                 if messagebox.askyesno('Remove local catalog entry?','Forget this project discovery record?',parent=self):
                     catalog.remove(project,url,user_approved=True)
+                return
+            if choice=='CALL':
+                from deepthort_local.mcp_calls import MCPCalls
+                from deepthort_local.tool_workflows import digest
+                from deepthort_local.structured_source import strict_json
+                if self.disk_gate.gaming():raise ValueError('Wait until gaming finishes before MCP calls')
+                if getattr(self,'_mcp_discovery_active',False):raise ValueError('Another MCP operation is active')
+                record=next((x for x in rows if x['endpoint']==url),None)
+                if not record:raise ValueError('Discover this endpoint first')
+                name=simpledialog.askstring('Select MCP tool','\n'.join(x['name'] for x in record['tools'])+'\nExact tool name:',parent=self)
+                if not name:return
+                tool=next((x for x in record['tools'] if x['name']==name),None)
+                if not tool:raise ValueError('Unknown tool')
+                raw=simpledialog.askstring('Exact JSON arguments',json.dumps(tool['fields'])+'\nEnter JSON object (simple scalar fields only):',parent=self)
+                if raw is None:return
+                args=strict_json(raw)
+                service=MCPCalls(self.janus)
+                proposal=service.prepare(project,url,name,args)
+                seal=digest(proposal)
+                if not messagebox.askyesno('Approve one exact MCP call?',
+                    json.dumps(proposal,ensure_ascii=False,indent=2)+'\n\nTrusted external server can modify files or perform other operations outside this project. No sandbox or automatic retry. Proceed once?',parent=self):return
+                self._mcp_discovery_active=True
+                def invoke():
+                    try:
+                        result=service.call(proposal,expected_sha=seal,user_approved=True,
+                            cancelled=lambda:self._quitting or self.disk_gate.gaming() or str(self.project)!=project)
+                        self.events.put(('mcp_call_result',result))
+                    except Exception as error:
+                        self.events.put(('log','MCP call not confirmed: '+type(error).__name__+'; inspect receipt history before retrying'))
+                    finally:self._mcp_discovery_active=False
+                threading.Thread(target=invoke,daemon=True,name='LocalMCPCall').start()
                 return
             if self.disk_gate.gaming():raise ValueError('Wait until gaming finishes before discovery')
             if getattr(self,'_mcp_discovery_active',False):raise ValueError('Another MCP discovery is active')
@@ -6559,6 +6599,12 @@ class DeepThorTDesktop(tk.Tk):
                 self._conversation_reply(event[1],
                     'LOCAL X4 FILE INSPECTION (read-only, not model-generated):\n'+
                     format_x4_inspection(event[2]))
+            elif kind=='mcp_call_result':
+                result=event[1]
+                messagebox.showinfo('MCP response — untrusted server data',
+                    f"Receipt #{result['id']}: {result['state']}\nNot independent verification.\n\n"+
+                    json.dumps(result['result'],ensure_ascii=False,indent=2)[:5000],parent=self)
+                self._log(f"MCP receipt #{result['id']}: {result['state']}; raw response not logged")
             elif kind=='x4_extract_checked':
                 self._x4_preflight_extract_checked(event[1],event[2])
             elif kind=='x4_extract_check_error':

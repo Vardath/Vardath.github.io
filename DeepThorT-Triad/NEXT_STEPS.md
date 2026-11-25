@@ -1,3 +1,9 @@
+# Triad V18 — current checkpoint
+
+Install over verified V17; run eight focused checks. Local MCP now supports user-reviewed single calls with fresh scalar schema validation, exact argument binding and durable project receipts. Next integrate JANUS tool selection, Sentinel review, task binding and bounded result recall; expand transport support and supervised server lifecycle. External servers are not sandboxed or governed by Triad's cap. No changes to original DeepThorT or model profiles.
+
+---
+
 # Triad V17 — current checkpoint
 
 Install over verified V16.1; run seven focused checks. Local MCP discovery supports approved already-running loopback JSON handshake servers. It does not call tools. Next implement current schema/argument verification and explicitly authorized tool invocation, expand protocol/transport support, then actual app adapters. Keep 40% cap and three models; external servers are not supervised by that cap. Original DeepThorT untouched.
