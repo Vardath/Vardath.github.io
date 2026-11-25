@@ -1,3 +1,9 @@
+# Triad V22.1 — memory freshness checkpoint
+
+V22.1 memory freshness: re-read the complete bounded candidate packet immediately after Sentinel review (including cached verdicts) and withhold the entire packet if changed. Audit stale_packet_withheld; no automatic inference retry. A subsequent operation reviews the new packet. Regression cases cover deletion, mutation and addition during the neural turn. Historical records remain advisory; this does not validate live external source files or provide atomic isolation of later dispatch. Live V22 Windows acceptance remains pending.
+
+---
+
 # Triad V22 — live memory acceptance checkpoint
 
 Install over verified V21. Run twelve focused checks, including actual Sentinel inference on competing historical records and empty relevance selection. The new live memory case reports expected/selected/delivered synthetic IDs and elapsed time; do not treat CI's scripted harness as real inference. Workflow design and procedure learning now use scoped memory callbacks, fixed verification checks recall relevant warnings before dispatch. Remaining indexed planning, workflow execution and installation gates need further integration; continue memory-first roadmap after live results. Original DeepThorT and all model settings unchanged.

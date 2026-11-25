@@ -164,6 +164,17 @@ def govern(jobs,council,client,*,project,chat_id,original,focus,scope,phase,
         row=jobs.get(job_id)
         if not row or (row['project'],row['chat_id'])!=(str(project),chat_id):
             raise ValueError('Memory task changed')
+    # A neural turn can outlast edits to the memory store. Re-read the
+    # bounded packet before releasing any reviewed history, including cached
+    # verdicts. A changed record set needs a new Sentinel review on the next
+    # operation, not an automatic retry or reuse of an obsolete selection.
+    if candidates and status in ('reviewed','reviewed_none','reviewed_budget_deferred'):
+        fresh=retrieve(jobs.path,project=project,chat_id=chat_id,original=original,
+                       focus=focus,job_id=job_id)
+        if sha(canonical(fresh))!=packet_sha:
+            keep=[];context='';status='stale_packet_withheld'
+            if stage:stage('Historical memory changed during Sentinel review; records withheld')
+    if cancelled and cancelled():raise ValueError('Memory review cancelled')
     review_sha=sha(canonical({'key':key,'answer':answer_sha,'status':status,'selected':keep,
                                'context_sha':sha(context),'budget':budget}))
     # Record the decision separately from recalled notes to avoid self-reinforcing
