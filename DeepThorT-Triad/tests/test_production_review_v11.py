@@ -72,3 +72,24 @@ class ProductionTests(unittest.TestCase):
         self.assertEqual(result['status'],'failed')
         self.assertEqual(result['evidence']['production_stages']['seeded_defect_review']['status'],'failed')
         self.assertEqual(len(model.calls),1)
+
+    def test_structured_review_and_bounded_diagnostics(self):
+        model=Model(['{"verdict":"REJECT","reason":"Wrong owner and speed."}',
+                     '<ship id="demo_pe" owner="player" speed="360"/>',
+                     '{"verdict":"ACCEPT","reason":"All attributes correct."}'])
+        result=exercise(health,100,threading.Event(),client_factory=lambda _:model)
+        self.assertEqual(result['status'],'passed',result)
+        stages=result['evidence']['production_stages']
+        self.assertEqual(stages['seeded_defect_review']['response_format'],'json')
+        self.assertEqual(stages['seeded_defect_review']['mentioned_fields'],['owner','speed'])
+        self.assertNotIn('Wrong owner and speed',str(result))
+    def test_one_defect_only_does_not_pass(self):
+        result=exercise(health,100,threading.Event(),client_factory=lambda _:Model(['REJECT\nWrong owner.']))
+        self.assertEqual(result['status'],'failed')
+        self.assertEqual(result['evidence']['production_stages']['seeded_defect_review']['mentioned_fields'],['owner'])
+    def test_parser_rejects_ambiguous_duplicate_or_reasonless_output(self):
+        from deepthort_local.specification_guard import parse_source_verdict
+        for raw in ['ACCEPT','{"verdict":"ACCEPT","reason":""}',
+                    '{"verdict":"REJECT","verdict":"ACCEPT","reason":"ok"}',
+                    'Maybe acceptable']:
+            self.assertEqual(parse_source_verdict(raw)[0],'INVALID')

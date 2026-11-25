@@ -45,7 +45,7 @@ class ReasoningCouncil:
             raise ValueError('Invalid council output budget')
         # Never reuse a verdict produced by an obsolete checkpoint, runtime
         # or output mode, even if the candidate and user specification match.
-        evidence_sha=sha(json.dumps({'schema':'triad-council-model-v2',
+        evidence_sha=sha(json.dumps({'schema':'triad-council-model-v3',
             'evidence':evidence_sha,'model':PROFILES[assigned][2],
             'runtime':RUNTIME_VERSION,'tokens':max_tokens},sort_keys=True))
         with self._db() as db:

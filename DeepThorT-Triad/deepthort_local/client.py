@@ -167,7 +167,11 @@ class LocalModelClient:
         if not 1 <= max_tokens <= 768: raise ValueError('max_tokens must be 1..768')
         role=triad_role or self.role
         if role not in PROFILES:raise ValueError('Unknown Triad role')
-        messages=[{'role':'system','content':'You are an offline coding assistant. Be concise, precise, and never claim unverified code execution.'}, *self.inference_context(session_id),{'role':'user','content':prompt}]
+        system=('You are Sentinel, an independent verifier. Follow the requested review output format. '
+                'Compare actual evidence to requirements; never claim unverified execution.'
+                if role=='sentinel' else
+                'You are an offline coding assistant. Be concise, precise, and never claim unverified code execution.')
+        messages=[{'role':'system','content':system}, *self.inference_context(session_id),{'role':'user','content':prompt}]
         # Prevent oversized prompts on limited-memory machines.
         while sum(len(m['content']) for m in messages)>14000 and len(messages)>2: messages.pop(1)
         payload=json.dumps({'model':MODEL_ID,'triad_role':role,'messages':messages,'max_tokens':max_tokens,'stream':False}).encode('utf8')

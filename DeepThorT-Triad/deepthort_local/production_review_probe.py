@@ -53,14 +53,19 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     session='production-probe',focus=focus,proposal=candidate,kind='code',
                     cancelled=cancelled.is_set)
                 if candidate==BAD:
-                    lines=result['reason'].splitlines()
-                    explicit_rejection=(not result['accepted'] and bool(lines) and
-                        lines[0].strip().upper()=='REJECT' and any(x.strip() for x in lines[1:]))
-                    stages['seeded_defect_review']={'status':'passed' if explicit_rejection else 'failed'}
+                    import re
+                    fields=sorted(set(re.findall(r'\b(?:owner|speed|id)\b',result['reason'].lower())))
+                    explicit_rejection=(result.get('verdict')=='REJECT' and not result['accepted']
+                        and {'owner','speed'}<=set(fields))
+                    stages['seeded_defect_review']={'status':'passed' if explicit_rejection else 'failed',
+                        'verdict':result.get('verdict','INVALID'),'response_format':result.get('response_format','invalid'),
+                        'response_chars':result.get('response_chars',0),'mentioned_fields':fields}
                     if not explicit_rejection:
-                        raise SeededReviewFailure('Seeded defect was not explicitly rejected with a reason')
+                        raise SeededReviewFailure('Seeded defects were not both explicitly identified')
                 else:
-                    stages['generated_source_review']={'status':'passed' if result['accepted'] else 'failed'}
+                    stages['generated_source_review']={'status':'passed' if result['accepted'] else 'failed',
+                        'verdict':result.get('verdict','INVALID'),'response_format':result.get('response_format','invalid'),
+                        'response_chars':result.get('response_chars',0)}
                 if not result['accepted']:raise SpecificationRejected(result['reason'])
                 # A semantic acceptance alone is not enough even in this fixture.
                 if not correct(candidate):
@@ -83,7 +88,7 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
                     attempts=3,max_tokens=192,transform=strip_single_code_fence,
                     cancelled=cancelled.is_set)
             except SeededReviewFailure:
-                return done('failed','Production guard did not explicitly reject seeded defective XML with a reason')
+                return done('failed','Production guard did not explicitly reject both seeded defects; inspect verdict and response format')
             except SpecificationRejected:
                 return done('cancelled' if cancelled.is_set() else 'failed','Production review or regeneration did not produce accepted source')
             if cancelled.is_set():return done('cancelled','Test stopped')

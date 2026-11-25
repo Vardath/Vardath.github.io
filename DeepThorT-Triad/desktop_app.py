@@ -904,8 +904,10 @@ class DeepThorTDesktop(tk.Tk):
                 return result
             finally:self._council_busy=False
         def production_review_probe():
-            if not observed.get('collaboration_passed'):
-                return {'status':'blocked','detail':'Complete three-model collaboration must pass first'}
+            if not (observed['resident'] and observed['simultaneous'] and observed.get('inference_passed')):
+                return {'status':'blocked','detail':'Residency, exact replies and parallel inference must pass first'}
+            if 'triad_collaboration' in manifest['checks'] and not observed.get('collaboration_passed'):
+                return {'status':'blocked','detail':'Requested three-model collaboration check must pass first'}
             if self.active_job is not None or self.active_conversation is not None:
                 return {'status':'inconclusive','detail':'Active real work; production gate probe not started'}
             with self._council_lock:

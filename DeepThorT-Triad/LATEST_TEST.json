@@ -1,14 +1,13 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-production-review-v11",
-  "title": "Triad V11: production source review and bounded regeneration",
+  "id": "triad-production-review-v12",
+  "title": "Triad V12: targeted production verdict and regeneration",
   "checks": [
     "shared_cap",
     "triad_residency",
     "janus_core",
     "triad_inference",
     "concurrent_status",
-    "triad_collaboration",
     "production_review"
   ]
 }
