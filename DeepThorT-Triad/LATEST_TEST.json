@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-collaboration-v7",
-  "title": "Triad V7: parallel inference and bounded independent audit recovery",
+  "id": "triad-qwen4b-v8",
+  "title": "Triad V8: Qwen3-4B Sentinel direct review and bounded thinking recovery",
   "checks": [
     "shared_cap",
     "triad_residency",

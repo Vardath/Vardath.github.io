@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
-from triad_openvino_worker import bounded_scheduler,final_text,smoke_result,model_messages
+from triad_openvino_worker import bounded_scheduler,final_text,smoke_result,model_messages,thinking_enabled,Engine
 from deepthort_local.quiet_playtest import is_capped_windows_process
 
 class NativeMemoryTests(unittest.TestCase):
@@ -43,3 +43,15 @@ class NativeMemoryTests(unittest.TestCase):
         self.assertEqual(model_messages('sentinel',messages),messages)
         self.assertEqual(model_messages('implementation',messages),messages)
         self.assertEqual(model_messages('janus',messages[1:])[0],{'role':'system','content':'/no_think'})
+
+    def test_bounded_reasoning_mode_only_for_long_sentinel_requests(self):
+        for tokens in (16,32,96,192,511):
+            self.assertFalse(thinking_enabled('sentinel',tokens))
+        self.assertTrue(thinking_enabled('sentinel',768))
+        self.assertFalse(thinking_enabled('janus',768))
+        self.assertFalse(thinking_enabled('implementation',768))
+        e=Engine.__new__(Engine);e.role='sentinel'
+        with patch.object(e,'generate_raw',return_value='reasoning text</think>{"required":360,"verdict":"mismatch"}'):
+            self.assertEqual(e.generate([],768),'{"required":360,"verdict":"mismatch"}')
+        with patch.object(e,'generate_raw',return_value='unfinished reasoning'):
+            with self.assertRaises(ValueError):e.generate([],768)

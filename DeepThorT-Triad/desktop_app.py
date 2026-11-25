@@ -6040,15 +6040,25 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showinfo('AI active','Stop AI first.');return
         if self.disk_gate.gaming():
             messagebox.showwarning('Game active','Finish gaming before installation and downloading.');return
+        from deepthort_local.triad_profiles import installed_files,smoke_verified
+        try:
+            sentinel_only=all(installed_files(role,ROOT) and smoke_verified(role,ROOT)
+                              for role in ('implementation','janus'))
+        except (OSError,ValueError,KeyError,TypeError):
+            sentinel_only=False
+        install_args=['--role','sentinel'] if sentinel_only else []
+        download_description=('Install the new Qwen3-4B Sentinel (~2.29 GB); preserve Granite and SmolLM3.'
+                              if sentinel_only else
+                              'Install the three pinned OpenVINO IR models (~5.88 GB total; valid files reused).')
         if not messagebox.askyesno('Approve Triad installation',
-             'Download the three revision-pinned OpenVINO IR models (~4.80 GB total; existing valid models reused) and pinned CPU runtime?\n'
+             download_description+' Verify the pinned CPU runtime.\n'
              'Files stay in this separate Triad folder. Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
         def worker():
             try:
                 flags=getattr(subprocess,'CREATE_NO_WINDOW',0) if os.name=='nt' else 0
                 npm='npm.cmd' if os.name=='nt' else 'npm'
-                for cmd,label in (([sys.executable,str(ROOT/'download_model.py')],'Triad models and CPU runtime'),):
+                for cmd,label in (([sys.executable,str(ROOT/'download_model.py'),*install_args],'Triad models and CPU runtime'),):
                     self.events.put(('log','Installing '+label+'…'))
                     with subprocess.Popen(cmd,cwd=str(ROOT),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                             text=True,encoding='utf-8',errors='replace',creationflags=flags) as proc:

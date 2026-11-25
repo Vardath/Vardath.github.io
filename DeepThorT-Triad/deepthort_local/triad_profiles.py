@@ -12,7 +12,7 @@ RUNTIME_VERSION='2026.4.1.0'
 PROFILES={
  'implementation':('Granite 4.1 3B INT4 code-calibrated','HarmenWessels/granite-4.1-3b-int4-cw-code-ov','0e0f06a3823a72ab3755ecf9715050b5125cf5a4',1_700_000_000),
  'janus':('SmolLM3-3B INT4','HarmenWessels/SmolLM3-3B-int4-symg128-ov','2fa313c463ddcaac532d0ddfc6daa76b08991573',1_600_000_000),
- 'sentinel':('Qwen3-1.7B INT4','OpenVINO/Qwen3-1.7B-int4-ov','6f32d81e9deebeca30bb5490a7176cf4fa8c79e3',1_100_000_000),
+ 'sentinel':('Qwen3-4B INT4','OpenVINO/Qwen3-4B-int4-ov','b467368d16b75df14055562fe927ae8e1f15f7ef',2_100_000_000),
 }
 REQUIRED=frozenset(('config.json','tokenizer_config.json','openvino_model.xml','openvino_model.bin',
     'openvino_tokenizer.xml','openvino_tokenizer.bin','openvino_detokenizer.xml','openvino_detokenizer.bin'))
@@ -20,9 +20,10 @@ OPTIONAL=frozenset(('generation_config.json','openvino_config.json','tokenizer.j
     'special_tokens_map.json','merges.txt','vocab.json','tokenizer.model','chat_template.jinja',
     'chat_template_original.jinja','README.md','LICENSE','LICENSE.txt'))
 def model_path(role,root=ROOT):
-    # Preserve the former DeepSeek directory and both unchanged role directories.
+    # Keep the earlier Sentinel and DeepSeek checkpoints available for rollback.
     PROFILES[role]
-    return Path(root)/'models'/MODEL_SET_DIR/('janus-smollm3' if role=='janus' else role)
+    folder={'janus':'janus-smollm3','sentinel':'sentinel-qwen3-4b'}.get(role,role)
+    return Path(root)/'models'/MODEL_SET_DIR/folder
 def runtime_path(root=ROOT):
     return Path(root)/'runtime'/'openvino-env'/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
 def role_for_council(role):

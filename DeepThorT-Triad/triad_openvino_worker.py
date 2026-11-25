@@ -65,6 +65,12 @@ def model_messages(role,messages):
             result.insert(0,{'role':'system','content':'/no_think'})
     return result
 
+def thinking_enabled(role,tokens):
+    # Explicitly budgeted long Sentinel requests may use Qwen's thinking
+    # template. Short availability probes and the baseline holistic audit
+    # retain the same direct-answer mode as V7.
+    return role=='sentinel' and tokens>=512
+
 class Engine:
     def __init__(self,role):
         import openvino_genai as genai
@@ -87,10 +93,10 @@ class Engine:
     def generate_raw(self,messages,tokens):
         history=self.genai.ChatHistory()
         for message in model_messages(self.role,messages):history.append(message)
-        # SmolLM3 and Qwen3 use documented non-thinking modes for the
-        # coordinator and verifier's exact replies and JSON contracts.
+        # Keep exact-response smoke tests and the V7 baseline comparable.
+        # Reasoning recovery requests carry an explicit larger token budget.
         if self.role in ('janus','sentinel'):
-            history.set_extra_context({'enable_thinking':False})
+            history.set_extra_context({'enable_thinking':thinking_enabled(self.role,tokens)})
         # Bound by actual token count including the model's own chat template.
         # Separate per-request histories prevent role/session KV contamination.
         rendered=self.tokenizer.apply_chat_template(history,add_generation_prompt=True)
@@ -108,7 +114,14 @@ class Engine:
         return raw
 
     def generate(self,messages,tokens):
-        return final_text(self.role,self.generate_raw(messages,tokens))
+        raw=self.generate_raw(messages,tokens)
+        # Qwen's template may prefill the opening tag. Require a completed
+        # thought block for thinking-mode requests, never accept a partial
+        # chain as the final structured answer.
+        if thinking_enabled(self.role,tokens):
+            if '</think>' not in raw:raise ValueError('Sentinel reasoning budget ended without completed thought block')
+            raw=raw.split('</think>',1)[1]
+        return final_text(self.role,raw)
 
 def smoke_result(role,raw):
     """Runtime availability is distinct from strict answer correctness."""

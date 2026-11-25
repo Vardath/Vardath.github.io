@@ -119,7 +119,9 @@ def collaboration(health,ask,pid,cancelled,notify=None):
                     ". Derive the required value from the original instructions and amendment, then compare. "
                     'Return only JSON with keys "required" (the required value, correct JSON type) '
                     'and "verdict" ("match" if the candidate equals the requirement, otherwise "mismatch").')
-            state,answer=call(stage+"_"+field,"sentinel",prompt,96,valid)
+            state,answer=call(stage+"_"+field,"sentinel",prompt,768,valid)
+            if stage+"_"+field in stages:
+                stages[stage+"_"+field]["mode"]="bounded_thinking"
             if state!="passed":
                 stages[stage]["recovery_status"]=state
                 return state,None
