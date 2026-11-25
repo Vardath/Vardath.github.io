@@ -38,3 +38,9 @@ jobs:
               raise SystemExit(run_capped([sys.executable, str(Path(__file__).resolve()), "--inside"], cwd=str(Path(__file__).resolve().parent), percent=35, ram_percent=35))
           '@ | Set-Content -Encoding utf8 triad_ci_bootstrap.py
           python triad_ci_bootstrap.py
+
+      - name: Verify actual nested worker-memory group and native CPU preflight
+        shell: pwsh
+        run: |
+          & runtime/openvino-env/Scripts/python.exe triad_runtime_preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

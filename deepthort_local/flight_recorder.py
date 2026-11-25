@@ -281,8 +281,18 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
                         tail=handle.read().decode('utf-8',errors='replace')
                     z.writestr('action-output-tails/'+item.name+'.redacted.txt', scrub(tail))
         verify_diagnostics_archive(temp_path)
-        os.replace(temp_path,destination)
+        # Windows scanners may hold a newly written archive briefly.
+        import time
+        for attempt in range(5):
+            try:
+                os.replace(temp_path,destination)
+                break
+            except PermissionError:
+                if attempt==4:raise
+                time.sleep(.2*(attempt+1))
         verify_diagnostics_archive(destination)
     finally:
-        if os.path.exists(temp_path):os.unlink(temp_path)
+        if os.path.exists(temp_path):
+            try:os.unlink(temp_path)
+            except OSError:pass  # Keep the original failure, not a cleanup error.
     return destination

@@ -11,7 +11,7 @@ from urllib.request import Request,build_opener,ProxyHandler
 from urllib.error import HTTPError
 from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
 from deepthort_local.triad_profiles import ROOT,PROFILES,MODEL_ID,model_path,runtime_path,ready,total_weights
-from deepthort_local.triad_job import verify_root_cap,child_server
+from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
 
 def validate(body,default):
     if not isinstance(body,dict) or body.get('model',MODEL_ID)!=MODEL_ID or body.get('stream',False):
@@ -36,7 +36,7 @@ def command(role,port,key):
 def admission(cap,available,total,weights):
     # Minimum allowance for all weights plus modest runtime overhead.
     # OS cap remains authoritative; runtime/KV allocation may still fail.
-    need=weights+1536*1024**2
+    need=weights+1536*1024**2+CONTROL_RESERVE_BYTES
     if cap<need or available<need+total//10:
         raise RuntimeError(f'Three resident models need at least {need/2**30:.2f} GiB headroom; job cap {cap/2**30:.2f} GiB. No model swapping or fallback.')
 def free_port():
@@ -57,7 +57,10 @@ class Pool:
         self.children={};self.locks={r:threading.Lock() for r in PROFILES}
         self.admission_lock=threading.Condition()
         self.generating=set()
-        self.serial_memory_mode=False
+        # Actual Windows tests exhausted the root job even at 35%. Admit
+        # one generation at a time until measured parallel safety is proven.
+        self.serial_memory_mode=True
+        self.worker_commit_limit=0
         self.memory_retries=0
         self.stage='Checking combined memory';self.started=time.monotonic();self.ready=False
     def set_stage(self,message):
@@ -67,9 +70,10 @@ class Pool:
         weights=total_weights()
         self.set_stage(f'Triad memory: job cap {cap/2**30:.2f} GiB; free RAM {available/2**30:.2f} GiB; weights {weights/2**30:.2f} GiB')
         admission(cap,available,total,weights)
+        group,self.worker_commit_limit=stack.enter_context(model_group())
         logs=ROOT/'state'/'logs'
         self.set_stage('Checking installed native OpenVINO CPU runtime')
-        with child_server([str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),'--probe'],ROOT,logs/'triad-runtime-version.log') as (_,alive):
+        with child_server([str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),'--probe'],ROOT,logs/'triad-runtime-version.log',group=group) as (_,alive):
             deadline=time.monotonic()+120
             while alive() and time.monotonic()<deadline:time.sleep(.25)
             if alive():raise RuntimeError('OpenVINO CPU probe timed out')
@@ -78,7 +82,7 @@ class Pool:
         for role,p in PROFILES.items():
             self.set_stage('Loading '+role+': '+p[0])
             port=free_port();key=secrets.token_hex(32)
-            pid,alive=stack.enter_context(child_server(command(role,port,key),ROOT,logs/f'triad-{role}-native.log'))
+            pid,alive=stack.enter_context(child_server(command(role,port,key),ROOT,logs/f'triad-{role}-native.log',group=group))
             self.children[role]=(port,key,pid,alive)
             deadline=time.monotonic()+900
             while time.monotonic()<deadline:
@@ -94,7 +98,7 @@ class Pool:
                 except (OSError,ValueError):pass
                 time.sleep(1)
             else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')
-        self.ready=True;self.set_stage('All three models resident; independent inference enabled')
+        self.ready=True;self.set_stage('All three models resident; protected serial generation enabled')
     def healthy(self):
         return self.ready and len(self.children)==3 and all(c[3]() for c in self.children.values())
     def _generate(self,role,messages,tokens):
@@ -143,11 +147,15 @@ class Pool:
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),
             'loading_seconds':int(time.monotonic()-self.started),'stalled':False,'error':None,
             'serial_memory_mode':serial,'memory_retries':retries,
+            'worker_commit_limit_bytes':self.worker_commit_limit,'control_reserve_bytes':CONTROL_RESERVE_BYTES,
             'models':{r:{'name':PROFILES[r][0],'pid':c[2],'resident':c[3](),'busy':self.locks[r].locked(),'generating':r in active} for r,c in self.children.items()}}
 
 def handler(pool,token,council):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args):pass
+        def setup(self):
+            self.request.settimeout(30)
+            super().setup()
         def reply(self,status,value):
             b=json.dumps(value).encode()
             self.send_response(status);self.send_header('Content-Type','application/json')

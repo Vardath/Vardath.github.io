@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
 from triad_server import Pool
+from deepthort_local.triad_job import worker_budget,CONTROL_RESERVE_BYTES
 from deepthort_local.triad_profiles import PROFILES
 from deepthort_local.triad_errors import WorkerFailure,http_failure,native_error,WORDS
 from deepthort_local.triad_acceptance import smoke
@@ -76,3 +77,11 @@ class TriadInferenceRecovery(unittest.TestCase):
         self.assertEqual(result['status'],'passed')
         self.assertTrue(result['evidence']['serial_memory_mode'])
         self.assertFalse(overlap)
+
+    def test_protected_by_default(self):
+        p=make_pool()
+        self.assertTrue(p.serial_memory_mode)
+        self.assertEqual(p.status(False)['control_reserve_bytes'],1024**3)
+    def test_worker_budget_preserves_control_reserve(self):
+        self.assertEqual(worker_budget(14*1024**3),13*1024**3)
+        with self.assertRaises(RuntimeError):worker_budget(CONTROL_RESERVE_BYTES)
