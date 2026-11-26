@@ -88,7 +88,7 @@ def _read(job_db,now,sender,receipt_sha=None):
           AND n.step_id=a.step_id AND n.rowid>a.rowid)""" if granite else
         """SELECT w.*,m.contract,m.contract_sha,m.task_id,m.request_id AS current_request
         FROM worker_notices_v53 w JOIN project_midi_v45 m ON m.lease=w.attempt
-        WHERE w.created>=? AND m.state IN ('assigned','reviewed','publishing','checked')""")
+        WHERE w.created>=? AND m.state IN ('assigned','prepared','reviewed','publishing','checked')""")
     args=(now-TTL,)
     if receipt_sha:
         sql+=' AND w.receipt_sha=?';args+=(receipt_sha,)

@@ -293,13 +293,13 @@ class JobStore:
                 "SELECT * FROM jobs WHERE mode IN ('chat','plan','edit') "
                 "AND state IN ('queued','paused','needs_input','failed') ORDER BY id")]
 
-    def next_any_queued(self, skip_modes: tuple[str,...]=(), *, exclude_project=None):
+    def next_any_queued(self, skip_modes: tuple[str,...]=(), *, exclude_project=None, allow_private_preparation_job=None):
         """Oldest eligible job; a busy workspace must not block unrelated work.
 
         Inspect only ID and workspace while skipping, not large stored prompts.
         The caller still owns all actual dispatch authority and grant checks.
         """
-        from .task_graph import independent_workspaces
+        from .task_graph import independent_workspaces,same_workspace
         with self._conn() as db:
             db.row_factory=sqlite3.Row
             sql="SELECT id,project FROM jobs WHERE state='queued'"
@@ -309,7 +309,8 @@ class JobStore:
                 params.extend(skip_modes)
             for row in db.execute(sql+' ORDER BY id',params):
                 if exclude_project is not None and not independent_workspaces(row['project'],exclude_project):
-                    continue
+                    if (row['id']!=allow_private_preparation_job or not same_workspace(row['project'],exclude_project)):
+                        continue
                 current=db.execute("SELECT * FROM jobs WHERE id=? AND state='queued'",(row['id'],)).fetchone()
                 if current:return dict(current)
             return None

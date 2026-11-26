@@ -23,7 +23,7 @@ def parse_tasks(answer,roadmap,section):
     root=Path(roadmap['project']).resolve(strict=True)
     result=[]
     for task in data['artifacts']:
-        if not isinstance(task,dict) or not {'after','goal','output'}<=set(task) or set(task)-{'after','goal','output','acceptance','imports'}:
+        if not isinstance(task,dict) or not {'after','goal','output'}<=set(task) or set(task)-{'after','goal','output','acceptance','imports','prepare_after'}:
             raise ValueError('Expected boundary, goal and output')
         after=task['after']
         if type(after) is not int or not 0<=after<=len(roadmap['schedule']):
@@ -41,6 +41,12 @@ def parse_tasks(answer,roadmap,section):
         if 'imports' in task:
             from .asset_import_probe import validate_imports
             entry['imports']=validate_imports(output,task['imports'])
+        if 'prepare_after' in task:
+            from .project_midi import supports
+            if (type(task['prepare_after']) is not int or after<1 or task['prepare_after']!=after-1
+                    or not supports(entry)):
+                raise ValueError('Early preparation is only for independent native MIDI one milestone before publication')
+            entry['prepare_after']=task['prepare_after']
         result.append(entry)
     return result
 
@@ -125,6 +131,9 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
                     'headless import smoke check before later milestones, not a rendering or gameplay test. '
                     'Use an empty array if no separate artifact is required. after=N means after verified milestone N '
                     'and before N+1; 0 means before code. Maximum three artifacts. '
+                    'Only for a native MIDI whose entire brief is independent of milestone N code outputs, '
+                    'you may include prepare_after:N-1 for private preparation during N; publication still waits for N verified. '
+                    'Omit if any dependency is uncertain. '
                     f'Total milestones: {len(roadmap["schedule"])}. '
                     f'Related code milestones and paths: {json.dumps(schedule,ensure_ascii=False)}\n'
                     f'EXACT USER SECTION {ordinal+1}:\n{exact}')
@@ -148,7 +157,7 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
             key=task['output'].casefold()
             if key in tasks:
                 old=tasks[key]
-                if any(old.get(k)!=task.get(k) for k in ('after','goal','output','acceptance','imports')):
+                if any(old.get(k)!=task.get(k) for k in ('after','goal','output','acceptance','imports','prepare_after')):
                     raise ValueError('Conflicting artifact requirements; reconcile the roadmap')
                 old['sections'].append(task['section'])
             else:tasks[key]={k:v for k,v in task.items() if k!='section'}|{'sections':[task['section']]}

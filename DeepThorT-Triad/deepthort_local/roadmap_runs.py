@@ -124,7 +124,17 @@ def eligible_successor(run,request,conversations,hierarchies,index,jobs):
     state=hierarchies.reconcile_jobs(index,request['id'],request['prompt'],jobs)
     ordinal=state['next_approvable']
     if ordinal is None and not state['complete']:return None
-    for n in range(1,ordinal or len(current['schedule'])+1):
+    verified_prefix(current,request,hierarchies,index,jobs,ordinal or len(current['schedule'])+1)
+    if state['complete']:return {'complete':True,'manifest_sha256':current['manifest_sha256']}
+    item=hierarchies.milestone(index,request['id'],request['prompt'],ordinal)
+    if item['state']!='planned' or item['job_id'] is not None:
+        raise PlanError('Successor already has a job or is no longer planned')
+    return {'complete':False,'manifest_sha256':current['manifest_sha256'],'milestone':item}
+
+
+def verified_prefix(current,request,hierarchies,index,jobs,before):
+    """Shared existing predecessor evidence gate; no inference or dispatch."""
+    for n in range(1,before):
         prior=hierarchies.milestone(index,request['id'],request['prompt'],n)
         job=jobs.get(prior['job_id']) if prior['job_id'] else None
         if (prior['state']!='verified' or not job or job['state']!='complete' or
@@ -137,8 +147,3 @@ def eligible_successor(run,request,conversations,hierarchies,index,jobs):
         evidence=snapshot.get('verification')
         if not isinstance(evidence,dict) or evidence.get('assurance') in (None,'process_exit_only'):
             raise PlanError('Predecessor has only process-exit evidence; stronger verification required')
-    if state['complete']:return {'complete':True,'manifest_sha256':current['manifest_sha256']}
-    item=hierarchies.milestone(index,request['id'],request['prompt'],ordinal)
-    if item['state']!='planned' or item['job_id'] is not None:
-        raise PlanError('Successor already has a job or is no longer planned')
-    return {'complete':False,'manifest_sha256':current['manifest_sha256'],'milestone':item}
