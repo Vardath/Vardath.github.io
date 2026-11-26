@@ -79,7 +79,8 @@ class JanusWorker:
         reports=observe_worker_reports(self.jobs_db)['reports']
         if not reports:return False
         seen={r['evidence_key'] for r in self.store.recommendations(40)}
-        pending=next((r for r in reports if 'worker-'+r['receipt_sha'] not in seen),None)
+        structured_report=next((r for r in reports if eligible(self.jobs_db,r) and 'coordination-propose-'+r['receipt_sha'] not in seen),None)
+        pending=structured_report or next((r for r in reports if 'worker-'+r['receipt_sha'] not in seen),None)
         if not pending:return False
         if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
         if time.monotonic()-self._last_counsel_attempt<60:return True
