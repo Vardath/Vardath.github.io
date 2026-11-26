@@ -130,6 +130,9 @@ class SentinelStore:
         # Worker cycles are proof of heartbeat, but are NOT a new finding on
         # each poll. Keep them out of the issue signature to avoid log spam.
         material={k:v for k,v in observation.items() if k!='janus_cycle'}
+        from .society_stimuli import stimulus_frame
+        stimulus=stimulus_frame(material.get('stimuli',{}))
+        if stimulus:frames.insert(0,stimulus)
         with self.connect() as db:
             findings=interface_outbox.pending(db,'sentinel')
         if findings:
@@ -397,7 +400,11 @@ class JanusSentinel:
         try:
             janus_observation=json.loads(j.get('last_observation') or '{}')
         except (TypeError,ValueError):janus_observation={}
-        observation={'worker_state':status,'janus_cycle':cycle,'janus_focus':janus_focus,
+        from .society_stimuli import observe_stimuli
+        try:prior_stimuli=json.loads(self.store.snapshot().get('observation_json') or '{}').get('stimuli')
+        except (ValueError,TypeError,AttributeError):prior_stimuli=None
+        stimuli=observe_stimuli(self.jobs_db,prior_stimuli)
+        observation={'stimuli':stimuli,'worker_state':status,'janus_cycle':cycle,'janus_focus':janus_focus,
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
