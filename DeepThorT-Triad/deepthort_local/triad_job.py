@@ -85,9 +85,37 @@ def model_group():
         yield group,budget
     finally:close(group)
 
+MEMORY_SPECIALIST_LIMIT=3*1024**3
+
+def memory_specialist_fits(cap,available,total,peak):
+    return (0<peak<=cap and cap>=peak+MEMORY_SPECIALIST_LIMIT+512*1024**2
+            and available>=MEMORY_SPECIALIST_LIMIT+total//10)
+
+def memory_specialist_admission():
+    cap,available,total=verify_root_cap()
+    k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
+    close=fn(k,'CloseHandle',[H],wintypes.BOOL)
+    root=fn(k,'OpenJobObjectW',[D,wintypes.BOOL,wintypes.LPCWSTR],H)(
+        0x0004,False,os.environ['DEEPTHORT_TRIAD_ROOT_JOB'])
+    check(root,'Open root for memory specialist admission')
+    try:
+        limits=ExtendedLimitInfo()
+        check(fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)(
+            root,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),
+            'Read root commit peak')
+        if not memory_specialist_fits(cap,available,total,int(limits.PeakJobMemoryUsed)):
+            raise RuntimeError('Insufficient measured headroom for independent memory model')
+    finally:close(root)
+
 @contextmanager
-def child_server(command,cwd,log_path,*,group=None,memory_limit=None):
+def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_specialist=False):
     verify_root_cap()
+    if memory_specialist:
+        from .triad_profiles import ROOT,runtime_path
+        if (memory_limit is not None or group is None or len(command)!=6
+                or command[:4]!=[str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),'memory']):
+            raise ValueError('Dedicated memory cap is restricted to the fixed supervised worker')
+        memory_limit=MEMORY_SPECIALIST_LIMIT
     import msvcrt
     log_path=Path(log_path)
     log_path.parent.mkdir(parents=True,exist_ok=True)
@@ -111,7 +139,7 @@ def child_server(command,cwd,log_path,*,group=None,memory_limit=None):
         limits=ExtendedLimitInfo()
         limits.BasicLimitInformation.LimitFlags=JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
         if memory_limit is not None:
-            if type(memory_limit) is not int or not 1<=memory_limit<=512*1024**2:
+            if type(memory_limit) is not int or not 1<=memory_limit<=(MEMORY_SPECIALIST_LIMIT if memory_specialist else 512*1024**2):
                 raise ValueError('Invalid auxiliary child memory limit')
             limits.BasicLimitInformation.LimitFlags|=JOB_OBJECT_LIMIT_JOB_MEMORY
             limits.JobMemoryLimit=memory_limit
