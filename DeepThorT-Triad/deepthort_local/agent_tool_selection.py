@@ -15,12 +15,13 @@ KEYWORDS={
     'list_files':{'files','file','folder','directory','path','paths','locate','list','layout'},
     'diagnostics':{'failed','failure','error','errors','traceback','assertionerror','test','diagnostic','repair','crash'},
     'document_search':{'manual','documentation','document','guide','reference','docx','readme','tutorial','library','manuals','docs'},
+    'git_history':{'git','commit','commits','history','branch','revision','revisions'},
     'checkpoint_diff':{'diff','compare','baseline','checkpoint','changed','change','previous','regression','difference'},
     'request_verification':{'verify','verification','test','tests','validate','check','retest','regression'}
 }
 # Explicit evidence is more useful to the implementation model than a
 # long directory listing; ties prefer newer observations.
-VALUE={'document_search':5,'read_lines':6,'diagnostics':6,'checkpoint_diff':6,'impact':4,'references':4,'search':3,'list_files':2}
+VALUE={'git_history':4,'document_search':5,'read_lines':6,'diagnostics':6,'checkpoint_diff':6,'impact':4,'references':4,'search':3,'list_files':2}
 def words(text):
     return set(re.findall(r'[a-z][a-z0-9_]*',str(text).casefold()))
 

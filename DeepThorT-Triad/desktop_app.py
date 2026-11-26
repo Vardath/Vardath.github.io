@@ -659,7 +659,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -3841,7 +3841,8 @@ class DeepThorTDesktop(tk.Tk):
                                 focus=next(iter(candidates)),cancelled=stopped,
                                 diagnostic=lambda:(self.cycles.get(jobid) or {}).get('diagnostic',''),
                                 baseline=lambda p:self.checkpoints.comparison_baseline(job,steps,p),
-                                knowledge=getattr(getattr(self,'capabilities',None),'knowledge',None)),
+                                knowledge=getattr(getattr(self,'capabilities',None),'knowledge',None),
+                                git_observation=self._git_advisory_provider(job['project'])),
                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                 session=f'repair-tools-{jobid}-{cycle["repairs"]}',original=master_for_job(job,self.conversations,self.hierarchies,self.specifications),
                                 goal=cycle['diagnostic'],seed=recovery_prompt[len(prompt):],budget=room,
@@ -5208,7 +5209,8 @@ class DeepThorTDesktop(tk.Tk):
                                                 focus=step['path'],cancelled=lambda:stopped() or self._superseded_build(j),
                                                 baseline=lambda p:self.checkpoints.comparison_baseline(j,steps,p),
                                                 verification_request=lambda:self._request_agent_verification(j,steps,original,step),
-                                                knowledge=getattr(getattr(self,'capabilities',None),'knowledge',None)),
+                                                knowledge=getattr(getattr(self,'capabilities',None),'knowledge',None),
+                                                git_observation=self._git_advisory_provider(project)),
                                                 ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),advisor,
                                                 session=f'build-tools-{jobid}-{step["id"]}',original=original,goal=focus,
                                                 seed=context,budget=room,receipts=self.agent_tool_receipts,job_id=jobid,
@@ -7547,12 +7549,70 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,PermissionError) as exc:
             messagebox.showwarning('Integration suite not queued',str(exc),parent=self)
 
+    def _git_advisory_provider(self,project):
+        from deepthort_local.git_observation import advisory
+        if not advisory(getattr(self,'_shared_git_history',None),project):return None
+        return lambda:advisory(getattr(self,'_shared_git_history',None),project)
+
+    def _inspect_git_history(self):
+        if getattr(self,'_git_preview_active',False) or self._reviewed_git_pending():return
+        executable=shutil.which('git')
+        if not executable:
+            messagebox.showwarning('Git unavailable','Install Git first.',parent=self);return
+        project=str(self.project)
+        relative=None
+        if self.current_file and messagebox.askyesno('Git history','Show history only for the selected existing file? Choose No for the project history.',parent=self):
+            relative=self.current_file
+        if not messagebox.askyesno('Inspect trusted Git repository','Read local Git status and bounded commit history? No remote access or Git writes. Git runs with your user permissions; only inspect trusted repositories.',parent=self):return
+        self._git_preview_active=True
+        def work():
+            try:
+                from deepthort_local.git_observation import observe
+                result=observe(executable,project,relative=relative,exclude=self.inspection_exclusions.paths(project))
+                self.events.put(('git_history_observation',project,result,None))
+            except Exception as exc:self.events.put(('git_history_observation',project,None,str(exc)[:500]))
+        threading.Thread(target=work,name='JANUS-git-history',daemon=True).start()
+
+    def _finish_git_history(self,project,observation,error):
+        self._git_preview_active=False
+        if self._quitting or not self.project or str(self.project)!=project:return
+        if error:
+            messagebox.showwarning('Git inspection failed',error,parent=self);return
+        dialog=tk.Toplevel(self);dialog.title('Local Git status and history');dialog.geometry('850x600');dialog.transient(self)
+        frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
+        view=tk.Text(frame,wrap='none',font=('Consolas',10))
+        y=ttk.Scrollbar(frame,command=view.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=view.xview)
+        view.configure(yscrollcommand=y.set,xscrollcommand=x.set)
+        view.grid(row=0,column=0,sticky='nsew');y.grid(row=0,column=1,sticky='ns');x.grid(row=1,column=0,sticky='ew')
+        frame.grid_rowconfigure(0,weight=1);frame.grid_columnconfigure(0,weight=1)
+        body='Snapshot: '+time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(observation['observed_at']))+'\nBranch: '+observation['branch']+'\nHEAD: '+str(observation['head'])+'\n\nSTATUS (submodules excluded):\n'
+        body+='\n'.join(r['xy']+' '+repr(r['path']) for r in observation['changes']) or '(no changes in observed scope)'
+        body+='\n\nHISTORY — '+(observation['path'] or 'project')+'\n'
+        body+='\n\n'.join(r['commit']+' '+r['date']+'\n'+r['subject'] for r in observation['history']) or '(no commits in scope)'
+        view.insert('1.0',body);view.configure(state='disabled')
+        bar=ttk.Frame(dialog);bar.pack(fill='x',padx=8,pady=8)
+        def share():
+            if not self.project or str(self.project)!=project or time.time()-observation['observed_at']>=900:
+                messagebox.showwarning('Refresh needed','Snapshot expired or workspace changed.',parent=dialog);return
+            from deepthort_local.git_observation import shared
+            self._shared_git_history=shared(observation)
+            self._log('User shared dated Git commit IDs with JANUS for up to 15 minutes; no filenames, messages or execution authority.')
+            messagebox.showinfo('Historical evidence shared','Available to existing repository tool selection for this project only; no current-state claim.',parent=dialog)
+        def forget():
+            self._shared_git_history=None
+            self._log('Shared Git snapshot cleared.')
+        if observation['path'] is None:ttk.Button(bar,text='Share dated commit IDs with JANUS',command=share).pack(side='left')
+        ttk.Button(bar,text='Clear shared snapshot',command=forget).pack(side='left',padx=5)
+        ttk.Button(bar,text='Close',command=dialog.destroy).pack(side='right')
+
     def _run_project_check(self):
         if not self.project:
             messagebox.showinfo('Project needed','Choose a project folder before running local tools.');return
         if self.disk_gate.gaming():
             messagebox.showwarning('Gaming priority','A configured game is running. Project build/test I/O is deferred.');return
         choice=self.check_choice.get()
+        if choice=='Git: inspect history':
+            self._inspect_git_history();return
         if choice=='Python: integration suite':
             self._review_integration_suite();return
         if choice=='Git: review staged commit':
@@ -8575,6 +8635,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._finish_git_worktree_preview(*event[1:])
             elif kind=='integration_suite_review':
                 self._finish_integration_suite_review(*event[1:])
+            elif kind=='git_history_observation':
+                self._finish_git_history(*event[1:])
             elif kind=='tool_end':
                 label,tooltype,code,job_id=event[1:5]
                 verification_output=event[5] if len(event)>5 else None
