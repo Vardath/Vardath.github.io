@@ -1,10 +1,11 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v37-resource-and-native-repair",
-  "title": "Triad V37: expanded resource ceilings, strict creative output and background recall",
+  "id": "triad-v38-worker-doctrine",
+  "title": "Triad V38: five worker roles, bounded independent scheduling and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",
+    "workflow_doctrine",
     "janus_core",
     "task_memory",
     "memory_governance",
