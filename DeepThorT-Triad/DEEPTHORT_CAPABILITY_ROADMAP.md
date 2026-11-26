@@ -1,3 +1,9 @@
+# V37 progress and approved resource revision
+
+The shared Windows cap is now 50% CPU / up to 65% RAM-sized aggregate commit, superseding the historical lower ceilings below. Keep the adaptive lower launch budget, foreground reserve and inherited containment. This is a ceiling, not an allocation; no guaranteed speedup. Asynchronous fifth-model memory observation stays independent of the main workflow. V37 strengthens negative relevance discrimination and handles complete Gemma response wrappers with one bounded correction. No relaxed native acceptance. All 19 checks remain. Native correctness and measured five-model operation still require evidence from the user's machine. Preserve the full-creator and self-development roadmap.
+
+---
+
 # V36 binding memory architecture correction
 
 The fifth independent intelligent model must operate as an event-driven advisory observer rather than a synchronous prerequisite. Existing production checkpoint hooks enqueue bounded scoped observations and return without waiting for historical inference. Fifth specialist alone searches/ranks; no separate background Sentinel request. Late findings are fresh, scope-bound advisory data offered to existing Sentinel specification reviews, which can direct JANUS correction through the existing rejection/recovery loop. Keep mandatory user specification, amendments, approvals and safety checks. Optional historical-memory dispatch must not delay already authorized tasks. Maintain all previous native acceptance oracles; add deliberately blocked-model foreground-progress probe. V35 fifth model installed and resident, one relevance failure; fourth model blocked by headroom. Continue native reliability and complete creation roadmap; never claim all-five simultaneous operation or memory speedup before measurement.
