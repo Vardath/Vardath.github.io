@@ -18,7 +18,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 6 | 249 | Git status and history integration | Source extended: bounded local status/project/file history UI and explicitly shared dated commit-ID observations in existing repository tools. Pass 007 Linux/Windows green and merged; native UI and model-led use outstanding. |
 | 7 | 267 | Workflow templates | Source extended: reviewed portable typed JSON import/export and explicit unverified provenance, with current inventory rebinding. Pass 008 CI pending; richer editor and native acceptance outstanding. |
 | 8 | 207 | Automated dependency security auditing | Source extended: reviewed automatic OSV lookup for exact Python and npm lockfile versions; bounded, fingerprinted advisory results. Pass 009 CI pending; automatic triggers, broader ecosystems and native live acceptance outstanding. |
-| 9 | 44 | Software security vulnerability scanning | Not started in this programme |
+| 9 | 44 | Software security vulnerability scanning | Source extended: bounded reviewed Python AST security indicators, file/line evidence and exact inventory guards. Pass 010 CI pending; wider language coverage, dataflow and native acceptance outstanding. |
 | 10 | 234 | Discover application capabilities | Existing partial; completion not started in this programme |
 | 11 | 244 | Test coverage analysis | Existing partial; completion not started in this programme |
 | 12 | 245 | Performance profiling | Existing partial; completion not started in this programme |
@@ -417,3 +417,8 @@ Added the previously excluded partial capability rows to both documents. Origina
 ### Pass 008 CI repair carried into Pass 009
 
 - CI follow-up: Linux passed, Windows failed in all three new test setups because the fixture's raw temporary-directory spelling differed from the canonical project identity. Resolve the fixture root before creating its manifest; leave the production guard intact. Rerun both jobs.
+
+## Pass 010 — 27 November 2026
+
+- Added local read-only Python source security scan in existing reviewed JANUS project checks. Bounded file/byte/entry counts, exact SHA inventory before and after, existing project inspection exclusions plus private/linked directory avoidance; source is parsed but never executed or uploaded. Reports potential risks by rule, path and line for dynamic code, shell invocation, deserialization, YAML loaders, TLS verification and unsafe temporary names. No automatic fixes or complete vulnerability/absence claim. Existing action queue, cap, cancellation and dispatch hold retained.
+- Four offline regressions for indicators/safe alternatives, excluded source and nonexecution, changed/unparsed source, bounded result reporting. Simple lexical alias matching only, no full dataflow or scope resolution; other languages and native acceptance remain outstanding. Pass 008 Windows fixture repaired and reruns pending; Pass 009 inherits correction. All passes must be green before merge. Next rank 10 / ID 234 discover application capabilities. No installer.
