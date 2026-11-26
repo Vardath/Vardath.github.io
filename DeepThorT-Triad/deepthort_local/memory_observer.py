@@ -102,15 +102,16 @@ class MemoryObserver:
                 duty=self._duty
                 due=duty is not None and self.clock()>=self._scan_at
                 if due:self._scan_at=self.clock()+SCAN_INTERVAL
+            try:ready=self.available()
+            except Exception:ready=False
+            if not ready:
+                if due:self._scan_at=-float('inf')
+                with self._cv:self._cv.wait(timeout=2)
+                continue
             if due:
                 try:
                     for packet in duty.scan():self.observe(**packet)
                 except Exception as exc:self._emit('memory_duty_scan_failed',error_type=type(exc).__name__)
-            try:ready=self.available()
-            except Exception:ready=False
-            if not ready:
-                with self._cv:self._cv.wait(timeout=2)
-                continue
             with self._cv:
                 if self._closed:return
                 if not self._pending:
