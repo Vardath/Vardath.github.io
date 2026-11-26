@@ -1,3 +1,9 @@
+# V40 model-authored staged multimedia handoffs
+
+JANUS can propose a reviewed task DAG with Granite design/specification as an upstream dependency to Gemma's existing staged MIDI adapter. Exact user brief, dependency digest and attempt identity remain bound. Sentinel reviews graph and results. No other modality, project publication or native quality/concurrency claim; generic approved-project adapters remain next.
+
+---
+
 # V39 independent staged creative lane
 
 Explicit supported MIDI requests now use a durable composition -> host verification dependency graph, exact per-attempt task binding, native receipt/hash verification, atomic result delivery and independent background Gemma dispatch. No automatic project publication, no new creative modality or native correctness claim. Unsupported/attachment-dependent media requests remain under existing foreground behavior. General creative assignments from JANUS and Granite, texture/image/video/3D/music/document adapters and actual concurrent acceptance remain open.
