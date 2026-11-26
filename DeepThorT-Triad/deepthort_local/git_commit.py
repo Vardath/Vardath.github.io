@@ -1,6 +1,6 @@
 """Reviewed, exact staged-tree Git commits for the existing JANUS action queue.
 
-No staging, checkout, reset, push or remote operation. Git commit-tree and
+Only explicit selected-file staging; no checkout, reset, push or remote operation. Git commit-tree and
 compare-and-swap update-ref avoid ordinary commit hooks and unrelated changes.
 Trusted local repository and Git executable required; not an OS sandbox.
 """
@@ -20,11 +20,12 @@ MAX_OUTPUT=128000
 MAX_SECONDS=20
 OID=re.compile(r'^[0-9a-f]{40}$|^[0-9a-f]{64}$')
 
-def _git(executable,root,args,*,limit=MAX_OUTPUT):
+def _git(executable,root,args,*,limit=MAX_OUTPUT,index=None):
     executable=Path(executable).resolve(strict=True)
     if not executable.is_file():raise ValueError('Git executable unavailable')
     env={k:v for k,v in os.environ.items() if not k.upper().startswith('GIT_')}
-    env.update(GIT_TERMINAL_PROMPT='0',GIT_OPTIONAL_LOCKS='0',GIT_NO_REPLACE_OBJECTS='1')
+    env.update(GIT_TERMINAL_PROMPT='0',GIT_OPTIONAL_LOCKS='0',GIT_NO_REPLACE_OBJECTS='1',GIT_LITERAL_PATHSPECS='1')
+    if index is not None:env['GIT_INDEX_FILE']=str(index)
     with tempfile.TemporaryDirectory(prefix='janus-git-hooks-') as hooks, tempfile.TemporaryFile() as out, tempfile.TemporaryFile() as err:
         command=[str(executable),'--no-pager','-c','core.hooksPath='+hooks,'-c','core.fsmonitor=false',
                  '-c','commit.gpgSign=false','-c','color.ui=false','-C',str(root),*args]
@@ -46,8 +47,8 @@ def _git(executable,root,args,*,limit=MAX_OUTPUT):
         finally:
             if proc.poll() is None:proc.kill();proc.wait(timeout=5)
 
-def _text(executable,root,args):
-    return _git(executable,root,args).decode('utf-8','strict').strip()
+def _text(executable,root,args,*,index=None):
+    return _git(executable,root,args,index=index).decode('utf-8','strict').strip()
 
 def _identity(executable,root):
     root=Path(root).resolve(strict=True)
@@ -79,6 +80,101 @@ def preview(executable,root):
     # Reject undecodable diffs instead of hiding bytes in a supposedly exact review.
     return {'identity':identity,'diff':diff.decode('utf-8','strict')}
 
+def _selected_paths(root,paths):
+    if not isinstance(paths,list) or not 1<=len(paths)<=12 or len(set(paths))!=len(paths):
+        raise ValueError('Select one to twelve distinct project files')
+    result=[]
+    for name in paths:
+        if not isinstance(name,str) or not 1<=len(name)<=200 or any(ord(c)<32 for c in name) or '\\' in name or ':' in name:
+            raise ValueError('Invalid selected path')
+        parts=name.split('/')
+        if any(not x or x in ('.','..') or x.startswith('.') for x in parts):
+            raise ValueError('Hidden or outside-project paths are not eligible')
+        if any(x.casefold() in ('state','models','runtime','node_modules','__pycache__','backups') for x in parts):
+            raise ValueError('Protected project path')
+        path=Path(root)
+        for part in parts:
+            path=path/part
+            if path.is_symlink():raise ValueError('Linked file is not eligible')
+        if not path.is_file() or path.stat().st_size>MAX_DIFF:
+            raise ValueError('Select existing bounded regular files')
+        result.append(name)
+    return sorted(result)
+
+def _selected_snapshot(executable,root,paths):
+    base=_identity(executable,root)
+    old=_text(executable,root,['rev-parse',base['head']+'^{tree}'])
+    if base['tree']!=old:raise ValueError('Index already contains staged changes; use staged commit review')
+    paths=_selected_paths(Path(base['root']),paths)
+    with tempfile.TemporaryDirectory(prefix='janus-git-index-') as tmp:
+        index=Path(tmp)/'index'
+        _git(executable,root,['read-tree',base['head']],index=index)
+        _git(executable,root,['add','--',*paths],index=index)
+        tree=_text(executable,root,['write-tree'],index=index)
+        if not OID.fullmatch(tree) or tree==old:raise ValueError('No selected file changes')
+        diff=_git(executable,root,['diff','--no-ext-diff','--no-textconv','--no-renames','--binary','--full-index',
+                                  base['head'],tree,'--'],limit=MAX_DIFF)
+        changed=_git(executable,root,['diff','--no-ext-diff','--no-renames','--name-only','-z',base['head'],tree,'--']).decode('utf-8','strict').split('\0')
+        if not set(x for x in changed if x).issubset(paths):raise ValueError('Temporary index includes unselected paths')
+    if _identity(executable,root)!=base:raise ValueError('Repository changed during selected-file review')
+    return {**base,'selected_tree':tree,'paths':paths,'diff_sha':hashlib.sha256(diff).hexdigest()},diff
+
+def preview_selected(executable,root,paths):
+    identity,diff=_selected_snapshot(executable,root,paths)
+    return {'identity':identity,'diff':diff.decode('utf-8','strict')}
+
+def apply_selected(executable,root,plan):
+    identity=plan['identity']
+    actual,_=_selected_snapshot(executable,root,identity['paths'])
+    if actual!=identity:raise ValueError('Selected files or repository changed since approval')
+    base={k:v for k,v in actual.items() if k in ('root','head','ref','tree')}
+    # Stage ONLY the reviewed existing files, against the clean original index.
+    # Git's index lock protects its own write. Re-read exact tree before commit.
+    _git(executable,root,['add','--',*actual['paths']])
+    staged=_identity(executable,root)
+    if staged!={**base,'tree':actual['selected_tree']}:
+        raise ValueError('Index or files changed during staging; no commit made. Inspect staged changes.')
+    reviewed={'schema':'janus-git-commit-v1','identity':{**staged,'diff_sha':actual['diff_sha']},
+              'message':plan['message'],'expires_at':plan['expires_at']}
+    return apply(executable,root,reviewed)
+
+def branch_inventory(executable,root):
+    identity=_identity(executable,root)
+    raw=_git(executable,root,['for-each-ref','--format=%(refname)%00%(objectname)','refs/heads/'])
+    branches=[]
+    for line in raw.decode('utf-8','strict').splitlines():
+        ref,oid=line.split('\0')
+        if not ref.startswith('refs/heads/') or not OID.fullmatch(oid):raise ValueError('Invalid branch inventory')
+        branches.append({'ref':ref,'commit':oid})
+    if len(branches)>128:raise ValueError('Branch inventory exceeds review bound')
+    if _identity(executable,root)!=identity:raise ValueError('Repository changed during branch inspection')
+    return {'identity':identity,'branches':branches}
+
+def branch_plan(executable,root,review,name):
+    if not isinstance(name,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_./-]{0,79}',name):
+        raise ValueError('Use a local branch name of up to 80 characters')
+    ref='refs/heads/'+name
+    _git(executable,root,['check-ref-format',ref])
+    if branch_inventory(executable,root)!=review:raise ValueError('Branch inventory changed; review again')
+    if ref in [x['ref'] for x in review['branches']]:raise ValueError('Branch already exists')
+    return {'schema':'janus-git-branch-create-v1','identity':review['identity'],'ref':ref,
+            'expires_at':int(time.time())+1800}
+
+def apply_branch(executable,root,plan):
+    if set(plan)!={'schema','identity','ref','expires_at'} or plan['schema']!='janus-git-branch-create-v1':
+        raise ValueError('Invalid branch plan')
+    if type(plan['expires_at']) is not int or not time.time()<plan['expires_at']<=time.time()+1800:raise ValueError('Branch review expired')
+    actual=_identity(executable,root)
+    if actual!=plan['identity']:raise ValueError('Repository changed since branch approval')
+    ref=plan['ref']
+    if not isinstance(ref,str) or not re.fullmatch(r'refs/heads/[A-Za-z0-9][A-Za-z0-9_./-]{0,79}',ref):
+        raise ValueError('Only a named local branch may be created')
+    _git(executable,root,['check-ref-format',ref])
+    _git(executable,root,['update-ref','-m','JANUS reviewed branch creation',ref,actual['head'],'0'*len(actual['head'])])
+    if _text(executable,root,['rev-parse','--verify',ref])!=actual['head']:
+        raise ValueError('New branch changed after creation; inspect repository')
+    return {'branch':ref,'commit':actual['head'],'checked_out':False,'remote_published':False}
+
 def approved_plan(review,message):
     if not isinstance(message,str) or not 1<=len(message.strip())<=240 or any(ord(c)<32 for c in message):
         raise ValueError('Commit message must be a single nonempty line, at most 240 characters')
@@ -95,6 +191,8 @@ def apply(executable,root,plan):
         raise ValueError('Commit review expired; review again')
     msg=plan['message']
     if not isinstance(msg,str) or not 1<=len(msg.strip())<=240 or any(ord(c)<32 for c in msg):raise ValueError('Invalid approved message')
+    if 'selected_tree' in plan['identity']:
+        return apply_selected(executable,root,plan)
     actual,diff=_snapshot(executable,root)
     if actual!=plan['identity']:raise ValueError('Branch, parent or staged tree changed since approval')
     # Write an immutable commit for the reviewed tree. No working file changes,
@@ -114,7 +212,8 @@ def main():
     parser.add_argument('--git',required=True);parser.add_argument('--root',required=True);parser.add_argument('--plan',required=True)
     args=parser.parse_args()
     try:
-        result=apply(args.git,args.root,json.loads(args.plan))
+        plan=json.loads(args.plan)
+        result=apply_branch(args.git,args.root,plan) if plan.get('schema')=='janus-git-branch-create-v1' else apply(args.git,args.root,plan)
         print(json.dumps(result,sort_keys=True))
     except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as exc:
         parser.exit(1,str(exc)+'\n')
