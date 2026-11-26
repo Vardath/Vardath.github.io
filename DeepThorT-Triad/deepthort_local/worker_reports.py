@@ -89,9 +89,20 @@ def observe_worker_reports(job_db):
 def still_current(job_db,receipt_sha):
     return any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
 
-def counsel_fields(item):
-    """Bounded untrusted claim, tied to exact file obligation, for neural advice."""
+def counsel_fields(item,job_db):
+    """Provide exact, bounded current requirements, never just a hash."""
     report=item['report']
+    bound=live_scope(job_db,item['job_id'],item['request_id'],states=('running','needs_input','failed'))
+    if not bound or bound['spec_sha']!=item['spec_sha']:
+        raise ValueError('Worker report no longer has its original specification')
+    original=bound['original']
+    if len(original)<=1200:source='COMPLETE ORIGINAL: '+original
+    else:
+        from .recovery_council import select_source_section
+        source=('ORIGINAL BEGINNING (verbatim): '+original[:400]+'\nRELEVANT REQUIREMENT (verbatim): '+
+                select_source_section(original,item['focus'],600))
+        if original.startswith('USER SPECIFICATION REVISION:'):
+            source+='\nREVISION TAIL (verbatim): '+original[-400:]
     return ('Granite '+report['kind']+' for '+item['focus'],
             'Unverified worker claim. Need: '+report['need']+'; reason: '+report['reason']+
-            '; original specification SHA: '+item['spec_sha'])
+            '; original specification SHA: '+item['spec_sha']+'\n'+source)
