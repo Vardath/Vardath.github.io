@@ -21,9 +21,11 @@ GUIDANCE=("\nIf a genuine unresolved dependency makes producing the required out
           "or report a blocker merely because the task is difficult. Otherwise return the requested source.")
 
 class WorkerReport(RuntimeError):
-    def __init__(self,report):
+    def __init__(self,report,sender='implementation'):
+        if sender not in ('implementation','multimedia'):raise ValueError('Unknown reporting worker')
         self.report=report
-        super().__init__('Granite reported '+report['kind']+': '+report['need'])
+        self.sender=sender
+        super().__init__(('Gemma' if sender=='multimedia' else 'Granite')+' reported '+report['kind']+': '+report['need'])
 
 def parse_report(answer):
     if not isinstance(answer,str) or not answer.lstrip().startswith(PREFIX):return None
