@@ -6,6 +6,9 @@ def exercise(root, *, cancelled=lambda: False):
     if cancelled():
         return {'status': 'cancelled', 'detail': 'Multimedia check cancelled or deferred for gaming'}
     root = Path(root).resolve()
+    from .multimedia_profile import installed
+    if installed(root):
+        return {'status':'blocked','detail':'Pinned OpenVINO Stable Diffusion INT8 weights have a matching installation receipt and file sizes. Dedicated multimedia service and actual capped inference/concurrency are not yet implemented.'}
     legacy = root / 'models' / 'stable-diffusion-v1-5'
     # Only inspect the existing image engine's fixed model location. No recursive
     # drive scans, weight reads, downloads, model loading or arbitrary execution.
