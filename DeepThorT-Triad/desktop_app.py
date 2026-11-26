@@ -4668,6 +4668,49 @@ class DeepThorTDesktop(tk.Tk):
         self._creative_lane_thread=threading.Thread(target=work,name='Gemma-workflow-preparation',daemon=True)
         self._creative_lane_thread.start()
 
+    def _self_development_tick(self,now):
+        # A low-priority stage in the existing dispatcher; one role turn at a
+        # time, never a foreground dependency or live-source update.
+        if (self._quitting or self.queue_paused or self._explicit_model_stop
+                or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                or self.janus.status().get('paused') or self.active_job is not None
+                or self.active_conversation is not None or self._project_midi_pending
+                or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or now-getattr(self,'_self_development_at',-300)<300):
+            return
+        thread=getattr(self,'_self_development_thread',None)
+        if thread and thread.is_alive():return
+        self._self_development_at=now
+        primary=self.node
+        def stopped():
+            return (self._quitting or self.queue_paused or self._explicit_model_stop
+                    or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                    or self.janus.status().get('paused') or not primary or primary.poll() is not None
+                    or self.active_job is not None or self.active_conversation is not None
+                    or (self._latest_test_thread and self._latest_test_thread.is_alive()))
+        def available(role):
+            if stopped():return False
+            health=local_server_status(timeout=1.0) or {}
+            models=health.get('models') or {}
+            worker=models.get(role) or {}
+            slots=health.get('admission_slots',0)
+            generating=sum(x.get('generating') is True for x in list(models.values())+[health.get('memory_model') or {}])
+            return (health.get('ready') is True and health.get('pid')==primary.pid
+                    and health.get('admission_waiting')==0 and slots>generating
+                    and worker.get('resident') is True and worker.get('busy') is False)
+        def work():
+            try:
+                from deepthort_local.self_development import run_once
+                client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
+                item=run_once(ROOT,STATE,client,stopped,available=available)
+                if item and item['state']=='staged':
+                    self.events.put(('log','JANUS / Granite / Sentinel prepared an inert self-development candidate in state/self-development. No installation or runtime acceptance.'))
+            except Exception as exc:
+                record(STATE,'desktop','self_development_deferred',error_type=type(exc).__name__)
+        self._self_development_thread=threading.Thread(target=work,name='JANUS-self-development',daemon=True)
+        self._self_development_thread.start()
+
     def _scheduler_once(self):
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
@@ -4745,6 +4788,7 @@ class DeepThorTDesktop(tk.Tk):
             # Give foreground conversations, ready builds and recovery first choice.
             self._technical_preparation_tick(now)
             self._gemma_preparation_tick(now)
+            self._self_development_tick(now)
 
     def _execute_job(self,j):
         from deepthort_local.corrective_coordination import READY

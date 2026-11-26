@@ -239,3 +239,11 @@ The existing dedicated Memory lane now considers bounded earlier named-project d
 
 ---
 
+
+
+# V70 — governed self-development preparation
+
+The first bounded self-development path detects stale diagnostic cap wording against actual installed supervisor constants. JANUS diagnoses and plans, Granite proposes a single diagnostic string change, and Sentinel independently reviews the exact candidate hash. Durable stages resume without restarting earlier accepted stages; source or cap changes invalidate scope. The host verifies exact cap values, a single literal-only AST change and compilation without executing generated code. An inert versioned candidate, baseline and review manifest are retained in state/self-development; no live source or resource settings change, no installation is authorized, and runtime verification is explicitly false. Low-priority existing dispatcher attention only. This is a deliberately narrow first detector, not general autonomous source modification or a tested updater. Broader diagnostic evidence, Memory integration, approved isolated runtime tests and installation/rollback tooling remain outstanding. No installer.
+
+---
+
