@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from deepthort_local.memory_observer_probe import exercise
 from deepthort_local.memory_observer import MemoryObserver
 from deepthort_local.triad_errors import WorkerFailure
@@ -18,14 +19,16 @@ class ObserverTests(unittest.TestCase):
             self.assertIsNone(observer._thread)
         finally:observer.close()
 
-    def test_serial_pressure_defers_optional_memory(self):
+    def test_serial_mode_admits_required_memory(self):
         p=Pool()
         p.ready=True
         from deepthort_local.triad_profiles import PROFILES
         p.children={r:(1,'key',42+i,lambda:True) for i,r in enumerate(PROFILES)}
         p.memory_child=(1,'key',50,lambda:True)
         self.assertTrue(p.serial_memory_mode)
-        with self.assertRaises(WorkerFailure):p.infer('memory',[],32)
+        with patch('triad_server.request',return_value={'model':'memory','choices':[{'message':{'content':'recalled'}}]}) as call:
+            self.assertEqual(p.infer('memory',[],32),'recalled')
+            call.assert_called_once()
         self.assertEqual(p.memory_retries,0)
         self.assertTrue(p.healthy())
 
