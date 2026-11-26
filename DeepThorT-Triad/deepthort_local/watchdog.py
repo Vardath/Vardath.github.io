@@ -127,6 +127,9 @@ class SentinelStore:
                  json.dumps(observation['delegation'],sort_keys=True),
                  salience=.9 if observation.get('conflict') else .65,
                  uncertainty=.65 if observation.get('conflict') or observation['delegation']['failed'] else .2))
+        assignments=observation.get('project_assignments',{})
+        if assignments.get('available') and (assignments.get('active') or assignments.get('recent')):
+            frames.insert(1,SenseFrame('runtime','project_role_assignments',json.dumps(assignments,sort_keys=True),salience=.7,uncertainty=.3))
         # Worker cycles are proof of heartbeat, but are NOT a new finding on
         # each poll. Keep them out of the issue signature to avoid log spam.
         material={k:v for k,v in observation.items() if k!='janus_cycle'}
@@ -357,8 +360,9 @@ class JanusSentinel:
         jobs=js.observe_jobs(self.jobs_db)
         from .planning_recovery import observe_planning
         plans=observe_planning(self.jobs_db)
-        from .delegation_senses import observe_delegation,active_work,conflict
+        from .delegation_senses import observe_delegation,active_work,conflict,observe_project_assignments
         delegation=observe_delegation(self.jobs_db)
+        project_assignments=observe_project_assignments(self.jobs_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -408,7 +412,7 @@ class JanusSentinel:
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),
