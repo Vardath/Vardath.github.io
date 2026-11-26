@@ -35,6 +35,23 @@ def same_workspace(indexed,approved):
         return False
 
 
+def independent_workspaces(first,second):
+    """Prove two existing roots are distinct and not nested, including aliases.
+
+    This is an overlap admission check, not a change to same_workspace's
+    exact approval-identity semantics. Unknown identity fails closed.
+    """
+    if not isinstance(first,str) or not isinstance(second,str):return False
+    try:
+        a,b=Path(first),Path(second)
+        if not a.is_absolute() or not b.is_absolute():return False
+        a,b=a.resolve(strict=True),b.resolve(strict=True)
+        if not a.is_dir() or not b.is_dir():return False
+        return not (any(a.samefile(p) for p in (b,*b.parents))
+                    or any(b.samefile(p) for p in (a,*a.parents)))
+    except (OSError,ValueError,RuntimeError):return False
+
+
 def _hash(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()
 

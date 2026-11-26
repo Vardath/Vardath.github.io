@@ -20,3 +20,24 @@ def admission_ready(active,waiters,ticket,slots,rank,now):
     return (len(active)<slots and bool(waiters) and
             min(waiters,key=lambda t:rank(t,now))==ticket)
 
+
+
+def parallel_media_admitted(health,expected_pid,headroom):
+    """Existing broker plus additional measured fourth-worker headroom.
+
+    Never start unsolicited overlapping media in protected serial mode or
+    ahead of queued native inference, including the required Memory role.
+    The shared OS Job Object remains the hard resource authority.
+    """
+    if not isinstance(health,dict) or health.get('pid')!=expected_pid or health.get('ready') is not True:
+        return False
+    if health.get('serial_memory_mode') is not False or health.get('admission_waiting')!=0:
+        return False
+    slots=health.get('admission_slots')
+    if type(slots) is not int or slots<2:return False
+    models=health.get('models')
+    if not isinstance(models,dict) or any(not isinstance(models.get(role),dict)
+        or models[role].get('resident') is not True for role in ('janus','sentinel','implementation')):
+        return False
+    try:return bool(headroom())
+    except (ValueError,OSError,RuntimeError,KeyError):return False
