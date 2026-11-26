@@ -215,10 +215,8 @@ class DeepThorTDesktop(tk.Tk):
         self.sentinel_process = None
         self._sentinel_started = False
         self.last_sentinel_log_id = 0
-        self.last_janus_advice_id = 0
         self._interface_displayed={'janus':[],'sentinel':[]}
         self._interface_last_notified={'janus':0,'sentinel':0}
-        self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
         # A cancelled reply must release the single-flight OpenVINO IR worker before
@@ -6840,12 +6838,12 @@ class DeepThorTDesktop(tk.Tk):
             lines=['INDEPENDENT INTERFACE MESSAGES — no user prompt required']
             total_unread=0
             for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
-                messages=store.interface_messages(limit=20)
+                messages=store.interface_messages(limit=20,unread_first=True)
                 self._interface_displayed[role]=[m['id'] for m in messages]
                 total_unread+=store.interface_unread()
                 for m in messages:
                     flag='UNREAD' if m['read_at'] is None else 'Read'
-                    lines.append(f"[{m['stamp']}] {role.upper()} Interface #{m['id']} ({flag}, cycle {m['cycle']}\n{m['body']}")
+                    lines.append(f"[{m['stamp']}] {role.upper()} Interface #{m['id']} ({flag}, cycle {m['cycle']}):\n{m['body']}")
             self.interface_message_status.set(f'Independent Interface messages: {total_unread} unread')
             lines.extend(['','JANUS PROPOSED REPAIRS (advisory, not executed):'])
             for item in self.janus.recommendations(limit=5):
@@ -6874,18 +6872,6 @@ class DeepThorTDesktop(tk.Tk):
     def _refresh_janus_view(self):
         if not self.winfo_exists():return
         self._show_janus_status()
-        # Notify once per newly observed finding; no modal popups during games.
-        try:
-            main=self.janus.recommendations(limit=1)
-            sent=self.sentinel.recommendations(limit=1)
-            changed=((main and main[0]['id']>self.last_janus_advice_id) or
-                     (sent and sent[0]['id']>self.last_sentinel_advice_id))
-            if main:self.last_janus_advice_id=max(self.last_janus_advice_id,main[0]['id'])
-            if sent:self.last_sentinel_advice_id=max(self.last_sentinel_advice_id,sent[0]['id'])
-            if changed:
-                self.status.set('JANUS or Sentinel needs your attention. Review proposed repairs in JANUS & Sentinel.')
-                self._log('JANUS/Sentinel recorded an evidence-based issue or proposed alternative; review required.')
-        except Exception as exc:self._log(f'JANUS recommendation check failed: {exc}')
         # Local, non-modal notification; actual message stays in its persistent inbox.
         try:
             for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
