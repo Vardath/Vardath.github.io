@@ -17,6 +17,7 @@ from .artifact_media_checks import unpack_at
 from .artifact_content_checks import PNG_CONTENT,OBJ_EXTENTS,png_content,obj_extents,MAX_PIXELS,MAX_COLORS
 
 RULES={
+    '.mid':{'bpm':(40,220),'notes':(4,48)},'.midi':{'bpm':(40,220),'notes':(4,48)},
     '.png':{'width':(1,16384),'height':(1,16384),'min_visible_pixels':(1,MAX_PIXELS),
             'min_distinct_visible_colors':(1,MAX_COLORS)},
     '.dds':{'width':(1,16384),'height':(1,16384)},
@@ -55,6 +56,11 @@ def validate(output,checks):
     return checks
 
 def measure(reader,stream,suffix,checks=None):
+    if suffix in ('.mid','.midi'):
+        from .creative_core import inspect_midi
+        if len(reader)>4096:raise ValueError('MIDI outside supported score profile')
+        score=inspect_midi(reader[:len(reader)])
+        return {'bpm':score['bpm'],'notes':len(score['notes'])}
     if suffix=='.png':
         width,height=unpack_at('>II',reader,16)
         result={'width':width,'height':height}

@@ -118,7 +118,7 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
                     'Optional acceptance object ONLY for explicitly requested measurable properties: PNG/DDS width,height; '
                     'PNG min_visible_pixels,min_distinct_visible_colors (8-bit noninterlaced, max 1048576 pixels, distinct count capped at 256); '
                     'OBJ min_vertices,min_faces and min_extent_x,max_extent_x (also y,z; raw Cartesian units, no scene transforms); '
-                    'WAV channels,sample_rate,min_frames; ZIP/APK/AAB/JAR required_members (array of exact filenames). '
+                    'WAV channels,sample_rate,min_frames; short monophonic MIDI bpm,notes (4–48 notes); ZIP/APK/AAB/JAR required_members (array of exact filenames). '
                     'Do not invent numeric targets. Omit acceptance when no supported criterion is explicit. '
                     'Optional imports array: Blender for OBJ/GLB/PNG; Godot for GLB/PNG. Include only when '
                     'the artifact is intended for that application in the user specification. This requires a real '
@@ -160,12 +160,16 @@ def assess(store,hierarchies,index,request,council,client,review,*,cancelled=Non
     return store.get(ident,code_sha)
 
 
-def pending_task(plan,workflows,before):
+def pending_task(plan,workflows,before,*,creative=None):
     """All earlier required outputs must have current checked workflow receipts."""
     from .roadmap_tool_bridge import check_complete
     runs=workflows.roadmap_members(plan['request_id'])
     for task in plan['tasks']:
         if task['after']>=before:continue
+        if creative is not None:
+            status=creative.checked(plan,task)
+            if status is True:continue
+            if status is False:return task
         matches=[]
         for run in runs:
             manifest=json.loads(run['manifest'])

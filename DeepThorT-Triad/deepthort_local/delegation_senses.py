@@ -93,3 +93,22 @@ def observe_project_assignments(job_db):
         return {'available':True,'active':active,'recent':recent[:8]}
     except (sqlite3.Error,OSError,ValueError,TypeError):
         return empty
+
+
+def observe_project_midi(job_db):
+    """Independent read-only role status for native project artifacts."""
+    path=Path(job_db).parent/'roadmap-runs.sqlite3'
+    empty={'available':False,'active':[],'recent':[]}
+    if not path.is_file():return empty
+    try:
+        with closing(sqlite3.connect(path.resolve().as_uri()+'?mode=ro',uri=True,timeout=.5)) as db:
+            db.row_factory=sqlite3.Row
+            rows=db.execute("""SELECT m.request_id,m.task_id,m.state,r.state AS roadmap_state
+                FROM project_midi_v45 m JOIN roadmap_runs r ON r.request_id=m.request_id
+                ORDER BY CASE WHEN m.state IN ('assigned','reviewed','publishing') THEN 0 ELSE 1 END,m.rowid DESC LIMIT 16""").fetchall()
+        active=[];recent=[]
+        for row in rows:
+            item=dict(row);item.update(requester='janus',assignee='multimedia',reviewer='sentinel')
+            (active if row['state'] in ('assigned','reviewed','publishing') else recent).append(item)
+        return {'available':True,'active':active,'recent':recent[:8]}
+    except (sqlite3.Error,OSError,ValueError,TypeError):return empty

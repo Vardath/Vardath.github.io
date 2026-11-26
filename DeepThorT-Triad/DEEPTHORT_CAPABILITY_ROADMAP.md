@@ -1,3 +1,9 @@
+# V45 project-bound Gemma MIDI
+
+Approved mixed roadmaps can now produce a real project MIDI artifact through the existing shared fourth-core lane, private native staging, decoded score/acceptance checks, independent Sentinel review and host no-overwrite publication. Receipt revalidation gates later milestones. Other artifact formats and full native acceptance still pending; broaden safe project scheduling and adapters next.
+
+---
+
 # V44 dependency-ready concurrent roles
 
 Implement bounded two-role staged DAG execution with live Windows headroom admission, exclusive Sentinel reviews and host delivery, serial fallback, and cancellation/failed-sibling drain. No increased resource caps or authority; actual native concurrent inference acceptance remains pending. Approved project publication remains serial. Next project-bound media adapters and independent project scheduling.
