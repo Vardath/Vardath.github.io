@@ -48,6 +48,8 @@ class RoadmapRuns:
             ''')
             if 'mixed_sha' not in {r[1] for r in db.execute('PRAGMA table_info(roadmap_runs)')}:
                 db.execute('ALTER TABLE roadmap_runs ADD COLUMN mixed_sha TEXT')
+            if 'creative_midi' not in {r[1] for r in db.execute('PRAGMA table_info(roadmap_runs)')}:
+                db.execute('ALTER TABLE roadmap_runs ADD COLUMN creative_midi INTEGER NOT NULL DEFAULT 0')
 
     @contextmanager
     def db(self):
@@ -79,7 +81,8 @@ class RoadmapRuns:
                 ON CONFLICT(request_id) DO UPDATE SET state='active',detail='User renewed roadmap consent',
                 updated_at=CURRENT_TIMESTAMP''',
                 (reviewed['request_id'],reviewed['project'],reviewed['chat_id'],reviewed['manifest_sha256']))
-            db.execute('UPDATE roadmap_runs SET mixed_sha=? WHERE request_id=?',(reviewed.get('mixed_sha'),reviewed['request_id']))
+            db.execute('UPDATE roadmap_runs SET mixed_sha=?,creative_midi=? WHERE request_id=?',
+                       (reviewed.get('mixed_sha'),int(reviewed.get('creative_midi') is True),reviewed['request_id']))
 
     def change(self,ident,state,detail):
         if state not in ('paused','blocked','complete','superseded'):raise ValueError('Invalid roadmap state')
