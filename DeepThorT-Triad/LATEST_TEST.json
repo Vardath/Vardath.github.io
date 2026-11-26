@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v33-multimedia-install",
-  "title": "Triad V33: startup-aware acceptance and multimedia installation check",
+  "id": "triad-v34-intelligent-multimedia",
+  "title": "Triad V34: native fourth intelligent model and actual MIDI task",
   "checks": [
     "shared_cap",
     "triad_residency",
