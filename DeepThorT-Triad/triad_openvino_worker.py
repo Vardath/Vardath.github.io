@@ -9,7 +9,8 @@ import secrets
 import threading
 from http.server import BaseHTTPRequestHandler,HTTPServer
 from importlib.metadata import version
-from deepthort_local.triad_profiles import ALL_PROFILES as PROFILES,RUNTIME_VERSION,model_path,installed_files
+from deepthort_local.triad_profiles import ROOT,ALL_PROFILES as PROFILES,RUNTIME_VERSION,model_path,installed_files
+from deepthort_local.inference_metrics import measured,runtime_counts
 from deepthort_local.triad_job import verify_root_cap
 from deepthort_local.triad_errors import native_error,synthetic
 
@@ -122,9 +123,11 @@ class Engine:
         config.do_sample=False
         config.num_beams=1
         # Tokenized preflight is for length only; generate uses native history.
-        out=self.pipe.generate(history,config)
-        raw=out.texts[0]
-        if not isinstance(raw,str) or not raw.strip():raise RuntimeError('Native inference produced no text')
+        with measured(ROOT/'state',self.role,'native',budget_tokens=tokens,input_tokens=count,omitted_exchanges=removed) as metrics:
+            out=self.pipe.generate(history,config)
+            metrics.update(runtime_counts(out))
+            raw=out.texts[0]
+            if not isinstance(raw,str) or not raw.strip():raise RuntimeError('Native inference produced no text')
         return raw
 
     def generate(self,messages,tokens):

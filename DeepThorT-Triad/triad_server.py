@@ -13,6 +13,7 @@ from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
 from deepthort_local.role_inbox import RoleInbox,serial_rank
 from deepthort_local.adaptive_admission import capacity,admission_ready
 from deepthort_local.agent_doctrine import VERSION as DOCTRINE_VERSION
+from deepthort_local.inference_metrics import measured
 from deepthort_local.triad_profiles import ROOT,PROFILES,ALL_PROFILES,MEMORY_PROFILE,memory_installed,MODEL_ID,model_path,runtime_path,ready,total_weights,installed_files
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
 
@@ -174,7 +175,7 @@ class Pool:
         # All four text roles are required workers. Recall runs independently,
         # with a lower initial rank but the same bounded aging as other calls.
         # Admission waits occur in the caller's own thread, never the GUI.
-        with self.admission_lock:
+        with measured(ROOT/'state',role,'admission',budget_tokens=tokens), self.admission_lock:
             if not self.healthy():raise WorkerFailure('worker_exit')
             self.serial_sequence+=1
             ticket=(time.monotonic(),self.serial_sequence,role)
@@ -213,6 +214,9 @@ class Pool:
                 self.generating.discard(role)
                 self.admission_lock.notify_all()
     def infer(self,role,messages,tokens):
+        with measured(ROOT/'state',role,'broker',budget_tokens=tokens):
+            return self._infer(role,messages,tokens)
+    def _infer(self,role,messages,tokens):
         if not self.healthy() or (role=='memory' and not self.memory_ready()):raise WorkerFailure('worker_exit')
         with self.locks[role]:
             try:return self._generate(role,messages,tokens)

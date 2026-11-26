@@ -241,6 +241,11 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
         'storage': {},
         'installation_checks': {},
     }
+    try:
+        from .planning_metrics import inference_report
+        summary['inference_metrics']=inference_report(state/'logs')
+    except (OSError,ValueError,TypeError):
+        summary['inference_metrics']={'status':'unavailable'}
     # On-demand, read-only recovery health; no state file is modified.
     try:
         from .state_health import inspect_state

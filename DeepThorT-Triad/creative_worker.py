@@ -8,6 +8,7 @@ import time
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from deepthort_local.creative_profile import path, installed, REVISION
 from deepthort_local.triad_profiles import ROOT,RUNTIME_VERSION
+from deepthort_local.inference_metrics import measured,runtime_counts
 
 
 def put(p,obj):
@@ -50,7 +51,8 @@ def main():
         if time.monotonic()>deadline:raise RuntimeError('Creative worker was not admitted')
         time.sleep(.1)
     import openvino_genai as genai
-    pipe=genai.VLMPipeline(str(path()),'CPU',INFERENCE_NUM_THREADS=1,NUM_STREAMS=1)
+    with measured(ROOT/'state','gemma','creative_load'):
+        pipe=genai.VLMPipeline(str(path()),'CPU',INFERENCE_NUM_THREADS=1,NUM_STREAMS=1)
     config=genai.GenerationConfig()
     config.max_new_tokens=512
     config.do_sample=False
@@ -58,8 +60,10 @@ def main():
     # VLMPipeline has a different overload from LLMPipeline. This is a single text-only task.
     from deepthort_local.creative_core import generate_score_reply,project_report_enabled
     def generate(text):
-        out=pipe.generate(text,images=[],videos=[],generation_config=config)
-        return out.texts[0]
+        with measured(ROOT/'state','gemma','native',budget_tokens=512) as metrics:
+            out=pipe.generate(text,images=[],videos=[],generation_config=config)
+            metrics.update(runtime_counts(out))
+            return out.texts[0]
     from deepthort_local.agent_doctrine import bind_creative
     if preparation:
         from deepthort_local.gemma_preparation import generate_reply
