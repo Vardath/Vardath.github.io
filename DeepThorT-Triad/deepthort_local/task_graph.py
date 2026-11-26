@@ -170,7 +170,7 @@ class TaskGraphStore:
         with self._db() as db:
             return bool(db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(jobid,)).fetchone())
 
-    def ready_step(self,job,steps,*,preferred=None):
+    def ready_step(self,job,steps,*,preferred=None,exclude=()):
         """Select real dependency-ready work, not arbitrary sequence position.
 
         Rank ready stages by the number of remaining direct consumers, with
@@ -181,7 +181,7 @@ class TaskGraphStore:
         with self._db() as db:
             self._assert_bound(db,job,steps)
             explicit=db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(job['id'],)).fetchone()
-            planned=[s for s in steps if s['state']=='planned']
+            planned=[s for s in steps if s['state']=='planned' and s['id'] not in exclude]
             if not planned:return None
             if not explicit:
                 if preferred is not None and preferred!=planned[0]['id']:return None

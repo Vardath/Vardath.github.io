@@ -62,14 +62,14 @@ def write(path):
     return db
 
 def current(path,report_id):
-    return next((r for r in observe_granite_reports(path)['reports'] if r['receipt_sha']==report_id),None)
+    return next((r for r in observe_granite_reports(path,receipt_sha=report_id)['reports'] if r['receipt_sha']==report_id),None)
 
 def eligible(path,item):
     if not item or item['sender']!='implementation' or item['report']['kind'] not in KINDS:return False
     try:
         with closing(read(path)) as db:
-            row=db.execute("SELECT state,detail FROM jobs WHERE id=?",(item['job_id'],)).fetchone()
-            if not row or tuple(row)!=('needs_input',WAIT+item['receipt_sha']):return False
+            from .branch_holds import coordination_open
+            if not coordination_open(db,item['job_id'],item['receipt_sha']):return False
             return not db.execute("""SELECT 1 FROM corrective_assignments_v50 WHERE report_id=?
                 OR (job_id=? AND step_id=? AND state IN ('queued','consumed'))""",
                 (item['receipt_sha'],item['job_id'],item['step_id'])).fetchone()
@@ -91,8 +91,8 @@ def propose(path,item,answer):
     proposal=binding(item,decision)
     with closing(write(path)) as db,db:
         db.execute('BEGIN IMMEDIATE')
-        row=db.execute("SELECT state,detail FROM jobs WHERE id=?",(item['job_id'],)).fetchone()
-        if not row or tuple(row)!=('needs_input',WAIT+item['receipt_sha']):return False
+        from .branch_holds import coordination_open
+        if not coordination_open(db,item['job_id'],item['receipt_sha']):return False
         if db.execute("""SELECT 1 FROM corrective_assignments_v50 WHERE report_id=?
                 OR (job_id=? AND step_id=? AND state IN ('queued','consumed'))""",
                 (item['receipt_sha'],item['job_id'],item['step_id'])).fetchone():return False
@@ -121,8 +121,10 @@ def checked_review(row):
 def pending_review(path):
     try:
         with closing(read(path)) as db:
+            from .branch_holds import coordination_open
             rows=[dict(r) for r in db.execute("""SELECT c.* FROM corrective_assignments_v50 c JOIN jobs j ON j.id=c.job_id
-                WHERE c.state='proposed' AND j.state='needs_input' AND j.detail=?||c.report_id ORDER BY c.rowid LIMIT 8""",(WAIT,))]
+                WHERE c.state='proposed' AND j.state IN ('needs_input','queued','running') ORDER BY c.rowid LIMIT 64""")
+                  if coordination_open(db,r['job_id'],r['report_id'])][:8]
         for row in rows:
             item=current(path,row['report_id'])
             if not item:continue
@@ -139,11 +141,12 @@ def review(path,item,row,answer):
     verdict={'proposal_sha':row['proposal_sha'],'reviewer':'sentinel','decision':decision}
     with closing(write(path)) as db,db:
         db.execute('BEGIN IMMEDIATE')
+        from .branch_holds import coordination_open
+        if not coordination_open(db,row['job_id'],row['report_id']):return False
         return bool(db.execute("""UPDATE corrective_assignments_v50 SET verdict=?,verdict_sha=?,state=?
-                WHERE report_id=? AND proposal_sha=? AND proposal=? AND state='proposed'
-                AND EXISTS(SELECT 1 FROM jobs j WHERE j.id=job_id AND j.state='needs_input' AND j.detail=?)""",
+                WHERE report_id=? AND proposal_sha=? AND proposal=? AND state='proposed'""",
                 (json.dumps(verdict,sort_keys=True),canonical_sha(verdict),'approved' if decision['decision']=='accept' else 'rejected',
-                row['report_id'],row['proposal_sha'],row['proposal'],WAIT+row['report_id'])).rowcount)
+                row['report_id'],row['proposal_sha'],row['proposal'])).rowcount)
 
 def invalidate_review(path,row):
     """A malformed response cannot count as acceptance or a model rejection."""
@@ -154,8 +157,10 @@ def invalidate_review(path,row):
 def approved(path):
     try:
         with closing(read(path)) as db:
+            from .branch_holds import coordination_open
             return [dict(r) for r in db.execute("""SELECT c.* FROM corrective_assignments_v50 c JOIN jobs j ON j.id=c.job_id
-                WHERE c.state='approved' AND j.state='needs_input' AND j.detail=?||c.report_id ORDER BY c.rowid LIMIT 8""",(WAIT,))]
+                WHERE c.state='approved' AND j.state IN ('queued','needs_input') ORDER BY c.rowid LIMIT 64""")
+                if coordination_open(db,r['job_id'],r['report_id'],dispatch=True)][:8]
     except (sqlite3.Error,OSError):return []
 
 def requeue(jobs,row,*,validate,validate_evidence=None):
@@ -188,8 +193,10 @@ def requeue(jobs,row,*,validate,validate_evidence=None):
         step=(db.execute("SELECT id FROM job_steps WHERE job_id=? AND id=? AND state='planned'",(p['job_id'],p['step_id'])).fetchone()
               if explicit else db.execute("SELECT id FROM job_steps WHERE job_id=? AND state='planned' ORDER BY sequence LIMIT 1",(p['job_id'],)).fetchone())
         if not step or step[0]!=p['step_id']:return False
+        from .branch_holds import coordination_open
+        if not coordination_open(db,p['job_id'],p['report_id'],dispatch=True):return False
         if not db.execute("""UPDATE jobs SET state='queued',detail=?,updated_at=CURRENT_TIMESTAMP WHERE id=?
-                 AND state='needs_input' AND detail=?""",(READY+row['report_id'],p['job_id'],WAIT+row['report_id'])).rowcount:return False
+                 AND state IN ('queued','needs_input')""",(READY+row['report_id'],p['job_id'])).rowcount:return False
         db.execute("UPDATE corrective_assignments_v50 SET state='queued' WHERE report_id=?",(row['report_id'],))
         db.execute("INSERT INTO job_events(job_id,note) VALUES(?,?)",(p['job_id'],'JANUS proposed and Sentinel reviewed one corrective inference; no new authority.'))
     jobs.journal(p['job_id'])

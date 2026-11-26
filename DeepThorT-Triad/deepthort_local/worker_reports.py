@@ -54,23 +54,28 @@ def envelope(attempt,request_id,contract,report):
             'recipients':['janus','sentinel'],'report':report,
             'authority':False,'verified':False}
 
-def observe_granite_reports(job_db):
+def observe_granite_reports(job_db,*,receipt_sha=None):
     """Read-only projection; never accept stale attempts or a changed original."""
     empty={'available':False,'reports':[]}
     try:
         path=Path(job_db).parent/'task-graph.sqlite3'
         with closing(reader(path)) as db:
-            rows=[dict(r) for r in db.execute("""SELECT w.*,a.contract,a.contract_sha,a.job_id,a.step_id
+            sql="""SELECT w.*,a.contract,a.contract_sha,a.job_id,a.step_id
                 FROM worker_reports_v48 w JOIN project_assignments_v43 a ON a.attempt=w.attempt
                 WHERE a.state='abandoned' AND NOT EXISTS(
                   SELECT 1 FROM project_assignments_v43 n WHERE n.job_id=a.job_id
-                    AND n.step_id=a.step_id AND n.rowid>a.rowid)
-                ORDER BY w.rowid DESC LIMIT 24""")]
+                    AND n.step_id=a.step_id AND n.rowid>a.rowid)"""
+            args=()
+            if receipt_sha is not None:sql+=" AND w.receipt_sha=?";args=(receipt_sha,)
+            rows=[dict(r) for r in db.execute(sql+" ORDER BY w.rowid DESC LIMIT 24",args)]
         result=[]
         for row in rows:
             c=json.loads(row['contract'])
             if canonical_sha(c)!=row['contract_sha'] or c['job_id']!=row['job_id'] or c['step_id']!=row['step_id'] or c['assignee']!='implementation':continue
-            bound=live_scope(job_db,row['job_id'],row['request_id'],states=('running','needs_input','failed'))
+            from .branch_holds import parked
+            with closing(reader(job_db)) as jobs:
+                held=parked(jobs,row['job_id'],row['receipt_sha'],row['step_id'],row['contract_sha'])
+            bound=live_scope(job_db,row['job_id'],row['request_id'],states=('running','needs_input','failed','queued') if held else ('running','needs_input','failed'))
             if not bound or bound['spec_sha']!=c['original_sha256'] or bound['chat_id']!=c['chat_id'] or bound['approval_key']!=c['approval_key'] or not same_workspace(bound['project'],c['project']):continue
             with closing(reader(job_db)) as db:
                 step=db.execute("SELECT path,description,state FROM job_steps WHERE id=? AND job_id=?",
@@ -144,7 +149,8 @@ def observe_worker_reports(job_db):
 
 def still_current(job_db,receipt_sha):
     from .worker_notices import observe_notices
-    return (any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
+    return (bool(observe_granite_reports(job_db,receipt_sha=receipt_sha)['reports'])
+            or any(r['receipt_sha']==receipt_sha for r in observe_gemma_reports(job_db)['reports'])
             or bool(observe_notices(job_db,receipt_sha=receipt_sha)))
 
 def saved_dependency_catalog(job_db,item):
@@ -191,7 +197,8 @@ def counsel_fields(item,job_db):
         original=req['prompt']
     else:
         from .worker_notices import JOB_STATES
-        bound=live_scope(job_db,item['job_id'],item['request_id'],states=JOB_STATES if notice else ('running','needs_input','failed'))
+        if not still_current(job_db,item['receipt_sha']):raise ValueError('Stale Granite report')
+        bound=live_scope(job_db,item['job_id'],item['request_id'],states=JOB_STATES if notice else ('running','needs_input','failed','queued'))
         if not bound or bound['spec_sha']!=item['spec_sha']:
             raise ValueError('Worker report no longer has its original specification')
         original=bound['original']
