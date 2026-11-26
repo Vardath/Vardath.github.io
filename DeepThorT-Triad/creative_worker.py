@@ -47,8 +47,11 @@ def main():
     config.do_sample=False
     config.num_beams=1
     # VLMPipeline has a different overload from LLMPipeline. This is a single text-only task.
-    out=pipe.generate(prompt,images=[],videos=[],generation_config=config)
-    answer=out.texts[0]
+    from deepthort_local.creative_core import generate_score_reply
+    def generate(text):
+        out=pipe.generate(text,images=[],videos=[],generation_config=config)
+        return out.texts[0]
+    answer=generate_score_reply(generate,prompt)
     if not isinstance(answer,str) or not answer.strip() or len(answer)>12000:
         raise ValueError('Invalid native creative response')
     put(folder/'native-result.json',{'pid':os.getpid(),'revision':REVISION,'answer':answer})
