@@ -6,8 +6,6 @@ advice for the existing Sentinel review, never a grant or a new review gate.
 from collections import OrderedDict
 from threading import Condition, Thread
 from time import monotonic
-import json
-
 from .memory_governor import (retrieve, evidence_eligible, canonical, parse_selection,
                               specialist_prompt, MEMORY_SPECIALIST_TOKENS)
 from .reasoning_council import sha
@@ -48,6 +46,7 @@ class MemoryObserver:
         if not project or str(project)=='(general)' or not chat_id or not original or not focus:
             return
         if cancelled and cancelled():return
+        if type(job_id) is not int or job_id<0 or not isinstance(section,str) or (section and section not in original):return
         binding=identity(project,chat_id,original,job_id)
         focus=str(focus)[:500]
         key=(binding,sha(focus),phase,sha(section))
@@ -95,9 +94,10 @@ class MemoryObserver:
                 answer=self.select(sha(canonical(key))+sha(prompt),prompt,MEMORY_SPECIALIST_TOKENS)
                 chosen=parse_selection(answer,{r['id'] for r in eligible})
                 if self._stopped(packet):continue
-                # Do not publish anything from a changed source packet.
-                if canonical(retrieve(self.path,**args))!=canonical(rows):continue
-                selected=[r for r in eligible if r['id'] in chosen]
+                # Work can advance during a slow recall. A new unrelated row
+                # is not a reason to drop an unchanged historical finding.
+                fresh={r['id']:r for r in retrieve(self.path,**args) if evidence_eligible(r)}
+                selected=[r for r in eligible if r['id'] in chosen and fresh.get(r['id'])==r]
                 if selected:
                     with self._cv:
                         if not self._closed:
@@ -135,6 +135,9 @@ class MemoryObserver:
         except Exception:return ''
         out=ADVISORY_HEADER;seen=set()
         for _,(_,packet,rows) in reports:
+            try:
+                if self._stopped(packet):continue
+            except Exception:continue
             for row in rows:
                 ident=row['id']
                 if ident in seen or current.get(ident)!=row:continue
