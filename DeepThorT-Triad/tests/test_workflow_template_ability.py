@@ -11,7 +11,7 @@ class WorkflowTemplateTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
-        self.root=Path(self.tmp.name)
+        self.root=Path(self.tmp.name).resolve(strict=True)
         self.lib=PortableSkills(JanusStore(self.root/'janus.db'))
         fixture=Fixture(self.root)
         self.skill=self.lib.publish(fixture,fixture.run,self.root,user_approved=True)
