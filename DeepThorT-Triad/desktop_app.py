@@ -659,7 +659,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Python: test coverage','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         ttk.Button(checks,text='Find app capabilities…',command=self._search_application_capabilities).pack(side='left',padx=3)
@@ -7561,7 +7561,7 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,PermissionError) as exc:
             messagebox.showwarning('Worktree operation not queued',str(exc),parent=self)
 
-    def _review_integration_suite(self):
+    def _review_integration_suite(self,*,coverage=False):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Integration test unavailable','Finish active operations before testing.',parent=self);return
         from deepthort_local.integration_suite import SUITES
@@ -7577,7 +7577,7 @@ class DeepThorTDesktop(tk.Tk):
         def work():
             try:
                 from deepthort_local.integration_suite import review
-                plan=review(project,suite)
+                plan=review(project,suite,coverage=coverage)
                 self.events.put(('integration_suite_review',project,plan,None))
             except Exception as exc:self.events.put(('integration_suite_review',project,None,str(exc)[:500]))
         threading.Thread(target=work,name='JANUS-integration-review',daemon=True).start()
@@ -7588,17 +7588,20 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Integration review failed',error,parent=self);return
         if not self._editor_idle(project,proposal=True):return
         fp=plan['fingerprint']
-        if not messagebox.askyesno('Approve integration suite',
+        coverage=plan['schema']=='janus-integration-coverage-v1'
+        scope=('\n\nMeasure approximate Python application line coverage during discovery and tests; no branch, child process or other-thread coverage. Coverage is not proof of correctness.' if coverage else '')
+        if not messagebox.askyesno('Approve test coverage' if coverage else 'Approve integration suite',
             f"Project: {project}\nSuite: {plan['suite']}\nFingerprinted files: {fp['files']}\nSHA-256: {fp['sha']}\n\n"
-            'Run the selected existing unittest tests with your Windows permissions? Tests can access and modify local files. Not a sandbox. Empty, skipped or source-changing suites will not count as passed.',parent=self):return
+            'Run the selected existing unittest tests with your Windows permissions? Tests can access and modify local files. Not a sandbox. Empty, skipped or source-changing suites will not count as passed.'+scope,parent=self):return
         if not self._editor_idle(project,proposal=True):return
         try:
             from deepthort_local.action_guards import snapshot_file
             script=ROOT/'deepthort_local'/'integration_suite.py'
             argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
-            action=self.janus.add_approved_action(argv=argv,cwd=project,label='Integration: reviewed Python suite',kind='tool',
+            label='Coverage: reviewed Python suite' if coverage else 'Integration: reviewed Python suite'
+            action=self.janus.add_approved_action(argv=argv,cwd=project,label=label,kind='tool',
                 user_approved=True,input_guards=[snapshot_file(script)])
-            self._log(f'JANUS integration suite action #{action} queued; inspect test counts and source-stability result in JANUS log.')
+            self._log(f'JANUS {label} action #{action} queued; inspect test counts, source stability and any coverage details in JANUS log.')
             self._show_janus_status()
         except (OSError,ValueError,PermissionError) as exc:
             messagebox.showwarning('Integration suite not queued',str(exc),parent=self)
@@ -7753,6 +7756,8 @@ class DeepThorTDesktop(tk.Tk):
             self._inspect_git_history();return
         if choice=='Python: integration suite':
             self._review_integration_suite();return
+        if choice=='Python: test coverage':
+            self._review_integration_suite(coverage=True);return
         if choice=='Security: dependency audit':
             self._review_dependency_audit();return
         if choice=='Security: source scan':
