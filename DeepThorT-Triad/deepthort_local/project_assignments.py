@@ -217,7 +217,7 @@ class ProjectAssignments:
             if not row or not row[1]:return ''
             relative,path=_safe_auto_path(Path(bound['project']),need)
             if relative!=need or path.stat().st_size>1600:return ''
-            raw=path.read_bytes()
+            with path.open('rb') as source:raw=source.read(1601)
             if len(raw)>1600 or hashlib.sha256(raw).hexdigest()!=row[1]:return ''
             text=raw.decode('utf-8')
             if '\x00' in text:return ''
