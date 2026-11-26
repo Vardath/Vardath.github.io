@@ -49,6 +49,9 @@ class WorkflowTemplateTests(unittest.TestCase):
         body['stages'][0]['from_stage']=2
         with self.assertRaises(ValueError):preview_template(json.dumps(body).encode())
         with self.assertRaises(ValueError):preview_template(b'x'*12001)
+        with self.assertRaises(ValueError):preview_template(b'['*2000+b']'*2000)
+        with self.assertRaises(ValueError):
+            self.lib.import_template(self.skill,expected_version=self.skill['version'],user_approved=True)
         with self.assertRaises(ValueError):preview_template(b'{"schema":"deepthort-workflow-template-v1","schema":"deepthort-workflow-template-v1","stages":[]}')
 
     def test_never_overwrite_export(self):

@@ -280,6 +280,7 @@ jobs:
           python -m unittest discover -s tests -p test_integration_suite_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_git_observation_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_workflow_template_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v

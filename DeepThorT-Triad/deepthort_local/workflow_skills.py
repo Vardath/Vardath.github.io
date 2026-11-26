@@ -164,7 +164,8 @@ def preview_template(raw):
     from .structured_source import strict_json
     if not isinstance(raw,bytes) or not 0<len(raw)<=MAX_TEMPLATE_BYTES:
         raise ValueError('Template exceeds byte bound')
-    body=strict_json(raw.decode('utf-8'))
+    try:body=strict_json(raw.decode('utf-8'))
+    except RecursionError as error:raise ValueError('Template nesting exceeds parser limit') from error
     if not isinstance(body,dict) or set(body)!={'schema','stages'} or body['schema']!=TEMPLATE_SCHEMA:
         raise ValueError('Expected a typed workflow template without historical evidence')
     return validate_portable({**body,'version':digest(body)})
