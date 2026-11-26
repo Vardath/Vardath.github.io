@@ -62,6 +62,7 @@ class ProjectAssignments:
                 'graph_sha256':plan,'original_sha256':sha(original),
                 'amendments_sha256':canonical_sha(list(amendments)),
                 'path':checked['path'],'description_sha256':sha(step['description']),
+                'plan_proposal_sha256':sha(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False)),
                 'baseline_sha256':checked['before_sha256'],'dependencies_sha256':canonical_sha(deps),
                 'requester':'janus','assignee':'implementation','reviewer':'sentinel',
                 'role_sha256':{r:fingerprint(r) for r in ('janus','implementation','sentinel')},
@@ -111,7 +112,7 @@ class ProjectAssignments:
         with self.graphs._db() as db:
             db.execute('BEGIN IMMEDIATE')
             _,contract=self._load(db,attempt,('assigned',))
-            if not db.execute("SELECT 1 FROM project_reviews_v43 WHERE attempt=? AND kind='plan'",(attempt,)).fetchone():
+            if not db.execute("SELECT 1 FROM project_reviews_v43 WHERE attempt=? AND kind='plan' AND proposal_sha=?",(attempt,contract['plan_proposal_sha256'])).fetchone():
                 raise GraphError('Assignment lacks independently reviewed plan')
             exact=db.execute("""SELECT 1 FROM project_reviews_v43 WHERE attempt=?
                 AND kind IN ('code','behavior_test') AND proposal_sha=?""",(attempt,candidate)).fetchone()
