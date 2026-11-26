@@ -13,7 +13,7 @@ import sys
 import time
 from pathlib import Path
 from urllib.request import urlopen,Request
-from deepthort_local.triad_profiles import ROOT,PROFILES,RUNTIME_VERSION,REQUIRED,OPTIONAL,model_path,runtime_path
+from deepthort_local.triad_profiles import ROOT,ALL_PROFILES as PROFILES,RUNTIME_VERSION,REQUIRED,OPTIONAL,model_path,runtime_path
 from deepthort_local.disk_gate import DiskGate
 
 def atomic_json(path,obj):
@@ -253,8 +253,12 @@ def main():
     gate.wait_for_non_game()
     args=sys.argv[1:]
     if args and args!=['--runtime-only'] and not (len(args)==2 and args[0]=='--role' and args[1] in PROFILES):
-        raise SystemExit('Usage: download_model.py [--runtime-only | --role implementation|janus|sentinel]')
-    install_runtime()
+        raise SystemExit('Usage: download_model.py [--runtime-only | --role implementation|janus|sentinel|memory]')
+    # A missing fifth checkpoint must not reinstall the already verified runtime.
+    if args==['--role','memory']:
+        from deepthort_local.triad_profiles import ready
+        if not ready():install_runtime()
+    else:install_runtime()
     if args==['--runtime-only']:
         print('Verified native OpenVINO runtime (no model downloads).',flush=True);return
     roles=(args[1],) if args else ('sentinel','janus','implementation')
