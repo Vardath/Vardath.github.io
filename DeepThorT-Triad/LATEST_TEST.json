@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v61-branch-local-coordination",
-  "title": "Triad V61: branch-local recovery while independent work continues",
+  "id": "triad-v62-worker-owned-selection",
+  "title": "Triad V62: worker-owned ready selection and direct integration notices",
   "checks": [
     "shared_cap",
     "triad_residency",

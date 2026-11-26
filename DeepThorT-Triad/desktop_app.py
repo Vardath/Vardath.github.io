@@ -4384,8 +4384,11 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.project_midi import review_text
             from deepthort_local.creative_core import inspect_midi
             try:
+                from deepthort_local.peer_context import for_media
+                peer_advice=for_media(self.jobs.path,contract)
                 folder,receipt=create_midi(requester='janus',scope=contract['scope'],brief=contract['brief'],
-                    cancelled=stopped,notify=lambda message:self.events.put(('log','Project Gemma: '+message)))
+                    cancelled=stopped,notify=lambda message:self.events.put(('log','Project Gemma: '+message)),
+                    peer_advice=peer_advice)
                 if stopped():raise RuntimeError('Project MIDI assignment stopped')
                 import sqlite3
                 try:
@@ -4715,14 +4718,20 @@ class DeepThorTDesktop(tk.Tk):
                     if retry_requested:
                         from deepthort_local.corrective_coordination import queued_target
                         preferred=queued_target(self.jobs,j)
+                    ready_options=[]
+                    if step and self.graphs.explicit(jobid):
+                        from deepthort_local.branch_holds import blocked_steps
+                        if blocked_steps(self.jobs.path,jobid) and not self._project_work_is_enabled():
+                            raise PlanError('Outstanding parked stages require reviewed coordination before resuming this graph')
                     if step and self._project_work_is_enabled() and self.graphs.explicit(jobid):
                         from deepthort_local.project_authority import _active
                         current=self.jobs.get(jobid)
                         _active(STATE/'project-grants',current,steps,True)
                         from deepthort_local.branch_holds import blocked_steps
                         held=blocked_steps(self.jobs.path,jobid)
-                        step=self.graphs.ready_step(current,steps,preferred=preferred,
+                        ready_options=self.graphs.ready_candidates(current,steps,preferred=preferred,
                             exclude=held-{preferred} if preferred is not None else held)
+                        step=ready_options[0] if ready_options else None
                         if not step:
                             if held and not retry_requested:
                                 self.events.put(('project_branches_waiting',jobid))
@@ -4740,6 +4749,20 @@ class DeepThorTDesktop(tk.Tk):
                     original=master_for_job(j,self.conversations,self.hierarchies,self.specifications)
                     from deepthort_local.specification_amendments import root_request_for_job
                     amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
+                    if explicit_order and not retry_requested and len(ready_options)>1:
+                        from deepthort_local.worker_selection import choose
+                        def selection_stopped():
+                            latest=self.jobs.get(jobid)
+                            return (self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
+                                or not latest or latest['state']!='running' or self._superseded_build(latest)
+                                or not self._project_work_is_enabled())
+                        choice=choose(self.client,self.jobs.get(jobid),original,amendments,ready_options,stopped=selection_stopped)
+                        if not choice or selection_stopped():raise PlanError('Worker selection stopped or superseded')
+                        current=self.jobs.get(jobid);steps=self.jobs.steps(jobid)
+                        from deepthort_local.branch_holds import blocked_steps
+                        step=self.graphs.ready_step(current,steps,preferred=choice['step_id'],exclude=blocked_steps(self.jobs.path,jobid))
+                        if not step:raise PlanError('Selected worker stage is no longer dependency-ready')
+                        self.events.put(('log',f"Job #{jobid}: {choice['origin']} selected {step['path']}: {choice['reason']}"))
                     focus=step['path']+': '+step['description']
                     assignment=None
                     production_client=self.client
@@ -4830,6 +4853,8 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.workflow_attention import advice as live_advice
                     if assignment and not stopped_memory():
                         step_memory+=live_advice(self.jobs.path,jobid,original,focus,budget=600)
+                        from deepthort_local.peer_context import for_software
+                        step_memory+=for_software(self.jobs.path,jobid,root_request_for_job(j,self.conversations),contract)
                     if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))

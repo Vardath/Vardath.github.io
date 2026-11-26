@@ -20,14 +20,16 @@ GUIDANCE=('\nIf you have a genuinely useful NONBLOCKING finding, you may prepend
           'DEEPTHORT_WORKER_NOTICE: followed by JSON {"kind":"discovery","need":"specific finding",'
           '"reason":"why it matters"} (kind also integration_hint, upcoming_dependency or quality_concern), '
           'then a newline and the complete requested output in its original format. '
-          'Do not add a notice for routine work. A real blocker still uses the report alternative.')
+          'For a specific known approved peer output you may include "peer_path":"relative/path.ext" '
+          'to route the integration hint directly to that peer as well as JANUS and Sentinel. '
+          'Omit peer_path if uncertain. Do not add a notice for routine work. A real blocker still uses the report alternative.')
 TTL=900
 MAX_PER_ATTEMPT=4
 MAX_STORED=512
 JOB_STATES=('queued','running','waiting_verification','waiting_repair','needs_input')
 
 def validate_notice(obj):
-    if not isinstance(obj,dict) or set(obj)!={'kind','need','reason'} or not isinstance(obj['kind'],str) or obj['kind'] not in KINDS:
+    if not isinstance(obj,dict) or set(obj) not in ({'kind','need','reason'},{'kind','need','reason','peer_path'}) or not isinstance(obj['kind'],str) or obj['kind'] not in KINDS:
         raise ValueError('Invalid worker notice schema')
     result=dict(obj)
     for key,limit in (('need',180),('reason',240)):
@@ -35,6 +37,13 @@ def validate_notice(obj):
         if not isinstance(value,str) or not value.strip() or len(value)>limit or any(ord(c)<32 for c in value):
             raise ValueError('Invalid bounded worker notice')
         result[key]=value.strip()
+    if 'peer_path' in result:
+        path=result['peer_path']
+        if (obj['kind'] not in ('integration_hint','upcoming_dependency') or not isinstance(path,str)
+                or not 1<=len(path)<=240 or any(ord(c)<32 for c in path)
+                or path.startswith('/') or '\\' in path or ':' in path
+                or any(p in ('','.','..') for p in path.split('/'))):
+            raise ValueError('Invalid exact peer output path')
     return result
 
 def split_notice(answer):
@@ -63,6 +72,8 @@ def envelope(attempt,request_id,contract,notice,output_sha,sender,created):
     elif sender=='multimedia':
         item.update(task_id=contract['task']['id'],spec_sha=contract['original_sha'])
     else:raise ValueError('Unknown notice sender')
+    if 'peer_path' in item['report']:
+        item['recipients'].append('multimedia' if sender=='implementation' else 'implementation')
     return item
 
 def record(db,attempt,request_id,contract,notice,output_sha,sender,*,clock=time.time):

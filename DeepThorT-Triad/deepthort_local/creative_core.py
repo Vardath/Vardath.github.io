@@ -257,8 +257,13 @@ def native_generate(folder,cancelled,notify):
 
 
 def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda message:None,
-                root=ROOT,generate=native_generate,accept=None):
+                root=ROOT,generate=native_generate,accept=None,peer_advice=''):
     packet=request_packet(requester,scope,brief)
+    advisory=None
+    if peer_advice:
+        if not project_report_enabled(packet):raise ValueError('Peer advice requires a scoped approved project')
+        from .peer_context import packet as peer_packet
+        advisory=peer_packet(scope,peer_advice)
     if not LOCK.acquire(blocking=False):raise RuntimeError('Fourth core already processing another task')
     try:
         if cancelled():raise RuntimeError('Creative task cancelled')
@@ -267,6 +272,7 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
         if base.is_symlink() or base.parent.is_symlink():raise ValueError('Linked task location')
         folder=Path(tempfile.mkdtemp(prefix='media-',dir=base))
         write_json(folder/'request.json',packet)
+        if advisory:write_json(folder/'peer-advice.json',advisory)
         try:
             answer,pid=generate(folder,cancelled,notify)
             if cancelled():raise RuntimeError('Creative task cancelled')
@@ -294,6 +300,10 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
                      'native_inference_verified':generate is native_generate,'creative_quality_verified':False,
                      'project_publication_authorized':False}
             if notice is not None:receipt['notice']=notice
+            if advisory:
+                actual=json.loads((folder/'peer-advice.json').read_text('utf-8'))
+                if actual!=advisory:raise ValueError('Peer context changed during generation')
+                receipt['peer_advice_sha']=advisory['sha']
             write_json(folder/'receipt.json',receipt)
             return folder,receipt
         except Exception as exc:
