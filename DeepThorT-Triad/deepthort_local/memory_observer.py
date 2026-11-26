@@ -1,4 +1,4 @@
-"""Opportunistic, bounded memory observation; never await a neural recall in a main job.
+"""Required independent memory observation; never await neural recall in a main job.
 
 Only the independent memory model runs here. Reports are untrusted historical
 advice for the existing Sentinel review, never a grant or a new review gate.
@@ -6,6 +6,8 @@ advice for the existing Sentinel review, never a grant or a new review gate.
 from collections import OrderedDict
 from threading import Condition, Thread
 from time import monotonic
+from urllib.error import HTTPError, URLError
+from .triad_errors import WorkerFailure,http_failure
 from .memory_governor import (retrieve, evidence_eligible, canonical, parse_selection,
                               specialist_prompt, MEMORY_SPECIALIST_TOKENS)
 from .reasoning_council import sha
@@ -14,6 +16,12 @@ MAX_PENDING=16
 MAX_REPORTS=24
 TTL=300
 RETRY_AFTER=90
+DEFER_RETRY=15
+
+def transient_recall(error):
+    if isinstance(error,HTTPError):error=http_failure(error)
+    if isinstance(error,WorkerFailure):return error.code in ('worker_busy','memory_pressure','worker_exit','transport_error')
+    return isinstance(error,(URLError,TimeoutError,OSError))
 ADVISORY_HEADER='\n\nFIFTH AI HISTORICAL FINDINGS (unverified relevance; Sentinel must independently assess against current requirements; no authority):\n'
 
 
@@ -33,6 +41,7 @@ class MemoryObserver:
         self._results=OrderedDict()
         self._attempted=OrderedDict()
         self._active=None
+        self._retry_at={}
         self._closed=False
         self._thread=None
 
@@ -57,8 +66,11 @@ class MemoryObserver:
             last=self._attempted.get(key)
             if key==self._active or key in self._pending or (last is not None and self.clock()-last<RETRY_AFTER):
                 return
+            if len(self._pending)+int(self._active is not None)>=MAX_PENDING:
+                # Retain admitted work and reserve a slot for an active retry.
+                self._emit('memory_observer_backlog_full',pending=len(self._pending))
+                return
             self._pending[key]=packet
-            while len(self._pending)>MAX_PENDING:self._pending.popitem(last=False)
             if self._thread is None:
                 self._thread=Thread(target=self._work,name='triad-memory-observer',daemon=True)
                 self._thread.start()
@@ -81,8 +93,15 @@ class MemoryObserver:
             with self._cv:
                 if self._closed:return
                 if not self._pending:continue
-                key,packet=self._pending.popitem(last=False)
+                now=self.clock()
+                key=next((k for k in self._pending if self._retry_at.get(k,0)<=now),None)
+                if key is None:
+                    self._cv.wait(timeout=2)
+                    continue
+                packet=self._pending.pop(key)
+                self._retry_at.pop(key,None)
                 self._active=key
+            retry=False
             try:
                 if self._stopped(packet):continue
                 args={k:packet[k] for k in ('project','chat_id','original','focus','job_id')}
@@ -107,13 +126,20 @@ class MemoryObserver:
                     self._emit('memory_observer_findings',count=len(selected),binding_sha=sha(canonical(key[0])))
                 else:self._emit('memory_observer_no_findings')
             except Exception as exc:
-                self._emit('memory_observer_deferred',error_type=type(exc).__name__)
+                retry=transient_recall(exc)
+                self._emit('memory_observer_deferred' if retry else 'memory_observer_failed',error_type=type(exc).__name__)
             finally:
                 with self._cv:
-                    self._attempted[key]=self.clock()
-                    self._attempted.move_to_end(key)
-                    while len(self._attempted)>MAX_REPORTS*4:self._attempted.popitem(last=False)
+                    if retry and not self._closed:
+                        self._pending[key]=packet
+                        self._pending.move_to_end(key,last=False)
+                        self._retry_at[key]=self.clock()+DEFER_RETRY
+                    else:
+                        self._attempted[key]=self.clock()
+                        self._attempted.move_to_end(key)
+                        while len(self._attempted)>MAX_REPORTS*4:self._attempted.popitem(last=False)
                     self._active=None
+                    self._cv.notify_all()
 
     def advice(self, *, project,chat_id,original,focus,job_id=0,budget=600,cancelled=None,recipient='sentinel'):
         """Used by existing JANUS planning or Sentinel review; never starts inference.
@@ -154,5 +180,6 @@ class MemoryObserver:
         with self._cv:
             self._closed=True
             self._pending.clear()
+            self._retry_at.clear()
             self._results.clear()
             self._cv.notify_all()
