@@ -42,8 +42,10 @@ class LocalCounsel:
         with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('DELETE FROM counsel_lease WHERE singleton=1 AND holder=?',(holder,))
 
-    def request(self, *, society: str, goal: str, problem: str, evidence: str, worker_report: bool=False) -> str | None:
+    def request(self, *, society: str, goal: str, problem: str, evidence: str, worker_report: bool=False, coordination: str='' ) -> str | None:
         if society not in ('janus','sentinel'):raise ValueError('Unknown local society')
+        if coordination and (not worker_report or (society,coordination) not in (('janus','propose'),('sentinel','review'))):
+            raise ValueError('Incorrect coordination role')
         token=os.environ.get('DEEPTHORT_TRIAD_TOKEN','')
         if len(token)<32:return None
         headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'}
@@ -73,11 +75,23 @@ class LocalCounsel:
                           'Your independent role is to assess it, not to blindly accept it. '
                           + ('Identify the smallest testable way to resolve the dependency using existing approved work or capabilities. Identify independent branches that can progress. ' if society=='janus' else 'Challenge whether the dependency is real, whether it conflicts with the original specification, and what exact evidence must be checked. ')
                           + 'Distinguish known facts from hypotheses; no command execution, permission changes, source edits or claims of successful tests. Request user input only if necessary. Give concise scoped corrective advice.')
+            if coordination=='propose':
+                guidance=('Assess the unverified dependency claim against exact approved requirements. '
+                    'Only propose a fresh inference on the same approved file with specific guidance derived from provided facts. '
+                    'If genuinely missing data, tools, permission, source, or requirements prevent progress, hold; do not invent them. '
+                    'No new files, commands, permissions, changed specification or claimed tests. '
+                    'Return ONLY JSON {"decision":"retry","guidance":"specific corrective advice (max 360 chars)","reason":"why (max 300 chars)"} '
+                    'or {"decision":"hold","guidance":"","reason":"exact unresolved dependency"} .')
+            elif coordination=='review':
+                guidance=('Independently challenge the exact JANUS corrective proposal against the original user requirements and worker claim. '
+                    'Accept only if its specific advice is supported, preserves every requirement and scope, and requires no invented dependency or new permission. '
+                    'If evidence is insufficient, reject. Acceptance allows one fresh inference, not source publication or runtime verification. '
+                    'Return ONLY JSON {"decision":"accept","reason":"specific evidence-based reason"} or {"decision":"reject","reason":"specific objection"}.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'
                     f'OBSERVED PROBLEM: {problem[:700]}\n'
                     f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:2500 if worker_report else 900]}')
             payload=json.dumps({'model':MODEL,'triad_role':society,'messages':[{'role':'system','content':guidance},
-                      {'role':'user','content':prompt}], 'max_tokens':200, 'stream':False}).encode()
+                      {'role':'user','content':prompt}], 'max_tokens':384 if coordination else 200, 'stream':False}).encode()
             req=urllib.request.Request(HOST+'/v1/chat/completions',data=payload,method='POST',
                                        headers=headers)
             with opener.open(req,timeout=180) as response:
