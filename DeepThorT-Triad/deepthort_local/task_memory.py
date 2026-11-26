@@ -45,8 +45,9 @@ def append_note(db,job_id,role,focus,spec_sha,evidence_sha,note):
     return bool(db.execute('INSERT OR IGNORE INTO task_memory_notes(job_id,role,focus,spec_sha,evidence_sha,note) VALUES(?,?,?,?,?,?)',
         (job_id,role,focus[:500],spec_sha,evidence_sha,note[:1400])).rowcount)
 
-def _open(path):
-    db=sqlite3.connect(path,timeout=10)
+def _open(path,*,fast=False):
+    db=(sqlite3.connect(Path(path).resolve(strict=True).as_uri()+'?mode=ro',uri=True,timeout=.05)
+        if fast else sqlite3.connect(path,timeout=10))
     db.row_factory=sqlite3.Row
     db.execute('PRAGMA query_only=ON')
     return db
@@ -64,13 +65,14 @@ def _bounded(value,limit):
     if len(value)<=limit:return value
     return value[:limit]+' [excerpt; full record in jobs.sqlite3]'
 
-def tool_observations(path,job_id,project,spec_sha=None):
+def tool_observations(path,job_id,project,spec_sha=None,*,read_only=False):
     """Re-use sealed existing tool receipts; never replay their arguments or output."""
     ledger=Path(path).parent/'agent-tool-receipts-v61.sqlite3'
     if not ledger.is_file():return []
     from .agent_tool_receipts import ToolReceipts
     try:
-        rows=ToolReceipts(ledger).recent(job_id,project,limit=20)
+        rows=(ToolReceipts.read_recent(ledger,job_id,project,limit=20,read_only=True)
+              if read_only else ToolReceipts(ledger).recent(job_id,project,limit=20))
         return [{'task':job_id,'tool':r['request']['tool'],'receipt':r['id'],
                  'items':len(r['result']['items']),'delivered':r['delivered'],
                  'evidence':r['sha256']} for r in rows
@@ -78,11 +80,11 @@ def tool_observations(path,job_id,project,spec_sha=None):
     except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):
         return []
 
-def mcp_observations(path,job_id,project,chat_id,spec_sha=None):
+def mcp_observations(path,job_id,project,chat_id,spec_sha=None,*,read_only=False):
     ledger=Path(path).parent/'janus.sqlite3'
     if not ledger.is_file():return []
     try:
-        db=_open(ledger)
+        db=_open(ledger,fast=read_only)
         try:
             rows=db.execute("""SELECT id,tool,state,task_spec_sha,task_review_sha,args_sha,result_sha
                 FROM local_mcp_calls WHERE task_id=? AND project=? AND task_chat=?

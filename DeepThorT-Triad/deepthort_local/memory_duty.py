@@ -23,19 +23,19 @@ OFFER_DUTIES=8
 REPORT_TTL=600
 MAX_REPORTS=256
 
-def reader(path):
-    db=sqlite3.connect(Path(path).resolve(strict=True).as_uri()+'?mode=ro',uri=True,timeout=.4)
+def reader(path,*,timeout=.4):
+    db=sqlite3.connect(Path(path).resolve(strict=True).as_uri()+'?mode=ro',uri=True,timeout=timeout)
     db.row_factory=sqlite3.Row
     return db
 
-def live_scope(job_db,job_id,request_id,*,states=STATES):
+def live_scope(job_db,job_id,request_id,*,states=STATES,timeout=.4):
     """Check the exact approved job/request pair independently of GUI selection."""
-    with closing(reader(job_db)) as db:
+    with closing(reader(job_db,timeout=timeout)) as db:
         row=db.execute("SELECT * FROM jobs WHERE id=?",(job_id,)).fetchone()
         if not row or row['mode']!='build' or row['state'] not in states or not row['approval_key']:
             return None
         job=dict(row)
-    with closing(reader(Path(job_db).parent/'conversations.sqlite3')) as db:
+    with closing(reader(Path(job_db).parent/'conversations.sqlite3',timeout=timeout)) as db:
         req=db.execute("SELECT id,project,chat_id,prompt,state,mode FROM conversation_requests WHERE id=?",(request_id,)).fetchone()
         if not req or req['state']!='responded' or req['mode']!='draft_plan' or (req['project'],req['chat_id'])!=(job['project'],job['chat_id']):
             return None
@@ -221,20 +221,23 @@ class MemoryDuty:
     def has_reports(self,job_id):
         if not job_id:return False
         try:
-            with closing(reader(self.path)) as db:
+            with closing(reader(self.path,timeout=.05)) as db:
                 return bool(db.execute("SELECT 1 FROM memory_duties_v47 WHERE job_id=? AND completed>=? AND outcome='findings' LIMIT 1",
                                        (job_id,self.clock()-REPORT_TTL)).fetchone())
         except (OSError,sqlite3.Error):return False
 
     def advice_records(self,*,project,chat_id,original,job_id,current):
         if not job_id or not current:return []
-        with closing(reader(self.path)) as db:
+        with closing(reader(self.path,timeout=.05)) as db:
             rows=[dict(r) for r in db.execute("""SELECT * FROM memory_duties_v47
                 WHERE job_id=? AND completed>=? AND outcome='findings'
                 ORDER BY completed DESC,work_id LIMIT 16""",(job_id,self.clock()-REPORT_TTL))]
-        result=[];seen=set()
+        result=[];seen=set();scopes={}
         for row in rows:
-            bound=live_scope(self.job_db,job_id,row['request_id'],states=DUTY_STATES)
+            req=row['request_id']
+            if req not in scopes:
+                scopes[req]=live_scope(self.job_db,job_id,req,states=DUTY_STATES,timeout=.05)
+            bound=scopes[req]
             if not bound or bound['original']!=original or (bound['project'],bound['chat_id'])!=(str(project),chat_id):continue
             findings=json.loads(row['findings'])
             record={'work_id':row['work_id'],'scope':signature(bound),'focus':row['focus'],'phase':row['phase'],

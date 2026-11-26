@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v54-durable-memory-duties",
-  "title": "Triad V54: durable independent Memory duties",
+  "id": "triad-v55-memory-advice-and-consolidation",
+  "title": "Triad V55: nonblocking advisory checkpoints and reversible memory consolidation",
   "checks": [
     "shared_cap",
     "triad_residency",

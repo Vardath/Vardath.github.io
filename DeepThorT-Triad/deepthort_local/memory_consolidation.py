@@ -13,6 +13,7 @@ PREFIX='Named test observation v24: '
 HEX=re.compile(r'[a-f0-9]{64}')
 TEST=re.compile(r'[\w.]+\.test_\w+')
 MAX_PER_TRACE=64
+MAX_EXACT_GROUP=128
 
 def canonical(value):
     return json.dumps(value,ensure_ascii=True,sort_keys=True,separators=(',',':'),allow_nan=False)
@@ -67,15 +68,37 @@ def record_trace(jobs,job,original,trace):
     if changed:jobs.journal(job['id'])
     return changed
 
+def exact_observation_group(db,row,project,chat_id,spec_sha):
+    """Consolidate identical historical observations, retaining every receipt.
+
+    Not semantic merging, not evidence of independent repeated measurements.
+    Preserve exact text and the original role; never promote proposals or
+    accepted but unverified advice. Oversized groups keep the prior raw view.
+    """
+    role=row['role'];note=row['note'];focus=row['focus']
+    if role!='verification' and not (role=='sentinel' and note.startswith('Rejected: ')):
+        return None
+    related=db.execute("""SELECT n.id,n.job_id,n.evidence_sha FROM task_memory_notes n
+        JOIN jobs j ON j.id=n.job_id WHERE j.project=? AND j.chat_id=? AND n.spec_sha=?
+        AND n.role=? AND n.focus=? AND n.note=? ORDER BY n.id LIMIT ?""",
+        (project,chat_id,spec_sha,role,focus,note,MAX_EXACT_GROUP+1)).fetchall()
+    if not 2<=len(related)<=MAX_EXACT_GROUP:return None
+    receipts=[tuple(r) for r in related]
+    return {'id':'N'+str(receipts[0][0]),'kind':'historical_'+role,
+            'focus':focus[:100],'observation':note[:220],
+            'evidence':sha(canonical(['exact-observation-v55',project,chat_id,spec_sha,role,focus,note,receipts]))}
+
 def recall_group(db,row,project,chat_id,spec_sha):
     """Return one representative and a digest binding every matching observation.
 
     Contradictory outcomes on identical pinned inputs are explicitly uncertain.
     Distinct baselines are distinct histories, not contradictory observations.
     """
-    if row['role']!='verification':return None
+    if row['role']!='verification':
+        return exact_observation_group(db,row,project,chat_id,spec_sha)
     claim=parse(row['note'])
-    if not claim or row['focus']!='Named test '+claim['test']:return None
+    if not claim or row['focus']!='Named test '+claim['test']:
+        return exact_observation_group(db,row,project,chat_id,spec_sha)
     related=[]
     for other in db.execute("""SELECT n.id,n.note,n.evidence_sha FROM task_memory_notes n
         JOIN jobs j ON j.id=n.job_id WHERE j.project=? AND j.chat_id=? AND n.spec_sha=?
