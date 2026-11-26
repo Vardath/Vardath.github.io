@@ -255,3 +255,11 @@ A staged V70 diagnostic candidate now proceeds to an isolated fixed child-proces
 
 ---
 
+
+
+# V72 — evidence-driven self-development investigations
+
+The existing self-development lane now observes repeated structured faults in three workflow subsystems using bounded diagnostic log metadata, without exposing raw log data or treating a recurring exception as a proven diagnosis. JANUS selects an observed function and test hypothesis; Granite proposes an isolated single-function replacement with unchanged signature; Sentinel independently reviews the exact hash. Host AST and compilation checks restrict the inert candidate to that function. The existing asynchronous Memory lane selects relevant historical self-investigations, with no foreground wait. The ledger retains exact source identity and staged baseline. Generated logic is not executed, installed, or claimed to be correct; approved isolated runtime testing and wider coverage remain required. V71's fixed diagnostic probe remains unchanged. No installer.
+
+---
+

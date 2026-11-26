@@ -48,6 +48,7 @@ class MemoryObserver:
         self._duty=None
         self._scan_at=-float('inf')
         self._conversation_scan_turn=False
+        self._self_investigation_turn=0
 
     def _emit(self,event,**kw):
         try:self.report(event,**kw)
@@ -116,6 +117,15 @@ class MemoryObserver:
                 # Same dedicated model, rotating independent attention. Never
                 # add a conversation inference to the main workflow.
                 self._conversation_scan_turn=not self._conversation_scan_turn
+                self._self_investigation_turn=(self._self_investigation_turn+1)%4
+                if self._self_investigation_turn==0:
+                    try:
+                        from .self_investigation import memory_once
+                        from .triad_profiles import ROOT
+                        from pathlib import Path
+                        memory_once(ROOT,Path(self.path).parent,self.select,lambda:self._closed)
+                    except Exception as exc:
+                        self._emit('self_investigation_memory_deferred',error_type=type(exc).__name__)
                 with self._cv:has_pending=bool(self._pending)
                 if self._conversation_scan_turn or not has_pending:
                     try:

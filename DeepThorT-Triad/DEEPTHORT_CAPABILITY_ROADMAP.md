@@ -1,3 +1,9 @@
+# V72 — evidence-driven self-development investigations
+
+The existing self-development lane now observes repeated structured faults in three workflow subsystems using bounded diagnostic log metadata, without exposing raw log data or treating a recurring exception as a proven diagnosis. JANUS selects an observed function and test hypothesis; Granite proposes an isolated single-function replacement with unchanged signature; Sentinel independently reviews the exact hash. Host AST and compilation checks restrict the inert candidate to that function. The existing asynchronous Memory lane selects relevant historical self-investigations, with no foreground wait. The ledger retains exact source identity and staged baseline. Generated logic is not executed, installed, or claimed to be correct; approved isolated runtime testing and wider coverage remain required. V71's fixed diagnostic probe remains unchanged. No installer.
+
+---
+
 # V71 — versioned self-update preparation and rollback checks
 
 A staged V70 diagnostic candidate now proceeds to an isolated fixed child-process regression. It executes only the installed baseline formatter and its exact literal-only variant against eight actual input cases, and checks that the sole output difference is the reviewed text. A scratch copy exercises forward and rollback bytes, both hash-verified. A versioned non-installable private ZIP contains the inert baseline/candidate, exact review identity and scoped test receipt. Recheck source, review and staged hashes before and after work, preserve the live application, refuse tampered packages, and retain no installation grant. The desktop checks inherited root-cap enforcement before running this path. Full application/native acceptance, generalized self-development, historical evidence integration and an explicit installation/rollback procedure are still outstanding. No intermediate installer.

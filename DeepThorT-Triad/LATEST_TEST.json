@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v71-self-update-verification",
-  "title": "DeepThorT V71: isolated self-update verification and rollback",
+  "id": "triad-v72-evidence-self-development",
+  "title": "DeepThorT V72: evidence-driven self-development investigations",
   "checks": [
     "shared_cap",
     "triad_residency",
