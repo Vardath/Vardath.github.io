@@ -58,7 +58,8 @@ def main():
     allow_report=project_report_enabled(data)
     if allow_report:
         from deepthort_local.worker_reports import GUIDANCE
-        prompt+=GUIDANCE.replace('requested source','requested score')
+        from deepthort_local.worker_notices import GUIDANCE as NOTICE_GUIDANCE
+        prompt+=GUIDANCE.replace('requested source','requested score')+NOTICE_GUIDANCE
     answer=generate_score_reply(generate,bind_creative(prompt),allow_report=allow_report)
     if not isinstance(answer,str) or not answer.strip() or len(answer)>12000:
         raise ValueError('Invalid native creative response')

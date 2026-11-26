@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v52-preservation-audit",
-  "title": "Triad V52: preservation audit and corrective evidence transaction hardening",
+  "id": "triad-v53-production-initiative",
+  "title": "Triad V53: nonblocking production-worker initiative",
   "checks": [
     "shared_cap",
     "triad_residency",

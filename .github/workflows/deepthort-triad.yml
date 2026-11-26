@@ -83,6 +83,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_creative_coordination_v49.py -v
       - run: python -m unittest discover -s tests -p test_corrective_coordination_v50.py -v
       - run: python -m unittest discover -s tests -p test_evidence_coordination_v51.py -v
+      - run: python -m unittest discover -s tests -p test_worker_notices_v53.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -207,6 +208,8 @@ jobs:
           python -m unittest discover -s tests -p test_corrective_coordination_v50.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_evidence_coordination_v51.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_worker_notices_v53.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
