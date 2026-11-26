@@ -39,6 +39,11 @@ class TechnicalPreparationTests(unittest.TestCase):
         self.path.write_text('changed after approval',encoding='utf-8')
         self.assertEqual(advice(f.jobs.path,f.job,f.original,packet['focus']),'')
         self.assertIsNone(run_once(f.jobs.path,self.client,lambda:False))
+    def test_no_receipt_does_not_inspect_sources(self):
+        from unittest.mock import patch
+        f=self.f
+        with patch('deepthort_local.technical_preparation.scope',side_effect=AssertionError('No receipt must not scan files')):
+            self.assertEqual(advice(f.jobs.path,f.job,f.original,'ship.py'),'')
     def test_cancel_and_pause(self):
         f=self.f
         self.assertIsNone(run_once(f.jobs.path,self.client,lambda:True))

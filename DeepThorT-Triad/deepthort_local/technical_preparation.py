@@ -138,6 +138,15 @@ def advice(job_db,job_id,original,focus,budget=600):
     # Read existing receipts only; no neural call, file mutation or wait for Granite.
     if budget<100:
         return ''
+    # Most foreground checkpoints have no preparation yet. Avoid even a
+    # source inspection when there is no recent receipt for this job.
+    try:
+        with closing(reader(_path(job_db),timeout=.025)) as db:
+            if not db.execute('SELECT 1 FROM granite_preparation_v67 WHERE job_id=? AND stamp>=? LIMIT 1',
+                              (job_id,time.time()-TTL)).fetchone():
+                return ''
+    except (OSError,ValueError,sqlite3.Error):
+        return ''
     item=scope(job_db,job_id)
     if not item or item['packet']['bound']['original']!=original or item['packet']['focus']!=focus:
         return ''

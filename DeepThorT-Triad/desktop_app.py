@@ -4590,6 +4590,10 @@ class DeepThorTDesktop(tk.Tk):
                 or health.get('serial_memory_mode') is not False
                 or role.get('resident') is not True or role.get('busy') or role.get('generating')):
             return
+        slots=health.get('admission_slots')
+        models=list((health.get('models') or {}).values())+[health.get('memory_model') or {}]
+        if type(slots) is not int or slots<=sum(x.get('generating') is True for x in models):
+            return
         self._technical_preparation_at=now
         primary=self.node
         def stopped():
@@ -4633,7 +4637,7 @@ class DeepThorTDesktop(tk.Tk):
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
         if gate=='active_job' and self._try_independent_project_media(now):return
-        if gate in ('active_job','dispatch_enabled'):
+        if gate=='active_job':
             self._technical_preparation_tick(now)
         if gate=='dispatch_enabled':
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
@@ -4682,6 +4686,9 @@ class DeepThorTDesktop(tk.Tk):
                     self._log(f"JANUS resumed draft #{recovered['request_id']} from recorded progress "
                               f"(bounded recovery {recovered['attempt']}/2). No build approved.")
                     self._reload_chat()
+                    return
+            # Give foreground conversations, ready builds and recovery first choice.
+            self._technical_preparation_tick(now)
 
     def _execute_job(self,j):
         from deepthort_local.corrective_coordination import READY
