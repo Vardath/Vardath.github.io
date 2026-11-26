@@ -89,7 +89,7 @@ class LocalCounsel:
                     'Return ONLY JSON {"decision":"accept","reason":"specific evidence-based reason"} or {"decision":"reject","reason":"specific objection"}.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'
                     f'OBSERVED PROBLEM: {problem[:700]}\n'
-                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:2500 if worker_report else 900]}')
+                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:4800 if coordination else 2500 if worker_report else 900]}')
             payload=json.dumps({'model':MODEL,'triad_role':society,'messages':[{'role':'system','content':guidance},
                       {'role':'user','content':prompt}], 'max_tokens':384 if coordination else 200, 'stream':False}).encode()
             req=urllib.request.Request(HOST+'/v1/chat/completions',data=payload,method='POST',
