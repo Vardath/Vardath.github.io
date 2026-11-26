@@ -26,14 +26,30 @@ CASES=(
       [('janus','Docking permission validation','Untested suggestion: bypass docking permission validation.',False)]),
 )
 
-def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient):
+def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,idle_wait_seconds=120):
     results={};case=None;start=None
     def done(status,detail):
         return {'status':status,'detail':detail,'evidence':{'memory_cases':results}}
     try:
         initial=health();models=resident_roles(initial,pid)
-        if initial.get('serial_memory_mode') is not False or any(x.get('busy') for x in models.values()):
-            return done('inconclusive','Resident parallel models must be idle')
+        if initial.get('serial_memory_mode') is not False:
+            return done('inconclusive','Resident parallel model mode required')
+        # Preserve the exact oracle. Only defer the start while real inference
+        # drains; never terminate a live request or change model residency.
+        deadline=time.monotonic()+min(120,max(0,idle_wait_seconds))
+        original_pids={role:x['pid'] for role,x in models.items()}
+        while any(x.get('busy') for x in models.values()):
+            if cancelled.is_set():return done('cancelled','Stopped waiting for idle models')
+            remaining=deadline-time.monotonic()
+            if remaining<=0:return done('inconclusive','Resident parallel models remained busy; retry when idle')
+            if notify:notify('waiting for resident models to become idle')
+            if cancelled.wait(min(1,remaining)):return done('cancelled','Stopped waiting for idle models')
+            current=health();models=resident_roles(current,pid)
+            if (current.get('serial_memory_mode') is not False
+                    or current.get('memory_retries',0)!=initial.get('memory_retries',0)
+                    or any(x['pid']!=original_pids[role] for role,x in models.items())):
+                return done('inconclusive','Worker configuration changed while waiting for idle models')
+        if cancelled.is_set():return done('cancelled','Stopped')
         with tempfile.TemporaryDirectory(prefix='triad-live-memory-') as folder:
             root=Path(folder);jobs=JobStore(root/'jobs.sqlite3')
             client=client_factory(root/'sessions.sqlite3')

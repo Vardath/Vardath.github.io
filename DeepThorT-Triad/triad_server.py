@@ -63,7 +63,7 @@ class Pool:
         self.serial_memory_mode=True
         self.worker_commit_limit=0
         self.memory_retries=0
-        self.stage='Checking combined memory';self.started=time.monotonic();self.ready=False
+        self.stage='Checking combined memory';self.started=time.monotonic();self.ready_at=None;self.ready=False
     def set_stage(self,message):
         self.stage=message;print(message,flush=True)
     def start(self,stack):
@@ -106,6 +106,7 @@ class Pool:
             raise RuntimeError('Parallel admission requires three live protected workers')
         with self.admission_lock:
             self.serial_memory_mode=False
+            self.ready_at=time.monotonic()
             self.ready=True
             self.set_stage('All three compact models resident; parallel generation enabled, not yet validated')
     def healthy(self):
@@ -156,7 +157,7 @@ class Pool:
             'role':'council' if council else 'implementation','pid':os.getpid(),
             'phase':'ready' if self.healthy() else 'loading','stage':self.stage,
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),
-            'loading_seconds':int(time.monotonic()-self.started),'stalled':False,'error':None,
+            'loading_seconds':int((self.ready_at if self.ready_at is not None else time.monotonic())-self.started),'stalled':False,'error':None,
             'serial_memory_mode':serial,'memory_retries':retries,
             'worker_commit_limit_bytes':self.worker_commit_limit,'control_reserve_bytes':CONTROL_RESERVE_BYTES,
             'models':{r:{'name':PROFILES[r][0],'pid':c[2],'resident':c[3](),'busy':self.locks[r].locked(),'generating':r in active} for r,c in self.children.items()}}
@@ -169,8 +170,13 @@ def handler(pool,token,council):
             super().setup()
         def reply(self,status,value):
             b=json.dumps(value).encode()
-            self.send_response(status);self.send_header('Content-Type','application/json')
-            self.send_header('Content-Length',str(len(b)));self.end_headers();self.wfile.write(b)
+            try:
+                self.send_response(status);self.send_header('Content-Type','application/json')
+                self.send_header('Content-Length',str(len(b)));self.end_headers();self.wfile.write(b)
+            except (ConnectionError,TimeoutError):
+                # Client abandoned this loopback connection. A failed response
+                # write is not an inference failure; never send a second reply.
+                self.close_connection=True
         def authorized(self):
             return secrets.compare_digest(self.headers.get('Authorization',''),'Bearer '+token)
         def do_GET(self):

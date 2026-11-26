@@ -52,3 +52,27 @@ class TriadTests(unittest.TestCase):
         from deepthort_local.latest_acceptance import load_test
         m=load_test(Path(__file__).resolve().parents[1]/'LATEST_TEST.json')
         self.assertEqual(m['checks'],["shared_cap","triad_residency","janus_core","task_memory","memory_governance","portable_skills","portable_procedures","local_mcp","mcp_calls","task_mcp","mcp_stdio","live_memory","application_workflow","speech_backend","visual_backend","video_render"])
+
+    def test_disconnected_loopback_reply_does_not_raise_or_retry(self):
+        from triad_server import handler
+        from unittest.mock import Mock
+        instance=object.__new__(handler(None,'test',False))
+        instance.send_response=Mock()
+        instance.send_header=Mock()
+        instance.end_headers=Mock()
+        instance.wfile=Mock()
+        instance.wfile.write.side_effect=ConnectionAbortedError(10053,'fixture disconnect')
+        instance.reply(200,{'ok':True})
+        self.assertTrue(instance.close_connection)
+        instance.send_response.assert_called_once_with(200)
+        instance.wfile.write.assert_called_once()
+        instance.wfile.write.side_effect=ValueError('unrelated failure')
+        with self.assertRaises(ValueError):instance.reply(200,{'ok':True})
+
+    def test_loading_duration_stops_on_readiness(self):
+        from unittest.mock import patch
+        p=Pool();p.started=10;p.worker_commit_limit=100
+        p.children={r:(10,'secret',i+10,lambda:True) for i,r in enumerate(PROFILES)}
+        with patch('triad_server.time.monotonic',return_value=35):p.activate_resident_pool()
+        with patch('triad_server.time.monotonic',return_value=1000):
+            self.assertEqual(p.status(False)['loading_seconds'],25)

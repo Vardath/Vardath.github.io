@@ -108,3 +108,27 @@ class LiveMemoryHarnessTests(unittest.TestCase):
         self.assertEqual(case['selection_status'],'provenance_withheld')
         self.assertEqual(case['eligible_ids'],[])
         self.assertEqual(case['selected_ids'],[])
+
+    def test_busy_models_drain_before_live_test(self):
+        from unittest.mock import patch
+        first=health();first['models']['sentinel']['busy']=True
+        reports=iter([first,health(),health()])
+        cancel=threading.Event()
+        with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
+            result=exercise(lambda:next(reports),123,cancel,client_factory=Fixture,idle_wait_seconds=2)
+        self.assertEqual(result['status'],'passed',result)
+
+    def test_busy_timeout_and_worker_change_do_not_pass(self):
+        from unittest.mock import patch
+        busy=health();busy['models']['sentinel']['busy']=True
+        changed=health();changed['models']['sentinel']['pid']=999
+        with patch('deepthort_local.live_memory_probe.resident_roles',side_effect=lambda h,p:h['models']):
+            result=exercise(lambda:busy,123,threading.Event(),client_factory=Fixture,idle_wait_seconds=0)
+            self.assertEqual(result['status'],'inconclusive',result)
+            self.assertEqual(result['evidence']['memory_cases'],{})
+            reports=iter([busy,changed])
+            result=exercise(lambda:next(reports),123,threading.Event(),client_factory=Fixture,idle_wait_seconds=2)
+            self.assertEqual(result['status'],'inconclusive',result)
+            cancel=threading.Event();cancel.set()
+            result=exercise(lambda:busy,123,cancel,client_factory=Fixture,idle_wait_seconds=2)
+            self.assertEqual(result['status'],'cancelled',result)

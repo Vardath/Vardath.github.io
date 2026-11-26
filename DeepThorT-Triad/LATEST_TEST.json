@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
   "id": "triad-live-memory-v22",
-  "title": "Triad V30.2: 50% shared commit ceiling, renderer dependency recovery and measured rendering",
+  "title": "Triad V30.3: idle-aware live acceptance, 50% commit ceiling and measured rendering",
   "checks": [
     "shared_cap",
     "triad_residency",

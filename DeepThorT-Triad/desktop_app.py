@@ -2067,7 +2067,8 @@ class DeepThorTDesktop(tk.Tk):
                 threading.Thread(target=probe,daemon=True,name='CouncilHealth').start()
             item=None
             with self._council_lock:
-                if self.council_ready and not self._council_busy:
+                if (self.council_ready and not self._council_busy
+                        and not (self._latest_test_thread and self._latest_test_thread.is_alive())):
                     item=self.instruction_inbox.claim()
                     if item:self._council_busy=True
             if item:
