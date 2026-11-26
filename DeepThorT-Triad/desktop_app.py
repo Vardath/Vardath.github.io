@@ -4595,7 +4595,15 @@ class DeepThorTDesktop(tk.Tk):
                             def worker_report(report):
                                 if stopped_memory():raise PlanError('Worker report superseded or stopped')
                                 return self.project_assignments.report_dependency(assignment,root_request_for_job(j,self.conversations),report)
-                            production_client=ProjectRoleClient(self.client,contract,report=worker_report)
+                            def resolve_dependency(report,budget):
+                                if stopped_memory() or self.disk_gate.gaming():return ''
+                                evidence=self.project_assignments.supply_dependency(assignment,self.jobs.get(jobid),
+                                    self.jobs.steps(jobid),step,original,amendments,STATE/'project-grants',report,budget,
+                                    enabled=self._project_work_is_enabled(),exclude=self.inspection_exclusions.paths(project))
+                                if evidence:
+                                    self.events.put(('log',f'JANUS supplied verified saved dependency bytes to Granite for job #{jobid}; independent review still required.'))
+                                return evidence
+                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
