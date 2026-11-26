@@ -41,19 +41,18 @@ def _candidates(job_db,row):
     words=terms(row['prompt'][:2000])
     if not words:return []
     with closing(reader(_conversations(job_db),timeout=.15)) as db:
-        rows=db.execute("""SELECT id,prompt FROM conversation_requests WHERE project=? AND chat_id=?
+        rows=db.execute("""SELECT id,substr(prompt,1,400) AS excerpt FROM conversation_requests WHERE project=? AND chat_id=?
             AND id<? AND state='responded' ORDER BY id DESC LIMIT 96""",
             (row['project'],row['chat_id'],row['id'])).fetchall()
     ranked=[]
     for source in rows:
-        text=source['prompt']
-        if not isinstance(text,str) or not text.strip():continue
-        # Bound scanning of huge user documents; exact contiguous excerpts.
-        excerpt=text[:400]
+        excerpt=source['excerpt']
+        if not isinstance(excerpt,str) or not excerpt.strip():continue
+        # Exact bounded contiguous excerpt, not a digest of unseen content.
         overlap=len(words&terms(excerpt))
         if not overlap:continue
         item={'id':'C'+str(source['id']),'kind':'historical_user_statement',
-              'observation':excerpt,'evidence':sha(text)}
+              'observation':excerpt,'evidence':sha(excerpt)}
         ranked.append((-overlap,-source['id'],item))
     result=[]
     for _,_,item in sorted(ranked):
@@ -138,16 +137,46 @@ def run_once(job_db,select,stopped=lambda:False):
             (SELECT rowid FROM conversation_memory_v66 ORDER BY completed DESC,rowid DESC LIMIT -1 OFFSET ?)""",(MAX_REPORTS,))
     return body
 
+def _checked_saved(job_db,request):
+    """Bounded read of already selected excerpts only; no candidate scan."""
+    identity=_identity(request)
+    with closing(reader(_path(job_db),timeout=.025)) as db:
+        rows=db.execute("""SELECT body,receipt_sha,completed FROM conversation_memory_v66
+            WHERE request_id=? ORDER BY completed DESC,rowid DESC LIMIT 4""",(request['id'],)).fetchall()
+    if not rows:return None
+    with closing(reader(_conversations(job_db),timeout=.025)) as db:
+        row=db.execute("""SELECT id,project,chat_id,mode,state FROM conversation_requests WHERE id=?""",
+                       (request['id'],)).fetchone()
+        if not row or row['state'] not in STATES or any(row[k]!=identity[k] for k in ('id','project','chat_id','mode')):return None
+        if db.execute("SELECT 1 FROM conversation_requests WHERE project=? AND chat_id=? AND id>? LIMIT 1",
+                      (row['project'],row['chat_id'],request['id'])).fetchone():return None
+        # Current user text in the existing request is exact; compare actual
+        # stored prompt as a SQL predicate without another full-text copy.
+        if not db.execute("SELECT 1 FROM conversation_requests WHERE id=? AND prompt=?",
+                          (request['id'],request['prompt'])).fetchone():return None
+        for saved in rows:
+            body=json.loads(saved['body'])
+            if canonical_sha(body)!=saved['receipt_sha'] or body['identity']!=identity:continue
+            selected=body['selected']
+            if not isinstance(selected,list) or len(selected)>3:return None
+            for item in selected:
+                ident=item['id']
+                if not isinstance(ident,str) or not ident.startswith('C') or not ident[1:].isdigit():return None
+                source=db.execute("""SELECT substr(prompt,1,400) FROM conversation_requests
+                    WHERE id=? AND id<? AND project=? AND chat_id=? AND state='responded'""",
+                    (int(ident[1:]),request['id'],row['project'],row['chat_id'])).fetchone()
+                if not source or item['kind']!='historical_user_statement' or source[0]!=item['observation'] or sha(source[0])!=item['evidence']:return None
+            return body
+    return None
+
 def advice(job_db,request,*,budget=600):
-    """Read existing results only; never infer or wait for Memory."""
+    """Read existing selected records only; no inference or index scan."""
     if budget<=len(HEADER):return ''
     try:
-        packet=_packet(job_db,request['id'])
-        if not packet or _identity(request)!=packet['identity']:return ''
-        saved=_stored(job_db,packet)
-        if not saved:return ''
+        body=_checked_saved(job_db,request)
+        if not body:return ''
         out=HEADER
-        for item in saved['body']['selected']:
+        for item in body['selected']:
             line=canonical({'id':item['id'],'prior_user_statement':item['observation']})+'\n'
             if len(out)+len(line)<=budget:out+=line
         return out if out!=HEADER else ''
