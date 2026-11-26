@@ -1,0 +1,185 @@
+"""Project-bound role handoffs on the existing approved build graph.
+
+These receipts are not write grants. A production attempt can only propose
+bytes. Sentinel review and dependency evidence bind the candidate to one
+approved file. The existing host graph lease, grant and checkpoint still
+control the actual filesystem operation.
+"""
+from __future__ import annotations
+import hashlib
+import json
+import uuid
+from .agent_contract import canonical_sha
+from .agent_doctrine import fingerprint
+from .project_authority import authorize_file,_safe_auto_path,_sha
+from .task_graph import GraphError
+from pathlib import Path
+
+def sha(text):
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+class ProjectAssignments:
+    def __init__(self,graphs):
+        self.graphs=graphs
+        with graphs._db() as db:
+            db.executescript("""
+            CREATE TABLE IF NOT EXISTS project_assignments_v43(
+                attempt TEXT PRIMARY KEY,job_id INTEGER NOT NULL,step_id INTEGER NOT NULL,
+                contract TEXT NOT NULL,contract_sha TEXT NOT NULL,
+                state TEXT NOT NULL, candidate_sha TEXT,review_mode TEXT,
+                created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+            CREATE INDEX IF NOT EXISTS project_assignments_job_v43
+                ON project_assignments_v43(job_id,state);
+            CREATE TABLE IF NOT EXISTS project_reviews_v43(
+                attempt TEXT NOT NULL,kind TEXT NOT NULL,proposal_sha TEXT NOT NULL,
+                evidence_sha TEXT NOT NULL,PRIMARY KEY(attempt,kind,proposal_sha,evidence_sha));
+            """)
+
+    def _contract(self,db,job,steps,step,original,amendments,grants,enabled):
+        self.graphs._assert_bound(db,job,steps)
+        if sum(s['id']==step['id'] and s['path']==step['path'] and
+               s['description']==step['description'] and s['state']=='planned' for s in steps)!=1:
+            raise GraphError('Assignment is not an exact planned step')
+        node=f"file:{step['id']}"
+        self.graphs._ensure_deps(db,job['id'],node)
+        deps=db.execute("""SELECT e.depends_on,n.state,n.evidence_sha256,n.title,n.kind
+            FROM edges e LEFT JOIN nodes n ON n.job_id=e.job_id AND n.node=e.depends_on
+            WHERE e.job_id=? AND e.node=? ORDER BY e.depends_on""",(job['id'],node)).fetchall()
+        if not deps or any(d[1] not in ('approved','saved','available','passed','linked') for d in deps):
+            raise GraphError('Assignment prerequisites are missing or unfinished')
+        project=Path(job['project']).resolve(strict=True)
+        for _,state,evidence,title,kind in deps:
+            if kind=='artifact':
+                _,target=_safe_auto_path(project,title)
+                if state!='saved' or not evidence or _sha(target)!=evidence:
+                    raise GraphError('Approved dependency bytes changed since receipt')
+        checked=authorize_file(grants,job,steps,step,enabled=enabled)
+        plan=db.execute('SELECT plan_sha256 FROM graphs WHERE job_id=?',(job['id'],)).fetchone()[0]
+        return {'schema':'triad-project-assignment-v1','job_id':job['id'],'step_id':step['id'],
+                'project':str(project),'chat_id':job['chat_id'],'approval_key':job['approval_key'],
+                'graph_sha256':plan,'original_sha256':sha(original),
+                'amendments_sha256':canonical_sha(list(amendments)),
+                'path':checked['path'],'description_sha256':sha(step['description']),
+                'baseline_sha256':checked['before_sha256'],'dependencies_sha256':canonical_sha(deps),
+                'requester':'janus','assignee':'implementation','reviewer':'sentinel',
+                'role_sha256':{r:fingerprint(r) for r in ('janus','implementation','sentinel')},
+                'publication_authorized':False,'runtime_verified':False}
+
+    def begin(self,job,steps,step,original,amendments,grants,*,enabled):
+        attempt=uuid.uuid4().hex
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            contract=self._contract(db,job,steps,step,original,amendments,grants,enabled)
+            # Only inference-only abandoned work is supersedable. An uncertain
+            # host commit remains governed by the existing graph action lease.
+            if db.execute("SELECT 1 FROM project_assignments_v43 WHERE job_id=? AND state='committing'",(job['id'],)).fetchone():
+                raise GraphError('Previous assignment commit requires reconciliation')
+            db.execute("""UPDATE project_assignments_v43 SET state='abandoned',updated_at=CURRENT_TIMESTAMP
+                WHERE job_id=? AND state IN ('assigned','reviewed')""",(job['id'],))
+            db.execute("""INSERT INTO project_assignments_v43(attempt,job_id,step_id,contract,contract_sha,state)
+                VALUES(?,?,?,?,?,'assigned')""",(attempt,job['id'],step['id'],json.dumps(contract,sort_keys=True),canonical_sha(contract)))
+        return attempt,contract
+
+    @staticmethod
+    def _load(db,attempt,states):
+        row=db.execute("""SELECT job_id,step_id,contract,contract_sha,state,candidate_sha,review_mode
+            FROM project_assignments_v43 WHERE attempt=?""",(attempt,)).fetchone()
+        if not row or row[4] not in states:raise GraphError('Stale or inactive production assignment')
+        contract=json.loads(row[2])
+        if canonical_sha(contract)!=row[3]:raise GraphError('Assignment contract changed')
+        return row,contract
+
+    def review(self,attempt,kind,proposal,review):
+        if kind not in ('plan','code','behavior_test'):raise GraphError('Unsupported assignment review')
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _,contract=self._load(db,attempt,('assigned',))
+            if (review.get('accepted') is not True or review.get('verified') is not False
+                or review.get('original_sha')!=contract['original_sha256']
+                or review.get('proposal_sha')!=sha(proposal)
+                or not isinstance(review.get('evidence_sha'),str)
+                or len(review['evidence_sha'])!=64):
+                raise GraphError('Sentinel receipt does not match assignment source and proposal')
+            db.execute("INSERT OR IGNORE INTO project_reviews_v43 VALUES(?,?,?,?)",
+                       (attempt,kind,sha(proposal),review['evidence_sha']))
+
+    def seal(self,attempt,source,*,staged=None):
+        if not isinstance(source,str) or not source.strip():raise GraphError('Empty staged source')
+        candidate=sha(source)
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _,contract=self._load(db,attempt,('assigned',))
+            if not db.execute("SELECT 1 FROM project_reviews_v43 WHERE attempt=? AND kind='plan'",(attempt,)).fetchone():
+                raise GraphError('Assignment lacks independently reviewed plan')
+            exact=db.execute("""SELECT 1 FROM project_reviews_v43 WHERE attempt=?
+                AND kind IN ('code','behavior_test') AND proposal_sha=?""",(attempt,candidate)).fetchone()
+            mode='exact_source'
+            if not exact:
+                # Existing decomposed source edits use independently reviewed
+                # deltas and deterministic range assembly, not full-file review.
+                if not staged or contract['baseline_sha256'] is None:
+                    raise GraphError('No exact Sentinel candidate receipt')
+                n=staged.get('changed_ranges')
+                count=db.execute("""SELECT COUNT(DISTINCT proposal_sha) FROM project_reviews_v43
+                    WHERE attempt=? AND kind='code'""",(attempt,)).fetchone()[0]
+                if (staged.get('before_sha256')!=contract['baseline_sha256'] or
+                    staged.get('master_sha256')!=contract['original_sha256'] or
+                    staged.get('step_id')!=contract['step_id'] or staged.get('after_sha256')!=candidate
+                    or type(n) is not int or n<1 or count<n):
+                    raise GraphError('Decomposed source lacks bound review and assembly evidence')
+                mode='reviewed_deltas'
+            db.execute("""UPDATE project_assignments_v43 SET state='reviewed',candidate_sha=?,
+                review_mode=?,updated_at=CURRENT_TIMESTAMP WHERE attempt=?""",(candidate,mode,attempt))
+        return candidate
+
+    def validate(self,attempt,job,steps,step,original,amendments,grants,source,*,enabled):
+        with self.graphs._db() as db:
+            row,contract=self._load(db,attempt,('reviewed',))
+            current=self._contract(db,job,steps,step,original,amendments,grants,enabled)
+            if contract!=current or row[5]!=sha(source):
+                raise GraphError('Assignment scope, dependencies, source or candidate changed')
+            return contract
+
+    def commit(self,attempt,job,steps,step,original,amendments,grants,source,lease,*,enabled):
+        """Called only AFTER the existing write lease is durably acquired."""
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row,contract=self._load(db,attempt,('reviewed',))
+            current=self._contract(db,job,steps,step,original,amendments,grants,enabled)
+            if contract!=current or row[5]!=sha(source):
+                raise GraphError('Reviewed project assignment changed before host commit')
+            if not db.execute("""SELECT 1 FROM leases WHERE lease_id=? AND job_id=?
+                AND node=? AND kind='write' AND status='running'""",
+                (lease,job['id'],f"file:{step['id']}")).fetchone():
+                raise GraphError('Existing host write lease is mandatory')
+            db.execute("UPDATE project_assignments_v43 SET state='committing',updated_at=CURRENT_TIMESTAMP WHERE attempt=?",(attempt,))
+
+    def saved(self,attempt,job_id,source_sha):
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row,contract=self._load(db,attempt,('committing',))
+            saved=db.execute("SELECT state,evidence_sha256 FROM nodes WHERE job_id=? AND node=?",
+                             (job_id,f"file:{contract['step_id']}")).fetchone()
+            if row[0]!=job_id or saved!=('saved',source_sha):
+                raise GraphError('Host source receipt missing for assignment')
+            db.execute("UPDATE project_assignments_v43 SET state='saved',updated_at=CURRENT_TIMESTAMP WHERE attempt=?",(attempt,))
+
+    def abandon(self,attempt):
+        if not attempt:return
+        with self.graphs._db() as db:
+            db.execute("""UPDATE project_assignments_v43 SET state='abandoned',updated_at=CURRENT_TIMESTAMP
+                WHERE attempt=? AND state IN ('assigned','reviewed')""",(attempt,))
+
+    def recover(self):
+        with self.graphs._db() as db:
+            db.execute("UPDATE project_assignments_v43 SET state='abandoned' WHERE state IN ('assigned','reviewed')")
+            # A committed source may already have a graph receipt at crash time.
+            # Do not guess or replay uncertain mutation: preserve the blocker.
+            return [r[0] for r in db.execute("SELECT DISTINCT job_id FROM project_assignments_v43 WHERE state='committing'")]
+
+    def summary(self,job_id):
+        with self.graphs._db() as db:
+            return [{'attempt':r[0],'step_id':r[1],'state':r[2],'review_mode':r[3]}
+                    for r in db.execute("""SELECT attempt,step_id,state,review_mode FROM project_assignments_v43
+                        WHERE job_id=? ORDER BY rowid DESC LIMIT 24""",(job_id,))]
