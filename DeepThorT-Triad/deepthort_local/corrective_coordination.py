@@ -131,6 +131,12 @@ def review(path,item,row,answer):
                 (json.dumps(verdict,sort_keys=True),canonical_sha(verdict),'approved' if decision['decision']=='accept' else 'rejected',
                 row['report_id'],row['proposal_sha'],row['proposal'],WAIT+row['report_id'])).rowcount)
 
+def invalidate_review(path,row):
+    """A malformed response cannot count as acceptance or a model rejection."""
+    with closing(write(path)) as db,db:
+        db.execute("UPDATE corrective_assignments_v50 SET state='invalid' WHERE report_id=? AND proposal_sha=? AND state='proposed'",
+                   (row['report_id'],row['proposal_sha']))
+
 def approved(path):
     try:
         with closing(read(path)) as db:
