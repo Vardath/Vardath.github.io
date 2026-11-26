@@ -216,6 +216,8 @@ class DeepThorTDesktop(tk.Tk):
         self._sentinel_started = False
         self.last_sentinel_log_id = 0
         self.last_janus_advice_id = 0
+        self._interface_displayed={'janus':[],'sentinel':[]}
+        self._interface_last_notified={'janus':0,'sentinel':0}
         self.last_sentinel_advice_id = 0
         self.active_job = None
         self.active_conversation = None
@@ -588,7 +590,11 @@ class DeepThorTDesktop(tk.Tk):
             self.janus_action_tree.heading(col,text=title)
             self.janus_action_tree.column(col,width=width,stretch=col=='label')
         self.janus_action_tree.pack(fill='both',expand=True)
-        ttk.Label(janus_tab,text='Sentinel events and JANUS cycles (durable, actual observations)',style='Muted.TLabel').pack(anchor='w',pady=(6,3))
+        interface_bar=ttk.Frame(janus_tab);interface_bar.pack(fill='x',pady=(6,3))
+        self.interface_message_status=tk.StringVar(value='Independent Interface messages')
+        ttk.Label(interface_bar,textvariable=self.interface_message_status,style='Muted.TLabel').pack(side='left')
+        ttk.Button(interface_bar,text='Mark displayed messages read',command=self._mark_interface_messages_read).pack(side='right')
+        ttk.Label(janus_tab,text='Interface messages, Sentinel events and JANUS cycles (durable observations)',style='Muted.TLabel').pack(anchor='w',pady=(3,3))
         self.janus_events_text=self._text(janus_tab,readonly=True,height=12)
         self.janus_events_text.pack(fill='both',expand=True)
 
@@ -6831,7 +6837,17 @@ class DeepThorTDesktop(tk.Tk):
             for k in self.janus_action_tree.get_children():self.janus_action_tree.delete(k)
             for a in actions:
                 self.janus_action_tree.insert('','end',values=(a['id'],a['status'],a['kind'],a['label']))
-            lines=['JANUS PROPOSED REPAIRS (advisory, not executed):']
+            lines=['INDEPENDENT INTERFACE MESSAGES — no user prompt required']
+            total_unread=0
+            for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
+                messages=store.interface_messages(limit=20)
+                self._interface_displayed[role]=[m['id'] for m in messages]
+                total_unread+=store.interface_unread()
+                for m in messages:
+                    flag='UNREAD' if m['read_at'] is None else 'Read'
+                    lines.append(f"[{m['stamp']}] {role.upper()} Interface #{m['id']} ({flag}, cycle {m['cycle']}\n{m['body']}")
+            self.interface_message_status.set(f'Independent Interface messages: {total_unread} unread')
+            lines.extend(['','JANUS PROPOSED REPAIRS (advisory, not executed):'])
             for item in self.janus.recommendations(limit=5):
                 lines.append(f"{item['origin']}: {item['problem'][:180]} -> {item['proposal'][:550]}")
             lines.append('')
@@ -6848,6 +6864,13 @@ class DeepThorTDesktop(tk.Tk):
         except Exception as exc:
             self._log(f'JANUS/Sentinel status refresh problem: {exc}')
 
+    def _mark_interface_messages_read(self):
+        try:
+            self.janus.acknowledge_interface(self._interface_displayed['janus'])
+            self.sentinel.acknowledge_interface(self._interface_displayed['sentinel'])
+            self._show_janus_status()
+        except Exception as exc:self._log(f'Interface acknowledgement unavailable: {type(exc).__name__}')
+
     def _refresh_janus_view(self):
         if not self.winfo_exists():return
         self._show_janus_status()
@@ -6863,6 +6886,16 @@ class DeepThorTDesktop(tk.Tk):
                 self.status.set('JANUS or Sentinel needs your attention. Review proposed repairs in JANUS & Sentinel.')
                 self._log('JANUS/Sentinel recorded an evidence-based issue or proposed alternative; review required.')
         except Exception as exc:self._log(f'JANUS recommendation check failed: {exc}')
+        # Local, non-modal notification; actual message stays in its persistent inbox.
+        try:
+            for role,store in (('janus',self.janus),('sentinel',self.sentinel)):
+                items=store.interface_messages(limit=1)
+                if items and items[0]['id']>self._interface_last_notified[role]:
+                    latest=items[0];self._interface_last_notified[role]=latest['id']
+                    if latest['read_at'] is None:
+                        self.status.set(f'{role.upper()} Interface has a new message. See JANUS & Sentinel.')
+                        self._log(f'{role.upper()} Interface message #{latest["id"]} available for review.')
+        except Exception as exc:self._log(f'Interface message check unavailable: {type(exc).__name__}')
         self.after(5000,self._refresh_janus_view)
 
     def _write_desktop_heartbeat(self):
