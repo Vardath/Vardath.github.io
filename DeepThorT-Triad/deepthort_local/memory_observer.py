@@ -182,7 +182,7 @@ class MemoryObserver:
             reports=[(k,v) for k,v in reversed(self._results.items())
                      if k[0]==binding and self.clock()-v[0]<=TTL]
         duty=self._duty
-        if not reports and duty is None:return ''
+        if not reports and (duty is None or not duty.has_reports(job_id)):return ''
         # Deterministic retrieval only when a report exists; no neural wait.
         try:
             current={r['id']:r for r in retrieve(self.path,project=str(project),chat_id=chat_id,
