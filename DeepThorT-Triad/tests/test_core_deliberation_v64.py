@@ -1,7 +1,7 @@
 """Separate resident-role calls across the real recursive society topology."""
 import json
 import unittest
-from deepthort_local.core_deliberation import ORDER,step,choose,snapshot
+from deepthort_local.core_deliberation import ORDER,step,choose,snapshot,_bounded_input
 from deepthort_local.janus_cognition import SPECIALISTS,process_society,SenseFrame
 import test_workflow_attention_v59 as previous
 
@@ -9,6 +9,12 @@ class CoreTests(unittest.TestCase):
     def setUp(self):
         self.f=previous.AttentionTests();self.f.setUp();self.addCleanup(self.f.doCleanups)
         self.jobs=self.f.f.jobs
+    def test_context_keeps_all_peer_conclusions_under_escaped_input_pressure(self):
+        peers={n:{'conclusion':'x'*180,'check':'y'*120,'faculties':{}} for n in SPECIALISTS}
+        raw=_bounded_input({'observed':'"\\'*3000,'peers':peers})
+        self.assertLessEqual(len(raw),4200)
+        self.assertEqual(set(json.loads(raw)['peers']),set(SPECIALISTS))
+        self.assertEqual(json.loads(raw)['peers']['Evidence']['conclusion'],'x'*180)
     def test_independent_conclusions_revision_and_front_only_expression(self):
         class Counsel:
             def __init__(self):self.calls=[]

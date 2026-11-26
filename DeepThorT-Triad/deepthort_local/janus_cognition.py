@@ -223,7 +223,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
     # interpretations, not additional external observations or authority.
     for name,reading in neural.get('cores',{}).items():
         if name in cores:cores[name]['neural_readout']=reading
-    cores['Front']['neural_progress']={k:v for k,v in neural.items() if k!='cores'}
+    if neural:cores['Front']['neural_progress']={k:v for k,v in neural.items() if k!='cores'}
     # These are actual directed recursive-readout inputs, not a nominal topology.
     for core in cores.values():
         weights=core['weights']

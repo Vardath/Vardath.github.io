@@ -135,6 +135,19 @@ def _bounded_input(inputs):
         elif k=='own_prior':compact[k]=v
         else:compact[k]=v
     text=json.dumps(compact,ensure_ascii=False)
+    # Truncate only the raw observed excerpt (which is already labelled
+    # partial); every prior conclusion and all six/seven peer identities
+    # must remain complete. Escaped JSON length, not raw length, is bounded.
+    if len(text)>4200 and 'observed' in compact:
+        observed=compact['observed']
+        lo,hi=0,len(observed)
+        while lo<hi:
+            mid=(lo+hi+1)//2
+            compact['observed']=observed[:mid]
+            if len(json.dumps(compact,ensure_ascii=False))<=4200:lo=mid
+            else:hi=mid-1
+        compact['observed']=observed[:lo]
+        text=json.dumps(compact,ensure_ascii=False)
     if len(text)>4200:raise ValueError('Core input exceeds bounded context')
     return text
 
@@ -156,7 +169,7 @@ def step(job_db,role,counsel,stopped,packet=None):
         if core=='Interface' and result['kind']=='advice' and result!=turns[16]['result']:
             raise ValueError('Interface cannot introduce or change a Front finding')
         identity=_identity(role,packet)
-        turn={'core':core,'phase':phase,'input_sha':canonical_sha(inputs),'result':result,
+        turn={'core':core,'phase':phase,'input_sha':canonical_sha(json.loads(payload)),'result':result,
               'previous':turns[-1]['sha'] if turns else canonical_sha(identity)}
         turn['sha']=canonical_sha(turn)
         with closing(sqlite3.connect(_path(job_db),timeout=2)) as db,db:
