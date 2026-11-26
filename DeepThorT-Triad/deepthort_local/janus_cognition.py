@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+from copy import deepcopy
+from .interface_outbox import select,express
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -65,7 +67,8 @@ def choose_response(appraisal: dict) -> str:
 def process_society(*, society: str, observation: dict, frames: list[SenseFrame],
                     previous_front: dict | None=None, previous_observation: dict | None=None,
                     previous_cores: dict | None=None,
-                    focus: str, decision: str, goal: str='', alternatives: list[str] | None=None) -> dict:
+                    focus: str, decision: str, goal: str='', alternatives: list[str] | None=None,
+                    findings: list[dict] | None=None) -> dict:
     if society not in ('janus','sentinel'):raise ValueError('Unknown society identity')
     if not frames:frames=[SenseFrame('runtime',society,'No new external evidence',salience=.1)]
     frames=frames[:16]
@@ -85,6 +88,29 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
     uncertain=max(x.uncertainty for x in frames)
     novel=max(x.novelty for x in frames) if actual_change else .05
     goal=goal[:300]
+    findings=(findings or [])[:8]
+    # Stable external material, not previous core output, drives wake/revision.
+    # A heartbeat is not another thought. An old Interface message is never
+    # recursively injected as a new stimulus.
+    material={'society':society,'obs':observation,'focus':focus,'decision':decision,
+              'goal':goal,'alternatives':alternatives,'frames':[f.public() for f in frames],
+              'findings':findings}
+    fingerprint=hashlib.sha256(json.dumps(material,sort_keys=True,default=str).encode()).hexdigest()[:24]
+    if (previous_front.get('material_fingerprint')==fingerprint and
+            set(previous_cores)==set(CORE_NAMES)):
+        cores=deepcopy(previous_cores)
+        for c in cores.values():
+            c['quiescent_count']=int(c.get('quiescent_count',0))+1
+            c['changed']=False
+        cores['Memory'].update(previous_front=previous_front,previous_observation=previous_observation,
+                               continuity_cycle=int(previous_front.get('cycle',0) or 0))
+        cores['Front'].update(cycle=int(previous_front.get('cycle',0) or 0)+1,
+            changed_from_prior=False,evidence_changed=False,outward_finding=None)
+        cores['Interface']['message']=None
+        return {'society':society,'cores':cores,'appraisal':dict(cores['Front']['appraisal']),
+                'fingerprint':fingerprint,'focus':focus,'decision':decision,'goal':goal,
+                'alternatives':alternatives,'frames':[f.public() for f in frames],
+                'flow':'7->2->1->1','peer_exchange':{'changed':False,'links':0,'model_calls':0}}
     base={1:unit(.8 if observation else .25),
           2:unit(.95 if gaming or blocked or bad else .45),
           3:unit(.9 if bad or conflict else .2),
@@ -111,8 +137,13 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                     'evidence':frames[0].source, 'influences':[
                     list(line) for line in FANO_LINES if direction in line]}
                     for direction in range(1,8)}
-        content=f'{goal}; {focus}; {decision}; '+ ' | '.join(f.content for f in frames[:4])
-        peers=[(src,cores[src].get('last_conclusion','')) for src in sources if src in cores]
+        # Only specialists sense raw frames. Each downstream core receives
+        # bounded actual conclusions from its declared predecessors.
+        peers=[(src,cores[src].get('last_conclusion','')) for src in sources if src in CORE_NAMES and src in cores]
+        if name in SPECIALISTS:
+            content=f'{goal}; {focus}; {decision}; '+ ' | '.join(f.content for f in frames[:4])
+        else:
+            content=' | '.join(f'{src}: {summary[:260]}' for src,summary in peers)
         reading=recursive_readout(name,content,appraisal,previous_cores.get(name),peers)
         for d in range(1,8):
             faculties[str(d)]['score']=int(reading['scores'].get(str(d),0))
@@ -121,6 +152,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                 'appraisal':dict(appraisal),'input_sources':sources,
                 'intent':decision,'goal':goal,
                 'retained_front':str(previous_front.get('focus',''))[:200],
+                'peer_sources':[src for src,_ in peers],
                 **reading}
     cores={}
     for name in SPECIALISTS:
@@ -134,6 +166,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                f'{goal}; {focus}; {decision}; '+ ' | '.join(f.content for f in frames[:3]),
                appraisal,cores[name],peers)
         cores[name].update(revised)
+        cores[name]['peer_sources']=[other for other,_ in peers]
         for d in range(1,8):
             cores[name]['internal_fano_faculties'][str(d)]['score']=int(revised['scores'].get(str(d),0))
     cores['Evidence']['observations']=observation
@@ -157,14 +190,19 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                           changed_from_prior=focus!=previous_front.get('focus') or decision!=previous_front.get('priority'),
                           evidence_changed=actual_change,
                           disagreement=bool(conflict or bad),
-                          alternatives_to_review=alternatives)
+                          alternatives_to_review=alternatives,material_fingerprint=fingerprint,
+                          outward_finding=select(findings,appraisal,observation))
     # Interface receives Front only. Results can return *next cycle* as new frames.
     cores['Interface']=outer_core('Interface',['Front'])
     cores['Interface'].update(action=decision,selected_posture=cores['Front']['posture'],
                               autonomous_install=False,autonomous_file_modification=False,
-                              may_execute_without_approval=False)
-    fingerprint=hashlib.sha256(json.dumps({'society':society,'obs':observation,'focus':focus,'decision':decision},
-                                           sort_keys=True,default=str).encode()).hexdigest()[:24]
+                              may_execute_without_approval=False,
+                              message=express(cores['Front']))
+    # These are actual directed recursive-readout inputs, not a nominal topology.
+    for core in cores.values():
+        weights=core['weights']
+        core['projection_1_3_4']={'origin':weights[0],'line':sum(weights[1:4]),'off_line':sum(weights[4:8])}
     return {'society':society,'cores':cores,'appraisal':appraisal,'fingerprint':fingerprint,
             'focus':focus,'decision':decision,'goal':goal,'alternatives':alternatives,
-            'frames':[f.public() for f in frames], 'flow':'7->2->1->1'}
+            'frames':[f.public() for f in frames], 'flow':'7->2->1->1',
+            'peer_exchange':{'changed':True,'links':sum(len(c['peer_sources']) for c in cores.values()),'model_calls':0}}
