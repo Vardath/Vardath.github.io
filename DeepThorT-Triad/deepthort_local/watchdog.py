@@ -468,6 +468,7 @@ class JanusSentinel:
                         if correction:
                             try:review(self.jobs_db,pending_report,row,answer)
                             except ValueError:invalidate_review(self.jobs_db,row)
+                            except (OSError,sqlite3.Error):return
                             self.store.recommend('coordination-review-'+report_id,problem,answer,'local_model')
                         self.store.recommend('worker-'+report_id,problem,answer,'local_model')
                 self._counsel_thread=threading.Thread(target=challenge,name='Sentinel-worker-challenge',daemon=True)
