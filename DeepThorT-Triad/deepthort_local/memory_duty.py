@@ -23,11 +23,11 @@ def reader(path):
     db.row_factory=sqlite3.Row
     return db
 
-def live_scope(job_db,job_id,request_id):
+def live_scope(job_db,job_id,request_id,*,states=STATES):
     """Check the exact approved job/request pair independently of GUI selection."""
     with closing(reader(job_db)) as db:
         row=db.execute("SELECT * FROM jobs WHERE id=?",(job_id,)).fetchone()
-        if not row or row['mode']!='build' or row['state'] not in STATES or not row['approval_key']:
+        if not row or row['mode']!='build' or row['state'] not in states or not row['approval_key']:
             return None
         job=dict(row)
     with closing(reader(Path(job_db).parent/'conversations.sqlite3')) as db:
