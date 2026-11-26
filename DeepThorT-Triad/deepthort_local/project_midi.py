@@ -25,6 +25,12 @@ def supports(task):
             and not task.get('imports') and
             set(task.get('acceptance',{}))<={'bpm','notes'})
 
+def early_window(task,ordinal):
+    """Explicitly reviewed one-milestone private preparation, never early publication."""
+    return bool(type(ordinal) is int and ordinal>=1 and type(task.get('prepare_after')) is int
+                and task['after']==ordinal and task['prepare_after']==ordinal-1 and supports(task))
+
+
 def review_text(contract,score):
     return json.dumps({'task':contract['task'],'scope':contract['scope'],
         'score':score,'assurance':'bounded single-track MIDI; no audio playback or aesthetic verification'},
@@ -75,6 +81,45 @@ def ready_independent(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,w
     return None
 
 
+def ready_same_project(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,workflows,creative,*,active):
+    """Only an explicitly approved independent future score may prepare early."""
+    from .roadmap_runs import manifest,verified_prefix
+    from .roadmap_tool_bridge import gate
+    from .mixed_roadmap import pending_task
+    key=active.get('approval_key') or ''
+    parts=key.split(':')
+    if (active.get('mode')!='build' or active.get('state')!='running'
+            or len(parts)!=4 or parts[0]!='milestone'):return None
+    try:
+        ident,ordinal=int(parts[1]),int(parts[2])
+        run=runs.get(ident);req=conversations.get(ident)
+        if (not run or run['state']!='active' or run['creative_midi']!=1 or not run['mixed_sha']
+                or not req or req['mode']!='draft_plan' or req['state']!='responded'
+                or req['chat_id']!=active['chat_id'] or not same_workspace(req['project'],active['project'])):return None
+        latest=conversations.latest_project_request(req['chat_id'],req['project'])
+        if not latest or latest['id']!=ident or conversations.amendment_supersedes(ident,req['chat_id'],req['project']):return None
+        current=manifest(hierarchies,index,req)
+        if any(current[k]!=run[k] for k in ('project','chat_id','manifest_sha256')):return None
+        if not 1<=ordinal<=len(current['schedule']):return None
+        item=hierarchies.milestone(index,ident,req['prompt'],ordinal)
+        if (item['state']!='queued' or item['job_id']!=active['id'] or item['approval_key']!=key
+                or item['scope_prompt']!=active['prompt']):return None
+        with runs.db() as db:
+            dispatch=db.execute("SELECT * FROM roadmap_dispatch WHERE approval_key=?",(key,)).fetchone()
+            if (not dispatch or dispatch['state']!='ready' or dispatch['job_id']!=active['id']
+                    or dispatch['request_id']!=ident or dispatch['ordinal']!=ordinal):return None
+        verified_prefix(current,req,hierarchies,index,jobs,ordinal)
+        mixed=mixed_roadmaps.get(ident,current['manifest_sha256'])
+        if not mixed or mixed['sha']!=run['mixed_sha']:return None
+        if pending_task(mixed,workflows,ordinal,creative=creative) or gate(workflows,ident,current['manifest_sha256'],ordinal):
+            return None
+        for task in mixed['tasks']:
+            if early_window(task,ordinal) and not creative.status(task['id']) and native_route_available(run,task,mixed_roadmaps,workflows):
+                return run,mixed,task,req,ordinal+1
+    except (ValueError,OSError,KeyError,TypeError,sqlite3.Error):return None
+    return None
+
+
 class ProjectMidi:
     def __init__(self,runs,delegations):
         self.runs=runs
@@ -89,6 +134,9 @@ class ProjectMidi:
                 lease TEXT PRIMARY KEY,report TEXT NOT NULL,receipt_sha TEXT NOT NULL)""")
             from .worker_notices import ensure_schema
             ensure_schema(db)
+            db.execute("""CREATE TABLE IF NOT EXISTS project_midi_prepare_v58(
+                lease TEXT PRIMARY KEY,job_id INTEGER NOT NULL,approval_key TEXT NOT NULL,
+                contract_sha TEXT NOT NULL)""")
 
     def record_notice(self,lease,contract,folder,receipt):
         """Only a current scoped native artifact may carry a production notice."""
@@ -125,8 +173,9 @@ class ProjectMidi:
             db.execute("INSERT INTO creative_reports_v49 VALUES(?,?,?)",(lease,json.dumps(report,sort_keys=True),canonical_sha(item)))
             db.execute("UPDATE project_midi_v45 SET state='blocked',detail=? WHERE lease=?",
                        ('Gemma reported '+report['kind']+': '+report['need'],lease))
-            db.execute("UPDATE roadmap_runs SET state='blocked',detail=?,updated_at=CURRENT_TIMESTAMP WHERE request_id=?",
-                       ('Gemma dependency claim awaiting coordination; not verified',contract['request_id']))
+            if not db.execute("SELECT 1 FROM project_midi_prepare_v58 WHERE lease=?",(lease,)).fetchone():
+                db.execute("UPDATE roadmap_runs SET state='blocked',detail=?,updated_at=CURRENT_TIMESTAMP WHERE request_id=?",
+                           ('Gemma dependency claim awaiting coordination; not verified',contract['request_id']))
         return item
 
     def recover(self):
@@ -150,6 +199,8 @@ class ProjectMidi:
             or plan['sha']!=run['mixed_sha'] or digest({k:v for k,v in plan.items() if k!='sha'})!=plan['sha']
             or task not in plan['tasks'] or task['after']!=before-1 or not supports(task)):
             raise ValueError('No current approved native artifact boundary')
+        if 'prepare_after' in task and not early_window(task,task['after']):
+            raise ValueError('Invalid private preparation declaration')
         output,target=_safe_auto_path(Path(run['project']),task['output'])
         if output!=task['output']:raise ValueError('Artifact path changed')
         if task.get('acceptance'):validate(output,task['acceptance'])
@@ -163,7 +214,7 @@ class ProjectMidi:
                 'scope':scope,'brief':brief,'assignment_sha':validate_creative_assignment(packet),
                 'publication':'new exact file only, separate host authorization'}
 
-    def begin(self,run,plan,task,request,before,*,enabled):
+    def begin(self,run,plan,task,request,before,*,enabled,early_job=None):
         if not enabled:raise PermissionError('Approved project work disabled')
         contract=self._identity(run,plan,task,request,before)
         _,target=_safe_auto_path(Path(contract['project']),task['output'])
@@ -175,6 +226,18 @@ class ProjectMidi:
             if not current or self._identity(dict(current),plan,task,request,before)!=contract:
                 raise ValueError('Roadmap approval changed')
             if self._row(db,task['id'])[0]:raise ValueError('Prior artifact attempt exists; inspect before revising roadmap')
+            if early_job is not None:
+                key=early_job.get('approval_key') or ''
+                expected=f"milestone:{request['id']}:{before-1}:{sha(request['prompt'])[:16]}"
+                dispatch=db.execute("SELECT * FROM roadmap_dispatch WHERE approval_key=?",(key,)).fetchone()
+                if (not early_window(task,before-1) or key!=expected or early_job['state']!='running'
+                        or early_job['mode']!='build' or early_job['chat_id']!=request['chat_id']
+                        or not same_workspace(early_job['project'],request['project'])
+                        or not dispatch or dispatch['state']!='ready' or dispatch['job_id']!=early_job['id']
+                        or dispatch['request_id']!=request['id'] or dispatch['ordinal']!=before-1):
+                    raise ValueError('No exact approved private preparation window')
+                db.execute("INSERT INTO project_midi_prepare_v58 VALUES(?,?,?,?)",
+                           (lease,early_job['id'],key,canonical_sha(contract)))
             db.execute("INSERT INTO project_midi_v45(task_id,request_id,lease,contract,contract_sha,state) VALUES(?,?,?,?,?,'assigned')",
                        (task['id'],request['id'],lease,json.dumps(contract,ensure_ascii=False),canonical_sha(contract)))
         return lease,contract
@@ -214,8 +277,43 @@ class ProjectMidi:
             row,bound=self._row(db,contract['task']['id'])
             if not row or row['lease']!=lease or row['state']!='assigned' or bound!=contract:
                 raise ValueError('Stale MIDI review')
-            db.execute("UPDATE project_midi_v45 SET state='reviewed',staged=?,review=? WHERE lease=?",
-                       (json.dumps(data),json.dumps(review),lease))
+            prep=db.execute("SELECT * FROM project_midi_prepare_v58 WHERE lease=?",(lease,)).fetchone()
+            if prep and (prep['contract_sha']!=canonical_sha(contract) or not early_window(contract['task'],contract['before']-1)):
+                raise ValueError('Private preparation binding changed')
+            state='prepared' if prep else 'reviewed'
+            db.execute("UPDATE project_midi_v45 SET state=?,staged=?,review=? WHERE lease=?",
+                       (state,json.dumps(data),json.dumps(review),lease))
+
+    def publish_prepared(self,run,plan,task,request,conversations,hierarchies,index,jobs,workflows,*,enabled):
+        """Reopen the original publication gate; never replay generation or a write."""
+        from .roadmap_runs import eligible_successor
+        from .roadmap_tool_bridge import gate
+        from .mixed_roadmap import pending_task
+        if not enabled:raise PermissionError('Approved project work disabled')
+        result=eligible_successor(run,request,conversations,hierarchies,index,jobs)
+        if not result:raise ValueError('Private score awaits its original verified publication boundary')
+        before=(hierarchies.status(index,request['id'],request['prompt'])['milestones_total']+1
+                if result['complete'] else result['milestone']['ordinal'])
+        current=self._identity(run,plan,task,request,before)
+        if gate(workflows,request['id'],result['manifest_sha256'],before) or pending_task(plan,workflows,before,creative=self)!=task:
+            raise ValueError('An earlier publication dependency remains unresolved')
+        with self.runs.db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row,bound=self._row(db,task['id'])
+            now=db.execute("SELECT * FROM roadmap_runs WHERE request_id=?",(request['id'],)).fetchone()
+            if (not row or row['state']!='prepared' or bound!=current or not now
+                    or self._identity(dict(now),plan,task,request,before)!=current):
+                raise ValueError('Prepared score scope changed')
+            lease=row['lease']
+            prep=db.execute("SELECT * FROM project_midi_prepare_v58 WHERE lease=?",(lease,)).fetchone()
+            if not prep or prep['contract_sha']!=canonical_sha(current) or not early_window(task,before-1):
+                raise ValueError('Missing exact private preparation receipt')
+            dispatch=db.execute("SELECT * FROM roadmap_dispatch WHERE approval_key=?",(prep['approval_key'],)).fetchone()
+            if (not dispatch or dispatch['state']!='ready' or dispatch['job_id']!=prep['job_id']
+                    or dispatch['request_id']!=request['id'] or dispatch['ordinal']!=before-1):
+                raise ValueError('Private preparation predecessor changed')
+            db.execute("UPDATE project_midi_v45 SET state='reviewed' WHERE lease=?",(lease,))
+        return self.publish(lease,run,plan,task,request,before,enabled=enabled)
 
     def publish(self,lease,run,plan,task,request,before,*,enabled):
         if not enabled:raise PermissionError('Approved project work disabled')
@@ -260,7 +358,7 @@ class ProjectMidi:
     def fail(self,lease,reason):
         with self.runs.db() as db:
             db.execute("""UPDATE project_midi_v45 SET state=CASE WHEN state='publishing' THEN 'interrupted' ELSE 'blocked' END,
-                detail=? WHERE lease=? AND state IN ('assigned','reviewed','publishing')""",(str(reason)[:400],lease))
+                detail=? WHERE lease=? AND state IN ('assigned','prepared','reviewed','publishing')""",(str(reason)[:400],lease))
 
     def integration_records(self,job,request,plan,*,exclude=(),limit=3):
         """Checked, earlier native artifacts for an exact automatically approved

@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v57-proactive-dependency-handoff",
-  "title": "Triad V57: proactive same-project dependency handoff",
+  "id": "triad-v58-private-early-media-staging",
+  "title": "Triad V58: explicitly approved same-project private preparation",
   "checks": [
     "shared_cap",
     "triad_residency",

@@ -179,7 +179,7 @@ def counsel_fields(item,job_db):
     notice=item.get('nonblocking') is True
     if notice and not still_current(job_db,item['receipt_sha']):raise ValueError('Stale worker notice')
     if item['sender']=='multimedia':
-        states=('assigned','reviewed','publishing','checked') if notice else ('blocked',)
+        states=('assigned','prepared','reviewed','publishing','checked') if notice else ('blocked',)
         with closing(reader(Path(job_db).parent/'roadmap-runs.sqlite3')) as db:
             row=db.execute("SELECT contract,contract_sha FROM project_midi_v45 WHERE lease=? AND state IN ("+
                 ','.join('?' for _ in states)+")",(item['attempt'],*states)).fetchone()
