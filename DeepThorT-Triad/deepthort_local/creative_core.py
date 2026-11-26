@@ -43,7 +43,9 @@ def request_packet(requester,scope,brief):
         'Use a monophonic sequence, one instrument, no code, markdown, or commentary. '
         'Choose musical pitches and rhythmic values based on the brief, not a generic fallback. '
         'EXACT BRIEF:\n'+brief)
-    return {'requester':requester,'scope':scope,'brief':brief,'kind':'midi','prompt':prompt}
+    from .agent_contract import creative_assignment
+    return {'requester':requester,'scope':scope,'brief':brief,'kind':'midi','prompt':prompt,
+            'assignment':creative_assignment(requester,scope,brief)}
 
 
 def score_payload(answer):
@@ -222,7 +224,9 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
             with (folder/'score.mid').open('xb') as out:out.write(artifact)
             if (folder/'score.mid').read_bytes()!=artifact:
                 raise RuntimeError('Artifact verification failed')
+            from .agent_contract import validate_creative_assignment
             receipt={'status':'artifact_created','requester':requester,'scope':scope,
+                     'assigned_role':'multimedia','assignment_sha256':validate_creative_assignment(packet),
                      'brief_sha256':digest(brief.encode('utf-8')),'model':MODEL_NAME,'revision':REVISION,
                      'pid':pid,'kind':'midi','artifact':'score.mid','sha256':digest(artifact),
                      'notes':len(score['notes']),'bpm':score['bpm'],
