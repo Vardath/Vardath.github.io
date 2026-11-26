@@ -7,6 +7,8 @@ transactional. The index never grants relevance or execution authority.
 """
 import re
 import sqlite3
+import time
+from pathlib import Path
 
 STOP={'the','and','for','with','from','this','that','into','your','are','was','have','has','not','task','build','file','create','implement','approved','project','operation','memory','current'}
 MAX_NOTE_SHORTLIST=64
@@ -14,14 +16,22 @@ MAX_NOTE_SHORTLIST=64
 def terms(value):
     return {x for x in re.findall(r'[a-z0-9]{3,}',str(value).casefold()) if x not in STOP}
 
-def connect(path):
-    db=sqlite3.connect(path,timeout=20)
+def connect(path,*,read_only=False):
+    if read_only:
+        # Foreground advisory delivery must never initialize or rebuild the
+        # term index, acquire a write lock, or wait for a background writer.
+        db=sqlite3.connect(Path(path).resolve(strict=True).as_uri()+'?mode=ro',uri=True,timeout=.05)
+    else:
+        db=sqlite3.connect(path,timeout=20)
     db.row_factory=sqlite3.Row
     try:
-        # Single snapshot for index maintenance and retrieval; no model runs
-        # while this short database transaction is held.
-        db.execute('BEGIN IMMEDIATE')
-        ensure(db)
+        if read_only:
+            deadline=time.monotonic()+.15
+            db.set_progress_handler(lambda:int(time.monotonic()>=deadline),1000)
+            db.execute('BEGIN')
+        else:
+            db.execute('BEGIN IMMEDIATE')
+            ensure(db)
         return db
     except BaseException:
         db.close()
@@ -70,9 +80,12 @@ def refresh(db,project,chat_id,spec_sha):
                 ((ident,t,int(t in title),int(t in body)) for t in sorted(title|body)))
             db.execute('DELETE FROM memory_term_dirty_v23 WHERE note_id=?',(ident,))
 
-def ranked_notes(db,project,chat_id,spec_sha,words,job_id):
+def ranked_notes(db,project,chat_id,spec_sha,words,job_id,*,refresh_index=True):
     if not words:return
-    refresh(db,project,chat_id,spec_sha)
+    if refresh_index:
+        refresh(db,project,chat_id,spec_sha)
+    elif not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='memory_term_index_v23'").fetchone():
+        return
     slots=','.join('?' for _ in words)
     # Scope is checked against current authoritative rows, never copied scope
     # metadata. Indexed matches are ranked across the entire scoped history.

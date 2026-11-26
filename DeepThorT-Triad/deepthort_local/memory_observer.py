@@ -187,10 +187,12 @@ class MemoryObserver:
                      if k[0]==binding and self.clock()-v[0]<=TTL]
         duty=self._duty
         if not reports and (duty is None or not duty.has_reports(job_id)):return ''
-        # Deterministic retrieval only when a report exists; no neural wait.
+        # Revalidate against a bounded read-only snapshot of the existing
+        # search index. New/changed dirty rows await the Memory worker's
+        # next scan; never force foreground index maintenance.
         try:
             current={r['id']:r for r in retrieve(self.path,project=str(project),chat_id=chat_id,
-                  original=original,focus=str(focus)[:500],job_id=job_id) if evidence_eligible(r)}
+                  original=original,focus=str(focus)[:500],job_id=job_id,read_only=True) if evidence_eligible(r)}
         except Exception:return ''
         out=ADVISORY_HEADER;seen=set()
         for _,(_,packet,rows) in reports:

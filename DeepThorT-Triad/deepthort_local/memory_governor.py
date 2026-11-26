@@ -57,7 +57,7 @@ def ensure_schema(db):
         UNIQUE(project,chat_id,job_id,scope,phase,review_sha))""")
     db.execute('CREATE INDEX IF NOT EXISTS memory_review_task ON task_memory_reviews(job_id,id)')
 
-def retrieve(path,*,project,chat_id,original,focus,job_id=0):
+def retrieve(path,*,project,chat_id,original,focus,job_id=0,read_only=False):
     if not isinstance(original,str) or not original.strip() or not chat_id or not project or project=='(general)':
         raise ValueError('Scoped memory retrieval requires original project specification and chat')
     if type(job_id) is not int or job_id<0:raise ValueError('Invalid memory task')
@@ -65,14 +65,14 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
     def add(ident,kind,title,note,evidence,score):
         ranked.append((score,ident,{'id':ident,'kind':kind,'focus':str(title)[:100],
             'observation':str(note)[:220],'evidence':str(evidence)[:64]}))
-    db=open_index(path)
+    db=open_index(path,read_only=read_only)
     try:
         if job_id:
             current=db.execute('SELECT project,chat_id FROM jobs WHERE id=?',(job_id,)).fetchone()
             if not current or (current['project'],current['chat_id'])!=(str(project),chat_id):
                 raise ValueError('Memory task belongs to a different project or chat')
         seen_notes=set();seen_groups=set()
-        for row in ranked_notes(db,str(project),chat_id,spec_sha,words,job_id):
+        for row in ranked_notes(db,str(project),chat_id,spec_sha,words,job_id,refresh_index=not read_only):
             if row['note'].startswith(('Proposed source for review;','Accepted as advice; runtime untested: All candidate portions accepted')):
                 continue
             title=row['focus'];note=row['note']
@@ -112,13 +112,13 @@ def retrieve(path,*,project,chat_id,original,focus,job_id=0):
         db.commit()
     finally:db.close()
     if job_id:
-        for row in tool_observations(path,job_id,project,spec_sha):
+        for row in tool_observations(path,job_id,project,spec_sha,read_only=read_only):
             overlap=len(words&terms(row['tool']))
             if overlap:
                 add('T'+str(row['receipt']),'historical_repository_receipt',row['tool'],
                     'Items: '+str(row['items'])+'; delivered: '+str(row['delivered']),
                     row['evidence'],overlap*4+1)
-        for row in mcp_observations(path,job_id,project,chat_id,spec_sha):
+        for row in mcp_observations(path,job_id,project,chat_id,spec_sha,read_only=read_only):
             overlap=len(words&terms(row['tool']))
             if overlap or row['state'] in ('dispatching','outcome_unknown','server_reported_error'):
                 add('M'+str(row['receipt']),'historical_mcp_receipt',row['tool'],

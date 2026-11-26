@@ -41,8 +41,14 @@ class ToolReceipts:
             if db.execute('UPDATE agent_tool_receipts SET delivered=1 WHERE id=?',(ident,)).rowcount!=1:
                 raise ValueError('Missing tool receipt')
     def recent(self,job_id,project,limit=20):
+        return self.read_recent(self.path,job_id,project,limit)
+    @staticmethod
+    def read_recent(path,job_id,project,limit=20,*,read_only=False):
+        """Read existing sealed receipts without schema writes when requested."""
         key=str(Path(project).resolve())
-        with closing(sqlite3.connect(self.path,timeout=5)) as db:
+        conn=(sqlite3.connect(Path(path).resolve(strict=True).as_uri()+'?mode=ro',uri=True,timeout=.05)
+              if read_only else sqlite3.connect(path,timeout=5))
+        with closing(conn) as db:
             rows=db.execute('''SELECT id,spec_sha,session,turn,payload,sha,delivered,created
                 FROM agent_tool_receipts WHERE job_id=? AND project=? ORDER BY id DESC LIMIT ?''',
                 (job_id,key,max(1,min(limit,60)))).fetchall()
