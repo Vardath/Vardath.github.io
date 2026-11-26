@@ -36,6 +36,8 @@ class ProjectAssignments:
                 attempt TEXT NOT NULL,kind TEXT NOT NULL,proposal_sha TEXT NOT NULL,
                 evidence_sha TEXT NOT NULL,PRIMARY KEY(attempt,kind,proposal_sha,evidence_sha));
             """)
+            from .worker_reports import ensure_schema
+            ensure_schema(db)
 
     def _contract(self,db,job,steps,step,original,amendments,grants,enabled):
         self.graphs._assert_bound(db,job,steps)
@@ -189,6 +191,26 @@ class ProjectAssignments:
                 raise GraphError('Host source receipt missing for assignment')
             db.execute("UPDATE project_assignments_v43 SET state='saved',updated_at=CURRENT_TIMESTAMP WHERE attempt=?",(attempt,))
 
+    def report_dependency(self,attempt,request_id,report):
+        """An explicit worker report ends inference, never writes source."""
+        from .worker_reports import parse_report,PREFIX,envelope
+        from .memory_duty import live_scope
+        from .task_graph import same_workspace
+        report=parse_report(PREFIX+json.dumps(report))
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _,contract=self._load(db,attempt,('assigned',))
+            bound=live_scope(self.graphs.path.parent/'jobs.sqlite3',contract['job_id'],request_id,states=('running',))
+            if (not bound or bound['spec_sha']!=contract['original_sha256']
+                    or bound['chat_id']!=contract['chat_id'] or bound['approval_key']!=contract['approval_key']
+                    or not same_workspace(bound['project'],contract['project'])):
+                raise GraphError('Stale worker report scope')
+            item=envelope(attempt,request_id,contract,report)
+            db.execute("INSERT INTO worker_reports_v48(attempt,request_id,report,receipt_sha) VALUES(?,?,?,?)",
+                       (attempt,request_id,json.dumps(report,sort_keys=True),canonical_sha(item)))
+            db.execute("UPDATE project_assignments_v43 SET state='abandoned',updated_at=CURRENT_TIMESTAMP WHERE attempt=?",(attempt,))
+        return item
+
     def abandon(self,attempt):
         if not attempt:return
         with self.graphs._db() as db:
@@ -210,14 +232,26 @@ class ProjectAssignments:
 
 class ProjectRoleClient:
     """Explicit implementation-model adapter; cache only exact scoped calls."""
-    def __init__(self,client,contract):
+    def __init__(self,client,contract,*,report=None):
         if contract['assignee']!='implementation':raise GraphError('Wrong production role')
         self.client=client
         self.scope=canonical_sha(contract)
+        self.report=report
     def _session(self,session):
         return 'project-role-'+canonical_sha([self.scope,session])[:48]
+    def _prompt(self,prompt):
+        from .worker_reports import GUIDANCE
+        return prompt+GUIDANCE if self.report is not None and len(prompt)+len(GUIDANCE)<=7500 else prompt
+    def _response(self,answer):
+        from .worker_reports import parse_report,WorkerReport
+        report=parse_report(answer)
+        if report is not None:
+            if self.report is None:raise GraphError('Worker report not enabled for this assignment')
+            self.report(report)
+            raise WorkerReport(report)
+        return answer
     def chat(self,session,prompt,max_tokens=768):
-        return self.client.chat_as('implementation',self._session(session),prompt,max_tokens=max_tokens)
+        return self._response(self.client.chat_as('implementation',self._session(session),self._prompt(prompt),max_tokens=max_tokens))
     def completed_exchange(self,session,prompt):
         lookup=getattr(self.client,'completed_exchange',None)
-        return lookup(self._session(session),prompt) if callable(lookup) else None
+        return self._response(lookup(self._session(session),self._prompt(prompt))) if callable(lookup) else None
