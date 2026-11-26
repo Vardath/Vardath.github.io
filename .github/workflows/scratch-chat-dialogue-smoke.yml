@@ -55,7 +55,7 @@ jobs:
           python -m capability.modern_train evaluate --corpus data/dialogue-smoke --tokenizer data/dialogue-smoke/tokenizer.json --checkpoint checkpoints/dialogue-smoke.pt > dialogue-smoke-evaluation.json
       - name: Exercise real DeepThorT multi-turn JSON-line transport and recovery
         run: |
-          python - <<'PY'
+          python - <<'PY' > dialogue-transport.json
           import json, subprocess, sys
           requests=[
             {"method":"health"},
@@ -95,3 +95,4 @@ jobs:
             Scratch-Chat/dialogue-smoke-train.json
             Scratch-Chat/dialogue-smoke-evaluation.json
             Scratch-Chat/dialogue-acceptance.json
+            Scratch-Chat/dialogue-transport.json
