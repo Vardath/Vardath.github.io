@@ -358,7 +358,7 @@ def check_required_proposal(project,task,proposal,recipes):
     return True
 
 
-def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None,workflows=None,memory_provider=None):
+def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled=None,recovery=None,mixed_task=None,workflows=None,memory_provider=None,creative_provider=None):
     binding=source_binding(request)
     recipes,files=inventory(acquisition,binding['project'],goal,required_output=mixed_task['output']) if mixed_task else inventory(acquisition,binding['project'],goal)
     if recovery:
@@ -425,13 +425,23 @@ def design(acquisition,council,client,*,request,goal,review,stage=None,cancelled
         from .memory_governor import fit
         prompt+=fit(memory_provider(goal,'workflow_design',min(600,max(0,6900-len(prompt)))),max(0,6900-len(prompt)))
     if len(prompt)>7200:raise ValueError('Workflow design context exceeds model budget')
+    prepared=None
+    if mixed_task and not recovery and creative_provider is not None:
+        try:prepared=creative_provider(request,mixed_task,recipes,files)
+        except (ValueError,OSError,KeyError,TypeError,sqlite3.Error):pass
     feedback=''
-    for attempt in range(2):
+    # A valid prepared Gemma draft gets the same independent review as a JANUS
+    # draft. On rejection, retain both original JANUS correction attempts.
+    for attempt in ([-1,0,1] if prepared is not None else [0,1]):
         if cancelled and cancelled():raise ValueError('Workflow design cancelled')
         text=prompt+('\nCorrect rejected draft: '+feedback[:300] if feedback else '')
         try:
-            result=council._run(client,role=f'JANUS_WORKFLOW_{attempt}',session=f'workflow-{request["id"]}',
-                                evidence_sha=sha(text),prompt=text,stage=stage)
+            if attempt==-1:
+                result=json.dumps(prepared,ensure_ascii=False)
+                if stage:stage('Checking independent Gemma tool workflow preparation')
+            else:
+                result=council._run(client,role=f'JANUS_WORKFLOW_{attempt}',session=f'workflow-{request["id"]}',
+                                    evidence_sha=sha(text),prompt=text,stage=stage)
             proposal=parse_draft(result,recipes,files,continuation=bool(recovery or mixed_task))
             if mixed_task:check_required_proposal(binding['project'],mixed_task,proposal,recipes)
             manifest=None

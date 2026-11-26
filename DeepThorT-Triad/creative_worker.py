@@ -31,11 +31,17 @@ def main():
     if not installed():raise RuntimeError('Fourth intelligent checkpoint missing; use Install AI')
     if version('openvino-genai')!=RUNTIME_VERSION:raise RuntimeError('Native runtime version mismatch')
     data=json.loads((folder/'request.json').read_text('utf-8'))
-    from deepthort_local.agent_contract import validate_creative_assignment
-    from deepthort_local.creative_core import request_packet
-    validate_creative_assignment(data)
-    if data!=request_packet(data['requester'],data['scope'],data['brief']):
-        raise ValueError('Creative task prompt does not match immutable brief')
+    preparation=data.get('kind')=='workflow_preparation'
+    if preparation:
+        from deepthort_local.gemma_preparation import make_packet
+        if data!=make_packet(data['options']):
+            raise ValueError('Creative preparation prompt changed')
+    else:
+        from deepthort_local.agent_contract import validate_creative_assignment
+        from deepthort_local.creative_core import request_packet
+        validate_creative_assignment(data)
+        if data!=request_packet(data['requester'],data['scope'],data['brief']):
+            raise ValueError('Creative task prompt does not match immutable brief')
     prompt=data['prompt']
     if not isinstance(prompt,str) or not 1<=len(prompt)<=3000:raise ValueError('Creative input too large')
     put(folder/'worker-ready.json',{'pid':os.getpid(),'revision':REVISION})
@@ -55,6 +61,14 @@ def main():
         out=pipe.generate(text,images=[],videos=[],generation_config=config)
         return out.texts[0]
     from deepthort_local.agent_doctrine import bind_creative
+    if preparation:
+        from deepthort_local.gemma_preparation import generate_reply
+        answer=generate_reply(lambda text:generate(bind_creative(text)),data)
+        if not isinstance(answer,str) or not answer.strip() or len(answer)>12000:
+            raise ValueError('Invalid native preparation response')
+        put(folder/'native-result.json',{'pid':os.getpid(),'revision':REVISION,'answer':answer})
+        print('Gemma: native multimedia workflow preparation completed',flush=True)
+        return
     allow_report=project_report_enabled(data)
     peer=folder/'peer-advice.json'
     if peer.exists():

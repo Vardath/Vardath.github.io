@@ -244,7 +244,7 @@ def native_generate(folder,cancelled,notify):
                         raise RuntimeError('Fourth native worker membership not verified')
                     admitted=info['pid']
                     (folder/'admitted.flag').touch(exist_ok=False)
-                    notify('Fourth AI generating the requested score under the shared cap')
+                    notify('Gemma processing a scoped creative task under the shared cap')
                 time.sleep(.25)
             if alive.code()!=0:raise RuntimeError('Native fourth worker failed: '+alive.failure())
             result=folder/'native-result.json'

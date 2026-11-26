@@ -223,3 +223,11 @@ Granite now independently anticipates technical needs in an existing approved bu
 
 ---
 
+
+
+# V68 — Gemma independent multimedia tool preparation
+
+Gemma can now independently choose one of up to three bounded upcoming approved mixed-roadmap multimedia obligations and prepare a typed workflow using actual observed recipe IDs and input paths, or identify a missing producer. The existing native VLM worker, creative lane, resource admission and authority boundaries are reused; no new executable commands or artifact publication are authorized. The durable advisory proposal is bound to the exact roadmap, original specification, task and inventory, and rechecked after inference and at workflow design. An available draft is validated, frozen and independently reviewed under the existing JANUS/Sentinel design path; a rejected draft retains the original JANUS correction attempts. Existing MIDI production and tool/import gates remain. This is preparation, not general-purpose native artifact execution; actual model quality and five-model native acceptance remain outstanding. No installer.
+
+---
+
