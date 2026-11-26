@@ -47,6 +47,7 @@ class MemoryObserver:
         self._thread=None
         self._duty=None
         self._scan_at=-float('inf')
+        self._conversation_scan_turn=False
 
     def _emit(self,event,**kw):
         try:self.report(event,**kw)
@@ -112,6 +113,19 @@ class MemoryObserver:
                 try:
                     for packet in duty.scan():self.observe(**packet)
                 except Exception as exc:self._emit('memory_duty_scan_failed',error_type=type(exc).__name__)
+                # Same dedicated model, rotating independent attention. Never
+                # add a conversation inference to the main workflow.
+                self._conversation_scan_turn=not self._conversation_scan_turn
+                with self._cv:has_pending=bool(self._pending)
+                if self._conversation_scan_turn or not has_pending:
+                    try:
+                        from .conversation_memory import run_once
+                        result=run_once(self.path,self.select,lambda:self._closed)
+                        if result and result['selected']:
+                            self._emit('memory_conversation_findings',count=len(result['selected']))
+                    except Exception as exc:
+                        self._emit('memory_conversation_deferred' if transient_recall(exc) else 'memory_conversation_failed',
+                                   error_type=type(exc).__name__)
             with self._cv:
                 if self._closed:return
                 if not self._pending:

@@ -113,14 +113,26 @@ class JanusWorker:
         if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
         if time.monotonic()-self._last_counsel_attempt<60:return False
         from deepthort_local.workflow_attention import choose,run_once
-        if not choose(self.jobs_db,'janus'):return False
+        from deepthort_local.core_deliberation import choose as choose_core,step as core_step,select_lane
+        ordinary=choose(self.jobs_db,'janus')
+        core_packet=choose_core(self.jobs_db,'janus')
+        lane=select_lane(ordinary,core_packet,getattr(self,'_last_attention_lane',''))
+        if not lane:return False
+        self._last_attention_lane=lane
+        if lane!='core':core_packet=None
         self._last_counsel_attempt=time.monotonic()
         def work():
             stopped=lambda:self._stopping or self.store.status()['paused'] or self.game_gate.gaming()
-            item=run_once(self.jobs_db,'janus',self._counsel,stopped)
-            if item and item['result']['kind']=='advice' and not stopped():
-                self.store.recommend(evidence_key='attention-'+item['key'],job_id=item['identity']['scope']['job_id'],
-                    problem=item['result']['finding'],proposal=item['result']['guidance'],origin='local_model')
+            if core_packet:
+                item=core_step(self.jobs_db,'janus',self._counsel,stopped,core_packet)
+                if item and not stopped():
+                    self.store.recommend(evidence_key='core-'+item['round_sha'],job_id=item['job_id'],
+                        problem=item['result']['finding'],proposal=item['result']['guidance'],origin='local_model')
+            else:
+                item=run_once(self.jobs_db,'janus',self._counsel,stopped)
+                if item and item['result']['kind']=='advice' and not stopped():
+                    self.store.recommend(evidence_key='attention-'+item['key'],job_id=item['identity']['scope']['job_id'],
+                        problem=item['result']['finding'],proposal=item['result']['guidance'],origin='local_model')
         self._counsel_thread=threading.Thread(target=work,name='JANUS-independent-attention',daemon=True)
         self._counsel_thread.start()
         return True

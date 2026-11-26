@@ -315,6 +315,8 @@ class JanusStore:
         project_midi=observe_project_midi(job_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(job_db)
+        from .conversation_memory import observations as conversation_memory_observations
+        memory_duties['conversation_reports']=conversation_memory_observations(job_db)
         from .worker_reports import observe_worker_reports
         worker_reports=observe_worker_reports(job_db)
         from .corrective_coordination import observe as observe_corrections
@@ -444,7 +446,9 @@ class JanusStore:
             frames.append(SenseFrame('runtime','janus_findings',
                 f'{len(findings)} new recorded advisory findings await independent outward appraisal.',
                 salience=.75,uncertainty=.5))
+        from .core_deliberation import snapshot as neural_snapshot
         society=process_society(society='janus',observation=observation,frames=frames,
+            neural=neural_snapshot(job_db,'janus'),
             previous_front=previous_front,previous_observation=previous_observation,
             previous_cores=previous,
             focus=focus,decision=decision,goal=goal,alternatives=alternatives,findings=findings)

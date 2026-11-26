@@ -104,7 +104,7 @@ class SentinelStore:
                last_janus_cycle,janus_updated_at,gui_updated_at))
 
     def reflect(self, *, observation: dict, focus: str, decision: str,
-                goal: str, alternatives: list[str]) -> dict:
+                goal: str, alternatives: list[str], neural=None) -> dict:
         """Independent 11×7 supervisory readout, never action authority.
 
         Sentinel evaluates evidence about work and health. It cannot queue
@@ -154,7 +154,7 @@ class SentinelStore:
             frames.append(SenseFrame('runtime','sentinel_findings',
                 f'{len(findings)} new recorded supervisory findings await independent outward appraisal.',
                 salience=.75,uncertainty=.5))
-        society=process_society(society='sentinel',observation=material,frames=frames,
+        society=process_society(society='sentinel',observation=material,frames=frames,neural=neural,
             previous_front=previous_front,previous_observation=prior_observation,
             previous_cores=prev.get('cores',{}),
             focus=focus,decision=decision,goal=goal,alternatives=alternatives,findings=findings)
@@ -378,6 +378,8 @@ class JanusSentinel:
         project_midi=observe_project_midi(self.jobs_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(self.jobs_db)
+        from .conversation_memory import observations as conversation_memory_observations
+        memory_duties['conversation_reports']=conversation_memory_observations(self.jobs_db)
         from .worker_reports import observe_worker_reports
         worker_reports=observe_worker_reports(self.jobs_db)
         from .corrective_coordination import observe as observe_corrections
@@ -444,8 +446,9 @@ class JanusSentinel:
         alternatives=(['Inspect verified logs','Ask for guidance before retrying',
                        'Preserve existing task and approved-action state'] if warning else
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
+        from .core_deliberation import snapshot as neural_snapshot
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
-                                      goal=goal,alternatives=alternatives)
+                                      goal=goal,alternatives=alternatives,neural=neural_snapshot(self.jobs_db,'sentinel'))
         # Review exact pending JANUS corrections before general advisory work.
         # Sentinel never substitutes its own proposal or grants authority.
         pending_report=None
@@ -483,7 +486,13 @@ class JanusSentinel:
                 and (self._counsel_thread is None or not self._counsel_thread.is_alive())
                 and time.monotonic()-self._last_counsel_attempt>=60):
             from .workflow_attention import choose,run_once
-            if choose(self.jobs_db,'sentinel'):
+            from .core_deliberation import choose as choose_core,step as core_step,select_lane
+            ordinary=choose(self.jobs_db,'sentinel')
+            core_packet=choose_core(self.jobs_db,'sentinel')
+            lane=select_lane(ordinary,core_packet,getattr(self,'_last_attention_lane',''))
+            if lane:
+                self._last_attention_lane=lane
+                if lane!='core':core_packet=None
                 self._last_counsel_attempt=time.monotonic()
                 def supervise():
                     def stopped():
@@ -491,9 +500,14 @@ class JanusSentinel:
                         try:gaming=bool(json.loads(state.get('last_observation') or '{}').get('game_detected'))
                         except (ValueError,TypeError):gaming=True
                         return self.stopping or state['paused'] or gaming
-                    item=run_once(self.jobs_db,'sentinel',self._counsel,stopped)
-                    if item and item['result']['kind']=='advice' and not stopped():
-                        self.store.recommend('attention-'+item['key'],item['result']['finding'],item['result']['guidance'],'local_model')
+                    if core_packet:
+                        item=core_step(self.jobs_db,'sentinel',self._counsel,stopped,core_packet)
+                        if item and not stopped():
+                            self.store.recommend('core-'+item['round_sha'],item['result']['finding'],item['result']['guidance'],'local_model')
+                    else:
+                        item=run_once(self.jobs_db,'sentinel',self._counsel,stopped)
+                        if item and item['result']['kind']=='advice' and not stopped():
+                            self.store.recommend('attention-'+item['key'],item['result']['finding'],item['result']['guidance'],'local_model')
                 self._counsel_thread=threading.Thread(target=supervise,name='Sentinel-independent-attention',daemon=True)
                 self._counsel_thread.start()
         if warning:

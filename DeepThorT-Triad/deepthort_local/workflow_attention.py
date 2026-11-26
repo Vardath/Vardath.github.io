@@ -51,7 +51,8 @@ def _scope(job_db,job_id):
     focus=(planned[0]['path']+': '+planned[0]['description'])[:500] if planned else 'Verification of approved project outputs'
     progress={'phase':'production' if row['state'] in ('queued','running') else row['state'],
               'steps':[{**s,'description':s['description'][:500]} for s in rows]}
-    identity={'scope':signature(bound),'progress_sha':canonical_sha(rows),
+    identity={'scope':signature(bound),'plan_sha':canonical_sha([{k:r[k] for k in ('id','path','description')} for r in rows]),
+              'progress_sha':canonical_sha(rows),
               'phase':progress['phase'],'focus':focus}
     return {'key':canonical_sha(identity),'identity':identity,'bound':bound,'focus':focus,
             'upcoming':planned[:3],'progress':progress}
@@ -109,7 +110,7 @@ def current(job_db,packet):
     fresh=_safe_scope(job_db,packet['bound']['job_id'])
     return bool(fresh and fresh['key']==packet['key'])
 
-def evidence(job_db,packet):
+def evidence(job_db,packet,*,include_preparation=True):
     bound=packet['bound'];original=bound['original'];focus=packet['focus']
     if len(original)>1400:
         from .recovery_council import select_source_section
@@ -122,10 +123,14 @@ def evidence(job_db,packet):
               'saved':sum(s['state'] in ('saved','verified') for s in packet['progress']['steps']),
               'total':len(packet['progress']['steps']),
               'upcoming':[{**s,'description':s['description'][:300]} for s in packet['upcoming']]}
+    preparation=''
+    if include_preparation:
+        from .technical_preparation import advice as preparation_advice
+        preparation=preparation_advice(job_db,bound['job_id'],bound['original'],focus,600)
     return ('Original specification SHA: '+bound['spec_sha']+'\n'+original+
             '\nObserved approved progress: '+json.dumps(progress,ensure_ascii=False)[:1300]+
             '\nRelevant historical Memory observations (not current tests): '+json.dumps(memory,ensure_ascii=False)[:650]+
-            '\nIndependent peer findings (advisory): '+json.dumps(peer,ensure_ascii=False)[:500])
+            '\nIndependent peer findings (advisory): '+json.dumps(peer,ensure_ascii=False)[:500]+preparation)
 
 def finish(job_db,role,packet,answer,*,clock=time.time):
     if role not in ROLES:raise ValueError('Unknown cognitive role')
@@ -150,11 +155,15 @@ def advice(job_db,job_id,original,focus,*,recipient='implementation',budget=640)
     packet=_safe_scope(job_db,job_id)
     from .reasoning_council import sha
     if not packet or sha(original)!=packet['bound']['spec_sha'] or focus!=packet['focus']:return ''
-    output=''
+    from .technical_preparation import advice as preparation_advice
+    output=preparation_advice(job_db,job_id,original,focus,budget)
     for item in _recent(job_db,packet):
         if item['role']==recipient or item['result']['kind']!='advice':continue
         line='\n'+item['role'].upper()+' independent advisory finding (not new authority or proof): '+item['result']['finding']+'; '+item['result']['guidance']
         if len(output)+len(line)<=budget:output+=line
+    if budget-len(output)>=100:
+        from .core_deliberation import advice as core_advice
+        output+=core_advice(job_db,packet,recipient,budget-len(output))
     return output
 
 def run_once(job_db,role,counsel,stopped):

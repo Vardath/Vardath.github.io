@@ -2072,7 +2072,7 @@ class DeepThorTDesktop(tk.Tk):
                 focus=focus,job_id=job_id,budget=budget,cancelled=cancelled,recipient='janus')
         return ''
 
-    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None):
+    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None,supervision=None):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
@@ -2099,7 +2099,7 @@ class DeepThorTDesktop(tk.Tk):
                     recipient='sentinel',budget=500)
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
-                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
+                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory,supervision=supervision)
             if memory_job:
                 self.jobs.remember(memory_job['id'],'sentinel',focus,review['original_sha'],review['evidence_sha'],
                     ('Accepted as advice; runtime untested: ' if review['accepted'] else 'Rejected: ')+review['reason'])
@@ -2107,6 +2107,10 @@ class DeepThorTDesktop(tk.Tk):
                 accepted=review['accepted'],evidence_sha=review['evidence_sha'],
                 original_sha=review['original_sha'],proposal_sha=review['proposal_sha'],runtime_verified=False)
             if not review['accepted']:
+                if review.get('verdict')=='INVALID':
+                    # An invalid model response is not evidence of specification drift.
+                    # The producer's normal bounded retry may obtain a valid review.
+                    raise SpecificationRejected('Sentinel returned no valid independent source verdict; candidate withheld')
                 self.sentinel.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
                     finding='Original specification adherence: rejected',proposal=review['reason'],origin='local_model')
                 self.janus.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
@@ -3011,11 +3015,17 @@ class DeepThorTDesktop(tk.Tk):
                     prompt+=fit_memory(recalled,max(0,MAX_INFERENCE_PROMPT-len(prompt)))
                 def review_plan(proposed,section=''):
                     for item in proposed:
-                        self._sentinel_alignment(original,request['project'],session,
-                            item['path']+': '+item['description'],
-                            json.dumps(item,ensure_ascii=False),section=section,
+                        intent=json.dumps(item,ensure_ascii=False)
+                        intent_focus=item['path']+': '+item['description']
+                        receipt=self._sentinel_alignment(original,request['project'],session,
+                            intent_focus,intent,section=section,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)),
                             cancelled=cancelled,amendments=amendments,memory_chat=request['chat_id'])
+                        if not cancelled():
+                            from deepthort_local.supervision_policy import record as record_intent
+                            try:record_intent(STATE/'reasoning-council-v50.sqlite3',request,original,intent,intent_focus,
+                                receipt,section=section,amendments=amendments)
+                            except (OSError,ValueError,__import__('sqlite3').Error):pass
                 if request['mode']=='chat' and not large_spec:
                     from deepthort_local.chat_capabilities import chat_context
                     prompt, chat_tokens, route, sources = chat_context(
@@ -3028,6 +3038,9 @@ class DeepThorTDesktop(tk.Tk):
                            model_input_characters=len(prompt),max_tokens=chat_tokens,
                            original_preserved=True,execution_authorized=False)
                     if cancelled():return
+                    from deepthort_local.conversation_memory import advice as conversation_advice
+                    prompt+=conversation_advice(self.jobs.path,request,
+                        budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     from deepthort_local.chat_agent import eligible, run_agent, MAX_PACKET
                     from deepthort_local.technical_research import DOCS, excerpt
                     from deepthort_local.reasoning_council import ReasoningCouncil
@@ -3097,6 +3110,10 @@ class DeepThorTDesktop(tk.Tk):
                                ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,review_artifacts,
                                cancelled=cancelled,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                 else:
+                    if request['mode']=='draft_plan':
+                        from deepthort_local.conversation_memory import advice as conversation_advice
+                        prompt+=conversation_advice(self.jobs.path,request,
+                            budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     answer, _ = generate_model_plan(
                         self.planner_client, session, original, request['project'], prompt,
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,
@@ -4554,6 +4571,49 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'Gemma accepted independent staged assignment for request #{ident}; other production may continue.')
         self._reload_chat()
 
+    def _technical_preparation_tick(self,now):
+        # One independent Granite attention opportunity, on the existing
+        # broker. Never wait for it or submit ahead of already queued inference.
+        if (self._quitting or self.queue_paused or self._explicit_model_stop
+                or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                or self.janus.status().get('paused') or self.active_conversation is not None
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_mcp_discovery_active',False)):
+            return
+        thread=getattr(self,'_technical_preparation_thread',None)
+        if (thread and thread.is_alive()) or now-getattr(self,'_technical_preparation_at',-60)<60:
+            return
+        health=getattr(self,'last_server_health',None) or {}
+        role=(health.get('models') or {}).get('implementation') or {}
+        if (not self.node_ready or not self.node or self.node.poll() is not None
+                or not health.get('ready') or health.get('admission_waiting')!=0
+                or health.get('serial_memory_mode') is not False
+                or role.get('resident') is not True or role.get('busy') or role.get('generating')):
+            return
+        slots=health.get('admission_slots')
+        models=list((health.get('models') or {}).values())+[health.get('memory_model') or {}]
+        if type(slots) is not int or slots<=sum(x.get('generating') is True for x in models):
+            return
+        self._technical_preparation_at=now
+        primary=self.node
+        def stopped():
+            return (self._quitting or self.queue_paused or self._explicit_model_stop
+                    or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                    or self.janus.status().get('paused') or primary.poll() is not None
+                    or self.active_conversation is not None
+                    or (self._latest_test_thread and self._latest_test_thread.is_alive()))
+        def work():
+            try:
+                from deepthort_local.technical_preparation import run_once
+                client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
+                item=run_once(self.jobs.path,client,stopped)
+                if item and item['result']['kind']=='advice' and not stopped():
+                    self.events.put(('log','Granite independently prepared a scoped technical finding.'))
+            except Exception as exc:
+                record(STATE,'desktop','technical_preparation_deferred',error_type=type(exc).__name__)
+        self._technical_preparation_thread=threading.Thread(target=work,name='Granite-technical-preparation',daemon=True)
+        self._technical_preparation_thread.start()
+
     def _scheduler_once(self):
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
@@ -4577,6 +4637,8 @@ class DeepThorTDesktop(tk.Tk):
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
         if gate=='active_job' and self._try_independent_project_media(now):return
+        if gate=='active_job':
+            self._technical_preparation_tick(now)
         if gate=='dispatch_enabled':
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
@@ -4624,6 +4686,9 @@ class DeepThorTDesktop(tk.Tk):
                     self._log(f"JANUS resumed draft #{recovered['request_id']} from recorded progress "
                               f"(bounded recovery {recovered['attempt']}/2). No build approved.")
                     self._reload_chat()
+                    return
+            # Give foreground conversations, ready builds and recovery first choice.
+            self._technical_preparation_tick(now)
 
     def _execute_job(self,j):
         from deepthort_local.corrective_coordination import READY
@@ -4872,13 +4937,32 @@ class DeepThorTDesktop(tk.Tk):
                     if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))
+                    from deepthort_local.supervision_policy import review_depth,prior_plan
+                    policy=review_depth(contract,amendments,corrective=retry_requested,
+                        prior_attempt=self.project_assignments.prior_attempt(assignment),advice=step_memory) if assignment else None
                     def guard(proposal,kind):
                         if behavior_test and kind=='code':
                             validate_behavior_test(step['path'],proposal)
                             kind='behavior_test'
-                        receipt=self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
-                            kind=kind,stage=lambda message:self.events.put(('log',message)),
-                            cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory)
+                        receipt=None
+                        if assignment and kind=='plan' and not stopped_memory() and policy['depth']=='ordinary':
+                            # New asynchronous findings can arrive since the initial snapshot.
+                            fresh=self.memory_observer.advice(original=original,project=project,chat_id=j['chat_id'],
+                                focus=focus,job_id=jobid,cancelled=stopped_memory)
+                            fresh+=live_advice(self.jobs.path,jobid,original,focus,budget=600)
+                            if not fresh:
+                                receipt=prior_plan(STATE/'reasoning-council-v50.sqlite3',self.jobs.path,
+                                    self.jobs.get(jobid),contract,original,proposal,focus,policy)
+                        if receipt:
+                            self.events.put(('log',f'Job #{jobid}: exact prior Sentinel intention review reused; independent source review still required.'))
+                            self.jobs.remember(jobid,'sentinel',focus,receipt['original_sha'],receipt['evidence_sha'],
+                                'Exact approved prior intention review reused; source and runtime untested.')
+                        else:
+                            receipt=self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
+                                kind=kind,stage=lambda message:self.events.put(('log',message)),
+                                cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory,
+                                supervision=policy)
+                        if stopped_memory():raise PlanError('Supervision scope stopped or superseded')
                         if assignment:self.project_assignments.review(assignment,kind,proposal,receipt)
                         return receipt
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
