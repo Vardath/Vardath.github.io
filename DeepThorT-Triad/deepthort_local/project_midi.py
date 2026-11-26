@@ -255,7 +255,16 @@ class ProjectMidi:
 
     def _staged(self,contract,folder,receipt):
         data=self.delegations._artifact(folder,receipt,{'requester':'janus','scope':contract['scope'],'brief':contract['brief']})
-        raw=(Path(data['folder'])/'score.mid').read_bytes()
+        folder=Path(data['folder'])
+        peer=folder/'peer-advice.json'
+        if peer.exists() or 'peer_advice_sha' in receipt:
+            if peer.is_symlink() or not peer.is_file() or peer.stat().st_size>4096:
+                raise ValueError('Missing exact staged peer context')
+            from .peer_context import checked
+            context=json.loads(peer.read_text('utf-8'))
+            checked(context,contract['scope'])
+            if context['sha']!=receipt.get('peer_advice_sha'):raise ValueError('Peer context receipt changed')
+        raw=(folder/'score.mid').read_bytes()
         score=inspect_midi(raw)
         if hashlib.sha256(raw).hexdigest()!=receipt['sha256'] or score['bpm']!=receipt['bpm'] or len(score['notes'])!=receipt['notes']:
             raise ValueError('Native score receipt disagrees with decoded notes')

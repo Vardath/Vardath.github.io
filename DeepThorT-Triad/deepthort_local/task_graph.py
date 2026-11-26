@@ -171,7 +171,11 @@ class TaskGraphStore:
             return bool(db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(jobid,)).fetchone())
 
     def ready_step(self,job,steps,*,preferred=None,exclude=()):
-        """Select real dependency-ready work, not arbitrary sequence position.
+        candidates=self.ready_candidates(job,steps,preferred=preferred,exclude=exclude)
+        return candidates[0] if candidates else None
+
+    def ready_candidates(self,job,steps,*,preferred=None,exclude=()):
+        """Expose only genuinely dependency-ready work, not arbitrary sequence position.
 
         Rank ready stages by the number of remaining direct consumers, with
         approved order as deterministic tie-break. A reviewed retry can pin
@@ -182,10 +186,10 @@ class TaskGraphStore:
             self._assert_bound(db,job,steps)
             explicit=db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(job['id'],)).fetchone()
             planned=[s for s in steps if s['state']=='planned' and s['id'] not in exclude]
-            if not planned:return None
+            if not planned:return []
             if not explicit:
-                if preferred is not None and preferred!=planned[0]['id']:return None
-                return planned[0]
+                if preferred is not None and preferred!=planned[0]['id']:return []
+                return [planned[0]]
             available=[]
             pending={f"file:{s['id']}" for s in planned}
             project=Path(job['project']).resolve(strict=True)
@@ -205,7 +209,7 @@ class TaskGraphStore:
                 consumers=db.execute("SELECT node FROM edges WHERE job_id=? AND depends_on=?",(job['id'],node)).fetchall()
                 impact=sum(x[0] in pending for x in consumers)
                 available.append((-impact,step['sequence'],step))
-            return min(available,key=lambda x:(x[0],x[1]))[2] if available else None
+            return [item[2] for item in sorted(available,key=lambda x:(x[0],x[1]))]
 
     @staticmethod
     def _event(db, jobid, event, note):
