@@ -4571,6 +4571,45 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'Gemma accepted independent staged assignment for request #{ident}; other production may continue.')
         self._reload_chat()
 
+    def _technical_preparation_tick(self,now):
+        # One independent Granite attention opportunity, on the existing
+        # broker. Never wait for it or submit ahead of already queued inference.
+        if (self._quitting or self.queue_paused or self._explicit_model_stop
+                or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                or self.janus.status().get('paused') or self.active_conversation is not None
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_mcp_discovery_active',False)):
+            return
+        thread=getattr(self,'_technical_preparation_thread',None)
+        if (thread and thread.is_alive()) or now-getattr(self,'_technical_preparation_at',-60)<60:
+            return
+        health=getattr(self,'last_server_health',None) or {}
+        role=(health.get('models') or {}).get('implementation') or {}
+        if (not self.node_ready or not self.node or self.node.poll() is not None
+                or not health.get('ready') or health.get('admission_waiting')!=0
+                or health.get('serial_memory_mode') is not False
+                or role.get('resident') is not True or role.get('busy') or role.get('generating')):
+            return
+        self._technical_preparation_at=now
+        primary=self.node
+        def stopped():
+            return (self._quitting or self.queue_paused or self._explicit_model_stop
+                    or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                    or self.janus.status().get('paused') or primary.poll() is not None
+                    or self.active_conversation is not None
+                    or (self._latest_test_thread and self._latest_test_thread.is_alive()))
+        def work():
+            try:
+                from deepthort_local.technical_preparation import run_once
+                client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
+                item=run_once(self.jobs.path,client,stopped)
+                if item and item['result']['kind']=='advice' and not stopped():
+                    self.events.put(('log','Granite independently prepared a scoped technical finding.'))
+            except Exception as exc:
+                record(STATE,'desktop','technical_preparation_deferred',error_type=type(exc).__name__)
+        self._technical_preparation_thread=threading.Thread(target=work,name='Granite-technical-preparation',daemon=True)
+        self._technical_preparation_thread.start()
+
     def _scheduler_once(self):
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
@@ -4594,6 +4633,8 @@ class DeepThorTDesktop(tk.Tk):
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
         if gate=='active_job' and self._try_independent_project_media(now):return
+        if gate in ('active_job','dispatch_enabled'):
+            self._technical_preparation_tick(now)
         if gate=='dispatch_enabled':
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return

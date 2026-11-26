@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v66-conversation-memory",
-  "title": "Triad V66: independent scoped conversation memory",
+  "id": "triad-v67-technical-preparation",
+  "title": "Triad V67: independent Granite technical preparation",
   "checks": [
     "shared_cap",
     "triad_residency",

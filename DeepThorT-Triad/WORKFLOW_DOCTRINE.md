@@ -215,3 +215,11 @@ A neural cycle now survives ordinary progress changes within the same exact appr
 
 Memory's existing background lane now independently discovers durable current conversation requests, including general chat and unapproved project planning, without waiting for the foreground request to trigger it. Bounded rotating scan, same-chat/project historical user-statement candidates, model selection, durable exact receipt, and supersession checks. No assistant prose is treated as factual evidence. Historical statements are clearly labelled and never authorize work. Existing short-chat and ordinary draft prompts can consume already available relevant statements without waiting; both societies observe scoped availability without unrelated chat text. Approved build recall remains separate and unchanged; alternation prevents conversation recall from continually displacing admitted build duties. Long indexed planning is not yet wired to conversation recall. Native model acceptance pending. No installer.
 
+
+
+# V67 — Granite independent technical preparation
+
+Granite now independently anticipates technical needs in an existing approved build using the existing live-attention scope, exact grant, and bounded approved source observations. It may identify interface requirements, regressions and tests before its next production assignment, with one background opportunity per minute when the native broker has no waiting requests and Granite is available. No new dispatch authority, execution, installation, file write, model substitution or foreground wait. Exact scope and bounded source hashes are rechecked before advice is stored and delivered to JANUS, Sentinel and Granite. Changed scope, revoked authority or changed observed source suppresses advice. Existing worker selection, peer exchange and acceptance gates remain. This first preparation lane targets the next intended stage and up to two saved source files; wider investigation, explicit tool actions and Gemma task selection remain outstanding. Scripted regression uses actual grants and source files; native acceptance pending. No installer.
+
+---
+
