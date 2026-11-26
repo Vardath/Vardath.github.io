@@ -26,8 +26,8 @@ def eligible(row):
 def binding(row):
     return canonical_sha({k:row[k] for k in ('id','project','chat_id','mode','prompt','attachments')})
 
-def scope(row):
-    return 'conversation:'+str(row['id'])+':'+binding(row)
+def scope(row,attempt):
+    return 'conversation:'+str(row['id'])+':attempt:'+str(attempt)+':'+binding(row)
 
 class DelegationError(ValueError):pass
 
@@ -176,13 +176,13 @@ class DelegationStore:
                        (lease,ident,attempt,stage['stage']))
             self._event(db,ident,attempt,stage['stage'],'claimed')
             return {'request_id':ident,'attempt':attempt,'stage':stage['stage'],'role':role,'lease':lease,
-                    'scope':scope(row),'brief':row['prompt']}
+                    'scope':scope(row,attempt),'brief':row['prompt']}
     def _leased(self,db,task):
         row,b=self._live(db,task['request_id'])
         s=db.execute("""SELECT * FROM agent_stages_v39 WHERE request_id=? AND attempt=?
             AND stage=? AND role=? AND lease=? AND state='running'""",
             (task['request_id'],task['attempt'],task['stage'],task['role'],task['lease'])).fetchone()
-        if not s or task['attempt']!=b['attempt'] or task['scope']!=scope(row) or task['brief']!=row['prompt']:
+        if not s or task['attempt']!=b['attempt'] or task['scope']!=scope(row,b['attempt']) or task['brief']!=row['prompt']:
             raise DelegationError('Missing or stale exact task lease')
         return row,b,s
     def _artifact(self,folder,receipt,task):
