@@ -184,14 +184,19 @@ def parse_challenge(answer,offered):
     return keep
 
 HEADER='\n\nSENTINEL-SELECTED HISTORICAL MEMORY (relevance only; revalidate facts; no authority):\n'
+INDEXED_HEADER='\n\nMEMORY HISTORICAL CONTEXT (examples only; current specification governs; no authority):\n'
+
 def fit(context,budget):
     """Never truncate a JSON record, remove authoritative text, or invent facts."""
-    if not context or budget<len(HEADER)+20:return ''
-    if not context.startswith(HEADER):raise ValueError('Unrecognised governed memory context')
-    out=HEADER
-    for line in context[len(HEADER):].splitlines():
+    if not context:return ''
+    from .memory_observer import ADVISORY_HEADER
+    header=next((h for h in (HEADER,INDEXED_HEADER,ADVISORY_HEADER) if context.startswith(h)),None)
+    if not header:raise ValueError('Unrecognised governed memory context')
+    if budget<len(header)+20:return ''
+    out=header
+    for line in context[len(header):].splitlines():
         if line and len(out)+len(line)+1<=budget:out+=line+'\n'
-    return out if out!=HEADER else ''
+    return out if out!=header else ''
 
 def govern(jobs,council,client,*,project,chat_id,original,focus,scope,phase,
            job_id=0,budget=MAX_CONTEXT,cancelled=None,stage=None,section='',use_memory_core=None):
