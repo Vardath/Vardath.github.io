@@ -43,6 +43,9 @@ class ProjectAssignments:
             db.execute("""CREATE TABLE IF NOT EXISTS dependency_evidence_v49(
                 attempt TEXT PRIMARY KEY, path TEXT NOT NULL, evidence_sha TEXT NOT NULL,
                 report_sha TEXT NOT NULL)""")
+            db.execute("""CREATE TABLE IF NOT EXISTS media_handoff_v57(
+                attempt TEXT PRIMARY KEY, contract_sha TEXT NOT NULL, records TEXT NOT NULL,
+                receipt_sha TEXT NOT NULL)""")
 
     def _contract(self,db,job,steps,step,original,amendments,grants,enabled):
         self.graphs._assert_bound(db,job,steps)
@@ -164,12 +167,96 @@ class ProjectAssignments:
                 review_mode=?,updated_at=CURRENT_TIMESTAMP WHERE attempt=?""",(candidate,mode,attempt))
         return candidate
 
+    def proactive_source_context(self,attempt,job,steps,step,original,amendments,grants,budget,*,enabled,exclude=()):
+        """Supply whole small direct predecessors before Granite needs to ask.
+        V49 recovery remains available; this does not spend its single retry.
+        """
+        from .inspection_exclusions import normalized_relative
+        if budget<300:return ''
+        with self.graphs._db() as db:
+            _,bound=self._load(db,attempt,('assigned',))
+            if self._contract(db,job,steps,step,original,amendments,grants,enabled)!=bound:
+                raise GraphError('Proactive dependency assignment changed')
+            rows=db.execute("""SELECT n.title,n.evidence_sha256 FROM edges e JOIN nodes n
+                ON n.job_id=e.job_id AND n.node=e.depends_on
+                WHERE e.job_id=? AND e.node=? AND n.kind='artifact' AND n.state='saved'
+                ORDER BY n.title LIMIT 12""",(job['id'],f"file:{step['id']}")).fetchall()
+            out=''
+            for path,digest in rows:
+                if normalized_relative(path) in exclude:continue
+                try:evidence=self._saved_dependency(db,job['id'],step['id'],bound['project'],path,budget-len(out),exclude)
+                except (OSError,UnicodeError):evidence=None
+                if evidence:
+                    out+=evidence[1]
+                else:
+                    line='\n\nAPPROVED SAVED PREDECESSOR (hash only, not source or runtime proof): '+path+'; SHA-256 '+digest
+                    if len(out)+len(line)<=budget:out+=line
+            return out
+
+    @staticmethod
+    def _check_media_records(contract,records):
+        """Recheck exact delivered bytes without opening a second write store."""
+        from .creative_core import inspect_midi
+        key=contract['approval_key'].split(':')
+        if len(key)!=4 or key[0]!='milestone' or not isinstance(records,list) or not 1<=len(records)<=3:
+            raise GraphError('Media handoff needs an exact approved milestone')
+        seen=set()
+        for record in records:
+            if (not isinstance(record,dict) or set(record)!={'path','sha256','bytes','bpm','notes','task_id','request_id','before','plan_sha','code_sha'}
+                or str(record['request_id'])!=key[1] or str(record['before'])!=key[2]
+                or any(not isinstance(record[k],str) or len(record[k])!=64 or any(c not in '0123456789abcdef' for c in record[k])
+                       for k in ('sha256','plan_sha','code_sha'))):
+                raise GraphError('Invalid scoped media receipt')
+            relative,target=_safe_auto_path(Path(contract['project']),record['path'])
+            if (relative!=record['path'] or relative.casefold() in seen or relative.casefold()==contract['path'].casefold()
+                    or target.suffix.casefold() not in ('.mid','.midi') or not target.is_file()
+                    or target.stat().st_size>4096):
+                raise GraphError('Media receipt path or file changed')
+            seen.add(relative.casefold())
+            with target.open('rb') as stream:raw=stream.read(4097)
+            if len(raw)!=record['bytes'] or hashlib.sha256(raw).hexdigest()!=record['sha256']:
+                raise GraphError('Delivered media bytes changed')
+            score=inspect_midi(raw)
+            if score['bpm']!=record['bpm'] or len(score['notes'])!=record['notes']:
+                raise GraphError('Delivered media properties changed')
+
+    def bind_media_inputs(self,attempt,records,budget):
+        """Bind host-checked Gemma output metadata to the exact Granite attempt.
+        The producer's checked receipt is obtained by the existing roadmap
+        adapter. This method grants no writes, tests or execution.
+        """
+        if not records or budget<260:return ''
+        header='\n\nHOST-CHECKED EARLIER GEMMA ARTIFACTS (observed file properties, not playback or runtime proof; integrate only as requested):\n'
+        selected=[];context=header
+        for row in records[:3]:
+            line=json.dumps({k:row[k] for k in ('path','sha256','bytes','bpm','notes')},sort_keys=True,ensure_ascii=True)+'\n'
+            if len(context)+len(line)<=budget:selected.append(row);context+=line
+        if not selected:return ''
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _,contract=self._load(db,attempt,('assigned',))
+            self._check_media_records(contract,selected)
+            scope=canonical_sha(contract)
+            sealed=canonical_sha([scope,selected])
+            db.execute("INSERT INTO media_handoff_v57 VALUES(?,?,?,?)",
+                       (attempt,scope,json.dumps(selected,sort_keys=True),sealed))
+        return context
+
+    def _check_media_handoff(self,db,attempt,contract):
+        row=db.execute("SELECT contract_sha,records,receipt_sha FROM media_handoff_v57 WHERE attempt=?",(attempt,)).fetchone()
+        if not row:return
+        records=json.loads(row[1]);scope=canonical_sha(contract)
+        if row[0]!=scope or row[2]!=canonical_sha([scope,records]):
+            raise GraphError('Media handoff receipt changed')
+        self._check_media_records(contract,records)
+
     def validate(self,attempt,job,steps,step,original,amendments,grants,source,*,enabled):
         with self.graphs._db() as db:
             row,contract=self._load(db,attempt,('reviewed',))
             current=self._contract(db,job,steps,step,original,amendments,grants,enabled)
             if contract!=current or row[5]!=sha(source):
                 raise GraphError('Assignment scope, dependencies, source or candidate changed')
+            self._check_media_handoff(db,attempt,contract)
             return contract
 
     def commit(self,attempt,job,steps,step,original,amendments,grants,source,lease,*,enabled):
@@ -180,6 +267,7 @@ class ProjectAssignments:
             current=self._contract(db,job,steps,step,original,amendments,grants,enabled)
             if contract!=current or row[5]!=sha(source):
                 raise GraphError('Reviewed project assignment changed before host commit')
+            self._check_media_handoff(db,attempt,contract)
             if not db.execute("""SELECT 1 FROM leases WHERE lease_id=? AND job_id=?
                 AND node=? AND kind='write' AND status='running'""",
                 (lease,job['id'],f"file:{step['id']}")).fetchone():
@@ -308,7 +396,7 @@ class ProjectAssignments:
 
 class ProjectRoleClient:
     """Explicit implementation-model adapter; cache only exact scoped calls."""
-    def __init__(self,client,contract,*,report=None,resolve=None,notice=None,correction=''):
+    def __init__(self,client,contract,*,report=None,resolve=None,notice=None,correction='',handoff=''):
         if contract['assignee']!='implementation':raise GraphError('Wrong production role')
         self.client=client
         self.scope=canonical_sha(contract)
@@ -317,12 +405,16 @@ class ProjectRoleClient:
         self.notice=notice
         if not isinstance(correction,str) or len(correction)>3000:raise GraphError('Invalid corrective guidance')
         self.correction=correction
+        if not isinstance(handoff,str) or len(handoff)>1200:raise GraphError('Invalid dependency handoff')
+        self.handoff=handoff
     def _session(self,session):
-        return 'project-role-'+canonical_sha([self.scope,session]+([sha(self.correction)] if self.correction else []))[:48]
+        return 'project-role-'+canonical_sha([self.scope,session]+([sha(self.correction)] if self.correction else [])+
+            ([sha(self.handoff)] if self.handoff else []))[:48]
     def _prompt(self,prompt):
         from .worker_reports import GUIDANCE
         prompt+=self.correction
         if len(prompt)>7500:raise GraphError('Corrective guidance and original task exceed context budget')
+        if self.handoff and len(prompt)+len(self.handoff)<=7500:prompt+=self.handoff
         if self.report is not None and len(prompt)+len(GUIDANCE)<=7500:prompt+=GUIDANCE
         if self.notice is not None:
             from .worker_notices import GUIDANCE as NOTICE_GUIDANCE

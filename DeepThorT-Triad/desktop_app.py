@@ -4668,6 +4668,7 @@ class DeepThorTDesktop(tk.Tk):
                     assignment=None
                     production_client=self.client
                     correction=''
+                    handoff=''
                     if self._project_work_is_enabled() and self.graphs.exists(jobid):
                         current=self.jobs.get(jobid)
                         try:
@@ -4713,11 +4714,28 @@ class DeepThorTDesktop(tk.Tk):
                                         self.events.put(('log',f'Granite reported a nonblocking discovery for job #{jobid}; production continues.'))
                                 except sqlite3.Error:
                                     self.events.put(('log','Granite notice ledger unavailable; ordinary source review continues.'))
+                            if not self.disk_gate.gaming() and not self._superseded_build(j):
+                                excluded=self.inspection_exclusions.paths(project)
+                                # Previously checked same-project Gemma outputs are
+                                # bounded facts, never invented interfaces or new grants.
+                                if str(j.get('approval_key') or '').startswith('milestone:'):
+                                    root_id=root_request_for_job(j,self.conversations)
+                                    root_req=self.conversations.get(root_id)
+                                    run=self.roadmap_runs.get(root_id)
+                                    if root_req and run and run.get('mixed_sha') and run.get('creative_midi')==1:
+                                        mixed=self.mixed_roadmaps.get(root_id,run['manifest_sha256'])
+                                        records=self.project_midi.integration_records(self.jobs.get(jobid),root_req,mixed,exclude=excluded)
+                                        handoff=self.project_assignments.bind_media_inputs(assignment,records,800)
+                                if not retry_requested:
+                                    handoff+=self.project_assignments.proactive_source_context(assignment,self.jobs.get(jobid),
+                                        self.jobs.steps(jobid),step,original,amendments,STATE/'project-grants',
+                                        1200-len(handoff),enabled=self._project_work_is_enabled(),exclude=excluded)
+                                if handoff:self.events.put(('log',f'Job #{jobid}: host-checked prerequisite/interface handoff supplied before Granite production.'))
                             production_client=ProjectRoleClient(self.client,contract,report=worker_report,
-                                resolve=resolve_dependency,notice=worker_notice,correction=correction)
+                                resolve=resolve_dependency,notice=worker_notice,correction=correction,handoff=handoff)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     if retry_requested and (not assignment or not correction):raise PlanError('Corrective inference requires the unchanged approved assignment')
-                    context_limit=MAX_INFERENCE_PROMPT-len(correction)
+                    context_limit=MAX_INFERENCE_PROMPT-len(correction)-len(handoff)
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
                         code=answer if staged is not None else strip_single_code_fence(answer)
