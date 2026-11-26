@@ -4430,6 +4430,7 @@ class DeepThorTDesktop(tk.Tk):
                     amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
                     focus=step['path']+': '+step['description']
                     assignment=None
+                    production_client=self.client
                     if self._project_work_is_enabled() and self.graphs.exists(jobid):
                         current=self.jobs.get(jobid)
                         try:
@@ -4440,6 +4441,8 @@ class DeepThorTDesktop(tk.Tk):
                             assignment,contract=self.project_assignments.begin(current,steps,step,original,amendments,
                                 STATE/'project-grants',enabled=True)
                             self._project_attempts[jobid]=assignment
+                            from deepthort_local.project_assignments import ProjectRoleClient
+                            production_client=ProjectRoleClient(self.client,contract)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
@@ -4545,9 +4548,9 @@ class DeepThorTDesktop(tk.Tk):
                         council=ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3')
                         if raw is None:
                             generator=stage_new_document if dest.suffix.casefold() in FORMATS else stage_new_python
-                            result=generator(self.client,council,ask_advisor(),**arguments)
+                            result=generator(production_client,council,ask_advisor(),**arguments)
                         else:
-                            result=stage_existing(self.client,council,ask_advisor(),source=raw,**arguments)
+                            result=stage_existing(production_client,council,ask_advisor(),source=raw,**arguments)
                         result['step_id']=step['id']
                         if _sha(dest)!=result['before_sha256']:raise PlanError('Source changed during decomposition')
                         emit_source(result['source'],staged=result)
@@ -4616,7 +4619,7 @@ class DeepThorTDesktop(tk.Tk):
                         except StageError as error:raise SpecificationRejected(str(error)) from error
                         return guard(candidate,'code')
                     try:
-                        answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}',
+                        answer=generate_reviewed(production_client,f'build-{jobid}-step-{step["id"]}',
                             request,review_candidate,
                             max_chars=MAX_INFERENCE_PROMPT,transform=transform,
                             cancelled=lambda:self._quitting or self.active_job!=jobid,
@@ -4674,7 +4677,7 @@ class DeepThorTDesktop(tk.Tk):
                                 self.events.put(('log','Software discovery unavailable: '+str(discovery_error)[:250]))
                         if guidance and len(request)+len(guidance)+2<=MAX_INFERENCE_PROMPT:
                             try:
-                                answer=generate_reviewed(self.client,f'build-{jobid}-step-{step["id"]}-research',
+                                answer=generate_reviewed(production_client,f'build-{jobid}-step-{step["id"]}-research',
                                     request+'\n\n'+guidance,review_candidate,max_chars=MAX_INFERENCE_PROMPT,
                                     attempts=1,transform=transform,
                                     cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j))
@@ -4948,6 +4951,7 @@ class DeepThorTDesktop(tk.Tk):
                                       f'SHA256 {evidence["sha256"][:16]}…; backup retained.')
                             self._refresh_files()
                         except (GrantError, GraphError, CheckpointError, WorkspaceError, OSError, ValueError) as exc:
+                            if assignment:self.project_assignments.abandon(assignment)
                             self.jobs.change(jobid, 'needs_input',
                                 'Automatic file write needs attention: ' + str(exc),
                                 result=answer, allowed=('running',))
