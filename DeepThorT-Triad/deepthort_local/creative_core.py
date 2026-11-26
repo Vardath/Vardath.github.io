@@ -124,19 +124,21 @@ def midi(score):
     return b'MThd'+struct.pack('>IHHH',6,0,1,480)+b'MTrk'+struct.pack('>I',len(track))+track
 
 
-def budget_ok(cap,available,total,peak):
-    # Conservative admission: historic peak is an upper bound on current
-    # usage, not a claim about exact working-set bytes. Never evict workers.
-    return cap>=peak+BUDGET+GIB and available>=BUDGET+total//10
+def budget_ok(cap,available,total,peak,*,extra=0):
+    # Conservative admission: historical peak bounds observed root commit,
+    # not an exact current working set. Extra overlap reserve is additional
+    # headroom, never an increase in the shared root Job Object cap.
+    return (type(extra) is int and extra>=0 and 0<peak<=cap
+            and cap>=peak+BUDGET+GIB+extra
+            and available>=BUDGET+total//10+extra)
 
 
-@contextmanager
-def specialist_group():
+def creative_headroom(*,extra=0):
+    """Read real shared job/physical memory limits and historical peak."""
     import ctypes, os
     from ctypes import wintypes
     from .triad_job import kernel,fn,check,verify_root_cap
-    from .win_cpu_cap import (ExtendedLimitInfo,JobObjectExtendedLimitInformation,
-                             JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE,JOB_OBJECT_LIMIT_JOB_MEMORY)
+    from .win_cpu_cap import ExtendedLimitInfo,JobObjectExtendedLimitInformation
     cap,available,total=verify_root_cap()
     k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
     close=fn(k,'CloseHandle',[H],wintypes.BOOL)
@@ -147,9 +149,22 @@ def specialist_group():
     try:
         limits=ExtendedLimitInfo()
         check(query(root,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits),None),'Read root peak commit')
-        if not limits.PeakJobMemoryUsed or not budget_ok(cap,available,total,int(limits.PeakJobMemoryUsed)):
-            raise RuntimeError('Insufficient measured headroom for fourth core; existing workers preserved')
+        return budget_ok(cap,available,total,int(limits.PeakJobMemoryUsed),extra=extra)
     finally:close(root)
+
+
+@contextmanager
+def specialist_group():
+    import ctypes
+    from ctypes import wintypes
+    from .triad_job import kernel,fn,check
+    from .win_cpu_cap import (ExtendedLimitInfo,JobObjectExtendedLimitInformation,
+                             JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE,JOB_OBJECT_LIMIT_JOB_MEMORY)
+    if not creative_headroom():
+        raise RuntimeError('Insufficient measured headroom for fourth core; existing workers preserved')
+    k=kernel();H=wintypes.HANDLE;D=wintypes.DWORD;P=ctypes.c_void_p
+    close=fn(k,'CloseHandle',[H],wintypes.BOOL)
+    query=fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)
     group=fn(k,'CreateJobObjectW',[P,wintypes.LPCWSTR],H)(None,None)
     check(group,'Create creative memory group')
     try:
