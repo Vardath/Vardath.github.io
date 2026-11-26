@@ -3,7 +3,7 @@ from __future__ import annotations
 from contextlib import closing
 import json
 import os
-from .triad_profiles import MODEL_ID,PROFILES
+from .triad_profiles import MODEL_ID,ALL_PROFILES as PROFILES
 import re
 import time
 from .flight_recorder import record
@@ -157,6 +157,19 @@ class LocalModelClient:
                 return answer
         return None
 
+    def memory_core_ready(self):
+        from .triad_profiles import MEMORY_PROFILE
+        try:
+            req=urllib.request.Request(self.base_url+'/health',headers={
+                'Authorization':'Bearer '+os.environ.get('DEEPTHORT_TRIAD_TOKEN','')})
+            with urllib.request.build_opener(urllib.request.ProxyHandler({})).open(req,timeout=2) as reply:
+                status=json.load(reply)
+            row=status.get('memory_model') or {}
+            return (status.get('ready') is True and row.get('resident') is True
+                    and row.get('name')==MEMORY_PROFILE[0] and row.get('revision')==MEMORY_PROFILE[2])
+        except (OSError,ValueError,TypeError,AttributeError):
+            return False
+
     def chat_as(self,role,session_id,prompt,max_tokens=96):
         return self.chat(session_id,prompt,max_tokens=max_tokens,triad_role=role)
 
@@ -170,6 +183,8 @@ class LocalModelClient:
         system=('You are Sentinel, an independent verifier. Follow the requested review output format. '
                 'Compare actual evidence to requirements; never claim unverified execution.'
                 if role=='sentinel' else
+                'You are the dedicated memory relevance specialist. Select only evidence for the exact requested operation; do not invent facts or authorize actions.'
+                if role=='memory' else
                 'You are an offline coding assistant. Be concise, precise, and never claim unverified code execution.')
         from .context_compaction import select_history
         # Explicit council calls have their full evidence packet already.
