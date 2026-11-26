@@ -39,14 +39,14 @@ class ReasoningCouncil:
             db.close()
 
     def _run(self, client, *, role, session, evidence_sha, prompt, stage=None, max_tokens=240) -> str:
-        from .triad_profiles import role_for_council, ALL_PROFILES as PROFILES, RUNTIME_VERSION
+        from .triad_profiles import role_for_council, PROFILES, MEMORY_PROFILE, RUNTIME_VERSION
         assigned=role_for_council(role)
         if type(max_tokens) is not int or not 1<=max_tokens<=768:
             raise ValueError('Invalid council output budget')
         # Never reuse a verdict produced by an obsolete checkpoint, runtime
         # or output mode, even if the candidate and user specification match.
         evidence_sha=sha(json.dumps({'schema':'triad-council-model-v3',
-            'evidence':evidence_sha,'model':PROFILES[assigned][2],
+            'evidence':evidence_sha,'model':(MEMORY_PROFILE if assigned=='memory' else PROFILES[assigned])[2],
             'runtime':RUNTIME_VERSION,'tokens':max_tokens},sort_keys=True))
         with self._db() as db:
             row=db.execute('SELECT answer,prompt_sha FROM deliberations WHERE evidence_sha=? AND role=?',
