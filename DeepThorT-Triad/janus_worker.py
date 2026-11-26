@@ -91,7 +91,7 @@ class JanusWorker:
             answer=self._counsel.request(society='janus',goal=pending['focus'],problem=problem,
                                          evidence=evidence,worker_report=True)
             if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
-                self.store.recommend(evidence_key=key,job_id=pending['job_id'],
+                self.store.recommend(evidence_key=key,job_id=pending.get('job_id'),
                      problem=problem,proposal=answer,origin='local_model')
         self._counsel_thread=threading.Thread(target=coordinate,name='JANUS-worker-coordination',daemon=True)
         self._counsel_thread.start()
