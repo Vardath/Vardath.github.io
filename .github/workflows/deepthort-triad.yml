@@ -69,6 +69,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_native_repair_v37.py -v
       - run: python -m unittest discover -s tests -p test_workflow_doctrine_v38.py -v
       - run: python -m unittest discover -s tests -p test_delegation_v39.py -v
+      - run: python -m unittest discover -s tests -p test_team_delegation_v40.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -165,6 +166,8 @@ jobs:
           python -m unittest discover -s tests -p test_workflow_doctrine_v38.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_delegation_v39.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_team_delegation_v40.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
