@@ -109,6 +109,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_git_observation_ability.py -v
       - run: python -m unittest discover -s tests -p test_workflow_template_ability.py -v
       - run: python -m unittest discover -s tests -p test_dependency_audit_ability.py -v
+      - run: python -m unittest discover -s tests -p test_source_security_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -285,6 +286,8 @@ jobs:
           python -m unittest discover -s tests -p test_workflow_template_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_dependency_audit_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_source_security_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

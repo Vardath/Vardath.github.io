@@ -659,7 +659,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Security: dependency audit','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -7612,6 +7612,48 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(buttons,text='Approve online lookup',command=approve).pack(side='right')
         ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=6)
 
+    def _review_source_security(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Source scan unavailable','Finish active operations before scanning.',parent=self);return
+        if getattr(self,'_source_security_review_active',False):return
+        project=str(self.project)
+        self._source_security_review_active=True
+        def work():
+            try:
+                from deepthort_local.source_security import review
+                plan=review(project,self.inspection_exclusions.paths(project))
+                self.events.put(('source_security_review',project,plan,None))
+            except Exception as exc:self.events.put(('source_security_review',project,None,str(exc)[:500]))
+        threading.Thread(target=work,name='JANUS-source-security-review',daemon=True).start()
+
+    def _finish_source_security_review(self,project,plan,error):
+        self._source_security_review_active=False
+        if error:
+            messagebox.showwarning('Source scan unavailable',error,parent=self);return
+        if not self._editor_idle(project,proposal=True):return
+        from deepthort_local.source_security import exclusions
+        try:
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:
+                raise ValueError('Inspection exclusions changed; review again')
+            fp=plan['inventory']
+            if not messagebox.askyesno('Approve local Python security scan',
+                f"Project: {project}\nFiles: {fp['files']} | Omitted files/directories: {fp['omitted']}\nSHA-256: {fp['sha']}\n\n"
+                'Check for a bounded set of potential Python security risks. No source execution, network or modifications. Not a complete security audit.',parent=self):return
+            if not self._editor_idle(project,proposal=True):return
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:
+                raise ValueError('Inspection exclusions changed; review again')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/'source_security.py'
+            guards=[snapshot_file(script)]
+            exclusion_file=self.inspection_exclusions.path
+            guards.append(snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent'))
+            argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
+            action=self.janus.add_approved_action(argv=argv,cwd=project,label='Security: reviewed source scan',kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS source security scan #{action} queued; inspect potential-risk IDs, file and line evidence in process output.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('Source scan not queued',str(exc),parent=self)
+
     def _git_advisory_provider(self,project):
         from deepthort_local.git_observation import advisory
         if not advisory(getattr(self,'_shared_git_history',None),project):return None
@@ -7680,6 +7722,8 @@ class DeepThorTDesktop(tk.Tk):
             self._review_integration_suite();return
         if choice=='Security: dependency audit':
             self._review_dependency_audit();return
+        if choice=='Security: source scan':
+            self._review_source_security();return
         if choice=='Git: review staged commit':
             self._review_staged_git_commit();return
         if choice=='Git: commit selected files':
@@ -8702,6 +8746,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._finish_integration_suite_review(*event[1:])
             elif kind=='dependency_audit_review':
                 self._finish_dependency_audit_review(*event[1:])
+            elif kind=='source_security_review':
+                self._finish_source_security_review(*event[1:])
             elif kind=='git_history_observation':
                 self._finish_git_history(*event[1:])
             elif kind=='tool_end':
