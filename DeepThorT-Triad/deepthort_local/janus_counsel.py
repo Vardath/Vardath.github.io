@@ -75,7 +75,7 @@ class LocalCounsel:
                           + 'Distinguish known facts from hypotheses; no command execution, permission changes, source edits or claims of successful tests. Request user input only if necessary. Give concise scoped corrective advice.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'
                     f'OBSERVED PROBLEM: {problem[:700]}\n'
-                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:900]}')
+                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:2500 if worker_report else 900]}')
             payload=json.dumps({'model':MODEL,'triad_role':society,'messages':[{'role':'system','content':guidance},
                       {'role':'user','content':prompt}], 'max_tokens':200, 'stream':False}).encode()
             req=urllib.request.Request(HOST+'/v1/chat/completions',data=payload,method='POST',
