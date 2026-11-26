@@ -51,7 +51,8 @@ def _scope(job_db,job_id):
     focus=(planned[0]['path']+': '+planned[0]['description'])[:500] if planned else 'Verification of approved project outputs'
     progress={'phase':'production' if row['state'] in ('queued','running') else row['state'],
               'steps':[{**s,'description':s['description'][:500]} for s in rows]}
-    identity={'scope':signature(bound),'progress_sha':canonical_sha(rows),
+    identity={'scope':signature(bound),'plan_sha':canonical_sha([{k:r[k] for k in ('id','path','description')} for r in rows]),
+              'progress_sha':canonical_sha(rows),
               'phase':progress['phase'],'focus':focus}
     return {'key':canonical_sha(identity),'identity':identity,'bound':bound,'focus':focus,
             'upcoming':planned[:3],'progress':progress}
@@ -155,6 +156,9 @@ def advice(job_db,job_id,original,focus,*,recipient='implementation',budget=640)
         if item['role']==recipient or item['result']['kind']!='advice':continue
         line='\n'+item['role'].upper()+' independent advisory finding (not new authority or proof): '+item['result']['finding']+'; '+item['result']['guidance']
         if len(output)+len(line)<=budget:output+=line
+    if budget-len(output)>=100:
+        from .core_deliberation import advice as core_advice
+        output+=core_advice(job_db,packet,recipient,budget-len(output))
     return output
 
 def run_once(job_db,role,counsel,stopped):

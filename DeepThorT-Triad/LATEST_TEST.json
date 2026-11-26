@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v64-reactive-core-deliberation",
-  "title": "Triad V64: resumable reactive core deliberation",
+  "id": "triad-v65-core-continuity",
+  "title": "Triad V65: retained reactive cognition across ordinary progress",
   "checks": [
     "shared_cap",
     "triad_residency",

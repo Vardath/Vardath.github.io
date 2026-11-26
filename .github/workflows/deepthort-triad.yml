@@ -95,6 +95,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_worker_selection_v62.py -v
       - run: python -m unittest discover -s tests -p test_supervision_v63.py -v
       - run: python -m unittest discover -s tests -p test_core_deliberation_v64.py -v
+      - run: python -m unittest discover -s tests -p test_core_continuity_v65.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -243,6 +244,8 @@ jobs:
           python -m unittest discover -s tests -p test_supervision_v63.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_core_deliberation_v64.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_core_continuity_v65.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
