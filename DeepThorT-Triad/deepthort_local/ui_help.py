@@ -9,6 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Approve local commit': 'Queue the exact reviewed staged Git tree and message through JANUS. No staging, remote push or claim of test success.',
     'Project knowledge…': 'Open the current workspace document library; enroll, discover, search, reindex or forget local references without editing source files.',
     'Refresh knowledge': 'Recheck exact source fingerprints and list current or stale knowledge entries.',
     'Discover documents': 'Perform a bounded read-only scan for eligible workspace manuals; PDFs require explicit enrollment.',

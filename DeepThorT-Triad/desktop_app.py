@@ -658,7 +658,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: review staged commit','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -7201,12 +7201,72 @@ class DeepThorTDesktop(tk.Tk):
         self._log(f'Approved installation of {name} via winget package ID {package}.')
         if self._start_command(cmd,cwd=ROOT,label=f'Install {name}',kind='installation'):
             self._manual_catalog_install=name
+    def _review_staged_git_commit(self):
+        if getattr(self,'_git_preview_active',False):return
+        if self.active_job is not None or self.active_conversation is not None:
+            messagebox.showinfo('Project busy','Finish the active work before reviewing a commit.',parent=self);return
+        executable=shutil.which('git')
+        if not executable:
+            messagebox.showwarning('Git unavailable','Install Git using Computer & Tools first.',parent=self);return
+        project=Path(self.project).resolve()
+        self._git_preview_active=True
+        def work():
+            try:
+                from deepthort_local.git_commit import preview
+                review=preview(executable,project)
+                self.events.put(('git_commit_preview',str(project),executable,review,None))
+            except Exception as exc:
+                self.events.put(('git_commit_preview',str(project),executable,None,str(exc)[:500]))
+        threading.Thread(target=work,name='JANUS-git-preview',daemon=True).start()
+
+    def _finish_git_commit_preview(self,project,executable,review,error):
+        self._git_preview_active=False
+        if self._quitting or not self.project or str(self.project)!=project:return
+        if error:
+            messagebox.showwarning('Git review unavailable',error,parent=self);return
+        dialog=tk.Toplevel(self);dialog.title('Review exact staged Git commit')
+        dialog.geometry('850x600');dialog.transient(self)
+        identity=review['identity']
+        ttk.Label(dialog,text='Local branch: '+identity['ref']+' | Parent: '+identity['head'][:12]).pack(anchor='w',padx=8,pady=5)
+        ttk.Label(dialog,text='Only the displayed staged changes will be committed. No push, staging, hooks or test claim.').pack(anchor='w',padx=8)
+        frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=6)
+        diff=tk.Text(frame,wrap='none');scroll=ttk.Scrollbar(frame,command=diff.yview)
+        horizontal=ttk.Scrollbar(dialog,orient='horizontal',command=diff.xview)
+        diff.configure(yscrollcommand=scroll.set,xscrollcommand=horizontal.set)
+        scroll.pack(side='right',fill='y');diff.pack(side='left',fill='both',expand=True);horizontal.pack(fill='x',padx=8)
+        diff.insert('1.0',review['diff']);diff.configure(state='disabled')
+        ttk.Label(dialog,text='Commit message:').pack(anchor='w',padx=8)
+        msg=tk.StringVar();ttk.Entry(dialog,textvariable=msg).pack(fill='x',padx=8,pady=4)
+        def approve():
+            if (self._quitting or self.disk_gate.gaming() or self.active_job is not None
+                    or self.active_conversation is not None or not self.project or str(self.project)!=project):
+                messagebox.showwarning('Commit deferred','Project or resource state changed; review again.',parent=dialog);return
+            try:
+                from deepthort_local.git_commit import approved_plan
+                from deepthort_local.action_guards import snapshot_file
+                plan=approved_plan(review,msg.get())
+                if not messagebox.askyesno('Approve local commit',
+                    'Commit exactly this staged tree to the displayed local branch? Git runs with your user rights. Only approve trusted repositories. No remote push.',parent=dialog):return
+                script=ROOT/'deepthort_local'/'git_commit.py'
+                argv=[sys.executable,'-I','-B',str(script),'--git',executable,'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
+                action=self.janus.add_approved_action(argv=argv,cwd=project,label='Git: reviewed staged commit',
+                    kind='tool',user_approved=True,input_guards=[snapshot_file(script),snapshot_file(executable,kind='stat')])
+                dialog.destroy();self._log(f'JANUS approved Git commit action #{action} queued. Exact tree will be checked again; see JANUS process log.')
+                self._show_janus_status()
+            except (OSError,ValueError,PermissionError) as exc:
+                messagebox.showwarning('Git commit not queued',str(exc),parent=dialog)
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=8,pady=8)
+        ttk.Button(buttons,text='Approve local commit',command=approve).pack(side='right')
+        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=6)
+
     def _run_project_check(self):
         if not self.project:
             messagebox.showinfo('Project needed','Choose a project folder before running local tools.');return
         if self.disk_gate.gaming():
             messagebox.showwarning('Gaming priority','A configured game is running. Project build/test I/O is deferred.');return
         choice=self.check_choice.get()
+        if choice=='Git: review staged commit':
+            self._review_staged_git_commit();return
         if choice=='Git: status':cmd=['git','status','--short']
         elif choice=='Python: unit tests':cmd=[sys.executable,'-m','unittest','discover']
         elif choice=='Node.js: npm test':cmd=['npm.cmd','test'] if os.name=='nt' else ['npm','test']
@@ -8211,6 +8271,8 @@ class DeepThorTDesktop(tk.Tk):
                               'No gameplay acceptance implied.')
                     self.status.set('Isolated GUI: '+receipt['status']+
                                     '; details in Processes and diagnostics.')
+            elif kind=='git_commit_preview':
+                self._finish_git_commit_preview(*event[1:])
             elif kind=='tool_end':
                 label,tooltype,code,job_id=event[1:5]
                 verification_output=event[5] if len(event)>5 else None
