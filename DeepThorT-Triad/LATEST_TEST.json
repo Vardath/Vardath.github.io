@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v45-project-midi",
-  "title": "Triad V45: project-bound native MIDI, worker coordination and native acceptance",
+  "id": "triad-v46-adaptive-dispatch",
+  "title": "Triad V46: measured adaptive admissions and independent project dispatch",
   "checks": [
     "shared_cap",
     "triad_residency",
