@@ -552,6 +552,7 @@ class DeepThorTDesktop(tk.Tk):
         self.file_title=tk.StringVar(value='Choose a file or request a new file proposal')
         ttk.Label(fhead,textvariable=self.file_title).pack(side='left')
         ttk.Button(fhead,text='Apply approved change',command=self._apply_proposal).pack(side='right')
+        ttk.Button(fhead,text='Edit selected file…',command=self._edit_selected_source).pack(side='right',padx=4)
         self.file_preview=self._text(files_tab,height=25,wrap='none')
         self.file_preview.pack(fill='both',expand=True)
         self._preview('Select a file on the left.\n\nRequest a proposed edit in Chats.\n'
@@ -1534,6 +1535,7 @@ class DeepThorTDesktop(tk.Tk):
         menu=tk.Menu(self,tearoff=False)
         kind,value=self._file_rows.get(row,('project',self.files.item(row,'text') if row else None))
         if row and self.project and kind=='project':
+            menu.add_command(label='Edit selected file…',command=lambda r=value:self._edit_selected_source(r))
             menu.add_command(label='Exclude from inspection (keep file on disk)',
                              command=lambda r=value:self._exclude_project_file(r))
         elif row and self.project and kind=='x4_reference':
@@ -5642,19 +5644,110 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs();self.tabs.select(1)
         messagebox.showwarning('DeepThorT needs attention',
                   f'Job #{jobid} stopped:\n\n{reason[:900]}\n\nInspect the Work queue. You may revise the prompt, resume or cancel.')
+    def _editor_idle(self,project,*,proposal=False):
+        if (self._quitting or not self.project or str(self.project)!=project or self.disk_gate.gaming()
+                or self.active_job is not None or self.active_conversation is not None or self._reviewed_git_pending()
+                or self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                or any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))):
+            return False
+        return proposal or self._branch_switch_allowed(project)
+
+    def _review_source_diff(self,review,parent):
+        dialog=tk.Toplevel(parent);dialog.title('Review exact source change');dialog.geometry('850x620');dialog.transient(parent)
+        base=review['base']
+        ttk.Label(dialog,text=base['path']+' — '+('syntax checked (not tested)' if review['syntax_checked'] else 'no built-in syntax checker; not tested')).pack(anchor='w',padx=8,pady=6)
+        ttk.Label(dialog,text='Exact current source to proposed edit. Existing file backed up; nothing executed.').pack(anchor='w',padx=8)
+        frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=6)
+        view=tk.Text(frame,wrap='none',font=('Consolas',10))
+        y=ttk.Scrollbar(frame,command=view.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=view.xview)
+        view.configure(yscrollcommand=y.set,xscrollcommand=x.set)
+        view.grid(row=0,column=0,sticky='nsew');y.grid(row=0,column=1,sticky='ns');x.grid(row=1,column=0,sticky='ew')
+        frame.grid_rowconfigure(0,weight=1);frame.grid_columnconfigure(0,weight=1)
+        view.insert('1.0',review['diff']);view.configure(state='disabled')
+        approved=[False]
+        def approve():approved[0]=True;dialog.destroy()
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=8,pady=8)
+        ttk.Button(buttons,text='Approve WRITE ONLY',command=approve).pack(side='right')
+        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=4)
+        dialog.grab_set();self.wait_window(dialog)
+        return approved[0]
+
+    def _edit_selected_source(self,relative=None):
+        if not self.project or not (relative or self.current_file):
+            messagebox.showinfo('Select a file','Choose an existing project source file, not a reference.',parent=self);return
+        project=str(self.project);relative=relative or self.current_file
+        try:
+            if not self._editor_idle(project):
+                raise ValueError('Finish or cancel unfinished project work before direct editing')
+            from deepthort_local.interactive_editor import snapshot,prepare,save
+            base=snapshot(project,relative)
+            if base['path'] in self.inspection_exclusions.paths(self.project):
+                raise ValueError('Restore the excluded file before editing')
+        except (OSError,ValueError) as exc:
+            messagebox.showwarning('Edit unavailable',str(exc),parent=self);return
+        dialog=tk.Toplevel(self);dialog.title('Edit '+base['path']);dialog.geometry('900x650');dialog.transient(self)
+        frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
+        editor=tk.Text(frame,wrap='none',font=('Consolas',11),undo=True)
+        y=ttk.Scrollbar(frame,command=editor.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=editor.xview)
+        editor.configure(yscrollcommand=y.set,xscrollcommand=x.set)
+        editor.grid(row=0,column=0,sticky='nsew');y.grid(row=0,column=1,sticky='ns');x.grid(row=1,column=0,sticky='ew')
+        frame.grid_rowconfigure(0,weight=1);frame.grid_columnconfigure(0,weight=1)
+        editor.insert('1.0',base['text']);editor.edit_reset()
+        bar=ttk.Frame(dialog);bar.pack(fill='x',padx=8,pady=(0,8))
+        term=tk.StringVar()
+        ttk.Entry(bar,textvariable=term,width=24).pack(side='left')
+        def find():
+            if not term.get():return
+            start=editor.index('insert');hit=editor.search(term.get(),start,stopindex='end') or editor.search(term.get(),'1.0',stopindex=start)
+            if hit:
+                end=editor.index(hit+'+'+str(len(term.get()))+'c')
+                editor.tag_remove('sel','1.0','end');editor.tag_add('sel',hit,end);editor.mark_set('insert',end);editor.see(hit)
+        def cancel():
+            if editor.get('1.0','end-1c')==base['text'] or messagebox.askyesno('Discard edits','Close without saving the edited source?',parent=dialog):dialog.destroy()
+        def review_save():
+            try:
+                if not self._editor_idle(project):raise ValueError('Project state changed; finish current work before saving')
+                review=prepare(base,editor.get('1.0','end-1c'))
+                if not self._review_source_diff(review,dialog):
+                    dialog.grab_set();return
+                dialog.grab_set()
+                if not self._editor_idle(project) or editor.get('1.0','end-1c')!=review['text']:
+                    raise ValueError('Editor or project state changed after review')
+                dest=save(review,STATE/'backups')
+                dialog.destroy()
+                self._log('User-reviewed direct source edit saved: '+str(dest))
+                self.status.set('Source saved with backup; verification not run.')
+                if self.current_file==base['path'] and not self.proposed:self._preview(review['text'])
+                self._refresh_files()
+            except (OSError,ValueError) as exc:
+                messagebox.showwarning('Source edit not saved',str(exc),parent=dialog)
+        ttk.Button(bar,text='Find next',command=find).pack(side='left',padx=4)
+        ttk.Button(bar,text='Undo',command=lambda:editor.event_generate('<<Undo>>')).pack(side='left')
+        ttk.Button(bar,text='Redo',command=lambda:editor.event_generate('<<Redo>>')).pack(side='left')
+        ttk.Button(bar,text='Review & save…',command=review_save).pack(side='right')
+        ttk.Button(bar,text='Cancel',command=cancel).pack(side='right',padx=4)
+        dialog.protocol('WM_DELETE_WINDOW',cancel);dialog.grab_set();editor.focus_set()
+
     def _apply_proposal(self):
         if not self.proposed or not self.project:
             messagebox.showinfo('Nothing to apply','Generate a proposed file edit and review it first.');return
         target,_=self.proposed
         code=self.file_preview.get('1.0','end-1c')
         if code.startswith('PROPOSED CODE —'):code=code.split('\n',2)[-1]
-        if not messagebox.askyesno('Approve this file write',
-                   f'Write the reviewed code to:\n{self.project / target}\n\n'
-                   'Existing files will be backed up. This does NOT execute the code.',parent=self):return
+        project=str(self.project);proposal=self.proposed;jobid=self.proposal_job;stepid=self.proposal_step
         try:
-            if self.proposal_job is not None and self._block_superseded_build(self.jobs.get(self.proposal_job)):
-                raise PlanError('This file proposal belongs to the pre-amendment plan')
-            dest=apply_approved_file(self.project,target,code,STATE/'backups')
+            from deepthort_local.interactive_editor import snapshot,prepare,save
+            if not self._editor_idle(project,proposal=True):raise ValueError('Project or resource state is busy')
+            review=prepare(snapshot(project,target,allow_missing=True),code)
+            if not self._review_source_diff(review,self):return
+            if (not self._editor_idle(project,proposal=True) or self.proposed!=proposal
+                    or self.proposal_job!=jobid or self.proposal_step!=stepid):
+                raise ValueError('Proposal or project changed during review')
+            if jobid is not None:
+                current=self.jobs.get(jobid)
+                if not current or current['state']!='waiting_approval' or current['project']!=project or self._block_superseded_build(current):
+                    raise PlanError('Proposal no longer matches the pending approved job')
+            dest=save(review,STATE/'backups')
         except Exception as e:
             self._log('File write refused: '+str(e));messagebox.showerror('Write blocked',str(e));return
         if self.proposal_job is not None:
@@ -7277,7 +7370,7 @@ class DeepThorTDesktop(tk.Tk):
         # Prior grants are workspace-bound, not branch-bound. Do not change
         # the worktree while an incomplete project job/roadmap could resume.
         counts=self.jobs.count(project)
-        if any(n for state,n in counts.items() if state not in ('complete','failed','cancelled','answered')):
+        if any(n for state,n in counts.items() if state not in ('complete','failed','cancelled','responded','answered')):
             return False
         with self.roadmap_runs.db() as db:
             if db.execute("SELECT 1 FROM roadmap_runs WHERE project=? AND state NOT IN ('complete','cancelled') LIMIT 1",(project,)).fetchone():

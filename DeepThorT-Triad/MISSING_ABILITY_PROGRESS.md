@@ -13,7 +13,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 1 | 45 | Git commit management | Partial — reviewed staged and selected-file commits; Linux/Windows green; initial/merge commits and native acceptance outstanding |
 | 2 | 46 | Git branch management | Source extended: reviewed local create/list/switch/rename/merged-only delete. Pass 002 green; Pass 003 CI pending. Native desktop acceptance outstanding. |
 | 3 | 47 | Git worktree management | Source implemented: bounded local inventory, reviewed creation and clean-only linked removal; Pass 004 CI pending. Native acceptance and autonomous worktree assignment outstanding. |
-| 4 | 239 | Interactive code editing | Existing partial; completion not started in this programme |
+| 4 | 239 | Interactive code editing | Source extended: direct selected-file editing, undo/redo/find, exact diff review and stale-source guarded backup save; existing proposal approval hardened. Pass 005 CI pending; native UI acceptance outstanding. |
 | 5 | 242 | Integration testing | Existing partial; completion not started in this programme |
 | 6 | 249 | Git status and history integration | Existing partial; completion not started in this programme |
 | 7 | 267 | Workflow templates | Existing partial; completion not started in this programme |
@@ -382,3 +382,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 - Worktree management: bounded exact native inventory (path, ref, HEAD, lock/prune state); add an unused existing local branch into an explicitly chosen absent directory outside all registered worktrees; revalidate source and destination identity; verify resulting checkout. Remove only existing attached linked worktrees (not primary/current), with same Git common directory, unchanged commit and no staged, modified, ignored or untracked files. No forced removal or branch deletion. Protect linked/locked targets, active application/state and unfinished target jobs/roadmaps. Uses existing reviewed action dispatcher and resource controls.
 - Three actual Git fixture regressions cover creation/removal, preservation of branch, nested and occupied destinations, ignored files, primary and locked worktrees. Native GUI/model-led isolated worktree assignment remains unverified. Local Git checkout may run trusted repository filters; worktrees are not a sandbox. No automatic cleanup of partially failed operations.
 - Next rank 4 / ID 239 interactive code editing (inspect existing editor and checkpoint mechanisms before extending). Verify Pass 003 and 004 CI first. No installer.
+
+## Pass 005 — 27 November 2026
+
+- Reused the existing Files tab and backup writer; direct selected-file editor with find, undo/redo, discard confirmation and exact diff review. Preserve UTF-8 BOM and consistent LF/CRLF, refuse stale source, protected paths, binary, mixed line endings or unsupported size. Static Python/XML/JSON/TOML/SVG validation where supported; no execution or test claim. Require no unfinished project work for direct edits. The existing generated-proposal approval now uses the same exact reviewed source snapshot and checks pending job identity after review.
+- Fixed completed `responded` jobs being incorrectly counted as incomplete for branch/direct-edit admission. Four real file fixtures for exact bytes, backup, stale/tampered rejection, syntax, new source and protected path/newline handling. CI pending. The source editor is not an IDE/LSP or a security sandbox; native UI verification remains outstanding.
+- Next rank 5 / ID 242 integration testing, after checking outstanding CI. No installer.

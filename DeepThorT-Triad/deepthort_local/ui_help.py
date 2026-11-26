@@ -9,6 +9,8 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Edit selected file…': 'Open a direct UTF-8 editor with undo, redo and search. Review the exact diff before a backed-up save; no code execution.',
+    'Review & save…': 'Review exact source changes and check the original file has not changed before saving.',
     'Approve local commit': 'Queue the exact reviewed staged Git tree and message through JANUS. No staging, remote push or claim of test success.',
     'Project knowledge…': 'Open the current workspace document library; enroll, discover, search, reindex or forget local references without editing source files.',
     'Refresh knowledge': 'Recheck exact source fingerprints and list current or stale knowledge entries.',
