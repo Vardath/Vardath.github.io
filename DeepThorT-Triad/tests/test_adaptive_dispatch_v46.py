@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 from triad_server import Pool
-from deepthort_local.adaptive_admission import capacity,optional_ready,mandatory_ready,GIB
+from deepthort_local.adaptive_admission import capacity,admission_ready,GIB
 from deepthort_local.role_inbox import serial_rank
 from deepthort_local.triad_profiles import PROFILES
 from deepthort_local.triad_errors import WorkerFailure
@@ -26,13 +26,13 @@ class AdaptiveTests(unittest.TestCase):
         self.assertEqual(capacity(None),0)
         self.assertEqual(capacity((0,5*GIB,40*GIB)),0)
         self.assertEqual(capacity((26*GIB,41*GIB,40*GIB)),0)
-    def test_aging_and_optional_slot_reservation(self):
+    def test_aging_includes_required_memory(self):
         earlier=(0,1,'implementation');later=(90,2,'sentinel')
-        self.assertTrue(mandatory_ready(set(),[earlier,later],earlier,1,serial_rank,90))
-        self.assertFalse(mandatory_ready({'janus'},[earlier],earlier,1,serial_rank,90))
-        self.assertFalse(optional_ready(set(),[earlier],4))
-        self.assertFalse(optional_ready({'janus'},[],2))
-        self.assertTrue(optional_ready({'janus'},[],3))
+        self.assertTrue(admission_ready(set(),[earlier,later],earlier,1,serial_rank,90))
+        self.assertFalse(admission_ready({'janus'},[earlier],earlier,1,serial_rank,90))
+        memory=(0,1,'memory');review=(100,2,'sentinel')
+        self.assertTrue(admission_ready(set(),[memory,review],memory,1,serial_rank,100))
+        self.assertFalse(admission_ready({'janus'},[memory,review],memory,1,serial_rank,100))
     def test_capacity_changes_without_evicting_running_role(self):
         free=[4*GIB]
         p=pool(lambda:(26*GIB,free[0],40*GIB))
@@ -57,7 +57,6 @@ class AdaptiveTests(unittest.TestCase):
                 while p.status(False)['admission_waiting']==0 and time.monotonic()<deadline:time.sleep(.02)
                 self.assertEqual(p.status(False)['admission_slots'],1)
                 self.assertFalse(second.is_set())
-                with self.assertRaises(WorkerFailure):p.infer('memory',[],2)
                 free[0]=6*GIB
                 with p.admission_lock:
                     p.resource_sample_at=-float('inf');p.admission_lock.notify_all()
@@ -76,13 +75,34 @@ class AdaptiveTests(unittest.TestCase):
             self.assertEqual(p.infer('implementation',[],2),'ok')
         self.assertEqual(p.status(False)['admission_slots'],1)
         self.assertTrue(p.serial_memory_mode)
-    def test_sample_failure_does_not_admit_optional_inference(self):
-        def sample():raise OSError('fixture')
+    def test_sample_failure_queues_recall_until_capacity_returns(self):
+        restored=threading.Event()
+        def sample():
+            if not restored.is_set():raise OSError('fixture')
+            return (26*GIB,4*GIB,40*GIB)
         p=pool(sample)
         self.assertEqual(p.status(False)['admission_slots'],0)
-        with patch('triad_server.request') as request:
-            with self.assertRaises(WorkerFailure):p.infer('memory',[],2)
-            request.assert_not_called()
+        errors=[];done=threading.Event()
+        def recall():
+            try:p.infer('memory',[],2)
+            except Exception as exc:errors.append(exc)
+            finally:done.set()
+        answer={'model':'memory','choices':[{'message':{'content':'ok'}}]}
+        with patch('triad_server.request',return_value=answer) as request:
+            thread=threading.Thread(target=recall,daemon=True);thread.start()
+            try:
+                deadline=time.monotonic()+2
+                while p.status(False)['admission_waiting']==0 and time.monotonic()<deadline:time.sleep(.01)
+                self.assertEqual(p.status(False)['admission_waiting'],1)
+                request.assert_not_called()
+            finally:
+                restored.set()
+                with p.admission_lock:
+                    p.resource_sample_at=-float('inf');p.admission_lock.notify_all()
+                thread.join(3)
+            self.assertTrue(done.is_set())
+            self.assertFalse(errors)
+            request.assert_called_once()
     def test_reserved_workspace_does_not_block_unrelated_queue(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);a=root/'a';b=root/'b';a.mkdir();b.mkdir()
