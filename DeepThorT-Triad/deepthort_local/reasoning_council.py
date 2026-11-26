@@ -39,7 +39,7 @@ class ReasoningCouncil:
             db.close()
 
     def _run(self, client, *, role, session, evidence_sha, prompt, stage=None, max_tokens=240) -> str:
-        from .triad_profiles import role_for_council, PROFILES, RUNTIME_VERSION
+        from .triad_profiles import role_for_council, ALL_PROFILES as PROFILES, RUNTIME_VERSION
         assigned=role_for_council(role)
         if type(max_tokens) is not int or not 1<=max_tokens<=768:
             raise ValueError('Invalid council output budget')
