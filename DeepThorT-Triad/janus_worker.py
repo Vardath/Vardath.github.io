@@ -90,7 +90,7 @@ class JanusWorker:
             if not still_current(self.jobs_db,ident):return
             try:problem,evidence=counsel_fields(pending,self.jobs_db)
             except (ValueError,OSError):return
-            structured=eligible(self.jobs_db,pending)
+            structured=structured_report is not None and eligible(self.jobs_db,pending)
             answer=self._counsel.request(society='janus',goal=pending['focus'],problem=problem,
                                          evidence=evidence,worker_report=True,coordination='propose' if structured else '')
             if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
