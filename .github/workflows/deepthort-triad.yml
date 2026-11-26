@@ -80,6 +80,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_adaptive_dispatch_v46.py -v
       - run: python -m unittest discover -s tests -p test_memory_duty_v47.py -v
       - run: python -m unittest discover -s tests -p test_worker_reports_v48.py -v
+      - run: python -m unittest discover -s tests -p test_creative_coordination_v49.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -198,6 +199,8 @@ jobs:
           python -m unittest discover -s tests -p test_memory_duty_v47.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_worker_reports_v48.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_creative_coordination_v49.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

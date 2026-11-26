@@ -135,7 +135,7 @@ class SentinelStore:
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(creative,sort_keys=True),salience=.75,uncertainty=.3))
         reports=observation.get('worker_reports',{}).get('reports',[])
         if reports:
-            frames.insert(1,SenseFrame('peer','granite_dependency_report',json.dumps(reports[:2],sort_keys=True),salience=.85,uncertainty=.7))
+            frames.insert(1,SenseFrame('peer','production_worker_dependency_report',json.dumps(reports[:2],sort_keys=True),salience=.85,uncertainty=.7))
         memory=observation.get('memory_duties',{})
         if memory.get('reports'):
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory['reports'],sort_keys=True),salience=.8,uncertainty=.5))
@@ -441,7 +441,7 @@ class JanusSentinel:
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
                                       goal=goal,alternatives=alternatives)
-        # Evaluate worker dependency claims independently of JANUS's answer.
+        # Evaluate Granite or Gemma dependency claims independently of JANUS's answer.
         # These are asynchronous advisory consultations, not approval gates.
         pending_report=None
         if not self.stopping and not observation['game_detected'] and not j.get('paused'):

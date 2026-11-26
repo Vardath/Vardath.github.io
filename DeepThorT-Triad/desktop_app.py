@@ -4295,6 +4295,14 @@ class DeepThorTDesktop(tk.Tk):
                 self.project_midi.reviewed(lease,contract,folder,receipt,review)
                 self.events.put(('project_midi_ready',lease))
             except Exception as exc:
+                from deepthort_local.worker_reports import WorkerReport
+                if isinstance(exc,WorkerReport) and exc.sender=='multimedia' and not stopped():
+                    try:
+                        self.project_midi.report_dependency(lease,contract,exc.report)
+                        self.events.put(('project_midi_report',lease,str(exc)))
+                        return
+                    except Exception as report_error:
+                        exc=report_error
                 self.project_midi.fail(lease,str(exc))
                 self.events.put(('project_midi_error',lease,str(exc)))
         self._creative_lane_thread=threading.Thread(target=work,daemon=True,name='ProjectGemma')
@@ -4587,7 +4595,15 @@ class DeepThorTDesktop(tk.Tk):
                             def worker_report(report):
                                 if stopped_memory():raise PlanError('Worker report superseded or stopped')
                                 return self.project_assignments.report_dependency(assignment,root_request_for_job(j,self.conversations),report)
-                            production_client=ProjectRoleClient(self.client,contract,report=worker_report)
+                            def resolve_dependency(report,budget):
+                                if stopped_memory() or self.disk_gate.gaming():return ''
+                                evidence=self.project_assignments.supply_dependency(assignment,self.jobs.get(jobid),
+                                    self.jobs.steps(jobid),step,original,amendments,STATE/'project-grants',report,budget,
+                                    enabled=self._project_work_is_enabled(),exclude=self.inspection_exclusions.paths(project))
+                                if evidence:
+                                    self.events.put(('log',f'JANUS supplied verified saved dependency bytes to Granite for job #{jobid}; independent review still required.'))
+                                return evidence
+                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
@@ -7566,6 +7582,10 @@ class DeepThorTDesktop(tk.Tk):
                     self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
                               f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
+            elif kind=='project_midi_report':
+                if self._project_midi_pending and self._project_midi_pending[0]==event[1]:
+                    self._project_midi_pending=None
+                    self._log(event[2]+'; both societies can assess the scoped claim. Independent work remains eligible.')
             elif kind=='project_midi_ready':self._finish_project_midi(event[1])
             elif kind=='project_midi_error':self._finish_project_midi(event[1],event[2])
             elif kind=='creative_lane_finished':

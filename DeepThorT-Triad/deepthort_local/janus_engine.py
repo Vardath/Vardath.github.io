@@ -423,7 +423,7 @@ class JanusStore:
         if project_midi['active'] or project_midi['recent']:
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(project_midi,sort_keys=True),salience=.75,uncertainty=.3))
         if worker_reports['reports']:
-            frames.insert(1,SenseFrame('peer','granite_dependency_report',json.dumps(worker_reports['reports'][:2],sort_keys=True),salience=.85,uncertainty=.7))
+            frames.insert(1,SenseFrame('peer','production_worker_dependency_report',json.dumps(worker_reports['reports'][:2],sort_keys=True),salience=.85,uncertainty=.7))
         if memory_duties['reports']:
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory_duties['reports'],sort_keys=True),salience=.8,uncertainty=.5))
         for action in actions[:3]:

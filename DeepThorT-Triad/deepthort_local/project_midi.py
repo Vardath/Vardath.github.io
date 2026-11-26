@@ -39,6 +39,30 @@ class ProjectMidi:
                 contract TEXT NOT NULL,contract_sha TEXT NOT NULL,state TEXT NOT NULL,
                 staged TEXT,review TEXT,receipt TEXT,detail TEXT NOT NULL DEFAULT '')""")
 
+            db.execute("""CREATE TABLE IF NOT EXISTS creative_reports_v49(
+                lease TEXT PRIMARY KEY,report TEXT NOT NULL,receipt_sha TEXT NOT NULL)""")
+
+    def report_dependency(self,lease,contract,report):
+        from .worker_reports import parse_report,PREFIX,creative_request,creative_envelope
+        report=parse_report(PREFIX+json.dumps(report))
+        if not creative_request(self.runs.path.parent/'jobs.sqlite3',contract,states=('active',)):
+            raise ValueError('Stale creative report scope')
+        with self.runs.db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row,bound=self._row(db,contract['task']['id'])
+            run=db.execute("SELECT * FROM roadmap_runs WHERE request_id=?",(contract['request_id'],)).fetchone()
+            if (not row or row['lease']!=lease or row['state']!='assigned' or bound!=contract
+                    or not run or run['state']!='active' or run['creative_midi']!=1
+                    or run['mixed_sha']!=contract['plan_sha'] or run['manifest_sha256']!=contract['code_sha']):
+                raise ValueError('Stale creative report assignment')
+            item=creative_envelope(lease,contract,report)
+            db.execute("INSERT INTO creative_reports_v49 VALUES(?,?,?)",(lease,json.dumps(report,sort_keys=True),canonical_sha(item)))
+            db.execute("UPDATE project_midi_v45 SET state='blocked',detail=? WHERE lease=?",
+                       ('Gemma reported '+report['kind']+': '+report['need'],lease))
+            db.execute("UPDATE roadmap_runs SET state='blocked',detail=?,updated_at=CURRENT_TIMESTAMP WHERE request_id=?",
+                       ('Gemma dependency claim awaiting coordination; not verified',contract['request_id']))
+        return item
+
     def recover(self):
         with self.runs.db() as db:
             db.execute("UPDATE project_midi_v45 SET state='interrupted',detail='Inspect private staging and project output; no automatic replay' WHERE state IN ('assigned','reviewed','publishing')")

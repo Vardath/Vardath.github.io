@@ -69,7 +69,7 @@ class LocalCounsel:
                       'Never claim you executed commands, altered files or verified results. '
                       'You may only recommend, not authorize, further actions.')
             if worker_report:
-                guidance=('A production worker has made an UNVERIFIED dependency claim. '
+                guidance=('A software or multimedia production worker has made an UNVERIFIED dependency claim. '
                           'Your independent role is to assess it, not to blindly accept it. '
                           + ('Identify the smallest testable way to resolve the dependency using existing approved work or capabilities. Identify independent branches that can progress. ' if society=='janus' else 'Challenge whether the dependency is real, whether it conflicts with the original specification, and what exact evidence must be checked. ')
                           + 'Distinguish known facts from hypotheses; no command execution, permission changes, source edits or claims of successful tests. Request user input only if necessary. Give concise scoped corrective advice.')
