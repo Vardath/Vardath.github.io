@@ -6834,13 +6834,14 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.multimedia_profile import install_plan
         components=install_plan(ROOT)
         if not components:
-            messagebox.showinfo('AI installed','All four intelligent checkpoints, the diffusion tool and native runtime are present. Run latest test to check actual operation.',parent=self);return
+            messagebox.showinfo('AI installed','All five intelligent checkpoints, the diffusion tool and native runtime are present. Run latest test to check actual operation.',parent=self);return
         commands=[([sys.executable,str(ROOT/script),*args],label)
                   for script,args,label in components]
         download_description='Missing components:\n'+'\n'.join('• '+label for _,label in commands)
         if not messagebox.askyesno('Approve AI installation',
              download_description+'\n\nExisting valid language model files are preserved. '
              'Gemma 4 E2B INT4 (~4.36 GB, Apache-2.0) is the fourth intelligent AI. '
+             'Qwen2.5-1.5B INT4 (~936 MB, Apache-2.0) is the fifth memory AI. '
              'Stable Diffusion (~2.3 GB, CreativeML OpenRAIL-M) is a separate image-production tool. '
              'Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
