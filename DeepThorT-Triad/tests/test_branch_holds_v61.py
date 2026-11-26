@@ -9,7 +9,7 @@ from deepthort_local.task_graph import TaskGraphStore
 from deepthort_local.project_authority import issue_grant,record_file
 from deepthort_local.project_assignments import ProjectAssignments
 from deepthort_local.agent_contract import canonical_sha
-from deepthort_local.worker_reports import observe_granite_reports
+from deepthort_local.worker_reports import observe_granite_reports,counsel_fields,still_current
 from deepthort_local.branch_holds import park,blocked_steps,wait
 from deepthort_local.corrective_coordination import eligible,propose,pending_review,review,approved,requeue,queued_target,consume
 
@@ -60,6 +60,8 @@ class BranchTests(unittest.TestCase):
         first=self.ready();self.assertEqual(first['path'],'engine.py')
         item=self.report(first)
         self.assertEqual(self.job()['state'],'queued')
+        self.assertTrue(still_current(self.jobs.path,item['receipt_sha']))
+        self.assertIn(self.original,counsel_fields(item,self.jobs.path)[1])
         self.assertEqual(self.ready()['path'],'manual.md')
         self.jobs.change(self.id,'running','Independent manual')
         self.accept(item)

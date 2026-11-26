@@ -7855,7 +7855,7 @@ class DeepThorTDesktop(tk.Tk):
                         parked=False
                         if self._project_work_is_enabled() and not self._superseded_build(job):
                             try:parked=park(self.jobs,self.graphs,job,event[4])
-                            except (ValueError,OSError,KeyError,RuntimeError):
+                            except (ValueError,OSError,KeyError,RuntimeError,__import__('sqlite3').Error):
                                 parked=False
                         if not parked:self.jobs.change(ident,'needs_input',WAIT+event[4],allowed=('running',))
                         self._log(f'Job #{ident}: {event[2]}; scoped report delivered to both societies. '+(

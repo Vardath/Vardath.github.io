@@ -149,7 +149,8 @@ def observe_worker_reports(job_db):
 
 def still_current(job_db,receipt_sha):
     from .worker_notices import observe_notices
-    return (any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
+    return (bool(observe_granite_reports(job_db,receipt_sha=receipt_sha)['reports'])
+            or any(r['receipt_sha']==receipt_sha for r in observe_gemma_reports(job_db)['reports'])
             or bool(observe_notices(job_db,receipt_sha=receipt_sha)))
 
 def saved_dependency_catalog(job_db,item):
@@ -196,7 +197,8 @@ def counsel_fields(item,job_db):
         original=req['prompt']
     else:
         from .worker_notices import JOB_STATES
-        bound=live_scope(job_db,item['job_id'],item['request_id'],states=JOB_STATES if notice else ('running','needs_input','failed'))
+        if not still_current(job_db,item['receipt_sha']):raise ValueError('Stale Granite report')
+        bound=live_scope(job_db,item['job_id'],item['request_id'],states=JOB_STATES if notice else ('running','needs_input','failed','queued'))
         if not bound or bound['spec_sha']!=item['spec_sha']:
             raise ValueError('Worker report no longer has its original specification')
         original=bound['original']
