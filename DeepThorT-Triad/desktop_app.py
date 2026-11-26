@@ -268,6 +268,25 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.mixed_roadmap import MixedRoadmaps
         self.mixed_roadmaps=MixedRoadmaps(STATE/'mixed-roadmaps.sqlite3')
         self.jobs = JobStore(STATE/'jobs.sqlite3')
+        from deepthort_local.memory_observer import MemoryObserver
+        from deepthort_local.reasoning_council import ReasoningCouncil
+        def background_memory_available():
+            if (self._quitting or self.queue_paused or self.disk_gate.gaming()
+                    or (getattr(self,'_latest_test_thread',None) and self._latest_test_thread.is_alive())):
+                return False
+            health=getattr(self,'last_server_health',None) or {}
+            memory=health.get('memory_model') or {}
+            return bool(health.get('ready') and health.get('serial_memory_mode') is False
+                        and memory.get('resident') and not memory.get('busy'))
+        def background_memory_select(evidence,prompt,tokens):
+            if not background_memory_available():raise RuntimeError('Memory observation deferred')
+            client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
+            return ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3')._run(
+                client,role='MEMORY_SELECT',session='observer-'+evidence[:24],
+                evidence_sha=evidence,prompt=prompt,max_tokens=tokens)
+        self.memory_observer=MemoryObserver(path=self.jobs.path,select=background_memory_select,
+            available=background_memory_available,
+            report=lambda event,**kw:record(STATE,'desktop',event,**kw))
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
         self.graphs = TaskGraphStore(STATE/'task-graph.sqlite3')
         self.checkpoints = SourceCheckpoints(STATE/'source-checkpoints')
@@ -1971,18 +1990,10 @@ class DeepThorTDesktop(tk.Tk):
             tree.see(str(items[0]['id']));refresh_detail()
 
     def _governed_memory(self,original,project,chat_id,scope,focus,phase,*,job_id=0,budget=600,cancelled=None,stage=None,client=None,section=''):
-        from deepthort_local.memory_governor import govern
-        from deepthort_local.reasoning_council import ReasoningCouncil
-        if str(project)=='(general)':return ''
-        lease=None
-        if client is None:lease=self._planning_council_client()
-        try:
-            return govern(self.jobs,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
-                client or lease or self.client,project=str(project),chat_id=chat_id,original=original,
-                scope=str(scope),focus=focus,phase=phase,job_id=job_id,budget=budget,
-                cancelled=cancelled,stage=stage,section=section)
-        finally:
-            if lease is not None:lease.release()
+        # Historical memory is advisory. Never wait for model inference here.
+        self.memory_observer.observe(original=original,project=project,chat_id=chat_id,
+            scope=scope,focus=focus,phase=phase,job_id=job_id,section=section,cancelled=cancelled)
+        return ''
 
     def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
@@ -1995,6 +2006,16 @@ class DeepThorTDesktop(tk.Tk):
                 memory=self._governed_memory(original,project,chat,session,focus,'review_'+kind,
                     job_id=memory_job['id'] if memory_job else 0,cancelled=cancelled,stage=stage,
                     client=advisor or self.client) if chat else ''
+            chat=memory_job['chat_id'] if memory_job else memory_chat
+            if chat:
+                # A build's memory_override may have been captured before recall finished.
+                # Check the scoped mailbox afresh at each mandatory review.
+                self.memory_observer.observe(original=original,project=project,chat_id=chat,
+                    scope=session,focus=focus,phase='review_'+kind,
+                    job_id=memory_job['id'] if memory_job else 0,section=section,cancelled=cancelled)
+                if not memory:
+                    memory=self.memory_observer.advice(original=original,project=project,chat_id=chat,
+                        focus=focus,job_id=memory_job['id'] if memory_job else 0,cancelled=cancelled)
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
                 focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
@@ -3820,32 +3841,25 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Agent verification receipt unavailable: '+str(error)[:180])
 
     def _dispatch_memory_busy(self):
-        gate=self.__dict__.get('_dispatch_memory_gate')
-        return bool(gate and gate.busy())
+        # Observation does not own the project dispatch gate.
+        return False
 
     def _dispatch_memory_review(self,binding,identity,focus,phase,proposal):
-        from deepthort_local.dispatch_memory import DispatchMemoryGate
         from deepthort_local.workflow_design import current_source
         from deepthort_local.reasoning_council import sha
         source=self.conversations.get(binding['request_id'])
         if not source or not current_source(binding,self.conversations):
             raise ValueError('Workflow specification is no longer current')
         key=sha(json.dumps([binding,identity,phase,proposal],sort_keys=True,ensure_ascii=False))
-        scope='dispatch-'+key[:32]
         def stopped():
             return (self._quitting or self.queue_paused or self.disk_gate.gaming()
                     or not current_source(binding,self.conversations))
-        def review():
-            if stopped():raise ValueError('Workflow memory review cancelled')
-            memory=self._governed_memory(source['prompt'],source['project'],source['chat_id'],scope,
-                focus,phase,cancelled=stopped,stage=lambda message:self.events.put(('log',message)))
-            if memory:
-                self._sentinel_alignment(source['prompt'],source['project'],scope,focus,
-                    json.dumps(proposal,ensure_ascii=False),kind='plan',cancelled=stopped,
-                    memory_override=memory,stage=lambda message:self.events.put(('log',message)))
-            if stopped():raise ValueError('Workflow changed during memory review')
-        gate=self.__dict__.setdefault('_dispatch_memory_gate',DispatchMemoryGate())
-        return gate.check(key,review)
+        if stopped():return False
+        self._governed_memory(source['prompt'],source['project'],source['chat_id'],
+            'dispatch-'+key[:32],focus,phase,cancelled=stopped)
+        # Existing exact approval, grant, source binding and dispatch checks
+        # remain authoritative. Optional history cannot hold up approved work.
+        return True
 
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
@@ -7587,6 +7601,7 @@ class DeepThorTDesktop(tk.Tk):
         self.after(125,self._handle_events)
     def _quit(self):
         self._quitting=True
+        self.memory_observer.close()
         self._latest_test_cancel.set()
         self._restart_cancelled_node_pid=None
         record(STATE,'desktop','desktop_shutdown',active_job=self.active_job,active_conversation=self.active_conversation)
