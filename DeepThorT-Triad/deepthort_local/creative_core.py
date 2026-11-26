@@ -93,7 +93,10 @@ def parse_score(answer):
     return value
 
 
-def generate_score_reply(generate,prompt):
+def project_report_enabled(packet):
+    return packet['requester']=='janus' and packet['scope'].startswith('roadmap-midi:')
+
+def generate_score_reply(generate,prompt,*,allow_report=False):
     """One correction on invalid output, using the original brief unchanged."""
     for attempt in range(2):
         answer=generate(prompt if attempt==0 else
@@ -101,6 +104,9 @@ def generate_score_reply(generate,prompt):
             'Return only the requested JSON object, with no explanation, reasoning or Markdown. '
             'Preserve every original requirement. Do not add fields.')
         try:
+            if allow_report:
+                from .worker_reports import parse_report
+                if parse_report(score_payload(answer)) is not None:return answer
             parse_score(answer)
             return answer
         except (ValueError,TypeError):
@@ -260,6 +266,11 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
         write_json(folder/'request.json',packet)
         try:
             answer,pid=generate(folder,cancelled,notify)
+            if cancelled():raise RuntimeError('Creative task cancelled')
+            if project_report_enabled(packet):
+                from .worker_reports import parse_report,WorkerReport
+                report=parse_report(score_payload(answer))
+                if report is not None:raise WorkerReport(report,'multimedia')
             score=parse_score(answer)
             if cancelled():raise RuntimeError('Creative task cancelled')
             if accept is not None and not accept(score):
