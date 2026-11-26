@@ -39,5 +39,9 @@ def parallel_media_admitted(health,expected_pid,headroom):
     if not isinstance(models,dict) or any(not isinstance(models.get(role),dict)
         or models[role].get('resident') is not True for role in ('janus','sentinel','implementation')):
         return False
+    memory=health.get('memory_model')
+    if not isinstance(memory,dict) or memory.get('resident') is not True:return False
+    active=[models[r].get('generating') for r in ('janus','sentinel','implementation')]+[memory.get('generating')]
+    if any(type(v) is not bool for v in active) or sum(active)>=slots:return False
     try:return bool(headroom())
     except (ValueError,OSError,RuntimeError,KeyError):return False

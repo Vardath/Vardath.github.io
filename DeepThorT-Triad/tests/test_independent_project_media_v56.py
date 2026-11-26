@@ -25,11 +25,14 @@ class IndependentProjectTests(unittest.TestCase):
 
     def test_overlap_requires_live_broker_and_extra_headroom(self):
         health={'pid':42,'ready':True,'serial_memory_mode':False,'admission_waiting':0,
-                'admission_slots':2,'models':{r:{'resident':True} for r in ('janus','sentinel','implementation')}}
+                'admission_slots':2,'models':{r:{'resident':True,'generating':r=='implementation'} for r in ('janus','sentinel','implementation')},
+                'memory_model':{'resident':True,'generating':False}}
         self.assertTrue(parallel_media_admitted(health,42,lambda:True))
         self.assertFalse(parallel_media_admitted(health,42,lambda:False))
         for override in ({'pid':43},{'serial_memory_mode':True},{'admission_waiting':1},
-                         {'admission_slots':1},{'ready':False},{'models':{}}):
+                         {'admission_slots':1},{'ready':False},{'models':{}},
+                         {'memory_model':{'resident':True,'generating':True}},
+                         {'memory_model':{'resident':False,'generating':False}}):
             self.assertFalse(parallel_media_admitted(dict(health,**override),42,
                 lambda:self.fail('Resource probe should not run for denied broker')))
 
