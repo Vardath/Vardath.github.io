@@ -824,12 +824,13 @@ class DeepThorTDesktop(tk.Tk):
             if not primary_proc or primary_proc.poll() is not None:return None
             return local_server_status(timeout=1.5)
         def residency_probe():
-            try:models=resident_roles(health(),expected_primary)
-            except (ValueError,OSError,TypeError,KeyError) as error:
-                return {'status':'blocked','detail':str(error)}
-            observed['resident']=True
-            return {'status':'passed','detail':'Three distinct model child PIDs ready in the supervised Triad broker.',
-                    'evidence':{'models':{r:{'name':m['name'],'pid':m['pid']} for r,m in models.items()}}}
+            from deepthort_local.residency_wait import wait_residency
+            models,result=wait_residency(health,expected_primary,resident_roles,
+                alive=lambda:bool(primary_proc and primary_proc.poll() is None),
+                cancelled=cancel,
+                notify=lambda message:self.events.put(('latest_test_progress',message)))
+            observed['resident']=models is not None and result['status']=='passed'
+            return result
 
         def janus_core_probe():
             # Independent of the neural council. The persistent 11-core JANUS
