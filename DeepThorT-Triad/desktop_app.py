@@ -4597,11 +4597,13 @@ class DeepThorTDesktop(tk.Tk):
                         prompt=composed_prompt(prompt,paths)
                     steps=self.jobs.steps(jobid)
                     if not steps:
+                        if retry_requested:raise PlanError('Corrective assignment has no original approved file stages')
                         answer=self.client.chat(j['chat_id'],build_plan_prompt(prompt,inventory),max_tokens=640)
                         self.events.put(('job_plan',jobid,answer))
                         return
                     step=self.jobs.next_step(jobid)
                     if not step:
+                        if retry_requested:raise PlanError('Corrective assignment no longer has a planned file stage')
                         self.events.put(('build_files_done',jobid))
                         return
                     project=Path(j['project'])
@@ -4676,7 +4678,7 @@ class DeepThorTDesktop(tk.Tk):
                     dest=safe_target(project,step['path'])
                     from deepthort_local.artifact_types import require_text_target
                     require_text_target(step['path'])
-                    if amendments and self._project_work_is_enabled() and dest.is_file():
+                    if not retry_requested and amendments and self._project_work_is_enabled() and dest.is_file():
                         from deepthort_local.selective_redevelopment import candidate_for,review_retention
                         from deepthort_local.reasoning_council import ReasoningCouncil
                         try:
