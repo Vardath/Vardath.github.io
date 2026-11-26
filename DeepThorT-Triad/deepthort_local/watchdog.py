@@ -441,7 +441,7 @@ class JanusSentinel:
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
                                       goal=goal,alternatives=alternatives)
-        # Evaluate worker dependency claims independently of JANUS's answer.
+        # Evaluate Granite or Gemma dependency claims independently of JANUS's answer.
         # These are asynchronous advisory consultations, not approval gates.
         pending_report=None
         if not self.stopping and not observation['game_detected'] and not j.get('paused'):
