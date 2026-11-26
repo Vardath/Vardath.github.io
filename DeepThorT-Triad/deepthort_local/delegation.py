@@ -101,6 +101,18 @@ class DelegationStore:
             for row in rows:
                 if row['chat_id']!=exclude_chat and eligible(row):return dict(row)
             return None
+    def next_foreground(self):
+        """First noncreative pending thread head; don't overtake a creative reply."""
+        with self.db() as db:
+            rows=db.execute("""SELECT c.* FROM conversation_requests c
+                WHERE c.state='pending' AND NOT EXISTS(
+                    SELECT 1 FROM conversation_requests old
+                    WHERE old.chat_id=c.chat_id AND old.project=c.project
+                    AND old.id<c.id AND old.state IN ('pending','running','waiting_sources'))
+                ORDER BY c.id LIMIT ?""",(MAX_PENDING,)).fetchall()
+            for row in rows:
+                if not eligible(row):return dict(row)
+            return None
     def start(self,ident):
         """Claim an explicit user request, not a model-authored permission."""
         with self.db() as db:
