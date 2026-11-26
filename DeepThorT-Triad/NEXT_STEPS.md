@@ -1,3 +1,13 @@
+# Triad V37 — approved resource ceilings and native repairs
+
+Owner approved shared 50% CPU and up to 65% physical-RAM-sized aggregate committed-memory limits on 26 November 2026. Keep adaptive lower startup limit when available RAM is insufficient, 10% physical foreground reserve, one inherited Windows Job Object, nested caps and gaming-priority protection. No additional per-model CPU allowance. Existing Gemma 7 GiB and fifth memory worker 3 GiB nested allowances remain unchanged. Restart using START TRIAD.cmd to obtain the new root limits; the previous Job Object cannot be changed by a source-only update. Original DeepThorT remains unchanged.
+
+V36 actual Windows diagnostics: 17/19 passed, all 23 databases healthy, ownership memory 90.35 s (correct), price recall 56.07 s (fifth selected unrelated audio evidence; Sentinel rejected it), advisory-only .02 s. Fourth model reached native generation but returned a response that failed JSON parsing; no memory retry recorded. V37 repairs: contrastive relevance prompt explicitly allows zero evidence and excludes different tested behaviors; exact independent recall oracle unchanged. Gemma score parser accepts only complete known reasoning/Markdown wrappers enclosing one schema-valid JSON object; one corrective native generation attempt if malformed, original brief unchanged, no hardcoded scores or arbitrary JSON extraction. Keep strict exact MIDI acceptance. Native behavior and actual speedup await Windows test. All 19 checks retained; asynchronous observer remains nonblocking.
+
+Next: verify native model relevance, Gemma artifact and actual concurrent headroom; if tests fail, repair before advancing typed inter-agent creative delegation, complete application/game/document production and staged self-update backlog. Do not claim five-model inference from CI fixture results.
+
+---
+
 # Triad V36 — asynchronous memory intelligence
 
 Owner correction 26 Nov 2026: slow neural historical retrieval must not gate main work. Fifth AI observes ongoing task checkpoints, searches independently, then reports findings for JANUS/Sentinel to consider while production continues. Authoritative user requirements, current source, approvals, safety and mandatory independent Sentinel verification still gate their own operations. Do not treat historical advice as approval or proof.
