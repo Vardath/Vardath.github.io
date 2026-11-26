@@ -1,3 +1,9 @@
+# V37 native reliability update
+
+V36 reached actual Gemma native generation under the cap, but strict score parsing failed. V37 recognises complete documented thought-channel and JSON fence wrappers; rejects incomplete reasoning, arbitrary prose and extra objects, retries malformed output once with the original specification. Correctly structured but wrong musical output still fails the exact acceptance oracle. Owner approved 50% shared CPU and up to 65% RAM-sized aggregate commit; keep Gemma's own 7 GiB nested allowance and all foreground/admission protections. Native score generation and simultaneous operation remain unverified until real Windows results.
+
+---
+
 # V35 integration note
 
 Keep Gemma as independent intelligent fourth worker. V34 installed it and reached native generation, which failed due to the VLM API overload. V35 uses the documented single-turn prompt call with explicit empty image/video collections and generation_config. No fabricated output; rerun exact MIDI test. Dedicated fifth memory model is resident when admitted; fourth remains on demand, and combined headroom must be measured under the unchanged root ceiling. Future creative tasks should receive the same scoped governed memory packets and use typed inter-agent requests; no raw cross-project database access. Continue existing asset and full-production roadmap after native reliability.
