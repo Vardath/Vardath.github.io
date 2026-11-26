@@ -1,3 +1,11 @@
+# V46 owner correction: dedicated required memory worker
+
+## Owner correction — memory is required, asynchronous work
+
+Memory is a permanent fifth worker, not optional work. The broker admits its calls through the same age-adjusted queue as all text roles, even under protected serial mode. Its initial rank is below review/planning/implementation, but after 90 seconds it ties the highest rank; older tickets win. If no safe slot exists it waits in its own worker thread. Transient resource/transport refusals retain the admitted observation and retry after a delay; the main workflow never waits for retrieval. New observations at the finite backlog limit are explicitly reported rather than silently evicting queued work. Missing memory model means degraded operation, not completed five-worker acceptance. User pause, gaming protection, hard resource caps, stale/cancelled scopes, and actual failures still apply. Full durable backlog recovery across app restarts and proactive consolidation remain future work. This correction supersedes all prior optional-memory scheduling language.
+
+---
+
 # V46 adaptive inference admission and independent project queue selection
 
 Production native broker uses measured headroom and aged mandatory priority, with optional memory deferred before required work and conservative serial fallback. Independent queued jobs skip the reserved creative workspace without losing order or changing authority. Shared OS caps unchanged. More general project scheduling and proportional supervision remain necessary; native PC acceptance pending.
