@@ -987,8 +987,12 @@ class DeepThorTDesktop(tk.Tk):
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
         def memory_core_probe():
             from deepthort_local.memory_core_probe import exercise
-            return exercise(health,expected_primary,observed.get('live_memory_result'),
-                            cancelled=cancel.is_set)
+            import tempfile
+            with tempfile.TemporaryDirectory(prefix='triad-memory-overlap-') as temp:
+                client=LocalModelClient(Path(temp)/'sessions.sqlite3',timeout=180)
+                return exercise(health,expected_primary,observed.get('live_memory_result'),
+                    cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
+                    ask=lambda role,prompt,tokens:client.chat_as(role,'memory-overlap-'+role,prompt,max_tokens=tokens))
         def multimedia_core_probe():
             from deepthort_local.multimedia_core_probe import exercise
             if not observed['resident']:
