@@ -413,3 +413,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 - Reviewed dependency inventory and online OSV batch lookup through existing approved JANUS process runner. Fixed HTTPS destination, no redirect/proxy, exact package/version/ecosystem disclosure before approval, no source paths or registry URLs sent, no installs or fixes. Exact manifest fingerprint is rechecked before and after lookup. Existing dispatch hold, cancellation and resource policy retained.
 - Supports root requirements.txt simple exact pins and npm package-lock v2/v3 exact versions (including nested dependencies); omitted entries and paginated results explicitly reported; Python transitive resolution and unsupported ecosystems not claimed. No security guarantee from empty advisory list. Four offline regression cases with injected advisory responses; no live lookup in CI. Native operation and automatic scheduled triggers still outstanding. Pass 008 CI was still running when branch prepared; both passes must be green before merge. Next rank 9 / ID 44 software security vulnerability scanning. No installer.
+
+### Pass 008 CI repair carried into Pass 009
+
+- CI follow-up: Linux passed, Windows failed in all three new test setups because the fixture's raw temporary-directory spelling differed from the canonical project identity. Resolve the fixture root before creating its manifest; leave the production guard intact. Rerun both jobs.
