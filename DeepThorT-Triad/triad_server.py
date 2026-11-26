@@ -10,6 +10,8 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.request import Request,build_opener,ProxyHandler
 from urllib.error import HTTPError
 from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
+from deepthort_local.role_inbox import RoleInbox,serial_rank
+from deepthort_local.agent_doctrine import VERSION as DOCTRINE_VERSION
 from deepthort_local.triad_profiles import ROOT,PROFILES,ALL_PROFILES,MEMORY_PROFILE,memory_installed,MODEL_ID,model_path,runtime_path,ready,total_weights,installed_files
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
 
@@ -54,9 +56,11 @@ def request(port,path,key,body=None,timeout=2):
 
 class Pool:
     def __init__(self):
-        self.children={};self.memory_child=None;self.memory_stage='not installed';self.locks={r:threading.Lock() for r in ALL_PROFILES}
+        self.children={};self.memory_child=None;self.memory_stage='not installed';self.locks={r:RoleInbox(r) for r in ALL_PROFILES}
         self.admission_lock=threading.Condition()
         self.generating=set()
+        self.serial_waiters=[]
+        self.serial_sequence=0
         # Start protected. Enable parallel requests only after the compact
         # workers are all resident in the verified shared memory group.
         # A classified allocation failure restores serial mode for this session.
@@ -159,9 +163,17 @@ class Pool:
         with self.admission_lock:
             # Optional background recall never queues ahead of main work in protected serial mode.
             if role=='memory' and self.serial_memory_mode:raise WorkerFailure('memory_pressure')
-            while self.serial_memory_mode and self.generating:
-                if not self.healthy():raise WorkerFailure('worker_exit')
-                self.admission_lock.wait(.5)
+            if self.serial_memory_mode:
+                self.serial_sequence+=1
+                ticket=(time.monotonic(),self.serial_sequence,role)
+                self.serial_waiters.append(ticket)
+                try:
+                    while self.serial_memory_mode and (self.generating or min(self.serial_waiters,key=lambda t:serial_rank(t,time.monotonic()))!=ticket):
+                        if not self.healthy():raise WorkerFailure('worker_exit')
+                        self.admission_lock.wait(.5)
+                finally:
+                    self.serial_waiters.remove(ticket)
+                    self.admission_lock.notify_all()
             if not self.healthy():raise WorkerFailure('worker_exit')
             self.generating.add(role)
         try:
@@ -205,6 +217,7 @@ class Pool:
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),
             'loading_seconds':int((self.ready_at if self.ready_at is not None else time.monotonic())-self.started),'stalled':False,'error':None,
             'serial_memory_mode':serial,'memory_retries':retries,
+            'doctrine_version':DOCTRINE_VERSION,'role_queue_depths':{r:box.waiting() for r,box in self.locks.items()},
             'worker_commit_limit_bytes':self.worker_commit_limit,'control_reserve_bytes':CONTROL_RESERVE_BYTES,
             'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],
                 'resident':self.memory_ready(),'pid':self.memory_child[2] if self.memory_ready() else None,
