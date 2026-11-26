@@ -7,7 +7,10 @@ or claim of complete project acceptance.
 """
 from __future__ import annotations
 import argparse
+import cProfile
 import dis
+import math
+import pstats
 import hashlib
 import json
 import os
@@ -70,13 +73,14 @@ def fingerprint(root,*,observe=None):
     if not files:raise ValueError('No eligible project source')
     return {'sha':sha(json.dumps(files,sort_keys=True,separators=(',',':')).encode()),
             'files':len(files),'bytes':total}
-def review(root,suite,*,coverage=False):
+def review(root,suite,*,coverage=False,profile=False):
+    if coverage and profile:raise ValueError('Choose separate coverage or profiling runs')
     root=root_for(root);suite_path(root,suite)
     observed=fingerprint(root)
-    return {'schema':'janus-integration-coverage-v1' if coverage else 'janus-integration-suite-v1','project':str(root),'suite':suite,
+    return {'schema':'janus-integration-coverage-v1' if coverage else ('janus-integration-profile-v1' if profile else 'janus-integration-suite-v1'),'project':str(root),'suite':suite,
             'fingerprint':observed,'expires_at':int(time.time())+1800}
 def validate(root,plan):
-    if not isinstance(plan,dict) or set(plan)!={'schema','project','suite','fingerprint','expires_at'} or plan['schema'] not in ('janus-integration-suite-v1','janus-integration-coverage-v1'):
+    if not isinstance(plan,dict) or set(plan)!={'schema','project','suite','fingerprint','expires_at'} or plan['schema'] not in ('janus-integration-suite-v1','janus-integration-coverage-v1','janus-integration-profile-v1'):
         raise ValueError('Invalid integration review')
     if type(plan['expires_at']) is not int or not time.time()<plan['expires_at']<=time.time()+1800:
         raise ValueError('Integration review expired')
@@ -162,6 +166,31 @@ class LineCoverage:
                 'branch_coverage':False,'child_process_coverage':False,'other_thread_coverage':False,
                 'trace_intact':trace_intact,'complete_application_verified':False}
 
+PROFILE_MAX_FUNCTIONS=50
+PROFILE_MAX_FILES=4000
+
+def profile_report(profiler,root,eligible,elapsed,cpu,*,valid,intact):
+    """Observed deterministic profiler times, not production benchmark timings."""
+    rows=[]
+    for (filename,line,name),(primitive,calls,self_time,cumulative,_) in pstats.Stats(profiler).stats.items():
+        if not os.path.isabs(filename):continue
+        rel=eligible.get(os.path.normcase(os.path.abspath(filename)))
+        if rel is None:continue
+        if not all(math.isfinite(v) and v>=0 for v in (self_time,cumulative)):continue
+        rows.append({'path':rel,'line':line,'function':name[:160],
+                     'calls':calls,'primitive_calls':primitive,
+                     'self_seconds':round(self_time,9),'cumulative_seconds':round(cumulative,9)})
+    rows.sort(key=lambda r:(-r['self_seconds'],-r['cumulative_seconds'],r['path'],r['line'],r['function']))
+    reliable=bool(valid and intact and rows)
+    return {'method':'cProfile deterministic current-thread function profiling (instrumented wall time)',
+            'status':'measured' if reliable else 'inconclusive',
+            'elapsed_seconds':round(elapsed,6),'process_cpu_seconds':round(cpu,6),
+            'observed_project_functions':len(rows),'eligible_source_files':len(eligible),
+            'hotspots':rows[:PROFILE_MAX_FUNCTIONS],'details_truncated':len(rows)>PROFILE_MAX_FUNCTIONS,
+            'profile_intact':intact,'other_thread_function_profile':False,'child_process_profile':False,
+            'production_benchmark':False,'complete_application_verified':False,
+            'timing_scope':'test discovery plus execution; process CPU includes other threads; profiler overhead and resource caps affect measurements'}
+
 def run(root,plan):
     root,suite=validate(root,plan)
     coverage=None
@@ -170,16 +199,36 @@ def run(root,plan):
         if fingerprint(root,observe=coverage.observe)!=plan['fingerprint']:
             raise ValueError('Reviewed source changed during coverage preparation')
         if not coverage.files:raise ValueError('No eligible application Python bytecode lines for coverage')
+    profiler=None;profile_paths={}
+    if plan['schema']=='janus-integration-profile-v1':
+        def profile_source(relative,raw):
+            parts=Path(relative).parts
+            if (Path(relative).suffix.casefold()=='.py' and not any(x.startswith('.') or x.casefold() in COVERAGE_TEST_DIRS|COVERAGE_SKIP_DIRS for x in parts[:-1])
+                    and not parts[-1].casefold().startswith('test_') and not parts[-1].casefold().endswith('_test.py')):
+                if len(profile_paths)>=PROFILE_MAX_FILES:raise ValueError('Profiler source inventory exceeds bound')
+                profile_paths[os.path.normcase(os.path.abspath(root/relative))]=relative
+        if fingerprint(root,observe=profile_source)!=plan['fingerprint']:
+            raise ValueError('Reviewed source changed during profiler preparation')
+        if not profile_paths:raise ValueError('No eligible application Python source for profiling')
+        profiler=cProfile.Profile()
     # Explicit trusted project execution after review; no model-authored argv.
     sys.path.insert(0,str(root))
     previous_trace=sys.gettrace()
     trace_hook=coverage.trace if coverage else None
-    trace_intact=True
+    trace_intact=True;profile_intact=True
+    previous_profile=sys.getprofile();elapsed=cpu=0.0
+    start_wall=time.perf_counter();start_cpu=time.process_time()
     try:
+        if profiler is not None:profiler.enable()
         if trace_hook is not None:sys.settrace(trace_hook)
         tests=unittest.TestLoader().discover(str(suite),pattern='test_*.py')
         result=unittest.TextTestRunner(verbosity=2,resultclass=CountedResult).run(tests)
     finally:
+        if profiler is not None:
+            profile_intact=sys.getprofile() is profiler
+            profiler.disable()
+            sys.setprofile(previous_profile)
+        elapsed=max(0.0,time.perf_counter()-start_wall);cpu=max(0.0,time.process_time()-start_cpu)
         if trace_hook is not None:
             trace_intact=sys.gettrace() is trace_hook
             sys.settrace(previous_trace)
@@ -199,6 +248,9 @@ def run(root,plan):
     if coverage:
         output['coverage']=coverage.report(valid=ok,trace_intact=trace_intact)
         if ok and output['coverage']['status']=='inconclusive':output['status']='inconclusive'
+    if profiler is not None:
+        output['profile']=profile_report(profiler,root,profile_paths,elapsed,cpu,valid=ok,intact=profile_intact)
+        if ok and output['profile']['status']=='inconclusive':output['status']='inconclusive'
     return output
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--root',required=True);parser.add_argument('--plan',required=True)
