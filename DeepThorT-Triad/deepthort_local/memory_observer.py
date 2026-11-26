@@ -17,6 +17,7 @@ MAX_REPORTS=24
 TTL=300
 RETRY_AFTER=90
 DEFER_RETRY=15
+SCAN_INTERVAL=15
 
 def transient_recall(error):
     if isinstance(error,HTTPError):error=http_failure(error)
@@ -44,10 +45,22 @@ class MemoryObserver:
         self._retry_at={}
         self._closed=False
         self._thread=None
+        self._duty=None
+        self._scan_at=-float('inf')
 
     def _emit(self,event,**kw):
         try:self.report(event,**kw)
         except Exception:pass
+
+    def start_duty(self,duty):
+        """Independent initiative; scan and recall on the same worker, never the GUI."""
+        with self._cv:
+            if self._closed:return
+            self._duty=duty
+            if self._thread is None:
+                self._thread=Thread(target=self._work,name='triad-memory-observer',daemon=True)
+                self._thread.start()
+            self._cv.notify_all()
 
     def observe(self, *, project, chat_id, original, focus, phase, job_id=0,
                 section='', cancelled=None, scope=''):
@@ -59,6 +72,7 @@ class MemoryObserver:
         binding=identity(project,chat_id,original,job_id)
         focus=str(focus)[:500]
         key=(binding,sha(focus),phase,sha(section))
+        if phase=='anticipatory_recall':key+= (sha(str(scope)),)
         packet=dict(project=str(project),chat_id=chat_id,original=original,focus=focus,
                     job_id=job_id,phase=phase,section=section,cancelled=cancelled,scope=str(scope)[:160])
         with self._cv:
@@ -83,8 +97,15 @@ class MemoryObserver:
     def _work(self):
         while True:
             with self._cv:
-                while not self._closed and not self._pending:self._cv.wait()
+                while not self._closed and not self._pending and self._duty is None:self._cv.wait()
                 if self._closed:return
+                duty=self._duty
+                due=duty is not None and self.clock()>=self._scan_at
+                if due:self._scan_at=self.clock()+SCAN_INTERVAL
+            if due:
+                try:
+                    for packet in duty.scan():self.observe(**packet)
+                except Exception as exc:self._emit('memory_duty_scan_failed',error_type=type(exc).__name__)
             try:ready=self.available()
             except Exception:ready=False
             if not ready:
@@ -92,7 +113,9 @@ class MemoryObserver:
                 continue
             with self._cv:
                 if self._closed:return
-                if not self._pending:continue
+                if not self._pending:
+                    self._cv.wait(timeout=2)
+                    continue
                 now=self.clock()
                 key=next((k for k in self._pending if self._retry_at.get(k,0)<=now),None)
                 if key is None:
@@ -107,7 +130,10 @@ class MemoryObserver:
                 args={k:packet[k] for k in ('project','chat_id','original','focus','job_id')}
                 rows=retrieve(self.path,**args)
                 eligible=[r for r in rows if evidence_eligible(r)]
-                if not eligible or self._stopped(packet):continue
+                if self._stopped(packet):continue
+                if not eligible:
+                    if duty is not None:duty.complete(packet,[])
+                    continue
                 prompt=specialist_prompt(packet['original'],packet['focus'],packet['phase'],packet['section'],eligible)
                 if len(prompt)>7000:raise ValueError('Memory observation exceeds context budget')
                 answer=self.select(sha(canonical(key))+sha(prompt),prompt,MEMORY_SPECIALIST_TOKENS)
@@ -117,6 +143,7 @@ class MemoryObserver:
                 # is not a reason to drop an unchanged historical finding.
                 fresh={r['id']:r for r in retrieve(self.path,**args) if evidence_eligible(r)}
                 selected=[r for r in eligible if r['id'] in chosen and fresh.get(r['id'])==r]
+                if duty is not None:duty.complete(packet,selected)
                 if selected:
                     with self._cv:
                         if not self._closed:
@@ -154,7 +181,8 @@ class MemoryObserver:
         with self._cv:
             reports=[(k,v) for k,v in reversed(self._results.items())
                      if k[0]==binding and self.clock()-v[0]<=TTL]
-        if not reports:return ''
+        duty=self._duty
+        if not reports and duty is None:return ''
         # Deterministic retrieval only when a report exists; no neural wait.
         try:
             current={r['id']:r for r in retrieve(self.path,project=str(project),chat_id=chat_id,
@@ -171,6 +199,13 @@ class MemoryObserver:
                 line=canonical(row)+'\n'
                 if len(out)+len(line)<=budget:
                     out+=line;seen.add(ident)
+        if duty is not None:
+            try:
+                for row in duty.advice_records(project=project,chat_id=chat_id,original=original,job_id=job_id,current=current):
+                    ident=row['id'];line=canonical(row)+'\n'
+                    if ident not in seen and len(out)+len(line)<=budget:
+                        out+=line;seen.add(ident)
+            except Exception:pass
         if not seen or (cancelled and cancelled()):return ''
         self._emit('memory_observer_delivered',count=len(seen),binding_sha=sha(canonical(binding)),recipient=recipient)
         return out
