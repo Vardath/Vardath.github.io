@@ -302,6 +302,11 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','development_cycles_interrupted',
                    count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
+        from deepthort_local.delegation import DelegationStore
+        self.delegations=DelegationStore(self.conversations.path,STATE/'creative-tasks')
+        self.delegations.recover()
+        self._creative_lane_thread=None
+        self._creative_lane_stop=threading.Event()
         self.conversations.invalidate_incompatible_drafts()
         self._migrate_unapproved_requests()
         self.conversations.restore_legacy_creation_times(self.jobs.get)
@@ -800,6 +805,9 @@ class DeepThorTDesktop(tk.Tk):
                 str(error)+'\n\nUse Export diagnostics to create a new verified ZIP.',parent=self)
 
     def _run_latest_test(self):
+        if self._creative_lane_thread and self._creative_lane_thread.is_alive():
+            self._log('Latest test deferred until the independent creative assignment finishes or is stopped.')
+            return
         """One user action: fixed local checks, detailed report and ZIP receipt.
 
         A new LATEST_TEST.json changes future acceptance checks without a new
@@ -1004,6 +1012,9 @@ class DeepThorTDesktop(tk.Tk):
         def video_render_probe():
             from deepthort_local.render_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        def delegation_probe():
+            from deepthort_local.delegation_probe import exercise
+            return exercise(cancelled=cancel.is_set)
         def workflow_doctrine_probe():
             from deepthort_local.workflow_doctrine_probe import exercise
             return exercise(health=health,cancelled=cancel.is_set)
@@ -1027,7 +1038,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -4159,7 +4170,54 @@ class DeepThorTDesktop(tk.Tk):
         finally:
             self.after(1100,self._scheduler)
 
+    def _creative_lane_tick(self):
+        """Independent staged-only production; never owns the main conversation slot."""
+        if (self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
+                or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_verification_preflight',False)
+                or getattr(self,'_gui_test_active',None) is not None
+                or getattr(self,'_quiet_test_active',None) is not None
+                or any(p and p.poll() is None for p in (self.install_process,self.media_process,self.tool_process))
+                or (self._creative_lane_thread and self._creative_lane_thread.is_alive())):
+            return
+        active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
+        candidate=self.delegations.next_candidate(exclude_chat=active['chat_id'] if active else None)
+        if not candidate:return
+        ident=candidate['id']
+        if not self.delegations.start(ident):return
+        stop=threading.Event()
+        self._creative_lane_stop=stop
+        primary=self.node
+        def stopped():
+            return (stop.is_set() or self._quitting or self.queue_paused or self.disk_gate.gaming()
+                    or primary.poll() is not None or not self.delegations.current(ident))
+        def work():
+            from deepthort_local.creative_core import create_midi
+            try:
+                task=self.delegations.claim(ident,'multimedia')
+                if not task or stopped():raise RuntimeError('Creative assignment interrupted before inference')
+                folder,receipt=create_midi(requester='user',scope=task['scope'],brief=task['brief'],
+                    cancelled=stopped,notify=lambda message:self.events.put(('log','Gemma: '+message)))
+                if stopped():raise RuntimeError('Creative assignment interrupted before handoff')
+                self.delegations.composed(task,folder,receipt)
+                check=self.delegations.claim(ident,'host')
+                if not check or stopped():raise RuntimeError('Creative verification interrupted')
+                self.delegations.verify_and_deliver(check)
+                record(STATE,'desktop','creative_delegation_completed',request_id=ident,
+                    artifact_sha256=receipt['sha256'])
+            except Exception as exc:
+                self.delegations.fail(ident,str(exc),interrupted=stopped())
+                record(STATE,'desktop','creative_delegation_failed',request_id=ident,error_type=type(exc).__name__)
+            finally:
+                self.events.put(('creative_lane_finished',ident))
+        self._creative_lane_thread=threading.Thread(target=work,daemon=True,name='GemmaDelegation')
+        self._creative_lane_thread.start()
+        self._log(f'Gemma accepted independent staged assignment for request #{ident}; other production may continue.')
+        self._reload_chat()
+
     def _scheduler_once(self):
+        self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
         tool_busy=(getattr(self,'_verification_preflight',False) or self._dispatch_memory_busy() or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or
@@ -4184,7 +4242,7 @@ class DeepThorTDesktop(tk.Tk):
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
             if self.active_conversation is None:
-                incoming=self.conversations.next_pending()
+                incoming=self.delegations.next_foreground()
                 if incoming:
                     record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])
                     self._execute_conversation(incoming)
@@ -4193,6 +4251,8 @@ class DeepThorTDesktop(tk.Tk):
                 return
             games=self.disk_gate.gaming()
             skipped=('chat','plan','edit','build','image') if games else ('chat','plan','edit')
+            if self._creative_lane_thread and self._creative_lane_thread.is_alive():
+                skipped=tuple(set(skipped)|{'vision','image'})
             j=self.jobs.next_any_queued(skip_modes=skipped)
             if j:
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
@@ -6945,6 +7005,7 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Could not start local model: '+str(e))
             if not automatic:messagebox.showerror('Start AI failed',str(e))
     def _stop_ai(self):
+        self._creative_lane_stop.set()
         self._explicit_model_stop = True
         self._restart_cancelled_node_pid=None  # Explicit global stop overrides automatic reload.
         if self.active_conversation is not None:
@@ -7248,6 +7309,9 @@ class DeepThorTDesktop(tk.Tk):
                     self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
                               f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
+            elif kind=='creative_lane_finished':
+                self._log(f'Independent creative assignment #{event[1]} finished; inspect its conversation for result.')
+                self._reload_chat()
             elif kind=='conversation_reply':self._conversation_reply(event[1],event[2])
             elif kind=='video_tools_required':
                 req=self.conversations.get(event[1])
@@ -7610,6 +7674,7 @@ class DeepThorTDesktop(tk.Tk):
                     messagebox.showerror('Tool error',event[3])
         self.after(125,self._handle_events)
     def _quit(self):
+        self._creative_lane_stop.set()
         self._quitting=True
         self.memory_observer.close()
         self._latest_test_cancel.set()

@@ -1,3 +1,9 @@
+# V39 independent staged creative lane
+
+Explicit supported MIDI requests now use a durable composition -> host verification dependency graph, exact per-attempt task binding, native receipt/hash verification, atomic result delivery and independent background Gemma dispatch. No automatic project publication, no new creative modality or native correctness claim. Unsupported/attachment-dependent media requests remain under existing foreground behavior. General creative assignments from JANUS and Granite, texture/image/video/3D/music/document adapters and actual concurrent acceptance remain open.
+
+---
+
 # V38 role and typed handoff
 
 Gemma receives the host-owned multimedia intelligence role and team responsibilities on each native creative task. Existing MIDI adapter now persists an exact assignment contract (requester, multimedia assignee, scope, brief hash, doctrine hash, expected staged MIDI and acceptance), checks the contract and exact prompt in the worker, and returns a hash-bound artifact receipt. No automatic publication or general multi-agent asset dispatch yet. Native MIDI, all-five overlap and media capabilities beyond existing adapters must still be verified. Continue generic delegation and approved asset integration after native repairs.

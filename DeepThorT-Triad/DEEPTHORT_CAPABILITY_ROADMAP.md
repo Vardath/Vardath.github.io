@@ -1,3 +1,9 @@
+# V39 durable delegation progress
+
+First independent production lane now uses persistent role-tagged stages and dependency leases, with scoped composition and host validation of the existing MIDI adapter. Unrelated foreground conversation heads and implementation work can continue; same-thread order and existing approvals remain. Staged-only, not general autonomous JANUS delegation or parallel project writes. Interrupted tasks require explicit retry. Existing native acceptance remains required. Continue the approved WORKFLOW_DOCTRINE.md in order.
+
+---
+
 # V38 intelligent operating doctrine
 
 Owner approved the full workflow design and individual role responsibilities. WORKFLOW_DOCTRINE.md is the current consolidated contract; earlier sections remain historical. V38 binds fixed roles at native inference, versions council advice with role identity, adds independent bounded role inboxes and protected-serial priority/aging, binds existing MIDI handoffs to a typed immutable assignment, and delivers completed scoped memory advice to JANUS planning and Sentinel. Keep all previous acceptance checks plus new structural doctrine check. General agent task queues, dependency-aware concurrent project dispatch, adaptive resources, proportional review, wider creative production and self-update remain implementation priorities after native acceptance. No claim of finished five-agent autonomous operation.
