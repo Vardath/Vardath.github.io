@@ -192,6 +192,11 @@ class JanusStore:
         self.append_event(f'Approved process #{ident}: {label}')
         return ident
 
+    def pending_git_action(self):
+        # Hold desktop project dispatch while a reviewed Git action owns the repository.
+        with self.connect() as db:
+            return db.execute("SELECT 1 FROM janus_actions WHERE label LIKE 'Git: reviewed %' AND status IN ('approved','running') LIMIT 1").fetchone() is not None
+
     def actions(self, limit: int = 25) -> list[dict]:
         with self.connect() as db:
             db.row_factory = sqlite3.Row
