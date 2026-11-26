@@ -4710,10 +4710,24 @@ class DeepThorTDesktop(tk.Tk):
                         self.events.put(('job_plan',jobid,answer))
                         return
                     step=self.jobs.next_step(jobid)
+                    explicit_order=False
+                    preferred=None
+                    if retry_requested:
+                        from deepthort_local.corrective_coordination import queued_target
+                        preferred=queued_target(self.jobs,j)
+                    if step and self._project_work_is_enabled() and self.graphs.explicit(jobid):
+                        from deepthort_local.project_authority import _active
+                        current=self.jobs.get(jobid)
+                        _active(STATE/'project-grants',current,steps,True)
+                        step=self.graphs.ready_step(current,steps,preferred=preferred)
+                        if not step:raise PlanError('No dependency-ready approved source stage; inspect unresolved prerequisites')
+                        explicit_order=True
                     if not step:
                         if retry_requested:raise PlanError('Corrective assignment no longer has a planned file stage')
                         self.events.put(('build_files_done',jobid))
                         return
+                    if preferred is not None and step['id']!=preferred:
+                        raise PlanError('Corrective inference cannot change its reviewed target')
                     project=Path(j['project'])
                     from deepthort_local.specification_guard import master_for_job
                     original=master_for_job(j,self.conversations,self.hierarchies,self.specifications)
@@ -4729,7 +4743,7 @@ class DeepThorTDesktop(tk.Tk):
                         try:
                             authorize_file(STATE/'project-grants',current,steps,step,enabled=True)
                         except (GrantError,OSError,ValueError):
-                            if retry_requested:raise PlanError('Corrective inference lost its existing source grant')
+                            if retry_requested or explicit_order:raise PlanError('Selected dependency-ready inference lost its existing source grant')
                             self.events.put(('log',f'Job #{jobid}: no active source grant; manual review only.'))
                         else:
                             assignment,contract=self.project_assignments.begin(current,steps,step,original,amendments,
@@ -5165,8 +5179,9 @@ class DeepThorTDesktop(tk.Tk):
             return
         lease=None
         try:
-            step=self.jobs.next_step(jobid)
             steps=self.jobs.steps(jobid)
+            step=(self.graphs.ready_step(job,steps,preferred=stepid) if self.graphs.explicit(jobid)
+                  else self.jobs.next_step(jobid))
             if not step or step['id']!=stepid:raise PlanError('Retention stage changed')
             if not self._project_work_is_enabled():raise GrantError('Unattended work disabled')
             original=master_for_job(job,self.conversations,self.hierarchies,self.specifications)
@@ -5213,7 +5228,13 @@ class DeepThorTDesktop(tk.Tk):
             if self._block_superseded_build(j):
                 self._refresh_jobs()
                 return
-            step=self.jobs.next_step(jobid)
+            try:
+                step=(self.project_assignments.target_step(assignment,jobid,self.jobs.steps(jobid)) if assignment
+                      else self.jobs.next_step(jobid))
+            except (ValueError,OSError,KeyError) as error:
+                self.jobs.change(jobid,'needs_input','Assigned source target changed: '+str(error),allowed=('running',))
+                self._refresh_jobs()
+                return
             if not step:
                 self.jobs.change(jobid,'needs_input','No active step; inspect build plan',result=answer,allowed=('running',))
             else:

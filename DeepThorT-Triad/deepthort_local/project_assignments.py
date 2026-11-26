@@ -102,6 +102,16 @@ class ProjectAssignments:
         if canonical_sha(contract)!=row[3]:raise GraphError('Assignment contract changed')
         return row,contract
 
+    def target_step(self,attempt,job_id,steps):
+        """An asynchronous source result owns its exact assigned node."""
+        with self.graphs._db() as db:
+            _,contract=self._load(db,attempt,('reviewed',))
+        if contract['job_id']!=job_id:raise GraphError('Source result belongs to another job')
+        step=next((s for s in steps if s['id']==contract['step_id'] and s['state']=='planned'),None)
+        if not step or step['path']!=contract['path'] or sha(step['description'])!=contract['description_sha256']:
+            raise GraphError('Assigned source stage changed')
+        return step
+
     def review(self,attempt,kind,proposal,review):
         if kind not in ('plan','code','behavior_test'):raise GraphError('Unsupported assignment review')
         with self.graphs._db() as db:

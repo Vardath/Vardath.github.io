@@ -167,6 +167,17 @@ def requeue(jobs,row,*,validate,validate_evidence=None):
         if not any(r['path']==evidence_path for r in saved_dependency_catalog(jobs.path,item)):
             return False
         if validate_evidence is None or not validate_evidence(item,evidence_path):return False
+    # The explicit graph host validates the exact ready node, rather than
+    # interpreting the first planned stage as the only possible target.
+    explicit=False
+    try:
+        from .task_graph import TaskGraphStore
+        graph=TaskGraphStore(jobs.path.parent/'task-graph.sqlite3')
+        if graph.explicit(p['job_id']):
+            explicit=True
+            current_job=jobs.get(p['job_id'])
+            if not graph.ready_step(current_job,jobs.steps(p['job_id']),preferred=p['step_id']):return False
+    except (OSError,ValueError,sqlite3.Error):return False
     with jobs._conn() as db:
         db.row_factory=sqlite3.Row
         db.execute('BEGIN IMMEDIATE')
@@ -174,7 +185,8 @@ def requeue(jobs,row,*,validate,validate_evidence=None):
         if not fresh or dict(fresh)!=row or fresh['state']!='approved':return False
         if db.execute("""SELECT 1 FROM corrective_assignments_v50 WHERE job_id=? AND step_id=?
                          AND state IN ('queued','consumed')""",(p['job_id'],p['step_id'])).fetchone():return False
-        step=db.execute("SELECT id FROM job_steps WHERE job_id=? AND state='planned' ORDER BY sequence LIMIT 1",(p['job_id'],)).fetchone()
+        step=(db.execute("SELECT id FROM job_steps WHERE job_id=? AND id=? AND state='planned'",(p['job_id'],p['step_id'])).fetchone()
+              if explicit else db.execute("SELECT id FROM job_steps WHERE job_id=? AND state='planned' ORDER BY sequence LIMIT 1",(p['job_id'],)).fetchone())
         if not step or step[0]!=p['step_id']:return False
         if not db.execute("""UPDATE jobs SET state='queued',detail=?,updated_at=CURRENT_TIMESTAMP WHERE id=?
                  AND state='needs_input' AND detail=?""",(READY+row['report_id'],p['job_id'],WAIT+row['report_id'])).rowcount:return False
@@ -182,6 +194,18 @@ def requeue(jobs,row,*,validate,validate_evidence=None):
         db.execute("INSERT INTO job_events(job_id,note) VALUES(?,?)",(p['job_id'],'JANUS proposed and Sentinel reviewed one corrective inference; no new authority.'))
     jobs.journal(p['job_id'])
     return True
+
+def queued_target(jobs,queued_job):
+    """Read the exact reviewed retry target before assigning a ready node."""
+    detail=queued_job['detail']
+    if not detail.startswith(READY):return None
+    with closing(read(jobs.path)) as db:
+        row=db.execute("SELECT * FROM corrective_assignments_v50 WHERE report_id=? AND state='queued'",(detail[len(READY):],)).fetchone()
+    if not row:raise ValueError('Missing queued corrective assignment')
+    packet=checked_review(row)
+    if packet['job_id']!=queued_job['id']:raise ValueError('Corrective job identity changed')
+    return packet['step_id']
+
 
 def consume(jobs,queued_job,contract,*,resolve_evidence=None):
     """After the normal new assignment checks, bind and consume the exact packet."""

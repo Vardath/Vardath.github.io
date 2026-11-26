@@ -265,7 +265,9 @@ def parse_build_plan(text: str, project: str | Path, *, request: str = '',
 def build_plan_prompt(request: str, inventory: dict | None = None, *, x4_evidence: str = '') -> str:
     tools = ', '.join(x['name'] for x in (inventory or {}).get('tools', []) if x.get('found'))
     header = ('Return ONLY valid JSON with a "files" array. Each entry needs "path" '
-              'and "description". Choose concrete relative source files ordered by dependency, '
+              'and "description". Declare actual prerequisite files in descriptions as "; depends-on: path1, path2"; '
+              'use "; depends-on: none" only when a file truly has no planned file prerequisite. '
+              'Omit the declaration if uncertain; never invent dependencies or independence. Choose concrete relative source files, '
               'up to 2 in this first pass; subsequent passes will complete the plan. Keep each description short and concrete. No absolute paths or shell/install commands. Do not confuse an example '
               'format with the actual project type. Do NOT invent verified game asset identifiers. '
               'Plan text source and asset-generation scripts here, not binary images, models, audio, executables or packages. Native outputs require a separate artifact workflow.\n')

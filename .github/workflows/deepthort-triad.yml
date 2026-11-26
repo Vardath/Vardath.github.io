@@ -90,6 +90,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_dependency_handoff_v57.py -v
       - run: python -m unittest discover -s tests -p test_early_media_v58.py -v
       - run: python -m unittest discover -s tests -p test_workflow_attention_v59.py -v
+      - run: python -m unittest discover -s tests -p test_dependency_ready_v60.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -228,6 +229,8 @@ jobs:
           python -m unittest discover -s tests -p test_early_media_v58.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_workflow_attention_v59.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_dependency_ready_v60.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

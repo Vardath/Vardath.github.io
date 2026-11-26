@@ -439,6 +439,7 @@ class SpecificationIndex:
           'Return exactly {"files":[{"path":"relative/path.ext","description":"what this file implements"}]}. '
           'If a file has a SPECIFIED, exact dependency on another source file, you may append '
           '"; depends-on: relative/other.ext" to its description; never invent dependencies. '
+          'For a genuinely independent file use "; depends-on: none". Omit if unknown. A complete exact declaration map permits dependency-ready execution rather than file-list order. '
           'When a user requirement is explicitly labelled REQ-N and you propose a genuine test file, '
           'append "; verifies: REQ-N"; for Python API files use "; provides: Symbol" or '
           '"; uses: path/to/provider.py::Symbol" only when this is a real intended contract. '
