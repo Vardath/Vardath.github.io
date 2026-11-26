@@ -1,3 +1,9 @@
+# V42 reactive recursive exchanges and independent outward messages
+
+Preserve original JANUS reactive 11 × 7 structure, register bounded conversation events, pass actual predecessor conclusions through strict forward flow, and suppress redundant peer echo via material fingerprints. Independent JANUS/Sentinel Interface outboxes can send new recorded advisory findings without a prompt, with source and topology rechecks, durable unread state and explicit acknowledgement. No automatic action. The original standalone JANUS source remains read-only. Foreground neural answer integration, autonomous novelty beyond observed recommendations, and general approved-project delegation remain open.
+
+---
+
 # V41 persistent recursive societies and delegated work
 
 The owner requires original JANUS and Sentinel cognition to remain distinct from their neural resources. Preserve both eleven-core, seven-faculty processors and their independent persistent histories, and route bounded durable task observations into both. JANUS retains heartbeat during approved long-running tools; Sentinel independently assesses mismatched leases. Existing native acceptance now verifies both society topologies and recent cycle evidence, not neural quality. General project-bound delegation and independent concurrent ready-stage dispatch remain next.
