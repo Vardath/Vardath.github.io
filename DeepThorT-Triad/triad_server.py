@@ -167,9 +167,11 @@ class Pool:
                 self.serial_sequence+=1
                 ticket=(time.monotonic(),self.serial_sequence,role)
                 self.serial_waiters.append(ticket)
+                deadline=ticket[0]+600
                 try:
                     while self.serial_memory_mode and (self.generating or min(self.serial_waiters,key=lambda t:serial_rank(t,time.monotonic()))!=ticket):
                         if not self.healthy():raise WorkerFailure('worker_exit')
+                        if time.monotonic()>=deadline:raise WorkerFailure('worker_busy','Protected serial admission wait expired; reschedule')
                         self.admission_lock.wait(.5)
                 finally:
                     self.serial_waiters.remove(ticket)
