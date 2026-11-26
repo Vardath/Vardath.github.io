@@ -220,8 +220,8 @@ def run_team(store,ident,client,create_midi,stopped,notify,*,overlap_allowed=Non
             else:
                 finished.put((role,None))
         thread=threading.Thread(target=work,name='Team-'+role,daemon=True)
-        active[role]=thread
         thread.start()
+        active[role]=thread
 
     def collect(item):
         role,error=item
@@ -254,7 +254,7 @@ def run_team(store,ident,client,create_midi,stopped,notify,*,overlap_allowed=Non
                     role=next(r for r in production if r not in active)
                     try:allowed=overlap_allowed(tuple(active),role) is True
                     except Exception:allowed=False
-                    if allowed:task=store.claim(ident,role)
+                    if allowed and not cancelled():task=store.claim(ident,role)
             if task:
                 claims+=1
                 if task['role'] in production:
