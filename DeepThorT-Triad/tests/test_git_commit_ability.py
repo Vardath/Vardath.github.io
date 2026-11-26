@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from deepthort_local.git_commit import preview,approved_plan,apply
+from deepthort_local.git_commit import preview,approved_plan,apply,preview_selected,branch_inventory,branch_plan,apply_branch
 
 @unittest.skipUnless(shutil.which('git'),'Git required')
 class GitCommitTests(unittest.TestCase):
@@ -46,4 +46,39 @@ class GitCommitTests(unittest.TestCase):
         with self.assertRaises(ValueError):preview(self.exe,sub)
         self.git('checkout','--detach')
         with self.assertRaises(ValueError):preview(self.exe,self.root)
+    def test_selected_file_commit(self):
+        self.write('tracked.txt','reviewed\n')
+        self.write('new.txt','new\n')
+        self.write('other.txt','do not stage\n')
+        review=preview_selected(self.exe,self.root,['tracked.txt','new.txt'])
+        self.assertNotIn('other.txt',review['diff'])
+        self.assertEqual(self.git('diff','--cached','--name-only'),'')
+        result=apply(self.exe,self.root,approved_plan(review,'Selected'))
+        self.assertEqual(self.git('show','HEAD:tracked.txt'),'reviewed')
+        self.assertEqual(self.git('show','HEAD:new.txt'),'new')
+        self.assertEqual(self.git('status','--short'),'?? other.txt')
+    def test_selected_stale_and_staged_guard(self):
+        self.write('tracked.txt','first\n')
+        plan=approved_plan(preview_selected(self.exe,self.root,['tracked.txt']),'First')
+        self.write('tracked.txt','second\n')
+        with self.assertRaises(ValueError):apply(self.exe,self.root,plan)
+        self.assertEqual(self.git('diff','--cached','--name-only'),'')
+        self.git('add','tracked.txt')
+        with self.assertRaises(ValueError):preview_selected(self.exe,self.root,['tracked.txt'])
+    def test_branch_create_and_no_overwrite(self):
+        before=self.git('rev-parse','HEAD')
+        original=self.git('symbolic-ref','HEAD')
+        review=branch_inventory(self.exe,self.root)
+        plan=branch_plan(self.exe,self.root,review,'review/feature')
+        result=apply_branch(self.exe,self.root,plan)
+        self.assertEqual(self.git('rev-parse','refs/heads/review/feature'),before)
+        self.assertEqual(self.git('symbolic-ref','HEAD'),original)
+        self.assertFalse(result['checked_out'])
+        with self.assertRaises(ValueError):apply_branch(self.exe,self.root,plan)
+    def test_branch_stale_and_invalid(self):
+        review=branch_inventory(self.exe,self.root)
+        with self.assertRaises(ValueError):branch_plan(self.exe,self.root,review,'../escape')
+        plan=branch_plan(self.exe,self.root,review,'feature')
+        self.write('tracked.txt','new\n');self.git('add','tracked.txt')
+        with self.assertRaises(ValueError):apply_branch(self.exe,self.root,plan)
 if __name__=='__main__':unittest.main()
