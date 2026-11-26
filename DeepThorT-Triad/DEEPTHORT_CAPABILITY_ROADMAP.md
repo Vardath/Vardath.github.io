@@ -1,3 +1,9 @@
+# V46 adaptive inference admission and independent project queue selection
+
+Production native broker uses measured headroom and aged mandatory priority, with optional memory deferred before required work and conservative serial fallback. Independent queued jobs skip the reserved creative workspace without losing order or changing authority. Shared OS caps unchanged. More general project scheduling and proportional supervision remain necessary; native PC acceptance pending.
+
+---
+
 # V45 project-bound Gemma MIDI
 
 Approved mixed roadmaps can now produce a real project MIDI artifact through the existing shared fourth-core lane, private native staging, decoded score/acceptance checks, independent Sentinel review and host no-overwrite publication. Receipt revalidation gates later milestones. Other artifact formats and full native acceptance still pending; broaden safe project scheduling and adapters next.
