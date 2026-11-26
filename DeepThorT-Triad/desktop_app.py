@@ -276,7 +276,15 @@ class DeepThorTDesktop(tk.Tk):
                 return False
             health=getattr(self,'last_server_health',None) or {}
             memory=health.get('memory_model') or {}
+            # Do not start optional recall while an on-demand specialist owns the
+            # shared creative lane, or a required native caller is waiting.
+            creative=getattr(self,'_creative_lane_thread',None)
+            if creative and creative.is_alive():return False
+            slots=health.get('admission_slots',0)
+            active=sum(bool(row.get('generating')) for row in (health.get('models') or {}).values())
             return bool(health.get('ready') and health.get('serial_memory_mode') is False
+                        and type(slots) is int and slots>=2 and active<slots-1
+                        and health.get('admission_waiting')==0
                         and memory.get('resident') and not memory.get('busy'))
         def background_memory_select(evidence,prompt,tokens):
             if not background_memory_available():raise RuntimeError('Memory observation deferred')
@@ -3954,6 +3962,7 @@ class DeepThorTDesktop(tk.Tk):
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
         if (not self._project_work_is_enabled() or self.queue_paused
+            or self._project_midi_pending is not None
             or getattr(self,'_verification_preflight',False)
             or (self._latest_test_thread and self._latest_test_thread.is_alive())
             or getattr(self,'_mcp_discovery_active',False)
@@ -4355,7 +4364,9 @@ class DeepThorTDesktop(tk.Tk):
                             return False
                         health=local_server_status(timeout=1.0) or {}
                         if (health.get('pid')!=primary.pid or health.get('ready') is not True
-                                or health.get('serial_memory_mode') is not False):
+                                or health.get('serial_memory_mode') is not False
+                                or health.get('admission_slots',0)<2
+                                or health.get('admission_waiting',0)>0):
                             return False
                         models=health.get('models') or {}
                         if any(models.get(role,{}).get('resident') is not True
@@ -4427,11 +4438,9 @@ class DeepThorTDesktop(tk.Tk):
             skipped=('chat','plan','edit','build','image') if games else ('chat','plan','edit')
             if self._creative_lane_thread and self._creative_lane_thread.is_alive():
                 skipped=tuple(set(skipped)|{'vision','image'})
-            j=self.jobs.next_any_queued(skip_modes=skipped)
+            reserved=self._project_midi_pending[4] if self._project_midi_pending else None
+            j=self.jobs.next_any_queued(skip_modes=skipped,exclude_project=reserved)
             if j:
-                if self._project_midi_pending:
-                    from deepthort_local.task_graph import same_workspace
-                    if same_workspace(j['project'],self._project_midi_pending[4]):return
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
                 self._execute_job(j)
                 return
