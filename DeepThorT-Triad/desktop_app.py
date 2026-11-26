@@ -964,8 +964,14 @@ class DeepThorTDesktop(tk.Tk):
                 self._council_busy=True
             try:
                 from deepthort_local.live_memory_probe import exercise
-                return exercise(health,expected_primary,cancel,
+                initial=health() or {}
+                from deepthort_local.memory_core_probe import resident_memory
+                try:resident_memory(initial,expected_primary);use_memory=True
+                except (ValueError,TypeError,KeyError):use_memory=False
+                result=exercise(health,expected_primary,cancel,use_memory_core=use_memory,
                     notify=lambda stage:self.events.put(('latest_test_progress','live memory: '+stage)))
+                observed['live_memory_result']=result
+                return result
             finally:self._council_busy=False
         def application_workflow_probe():
             from deepthort_local.application_workflow_probe import exercise
@@ -979,6 +985,10 @@ class DeepThorTDesktop(tk.Tk):
         def video_render_probe():
             from deepthort_local.render_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        def memory_core_probe():
+            from deepthort_local.memory_core_probe import exercise
+            return exercise(health,expected_primary,observed.get('live_memory_result'),
+                            cancelled=cancel.is_set)
         def multimedia_core_probe():
             from deepthort_local.multimedia_core_probe import exercise
             if not observed['resident']:
@@ -988,7 +998,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
