@@ -111,4 +111,22 @@ class EvidenceCoordination(unittest.TestCase):
         (self.project/'schema.py').write_text('changed',encoding='utf-8')
         with self.assertRaises(ValueError):self.begin()
 
+    def test_cancel_during_evidence_acquisition_does_not_consume(self):
+        row=self.accept()
+        self.assertTrue(self.queue(row))
+        queued=self.jobs.get(self.ident)
+        self.jobs.change(self.ident,'running','Processing',allowed=('queued',))
+        self.attempt,contract=self.begin()
+        def cancel_while_resolving(path):
+            result=self.resolve(path)
+            self.jobs.cancel(self.ident)
+            return result
+        with self.assertRaises(ValueError):
+            consume(self.jobs,queued,contract,resolve_evidence=cancel_while_resolving)
+        with self.jobs._conn() as db:
+            self.assertEqual(db.execute("SELECT state FROM corrective_assignments_v50 WHERE report_id=?",
+                (self.item['receipt_sha'],)).fetchone()[0],'queued')
+        self.assertEqual(self.jobs.get(self.ident)['state'],'cancelled')
+        self.assertFalse((self.project/'ship.py').exists())
+
 if __name__=='__main__':unittest.main()

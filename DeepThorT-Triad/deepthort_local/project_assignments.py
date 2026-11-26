@@ -235,6 +235,9 @@ class ProjectAssignments:
         """
         if report['kind'] not in ('missing_dependency','evidence_gap') or budget<300:return ''
         need=report['need']
+        # Preserve V49's exclusion short-circuit before any dependency reads.
+        from .inspection_exclusions import normalized_relative
+        if normalized_relative(need) in exclude:return ''
         with self.graphs._db() as db:
             db.execute('BEGIN IMMEDIATE')
             _,bound=self._load(db,attempt,('assigned',))

@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v51-evidence-directed-coordination",
-  "title": "Triad V51: evidence-directed corrective coordination",
+  "id": "triad-v52-preservation-audit",
+  "title": "Triad V52: preservation audit and corrective evidence transaction hardening",
   "checks": [
     "shared_cap",
     "triad_residency",

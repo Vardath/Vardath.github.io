@@ -125,3 +125,9 @@ V50 passed Linux and Windows CI and merged. JANUS can now select an exact saved 
 
 Next: general scoped dependency discovery (including tools and cross-role artifacts), dependency-ready execution of independent project branches, proportionate reviews, durable proactive memory consolidation, deeper society cognition, and isolated self-update acceptance. No installer until workflow phase complete.
 
+
+
+# V52 — preservation audit and corrective evidence transaction hardening
+
+V51 push CI passed both Linux and Windows. This audit preserves V50 retry/hold, independent review, one fresh scoped inference and host source gates, and restores V49's early inspection-exclusion check. Evidence acquisition now runs without holding the job database write transaction; exact approved packet identity and running job state are rechecked atomically before consumption, so cancellation or supersession cannot revive work. Added a regression exercising cancellation during real evidence acquisition. Restored the original eight-phase sequence in INTELLIGENT_WORKFLOW_CONTINUATION.md: communication, memory, coordination, supervision, cognition, initiative/tools, self-development, integrated acceptance. Next: nonblocking production-worker discoveries, followed by durable memory duties. No installer or native-quality claim.
+
