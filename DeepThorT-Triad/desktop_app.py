@@ -4246,9 +4246,18 @@ class DeepThorTDesktop(tk.Tk):
                 or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
                 or self.janus.status().get('paused') or not self._project_work_is_enabled()):return False
         from deepthort_local.creative_core import creative_headroom,create_midi
+        from deepthort_local.creative_profile import installed
+        if not installed():raise PlanError('Gemma is not installed; use Install AI before native artifact production')
         try:
-            if not creative_headroom():return False
-        except (ValueError,OSError,RuntimeError):return False
+            admitted=creative_headroom()
+        except (ValueError,OSError,RuntimeError):admitted=False
+        if not admitted:
+            note=(req['id'],task['id'])
+            if getattr(self,'_last_project_midi_headroom_note',None)!=note:
+                self._last_project_midi_headroom_note=note
+                self._log('Project MIDI waiting for verified resource headroom; other eligible work may proceed.')
+            return False
+        self._last_project_midi_headroom_note=None
         lease,contract=self.project_midi.begin(run,mixed,task,req,before,enabled=True)
         self._project_midi_pending=(lease,req['id'],task['id'],before,req['project'])
         stop=threading.Event();self._creative_lane_stop=stop;primary=self.node
