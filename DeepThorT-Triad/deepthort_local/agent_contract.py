@@ -25,5 +25,5 @@ def validate_creative_assignment(packet):
     if not isinstance(packet,dict) or set(packet)!={'requester','scope','brief','kind','prompt','assignment'} or packet['kind']!='midi':
         raise ValueError('Unsupported creative task envelope')
     expected=creative_assignment(packet['requester'],packet['scope'],packet['brief'])
-    if packet['assignment']!=expected:raise ValueError('Creative assignment identity mismatch')
+    if canonical_sha(packet['assignment'])!=canonical_sha(expected):raise ValueError('Creative assignment identity mismatch')
     return canonical_sha(expected)
