@@ -195,7 +195,7 @@ class JanusStore:
     def pending_git_action(self):
         # Hold desktop project dispatch while a reviewed Git action owns the repository.
         with self.connect() as db:
-            return db.execute("SELECT 1 FROM janus_actions WHERE (label LIKE 'Git: reviewed %' OR label IN ('Integration: reviewed Python suite','Coverage: reviewed Python suite','Profile: reviewed Python suite','Security: reviewed dependency audit','Security: reviewed source scan','Document: reviewed PDF page edit')) AND status IN ('approved','running') LIMIT 1").fetchone() is not None
+            return db.execute("SELECT 1 FROM janus_actions WHERE (label LIKE 'Git: reviewed %' OR label IN ('Integration: reviewed Python suite','Coverage: reviewed Python suite','Profile: reviewed Python suite','Security: reviewed dependency audit','Security: reviewed source scan','Document: reviewed PDF page edit','Document: reviewed PDF production')) AND status IN ('approved','running') LIMIT 1").fetchone() is not None
 
     def actions(self, limit: int = 25) -> list[dict]:
         with self.connect() as db:

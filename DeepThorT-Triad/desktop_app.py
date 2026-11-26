@@ -681,6 +681,7 @@ class DeepThorTDesktop(tk.Tk):
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=6)
         ttk.Button(media_actions,text='Install PDF tools…',command=self._install_pdf_reader).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Edit PDF pages…',command=self._review_pdf_pages).pack(side='left',padx=3)
+        ttk.Button(media_actions,text='Create PDF…',command=self._review_pdf_document).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Generate image from prompt',command=self._queue_image).pack(side='left',padx=3)
@@ -1245,6 +1246,47 @@ class DeepThorTDesktop(tk.Tk):
             old.window.lift();return
         self._knowledge_dialog=KnowledgeDialog(self)
 
+    def _review_pdf_document(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('PDF production unavailable','Select a project and finish active work.',parent=self);return
+        project=str(self.project)
+        source=filedialog.askopenfilename(parent=self,initialdir=project,title='Select reviewed PDF document JSON specification',filetypes=[('JSON','*.json')])
+        if not source:return
+        try:
+            relative=Path(source).relative_to(Path(project)).as_posix()
+            output=simpledialog.askstring('New PDF','Project-relative PDF output (must not exist):',
+                initialvalue=Path(relative).with_suffix('.pdf').as_posix(),parent=self)
+            if not output:return
+            from deepthort_local.pdf_document import review
+            plan,doc=review(project,relative,output,self.inspection_exclusions.paths(project))
+            dialog=tk.Toplevel(self);dialog.title('Review exact PDF document content');dialog.geometry('860x620');dialog.transient(self)
+            ttk.Label(dialog,text='New output: '+output+' — source '+relative).pack(anchor='w',padx=8,pady=6)
+            ttk.Label(dialog,text='Content and page style below. Structural text checks only; review rendered PDF afterwards.').pack(anchor='w',padx=8)
+            frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
+            view=tk.Text(frame,wrap='word');bar=ttk.Scrollbar(frame,command=view.yview)
+            view.configure(yscrollcommand=bar.set);view.pack(side='left',fill='both',expand=True);bar.pack(side='right',fill='y')
+            view.insert('1.0',json.dumps(doc,ensure_ascii=False,indent=2));view.configure(state='disabled')
+            approved=[False]
+            def approve():approved[0]=True;dialog.destroy()
+            ttk.Button(dialog,text='Approve new PDF only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
+            dialog.grab_set();self.wait_window(dialog)
+            if not approved[0] or not self._editor_idle(project,proposal=True):return
+            from deepthort_local.source_security import exclusions
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:
+                raise ValueError('Inspection exclusions changed')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/'pdf_document.py'
+            exclusion_file=self.inspection_exclusions.path
+            guards=[snapshot_file(script),plan['source_guard'],snapshot_file(Path(project)/output,kind='absent'),
+                    snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent')]
+            action=self.janus.add_approved_action(argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)],
+                cwd=project,label='Document: reviewed PDF production',kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS PDF production #{action} queued; inspect receipt and rendered output.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('PDF production not queued',str(exc),parent=self)
+
     def _review_pdf_pages(self):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('PDF editor unavailable','Select a project and finish active work.',parent=self);return
@@ -1285,11 +1327,11 @@ class DeepThorTDesktop(tk.Tk):
         if self.disk_gate.gaming():
             messagebox.showinfo('Gaming priority','Close your game before installing packages.');return
         if not messagebox.askyesno('Install optional offline PDF reader',
-            'Install the pinned local pypdf Python package?\n\nSupports selectable text extraction and reviewed basic page editing. '
+            'Install pinned local pypdf and ReportLab packages?\n\nSupports selectable text extraction, reviewed page editing and structured PDF production. '
             'Scanned PDF images still need OCR and may not be readable.\n\nApprove?',parent=self):return
         self.tabs.select(4)
-        self._start_command([sys.executable,'-m','pip','install','--no-input','--no-deps','-r',str(ROOT/'requirements-documents.txt')],
-                            cwd=ROOT,label='Install pypdf',kind='installation')
+        self._start_command([sys.executable,'-m','pip','install','--no-input','-r',str(ROOT/'requirements-pdf-production.txt')],
+                            cwd=ROOT,label='Install PDF tools',kind='installation')
     def _install_vision(self):
         if self.disk_gate.gaming():
             messagebox.showinfo('Gaming priority','Close your game before a large model download.');return
