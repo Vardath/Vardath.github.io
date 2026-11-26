@@ -1,3 +1,9 @@
+# V43 approved project-bound role assignments
+
+Integrate durable JANUS → Granite → Sentinel contracts into real approved file generation, exact review and host publication. Bind source, amendments, dependency receipts, baseline and role fingerprints; rederive reviewed deltas, explicitly select implementation inference, validate before host write lease and grant. Both societies observe scoped role progress. Structural fixture only; existing project mutation remains serial. Next: independent ready-task dispatch, project creative adapters and adaptive resource admission.
+
+---
+
 # V42 reactive recursive exchanges and independent outward messages
 
 Preserve original JANUS reactive 11 × 7 structure, register bounded conversation events, pass actual predecessor conclusions through strict forward flow, and suppress redundant peer echo via material fingerprints. Independent JANUS/Sentinel Interface outboxes can send new recorded advisory findings without a prompt, with source and topology rechecks, durable unread state and explicit acknowledgement. No automatic action. The original standalone JANUS source remains read-only. Foreground neural answer integration, autonomous novelty beyond observed recommendations, and general approved-project delegation remain open.
