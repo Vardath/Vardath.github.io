@@ -95,8 +95,11 @@ class JanusWorker:
                                          evidence=evidence,worker_report=True,coordination='propose' if structured else '')
             if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
                 if structured:
+                    import sqlite3
                     try:propose(self.jobs_db,pending,answer)
-                    except (ValueError,OSError):pass # Malformed advice never becomes an action.
+                    except (ValueError,OSError,sqlite3.Error):pass # Malformed advice never becomes an action.
+                    self.store.recommend(evidence_key='coordination-propose-'+ident,job_id=pending.get('job_id'),
+                        problem=problem,proposal=answer,origin='local_model')
                 self.store.recommend(evidence_key=key,job_id=pending.get('job_id'),
                      problem=problem,proposal=answer,origin='local_model')
         self._counsel_thread=threading.Thread(target=coordinate,name='JANUS-worker-coordination',daemon=True)
