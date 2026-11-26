@@ -14,20 +14,20 @@ def fixture():
 
 class MultimediaInstallTests(unittest.TestCase):
     def test_ready_language_models_install_only_multimedia(self):
-        plan=install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=False,creative_ok=True)
+        plan=install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=False,creative_ok=True,memory_ok=True)
         self.assertEqual([(x[0],x[1]) for x in plan],[('download_multimedia.py',())])
 
     def test_only_missing_language_role_and_media(self):
-        plan=install_plan(role_ok=lambda role:role!='janus',runtime_ok=True,media_ok=False,creative_ok=True)
+        plan=install_plan(role_ok=lambda role:role!='janus',runtime_ok=True,media_ok=False,creative_ok=True,memory_ok=True)
         self.assertEqual([(x[0],x[1]) for x in plan],
                          [('download_model.py',('--role','janus')),('download_multimedia.py',())])
 
     def test_runtime_only_and_nothing_missing(self):
-        self.assertEqual(install_plan(role_ok=lambda role:True,runtime_ok=False,media_ok=True,creative_ok=True)[0][1],('--runtime-only',))
-        self.assertEqual(install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=True,creative_ok=True),[])
+        self.assertEqual(install_plan(role_ok=lambda role:True,runtime_ok=False,media_ok=True,creative_ok=True,memory_ok=True)[0][1],('--runtime-only',))
+        self.assertEqual(install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=True,creative_ok=True,memory_ok=True),[])
 
     def test_missing_intelligent_fourth_is_not_diffusion(self):
-        plan=install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=True,creative_ok=False)
+        plan=install_plan(role_ok=lambda role:True,runtime_ok=True,media_ok=True,creative_ok=False,memory_ok=True)
         self.assertEqual([(x[0],x[1]) for x in plan],[('download_creative.py',())])
 
     def test_snapshot_pin_and_allowlist(self):
