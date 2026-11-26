@@ -978,7 +978,10 @@ class DeepThorTDesktop(tk.Tk):
         def video_render_probe():
             from deepthort_local.render_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
-        probes={'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        def multimedia_core_probe():
+            from deepthort_local.multimedia_core_probe import exercise
+            return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        probes={'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -2853,7 +2856,40 @@ class DeepThorTDesktop(tk.Tk):
                            model_input_characters=len(prompt),max_tokens=chat_tokens,
                            original_preserved=True,execution_authorized=False)
                     if cancelled():return
-                    answer=self.client.chat(session,prompt,max_tokens=chat_tokens,visible_prompt=request['prompt'])
+                    from deepthort_local.chat_agent import eligible, run_agent, MAX_PACKET
+                    from deepthort_local.technical_research import DOCS, excerpt
+                    from deepthort_local.reasoning_council import ReasoningCouncil
+                    stage=lambda message:self.events.put(('conversation_stage',ident,message))
+                    advisor=None
+                    if eligible(route,prompt) and not self.disk_gate.gaming():
+                        advisor=self._planning_council_client()
+                    if advisor is not None:
+                        try:
+                            room=min(600,MAX_PACKET-len(prompt))
+                            if request['project']!='(general)' and room>=240:
+                                recalled=self._governed_memory(original,request['project'],request['chat_id'],
+                                    f'chat-agent-{ident}',original[:500],'collaborative_chat',
+                                    budget=room,cancelled=cancelled,stage=stage,client=advisor)
+                                from deepthort_local.memory_governor import fit
+                                prompt+=fit(recalled,room)
+                            if cancelled():return
+                            answer=run_agent(advisor,ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
+                                session=f'chat-agent-{ident}',original=original,packet=prompt,route=route,
+                                docs=DOCS,document=self.technical_research.document,excerpt=excerpt,
+                                cancelled=cancelled,network_ok=lambda:not self.disk_gate.gaming(),
+                                stage=stage,audit=lambda **kw:record(STATE,'desktop','chat_agent_review',
+                                    request_id=ident,**kw))
+                            if cancelled():return
+                            self.client.record_local_exchange(session,request['prompt'],answer)
+                        finally:
+                            advisor.release()
+                    else:
+                        if route!='conversation':
+                            record(STATE,'desktop','chat_agent_deferred',request_id=ident,
+                                   route=route,reason='context, gaming or council availability')
+                        answer=self.client.chat(session,prompt,max_tokens=chat_tokens,visible_prompt=request['prompt'])
+                        if route!='conversation':
+                            answer+='\n\nCollaborative review was not run (context, gaming priority or council availability). No online research or job execution was performed by this route.'
                 elif large_spec:
                     def indexed_memory(row,budget):
                         return self._governed_memory(original,request['project'],request['chat_id'],
