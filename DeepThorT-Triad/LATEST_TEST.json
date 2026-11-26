@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v53-production-initiative",
-  "title": "Triad V53: nonblocking production-worker initiative",
+  "id": "triad-v54-durable-memory-duties",
+  "title": "Triad V54: durable independent Memory duties",
   "checks": [
     "shared_cap",
     "triad_residency",

@@ -13,8 +13,13 @@ from .memory_governor import canonical,evidence_eligible
 from .reasoning_council import sha
 
 STATES=('queued','running','waiting_verification','waiting_repair')
+# A blocked approved job can still benefit from independent memory research.
+# Keep the original live_scope default for unrelated callers.
+DUTY_STATES=(*STATES,'needs_input')
 SCAN_JOBS=4
 LOOKAHEAD=2
+MAX_BACKLOG=128
+OFFER_DUTIES=8
 REPORT_TTL=600
 MAX_REPORTS=256
 
@@ -66,35 +71,41 @@ class MemoryDuty:
               scope TEXT NOT NULL,focus TEXT NOT NULL,phase TEXT NOT NULL,
               outcome TEXT NOT NULL,findings TEXT NOT NULL,receipt_sha TEXT NOT NULL,
               completed REAL NOT NULL);
-              CREATE INDEX IF NOT EXISTS memory_duty_job_v47 ON memory_duties_v47(job_id,completed);""")
+              CREATE INDEX IF NOT EXISTS memory_duty_job_v47 ON memory_duties_v47(job_id,completed);
+              CREATE TABLE IF NOT EXISTS memory_pending_v54(
+                work_id TEXT PRIMARY KEY,job_id INTEGER NOT NULL,request_id INTEGER NOT NULL,
+                scope TEXT NOT NULL,step TEXT NOT NULL,watermark INTEGER NOT NULL,
+                created REAL NOT NULL,last_offer INTEGER NOT NULL);
+              CREATE INDEX IF NOT EXISTS memory_pending_offer_v54
+                ON memory_pending_v54(last_offer,created);""")
 
     def _current(self,job):
         # Resolver calls master_for_job, including exact hierarchical scope
         # reconciliation. Read-only cross-process checks add amendment guard.
         req_id,original=self.resolve(job)
-        current=live_scope(self.job_db,job['id'],req_id)
+        current=live_scope(self.job_db,job['id'],req_id,states=DUTY_STATES)
         if not current or current['original']!=original or current['job_sha']!=sha(job['prompt']):
             return None
         return current
 
     def _still_current(self,bound):
         try:
-            current=live_scope(self.job_db,bound['job_id'],bound['request_id'])
+            current=live_scope(self.job_db,bound['job_id'],bound['request_id'],states=DUTY_STATES)
             return bool(current and signature(current)==signature(bound))
         except (OSError,ValueError,sqlite3.Error):return False
 
-    def scan(self):
-        """Return bounded upcoming duties; never invoke neural inference here."""
+    def _discover(self):
+        """Read bounded upcoming work from the existing approved job store."""
         with closing(reader(self.job_db)) as db:
-            marks=','.join('?' for _ in STATES)
+            marks=','.join('?' for _ in DUTY_STATES)
             rows=[dict(r) for r in db.execute(
                 f"SELECT * FROM jobs WHERE id>? AND mode='build' AND approval_key IS NOT NULL AND state IN ({marks}) ORDER BY id LIMIT ?",
-                (self.cursor,*STATES,SCAN_JOBS))]
+                (self.cursor,*DUTY_STATES,SCAN_JOBS))]
             if not rows:
                 self.cursor=0
                 rows=[dict(r) for r in db.execute(
                     f"SELECT * FROM jobs WHERE mode='build' AND approval_key IS NOT NULL AND state IN ({marks}) ORDER BY id LIMIT ?",
-                    (*STATES,SCAN_JOBS))]
+                    (*DUTY_STATES,SCAN_JOBS))]
             if rows:self.cursor=rows[-1]['id']
             result=[]
             for job in rows:
@@ -103,41 +114,107 @@ class MemoryDuty:
                 if not bound:continue
                 steps=[dict(r) for r in db.execute("""SELECT id,path,description,state FROM job_steps
                     WHERE job_id=? AND state IN ('planned','proposed') ORDER BY sequence LIMIT ?""",(job['id'],LOOKAHEAD))]
-                if not steps and job['state'] in ('waiting_verification','waiting_repair'):
+                if not steps and job['state'] in ('waiting_verification','waiting_repair','needs_input'):
                     steps=[{'id':0,'path':'verification','description':'Check required tests and diagnose observed failures','state':job['state']}]
-                # Only actual newly recorded history or changed step warrants
-                # another scan. Never ask the model to repeat unchanged recall.
                 watermark=db.execute("""SELECT COALESCE(MAX(n.id),0) FROM task_memory_notes n JOIN jobs j ON j.id=n.job_id
                     WHERE j.project=? AND j.chat_id=? AND n.spec_sha=?""",
                     (bound['project'],bound['chat_id'],bound['spec_sha'])).fetchone()[0]
                 for step in steps:
-                    focus=(step['path']+': '+step['description'])[:500]
-                    work_id=sha(canonical([signature(bound),step,watermark]))
-                    with closing(reader(self.path)) as ledger:
-                        if ledger.execute("SELECT 1 FROM memory_duties_v47 WHERE work_id=?",(work_id,)).fetchone():continue
-                    result.append(dict(project=bound['project'],chat_id=bound['chat_id'],original=bound['original'],
-                        job_id=job['id'],focus=focus,phase='anticipatory_recall',scope='duty:'+work_id,
-                        cancelled=lambda b=bound:not self._still_current(b)))
+                    scope=signature(bound)
+                    work_id=sha(canonical([scope,step,watermark]))
+                    result.append((work_id,bound['job_id'],bound['request_id'],canonical(scope),canonical(step),watermark))
         return result
+
+    def _admit(self,discovered):
+        """Persist admitted work before offering it to the bounded observer queue."""
+        with closing(sqlite3.connect(self.path,timeout=2)) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            db.execute("""DELETE FROM memory_pending_v54 WHERE work_id IN
+                (SELECT work_id FROM memory_duties_v47)""")
+            count,tail=db.execute("SELECT COUNT(*),COALESCE(MAX(last_offer),0) FROM memory_pending_v54").fetchone()
+            for work in discovered:
+                if count>=MAX_BACKLOG:break
+                if db.execute("SELECT 1 FROM memory_duties_v47 WHERE work_id=?",(work[0],)).fetchone():continue
+                # New work queues behind previously offered work; no silent eviction.
+                count+=db.execute("INSERT OR IGNORE INTO memory_pending_v54 VALUES(?,?,?,?,?,?,?,?)",
+                                  (*work,self.clock(),tail)).rowcount
+
+    def _packet(self,row):
+        """Return (packet,stale). A paused job keeps its admitted work."""
+        scope=json.loads(row['scope']);step=json.loads(row['step'])
+        if (scope['job_id']!=row['job_id'] or scope['request_id']!=row['request_id']
+            or sha(canonical([scope,step,row['watermark']]))!=row['work_id']):
+            return None,True
+        bound=live_scope(self.job_db,row['job_id'],row['request_id'],states=(*DUTY_STATES,'paused'))
+        if not bound or signature(bound)!=scope:return None,True
+        with closing(reader(self.job_db)) as db:
+            job=db.execute("SELECT state FROM jobs WHERE id=?",(row['job_id'],)).fetchone()
+            if not job:return None,True
+            if job['state']=='paused':return None,False
+            if job['state'] not in DUTY_STATES:return None,True
+            if step['id']:
+                actual=db.execute("SELECT path,description FROM job_steps WHERE id=? AND job_id=?",
+                                  (step['id'],row['job_id'])).fetchone()
+                if not actual or (actual['path'],actual['description'])!=(step['path'],step['description']):
+                    return None,True
+        # A stage advancing from planned to saved does not invalidate late
+        # research for an otherwise unchanged active project.
+        return dict(project=bound['project'],chat_id=bound['chat_id'],original=bound['original'],
+                    job_id=bound['job_id'],focus=(step['path']+': '+step['description'])[:500],
+                    phase='anticipatory_recall',scope='duty:'+row['work_id'],
+                    cancelled=lambda b=bound:not self._still_current(b)),False
+
+    def scan(self):
+        """Memory-thread only: bounded discovery, durable admission, fair replay.
+
+        Offers rotate across admitted work, even if the in-memory observer
+        queue is full or a recall is deferred. No inference or foreground wait.
+        """
+        self._admit(self._discover())
+        with closing(reader(self.path)) as db:
+            rows=[dict(r) for r in db.execute("""SELECT * FROM memory_pending_v54
+                ORDER BY last_offer,created,rowid LIMIT ?""",(OFFER_DUTIES,))]
+        packets=[];stale=[]
+        for row in rows:
+            try:packet,obsolete=self._packet(row)
+            except (ValueError,TypeError,KeyError):packet,obsolete=None,True
+            except (OSError,sqlite3.Error):packet,obsolete=None,False
+            if obsolete:stale.append(row['work_id'])
+            elif packet:packets.append(packet)
+        # Do not hold a memory write transaction while inspecting other stores.
+        # Rotate paused/transient offers too, so unrelated duties remain eligible.
+        with closing(sqlite3.connect(self.path,timeout=2)) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            db.executemany("DELETE FROM memory_pending_v54 WHERE work_id=?",[(x,) for x in stale])
+            tail=db.execute("SELECT COALESCE(MAX(last_offer),0) FROM memory_pending_v54").fetchone()[0]
+            for offset,row in enumerate(rows,1):
+                db.execute("UPDATE memory_pending_v54 SET last_offer=? WHERE work_id=?",
+                           (tail+offset,row['work_id']))
+        return packets
 
     def complete(self,packet,selected):
         """Persist selection/no-match, not new knowledge claims or authorizations."""
         if packet.get('phase')!='anticipatory_recall' or not packet.get('scope','').startswith('duty:'):return
         work_id=packet['scope'][5:]
         if len(work_id)!=64:return
-        with closing(reader(self.job_db)) as db:
-            job=db.execute("SELECT * FROM jobs WHERE id=?",(packet['job_id'],)).fetchone()
-        if not job:return
-        bound=self._current(dict(job))
-        if not bound or bound['original']!=packet['original'] or (bound['project'],bound['chat_id'])!=(packet['project'],packet['chat_id']):
-            return
+        with closing(reader(self.path)) as db:
+            pending=db.execute("SELECT * FROM memory_pending_v54 WHERE work_id=?",(work_id,)).fetchone()
+        if not pending:return
+        expected,stale=self._packet(dict(pending))
+        if stale or not expected or any(expected[k]!=packet.get(k) for k in
+                ('project','chat_id','original','job_id','focus','phase','scope')):return
+        bound=live_scope(self.job_db,pending['job_id'],pending['request_id'],states=DUTY_STATES)
+        if not bound or signature(bound)!=json.loads(pending['scope']):return
         if len(selected)>3 or any(not evidence_eligible(x) for x in selected):raise ValueError('Invalid memory duty evidence')
         record={'work_id':work_id,'scope':signature(bound),'focus':packet['focus'],'phase':packet['phase'],
                 'outcome':'findings' if selected else 'no_relevant_evidence','findings':selected}
         with closing(sqlite3.connect(self.path,timeout=2)) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            if not db.execute("SELECT 1 FROM memory_pending_v54 WHERE work_id=?",(work_id,)).fetchone():return
             db.execute("""INSERT OR IGNORE INTO memory_duties_v47 VALUES(?,?,?,?,?,?,?,?,?,?)""",
                 (work_id,bound['job_id'],bound['request_id'],canonical(signature(bound)),packet['focus'],
                  packet['phase'],record['outcome'],canonical(selected),sha(canonical(record)),self.clock()))
+            db.execute("DELETE FROM memory_pending_v54 WHERE work_id=?",(work_id,))
             db.execute("""DELETE FROM memory_duties_v47 WHERE work_id IN
                 (SELECT work_id FROM memory_duties_v47 ORDER BY completed DESC,work_id LIMIT -1 OFFSET ?)""",(MAX_REPORTS,))
 
@@ -157,7 +234,7 @@ class MemoryDuty:
                 ORDER BY completed DESC,work_id LIMIT 16""",(job_id,self.clock()-REPORT_TTL))]
         result=[];seen=set()
         for row in rows:
-            bound=live_scope(self.job_db,job_id,row['request_id'])
+            bound=live_scope(self.job_db,job_id,row['request_id'],states=DUTY_STATES)
             if not bound or bound['original']!=original or (bound['project'],bound['chat_id'])!=(str(project),chat_id):continue
             findings=json.loads(row['findings'])
             record={'work_id':row['work_id'],'scope':signature(bound),'focus':row['focus'],'phase':row['phase'],
@@ -210,7 +287,7 @@ def observe_memory_duties(job_db,*,clock=time.time):
                 WHERE completed>=? AND outcome='findings' ORDER BY completed DESC,work_id LIMIT 16""",(clock()-REPORT_TTL,))]
         result=[]
         for row in rows:
-            bound=live_scope(job_db,row['job_id'],row['request_id'])
+            bound=live_scope(job_db,row['job_id'],row['request_id'],states=DUTY_STATES)
             if not bound or signature(bound)!=json.loads(row['scope']):continue
             findings=json.loads(row['findings'])
             record={'work_id':row['work_id'],'scope':signature(bound),'focus':row['focus'],'phase':row['phase'],
