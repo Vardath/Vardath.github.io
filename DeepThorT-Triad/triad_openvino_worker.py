@@ -67,7 +67,8 @@ def model_messages(role,messages):
     # Only SmolLM3 receives its documented system-level mode flag.
     # Copy inputs so the durable user specification and caller history
     # are never modified. Keep existing system instructions intact.
-    result=[dict(m) for m in messages]
+    from deepthort_local.agent_doctrine import bind_messages
+    result=bind_messages(role,messages)
     if role=='janus':
         if result and result[0]['role']=='system':
             result[0]['content'] += '\n/no_think'
