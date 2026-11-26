@@ -24,6 +24,17 @@ class GraphError(ValueError):
     pass
 
 
+def same_workspace(indexed,approved):
+    """Compare existing absolute directory identities, including Windows short paths."""
+    if not isinstance(indexed,str) or not isinstance(approved,str) or not indexed or not approved:
+        return False
+    try:
+        a,b=Path(indexed),Path(approved)
+        return a.is_absolute() and b.is_absolute() and a.is_dir() and b.is_dir() and a.samefile(b)
+    except (OSError,ValueError,RuntimeError):
+        return False
+
+
 def _hash(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()
 
@@ -164,7 +175,7 @@ class TaskGraphStore:
         """
         if not isinstance(provenance,dict) or not isinstance(provenance.get('requirements'),list):
             raise GraphError('No persisted requirement provenance supplied')
-        if provenance.get('root_project')!=str(Path(job['project']).resolve(strict=True)):
+        if not same_workspace(provenance.get('root_project'),job['project']):
             raise GraphError('Requirements were indexed for another workspace')
         if len(provenance['requirements'])>128:
             raise GraphError('Requirement graph provenance exceeds bounded cap')

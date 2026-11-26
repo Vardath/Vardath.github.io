@@ -1,13 +1,14 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v42-reactive-interface",
-  "title": "Triad V42: reactive recursive societies, independent Interface messages and native acceptance",
+  "id": "triad-v43-project-role-assignments",
+  "title": "Triad V43: approved project role handoffs, reactive societies and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",
     "workflow_doctrine",
     "delegation",
     "team_delegation",
+    "project_assignment",
     "janus_core",
     "task_memory",
     "memory_governance",

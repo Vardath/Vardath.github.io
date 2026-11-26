@@ -136,6 +136,16 @@ class GraphTests(unittest.TestCase):
         self.save(0,'print(1)\n')
         self.save(1,'print(2)\n')
 
+    def test_workspace_identity_rejects_other_or_missing_directories(self):
+        from deepthort_local.task_graph import same_workspace
+        other=self.root/'other';other.mkdir()
+        self.assertTrue(same_workspace(str(self.project),str(self.project.resolve())))
+        self.assertFalse(same_workspace(str(other),str(self.project)))
+        self.assertFalse(same_workspace(str(self.root/'missing'),str(self.project)))
+        self.assertFalse(same_workspace('game',str(self.project)))
+        with self.assertRaisesRegex(GraphError,'another workspace'):
+            self.store.attach_hierarchy(self.job,self.steps,{'root_project':str(other),'requirements':[]})
+
     def test_later_declared_dependency_is_not_silently_reordered(self):
         data={'root_project':str(self.project),'requirements':[],
               'declared_file_dependencies':[{'file_path':'main.py','requires_path':'test_main.py'}]}

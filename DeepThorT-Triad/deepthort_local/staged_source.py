@@ -123,6 +123,7 @@ def stage_existing(client,council,advisor,*,session,path,goal,scope,master_sha,s
             f'COMPLETE SPECIFICATION SHA-256: {master_sha}\n'
             f'APPROVED REQUIREMENT CONTEXT (verbatim excerpts if indexed):\n{scope}\n')
     result=[]
+    range_receipts=[]
     changes=0
     for i,(start,end,old) in enumerate(spans):
         _check_cancel(cancelled)
@@ -141,6 +142,7 @@ def stage_existing(client,council,advisor,*,session,path,goal,scope,master_sha,s
         _check_cancel(cancelled)
         if mode=='KEEP':
             result.append(old)
+            range_receipts.append({'start':start,'end':end,'length':len(old),'action':None})
             continue
         review(f'Change only source range {i+1}: {action}','plan')
         base=('Implement ONLY this exact source range. Return its complete replacement text, no other file or '
@@ -167,6 +169,7 @@ def stage_existing(client,council,advisor,*,session,path,goal,scope,master_sha,s
             raise StageError(f'Source range {i+1} could not be corrected: {feedback[:300]}')
         _check_cancel(cancelled)
         result.append(accepted)
+        range_receipts.append({'start':start,'end':end,'length':len(accepted),'action':action})
         changes+=1
     assembled=''.join(result)
     if not changes or assembled==source:
@@ -174,7 +177,8 @@ def stage_existing(client,council,advisor,*,session,path,goal,scope,master_sha,s
     validate_source(path,assembled)
     _check_cancel(cancelled)
     return {'source':assembled,'before_sha256':sha(source),'after_sha256':sha(assembled),
-            'changed_ranges':changes,'ranges':len(spans),'master_sha256':master_sha}
+            'changed_ranges':changes,'ranges':len(spans),'master_sha256':master_sha,
+            'range_receipts':range_receipts}
 
 
 def _unit_plan(answer):
