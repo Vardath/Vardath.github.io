@@ -96,8 +96,12 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
               'goal':goal,'alternatives':alternatives,'frames':[f.public() for f in frames],
               'findings':findings}
     fingerprint=hashlib.sha256(json.dumps(material,sort_keys=True,default=str).encode()).hexdigest()[:24]
-    if (previous_front.get('material_fingerprint')==fingerprint and
-            set(previous_cores)==set(CORE_NAMES)):
+    base_material={k:v for k,v in material.items() if k!='findings'}
+    base_material['frames']=[f.public() for f in frames if f.source not in ('janus_findings','sentinel_findings')]
+    base_fingerprint=hashlib.sha256(json.dumps(base_material,sort_keys=True,default=str).encode()).hexdigest()[:24]
+    if (set(previous_cores)==set(CORE_NAMES) and
+            (previous_front.get('material_fingerprint')==fingerprint or
+             (not findings and previous_front.get('base_fingerprint')==base_fingerprint))):
         cores=deepcopy(previous_cores)
         for c in cores.values():
             c['quiescent_count']=int(c.get('quiescent_count',0))+1
@@ -108,7 +112,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
             changed_from_prior=False,evidence_changed=False,outward_finding=None)
         cores['Interface']['message']=None
         return {'society':society,'cores':cores,'appraisal':dict(cores['Front']['appraisal']),
-                'fingerprint':fingerprint,'focus':focus,'decision':decision,'goal':goal,
+                'fingerprint':previous_front['material_fingerprint'],'focus':focus,'decision':decision,'goal':goal,
                 'alternatives':alternatives,'frames':[f.public() for f in frames],
                 'flow':'7->2->1->1','peer_exchange':{'changed':False,'links':0,'model_calls':0}}
     base={1:unit(.8 if observation else .25),
@@ -206,7 +210,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                           changed_from_prior=focus!=previous_front.get('focus') or decision!=previous_front.get('priority'),
                           evidence_changed=actual_change,
                           disagreement=bool(conflict or bad),
-                          alternatives_to_review=alternatives,material_fingerprint=fingerprint,
+                          alternatives_to_review=alternatives,material_fingerprint=fingerprint,base_fingerprint=base_fingerprint,
                           outward_finding=select(reviewed_findings,appraisal,observation))
     # Interface receives Front only. Results can return *next cycle* as new frames.
     cores['Interface']=outer_core('Interface',['Front'])
