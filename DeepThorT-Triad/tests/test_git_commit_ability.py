@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from deepthort_local.git_commit import preview,approved_plan,apply,preview_selected,branch_inventory,branch_plan,apply_branch,branch_operation_plan,apply_branch_operation
+from deepthort_local.git_commit import preview,approved_plan,apply,preview_selected,branch_inventory,branch_plan,apply_branch,branch_operation_plan,apply_branch_operation,worktree_inventory,worktree_plan,apply_worktree
 
 @unittest.skipUnless(shutil.which('git'),'Git required')
 class GitCommitTests(unittest.TestCase):
@@ -119,5 +119,45 @@ class GitCommitTests(unittest.TestCase):
             try:
                 for operation,new in [('switch',None),('rename','new'),('delete',None)]:
                     with self.assertRaises(ValueError):branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),operation,'linked',new)
+            finally:self.git('worktree','remove',str(path))
+    def test_reviewed_worktree_create_remove_keeps_branch(self):
+        self.git('branch','feature')
+        with tempfile.TemporaryDirectory() as other:
+            path=Path(other).resolve()/'feature'
+            plan=worktree_plan(self.exe,self.root,worktree_inventory(self.exe,self.root),'add',branch='feature',parent=other,name='feature')
+            result=apply_worktree(self.exe,self.root,plan)
+            self.assertEqual(Path(result['path']),path)
+            self.assertEqual((path/'tracked.txt').read_text('utf-8'),'base\n')
+            self.assertFalse(result['security_sandbox'])
+            plan=worktree_plan(self.exe,self.root,worktree_inventory(self.exe,self.root),'remove',path=str(path))
+            apply_worktree(self.exe,self.root,plan)
+            self.assertFalse(path.exists())
+            self.assertEqual(self.git('rev-parse','feature'),self.git('rev-parse','HEAD'))
+    def test_worktree_creation_refuses_occupied_and_nested_destination(self):
+        current=self.git('symbolic-ref','--short','HEAD')
+        self.git('branch','feature')
+        with tempfile.TemporaryDirectory() as other:
+            review=worktree_inventory(self.exe,self.root)
+            with self.assertRaises(ValueError):worktree_plan(self.exe,self.root,review,'add',branch=current,parent=other,name='occupied')
+            with self.assertRaises(ValueError):worktree_plan(self.exe,self.root,review,'add',branch='feature',parent=str(self.root.resolve()),name='nested')
+            plan=worktree_plan(self.exe,self.root,review,'add',branch='feature',parent=other,name='feature')
+            (Path(other)/'feature').mkdir()
+            with self.assertRaises(ValueError):apply_worktree(self.exe,self.root,plan)
+    def test_worktree_removal_dirty_locked_and_ignored(self):
+        self.write('.gitignore','ignored.txt\n');self.git('add','.gitignore');self.git('commit','-qm','ignore')
+        self.git('branch','feature')
+        with tempfile.TemporaryDirectory() as other:
+            path=Path(other).resolve()/'feature'
+            self.git('worktree','add',str(path),'feature')
+            try:
+                review=worktree_inventory(self.exe,self.root)
+                plan=worktree_plan(self.exe,self.root,review,'remove',path=str(path))
+                (path/'ignored.txt').write_text('keep',encoding='utf-8')
+                with self.assertRaises(ValueError):apply_worktree(self.exe,self.root,plan)
+                (path/'ignored.txt').unlink()
+                self.git('worktree','lock',str(path))
+                with self.assertRaises(ValueError):worktree_plan(self.exe,self.root,worktree_inventory(self.exe,self.root),'remove',path=str(path))
+                self.git('worktree','unlock',str(path))
+                with self.assertRaises(ValueError):worktree_plan(self.exe,self.root,worktree_inventory(self.exe,self.root),'remove',path=str(self.root.resolve()))
             finally:self.git('worktree','remove',str(path))
 if __name__=='__main__':unittest.main()

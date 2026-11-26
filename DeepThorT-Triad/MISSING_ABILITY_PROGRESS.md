@@ -12,7 +12,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 |---:|---:|---|---|
 | 1 | 45 | Git commit management | Partial — reviewed staged and selected-file commits; Linux/Windows green; initial/merge commits and native acceptance outstanding |
 | 2 | 46 | Git branch management | Source extended: reviewed local create/list/switch/rename/merged-only delete. Pass 002 green; Pass 003 CI pending. Native desktop acceptance outstanding. |
-| 3 | 47 | Git worktree management | Not started in this programme |
+| 3 | 47 | Git worktree management | Source implemented: bounded local inventory, reviewed creation and clean-only linked removal; Pass 004 CI pending. Native acceptance and autonomous worktree assignment outstanding. |
 | 4 | 239 | Interactive code editing | Existing partial; completion not started in this programme |
 | 5 | 242 | Integration testing | Existing partial; completion not started in this programme |
 | 6 | 249 | Git status and history integration | Existing partial; completion not started in this programme |
@@ -375,3 +375,10 @@ Added the previously excluded partial capability rows to both documents. Origina
 - Extended the existing reviewed branch operations to clean local switching, inactive branch rename, and inactive branch deletion only when its commit is an ancestor of current HEAD. Refuse forced operations, dirty switches, ignored-file overwrite, linked-worktree checked-out branches, changed branch inventory/HEAD/worktree snapshots, and unmerged deletion. Use native non-force Git operations; no remote publication.
 - Hold ordinary desktop dispatch while a reviewed Git action is approved/running; branch switching also requires no incomplete project jobs or roadmaps because grants are workspace-bound, not branch-bound. No permission expansion or new worker. Git remains a trusted local executable; external concurrent Git operations are unsupported, and checkout may run repository filters with user rights.
 - Four additional real Git fixture regressions: rename/delete, clean/dirty switch, unmerged/stale ref refusal and linked worktree protection. CI pending. GUI/native model use not yet accepted on owner PC. Next ranked item: 3 / ID 47 worktree management, after verification and any required repairs.
+
+## Pass 004 — 27 November 2026
+
+- Pass 003 source CI green, Windows pending at implementation time ([run 45901000840](https://github.com/Vardath/Vardath.github.io/actions/runs/45901000840)).
+- Worktree management: bounded exact native inventory (path, ref, HEAD, lock/prune state); add an unused existing local branch into an explicitly chosen absent directory outside all registered worktrees; revalidate source and destination identity; verify resulting checkout. Remove only existing attached linked worktrees (not primary/current), with same Git common directory, unchanged commit and no staged, modified, ignored or untracked files. No forced removal or branch deletion. Protect linked/locked targets, active application/state and unfinished target jobs/roadmaps. Uses existing reviewed action dispatcher and resource controls.
+- Three actual Git fixture regressions cover creation/removal, preservation of branch, nested and occupied destinations, ignored files, primary and locked worktrees. Native GUI/model-led isolated worktree assignment remains unverified. Local Git checkout may run trusted repository filters; worktrees are not a sandbox. No automatic cleanup of partially failed operations.
+- Next rank 4 / ID 239 interactive code editing (inspect existing editor and checkpoint mechanisms before extending). Verify Pass 003 and 004 CI first. No installer.

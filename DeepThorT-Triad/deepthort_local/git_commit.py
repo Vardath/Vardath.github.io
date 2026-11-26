@@ -291,6 +291,137 @@ def apply_branch_operation(executable,root,plan):
     return {'operation':operation,'branch':ref,'commit':oid,'new_branch':new_ref,
             'remote_published':False,'working_tree_changed':operation=='switch','tests_verified':False}
 
+def _worktree_rows(executable,root):
+    raw=_git(executable,root,['worktree','list','--porcelain','-z'])
+    rows=[];row=None
+    for field in raw.decode('utf-8','strict').split('\0'):
+        if field.startswith('worktree '):
+            if row is not None:raise ValueError('Invalid worktree inventory')
+            path=field[9:]
+            if not Path(path).is_absolute() or any(ord(c)<32 for c in path):
+                raise ValueError('Invalid worktree path')
+            row={'path':str(Path(path).resolve()),'head':None,'ref':None,'locked':False,'prunable':False,'detached':False,'bare':False}
+        elif not field:
+            if row is not None:
+                rows.append(row);row=None
+        elif row is None:raise ValueError('Invalid worktree record')
+        elif field.startswith('HEAD '):
+            oid=field[5:]
+            if not OID.fullmatch(oid):raise ValueError('Invalid worktree HEAD')
+            row['head']=oid
+        elif field.startswith('branch '):
+            ref=field[7:]
+            if not ref.startswith('refs/heads/'):raise ValueError('Invalid worktree ref')
+            row['ref']=ref
+        elif field=='detached':row['detached']=True
+        elif field=='bare':row['bare']=True
+        elif field=='locked' or field.startswith('locked '):row['locked']=True
+        elif field=='prunable' or field.startswith('prunable '):row['prunable']=True
+        else:raise ValueError('Unknown worktree record field')
+    if row is not None:rows.append(row)
+    if not 1<=len(rows)<=64 or len({r['path'] for r in rows})!=len(rows):
+        raise ValueError('Worktree inventory exceeds bound or contains duplicate paths')
+    return {'rows':rows,'sha':hashlib.sha256(raw).hexdigest()}
+
+def worktree_inventory(executable,root):
+    review=branch_inventory(executable,root)
+    result={**review,'worktrees':_worktree_rows(executable,root)}
+    if branch_inventory(executable,root)!=review:raise ValueError('Repository changed during worktree inspection')
+    return result
+
+def _real_directory(path):
+    path=Path(path)
+    if not path.is_absolute():raise ValueError('Choose an absolute directory')
+    for part in (path,*path.parents):
+        if part.is_symlink() or getattr(part,'is_junction',lambda:False)():
+            raise ValueError('Linked directories are not eligible')
+    actual=path.resolve(strict=True)
+    if not actual.is_dir():raise ValueError('Directory is unavailable')
+    return actual
+
+def _overlap(a,b):
+    return a==b or a in b.parents or b in a.parents
+
+def _worktree_destination(review,parent,name):
+    parent=_real_directory(parent)
+    if not isinstance(name,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,79}',name) or name.endswith('.') or name.split('.')[0].upper() in {'CON','PRN','AUX','NUL',*(f'COM{i}' for i in range(1,10)),*(f'LPT{i}' for i in range(1,10))}:
+        raise ValueError('Use a simple new directory name')
+    path=parent/name
+    if path.exists() or path.is_symlink() or getattr(path,'is_junction',lambda:False)():
+        raise ValueError('Destination must not exist')
+    if any(_overlap(path,Path(r['path'])) for r in review['worktrees']['rows']):
+        raise ValueError('Destination overlaps an existing repository worktree')
+    st=parent.stat()
+    return {'path':str(path),'parent':str(parent),'parent_dev':st.st_dev,'parent_ino':st.st_ino}
+
+def _removal_target(executable,root,review,path):
+    if not isinstance(path,str):raise ValueError('Choose an exact linked worktree path')
+    target=_real_directory(path)
+    rows=review['worktrees']['rows']
+    record=next((r for r in rows[1:] if r['path']==str(target)),None)
+    if not record or target==Path(review['identity']['root']) or record['bare'] or record['locked'] or record['prunable'] or record['detached'] or not record['ref']:
+        raise ValueError('Only an unlocked, existing, attached linked worktree other than the selected repository can be removed')
+    if any(_overlap(target,Path(r['path'])) for r in rows if r['path']!=str(target)):
+        raise ValueError('Worktree overlaps another registered worktree')
+    dotgit=target/'.git'
+    if dotgit.is_symlink() or not dotgit.is_file():raise ValueError('Expected a linked worktree metadata file')
+    def common(where):
+        return Path(_text(executable,where,['rev-parse','--path-format=absolute','--git-common-dir'])).resolve(strict=True)
+    if common(root)!=common(target):raise ValueError('Worktree belongs to another repository')
+    if _identity(executable,target)['head']!=record['head'] or _identity(executable,target)['ref']!=record['ref']:
+        raise ValueError('Worktree identity changed')
+    if _git(executable,target,['status','--porcelain=v1','-z','--untracked-files=all','--ignored=matching','--ignore-submodules=none']):
+        raise ValueError('Removal requires no staged, modified, untracked or ignored files')
+    return record
+
+def worktree_plan(executable,root,review,operation,*,branch=None,parent=None,name=None,path=None):
+    current=worktree_inventory(executable,root)
+    if current!=review:raise ValueError('Worktree inventory changed; review again')
+    if operation=='add':
+        ref=_local_ref(executable,root,branch)
+        refs={r['ref']:r['commit'] for r in current['branches']}
+        if ref not in refs or ref in [r['ref'] for r in current['worktrees']['rows']]:
+            raise ValueError('Choose an existing local branch not checked out in any worktree')
+        dest=_worktree_destination(current,parent,name)
+        target={'destination':dest,'ref':ref,'head':refs[ref]}
+    elif operation=='remove':
+        target=_removal_target(executable,root,current,path)
+    else:raise ValueError('Unsupported worktree operation')
+    return {'schema':'janus-git-worktree-v1','operation':operation,'identity':current['identity'],
+            'inventory_sha':hashlib.sha256(json.dumps(current,sort_keys=True).encode()).hexdigest(),
+            'target':target,'expires_at':int(time.time())+1800}
+
+def apply_worktree(executable,root,plan):
+    if not isinstance(plan,dict) or set(plan)!={'schema','operation','identity','inventory_sha','target','expires_at'} or plan['schema']!='janus-git-worktree-v1':
+        raise ValueError('Invalid worktree plan')
+    if type(plan['expires_at']) is not int or not time.time()<plan['expires_at']<=time.time()+1800:
+        raise ValueError('Worktree review expired')
+    actual=worktree_inventory(executable,root)
+    if actual['identity']!=plan['identity'] or hashlib.sha256(json.dumps(actual,sort_keys=True).encode()).hexdigest()!=plan['inventory_sha']:
+        raise ValueError('Repository or worktree inventory changed since approval')
+    target=plan['target']
+    if plan['operation']=='add':
+        dest=target['destination']
+        checked=worktree_plan(executable,root,actual,'add',branch=target['ref'][11:],parent=dest['parent'],name=Path(dest['path']).name)
+        if checked['target']!=target:raise ValueError('Worktree destination or branch changed')
+        path=Path(dest['path'])
+        _git(executable,root,['worktree','add','--',str(path),target['ref'][11:]])
+        after=worktree_inventory(executable,root)
+        row=next((r for r in after['worktrees']['rows'] if r['path']==str(path)),None)
+        if after['identity']!=actual['identity'] or not row or row['ref']!=target['ref'] or row['head']!=target['head']:
+            raise ValueError('Worktree creation outcome differs; inspect repository, do not retry automatically')
+    elif plan['operation']=='remove':
+        checked=_removal_target(executable,root,actual,target['path'])
+        if checked!=target:raise ValueError('Removal target changed')
+        path=Path(target['path'])
+        _git(executable,root,['worktree','remove','--',str(path)])
+        after=worktree_inventory(executable,root)
+        if path.exists() or after['identity']!=actual['identity'] or any(r['path']==str(path) for r in after['worktrees']['rows']) or after['branches']!=actual['branches']:
+            raise ValueError('Worktree removal outcome differs; inspect repository')
+    else:raise ValueError('Unsupported worktree operation')
+    return {'operation':plan['operation'],'path':str(path),'branch':target['ref'],'commit':target['head'],
+            'branch_deleted':False,'remote_published':False,'security_sandbox':False,'tests_verified':False}
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--git',required=True);parser.add_argument('--root',required=True);parser.add_argument('--plan',required=True)
@@ -300,6 +431,7 @@ def main():
         schema=plan.get('schema')
         if schema=='janus-git-branch-create-v1':result=apply_branch(args.git,args.root,plan)
         elif schema=='janus-git-branch-operation-v1':result=apply_branch_operation(args.git,args.root,plan)
+        elif schema=='janus-git-worktree-v1':result=apply_worktree(args.git,args.root,plan)
         else:result=apply(args.git,args.root,plan)
         print(json.dumps(result,sort_keys=True))
     except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as exc:
