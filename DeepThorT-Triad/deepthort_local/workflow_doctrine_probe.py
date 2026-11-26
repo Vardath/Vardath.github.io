@@ -52,7 +52,7 @@ def exercise(health=None,cancelled=lambda:False):
         with primary,other,memory:
             if not all(x.locked() for x in (primary,other,memory)):raise ValueError('Independent role admission failed')
             try:
-                with memory:raise ValueError('Optional memory should defer')
+                with memory:raise ValueError('Duplicate memory call should defer')
             except WorkerFailure as e:
                 if e.code!='worker_busy':raise
         a=(0,1,'implementation');b=(1,2,'sentinel')

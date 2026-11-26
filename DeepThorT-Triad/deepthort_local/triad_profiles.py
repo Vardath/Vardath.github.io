@@ -14,7 +14,8 @@ PROFILES={
  'janus':('SmolLM3-3B INT4','HarmenWessels/SmolLM3-3B-int4-symg128-ov','2fa313c463ddcaac532d0ddfc6daa76b08991573',1_600_000_000),
  'sentinel':('Qwen3-4B INT4','OpenVINO/Qwen3-4B-int4-ov','b467368d16b75df14055562fe927ae8e1f15f7ef',2_100_000_000),
 }
-# Keep original three-role acceptance contract stable; memory is optional at startup.
+# Keep original three-role broker readiness separate from fifth-worker availability.
+# Missing memory is degraded operation, not permission to treat recall as discretionary.
 MEMORY_PROFILE=('Qwen2.5-1.5B Instruct INT4','OpenVINO/Qwen2.5-1.5B-Instruct-int4-ov',
                 'bc0390db9d2caa08e5ab2ba4010e0bfe2f969686',850_000_000)
 ALL_PROFILES={**PROFILES,'memory':MEMORY_PROFILE}

@@ -10,7 +10,7 @@ from .triad_errors import WorkerFailure
 
 MAX_WAITING=4
 WAIT_SECONDS=600
-SERIAL_PRIORITY={'sentinel':0,'janus':1,'implementation':2}
+SERIAL_PRIORITY={'sentinel':0,'janus':1,'implementation':2,'memory':3}
 AGING_SECONDS=30
 
 def serial_rank(ticket,now):
@@ -38,7 +38,7 @@ class RoleInbox:
 
     def __enter__(self):
         with self.cv:
-            # Optional memory never accumulates a second model request.
+            # The dedicated observer owns its backlog; only one recall may enter the broker.
             if self.role=='memory' and (self.active or self.queue):
                 raise WorkerFailure('worker_busy','Memory observer already has an active recall')
             if not self.active and not self.queue:
