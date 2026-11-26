@@ -2072,7 +2072,7 @@ class DeepThorTDesktop(tk.Tk):
                 focus=focus,job_id=job_id,budget=budget,cancelled=cancelled,recipient='janus')
         return ''
 
-    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None):
+    def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None,supervision=None):
         from deepthort_local.specification_guard import inspect_proposal, SpecificationRejected
         from deepthort_local.reasoning_council import ReasoningCouncil
         advisor=self._planning_council_client()
@@ -2099,7 +2099,7 @@ class DeepThorTDesktop(tk.Tk):
                     recipient='sentinel',budget=500)
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
-                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
+                focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory,supervision=supervision)
             if memory_job:
                 self.jobs.remember(memory_job['id'],'sentinel',focus,review['original_sha'],review['evidence_sha'],
                     ('Accepted as advice; runtime untested: ' if review['accepted'] else 'Rejected: ')+review['reason'])
@@ -2107,6 +2107,10 @@ class DeepThorTDesktop(tk.Tk):
                 accepted=review['accepted'],evidence_sha=review['evidence_sha'],
                 original_sha=review['original_sha'],proposal_sha=review['proposal_sha'],runtime_verified=False)
             if not review['accepted']:
+                if review.get('verdict')=='INVALID':
+                    # An invalid model response is not evidence of specification drift.
+                    # The producer's normal bounded retry may obtain a valid review.
+                    raise SpecificationRejected('Sentinel returned no valid independent source verdict; candidate withheld')
                 self.sentinel.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
                     finding='Original specification adherence: rejected',proposal=review['reason'],origin='local_model')
                 self.janus.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
@@ -3011,11 +3015,17 @@ class DeepThorTDesktop(tk.Tk):
                     prompt+=fit_memory(recalled,max(0,MAX_INFERENCE_PROMPT-len(prompt)))
                 def review_plan(proposed,section=''):
                     for item in proposed:
-                        self._sentinel_alignment(original,request['project'],session,
-                            item['path']+': '+item['description'],
-                            json.dumps(item,ensure_ascii=False),section=section,
+                        intent=json.dumps(item,ensure_ascii=False)
+                        intent_focus=item['path']+': '+item['description']
+                        receipt=self._sentinel_alignment(original,request['project'],session,
+                            intent_focus,intent,section=section,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)),
                             cancelled=cancelled,amendments=amendments,memory_chat=request['chat_id'])
+                        if not cancelled():
+                            from deepthort_local.supervision_policy import record as record_intent
+                            try:record_intent(STATE/'reasoning-council-v50.sqlite3',request,original,intent,intent_focus,
+                                receipt,section=section,amendments=amendments)
+                            except (OSError,ValueError,__import__('sqlite3').Error):pass
                 if request['mode']=='chat' and not large_spec:
                     from deepthort_local.chat_capabilities import chat_context
                     prompt, chat_tokens, route, sources = chat_context(
@@ -4872,13 +4882,32 @@ class DeepThorTDesktop(tk.Tk):
                     if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))
+                    from deepthort_local.supervision_policy import review_depth,prior_plan
+                    policy=review_depth(contract,amendments,corrective=retry_requested,
+                        prior_attempt=self.project_assignments.prior_attempt(assignment),advice=step_memory) if assignment else None
                     def guard(proposal,kind):
                         if behavior_test and kind=='code':
                             validate_behavior_test(step['path'],proposal)
                             kind='behavior_test'
-                        receipt=self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
-                            kind=kind,stage=lambda message:self.events.put(('log',message)),
-                            cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory)
+                        receipt=None
+                        if assignment and kind=='plan' and not stopped_memory() and policy['depth']=='ordinary':
+                            # New asynchronous findings can arrive since the initial snapshot.
+                            fresh=self.memory_observer.advice(original=original,project=project,chat_id=j['chat_id'],
+                                focus=focus,job_id=jobid,cancelled=stopped_memory)
+                            fresh+=live_advice(self.jobs.path,jobid,original,focus,budget=600)
+                            if not fresh:
+                                receipt=prior_plan(STATE/'reasoning-council-v50.sqlite3',self.jobs.path,
+                                    self.jobs.get(jobid),contract,original,proposal,focus,policy)
+                        if receipt:
+                            self.events.put(('log',f'Job #{jobid}: exact prior Sentinel intention review reused; independent source review still required.'))
+                            self.jobs.remember(jobid,'sentinel',focus,receipt['original_sha'],receipt['evidence_sha'],
+                                'Exact approved prior intention review reused; source and runtime untested.')
+                        else:
+                            receipt=self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
+                                kind=kind,stage=lambda message:self.events.put(('log',message)),
+                                cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory,
+                                supervision=policy)
+                        if stopped_memory():raise PlanError('Supervision scope stopped or superseded')
                         if assignment:self.project_assignments.review(assignment,kind,proposal,receipt)
                         return receipt
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')

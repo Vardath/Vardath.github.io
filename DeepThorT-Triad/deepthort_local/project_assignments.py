@@ -102,6 +102,12 @@ class ProjectAssignments:
         if canonical_sha(contract)!=row[3]:raise GraphError('Assignment contract changed')
         return row,contract
 
+    def prior_attempt(self,attempt):
+        with self.graphs._db() as db:
+            row,contract=self._load(db,attempt,('assigned',))
+            return bool(db.execute("""SELECT 1 FROM project_assignments_v43 WHERE job_id=? AND step_id=? AND attempt<>?
+                LIMIT 1""",(contract['job_id'],contract['step_id'],attempt)).fetchone())
+
     def target_step(self,attempt,job_id,steps):
         """An asynchronous source result owns its exact assigned node."""
         with self.graphs._db() as db:

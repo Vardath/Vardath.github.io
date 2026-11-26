@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v62-worker-owned-selection",
-  "title": "Triad V62: worker-owned ready selection and direct integration notices",
+  "id": "triad-v63-proportional-supervision",
+  "title": "Triad V63: proportionate Sentinel supervision",
   "checks": [
     "shared_cap",
     "triad_residency",

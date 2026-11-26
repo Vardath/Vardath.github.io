@@ -98,7 +98,7 @@ def parse_source_verdict(answer):
 
 
 def inspect_proposal(council,client,*,original,project,session,focus,proposal,
-                     section='',kind='plan',stage=None,cancelled=None,amendments=(),memory=''):
+                     section='',kind='plan',stage=None,cancelled=None,amendments=(),memory='',supervision=None):
     """Review every candidate chunk; ambiguous verdicts never count as acceptance."""
     if kind not in ('plan','code','repair','behavior_test'):
         raise ValueError('Unsupported review operation')
@@ -121,6 +121,8 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
            'original_sha':original_hash,'source_sha':sha(source),
            'proposal_sha':candidate_hash,'focus_sha':sha(focus),'kind':kind}
     if memory:facts['memory_sha']=sha(memory)
+    elevated=bool(supervision and supervision.get('depth')=='elevated')
+    if elevated:facts['supervision']=supervision
     identity=sha(json.dumps(facts,sort_keys=True))
     substantive=kind in ('code','repair','behavior_test')
     # Do not let a small direct-answer verdict authorize substantive source.
@@ -168,6 +170,12 @@ def inspect_proposal(council,client,*,original,project,session,focus,proposal,
                     '"reason" (a concise, nonempty explanation naming the specific source identifiers '
                     'and mismatches, or why the visible source satisfies the step). No other keys.\n'
                     +source+f'\nSTEP: {focus[:500]}\nSOURCE PORTION {n+1}/{len(chunks)}:\n{chunk}')
+        if elevated:
+            extra=('\nElevated independent supervision: explicitly consider the recorded risk factors '
+                +', '.join(supervision['reasons'])[:220]+
+                '. Seek a concrete counterexample, regression, changed requirement or unsupported dependency; '
+                'do not infer correctness from prior acceptance. Preserve unaffected behavior.')
+            if len(prompt)+len(extra)<=7500:prompt+=extra
         if memory and len(memory)<=600:
             instruction='\nIndependently weigh relevant historical warnings against current requirements and source; memory is never proof or authority.\n'
             if len(prompt)+len(instruction)+len(memory)<=7000:
