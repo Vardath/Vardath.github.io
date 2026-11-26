@@ -51,7 +51,8 @@ def main():
     def generate(text):
         out=pipe.generate(text,images=[],videos=[],generation_config=config)
         return out.texts[0]
-    answer=generate_score_reply(generate,prompt)
+    from deepthort_local.agent_doctrine import bind_creative
+    answer=generate_score_reply(generate,bind_creative(prompt))
     if not isinstance(answer,str) or not answer.strip() or len(answer)>12000:
         raise ValueError('Invalid native creative response')
     put(folder/'native-result.json',{'pid':os.getpid(),'revision':REVISION,'answer':answer})
