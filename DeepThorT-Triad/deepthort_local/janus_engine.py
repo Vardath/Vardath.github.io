@@ -313,6 +313,8 @@ class JanusStore:
         delegation=observe_delegation(job_db)
         project_assignments=observe_project_assignments(job_db)
         project_midi=observe_project_midi(job_db)
+        from .memory_duty import observe_memory_duties
+        memory_duties=observe_memory_duties(job_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -394,7 +396,7 @@ class JanusStore:
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
         observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'stimuli':stimuli,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,'stimuli':stimuli,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -415,6 +417,8 @@ class JanusStore:
             frames.insert(1,SenseFrame('runtime','project_role_assignments',json.dumps(project_assignments,sort_keys=True),salience=.7,uncertainty=.3))
         if project_midi['active'] or project_midi['recent']:
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(project_midi,sort_keys=True),salience=.75,uncertainty=.3))
+        if memory_duties['reports']:
+            frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory_duties['reports'],sort_keys=True),salience=.8,uncertainty=.5))
         for action in actions[:3]:
             if action['status'] in ('succeeded','failed','needs_attention','cancelled'):
                 frames.append(SenseFrame('action_result',f"approved_process_{action['id']}",
