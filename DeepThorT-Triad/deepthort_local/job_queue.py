@@ -291,21 +291,26 @@ class JobStore:
                 "SELECT * FROM jobs WHERE mode IN ('chat','plan','edit') "
                 "AND state IN ('queued','paused','needs_input','failed') ORDER BY id")]
 
-    def next_any_queued(self, skip_modes: tuple[str,...]=()):
-        """Dispatch every user's queued job regardless of the currently selected UI project.
+    def next_any_queued(self, skip_modes: tuple[str,...]=(), *, exclude_project=None):
+        """Oldest eligible job; a busy workspace must not block unrelated work.
 
-        Project selection is a view filter, never an execution lock. Old queues in
-        a previously selected project must keep progressing once the model is ready.
+        Inspect only ID and workspace while skipping, not large stored prompts.
+        The caller still owns all actual dispatch authority and grant checks.
         """
+        from .task_graph import same_workspace
         with self._conn() as db:
             db.row_factory=sqlite3.Row
-            sql="SELECT * FROM jobs WHERE state='queued'"
+            sql="SELECT id,project FROM jobs WHERE state='queued'"
             params=[]
             if skip_modes:
                 sql+=' AND mode NOT IN ('+','.join('?' for _ in skip_modes)+')'
                 params.extend(skip_modes)
-            row=db.execute(sql+' ORDER BY id LIMIT 1',params).fetchone()
-            return dict(row) if row else None
+            for row in db.execute(sql+' ORDER BY id',params):
+                if exclude_project is not None and (row['project']==exclude_project or same_workspace(row['project'],exclude_project)):
+                    continue
+                current=db.execute("SELECT * FROM jobs WHERE id=? AND state='queued'",(row['id'],)).fetchone()
+                if current:return dict(current)
+            return None
 
     def change(self, ident: int, state: str, detail: str, result: str | None = None, allowed: tuple[str,...] | None = None) -> bool:
         if state not in STATES: raise ValueError('Unknown status')
