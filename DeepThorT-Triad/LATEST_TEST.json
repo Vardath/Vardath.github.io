@@ -1,12 +1,13 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v39-durable-delegation",
-  "title": "Triad V39: durable creative delegation, worker doctrine and native acceptance",
+  "id": "triad-v40-reviewed-team-delegation",
+  "title": "Triad V40: reviewed team DAG, durable delegation and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",
     "workflow_doctrine",
     "delegation",
+    "team_delegation",
     "janus_core",
     "task_memory",
     "memory_governance",

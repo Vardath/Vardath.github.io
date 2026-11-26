@@ -302,8 +302,8 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','development_cycles_interrupted',
                    count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
-        from deepthort_local.delegation import DelegationStore
-        self.delegations=DelegationStore(self.conversations.path,STATE/'creative-tasks')
+        from deepthort_local.team_delegation import TeamDelegationStore
+        self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
         self._creative_lane_thread=None
         self._creative_lane_stop=threading.Event()
@@ -1015,6 +1015,9 @@ class DeepThorTDesktop(tk.Tk):
         def delegation_probe():
             from deepthort_local.delegation_probe import exercise
             return exercise(cancelled=cancel.is_set)
+        def team_delegation_probe():
+            from deepthort_local.team_probe import exercise
+            return exercise(cancelled=cancel.is_set)
         def workflow_doctrine_probe():
             from deepthort_local.workflow_doctrine_probe import exercise
             return exercise(health=health,cancelled=cancel.is_set)
@@ -1038,7 +1041,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'team_delegation':team_delegation_probe,'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -2494,6 +2497,9 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                from deepthort_local.team_plan import is_team_request
+                if is_team_request(original):
+                    raise ValueError('Staged team requests require the independent lane and no attachments')
                 from deepthort_local.creative_core import is_midi_request,create_midi
                 if request['mode']=='chat' and is_midi_request(original):
                     if json.loads(request.get('attachments') or '[]'):
@@ -4195,6 +4201,13 @@ class DeepThorTDesktop(tk.Tk):
         def work():
             from deepthort_local.creative_core import create_midi
             try:
+                from deepthort_local.team_plan import is_team_request
+                if is_team_request(candidate['prompt']):
+                    from deepthort_local.team_delegation import run_team
+                    run_team(self.delegations,ident,self.client,create_midi,stopped,
+                             lambda message:self.events.put(('log','Team: '+message)))
+                    record(STATE,'desktop','team_delegation_completed',request_id=ident)
+                    return
                 task=self.delegations.claim(ident,'multimedia')
                 if not task or stopped():raise RuntimeError('Creative assignment interrupted before inference')
                 folder,receipt=create_midi(requester='user',scope=task['scope'],brief=task['brief'],

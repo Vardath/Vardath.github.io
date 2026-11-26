@@ -1,3 +1,9 @@
+# Triad V40 — reviewed model-authored team DAG
+
+V39 merged only after both exact PR jobs passed (run 45803845440). V40 extends its existing conversation DB leases and independent lane. Explicit `/delegate design <brief>` or `/delegate midi <brief>` invokes JANUS's bounded 1–4 node model-authored DAG, Sentinel graph review, Granite read-only design stages and optional Gemma staged MIDI, followed by Sentinel result review and atomic host delivery. Dependencies and per-attempt scope/hash receipts are rechecked. Granite advisory specifications can feed Gemma; no model-granted authority, project mutation, arbitrary tool calls, publication or new native backend. Existing direct MIDI and all 21 acceptance checks retained; fixed structural team delegation is check 22. V40 is NOT general autonomous project dispatch: the lane runs one batch and one ready stage at a time, only two registered adapters, explicit typed opt-in; no actual five-role overlap claim. Native V37+ acceptance still outstanding. Next extend contracts to approved project jobs and registered adapters, dependency-ready independent dispatch and adaptive resources, then remaining doctrine. Cumulative updater remains deferred.
+
+---
+
 # Triad V39 — durable dependency-based creative lane
 
 Owner requested continued development without intermediate installation. V38 was merged with green Linux/Windows CI; no V37/V38 native acceptance archive supplied. Preserve the complete approved WORKFLOW_DOCTRINE.md and outstanding native checks.

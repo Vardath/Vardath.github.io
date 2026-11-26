@@ -14,11 +14,12 @@ from contextlib import contextmanager
 from pathlib import Path
 from .agent_contract import canonical_sha,validate_creative_assignment
 from .creative_core import is_midi_request,request_packet
+from .team_plan import is_team_request,TEAM_STAGES
 
 MAX_PENDING=32
 STAGES=(('compose','multimedia',()),('verify','host',('compose',)))
 def eligible(row):
-    if not row or row['mode']!='chat' or not is_midi_request(row['prompt']):
+    if not row or row['mode']!='chat' or not (is_midi_request(row['prompt']) or is_team_request(row['prompt'])):
         return False
     try:return len(row['prompt'])<=1400 and json.loads(row['attachments'])==[]
     except (ValueError,TypeError,KeyError):return False
@@ -140,7 +141,7 @@ class DelegationStore:
             else:
                 attempt=1
                 db.execute("INSERT INTO agent_batches_v39 VALUES(?,?,?,'running')",(ident,digest,attempt))
-            for stage,role,deps in STAGES:
+            for stage,role,deps in (TEAM_STAGES if is_team_request(row['prompt']) else STAGES):
                 db.execute("INSERT INTO agent_stages_v39 VALUES(?,?,?,?,'queued',NULL,NULL)",(ident,attempt,stage,role))
                 db.executemany('INSERT INTO agent_edges_v39 VALUES(?,?,?,?)',[(ident,attempt,stage,d) for d in deps])
             db.execute("UPDATE conversation_requests SET state='running',detail='Independent creative assignment queued',updated_at=CURRENT_TIMESTAMP WHERE id=?",(ident,))
@@ -193,13 +194,14 @@ class DelegationStore:
             p=folder/name
             if p.is_symlink() or not p.is_file() or p.stat().st_size>65536:raise DelegationError('Invalid staged artifact file')
         packet=json.loads((folder/'request.json').read_text('utf-8'))
-        expected=request_packet('user',task['scope'],task['brief'])
+        requester=task.get('requester','user')
+        expected=request_packet(requester,task['scope'],task['brief'])
         if canonical_sha(packet)!=canonical_sha(expected):raise DelegationError('Artifact assignment mismatch')
         stored=json.loads((folder/'receipt.json').read_text('utf-8'))
         if canonical_sha(stored)!=canonical_sha(receipt):raise DelegationError('Stored artifact receipt mismatch')
         raw=(folder/'score.mid').read_bytes()
         if (receipt.get('status')!='artifact_created' or receipt.get('artifact')!='score.mid'
-                or receipt.get('assigned_role')!='multimedia' or receipt.get('requester')!='user'
+                or receipt.get('assigned_role')!='multimedia' or receipt.get('requester')!=requester
                 or receipt.get('scope')!=task['scope'] or receipt.get('project_publication_authorized') is not False
                 or receipt.get('native_inference_verified') is not True
                 or receipt.get('assignment_sha256')!=validate_creative_assignment(expected)
