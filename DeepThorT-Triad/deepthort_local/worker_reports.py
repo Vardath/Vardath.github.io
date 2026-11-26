@@ -137,11 +137,15 @@ def observe_gemma_reports(job_db):
 
 def observe_worker_reports(job_db):
     granite=observe_granite_reports(job_db);gemma=observe_gemma_reports(job_db)
+    from .worker_notices import observe_notices
     return {'available':granite['available'] or gemma['available'],
-            'reports':granite['reports'][:4]+gemma['reports'][:4]}
+            'reports':granite['reports'][:4]+gemma['reports'][:4],
+            'notices':observe_notices(job_db)}
 
 def still_current(job_db,receipt_sha):
-    return any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
+    from .worker_notices import observe_notices
+    return (any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
+            or bool(observe_notices(job_db,receipt_sha=receipt_sha)))
 
 def saved_dependency_catalog(job_db,item):
     """Read-only graph receipts, not proof that bytes are still available.
@@ -172,9 +176,13 @@ def saved_dependency_catalog(job_db,item):
 def counsel_fields(item,job_db):
     """Provide exact, bounded current requirements, never just a hash."""
     report=item['report']
+    notice=item.get('nonblocking') is True
+    if notice and not still_current(job_db,item['receipt_sha']):raise ValueError('Stale worker notice')
     if item['sender']=='multimedia':
+        states=('assigned','reviewed','publishing','checked') if notice else ('blocked',)
         with closing(reader(Path(job_db).parent/'roadmap-runs.sqlite3')) as db:
-            row=db.execute("SELECT contract,contract_sha FROM project_midi_v45 WHERE lease=? AND state='blocked'",(item['attempt'],)).fetchone()
+            row=db.execute("SELECT contract,contract_sha FROM project_midi_v45 WHERE lease=? AND state IN ("+
+                ','.join('?' for _ in states)+")",(item['attempt'],*states)).fetchone()
         if not row:raise ValueError('Missing creative assignment')
         contract=json.loads(row['contract'])
         if canonical_sha(contract)!=row['contract_sha'] or row['contract_sha']!=item['contract_sha']:raise ValueError('Changed creative assignment')
@@ -182,7 +190,8 @@ def counsel_fields(item,job_db):
         if not req:raise ValueError('Stale creative request')
         original=req['prompt']
     else:
-        bound=live_scope(job_db,item['job_id'],item['request_id'],states=('running','needs_input','failed'))
+        from .worker_notices import JOB_STATES
+        bound=live_scope(job_db,item['job_id'],item['request_id'],states=JOB_STATES if notice else ('running','needs_input','failed'))
         if not bound or bound['spec_sha']!=item['spec_sha']:
             raise ValueError('Worker report no longer has its original specification')
         original=bound['original']
@@ -194,7 +203,8 @@ def counsel_fields(item,job_db):
         if original.startswith('USER SPECIFICATION REVISION:'):
             source+='\nREVISION TAIL (verbatim): '+original[-400:]
     return (('Gemma' if item['sender']=='multimedia' else 'Granite')+' '+report['kind']+' for '+item['focus'],
-            'Unverified worker claim. Need: '+report['need']+'; reason: '+report['reason']+
+            ('Unverified NONBLOCKING observation, not a dependency hold. Output SHA: '+item['output_sha']+'; ' if notice else 'Unverified worker claim. ')+
+            'Need: '+report['need']+'; reason: '+report['reason']+
             '; original specification SHA: '+item['spec_sha']+'\n'+source+
             ('\nDirect saved predecessor receipt candidates (not current byte verification): '+
              json.dumps([r['path'] for r in saved_dependency_catalog(job_db,item)],ensure_ascii=False)[:900]

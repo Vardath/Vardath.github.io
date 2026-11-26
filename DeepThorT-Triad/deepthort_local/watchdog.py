@@ -136,6 +136,9 @@ class SentinelStore:
         reports=observation.get('worker_reports',{}).get('reports',[])
         if reports:
             frames.insert(1,SenseFrame('peer','production_worker_dependency_report',json.dumps(reports[:2],sort_keys=True),salience=.85,uncertainty=.7))
+        notices=observation.get('worker_reports',{}).get('notices',[])
+        if notices:
+            frames.insert(1,SenseFrame('peer','production_worker_nonblocking_notice',json.dumps(notices[:2],sort_keys=True),salience=.65,uncertainty=.7))
         memory=observation.get('memory_duties',{})
         if memory.get('reports'):
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory['reports'],sort_keys=True),salience=.8,uncertainty=.5))
@@ -452,7 +455,7 @@ class JanusSentinel:
             correction=pending_review(self.jobs_db)
             seen={r['evidence_key'] for r in self.store.recommendations(40)}
             pending_report=(correction[0] if correction else
-                next((r for r in worker_reports['reports'] if 'worker-'+r['receipt_sha'] not in seen),None))
+                next((r for r in worker_reports['reports']+worker_reports['notices'] if 'worker-'+r['receipt_sha'] not in seen),None))
             if (pending_report and (self._counsel_thread is None or not self._counsel_thread.is_alive())
                     and time.monotonic()-self._last_counsel_attempt>=60):
                 self._last_counsel_attempt=time.monotonic()

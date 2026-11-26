@@ -104,10 +104,13 @@ def generate_score_reply(generate,prompt,*,allow_report=False):
             'Return only the requested JSON object, with no explanation, reasoning or Markdown. '
             'Preserve every original requirement. Do not add fields.')
         try:
+            payload=answer
             if allow_report:
                 from .worker_reports import parse_report
+                from .worker_notices import split_notice
                 if parse_report(score_payload(answer)) is not None:return answer
-            parse_score(answer)
+                _,payload=split_notice(score_payload(answer))
+            parse_score(payload)
             return answer
         except (ValueError,TypeError):
             if attempt:raise ValueError('Fourth AI did not produce valid structured score after two attempts') from None
@@ -267,10 +270,13 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
         try:
             answer,pid=generate(folder,cancelled,notify)
             if cancelled():raise RuntimeError('Creative task cancelled')
+            notice=None
             if project_report_enabled(packet):
                 from .worker_reports import parse_report,WorkerReport
+                from .worker_notices import split_notice
                 report=parse_report(score_payload(answer))
                 if report is not None:raise WorkerReport(report,'multimedia')
+                notice,answer=split_notice(score_payload(answer))
             score=parse_score(answer)
             if cancelled():raise RuntimeError('Creative task cancelled')
             if accept is not None and not accept(score):
@@ -287,6 +293,7 @@ def create_midi(*,requester,scope,brief,cancelled=lambda:False,notify=lambda mes
                      'notes':len(score['notes']),'bpm':score['bpm'],
                      'native_inference_verified':generate is native_generate,'creative_quality_verified':False,
                      'project_publication_authorized':False}
+            if notice is not None:receipt['notice']=notice
             write_json(folder/'receipt.json',receipt)
             return folder,receipt
         except Exception as exc:

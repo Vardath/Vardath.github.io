@@ -76,7 +76,8 @@ class JanusWorker:
     def _consider_worker_reports(self):
         from deepthort_local.worker_reports import observe_worker_reports,still_current,counsel_fields
         from deepthort_local.corrective_coordination import eligible,propose
-        reports=observe_worker_reports(self.jobs_db)['reports']
+        observed=observe_worker_reports(self.jobs_db)
+        reports=observed['reports']+observed['notices']
         if not reports:return False
         seen={r['evidence_key'] for r in self.store.recommendations(40)}
         structured_report=next((r for r in reports if eligible(self.jobs_db,r) and 'coordination-propose-'+r['receipt_sha'] not in seen),None)

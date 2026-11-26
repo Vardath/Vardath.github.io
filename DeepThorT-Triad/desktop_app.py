@@ -4314,6 +4314,12 @@ class DeepThorTDesktop(tk.Tk):
                 folder,receipt=create_midi(requester='janus',scope=contract['scope'],brief=contract['brief'],
                     cancelled=stopped,notify=lambda message:self.events.put(('log','Project Gemma: '+message)))
                 if stopped():raise RuntimeError('Project MIDI assignment stopped')
+                import sqlite3
+                try:
+                    if self.project_midi.record_notice(lease,contract,folder,receipt):
+                        self.events.put(('log','Gemma reported a nonblocking discovery; independent review continues.'))
+                except sqlite3.Error:
+                    self.events.put(('log','Gemma notice ledger unavailable; ordinary score review continues.'))
                 score=inspect_midi((folder/'score.mid').read_bytes())
                 # Independent existing Sentinel review; use original specification,
                 # indexed goal and actual note events, not Gemma's completion claim.
@@ -4658,7 +4664,16 @@ class DeepThorTDesktop(tk.Tk):
                                         2100,enabled=self._project_work_is_enabled(),
                                         exclude=self.inspection_exclusions.paths(project))
                                 correction=consume(self.jobs,j,contract,resolve_evidence=corrective_evidence)
-                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency,correction=correction)
+                            def worker_notice(notice,output):
+                                if stopped_memory():raise PlanError('Worker notice superseded or stopped')
+                                import sqlite3
+                                try:
+                                    if self.project_assignments.record_notice(assignment,root_request_for_job(j,self.conversations),notice,output):
+                                        self.events.put(('log',f'Granite reported a nonblocking discovery for job #{jobid}; production continues.'))
+                                except sqlite3.Error:
+                                    self.events.put(('log','Granite notice ledger unavailable; ordinary source review continues.'))
+                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,
+                                resolve=resolve_dependency,notice=worker_notice,correction=correction)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     if retry_requested and (not assignment or not correction):raise PlanError('Corrective inference requires the unchanged approved assignment')
                     context_limit=MAX_INFERENCE_PROMPT-len(correction)

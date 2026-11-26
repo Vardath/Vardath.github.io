@@ -38,6 +38,8 @@ class ProjectAssignments:
             """)
             from .worker_reports import ensure_schema
             ensure_schema(db)
+            from .worker_notices import ensure_schema as ensure_notices
+            ensure_notices(db)
             db.execute("""CREATE TABLE IF NOT EXISTS dependency_evidence_v49(
                 attempt TEXT PRIMARY KEY, path TEXT NOT NULL, evidence_sha TEXT NOT NULL,
                 report_sha TEXT NOT NULL)""")
@@ -249,6 +251,22 @@ class ProjectAssignments:
             db.execute("INSERT INTO dependency_evidence_v49 VALUES(?,?,?,?)",(attempt,need,digest,canonical_sha(report)))
             return context
 
+    def record_notice(self,attempt,request_id,notice,output):
+        """Record scoped initiative without abandoning or certifying output."""
+        from .worker_notices import record
+        from .memory_duty import live_scope
+        from .task_graph import same_workspace
+        if not isinstance(output,str) or not output.strip():raise GraphError('Missing production reply')
+        with self.graphs._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _,contract=self._load(db,attempt,('assigned',))
+            bound=live_scope(self.graphs.path.parent/'jobs.sqlite3',contract['job_id'],request_id,states=('running',))
+            if (not bound or bound['spec_sha']!=contract['original_sha256']
+                    or bound['chat_id']!=contract['chat_id'] or bound['approval_key']!=contract['approval_key']
+                    or not same_workspace(bound['project'],contract['project'])):
+                raise GraphError('Stale production notice scope')
+            return record(db,attempt,request_id,contract,notice,sha(output),'implementation')
+
     def report_dependency(self,attempt,request_id,report):
         """An explicit worker report ends inference, never writes source."""
         from .worker_reports import parse_report,PREFIX,envelope
@@ -290,12 +308,13 @@ class ProjectAssignments:
 
 class ProjectRoleClient:
     """Explicit implementation-model adapter; cache only exact scoped calls."""
-    def __init__(self,client,contract,*,report=None,resolve=None,correction=''):
+    def __init__(self,client,contract,*,report=None,resolve=None,notice=None,correction=''):
         if contract['assignee']!='implementation':raise GraphError('Wrong production role')
         self.client=client
         self.scope=canonical_sha(contract)
         self.report=report
         self.resolve=resolve
+        self.notice=notice
         if not isinstance(correction,str) or len(correction)>3000:raise GraphError('Invalid corrective guidance')
         self.correction=correction
     def _session(self,session):
@@ -304,7 +323,18 @@ class ProjectRoleClient:
         from .worker_reports import GUIDANCE
         prompt+=self.correction
         if len(prompt)>7500:raise GraphError('Corrective guidance and original task exceed context budget')
-        return prompt+GUIDANCE if self.report is not None and len(prompt)+len(GUIDANCE)<=7500 else prompt
+        if self.report is not None and len(prompt)+len(GUIDANCE)<=7500:prompt+=GUIDANCE
+        if self.notice is not None:
+            from .worker_notices import GUIDANCE as NOTICE_GUIDANCE
+            if len(prompt)+len(NOTICE_GUIDANCE)<=7500:prompt+=NOTICE_GUIDANCE
+        return prompt
+    def _nonblocking(self,answer):
+        from .worker_notices import split_notice
+        notice,output=split_notice(answer)
+        if notice is not None:
+            if self.notice is None:raise GraphError('Worker notice not enabled for this assignment')
+            self.notice(notice,output)
+        return output
     def _response(self,answer,session,prompt,max_tokens):
         from .worker_reports import parse_report,WorkerReport
         report=parse_report(answer)
@@ -318,10 +348,10 @@ class ProjectRoleClient:
                     if len(retry)>7500:raise GraphError('Dependency evidence exceeds context budget')
                     answer=self.client.chat_as('implementation',self._session(session+'-dependency-'+sha(context)[:16]),retry,max_tokens=max_tokens)
                     report=parse_report(answer)
-                    if report is None:return answer
+                    if report is None:return self._nonblocking(answer)
             self.report(report)
             raise WorkerReport(report)
-        return answer
+        return self._nonblocking(answer)
     def chat(self,session,prompt,max_tokens=768):
         request=self._prompt(prompt)
         return self._response(self.client.chat_as('implementation',self._session(session),request,max_tokens=max_tokens),session,request,max_tokens)

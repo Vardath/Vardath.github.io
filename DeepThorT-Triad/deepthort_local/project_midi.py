@@ -41,6 +41,26 @@ class ProjectMidi:
 
             db.execute("""CREATE TABLE IF NOT EXISTS creative_reports_v49(
                 lease TEXT PRIMARY KEY,report TEXT NOT NULL,receipt_sha TEXT NOT NULL)""")
+            from .worker_notices import ensure_schema
+            ensure_schema(db)
+
+    def record_notice(self,lease,contract,folder,receipt):
+        """Only a current scoped native artifact may carry a production notice."""
+        if 'notice' not in receipt:return False
+        from .worker_notices import record
+        from .worker_reports import creative_request
+        self._staged(contract,folder,receipt)
+        if not creative_request(self.runs.path.parent/'jobs.sqlite3',contract,states=('active',)):
+            raise ValueError('Stale creative notice scope')
+        with self.runs.db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row,bound=self._row(db,contract['task']['id'])
+            run=db.execute("SELECT * FROM roadmap_runs WHERE request_id=?",(contract['request_id'],)).fetchone()
+            if (not row or row['lease']!=lease or row['state']!='assigned' or bound!=contract
+                or not run or run['state']!='active' or run['creative_midi']!=1
+                or run['mixed_sha']!=contract['plan_sha'] or run['manifest_sha256']!=contract['code_sha']):
+                raise ValueError('Stale creative notice assignment')
+            return record(db,lease,contract['request_id'],contract,receipt['notice'],receipt['sha256'],'multimedia')
 
     def report_dependency(self,lease,contract,report):
         from .worker_reports import parse_report,PREFIX,creative_request,creative_envelope
