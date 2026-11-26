@@ -71,6 +71,11 @@ def publish(db,society,readout,cycle,stamp):
         raise ValueError('Outward route bypassed Front')
     message=interface.get('message')
     if not message:return False
+    selected=front.get('outward_finding') or {}
+    ref=selected.get('evidence_sha')
+    if (not ref or any(ref not in cores[name].get('finding_refs',[]) for name in
+            ('Evidence','Safety','Counterpoint','Context','Logic','Novelty','Memory','Left','Right'))):
+        raise ValueError('Finding was not propagated through all specialist and hemisphere readouts')
     expected=express(front)
     if expected!=message:raise ValueError('Interface message is not Front-bound')
     table=_table(society);field='problem' if society=='janus' else 'finding'
@@ -91,10 +96,11 @@ def publish(db,society,readout,cycle,stamp):
         AND id NOT IN (SELECT id FROM interface_messages ORDER BY id DESC LIMIT 500)""")
     return bool(result)
 
-def messages(db,limit=20):
+def messages(db,limit=20,*,unread_first=False):
     db.row_factory=__import__('sqlite3').Row
-    return [dict(r) for r in db.execute("""SELECT id,stamp,cycle,origin,body,read_at
-        FROM interface_messages ORDER BY id DESC LIMIT ?""",(max(1,min(100,int(limit))),))]
+    order='(read_at IS NOT NULL), CASE WHEN read_at IS NULL THEN id END, id DESC' if unread_first else 'id DESC'
+    return [dict(r) for r in db.execute('SELECT id,stamp,cycle,origin,body,read_at FROM interface_messages ORDER BY '+order+' LIMIT ?',
+        (max(1,min(100,int(limit))),))]
 
 def unread(db):
     return int(db.execute('SELECT COUNT(*) FROM interface_messages WHERE read_at IS NULL').fetchone()[0])
