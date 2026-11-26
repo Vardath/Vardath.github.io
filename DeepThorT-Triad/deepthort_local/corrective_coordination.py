@@ -183,3 +183,24 @@ def consume(jobs,queued_job,contract):
     return ('\n\nINDEPENDENTLY REVIEWED CORRECTIVE GUIDANCE (advisory, not a specification change; '
             'do not invent missing inputs or tools): '+p['decision']['guidance']+
             '\nPreserve the original approved file task and all requirements.')
+
+def observe(path):
+    """Bounded read-only status evidence for both independent societies."""
+    try:
+        with closing(read(path)) as db:
+            rows=db.execute("""SELECT c.report_id,c.job_id,c.step_id,c.state,c.proposal_sha,c.verdict_sha,
+                       j.state AS job_state,j.detail AS job_detail
+                FROM corrective_assignments_v50 c JOIN jobs j ON j.id=c.job_id
+                ORDER BY c.rowid DESC LIMIT 12""").fetchall()
+        result=[]
+        for row in rows:
+            active=(row['state'] in ('proposed','approved') and row['job_state']=='needs_input'
+                    and row['job_detail']==WAIT+row['report_id']) or (
+                    row['state']=='queued' and row['job_state']=='queued'
+                    and row['job_detail']==READY+row['report_id'])
+            result.append({'report_id':row['report_id'],'job_id':row['job_id'],'step_id':row['step_id'],
+                'state':row['state'],'job_state':row['job_state'],'active':active,
+                'proposal_sha':row['proposal_sha'],'verdict_sha':row['verdict_sha'],
+                'authority':False,'verified':False})
+        return {'available':True,'recent':result}
+    except (OSError,sqlite3.Error):return {'available':False,'recent':[]}
