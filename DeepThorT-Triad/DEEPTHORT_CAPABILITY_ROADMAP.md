@@ -1,3 +1,9 @@
+# Triad V35 progress — fifth independent memory intelligence
+
+V35 introduces pinned Qwen2.5-1.5B Instruct INT4 as a fifth specialist, with actual native installation and separate broker residency, request lock and protected resource admission. Existing scoped memory governor calls it for eligible relevance selection, then Sentinel independently verifies positive results; invalid/empty proposals receive full Sentinel review. Existing governed outputs remain bound to current project/chat/task and requirements; no unrestricted global memory exposure or new execution authority. Fifth readiness, exact independent recall quality and real overlapping memory/JANUS generation are required in Latest Test, separately from existing live memory. Measure actual latency; do not assume improved performance. Native Gemma text-generation overload repaired; actual MIDI and concurrent fifth/fourth headroom still unverified. Preserve the existing whole-creator, self-development, documented test and green CI requirements. Next: actual Windows validation, memory prefetch and creative integration, then general typed inter-agent task delegation.
+
+---
+
 # Triad V34 — binding whole-creator development direction
 
 Owner requirement, 26 November 2026: this application is a complete local AI creation environment, not a code-only assistant and not a media-only generator. Keep the existing actual Triad 40% shared CPU and up-to-50% RAM-sized aggregate commit cap, not the older single-model/30% design below. Older entries remain historical evidence. Three distinct native language models currently validated on Windows; fourth intelligent Gemma VLM candidate and subordinate Stable Diffusion tool are separate. Fifth dedicated memory intelligence requested, benchmark before activation. Existing Sentinel governance, exact requirements/amendments, persistent state, reviewed project grants, normal UAC and no cloud inference remain binding.
