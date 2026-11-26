@@ -5,6 +5,7 @@ The approved artifact obligations are separate from executable commands.
 Missing capabilities block their boundary, rather than silently disappearing.
 """
 from __future__ import annotations
+from contextlib import closing
 import json
 import sqlite3
 from pathlib import Path
@@ -54,7 +55,7 @@ def parse_tasks(answer,roadmap,section):
 class MixedRoadmaps:
     def __init__(self,path):
         self.path=Path(path)
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.executescript("""
             CREATE TABLE IF NOT EXISTS mixed_sections(
               request_id INTEGER NOT NULL, code_sha TEXT NOT NULL, ordinal INTEGER NOT NULL,
@@ -66,19 +67,19 @@ class MixedRoadmaps:
               task_id TEXT PRIMARY KEY, request_id INTEGER UNIQUE NOT NULL);
             """)
     def section(self,request_id,code_sha,ordinal,section_sha):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT section_sha,tasks FROM mixed_sections WHERE request_id=? AND code_sha=? AND ordinal=?',
                            (request_id,code_sha,ordinal)).fetchone()
         if not row:return None
         if row[0]!=section_sha:raise ValueError('Indexed section changed')
         return json.loads(row[1])
     def save_section(self,request_id,code_sha,ordinal,section_sha,tasks):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT OR IGNORE INTO mixed_sections VALUES(?,?,?,?,?)',
                        (request_id,code_sha,ordinal,section_sha,json.dumps(tasks,ensure_ascii=False)))
     def save(self,body):
         identity=digest(body)
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute('SELECT sha FROM mixed_plans WHERE request_id=?',(body['request_id'],)).fetchone()
             if row and row[0]!=identity:raise ValueError('Mixed roadmap changed; create a new specification revision')
@@ -86,18 +87,18 @@ class MixedRoadmaps:
                        (body['request_id'],body['code_sha'],json.dumps(body,ensure_ascii=False),identity))
         return identity
     def get(self,request_id,code_sha):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT code_sha,body,sha FROM mixed_plans WHERE request_id=?',(request_id,)).fetchone()
         if not row:return None
         body=json.loads(row[1])
         if row[0]!=code_sha or digest(body)!=row[2]:raise ValueError('Mixed roadmap is stale')
         return {**body,'sha':row[2]}
     def request_for(self,task_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             row=db.execute('SELECT request_id FROM mixed_requests WHERE task_id=?',(task_id,)).fetchone()
             return row[0] if row else None
     def bind_request(self,task_id,request_id):
-        with sqlite3.connect(self.path) as db:
+        with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('INSERT INTO mixed_requests VALUES(?,?)',(task_id,request_id))
 
 

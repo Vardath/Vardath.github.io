@@ -49,6 +49,12 @@ class GemmaPreparationTests(unittest.TestCase):
         self.assertIsNone(available(self.db,self.runs,self.chats,self.mixed,req,task,[],files))
         self.runs.change(req['id'],'paused','User paused')
         self.assertIsNone(available(self.db,self.runs,self.chats,self.mixed,req,task,recipes,files))
+    def test_mixed_store_releases_database_handles(self):
+        # Windows refuses to rename an open SQLite database. All store methods
+        # must commit and close, not merely leave a connection context.
+        renamed=self.root/'mixed-renamed.sqlite3'
+        self.mixed.path.rename(renamed)
+        renamed.rename(self.mixed.path)
     def test_invalid_choice_and_stale_scope(self):
         options=[x['option'] for x in self.items]
         with self.assertRaises(ValueError):
