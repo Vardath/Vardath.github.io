@@ -9,7 +9,7 @@ from pathlib import Path
 import json
 import sqlite3
 import time
-from .memory_governor import canonical,evidence_eligible,retrieve
+from .memory_governor import canonical,evidence_eligible
 from .reasoning_council import sha
 
 STATES=('queued','running','waiting_verification','waiting_repair')
@@ -141,6 +141,14 @@ class MemoryDuty:
             db.execute("""DELETE FROM memory_duties_v47 WHERE work_id IN
                 (SELECT work_id FROM memory_duties_v47 ORDER BY completed DESC,work_id LIMIT -1 OFFSET ?)""",(MAX_REPORTS,))
 
+    def has_reports(self,job_id):
+        if not job_id:return False
+        try:
+            with closing(reader(self.path)) as db:
+                return bool(db.execute("SELECT 1 FROM memory_duties_v47 WHERE job_id=? AND completed>=? AND outcome='findings' LIMIT 1",
+                                       (job_id,self.clock()-REPORT_TTL)).fetchone())
+        except (OSError,sqlite3.Error):return False
+
     def advice_records(self,*,project,chat_id,original,job_id,current):
         if not job_id or not current:return []
         with closing(reader(self.path)) as db:
@@ -161,12 +169,38 @@ class MemoryDuty:
                 if len(result)>=3:return result
         return result
 
+def observed_record(db,bound,item):
+    """Read-only evidence check for journal and step records. Other receipts
+    remain opaque references until the existing governed advice checkpoint."""
+    ident=item['id']
+    if len(ident)<2 or not ident[1:].isdigit():return None
+    if ident.startswith('N'):
+        row=db.execute("""SELECT n.* FROM task_memory_notes n JOIN jobs j ON j.id=n.job_id
+            WHERE n.id=? AND j.project=? AND j.chat_id=? AND n.spec_sha=?""",
+            (int(ident[1:]),bound['project'],bound['chat_id'],bound['spec_sha'])).fetchone()
+        if not row:return None
+        from .memory_consolidation import recall_group
+        actual=recall_group(db,row,bound['project'],bound['chat_id'],bound['spec_sha']) or {
+            'id':ident,'kind':'historical_'+row['role'],'focus':row['focus'][:100],
+            'observation':row['note'][:220],'evidence':row['evidence_sha'][:64]}
+    elif ident.startswith('S'):
+        row=db.execute("SELECT id,path,description,state,outcome FROM job_steps WHERE id=? AND job_id=? AND state IN ('saved','verified','failed')",
+                       (int(ident[1:]),bound['job_id'])).fetchone()
+        if not row:return None
+        actual={'id':ident,'kind':'historical_queue_state','focus':row['path'][:100],
+                'observation':(row['state']+': '+row['outcome'])[:220],'evidence':sha(canonical(dict(row)))}
+    elif ident.startswith(('T','M')):
+        return {'id':ident,'evidence':item['evidence'],'scope':'Historical receipt reference; recheck at scoped review'}
+    else:return None
+    if actual!=item or not evidence_eligible(actual):return None
+    return {'id':ident,'evidence':actual['evidence'],'observation':actual['observation']}
+
 def observe_memory_duties(job_db,*,clock=time.time):
     """Both societies independently read exact, current, advisory report receipts.
 
-    Raw findings are delivered at existing scope-matched memory checkpoints,
-    where the authoritative source rows are retrieved again. The shared society
-    signal contains only the scoped identity, selected record IDs and hashes.
+    Journal findings are read-only revalidated and presented as scoped historical
+    observations. Tool references stay opaque until the existing governed advice
+    checkpoint. No index maintenance or inference occurs in either society.
     """
     empty={'available':False,'reports':[]}
     try:
@@ -182,12 +216,12 @@ def observe_memory_duties(job_db,*,clock=time.time):
             record={'work_id':row['work_id'],'scope':signature(bound),'focus':row['focus'],'phase':row['phase'],
                     'outcome':row['outcome'],'findings':findings}
             if sha(canonical(record))!=row['receipt_sha'] or not 1<=len(findings)<=3:continue
-            current={v['id']:v for v in retrieve(job_db,project=bound['project'],chat_id=bound['chat_id'],
-                    original=bound['original'],job_id=bound['job_id'],focus=row['focus']) if evidence_eligible(v)}
-            if any(current.get(v['id'])!=v for v in findings):continue
+            with closing(reader(job_db)) as source:
+                checked=[observed_record(source,bound,v) for v in findings]
+            if any(v is None for v in checked):continue
             result.append({'job_id':row['job_id'],'request_id':row['request_id'],
                 'scope_sha':sha(canonical(signature(bound))),'receipt_sha':row['receipt_sha'],
-                'records':[{'id':v['id'],'evidence':v['evidence']} for v in findings],
+                'records':checked,
                 'sender':'memory','recipients':['janus','sentinel'],'authority':False})
             if len(result)>=4:break
         return {'available':True,'reports':result}
