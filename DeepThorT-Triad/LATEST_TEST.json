@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v43-project-role-assignments",
-  "title": "Triad V43: approved project role handoffs, reactive societies and native acceptance",
+  "id": "triad-v44-ready-role-concurrency",
+  "title": "Triad V44: dependency-ready role overlap, project assignments and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",

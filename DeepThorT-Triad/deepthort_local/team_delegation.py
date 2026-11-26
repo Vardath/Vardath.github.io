@@ -4,6 +4,9 @@ All generated designs are advisory text and all MIDI remains private staging.
 No new grants, arbitrary commands or project writes are introduced.
 """
 import json
+import queue
+import threading
+import time
 from .delegation import DelegationStore,DelegationError
 from .team_plan import (parse_plan,plan_prompt,task_name,contract,KINDS,acceptance)
 from .agent_contract import canonical_sha
@@ -156,21 +159,24 @@ class TeamDelegationStore(DelegationStore):
                 WHERE id=? AND state='running'""",(answer,task['request_id']))
             return answer
 
-def run_team(store,ident,client,create_midi,stopped,notify):
-    """Run real role-specific calls through the existing broker, no new backend."""
+def run_team(store,ident,client,create_midi,stopped,notify,*,overlap_allowed=None):
+    """Dispatch dependency-ready work; at most one lease per production role.
+
+    Planning/review/delivery remain exclusive. Only independent design and MIDI
+    tasks can overlap, and only with a positive live resource admission decision.
+    On a failure invalidate the batch before draining sibling calls; never replay
+    an uncertain native action or release the lane while a sibling is in flight.
+    """
+    abort=threading.Event()
+    def cancelled():return abort.is_set() or stopped()
     def ask(task,prompt,tokens):
-        if stopped():raise DelegationError('Team task interrupted')
+        if cancelled():raise DelegationError('Team task interrupted')
         session='team-'+str(ident)+'-'+str(task['attempt'])+'-'+task['stage']
         answer=client.chat_as(task['role'],session,prompt,max_tokens=tokens)
-        if stopped():raise DelegationError('Team task interrupted')
+        if cancelled():raise DelegationError('Team task interrupted')
         return answer
-    for _ in range(8):
-        if stopped():raise DelegationError('Team task interrupted')
-        task=None
-        for role in ('janus','sentinel','implementation','multimedia','host'):
-            task=store.claim(ident,role)
-            if task:break
-        if not task:raise DelegationError('No dependency-ready task')
+    def execute(task):
+        if cancelled():raise DelegationError('Team task interrupted')
         stage=task['stage'];notify(task['role']+': '+stage)
         original=task['brief']
         if stage=='plan':
@@ -192,8 +198,84 @@ def run_team(store,ident,client,create_midi,stopped,notify):
         elif task['role']=='multimedia':
             bound,creative=store.midi_task(task)
             folder,receipt=create_midi(requester=creative['requester'],scope=creative['scope'],
-                brief=creative['brief'],cancelled=stopped,notify=notify)
-            if stopped():raise DelegationError('Team task interrupted')
+                brief=creative['brief'],cancelled=cancelled,notify=notify)
+            if cancelled():raise DelegationError('Team task interrupted')
             store.midi_done(task,bound,folder,receipt)
         else:raise DelegationError('Unsupported task')
-    raise DelegationError('Team graph exceeded stage budget')
+    production=('implementation','multimedia')
+    roles=('janus','sentinel',*production,'host')
+    finished=queue.Queue()
+    active={}
+    claims=0
+    last_admission=-float('inf')
+
+    def launch(task):
+        role=task['role']
+        def work():
+            try:
+                execute(task)
+            except BaseException as exc:
+                abort.set()
+                finished.put((role,exc))
+            else:
+                finished.put((role,None))
+        thread=threading.Thread(target=work,name='Team-'+role,daemon=True)
+        thread.start()
+        active[role]=thread
+
+    def collect(item):
+        role,error=item
+        thread=active.pop(role)
+        thread.join()
+        if error is not None:raise error
+
+    try:
+        while True:
+            # Consume completed work first. Its durable receipt, not the
+            # thread's return, is the gate for any dependent assignment.
+            while True:
+                try:item=finished.get_nowait()
+                except queue.Empty:break
+                collect(item)
+            if stopped():raise DelegationError('Team task interrupted')
+            if abort.is_set():
+                # The failing worker sets abort before publishing its error.
+                # Do not race it by claiming another task.
+                collect(finished.get())
+                continue
+            task=None
+            if claims<8:
+                if not active:
+                    for role in roles:
+                        task=store.claim(ident,role)
+                        if task:break
+                elif len(active)==1 and overlap_allowed is not None and time.monotonic()-last_admission>=1.0:
+                    last_admission=time.monotonic()
+                    role=next(r for r in production if r not in active)
+                    try:allowed=overlap_allowed(tuple(active),role) is True
+                    except Exception:allowed=False
+                    if allowed and not cancelled():task=store.claim(ident,role)
+            if task:
+                claims+=1
+                if task['role'] in production:
+                    launch(task)
+                else:
+                    # All production calls must have drained before delivery.
+                    answer=execute(task)
+                    if task['stage']=='deliver':return answer
+                continue
+            if active:
+                try:item=finished.get(timeout=.25)
+                except queue.Empty:continue
+                collect(item)
+            else:
+                raise DelegationError('Team graph exceeded stage budget' if claims>=8 else 'No dependency-ready task')
+    except BaseException as exc:
+        abort.set()
+        # Invalidate every queued/running lease before waiting for a possibly
+        # non-cancellable HTTP call; sibling results cannot be delivered.
+        store.fail(ident,str(exc),interrupted=stopped())
+        raise
+    finally:
+        abort.set()
+        for thread in active.values():thread.join()

@@ -1,3 +1,9 @@
+# V44 dependency-ready concurrent roles
+
+Implement bounded two-role staged DAG execution with live Windows headroom admission, exclusive Sentinel reviews and host delivery, serial fallback, and cancellation/failed-sibling drain. No increased resource caps or authority; actual native concurrent inference acceptance remains pending. Approved project publication remains serial. Next project-bound media adapters and independent project scheduling.
+
+---
+
 # V43 approved project-bound role assignments
 
 Integrate durable JANUS → Granite → Sentinel contracts into real approved file generation, exact review and host publication. Bind source, amendments, dependency receipts, baseline and role fingerprints; rederive reviewed deltas, explicitly select implementation inference, validate before host write lease and grant. Both societies observe scoped role progress. Structural fixture only; existing project mutation remains serial. Next: independent ready-task dispatch, project creative adapters and adaptive resource admission.

@@ -55,6 +55,7 @@ def plan_prompt(original):
             'Only design (Granite read-only design/asset specification) and midi (Gemma short staged MIDI) '
             'are available. No project edits, commands, installs or publication. '
             'Use 1–4 nodes, unique lowercase ids, briefs <=240 chars, dependencies only on earlier ids. '
+            'Declare a dependency only if its result is actually required; independent design and MIDI may run concurrently when resources allow. '
             'The /delegate midi mode authorizes one staged MIDI; /delegate design authorizes only design advice. Never claim other artifacts can be made by this route. '
             'Return exactly one JSON object, e.g. {"tasks":[{"id":"design","kind":"design",'
             '"brief":"Specify interface","depends_on":[]}]}. EXACT USER REQUEST:\n'+original)
