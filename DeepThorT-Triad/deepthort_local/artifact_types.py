@@ -15,7 +15,7 @@ _GROUPS={
     'document':('pdf','docx','xlsx','pptx','odt','ods','odp'),
 }
 _TEXT_NATIVE={'obj','gltf','dae'}
-_CHECKED={'obj','png','wav','glb','dds','zip','apk','aab','jar','exe','dll'}
+_CHECKED={'mid','midi','obj','png','wav','glb','dds','zip','apk','aab','jar','exe','dll'}
 _FORMATS={ext:kind for kind,extensions in _GROUPS.items() for ext in extensions}
 
 def artifact_type(path):
