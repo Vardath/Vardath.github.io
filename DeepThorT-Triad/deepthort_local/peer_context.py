@@ -18,18 +18,32 @@ def _collect(job_db,request_id,spec_sha,path,recipient,budget):
         if len(text)+len(line)<=budget:text+=line
     return text
 
-def for_software(job_db,job_id,request_id,contract,budget=650):
+def catalog_text(paths,budget=350):
+    """Whole exact target names only; never truncate a path into a new target."""
+    if not isinstance(paths,(list,tuple)) or budget<100:return ''
+    prefix='\nApproved peer output paths (intentions, not evidence of existing files): '
+    selected=[]
+    for path in paths[:24]:
+        if not isinstance(path,str) or not path or len(path)>240:continue
+        if path in selected:continue
+        candidate=prefix+json.dumps(selected+[path],ensure_ascii=False)
+        if len(candidate)<=budget:selected.append(path)
+    return prefix+json.dumps(selected,ensure_ascii=False) if selected else ''
+
+def for_software(job_db,job_id,request_id,contract,budget=650,*,paths=()):
     try:
         bound=live_scope(job_db,job_id,request_id,states=('running',),timeout=.05)
         if (not bound or contract['job_id']!=job_id or bound['approval_key']!=contract['approval_key']
                 or bound['spec_sha']!=contract['original_sha256']):return ''
-        return _collect(job_db,request_id,bound['spec_sha'],contract['path'],'implementation',budget)
+        notes=_collect(job_db,request_id,bound['spec_sha'],contract['path'],'implementation',budget)
+        return notes+catalog_text(paths,min(350,budget-len(notes)))
     except (ValueError,OSError,KeyError,TypeError,sqlite3.Error):return ''
 
-def for_media(job_db,contract,budget=650):
+def for_media(job_db,contract,budget=650,*,paths=()):
     try:
         if not creative_request(job_db,contract,states=('active',)):return ''
-        return _collect(job_db,contract['request_id'],contract['original_sha'],contract['task']['output'],'multimedia',budget)
+        notes=_collect(job_db,contract['request_id'],contract['original_sha'],contract['task']['output'],'multimedia',budget)
+        return notes+catalog_text(paths,min(350,budget-len(notes)))
     except (ValueError,OSError,KeyError,TypeError,sqlite3.Error):return ''
 
 def packet(scope,advice):

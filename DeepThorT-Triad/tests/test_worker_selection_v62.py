@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch
 from deepthort_local.worker_selection import choose
 from deepthort_local.worker_notices import validate_notice,envelope,split_notice,PREFIX
-from deepthort_local.peer_context import _collect,packet,checked
+from deepthort_local.peer_context import _collect,packet,checked,catalog_text
 import test_dependency_ready_v60 as graph_fixture
 
 class WorkerChoiceTests(unittest.TestCase):
@@ -43,6 +43,12 @@ class WorkerChoiceTests(unittest.TestCase):
             self.assertEqual(_collect('jobs',7,'a'*64,'audio/theme.mid','implementation',650),'')
         for path in ('../audio.mid','C:/audio.mid','/audio.mid','a//b'):
             with self.assertRaises(ValueError):validate_notice(dict(notice,peer_path=path))
+        catalog=catalog_text(['engine.py','engine.py','x'*240,'ui.py'],180)
+        self.assertIn('"engine.py"',catalog)
+        self.assertIn('"ui.py"',catalog)
+        self.assertEqual(catalog.count('"engine.py"'),1)
+        self.assertNotIn('xxxxx',catalog)
+        self.assertEqual(catalog_text(['engine.py'],10),'')
         p=packet('scope','advice')
         self.assertEqual(checked(p,'scope'),'advice')
         with self.assertRaises(ValueError):checked(dict(p,advice='modified'),'scope')

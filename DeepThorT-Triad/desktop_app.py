@@ -4385,7 +4385,17 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.creative_core import inspect_midi
             try:
                 from deepthort_local.peer_context import for_media
-                peer_advice=for_media(self.jobs.path,contract)
+                peer_paths=[]
+                # Discover nearby exact approved software intentions in the
+                # background worker, not on the GUI or a second neural turn.
+                try:
+                    from deepthort_local.roadmap_runs import manifest
+                    code=manifest(self.hierarchies,self.specifications,req)
+                    if code['manifest_sha256']==contract['code_sha']:
+                        relevant=[m for m in code['schedule'] if m['ordinal'] in (before-1,before)]
+                        peer_paths=[s['path'] for m in relevant for s in m['steps']][:24]
+                except (ValueError,OSError,KeyError,TypeError):pass
+                peer_advice=for_media(self.jobs.path,contract,paths=peer_paths)
                 folder,receipt=create_midi(requester='janus',scope=contract['scope'],brief=contract['brief'],
                     cancelled=stopped,notify=lambda message:self.events.put(('log','Project Gemma: '+message)),
                     peer_advice=peer_advice)
@@ -4768,6 +4778,7 @@ class DeepThorTDesktop(tk.Tk):
                     production_client=self.client
                     correction=''
                     handoff=''
+                    peer_paths=[]
                     if self._project_work_is_enabled() and self.graphs.exists(jobid):
                         current=self.jobs.get(jobid)
                         try:
@@ -4823,6 +4834,9 @@ class DeepThorTDesktop(tk.Tk):
                                     run=self.roadmap_runs.get(root_id)
                                     if root_req and run and run['state']=='active' and run.get('mixed_sha') and run.get('creative_midi')==1:
                                         mixed=self.mixed_roadmaps.get(root_id,run['manifest_sha256'])
+                                        if mixed and mixed['sha']==run['mixed_sha']:
+                                            from deepthort_local.project_midi import supports
+                                            peer_paths=[t['output'] for t in mixed['tasks'] if supports(t)]
                                         records=self.project_midi.integration_records(self.jobs.get(jobid),root_req,mixed,exclude=excluded)
                                         handoff=self.project_assignments.bind_media_inputs(assignment,records,800)
                                 if not retry_requested:
@@ -4854,7 +4868,7 @@ class DeepThorTDesktop(tk.Tk):
                     if assignment and not stopped_memory():
                         step_memory+=live_advice(self.jobs.path,jobid,original,focus,budget=600)
                         from deepthort_local.peer_context import for_software
-                        step_memory+=for_software(self.jobs.path,jobid,root_request_for_job(j,self.conversations),contract)
+                        step_memory+=for_software(self.jobs.path,jobid,root_request_for_job(j,self.conversations),contract,paths=peer_paths)
                     if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))
