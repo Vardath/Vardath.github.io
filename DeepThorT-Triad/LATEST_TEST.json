@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v41-persistent-society-integration",
-  "title": "Triad V41: persistent JANUS and Sentinel societies, staged team DAG and native acceptance",
+  "id": "triad-v42-reactive-interface",
+  "title": "Triad V42: reactive recursive societies, independent Interface messages and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",
