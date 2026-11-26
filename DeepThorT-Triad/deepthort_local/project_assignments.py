@@ -7,6 +7,7 @@ control the actual filesystem operation.
 """
 from __future__ import annotations
 import hashlib
+import difflib
 import json
 import uuid
 from .agent_contract import canonical_sha
@@ -121,13 +122,35 @@ class ProjectAssignments:
                 if not staged or contract['baseline_sha256'] is None:
                     raise GraphError('No exact Sentinel candidate receipt')
                 n=staged.get('changed_ranges')
-                count=db.execute("""SELECT COUNT(DISTINCT proposal_sha) FROM project_reviews_v43
-                    WHERE attempt=? AND kind='code'""",(attempt,)).fetchone()[0]
                 if (staged.get('before_sha256')!=contract['baseline_sha256'] or
                     staged.get('master_sha256')!=contract['original_sha256'] or
                     staged.get('step_id')!=contract['step_id'] or staged.get('after_sha256')!=candidate
-                    or type(n) is not int or n<1 or count<n):
+                    or type(n) is not int or n<1):
                     raise GraphError('Decomposed source lacks bound review and assembly evidence')
+                from .staged_source import source_ranges
+                _,target=_safe_auto_path(Path(contract['project']),contract['path'])
+                baseline=target.read_bytes().decode('utf-8')
+                if sha(baseline)!=contract['baseline_sha256']:raise GraphError('Baseline changed during range review')
+                spans=source_ranges(baseline);receipts=staged.get('range_receipts')
+                if not isinstance(receipts,list) or len(receipts)!=len(spans):raise GraphError('Incomplete exact range map')
+                offset=0;changes=0
+                for i,((start,end,old),item) in enumerate(zip(spans,receipts)):
+                    length=item.get('length');action=item.get('action')
+                    if item.get('start')!=start or item.get('end')!=end or type(length) is not int or length<=0:
+                        raise GraphError('Range mapping changed')
+                    replacement=source[offset:offset+length];offset+=length
+                    if action is None:
+                        if replacement!=old:raise GraphError('Unreviewed range changed')
+                    else:
+                        if not isinstance(action,str) or not action or replacement==old:raise GraphError('Invalid range edit')
+                        delta=''.join(difflib.unified_diff(old.splitlines(keepends=True),replacement.splitlines(keepends=True),fromfile='before',tofile='after',n=2))
+                        proposal=f'Exact source range {i+1}, action: {action}\n{delta}'
+                        planned=f'Change only source range {i+1}: {action}'
+                        for kind,text in (('plan',planned),('code',proposal)):
+                            if not db.execute('SELECT 1 FROM project_reviews_v43 WHERE attempt=? AND kind=? AND proposal_sha=?',(attempt,kind,sha(text))).fetchone():
+                                raise GraphError('Missing exact reviewed range proposal')
+                        changes+=1
+                if offset!=len(source) or changes!=n:raise GraphError('Assembled range evidence differs')
                 mode='reviewed_deltas'
             db.execute("""UPDATE project_assignments_v43 SET state='reviewed',candidate_sha=?,
                 review_mode=?,updated_at=CURRENT_TIMESTAMP WHERE attempt=?""",(candidate,mode,attempt))
