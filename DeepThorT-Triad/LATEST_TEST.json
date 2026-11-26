@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v32-multimedia-check",
-  "title": "Triad V32: previous acceptance suite plus independent multimedia-core check",
+  "id": "triad-v32.1-startup-wait",
+  "title": "Triad V32.1: startup-aware acceptance and fourth-core check",
   "checks": [
     "shared_cap",
     "triad_residency",
