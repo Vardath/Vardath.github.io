@@ -5,6 +5,7 @@ Private staging, independent review and host publication are separate steps.
 A lost generation or publication lease is never silently replayed.
 """
 import json
+import sqlite3
 import hashlib
 import os
 import tempfile
@@ -28,6 +29,51 @@ def review_text(contract,score):
     return json.dumps({'task':contract['task'],'scope':contract['scope'],
         'score':score,'assurance':'bounded single-track MIDI; no audio playback or aesthetic verification'},
         ensure_ascii=False,sort_keys=True)
+
+def native_route_available(run,task,mixed_roadmaps,workflows):
+    """Use the existing explicit native consent and avoid duplicate producers."""
+    return bool(run.get('creative_midi')==1 and supports(task)
+                and not mixed_roadmaps.request_for(task['id'])
+                and not any(json.loads(w['manifest']).get('mixed_task')==task
+                            for w in workflows.roadmap_members(run['request_id'])))
+
+
+def ready_independent(runs,conversations,hierarchies,index,jobs,mixed_roadmaps,workflows,creative,*,exclude_project):
+    """Find a ready existing native artifact boundary in a separate workspace.
+
+    The ordinary roadmap reconciliation, predecessor verification, mixed
+    manifest and tool gates are reused. This discovery does not create a job,
+    draft a tool workflow, alter approvals or reserve a creative assignment.
+    The original begin/publish checks remain mandatory.
+    """
+    from .task_graph import independent_workspaces
+    from .roadmap_runs import eligible_successor
+    from .roadmap_tool_bridge import gate
+    from .mixed_roadmap import pending_task
+    for run in runs.active():
+        if (not run.get('mixed_sha') or run.get('creative_midi')!=1
+                or not independent_workspaces(run['project'],exclude_project)):
+            continue
+        ident=run['request_id']
+        try:
+            req=conversations.get(ident)
+            result=eligible_successor(run,req,conversations,hierarchies,index,jobs)
+            if not result:continue
+            before=(hierarchies.status(index,ident,req['prompt'])['milestones_total']+1
+                    if result['complete'] else result['milestone']['ordinal'])
+            mixed=mixed_roadmaps.get(ident,result['manifest_sha256'])
+            if not mixed or mixed['sha']!=run['mixed_sha']:continue
+            task=pending_task(mixed,workflows,before,creative=creative)
+            if not task or creative.status(task['id']):continue
+            if not native_route_available(run,task,mixed_roadmaps,workflows):continue
+            if gate(workflows,ident,result['manifest_sha256'],before):continue
+            return run,mixed,task,req,before
+        except (ValueError,OSError,KeyError,TypeError,sqlite3.Error):
+            # Leave reconciliation/errors to the normal roadmap path. An
+            # optional overlap scan cannot mark unrelated work failed.
+            continue
+    return None
+
 
 class ProjectMidi:
     def __init__(self,runs,delegations):

@@ -2312,15 +2312,13 @@ class DeepThorTDesktop(tk.Tk):
                     if not mixed or mixed['sha']!=run['mixed_sha']:raise PlanError('Mixed roadmap approval changed')
                     task=pending_task(mixed,self.tool_workflows,before,creative=self.project_midi)
                     if task:
-                        from deepthort_local.project_midi import supports
+                        from deepthort_local.project_midi import native_route_available
                         native_state=self.project_midi.status(task['id'])
                         if native_state:
                             if native_state in ('blocked','interrupted'):
                                 raise PlanError('Native artifact needs reconciliation: '+task['output'])
                             continue
-                        if (run.get('creative_midi')==1 and supports(task)
-                                and not self.mixed_roadmaps.request_for(task['id'])
-                                and not any(json.loads(w['manifest']).get('mixed_task')==task for w in self.tool_workflows.roadmap_members(ident))):
+                        if native_route_available(run,task,self.mixed_roadmaps,self.tool_workflows):
                             if gate(self.tool_workflows,ident,result['manifest_sha256'],before):continue
                             if self._start_project_midi(run,mixed,task,req,before):return True
                             continue
@@ -4280,18 +4278,55 @@ class DeepThorTDesktop(tk.Tk):
         finally:
             self.after(1100,self._scheduler)
 
-    def _start_project_midi(self,run,mixed,task,req,before):
+    def _try_independent_project_media(self,now):
+        """Symmetric overlap: Gemma need not wait for the Granite queue to empty."""
+        if (self.active_job is None or self.active_conversation is not None or self._project_midi_pending
+                or self._quitting or self.queue_paused or self._explicit_model_stop
+                or not self.node_ready or not self.node or self.node.poll() is not None
+                or self._model_transport_waiting or self.disk_gate.gaming()
+                or not self._project_work_is_enabled() or self.janus.status().get('paused')
+                or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_mcp_discovery_active',False)):
+            return False
+        if now-getattr(self,'_last_parallel_media_check',-60)<15:return False
+        self._last_parallel_media_check=now
+        active=self.jobs.get(self.active_job)
+        if (not active or active['mode']!='build' or active['state']!='running'
+                or not active.get('approval_key') or active.get('attachments_json') not in (None,'','[]')):
+            return False
+        from deepthort_local.project_midi import ready_independent
+        candidate=ready_independent(self.roadmap_runs,self.conversations,self.hierarchies,self.specifications,
+            self.jobs,self.mixed_roadmaps,self.tool_workflows,self.project_midi,exclude_project=active['project'])
+        if not candidate:return False
+        try:return self._start_project_midi(*candidate,overlap=True)
+        except (ValueError,OSError,KeyError,RuntimeError) as exc:
+            self._log('Independent project media deferred: '+str(exc)[:160])
+            return False
+
+    def _start_project_midi(self,run,mixed,task,req,before,*,overlap=False):
         # Uses the same fourth-core lane as staged conversational media.
         if (self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
                 or self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
                 or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
                 or self.janus.status().get('paused') or not self._project_work_is_enabled()):return False
-        from deepthort_local.creative_core import creative_headroom,create_midi
+        from deepthort_local.creative_core import creative_headroom,create_midi,GIB
         from deepthort_local.creative_profile import installed
         if not installed():raise PlanError('Gemma is not installed; use Install AI before native artifact production')
         try:
-            admitted=creative_headroom()
-        except (ValueError,OSError,RuntimeError):admitted=False
+            if overlap:
+                from deepthort_local.task_graph import independent_workspaces
+                from deepthort_local.adaptive_admission import parallel_media_admitted
+                active=self.jobs.get(self.active_job) if self.active_job is not None else None
+                if (not active or active['mode']!='build' or active['state']!='running'
+                        or not active.get('approval_key') or not independent_workspaces(active['project'],req['project'])):
+                    return False
+                admitted=parallel_media_admitted(local_server_status(timeout=1.0),self.node.pid,
+                    lambda:creative_headroom(extra=GIB))
+            else:
+                if self.active_job is not None:return False
+                admitted=creative_headroom()
+        except (ValueError,OSError,RuntimeError,KeyError):admitted=False
         if not admitted:
             note=(req['id'],task['id'])
             if getattr(self,'_last_project_midi_headroom_note',None)!=note:
@@ -4349,9 +4384,14 @@ class DeepThorTDesktop(tk.Tk):
     def _finish_project_midi(self,lease,error=None):
         pending=self._project_midi_pending
         if not pending or pending[0]!=lease:return
-        _,ident,task_id,before,_=pending
+        _,ident,task_id,before,workspace=pending
         try:
             if error:raise PlanError(error)
+            if self.active_job is not None:
+                from deepthort_local.task_graph import independent_workspaces
+                active=self.jobs.get(self.active_job)
+                if not active or not independent_workspaces(active['project'],workspace):
+                    raise PlanError('Concurrent workspace no longer demonstrably independent; no media publication')
             if (self._quitting or self.queue_paused or self._explicit_model_stop or self._creative_lane_stop.is_set()
                     or self.disk_gate.gaming() or not self._project_work_is_enabled() or self.janus.status().get('paused')):
                 raise PlanError('Native artifact publication stopped before project write')
@@ -4469,6 +4509,7 @@ class DeepThorTDesktop(tk.Tk):
                    counts=counts,node_ready=self.node_ready,model_alive=model_alive,
                    model_loading=self.node_loading,model_pid=self.node.pid if model_alive else None,
                    active_job=self.active_job)
+        if gate=='active_job' and self._try_independent_project_media(now):return
         if gate=='dispatch_enabled':
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return

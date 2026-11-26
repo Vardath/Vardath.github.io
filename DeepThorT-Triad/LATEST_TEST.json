@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v55-memory-advice-and-consolidation",
-  "title": "Triad V55: nonblocking advisory checkpoints and reversible memory consolidation",
+  "id": "triad-v56-independent-project-media",
+  "title": "Triad V56: symmetric independent project media coordination",
   "checks": [
     "shared_cap",
     "triad_residency",

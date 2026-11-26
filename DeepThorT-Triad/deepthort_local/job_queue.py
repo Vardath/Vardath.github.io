@@ -299,7 +299,7 @@ class JobStore:
         Inspect only ID and workspace while skipping, not large stored prompts.
         The caller still owns all actual dispatch authority and grant checks.
         """
-        from .task_graph import same_workspace
+        from .task_graph import independent_workspaces
         with self._conn() as db:
             db.row_factory=sqlite3.Row
             sql="SELECT id,project FROM jobs WHERE state='queued'"
@@ -308,7 +308,7 @@ class JobStore:
                 sql+=' AND mode NOT IN ('+','.join('?' for _ in skip_modes)+')'
                 params.extend(skip_modes)
             for row in db.execute(sql+' ORDER BY id',params):
-                if exclude_project is not None and (row['project']==exclude_project or same_workspace(row['project'],exclude_project)):
+                if exclude_project is not None and not independent_workspaces(row['project'],exclude_project):
                     continue
                 current=db.execute("SELECT * FROM jobs WHERE id=? AND state='queued'",(row['id'],)).fetchone()
                 if current:return dict(current)
