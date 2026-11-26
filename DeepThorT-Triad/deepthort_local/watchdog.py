@@ -133,6 +133,9 @@ class SentinelStore:
         creative=observation.get('project_midi',{})
         if creative.get('active') or creative.get('recent'):
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(creative,sort_keys=True),salience=.75,uncertainty=.3))
+        reports=observation.get('worker_reports',{}).get('reports',[])
+        if reports:
+            frames.insert(1,SenseFrame('peer','granite_dependency_report',json.dumps(reports[:2],sort_keys=True),salience=.85,uncertainty=.7))
         memory=observation.get('memory_duties',{})
         if memory.get('reports'):
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory['reports'],sort_keys=True),salience=.8,uncertainty=.5))
@@ -372,6 +375,8 @@ class JanusSentinel:
         project_midi=observe_project_midi(self.jobs_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(self.jobs_db)
+        from .worker_reports import observe_worker_reports
+        worker_reports=observe_worker_reports(self.jobs_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -421,7 +426,7 @@ class JanusSentinel:
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,'worker_reports':worker_reports,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),
