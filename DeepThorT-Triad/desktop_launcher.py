@@ -30,7 +30,7 @@ if __name__ == '__main__':
         if os.name=='nt':
             try:
                 ctypes.windll.user32.MessageBoxW(0,
-                    'DeepThorT could not start within the configured 40% CPU / up to 50% RAM-sized commit limits.\n\n'
+                    'DeepThorT could not start within the configured 50% CPU / up to 65% RAM-sized commit limits.\n\n'
                     + details[-1250:] + '\n\nDetails: state\\launch-error.txt',
                     'DeepThorT - Startup Error',0x10)
             except Exception:
