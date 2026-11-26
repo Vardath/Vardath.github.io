@@ -4773,7 +4773,7 @@ class DeepThorTDesktop(tk.Tk):
                                     root_id=root_request_for_job(j,self.conversations)
                                     root_req=self.conversations.get(root_id)
                                     run=self.roadmap_runs.get(root_id)
-                                    if root_req and run and run.get('mixed_sha') and run.get('creative_midi')==1:
+                                    if root_req and run and run['state']=='active' and run.get('mixed_sha') and run.get('creative_midi')==1:
                                         mixed=self.mixed_roadmaps.get(root_id,run['manifest_sha256'])
                                         records=self.project_midi.integration_records(self.jobs.get(jobid),root_req,mixed,exclude=excluded)
                                         handoff=self.project_assignments.bind_media_inputs(assignment,records,800)
