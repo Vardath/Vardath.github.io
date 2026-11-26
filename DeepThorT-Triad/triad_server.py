@@ -10,14 +10,14 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.request import Request,build_opener,ProxyHandler
 from urllib.error import HTTPError
 from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
-from deepthort_local.triad_profiles import ROOT,PROFILES,MODEL_ID,model_path,runtime_path,ready,total_weights
+from deepthort_local.triad_profiles import ROOT,PROFILES,ALL_PROFILES,MEMORY_PROFILE,memory_installed,MODEL_ID,model_path,runtime_path,ready,total_weights,installed_files
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
 
 def validate(body,default):
     if not isinstance(body,dict) or body.get('model',MODEL_ID)!=MODEL_ID or body.get('stream',False):
         raise ValueError('Invalid model request')
     role=body.get('triad_role',default)
-    if role not in PROFILES:raise ValueError('Unknown role')
+    if role not in ALL_PROFILES:raise ValueError('Unknown role')
     messages=body.get('messages')
     if not isinstance(messages,list) or not 1<=len(messages)<=12:raise ValueError('Invalid messages')
     if any(not isinstance(m,dict) or m.get('role') not in ('system','user','assistant') or
@@ -30,7 +30,7 @@ def validate(body,default):
     return role,[{'role':m['role'],'content':m['content']} for m in messages],tokens
 
 def command(role,port,key):
-    if role not in PROFILES:raise ValueError('Unknown role')
+    if role not in ALL_PROFILES:raise ValueError('Unknown role')
     return [str(runtime_path()),'-I',str(ROOT/'triad_openvino_worker.py'),role,str(port),key]
 
 def admission(cap,available,total,weights):
@@ -54,7 +54,7 @@ def request(port,path,key,body=None,timeout=2):
 
 class Pool:
     def __init__(self):
-        self.children={};self.locks={r:threading.Lock() for r in PROFILES}
+        self.children={};self.memory_child=None;self.memory_stage='not installed';self.locks={r:threading.Lock() for r in ALL_PROFILES}
         self.admission_lock=threading.Condition()
         self.generating=set()
         # Start protected. Enable parallel requests only after the compact
@@ -99,7 +99,49 @@ class Pool:
                 except (OSError,ValueError):pass
                 time.sleep(1)
             else:raise RuntimeError('Startup timed out: '+role+'; inspect state/logs/triad-'+role+'-native.log')
+        # The fifth intelligent model is independent of the three required
+        # baseline workers. Never discard working language models if it fails.
+        if memory_installed():
+            self.memory_stage='checking resource admission'
+            try:
+                self.start_memory(stack,group,logs)
+            except (OSError,RuntimeError,ValueError,KeyError,TypeError) as exc:
+                self.memory_stage='blocked: '+type(exc).__name__
+                print('Memory specialist deferred: '+str(exc)[:500],flush=True)
         self.activate_resident_pool()
+
+    def start_memory(self,stack,group,logs):
+        # Keep the same inherited hard cap and original worker group. A
+        # separate child cleanup/commit cap prevents a runaway memory worker.
+        from deepthort_local.triad_job import memory_specialist_admission
+        memory_specialist_admission()
+        self.memory_stage='loading memory specialist'
+        self.set_stage('Loading independent memory specialist: '+MEMORY_PROFILE[0])
+        port=free_port();key=secrets.token_hex(32)
+        with ExitStack() as trial:
+            pid,alive=trial.enter_context(child_server(command('memory',port,key),ROOT,
+                logs/'triad-memory-native.log',group=group,memory_specialist=True))
+            deadline=time.monotonic()+180
+            while time.monotonic()<deadline:
+                if not alive():raise RuntimeError('Memory worker exited: '+alive.failure())
+                if not all(c[3]() for c in self.children.values()):
+                    raise RuntimeError('Baseline worker stopped during memory admission')
+                try:
+                    value=request(port,'/health',key)
+                    actual_pid=value.get('pid')
+                    if (value.get('status')=='ok' and value.get('role')=='memory'
+                            and value.get('backend')=='native-openvino-ir-cpu' and alive.member(actual_pid)):
+                        self.memory_child=(port,key,actual_pid,alive)
+                        stack.enter_context(trial.pop_all())
+                        self.memory_stage='resident'
+                        return
+                except (OSError,ValueError):pass
+                time.sleep(1)
+            raise RuntimeError('Memory specialist startup timed out')
+
+    def memory_ready(self):
+        return self.memory_child is not None and self.memory_child[3]()
+
     def activate_resident_pool(self):
         if (self.worker_commit_limit<=0 or set(self.children)!=set(PROFILES)
                 or not all(c[3]() for c in self.children.values())):
@@ -121,7 +163,9 @@ class Pool:
             if not self.healthy():raise WorkerFailure('worker_exit')
             self.generating.add(role)
         try:
-            port,key,pid,alive=self.children[role]
+            child=self.memory_child if role=='memory' else self.children[role]
+            if child is None or not child[3]():raise WorkerFailure('worker_exit')
+            port,key,pid,alive=child
             result=request(port,'/v1/chat/completions',key,
                 {'model':role,'messages':messages,'max_tokens':tokens,'temperature':0,'stream':False},timeout=3600)
             if result.get('model')!=role:raise ValueError('Worker role mismatch')
@@ -141,7 +185,7 @@ class Pool:
                 self.generating.discard(role)
                 self.admission_lock.notify_all()
     def infer(self,role,messages,tokens):
-        if not self.healthy():raise WorkerFailure('worker_exit')
+        if not self.healthy() or (role=='memory' and not self.memory_ready()):raise WorkerFailure('worker_exit')
         with self.locks[role]:
             try:return self._generate(role,messages,tokens)
             except WorkerFailure as error:
@@ -160,6 +204,9 @@ class Pool:
             'loading_seconds':int((self.ready_at if self.ready_at is not None else time.monotonic())-self.started),'stalled':False,'error':None,
             'serial_memory_mode':serial,'memory_retries':retries,
             'worker_commit_limit_bytes':self.worker_commit_limit,'control_reserve_bytes':CONTROL_RESERVE_BYTES,
+            'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],
+                'resident':self.memory_ready(),'pid':self.memory_child[2] if self.memory_ready() else None,
+                'busy':self.locks['memory'].locked(),'generating':'memory' in active,'stage':self.memory_stage},
             'models':{r:{'name':PROFILES[r][0],'pid':c[2],'resident':c[3](),'busy':self.locks[r].locked(),'generating':r in active} for r,c in self.children.items()}}
 
 def handler(pool,token,council):
