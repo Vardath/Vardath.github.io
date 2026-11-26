@@ -84,9 +84,10 @@ class JanusWorker:
         if time.monotonic()-self._last_counsel_attempt<60:return True
         self._last_counsel_attempt=time.monotonic()
         ident=pending['receipt_sha'];key='worker-'+ident
-        problem,evidence=counsel_fields(pending)
         def coordinate():
             if not still_current(self.jobs_db,ident):return
+            try:problem,evidence=counsel_fields(pending,self.jobs_db)
+            except (ValueError,OSError):return
             answer=self._counsel.request(society='janus',goal=pending['focus'],problem=problem,
                                          evidence=evidence,worker_report=True)
             if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
