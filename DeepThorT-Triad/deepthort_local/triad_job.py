@@ -62,7 +62,7 @@ def model_group():
     """Nested aggregate worker commit cap, leaving room for desktop/broker.
 
     The group is not a separate CPU budget. Every member remains in the
-    original shared 40% CPU / up to 50% RAM-sized commit root job, and individual cleanup jobs remain nested below it.
+    original shared 50% CPU / up to 65% RAM-sized commit root job, and individual cleanup jobs remain nested below it.
     """
     root_limit,_,_=verify_root_cap()
     budget=worker_budget(root_limit)
