@@ -70,7 +70,7 @@ class LocalCounsel:
             # own inference; implementation activity is independent.
             role=state.get('models',{}).get(society,{})
             if role.get('resident') is not True or role.get('busy') is not False:return None
-            if state.get('admission_slots',0)<=0 or state.get('admission_waiting',0)>0:return None
+            if (worker_report or initiative) and (state.get('admission_slots',0)<=0 or state.get('admission_waiting',0)>0):return None
             # Routine proactive thoughts do not consume the last available
             # slot or queue ahead of active/awaiting production or recall.
             if initiative:
