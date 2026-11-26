@@ -73,7 +73,7 @@ def installed(root=ROOT):
         return False
 
 
-def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None):
+def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None, creative_ok=None):
     """Return exact missing components without disturbing valid model weights."""
     if role_ok is None:
         def role_ok(role):
@@ -96,6 +96,11 @@ def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None):
             commands.append(('download_model.py',('--role',role),'Language model: '+role))
     elif not runtime_ok:
         commands.append(('download_model.py',('--runtime-only',),'OpenVINO runtime'))
+    if creative_ok is None:
+        from .creative_profile import installed as creative_installed
+        creative_ok=creative_installed(root)
+    if not creative_ok:
+        commands.append(('download_creative.py',(),'Fourth intelligent AI: Gemma 4 E2B INT4 (~4.36 GB)'))
     if not media_ok:
-        commands.append(('download_multimedia.py',(),'Multimedia model: Stable Diffusion 1.5 INT8'))
+        commands.append(('download_multimedia.py',(),'Optional production engine: Stable Diffusion 1.5 INT8'))
     return commands
