@@ -92,6 +92,13 @@ class DelegationTests(unittest.TestCase):
         self.assertTrue(new.start(self.req))
         self.assertEqual(new.summary(self.req)['attempt'],2)
         with self.assertRaises(DelegationError):new.composed(task,folder,receipt)
+        fresh=new.claim(self.req,'multimedia')
+        self.assertNotEqual(fresh['scope'],task['scope'])
+        with self.assertRaises(DelegationError):new.composed(fresh,folder,receipt)
+    def test_fixed_acceptance_probe(self):
+        from deepthort_local.delegation_probe import exercise
+        result=exercise()
+        self.assertEqual(result['status'],'passed',result)
     def test_attachment_and_noncreative_requests_not_dispatched(self):
         self.conversations.change(self.req,'cancelled','Cancelled',allowed=('pending',))
         ident=self.conversations.submit('chat-a','project-a','chat',self.brief,attachments=['test.png'])
