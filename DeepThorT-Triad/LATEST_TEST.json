@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v36-background-memory",
-  "title": "Triad V36: independent background memory observation and existing native checks",
+  "id": "triad-v37-resource-and-native-repair",
+  "title": "Triad V37: expanded resource ceilings, strict creative output and background recall",
   "checks": [
     "shared_cap",
     "triad_residency",
