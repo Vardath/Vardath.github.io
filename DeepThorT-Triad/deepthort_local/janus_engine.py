@@ -315,6 +315,8 @@ class JanusStore:
         project_midi=observe_project_midi(job_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(job_db)
+        from .worker_reports import observe_worker_reports
+        worker_reports=observe_worker_reports(job_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -351,6 +353,9 @@ class JanusStore:
         elif active_plans:
             focus=f"draft_{active_plans[0]['id']}_planning";decision='monitor_requirements_and_reframe_failed_steps'
             alternatives=['Observe indexed progress','Retranslate failed objectives against original requirements','Use Sentinel review before changing strategy']
+        elif worker_reports['reports']:
+            focus='worker_dependency_coordination';decision='appraise_worker_dependency'
+            alternatives=['Inspect exact scoped worker claim','Determine whether missing evidence or an actual dependency prevents progress','Coordinate existing authorized resources; request new authority only if necessary']
         elif awaiting:
             focus=f"job_{awaiting[0]['id']}_requires_user";decision='request_approval_or_guidance'
             alternatives=['Report the exact blocked step','Ask user to review the proposed action or revise the specification']
@@ -396,7 +401,7 @@ class JanusStore:
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
         observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,'stimuli':stimuli,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,'worker_reports':worker_reports,'stimuli':stimuli,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -417,6 +422,8 @@ class JanusStore:
             frames.insert(1,SenseFrame('runtime','project_role_assignments',json.dumps(project_assignments,sort_keys=True),salience=.7,uncertainty=.3))
         if project_midi['active'] or project_midi['recent']:
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(project_midi,sort_keys=True),salience=.75,uncertainty=.3))
+        if worker_reports['reports']:
+            frames.insert(1,SenseFrame('peer','granite_dependency_report',json.dumps(worker_reports['reports'][:2],sort_keys=True),salience=.85,uncertainty=.7))
         if memory_duties['reports']:
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory_duties['reports'],sort_keys=True),salience=.8,uncertainty=.5))
         for action in actions[:3]:
