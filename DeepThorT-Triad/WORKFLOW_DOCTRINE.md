@@ -247,3 +247,11 @@ The first bounded self-development path detects stale diagnostic cap wording aga
 
 ---
 
+
+
+# V71 — versioned self-update preparation and rollback checks
+
+A staged V70 diagnostic candidate now proceeds to an isolated fixed child-process regression. It executes only the installed baseline formatter and its exact literal-only variant against eight actual input cases, and checks that the sole output difference is the reviewed text. A scratch copy exercises forward and rollback bytes, both hash-verified. A versioned non-installable private ZIP contains the inert baseline/candidate, exact review identity and scoped test receipt. Recheck source, review and staged hashes before and after work, preserve the live application, refuse tampered packages, and retain no installation grant. The desktop checks inherited root-cap enforcement before running this path. Full application/native acceptance, generalized self-development, historical evidence integration and an explicit installation/rollback procedure are still outstanding. No intermediate installer.
+
+---
+
