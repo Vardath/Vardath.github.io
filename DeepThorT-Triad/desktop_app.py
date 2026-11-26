@@ -884,8 +884,29 @@ class DeepThorTDesktop(tk.Tk):
             if cycle<=0 or age>120:
                 return {'status':'blocked','detail':f'JANUS coordinator is unpaused but its cycle evidence is stale ({age}s, cycle {cycle}). Check Sentinel events and worker logs.',
                         'evidence':{'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}}
-            return {'status':'passed','detail':f'JANUS coordinator is unpaused and recorded cycle {cycle} within the last {age}s.',
-                    'evidence':{'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}}
+            from deepthort_local.janus_cognition import CORE_NAMES,FACULTIES
+            evidence={'janus_cycle':cycle,'janus_paused':False,'age_seconds':age}
+            try:
+                sentinel=self.sentinel.snapshot()
+                sentinel_cycle=int(sentinel.get('cycle') or 0)
+                evidence['sentinel_cycle']=sentinel_cycle
+                sentinel_stamp=datetime.fromisoformat(sentinel['society_updated_at'])
+                if sentinel_stamp.tzinfo is None:sentinel_stamp=sentinel_stamp.replace(tzinfo=timezone.utc)
+                sentinel_age=(datetime.now(timezone.utc)-sentinel_stamp).total_seconds()
+                if sentinel_cycle<=0 or not -5<=sentinel_age<=120:
+                    return {'status':'blocked','detail':'Sentinel recursive society evidence is stale or missing.','evidence':evidence}
+                janus_cores=json.loads(value['cores_json'])
+                reflected=json.loads(sentinel['society_json'])
+                if reflected.get('society')!='sentinel':raise ValueError('Sentinel identity missing')
+                for cores in (janus_cores,reflected['cores']):
+                    if set(cores)!=set(CORE_NAMES):raise ValueError('Outer core set changed')
+                    if any(set(c['internal_fano_faculties'])!={str(d) for d in FACULTIES} for c in cores.values()):
+                        raise ValueError('Inner Fano faculty set changed')
+                    if cores['Front']['input_sources']!=['Left','Right'] or cores['Interface']['input_sources']!=['Front']:
+                        raise ValueError('Society flow changed')
+            except (KeyError,ValueError,TypeError,AttributeError,OverflowError,OSError) as error:
+                return {'status':'blocked','detail':'Recursive society evidence incomplete: '+type(error).__name__,'evidence':evidence}
+            return {'status':'passed','detail':f'Both persistent 11 × 7 societies have recent recorded state: JANUS cycle {cycle}; Sentinel cycle {sentinel_cycle}. This is not neural inference acceptance.','evidence':evidence}
 
         def triad_inference_probe():
             if not observed['resident']:return {'status':'blocked','detail':'All three models must be ready first'}
