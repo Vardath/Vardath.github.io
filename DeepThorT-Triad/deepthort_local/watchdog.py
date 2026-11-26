@@ -441,11 +441,31 @@ class JanusSentinel:
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
                                       goal=goal,alternatives=alternatives)
+        # Evaluate worker dependency claims independently of JANUS's answer.
+        # These are asynchronous advisory consultations, not approval gates.
+        pending_report=None
+        if not self.stopping and not observation['game_detected'] and not j.get('paused'):
+            seen={r['evidence_key'] for r in self.store.recommendations(40)}
+            pending_report=next((r for r in worker_reports['reports'] if 'worker-'+r['receipt_sha'] not in seen),None)
+            if (pending_report and (self._counsel_thread is None or not self._counsel_thread.is_alive())
+                    and time.monotonic()-self._last_counsel_attempt>=60):
+                from .worker_reports import still_current,counsel_fields
+                self._last_counsel_attempt=time.monotonic()
+                report_id=pending_report['receipt_sha']
+                problem,evidence=counsel_fields(pending_report)
+                def challenge():
+                    if not still_current(self.jobs_db,report_id):return
+                    answer=self._counsel.request(society='sentinel',goal=pending_report['focus'],
+                        problem=problem,evidence=evidence,worker_report=True)
+                    if answer and not self.stopping and not JanusStore(self.janus_db).status()['paused'] and still_current(self.jobs_db,report_id):
+                        self.store.recommend('worker-'+report_id,problem,answer,'local_model')
+                self._counsel_thread=threading.Thread(target=challenge,name='Sentinel-worker-challenge',daemon=True)
+                self._counsel_thread.start()
         if warning:
             case_key=hashlib.sha256((warning+'|'+goal+'|'+str(jobcounts)).encode()).hexdigest()[:24]
             self.store.recommend('sentinel-'+case_key,warning,
                                  '; '.join(alternatives))
-            if (not self.stopping and not observation['game_detected'] and
+            if (not pending_report and not self.stopping and not observation['game_detected'] and
                 not active_plans and not team_active and not any(job['state']=='running' for job in jobs) and
                 (self._counsel_thread is None or not self._counsel_thread.is_alive()) and
                 time.monotonic()-self._last_counsel_attempt>=600):
