@@ -452,9 +452,10 @@ class JanusSentinel:
                 from .worker_reports import still_current,counsel_fields
                 self._last_counsel_attempt=time.monotonic()
                 report_id=pending_report['receipt_sha']
-                problem,evidence=counsel_fields(pending_report)
                 def challenge():
                     if not still_current(self.jobs_db,report_id):return
+                    try:problem,evidence=counsel_fields(pending_report,self.jobs_db)
+                    except (ValueError,OSError):return
                     answer=self._counsel.request(society='sentinel',goal=pending_report['focus'],
                         problem=problem,evidence=evidence,worker_report=True)
                     if answer and not self.stopping and not JanusStore(self.janus_db).status()['paused'] and still_current(self.jobs_db,report_id):
