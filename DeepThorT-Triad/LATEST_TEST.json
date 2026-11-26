@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v35-memory-intelligence",
-  "title": "Triad V35: independent memory AI, governed recall and fourth-core native repair",
+  "id": "triad-v36-background-memory",
+  "title": "Triad V36: independent background memory observation and existing native checks",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -16,6 +16,7 @@
     "mcp_stdio",
     "live_memory",
     "memory_core",
+    "memory_observer",
     "application_workflow",
     "speech_backend",
     "visual_backend",

@@ -157,6 +157,8 @@ class Pool:
         # Three resident models remain loaded. On proven allocation failure,
         # stop admitting overlapping native calls for the rest of this session.
         with self.admission_lock:
+            # Optional background recall never queues ahead of main work in protected serial mode.
+            if role=='memory' and self.serial_memory_mode:raise WorkerFailure('memory_pressure')
             while self.serial_memory_mode and self.generating:
                 if not self.healthy():raise WorkerFailure('worker_exit')
                 self.admission_lock.wait(.5)
@@ -189,7 +191,7 @@ class Pool:
         with self.locks[role]:
             try:return self._generate(role,messages,tokens)
             except WorkerFailure as error:
-                if error.code!='memory_pressure' or not self.healthy():raise
+                if role=='memory' or error.code!='memory_pressure' or not self.healthy():raise
                 with self.admission_lock:
                     self.memory_retries+=1
                 print('Native memory pressure:',role,'; retrying once with exclusive generation, all weights resident',flush=True)
