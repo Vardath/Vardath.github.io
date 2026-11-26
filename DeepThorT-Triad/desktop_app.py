@@ -4251,6 +4251,8 @@ class DeepThorTDesktop(tk.Tk):
                 return
             games=self.disk_gate.gaming()
             skipped=('chat','plan','edit','build','image') if games else ('chat','plan','edit')
+            if self._creative_lane_thread and self._creative_lane_thread.is_alive():
+                skipped=tuple(set(skipped)|{'vision','image'})
             j=self.jobs.next_any_queued(skip_modes=skipped)
             if j:
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
