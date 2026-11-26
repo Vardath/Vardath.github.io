@@ -9,7 +9,7 @@ import secrets
 import threading
 from http.server import BaseHTTPRequestHandler,HTTPServer
 from importlib.metadata import version
-from deepthort_local.triad_profiles import PROFILES,RUNTIME_VERSION,model_path,installed_files
+from deepthort_local.triad_profiles import ALL_PROFILES as PROFILES,RUNTIME_VERSION,model_path,installed_files
 from deepthort_local.triad_job import verify_root_cap
 from deepthort_local.triad_errors import native_error,synthetic
 
