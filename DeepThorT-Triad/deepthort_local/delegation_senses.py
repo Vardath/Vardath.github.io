@@ -70,3 +70,26 @@ def active_work(snapshot):
 
 def conflict(snapshot):
     return any(b['inconsistent'] for b in snapshot['active'])
+
+
+def observe_project_assignments(job_db):
+    """Bounded role-state evidence, not source content or executable authority."""
+    path=Path(job_db).parent/'task-graph.sqlite3'
+    empty={'available':False,'active':[],'recent':[]}
+    if not path.is_file():return empty
+    try:
+        with closing(sqlite3.connect(path.resolve().as_uri()+'?mode=ro',uri=True,timeout=.5)) as db:
+            db.row_factory=sqlite3.Row
+            rows=db.execute("""SELECT a.job_id,a.step_id,a.state,a.review_mode,
+                (SELECT COUNT(*) FROM project_reviews_v43 r WHERE r.attempt=a.attempt AND r.kind='plan') AS plan_reviews,
+                (SELECT COUNT(*) FROM project_reviews_v43 r WHERE r.attempt=a.attempt AND r.kind IN ('code','behavior_test')) AS source_reviews
+                FROM project_assignments_v43 a ORDER BY
+                CASE WHEN a.state IN ('assigned','reviewed','committing') THEN 0 ELSE 1 END,a.rowid DESC LIMIT 24""").fetchall()
+        active=[];recent=[]
+        for row in rows:
+            item=dict(row)
+            item['requester']='janus';item['assignee']='implementation';item['reviewer']='sentinel'
+            (active if row['state'] in ('assigned','reviewed','committing') else recent).append(item)
+        return {'available':True,'active':active,'recent':recent[:8]}
+    except (sqlite3.Error,OSError,ValueError,TypeError):
+        return empty
