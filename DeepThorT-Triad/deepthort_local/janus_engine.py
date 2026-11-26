@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .janus_cognition import CORE_NAMES, SenseFrame, process_society
+from . import interface_outbox
 from .action_guards import validate_guards
 APPROVED_KINDS = frozenset({'verification', 'tool'})
 ACTION_STATES = frozenset({'approved', 'running', 'succeeded', 'failed', 'cancelled', 'paused', 'needs_attention'})
@@ -72,6 +73,7 @@ class JanusStore:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 stamp TEXT NOT NULL, message TEXT NOT NULL);
             ''')
+            interface_outbox.ensure_schema(db,'janus')
             # Preserve every historical action when upgrading an existing database.
             columns={row[1] for row in db.execute('PRAGMA table_info(janus_actions)')}
             if 'input_guards_json' not in columns:
@@ -89,6 +91,15 @@ class JanusStore:
                 yield db
         finally:
             db.close()
+
+    def interface_messages(self,limit=20,*,unread_first=False):
+        with self.connect() as db:return interface_outbox.messages(db,limit,unread_first=unread_first)
+
+    def interface_unread(self):
+        with self.connect() as db:return interface_outbox.unread(db)
+
+    def acknowledge_interface(self,ids):
+        with self.connect() as db:return interface_outbox.mark_read(db,ids,utc_now())
 
     def status(self) -> dict:
         with self.connect() as db:
@@ -370,10 +381,12 @@ class JanusStore:
         previous=json.loads(old['cores_json'] or '{}')
         previous_front=previous.get('Front',{})
         previous_observation=json.loads(old['last_observation'] or '{}')
+        from .society_stimuli import observe_stimuli,stimulus_frame
+        stimuli=observe_stimuli(job_db,previous_observation.get('stimuli'))
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
         observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,
+            'delegation':delegation,'conflict':team_conflict,'stimuli':stimuli,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -396,17 +409,26 @@ class JanusStore:
                     f"{action['status']}; exit={action['returncode']}; {action['detail'][:300]}",
                     salience=.9 if action['status']!='succeeded' else .6,
                     uncertainty=.65 if action['status']=='needs_attention' else .2))
+        stimulus=stimulus_frame(stimuli)
+        if stimulus:frames.insert(0,stimulus)
+        with self.connect() as db:
+            findings=interface_outbox.pending(db,'janus')
+        if findings:
+            frames.append(SenseFrame('runtime','janus_findings',
+                f'{len(findings)} new recorded advisory findings await independent outward appraisal.',
+                salience=.75,uncertainty=.5))
         society=process_society(society='janus',observation=observation,frames=frames,
             previous_front=previous_front,previous_observation=previous_observation,
             previous_cores=previous,
-            focus=focus,decision=decision,goal=goal,alternatives=alternatives)
+            focus=focus,decision=decision,goal=goal,alternatives=alternatives,findings=findings)
         cycle=old['cycle']+1
         society['cycle']=cycle;society['stamp']=utc_now()
         with self.connect() as db:
             db.execute("""UPDATE janus_status SET cycle=?,updated_at=?,last_focus=?,
                 last_action=?,last_observation=?,cores_json=? WHERE singleton=1""",
                 (cycle,society['stamp'],focus,decision,json.dumps(observation),json.dumps(society['cores'])))
-            if society['cores']['Front']['changed_from_prior'] or cycle==1 or cycle%6==0:
+            interface_outbox.publish(db,'janus',society,cycle,society['stamp'])
+            if society['cores']['Front']['changed_from_prior'] or society['peer_exchange']['changed'] or cycle==1 or cycle%6==0:
                 db.execute('INSERT INTO janus_cycles(stamp,cycle,focus,decision,snapshot_json) VALUES(?,?,?,?,?)',
                            (society['stamp'],cycle,focus,decision,json.dumps(society)))
             db.execute('DELETE FROM janus_cycles WHERE id NOT IN (SELECT id FROM janus_cycles ORDER BY id DESC LIMIT 1000)')

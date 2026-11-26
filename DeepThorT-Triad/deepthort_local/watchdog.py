@@ -22,6 +22,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import interface_outbox
 from .janus_cognition import SenseFrame, process_society
 from .janus_counsel import LocalCounsel
 
@@ -60,6 +61,7 @@ class SentinelStore:
               description TEXT NOT NULL);
             ''')
             db.execute('INSERT OR IGNORE INTO sentinel_status(singleton,updated_at) VALUES (1,?)',(utc_now(),))
+            interface_outbox.ensure_schema(db,'sentinel')
             # Additive schema migration. Existing v9 recovery history is retained.
             cols={row[1] for row in db.execute('PRAGMA table_info(sentinel_status)')}
             for name,ddl in (
@@ -80,6 +82,15 @@ class SentinelStore:
             db.execute('PRAGMA busy_timeout=10000')
             with db:yield db
         finally:db.close()
+
+    def interface_messages(self,limit=20,*,unread_first=False):
+        with self.connect() as db:return interface_outbox.messages(db,limit,unread_first=unread_first)
+
+    def interface_unread(self):
+        with self.connect() as db:return interface_outbox.unread(db)
+
+    def acknowledge_interface(self,ids):
+        with self.connect() as db:return interface_outbox.mark_read(db,ids,utc_now())
 
     def update(self, *, state: str, detail: str, sentinel_pid: int | None,
                janus_pid: int | None, restart_count: int,
@@ -119,10 +130,19 @@ class SentinelStore:
         # Worker cycles are proof of heartbeat, but are NOT a new finding on
         # each poll. Keep them out of the issue signature to avoid log spam.
         material={k:v for k,v in observation.items() if k!='janus_cycle'}
+        from .society_stimuli import stimulus_frame
+        stimulus=stimulus_frame(material.get('stimuli',{}))
+        if stimulus:frames.insert(0,stimulus)
+        with self.connect() as db:
+            findings=interface_outbox.pending(db,'sentinel')
+        if findings:
+            frames.append(SenseFrame('runtime','sentinel_findings',
+                f'{len(findings)} new recorded supervisory findings await independent outward appraisal.',
+                salience=.75,uncertainty=.5))
         society=process_society(society='sentinel',observation=material,frames=frames,
             previous_front=previous_front,previous_observation=prior_observation,
             previous_cores=prev.get('cores',{}),
-            focus=focus,decision=decision,goal=goal,alternatives=alternatives)
+            focus=focus,decision=decision,goal=goal,alternatives=alternatives,findings=findings)
         fresh=(society['fingerprint']!=(prev.get('fingerprint') or ''))
         stamp=old.get('society_updated_at') or ''
         try:
@@ -133,6 +153,7 @@ class SentinelStore:
             db.execute("""UPDATE sentinel_status SET cycle=?,focus=?,decision=?,goal=?,
               society_json=?,observation_json=?,society_updated_at=? WHERE singleton=1""",
               (old['cycle']+1,focus,decision,goal,json.dumps(society),json.dumps(material),utc_now()))
+            interface_outbox.publish(db,'sentinel',society,old['cycle']+1,utc_now())
             issue_signature=hashlib.sha256((str(observation.get('warning') or '')+'|'+goal).encode()).hexdigest()[:24]
             if (observation.get('warning') and
                 (observation.get('drift') or observation.get('failed') or observation.get('requires_user'))
@@ -379,7 +400,11 @@ class JanusSentinel:
         try:
             janus_observation=json.loads(j.get('last_observation') or '{}')
         except (TypeError,ValueError):janus_observation={}
-        observation={'worker_state':status,'janus_cycle':cycle,'janus_focus':janus_focus,
+        from .society_stimuli import observe_stimuli
+        try:prior_stimuli=json.loads(self.store.snapshot().get('observation_json') or '{}').get('stimuli')
+        except (ValueError,TypeError,AttributeError):prior_stimuli=None
+        stimuli=observe_stimuli(self.jobs_db,prior_stimuli)
+        observation={'stimuli':stimuli,'worker_state':status,'janus_cycle':cycle,'janus_focus':janus_focus,
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
