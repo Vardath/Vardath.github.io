@@ -262,6 +262,52 @@ class ProjectMidi:
             db.execute("""UPDATE project_midi_v45 SET state=CASE WHEN state='publishing' THEN 'interrupted' ELSE 'blocked' END,
                 detail=? WHERE lease=? AND state IN ('assigned','reviewed','publishing')""",(str(reason)[:400],lease))
 
+    def integration_records(self,job,request,plan,*,exclude=(),limit=3):
+        """Checked, earlier native artifacts for an exact automatically approved
+        code milestone. No inferred dependency, new permission or path search.
+        Legacy/manual jobs without a matching dispatch retain their old path.
+        """
+        from .inspection_exclusions import normalized_relative
+        key=job.get('approval_key') or ''
+        parts=key.split(':')
+        if len(parts)!=4 or parts[0]!='milestone' or parts[1]!=str(request['id']):return []
+        ordinal=int(parts[2])
+        if job.get('state')!='running' or job.get('chat_id')!=request['chat_id'] or not same_workspace(job['project'],request['project']):
+            raise ValueError('Media integration belongs to another project or job')
+        with self.runs.db() as db:
+            dispatch=db.execute("SELECT * FROM roadmap_dispatch WHERE approval_key=?",(key,)).fetchone()
+            if not dispatch:return []
+            if (dispatch['state']!='ready' or dispatch['job_id']!=job['id']
+                or dispatch['request_id']!=request['id'] or dispatch['ordinal']!=ordinal):
+                raise ValueError('Media integration milestone dispatch changed')
+            run=db.execute("SELECT * FROM roadmap_runs WHERE request_id=?",(request['id'],)).fetchone()
+            if not run or run['state']!='active':raise ValueError('Media integration roadmap is not active')
+            run=dict(run)
+        if not run['mixed_sha'] or run['creative_midi']!=1:return []
+        if (not plan or plan['sha']!=run['mixed_sha'] or plan['code_sha']!=run['manifest_sha256']
+                or plan['request_id']!=request['id'] or digest({k:v for k,v in plan.items() if k!='sha'})!=plan['sha']):
+            raise ValueError('Media integration approval changed')
+        result=[]
+        for task in plan['tasks']:
+            if task['after']>=ordinal or normalized_relative(task['output']) in exclude:continue
+            with self.runs.db() as db:
+                row,contract=self._row(db,task['id'])
+            if not row:continue  # existing external workflow route is unchanged
+            if (contract!=self._identity(run,plan,task,request,task['after']+1)
+                    or row['state']!='checked'):
+                raise ValueError('Earlier native artifact is not current and checked')
+            _,target=_safe_auto_path(Path(run['project']),task['output'])
+            if not target.is_file() or target.stat().st_size>4096:raise ValueError('Earlier native MIDI is missing or outside its checked profile')
+            if self.checked(plan,task) is not True:raise ValueError('Earlier native artifact receipt missing')
+            receipt=json.loads(row['receipt'])
+            score=receipt['score']
+            record={'path':task['output'],'sha256':receipt['artifact']['sha256'],
+                    'bytes':receipt['artifact']['bytes'],'bpm':score['bpm'],'notes':len(score['notes']),
+                    'task_id':task['id'],'request_id':request['id'],'before':ordinal,
+                    'plan_sha':plan['sha'],'code_sha':plan['code_sha']}
+            if len(result)<max(0,min(3,limit)):result.append(record)
+        return result
+
     def checked(self,plan,task):
         """None = external workflow path; False = native attempt not complete."""
         with self.runs.db() as db:

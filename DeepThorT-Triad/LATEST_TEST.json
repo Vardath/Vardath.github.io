@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v56-independent-project-media",
-  "title": "Triad V56: symmetric independent project media coordination",
+  "id": "triad-v57-proactive-dependency-handoff",
+  "title": "Triad V57: proactive same-project dependency handoff",
   "checks": [
     "shared_cap",
     "triad_residency",
