@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v70-governed-self-development",
-  "title": "DeepThorT V70: governed self-development preparation",
+  "id": "triad-v71-self-update-verification",
+  "title": "DeepThorT V71: isolated self-update verification and rollback",
   "checks": [
     "shared_cap",
     "triad_residency",

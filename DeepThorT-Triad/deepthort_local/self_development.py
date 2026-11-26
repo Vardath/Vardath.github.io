@@ -131,7 +131,7 @@ def _stage(state,observed,candidate,body):
     with (folder/'manifest.json').open('x',encoding='utf-8') as stream:json.dump(manifest,stream,indent=2,sort_keys=True)
     return folder
 
-def run_once(root,state,client,stopped,*,available=lambda role:True):
+def run_once(root,state,client,stopped,*,available=lambda role:True,update_python=None):
     if stopped():return None
     observed=observe(root)
     if not observed:return None
@@ -139,6 +139,15 @@ def run_once(root,state,client,stopped,*,available=lambda role:True):
     with closing(sqlite3.connect(path,timeout=2)) as db,db:
         _ensure(db);prior=_load(db,observed['key'])
     phase=prior['state'] if prior else 'observed'
+    if phase=='staged' and update_python is not None:
+        from .self_update_preparation import prepare
+        update=prepare(root,state,prior,stopped,python=update_python)
+        if update is None:return None
+        body={**prior,'state':'update_prepared','update':update}
+        with closing(sqlite3.connect(path,timeout=2)) as db,db:
+            _save(db,body,prior)
+        record(state,'desktop','self_development_stage',stage=body['state'],scope_sha=observed['key'])
+        return body
     if phase not in ('observed','planned','candidate'):return None
     role={'observed':'janus','planned':'implementation','candidate':'sentinel'}[phase]
     if not available(role) or stopped():return None

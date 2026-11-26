@@ -4703,7 +4703,12 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 from deepthort_local.self_development import run_once
                 client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
-                item=run_once(ROOT,STATE,client,stopped,available=available)
+                from deepthort_local.triad_job import verify_root_cap
+                from deepthort_local.triad_profiles import runtime_path
+                verify_root_cap()
+                item=run_once(ROOT,STATE,client,stopped,available=available,update_python=runtime_path(ROOT))
+                if item and item['state']=='update_prepared':
+                    self.events.put(('log','Self-development update preparation passed isolated diagnostic and rollback checks. No installation authorized.'))
                 if item and item['state']=='staged':
                     self.events.put(('log','JANUS / Granite / Sentinel prepared an inert self-development candidate in state/self-development. No installation or runtime acceptance.'))
             except Exception as exc:
