@@ -15,7 +15,7 @@ from __future__ import annotations
 import hashlib
 import json
 from copy import deepcopy
-from .interface_outbox import select,express
+from .interface_outbox import select,express,digest
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -130,20 +130,28 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
         'opportunity':unit(.8 if alternatives and not gaming else .2),
         'conflict':unit(.85 if conflict else .2),
     }
+    # New evidence and bounded advisory counsel are registered to all outer
+    # cores, but only the specialists consume raw material in their readouts.
+    stimulus_refs=[{'id':item['id'],'mode':item['mode'],'characters':item['characters']}
+                   for item in observation.get('stimuli',{}).get('events',[])][:8]
+    finding_text=' | '.join(f"Finding: {f['finding'][:200]}; proposed: {f['proposal'][:240]}" for f in findings)
+    sensory_content=f'{goal}; {focus}; {decision}; '+finding_text[:850]+' | '+ ' | '.join(f.content for f in frames[:4])
     def outer_core(name: str, sources: list[str], projection: int=0):
         # Every core is a complete 7-faculty recursive processor, not one value.
         faculties={str(direction):{'faculty':FACULTIES[direction],
                     'activation':unit(base[direction]*(1.0 if projection==direction else .82)),
-                    'evidence':frames[0].source, 'influences':[
+                    'evidence':frames[0].source if name in SPECIALISTS else '+'.join(sources), 'influences':[
                     list(line) for line in FANO_LINES if direction in line]}
                     for direction in range(1,8)}
         # Only specialists sense raw frames. Each downstream core receives
         # bounded actual conclusions from its declared predecessors.
         peers=[(src,cores[src].get('last_conclusion','')) for src in sources if src in CORE_NAMES and src in cores]
         if name in SPECIALISTS:
-            content=f'{goal}; {focus}; {decision}; '+ ' | '.join(f.content for f in frames[:4])
+            content=sensory_content
         else:
             content=' | '.join(f'{src}: {summary[:260]}' for src,summary in peers)
+            if name=='Interface':
+                content+=' | Integrated outward finding: '+json.dumps(cores['Front'].get('outward_finding'),ensure_ascii=False)[:900]
         reading=recursive_readout(name,content,appraisal,previous_cores.get(name),peers)
         for d in range(1,8):
             faculties[str(d)]['score']=int(reading['scores'].get(str(d),0))
@@ -153,6 +161,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                 'intent':decision,'goal':goal,
                 'retained_front':str(previous_front.get('focus',''))[:200],
                 'peer_sources':[src for src,_ in peers],
+                'registered_stimuli':stimulus_refs,
                 **reading}
     cores={}
     for name in SPECIALISTS:
@@ -163,10 +172,13 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
     for name in SPECIALISTS:
         peers=[(other,summary) for other,summary in first.items() if other!=name]
         revised=recursive_readout(name,
-               f'{goal}; {focus}; {decision}; '+ ' | '.join(f.content for f in frames[:3]),
+               sensory_content,
                appraisal,cores[name],peers)
         cores[name].update(revised)
         cores[name]['peer_sources']=[other for other,_ in peers]
+        # Each specialist registers advisory evidence with its own readout.
+        # No role is authorized to send an outward message on its own.
+        cores[name]['finding_refs']=[digest(f) for f in findings]
         for d in range(1,8):
             cores[name]['internal_fano_faculties'][str(d)]['score']=int(revised['scores'].get(str(d),0))
     cores['Evidence']['observations']=observation
@@ -180,18 +192,22 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                            continuity_cycle=int(previous_front.get('cycle',0) or 0))
     # The hemispheres independently receive ALL seven specialist streams.
     cores['Left']=outer_core('Left',list(SPECIALISTS))
-    cores['Left'].update(source_roles=list(SPECIALISTS),constraint_checked=True,decision=decision)
+    cores['Left'].update(source_roles=list(SPECIALISTS),constraint_checked=True,decision=decision,
+                         finding_refs=sorted(set.intersection(*(set(cores[n]['finding_refs']) for n in SPECIALISTS))))
     cores['Right']=outer_core('Right',list(SPECIALISTS))
-    cores['Right'].update(source_roles=list(SPECIALISTS),alternatives=alternatives)
+    cores['Right'].update(source_roles=list(SPECIALISTS),alternatives=alternatives,
+                          finding_refs=list(dict.fromkeys(ref for n in SPECIALISTS for ref in cores[n]['finding_refs'])))
     # Front receives only the two hemisphere interpretations, not Interface.
     cores['Front']=outer_core('Front',['Left','Right'])
+    reviewed_refs=set(cores['Left']['finding_refs']) & set(cores['Right']['finding_refs'])
+    reviewed_findings=[f for f in findings if digest(f) in reviewed_refs]
     cores['Front'].update(focus=focus,priority=decision,goal=goal,cycle=int(previous_front.get('cycle',0) or 0)+1,
                           posture=choose_response(appraisal),
                           changed_from_prior=focus!=previous_front.get('focus') or decision!=previous_front.get('priority'),
                           evidence_changed=actual_change,
                           disagreement=bool(conflict or bad),
                           alternatives_to_review=alternatives,material_fingerprint=fingerprint,
-                          outward_finding=select(findings,appraisal,observation))
+                          outward_finding=select(reviewed_findings,appraisal,observation))
     # Interface receives Front only. Results can return *next cycle* as new frames.
     cores['Interface']=outer_core('Interface',['Front'])
     cores['Interface'].update(action=decision,selected_posture=cores['Front']['posture'],
