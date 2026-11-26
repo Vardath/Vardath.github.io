@@ -4243,8 +4243,24 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.team_plan import is_team_request
                 if is_team_request(candidate['prompt']):
                     from deepthort_local.team_delegation import run_team
+                    from deepthort_local.creative_core import creative_headroom,GIB
+                    def overlap_allowed(active_roles,next_role):
+                        if stopped() or len(active_roles)!=1 or set(active_roles)|{next_role}!={'implementation','multimedia'}:
+                            return False
+                        health=local_server_status(timeout=1.0) or {}
+                        if (health.get('pid')!=primary.pid or health.get('ready') is not True
+                                or health.get('serial_memory_mode') is not False):
+                            return False
+                        models=health.get('models') or {}
+                        if any(models.get(role,{}).get('resident') is not True
+                               for role in ('janus','sentinel','implementation')):
+                            return False
+                        # A conservative extra reserve for overlapping resident
+                        # inference; the original hard caps still govern both.
+                        return creative_headroom(extra=GIB)
                     run_team(self.delegations,ident,self.client,create_midi,stopped,
-                             lambda message:self.events.put(('log','Team: '+message)))
+                             lambda message:self.events.put(('log','Team: '+message)),
+                             overlap_allowed=overlap_allowed)
                     record(STATE,'desktop','team_delegation_completed',request_id=ident)
                     return
                 task=self.delegations.claim(ident,'multimedia')
