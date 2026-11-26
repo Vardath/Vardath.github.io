@@ -302,8 +302,8 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','development_cycles_interrupted',
                    count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
-        from deepthort_local.delegation import DelegationStore
-        self.delegations=DelegationStore(self.conversations.path,STATE/'creative-tasks')
+        from deepthort_local.team_delegation import TeamDelegationStore
+        self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
         self._creative_lane_thread=None
         self._creative_lane_stop=threading.Event()
@@ -4195,6 +4195,13 @@ class DeepThorTDesktop(tk.Tk):
         def work():
             from deepthort_local.creative_core import create_midi
             try:
+                from deepthort_local.team_plan import is_team_request
+                if is_team_request(candidate['prompt']):
+                    from deepthort_local.team_delegation import run_team
+                    run_team(self.delegations,ident,self.client,create_midi,stopped,
+                             lambda message:self.events.put(('log','Team: '+message)))
+                    record(STATE,'desktop','team_delegation_completed',request_id=ident)
+                    return
                 task=self.delegations.claim(ident,'multimedia')
                 if not task or stopped():raise RuntimeError('Creative assignment interrupted before inference')
                 folder,receipt=create_midi(requester='user',scope=task['scope'],brief=task['brief'],
