@@ -1,3 +1,13 @@
+# Triad V39 — durable dependency-based creative lane
+
+Owner requested continued development without intermediate installation. V38 was merged with green Linux/Windows CI; no V37/V38 native acceptance archive supplied. Preserve the complete approved WORKFLOW_DOCTRINE.md and outstanding native checks.
+
+V39 first actual durable agent-task lane: the existing authoritative conversation SQLite DB holds role-tagged batches, stages, dependencies, unique leases, attempts and events. Supported explicit MIDI requests are claimed by a separate Gemma thread independently of the main project/conversation slots; unrelated conversation heads and implementation jobs can continue. The host verification stage cannot run before composition completes. Staged score, native receipt, exact immutable request, attempt and assignment hash are revalidated before atomic conversation delivery; no project publication or claim of musical quality. Same-thread order preserved, stale or superseded tasks rejected, cancelled results withheld, interrupted leases fail visibly and require explicit Retry, no silent native replay. Gaming, resource protections, Stop AI, queue pause, active installs/tools, and acceptance tests gate new creative dispatch. Other image/vision jobs defer during the lane. Existing legacy file-write grants, graph leases and global project mutation dispatcher remain in place. Actual native creative/implementation overlap not yet measured.
+
+V39 adds fixed 21st delegation structural check and regression fixtures for dependency order, independent foreground progress, immutable scope/attempt, cancellation, corrupt artifacts, restart and explicit retry. Scripted fixtures are not native proof. Next: general approved agent-task DAG and real JANUS/Granite/Gemma delegation beyond direct MIDI, safe parallel independent project branches, adaptive resource scheduling, proportional Sentinel review, proactive memory/consolidation, broad asset tools and self-update. Keep 50% CPU/up to 65% commit ceiling, 10% reserve, original DeepThorT untouched. Do not issue a final complete workflow updater or claim full implementation until outstanding passes are actually completed; cumulative updates must cover skipped V38/V39 source changes.
+
+---
+
 # Triad V38 — intelligent worker doctrine and first scheduling pass
 
 Owner approved the five-worker execution doctrine and explicitly requires each worker to understand its responsibilities. See WORKFLOW_DOCTRINE.md for the complete approved design and implementation status. V37 source was CI-verified; no newer native acceptance archive supplied in this pass. Do not treat the previous V36 memory/creative defects as resolved until tested on Windows.
