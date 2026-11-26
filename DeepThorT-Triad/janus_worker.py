@@ -70,7 +70,8 @@ class JanusWorker:
         gaming=self.game_gate.gaming()
         state=self.store.tick(self.jobs_db,gaming=gaming)
         if not gaming and not self._stopping and not state.get('paused'):
-            if not self._consider_worker_reports():self._consider_local_alternatives(state)
+            if not self._consider_worker_reports():
+                if not self._consider_live_work():self._consider_local_alternatives(state)
         return state
 
     def _consider_worker_reports(self):
@@ -107,6 +108,23 @@ class JanusWorker:
         self._counsel_thread.start()
         return True
 
+    def _consider_live_work(self):
+        """Independent executive reasoning while production is active."""
+        if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
+        if time.monotonic()-self._last_counsel_attempt<60:return False
+        from deepthort_local.workflow_attention import choose,run_once
+        if not choose(self.jobs_db,'janus'):return False
+        self._last_counsel_attempt=time.monotonic()
+        def work():
+            stopped=lambda:self._stopping or self.store.status()['paused'] or self.game_gate.gaming()
+            item=run_once(self.jobs_db,'janus',self._counsel,stopped)
+            if item and item['result']['kind']=='advice' and not stopped():
+                self.store.recommend(evidence_key='attention-'+item['key'],job_id=item['identity']['scope']['job_id'],
+                    problem=item['result']['finding'],proposal=item['result']['guidance'],origin='local_model')
+        self._counsel_thread=threading.Thread(target=work,name='JANUS-independent-attention',daemon=True)
+        self._counsel_thread.start()
+        return True
+
     def _consider_local_alternatives(self, state: dict) -> None:
         if state.get('decision') not in (
               'inspect_failure_and_propose_repair','diagnose_failure_and_propose_alternatives',
@@ -114,9 +132,8 @@ class JanusWorker:
             return
         if self._counsel_thread is not None and self._counsel_thread.is_alive():return
         if time.monotonic()-self._last_counsel_attempt<300:return
-        # Do not compete with the interactive model while it handles a chat.
-        jobs=self.store.observe_jobs(self.jobs_db)
-        if any(j['state']=='running' for j in jobs):return
+        # The resident broker, not the presence of another worker's job,
+        # determines whether executive neural reasoning can proceed.
         candidates=self.store.recommendations(10)
         current=candidates[0] if candidates else None
         if not current:return
@@ -133,10 +150,10 @@ class JanusWorker:
         self._counsel_thread.start()
 
     def _observe_active_process(self):
-        # Preserve cognition/heartbeat during an existing authorized process;
-        # never recursively dispatch another process or launch neural counsel.
+        # Keep executive cognition independent of an authorized subprocess.
+        # observe_once can reason, but never recursively dispatch a command.
         try:
-            self.store.tick(self.jobs_db,gaming=self.game_gate.gaming())
+            self.observe_once()
         except Exception as exc:
             record(self.jobs_db.parent,'janus_worker','active_process_observation_failed',
                    level='WARNING',error_type=type(exc).__name__)
