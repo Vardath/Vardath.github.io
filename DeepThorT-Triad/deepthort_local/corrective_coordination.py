@@ -188,9 +188,7 @@ def consume(jobs,queued_job,contract,*,resolve_evidence=None):
     detail=queued_job['detail']
     if not detail.startswith(READY):return ''
     ident=detail[len(READY):]
-    with jobs._conn() as db:
-        db.row_factory=sqlite3.Row
-        db.execute('BEGIN IMMEDIATE')
+    def current_packet(db):
         row=db.execute("SELECT * FROM corrective_assignments_v50 WHERE report_id=? AND state='queued'",(ident,)).fetchone()
         if not row:raise ValueError('Missing corrective assignment')
         p=checked_review(row)
@@ -198,13 +196,24 @@ def consume(jobs,queued_job,contract,*,resolve_evidence=None):
             raise ValueError('Corrective assignment scope changed')
         job=db.execute("SELECT state FROM jobs WHERE id=?",(p['job_id'],)).fetchone()
         if not job or job[0]!='running':raise ValueError('Corrective job no longer running')
-        evidence=''
-        if p['decision'].get('evidence_path'):
-            if resolve_evidence is None:
-                raise ValueError('Corrective inference requires actual dependency evidence')
-            evidence=resolve_evidence(p['decision']['evidence_path'])
-            if not isinstance(evidence,str) or not evidence or len(evidence)>2100:
-                raise ValueError('Requested corrective dependency is unavailable or too large')
+        return dict(row),p
+    # Resolve evidence without a job-store write lock. The resolver may read
+    # grants, the job store, and the graph ledger or record an evidence receipt.
+    # A stale receipt alone never authorizes dispatch or publication.
+    with closing(read(jobs.path)) as db:
+        expected,p=current_packet(db)
+    evidence=''
+    if p['decision'].get('evidence_path'):
+        if resolve_evidence is None:
+            raise ValueError('Corrective inference requires actual dependency evidence')
+        evidence=resolve_evidence(p['decision']['evidence_path'])
+        if not isinstance(evidence,str) or not evidence or len(evidence)>2100:
+            raise ValueError('Requested corrective dependency is unavailable or too large')
+    with jobs._conn() as db:
+        db.row_factory=sqlite3.Row
+        db.execute('BEGIN IMMEDIATE')
+        fresh,p=current_packet(db)
+        if fresh!=expected:raise ValueError('Corrective proposal changed during evidence acquisition')
         db.execute("UPDATE corrective_assignments_v50 SET state='consumed' WHERE report_id=?",(ident,))
     return ('\n\nINDEPENDENTLY REVIEWED CORRECTIVE GUIDANCE (advisory, not a specification change; '
             'do not invent missing inputs or tools): '+p['decision']['guidance']+
