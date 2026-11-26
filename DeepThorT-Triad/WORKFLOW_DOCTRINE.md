@@ -38,3 +38,8 @@ All workers preserve original instructions and amendments, obey granted scope, a
 ## Development passes after V38
 
 First resolve remaining native failures from actual Windows diagnostics. Next extend the existing TaskGraphStore and grants with durable role-tagged ready tasks and typed asset handoffs. Then enable bounded concurrent independent branch execution, measured adaptive resource admission, proportional Sentinel review with unchanged authority, proactive memory, general multimedia/document production, adaptive recovery/tool learning, capability assessment and isolated self-update staging. Update this document and NEXT_STEPS every pass; gate releases on green Linux and Windows CI plus separate real user-machine acceptance.
+
+## V39 implementation status
+
+The first durable role-tagged task graph is live for explicitly requested staged MIDI: independent Gemma composition lease, dependent host artifact verification, exact request/attempt identity, atomic conversation response, independent foreground thread heads and safe interrupted lease recovery. This does not yet provide general model-authored task delegation, dependency scheduling for project file writes, measured adaptive resource profiles or proportional reviews. Existing authority gates remain. Native concurrency remains unverified. All 20 previous checks retained and a structural delegation check added. Continue remaining phases; preserve cumulative updater compatibility.
+
