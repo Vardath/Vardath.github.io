@@ -4239,12 +4239,7 @@ class DeepThorTDesktop(tk.Tk):
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
             if self.active_conversation is None:
-                incoming=self.conversations.next_pending()
-                from deepthort_local.delegation import eligible as delegated_creative
-                if incoming and delegated_creative(incoming):
-                    # The dedicated lane owns eligible MIDI work; do not
-                    # execute it through the serial conversation route.
-                    incoming=None
+                incoming=self.delegations.next_foreground()
                 if incoming:
                     record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])
                     self._execute_conversation(incoming)
