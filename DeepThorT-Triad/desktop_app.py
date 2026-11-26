@@ -1996,6 +1996,10 @@ class DeepThorTDesktop(tk.Tk):
         # Historical memory is advisory. Never wait for model inference here.
         self.memory_observer.observe(original=original,project=project,chat_id=chat_id,
             scope=scope,focus=focus,phase=phase,job_id=job_id,section=section,cancelled=cancelled)
+        # Already available advice only, never request a new neural turn.
+        if phase in ('planning','indexed_section_planning'):
+            return self.memory_observer.advice(original=original,project=project,chat_id=chat_id,
+                focus=focus,job_id=job_id,budget=budget,cancelled=cancelled,recipient='janus')
         return ''
 
     def _sentinel_alignment(self,original,project,session,focus,proposal,*,section='',kind='plan',cancelled=None,stage=None,amendments=(),memory_job=None,memory_override=None,memory_chat=None):
