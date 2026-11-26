@@ -2775,7 +2775,11 @@ class DeepThorTDesktop(tk.Tk):
                         return self._governed_memory(source['prompt'],source['project'],source['chat_id'],
                             f'workflow-{ident}',goal,phase,budget=budget,cancelled=stale,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
-                    design=partial(design,memory_provider=recall)
+                    from deepthort_local.gemma_preparation import available as prepared_workflow
+                    def creative_provider(req,task,recipes,files):
+                        return prepared_workflow(self.workflow_drafts.path,self.roadmap_runs,self.conversations,
+                            self.mixed_roadmaps,req,task,recipes,files)
+                    design=partial(design,memory_provider=recall,creative_provider=creative_provider)
                     def review(proposal,kind):
                         self._sentinel_alignment(source['prompt'],source['project'],f'workflow-draft-{ident}',
                             workflow['goal'],proposal,kind=kind,cancelled=stale,
@@ -4614,6 +4618,53 @@ class DeepThorTDesktop(tk.Tk):
         self._technical_preparation_thread=threading.Thread(target=work,name='Granite-technical-preparation',daemon=True)
         self._technical_preparation_thread.start()
 
+    def _gemma_preparation_tick(self,now):
+        # Same single creative lane; normal staged requests and native
+        # artifact production win over advisory preparation.
+        if (self._quitting or self.queue_paused or self._explicit_model_stop
+                or self._project_midi_pending or self._model_transport_waiting
+                or not self.node_ready or not self.node or self.node.poll() is not None
+                or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                or self.janus.status().get('paused') or self.active_conversation is not None
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_mcp_discovery_active',False)
+                or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                or now-getattr(self,'_gemma_preparation_at',-60)<60):
+            return
+        self._gemma_preparation_at=now
+        stop=threading.Event()
+        self._creative_lane_stop=stop
+        primary=self.node
+        def stopped():
+            return (stop.is_set() or self._quitting or self.queue_paused or self._explicit_model_stop
+                    or self.disk_gate.gaming() or not self._project_work_is_enabled()
+                    or self.janus.status().get('paused') or primary.poll() is not None
+                    or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                    or bool(self.delegations.next_candidate()))
+        def candidates():
+            from deepthort_local.gemma_preparation import discover
+            return discover(self.roadmap_runs,self.conversations,self.hierarchies,self.specifications,
+                self.mixed_roadmaps,self.tool_workflows,self.project_midi,self.tool_learning,self.workflow_drafts)
+        def work():
+            try:
+                from deepthort_local.creative_profile import installed
+                from deepthort_local.creative_core import creative_headroom,GIB
+                from deepthort_local.adaptive_admission import parallel_media_admitted
+                from deepthort_local.gemma_preparation import run_once
+                if stopped() or not installed():
+                    return
+                health=local_server_status(timeout=1.0)
+                if not parallel_media_admitted(health,primary.pid,lambda:creative_headroom(extra=GIB)):
+                    return
+                item=run_once(self.workflow_drafts.path,candidates,stopped,
+                    notify=lambda msg:self.events.put(('log',msg)))
+                if item and not stopped():
+                    self.events.put(('log','Gemma independently prepared an exact multimedia tool workflow for review.'))
+            except Exception as exc:
+                record(STATE,'desktop','gemma_preparation_deferred',error_type=type(exc).__name__)
+        self._creative_lane_thread=threading.Thread(target=work,name='Gemma-workflow-preparation',daemon=True)
+        self._creative_lane_thread.start()
+
     def _scheduler_once(self):
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
@@ -4639,6 +4690,7 @@ class DeepThorTDesktop(tk.Tk):
         if gate=='active_job' and self._try_independent_project_media(now):return
         if gate=='active_job':
             self._technical_preparation_tick(now)
+            self._gemma_preparation_tick(now)
         if gate=='dispatch_enabled':
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
@@ -4689,6 +4741,7 @@ class DeepThorTDesktop(tk.Tk):
                     return
             # Give foreground conversations, ready builds and recovery first choice.
             self._technical_preparation_tick(now)
+            self._gemma_preparation_tick(now)
 
     def _execute_job(self,j):
         from deepthort_local.corrective_coordination import READY

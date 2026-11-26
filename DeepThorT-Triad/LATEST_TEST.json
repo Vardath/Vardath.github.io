@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v67-technical-preparation",
-  "title": "Triad V67: independent Granite technical preparation",
+  "id": "triad-v68-gemma-workflow-preparation",
+  "title": "DeepThorT V68: independent Gemma multimedia workflow preparation",
   "checks": [
     "shared_cap",
     "triad_residency",
