@@ -16,11 +16,7 @@ def capacity(sample):
     if spare<0:return 0
     return min(4,1+spare//GIB)
 
-def mandatory_ready(active,waiters,ticket,slots,rank,now):
+def admission_ready(active,waiters,ticket,slots,rank,now):
     return (len(active)<slots and bool(waiters) and
             min(waiters,key=lambda t:rank(t,now))==ticket)
 
-def optional_ready(active,waiters,slots):
-    # Reserve at least one slot for a newly arriving mandatory operation;
-    # a memory lookup is never placed on the mandatory wait list.
-    return slots>=2 and len(active)<slots-1 and not waiters
