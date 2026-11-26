@@ -92,8 +92,8 @@ class JanusStore:
         finally:
             db.close()
 
-    def interface_messages(self,limit=20):
-        with self.connect() as db:return interface_outbox.messages(db,limit)
+    def interface_messages(self,limit=20,*,unread_first=False):
+        with self.connect() as db:return interface_outbox.messages(db,limit,unread_first=unread_first)
 
     def interface_unread(self):
         with self.connect() as db:return interface_outbox.unread(db)
