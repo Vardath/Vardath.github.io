@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v49-creative-worker-coordination",
-  "title": "Triad V49: Gemma dependency exchange and verified predecessor evidence recovery",
+  "id": "triad-v50-reviewed-corrective-coordination",
+  "title": "Triad V50: reviewed corrective coordination and bounded automatic resumption",
   "checks": [
     "shared_cap",
     "triad_residency",
