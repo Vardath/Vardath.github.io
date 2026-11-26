@@ -13,7 +13,8 @@ KINDS={'design':'implementation','midi':'multimedia'}
 MAX_TASKS=4
 
 def is_team_request(brief):
-    return isinstance(brief,str) and brief.strip().lower().startswith('/delegate ') and 11<len(brief.strip())<=1000
+    return (isinstance(brief,str) and len(brief)<=1000 and
+            bool(re.match(r'^\s*/delegate\s+(?:design|midi)\s+\S',brief,re.I)))
 
 def parse_plan(answer,original):
     if not is_team_request(original) or not isinstance(answer,str) or len(answer)>6000:
@@ -28,7 +29,7 @@ def parse_plan(answer,original):
     if not isinstance(plan,dict) or set(plan)!={'tasks'} or not isinstance(plan['tasks'],list) or not 1<=len(plan['tasks'])<=MAX_TASKS:
         raise ValueError('Expected 1–4 typed tasks')
     seen=set()
-    midi_requested=bool(re.search(r'\bMIDI\b',original,re.I))
+    midi_requested=bool(re.match(r'^\s*/delegate\s+midi\s+',original,re.I))
     midi_count=0
     for t in plan['tasks']:
         if not isinstance(t,dict) or set(t)!={'id','kind','brief','depends_on'}:
@@ -54,7 +55,7 @@ def plan_prompt(original):
             'Only design (Granite read-only design/asset specification) and midi (Gemma short staged MIDI) '
             'are available. No project edits, commands, installs or publication. '
             'Use 1–4 nodes, unique lowercase ids, briefs <=240 chars, dependencies only on earlier ids. '
-            'Use midi only if user explicitly requests MIDI; never claim other artifacts can be made by this route. '
+            'The /delegate midi mode authorizes one staged MIDI; /delegate design authorizes only design advice. Never claim other artifacts can be made by this route. '
             'Return exactly one JSON object, e.g. {"tasks":[{"id":"design","kind":"design",'
             '"brief":"Specify interface","depends_on":[]}]}. EXACT USER REQUEST:\n'+original)
 
