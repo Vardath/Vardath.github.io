@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v65-core-continuity",
-  "title": "Triad V65: retained reactive cognition across ordinary progress",
+  "id": "triad-v66-conversation-memory",
+  "title": "Triad V66: independent scoped conversation memory",
   "checks": [
     "shared_cap",
     "triad_residency",

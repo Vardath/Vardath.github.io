@@ -3038,6 +3038,9 @@ class DeepThorTDesktop(tk.Tk):
                            model_input_characters=len(prompt),max_tokens=chat_tokens,
                            original_preserved=True,execution_authorized=False)
                     if cancelled():return
+                    from deepthort_local.conversation_memory import advice as conversation_advice
+                    prompt+=conversation_advice(self.jobs.path,request,
+                        budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     from deepthort_local.chat_agent import eligible, run_agent, MAX_PACKET
                     from deepthort_local.technical_research import DOCS, excerpt
                     from deepthort_local.reasoning_council import ReasoningCouncil
@@ -3107,6 +3110,10 @@ class DeepThorTDesktop(tk.Tk):
                                ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),self.client,review_artifacts,
                                cancelled=cancelled,stage=lambda message:self.events.put(('conversation_stage',ident,message)))
                 else:
+                    if request['mode']=='draft_plan':
+                        from deepthort_local.conversation_memory import advice as conversation_advice
+                        prompt+=conversation_advice(self.jobs.path,request,
+                            budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     answer, _ = generate_model_plan(
                         self.planner_client, session, original, request['project'], prompt,
                         x4_evidence=original_evidence, max_chars=MAX_INFERENCE_PROMPT,

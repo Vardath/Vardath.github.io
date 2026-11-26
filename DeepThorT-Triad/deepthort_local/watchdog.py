@@ -378,6 +378,8 @@ class JanusSentinel:
         project_midi=observe_project_midi(self.jobs_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(self.jobs_db)
+        from .conversation_memory import observations as conversation_memory_observations
+        memory_duties['conversation_reports']=conversation_memory_observations(self.jobs_db)
         from .worker_reports import observe_worker_reports
         worker_reports=observe_worker_reports(self.jobs_db)
         from .corrective_coordination import observe as observe_corrections
