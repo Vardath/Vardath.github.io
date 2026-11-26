@@ -381,10 +381,12 @@ class JanusStore:
         previous=json.loads(old['cores_json'] or '{}')
         previous_front=previous.get('Front',{})
         previous_observation=json.loads(old['last_observation'] or '{}')
+        from .society_stimuli import observe_stimuli,stimulus_frame
+        stimuli=observe_stimuli(job_db,previous_observation.get('stimuli'))
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
         observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,
+            'delegation':delegation,'conflict':team_conflict,'stimuli':stimuli,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -407,6 +409,8 @@ class JanusStore:
                     f"{action['status']}; exit={action['returncode']}; {action['detail'][:300]}",
                     salience=.9 if action['status']!='succeeded' else .6,
                     uncertainty=.65 if action['status']=='needs_attention' else .2))
+        stimulus=stimulus_frame(stimuli)
+        if stimulus:frames.insert(0,stimulus)
         with self.connect() as db:
             findings=interface_outbox.pending(db,'janus')
         if findings:
