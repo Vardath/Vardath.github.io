@@ -41,8 +41,8 @@ def load_test(path: str | Path) -> dict:
     if not isinstance(data['title'], str) or not (1 <= len(data['title']) <= 140):
         raise LatestTestError('Invalid latest test title')
     checks = data['checks']
-    if not isinstance(checks, list) or not (1 <= len(checks) <= 21):
-        raise LatestTestError('Latest test needs 1–21 built-in checks')
+    if not isinstance(checks, list) or not (1 <= len(checks) <= 22):
+        raise LatestTestError('Latest test needs 1–22 built-in checks')
     if any(not isinstance(value, str) or value not in ALLOWED for value in checks):
         raise LatestTestError('The test manifest requested an unknown or executable action')
     if len(checks) != len(set(checks)):
