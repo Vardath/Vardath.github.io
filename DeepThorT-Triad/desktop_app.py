@@ -308,6 +308,10 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.team_delegation import TeamDelegationStore
         self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
+        from deepthort_local.project_midi import ProjectMidi
+        self.project_midi=ProjectMidi(self.roadmap_runs,self.delegations)
+        self.project_midi.recover()
+        self._project_midi_pending=None
         self._creative_lane_thread=None
         self._creative_lane_stop=threading.Event()
         self.conversations.invalidate_incompatible_drafts()
@@ -2224,7 +2228,10 @@ class DeepThorTDesktop(tk.Tk):
         try:
             review=manifest(self.hierarchies,self.specifications,req)
             mixed=self.mixed_roadmaps.get(req['id'],review['manifest_sha256'])
-            if mixed:review['mixed_sha']=mixed['sha']
+            if mixed:
+                review['mixed_sha']=mixed['sha']
+                from deepthort_local.project_midi import supports
+                review['creative_midi']=any(supports(task) for task in mixed['tasks'])
         except (ValueError,OSError) as error:
             messagebox.showwarning('Roadmap approval blocked',str(error),parent=self)
             return
@@ -2232,7 +2239,9 @@ class DeepThorTDesktop(tk.Tk):
         dialog.transient(self);dialog.geometry('850x620')
         ttk.Label(dialog,text='One consent for every exact listed milestone. Successors require current predecessor '
                   'verification. Writes retain backups; fixed tests execute project code with your Windows permissions. '
-                  'Amendments invalidate this consent. Tool installation follows its own policy.',
+                  'Amendments invalidate this consent. Tool installation follows its own policy. '
+                  'For listed short MIDI artifacts, this approval also allows Gemma to create privately, '
+                  'Sentinel to review the score, and the host to publish only a new exact output file.',
                   wraplength=790).pack(fill='x',padx=12,pady=12)
         body=ttk.Frame(dialog);body.pack(fill='both',expand=True,padx=12)
         view=tk.Text(body,wrap='word');scroll=ttk.Scrollbar(body,command=view.yview)
@@ -2264,7 +2273,10 @@ class DeepThorTDesktop(tk.Tk):
             if not latest or latest['id']!=req['id']:raise PlanError('Roadmap changed during review')
             current=manifest(self.hierarchies,self.specifications,latest)
             current_mixed=self.mixed_roadmaps.get(req['id'],current['manifest_sha256'])
-            if current_mixed:current['mixed_sha']=current_mixed['sha']
+            if current_mixed:
+                current['mixed_sha']=current_mixed['sha']
+                from deepthort_local.project_midi import supports
+                current['creative_midi']=any(supports(task) for task in current_mixed['tasks'])
             if current!=review:raise PlanError('Roadmap changed during review')
             self.roadmap_runs.approve(review)
             self._log(f"Roadmap #{req['id']} approved for automatic sequential advancement.")
@@ -2288,8 +2300,20 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.mixed_roadmap import pending_task
                     mixed=self.mixed_roadmaps.get(ident,result['manifest_sha256'])
                     if not mixed or mixed['sha']!=run['mixed_sha']:raise PlanError('Mixed roadmap approval changed')
-                    task=pending_task(mixed,self.tool_workflows,before)
+                    task=pending_task(mixed,self.tool_workflows,before,creative=self.project_midi)
                     if task:
+                        from deepthort_local.project_midi import supports
+                        native_state=self.project_midi.status(task['id'])
+                        if native_state:
+                            if native_state in ('blocked','interrupted'):
+                                raise PlanError('Native artifact needs reconciliation: '+task['output'])
+                            continue
+                        if (run.get('creative_midi')==1 and supports(task)
+                                and not self.mixed_roadmaps.request_for(task['id'])
+                                and not any(json.loads(w['manifest']).get('mixed_task')==task for w in self.tool_workflows.roadmap_members(ident))):
+                            if gate(self.tool_workflows,ident,result['manifest_sha256'],before):continue
+                            if self._start_project_midi(run,mixed,task,req,before):return True
+                            continue
                         if task.get('imports'):
                             from deepthort_local.asset_import_probe import required_imports
                             for producer in self.tool_workflows.roadmap_members(ident):
@@ -2380,7 +2404,7 @@ class DeepThorTDesktop(tk.Tk):
                 mixed=self.mixed_roadmaps.get(root_request_id,code_sha)
                 if mixed:
                     from deepthort_local.mixed_roadmap import pending_task
-                    task=pending_task(mixed,self.tool_workflows,before)
+                    task=pending_task(mixed,self.tool_workflows,before,creative=self.project_midi)
                     if task:
                         messagebox.showinfo('Required artifact pending',f"{task['output']} is required. Use Roadmap automation to prepare and approve its workflow.",parent=self);return
                 blocked=gate(self.tool_workflows,root_request_id,code_sha,before)
@@ -4215,9 +4239,82 @@ class DeepThorTDesktop(tk.Tk):
         finally:
             self.after(1100,self._scheduler)
 
+    def _start_project_midi(self,run,mixed,task,req,before):
+        # Uses the same fourth-core lane as staged conversational media.
+        if (self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                or self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
+                or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
+                or self.janus.status().get('paused') or not self._project_work_is_enabled()):return False
+        from deepthort_local.creative_core import creative_headroom,create_midi
+        try:
+            if not creative_headroom():return False
+        except (ValueError,OSError,RuntimeError):return False
+        lease,contract=self.project_midi.begin(run,mixed,task,req,before,enabled=True)
+        self._project_midi_pending=(lease,req['id'],task['id'],before,req['project'])
+        stop=threading.Event();self._creative_lane_stop=stop;primary=self.node
+        def stopped():
+            return (stop.is_set() or self._quitting or self.queue_paused or self.disk_gate.gaming()
+                    or primary.poll() is not None or not self._project_work_is_enabled()
+                    or self.janus.status().get('paused') or not self.project_midi.live(lease)
+                    or self.conversations.amendment_supersedes(req['id'],req['chat_id'],req['project']))
+        def work():
+            from deepthort_local.project_midi import review_text
+            from deepthort_local.creative_core import inspect_midi
+            try:
+                folder,receipt=create_midi(requester='janus',scope=contract['scope'],brief=contract['brief'],
+                    cancelled=stopped,notify=lambda message:self.events.put(('log','Project Gemma: '+message)))
+                if stopped():raise RuntimeError('Project MIDI assignment stopped')
+                score=inspect_midi((folder/'score.mid').read_bytes())
+                # Independent existing Sentinel review; use original specification,
+                # indexed goal and actual note events, not Gemma's completion claim.
+                proposal=review_text(contract,score)
+                review=self._sentinel_alignment(req['prompt'],Path(req['project']),
+                    'project-midi-'+lease,task['goal']+'; '+task['output'],proposal,kind='plan',
+                    cancelled=stopped,stage=lambda message:self.events.put(('log',message)))
+                if stopped():raise RuntimeError('Project MIDI review stopped')
+                self.project_midi.reviewed(lease,contract,folder,receipt,review)
+                self.events.put(('project_midi_ready',lease))
+            except Exception as exc:
+                self.project_midi.fail(lease,str(exc))
+                self.events.put(('project_midi_error',lease,str(exc)))
+        self._creative_lane_thread=threading.Thread(target=work,daemon=True,name='ProjectGemma')
+        self._creative_lane_thread.start()
+        self._log(f"JANUS assigned project MIDI {task['output']} to Gemma; Sentinel review and host publication required.")
+        return True
+
+    def _finish_project_midi(self,lease,error=None):
+        pending=self._project_midi_pending
+        if not pending or pending[0]!=lease:return
+        _,ident,task_id,before,_=pending
+        try:
+            if error:raise PlanError(error)
+            if (self._quitting or self.queue_paused or self._explicit_model_stop or self._creative_lane_stop.is_set()
+                    or self.disk_gate.gaming() or not self._project_work_is_enabled() or self.janus.status().get('paused')):
+                raise PlanError('Native artifact publication stopped before project write')
+            from deepthort_local.roadmap_runs import eligible_successor
+            from deepthort_local.roadmap_tool_bridge import gate
+            run=self.roadmap_runs.get(ident);req=self.conversations.get(ident)
+            result=eligible_successor(run,req,self.conversations,self.hierarchies,self.specifications,self.jobs)
+            if not result:raise PlanError('Roadmap boundary no longer open')
+            actual_before=(self.hierarchies.status(self.specifications,ident,req['prompt'])['milestones_total']+1
+                           if result['complete'] else result['milestone']['ordinal'])
+            if actual_before!=before or gate(self.tool_workflows,ident,result['manifest_sha256'],before):
+                raise PlanError('Roadmap predecessor or tool evidence changed')
+            mixed=self.mixed_roadmaps.get(ident,result['manifest_sha256'])
+            task=next(t for t in mixed['tasks'] if t['id']==task_id)
+            self.project_midi.publish(lease,run,mixed,task,req,before,enabled=True)
+            self._log(f"Roadmap #{ident}: verified MIDI published to {task['output']}; playback and quality unverified.")
+            self._refresh_files()
+            self._last_roadmap_advance=-60.0
+        except Exception as exc:
+            self.project_midi.fail(lease,str(exc))
+            self.roadmap_runs.change(ident,'blocked','Native artifact: '+str(exc))
+            self._log(f'Roadmap #{ident}: native artifact blocked: {exc}')
+        finally:self._project_midi_pending=None
+
     def _creative_lane_tick(self):
         """Independent staged-only production; never owns the main conversation slot."""
-        if (self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
+        if (self._project_midi_pending or self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
                 or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
                 or (self._latest_test_thread and self._latest_test_thread.is_alive())
                 or getattr(self,'_verification_preflight',False)
@@ -4323,6 +4420,9 @@ class DeepThorTDesktop(tk.Tk):
                 skipped=tuple(set(skipped)|{'vision','image'})
             j=self.jobs.next_any_queued(skip_modes=skipped)
             if j:
+                if self._project_midi_pending:
+                    from deepthort_local.task_graph import same_workspace
+                    if same_workspace(j['project'],self._project_midi_pending[4]):return
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
                 self._execute_job(j)
                 return
@@ -7439,6 +7539,8 @@ class DeepThorTDesktop(tk.Tk):
                     self._log(f'Project file inventory refreshed: {len(visible)} visible files; '
                               f'{len(self.inspection_exclusions.paths(self.project))} excluded from inspection.')
             elif kind=='conversation_stage':self._set_reply_stage(event[1],event[2])
+            elif kind=='project_midi_ready':self._finish_project_midi(event[1])
+            elif kind=='project_midi_error':self._finish_project_midi(event[1],event[2])
             elif kind=='creative_lane_finished':
                 self._log(f'Independent creative assignment #{event[1]} finished; inspect its conversation for result.')
                 self._reload_chat()
