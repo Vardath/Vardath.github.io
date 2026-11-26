@@ -1,7 +1,7 @@
 """Progress changes preserve core thought, never stale outward acceptance."""
 import json
 import unittest
-from deepthort_local.core_deliberation import ORDER,step,choose,snapshot
+from deepthort_local.core_deliberation import ORDER,step,choose,snapshot,select_lane
 from deepthort_local.workflow_attention import advice
 import test_workflow_attention_v59 as prior
 
@@ -22,6 +22,23 @@ class ContinuityTests(unittest.TestCase):
     def turn(self):return step(self.jobs.path,'janus',self.c,lambda:False)
     def progress(self):
         self.jobs.set_step(self.jobs.steps(self.id)[0]['id'],'saved','Produced')
+    def test_live_advice_cannot_starve_core_opportunities(self):
+        self.assertEqual(select_lane(True,True,''),'ordinary')
+        self.assertEqual(select_lane(True,True,'ordinary'),'core')
+        self.assertEqual(select_lane(True,True,'core'),'ordinary')
+        self.assertEqual(select_lane(False,True,'core'),'core')
+        self.assertEqual(select_lane(True,False,'ordinary'),'ordinary')
+    def test_expired_round_can_restart(self):
+        import sqlite3
+        self.turn()
+        before=snapshot(self.jobs.path,'janus')
+        with sqlite3.connect(self.jobs.path.parent/'janus-counsel.sqlite3') as db:
+            db.execute("UPDATE core_deliberation_v65 SET updated=0")
+        self.assertIsNotNone(choose(self.jobs.path,'janus'))
+        self.turn()
+        after=snapshot(self.jobs.path,'janus')
+        self.assertEqual(after['round_key'],before['round_key'])
+        self.assertEqual(after['turn_count'],1)
     def test_progress_retains_initial_readings_then_fresh_revision(self):
         self.turn()
         before=snapshot(self.jobs.path,'janus')
@@ -46,7 +63,8 @@ class ContinuityTests(unittest.TestCase):
         self.assertIsNotNone(choose(self.jobs.path,'janus'))
         self.turn()
         self.assertNotEqual(snapshot(self.jobs.path,'janus')['round_key'],old)
-        self.assertIn('historical hypothesis',self.c.calls[-1]['evidence'])
+        prior=json.loads(self.c.calls[-1]['evidence'])['historical_hypothesis']
+        self.assertEqual(prior['status'],'historical_hypothesis_not_current_evidence')
         self.jobs.cancel(self.id)
         self.assertFalse(snapshot(self.jobs.path,'janus'))
         self.assertIsNone(choose(self.jobs.path,'janus'))

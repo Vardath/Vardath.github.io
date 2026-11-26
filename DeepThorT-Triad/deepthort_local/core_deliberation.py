@@ -159,6 +159,12 @@ def choose(job_db,role):
     except (OSError,ValueError,TypeError,sqlite3.Error):pass
     return None
 
+def select_lane(ordinary,core,last_lane):
+    """Fairly alternate independent opportunities when both lanes are ready."""
+    if core and (not ordinary or last_lane=='ordinary'):return 'core'
+    if ordinary:return 'ordinary'
+    return ''
+
 def _reading(turn):
     return {**turn['result'],'progress_key':turn['progress_key']}
 
@@ -167,9 +173,10 @@ def _inputs(job_db,role,packet,cycle):
     if phase=='initial':
         observed=attention.evidence(job_db,packet)
         prior=_historical(job_db,role,packet,cycle['identity'],core)
+        inputs={'observed':observed}
         if prior:
-            observed+='\nOwn prior-cycle reading (historical hypothesis, independently reconsider): '+json.dumps(prior,ensure_ascii=False)
-        return {'observed':observed}
+            inputs['historical_hypothesis']=prior
+        return inputs
     if phase=='revise':
         first={t['core']:_reading(t) for t in turns[:7]}
         return {'observed':attention.evidence(job_db,packet)[:1900],
@@ -233,6 +240,9 @@ def step(job_db,role,counsel,stopped,packet=None):
         turn['sha']=canonical_sha(turn)
         with closing(sqlite3.connect(_path(job_db),timeout=2)) as db,db:
             _ensure(db);db.execute('BEGIN IMMEDIATE')
+            # An expired round may have the same deterministic start key.
+            # Remove only expired rows before comparing the exact prior receipt.
+            db.execute("DELETE FROM core_deliberation_v65 WHERE updated<?",(time.time()-TTL,))
             prior=db.execute("SELECT receipt_sha,updated FROM core_deliberation_v65 WHERE role=? AND work_key=?",
                 (role,identity['key'])).fetchone()
             if (prior[0] if prior else None)!=cycle['receipt_sha']:return None

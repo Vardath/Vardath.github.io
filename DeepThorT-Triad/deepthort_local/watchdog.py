@@ -484,10 +484,13 @@ class JanusSentinel:
                 and (self._counsel_thread is None or not self._counsel_thread.is_alive())
                 and time.monotonic()-self._last_counsel_attempt>=60):
             from .workflow_attention import choose,run_once
-            from .core_deliberation import choose as choose_core,step as core_step
+            from .core_deliberation import choose as choose_core,step as core_step,select_lane
             ordinary=choose(self.jobs_db,'sentinel')
-            core_packet=choose_core(self.jobs_db,'sentinel') if not ordinary else None
-            if ordinary or core_packet:
+            core_packet=choose_core(self.jobs_db,'sentinel')
+            lane=select_lane(ordinary,core_packet,getattr(self,'_last_attention_lane',''))
+            if lane:
+                self._last_attention_lane=lane
+                if lane!='core':core_packet=None
                 self._last_counsel_attempt=time.monotonic()
                 def supervise():
                     def stopped():

@@ -113,10 +113,13 @@ class JanusWorker:
         if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
         if time.monotonic()-self._last_counsel_attempt<60:return False
         from deepthort_local.workflow_attention import choose,run_once
-        from deepthort_local.core_deliberation import choose as choose_core,step as core_step
+        from deepthort_local.core_deliberation import choose as choose_core,step as core_step,select_lane
         ordinary=choose(self.jobs_db,'janus')
-        core_packet=choose_core(self.jobs_db,'janus') if not ordinary else None
-        if not ordinary and not core_packet:return False
+        core_packet=choose_core(self.jobs_db,'janus')
+        lane=select_lane(ordinary,core_packet,getattr(self,'_last_attention_lane',''))
+        if not lane:return False
+        self._last_attention_lane=lane
+        if lane!='core':core_packet=None
         self._last_counsel_attempt=time.monotonic()
         def work():
             stopped=lambda:self._stopping or self.store.status()['paused'] or self.game_gate.gaming()
