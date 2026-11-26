@@ -39,7 +39,8 @@ HELP_FLAGS = {
     'Python': ('--help',), 'Git': ('--help',), 'Node.js': ('--help',),
     'Blender': ('--help',), 'Godot': ('--help',), '.NET SDK': ('--help',),
     'Java': ('-help',), 'Android Debug Bridge': ('help',),
-    '7-Zip': ('-h',),
+    '7-Zip': ('-h',), 'FFmpeg': ('-h',),
+    'Inkscape': ('--help',), 'Pandoc': ('--help',),
 }
 DISALLOWED_SWITCHES = frozenset({'-c','/c','-command','-encodedcommand','--eval','--execute',
                                  '-e','--js','--script-from-command-line','--python-expr'})
@@ -750,6 +751,49 @@ class ToolAcquisition:
             if evidence['status']=='artifact_produced':
                 out.append({**rec,'artifact_scope':evidence['artifact_scope']})
         return out
+
+    def search_capabilities(self, janus, request, *, limit=8, cancelled=None):
+        """Current help matches only, not inferred capability or execution permission."""
+        if not isinstance(request,str) or not 1<=len(request.strip())<=2000:
+            raise ValueError('Enter a capability search of 1–2000 characters')
+        if type(limit) is not int or not 1<=limit<=8:
+            raise ValueError('Capability result bound exceeded')
+        terms=set(re.findall(r'[a-z0-9]{3,}',request.casefold()))-{
+            'the','and','for','with','can','how','what','which','this','that','from','into','using','tool','application','create','make'}
+        if not terms:return []
+        with self._db() as db:
+            names=[r[0] for r in db.execute('SELECT name FROM learned_tools ORDER BY name LIMIT 100')]
+        matches=[]
+        for name in names:
+            if cancelled and cancelled():return []
+            try:evidence=self.probe_evidence(name,janus)
+            except (OSError,ValueError,KeyError,TypeError):continue
+            if not evidence:continue
+            # A matching application name alone is not evidence of an operation.
+            for line in evidence['excerpt'].splitlines():
+                words=set(re.findall(r'[a-z0-9]{3,}',line.casefold()))
+                score=len(terms & words)
+                if not score:continue
+                matches.append((score,{'name':name,'excerpt':line[:180],'action_id':evidence['action_id'],
+                    'sha256':evidence['sha256'],'scope':'approved help only; task unverified'}))
+        matches.sort(key=lambda row:(-row[0],row[1]['name'],row[1]['excerpt']))
+        result=[];seen=set()
+        for _,row in matches:
+            key=(row['name'],row['excerpt'])
+            if key in seen:continue
+            result.append(row);seen.add(key)
+            if len(result)>=limit:break
+        return result
+
+    def discovery_context(self, janus, request, *, max_chars=350, cancelled=None):
+        if max_chars<130:return ''
+        rows=self.search_capabilities(janus,request[:2000],cancelled=cancelled) if request.strip() else []
+        heading='\nUNTRUSTED LOCAL HELP MATCHES (advisory; no task verified or approved):\n'
+        result=heading
+        for row in rows:
+            line=f"- {row['name']} [help {row['action_id']}]: {row['excerpt']}\n"
+            if len(result)+len(line)<=max_chars:result+=line
+        return result if result!=heading else ''
 
     def context(self, project: str | Path, janus, request: str, *, max_chars:int=520) -> str:
         if max_chars<180:return ''

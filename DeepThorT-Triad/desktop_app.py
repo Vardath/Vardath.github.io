@@ -662,6 +662,7 @@ class DeepThorTDesktop(tk.Tk):
             values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Security: dependency audit','Security: source scan','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
+        ttk.Button(checks,text='Find app capabilities…',command=self._search_application_capabilities).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
         ttk.Label(acquire,text='Discovered software — separate review:',style='Muted.TLabel').pack(side='left',padx=4)
         ttk.Button(acquire,text='Inspect package ID…',command=self._inspect_package_id).pack(side='left',padx=5)
@@ -2918,8 +2919,12 @@ class DeepThorTDesktop(tk.Tk):
                             request['project'],exclude_paths=self.inspection_exclusions.paths(request['project']))
                         capability_evidence=self.capabilities.retrieval_context(
                             request['project'],original,max_chars=650,include_knowledge=False)
-                        capability_evidence += self.tool_learning.context(
+                        tool_evidence=self.tool_learning.context(
                             request['project'],self.janus,original,max_chars=350)
+                        if not tool_evidence:
+                            tool_evidence=self.tool_learning.discovery_context(self.janus,original,max_chars=350,
+                                cancelled=lambda:self._quitting or self.disk_gate.gaming())
+                        capability_evidence+=tool_evidence
                         record(STATE,'desktop','capability_discovery_completed',
                                request_id=ident,files_scanned=discovery['files_scanned'],
                                references_indexed=discovery['references_indexed'],
@@ -6345,6 +6350,34 @@ class DeepThorTDesktop(tk.Tk):
             raise ValueError('Select one of the listed, actually installed applications')
         return name
 
+    def _search_application_capabilities(self):
+        if getattr(self,'_capability_search_active',False):return
+        query=simpledialog.askstring('Find installed application capabilities',
+            'Describe a capability to find in previously approved local application help. No applications will be launched.',parent=self)
+        if not query or not query.strip():return
+        if len(query)>2000:
+            messagebox.showwarning('Search too long','Use at most 2000 characters.',parent=self);return
+        if self.disk_gate.gaming():return
+        self._capability_search_active=True
+        def work():
+            try:
+                self._available_learnable_tools()
+                rows=self.tool_learning.search_capabilities(self.janus,query,
+                    cancelled=lambda:self._quitting or self.disk_gate.gaming())
+                self.events.put(('app_capability_search',rows,None))
+            except Exception as exc:self.events.put(('app_capability_search',[],str(exc)[:400]))
+        threading.Thread(target=work,name='JANUS-app-capability-search',daemon=True).start()
+
+    def _finish_application_capabilities(self,rows,error):
+        self._capability_search_active=False
+        if self._quitting or self.disk_gate.gaming():return
+        if error:
+            messagebox.showwarning('Capability search unavailable',error,parent=self);return
+        detail='\n\n'.join(f"{r['name']} — approved help action #{r['action_id']}\n{r['excerpt']}" for r in rows)
+        messagebox.showinfo('Local help capability matches',
+            (detail+'\n\nHelp evidence only; no task tested or execution approved.' if rows else
+             'No matching current approved help. Use Scan this computer and Investigate app to obtain actual help evidence.'),parent=self)
+
     def _investigate_tool(self):
         if not self.project:
             messagebox.showinfo('Project needed','Select the project in which this app will be used.',parent=self);return
@@ -8748,6 +8781,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._finish_dependency_audit_review(*event[1:])
             elif kind=='source_security_review':
                 self._finish_source_security_review(*event[1:])
+            elif kind=='app_capability_search':
+                self._finish_application_capabilities(*event[1:])
             elif kind=='git_history_observation':
                 self._finish_git_history(*event[1:])
             elif kind=='tool_end':
