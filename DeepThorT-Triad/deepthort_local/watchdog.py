@@ -478,12 +478,30 @@ class JanusSentinel:
                         self.store.recommend('worker-'+report_id,problem,answer,'local_model')
                 self._counsel_thread=threading.Thread(target=challenge,name='Sentinel-worker-challenge',daemon=True)
                 self._counsel_thread.start()
+        if (not pending_report and not self.stopping and not observation['game_detected']
+                and not j.get('paused') and heartbeat_fresh
+                and (self._counsel_thread is None or not self._counsel_thread.is_alive())
+                and time.monotonic()-self._last_counsel_attempt>=60):
+            from .workflow_attention import choose,run_once
+            if choose(self.jobs_db,'sentinel'):
+                self._last_counsel_attempt=time.monotonic()
+                def supervise():
+                    def stopped():
+                        state=JanusStore(self.janus_db).status()
+                        try:gaming=bool(json.loads(state.get('last_observation') or '{}').get('game_detected'))
+                        except (ValueError,TypeError):gaming=True
+                        return self.stopping or state['paused'] or gaming
+                    item=run_once(self.jobs_db,'sentinel',self._counsel,stopped)
+                    if item and item['result']['kind']=='advice' and not stopped():
+                        self.store.recommend('attention-'+item['key'],item['result']['finding'],item['result']['guidance'],'local_model')
+                self._counsel_thread=threading.Thread(target=supervise,name='Sentinel-independent-attention',daemon=True)
+                self._counsel_thread.start()
         if warning:
             case_key=hashlib.sha256((warning+'|'+goal+'|'+str(jobcounts)).encode()).hexdigest()[:24]
             self.store.recommend('sentinel-'+case_key,warning,
                                  '; '.join(alternatives))
             if (not pending_report and not self.stopping and not observation['game_detected'] and
-                not active_plans and not team_active and not any(job['state']=='running' for job in jobs) and
+                not j.get('paused') and heartbeat_fresh and
                 (self._counsel_thread is None or not self._counsel_thread.is_alive()) and
                 time.monotonic()-self._last_counsel_attempt>=600):
                 key='model-'+case_key

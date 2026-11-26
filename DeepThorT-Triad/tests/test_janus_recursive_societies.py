@@ -160,13 +160,19 @@ class PersistentCoordinators(unittest.TestCase):
             self.assertLessEqual(worker.store.snapshot()['cycle'],2)
         finally:worker.shutdown()
 
-    def test_local_counsel_has_exclusive_lease_and_never_claims_remote_models(self):
+    def test_local_counsel_has_role_exclusive_leases_and_never_claims_remote_models(self):
         adviser=LocalCounsel(self.root/'counsel.sqlite3')
-        self.assertTrue(adviser._acquire('janus-one'))
-        self.assertFalse(adviser._acquire('sentinel-two'))
-        adviser._release('janus-one')
-        self.assertTrue(adviser._acquire('sentinel-two'))
-        adviser._release('sentinel-two')
+        # The intentionally replaced global singleton must no longer
+        # prevent separate resident roles from reasoning concurrently.
+        self.assertTrue(adviser._acquire('janus:one'))
+        self.assertTrue(adviser._acquire('sentinel:two'))
+        self.assertFalse(adviser._acquire('janus:three'))
+        self.assertFalse(adviser._acquire('sentinel:three'))
+        adviser._release('janus:one')
+        self.assertTrue(adviser._acquire('janus:three'))
+        self.assertFalse(adviser._acquire('sentinel:three'))
+        adviser._release('janus:three')
+        adviser._release('sentinel:two')
         with self.assertRaises(ValueError):
             adviser.request(society='cloud',goal='a',problem='x',evidence='x')
 

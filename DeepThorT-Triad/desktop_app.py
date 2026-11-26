@@ -2093,6 +2093,10 @@ class DeepThorTDesktop(tk.Tk):
                 if not memory:
                     memory=self.memory_observer.advice(original=original,project=project,chat_id=chat,
                         focus=focus,job_id=memory_job['id'] if memory_job else 0,cancelled=cancelled)
+            if memory_job and kind in ('plan','code','behavior_test'):
+                from deepthort_local.workflow_attention import advice as live_advice
+                memory=(memory or '')+live_advice(self.jobs.path,memory_job['id'],original,focus,
+                    recipient='sentinel',budget=500)
             review=inspect_proposal(ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3'),
                 advisor or self.client,original=original,project=project,session=session,
                 focus=focus,proposal=proposal,section=section,kind=kind,cancelled=cancelled,stage=stage,amendments=amendments,memory=memory)
@@ -4800,6 +4804,11 @@ class DeepThorTDesktop(tk.Tk):
                     step_memory=self._governed_memory(original,project,j['chat_id'],f'build-{jobid}-step-{step["id"]}',
                         focus,'implementation',job_id=jobid,cancelled=stopped_memory,
                         stage=lambda message:self.events.put(('log',message)))
+                    # Existing workers independently produce useful thoughts;
+                    # consume already available scoped advice, never wait.
+                    from deepthort_local.workflow_attention import advice as live_advice
+                    if assignment and not stopped_memory():
+                        step_memory+=live_advice(self.jobs.path,jobid,original,focus,budget=600)
                     if stopped_memory():raise PlanError('Task changed after memory retrieval')
                     from deepthort_local.behavior_tests import test_kind,validate as validate_behavior_test,guidance as test_guidance
                     behavior_test=bool(test_kind(step['path']))
