@@ -91,12 +91,15 @@ class SocietyWorkflowTests(unittest.TestCase):
             db.execute('DROP TABLE agent_edges_v39')
         self.assertFalse(observe_delegation(self.jobs_path)['available'])
         self.assertEqual(self.janus.tick(self.jobs_path)['focus'],'idle')
-    def test_active_process_observation_never_dispatches_or_consults(self):
+    def test_active_process_observation_allows_scoped_cognition_but_never_dispatches(self):
         worker=JanusWorker(self.root/'janus.sqlite3',self.jobs_path,self.games,game_probe=lambda:False)
-        with patch.object(worker,'execute_next_approved') as execute,patch.object(worker,'_consider_local_alternatives') as counsel:
+        with patch.object(worker,'execute_next_approved') as execute,patch.object(worker,'_consider_local_alternatives') as counsel, \
+             patch.object(worker,'_consider_live_work') as live:
+
             worker._observe_active_process()
             worker._observe_active_process()
             execute.assert_not_called();counsel.assert_not_called()
+            self.assertEqual(live.call_count,2)
         self.assertEqual(self.janus.status()['cycle'],2)
         self.janus.set_paused(True)
         worker._observe_active_process()
