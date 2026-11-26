@@ -160,7 +160,10 @@ class MemoryObserver:
                 with self._cv:
                     if retry and not self._closed:
                         self._pending[key]=packet
-                        self._pending.move_to_end(key,last=False)
+                        # Resource deferral must not keep other recall work behind
+                        # one repeatedly deferred packet. Admitted duties also
+                        # remain in the existing durable Memory ledger.
+                        self._pending.move_to_end(key)
                         self._retry_at[key]=self.clock()+DEFER_RETRY
                     else:
                         self._attempted[key]=self.clock()
