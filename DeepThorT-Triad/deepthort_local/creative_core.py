@@ -46,6 +46,32 @@ def request_packet(requester,scope,brief):
     return {'requester':requester,'scope':scope,'brief':brief,'kind':'midi','prompt':prompt}
 
 
+def score_payload(answer):
+    """Accept only complete known wrappers around one actual model-authored score.
+
+    No searching for arbitrary JSON substrings, filling missing notes, or
+    accepting unfinished reasoning. Gemma 4 may emit a thought channel.
+    """
+    if not isinstance(answer,str) or not 1<=len(answer)<=12000:
+        raise ValueError('Invalid creative response length')
+    text=answer.strip()
+    if text.startswith('<|channel>thought'):
+        end=text.find('<channel|>')
+        if end<0:raise ValueError('Incomplete creative thought channel')
+        text=text[end+len('<channel|>'):].strip()
+    elif text.startswith('<think>'):
+        end=text.find('</think>')
+        if end<0:raise ValueError('Incomplete creative thought block')
+        text=text[end+len('</think>'):].strip()
+    if text.endswith('<turn|>'):
+        text=text[:-len('<turn|>')].strip()
+    if text.startswith('```'):
+        match=re.fullmatch(r'```(?:json)?[ \t]*\r?\n(.*?)\r?\n```',text,re.I|re.S)
+        if not match:raise ValueError('Incomplete or ambiguous JSON fence')
+        text=match[1].strip()
+    return text
+
+
 def parse_score(answer):
     def pairs(items):
         result={}
@@ -53,7 +79,7 @@ def parse_score(answer):
             if k in result:raise ValueError('Duplicate score key')
             result[k]=v
         return result
-    value=json.loads(answer,object_pairs_hook=pairs)
+    value=json.loads(score_payload(answer),object_pairs_hook=pairs)
     if not isinstance(value,dict) or set(value)!={'bpm','notes'} or type(value['bpm']) is not int or not 40<=value['bpm']<=220:
         raise ValueError('Invalid score tempo or schema')
     notes=value['notes']
@@ -63,6 +89,20 @@ def parse_score(answer):
            type(n[1]) is not int or not 0<=n[0]<=127 or not 1<=n[1]<=1920 for n in notes):
         raise ValueError('Invalid note or duration')
     return value
+
+
+def generate_score_reply(generate,prompt):
+    """One correction on invalid output, using the original brief unchanged."""
+    for attempt in range(2):
+        answer=generate(prompt if attempt==0 else
+            prompt+'\nPrevious response was not a complete valid score. Start with { and end with }. '
+            'Return only the requested JSON object, with no explanation, reasoning or Markdown. '
+            'Preserve every original requirement. Do not add fields.')
+        try:
+            parse_score(answer)
+            return answer
+        except (ValueError,TypeError):
+            if attempt:raise ValueError('Fourth AI did not produce valid structured score after two attempts') from None
 
 
 def vlq(n):
