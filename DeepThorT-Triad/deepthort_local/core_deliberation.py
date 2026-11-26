@@ -91,6 +91,10 @@ def _load(job_db,role,packet):
         actual=json.loads(row['identity']);turns=json.loads(row['turns'])
         if actual!=identity or canonical_sha([actual,turns])!=row['receipt_sha']:return None
         return _validate_turns(identity,turns)
+    except FileNotFoundError:
+        # The first core cycle may run before the counsel ledger is created.
+        # A missing database is a new round, not corrupt existing evidence.
+        return []
     except sqlite3.OperationalError as exc:
         if 'no such table' in str(exc) or 'unable to open database file' in str(exc):return []
         return None

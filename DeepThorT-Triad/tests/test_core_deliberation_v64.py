@@ -25,8 +25,10 @@ class CoreTests(unittest.TestCase):
                 return json.dumps({'faculties':{str(n):core+' reading' for n in range(1,8)},
                     'conclusion':core+' '+kw['core_phase']+' conclusion','check':'Check actual source'})
         c=Counsel();result=None
+        self.assertIsNotNone(choose(self.jobs.path,'janus'), 'Fresh ledger must admit a first core turn')
         for i in range(len(ORDER)):
             result=step(self.jobs.path,'janus',c,lambda:False)
+            self.assertEqual(snapshot(self.jobs.path,'janus').get('turn_count'),i+1, f'Core turn {i+1} must persist')
             if i<len(ORDER)-1:self.assertIsNone(result)
         self.assertIsNotNone(result)
         self.assertEqual([(x['core_name'],x['core_phase']) for x in c.calls],list(ORDER))
