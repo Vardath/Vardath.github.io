@@ -31,7 +31,9 @@ def read_manifest(root,name):
     before=path.stat()
     if before.st_size>MAX_BYTES:raise ValueError('Dependency manifest exceeds byte bound')
     with path.open('rb') as stream:raw=stream.read(MAX_BYTES+1)
-    if len(raw)>MAX_BYTES or len(raw)!=before.st_size or path.stat()!=before:
+    after=path.stat()
+    identity=lambda st:(st.st_dev,st.st_ino,st.st_size,st.st_mtime_ns,st.st_ctime_ns)
+    if linked(path) or len(raw)>MAX_BYTES or len(raw)!=before.st_size or identity(after)!=identity(before):
         raise ValueError('Dependency manifest changed during read')
     return raw
 
@@ -119,6 +121,7 @@ def audit(root,plan,*,query=lookup):
     queries=[{'package':{'ecosystem':e,'name':n},'version':v} for e,n,v in packages]
     findings=[]; incomplete=0
     for start in range(0,len(queries),100):
+        validate(root,plan)
         batch=queries[start:start+100]
         response=query(batch)
         results=response.get('results') if isinstance(response,dict) else None
