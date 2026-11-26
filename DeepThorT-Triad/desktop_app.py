@@ -289,8 +289,11 @@ class DeepThorTDesktop(tk.Tk):
             report=lambda event,**kw:record(STATE,'desktop',event,**kw))
         self.cycles = DevelopmentCycleStore(STATE/'development-cycles.sqlite3')
         self.graphs = TaskGraphStore(STATE/'task-graph.sqlite3')
+        from deepthort_local.project_assignments import ProjectAssignments
+        self.project_assignments=ProjectAssignments(self.graphs)
+        self._project_attempts={}
         self.checkpoints = SourceCheckpoints(STATE/'source-checkpoints')
-        interrupted_graph_actions = self.graphs.interrupted()
+        interrupted_graph_actions = self.graphs.interrupted()+self.project_assignments.recover()
         for interrupted_id in set(interrupted_graph_actions):
             j = self.jobs.get(interrupted_id)
             if j and j['state'] not in ('complete','cancelled','failed'):
@@ -2080,10 +2083,9 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','sentinel_specification_review',kind_reviewed=kind,
                 accepted=review['accepted'],evidence_sha=review['evidence_sha'],
                 original_sha=review['original_sha'],proposal_sha=review['proposal_sha'],runtime_verified=False)
-            self.sentinel.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
-                finding='Original specification adherence: '+('accepted' if review['accepted'] else 'rejected'),
-                proposal=review['reason'],origin='local_model')
             if not review['accepted']:
+                self.sentinel.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
+                    finding='Original specification adherence: rejected',proposal=review['reason'],origin='local_model')
                 self.janus.recommend(evidence_key='scope-'+review['evidence_sha'][:40],
                     problem='Sentinel rejected a proposed '+kind+' against original specification',
                     proposal=review['reason'],origin='local_model')
@@ -4359,6 +4361,7 @@ class DeepThorTDesktop(tk.Tk):
         selected=self.current_file
         inventory=self.inventory
         def work():
+            assignment=None
             try:
                 prompt=j['prompt']
                 paths=json.loads(j.get('attachments_json') or '[]')
@@ -4426,7 +4429,27 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.specification_amendments import root_request_for_job
                     amendments=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
                     focus=step['path']+': '+step['description']
-                    stopped_memory=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j)
+                    assignment=None
+                    if self._project_work_is_enabled() and self.graphs.exists(jobid):
+                        current=self.jobs.get(jobid)
+                        try:
+                            authorize_file(STATE/'project-grants',current,steps,step,enabled=True)
+                        except (GrantError,OSError,ValueError):
+                            self.events.put(('log',f'Job #{jobid}: no active source grant; manual review only.'))
+                        else:
+                            assignment,contract=self.project_assignments.begin(current,steps,step,original,amendments,
+                                STATE/'project-grants',enabled=True)
+                            self._project_attempts[jobid]=assignment
+                            self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
+                    def emit_source(answer,staged=None):
+                        if stopped_memory():raise PlanError('Source assignment superseded or stopped')
+                        code=answer if staged is not None else strip_single_code_fence(answer)
+                        if assignment:
+                            self.project_assignments.seal(assignment,code,staged=staged)
+                            self.events.put(('project_source_answer',jobid,code,staged,assignment))
+                        elif staged is not None:self.events.put(('staged_source_answer',jobid,staged))
+                        else:self.events.put(('job_answer',jobid,code))
+                    stopped_memory=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j) or (assignment is not None and self._project_attempts.get(jobid)!=assignment)
                     from deepthort_local.memory_governor import fit as fit_memory
                     step_memory=self._governed_memory(original,project,j['chat_id'],f'build-{jobid}-step-{step["id"]}',
                         focus,'implementation',job_id=jobid,cancelled=stopped_memory,
@@ -4438,9 +4461,11 @@ class DeepThorTDesktop(tk.Tk):
                         if behavior_test and kind=='code':
                             validate_behavior_test(step['path'],proposal)
                             kind='behavior_test'
-                        return self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
+                        receipt=self._sentinel_alignment(original,project,f'build-{jobid}',focus,proposal,
                             kind=kind,stage=lambda message:self.events.put(('log',message)),
                             cancelled=stopped_memory,amendments=amendments,memory_job=j,memory_override=step_memory)
+                        if assignment:self.project_assignments.review(assignment,kind,proposal,receipt)
+                        return receipt
                     guard(json.dumps({'path':step['path'],'description':step['description']},ensure_ascii=False),'plan')
                     dest=safe_target(project,step['path'])
                     from deepthort_local.artifact_types import require_text_target
@@ -4467,13 +4492,15 @@ class DeepThorTDesktop(tk.Tk):
                                     release=getattr(advisor,'release',None)
                                     if callable(release):release()
                             if retained:
+                                if assignment:self.project_assignments.abandon(assignment)
                                 self.events.put(('retained_artifact',jobid,step['id'],retained))
                                 return
                     if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
                         candidate=self.specifications.render_planned_variant(project,step['path'],steps,self.x4_reference_dir)
                         if candidate is not None:
+                            candidate=strip_single_code_fence(candidate)
                             guard(candidate,'code')
-                            self.events.put(('job_answer',jobid,candidate))
+                            emit_source(candidate)
                             return
                     old=read_project_file(project,step['path']) if dest.is_file() else ''
                     from deepthort_local.reviewed_generation import generate_reviewed
@@ -4523,7 +4550,7 @@ class DeepThorTDesktop(tk.Tk):
                             result=stage_existing(self.client,council,ask_advisor(),source=raw,**arguments)
                         result['step_id']=step['id']
                         if _sha(dest)!=result['before_sha256']:raise PlanError('Source changed during decomposition')
-                        self.events.put(('staged_source_answer',jobid,result))
+                        emit_source(result['source'],staged=result)
                     if len(old)>3500:
                         if behavior_test:raise PlanError('Large test requires a separately reviewed smaller approved test file; no partial test oracle replacement')
                         decompose_source()
@@ -4651,14 +4678,14 @@ class DeepThorTDesktop(tk.Tk):
                                     request+'\n\n'+guidance,review_candidate,max_chars=MAX_INFERENCE_PROMPT,
                                     attempts=1,transform=transform,
                                     cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j))
-                                self.events.put(('job_answer',jobid,answer))
+                                emit_source(answer)
                                 return
                             except SpecificationRejected:pass
                         if (dest.is_file() or dest.suffix.casefold() in FORMATS|{'.py'}) and self.active_job==jobid and not self._quitting:
                             decompose_source(guidance)
                             return
                         raise
-                    self.events.put(('job_answer',jobid,answer))
+                    emit_source(answer)
                     return
                 if j['mode']=='edit':
                     if not j['target'] or not j['project'] or j['project']=='(general)':
@@ -4684,6 +4711,8 @@ class DeepThorTDesktop(tk.Tk):
                 answer=self.client.chat(j['chat_id'],prompt,max_tokens=768 if j['mode']=='edit' else 384)
                 self.events.put(('job_answer',jobid,answer))
             except Exception as exc:
+                if assignment:self.project_assignments.abandon(assignment)
+                if assignment and self._project_attempts.get(jobid)!=assignment:return
                 record(STATE,'desktop','job_worker_exception',level='ERROR',job_id=jobid,
                        error_type=type(exc).__name__, stack=traceback.format_exc()[-12000:])
                 self.events.put(('job_error',jobid,str(exc)))
@@ -4812,7 +4841,9 @@ class DeepThorTDesktop(tk.Tk):
             self._log(f'Job #{jobid}: retention blocked: '+str(error))
         self._refresh_jobs()
 
-    def _job_answer(self,jobid,answer,*,staged=None):
+    def _job_answer(self,jobid,answer,*,staged=None,assignment=None):
+        if assignment and self._project_attempts.get(jobid)!=assignment:
+            self._log(f'Ignored stale source assignment for job #{jobid}.');return
         j=self.jobs.get(jobid)
         if not j or j['state']!='running':
             self._log(f'Ignored stale answer for cancelled/paused job #{jobid}.');return
@@ -4875,9 +4906,19 @@ class DeepThorTDesktop(tk.Tk):
                             steps_now=self.jobs.steps(jobid)
                             lease=None
                             if self.graphs.exists(jobid):
+                                if not assignment:raise GraphError('Automatic source write requires a current reviewed role assignment')
+                                from deepthort_local.specification_guard import master_for_job
+                                from deepthort_local.specification_amendments import root_request_for_job
+                                master=master_for_job(j,self.conversations,self.hierarchies,self.specifications)
+                                revisions=self.conversations.amendment_history(root_request_for_job(j,self.conversations))
+                                self.project_assignments.validate(assignment,j,steps_now,step,master,revisions,
+                                    STATE/'project-grants',code,enabled=True)
+                            if self.graphs.exists(jobid):
                                 # Graph lease is recorded BEFORE filesystem mutation.
                                 lease=self.graphs.begin_action(j,steps_now,'write',f'file:{step["id"]}')
                             try:
+                                if lease:self.project_assignments.commit(assignment,j,steps_now,step,master,revisions,
+                                    STATE/'project-grants',code,lease,enabled=True)
                                 dest = apply_approved_file(Path(j['project']), step['path'], code,
                                     STATE/'backups', expected_existing_sha=authority['before_sha256'])
                                 evidence = record_file(STATE/'project-grants', j,
@@ -4887,6 +4928,7 @@ class DeepThorTDesktop(tk.Tk):
                                     check=self.checkpoints.capture(j,self.jobs.steps(jobid),'artifact_saved')
                                     if check['files'].get(evidence['path'])!=evidence['sha256']:
                                         raise CheckpointError('Source changed between approval and checkpoint receipt')
+                                    self.project_assignments.saved(assignment,jobid,evidence['sha256'])
                                     self.graphs.finish_action(lease,jobid,'saved')
                             except BaseException:
                                 if lease:
@@ -4911,6 +4953,7 @@ class DeepThorTDesktop(tk.Tk):
                                 result=answer, allowed=('running',))
                             self._log(f'Job #{jobid}: unattended write failed closed: {exc}')
                     else:
+                        if assignment:self.project_assignments.abandon(assignment)
                         self.proposed = (step['path'], code)
                         self.proposal_job = jobid
                         self.proposal_step = step['id']
@@ -7383,6 +7426,7 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='job_plan':self._job_plan(event[1],event[2])
             elif kind=='build_files_done':self._build_files_done(event[1])
             elif kind=='retained_artifact':self._retain_artifact(event[1],event[2],event[3])
+            elif kind=='project_source_answer':self._job_answer(event[1],event[2],staged=event[3],assignment=event[4])
             elif kind=='staged_source_answer':self._job_answer(event[1],event[2]['source'],staged=event[2])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
             elif kind=='job_error':self._job_error(event[1],event[2])
