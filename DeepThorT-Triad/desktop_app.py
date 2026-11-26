@@ -4719,8 +4719,15 @@ class DeepThorTDesktop(tk.Tk):
                         from deepthort_local.project_authority import _active
                         current=self.jobs.get(jobid)
                         _active(STATE/'project-grants',current,steps,True)
-                        step=self.graphs.ready_step(current,steps,preferred=preferred)
-                        if not step:raise PlanError('No dependency-ready approved source stage; inspect unresolved prerequisites')
+                        from deepthort_local.branch_holds import blocked_steps
+                        held=blocked_steps(self.jobs.path,jobid)
+                        step=self.graphs.ready_step(current,steps,preferred=preferred,
+                            exclude=held-{preferred} if preferred is not None else held)
+                        if not step:
+                            if held and not retry_requested:
+                                self.events.put(('project_branches_waiting',jobid))
+                                return
+                            raise PlanError('No dependency-ready approved source stage; inspect unresolved prerequisites')
                         explicit_order=True
                     if not step:
                         if retry_requested:raise PlanError('Corrective assignment no longer has a planned file stage')
@@ -7828,6 +7835,14 @@ class DeepThorTDesktop(tk.Tk):
                 if self._project_attempts.get(ident)==attempt:
                     self._project_attempts.pop(ident,None)
                     self._retain_artifact(ident,event[2],event[3])
+            elif kind=='project_branches_waiting':
+                ident=event[1]
+                if self.active_job==ident:
+                    self.active_job=None
+                    from deepthort_local.branch_holds import wait
+                    if not wait(self.jobs,ident):
+                        self.jobs.change(ident,'needs_input','No dependency-ready branch; inspect prerequisites',allowed=('running',))
+                    self._refresh_jobs()
             elif kind=='project_worker_report':
                 ident,attempt=event[1],event[3]
                 if self._project_attempts.get(ident)==attempt:
@@ -7836,8 +7851,15 @@ class DeepThorTDesktop(tk.Tk):
                     if job and job['state']=='running' and self.active_job==ident:
                         self.active_job=None
                         from deepthort_local.corrective_coordination import WAIT
-                        self.jobs.change(ident,'needs_input',WAIT+event[4],allowed=('running',))
-                        self._log(f'Job #{ident}: {event[2]}; scoped report delivered to both societies. Other eligible jobs can continue.')
+                        from deepthort_local.branch_holds import park
+                        parked=False
+                        if self._project_work_is_enabled() and not self._superseded_build(job):
+                            try:parked=park(self.jobs,self.graphs,job,event[4])
+                            except (ValueError,OSError,KeyError,RuntimeError):
+                                parked=False
+                        if not parked:self.jobs.change(ident,'needs_input',WAIT+event[4],allowed=('running',))
+                        self._log(f'Job #{ident}: {event[2]}; scoped report delivered to both societies. '+(
+                            'Only the affected branch is parked; independent ready stages may continue.' if parked else 'Other eligible jobs can continue.'))
                         self._refresh_jobs()
             elif kind=='project_source_error':
                 ident,attempt=event[1],event[3]

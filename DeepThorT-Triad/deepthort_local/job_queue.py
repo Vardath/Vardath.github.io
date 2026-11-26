@@ -77,6 +77,8 @@ class JobStore:
             ensure_schema(db)
             from .corrective_coordination import ensure_schema as ensure_coordination
             ensure_coordination(db)
+            from .branch_holds import ensure_schema as ensure_holds
+            ensure_holds(db)
             interrupted=[row[0] for row in db.execute("SELECT id FROM jobs WHERE state='running'")]
             db.execute("UPDATE jobs SET state='paused', detail='Interrupted by previous shutdown; resume or cancel' WHERE state='running'")
             for ident in interrupted:

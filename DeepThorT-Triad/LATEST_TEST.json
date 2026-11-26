@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v60-dependency-ready-workflow",
-  "title": "Triad V60: real dependency-ready software selection",
+  "id": "triad-v61-branch-local-coordination",
+  "title": "Triad V61: branch-local recovery while independent work continues",
   "checks": [
     "shared_cap",
     "triad_residency",
