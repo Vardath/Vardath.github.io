@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from deepthort_local.git_commit import preview,approved_plan,apply,preview_selected,branch_inventory,branch_plan,apply_branch
+from deepthort_local.git_commit import preview,approved_plan,apply,preview_selected,branch_inventory,branch_plan,apply_branch,branch_operation_plan,apply_branch_operation
 
 @unittest.skipUnless(shutil.which('git'),'Git required')
 class GitCommitTests(unittest.TestCase):
@@ -81,4 +81,43 @@ class GitCommitTests(unittest.TestCase):
         plan=branch_plan(self.exe,self.root,review,'feature')
         self.write('tracked.txt','new\n');self.git('add','tracked.txt')
         with self.assertRaises(ValueError):apply_branch(self.exe,self.root,plan)
+    def test_rename_and_delete_merged_local_branch(self):
+        self.git('branch','feature')
+        plan=branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),'rename','feature','renamed')
+        apply_branch_operation(self.exe,self.root,plan)
+        self.assertEqual(self.git('rev-parse','refs/heads/renamed'),self.git('rev-parse','HEAD'))
+        plan=branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),'delete','renamed')
+        apply_branch_operation(self.exe,self.root,plan)
+        self.assertNotIn('renamed',self.git('branch','--list'))
+    def test_clean_switch_preserves_branch_contents_and_refuses_dirty(self):
+        main=self.git('symbolic-ref','--short','HEAD')
+        self.git('checkout','-qb','feature')
+        self.write('tracked.txt','feature\n');self.git('add','tracked.txt');self.git('commit','-qm','feature')
+        self.git('checkout','-q',main)
+        plan=branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),'switch','feature')
+        self.write('untracked.txt','keep\n')
+        with self.assertRaises(ValueError):apply_branch_operation(self.exe,self.root,plan)
+        (self.root/'untracked.txt').unlink()
+        apply_branch_operation(self.exe,self.root,plan)
+        self.assertEqual(self.git('symbolic-ref','--short','HEAD'),'feature')
+        self.assertEqual((self.root/'tracked.txt').read_text('utf-8'),'feature\n')
+    def test_reject_unmerged_delete_and_stale_ref(self):
+        main=self.git('symbolic-ref','--short','HEAD')
+        self.git('checkout','-qb','unmerged')
+        self.write('tracked.txt','different\n');self.git('add','tracked.txt');self.git('commit','-qm','different')
+        self.git('checkout','-q',main)
+        with self.assertRaises(ValueError):branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),'delete','unmerged')
+        self.git('branch','old')
+        plan=branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),'rename','old','new')
+        self.git('branch','-f','old','unmerged')
+        with self.assertRaises(ValueError):apply_branch_operation(self.exe,self.root,plan)
+    def test_refuse_checked_out_linked_worktree(self):
+        self.git('branch','linked')
+        with tempfile.TemporaryDirectory() as other:
+            path=Path(other)/'linked'
+            self.git('worktree','add',str(path),'linked')
+            try:
+                for operation,new in [('switch',None),('rename','new'),('delete',None)]:
+                    with self.assertRaises(ValueError):branch_operation_plan(self.exe,self.root,branch_inventory(self.exe,self.root),operation,'linked',new)
+            finally:self.git('worktree','remove',str(path))
 if __name__=='__main__':unittest.main()

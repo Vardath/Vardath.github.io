@@ -1,6 +1,6 @@
 """Reviewed, exact staged-tree Git commits for the existing JANUS action queue.
 
-Only explicit selected-file staging; no checkout, reset, push or remote operation. Git commit-tree and
+Only explicit selected-file staging and reviewed non-force local branch operations; no reset, push or remote operation. Git commit-tree and
 compare-and-swap update-ref avoid ordinary commit hooks and unrelated changes.
 Trusted local repository and Git executable required; not an OS sandbox.
 """
@@ -207,13 +207,100 @@ def apply(executable,root,plan):
     return {'commit':new,'parent':actual['head'],'tree':actual['tree'],'branch':actual['ref'],
             'remote_published':False,'tests_verified':False}
 
+def _local_ref(executable,root,name):
+    if not isinstance(name,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_./-]{0,79}',name):
+        raise ValueError('Use an exact local branch name of up to 80 characters')
+    ref='refs/heads/'+name
+    _git(executable,root,['check-ref-format',ref])
+    return ref
+
+def _worktrees(executable,root):
+    raw=_git(executable,root,['worktree','list','--porcelain','-z'])
+    refs=[]
+    for field in raw.decode('utf-8','strict').split('\0'):
+        if field.startswith('branch '):
+            ref=field[7:]
+            if not ref.startswith('refs/heads/'):raise ValueError('Invalid worktree branch')
+            refs.append(ref)
+    return {'sha':hashlib.sha256(raw).hexdigest(),'refs':sorted(refs)}
+
+def _clean(executable,root):
+    return not _git(executable,root,['status','--porcelain=v1','-z','--untracked-files=all','--ignore-submodules=none'])
+
+def _branch_snapshot(executable,root):
+    review=branch_inventory(executable,root)
+    return {'identity':review['identity'],'branches_sha':hashlib.sha256(json.dumps(review['branches'],sort_keys=True).encode()).hexdigest(),
+            'branches':review['branches'],'worktrees':_worktrees(executable,root),'clean':_clean(executable,root)}
+
+def _validate_operation(executable,root,review,operation,name,new_name):
+    if operation not in ('switch','rename','delete'):raise ValueError('Unsupported local branch action')
+    ref=_local_ref(executable,root,name)
+    refs={row['ref']:row['commit'] for row in review['branches']}
+    if ref not in refs:raise ValueError('Branch does not exist in reviewed local inventory')
+    if ref==review['identity']['ref'] or ref in review['worktrees']['refs']:
+        raise ValueError('Target is checked out in this or another worktree')
+    new_ref=None
+    if operation=='switch':
+        if not review['clean']:raise ValueError('Switch requires clean tracked, staged and untracked workspace')
+    elif operation=='rename':
+        new_ref=_local_ref(executable,root,new_name)
+        if new_ref in refs:raise ValueError('Destination branch already exists')
+    else:
+        # Never force-delete an unmerged branch. Require ancestry of exact HEAD,
+        # then let native branch -d enforce its own additional protections.
+        _git(executable,root,['merge-base','--is-ancestor',refs[ref],review['identity']['head']])
+    return ref,refs[ref],new_ref
+
+def branch_operation_plan(executable,root,review,operation,name,new_name=None):
+    current=_branch_snapshot(executable,root)
+    if current['identity']!=review['identity'] or current['branches']!=review['branches']:
+        raise ValueError('Branch inventory changed; review again')
+    ref,oid,new_ref=_validate_operation(executable,root,current,operation,name,new_name)
+    return {'schema':'janus-git-branch-operation-v1','operation':operation,
+            'identity':current['identity'],'branches_sha':current['branches_sha'],'worktrees':current['worktrees'],
+            'clean':current['clean'],'ref':ref,'commit':oid,'new_ref':new_ref,
+            'expires_at':int(time.time())+1800}
+
+def apply_branch_operation(executable,root,plan):
+    if not isinstance(plan,dict) or set(plan)!={'schema','operation','identity','branches_sha','worktrees','clean','ref','commit','new_ref','expires_at'} or plan['schema']!='janus-git-branch-operation-v1':
+        raise ValueError('Invalid branch operation plan')
+    if type(plan['expires_at']) is not int or not time.time()<plan['expires_at']<=time.time()+1800:raise ValueError('Branch review expired')
+    actual=_branch_snapshot(executable,root)
+    if any(actual[k]!=plan[k] for k in ('identity','branches_sha','worktrees','clean')):
+        raise ValueError('Repository, branches, worktrees or clean state changed since approval')
+    operation=plan['operation']
+    if not isinstance(plan['ref'],str) or not plan['ref'].startswith('refs/heads/'):raise ValueError('Invalid local branch')
+    name=plan['ref'][11:]
+    new_name=plan['new_ref'][11:] if isinstance(plan['new_ref'],str) and plan['new_ref'].startswith('refs/heads/') else None
+    ref,oid,new_ref=_validate_operation(executable,root,actual,operation,name,new_name)
+    if (ref,oid,new_ref)!=(plan['ref'],plan['commit'],plan['new_ref']):raise ValueError('Reviewed branch identity changed')
+    if operation=='switch':
+        _git(executable,root,['switch','--no-guess','--no-recurse-submodules','--no-overwrite-ignore',name])
+        now=_identity(executable,root)
+        if now['ref']!=ref or now['head']!=oid or not _clean(executable,root):
+            raise ValueError('Switch outcome differs from review; inspect workspace, do not retry automatically')
+    else:
+        if operation=='rename':
+            _git(executable,root,['branch','-m',name,new_name])
+        else:
+            _git(executable,root,['branch','-d',name])
+        after=branch_inventory(executable,root)
+        refs={row['ref']:row['commit'] for row in after['branches']}
+        if after['identity']!=actual['identity'] or ref in refs or (new_ref is not None and refs.get(new_ref)!=oid):
+            raise ValueError('Branch operation outcome differs from review; inspect repository')
+    return {'operation':operation,'branch':ref,'commit':oid,'new_branch':new_ref,
+            'remote_published':False,'working_tree_changed':operation=='switch','tests_verified':False}
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--git',required=True);parser.add_argument('--root',required=True);parser.add_argument('--plan',required=True)
     args=parser.parse_args()
     try:
         plan=json.loads(args.plan)
-        result=apply_branch(args.git,args.root,plan) if plan.get('schema')=='janus-git-branch-create-v1' else apply(args.git,args.root,plan)
+        schema=plan.get('schema')
+        if schema=='janus-git-branch-create-v1':result=apply_branch(args.git,args.root,plan)
+        elif schema=='janus-git-branch-operation-v1':result=apply_branch_operation(args.git,args.root,plan)
+        else:result=apply(args.git,args.root,plan)
         print(json.dumps(result,sort_keys=True))
     except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as exc:
         parser.exit(1,str(exc)+'\n')

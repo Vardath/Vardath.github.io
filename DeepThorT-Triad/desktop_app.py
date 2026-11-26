@@ -658,7 +658,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: review staged commit','Git: commit selected files','Git: create local branch','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: review staged commit','Git: commit selected files','Git: manage local branches','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -4000,6 +4000,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _project_work_once(self):
         """One global serial dispatch: repair, then verification; never both."""
+        if self._reviewed_git_pending():return
         if (not self._project_work_is_enabled() or self.queue_paused
             or self._project_midi_pending is not None
             or getattr(self,'_verification_preflight',False)
@@ -4722,6 +4723,7 @@ class DeepThorTDesktop(tk.Tk):
         self._self_development_thread.start()
 
     def _scheduler_once(self):
+        if self._reviewed_git_pending():return
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
         tool_busy=(getattr(self,'_verification_preflight',False) or self._dispatch_memory_busy() or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
@@ -7202,7 +7204,7 @@ class DeepThorTDesktop(tk.Tk):
         if self._start_command(cmd,cwd=ROOT,label=f'Install {name}',kind='installation'):
             self._manual_catalog_install=name
     def _review_staged_git_commit(self,selected=False):
-        if getattr(self,'_git_preview_active',False):return
+        if getattr(self,'_git_preview_active',False) or self._reviewed_git_pending():return
         if self.active_job is not None or self.active_conversation is not None:
             messagebox.showinfo('Project busy','Finish the active work before reviewing a commit.',parent=self);return
         executable=shutil.which('git')
@@ -7267,8 +7269,23 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(buttons,text='Approve local commit',command=approve).pack(side='right')
         ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=6)
 
+    def _reviewed_git_pending(self):
+        checker=getattr(getattr(self,'janus',None),'pending_git_action',None)
+        return checker() is True if checker is not None else False
+
+    def _branch_switch_allowed(self,project):
+        # Prior grants are workspace-bound, not branch-bound. Do not change
+        # the worktree while an incomplete project job/roadmap could resume.
+        counts=self.jobs.count(project)
+        if any(n for state,n in counts.items() if state not in ('complete','failed','cancelled','answered')):
+            return False
+        with self.roadmap_runs.db() as db:
+            if db.execute("SELECT 1 FROM roadmap_runs WHERE project=? AND state NOT IN ('complete','cancelled') LIMIT 1",(project,)).fetchone():
+                return False
+        return True
+
     def _review_git_branch(self):
-        if getattr(self,'_git_preview_active',False) or self.active_job is not None or self.active_conversation is not None:return
+        if getattr(self,'_git_preview_active',False) or self._reviewed_git_pending() or self.active_job is not None or self.active_conversation is not None:return
         executable=shutil.which('git')
         if not executable:
             messagebox.showwarning('Git unavailable','Install Git first.',parent=self);return
@@ -7290,22 +7307,39 @@ class DeepThorTDesktop(tk.Tk):
         identity=review['identity']
         display='Current: '+identity['ref']+' @ '+identity['head'][:12]+'\n\nLocal branches:\n'+'\n'.join(x['ref']+' @ '+x['commit'][:12] for x in review['branches'][:32])
         if len(review['branches'])>32:display+='\n(more branches exist; all checked for conflicts)'
-        name=simpledialog.askstring('Create local branch',display+'\n\nNew branch name (from current HEAD; no checkout):',parent=self)
+        operation=simpledialog.askstring('Manage local branches',display+'\n\nEnter CREATE, SWITCH, RENAME or DELETE (merged inactive branch only).',parent=self)
+        if not operation:return
+        operation=operation.strip().lower()
+        if operation not in ('create','switch','rename','delete'):
+            messagebox.showwarning('Unknown branch action','Choose CREATE, SWITCH, RENAME or DELETE.',parent=self);return
+        name=simpledialog.askstring('Branch name','New branch name (from current HEAD)' if operation=='create' else 'Exact existing local branch name (without refs/heads/)',parent=self)
         if not name:return
+        new_name=None
+        if operation=='rename':
+            new_name=simpledialog.askstring('Rename branch','New branch name:',parent=self)
+            if not new_name:return
         if self.disk_gate.gaming() or self.active_job is not None or self.active_conversation is not None or not self.project or str(self.project)!=project:return
         try:
-            from deepthort_local.git_commit import branch_plan
+            from deepthort_local.git_commit import branch_plan,branch_operation_plan
             from deepthort_local.action_guards import snapshot_file
-            plan=branch_plan(executable,project,review,name)
-            if not messagebox.askyesno('Approve branch creation','Create '+plan['ref']+' at '+identity['head']+'? No checkout, deletion or remote push.',parent=self):return
+            if self._reviewed_git_pending() or self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive()) or any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process)):
+                raise ValueError('Another approved operation is active')
+            if operation=='switch' and not self._branch_switch_allowed(project):
+                raise ValueError('Finish or cancel incomplete project jobs and roadmaps before switching branches')
+            plan=branch_plan(executable,project,review,name) if operation=='create' else branch_operation_plan(executable,project,review,operation,name,new_name)
+            detail=operation.upper()+' '+plan['ref']+' @ '+plan.get('commit',identity['head'])
+            if plan.get('new_ref'):detail+=' -> '+plan['new_ref']
+            if operation=='switch':detail+='\n\nThis changes the local working tree. Only approve a trusted repository. No forced checkout or ignored-file overwrite.'
+            if operation=='delete':detail+='\n\nOnly an inactive branch already merged into current HEAD can be removed. No forced deletion.'
+            if not messagebox.askyesno('Approve local branch operation',detail+'\n\nNo remote push.',parent=self):return
             script=ROOT/'deepthort_local'/'git_commit.py'
             argv=[sys.executable,'-I','-B',str(script),'--git',executable,'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
-            action=self.janus.add_approved_action(argv=argv,cwd=project,label='Git: reviewed branch creation',
+            action=self.janus.add_approved_action(argv=argv,cwd=project,label='Git: reviewed branch '+operation,
                 kind='tool',user_approved=True,input_guards=[snapshot_file(script),snapshot_file(executable,kind='stat')])
             self._log(f'JANUS approved Git branch action #{action} queued.')
             self._show_janus_status()
         except (OSError,ValueError,PermissionError) as exc:
-            messagebox.showwarning('Branch creation not queued',str(exc),parent=self)
+            messagebox.showwarning('Branch operation not queued',str(exc),parent=self)
 
     def _run_project_check(self):
         if not self.project:
@@ -7317,7 +7351,7 @@ class DeepThorTDesktop(tk.Tk):
             self._review_staged_git_commit();return
         if choice=='Git: commit selected files':
             self._review_staged_git_commit(selected=True);return
-        if choice=='Git: create local branch':
+        if choice=='Git: manage local branches':
             self._review_git_branch();return
         if choice=='Git: status':cmd=['git','status','--short']
         elif choice=='Python: unit tests':cmd=[sys.executable,'-m','unittest','discover']
