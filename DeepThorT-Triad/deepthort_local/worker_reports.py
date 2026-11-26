@@ -143,6 +143,32 @@ def observe_worker_reports(job_db):
 def still_current(job_db,receipt_sha):
     return any(r['receipt_sha']==receipt_sha for r in observe_worker_reports(job_db)['reports'])
 
+def saved_dependency_catalog(job_db,item):
+    """Read-only graph receipts, not proof that bytes are still available.
+
+    Only exact direct saved predecessors of the report's bound assignment
+    are candidates. The desktop independently checks grant, exclusions and
+    actual bytes before dispatch and again before inference.
+    """
+    if item.get('sender')!='implementation':return []
+    try:
+        with closing(reader(Path(job_db).parent/'task-graph.sqlite3')) as db:
+            row=db.execute("SELECT contract,contract_sha FROM project_assignments_v43 WHERE attempt=? AND state='abandoned'",(item['attempt'],)).fetchone()
+            if not row:return []
+            contract=json.loads(row['contract'])
+            if (canonical_sha(contract)!=row['contract_sha'] or row['contract_sha']!=item['contract_sha']
+                or contract['job_id']!=item['job_id'] or contract['step_id']!=item['step_id']):return []
+            rows=db.execute("""SELECT n.title,n.evidence_sha256 FROM edges e
+              JOIN nodes n ON n.job_id=e.job_id AND n.node=e.depends_on
+              WHERE e.job_id=? AND e.node=? AND n.kind='artifact' AND n.state='saved'
+              ORDER BY n.title LIMIT 12""",(item['job_id'],f"file:{item['step_id']}")).fetchall()
+            return [{'path':r[0],'sha256':r[1]} for r in rows
+                    if isinstance(r[0],str) and 0<len(r[0])<=240
+                    and isinstance(r[1],str) and len(r[1])==64
+                    and all(c in '0123456789abcdef' for c in r[1])]
+    except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return []
+
+
 def counsel_fields(item,job_db):
     """Provide exact, bounded current requirements, never just a hash."""
     report=item['report']
@@ -169,4 +195,7 @@ def counsel_fields(item,job_db):
             source+='\nREVISION TAIL (verbatim): '+original[-400:]
     return (('Gemma' if item['sender']=='multimedia' else 'Granite')+' '+report['kind']+' for '+item['focus'],
             'Unverified worker claim. Need: '+report['need']+'; reason: '+report['reason']+
-            '; original specification SHA: '+item['spec_sha']+'\n'+source)
+            '; original specification SHA: '+item['spec_sha']+'\n'+source+
+            ('\nDirect saved predecessor receipt candidates (not current byte verification): '+
+             json.dumps([r['path'] for r in saved_dependency_catalog(job_db,item)],ensure_ascii=False)[:900]
+             if item['sender']=='implementation' else ''))

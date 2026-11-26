@@ -78,13 +78,16 @@ class LocalCounsel:
             if coordination=='propose':
                 guidance=('Assess the unverified dependency claim against exact approved requirements. '
                     'Only propose a fresh inference on the same approved file with specific guidance derived from provided facts. '
-                    'If genuinely missing data, tools, permission, source, or requirements prevent progress, hold; do not invent them. '
+                    'If a listed direct saved predecessor may resolve the claim, request that exact path via evidence_path; the host checks actual bytes before retry. '
+                    'If other genuinely missing data, tools, permission, source, or requirements prevent progress, hold; do not invent them. '
                     'No new files, commands, permissions, changed specification or claimed tests. '
                     'Return ONLY JSON {"decision":"retry","guidance":"specific corrective advice (max 360 chars)","reason":"why (max 300 chars)"} '
-                    'or {"decision":"hold","guidance":"","reason":"exact unresolved dependency"} .')
+                    'or the same retry object with an additional "evidence_path":"exact listed path" field, '
+                    'or {"decision":"hold","guidance":"","reason":"exact unresolved dependency"}.')
             elif coordination=='review':
                 guidance=('Independently challenge the exact JANUS corrective proposal against the original user requirements and worker claim. '
                     'Accept only if its specific advice is supported, preserves every requirement and scope, and requires no invented dependency or new permission. '
+                    'An evidence_path must exactly match a listed direct saved predecessor; acceptance is conditional on host byte verification, not proof of content. '
                     'If evidence is insufficient, reject. Acceptance allows one fresh inference, not source publication or runtime verification. '
                     'Return ONLY JSON {"decision":"accept","reason":"specific evidence-based reason"} or {"decision":"reject","reason":"specific objection"}.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'

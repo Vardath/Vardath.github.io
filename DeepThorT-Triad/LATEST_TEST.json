@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v50-reviewed-corrective-coordination",
-  "title": "Triad V50: reviewed corrective coordination and bounded automatic resumption",
+  "id": "triad-v51-evidence-directed-coordination",
+  "title": "Triad V51: evidence-directed corrective coordination",
   "checks": [
     "shared_cap",
     "triad_residency",
