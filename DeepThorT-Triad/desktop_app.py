@@ -1049,6 +1049,10 @@ class DeepThorTDesktop(tk.Tk):
         def delegation_probe():
             from deepthort_local.delegation_probe import exercise
             return exercise(cancelled=cancel.is_set)
+        def project_assignment_probe():
+            from deepthort_local.project_assignment_probe import exercise
+            return exercise(cancelled=cancel.is_set)
+
         def team_delegation_probe():
             from deepthort_local.team_probe import exercise
             return exercise(cancelled=cancel.is_set)
@@ -1075,7 +1079,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'team_delegation':team_delegation_probe,'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'project_assignment':project_assignment_probe,'team_delegation':team_delegation_probe,'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -3337,6 +3341,7 @@ class DeepThorTDesktop(tk.Tk):
                 try:self.graphs.finish_action(lease,ident,'interrupted')
                 except GraphError:pass
             self.jobs.cancel(ident)
+            self.project_assignments.abandon(self._project_attempts.pop(ident,None))
             if self.media_process and self.media_process.poll() is None:
                 self.media_process.terminate()
             elif self.node and self.node.poll() is None:
@@ -4496,7 +4501,8 @@ class DeepThorTDesktop(tk.Tk):
                                     if callable(release):release()
                             if retained:
                                 if assignment:self.project_assignments.abandon(assignment)
-                                self.events.put(('retained_artifact',jobid,step['id'],retained))
+                                if assignment:self.events.put(('project_retained_artifact',jobid,step['id'],retained,assignment))
+                                else:self.events.put(('retained_artifact',jobid,step['id'],retained))
                                 return
                     if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
                         candidate=self.specifications.render_planned_variant(project,step['path'],steps,self.x4_reference_dir)
@@ -4718,7 +4724,8 @@ class DeepThorTDesktop(tk.Tk):
                 if assignment and self._project_attempts.get(jobid)!=assignment:return
                 record(STATE,'desktop','job_worker_exception',level='ERROR',job_id=jobid,
                        error_type=type(exc).__name__, stack=traceback.format_exc()[-12000:])
-                self.events.put(('job_error',jobid,str(exc)))
+                if assignment:self.events.put(('project_source_error',jobid,str(exc),assignment))
+                else:self.events.put(('job_error',jobid,str(exc)))
         threading.Thread(target=work,daemon=True).start()
 
     def _capture_media_process(self,command,label):
@@ -7430,7 +7437,23 @@ class DeepThorTDesktop(tk.Tk):
             elif kind=='job_plan':self._job_plan(event[1],event[2])
             elif kind=='build_files_done':self._build_files_done(event[1])
             elif kind=='retained_artifact':self._retain_artifact(event[1],event[2],event[3])
-            elif kind=='project_source_answer':self._job_answer(event[1],event[2],staged=event[3],assignment=event[4])
+            elif kind=='project_source_answer':
+                ident,attempt=event[1],event[4]
+                if self._project_attempts.get(ident)==attempt:
+                    try:self._job_answer(ident,event[2],staged=event[3],assignment=attempt)
+                    finally:
+                        self.project_assignments.abandon(attempt)
+                        if self._project_attempts.get(ident)==attempt:self._project_attempts.pop(ident,None)
+            elif kind=='project_retained_artifact':
+                ident,attempt=event[1],event[4]
+                if self._project_attempts.get(ident)==attempt:
+                    self._project_attempts.pop(ident,None)
+                    self._retain_artifact(ident,event[2],event[3])
+            elif kind=='project_source_error':
+                ident,attempt=event[1],event[3]
+                if self._project_attempts.get(ident)==attempt:
+                    self._project_attempts.pop(ident,None)
+                    self._job_error(ident,event[2])
             elif kind=='staged_source_answer':self._job_answer(event[1],event[2]['source'],staged=event[2])
             elif kind=='job_answer':self._job_answer(event[1],event[2])
             elif kind=='job_error':self._job_error(event[1],event[2])
