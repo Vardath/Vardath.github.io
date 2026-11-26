@@ -11,7 +11,7 @@ from urllib.request import Request,build_opener,ProxyHandler
 from urllib.error import HTTPError
 from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
 from deepthort_local.role_inbox import RoleInbox,serial_rank
-from deepthort_local.adaptive_admission import capacity,mandatory_ready,optional_ready
+from deepthort_local.adaptive_admission import capacity,admission_ready
 from deepthort_local.agent_doctrine import VERSION as DOCTRINE_VERSION
 from deepthort_local.triad_profiles import ROOT,PROFILES,ALL_PROFILES,MEMORY_PROFILE,memory_installed,MODEL_ID,model_path,runtime_path,ready,total_weights,installed_files
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
@@ -171,32 +171,25 @@ class Pool:
         return min(1,self.resource_slots) if self.serial_memory_mode else self.resource_slots
 
     def _generate(self,role,messages,tokens):
-        # Mandatory work is priority/age ordered whenever admission is limited.
-        # Optional recall never queues or consumes the last available slot.
-        # Low physical headroom reduces future admissions without killing or
-        # evicting a running role. Classified native allocation failure retains
-        # the existing protected serial latch for the rest of this session.
+        # All four text roles are required workers. Recall runs independently,
+        # with a lower initial rank but the same bounded aging as other calls.
+        # Admission waits occur in the caller's own thread, never the GUI.
         with self.admission_lock:
             if not self.healthy():raise WorkerFailure('worker_exit')
-            if role=='memory':
-                if not optional_ready(self.generating,self.serial_waiters,self._slots_locked()):
-                    raise WorkerFailure('worker_busy','Optional memory recall deferred for required work or resource headroom')
+            self.serial_sequence+=1
+            ticket=(time.monotonic(),self.serial_sequence,role)
+            self.serial_waiters.append(ticket)
+            deadline=ticket[0]+600
+            try:
+                while not admission_ready(self.generating,self.serial_waiters,ticket,self._slots_locked(),serial_rank,time.monotonic()):
+                    if not self.healthy() or (role=='memory' and not self.memory_ready()):raise WorkerFailure('worker_exit')
+                    if time.monotonic()>=deadline:raise WorkerFailure('worker_busy','Measured resource admission wait expired; reschedule')
+                    self.admission_lock.wait(.5)
+                if not self.healthy() or (role=='memory' and not self.memory_ready()):raise WorkerFailure('worker_exit')
                 self.generating.add(role)
-            else:
-                self.serial_sequence+=1
-                ticket=(time.monotonic(),self.serial_sequence,role)
-                self.serial_waiters.append(ticket)
-                deadline=ticket[0]+600
-                try:
-                    while not mandatory_ready(self.generating,self.serial_waiters,ticket,self._slots_locked(),serial_rank,time.monotonic()):
-                        if not self.healthy():raise WorkerFailure('worker_exit')
-                        if time.monotonic()>=deadline:raise WorkerFailure('worker_busy','Measured resource admission wait expired; reschedule')
-                        self.admission_lock.wait(.5)
-                    if not self.healthy():raise WorkerFailure('worker_exit')
-                    self.generating.add(role)
-                finally:
-                    self.serial_waiters.remove(ticket)
-                    self.admission_lock.notify_all()
+            finally:
+                self.serial_waiters.remove(ticket)
+                self.admission_lock.notify_all()
         try:
             child=self.memory_child if role=='memory' else self.children[role]
             if child is None or not child[3]():raise WorkerFailure('worker_exit')
