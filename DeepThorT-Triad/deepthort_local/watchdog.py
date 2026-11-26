@@ -133,6 +133,9 @@ class SentinelStore:
         creative=observation.get('project_midi',{})
         if creative.get('active') or creative.get('recent'):
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(creative,sort_keys=True),salience=.75,uncertainty=.3))
+        memory=observation.get('memory_duties',{})
+        if memory.get('reports'):
+            frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory['reports'],sort_keys=True),salience=.8,uncertainty=.5))
         # Worker cycles are proof of heartbeat, but are NOT a new finding on
         # each poll. Keep them out of the issue signature to avoid log spam.
         material={k:v for k,v in observation.items() if k!='janus_cycle'}
@@ -367,6 +370,8 @@ class JanusSentinel:
         delegation=observe_delegation(self.jobs_db)
         project_assignments=observe_project_assignments(self.jobs_db)
         project_midi=observe_project_midi(self.jobs_db)
+        from .memory_duty import observe_memory_duties
+        memory_duties=observe_memory_duties(self.jobs_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -416,7 +421,7 @@ class JanusSentinel:
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),

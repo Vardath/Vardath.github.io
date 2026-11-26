@@ -280,7 +280,9 @@ class DeepThorTDesktop(tk.Tk):
             # Submit even in protected serial mode; the broker owns fair admission.
             return bool(health.get('ready') and memory.get('resident') and not memory.get('busy'))
         def background_memory_select(evidence,prompt,tokens):
-            if not background_memory_available():raise RuntimeError('Memory observation deferred')
+            if not background_memory_available():
+                from deepthort_local.triad_errors import WorkerFailure
+                raise WorkerFailure('worker_busy','Memory observation deferred')
             client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
             return ReasoningCouncil(STATE/'reasoning-council-v50.sqlite3')._run(
                 client,role='MEMORY_SELECT',session='observer-'+evidence[:24],
@@ -356,6 +358,13 @@ class DeepThorTDesktop(tk.Tk):
         self.after(1000, self._scheduler)
         self.after(1700, self._automatic_tool_tick)
         self.after(2300, self._tool_probe_tick)
+        from deepthort_local.memory_duty import MemoryDuty
+        def resolve_memory_duty(job):
+            from deepthort_local.specification_amendments import root_request_for_job
+            from deepthort_local.specification_guard import master_for_job
+            return root_request_for_job(job,self.conversations),master_for_job(job,self.conversations,self.hierarchies,self.specifications)
+        self.memory_duty=MemoryDuty(self.jobs.path,resolve_memory_duty)
+        self.memory_observer.start_duty(self.memory_duty)
         self.after(1900, self._project_work_tick)
         self.after(2200, self._poll_server)
         self.after(1000, self._poll_reply_notice)
