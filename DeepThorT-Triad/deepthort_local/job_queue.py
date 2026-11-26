@@ -75,6 +75,8 @@ class JobStore:
             # Processes killed or the application closed mid-generation are not complete.
             from .task_memory import ensure_schema
             ensure_schema(db)
+            from .corrective_coordination import ensure_schema as ensure_coordination
+            ensure_coordination(db)
             interrupted=[row[0] for row in db.execute("SELECT id FROM jobs WHERE state='running'")]
             db.execute("UPDATE jobs SET state='paused', detail='Interrupted by previous shutdown; resume or cancel' WHERE state='running'")
             for ident in interrupted:

@@ -75,10 +75,12 @@ class JanusWorker:
 
     def _consider_worker_reports(self):
         from deepthort_local.worker_reports import observe_worker_reports,still_current,counsel_fields
+        from deepthort_local.corrective_coordination import eligible,propose
         reports=observe_worker_reports(self.jobs_db)['reports']
         if not reports:return False
         seen={r['evidence_key'] for r in self.store.recommendations(40)}
-        pending=next((r for r in reports if 'worker-'+r['receipt_sha'] not in seen),None)
+        structured_report=next((r for r in reports if eligible(self.jobs_db,r) and 'coordination-propose-'+r['receipt_sha'] not in seen),None)
+        pending=structured_report or next((r for r in reports if 'worker-'+r['receipt_sha'] not in seen),None)
         if not pending:return False
         if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
         if time.monotonic()-self._last_counsel_attempt<60:return True
@@ -88,9 +90,16 @@ class JanusWorker:
             if not still_current(self.jobs_db,ident):return
             try:problem,evidence=counsel_fields(pending,self.jobs_db)
             except (ValueError,OSError):return
+            structured=structured_report is not None and eligible(self.jobs_db,pending)
             answer=self._counsel.request(society='janus',goal=pending['focus'],problem=problem,
-                                         evidence=evidence,worker_report=True)
+                                         evidence=evidence,worker_report=True,coordination='propose' if structured else '')
             if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
+                if structured:
+                    import sqlite3
+                    try:propose(self.jobs_db,pending,answer)
+                    except (ValueError,OSError,sqlite3.Error):pass # Malformed advice never becomes an action.
+                    self.store.recommend(evidence_key='coordination-propose-'+ident,job_id=pending.get('job_id'),
+                        problem=problem,proposal=answer,origin='local_model')
                 self.store.recommend(evidence_key=key,job_id=pending.get('job_id'),
                      problem=problem,proposal=answer,origin='local_model')
         self._counsel_thread=threading.Thread(target=coordinate,name='JANUS-worker-coordination',daemon=True)

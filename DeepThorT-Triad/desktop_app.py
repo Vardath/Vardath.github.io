@@ -3979,6 +3979,30 @@ class DeepThorTDesktop(tk.Tk):
                    (self.tool_process, self.install_process, self.media_process))
             or self.janus.status().get('paused')):
             return
+        if (self.node_ready and self.node and self.node.poll() is None
+                and time.monotonic()-getattr(self,'_last_corrective_dispatch',-60)>=15):
+            self._last_corrective_dispatch=time.monotonic()
+            from deepthort_local.corrective_coordination import approved,requeue
+            from deepthort_local.project_authority import _active
+            def correction_current(item):
+                job=self.jobs.get(item['job_id'])
+                if not job or self._superseded_build(job) or not self.roadmap_runs.dispatch_allowed(job):return False
+                steps=self.jobs.steps(job['id'])
+                graph=self.graphs.status(job['id'])
+                if not graph or graph['state']!='active':return False
+                try:
+                    _active(STATE/'project-grants',job,steps,self._project_work_is_enabled())
+                    with self.graphs._db() as db:self.graphs._assert_bound(db,job,steps)
+                except (ValueError,OSError):return False
+                return True
+            for correction in approved(self.jobs.path):
+                try:
+                    if requeue(self.jobs,correction,validate=correction_current):
+                        self._log(f"JANUS/Sentinel coordinated one corrective inference for job #{correction['job_id']}; existing approval and review still required.")
+                        self._refresh_jobs()
+                        return
+                except (ValueError,OSError,KeyError,TypeError) as exc:
+                    self._log('Corrective inference withheld: '+str(exc)[:180])
         def roadmap_ready(link):
             from deepthort_local.roadmap_tool_bridge import boundary_open
             return boundary_open(link,self.conversations.get(link['request_id']),self.roadmap_runs.get(link['request_id']),
@@ -4481,7 +4505,13 @@ class DeepThorTDesktop(tk.Tk):
                     self._reload_chat()
 
     def _execute_job(self,j):
+        from deepthort_local.corrective_coordination import READY
         jobid=j['id']
+        retry_requested=j['detail'].startswith(READY)
+        if retry_requested and (j['mode']!='build' or not self._project_work_is_enabled() or self.janus.status().get('paused')):
+            self.jobs.change(jobid,'needs_input','Reviewed corrective inference withheld; existing authority or execution policy unavailable',allowed=('queued',))
+            self._refresh_jobs()
+            return
         if j['mode']=='build' and not self.roadmap_runs.dispatch_allowed(j):
             self.jobs.change(jobid,'needs_input','Incomplete roadmap dispatch; inspect grant and graph before resuming',allowed=('queued',))
             self._refresh_jobs()
@@ -4512,6 +4542,7 @@ class DeepThorTDesktop(tk.Tk):
         inventory=self.inventory
         def work():
             assignment=None
+            worker_report_id=None
             try:
                 prompt=j['prompt']
                 paths=json.loads(j.get('attachments_json') or '[]')
@@ -4566,11 +4597,13 @@ class DeepThorTDesktop(tk.Tk):
                         prompt=composed_prompt(prompt,paths)
                     steps=self.jobs.steps(jobid)
                     if not steps:
+                        if retry_requested:raise PlanError('Corrective assignment has no original approved file stages')
                         answer=self.client.chat(j['chat_id'],build_plan_prompt(prompt,inventory),max_tokens=640)
                         self.events.put(('job_plan',jobid,answer))
                         return
                     step=self.jobs.next_step(jobid)
                     if not step:
+                        if retry_requested:raise PlanError('Corrective assignment no longer has a planned file stage')
                         self.events.put(('build_files_done',jobid))
                         return
                     project=Path(j['project'])
@@ -4581,11 +4614,13 @@ class DeepThorTDesktop(tk.Tk):
                     focus=step['path']+': '+step['description']
                     assignment=None
                     production_client=self.client
+                    correction=''
                     if self._project_work_is_enabled() and self.graphs.exists(jobid):
                         current=self.jobs.get(jobid)
                         try:
                             authorize_file(STATE/'project-grants',current,steps,step,enabled=True)
                         except (GrantError,OSError,ValueError):
+                            if retry_requested:raise PlanError('Corrective inference lost its existing source grant')
                             self.events.put(('log',f'Job #{jobid}: no active source grant; manual review only.'))
                         else:
                             assignment,contract=self.project_assignments.begin(current,steps,step,original,amendments,
@@ -4593,8 +4628,12 @@ class DeepThorTDesktop(tk.Tk):
                             self._project_attempts[jobid]=assignment
                             from deepthort_local.project_assignments import ProjectRoleClient
                             def worker_report(report):
+                                nonlocal worker_report_id
                                 if stopped_memory():raise PlanError('Worker report superseded or stopped')
-                                return self.project_assignments.report_dependency(assignment,root_request_for_job(j,self.conversations),report)
+                                item=self.project_assignments.report_dependency(assignment,root_request_for_job(j,self.conversations),report)
+                                from deepthort_local.agent_contract import canonical_sha
+                                worker_report_id=canonical_sha(item)
+                                return item
                             def resolve_dependency(report,budget):
                                 if stopped_memory() or self.disk_gate.gaming():return ''
                                 evidence=self.project_assignments.supply_dependency(assignment,self.jobs.get(jobid),
@@ -4603,8 +4642,13 @@ class DeepThorTDesktop(tk.Tk):
                                 if evidence:
                                     self.events.put(('log',f'JANUS supplied verified saved dependency bytes to Granite for job #{jobid}; independent review still required.'))
                                 return evidence
-                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency)
+                            if retry_requested:
+                                from deepthort_local.corrective_coordination import consume
+                                correction=consume(self.jobs,j,contract)
+                            production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency,correction=correction)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
+                    if retry_requested and (not assignment or not correction):raise PlanError('Corrective inference requires the unchanged approved assignment')
+                    context_limit=MAX_INFERENCE_PROMPT-len(correction)
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
                         code=answer if staged is not None else strip_single_code_fence(answer)
@@ -4634,7 +4678,7 @@ class DeepThorTDesktop(tk.Tk):
                     dest=safe_target(project,step['path'])
                     from deepthort_local.artifact_types import require_text_target
                     require_text_target(step['path'])
-                    if amendments and self._project_work_is_enabled() and dest.is_file():
+                    if not retry_requested and amendments and self._project_work_is_enabled() and dest.is_file():
                         from deepthort_local.selective_redevelopment import candidate_for,review_retention
                         from deepthort_local.reasoning_council import ReasoningCouncil
                         try:
@@ -4660,7 +4704,7 @@ class DeepThorTDesktop(tk.Tk):
                                 if assignment:self.events.put(('project_retained_artifact',jobid,step['id'],retained,assignment))
                                 else:self.events.put(('retained_artifact',jobid,step['id'],retained))
                                 return
-                    if not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
+                    if not retry_requested and not dest.exists() and (step['path']=='index/macros.xml' or '/macros/' in step['path']):
                         candidate=self.specifications.render_planned_variant(project,step['path'],steps,self.x4_reference_dir)
                         if candidate is not None:
                             candidate=strip_single_code_fence(candidate)
@@ -4722,9 +4766,9 @@ class DeepThorTDesktop(tk.Tk):
                         return
                     try:
                         try:
-                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT-500-len(step_memory))
+                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=context_limit-500-len(step_memory))
                         except PlanError:
-                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=MAX_INFERENCE_PROMPT)
+                            request=budgeted_file_step_prompt(prompt,step['path'],step['description'],old,steps,max_chars=context_limit)
                     except PlanError:
                         if dest.is_file() or dest.suffix.casefold() in FORMATS|{'.py'}:
                             decompose_source()
@@ -4732,23 +4776,23 @@ class DeepThorTDesktop(tk.Tk):
                         raise
                     if behavior_test:
                         extra=test_guidance(project,step,steps)
-                        if len(request)+len(extra)>MAX_INFERENCE_PROMPT:
+                        if len(request)+len(extra)>context_limit:
                             raise PlanError('Behavior test context exceeds bound; split the approved test file')
                         request+=extra
-                    request+=fit_memory(step_memory,max(0,MAX_INFERENCE_PROMPT-len(request)))
+                    request+=fit_memory(step_memory,max(0,context_limit-len(request)))
                     from deepthort_local.repository_index import SUPPORTED_SUFFIXES
                     if dest.suffix.casefold() in SUPPORTED_SUFFIXES and not self.disk_gate.gaming():
                         try:
                             excluded=self.inspection_exclusions.paths(project)
                             stopped=lambda:self._quitting or self.active_job!=jobid or self.disk_gate.gaming()
-                            budget=min(1100,MAX_INFERENCE_PROMPT-len(request)-300)
+                            budget=min(1100,context_limit-len(request)-300)
                             if budget>=160:
                                 self.repository_index.refresh(project,exclude=excluded,cancelled=stopped)
                                 context=self.repository_index.context(project,focus,focus=step['path'],omit=[step['path']],
                                     exclude=excluded,budget=budget,cancelled=stopped)
                                 request+=context
                                 if context:self.events.put(('log',f'Job #{jobid}: verified repository interface context attached.'))
-                                room=min(1200,MAX_INFERENCE_PROMPT-len(request)-300)
+                                room=min(1200,context_limit-len(request)-300)
                                 if room>=200 and not stopped():
                                     advisor=self._planning_council_client()
                                     if advisor is not None:
@@ -4783,7 +4827,7 @@ class DeepThorTDesktop(tk.Tk):
                     try:
                         answer=generate_reviewed(production_client,f'build-{jobid}-step-{step["id"]}',
                             request,review_candidate,
-                            max_chars=MAX_INFERENCE_PROMPT,transform=transform,
+                            max_chars=context_limit,transform=transform,
                             cancelled=lambda:self._quitting or self.active_job!=jobid,
                             stage=lambda message:self.events.put(('log',message)))
                     except SpecificationRejected as error:
@@ -4837,10 +4881,10 @@ class DeepThorTDesktop(tk.Tk):
                                 if rows:self.events.put(('log',f'JANUS found {len(rows)} unverified software candidates; see Computer & Tools / Discovered packages. No installation authorized.'))
                             except (ValueError,OSError,KeyError,subprocess.SubprocessError) as discovery_error:
                                 self.events.put(('log','Software discovery unavailable: '+str(discovery_error)[:250]))
-                        if guidance and len(request)+len(guidance)+2<=MAX_INFERENCE_PROMPT:
+                        if guidance and len(request)+len(guidance)+2<=context_limit:
                             try:
                                 answer=generate_reviewed(production_client,f'build-{jobid}-step-{step["id"]}-research',
-                                    request+'\n\n'+guidance,review_candidate,max_chars=MAX_INFERENCE_PROMPT,
+                                    request+'\n\n'+guidance,review_candidate,max_chars=context_limit,
                                     attempts=1,transform=transform,
                                     cancelled=lambda:self._quitting or self.active_job!=jobid or self._superseded_build(j))
                                 emit_source(answer)
@@ -4879,8 +4923,8 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.worker_reports import WorkerReport
                 if assignment:self.project_assignments.abandon(assignment)
                 if assignment and self._project_attempts.get(jobid)!=assignment:return
-                if assignment and isinstance(exc,WorkerReport):
-                    self.events.put(('project_worker_report',jobid,str(exc),assignment))
+                if assignment and isinstance(exc,WorkerReport) and worker_report_id:
+                    self.events.put(('project_worker_report',jobid,str(exc),assignment,worker_report_id))
                     return
                 record(STATE,'desktop','job_worker_exception',level='ERROR',job_id=jobid,
                        error_type=type(exc).__name__, stack=traceback.format_exc()[-12000:])
@@ -7622,7 +7666,8 @@ class DeepThorTDesktop(tk.Tk):
                     job=self.jobs.get(ident)
                     if job and job['state']=='running' and self.active_job==ident:
                         self.active_job=None
-                        self.jobs.change(ident,'needs_input',event[2]+'; awaiting JANUS/Sentinel coordination (unverified claim)',allowed=('running',))
+                        from deepthort_local.corrective_coordination import WAIT
+                        self.jobs.change(ident,'needs_input',WAIT+event[4],allowed=('running',))
                         self._log(f'Job #{ident}: {event[2]}; scoped report delivered to both societies. Other eligible jobs can continue.')
                         self._refresh_jobs()
             elif kind=='project_source_error':

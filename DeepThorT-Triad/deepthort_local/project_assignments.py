@@ -267,16 +267,20 @@ class ProjectAssignments:
 
 class ProjectRoleClient:
     """Explicit implementation-model adapter; cache only exact scoped calls."""
-    def __init__(self,client,contract,*,report=None,resolve=None):
+    def __init__(self,client,contract,*,report=None,resolve=None,correction=''):
         if contract['assignee']!='implementation':raise GraphError('Wrong production role')
         self.client=client
         self.scope=canonical_sha(contract)
         self.report=report
         self.resolve=resolve
+        if not isinstance(correction,str) or len(correction)>800:raise GraphError('Invalid corrective guidance')
+        self.correction=correction
     def _session(self,session):
-        return 'project-role-'+canonical_sha([self.scope,session])[:48]
+        return 'project-role-'+canonical_sha([self.scope,session]+([sha(self.correction)] if self.correction else []))[:48]
     def _prompt(self,prompt):
         from .worker_reports import GUIDANCE
+        prompt+=self.correction
+        if len(prompt)>7500:raise GraphError('Corrective guidance and original task exceed context budget')
         return prompt+GUIDANCE if self.report is not None and len(prompt)+len(GUIDANCE)<=7500 else prompt
     def _response(self,answer,session,prompt,max_tokens):
         from .worker_reports import parse_report,WorkerReport
