@@ -6825,15 +6825,36 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Shared procedure unavailable',str(error),parent=self)
 
     def _portable_skill_dialog(self):
-        from deepthort_local.workflow_skills import PortableSkills
+        from deepthort_local.workflow_skills import PortableSkills, TEMPLATE_SCHEMA, read_template, export_template
         try:
             library=PortableSkills(self.janus)
             shared=library.list()
-            summary='\n'.join(s['version'][:16]+'  '+ ' -> '.join(x['tool']+' ('+x['output_format']+')' for x in s['stages'])
+            summary='\n'.join(s['version'][:16]+(' [unverified template] ' if s['schema']==TEMPLATE_SCHEMA else ' [historical checks] ')+ ' -> '.join(x['tool']+' ('+x['output_format']+')' for x in s['stages'])
                               for s in shared[:30]) or 'No shared skills yet.'
             choice=simpledialog.askstring('Shared workflow skills',
-                summary+'\n\nEnter SHARE to publish a checked workflow from this project, or REMOVE to revoke a shared pattern.',parent=self)
+                summary+'\n\nEnter SHARE to publish a checked workflow, IMPORT to review a typed JSON template, EXPORT to save a shape as JSON, or REMOVE to revoke a pattern.',parent=self)
             if not choice:return
+            if choice.strip().upper()=='IMPORT':
+                path=filedialog.askopenfilename(parent=self,title='Import unverified workflow template',filetypes=[('JSON templates','*.json')])
+                if not path:return
+                template=read_template(path)
+                summary='\n'.join(f"{i}. {stage['tool']}: {stage['input_format']} -> {stage['output_format']} (from stage {stage['from_stage']})"
+                                  for i,stage in enumerate(template['stages'],1))
+                if messagebox.askyesno('Import unverified template?',
+                    summary+'\n\nThis stores an advisory shape only. No commands, files, verified evidence or execution permission are imported. Import?',parent=self):
+                    library.import_template(template,expected_version=template['version'],user_approved=True)
+                    messagebox.showinfo('Template imported',template['version'][:16],parent=self)
+                return
+            if choice.strip().upper()=='EXPORT':
+                prefix=simpledialog.askstring('Export workflow template','Enter the displayed version prefix:',parent=self)
+                if not prefix or not prefix.strip():return
+                matches=[s for s in shared if s['version'].startswith(prefix.strip().lower())]
+                if len(matches)!=1:raise ValueError('Select one unique skill version')
+                path=filedialog.asksaveasfilename(parent=self,title='Export unverified template shape',defaultextension='.json',filetypes=[('JSON templates','*.json')])
+                if not path:return
+                export_template(path,matches[0])
+                messagebox.showinfo('Template exported','Typed shape saved. Historical evidence and permissions were not exported.',parent=self)
+                return
             if choice.strip().upper()=='REMOVE':
                 prefix=simpledialog.askstring('Remove shared skill','Enter the displayed version prefix:',parent=self)
                 if not prefix:return

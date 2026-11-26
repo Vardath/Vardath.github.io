@@ -116,11 +116,22 @@ def skill_hints(workflows, project, recipes, files, *, required_output=None,
 
 PORTABLE_SCHEMA='deepthort-portable-workflow-skill-v1'
 MAX_PORTABLE=128
+TEMPLATE_SCHEMA='deepthort-workflow-template-v1'
+MAX_TEMPLATE_BYTES=12000
 
 def validate_portable(skill):
-    if not isinstance(skill,dict) or set(skill)!={'schema','version','source_version','stages'} or skill['schema']!=PORTABLE_SCHEMA:
+    if not isinstance(skill,dict):
         raise ValueError('Invalid portable skill manifest')
-    for key in ('version','source_version'):
+    if skill.get('schema')==PORTABLE_SCHEMA:
+        keys={'schema','version','source_version','stages'}
+        hashes=('version','source_version')
+    elif skill.get('schema')==TEMPLATE_SCHEMA:
+        keys={'schema','version','stages'}
+        hashes=('version',)
+    else:
+        raise ValueError('Invalid portable skill schema')
+    if set(skill)!=keys:raise ValueError('Invalid portable skill manifest')
+    for key in hashes:
         if not isinstance(skill[key],str) or not re.fullmatch(r'[a-f0-9]{64}',skill[key]):
             raise ValueError('Invalid skill fingerprint')
     stages=skill['stages']
@@ -143,6 +154,35 @@ def validate_portable(skill):
     if digest(body)!=skill['version']:raise ValueError('Portable skill integrity mismatch')
     return skill
 
+def template_document(skill):
+    """Export only a typed shape; historical evidence never travels with it."""
+    skill=validate_portable(skill)
+    return {'schema':TEMPLATE_SCHEMA,'stages':skill['stages']}
+
+def preview_template(raw):
+    """Untrusted editable JSON, not executable code or a checked skill receipt."""
+    from .structured_source import strict_json
+    if not isinstance(raw,bytes) or not 0<len(raw)<=MAX_TEMPLATE_BYTES:
+        raise ValueError('Template exceeds byte bound')
+    try:body=strict_json(raw.decode('utf-8'))
+    except RecursionError as error:raise ValueError('Template nesting exceeds parser limit') from error
+    if not isinstance(body,dict) or set(body)!={'schema','stages'} or body['schema']!=TEMPLATE_SCHEMA:
+        raise ValueError('Expected a typed workflow template without historical evidence')
+    return validate_portable({**body,'version':digest(body)})
+
+def read_template(path):
+    path=Path(path)
+    if not path.is_file():raise ValueError('Choose a regular template file')
+    with path.open('rb') as stream:
+        return preview_template(stream.read(MAX_TEMPLATE_BYTES+1))
+
+def export_template(path,skill):
+    raw=(json.dumps(template_document(skill),ensure_ascii=True,indent=2)+'\n').encode('utf-8')
+    if len(raw)>MAX_TEMPLATE_BYTES:raise ValueError('Template exceeds byte bound')
+    # Explicit user-selected new file only; never overwrite existing content.
+    with Path(path).open('xb') as stream:
+        stream.write(raw)
+
 class PortableSkills:
     """Explicit local sharing of checked shapes, not command or permission export."""
     def __init__(self,janus):
@@ -156,6 +196,20 @@ class PortableSkills:
         source=checked_skill(workflows,run,project,cancelled=cancelled)
         body={'schema':PORTABLE_SCHEMA,'source_version':source['version'],'stages':source['stages']}
         skill=validate_portable({**body,'version':digest(body)})
+        with self.janus.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if db.execute('SELECT 1 FROM portable_workflow_skills WHERE version=?',(skill['version'],)).fetchone():
+                return skill
+            if db.execute('SELECT count(*) FROM portable_workflow_skills').fetchone()[0]>=MAX_PORTABLE:
+                raise ValueError('Portable skill library full; remove an old pattern')
+            db.execute('INSERT INTO portable_workflow_skills(version,payload) VALUES(?,?)',
+                       (skill['version'],json.dumps(skill,sort_keys=True)))
+        return skill
+    def import_template(self,skill,*,expected_version,user_approved=False):
+        if user_approved is not True:raise PermissionError('Explicit template import required')
+        skill=validate_portable(skill)
+        if skill['schema']!=TEMPLATE_SCHEMA or skill['version']!=expected_version:
+            raise ValueError('Template changed since review or is not an unverified template')
         with self.janus.connect() as db:
             db.execute('BEGIN IMMEDIATE')
             if db.execute('SELECT 1 FROM portable_workflow_skills WHERE version=?',(skill['version'],)).fetchone():
@@ -216,7 +270,7 @@ def rebind(skill,recipes,files,*,required_output=None,cancelled=None):
 
 def portable_hints(library,recipes,files,*,required_output=None,max_chars=680,cancelled=None):
     if max_chars<120:return ''
-    header='\nSHARED HISTORICAL SKILLS (advisory; check current goal; no approval): '
+    header='\nSHARED WORKFLOW PATTERNS (advisory only; imported templates unverified; no approval): '
     hints=[];seen=set()
     for skill in library.list()[:MAX_HISTORY]:
         if cancelled and cancelled():return ''
@@ -229,7 +283,8 @@ def portable_hints(library,recipes,files,*,required_output=None,max_chars=680,ca
                      or any(_format(p)==stage['input_format'] for p in files)) for stage in shape):continue
             key=digest(shape)
             if key in seen:continue
-            hint={'version':skill['version'][:16],'stages':shape}
+            hint={'version':skill['version'][:16],'stages':shape,
+                  'provenance':'unverified template' if skill['schema']==TEMPLATE_SCHEMA else 'historical checks'}
             rebound=rebind(skill,recipes,files,required_output=required_output,cancelled=cancelled)
             if rebound:hint['candidate']=rebound['stages']
             candidate=json.dumps(hints+[hint],ensure_ascii=True,separators=(',',':'))
