@@ -133,6 +133,9 @@ class SentinelStore:
         creative=observation.get('project_midi',{})
         if creative.get('active') or creative.get('recent'):
             frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(creative,sort_keys=True),salience=.75,uncertainty=.3))
+        reports=observation.get('worker_reports',{}).get('reports',[])
+        if reports:
+            frames.insert(1,SenseFrame('peer','granite_dependency_report',json.dumps(reports[:2],sort_keys=True),salience=.85,uncertainty=.7))
         memory=observation.get('memory_duties',{})
         if memory.get('reports'):
             frames.insert(1,SenseFrame('memory','fifth_worker_findings',json.dumps(memory['reports'],sort_keys=True),salience=.8,uncertainty=.5))
@@ -372,6 +375,8 @@ class JanusSentinel:
         project_midi=observe_project_midi(self.jobs_db)
         from .memory_duty import observe_memory_duties
         memory_duties=observe_memory_duties(self.jobs_db)
+        from .worker_reports import observe_worker_reports
+        worker_reports=observe_worker_reports(self.jobs_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -421,7 +426,7 @@ class JanusSentinel:
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'memory_duties':memory_duties,'worker_reports':worker_reports,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),
@@ -436,11 +441,32 @@ class JanusSentinel:
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
                                       goal=goal,alternatives=alternatives)
+        # Evaluate worker dependency claims independently of JANUS's answer.
+        # These are asynchronous advisory consultations, not approval gates.
+        pending_report=None
+        if not self.stopping and not observation['game_detected'] and not j.get('paused'):
+            seen={r['evidence_key'] for r in self.store.recommendations(40)}
+            pending_report=next((r for r in worker_reports['reports'] if 'worker-'+r['receipt_sha'] not in seen),None)
+            if (pending_report and (self._counsel_thread is None or not self._counsel_thread.is_alive())
+                    and time.monotonic()-self._last_counsel_attempt>=60):
+                from .worker_reports import still_current,counsel_fields
+                self._last_counsel_attempt=time.monotonic()
+                report_id=pending_report['receipt_sha']
+                def challenge():
+                    if not still_current(self.jobs_db,report_id):return
+                    try:problem,evidence=counsel_fields(pending_report,self.jobs_db)
+                    except (ValueError,OSError):return
+                    answer=self._counsel.request(society='sentinel',goal=pending_report['focus'],
+                        problem=problem,evidence=evidence,worker_report=True)
+                    if answer and not self.stopping and not JanusStore(self.janus_db).status()['paused'] and still_current(self.jobs_db,report_id):
+                        self.store.recommend('worker-'+report_id,problem,answer,'local_model')
+                self._counsel_thread=threading.Thread(target=challenge,name='Sentinel-worker-challenge',daemon=True)
+                self._counsel_thread.start()
         if warning:
             case_key=hashlib.sha256((warning+'|'+goal+'|'+str(jobcounts)).encode()).hexdigest()[:24]
             self.store.recommend('sentinel-'+case_key,warning,
                                  '; '.join(alternatives))
-            if (not self.stopping and not observation['game_detected'] and
+            if (not pending_report and not self.stopping and not observation['game_detected'] and
                 not active_plans and not team_active and not any(job['state']=='running' for job in jobs) and
                 (self._counsel_thread is None or not self._counsel_thread.is_alive()) and
                 time.monotonic()-self._last_counsel_attempt>=600):

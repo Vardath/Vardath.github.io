@@ -42,7 +42,7 @@ class LocalCounsel:
         with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('DELETE FROM counsel_lease WHERE singleton=1 AND holder=?',(holder,))
 
-    def request(self, *, society: str, goal: str, problem: str, evidence: str) -> str | None:
+    def request(self, *, society: str, goal: str, problem: str, evidence: str, worker_report: bool=False) -> str | None:
         if society not in ('janus','sentinel'):raise ValueError('Unknown local society')
         token=os.environ.get('DEEPTHORT_TRIAD_TOKEN','')
         if len(token)<32:return None
@@ -58,6 +58,7 @@ class LocalCounsel:
             # own inference; implementation activity is independent.
             role=state.get('models',{}).get(society,{})
             if role.get('resident') is not True or role.get('busy') is not False:return None
+            if worker_report and (state.get('admission_slots',0)<=0 or state.get('admission_waiting',0)>0):return None
         except (OSError,ValueError,TypeError,AttributeError,TimeoutError):return None
         holder=f'{society}:{time.time_ns()}'
         if not self._acquire(holder):return None
@@ -67,9 +68,14 @@ class LocalCounsel:
                       'Ask the user if approval, credentials or missing requirements are needed. '
                       'Never claim you executed commands, altered files or verified results. '
                       'You may only recommend, not authorize, further actions.')
+            if worker_report:
+                guidance=('A production worker has made an UNVERIFIED dependency claim. '
+                          'Your independent role is to assess it, not to blindly accept it. '
+                          + ('Identify the smallest testable way to resolve the dependency using existing approved work or capabilities. Identify independent branches that can progress. ' if society=='janus' else 'Challenge whether the dependency is real, whether it conflicts with the original specification, and what exact evidence must be checked. ')
+                          + 'Distinguish known facts from hypotheses; no command execution, permission changes, source edits or claims of successful tests. Request user input only if necessary. Give concise scoped corrective advice.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'
                     f'OBSERVED PROBLEM: {problem[:700]}\n'
-                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:900]}')
+                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:2500 if worker_report else 900]}')
             payload=json.dumps({'model':MODEL,'triad_role':society,'messages':[{'role':'system','content':guidance},
                       {'role':'user','content':prompt}], 'max_tokens':200, 'stream':False}).encode()
             req=urllib.request.Request(HOST+'/v1/chat/completions',data=payload,method='POST',

@@ -70,8 +70,32 @@ class JanusWorker:
         gaming=self.game_gate.gaming()
         state=self.store.tick(self.jobs_db,gaming=gaming)
         if not gaming and not self._stopping and not state.get('paused'):
-            self._consider_local_alternatives(state)
+            if not self._consider_worker_reports():self._consider_local_alternatives(state)
         return state
+
+    def _consider_worker_reports(self):
+        from deepthort_local.worker_reports import observe_worker_reports,still_current,counsel_fields
+        reports=observe_worker_reports(self.jobs_db)['reports']
+        if not reports:return False
+        seen={r['evidence_key'] for r in self.store.recommendations(40)}
+        pending=next((r for r in reports if 'worker-'+r['receipt_sha'] not in seen),None)
+        if not pending:return False
+        if self._counsel_thread is not None and self._counsel_thread.is_alive():return True
+        if time.monotonic()-self._last_counsel_attempt<60:return True
+        self._last_counsel_attempt=time.monotonic()
+        ident=pending['receipt_sha'];key='worker-'+ident
+        def coordinate():
+            if not still_current(self.jobs_db,ident):return
+            try:problem,evidence=counsel_fields(pending,self.jobs_db)
+            except (ValueError,OSError):return
+            answer=self._counsel.request(society='janus',goal=pending['focus'],problem=problem,
+                                         evidence=evidence,worker_report=True)
+            if answer and not self._stopping and not self.store.status()['paused'] and not self.game_gate.gaming() and still_current(self.jobs_db,ident):
+                self.store.recommend(evidence_key=key,job_id=pending['job_id'],
+                     problem=problem,proposal=answer,origin='local_model')
+        self._counsel_thread=threading.Thread(target=coordinate,name='JANUS-worker-coordination',daemon=True)
+        self._counsel_thread.start()
+        return True
 
     def _consider_local_alternatives(self, state: dict) -> None:
         if state.get('decision') not in (

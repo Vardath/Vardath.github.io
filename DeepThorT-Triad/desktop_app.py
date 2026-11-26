@@ -4584,7 +4584,10 @@ class DeepThorTDesktop(tk.Tk):
                                 STATE/'project-grants',enabled=True)
                             self._project_attempts[jobid]=assignment
                             from deepthort_local.project_assignments import ProjectRoleClient
-                            production_client=ProjectRoleClient(self.client,contract)
+                            def worker_report(report):
+                                if stopped_memory():raise PlanError('Worker report superseded or stopped')
+                                return self.project_assignments.report_dependency(assignment,root_request_for_job(j,self.conversations),report)
+                            production_client=ProjectRoleClient(self.client,contract,report=worker_report)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     def emit_source(answer,staged=None):
                         if stopped_memory():raise PlanError('Source assignment superseded or stopped')
@@ -4857,8 +4860,12 @@ class DeepThorTDesktop(tk.Tk):
                 answer=self.client.chat(j['chat_id'],prompt,max_tokens=768 if j['mode']=='edit' else 384)
                 self.events.put(('job_answer',jobid,answer))
             except Exception as exc:
+                from deepthort_local.worker_reports import WorkerReport
                 if assignment:self.project_assignments.abandon(assignment)
                 if assignment and self._project_attempts.get(jobid)!=assignment:return
+                if assignment and isinstance(exc,WorkerReport):
+                    self.events.put(('project_worker_report',jobid,str(exc),assignment))
+                    return
                 record(STATE,'desktop','job_worker_exception',level='ERROR',job_id=jobid,
                        error_type=type(exc).__name__, stack=traceback.format_exc()[-12000:])
                 if assignment:self.events.put(('project_source_error',jobid,str(exc),assignment))
@@ -7588,6 +7595,16 @@ class DeepThorTDesktop(tk.Tk):
                 if self._project_attempts.get(ident)==attempt:
                     self._project_attempts.pop(ident,None)
                     self._retain_artifact(ident,event[2],event[3])
+            elif kind=='project_worker_report':
+                ident,attempt=event[1],event[3]
+                if self._project_attempts.get(ident)==attempt:
+                    self._project_attempts.pop(ident,None)
+                    job=self.jobs.get(ident)
+                    if job and job['state']=='running' and self.active_job==ident:
+                        self.active_job=None
+                        self.jobs.change(ident,'needs_input',event[2]+'; awaiting JANUS/Sentinel coordination (unverified claim)',allowed=('running',))
+                        self._log(f'Job #{ident}: {event[2]}; scoped report delivered to both societies. Other eligible jobs can continue.')
+                        self._refresh_jobs()
             elif kind=='project_source_error':
                 ident,attempt=event[1],event[3]
                 if self._project_attempts.get(ident)==attempt:
