@@ -309,9 +309,10 @@ class JanusStore:
         jobs=self.observe_jobs(job_db)
         from .planning_recovery import observe_planning
         plans=observe_planning(job_db)
-        from .delegation_senses import observe_delegation,active_work,conflict,observe_project_assignments
+        from .delegation_senses import observe_delegation,active_work,conflict,observe_project_assignments,observe_project_midi
         delegation=observe_delegation(job_db)
         project_assignments=observe_project_assignments(job_db)
+        project_midi=observe_project_midi(job_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -342,6 +343,9 @@ class JanusStore:
         elif team_active and not team_conflict:
             focus='delegated_team_work';decision='coordinate_dependency_ready_assignments'
             alternatives=['Observe role leases and accepted dependency receipts','Keep independent work progressing under existing authority','Use Sentinel review before integrating staged outputs']
+        elif project_midi['active']:
+            focus='project_creative_production';decision='coordinate_native_artifact_review'
+            alternatives=['Observe Gemma generation and exact Sentinel review','Wait for host publication receipt','Preserve project boundary and current specification']
         elif active_plans:
             focus=f"draft_{active_plans[0]['id']}_planning";decision='monitor_requirements_and_reframe_failed_steps'
             alternatives=['Observe indexed progress','Retranslate failed objectives against original requirements','Use Sentinel review before changing strategy']
@@ -390,7 +394,7 @@ class JanusStore:
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
         observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'stimuli':stimuli,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,'stimuli':stimuli,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -409,6 +413,8 @@ class JanusStore:
                 uncertainty=.65 if team_conflict or delegation['failed'] else .2))
         if project_assignments['available'] and (project_assignments['active'] or project_assignments['recent']):
             frames.insert(1,SenseFrame('runtime','project_role_assignments',json.dumps(project_assignments,sort_keys=True),salience=.7,uncertainty=.3))
+        if project_midi['active'] or project_midi['recent']:
+            frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(project_midi,sort_keys=True),salience=.75,uncertainty=.3))
         for action in actions[:3]:
             if action['status'] in ('succeeded','failed','needs_attention','cancelled'):
                 frames.append(SenseFrame('action_result',f"approved_process_{action['id']}",
