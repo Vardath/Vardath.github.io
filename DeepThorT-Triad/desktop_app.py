@@ -6987,6 +6987,9 @@ class DeepThorTDesktop(tk.Tk):
         resident=model_health.get('models',{}) if model_health.get('pid')==model_pid and model_pid else {}
         if not isinstance(resident,dict):resident={}
         roles={r:m['pid'] for r,m in resident.items() if isinstance(m,dict) and m.get('resident') and type(m.get('pid')) is int}
+        memory_row=model_health.get('memory_model',{}) if model_health.get('pid')==model_pid and model_pid else {}
+        if isinstance(memory_row,dict) and memory_row.get('resident') and type(memory_row.get('pid')) is int:
+            roles['memory']=memory_row['pid']
         measured=self.meter.read({'DeepThorT UI':os.getpid(),
             **({'Triad broker':model_pid} if model_pid else {}),
             **{r+' model':pid for r,pid in roles.items()},
