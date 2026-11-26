@@ -658,7 +658,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: review staged commit','Git: commit selected files','Git: manage local branches','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -7341,6 +7341,77 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,PermissionError) as exc:
             messagebox.showwarning('Branch operation not queued',str(exc),parent=self)
 
+    def _review_git_worktrees(self):
+        if getattr(self,'_git_preview_active',False) or self._reviewed_git_pending() or self.active_job is not None or self.active_conversation is not None:return
+        executable=shutil.which('git')
+        if not executable:
+            messagebox.showwarning('Git unavailable','Install Git first.',parent=self);return
+        project=Path(self.project).resolve()
+        self._git_preview_active=True
+        def work():
+            try:
+                from deepthort_local.git_commit import worktree_inventory
+                result=worktree_inventory(executable,project)
+                self.events.put(('git_worktree_preview',str(project),executable,result,None))
+            except Exception as exc:self.events.put(('git_worktree_preview',str(project),executable,None,str(exc)[:500]))
+        threading.Thread(target=work,name='JANUS-git-worktrees',daemon=True).start()
+
+    def _finish_git_worktree_preview(self,project,executable,review,error):
+        self._git_preview_active=False
+        if self._quitting or not self.project or str(self.project)!=project:return
+        if error:
+            messagebox.showwarning('Worktree review unavailable',error,parent=self);return
+        rows=review['worktrees']['rows']
+        display='Registered worktrees (1 = primary):\n'+'\n'.join(f"{i}. {r['path']} | {r['ref'] or 'detached'}" for i,r in enumerate(rows,1))
+        operation=simpledialog.askstring('Manage worktrees',display+'\n\nEnter ADD or REMOVE, or cancel to close inventory.',parent=self)
+        if not operation:return
+        operation=operation.strip().lower()
+        try:
+            if operation=='add':
+                used={r['ref'] for r in rows}
+                available=[r['ref'][11:] for r in review['branches'] if r['ref'] not in used]
+                if not available:raise ValueError('Create a local branch not currently checked out first')
+                name=simpledialog.askstring('Worktree branch','Choose exact unused local branch:\n'+'\n'.join(available),parent=self)
+                if not name:return
+                parent=filedialog.askdirectory(title='Choose existing parent directory for new worktree',parent=self)
+                if not parent:return
+                folder=simpledialog.askstring('New worktree directory','Name of new directory inside '+parent,parent=self)
+                if not folder:return
+                args={'branch':name,'parent':parent,'name':folder}
+            elif operation=='remove':
+                if len(rows)<2:raise ValueError('No linked worktree to remove')
+                i=simpledialog.askinteger('Remove linked worktree',display+'\n\nSelect a linked worktree number:',minvalue=2,maxvalue=len(rows),parent=self)
+                if i is None:return
+                target=Path(rows[i-1]['path']).resolve()
+                if target==ROOT or target in ROOT.parents or target==STATE or target in STATE.parents:
+                    raise ValueError('Cannot remove the running application or its state directory')
+                if not self._branch_switch_allowed(str(target)):
+                    raise ValueError('Finish or cancel incomplete project jobs and roadmaps in the target first')
+                args={'path':str(target)}
+            else:raise ValueError('Choose ADD or REMOVE')
+            if (self._quitting or not self.project or str(self.project)!=project or self.disk_gate.gaming()
+                    or self.active_job is not None or self.active_conversation is not None or self._reviewed_git_pending()
+                    or self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
+                    or any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))):
+                raise ValueError('Project or resource state changed; review again')
+            from deepthort_local.git_commit import worktree_plan
+            from deepthort_local.action_guards import snapshot_file
+            plan=worktree_plan(executable,project,review,operation,**args)
+            target=plan['target']
+            path=target['destination']['path'] if operation=='add' else target['path']
+            detail=operation.upper()+' '+path+'\nBranch: '+target['ref']+'\nCommit: '+target['head']
+            if operation=='remove':detail+='\n\nRemove only the clean linked checkout. Keep the branch and its commits.'
+            else:detail+='\n\nCreate a separate checkout in a new directory. Git filters can run with your rights; only approve a trusted repo.'
+            if not messagebox.askyesno('Approve local worktree operation',detail+'\n\nNo force, push or security sandbox.',parent=self):return
+            script=ROOT/'deepthort_local'/'git_commit.py'
+            argv=[sys.executable,'-I','-B',str(script),'--git',executable,'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
+            action=self.janus.add_approved_action(argv=argv,cwd=project,label='Git: reviewed worktree '+operation,
+                kind='tool',user_approved=True,input_guards=[snapshot_file(script),snapshot_file(executable,kind='stat')])
+            self._log(f'JANUS approved Git worktree action #{action} queued; see JANUS log.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('Worktree operation not queued',str(exc),parent=self)
+
     def _run_project_check(self):
         if not self.project:
             messagebox.showinfo('Project needed','Choose a project folder before running local tools.');return
@@ -7353,6 +7424,8 @@ class DeepThorTDesktop(tk.Tk):
             self._review_staged_git_commit(selected=True);return
         if choice=='Git: manage local branches':
             self._review_git_branch();return
+        if choice=='Git: manage worktrees':
+            self._review_git_worktrees();return
         if choice=='Git: status':cmd=['git','status','--short']
         elif choice=='Python: unit tests':cmd=[sys.executable,'-m','unittest','discover']
         elif choice=='Node.js: npm test':cmd=['npm.cmd','test'] if os.name=='nt' else ['npm','test']
@@ -8361,6 +8434,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._finish_git_commit_preview(*event[1:])
             elif kind=='git_branch_preview':
                 self._finish_git_branch_preview(*event[1:])
+            elif kind=='git_worktree_preview':
+                self._finish_git_worktree_preview(*event[1:])
             elif kind=='tool_end':
                 label,tooltype,code,job_id=event[1:5]
                 verification_output=event[5] if len(event)>5 else None
