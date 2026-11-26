@@ -908,6 +908,12 @@ class DeepThorTDesktop(tk.Tk):
                         raise ValueError('Inner Fano faculty set changed')
                     if cores['Front']['input_sources']!=['Left','Right'] or cores['Interface']['input_sources']!=['Front']:
                         raise ValueError('Society flow changed')
+                    from deepthort_local.janus_cognition import SPECIALISTS
+                    for name in SPECIALISTS:
+                        if set(cores[name].get('peer_sources',[]))!=set(SPECIALISTS)-{name}:raise ValueError('Specialist peer evidence missing')
+                    for name,peers in (('Left',list(SPECIALISTS)),('Right',list(SPECIALISTS)),('Front',['Left','Right']),('Interface',['Front'])):
+                        if cores[name].get('peer_sources')!=peers:raise ValueError('Downstream peer evidence missing')
+                    if any(set(c.get('projection_1_3_4',{}))!={'origin','line','off_line'} for c in cores.values()):raise ValueError('Fano projection evidence missing')
             except (KeyError,ValueError,TypeError,AttributeError,OverflowError,OSError) as error:
                 return {'status':'blocked','detail':'Recursive society evidence incomplete: '+type(error).__name__,'evidence':evidence}
             return {'status':'passed','detail':f'Both persistent 11 × 7 societies have recent recorded state: JANUS cycle {cycle}; Sentinel cycle {sentinel_cycle}. This is not neural inference acceptance.','evidence':evidence}
