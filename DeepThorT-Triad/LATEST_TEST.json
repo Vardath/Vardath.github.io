@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v63-proportional-supervision",
-  "title": "Triad V63: proportionate Sentinel supervision",
+  "id": "triad-v64-reactive-core-deliberation",
+  "title": "Triad V64: resumable reactive core deliberation",
   "checks": [
     "shared_cap",
     "triad_residency",

@@ -68,7 +68,7 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                     previous_front: dict | None=None, previous_observation: dict | None=None,
                     previous_cores: dict | None=None,
                     focus: str, decision: str, goal: str='', alternatives: list[str] | None=None,
-                    findings: list[dict] | None=None) -> dict:
+                    findings: list[dict] | None=None, neural: dict | None=None) -> dict:
     if society not in ('janus','sentinel'):raise ValueError('Unknown society identity')
     if not frames:frames=[SenseFrame('runtime',society,'No new external evidence',salience=.1)]
     frames=frames[:16]
@@ -89,12 +89,13 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
     novel=max(x.novelty for x in frames) if actual_change else .05
     goal=goal[:300]
     findings=(findings or [])[:8]
+    neural=neural or {}
     # Stable external material, not previous core output, drives wake/revision.
     # A heartbeat is not another thought. An old Interface message is never
     # recursively injected as a new stimulus.
     material={'society':society,'obs':observation,'focus':focus,'decision':decision,
               'goal':goal,'alternatives':alternatives,'frames':[f.public() for f in frames],
-              'findings':findings}
+              'findings':findings,'neural':neural}
     fingerprint=hashlib.sha256(json.dumps(material,sort_keys=True,default=str).encode()).hexdigest()[:24]
     base_material={k:v for k,v in material.items() if k!='findings'}
     base_material['frames']=[f.public() for f in frames if f.source not in ('janus_findings','sentinel_findings')]
@@ -218,6 +219,11 @@ def process_society(*, society: str, observation: dict, frames: list[SenseFrame]
                               autonomous_install=False,autonomous_file_modification=False,
                               may_execute_without_approval=False,
                               message=express(cores['Front']))
+    # The resumable neural phase is the same society's separately retained
+    # interpretations, not additional external observations or authority.
+    for name,reading in neural.get('cores',{}).items():
+        if name in cores:cores[name]['neural_readout']=reading
+    cores['Front']['neural_progress']={k:v for k,v in neural.items() if k!='cores'}
     # These are actual directed recursive-readout inputs, not a nominal topology.
     for core in cores.values():
         weights=core['weights']

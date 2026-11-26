@@ -444,7 +444,9 @@ class JanusStore:
             frames.append(SenseFrame('runtime','janus_findings',
                 f'{len(findings)} new recorded advisory findings await independent outward appraisal.',
                 salience=.75,uncertainty=.5))
+        from .core_deliberation import snapshot as neural_snapshot
         society=process_society(society='janus',observation=observation,frames=frames,
+            neural=neural_snapshot(job_db,'janus'),
             previous_front=previous_front,previous_observation=previous_observation,
             previous_cores=previous,
             focus=focus,decision=decision,goal=goal,alternatives=alternatives,findings=findings)

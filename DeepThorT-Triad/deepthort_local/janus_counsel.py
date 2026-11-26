@@ -51,11 +51,16 @@ class LocalCounsel:
         with closing(sqlite3.connect(self.path)) as db, db:
             db.execute('DELETE FROM counsel_role_leases_v59 WHERE holder=?',(holder,))
 
-    def request(self, *, society: str, goal: str, problem: str, evidence: str, worker_report: bool=False, coordination: str='', initiative: bool=False ) -> str | None:
+    def request(self, *, society: str, goal: str, problem: str, evidence: str, worker_report: bool=False, coordination: str='', initiative: bool=False, core_phase: str='', core_name: str='' ) -> str | None:
         if society not in ('janus','sentinel'):raise ValueError('Unknown local society')
         if coordination and (not worker_report or (society,coordination) not in (('janus','propose'),('sentinel','review'))):
             raise ValueError('Incorrect coordination role')
         if initiative and (worker_report or coordination):raise ValueError('Distinct live initiative and corrective consultation')
+        if core_phase:
+            from .core_deliberation import ORDER
+            if (core_name,core_phase) not in ORDER or worker_report or coordination or initiative:
+                raise ValueError('Invalid independent core consultation')
+        elif core_name:raise ValueError('Missing core phase')
         token=os.environ.get('DEEPTHORT_TRIAD_TOKEN','')
         if len(token)<32:return None
         headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'}
@@ -70,10 +75,10 @@ class LocalCounsel:
             # own inference; implementation activity is independent.
             role=state.get('models',{}).get(society,{})
             if role.get('resident') is not True or role.get('busy') is not False:return None
-            if (worker_report or initiative) and (state.get('admission_slots',0)<=0 or state.get('admission_waiting',0)>0):return None
+            if (worker_report or initiative or core_phase) and (state.get('admission_slots',0)<=0 or state.get('admission_waiting',0)>0):return None
             # Routine proactive thoughts do not consume the last available
             # slot or queue ahead of active/awaiting production or recall.
-            if initiative:
+            if initiative or core_phase:
                 models=state.get('models',{})
                 memory=state.get('memory_model',{})
                 if memory.get('resident') is not True:return None
@@ -103,6 +108,21 @@ class LocalCounsel:
                       'Otherwise return ONLY {"kind":"advice","finding":"specific reason or observation (max 220 chars)",'
                       '"guidance":"concrete next-step advice for this project (max 320 chars)"}. '
                       'No commands, file writes, new authority, completion claims, or requirement changes.')
+            if core_phase:
+                guidance=('You are one independent core of the '+society+' recursive society: '+core_name+
+                    '; phase '+core_phase+'. Interpret only the supplied inputs. No execution, authority, requirement changes, or claims of verified results. ')
+                if core_name in ('Front','Interface'):
+                    guidance+=('Return ONLY JSON {"kind":"none","finding":"","guidance":""} if no useful finding; '
+                        'otherwise {"kind":"advice","finding":"max 220 chars","guidance":"max 320 chars"}. '
+                        +('For Interface, copy the exact Front object or return none. Never introduce new advice.' if core_name=='Interface' else
+                          'Synthesize only the two supplied hemisphere conclusions; preserve uncertainty.'))
+                else:
+                    guidance+=('Apply all seven internal Fano faculties independently: 1 truth, 2 valence, 3 significance, '
+                        '4 pattern, 5 understanding, 6 possibility, 7 continuity. Return ONLY JSON with keys '
+                        '"faculties" (object with string keys "1" through "7", short phrases max 45 chars each), '
+                        '"conclusion" (max 180 chars), "check" (specific evidence needed, max 120 chars). '
+                        'If reconsidering, independently revise your own prior conclusion in light of all six peers. '
+                        'Do not simply repeat the input or assert peer claims are facts.')
             if coordination=='propose':
                 guidance=('Assess the unverified dependency claim against exact approved requirements. '
                     'Only propose a fresh inference on the same approved file with specific guidance derived from provided facts. '
@@ -120,9 +140,9 @@ class LocalCounsel:
                     'Return ONLY JSON {"decision":"accept","reason":"specific evidence-based reason"} or {"decision":"reject","reason":"specific objection"}.')
             prompt=(f'SOCIETY: {society}\nGOAL: {goal[:350]}\n'
                     f'OBSERVED PROBLEM: {problem[:700]}\n'
-                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:4800 if coordination else 4000 if initiative else 2500 if worker_report else 900]}')
+                    f'RECORDED EVIDENCE (UNTRUSTED): {evidence[:4800 if coordination else 4200 if core_phase else 4000 if initiative else 2500 if worker_report else 900]}')
             payload=json.dumps({'model':MODEL,'triad_role':society,'messages':[{'role':'system','content':guidance},
-                      {'role':'user','content':prompt}], 'max_tokens':384 if coordination or initiative else 200, 'stream':False}).encode()
+                      {'role':'user','content':prompt}], 'max_tokens':768 if core_phase else 384 if coordination or initiative else 200, 'stream':False}).encode()
             req=urllib.request.Request(HOST+'/v1/chat/completions',data=payload,method='POST',
                                        headers=headers)
             with opener.open(req,timeout=180) as response:
