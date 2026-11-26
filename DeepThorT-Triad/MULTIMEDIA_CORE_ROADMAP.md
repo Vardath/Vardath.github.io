@@ -1,3 +1,9 @@
+# V35 integration note
+
+Keep Gemma as independent intelligent fourth worker. V34 installed it and reached native generation, which failed due to the VLM API overload. V35 uses the documented single-turn prompt call with explicit empty image/video collections and generation_config. No fabricated output; rerun exact MIDI test. Dedicated fifth memory model is resident when admitted; fourth remains on demand, and combined headroom must be measured under the unchanged root ceiling. Future creative tasks should receive the same scoped governed memory packets and use typed inter-agent requests; no raw cross-project database access. Continue existing asset and full-production roadmap after native reliability.
+
+---
+
 # V34 binding correction — 26 November 2026
 
 The fourth core IS a distinct intelligent multimodal reasoning model, not a diffusion engine. This supersedes the older wording below that described only a specialist service. Gemma 4 E2B Instruct INT4 is the first pinned candidate, using native OpenVINO VLM inference. Stable Diffusion, FFmpeg, Blender, speech and future music/document tools are subordinate capabilities. Preserve the three original language workers. The fourth intelligent model must receive scoped tasks from other agents, plan/execute/inspect/revise and return an independently checked, reusable artifact and receipt. Start with on-demand process and actual MIDI task under a separately protected memory group; no fourth residency/concurrent inference claim until native evidence exists. General video, audio, visual and 3D adapters remain open. No change to 40% CPU / 50% RAM-sized commit ceiling.

@@ -73,7 +73,7 @@ def installed(root=ROOT):
         return False
 
 
-def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None, creative_ok=None):
+def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None, creative_ok=None, memory_ok=None):
     """Return exact missing components without disturbing valid model weights."""
     if role_ok is None:
         def role_ok(role):
@@ -103,4 +103,9 @@ def install_plan(root=ROOT, *, role_ok=None, runtime_ok=None, media_ok=None, cre
         commands.append(('download_creative.py',(),'Fourth intelligent AI: Gemma 4 E2B INT4 (~4.36 GB)'))
     if not media_ok:
         commands.append(('download_multimedia.py',(),'Optional production engine: Stable Diffusion 1.5 INT8'))
+    if memory_ok is None:
+        from .triad_profiles import memory_installed
+        memory_ok=memory_installed(root)
+    if not memory_ok:
+        commands.append(('download_model.py',('--role','memory'),'Fifth intelligent AI: Qwen2.5-1.5B memory specialist (~936 MB)'))
     return commands

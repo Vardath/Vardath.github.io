@@ -964,8 +964,14 @@ class DeepThorTDesktop(tk.Tk):
                 self._council_busy=True
             try:
                 from deepthort_local.live_memory_probe import exercise
-                return exercise(health,expected_primary,cancel,
+                initial=health() or {}
+                from deepthort_local.memory_core_probe import resident_memory
+                try:resident_memory(initial,expected_primary);use_memory=True
+                except (ValueError,TypeError,KeyError):use_memory=False
+                result=exercise(health,expected_primary,cancel,use_memory_core=use_memory,
                     notify=lambda stage:self.events.put(('latest_test_progress','live memory: '+stage)))
+                observed['live_memory_result']=result
+                return result
             finally:self._council_busy=False
         def application_workflow_probe():
             from deepthort_local.application_workflow_probe import exercise
@@ -979,6 +985,14 @@ class DeepThorTDesktop(tk.Tk):
         def video_render_probe():
             from deepthort_local.render_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        def memory_core_probe():
+            from deepthort_local.memory_core_probe import exercise
+            import tempfile
+            with tempfile.TemporaryDirectory(prefix='triad-memory-overlap-') as temp:
+                client=LocalModelClient(Path(temp)/'sessions.sqlite3',timeout=180)
+                return exercise(health,expected_primary,observed.get('live_memory_result'),
+                    cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
+                    ask=lambda role,prompt,tokens:client.chat_as(role,'memory-overlap-'+role,prompt,max_tokens=tokens))
         def multimedia_core_probe():
             from deepthort_local.multimedia_core_probe import exercise
             if not observed['resident']:
@@ -988,7 +1002,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
@@ -6834,13 +6848,14 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.multimedia_profile import install_plan
         components=install_plan(ROOT)
         if not components:
-            messagebox.showinfo('AI installed','All four intelligent checkpoints, the diffusion tool and native runtime are present. Run latest test to check actual operation.',parent=self);return
+            messagebox.showinfo('AI installed','All five intelligent checkpoints, the diffusion tool and native runtime are present. Run latest test to check actual operation.',parent=self);return
         commands=[([sys.executable,str(ROOT/script),*args],label)
                   for script,args,label in components]
         download_description='Missing components:\n'+'\n'.join('• '+label for _,label in commands)
         if not messagebox.askyesno('Approve AI installation',
              download_description+'\n\nExisting valid language model files are preserved. '
              'Gemma 4 E2B INT4 (~4.36 GB, Apache-2.0) is the fourth intelligent AI. '
+             'Qwen2.5-1.5B INT4 (~936 MB, Apache-2.0) is the fifth memory AI. '
              'Stable Diffusion (~2.3 GB, CreativeML OpenRAIL-M) is a separate image-production tool. '
              'Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
@@ -6972,6 +6987,9 @@ class DeepThorTDesktop(tk.Tk):
         resident=model_health.get('models',{}) if model_health.get('pid')==model_pid and model_pid else {}
         if not isinstance(resident,dict):resident={}
         roles={r:m['pid'] for r,m in resident.items() if isinstance(m,dict) and m.get('resident') and type(m.get('pid')) is int}
+        memory_row=model_health.get('memory_model',{}) if model_health.get('pid')==model_pid and model_pid else {}
+        if isinstance(memory_row,dict) and memory_row.get('resident') and type(memory_row.get('pid')) is int:
+            roles['memory']=memory_row['pid']
         measured=self.meter.read({'DeepThorT UI':os.getpid(),
             **({'Triad broker':model_pid} if model_pid else {}),
             **{r+' model':pid for r,pid in roles.items()},

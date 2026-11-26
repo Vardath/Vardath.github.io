@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v34-intelligent-multimedia",
-  "title": "Triad V34: native fourth intelligent model and actual MIDI task",
+  "id": "triad-v35-memory-intelligence",
+  "title": "Triad V35: independent memory AI, governed recall and fourth-core native repair",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -15,6 +15,7 @@
     "task_mcp",
     "mcp_stdio",
     "live_memory",
+    "memory_core",
     "application_workflow",
     "speech_backend",
     "visual_backend",

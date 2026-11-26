@@ -64,6 +64,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_multimedia_install.py -v
       - run: python -m unittest discover -s tests -p test_multimedia_core_probe.py -v
       - run: python -m unittest discover -s tests -p test_creative_core_v34.py -v
+      - run: python -m unittest discover -s tests -p test_memory_core_v35.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -150,6 +151,8 @@ jobs:
           python -m unittest discover -s tests -p test_multimedia_core_probe.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_creative_core_v34.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_memory_core_v35.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Install pinned native runtime in isolated venv
         run: |

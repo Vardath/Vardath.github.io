@@ -42,14 +42,12 @@ def main():
         time.sleep(.1)
     import openvino_genai as genai
     pipe=genai.VLMPipeline(str(path()),'CPU',INFERENCE_NUM_THREADS=1,NUM_STREAMS=1)
-    history=genai.ChatHistory()
-    history.append({'role':'user','content':prompt})
-    history.set_extra_context({'enable_thinking':False})
     config=genai.GenerationConfig()
     config.max_new_tokens=512
     config.do_sample=False
     config.num_beams=1
-    out=pipe.generate(history,config)
+    # VLMPipeline has a different overload from LLMPipeline. This is a single text-only task.
+    out=pipe.generate(prompt,images=[],videos=[],generation_config=config)
     answer=out.texts[0]
     if not isinstance(answer,str) or not answer.strip() or len(answer)>12000:
         raise ValueError('Invalid native creative response')

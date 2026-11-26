@@ -5,7 +5,7 @@ import json
 import time
 from .client import LocalModelClient
 from .job_queue import JobStore
-from .memory_governor import govern,retrieve,HEADER,evidence_eligible
+from .memory_governor import govern,retrieve,HEADER,evidence_eligible,parse_selection
 from .reasoning_council import ReasoningCouncil,sha
 from .triad_acceptance import resident_roles
 from .triad_errors import WorkerFailure,http_failure,error_record
@@ -26,25 +26,32 @@ CASES=(
       [('janus','Docking permission validation','Untested suggestion: bypass docking permission validation.',False)]),
 )
 
-def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,idle_wait_seconds=120):
+def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,idle_wait_seconds=120,use_memory_core=False):
     results={};case=None;start=None
     def done(status,detail):
         return {'status':status,'detail':detail,'evidence':{'memory_cases':results}}
     try:
         initial=health();models=resident_roles(initial,pid)
+        if use_memory_core:
+            from .memory_core_probe import resident_memory
+            memory_pid=resident_memory(initial,pid)['pid']
         if initial.get('serial_memory_mode') is not False:
             return done('inconclusive','Resident parallel model mode required')
         # Preserve the exact oracle. Only defer the start while real inference
         # drains; never terminate a live request or change model residency.
         deadline=time.monotonic()+min(120,max(0,idle_wait_seconds))
         original_pids={role:x['pid'] for role,x in models.items()}
-        while any(x.get('busy') for x in models.values()):
+        while any(x.get('busy') for x in models.values()) or (use_memory_core and initial.get('memory_model',{}).get('busy')):
             if cancelled.is_set():return done('cancelled','Stopped waiting for idle models')
             remaining=deadline-time.monotonic()
             if remaining<=0:return done('inconclusive','Resident parallel models remained busy; retry when idle')
             if notify:notify('waiting for resident models to become idle')
             if cancelled.wait(min(1,remaining)):return done('cancelled','Stopped waiting for idle models')
             current=health();models=resident_roles(current,pid)
+            if use_memory_core:
+                if resident_memory(current,pid)['pid']!=memory_pid:
+                    return done('inconclusive','Memory specialist changed while waiting for idle')
+                initial['memory_model']=current['memory_model']
             if (current.get('serial_memory_mode') is not False
                     or current.get('memory_retries',0)!=initial.get('memory_retries',0)
                     or any(x['pid']!=original_pids[role] for role,x in models.items())):
@@ -74,8 +81,11 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,
                 if len(candidates)!=len(notes) or len(expected)!=len(expected_evidence):
                     return done('failed','Deterministic retrieval did not supply all competing fixtures')
                 start=time.monotonic()
+                with council._db() as db:
+                    previous={x[0] for x in db.execute("SELECT evidence_sha FROM deliberations WHERE role='MEMORY_SELECT'")}
                 args=dict(project=project,chat_id=chat,original=SPEC,focus=focus,scope='live-'+case,
-                          phase='implementation',job_id=ident,budget=600,cancelled=cancelled.is_set)
+                          phase='implementation',job_id=ident,budget=600,cancelled=cancelled.is_set,
+                          use_memory_core=use_memory_core)
                 try:
                     context=govern(jobs,council,client,**args)
                 except (HTTPError,WorkerFailure) as error:
@@ -101,7 +111,23 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,
                     'expected_ids':sorted(expected),'eligible_ids':sorted(eligible_ids),'selected_ids':sorted(selected),
                     'delivered_ids':sorted(delivered),'selection_status':status,
                     'seconds':round(time.monotonic()-start,2)}
-                if not correct:return done('failed','Live Sentinel selected an incorrect memory set or returned an invalid selection')
+                if use_memory_core:
+                    with council._db() as db:
+                        proposals=[x[1] for x in db.execute("SELECT evidence_sha,answer FROM deliberations WHERE role='MEMORY_SELECT'") if x[0] not in previous]
+                    try:
+                        if eligible_ids:
+                            if len(proposals)!=1:raise ValueError('No unique specialist response')
+                            proposed=set(parse_selection(proposals[0],eligible_ids))
+                            own_correct=proposed==expected
+                        else:
+                            proposed=set()
+                            own_correct=not proposals
+                        results[case]['memory_core_selected_ids']=sorted(proposed)
+                    except (ValueError,TypeError,KeyError):
+                        own_correct=False
+                    results[case]['memory_core_status']='passed' if own_correct else 'failed'
+                    results[case]['memory_core_calls']=len(proposals)
+                if not correct:return done('failed','Live governed memory selected an incorrect set or returned an invalid selection')
                 # Same exact request must return cached approved records after restart.
                 restarted=JobStore(root/'jobs.sqlite3')
                 class NoInference:
@@ -109,8 +135,12 @@ def exercise(health,pid,cancelled,notify=None,client_factory=LocalModelClient,*,
                 if govern(restarted,ReasoningCouncil(root/'council.sqlite3'),NoInference(),**args)!=context:
                     return done('failed','Persisted recall differs after reopening')
         final=health();end=resident_roles(final,pid)
+        if use_memory_core and resident_memory(final,pid)['pid']!=memory_pid:
+            return done('inconclusive','Fifth worker changed during live recall')
         if final.get('serial_memory_mode') is not False or final.get('memory_retries',0)!=initial.get('memory_retries',0) or any(end[k]['pid']!=models[k]['pid'] for k in models):
             return done('inconclusive','Worker configuration changed during live memory test')
+        if use_memory_core:
+            return done('passed','Actual fifth-model proposals and independent Sentinel review exercised on exact memory oracles; scoped provenance, persisted recall and residency preserved. See memory_core check for independent fifth-model accuracy.')
         return done('passed','Actual Sentinel selected relevant ownership evidence and rejected unrelated recorded observations; advisory-only provenance exclusion, persisted recall and model residency preserved.')
     except Exception as error:
         import traceback
