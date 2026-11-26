@@ -981,7 +981,13 @@ class DeepThorTDesktop(tk.Tk):
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
         def multimedia_core_probe():
             from deepthort_local.multimedia_core_probe import exercise
-            return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+            if not observed['resident']:
+                return {'status':'blocked','detail':'Three existing language workers must be resident before testing the fourth AI'}
+            if self.active_job is not None or self.active_conversation is not None:
+                return {'status':'inconclusive','detail':'Active project work; fourth-core test deferred'}
+            return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
+                health=health,expected_pid=expected_primary,
+                notify=lambda message:self.events.put(('latest_test_progress',message)))
         probes={'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
@@ -2432,6 +2438,25 @@ class DeepThorTDesktop(tk.Tk):
             try:
                 if cancelled():return
                 original=request['prompt']
+                from deepthort_local.creative_core import is_midi_request,create_midi
+                if request['mode']=='chat' and is_midi_request(original):
+                    if json.loads(request.get('attachments') or '[]'):
+                        raise ValueError('The initial MIDI composer does not yet analyze attached media; no attachment was ignored')
+                    if self.disk_gate.gaming():
+                        raise RuntimeError('Gaming priority; fourth-core task deferred')
+                    identity=hashlib.sha256(str(request['project']).encode('utf-8')).hexdigest()
+                    folder,receipt=create_midi(requester='user',
+                        scope=f'{identity}:{request["chat_id"]}:{ident}',brief=original,
+                        cancelled=lambda:cancelled() or self._quitting or self.disk_gate.gaming(),
+                        notify=lambda message:self.events.put(('conversation_stage',ident,message)))
+                    if cancelled():return
+                    answer=(f'Fourth intelligent AI created a MIDI draft: {folder/"score.mid"}\n'
+                            f'{receipt["notes"]} notes, {receipt["bpm"]} BPM.\n'
+                            'This is a real editable score, not rendered audio. Structural validation passed; musical quality and project publication remain unapproved.')
+                    record(STATE,'desktop','creative_task_completed',request_id=ident,
+                        artifact_sha256=receipt['sha256'],notes=receipt['notes'],bpm=receipt['bpm'])
+                    self.events.put(('conversation_reply',ident,answer))
+                    return
                 if request['mode']=='chat' and original.strip().lower().startswith('/render '):
                     from deepthort_local.video_render import render,MissingTools
                     from deepthort_local.video_planning import load_plan
@@ -6809,14 +6834,14 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.multimedia_profile import install_plan
         components=install_plan(ROOT)
         if not components:
-            messagebox.showinfo('AI installed','All four model checkpoints and the language runtime are present. Run latest test to check actual operation.',parent=self);return
+            messagebox.showinfo('AI installed','All four intelligent checkpoints, the diffusion tool and native runtime are present. Run latest test to check actual operation.',parent=self);return
         commands=[([sys.executable,str(ROOT/script),*args],label)
                   for script,args,label in components]
         download_description='Missing components:\n'+'\n'.join('• '+label for _,label in commands)
         if not messagebox.askyesno('Approve AI installation',
              download_description+'\n\nExisting valid language model files are preserved. '
-             'The multimedia snapshot, if missing, is approximately 2.3 GB (CreativeML OpenRAIL-M). '
-             'Its weights are installed separately; live multimedia inference is not certified yet. '
+             'Gemma 4 E2B INT4 (~4.36 GB, Apache-2.0) is the fourth intelligent AI. '
+             'Stable Diffusion (~2.3 GB, CreativeML OpenRAIL-M) is a separate image-production tool. '
              'Inference remains offline.\n\nApprove installation?',parent=self):return
         self.installing=True;self.model_status.set('AI: installing…');self.tabs.select(4)
         def worker():
