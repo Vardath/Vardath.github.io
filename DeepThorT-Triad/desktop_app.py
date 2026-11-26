@@ -3582,8 +3582,9 @@ class DeepThorTDesktop(tk.Tk):
                         provenance=self.hierarchies.graph_provenance(
                             rootid,[st['path'] for st in steps])
                         actual_hash=hashlib.sha256(rootreq['prompt'].encode('utf-8')).hexdigest()
+                        from deepthort_local.task_graph import same_workspace
                         if (provenance['root_source_sha256']!=actual_hash or
-                            provenance['root_project']!=str(Path(job['project']).resolve())):
+                            not same_workspace(provenance['root_project'],job['project'])):
                             raise GraphError('Milestone requirement root hash or project changed')
                         self.graphs.attach_hierarchy(job,steps,provenance)
                         if provenance['truncated']:
