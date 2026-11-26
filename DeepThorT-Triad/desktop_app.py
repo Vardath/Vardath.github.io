@@ -659,7 +659,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Label(checks,text='Approved local project checks:',style='Muted.TLabel').pack(side='left',padx=4)
         self.check_choice=tk.StringVar(value='Git: status')
         self.check_menu=ttk.Combobox(checks,textvariable=self.check_choice,state='readonly',width=24,
-            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
+            values=('Git: status','Git: inspect history','Git: review staged commit','Git: commit selected files','Git: manage local branches','Git: manage worktrees','Python: unit tests','Python: integration suite','Security: dependency audit','Node.js: npm test','Godot: validate project','.NET: tests','Blender: version'))
         self.check_menu.pack(side='left',padx=4)
         ttk.Button(checks,text='Review & run…',command=self._run_project_check).pack(side='left',padx=3)
         acquire=ttk.Frame(hardware_tab);acquire.pack(fill='x',pady=(0,5))
@@ -7570,6 +7570,48 @@ class DeepThorTDesktop(tk.Tk):
         except (OSError,ValueError,PermissionError) as exc:
             messagebox.showwarning('Integration suite not queued',str(exc),parent=self)
 
+    def _review_dependency_audit(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Dependency audit unavailable','Finish active operations before auditing.',parent=self);return
+        if getattr(self,'_dependency_review_active',False):return
+        project=str(self.project)
+        self._dependency_review_active=True
+        def work():
+            try:
+                from deepthort_local.dependency_audit import review
+                plan,observed=review(project)
+                self.events.put(('dependency_audit_review',project,plan,observed,None))
+            except Exception as exc:self.events.put(('dependency_audit_review',project,None,None,str(exc)[:500]))
+        threading.Thread(target=work,name='JANUS-dependency-review',daemon=True).start()
+
+    def _finish_dependency_audit_review(self,project,plan,observed,error):
+        self._dependency_review_active=False
+        if error:
+            messagebox.showwarning('Dependency audit unavailable',error,parent=self);return
+        if not self._editor_idle(project,proposal=True):return
+        dialog=tk.Toplevel(self);dialog.title('Review dependency advisory lookup');dialog.geometry('740x550');dialog.transient(self)
+        ttk.Label(dialog,text='Online OSV lookup: the exact package names, versions and ecosystems below will be sent to api.osv.dev.',wraplength=700).pack(anchor='w',padx=8,pady=8)
+        ttk.Label(dialog,text=f"{plan['count']} unique versions; {observed['omitted']} unsupported entries omitted. No source upload, installation or automatic fixes.",wraplength=700).pack(anchor='w',padx=8)
+        frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
+        body=tk.Text(frame,wrap='none');scroll=ttk.Scrollbar(frame,orient='vertical',command=body.yview)
+        body.configure(yscrollcommand=scroll.set);scroll.pack(side='right',fill='y');body.pack(side='left',fill='both',expand=True)
+        body.insert('1.0','\n'.join(' | '.join(x) for x in observed['packages']));body.configure(state='disabled')
+        def approve():
+            if not self._editor_idle(project,proposal=True):
+                dialog.destroy();return
+            try:
+                from deepthort_local.action_guards import snapshot_file
+                script=ROOT/'deepthort_local'/'dependency_audit.py'
+                argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)]
+                action=self.janus.add_approved_action(argv=argv,cwd=project,label='Security: reviewed dependency audit',kind='tool',user_approved=True,input_guards=[snapshot_file(script)])
+                self._log(f'JANUS dependency audit #{action} queued; inspect advisory IDs and coverage in its process output.')
+                self._show_janus_status();dialog.destroy()
+            except (OSError,ValueError,PermissionError) as exc:
+                messagebox.showwarning('Audit not queued',str(exc),parent=dialog)
+        buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=8,pady=8)
+        ttk.Button(buttons,text='Approve online lookup',command=approve).pack(side='right')
+        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=6)
+
     def _git_advisory_provider(self,project):
         from deepthort_local.git_observation import advisory
         if not advisory(getattr(self,'_shared_git_history',None),project):return None
@@ -7636,6 +7678,8 @@ class DeepThorTDesktop(tk.Tk):
             self._inspect_git_history();return
         if choice=='Python: integration suite':
             self._review_integration_suite();return
+        if choice=='Security: dependency audit':
+            self._review_dependency_audit();return
         if choice=='Git: review staged commit':
             self._review_staged_git_commit();return
         if choice=='Git: commit selected files':
@@ -8656,6 +8700,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._finish_git_worktree_preview(*event[1:])
             elif kind=='integration_suite_review':
                 self._finish_integration_suite_review(*event[1:])
+            elif kind=='dependency_audit_review':
+                self._finish_dependency_audit_review(*event[1:])
             elif kind=='git_history_observation':
                 self._finish_git_history(*event[1:])
             elif kind=='tool_end':
