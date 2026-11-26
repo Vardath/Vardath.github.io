@@ -3995,9 +3995,15 @@ class DeepThorTDesktop(tk.Tk):
                     with self.graphs._db() as db:self.graphs._assert_bound(db,job,steps)
                 except (ValueError,OSError):return False
                 return True
+            def correction_evidence_current(item,need):
+                job=self.jobs.get(item['job_id'])
+                if not job:return False
+                return self.project_assignments.preview_corrective_dependency(job,self.jobs.steps(job['id']),
+                    item,need,STATE/'project-grants',enabled=self._project_work_is_enabled(),
+                    exclude=self.inspection_exclusions.paths(Path(job['project'])))
             for correction in approved(self.jobs.path):
                 try:
-                    if requeue(self.jobs,correction,validate=correction_current):
+                    if requeue(self.jobs,correction,validate=correction_current,validate_evidence=correction_evidence_current):
                         self._log(f"JANUS/Sentinel coordinated one corrective inference for job #{correction['job_id']}; existing approval and review still required.")
                         self._refresh_jobs()
                         return
@@ -4644,7 +4650,14 @@ class DeepThorTDesktop(tk.Tk):
                                 return evidence
                             if retry_requested:
                                 from deepthort_local.corrective_coordination import consume
-                                correction=consume(self.jobs,j,contract)
+                                def corrective_evidence(need):
+                                    if self._quitting or self._superseded_build(j) or self.disk_gate.gaming():return ''
+                                    return self.project_assignments.supply_dependency(assignment,self.jobs.get(jobid),
+                                        self.jobs.steps(jobid),step,original,amendments,STATE/'project-grants',
+                                        {'kind':'evidence_gap','need':need,'reason':'Reviewed corrective dependency request'},
+                                        2100,enabled=self._project_work_is_enabled(),
+                                        exclude=self.inspection_exclusions.paths(project))
+                                correction=consume(self.jobs,j,contract,resolve_evidence=corrective_evidence)
                             production_client=ProjectRoleClient(self.client,contract,report=worker_report,resolve=resolve_dependency,correction=correction)
                             self.events.put(('log',f'JANUS → Granite assignment {assignment[:10]}: {step["path"]}; Sentinel review required.'))
                     if retry_requested and (not assignment or not correction):raise PlanError('Corrective inference requires the unchanged approved assignment')

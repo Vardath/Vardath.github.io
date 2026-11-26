@@ -10,7 +10,7 @@ import json
 import sqlite3
 from .agent_contract import canonical_sha
 from .structured_source import strict_json
-from .worker_reports import observe_granite_reports,WorkerReport
+from .worker_reports import observe_granite_reports,saved_dependency_catalog
 from .reasoning_council import sha
 
 KINDS=('missing_dependency','interface_conflict','evidence_gap')
@@ -29,8 +29,19 @@ def parse(answer,*,review=False):
     obj=strict_json(answer.strip())
     fields={'decision','reason'} if review else {'decision','guidance','reason'}
     decisions=('accept','reject') if review else ('retry','hold')
-    if not isinstance(obj,dict) or set(obj)!=fields or obj['decision'] not in decisions:
+    if not isinstance(obj,dict) or obj.get('decision') not in decisions:
         raise ValueError('Invalid corrective decision schema')
+    keys=set(obj)
+    if keys!=fields:
+        if review or obj['decision']!='retry' or keys!=fields|{'evidence_path'}:
+            raise ValueError('Invalid corrective decision schema')
+        from .inspection_exclusions import normalized_relative
+        path=obj['evidence_path']
+        if not isinstance(path,str) or len(path)>240 or any(ord(c)<32 for c in path):
+            raise ValueError('Invalid corrective evidence path')
+        normalized_relative(path)
+        if path!=path.strip() or '\\' in path:
+            raise ValueError('Require exact project-relative evidence path')
     for k in fields-{'decision'}:
         v=obj[k]
         if not isinstance(v,str) or len(v)>(360 if k=='guidance' else 300) or any(ord(c)<32 for c in v):
@@ -74,6 +85,9 @@ def propose(path,item,answer):
     decision=parse(answer)
     fresh=current(path,item['receipt_sha'])
     if fresh!=item or not eligible(path,item):return False
+    evidence_path=decision.get('evidence_path')
+    if evidence_path and not any(r['path']==evidence_path for r in saved_dependency_catalog(path,item)):
+        return False
     proposal=binding(item,decision)
     with closing(write(path)) as db,db:
         db.execute('BEGIN IMMEDIATE')
@@ -144,10 +158,15 @@ def approved(path):
                 WHERE c.state='approved' AND j.state='needs_input' AND j.detail=?||c.report_id ORDER BY c.rowid LIMIT 8""",(WAIT,))]
     except (sqlite3.Error,OSError):return []
 
-def requeue(jobs,row,*,validate):
+def requeue(jobs,row,*,validate,validate_evidence=None):
     """Atomically reserve the single retry with the original blocked job state."""
     p=checked_review(row);item=current(jobs.path,row['report_id'])
     if not item or item['contract_sha']!=p['contract_sha'] or not validate(item):return False
+    evidence_path=p['decision'].get('evidence_path')
+    if evidence_path:
+        if not any(r['path']==evidence_path for r in saved_dependency_catalog(jobs.path,item)):
+            return False
+        if validate_evidence is None or not validate_evidence(item,evidence_path):return False
     with jobs._conn() as db:
         db.row_factory=sqlite3.Row
         db.execute('BEGIN IMMEDIATE')
@@ -164,7 +183,7 @@ def requeue(jobs,row,*,validate):
     jobs.journal(p['job_id'])
     return True
 
-def consume(jobs,queued_job,contract):
+def consume(jobs,queued_job,contract,*,resolve_evidence=None):
     """After the normal new assignment checks, bind and consume the exact packet."""
     detail=queued_job['detail']
     if not detail.startswith(READY):return ''
@@ -179,10 +198,17 @@ def consume(jobs,queued_job,contract):
             raise ValueError('Corrective assignment scope changed')
         job=db.execute("SELECT state FROM jobs WHERE id=?",(p['job_id'],)).fetchone()
         if not job or job[0]!='running':raise ValueError('Corrective job no longer running')
+        evidence=''
+        if p['decision'].get('evidence_path'):
+            if resolve_evidence is None:
+                raise ValueError('Corrective inference requires actual dependency evidence')
+            evidence=resolve_evidence(p['decision']['evidence_path'])
+            if not isinstance(evidence,str) or not evidence or len(evidence)>2100:
+                raise ValueError('Requested corrective dependency is unavailable or too large')
         db.execute("UPDATE corrective_assignments_v50 SET state='consumed' WHERE report_id=?",(ident,))
     return ('\n\nINDEPENDENTLY REVIEWED CORRECTIVE GUIDANCE (advisory, not a specification change; '
             'do not invent missing inputs or tools): '+p['decision']['guidance']+
-            '\nPreserve the original approved file task and all requirements.')
+            '\nPreserve the original approved file task and all requirements.'+evidence)
 
 def observe(path):
     """Bounded read-only status evidence for both independent societies."""

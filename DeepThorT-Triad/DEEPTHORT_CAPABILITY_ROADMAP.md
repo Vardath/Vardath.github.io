@@ -1,3 +1,11 @@
+# V51 — evidence-directed corrective coordination
+
+V50 passed Linux and Windows CI and merged. JANUS can now select an exact saved direct predecessor from the current approved assignment graph in a structured retry proposal; Sentinel independently reviews the proposal, including its conditional evidence request. A graph receipt alone does not establish current file contents. The desktop rechecks the active grant, graph, saved hash, source path, size, UTF-8 and inspection exclusions before requeue, then the new exact assignment checks the same actual bytes again before consuming the correction. Granite receives those bytes and reviewed guidance in the same fresh inference with a distinct scoped session; ordinary Sentinel source review and host publication remain mandatory. No arbitrary path, new graph edge, tool execution or permission is introduced. Existing V50 retry/hold responses remain compatible. Evidence is bounded to 1600 source bytes, one delivery and one corrective retry per approved stage. New regressions exercise real stores and scripted model replies; native understanding and project acceptance remain unverified.
+
+Next: general scoped dependency discovery (including tools and cross-role artifacts), dependency-ready execution of independent project branches, proportionate reviews, durable proactive memory consolidation, deeper society cognition, and isolated self-update acceptance. No installer until workflow phase complete.
+
+---
+
 # V50 — structured corrective coordination
 
 V49 passed both Linux and Windows CI and merged. V50 gives JANUS a strict retry/hold decision for eligible Granite missing-dependency, interface-conflict and evidence-gap reports. Sentinel independently reviews the exact durable proposal and accepts or rejects it. The decision and verdict are bound to the exact report, job, approved step and assignment contract. Malformed output, rejection and hold do not schedule work. Existing Gemma report advice remains intact; automatic retries of native multimedia publication are not introduced.
