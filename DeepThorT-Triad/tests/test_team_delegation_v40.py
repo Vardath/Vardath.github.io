@@ -100,6 +100,10 @@ class TeamTests(unittest.TestCase):
             with self.assertRaises(ValueError):parse_plan(json.dumps(bad),self.original)
         with self.assertRaises(ValueError):parse_plan(json.dumps(self.plan),'/delegate design Discuss music.')
         with self.assertRaises(ValueError):parse_plan('{"tasks":[],"tasks":[]}',self.original)
+    def test_fixed_probe(self):
+        from deepthort_local.team_probe import exercise
+        result=exercise()
+        self.assertEqual(result['status'],'passed',result)
     def test_restart_no_replay(self):
         review=self.start();self.store.approve(review,'ACCEPT')
         prior=self.store.claim(self.ident,'implementation')
