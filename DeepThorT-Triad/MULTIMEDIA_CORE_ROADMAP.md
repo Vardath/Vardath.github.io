@@ -1,3 +1,18 @@
+# V34 binding correction — 26 November 2026
+
+The fourth core IS a distinct intelligent multimodal reasoning model, not a diffusion engine. This supersedes the older wording below that described only a specialist service. Gemma 4 E2B Instruct INT4 is the first pinned candidate, using native OpenVINO VLM inference. Stable Diffusion, FFmpeg, Blender, speech and future music/document tools are subordinate capabilities. Preserve the three original language workers. The fourth intelligent model must receive scoped tasks from other agents, plan/execute/inspect/revise and return an independently checked, reusable artifact and receipt. Start with on-demand process and actual MIDI task under a separately protected memory group; no fourth residency/concurrent inference claim until native evidence exists. General video, audio, visual and 3D adapters remain open. No change to 40% CPU / 50% RAM-sized commit ceiling.
+
+## Production acceptance contract
+
+- Source of every request: exact project/chat/job/specification revision and requester identity; preserve amendments, use Sentinel-governed relevant memory and reject stale tasks.
+- Model selects bounded typed tool calls; host validates schema, allowed scope, paths, resource admission, cancellation, and approvals. Untrusted tool output cannot grant authority.
+- Artifact is real, structurally and semantically checked against user requirements, hash-bound, recorded, and returned to requesting agent for safe integration. Staged assets are not published until existing project grant permits it.
+- Tasks must survive interruption and be resumable or explicitly failed, never falsely complete. Whole-game acceptance includes actual playable builds, editable content, tests and independent requirement coverage.
+- Dedicated fifth memory model is separately requested. Measure on same live-memory fixture before adoption; keep Sentinel as independent governance. Do not spend the fourth worker's reserved headroom on a fifth until admission is measured.
+- Self-development: inspect exact installed source, compare capability requirements, stage a reversible patch in an isolated copy, compile and run independent tests, generate versioned update/rollback package; apply only after explicit upgrade approval. Never let model prose certify its own work or modify active executable while in use.
+
+---
+
 # Dedicated multimedia AI core — user requirement, 26 November 2026
 
 Retain JANUS, Sentinel and implementation language models and their existing governance. Add a fourth specialist multimedia service with a separate bounded queue and persistent state. It is a capability core, not a fourth generic LLM. Load visual model backends on demand; do not assume one neural model can produce images, temporal video, editable geometry, and physically based textures. The service must work concurrently with language-model inference and ordinary approved project tasks when measured capacity permits.
