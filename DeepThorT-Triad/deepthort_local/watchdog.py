@@ -130,6 +130,9 @@ class SentinelStore:
         assignments=observation.get('project_assignments',{})
         if assignments.get('available') and (assignments.get('active') or assignments.get('recent')):
             frames.insert(1,SenseFrame('runtime','project_role_assignments',json.dumps(assignments,sort_keys=True),salience=.7,uncertainty=.3))
+        creative=observation.get('project_midi',{})
+        if creative.get('active') or creative.get('recent'):
+            frames.insert(1,SenseFrame('runtime','project_creative_assignments',json.dumps(creative,sort_keys=True),salience=.75,uncertainty=.3))
         # Worker cycles are proof of heartbeat, but are NOT a new finding on
         # each poll. Keep them out of the issue signature to avoid log spam.
         material={k:v for k,v in observation.items() if k!='janus_cycle'}
@@ -360,9 +363,10 @@ class JanusSentinel:
         jobs=js.observe_jobs(self.jobs_db)
         from .planning_recovery import observe_planning
         plans=observe_planning(self.jobs_db)
-        from .delegation_senses import observe_delegation,active_work,conflict,observe_project_assignments
+        from .delegation_senses import observe_delegation,active_work,conflict,observe_project_assignments,observe_project_midi
         delegation=observe_delegation(self.jobs_db)
         project_assignments=observe_project_assignments(self.jobs_db)
+        project_midi=observe_project_midi(self.jobs_db)
         team_active=active_work(delegation)
         team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
@@ -372,7 +376,7 @@ class JanusSentinel:
         goal=js.goal() or 'Monitor user-directed work and verify completion'
         janus_focus=str(j.get('last_focus') or '')
         janus_decision=str(j.get('last_action') or '')
-        off_task=bool(not j.get('paused') and (jobcounts['queued'] or jobcounts['running'] or active_plans or team_active) and
+        off_task=bool(not j.get('paused') and (jobcounts['queued'] or jobcounts['running'] or active_plans or team_active or project_midi['active']) and
                        janus_focus in ('idle','startup') and cycle>=2)
         # A running model at 20% CPU may legitimately need many minutes; detect
         # prolonged lack of evidence, never terminate an active process on age alone.
@@ -412,7 +416,7 @@ class JanusSentinel:
             'janus_decision':janus_decision,'counts':jobcounts,'drift':off_task,
             'stalled':bool(stalled_jobs) or status=='needs_attention',
             'failed':bool(jobcounts['failed'] or failed_plans or delegation['failed']),
-            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,
+            'delegation':delegation,'conflict':team_conflict,'project_assignments':project_assignments,'project_midi':project_midi,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'requires_user':bool(jobcounts['needs_input']),
