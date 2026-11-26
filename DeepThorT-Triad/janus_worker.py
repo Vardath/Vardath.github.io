@@ -98,6 +98,15 @@ class JanusWorker:
         self._counsel_thread=threading.Thread(target=work,name='JANUS-local-reasoning',daemon=True)
         self._counsel_thread.start()
 
+    def _observe_active_process(self):
+        # Preserve cognition/heartbeat during an existing authorized process;
+        # never recursively dispatch another process or launch neural counsel.
+        try:
+            self.store.tick(self.jobs_db,gaming=self.game_gate.gaming())
+        except Exception as exc:
+            record(self.jobs_db.parent,'janus_worker','active_process_observation_failed',
+                   level='WARNING',error_type=type(exc).__name__)
+
     def execute_next_approved(self) -> int | None:
         if self.store.status()['paused'] or self.game_gate.gaming():
             return None
@@ -131,6 +140,7 @@ class JanusWorker:
                     creationflags=flags,start_new_session=(os.name!='nt'))
                 self.store.update_action(ident,'running',detail='Approved process running',
                                          pid=proc.pid,output_file=str(log_path))
+                next_observation=started+10.0
                 while proc.poll() is None:
                     fresh=self.store.action(ident)
                     if fresh is None or fresh['cancel_requested'] or self._stopping:
@@ -154,6 +164,9 @@ class JanusWorker:
                         self.store.update_action(ident,'paused',detail='Game detected; stopped process to protect responsiveness. Inspect partial changes before rerun.',returncode=proc.returncode)
                         self._update_parent_job(action,'needs_input','Verification interrupted for gaming; inspect partial effects')
                         return ident
+                    if time.monotonic()>=next_observation:
+                        self._observe_active_process()
+                        next_observation=time.monotonic()+10.0
                     time.sleep(.25)
                 code=proc.returncode
             if log_path.stat().st_size>MAX_ACTION_LOG_BYTES:
