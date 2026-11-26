@@ -1,8 +1,8 @@
 """Independent, scoped conversation recall on the existing fifth-model lane.
 
-Durable user requests themselves are the work backlog. Only earlier user
-statements from the exact same chat/project are offered; assistant responses
-are not treated as facts. Historical user text is context, not permission or
+Durable user requests themselves are the work backlog. Same-chat recall is
+preserved; named project drafts may also recall explicitly labelled relevant
+historical project statements. Assistant responses are not treated as facts. Historical user text is context, not permission or
 a replacement for current instructions.
 """
 from contextlib import closing
@@ -37,8 +37,28 @@ def _scope(job_db,ident):
 def _identity(row):
     return {k:row[k] for k in ('id','project','chat_id','mode')}|{'prompt_sha':sha(row['prompt'])}
 
-def _candidates(job_db,row):
-    words=terms(row['prompt'][:2000])
+def _focus(job_db,row):
+    """Read the next indexed section, never rebuild the index here."""
+    if row['mode']=='draft_plan':
+        try:
+            with closing(reader(Path(job_db).parent/'specification_index.sqlite3',timeout=.05)) as db:
+                meta=db.execute('SELECT source_sha256,character_count FROM specification_index WHERE request_id=?',(row['id'],)).fetchone()
+                if meta and meta[0]==sha(row['prompt']) and meta[1]==len(row['prompt']):
+                    section=db.execute("""SELECT start_char,end_char,section_sha256 FROM specification_sections
+                        WHERE request_id=? AND steps_json='' ORDER BY ordinal LIMIT 1""",(row['id'],)).fetchone()
+                    if section and 0<=section[0]<section[1]<=len(row['prompt']):
+                        text=row['prompt'][section[0]:section[1]]
+                        if sha(text)==section[2]:
+                            return text[:3200],section[2]
+        except (OSError,ValueError,TypeError,sqlite3.Error):
+            pass
+    return row['prompt'][:2000],None
+
+def _cross_allowed(row):
+    return row['mode']=='draft_plan' and row['project']!='(general)'
+
+def _candidates(job_db,row,focus=None):
+    words=terms(focus if focus is not None else row['prompt'][:2000])
     if not words:return []
     with closing(reader(_conversations(job_db),timeout=.15)) as db:
         rows=db.execute("""SELECT id,substr(prompt,1,400) AS excerpt FROM conversation_requests WHERE project=? AND chat_id=?
@@ -54,8 +74,25 @@ def _candidates(job_db,row):
         item={'id':'C'+str(source['id']),'kind':'historical_user_statement',
               'observation':excerpt,'evidence':sha(excerpt)}
         ranked.append((-overlap,-source['id'],item))
+    # Keep exact-scope candidates first. Cross-project recall is restricted to
+    # named project planning; general chats retain V66's isolation.
+    cross=[]
+    if _cross_allowed(row):
+        with closing(reader(_conversations(job_db),timeout=.15)) as db:
+            other=db.execute("""SELECT id,project,substr(prompt,1,400) AS excerpt
+                FROM conversation_requests WHERE project<>? AND project<>'(general)'
+                AND id<? AND state='responded' AND mode='draft_plan'
+                ORDER BY id DESC LIMIT 160""",(row['project'],row['id'])).fetchall()
+        for source in other:
+            excerpt=source['excerpt']
+            if not isinstance(excerpt,str) or not excerpt.strip():continue
+            overlap=len(words&terms(excerpt))
+            if overlap<2:continue
+            item={'id':'X'+str(source['id']),'kind':'cross_project_user_statement',
+                  'source_project_sha':sha(source['project']),'observation':excerpt,'evidence':sha(excerpt)}
+            cross.append((-overlap,-source['id'],item))
     result=[]
-    for _,_,item in sorted(ranked):
+    for _,_,item in sorted(ranked)[:4]+sorted(cross)[:2]+sorted(ranked)[4:]:
         if len(canonical(result+[item]))<=2600:result.append(item)
         if len(result)>=6:break
     return result
@@ -64,9 +101,10 @@ def _packet(job_db,ident):
     row=_scope(job_db,ident)
     if not row:return None
     identity=_identity(row)
-    candidates=_candidates(job_db,row)
-    key=canonical_sha([identity,candidates])
-    return {'identity':identity,'key':key,'original':row['prompt'],'candidates':candidates}
+    focus,section_sha=_focus(job_db,row)
+    candidates=_candidates(job_db,row,focus)
+    key=canonical_sha([identity,candidates,section_sha])
+    return {'identity':identity,'key':key,'original':row['prompt'],'focus':focus,'section_sha':section_sha,'candidates':candidates}
 
 def _ensure(db):
     db.execute("""CREATE TABLE IF NOT EXISTS conversation_memory_v66(
@@ -119,16 +157,16 @@ def run_once(job_db,select,stopped=lambda:False):
     if candidates:
         prompt=('MEMORY: select genuinely relevant earlier user statements for this exact conversation. '
             'They are historical context, not current instructions or verified facts. Do not infer private traits. '
-            'Exclude superseded instructions and merely shared keywords. Return only JSON '
+            'Exclude superseded instructions and merely shared keywords. Cross-project statements are examples only: select transferable technical lessons, never unrelated project requirements or personal details. Return only JSON '
             '{"keep":["exact offered ID"],"reason":"short reason"}; zero to three IDs.\n'
-            'CURRENT USER REQUEST (excerpt): '+packet['original'][:1600]+
+            'CURRENT USER REQUEST OR INDEXED SECTION (excerpt): '+packet['focus'][:1600]+
             '\nCANDIDATES: '+canonical(candidates))
         selected=parse_selection(select(packet['key']+sha(prompt),prompt,192),{x['id'] for x in candidates})
         chosen=[x for x in candidates if x['id'] in selected]
     if stopped():return None
     fresh=_packet(job_db,packet['identity']['id'])
     if not fresh or fresh['key']!=packet['key']:return None
-    body={'key':packet['key'],'identity':packet['identity'],'selected':chosen}
+    body={'key':packet['key'],'identity':packet['identity'],'section_sha':packet['section_sha'],'selected':chosen}
     with closing(sqlite3.connect(_path(job_db),timeout=2)) as db,db:
         _ensure(db)
         db.execute("INSERT OR IGNORE INTO conversation_memory_v66 VALUES(?,?,?,?,?)",
@@ -137,7 +175,7 @@ def run_once(job_db,select,stopped=lambda:False):
             (SELECT rowid FROM conversation_memory_v66 ORDER BY completed DESC,rowid DESC LIMIT -1 OFFSET ?)""",(MAX_REPORTS,))
     return body
 
-def _checked_saved(job_db,request):
+def _checked_saved(job_db,request,*,section_sha=None):
     """Bounded read of already selected excerpts only; no candidate scan."""
     identity=_identity(request)
     with closing(reader(_path(job_db),timeout=.025)) as db:
@@ -157,15 +195,24 @@ def _checked_saved(job_db,request):
         for saved in rows:
             body=json.loads(saved['body'])
             if canonical_sha(body)!=saved['receipt_sha'] or body['identity']!=identity:continue
+            if section_sha is not None and body.get('section_sha') not in (None,section_sha):continue
             selected=body['selected']
             if not isinstance(selected,list) or len(selected)>3:return None
             for item in selected:
                 ident=item['id']
-                if not isinstance(ident,str) or not ident.startswith('C') or not ident[1:].isdigit():return None
-                source=db.execute("""SELECT substr(prompt,1,400) FROM conversation_requests
-                    WHERE id=? AND id<? AND project=? AND chat_id=? AND state='responded'""",
-                    (int(ident[1:]),request['id'],row['project'],row['chat_id'])).fetchone()
-                if not source or item['kind']!='historical_user_statement' or source[0]!=item['observation'] or sha(source[0])!=item['evidence']:return None
+                if not isinstance(ident,str) or ident[:1] not in ('C','X') or not ident[1:].isdigit():return None
+                if ident.startswith('C'):
+                    source=db.execute("""SELECT substr(prompt,1,400) FROM conversation_requests
+                        WHERE id=? AND id<? AND project=? AND chat_id=? AND state='responded'""",
+                        (int(ident[1:]),request['id'],row['project'],row['chat_id'])).fetchone()
+                    if not source or item['kind']!='historical_user_statement':return None
+                else:
+                    if not _cross_allowed(row) or item['kind']!='cross_project_user_statement':return None
+                    source=db.execute("""SELECT substr(prompt,1,400),project FROM conversation_requests
+                        WHERE id=? AND id<? AND project<>? AND project<>'(general)' AND mode='draft_plan' AND state='responded'""",
+                        (int(ident[1:]),request['id'],row['project'])).fetchone()
+                    if not source or sha(source[1])!=item.get('source_project_sha'):return None
+                if source[0]!=item['observation'] or sha(source[0])!=item['evidence']:return None
             return body
     return None
 
@@ -177,10 +224,40 @@ def advice(job_db,request,*,budget=600):
         if not body:return ''
         out=HEADER
         for item in body['selected']:
-            line=canonical({'id':item['id'],'prior_user_statement':item['observation']})+'\n'
+            line=_line(item)
             if len(out)+len(line)<=budget:out+=line
         return out if out!=HEADER else ''
     except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return ''
+
+def _line(item):
+    label='cross_project_example_not_requirement' if item['kind']=='cross_project_user_statement' else 'prior_user_statement'
+    return canonical({'id':item['id'],label:item['observation']})+'\n'
+
+def indexed_advice(job_db,request,section,scoped='',*,budget=600):
+    """Merge already selected relevant records with existing scoped recall.
+    Neither a new inference nor a candidate scan happens in the foreground.
+    """
+    from .memory_governor import INDEXED_HEADER,fit
+    from .memory_observer import ADVISORY_HEADER
+    from .memory_governor import HEADER as GOVERNED_HEADER
+    if not section or section not in request['prompt'] or budget<=len(INDEXED_HEADER):return ''
+    out=INDEXED_HEADER
+    if scoped:
+        for header in (ADVISORY_HEADER,GOVERNED_HEADER,INDEXED_HEADER):
+            if scoped.startswith(header):
+                for line in scoped[len(header):].splitlines():
+                    if line and len(out)+len(line)+1<=budget:out+=line+'\n'
+                break
+    try:
+        body=_checked_saved(job_db,request,section_sha=sha(section))
+        words=terms(section)
+        for item in body['selected'] if body else []:
+            if not words&terms(item['observation']):continue
+            line=_line(item)
+            if len(out)+len(line)<=budget:out+=line
+    except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):
+        pass
+    return fit(out,budget) if out!=INDEXED_HEADER else ''
 
 def observations(job_db):
     """Both societies see scoped recall availability, not unrelated chat text."""

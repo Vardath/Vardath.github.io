@@ -1,3 +1,9 @@
+# V69 — cross-project and indexed conversation memory
+
+The existing dedicated Memory lane now considers bounded earlier named-project draft statements as explicitly historical cross-project examples, only for named-project planning. General chat remains isolated. Exact current request, source identity, source-project digest and excerpt hash are rechecked; foreign requirements do not grant authority. The existing specification index supplies the next exact pending section for background recall, and indexed planning/operation callbacks consume already selected relevant records under the existing context budget. No foreground candidate search or inference; scoped Memory findings are retained, and the context fitter now accepts the existing observer header. Scope remains bounded to recent project draft statements and the first pending indexed section; broader evidence types and native acceptance remain outstanding. No installer.
+
+---
+
 # V68 — Gemma independent multimedia tool preparation
 
 Gemma can now independently choose one of up to three bounded upcoming approved mixed-roadmap multimedia obligations and prepare a typed workflow using actual observed recipe IDs and input paths, or identify a missing producer. The existing native VLM worker, creative lane, resource admission and authority boundaries are reused; no new executable commands or artifact publication are authorized. The durable advisory proposal is bound to the exact roadmap, original specification, task and inventory, and rechecked after inference and at workflow design. An available draft is validated, frozen and independently reviewed under the existing JANUS/Sentinel design path; a rejected draft retains the original JANUS correction attempts. Existing MIDI production and tool/import gates remain. This is preparation, not general-purpose native artifact execution; actual model quality and five-model native acceptance remain outstanding. No installer.

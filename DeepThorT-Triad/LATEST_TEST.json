@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v68-gemma-workflow-preparation",
-  "title": "DeepThorT V68: independent Gemma multimedia workflow preparation",
+  "id": "triad-v69-cross-project-memory",
+  "title": "DeepThorT V69: cross-project and indexed conversation recall",
   "checks": [
     "shared_cap",
     "triad_residency",

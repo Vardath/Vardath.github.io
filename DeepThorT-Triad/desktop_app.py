@@ -3080,16 +3080,19 @@ class DeepThorTDesktop(tk.Tk):
                         if route!='conversation':
                             answer+='\n\nCollaborative review was not run (context, gaming priority or council availability). No online research or job execution was performed by this route.'
                 elif large_spec:
+                    from deepthort_local.conversation_memory import indexed_advice
                     def indexed_memory(row,budget):
-                        return self._governed_memory(original,request['project'],request['chat_id'],
+                        scoped=self._governed_memory(original,request['project'],request['chat_id'],
                             f'indexed-{ident}-{row["ordinal"]}-{row["attempts"]}',row['text'][:500],
                             'indexed_section_planning',section=row['text'],budget=budget,cancelled=cancelled,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        return indexed_advice(self.jobs.path,request,row['text'],scoped,budget=budget)
                     def indexed_operation_memory(phase,identity,focus,section,budget,*,client=None):
-                        return self._governed_memory(original,request['project'],request['chat_id'],
+                        scoped=self._governed_memory(original,request['project'],request['chat_id'],
                             f'indexed-op-{ident}-{identity[:24]}',focus,phase,section=section,
                             budget=budget,cancelled=cancelled,client=client,
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)))
+                        return indexed_advice(self.jobs.path,request,section,scoped,budget=budget) if section else scoped
                     answer, _ = generate_indexed_plan(
                         self.planner_client,self.specifications,ident,session,original,
                         request['project'],max_rounds=MAX_PLAN_ATTEMPTS,
