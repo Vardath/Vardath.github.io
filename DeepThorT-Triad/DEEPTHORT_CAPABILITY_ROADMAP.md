@@ -1,3 +1,13 @@
+# V49 — intelligent cooperation: Gemma reports and verified dependency evidence
+
+V48 passed both Linux and Windows CI and merged. V49 extends project-native Gemma MIDI assignments with the same strict dependency-report alternative used by Granite. Only JANUS-owned project MIDI calls use this protocol; ordinary creative scores retain the existing schema. The exact current approved roadmap, original request, contract, task and lease are checked. An accepted report records an unverified claim and blocks the affected roadmap atomically before publication. Both societies read and independently consider the report against original requirement excerpts. Other work remains eligible. Reports do not confer tool, file or approval authority.
+
+First practical dependency resolution: a Granite missing_dependency/evidence_gap report naming the exact saved direct predecessor path can be answered with actual bounded source bytes. Recheck the current assignment contract, approved write grant, graph edge, saved SHA-256, excluded paths, exact UTF-8 source and available context. Record a unique evidence delivery per attempt; perform one fresh implementation inference with original prompt plus the verified dependency bytes. The normal independent Sentinel review and host publication gates still apply. Unknown, changed, excluded, non-direct, oversized or unapproved inputs are not automatically read or produced. A still-unresolved report follows V48 coordination. This is a narrow evidence-backed recovery path, not a general planning or tool acquisition engine.
+
+Six new regression tests cover native creative report routing using scripted generation, stale/tampered/paused claim refusal, real saved predecessor receipt recovery, unchanged review boundary, and excluded/changed evidence. No native model understanding or runtime project acceptance asserted. Next: general dependency resolution using structured JANUS/Sentinel proposals and exact scoped handoffs; broaden multimedia production beyond MIDI, improve risk-proportionate review and knowledge consolidation. Preserve both independent eleven-core societies, five permanent model roles, shared caps, existing UI and user data. No intermediate updater.
+
+---
+
 # V48 — intelligent cooperation: production dependency messages
 
 V47 passed Linux and Windows CI (the existing speech preflight failed once without diagnostic detail; the same V47 source passed the failed-job rerun) and merged.
