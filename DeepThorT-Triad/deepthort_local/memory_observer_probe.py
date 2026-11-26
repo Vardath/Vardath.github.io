@@ -59,7 +59,7 @@ def exercise(cancelled=lambda:False):
                 return {'status':'failed','detail':'Cancelled task received findings'}
             # Remove the exact evidence after publishing; recheck before delivery.
             with jobs._conn() as db:
-                db.execute("DELETE FROM task_memory WHERE job_id=?",(old,))
+                db.execute("DELETE FROM task_memory_notes WHERE job_id=?",(old,))
             if observer.advice(**args):
                 return {'status':'failed','detail':'Removed historical evidence was reused'}
             return {'status':'passed','detail':'Actual bounded observer with deliberately delayed scripted recall: foreground continued, deduped, late findings delivered only to fresh scoped advisory checkpoint; removed/cancelled/unrelated evidence withheld. No live inference in this probe.',
