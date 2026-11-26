@@ -4707,6 +4707,11 @@ class DeepThorTDesktop(tk.Tk):
                 from deepthort_local.triad_profiles import runtime_path
                 verify_root_cap()
                 item=run_once(ROOT,STATE,client,stopped,available=available,update_python=runtime_path(ROOT))
+                if item is None and not stopped():
+                    from deepthort_local.self_investigation import run_once as investigate
+                    item=investigate(ROOT,STATE,client,stopped,available=available)
+                    if item and item['state']=='investigation_staged':
+                        self.events.put(('log','JANUS, Granite and Sentinel prepared a recurring-fault correction for approved isolated testing. Not installed.'))
                 if item and item['state']=='update_prepared':
                     self.events.put(('log','Self-development update preparation passed isolated diagnostic and rollback checks. No installation authorized.'))
                 if item and item['state']=='staged':
