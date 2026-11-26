@@ -1,3 +1,9 @@
+# V41 persistent recursive societies and delegated work
+
+The owner requires original JANUS and Sentinel cognition to remain distinct from their neural resources. Preserve both eleven-core, seven-faculty processors and their independent persistent histories, and route bounded durable task observations into both. JANUS retains heartbeat during approved long-running tools; Sentinel independently assesses mismatched leases. Existing native acceptance now verifies both society topologies and recent cycle evidence, not neural quality. General project-bound delegation and independent concurrent ready-stage dispatch remain next.
+
+---
+
 # V40 reviewed model-authored team delegation
 
 Extends V39 independent staged conversation lane with bounded JANUS-authored DAG, Sentinel pre/post reviews, Granite design/specification and Gemma MIDI adapters, exact dependency receipts and host delivery. Explicit typed staged requests only; no project writes or new authority. One active batch and sequential ready-stage dispatch; general approved project work and concurrency remain open. Preserve the full approved workflow doctrine and native acceptance requirements.
