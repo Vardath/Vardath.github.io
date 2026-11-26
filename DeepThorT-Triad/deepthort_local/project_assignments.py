@@ -184,7 +184,7 @@ class ProjectAssignments:
             row,contract=self._load(db,attempt,('committing',))
             saved=db.execute("SELECT state,evidence_sha256 FROM nodes WHERE job_id=? AND node=?",
                              (job_id,f"file:{contract['step_id']}")).fetchone()
-            if row[0]!=job_id or saved!=('saved',source_sha):
+            if row[0]!=job_id or row[5]!=source_sha or saved!=('saved',source_sha):
                 raise GraphError('Host source receipt missing for assignment')
             db.execute("UPDATE project_assignments_v43 SET state='saved',updated_at=CURRENT_TIMESTAMP WHERE attempt=?",(attempt,))
 
@@ -206,3 +206,17 @@ class ProjectAssignments:
             return [{'attempt':r[0],'step_id':r[1],'state':r[2],'review_mode':r[3]}
                     for r in db.execute("""SELECT attempt,step_id,state,review_mode FROM project_assignments_v43
                         WHERE job_id=? ORDER BY rowid DESC LIMIT 24""",(job_id,))]
+
+class ProjectRoleClient:
+    """Explicit implementation-model adapter; cache only exact scoped calls."""
+    def __init__(self,client,contract):
+        if contract['assignee']!='implementation':raise GraphError('Wrong production role')
+        self.client=client
+        self.scope=canonical_sha(contract)
+    def _session(self,session):
+        return 'project-role-'+canonical_sha([self.scope,session])[:48]
+    def chat(self,session,prompt,max_tokens=768):
+        return self.client.chat_as('implementation',self._session(session),prompt,max_tokens=max_tokens)
+    def completed_exchange(self,session,prompt):
+        lookup=getattr(self.client,'completed_exchange',None)
+        return lookup(self._session(session),prompt) if callable(lookup) else None
