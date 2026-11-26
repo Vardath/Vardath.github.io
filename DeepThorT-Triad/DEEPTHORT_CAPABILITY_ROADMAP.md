@@ -1,3 +1,9 @@
+# V40 reviewed model-authored team delegation
+
+Extends V39 independent staged conversation lane with bounded JANUS-authored DAG, Sentinel pre/post reviews, Granite design/specification and Gemma MIDI adapters, exact dependency receipts and host delivery. Explicit typed staged requests only; no project writes or new authority. One active batch and sequential ready-stage dispatch; general approved project work and concurrency remain open. Preserve the full approved workflow doctrine and native acceptance requirements.
+
+---
+
 # V39 durable delegation progress
 
 First independent production lane now uses persistent role-tagged stages and dependency leases, with scoped composition and host validation of the existing MIDI adapter. Unrelated foreground conversation heads and implementation work can continue; same-thread order and existing approvals remain. Staged-only, not general autonomous JANUS delegation or parallel project writes. Interrupted tasks require explicit retry. Existing native acceptance remains required. Continue the approved WORKFLOW_DOCTRINE.md in order.
