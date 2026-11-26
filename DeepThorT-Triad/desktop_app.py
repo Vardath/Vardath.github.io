@@ -1004,6 +1004,9 @@ class DeepThorTDesktop(tk.Tk):
         def video_render_probe():
             from deepthort_local.render_probe import native_exercise
             return native_exercise(cancelled=lambda:cancel.is_set() or self.disk_gate.gaming())
+        def workflow_doctrine_probe():
+            from deepthort_local.workflow_doctrine_probe import exercise
+            return exercise(health=health,cancelled=cancel.is_set)
         def memory_observer_probe():
             from deepthort_local.memory_observer_probe import exercise
             return exercise(cancelled=cancel.is_set)
@@ -1024,7 +1027,7 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        probes={'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
