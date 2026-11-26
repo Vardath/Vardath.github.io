@@ -4,6 +4,10 @@ on:
     paths:
       - 'DeepThorT-Triad/**'
       - '.github/workflows/deepthort-triad.yml'
+  pull_request:
+    paths:
+      - 'DeepThorT-Triad/**'
+      - '.github/workflows/deepthort-triad.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -54,6 +58,12 @@ jobs:
           ffprobe -version
       - run: python -m unittest discover -s tests -p test_video_render_v30.py -v
       - run: python -m unittest discover -s tests -p test_workflow_acquisition_v61.py -v
+      - run: python -m unittest discover -s tests -p test_chat_capabilities.py -v
+      - run: python -m unittest discover -s tests -p test_chat_agent.py -v
+      - run: python -m unittest discover -s tests -p test_residency_wait.py -v
+      - run: python -m unittest discover -s tests -p test_multimedia_install.py -v
+      - run: python -m unittest discover -s tests -p test_multimedia_core_probe.py -v
+      - run: python -m unittest discover -s tests -p test_creative_core_v34.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -126,6 +136,20 @@ jobs:
           python -m unittest discover -s tests -p test_mcp_stdio_v20.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python mcp_stdio_preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Conversational capability and fourth-core regressions
+        run: |
+          python -m unittest discover -s tests -p test_chat_capabilities.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_chat_agent.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_residency_wait.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_multimedia_install.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_multimedia_core_probe.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_creative_core_v34.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Install pinned native runtime in isolated venv
         run: |
