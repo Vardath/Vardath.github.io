@@ -14,6 +14,10 @@ PROFILES={
  'janus':('SmolLM3-3B INT4','HarmenWessels/SmolLM3-3B-int4-symg128-ov','2fa313c463ddcaac532d0ddfc6daa76b08991573',1_600_000_000),
  'sentinel':('Qwen3-4B INT4','OpenVINO/Qwen3-4B-int4-ov','b467368d16b75df14055562fe927ae8e1f15f7ef',2_100_000_000),
 }
+# Keep original three-role acceptance contract stable; memory is optional at startup.
+MEMORY_PROFILE=('Qwen2.5-1.5B Instruct INT4','OpenVINO/Qwen2.5-1.5B-Instruct-int4-ov',
+                'bc0390db9d2caa08e5ab2ba4010e0bfe2f969686',850_000_000)
+ALL_PROFILES={**PROFILES,'memory':MEMORY_PROFILE}
 REQUIRED=frozenset(('config.json','tokenizer_config.json','openvino_model.xml','openvino_model.bin',
     'openvino_tokenizer.xml','openvino_tokenizer.bin','openvino_detokenizer.xml','openvino_detokenizer.bin'))
 OPTIONAL=frozenset(('generation_config.json','openvino_config.json','tokenizer.json','added_tokens.json',
@@ -21,17 +25,18 @@ OPTIONAL=frozenset(('generation_config.json','openvino_config.json','tokenizer.j
     'chat_template_original.jinja','README.md','LICENSE','LICENSE.txt'))
 def model_path(role,root=ROOT):
     # Keep the earlier Sentinel and DeepSeek checkpoints available for rollback.
-    PROFILES[role]
+    ALL_PROFILES[role]
     folder={'janus':'janus-smollm3','sentinel':'sentinel-qwen3-4b'}.get(role,role)
     return Path(root)/'models'/MODEL_SET_DIR/folder
 def runtime_path(root=ROOT):
     return Path(root)/'runtime'/'openvino-env'/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
 def role_for_council(role):
+    if role.upper()=='MEMORY_SELECT':return 'memory'
     return 'sentinel' if role.upper().startswith('SENTINEL') else 'janus'
 def installed_files(role,root=ROOT):
     base=model_path(role,root)
     data=json.loads((base/'verified-install.json').read_text(encoding='utf-8'))
-    p=PROFILES[role]
+    p=ALL_PROFILES[role]
     if data.get('repo')!=p[1] or data.get('revision')!=p[2]:raise ValueError('Wrong installed model revision')
     entries=data['files']
     if not isinstance(entries,dict) or not REQUIRED<=entries.keys() or not entries.keys()<=REQUIRED|OPTIONAL:
@@ -46,7 +51,7 @@ def installed_files(role,root=ROOT):
     return entries
 def smoke_verified(role,root=ROOT):
     record=json.loads((model_path(role,root)/'native-smoke.json').read_text(encoding='utf-8'))
-    p=PROFILES[role]
+    p=ALL_PROFILES[role]
     return (record.get('role')==role and record.get('repo')==p[1]
             and record.get('revision')==p[2] and record.get('runtime')==RUNTIME_VERSION
             and record.get('native_generation')=='passed'
@@ -60,3 +65,9 @@ def ready(root=ROOT):
     except (OSError,ValueError,KeyError,TypeError):return False
 def total_weights(root=ROOT):
     return sum(sum(m['size'] for m in installed_files(r,root).values()) for r in PROFILES)
+
+def memory_installed(root=ROOT):
+    try:
+        return bool(installed_files('memory',root) and smoke_verified('memory',root))
+    except (OSError,ValueError,KeyError,TypeError,AttributeError):
+        return False
