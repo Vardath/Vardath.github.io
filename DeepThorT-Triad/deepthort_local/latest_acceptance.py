@@ -61,7 +61,7 @@ def check_record(name: str, status: str, detail: str, *, evidence: dict | None =
                                        'council_busy', 'pending_count', 'count',
                                        'available_gib', 'installed_gib', 'elapsed_seconds',
                                        'local_role', 'http_status', 'thread_cpu_cap',
-                                       'janus_cycle','janus_paused','age_seconds','models','role_results','simultaneous_roles','job_cap_bytes','available_bytes',
+                                       'janus_cycle','sentinel_cycle','janus_paused','age_seconds','models','role_results','simultaneous_roles','job_cap_bytes','available_bytes',
                                        'individual_results','concurrent_results','serial_memory_mode','memory_retries','collaboration_stages','artifact_sha256','production_stages','memory_cases'}}}
 
 
