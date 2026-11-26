@@ -124,6 +124,35 @@ def midi(score):
     return b'MThd'+struct.pack('>IHHH',6,0,1,480)+b'MTrk'+struct.pack('>I',len(track))+track
 
 
+def inspect_midi(raw):
+    """Decode exactly the bounded monophonic profile emitted by midi(), not arbitrary SMF."""
+    if not isinstance(raw,bytes) or not 33<=len(raw)<=4096:
+        raise ValueError('MIDI outside supported score profile')
+    if raw[:18]!=b'MThd'+struct.pack('>IHHH',6,0,1,480)+b'MTrk' or int.from_bytes(raw[18:22],'big')!=len(raw)-22:
+        raise ValueError('Invalid single-track MIDI header')
+    if raw[22:26]!=b'\x00\xff\x51\x03' or raw[29:32]!=b'\x00\xc0\x00':
+        raise ValueError('Missing canonical tempo and program')
+    tempo=int.from_bytes(raw[26:29],'big')
+    if not tempo:raise ValueError('Invalid tempo')
+    bpm=round(60_000_000/tempo)
+    pos=32;notes=[]
+    while raw[pos:]!=b'\x00\xff\x2f\x00':
+        if len(notes)>=48 or pos+8>len(raw) or raw[pos:pos+2]!=b'\x00\x90' or raw[pos+3]!=80:
+            raise ValueError('Invalid canonical MIDI note')
+        pitch=raw[pos+2];pos+=4;duration=0
+        for _ in range(2):
+            if pos>=len(raw):raise ValueError('Truncated MIDI duration')
+            value=raw[pos];pos+=1
+            duration=(duration<<7)|(value&127)
+            if not value&128:break
+        else:raise ValueError('MIDI duration too large')
+        if raw[pos:pos+3]!=bytes((0x80,pitch,0)):
+            raise ValueError('Mismatched MIDI note-off')
+        pos+=3;notes.append([pitch,duration])
+    score=parse_score(json.dumps({'bpm':bpm,'notes':notes}))
+    if midi(score)!=raw:raise ValueError('Noncanonical or malformed MIDI bytes')
+    return score
+
 def budget_ok(cap,available,total,peak,*,extra=0):
     # Conservative admission: historical peak bounds observed root commit,
     # not an exact current working set. Extra overlap reserve is additional
