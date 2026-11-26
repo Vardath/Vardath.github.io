@@ -4301,7 +4301,7 @@ class DeepThorTDesktop(tk.Tk):
                         self.project_midi.report_dependency(lease,contract,exc.report)
                         self.events.put(('project_midi_report',lease,str(exc)))
                         return
-                    except (ValueError,OSError) as report_error:
+                    except Exception as report_error:
                         exc=report_error
                 self.project_midi.fail(lease,str(exc))
                 self.events.put(('project_midi_error',lease,str(exc)))
