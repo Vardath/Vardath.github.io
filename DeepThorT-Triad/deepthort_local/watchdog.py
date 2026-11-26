@@ -441,24 +441,34 @@ class JanusSentinel:
                       ['Check that JANUS Front tracks a real active goal','Check outcomes against job evidence'])
         reflection=self.store.reflect(observation=observation,focus=focus,decision=decision,
                                       goal=goal,alternatives=alternatives)
-        # Evaluate Granite or Gemma dependency claims independently of JANUS's answer.
-        # These are asynchronous advisory consultations, not approval gates.
+        # Review exact pending JANUS corrections before general advisory work.
+        # Sentinel never substitutes its own proposal or grants authority.
         pending_report=None
         if not self.stopping and not observation['game_detected'] and not j.get('paused'):
+            from .corrective_coordination import pending_review,review,invalidate_review
+            from .worker_reports import still_current,counsel_fields
+            correction=pending_review(self.jobs_db)
             seen={r['evidence_key'] for r in self.store.recommendations(40)}
-            pending_report=next((r for r in worker_reports['reports'] if 'worker-'+r['receipt_sha'] not in seen),None)
+            pending_report=(correction[0] if correction else
+                next((r for r in worker_reports['reports'] if 'worker-'+r['receipt_sha'] not in seen),None))
             if (pending_report and (self._counsel_thread is None or not self._counsel_thread.is_alive())
                     and time.monotonic()-self._last_counsel_attempt>=60):
-                from .worker_reports import still_current,counsel_fields
                 self._last_counsel_attempt=time.monotonic()
                 report_id=pending_report['receipt_sha']
                 def challenge():
                     if not still_current(self.jobs_db,report_id):return
                     try:problem,evidence=counsel_fields(pending_report,self.jobs_db)
                     except (ValueError,OSError):return
+                    if correction:
+                        row=correction[1]
+                        evidence='EXACT JANUS CORRECTIVE PROPOSAL: '+row['proposal']+'\n'+evidence
                     answer=self._counsel.request(society='sentinel',goal=pending_report['focus'],
-                        problem=problem,evidence=evidence,worker_report=True)
+                        problem=problem,evidence=evidence,worker_report=True,coordination='review' if correction else '')
                     if answer and not self.stopping and not JanusStore(self.janus_db).status()['paused'] and still_current(self.jobs_db,report_id):
+                        if correction:
+                            try:review(self.jobs_db,pending_report,row,answer)
+                            except ValueError:invalidate_review(self.jobs_db,row)
+                            self.store.recommend('coordination-review-'+report_id,problem,answer,'local_model')
                         self.store.recommend('worker-'+report_id,problem,answer,'local_model')
                 self._counsel_thread=threading.Thread(target=challenge,name='Sentinel-worker-challenge',daemon=True)
                 self._counsel_thread.start()
