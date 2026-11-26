@@ -2842,7 +2842,18 @@ class DeepThorTDesktop(tk.Tk):
                             stage=lambda message:self.events.put(('conversation_stage',ident,message)),
                             cancelled=cancelled,amendments=amendments,memory_chat=request['chat_id'])
                 if request['mode']=='chat' and not large_spec:
-                    answer=self.client.chat(session,prompt,max_tokens=128,visible_prompt=request['prompt'])
+                    from deepthort_local.chat_capabilities import chat_context
+                    prompt, chat_tokens, route, sources = chat_context(
+                        prompt, original, ROOT, project=request['project'],
+                        inventory=getattr(self,'inventory',None),
+                        model_ready=bool(getattr(self,'node_ready',False)),
+                        max_chars=MAX_INFERENCE_PROMPT)
+                    record(STATE,'desktop','chat_capability_context',
+                           request_id=ident,route=route,source_modules=sources,
+                           model_input_characters=len(prompt),max_tokens=chat_tokens,
+                           original_preserved=True,execution_authorized=False)
+                    if cancelled():return
+                    answer=self.client.chat(session,prompt,max_tokens=chat_tokens,visible_prompt=request['prompt'])
                 elif large_spec:
                     def indexed_memory(row,budget):
                         return self._governed_memory(original,request['project'],request['chat_id'],
