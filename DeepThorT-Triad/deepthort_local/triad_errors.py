@@ -3,7 +3,7 @@ import json
 import re
 from urllib.error import HTTPError
 
-CODES=frozenset(('memory_pressure','context_limit','native_error','invalid_request','transport_error','worker_exit','reasoning_budget','empty_answer'))
+CODES=frozenset(('memory_pressure','context_limit','native_error','invalid_request','transport_error','worker_exit','reasoning_budget','empty_answer','worker_busy'))
 WORDS={'implementation':'CODE_READY','janus':'PLAN_READY','sentinel':'REVIEW_READY'}
 
 def synthetic(role,messages):

@@ -1,3 +1,9 @@
+# V38 intelligent operating doctrine
+
+Owner approved the full workflow design and individual role responsibilities. WORKFLOW_DOCTRINE.md is the current consolidated contract; earlier sections remain historical. V38 binds fixed roles at native inference, versions council advice with role identity, adds independent bounded role inboxes and protected-serial priority/aging, binds existing MIDI handoffs to a typed immutable assignment, and delivers completed scoped memory advice to JANUS planning and Sentinel. Keep all previous acceptance checks plus new structural doctrine check. General agent task queues, dependency-aware concurrent project dispatch, adaptive resources, proportional review, wider creative production and self-update remain implementation priorities after native acceptance. No claim of finished five-agent autonomous operation.
+
+---
+
 # V37 progress and approved resource revision
 
 The shared Windows cap is now 50% CPU / up to 65% RAM-sized aggregate commit, superseding the historical lower ceilings below. Keep the adaptive lower launch budget, foreground reserve and inherited containment. This is a ceiling, not an allocation; no guaranteed speedup. Asynchronous fifth-model memory observation stays independent of the main workflow. V37 strengthens negative relevance discrimination and handles complete Gemma response wrappers with one bounded correction. No relaxed native acceptance. All 19 checks remain. Native correctness and measured five-model operation still require evidence from the user's machine. Preserve the full-creator and self-development roadmap.

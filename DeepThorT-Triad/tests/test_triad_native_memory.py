@@ -37,13 +37,16 @@ class NativeMemoryTests(unittest.TestCase):
 
     def test_smollm3_mode_preserves_user_and_system_text(self):
         messages=[{'role':'system','content':'Preserve the original specification.'},{'role':'user','content':'Plan the next test.'}]
+        from deepthort_local.agent_doctrine import role_instruction
         prepared=model_messages('janus',messages)
-        self.assertEqual(prepared[0]['content'],'Preserve the original specification.\n/no_think')
+        self.assertTrue(prepared[0]['content'].startswith(role_instruction('janus')))
+        self.assertTrue(prepared[0]['content'].endswith('Preserve the original specification.\n/no_think'))
         self.assertEqual(messages[0]['content'],'Preserve the original specification.')
         self.assertEqual(prepared[1],messages[1])
-        self.assertEqual(model_messages('sentinel',messages),messages)
-        self.assertEqual(model_messages('implementation',messages),messages)
-        self.assertEqual(model_messages('janus',messages[1:])[0],{'role':'system','content':'/no_think'})
+        for role in ('sentinel','implementation','memory'):
+            self.assertTrue(model_messages(role,messages)[0]['content'].startswith(role_instruction(role)))
+            self.assertEqual(model_messages(role,messages)[1],messages[1])
+        self.assertEqual(model_messages('janus',messages[1:])[0],{'role':'system','content':role_instruction('janus')+'\n/no_think'})
 
     def test_bounded_reasoning_mode_only_for_long_sentinel_requests(self):
         for tokens in (16,32,96,192,511):

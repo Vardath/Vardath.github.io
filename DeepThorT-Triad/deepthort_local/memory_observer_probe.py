@@ -12,7 +12,7 @@ from .reasoning_council import sha
 
 def exercise(cancelled=lambda:False):
     entered=threading.Event();release=threading.Event();published=threading.Event()
-    completed=threading.Event();calls=[]
+    completed=threading.Event();calls=[];recipients=[]
     with tempfile.TemporaryDirectory(prefix='triad-background-memory-') as tmp:
         jobs=JobStore(Path(tmp)/'jobs.sqlite3')
         project=str(Path(tmp)/'space-game');chat='fixture';original='Create a space game. Keep ships player-owned.'
@@ -28,6 +28,7 @@ def exercise(cancelled=lambda:False):
             return json.dumps({'keep':[r['id'] for r in rows if r['observation']==note],'reason':'Relevant observed failure'})
         def report(event,**kw):
             if event=='memory_observer_findings':published.set()
+            if event=='memory_observer_delivered':recipients.append(kw['recipient'])
         observer=MemoryObserver(path=jobs.path,select=select,available=lambda:True,report=report)
         params=dict(project=project,chat_id=chat,original=original,job_id=job,
                     focus='Repair ship ownership after loading',phase='implementation')
@@ -51,6 +52,8 @@ def exercise(cancelled=lambda:False):
             advice=observer.advice(**args)
             if not advice.startswith(ADVISORY_HEADER) or note not in advice or len(calls)!=1:
                 return {'status':'failed','detail':'Late report absent or duplicate observations were not coalesced'}
+            if observer.advice(**args,recipient='janus')!=advice or recipients!=['sentinel','janus'] or len(calls)!=1:
+                return {'status':'failed','detail':'Same scoped evidence not delivered to both existing role checkpoints'}
             if observer.advice(**{**args,'focus':'Repair music playback'}) or observer.advice(**{**args,'chat_id':'other'}):
                 return {'status':'failed','detail':'Unrelated operation or another chat received a finding'}
             if observer.advice(**{**args,'original':original+' amended'}) or observer.advice(**{**args,'job_id':old}):
@@ -62,7 +65,7 @@ def exercise(cancelled=lambda:False):
                 db.execute("DELETE FROM task_memory_notes WHERE job_id=?",(old,))
             if observer.advice(**args):
                 return {'status':'failed','detail':'Removed historical evidence was reused'}
-            return {'status':'passed','detail':'Actual bounded observer with deliberately delayed scripted recall: foreground continued, deduped, late findings delivered only to fresh scoped advisory checkpoint; removed/cancelled/unrelated evidence withheld. No live inference in this probe.',
+            return {'status':'passed','detail':'Actual bounded observer with deliberately delayed scripted recall: foreground continued, deduped, late findings delivered to fresh scoped JANUS and Sentinel advisory checkpoints; removed/cancelled/unrelated evidence withheld. No live inference in this probe.',
                     'evidence':{'count':1}}
         except Exception as exc:
             return {'status':'failed','detail':'Background memory fixture: '+type(exc).__name__+': '+str(exc)[:180]}

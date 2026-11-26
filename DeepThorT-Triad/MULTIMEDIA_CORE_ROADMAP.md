@@ -1,3 +1,9 @@
+# V38 role and typed handoff
+
+Gemma receives the host-owned multimedia intelligence role and team responsibilities on each native creative task. Existing MIDI adapter now persists an exact assignment contract (requester, multimedia assignee, scope, brief hash, doctrine hash, expected staged MIDI and acceptance), checks the contract and exact prompt in the worker, and returns a hash-bound artifact receipt. No automatic publication or general multi-agent asset dispatch yet. Native MIDI, all-five overlap and media capabilities beyond existing adapters must still be verified. Continue generic delegation and approved asset integration after native repairs.
+
+---
+
 # V37 native reliability update
 
 V36 reached actual Gemma native generation under the cap, but strict score parsing failed. V37 recognises complete documented thought-channel and JSON fence wrappers; rejects incomplete reasoning, arbitrary prose and extra objects, retries malformed output once with the original specification. Correctly structured but wrong musical output still fails the exact acceptance oracle. Owner approved 50% shared CPU and up to 65% RAM-sized aggregate commit; keep Gemma's own 7 GiB nested allowance and all foreground/admission protections. Native score generation and simultaneous operation remain unverified until real Windows results.

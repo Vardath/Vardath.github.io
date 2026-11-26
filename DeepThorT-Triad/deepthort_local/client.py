@@ -180,12 +180,8 @@ class LocalModelClient:
         if not 1 <= max_tokens <= 768: raise ValueError('max_tokens must be 1..768')
         role=triad_role or self.role
         if role not in PROFILES:raise ValueError('Unknown Triad role')
-        system=('You are Sentinel, an independent verifier. Follow the requested review output format. '
-                'Compare actual evidence to requirements; never claim unverified execution.'
-                if role=='sentinel' else
-                'You are the dedicated memory relevance specialist. Select only evidence for the exact requested operation; do not invent facts or authorize actions.'
-                if role=='memory' else
-                'You are an offline coding assistant. Be concise, precise, and never claim unverified code execution.')
+        # The native worker binds its trusted role independently of caller instructions.
+        system='Perform the current scoped task in the requested output format.'
         from .context_compaction import select_history
         # Explicit council calls have their full evidence packet already.
         # Never carry older responses into a supposedly independent review.

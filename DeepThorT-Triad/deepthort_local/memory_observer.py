@@ -115,13 +115,14 @@ class MemoryObserver:
                     while len(self._attempted)>MAX_REPORTS*4:self._attempted.popitem(last=False)
                     self._active=None
 
-    def advice(self, *, project,chat_id,original,focus,job_id=0,budget=600,cancelled=None):
-        """Only used by an EXISTING Sentinel checkpoint; never starts inference.
+    def advice(self, *, project,chat_id,original,focus,job_id=0,budget=600,cancelled=None,recipient='sentinel'):
+        """Used by existing JANUS planning or Sentinel review; never starts inference.
 
         Late reports may be relevant to later operations in the same task.
         Require original scope and fresh authoritative candidate identity at
         the current focus; Sentinel independently weighs present relevance.
         """
+        if recipient not in ('janus','sentinel'):raise ValueError('Unknown memory advice recipient')
         if budget<=len(ADVISORY_HEADER) or (cancelled and cancelled()):return ''
         binding=identity(project,chat_id,original,job_id)
         with self._cv:
@@ -145,7 +146,7 @@ class MemoryObserver:
                 if len(out)+len(line)<=budget:
                     out+=line;seen.add(ident)
         if not seen or (cancelled and cancelled()):return ''
-        self._emit('memory_observer_delivered',count=len(seen),binding_sha=sha(canonical(binding)))
+        self._emit('memory_observer_delivered',count=len(seen),binding_sha=sha(canonical(binding)),recipient=recipient)
         return out
 
     def close(self):
