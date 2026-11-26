@@ -102,6 +102,8 @@ class TaskGraphStore:
                     job_id INTEGER NOT NULL, event TEXT NOT NULL,
                     note TEXT NOT NULL, stamp TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
                 CREATE INDEX IF NOT EXISTS graph_events_job ON graph_events(job_id,id);
+                CREATE TABLE IF NOT EXISTS explicit_graph_v60(
+                    job_id INTEGER PRIMARY KEY,plan_sha TEXT NOT NULL,edges_sha TEXT NOT NULL);
             ''')
 
     @contextmanager
@@ -142,6 +144,68 @@ class TaskGraphStore:
             raise GraphError('No v42 graph for this job; no unattended graph action')
         if row[0] != project or row[1] != plan or row[2] != 'active':
             raise GraphError('Approved graph changed, was invalidated or belongs to another project')
+        marker=db.execute("SELECT plan_sha,edges_sha FROM explicit_graph_v60 WHERE job_id=?",(job['id'],)).fetchone()
+        if marker:
+            expected=self._explicit_edges(job['id'],steps)
+            actual=db.execute("""SELECT job_id,node,depends_on FROM edges WHERE job_id=?
+                AND depends_on NOT LIKE 'req:%' ORDER BY node,depends_on""",(job['id'],)).fetchall()
+            if expected is None or marker!=(plan,_hash(sorted(expected))) or sorted(actual)!=sorted(expected):
+                raise GraphError('Explicit approved dependency graph changed')
+
+    @staticmethod
+    def _explicit_edges(jobid,steps):
+        from .requirements_intelligence import complete_dependencies
+        deps=complete_dependencies(steps)
+        if deps is None:return None
+        paths={s['path']:f"file:{s['id']}" for s in steps}
+        result=[(jobid,'tool:verify','approval'),(jobid,'verify','tool:verify'),(jobid,'evidence','verify')]
+        for path,required in deps.items():
+            node=paths[path]
+            result.append((jobid,'verify',node))
+            result.append((jobid,node,'approval'))
+            result.extend((jobid,node,paths[dependency]) for dependency in required)
+        return result
+
+    def explicit(self,jobid):
+        with self._db() as db:
+            return bool(db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(jobid,)).fetchone())
+
+    def ready_step(self,job,steps,*,preferred=None):
+        """Select real dependency-ready work, not arbitrary sequence position.
+
+        Rank ready stages by the number of remaining direct consumers, with
+        approved order as deterministic tie-break. A reviewed retry can pin
+        its exact stage. All actual dependency hashes are checked here and
+        again by the production contract before publication.
+        """
+        with self._db() as db:
+            self._assert_bound(db,job,steps)
+            explicit=db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(job['id'],)).fetchone()
+            planned=[s for s in steps if s['state']=='planned']
+            if not planned:return None
+            if not explicit:
+                if preferred is not None and preferred!=planned[0]['id']:return None
+                return planned[0]
+            available=[]
+            pending={f"file:{s['id']}" for s in planned}
+            project=Path(job['project']).resolve(strict=True)
+            for step in planned:
+                if preferred is not None and step['id']!=preferred:continue
+                node=f"file:{step['id']}"
+                exact=db.execute("SELECT kind,title,state FROM nodes WHERE job_id=? AND node=?",(job['id'],node)).fetchone()
+                if exact!=('artifact',step['path'],'waiting'):continue
+                deps=db.execute("""SELECT n.kind,n.title,n.state,n.evidence_sha256 FROM edges e
+                    LEFT JOIN nodes n ON n.job_id=e.job_id AND n.node=e.depends_on
+                    WHERE e.job_id=? AND e.node=?""",(job['id'],node)).fetchall()
+                if not deps or any(d[2] not in ('approved','saved','available','passed','linked') for d in deps):continue
+                try:
+                    if any(kind=='artifact' and (state!='saved' or not evidence or
+                        _sha(_safe_auto_path(project,title)[1])!=evidence) for kind,title,state,evidence in deps):continue
+                except (OSError,ValueError):continue
+                consumers=db.execute("SELECT node FROM edges WHERE job_id=? AND depends_on=?",(job['id'],node)).fetchall()
+                impact=sum(x[0] in pending for x in consumers)
+                available.append((-impact,step['sequence'],step))
+            return min(available,key=lambda x:(x[0],x[1]))[2] if available else None
 
     @staticmethod
     def _event(db, jobid, event, note):
@@ -173,14 +237,19 @@ class TaskGraphStore:
                            [(jobid,*x) for x in nodes])
             edges=[(jobid,'tool:verify','approval'),(jobid,'verify','tool:verify'),
                    (jobid,'evidence','verify')]
-            previous = 'approval'
-            for step in steps:
-                node = f"file:{step['id']}"
-                edges.append((jobid,node,previous))
-                edges.append((jobid,'verify',node))
-                previous=node
+            explicit=self._explicit_edges(jobid,steps)
+            if explicit is not None:
+                edges=explicit
+                db.execute("INSERT INTO explicit_graph_v60 VALUES(?,?,?)",(jobid,plan,_hash(sorted(edges))))
+            else:
+                previous = 'approval'
+                for step in steps:
+                    node = f"file:{step['id']}"
+                    edges.append((jobid,node,previous))
+                    edges.append((jobid,'verify',node))
+                    previous=node
             db.executemany('INSERT INTO edges(job_id,node,depends_on) VALUES(?,?,?)',edges)
-            self._event(db,jobid,'created',f'{len(steps)} exact approved artifacts; tool verification pending')
+            self._event(db,jobid,'created',f'{len(steps)} exact approved artifacts; '+('explicit dependencies' if explicit is not None else 'conservative legacy order')+'; tool verification pending')
 
     def attach_hierarchy(self,job,steps,provenance:dict):
         """Attach only existing persisted requirement/file links to the job DAG.
@@ -248,7 +317,7 @@ class TaskGraphStore:
 
     def _dependencies(self,db,jobid,node):
         return db.execute('SELECT e.depends_on,n.state FROM edges e '
-                          'JOIN nodes n ON n.job_id=e.job_id AND n.node=e.depends_on '
+                          'LEFT JOIN nodes n ON n.job_id=e.job_id AND n.node=e.depends_on '
                           'WHERE e.job_id=? AND e.node=?',(jobid,node)).fetchall()
 
     def _ensure_deps(self,db,jobid,node,allow=('approved','saved','available','passed','linked')):
@@ -339,6 +408,8 @@ class TaskGraphStore:
             if not db.execute('SELECT 1 FROM nodes WHERE job_id=? AND node=?',
                               (job['id'],node)).fetchone():
                 raise GraphError('Action target does not exist in approved graph')
+            if kind in ('write','retain') and db.execute("SELECT 1 FROM explicit_graph_v60 WHERE job_id=?",(job['id'],)).fetchone():
+                self._ensure_deps(db,job['id'],node)
             db.execute('INSERT INTO leases(lease_id,job_id,kind,node,status) '
                        'VALUES(?,?,?,?,?)',(lease,job['id'],kind,node,'running'))
             self._event(db,job['id'],'lease:started',f'{kind} on {node}, lease {lease[:10]}')

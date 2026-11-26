@@ -66,7 +66,12 @@ def declared_dependencies(steps: list[dict]) -> dict[str, tuple[str,...]]:
         raise PlanError('Repeated file paths in dependency analysis')
     graph={s['path']:[] for s in steps}
     for step in steps:
-        for raw in _DECLARATION.findall(step['description']):
+        declarations=_DECLARATION.findall(step['description'])
+        if any(raw.strip().casefold()=='none' for raw in declarations):
+            if len(declarations)!=1:
+                raise PlanError('Independent declaration cannot be combined with file dependencies')
+            continue
+        for raw in declarations:
             for entry in raw.split(','):
                 candidate=entry.strip().replace('\\','/')
                 if not candidate:
@@ -79,6 +84,23 @@ def declared_dependencies(steps: list[dict]) -> dict[str, tuple[str,...]]:
                 if dependency not in graph[step['path']]:
                     graph[step['path']].append(dependency)
     return {k:tuple(v) for k,v in graph.items()}
+
+
+def complete_dependencies(steps):
+    """Opt in to a real dependency graph only with an explicit complete map.
+
+    Undeclared dependencies remain unknown, not independent. Legacy plans
+    and cross-milestone paths keep their existing conservative boundaries.
+    """
+    if not steps or not all(len(_DECLARATION.findall(s['description']))==1 for s in steps):return None
+    known={s['path'].casefold() for s in steps}
+    for s in steps:
+        raw=_DECLARATION.findall(s['description'])[0].strip()
+        if raw.casefold()=='none':continue
+        if any(entry.strip().replace('\\','/').casefold() not in known for entry in raw.split(',')):
+            return None
+    _,graph=dependency_order(steps)
+    return graph
 
 
 def dependency_order(steps: list[dict]) -> tuple[list[dict], dict[str,tuple[str,...]]]:
