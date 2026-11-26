@@ -276,16 +276,9 @@ class DeepThorTDesktop(tk.Tk):
                 return False
             health=getattr(self,'last_server_health',None) or {}
             memory=health.get('memory_model') or {}
-            # Do not start optional recall while an on-demand specialist owns the
-            # shared creative lane, or a required native caller is waiting.
-            creative=getattr(self,'_creative_lane_thread',None)
-            if creative and creative.is_alive():return False
-            slots=health.get('admission_slots',0)
-            active=sum(bool(row.get('generating')) for row in (health.get('models') or {}).values())
-            return bool(health.get('ready') and health.get('serial_memory_mode') is False
-                        and type(slots) is int and slots>=2 and active<slots-1
-                        and health.get('admission_waiting')==0
-                        and memory.get('resident') and not memory.get('busy'))
+            # Recall is required background work, not a foreground dependency.
+            # Submit even in protected serial mode; the broker owns fair admission.
+            return bool(health.get('ready') and memory.get('resident') and not memory.get('busy'))
         def background_memory_select(evidence,prompt,tokens):
             if not background_memory_available():raise RuntimeError('Memory observation deferred')
             client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
