@@ -12,10 +12,10 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 |---:|---:|---|---|
 | 1 | 45 | Git commit management | Partial — reviewed staged and selected-file commits; Linux/Windows green; initial/merge commits and native acceptance outstanding |
 | 2 | 46 | Git branch management | Source extended: reviewed local create/list/switch/rename/merged-only delete. Pass 003 Linux/Windows green and merged. Native desktop acceptance outstanding. |
-| 3 | 47 | Git worktree management | Source implemented: bounded local inventory, reviewed creation and clean-only linked removal; Pass 004 CI pending. Native acceptance and autonomous worktree assignment outstanding. |
+| 3 | 47 | Git worktree management | Source implemented: bounded local inventory, reviewed creation and clean-only linked removal; Pass 004 Linux/Windows green and merged. Native acceptance and autonomous worktree assignment outstanding. |
 | 4 | 239 | Interactive code editing | Source extended: direct selected-file editing, undo/redo/find, exact diff review and stale-source guarded backup save; existing proposal approval hardened. Pass 005 CI pending; native UI acceptance outstanding. |
 | 5 | 242 | Integration testing | Source extended: reviewed Python unittest integration suite, exact source fingerprint, observed execution counts and nonempty/all-pass/source-stable criteria. Pass 006 CI pending; broader framework/automatic job binding and native acceptance outstanding. |
-| 6 | 249 | Git status and history integration | Existing partial; completion not started in this programme |
+| 6 | 249 | Git status and history integration | Source extended: bounded local status/project/file history UI and explicitly shared dated commit-ID observations in existing repository tools. Pass 007 CI pending; native UI and model-led use outstanding. |
 | 7 | 267 | Workflow templates | Existing partial; completion not started in this programme |
 | 8 | 207 | Automated dependency security auditing | Not started in this programme |
 | 9 | 44 | Software security vulnerability scanning | Not started in this programme |
@@ -395,3 +395,10 @@ Added the previously excluded partial capability rows to both documents. Origina
 - Dedicated reviewed Python unittest suite execution through existing JANUS action runner. Bounded source/config/data fingerprint before review and again before/after execution. Fixed existing suite directories, actual success/failure/error/skip counts, reject zero/skip-only/partially skipped and changed source as success. No full app verification claim; test semantics remain user-selected. Hold desktop work dispatch while approved/running suite owns the process slot. No second dispatcher or model changes.
 - Four real child-process fixture regressions: cross-module integration, failure/empty/skipped suites, source mutation, stale approval/outside suite. Existing source guard and action queue provide cancellation and gaming protections. Fingerprint covers eligible bounded file types, not all dependencies or all possible runtime inputs. Tests execute trusted code with user rights, not a sandbox. CI pending, native desktop and additional frameworks/automatic job binding outstanding.
 - Next rank 6 / ID 249 Git status and history integration, after checking outstanding CI. No installer.
+
+## Pass 007 — 27 November 2026
+
+- Pass 004 passed Linux and Windows CI and merged ([run 45901356922](https://github.com/Vardath/Vardath.github.io/actions/runs/45901356922)). Passes 005–006 still running at initial inspection.
+- Local Git inspection: exact repository root, bounded porcelain-v2 status and immutable HEAD history, selected existing file history, uncommitted/untracked status, unborn branch handling; recheck status before display. No fetch/push/staging/ref writes. Trusted repository inspection only; submodule changes deliberately excluded. History limited to latest 20 commits; no rename tracking.
+- Optional share of dated project commit IDs, dates, branch, HEAD and status digest with existing JANUS read-only repository selection for up to 15 minutes. No raw filenames, author details, commit subjects, execution permissions or current-source/test assertion. No new model-initiated process. Clearing share stops future delivery (existing tool receipts retained). Native GUI/model-led acceptance outstanding.
+- Actual temporary Git repository tests for status/history/file scope, unchanged working tree, receipt privacy/expiry, existing tool integration and unborn repository. CI pending. Next rank 7 / ID 267 workflow templates, after checking outstanding CI. No installer.
