@@ -141,6 +141,26 @@ class MemoryDuty:
             db.execute("""DELETE FROM memory_duties_v47 WHERE work_id IN
                 (SELECT work_id FROM memory_duties_v47 ORDER BY completed DESC,work_id LIMIT -1 OFFSET ?)""",(MAX_REPORTS,))
 
+    def advice_records(self,*,project,chat_id,original,job_id,current):
+        if not job_id or not current:return []
+        with closing(reader(self.path)) as db:
+            rows=[dict(r) for r in db.execute("""SELECT * FROM memory_duties_v47
+                WHERE job_id=? AND completed>=? AND outcome='findings'
+                ORDER BY completed DESC,work_id LIMIT 16""",(job_id,self.clock()-REPORT_TTL))]
+        result=[];seen=set()
+        for row in rows:
+            bound=live_scope(self.job_db,job_id,row['request_id'])
+            if not bound or bound['original']!=original or (bound['project'],bound['chat_id'])!=(str(project),chat_id):continue
+            findings=json.loads(row['findings'])
+            record={'work_id':row['work_id'],'scope':signature(bound),'focus':row['focus'],'phase':row['phase'],
+                    'outcome':row['outcome'],'findings':findings}
+            if signature(bound)!=json.loads(row['scope']) or sha(canonical(record))!=row['receipt_sha']:continue
+            for finding in findings:
+                if finding['id'] not in seen and current.get(finding['id'])==finding and evidence_eligible(finding):
+                    result.append(finding);seen.add(finding['id'])
+                if len(result)>=3:return result
+        return result
+
 def observe_memory_duties(job_db,*,clock=time.time):
     """Both societies independently read exact, current, advisory report receipts.
 
