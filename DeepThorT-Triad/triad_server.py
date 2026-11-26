@@ -11,6 +11,7 @@ from urllib.request import Request,build_opener,ProxyHandler
 from urllib.error import HTTPError
 from deepthort_local.triad_errors import WorkerFailure,http_failure,synthetic
 from deepthort_local.role_inbox import RoleInbox,serial_rank
+from deepthort_local.adaptive_admission import capacity,mandatory_ready,optional_ready
 from deepthort_local.agent_doctrine import VERSION as DOCTRINE_VERSION
 from deepthort_local.triad_profiles import ROOT,PROFILES,ALL_PROFILES,MEMORY_PROFILE,memory_installed,MODEL_ID,model_path,runtime_path,ready,total_weights,installed_files
 from deepthort_local.triad_job import verify_root_cap,child_server,model_group,worker_budget,CONTROL_RESERVE_BYTES
@@ -55,7 +56,10 @@ def request(port,path,key,body=None,timeout=2):
         raise http_failure(error,include_detail=bool(body and synthetic(body.get('model'),body.get('messages')))) from None
 
 class Pool:
-    def __init__(self):
+    def __init__(self,*,resource_sample=None):
+        self.resource_sample=resource_sample
+        self.resource_slots=0 if resource_sample is not None else 4
+        self.resource_sample_at=-float('inf')
         self.children={};self.memory_child=None;self.memory_stage='not installed';self.locks={r:RoleInbox(r) for r in ALL_PROFILES}
         self.admission_lock=threading.Condition()
         self.generating=set()
@@ -157,27 +161,42 @@ class Pool:
             self.set_stage('All three compact models resident; parallel generation enabled, not yet validated')
     def healthy(self):
         return self.ready and len(self.children)==3 and all(c[3]() for c in self.children.values())
+    def _slots_locked(self):
+        # All accesses to admission state occur under the same condition.
+        now=time.monotonic()
+        if self.resource_sample is not None and now-self.resource_sample_at>=2:
+            try:self.resource_slots=capacity(self.resource_sample())
+            except Exception:self.resource_slots=0
+            self.resource_sample_at=now
+        return min(1,self.resource_slots) if self.serial_memory_mode else self.resource_slots
+
     def _generate(self,role,messages,tokens):
-        # Three resident models remain loaded. On proven allocation failure,
-        # stop admitting overlapping native calls for the rest of this session.
+        # Mandatory work is priority/age ordered whenever admission is limited.
+        # Optional recall never queues or consumes the last available slot.
+        # Low physical headroom reduces future admissions without killing or
+        # evicting a running role. Classified native allocation failure retains
+        # the existing protected serial latch for the rest of this session.
         with self.admission_lock:
-            # Optional background recall never queues ahead of main work in protected serial mode.
-            if role=='memory' and self.serial_memory_mode:raise WorkerFailure('memory_pressure')
-            if self.serial_memory_mode:
+            if not self.healthy():raise WorkerFailure('worker_exit')
+            if role=='memory':
+                if not optional_ready(self.generating,self.serial_waiters,self._slots_locked()):
+                    raise WorkerFailure('worker_busy','Optional memory recall deferred for required work or resource headroom')
+                self.generating.add(role)
+            else:
                 self.serial_sequence+=1
                 ticket=(time.monotonic(),self.serial_sequence,role)
                 self.serial_waiters.append(ticket)
                 deadline=ticket[0]+600
                 try:
-                    while self.serial_memory_mode and (self.generating or min(self.serial_waiters,key=lambda t:serial_rank(t,time.monotonic()))!=ticket):
+                    while not mandatory_ready(self.generating,self.serial_waiters,ticket,self._slots_locked(),serial_rank,time.monotonic()):
                         if not self.healthy():raise WorkerFailure('worker_exit')
-                        if time.monotonic()>=deadline:raise WorkerFailure('worker_busy','Protected serial admission wait expired; reschedule')
+                        if time.monotonic()>=deadline:raise WorkerFailure('worker_busy','Measured resource admission wait expired; reschedule')
                         self.admission_lock.wait(.5)
+                    if not self.healthy():raise WorkerFailure('worker_exit')
+                    self.generating.add(role)
                 finally:
                     self.serial_waiters.remove(ticket)
                     self.admission_lock.notify_all()
-            if not self.healthy():raise WorkerFailure('worker_exit')
-            self.generating.add(role)
         try:
             child=self.memory_child if role=='memory' else self.children[role]
             if child is None or not child[3]():raise WorkerFailure('worker_exit')
@@ -213,12 +232,14 @@ class Pool:
     def status(self,council):
         with self.admission_lock:
             active=set(self.generating);serial=self.serial_memory_mode;retries=self.memory_retries
+            slots=self._slots_locked();waiting=len(self.serial_waiters)
         return {'model':MODEL_ID,'backend':'native-openvino-ir-cpu','offline':True,'ready':self.healthy(),
             'role':'council' if council else 'implementation','pid':os.getpid(),
             'phase':'ready' if self.healthy() else 'loading','stage':self.stage,
             'inference_busy':any(self.locks[r].locked() for r in (('janus','sentinel') if council else ('implementation',))),
             'loading_seconds':int((self.ready_at if self.ready_at is not None else time.monotonic())-self.started),'stalled':False,'error':None,
             'serial_memory_mode':serial,'memory_retries':retries,
+            'admission_slots':slots,'admission_waiting':waiting,
             'doctrine_version':DOCTRINE_VERSION,'role_queue_depths':{r:box.waiting() for r,box in self.locks.items()},
             'worker_commit_limit_bytes':self.worker_commit_limit,'control_reserve_bytes':CONTROL_RESERVE_BYTES,
             'memory_model':{'name':MEMORY_PROFILE[0],'revision':MEMORY_PROFILE[2],
@@ -268,7 +289,7 @@ def main():
     if not ready():raise SystemExit('Triad weights or runtime missing; install first')
     token=os.environ.get('DEEPTHORT_TRIAD_TOKEN')
     if not token or len(token)<32:raise SystemExit('Use capped desktop launcher')
-    pool=Pool()
+    pool=Pool(resource_sample=verify_root_cap)
     # Both compatibility ports must be ours before launching any model.
     with ExitStack() as stack:
         servers=[stack.enter_context(ThreadingHTTPServer(('127.0.0.1',p),handler(pool,token,p==8766))) for p in (8765,8766)]
