@@ -150,10 +150,13 @@ class JanusWorker:
         self._counsel_thread.start()
 
     def _observe_active_process(self):
-        # Keep executive cognition independent of an authorized subprocess.
-        # observe_once can reason, but never recursively dispatch a command.
+        # Continue scoped live cognition during a long approved subprocess.
+        # Do not run the old generic failure fallback or recursively dispatch.
         try:
-            self.observe_once()
+            gaming=self.game_gate.gaming()
+            state=self.store.tick(self.jobs_db,gaming=gaming)
+            if not gaming and not self._stopping and not state.get('paused'):
+                if not self._consider_worker_reports():self._consider_live_work()
         except Exception as exc:
             record(self.jobs_db.parent,'janus_worker','active_process_observation_failed',
                    level='WARNING',error_type=type(exc).__name__)
