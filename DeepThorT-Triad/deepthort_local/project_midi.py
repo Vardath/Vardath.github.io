@@ -139,7 +139,9 @@ class ProjectMidi:
                 raise ValueError('Stale or changed project MIDI publication')
             data=json.loads(row['staged']);review=json.loads(row['review'])
             _,raw,score=self._staged(contract,data['folder'],data['receipt'])
-            if review.get('accepted') is not True or review.get('original_sha')!=contract['original_sha'] or review.get('proposal_sha')!=sha(review_text(contract,score)):
+            if (review.get('accepted') is not True or review.get('verified') is not False
+                or review.get('original_sha')!=contract['original_sha'] or review.get('proposal_sha')!=sha(review_text(contract,score))
+                or not isinstance(review.get('evidence_sha'),str) or len(review['evidence_sha'])!=64):
                 raise ValueError('Score review receipt changed')
             _,target=_safe_auto_path(Path(contract['project']),task['output'])
             if target.exists():raise ValueError('Destination appeared after approval')
@@ -179,9 +181,17 @@ class ProjectMidi:
                 raise ValueError('Native artifact belongs to another approved roadmap')
             if row['state']!='checked':return False
             result=json.loads(row['receipt'])
+            staged=json.loads(row['staged']);review=json.loads(row['review'])
+        if (result['runtime_verified'] is not False or result['artifact']['sha256']!=staged['receipt']['sha256']
+                or result['review_sha']!=review.get('evidence_sha') or review.get('accepted') is not True
+                or review.get('verified') is not False or review.get('original_sha')!=contract['original_sha']
+                or review.get('proposal_sha')!=sha(review_text(contract,result['score']))):
+            raise ValueError('Published MIDI review evidence changed')
         actual=artifact(contract['project'],task['output'])
         if actual!=result['artifact']:raise ValueError('Published project MIDI receipt stale')
         _,target=_safe_auto_path(Path(contract['project']),task['output'])
         score=inspect_midi(target.read_bytes())
         if score!=result['score']:raise ValueError('Published MIDI score changed')
+        measured={'bpm':score['bpm'],'notes':len(score['notes'])}
+        if any(measured[k]!=v for k,v in task.get('acceptance',{}).items()):raise ValueError('Published score acceptance changed')
         return True
