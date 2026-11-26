@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "triad-v40-reviewed-team-delegation",
-  "title": "Triad V40: reviewed team DAG, durable delegation and native acceptance",
+  "id": "triad-v41-persistent-society-integration",
+  "title": "Triad V41: persistent JANUS and Sentinel societies, staged team DAG and native acceptance",
   "checks": [
     "shared_cap",
     "triad_residency",

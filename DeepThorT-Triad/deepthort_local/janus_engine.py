@@ -298,6 +298,10 @@ class JanusStore:
         jobs=self.observe_jobs(job_db)
         from .planning_recovery import observe_planning
         plans=observe_planning(job_db)
+        from .delegation_senses import observe_delegation,active_work,conflict
+        delegation=observe_delegation(job_db)
+        team_active=active_work(delegation)
+        team_conflict=conflict(delegation)
         active_plans=[p for p in plans if p['state'] in ('pending','running')]
         failed_plans=[p for p in plans if p['state']=='failed']
         source_wait=[p for p in plans if p['state']=='waiting_sources']
@@ -317,12 +321,15 @@ class JanusStore:
         goal=pinned_goal or (f"Finish draft #{plan['id']} for {plan['project']}" if plan and (active_plans or not current)
              else f"Finish job #{current['id']}: {current['mode']} for {current['project']}" if current else 'Await user-directed work')
         alerts=[]
-        if gaming and (in_progress or active or approved):
+        if gaming and (in_progress or active or approved or team_active):
             focus='gaming_priority'; decision='defer_disk_heavy_work'
             alternatives=['Preserve job state and defer work while a game is active']
         elif active:
             focus=f"approved_process_{active[0]['id']}";decision='monitor_process_and_verify_exit'
             alternatives=['Wait for verifiable exit status','Check log for errors']
+        elif team_active and not team_conflict:
+            focus='delegated_team_work';decision='coordinate_dependency_ready_assignments'
+            alternatives=['Observe role leases and accepted dependency receipts','Keep independent work progressing under existing authority','Use Sentinel review before integrating staged outputs']
         elif active_plans:
             focus=f"draft_{active_plans[0]['id']}_planning";decision='monitor_requirements_and_reframe_failed_steps'
             alternatives=['Observe indexed progress','Retranslate failed objectives against original requirements','Use Sentinel review before changing strategy']
@@ -344,6 +351,9 @@ class JanusStore:
         elif failures:
             focus=f"job_{failures[0]['id']}_failed";decision='diagnose_failure_and_propose_alternatives'
             alternatives=['Identify the failure from the queue detail','Propose an alternative implementation','Request approval for any new tool or file write']
+        elif team_conflict or delegation['failed']:
+            focus='delegated_team_review';decision='inspect_delegation_failure'
+            alternatives=['Check interrupted or stale task receipts','Preserve completed artifacts; require explicit retry where necessary']
         elif source_wait:
             focus=f"draft_{source_wait[0]['id']}_waiting_sources";decision='inspect_missing_source_evidence'
             alternatives=['Preserve original requirements','Wait for required source inspection']
@@ -352,6 +362,7 @@ class JanusStore:
             alternatives=['Review durable planning failures','Resume only eligible bounded recovery','Keep unresolved acceptance checks visible']
         else:
             focus='idle';decision='sleep_until_new_evidence';alternatives=['Monitor for new evidence']
+        if team_conflict or delegation['failed']:alerts.append('Delegated work requires evidence-based review; no automatic replay')
         if failed_plans:alerts.append('Unfinished draft planning requires evidence-based recovery')
         if failures or action_failed:
             alerts.append('Prioritize documented failure and verification before advancing')
@@ -361,7 +372,8 @@ class JanusStore:
         previous_observation=json.loads(old['last_observation'] or '{}')
         # Stable snapshots ignore volatile PID/time fields so cycles can tell
         # whether meaningful evidence changed.
-        observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans),
+        observation={'counts':counts,'failed':bool(failures or action_failed or failed_plans or delegation['failed']),
+            'delegation':delegation,'conflict':team_conflict,
             'planning_counts':{state:sum(p['state']==state for p in plans)
                               for state in ('pending','running','waiting_sources','failed')},
             'current_draft':{k:plan[k] for k in ('id','state','detail')} if plan else None,
@@ -374,6 +386,10 @@ class JanusStore:
         frames=[SenseFrame('runtime','job_queue',
                 f'Goal: {goal}; focus: {focus}; decision: {decision}; evidence: {counts}',
                 salience=.85 if alerts else .4, uncertainty=.6 if alerts else .15)]
+        if delegation['available'] and (team_active or delegation['failed'] or delegation['recent']):
+            frames.append(SenseFrame('runtime','delegation_graph',
+                json.dumps(delegation,sort_keys=True),salience=.9 if team_conflict else .65,
+                uncertainty=.65 if team_conflict or delegation['failed'] else .2))
         for action in actions[:3]:
             if action['status'] in ('succeeded','failed','needs_attention','cancelled'):
                 frames.append(SenseFrame('action_result',f"approved_process_{action['id']}",
