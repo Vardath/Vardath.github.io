@@ -50,7 +50,7 @@ from deepthort_local.media_tools import (classify, validate_attachment, composed
         validate_image_output_path, cli_image_args)
 from deepthort_local.computer_inventory import (INSTALL_CATALOG, format_inventory,
         plan_tool_needs, scan_computer, winget_command)
-from deepthort_local.disk_gate import DiskGate
+from deepthort_local.disk_gate import DiskGate,storage_pressure,require_storage
 from deepthort_local.isolated_gui import (
     IsolatedGuiStore, IsolatedGuiError, plan_isolated_gui, run_isolated_gui,
     assert_plan_unchanged)
@@ -2567,6 +2567,7 @@ class DeepThorTDesktop(tk.Tk):
         self.status.set(f'Approved plan became job #{jobid}; auto-work authority is listed in Work queue.')
 
     def _execute_conversation(self,request):
+        if not self._storage_ready(request['project']):return
         ident=request['id']
         if not self.conversations.change(ident,'running','Local model processing conversation',allowed=('pending',)):
             return
@@ -4730,8 +4731,22 @@ class DeepThorTDesktop(tk.Tk):
         self._self_development_thread=threading.Thread(target=work,name='JANUS-self-development',daemon=True)
         self._self_development_thread.start()
 
+    def _storage_ready(self,project=None,*,install=False):
+        # Cache ordinary admission checks to avoid filesystem polling on each UI tick.
+        now=time.monotonic();key=(str(project),install)
+        cache=self.__dict__.setdefault('_storage_admission_cache',{})
+        old=cache.get(key)
+        if old and now-old[0]<5:return old[1]
+        report=storage_pressure(STATE,project,install=install,app_root=ROOT if install else None)
+        if len(cache)>=32:cache.clear()
+        cache[key]=(now,report['ready'])
+        if not report['ready'] and (not old or old[1]):
+            self._log('Storage pressure: '+', '.join(report['blocked'])+'; new work deferred. Free space or restore access. No files deleted.')
+        return report['ready']
+
     def _scheduler_once(self):
         if self._reviewed_git_pending():return
+        if not self._storage_ready():return
         self._creative_lane_tick()
         if self.__dict__.get('_native_draft_busy'):return
         tool_busy=(getattr(self,'_verification_preflight',False) or self._dispatch_memory_busy() or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
@@ -4811,6 +4826,7 @@ class DeepThorTDesktop(tk.Tk):
             self._self_development_tick(now)
 
     def _execute_job(self,j):
+        if not self._storage_ready(j['project']):return
         from deepthort_local.corrective_coordination import READY
         jobid=j['id']
         retry_requested=j['detail'].startswith(READY)
@@ -5653,6 +5669,7 @@ class DeepThorTDesktop(tk.Tk):
                   f'Job #{jobid} stopped:\n\n{reason[:900]}\n\nInspect the Work queue. You may revise the prompt, resume or cancel.')
     def _editor_idle(self,project,*,proposal=False):
         if (self._quitting or not self.project or str(self.project)!=project or self.disk_gate.gaming()
+                or not self._storage_ready(project)
                 or self.active_job is not None or self.active_conversation is not None or self._reviewed_git_pending()
                 or self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
                 or any(p and p.poll() is None for p in (self.tool_process,self.install_process,self.media_process))):
@@ -6180,8 +6197,8 @@ class DeepThorTDesktop(tk.Tk):
                 self._log('Routine tool upgrade blocked by current preference.')
                 return
             verify_plan(plan,which=shutil.which)
-            if shutil.disk_usage(ROOT).free<MIN_FREE_BYTES:
-                self._log('Routine tool installation deferred: less than 1 GiB free.')
+            if not self._storage_ready(plan['project'],install=True):
+                self._log('Routine tool installation deferred for storage pressure.')
                 self._auto_tool_queue.insert(0,plan)
                 return
             if already_attempted(self._auto_tool_history.get(plan['package_id']+':'+plan['operation']),
@@ -7227,8 +7244,7 @@ class DeepThorTDesktop(tk.Tk):
         try:
             plan=prepare_reviewed_install(self.last_package_inspection,
                    standing_policy=DeepThorTDesktop._routine_tools_enabled(self))
-            if shutil.disk_usage(ROOT).free < 1024**3:
-                raise ValueError('Less than 1 GiB disk space available; installation is blocked')
+            require_storage(STATE,self.project,install=True,app_root=ROOT)
         except (OSError,ValueError) as exc:
             messagebox.showwarning('Installation review unavailable',str(exc),parent=self)
             return
@@ -7892,6 +7908,7 @@ class DeepThorTDesktop(tk.Tk):
                         'Running fixed full-project check; individual test execution is not assumed.'))
                 if kind=='verification' and job_id is not None and stopped_memory():
                     raise ValueError('Verification cancelled before dispatch')
+                require_storage(STATE,cwd,install=kind in ('automatic_software','reviewed_install','installation'),app_root=ROOT)
                 with subprocess.Popen(cmd,cwd=str(cwd),stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
                         text=True,encoding='utf-8',errors='replace',creationflags=flags,
                         shell=False,env=verified_env,

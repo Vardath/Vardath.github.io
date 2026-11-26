@@ -9,6 +9,8 @@ from __future__ import annotations
 import ctypes
 from ctypes import wintypes
 import os
+import shutil
+import tempfile
 import time
 from pathlib import Path
 from typing import Callable
@@ -94,6 +96,43 @@ def games_running(game_names: frozenset[str]) -> bool:
     except (OSError, AttributeError, ValueError):
         return True
 
+
+# Preserve the existing state reserve. The larger install reserve was
+# previously used by the desktop installer; neither is a disk throughput cap.
+STATE_RESERVE_BYTES=150_000_000
+INSTALL_RESERVE_BYTES=1024**3
+
+def storage_pressure(state,project=None,*,install=False,app_root=None,temp=None,usage=None):
+    """Measure actual target filesystem free space; do not walk or delete files.
+
+    No arbitrary path is substituted for a missing project. A failed measurement
+    is unknown, not evidence of sufficient capacity.
+    """
+    probe=usage or shutil.disk_usage
+    reserve=INSTALL_RESERVE_BYTES if install else STATE_RESERVE_BYTES
+    targets={'state':state,'temporary':temp if temp is not None else tempfile.gettempdir()}
+    if project is not None and str(project) not in ('','(general)'):targets['project']=project
+    if app_root is not None:targets['application']=app_root
+    rows={}
+    for label,value in targets.items():
+        try:
+            path=Path(value).resolve(strict=True)
+            if not path.is_dir():raise OSError('Target not a directory')
+            free=probe(path).free
+            if type(free) is not int or free<0:raise ValueError('Invalid capacity')
+            rows[label]={'free_bytes':free,'status':'low' if free<reserve else 'ready'}
+        except (OSError,ValueError,TypeError,RuntimeError):
+            rows[label]={'free_bytes':None,'status':'unknown'}
+    blocked=[label for label,row in rows.items() if row['status']!='ready']
+    return {'ready':not blocked,'reserve_bytes':reserve,'targets':rows,'blocked':blocked,
+            'cleanup_performed':False,'io_cap_enforced':False}
+
+def require_storage(state,project=None,**kwargs):
+    report=storage_pressure(state,project,**kwargs)
+    if not report['ready']:
+        detail=', '.join(label+' ('+report['targets'][label]['status']+')' for label in report['blocked'])
+        raise ValueError('Storage pressure: '+detail+'; reserve '+str(report['reserve_bytes'])+' bytes. Free space or restore access; no automatic deletion.')
+    return report
 
 class DiskGate:
     def __init__(self, bytes_per_second: int = 1_048_576,
