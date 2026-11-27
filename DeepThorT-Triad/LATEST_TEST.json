@@ -1,7 +1,7 @@
 {
   "schema": "deepthort-latest-test-v1",
-  "id": "janus-pass189-five-model-acceptance",
-  "title": "JANUS integrated five-model acceptance",
+  "id": "janus-pass193-native-benchmark",
+  "title": "JANUS integrated acceptance and native model benchmark",
   "checks": [
     "shared_cap",
     "triad_residency",
@@ -26,6 +26,7 @@
     "visual_backend",
     "video_render",
     "multimedia_core",
-    "five_model_acceptance"
+    "five_model_acceptance",
+    "native_model_benchmark"
   ]
 }

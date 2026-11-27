@@ -201,7 +201,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 189 | 217 | Autonomous self-evaluation | Partial: periodic JANUS evaluation of bounded local acceptance history, exact outcome validation, regression and recurrence detection, missing evidence and deduplicated advisory recommendations. Pass 190 CI pending. Native evaluation and broader competence evidence outstanding. |
 | 190 | 219 | Autonomous improvement of procedures | Partial: autonomous evidence-linked candidate acceptance-procedure reordering, exact prerequisite closure, preserved checks, historical detection-position comparison and immutable advisory staging. Pass 191 CI pending. Prospective native benefit, broader procedure classes and approved adoption outstanding. |
 | 191 | 243 | End-to-end testing | Partial: reviewed native generated Godot grid-game fixture, independent routes and six ordered scene/input/objective checks under Windows cap, verified success receipt. Pass 192 CI pending. Native fixture execution and broader E2E targets outstanding. |
-| 192 | 326 | Model benchmarking | Existing partial; completion not started in this programme |
+| 192 | 326 | Model benchmarking | Partial: integrated current four resident native text workers, three fixed independently scored tasks twice each, isolated sessions, correctness and verified-request latency, health continuity, cancellation and diagnostic evidence. Pass 193 CI pending. Actual native runs, creative benchmark, richer coding/throughput/memory measurement outstanding. |
 | 193 | 336 | Automated backup and restoration | Existing partial; completion not started in this programme |
 | 194 | 19 | Autonomous deep research | Not started in this programme |
 | 195 | 31 | Webpage element inspection | Not started in this programme |
@@ -1012,3 +1012,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 192 — 27 November 2026
 - Add reviewed native Godot grid-game end-to-end fixture. Independently calculate blocked movement, early-goal and completion paths; run generated scene under existing Windows cap with fixed probe for initial state, boundary, early goal, collect/win, reset and touch input. Require ordered native markers and no engine errors. Guard source/runtime and publish new receipt only on success. Fixture tests cover path/probe and log validation; real Godot and broader E2E acceptance outstanding. Next rank 192 / ID 326 model benchmarking. No installer.
+
+## Pass 193 — 27 November 2026
+- Add native OpenVINO four-text-worker benchmark to existing Run latest test; keep prior checks. Three identical fixed JSON arithmetic/amendment/relevance oracles, two independent sessions per task/role, 24 requests total. Preserve configured revision/PID, classify failures/blocked, median verified latency only, reject changed worker/memory policy and defer real work/gaming. No weight changes or downloads. Fixtures only; native benchmark, Gemma comparison and broader correctness/resource metrics outstanding. Next rank 193 / ID 336 automated backup/restoration. No installer.
