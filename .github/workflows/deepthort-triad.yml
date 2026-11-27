@@ -134,6 +134,7 @@ jobs:
       - run: python -m pip install -r requirements-presentations.txt
       - run: python -m unittest discover -s tests -p test_presentation_edit_ability.py -v
       - run: python -m unittest discover -s tests -p test_presentation_create_ability.py -v
+      - run: python -m unittest discover -s tests -p test_presentation_template_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -360,6 +361,8 @@ jobs:
           python -m unittest discover -s tests -p test_presentation_edit_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_presentation_create_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_presentation_template_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
