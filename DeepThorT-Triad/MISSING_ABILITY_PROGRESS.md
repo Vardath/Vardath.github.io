@@ -97,7 +97,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 85 | 74 | Document layout inspection | Source implemented: selected PDF page geometry, text segments with font names/sizes, image bounds, estimated margins and rotation. Pass 086 CI pending. Non-PDF, semantic reading order and visual interpretation outstanding. |
 | 86 | 278 | Contract and policy analysis | Source extended: reviewed text/PDF/DOCX clause evidence checklist, predefined and user-defined literal checks, exact source locators, missing text and bounded evidence. Pass 087 CI pending. Semantic clause interpretation, jurisdiction and independent legal verification outstanding. |
 | 87 | 75 | Automated visual document quality verification | Source implemented: actual bounded selected-PDF-page raster checks at 96 DPI, visible ink bounds, blank-page and requested-margin criteria with pixel hashes and warnings. Pass 088 CI pending. Broader visual quality, clipping, typography and native acceptance outstanding. |
-| 88 | 79 | Predictive modelling | Not started in this programme |
+| 88 | 79 | Predictive modelling | Source implemented: exact one-predictor OLS with ordered train/held-out split, complete-case counts, baseline and error metrics, independent normal-equation verification and bounded predictions. Pass 089 CI pending. Multiple predictors, other models, cross-validation and native integration outstanding. |
 | 89 | 286 | Scientific computing | Existing partial; completion not started in this programme |
 | 90 | 288 | Anomaly detection | Existing partial; completion not started in this programme |
 | 91 | 80 | Time-series forecasting | Not started in this programme |
@@ -675,3 +675,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 088 — 27 November 2026
 - Reuse pinned PDF production renderer and Pillow for actual bounded selected-page raster checks. Explicit margin and blank-page policy, RGB pixel hash, visible non-white ink bounds, measured margins and warnings. No aesthetic or clipping guarantee. Three regression cases including real PDF rendering. Next rank 88 / ID 79 predictive modelling. No installer.
+
+## Pass 089 — 27 November 2026
+- Reuse CSV and exact statistics infrastructure for one-predictor ordinary least squares. Explicit ordered training prefix/held-out suffix, exact coefficients and independent residual invariants, MAE/MSE/R² and training-mean baseline, missing counts and extrapolation warnings. No future accuracy or causal claim. Three regression cases. Next rank 89 / ID 286 scientific computing. No installer.

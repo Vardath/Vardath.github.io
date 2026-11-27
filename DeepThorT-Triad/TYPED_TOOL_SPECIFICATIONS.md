@@ -435,3 +435,7 @@ Files & Images → Review contract or policy. JSON: `{"document":"terms.pdf","to
 ## PDF raster quality checks (Pass 088)
 
 Files & Images → Check PDF rendered pages. JSON: `{"document":"report.pdf","pages":[1,2],"minimum_margin_points":12,"allow_blank_pages":false}`. Actual 96-DPI local rendering with the existing PDF production tools; reports visible ink bounds, measured margins, blank-page warning and pixel hash. Intentional full-bleed artwork may violate the requested margin. This is not a general visual quality or clipping guarantee.
+
+## Predictive modelling (Pass 089)
+
+Files & Images → Fit predictive model. JSON: `{"csv":"data.csv","delimiter":",","predictor":"x","target":"y","train_rows":4,"missing_tokens":["NA"],"predict_values":["2","10"]}`. Train one-predictor exact ordinary least squares on the specified first data rows; evaluate the untouched suffix. Complete cases only, exact coefficients and held-out metrics against training-mean baseline. Predictions outside the training predictor range are flagged. Not a general-purpose machine-learning or causal inference system.
