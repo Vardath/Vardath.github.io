@@ -183,3 +183,11 @@ Use the exploratory analysis specification plus title and expected_source_sha256
 ```
 
 Edit the eight supported RIFF INFO fields on a local PCM WAV; null removes a field. Printable ASCII only. Preview old/new values and preserve exact audio bytes, format and untouched chunks. Output must be a new WAV. Existing mixed ID3/INFO, MP3/FLAC and Unicode are not supported by this first adapter.
+
+## Estimate musical key
+
+```json
+{"audio":"track.wav","channel":"left"}
+```
+
+Uses the same bounded 16-bit PCM WAV input as tempo detection. Choose left or right (right requires stereo). The local spectral estimator returns pitch-class evidence, ranked major/minor candidates and a key only when its profile margin is sufficient. Scores are correlations, not probabilities. Silence, single pitches and ambiguous material may yield no key. Complex or modulating music requires listening.
