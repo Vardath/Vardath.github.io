@@ -507,3 +507,7 @@ Files & Images → Generate installer project. JSON: `{"app_name":"Example App",
 ## GitHub pull request review evidence (Pass 106)
 
 Files & Images → Inspect GitHub PR. Enter repository, PR number, exact head/base SHAs, and transient pull-request read token after approval. Retrieves up to 30 changed-file records and bounded provider patches, rechecks metadata, labels omitted patches and path-based review cues. No semantic finding, test proof, atomic remote snapshot, approval, comment or merge. Larger changes require a different reviewed workflow.
+
+## Git three-way conflict proposal (Pass 107)
+
+Files & Images → Propose clean merge. JSON: `{"path":"source.txt"}`. Requires Git root and actual unmerged index entries 1/2/3 for one ordinary same-mode text file. Native git merge-file must produce a clean nonempty result; overlapping conflicts are refused, not guessed. Review exact candidate and stage hashes; publish new `.txt` only. Separate reviewed application/staging needed.
