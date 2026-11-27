@@ -46,3 +46,58 @@ class CrawlTests(unittest.TestCase):
             self.assertEqual(r['pages'],3)
             self.assertFalse(json.loads((root/'crawl.json').read_text())['site_completeness_verified'])
             with self.assertRaises(ValueError):execute(root,plan,run=f.run)
+
+class DownloadTests(unittest.TestCase):
+    def fixture(self):
+        import hashlib
+        from deepthort_local.webpage_elements import extract_elements
+        data=b'%PDF-1.7\nfixture'
+        url=HOST+'/docs/'
+        html=b'<html><body><a href="/docs/file.pdf">Download</a></body></html>'
+        report=extract_elements(url,html,'text/html','utf-8')
+        anchor=next(x for x in report['elements'] if x['tag']=='a')
+        spec={'inspection':'inspection.json','locator':anchor['locator'],'path_prefix':'/docs/',
+              'destination':HOST+'/docs/file.pdf','mime':'application/pdf','max_bytes':100,
+              'expected_sha256':hashlib.sha256(data).hexdigest()}
+        return spec,report,data
+    def test_reviewed_download_bundle_and_scope(self):
+        import zipfile
+        from deepthort_local.website_file_download import review,execute,run,checked
+        from deepthort_local.webpage_elements import extract_elements
+        spec,report,data=self.fixture();f=Fixture()
+        def retrieve(url,**kw):
+            f.calls.append(url)
+            if url.endswith('/robots.txt'):return extract(url,b'User-agent: *\nDisallow: /private','text/plain','utf-8')
+            return report
+        def download(s,**kw):
+            f.calls.append(s['destination']);return data
+        def runner(s,evidence,approved):
+            return run(s,evidence,approved=approved,retrieve=retrieve,download=download,clock=f.clock,sleep=f.sleep)
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            (root/'spec.json').write_text(json.dumps(spec));(root/'inspection.json').write_text(json.dumps(report))
+            plan,_=review(root,'spec.json','file.zip')
+            result=execute(root,plan,runner=runner)
+            self.assertEqual(f.calls,[HOST+'/robots.txt',HOST+'/docs/',spec['destination']])
+            with zipfile.ZipFile(root/'file.zip') as z:
+                self.assertEqual(z.read('payload.bin'),data)
+                receipt=json.loads(z.read('receipt.json'));self.assertTrue(receipt['expected_digest_matched'])
+                self.assertFalse(receipt['browser_used'])
+            self.assertEqual(result['payload_sha256'],spec['expected_sha256'])
+            with self.assertRaises(ValueError):execute(root,plan,runner=runner)
+            with self.assertRaises(ValueError):review(root,'spec.json','file.zip')
+            (root/'spec.json').write_text(json.dumps(dict(spec,destination=HOST+'/outside/file.pdf')))
+            with self.assertRaises(ValueError):review(root,'spec.json','other.zip')
+    def test_download_refusals(self):
+        from deepthort_local.website_file_download import run,selection
+        from deepthort_local.website_control_selection import selected
+        spec,report,data=self.fixture();evidence=selected(selection(spec),report);f=Fixture()
+        def retrieve(url,**kw):
+            if url.endswith('/robots.txt'):return extract(url,b'User-agent: *\nDisallow: /docs/file.pdf','text/plain','utf-8')
+            self.fail('Forbidden source read')
+        with self.assertRaises(ValueError):run(spec,evidence,approved=True,retrieve=retrieve,clock=f.clock,sleep=f.sleep)
+        def allowed(url,**kw):
+            if url.endswith('/robots.txt'):return extract(url,b'User-agent: *\nDisallow: /private','text/plain','utf-8')
+            return report
+        with self.assertRaises(ValueError):run(spec,evidence,approved=True,retrieve=allowed,download=lambda *a,**k:b'wrong',clock=f.clock,sleep=f.sleep)
+        with self.assertRaises(ValueError):run(spec,evidence,approved=False,retrieve=allowed)

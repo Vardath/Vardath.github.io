@@ -207,7 +207,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 195 | 31 | Webpage element inspection | Partial: reviewed public static HTML structural element inspection, controls/links/labels/headings, bounded locators and no input values or activation. Pass 196 CI pending. Rendered DOM, accessibility and authenticated/browser acceptance outstanding. |
 | 196 | 30 | Autonomous website navigation | Partial: reviewed public static goal-directed navigation using link-label/URL ranking, exact target heading stop, bounded frontier and path receipt. Pass 197 CI pending. Live browser navigation and native network acceptance outstanding. |
 | 197 | 32 | Website interaction and control selection | Partial: exact static control selection from guarded inspection, offline identification and approved same-host link read after robots and source/control revalidation. Pass 198 CI pending. Actual browser click, form input and authenticated sessions outstanding. |
-| 198 | 35 | Browser-based file downloads | Not started in this programme |
+| 198 | 35 | Browser-based file downloads | Partial: reviewed static public same-host anchor download, robots and source recheck, bounded MIME and bytes, optional exact digest, verified inert ZIP. Pass 199 CI pending. Actual browser download events, authenticated sessions and native network acceptance outstanding. |
 | 199 | 34 | Browser-based file uploads | Not started in this programme |
 | 200 | 33 | Automated online form completion | Not started in this programme |
 | 201 | 37 | Browser developer tools integration | Not started in this programme |
@@ -1030,3 +1030,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 198 — 27 November 2026
 - Add reviewed static control selection and read-only link navigation from a guarded inspection receipt. Unique exact locator/tag, explicit same-host destination, robots checks and full source hash/control revalidation before reading target. Offline historical identification for other controls. No actual browser activation, form changes, scripts or cookies. Fixtures verify exact selection, stale source and scope refusals. Native network and live browser interaction outstanding. Next rank 198 / ID 35 browser-based file downloads. No installer.
+
+## Pass 199 — 27 November 2026
+- Add reviewed exact static link file download using existing public HTTPS and robots safeguards, revalidate inspected source and selected anchor, enforce MIME, byte ceiling and optional expected SHA-256, and publish new inert ZIP containing exact payload and receipt. No redirects, automatic extraction, execution, credentials or actual browser. Extend crawl fixtures for digest, scope and non-overwrite. Native network and browser downloads outstanding. Next rank 199 / ID 34 browser-based file uploads. No installer.
