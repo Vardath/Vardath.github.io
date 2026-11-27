@@ -84,7 +84,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 72 | 20 | Academic literature discovery | Source implemented: reviewed Crossref bibliographic query, optional date bounds, DOI/title/first-author metadata, provider ranks and response hash; Pass 073 CI pending. Multiple indexes, full-text research and live acceptance outstanding. |
 | 73 | 18 | Website crawling | Source implemented: explicitly scoped same-host static crawl, conservative robots policy, delay, bounded depth/attempts and provenance; Pass 074 CI pending. Live and dynamic-site acceptance outstanding. |
 | 74 | 228 | Multi-source research | Source extended: explicit 2–5 public URL reads, hashed full static evidence, exact ranked excerpts, term/source matrix and duplicate-text grouping; Pass 075 CI pending. Semantic synthesis, independence and claim verification outstanding. |
-| 75 | 229 | Source credibility assessment | Existing partial; completion not started in this programme |
+| 75 | 229 | Source credibility assessment | Source extended: exact evidence consistency checks, six transparency dimensions, literal source cues and optional quote-bound reviewer judgments; Pass 076 CI pending. Independent credibility and semantic verification outstanding. |
 | 76 | 230 | Contradictory source comparison | Existing partial; completion not started in this programme |
 | 77 | 231 | Research report generation | Existing partial; completion not started in this programme |
 | 78 | 12 | Semantic vector embeddings | Not started in this programme |
@@ -632,3 +632,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 075 — 27 November 2026
 
 - Add reviewed multi-source research across 2–5 exact public HTTPS URLs; question remains local. Collect hashed page evidence, unavailable observations, exact excerpt line/offset locators, lexical term-to-source matrix and identical-text grouping. No inferred independence, factual support or autonomous external link following. Four regressions. Next rank 75 / ID 229 source credibility assessment. No installer.
+
+## Pass 076 — 27 November 2026
+
+- Add reviewed source credibility assessment of a multi-source evidence report. Rebuild evidence matrix to detect inconsistencies; observe authorship, date, references, methods, funding/conflicts and corrections cues with exact excerpt positions. Optional reviewer findings must match actual source quotes and retain their supplied reasoning. Flag duplicate text and unavailable sources; never equate absent cues with absence or assign unsupported trust scores. Four regression cases. Pass 072 green and merged (PR 138). Next rank 76 / ID 230 contradictory source comparison. No installer.
