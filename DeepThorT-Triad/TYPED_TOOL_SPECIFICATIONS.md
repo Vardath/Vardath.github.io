@@ -583,3 +583,7 @@ Files & Images → Multilingual speech. Discover installed offline voices, then 
 ## Scripted podcast generation (Pass 126)
 
 Files & Images → Podcast generation. Review JSON containing `title`, `description`, `pause_ms` and 3–8 `turns` with `section` (intro, body, outro in order), `speaker`, `culture`, exact installed `voice_id`, and `text`. Up to four named scripted speakers, stable distinct voice assignments. Output is one new ZIP with `episode.wav`, `episode.json`, and `transcript.txt`; timing is measured from generated PCM. No automatic script writing, music, upload or publishing. Listening quality remains unverified.
+
+## Short audiobook production (Pass 127)
+
+Files & Images → Audiobook generation. Review JSON with `title`, `author`, `culture`, exact installed `voice_id`, `pause_ms` and `chapters` containing `title` and `passages` arrays. Maximum six chapters, twelve passages, 6000 characters and 300 seconds total speech. Output new ZIP containing numbered chapter WAVs, `book.json` with measured timings and hashes, and `manuscript.txt`. No auto-publication or claimed listening quality; this is a short manuscript workflow, not yet a full-length resumable audiobook pipeline.
