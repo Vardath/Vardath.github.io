@@ -82,3 +82,29 @@ class BackgroundDesktopTests(unittest.TestCase):
             self.assertEqual(validate(root,plan)[2].run_seconds,15)
             (root/'app.exe').write_bytes(b'changed')
             with self.assertRaises(ValueError):validate(root,plan)
+
+class LiveScreenTests(unittest.TestCase):
+    def test_sample_identity_and_caption(self):
+        import tempfile
+        from deepthort_local.live_screen import samples,interpret
+        from deepthort_local.texture_pixels import encode
+        s={'region':[0,0,2,2],'samples':2,'interval_seconds':1}
+        now=[0.]
+        def capture(box,screen,approved):return encode(2,2,'RGB',bytes([int(now[0])]*12))
+        with tempfile.TemporaryDirectory() as tmp:
+            kwargs=dict(screen_size=lambda:(100,100),capture_fn=capture,clock=lambda:now[0],sleep=lambda n:now.__setitem__(0,now[0]+n))
+            with self.assertRaises(PermissionError):samples(s,(100,100),tmp,**kwargs)
+            paths,rows=samples(s,(100,100),tmp,approved=True,**kwargs)
+            self.assertNotEqual(rows[0]['sha256'],rows[1]['sha256'])
+            result=interpret(paths,rows,[],captioner=lambda p,t:['first','second'])
+            self.assertEqual(result[1]['caption'],'second')
+            paths[0].write_bytes(b'changed')
+            with self.assertRaises(ValueError):interpret(paths,rows,[],captioner=lambda p,t:['first','second'])
+    def test_scope_and_display_change(self):
+        import tempfile
+        from deepthort_local.live_screen import samples,checked
+        s={'region':[0,0,2,2],'samples':2,'interval_seconds':1}
+        for patch in ({'samples':5},{'interval_seconds':0},{'region':[0,0,4000,4000]}):
+            with self.assertRaises(ValueError):checked(dict(s,**patch))
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(ValueError):samples(s,(100,100),tmp,approved=True,screen_size=lambda:(90,90))
