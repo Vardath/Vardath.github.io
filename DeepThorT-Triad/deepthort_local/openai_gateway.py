@@ -59,7 +59,7 @@ def read_request(conn,deadline,cancelled):
     header,_,body=bytes(data).partition(b'\r\n\r\n')
     if len(header)>8192:raise ValueError('Header exceeds bound')
     lines=header.decode('ascii').split('\r\n')
-    if lines[0] not in ('GET /v1/models HTTP/1.1','POST /v1/chat/completions HTTP/1.1'):raise ValueError('Unsupported endpoint')
+    if lines[0] not in ('GET /v1/models HTTP/1.1','GET /janus/v1/status HTTP/1.1','POST /v1/chat/completions HTTP/1.1'):raise ValueError('Unsupported endpoint')
     headers={}
     for line in lines[1:]:
         name,sep,value=line.partition(':');name=name.lower();value=value.strip()
@@ -88,7 +88,7 @@ def reply(conn,code,value):
     except OSError:pass
 def error(conn,code,message):
     reply(conn,code,{'error':{'message':message,'type':'local_gateway_error','code':str(code)}})
-def serve(key,infer,ready,cancelled=None,*,approved=False,seconds=120):
+def serve(key,infer,ready,cancelled=None,*,approved=False,seconds=120,status_reader=None):
     if approved is not True:raise PermissionError('Explicit gateway approval required')
     if not isinstance(key,str) or not re.fullmatch(r'[A-Za-z0-9_-]{32,128}',key) or type(seconds) is not int or not 5<=seconds<=120:
         raise ValueError('Invalid gateway key or duration')
@@ -106,6 +106,15 @@ def serve(key,infer,ready,cancelled=None,*,approved=False,seconds=120):
                 except (ValueError,UnicodeError,OSError,RecursionError):error(conn,400,'Unsupported or incomplete request');continue
                 if not hmac.compare_digest(headers.get('authorization',''),'Bearer '+key):
                     error(conn,401,'Unauthorized');continue
+                if cancelled and cancelled() or time.monotonic()>=end:break
+                if line=='GET /janus/v1/status HTTP/1.1':
+                    if status_reader is None:error(conn,400,'Status scope not approved');continue
+                    try:
+                        data=status_reader()
+                        if cancelled and cancelled():break
+                        reply(conn,200,data)
+                    except Exception:error(conn,503,'Scoped status unavailable')
+                    continue
                 if line.startswith('GET'):
                     reply(conn,200,{'object':'list','data':[{'id':MODEL_ID,'object':'model','created':0,'owned_by':'local'}]});continue
                 try:payload=checked(strict_json(raw.decode('utf-8')))

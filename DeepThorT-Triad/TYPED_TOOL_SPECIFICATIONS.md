@@ -543,3 +543,7 @@ Files & Images → Receive local webhook. Enter exact event type and dedicated t
 ## Local OpenAI-compatible developer gateway (Pass 116)
 
 Files & Images → Local developer API. Explicitly approve temporary loopback session; use the displayed base URL and separate ephemeral key. Supports GET /v1/models and POST /v1/chat/completions with model `deepthort-triad`, messages, max_tokens and stream=false. Two inference attempts, 120-second admission window; already-admitted inference may continue after cancel. No streaming, role override, tool calls, usage counts, persistent chat, external bind or internal broker key disclosure. Native model/SDK acceptance remains outstanding.
+
+## Local developer status API (Pass 117)
+
+The temporary developer gateway can separately authorize GET /janus/v1/status for the exact selected project/chat. Up to 50 latest jobs and conversation requests per store, IDs/modes/states only, same temporary key. No prompts, files, paths, actions, startup recovery, cross-scope access or atomic cross-store snapshot. Disabled unless explicitly approved; changes of project/chat close admissions.

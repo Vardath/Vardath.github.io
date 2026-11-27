@@ -125,7 +125,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 113 | 182 | GitHub account integration | Source extended: approved public owned-repository inventory with existing OAuth session, exact account identity recheck, bounded page, repository IDs/default branches and flags. Pass 114 CI pending. Private repositories, broader project integration and live provider acceptance outstanding. |
 | 114 | 67 | Webhook integration | Source extended: one approved finite loopback GitHub-format webhook session with exact event, HMAC-SHA256, bounded JSON/body, metadata-only receipt and cancellation. Pass 115 CI pending. Public HTTPS endpoint, remote delivery, persistent deduplication and event-trigger admission outstanding. |
 | 115 | 203 | OpenAI-compatible external developer API | Source extended: approved ephemeral authenticated loopback models and non-streaming chat-completions gateway to existing Granite broker, no privileged roles or state/tool access. Pass 116 CI pending. Broader SDK compatibility, native model acceptance, streaming and public deployment outstanding. |
-| 116 | 328 | Local developer API | Existing partial; completion not started in this programme |
+| 116 | 328 | Local developer API | Source extended: separate approval for read-only current project/chat job and request metadata endpoint on existing ephemeral gateway; exact bound scope, bounded rows and no store recovery. Pass 117 CI pending. Task submission, broader endpoints and native integration acceptance outstanding. |
 | 117 | 329 | Headless agent operation | Existing partial; completion not started in this programme |
 | 118 | 10 | Remote task submission | Not started in this programme |
 | 119 | 11 | Cross-device notifications | Not started in this programme |
@@ -765,3 +765,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 116 — 27 November 2026
 - Add explicitly enabled finite OpenAI-compatible loopback text gateway using separate transient client key, bounded models/chat routes and fixed Granite role on existing capped broker. No arbitrary role, tool calls, private state, external binding or fabricated usage. Non-modal desktop session permits existing Stop AI; cancellation stops admissions, not an already admitted broker request. Real local socket/fixture regressions. Next rank 116 / ID 328 local developer API. No installer.
+
+## Pass 117 — 27 November 2026
+- Extend the existing local developer gateway, not a second server, with optional separately approved GET /janus/v1/status. Bind exact current project/chat, read existing SQLite stores in query-only mode without startup recovery, return only recent IDs, modes and states. No prompt, response, paths, commands or new authority. Three scoped-store and real loopback regressions. Pass 111 both CI jobs green (45974647365); hold behind earlier merges. Next rank 117 / ID 329 headless agent operation. No installer.
