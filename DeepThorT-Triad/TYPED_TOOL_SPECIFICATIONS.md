@@ -773,3 +773,7 @@ Files & Images → Capture screen region. Enter primary monitor x,y,width,height
 ## Expanded video frame editing (Pass 172)
 
 The existing Trim/sequence video tool also accepts an optional `edit` object on each clip: `{"crop":[0,0,320,240],"rotation":90,"flip":"none"}`. Use null for no crop, clockwise rotation 0/90/180/270, and flip none/horizontal/vertical. Apply crop, rotate, then flip. All edited clips must share output dimensions (max 640×480). Existing frame range, 120-frame limit, silent H.264 and exact source checks remain. Output RGB is independently decoded and compared with the expected edited sequence; no native playback claim.
+
+## Reviewed video transitions (Pass 173)
+
+Optionally supply top-level `transitions`, one entry for each pair of adjacent clips: `{"kind":"cut","frames":0}` or `{"kind":"crossfade","frames":4}` (1–12 overlap frames). No field means hard cuts. Crossfade blends the outgoing tail and incoming head with intermediate opacity; output frame count is input frames minus overlaps. Each clip must retain at least one non-transition frame, so adjacent overlaps cannot collide. Applied after per-clip edits. Audio and more elaborate effects remain unsupported.

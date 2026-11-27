@@ -92,3 +92,26 @@ class VideoTrimmingTests(unittest.TestCase):
         with self.assertRaises(ValueError):review(self.root,'spec.json','edit.mp4')
         self.s['clips'][0]['edit']['rotation']=True
         with self.assertRaises(ValueError):checked(self.s)
+
+
+    def test_crossfade_verified_and_duration(self):
+        self.s={'fps':24,'clips':[{'video':'a.mp4','start_frame':0,'end_frame':3},
+                    {'video':'b.mp4','start_frame':0,'end_frame':3}],
+                    'transitions':[{'kind':'crossfade','frames':1}]}
+        self.save();plan,preview=review(self.root,'spec.json','fade.mp4')
+        self.assertEqual(preview['observations']['output_frames'],5)
+        r=execute(self.root,plan)
+        # Last blue frame and first B frame, at half opacity.
+        stride=16*16*3
+        expected=self.a[:2*stride]+bytes([6,17,155])*256+self.b[stride:]
+        self.assertEqual(decode(self.ff,self.root/'fade.mp4',0,5,16,16),expected)
+        self.assertEqual(r['frames'],5);self.assertTrue(r['decoded_rgb_sequence_verified'])
+    def test_reject_transition_overlap_and_schema(self):
+        self.s['transitions']=[{'kind':'crossfade','frames':1}]
+        with self.assertRaises(ValueError):checked(self.s) # One-frame final clip.
+        self.s['transitions']=[{'kind':'cut','frames':1}]
+        with self.assertRaises(ValueError):checked(self.s)
+        self.s['transitions']=[]
+        with self.assertRaises(ValueError):checked(self.s)
+        self.s['transitions']=[{'kind':'cut','frames':0}]
+        self.assertEqual(checked(self.s),self.s)
