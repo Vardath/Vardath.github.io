@@ -698,6 +698,7 @@ class DeepThorTDesktop(tk.Tk):
         presentation_actions=ttk.Frame(media_tab);presentation_actions.pack(fill='x',pady=2)
         ttk.Button(presentation_actions,text='Install presentation tools…',command=self._install_presentation_tools).pack(side='left',padx=3)
         ttk.Button(presentation_actions,text='Edit presentation…',command=lambda:self._review_typed_tool('presentation_edit','.pptx','Presentation: reviewed edit')).pack(side='left',padx=3)
+        ttk.Button(presentation_actions,text='Create presentation…',command=lambda:self._review_typed_tool('presentation_create','.pptx','Presentation: reviewed creation')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1285,7 +1286,8 @@ class DeepThorTDesktop(tk.Tk):
                  'sql_query':('.json','Database: reviewed query'),
                  'data_cleaning':('.csv','Data: reviewed cleaning'),
                  'data_transformation':('.csv','Data: reviewed transformation'),
-                 'presentation_edit':('.pptx','Presentation: reviewed edit')}
+                 'presentation_edit':('.pptx','Presentation: reviewed edit'),
+                 'presentation_create':('.pptx','Presentation: reviewed creation')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
