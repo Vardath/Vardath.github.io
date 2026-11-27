@@ -643,3 +643,7 @@ Files & Images → Create editable Blender mesh. Select strict project-relative 
 ## Reviewed automatic mesh repair (Pass 141)
 
 Files & Images → Repair mesh. JSON specification contains only `mesh` (project-relative plain triangular OBJ). Up to 10,000 vertices and faces. Exact-coordinate weld, remove degenerate and duplicate triangles and unused vertices, orient adjacent faces consistently, reject unresolved nonmanifold edges/fans or nonorientable components. Reports remaining boundary edges and verifies geometry. No arbitrary scripts, tolerance welding, hole filling, self-intersection repair, outward orientation or attribute preservation. Native visual acceptance outstanding.
+
+## Reviewed parametric CAD (Pass 142)
+
+Files & Images → Parametric CAD. JSON keys: `polygon` (3–128 distinct strictly convex counterclockwise `[x,y]` millimetre coordinates, absolute value ≤10,000), `height_mm` (0.01–10,000). Produces new ZIP with editable `design.scad`, independently generated `design.obj` and `receipt.json`; closed manifold and analytical volume checked. No arbitrary code, native OpenSCAD or FreeCAD execution, CSG, complex surfaces, manufacturing or STEP acceptance.
