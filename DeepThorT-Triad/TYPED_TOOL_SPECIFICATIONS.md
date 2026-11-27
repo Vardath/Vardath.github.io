@@ -695,3 +695,7 @@ Files & Images → Simulate physics. JSON keys: `gravity` (0.01–100 m/s²), `d
 ## Reviewed image upscaling (Pass 154)
 
 Files & Images → Upscale image. JSON keys: `image` (bounded single-frame PNG), `scale` (2/3/4), `method` (nearest/bicubic/lanczos), `sharpen_percent` (0–100; nearest requires zero). Output up to 2048 pixels per side; preserves resampled alpha, verifies decoded PNG. Classical interpolation only, no learned super-resolution or inferred detail.
+
+## Reviewed image restoration (Pass 155)
+
+Files & Images → Restore image. JSON keys: `image` (opaque PNG, at most 1 megapixel), `mask` (null or same-size binary grayscale PNG marking damage white), `threshold` (16–255), `passes` (1–3, masked repair requires 1). Without mask, thresholded median suppresses impulse noise; with mask, local interpolation only, at most 25% damaged and every masked pixel within 3 px of unmasked data in both axes. No inferred historical detail or neural restoration.
