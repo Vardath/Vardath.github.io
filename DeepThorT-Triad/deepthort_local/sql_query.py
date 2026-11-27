@@ -75,47 +75,47 @@ def query(raw,spec):
     finally:db.close()
 
 def query_connection(db,spec):
-        db.execute('PRAGMA trusted_schema=OFF')
-        db.execute('PRAGMA query_only=ON')
-        if db.execute('PRAGMA query_only').fetchone()!=(1,) or db.execute('PRAGMA trusted_schema').fetchone()!=(0,):
-            raise ValueError('Required SQLite restrictions unavailable')
-        if hasattr(db,'enable_load_extension'):db.enable_load_extension(False)
-        # Reject views, virtual/shadow tables and internal metadata as query
-        # sources; read only ordinary tables in the disposable main database.
-        allowed={row[1] for row in db.execute('PRAGMA main.table_list') if row[0]=='main' and row[2]=='table' and not row[1].startswith('sqlite_')}
-        for code,val in ((sqlite3.SQLITE_LIMIT_LENGTH,1_000_000),(sqlite3.SQLITE_LIMIT_SQL_LENGTH,8000),
-                         (sqlite3.SQLITE_LIMIT_COLUMN,128),(sqlite3.SQLITE_LIMIT_EXPR_DEPTH,50),
-                         (sqlite3.SQLITE_LIMIT_COMPOUND_SELECT,16),(sqlite3.SQLITE_LIMIT_ATTACHED,0),
-                         (sqlite3.SQLITE_LIMIT_VDBE_OP,100000)):
-            db.setlimit(code,val)
-        start=time.monotonic();steps=[0]
-        def progress():
-            steps[0]+=1000
-            return int(steps[0]>MAX_STEPS or time.monotonic()-start>15)
-        db.set_progress_handler(progress,1000)
-        def authorize(action,a,b,database,origin):
-            if origin:return sqlite3.SQLITE_DENY
-            if action==sqlite3.SQLITE_SELECT:return sqlite3.SQLITE_OK
-            if action==sqlite3.SQLITE_READ and a in allowed and database=='main':return sqlite3.SQLITE_OK
-            if action==sqlite3.SQLITE_FUNCTION and isinstance(b,str) and b.casefold() in FUNCTIONS:return sqlite3.SQLITE_OK
-            return sqlite3.SQLITE_DENY
-        db.set_authorizer(authorize)
-        cursor=db.execute(spec['query'],spec['parameters'])
-        columns=[entry[0] for entry in cursor.description or ()]
-        if not 1<=len(columns)<=128 or any(not c or len(c)>256 for c in columns) or len({c.casefold() for c in columns})!=len(columns):
-            raise ValueError('Use distinct bounded result column aliases')
-        rows=[];used=0;truncated=False
-        for row in cursor:
-            if len(rows)>=spec['max_rows']:truncated=True;break
-            clean=[result_value(v) for v in row]
-            size=len(json.dumps(clean,ensure_ascii=True,allow_nan=False))
-            used+=size
-            if used>MAX_RESULT:raise ValueError('SQL result exceeds output budget')
-            rows.append(clean)
-        return {'columns':columns,'rows':rows,'row_count':len(rows),'truncated':truncated,
-                'scope':'Single read-only query on exact standalone SQLite byte snapshot; no source writes, extensions, external databases, views or virtual tables.',
-                'live_database_modified':False}
-    
+    db.execute('PRAGMA trusted_schema=OFF')
+    db.execute('PRAGMA query_only=ON')
+    if db.execute('PRAGMA query_only').fetchone()!=(1,) or db.execute('PRAGMA trusted_schema').fetchone()!=(0,):
+        raise ValueError('Required SQLite restrictions unavailable')
+    if hasattr(db,'enable_load_extension'):db.enable_load_extension(False)
+    # Reject views, virtual/shadow tables and internal metadata as query
+    # sources; read only ordinary tables in the disposable main database.
+    allowed={row[1] for row in db.execute('PRAGMA main.table_list') if row[0]=='main' and row[2]=='table' and not row[1].startswith('sqlite_')}
+    for code,val in ((sqlite3.SQLITE_LIMIT_LENGTH,1_000_000),(sqlite3.SQLITE_LIMIT_SQL_LENGTH,8000),
+                     (sqlite3.SQLITE_LIMIT_COLUMN,128),(sqlite3.SQLITE_LIMIT_EXPR_DEPTH,50),
+                     (sqlite3.SQLITE_LIMIT_COMPOUND_SELECT,16),(sqlite3.SQLITE_LIMIT_ATTACHED,0),
+                     (sqlite3.SQLITE_LIMIT_VDBE_OP,100000)):
+        db.setlimit(code,val)
+    start=time.monotonic();steps=[0]
+    def progress():
+        steps[0]+=1000
+        return int(steps[0]>MAX_STEPS or time.monotonic()-start>15)
+    db.set_progress_handler(progress,1000)
+    def authorize(action,a,b,database,origin):
+        if origin:return sqlite3.SQLITE_DENY
+        if action==sqlite3.SQLITE_SELECT:return sqlite3.SQLITE_OK
+        if action==sqlite3.SQLITE_READ and a in allowed and database=='main':return sqlite3.SQLITE_OK
+        if action==sqlite3.SQLITE_FUNCTION and isinstance(b,str) and b.casefold() in FUNCTIONS:return sqlite3.SQLITE_OK
+        return sqlite3.SQLITE_DENY
+    db.set_authorizer(authorize)
+    cursor=db.execute(spec['query'],spec['parameters'])
+    columns=[entry[0] for entry in cursor.description or ()]
+    if not 1<=len(columns)<=128 or any(not c or len(c)>256 for c in columns) or len({c.casefold() for c in columns})!=len(columns):
+        raise ValueError('Use distinct bounded result column aliases')
+    rows=[];used=0;truncated=False
+    for row in cursor:
+        if len(rows)>=spec['max_rows']:truncated=True;break
+        clean=[result_value(v) for v in row]
+        size=len(json.dumps(clean,ensure_ascii=True,allow_nan=False))
+        used+=size
+        if used>MAX_RESULT:raise ValueError('SQL result exceeds output budget')
+        rows.append(clean)
+    return {'columns':columns,'rows':rows,'row_count':len(rows),'truncated':truncated,
+            'scope':'Single read-only query on exact standalone SQLite byte snapshot; no source writes, extensions, external databases, views or virtual tables.',
+            'live_database_modified':False}
+
 
 def execute(root,plan):
     spec,dst,source=validate(root,plan)

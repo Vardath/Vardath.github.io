@@ -9,9 +9,12 @@ class LiveSQLiteTests(unittest.TestCase):
     def setUp(self):
         td=tempfile.TemporaryDirectory();self.addCleanup(td.cleanup);self.root=Path(td.name)
         self.path=self.root/'live.db'
-        with sqlite3.connect(self.path) as db:
-            db.execute('CREATE TABLE items(value INTEGER)')
-            db.execute('INSERT INTO items VALUES(1)')
+        db=sqlite3.connect(self.path)
+        try:
+            with db:
+                db.execute('CREATE TABLE items(value INTEGER)')
+                db.execute('INSERT INTO items VALUES(1)')
+        finally:db.close()
         self.spec=self.root/'spec.json';self.spec.write_text(json.dumps(S),encoding='utf-8')
     def test_reads_latest_committed_values(self):
         plan,_=review(self.root,'spec.json','result.json')

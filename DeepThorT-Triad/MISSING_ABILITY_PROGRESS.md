@@ -693,3 +693,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 094 — 27 November 2026
 - Extend existing immutable SQLite query engine by extracting its read-only authorizer/result routine for a separate reviewed live local read. Exact query approval, stable file identity, current committed data transaction, bounded query, no network or credentials; active WAL requires existing ordinary sidecars. Three regressions including WAL/uncommitted isolation. Next rank 94 / ID 247 API development. No installer.
+
+### Pass 094 Windows repair
+- Run 45962899721: Windows test_reads_latest_committed_values failed only during temporary database cleanup with WinError 32. SQLite connection context manager commits but does not close; explicitly close fixture in finally. Existing assertions, production read-only restrictions and test coverage retained. Recheck both jobs before merging. Passes 085–091 now green and merged (PRs 151–157).
