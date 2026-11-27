@@ -175,3 +175,11 @@ Use the exploratory analysis specification plus title and expected_source_sha256
 ```
 
 16-bit PCM mono/stereo WAV, 8–48 kHz, 3–120 seconds within the shared 16 MiB source limit. The local estimator reports steady transient interval consensus, support fraction and possible half/double ambiguity. Silence or inconsistent transients produce null BPM. This is not a complete beat tracker for complex music.
+
+## Edit music metadata
+
+```json
+{"audio":"track.wav","tags":{"title":"New title","artist":"Artist","album":"Album","comment":null}}
+```
+
+Edit the eight supported RIFF INFO fields on a local PCM WAV; null removes a field. Printable ASCII only. Preview old/new values and preserve exact audio bytes, format and untouched chunks. Output must be a new WAV. Existing mixed ID3/INFO, MP3/FLAC and Unicode are not supported by this first adapter.
