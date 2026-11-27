@@ -229,7 +229,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 217 | 256 | General game modification | Partial: reviewed generic JSON data override bundle with literal existing scalar edits, original digest and inverse semantic replay. Pass 218 CI pending; game loader, code mods and native compatibility outstanding. |
 | 218 | 42 | Integrated development environment (IDE) integration | Partial: reviewed VS Code native CLI identity probe, existing real Python LSP diagnostics and portable workspace handoff ZIP. Pass 219 CI pending; native CLI, extension and interactive IDE integration outstanding. |
 | 219 | 51 | Continuous integration and deployment (CI/CD) management | Partial: reviewed GitHub Actions exact run/attempt/job observation and fail-closed required-job green gate. Pass 220 CI pending; live network, rerun and deployment control outstanding. |
-| 220 | 52 | Automated software deployment | Not started in this programme |
+| 220 | 52 | Automated software deployment | Partial: reviewed exact artifact hash, bounded release ZIP audit and atomic non-overwriting local versioned publication. Pass 221 CI pending; remote target, installation and runtime/CI release acceptance outstanding. |
 | 221 | 220 | Multiple isolated work environments | Existing partial; completion not started in this programme |
 | 222 | 238 | Operating-system-level execution isolation (existing process-level restrictions; not a security sandbox) | Existing partial; completion not started in this programme |
 | 223 | 335 | Restricted execution environments | Existing partial; completion not started in this programme |
@@ -1102,3 +1102,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 220 — 28 November 2026
 - Add reviewed GitHub Actions exact run/attempt/commit and required-job observation using existing fixed HTTPS transport and transient token. Check complete bounded job inventory and recheck attempt identity; no merge/rerun/deployment grant. Two mocked regressions registered on both hosts. Native network acceptance pending. Next rank 220 / ID 52 automated software deployment. No installer.
+
+## Pass 221 — 28 November 2026
+- Add reviewed immutable local release deployment to existing project-local release directory, exact versioned filename and artifact digest, archive safety/CRC bounds and atomic non-overwriting publication of original bytes. Preserve previous releases; no installation, execution, remote deployment or CI claim. Two regressions on both CI hosts. Next rank 221 / ID 220 multiple isolated work environments. No installer.
