@@ -869,3 +869,7 @@ Deep research (reviewed sites) accepts JSON `{"question":"your question","sites"
 ## Static webpage element inspection (Pass 196)
 
 Inspect webpage elements accepts `{"url":"https://example.org/docs/"}`. Exact approved public HTML request, no redirects, credentials, scripts or interactions. Produces static source-parser locators, headings, selected controls, labels, and safe public link destinations. Bounded node/depth/results; omits input values, hidden controls, scripts and textarea/option contents. Not rendered DOM, CSS visibility, browser accessibility or reliable action selectors.
+
+## Goal-directed static website navigation (Pass 197)
+
+Find webpage by heading accepts `{"seed":"https://example.org/docs/","path_prefix":"/docs/","max_pages":4,"max_depth":2,"target_heading":"Installation guide"}`. Following explicit scope approval, read robots and inspect up to five public static pages (depth at most two), rank discovered in-scope links by visible source label and URL terms, and stop when exact normalized heading text is observed. A JSON receipt records attempted pages, evidence fingerprints, selected path and source locators. Missing target is not proof of absence. No live browser, JavaScript, credential use, form submission or external navigation.
