@@ -1,2 +1,2 @@
-# Optional local PDF text extraction. Explicit installation only.
+# Optional local PDF text extraction and reviewed basic page editing. Explicit installation only.
 pypdf==7.1.1
