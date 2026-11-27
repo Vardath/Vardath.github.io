@@ -191,7 +191,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 179 | 253 | Game project generation | Partial: reviewed editable Godot 4 grid-game source ZIP with configurable grid, obstacles, collectibles, win/reset rules, keyboard/tap controls and reachability validation. Pass 180 CI pending. Native scene execution, generalized game generation, Android export and gameplay acceptance outstanding. |
 | 180 | 255 | X4 asset and XML processing | Partial: reviewed exact extracted macro/component XML numeric attribute diff generation, unique literal selectors, expected-value guards and independent local replay. Pass 181 CI pending. Combined DLC/mod schema, arbitrary diff operations and native game acceptance outstanding. |
 | 181 | 257 | Game asset generation | Partial: reviewed explicit pixel-art sprite/tileset generation with transparent RGBA atlas, named frame rectangles, pivots, animation sequences and editable source archive. Pass 182 CI pending. Semantic/neural asset generation and native engine import outstanding. |
-| 182 | 258 | Level generation | Existing partial; completion not started in this programme |
+| 182 | 258 | Level generation | Partial: reviewed seeded grid level generation, exact obstacle and collectible counts, connected walkable cells, minimum goal distance and compatible editable Godot game specification. Pass 183 CI pending. Other level types and native playtesting outstanding. |
 | 183 | 259 | Procedural world generation | Existing partial; completion not started in this programme |
 | 184 | 260 | NPC behaviour generation | Existing partial; completion not started in this programme |
 | 185 | 261 | Collision testing | Existing partial; completion not started in this programme |
@@ -982,3 +982,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 182 — 27 November 2026
 - Implement concrete game sprite/tileset asset production: explicit palette/pixel rows, transparent atlas, named rectangles/pivots and animation metadata; verify decoded pixels and archive contents. Reuse installed Pillow and reviewed typed outputs. Tests cover animation references, pixels, determinism and stale/no-overwrite behavior. No neural art or engine import claim. Next rank 182 / ID 258 level generation. No installer.
+
+## Pass 183 — 27 November 2026
+- Implement reviewed deterministic connected-grid generation, with seed, exact wall percentage (rounded down), collectible count and minimum goal distance. Verify all walkable cells and objectives remain reachable and emit the existing game generator's input schema. Tests cover determinism, distinct seeds, connectivity, bounds and source changes. Native playtesting and non-grid level generation outstanding. Next rank 183 / ID 259 procedural world generation. No installer.
