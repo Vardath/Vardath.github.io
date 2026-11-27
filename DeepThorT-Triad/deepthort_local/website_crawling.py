@@ -85,7 +85,7 @@ def allowed_link(url,host,prefix):
     except (TypeError,ValueError):return False
     return h==host and p.startswith(prefix)
 
-def crawl(s,*,approved=False,cancelled=None,retrieve=fetch_page,clock=time.monotonic,sleep=time.sleep):
+def crawl(s,*,approved=False,cancelled=None,retrieve=fetch_page,clock=time.monotonic,sleep=time.sleep,link_priority=None):
     checked(s)
     if approved is not True:raise ValueError('Explicit crawl scope consent required')
     host,_=checked_url(s['seed']);prefix=s['path_prefix'];deadline=clock()+MAX_SECONDS
@@ -116,7 +116,9 @@ def crawl(s,*,approved=False,cancelled=None,retrieve=fetch_page,clock=time.monot
         attempts.append({'url':url,'depth':depth,'status':'retrieved'})
         pages.append({'depth':depth,'discovered_from':parent,'evidence':page})
         if depth<s['max_depth']:
-            for link in page['discovered_links']:
+            links=[link for link in page['discovered_links'] if allowed_link(link,host,prefix)]
+            if link_priority is not None:links.sort(key=link_priority)
+            for link in links:
                 if len(seen)>=100:break
                 if link not in seen and allowed_link(link,host,prefix):
                     seen.add(link);pending.append((link,depth+1,url))
