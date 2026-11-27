@@ -719,3 +719,7 @@ Files & Images → Reference-guided image. Choose source RGB PNG and distinct RG
 ## Reviewed local image inpainting (Pass 160)
 
 Files & Images → Inpaint image. Select a square opaque RGB PNG (256/384/512) and same-size binary grayscale mask (white to replace, black to preserve). Choose prompt and strength. Existing optional local SD1.5 weights are loaded with StableDiffusionInpaintPipeline; 4/9-channel UNet supported by the backend contract, no automatic download. Output uses exact source pixels outside the mask; source and mask are hash-bound. Actual native model execution and quality are unverified.
+
+## Reviewed local image outpainting (Pass 161)
+
+Files & Images → Outpaint image. Choose opaque RGB source, strictly larger 256/384/512 square canvas, left/top offsets, prompt and diffusion strength. A deterministic outside-region mask and clamped-edge initialization feed the local inpainting backend. Original source pixels remain exact in their chosen location. Native model execution and seam/visual acceptance unverified.

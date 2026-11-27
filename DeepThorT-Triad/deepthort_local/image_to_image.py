@@ -21,9 +21,10 @@ SCHEMA='janus-image-to-image-v1'
 FIELDS={'schema','image','source_sha256','output','prompt','size','steps','strength_percent','seed'}
 REF_FIELDS={'reference','reference_sha256','palette_strength_percent'}
 MASK_FIELDS={'mask','mask_sha256'}
+OUT_FIELDS={'offset_x','offset_y'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -47,6 +48,30 @@ def checked(s):
             raise ValueError('Use a distinct binary mask')
         if not isinstance(s['mask_sha256'],str) or not re.fullmatch(r'[0-9a-f]{64}',s['mask_sha256']):
             raise ValueError('Invalid mask digest')
+    if 'offset_x' in s:
+        for k in ('offset_x','offset_y'):
+            if type(s[k]) is not int or not 0<=s[k]<s['size']:raise ValueError('Invalid source offset')
+    return s
+
+def outpaint_inputs(raw,s):
+    w,h,_,pixels=decode(raw,('RGB',));size=s['size'];x,y=s['offset_x'],s['offset_y']
+    if x+w>size or y+h>size or w*h==size*size:
+        raise ValueError('Source must fit inside a strictly larger canvas')
+    # Use clamped edge colours as the initial context, not as generated output.
+    data=bytearray(size*size*3);mask=bytearray([255])*(size*size)
+    for cy in range(size):
+        sy=min(h-1,max(0,cy-y))
+        for cx in range(size):
+            sx=min(w-1,max(0,cx-x));i=cy*size+cx;j=sy*w+sx
+            data[i*3:i*3+3]=pixels[j*3:j*3+3]
+        if y<=cy<y+h:mask[cy*size+x:cy*size+x+w]=bytes(w)
+    return encode(size,size,'RGB',bytes(data)),encode(size,size,'L',bytes(mask))
+
+def review_outpaint(root,image,output,prompt,size,offset_x,offset_y,steps=15,strength_percent=90,seed=0):
+    s=review(root,image,output,prompt,size,steps,strength_percent,seed)
+    s.update(offset_x=offset_x,offset_y=offset_y)
+    src,_,bound=validate(root,s)
+    outpaint_inputs(guard.exact(src,bound,guard.MAX_INPUT),s)
     return s
 
 def mask_input(root,s,source):
@@ -175,7 +200,12 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raw
     mask_path,mask_bound=mask_input(root,s,src)
     mask=None
-    if mask_path:
+    expanded='offset_x' in s
+    if expanded:
+        initial,mr=outpaint_inputs(raw,s)
+        _,_,original,mask=mask_pixels(initial,mr,s)
+        out=mask_backend(model,initial,mr,s)
+    elif mask_path:
         mr=guard.exact(mask_path,mask_bound,guard.MAX_INPUT)
         _,_,original,mask=mask_pixels(raw,mr,s)
         out=mask_backend(model,raw,mr,s)
@@ -204,8 +234,10 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
             **({'reference_sha256':s['reference_sha256'],'palette_strength_percent':s['palette_strength_percent'],
                 'conditioning_sha256':hashlib.sha256(initial).hexdigest(),'reference_method':'classical_palette_initialisation',
                 'semantic_reference_conditioning':False} if ref_path else {}),
-            **({'mask_sha256':s['mask_sha256'],'masked_pixels':sum(v==255 for v in mask),
-                'unmasked_pixels_preserved':True,'inpainting_backend':'local_diffusion'} if mask is not None else {})}
+            **({'mask_sha256':hashlib.sha256(mr).hexdigest(),'masked_pixels':sum(v==255 for v in mask),
+                'unmasked_pixels_preserved':True,'inpainting_backend':'local_diffusion'} if mask is not None else {}),
+            **({'outpainting':True,'source_offset':[s['offset_x'],s['offset_y']],
+                'source_pixels_preserved':True,'initial_canvas_sha256':hashlib.sha256(initial).hexdigest()} if expanded else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
