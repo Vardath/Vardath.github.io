@@ -308,6 +308,9 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','development_cycles_interrupted',
                    count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
+        from deepthort_local.scheduled_tasks import ScheduledTasks
+        self.scheduled_tasks=ScheduledTasks(self.conversations)
+        self._last_schedule_check=-60
         from deepthort_local.team_delegation import TeamDelegationStore
         self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
@@ -512,6 +515,7 @@ class DeepThorTDesktop(tk.Tk):
         self.pause_queue.pack(side='right',padx=4)
         ttk.Button(qhead,text='Refresh',command=self._refresh_jobs).pack(side='right',padx=4)
         ttk.Button(qhead,text='Roadmap automation',command=self._roadmap_automation).pack(side='right',padx=4)
+        ttk.Button(qhead,text='Scheduled requests…',command=self._scheduled_requests).pack(side='right',padx=4)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
@@ -1760,10 +1764,11 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Close chat',
             'Close this chat tab?'+detail+'\n\n'
             'History and drafts are preserved and can be reopened with a right-click '
-            'on the chat tabs. Approved work queue jobs are not deleted.',parent=self):
+            'on the chat tabs. Unreleased scheduled requests for this chat are cancelled. Approved work queue jobs are not deleted.',parent=self):
             return
         self._cancel_chat_replies(chat_id,reason='Chat closed by user; no automatic retry')
         if self.chats.close(chat_id,self._project_key()):
+            self.scheduled_tasks.cancel_chat(self._project_key(),chat_id)
             self.current_chat=None
             self._refresh_chats()
             self._log('Chat tab closed; durable history retained and approved jobs untouched.')
@@ -4667,6 +4672,10 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs();self.tabs.select(4)
         self._start_command(cmd,cwd=project,label=f"Verify job #{j['id']}",kind='verification',job_id=j['id'])
 
+    def _scheduled_requests(self):
+        from deepthort_local.scheduled_tasks_dialog import show
+        show(self)
+
     def _toggle_queue(self):
         self.queue_paused=not self.queue_paused
         self.pause_queue.config(text='Resume queue' if self.queue_paused else 'Pause queue')
@@ -5132,6 +5141,14 @@ class DeepThorTDesktop(tk.Tk):
             if (self._latest_test_thread and self._latest_test_thread.is_alive()):return
             if getattr(self,'_mcp_discovery_active',False):return
             if self.active_conversation is None:
+                if (not self._quitting and not self._explicit_model_stop and not self.disk_gate.gaming()
+                        and not self.janus.status().get('paused') and now-getattr(self,'_last_schedule_check',-60)>=5):
+                    self._last_schedule_check=now
+                    project=self._project_key()
+                    released=self.scheduled_tasks.release_due(project,[i for i,_ in self.chats.list(project)],enabled=True)
+                    if released:
+                        self._log(f"Scheduled request #{released['schedule_id']} released as conversation #{released['request_id']}.")
+                        if released['chat_id']==self.current_chat:self._reload_chat()
                 incoming=self.delegations.next_foreground()
                 if incoming:
                     record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])
