@@ -79,5 +79,30 @@ class CrossProjectMemoryTests(unittest.TestCase):
         for project,mode in [('(general)','draft_plan'),('new','chat')]:
             ident=self.chats.submit('different-chat',project,mode,'serialized vessel ownership regression')
             self.assertFalse(any(x['id'].startswith('X') for x in _candidates(self.jobs,_scope(self.jobs,ident))))
+    def test_semantic_reranking_preserves_scope_slots_and_candidate_identity(self):
+        from unittest.mock import patch
+        from deepthort_local.memory_reranking import rerank
+        items=[{'id':'C1','kind':'historical_user_statement','observation':'car engine'},
+               {'id':'X2','kind':'cross_project_user_statement','observation':'orchard harvest'},
+               {'id':'C3','kind':'historical_user_statement','observation':'automobile engine'},
+               {'id':'X4','kind':'cross_project_user_statement','observation':'vehicle road'}]
+        result={'documents':[{'id':'d'+str(i),'cosine_similarity':s} for i,s in enumerate([.1,.2,.8,.9])]}
+        with patch('deepthort_local.memory_reranking.fit',return_value=result):
+            ranked=rerank('engine',items)
+        self.assertEqual([x['id'] for x in ranked],['C3','X4','C1','X2'])
+        self.assertEqual([x['kind'] for x in ranked],[x['kind'] for x in items])
+        self.assertEqual(items[0]['id'],'C1')
+    def test_semantic_reranking_actual_corpus_and_fallback(self):
+        from deepthort_local.memory_reranking import rerank
+        items=[{'id':'C'+str(i),'kind':'historical_user_statement','observation':v}
+               for i,v in enumerate(['apple fruit orchard harvest','car vehicle road engine',
+                                     'pear fruit orchard harvest','automobile vehicle road engine'])]
+        ranked=rerank('car vehicle engine',items)
+        self.assertEqual({x['id'] for x in ranked},{x['id'] for x in items})
+        self.assertIn(ranked[0]['id'],{'C1','C3'})
+        self.assertEqual(rerank('unseenword',items),items)
+        self.assertEqual(rerank('car',items[:3]),items[:3])
+        self.assertEqual(rerank('car',[items[0]]*4),[items[0]]*4)
 if __name__=='__main__':unittest.main()
+
 

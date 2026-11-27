@@ -89,7 +89,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 77 | 231 | Research report generation | Source extended: reviewed standalone offline HTML report, exact quote-bound narrative citations, source register and explicit limitations; Pass 078 Linux/Windows green and merged. Autonomous narrative generation and claim verification outstanding. |
 | 78 | 12 | Semantic vector embeddings | Partial source implemented: actual local corpus-trained TF-IDF/truncated SVD latent semantic vectors, verified eigensolver, cosine retrieval and reproducible basis; Pass 079 Linux/Windows green and merged. Pretrained contextual embeddings, durable memory integration and native acceptance outstanding. |
 | 79 | 221 | Cross-project historical recall | Source extended: existing asynchronous Memory lane selects exact relevant 400-character windows within bounded 8,000-character prior named-project draft prefixes; offset and project identity rechecked before delivery. Pass 080 CI pending; full history indexing, broader evidence and native acceptance outstanding. |
-| 80 | 222 | Semantic reranking | Existing partial; completion not started in this programme |
+| 80 | 222 | Semantic reranking | Source extended: bounded local latent cosine reranking of already scoped conversation candidates on the existing background Memory lane; same/cross-project slots preserved, independent model selection and exact provenance unchanged, deterministic lexical fallback. Pass 081 CI pending. Contextual neural reranking, wider corpora and native acceptance outstanding. |
 | 81 | 223 | Knowledge graphs | Existing partial; completion not started in this programme |
 | 82 | 224 | Automatic relationship discovery | Existing partial; completion not started in this programme |
 | 83 | 225 | Large document ingestion | Existing partial; completion not started in this programme |
@@ -651,3 +651,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 080 — 27 November 2026
 - Passes 077–079 both CI jobs green and merged sequentially (PRs 143–145). Extend existing V69 cross-project recall, not a parallel memory service: scan bounded historical prefixes, preserve exact source offsets and hashes, and recheck them on foreground delivery; retain legacy prefix receipts and named-project planning isolation. Three additional regression cases. Next rank 80 / ID 222 semantic reranking. No installer.
+
+## Pass 081 — 27 November 2026
+- Reuse Pass 079 local corpus-trained LSA only within the existing asynchronous conversation Memory selector. Reorder the admitted 4–6 candidate shortlist by finite cosine similarity while preserving same-chat and cross-project slots, original identities and source evidence. Sparse/invalid/degenerate corpus falls back to original order; no additional resident model, inference request or foreground rerank. Two regression cases (actual corpus and scope-slot preservation). Next rank 81 / ID 223 knowledge graphs. No installer.
