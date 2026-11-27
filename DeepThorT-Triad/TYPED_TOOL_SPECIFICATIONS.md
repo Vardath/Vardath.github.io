@@ -659,3 +659,7 @@ Files & Images → Auto-light 3D scene. Use Pass 143 scene specification plus `v
 ## Reviewed automated 3D preview rendering (Pass 145)
 
 Files & Images → Render 3D preview. Pass 144 lighting specification plus `elevation_deg` (−80–80), `width` and `height` (64–512 integer pixels), `colors` (one RGB integer triplet per object), `background` (RGB integer triplet). Produces actual auto-framed orthographic flat-shaded PNG with depth-buffer occlusion. Eight-million candidate-pixel budget, exact source guards and decoded pixels. Approximate lighting, not physical photometry, textures, shadows, PBR or native production render.
+
+## Reviewed game asset optimisation (Pass 146)
+
+Files & Images → Optimise game asset. JSON keys: `mesh` (plain triangular OBJ), `triangle_budget` (1–10,000), `vertex_budget` (3–20,000), `cell_sizes` (1–8 distinct sizes 1e-6–1e6), `max_displacement` (1e-6–1e6), `max_position_error` (1e-12–1), `preserve_boundary` (boolean). Produces new GLB only if budgets, precision, manifold checks and any requested exact boundary preservation pass. Not a surface-distance, engine performance, material, UV, rig, LOD or collider guarantee.
