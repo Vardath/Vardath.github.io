@@ -761,3 +761,7 @@ Files & Images → Editable graphic. JSON canvas keys: `title`, `width`, `height
 ## Visual workflow dataflow (Pass 169)
 
 Both the JANUS-designed and manually composed tool workflow approval paths show a scrollable read-only stage graph before exact command review. Recipe IDs, titles, input/output paths and actual predecessor links come from the frozen manifest, with independent stages distinguished from artifact dependencies. Cancel to leave the proposal unapproved. Continuing still requires the existing command and source revalidation and user approval. This is not a visual node editor or parallel execution engine.
+
+## Reviewed sampled video interpretation (Pass 170)
+
+Files & Images → Interpret video. JSON: `{"video":"clip.mp4","frames":[0,24,48]}`. Select 1–4 sorted distinct frame indices in a short silent constant-rate H.264 MP4 (max 300 frames, 640×480, 16 MiB). Requires installed FFmpeg pair, Node and existing offline Florence vision model. Produces a new JSON report with source/frame hashes, timestamps and model descriptions; these are sparse sampled observations, not verified semantics or continuous motion/audio interpretation. Existing source remains untouched.

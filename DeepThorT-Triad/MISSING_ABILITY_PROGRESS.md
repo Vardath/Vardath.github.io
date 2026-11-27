@@ -178,7 +178,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 166 | 102 | Layer-aware image editing | Partial: reviewed independent PNG layers with names, order, position, size, opacity, visibility and new editable OpenRaster output, merged preview and exact source guards. Pass 167 CI pending. Existing ORA/PSD import and interactive layer editor outstanding. |
 | 167 | 296 | Editable graphic design | Partial: reviewed named SVG groups, independently editable shapes/text, stable IDs, visibility and opacity, strict geometry and exact source/non-overwrite guards. Pass 168 CI pending. External editor, visual rendering, interactive authoring and model-led acceptance outstanding. |
 | 168 | 103 | Visual multimedia generation workflow graphs | Partial: read-only dataflow preview of exact frozen recipes, external inputs and predecessor artifact edges in both model-designed and manually composed workflow reviews. Pass 169 CI pending. Interactive node authoring and native UI acceptance outstanding. |
-| 169 | 107 | Existing video interpretation | Not started in this programme |
+| 169 | 107 | Existing video interpretation | Partial: reviewed explicit silent H.264 frame samples, actual decoded frame hashes/timestamps and existing offline Florence multi-frame captions, exact source/runtime guards and JSON publication. Pass 170 CI pending. Continuous video, audio and native model accuracy outstanding. |
 | 170 | 236 | Screen capture and interpretation | Existing partial; completion not started in this programme |
 | 171 | 298 | Video editing | Existing partial; completion not started in this programme |
 | 172 | 300 | Video transitions | Existing partial; completion not started in this programme |
@@ -943,3 +943,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 169 — 27 November 2026
 - Project exact frozen workflow manifests into a bounded read-only stage graph with recipe identities, external inputs, output paths, actual predecessor links and manifest digest. Show in both existing workflow approval paths before exact command review; cancelling grants nothing. No new scheduler or command authority. Existing workflow-design suite gains dependency/digest regression. Interactive node authoring and native graphical acceptance outstanding. Next rank 169 / ID 107 existing video interpretation. No installer.
+
+## Pass 170 — 27 November 2026
+- Add bounded local silent MP4 sampled-frame interpretation with actual FFmpeg decoding, frame identities/timestamps and a single batch of existing offline Florence vision captions. Review exact source, frame choices and runtime guards before dispatch; output JSON is new and semantic accuracy explicitly unverified. No new model or backend. Fixture regressions use actual video decoding and scripted captions, not native inference. Next rank 170 / ID 236 screen capture and interpretation. No installer.
