@@ -51,9 +51,9 @@ def validate(root,plan):
 
 def resample(raw,capacity):
     if not raw or len(raw)%2:raise ValueError('Invalid speech samples')
-    values=struct.unpack('<%dh'%(len(raw)//2),raw)
-    count=(len(values)*RATE+22049)//22050
+    count=((len(raw)//2)*RATE+22049)//22050
     if count>capacity:raise ValueError('Generated speech exceeds reviewed cue; adjust text or timing')
+    values=struct.unpack('<%dh'%(len(raw)//2),raw)
     result=bytearray()
     for i in range(count):
         j,f=divmod(i*22050,RATE)
