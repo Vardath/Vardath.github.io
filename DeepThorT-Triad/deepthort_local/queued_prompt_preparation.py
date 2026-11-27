@@ -47,7 +47,7 @@ def candidate(path,roles,exclude=()):
             row=dict(raw)
             if row['id'] in exclude or len(row['prompt'])>MAX_PROMPT or json.loads(row['attachments']):continue
             # Each scope is considered once by each role; expired advice is not retried indefinitely.
-            done={x[0] for x in db.execute('SELECT role FROM queued_prompt_advice WHERE request_id=? AND identity=?',(row['id'],identity(row)))}
+            done={x[0] for x in db.execute('SELECT role FROM queued_prompt_attempts WHERE request_id=? AND identity=? UNION SELECT role FROM queued_prompt_advice WHERE request_id=? AND identity=?',(row['id'],identity(row),row['id'],identity(row)))}
             for role in allowed:
                 if role not in done:return row,role
     return None
@@ -74,6 +74,14 @@ def run_once(path,client,roles,stopped,*,exclude=()):
             ' No tools, execution, file changes, approvals, or claims of verification. Do not invent evidence. '
             'Keep the original request authoritative. Return ONLY JSON {"kind":"advice","finding":"max 220 chars","guidance":"max 320 chars"} '
             'or {"kind":"none","finding":"","guidance":""}. Exact queued user prompt:\n'+row['prompt'])
+    if stopped():return None
+    # Reserve one exact advisory attempt atomically. A malformed reply or interrupted
+    # inference cannot monopolize the queue through automatic infinite retries.
+    with closing(connect(path)) as db,db:
+        db.execute('BEGIN IMMEDIATE')
+        fresh=current(db,row['id'])
+        if not fresh or fresh['state']!='pending' or identity(fresh)!=key:return None
+        if not db.execute('INSERT OR IGNORE INTO queued_prompt_attempts VALUES(?,?,?)',(row['id'],role,key)).rowcount:return None
     if stopped():return None
     body=checked(strict_json(client.chat_as(role,'queued-prep-'+key[:24]+'-'+role,prompt,max_tokens=256)))
     if stopped():return None

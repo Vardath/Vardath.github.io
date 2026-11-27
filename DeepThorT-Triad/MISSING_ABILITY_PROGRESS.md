@@ -837,3 +837,5 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Owner-directed workflow priority — independent prompt queue (between passes 137 and 138)
 - Existing durable ConversationStore and approved JobStore retained. Add explicit Queue independent task (separate task chat, not specification amendment), bounded 32 unfinished prompts, prompt queue view and cancellation; existing FIFO dispatcher remains authoritative. Add spare-capacity JANUS/Sentinel/Granite advisory preparation, exact identity-bound receipts, nonblocking consumption at planning, cancellation/restart tests. No new execution authority. Native concurrent full task execution remains outstanding. This is a workflow priority, not an additional numbered missing-register entry. Resume pass 138 automated mastering after CI review.
+
+- Queue robustness follow-up: persist one attempted advisory invocation per exact request/role before model execution, so malformed responses or interrupted inference cannot repeatedly occupy the oldest prompt. Failed advisory work does not prevent normal planning. Added regression for progress to next prompt.

@@ -42,6 +42,13 @@ class QueueTests(unittest.TestCase):
         for i in range(32):self.submit(str(i),'Work')
         with self.assertRaises(ValueError):self.submit('overflow','Work')
         self.assertEqual(self.store.get(a)['state'],'cancelled')
+    def test_invalid_reply_does_not_starve_next_prompt(self):
+        a=self.submit('a','First');b=self.submit('b','Second')
+        class Bad:
+            def chat_as(self,*args,**kwargs):return 'not JSON'
+        with self.assertRaises(ValueError):q.run_once(self.path,Bad(),['janus'],lambda:False)
+        self.assertEqual(q.candidate(self.path,['janus'])[0]['id'],b)
+        self.assertEqual(q.rows(self.path)[0]['prepared'],0)
     def test_admission(self):
         models={r:{'resident':True,'busy':False,'generating':False} for r in q.ROLES}
         health={'pid':1,'ready':True,'serial_memory_mode':False,'admission_waiting':0,'admission_slots':2,

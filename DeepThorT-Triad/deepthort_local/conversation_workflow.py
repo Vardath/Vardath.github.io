@@ -39,6 +39,10 @@ class ConversationStore:
                 CREATE TABLE IF NOT EXISTS independent_prompt_queue (
                     request_id INTEGER PRIMARY KEY REFERENCES conversation_requests(id),
                     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+                CREATE TABLE IF NOT EXISTS queued_prompt_attempts (
+                    request_id INTEGER NOT NULL REFERENCES independent_prompt_queue(request_id),
+                    role TEXT NOT NULL, identity TEXT NOT NULL,
+                    PRIMARY KEY(request_id,role,identity));
                 CREATE TABLE IF NOT EXISTS queued_prompt_advice (
                     request_id INTEGER NOT NULL REFERENCES independent_prompt_queue(request_id),
                     role TEXT NOT NULL, identity TEXT NOT NULL, body TEXT NOT NULL,
