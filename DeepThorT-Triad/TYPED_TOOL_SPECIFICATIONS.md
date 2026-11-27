@@ -359,3 +359,11 @@ Files & Images → Search internet. Enter the exact public query and 1–20 resu
 ```
 
 Files & Images → Retrieve webpage. Review the exact outgoing HTTPS request and new JSON output. Accept public lowercase DNS hostnames on default HTTPS port without query, credentials or fragment. Pin a public IPv4 result, verify TLS hostname, refuse redirects, compressed/non-text or oversized responses. Parse static HTML/plain text, excluding script/style/template and other hidden container bodies; list up to 100 discovered display-only links without following them. Report original URL, response and text SHA-256, extracted text and title. Body cap 512 KiB, text cap 100000 characters; no partial/truncated page claimed. No browser rendering, authentication, subresources, page execution or independent factual verification. Live network and native acceptance outstanding.
+
+## Discover online image candidates
+
+```json
+{"query":"quartz landscape","count":6}
+```
+
+Files & Images → Discover images. Approve the exact Wikimedia Commons query and new JSON report. Finds up to six provider-declared CC0 or CC BY JPEG/PNG candidates within the existing size and dimension limits; report includes title, creator, source and download URLs, license, attribution requirement and provider hashes. No image download or automatic reuse; source-page licensing and other rights must be reviewed independently. Pinned public IPv4 TLS, fixed provider endpoint, bounded JSON and no redirects. Live provider and native acceptance pending.

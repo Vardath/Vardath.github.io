@@ -79,7 +79,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 67 | 17 | Search-engine result interpretation | Source implemented: bounded supplied search-result lexical ranking, deduplication, query coverage and explicit unverified provenance; Pass 068 CI pending. Model-directed semantic synthesis and independent source verification outstanding. |
 | 68 | 16 | General internet search | Source implemented: explicit user-approved Brave Search API adapter, transient key, bounded structured results and lexical interpretation; Pass 069 CI pending. Live provider account, model integration and native GUI acceptance outstanding. |
 | 69 | 227 | Arbitrary webpage retrieval | Source extended: explicit exact public HTTPS page retrieval with pinned public IPv4 TLS, bounded static text extraction, source/text hashes and non-overwriting report; Pass 070 CI pending. Dynamic/authenticated/query URLs and live/model acceptance outstanding. |
-| 70 | 233 | Online image discovery | Existing partial; completion not started in this programme |
+| 70 | 233 | Online image discovery | Source extended: standalone reviewed Commons search and non-overwriting image candidate report, attribution metadata and pinned public TLS JSON transport; Pass 071 CI pending. Wider providers and live/native acceptance outstanding. |
 | 71 | 21 | Scientific citation verification | Not started in this programme |
 | 72 | 20 | Academic literature discovery | Not started in this programme |
 | 73 | 18 | Website crawling | Not started in this programme |
@@ -612,3 +612,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 070 — 27 November 2026
 
 - Add user-approved exact public HTTPS HTML/plain page retrieval, pinned public IPv4 TLS, no redirects/query/credentials, bounded body and text, static title/text/link extraction with no script/subresource execution or link following. Preserve URL and response/text hashes in reviewed new JSON report with source guards. The approval explicitly includes the outgoing HTTPS request. Four regressions for transport, static extraction, rejection and non-overwrite. Live external retrieval, dynamic pages and model integration remain outstanding. Next rank 70 / ID 233 online image discovery. No installer.
+
+## Pass 071 — 27 November 2026
+
+- Add standalone reviewed Commons image discovery, independent of the existing video workflow. Explicit public query, up to six CC0/CC BY candidates, provider response hash, image identity and attribution metadata. No image download, independently verified license or new authority. Fixed public HTTPS JSON transport for research adapters; four fixture regressions. Pass 068 green and merged (PR 134); 069–070 green awaiting sequential merge. Next rank 71 / ID 21 citation verification. No installer.
