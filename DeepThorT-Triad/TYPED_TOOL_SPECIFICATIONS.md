@@ -945,3 +945,7 @@ Test owned-window keyboard accepts `{"actions":[{"kind":"text","text":"hello"},{
 ## Reviewed graphical application operation (Pass 209)
 
 Operate reviewed GUI edit accepts `{"executable":"app.exe","window_title":"Fixture","window_class":"TestWindow","control_id":101,"text":"hello"}`. Requires an exact trusted project-local executable up to 16 MiB and an explicitly identified visible top-level window and direct standard Win32 Edit control. Launch under the existing shared cap, verify exact process and window identity, refuse password/read-only controls, send literal text and verify exact readback. The app may display and perform side effects with user rights; this is not a sandbox. Cleanup closes the new process tree. No existing app attachment, arbitrary command, global input, button activation or overall task success claim. External application acceptance pending.
+
+## Reviewed background desktop execution (Pass 210)
+
+Run on background desktop accepts `{"executable":"app.exe","seconds":15,"expected_window_title":"Ready"}`. Uses the existing separate Windows desktop runner with exact named shared resource job and nested cleanup checks. Bounded to 45 seconds; exact trusted project-local binary (typed-tool maximum 16 MiB). No foreground switch or input. Native code runs with user rights and is not sandboxed; may affect files or network. Receipt distinguishes expected window observation from rendering or functional success. Native external acceptance pending.
