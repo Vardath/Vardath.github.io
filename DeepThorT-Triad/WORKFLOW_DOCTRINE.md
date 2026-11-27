@@ -285,3 +285,7 @@ The existing coordinator may prepare at most two independent queued prompts conc
 ## Pass 254 — dynamic advisory model routing
 
 Queued parallel preparation ranks currently admitted permanent roles by task vocabulary (executive planning, independent review, implementation) and exact valid specialist configuration, retaining deterministic tie order, owner project priority and attempt reservations. Routing is advisory only and cannot replace models, reassign permanent responsibilities, grant tools, bypass independent acceptance or disable mandatory asynchronous Memory. Broader production routing and empirical model selection remain outstanding.
+
+## Pass 255 — exact owner-authorised diagnostic self-installation
+
+Review self-update is a narrowly bounded installation path for the existing V71 independently reviewed, isolated-tested diagnostic wording correction. Owner pauses the queue and allows work to finish, reviews exact before/after text and hash, and confirms. The host revalidates exact source, cap constants, package and review, retains a durable baseline and pre-write receipt and atomically replaces only diagnostics.py. Normal restart required; no generated logic execution, installer creation, automatic reboot or authority change. General application updates and restoration remain outstanding.
