@@ -37,7 +37,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 25 | 281 | SQL querying | Source extended: reviewed parameterized SELECT against exact standalone SQLite snapshot, authorizer and execution/result bounds, structured JSON. Pass 026 CI pending; other dialects/live connections and richer analysis outstanding. |
 | 26 | 283 | Data cleaning | Source extended: reviewed CSV trimming, literal missing-value handling and stable deduplication, reconciled row counts. Pass 027 CI pending; wider formats and model integration outstanding. |
 | 27 | 284 | Data transformation | Source extended: reviewed ordered CSV rename/filter/sort/decimal-derived columns with roundtrip verification. Pass 028 CI pending; joins, pivots and other formats outstanding. |
-| 28 | 72 | Editing existing presentations | Not started in this programme |
+| 28 | 72 | Editing existing presentations | Source extended: reviewed unique whole-run text replacements on specified slides; all untouched PPTX parts byte-verified. Pass 029 CI pending; wider edits and visual validation outstanding. |
 | 29 | 275 | Create presentations | Existing partial; completion not started in this programme |
 | 30 | 73 | Presentation template application | Not started in this programme |
 | 31 | 212 | Long-form writing | Existing partial; completion not started in this programme |
@@ -444,3 +444,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 028 — 27 November 2026
 
 - Typed sequential CSV transformations: rename, text or decimal comparison filter, stable sort and derived decimal arithmetic columns. Explicit numeric conversion, 32-digit decimal working precision (division may round), reject invalid/oversized inputs, zero division, duplicate headers and formula-like output under reject policy. Bounded pipeline and exact CSV roundtrip; no executable expressions. Four fixtures. Next rank 28 / ID 72 presentation editing. No installer.
+
+## Pass 029 — 27 November 2026
+
+- Reviewed unique whole-text-run replacements in ordinary PPTX slide shapes. Resolve slide order through package relationships; bound ZIP entries and expanded bytes, refuse unsafe/signed/macro archives and ambiguous targets. Resolve all replacements before mutation; retain byte-identical contents of every untouched package part, reparse changed XML and reopen with python-pptx. Original preserved. No layout-fit, rendering or editing charts/tables/notes claims. Optional presentation dependency installation with explicit consent. Four actual PPTX fixture regressions. Next rank 29 / ID 275 create presentations. No installer.

@@ -67,3 +67,11 @@ Trimming precedes explicit literal missing-value handling; deduplication retains
 ```
 
 Operations run in reviewed order. Filters support eq/ne/lt/le/gt/ge; text comparisons use literal string ordering, numeric comparisons require finite decimal strings. Derived arithmetic supports add/subtract/multiply/divide with a column or decimal literal. Division may round at 32 significant digits. Invalid numbers fail closed.
+
+## Edit presentation text
+
+```json
+{"presentation":"deck.pptx","edits":[{"slide":1,"before":"Old title","after":"New title"}]}
+```
+
+Install presentation tools first. Each edit must match exactly one existing whole text run in a normal slide shape; formatting-split text, charts, tables and notes are not edited. Unchanged package parts are byte-verified. Review text fit visually in a presentation application.
