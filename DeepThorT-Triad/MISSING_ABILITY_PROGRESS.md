@@ -140,7 +140,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Source extended: optional reviewed installed sherpa-onnx offline diarisation CLI, exact recording/engine/model hashes, bounded timed anonymous labels, new JSON report. Pass 129 CI pending. Native engine/model acceptance, accuracy and isolated audio tracks outstanding. No identity or cross-recording matching. |
 | 129 | 152 | Audio restoration | Source extended: reviewed mono/stereo PCM isolated sample interpolation, optional DC removal and 50/60 Hz notch, verified frame/format preservation and new WAV. Pass 130 CI pending. Listening acceptance, clipping reconstruction and broader defect restoration outstanding. |
 | 130 | 154 | Audio source isolation | Partial: reviewed short stereo spatial component isolation (center/side/left/right) and exact complementary PCM reconstruction, new ZIP with hashes. Pass 131 CI pending. Semantic separation of arbitrary overlapping sources and mono mixtures remains outstanding. |
-| 131 | 131 | Musical stem separation | Not started in this programme |
+| 131 | 131 | Musical stem separation | Partial: optional reviewed Sherpa-ONNX UVR/MDX-Net pinned model, offline vocals and accompaniment WAVs, exact format/frame and ZIP verification, reconstruction metric. Pass 132 CI pending. Actual installed native inference, listening quality and additional individual instrumental stems outstanding. |
 | 132 | 132 | Instrument isolation | Not started in this programme |
 | 133 | 135 | Audio-to-MIDI transcription | Not started in this programme |
 | 134 | 302 | Musical arrangement | Existing partial; completion not started in this programme |
@@ -813,6 +813,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 131 — 27 November 2026
 - Add bounded reviewed stereo spatial extraction: center, side, left or right, with complementary residual. Verify both stereo WAVs and exact sample-by-sample reconstruction, package new ZIP with manifest and hashes. Three fixture regressions. This is partial audio-source isolation only; no semantic vocal/instrument claims or mono separation. Preserve shared cap; no new models. Next rank 131 / ID 131 musical stem separation. No installer.
+
+## Pass 132 — 27 November 2026
+- Add optional reviewed installed sherpa-onnx source-separation CLI with one pinned official UVR_MDXNET_1_9703.onnx asset (upstream SHA-256 and size), CPU one thread, existing 512 MiB auxiliary limit and foreground reserve. Short stereo 44.1 kHz PCM16 clips (3–15 s), exact source/engine/model review, cancellable bounded execution, two distinct WAV files and ZIP with frame alignment, hashes and reconstruction error. Three fixture regressions; real model execution and listening quality unverified; fail closed if cap cannot admit model. General source isolation also gains a specific vocals/accompaniment backend, not arbitrary separation. Next rank 132 / ID 132 instrument isolation. No installer.
 
 ### Pass 129 historical Windows fixture timeout
 - Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.

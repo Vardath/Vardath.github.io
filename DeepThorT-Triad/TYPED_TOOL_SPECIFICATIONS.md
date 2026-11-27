@@ -603,3 +603,7 @@ Files & Images → Restore audio. JSON keys: `audio` (project-relative mono/ster
 ## Stereo spatial source isolation (Pass 131)
 
 Files & Images → Isolate stereo component. JSON keys: `audio` (project-relative 3–20 second stereo PCM16 WAV, 8–48 kHz), `component` (`center`, `side`, `left`, or `right`). New ZIP with `selected.wav`, `residual.wav` and `manifest.json`. Exact sample reconstruction verified without clipping; spatial extraction only, not semantic separation. Center is not necessarily vocals; side is not necessarily accompaniment. Native listening and general source separation outstanding.
+
+## Musical stem separation (Pass 132)
+
+Files & Images → Separate musical stems. Select a 3–15 second stereo PCM16 44.1 kHz WAV, trusted installed `sherpa-onnx-offline-source-separation.exe`, official [UVR_MDXNET_1_9703.onnx](https://github.com/k2-fsa/sherpa-onnx/releases/tag/source-separation-models) (exact upstream size and SHA-256 pinned), and a new ZIP. CPU-only, one thread, existing 512 MiB ordinary auxiliary limit; fail closed if the engine cannot fit. Outputs `vocals.wav`, `accompaniment.wav` and `manifest.json`, with exact frame alignment and reconstruction error measurement. Native execution and semantic/listening quality unverified. No automatic installation or download, no individual identification or extra instrument stems. Owner must install compatible trusted licensed tool/model separately.
