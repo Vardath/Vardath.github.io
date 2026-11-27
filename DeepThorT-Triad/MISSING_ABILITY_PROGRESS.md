@@ -51,7 +51,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 39 | 282 | Statistical analysis | Source extended: exact descriptive numeric statistics, explicit missingness, quantile and variance methods, verified JSON report. Pass 040 CI pending; inferential statistics and model-directed workflows outstanding. |
 | 40 | 285 | Exploratory data analysis | Source extended: declared numeric/categorical profiles, exact missing/duplicate counts, frequency summaries, IQR flags and pairwise Pearson correlations. Pass 041 CI pending; automated hypotheses, broader formats and native integration outstanding. |
 | 41 | 291 | Reproducible analytical reports | Source extended: deterministic self-contained HTML analysis report with exact dataset/specification, algorithm hashes, embedded results and repeated reproduction verification. Pass 042 CI pending; native model authoring and visual acceptance outstanding. |
-| 42 | 136 | Musical tempo detection | Not started in this programme |
+| 42 | 136 | Musical tempo detection | Source implemented: bounded 16-bit PCM WAV transient interval tempo estimator with support counts and explicit ambiguity. Pass 043 CI pending; compressed formats, variable/complex music and native acceptance outstanding. |
 | 43 | 305 | Music metadata management | Existing partial; completion not started in this programme |
 | 44 | 137 | Musical key detection | Not started in this programme |
 | 45 | 153 | Audio noise reduction | Not started in this programme |
@@ -500,3 +500,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 042 — 27 November 2026
 
 - Add deterministic standalone analytical HTML reports reusing the EDA producer. Explicit expected dataset SHA-256, exact reviewed specification and methods, human-readable coverage/statistics/categories/correlations, embedded machine-readable result manifest, algorithm source hashes and Python version. Repeat calculation and rendering, verify extracted manifest and exact bytes, refuse changed source, escape all data, no scripts or external assets. Four fixtures; visual and interpretation acceptance remain separate. Passes 032–033 verified source/Windows green and merged (PRs 98–99). Next rank 42 / ID 136 musical tempo detection. No installer.
+
+## Pass 043 — 27 November 2026
+
+- Add local PCM WAV tempo estimation using observed amplitude-change transients, interval consensus, explicit BPM range, support counts and half/double ambiguity candidates. Refuse unsupported audio; report no supported estimate for silence or inconsistent timing rather than invent BPM. Bounded exact source and JSON receipt. Four fixture tests include synthetic 120 and 75 BPM mono/stereo click tracks. No claim of full music/variable tempo recognition. Next rank 43 / ID 305 music metadata management. No installer.
