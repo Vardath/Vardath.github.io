@@ -61,7 +61,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 49 | 161 | Automatic UV unwrapping | Source implemented: bounded static triangular OBJ per-face UV atlas, verified separate islands and unchanged geometry. Pass 050 CI pending; seam-optimised charting, materials, normals and native acceptance outstanding. |
 | 50 | 313 | Mesh simplification | Source extended: bounded static OBJ vertex-cluster reduction with explicit displacement limit, collapsed/duplicate face reconciliation and surviving winding checks. Pass 051 CI pending; topology/attribute-aware decimation and native acceptance outstanding. |
 | 51 | 324 | General 3D format conversion | Source extended: static triangular OBJ to embedded GLB with indexed float32 geometry, complete unit-square UVs, explicit precision bound and decoded accessor checks. Pass 052 CI pending; other formats, rigging, materials and native acceptance outstanding. |
-| 52 | 100 | Multi-image composition | Not started in this programme |
+| 52 | 100 | Multi-image composition | Source implemented: reviewed ordered PNG layers with explicit placement, resizing, opacity and alpha on opaque RGB canvas; exact source guards and decoded pixel verification. Pass 053 CI pending; visual quality and native model integration outstanding. |
 | 53 | 293 | Image enhancement | Existing partial; completion not started in this programme |
 | 54 | 294 | Logo generation | Existing partial; completion not started in this programme |
 | 55 | 295 | Infographic generation | Existing partial; completion not started in this programme |
@@ -540,3 +540,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 052 — 27 November 2026
 
 - Add reviewed static triangular OBJ-to-glTF 2.0 GLB conversion with embedded indexed binary geometry and complete unit-square UV support (V-axis conversion). Enforce reviewed float32 position error, reject collapse/winding reversal, decode emitted accessors and verify triangle order and values. Four regression fixtures, including UV-atlas chaining. Geometry axes unchanged; materials, normals, groups, animation, further format adapters and application import/render acceptance outstanding. Passes 038–042 green and merged (PRs 104–108). Next rank 52 / ID 100 multi-image composition. No installer.
+
+## Pass 053 — 27 November 2026
+
+- Add bounded PNG composition of two to six distinct source images, explicit canvas/background, in-bounds layer placement and sizing, source-alpha-aware opacity and verified decoded RGB output. Review actual source dimensions and all source hashes; use existing typed approval and non-overwriting publication. Four fixture regressions cover placement, overlap, alpha, invalid inputs and stale second source. Native visual acceptance, broader formats, color-managed and model-directed workflows remain outstanding. Next rank 53 / ID 293 image enhancement. No installer.
