@@ -1061,3 +1061,7 @@ Remove masked video object accepts `{"video":"clip.mp4","plate":"clean.png","mas
 ## Reviewed camera motion (Pass 238)
 
 Generate camera motion accepts `{"video":"clip.mp4","start_frame":0,"end_frame":48,"width":320,"height":240,"keyframes":[{"frame":0,"crop":[0,0,640,480]},{"frame":47,"crop":[80,60,480,360]}]}`. Silent H.264, 2–60 selected frames, up to 640×480; 2–8 ordered keyframes relative to the selected interval with exact first and last endpoints. Smoothstep crop interpolation and lossless RGB verification. No new viewpoints, physical 3D motion or audio.
+
+## Reviewed mouth synchronisation (Pass 239)
+
+Synchronise mouth cues accepts face PNG, exact-duration mono PCM16 48 kHz audio WAV, mouth [x,y,w,h], 2–4 matching PNG sprites, cues [{frame,sprite}] (relative zero-based frame and sprite index), fps 24/25/30, frames 2–120. First cue at frame 0; use at least two distinct visible sprites. Output new MP4 with H.264 RGB video and lossless ALAC audio; checks decoded frames and speech bytes and zero stream origins. Requires owner-supplied cue alignment; no phoneme recognition or neural face animation. Native mux/playback acceptance pending.
