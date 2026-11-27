@@ -870,6 +870,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Inpaint image…',command=lambda:self._queue_image_to_image(inpaint=True)).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Outpaint image…',command=lambda:self._queue_image_to_image(outpaint=True)).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Remove object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='remove')).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Replace object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='replace')).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1419,7 +1420,7 @@ class DeepThorTDesktop(tk.Tk):
     def _queue_image_to_image(self,reference=False,inpaint=False,outpaint=False,object_edit=None):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
-        from deepthort_local.image_to_image import review,review_reference,review_mask,review_outpaint,review_removal
+        from deepthort_local.image_to_image import review,review_reference,review_mask,review_outpaint,review_removal,review_replacement
         try:
             root=Path(self._project_key()).resolve(strict=True)
             selected=filedialog.askopenfilename(parent=self,initialdir=str(root),filetypes=[('PNG image','*.png')])
@@ -1450,18 +1451,22 @@ class DeepThorTDesktop(tk.Tk):
                 ref=Path(picked).absolute().relative_to(root).as_posix()
                 palette=simpledialog.askinteger('Reference palette strength','Palette strength 1–100%:',minvalue=1,maxvalue=100,initialvalue=80,parent=self)
                 if palette is None:return
-            removed_object=None
-            if object_edit=='remove':
-                removed_object=simpledialog.askstring('Remove object','Describe the object selected by the mask:',parent=self)
+            removed_object=None;replacement_object=None
+            if object_edit in ('remove','replace'):
+                removed_object=simpledialog.askstring('Selected object','Describe the existing object selected by the mask:',parent=self)
                 if not removed_object:return
-            prompt=simpledialog.askstring('Transform image','Describe the unobstructed background to reconstruct:' if object_edit=='remove' else 'Describe the desired transformation:',parent=self)
+            if object_edit=='replace':
+                replacement_object=simpledialog.askstring('Replacement object','Describe the new object to generate:',parent=self)
+                if not replacement_object:return
+            prompt=simpledialog.askstring('Transform image','Describe the unobstructed background to reconstruct:' if object_edit=='remove' else ('Describe the lighting, perspective and surrounding scene:' if object_edit=='replace' else 'Describe the desired transformation:'),parent=self)
             if not prompt:return
             strength=simpledialog.askinteger('Transformation strength','Strength 30–90% (higher changes more):',
-                minvalue=30,maxvalue=90,initialvalue=90 if object_edit=='remove' else 60,parent=self)
+                minvalue=30,maxvalue=90,initialvalue=90 if object_edit in ('remove','replace') else 60,parent=self)
             if strength is None:return
             target=f'janus-img2img-{uuid.uuid4().hex[:12]}.png'
             seed=secrets.randbelow(2**32)
-            if object_edit=='remove':s=review_removal(root,source,mask,target,prompt,removed_object,size,15,strength,seed)
+            if object_edit=='replace':s=review_replacement(root,source,mask,target,prompt,removed_object,replacement_object,size,15,strength,seed)
+            elif object_edit=='remove':s=review_removal(root,source,mask,target,prompt,removed_object,size,15,strength,seed)
             elif outpaint:s=review_outpaint(root,source,target,prompt,size,offset_x,offset_y,15,strength,seed)
             elif inpaint:s=review_mask(root,source,mask,target,prompt,size,15,strength,seed)
             elif reference:s=review_reference(root,source,ref,target,prompt,size,15,strength,seed,palette)
@@ -1471,6 +1476,7 @@ class DeepThorTDesktop(tk.Tk):
                 + (f'Reference: {ref}; palette strength {palette}% (palette guidance only).\n' if reference else '')
                 + (f'Mask: {mask}; only white pixels will be replaced.\n' if inpaint else '')
                 + (f'Object to remove: {removed_object}; visual success requires review.\n' if object_edit=='remove' else '')
+                + (f'Replace: {removed_object} with {replacement_object}; visual success requires review.\n' if object_edit=='replace' else '')
                 + (f'Expand canvas; original image at ({offset_x}, {offset_y}), original pixels retained.\n' if outpaint else '')
                 + 'Inputs are hash-bound and will not be modified. Uses the existing optional offline image model; generation can be slow.',
                 parent=self):return

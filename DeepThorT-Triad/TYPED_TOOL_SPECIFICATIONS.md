@@ -727,3 +727,7 @@ Files & Images → Outpaint image. Choose opaque RGB source, strictly larger 256
 ## Reviewed image object removal (Pass 162)
 
 Files & Images → Remove object. Select an opaque square RGB PNG and same-size binary grayscale mask, describe the unwanted object and expected unobstructed background. At least 25% of the image remains unmasked; the selected region is initialized from neighbouring unmasked pixels, not original masked content. Local diffusion receives negative object guidance. Outside pixels stay exact; visual object absence is not certified.
+
+## Reviewed image object replacement (Pass 163)
+
+Files & Images → Replace object. Select explicit source and mask as for object removal, describe the existing object, a different replacement object, and scene context. The old masked pixels are discarded, the replacement and context supply positive guidance, and the old-object description supplies negative guidance. Source pixels outside the mask remain exact. Identity, geometry, and visual acceptance require review.

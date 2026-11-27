@@ -171,7 +171,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 159 | 86 | Image inpainting | Partial: explicitly masked offline diffusion using existing local model, square RGB source and binary grayscale mask, exact unmasked pixels and dual source guards. Pass 160 CI pending. Native model compatibility and visual acceptance outstanding. |
 | 160 | 87 | Image outpainting | Partial: explicit source offset within a larger 256/384/512 square canvas, generated outside-region mask, existing offline diffusion and exact original source pixels. Pass 161 CI pending. Native compatibility, seams and visual acceptance outstanding. |
 | 161 | 88 | Image object removal | Partial: explicit object mask, deterministic boundary-colour initialisation discards selected original pixels, negative object guidance and local masked diffusion with exact outside preservation. Pass 162 CI pending. Automatic segmentation and visual absence verification outstanding. |
-| 162 | 89 | Image object replacement | Not started in this programme |
+| 162 | 89 | Image object replacement | Partial: distinct original and replacement object descriptions, scene context, mask-bound local diffusion with original masked content discarded, positive and negative guidance and exact outside pixels. Pass 163 CI pending. Semantic identity and native visual verification outstanding. |
 | 163 | 97 | Pose-controlled image generation | Not started in this programme |
 | 164 | 98 | Depth-controlled image generation | Not started in this programme |
 | 165 | 99 | Sketch-to-image conversion | Not started in this programme |
@@ -922,3 +922,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 162 — 27 November 2026
 - Add owner-selected object removal with distinct unwanted-object and desired-background descriptions, nearest unmasked context initialization, negative prompt and unchanged unmasked source. Reject no-op output and masks above 75% of image. Two backend fixtures, no semantic success claim. Next rank 162 / ID 89 object replacement. No installer.
+
+## Pass 163 — 27 November 2026
+- Extend reviewed object editing with separate replacement description and surrounding context; reject equivalent old/new descriptions and no-op results, condition on the new object and exclude old-object text, retain source/mask guards and untouched outside pixels. Two mocked regressions. Semantic replacement not verified. Next rank 163 / ID 97 pose-controlled generation. No installer.
