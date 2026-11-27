@@ -2,7 +2,8 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from deepthort_local.installer_project import checked,review,execute
+from deepthort_local.installer_project import checked,review,execute,MAX_FILES,MAX_FILE
+from deepthort_local.action_guards import snapshot_file,validate_guards,MAX_GUARDS,MAX_HASH_BYTES
 S={'app_name':'Example App','app_id':'Example','version':'1.2.0','files':['bin/app.exe','data/info.txt'],'entrypoint':'bin/app.exe'}
 class InstallerTests(unittest.TestCase):
     def setUp(self):
@@ -27,3 +28,15 @@ class InstallerTests(unittest.TestCase):
         (self.root/'data/info.txt').write_bytes(b'changed')
         with self.assertRaises(ValueError):execute(self.root,plan)
         self.assertFalse((self.root/'setup.iss').exists())
+
+    def test_real_queue_guard_budget(self):
+        self.assertEqual(MAX_FILES,MAX_GUARDS-4);self.assertEqual(MAX_FILE,MAX_HASH_BYTES)
+        files=['bin/app.exe']+['file'+str(i)+'.txt' for i in range(MAX_FILES-1)]
+        for name in files[1:]:(self.root/name).write_bytes(b'fixture')
+        (self.root/'spec.json').write_text(json.dumps(dict(S,files=files)),encoding='utf-8')
+        plan,_=review(self.root,'spec.json','setup.iss')
+        root=self.root.resolve()
+        guards=[snapshot_file(root/'script.py',kind='absent'),*plan['guards'],snapshot_file(root/'setup.iss',kind='absent'),snapshot_file(root/'exclusions.json',kind='absent')]
+        self.assertEqual(len(validate_guards(guards)),MAX_GUARDS)
+        self.assertLess(len(json.dumps(plan,ensure_ascii=True)),4096)
+        with self.assertRaises(ValueError):checked(dict(S,files=files+['extra.txt']))

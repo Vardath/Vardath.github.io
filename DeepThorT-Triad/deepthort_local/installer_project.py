@@ -9,11 +9,11 @@ import re
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from deepthort_local import typed_project_tool as guard
-from deepthort_local.action_guards import snapshot_file
+from deepthort_local.action_guards import snapshot_file,MAX_GUARDS,MAX_HASH_BYTES,validate_guards
 SCHEMA='janus-inno-installer-project-v1'
-MAX_FILES=64
+MAX_FILES=MAX_GUARDS-4 # script, specification, absent output, exclusions
 MAX_TOTAL=128*1024*1024
-MAX_FILE=32*1024*1024
+MAX_FILE=MAX_HASH_BYTES
 RESERVED={'con','prn','aux','nul',*(f'com{i}' for i in range(1,10)),*(f'lpt{i}' for i in range(1,10))}
 def component(s):
     if not isinstance(s,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_. -]{0,95}',s) or s.endswith(('.', ' ')) or s.split('.')[0].casefold() in RESERVED:
@@ -29,7 +29,7 @@ def checked(s):
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,63}',s['app_id']):raise ValueError('Use stable simple app ID')
     if not isinstance(s['version'],str) or not re.fullmatch(r'[0-9]{1,4}(?:\.[0-9]{1,4}){1,3}',s['version']):raise ValueError('Use numeric version')
     files=s['files']
-    if not isinstance(files,list) or not 1<=len(files)<=MAX_FILES:raise ValueError('Choose 1–64 exact files')
+    if not isinstance(files,list) or not 1<=len(files)<=MAX_FILES:raise ValueError('Choose 1–6 exact files')
     for p in files:relative(p)
     if len({p.casefold() for p in files})!=len(files):raise ValueError('Duplicate Windows destination')
     entry=s['entrypoint'];relative(entry)
@@ -54,6 +54,8 @@ def review(root,source,output,exclude=()):
     plan,s=guard.review(root,source,output,exclude,schema=SCHEMA,checked=checked,output_suffix='.iss')
     root=Path(root).resolve(strict=True)
     plan['guards'].extend(payloads(root,s,plan['exclude']))
+    validate_guards(plan['guards'])
+    if len(json.dumps(plan,ensure_ascii=True))>=4096:raise ValueError('Installer approval exceeds queue argument bound; shorten paths or split payload')
     return plan,dict(s,scope='Create an Inno Setup source project only. Selected files become install payload; compile and install separately.',
                      payload_hashes=[x['expected'] for x in plan['guards'][1:]])
 

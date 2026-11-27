@@ -502,4 +502,4 @@ Files & Images → Create GitHub draft release. Enter repository, existing light
 
 ## Windows installer project source (Pass 105)
 
-Files & Images → Generate installer project. JSON: `{"app_name":"Example App","app_id":"Example","version":"1.2.0","files":["bin/app.exe","data/info.txt"],"entrypoint":"bin/app.exe"}`. Generates a new Inno Setup `.iss` source, explicit exact payload hashes, per-user destination, Start Menu shortcut, no automatic launch or Pascal code. Compiler and separate install/uninstall acceptance remain required; no actual installer is produced by this operation.
+Files & Images → Generate installer project. JSON: `{"app_name":"Example App","app_id":"Example","version":"1.2.0","files":["bin/app.exe","data/info.txt"],"entrypoint":"bin/app.exe"}`. Generates a new Inno Setup `.iss` source, one to six exact payload hashes (existing queue guard limit; each file at most 32,000,000 bytes), per-user destination, Start Menu shortcut, no automatic launch or Pascal code. Compiler and separate install/uninstall acceptance remain required; no actual installer is produced by this operation.
