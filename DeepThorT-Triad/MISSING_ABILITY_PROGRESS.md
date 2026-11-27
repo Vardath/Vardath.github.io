@@ -134,7 +134,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 122 | 141 | Audio transcription | Source extended: up to 120 seconds of reviewed 16 kHz mono PCM WAV, balanced windows, consistent recognizer identity, globally timed recognition report and separately approved non-overwriting JSON. Pass 123 CI pending. Native accuracy, long recordings and speaker separation outstanding. |
 | 123 | 144 | Expressive neural speech synthesis | Source extended: separately approved optional installed Piper CLI with exact executable/voice/config hashes, bounded rate and variation controls, capped native execution and verified PCM WAV publication. Pass 124 CI pending. Actual compatible engine installation, native neural rendering, expressive/listening acceptance and richer emotion control outstanding. |
 | 124 | 306 | Multilingual speech generation | Source extended: explicit per-segment installed regional voice IDs, exact text JSON review, offline capped Windows narration, joined PCM WAV with configurable gaps and segment timing receipts. Pass 125 CI pending. Actual non-English installed voice and pronunciation acceptance outstanding. |
-| 125 | 307 | Podcast generation | Existing partial; completion not started in this programme |
+| 125 | 307 | Podcast generation | Source extended: reviewed scripted intro/body/outro, stable installed voices per named speaker, offline WAV plus timestamped transcript and verified episode ZIP. Pass 126 CI pending. Autonomous topic/script generation, full-length episodes, music mixing and native listening acceptance outstanding. |
 | 126 | 308 | Audiobook generation | Existing partial; completion not started in this programme |
 | 127 | 309 | Multi-speaker dialogue production | Existing partial; completion not started in this programme |
 | 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Not started in this programme |
@@ -792,3 +792,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 125 — 27 November 2026
 - Extend existing offline Windows speech baseline with reviewed multilingual JSON segments, exact installed voice inventory and regional culture binding, no fallback or translation. Up to eight segments / 4000 characters, bounded gaps and combined PCM duration; verify each WAV and publish one new joined WAV. Fixture tests for repeated voice, timing, missing/changed language and stale source. Actual non-English native voice/pronunciation acceptance outstanding. Next rank 125 / ID 307 podcast generation. No installer.
+
+## Pass 126 — 27 November 2026
+- Reuse bounded multilingual synthesis in a reviewed scripted podcast episode workflow, three to eight turns and up to four distinct installed voices, intro/body/outro, exact timing receipts, WAV, transcript and metadata in one checked new ZIP. Shared speech review UI now invalidates stale selection. Fixture regressions verify archive, source and voice identity, timings, cancellation and no overwrite. No autonomous writing, publication, music mixing or native quality claim. Next rank 126 / ID 308 audiobook generation. No installer.

@@ -67,12 +67,20 @@ def validate(root,plan):
 def render(root,plan,cancelled=None,*,approved=False,backend=None,stage=None):
     if approved is not True:raise PermissionError('Explicit multilingual speech approval required')
     check_cancel(cancelled);spec,dst=validate(root,plan)
-    backend=backend or WindowsSpeech()
-    if select(backend.voices(cancelled),spec)!=plan['voices']:raise ValueError('Installed voice identity changed')
+    payload,receipts,frames=synthesize_segments(spec,plan['voices'],backend or WindowsSpeech(),cancelled,stage,lambda:validate(root,plan))
+    def revalidate():
+        check_cancel(cancelled);validate(root,plan)
+    digest=guard.publish(payload,dst,revalidate)
+    return {'schema':'janus-multilingual-speech-result-v1','status':'wav_published','output':plan['output'],'sha256':digest,
+            'segments':receipts,'duration_seconds':round(frames/RATE,6),'translation_performed':False,'pronunciation_verified':False,'neural_voice_claimed':False}
+
+def synthesize_segments(spec,voices,backend,cancelled,stage,verify):
+    checked(spec)
+    if select(backend.voices(cancelled),spec)!=voices:raise ValueError('Installed voice identity changed')
     pause=round(RATE*spec['pause_ms']/1000);pieces=[];receipts=[];frames=0
     with tempfile.TemporaryDirectory(prefix='janus-multilingual-') as temp:
-        for i,(row,voice) in enumerate(zip(spec['segments'],plan['voices']),1):
-            check_cancel(cancelled);validate(root,plan)
+        for i,(row,voice) in enumerate(zip(spec['segments'],voices),1):
+            check_cancel(cancelled);verify()
             if stage:stage(i)
             path=Path(temp)/f'segment-{i}.wav'
             actual=backend.synthesize(row['text'],voice,path,cancelled)
@@ -90,9 +98,4 @@ def render(root,plan,cancelled=None,*,approved=False,backend=None,stage=None):
     out=io.BytesIO()
     with wave.open(out,'wb') as f:
         f.setnchannels(1);f.setsampwidth(2);f.setframerate(RATE);f.writeframes(b''.join(pieces))
-    payload=out.getvalue()
-    def revalidate():
-        check_cancel(cancelled);validate(root,plan)
-    digest=guard.publish(payload,dst,revalidate)
-    return {'schema':'janus-multilingual-speech-result-v1','status':'wav_published','output':plan['output'],'sha256':digest,
-            'segments':receipts,'duration_seconds':round(frames/RATE,6),'translation_performed':False,'pronunciation_verified':False,'neural_voice_claimed':False}
+    return out.getvalue(),receipts,frames
