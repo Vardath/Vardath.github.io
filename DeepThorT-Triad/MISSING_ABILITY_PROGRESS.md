@@ -145,7 +145,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 133 | 135 | Audio-to-MIDI transcription | Partial: reviewed bounded monophonic pitch tracking, stable-frame grouping, preserved rests and timing, canonical single-track SMF export and roundtrip. Pass 134 CI pending. Polyphonic transcription, repeated same-pitch articulation, broad source accuracy and native acceptance outstanding. |
 | 134 | 302 | Musical arrangement | Partial: reviewed explicit 1–8 General MIDI parts, tempo, polyphony, timing, velocity, format-1 SMF and canonical decode verification. Pass 135 CI pending. Autonomous multi-part composition and musical quality acceptance outstanding. |
 | 135 | 303 | Instrumental audio synthesis | Partial: bounded reviewed MIDI-to-stereo-WAV additive synthesis, five synthetic timbres, per-part gain/pan, envelopes, velocity and peak ceiling; canonical score and PCM verification. Pass 136 CI pending. Realistic sampled/neural instruments and aesthetic/native acceptance outstanding. |
-| 136 | 133 | Automated audio mixing | Not started in this programme |
+| 136 | 133 | Automated audio mixing | Partial: reviewed 2–6 track automatic RMS gain balancing, explicit trim/pan/offset, common-rate stereo summation, peak protection and verified WAV. Pass 137 CI pending. Perceptual balancing, EQ/compression automation and listening acceptance outstanding. |
 | 137 | 134 | Automated audio mastering | Not started in this programme |
 | 138 | 160 | Automatic mesh retopology | Not started in this programme |
 | 139 | 311 | Blender tool workflows | Existing partial; completion not started in this programme |
@@ -831,3 +831,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 136 — 27 November 2026
 - Add deterministic local instrumental synthesis from canonical JANUS legacy/timed and multitrack MIDI. Explicit per-part synthetic sine/organ/pluck/strings/bass timbres, gain and pan, velocity, bounded additive harmonics below Nyquist, attack/release/decay, shared attenuation and stereo PCM16 WAV. Limit 30 seconds and total 2 million note samples; existing caps unchanged. Verify exact PCM roundtrip, source/target guard, no overwrite; three fixture regressions for timing, pitch, pan, peak, profiles and stale inputs. No sampled-instrument realism or autonomous composition claim. Next rank 136 / ID 133 automated audio mixing. No installer.
+
+## Pass 137 — 27 November 2026
+- Add reviewed automatic whole-track RMS level balancing with 2–6 distinct mono/stereo PCM16 WAV inputs at matching sample rate, explicit target RMS, bounded automatic boost, per-track trim/pan/offset and shared peak attenuation. Reject near-silent tracks; maximum 30 seconds total. Exact multiple input guards, verified stereo PCM output, source unchanged, no overwrite. Three regressions for automatic balance, channel placement, timing, peak ceiling and stale source. No perceptual, LUFS or professional-quality claims. Next rank 137 / ID 134 automated mastering. No installer.
