@@ -87,7 +87,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 75 | 229 | Source credibility assessment | Source extended: exact evidence consistency checks, six transparency dimensions, literal source cues and optional quote-bound reviewer judgments; Pass 076 CI pending. Independent credibility and semantic verification outstanding. |
 | 76 | 230 | Contradictory source comparison | Source extended: reviewed claim/position matrix with exact quote locators, pairwise disagreement/qualification/duplicate classifications and unresolved status; Pass 077 CI pending. Independent semantic inference outstanding. |
 | 77 | 231 | Research report generation | Source extended: reviewed standalone offline HTML report, exact quote-bound narrative citations, source register and explicit limitations; Pass 078 CI pending. Autonomous narrative generation and claim verification outstanding. |
-| 78 | 12 | Semantic vector embeddings | Not started in this programme |
+| 78 | 12 | Semantic vector embeddings | Partial source implemented: actual local corpus-trained TF-IDF/truncated SVD latent semantic vectors, verified eigensolver, cosine retrieval and reproducible basis; Pass 079 CI pending. Pretrained contextual embeddings, durable memory integration and native acceptance outstanding. |
 | 79 | 221 | Cross-project historical recall | Existing partial; completion not started in this programme |
 | 80 | 222 | Semantic reranking | Existing partial; completion not started in this programme |
 | 81 | 223 | Knowledge graphs | Existing partial; completion not started in this programme |
@@ -644,3 +644,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 078 — 27 November 2026
 
 - Add standalone offline research-report generation from reviewed narrative and multi-source evidence. Every paragraph has matching explicit source markers and exact quote locators; publish escaped script-free HTML with source register, duplicate/unavailable notices, hashes and explicit limitations. No external requests or independent claim verification. Four regressions. Next rank 78 / ID 12 semantic vector embeddings. No installer.
+
+## Pass 079 — 27 November 2026
+
+- Add actual bounded corpus-trained latent semantic analysis: TF-IDF, symmetric document Gram eigendecomposition via cyclic Jacobi, residual and orthogonality validation, truncated SVD basis, normalized query/document projections, cosine ranking and exported corpus hash/basis. No network, added permanent model or numeric dependency. Test latent association without literal overlap, eigenpairs, unknown terms and reviewed publication. This is small-corpus distributional semantics, not pretrained contextual embeddings or integrated memory search. Next rank 79 / ID 221 cross-project historical recall. No installer.
