@@ -683,3 +683,7 @@ Files & Images → Skin character mesh. JSON keys: `mesh` (static triangular OBJ
 ## Reviewed skeletal animation (Pass 151)
 
 Files & Images → Animate skeleton. Pass 150 rig keys plus `name` and `tracks`: each distinct joint index has `times` (2–256 increasing seconds starting at 0, max 300) and corresponding normalized `rotations_xyzw`. At most 2048 keys. Writes actual GLB rotation channels, LINEAR interpolation and verified rest skin. No arbitrary script execution, IK or native playback guarantee.
+
+## Reviewed animation retargeting (Pass 152)
+
+Files & Images → Retarget animation. Target `mesh`, `max_position_error`, `joints`, `name`; `source_joints` follows Pass 150 schema, `source_tracks` follows Pass 151, `mapping` has one-to-one source/target joint indices and normalized `basis_xyzw` (maps source-local vectors into target-local axes). Mapped parents must correspond; all animated joints must be mapped. Rotations use b*q*conjugate(b); output uses target rest skeleton. No automatic correspondence, contact, IK, root translation or native playback guarantee.

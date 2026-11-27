@@ -160,7 +160,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 148 | 315 | PBR material generation | Partial: reviewed height-derived sRGB base color, OpenGL tangent normal and linear packed roughness/metallic maps, original height and hashed material manifest in verified ZIP. Pass 149 CI pending. Physical property inference, AO baking, integrated native rendering and visual acceptance outstanding. |
 | 149 | 164 | Automatic character rigging | Partial: reviewed explicit rest joint hierarchy, automatic spatial nearest-two joint weights, verified GLB joint/weight accessors and inverse binds. Pass 150 CI pending. Automatic skeleton discovery, anatomical/geodesic weights, pose deformation and native engine acceptance outstanding. |
 | 150 | 317 | Skeletal animation through scripts | Partial: reviewed declarative local quaternion rotation keyframes and actual glTF animation tracks, verified float32 times, normalized shortest-path signs and preserved rest skin. Pass 151 CI pending. IK, motion capture, root motion, native playback and motion quality outstanding. |
-| 151 | 166 | Animation retargeting | Not started in this programme |
+| 151 | 166 | Animation retargeting | Partial: reviewed source and target skeletons, one-to-one parent-compatible correspondence, local quaternion basis transfer and verified target GLB rotation tracks. Pass 152 CI pending. Automatic correspondence, IK, contacts, root motion and native playback outstanding. |
 | 152 | 318 | Physics simulation | Existing partial; completion not started in this programme |
 | 153 | 95 | Image super-resolution and upscaling | Not started in this programme |
 | 154 | 94 | Image restoration | Not started in this programme |
@@ -881,3 +881,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 151 — 27 November 2026
 - Produce actual GLB skeletal animation from explicit reviewed local rotation tracks on Pass 150 rig, bounded 2048 keys/300 seconds, float32 times and quaternion sign continuity, verified channel/accessor bytes and unchanged rest skin. Three fixtures. Fixed implementation, not arbitrary script execution; no IK, capture, root motion or native playback claim. Next rank 151 / ID 166 animation retargeting. No installer.
+
+## Pass 152 — 27 November 2026
+- Retarget reviewed source local rotation keyframes onto a supplied target hierarchy using explicit one-to-one parent correspondence and normalized quaternion basis conjugation. Reuse Pass 150/151 verified skin and animation export; guard target mesh and specification. Three fixtures. No automatic correspondence, IK, root translation, contact or native playback acceptance. Next rank 152 / ID 318 physics simulation. No installer.
