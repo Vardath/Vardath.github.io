@@ -856,6 +856,7 @@ class DeepThorTDesktop(tk.Tk):
         image_restore_actions=ttk.Frame(media_tab);image_restore_actions.pack(fill='x',pady=2)
         ttk.Button(image_restore_actions,text='Upscale image…',command=lambda:self._review_typed_tool('image_upscaling','.png','Image: reviewed upscaling')).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Restore image…',command=lambda:self._review_typed_tool('image_restoration','.png','Image: reviewed restoration')).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Colourise image…',command=lambda:self._review_typed_tool('image_colourisation','.png','Image: reviewed regional colourisation')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1600,6 +1601,7 @@ class DeepThorTDesktop(tk.Tk):
                  'physics_simulation':('.json','Scene: reviewed physics trajectory'),
                  'image_upscaling':('.png','Image: reviewed upscaling'),
                  'image_restoration':('.png','Image: reviewed restoration'),
+                 'image_colourisation':('.png','Image: reviewed regional colourisation'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),

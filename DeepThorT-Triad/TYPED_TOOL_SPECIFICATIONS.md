@@ -699,3 +699,7 @@ Files & Images → Upscale image. JSON keys: `image` (bounded single-frame PNG),
 ## Reviewed image restoration (Pass 155)
 
 Files & Images → Restore image. JSON keys: `image` (opaque PNG, at most 1 megapixel), `mask` (null or same-size binary grayscale PNG marking damage white), `threshold` (16–255), `passes` (1–3, masked repair requires 1). Without mask, thresholded median suppresses impulse noise; with mask, local interpolation only, at most 25% damaged and every masked pixel within 3 px of unmasked data in both axes. No inferred historical detail or neural restoration.
+
+## Reviewed image colourisation (Pass 156)
+
+Files & Images → Colourise image. JSON keys: `image` (opaque grayscale PNG, max one megapixel), `regions` (1–4 objects containing `mask` same-size nonempty binary grayscale PNG, `rgb` chromatic integer triplet, `strength_percent` 1–100). Masks cannot overlap; unmasked pixels stay gray. Output RGB PNG preserves encoded Rec.709 luma within half a byte through gamut-limited chroma. Explicit choices, not semantic or historical inference.
