@@ -161,7 +161,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 149 | 164 | Automatic character rigging | Partial: reviewed explicit rest joint hierarchy, automatic spatial nearest-two joint weights, verified GLB joint/weight accessors and inverse binds. Pass 150 CI pending. Automatic skeleton discovery, anatomical/geodesic weights, pose deformation and native engine acceptance outstanding. |
 | 150 | 317 | Skeletal animation through scripts | Partial: reviewed declarative local quaternion rotation keyframes and actual glTF animation tracks, verified float32 times, normalized shortest-path signs and preserved rest skin. Pass 151 CI pending. IK, motion capture, root motion, native playback and motion quality outstanding. |
 | 151 | 166 | Animation retargeting | Partial: reviewed source and target skeletons, one-to-one parent-compatible correspondence, local quaternion basis transfer and verified target GLB rotation tracks. Pass 152 CI pending. Automatic correspondence, IK, contacts, root motion and native playback outstanding. |
-| 152 | 318 | Physics simulation | Existing partial; completion not started in this programme |
+| 152 | 318 | Physics simulation | Partial: reviewed independent sphere trajectories, constant gravity, analytic floor impact/restitution, bounded samples and verified JSON output. Pass 153 CI pending. Mutual collision, angular dynamics, friction, constraints, fluids, engine integration and native acceptance outstanding. |
 | 153 | 95 | Image super-resolution and upscaling | Not started in this programme |
 | 154 | 94 | Image restoration | Not started in this programme |
 | 155 | 93 | Image colourisation | Not started in this programme |
@@ -884,3 +884,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 152 — 27 November 2026
 - Retarget reviewed source local rotation keyframes onto a supplied target hierarchy using explicit one-to-one parent correspondence and normalized quaternion basis conjugation. Reuse Pass 150/151 verified skin and animation export; guard target mesh and specification. Three fixtures. No automatic correspondence, IK, root translation, contact or native playback acceptance. Next rank 152 / ID 318 physics simulation. No installer.
+
+## Pass 153 — 27 November 2026
+- Add actual analytic sphere-floor trajectories with constant downward gravity, frictionless horizontal velocity, restitution, low-energy resting threshold, bounded duration/frame rate/body/sample/impact counts, and exact JSON roundtrip. Check floor penetration and impact energy. Three fixtures. Independent bodies only; no mutual contact, angular dynamics, constraints or native physics engine. Next rank 153 / ID 95 image super-resolution and upscaling. No installer.
