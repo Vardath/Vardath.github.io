@@ -16,7 +16,7 @@ import hashlib
 import threading
 from pathlib import Path
 
-from deepthort_local.disk_gate import DiskGate
+from deepthort_local.disk_gate import DiskGate,require_storage
 from deepthort_local.janus_engine import JanusStore
 from deepthort_local.action_guards import verify_guards
 from deepthort_local.state_health import MIN_FREE_BYTES
@@ -176,6 +176,9 @@ class JanusWorker:
     def execute_next_approved(self) -> int | None:
         if self.store.status()['paused'] or self.game_gate.gaming():
             return None
+        # Avoid claiming work when the state/log volume cannot safely record it.
+        try:require_storage(self.logs)
+        except (OSError,ValueError):return None
         action=self.store.claim_next_action()
         if action is None:return None
         ident=action['id']
@@ -187,8 +190,7 @@ class JanusWorker:
             # last responsible moment, not only when the user clicked Approve.
             # Old actions contain the default [] and retain historic behavior.
             verify_guards(json.loads(action.get('input_guards_json') or '[]'))
-            if shutil.disk_usage(self.logs).free < MIN_FREE_BYTES:
-                raise ValueError('Less than 150 MB disk space; approved process not launched')
+            require_storage(self.logs,action['cwd'])
         except (ValueError, OSError, TypeError, json.JSONDecodeError) as exc:
             reason=f'Approved input changed; process NOT started: {exc}'
             self.store.update_action(ident,'needs_attention',detail=reason)
@@ -207,6 +209,7 @@ class JanusWorker:
                 self.store.update_action(ident,'running',detail='Approved process running',
                                          pid=proc.pid,output_file=str(log_path))
                 next_observation=started+10.0
+                next_disk_check=started+5.0
                 while proc.poll() is None:
                     fresh=self.store.action(ident)
                     if fresh is None or fresh['cancel_requested'] or self._stopping:
@@ -230,6 +233,15 @@ class JanusWorker:
                         self.store.update_action(ident,'paused',detail='Game detected; stopped process to protect responsiveness. Inspect partial changes before rerun.',returncode=proc.returncode)
                         self._update_parent_job(action,'needs_input','Verification interrupted for gaming; inspect partial effects')
                         return ident
+                    if time.monotonic()>=next_disk_check:
+                        try:require_storage(self.logs,action['cwd'])
+                        except (OSError,ValueError) as exc:
+                            stop_tree(proc)
+                            reason='Approved process interrupted: '+str(exc)+' Inspect partial effects before retry.'
+                            self.store.update_action(ident,'needs_attention',detail=reason,returncode=proc.returncode)
+                            self._update_parent_job(action,'needs_input',reason)
+                            return ident
+                        next_disk_check=time.monotonic()+5.0
                     if time.monotonic()>=next_observation:
                         self._observe_active_process()
                         next_observation=time.monotonic()+10.0
