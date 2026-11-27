@@ -1081,3 +1081,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 214 — 28 November 2026
 - Add bounded autonomous nearest-objective route selection and native in-engine keyboard input through the full generated grid level; independently compare every ordered position, remaining count and victory against expected trace. Reviewed capped native execution, exact source/runtime guards and non-overwriting JSON receipt. Native engine acceptance and general external gameplay outstanding. Next rank 214 / ID 61 automated game balancing. No installer.
+
+### Pass 214 CI coverage correction
+- Explicitly register the new autonomous gameplay regression in both Linux and Windows CI; repair missing PowerShell exit checks on adjacent image-style/image-to-image suites. Native Godot still unverified. Require fresh green CI before merging.

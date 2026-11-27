@@ -7,10 +7,7 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from deepthort_local.end_to_end_testing import path
 import argparse
-from collections import deque
-import hashlib
 import json
-import re
 import tempfile
 from deepthort_local import typed_project_tool as guard
 from deepthort_local.game_project_generation import checked,files
