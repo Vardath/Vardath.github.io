@@ -1053,3 +1053,7 @@ Replace video background accepts `{"video":"clip.mp4","background":"bg.png","sta
 ## Reviewed video palette transfer (Pass 236)
 
 Transfer video palette accepts `{"video":"clip.mp4","reference":"ref.png","start_frame":0,"end_frame":48,"strength_percent":80}`. Silent H.264 clip, up to 60 frames at 640×480, opaque reference PNG up to one megapixel. One shared monotonic RGB quantile LUT across the interval, blended by strength; verified lossless RGB video output. No neural style synthesis or visual quality claim.
+
+## Reviewed video object removal (Pass 237)
+
+Remove masked video object accepts `{"video":"clip.mp4","plate":"clean.png","mask":"mask.png","start_frame":0,"end_frame":48}`. Silent H.264 clip, up to 60 frames at 640×480; matching RGB clean plate and opaque grayscale mask (white replaces, black preserves). Fixed reviewed mask across interval; verified lossless RGB output. No automatic segmentation, tracking or neural inpainting.
