@@ -240,3 +240,33 @@ class BrowserAutomationTests(unittest.TestCase):
         for bad in (dict(r,submitted=True),dict(r,fields=[dict(f,type='password')]),dict(r,fields=[f,f])):
             with self.assertRaises(ValueError):fields(bad)
         self.assertIn('&lt;tag&gt;',document([{'name':'<tag>','value':'unembedded'}]))
+
+class AuthBrowserTests(unittest.TestCase):
+    def test_manual_session_exact_page_and_marker(self):
+        from deepthort_local.browser_authenticated import observe,command,MARKER
+        s={'browser':'chrome','url':HOST+'/docs/account','expected_heading':'Account','seconds':90}
+        class WS:
+            def __init__(self):self.sent=[]
+            def send(self,raw):self.sent.append(json.loads(raw))
+            def recv(self):
+                q=self.sent[-1];m=q['method']
+                if m=='Target.getTargets':r={'targetInfos':[{'type':'page','url':s['url'],'targetId':'TARGET'}]}
+                elif m=='Target.attachToTarget':r={'sessionId':'SESSION'}
+                elif m=='Page.getFrameTree':r={'frameTree':{'frame':{'url':s['url']}}}
+                else:r={'result':{'value':['Account']}}
+                a={'id':q['id'],'result':r}
+                if 'sessionId' in q:a['sessionId']=q['sessionId']
+                return json.dumps(a)
+        ws=WS();r=observe(ws,s)
+        self.assertTrue(r['user_confirmed_login']);self.assertFalse(r['authentication_independently_verified'])
+        self.assertFalse(r['cookies_exported'])
+        self.assertEqual(ws.sent[-2]['params']['expression'],MARKER)
+        self.assertNotIn('--headless=new',command('chrome.exe','profile',s['url']))
+        with self.assertRaises(ValueError):observe(WS(),dict(s,expected_heading='Different'))
+        with self.assertRaises(ValueError):observe(WS(),dict(s,url=HOST+'/other'))
+    def test_manual_session_spec_refusals(self):
+        from deepthort_local.browser_authenticated import checked
+        s={'browser':'edge','url':HOST+'/docs/account','expected_heading':'Account','seconds':90}
+        for patch in ({'url':'http://example.org/'},{'url':HOST+'/account?token=x'},{'seconds':999},
+                      {'browser':'personal'},{'expected_heading':''},{'password':'x'}):
+            with self.assertRaises(ValueError):checked(dict(s,**patch))
