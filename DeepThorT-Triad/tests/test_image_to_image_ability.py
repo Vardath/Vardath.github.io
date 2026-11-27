@@ -125,3 +125,27 @@ class ImageToImageTests(unittest.TestCase):
             self.assertFalse((root/'out.png').exists())
             (root/'mask.png').write_bytes(encode(256,256,'L',bytes([255])*(256*256-1)+bytes(1)))
             with self.assertRaises(ValueError):m.review_removal(root,'source.png','mask.png','out.png','background','ball',256)
+
+    def test_object_replacement_distinct_positive_and_negative_guidance(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();n=256*256
+            source=encode(256,256,'RGB',bytes([250,0,0])+bytes([20,40,60])*(n-1))
+            (root/'source.png').write_bytes(source)
+            (root/'mask.png').write_bytes(encode(256,256,'L',bytes([255])+bytes(n-1)))
+            s=m.review_replacement(root,'source.png','mask.png','out.png','soft daylight','red ball','blue cube',256)
+            def backend(model,raw,mask_raw,plan):
+                self.assertEqual(decode(raw,('RGB',))[3],bytes([20,40,60])*n)
+                self.assertEqual(m.positive_prompt(plan),'blue cube, soft daylight, integrated into the surrounding scene')
+                self.assertEqual(plan['removed_object'],'red ball');return OUT
+            r=m.execute(root,'unused',s,mask_backend=backend)
+            self.assertEqual(r['replacement_object'],'blue cube');self.assertFalse(r['replacement_identity_verified'])
+            self.assertEqual(decode((root/'out.png').read_bytes(),('RGB',))[3][3:],bytes([20,40,60])*(n-1))
+            for invalid in (dict(s,replacement_object=' RED  BALL '),dict(s,replacement_object=''),dict(s,operation='remove_object')):
+                with self.assertRaises(ValueError):m.checked(invalid)
+    def test_object_replacement_rejects_noop(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(OUT)
+            (root/'mask.png').write_bytes(encode(256,256,'L',bytes([255])+bytes(256*256-1)))
+            s=m.review_replacement(root,'source.png','mask.png','out.png','room','ball','cube',256)
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,mask_backend=lambda *_:OUT)
+            self.assertFalse((root/'out.png').exists())

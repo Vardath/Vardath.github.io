@@ -23,9 +23,10 @@ REF_FIELDS={'reference','reference_sha256','palette_strength_percent'}
 MASK_FIELDS={'mask','mask_sha256'}
 OUT_FIELDS={'offset_x','offset_y'}
 REMOVE_FIELDS={'operation','removed_object'}
+REPLACE_FIELDS=REMOVE_FIELDS|{'replacement_object'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -53,11 +54,23 @@ def checked(s):
         for k in ('offset_x','offset_y'):
             if type(s[k]) is not int or not 0<=s[k]<s['size']:raise ValueError('Invalid source offset')
     if 'operation' in s:
-        if s['operation']!='remove_object':raise ValueError('Unsupported object operation')
+        if s['operation'] not in ('remove_object','replace_object') or ('replacement_object' in s)!=(s['operation']=='replace_object'):
+            raise ValueError('Unsupported object operation or mismatched fields')
         target=s['removed_object']
         if not isinstance(target,str) or not target.strip() or len(target)>200 or any(ord(c)<32 for c in target):
             raise ValueError('Describe the unwanted object in 1–200 characters')
+        if s['operation']=='replace_object':
+            replacement=s['replacement_object']
+            if not isinstance(replacement,str) or not replacement.strip() or len(replacement)>300 or any(ord(c)<32 for c in replacement):
+                raise ValueError('Describe the replacement object in 1–300 characters')
+            if ' '.join(target.casefold().split())==' '.join(replacement.casefold().split()):raise ValueError('Replacement must differ from unwanted object')
+            if len(positive_prompt(s))>2000:raise ValueError('Combined replacement prompt exceeds bound')
     return s
+
+def positive_prompt(s):
+    if s.get('operation')=='replace_object':
+        return s['replacement_object'].strip()+', '+s['prompt'].strip()+', integrated into the surrounding scene'
+    return s['prompt']
 
 def removal_init(raw,mask_raw,s):
     """Discard original masked object pixels before diffusion.
@@ -81,6 +94,13 @@ def removal_init(raw,mask_raw,s):
 def review_removal(root,image,mask,output,background,removed_object,size=384,steps=15,strength_percent=90,seed=0):
     s=review_mask(root,image,mask,output,background,size,steps,strength_percent,seed)
     s.update(operation='remove_object',removed_object=removed_object)
+    src,_,bound=validate(root,s);mp,mb=mask_input(root,s,src)
+    removal_init(guard.exact(src,bound,guard.MAX_INPUT),guard.exact(mp,mb,guard.MAX_INPUT),s)
+    return s
+
+def review_replacement(root,image,mask,output,context,removed_object,replacement_object,size=384,steps=15,strength_percent=90,seed=0):
+    s=review_mask(root,image,mask,output,context,size,steps,strength_percent,seed)
+    s.update(operation='replace_object',removed_object=removed_object,replacement_object=replacement_object)
     src,_,bound=validate(root,s);mp,mb=mask_input(root,s,src)
     removal_init(guard.exact(src,bound,guard.MAX_INPUT),guard.exact(mp,mb,guard.MAX_INPUT),s)
     return s
@@ -217,8 +237,8 @@ def diffuse_mask(model,raw,mask_raw,s):
     if pipe.unet.config.in_channels not in (4,9):raise ValueError('Unsupported local inpainting UNet')
     with Image.frombytes('RGB',(w,h),pixels) as source, Image.frombytes('L',(w,h),mask) as selection:
         gen=torch.Generator(device='cpu').manual_seed(s['seed'])
-        guidance={'negative_prompt':s['removed_object']} if s.get('operation')=='remove_object' else {}
-        result=pipe(prompt=s['prompt'],image=source,mask_image=selection,width=w,height=h,
+        guidance={'negative_prompt':s['removed_object']} if s.get('operation') in ('remove_object','replace_object') else {}
+        result=pipe(prompt=positive_prompt(s),image=source,mask_image=selection,width=w,height=h,
             strength=s['strength_percent']/100,num_inference_steps=s['steps'],generator=gen,**guidance).images
         if len(result)!=1:raise ValueError('Expected exactly one generated image')
         with result[0] as im:
@@ -241,7 +261,7 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     elif mask_path:
         mr=guard.exact(mask_path,mask_bound,guard.MAX_INPUT)
         _,_,original,mask=mask_pixels(raw,mr,s)
-        initial=removal_init(raw,mr,s) if s.get('operation')=='remove_object' else raw
+        initial=removal_init(raw,mr,s) if s.get('operation') in ('remove_object','replace_object') else raw
         out=mask_backend(model,initial,mr,s)
     else:out=backend(model,initial,s)
     if not isinstance(out,bytes) or len(out)>guard.MAX_OUTPUT:raise ValueError('Invalid generated PNG')
@@ -259,8 +279,8 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
         if (current,target,current_bound)!=(src,dst,bound):raise ValueError('Reviewed paths changed')
         if reference_input(root,s,current,current_bound)!=(ref_path,ref_bound):raise ValueError('Reviewed reference changed')
         if mask_input(root,s,current)!=(mask_path,mask_bound):raise ValueError('Reviewed mask changed')
-    if s.get('operation')=='remove_object' and pixels==original:
-        raise ValueError('Object removal produced no pixel change')
+    if s.get('operation') in ('remove_object','replace_object') and pixels==original:
+        raise ValueError('Object edit produced no pixel change')
     sha=guard.publish(out,dst,revalidate)
     return {'schema':'janus-image-to-image-result-v1','status':'generated_image_pixels_verified',
             'output':s['output'],'sha256':sha,'source_sha256':s['source_sha256'],
@@ -276,7 +296,11 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
                 'source_pixels_preserved':True,'initial_canvas_sha256':hashlib.sha256(initial).hexdigest()} if expanded else {}),
             **({'operation':'remove_object','removed_object':s['removed_object'],
                 'initialisation_sha256':hashlib.sha256(initial).hexdigest(),
-                'object_absence_verified':False,'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='remove_object' else {})}
+                'object_absence_verified':False,'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='remove_object' else {}),
+            **({'operation':'replace_object','removed_object':s['removed_object'],'replacement_object':s['replacement_object'],
+                'positive_prompt_sha256':hashlib.sha256(positive_prompt(s).encode()).hexdigest(),
+                'initialisation_sha256':hashlib.sha256(initial).hexdigest(),'replacement_identity_verified':False,
+                'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='replace_object' else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
