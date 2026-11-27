@@ -53,3 +53,28 @@ class ImageToImageTests(unittest.TestCase):
                 reference.write_bytes(RAW);return OUT
             with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=changed)
             self.assertFalse((root/'out.png').exists())
+
+    def test_inpainting_preserves_unmasked_pixels_and_rejects_stale_mask(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();src=encode(256,256,'RGB',bytes([20,40,60])*(256*256))
+            (root/'source.png').write_bytes(src)
+            mask=encode(256,256,'L',bytes([255])+bytes(256*256-1));mp=root/'mask.png';mp.write_bytes(mask)
+            s=m.review_mask(root,'source.png','mask.png','out.png','repair region',256,15,80,7)
+            def backend(model,raw,mask_raw,plan):
+                self.assertEqual(raw,src);self.assertEqual(mask_raw,mask);return OUT
+            r=m.execute(root,'unused',s,mask_backend=backend)
+            pixels=decode((root/'out.png').read_bytes(),('RGB',))[3]
+            self.assertEqual(pixels[:3],bytes([30,60,90]))
+            self.assertEqual(pixels[3:],bytes([20,40,60])*(256*256-1))
+            self.assertTrue(r['unmasked_pixels_preserved'])
+            (root/'out.png').unlink()
+            def changed(*_):
+                mp.write_bytes(encode(256,256,'L',bytes([0,255])+bytes(256*256-2)));return OUT
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,mask_backend=changed)
+            self.assertFalse((root/'out.png').exists())
+    def test_invalid_inpainting_mask(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(OUT)
+            for invalid in (encode(256,256,'L',bytes(256*256)),encode(256,256,'L',bytes([128])*(256*256)),encode(256,256,'L',bytes([255])*(256*256))):
+                (root/'mask.png').write_bytes(invalid)
+                with self.assertRaises(ValueError):m.review_mask(root,'source.png','mask.png','out.png','repair',256)
