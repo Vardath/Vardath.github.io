@@ -30,6 +30,7 @@ class DiarisationTests(unittest.TestCase):
             self.assertFalse(report['audio_separated']);self.assertFalse(report['accuracy_verified'])
             self.assertIn('--clustering.num-clusters=2',d.command(plan,root/'clip.wav'))
             self.assertIn('--embedding.num-threads=1',d.command(plan,root/'clip.wav'))
+            self.assertEqual(d.MEMORY_LIMIT,512*1024**2)
             with self.assertRaises(ValueError):d.render(root,plan,approved=True,backend=backend)
     def test_strict_log(self):
         for log in (b'Started\n',b'0.000 -- 1.000 speaker_00\n',
