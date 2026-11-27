@@ -749,3 +749,7 @@ Files & Images → Depth-guided image. Select a nonuniform square 8-bit grayscal
 ## Reviewed sketch-to-image (Pass 166)
 
 Files & Images → Sketch to image. Select an opaque RGB or grayscale PNG of at most one megapixel, choose line polarity/contrast, prompt and generation strength. The sketch is converted to grayscale, contrast-normalized and centered in a square white canvas without stretching. Existing offline diffusion receives the raster as its starting image; exact line fidelity and native model output remain unverified.
+
+## Editable raster layers (Pass 167)
+
+Files & Images → Editable layers. Use the same canvas and ordered PNG layer schema as image composition, with additional `name` (unique, 1–80 characters) and `visible` (boolean) per layer. Output is `.ora` (OpenRaster), preserving independent raster layers, positions, names, opacity and visibility, plus an opaque background, merged preview and thumbnail. Canvas up to one megapixel, aggregate placed layers up to four megapixels. New file only; original PNGs untouched. Existing ORA/PSD import and native editor interoperability are not verified.

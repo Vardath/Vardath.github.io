@@ -50,3 +50,39 @@ class CompositionTests(unittest.TestCase):
             with self.assertRaises(ValueError):execute(root,plan)
             (root/'out.png').unlink();(root/'blue.png').write_bytes(a)
             with self.assertRaises(ValueError):execute(root,plan)
+
+class EditableLayerTests(unittest.TestCase):
+    def spec(self):
+        s=specification()
+        for i,l in enumerate(s['layers']):l.update(name=['Red','Blue'][i],visible=i==0)
+        return s
+    def test_openraster_preserves_hidden_layer_and_order(self):
+        import zipfile
+        from xml.etree import ElementTree as ET
+        from deepthort_local.layered_image import build
+        s=self.spec()
+        out,r=build([raw('RGB',(1,1),(255,0,0)),raw('RGBA',(1,1),(0,0,255,128))],s)
+        with zipfile.ZipFile(io.BytesIO(out)) as z:
+            self.assertEqual(z.namelist()[0],'mimetype')
+            self.assertEqual(z.getinfo('mimetype').compress_type,zipfile.ZIP_STORED)
+            self.assertEqual(z.read('mimetype'),b'image/openraster')
+            layers=ET.fromstring(z.read('stack.xml')).find('stack')
+            self.assertEqual([l.attrib['name'] for l in layers],['Blue','Red','Background'])
+            self.assertEqual(layers[0].attrib['visibility'],'hidden')
+            self.assertEqual(decode(z.read('mergedimage.png'),('RGB',))[3],bytes([255,0,0,255,0,0,0,0,0]+[0]*9))
+            from deepthort_local.image_composition import decode_layer
+            with decode_layer(z.read(layers[0].attrib['src'])) as im:self.assertEqual(im.getpixel((0,0)),(0,0,255,128))
+        self.assertTrue(r['editable_raster_layers']);self.assertEqual(r['layer_count'],3)
+    def test_exact_review_and_stale_layer(self):
+        from deepthort_local.layered_image import review,execute
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve()
+            a=raw('RGB',(1,1),(255,0,0));b=raw('RGB',(1,1),(0,0,255))
+            (root/'red.png').write_bytes(a);(root/'blue.png').write_bytes(b)
+            (root/'spec.json').write_text(json.dumps(self.spec()))
+            plan,preview=review(root,'spec.json','out.ora')
+            r=execute(root,plan);self.assertEqual(r['merged_sha256'],preview['verification']['merged_sha256'])
+            self.assertEqual((root/'blue.png').read_bytes(),b)
+            (root/'out.ora').unlink();(root/'blue.png').write_bytes(a)
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'out.ora').exists())
