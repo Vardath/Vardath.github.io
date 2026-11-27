@@ -146,3 +146,47 @@ class ApplicationWorkflowTests(unittest.TestCase):
             plan,_=review(root,'spec.json','level.json')
             self.assertEqual(execute(root,plan)['status'],'connected_level_generated')
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_procedural_world_connectivity_and_determinism(self):
+        import json
+        from deepthort_local.world_generation import generate
+        from deepthort_local.game_project_generation import checked
+        s={'title':'World','columns':3,'rows':2,'seed':17,'region_width':8,'region_height':6,
+           'cell_size':24,'wall_percent':25,'collectible_count':3,'extra_links':1}
+        raw,receipt=generate(s);world=json.loads(raw)
+        self.assertEqual(raw,generate(s)[0])
+        self.assertNotEqual(raw,generate(dict(s,seed=18))[0])
+        self.assertEqual(len(world['regions']),6)
+        self.assertEqual(len(world['links']),6)
+        self.assertEqual(len({r['seed'] for r in world['regions']}),6)
+        seen={0}
+        for _ in world['regions']:
+            for a,b in world['links']:
+                if a in seen or b in seen:seen.update((a,b))
+                self.assertEqual(abs(a%3-b%3)+abs(a//3-b//3),1)
+        self.assertEqual(seen,set(range(6)))
+        for region in world['regions']:
+            level=checked(region['level'])
+            self.assertEqual(len(level['walls']),12)
+            self.assertEqual(len(level['collectibles']),3)
+        self.assertTrue(receipt['all_regions_connected'])
+        self.assertFalse(receipt['native_playtest_verified'])
+
+    def test_procedural_world_bounds_and_source_guard(self):
+        import json,tempfile
+        from pathlib import Path
+        from deepthort_local.world_generation import generate,review,execute
+        s={'title':'World','columns':2,'rows':2,'seed':1,'region_width':5,'region_height':5,
+           'cell_size':24,'wall_percent':20,'collectible_count':2,'extra_links':0}
+        with self.assertRaises(ValueError):generate(dict(s,extra_links=2))
+        with self.assertRaises(ValueError):generate(dict(s,columns=True))
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'spec.json';src.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','world.json')
+            src.write_text(json.dumps(dict(s,seed=2)))
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'world.json').exists())
+            plan,_=review(root,'spec.json','world.json')
+            self.assertEqual(execute(root,plan)['status'],'connected_world_generated')
+            with self.assertRaises(ValueError):execute(root,plan)
