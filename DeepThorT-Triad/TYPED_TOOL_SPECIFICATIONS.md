@@ -383,3 +383,11 @@ Files & Images → Check DOI citation. Approve one DOI lookup against Crossref a
 ```
 
 Files & Images → Discover academic literature. Approve one exact bibliographic query and optional year bounds (null means unbounded) sent to Crossref. Up to ten provider-ranked bibliographic records with exact DOI, title, first author family, issued year, publication, publisher and response hash; duplicates or unusable rows omitted and counted. Provider total is not the number retrieved. Issued-year differences from requested publication filters are flagged rather than silently corrected. No full text, systematic-review completeness, peer-review, retraction or claim verification. Crossref public API; no API key required for public access, but availability/rate limits apply. Live and native acceptance outstanding. Reference: https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/
+
+## Crawl a bounded website directory
+
+```json
+{"seed":"https://example.org/docs/","path_prefix":"/docs/","max_pages":5,"max_depth":2}
+```
+
+Files & Images → Crawl website. Approve exact seed, same-host directory prefix, up to five page attempts and depth 0–2; robots.txt is fetched separately. Requires successful plain-text robots response; conservative disallow rules override allows. At least two seconds between attempts, respecting supported longer crawl delays up to ten seconds. No query/encoded paths, external origins, redirects, scripts, credentials, or complete-site claim. Retain exact page text and hashes, referring URL, attempts and denied/remaining counts. Bounded cooperative time budget; OS DNS/socket blocking is not a hard wall-clock guarantee. Live/native acceptance outstanding.
