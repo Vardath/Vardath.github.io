@@ -534,6 +534,7 @@ class DeepThorTDesktop(tk.Tk):
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
         ttk.Button(monitorbar,text='Project queues…',command=self._show_queued_prompts).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
+        ttk.Button(monitorbar,text='Network permissions…',command=self._network_permissions_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Event-triggered requests…',command=self._event_trigger_dialog).pack(side='left',padx=3)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
@@ -5376,6 +5377,28 @@ class DeepThorTDesktop(tk.Tk):
     def _condition_monitor_dialog(self):
         from deepthort_local.condition_monitor_dialog import show
         show(self)
+
+    def _network_permissions_dialog(self):
+        from deepthort_local import network_permissions
+        try:
+            try:
+                current=network_permissions.current()
+                initial=', '.join(current['hosts']) if current['mode']=='allowlist' else current['mode']
+            except (OSError,ValueError,PermissionError):
+                initial='blocked'
+            from tkinter import simpledialog
+            value=simpledialog.askstring('Shared HTTPS restrictions',
+                'Enter reviewed (existing approval rules), blocked, or exact comma-separated lowercase hosts.\n'
+                'Restricts new shared pinned HTTPS requests only, not other network stacks, installed tools or in-flight transmissions.',
+                initialvalue=initial,parent=self)
+            if value is None:return
+            policy=network_permissions.from_text(value)
+            detail=policy['mode']+(': '+', '.join(policy['hosts']) if policy['hosts'] else '')
+            if not messagebox.askyesno('Approve network restriction',detail+'\nExisting tool approvals are still required.',parent=self):return
+            network_permissions.save(policy,approval=True)
+            self._log('Shared HTTPS network restriction saved: '+detail)
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showerror('Network restriction unavailable',str(exc)[:500],parent=self)
 
     def _website_monitor_dialog(self):
         from deepthort_local.website_monitor_dialog import show

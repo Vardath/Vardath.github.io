@@ -35,6 +35,8 @@ def public_ip(value):
     return str(ip)
 
 def resolve_public(host,resolver=socket.getaddrinfo):
+    from .network_permissions import require
+    require(host)
     rows=resolver(host,443,socket.AF_INET,socket.SOCK_STREAM)
     if not rows or len(rows)>32:raise ValueError('No bounded public IPv4 resolution')
     # Fail closed even on mixed private and public DNS answers.
@@ -45,7 +47,13 @@ class PinnedHTTPS(http.client.HTTPSConnection):
     def __init__(self,host,ip):
         super().__init__(host,443,timeout=6,context=ssl.create_default_context())
         self.ip=public_ip(ip)
+    def request(self,method,url,body=None,headers=None,*,encode_chunked=False):
+        from .network_permissions import require
+        require(self.host)
+        return super().request(method,url,body=body,headers=headers or {},encode_chunked=encode_chunked)
     def connect(self):
+        from .network_permissions import require
+        require(self.host)
         # No second DNS resolution, proxy or redirect. Verify TLS against the original DNS name.
         sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         try:

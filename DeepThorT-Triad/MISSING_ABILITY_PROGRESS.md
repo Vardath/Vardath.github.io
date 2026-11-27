@@ -266,7 +266,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 254 | 208 | User-authorised autonomous self-installation | Partial: explicit owner-reviewed exact V71 diagnostic-only update, live idle check, independently reviewed and isolated-tested package verification, durable pre-write receipt and verified baseline, atomic source replacement. Pass 255 CI pending; general application installer/rollback and native acceptance outstanding. |
 | 255 | 218 | Autonomous self-development | Extended partial: recurring-fault investigation may autonomously apply a host-defined restricted expression interpreter and fixed malformed/valid row oracle to an independently reviewed memory eligibility predicate; durable pass/fail/unsupported receipt. Pass 256 CI pending; broader isolated runtime testing, validated repair integration and native acceptance outstanding. |
 | 256 | 209 | Complete application rollback and restoration | Extended partial: explicit reviewed rollback of exact installed V71 diagnostic source, bound to original package, ledger, live source and verified baseline; pre-write receipt and retained candidate. Pass 257 CI pending. Whole-application version/state/runtime restoration and native acceptance outstanding. |
-| 257 | 332 | Network permission controls | Existing partial; completion not started in this programme |
+| 257 | 332 | Network permission controls | Extended partial: persistent owner-reviewed shared pinned HTTPS restriction (existing approvals, deny all, exact host allowlist), rechecked before DNS, request and TLS connection. Pass 258 CI pending. Other stacks, subprocesses and OS network isolation remain outside this scope. |
 | 258 | 96 | Consistent character generation across images | Not started in this programme |
 | 259 | 104 | Neural text-to-video generation | Not started in this programme |
 | 260 | 301 | Full cinematic production | Existing partial; completion not started in this programme |
@@ -1215,3 +1215,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 257 — 28 November 2026
 - Fix Pass 255's absent first-install receipt guard on its own branch and carry the repair into Pass 256. Add owner-reviewed rollback of the exact installed diagnostic correction, checking sealed review, package, baseline, cap source, current bytes and original installation receipt. Require idle queue and fresh consent; persist pre-write rollback receipt, atomically restore the single source file, retain candidate and all user data. Three focused regression scenarios. Whole-application rollback and crash reconciliation remain outstanding. Next rank 257 / ID 332 network permission controls. No installer.
+
+
+## Pass 258 — 28 November 2026
+- Add durable owner-controlled restrictions for existing shared pinned HTTPS transport; exact hostname allowlist, blocked, or original reviewed behaviour. Recheck before DNS, each HTTP request and connection; malformed policy fails closed. Does not grant access, weaken approval or affect local inference. Desktop owner confirmation and three regression scenarios. Other HTTP libraries, external tools, in-flight transmissions and OS firewall/sandbox remain outside scope. Next rank 258 / ID 96 consistent character generation across images. No installer.
