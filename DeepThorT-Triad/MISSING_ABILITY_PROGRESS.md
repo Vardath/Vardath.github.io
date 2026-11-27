@@ -82,7 +82,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 70 | 233 | Online image discovery | Source extended: standalone reviewed Commons search and non-overwriting image candidate report, attribution metadata and pinned public TLS JSON transport; Pass 071 CI pending. Wider providers and live/native acceptance outstanding. |
 | 71 | 21 | Scientific citation verification | Source implemented: explicit Crossref DOI record lookup and local title/first-author/issued-year comparison with per-field mismatch/absence receipts; Pass 072 CI pending. Full-text claim support, retractions and live acceptance outstanding. |
 | 72 | 20 | Academic literature discovery | Source implemented: reviewed Crossref bibliographic query, optional date bounds, DOI/title/first-author metadata, provider ranks and response hash; Pass 073 CI pending. Multiple indexes, full-text research and live acceptance outstanding. |
-| 73 | 18 | Website crawling | Not started in this programme |
+| 73 | 18 | Website crawling | Source implemented: explicitly scoped same-host static crawl, conservative robots policy, delay, bounded depth/attempts and provenance; Pass 074 CI pending. Live and dynamic-site acceptance outstanding. |
 | 74 | 228 | Multi-source research | Existing partial; completion not started in this programme |
 | 75 | 229 | Source credibility assessment | Existing partial; completion not started in this programme |
 | 76 | 230 | Contradictory source comparison | Existing partial; completion not started in this programme |
@@ -624,3 +624,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 073 — 27 November 2026
 
 - Add explicit one-page academic discovery through Crossref bibliographic search, optional publication year filters and up to ten records. Retain original provider ranks, DOI, title, first author, issued year, publication and metadata hash; distinguish provider-reported total from returned results and flag issued-year differences. No full-text, systematic coverage or scientific claim verification. Four regression cases. Next rank 73 / ID 18 website crawling. No installer.
+
+## Pass 074 — 27 November 2026
+
+- Implement finite same-host website crawling inside explicitly approved path prefix, up to five page attempts and depth two. Require a successful plain-text robots response, conservative disallow matching and delay; reject unsafe paths, query URLs and other origins. Preserve page evidence, traversal origins, attempt and denied records. Four deterministic regressions. Pass 071 green and merged (PR 137); 072–073 green awaiting sequential merge. Next rank 74 / ID 228 multi-source research. No installer.
