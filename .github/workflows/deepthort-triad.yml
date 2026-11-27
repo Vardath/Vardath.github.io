@@ -142,6 +142,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_chart_creation_ability.py -v
       - run: python -m unittest discover -s tests -p test_interactive_chart_ability.py -v
       - run: python -m unittest discover -s tests -p test_mathematics_ability.py -v
+      - run: python -m unittest discover -s tests -p test_personal_preferences_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -384,6 +385,8 @@ jobs:
           python -m unittest discover -s tests -p test_interactive_chart_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_mathematics_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_personal_preferences_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

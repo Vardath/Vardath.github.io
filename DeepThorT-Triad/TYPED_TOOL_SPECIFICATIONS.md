@@ -143,3 +143,7 @@ Use the same typed specification as Create a standalone vector chart. Select a n
 ```
 
 Use expression for constant arithmetic or left/right for a linear equation in x. Values are exact integer, decimal or rational strings. Operations: add, subtract, multiply, divide. Nonlinear terms and variable denominators are refused. The JSON receipt records exact fractions and checked substitution; not a general symbolic solver.
+
+## Personal preferences
+
+Chats → Personal preferences opens the local presentation defaults editor. Select response length/style, metric or imperial units and spelling. Save explicitly or reset fields and save. Defaults apply as bounded advisory context to ordinary chats only, not execution authority or the project specification. Current instructions override saved defaults.

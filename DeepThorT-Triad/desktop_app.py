@@ -501,6 +501,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
+        ttk.Button(ca,text='Personal preferences…',command=self._edit_personal_preferences).pack(anchor='w',pady=2)
         ttk.Label(ca,text='Conversation first. Only your approved plan becomes an executable job.',style='Muted.TLabel').pack(anchor='w',pady=2)
 
         # REAL PERSISTENT WORK QUEUE
@@ -1285,6 +1286,33 @@ class DeepThorTDesktop(tk.Tk):
         if messagebox.askyesno('Install optional presentation tools','Install pinned local python-pptx and lxml packages and dependencies? No presentation is uploaded.',parent=self):
             self._start_command([sys.executable,'-m','pip','install','--no-input','-r',str(ROOT/'requirements-presentations.txt')],
                 cwd=ROOT,label='Install presentation tools',kind='installation')
+
+    def _edit_personal_preferences(self):
+        from deepthort_local.personal_preferences import OPTIONS,DEFAULT,load,save
+        path=STATE/'personal-preferences.json'
+        try:previous=load(path)
+        except (OSError,ValueError) as exc:
+            messagebox.showwarning('Preferences unavailable','Stored preferences could not be read: '+type(exc).__name__,parent=self);return
+        dialog=tk.Toplevel(self);dialog.title('Personal presentation defaults');dialog.transient(self)
+        ttk.Label(dialog,text='Saved locally for ordinary chats. Current requests override defaults.').pack(anchor='w',padx=12,pady=8)
+        fields={}
+        for key,choices in OPTIONS.items():
+            row=ttk.Frame(dialog);row.pack(fill='x',padx=12,pady=4)
+            ttk.Label(row,text=key.replace('_',' ').capitalize(),width=20).pack(side='left')
+            var=tk.StringVar(value=previous[key]);fields[key]=var
+            ttk.Combobox(row,textvariable=var,values=choices,state='readonly',width=18).pack(side='left')
+        def reset():
+            for key,var in fields.items():var.set(DEFAULT[key])
+        def commit():
+            try:save(path,{key:var.get() for key,var in fields.items()},expected=previous)
+            except (OSError,ValueError) as exc:
+                messagebox.showwarning('Preferences not saved',str(exc),parent=dialog);return
+            dialog.destroy()
+        bar=ttk.Frame(dialog);bar.pack(fill='x',padx=12,pady=10)
+        ttk.Button(bar,text='Save defaults',command=commit).pack(side='left')
+        ttk.Button(bar,text='Reset fields',command=reset).pack(side='left',padx=5)
+        ttk.Button(bar,text='Cancel',command=dialog.destroy).pack(side='right')
+        dialog.grab_set();self.wait_window(dialog)
 
     def _review_typed_tool(self,module,suffix,label):
         # Fixed internal registry; no model-provided module or command.
@@ -3329,6 +3357,8 @@ class DeepThorTDesktop(tk.Tk):
                     from deepthort_local.conversation_memory import advice as conversation_advice
                     prompt+=conversation_advice(self.jobs.path,request,
                         budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
+                    from deepthort_local.personal_preferences import context as preference_context
+                    prompt+=preference_context(STATE/'personal-preferences.json',budget=min(400,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     from deepthort_local.chat_agent import eligible, run_agent, MAX_PACKET
                     from deepthort_local.technical_research import DOCS, excerpt
                     from deepthort_local.reasoning_council import ReasoningCouncil
