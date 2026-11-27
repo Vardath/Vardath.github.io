@@ -43,3 +43,7 @@ In Project knowledge, select up to 12 current enrolled documents and choose Expo
 ## Reviewed knowledge graph (Pass 082)
 
 Files & Images → Build knowledge graph. Select a typed JSON specification and a new JSON output. The `document` must be a project-relative TXT/Markdown/RST/AsciiDoc source. Provide `nodes` (id, label, kind, evidence) and `edges` (from, to, predicate, evidence). Every evidence object contains one-based `line`, zero-based `start`, and an exact `quote` (maximum 500 characters). Node labels must appear in their quotes, and both endpoint labels must appear in an edge quote. The report includes directed adjacency and the exact document SHA-256. Predicates are reviewer assertions, not verified facts. Original source and index remain unchanged; no new execution authority.
+
+## Automatic relationship candidates (Pass 083)
+
+Files & Images → Discover relationship candidates. The typed JSON specification contains `document`, `nodes` (as in the reviewed graph) and `max_candidates` (1–128). Choose 2–32 exact entity labels. Candidate pairs are discovered automatically from whole-label matches within 500 characters on the same source line; dense lines with more than 128 mentions are skipped and reported. Each pair retains supporting-line count and up to three exact quote locators. Co-occurrence is an observation, never a verified semantic predicate or an automatic graph mutation.

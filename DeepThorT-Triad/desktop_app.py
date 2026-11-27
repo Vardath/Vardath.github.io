@@ -722,6 +722,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(synthesis_actions,text='Train local semantic vectors…',command=lambda:self._review_typed_tool('semantic_vectors','.json','Research: reviewed latent vectors')).pack(side='left',padx=3)
         graph_actions=ttk.Frame(media_tab);graph_actions.pack(fill='x',pady=2)
         ttk.Button(graph_actions,text='Build knowledge graph…',command=lambda:self._review_typed_tool('knowledge_graph','.json','Research: reviewed knowledge graph')).pack(side='left',padx=3)
+        ttk.Button(graph_actions,text='Discover relationship candidates…',command=lambda:self._review_typed_tool('relationship_discovery','.json','Research: reviewed relationship discovery')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1435,7 +1436,8 @@ class DeepThorTDesktop(tk.Tk):
                  'source_contradictions':('.json','Research: reviewed source comparison'),
                  'research_report':('.html','Research: reviewed report'),
                  'semantic_vectors':('.json','Research: reviewed latent vectors'),
-                 'knowledge_graph':('.json','Research: reviewed knowledge graph')}
+                 'knowledge_graph':('.json','Research: reviewed knowledge graph'),
+                 'relationship_discovery':('.json','Research: reviewed relationship discovery')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
