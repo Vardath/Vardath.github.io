@@ -838,6 +838,7 @@ class DeepThorTDesktop(tk.Tk):
         blender_review_actions=ttk.Frame(media_tab);blender_review_actions.pack(fill='x',pady=2)
         ttk.Button(blender_review_actions,text='Create editable Blender mesh…',command=self._show_blender_mesh_workflow).pack(side='left',padx=3)
         ttk.Button(blender_review_actions,text='Repair mesh…',command=lambda:self._review_typed_tool('mesh_repair','.obj','Mesh: reviewed repair')).pack(side='left',padx=3)
+        ttk.Button(blender_review_actions,text='Parametric CAD…',command=lambda:self._review_typed_tool('parametric_cad','.zip','CAD: reviewed convex extrusion')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1568,6 +1569,7 @@ class DeepThorTDesktop(tk.Tk):
                  'mesh_simplification':('.obj','Mesh: reviewed simplification'),
                  'mesh_retopology':('.obj','Mesh: reviewed planar retopology'),
                  'mesh_repair':('.obj','Mesh: reviewed repair'),
+                 'parametric_cad':('.zip','CAD: reviewed convex extrusion'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),
