@@ -704,6 +704,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(writing_actions,text='Assemble manuscript…',command=lambda:self._review_typed_tool('long_form_writing','.txt','Document: reviewed manuscript')).pack(side='left',padx=3)
         ttk.Button(writing_actions,text='Create Word document…',command=lambda:self._review_typed_tool('word_document','.docx','Document: reviewed Word production')).pack(side='left',padx=3)
         ttk.Button(writing_actions,text='Resolve citations…',command=lambda:self._review_typed_tool('bibliography','.txt','Document: reviewed bibliography')).pack(side='left',padx=3)
+        visual_data_actions=ttk.Frame(media_tab);visual_data_actions.pack(fill='x',pady=2)
+        ttk.Button(visual_data_actions,text='Interactive table…',command=lambda:self._review_typed_tool('interactive_table','.html','Data: reviewed interactive table')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1296,7 +1298,8 @@ class DeepThorTDesktop(tk.Tk):
                  'presentation_template':('.pptx','Presentation: reviewed template'),
                  'long_form_writing':('.txt','Document: reviewed manuscript'),
                  'word_document':('.docx','Document: reviewed Word production'),
-                 'bibliography':('.txt','Document: reviewed bibliography')}
+                 'bibliography':('.txt','Document: reviewed bibliography'),
+                 'interactive_table':('.html','Data: reviewed interactive table')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

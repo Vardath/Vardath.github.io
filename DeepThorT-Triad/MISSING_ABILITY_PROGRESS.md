@@ -43,7 +43,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 31 | 212 | Long-form writing | Source extended: reviewed ordered multi-section manuscript assembly with outline coverage, per-section word minima and exact text receipts. Pass 032 CI pending; iterative native authoring, semantic quality and continuity review outstanding. |
 | 32 | 268 | Create formatted Word documents | Source extended: native editable DOCX with named styles, headings, lists and tables, themes/page sizes and reopened OOXML checks. Pass 033 CI pending; visual render, advanced layouts and native model integration outstanding. |
 | 33 | 279 | Citation and bibliography management | Source extended: reviewed numeric or author-year citation resolution and bibliography creation with exact source, explicit metadata and marker checks. Pass 034 CI pending; independent source verification, standard-specific formatting and model integration outstanding. |
-| 34 | 77 | Interactive data tables | Not started in this programme |
+| 34 | 77 | Interactive data tables | Source implemented: offline standalone CSV snapshot with bounded text search, stable sorting and pagination, literal safe HTML and fixed JavaScript. Pass 035 CI pending; actual browser UI and native model integration outstanding. |
 | 35 | 274 | Create charts | Existing partial; completion not started in this programme |
 | 36 | 78 | Interactive charts and visualisations | Not started in this programme |
 | 37 | 211 | Mathematical reasoning | Existing partial; completion not started in this programme |
@@ -468,3 +468,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 034 — 27 November 2026
 
 - Add reviewed bibliography and citation resolution for existing UTF-8 TXT manuscripts. Explicit [[cite:ID]] markers, stable reference IDs, supplied authors/year/title/publication/locator, numeric first-use order or simple author-year labels, ambiguity/unused/missing/malformed marker refusal. Preview full resolved text and receipt; bind exact manuscript and metadata, preserve source and publish new TXT. Four actual fixture regressions. No lookup, fabricated metadata, source-claim verification or formal APA/MLA compliance. Next rank 34 / ID 77 interactive data tables. No installer.
+
+## Pass 035 — 27 November 2026
+
+- Add reviewed local standalone interactive HTML tables from exact UTF-8 CSV snapshots: explicit columns/title/page size, 5,000-row and embedded-data bounds, text filtering, stable text sorting and pagination. Literal HTML escaping, inert escaped JSON, fixed DOM textContent rendering, hash-bound CSP and no external requests or arbitrary script input. First page remains readable without JS. Review includes exact source hash, selected dataset digest, total count and explicitly sampled first 25 rows. Four actual regression cases, including execution of the fixed JavaScript selection logic in Node. Native browser rendering and model-directed operation remain outstanding. Next rank 35 / ID 274 create charts. No installer.
