@@ -167,7 +167,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 155 | 93 | Image colourisation | Partial: reviewed grayscale PNG and 1–4 explicit binary region masks, gamut-limited palette chroma with encoded luma preservation and verified output. Pass 156 CI pending. Automatic semantic color inference, historical accuracy and visual acceptance outstanding. |
 | 156 | 92 | Image style transfer | Partial: reviewed classical reference RGB empirical quantile palette transfer with strength control, exact source/reference guards and verified PNG. Pass 157 CI pending. Learned artistic texture/style and visual acceptance outstanding. |
 | 157 | 85 | Image-to-image generation | Partial: explicit queued offline SD1.5 image-to-image producer using the existing optional model, bounded seed/strength and verified guarded PNG publication. Pass 158 CI pending. Actual native model execution, quality and autonomous use outstanding. |
-| 158 | 292 | Reference-guided generation | Existing partial; completion not started in this programme |
+| 158 | 292 | Reference-guided generation | Partial: distinct reviewed reference palette transferred into the init image before existing local image-to-image diffusion, separate strengths, exact dual-input guards and receipt. Pass 159 CI pending. Semantic conditioning, subject consistency and native quality outstanding. |
 | 159 | 86 | Image inpainting | Not started in this programme |
 | 160 | 87 | Image outpainting | Not started in this programme |
 | 161 | 88 | Image object removal | Not started in this programme |
@@ -910,3 +910,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 - Add persistent removal tombstone and explicit restore-at-tail, initially paused. Removed projects are excluded from active queue display and existing priority-gated dispatch even after rediscovery or restart. Retain files, chats, pending prompts, job records and approval evidence. Existing running atomic operations may settle. Registered empty projects remain visible and removable. Two migration/persistence fixtures. This is queue removal, not filesystem deletion; no installer.
 
 - Close native worker dispatch bypass: approved subprocess claiming consults persisted project/task policy, including existing job and workflow/asset-probe bindings; held/removed Git actions no longer block unrelated desktop work, while actually running actions still hold the gate. Routine automatic installation selection skips held projects. Add native claim regression (without launching a process).
+
+## Pass 159 — 27 November 2026
+- Extend existing queued offline image-to-image with a distinct reference image and explicit palette strength. Reuse verified classical quantile mapping as initial diffusion conditioning; hash-bind both source and reference, recheck after generation, retain old schema compatibility, record conditioning digest and reference method. Desktop selector and mock-backend regression. No additional model, semantic conditioning or native quality claim. Next rank 159 / ID 86 image inpainting. No installer.

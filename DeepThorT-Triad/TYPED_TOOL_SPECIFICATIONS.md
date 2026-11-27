@@ -711,3 +711,7 @@ Files & Images → Transfer palette. JSON keys: `image` and `reference` (distinc
 ## Explicit queued image-to-image generation (Pass 158)
 
 Files & Images → Transform image. Select a project-local opaque RGB PNG, enter a transformation description and strength (30–90%); review exact source and new project-root output, 384×384, 15 steps and seed. Existing local SD1.5 Diffusers model is required. Source SHA-256 is checked before generation and before exclusive output publication. Source resized to square; no automatic model installation or download. Uses the existing capped media process. Model quality and actual native generation unverified.
+
+## Reference-guided generation (Pass 159)
+
+Files & Images → Reference-guided image. Choose source RGB PNG and distinct RGB palette reference, both at most one megapixel; specify palette strength and diffusion strength independently. Palette transfer creates the initial image supplied to the existing local SD1.5 image-to-image backend. Exact two-source hash guards and new PNG publication. Not semantic reference conditioning or guaranteed subject consistency.

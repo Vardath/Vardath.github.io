@@ -36,3 +36,20 @@ class ImageToImageTests(unittest.TestCase):
             with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=backend)
             self.assertFalse((root/'out.png').exists())
             with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=lambda *_:OUT)
+
+    def test_reference_guidance_and_stale_reference(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(RAW)
+            reference=root/'ref.png';reference.write_bytes(encode(1,1,'RGB',bytes([200,30,80])))
+            s=m.review_reference(root,'source.png','ref.png','out.png','painted scene',256,15,60,7,100)
+            def backend(model,raw,plan):
+                self.assertEqual(decode(raw,('RGB',))[3],bytes([200,30,80])*2)
+                return OUT
+            r=m.execute(root,'unused',s,backend=backend)
+            self.assertEqual(r['reference_method'],'classical_palette_initialisation')
+            self.assertFalse(r['semantic_reference_conditioning'])
+            (root/'out.png').unlink()
+            def changed(*_):
+                reference.write_bytes(RAW);return OUT
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=changed)
+            self.assertFalse((root/'out.png').exists())
