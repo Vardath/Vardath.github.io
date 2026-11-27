@@ -105,7 +105,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 93 | 83 | Live database connections | Source implemented: reviewed live local SQLite read-only transaction, current committed rows, file identity and source spec checks, shared SQL authorizer and bounded output. Pass 094 CI pending. Remote DB drivers, credentials, pooling and write workflows outstanding. |
 | 94 | 247 | API development | Source extended: reviewed OpenAPI 3.1 JSON contracts, route/method/ID validation, path parameters, request/response schemas and success status constraints. Pass 095 CI pending. Server implementation, auth, richer schemas and integration outstanding. |
 | 95 | 248 | API testing | Source extended: real reviewed loopback GET tests, explicit status/JSON scalar checks, response hashes, latency and bounded bodies; no redirects or credentials. Pass 096 CI pending. Remote endpoints, authenticated and mutation suites outstanding. |
-| 96 | 252 | Live application monitoring | Existing partial; completion not started in this programme |
+| 96 | 252 | Live application monitoring | Source extended: finite live local endpoint health samples, timestamped status/JSON checks, latency limits, partial deadline handling and measured summaries. Pass 097 CI pending. Persistent monitoring, process metrics, alerts and recovery outstanding. |
 | 97 | 54 | Database migration management | Not started in this programme |
 | 98 | 41 | Language-server integration | Not started in this programme |
 | 99 | 235 | Learn application interfaces | Existing partial; completion not started in this programme |
@@ -702,3 +702,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 096 — 27 November 2026
 - Actual reviewed HTTP GET acceptance tests against an already-running loopback project service. Fixed 127.0.0.1, no JANUS port, redirects, credentials or external URLs; bounded cases, response bytes and deadline. Exact status and typed top-level JSON scalar assertions, body hash and duration, failures retained. Three real local fixture-server regressions. Next rank 96 / ID 252 monitoring. No installer.
+
+## Pass 097 — 27 November 2026
+- Reuse actual reviewed loopback API tests for finite health sampling with explicit sample count, interval, status/JSON assertions and latency threshold. Timestamped observations, partial deadline and failures distinguished; no fabricated uptime or automatic restart. Three regressions including real fixture server. Next rank 97 / ID 54 database migrations. No installer.

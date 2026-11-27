@@ -467,3 +467,7 @@ Files & Images → Create API contract. Source JSON has `title`, `version`, `end
 ## Local API testing (Pass 096)
 
 Files & Images → Test local API. JSON: `{"port":8080,"cases":[{"id":"health","path":"/health","status":200,"json_fields":{"ready":true}}]}`. Sends one GET per reviewed case to a running service on 127.0.0.1 only. No redirects, credentials, external network or JANUS control port. Tests status and exact typed JSON scalar fields. Records body hash and timing, not raw response bodies. GET endpoints should be read-only; review the target service before approving.
+
+## Live application health sampling (Pass 097)
+
+Files & Images → Sample application health. JSON: `{"port":8080,"path":"/health","expected_status":200,"json_fields":{"ready":true},"samples":3,"interval_seconds":1,"max_latency_ms":100}`. Two to eight sequential local GET observations with timestamps, status, typed JSON checks and latency threshold. Reports partial observations if the sampling deadline is reached. No persistent monitor, alerts, automatic recovery or service startup.
