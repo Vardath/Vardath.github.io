@@ -271,3 +271,11 @@ Explicit integer percentages 0–300; 100 is identity. Fixed order brightness, c
 ```
 
 Ordered 1–32 literal shapes or text; bounded rectangle/circle/polygon geometry, hex fills, optional solid background, three font families and explicit wordmark attributes. No arbitrary SVG, URLs, scripts or external assets. Output is editable and structurally verified; rendered appearance, font fit, design originality and trademark clearance are not established.
+
+## Generate an infographic
+
+```json
+{"title":"Project snapshot","subtitle":"Supplied local figures","accent":"#1d697a","source_note":"Source: user-provided figures.","facts":[{"label":"Ships built","value":"120","detail":"Completed hulls in the specified period."},{"label":"Deliveries","value":"456","detail":"Recorded deliveries across all sectors."}]}
+```
+
+Two to eight supplied fact cards, fixed responsive-to-count two-column vector layout, explicit source note, bounded literal text and editable SVG. The tool verifies the generated structure and text, not the truth of supplied claims or rendered font fit. Review appearance and evidence independently.

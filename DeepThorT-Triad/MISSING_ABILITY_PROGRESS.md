@@ -64,7 +64,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 52 | 100 | Multi-image composition | Source implemented: reviewed ordered PNG layers with explicit placement, resizing, opacity and alpha on opaque RGB canvas; exact source guards and decoded pixel verification. Pass 053 CI pending; visual quality and native model integration outstanding. |
 | 53 | 293 | Image enhancement | Source extended: explicit brightness, contrast, saturation and sharpness with exact alpha preservation and decoded PNG verification; Pass 054 CI pending. Native visual and model-directed acceptance outstanding. |
 | 54 | 294 | Logo generation | Source extended: editable bounded vector logo generation from reviewed shapes and literal wordmark specifications; Pass 055 CI pending. Visual, font-fit, originality and model-directed acceptance outstanding. |
-| 55 | 295 | Infographic generation | Existing partial; completion not started in this programme |
+| 55 | 295 | Infographic generation | Source extended: editable bounded fact-card SVG with explicit source note and verified layout text; Pass 056 CI pending. Claim, rendering and model-directed acceptance outstanding. |
 | 56 | 297 | Batch image processing | Existing partial; completion not started in this programme |
 | 57 | 299 | Video trimming and sequencing | Existing partial; completion not started in this programme |
 | 58 | 90 | Image background removal | Not started in this programme |
@@ -552,3 +552,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 055 — 27 November 2026
 
 - Add reviewed editable SVG logo generation from ordered shapes and literal wordmark instructions; validate explicit geometry and colors, escape text, reject arbitrary attributes, verify exact emitted SVG element structure and publish without overwriting. Four regressions. Existing general image and SVG routes remain unchanged. Next rank 55 / ID 295 infographic generation. No installer.
+
+## Pass 056 — 27 November 2026
+
+- Add reviewed SVG infographic production from two to eight supplied fact cards, explicit source note, title, subtitle and accent. Dynamic row count; bounded literal wrapping, escaped text, exact output text verification and non-overwriting publication. Four regressions; no independent claim verification or rendered appearance claim. Next rank 56 / ID 296 batch image processing. No installer.
