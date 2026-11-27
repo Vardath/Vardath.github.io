@@ -1121,3 +1121,7 @@ Use Files & Images → Neural text to video… with a project JSON specification
 
 ### Reviewed cinematic assembly (Pass 261)
 Files & Images → Assemble cinematic shots. Select a JSON file containing `title`, `sequence` (existing video trimming specification restricted to two or three distinct silent H.264 clips, matched geometry and frame rate, optional cut/crossfade transitions), `soundtrack` (48 kHz PCM16 WAV mono/stereo) and `audio_start_ms` (0–30000). Choose a new MP4 file. The selected soundtrack must cover the full frame-aligned timeline; no hidden looping or padding. Output H.264/ALAC preserves exact decoded RGB and PCM sequence. Existing 120-frame and 16 MiB limits apply. No automated publishing, source rights or cinematic quality verification.
+
+
+### Local neural video-to-video (Pass 262)
+Files & Images → Neural video to video. JSON: `{"video":"clip.mp4","start_frame":0,"prompt":"watercolour landscape","negative_prompt":"","seed":12,"size":256,"frames":8,"steps":10,"strength_percent":50}`. Use a 256x256 silent H.264 MP4 at 24/25/30 fps with the entire selected interval. Requires the same trusted local models and codecs as Pass 260. Preserves frame count/rate and verifies encoded pixels, not character identity or semantic/motion quality. No installation or network inference.
