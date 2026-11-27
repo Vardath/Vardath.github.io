@@ -78,7 +78,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 66 | 8 | Event-triggered workflows | Source implemented: explicit monitor-event rules releasing finite ordinary conversation follow-ups with durable receipts, no replay or overlapping admission; Pass 067 CI pending. Automatic execution grants and native acceptance outstanding. |
 | 67 | 17 | Search-engine result interpretation | Source implemented: bounded supplied search-result lexical ranking, deduplication, query coverage and explicit unverified provenance; Pass 068 CI pending. Model-directed semantic synthesis and independent source verification outstanding. |
 | 68 | 16 | General internet search | Source implemented: explicit user-approved Brave Search API adapter, transient key, bounded structured results and lexical interpretation; Pass 069 CI pending. Live provider account, model integration and native GUI acceptance outstanding. |
-| 69 | 227 | Arbitrary webpage retrieval | Existing partial; completion not started in this programme |
+| 69 | 227 | Arbitrary webpage retrieval | Source extended: explicit exact public HTTPS page retrieval with pinned public IPv4 TLS, bounded static text extraction, source/text hashes and non-overwriting report; Pass 070 CI pending. Dynamic/authenticated/query URLs and live/model acceptance outstanding. |
 | 70 | 233 | Online image discovery | Existing partial; completion not started in this programme |
 | 71 | 21 | Scientific citation verification | Not started in this programme |
 | 72 | 20 | Academic literature discovery | Not started in this programme |
@@ -608,3 +608,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 069 — 27 November 2026
 
 - Add general web search via the documented fixed Brave Search API endpoint, with user-approved exact query, finite result count and masked one-request token (no persistence or model exposure). Reuse pinned public IPv4 TLS, reject redirects/compression/oversize, validate provider JSON, strip snippet markup and rank bounded unverified results. Read-only desktop dialog and explicit clipboard export, no silent provider calls or project uploads. Four deterministic transport regressions. Live search needs a provider key/account and separate acceptance; no cloud inference. Pass 066 green and merged (PR 132). Next rank 69 / ID 227 webpage retrieval. No installer.
+
+## Pass 070 — 27 November 2026
+
+- Add user-approved exact public HTTPS HTML/plain page retrieval, pinned public IPv4 TLS, no redirects/query/credentials, bounded body and text, static title/text/link extraction with no script/subresource execution or link following. Preserve URL and response/text hashes in reviewed new JSON report with source guards. The approval explicitly includes the outgoing HTTPS request. Four regressions for transport, static extraction, rejection and non-overwrite. Live external retrieval, dynamic pages and model integration remain outstanding. Next rank 70 / ID 233 online image discovery. No installer.
