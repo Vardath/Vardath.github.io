@@ -172,7 +172,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 160 | 87 | Image outpainting | Partial: explicit source offset within a larger 256/384/512 square canvas, generated outside-region mask, existing offline diffusion and exact original source pixels. Pass 161 CI pending. Native compatibility, seams and visual acceptance outstanding. |
 | 161 | 88 | Image object removal | Partial: explicit object mask, deterministic boundary-colour initialisation discards selected original pixels, negative object guidance and local masked diffusion with exact outside preservation. Pass 162 CI pending. Automatic segmentation and visual absence verification outstanding. |
 | 162 | 89 | Image object replacement | Partial: distinct original and replacement object descriptions, scene context, mask-bound local diffusion with original masked content discarded, positive and negative guidance and exact outside pixels. Pass 163 CI pending. Semantic identity and native visual verification outstanding. |
-| 163 | 97 | Pose-controlled image generation | Not started in this programme |
+| 163 | 97 | Pose-controlled image generation | Partial: reviewed 14-joint normalized JSON rendered as a deterministic mannequin image, then existing local image-to-image diffusion. Pass 164 CI pending. Dedicated pose conditioning, detection and pose-fidelity verification outstanding. |
 | 164 | 98 | Depth-controlled image generation | Not started in this programme |
 | 165 | 99 | Sketch-to-image conversion | Not started in this programme |
 | 166 | 102 | Layer-aware image editing | Not started in this programme |
@@ -925,3 +925,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 163 — 27 November 2026
 - Extend reviewed object editing with separate replacement description and surrounding context; reject equivalent old/new descriptions and no-op results, condition on the new object and exclude old-object text, retain source/mask guards and untouched outside pixels. Two mocked regressions. Semantic replacement not verified. Next rank 163 / ID 97 pose-controlled generation. No installer.
+
+## Pass 164 — 27 November 2026
+- Add hash-bound explicit 14-joint pose guides and deterministic mannequin rasterization feeding the existing offline diffusion backend, desktop queue entry, stale-source protection and malformed/collapsed-joint regression tests. This is pose-guided initialization, not true ControlNet pose conditioning. No additional model or installer. Next rank 164 / ID 98 depth-controlled generation.
