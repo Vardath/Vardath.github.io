@@ -31,7 +31,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 19 | 277 | Document comparison | Source extended: reviewed cross-format extracted-text change reports, source hashes, exact line/paragraph differences and reconstruction checks. Pass 020 CI pending; visual/formatting and semantic comparison outstanding. |
 | 20 | 71 | Editing existing spreadsheets | Source extended: reviewed literal XLSX cell updates to separate file, preserved values/formulas/styles checked on reopen. Pass 021 CI pending; advanced workbook structures, formula recalculation and native integration outstanding. |
 | 21 | 246 | Database schema generation | Source extended: typed SQLite DDL generation with primary, unique and foreign keys, disposable schema execution and metadata verification. Pass 022 CI pending; other dialects, migrations and native model integration outstanding. |
-| 22 | 272 | Create spreadsheets | Existing partial; completion not started in this programme |
+| 22 | 272 | Create spreadsheets | Source extended: typed multi-sheet XLSX production, styled headers, filters, freeze panes, literal cells and number formats with reopen verification. Pass 023 CI pending; charts, richer layouts and native model integration outstanding. |
 | 23 | 273 | Spreadsheet formula generation | Existing partial; completion not started in this programme |
 | 24 | 280 | CSV processing | Existing partial; completion not started in this programme |
 | 25 | 281 | SQL querying | Existing partial; completion not started in this programme |
@@ -416,3 +416,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 022 — 27 November 2026
 
 - Generate SQLite DDL from reviewed typed table/column/key definitions (bounded identifiers, five SQLite affinities, nullability, primary/unique/foreign keys, compatible referenced keys). No arbitrary SQL or live database access. Execute generated script only in disposable in-memory SQLite; compare actual schema metadata, foreign keys, unique keys and integrity before writing new SQL file. Four actual regression cases including constraint enforcement. Existing typed-tool approval and atomic new-output guard reused. Other SQL dialects, migrations, application-specific semantic acceptance and autonomous integration outstanding. Next rank 22 / ID 272 create spreadsheets. No installer.
+
+## Pass 023 — 27 November 2026
+
+- Create new bounded XLSX workbooks from typed sheet/header/row/format definitions, reusing the guarded spreadsheet producer. Multi-sheet layout, styled headers, alternating row fills, widths, freeze panes, filters and five explicit number formats. All text remains literal, including equals-prefixed strings. Verify reopened values, types, styles, sheet order and selected layout metadata. No formula evaluation, charts, full render verification or existing-file overwrite. Four workbook fixture regressions. Add a specification guide for the typed document/data tools. Next rank 23 / ID 273 spreadsheet formula generation. No installer.
