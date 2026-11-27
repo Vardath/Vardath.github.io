@@ -789,3 +789,7 @@ The existing editor accepts optional top-level `"interpolation":"blend2x"` (defa
 ## Reviewed video upscaling (Pass 176)
 
 Add optional top-level `"upscale":{"scale":2,"method":"lanczos"}` to the existing video editing specification. Scale 2–4; nearest, bicubic or lanczos. Upscale after geometry editing and optional midpoint interpolation, before transitions. Maximum output 1280×960, with selected output RGB bytes limited to the previous 120×640×480×3 buffer budget. No neural detail recovery; native playback and visual quality unverified.
+
+## Reviewed multitrack video timelines (Pass 177)
+
+Files & Images → Multitrack video. JSON keys `width`, `height`, `fps`, `duration_frames`, `background` (RGB triplet), `tracks`. Each track has `name` and `clips`; clips have `video`, inclusive `start_frame`, exclusive `end_frame`, timeline offset `at`, `x`, `y`, and integer `opacity` 0–100. Tracks are ordered bottom-to-top. Up to three tracks/four distinct short silent H.264 sources, 640×480 canvas, 120 output frames, matching source rate. Clips cannot overlap on the same track; different tracks may overlap. Gaps show the background. The rendered RGB sequence is independently decoded and verified. Audio and interactive timeline editing are not provided yet.

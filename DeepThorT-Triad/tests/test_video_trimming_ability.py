@@ -192,3 +192,30 @@ class VideoTrimmingTests(unittest.TestCase):
         r=execute(self.root,plan);self.assertEqual((r['width'],r['height'],r['frames'],r['fps']),(48,48,4,48))
         self.s['upscale']['scale']=True
         with self.assertRaises(ValueError):checked(self.s)
+
+
+    def test_multitrack_timeline_placement_and_exact_blend(self):
+        from deepthort_local.video_timeline import review,execute
+        s={'width':32,'height':16,'fps':24,'duration_frames':4,'background':[0,0,0],
+           'tracks':[{'name':'Base','clips':[{'video':'a.mp4','start_frame':0,'end_frame':3,'at':0,'x':0,'y':0,'opacity':100}]},
+                     {'name':'Overlay','clips':[{'video':'b.mp4','start_frame':0,'end_frame':2,'at':1,'x':8,'y':0,'opacity':50}]}]}
+        (self.root/'timeline.json').write_text(json.dumps(s))
+        plan,_=review(self.root,'timeline.json','timeline.mp4');r=execute(self.root,plan)
+        actual=decode(self.ff,self.root/'timeline.mp4',0,4,32,16)
+        # Frame 1: green base, half of first B frame over x=8..23.
+        row=bytes([0,255,0])*8+bytes([6,144,28])*8+bytes([6,17,28])*8+bytes([0,0,0])*8
+        self.assertEqual(actual[32*16*3:2*32*16*3],row*16)
+        self.assertEqual(actual[-32*16*3:],bytes(32*16*3))
+        self.assertTrue(r['decoded_rgb_sequence_verified'])
+    def test_multitrack_reject_overlap_and_changed_source(self):
+        from deepthort_local.video_timeline import checked as check,review,execute
+        c={'video':'a.mp4','start_frame':0,'end_frame':2,'at':0,'x':0,'y':0,'opacity':100}
+        s={'width':16,'height':16,'fps':24,'duration_frames':4,'background':[0,0,0],
+           'tracks':[{'name':'Base','clips':[c,dict(c,video='b.mp4',at=1)]}]}
+        with self.assertRaises(ValueError):check(s)
+        s['tracks'][0]['clips'][1]['at']=2
+        (self.root/'timeline.json').write_text(json.dumps(s))
+        plan,_=review(self.root,'timeline.json','timeline.mp4')
+        (self.root/'a.mp4').write_bytes(b'changed')
+        with self.assertRaises(ValueError):execute(self.root,plan)
+        self.assertFalse((self.root/'timeline.mp4').exists())

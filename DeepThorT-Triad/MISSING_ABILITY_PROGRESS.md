@@ -185,7 +185,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 173 | 111 | Video motion tracking | Partial: reviewed fixed-template RGB patch translation with bounded search/error threshold, ambiguity/loss stop, frame/timestamp evidence and guarded JSON output. Pass 174 CI pending. Scale, rotation, occlusion recovery and semantic tracking outstanding. |
 | 174 | 113 | Video frame interpolation | Partial: reviewed 2x midpoint RGB frame blending inside each clip, duration-preserving final frame, doubled overlap lengths and lossless decoded output verification. Pass 175 CI pending. Motion-compensated/neural interpolation and native playback outstanding. |
 | 175 | 114 | Video upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos video enlargement with shared RGB budget, up to 1280x960, existing edits and transitions/interpolation integration, exact decoded output verification. Pass 176 CI pending. Neural detail recovery and native playback outstanding. |
-| 176 | 120 | Multitrack video editing timelines | Not started in this programme |
+| 176 | 120 | Multitrack video editing timelines | Partial: reviewed 1–3 bottom-to-top visual tracks, up to four clips, timeline offsets, gaps, position and opacity, bounded compositing and exact lossless output verification. Pass 177 CI pending. Audio tracks and interactive timeline editor outstanding. |
 | 177 | 121 | Automatic video highlight extraction | Not started in this programme |
 | 178 | 62 | Android emulator operation | Not started in this programme |
 | 179 | 253 | Game project generation | Existing partial; completion not started in this programme |
@@ -964,3 +964,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 176 — 27 November 2026
 - Extend the existing guarded video editor with optional 2–4x classical enlargement per edited frame. Bound output geometry and aggregate RGB bytes to the existing rendering budget, integrate with interpolation and transitions, and verify lossless decoded output. Two regressions use real FFmpeg roundtrip. No neural super-resolution or native playback claim. Next rank 176 / ID 120 multitrack video editing timelines. No installer.
+
+## Pass 177 — 27 November 2026
+- Add reviewed multitrack visual timeline compositing with explicit clip intervals/offsets, track order, overlay placement, opacity and gaps. Share the existing verified RGB H.264 encoder with the sequence editor, retain exact source guards and no overwrite. Fixture tests cover actual compositing and stale source. Audio tracks and interactive editor remain outstanding. Next rank 177 / ID 121 automatic video highlight extraction. No installer.
