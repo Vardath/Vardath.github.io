@@ -752,6 +752,7 @@ class DeepThorTDesktop(tk.Tk):
         git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='Discover remote MCP…',command=lambda:self._review_typed_tool('remote_mcp','.json','Integration: reviewed remote MCP')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1501,7 +1502,8 @@ class DeepThorTDesktop(tk.Tk):
                  'interface_learning':('.json','Development: reviewed interface evidence'),
                  'code_refactoring':('.py','Development: reviewed local refactor'),
                  'installer_project':('.iss','Development: reviewed installer source'),
-                 'merge_conflict':('.txt','Git: reviewed conflict proposal')}
+                 'merge_conflict':('.txt','Git: reviewed conflict proposal'),
+                 'remote_mcp':('.json','Integration: reviewed remote MCP')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
@@ -1525,7 +1527,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
