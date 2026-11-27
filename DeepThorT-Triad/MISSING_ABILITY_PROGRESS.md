@@ -204,7 +204,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 192 | 326 | Model benchmarking | Partial: integrated current four resident native text workers, three fixed independently scored tasks twice each, isolated sessions, correctness and verified-request latency, health continuity, cancellation and diagnostic evidence. Pass 193 CI pending. Actual native runs, creative benchmark, richer coding/throughput/memory measurement outstanding. |
 | 193 | 336 | Automated backup and restoration | Partial: existing automatic source checkpoints plus reviewed exact standalone SQLite archive backup and verified nonoverwriting restoration, checksum and quick-check roundtrip. Pass 194 CI pending. Scheduled/full app-state backup, live databases and encryption outstanding. |
 | 194 | 19 | Autonomous deep research | Partial: bounded approved multi-site crawl with question-gap link prioritisation, literal excerpts, duplicate detection and evidence coverage report. Pass 195 CI pending. Semantic synthesis, broader search and native network acceptance outstanding. |
-| 195 | 31 | Webpage element inspection | Not started in this programme |
+| 195 | 31 | Webpage element inspection | Partial: reviewed public static HTML structural element inspection, controls/links/labels/headings, bounded locators and no input values or activation. Pass 196 CI pending. Rendered DOM, accessibility and authenticated/browser acceptance outstanding. |
 | 196 | 30 | Autonomous website navigation | Not started in this programme |
 | 197 | 32 | Website interaction and control selection | Not started in this programme |
 | 198 | 35 | Browser-based file downloads | Not started in this programme |
@@ -1021,3 +1021,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 195 — 27 November 2026
 - Add reviewed multi-site autonomous research collector. Reuse exact public HTTPS and robots controls; up to three distinct sites and eight page attempts plus robots. Rank permitted links lexically for remaining question terms; retain source fingerprints, literal excerpts, duplicate grouping and uncovered terms. No query disclosure to sites, external links, scripts or verified factual claims. Fixtures test approval, gap ranking and scope. Native network acceptance, semantic synthesis and broader autonomous search outstanding. Pass 191 OCR provisioning hit Chocolatey HTTP 504; retried failed job without weakening tests. Next rank 195 / ID 31 webpage element inspection. No installer.
+
+## Pass 196 — 27 November 2026
+- Add exact reviewed public HTTPS static webpage element inspection using existing pinned transport, no extra requests or script execution. Report bounded source locators, selected tags/roles/labels, safe links and control attributes; omit input values and hidden content. Distinguish static parser from live DOM/actionability. Two fixture tests; native public network and browser DOM acceptance outstanding. Next rank 196 / ID 30 autonomous website navigation. No installer.

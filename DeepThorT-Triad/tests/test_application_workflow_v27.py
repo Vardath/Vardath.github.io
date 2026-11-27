@@ -642,3 +642,29 @@ class ApplicationWorkflowTests(unittest.TestCase):
             return {'seed':site['seed'],'path_prefix':site['path_prefix'],'external_links_followed':False,'reference_only':True,
                     'pages':[{'evidence':p}],'attempts':[{}],'robots_response_sha256':'a'*64}
         with self.assertRaises(ValueError):collect(s,approved=True,run=outside)
+
+
+    def test_static_webpage_element_inspection(self):
+        from deepthort_local.webpage_elements import extract_elements
+        raw=b'<html><body><h1>Title</h1><form method="post"><label for="x">Name</label><input id="x" name="x" value="SECRET" required><input type="hidden" value="TOKEN"><textarea>PRIVATE</textarea><button disabled>Submit</button></form><a href="/docs/">Docs</a><a href="/query?q=secret">Query</a><script>BAD</script></body></html>'
+        r=extract_elements('https://example.org/',raw,'text/html','utf-8')
+        rows=r['elements']
+        self.assertEqual([x['tag'] for x in rows],['h1','form','label','input','textarea','button','a','a'])
+        self.assertEqual(rows[3]['locator'],'/html[1]/body[1]/form[1]/input[1]')
+        self.assertTrue(rows[3]['required_attribute'])
+        self.assertTrue(rows[5]['disabled_attribute'])
+        self.assertEqual(rows[6]['href'],'https://example.org/docs/')
+        self.assertIsNone(rows[7]['href'])
+        for forbidden in ('SECRET','TOKEN','PRIVATE','BAD','q=secret'):
+            self.assertNotIn(forbidden,str(r))
+        self.assertFalse(r['rendered_dom_verified'])
+
+    def test_static_webpage_element_bounds(self):
+        from deepthort_local.webpage_elements import extract_elements
+        url='https://example.org/'
+        with self.assertRaises(ValueError):extract_elements(url,b'a','text/plain','utf-8')
+        with self.assertRaises(ValueError):extract_elements(url,b'<div>'*90,'text/html','utf-8')
+        r=extract_elements(url,b'<button>OK</button>'*301,'text/html','utf-8')
+        self.assertEqual(len(r['elements']),300);self.assertTrue(r['elements_truncated'])
+        r=extract_elements(url,b'<div hidden><button>Hidden</button></div><button>Visible</button>','text/html','utf-8')
+        self.assertEqual([v['text'] for v in r['elements']],['Visible'])

@@ -731,6 +731,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(academic_actions,text='Discover academic literature…',command=lambda:self._review_typed_tool('academic_discovery','.json','Research: reviewed academic discovery')).pack(side='left',padx=3)
         crawl_actions=ttk.Frame(media_tab);crawl_actions.pack(fill='x',pady=2)
         ttk.Button(crawl_actions,text='Crawl website…',command=lambda:self._review_typed_tool('website_crawling','.json','Research: reviewed website crawl')).pack(side='left',padx=3)
+        ttk.Button(crawl_actions,text='Inspect webpage elements…',command=lambda:self._review_typed_tool('webpage_elements','.json','Research: reviewed webpage elements')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Deep research (reviewed sites)…',command=lambda:self._review_typed_tool('autonomous_research','.json','Research: reviewed autonomous research')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Collect research sources…',command=lambda:self._review_typed_tool('multi_source_research','.json','Research: reviewed multi-source evidence')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Assess source credibility…',command=lambda:self._review_typed_tool('source_credibility','.json','Research: reviewed source credibility')).pack(side='left',padx=3)
@@ -1843,6 +1844,7 @@ class DeepThorTDesktop(tk.Tk):
                  'ocr':('.json','Image: reviewed OCR'),
                  'search_interpretation':('.json','Research: reviewed search evidence'),
                  'webpage_retrieval':('.json','Research: reviewed webpage'),
+                 'webpage_elements':('.json','Research: reviewed webpage elements'),
                  'image_discovery':('.json','Research: reviewed image discovery'),
                  'scientific_citations':('.json','Research: reviewed citation check'),
                  'academic_discovery':('.json','Research: reviewed academic discovery'),
@@ -1913,7 +1915,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research','autonomous_research','webpage_elements') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return

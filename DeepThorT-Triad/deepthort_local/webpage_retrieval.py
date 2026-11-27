@@ -81,7 +81,7 @@ def extract(url,raw,mime,charset):
             'script_executed':False,'reference_only':True,
             'limitations':'Extracted static response text, not rendered browser content. No authentication, redirects, scripts, subresources or factual verification.'}
 
-def fetch_page(url,cancelled=None,*,approved=False,resolver=socket.getaddrinfo,connection=PinnedHTTPS):
+def fetch_page(url,cancelled=None,*,approved=False,resolver=socket.getaddrinfo,connection=PinnedHTTPS,extractor=extract):
     if approved is not True:raise ValueError('Explicit approval for exact page read required')
     host,path=checked_url(url);deadline=time.monotonic()+25
     stopped(cancelled,deadline);ip=resolve_public(host,resolver);stopped(cancelled,deadline)
@@ -105,7 +105,7 @@ def fetch_page(url,cancelled=None,*,approved=False,resolver=socket.getaddrinfo,c
             if total>MAX_BODY:raise ValueError('Page response exceeds byte bound')
             chunks.append(chunk)
         if length is not None and total!=int(length):raise ValueError('Incomplete page response')
-        return extract(url,b''.join(chunks),mime,charset)
+        return extractor(url,b''.join(chunks),mime,charset)
     finally:conn.close()
 
 def review(root,source,output,exclude=()):

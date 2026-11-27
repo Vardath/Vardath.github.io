@@ -865,3 +865,7 @@ Backup SQLite: JSON `{"database":"project.db"}` produces a new ZIP containing ex
 ## Autonomous deep research (Pass 195)
 
 Deep research (reviewed sites) accepts JSON `{"question":"your question","sites":[{"seed":"https://example.org/docs/","path_prefix":"/docs/","max_pages":3,"max_depth":2},{"seed":"https://example.com/reference/","path_prefix":"/reference/","max_pages":3,"max_depth":2}]}`. Two to three distinct public hosts, eight total page attempts plus robots. Same-host permitted static links are ranked by uncovered question terms; evidence contains exact text hashes, literal excerpts, duplicate grouping and coverage gaps. The question remains local. Explicit scope approval required. No semantic fact verification, unrestricted web search, credentials, scripts, external links or claims of source independence.
+
+## Static webpage element inspection (Pass 196)
+
+Inspect webpage elements accepts `{"url":"https://example.org/docs/"}`. Exact approved public HTML request, no redirects, credentials, scripts or interactions. Produces static source-parser locators, headings, selected controls, labels, and safe public link destinations. Bounded node/depth/results; omits input values, hidden controls, scripts and textarea/option contents. Not rendered DOM, CSS visibility, browser accessibility or reliable action selectors.
