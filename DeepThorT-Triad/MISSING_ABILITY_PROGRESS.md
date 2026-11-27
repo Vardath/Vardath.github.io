@@ -188,7 +188,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 176 | 120 | Multitrack video editing timelines | Partial: reviewed 1–3 bottom-to-top visual tracks, up to four clips, timeline offsets, gaps, position and opacity, bounded compositing and exact lossless output verification. Pass 177 CI pending. Audio tracks and interactive timeline editor outstanding. |
 | 177 | 121 | Automatic video highlight extraction | Partial: reviewed automatic visual activity ranking of nonoverlapping frame windows, chronological montage, threshold-based no-output behavior and exact RGB verification. Pass 178 CI pending. Semantic, audio and narrative highlight selection outstanding. |
 | 178 | 62 | Android emulator operation | Partial: reviewed existing dedicated AVD/SDK identity, headless read-only/no-snapshot Windows startup smoke under existing shared root and nested cleanup job, resource/log stop and JSON receipt. Pass 179 CI pending. Native boot, ADB/APK execution and gameplay acceptance outstanding. |
-| 179 | 253 | Game project generation | Existing partial; completion not started in this programme |
+| 179 | 253 | Game project generation | Partial: reviewed editable Godot 4 grid-game source ZIP with configurable grid, obstacles, collectibles, win/reset rules, keyboard/tap controls and reachability validation. Pass 180 CI pending. Native scene execution, generalized game generation, Android export and gameplay acceptance outstanding. |
 | 180 | 255 | X4 asset and XML processing | Existing partial; completion not started in this programme |
 | 181 | 257 | Game asset generation | Existing partial; completion not started in this programme |
 | 182 | 258 | Level generation | Existing partial; completion not started in this programme |
@@ -973,3 +973,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 179 — 27 November 2026
 - Add explicitly approved existing Android AVD startup observation using fixed headless/read-only/no-snapshot command and existing shared Windows cap and nested cleanup supervisor. Bind SDK executable metadata and AVD descriptor/config hashes; refuse linked/project-local runtime. Stop on host pressure, excessive log or deadline; report process evidence without claiming Android boot or APK execution. Fixture tests cover exact command/runtime and monitor states; native SDK/hypervisor availability unverified. Next rank 179 / ID 253 game project generation. No installer.
+
+## Pass 180 — 27 November 2026
+- Add a reviewed concrete editable Godot 4 grid-game source archive alongside the existing model-driven project generation workflow. Generate project configuration, main scene, game script, level JSON and instructions; validate every collectible and goal is reachable and preserve original specification. Deterministic archive and stale/no-overwrite fixture regressions. No engine execution or Android export claim. Next rank 180 / ID 255 X4 asset and XML processing. No installer.
