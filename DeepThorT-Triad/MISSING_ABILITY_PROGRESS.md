@@ -139,7 +139,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 127 | 309 | Multi-speaker dialogue production | Source extended: reviewed 2–8 scripted turns, 2–4 distinct stable installed voices, combined WAV, exact script and measured cue timings in a verified new ZIP. Pass 128 CI pending. Autonomous script writing, overlapping dialogue, long scenes and native listening acceptance outstanding. |
 | 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Source extended: optional reviewed installed sherpa-onnx offline diarisation CLI, exact recording/engine/model hashes, bounded timed anonymous labels, new JSON report. Pass 129 CI pending. Native engine/model acceptance, accuracy and isolated audio tracks outstanding. No identity or cross-recording matching. |
 | 129 | 152 | Audio restoration | Source extended: reviewed mono/stereo PCM isolated sample interpolation, optional DC removal and 50/60 Hz notch, verified frame/format preservation and new WAV. Pass 130 CI pending. Listening acceptance, clipping reconstruction and broader defect restoration outstanding. |
-| 130 | 154 | Audio source isolation | Not started in this programme |
+| 130 | 154 | Audio source isolation | Partial: reviewed short stereo spatial component isolation (center/side/left/right) and exact complementary PCM reconstruction, new ZIP with hashes. Pass 131 CI pending. Semantic separation of arbitrary overlapping sources and mono mixtures remains outstanding. |
 | 131 | 131 | Musical stem separation | Not started in this programme |
 | 132 | 132 | Instrument isolation | Not started in this programme |
 | 133 | 135 | Audio-to-MIDI transcription | Not started in this programme |
@@ -810,6 +810,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Pass 129 auxiliary cap repair
 - Inspection of the actual Windows child_server implementation found a rejected 1 GiB auxiliary memory request. Match its fixed 512 MiB ordinary-child maximum; retain shared root cap, foreground reserve and all recording-local anonymity guarantees. Add regression for the exact limit. Real engine admission/quality still unverified; if the installed models exceed this budget, fail closed. Re-run Linux and Windows CI before merging.
+
+## Pass 131 — 27 November 2026
+- Add bounded reviewed stereo spatial extraction: center, side, left or right, with complementary residual. Verify both stereo WAVs and exact sample-by-sample reconstruction, package new ZIP with manifest and hashes. Three fixture regressions. This is partial audio-source isolation only; no semantic vocal/instrument claims or mono separation. Preserve shared cap; no new models. Next rank 131 / ID 131 musical stem separation. No installer.
 
 ### Pass 129 historical Windows fixture timeout
 - Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
