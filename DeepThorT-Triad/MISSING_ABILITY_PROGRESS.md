@@ -56,7 +56,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 44 | 137 | Musical key detection | Source implemented: bounded PCM WAV spectral pitch-class analysis, ranked major/minor candidates and explicit insufficient/ambiguous evidence. Pass 045 CI pending; complex music, modulation, detuning and native acceptance outstanding. |
 | 45 | 153 | Audio noise reduction | Source implemented: bounded linked-channel PCM WAV soft noise gate with reviewed threshold, attenuation and attack/release, exact sample-layout verification and measured quiet-interval RMS. Pass 046 CI pending; spectral denoising, broader formats and listening acceptance outstanding. |
 | 46 | 310 | Audio format conversion | Source extended: reviewed local WAV-to-FLAC/MP3 conversion with installed codec identity guards, actual redecoding and lossless PCM checks for FLAC. Pass 047 CI pending; other input/output formats, metadata and listening acceptance outstanding. |
-| 47 | 163 | Normal-map generation | Not started in this programme |
+| 47 | 163 | Normal-map generation | Source implemented: bounded grayscale PNG height-to-tangent-space RGB normals with strength, OpenGL/DirectX conventions, wrap/clamp and decoded pixel verification. Pass 048 CI pending; rendering and model integration outstanding. |
 | 48 | 316 | Height-map generation | Existing partial; completion not started in this programme |
 | 49 | 161 | Automatic UV unwrapping | Not started in this programme |
 | 50 | 313 | Mesh simplification | Existing partial; completion not started in this programme |
@@ -520,3 +520,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 047 — 27 November 2026
 
 - Add reviewed local PCM WAV to FLAC or MP3 using existing FFmpeg discovery, exact source/installed executable identity guards and fixed bounded pipe commands (no shell or arbitrary arguments). Probe output codec/channel/rate, decode again, compare every PCM byte for FLAC; MP3 verifies decoded frame duration within padding allowance and explicitly remains lossy. Four actual tests including both codecs, format rejection and stale/output guards. No metadata copying or broader input formats yet. Next rank 47 / ID 163 normal-map generation. No installer.
+
+## Pass 048 — 27 November 2026
+
+- Add bounded texture pixel adapter using existing optional Pillow, strict PNG container/decoded dimensions and opaque 8-bit grayscale/RGB only. Generate tangent-space RGB normals from supplied grayscale heights with explicit strength, OpenGL/DirectX green convention and wrap/clamp edge sampling. Verify every decoded output pixel and source fingerprint. Four fixtures including flat, slope, convention, edge and stale checks. No claim of inferred depth, rendered quality or autonomous integration. Next rank 48 / ID 316 height-map generation. No installer.

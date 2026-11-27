@@ -207,3 +207,11 @@ Bounded 16-bit PCM WAV (same source restrictions as tempo detection). Linked-cha
 ```
 
 Choose .mp3 output for MP3 (128/192/256/320 kbps, 32/44.1/48 kHz), or format flac, bitrate_kbps null and .flac output for lossless conversion. Requires the existing installed FFmpeg/FFprobe pair. Uses the bounded PCM WAV input profile. Reopens the encoded stream and decodes it; verifies exact PCM for FLAC and approximate frame duration for MP3. No metadata copying or source mutation.
+
+## Generate a normal map
+
+```json
+{"height_map":"height.png","strength":4,"convention":"opengl","edge":"wrap"}
+```
+
+Requires Pillow (provided by existing optional presentation or image tools). Input opaque 8-bit grayscale PNG, up to 2048 by 2048 pixels. Strength 0–64, OpenGL or DirectX green channel convention, wrap or clamp edges. Outputs RGB tangent-space normals with decoded pixel checks. Render in the target engine to verify appearance.

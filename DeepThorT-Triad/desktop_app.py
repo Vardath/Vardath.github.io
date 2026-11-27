@@ -720,6 +720,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Estimate musical key…',command=lambda:self._review_typed_tool('musical_key','.json','Audio: reviewed key')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Reduce quiet noise…',command=lambda:self._review_typed_tool('noise_reduction','.wav','Audio: reviewed noise reduction')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Convert WAV to FLAC/MP3…',command=lambda:self._review_typed_tool('audio_conversion','.flac','Audio: reviewed conversion')).pack(side='left',padx=3)
+        texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
+        ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1351,7 +1353,8 @@ class DeepThorTDesktop(tk.Tk):
                  'music_metadata':('.wav','Audio: reviewed metadata'),
                  'musical_key':('.json','Audio: reviewed key'),
                  'noise_reduction':('.wav','Audio: reviewed noise reduction'),
-                 'audio_conversion':('.flac','Audio: reviewed conversion')}
+                 'audio_conversion':('.flac','Audio: reviewed conversion'),
+                 'normal_map':('.png','Texture: reviewed normal map')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
