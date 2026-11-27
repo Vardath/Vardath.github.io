@@ -695,6 +695,9 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(data_actions,text='Process CSV…',command=lambda:self._review_typed_tool('csv_processing','.csv','Data: reviewed CSV processing')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate database schema…',command=lambda:self._review_typed_tool('database_schema','.sql','Database: reviewed schema')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Query SQLite…',command=lambda:self._review_typed_tool('sql_query','.json','Database: reviewed query')).pack(side='left',padx=3)
+        presentation_actions=ttk.Frame(media_tab);presentation_actions.pack(fill='x',pady=2)
+        ttk.Button(presentation_actions,text='Install presentation tools…',command=self._install_presentation_tools).pack(side='left',padx=3)
+        ttk.Button(presentation_actions,text='Edit presentation…',command=lambda:self._review_typed_tool('presentation_edit','.pptx','Presentation: reviewed edit')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1266,6 +1269,12 @@ class DeepThorTDesktop(tk.Tk):
             self._start_command([sys.executable,'-m','pip','install','--no-input','--no-deps','-r',str(ROOT/'requirements-spreadsheets.txt')],
                 cwd=ROOT,label='Install spreadsheet tools',kind='installation')
 
+    def _install_presentation_tools(self):
+        if self.disk_gate.gaming():return
+        if messagebox.askyesno('Install optional presentation tools','Install pinned local python-pptx and lxml packages and dependencies? No presentation is uploaded.',parent=self):
+            self._start_command([sys.executable,'-m','pip','install','--no-input','-r',str(ROOT/'requirements-presentations.txt')],
+                cwd=ROOT,label='Install presentation tools',kind='installation')
+
     def _review_typed_tool(self,module,suffix,label):
         # Fixed internal registry; no model-provided module or command.
         allowed={'spreadsheet_edit':('.xlsx','Spreadsheet: reviewed cell edit'),
@@ -1275,7 +1284,8 @@ class DeepThorTDesktop(tk.Tk):
                  'csv_processing':('.csv','Data: reviewed CSV processing'),
                  'sql_query':('.json','Database: reviewed query'),
                  'data_cleaning':('.csv','Data: reviewed cleaning'),
-                 'data_transformation':('.csv','Data: reviewed transformation')}
+                 'data_transformation':('.csv','Data: reviewed transformation'),
+                 'presentation_edit':('.pptx','Presentation: reviewed edit')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
