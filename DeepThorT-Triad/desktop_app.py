@@ -692,6 +692,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(data_actions,text='Create spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_create','.xlsx','Spreadsheet: reviewed creation')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Process CSV…',command=lambda:self._review_typed_tool('csv_processing','.csv','Data: reviewed CSV processing')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate database schema…',command=lambda:self._review_typed_tool('database_schema','.sql','Database: reviewed schema')).pack(side='left',padx=3)
+        ttk.Button(data_actions,text='Query SQLite…',command=lambda:self._review_typed_tool('sql_query','.json','Database: reviewed query')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1269,7 +1270,8 @@ class DeepThorTDesktop(tk.Tk):
                  'database_schema':('.sql','Database: reviewed schema'),
                  'spreadsheet_create':('.xlsx','Spreadsheet: reviewed creation'),
                  'spreadsheet_formula':('.xlsx','Spreadsheet: reviewed formulas'),
-                 'csv_processing':('.csv','Data: reviewed CSV processing')}
+                 'csv_processing':('.csv','Data: reviewed CSV processing'),
+                 'sql_query':('.json','Database: reviewed query')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

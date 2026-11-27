@@ -54,7 +54,7 @@ def review(root,source,output,exclude,*,schema,checked,output_suffix,extra=None)
     spec=inspect_spec(exact(src,guard,MAX_SPEC),checked)
     guards=[guard]
     if extra:
-        other=path_for(root,spec[extra[0]],exclude,{extra[1]},exists=True)
+        other=path_for(root,spec[extra[0]],exclude,({extra[1]} if isinstance(extra[1],str) else extra[1]),exists=True)
         if other.stat().st_size>MAX_INPUT:raise ValueError('Input exceeds byte bound')
         guards.append(snapshot_file(other))
     return {'schema':schema,'root':str(root),'source':source,'output':output,'exclude':exclude,
@@ -74,7 +74,7 @@ def validate(root,plan,*,schema,checked,output_suffix,extra=None):
     spec=inspect_spec(exact(src,plan['guards'][0],MAX_SPEC),checked)
     other=None
     if extra:
-        other=path_for(root,spec[extra[0]],plan['exclude'],{extra[1]},exists=True)
+        other=path_for(root,spec[extra[0]],plan['exclude'],({extra[1]} if isinstance(extra[1],str) else extra[1]),exists=True)
         if other.stat().st_size>MAX_INPUT or snapshot_file(other)!=plan['guards'][1]:
             raise ValueError('Reviewed input changed')
     return spec,dst,other
