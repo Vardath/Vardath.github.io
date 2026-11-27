@@ -807,3 +807,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Pass 129 auxiliary cap repair
 - Inspection of the actual Windows child_server implementation found a rejected 1 GiB auxiliary memory request. Match its fixed 512 MiB ordinary-child maximum; retain shared root cap, foreground reserve and all recording-local anonymity guarantees. Add regression for the exact limit. Real engine admission/quality still unverified; if the installed models exceed this budget, fail closed. Re-run Linux and Windows CI before merging.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
