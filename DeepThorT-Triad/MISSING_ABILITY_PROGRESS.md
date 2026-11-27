@@ -49,7 +49,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 37 | 211 | Mathematical reasoning | Source extended: exact bounded rational arithmetic and single-variable linear equations with independent substitution. Pass 038 CI pending; symbolic nonlinear mathematics and native model-directed reasoning outstanding. |
 | 38 | 215 | Persistent personal preferences | Source extended: explicit local persistent presentation defaults, user editor/reset and bounded advisory chat context. Pass 039 CI pending; project-specific preferences and native acceptance outstanding. |
 | 39 | 282 | Statistical analysis | Source extended: exact descriptive numeric statistics, explicit missingness, quantile and variance methods, verified JSON report. Pass 040 CI pending; inferential statistics and model-directed workflows outstanding. |
-| 40 | 285 | Exploratory data analysis | Existing partial; completion not started in this programme |
+| 40 | 285 | Exploratory data analysis | Source extended: declared numeric/categorical profiles, exact missing/duplicate counts, frequency summaries, IQR flags and pairwise Pearson correlations. Pass 041 CI pending; automated hypotheses, broader formats and native integration outstanding. |
 | 41 | 291 | Reproducible analytical reports | Existing partial; completion not started in this programme |
 | 42 | 136 | Musical tempo detection | Not started in this programme |
 | 43 | 305 | Music metadata management | Existing partial; completion not started in this programme |
@@ -492,3 +492,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 040 — 27 November 2026
 
 - Add reviewed numeric descriptive statistics over explicit CSV columns. Exact rational min/max/sum/mean/median/quartiles/variance, 24-digit decimal views and standard deviation, explicit sample/population convention and exact missing tokens. Reconcile row counts; reject invalid numeric data rather than silently omit. Source-hash-bound report and four regression cases. No causal, inferential or imputation claims. Next rank 40 / ID 285 exploratory data analysis. No installer.
+
+## Pass 041 — 27 November 2026
+
+- Add reviewed exploratory CSV profiles using explicit numeric/categorical columns and missing tokens. Full-row exact duplicate counts, distinct values, top categories and remaining counts, reuse exact descriptive statistics, 1.5-IQR flags and pairwise-complete Pearson correlations with sample counts and constant-column handling. No imputation, silent type inference, automatic outlier removal or causal claims. Four fixtures, exact JSON output and source guards. Next rank 41 / ID 291 reproducible analytical reports. No installer.

@@ -155,3 +155,11 @@ Chats → Personal preferences opens the local presentation defaults editor. Sel
 ```
 
 Explicit numeric columns, exact missing tokens and sample or population variance. JSON results contain exact fractions, 24-significant-digit decimal views and interpolated quartiles. Empty and insufficient samples produce null where undefined. Invalid nonmissing numeric cells block the report. Descriptive only.
+
+## Exploratory data analysis
+
+```json
+{"csv":"data.csv","delimiter":",","numeric_columns":["Quantity","Cost"],"categorical_columns":["Region"],"missing_tokens":["","NA"],"top_categories":10,"correlations":true}
+```
+
+Explicit column types, up to 10,000 rows, 24 total selected columns and eight numeric columns. Exact full-row duplicates, missingness, counts, top categories, descriptive statistics, IQR flags and pairwise-complete Pearson correlations. No automatic removals or causal conclusions.

@@ -712,6 +712,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(visual_data_actions,text='Calculate mathematics…',command=lambda:self._review_typed_tool('mathematics','.json','Data: reviewed mathematics')).pack(side='left',padx=3)
         analysis_actions=ttk.Frame(media_tab);analysis_actions.pack(fill='x',pady=2)
         ttk.Button(analysis_actions,text='Statistical analysis…',command=lambda:self._review_typed_tool('statistical_analysis','.json','Data: reviewed statistics')).pack(side='left',padx=3)
+        ttk.Button(analysis_actions,text='Explore dataset…',command=lambda:self._review_typed_tool('exploratory_analysis','.json','Data: reviewed exploration')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1336,7 +1337,8 @@ class DeepThorTDesktop(tk.Tk):
                  'chart_creation':('.svg','Data: reviewed chart'),
                  'interactive_chart':('.html','Data: reviewed interactive chart'),
                  'mathematics':('.json','Data: reviewed mathematics'),
-                 'statistical_analysis':('.json','Data: reviewed statistics')}
+                 'statistical_analysis':('.json','Data: reviewed statistics'),
+                 'exploratory_analysis':('.json','Data: reviewed exploration')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
