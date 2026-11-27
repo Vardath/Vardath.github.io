@@ -1001,3 +1001,7 @@ Manage worktrees → BATCH: choose an existing parent outside all registered wor
 ## Reviewed process isolation (Pass 223)
 
 Test process isolation accepts `{"probe":"single_process"}`. A fixed baseline Python invocation and a separate fixed child attempt to create a benign descendant run inside existing Windows resource/cleanup jobs. The latter uses a verified nested one-active-process limit. Exact native markers are required. No arbitrary code, filesystem, network or account isolation; this is process-level isolation, not a security sandbox. Native CI pending.
+
+## Restricted Python environment (Pass 224)
+
+Restricted Python check accepts `{"document":"src/main.py"}`. Stages exact reviewed bytes and compiles for syntax only in fixed Windows worker with explicit environment allowlist, temporary working directory, isolated/no-site interpreter flags, 128 MiB nested commit cap and one active process. Exact source digest, working directory, environment keys and syntax verdict verified. Does not run project code. This is not a filesystem, network or privilege sandbox; Docker remains stopped-only.
