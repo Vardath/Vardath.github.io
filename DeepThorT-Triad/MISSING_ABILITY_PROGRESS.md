@@ -162,7 +162,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 150 | 317 | Skeletal animation through scripts | Partial: reviewed declarative local quaternion rotation keyframes and actual glTF animation tracks, verified float32 times, normalized shortest-path signs and preserved rest skin. Pass 151 CI pending. IK, motion capture, root motion, native playback and motion quality outstanding. |
 | 151 | 166 | Animation retargeting | Partial: reviewed source and target skeletons, one-to-one parent-compatible correspondence, local quaternion basis transfer and verified target GLB rotation tracks. Pass 152 CI pending. Automatic correspondence, IK, contacts, root motion and native playback outstanding. |
 | 152 | 318 | Physics simulation | Partial: reviewed independent sphere trajectories, constant gravity, analytic floor impact/restitution, bounded samples and verified JSON output. Pass 153 CI pending. Mutual collision, angular dynamics, friction, constraints, fluids, engine integration and native acceptance outstanding. |
-| 153 | 95 | Image super-resolution and upscaling | Not started in this programme |
+| 153 | 95 | Image super-resolution and upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos upscaling, alpha-aware resampling, bounded premultiplied sharpening and verified PNG. Pass 154 CI pending. Neural super-resolution, inferred detail and visual acceptance outstanding. |
 | 154 | 94 | Image restoration | Not started in this programme |
 | 155 | 93 | Image colourisation | Not started in this programme |
 | 156 | 92 | Image style transfer | Not started in this programme |
@@ -887,3 +887,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 153 — 27 November 2026
 - Add actual analytic sphere-floor trajectories with constant downward gravity, frictionless horizontal velocity, restitution, low-energy resting threshold, bounded duration/frame rate/body/sample/impact counts, and exact JSON roundtrip. Check floor penetration and impact energy. Three fixtures. Independent bodies only; no mutual contact, angular dynamics, constraints or native physics engine. Next rank 153 / ID 95 image super-resolution and upscaling. No installer.
+
+## Pass 154 — 27 November 2026
+- Add actual bounded classical image upscaling (2–4x, max 2048 px), nearest for pixel art, bicubic/Lanczos alpha-aware interpolation, optional premultiplied sharpening and decoded pixel/alpha verification. Exact guarded PNG and output; three fixtures. No neural detail recovery or quality claim. Next rank 154 / ID 94 image restoration. No installer.
