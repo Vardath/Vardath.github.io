@@ -42,3 +42,37 @@ class VideoTrimmingTests(unittest.TestCase):
         src=self.root/'a.mp4';src.write_bytes(src.read_bytes()+b'x')
         with self.assertRaises(ValueError):execute(self.root,plan)
         self.assertFalse(out.exists())
+
+
+    def test_video_report_json_roundtrip(self):
+        from deepthort_local.video_interpretation import report_bytes
+        result={'observations':[{'caption':'First line\nSecond line'}]}
+        raw=report_bytes(result)
+        self.assertEqual(json.loads(raw),result)
+        self.assertTrue(raw.endswith(b'\n'))
+
+    def test_sampled_video_observations(self):
+        from deepthort_local.video_interpretation import inspect,checked
+        from deepthort_local.action_guards import snapshot_file
+        import hashlib
+        tools=[snapshot_file(Path(p).resolve(),kind='stat') for p in (self.ff,self.fp)]
+        raw=(self.root/'a.mp4').read_bytes()
+        with tempfile.TemporaryDirectory() as tmp:
+            result=inspect(raw,{'video':'a.mp4','frames':[0,2]},tools,tmp,interpret=True,
+                captioner=lambda paths,guards:['red','blue'])
+        self.assertEqual([x['frame'] for x in result['observations']],[0,2])
+        self.assertEqual(result['observations'][1]['rgb_sha256'],hashlib.sha256(self.a[-16*16*3:]).hexdigest())
+        self.assertEqual(result['observations'][1]['seconds'],2/24)
+        self.assertFalse(result['native_caption_engine_invoked'])
+        self.assertFalse(result['semantic_accuracy_verified'])
+        for frames in ([2,0],[0,0],[True],[],[300]):
+            with self.assertRaises(ValueError):checked({'video':'a.mp4','frames':frames})
+    def test_video_caption_count_and_range(self):
+        from deepthort_local.video_interpretation import inspect
+        from deepthort_local.action_guards import snapshot_file
+        tools=[snapshot_file(Path(p).resolve(),kind='stat') for p in (self.ff,self.fp)]
+        raw=(self.root/'a.mp4').read_bytes()
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(ValueError):inspect(raw,{'video':'a.mp4','frames':[3]},tools,tmp)
+            with self.assertRaises(ValueError):inspect(raw,{'video':'a.mp4','frames':[0,1]},tools,tmp,
+                interpret=True,captioner=lambda paths,guards:['one'])
