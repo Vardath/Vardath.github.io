@@ -319,6 +319,8 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.condition_monitor_dialog import ConditionController
         self.condition_watches=ConditionWatches(self.conversations)
         self._condition_controller=ConditionController(self,self.condition_watches)
+        from deepthort_local.event_triggers import EventTriggers
+        self.event_triggers=EventTriggers(self.conversations)
         from deepthort_local.team_delegation import TeamDelegationStore
         self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
@@ -527,6 +529,7 @@ class DeepThorTDesktop(tk.Tk):
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
         ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
+        ttk.Button(monitorbar,text='Event-triggered requests…',command=self._event_trigger_dialog).pack(side='left',padx=3)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
@@ -1775,13 +1778,14 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Close chat',
             'Close this chat tab?'+detail+'\n\n'
             'History and drafts are preserved and can be reopened with a right-click '
-            'on the chat tabs. Unreleased scheduled requests and monitoring watches for this chat are cancelled. Approved work queue jobs are not deleted.',parent=self):
+            'on the chat tabs. Unreleased scheduled requests, monitoring watches and event rules for this chat are cancelled. Approved work queue jobs are not deleted.',parent=self):
             return
         self._cancel_chat_replies(chat_id,reason='Chat closed by user; no automatic retry')
         if self.chats.close(chat_id,self._project_key()):
             self.scheduled_tasks.cancel_chat(self._project_key(),chat_id)
             self.website_monitors.cancel_chat(self._project_key(),chat_id)
             self.condition_watches.cancel_chat(self._project_key(),chat_id)
+            self.event_triggers.cancel_chat(self._project_key(),chat_id)
             self.current_chat=None
             self._refresh_chats()
             self._log('Chat tab closed; durable history retained and approved jobs untouched.')
@@ -4685,6 +4689,10 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs();self.tabs.select(4)
         self._start_command(cmd,cwd=project,label=f"Verify job #{j['id']}",kind='verification',job_id=j['id'])
 
+    def _event_trigger_dialog(self):
+        from deepthort_local.event_trigger_dialog import show
+        show(self)
+
     def _condition_monitor_dialog(self):
         from deepthort_local.condition_monitor_dialog import show
         show(self)
@@ -5170,10 +5178,16 @@ class DeepThorTDesktop(tk.Tk):
                         and not self.janus.status().get('paused') and now-getattr(self,'_last_schedule_check',-60)>=5):
                     self._last_schedule_check=now
                     project=self._project_key()
-                    released=self.scheduled_tasks.release_due(project,[i for i,_ in self.chats.list(project)],enabled=True)
+                    open_chats=[i for i,_ in self.chats.list(project)]
+                    released=self.scheduled_tasks.release_due(project,open_chats,enabled=True)
                     if released:
                         self._log(f"Scheduled request #{released['schedule_id']} released as conversation #{released['request_id']}.")
                         if released['chat_id']==self.current_chat:self._reload_chat()
+                    else:
+                        event=self.event_triggers.release(project,open_chats,enabled=True)
+                        if event:
+                            self._log(f"Event trigger #{event['trigger_id']} released conversation #{event['request_id']}.")
+                            if event['chat_id']==self.current_chat:self._reload_chat()
                 incoming=self.delegations.next_foreground()
                 if incoming:
                     record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])

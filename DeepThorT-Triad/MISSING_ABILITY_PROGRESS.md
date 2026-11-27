@@ -75,7 +75,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 63 | 6 | User-defined recurring tasks | Source implemented: explicit fixed-interval recurring conversation requests, bounded occurrence count, transactional release history, missed-interval coalescing and cancellation; Pass 064 CI pending. Native acceptance and OS service outstanding. |
 | 64 | 25 | Website change monitoring | Source implemented: explicitly approved finite public HTTPS hash monitoring, persistent baseline/change/error history, pinned public IPv4 TLS requests, nonblocking desktop dispatch; Pass 065 CI pending. Live remote and native GUI acceptance outstanding. |
 | 65 | 9 | Continuous monitoring of user-defined conditions | Source implemented: finite persistent project-file predicate watches, scoped exclusions, actual metadata/hash checks and durable transition history; Pass 066 CI pending. Wider conditions, OS service and native acceptance outstanding. |
-| 66 | 8 | Event-triggered workflows | Not started in this programme |
+| 66 | 8 | Event-triggered workflows | Source implemented: explicit monitor-event rules releasing finite ordinary conversation follow-ups with durable receipts, no replay or overlapping admission; Pass 067 CI pending. Automatic execution grants and native acceptance outstanding. |
 | 67 | 17 | Search-engine result interpretation | Not started in this programme |
 | 68 | 16 | General internet search | Not started in this programme |
 | 69 | 227 | Arbitrary webpage retrieval | Existing partial; completion not started in this programme |
@@ -596,3 +596,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 066 — 27 November 2026
 
 - Add reviewed finite continuous project-file conditions (exists, missing, minimum size and SHA-256 match), actual read-only observations, no arbitrary expression or commands, existing project exclusions and bounded hash reads. Persistent truth baselines/edge transitions and error receipts; nonblocking polling with pause/gaming gates and scope cancellation. Four regressions for actual files, protected paths, restart and stale receipts. Passes 061–063 green and merged (PRs 127–129). Next rank 66 / ID 8 event-triggered workflows. No installer.
+
+## Pass 067 — 27 November 2026
+
+- Add explicitly approved event bindings for future website changes and file-condition truth transitions, scoped to the source monitor's project/chat, exact follow-up prompt and finite occurrence limit. Transactional admission into normal conversation dispatch with event metadata, durable receipt, newest-event coalescing, no history replay, no overlap and cancellation/failure stop. No new build/tool authority. Four regression cases cover actual file events, website receipts, concurrency/restart and scope. Pass 064 green and merged (PR 130). Next rank 67 / ID 17 search-engine result interpretation. No installer.
