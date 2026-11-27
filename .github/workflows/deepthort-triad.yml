@@ -270,6 +270,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_image_to_image_ability.py -v
       - run: python -m unittest discover -s tests -p test_autonomous_gameplay_ability.py -v
       - run: python -m unittest discover -s tests -p test_game_balancing_ability.py -v
+      - run: python -m unittest discover -s tests -p test_unreal_integration_ability.py -v
       - run: python -m unittest discover -s tests -p test_project_queue.py -v
   native-windows:
     runs-on: windows-latest
@@ -748,6 +749,8 @@ jobs:
           python -m unittest discover -s tests -p test_autonomous_gameplay_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_game_balancing_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_unreal_integration_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_project_queue.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
