@@ -367,3 +367,11 @@ Files & Images → Retrieve webpage. Review the exact outgoing HTTPS request and
 ```
 
 Files & Images → Discover images. Approve the exact Wikimedia Commons query and new JSON report. Finds up to six provider-declared CC0 or CC BY JPEG/PNG candidates within the existing size and dimension limits; report includes title, creator, source and download URLs, license, attribution requirement and provider hashes. No image download or automatic reuse; source-page licensing and other rights must be reviewed independently. Pinned public IPv4 TLS, fixed provider endpoint, bounded JSON and no redirects. Live provider and native acceptance pending.
+
+## Check scientific citation metadata
+
+```json
+{"doi":"10.1234/example","title":"Example paper","first_author_family":"Smith","year":2025}
+```
+
+Files & Images → Check DOI citation. Approve one DOI lookup against Crossref and a new JSON output; only the bare DOI leaves the computer. Compare supplied title, first listed author's family name and issued year with registered fields. Missing fields are unavailable, not proof of mismatch; a failed request or non-Crossref DOI proves nothing about validity. Metadata agreement does not verify scientific conclusions, full text, retractions or peer review. Source: https://www.crossref.org/documentation/retrieve-metadata/rest-api/ . Live provider and native acceptance pending.

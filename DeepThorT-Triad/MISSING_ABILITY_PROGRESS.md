@@ -80,7 +80,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 68 | 16 | General internet search | Source implemented: explicit user-approved Brave Search API adapter, transient key, bounded structured results and lexical interpretation; Pass 069 CI pending. Live provider account, model integration and native GUI acceptance outstanding. |
 | 69 | 227 | Arbitrary webpage retrieval | Source extended: explicit exact public HTTPS page retrieval with pinned public IPv4 TLS, bounded static text extraction, source/text hashes and non-overwriting report; Pass 070 CI pending. Dynamic/authenticated/query URLs and live/model acceptance outstanding. |
 | 70 | 233 | Online image discovery | Source extended: standalone reviewed Commons search and non-overwriting image candidate report, attribution metadata and pinned public TLS JSON transport; Pass 071 CI pending. Wider providers and live/native acceptance outstanding. |
-| 71 | 21 | Scientific citation verification | Not started in this programme |
+| 71 | 21 | Scientific citation verification | Source implemented: explicit Crossref DOI record lookup and local title/first-author/issued-year comparison with per-field mismatch/absence receipts; Pass 072 CI pending. Full-text claim support, retractions and live acceptance outstanding. |
 | 72 | 20 | Academic literature discovery | Not started in this programme |
 | 73 | 18 | Website crawling | Not started in this programme |
 | 74 | 228 | Multi-source research | Existing partial; completion not started in this programme |
@@ -616,3 +616,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 071 — 27 November 2026
 
 - Add standalone reviewed Commons image discovery, independent of the existing video workflow. Explicit public query, up to six CC0/CC BY candidates, provider response hash, image identity and attribution metadata. No image download, independently verified license or new authority. Fixed public HTTPS JSON transport for research adapters; four fixture regressions. Pass 068 green and merged (PR 134); 069–070 green awaiting sequential merge. Next rank 71 / ID 21 citation verification. No installer.
+
+## Pass 072 — 27 November 2026
+
+- Add reviewed single DOI lookup against Crossref's public metadata API. Send only DOI; compare title, first author family name and issued year locally. Exact DOI identity, normalized string comparisons, missing and differing fields distinguished, no scientific claim/full-text/retraction verification. Extend fixed JSON transport for Crossref's documented media type. Four regression cases. Pass 069 green and merged (PR 135). Next rank 72 / ID 20 academic literature discovery. No installer.
