@@ -89,7 +89,7 @@ class DelegationStore:
                     WHERE id=? AND state IN ('pending','running')""",(ident,))
                 self._event(db,ident,attempt,'batch','interrupted')
             return len(rows)
-    def next_candidate(self,*,exclude_chat=None):
+    def next_candidate(self,*,exclude_chat=None,priority=None):
         with self.db() as db:
             # Respect chat ordering; do not overtake a preceding unresolved
             # conversation in the same thread. Other threads are independent.
@@ -98,11 +98,12 @@ class DelegationStore:
                     SELECT 1 FROM conversation_requests old
                     WHERE old.chat_id=c.chat_id AND old.project=c.project
                     AND old.id<c.id AND old.state IN ('pending','running','waiting_sources'))
-                ORDER BY c.id LIMIT ?""",(MAX_PENDING,)).fetchall()
+                ORDER BY c.id LIMIT ?""",(512 if priority is not None else MAX_PENDING,)).fetchall()
+            if priority is not None:rows=sorted((dict(r) for r in rows if priority.allowed(dict(r))),key=priority.key)
             for row in rows:
                 if row['chat_id']!=exclude_chat and eligible(row):return dict(row)
             return None
-    def next_foreground(self):
+    def next_foreground(self,*,priority=None):
         """First noncreative pending thread head; don't overtake a creative reply."""
         with self.db() as db:
             rows=db.execute("""SELECT c.* FROM conversation_requests c
@@ -110,7 +111,8 @@ class DelegationStore:
                     SELECT 1 FROM conversation_requests old
                     WHERE old.chat_id=c.chat_id AND old.project=c.project
                     AND old.id<c.id AND old.state IN ('pending','running','waiting_sources'))
-                ORDER BY c.id LIMIT ?""",(MAX_PENDING,)).fetchall()
+                ORDER BY c.id LIMIT ?""",(512 if priority is not None else MAX_PENDING,)).fetchall()
+            if priority is not None:rows=sorted((dict(r) for r in rows if priority.allowed(dict(r))),key=priority.key)
             for row in rows:
                 if not eligible(row):return dict(row)
             return None

@@ -295,7 +295,7 @@ class JobStore:
                 "SELECT * FROM jobs WHERE mode IN ('chat','plan','edit') "
                 "AND state IN ('queued','paused','needs_input','failed') ORDER BY id")]
 
-    def next_any_queued(self, skip_modes: tuple[str,...]=(), *, exclude_project=None, allow_private_preparation_job=None):
+    def next_any_queued(self, skip_modes: tuple[str,...]=(), *, exclude_project=None, allow_private_preparation_job=None, priority=None):
         """Oldest eligible job; a busy workspace must not block unrelated work.
 
         Inspect only ID and workspace while skipping, not large stored prompts.
@@ -304,12 +304,14 @@ class JobStore:
         from .task_graph import independent_workspaces,same_workspace
         with self._conn() as db:
             db.row_factory=sqlite3.Row
-            sql="SELECT id,project FROM jobs WHERE state='queued'"
+            sql="SELECT id,project,chat_id FROM jobs WHERE state='queued'"
             params=[]
             if skip_modes:
                 sql+=' AND mode NOT IN ('+','.join('?' for _ in skip_modes)+')'
                 params.extend(skip_modes)
-            for row in db.execute(sql+' ORDER BY id',params):
+            rows=db.execute(sql+' ORDER BY id',params)
+            if priority is not None:rows=sorted((dict(r) for r in rows if priority.allowed(dict(r))),key=priority.key)
+            for row in rows:
                 if exclude_project is not None and not independent_workspaces(row['project'],exclude_project):
                     if (row['id']!=allow_private_preparation_job or not same_workspace(row['project'],exclude_project)):
                         continue

@@ -38,11 +38,12 @@ def rows(path,project=None,limit=100):
 def current(db,ident):
     r=db.execute('SELECT c.* FROM independent_prompt_queue q JOIN conversation_requests c ON c.id=q.request_id WHERE c.id=?',(ident,)).fetchone()
     return dict(r) if r else None
-def candidate(path,roles,exclude=()):
+def candidate(path,roles,exclude=(),priority=None):
     allowed=[r for r in ROLES if r in roles]
     if not allowed:return None
     with closing(connect(path)) as db:
         pending=db.execute("SELECT c.* FROM independent_prompt_queue q JOIN conversation_requests c ON c.id=q.request_id WHERE c.state='pending' ORDER BY c.id LIMIT 32").fetchall()
+        if priority is not None:pending=sorted((dict(r) for r in pending if priority.allowed(dict(r))),key=priority.key)
         for raw in pending:
             row=dict(raw)
             if row['id'] in exclude or len(row['prompt'])>MAX_PROMPT or json.loads(row['attachments']):continue
@@ -62,9 +63,9 @@ def available_roles(health,pid):
     if sum(w['generating'] for w in workers)>=slots:return ()
     return tuple(role for role in ROLES if isinstance(models.get(role),dict) and models[role].get('resident') is True
                  and models[role].get('busy') is False and models[role].get('generating') is False)
-def run_once(path,client,roles,stopped,*,exclude=()):
+def run_once(path,client,roles,stopped,*,exclude=(),priority=None):
     if stopped():return None
-    item=candidate(path,roles,exclude)
+    item=candidate(path,roles,exclude,priority)
     if not item:return None
     row,role=item;key=identity(row)
     focus={'janus':'Identify useful dependencies, decomposition or planning questions.',

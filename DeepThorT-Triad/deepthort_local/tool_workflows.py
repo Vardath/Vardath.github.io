@@ -210,10 +210,16 @@ class ToolWorkflows:
         if rec.get('acceptance')!=expected:raise ValueError('Artifact acceptance receipt missing or changed')
         return rec
 
-    def tick(self,*,enabled=True,conversations=None,roadmap_ready=None,before_dispatch=None):
+    def tick(self,*,enabled=True,conversations=None,roadmap_ready=None,before_dispatch=None,priority=None):
         if not enabled or self.janus.status().get('paused'):return None
-        for run in reversed(self.list()):
+        runs=list(reversed(self.list()))
+        def scope(run):
+            try:return dict(project=run['project'],chat_id=(json.loads(run['manifest']).get('specification') or {}).get('chat_id',''),id=run['id'])
+            except (ValueError,TypeError,KeyError):return dict(project=run['project'],chat_id='',id=run['id'])
+        if priority is not None:runs.sort(key=lambda r:priority.key(scope(r)))
+        for run in runs:
             if run['state']!='active':continue
+            if priority is not None and not priority.allowed(scope(run)) and not any(r['state']=='dispatched' for r in self.stages(run['id'])):continue
             ident=run['id']
             try:
                 manifest=json.loads(run['manifest'])
@@ -266,6 +272,7 @@ class ToolWorkflows:
                                        (json.dumps(receipt),ident,ordinal))
                         return f'Workflow #{ident} stage {ordinal}: {receipt["artifact"]["scope"]} checked'
                     if row['state']!='planned':raise ValueError('Unknown workflow stage state')
+                    if priority is not None and not priority.allowed(scope(run)):return None
                     guards=list(stage['guards'])
                     if stage['predecessor'] is not None:
                         producer=prior.get(stage['predecessor'])
