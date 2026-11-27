@@ -455,3 +455,47 @@ class ApplicationWorkflowTests(unittest.TestCase):
             data['outcome']='failed';data['results'].append(data['results'][0])
             (folder/'latest.json').write_text(json.dumps(data))
             with self.assertRaises(ValueError):assess(state)
+
+
+    def test_procedure_improvement_preserves_checks_and_dependencies(self):
+        from deepthort_local.procedure_improvement import propose
+        manifest={'id':'fixture','checks':['shared_cap','triad_residency','task_memory','portable_skills','live_memory','memory_core']}
+        evaluation={'test_id':'fixture','latest_sha':'a'*64,'findings':[{'check':'memory_core','status':'failed','regression':True,'consecutive_observations':1}]}
+        r=propose(manifest,evaluation)
+        self.assertEqual(r['candidate_order'],['shared_cap','triad_residency','live_memory','memory_core','task_memory','portable_skills'])
+        self.assertEqual(r['historical_checks_before_failure'],5)
+        self.assertEqual(r['candidate_checks_before_failure'],3)
+        self.assertFalse(r['installation_authorized'])
+        self.assertFalse(r['runtime_improvement_verified'])
+        self.assertIsNone(propose(dict(manifest,id='different'),evaluation))
+        self.assertIsNone(propose(dict(manifest,checks=['shared_cap','task_memory','memory_core']),evaluation))
+        self.assertIsNone(propose(manifest,dict(evaluation,findings=[dict(evaluation['findings'][0],status='blocked')])))
+
+    def test_procedure_improvement_staging_is_inert(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.procedure_improvement import stage_once
+        from deepthort_local.latest_acceptance import SCHEMA
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);state=root/'state';state.mkdir();folder=state/'latest-tests';folder.mkdir()
+            manifest={'schema':SCHEMA,'id':'fixture','title':'Fixture','checks':['shared_cap','triad_residency','task_memory','live_memory']}
+            src=root/'LATEST_TEST.json';src.write_text(json.dumps(manifest))
+            before=src.read_bytes()
+            def report(day,status):
+                return {'schema':SCHEMA,'test_id':'fixture','completed_utc':f'2026-11-{day:02d}T00:00:00+00:00','outcome':status,
+                        'results':[{'check':'live_memory','status':status}]}
+            (folder/'LatestTest-20261126-000000-000001.json').write_text(json.dumps(report(26,'passed')))
+            (folder/'latest.json').write_text(json.dumps(report(27,'failed')))
+            class Store:
+                def __init__(self):self.seen=set()
+                def recommend(self,**kw):
+                    k=kw['evidence_key']
+                    if k in self.seen:return False
+                    self.seen.add(k);return True
+            store=Store()
+            self.assertTrue(stage_once(root,state,store))
+            self.assertFalse(stage_once(root,state,store))
+            staged=list((state/'procedure-improvements').glob('*.json'))
+            self.assertEqual(len(staged),1)
+            self.assertEqual(src.read_bytes(),before)
+            self.assertFalse(json.loads(staged[0].read_text())['execution_authorized'])

@@ -845,3 +845,7 @@ Run latest test now includes a fixed linked native five-role MIDI task in additi
 ## Autonomous self-evaluation (Pass 190)
 
 Existing JANUS worker evaluates the latest local acceptance report at most once per minute while active and not gaming. Only known probe IDs and enumerated statuses are used; bounded same-test history distinguishes regressions from blocked or inconclusive evidence. Failed/blocked/inconclusive probes generate evidence-keyed recommendations, never executable actions. Cancelled tests are not defects. No raw probe detail or model output is copied. Passing probes are narrow evidence only.
+
+## Autonomous procedure improvement (Pass 191)
+
+JANUS uses periodic self-evaluation to stage a candidate ordering of the existing acceptance procedure under `state/procedure-improvements/`. A failed, repeatedly observed or regressed supported probe can move earlier with its prerequisite closure; every original check is retained and dependency order validated. Candidate binds the source manifest and acceptance report digests; no live procedure changes, no executable instructions and no automatic adoption. Historical earlier failure position is a scheduling proxy, not measured runtime improvement. Owner review and prospective native tests are required.
