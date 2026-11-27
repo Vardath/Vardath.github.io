@@ -997,3 +997,7 @@ Deploy local release accepts `{"artifact":"artifact.zip","name":"Example","versi
 ## Reviewed multiple work environments (Pass 222)
 
 Manage worktrees → BATCH: choose an existing parent outside all registered worktrees, then supply JSON `[{"branch":"first-work","name":"first"},{"branch":"second-work","name":"second"}]` with two or three unused local branches. Exact reviewed heads and paths; existing queue creates separate checkouts sequentially, rechecking complete inventory before and after each creation. Stops at first failure; inspect actual worktrees before retry. No automatic deletion, remote push, project assignment or OS security isolation; Git metadata remains shared.
+
+## Reviewed process isolation (Pass 223)
+
+Test process isolation accepts `{"probe":"single_process"}`. A fixed baseline Python invocation and a separate fixed child attempt to create a benign descendant run inside existing Windows resource/cleanup jobs. The latter uses a verified nested one-active-process limit. Exact native markers are required. No arbitrary code, filesystem, network or account isolation; this is process-level isolation, not a security sandbox. Native CI pending.

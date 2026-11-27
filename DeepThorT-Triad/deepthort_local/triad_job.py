@@ -108,8 +108,10 @@ def memory_specialist_admission():
     finally:close(root)
 
 @contextmanager
-def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_specialist=False):
+def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_specialist=False,process_limit=None):
     verify_root_cap()
+    if process_limit is not None and (type(process_limit) is not int or process_limit!=1 or group is not None or memory_specialist):
+        raise ValueError('Only single-process auxiliary isolation is supported')
     if memory_specialist:
         from .triad_profiles import ROOT,runtime_path
         if (memory_limit is not None or group is None or len(command)!=6
@@ -143,12 +145,16 @@ def child_server(command,cwd,log_path,*,group=None,memory_limit=None,memory_spec
                 raise ValueError('Invalid auxiliary child memory limit')
             limits.BasicLimitInformation.LimitFlags|=JOB_OBJECT_LIMIT_JOB_MEMORY
             limits.JobMemoryLimit=memory_limit
+        if process_limit is not None:
+            limits.BasicLimitInformation.LimitFlags|=0x00000008  # JOB_OBJECT_LIMIT_ACTIVE_PROCESS
+            limits.BasicLimitInformation.ActiveProcessLimit=process_limit
         check(set_job(job,JobObjectExtendedLimitInformation,ctypes.byref(limits),ctypes.sizeof(limits)),'Set cleanup policy')
-        if memory_limit is not None:
+        if memory_limit is not None or process_limit is not None:
             observed=ExtendedLimitInfo()
             check(fn(k,'QueryInformationJobObject',[H,ctypes.c_int,P,D,P],wintypes.BOOL)(
                 job,JobObjectExtendedLimitInformation,ctypes.byref(observed),ctypes.sizeof(observed),None),'Read auxiliary memory limit')
-            if (observed.JobMemoryLimit!=memory_limit or
+            if ((memory_limit is not None and observed.JobMemoryLimit!=memory_limit) or
+                (process_limit is not None and observed.BasicLimitInformation.ActiveProcessLimit!=process_limit) or
                 observed.BasicLimitInformation.LimitFlags&limits.BasicLimitInformation.LimitFlags!=limits.BasicLimitInformation.LimitFlags):
                 raise RuntimeError('Auxiliary job limits did not match')
         si=StartupInfo();si.cb=ctypes.sizeof(si)
