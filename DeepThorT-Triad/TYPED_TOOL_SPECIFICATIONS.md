@@ -391,3 +391,11 @@ Files & Images → Discover academic literature. Approve one exact bibliographic
 ```
 
 Files & Images → Crawl website. Approve exact seed, same-host directory prefix, up to five page attempts and depth 0–2; robots.txt is fetched separately. Requires successful plain-text robots response; conservative disallow rules override allows. At least two seconds between attempts, respecting supported longer crawl delays up to ten seconds. No query/encoded paths, external origins, redirects, scripts, credentials, or complete-site claim. Retain exact page text and hashes, referring URL, attempts and denied/remaining counts. Bounded cooperative time budget; OS DNS/socket blocking is not a hard wall-clock guarantee. Live/native acceptance outstanding.
+
+## Collect multiple research sources
+
+```json
+{"question":"Quartz engine calibration","urls":["https://example.org/manual","https://example.net/reference"]}
+```
+
+Files & Images → Collect research sources. Approve 2–5 exact public HTTPS URL reads; the question is used only locally. New JSON contains each attempted source (including unavailable ones), exact static page text/hashes, up to five lexical excerpts per source with one-based line and zero-based character start, and a query-term matrix excluding identical-text duplicates. Different hosts or text do not prove independent sources; lexical overlap is not semantic or scientific claim support. No links followed, scripts, authentication, or claim of complete research. Live/native and model integration acceptance pending.
