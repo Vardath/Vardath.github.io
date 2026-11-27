@@ -76,7 +76,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 64 | 25 | Website change monitoring | Source implemented: explicitly approved finite public HTTPS hash monitoring, persistent baseline/change/error history, pinned public IPv4 TLS requests, nonblocking desktop dispatch; Pass 065 CI pending. Live remote and native GUI acceptance outstanding. |
 | 65 | 9 | Continuous monitoring of user-defined conditions | Source implemented: finite persistent project-file predicate watches, scoped exclusions, actual metadata/hash checks and durable transition history; Pass 066 CI pending. Wider conditions, OS service and native acceptance outstanding. |
 | 66 | 8 | Event-triggered workflows | Source implemented: explicit monitor-event rules releasing finite ordinary conversation follow-ups with durable receipts, no replay or overlapping admission; Pass 067 CI pending. Automatic execution grants and native acceptance outstanding. |
-| 67 | 17 | Search-engine result interpretation | Not started in this programme |
+| 67 | 17 | Search-engine result interpretation | Source implemented: bounded supplied search-result lexical ranking, deduplication, query coverage and explicit unverified provenance; Pass 068 CI pending. Model-directed semantic synthesis and independent source verification outstanding. |
 | 68 | 16 | General internet search | Not started in this programme |
 | 69 | 227 | Arbitrary webpage retrieval | Existing partial; completion not started in this programme |
 | 70 | 233 | Online image discovery | Existing partial; completion not started in this programme |
@@ -600,3 +600,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 067 — 27 November 2026
 
 - Add explicitly approved event bindings for future website changes and file-condition truth transitions, scoped to the source monitor's project/chat, exact follow-up prompt and finite occurrence limit. Transactional admission into normal conversation dispatch with event metadata, durable receipt, newest-event coalescing, no history replay, no overlap and cancellation/failure stop. No new build/tool authority. Four regression cases cover actual file events, website receipts, concurrency/restart and scope. Pass 064 green and merged (PR 130). Next rank 67 / ID 17 search-engine result interpretation. No installer.
+
+## Pass 068 — 27 November 2026
+
+- Add reviewed offline interpretation of up to 20 supplied web-result rows. Retain exact titles, URLs, snippets and original ranks; deduplicate repeated URLs, compute literal query-term coverage and hostname counts, and flag uncovered terms. No source is opened, no provider snippet is treated as verified, and no commands or new authority are derived. Four regressions. Pass 065 green and merged (PR 131); 066–067 green awaiting sequential merge. Next rank 68 / ID 16 general internet search. No installer.

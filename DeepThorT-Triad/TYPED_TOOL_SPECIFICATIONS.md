@@ -339,3 +339,11 @@ Queue → Condition watches in a project chat. Choose an exact workspace-relativ
 ## Event-triggered follow-up workflows
 
 Queue → Event-triggered requests. Select an active monitor in the bound chat and a future website `changed` or condition `became_true`/`became_false` event. Review the exact prompt and choose 1–1000 actual follow-up admissions. Old events are not replayed. Multiple missed matching events coalesce to the latest recorded event, and the previous conversation must respond before another is admitted. A cancelled/failed previous request or cancelled source stops the rule. Event metadata is appended as reference data only. The existing dispatcher, workspace, gaming/pause and approval boundaries remain; no automatic file or tool execution authority is granted. History records the exact originating event and resulting request. Closing the chat cancels outstanding rules. Native desktop/model acceptance remains outstanding.
+
+## Interpret supplied search-engine results
+
+```json
+{"query":"quartz engine calibration","results":[{"title":"Manual","url":"https://example.org/manual","snippet":"Quartz calibration reference"}]}
+```
+
+Use Interpret search results in Files & Images. Up to 20 supplied rows (zero is valid); exact provider ranks preserved, duplicate URLs omitted, query term coverage and title match tie-breaker computed, and missing query terms plus hostname counts reported. No network call or semantic/factual verification. The output is reference data, not instructions or authority. Actual search and page reading are separate abilities.

@@ -704,6 +704,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Extract PDF tables…',command=self._review_pdf_tables).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Convert document…',command=self._review_document_conversion).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Compare documents…',command=self._review_document_comparison).pack(side='left',padx=3)
+        research_actions=ttk.Frame(media_tab);research_actions.pack(fill='x',pady=2)
+        ttk.Button(research_actions,text='Interpret search results…',command=lambda:self._review_typed_tool('search_interpretation','.json','Research: reviewed search evidence')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1401,7 +1403,8 @@ class DeepThorTDesktop(tk.Tk):
                  'video_trimming':('.mp4','Video: reviewed sequence'),
                  'background_removal':('.png','Image: reviewed background removal'),
                  'background_replacement':('.png','Image: reviewed background replacement'),
-                 'ocr':('.json','Image: reviewed OCR')}
+                 'ocr':('.json','Image: reviewed OCR'),
+                 'search_interpretation':('.json','Research: reviewed search evidence')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
