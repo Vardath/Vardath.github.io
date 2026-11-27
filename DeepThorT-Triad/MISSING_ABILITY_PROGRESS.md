@@ -149,7 +149,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 137 | 134 | Automated audio mastering | Partial: reviewed linked peak-envelope compression with attack/release and ratio, bounded RMS makeup, shared sample-peak ceiling, verified PCM. Pass 138 CI pending. LUFS, true-peak measurement, EQ and listening acceptance outstanding. |
 | 138 | 160 | Automatic mesh retopology | Partial: automatic planar local edge flips with measured triangle quality improvement, manifold fan/winding checks, preserved vertices and boundary, verified OBJ. Pass 139 CI pending. General quad/curved remeshing, animation topology and native visual acceptance outstanding. |
 | 139 | 311 | Blender tool workflows | Partial: reviewed installed Blender executable and fixed bundled script, plain OBJ to editable single-mesh .blend, private save/reload and exact quantized geometry receipt, capped local process. Pass 140 CI pending. Real installed Blender acceptance, richer scene operations and visual quality outstanding. |
-| 140 | 312 | Automatic mesh repair | Existing partial; completion not started in this programme |
+| 140 | 312 | Automatic mesh repair | Partial: reviewed exact-coordinate welding, degenerate/duplicate face removal, unreferenced vertex removal, consistent relative winding and manifold fan verification. Pass 141 CI pending. Holes, self-intersections, outward orientation, rich attributes and native visual acceptance outstanding. |
 | 141 | 319 | CAD design through code | Existing partial; completion not started in this programme |
 | 142 | 320 | 3D scene composition | Existing partial; completion not started in this programme |
 | 143 | 321 | Automated lighting | Existing partial; completion not started in this programme |
@@ -848,3 +848,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 140 — 27 November 2026
 - Extend existing Blender import probes and reviewed tool workflows with a fixed local producer: strict plain triangular OBJ to one editable mesh in a new uncompressed .blend, exact float32 geometry review, fixed script hash, private save and reload, receipt comparison, bounded output and native child cap. No arbitrary script or project .blend loaded, autoexecution disabled, no installer or cap change. Three mock-backend regressions. Actual native Blender execution and visual quality remain unverified; existing 512 MiB auxiliary ceiling may block Blender. Next rank 140 / ID 312 automatic mesh repair.
+
+## Pass 141 — 27 November 2026
+- Add conservative static triangle OBJ repair with exact-coordinate weld, removal of degenerate and duplicate faces, unused vertex cleanup, and component-wise consistent winding. Reject unresolved nonmanifold edges/fans and nonorientable surfaces; report remaining boundaries and no eligible repair. Guard reviewed inputs and publish a new verified OBJ. Three fixture cases. No self-intersection, outward orientation, hole filling or attribute-preservation claim. Next rank 141 / ID 319 CAD design through code. No installer.
