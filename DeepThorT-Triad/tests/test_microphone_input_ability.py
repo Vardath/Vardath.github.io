@@ -31,3 +31,29 @@ class MicrophoneTests(unittest.TestCase):
         self.assertEqual(ctypes.sizeof(m.Format),18)
         self.assertEqual(ctypes.sizeof(m.Header),48 if ctypes.sizeof(ctypes.c_void_p)==8 else 32)
         self.assertEqual(m.Header.dwBytesRecorded.offset,ctypes.sizeof(ctypes.c_void_p)+4)
+
+
+class ScreenCaptureTests(unittest.TestCase):
+    def test_explicit_capture_save_and_exact_handoff(self):
+        from deepthort_local import screen_capture as s
+        calls=[]
+        def backend(box):
+            calls.append(box);return bytes([12,34,56])*16
+        with self.assertRaises(PermissionError):s.capture((0,0,4,4),(16,16),backend=backend)
+        self.assertEqual(calls,[])
+        raw=s.capture((0,0,4,4),(16,16),approved=True,backend=backend)
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve()
+            with self.assertRaises(PermissionError):s.save(root,'screen.png',[],raw)
+            with self.assertRaises(ValueError):s.save(root,'../screen.png',[],raw,approved=True)
+            r=s.save(root,'screen.png',[],raw,approved=True)
+            path=root/'screen.png';prompt=s.prompt_for(r['sha256'])
+            self.assertEqual(s.exact_snapshot(root,path,prompt),raw)
+            with self.assertRaises(ValueError):s.save(root,'screen.png',[],raw,approved=True)
+            path.write_bytes(raw+b'x')
+            with self.assertRaises(ValueError):s.exact_snapshot(root,path,prompt)
+    def test_reject_invalid_region_or_pixels(self):
+        from deepthort_local import screen_capture as s
+        for box in ((-1,0,4,4),(0,0,True,4),(0,0,0,4),(15,15,4,4),(0,0,2048,2048)):
+            with self.assertRaises(ValueError):s.capture(box,(16,16),approved=True,backend=lambda *_:self.fail('unexpected capture'))
+        with self.assertRaises(ValueError):s.capture((0,0,4,4),(16,16),approved=True,backend=lambda _:b'x')

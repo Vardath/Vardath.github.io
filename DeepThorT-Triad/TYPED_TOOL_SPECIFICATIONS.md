@@ -765,3 +765,7 @@ Both the JANUS-designed and manually composed tool workflow approval paths show 
 ## Reviewed sampled video interpretation (Pass 170)
 
 Files & Images → Interpret video. JSON: `{"video":"clip.mp4","frames":[0,24,48]}`. Select 1–4 sorted distinct frame indices in a short silent constant-rate H.264 MP4 (max 300 frames, 640×480, 16 MiB). Requires installed FFmpeg pair, Node and existing offline Florence vision model. Produces a new JSON report with source/frame hashes, timestamps and model descriptions; these are sparse sampled observations, not verified semantics or continuous motion/audio interpretation. Existing source remains untouched.
+
+## Reviewed screen snapshot (Pass 171)
+
+Files & Images → Capture screen region. Enter primary monitor x,y,width,height (up to 2048 per dimension and 2 megapixels). Confirm one capture after a three-second countdown, then inspect the in-memory preview. Save a new project PNG only after separate confirmation; optional independent approval queues the exact SHA-256-bound saved image for the existing local vision engine. No automatic capture, continuous monitoring or network upload. Windows display scaling and physical-device acceptance remain unverified.
