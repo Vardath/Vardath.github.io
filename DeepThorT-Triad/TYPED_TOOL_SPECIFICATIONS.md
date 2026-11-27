@@ -679,3 +679,7 @@ Files & Images → Generate PBR maps. JSON keys: `height_map` (opaque 8-bit gray
 ## Reviewed character skinning (Pass 150)
 
 Files & Images → Skin character mesh. JSON keys: `mesh` (static triangular OBJ), `max_position_error` (1e-12–1), `joints` (2–32 records with distinct `name`, `parent` null for first root or earlier index, `position` XYZ in mesh coordinates). Assigns normalized inverse squared Euclidean weights to nearest two joint positions. New GLB contains hierarchy, inverse bind and skin attributes; verifies rest transforms and geometry. Does not discover skeletons or establish deformation/anatomical quality. Native import unverified.
+
+## Reviewed skeletal animation (Pass 151)
+
+Files & Images → Animate skeleton. Pass 150 rig keys plus `name` and `tracks`: each distinct joint index has `times` (2–256 increasing seconds starting at 0, max 300) and corresponding normalized `rotations_xyzw`. At most 2048 keys. Writes actual GLB rotation channels, LINEAR interpolation and verified rest skin. No arbitrary script execution, IK or native playback guarantee.
