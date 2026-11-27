@@ -141,7 +141,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 129 | 152 | Audio restoration | Source extended: reviewed mono/stereo PCM isolated sample interpolation, optional DC removal and 50/60 Hz notch, verified frame/format preservation and new WAV. Pass 130 CI pending. Listening acceptance, clipping reconstruction and broader defect restoration outstanding. |
 | 130 | 154 | Audio source isolation | Partial: reviewed short stereo spatial component isolation (center/side/left/right) and exact complementary PCM reconstruction, new ZIP with hashes. Pass 131 CI pending. Semantic separation of arbitrary overlapping sources and mono mixtures remains outstanding. |
 | 131 | 131 | Musical stem separation | Partial: optional reviewed Sherpa-ONNX UVR/MDX-Net pinned model, offline vocals and accompaniment WAVs, exact format/frame and ZIP verification, reconstruction metric. Pass 132 CI pending. Actual installed native inference, listening quality and additional individual instrumental stems outstanding. |
-| 132 | 132 | Instrument isolation | Not started in this programme |
+| 132 | 132 | Instrument isolation | Partial: optional reviewed installed demucs.cpp six-source model, drums/bass/guitar/piano selection, aligned estimated target plus sum of other stems, verified PCM and ZIP. Pass 133 CI pending. Actual native execution within cap and listening quality outstanding. |
 | 133 | 135 | Audio-to-MIDI transcription | Not started in this programme |
 | 134 | 302 | Musical arrangement | Existing partial; completion not started in this programme |
 | 135 | 303 | Instrumental audio synthesis | Existing partial; completion not started in this programme |
@@ -816,6 +816,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 132 — 27 November 2026
 - Add optional reviewed installed sherpa-onnx source-separation CLI with one pinned official UVR_MDXNET_1_9703.onnx asset (upstream SHA-256 and size), CPU one thread, existing 512 MiB auxiliary limit and foreground reserve. Short stereo 44.1 kHz PCM16 clips (3–15 s), exact source/engine/model review, cancellable bounded execution, two distinct WAV files and ZIP with frame alignment, hashes and reconstruction error. Three fixture regressions; real model execution and listening quality unverified; fail closed if cap cannot admit model. General source isolation also gains a specific vocals/accompaniment backend, not arbitrary separation. Next rank 132 / ID 132 instrument isolation. No installer.
+
+## Pass 133 — 27 November 2026
+- Add optional owner-installed demucs.cpp single-model six-source driver, exact executable and weights review, select drums/bass/guitar/piano for 3–8 second 44.1 kHz stereo PCM16 clip. Validate all six finite float32 WAV outputs, produce selected instrument and remaining model stems as stereo PCM16 with shared headroom and reconstruction error, new ZIP and hashes. Three fixture regressions. Existing 512 MiB ordinary-child cap retained; engine may not fit and must fail closed. No upstream weights digest claimed; trust and hash exact owner-installed file. Native inference, quality and additional instruments outstanding. Next rank 133 / ID 135 audio-to-MIDI. No installer.
 
 ### Pass 129 historical Windows fixture timeout
 - Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
