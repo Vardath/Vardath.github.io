@@ -953,3 +953,7 @@ Run on background desktop accepts `{"executable":"app.exe","seconds":15,"expecte
 ## Reviewed live screen interpretation (Pass 211)
 
 Interpret live screen accepts `{"region":[0,0,640,480],"samples":3,"interval_seconds":2}`. Choose a bounded primary-screen rectangle. Separate visible approval and three-second countdown before 2–4 samples. Local offline Florence caption engine; temporary screenshots outside project, report retains captions and hashes. Close sensitive windows before approval. No continuous monitoring, automatic memory ingestion or input. Captions are unverified reference evidence. Requires native Windows and existing local vision installation; acceptance pending.
+
+## Reviewed controller input simulation (Pass 212)
+
+Test controller input accepts `{"actions":[{"kind":"button","button":"A"},{"kind":"axis","axis":"LEFT_X","direction":-1}]}`. Up to 12 fixed button or axis actions, each press and release checked through native Godot InputMap. Requires existing Windows Godot under shared cap. No system-level virtual controller, physical input, external game or arbitrary code. Engine execution acceptance pending.
