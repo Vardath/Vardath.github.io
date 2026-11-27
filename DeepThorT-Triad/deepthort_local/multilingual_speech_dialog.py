@@ -17,6 +17,10 @@ def show(app,mode='multilingual'):
         from .audiobook_generation import review as review_tool,render as render_tool
         title='Short audiobook generation';suffix='ZIP bundle'
         example={'title':'Book title','author':'Author','culture':'en-AU','voice_id':'EXACT ID FROM INVENTORY','chapters':[{'title':'Chapter one','passages':['First passage','Second passage']}],'pause_ms':300}
+    elif mode=='dialogue':
+        from .dialogue_generation import review as review_tool,render as render_tool
+        title='Multi-speaker dialogue';suffix='ZIP bundle'
+        example={'title':'Scene title','description':'Scene context','turns':[{'speaker':speaker,'culture':'en-AU','voice_id':'EXACT DISTINCT ID FROM INVENTORY','text':speaker+' text'} for speaker in ('Character A','Character B')],'pause_ms':250}
     elif mode=='multilingual':
         review_tool,render_tool=review,render
         title='Multilingual speech';suffix='WAV'
