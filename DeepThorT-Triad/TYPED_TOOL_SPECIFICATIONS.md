@@ -753,3 +753,7 @@ Files & Images → Sketch to image. Select an opaque RGB or grayscale PNG of at 
 ## Editable raster layers (Pass 167)
 
 Files & Images → Editable layers. Use the same canvas and ordered PNG layer schema as image composition, with additional `name` (unique, 1–80 characters) and `visible` (boolean) per layer. Output is `.ora` (OpenRaster), preserving independent raster layers, positions, names, opacity and visibility, plus an opaque background, merged preview and thumbnail. Canvas up to one megapixel, aggregate placed layers up to four megapixels. New file only; original PNGs untouched. Existing ORA/PSD import and native editor interoperability are not verified.
+
+## Reviewed editable graphic design (Pass 168)
+
+Files & Images → Editable graphic. JSON canvas keys: `title`, `width`, `height`, `background` (hex RGB or null), `groups`. Each of 1–12 groups has a distinct `name`, boolean `visible`, integer `opacity` (0–100), and `elements` using the existing logo rectangle, circle, polygon or text schema (up to 32 per group, 64 total). Output is a new SVG with named independent groups and stable element IDs; hidden elements remain present for editing. No arbitrary SVG import, script, remote resource, or rendering/font-fit claim. Use an external editor to inspect and edit the output.
