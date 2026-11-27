@@ -90,7 +90,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 78 | 12 | Semantic vector embeddings | Partial source implemented: actual local corpus-trained TF-IDF/truncated SVD latent semantic vectors, verified eigensolver, cosine retrieval and reproducible basis; Pass 079 Linux/Windows green and merged. Pretrained contextual embeddings, durable memory integration and native acceptance outstanding. |
 | 79 | 221 | Cross-project historical recall | Source extended: existing asynchronous Memory lane selects exact relevant 400-character windows within bounded 8,000-character prior named-project draft prefixes; offset and project identity rechecked before delivery. Pass 080 CI pending; full history indexing, broader evidence and native acceptance outstanding. |
 | 80 | 222 | Semantic reranking | Source extended: bounded local latent cosine reranking of already scoped conversation candidates on the existing background Memory lane; same/cross-project slots preserved, independent model selection and exact provenance unchanged, deterministic lexical fallback. Pass 081 CI pending. Contextual neural reranking, wider corpora and native acceptance outstanding. |
-| 81 | 223 | Knowledge graphs | Existing partial; completion not started in this programme |
+| 81 | 223 | Knowledge graphs | Source extended: reviewed local-text directed graph with typed nodes, predicates, exact source-located evidence, stable adjacency and hash-bound publication. Pass 082 CI pending. Multi-document, persistent index, autonomous graph construction and native acceptance outstanding. |
 | 82 | 224 | Automatic relationship discovery | Existing partial; completion not started in this programme |
 | 83 | 225 | Large document ingestion | Existing partial; completion not started in this programme |
 | 84 | 271 | Interpret PDF diagrams | Existing partial; completion not started in this programme |
@@ -654,3 +654,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 081 — 27 November 2026
 - Reuse Pass 079 local corpus-trained LSA only within the existing asynchronous conversation Memory selector. Reorder the admitted 4–6 candidate shortlist by finite cosine similarity while preserving same-chat and cross-project slots, original identities and source evidence. Sparse/invalid/degenerate corpus falls back to original order; no additional resident model, inference request or foreground rerank. Two regression cases (actual corpus and scope-slot preservation). Next rank 81 / ID 223 knowledge graphs. No installer.
+
+## Pass 082 — 27 November 2026
+- Reuse existing project typed-tool authority and document text limits for reviewed directed knowledge graphs. Nodes and edges bind to exact line/character quotations in one selected local text document. Validate endpoint identity, duplicate IDs/edges, adjacency, source fingerprints, non-overwriting output and mark reviewer relationships unverified; no inference or new permissions. Three regression cases added to both CI jobs. Next rank 82 / ID 224 automatic relationship discovery. No installer.
