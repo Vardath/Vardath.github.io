@@ -571,3 +571,7 @@ Files & Images → Speech to text. Review an exact project-relative 1–30 secon
 ## Offline audio transcription (Pass 123)
 
 Files & Images → Transcribe recording. Approve an exact project WAV (1–120 seconds, mono 16 kHz PCM16) and installed recognizer culture. Balanced windows of at most 30 seconds produce global segment timings, recognizer confidence and per-window status. Preview then separately approve JSON publication to a new project path. Speech at window boundaries may be missed. No automatic chat submission, speaker identification, diarisation or upload. Native accuracy remains unverified.
+
+## Optional neural speech (Pass 124)
+
+Files & Images → Neural speech. Select a trusted separately installed Piper 1.3+ piper.exe and matching single-speaker ONNX voice/config outside the project. Review exact hashes, text, length/noise/noise-width controls and new WAV output. Runs only under existing Windows resource cap and a nested 512 MiB child. No download, fallback or voice cloning. Review engine/voice licenses. Job Object limits are not a security sandbox. Native compatibility and listening quality unverified. CLI reference: https://github.com/OHF-Voice/piper1-gpl/blob/main/src/piper/__main__.py .

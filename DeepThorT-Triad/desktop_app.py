@@ -796,6 +796,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Record microphone…',command=self._show_microphone).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Speech to text…',command=self._show_speech_to_text).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Transcribe recording…',command=self._show_audio_transcription).pack(side='left',padx=3)
+        ttk.Button(audio_review_actions,text='Neural speech…',command=self._show_neural_speech).pack(side='left',padx=3)
         texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
@@ -1424,6 +1425,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_neural_speech(self):
+        from deepthort_local.neural_speech_dialog import show
         show(self)
 
     def _show_audio_transcription(self):
