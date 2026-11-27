@@ -351,3 +351,11 @@ Use Interpret search results in Files & Images. Up to 20 supplied rows (zero is 
 ## General internet search (optional Brave Search API)
 
 Files & Images → Search internet. Enter the exact public query and 1–20 results, confirm the single outgoing request, then enter your provider key in a masked dialog. The key is transient, never written to disk, model prompts or application logs. Uses the fixed `https://api.search.brave.com/res/v1/web/search` endpoint, public IPv4 pinning and TLS verification; no cookies, redirects, arbitrary URLs or project data are transmitted. An active Brave API account is required and provider charges/terms may apply. Results are shown as untrusted reference data in the dialog, not treated as opened pages or verified facts. Optional clipboard export of supplied-result JSON requires confirmation and provider retention rights; no automatic persistent storage. Local inference remains unchanged. Live provider acceptance and model-selected research integration remain outstanding. API reference: https://api-dashboard.search.brave.com/api-reference/web/search/get
+
+## Retrieve a public webpage
+
+```json
+{"url":"https://example.org/manual"}
+```
+
+Files & Images → Retrieve webpage. Review the exact outgoing HTTPS request and new JSON output. Accept public lowercase DNS hostnames on default HTTPS port without query, credentials or fragment. Pin a public IPv4 result, verify TLS hostname, refuse redirects, compressed/non-text or oversized responses. Parse static HTML/plain text, excluding script/style/template and other hidden container bodies; list up to 100 discovered display-only links without following them. Report original URL, response and text SHA-256, extracted text and title. Body cap 512 KiB, text cap 100000 characters; no partial/truncated page claimed. No browser rendering, authentication, subresources, page execution or independent factual verification. Live network and native acceptance outstanding.

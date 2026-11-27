@@ -707,6 +707,7 @@ class DeepThorTDesktop(tk.Tk):
         research_actions=ttk.Frame(media_tab);research_actions.pack(fill='x',pady=2)
         ttk.Button(research_actions,text='Interpret search results…',command=lambda:self._review_typed_tool('search_interpretation','.json','Research: reviewed search evidence')).pack(side='left',padx=3)
         ttk.Button(research_actions,text='Search internet…',command=self._web_research_dialog).pack(side='left',padx=3)
+        ttk.Button(research_actions,text='Retrieve webpage…',command=lambda:self._review_typed_tool('webpage_retrieval','.json','Research: reviewed webpage')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1409,7 +1410,8 @@ class DeepThorTDesktop(tk.Tk):
                  'background_removal':('.png','Image: reviewed background removal'),
                  'background_replacement':('.png','Image: reviewed background replacement'),
                  'ocr':('.json','Image: reviewed OCR'),
-                 'search_interpretation':('.json','Research: reviewed search evidence')}
+                 'search_interpretation':('.json','Research: reviewed search evidence'),
+                 'webpage_retrieval':('.json','Research: reviewed webpage')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
@@ -1433,7 +1435,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve HTTPS read + new output' if module=='webpage_retrieval' else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
