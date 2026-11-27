@@ -313,3 +313,48 @@ class ApplicationWorkflowTests(unittest.TestCase):
                 z.writestr('AndroidManifest.xml','not binary')
                 z.writestr('classes.dex',b'dex\n035\x00fixture')
             with self.assertRaises(ValueError):inspect_apk(apk)
+
+
+    def test_stopped_container_create_and_inspect(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.container_management import perform,project_key,name_for
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);image='sha256:'+'a'*64;ident='b'*64
+            s={'operation':'create','name':'test','image':image};calls=[]
+            row='|'.join(map(json.dumps,[ident,'/'+name_for(root,s),project_key(root),'created',image]))
+            def run(argv):
+                calls.append(argv)
+                return ['|'.join(map(json.dumps,[image,None])),ident,row][len(calls)-1]
+            r=perform(root,s,'docker.exe',run)
+            self.assertEqual(r['status'],'stopped_container_created')
+            self.assertFalse(r['container_started'])
+            self.assertIn('--pull=never',calls[1])
+            self.assertIn('--network',calls[1])
+            self.assertNotIn('start',calls[1])
+            self.assertEqual(calls[0][1:3],['--host','npipe:////./pipe/docker_engine'])
+            with self.assertRaises(ValueError):perform(root,s,'docker.exe',lambda argv:'|'.join(map(json.dumps,[image,{'/data':{}}])))
+
+    def test_stopped_container_remove_ownership(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.container_management import perform,project_key,name_for
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);ident='b'*64;image='sha256:'+'a'*64
+            s={'operation':'remove','name':'test','container_id':ident};calls=[]
+            def row(label,state):
+                return '|'.join(map(json.dumps,[ident,'/'+name_for(root,s),label,state,image]))
+            for bad in (row('other','created'),row(project_key(root),'running')):
+                calls.clear()
+                def reject(argv):
+                    calls.append(argv);return bad
+                with self.assertRaises(ValueError):perform(root,s,'docker.exe',reject)
+                self.assertEqual(len(calls),1)
+            calls.clear()
+            def run(argv):
+                calls.append(argv)
+                return row(project_key(root),'exited') if len(calls)==1 else ident
+            r=perform(root,s,'docker.exe',run)
+            self.assertEqual(r['status'],'stopped_container_removed')
+            self.assertEqual(calls[1][-3:],['container','rm',ident])
+            with self.assertRaises(ValueError):perform(root,dict(s,container_id='short'),'docker.exe',run)
