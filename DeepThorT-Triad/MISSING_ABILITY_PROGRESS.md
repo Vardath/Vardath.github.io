@@ -39,7 +39,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 27 | 284 | Data transformation | Source extended: reviewed ordered CSV rename/filter/sort/decimal-derived columns with roundtrip verification. Pass 028 CI pending; joins, pivots and other formats outstanding. |
 | 28 | 72 | Editing existing presentations | Source extended: reviewed unique whole-run text replacements on specified slides; all untouched PPTX parts byte-verified. Pass 029 CI pending; wider edits and visual validation outstanding. |
 | 29 | 275 | Create presentations | Source extended: editable PPTX with bounded title, bullet and two-column layouts, three themes and reopened content/geometry checks. Pass 030 CI pending; visual fit and model integration outstanding. |
-| 30 | 73 | Presentation template application | Not started in this programme |
+| 30 | 73 | Presentation template application | Source extended: reviewed whole-run placeholder population in existing PPTX templates, preserving untouched parts and original. Pass 031 CI pending; arbitrary theme transfer and visual validation outstanding. |
 | 31 | 212 | Long-form writing | Existing partial; completion not started in this programme |
 | 32 | 268 | Create formatted Word documents | Existing partial; completion not started in this programme |
 | 33 | 279 | Citation and bibliography management | Existing partial; completion not started in this programme |
@@ -452,3 +452,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 030 — 27 November 2026
 
 - Add editable widescreen PPTX producer using typed title, bullet and two-column slide definitions, three restrained themes, native text boxes, shapes and page numbering. Bound content length and shape geometry, reopen and check text order, slide size/count and package relationships. No visual render or font-fit guarantee; no overwrite or external assets. Four actual PPTX fixtures. Next rank 30 / ID 73 presentation template application. No installer.
+
+## Pass 031 — 27 November 2026
+
+- Apply a prepared PPTX template by filling explicit whole-run slide placeholders with reviewed literal values. Resolve all bindings before editing; reject missing/unused values, malformed or ambiguous placeholders and unsupported target runs. Preview resolved replacements; preserve source and untouched package parts using Pass 029. Four actual fixture regressions. Not arbitrary theme transfer, slide-master replacement or render-fit verification. Next rank 31 / ID 212 long-form writing. No installer.

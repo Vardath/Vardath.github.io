@@ -83,3 +83,11 @@ Install presentation tools first. Each edit must match exactly one existing whol
 ```
 
 Themes: navy, graphite, forest. Native editable shapes and text, no rasterized slides. Content is deliberately bounded. Reopened structure is checked, but actual font rendering and text fit still require review.
+
+## Apply presentation template
+
+```json
+{"template":"template.pptx","values":{"TITLE":"New title","SUBTITLE":"Reviewed content"}}
+```
+
+Prepare whole-run placeholders such as {{TITLE}} inside ordinary slide text shapes. Supply every named placeholder and no unused values. Each named token may appear once per slide and across several slides. Preview includes all resolved replacements. Layouts, masters and untouched package parts are retained; visual fit still needs review.
