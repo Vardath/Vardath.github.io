@@ -439,3 +439,7 @@ Files & Images → Check PDF rendered pages. JSON: `{"document":"report.pdf","pa
 ## Predictive modelling (Pass 089)
 
 Files & Images → Fit predictive model. JSON: `{"csv":"data.csv","delimiter":",","predictor":"x","target":"y","train_rows":4,"missing_tokens":["NA"],"predict_values":["2","10"]}`. Train one-predictor exact ordinary least squares on the specified first data rows; evaluate the untouched suffix. Complete cases only, exact coefficients and held-out metrics against training-mean baseline. Predictions outside the training predictor range are flagged. Not a general-purpose machine-learning or causal inference system.
+
+## Exact scientific computing (Pass 090)
+
+Files & Images → Scientific calculation. Either `{"operation":"solve_linear_system","matrix":[["2","1"],["1","-1"]],"rhs":["7","2"]}` or `{"operation":"integrate_polynomial","coefficients":["1","2","3"],"lower":"0","upper":"2"}`. Exact rational strings, bounded 16-square systems and 32 polynomial coefficients in ascending powers. Unique solutions checked by substitution; integration checked by a second computation and differentiation. No physical simulation or arbitrary code execution.
