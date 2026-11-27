@@ -432,6 +432,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
         ttk.Button(top,text='Self-diagnose',command=self._diagnose).pack(side='right',padx=4)
         ttk.Button(top,text='Review self-update…',command=self._review_self_installation).pack(side='right',padx=4)
+        ttk.Button(top,text='Rollback self-update…',command=self._review_self_rollback).pack(side='right',padx=4)
         ttk.Button(top,text='Export diagnostics',command=self._export_diagnostics).pack(side='right',padx=4)
         ttk.Button(top,text='Run latest test',command=self._run_latest_test).pack(side='right',padx=4)
         ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
@@ -9394,6 +9395,21 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Diagnostic self-update installed; restart normally. Exact rollback baseline retained.')
         except (OSError,ValueError,PermissionError,RuntimeError,KeyError,sqlite3.Error) as exc:
             messagebox.showerror('Self-update unavailable',str(exc)[:500],parent=self)
+
+    def _review_self_rollback(self):
+        from deepthort_local import self_rollback
+        try:
+            if not self._self_install_idle():raise ValueError('Pause queue and allow existing work to finish first.')
+            plan=self_rollback.review(ROOT,STATE)
+            detail=('Restore the exact retained diagnostic source before the reviewed self-update?\n\n'
+                    +'Target: '+plan['target']+'\nInstalled SHA-256: '+plan['installed_sha']
+                    +'\nRestored SHA-256: '+plan['baseline_sha']
+                    +'\n\nNormal restart required. This is not a whole-application rollback.')
+            if not messagebox.askyesno('Approve exact diagnostic rollback',detail,parent=self):return
+            self_rollback.restore(ROOT,STATE,plan,approval=True,idle=self._self_install_idle)
+            self._log('Exact diagnostic baseline restored; restart normally. Prior update evidence retained.')
+        except (OSError,ValueError,PermissionError,RuntimeError,KeyError,TypeError,sqlite3.Error) as exc:
+            messagebox.showerror('Rollback unavailable',str(exc)[:500],parent=self)
 
     def _diagnose(self, prompt=None):
         info = inspect_local_setup(ROOT)
