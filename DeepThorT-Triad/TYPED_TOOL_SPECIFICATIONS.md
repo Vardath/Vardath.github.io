@@ -691,3 +691,7 @@ Files & Images → Retarget animation. Target `mesh`, `max_position_error`, `joi
 ## Reviewed physics trajectory simulation (Pass 153)
 
 Files & Images → Simulate physics. JSON keys: `gravity` (0.01–100 m/s²), `duration_seconds` (0.1–30), `fps` (10–120 integer), `floor_y` (−1000–1000 m), `bodies` (1–8 named spheres with `radius`, `position` XYZ metres, `velocity` XYZ m/s, `restitution` 0–1). Max 20,000 samples, 2048 impacts per body. Outputs JSON positions, velocities and impact events from analytic ballistic floor contacts; low-energy bounces settle. No inter-body collisions, rotation, friction, arbitrary geometry or native physics-engine guarantee.
+
+## Reviewed image upscaling (Pass 154)
+
+Files & Images → Upscale image. JSON keys: `image` (bounded single-frame PNG), `scale` (2/3/4), `method` (nearest/bicubic/lanczos), `sharpen_percent` (0–100; nearest requires zero). Output up to 2048 pixels per side; preserves resampled alpha, verifies decoded PNG. Classical interpolation only, no learned super-resolution or inferred detail.
