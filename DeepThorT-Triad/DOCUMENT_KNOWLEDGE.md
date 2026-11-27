@@ -47,3 +47,7 @@ Files & Images → Build knowledge graph. Select a typed JSON specification and 
 ## Automatic relationship candidates (Pass 083)
 
 Files & Images → Discover relationship candidates. The typed JSON specification contains `document`, `nodes` (as in the reviewed graph) and `max_candidates` (1–128). Choose 2–32 exact entity labels. Candidate pairs are discovered automatically from whole-label matches within 500 characters on the same source line; dense lines with more than 128 mentions are skipped and reported. Each pair retains supporting-line count and up to three exact quote locators. Co-occurrence is an observation, never a verified semantic predicate or an automatic graph mutation.
+
+## Explicit larger text enrollment (Pass 084)
+
+Explicit enrollment of TXT, Markdown, RST and AsciiDoc now permits up to 2 MiB, 16,384 fragments and 200,000 postings per document. The existing aggregate project quota remains in force, along with line/content filtering and exact source hash checks. Automatic discovery, DOCX and PDF limits are unchanged. The existing index and portable enrollment manifest support these larger text sources; no new document body storage is introduced. Cancellation during fragmentation rolls back the index transaction. Larger and streaming ingestion is not yet implemented.

@@ -125,3 +125,42 @@ class DocumentKnowledgeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.index.index(self.root, 'docs/manual.txt')
         self.assertFalse(self.index.search(self.root, 'quasar'))
+
+    def test_explicit_larger_text_retains_exact_locators_and_portability(self):
+        from deepthort_local.document_knowledge import MAX_BYTES
+        from deepthort_local.knowledge_transfer import export_manifest,read_manifest,import_manifest
+        relative='docs/large-manual.md'
+        path=self.root/relative
+        line='General technical background and installation guidance. '*4+'\n'
+        raw=(line*3000+'Quasar renderer requires a Vulkan device.\n').encode()
+        self.assertGreater(len(raw),MAX_BYTES)
+        path.write_bytes(raw)
+        with self.assertRaises(ValueError):self.index.index(self.root,relative,origin='auto')
+        self.assertEqual(self.index.index(self.root,relative),'indexed')
+        self.assertTrue(self.index.documents(self.root)[0]['current'])
+        hit=self.index.search(self.root,'Quasar Vulkan')[0]
+        self.assertEqual((hit['number'],hit['excerpt']),(3001,'Quasar renderer requires a Vulkan device.'))
+        export_manifest(self.index,self.root,[relative],'manifest.json')
+        _,digest=read_manifest(self.root,'manifest.json')
+        other=DocumentKnowledge(self.base/'other.sqlite3')
+        import_manifest(other,self.root,'manifest.json',digest)
+        self.assertEqual(other.search(self.root,'Quasar Vulkan')[0],hit)
+        path.write_bytes(raw+b'Changed.')
+        self.assertFalse(other.search(self.root,'Quasar Vulkan'))
+
+    def test_large_text_cancellation_keeps_prior_index(self):
+        relative='docs/manual.txt'
+        path=self.root/relative
+        original=b'Quasar renderer documentation.\n'
+        path.write_bytes(original)
+        self.index.index(self.root,relative)
+        path.write_bytes((b'General technical background and installation guidance. '*4+b'\n')*3000)
+        calls=[0]
+        def cancelled():
+            calls[0]+=1
+            return calls[0]>5
+        with self.assertRaises(ValueError):
+            self.index.index(self.root,relative,cancelled=cancelled)
+        self.assertGreater(calls[0],5)
+        path.write_bytes(original)
+        self.assertTrue(self.index.search(self.root,'Quasar'))

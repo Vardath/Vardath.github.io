@@ -23,6 +23,11 @@ from .workspace import SKIP_DIRS, safe_target
 from .pdf_knowledge import pdf_lines, MAX_PDF_BYTES
 
 MAX_BYTES = 512 * 1024
+# Explicitly enrolled UTF-8 text only; automatic discovery and other formats
+# retain their existing limits. The project posting quota remains unchanged.
+MAX_LARGE_TEXT_BYTES = 2 * 1024 * 1024
+MAX_LARGE_FRAGMENTS = 16384
+MAX_LARGE_POSTINGS = 200000
 MAX_XML = 2 * 1024 * 1024
 MAX_DOCUMENTS = 64
 MAX_AUTO = 24
@@ -86,8 +91,10 @@ def _name(root, relative):
     return path.relative_to(Path(root).resolve(strict=True)).as_posix(), path
 
 
-def _read(path):
-    limit = MAX_PDF_BYTES if path.suffix.casefold() == '.pdf' else MAX_BYTES
+def _read(path, *, large_text=False):
+    suffix=path.suffix.casefold()
+    limit = (MAX_PDF_BYTES if suffix == '.pdf' else
+             MAX_LARGE_TEXT_BYTES if large_text and suffix in TEXT_SUFFIXES else MAX_BYTES)
     with path.open('rb') as stream:
         raw = stream.read(limit + 1)
     if not raw or len(raw) > limit:
@@ -136,10 +143,13 @@ def _extract(raw, suffix):
         raise ValueError('Unsupported or damaged DOCX') from exc
 
 
-def _fragments(lines):
+def _fragments(lines, *, large_text=False, cancelled=None):
+    fragment_limit=MAX_LARGE_FRAGMENTS if large_text else MAX_FRAGMENTS
+    posting_limit=MAX_LARGE_POSTINGS if large_text else MAX_POSTINGS
     postings = 0
     result = []
     for number, row in enumerate(lines, 1):
+        if cancelled and cancelled():raise ValueError('Document indexing cancelled')
         line = row[2] if isinstance(row, tuple) else row
         # Check the entire original line before splitting, so a blocked phrase
         # cannot evade the filter merely by crossing an excerpt boundary.
@@ -152,7 +162,7 @@ def _fragments(lines):
             if not terms:
                 continue
             postings += len(terms)
-            if len(result) >= MAX_FRAGMENTS or postings > MAX_POSTINGS:
+            if len(result) >= fragment_limit or postings > posting_limit:
                 raise ValueError('Document exceeds fragment/index budget')
             result.append((number, start, start + len(text), terms))
     return result
@@ -261,8 +271,9 @@ class DocumentKnowledge:
         # start an external parser for an arbitrary newly discovered file.
         if path.suffix.casefold() == '.pdf' and origin != 'explicit':
             return 'excluded'
-        raw = _read(path)
+        raw = _read(path, large_text=origin=='explicit')
         digest = _digest(raw)
+        large_text=path.suffix.casefold() in TEXT_SUFFIXES and len(raw)>MAX_BYTES
         with self._db() as db:
             # Serialize replacement and quota decisions, including concurrent
             # GUI/CLI refreshes. No partial posting set can become visible.
@@ -283,7 +294,7 @@ class DocumentKnowledge:
                                       (key,)).fetchone()[0] >= MAX_DOCUMENTS:
                 raise ValueError('Project document quota reached; remove an unused document')
             locator, lines = _extract(raw, path.suffix.casefold())
-            fragments = _fragments(lines)
+            fragments = _fragments(lines, large_text=large_text, cancelled=cancelled)
             if not fragments:
                 raise ValueError('No supported searchable document text')
             if cancelled and cancelled():
@@ -392,7 +403,7 @@ class DocumentKnowledge:
             current = False
             try:
                 _, target = _name(root, path)
-                current = _digest(_read(target)) == digest
+                current = _digest(_read(target, large_text=origin=='explicit')) == digest
             except (OSError, ValueError):
                 pass
             results.append(dict(path=path, sha256=digest, locator=locator, origin=origin,
@@ -465,7 +476,7 @@ class DocumentKnowledge:
                 loaded[path] = None
                 try:
                     _, target = _name(root, path)
-                    raw = _read(target)
+                    raw = _read(target, large_text=True)
                     if _digest(raw) == digest:
                         if extracted_count >= MAX_EXTRACTED_DOCUMENTS:
                             continue
