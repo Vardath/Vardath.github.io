@@ -835,6 +835,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Improve topology…',command=lambda:self._review_typed_tool('mesh_retopology','.obj','Mesh: reviewed planar retopology')).pack(side='left',padx=3)
+        blender_review_actions=ttk.Frame(media_tab);blender_review_actions.pack(fill='x',pady=2)
+        ttk.Button(blender_review_actions,text='Create editable Blender mesh…',command=self._show_blender_mesh_workflow).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1450,6 +1452,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_instrument_isolation(self):
         from deepthort_local.instrument_isolation_dialog import show
+        show(self)
+
+    def _show_blender_mesh_workflow(self):
+        from deepthort_local.blender_mesh_workflow_dialog import show
         show(self)
 
     def _show_musical_stems(self):
