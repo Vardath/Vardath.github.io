@@ -53,7 +53,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 41 | 291 | Reproducible analytical reports | Source extended: deterministic self-contained HTML analysis report with exact dataset/specification, algorithm hashes, embedded results and repeated reproduction verification. Pass 042 CI pending; native model authoring and visual acceptance outstanding. |
 | 42 | 136 | Musical tempo detection | Source implemented: bounded 16-bit PCM WAV transient interval tempo estimator with support counts and explicit ambiguity. Pass 043 CI pending; compressed formats, variable/complex music and native acceptance outstanding. |
 | 43 | 305 | Music metadata management | Source extended: reviewed RIFF/WAV INFO tag read/edit/remove with exact PCM and untouched chunk preservation. Pass 044 CI pending; MP3/FLAC, Unicode and catalogue-scale integration outstanding. |
-| 44 | 137 | Musical key detection | Not started in this programme |
+| 44 | 137 | Musical key detection | Source implemented: bounded PCM WAV spectral pitch-class analysis, ranked major/minor candidates and explicit insufficient/ambiguous evidence. Pass 045 CI pending; complex music, modulation, detuning and native acceptance outstanding. |
 | 45 | 153 | Audio noise reduction | Not started in this programme |
 | 46 | 310 | Audio format conversion | Existing partial; completion not started in this programme |
 | 47 | 163 | Normal-map generation | Not started in this programme |
@@ -508,3 +508,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 044 — 27 November 2026
 
 - Add reviewed local RIFF/WAVE INFO metadata read/edit/remove for title, artist, album, year, genre, track, comment and copyright. Explicit printable ASCII or null, preview old/new values; preserve exact PCM samples, format and all untouched RIFF chunks and INFO tags. Refuse ambiguous/mixed ID3/INFO or unsupported WAV, publish new file only. Four actual fixtures. MP3/FLAC tags, Unicode and bulk catalogue workflows remain outstanding. Passes 034–035 green and merged (PRs 100–101). Next rank 44 / ID 137 musical key detection. No installer.
+
+## Pass 045 — 27 November 2026
+
+- Add local musical key estimation from bounded Hann-windowed PCM WAV Goertzel pitch-class powers, major/minor tonal profile correlation and ranked candidate scores. Explicit channel selection, source hash and evidence counts; return null when insufficient or ambiguous. Four tests include actual synthetic chord progressions, silence, single pitch and source identity. No calibrated confidence or modulation detection. Next rank 45 / ID 153 audio noise reduction. No installer.
