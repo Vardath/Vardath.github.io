@@ -455,3 +455,7 @@ Files & Images → Forecast time series. JSON: `{"csv":"series.csv","delimiter":
 ## Jupyter notebook export (Pass 093)
 
 Files & Images → Export Jupyter notebook. JSON: `{"cells":[{"id":"intro","kind":"markdown","source":"# Experiment"},{"id":"analysis","kind":"code","source":"print(2 + 2)"}]}`. Creates an unexecuted .ipynb v4.5 document for a Python 3 kernel. Python syntax is checked but code is not executed or declared safe. No local kernel required for export; interactive kernel, execution and output capture are outstanding.
+
+## Live local SQLite (Pass 094)
+
+Files & Images → Query live SQLite. Same JSON fields as the immutable SQLite query (`database`, `query`, `parameters`, `max_rows`), but explicitly reads current committed contents of the reviewed file identity, not a frozen hash. Uses read-only SQLite mode and the existing query authorizer; active WAL requires existing WAL and SHM files, which SQLite may use for its read locks. No database content writes, remote drivers, credentials or persistent connection pool.

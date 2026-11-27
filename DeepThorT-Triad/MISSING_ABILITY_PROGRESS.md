@@ -102,7 +102,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 90 | 288 | Anomaly detection | Source extended: exact baseline-relative IQR thresholds, separate monitoring suffix, original row identities, missing and flagged counts, zero-IQR warning and bounded candidate evidence. Pass 091 CI pending. Multivariate, temporal and adaptive detection outstanding. |
 | 91 | 80 | Time-series forecasting | Source implemented: exact regular-interval dated numeric forecasting, chronological holdout comparison of last-value, seasonal-naive and drift candidates; refit and future dates. Pass 092 CI pending. Independent final evaluation, uncertainty and richer models outstanding. |
 | 92 | 82 | Jupyter notebook integration | Source implemented: reviewed native .ipynb v4.5 export, ordered markdown/Python cells, syntax checks, exact cell roundtrip and inert code. Pass 093 CI pending. Live kernel, notebook execution, import/edit and output capture outstanding. |
-| 93 | 83 | Live database connections | Not started in this programme |
+| 93 | 83 | Live database connections | Source implemented: reviewed live local SQLite read-only transaction, current committed rows, file identity and source spec checks, shared SQL authorizer and bounded output. Pass 094 CI pending. Remote DB drivers, credentials, pooling and write workflows outstanding. |
 | 94 | 247 | API development | Existing partial; completion not started in this programme |
 | 95 | 248 | API testing | Existing partial; completion not started in this programme |
 | 96 | 252 | Live application monitoring | Existing partial; completion not started in this programme |
@@ -690,3 +690,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 093 — 27 November 2026
 - Add native portable Jupyter notebook export through existing typed approval. Bounded distinct cells, markdown or syntactically valid Python, exact text roundtrip, standard Python kernel metadata and no fabricated execution outputs. Never start a kernel or execute code on export. Three regressions including inert side-effect code. Next rank 93 / ID 83 live database connections. No installer.
+
+## Pass 094 — 27 November 2026
+- Extend existing immutable SQLite query engine by extracting its read-only authorizer/result routine for a separate reviewed live local read. Exact query approval, stable file identity, current committed data transaction, bounded query, no network or credentials; active WAL requires existing ordinary sidecars. Three regressions including WAL/uncommitted isolation. Next rank 94 / ID 247 API development. No installer.

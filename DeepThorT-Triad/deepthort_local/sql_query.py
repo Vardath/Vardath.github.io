@@ -71,6 +71,10 @@ def query(raw,spec):
     try:
         if not hasattr(db,'deserialize'):raise ValueError('SQLite deserialize unavailable in installed Python')
         db.deserialize(raw)
+        return query_connection(db,spec)
+    finally:db.close()
+
+def query_connection(db,spec):
         db.execute('PRAGMA trusted_schema=OFF')
         db.execute('PRAGMA query_only=ON')
         if db.execute('PRAGMA query_only').fetchone()!=(1,) or db.execute('PRAGMA trusted_schema').fetchone()!=(0,):
@@ -111,7 +115,7 @@ def query(raw,spec):
         return {'columns':columns,'rows':rows,'row_count':len(rows),'truncated':truncated,
                 'scope':'Single read-only query on exact standalone SQLite byte snapshot; no source writes, extensions, external databases, views or virtual tables.',
                 'live_database_modified':False}
-    finally:db.close()
+    
 
 def execute(root,plan):
     spec,dst,source=validate(root,plan)
