@@ -37,3 +37,35 @@ class ProjectQueueTests(unittest.TestCase):
             q.move('A','y',delta=-1,visible=['x','y']);v=q.snapshot()
             self.assertLess(v.key({'project':'A','chat_id':'y'}),v.key({'project':'A','chat_id':'x'}))
             self.assertFalse(q.move('A','y',delta=-1,visible=['x','y']))
+
+    def test_remove_restore_persists_and_never_deletes_workspace(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);folder=root/'project';folder.mkdir();(folder/'keep.txt').write_text('retain')
+            p=str(folder);q=QueuePolicy(root/'priority.sqlite3')
+            c=ConversationStore(root/'conversations.sqlite3');j=JobStore(root/'jobs.sqlite3')
+            ident=c.submit('x',p,'draft_plan','keep this request',independent=True)
+            job=j.submit(p,'x','image','keep this job')
+            rows=inventory(c.path,j.path);q.sync((r['project'],r['chat_id']) for r in rows)
+            q.sync([('other','y')]);q.remove(p)
+            q=QueuePolicy(root/'priority.sqlite3');q.sync([(p,'x'),(p,'new')])
+            v=q.snapshot();self.assertIn(p,v.removed);self.assertNotIn(p,grouped(rows,v))
+            self.assertFalse(v.allowed({'project':p,'chat_id':'new'}))
+            self.assertIsNone(j.next_any_queued(priority=v))
+            self.assertEqual(c.get(ident)['state'],'pending');self.assertEqual(j.get(job)['state'],'queued')
+            self.assertEqual((folder/'keep.txt').read_text(),'retain')
+            with self.assertRaises(ValueError):q.hold(p,held=False)
+            q.restore(p);v=q.snapshot()
+            self.assertIn(p,grouped(rows,v));self.assertFalse(v.allowed({'project':p,'chat_id':'x'}))
+            self.assertGreater(v.scope_key({'project':p}),v.scope_key({'project':'other'}))
+            q.hold(p,held=False);self.assertEqual(j.next_any_queued(priority=q.snapshot())['id'],job)
+
+    def test_migrate_existing_queue(self):
+        import sqlite3
+        from contextlib import closing
+        with tempfile.TemporaryDirectory() as td:
+            path=Path(td)/'queue.sqlite3'
+            with closing(sqlite3.connect(path)) as db,db:
+                db.execute('CREATE TABLE project_priority(project TEXT PRIMARY KEY,position INTEGER NOT NULL,held INTEGER NOT NULL DEFAULT 0)')
+                db.execute("INSERT INTO project_priority VALUES('old',1,0)")
+            q=QueuePolicy(path);self.assertTrue(q.snapshot().allowed({'project':'old'}))
+            q.remove('old');self.assertFalse(q.snapshot().allowed({'project':'old'}))

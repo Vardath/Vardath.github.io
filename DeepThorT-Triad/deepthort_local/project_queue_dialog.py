@@ -61,6 +61,33 @@ def show(app):
             ttk.Button(bar,text=label,command=lambda s=scope,o=op:change(s,o)).pack(side='left',padx=2)
     footer=ttk.Frame(dlg);footer.pack(fill='x',padx=8,pady=6)
     ttk.Button(footer,text='Refresh',command=refresh).pack(side='left')
+    def remove_project():
+        p=selected_project()
+        if not p:return
+        if not messagebox.askyesno('Remove project from queue',
+            'Remove this project and hold all its tasks?\\n\\n'+p+
+            '\\n\\nAn admitted operation may finish safely. Files, chats, approvals and task history are retained. Restore the project to queue it again.',parent=dlg):return
+        try:
+            app.project_queue.remove(p);refresh();app._refresh_jobs()
+        except Exception as exc:messagebox.showerror('Remove refused',str(exc),parent=dlg)
+    def restore_project():
+        removed=sorted(app.project_queue.snapshot().removed)
+        if not removed:
+            messagebox.showinfo('Removed projects','No removed projects.',parent=dlg);return
+        win=tk.Toplevel(dlg);win.title('Restore removed project');win.geometry('740x300')
+        ttk.Label(win,text='Choose a project. Restored projects return at the end of the queue, paused.').pack(padx=8,pady=8)
+        box=tk.Listbox(win,exportselection=False);box.pack(fill='both',expand=True,padx=8)
+        for p in removed:box.insert('end',p)
+        def restore():
+            sel=box.curselection()
+            if not sel:return
+            p=removed[sel[0]]
+            if not messagebox.askyesno('Restore project','Restore this project in paused state?\\n'+p,parent=win):return
+            try:app.project_queue.restore(p);win.destroy();refresh();app._refresh_jobs()
+            except Exception as exc:messagebox.showerror('Restore refused',str(exc),parent=win)
+        ttk.Button(win,text='Restore selected',command=restore).pack(pady=8)
+    ttk.Button(footer,text='Remove project…',command=remove_project).pack(side='left',padx=5)
+    ttk.Button(footer,text='Restore project…',command=restore_project).pack(side='left',padx=5)
     def open_task():
         p=selected_project();c=selected_chat()
         if not p or not c:return

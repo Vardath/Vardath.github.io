@@ -271,3 +271,5 @@ The existing conversation queue and approved JobStore already persist work, but 
 ## Owner-directed project task queues (27 November 2026)
 
 Named projects have persistent owner-reorderable priority and independent task chats have persistent priority within each project. Project and task holds are independent. A pause is cooperative: finish/reconcile an already admitted operation, then stop admitting new stages in that scope. Do not revoke grants, forcibly suspend inference, abandon leases or replay side effects to implement a pause. Reordering influences eligible work, not acceptance or dependency checks; blocked tasks may yield. General chat is outside the named project order. Keep asynchronous Memory and advisory preparation distinct from production authority.
+
+Project removal is a durable exclusion from the active queue, not project-folder destruction. Do not silently re-add it on inventory refresh, restart or new work discovery. An explicit restore places it at the tail, held until Resume; retain previous task holds and existing authority boundaries.

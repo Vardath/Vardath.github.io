@@ -16,6 +16,8 @@ class QueuePolicy:
                 CREATE TABLE IF NOT EXISTS project_priority(project TEXT PRIMARY KEY,position INTEGER NOT NULL,held INTEGER NOT NULL DEFAULT 0);
                 CREATE TABLE IF NOT EXISTS task_priority(project TEXT NOT NULL,chat_id TEXT NOT NULL,position INTEGER NOT NULL,held INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(project,chat_id));
             """)
+            if "removed" not in {r[1] for r in db.execute("PRAGMA table_info(project_priority)")}:
+                db.execute("ALTER TABLE project_priority ADD COLUMN removed INTEGER NOT NULL DEFAULT 0")
     def connect(self):
         db=sqlite3.connect(self.path,timeout=2);db.row_factory=sqlite3.Row;return db
     def sync(self,scopes):
@@ -30,10 +32,28 @@ class QueuePolicy:
     def snapshot(self):
         with closing(self.connect()) as db:
             return View({r['project']:(r['position'],bool(r['held'])) for r in db.execute('SELECT * FROM project_priority')},
-                        {(r['project'],r['chat_id']):(r['position'],bool(r['held'])) for r in db.execute('SELECT * FROM task_priority')})
+                        {(r['project'],r['chat_id']):(r['position'],bool(r['held'])) for r in db.execute('SELECT * FROM task_priority')},
+                        {r['project'] for r in db.execute('SELECT project FROM project_priority WHERE removed=1')})
+    def remove(self,project):
+        """Remove from scheduling and the visible queue, not from disk or history."""
+        if not project or project==GENERAL:raise ValueError('Choose a named project')
+        with closing(self.connect()) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            n=db.execute('UPDATE project_priority SET removed=1,held=1 WHERE project=? AND removed=0',(project,)).rowcount
+            if not n:raise ValueError('Project is not in the active queue')
+    def restore(self,project):
+        """Explicitly restore at the tail, paused until a separate Resume."""
+        if not project or project==GENERAL:raise ValueError('Choose a named project')
+        with closing(self.connect()) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            n=db.execute('UPDATE project_priority SET removed=0,held=1,position=(SELECT COALESCE(MAX(position),0)+1 FROM project_priority) WHERE project=? AND removed=1',(project,)).rowcount
+            if not n:raise ValueError('Project is not removed')
     def hold(self,project,chat_id=None,*,held):
         if type(held) is not bool or project==GENERAL:raise ValueError('Choose a named project or task')
         with closing(self.connect()) as db,db:
+            db.execute('BEGIN IMMEDIATE')
+            if not db.execute('SELECT 1 FROM project_priority WHERE project=? AND removed=0',(project,)).fetchone():
+                raise ValueError('Restore the removed project before changing its pause state')
             if chat_id is None:
                 n=db.execute('UPDATE project_priority SET held=? WHERE project=?',(int(held),project)).rowcount
             else:
@@ -43,8 +63,10 @@ class QueuePolicy:
         if delta not in (-1,1) or project==GENERAL:raise ValueError('Invalid queue move')
         with closing(self.connect()) as db,db:
             db.execute('BEGIN IMMEDIATE')
+            if not db.execute('SELECT 1 FROM project_priority WHERE project=? AND removed=0',(project,)).fetchone():
+                raise ValueError('Removed project cannot be reordered')
             if chat_id is None:
-                table='project_priority';key='project';scope='';args=();chosen=project
+                table='project_priority';key='project';scope=' WHERE removed=0';args=();chosen=project
             else:
                 table='task_priority';key='chat_id';scope=' WHERE project=?';args=(project,);chosen=chat_id
             rows=[(r[0],r[1]) for r in db.execute(f'SELECT {key},position FROM {table}'+scope+' ORDER BY position',args) if r[0] in visible]
@@ -60,10 +82,10 @@ class QueuePolicy:
             return True
 
 class View:
-    def __init__(self,projects,tasks):self.projects=projects;self.tasks=tasks
+    def __init__(self,projects,tasks,removed=()):self.projects=projects;self.tasks=tasks;self.removed=frozenset(removed)
     def allowed(self,row):
         p=row['project'];c=row.get('chat_id') or ''
-        return not (self.projects.get(p,(0,False))[1] or self.tasks.get((p,c),(0,False))[1])
+        return p not in self.removed and not (self.projects.get(p,(0,False))[1] or self.tasks.get((p,c),(0,False))[1])
     def key(self,row):
         p=row['project'];c=row.get('chat_id') or ''
         if p==GENERAL:return (-1,0,row.get('id',row.get('request_id',0)))
@@ -97,6 +119,8 @@ def inventory(conversations,jobs,roadmaps=()):
 
 def grouped(rows,view):
     projects={}
+    for p in sorted(view.projects,key=lambda p:view.projects[p][0]):
+        if p not in view.removed:projects[p]={}
     for r in sorted(rows,key=view.key):
-        projects.setdefault(r['project'],{}).setdefault(r['chat_id'],[]).append(r)
+        if r['project'] not in view.removed:projects.setdefault(r['project'],{}).setdefault(r['chat_id'],[]).append(r)
     return projects
