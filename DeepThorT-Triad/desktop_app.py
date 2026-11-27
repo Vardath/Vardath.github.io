@@ -804,6 +804,7 @@ class DeepThorTDesktop(tk.Tk):
         dialogue_review_actions=ttk.Frame(media_tab);dialogue_review_actions.pack(fill='x',pady=2)
         ttk.Button(dialogue_review_actions,text='Multi-speaker dialogue…',command=self._show_dialogue_generation).pack(side='left',padx=3)
         ttk.Button(dialogue_review_actions,text='Anonymous speaker diarisation…',command=self._show_speaker_diarisation).pack(side='left',padx=3)
+        ttk.Button(dialogue_review_actions,text='Restore audio…',command=lambda:self._review_typed_tool('audio_restoration','.wav','Audio: reviewed restoration')).pack(side='left',padx=3)
         texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
@@ -1525,6 +1526,7 @@ class DeepThorTDesktop(tk.Tk):
                  'music_metadata':('.wav','Audio: reviewed metadata'),
                  'musical_key':('.json','Audio: reviewed key'),
                  'noise_reduction':('.wav','Audio: reviewed noise reduction'),
+                 'audio_restoration':('.wav','Audio: reviewed restoration'),
                  'audio_conversion':('.flac','Audio: reviewed conversion'),
                  'normal_map':('.png','Texture: reviewed normal map'),
                  'height_map':('.png','Texture: reviewed height map'),

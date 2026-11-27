@@ -138,7 +138,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 126 | 308 | Audiobook generation | Source extended: reviewed short manuscript, exact narrator, chapter WAVs, global chapter timing index and manuscript in verified ZIP; bounded to 300 seconds. Pass 127 CI pending. Long-form book ingestion, resumable production and native listening acceptance outstanding. |
 | 127 | 309 | Multi-speaker dialogue production | Source extended: reviewed 2–8 scripted turns, 2–4 distinct stable installed voices, combined WAV, exact script and measured cue timings in a verified new ZIP. Pass 128 CI pending. Autonomous script writing, overlapping dialogue, long scenes and native listening acceptance outstanding. |
 | 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Source extended: optional reviewed installed sherpa-onnx offline diarisation CLI, exact recording/engine/model hashes, bounded timed anonymous labels, new JSON report. Pass 129 CI pending. Native engine/model acceptance, accuracy and isolated audio tracks outstanding. No identity or cross-recording matching. |
-| 129 | 152 | Audio restoration | Not started in this programme |
+| 129 | 152 | Audio restoration | Source extended: reviewed mono/stereo PCM isolated sample interpolation, optional DC removal and 50/60 Hz notch, verified frame/format preservation and new WAV. Pass 130 CI pending. Listening acceptance, clipping reconstruction and broader defect restoration outstanding. |
 | 130 | 154 | Audio source isolation | Not started in this programme |
 | 131 | 131 | Musical stem separation | Not started in this programme |
 | 132 | 132 | Instrument isolation | Not started in this programme |
@@ -804,6 +804,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 129 — 27 November 2026
 - Add separately reviewed local sherpa-onnx offline diarisation CLI integration using its documented segmentation and embedding models and anonymous cluster output. Exact local model/engine hashes, mono 16 kHz PCM16 up to 120 seconds, one CPU thread per component, existing Windows cap and 512 MiB auxiliary limit, cancellation and bounded time/log. Validate sorted timings and map labels within one recording only. No identity, enrollment, persistent embeddings or audio source separation; publish new JSON report, not isolated tracks. Three fixture regressions, no real native engine installed or exercised. Optional ONNX multimedia tool only; five-model OpenVINO unchanged. Next rank 129 / ID 152 audio restoration. No installer.
+
+## Pass 130 — 27 November 2026
+- Add local reviewed PCM restoration distinct from the existing quiet noise gate: conservative isolated single-sample impulse interpolation, optional mean DC removal, and optional 50/60 Hz Q30 mains-frequency notch. Retain frame count/rate/channels; shared gain only if necessary to prevent new clipping; verify decoded PCM and non-overwrite. Three deterministic regressions include injected click/DC and hum suppression with wanted-tone retention. Heuristic processing can alter desired signal; no lost-signal reconstruction, automatic diagnosis or verified listening claim. Next rank 130 / ID 154 audio-source isolation. No installer.
 
 ### Pass 129 auxiliary cap repair
 - Inspection of the actual Windows child_server implementation found a rejected 1 GiB auxiliary memory request. Match its fixed 512 MiB ordinary-child maximum; retain shared root cap, foreground reserve and all recording-local anonymity guarantees. Add regression for the exact limit. Real engine admission/quality still unverified; if the installed models exceed this budget, fail closed. Re-run Linux and Windows CI before merging.

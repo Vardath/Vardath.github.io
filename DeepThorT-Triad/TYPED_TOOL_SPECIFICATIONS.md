@@ -595,3 +595,7 @@ Files & Images → Multi-speaker dialogue. Review JSON with `title`, `descriptio
 ## Anonymous speaker diarisation (Pass 129)
 
 Files & Images → Anonymous speaker diarisation. Select a local 1–120 second mono PCM16 16 kHz WAV, trusted installed `sherpa-onnx-offline-speaker-diarization.exe`, segmentation and embedding ONNX models, expected count 2–8 or -1 for estimate, and new JSON. Exact hashes reviewed. CPU-only bounded optional tool (512 MiB ordinary auxiliary child ceiling) using [upstream documented CLI](https://k2-fsa.github.io/sherpa/onnx/speaker-diarization/index.html). Per-recording anonymous labels and intervals only, including possible overlapping speakers; no individual identification, enrollment, persistent voiceprint storage or separated WAVs. Native accuracy remains unverified. Resource caps do not sandbox untrusted binaries; the owner must install compatible trusted licensed tools and models separately.
+
+## Reviewed audio restoration (Pass 130)
+
+Files & Images → Restore audio. JSON keys: `audio` (project-relative mono/stereo PCM16 WAV, 3–120 seconds), `remove_dc` (boolean), `hum_hz` (0, 50 or 60), and `click_threshold` (0 or 2000–32767 PCM units). At least one operation required. Conservative isolated sample interpolation, mean DC removal and optional Q30 notch; one shared gain only if needed to avoid clipping. Exact reviewed input, new WAV, format/frame roundtrip and repair counts. This may modify wanted audio; does not recover clipped/missing audio or guarantee perceptual improvement. Listening acceptance outstanding.
