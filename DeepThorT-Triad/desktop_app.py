@@ -700,6 +700,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(presentation_actions,text='Edit presentation…',command=lambda:self._review_typed_tool('presentation_edit','.pptx','Presentation: reviewed edit')).pack(side='left',padx=3)
         ttk.Button(presentation_actions,text='Create presentation…',command=lambda:self._review_typed_tool('presentation_create','.pptx','Presentation: reviewed creation')).pack(side='left',padx=3)
         ttk.Button(presentation_actions,text='Apply presentation template…',command=lambda:self._review_typed_tool('presentation_template','.pptx','Presentation: reviewed template')).pack(side='left',padx=3)
+        writing_actions=ttk.Frame(media_tab);writing_actions.pack(fill='x',pady=2)
+        ttk.Button(writing_actions,text='Assemble manuscript…',command=lambda:self._review_typed_tool('long_form_writing','.txt','Document: reviewed manuscript')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1289,7 +1291,8 @@ class DeepThorTDesktop(tk.Tk):
                  'data_transformation':('.csv','Data: reviewed transformation'),
                  'presentation_edit':('.pptx','Presentation: reviewed edit'),
                  'presentation_create':('.pptx','Presentation: reviewed creation'),
-                 'presentation_template':('.pptx','Presentation: reviewed template')}
+                 'presentation_template':('.pptx','Presentation: reviewed template'),
+                 'long_form_writing':('.txt','Document: reviewed manuscript')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
