@@ -246,7 +246,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 234 | 109 | Video background replacement | Partial: reviewed bounded silent H.264 chroma-key replacement with exact RGB PNG, feathered compositing, source and codec guards and lossless decoded-frame verification. Pass 235 CI pending; semantic segmentation, audio and native visual acceptance outstanding. |
 | 235 | 110 | Video style transfer | Partial: reviewed reference PNG empirical RGB palette transfer with a shared monotone LUT across a bounded silent clip, exact input guards and decoded-frame verification. Pass 236 CI pending; neural style synthesis and visual acceptance outstanding. |
 | 236 | 108 | Video object removal | Partial: reviewed fixed grayscale mask and clean RGB plate compositing over bounded silent H.264 clip, exact input guards and decoded frame verification. Pass 237 CI pending; automatic detection, tracking, inpainting and visual acceptance outstanding. |
-| 237 | 112 | Camera motion generation | Not started in this programme |
+| 237 | 112 | Camera motion generation | Partial: reviewed multi-keyframe virtual camera pan/zoom reframing on existing silent H.264 video, bounded smooth interpolation and decoded pixel verification. Pass 238 CI pending; 3D camera paths, novel views and visual acceptance outstanding. |
 | 238 | 115 | Lip synchronisation | Not started in this programme |
 | 239 | 119 | Audio-driven animation | Not started in this programme |
 | 240 | 122 | Video dubbing | Not started in this programme |
@@ -1153,3 +1153,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 237 — 28 November 2026
 - Add fixed-mask video object removal with exact same-size clean plate and grayscale mask; preserve unmasked pixels, verify decoded frames. Three regressions on both hosts. No inferred detection, moving masks, inpainting or audio. Album fixture repair inherited. Next rank 237 / ID 112 camera motion generation. No installer.
+
+## Pass 238 — 28 November 2026
+- Add reviewed virtual camera motion using 2–8 explicit crop keyframes on an existing silent clip, smooth interpolation and fixed output geometry, exact input/codec guards and lossless RGB verification. Three regression fixtures on both hosts. No novel viewpoint synthesis or true 3D camera. Next rank 238 / ID 115 lip synchronisation. No installer.
