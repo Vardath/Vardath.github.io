@@ -202,6 +202,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_time_series_forecast_ability.py -v
       - run: python -m unittest discover -s tests -p test_jupyter_notebook_ability.py -v
       - run: python -m unittest discover -s tests -p test_live_sqlite_ability.py -v
+      - run: python -m unittest discover -s tests -p test_api_contract_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -561,6 +562,8 @@ jobs:
           python -m unittest discover -s tests -p test_jupyter_notebook_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_live_sqlite_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_api_contract_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

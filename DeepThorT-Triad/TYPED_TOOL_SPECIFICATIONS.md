@@ -459,3 +459,7 @@ Files & Images → Export Jupyter notebook. JSON: `{"cells":[{"id":"intro","kind
 ## Live local SQLite (Pass 094)
 
 Files & Images → Query live SQLite. Same JSON fields as the immutable SQLite query (`database`, `query`, `parameters`, `max_rows`), but explicitly reads current committed contents of the reviewed file identity, not a frozen hash. Uses read-only SQLite mode and the existing query authorizer; active WAL requires existing WAL and SHM files, which SQLite may use for its read locks. No database content writes, remote drivers, credentials or persistent connection pool.
+
+## API contract development (Pass 095)
+
+Files & Images → Create API contract. Source JSON has `title`, `version`, `endpoints`: each endpoint includes `path`, lowercase `method`, `id`, `summary`, `request`, `response`, integer `status`. Request/response are arrays of `{name,type,required}` fields (`string`, `integer`, `number`, `boolean`). Creates an OpenAPI 3.1 JSON contract with no running server, authentication, network request or implied implementation.
