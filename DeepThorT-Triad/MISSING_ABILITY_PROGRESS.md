@@ -217,7 +217,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 205 | 333 | Prompt injection resistance | Partial: normalized host-side authority-override indicators, adjacent evidence screening, automatic local/public excerpt and repository observation withholding; original evidence remains intact. Pass 206 CI pending. Native adversarial evaluation and comprehensive boundary coverage outstanding. |
 | 206 | 28 | Mouse control | Partial: bounded native Windows client-coordinate move and click messages to a hidden owned window, exact event oracle, no global input. Pass 207 CI pending. External application input and physical pointer control outstanding. |
 | 207 | 29 | Keyboard control | Partial: bounded native literal ASCII and named key down/up messages to hidden owned window, exact sequence readback and no global input. Pass 208 CI pending. External applications, Unicode and physical key input outstanding. |
-| 208 | 27 | Graphical application operation | Not started in this programme |
+| 208 | 27 | Graphical application operation | Partial: reviewed project executable launched in capped cleanup scope, exact unique window and direct non-password standard Edit control, native literal set/readback. Pass 209 CI pending. External native acceptance and broader application controls outstanding. |
 | 209 | 237 | Background desktop execution | Existing partial; completion not started in this programme |
 | 210 | 4 | Live screen interpretation | Not started in this programme |
 | 211 | 60 | Game controller input simulation | Not started in this programme |
@@ -1063,3 +1063,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 208 — 27 November 2026
 - Extend owned-window native input with literal printable ASCII and fixed navigation/edit key down/up messages, bounded sequences and exact event verification. No global input, clipboard, arbitrary HWND or modifier chords. Typed review UI and native Windows regression test. External application and full keyboard compatibility outstanding. Next rank 208 / ID 27 graphical application operation. No installer.
+
+## Pass 209 — 27 November 2026
+- Add reviewed operation of a freshly launched trusted project executable under the existing Windows cap/cleanup. Exact child PID, unique visible window title/class and direct standard Edit control ID; reject password/read-only controls and verify literal native set/readback. No arbitrary HWND, global input or arbitrary commands. Application may have side effects; not a sandbox. Native own-control regression and exact spec tests; external app acceptance outstanding. Next rank 209 / ID 237 background desktop execution. No installer.

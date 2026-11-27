@@ -941,3 +941,7 @@ Test owned-window mouse accepts `{"actions":[{"kind":"move","x":2,"y":3},{"kind"
 ## Reviewed owned-window keyboard fixture (Pass 208)
 
 Test owned-window keyboard accepts `{"actions":[{"kind":"text","text":"hello"},{"kind":"key","key":"ENTER"}]}`. Printable ASCII and named LEFT, RIGHT, UP, DOWN, BACKSPACE, ENTER, TAB and ESCAPE only; at most 16 actions and 128 messages. Native Win32 character and key-pair messages are verified in the hidden JANUS-owned fixture. Not physical input or external application control. No clipboard, key chords or credentials.
+
+## Reviewed graphical application operation (Pass 209)
+
+Operate reviewed GUI edit accepts `{"executable":"app.exe","window_title":"Fixture","window_class":"TestWindow","control_id":101,"text":"hello"}`. Requires an exact trusted project-local executable up to 16 MiB and an explicitly identified visible top-level window and direct standard Win32 Edit control. Launch under the existing shared cap, verify exact process and window identity, refuse password/read-only controls, send literal text and verify exact readback. The app may display and perform side effects with user rights; this is not a sandbox. Cleanup closes the new process tree. No existing app attachment, arbitrary command, global input, button activation or overall task success claim. External application acceptance pending.
