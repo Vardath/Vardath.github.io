@@ -688,6 +688,7 @@ class DeepThorTDesktop(tk.Tk):
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
+        ttk.Button(data_actions,text='Generate database schema…',command=lambda:self._review_typed_tool('database_schema','.sql','Database: reviewed schema')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1261,7 +1262,8 @@ class DeepThorTDesktop(tk.Tk):
 
     def _review_typed_tool(self,module,suffix,label):
         # Fixed internal registry; no model-provided module or command.
-        allowed={'spreadsheet_edit':('.xlsx','Spreadsheet: reviewed cell edit')}
+        allowed={'spreadsheet_edit':('.xlsx','Spreadsheet: reviewed cell edit'),
+                 'database_schema':('.sql','Database: reviewed schema')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

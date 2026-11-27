@@ -30,7 +30,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 18 | 276 | Document conversion | Source extended: reviewed local TXT/Markdown/DOCX/PDF text-content conversion to TXT/DOCX/PDF, exact source guards and format-specific verification. Pass 019 Linux/Windows green and merged; layout-preserving conversion and model integration outstanding. |
 | 19 | 277 | Document comparison | Source extended: reviewed cross-format extracted-text change reports, source hashes, exact line/paragraph differences and reconstruction checks. Pass 020 CI pending; visual/formatting and semantic comparison outstanding. |
 | 20 | 71 | Editing existing spreadsheets | Source extended: reviewed literal XLSX cell updates to separate file, preserved values/formulas/styles checked on reopen. Pass 021 CI pending; advanced workbook structures, formula recalculation and native integration outstanding. |
-| 21 | 246 | Database schema generation | Existing partial; completion not started in this programme |
+| 21 | 246 | Database schema generation | Source extended: typed SQLite DDL generation with primary, unique and foreign keys, disposable schema execution and metadata verification. Pass 022 CI pending; other dialects, migrations and native model integration outstanding. |
 | 22 | 272 | Create spreadsheets | Existing partial; completion not started in this programme |
 | 23 | 273 | Spreadsheet formula generation | Existing partial; completion not started in this programme |
 | 24 | 280 | CSV processing | Existing partial; completion not started in this programme |
@@ -412,3 +412,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 021 — 27 November 2026
 
 - Add shared typed_project_tool exact JSON/input guard and new-output publication, used by reviewed XLSX literal cell editing with pinned optional openpyxl 3.1.5 and et-xmlfile 2.0.0. Explicit sheet/address/value, duplicate and out-of-range validation; preserve original, refuse formula overwrites and unsupported advanced package parts/structures; strings remain literal. Reopen and compare populated cells, formulas, style arrays and sheet order; no calculation or complete workbook fidelity claim. Four actual workbook regressions. Add reusable fixed-registry typed-tool UI with full specification preview, separate spreadsheet controls, explicit optional install. Pass 019 green/merged PR85. Next rank 21 / ID 246 database schema generation. No installer.
+
+## Pass 022 — 27 November 2026
+
+- Generate SQLite DDL from reviewed typed table/column/key definitions (bounded identifiers, five SQLite affinities, nullability, primary/unique/foreign keys, compatible referenced keys). No arbitrary SQL or live database access. Execute generated script only in disposable in-memory SQLite; compare actual schema metadata, foreign keys, unique keys and integrity before writing new SQL file. Four actual regression cases including constraint enforcement. Existing typed-tool approval and atomic new-output guard reused. Other SQL dialects, migrations, application-specific semantic acceptance and autonomous integration outstanding. Next rank 22 / ID 272 create spreadsheets. No installer.
