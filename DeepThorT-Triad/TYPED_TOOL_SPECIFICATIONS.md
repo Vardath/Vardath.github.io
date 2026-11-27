@@ -1009,3 +1009,7 @@ Restricted Python check accepts `{"document":"src/main.py"}`. Stages exact revie
 ## Reviewed game distribution (Pass 225)
 
 Prepare game distribution accepts `{"artifact":"game.zip","name":"Example","version":"1.2.3","sha256":"<exact build SHA-256>","entrypoint":"Game.exe","release_notes":"First release"}`. Output must be new `Example-1.2.3-distribution.zip` in an existing project directory. Includes exact original game archive, release notes and per-file SHA-256 manifest. Checks bounded safe archive paths, CRC and minimal PE header/architecture. Does not verify signatures, gameplay, store acceptance or perform remote upload. Subject to existing 16 MiB typed artifact/output bounds.
+
+## Reviewed Gmail read/search (Pass 226)
+
+Search/read Gmail accepts `{"operation":"search","account":"owner@example.com","query":"subject:example","limit":5}` or `{"operation":"read","account":"owner@example.com","message_id":"<exact message ID>"}`. Requires a transient Google OAuth access token obtained separately with Gmail read-only scope. Fixed Google HTTPS GET endpoints check account before and after. Search returns at most five metadata results; exact read displays bounded inline plain text only, no HTML or attachments. No provider writes, model dispatch, automatic memory or credential storage. Native provider acceptance and integrated OAuth acquisition pending.

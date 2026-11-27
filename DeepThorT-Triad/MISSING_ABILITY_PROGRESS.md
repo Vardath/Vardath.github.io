@@ -234,7 +234,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 222 | 238 | Operating-system-level execution isolation (existing process-level restrictions; not a security sandbox) | Partial: native optional one-active-process nested Job Object limit, policy readback, fixed baseline and descendant-blocking probe. Pass 223 CI pending; security sandbox remains absent. |
 | 223 | 335 | Restricted execution environments | Partial: fixed reviewed Python syntax worker with exact staged input, allowlisted Windows environment, isolated interpreter flags and single-process nested job. Pass 224 CI pending; arbitrary-code sandbox outstanding. |
 | 224 | 63 | Automated game distribution | Partial: reviewed offline Windows game distribution archive, exact original build, release notes, PE header identity and per-file digests. Pass 225 CI pending; store upload, signing and gameplay acceptance outstanding. |
-| 225 | 168 | Email reading and searching | Not started in this programme |
+| 225 | 168 | Email reading and searching | Partial: explicit Gmail account-bound bounded search and plain-text read via transient OAuth access token, read-only pinned HTTPS, no attachment retrieval or model sharing. Pass 226 CI pending; native provider acceptance and account authorization flow outstanding. |
 | 226 | 169 | Email sending | Not started in this programme |
 | 227 | 170 | Automated inbox organisation | Not started in this programme |
 | 228 | 175 | Cloud storage integration | Not started in this programme |
@@ -1117,3 +1117,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 225 — 28 November 2026
 - Add reviewed offline game distribution bundle for existing exact Windows build ZIP. Audit archive, check explicit PE executable identity, produce per-file hashes and release notes while preserving original build bytes. Non-overwriting verified publication, no install, execution, signature or store claim. Three regression fixtures on both CI hosts. Next rank 225 / ID 168 email reading and searching. No JANUS installer.
+
+## Pass 226 — 28 November 2026
+- Add reviewed Gmail search and exact message read using transient user-supplied OAuth access token, account profile identity before/after, fixed host GET only, bounded results/MIME text. No HTML rendering, attachment retrieval, mutation, model dispatch, token storage or automatic memory. Three mocked provider regressions on both CI hosts. Native live acceptance and integrated OAuth acquisition outstanding. Next rank 226 / ID 169 email sending. No installer.

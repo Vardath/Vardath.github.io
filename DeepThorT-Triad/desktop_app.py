@@ -800,6 +800,8 @@ class DeepThorTDesktop(tk.Tk):
         git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
         ttk.Button(git_extra_actions,text='Prepare game distribution…',command=lambda:self._review_typed_tool('game_distribution','.zip','Development: reviewed game distribution')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Deploy local release…',command=lambda:self._review_typed_tool('software_deployment','.zip','Development: reviewed local release deployment')).pack(side='left',padx=3)
+        mail_actions=ttk.Frame(media_tab);mail_actions.pack(fill='x',pady=2)
+        ttk.Button(mail_actions,text='Search/read Gmail…',command=self._show_gmail_read).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Inspect GitHub CI…',command=self._show_github_ci).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
@@ -1787,6 +1789,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_account(self):
         from deepthort_local.github_account_dialog import show
+        show(self)
+
+    def _show_gmail_read(self):
+        from deepthort_local.gmail_read_dialog import show
         show(self)
 
     def _show_github_ci(self):
