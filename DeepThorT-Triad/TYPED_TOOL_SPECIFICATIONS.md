@@ -877,3 +877,47 @@ Find webpage by heading accepts `{"seed":"https://example.org/docs/","path_prefi
 ## Reviewed static control selection (Pass 198)
 
 Select webpage control accepts `{"inspection":"elements.json","locator":"/html[1]/body[1]/a[1]","tag":"a","action":"read_link","path_prefix":"/docs/","destination":"https://example.org/docs/install/"}`. Use a prior static element inspection. Read-link action requires an explicit exact same-host directory destination, robots permission and identical source response hash and selected row before the destination read. `identify` with `destination:null` is offline identification of an observed anchor, button, input, textarea, select, label or form; no current state claim. No live DOM click, input, form submission, credentials, redirects or script execution.
+
+## Reviewed static link file download (Pass 199)
+
+Download reviewed link accepts an exact observed anchor in a prior static element inspection, for example:
+
+```json
+{"inspection":"elements.json","locator":"/html[1]/body[1]/a[1]","path_prefix":"/docs/","destination":"https://example.org/docs/manual.pdf","mime":"application/pdf","max_bytes":8388608,"expected_sha256":null}
+```
+
+Replace the locator and destination with exact observed values. Use a known lowercase 64-hex SHA-256 if available; null means the received bytes are hashed but not compared to an expected publisher digest. Approved same-host robots checks and exact source revalidation precede one public GET. Maximum eight MiB; accepted MIME types include octet-stream, PDF, ZIP, text/plain, CSV, JSON, PNG, JPEG, WebP, WAV, MPEG audio and MP4. New ZIP contains inert `payload.bin` and `receipt.json`, not a trusted executable or automatically opened file. MIME is the observed response type, not content-safety validation. No redirects, compression, credentials, actual browser download events or automatic extraction.
+
+## Reviewed file upload (Pass 200)
+
+Upload reviewed file accepts a project-relative existing file and exact public HTTPS destination:
+
+```json
+{"url":"https://example.org/upload","file":"public-document.pdf","field":"document","filename":"manual.pdf"}
+```
+
+The review identifies the complete file, its byte count, hash, disclosed filename, multipart field and endpoint. Approve only after inspecting the actual file and determining that disclosure is appropriate. One multipart POST may change remote state. Up to four MiB of supported text, CSV, PDF, image, audio, video or OOXML office files; exact source hash and project exclusions enforced. No credentials, cookies, redirect, retry or browser. New JSON reports observed HTTP status, response size and hash, not server storage or application success. On interrupted or failed receipt, inspect the remote outcome before any retry.
+
+## Reviewed static form value preparation (Pass 201)
+
+Prepare form values uses the previous static element inspection, with literal values mapped to exact field locators:
+
+```json
+{"inspection":"elements.json","form_locator":"/html[1]/body[1]/form[1]","path_prefix":"/docs/","fields":[{"locator":"/html[1]/body[1]/form[1]/input[1]","name":"title","value":"Example title"}]}
+```
+
+Choose actual locators and names from the prior report. Supports at most 24 simple text-like inputs; disabled, credential-named, duplicate and foreign controls are refused. The new JSON includes exact field values, required visible fields not mapped and an encoded preview. This is historical local preparation; hidden fields, action URL, live browser association, browser validity and submission are not established. Do not include secrets; the local specification and report retain literal values.
+
+## Isolated Chromium DevTools integration (Pass 202)
+
+Probe browser DevTools accepts `{"browser":"chrome"}` or `{"browser":"edge"}`. Requires a supported separately installed Windows browser in a standard installation folder and `websocket-client` installed in the Python environment executing JANUS. No automatic dependency installation. Starts a new headless browser profile, not your ordinary browser session, under the existing Windows job cap and nested cleanup scope. Checks the exact ephemeral loopback endpoint from that new profile and executes fixed Browser.getVersion and Target.getTargets commands. The report verifies the disposable blank page and protocol metadata. Network-reducing startup flags are not a host security sandbox. No website navigation, credential handling, arbitrary developer console or external debugging target.
+
+## Reviewed native browser form replay (Pass 203)
+
+Replay form in browser accepts:
+
+```json
+{"browser":"chrome","form_receipt":"prepared-form.json"}
+```
+
+Use the reviewed JSON output from Pass 201. The exact receipt and installed browser are rechecked. JANUS reconstructs only simple text-like input names as an inert local page with no form action or remote resources, attaches through the disposable DevTools connection, focuses each field, inserts the literal text and verifies actual DOM values via a fixed host-owned readback expression. Native browser commands are implemented; live execution on the owner's machine is still required. This does not fill the original website, submit anything, reuse an authenticated profile or establish browser security isolation. The replay report contains only counts and verification metadata, not literal field values.

@@ -1045,3 +1045,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 203 — 27 November 2026
 - Extend isolated native DevTools path with reviewed inert form replay from exact prior static preparation receipt. Use fixed target attachment, frame document, generated no-network markup, DOM focus, Input.insertText and fixed DOM value readback; no raw website HTML, scripts, live navigation or submission. Reuse runtime/receipt guards and cleanup. Move new browser tool buttons into a separate row. Two protocol fixture regressions, actual native browser execution still unverified. Next rank 203 / ID 36 operation of authenticated browser sessions. No installer.
+
+### Pass 203 documentation follow-up
+- Document exact JSON specifications, approval scope, output formats, optional browser dependency and native acceptance limitations for Passes 199–203 in TYPED_TOOL_SPECIFICATIONS.md. No runtime change or installer.
