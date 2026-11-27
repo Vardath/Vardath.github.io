@@ -152,7 +152,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 140 | 312 | Automatic mesh repair | Partial: reviewed exact-coordinate welding, degenerate/duplicate face removal, unreferenced vertex removal, consistent relative winding and manifold fan verification. Pass 141 CI pending. Holes, self-intersections, outward orientation, rich attributes and native visual acceptance outstanding. |
 | 141 | 319 | CAD design through code | Partial: reviewed convex parametric extrusion, editable numeric OpenSCAD source and independently generated closed OBJ with volume/geometry checks in ZIP. Pass 142 CI pending. Native CAD import/execution, CSG, complex solids and manufacturing acceptance outstanding. |
 | 142 | 320 | 3D scene composition | Partial: reviewed 1–6 separate static GLB nodes from existing OBJ conversion, explicit translation/rotation/scale and verified embedded geometry/accessor segments. Pass 143 CI pending. Materials, lighting, hierarchy, collisions, animation and native visual acceptance outstanding. |
-| 143 | 321 | Automated lighting | Existing partial; completion not started in this programme |
+| 143 | 321 | Automated lighting | Partial: reviewed automatic view-relative three-point directional light rig, neutral/warm/cool presets and intensity, KHR_lights_punctual metadata with verified geometry preservation. Pass 144 CI pending. Native renderer, exposure, shadows and visual quality outstanding. |
 | 144 | 322 | Automated rendering | Existing partial; completion not started in this programme |
 | 145 | 323 | Game-ready asset optimisation | Existing partial; completion not started in this programme |
 | 146 | 162 | Automatic texture mapping | Not started in this programme |
@@ -857,3 +857,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 143 — 27 November 2026
 - Reuse reviewed OBJ→GLB conversion for 1–6 individually named mesh nodes with explicit translation, normalized XYZW quaternion and positive scale. Preserve local UVs and float32 precision receipts, merge self-contained geometry buffers with adjusted accessor/view offsets, verify exact scene document and each binary segment, guard every source and publish a new GLB. Three fixtures including stale second source. No rendering, collision, material, parent hierarchy or animation claim. Next rank 143 / ID 321 automated lighting. No installer.
+
+## Pass 144 — 27 November 2026
+- Extend reviewed scene composition with deterministic view-relative directional key/fill/rim lighting, explicit view azimuth and bounded key lux, preset neutral/warm/cool RGB values, normalized quaternions checked against direction, valid glTF punctual-light extension and exact geometry/document roundtrip. Three fixtures including stale source, no overwrite and orientation. No arbitrary code, rendered exposure/shadow or visual quality claim. Next rank 144 / ID 322 automated rendering. No installer.

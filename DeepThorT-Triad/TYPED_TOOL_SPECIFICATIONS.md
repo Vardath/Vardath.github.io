@@ -651,3 +651,7 @@ Files & Images → Parametric CAD. JSON keys: `polygon` (3–128 distinct strict
 ## Reviewed 3D scene composition (Pass 143)
 
 Files & Images → Compose 3D scene. JSON keys: `objects` (1–6 entries, each with distinct ASCII `name`, project-relative `mesh` OBJ, three-number `translation` within ±10,000, normalized `rotation_xyzw` quaternion, positive three-number `scale` 0.001–1000), `max_position_error` (1e-12–1 local units). Reuse existing OBJ conversion, retain local UVs when complete, emit one self-contained GLB with separate mesh nodes and independently checked local geometry segments. No materials, lights, collision, animation or rendering verification.
+
+## Reviewed automatic lighting (Pass 144)
+
+Files & Images → Auto-light 3D scene. Use Pass 143 scene specification plus `view_azimuth_deg` (−180–180, relative to +Z around +Y), `key_lux` (1–20,000) and `preset` (`neutral`, `warm`, `cool`). Adds deterministic key/fill/rim directional lights to self-contained GLB using KHR_lights_punctual. Preserves original scene geometry; light orientations and exact metadata checked. Compatible importer must support the extension. No actual render, exposure/shadow or visual-quality acceptance.

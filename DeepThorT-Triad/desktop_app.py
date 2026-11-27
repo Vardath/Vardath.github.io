@@ -841,6 +841,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(blender_review_actions,text='Parametric CAD…',command=lambda:self._review_typed_tool('parametric_cad','.zip','CAD: reviewed convex extrusion')).pack(side='left',padx=3)
         scene_review_actions=ttk.Frame(media_tab);scene_review_actions.pack(fill='x',pady=2)
         ttk.Button(scene_review_actions,text='Compose 3D scene…',command=lambda:self._review_typed_tool('scene_composition','.glb','Scene: reviewed composition')).pack(side='left',padx=3)
+        ttk.Button(scene_review_actions,text='Auto-light 3D scene…',command=lambda:self._review_typed_tool('automatic_lighting','.glb','Scene: reviewed automatic lighting')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1573,6 +1574,7 @@ class DeepThorTDesktop(tk.Tk):
                  'mesh_repair':('.obj','Mesh: reviewed repair'),
                  'parametric_cad':('.zip','CAD: reviewed convex extrusion'),
                  'scene_composition':('.glb','Scene: reviewed composition'),
+                 'automatic_lighting':('.glb','Scene: reviewed automatic lighting'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),
