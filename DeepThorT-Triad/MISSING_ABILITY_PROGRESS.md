@@ -235,7 +235,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 223 | 335 | Restricted execution environments | Partial: fixed reviewed Python syntax worker with exact staged input, allowlisted Windows environment, isolated interpreter flags and single-process nested job. Pass 224 CI pending; arbitrary-code sandbox outstanding. |
 | 224 | 63 | Automated game distribution | Partial: reviewed offline Windows game distribution archive, exact original build, release notes, PE header identity and per-file digests. Pass 225 CI pending; store upload, signing and gameplay acceptance outstanding. |
 | 225 | 168 | Email reading and searching | Partial: explicit Gmail account-bound bounded search and plain-text read via transient OAuth access token, read-only pinned HTTPS, no attachment retrieval or model sharing. Pass 226 CI pending; native provider acceptance and account authorization flow outstanding. |
-| 226 | 169 | Email sending | Not started in this programme |
+| 226 | 169 | Email sending | Partial: explicitly reviewed single-recipient plain-text Gmail send, account identity, transient OAuth token, one POST and no retry on uncertain outcome. Pass 227 CI pending; live provider acceptance and integrated OAuth acquisition outstanding. |
 | 227 | 170 | Automated inbox organisation | Not started in this programme |
 | 228 | 175 | Cloud storage integration | Not started in this programme |
 | 229 | 183 | Social media publishing | Not started in this programme |
@@ -1120,3 +1120,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 226 — 28 November 2026
 - Add reviewed Gmail search and exact message read using transient user-supplied OAuth access token, account profile identity before/after, fixed host GET only, bounded results/MIME text. No HTML rendering, attachment retrieval, mutation, model dispatch, token storage or automatic memory. Three mocked provider regressions on both CI hosts. Native live acceptance and integrated OAuth acquisition outstanding. Next rank 226 / ID 169 email sending. No installer.
+
+## Pass 227 — 28 November 2026
+- Add reviewed Gmail compose/send dialog, exact account/recipient/subject/body confirmation, bounded MIME encoding, fixed account-verified HTTPS request, provider receipt and no automatic retries. No attachments, CC/BCC, bulk mail, token storage or delivery claim. Three mocked regressions on both hosts. Native live acceptance and integrated OAuth acquisition outstanding. Next rank 227 / ID 170 automated inbox organisation. No installer.
