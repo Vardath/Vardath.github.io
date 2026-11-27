@@ -745,6 +745,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(development_actions,text='Inspect Python language server…',command=lambda:self._review_typed_tool('language_server','.json','Development: reviewed language server')).pack(side='left',padx=3)
         ttk.Button(development_actions,text='Learn documented API interface…',command=lambda:self._review_typed_tool('interface_learning','.json','Development: reviewed interface evidence')).pack(side='left',padx=3)
         ttk.Button(development_actions,text='Refactor Python local name…',command=lambda:self._review_typed_tool('code_refactoring','.py','Development: reviewed local refactor')).pack(side='left',padx=3)
+        ttk.Button(development_actions,text='Create GitHub draft PR…',command=self._show_github_draft).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1403,6 +1404,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _web_research_dialog(self):
         from deepthort_local.web_research_dialog import show
+        show(self)
+
+    def _show_github_draft(self):
+        from deepthort_local.github_draft_dialog import show
         show(self)
 
     def _review_typed_tool(self,module,suffix,label):
