@@ -822,3 +822,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 134 — 27 November 2026
 - Add dependency-free reviewed monophonic audio-to-MIDI: bounded 8/16 kHz mono PCM16, 3–20 seconds, explicit BPM, MIDI pitch range and RMS gate. YIN-style periodicity estimation and stable-frame grouping omit unstable candidates; timed note-on/off events preserve rests. Canonical single-track MIDI byte roundtrip, source/output guards, new file, no overwrite. Three regression cases including known sine pitches and gaps, silence and stale inputs. Separate profile from existing Gemma score generator; no changes to five-model workflow. Polyphonic transcription, repeated same-pitch articulation, listening/real recording accuracy outstanding. Next rank 134 / ID 302 musical arrangement. No installer.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
