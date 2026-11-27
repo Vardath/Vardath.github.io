@@ -587,3 +587,7 @@ Files & Images → Podcast generation. Review JSON containing `title`, `descript
 ## Short audiobook production (Pass 127)
 
 Files & Images → Audiobook generation. Review JSON with `title`, `author`, `culture`, exact installed `voice_id`, `pause_ms` and `chapters` containing `title` and `passages` arrays. Maximum six chapters, twelve passages, 6000 characters and 300 seconds total speech. Output new ZIP containing numbered chapter WAVs, `book.json` with measured timings and hashes, and `manuscript.txt`. No auto-publication or claimed listening quality; this is a short manuscript workflow, not yet a full-length resumable audiobook pipeline.
+
+## Multi-speaker dialogue production (Pass 128)
+
+Files & Images → Multi-speaker dialogue. Review JSON with `title`, `description`, `pause_ms` and 2–8 `turns` containing `speaker`, `culture`, exact installed `voice_id`, and `text`. Two to four distinct scripted speaker labels with stable, distinct installed voices; no podcast section constraints. New ZIP with `dialogue.wav`, `dialogue.json` and `transcript.txt`, including measured cue timings. No identification of recorded speakers or voice cloning; no autonomous script writing or online publication. Native listening acceptance outstanding.
