@@ -107,7 +107,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 95 | 248 | API testing | Source extended: real reviewed loopback GET tests, explicit status/JSON scalar checks, response hashes, latency and bounded bodies; no redirects or credentials. Pass 096 CI pending. Remote endpoints, authenticated and mutation suites outstanding. |
 | 96 | 252 | Live application monitoring | Source extended: finite live local endpoint health samples, timestamped status/JSON checks, latency limits, partial deadline handling and measured summaries. Pass 097 CI pending. Persistent monitoring, process metrics, alerts and recovery outstanding. |
 | 97 | 54 | Database migration management | Source implemented: exact standalone SQLite snapshot migration, incremental user_version, typed nullable-column/nonunique-index changes, integrity, foreign-key and row-count checks, new DB output and untouched original. Pass 098 CI pending. Live deployment, destructive changes and multi-engine migrations outstanding. |
-| 98 | 41 | Language-server integration | Not started in this programme |
+| 98 | 41 | Language-server integration | Source implemented: bounded real LSP stdio lifecycle, bundled Python AST server, syntax diagnostics and nested direct document symbols, UTF-16 positions and exact source guard. Pass 099 CI pending. External servers, type checking, completion, references and persistent sessions outstanding. |
 | 99 | 235 | Learn application interfaces | Existing partial; completion not started in this programme |
 | 100 | 240 | Code refactoring | Existing partial; completion not started in this programme |
 | 101 | 241 | Automated debugging | Existing partial; completion not started in this programme |
@@ -708,3 +708,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 098 — 27 November 2026
 - Add governed additive SQLite migration management on exact standalone disposable snapshots; increment user_version, add nullable columns and nonunique indexes, reject arbitrary SQL, triggers, views and generated columns. Verify schema, row counts, integrity and foreign keys before publication and after serialization. Original untouched; no live deployment. Three regressions. Passes 092–093 green and merged. Next rank 98 / ID 41 language-server integration. No installer.
+
+## Pass 099 — 27 November 2026
+- Add fixed local LSP stdio client/server with initialize, didOpen, diagnostics, documentSymbol, shutdown and exit; isolated child parses exact source only, no import/execution. UTF-16 positions, bounded framing and timeout. Three regressions. Pass 096 both CI jobs green but held behind 094 and 095. Next rank 99 / ID 235 learn application interfaces. No installer.

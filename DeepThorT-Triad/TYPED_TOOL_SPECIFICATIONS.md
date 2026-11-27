@@ -475,3 +475,7 @@ Files & Images → Sample application health. JSON: `{"port":8080,"path":"/healt
 ## Additive SQLite migrations (Pass 098)
 
 Files & Images → Migrate SQLite snapshot. JSON: `{"database":"old.db","from_version":0,"to_version":1,"steps":[{"operation":"add_nullable_column","table":"items","column":"notes","type":"TEXT"},{"operation":"create_index","table":"items","name":"items_notes","columns":["notes"]}]}`. New `.db` only; exact standalone snapshot with no WAL/journal, increment by one, bounded additive operations, schema/integrity/foreign-key and row-count checks. Source retained as rollback copy; no live migration or application compatibility guarantee.
+
+## Local Python language server (Pass 099)
+
+Files & Images → Inspect Python language server. JSON: `{"document":"src/module.py"}`. Real bounded JSON-RPC/LSP stdio lifecycle using the bundled Python AST language server. Syntax diagnostics and direct class/function symbols, nested where directly declared; UTF-16 positions. No execution/imports, external language servers, type checking, completion or project-wide references.

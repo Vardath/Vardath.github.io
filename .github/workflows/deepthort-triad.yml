@@ -206,6 +206,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_api_testing_ability.py -v
       - run: python -m unittest discover -s tests -p test_application_monitoring_ability.py -v
       - run: python -m unittest discover -s tests -p test_database_migration_ability.py -v
+      - run: python -m unittest discover -s tests -p test_language_server_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -573,6 +574,8 @@ jobs:
           python -m unittest discover -s tests -p test_application_monitoring_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_database_migration_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_language_server_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
