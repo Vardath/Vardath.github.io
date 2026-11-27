@@ -816,3 +816,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 132 — 27 November 2026
 - Add optional reviewed installed sherpa-onnx source-separation CLI with one pinned official UVR_MDXNET_1_9703.onnx asset (upstream SHA-256 and size), CPU one thread, existing 512 MiB auxiliary limit and foreground reserve. Short stereo 44.1 kHz PCM16 clips (3–15 s), exact source/engine/model review, cancellable bounded execution, two distinct WAV files and ZIP with frame alignment, hashes and reconstruction error. Three fixture regressions; real model execution and listening quality unverified; fail closed if cap cannot admit model. General source isolation also gains a specific vocals/accompaniment backend, not arbitrary separation. Next rank 132 / ID 132 instrument isolation. No installer.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
