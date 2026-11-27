@@ -195,7 +195,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 183 | 259 | Procedural world generation | Partial: reviewed seeded adjacent-region graph with exact extra links, deterministic biome labels and independent connected playable-level specifications, verified region/objective reachability. Pass 184 CI pending. Native world travel, terrain and engine integration outstanding. |
 | 184 | 260 | NPC behaviour generation | Partial: reviewed portable executable Python grid controller with patrol, path-distance pursuit and return, bounded fixture simulation and editable verified archive. Pass 185 CI pending. Native engine integration and richer NPC behaviour outstanding. |
 | 185 | 261 | Collision testing | Partial: reviewed exact rational continuous swept 2D AABB fixtures, first simultaneous contact IDs, contact times and explicit failed expectations with nonzero CLI result. Pass 186 CI pending. Native engine, rotated/3D shapes and response testing outstanding. |
-| 186 | 262 | Android game compilation | Existing partial; completion not started in this programme |
+| 186 | 262 | Android game compilation | Partial: explicitly reviewed Godot Android template debug export from bounded trusted archive, exact source/runtime guards, staged import/export under shared Windows cap, APK structural/CRC verification and no-overwrite publication. Pass 187 CI pending. Native SDK/templates, signature, device execution and broader Gradle/release builds outstanding. |
 | 187 | 55 | Container creation and management | Not started in this programme |
 | 188 | 210 | Integrated five-model acceptance testing | Not started in this programme |
 | 189 | 217 | Autonomous self-evaluation | Existing partial; completion not started in this programme |
@@ -994,3 +994,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 186 — 27 November 2026
 - Add reviewed continuous swept 2D axis-aligned rectangle collision fixtures against static obstacles. Exact rational time slabs detect tunnelling, simultaneous first contacts, initial/endpoint touching and misses; compare independent expected obstacle IDs, record failed cases and nonzero CLI status. Source guard and new JSON report only. Three regression tests covering geometry, failed expectations, CLI and stale inputs. Native engine, 3D/rotated geometry and physical responses outstanding. Next rank 186 / ID 262 Android game compilation. No installer.
+
+## Pass 187 — 27 November 2026
+- Add reviewed Godot Android debug compilation/export of trusted project ZIP with explicit installed-template Android preset. Bound archive members, paths and size, require separate installed Godot, stage source privately, launch fixed import/export commands under shared Windows cap and nested cleanup, check time/log/pressure, verify APK manifest/DEX structure and CRC before new output. Fixture tests for archive/preset/command and APK structure; no real SDK/templates/device/signature acceptance. No automatic install, release signing or Gradle custom builds. Next rank 187 / ID 55 container creation and management. No installer.

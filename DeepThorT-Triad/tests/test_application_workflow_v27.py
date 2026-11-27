@@ -274,3 +274,42 @@ class ApplicationWorkflowTests(unittest.TestCase):
             self.assertEqual(json.loads(p.stdout)['failed'],1)
             self.assertTrue((root/'report.json').is_file())
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_android_game_archive_and_command(self):
+        import io,zipfile
+        from deepthort_local.android_game_compilation import archive_files,commands
+        preset=b'[preset.0]\nname="Android"\nplatform="Android"\nexport_filter="all_resources"\n[preset.0.options]\ngradle_build/use_gradle_build=false\n'
+        def bundle(name='game.gd',cfg=preset):
+            out=io.BytesIO()
+            with zipfile.ZipFile(out,'w') as z:
+                z.writestr('project.godot','config_version=5')
+                z.writestr('export_presets.cfg',cfg)
+                z.writestr(name,'extends Node2D')
+            return out.getvalue()
+        self.assertIn('game.gd',archive_files(bundle(),'Android'))
+        with self.assertRaises(ValueError):archive_files(bundle('../escape.gd'),'Android')
+        with self.assertRaises(ValueError):archive_files(bundle(cfg=preset.replace(b'false',b'true')),'Android')
+        with self.assertRaises(ValueError):archive_files(bundle(cfg=preset+b'keystore/release_password="secret"\n'),'Android')
+        with self.assertRaises(ValueError):archive_files(bundle(),'Other')
+        argv=commands('Godot.exe','stage','out.apk','Android')
+        self.assertEqual(argv[0],['Godot.exe','--headless','--path','stage','--editor','--import'])
+        self.assertEqual(argv[1],['Godot.exe','--headless','--path','stage','--export-debug','Android','out.apk'])
+
+    def test_android_game_apk_structure(self):
+        import tempfile,zipfile
+        from pathlib import Path
+        from deepthort_local.android_game_compilation import inspect_apk
+        with tempfile.TemporaryDirectory() as tmp:
+            apk=Path(tmp)/'test.apk'
+            with zipfile.ZipFile(apk,'w') as z:
+                z.writestr('AndroidManifest.xml',b'\x03\x00\x08\x00fixture')
+                z.writestr('classes.dex',b'dex\n035\x00fixture')
+            r=inspect_apk(apk)
+            self.assertTrue(r['apk_structure_verified'])
+            self.assertFalse(r['signature_verified'])
+            self.assertFalse(r['device_execution_verified'])
+            with zipfile.ZipFile(apk,'w') as z:
+                z.writestr('AndroidManifest.xml','not binary')
+                z.writestr('classes.dex',b'dex\n035\x00fixture')
+            with self.assertRaises(ValueError):inspect_apk(apk)
