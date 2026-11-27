@@ -66,7 +66,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 54 | 294 | Logo generation | Source extended: editable bounded vector logo generation from reviewed shapes and literal wordmark specifications; Pass 055 CI pending. Visual, font-fit, originality and model-directed acceptance outstanding. |
 | 55 | 295 | Infographic generation | Source extended: editable bounded fact-card SVG with explicit source note and verified layout text; Pass 056 CI pending. Claim, rendering and model-directed acceptance outstanding. |
 | 56 | 297 | Batch image processing | Source extended: reviewed 2–6 PNG batch enhancement and bounded aspect-preserving resize with verified atomic ZIP and per-source manifest; Pass 057 CI pending. Broader formats, quality and model-directed acceptance outstanding. |
-| 57 | 299 | Video trimming and sequencing | Existing partial; completion not started in this programme |
+| 57 | 299 | Video trimming and sequencing | Source extended: reviewed silent MP4 frame-index trimming and ordered sequence with lossless RGB decode comparison; Pass 058 CI pending. Audio, wider formats, longer media and native playback acceptance outstanding. |
 | 58 | 90 | Image background removal | Not started in this programme |
 | 59 | 91 | Image background replacement | Not started in this programme |
 | 60 | 13 | Optical character recognition (OCR) | Not started in this programme |
@@ -560,3 +560,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 057 — 27 November 2026
 
 - Add reviewed multi-source PNG batch enhancement and optional maximum-edge downscaling. Use existing image tools and source guards, preserve originals, verify each decoded PNG and archive member, and atomically publish one new ZIP with exact source/output hashes and operation manifest. Four regression cases; no visual quality or model-directed acceptance claim. Next rank 57 / ID 299 video trimming and sequencing. No installer.
+
+## Pass 058 — 27 November 2026
+
+- Add bounded short silent H.264 MP4 editing: exact inclusive/exclusive frame intervals, ordered distinct sources, matching dimensions/rate, reviewed source and installed codec guards, actual FFmpeg decode and lossless RGB encoding with exact decoded sequence comparison. Four fixture regressions. Unsupported streams refused rather than silently dropped; audio editing, broader formats and real playback/model integration remain outstanding. Pass 046 green on source and Windows and merged (PR 112, run 45945008280). Next rank 58 / ID 90 image background removal. No installer.
