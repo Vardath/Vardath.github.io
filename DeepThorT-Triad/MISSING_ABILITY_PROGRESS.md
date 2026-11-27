@@ -33,7 +33,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 21 | 246 | Database schema generation | Source extended: typed SQLite DDL generation with primary, unique and foreign keys, disposable schema execution and metadata verification. Pass 022 CI pending; other dialects, migrations and native model integration outstanding. |
 | 22 | 272 | Create spreadsheets | Source extended: typed multi-sheet XLSX production, styled headers, filters, freeze panes, literal cells and number formats with reopen verification. Pass 023 CI pending; charts, richer layouts and native model integration outstanding. |
 | 23 | 273 | Spreadsheet formula generation | Source extended: typed allowlisted same-sheet formulas with exact generated preview, explicit replacement, new-formula cycle checks and verified XLSX output. Pass 024 CI pending; calculation and existing dependency analysis outstanding. |
-| 24 | 280 | CSV processing | Existing partial; completion not started in this programme |
+| 24 | 280 | CSV processing | Source extended: bounded UTF-8 CSV column projection/reorder, row windows and delimiter conversion with exact roundtrip checks. Pass 025 CI pending; richer transforms and model integration outstanding. |
 | 25 | 281 | SQL querying | Existing partial; completion not started in this programme |
 | 26 | 283 | Data cleaning | Existing partial; completion not started in this programme |
 | 27 | 284 | Data transformation | Existing partial; completion not started in this programme |
@@ -424,3 +424,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 024 — 27 November 2026
 
 - Generate same-sheet Excel formula text from typed expressions: arithmetic/comparisons, SUM/AVERAGE/MIN/MAX/COUNT/COUNTA, ROUND/ABS/IF, cell/range references and escaped literals. Bounds, explicit overwrite of occupied cells, reject new-formula dependency cycles and external/unknown functions. Preview exact generated expressions, hash-bind reviewed source and workbook, reopen output to verify formula strings and other populated cells/styles. No formula execution, calculation, existing formula dependency analysis or complete Excel compatibility claim. Four actual workbook regression cases. Update typed-tool specification guide. Next rank 24 / ID 280 CSV processing. No installer.
+
+## Pass 025 — 27 November 2026
+
+- Reviewed local CSV projection, column order, one-based row window and explicit delimiter conversion. Strict UTF-8 parsing with rectangular records, distinct nonblank headers and bounded fields/rows/cells. Retain text including leading zeros and quoted multiline values; reopen output and compare every cell. Explicit reject/preserve policy for formula-like cells; preserve mode carries spreadsheet interpretation risk. Original and exact typed spec remain hash-bound; no overwrite or type inference. Four actual CSV regressions. Next rank 25 / ID 281 SQL querying. No installer.

@@ -690,6 +690,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate formulas…',command=lambda:self._review_typed_tool('spreadsheet_formula','.xlsx','Spreadsheet: reviewed formulas')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Create spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_create','.xlsx','Spreadsheet: reviewed creation')).pack(side='left',padx=3)
+        ttk.Button(data_actions,text='Process CSV…',command=lambda:self._review_typed_tool('csv_processing','.csv','Data: reviewed CSV processing')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate database schema…',command=lambda:self._review_typed_tool('database_schema','.sql','Database: reviewed schema')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1267,7 +1268,8 @@ class DeepThorTDesktop(tk.Tk):
         allowed={'spreadsheet_edit':('.xlsx','Spreadsheet: reviewed cell edit'),
                  'database_schema':('.sql','Database: reviewed schema'),
                  'spreadsheet_create':('.xlsx','Spreadsheet: reviewed creation'),
-                 'spreadsheet_formula':('.xlsx','Spreadsheet: reviewed formulas')}
+                 'spreadsheet_formula':('.xlsx','Spreadsheet: reviewed formulas'),
+                 'csv_processing':('.csv','Data: reviewed CSV processing')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
