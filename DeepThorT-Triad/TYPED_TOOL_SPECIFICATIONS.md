@@ -993,3 +993,7 @@ Inspect GitHub CI accepts JSON `{"repository":"Owner/Repo","run_id":123,"commit"
 ## Reviewed local software deployment (Pass 221)
 
 Deploy local release accepts `{"artifact":"artifact.zip","name":"Example","version":"1.2.3","sha256":"<exact artifact SHA-256>"}`. Choose an existing project-local release directory and new filename `Example-1.2.3.zip`. Verifies the exact source digest, archive bounds, member paths and CRC, then atomically publishes identical bytes without overwriting. Earlier releases remain intact. No extraction, installation, execution, remote transfer or CI acceptance claim.
+
+## Reviewed multiple work environments (Pass 222)
+
+Manage worktrees → BATCH: choose an existing parent outside all registered worktrees, then supply JSON `[{"branch":"first-work","name":"first"},{"branch":"second-work","name":"second"}]` with two or three unused local branches. Exact reviewed heads and paths; existing queue creates separate checkouts sequentially, rechecking complete inventory before and after each creation. Stops at first failure; inspect actual worktrees before retry. No automatic deletion, remote push, project assignment or OS security isolation; Git metadata remains shared.

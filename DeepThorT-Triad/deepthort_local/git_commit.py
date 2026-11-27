@@ -422,6 +422,73 @@ def apply_worktree(executable,root,plan):
     return {'operation':plan['operation'],'path':str(path),'branch':target['ref'],'commit':target['head'],
             'branch_deleted':False,'remote_published':False,'security_sandbox':False,'tests_verified':False}
 
+
+def worktree_batch_plan(executable,root,review,assignments):
+    """Approve two or three independent, unused local branch checkouts."""
+    if not isinstance(assignments,list) or not 2<=len(assignments)<=3:
+        raise ValueError('Choose two or three work environments')
+    current=worktree_inventory(executable,root)
+    if current!=review:raise ValueError('Worktree inventory changed; review again')
+    targets=[]
+    for item in assignments:
+        if not isinstance(item,dict) or set(item)!={'branch','parent','name'}:
+            raise ValueError('Choose exact branch, parent and new directory name')
+        target=worktree_plan(executable,root,current,'add',**item)['target']
+        path=Path(target['destination']['path'])
+        if any(t['ref']==target['ref'] or _overlap(path,Path(t['destination']['path'])) for t in targets):
+            raise ValueError('Work environments must use distinct branches and nonoverlapping directories')
+        targets.append(target)
+    return {'schema':'janus-git-worktree-batch-v1','identity':current['identity'],
+            'inventory_sha':hashlib.sha256(json.dumps(current,sort_keys=True).encode()).hexdigest(),
+            'targets':targets,'expires_at':int(time.time())+1800}
+
+def apply_worktree_batch(executable,root,plan):
+    if not isinstance(plan,dict) or set(plan)!={'schema','identity','inventory_sha','targets','expires_at'} or plan['schema']!='janus-git-worktree-batch-v1':
+        raise ValueError('Invalid worktree batch plan')
+    if type(plan['expires_at']) is not int or not time.time()<plan['expires_at']<=time.time()+1800:
+        raise ValueError('Worktree batch approval expired')
+    initial=worktree_inventory(executable,root)
+    if initial['identity']!=plan['identity'] or hashlib.sha256(json.dumps(initial,sort_keys=True).encode()).hexdigest()!=plan['inventory_sha']:
+        raise ValueError('Repository or worktree inventory changed since approval')
+    targets=plan['targets']
+    if not isinstance(targets,list) or not 2<=len(targets)<=3:raise ValueError('Invalid target count')
+    assignments=[]
+    for t in targets:
+        if not isinstance(t,dict) or set(t)!={'destination','ref','head'} or not isinstance(t['destination'],dict) or not isinstance(t['ref'],str) or not t['ref'].startswith('refs/heads/'):
+            raise ValueError('Invalid reviewed target')
+        dest=t['destination']
+        if not all(isinstance(dest.get(k),str) for k in ('path','parent')):raise ValueError('Invalid destination')
+        assignments.append({'branch':t['ref'][11:],'parent':dest['parent'],'name':Path(dest['path']).name})
+    if worktree_batch_plan(executable,root,initial,assignments)['targets']!=targets:
+        raise ValueError('Reviewed targets changed')
+    expected={r['path']:r for r in initial['worktrees']['rows']}
+    created=[]
+    for assignment,target in zip(assignments,targets):
+        try:
+            if time.time()>=plan['expires_at']:raise ValueError('Batch approval expired')
+            actual=worktree_inventory(executable,root)
+            if (actual['identity']!=initial['identity'] or actual['branches']!=initial['branches']
+                or {r['path']:r for r in actual['worktrees']['rows']}!=expected):
+                raise ValueError('Unrelated worktree or branch change detected')
+            single=worktree_plan(executable,root,actual,'add',**assignment)
+            if single['target']!=target:raise ValueError('Reviewed target changed')
+            receipt=apply_worktree(executable,root,single)
+            after=worktree_inventory(executable,root)
+            rows={r['path']:r for r in after['worktrees']['rows']}
+            path=target['destination']['path'];row=rows.get(path)
+            if (not row or row['ref']!=target['ref'] or row['head']!=target['head'] or
+                any(row[k] for k in ('locked','prunable','detached','bare')) or
+                {p:r for p,r in rows.items() if p!=path}!=expected or
+                after['identity']!=initial['identity'] or after['branches']!=initial['branches']):
+                raise ValueError('Unexpected post-creation inventory')
+            expected[path]=row;created.append(receipt)
+        except (OSError,ValueError,subprocess.SubprocessError) as exc:
+            raise ValueError('Worktree batch stopped after '+str(len(created))+' verified creations; inspect actual inventory before retry. No automatic rollback: '+str(exc)[:220]) from exc
+    return {'status':'independent_worktrees_created','worktrees':created,
+            'shared_repository_metadata':True,'security_sandbox':False,'remote_published':False,
+            'automatic_project_assignment':False,'tests_verified':False}
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--git',required=True);parser.add_argument('--root',required=True);parser.add_argument('--plan',required=True)
@@ -432,6 +499,7 @@ def main():
         if schema=='janus-git-branch-create-v1':result=apply_branch(args.git,args.root,plan)
         elif schema=='janus-git-branch-operation-v1':result=apply_branch_operation(args.git,args.root,plan)
         elif schema=='janus-git-worktree-v1':result=apply_worktree(args.git,args.root,plan)
+        elif schema=='janus-git-worktree-batch-v1':result=apply_worktree_batch(args.git,args.root,plan)
         else:result=apply(args.git,args.root,plan)
         print(json.dumps(result,sort_keys=True))
     except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as exc:
