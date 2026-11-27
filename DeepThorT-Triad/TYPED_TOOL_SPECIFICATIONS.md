@@ -1109,3 +1109,7 @@ Generate vocal harmony accepts `score` (Pass 248 vowel score, maximum 8 seconds)
 ## Reviewed 2D motion capture (Pass 250)
 
 Capture motion markers accepts `video`, `start_frame`, `end_frame`, `radius`, `max_error` (as local patch tracking), and `markers` (2–8 rows containing distinct ASCII `name` and nonoverlapping `box` [x,y,width,height], each 4–32 pixels wide/high). Combined RGB comparison work is capped at 30 million. Export synchronized image-space pixel centers, boxes and match errors with clip-relative timing as JSON, explicitly partial when any marker is lost/ambiguous or tracked boxes overlap. Silent H.264 input and exact codec/source guards. No 3D geometry, identity, inferred skeletal pose, occlusion recovery or animation retargeting claim.
+
+## Reviewed stereo photogrammetry (Pass 251)
+
+Reconstruct stereo points accepts `left`, `right` (distinct rectified opaque PNGs, same dimensions 24–640 by 12–480), `focal_px` 20–5000, `baseline_m` 0.001–10, `min_disparity` 1–64, `max_disparity` 2–64 greater than minimum, `step` 4–32, `max_error` 0–30, `min_margin` 1–100. Assumes aligned parallel pinhole cameras and image-center principal point. Bounded 5x5 grayscale matching, uniqueness and reverse consistency; metric 3D point JSON with calibration, rejected count and exact image SHA-256. No camera calibration/rectification, dense mesh, independently verified accuracy or real-photo acceptance.

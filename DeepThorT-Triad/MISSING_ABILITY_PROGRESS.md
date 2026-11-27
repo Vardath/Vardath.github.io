@@ -259,7 +259,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 247 | 129 | Singing voice generation | Partial: reviewed procedural pitched vowel score with rests, harmonic formant profiles, vibrato and verified PCM. Pass 248 CI pending; intelligible lyric synthesis, expressive neural singing and listening acceptance outstanding. |
 | 248 | 130 | Vocal harmony generation | Partial: reviewed automatic fixed-interval harmonization of the synthetic vowel score, two or three independently panned parts, linked peak control and exact PCM. Pass 249 CI pending; key-aware arrangements, recorded vocal conversion and listening acceptance outstanding. |
 | 249 | 165 | Motion capture | Partial: reviewed synchronized multi-marker 2D trajectories from local video, bounded patch tracking, explicit partial results at loss/ambiguity/overlap and JSON verification. Pass 250 CI pending; markerless pose, 3D skeletal capture, retargeting integration and native acceptance outstanding. |
-| 250 | 159 | Automated photogrammetry | Not started in this programme |
+| 250 | 159 | Automated photogrammetry | Partial: reviewed calibrated rectified stereo PNG pair, automatic sparse textured patch correspondence with mutual disparity check and metric point JSON. Pass 251 CI pending; automatic camera calibration, rectification, dense reconstruction, meshes and native accuracy outstanding. |
 | 251 | 5 | Autonomous creation and configuration of specialist AI agents | Not started in this programme |
 | 252 | 216 | Parallel project development | Existing partial; completion not started in this programme |
 | 253 | 327 | Dynamic model selection | Existing partial; completion not started in this programme |
@@ -1193,3 +1193,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 250 — 28 November 2026
 - Reuse local video patch tracker for 2–8 named nonoverlapping markers, common bounded work budget, synchronized frame-relative timing and pixel centers, source/codec guards and verified trajectory JSON. Stop at loss, ambiguity or overlap, explicitly label partial results. Three regression fixtures on both hosts. No identity recognition, skeletal pose inference, 3D capture or native animation acceptance. Next rank 250 / ID 159 automated photogrammetry. No installer.
+
+## Pass 251 — 28 November 2026
+- Add bounded automatic sparse stereo reconstruction for owner-calibrated rectified images. Reject low texture, ambiguous and inconsistent matches, triangulate using explicit focal length/baseline and preserve exact image identities. Three regression fixtures including known synthetic depth; no independent camera calibration, dense mesh or real-world accuracy claim. Pass 243 native process isolation fixture failure rerun requested; source and matching push were green. Next rank 251 / ID 5 specialist agent configuration. No installer.
