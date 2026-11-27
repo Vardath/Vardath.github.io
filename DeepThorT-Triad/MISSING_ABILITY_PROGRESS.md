@@ -46,7 +46,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 34 | 77 | Interactive data tables | Source implemented: offline standalone CSV snapshot with bounded text search, stable sorting and pagination, literal safe HTML and fixed JavaScript. Pass 035 CI pending; actual browser UI and native model integration outstanding. |
 | 35 | 274 | Create charts | Source extended: standalone SVG bar, line and scatter charts from exact selected CSV data, bounded decimal scale and verified marks. Pass 036 CI pending; visual render and native model integration outstanding. |
 | 36 | 78 | Interactive charts and visualisations | Source implemented: standalone offline HTML chart with series visibility, point selection, literal readout and fixed scale. Pass 037 CI pending; browser UI, richer drilldown and native model integration outstanding. |
-| 37 | 211 | Mathematical reasoning | Existing partial; completion not started in this programme |
+| 37 | 211 | Mathematical reasoning | Source extended: exact bounded rational arithmetic and single-variable linear equations with independent substitution. Pass 038 CI pending; symbolic nonlinear mathematics and native model-directed reasoning outstanding. |
 | 38 | 215 | Persistent personal preferences | Existing partial; completion not started in this programme |
 | 39 | 282 | Statistical analysis | Existing partial; completion not started in this programme |
 | 40 | 285 | Exploratory data analysis | Existing partial; completion not started in this programme |
@@ -480,3 +480,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 037 — 27 November 2026
 
 - Reuse verified SVG chart production in standalone offline interactive HTML. Explicit series visibility, fixed axes, source row/series point inspection, mark click selection, keyboard-operable native controls, reset and exact literal point readouts. Embedded data is inert escaped JSON; fixed script and style hashes in CSP, no network or arbitrary script input. Static chart remains accessible without JS. Four actual regression cases including execution of point-selection JavaScript in Node. Browser rendering and richer chart interactions remain outstanding. Next rank 37 / ID 211 mathematical reasoning. No installer.
+
+## Pass 038 — 27 November 2026
+
+- Add typed exact rational expression evaluation and linear equation solving using Fraction, fixed operations, bounded tree and result sizes, explicit all-rational/no-solution classification and independent substitution for unique solutions. Exact review/result artifact, no arbitrary expression execution. Four regression cases. This is deterministic math assistance, not general mathematical proof or autonomous reasoning. Next rank 38 / ID 215 persistent preferences. No installer.
