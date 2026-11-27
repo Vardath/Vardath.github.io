@@ -515,3 +515,7 @@ Files & Images → Propose clean merge. JSON: `{"path":"source.txt"}`. Requires 
 ## GitHub OAuth device connection (Pass 108)
 
 Files & Images → Connect GitHub account. Supply your own registered GitHub OAuth public client ID with device flow enabled. Approve read:user scope, manually open the fixed GitHub device page and enter the displayed code after verifying application identity. Account identity is verified via /user. Transient local session expires after 15 minutes, may be disconnected or explicitly reused for read-only PR evidence where provider permissions allow. No repository write scope, saved token, refresh token, provider revocation or bundled OAuth client. Live provider acceptance outstanding.
+
+## Remote MCP discovery (Pass 109)
+
+Files & Images → Discover remote MCP. JSON: `{"url":"https://mcp.example.com/mcp"}`. Explicit public HTTPS initialize, initialized notification and bounded tools/list JSON requests. Uses existing typed schema summaries and hashes. No credentials, SSE, arbitrary tool calls, prompts or resources. Output is historical discovery evidence, not permission to execute.

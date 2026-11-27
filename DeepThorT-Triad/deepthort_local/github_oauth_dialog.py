@@ -47,7 +47,13 @@ def show(app):
                 if kind=='code' and not cancel.is_set():state.set('Device code: '+value+' — waiting for authorization.')
                 elif kind=='session':
                     if cancel.is_set():value.disconnect()
-                    else:app._github_oauth_session=value;state.set('Connected as '+value.login+'. Read-only session retained in memory for up to 15 minutes.')
+                    else:
+                        app._github_oauth_session=value
+                        def expire(session=value):
+                            session.disconnect()
+                            if getattr(app,'_github_oauth_session',None) is session:app._github_oauth_session=None
+                        app.after(900000,expire)
+                        state.set('Connected as '+value.login+'. Read-only session expires after 15 minutes.')
                 elif kind=='error':state.set('Authorization unsuccessful or cancelled; no session retained.')
         except queue.Empty:pass
         if not thread.is_alive():
