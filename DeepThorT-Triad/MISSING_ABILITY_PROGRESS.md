@@ -143,7 +143,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 131 | 131 | Musical stem separation | Partial: optional reviewed Sherpa-ONNX UVR/MDX-Net pinned model, offline vocals and accompaniment WAVs, exact format/frame and ZIP verification, reconstruction metric. Pass 132 CI pending. Actual installed native inference, listening quality and additional individual instrumental stems outstanding. |
 | 132 | 132 | Instrument isolation | Partial: optional reviewed installed demucs.cpp six-source model, drums/bass/guitar/piano selection, aligned estimated target plus sum of other stems, verified PCM and ZIP. Pass 133 CI pending. Actual native execution within cap and listening quality outstanding. |
 | 133 | 135 | Audio-to-MIDI transcription | Partial: reviewed bounded monophonic pitch tracking, stable-frame grouping, preserved rests and timing, canonical single-track SMF export and roundtrip. Pass 134 CI pending. Polyphonic transcription, repeated same-pitch articulation, broad source accuracy and native acceptance outstanding. |
-| 134 | 302 | Musical arrangement | Existing partial; completion not started in this programme |
+| 134 | 302 | Musical arrangement | Partial: reviewed explicit 1–8 General MIDI parts, tempo, polyphony, timing, velocity, format-1 SMF and canonical decode verification. Pass 135 CI pending. Autonomous multi-part composition and musical quality acceptance outstanding. |
 | 135 | 303 | Instrumental audio synthesis | Existing partial; completion not started in this programme |
 | 136 | 133 | Automated audio mixing | Not started in this programme |
 | 137 | 134 | Automated audio mastering | Not started in this programme |
@@ -825,3 +825,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Pass 129 historical Windows fixture timeout
 - Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
+
+## Pass 135 — 27 November 2026
+- Extend existing monophonic Gemma MIDI capabilities with a separate reviewed multitrack arrangement tool. Explicit 1–8 named instrument parts, up to 512 timed polyphonic notes, independent programs/channels, validated note-off ordering and same-pitch overlap constraints. Export canonical SMF format 1 with conductor track, independently decode exact notes and support new canonical profiles in generic media checks (legacy Gemma profile retained). Three fixture regressions. No autonomous orchestration claim or listening verification. Next rank 135 / ID 303 instrumental audio synthesis. No installer.

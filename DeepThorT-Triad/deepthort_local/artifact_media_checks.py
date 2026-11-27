@@ -176,9 +176,17 @@ def pe(data):
 
 def media_scope(suffix,data):
     if suffix in ('.mid','.midi'):
-        if len(data)>4096:raise ValueError('MIDI outside supported score profile')
+        if len(data)>32768:raise ValueError('MIDI outside supported score profiles')
+        raw=bytes(data[:])
+        if raw[8:10]==b'\x00\x01':
+            from .musical_arrangement import inspect
+            score=inspect(raw)
+            return f"Canonical multitrack MIDI, {score['bpm']} BPM, {len(score['parts'])} parts, {sum(len(p['notes']) for p in score['parts'])} notes (not playback or quality)"
         from .creative_core import inspect_midi
-        score=inspect_midi(bytes(data[:]))
+        try:score=inspect_midi(raw)
+        except ValueError:
+            from .audio_to_midi import inspect
+            score=inspect(raw)
         return f"Canonical single-track MIDI, {score['bpm']} BPM, {len(score['notes'])} notes (not playback or quality)"
     if suffix=='.png':return png(data)
     if suffix=='.obj':return obj(data)

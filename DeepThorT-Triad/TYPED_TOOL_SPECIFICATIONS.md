@@ -615,3 +615,7 @@ Files & Images → Isolate instrument. Choose a 3–8 second stereo 44.1 kHz PCM
 ## Reviewed audio-to-MIDI (Pass 134)
 
 Files & Images → Audio to MIDI. JSON keys: `audio` (project-relative mono PCM16 8/16 kHz WAV, 3–20 seconds), `bpm` (40–220), `min_pitch` and `max_pitch` (ordered MIDI notes 36–84), `gate_dbfs` (-65 to -20). Bounded YIN-style pitch estimation produces timed single-track MIDI with rests, exact byte roundtrip and explicit tempo. No automatic tempo inference, chords, polyphonic recognition, articulation reconstruction or claimed real-recording accuracy. Existing model-composed MIDI route unchanged.
+
+## Reviewed musical arrangement (Pass 135)
+
+Files & Images → Arrange music. JSON keys: `bpm` (40–220), `parts` (1–8 objects with `name`, `program` 0–127 General MIDI, and `notes` lists of `[start_tick,duration_ticks,pitch,velocity]`, 480 ticks/quarter). At most 512 notes, sorted by start/pitch; overlapping distinct pitches allowed, overlapping same pitch within a part rejected. New `.mid` format 1 with conductor and separate channels; exact decode verification. This is explicit arrangement assembly, not autonomous harmony or aesthetic acceptance. Legacy Gemma MIDI generation unchanged.
