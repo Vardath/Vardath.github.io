@@ -167,3 +167,11 @@ Explicit column types, up to 10,000 rows, 24 total selected columns and eight nu
 ## Reproducible analytical report
 
 Use the exploratory analysis specification plus title and expected_source_sha256 (the exact lowercase 64-character CSV SHA-256). Select a new .html output. The local report includes readable tables, methods and an embedded JSON manifest with exact results, input and algorithm hashes, Python version and analysis digest. Repeat with the same source and specification in the same runtime to reproduce the report. No internet or automatic interpretation.
+
+## Detect musical tempo
+
+```json
+{"audio":"track.wav","min_bpm":60,"max_bpm":180}
+```
+
+16-bit PCM mono/stereo WAV, 8–48 kHz, 3–120 seconds within the shared 16 MiB source limit. The local estimator reports steady transient interval consensus, support fraction and possible half/double ambiguity. Silence or inconsistent transients produce null BPM. This is not a complete beat tracker for complex music.
