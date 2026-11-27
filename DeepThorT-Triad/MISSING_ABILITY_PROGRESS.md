@@ -200,7 +200,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 188 | 210 | Integrated five-model acceptance testing | Partial: fixed native five-role linked MIDI task in Run latest test, independent exact recall/plan/score/review oracles, real creative receipt and decoded artifact, worker continuity and cancellation. Pass 189 CI pending; native five-model run and broader integrated production acceptance outstanding. |
 | 189 | 217 | Autonomous self-evaluation | Partial: periodic JANUS evaluation of bounded local acceptance history, exact outcome validation, regression and recurrence detection, missing evidence and deduplicated advisory recommendations. Pass 190 CI pending. Native evaluation and broader competence evidence outstanding. |
 | 190 | 219 | Autonomous improvement of procedures | Partial: autonomous evidence-linked candidate acceptance-procedure reordering, exact prerequisite closure, preserved checks, historical detection-position comparison and immutable advisory staging. Pass 191 CI pending. Prospective native benefit, broader procedure classes and approved adoption outstanding. |
-| 191 | 243 | End-to-end testing | Existing partial; completion not started in this programme |
+| 191 | 243 | End-to-end testing | Partial: reviewed native generated Godot grid-game fixture, independent routes and six ordered scene/input/objective checks under Windows cap, verified success receipt. Pass 192 CI pending. Native fixture execution and broader E2E targets outstanding. |
 | 192 | 326 | Model benchmarking | Existing partial; completion not started in this programme |
 | 193 | 336 | Automated backup and restoration | Existing partial; completion not started in this programme |
 | 194 | 19 | Autonomous deep research | Not started in this programme |
@@ -1009,3 +1009,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 191 — 27 November 2026
 - Add periodic autonomous preparation of improved acceptance-test procedures using recurring failures or regressions from Pass 190. Move only explicitly mapped failed probes and their prerequisites earlier; preserve all other checks and validate dependency order. Compare historical first-failure position as scheduling proxy only. Stage exact manifest/report-linked inert candidate and recommendation; no live manifest replacement, execution or installation authority. Regression tests for ordering, refusal and staging. Prospective native benefit and wider procedures outstanding. Next rank 191 / ID 243 end-to-end testing. No installer.
+
+## Pass 192 — 27 November 2026
+- Add reviewed native Godot grid-game end-to-end fixture. Independently calculate blocked movement, early-goal and completion paths; run generated scene under existing Windows cap with fixed probe for initial state, boundary, early goal, collect/win, reset and touch input. Require ordered native markers and no engine errors. Guard source/runtime and publish new receipt only on success. Fixture tests cover path/probe and log validation; real Godot and broader E2E acceptance outstanding. Next rank 192 / ID 326 model benchmarking. No installer.

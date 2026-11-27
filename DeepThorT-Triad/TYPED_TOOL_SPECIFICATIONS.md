@@ -849,3 +849,7 @@ Existing JANUS worker evaluates the latest local acceptance report at most once 
 ## Autonomous procedure improvement (Pass 191)
 
 JANUS uses periodic self-evaluation to stage a candidate ordering of the existing acceptance procedure under `state/procedure-improvements/`. A failed, repeatedly observed or regressed supported probe can move earlier with its prerequisite closure; every original check is retained and dependency order validated. Candidate binds the source manifest and acceptance report digests; no live procedure changes, no executable instructions and no automatic adoption. Historical earlier failure position is a scheduling proxy, not measured runtime improvement. Owner review and prospective native tests are required.
+
+## Reviewed native grid game end-to-end test (Pass 192)
+
+Test native grid game button accepts the same JSON as Generate grid game. Choose a level where a path to the goal avoids all collectibles and a blocked movement is reachable. Generates the exact game and fixed probe in a temporary directory, imports and executes under installed Windows Godot and existing shared resource protection. Checks initial state, blocked movement, early goal without win, collection/win, reset and synthetic touch input. Only publishes a success receipt after ordered native evidence and no engine errors. No arbitrary project code, visual/device acceptance or broad E2E claim.

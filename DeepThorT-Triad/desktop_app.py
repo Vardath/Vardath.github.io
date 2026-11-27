@@ -553,6 +553,7 @@ class DeepThorTDesktop(tk.Tk):
                    command=self._run_quiet_scene).pack(side='left',padx=7)
         ttk.Button(restorebar,text='Generate X4 XML diff…',command=lambda:self._review_typed_tool('x4_xml_processing','.xml','Development: reviewed X4 XML diff')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate sprite atlas…',command=lambda:self._review_typed_tool('game_asset_generation','.zip','Development: reviewed sprite atlas')).pack(side='left',padx=3)
+        ttk.Button(restorebar,text='Test native grid game…',command=lambda:self._review_typed_tool('end_to_end_testing','.json','Development: reviewed native grid test')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Test swept collisions…',command=lambda:self._review_typed_tool('collision_testing','.json','Development: reviewed collision tests')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate NPC behaviour…',command=lambda:self._review_typed_tool('npc_behaviour','.zip','Development: reviewed NPC behaviour')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Generate region world…',command=lambda:self._review_typed_tool('world_generation','.json','Development: reviewed region world')).pack(side='left',padx=3)
@@ -1859,6 +1860,7 @@ class DeepThorTDesktop(tk.Tk):
                  'world_generation':('.json','Development: reviewed region world'),
                  'npc_behaviour':('.zip','Development: reviewed NPC behaviour'),
                  'collision_testing':('.json','Development: reviewed collision tests'),
+                 'end_to_end_testing':('.json','Development: reviewed native grid test'),
                  'x4_xml_processing':('.xml','Development: reviewed X4 XML diff'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
@@ -1887,7 +1889,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve native Godot fixture + report' if module=='end_to_end_testing' else 'Approve exact stopped-container operation + report' if module=='container_management' else 'Approve trusted Godot import + debug APK export' if module=='android_game_compilation' else 'Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
