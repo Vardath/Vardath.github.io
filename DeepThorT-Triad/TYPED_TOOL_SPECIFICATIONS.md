@@ -431,3 +431,7 @@ Files & Images → Inspect PDF layout. JSON: `{"document":"manual.pdf","pages":[
 ## Contract and policy evidence (Pass 087)
 
 Files & Images → Review contract or policy. JSON: `{"document":"terms.pdf","topics":["obligations","termination","privacy"],"custom_checks":[{"id":"access","label":"Access review","phrases":["access log"]}]}`. Other topics: prohibitions, payment, renewal, liability, disputes. TXT/MD/DOCX/PDF sources; PDF extracted page/line locators and missing-text pages retained. Literal matches only; not a legal opinion, compliance assessment or proof of absence.
+
+## PDF raster quality checks (Pass 088)
+
+Files & Images → Check PDF rendered pages. JSON: `{"document":"report.pdf","pages":[1,2],"minimum_margin_points":12,"allow_blank_pages":false}`. Actual 96-DPI local rendering with the existing PDF production tools; reports visible ink bounds, measured margins, blank-page warning and pixel hash. Intentional full-bleed artwork may violate the requested margin. This is not a general visual quality or clipping guarantee.

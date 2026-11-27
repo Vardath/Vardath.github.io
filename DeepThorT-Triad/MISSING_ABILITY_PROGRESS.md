@@ -96,7 +96,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 84 | 271 | Interpret PDF diagrams | Source extended: reviewed PDF vector diagram candidates with labelled rectangular nodes, unambiguous straight connectors, exact geometry and source hash. Pass 085 CI pending. Raster/complex diagram, direction and semantic Gemma interpretation outstanding. |
 | 85 | 74 | Document layout inspection | Source implemented: selected PDF page geometry, text segments with font names/sizes, image bounds, estimated margins and rotation. Pass 086 CI pending. Non-PDF, semantic reading order and visual interpretation outstanding. |
 | 86 | 278 | Contract and policy analysis | Source extended: reviewed text/PDF/DOCX clause evidence checklist, predefined and user-defined literal checks, exact source locators, missing text and bounded evidence. Pass 087 CI pending. Semantic clause interpretation, jurisdiction and independent legal verification outstanding. |
-| 87 | 75 | Automated visual document quality verification | Not started in this programme |
+| 87 | 75 | Automated visual document quality verification | Source implemented: actual bounded selected-PDF-page raster checks at 96 DPI, visible ink bounds, blank-page and requested-margin criteria with pixel hashes and warnings. Pass 088 CI pending. Broader visual quality, clipping, typography and native acceptance outstanding. |
 | 88 | 79 | Predictive modelling | Not started in this programme |
 | 89 | 286 | Scientific computing | Existing partial; completion not started in this programme |
 | 90 | 288 | Anomaly detection | Existing partial; completion not started in this programme |
@@ -672,3 +672,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 087 — 27 November 2026
 - Reuse existing bounded document extractors for contract/policy clause evidence. Eight selectable topic families and up to twelve user-defined checks; report literal matches, source locators, unreadable PDF pages and explicit uncertainty for missing evidence. No legal or compliance conclusion. Three regression cases. Next rank 87 / ID 75 automated visual document quality verification. No installer.
+
+## Pass 088 — 27 November 2026
+- Reuse pinned PDF production renderer and Pillow for actual bounded selected-page raster checks. Explicit margin and blank-page policy, RGB pixel hash, visible non-white ink bounds, measured margins and warnings. No aesthetic or clipping guarantee. Three regression cases including real PDF rendering. Next rank 88 / ID 79 predictive modelling. No installer.
