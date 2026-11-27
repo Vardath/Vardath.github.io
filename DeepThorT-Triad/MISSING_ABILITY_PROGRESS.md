@@ -273,7 +273,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 261 | 106 | Video-to-video generation | Partial: reviewed local AnimateDiff video-to-video pipeline, selected exact 256x256 silent clip interval, bounded strength, seeded generation, original rate and frame count, RGB decode verification. Pass 262 CI pending; native model and temporal quality acceptance outstanding. |
 | 262 | 118 | Consistent animated character generation | Partial: reusable exact RGB/mask character parts with independent keyframed integer translations, bounded layered composition over reviewed background, verified output frames and part hashes. Pass 263 CI pending; neural pose/deformation and semantic identity acceptance outstanding. |
 | 263 | 123 | Full audio song generation with vocals | Partial: reviewed named instrumental and sung-vowel sections, reusable section order, deterministic sample-rate conversion, stereo mix and shared peak ceiling, verified full WAV up to 120 seconds. Pass 264 CI pending; intelligible lyrics, neural full-song generation and listening acceptance outstanding. |
-| 264 | 124 | Audio-to-music generation | Not started in this programme |
+| 264 | 124 | Audio-to-music generation | Partial: exact recorded transient timing/accent extraction and deterministic seeded bass/percussion synthesis, no copied audio, stereo PCM verification. Pass 265 CI pending; general neural audio-conditioned music generation and listening acceptance outstanding. |
 | 265 | 125 | Melody-to-song generation | Not started in this programme |
 | 266 | 126 | Reference-guided music generation | Not started in this programme |
 | 267 | 127 | Song continuation | Not started in this programme |
@@ -1243,3 +1243,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 264 — 28 November 2026
 - Add structured full song synthesis from 2–6 reviewed section definitions and up to 24 ordered section occurrences, existing canonical MIDI additive renderer and sung-vowel engine, aligned vocal/accompaniment timing, rational 22.05→24 kHz stereo resampling, cached reusable sections, shared peak protection and exact PCM WAV verification. Up to 120 seconds, 36 seconds unique section work. Three actual synthesis/guard regression cases, both CI jobs registered. No intelligible lyric singing or neural music model claim. Repair earlier cinematic short PCM validation across Passes 261–263; Pass 141 main integration conflict resolved and retesting. Next rank 264 / ID 124 audio-to-music generation.
+
+
+## Pass 265 — 28 November 2026
+- Add audio-conditioned rhythm synthesis from exact 3–20 second PCM WAV, thresholded transient extraction with relative accents and measured timing, explicit bass root, two styles, seeded percussion and bass, bounded stereo 24 kHz WAV and verified PCM. Reject missing rhythm instead of inventing evidence. Three registered actual synthesis/guard tests. No general neural audio-conditioned generation or listening quality claim. Next rank 265 / ID 125 melody-to-song generation.
