@@ -10,6 +10,7 @@ from contextlib import closing
 from .agent_contract import canonical_sha
 from .structured_source import strict_json
 from . import specialist_agents as specialist
+from . import model_routing as routing
 
 ROLES=('janus','sentinel','implementation')
 MAX_PROMPT=2400
@@ -42,7 +43,7 @@ def rows(path,project=None,limit=100):
 def current(db,ident):
     r=db.execute('SELECT c.* FROM independent_prompt_queue q JOIN conversation_requests c ON c.id=q.request_id WHERE c.id=?',(ident,)).fetchone()
     return dict(r) if r else None
-def candidate(path,roles,exclude=(),priority=None,independent_of=()):
+def candidate(path,roles,exclude=(),priority=None,independent_of=(),dynamic=False):
     from .task_graph import independent_workspaces
     allowed=[r for r in ROLES if r in roles]
     if not allowed:return None
@@ -55,8 +56,11 @@ def candidate(path,roles,exclude=(),priority=None,independent_of=()):
             if any(not independent_workspaces(row['project'],p) for p in independent_of):continue
             # Each scope is considered once by each role; expired advice is not retried indefinitely.
             done={x[0] for x in db.execute('SELECT role FROM queued_prompt_attempts WHERE request_id=? AND identity=? UNION SELECT role FROM queued_prompt_advice WHERE request_id=? AND identity=?',(row['id'],identity(row),row['id'],identity(row)))}
-            for role in allowed:
-                if role not in done:return row,role
+            eligible=[role for role in allowed if role not in done]
+            if dynamic and eligible:
+                preferred=next((r for r in eligible if specialist_for(path,row,r)),None)
+                eligible,_=routing.rank(row['prompt'],eligible,preferred=preferred)
+            if eligible:return row,eligible[0]
     return None
 def available_roles(health,pid):
     if not isinstance(health,dict) or health.get('pid')!=pid or health.get('ready') is not True or health.get('serial_memory_mode') is not False or health.get('admission_waiting')!=0:return ()
@@ -86,9 +90,9 @@ def specialist_for(path,row,host):
         return config if config['profile']['host']==host else None
     except (OSError,ValueError,TypeError,KeyError,sqlite3.Error):return None
 
-def run_once(path,client,roles,stopped,*,exclude=(),priority=None,exact=None):
+def run_once(path,client,roles,stopped,*,exclude=(),priority=None,exact=None,dynamic=False):
     if stopped():return None
-    item=exact if exact is not None else candidate(path,roles,exclude,priority)
+    item=exact if exact is not None else candidate(path,roles,exclude,priority,dynamic=dynamic)
     if exact is not None:
         row,role=exact
         if role not in roles or row['id'] in exclude or len(row['prompt'])>MAX_PROMPT or json.loads(row['attachments']) or (priority is not None and not priority.allowed(row)):return None
@@ -118,6 +122,7 @@ def run_once(path,client,roles,stopped,*,exclude=(),priority=None,exact=None):
     body=checked(strict_json(client.chat_as(role,'queued-prep-'+key[:24]+'-'+role,prompt,max_tokens=384 if role=='janus' else 256)),role)
     if stopped():return None
     receipt={'role':role,'identity':key,'body':body,'authority':False,'verified':False}
+    if dynamic:receipt['route']=routing.receipt(row['prompt'],roles,role,key,preferred=role if specialist_for(path,row,role) else None)
     if 'specialist' in body:receipt['specialist_config']=specialist.configure(body['specialist'],key)
     with closing(connect(path)) as db,db:
         db.execute('BEGIN IMMEDIATE')

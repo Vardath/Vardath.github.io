@@ -281,3 +281,7 @@ During existing independent queued preparation JANUS may optionally propose a sh
 ## Pass 253 — parallel project preparation
 
 The existing coordinator may prepare at most two independent queued prompts concurrently using distinct available roles and disjoint existing workspace roots, measured broker slots and live owner holds. Each reservation remains exact and advisory; no new execution dispatcher or grant. Existing approved independent Gemma artifact discovery skips held/removed projects and honors owner priority. Full simultaneous software builds and native acceptance remain outstanding.
+
+## Pass 254 — dynamic advisory model routing
+
+Queued parallel preparation ranks currently admitted permanent roles by task vocabulary (executive planning, independent review, implementation) and exact valid specialist configuration, retaining deterministic tie order, owner project priority and attempt reservations. Routing is advisory only and cannot replace models, reassign permanent responsibilities, grant tools, bypass independent acceptance or disable mandatory asynchronous Memory. Broader production routing and empirical model selection remain outstanding.
