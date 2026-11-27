@@ -137,7 +137,7 @@ class DeepThorTDesktop(tk.Tk):
         self._last_telemetry_at = 0.0
         self._last_activity_message = None
         self._last_activity_at = 0.0
-        self.title('DeepThorT Triad — Three Resident Local Models')
+        self.title('DeepThorTriad — Local intelligent workspace')
         self.geometry('1320x860')
         self.minsize(1000,650)
         self.configure(bg=BG)
@@ -859,6 +859,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Voice effects…',command=lambda:self._review_typed_tool('voice_transformation','.wav','Audio: reviewed voice effects')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Consent voice synthesis…',command=lambda:self._review_typed_tool('voice_cloning','.wav','Audio: consent voice synthesis')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Design custom voice…',command=lambda:self._review_typed_tool('custom_voice_design','.zip','Audio: reviewed voice design')).pack(side='left',padx=3)
+        ttk.Button(audio_review_actions,text='Generate sound effect…',command=lambda:self._review_typed_tool('sound_effect_generation','.wav','Audio: reviewed sound effect')).pack(side='left',padx=3)
         speech_review_actions=ttk.Frame(media_tab);speech_review_actions.pack(fill='x',pady=2)
         ttk.Button(speech_review_actions,text='Multilingual speech…',command=self._show_multilingual_speech).pack(side='left',padx=3)
         ttk.Button(speech_review_actions,text='Podcast generation…',command=self._show_podcast_generation).pack(side='left',padx=3)
@@ -1885,6 +1886,7 @@ class DeepThorTDesktop(tk.Tk):
                  'voice_transformation':('.wav','Audio: reviewed voice effects'),
                  'voice_cloning':('.wav','Audio: consent voice synthesis'),
                  'custom_voice_design':('.zip','Audio: reviewed voice design'),
+                 'sound_effect_generation':('.wav','Audio: reviewed sound effect'),
                  'audio_source_isolation':('.zip','Audio: reviewed spatial isolation'),
                  'audio_to_midi':('.mid','Audio: reviewed MIDI transcription'),
                  'musical_arrangement':('.mid','Audio: reviewed arrangement'),

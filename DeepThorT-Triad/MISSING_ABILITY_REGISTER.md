@@ -1,10 +1,12 @@
-# JANUS / DeepThorT — Missing Ability Register
+# DeepThorTriad — Missing Ability Register
 
 **Baseline:** V72, source commit `5042db98ab4e54ae4c138cfe6ef33b74d23df972` (Linux and Windows CI passed, [run 45897512810](https://github.com/Vardath/Vardath.github.io/actions/runs/45897512810)). **Register revision:** 27 November 2026. **Active total: 278 entries (58 owner-rejected standalone entries removed from the former 336).**
 
 ## Purpose and interpretation
 
-This is the owner's requested consolidated missing-and-partial capability register, reordered from easiest to hardest estimated implementation within the existing JANUS application. It preserves original stable IDs of retained entries, including partial implementations and integrated acceptance testing (an outstanding validation task rather than a product feature). Removed IDs are not reassigned.
+Owner clarification (28 November 2026): DeepThorTriad is the application; JANUS is its executive operative. Historical names, schemas and branch identifiers are retained for compatibility.
+
+This is the owner's requested consolidated missing-and-partial capability register, reordered from easiest to hardest estimated implementation within the existing DeepThorTriad application. It preserves original stable IDs of retained entries, including partial implementations and integrated acceptance testing (an outstanding validation task rather than a product feature). Removed IDs are not reassigned.
 
 The rank describes estimated engineering effort, not value, urgency, user priority, guaranteed feasibility, or an instruction to begin implementation. Relative positions within an effort band are approximate; prerequisites may change the order. It is a qualitative estimate, not a timed benchmark. Before implementation, inspect the current source and verify whether the capability is already present, partial, intentionally restricted, or genuinely missing. Reuse existing capabilities rather than duplicate them. A working third-party tool is not equivalent to integrated, validated autonomous operation.
 

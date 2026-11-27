@@ -1089,3 +1089,7 @@ Consent voice synthesis accepts `reference` (project mono PCM16 WAV, 6–20 seco
 ## Reviewed custom voice design (Pass 245)
 
 Design custom voice accepts `name`, exact installed `voice` (`id`, `name`, `culture`, `gender`), `text`, and `effects` (`speed_percent`, `ring_hz`, `ring_depth_percent`, `lowpass_hz`, as Pass 243). Audition text must produce 5–20 seconds of local Windows speech. Produces a single new ZIP containing `voice-design.json` (reusable exact typed specification), `audition.wav` and `receipt.json`. Actual installed voice selection and local DSP are used; not new neural voice training, identity imitation, independent pitch/formant control or listening acceptance.
+
+## Reviewed sound-effect generation (Pass 246)
+
+Generate sound effect accepts `effect` (ui_beep, sweep, impact, whoosh), `duration_ms` 100–3000, `start_hz` and `end_hz` 40–5000, `noise_percent` 0–100, `seed` 0–2147483647 and `peak_dbfs` -24 to -1. Beep requires constant frequency and zero noise; sweep requires varying frequency; whoosh requires noise. Local procedural synthesis produces a new 24 kHz mono PCM16 WAV, exact decoded sample checks, bounded peak and zero endpoints. No neural generation, samples or listening verification.
