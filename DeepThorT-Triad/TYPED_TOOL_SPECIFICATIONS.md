@@ -375,3 +375,11 @@ Files & Images → Discover images. Approve the exact Wikimedia Commons query an
 ```
 
 Files & Images → Check DOI citation. Approve one DOI lookup against Crossref and a new JSON output; only the bare DOI leaves the computer. Compare supplied title, first listed author's family name and issued year with registered fields. Missing fields are unavailable, not proof of mismatch; a failed request or non-Crossref DOI proves nothing about validity. Metadata agreement does not verify scientific conclusions, full text, retractions or peer review. Source: https://www.crossref.org/documentation/retrieve-metadata/rest-api/ . Live provider and native acceptance pending.
+
+## Discover academic literature
+
+```json
+{"query":"quartz engine calibration","count":10,"from_year":2020,"to_year":2025}
+```
+
+Files & Images → Discover academic literature. Approve one exact bibliographic query and optional year bounds (null means unbounded) sent to Crossref. Up to ten provider-ranked bibliographic records with exact DOI, title, first author family, issued year, publication, publisher and response hash; duplicates or unusable rows omitted and counted. Provider total is not the number retrieved. Issued-year differences from requested publication filters are flagged rather than silently corrected. No full text, systematic-review completeness, peer-review, retraction or claim verification. Crossref public API; no API key required for public access, but availability/rate limits apply. Live and native acceptance outstanding. Reference: https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/

@@ -711,6 +711,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(research_actions,text='Discover images…',command=lambda:self._review_typed_tool('image_discovery','.json','Research: reviewed image discovery')).pack(side='left',padx=3)
         academic_actions=ttk.Frame(media_tab);academic_actions.pack(fill='x',pady=2)
         ttk.Button(academic_actions,text='Check DOI citation…',command=lambda:self._review_typed_tool('scientific_citations','.json','Research: reviewed citation check')).pack(side='left',padx=3)
+        ttk.Button(academic_actions,text='Discover academic literature…',command=lambda:self._review_typed_tool('academic_discovery','.json','Research: reviewed academic discovery')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1416,7 +1417,8 @@ class DeepThorTDesktop(tk.Tk):
                  'search_interpretation':('.json','Research: reviewed search evidence'),
                  'webpage_retrieval':('.json','Research: reviewed webpage'),
                  'image_discovery':('.json','Research: reviewed image discovery'),
-                 'scientific_citations':('.json','Research: reviewed citation check')}
+                 'scientific_citations':('.json','Research: reviewed citation check'),
+                 'academic_discovery':('.json','Research: reviewed academic discovery')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
@@ -1440,7 +1442,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return
