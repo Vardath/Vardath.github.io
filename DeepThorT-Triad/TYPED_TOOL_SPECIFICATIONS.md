@@ -1025,3 +1025,7 @@ Organise Gmail accepts `{"account":"owner@example.com","query":"subject:example"
 ## Reviewed Google Drive storage (Pass 229)
 
 Google Drive accepts `{"operation":"list","account":"owner@example.com","folder_id":"root","limit":20}` or `{"operation":"download","account":"owner@example.com","file_id":"<exact ID>"}`. Supply transient OAuth token with Drive read-only scope. Bounded folder metadata inventory and existing binary files up to 1 MiB; exact identity, size, version and MD5 rechecked, SHA-256 receipt. Separate explicit local save to a new file; remote names never become paths. No exports of native Google documents, remote writes, sync, model ingestion or credential storage. Live provider acceptance pending.
+
+## Reviewed social media publishing (Pass 230)
+
+Publish Mastodon accepts a mastodon.social local username (without @), literal text up to 400 characters, and public or unlisted visibility. Supply a transient access token with read:accounts and write:statuses scopes. Exact final confirmation; fixed account verification followed by one POST and account/visibility-bound provider receipt. No automatic retry, media, scheduling, other instances, credential storage or proof of rendered text/reach. Live acceptance outstanding.

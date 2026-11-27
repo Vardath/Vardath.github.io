@@ -238,7 +238,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 226 | 169 | Email sending | Partial: explicitly reviewed single-recipient plain-text Gmail send, account identity, transient OAuth token, one POST and no retry on uncertain outcome. Pass 227 CI pending; live provider acceptance and integrated OAuth acquisition outstanding. |
 | 227 | 170 | Automated inbox organisation | Partial: bounded Gmail rule search, exact message/label preview, explicit reviewed label changes and archive, stale-state refusal, inverse label receipts, no trash/delete/retry. Pass 228 CI pending; live provider acceptance and scheduled rules outstanding. |
 | 228 | 175 | Cloud storage integration | Partial: reviewed Google Drive folder inventory and exact bounded binary download with transient account-bound OAuth, metadata recheck and SHA-256 receipt; optional exclusive local save. Pass 229 CI pending; uploads, native Google document export, sync and live provider acceptance outstanding. |
-| 229 | 183 | Social media publishing | Not started in this programme |
+| 229 | 183 | Social media publishing | Partial: reviewed single text post to mastodon.social, exact account/visibility verification, transient token, one POST and no retry after uncertainty. Pass 230 CI pending; live provider acceptance, other networks, media and scheduling outstanding. |
 | 230 | 138 | Digital audio workstation (DAW) operation | Not started in this programme |
 | 231 | 304 | Album production automation | Existing partial; completion not started in this programme |
 | 232 | 139 | Audio plugin development | Not started in this programme |
@@ -1129,3 +1129,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 229 — 28 November 2026
 - Add reviewed Google Drive folder inventory and exact bounded binary download, pinned HTTPS and transient user-provided OAuth, account identity before/after, version/MD5/size recheck and SHA-256 receipt. Separate user approval for exclusive local save; no cloud mutations, model ingestion or remote filename trust. Three mocked regression fixtures on both hosts. Native provider acceptance, uploads, document export and sync outstanding. Next rank 229 / ID 183 social media publishing. No installer.
+
+## Pass 230 — 28 November 2026
+- Add reviewed single text publication to mastodon.social with exact local username, explicit visibility and final approval, transient token, fixed pinned HTTPS account check, one POST and provider receipt. No attachments, scheduling, multiple accounts, auto-retry, model dispatch or live posting in CI. Three mocked regressions on both hosts. Other platforms and live acceptance outstanding. Next rank 230 / ID 138 digital audio workstation operation. No installer.

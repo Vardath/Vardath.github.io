@@ -805,6 +805,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(mail_actions,text='Compose/send Gmail…',command=self._show_gmail_send).pack(side='left',padx=3)
         ttk.Button(mail_actions,text='Search/read Gmail…',command=self._show_gmail_read).pack(side='left',padx=3)
         ttk.Button(mail_actions,text='Google Drive…',command=self._show_drive_storage).pack(side='left',padx=3)
+        social_actions=ttk.Frame(media_tab);social_actions.pack(fill='x',pady=2)
+        ttk.Button(social_actions,text='Publish Mastodon…',command=self._show_social_publish).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Inspect GitHub CI…',command=self._show_github_ci).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
@@ -1792,6 +1794,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_account(self):
         from deepthort_local.github_account_dialog import show
+        show(self)
+
+    def _show_social_publish(self):
+        from deepthort_local.social_publish_dialog import show
         show(self)
 
     def _show_drive_storage(self):
