@@ -249,7 +249,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 237 | 112 | Camera motion generation | Partial: reviewed multi-keyframe virtual camera pan/zoom reframing on existing silent H.264 video, bounded smooth interpolation and decoded pixel verification. Pass 238 CI pending; 3D camera paths, novel views and visual acceptance outstanding. |
 | 238 | 115 | Lip synchronisation | Partial: reviewed explicit frame-timed mouth sprites on a still face, exact-duration PCM speech, H.264/ALAC mux and decoded RGB/PCM verification. Pass 239 CI pending; automatic phoneme alignment, neural face animation and native playback acceptance outstanding. |
 | 239 | 119 | Audio-driven animation | Partial: exact PCM framewise RMS envelope drives bounded vertical layer motion with verified H.264/ALAC mux. Pass 240 CI pending; neural gesture/character motion, beat-aware choreography and native playback outstanding. |
-| 240 | 122 | Video dubbing | Not started in this programme |
+| 240 | 122 | Video dubbing | Partial: reviewed silent clip interval with supplied exact-duration speech WAV, source frame preservation and lossless H.264/ALAC mux verification. Pass 241 CI pending; existing soundtrack replacement, automatic speech generation/alignment and native playback outstanding. |
 | 241 | 149 | Automatic multilingual dubbing | Not started in this programme |
 | 242 | 147 | Voice transformation | Not started in this programme |
 | 243 | 145 | Voice cloning with consent | Not started in this programme |
@@ -1162,3 +1162,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 240 — 28 November 2026
 - Add reviewed audio-driven image-layer motion, exact-duration PCM16 48 kHz, framewise RMS with explicit reference and travel bound, matching decoded stream verification using existing lip-sync mux. Three mocked-codec regression fixtures on both hosts. No neural motion, beat recognition or native playback acceptance. Next rank 240 / ID 122 video dubbing. No installer.
+
+## Pass 241 — 28 November 2026
+- Add supplied narration dubbing of a reviewed silent H.264 interval, exact mono PCM16 48 kHz duration, lossless RGB and PCM mux verification and exact source/codec guards. Three mocked-codec regression fixtures on both hosts. No existing audio replacement, automatic translation/alignment or native playback acceptance. Next rank 241 / ID 149 multilingual dubbing. No installer.
