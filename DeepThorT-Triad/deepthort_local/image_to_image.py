@@ -19,9 +19,10 @@ from deepthort_local.source_security import exclusions
 
 SCHEMA='janus-image-to-image-v1'
 FIELDS={'schema','image','source_sha256','output','prompt','size','steps','strength_percent','seed'}
+REF_FIELDS={'reference','reference_sha256','palette_strength_percent'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s)!=FIELDS or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -33,7 +34,23 @@ def checked(s):
         if type(s[k]) is not int or not lo<=s[k]<=hi:raise ValueError('Invalid generation parameter: '+k)
     if type(s['size']) is not int or s['size'] not in (256,384,512):
         raise ValueError('Invalid generation size')
+    if 'reference' in s:
+        if not isinstance(s['reference'],str) or not s['reference'] or s['reference'].casefold() in (s['image'].casefold(),s['output'].casefold()):
+            raise ValueError('Use a distinct palette reference')
+        if not isinstance(s['reference_sha256'],str) or not re.fullmatch(r'[0-9a-f]{64}',s['reference_sha256']):
+            raise ValueError('Invalid reference digest')
+        if type(s['palette_strength_percent']) is not int or not 1<=s['palette_strength_percent']<=100:
+            raise ValueError('Invalid palette strength')
     return s
+
+def reference_input(root,s,source,bound):
+    if 'reference' not in s:return None,None
+    path=guard.path_for(Path(root).resolve(strict=True),s['reference'],exclusions(()),{'.png'},exists=True)
+    if path.samefile(source) or path.stat().st_size+source.stat().st_size>guard.MAX_INPUT:
+        raise ValueError('Duplicate or oversized reference inputs')
+    ref=snapshot_file(path)
+    if ref['expected']!=s['reference_sha256']:raise ValueError('Reviewed reference changed')
+    return path,ref
 
 def validate(root,s):
     checked(s);root=Path(root).resolve(strict=True);exclude=exclusions(())
@@ -42,6 +59,7 @@ def validate(root,s):
     if source.stat().st_size>guard.MAX_INPUT:raise ValueError('Image exceeds input bound')
     bound=snapshot_file(source)
     if bound['expected']!=s['source_sha256']:raise ValueError('Reviewed image changed')
+    reference_input(root,s,source,bound)
     return source,dst,bound
 
 def review(root,image,output,prompt,size=384,steps=15,strength_percent=60,seed=0):
@@ -53,6 +71,22 @@ def review(root,image,output,prompt,size=384,steps=15,strength_percent=60,seed=0
     src,_,bound=validate(root,s)
     decode(guard.exact(src,bound,guard.MAX_INPUT),('RGB',))
     return s
+
+def review_reference(root,image,reference,output,prompt,size=384,steps=15,strength_percent=60,seed=0,palette_strength_percent=80):
+    s=review(root,image,output,prompt,size,steps,strength_percent,seed)
+    path=guard.path_for(Path(root).resolve(strict=True),reference,exclusions(()),{'.png'},exists=True)
+    if path.stat().st_size>guard.MAX_INPUT:raise ValueError('Reference exceeds input bound')
+    s.update(reference=reference,reference_sha256=snapshot_file(path)['expected'],palette_strength_percent=palette_strength_percent)
+    source,_,bound=validate(root,s)
+    path,ref=reference_input(root,s,source,bound)
+    # Check the same decoding and palette transform used during generation.
+    guide(guard.exact(source,bound,guard.MAX_INPUT),guard.exact(path,ref,guard.MAX_INPUT),s)
+    return s
+
+def guide(raw,reference,s):
+    from deepthort_local.image_style_transfer import generate
+    return generate(raw,reference,{'image':s['image'],'reference':s['reference'],
+                    'strength_percent':s['palette_strength_percent']})[0]
 
 def diffuse(model,raw,s):
     model=Path(model).resolve(strict=True)
@@ -80,19 +114,25 @@ def execute(root,model,s,*,backend=diffuse):
     src,dst,bound=validate(root,s)
     raw=guard.exact(src,bound,guard.MAX_INPUT)
     w,h,_,_=decode(raw,('RGB',))
-    out=backend(model,raw,s)
+    ref_path,ref_bound=reference_input(root,s,src,bound)
+    initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raw
+    out=backend(model,initial,s)
     if not isinstance(out,bytes) or len(out)>guard.MAX_OUTPUT:raise ValueError('Invalid generated PNG')
     ow,oh,_,pixels=decode(out,('RGB',))
     if (ow,oh)!=(s['size'],s['size']):raise ValueError('Generated dimensions differ from approved size')
     def revalidate():
         current,target,current_bound=validate(root,s)
         if (current,target,current_bound)!=(src,dst,bound):raise ValueError('Reviewed paths changed')
+        if reference_input(root,s,current,current_bound)!=(ref_path,ref_bound):raise ValueError('Reviewed reference changed')
     sha=guard.publish(out,dst,revalidate)
     return {'schema':'janus-image-to-image-result-v1','status':'generated_image_pixels_verified',
             'output':s['output'],'sha256':sha,'source_sha256':s['source_sha256'],
             'pixel_sha256':hashlib.sha256(pixels).hexdigest(),'source_dimensions':[w,h],
             'dimensions':[ow,oh],'seed':s['seed'],'strength_percent':s['strength_percent'],
-            'source_unchanged':True,'visual_quality_verified':False}
+            'source_unchanged':True,'visual_quality_verified':False,
+            **({'reference_sha256':s['reference_sha256'],'palette_strength_percent':s['palette_strength_percent'],
+                'conditioning_sha256':hashlib.sha256(initial).hexdigest(),'reference_method':'classical_palette_initialisation',
+                'semantic_reference_conditioning':False} if ref_path else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
