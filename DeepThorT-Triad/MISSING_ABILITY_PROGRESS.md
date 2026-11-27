@@ -166,7 +166,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 154 | 94 | Image restoration | Partial: reviewed thresholded median impulse-noise suppression and optional explicitly masked local scratch interpolation, untouched unmasked pixels and verified PNG. Pass 155 CI pending. Learned restoration, large damage, blur recovery and visual acceptance outstanding. |
 | 155 | 93 | Image colourisation | Partial: reviewed grayscale PNG and 1–4 explicit binary region masks, gamut-limited palette chroma with encoded luma preservation and verified output. Pass 156 CI pending. Automatic semantic color inference, historical accuracy and visual acceptance outstanding. |
 | 156 | 92 | Image style transfer | Partial: reviewed classical reference RGB empirical quantile palette transfer with strength control, exact source/reference guards and verified PNG. Pass 157 CI pending. Learned artistic texture/style and visual acceptance outstanding. |
-| 157 | 85 | Image-to-image generation | Not started in this programme |
+| 157 | 85 | Image-to-image generation | Partial: explicit queued offline SD1.5 image-to-image producer using the existing optional model, bounded seed/strength and verified guarded PNG publication. Pass 158 CI pending. Actual native model execution, quality and autonomous use outstanding. |
 | 158 | 292 | Reference-guided generation | Existing partial; completion not started in this programme |
 | 159 | 86 | Image inpainting | Not started in this programme |
 | 160 | 87 | Image outpainting | Not started in this programme |
@@ -899,3 +899,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 157 — 27 November 2026
 - Add classical reference-guided RGB histogram quantile palette transfer, 1–100% blend, source and reference each at most one megapixel, monotonic per-channel maps, same source spatial layout, exact guarded new PNG and three regressions. Desktop reviewed tool integration. No neural texture/style transfer or visual quality claim. Next rank 157 / ID 85 image-to-image generation. No installer.
+
+## Pass 158 — 27 November 2026
+- Add explicit owner-approved queued image-to-image generation through the existing optional local Stable Diffusion image model. Exact RGB PNG hash, prompt, seed, 384-square desktop profile, 15 steps, 30–90% strength, source unchanged and new output only. Backend uses CPU/offline settings and existing inherited process caps; no automatic installation or new model. Three mocked-backend fixture regressions, native generation not established. Next rank 158 / ID 292 reference-guided generation. No installer.
