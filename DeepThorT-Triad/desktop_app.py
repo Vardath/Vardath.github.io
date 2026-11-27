@@ -683,6 +683,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Edit PDF pages…',command=self._review_pdf_pages).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Create PDF…',command=self._review_pdf_document).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Extract PDF tables…',command=self._review_pdf_tables).pack(side='left',padx=3)
+        ttk.Button(media_actions,text='Convert document…',command=self._review_document_conversion).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Generate image from prompt',command=self._queue_image).pack(side='left',padx=3)
@@ -1246,6 +1247,37 @@ class DeepThorTDesktop(tk.Tk):
         if old is not None and old.window.winfo_exists():
             old.window.lift();return
         self._knowledge_dialog=KnowledgeDialog(self)
+
+    def _review_document_conversion(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Conversion unavailable','Select a project and finish active work.',parent=self);return
+        project=str(self.project)
+        source=filedialog.askopenfilename(parent=self,initialdir=project,title='Select document',
+            filetypes=[('Supported documents','*.txt *.md *.docx *.pdf')])
+        if not source:return
+        try:
+            relative=Path(source).relative_to(Path(project)).as_posix()
+            output=simpledialog.askstring('Convert document','New project-relative output (.txt, .docx or .pdf):',
+                initialvalue=Path(relative).with_suffix('.docx' if Path(relative).suffix.casefold()=='.txt' else '.txt').as_posix(),parent=self)
+            if not output:return
+            from deepthort_local.document_conversion import review
+            plan=review(project,relative,output,self.inspection_exclusions.paths(project))
+            if not messagebox.askyesno('Approve text-content conversion',
+                f"Source: {relative}\nNew output: {output}\n\n"
+                'Text only: formatting, images, fields, links and other structures are not preserved. Markdown syntax is literal. No OCR. Original stays intact. Continue?',parent=self):return
+            if not self._editor_idle(project,proposal=True):return
+            from deepthort_local.source_security import exclusions
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:raise ValueError('Inspection exclusions changed')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/'document_conversion.py';exclusion_file=self.inspection_exclusions.path
+            guards=[snapshot_file(script),plan['source_guard'],snapshot_file(Path(project)/output,kind='absent'),
+                    snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent')]
+            action=self.janus.add_approved_action(argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)],
+                cwd=project,label='Document: reviewed conversion',kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS document conversion #{action} queued; inspect text-content receipt and output.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('Conversion not queued',str(exc),parent=self)
 
     def _review_pdf_tables(self):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
