@@ -279,3 +279,11 @@ Ordered 1–32 literal shapes or text; bounded rectangle/circle/polygon geometry
 ```
 
 Two to eight supplied fact cards, fixed responsive-to-count two-column vector layout, explicit source note, bounded literal text and editable SVG. The tool verifies the generated structure and text, not the truth of supplied claims or rendered font fit. Review appearance and evidence independently.
+
+## Batch-process PNG images
+
+```json
+{"images":[{"image":"a.png","output":"a-enhanced.png"},{"image":"b.png","output":"b-enhanced.png"}],"brightness":110,"contrast":100,"saturation":100,"sharpness":120,"max_edge":1024}
+```
+
+Two to six distinct bounded PNG inputs, shared enhancement settings, optional aspect-preserving maximum edge without upscaling, explicit output names. Verified PNG outputs and a source/output hash manifest are published as one non-overwriting ZIP; no partial publication. Alpha is preserved before resizing; resized alpha is resampled. This does not establish visual quality or model-directed acceptance.
