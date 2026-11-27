@@ -163,3 +163,7 @@ Explicit numeric columns, exact missing tokens and sample or population variance
 ```
 
 Explicit column types, up to 10,000 rows, 24 total selected columns and eight numeric columns. Exact full-row duplicates, missingness, counts, top categories, descriptive statistics, IQR flags and pairwise-complete Pearson correlations. No automatic removals or causal conclusions.
+
+## Reproducible analytical report
+
+Use the exploratory analysis specification plus title and expected_source_sha256 (the exact lowercase 64-character CSV SHA-256). Select a new .html output. The local report includes readable tables, methods and an embedded JSON manifest with exact results, input and algorithm hashes, Python version and analysis digest. Repeat with the same source and specification in the same runtime to reproduce the report. No internet or automatic interpretation.
