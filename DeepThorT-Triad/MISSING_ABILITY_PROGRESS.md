@@ -74,7 +74,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 62 | 7 | Scheduled task execution | Source implemented: user-confirmed durable one-shot scheduled chat requests admitted transactionally to the existing conversation dispatcher; Pass 063 CI pending. Background service and native acceptance outstanding. |
 | 63 | 6 | User-defined recurring tasks | Source implemented: explicit fixed-interval recurring conversation requests, bounded occurrence count, transactional release history, missed-interval coalescing and cancellation; Pass 064 CI pending. Native acceptance and OS service outstanding. |
 | 64 | 25 | Website change monitoring | Source implemented: explicitly approved finite public HTTPS hash monitoring, persistent baseline/change/error history, pinned public IPv4 TLS requests, nonblocking desktop dispatch; Pass 065 CI pending. Live remote and native GUI acceptance outstanding. |
-| 65 | 9 | Continuous monitoring of user-defined conditions | Not started in this programme |
+| 65 | 9 | Continuous monitoring of user-defined conditions | Source implemented: finite persistent project-file predicate watches, scoped exclusions, actual metadata/hash checks and durable transition history; Pass 066 CI pending. Wider conditions, OS service and native acceptance outstanding. |
 | 66 | 8 | Event-triggered workflows | Not started in this programme |
 | 67 | 17 | Search-engine result interpretation | Not started in this programme |
 | 68 | 16 | General internet search | Not started in this programme |
@@ -592,3 +592,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 065 — 27 November 2026
 
 - Add explicit finite website monitoring, pinned public IPv4 DNS resolution and verified TLS, no redirects/credentials/query/proxy, bounded uncompressed HTML/plain response, exact raw-byte hash baseline/change/error receipts and persistent per-chat history. A single background network thread runs behind gaming/pause gates; cancellation and changed scope discard late observations. No page text enters model prompts. Four regression cases with deterministic transport fixtures; live remote and native GUI acceptance not yet established. Next rank 65 / ID 9 continuous condition monitoring. No installer.
+
+## Pass 066 — 27 November 2026
+
+- Add reviewed finite continuous project-file conditions (exists, missing, minimum size and SHA-256 match), actual read-only observations, no arbitrary expression or commands, existing project exclusions and bounded hash reads. Persistent truth baselines/edge transitions and error receipts; nonblocking polling with pause/gaming gates and scope cancellation. Four regressions for actual files, protected paths, restart and stale receipts. Passes 061–063 green and merged (PRs 127–129). Next rank 66 / ID 8 event-triggered workflows. No installer.

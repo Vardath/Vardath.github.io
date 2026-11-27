@@ -315,6 +315,10 @@ class DeepThorTDesktop(tk.Tk):
         from deepthort_local.website_monitor_dialog import MonitorController
         self.website_monitors=WebsiteMonitors(self.conversations)
         self._website_monitor_controller=MonitorController(self,self.website_monitors)
+        from deepthort_local.condition_monitor import ConditionWatches
+        from deepthort_local.condition_monitor_dialog import ConditionController
+        self.condition_watches=ConditionWatches(self.conversations)
+        self._condition_controller=ConditionController(self,self.condition_watches)
         from deepthort_local.team_delegation import TeamDelegationStore
         self.delegations=TeamDelegationStore(self.conversations.path,STATE/'creative-tasks')
         self.delegations.recover()
@@ -522,6 +526,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(qhead,text='Scheduled requests…',command=self._scheduled_requests).pack(side='right',padx=4)
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
         ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
+        ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
         qt=ttk.Frame(queue_tab);qt.pack(fill='x',pady=4)
         ttk.Button(qt,text='Cancel selected',command=self._cancel_job).pack(side='left',padx=3)
         ttk.Button(qt,text='Resume selected',command=self._resume_job).pack(side='left',padx=3)
@@ -1770,12 +1775,13 @@ class DeepThorTDesktop(tk.Tk):
         if not messagebox.askyesno('Close chat',
             'Close this chat tab?'+detail+'\n\n'
             'History and drafts are preserved and can be reopened with a right-click '
-            'on the chat tabs. Unreleased scheduled requests and website monitors for this chat are cancelled. Approved work queue jobs are not deleted.',parent=self):
+            'on the chat tabs. Unreleased scheduled requests and monitoring watches for this chat are cancelled. Approved work queue jobs are not deleted.',parent=self):
             return
         self._cancel_chat_replies(chat_id,reason='Chat closed by user; no automatic retry')
         if self.chats.close(chat_id,self._project_key()):
             self.scheduled_tasks.cancel_chat(self._project_key(),chat_id)
             self.website_monitors.cancel_chat(self._project_key(),chat_id)
+            self.condition_watches.cancel_chat(self._project_key(),chat_id)
             self.current_chat=None
             self._refresh_chats()
             self._log('Chat tab closed; durable history retained and approved jobs untouched.')
@@ -4679,6 +4685,10 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_jobs();self.tabs.select(4)
         self._start_command(cmd,cwd=project,label=f"Verify job #{j['id']}",kind='verification',job_id=j['id'])
 
+    def _condition_monitor_dialog(self):
+        from deepthort_local.condition_monitor_dialog import show
+        show(self)
+
     def _website_monitor_dialog(self):
         from deepthort_local.website_monitor_dialog import show
         show(self)
@@ -4698,6 +4708,8 @@ class DeepThorTDesktop(tk.Tk):
             self._scheduler_once()
             if getattr(self,'_website_monitor_controller',None) is not None:
                 self._website_monitor_controller.tick()
+            if getattr(self,'_condition_controller',None) is not None:
+                self._condition_controller.tick()
         except Exception as exc:
             record(STATE,'desktop','queue_scheduler_exception',level='ERROR',
                    error_type=type(exc).__name__,stack=traceback.format_exc()[-12000:])
