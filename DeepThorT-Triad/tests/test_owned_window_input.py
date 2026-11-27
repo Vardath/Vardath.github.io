@@ -124,3 +124,22 @@ class ControllerInputTests(unittest.TestCase):
             with self.assertRaises(ValueError):assess(s,bad)
         for a in ({'kind':'button','button':'unknown'},{'kind':'axis','axis':'LEFT_X','direction':True},{'kind':'button','button':'A','device':1}):
             with self.assertRaises(ValueError):checked({'actions':[a]})
+
+class VisualGameplayTests(unittest.TestCase):
+    def test_pixel_oracle_and_stale_evidence(self):
+        from deepthort_local.visual_gameplay import script,inspect,movement,PLAYER
+        from deepthort_local.texture_pixels import encode
+        s={'title':'Fixture','width':5,'height':5,'cell_size':24,'start':[0,0],'goal':[4,4],'walls':[],'collectibles':[[1,0]]}
+        self.assertEqual(movement(s),((1,0),(1,0)))
+        self.assertIn('RenderingServer.frame_post_draw',script(s))
+        self.assertIn('KEY_RIGHT',script(s))
+        def frame(x):
+            w,h=320,168;data=bytearray(w*h*3)
+            at=((48+12)*w+(x*24+12))*3
+            data[at:at+3]=bytes(PLAYER)
+            return encode(w,h,'RGB',bytes(data))
+        before,after=frame(0),frame(1);log='JANUS_GRID_VISUAL before\nJANUS_GRID_VISUAL after\n'
+        self.assertTrue(inspect(s,before,after,log)['rendered_pixel_movement_verified'])
+        with self.assertRaises(ValueError):inspect(s,before,before,log)
+        with self.assertRaises(ValueError):inspect(s,after,before,log)
+        with self.assertRaises(ValueError):inspect(s,before,after,log+'ERROR: failed')

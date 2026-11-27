@@ -957,3 +957,7 @@ Interpret live screen accepts `{"region":[0,0,640,480],"samples":3,"interval_sec
 ## Reviewed controller input simulation (Pass 212)
 
 Test controller input accepts `{"actions":[{"kind":"button","button":"A"},{"kind":"axis","axis":"LEFT_X","direction":-1}]}`. Up to 12 fixed button or axis actions, each press and release checked through native Godot InputMap. Requires existing Windows Godot under shared cap. No system-level virtual controller, physical input, external game or arbitrary code. Engine execution acceptance pending.
+
+## Reviewed rendered grid gameplay test (Pass 213)
+
+Test rendered grid game accepts the same JSON as Generate grid game. Launches a freshly generated native Godot game with rendering enabled, then sends one in-engine keyboard event and checks state plus before/after viewport player pixels. A visible window may appear briefly; no desktop input is injected. ZIP contains two PNGs and a verified receipt if the narrow movement oracle passes. Native display/GPU and installed Godot required; no overall gameplay or visual quality certification. Native acceptance pending.
