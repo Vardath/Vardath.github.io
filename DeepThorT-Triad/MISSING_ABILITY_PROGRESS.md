@@ -175,7 +175,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 163 | 97 | Pose-controlled image generation | Partial: reviewed 14-joint normalized JSON rendered as a deterministic mannequin image, then existing local image-to-image diffusion. Pass 164 CI pending. Dedicated pose conditioning, detection and pose-fidelity verification outstanding. |
 | 164 | 98 | Depth-controlled image generation | Partial: reviewed relative-depth grayscale map, explicit near/far polarity and optional deterministic relief shading, feeding existing offline diffusion. Pass 165 CI pending. Dedicated depth conditioning and geometry fidelity verification outstanding. |
 | 165 | 99 | Sketch-to-image conversion | Partial: hash-bound RGB/grayscale sketch, configurable line polarity and strength, aspect-preserving letterbox, existing local diffusion and reviewed output. Pass 166 CI pending. Dedicated sketch conditioning and native fidelity outstanding. |
-| 166 | 102 | Layer-aware image editing | Not started in this programme |
+| 166 | 102 | Layer-aware image editing | Partial: reviewed independent PNG layers with names, order, position, size, opacity, visibility and new editable OpenRaster output, merged preview and exact source guards. Pass 167 CI pending. Existing ORA/PSD import and interactive layer editor outstanding. |
 | 167 | 296 | Editable graphic design | Existing partial; completion not started in this programme |
 | 168 | 103 | Visual multimedia generation workflow graphs | Not started in this programme |
 | 169 | 107 | Existing video interpretation | Not started in this programme |
@@ -934,3 +934,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 166 — 27 November 2026
 - Add reviewed sketch-to-image with normalized line contrast, explicit polarity, aspect-preserving centered fit, independent line and diffusion strengths and protected source. Reuse existing offline image model. Regression fixtures verify letterbox and polarity, stale source, uniform rejection. Next rank 166 / ID 102 layer-aware image editing. No installer.
+
+## Pass 167 — 27 November 2026
+- Add reviewed OpenRaster output with separate RGBA raster layer entries (including hidden layers), stack XML, background, merged image and thumbnail. Preserve layer names/order/visibility/opacity and placement; verify archive and layer order, source hashes and non-overwrite. Existing composition test suite gains two fixtures. Native editor interoperability and interactive editing outstanding. Next rank 167 / ID 296 editable graphic design. No installer.

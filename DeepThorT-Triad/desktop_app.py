@@ -823,6 +823,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Compose images…',command=lambda:self._review_typed_tool('image_composition','.png','Image: reviewed composition')).pack(side='left',padx=3)
+        ttk.Button(texture_review_actions,text='Editable layers…',command=lambda:self._review_typed_tool('layered_image','.ora','Image: reviewed editable layers')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Enhance image…',command=lambda:self._review_typed_tool('image_enhancement','.png','Image: reviewed enhancement')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate logo…',command=lambda:self._review_typed_tool('logo_generation','.svg','Image: reviewed logo')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate infographic…',command=lambda:self._review_typed_tool('infographic_generation','.svg','Image: reviewed infographic')).pack(side='left',padx=3)
@@ -1766,6 +1767,7 @@ class DeepThorTDesktop(tk.Tk):
                  'image_style_transfer':('.png','Image: reviewed reference palette transfer'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
+                 'layered_image':('.ora','Image: reviewed editable layers'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),
                  'logo_generation':('.svg','Image: reviewed logo'),
                  'infographic_generation':('.svg','Image: reviewed infographic'),
