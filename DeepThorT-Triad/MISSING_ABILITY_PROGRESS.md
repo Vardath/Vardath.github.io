@@ -71,7 +71,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 59 | 91 | Image background replacement | Source implemented: reviewed transparent PNG foreground composition over solid or opaque PNG background with explicit fit and decoded pixel verification; Pass 060 CI pending. Automatic segmentation, visual and model-directed acceptance outstanding. |
 | 60 | 13 | Optical character recognition (OCR) | Source implemented: reviewed offline English PNG OCR via locally installed Tesseract with word boxes, confidence and pinned source/model; Pass 061 CI pending. Wider languages, documents and native acceptance outstanding. |
 | 61 | 226 | Knowledge import and export | Source extended: reviewed portable exact-source enrollment manifests and transactional local index rebuild; Pass 062 CI pending. Full document bundle and cross-application formats outstanding. |
-| 62 | 7 | Scheduled task execution | Not started in this programme |
+| 62 | 7 | Scheduled task execution | Source implemented: user-confirmed durable one-shot scheduled chat requests admitted transactionally to the existing conversation dispatcher; Pass 063 CI pending. Background service and native acceptance outstanding. |
 | 63 | 6 | User-defined recurring tasks | Not started in this programme |
 | 64 | 25 | Website change monitoring | Not started in this programme |
 | 65 | 9 | Continuous monitoring of user-defined conditions | Not started in this programme |
@@ -580,3 +580,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 062 — 27 November 2026
 
 - Add explicit export of selected current knowledge enrollment paths and source hashes, plus reviewed import that verifies matching local originals and transactionally rebuilds existing lexical postings. No document bodies, state database or imported postings are transferred. Existing quotas and exclusions remain enforced; source files stay unchanged. Four regressions include actual retrieval after import, rollback on stale sources, exclusion and non-overwrite. Next rank 62 / ID 7 scheduled task execution. No installer.
+
+## Pass 063 — 27 November 2026
+
+- Add one-time scheduled conversation requests with explicit prompt and due-time confirmation, persistent SQLite state, scoped cancellation and exactly-once transactional admission into the existing conversation queue. App running, open bound chat, selected workspace, storage, model, pause and gaming gates are respected. No scheduled build/tool authority, service or guaranteed execution deadline; overdue requests release when eligible. Four regression cases cover actual queued conversation, concurrent release/restart, cancellation and approval. Passes 053–059 green and merged (PRs 119–125). Next rank 63 / ID 6 user-defined recurring tasks. No installer.

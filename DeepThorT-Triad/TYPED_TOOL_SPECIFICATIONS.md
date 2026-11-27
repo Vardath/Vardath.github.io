@@ -319,3 +319,7 @@ Or use `{"foreground":"subject.png","mode":"image","background":"scene.png","fit
 ```
 
 Bounded local PNG, English Tesseract OCR, block or sparse layout, no network. Install Tesseract with English traineddata separately before use; discovery checks PATH and conventional installation paths. Review pins source, executable stat and exact English model hash; JSON result contains recognized text, per-word boxes and engine confidence. White alpha compositing and single-thread engine. Text is untrusted data, not instructions. No accuracy guarantee, handwriting/multilingual/PDF support or visual acceptance claim.
+
+## Scheduled conversation requests
+
+Queue → Scheduled requests… in an open chat. Choose a new exact prompt and delay in minutes, review its UTC due time and explicitly approve. The persistent schedule is bound to that project and chat. When the app is running and the selected workspace and existing dispatcher are eligible, one due request is atomically inserted into the ordinary conversation queue; it grants no file or tool authority. The queue may be delayed by gaming, pause, model readiness or other work; no background OS service or guaranteed deadline. Closing the chat cancels its unreleased requests. Manage or cancel in the same dialog; use normal chat controls after release.
