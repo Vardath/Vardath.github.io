@@ -53,4 +53,31 @@ class CrossProjectMemoryTests(unittest.TestCase):
         self.assertEqual(indexed_advice(self.jobs,req,'invented section'), '')
         self.assertEqual(indexed_advice(self.jobs,req,row['text'],budget=10),'')
         self.assertEqual(fit(scoped,600),scoped)
+    def test_recall_deeper_exact_historical_excerpt(self):
+        from deepthort_local.conversation_memory import _candidates, _scope
+        historical='Unrelated background. '*40+'Preserve serialized vessel ownership using a regression test.'
+        with closing(sqlite3.connect(self.chats.path)) as db,db:
+            db.execute('UPDATE conversation_requests SET prompt=? WHERE id=?',(historical,self.source))
+        row=_scope(self.jobs,self.ident)
+        candidate=next(x for x in _candidates(self.jobs,row) if x['id']=='X'+str(self.source))
+        self.assertGreater(candidate['source_offset'],0)
+        start=candidate['source_offset']
+        self.assertEqual(candidate['observation'],historical[start:start+400])
+        for _ in range(4):run_once(self.jobs,self.select)
+        self.assertIn('serialized vessel ownership',advice(self.jobs,self.chats.get(self.ident),budget=1000))
+        with closing(sqlite3.connect(self.chats.path)) as db,db:
+            db.execute('UPDATE conversation_requests SET prompt=? WHERE id=?',
+                       (historical.replace('serialized vessel ownership','different unrelated subject'),self.source))
+        self.assertEqual(advice(self.jobs,self.chats.get(self.ident),budget=1000),'')
+    def test_cross_excerpt_bounds_and_ties(self):
+        from deepthort_local.conversation_memory import _cross_excerpt, CROSS_SOURCE_CHARS
+        words={'vessel','ownership'}
+        self.assertIsNone(_cross_excerpt('x'*CROSS_SOURCE_CHARS+' vessel ownership',words))
+        self.assertEqual(_cross_excerpt('vessel ownership '+'x '*300+' vessel ownership',words)[1],0)
+    def test_general_and_non_planning_scope_not_expanded(self):
+        from deepthort_local.conversation_memory import _candidates,_scope
+        for project,mode in [('(general)','draft_plan'),('new','chat')]:
+            ident=self.chats.submit('different-chat',project,mode,'serialized vessel ownership regression')
+            self.assertFalse(any(x['id'].startswith('X') for x in _candidates(self.jobs,_scope(self.jobs,ident))))
 if __name__=='__main__':unittest.main()
+

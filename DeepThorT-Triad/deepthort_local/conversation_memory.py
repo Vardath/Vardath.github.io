@@ -17,6 +17,9 @@ from .reasoning_council import sha
 from .agent_contract import canonical_sha
 
 MAX_SCAN=16
+CROSS_SOURCE_CHARS=8000
+CROSS_WINDOW=400
+CROSS_STRIDE=300
 MAX_REPORTS=256
 TTL=900
 STATES=('pending','running','waiting_sources','responded')
@@ -57,6 +60,19 @@ def _focus(job_db,row):
 def _cross_allowed(row):
     return row['mode']=='draft_plan' and row['project']!='(general)'
 
+def _cross_excerpt(text,words):
+    """Select the strongest exact contiguous window from a bounded historical prefix."""
+    if not isinstance(text,str) or not text.strip():return None
+    ranked=[]
+    for offset in range(0,min(len(text),CROSS_SOURCE_CHARS),CROSS_STRIDE):
+        excerpt=text[offset:min(offset+CROSS_WINDOW,CROSS_SOURCE_CHARS)]
+        overlap=len(words&terms(excerpt))
+        if overlap>=2:ranked.append((-overlap,offset,excerpt))
+    if not ranked:return None
+    overlap,offset,excerpt=min(ranked)
+    return -overlap,offset,excerpt
+
+
 def _candidates(job_db,row,focus=None):
     words=terms(focus if focus is not None else row['prompt'][:2000])
     if not words:return []
@@ -79,17 +95,17 @@ def _candidates(job_db,row,focus=None):
     cross=[]
     if _cross_allowed(row):
         with closing(reader(_conversations(job_db),timeout=.15)) as db:
-            other=db.execute("""SELECT id,project,substr(prompt,1,400) AS excerpt
+            other=db.execute("""SELECT id,project,substr(prompt,1,?) AS excerpt
                 FROM conversation_requests WHERE project<>? AND project<>'(general)'
                 AND id<? AND state='responded' AND mode='draft_plan'
-                ORDER BY id DESC LIMIT 160""",(row['project'],row['id'])).fetchall()
+                ORDER BY id DESC LIMIT 160""",(CROSS_SOURCE_CHARS,row['project'],row['id'])).fetchall()
         for source in other:
-            excerpt=source['excerpt']
-            if not isinstance(excerpt,str) or not excerpt.strip():continue
-            overlap=len(words&terms(excerpt))
-            if overlap<2:continue
+            hit=_cross_excerpt(source['excerpt'],words)
+            if not hit:continue
+            overlap,offset,excerpt=hit
             item={'id':'X'+str(source['id']),'kind':'cross_project_user_statement',
-                  'source_project_sha':sha(source['project']),'observation':excerpt,'evidence':sha(excerpt)}
+                  'source_project_sha':sha(source['project']),'source_offset':offset,
+                  'observation':excerpt,'evidence':sha(excerpt)}
             cross.append((-overlap,-source['id'],item))
     result=[]
     for _,_,item in sorted(ranked)[:4]+sorted(cross)[:2]+sorted(ranked)[4:]:
@@ -208,9 +224,13 @@ def _checked_saved(job_db,request,*,section_sha=None):
                     if not source or item['kind']!='historical_user_statement':return None
                 else:
                     if not _cross_allowed(row) or item['kind']!='cross_project_user_statement':return None
-                    source=db.execute("""SELECT substr(prompt,1,400),project FROM conversation_requests
+                    # Old V69 receipts used the initial 400 characters only.
+                    offset=item.get('source_offset',0)
+                    if type(offset) is not int or not 0<=offset<CROSS_SOURCE_CHARS or offset%CROSS_STRIDE:return None
+                    size=min(CROSS_WINDOW,CROSS_SOURCE_CHARS-offset)
+                    source=db.execute("""SELECT substr(prompt,?,?),project FROM conversation_requests
                         WHERE id=? AND id<? AND project<>? AND project<>'(general)' AND mode='draft_plan' AND state='responded'""",
-                        (int(ident[1:]),request['id'],row['project'])).fetchone()
+                        (offset+1,size,int(ident[1:]),request['id'],row['project'])).fetchone()
                     if not source or sha(source[1])!=item.get('source_project_sha'):return None
                 if source[0]!=item['observation'] or sha(source[0])!=item['evidence']:return None
             return body
