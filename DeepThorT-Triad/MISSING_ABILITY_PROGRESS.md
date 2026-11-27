@@ -226,7 +226,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 214 | 61 | Automated game balancing | Partial: bounded deterministic collectible relocation search against explicit route-length target, source-guarded candidate/report. Pass 215 CI pending; native and human balance validation outstanding. |
 | 215 | 57 | Unreal Engine integration | Partial: guarded installed UE5 Python commandlet against generated temporary project, exact project/version evidence, reviewed capped native launch. Pass 216 CI pending; native engine, assets, build and gameplay acceptance outstanding. |
 | 216 | 254 | Unity integration | Partial: installed licensed Unity editor fixed batch-mode C# scene creation/save/reopen probe and exact native receipt under shared cap. Pass 217 CI pending; native acceptance, project integration and builds outstanding. |
-| 217 | 256 | General game modification | Existing partial; completion not started in this programme |
+| 217 | 256 | General game modification | Partial: reviewed generic JSON data override bundle with literal existing scalar edits, original digest and inverse semantic replay. Pass 218 CI pending; game loader, code mods and native compatibility outstanding. |
 | 218 | 42 | Integrated development environment (IDE) integration | Not started in this programme |
 | 219 | 51 | Continuous integration and deployment (CI/CD) management | Not started in this programme |
 | 220 | 52 | Automated software deployment | Not started in this programme |
@@ -1093,3 +1093,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 217 — 28 November 2026
 - Extend Unity Hub discovery with a reviewed installed licensed Unity editor batch-mode integration. Generate temporary project, compile fixed C# editor script, save/reopen scene and assert exact root transform, project and version; retain hashed receipt under shared cap. No external project execution, licence automation, package installation, build or gameplay. Native acceptance outstanding. Next rank 217 / ID 256 general game modification. No installer.
+
+## Pass 218 — 28 November 2026
+- Extend existing game-specific mod development with reviewed engine-independent JSON data overrides. Exact source/typed old values, bounded existing key/index edits, preservation of unrelated data, inverse semantic replay, checked archive and non-overwriting publication. No installation, arbitrary executable edits or game compatibility claim. Next rank 218 / ID 42 IDE integration. No installer.

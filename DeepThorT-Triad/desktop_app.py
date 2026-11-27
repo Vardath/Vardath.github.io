@@ -735,8 +735,10 @@ class DeepThorTDesktop(tk.Tk):
         auth_actions=ttk.Frame(media_tab);auth_actions.pack(fill='x',pady=2)
         input_actions=ttk.Frame(media_tab);input_actions.pack(fill='x',pady=2)
         game_test_actions=ttk.Frame(media_tab);game_test_actions.pack(fill='x',pady=2)
-        ttk.Button(game_test_actions,text='Test Unity editor…',command=lambda:self._review_typed_tool('unity_integration','.json','Development: reviewed Unity integration')).pack(side='left',padx=3)
-        ttk.Button(game_test_actions,text='Test Unreal editor…',command=lambda:self._review_typed_tool('unreal_integration','.json','Development: reviewed Unreal integration')).pack(side='left',padx=3)
+        mod_engine_actions=ttk.Frame(media_tab);mod_engine_actions.pack(fill='x',pady=2)
+        ttk.Button(mod_engine_actions,text='Prepare game data mod…',command=lambda:self._review_typed_tool('game_modification','.zip','Development: reviewed game data override')).pack(side='left',padx=3)
+        ttk.Button(mod_engine_actions,text='Test Unity editor…',command=lambda:self._review_typed_tool('unity_integration','.json','Development: reviewed Unity integration')).pack(side='left',padx=3)
+        ttk.Button(mod_engine_actions,text='Test Unreal editor…',command=lambda:self._review_typed_tool('unreal_integration','.json','Development: reviewed Unreal integration')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Balance grid game…',command=lambda:self._review_typed_tool('game_balancing','.json','Development: reviewed grid balancing')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Autoplay grid game…',command=lambda:self._review_typed_tool('autonomous_gameplay','.json','Development: reviewed autonomous gameplay')).pack(side='left',padx=3)
         ttk.Button(game_test_actions,text='Test rendered grid game…',command=lambda:self._review_typed_tool('visual_gameplay','.zip','Development: reviewed visual gameplay')).pack(side='left',padx=3)
@@ -1884,6 +1886,7 @@ class DeepThorTDesktop(tk.Tk):
                  'background_desktop':('.json','Development: reviewed background desktop'),
                  'live_screen':('.json','Development: reviewed live screen'),
                  'controller_input':('.json','Development: reviewed controller fixture'),
+                 'game_modification':('.zip','Development: reviewed game data override'),
                  'unity_integration':('.json','Development: reviewed Unity integration'),
                  'unreal_integration':('.json','Development: reviewed Unreal integration'),
                  'game_balancing':('.json','Development: reviewed grid balancing'),
