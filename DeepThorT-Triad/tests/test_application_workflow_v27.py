@@ -554,3 +554,54 @@ class ApplicationWorkflowTests(unittest.TestCase):
         def ask(*args):
             h['memory_retries']+=1;return '{"answer":1080}'
         self.assertEqual(exercise(lambda:h,10,ask)['status'],'inconclusive')
+
+
+    def test_database_backup_restore_roundtrip(self):
+        import tempfile,json,sqlite3
+        from pathlib import Path
+        from deepthort_local import database_backup as backup,database_restore as restore
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'source.db'
+            db=sqlite3.connect(src)
+            try:
+                db.execute('CREATE TABLE items(value TEXT)')
+                db.execute('INSERT INTO items VALUES (?)',('fixture',))
+                db.commit()
+            finally:db.close()
+            raw=src.read_bytes();spec=root/'backup.json'
+            spec.write_text(json.dumps({'database':'source.db'}))
+            plan,_=backup.review(root,'backup.json','backup.zip')
+            r=backup.execute(root,plan)
+            self.assertTrue(r['restore_roundtrip_verified'])
+            self.assertEqual(src.read_bytes(),raw)
+            spec=root/'restore.json';spec.write_text(json.dumps({'archive':'backup.zip'}))
+            plan,_=restore.review(root,'restore.json','restored.db')
+            self.assertEqual(restore.execute(root,plan)['sha256'],r['database_sha256'])
+            self.assertEqual((root/'restored.db').read_bytes(),raw)
+            with self.assertRaises(ValueError):restore.execute(root,plan)
+
+    def test_database_backup_refuses_changed_and_corrupt_inputs(self):
+        import tempfile,json,sqlite3,io,zipfile
+        from pathlib import Path
+        from deepthort_local.database_backup import review,execute,pack,unpack
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'source.db'
+            db=sqlite3.connect(src)
+            try:db.execute('CREATE TABLE items(value TEXT)');db.commit()
+            finally:db.close()
+            raw=src.read_bytes()
+            (root/'backup.json').write_text(json.dumps({'database':'source.db'}))
+            plan,_=review(root,'backup.json','backup.zip')
+            src.write_bytes(raw+b'x')
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'backup.zip').exists())
+            src.write_bytes(raw)
+            (root/'source.db-wal').write_bytes(b'x')
+            with self.assertRaises(ValueError):review(root,'backup.json','backup.zip')
+            archive,meta=pack(raw)
+            out=io.BytesIO()
+            with zipfile.ZipFile(out,'w') as z:
+                z.writestr('database.sqlite3',raw)
+                z.writestr('manifest.json',json.dumps(dict(meta,database_sha256='0'*64)))
+            with self.assertRaises(ValueError):unpack(out.getvalue())
+            self.assertEqual(unpack(archive)[0],raw)
