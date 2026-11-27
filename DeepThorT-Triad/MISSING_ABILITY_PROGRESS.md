@@ -111,7 +111,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 99 | 235 | Learn application interfaces | Source extended: local OpenAPI 3.0/3.1 evidence extraction, routes, inherited/overridden parameters, primitive JSON field declarations, response status and exact JSON pointers. Pass 100 CI pending. External refs, GUI learning and autonomous use of learned API contracts outstanding. |
 | 100 | 240 | Code refactoring | Source extended: exact scoped Python local-name rename into a new file, UTF-8 AST byte spans, collision and dynamic-scope refusal, complete module AST comparison. Pass 101 CI pending. Project-wide renames, broader refactors and runtime verification outstanding. |
 | 101 | 241 | Automated debugging | Source extended: automatic indexed Python traceback-frame resolution in existing agent diagnostic tool; exact current source hashes, paths, line evidence and revalidation. Pass 102 CI pending. Failure-time identity, runtime instrumentation and broader automated repair outstanding. |
-| 102 | 48 | Pull request creation | Not started in this programme |
+| 102 | 48 | Pull request creation | Source implemented: explicitly approved GitHub draft creation on existing remote branches, fixed pinned HTTPS, transient masked token, validated receipt and no automatic retry. Pass 103 CI pending. Live authenticated acceptance, branch publication and automated PR generation outstanding. |
 | 103 | 250 | Release management | Existing partial; completion not started in this programme |
 | 104 | 251 | Installer generation | Existing partial; completion not started in this programme |
 | 105 | 49 | Pull request review | Not started in this programme |
@@ -720,3 +720,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 102 — 27 November 2026
 - Extend the existing agent diagnostic evidence lane, not a separate UI. Resolve recorded traceback frames only against exact indexed project paths and matching current bytes, bounded source-line evidence with source hash and explicit failure-time identity uncertainty. Existing diagnostic retained; revalidate before reuse. Three regressions. Passes 094–098 both CI jobs green and merged. Next rank 102 / ID 48 pull request creation. No installer.
+
+## Pass 103 — 27 November 2026
+- Add explicit GitHub draft PR dialog using a fixed API host and one reviewed POST, existing branch names, title/body, transient masked token and validated remote draft receipt. No push, merge, local file upload, automatic retry or stored token. Uncertain outcome requires inspection. Three transport-fixture regressions; no actual remote mutation in CI. Next rank 103 / ID 250 release management. No installer.

@@ -491,3 +491,7 @@ Files & Images → Refactor Python local name. JSON: `{"document":"source.py","f
 ## Automated debugging evidence (Pass 102)
 
 The existing read-only agent diagnostics tool additionally resolves Python traceback frame paths and line numbers against the current indexed project. Returns exact current source hashes and bounded source lines, not a guessed root cause or failure-time source identity. No external path reads, execution or edits. Agent evidence revalidation rejects stale source.
+
+## GitHub draft pull request (Pass 103)
+
+Files & Images → Create GitHub draft PR. Enter existing remote branches, repository and title/body; approve exact outgoing request and enter a transient GitHub token with pull-request write permission. A successful provider receipt must match repository and refs. No branch push, merge, local source upload or saved token. Remote write may have succeeded despite a lost response; inspect GitHub rather than retry automatically.
