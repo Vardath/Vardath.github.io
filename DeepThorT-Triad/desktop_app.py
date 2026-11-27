@@ -551,6 +551,7 @@ class DeepThorTDesktop(tk.Tk):
                    command=self._restore_source_checkpoint).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Quiet Godot scene test',
                    command=self._run_quiet_scene).pack(side='left',padx=7)
+        ttk.Button(restorebar,text='Android emulator smoke…',command=lambda:self._review_typed_tool('android_emulator','.json','Development: reviewed Android emulator smoke')).pack(side='left',padx=3)
         ttk.Button(restorebar,text='Stop quiet test',
                    command=self._stop_quiet_scene).pack(side='left',padx=3)
         guibar=ttk.Frame(queue_tab);guibar.pack(fill='x',pady=(0,3))
@@ -1822,6 +1823,7 @@ class DeepThorTDesktop(tk.Tk):
                  'interface_learning':('.json','Development: reviewed interface evidence'),
                  'code_refactoring':('.py','Development: reviewed local refactor'),
                  'installer_project':('.iss','Development: reviewed installer source'),
+                 'android_emulator':('.json','Development: reviewed Android emulator smoke'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
                  'rest_api':('.json','Integration: reviewed REST request'),
@@ -1849,7 +1851,7 @@ class DeepThorTDesktop(tk.Tk):
             view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
             approved=[False]
             def approve():approved[0]=True;dialog.destroy()
-            ttk.Button(dialog,text='Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Approve emulator launch + report' if module=='android_emulator' else 'Approve exact REST request + output' if module=='rest_api' else 'Approve remote MCP discovery + output' if module=='remote_mcp' else 'Approve local HTTP requests + output' if module in ('api_testing','application_monitoring') else 'Approve HTTPS read + new output' if module in ('webpage_retrieval','image_discovery','scientific_citations','academic_discovery','website_crawling','multi_source_research') else 'Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
             ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
             dialog.grab_set();self.wait_window(dialog)
             if not approved[0] or not self._editor_idle(project,proposal=True):return

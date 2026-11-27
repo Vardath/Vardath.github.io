@@ -187,7 +187,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 175 | 114 | Video upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos video enlargement with shared RGB budget, up to 1280x960, existing edits and transitions/interpolation integration, exact decoded output verification. Pass 176 CI pending. Neural detail recovery and native playback outstanding. |
 | 176 | 120 | Multitrack video editing timelines | Partial: reviewed 1–3 bottom-to-top visual tracks, up to four clips, timeline offsets, gaps, position and opacity, bounded compositing and exact lossless output verification. Pass 177 CI pending. Audio tracks and interactive timeline editor outstanding. |
 | 177 | 121 | Automatic video highlight extraction | Partial: reviewed automatic visual activity ranking of nonoverlapping frame windows, chronological montage, threshold-based no-output behavior and exact RGB verification. Pass 178 CI pending. Semantic, audio and narrative highlight selection outstanding. |
-| 178 | 62 | Android emulator operation | Not started in this programme |
+| 178 | 62 | Android emulator operation | Partial: reviewed existing dedicated AVD/SDK identity, headless read-only/no-snapshot Windows startup smoke under existing shared root and nested cleanup job, resource/log stop and JSON receipt. Pass 179 CI pending. Native boot, ADB/APK execution and gameplay acceptance outstanding. |
 | 179 | 253 | Game project generation | Existing partial; completion not started in this programme |
 | 180 | 255 | X4 asset and XML processing | Existing partial; completion not started in this programme |
 | 181 | 257 | Game asset generation | Existing partial; completion not started in this programme |
@@ -970,3 +970,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 178 — 27 November 2026
 - Implement reviewed automatic visual activity highlight montage using bounded downsampled consecutive-frame RGB change, explicit minimum threshold and nonoverlapping chronological windows. Actual source frames are extracted and losslessly rendered, with segment timestamps in the result. Static footage produces no artifact. Two regression tests exercise actual FFmpeg montage and no-match behavior. No semantic/audio ranking or native playback claim. Next rank 178 / ID 62 Android emulator operation. No installer.
+
+## Pass 179 — 27 November 2026
+- Add explicitly approved existing Android AVD startup observation using fixed headless/read-only/no-snapshot command and existing shared Windows cap and nested cleanup supervisor. Bind SDK executable metadata and AVD descriptor/config hashes; refuse linked/project-local runtime. Stop on host pressure, excessive log or deadline; report process evidence without claiming Android boot or APK execution. Fixture tests cover exact command/runtime and monitor states; native SDK/hypervisor availability unverified. Next rank 179 / ID 253 game project generation. No installer.
