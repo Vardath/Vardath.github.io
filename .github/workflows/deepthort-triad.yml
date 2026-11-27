@@ -279,6 +279,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_worktree_batch_ability.py -v
       - run: python -m unittest discover -s tests -p test_execution_isolation_ability.py -v
       - run: python -m unittest discover -s tests -p test_restricted_environment_ability.py -v
+      - run: python -m unittest discover -s tests -p test_game_distribution_ability.py -v
       - run: python -m unittest discover -s tests -p test_project_queue.py -v
   native-windows:
     runs-on: windows-latest
@@ -775,6 +776,8 @@ jobs:
           python -m unittest discover -s tests -p test_execution_isolation_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_restricted_environment_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_game_distribution_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_project_queue.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

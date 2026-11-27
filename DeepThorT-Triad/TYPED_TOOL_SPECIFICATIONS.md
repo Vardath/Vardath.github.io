@@ -1005,3 +1005,7 @@ Test process isolation accepts `{"probe":"single_process"}`. A fixed baseline Py
 ## Restricted Python environment (Pass 224)
 
 Restricted Python check accepts `{"document":"src/main.py"}`. Stages exact reviewed bytes and compiles for syntax only in fixed Windows worker with explicit environment allowlist, temporary working directory, isolated/no-site interpreter flags, 128 MiB nested commit cap and one active process. Exact source digest, working directory, environment keys and syntax verdict verified. Does not run project code. This is not a filesystem, network or privilege sandbox; Docker remains stopped-only.
+
+## Reviewed game distribution (Pass 225)
+
+Prepare game distribution accepts `{"artifact":"game.zip","name":"Example","version":"1.2.3","sha256":"<exact build SHA-256>","entrypoint":"Game.exe","release_notes":"First release"}`. Output must be new `Example-1.2.3-distribution.zip` in an existing project directory. Includes exact original game archive, release notes and per-file SHA-256 manifest. Checks bounded safe archive paths, CRC and minimal PE header/architecture. Does not verify signatures, gameplay, store acceptance or perform remote upload. Subject to existing 16 MiB typed artifact/output bounds.

@@ -233,7 +233,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 221 | 220 | Multiple isolated work environments | Partial: reviewed batch creation of 2–3 distinct unused Git branch worktrees, exact pre/post inventory checks and stop on partial failure. Pass 222 CI pending; automatic project assignment and OS isolation outstanding. |
 | 222 | 238 | Operating-system-level execution isolation (existing process-level restrictions; not a security sandbox) | Partial: native optional one-active-process nested Job Object limit, policy readback, fixed baseline and descendant-blocking probe. Pass 223 CI pending; security sandbox remains absent. |
 | 223 | 335 | Restricted execution environments | Partial: fixed reviewed Python syntax worker with exact staged input, allowlisted Windows environment, isolated interpreter flags and single-process nested job. Pass 224 CI pending; arbitrary-code sandbox outstanding. |
-| 224 | 63 | Automated game distribution | Not started in this programme |
+| 224 | 63 | Automated game distribution | Partial: reviewed offline Windows game distribution archive, exact original build, release notes, PE header identity and per-file digests. Pass 225 CI pending; store upload, signing and gameplay acceptance outstanding. |
 | 225 | 168 | Email reading and searching | Not started in this programme |
 | 226 | 169 | Email sending | Not started in this programme |
 | 227 | 170 | Automated inbox organisation | Not started in this programme |
@@ -1114,3 +1114,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 224 — 28 November 2026
 - Add opt-in clean environment to bounded single-process Windows auxiliary jobs. Reviewed Python syntax-only worker stages exact bytes, uses isolated/no-site/no-bytecode interpreter flags, 128 MiB nested commit cap, verifies environment key inventory and source digest. Native Windows CI valid and invalid source fixtures; no project execution, external Docker workload, filesystem or network sandbox. Next rank 224 / ID 63 automated game distribution. No installer.
+
+## Pass 225 — 28 November 2026
+- Add reviewed offline game distribution bundle for existing exact Windows build ZIP. Audit archive, check explicit PE executable identity, produce per-file hashes and release notes while preserving original build bytes. Non-overwriting verified publication, no install, execution, signature or store claim. Three regression fixtures on both CI hosts. Next rank 225 / ID 168 email reading and searching. No JANUS installer.
