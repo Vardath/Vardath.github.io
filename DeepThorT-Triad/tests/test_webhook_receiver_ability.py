@@ -28,6 +28,16 @@ class WebhookTests(unittest.TestCase):
         self.assertFalse(result['task_submitted']);self.assertFalse(result['payload_retained'])
         self.assertNotIn('unretained payload',json.dumps(result))
         self.assertFalse(t.is_alive())
+    def test_wrong_event_consumes_split_bounded_body(self):
+        from unittest.mock import Mock
+        head=('POST /webhook HTTP/1.1\r\nContent-Type: application/json\r\n'
+              'X-GitHub-Event: ping\r\nX-GitHub-Delivery: '+str(uuid.uuid4())+
+              '\r\nContent-Length: '+str(len(BODY))+'\r\n\r\n').encode('ascii')
+        conn=Mock()
+        conn.recv.side_effect=[head,BODY]
+        with self.assertRaisesRegex(ValueError,'Unexpected event'):
+            w.parse(conn,'push',SECRET.encode(),None,float('inf'))
+        self.assertEqual(conn.recv.call_count,2)
     def test_cancel_and_no_approval(self):
         with self.assertRaises(PermissionError):w.listen('push',SECRET,5,lambda p:None)
         port,q,c,t=self.launch();c.set()
