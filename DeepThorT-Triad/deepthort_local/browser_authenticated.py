@@ -77,17 +77,17 @@ def review(root,source,output,exclude=()):
     plan['guards'].append(runtime(root,{'browser':s['browser']}))
     return plan,dict(s,scope='Open a visible disposable browser with normal website networking. You manually sign in, navigate to the exact approved page, and confirm in a separate local dialog. JANUS then checks only the exact page and expected heading. No password entry, cookie export, personal profile attachment, automatic navigation or submission. Site login and redirects are user-operated and may affect remote state. Temporary profile contains browser data until cleanup; this is not an OS sandbox.')
 
-def confirmation(s,alive,deadline,sampler,log):
+def confirmation(s,alive,deadline,sampler,log,*,research=False):
     import tkinter as tk
     from tkinter import ttk
     window=tk.Tk();window.title('JANUS — confirm manual browser sign-in')
     window.geometry('640x250');accepted=[False]
     ttk.Label(window,text='Sign in yourself in the separate browser, then return to this dialog.\\nDo not enter your password here.',wraplength=600).pack(padx=12,pady=12)
     ttk.Label(window,text='Approved page: '+s['url'],wraplength=600).pack(padx=12,pady=4)
-    ttk.Label(window,text='Confirm only after the reviewed page is open.',wraplength=600).pack(padx=12,pady=8)
+    ttk.Label(window,text=('Collect visible text from section: '+s['expected_heading']+'; private text will be saved locally.' if research else 'Confirm only after the reviewed page is open.'),wraplength=600).pack(padx=12,pady=8)
     def confirm():
         accepted[0]=True;window.destroy()
-    ttk.Button(window,text='I signed in; inspect this page',command=confirm).pack(pady=5)
+    ttk.Button(window,text='I signed in; collect approved section locally' if research else 'I signed in; inspect this page',command=confirm).pack(pady=5)
     ttk.Button(window,text='Cancel',command=window.destroy).pack(pady=5)
     def monitor():
         try:
@@ -101,7 +101,7 @@ def confirmation(s,alive,deadline,sampler,log):
         raise ValueError('Manual sign-in cancelled or timed out')
 
 @contextmanager
-def user_session(plan,s):
+def user_session(plan,s,*,research=False):
     from deepthort_local.triad_job import verify_root_cap,child_server
     from deepthort_local.quiet_playtest import WindowsPressureSampler
     from deepthort_local.disk_gate import require_storage
@@ -121,7 +121,7 @@ def user_session(plan,s):
                 if not alive() or time.monotonic()>=deadline:raise ValueError('Browser did not start')
                 time.sleep(.25)
             port,path=parse_port(guard.read_bound(endpoint,256))
-            confirmation(s,alive,deadline,sampler,log)
+            confirmation(s,alive,deadline,sampler,log,research=research)
             verify_guards(plan['guards'])
             local_version(port,path)
             sock=socket.create_connection(('127.0.0.1',port),timeout=3)

@@ -18,7 +18,7 @@ EXTRA=('form_receipt','.json')
 TYPES={'text','email','url','tel','search',None}
 IDS=re.compile(r'[A-Za-z0-9-]{1,80}')
 METHODS={'Target.attachToTarget','Page.getFrameTree','Page.setDocumentContent','DOM.getDocument',
-         'DOM.querySelector','DOM.focus','Input.insertText','Runtime.evaluate'}
+         'DOM.querySelector','DOM.focus','Input.insertText','Runtime.evaluate','Page.createIsolatedWorld'}
 # Fixed host-owned expression, never constructed from page or model instructions.
 VERIFY="Array.from(document.querySelectorAll('input[data-janus]'), e => e.value)"
 
