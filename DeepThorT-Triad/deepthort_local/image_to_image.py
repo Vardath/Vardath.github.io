@@ -21,6 +21,7 @@ SCHEMA='janus-image-to-image-v1'
 FIELDS={'schema','image','source_sha256','output','prompt','size','steps','strength_percent','seed'}
 REF_FIELDS={'reference','reference_sha256','palette_strength_percent'}
 MASK_FIELDS={'mask','mask_sha256'}
+CHARACTER_FIELDS={'character_name','character_region_sha256'}
 OUT_FIELDS={'offset_x','offset_y'}
 REMOVE_FIELDS={'operation','removed_object'}
 REPLACE_FIELDS=REMOVE_FIELDS|{'replacement_object'}
@@ -29,7 +30,7 @@ DEPTH_FIELDS=POSE_FIELDS|{'near_is_white','relief_percent'}
 SKETCH_FIELDS=POSE_FIELDS|{'light_background','line_strength_percent'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS,FIELDS|DEPTH_FIELDS,FIELDS|SKETCH_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|MASK_FIELDS|CHARACTER_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS,FIELDS|DEPTH_FIELDS,FIELDS|SKETCH_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -53,6 +54,12 @@ def checked(s):
             raise ValueError('Use a distinct binary mask')
         if not isinstance(s['mask_sha256'],str) or not re.fullmatch(r'[0-9a-f]{64}',s['mask_sha256']):
             raise ValueError('Invalid mask digest')
+    if 'character_name' in s:
+        name=s['character_name']
+        if not isinstance(name,str) or not 1<=len(name)<=100 or not name.strip() or any(ord(c)<32 for c in name):
+            raise ValueError('Use a bounded character label')
+        if not isinstance(s['character_region_sha256'],str) or not re.fullmatch(r'[0-9a-f]{64}',s['character_region_sha256']):
+            raise ValueError('Invalid character region digest')
     if 'offset_x' in s:
         for k in ('offset_x','offset_y'):
             if type(s[k]) is not int or not 0<=s[k]<s['size']:raise ValueError('Invalid source offset')
@@ -273,6 +280,24 @@ def review_mask(root,image,mask,output,prompt,size=384,steps=15,strength_percent
     mask_pixels(guard.exact(source,bound,guard.MAX_INPUT),guard.exact(path,mb,guard.MAX_INPUT),s)
     return s
 
+def character_digest(raw,mask_raw,s):
+    """Bind the owner-selected unchanged character pixels and their positions."""
+    w,h,pixels,mask=mask_pixels(raw,mask_raw,s)
+    if mask.count(0)<w*h//20 or mask.count(255)<w*h//20:
+        raise ValueError('Both protected character and editable scene need at least 5% of the canvas')
+    identity=hashlib.sha256()
+    identity.update(str(w).encode()+b'x'+str(h).encode()+b'\0'+mask)
+    identity.update(b''.join(pixels[i:i+3] for i in range(0,len(pixels),3) if not mask[i//3]))
+    return identity.hexdigest()
+
+def review_character(root,image,mask,output,scene,name,size=384,steps=15,strength_percent=80,seed=0):
+    s=review_mask(root,image,mask,output,scene,size,steps,strength_percent,seed)
+    src,_,bound=validate(root,s);mp,mb=mask_input(root,s,src)
+    s.update(character_name=name,character_region_sha256=character_digest(
+        guard.exact(src,bound,guard.MAX_INPUT),guard.exact(mp,mb,guard.MAX_INPUT),s))
+    checked(s)
+    return s
+
 def reference_input(root,s,source,bound):
     if 'reference' not in s:return None,None
     path=guard.path_for(Path(root).resolve(strict=True),s['reference'],exclusions(()),{'.png'},exists=True)
@@ -382,6 +407,8 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     elif mask_path:
         mr=guard.exact(mask_path,mask_bound,guard.MAX_INPUT)
         _,_,original,mask=mask_pixels(raw,mr,s)
+        if 'character_name' in s and character_digest(raw,mr,s)!=s['character_region_sha256']:
+            raise ValueError('Reviewed character region changed')
         initial=removal_init(raw,mr,s) if s.get('operation') in ('remove_object','replace_object') else raw
         out=mask_backend(model,initial,mr,s)
     else:out=backend(model,initial,s)
@@ -402,6 +429,10 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
         if mask_input(root,s,current)!=(mask_path,mask_bound):raise ValueError('Reviewed mask changed')
     if s.get('operation') in ('remove_object','replace_object') and pixels==original:
         raise ValueError('Object edit produced no pixel change')
+    if 'character_name' in s:
+        if pixels==original:raise ValueError('Scene generation produced no pixel change')
+        if character_digest(out,mr,s)!=s['character_region_sha256']:
+            raise ValueError('Protected character pixels differ')
     sha=guard.publish(out,dst,revalidate)
     return {'schema':'janus-image-to-image-result-v1','status':'generated_image_pixels_verified',
             'output':s['output'],'sha256':sha,'source_sha256':s['source_sha256'],
@@ -413,6 +444,9 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
                 'semantic_reference_conditioning':False} if ref_path else {}),
             **({'mask_sha256':hashlib.sha256(mr).hexdigest(),'masked_pixels':sum(v==255 for v in mask),
                 'unmasked_pixels_preserved':True,'inpainting_backend':'local_diffusion'} if mask is not None else {}),
+            **({'character_name':s['character_name'],'character_region_sha256':s['character_region_sha256'],
+                'same_reference_pixels_verified':True,'semantic_character_identity_verified':False,
+                'new_pose_generated':False,'scene_variation_only':True} if 'character_name' in s else {}),
             **({'outpainting':True,'source_offset':[s['offset_x'],s['offset_y']],
                 'source_pixels_preserved':True,'initial_canvas_sha256':hashlib.sha256(initial).hexdigest()} if expanded else {}),
             **({'operation':'remove_object','removed_object':s['removed_object'],
