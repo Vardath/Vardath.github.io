@@ -756,6 +756,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(git_extra_actions,text='Discover remote MCP…',command=lambda:self._review_typed_tool('remote_mcp','.json','Integration: reviewed remote MCP')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Reviewed REST request…',command=lambda:self._review_typed_tool('rest_api','.json','Integration: reviewed REST request')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Generate JSON tool…',command=lambda:self._review_typed_tool('tool_factory','.py','Development: reviewed tool source')).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='Receive local webhook…',command=self._show_webhook_receiver).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1418,6 +1419,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_webhook_receiver(self):
+        from deepthort_local.webhook_dialog import show
         show(self)
 
     def _show_github_account(self):

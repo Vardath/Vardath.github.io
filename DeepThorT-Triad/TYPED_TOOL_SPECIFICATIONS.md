@@ -535,3 +535,7 @@ Files & Images → Generate JSON tool. JSON: `{"name":"normalise","fields":[{"so
 ## Public GitHub account inventory (Pass 114)
 
 Files & Images → GitHub public repositories. Connect the existing transient OAuth session, select page 1–10 and approve identity verification plus a bounded public owned-repository page. Returns repository ID, exact name, default branch and flags only. No private repository enumeration, clone, scope change or remote mutation. Page is not a complete account inventory.
+
+## Local signed webhook receiver (Pass 115)
+
+Files & Images → Receive local webhook. Enter exact event type and dedicated test secret, approve one delivery for up to 60 seconds. Send a local JSON POST to the displayed 127.0.0.1 endpoint with X-GitHub-Event, X-GitHub-Delivery UUID and X-Hub-Signature-256 HMAC over raw bytes. Only receipt metadata and body hash retained in the dialog. No public listener, task submission, persistent replay protection or claim of actual GitHub origin.
