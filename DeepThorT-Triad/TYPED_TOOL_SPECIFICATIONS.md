@@ -1097,3 +1097,7 @@ Generate sound effect accepts `effect` (ui_beep, sweep, impact, whoosh), `durati
 ## Reviewed ambient sound generation (Pass 247)
 
 Generate ambient loop accepts `profile` (wind, rain, machine_hum), `duration_seconds` 4–20, `intensity_percent` 10–100, `stereo_width_percent` 0–100, `seed` 0–2147483647 and `peak_dbfs` -30 to -3. Local seeded noise, circular moving-average filtering and integer-cycle modulation produce a new 24 kHz stereo PCM16 WAV. Width zero produces identical channels. Peak and exact PCM roundtrip verified; measured loop boundary difference does not prove an inaudible seam. No neural sound generation or actual environmental recordings.
+
+## Reviewed sung-vowel generation (Pass 248)
+
+Generate sung vowels accepts `notes` (1–24 ordered rows containing `midi` 45–84 or null, `vowel` ah/ee/oo/eh/oh or null for rest, `duration_ms` 150–2000), `vibrato_hz` 4–8, `vibrato_cents` 0–60 and `peak_dbfs` -24 to -3. Total 12 seconds maximum with at least one voiced note. Harmonic formant-shaped synthetic voice with note envelopes and vibrato; 24 kHz mono PCM16 WAV, exact decoded verification. No lyrics, neural singer, voice imitation or listening acceptance.
