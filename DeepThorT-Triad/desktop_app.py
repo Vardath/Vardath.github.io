@@ -844,6 +844,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(scene_review_actions,text='Auto-light 3D scene…',command=lambda:self._review_typed_tool('automatic_lighting','.glb','Scene: reviewed automatic lighting')).pack(side='left',padx=3)
         ttk.Button(scene_review_actions,text='Render 3D preview…',command=lambda:self._review_typed_tool('automated_rendering','.png','Scene: reviewed preview render')).pack(side='left',padx=3)
         ttk.Button(scene_review_actions,text='Optimise game asset…',command=lambda:self._review_typed_tool('game_asset_optimisation','.glb','Mesh: reviewed game asset budgets')).pack(side='left',padx=3)
+        texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
+        ttk.Button(texture_review_actions,text='Map texture…',command=lambda:self._review_typed_tool('automatic_texture_mapping','.glb','Mesh: reviewed texture mapping')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1579,6 +1581,7 @@ class DeepThorTDesktop(tk.Tk):
                  'automatic_lighting':('.glb','Scene: reviewed automatic lighting'),
                  'automated_rendering':('.png','Scene: reviewed preview render'),
                  'game_asset_optimisation':('.glb','Mesh: reviewed game asset budgets'),
+                 'automatic_texture_mapping':('.glb','Mesh: reviewed texture mapping'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),

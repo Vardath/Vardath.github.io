@@ -155,7 +155,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 143 | 321 | Automated lighting | Partial: reviewed automatic view-relative three-point directional light rig, neutral/warm/cool presets and intensity, KHR_lights_punctual metadata with verified geometry preservation. Pass 144 CI pending. Native renderer, exposure, shadows and visual quality outstanding. |
 | 144 | 322 | Automated rendering | Partial: reviewed actual bounded CPU orthographic PNG preview of composed meshes, depth occlusion, flat directional lighting, auto-framing and decoded pixel checks. Pass 145 CI pending. Native Blender/production rendering, textures, shadows, PBR and visual acceptance outstanding. |
 | 145 | 323 | Game-ready asset optimisation | Partial: reviewed bounded mesh candidate search with triangle/vertex budgets, displacement and export precision, source/export manifold checks and optional exact boundary preservation. Pass 146 CI pending. UV/material/rig/collider/LOD, engine import, surface error and performance acceptance outstanding. |
-| 146 | 162 | Automatic texture mapping | Not started in this programme |
+| 146 | 162 | Automatic texture mapping | Partial: reviewed dominant-axis box projection with preserved triangle geometry, complete UVs and embedded opaque PNG GLB base color material. Pass 147 CI pending. Seam optimisation, texture baking, overlap control and native visual acceptance outstanding. |
 | 147 | 314 | Texture generation | Existing partial; completion not started in this programme |
 | 148 | 315 | PBR material generation | Existing partial; completion not started in this programme |
 | 149 | 164 | Automatic character rigging | Not started in this programme |
@@ -866,3 +866,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 146 — 27 November 2026
 - Reuse mesh simplification and GLB conversion for a reviewed 1–8 candidate search with explicit vertex/triangle limits, representative displacement and export precision. Preserve baseline if already meets requirements; select lowest displacement candidate otherwise, check manifold edges/fans and optional exact source/export boundary; reject impossible budget rather than publish misleading output. Three fixtures. Static plain geometry only, not complete game-ready acceptance. Next rank 146 / ID 162 automatic texture mapping. No installer.
+
+## Pass 147 — 27 November 2026
+- Add automatic box UV projection and embedded base-color PNG on static triangular OBJ, reusing strict geometry, GLB conversion and pixel validation. Guard both inputs; verify UV roundtrip and exact embedded PNG/geometry bytes. Three fixtures. Overlaps/seams possible, no baking or native render claim. Next rank 147 / ID 314 texture generation. No installer.
