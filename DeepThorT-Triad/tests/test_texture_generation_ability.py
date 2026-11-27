@@ -27,3 +27,32 @@ class TextureTests(unittest.TestCase):
             (root/'tile.png').unlink();src.write_text(json.dumps(dict(SPEC,seed=124)))
             with self.assertRaises(ValueError):t.execute(root,plan)
             self.assertFalse((root/'tile.png').exists())
+
+
+    def test_game_sprite_atlas_pixels_and_animation(self):
+        import io,zipfile
+        from deepthort_local.game_asset_generation import generate,checked
+        from deepthort_local.texture_pixels import image_module
+        s={'size':8,'palette':{'A':[10,20,30,255],'B':[40,50,60,128]},
+           'sprites':[{'name':'idle','rows':['A.......']+['........']*7,'pivot':[0,0]},
+                      {'name':'walk','rows':['.B......']+['........']*7,'pivot':[1,0]}],
+           'animations':[{'name':'move','frames':['idle','walk'],'fps':6,'loop':True}]}
+        data,r=generate(s)
+        self.assertEqual(data,generate(s)[0]);self.assertTrue(r['pixel_roundtrip_verified'])
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            m=json.loads(z.read('atlas.json'));self.assertEqual(m['sprites']['walk']['rect'],[8,0,8,8])
+            self.assertEqual(m['animations'],s['animations'])
+            with image_module().open(io.BytesIO(z.read('atlas.png'))) as im:
+                self.assertEqual(im.getpixel((0,0)),(10,20,30,255))
+                self.assertEqual(im.getpixel((9,0)),(40,50,60,128))
+                self.assertEqual(im.getpixel((8,0)),(0,0,0,0))
+        with self.assertRaises(ValueError):checked(dict(s,animations=[dict(s['animations'][0],frames=['missing'])]))
+    def test_game_sprite_review_stale_and_nonoverwrite(self):
+        from deepthort_local.game_asset_generation import review,execute
+        s={'size':8,'palette':{'A':[1,2,3,255]},'sprites':[{'name':'tile','rows':['A.......']*8,'pivot':[0,0]}],'animations':[]}
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();src=root/'spec.json';src.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','atlas.zip');self.assertEqual(execute(root,plan)['status'],'sprite_atlas_pixels_verified')
+            with self.assertRaises(ValueError):execute(root,plan)
+            (root/'atlas.zip').unlink();src.write_text(json.dumps(dict(s,animations=[{'name':'idle','frames':['tile'],'fps':1,'loop':True}])))
+            with self.assertRaises(ValueError):execute(root,plan)
