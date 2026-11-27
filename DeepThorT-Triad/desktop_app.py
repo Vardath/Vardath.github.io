@@ -751,6 +751,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(api_actions,text='Inspect GitHub PR…',command=self._show_github_pr_review).pack(side='left',padx=3)
         git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1409,6 +1410,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _web_research_dialog(self):
         from deepthort_local.web_research_dialog import show
+        show(self)
+
+    def _show_github_oauth(self):
+        from deepthort_local.github_oauth_dialog import show
         show(self)
 
     def _show_github_pr_review(self):
