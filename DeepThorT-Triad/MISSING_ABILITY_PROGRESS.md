@@ -85,7 +85,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 73 | 18 | Website crawling | Source implemented: explicitly scoped same-host static crawl, conservative robots policy, delay, bounded depth/attempts and provenance; Pass 074 CI pending. Live and dynamic-site acceptance outstanding. |
 | 74 | 228 | Multi-source research | Source extended: explicit 2–5 public URL reads, hashed full static evidence, exact ranked excerpts, term/source matrix and duplicate-text grouping; Pass 075 CI pending. Semantic synthesis, independence and claim verification outstanding. |
 | 75 | 229 | Source credibility assessment | Source extended: exact evidence consistency checks, six transparency dimensions, literal source cues and optional quote-bound reviewer judgments; Pass 076 CI pending. Independent credibility and semantic verification outstanding. |
-| 76 | 230 | Contradictory source comparison | Existing partial; completion not started in this programme |
+| 76 | 230 | Contradictory source comparison | Source extended: reviewed claim/position matrix with exact quote locators, pairwise disagreement/qualification/duplicate classifications and unresolved status; Pass 077 CI pending. Independent semantic inference outstanding. |
 | 77 | 231 | Research report generation | Existing partial; completion not started in this programme |
 | 78 | 12 | Semantic vector embeddings | Not started in this programme |
 | 79 | 221 | Cross-project historical recall | Existing partial; completion not started in this programme |
@@ -636,3 +636,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 076 — 27 November 2026
 
 - Add reviewed source credibility assessment of a multi-source evidence report. Rebuild evidence matrix to detect inconsistencies; observe authorship, date, references, methods, funding/conflicts and corrections cues with exact excerpt positions. Optional reviewer findings must match actual source quotes and retain their supplied reasoning. Flag duplicate text and unavailable sources; never equate absent cues with absence or assign unsupported trust scores. Four regression cases. Pass 072 green and merged (PR 138). Next rank 76 / ID 230 contradictory source comparison. No installer.
+
+## Pass 077 — 27 November 2026
+
+- Compare 1–12 explicit claims and 2–5 source positions per claim against validated multi-source evidence. Exact quote/line/offset checks, preserve context and reviewer reasoning, pairwise support/opposition/qualification/unclear and duplicate-evidence distinctions. No independent semantic truth decision. Four regressions. Pass 074 green and merged (PR 140); 075–076 Linux green, Windows pending. Next rank 77 / ID 231 research report generation. No installer.
