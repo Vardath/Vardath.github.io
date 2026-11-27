@@ -728,6 +728,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(texture_review_actions,text='Generate logo…',command=lambda:self._review_typed_tool('logo_generation','.svg','Image: reviewed logo')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate infographic…',command=lambda:self._review_typed_tool('infographic_generation','.svg','Image: reviewed infographic')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Batch images…',command=lambda:self._review_typed_tool('batch_image_processing','.zip','Image: reviewed batch')).pack(side='left',padx=3)
+        video_review_actions=ttk.Frame(media_tab);video_review_actions.pack(fill='x',pady=2)
+        ttk.Button(video_review_actions,text='Trim/sequence video…',command=lambda:self._review_typed_tool('video_trimming','.mp4','Video: reviewed sequence')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
@@ -1373,7 +1375,8 @@ class DeepThorTDesktop(tk.Tk):
                  'image_enhancement':('.png','Image: reviewed enhancement'),
                  'logo_generation':('.svg','Image: reviewed logo'),
                  'infographic_generation':('.svg','Image: reviewed infographic'),
-                 'batch_image_processing':('.zip','Image: reviewed batch')}
+                 'batch_image_processing':('.zip','Image: reviewed batch'),
+                 'video_trimming':('.mp4','Video: reviewed sequence')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

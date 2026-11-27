@@ -287,3 +287,11 @@ Two to eight supplied fact cards, fixed responsive-to-count two-column vector la
 ```
 
 Two to six distinct bounded PNG inputs, shared enhancement settings, optional aspect-preserving maximum edge without upscaling, explicit output names. Verified PNG outputs and a source/output hash manifest are published as one non-overwriting ZIP; no partial publication. Alpha is preserved before resizing; resized alpha is resampled. This does not establish visual quality or model-directed acceptance.
+
+## Trim and sequence silent video
+
+```json
+{"fps":24,"clips":[{"video":"scene-a.mp4","start_frame":12,"end_frame":36},{"video":"scene-b.mp4","start_frame":0,"end_frame":24}]}
+```
+
+One to four distinct short H.264 MP4 clips, one video stream only (audio or other streams refused), matching dimensions up to 640x480 and matching 24/25/30 fps metadata. Start inclusive, end exclusive; at most 300 source frames and 120 output frames. Installed FFmpeg/FFprobe identity and exact input hashes are reviewed. Re-encode selected decoded RGB frames using lossless H.264 RGB, then decode and compare exact output frames; player compatibility and visual quality still require acceptance. No audio, transitions, retiming or broad codec support.
