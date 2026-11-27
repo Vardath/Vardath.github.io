@@ -70,7 +70,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 58 | 90 | Image background removal | Source implemented: reviewed color-key or supplied grayscale mask removal with feather and exact alpha/pixel verification; Pass 059 CI pending. Semantic segmentation, visual and model-directed acceptance outstanding. |
 | 59 | 91 | Image background replacement | Source implemented: reviewed transparent PNG foreground composition over solid or opaque PNG background with explicit fit and decoded pixel verification; Pass 060 CI pending. Automatic segmentation, visual and model-directed acceptance outstanding. |
 | 60 | 13 | Optical character recognition (OCR) | Source implemented: reviewed offline English PNG OCR via locally installed Tesseract with word boxes, confidence and pinned source/model; Pass 061 CI pending. Wider languages, documents and native acceptance outstanding. |
-| 61 | 226 | Knowledge import and export | Existing partial; completion not started in this programme |
+| 61 | 226 | Knowledge import and export | Source extended: reviewed portable exact-source enrollment manifests and transactional local index rebuild; Pass 062 CI pending. Full document bundle and cross-application formats outstanding. |
 | 62 | 7 | Scheduled task execution | Not started in this programme |
 | 63 | 6 | User-defined recurring tasks | Not started in this programme |
 | 64 | 25 | Website change monitoring | Not started in this programme |
@@ -576,3 +576,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 061 — 27 November 2026
 
 - Add reviewed local Tesseract English OCR for bounded PNG images, block/sparse layouts, fixed argv and pinned executable/model identity. Verify TSV structure, word geometry and serialized JSON result; no overwrite, no inference from OCR text as instructions, no silent installation. Four regressions including actual English fixture recognition; provision the engine on CI only. Passes 047–052 green and merged (PRs 113–118). Next rank 61 / ID 226 knowledge import and export. No installer.
+
+## Pass 062 — 27 November 2026
+
+- Add explicit export of selected current knowledge enrollment paths and source hashes, plus reviewed import that verifies matching local originals and transactionally rebuilds existing lexical postings. No document bodies, state database or imported postings are transferred. Existing quotas and exclusions remain enforced; source files stay unchanged. Four regressions include actual retrieval after import, rollback on stale sources, exclusion and non-overwrite. Next rank 62 / ID 7 scheduled task execution. No installer.
