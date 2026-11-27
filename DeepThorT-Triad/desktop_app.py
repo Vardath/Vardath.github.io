@@ -685,6 +685,9 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Extract PDF tables…',command=self._review_pdf_tables).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Convert document…',command=self._review_document_conversion).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Compare documents…',command=self._review_document_comparison).pack(side='left',padx=3)
+        data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
+        ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
+        ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1249,6 +1252,55 @@ class DeepThorTDesktop(tk.Tk):
         if old is not None and old.window.winfo_exists():
             old.window.lift();return
         self._knowledge_dialog=KnowledgeDialog(self)
+
+    def _install_spreadsheet_tools(self):
+        if self.disk_gate.gaming():return
+        if messagebox.askyesno('Install optional spreadsheet tools','Install pinned local openpyxl and its dependency? No spreadsheet is uploaded.',parent=self):
+            self._start_command([sys.executable,'-m','pip','install','--no-input','--no-deps','-r',str(ROOT/'requirements-spreadsheets.txt')],
+                cwd=ROOT,label='Install spreadsheet tools',kind='installation')
+
+    def _review_typed_tool(self,module,suffix,label):
+        # Fixed internal registry; no model-provided module or command.
+        allowed={'spreadsheet_edit':('.xlsx','Spreadsheet: reviewed cell edit')}
+        if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
+        project=str(self.project)
+        source=filedialog.askopenfilename(parent=self,initialdir=project,title='Select typed JSON specification',filetypes=[('JSON','*.json')])
+        if not source:return
+        try:
+            relative=Path(source).relative_to(Path(project)).as_posix()
+            output=simpledialog.askstring('New output','Project-relative output filename (must not exist):',
+                initialvalue=Path(relative).with_suffix(suffix).as_posix(),parent=self)
+            if not output:return
+            import importlib
+            tool=importlib.import_module('deepthort_local.'+module)
+            plan,spec=tool.review(project,relative,output,self.inspection_exclusions.paths(project))
+            dialog=tk.Toplevel(self);dialog.title('Review exact operation specification');dialog.geometry('860x620');dialog.transient(self)
+            ttk.Label(dialog,text=label+' — new output: '+output).pack(anchor='w',padx=8,pady=6)
+            ttk.Label(dialog,text='Original inputs preserved. Structural verification only; review actual output.').pack(anchor='w',padx=8)
+            frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
+            view=tk.Text(frame,wrap='word');bar=ttk.Scrollbar(frame,command=view.yview)
+            view.configure(yscrollcommand=bar.set);view.pack(side='left',fill='both',expand=True);bar.pack(side='right',fill='y')
+            view.insert('1.0',json.dumps(spec,ensure_ascii=False,indent=2));view.configure(state='disabled')
+            approved=[False]
+            def approve():approved[0]=True;dialog.destroy()
+            ttk.Button(dialog,text='Approve new output only',command=approve).pack(side='left',padx=8,pady=8)
+            ttk.Button(dialog,text='Cancel',command=dialog.destroy).pack(side='right',padx=8,pady=8)
+            dialog.grab_set();self.wait_window(dialog)
+            if not approved[0] or not self._editor_idle(project,proposal=True):return
+            from deepthort_local.source_security import exclusions
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:raise ValueError('Inspection exclusions changed')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/(module+'.py');exclusion_file=self.inspection_exclusions.path
+            guards=[snapshot_file(script),*plan['guards'],snapshot_file(Path(project)/output,kind='absent'),
+                    snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent')]
+            action=self.janus.add_approved_action(argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)],
+                cwd=project,label=label,kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS reviewed operation #{action} queued; inspect receipt and output.')
+            self._show_janus_status()
+        except (OSError,ValueError,ImportError) as exc:
+            messagebox.showwarning('Operation not queued',str(exc),parent=self)
 
     def _review_document_comparison(self):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
