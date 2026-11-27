@@ -726,6 +726,7 @@ class DeepThorTDesktop(tk.Tk):
         pdf_inspection_actions=ttk.Frame(media_tab);pdf_inspection_actions.pack(fill='x',pady=2)
         ttk.Button(pdf_inspection_actions,text='Interpret PDF diagram geometry…',command=lambda:self._review_typed_tool('pdf_diagrams','.json','Research: reviewed PDF diagrams')).pack(side='left',padx=3)
         ttk.Button(pdf_inspection_actions,text='Inspect PDF layout…',command=lambda:self._review_typed_tool('pdf_layout','.json','Document: reviewed layout inspection')).pack(side='left',padx=3)
+        ttk.Button(pdf_inspection_actions,text='Review contract or policy…',command=lambda:self._review_typed_tool('contract_policy_review','.json','Document: reviewed clause evidence')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1442,7 +1443,8 @@ class DeepThorTDesktop(tk.Tk):
                  'knowledge_graph':('.json','Research: reviewed knowledge graph'),
                  'relationship_discovery':('.json','Research: reviewed relationship discovery'),
                  'pdf_diagrams':('.json','Research: reviewed PDF diagrams'),
-                 'pdf_layout':('.json','Document: reviewed layout inspection')}
+                 'pdf_layout':('.json','Document: reviewed layout inspection'),
+                 'contract_policy_review':('.json','Document: reviewed clause evidence')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
