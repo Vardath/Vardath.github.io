@@ -635,3 +635,7 @@ Files & Images → Master audio. JSON keys: `audio` (mono/stereo PCM16 WAV, 3–
 ## Reviewed planar retopology (Pass 139)
 
 Files & Images → Improve topology. JSON keys: `mesh` (plain triangular OBJ without UV, normals, materials or rig), `passes` (1–5), `min_quality_gain` (0.0001–0.25). Up to 10,000 faces; consistently wound manifold edge and vertex fans required. Deterministic planar interior edge flips improve the minimum normalized triangle quality of the pair, preserving positions and exact boundary. Report no eligible flip when applicable. Not quad remeshing, curved remeshing, animation retopology or rendering acceptance.
+
+## Blender mesh workflow (Pass 140)
+
+Files & Images → Create editable Blender mesh. Select strict project-relative triangular OBJ (up to 10k vertices/faces), trusted installed `blender.exe` outside project, and new `.blend` path. The exact executable and fixed bundled Python script are reviewed; private geometry JSON is quantized to Blender float32. Factory-startup, disabled autoexecution, one thread, bounded child process; script creates one mesh, saves uncompressed and reopens it to compare exact vertices/faces. No arbitrary scripts or project-supplied blend files. Actual installed Blender compatibility within 512 MiB and visual quality unverified.
