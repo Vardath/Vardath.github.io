@@ -91,7 +91,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 79 | 221 | Cross-project historical recall | Source extended: existing asynchronous Memory lane selects exact relevant 400-character windows within bounded 8,000-character prior named-project draft prefixes; offset and project identity rechecked before delivery. Pass 080 CI pending; full history indexing, broader evidence and native acceptance outstanding. |
 | 80 | 222 | Semantic reranking | Source extended: bounded local latent cosine reranking of already scoped conversation candidates on the existing background Memory lane; same/cross-project slots preserved, independent model selection and exact provenance unchanged, deterministic lexical fallback. Pass 081 CI pending. Contextual neural reranking, wider corpora and native acceptance outstanding. |
 | 81 | 223 | Knowledge graphs | Source extended: reviewed local-text directed graph with typed nodes, predicates, exact source-located evidence, stable adjacency and hash-bound publication. Pass 082 CI pending. Multi-document, persistent index, autonomous graph construction and native acceptance outstanding. |
-| 82 | 224 | Automatic relationship discovery | Existing partial; completion not started in this programme |
+| 82 | 224 | Automatic relationship discovery | Source extended: automatically discover bounded exact same-line co-occurrence between reviewed entities, supporting-line counts and quote locators, candidate ranking and dense-line limits. Pass 083 CI pending. Semantic entity/predicate discovery, broader corpora, autonomous review and native acceptance outstanding. |
 | 83 | 225 | Large document ingestion | Existing partial; completion not started in this programme |
 | 84 | 271 | Interpret PDF diagrams | Existing partial; completion not started in this programme |
 | 85 | 74 | Document layout inspection | Not started in this programme |
@@ -657,3 +657,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 082 — 27 November 2026
 - Reuse existing project typed-tool authority and document text limits for reviewed directed knowledge graphs. Nodes and edges bind to exact line/character quotations in one selected local text document. Validate endpoint identity, duplicate IDs/edges, adjacency, source fingerprints, non-overwriting output and mark reviewer relationships unverified; no inference or new permissions. Three regression cases added to both CI jobs. Next rank 82 / ID 224 automatic relationship discovery. No installer.
+
+## Pass 083 — 27 November 2026
+- Extend Pass 082 graph tooling with automatic exact same-line co-occurrence candidates across reviewed entities. Return ranked pairs and bounded exact quote evidence without inventing directed or causal relationships. Explicit dense-line and span limits, preserved source identity, non-overwriting JSON and three regression cases on both CI jobs. Next rank 83 / ID 225 large document ingestion. No installer.
