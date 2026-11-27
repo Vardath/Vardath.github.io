@@ -690,6 +690,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate formulas…',command=lambda:self._review_typed_tool('spreadsheet_formula','.xlsx','Spreadsheet: reviewed formulas')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Create spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_create','.xlsx','Spreadsheet: reviewed creation')).pack(side='left',padx=3)
+        ttk.Button(data_actions,text='Transform data…',command=lambda:self._review_typed_tool('data_transformation','.csv','Data: reviewed transformation')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Clean data…',command=lambda:self._review_typed_tool('data_cleaning','.csv','Data: reviewed cleaning')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Process CSV…',command=lambda:self._review_typed_tool('csv_processing','.csv','Data: reviewed CSV processing')).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Generate database schema…',command=lambda:self._review_typed_tool('database_schema','.sql','Database: reviewed schema')).pack(side='left',padx=3)
@@ -1273,7 +1274,8 @@ class DeepThorTDesktop(tk.Tk):
                  'spreadsheet_formula':('.xlsx','Spreadsheet: reviewed formulas'),
                  'csv_processing':('.csv','Data: reviewed CSV processing'),
                  'sql_query':('.json','Database: reviewed query'),
-                 'data_cleaning':('.csv','Data: reviewed cleaning')}
+                 'data_cleaning':('.csv','Data: reviewed cleaning'),
+                 'data_transformation':('.csv','Data: reviewed transformation')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
