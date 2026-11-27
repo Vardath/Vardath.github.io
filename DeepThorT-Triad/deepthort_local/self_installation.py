@@ -82,7 +82,7 @@ def install(root,state,plan,*,approval=False,idle=lambda:False):
     root,folder,baseline,new,body=validated(root,state,plan);target=root/TARGET
     require_storage(root)
     backup=folder/'installed-baseline.py.txt';receipt=folder/'install-receipt.json'
-    if backup.exists() or receipt.exists() or linked(backup) or linked(receipt):raise ValueError('Prior installation transaction exists; inspect before retry')
+    if os.path.lexists(backup) or os.path.lexists(receipt):raise ValueError('Prior installation transaction exists; inspect before retry')
     with backup.open('xb') as f:f.write(baseline);f.flush();os.fsync(f.fileno())
     if read_bound(backup,32000)!=baseline:raise ValueError('Backup verification failed')
     record={'schema':SCHEMA,'plan':plan,'backup':backup.name,'restart_required':True,
