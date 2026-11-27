@@ -1073,3 +1073,7 @@ Animate from audio accepts background RGB PNG, layer PNG, mono PCM16 48 kHz WAV,
 ## Reviewed video dubbing (Pass 241)
 
 Dub silent video accepts `{"video":"clip.mp4","audio":"dub.wav","start_frame":0,"end_frame":48}`. Silent H.264 MP4 at 24/25/30 fps, 2–120 selected frames and exact matching mono PCM16 48 kHz WAV. Decoded input RGB frames and speech PCM are verified against the new H.264/ALAC MP4. No automatic speech generation, translation, alignment or removal of existing soundtracks; native mux/playback acceptance pending.
+
+## Reviewed multilingual dubbing (Pass 242)
+
+Multilingual dub accepts `video`, `start_frame`, `end_frame`, and `cues` (1–4 ordered nonoverlapping rows with clip-relative `start_frame`, `end_frame`, `voice` containing exact `id`, `name`, `culture`, `gender` from installed Windows speech inventory, and reviewed `text`). Use silent H.264 MP4 and 2–120 selected frames. Capped local speech synthesis, linear PCM conversion from 22050 to 48000 Hz, silence padding and verified lossless mux; reject speech that exceeds its allotted cue. No translation, automatic alignment, voice cloning, existing soundtrack replacement or native playback verification.
