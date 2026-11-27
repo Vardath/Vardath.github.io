@@ -399,3 +399,11 @@ Files & Images → Crawl website. Approve exact seed, same-host directory prefix
 ```
 
 Files & Images → Collect research sources. Approve 2–5 exact public HTTPS URL reads; the question is used only locally. New JSON contains each attempted source (including unavailable ones), exact static page text/hashes, up to five lexical excerpts per source with one-based line and zero-based character start, and a query-term matrix excluding identical-text duplicates. Different hosts or text do not prove independent sources; lexical overlap is not semantic or scientific claim support. No links followed, scripts, authentication, or claim of complete research. Live/native and model integration acceptance pending.
+
+## Assess source credibility signals
+
+```json
+{"research":"research.json","findings":[]}
+```
+
+Files & Images → Assess source credibility. Select a previous multi-source research report. Rebuild and verify its derived evidence fields and text hashes; this establishes internal consistency, not signed provenance. Report literal source-transparency cues for authorship, date, references, methodology, funding/conflicts and corrections with exact line and offset; absent cues are not proof of absence. Optionally supply findings with `source_id`, `dimension`, `assessment` (`supports_credibility`, `raises_concern`, `unclear`), one-based `line`, zero-based `start`, exact `quote` and `reason`. Dimensions: `authorship`, `publication_date`, `references`, `methodology`, `conflicts_funding`, `corrections`. Reviewer quotes must match the retrieved evidence, but judgments are not independently verified. Duplicate and unavailable sources are explicitly flagged. Offline; no aggregate credibility score or claim verification. Native/model acceptance pending.
