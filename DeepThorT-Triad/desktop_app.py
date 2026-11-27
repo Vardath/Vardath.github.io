@@ -747,6 +747,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(development_actions,text='Refactor Python local name…',command=lambda:self._review_typed_tool('code_refactoring','.py','Development: reviewed local refactor')).pack(side='left',padx=3)
         ttk.Button(development_actions,text='Create GitHub draft PR…',command=self._show_github_draft).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Create GitHub draft release…',command=self._show_github_release).pack(side='left',padx=3)
+        ttk.Button(api_actions,text='Generate installer project…',command=lambda:self._review_typed_tool('installer_project','.iss','Development: reviewed installer source')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1486,7 +1487,8 @@ class DeepThorTDesktop(tk.Tk):
                  'database_migration':('.db','Database: reviewed migration'),
                  'language_server':('.json','Development: reviewed language server'),
                  'interface_learning':('.json','Development: reviewed interface evidence'),
-                 'code_refactoring':('.py','Development: reviewed local refactor')}
+                 'code_refactoring':('.py','Development: reviewed local refactor'),
+                 'installer_project':('.iss','Development: reviewed installer source')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

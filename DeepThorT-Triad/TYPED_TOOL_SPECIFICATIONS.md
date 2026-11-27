@@ -499,3 +499,7 @@ Files & Images → Create GitHub draft PR. Enter existing remote branches, repos
 ## GitHub draft release (Pass 104)
 
 Files & Images → Create GitHub draft release. Enter repository, existing lightweight tag, exact 40-character commit SHA, title and notes. Approve the exact GET tag check and one POST to create a draft. Transient masked token requires contents write permission. No publication, tag creation, asset upload or automatic retries. Tag may change after the check; inspect remote before publishing separately.
+
+## Windows installer project source (Pass 105)
+
+Files & Images → Generate installer project. JSON: `{"app_name":"Example App","app_id":"Example","version":"1.2.0","files":["bin/app.exe","data/info.txt"],"entrypoint":"bin/app.exe"}`. Generates a new Inno Setup `.iss` source, one to six exact payload hashes (existing queue guard limit; each file at most 32,000,000 bytes), per-user destination, Start Menu shortcut, no automatic launch or Pascal code. Compiler and separate install/uninstall acceptance remain required; no actual installer is produced by this operation.

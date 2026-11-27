@@ -113,7 +113,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 101 | 241 | Automated debugging | Source extended: automatic indexed Python traceback-frame resolution in existing agent diagnostic tool; exact current source hashes, paths, line evidence and revalidation. Pass 102 CI pending. Failure-time identity, runtime instrumentation and broader automated repair outstanding. |
 | 102 | 48 | Pull request creation | Source implemented: explicitly approved GitHub draft creation on existing remote branches, fixed pinned HTTPS, transient masked token, validated receipt and no automatic retry. Pass 103 CI pending. Live authenticated acceptance, branch publication and automated PR generation outstanding. |
 | 103 | 250 | Release management | Source extended: explicitly approved GitHub draft release creation for existing lightweight tag and exact reviewed commit, transient token and provider receipt; no automatic retry or publication. Pass 104 CI pending. Asset upload, tag creation, publication and real remote acceptance outstanding. |
-| 104 | 251 | Installer generation | Existing partial; completion not started in this programme |
+| 104 | 251 | Installer generation | Source extended: reviewed exact payload Inno Setup .iss generation, per-user install, explicit files and entrypoint, bounded payload SHA checks, six-file queue-compatible limit and non-overwriting publication. Pass 105 CI pending. Compiler execution, signing, native install/uninstall verification and other targets outstanding. |
 | 105 | 49 | Pull request review | Not started in this programme |
 | 106 | 50 | Automated merge conflict resolution | Not started in this programme |
 | 107 | 65 | OAuth authentication and external account connections | Not started in this programme |
@@ -726,3 +726,9 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 104 — 27 November 2026
 - Reuse fixed GitHub HTTPS and transient token approval for draft releases. Verify an existing lightweight tag against exact reviewed commit before sending a single draft creation request, validate remote draft receipt. No tag creation, publication, asset upload or automatic retry. No atomic remote tag lock or CI claim. Three transport-fixture regressions. Next rank 104 / ID 251 installer generation. No JANUS installer.
+
+## Pass 105 — 27 November 2026
+- Add reviewed Windows Inno Setup project source generation with stable app ID, numeric version, explicit payload files and included executable, exact SHA guards and conservative Windows path rules. Per-user install, no generated Run/Code blocks, no compilation or installation. Three regressions. Next rank 105 / ID 49 pull request review. No JANUS installer generated.
+
+### Pass 105 integration repair
+- Windows run 45965961220 failed during Chocolatey FFmpeg provisioning (HTTP 504), not in installer tests. Requested failed-job rerun. Independently found installer preview could exceed the actual ten-guard/4096-character argument queue; align to six payloads and existing 32,000,000-byte hash ceiling, reject duplicate guards and oversized serialized plan, add actual queue-budget regression. All later branches must include this correction.
