@@ -551,3 +551,7 @@ The temporary developer gateway can separately authorize GET /janus/v1/status fo
 ## Headless client (Pass 118)
 
 After approving a temporary developer session in the desktop, run `python janus_cli.py --port PORT models`, `status` (if separately enabled), or `chat --max-tokens 128` with a bounded UTF-8 prompt on stdin. Supply the temporary client key through masked input or JANUS_DEVELOPER_KEY, never a command-line argument. JSON result on stdout; failures use nonzero status and no automatic retry. Desktop remains the authority and capped model host; this does not start a standalone headless agent.
+
+## External task review inbox (Pass 119)
+
+Optionally enable POST /janus/v1/tasks on the temporary local developer gateway. Body: `{"submission_id":"canonical-lowercase-uuid","prompt":"exact requested task"}`. A 202 receipt means awaiting local owner review, not a queued job. At most two distinct items per session; review the exact prompt in the desktop before creating an ordinary conversation in the selected project/chat. No automatic build, attachment, tools, remote bind or persistent replay ledger. Unreviewed items are discarded on close or scope change.
