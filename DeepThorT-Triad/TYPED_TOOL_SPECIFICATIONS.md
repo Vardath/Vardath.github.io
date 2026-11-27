@@ -1105,3 +1105,7 @@ Generate sung vowels accepts `notes` (1–24 ordered rows containing `midi` 45�
 ## Reviewed vocal harmony generation (Pass 249)
 
 Generate vocal harmony accepts `score` (Pass 248 vowel score, maximum 8 seconds), `parts` (2–3 rows containing unique `semitones` -12 to 12 including 0, `gain_db` -24 to 0 and `pan_percent` -100 to 100), and `peak_dbfs` -24 to -3. Transposed notes must remain within MIDI 45–84. Generates the lead and explicit fixed-interval parts with exact shared timing, equal-power panning and shared peak attenuation, as new 24 kHz stereo PCM16 WAV. No key-aware arrangement, existing recording transformation, neural singing or verified listening quality.
+
+## Reviewed 2D motion capture (Pass 250)
+
+Capture motion markers accepts `video`, `start_frame`, `end_frame`, `radius`, `max_error` (as local patch tracking), and `markers` (2–8 rows containing distinct ASCII `name` and nonoverlapping `box` [x,y,width,height], each 4–32 pixels wide/high). Combined RGB comparison work is capped at 30 million. Export synchronized image-space pixel centers, boxes and match errors with clip-relative timing as JSON, explicitly partial when any marker is lost/ambiguous or tracked boxes overlap. Silent H.264 input and exact codec/source guards. No 3D geometry, identity, inferred skeletal pose, occlusion recovery or animation retargeting claim.
