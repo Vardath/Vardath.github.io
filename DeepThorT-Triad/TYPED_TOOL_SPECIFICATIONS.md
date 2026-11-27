@@ -591,3 +591,7 @@ Files & Images → Audiobook generation. Review JSON with `title`, `author`, `cu
 ## Multi-speaker dialogue production (Pass 128)
 
 Files & Images → Multi-speaker dialogue. Review JSON with `title`, `description`, `pause_ms` and 2–8 `turns` containing `speaker`, `culture`, exact installed `voice_id`, and `text`. Two to four distinct scripted speaker labels with stable, distinct installed voices; no podcast section constraints. New ZIP with `dialogue.wav`, `dialogue.json` and `transcript.txt`, including measured cue timings. No identification of recorded speakers or voice cloning; no autonomous script writing or online publication. Native listening acceptance outstanding.
+
+## Anonymous speaker diarisation (Pass 129)
+
+Files & Images → Anonymous speaker diarisation. Select a local 1–120 second mono PCM16 16 kHz WAV, trusted installed `sherpa-onnx-offline-speaker-diarization.exe`, segmentation and embedding ONNX models, expected count 2–8 or -1 for estimate, and new JSON. Exact hashes reviewed. CPU-only bounded optional tool using [upstream documented CLI](https://k2-fsa.github.io/sherpa/onnx/speaker-diarization/index.html). Per-recording anonymous labels and intervals only, including possible overlapping speakers; no individual identification, enrollment, persistent voiceprint storage or separated WAVs. Native accuracy remains unverified. Resource caps do not sandbox untrusted binaries; the owner must install compatible trusted licensed tools and models separately.
