@@ -22,9 +22,10 @@ FIELDS={'schema','image','source_sha256','output','prompt','size','steps','stren
 REF_FIELDS={'reference','reference_sha256','palette_strength_percent'}
 MASK_FIELDS={'mask','mask_sha256'}
 OUT_FIELDS={'offset_x','offset_y'}
+REMOVE_FIELDS={'operation','removed_object'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -51,6 +52,37 @@ def checked(s):
     if 'offset_x' in s:
         for k in ('offset_x','offset_y'):
             if type(s[k]) is not int or not 0<=s[k]<s['size']:raise ValueError('Invalid source offset')
+    if 'operation' in s:
+        if s['operation']!='remove_object':raise ValueError('Unsupported object operation')
+        target=s['removed_object']
+        if not isinstance(target,str) or not target.strip() or len(target)>200 or any(ord(c)<32 for c in target):
+            raise ValueError('Describe the unwanted object in 1–200 characters')
+    return s
+
+def removal_init(raw,mask_raw,s):
+    """Discard original masked object pixels before diffusion.
+
+    Deterministic four-neighbour propagation from the unmasked boundary;
+    initialization is not an assertion of background reconstruction.
+    """
+    from collections import deque
+    w,h,pixels,mask=mask_pixels(raw,mask_raw,s)
+    if mask.count(255)>w*h*3//4:raise ValueError('Object removal needs at least one-quarter unmasked context')
+    out=bytearray(pixels);seen=bytearray(1 if v==0 else 0 for v in mask)
+    queue=deque(i for i,v in enumerate(mask) if not v)
+    while queue:
+        i=queue.popleft();x=i%w;y=i//w
+        for j in (i-1 if x else -1,i+1 if x+1<w else -1,i-w if y else -1,i+w if y+1<h else -1):
+            if j<0 or seen[j]:continue
+            seen[j]=1;out[3*j:3*j+3]=out[3*i:3*i+3];queue.append(j)
+    if not all(seen):raise ValueError('Incomplete initialization')
+    return encode(w,h,'RGB',bytes(out))
+
+def review_removal(root,image,mask,output,background,removed_object,size=384,steps=15,strength_percent=90,seed=0):
+    s=review_mask(root,image,mask,output,background,size,steps,strength_percent,seed)
+    s.update(operation='remove_object',removed_object=removed_object)
+    src,_,bound=validate(root,s);mp,mb=mask_input(root,s,src)
+    removal_init(guard.exact(src,bound,guard.MAX_INPUT),guard.exact(mp,mb,guard.MAX_INPUT),s)
     return s
 
 def outpaint_inputs(raw,s):
@@ -185,8 +217,9 @@ def diffuse_mask(model,raw,mask_raw,s):
     if pipe.unet.config.in_channels not in (4,9):raise ValueError('Unsupported local inpainting UNet')
     with Image.frombytes('RGB',(w,h),pixels) as source, Image.frombytes('L',(w,h),mask) as selection:
         gen=torch.Generator(device='cpu').manual_seed(s['seed'])
+        guidance={'negative_prompt':s['removed_object']} if s.get('operation')=='remove_object' else {}
         result=pipe(prompt=s['prompt'],image=source,mask_image=selection,width=w,height=h,
-            strength=s['strength_percent']/100,num_inference_steps=s['steps'],generator=gen).images
+            strength=s['strength_percent']/100,num_inference_steps=s['steps'],generator=gen,**guidance).images
         if len(result)!=1:raise ValueError('Expected exactly one generated image')
         with result[0] as im:
             if im.size!=(w,h) or im.mode!='RGB':raise ValueError('Unexpected generated image layout')
@@ -208,7 +241,8 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     elif mask_path:
         mr=guard.exact(mask_path,mask_bound,guard.MAX_INPUT)
         _,_,original,mask=mask_pixels(raw,mr,s)
-        out=mask_backend(model,raw,mr,s)
+        initial=removal_init(raw,mr,s) if s.get('operation')=='remove_object' else raw
+        out=mask_backend(model,initial,mr,s)
     else:out=backend(model,initial,s)
     if not isinstance(out,bytes) or len(out)>guard.MAX_OUTPUT:raise ValueError('Invalid generated PNG')
     ow,oh,_,pixels=decode(out,('RGB',))
@@ -225,6 +259,8 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
         if (current,target,current_bound)!=(src,dst,bound):raise ValueError('Reviewed paths changed')
         if reference_input(root,s,current,current_bound)!=(ref_path,ref_bound):raise ValueError('Reviewed reference changed')
         if mask_input(root,s,current)!=(mask_path,mask_bound):raise ValueError('Reviewed mask changed')
+    if s.get('operation')=='remove_object' and pixels==original:
+        raise ValueError('Object removal produced no pixel change')
     sha=guard.publish(out,dst,revalidate)
     return {'schema':'janus-image-to-image-result-v1','status':'generated_image_pixels_verified',
             'output':s['output'],'sha256':sha,'source_sha256':s['source_sha256'],
@@ -237,7 +273,10 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
             **({'mask_sha256':hashlib.sha256(mr).hexdigest(),'masked_pixels':sum(v==255 for v in mask),
                 'unmasked_pixels_preserved':True,'inpainting_backend':'local_diffusion'} if mask is not None else {}),
             **({'outpainting':True,'source_offset':[s['offset_x'],s['offset_y']],
-                'source_pixels_preserved':True,'initial_canvas_sha256':hashlib.sha256(initial).hexdigest()} if expanded else {})}
+                'source_pixels_preserved':True,'initial_canvas_sha256':hashlib.sha256(initial).hexdigest()} if expanded else {}),
+            **({'operation':'remove_object','removed_object':s['removed_object'],
+                'initialisation_sha256':hashlib.sha256(initial).hexdigest(),
+                'object_absence_verified':False,'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='remove_object' else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)

@@ -723,3 +723,7 @@ Files & Images → Inpaint image. Select a square opaque RGB PNG (256/384/512) a
 ## Reviewed local image outpainting (Pass 161)
 
 Files & Images → Outpaint image. Choose opaque RGB source, strictly larger 256/384/512 square canvas, left/top offsets, prompt and diffusion strength. A deterministic outside-region mask and clamped-edge initialization feed the local inpainting backend. Original source pixels remain exact in their chosen location. Native model execution and seam/visual acceptance unverified.
+
+## Reviewed image object removal (Pass 162)
+
+Files & Images → Remove object. Select an opaque square RGB PNG and same-size binary grayscale mask, describe the unwanted object and expected unobstructed background. At least 25% of the image remains unmasked; the selected region is initialized from neighbouring unmasked pixels, not original masked content. Local diffusion receives negative object guidance. Outside pixels stay exact; visual object absence is not certified.

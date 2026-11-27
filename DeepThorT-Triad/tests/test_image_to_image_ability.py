@@ -100,3 +100,28 @@ class ImageToImageTests(unittest.TestCase):
                 with self.assertRaises(ValueError):m.review_outpaint(root,'source.png','out.png','extend',256,x,y)
             (root/'source.png').write_bytes(OUT)
             with self.assertRaises(ValueError):m.review_outpaint(root,'source.png','out.png','extend',256,0,0)
+
+    def test_object_removal_discards_original_selected_content(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();n=256*256
+            source=encode(256,256,'RGB',bytes([250,0,0])+bytes([20,40,60])*(n-1))
+            mask=encode(256,256,'L',bytes([255])+bytes(n-1))
+            (root/'source.png').write_bytes(source);(root/'mask.png').write_bytes(mask)
+            s=m.review_removal(root,'source.png','mask.png','out.png','empty background','red ball',256)
+            def backend(model,raw,mask_raw,plan):
+                self.assertEqual(decode(raw,('RGB',))[3],bytes([20,40,60])*n)
+                self.assertEqual(plan['removed_object'],'red ball');return OUT
+            r=m.execute(root,'unused',s,mask_backend=backend)
+            self.assertTrue(r['original_masked_pixels_discarded_before_diffusion'])
+            self.assertFalse(r['object_absence_verified'])
+            self.assertEqual(decode((root/'out.png').read_bytes(),('RGB',))[3][3:],bytes([20,40,60])*(n-1))
+            with self.assertRaises(ValueError):m.checked(dict(s,removed_object=''))
+    def test_object_removal_rejects_noop_and_insufficient_context(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(OUT)
+            (root/'mask.png').write_bytes(encode(256,256,'L',bytes([255])+bytes(256*256-1)))
+            s=m.review_removal(root,'source.png','mask.png','out.png','background','ball',256)
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,mask_backend=lambda *_:OUT)
+            self.assertFalse((root/'out.png').exists())
+            (root/'mask.png').write_bytes(encode(256,256,'L',bytes([255])*(256*256-1)+bytes(1)))
+            with self.assertRaises(ValueError):m.review_removal(root,'source.png','mask.png','out.png','background','ball',256)
