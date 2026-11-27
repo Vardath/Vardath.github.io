@@ -36,7 +36,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 24 | 280 | CSV processing | Source extended: bounded UTF-8 CSV column projection/reorder, row windows and delimiter conversion with exact roundtrip checks. Pass 025 CI pending; richer transforms and model integration outstanding. |
 | 25 | 281 | SQL querying | Source extended: reviewed parameterized SELECT against exact standalone SQLite snapshot, authorizer and execution/result bounds, structured JSON. Pass 026 CI pending; other dialects/live connections and richer analysis outstanding. |
 | 26 | 283 | Data cleaning | Source extended: reviewed CSV trimming, literal missing-value handling and stable deduplication, reconciled row counts. Pass 027 CI pending; wider formats and model integration outstanding. |
-| 27 | 284 | Data transformation | Existing partial; completion not started in this programme |
+| 27 | 284 | Data transformation | Source extended: reviewed ordered CSV rename/filter/sort/decimal-derived columns with roundtrip verification. Pass 028 CI pending; joins, pivots and other formats outstanding. |
 | 28 | 72 | Editing existing presentations | Not started in this programme |
 | 29 | 275 | Create presentations | Existing partial; completion not started in this programme |
 | 30 | 73 | Presentation template application | Not started in this programme |
@@ -440,3 +440,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 027 — 27 November 2026
 
 - Reviewed deterministic CSV cleaning with explicitly selected trim and missing-value columns, literal missing tokens, keep/drop/fill actions, stable first-occurrence deduplication by selected keys, formula-like output policy and exact row reconciliation. Verify reopened CSV; preserve source; report counts without guessing missing data. Four fixtures. Next rank 27 / ID 284 data transformation. No installer.
+
+## Pass 028 — 27 November 2026
+
+- Typed sequential CSV transformations: rename, text or decimal comparison filter, stable sort and derived decimal arithmetic columns. Explicit numeric conversion, 32-digit decimal working precision (division may round), reject invalid/oversized inputs, zero division, duplicate headers and formula-like output under reject policy. Bounded pipeline and exact CSV roundtrip; no executable expressions. Four fixtures. Next rank 28 / ID 72 presentation editing. No installer.
