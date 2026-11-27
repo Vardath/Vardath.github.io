@@ -275,7 +275,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 263 | 123 | Full audio song generation with vocals | Partial: reviewed named instrumental and sung-vowel sections, reusable section order, deterministic sample-rate conversion, stereo mix and shared peak ceiling, verified full WAV up to 120 seconds. Pass 264 CI pending; intelligible lyrics, neural full-song generation and listening acceptance outstanding. |
 | 264 | 124 | Audio-to-music generation | Partial: exact recorded transient timing/accent extraction and deterministic seeded bass/percussion synthesis, no copied audio, stereo PCM verification. Pass 265 CI pending; general neural audio-conditioned music generation and listening acceptance outstanding. |
 | 265 | 125 | Melody-to-song generation | Partial: stable monophonic transcription, preserved pitches/timing, explicit-key diatonic chord selection and bass, repeated phrase arrangement and verified synthetic stereo WAV. Pass 266 CI pending; neural arrangement, lyrics and listening acceptance outstanding. |
-| 266 | 126 | Reference-guided music generation | Not started in this programme |
+| 266 | 126 | Reference-guided music generation | Partial: supported tempo/key estimates from exact reference, seeded independent diatonic score and stereo PCM synthesis; ambiguous evidence refused. Pass 267 CI pending; neural style/reference conditioning and listening acceptance outstanding. |
 | 267 | 127 | Song continuation | Not started in this programme |
 | 268 | 128 | Individual song section replacement and editing | Not started in this programme |
 | 269 | 156 | Neural text-to-3D generation | Not started in this programme |
@@ -1251,3 +1251,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 266 — 28 November 2026
 - Integrate monophonic pitch detection with explicit major/minor tonic, duration-weighted melody/triad overlap, bass accompaniment, exact retained note intervals and repeatable phrase structure. Verify canonical multitrack MIDI and render stereo PCM with existing instrument engine, bounded 30 seconds and work budget. Three regression cases include actual synthetic source transcription and audio synthesis, stale source refusal. No neural, lyric or polyphonic quality claim. Next rank 266 / ID 126 reference-guided music generation.
+
+
+## Pass 267 — 28 November 2026
+- Add reference-guided synthesis using measured tempo and tonal centre only; reject ambiguous estimates, generate new seeded chord-tone melody and bass/harmony without source melody or sample copying, verify canonical MIDI and stereo PCM. Three regression cases, including ambiguity refusal and real synthesis using injected reference profile; end-to-end supported positive reference acceptance remains outstanding. Both CI jobs registered. Next rank 267 / ID 127 song continuation.
