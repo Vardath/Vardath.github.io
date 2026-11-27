@@ -825,3 +825,7 @@ Generate region world button. JSON: `{"title":"Crystal World","columns":3,"rows"
 ## Reviewed grid NPC behaviour (Pass 185)
 
 Generate NPC behaviour button. Input JSON has `level` (inline existing Generate grid game specification), `patrol` (2–16 distinct connected open cells), `detection_distance` (1–32 traversable grid steps), and `player_trace` (1–128 open grid cells or null). Outputs deterministic ZIP with `behaviour.json`, `npc_controller.py`, `trace.json` and instructions. Each tick patrols, pursues a nearby player without stepping onto the player, or returns to the next patrol waypoint. Movement is checked for bounds, obstacles and step length. Python controller is reusable; no Godot integration, line-of-sight or native gameplay acceptance claim.
+
+## Reviewed swept collision testing (Pass 186)
+
+Test swept collisions button. JSON: `{"obstacles":[{"id":"wall","rect":[5,0,1,4]}],"cases":[{"id":"fast","rect":[0,0,1,1],"delta":[10,0],"expected_first":["wall"]}]}`. Each rectangle is integer [x,y,width,height], each displacement [dx,dy]; up to 64 obstacles and 64 cases. Closed boundaries count touching at t=0 and t=1. Reports exact rational first contact time [numerator,denominator], all contacts and independently expected versus observed first-contact IDs. Empty expectation means no contact. Failed fixture publishes report but exits nonzero. No native game engine or 3D claim.

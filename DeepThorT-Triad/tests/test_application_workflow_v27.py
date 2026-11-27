@@ -229,3 +229,48 @@ class ApplicationWorkflowTests(unittest.TestCase):
             plan,_=review(root,'spec.json','npc.zip')
             self.assertEqual(execute(root,plan)['status'],'npc_behaviour_generated')
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_swept_collision_geometry(self):
+        from fractions import Fraction
+        from deepthort_local.collision_testing import contact
+        self.assertEqual(contact([0,0,1,1],[10,0],[5,0,1,4]),Fraction(2,5))
+        self.assertEqual(contact([10,0,1,1],[-10,0],[5,0,1,4]),Fraction(2,5))
+        self.assertIsNone(contact([0,5,1,1],[10,0],[5,0,1,4]))
+        self.assertEqual(contact([0,0,1,1],[4,0],[5,0,1,1]),Fraction(1))
+        self.assertEqual(contact([0,0,1,1],[-1,0],[1,0,1,1]),Fraction(0))
+        self.assertIsNone(contact([0,0,1,1],[0,0],[2,0,1,1]))
+        self.assertEqual(contact([0,0,2,2],[0,0],[1,1,2,2]),Fraction(0))
+
+    def test_swept_collision_expected_results(self):
+        import json
+        from deepthort_local.collision_testing import generate
+        s={'obstacles':[{'id':'a','rect':[5,0,1,1]},{'id':'b','rect':[5,1,1,1]}],
+           'cases':[{'id':'fast','rect':[0,0,1,2],'delta':[10,0],'expected_first':['b','a']},
+                    {'id':'miss','rect':[0,4,1,1],'delta':[10,0],'expected_first':[]},
+                    {'id':'mismatch','rect':[0,0,1,2],'delta':[10,0],'expected_first':['a']}]}
+        raw,r=generate(s);rows=json.loads(raw)['cases']
+        self.assertEqual(rows[0]['first_contact'],[2,5])
+        self.assertEqual(rows[0]['observed_first'],['a','b'])
+        self.assertEqual(r['passed'],2);self.assertEqual(r['failed'],1)
+        self.assertFalse(r['all_cases_passed'])
+        with self.assertRaises(ValueError):generate(dict(s,cases=[dict(s['cases'][0],expected_first=['unknown'])]))
+
+    def test_swept_collision_review_and_cli(self):
+        import json,tempfile,subprocess,sys
+        from pathlib import Path
+        from deepthort_local.collision_testing import review,execute
+        s={'obstacles':[{'id':'wall','rect':[5,0,1,1]}],
+           'cases':[{'id':'wrong','rect':[0,0,1,1],'delta':[10,0],'expected_first':[]}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'spec.json';src.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','report.json')
+            src.write_text(json.dumps(s)+' ')
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'report.json').exists())
+            plan,_=review(root,'spec.json','report.json')
+            p=subprocess.run([sys.executable,'-m','deepthort_local.collision_testing','--root',str(root),'--plan',json.dumps(plan)],capture_output=True,text=True,timeout=30)
+            self.assertEqual(p.returncode,1,p.stdout+p.stderr)
+            self.assertEqual(json.loads(p.stdout)['failed'],1)
+            self.assertTrue((root/'report.json').is_file())
+            with self.assertRaises(ValueError):execute(root,plan)
