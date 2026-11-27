@@ -687,3 +687,7 @@ Files & Images → Animate skeleton. Pass 150 rig keys plus `name` and `tracks`:
 ## Reviewed animation retargeting (Pass 152)
 
 Files & Images → Retarget animation. Target `mesh`, `max_position_error`, `joints`, `name`; `source_joints` follows Pass 150 schema, `source_tracks` follows Pass 151, `mapping` has one-to-one source/target joint indices and normalized `basis_xyzw` (maps source-local vectors into target-local axes). Mapped parents must correspond; all animated joints must be mapped. Rotations use b*q*conjugate(b); output uses target rest skeleton. No automatic correspondence, contact, IK, root translation or native playback guarantee.
+
+## Reviewed physics trajectory simulation (Pass 153)
+
+Files & Images → Simulate physics. JSON keys: `gravity` (0.01–100 m/s²), `duration_seconds` (0.1–30), `fps` (10–120 integer), `floor_y` (−1000–1000 m), `bodies` (1–8 named spheres with `radius`, `position` XYZ metres, `velocity` XYZ m/s, `restitution` 0–1). Max 20,000 samples, 2048 impacts per body. Outputs JSON positions, velocities and impact events from analytic ballistic floor contacts; low-energy bounces settle. No inter-body collisions, rotation, friction, arbitrary geometry or native physics-engine guarantee.

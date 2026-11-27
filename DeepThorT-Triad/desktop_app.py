@@ -852,6 +852,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(rig_review_actions,text='Skin character mesh…',command=lambda:self._review_typed_tool('character_rigging','.glb','Mesh: reviewed character skinning')).pack(side='left',padx=3)
         ttk.Button(rig_review_actions,text='Animate skeleton…',command=lambda:self._review_typed_tool('skeletal_animation','.glb','Mesh: reviewed skeletal animation')).pack(side='left',padx=3)
         ttk.Button(rig_review_actions,text='Retarget animation…',command=lambda:self._review_typed_tool('animation_retargeting','.glb','Mesh: reviewed animation retargeting')).pack(side='left',padx=3)
+        ttk.Button(rig_review_actions,text='Simulate physics…',command=lambda:self._review_typed_tool('physics_simulation','.json','Scene: reviewed physics trajectory')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1593,6 +1594,7 @@ class DeepThorTDesktop(tk.Tk):
                  'character_rigging':('.glb','Mesh: reviewed character skinning'),
                  'skeletal_animation':('.glb','Mesh: reviewed skeletal animation'),
                  'animation_retargeting':('.glb','Mesh: reviewed animation retargeting'),
+                 'physics_simulation':('.json','Scene: reviewed physics trajectory'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),
