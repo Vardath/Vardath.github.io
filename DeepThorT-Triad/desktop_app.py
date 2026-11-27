@@ -308,6 +308,8 @@ class DeepThorTDesktop(tk.Tk):
             record(STATE,'desktop','development_cycles_interrupted',
                    count=len(interrupted_cycles),job_ids=interrupted_cycles[:30])
         self.conversations = ConversationStore(STATE/'conversations.sqlite3')
+        from deepthort_local.project_queue import QueuePolicy
+        self.project_queue=QueuePolicy(STATE/'project-task-priority.sqlite3')
         from deepthort_local.scheduled_tasks import ScheduledTasks
         self.scheduled_tasks=ScheduledTasks(self.conversations)
         self._last_schedule_check=-60
@@ -512,7 +514,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
-        ttk.Button(plan_controls,text='Queue independent task',command=self._queue_independent_prompt).pack(side='left',padx=5)
+        ttk.Button(plan_controls,text='Queue project task',command=self._queue_independent_prompt).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
         ttk.Button(ca,text='Personal preferences…',command=self._edit_personal_preferences).pack(anchor='w',pady=2)
@@ -528,7 +530,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(qhead,text='Roadmap automation',command=self._roadmap_automation).pack(side='right',padx=4)
         ttk.Button(qhead,text='Scheduled requests…',command=self._scheduled_requests).pack(side='right',padx=4)
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
-        ttk.Button(monitorbar,text='Queued prompts…',command=self._show_queued_prompts).pack(side='left',padx=3)
+        ttk.Button(monitorbar,text='Project queues…',command=self._show_queued_prompts).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Event-triggered requests…',command=self._event_trigger_dialog).pack(side='left',padx=3)
@@ -2430,44 +2432,24 @@ class DeepThorTDesktop(tk.Tk):
             try:self.specifications.index(ident,prompt)
             except Exception as exc:
                 self.conversations.change(ident,'failed','Could not index specification: '+str(exc)[:300],allowed=('pending',))
+        self.project_queue.sync([(project,chat)])
         self._refresh_chats();self._refresh_jobs()
         self.status.set(f'Independent task #{ident} saved in its own chat. Planning queued; no executable authority granted.')
         self._log(f'Independent prompt #{ident} queued without changing active task.')
         if not self.node_ready and not self.node_loading and not self.installing:self._auto_start_if_installed()
 
+    def _project_queue_rows(self):
+        from deepthort_local.project_queue import inventory
+        rows=inventory(self.conversations.path,self.jobs.path,self.roadmap_runs.active())
+        self.project_queue.sync((r['project'],r['chat_id']) for r in rows)
+        return rows
+
+    def _queue_view(self):
+        return self.project_queue.snapshot()
+
     def _show_queued_prompts(self):
-        from deepthort_local.queued_prompt_preparation import rows
-        project=self._project_key()
-        dlg=tk.Toplevel(self);dlg.title('Independent queued prompts');dlg.geometry('850x480')
-        ttk.Label(dlg,text='Planning queue — independent task chats. Prepared advice is not an approved build.',wraplength=800).pack(padx=8,pady=8)
-        tree=ttk.Treeview(dlg,columns=('state','prepared','prompt'),show='headings')
-        for key,title,width in (('state','State',120),('prepared','Role receipts',100),('prompt','Exact prompt preview',550)):
-            tree.heading(key,text=title);tree.column(key,width=width,stretch=key=='prompt')
-        tree.pack(fill='both',expand=True,padx=8,pady=4)
-        def refresh():
-            selection=tree.selection()
-            for item in tree.get_children():tree.delete(item)
-            try:items=rows(self.conversations.path,project)
-            except Exception:return
-            for r in items:tree.insert('','end',iid=str(r['id']),values=(r['state'],r['prepared'],r['prompt'][:140]))
-            if selection and tree.exists(selection[0]):tree.selection_set(selection[0])
-        def selected():
-            s=tree.selection()
-            return self.conversations.get(int(s[0])) if s and self._project_key()==project else None
-        def cancel():
-            r=selected()
-            if r and r['project']==project and r['state']=='pending':
-                self.conversations.change(r['id'],'cancelled','Independent prompt cancelled by user',allowed=('pending',))
-                refresh();self._refresh_jobs();self._reload_chat()
-        def open_chat():
-            r=selected()
-            if r and r['project']==project and r['chat_id'] in self.chat_ids:
-                self.current_chat=r['chat_id'];self.chat_tabs.select(self.chat_ids.index(self.current_chat));self._reload_chat();dlg.destroy()
-        bar=ttk.Frame(dlg);bar.pack(fill='x',pady=6)
-        ttk.Button(bar,text='Refresh',command=refresh).pack(side='left',padx=5)
-        ttk.Button(bar,text='Cancel pending prompt',command=cancel).pack(side='left',padx=5)
-        ttk.Button(bar,text='Open task chat',command=open_chat).pack(side='left',padx=5)
-        refresh()
+        from deepthort_local.project_queue_dialog import show
+        show(self)
 
     def _queue_input(self,mode):
         """Accept conversation requests, NEVER create executable jobs here."""
@@ -3022,7 +3004,9 @@ class DeepThorTDesktop(tk.Tk):
 
     def _advance_approved_roadmap(self):
         from deepthort_local.roadmap_runs import eligible_successor
-        for run in self.roadmap_runs.active():
+        view=self._queue_view()
+        for run in sorted(self.roadmap_runs.active(),key=view.key):
+            if not view.allowed(run):continue
             ident=run['request_id'];req=self.conversations.get(ident)
             key=None;jobid=None;reserved=False
             try:
@@ -3276,7 +3260,7 @@ class DeepThorTDesktop(tk.Tk):
         self.status.set(f'Approved plan became job #{jobid}; auto-work authority is listed in Work queue.')
 
     def _execute_conversation(self,request):
-        if not self._storage_ready(request['project']):return
+        if not self._queue_view().allowed(request) or not self._storage_ready(request['project']):return
         ident=request['id']
         if not self.conversations.change(ident,'running','Local model processing conversation',allowed=('pending',)):
             return
@@ -4752,7 +4736,7 @@ class DeepThorTDesktop(tk.Tk):
             from deepthort_local.project_authority import _active
             def correction_current(item):
                 job=self.jobs.get(item['job_id'])
-                if not job or self._superseded_build(job) or not self.roadmap_runs.dispatch_allowed(job):return False
+                if not job or not self._queue_view().allowed(job) or self._superseded_build(job) or not self.roadmap_runs.dispatch_allowed(job):return False
                 steps=self.jobs.steps(job['id'])
                 graph=self.graphs.status(job['id'])
                 if not graph or graph['state']!='active':return False
@@ -4790,7 +4774,7 @@ class DeepThorTDesktop(tk.Tk):
             workflow_review_pending=not ready
             return ready
         workflow_message=self.tool_workflows.tick(enabled=True,conversations=self.conversations,roadmap_ready=roadmap_ready,
-            before_dispatch=workflow_memory)
+            before_dispatch=workflow_memory,priority=self._queue_view())
         if workflow_review_pending:return
         if workflow_message:
             self._log(workflow_message)
@@ -4835,7 +4819,7 @@ class DeepThorTDesktop(tk.Tk):
         if self.node_ready and self.node and self.node.poll() is None:
             for jobid in self.cycles.pending_repairs(limit=20):
                 job=self.jobs.get(jobid)
-                if not job or job['state']!='waiting_repair':
+                if not job or not self._queue_view().allowed(job) or job['state']!='waiting_repair':
                     continue
                 if self._block_superseded_build(job):continue
                 try:
@@ -4846,8 +4830,9 @@ class DeepThorTDesktop(tk.Tk):
                 return
         # Tests are deterministic fixed profiles from the v40 authorization
         # framework, never commands supplied by diagnostics or the model.
-        for job in self.jobs.pending_verifications(limit=40):
-            if self._block_superseded_build(job):continue
+        view=self._queue_view()
+        for job in sorted(self.jobs.pending_verifications(limit=40),key=view.key):
+            if not view.allowed(job) or self._block_superseded_build(job):continue
             project=Path(job['project'])
             cmd=self._verification_command(project)
             steps=self.jobs.steps(job['id'])
@@ -5095,7 +5080,7 @@ class DeepThorTDesktop(tk.Tk):
         if not candidate:
             candidate=ready_independent(self.roadmap_runs,self.conversations,self.hierarchies,self.specifications,
                 self.jobs,self.mixed_roadmaps,self.tool_workflows,self.project_midi,exclude_project=active['project'])
-        if not candidate:return False
+        if not candidate or not self._queue_view().allowed(candidate[3]):return False
         try:return self._start_project_midi(*candidate,overlap=True,early_job=active if early else None)
         except (ValueError,OSError,KeyError,RuntimeError) as exc:
             self._log('Independent project media deferred: '+str(exc)[:160])
@@ -5103,6 +5088,7 @@ class DeepThorTDesktop(tk.Tk):
 
     def _start_project_midi(self,run,mixed,task,req,before,*,overlap=False,early_job=None):
         # Uses the same fourth-core lane as staged conversational media.
+        if not self._queue_view().allowed(req):return False
         if (self._project_midi_pending or (self._creative_lane_thread and self._creative_lane_thread.is_alive())
                 or self._quitting or self.queue_paused or self._explicit_model_stop or not self.node_ready
                 or not self.node or self.node.poll() is not None or self.disk_gate.gaming()
@@ -5268,7 +5254,7 @@ class DeepThorTDesktop(tk.Tk):
                 or (self._creative_lane_thread and self._creative_lane_thread.is_alive())):
             return
         active=self.conversations.get(self.active_conversation) if self.active_conversation is not None else None
-        candidate=self.delegations.next_candidate(exclude_chat=active['chat_id'] if active else None)
+        candidate=self.delegations.next_candidate(exclude_chat=active['chat_id'] if active else None,priority=self._queue_view())
         if not candidate:return
         ident=candidate['id']
         if not self.delegations.start(ident):return
@@ -5518,7 +5504,7 @@ class DeepThorTDesktop(tk.Tk):
                 admitted=tuple(r for r in roles if r in available_roles(health,primary.pid))
                 if not admitted or stopped():return
                 client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
-                item=run_once(self.conversations.path,client,admitted,stopped,exclude=excluded)
+                item=run_once(self.conversations.path,client,admitted,stopped,exclude=excluded,priority=self._queue_view())
                 if item:self.events.put(('log','Queued prompt: '+item['role']+' prepared scoped advisory notes.'))
             except Exception as exc:
                 record(STATE,'desktop','queued_prompt_preparation_deferred',error_type=type(exc).__name__)
@@ -5528,6 +5514,8 @@ class DeepThorTDesktop(tk.Tk):
     def _scheduler_once(self):
         if self._reviewed_git_pending():return
         if not self._storage_ready():return
+        self._project_queue_rows()
+        view=self._queue_view()
         self._creative_lane_tick()
         self._queued_prompt_preparation_tick(time.monotonic())
         if self.__dict__.get('_native_draft_busy'):return
@@ -5572,11 +5560,7 @@ class DeepThorTDesktop(tk.Tk):
                         if event:
                             self._log(f"Event trigger #{event['trigger_id']} released conversation #{event['request_id']}.")
                             if event['chat_id']==self.current_chat:self._reload_chat()
-                incoming=self.delegations.next_foreground()
-                if incoming:
-                    record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])
-                    self._execute_conversation(incoming)
-                    return
+                incoming=self.delegations.next_foreground(priority=view)
             else:
                 return
             games=self.disk_gate.gaming()
@@ -5585,7 +5569,11 @@ class DeepThorTDesktop(tk.Tk):
                 skipped=tuple(set(skipped)|{'vision','image'})
             reserved=self._project_midi_pending[4] if self._project_midi_pending else None
             j=self.jobs.next_any_queued(skip_modes=skipped,exclude_project=reserved,
-                allow_private_preparation_job=self._project_midi_early_job)
+                allow_private_preparation_job=self._project_midi_early_job,priority=view)
+            if incoming and (not j or view.scope_key(incoming)<=view.scope_key(j)):
+                record(STATE,'desktop','conversation_dispatch',request_id=incoming['id'],mode=incoming['mode'])
+                self._execute_conversation(incoming)
+                return
             if j:
                 record(STATE,'desktop','queue_dispatch',job_id=j['id'],mode=j['mode'],game_detected=games)
                 self._execute_job(j)
@@ -5622,7 +5610,7 @@ class DeepThorTDesktop(tk.Tk):
             self._self_development_tick(now)
 
     def _execute_job(self,j):
-        if not self._storage_ready(j['project']):return
+        if not self._queue_view().allowed(j) or not self._storage_ready(j['project']):return
         from deepthort_local.corrective_coordination import READY
         jobid=j['id']
         retry_requested=j['detail'].startswith(READY)
@@ -6994,7 +6982,11 @@ class DeepThorTDesktop(tk.Tk):
         if self.tool_workflows.busy():return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
-        plan=self._auto_tool_queue.pop(0)
+        view=self._queue_view()
+        eligible=[(i,p) for i,p in enumerate(self._auto_tool_queue) if view.allowed(p)]
+        if not eligible:return
+        index,_=min(eligible,key=lambda item:view.key(item[1]))
+        plan=self._auto_tool_queue.pop(index)
         try:
             origin=self.__dict__.get('_workflow_install_origins',{}).get(plan['plan_sha256'])
             if origin:
