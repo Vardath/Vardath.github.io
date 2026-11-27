@@ -157,7 +157,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 145 | 323 | Game-ready asset optimisation | Partial: reviewed bounded mesh candidate search with triangle/vertex budgets, displacement and export precision, source/export manifold checks and optional exact boundary preservation. Pass 146 CI pending. UV/material/rig/collider/LOD, engine import, surface error and performance acceptance outstanding. |
 | 146 | 162 | Automatic texture mapping | Partial: reviewed dominant-axis box projection with preserved triangle geometry, complete UVs and embedded opaque PNG GLB base color material. Pass 147 CI pending. Seam optimisation, texture baking, overlap control and native visual acceptance outstanding. |
 | 147 | 314 | Texture generation | Partial: reviewed deterministic tileable multi-octave smooth value-noise RGB textures, seed and explicit palette, periodic field and decoded pixel checks. Pass 148 CI pending. Semantic/prompt-driven material generation and native visual acceptance outstanding. |
-| 148 | 315 | PBR material generation | Existing partial; completion not started in this programme |
+| 148 | 315 | PBR material generation | Partial: reviewed height-derived sRGB base color, OpenGL tangent normal and linear packed roughness/metallic maps, original height and hashed material manifest in verified ZIP. Pass 149 CI pending. Physical property inference, AO baking, integrated native rendering and visual acceptance outstanding. |
 | 149 | 164 | Automatic character rigging | Not started in this programme |
 | 150 | 317 | Skeletal animation through scripts | Existing partial; completion not started in this programme |
 | 151 | 166 | Animation retargeting | Not started in this programme |
@@ -872,3 +872,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 148 — 27 November 2026
 - Add deterministic seeded periodic smooth value-noise textures (64–1024 px), explicit two-color palette, bounded frequency/octaves/persistence, fixed-point interpolation and periodic field checks. Reuse decoded PNG verification and reviewed publication; three fixtures. Existing neural image engine retained, no new model or claim of semantic material synthesis. Next rank 148 / ID 315 PBR material generation. No installer.
+
+## Pass 149 — 27 November 2026
+- Generate a reviewed PBR texture bundle from explicit grayscale height and material endpoints. Reuse normal-map tool; produce base color, tangent normal, glTF green-roughness/blue-metallic packed PNG, original height and hashed channel/color-space manifest. Bounded 1024 dimensions, exact guard and ZIP/pixel checks. Three fixtures. No measured material properties, AO baking or native render claim. Next rank 149 / ID 164 automatic character rigging. No installer.

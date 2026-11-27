@@ -671,3 +671,7 @@ Files & Images → Map texture. JSON keys: `mesh` (plain triangulated OBJ, up to
 ## Reviewed procedural texture generation (Pass 148)
 
 Files & Images → Generate tileable texture. JSON keys: `size` (64/128/256/512/1024), `seed` (0–4294967295), `base_cells` (2–16), `octaves` (1–4), `persistence_percent` (1–90), `low_rgb` and `high_rgb` (distinct RGB integer triplets). Highest frequency at most 64 cells and half the pixel size. Generates a seeded periodic value-noise RGB PNG. Verified periodic field and decoded pixels; not neural material inference or visual acceptance.
+
+## Reviewed PBR material generation (Pass 149)
+
+Files & Images → Generate PBR maps. JSON keys: `height_map` (opaque 8-bit grayscale PNG, max 1024×1024), `low_rgb`, `high_rgb` (RGB integers), `roughness_low`, `roughness_high`, `metallic` (0–255 linear channel values), `strength` (0–64), `edge` (`wrap`/`clamp`). Produces ZIP of base_color.png (sRGB), normal.png (linear OpenGL +Y), metallic_roughness.png (linear R=255, G=roughness, B=metallic), unchanged height.png and material.json. Explicit authored properties, not physical inference or baked occlusion. No native render acceptance.
