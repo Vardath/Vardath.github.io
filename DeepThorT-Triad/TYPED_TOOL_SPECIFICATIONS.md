@@ -981,3 +981,7 @@ Test Unity editor accepts `{"editor_version":"6000.0.42f1"}` (use exact installe
 ## Reviewed game data modification (Pass 218)
 
 Prepare game data mod accepts `{"asset":"data/ships.json","mod_id":"ship_balance","edits":[{"path":["ships",0,"speed"],"expected":10,"value":20}]}`. Up to 32 existing scalar edits, same-type bounded integers, Booleans or strings only. Exact source and literal keys/array indices, no wildcard or executable patch. The new ZIP contains `override/<asset>` and `janus-mod-receipt.json`, with original/modified digests and inverse semantic replay verification. Original asset remains unchanged. This is a generic staging format, not an installable game-specific loader or compatibility certification.
+
+## Reviewed IDE integration (Pass 219)
+
+Prepare IDE handoff accepts `{"document":"src/main.py"}`. Set `VSCODE_CLI_EXE` to a separately installed trusted Code.exe that supports the version CLI. The capped probe verifies version, commit and architecture, with temporary profile and disabled extensions. Existing Python LSP analyzes exact source; new ZIP contains JANUS.code-workspace and diagnostic/symbol receipt. Extract workspace into reviewed project root manually if desired. No automatic IDE launch, installed extension, personal settings change or project execution. Native CLI acceptance pending.
