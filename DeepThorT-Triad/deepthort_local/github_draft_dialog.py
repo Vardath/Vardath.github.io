@@ -53,7 +53,13 @@ def show(app,mode='pull_request'):
             s=checked(fields)
         except ValueError as exc:messagebox.showwarning('Invalid draft',str(exc),parent=dialog);return
         if not messagebox.askyesno('Approve GitHub remote creation',('Retrieve remote PR evidence with these exact commit identities?' if review else 'Check the existing tag, then create one remote draft release with these exact fields?' if release else 'Create one remote draft pull request with these exact fields?')+'\n\n'+json.dumps(s,ensure_ascii=True,indent=2)+'\n\nThese fields and token go to GitHub. No automatic retries.',parent=dialog):return
-        key=simpledialog.askstring('GitHub token','Token for this request only (not saved):',show='*',parent=dialog)
+        key=None
+        session=getattr(app,'_github_oauth_session',None) if review else None
+        if session is not None:
+            try:
+                if messagebox.askyesno('Use connected account','Use the transient read-only OAuth session for '+session.login+'?',parent=dialog):key=session.token()
+            except ValueError:app._github_oauth_session=None
+        if key is None:key=simpledialog.askstring('GitHub token','Token for this request only (not saved):',show='*',parent=dialog)
         if key is None:return
         try:token_checked(key)
         except ValueError:messagebox.showwarning('Invalid token','Invalid token format.',parent=dialog);return

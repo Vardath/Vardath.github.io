@@ -116,7 +116,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 104 | 251 | Installer generation | Source extended: reviewed exact payload Inno Setup .iss generation, per-user install, explicit files and entrypoint, bounded payload SHA checks, six-file queue-compatible limit and non-overwriting publication. Pass 105 CI pending. Compiler execution, signing, native install/uninstall verification and other targets outstanding. |
 | 105 | 49 | Pull request review | Source implemented: exact GitHub PR head/base identity, bounded changed-file enumeration and patch evidence, configuration/test-path indicators, provider hashes and metadata recheck, explicit read-only authentication. Pass 106 CI pending. Semantic model review, CI verification, comment submission and larger diffs outstanding. |
 | 106 | 50 | Automated merge conflict resolution | Source implemented: actual unmerged Git index stages, bounded native three-way clean merge, exact stage and proposal revalidation, non-overwriting output. Pass 107 CI pending. Overlap reasoning, reviewed application/staging and multi-file conflicts outstanding. |
-| 107 | 65 | OAuth authentication and external account connections | Not started in this programme |
+| 107 | 65 | OAuth authentication and external account connections | Source implemented: approved GitHub device flow with registered user client ID, paced pending/slow-down handling, minimal read:user scope, verified account and transient expiring session reusable for separately approved PR reads. Pass 108 CI pending. Live provider registration/acceptance, revocation, other providers and refresh/storage outstanding. |
 | 108 | 263 | Remote MCP integration | Existing partial; completion not started in this programme |
 | 109 | 264 | General-purpose REST API integration | Existing partial; completion not started in this programme |
 | 110 | 265 | Secure credential management | Existing partial; completion not started in this programme |
@@ -738,3 +738,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 107 — 27 November 2026
 - Resolve actual three-stage ordinary text Git index conflicts into a clean candidate using bounded native git merge-file. Reject overlapping changes, binary/missing/mode-conflict stages, stale stage identities and changed result. Output new reviewed text only; no index, working file or commit changes. Three actual Git fixture regressions. Passes 100–102 green and merged. Next rank 107 / ID 65 OAuth. No installer.
+
+## Pass 108 — 27 November 2026
+- GitHub device authorization with user-owned registered public OAuth client, fixed endpoints and minimal read:user, displayed challenge, bounded paced polling, explicit scope check and authenticated account identity. Session only in process memory, 15-minute local expiry, disconnect and separately approved read-only PR reuse; never reused for writes. Three transport-fixture regressions. Requires real registered provider client for native acceptance. Next rank 108 / ID 263 remote MCP. No installer.
