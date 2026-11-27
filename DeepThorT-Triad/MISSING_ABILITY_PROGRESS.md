@@ -55,7 +55,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 43 | 305 | Music metadata management | Source extended: reviewed RIFF/WAV INFO tag read/edit/remove with exact PCM and untouched chunk preservation. Pass 044 CI pending; MP3/FLAC, Unicode and catalogue-scale integration outstanding. |
 | 44 | 137 | Musical key detection | Source implemented: bounded PCM WAV spectral pitch-class analysis, ranked major/minor candidates and explicit insufficient/ambiguous evidence. Pass 045 CI pending; complex music, modulation, detuning and native acceptance outstanding. |
 | 45 | 153 | Audio noise reduction | Source implemented: bounded linked-channel PCM WAV soft noise gate with reviewed threshold, attenuation and attack/release, exact sample-layout verification and measured quiet-interval RMS. Pass 046 CI pending; spectral denoising, broader formats and listening acceptance outstanding. |
-| 46 | 310 | Audio format conversion | Existing partial; completion not started in this programme |
+| 46 | 310 | Audio format conversion | Source extended: reviewed local WAV-to-FLAC/MP3 conversion with installed codec identity guards, actual redecoding and lossless PCM checks for FLAC. Pass 047 CI pending; other input/output formats, metadata and listening acceptance outstanding. |
 | 47 | 163 | Normal-map generation | Not started in this programme |
 | 48 | 316 | Height-map generation | Existing partial; completion not started in this programme |
 | 49 | 161 | Automatic UV unwrapping | Not started in this programme |
@@ -516,3 +516,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 046 — 27 November 2026
 
 - Add bounded local PCM WAV noise-floor attenuation: explicit dBFS threshold, attenuation and smooth attack/release, stereo-linked RMS detector and gain. Preserve rate, channels, frame count, original file; report measured RMS in quiet intervals and verify decoded output samples. Four fixtures including loud recovery, linked stereo, no-op attenuation and stale source. This is a noise gate, not broadband denoising or source separation; no listening or metadata-preservation claim. Passes 036–037 green and merged (PRs 102–103). Next rank 46 / ID 310 audio format conversion. No installer.
+
+## Pass 047 — 27 November 2026
+
+- Add reviewed local PCM WAV to FLAC or MP3 using existing FFmpeg discovery, exact source/installed executable identity guards and fixed bounded pipe commands (no shell or arbitrary arguments). Probe output codec/channel/rate, decode again, compare every PCM byte for FLAC; MP3 verifies decoded frame duration within padding allowance and explicitly remains lossy. Four actual tests including both codecs, format rejection and stale/output guards. No metadata copying or broader input formats yet. Next rank 47 / ID 163 normal-map generation. No installer.

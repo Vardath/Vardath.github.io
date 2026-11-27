@@ -199,3 +199,11 @@ Uses the same bounded 16-bit PCM WAV input as tempo detection. Choose left or ri
 ```
 
 Bounded 16-bit PCM WAV (same source restrictions as tempo detection). Linked-channel soft gate attenuates low-level intervals with smooth attack/release. It does not remove noise overlapping wanted audio. New WAV preserves frame count, sample rate and channels; metadata is not copied. Inspect the measured quiet RMS and listen to the output.
+
+## Convert PCM WAV audio
+
+```json
+{"audio":"track.wav","format":"mp3","bitrate_kbps":192}
+```
+
+Choose .mp3 output for MP3 (128/192/256/320 kbps, 32/44.1/48 kHz), or format flac, bitrate_kbps null and .flac output for lossless conversion. Requires the existing installed FFmpeg/FFprobe pair. Uses the bounded PCM WAV input profile. Reopens the encoded stream and decodes it; verifies exact PCM for FLAC and approximate frame duration for MP3. No metadata copying or source mutation.
