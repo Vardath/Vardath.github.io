@@ -118,8 +118,8 @@ def main():
                     with tempfile.TemporaryDirectory(prefix='janus-native-restricted-') as tmp:
                         return run(raw,Path(tmp))
                 result=retry_native_ci(attempt) if a.ci_receipt else attempt()
-                    if result['syntax_valid'] is not wanted:raise ValueError('Native syntax verdict mismatch')
-                    report(result)
+                if result['syntax_valid'] is not wanted:raise ValueError('Native syntax verdict mismatch')
+                report(result)
         else:print(json.dumps(execute(a.root,json.loads(a.plan)),sort_keys=True),flush=True)
         return 0
     except Exception as e:
