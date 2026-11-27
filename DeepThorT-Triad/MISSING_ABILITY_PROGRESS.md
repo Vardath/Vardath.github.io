@@ -119,7 +119,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 107 | 65 | OAuth authentication and external account connections | Source implemented: approved GitHub device flow with registered user client ID, paced pending/slow-down handling, minimal read:user scope, verified account and transient expiring session reusable for separately approved PR reads. Pass 108 CI pending. Live provider registration/acceptance, revocation, other providers and refresh/storage outstanding. |
 | 108 | 263 | Remote MCP integration | Source extended: reviewed public HTTPS Streamable HTTP JSON discovery, pinned public IPv4/TLS, negotiated protocol, session checks and typed tool schema evidence. Pass 109 CI pending. SSE, authenticated endpoints, remote tool execution and persistent integration outstanding. |
 | 109 | 264 | General-purpose REST API integration | Source extended: explicit public HTTPS GET/POST JSON requests, exact reviewed query/body, bounded response receipts, no redirects/retries, public IP pin and TLS. Pass 110 CI pending. Authentication, additional methods, connector schemas and real external acceptance outstanding. |
-| 110 | 265 | Secure credential management | Existing partial; completion not started in this programme |
+| 110 | 265 | Secure credential management | Source extended: explicit Windows Credential Manager storage, retrieval and removal for exact GitHub repository/purpose; separate user approval, no plaintext fallback or model access. Pass 111 CI pending. Wider provider integration, expiry/rotation and native desktop acceptance outstanding. |
 | 111 | 266 | Automatic tool creation | Existing partial; completion not started in this programme |
 | 112 | 334 | Secrets redaction | Existing partial; completion not started in this programme |
 | 113 | 182 | GitHub account integration | Not started in this programme |
@@ -747,3 +747,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 110 — 27 November 2026
 - Add reviewed general public REST GET/POST requests, exact approved query/body, bounded JSON, no credential fields by name, public IPv4/TLS pin, one request only and no redirect or retry. Record status/hash and bounded JSON response, distinguish HTTP success from application success and uncertain POST outcome. User must review values before transmission. Three transport-fixture regressions. Next rank 110 / ID 265 secure credentials. No installer.
+
+## Pass 111 — 27 November 2026
+- Extend the existing GitHub dialog with separately approved, exact repository/operation-scoped Windows Credential Manager save/replace, retrieval and deletion. No enumeration, plaintext storage, automatic use, model interface or OAuth persistence. Native fixture-only roundtrip, scope and approval regressions in both CI jobs; Windows user-account boundary, not a sandbox. Next rank 111 / ID 266 automatic tool creation. No installer.
