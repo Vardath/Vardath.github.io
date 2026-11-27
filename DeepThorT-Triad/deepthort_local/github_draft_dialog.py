@@ -6,6 +6,7 @@ import threading
 import tkinter as tk
 from tkinter import ttk,messagebox,simpledialog
 from .web_search import token_checked
+from . import credential_vault as vault
 from .github_pull_request import checked as pr_checked,create as pr_create
 from .github_release import checked as release_checked,create as release_create
 from .github_pr_review import checked as review_checked,inspect as review_inspect
@@ -59,7 +60,21 @@ def show(app,mode='pull_request'):
             try:
                 if messagebox.askyesno('Use connected account','Use the transient read-only OAuth session for '+session.login+'?',parent=dialog):key=session.token()
             except ValueError:app._github_oauth_session=None
-        if key is None:key=simpledialog.askstring('GitHub token','Token for this request only (not saved):',show='*',parent=dialog)
+        if key is None and vault.available() and permitted():
+            if messagebox.askyesno('Use stored token','Retrieve a JANUS-owned Windows credential for '+s['repository']+' / '+mode+' for this approved request only?',parent=dialog):
+                if not permitted():return
+                try:key=vault.retrieve(s['repository'],mode,approved=True)
+                except (OSError,ValueError):messagebox.showwarning('Credential unavailable','Stored credential unavailable; enter a token manually.',parent=dialog)
+        if key is None:
+            key=simpledialog.askstring('GitHub token','Token for this request (not saved unless separately approved):',show='*',parent=dialog)
+            if key is not None and vault.available() and permitted():
+                try:token_checked(key)
+                except ValueError:pass
+                else:
+                    if messagebox.askyesno('Save or replace stored token','Store this token for '+s['repository']+' / '+mode+' in your Windows Credential Manager? Other processes running as your Windows user may access it. Future requests still require approval.',parent=dialog):
+                        if not permitted():return
+                        try:vault.save(s['repository'],mode,key,approved=True)
+                        except (OSError,ValueError):messagebox.showwarning('Credential not saved','Windows credential storage failed. The token remains transient.',parent=dialog)
         if key is None:return
         try:token_checked(key)
         except ValueError:messagebox.showwarning('Invalid token','Invalid token format.',parent=dialog);return
@@ -84,7 +99,18 @@ def show(app,mode='pull_request'):
                     status.set('Read-only evidence retrieved; review patches and independently test. No review posted.' if review else 'GitHub confirmed draft creation. Close this dialog to submit a separate request.')
                 else:status.set('Evidence unavailable or identity changed; no review posted.' if review else 'Outcome unconfirmed. Inspect GitHub before any retry; a transmitted request may have succeeded.')
         dialog.after(150,poll)
+    def forget():
+        if worker is not None or not permitted():return
+        repo=variables['repository'].get()
+        try:name=vault.target(repo,mode)
+        except ValueError:messagebox.showwarning('Invalid repository','Enter the exact owner/repository.',parent=dialog);return
+        if not messagebox.askyesno('Forget saved credential','Delete only this JANUS Windows credential?\n'+name+'\nThis does not revoke the token at GitHub.',parent=dialog):return
+        if not permitted():return
+        try:removed=vault.forget(repo,mode,approved=True)
+        except (OSError,ValueError):messagebox.showwarning('Credential not removed','Windows credential removal failed.',parent=dialog);return
+        status.set('Stored credential removed.' if removed else 'No stored credential for this purpose.')
     row=ttk.Frame(dialog);row.pack(fill='x',padx=8,pady=6)
     start=ttk.Button(row,text='Review and retrieve evidence…' if review else 'Review and create draft…',command=begin);start.pack(side='left')
+    if vault.available():ttk.Button(row,text='Forget saved token…',command=forget).pack(side='left',padx=6)
     ttk.Button(row,text='Close',command=close).pack(side='right')
     dialog.protocol('WM_DELETE_WINDOW',close);dialog.after(150,poll);dialog.grab_set();app.wait_window(dialog)
