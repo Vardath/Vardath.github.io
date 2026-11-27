@@ -539,3 +539,7 @@ Files & Images → GitHub public repositories. Connect the existing transient OA
 ## Local signed webhook receiver (Pass 115)
 
 Files & Images → Receive local webhook. Enter exact event type and dedicated test secret, approve one delivery for up to 60 seconds. Send a local JSON POST to the displayed 127.0.0.1 endpoint with X-GitHub-Event, X-GitHub-Delivery UUID and X-Hub-Signature-256 HMAC over raw bytes. Only receipt metadata and body hash retained in the dialog. No public listener, task submission, persistent replay protection or claim of actual GitHub origin.
+
+## Local OpenAI-compatible developer gateway (Pass 116)
+
+Files & Images → Local developer API. Explicitly approve temporary loopback session; use the displayed base URL and separate ephemeral key. Supports GET /v1/models and POST /v1/chat/completions with model `deepthort-triad`, messages, max_tokens and stream=false. Two inference attempts, 120-second admission window; already-admitted inference may continue after cancel. No streaming, role override, tool calls, usage counts, persistent chat, external bind or internal broker key disclosure. Native model/SDK acceptance remains outstanding.
