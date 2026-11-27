@@ -231,3 +231,11 @@ Uses the existing bounded PNG/Pillow adapter. Choose grayscale or Rec.709 encode
 ```
 
 Plain triangulated OBJ (v and f statements plus comments), up to 20,000 vertices and triangles. Produces new OBJ with one shape-preserving UV island per triangle, distinct atlas tiles and an explicit 1–25% margin of each tile. Positions and triangle indices are retained. Materials, normals, groups and existing UVs are refused in this initial adapter; seam optimisation and engine rendering remain separate.
+
+## Simplify a static mesh
+
+```json
+{"mesh":"model.obj","cell_size":0.1,"max_displacement":0.02}
+```
+
+Uses plain triangulated OBJ only. Distances are in source model units. Deterministically cluster vertices, remove collapsed or duplicate triangles, and verify surviving winding and output geometry. A cluster exceeding the reviewed maximum displacement blocks the operation. Topology, materials, normals, UV preservation and full surface-error bounds are not provided; render the output before use.

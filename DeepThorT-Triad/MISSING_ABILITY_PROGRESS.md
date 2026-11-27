@@ -59,7 +59,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 47 | 163 | Normal-map generation | Source implemented: bounded grayscale PNG height-to-tangent-space RGB normals with strength, OpenGL/DirectX conventions, wrap/clamp and decoded pixel verification. Pass 048 CI pending; rendering and model integration outstanding. |
 | 48 | 316 | Height-map generation | Source extended: reviewed grayscale/RGB intensity-to-height texture with explicit channel, levels, gamma and inversion; compatible with normal-map tool. Pass 049 CI pending; physical depth inference, rendering and model integration outstanding. |
 | 49 | 161 | Automatic UV unwrapping | Source implemented: bounded static triangular OBJ per-face UV atlas, verified separate islands and unchanged geometry. Pass 050 CI pending; seam-optimised charting, materials, normals and native acceptance outstanding. |
-| 50 | 313 | Mesh simplification | Existing partial; completion not started in this programme |
+| 50 | 313 | Mesh simplification | Source extended: bounded static OBJ vertex-cluster reduction with explicit displacement limit, collapsed/duplicate face reconciliation and surviving winding checks. Pass 051 CI pending; topology/attribute-aware decimation and native acceptance outstanding. |
 | 51 | 324 | General 3D format conversion | Existing partial; completion not started in this programme |
 | 52 | 100 | Multi-image composition | Not started in this programme |
 | 53 | 293 | Image enhancement | Existing partial; completion not started in this programme |
@@ -532,3 +532,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 050 — 27 November 2026
 
 - Add strict bounded static triangular OBJ adapter and automatic UV unwrapping. Project each triangle isometrically into its own nonoverlapping atlas tile with reviewed margin, verify tile containment/orientation, all vertex positions and triangle indices after roundtrip. Explicitly refuse unsupported attributes rather than silently drop them. Four fixtures including geometry preservation, relative indices, shape ratio, invalid input and stale guards. Per-face islands, not seam-optimised unwrap or uniform texel density. Next rank 50 / ID 313 mesh simplification. No installer.
+
+## Pass 051 — 27 November 2026
+
+- Add reviewed plain triangular OBJ simplification using deterministic vertex clustering and explicit maximum representative displacement. Remove collapsed/duplicate triangles, refuse total collapse or surviving winding reversal, compact referenced vertices and verify geometry roundtrip and face-count reconciliation. Four regression cases. Reports no reduction honestly; vertex displacement is not Hausdorff surface error or topology preservation. No attribute-aware decimation or render claim. Next rank 51 / ID 324 3D format conversion. No installer.
