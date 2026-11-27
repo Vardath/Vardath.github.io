@@ -743,6 +743,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(notebook_actions,text='Migrate SQLite snapshot…',command=lambda:self._review_typed_tool('database_migration','.db','Database: reviewed migration')).pack(side='left',padx=3)
         development_actions=ttk.Frame(media_tab);development_actions.pack(fill='x',pady=2)
         ttk.Button(development_actions,text='Inspect Python language server…',command=lambda:self._review_typed_tool('language_server','.json','Development: reviewed language server')).pack(side='left',padx=3)
+        ttk.Button(development_actions,text='Learn documented API interface…',command=lambda:self._review_typed_tool('interface_learning','.json','Development: reviewed interface evidence')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1472,7 +1473,8 @@ class DeepThorTDesktop(tk.Tk):
                  'api_testing':('.json','Development: reviewed API tests'),
                  'application_monitoring':('.json','Development: reviewed health samples'),
                  'database_migration':('.db','Database: reviewed migration'),
-                 'language_server':('.json','Development: reviewed language server')}
+                 'language_server':('.json','Development: reviewed language server'),
+                 'interface_learning':('.json','Development: reviewed interface evidence')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

@@ -479,3 +479,7 @@ Files & Images → Migrate SQLite snapshot. JSON: `{"database":"old.db","from_ve
 ## Local Python language server (Pass 099)
 
 Files & Images → Inspect Python language server. JSON: `{"document":"src/module.py"}`. Real bounded JSON-RPC/LSP stdio lifecycle using the bundled Python AST language server. Syntax diagnostics and direct class/function symbols, nested where directly declared; UTF-16 positions. No execution/imports, external language servers, type checking, completion or project-wide references.
+
+## Documented application interface learning (Pass 100)
+
+Files & Images → Learn documented API interface. JSON: `{"document":"openapi.json"}`. Reads exact local OpenAPI 3.0/3.1 JSON and exports bounded operation, parameter, request/response field and security-presence evidence with JSON pointers. Reference resolution, runtime verification, GUI discovery and autonomous adoption of API recipes remain outstanding. No credentials, calls or network access.
