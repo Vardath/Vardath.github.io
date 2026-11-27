@@ -1125,3 +1125,7 @@ Files & Images → Assemble cinematic shots. Select a JSON file containing `titl
 
 ### Local neural video-to-video (Pass 262)
 Files & Images → Neural video to video. JSON: `{"video":"clip.mp4","start_frame":0,"prompt":"watercolour landscape","negative_prompt":"","seed":12,"size":256,"frames":8,"steps":10,"strength_percent":50}`. Use a 256x256 silent H.264 MP4 at 24/25/30 fps with the entire selected interval. Requires the same trusted local models and codecs as Pass 260. Preserves frame count/rate and verifies encoded pixels, not character identity or semantic/motion quality. No installation or network inference.
+
+
+### Consistent cutout character animation (Pass 263)
+Files & Images → Animate same character. JSON keys: `character_name`, `artwork` (RGB PNG atlas), `mask` (same-size binary grayscale PNG, white opaque), `background` (RGB PNG), `fps` (24/25/30), `frames` (2–120), `parts` (1–8 bottom-to-top layer records, each `name`, `rect` = [x,y,width,height] in atlas, `keys` = ordered [frame,x,y] placements starting at 0 and ending at frames−1). Source rectangles must be disjoint and cover all opaque character pixels. Every placement stays inside the background. Reuse the exact same atlas, mask and part rectangles across shots to preserve artwork; independently keyed integer translations can animate separate pieces. No automatic pose/deformation, semantic recognition or neural identity assurance.

@@ -271,7 +271,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 259 | 104 | Neural text-to-video generation | Partial: reviewed optional local SD1.5 + AnimateDiff adapter, fixed CPU profile and seeded frame generation, model inventory/codec guards, lossless RGB roundtrip verification. Pass 260 CI pending; adapter acquisition and live neural generation/quality acceptance outstanding. |
 | 260 | 301 | Full cinematic production | Partial: reviewed multi-shot H.264 assembly with cuts/crossfades and prepared 48 kHz soundtrack, exact decoded picture and ALAC audio verification. Pass 261 CI pending. Long films, autonomous asset production, native end-to-end and creative acceptance remain outstanding. |
 | 261 | 106 | Video-to-video generation | Partial: reviewed local AnimateDiff video-to-video pipeline, selected exact 256x256 silent clip interval, bounded strength, seeded generation, original rate and frame count, RGB decode verification. Pass 262 CI pending; native model and temporal quality acceptance outstanding. |
-| 262 | 118 | Consistent animated character generation | Not started in this programme |
+| 262 | 118 | Consistent animated character generation | Partial: reusable exact RGB/mask character parts with independent keyframed integer translations, bounded layered composition over reviewed background, verified output frames and part hashes. Pass 263 CI pending; neural pose/deformation and semantic identity acceptance outstanding. |
 | 263 | 123 | Full audio song generation with vocals | Not started in this programme |
 | 264 | 124 | Audio-to-music generation | Not started in this programme |
 | 265 | 125 | Melody-to-song generation | Not started in this programme |
@@ -1235,3 +1235,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 262 — 28 November 2026
 - Add offline prompt-guided AnimateDiffVideoToVideoPipeline with shared model loader and cap checks from Pass 260, 8–16 selected 256x256 source frames, seed, 30–80% strength, source FPS preserved, exact source/model/codec guards, unchanged/static outputs refused, lossless decoded RGB verification. Three explicit Linux/Windows fixture regressions. No native model or identity quality claim, no model installation or publication. Next rank 262 / ID 118 consistent animated character.
+
+
+## Pass 263 — 28 November 2026
+- Implement reusable exact character artwork cutout rig using RGB atlas, binary mask and 1–8 ordered parts. Each opaque pixel belongs to one source rectangle, independently keyed integer motion, exact source-part RGB/mask hashes, reviewed background and fixed layer ordering. Produce verified lossless MP4, reject off-canvas, overlap, uncovered pixels and static outputs. Three explicit Linux/Windows regression cases. This is deterministic 2D cutout animation, not neural pose or deformation generation. Next rank 263 / ID 123 full songs with vocals.
