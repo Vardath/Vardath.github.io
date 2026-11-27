@@ -101,3 +101,38 @@ class DownloadTests(unittest.TestCase):
             return report
         with self.assertRaises(ValueError):run(spec,evidence,approved=True,retrieve=allowed,download=lambda *a,**k:b'wrong',clock=f.clock,sleep=f.sleep)
         with self.assertRaises(ValueError):run(spec,evidence,approved=False,retrieve=allowed)
+
+class UploadTests(unittest.TestCase):
+    def test_reviewed_multipart_and_stale_guard(self):
+        import hashlib
+        from deepthort_local.website_file_upload import review,execute,multipart
+        s={'url':HOST+'/upload','file':'source.txt','field':'document','filename':'public.txt'}
+        raw=b'approved public document'
+        calls=[]
+        def send(spec,data,approved):
+            self.assertTrue(approved);self.assertEqual(data,raw)
+            boundary,body=multipart(spec,data);self.assertIn(raw,body)
+            self.assertIn(b'filename="public.txt"',body);self.assertNotIn(b'source.txt',body)
+            self.assertTrue(body.endswith(('--'+boundary+'--\r\n').encode()))
+            calls.append(spec)
+            return {'http_status':201,'response_bytes':0,'response_sha256':hashlib.sha256(b'').hexdigest()}
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();(root/'spec.json').write_text(json.dumps(s));(root/'source.txt').write_bytes(raw)
+            plan,preview=review(root,'spec.json','receipt.json')
+            self.assertEqual(preview['file_sha256'],hashlib.sha256(raw).hexdigest())
+            (root/'source.txt').write_bytes(b'changed')
+            with self.assertRaises(ValueError):execute(root,plan,sender=send)
+            self.assertEqual(calls,[])
+            (root/'source.txt').write_bytes(raw)
+            plan,_=review(root,'spec.json','receipt.json');execute(root,plan,sender=send)
+            receipt=json.loads((root/'receipt.json').read_text())
+            self.assertTrue(receipt['http_success']);self.assertFalse(receipt['remote_storage_verified'])
+            with self.assertRaises(ValueError):execute(root,plan,sender=send)
+            self.assertEqual(len(calls),1)
+    def test_upload_refuses_unsafe_scope(self):
+        from deepthort_local.website_file_upload import checked,send
+        s={'url':HOST+'/upload','file':'source.txt','field':'document','filename':'public.txt'}
+        for patch in ({'url':'http://example.org/upload'},{'url':HOST+'/upload?token=123'},
+                      {'filename':'../source.txt'},{'filename':'a.exe'},{'field':'password'},{'file':'source.exe'}):
+            with self.assertRaises(ValueError):checked(dict(s,**patch))
+        with self.assertRaises(PermissionError):send(s,b'hello',approved=False)
