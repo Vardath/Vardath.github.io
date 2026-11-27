@@ -276,7 +276,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 264 | 124 | Audio-to-music generation | Partial: exact recorded transient timing/accent extraction and deterministic seeded bass/percussion synthesis, no copied audio, stereo PCM verification. Pass 265 CI pending; general neural audio-conditioned music generation and listening acceptance outstanding. |
 | 265 | 125 | Melody-to-song generation | Partial: stable monophonic transcription, preserved pitches/timing, explicit-key diatonic chord selection and bass, repeated phrase arrangement and verified synthetic stereo WAV. Pass 266 CI pending; neural arrangement, lyrics and listening acceptance outstanding. |
 | 266 | 126 | Reference-guided music generation | Partial: supported tempo/key estimates from exact reference, seeded independent diatonic score and stereo PCM synthesis; ambiguous evidence refused. Pass 267 CI pending; neural style/reference conditioning and listening acceptance outstanding. |
-| 267 | 127 | Song continuation | Not started in this programme |
+| 267 | 127 | Song continuation | Partial: append independently synthesized tempo/key-conditioned section from trailing audio evidence, preserve exact original stereo PCM, bounded boundary bridge, verified new WAV. Pass 268 CI pending; neural continuation, stylistic continuity and listening acceptance outstanding. |
 | 268 | 128 | Individual song section replacement and editing | Not started in this programme |
 | 269 | 156 | Neural text-to-3D generation | Not started in this programme |
 | 270 | 157 | Image-to-3D reconstruction | Not started in this programme |
@@ -1255,3 +1255,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 267 — 28 November 2026
 - Add reference-guided synthesis using measured tempo and tonal centre only; reject ambiguous estimates, generate new seeded chord-tone melody and bass/harmony without source melody or sample copying, verify canonical MIDI and stereo PCM. Three regression cases, including ambiguity refusal and real synthesis using injected reference profile; end-to-end supported positive reference acceptance remains outstanding. Both CI jobs registered. Next rank 267 / ID 127 song continuation.
+
+
+## Pass 268 — 28 November 2026
+- Add reviewed song continuation based on trailing 3–20 seconds of exact 22.05 kHz stereo input (maximum 60 seconds), supported tempo/key analysis, seeded new musical section and boundary bridge without changing original samples. Verify entire PCM output and post-fade peak; no global peak claim or neural stylistic continuity. Three regression cases include actual extension synthesis with injected profile, ambiguous refusal and exact source-prefix preservation. Carry forward bounded advisory SQLite lock wait and competing transaction regression from Pass 261/265 repairs. Next rank 268 / ID 128 individual song section replacement and editing.

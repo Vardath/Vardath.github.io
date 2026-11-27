@@ -1145,3 +1145,7 @@ Files & Images → Song from melody. JSON: `{"audio":"melody.wav","bpm":120,"min
 
 ### Reference-guided music (Pass 267)
 Files & Images → Music from reference. JSON `{"reference":"ref.wav","min_bpm":60,"max_bpm":180,"channel":"left","bars":2,"seed":17,"lead_timbre":"sine","backing_timbre":"organ","peak_dbfs":-3}`. Use 3–20 seconds of PCM16 audio with supported rhythmic and tonal evidence. Ambiguous tempo or key blocks synthesis. New seeded score shares measured tempo/key only, not source melody or audio samples; 2–4 bars, 22.05 kHz stereo WAV. No neural style or listening claim.
+
+
+### Song continuation (Pass 268)
+Files & Images → Continue song. Use the Pass 267 reference-music JSON plus `tail_seconds` (3–20) and `fade_ms` (20–500). Input stereo PCM16 WAV at 22.05 kHz, up to 60 seconds. Analyse only the chosen trailing region, append 2–4 new bars in supported measured tempo/key, bridge from the last original sample into the new section. Original PCM remains exact, and the new output is separately saved. Peak ceiling applies after the bridge; original level and bridge may exceed that ceiling. No neural continuation or listening-quality claim.
