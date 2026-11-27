@@ -81,7 +81,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 69 | 227 | Arbitrary webpage retrieval | Source extended: explicit exact public HTTPS page retrieval with pinned public IPv4 TLS, bounded static text extraction, source/text hashes and non-overwriting report; Pass 070 CI pending. Dynamic/authenticated/query URLs and live/model acceptance outstanding. |
 | 70 | 233 | Online image discovery | Source extended: standalone reviewed Commons search and non-overwriting image candidate report, attribution metadata and pinned public TLS JSON transport; Pass 071 CI pending. Wider providers and live/native acceptance outstanding. |
 | 71 | 21 | Scientific citation verification | Source implemented: explicit Crossref DOI record lookup and local title/first-author/issued-year comparison with per-field mismatch/absence receipts; Pass 072 CI pending. Full-text claim support, retractions and live acceptance outstanding. |
-| 72 | 20 | Academic literature discovery | Not started in this programme |
+| 72 | 20 | Academic literature discovery | Source implemented: reviewed Crossref bibliographic query, optional date bounds, DOI/title/first-author metadata, provider ranks and response hash; Pass 073 CI pending. Multiple indexes, full-text research and live acceptance outstanding. |
 | 73 | 18 | Website crawling | Not started in this programme |
 | 74 | 228 | Multi-source research | Existing partial; completion not started in this programme |
 | 75 | 229 | Source credibility assessment | Existing partial; completion not started in this programme |
@@ -620,3 +620,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 072 — 27 November 2026
 
 - Add reviewed single DOI lookup against Crossref's public metadata API. Send only DOI; compare title, first author family name and issued year locally. Exact DOI identity, normalized string comparisons, missing and differing fields distinguished, no scientific claim/full-text/retraction verification. Extend fixed JSON transport for Crossref's documented media type. Four regression cases. Pass 069 green and merged (PR 135). Next rank 72 / ID 20 academic literature discovery. No installer.
+
+## Pass 073 — 27 November 2026
+
+- Add explicit one-page academic discovery through Crossref bibliographic search, optional publication year filters and up to ten records. Retain original provider ranks, DOI, title, first author, issued year, publication and metadata hash; distinguish provider-reported total from returned results and flag issued-year differences. No full-text, systematic coverage or scientific claim verification. Four regression cases. Next rank 73 / ID 18 website crawling. No installer.
