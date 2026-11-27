@@ -80,3 +80,36 @@ class ApplicationWorkflowTests(unittest.TestCase):
             plan,_=review(root,'spec.json','game.zip');r=execute(root,plan)
             self.assertEqual(r['status'],'editable_game_source_generated')
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_x4_diff_exact_selector_and_local_replay(self):
+        import xml.etree.ElementTree as ET
+        from deepthort_local.x4_xml_processing import generate
+        raw=b'<macros><macro name="ship_test_macro" class="ship_m"><component ref="test"/><properties><hull max="100"/><storage max="50"/></properties><connections><connection name="weapon" ref="weapon_slot"/></connections></macro></macros>'
+        s={'asset':'assets/test.xml','kind':'macro','name':'ship_test_macro','edits':[
+            {'path':[{'tag':'properties'},{'tag':'hull'}],'attribute':'max','expected':'100','value':'1000'}]}
+        data,r=generate(raw,s);out=ET.fromstring(data)
+        self.assertEqual(out.tag,'diff');self.assertEqual(len(out),1)
+        self.assertEqual(out[0].get('sel'),"/macros/macro[@name='ship_test_macro']/properties/hull/@max")
+        self.assertEqual(out[0].text,'1000');self.assertTrue(r['local_replay_verified']);self.assertFalse(r['gameplay_verified'])
+        with self.assertRaises(ValueError):generate(raw.replace(b'max="100"',b'max="200"'),s)
+        with self.assertRaises(ValueError):generate(raw.replace(b'<hull max="100"/>',b'<hull max="100"/><hull max="100"/>'),s)
+        with self.assertRaises(ValueError):generate(b'<!DOCTYPE macros [<!ENTITY x "bad">]>'+raw,s)
+    def test_x4_diff_review_and_stale_source(self):
+        import tempfile,json
+        from pathlib import Path
+        from deepthort_local.x4_xml_processing import review,execute
+        s={'asset':'assets/engine.xml','kind':'macro','name':'engine_test_macro','edits':[
+            {'path':[{'tag':'properties'},{'tag':'thrust'}],'attribute':'forward','expected':'100','value':'200'}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();(root/'assets').mkdir()
+            src=root/'assets'/'engine.xml';raw=b'<macros><macro name="engine_test_macro"><properties><thrust forward="100"/></properties></macro></macros>'
+            src.write_bytes(raw);(root/'spec.json').write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','patch.xml')
+            src.write_bytes(raw+b' ')
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'patch.xml').exists())
+            src.write_bytes(raw);plan,_=review(root,'spec.json','patch.xml')
+            r=execute(root,plan);self.assertEqual(r['status'],'x4_diff_locally_replayed')
+            self.assertEqual(src.read_bytes(),raw)
+            with self.assertRaises(ValueError):execute(root,plan)

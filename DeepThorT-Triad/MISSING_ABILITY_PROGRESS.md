@@ -189,7 +189,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 177 | 121 | Automatic video highlight extraction | Partial: reviewed automatic visual activity ranking of nonoverlapping frame windows, chronological montage, threshold-based no-output behavior and exact RGB verification. Pass 178 CI pending. Semantic, audio and narrative highlight selection outstanding. |
 | 178 | 62 | Android emulator operation | Partial: reviewed existing dedicated AVD/SDK identity, headless read-only/no-snapshot Windows startup smoke under existing shared root and nested cleanup job, resource/log stop and JSON receipt. Pass 179 CI pending. Native boot, ADB/APK execution and gameplay acceptance outstanding. |
 | 179 | 253 | Game project generation | Partial: reviewed editable Godot 4 grid-game source ZIP with configurable grid, obstacles, collectibles, win/reset rules, keyboard/tap controls and reachability validation. Pass 180 CI pending. Native scene execution, generalized game generation, Android export and gameplay acceptance outstanding. |
-| 180 | 255 | X4 asset and XML processing | Existing partial; completion not started in this programme |
+| 180 | 255 | X4 asset and XML processing | Partial: reviewed exact extracted macro/component XML numeric attribute diff generation, unique literal selectors, expected-value guards and independent local replay. Pass 181 CI pending. Combined DLC/mod schema, arbitrary diff operations and native game acceptance outstanding. |
 | 181 | 257 | Game asset generation | Existing partial; completion not started in this programme |
 | 182 | 258 | Level generation | Existing partial; completion not started in this programme |
 | 183 | 259 | Procedural world generation | Existing partial; completion not started in this programme |
@@ -976,3 +976,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 180 — 27 November 2026
 - Add a reviewed concrete editable Godot 4 grid-game source archive alongside the existing model-driven project generation workflow. Generate project configuration, main scene, game script, level JSON and instructions; validate every collectible and goal is reachable and preserve original specification. Deterministic archive and stale/no-overwrite fixture regressions. No engine execution or Android export claim. Next rank 180 / ID 255 X4 asset and XML processing. No installer.
+
+## Pass 181 — 27 November 2026
+- Implement source-bound X4 macro/component numeric attribute diff generation alongside existing geometry/catalog/reference audits. Resolve unique literal paths and expected original values, emit X4 replace selectors, independently replay and compare resulting XML. Preserve source and refuse stale input/overwrite/DTD/ambiguous target. Fixture tests cover generation, replay and source changes. No combined-game schema or gameplay claim. Next rank 181 / ID 257 game asset generation. No installer.
