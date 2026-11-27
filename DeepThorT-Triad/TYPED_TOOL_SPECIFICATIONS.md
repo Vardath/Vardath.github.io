@@ -239,3 +239,11 @@ Plain triangulated OBJ (v and f statements plus comments), up to 20,000 vertices
 ```
 
 Uses plain triangulated OBJ only. Distances are in source model units. Deterministically cluster vertices, remove collapsed or duplicate triangles, and verify surviving winding and output geometry. A cluster exceeding the reviewed maximum displacement blocks the operation. Topology, materials, normals, UV preservation and full surface-error bounds are not provided; render the output before use.
+
+## Convert a static OBJ to GLB
+
+```json
+{"mesh":"model.obj","max_position_error":0.0001}
+```
+
+Plain triangulated OBJ with optional complete unit-square UVs. Produces self-contained glTF 2.0 binary geometry with indexed positions and UVs (OBJ V origin flipped for glTF), no axis transform. Explicit Euclidean float32 position tolerance in model units, verified decoded accessors and winding. UV seams duplicate vertices where required. Other file formats, materials, normals, groups and animation are not silently discarded; unsupported statements are refused. Native Blender/Godot import and render still require verification.
