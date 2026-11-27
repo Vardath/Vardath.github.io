@@ -1041,3 +1041,7 @@ Produce album accepts album and artist (printable ASCII), 2–8 ordered tracks w
 ## Reviewed audio plugin source (Pass 233)
 
 Create audio plugin accepts `{"name":"JANUS Gain","gain_db":0,"balance":0,"ceiling":0.8}`. Produces an editable REAPER JSFX stereo gain/balance effect with explicit hard sample clipping, bounded sliders, source hash, manual installation notes and Python reference vectors in a new ZIP. No arbitrary code inputs, automatic installation or native compilation/host acceptance. Reference: https://www.reaper.fm/sdk/js/js.php and https://www.reaper.fm/sdk/js/vars.php.
+
+## Reviewed still-image motion (Pass 234)
+
+Animate still image accepts `{"image":"still.png","width":320,"height":240,"fps":24,"frames":72,"start":[0,0,640,480],"end":[80,60,480,360]}` (exact opaque RGB PNG, both rectangles inside image, matching output aspect ratio). Supports 24/25/30 fps, 2–120 frames, up to 640×480 output. Smoothstep crop interpolation and bicubic resampling; existing lossless RGB H.264 pipeline checks all decoded frames. New MP4 only; no neural subject motion, sound or visual quality claim.
