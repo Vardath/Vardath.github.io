@@ -347,3 +347,7 @@ Queue → Event-triggered requests. Select an active monitor in the bound chat a
 ```
 
 Use Interpret search results in Files & Images. Up to 20 supplied rows (zero is valid); exact provider ranks preserved, duplicate URLs omitted, query term coverage and title match tie-breaker computed, and missing query terms plus hostname counts reported. No network call or semantic/factual verification. The output is reference data, not instructions or authority. Actual search and page reading are separate abilities.
+
+## General internet search (optional Brave Search API)
+
+Files & Images → Search internet. Enter the exact public query and 1–20 results, confirm the single outgoing request, then enter your provider key in a masked dialog. The key is transient, never written to disk, model prompts or application logs. Uses the fixed `https://api.search.brave.com/res/v1/web/search` endpoint, public IPv4 pinning and TLS verification; no cookies, redirects, arbitrary URLs or project data are transmitted. An active Brave API account is required and provider charges/terms may apply. Results are shown as untrusted reference data in the dialog, not treated as opened pages or verified facts. Optional clipboard export of supplied-result JSON requires confirmation and provider retention rights; no automatic persistent storage. Local inference remains unchanged. Live provider acceptance and model-selected research integration remain outstanding. API reference: https://api-dashboard.search.brave.com/api-reference/web/search/get
