@@ -10,7 +10,7 @@ MAX_JSON=512*1024
 
 def retrieve(host,path,*,cancelled=None,resolver=socket.getaddrinfo,connection=PinnedHTTPS):
     # Host/path supplied only by fixed provider adapters, not user or model URLs.
-    if host not in ('commons.wikimedia.org','api.crossref.org','api.openalex.org'):
+    if host not in ('commons.wikimedia.org','api.crossref.org'):
         raise ValueError('Unsupported research provider')
     if not isinstance(path,str) or len(path)>4000 or not path.startswith('/') or path.startswith('//') or '#' in path or any(ord(c)<33 or ord(c)>126 for c in path):
         raise ValueError('Invalid provider request path')
@@ -23,7 +23,8 @@ def retrieve(host,path,*,cancelled=None,resolver=socket.getaddrinfo,connection=P
             'User-Agent':'JANUS-local-research/1.0 (https://github.com/Vardath/Vardath.github.io)','Connection':'close'})
         response=conn.getresponse();stopped(cancelled,deadline)
         if response.status!=200:raise ValueError('Provider did not return HTTP 200; redirects refused')
-        if response.headers.get_content_type()!='application/json' or response.getheader('Content-Encoding','identity').lower()!='identity':
+        allowed_types=('application/json','application/vnd.crossref-api-message+json') if host=='api.crossref.org' else ('application/json',)
+        if response.headers.get_content_type() not in allowed_types or response.getheader('Content-Encoding','identity').lower()!='identity':
             raise ValueError('Unsupported provider response format')
         length=response.getheader('Content-Length')
         if length is not None and (not length.isdecimal() or not 0<int(length)<=MAX_JSON):
