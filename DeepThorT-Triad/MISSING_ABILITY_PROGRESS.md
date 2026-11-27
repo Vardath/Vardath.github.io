@@ -272,7 +272,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 260 | 301 | Full cinematic production | Partial: reviewed multi-shot H.264 assembly with cuts/crossfades and prepared 48 kHz soundtrack, exact decoded picture and ALAC audio verification. Pass 261 CI pending. Long films, autonomous asset production, native end-to-end and creative acceptance remain outstanding. |
 | 261 | 106 | Video-to-video generation | Partial: reviewed local AnimateDiff video-to-video pipeline, selected exact 256x256 silent clip interval, bounded strength, seeded generation, original rate and frame count, RGB decode verification. Pass 262 CI pending; native model and temporal quality acceptance outstanding. |
 | 262 | 118 | Consistent animated character generation | Partial: reusable exact RGB/mask character parts with independent keyframed integer translations, bounded layered composition over reviewed background, verified output frames and part hashes. Pass 263 CI pending; neural pose/deformation and semantic identity acceptance outstanding. |
-| 263 | 123 | Full audio song generation with vocals | Not started in this programme |
+| 263 | 123 | Full audio song generation with vocals | Partial: reviewed named instrumental and sung-vowel sections, reusable section order, deterministic sample-rate conversion, stereo mix and shared peak ceiling, verified full WAV up to 120 seconds. Pass 264 CI pending; intelligible lyrics, neural full-song generation and listening acceptance outstanding. |
 | 264 | 124 | Audio-to-music generation | Not started in this programme |
 | 265 | 125 | Melody-to-song generation | Not started in this programme |
 | 266 | 126 | Reference-guided music generation | Not started in this programme |
@@ -1239,3 +1239,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 263 — 28 November 2026
 - Implement reusable exact character artwork cutout rig using RGB atlas, binary mask and 1–8 ordered parts. Each opaque pixel belongs to one source rectangle, independently keyed integer motion, exact source-part RGB/mask hashes, reviewed background and fixed layer ordering. Produce verified lossless MP4, reject off-canvas, overlap, uncovered pixels and static outputs. Three explicit Linux/Windows regression cases. This is deterministic 2D cutout animation, not neural pose or deformation generation. Next rank 263 / ID 123 full songs with vocals.
+
+
+## Pass 264 — 28 November 2026
+- Add structured full song synthesis from 2–6 reviewed section definitions and up to 24 ordered section occurrences, existing canonical MIDI additive renderer and sung-vowel engine, aligned vocal/accompaniment timing, rational 22.05→24 kHz stereo resampling, cached reusable sections, shared peak protection and exact PCM WAV verification. Up to 120 seconds, 36 seconds unique section work. Three actual synthesis/guard regression cases, both CI jobs registered. No intelligible lyric singing or neural music model claim. Repair earlier cinematic short PCM validation across Passes 261–263; Pass 141 main integration conflict resolved and retesting. Next rank 264 / ID 124 audio-to-music generation.
