@@ -872,6 +872,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(image_restore_actions,text='Remove object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='remove')).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Replace object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='replace')).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Pose-guided image…',command=self._queue_pose_image).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Depth-guided image…',command=self._queue_depth_image).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1418,6 +1419,38 @@ class DeepThorTDesktop(tk.Tk):
             'This is an explicit image-generation task, not an ordinary chat message.',parent=self):return
         self._queue_special('image',description,[])
         self.tabs.select(1)
+    def _queue_depth_image(self):
+        if not self.project:
+            messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
+        from deepthort_local.image_to_image import review_depth
+        from deepthort_local.texture_pixels import decode
+        from deepthort_local.typed_project_tool import read_bound,MAX_INPUT,path_for
+        from deepthort_local.source_security import exclusions
+        try:
+            root=Path(self._project_key()).resolve(strict=True)
+            chosen=filedialog.askopenfilename(parent=self,title='Select relative-depth grayscale PNG',initialdir=str(root),filetypes=[('Depth PNG','*.png')])
+            if not chosen:return
+            source=Path(chosen).absolute().relative_to(root).as_posix()
+            path=path_for(root,source,exclusions(()),{'.png'},exists=True)
+            w,h,_,_=decode(read_bound(path,MAX_INPUT),('L',))
+            if w!=h or w not in (256,384,512):raise ValueError('Choose a square 256/384/512 grayscale PNG')
+            near=messagebox.askyesnocancel('Depth convention','Are nearer regions white? Yes = white near; No = black near.',parent=self)
+            if near is None:return
+            relief=simpledialog.askinteger('Depth relief','Lighting cue intensity 0–100% (0 uses only relative depth tones):',minvalue=0,maxvalue=100,initialvalue=35,parent=self)
+            if relief is None:return
+            prompt=simpledialog.askstring('Depth-guided image','Describe the objects, materials, lighting and scene:',parent=self)
+            if not prompt:return
+            strength=simpledialog.askinteger('Generation strength','Strength 30–90% (higher changes the guide more):',minvalue=30,maxvalue=90,initialvalue=60,parent=self)
+            if strength is None:return
+            target=f'janus-depth-{uuid.uuid4().hex[:12]}.png'
+            s=review_depth(root,source,target,prompt,w,15,strength,secrets.randbelow(2**32),near,relief)
+            if not messagebox.askyesno('Confirm depth-guided image',
+                f'Depth guide: {source}\\nOutput: {target}\\nPrompt: {prompt}\\n{w} × {h}; relief {relief}%; strength {strength}%\\n'
+                'Existing local diffusion uses the shaded relative-depth raster as its initial image. Metric depth and exact geometry are not verified.',parent=self):return
+            ident=self.jobs.submit(self._project_key(),self.current_chat,'image',json.dumps(s),target,attachments=[str(root/source)])
+            self._log(f'Depth-guided image job #{ident} queued.');self._refresh_jobs();self.tabs.select(1)
+        except Exception as e:messagebox.showerror('Cannot queue depth-guided image',str(e),parent=self)
+
     def _queue_pose_image(self):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return

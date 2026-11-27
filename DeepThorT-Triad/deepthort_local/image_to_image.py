@@ -25,9 +25,10 @@ OUT_FIELDS={'offset_x','offset_y'}
 REMOVE_FIELDS={'operation','removed_object'}
 REPLACE_FIELDS=REMOVE_FIELDS|{'replacement_object'}
 POSE_FIELDS={'guide_kind','guide_layout'}
+DEPTH_FIELDS=POSE_FIELDS|{'near_is_white','relief_percent'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS,FIELDS|DEPTH_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -67,8 +68,12 @@ def checked(s):
             if ' '.join(target.casefold().split())==' '.join(replacement.casefold().split()):raise ValueError('Replacement must differ from unwanted object')
             if len(positive_prompt(s))>2000:raise ValueError('Combined replacement prompt exceeds bound')
     if 'guide_kind' in s:
-        if s['guide_kind']!='pose':raise ValueError('Unsupported structural guide')
-        if s['guide_layout']!='joint-map-v1':raise ValueError('Invalid pose layout')
+        if s['guide_kind']=='pose' and set(s)==FIELDS|POSE_FIELDS:
+            if s['guide_layout']!='joint-map-v1':raise ValueError('Invalid pose layout')
+        elif s['guide_kind']=='depth' and set(s)==FIELDS|DEPTH_FIELDS:
+            if s['guide_layout']!='relative-depth-relief-v1' or type(s['near_is_white']) is not bool or type(s['relief_percent']) is not int or not 0<=s['relief_percent']<=100:
+                raise ValueError('Invalid relative-depth guidance settings')
+        else:raise ValueError('Unsupported structural guide or mismatched fields')
     return s
 
 POSE_JOINTS=('head','neck','left_shoulder','right_shoulder','left_elbow','right_elbow','left_wrist','right_wrist',
@@ -114,6 +119,39 @@ def review_pose(root,image,output,prompt,size=384,steps=15,strength_percent=60,s
        'guide_kind':'pose','guide_layout':'joint-map-v1'}
     src,_,bound=validate(root,s)
     pose_guide(guard.exact(src,bound,16000),size)
+    return s
+
+def depth_guide(raw,size,near_is_white,relief_percent):
+    """Render relative depth into a deterministic shaded initialization.
+
+    Depth is relative, not metres. Preserve the supplied geometry and use
+    simple finite differences for an optional upper-left lighting cue.
+    """
+    w,h,_,pixels=decode(raw,('L',))
+    if (w,h)!=(size,size):raise ValueError('Use a square grayscale depth PNG matching the output size')
+    if max(pixels)-min(pixels)<8:raise ValueError('Depth guide has insufficient variation')
+    depth=pixels if near_is_white else bytes(255-v for v in pixels)
+    out=bytearray(size*size*3)
+    for y in range(size):
+        for x in range(size):
+            i=y*size+x
+            dx=depth[y*size+min(size-1,x+1)]-depth[y*size+max(0,x-1)]
+            dy=depth[min(size-1,y+1)*size+x]-depth[max(0,y-1)*size+x]
+            shade=max(0,min(255,128+dx+dy))
+            base=32+depth[i]*191//255
+            tone=(base*(100-relief_percent)+shade*relief_percent+50)//100
+            out[i*3:i*3+3]=bytes([tone])*3
+    return encode(size,size,'RGB',bytes(out))
+
+def review_depth(root,image,output,prompt,size=384,steps=15,strength_percent=60,seed=0,near_is_white=True,relief_percent=35):
+    root=Path(root).resolve(strict=True)
+    source=guard.path_for(root,image,exclusions(()),{'.png'},exists=True)
+    if source.stat().st_size>guard.MAX_INPUT:raise ValueError('Depth guide exceeds input bound')
+    s={'schema':SCHEMA,'image':image,'source_sha256':snapshot_file(source)['expected'],'output':output,
+       'prompt':prompt,'size':size,'steps':steps,'strength_percent':strength_percent,'seed':seed,
+       'guide_kind':'depth','guide_layout':'relative-depth-relief-v1','near_is_white':near_is_white,'relief_percent':relief_percent}
+    src,_,bound=validate(root,s)
+    depth_guide(guard.exact(src,bound,guard.MAX_INPUT),size,near_is_white,relief_percent)
     return s
 
 def positive_prompt(s):
@@ -297,8 +335,8 @@ def diffuse_mask(model,raw,mask_raw,s):
 def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     src,dst,bound=validate(root,s)
     raw=guard.exact(src,bound,guard.MAX_INPUT)
-    pose=s.get('guide_kind')=='pose'
-    raster=pose_guide(raw,s['size']) if pose else raw
+    pose=s.get('guide_kind')=='pose';depth=s.get('guide_kind')=='depth'
+    raster=pose_guide(raw,s['size']) if pose else (depth_guide(raw,s['size'],s['near_is_white'],s['relief_percent']) if depth else raw)
     w,h,_,_=decode(raster,('RGB',))
     ref_path,ref_bound=reference_input(root,s,src,bound)
     initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raster
@@ -353,7 +391,10 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
                 'initialisation_sha256':hashlib.sha256(initial).hexdigest(),'replacement_identity_verified':False,
                 'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='replace_object' else {}),
             **({'guide_kind':'pose','guide_layout':s['guide_layout'],'guide_raster_sha256':hashlib.sha256(raster).hexdigest(),
-                'pose_conditioning':'joint_raster_initialisation','pose_fidelity_verified':False,'controlnet_used':False} if pose else {})}
+                'pose_conditioning':'joint_raster_initialisation','pose_fidelity_verified':False,'controlnet_used':False} if pose else {}),
+            **({'guide_kind':'depth','guide_layout':s['guide_layout'],'guide_raster_sha256':hashlib.sha256(raster).hexdigest(),
+                'near_is_white':s['near_is_white'],'relief_percent':s['relief_percent'],
+                'depth_conditioning':'relative_depth_raster_initialisation','depth_fidelity_verified':False,'controlnet_used':False} if depth else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
