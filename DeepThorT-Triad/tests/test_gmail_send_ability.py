@@ -10,7 +10,9 @@ class GmailSendTests(unittest.TestCase):
     def test_exact_plain_text_and_no_extra_recipient(self):
         s=self.spec();msg=BytesParser(policy=policy.default).parsebytes(tool.prepare(s))
         self.assertEqual(str(msg['To']),s['to']);self.assertEqual(str(msg['Subject']),s['subject'])
-        self.assertEqual(msg.get_content().rstrip(),s['body']);self.assertIsNone(msg['Bcc'])
+        # SMTP wire format uses CRLF. Normalize only line endings; preserve body whitespace.
+        self.assertEqual(msg.get_content().replace('\r\n','\n'),s['body']+'\n');self.assertIsNone(msg['Bcc'])
+        self.assertIsNone(msg['Cc']);self.assertEqual(str(msg['From']),s['account'])
         self.assertEqual(msg.get_content_type(),'text/plain')
         for to in ('a@b.com,c@d.com','a@b.com\nBcc: c@d.com','a@b..com'):
             with self.assertRaises(ValueError):tool.prepare(dict(s,to=to))
