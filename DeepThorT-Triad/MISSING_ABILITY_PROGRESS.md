@@ -244,7 +244,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 232 | 139 | Audio plugin development | Partial: reviewed editable REAPER JSFX stereo gain/balance/hard sample-ceiling source, parameter validation, reference DSP vectors and hash-verified ZIP. Pass 233 CI pending; native compilation/host testing, other plugin formats and general DSP development outstanding. |
 | 233 | 105 | Image-to-motion-video generation | Partial: reviewed single RGB PNG smooth pan/zoom between explicit crop endpoints; bounded frame generation and reused lossless H.264 pixel-verifying codec pipeline. Pass 234 CI pending; learned subject motion and native visual acceptance outstanding. |
 | 234 | 109 | Video background replacement | Partial: reviewed bounded silent H.264 chroma-key replacement with exact RGB PNG, feathered compositing, source and codec guards and lossless decoded-frame verification. Pass 235 CI pending; semantic segmentation, audio and native visual acceptance outstanding. |
-| 235 | 110 | Video style transfer | Not started in this programme |
+| 235 | 110 | Video style transfer | Partial: reviewed reference PNG empirical RGB palette transfer with a shared monotone LUT across a bounded silent clip, exact input guards and decoded-frame verification. Pass 236 CI pending; neural style synthesis and visual acceptance outstanding. |
 | 236 | 108 | Video object removal | Not started in this programme |
 | 237 | 112 | Camera motion generation | Not started in this programme |
 | 238 | 115 | Lip synchronisation | Not started in this programme |
@@ -1147,3 +1147,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 235 — 28 November 2026
 - Add reviewed silent H.264 chroma-key background replacement, exact same-size opaque PNG, bounded frame interval, optional feather and verified output using existing codec pipeline. Three regression fixtures on both hosts. No semantic segmentation, audio or native visual acceptance. Next rank 235 / ID 110 video style transfer. No installer.
+
+## Pass 236 — 28 November 2026
+- Add temporally consistent video palette transfer using the existing RGB quantile mapping across the entire reviewed interval. Shared LUT avoids per-frame remapping; verify exact source/reference and codec, preserve dimensions and frame rate, verify decoded RGB. Three regressions on both hosts. No learned texture/semantic style or audio. Next rank 236 / ID 108 video object removal. No installer.

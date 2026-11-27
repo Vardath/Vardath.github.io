@@ -901,6 +901,7 @@ class DeepThorTDesktop(tk.Tk):
         motion_actions=ttk.Frame(media_tab);motion_actions.pack(fill='x',pady=2)
         ttk.Button(motion_actions,text='Animate still image…',command=lambda:self._review_typed_tool('image_motion','.mp4','Video: reviewed still motion')).pack(side='left',padx=3)
         ttk.Button(motion_actions,text='Replace video background…',command=lambda:self._review_typed_tool('video_background','.mp4','Video: reviewed chroma key')).pack(side='left',padx=3)
+        ttk.Button(motion_actions,text='Transfer video palette…',command=lambda:self._review_typed_tool('video_style','.mp4','Video: reviewed palette transfer')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
@@ -1913,6 +1914,7 @@ class DeepThorTDesktop(tk.Tk):
                  'video_trimming':('.mp4','Video: reviewed sequence'),
                  'image_motion':('.mp4','Video: reviewed still motion'),
                  'video_background':('.mp4','Video: reviewed chroma key'),
+                 'video_style':('.mp4','Video: reviewed palette transfer'),
                  'video_timeline':('.mp4','Video: reviewed timeline'),
                  'video_highlights':('.mp4','Video: reviewed highlights'),
                  'video_interpretation':('.json','Video: reviewed interpretation'),
