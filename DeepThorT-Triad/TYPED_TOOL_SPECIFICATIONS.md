@@ -303,3 +303,11 @@ One to four distinct short H.264 MP4 clips, one video stream only (audio or othe
 ```
 
 Or supply a same-dimension 8-bit grayscale PNG mask using `{"image":"source.png","mode":"mask","mask":"mask.png"}` (white retains, black removes, intermediate values multiply existing alpha). Color key uses maximum RGB-channel distance; feather linearly transitions outside tolerance. Original RGB retained, existing alpha multiplied, RGBA output decoded and checked. No semantic object detection, despill or visual quality guarantee.
+
+## Replace an image background
+
+```json
+{"foreground":"subject.png","mode":"solid","color":[40,70,100]}
+```
+
+Or use `{"foreground":"subject.png","mode":"image","background":"scene.png","fit":"exact"}`. Foreground must have actual transparency (use reviewed removal first); replacement image must be opaque. Exact fit requires matching dimensions, stretch explicitly resizes to fit. RGB alpha composite, source hashes, verified decoded pixels and no overwrite. No automatic segmentation or visual quality guarantee.
