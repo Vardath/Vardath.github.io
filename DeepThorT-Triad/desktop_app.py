@@ -758,6 +758,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(git_extra_actions,text='Generate JSON tool…',command=lambda:self._review_typed_tool('tool_factory','.py','Development: reviewed tool source')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Receive local webhook…',command=self._show_webhook_receiver).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Local developer API…',command=self._show_openai_gateway).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='Status notification…',command=self._show_cross_device_notification).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1420,6 +1421,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_cross_device_notification(self):
+        from deepthort_local.cross_device_notification_dialog import show
         show(self)
 
     def _show_openai_gateway(self):

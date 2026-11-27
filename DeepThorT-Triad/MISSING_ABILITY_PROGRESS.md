@@ -128,7 +128,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 116 | 328 | Local developer API | Source extended: separate approval for read-only current project/chat job and request metadata endpoint on existing ephemeral gateway; exact bound scope, bounded rows and no store recovery. Pass 117 Linux green; Windows test fixture failed on open SQLite handle (run 45976053236), explicit connection closure repair committed, repeat CI pending. Task submission, broader endpoints and native integration acceptance outstanding. |
 | 117 | 329 | Headless agent operation | Source extended: command-line client for existing explicitly enabled developer session; model discovery, bounded stdin prompt, and approved scoped status, JSON stdout. Pass 118 CI pending. Standalone desktop-free supervisor, persistent autonomous agent dispatch and native acceptance outstanding. |
 | 118 | 10 | Remote task submission | Source extended: optional authenticated loopback task inbox, exact prompt review before ordinary conversation admission, bounded two items and session duplicate refusal. Pass 119 CI pending. Actual cross-device transport, persistent inbox and remote acknowledgement/status outstanding. |
-| 119 | 11 | Cross-device notifications | Not started in this programme |
+| 119 | 11 | Cross-device notifications | Source extended: one owner-approved finite status watch for exact local job/request, fixed ntfy HTTPS provider and dedicated transient token, generic terminal-state message only. Pass 120 CI pending. Live device acceptance, persistent notifications and additional providers outstanding. |
 | 120 | 2 | Microphone input | Not started in this programme |
 | 121 | 140 | Speech-to-text conversion | Not started in this programme |
 | 122 | 141 | Audio transcription | Not started in this programme |
@@ -774,3 +774,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 119 — 27 November 2026
 - Extend temporary local API with separately enabled two-item task inbox, exact UUID/prompt, authenticated 202 receipt explicitly not admission, duplicate refusal, owner review bound to current project/chat before ordinary conversation submission. No external host binding, automatic execution, attachment or build authorization. Discard unreviewed items on close or scope change. Actual loopback tests and admission/scope regression. Pass 106 post-merge green (45975405965), Pass 107 merged. Next rank 119 / ID 11 cross-device notifications. No installer.
+
+## Pass 120 — 27 November 2026
+- Add a one-shot cross-device status watch using ntfy's documented HTTPS JSON publication API. Owner chooses exact current project/chat job or conversation ID, protected destination topic, transient access token and approves generic possible messages for a five-minute watch. Read-only scoped DB state, no prompt/result/path/ID disclosure, no automatic retry, provider receipt not device delivery. Three transport/scoped-state fixture regressions. No live ntfy account used. Next rank 120 / ID 2 microphone input. No installer.
