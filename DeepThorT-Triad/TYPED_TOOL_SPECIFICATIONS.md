@@ -323,3 +323,7 @@ Bounded local PNG, English Tesseract OCR, block or sparse layout, no network. In
 ## Scheduled conversation requests
 
 Queue → Scheduled requests… in an open chat. Choose a new exact prompt and delay in minutes, review its UTC due time and explicitly approve. The persistent schedule is bound to that project and chat. When the app is running and the selected workspace and existing dispatcher are eligible, one due request is atomically inserted into the ordinary conversation queue; it grants no file or tool authority. The queue may be delayed by gaming, pause, model readiness or other work; no background OS service or guaranteed deadline. Closing the chat cancels its unreleased requests. Manage or cancel in the same dialog; use normal chat controls after release.
+
+### Recurring scheduled requests
+
+In the same scheduled-request dialog choose Recurring, enter the first delay, repeat interval (15–525600 minutes) and maximum actual occurrences (2–1000). Confirm the exact prompt and cadence. The next due time remains anchored to the previous due time; missed intervals do not create a backlog. Only one occurrence may be unresolved at a time. A failed or cancelled prior request stops future releases. Cancellation stops future occurrences, not already released conversations. The dialog shows remaining admissions, latest request and recent occurrence history. No OS-level background service, recurring automatic tool approval or execution deadline is implied.
