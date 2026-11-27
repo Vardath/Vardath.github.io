@@ -99,7 +99,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 87 | 75 | Automated visual document quality verification | Source implemented: actual bounded selected-PDF-page raster checks at 96 DPI, visible ink bounds, blank-page and requested-margin criteria with pixel hashes and warnings. Pass 088 CI pending. Broader visual quality, clipping, typography and native acceptance outstanding. |
 | 88 | 79 | Predictive modelling | Source implemented: exact one-predictor OLS with ordered train/held-out split, complete-case counts, baseline and error metrics, independent normal-equation verification and bounded predictions. Pass 089 CI pending. Multiple predictors, other models, cross-validation and native integration outstanding. |
 | 89 | 286 | Scientific computing | Source extended: bounded exact square linear-system elimination with rank/consistency classification and substitution, polynomial definite integration with independent evaluation and derivative check. Pass 090 CI pending. Numerical simulation, broader algorithms and native integration outstanding. |
-| 90 | 288 | Anomaly detection | Existing partial; completion not started in this programme |
+| 90 | 288 | Anomaly detection | Source extended: exact baseline-relative IQR thresholds, separate monitoring suffix, original row identities, missing and flagged counts, zero-IQR warning and bounded candidate evidence. Pass 091 CI pending. Multivariate, temporal and adaptive detection outstanding. |
 | 91 | 80 | Time-series forecasting | Not started in this programme |
 | 92 | 82 | Jupyter notebook integration | Not started in this programme |
 | 93 | 83 | Live database connections | Not started in this programme |
@@ -681,3 +681,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 090 — 27 November 2026
 - Extend existing exact mathematics primitives with 1–16 equation square linear systems, exact pivot elimination, singular/inconsistent classification and independent substitution; 1–32 polynomial coefficients with signed bounds and independently verified rational integration. Four regressions, no new package or arbitrary expressions. Next rank 90 / ID 288 anomaly detection. No installer.
+
+## Pass 091 — 27 November 2026
+- Extend existing descriptive IQR flags into reviewed baseline-relative numeric monitoring. Separate baseline and monitoring rows before calculation, explicit multiplier and missing tokens, exact thresholds and flagged row identities. Zero-IQR caveat and bounded examples; no automatic deletion or verified anomaly claim. Three regression cases. Next rank 91 / ID 80 time-series forecasting. No installer.

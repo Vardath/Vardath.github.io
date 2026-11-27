@@ -443,3 +443,7 @@ Files & Images → Fit predictive model. JSON: `{"csv":"data.csv","delimiter":",
 ## Exact scientific computing (Pass 090)
 
 Files & Images → Scientific calculation. Either `{"operation":"solve_linear_system","matrix":[["2","1"],["1","-1"]],"rhs":["7","2"]}` or `{"operation":"integrate_polynomial","coefficients":["1","2","3"],"lower":"0","upper":"2"}`. Exact rational strings, bounded 16-square systems and 32 polynomial coefficients in ascending powers. Unique solutions checked by substitution; integration checked by a second computation and differentiation. No physical simulation or arbitrary code execution.
+
+## Numeric anomaly candidates (Pass 091)
+
+Files & Images → Flag numeric anomalies. JSON: `{"csv":"data.csv","delimiter":",","column":"value","baseline_rows":4,"missing_tokens":["NA"],"iqr_multiplier":"1.5"}`. Derive exact quartile fences from the specified baseline prefix, flag values in the separate monitoring suffix, preserve row identities and missing counts. Constant/zero-IQR baselines can be oversensitive. No data is removed or modified.
