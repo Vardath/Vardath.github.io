@@ -69,3 +69,26 @@ class VideoTrimmingTests(unittest.TestCase):
             with self.assertRaises(ValueError):inspect(raw,{'video':'a.mp4','frames':[3]},tools,tmp)
             with self.assertRaises(ValueError):inspect(raw,{'video':'a.mp4','frames':[0,1]},tools,tmp,
                 interpret=True,captioner=lambda paths,guards:['one'])
+
+
+    def test_reviewed_crop_rotation_and_flip(self):
+        from deepthort_local.video_trimming import edit_frames
+        raw=bytes([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18])
+        edit={'crop':[1,0,2,2],'rotation':90,'flip':'horizontal'}
+        # Crop selects B,C,E,F; clockwise then horizontal gives B,E,C,F.
+        self.assertEqual(edit_frames(raw,(3,2),edit),bytes([4,5,6,13,14,15,7,8,9,16,17,18]))
+        self.s['clips']=self.s['clips'][:1]
+        self.s['clips'][0]['edit']={'crop':[1,2,8,6],'rotation':90,'flip':'vertical'}
+        self.save()
+        plan,p=review(self.root,'spec.json','edit.mp4');r=execute(self.root,plan)
+        self.assertEqual((r['width'],r['height'],r['frames']),(6,8,2))
+        self.assertEqual(decode(self.ff,self.root/'edit.mp4',0,2,6,8),bytes([78,90,123])*48+bytes([220,100,40])*48)
+        self.assertTrue(r['decoded_rgb_sequence_verified'])
+    def test_edit_bounds_and_common_output_geometry(self):
+        self.s['clips'][0]['edit']={'crop':[10,0,8,8],'rotation':0,'flip':'none'}
+        self.save()
+        with self.assertRaises(ValueError):review(self.root,'spec.json','edit.mp4')
+        self.s['clips'][0]['edit']['crop']=[0,0,8,8];self.save()
+        with self.assertRaises(ValueError):review(self.root,'spec.json','edit.mp4')
+        self.s['clips'][0]['edit']['rotation']=True
+        with self.assertRaises(ValueError):checked(self.s)

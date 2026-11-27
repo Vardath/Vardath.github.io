@@ -180,7 +180,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 168 | 103 | Visual multimedia generation workflow graphs | Partial: read-only dataflow preview of exact frozen recipes, external inputs and predecessor artifact edges in both model-designed and manually composed workflow reviews. Pass 169 CI pending. Interactive node authoring and native UI acceptance outstanding. |
 | 169 | 107 | Existing video interpretation | Partial: reviewed explicit silent H.264 frame samples, actual decoded frame hashes/timestamps and existing offline Florence multi-frame captions, exact source/runtime guards and JSON publication. Pass 170 CI pending. Continuous video, audio and native model accuracy outstanding. |
 | 170 | 236 | Screen capture and interpretation | Partial: explicit bounded single primary-monitor region, countdown, in-memory preview, separately approved non-overwriting PNG and exact-hash offline vision queue handoff. Pass 171 CI pending. Native Windows capture, DPI behavior, caption quality and continuous screen interpretation outstanding. |
-| 171 | 298 | Video editing | Existing partial; completion not started in this programme |
+| 171 | 298 | Video editing | Partial: existing verified frame sequence editor now accepts optional per-clip crop, clockwise discrete rotation and flip, with common output geometry and exact decoded edited RGB verification. Pass 172 CI pending. Audio, retiming, interactive timelines and native playback outstanding. |
 | 172 | 300 | Video transitions | Existing partial; completion not started in this programme |
 | 173 | 111 | Video motion tracking | Not started in this programme |
 | 174 | 113 | Video frame interpolation | Not started in this programme |
@@ -949,3 +949,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 171 — 27 November 2026
 - Add explicit one-shot primary-screen region capture with countdown and cancellation, bounded RGB PNG, in-memory preview and separate guarded project publication. Optional second approval queues the exact hash-checked screenshot into existing offline vision job; private copy prevents reading a changed source. No continuous capture or upload. Two synthetic regressions in existing microphone/capture suite. Native display/DPI and model acceptance outstanding. Next rank 171 / ID 298 video editing. No installer.
+
+## Pass 172 — 27 November 2026
+- Expand the existing guarded frame-index video editor with per-clip crop, discrete clockwise rotation and horizontal/vertical flip. Preserve older JSON specifications and exact decoded RGB output verification, require common edited geometry, bound source and output, and retain source guards. Add deterministic pixel transform and real FFmpeg roundtrip regression. Next rank 172 / ID 300 video transitions. No installer.
