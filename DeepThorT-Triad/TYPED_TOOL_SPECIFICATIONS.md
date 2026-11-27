@@ -1045,3 +1045,7 @@ Create audio plugin accepts `{"name":"JANUS Gain","gain_db":0,"balance":0,"ceili
 ## Reviewed still-image motion (Pass 234)
 
 Animate still image accepts `{"image":"still.png","width":320,"height":240,"fps":24,"frames":72,"start":[0,0,640,480],"end":[80,60,480,360]}` (exact opaque RGB PNG, both rectangles inside image, matching output aspect ratio). Supports 24/25/30 fps, 2–120 frames, up to 640×480 output. Smoothstep crop interpolation and bicubic resampling; existing lossless RGB H.264 pipeline checks all decoded frames. New MP4 only; no neural subject motion, sound or visual quality claim.
+
+## Reviewed video background replacement (Pass 235)
+
+Replace video background accepts `{"video":"clip.mp4","background":"bg.png","start_frame":0,"end_frame":48,"key":[0,255,0],"tolerance":30,"feather":20}`. One silent H.264 MP4 with matching opaque RGB PNG, maximum 640×480 and 60 selected frames, exact source/codec guards, framewise max-channel chroma distance and feathered compositing. New lossless H.264 MP4 verified by RGB decode. No segmentation, audio or playback-quality claim.

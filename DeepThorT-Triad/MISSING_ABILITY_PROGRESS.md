@@ -243,7 +243,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 231 | 304 | Album production automation | Partial extended: reviewed ordered 2–8 short PCM WAVs, shared mastering settings, verified per-track RIFF metadata, playlist and deterministic offline archive. Pass 232 CI pending; full songs, listening quality, artwork and distribution outstanding. |
 | 232 | 139 | Audio plugin development | Partial: reviewed editable REAPER JSFX stereo gain/balance/hard sample-ceiling source, parameter validation, reference DSP vectors and hash-verified ZIP. Pass 233 CI pending; native compilation/host testing, other plugin formats and general DSP development outstanding. |
 | 233 | 105 | Image-to-motion-video generation | Partial: reviewed single RGB PNG smooth pan/zoom between explicit crop endpoints; bounded frame generation and reused lossless H.264 pixel-verifying codec pipeline. Pass 234 CI pending; learned subject motion and native visual acceptance outstanding. |
-| 234 | 109 | Video background replacement | Not started in this programme |
+| 234 | 109 | Video background replacement | Partial: reviewed bounded silent H.264 chroma-key replacement with exact RGB PNG, feathered compositing, source and codec guards and lossless decoded-frame verification. Pass 235 CI pending; semantic segmentation, audio and native visual acceptance outstanding. |
 | 235 | 110 | Video style transfer | Not started in this programme |
 | 236 | 108 | Video object removal | Not started in this programme |
 | 237 | 112 | Camera motion generation | Not started in this programme |
@@ -1144,3 +1144,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 234 — 28 November 2026
 - Add reviewed still PNG to motion video with smoothstep pan/zoom, exact source/codec guards, bounded generated frames and reused lossless H.264 decode verification. Three regression fixtures on both hosts; codec execution covered separately by existing video regressions. No neural subject animation or audio. Next rank 234 / ID 109 video background replacement. No installer.
+
+## Pass 235 — 28 November 2026
+- Add reviewed silent H.264 chroma-key background replacement, exact same-size opaque PNG, bounded frame interval, optional feather and verified output using existing codec pipeline. Three regression fixtures on both hosts. No semantic segmentation, audio or native visual acceptance. Next rank 235 / ID 110 video style transfer. No installer.
