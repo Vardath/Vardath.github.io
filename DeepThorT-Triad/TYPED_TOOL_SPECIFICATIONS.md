@@ -295,3 +295,11 @@ Two to six distinct bounded PNG inputs, shared enhancement settings, optional as
 ```
 
 One to four distinct short H.264 MP4 clips, one video stream only (audio or other streams refused), matching dimensions up to 640x480 and matching 24/25/30 fps metadata. Start inclusive, end exclusive; at most 300 source frames and 120 output frames. Installed FFmpeg/FFprobe identity and exact input hashes are reviewed. Re-encode selected decoded RGB frames using lossless H.264 RGB, then decode and compare exact output frames; player compatibility and visual quality still require acceptance. No audio, transitions, retiming or broad codec support.
+
+## Remove an image background
+
+```json
+{"image":"source.png","mode":"color_key","key":[0,255,0],"tolerance":20,"feather":40}
+```
+
+Or supply a same-dimension 8-bit grayscale PNG mask using `{"image":"source.png","mode":"mask","mask":"mask.png"}` (white retains, black removes, intermediate values multiply existing alpha). Color key uses maximum RGB-channel distance; feather linearly transitions outside tolerance. Original RGB retained, existing alpha multiplied, RGBA output decoded and checked. No semantic object detection, despill or visual quality guarantee.

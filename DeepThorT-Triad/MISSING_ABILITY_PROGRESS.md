@@ -67,7 +67,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 55 | 295 | Infographic generation | Source extended: editable bounded fact-card SVG with explicit source note and verified layout text; Pass 056 CI pending. Claim, rendering and model-directed acceptance outstanding. |
 | 56 | 297 | Batch image processing | Source extended: reviewed 2–6 PNG batch enhancement and bounded aspect-preserving resize with verified atomic ZIP and per-source manifest; Pass 057 CI pending. Broader formats, quality and model-directed acceptance outstanding. |
 | 57 | 299 | Video trimming and sequencing | Source extended: reviewed silent MP4 frame-index trimming and ordered sequence with lossless RGB decode comparison; Pass 058 CI pending. Audio, wider formats, longer media and native playback acceptance outstanding. |
-| 58 | 90 | Image background removal | Not started in this programme |
+| 58 | 90 | Image background removal | Source implemented: reviewed color-key or supplied grayscale mask removal with feather and exact alpha/pixel verification; Pass 059 CI pending. Semantic segmentation, visual and model-directed acceptance outstanding. |
 | 59 | 91 | Image background replacement | Not started in this programme |
 | 60 | 13 | Optical character recognition (OCR) | Not started in this programme |
 | 61 | 226 | Knowledge import and export | Existing partial; completion not started in this programme |
@@ -564,3 +564,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 058 — 27 November 2026
 
 - Add bounded short silent H.264 MP4 editing: exact inclusive/exclusive frame intervals, ordered distinct sources, matching dimensions/rate, reviewed source and installed codec guards, actual FFmpeg decode and lossless RGB encoding with exact decoded sequence comparison. Four fixture regressions. Unsupported streams refused rather than silently dropped; audio editing, broader formats and real playback/model integration remain outstanding. Pass 046 green on source and Windows and merged (PR 112, run 45945008280). Next rank 58 / ID 90 image background removal. No installer.
+
+## Pass 059 — 27 November 2026
+
+- Add bounded reviewed PNG background removal with explicit RGB key/tolerance/feather or same-size grayscale mask. Multiply existing alpha, preserve RGB, verify decoded output pixels and source hashes, and refuse changed inputs. Four regression cases. No inferred semantic segmentation, automatic subject extraction or visual acceptance claim. Next rank 59 / ID 91 image background replacement. No installer.
