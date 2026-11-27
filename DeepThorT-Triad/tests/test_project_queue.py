@@ -85,3 +85,19 @@ class ProjectQueueTests(unittest.TestCase):
             self.assertEqual(s.action(first)['status'],'approved')
             q.restore(str(a));self.assertIsNone(s.claim_next_action())
             q.hold(str(a),held=False);self.assertEqual(s.claim_next_action()['id'],first)
+
+    def test_native_scope_aliases_never_bypass_hold(self):
+        import os
+        from deepthort_local.project_queue import project_identity,existing_view
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);folder=root/'MixedCase';folder.mkdir()
+            original=str(folder);resolved=str(folder.resolve())
+            alternate=resolved.swapcase() if os.name=='nt' else str(folder/'..'/'MixedCase')
+            q=QueuePolicy(root/'project-task-priority.sqlite3');q.sync([(original,'task')]);q.remove(original)
+            self.assertEqual(project_identity(original),project_identity(alternate))
+            self.assertFalse(existing_view(root).allowed({'project':resolved,'chat_id':'task'}))
+            self.assertFalse(existing_view(root).allowed({'project':alternate,'chat_id':'task'}))
+            q.sync([(alternate,'task')])
+            self.assertEqual(len(q.snapshot().projects),1)
+            q.restore(original);q.hold(original,held=False)
+            self.assertTrue(existing_view(root).allowed({'project':resolved,'chat_id':'task'}))
