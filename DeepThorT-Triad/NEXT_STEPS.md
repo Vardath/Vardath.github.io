@@ -860,3 +860,7 @@ Approve a disposable project's plan containing a missing recognised tool;
 confirm no DeepThorT per-tool dialog, normal Windows elevation when required,
 serial queue logs and persistent status. Test opt-out and upgrades separately.
 Export a diagnostics ZIP for any failure. Use a VM for unknown packages.
+
+## Independent prompt queue priority
+
+Explicit independent task admission and spare-capacity coordinator advice added in source; retain green sequential integration, then validate actual Windows multi-task behavior. Resume missing ability pass 138 (automated mastering). No installer yet.

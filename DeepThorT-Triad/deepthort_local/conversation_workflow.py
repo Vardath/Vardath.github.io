@@ -36,6 +36,18 @@ class ConversationStore:
                     ON conversation_requests(state,id);
                 CREATE INDEX IF NOT EXISTS conversation_thread
                     ON conversation_requests(chat_id,id);
+                CREATE TABLE IF NOT EXISTS independent_prompt_queue (
+                    request_id INTEGER PRIMARY KEY REFERENCES conversation_requests(id),
+                    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+                CREATE TABLE IF NOT EXISTS queued_prompt_attempts (
+                    request_id INTEGER NOT NULL REFERENCES independent_prompt_queue(request_id),
+                    role TEXT NOT NULL, identity TEXT NOT NULL,
+                    PRIMARY KEY(request_id,role,identity));
+                CREATE TABLE IF NOT EXISTS queued_prompt_advice (
+                    request_id INTEGER NOT NULL REFERENCES independent_prompt_queue(request_id),
+                    role TEXT NOT NULL, identity TEXT NOT NULL, body TEXT NOT NULL,
+                    receipt_sha TEXT NOT NULL, stamp REAL NOT NULL,
+                    PRIMARY KEY(request_id,role));
                 CREATE TABLE IF NOT EXISTS project_drafts (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     request_id INTEGER NOT NULL UNIQUE,
@@ -81,12 +93,20 @@ class ConversationStore:
             with db: yield db
         finally: db.close()
 
-    def submit(self, chat_id, project, mode, prompt, attachments=(), source_job_id=None):
+    def submit(self, chat_id, project, mode, prompt, attachments=(), source_job_id=None, *, independent=False):
         if mode not in VALID_MODES or not isinstance(prompt,str) or not prompt.strip() or not chat_id:
             raise ValueError('Invalid conversation request')
         if len(prompt) > MAX_STORED_REQUEST_CHARS: raise ValueError(f'Specification exceeds local storage safety ceiling ({MAX_STORED_REQUEST_CHARS:,} characters)')
         if len(attachments)>8: raise ValueError('Too many attachments')
+        if type(independent) is not bool or (independent and (mode!='draft_plan' or not project or project=='(general)' or source_job_id is not None)):
+            raise ValueError('Independent task requires a new project plan conversation')
         with self._db() as db:
+            if independent:
+                db.execute('BEGIN IMMEDIATE')
+                if db.execute('SELECT 1 FROM conversation_requests WHERE chat_id=? LIMIT 1',(chat_id,)).fetchone():
+                    raise ValueError('Independent task requires an unused chat')
+                count=db.execute("SELECT COUNT(*) FROM independent_prompt_queue q JOIN conversation_requests c ON c.id=q.request_id WHERE c.state IN ('pending','running','waiting_sources')").fetchone()[0]
+                if count>=32:raise ValueError('Independent task queue is full (32 unfinished prompts)')
             if source_job_id is not None:
                 old=db.execute('SELECT id FROM conversation_requests WHERE source_job_id=?', (source_job_id,)).fetchone()
                 if old: return old['id']
@@ -98,6 +118,7 @@ class ConversationStore:
             n=db.execute('''INSERT INTO conversation_requests(chat_id,project,mode,prompt,attachments,source_job_id)
                             VALUES(?,?,?,?,?,?)''',
                             (chat_id,project,mode,prompt,json.dumps(list(attachments)),source_job_id)).lastrowid
+            if independent:db.execute('INSERT INTO independent_prompt_queue(request_id) VALUES(?)',(n,))
         record(self.path.parent,'conversation','conversation_saved',request_id=n,mode=mode,
                prompt_characters=len(prompt),attachments=len(attachments),legacy_job=source_job_id)
         if mode=='draft_plan':self.journal(n)

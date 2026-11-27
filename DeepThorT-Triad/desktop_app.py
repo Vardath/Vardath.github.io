@@ -512,6 +512,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
+        ttk.Button(plan_controls,text='Queue independent task',command=self._queue_independent_prompt).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
         ttk.Button(ca,text='Personal preferences…',command=self._edit_personal_preferences).pack(anchor='w',pady=2)
@@ -527,6 +528,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(qhead,text='Roadmap automation',command=self._roadmap_automation).pack(side='right',padx=4)
         ttk.Button(qhead,text='Scheduled requests…',command=self._scheduled_requests).pack(side='right',padx=4)
         monitorbar=ttk.Frame(queue_tab);monitorbar.pack(fill='x',pady=2)
+        ttk.Button(monitorbar,text='Queued prompts…',command=self._show_queued_prompts).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Website monitors…',command=self._website_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Condition watches…',command=self._condition_monitor_dialog).pack(side='left',padx=3)
         ttk.Button(monitorbar,text='Event-triggered requests…',command=self._event_trigger_dialog).pack(side='left',padx=3)
@@ -2333,6 +2335,65 @@ class DeepThorTDesktop(tk.Tk):
         self.imported_spec_source=None
         self.attachment_status.set('No imported specification; text, DOCX, PDF and images supported')
 
+    def _queue_independent_prompt(self):
+        """Save a distinct project task, not an amendment to the current task."""
+        if not self.project:
+            messagebox.showinfo('Choose project','Select a project folder for the independent task.',parent=self);return
+        prompt=self.input.get('1.0','end').strip()
+        try:
+            if self.imported_spec_source:prompt=resolve_import(self.imported_spec_source,prompt)
+            if not prompt:return
+            if len(prompt)>MAX_STORED_REQUEST_CHARS:raise ValueError('Specification exceeds storage ceiling')
+            attachments=[str(validate_attachment(x)) for x in self.attachments]
+            project=self._project_key()
+            chat=self.chats.create(project,'Queued task '+str(len(self.chats.list(project))+1))
+            ident=self.conversations.submit(chat,project,'draft_plan',prompt,attachments=attachments,independent=True)
+        except Exception as exc:
+            messagebox.showerror('Cannot queue independent task',str(exc),parent=self);return
+        self.input.delete('1.0','end');self._clear_imported_specification()
+        if len(prompt)>MAX_INFERENCE_PROMPT-1000:
+            try:self.specifications.index(ident,prompt)
+            except Exception as exc:
+                self.conversations.change(ident,'failed','Could not index specification: '+str(exc)[:300],allowed=('pending',))
+        self._refresh_chats();self._refresh_jobs()
+        self.status.set(f'Independent task #{ident} saved in its own chat. Planning queued; no executable authority granted.')
+        self._log(f'Independent prompt #{ident} queued without changing active task.')
+        if not self.node_ready and not self.node_loading and not self.installing:self._auto_start_if_installed()
+
+    def _show_queued_prompts(self):
+        from deepthort_local.queued_prompt_preparation import rows
+        project=self._project_key()
+        dlg=tk.Toplevel(self);dlg.title('Independent queued prompts');dlg.geometry('850x480')
+        ttk.Label(dlg,text='Planning queue — independent task chats. Prepared advice is not an approved build.',wraplength=800).pack(padx=8,pady=8)
+        tree=ttk.Treeview(dlg,columns=('state','prepared','prompt'),show='headings')
+        for key,title,width in (('state','State',120),('prepared','Role receipts',100),('prompt','Exact prompt preview',550)):
+            tree.heading(key,text=title);tree.column(key,width=width,stretch=key=='prompt')
+        tree.pack(fill='both',expand=True,padx=8,pady=4)
+        def refresh():
+            selection=tree.selection()
+            for item in tree.get_children():tree.delete(item)
+            try:items=rows(self.conversations.path,project)
+            except Exception:return
+            for r in items:tree.insert('','end',iid=str(r['id']),values=(r['state'],r['prepared'],r['prompt'][:140]))
+            if selection and tree.exists(selection[0]):tree.selection_set(selection[0])
+        def selected():
+            s=tree.selection()
+            return self.conversations.get(int(s[0])) if s and self._project_key()==project else None
+        def cancel():
+            r=selected()
+            if r and r['project']==project and r['state']=='pending':
+                self.conversations.change(r['id'],'cancelled','Independent prompt cancelled by user',allowed=('pending',))
+                refresh();self._refresh_jobs();self._reload_chat()
+        def open_chat():
+            r=selected()
+            if r and r['project']==project and r['chat_id'] in self.chat_ids:
+                self.current_chat=r['chat_id'];self.chat_tabs.select(self.chat_ids.index(self.current_chat));self._reload_chat();dlg.destroy()
+        bar=ttk.Frame(dlg);bar.pack(fill='x',pady=6)
+        ttk.Button(bar,text='Refresh',command=refresh).pack(side='left',padx=5)
+        ttk.Button(bar,text='Cancel pending prompt',command=cancel).pack(side='left',padx=5)
+        ttk.Button(bar,text='Open task chat',command=open_chat).pack(side='left',padx=5)
+        refresh()
+
     def _queue_input(self,mode):
         """Accept conversation requests, NEVER create executable jobs here."""
         prompt=self.input.get('1.0','end').strip()
@@ -3598,6 +3659,9 @@ class DeepThorTDesktop(tk.Tk):
                         cancelled=cancelled,stage=lambda message:self.events.put(('conversation_stage',ident,message)),
                         budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                     prompt+=fit_memory(recalled,max(0,MAX_INFERENCE_PROMPT-len(prompt)))
+                if request['mode']=='draft_plan' and not large_spec:
+                    from deepthort_local.queued_prompt_preparation import advice as queued_advice
+                    prompt+=queued_advice(self.conversations.path,request,budget=min(600,max(0,MAX_INFERENCE_PROMPT-len(prompt))))
                 def review_plan(proposed,section=''):
                     for item in proposed:
                         intent=json.dumps(item,ensure_ascii=False)
@@ -3880,6 +3944,11 @@ class DeepThorTDesktop(tk.Tk):
         count={}
         for j in rows:count[j['state']]=count.get(j['state'],0)+1
         summary='   '.join(f'{k}: {v}' for k,v in sorted(count.items())) or 'No approved jobs'
+        try:
+            from deepthort_local.queued_prompt_preparation import rows as prompt_rows
+            pending=sum(r['state'] in ('pending','running','waiting_sources') for r in prompt_rows(self.conversations.path,project))
+            summary+=f'   |   Independent prompts: {pending}'
+        except Exception:pass
         self.queue_summary.set(('PAUSED  |  ' if self.queue_paused else 'ACTIVE  |  ')+summary)
     def _selected_job(self):
         x=self.job_tree.selection()
@@ -5339,10 +5408,53 @@ class DeepThorTDesktop(tk.Tk):
             self._log('Storage pressure: '+', '.join(report['blocked'])+'; new work deferred. Free space or restore access. No files deleted.')
         return report['ready']
 
+    def _queued_prompt_preparation_tick(self,now):
+        # Existing broker, one advisory worker at a time, never a second dispatcher.
+        if (self._quitting or self.queue_paused or self._explicit_model_stop or self.disk_gate.gaming()
+                or self.janus.status().get('paused') or self._model_transport_waiting
+                or not self.node_ready or not self.node or self.node.poll() is not None
+                or (self._latest_test_thread and self._latest_test_thread.is_alive())
+                or getattr(self,'_mcp_discovery_active',False)
+                or getattr(self,'_verification_preflight',False)
+                or self._reviewed_git_pending()
+                or any(p and p.poll() is None for p in (self.install_process,self.media_process,self.tool_process))
+                or now-getattr(self,'_queued_prompt_preparation_at',-30)<30):return
+        thread=getattr(self,'_queued_prompt_preparation_thread',None)
+        if thread and thread.is_alive():return
+        if self.active_job is None and self.active_conversation is None:return
+        from deepthort_local.queued_prompt_preparation import available_roles
+        primary=self.node
+        roles=available_roles(getattr(self,'last_server_health',None),primary.pid)
+        if not roles:return
+        # Avoid Granite's existing technical preparation lane competing for the same worker.
+        technical=getattr(self,'_technical_preparation_thread',None)
+        if technical and technical.is_alive():roles=tuple(r for r in roles if r!='implementation')
+        if not roles:return
+        self._queued_prompt_preparation_at=now
+        excluded=(self.active_conversation,)
+        def stopped():
+            return (self._quitting or self.queue_paused or self._explicit_model_stop or self.disk_gate.gaming()
+                    or self.janus.status().get('paused') or primary.poll() is not None or self.node is not primary
+                    or (self._latest_test_thread and self._latest_test_thread.is_alive()))
+        def work():
+            try:
+                from deepthort_local.queued_prompt_preparation import run_once
+                health=local_server_status(timeout=1.0)
+                admitted=tuple(r for r in roles if r in available_roles(health,primary.pid))
+                if not admitted or stopped():return
+                client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
+                item=run_once(self.conversations.path,client,admitted,stopped,exclude=excluded)
+                if item:self.events.put(('log','Queued prompt: '+item['role']+' prepared scoped advisory notes.'))
+            except Exception as exc:
+                record(STATE,'desktop','queued_prompt_preparation_deferred',error_type=type(exc).__name__)
+        self._queued_prompt_preparation_thread=threading.Thread(target=work,name='Queued-prompt-preparation',daemon=True)
+        self._queued_prompt_preparation_thread.start()
+
     def _scheduler_once(self):
         if self._reviewed_git_pending():return
         if not self._storage_ready():return
         self._creative_lane_tick()
+        self._queued_prompt_preparation_tick(time.monotonic())
         if self.__dict__.get('_native_draft_busy'):return
         tool_busy=(getattr(self,'_verification_preflight',False) or self._dispatch_memory_busy() or self.tool_workflows.busy() or self.__dict__.get('_gui_test_active') is not None or
                    self.__dict__.get('_quiet_test_active') is not None or

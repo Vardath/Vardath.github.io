@@ -263,3 +263,7 @@ The existing self-development lane now observes repeated structured faults in th
 
 ---
 
+
+## Owner-directed independent prompt queuing (27 November 2026)
+
+The existing conversation queue and approved JobStore already persist work, but same-chat planning is an amendment and the central foreground slot defers planning while a build runs. Add explicit independent task chats in the existing ConversationStore (32 unfinished maximum), FIFO conversation admission, a prompt queue view and individual pending cancellation. The existing scheduler remains the only execution dispatcher. While a foreground task is occupied and the existing broker reports spare measured capacity, JANUS, Sentinel or Granite can independently prepare one exact short queued prompt at a time; each role supplies scope-bound, unverified advisory receipts, consumed only at its actual planning checkpoint without waiting. No project execution grant, no second scheduler, no cap changes. Long or attached prompts retain full normal foreground handling. Actual parallel full planning/build execution and integrated five-model acceptance remain outstanding.
