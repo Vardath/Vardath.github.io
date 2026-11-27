@@ -32,4 +32,20 @@ class WorkflowDesignTests(unittest.TestCase):
             c.amend_project('chat',t,'Use a different mesh')
             self.assertFalse(current_source(binding,c))
             self.assertFalse(current_source_file(binding,c.path))
+    def test_visual_graph_exact_dependencies(self):
+        from deepthort_local.workflow_graph import project_graph
+        stages=[dict(recipe_id=1,tool='Blender',title='Mesh',input='',output='a.obj',predecessor=None),
+                dict(recipe_id=2,tool='Image',title='Texture',input='',output='b.png',predecessor=None),
+                dict(recipe_id=3,tool='Blender',title='Convert',input='a.obj',output='c.glb',predecessor=1)]
+        manifest={'project':'project','stages':stages}
+        graph=project_graph(manifest)
+        self.assertEqual(graph['execution_order'],[1,2,3])
+        self.assertEqual(graph['edges'],[{'from':1,'to':3,'artifact':'a.obj'}])
+        self.assertNotIn('argv',graph['nodes'][0])
+        old=graph['manifest_sha256'];stages[0]['title']='New title'
+        self.assertNotEqual(old,project_graph(manifest)['manifest_sha256'])
+        stages[2]['predecessor']=2
+        with self.assertRaises(ValueError):project_graph(manifest)
+        stages[2]['predecessor']=None
+        with self.assertRaises(ValueError):project_graph(manifest)
 if __name__=='__main__':unittest.main()

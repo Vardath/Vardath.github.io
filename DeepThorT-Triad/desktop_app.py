@@ -7457,6 +7457,8 @@ class DeepThorTDesktop(tk.Tk):
                 if auto_imports:
                     details+='\n\nRequired fixed import checks (automatically run after the checked outputs exist if unattended project work is enabled):\n'+'\n'.join(
                         subprocess.list2cmdline(p['argv']) for p in auto_imports)
+                from deepthort_local.workflow_graph import preview
+                if not preview(self,manifest):return
                 if not messagebox.askyesno('Review JANUS workflow',
                     'Sentinel reviewed this proposal against the stored specification. '
                     'Commands run with your Windows permissions, not in a sandbox. '
@@ -7935,6 +7937,8 @@ class DeepThorTDesktop(tk.Tk):
             manifest=freeze(self.tool_learning,self.project,steps)
             details='\n\n'.join(f"{i}. {s['title']}\n{subprocess.list2cmdline(s['argv'])}\nOutput: {s['output']}"
                 for i,s in enumerate(manifest['stages'],1))
+            from deepthort_local.workflow_graph import preview
+            if not preview(self,manifest):return
             if not messagebox.askyesno('Approve exact multi-tool workflow',
                 'The following applications will run sequentially with your Windows permissions. '
                 'They are not sandboxed. Each declared output must be new; earlier checked output '
