@@ -523,3 +523,11 @@ Files & Images → Discover remote MCP. JSON: `{"url":"https://mcp.example.com/m
 ## Public REST integration (Pass 110)
 
 Files & Images → Reviewed REST request. JSON: `{"url":"https://api.example.com/items","method":"GET","query":{"q":"example"},"body":null}` or POST with explicit JSON object body. Review all outgoing data: field-name checks are not comprehensive secret detection. Fixed public HTTPS destination, no credentials, redirects, retries or uploaded files. Bounded JSON receipt and HTTP status; POST can change remote state. Inspect remote before repeating an uncertain request. No authenticated acceptance yet.
+
+## Windows credential management (Pass 111)
+
+Existing GitHub review/draft dialogs offer separately approved Windows Credential Manager save/replace, retrieve and forget for one exact repository and operation. No enumeration, plaintext fallback, OAuth persistence or automatic use. Local deletion does not revoke provider access; other processes under your Windows account may access the credential. Use narrowly scoped provider tokens.
+
+## JSON tool factory (Pass 112)
+
+Files & Images → Generate JSON tool. JSON: `{"name":"normalise","fields":[{"source":"label","target":"name","operation":"trim"}],"fixtures":[{"input":{"label":" A "},"expected":{"name":"A"}}]}`. Generates new standalone Python source for a bounded JSON scalar mapping (copy, trim, lower, upper). The reference operations check expected fixtures and generated source compiles; actual tool execution and registration are separate. No arbitrary command, network or file operations.
