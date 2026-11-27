@@ -1,4 +1,5 @@
 import hashlib,http.client,json,queue,sqlite3,tempfile,threading,unittest
+from contextlib import closing
 from pathlib import Path
 from deepthort_local import developer_status as s,openai_gateway as g
 from deepthort_local.job_queue import JobStore
@@ -15,7 +16,7 @@ class StatusTests(unittest.TestCase):
         self.requests.submit('other','project','chat','other chat')
     def read(self):return s.status(self.jobs.path,self.requests.path,'project','chat',approved=True)
     def test_exact_scope_and_no_recovery(self):
-        with sqlite3.connect(self.requests.path) as db:
+        with closing(sqlite3.connect(self.requests.path)) as db, db:
             db.execute("UPDATE conversation_requests SET state='running' WHERE id=?",(self.req,))
         before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in (self.jobs.path,self.requests.path)]
         value=self.read();after=[hashlib.sha256(p.read_bytes()).hexdigest() for p in (self.jobs.path,self.requests.path)]
