@@ -191,3 +191,11 @@ Edit the eight supported RIFF INFO fields on a local PCM WAV; null removes a fie
 ```
 
 Uses the same bounded 16-bit PCM WAV input as tempo detection. Choose left or right (right requires stereo). The local spectral estimator returns pitch-class evidence, ranked major/minor candidates and a key only when its profile margin is sufficient. Scores are correlations, not probabilities. Silence, single pitches and ambiguous material may yield no key. Complex or modulating music requires listening.
+
+## Reduce quiet audio noise
+
+```json
+{"audio":"track.wav","threshold_dbfs":-40,"attenuation_db":-20,"attack_ms":5,"release_ms":100}
+```
+
+Bounded 16-bit PCM WAV (same source restrictions as tempo detection). Linked-channel soft gate attenuates low-level intervals with smooth attack/release. It does not remove noise overlapping wanted audio. New WAV preserves frame count, sample rate and channels; metadata is not copied. Inspect the measured quiet RMS and listen to the output.
