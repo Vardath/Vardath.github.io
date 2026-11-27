@@ -68,7 +68,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 56 | 297 | Batch image processing | Source extended: reviewed 2–6 PNG batch enhancement and bounded aspect-preserving resize with verified atomic ZIP and per-source manifest; Pass 057 CI pending. Broader formats, quality and model-directed acceptance outstanding. |
 | 57 | 299 | Video trimming and sequencing | Source extended: reviewed silent MP4 frame-index trimming and ordered sequence with lossless RGB decode comparison; Pass 058 CI pending. Audio, wider formats, longer media and native playback acceptance outstanding. |
 | 58 | 90 | Image background removal | Source implemented: reviewed color-key or supplied grayscale mask removal with feather and exact alpha/pixel verification; Pass 059 CI pending. Semantic segmentation, visual and model-directed acceptance outstanding. |
-| 59 | 91 | Image background replacement | Not started in this programme |
+| 59 | 91 | Image background replacement | Source implemented: reviewed transparent PNG foreground composition over solid or opaque PNG background with explicit fit and decoded pixel verification; Pass 060 CI pending. Automatic segmentation, visual and model-directed acceptance outstanding. |
 | 60 | 13 | Optical character recognition (OCR) | Not started in this programme |
 | 61 | 226 | Knowledge import and export | Existing partial; completion not started in this programme |
 | 62 | 7 | Scheduled task execution | Not started in this programme |
@@ -568,3 +568,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 059 — 27 November 2026
 
 - Add bounded reviewed PNG background removal with explicit RGB key/tolerance/feather or same-size grayscale mask. Multiply existing alpha, preserve RGB, verify decoded output pixels and source hashes, and refuse changed inputs. Four regression cases. No inferred semantic segmentation, automatic subject extraction or visual acceptance claim. Next rank 59 / ID 91 image background replacement. No installer.
+
+## Pass 060 — 27 November 2026
+
+- Add reviewed replacement of a transparent foreground over an explicit solid color or distinct opaque PNG background, with exact or explicitly stretched fit. Verify actual RGB pixels, source hashes, non-overwrite and input stability. Four regressions including chaining with reviewed background removal. No automatic segmentation or visual acceptance claim. Next rank 60 / ID 13 OCR. No installer.
