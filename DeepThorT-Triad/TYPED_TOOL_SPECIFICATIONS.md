@@ -675,3 +675,7 @@ Files & Images → Generate tileable texture. JSON keys: `size` (64/128/256/512/
 ## Reviewed PBR material generation (Pass 149)
 
 Files & Images → Generate PBR maps. JSON keys: `height_map` (opaque 8-bit grayscale PNG, max 1024×1024), `low_rgb`, `high_rgb` (RGB integers), `roughness_low`, `roughness_high`, `metallic` (0–255 linear channel values), `strength` (0–64), `edge` (`wrap`/`clamp`). Produces ZIP of base_color.png (sRGB), normal.png (linear OpenGL +Y), metallic_roughness.png (linear R=255, G=roughness, B=metallic), unchanged height.png and material.json. Explicit authored properties, not physical inference or baked occlusion. No native render acceptance.
+
+## Reviewed character skinning (Pass 150)
+
+Files & Images → Skin character mesh. JSON keys: `mesh` (static triangular OBJ), `max_position_error` (1e-12–1), `joints` (2–32 records with distinct `name`, `parent` null for first root or earlier index, `position` XYZ in mesh coordinates). Assigns normalized inverse squared Euclidean weights to nearest two joint positions. New GLB contains hierarchy, inverse bind and skin attributes; verifies rest transforms and geometry. Does not discover skeletons or establish deformation/anatomical quality. Native import unverified.
