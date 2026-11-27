@@ -177,7 +177,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 165 | 99 | Sketch-to-image conversion | Partial: hash-bound RGB/grayscale sketch, configurable line polarity and strength, aspect-preserving letterbox, existing local diffusion and reviewed output. Pass 166 CI pending. Dedicated sketch conditioning and native fidelity outstanding. |
 | 166 | 102 | Layer-aware image editing | Partial: reviewed independent PNG layers with names, order, position, size, opacity, visibility and new editable OpenRaster output, merged preview and exact source guards. Pass 167 CI pending. Existing ORA/PSD import and interactive layer editor outstanding. |
 | 167 | 296 | Editable graphic design | Partial: reviewed named SVG groups, independently editable shapes/text, stable IDs, visibility and opacity, strict geometry and exact source/non-overwrite guards. Pass 168 CI pending. External editor, visual rendering, interactive authoring and model-led acceptance outstanding. |
-| 168 | 103 | Visual multimedia generation workflow graphs | Not started in this programme |
+| 168 | 103 | Visual multimedia generation workflow graphs | Partial: read-only dataflow preview of exact frozen recipes, external inputs and predecessor artifact edges in both model-designed and manually composed workflow reviews. Pass 169 CI pending. Interactive node authoring and native UI acceptance outstanding. |
 | 169 | 107 | Existing video interpretation | Not started in this programme |
 | 170 | 236 | Screen capture and interpretation | Existing partial; completion not started in this programme |
 | 171 | 298 | Video editing | Existing partial; completion not started in this programme |
@@ -940,3 +940,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 168 — 27 November 2026
 - Extend existing SVG logo geometry into reviewed editable graphic designs with named independent groups, visibility, opacity, stable element IDs and verified XML structure. Reuse strict existing geometric bounds and literal text; no arbitrary SVG import or scripts. Desktop entry uses the existing typed tool and priority gate. Two regressions in the existing logo suite. External editor and visual acceptance outstanding. Next rank 168 / ID 103 visual multimedia generation workflow graphs. No installer.
+
+## Pass 169 — 27 November 2026
+- Project exact frozen workflow manifests into a bounded read-only stage graph with recipe identities, external inputs, output paths, actual predecessor links and manifest digest. Show in both existing workflow approval paths before exact command review; cancelling grants nothing. No new scheduler or command authority. Existing workflow-design suite gains dependency/digest regression. Interactive node authoring and native graphical acceptance outstanding. Next rank 169 / ID 107 existing video interpretation. No installer.

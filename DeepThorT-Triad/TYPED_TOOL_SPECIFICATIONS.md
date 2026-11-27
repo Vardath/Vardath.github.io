@@ -757,3 +757,7 @@ Files & Images → Editable layers. Use the same canvas and ordered PNG layer sc
 ## Reviewed editable graphic design (Pass 168)
 
 Files & Images → Editable graphic. JSON canvas keys: `title`, `width`, `height`, `background` (hex RGB or null), `groups`. Each of 1–12 groups has a distinct `name`, boolean `visible`, integer `opacity` (0–100), and `elements` using the existing logo rectangle, circle, polygon or text schema (up to 32 per group, 64 total). Output is a new SVG with named independent groups and stable element IDs; hidden elements remain present for editing. No arbitrary SVG import, script, remote resource, or rendering/font-fit claim. Use an external editor to inspect and edit the output.
+
+## Visual workflow dataflow (Pass 169)
+
+Both the JANUS-designed and manually composed tool workflow approval paths show a scrollable read-only stage graph before exact command review. Recipe IDs, titles, input/output paths and actual predecessor links come from the frozen manifest, with independent stages distinguished from artifact dependencies. Cancel to leave the proposal unapproved. Continuing still requires the existing command and source revalidation and user approval. This is not a visual node editor or parallel execution engine.
