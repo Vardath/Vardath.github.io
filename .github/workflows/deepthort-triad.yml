@@ -197,6 +197,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_contract_policy_review_ability.py -v
       - run: python -m unittest discover -s tests -p test_pdf_visual_quality_ability.py -v
       - run: python -m unittest discover -s tests -p test_predictive_modelling_ability.py -v
+      - run: python -m unittest discover -s tests -p test_scientific_computing_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -546,6 +547,8 @@ jobs:
           python -m unittest discover -s tests -p test_pdf_visual_quality_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_predictive_modelling_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_scientific_computing_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

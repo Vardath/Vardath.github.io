@@ -98,7 +98,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 86 | 278 | Contract and policy analysis | Source extended: reviewed text/PDF/DOCX clause evidence checklist, predefined and user-defined literal checks, exact source locators, missing text and bounded evidence. Pass 087 CI pending. Semantic clause interpretation, jurisdiction and independent legal verification outstanding. |
 | 87 | 75 | Automated visual document quality verification | Source implemented: actual bounded selected-PDF-page raster checks at 96 DPI, visible ink bounds, blank-page and requested-margin criteria with pixel hashes and warnings. Pass 088 CI pending. Broader visual quality, clipping, typography and native acceptance outstanding. |
 | 88 | 79 | Predictive modelling | Source implemented: exact one-predictor OLS with ordered train/held-out split, complete-case counts, baseline and error metrics, independent normal-equation verification and bounded predictions. Pass 089 CI pending. Multiple predictors, other models, cross-validation and native integration outstanding. |
-| 89 | 286 | Scientific computing | Existing partial; completion not started in this programme |
+| 89 | 286 | Scientific computing | Source extended: bounded exact square linear-system elimination with rank/consistency classification and substitution, polynomial definite integration with independent evaluation and derivative check. Pass 090 CI pending. Numerical simulation, broader algorithms and native integration outstanding. |
 | 90 | 288 | Anomaly detection | Existing partial; completion not started in this programme |
 | 91 | 80 | Time-series forecasting | Not started in this programme |
 | 92 | 82 | Jupyter notebook integration | Not started in this programme |
@@ -678,3 +678,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 089 — 27 November 2026
 - Reuse CSV and exact statistics infrastructure for one-predictor ordinary least squares. Explicit ordered training prefix/held-out suffix, exact coefficients and independent residual invariants, MAE/MSE/R² and training-mean baseline, missing counts and extrapolation warnings. No future accuracy or causal claim. Three regression cases. Next rank 89 / ID 286 scientific computing. No installer.
+
+## Pass 090 — 27 November 2026
+- Extend existing exact mathematics primitives with 1–16 equation square linear systems, exact pivot elimination, singular/inconsistent classification and independent substitution; 1–32 polynomial coefficients with signed bounds and independently verified rational integration. Four regressions, no new package or arbitrary expressions. Next rank 90 / ID 288 anomaly detection. No installer.
