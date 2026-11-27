@@ -58,7 +58,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 46 | 310 | Audio format conversion | Source extended: reviewed local WAV-to-FLAC/MP3 conversion with installed codec identity guards, actual redecoding and lossless PCM checks for FLAC. Pass 047 CI pending; other input/output formats, metadata and listening acceptance outstanding. |
 | 47 | 163 | Normal-map generation | Source implemented: bounded grayscale PNG height-to-tangent-space RGB normals with strength, OpenGL/DirectX conventions, wrap/clamp and decoded pixel verification. Pass 048 CI pending; rendering and model integration outstanding. |
 | 48 | 316 | Height-map generation | Source extended: reviewed grayscale/RGB intensity-to-height texture with explicit channel, levels, gamma and inversion; compatible with normal-map tool. Pass 049 CI pending; physical depth inference, rendering and model integration outstanding. |
-| 49 | 161 | Automatic UV unwrapping | Not started in this programme |
+| 49 | 161 | Automatic UV unwrapping | Source implemented: bounded static triangular OBJ per-face UV atlas, verified separate islands and unchanged geometry. Pass 050 CI pending; seam-optimised charting, materials, normals and native acceptance outstanding. |
 | 50 | 313 | Mesh simplification | Existing partial; completion not started in this programme |
 | 51 | 324 | General 3D format conversion | Existing partial; completion not started in this programme |
 | 52 | 100 | Multi-image composition | Not started in this programme |
@@ -528,3 +528,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 049 — 27 November 2026
 
 - Reuse bounded PNG pixel adapter to derive grayscale height textures from explicit luma, grayscale or RGB channels. Reviewed black/white levels, gamma and inversion, preview exact output range and verify decoded pixels. Four tests including RGB channel values, levels and chaining into the normal-map producer. Intensity remapping, not physical depth reconstruction. Next rank 49 / ID 161 automatic UV unwrapping. No installer.
+
+## Pass 050 — 27 November 2026
+
+- Add strict bounded static triangular OBJ adapter and automatic UV unwrapping. Project each triangle isometrically into its own nonoverlapping atlas tile with reviewed margin, verify tile containment/orientation, all vertex positions and triangle indices after roundtrip. Explicitly refuse unsupported attributes rather than silently drop them. Four fixtures including geometry preservation, relative indices, shape ratio, invalid input and stale guards. Per-face islands, not seam-optimised unwrap or uniform texel density. Next rank 50 / ID 313 mesh simplification. No installer.

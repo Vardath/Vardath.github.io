@@ -223,3 +223,11 @@ Requires Pillow (provided by existing optional presentation or image tools). Inp
 ```
 
 Uses the existing bounded PNG/Pillow adapter. Choose grayscale or Rec.709 encoded RGB luma, or an explicit red/green/blue channel. Input levels clamp and normalize, gamma remaps, inversion is optional. Produces an 8-bit grayscale PNG suitable for the normal-map tool. This maps intensity to height; it does not infer real depth from a photograph.
+
+## Automatically unwrap a UV atlas
+
+```json
+{"mesh":"model.obj","tile_margin":0.05}
+```
+
+Plain triangulated OBJ (v and f statements plus comments), up to 20,000 vertices and triangles. Produces new OBJ with one shape-preserving UV island per triangle, distinct atlas tiles and an explicit 1–25% margin of each tile. Positions and triangle indices are retained. Materials, normals, groups and existing UVs are refused in this initial adapter; seam optimisation and engine rendering remain separate.
