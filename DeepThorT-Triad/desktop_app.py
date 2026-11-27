@@ -725,6 +725,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Compose images…',command=lambda:self._review_typed_tool('image_composition','.png','Image: reviewed composition')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Enhance image…',command=lambda:self._review_typed_tool('image_enhancement','.png','Image: reviewed enhancement')).pack(side='left',padx=3)
+        ttk.Button(texture_review_actions,text='Generate logo…',command=lambda:self._review_typed_tool('logo_generation','.svg','Image: reviewed logo')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Simplify mesh…',command=lambda:self._review_typed_tool('mesh_simplification','.obj','Mesh: reviewed simplification')).pack(side='left',padx=3)
@@ -1367,7 +1368,8 @@ class DeepThorTDesktop(tk.Tk):
                  'mesh_simplification':('.obj','Mesh: reviewed simplification'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
-                 'image_enhancement':('.png','Image: reviewed enhancement')}
+                 'image_enhancement':('.png','Image: reviewed enhancement'),
+                 'logo_generation':('.svg','Image: reviewed logo')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

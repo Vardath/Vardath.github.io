@@ -263,3 +263,11 @@ Two to six distinct PNG sources, bottom-to-top order; explicit in-canvas positio
 ```
 
 Explicit integer percentages 0–300; 100 is identity. Fixed order brightness, contrast, saturation, sharpness on encoded RGB; source alpha preserved in RGBA PNG, no ICC conversion. Same bounded PNG inputs as composition. Reviewed source identity, exact decoded output and changed pixel count. This is parameter-driven enhancement, not automatic aesthetic judgment, AI upscaling or restoration.
+
+## Generate an editable vector logo
+
+```json
+{"title":"Example","width":320,"height":160,"background":null,"elements":[{"kind":"circle","cx":40,"cy":80,"radius":24,"fill":"#005577"},{"kind":"text","x":80,"y":90,"text":"Example","size":24,"family":"sans","weight":"bold","anchor":"start","fill":"#101010"}]}
+```
+
+Ordered 1–32 literal shapes or text; bounded rectangle/circle/polygon geometry, hex fills, optional solid background, three font families and explicit wordmark attributes. No arbitrary SVG, URLs, scripts or external assets. Output is editable and structurally verified; rendered appearance, font fit, design originality and trademark clearance are not established.
