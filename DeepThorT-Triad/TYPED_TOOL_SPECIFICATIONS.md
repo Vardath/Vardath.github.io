@@ -531,3 +531,7 @@ Existing GitHub review/draft dialogs offer separately approved Windows Credentia
 ## JSON tool factory (Pass 112)
 
 Files & Images → Generate JSON tool. JSON: `{"name":"normalise","fields":[{"source":"label","target":"name","operation":"trim"}],"fixtures":[{"input":{"label":" A "},"expected":{"name":"A"}}]}`. Generates new standalone Python source for a bounded JSON scalar mapping (copy, trim, lower, upper). The reference operations check expected fixtures and generated source compiles; actual tool execution and registration are separate. No arbitrary command, network or file operations.
+
+## Public GitHub account inventory (Pass 114)
+
+Files & Images → GitHub public repositories. Connect the existing transient OAuth session, select page 1–10 and approve identity verification plus a bounded public owned-repository page. Returns repository ID, exact name, default branch and flags only. No private repository enumeration, clone, scope change or remote mutation. Page is not a complete account inventory.

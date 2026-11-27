@@ -752,6 +752,7 @@ class DeepThorTDesktop(tk.Tk):
         git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
         ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='GitHub public repositories…',command=self._show_github_account).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Discover remote MCP…',command=lambda:self._review_typed_tool('remote_mcp','.json','Integration: reviewed remote MCP')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Reviewed REST request…',command=lambda:self._review_typed_tool('rest_api','.json','Integration: reviewed REST request')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Generate JSON tool…',command=lambda:self._review_typed_tool('tool_factory','.py','Development: reviewed tool source')).pack(side='left',padx=3)
@@ -1417,6 +1418,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_github_account(self):
+        from deepthort_local.github_account_dialog import show
         show(self)
 
     def _show_github_pr_review(self):

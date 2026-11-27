@@ -122,7 +122,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 110 | 265 | Secure credential management | Source extended: explicit Windows Credential Manager storage, retrieval and removal for exact GitHub repository/purpose; separate user approval, no plaintext fallback or model access. Pass 111 CI pending. Wider provider integration, expiry/rotation and native desktop acceptance outstanding. |
 | 111 | 266 | Automatic tool creation | Source extended: reviewed declarative JSON mapping tool factory, independent reference fixture check, standalone bounded stdin/stdout Python source, compile and native fixture execution tests. Pass 112 CI pending. General tool synthesis, automatic registration and agent selection outstanding. |
 | 112 | 334 | Secrets redaction | Source extended: central diagnostic scrubber, known token patterns, structured credential fields, private key blocks, legacy JSONL re-scrub and partial-tail refusal. Pass 113 CI pending. Unknown secrets, filenames and broader DLP remain outside guarantees. |
-| 113 | 182 | GitHub account integration | Not started in this programme |
+| 113 | 182 | GitHub account integration | Source extended: approved public owned-repository inventory with existing OAuth session, exact account identity recheck, bounded page, repository IDs/default branches and flags. Pass 114 CI pending. Private repositories, broader project integration and live provider acceptance outstanding. |
 | 114 | 67 | Webhook integration | Not started in this programme |
 | 115 | 203 | OpenAI-compatible external developer API | Not started in this programme |
 | 116 | 328 | Local developer API | Existing partial; completion not started in this programme |
@@ -756,3 +756,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 113 — 27 November 2026
 - Extend the existing flight recorder and diagnostic ZIP, not a new logging pipeline. Scrub known provider tokens, auth headers, structured keys and private-key blocks; exempt only actual numeric metrics. Reparse and scrub legacy JSONL, omit malformed rows, drop possibly truncated initial lines from process tails. No raw structured-log copy. Three regression cases including actual exported ZIP. Best-effort only; review export before sharing. Next rank 113 / ID 182 GitHub account integration. No installer.
+
+## Pass 114 — 27 November 2026
+- Extend existing transient GitHub OAuth session with explicitly approved read-only public owned-repository inventory. Verify account identity before and after, bound to one page and exact owner/repository IDs, default branches and status flags. No new scopes, private data, raw profile, token persistence or mutation. Three transport-interface regressions. Pass 105 post-merge Linux/Windows green (45974348985), Pass 106 merged, post-merge CI pending. Next rank 114 / ID 67 webhook integration. No installer.
