@@ -627,3 +627,7 @@ Files & Images → Synthesize instruments. JSON keys: `midi` (canonical JANUS `.
 ## Automated audio mixing (Pass 137)
 
 Files & Images → Auto-balance mix. JSON keys: `tracks` (2–6 distinct project-relative `audio` WAV paths, `offset_ms` 0–10000, `trim_db` -24 to 6, `pan` -1 to 1), `target_rms_dbfs` -36 to -12, `max_boost_db` 0–12, `peak_dbfs` -12 to -1. Mono/stereo PCM16 inputs with matching 8–48 kHz rate, 3 seconds minimum each and 30 seconds maximum output. Whole-track RMS gain auto-balance with explicit trim, stereo balance or mono pan, offset and shared peak ceiling. Near-silent tracks rejected. New verified stereo WAV; no perceptual loudness, automatic EQ/compression or listening acceptance claim.
+
+## Automated audio mastering (Pass 138)
+
+Files & Images → Master audio. JSON keys: `audio` (mono/stereo PCM16 WAV, 3–30 seconds, 8–48 kHz), `threshold_dbfs` -36 to -6, `ratio` 1–8, `attack_ms` 1–100, `release_ms` 20–500, `target_rms_dbfs` -30 to -10, `max_boost_db` 0–12, `peak_dbfs` -12 to -1. Linked peak-envelope compression, bounded RMS makeup and shared sample-peak attenuation. The target RMS may be missed to preserve headroom. New verified PCM WAV, original unchanged. No LUFS, true-peak, spectral EQ, listening or professional-mastering claim.
