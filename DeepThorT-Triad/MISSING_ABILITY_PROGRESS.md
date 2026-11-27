@@ -813,3 +813,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 131 — 27 November 2026
 - Add bounded reviewed stereo spatial extraction: center, side, left or right, with complementary residual. Verify both stereo WAVs and exact sample-by-sample reconstruction, package new ZIP with manifest and hashes. Three fixture regressions. This is partial audio-source isolation only; no semantic vocal/instrument claims or mono separation. Preserve shared cap; no new models. Next rank 131 / ID 131 musical stem separation. No installer.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
