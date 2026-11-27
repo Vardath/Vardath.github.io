@@ -135,7 +135,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 123 | 144 | Expressive neural speech synthesis | Source extended: separately approved optional installed Piper CLI with exact executable/voice/config hashes, bounded rate and variation controls, capped native execution and verified PCM WAV publication. Pass 124 CI pending. Actual compatible engine installation, native neural rendering, expressive/listening acceptance and richer emotion control outstanding. |
 | 124 | 306 | Multilingual speech generation | Source extended: explicit per-segment installed regional voice IDs, exact text JSON review, offline capped Windows narration, joined PCM WAV with configurable gaps and segment timing receipts. Pass 125 CI pending. Actual non-English installed voice and pronunciation acceptance outstanding. |
 | 125 | 307 | Podcast generation | Source extended: reviewed scripted intro/body/outro, stable installed voices per named speaker, offline WAV plus timestamped transcript and verified episode ZIP. Pass 126 CI pending. Autonomous topic/script generation, full-length episodes, music mixing and native listening acceptance outstanding. |
-| 126 | 308 | Audiobook generation | Existing partial; completion not started in this programme |
+| 126 | 308 | Audiobook generation | Source extended: reviewed short manuscript, exact narrator, chapter WAVs, global chapter timing index and manuscript in verified ZIP; bounded to 300 seconds. Pass 127 CI pending. Long-form book ingestion, resumable production and native listening acceptance outstanding. |
 | 127 | 309 | Multi-speaker dialogue production | Existing partial; completion not started in this programme |
 | 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Not started in this programme |
 | 129 | 152 | Audio restoration | Not started in this programme |
@@ -795,3 +795,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 126 — 27 November 2026
 - Reuse bounded multilingual synthesis in a reviewed scripted podcast episode workflow, three to eight turns and up to four distinct installed voices, intro/body/outro, exact timing receipts, WAV, transcript and metadata in one checked new ZIP. Shared speech review UI now invalidates stale selection. Fixture regressions verify archive, source and voice identity, timings, cancellation and no overwrite. No autonomous writing, publication, music mixing or native quality claim. Next rank 126 / ID 308 audiobook generation. No installer.
+
+## Pass 127 — 27 November 2026
+- Produce a short chapter-oriented audiobook from supplied reviewed JSON, up to six chapters, twelve passages and 6000 characters, exact narrator voice and 300 seconds combined output. Each chapter WAV, global chapter index, manuscript and hash evidence are bundled in one verified non-overwriting ZIP. Reuse capped offline speech, shared review UI and fixture tests. Full-length book ingestion, resumable chapter jobs and native listening remain outstanding. Pass 108 verified green post-merge; Pass 109 merged. Next rank 127 / ID 309 multi-speaker dialogue production. No installer.

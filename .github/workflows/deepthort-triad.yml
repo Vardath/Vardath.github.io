@@ -234,6 +234,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_neural_speech_ability.py -v
       - run: python -m unittest discover -s tests -p test_multilingual_speech_ability.py -v
       - run: python -m unittest discover -s tests -p test_podcast_generation_ability.py -v
+      - run: python -m unittest discover -s tests -p test_audiobook_generation_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -641,6 +642,7 @@ jobs:
           python -m unittest discover -s tests -p test_neural_speech_ability.py -v
           python -m unittest discover -s tests -p test_multilingual_speech_ability.py -v
           python -m unittest discover -s tests -p test_podcast_generation_ability.py -v
+          python -m unittest discover -s tests -p test_audiobook_generation_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -13,6 +13,10 @@ def show(app,mode='multilingual'):
         from .podcast_generation import review as review_tool,render as render_tool
         title='Podcast generation';suffix='ZIP bundle'
         example={'title':'Episode title','description':'Episode summary','turns':[{'section':section,'speaker':'Host','culture':'en-AU','voice_id':'EXACT ID FROM INVENTORY','text':section+' text'} for section in ('intro','body','outro')],'pause_ms':300}
+    elif mode=='audiobook':
+        from .audiobook_generation import review as review_tool,render as render_tool
+        title='Short audiobook generation';suffix='ZIP bundle'
+        example={'title':'Book title','author':'Author','culture':'en-AU','voice_id':'EXACT ID FROM INVENTORY','chapters':[{'title':'Chapter one','passages':['First passage','Second passage']}],'pause_ms':300}
     elif mode=='multilingual':
         review_tool,render_tool=review,render
         title='Multilingual speech';suffix='WAV'
