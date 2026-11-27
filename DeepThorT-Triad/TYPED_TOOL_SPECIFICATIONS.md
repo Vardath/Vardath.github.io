@@ -579,3 +579,7 @@ Files & Images → Neural speech. Select a trusted separately installed Piper 1.
 ## Multilingual speech (Pass 125)
 
 Files & Images → Multilingual speech. Discover installed offline voices, then select a project JSON with `segments` (1–8 rows, each `culture`, exact `voice_id`, `text`) and `pause_ms` (0–2000). Review exact source/voice identities and new WAV output. Per-segment capped Windows synthesis, verified WAVs, combined 22050 Hz mono PCM16 output with timing receipts. Text is supplied by the owner; no translation, fallback language, voice cloning or claimed neural synthesis. Native pronunciation requires listening.
+
+## Scripted podcast generation (Pass 126)
+
+Files & Images → Podcast generation. Review JSON containing `title`, `description`, `pause_ms` and 3–8 `turns` with `section` (intro, body, outro in order), `speaker`, `culture`, exact installed `voice_id`, and `text`. Up to four named scripted speakers, stable distinct voice assignments. Output is one new ZIP with `episode.wav`, `episode.json`, and `transcript.txt`; timing is measured from generated PCM. No automatic script writing, music, upload or publishing. Listening quality remains unverified.
