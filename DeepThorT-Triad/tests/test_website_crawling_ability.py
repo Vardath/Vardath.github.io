@@ -167,3 +167,33 @@ class FormCompletionTests(unittest.TestCase):
             row=next(x for x in report['elements'] if x.get('name')==name)
             with self.assertRaises(ValueError):prepare(dict(s,fields=[{'locator':row['locator'],'name':name,'value':'x'}]),report)
         with self.assertRaises(ValueError):prepare(s,dict(report,elements_truncated=True))
+
+class DevToolsTests(unittest.TestCase):
+    def test_fixed_devtools_commands_and_endpoint(self):
+        from deepthort_local.browser_devtools import parse_port,command,inspect,call
+        endpoint=b'9223\n/devtools/browser/01234567-89ab-cdef-0123-456789abcdef\n'
+        self.assertEqual(parse_port(endpoint)[0],9223)
+        for raw in (b'80\n/x',b'9223\nws://example.org',b'9223\n/devtools/page/x'):
+            with self.assertRaises(ValueError):parse_port(raw)
+        argv=command('chrome.exe','profile')
+        self.assertIn('--remote-debugging-port=0',argv);self.assertIn('--user-data-dir=profile',argv)
+        self.assertNotIn('--no-sandbox',argv)
+        class WS:
+            def __init__(self):self.sent=[]
+            def send(self,raw):self.sent.append(json.loads(raw))
+            def recv(self):
+                x=self.sent[-1]
+                result={'protocolVersion':'1.3','product':'Chrome/140','revision':'abc','jsVersion':'1'} if x['id']==1 else {'targetInfos':[{'type':'page','url':'about:blank'}]}
+                return json.dumps({'id':x['id'],'result':result})
+        ws=WS();self.assertTrue(inspect(ws)['blank_page_verified'])
+        self.assertEqual([x['method'] for x in ws.sent],['Browser.getVersion','Target.getTargets'])
+        with self.assertRaises(ValueError):call(ws,'Runtime.evaluate',3)
+    def test_devtools_refuses_foreign_page(self):
+        from deepthort_local.browser_devtools import inspect
+        class WS:
+            def send(self,raw):self.req=json.loads(raw)
+            def recv(self):
+                x=self.req
+                result={'protocolVersion':'1.3','product':'Chrome/140','revision':'abc','jsVersion':'1'} if x['id']==1 else {'targetInfos':[{'type':'page','url':'https://example.org'}]}
+                return json.dumps({'id':x['id'],'result':result})
+        with self.assertRaises(ValueError):inspect(WS())
