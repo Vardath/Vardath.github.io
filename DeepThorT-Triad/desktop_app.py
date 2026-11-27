@@ -731,6 +731,7 @@ class DeepThorTDesktop(tk.Tk):
         background_review_actions=ttk.Frame(media_tab);background_review_actions.pack(fill='x',pady=2)
         ttk.Button(background_review_actions,text='Remove background…',command=lambda:self._review_typed_tool('background_removal','.png','Image: reviewed background removal')).pack(side='left',padx=3)
         ttk.Button(background_review_actions,text='Replace background…',command=lambda:self._review_typed_tool('background_replacement','.png','Image: reviewed background replacement')).pack(side='left',padx=3)
+        ttk.Button(background_review_actions,text='Recognize text (OCR)…',command=lambda:self._review_typed_tool('ocr','.json','Image: reviewed OCR')).pack(side='left',padx=3)
         video_review_actions=ttk.Frame(media_tab);video_review_actions.pack(fill='x',pady=2)
         ttk.Button(video_review_actions,text='Trim/sequence video…',command=lambda:self._review_typed_tool('video_trimming','.mp4','Video: reviewed sequence')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
@@ -1381,7 +1382,8 @@ class DeepThorTDesktop(tk.Tk):
                  'batch_image_processing':('.zip','Image: reviewed batch'),
                  'video_trimming':('.mp4','Video: reviewed sequence'),
                  'background_removal':('.png','Image: reviewed background removal'),
-                 'background_replacement':('.png','Image: reviewed background replacement')}
+                 'background_replacement':('.png','Image: reviewed background replacement'),
+                 'ocr':('.json','Image: reviewed OCR')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

@@ -69,7 +69,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 57 | 299 | Video trimming and sequencing | Source extended: reviewed silent MP4 frame-index trimming and ordered sequence with lossless RGB decode comparison; Pass 058 CI pending. Audio, wider formats, longer media and native playback acceptance outstanding. |
 | 58 | 90 | Image background removal | Source implemented: reviewed color-key or supplied grayscale mask removal with feather and exact alpha/pixel verification; Pass 059 CI pending. Semantic segmentation, visual and model-directed acceptance outstanding. |
 | 59 | 91 | Image background replacement | Source implemented: reviewed transparent PNG foreground composition over solid or opaque PNG background with explicit fit and decoded pixel verification; Pass 060 CI pending. Automatic segmentation, visual and model-directed acceptance outstanding. |
-| 60 | 13 | Optical character recognition (OCR) | Not started in this programme |
+| 60 | 13 | Optical character recognition (OCR) | Source implemented: reviewed offline English PNG OCR via locally installed Tesseract with word boxes, confidence and pinned source/model; Pass 061 CI pending. Wider languages, documents and native acceptance outstanding. |
 | 61 | 226 | Knowledge import and export | Existing partial; completion not started in this programme |
 | 62 | 7 | Scheduled task execution | Not started in this programme |
 | 63 | 6 | User-defined recurring tasks | Not started in this programme |
@@ -572,3 +572,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 060 — 27 November 2026
 
 - Add reviewed replacement of a transparent foreground over an explicit solid color or distinct opaque PNG background, with exact or explicitly stretched fit. Verify actual RGB pixels, source hashes, non-overwrite and input stability. Four regressions including chaining with reviewed background removal. No automatic segmentation or visual acceptance claim. Next rank 60 / ID 13 OCR. No installer.
+
+## Pass 061 — 27 November 2026
+
+- Add reviewed local Tesseract English OCR for bounded PNG images, block/sparse layouts, fixed argv and pinned executable/model identity. Verify TSV structure, word geometry and serialized JSON result; no overwrite, no inference from OCR text as instructions, no silent installation. Four regressions including actual English fixture recognition; provision the engine on CI only. Passes 047–052 green and merged (PRs 113–118). Next rank 61 / ID 226 knowledge import and export. No installer.
