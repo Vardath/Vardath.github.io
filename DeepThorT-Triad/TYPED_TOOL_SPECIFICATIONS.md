@@ -567,3 +567,7 @@ Files & Images → Record microphone. Select a project, approve a 1–30 second 
 ## Offline short speech-to-text (Pass 122)
 
 Files & Images → Speech to text. Review an exact project-relative 1–30 second mono 16 kHz PCM16 WAV, choose an exact installed desktop recognition culture, approve offline dictation. The fixed System.Speech adapter runs under the capped native process. Preview text is unverified and never automatically submitted or saved. Missing or ambiguous installed recognizer is a blocker; no cloud or substitute language. Native recognition accuracy requires real speech acceptance.
+
+## Offline audio transcription (Pass 123)
+
+Files & Images → Transcribe recording. Approve an exact project WAV (1–120 seconds, mono 16 kHz PCM16) and installed recognizer culture. Balanced windows of at most 30 seconds produce global segment timings, recognizer confidence and per-window status. Preview then separately approve JSON publication to a new project path. Speech at window boundaries may be missed. No automatic chat submission, speaker identification, diarisation or upload. Native accuracy remains unverified.
