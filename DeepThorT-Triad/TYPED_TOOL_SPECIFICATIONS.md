@@ -745,3 +745,7 @@ The exact JSON is bound to the queue request, a deterministic mannequin raster b
 ## Reviewed relative-depth guided generation (Pass 165)
 
 Files & Images → Depth-guided image. Select a nonuniform square 8-bit grayscale depth PNG of 256, 384 or 512 pixels, choose near-white or near-black convention, relief strength and descriptive prompt. Relative depth tones and optional finite-difference lighting render a deterministic RGB initial image for existing offline diffusion. The guide is hash-bound and unchanged. This is not metric depth estimation or dedicated depth-conditioned neural generation; exact geometry is unverified.
+
+## Reviewed sketch-to-image (Pass 166)
+
+Files & Images → Sketch to image. Select an opaque RGB or grayscale PNG of at most one megapixel, choose line polarity/contrast, prompt and generation strength. The sketch is converted to grayscale, contrast-normalized and centered in a square white canvas without stretching. Existing offline diffusion receives the raster as its starting image; exact line fidelity and native model output remain unverified.

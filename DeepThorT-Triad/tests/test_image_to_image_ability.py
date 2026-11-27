@@ -199,3 +199,26 @@ class ImageToImageTests(unittest.TestCase):
     def test_depth_guide_rejects_flat_and_mismatched(self):
         for raw in (encode(256,256,'L',bytes([55])*(256*256)),encode(128,128,'L',bytes(range(128))*128),OUT):
             with self.assertRaises(ValueError):m.depth_guide(raw,256,True,35)
+
+    def test_sketch_guide_preserves_aspect_and_polarity(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();src=root/'sketch.png'
+            # 2:1 sketch: white background, black vertical central stripe.
+            line=bytes([255]*60+[0]*8+[255]*60)
+            raw=encode(128,64,'L',line*64);src.write_bytes(raw)
+            raster=m.sketch_guide(raw,256,True,100)
+            pixels=decode(raster,('RGB',))[3]
+            self.assertEqual(pixels[:256*32*3],bytes([255])*(256*32*3))
+            self.assertLess(pixels[(128*256+128)*3],20)
+            inverse=encode(128,64,'L',bytes(255-v for v in line)*64)
+            self.assertEqual(raster,m.sketch_guide(inverse,256,False,100))
+            s=m.review_sketch(root,'sketch.png','out.png','spaceship concept art',256)
+            r=m.execute(root,'unused',s,backend=lambda model,guide,plan: OUT if guide==raster else b'')
+            self.assertTrue(r['aspect_preserving_fit']);self.assertFalse(r['sketch_fidelity_verified'])
+            (root/'out.png').unlink()
+            def changed(*_):
+                src.write_bytes(inverse);return OUT
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=changed)
+            self.assertFalse((root/'out.png').exists())
+    def test_sketch_rejects_uniform_input(self):
+        with self.assertRaises(ValueError):m.sketch_guide(encode(32,32,'L',bytes([140])*1024),256,True,100)

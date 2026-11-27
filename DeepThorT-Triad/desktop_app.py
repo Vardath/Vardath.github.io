@@ -873,6 +873,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(image_restore_actions,text='Replace object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='replace')).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Pose-guided image…',command=self._queue_pose_image).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Depth-guided image…',command=self._queue_depth_image).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Sketch to image…',command=self._queue_sketch_image).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1419,6 +1420,32 @@ class DeepThorTDesktop(tk.Tk):
             'This is an explicit image-generation task, not an ordinary chat message.',parent=self):return
         self._queue_special('image',description,[])
         self.tabs.select(1)
+    def _queue_sketch_image(self):
+        if not self.project:
+            messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
+        from deepthort_local.image_to_image import review_sketch
+        try:
+            root=Path(self._project_key()).resolve(strict=True)
+            chosen=filedialog.askopenfilename(parent=self,title='Select sketch PNG',initialdir=str(root),filetypes=[('Sketch PNG','*.png')])
+            if not chosen:return
+            source=Path(chosen).absolute().relative_to(root).as_posix()
+            light=messagebox.askyesnocancel('Sketch polarity','Dark lines on light background? Yes = dark on light; No = light on dark.',parent=self)
+            if light is None:return
+            lines=simpledialog.askinteger('Sketch lines','Line contrast 10–100%:',minvalue=10,maxvalue=100,initialvalue=100,parent=self)
+            if lines is None:return
+            prompt=simpledialog.askstring('Sketch to image','Describe subject, materials, colour and style:',parent=self)
+            if not prompt:return
+            strength=simpledialog.askinteger('Generation strength','Strength 30–90%:',minvalue=30,maxvalue=90,initialvalue=65,parent=self)
+            if strength is None:return
+            target=f'janus-sketch-{uuid.uuid4().hex[:12]}.png'
+            s=review_sketch(root,source,target,prompt,384,15,strength,secrets.randbelow(2**32),light,lines)
+            if not messagebox.askyesno('Confirm sketch-guided image',
+                f'Sketch: {source}\\nOutput: {target}\\nPrompt: {prompt}\\n384 × 384; line contrast {lines}%; strength {strength}%\\n'
+                'The sketch is normalized and fitted without stretching before local diffusion. Exact line fidelity is not guaranteed.',parent=self):return
+            ident=self.jobs.submit(self._project_key(),self.current_chat,'image',json.dumps(s),target,attachments=[str(root/source)])
+            self._log(f'Sketch-guided image job #{ident} queued.');self._refresh_jobs();self.tabs.select(1)
+        except Exception as e:messagebox.showerror('Cannot queue sketch-guided image',str(e),parent=self)
+
     def _queue_depth_image(self):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return

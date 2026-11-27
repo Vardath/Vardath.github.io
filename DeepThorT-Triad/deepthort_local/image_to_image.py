@@ -26,9 +26,10 @@ REMOVE_FIELDS={'operation','removed_object'}
 REPLACE_FIELDS=REMOVE_FIELDS|{'replacement_object'}
 POSE_FIELDS={'guide_kind','guide_layout'}
 DEPTH_FIELDS=POSE_FIELDS|{'near_is_white','relief_percent'}
+SKETCH_FIELDS=POSE_FIELDS|{'light_background','line_strength_percent'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS,FIELDS|DEPTH_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS,FIELDS|DEPTH_FIELDS,FIELDS|SKETCH_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -73,6 +74,9 @@ def checked(s):
         elif s['guide_kind']=='depth' and set(s)==FIELDS|DEPTH_FIELDS:
             if s['guide_layout']!='relative-depth-relief-v1' or type(s['near_is_white']) is not bool or type(s['relief_percent']) is not int or not 0<=s['relief_percent']<=100:
                 raise ValueError('Invalid relative-depth guidance settings')
+        elif s['guide_kind']=='sketch' and set(s)==FIELDS|SKETCH_FIELDS:
+            if s['guide_layout']!='sketch-fit-v1' or type(s['light_background']) is not bool or type(s['line_strength_percent']) is not int or not 10<=s['line_strength_percent']<=100:
+                raise ValueError('Invalid sketch guidance settings')
         else:raise ValueError('Unsupported structural guide or mismatched fields')
     return s
 
@@ -152,6 +156,34 @@ def review_depth(root,image,output,prompt,size=384,steps=15,strength_percent=60,
        'guide_kind':'depth','guide_layout':'relative-depth-relief-v1','near_is_white':near_is_white,'relief_percent':relief_percent}
     src,_,bound=validate(root,s)
     depth_guide(guard.exact(src,bound,guard.MAX_INPUT),size,near_is_white,relief_percent)
+    return s
+
+def sketch_guide(raw,size,light_background,line_strength_percent):
+    """Normalize line-art contrast and fit the guide without stretching."""
+    w,h,mode,pixels=decode(raw,('L','RGB'))
+    if w*h>1024*1024:raise ValueError('Sketch exceeds one megapixel')
+    Image=image_module()
+    from PIL import ImageOps
+    with Image.frombytes(mode,(w,h),pixels) as src,src.convert('L') as mono:
+        with ImageOps.autocontrast(mono) as contrast:
+            if contrast.getextrema()[1]-contrast.getextrema()[0]<8:raise ValueError('Sketch has insufficient contrast')
+            with (contrast.copy() if light_background else ImageOps.invert(contrast)) as ink:
+                lut=[255-(255-v)*line_strength_percent//100 for v in range(256)]
+                with ink.point(lut) as toned:
+                    with ImageOps.contain(toned,(size,size),Image.Resampling.LANCZOS) as fit:
+                        with Image.new('L',(size,size),255) as canvas:
+                            canvas.paste(fit,((size-fit.width)//2,(size-fit.height)//2))
+                            with canvas.convert('RGB') as rgb:return encode(size,size,'RGB',rgb.tobytes())
+
+def review_sketch(root,image,output,prompt,size=384,steps=15,strength_percent=65,seed=0,light_background=True,line_strength_percent=100):
+    root=Path(root).resolve(strict=True)
+    source=guard.path_for(root,image,exclusions(()),{'.png'},exists=True)
+    if source.stat().st_size>guard.MAX_INPUT:raise ValueError('Sketch exceeds input bound')
+    s={'schema':SCHEMA,'image':image,'source_sha256':snapshot_file(source)['expected'],'output':output,
+       'prompt':prompt,'size':size,'steps':steps,'strength_percent':strength_percent,'seed':seed,
+       'guide_kind':'sketch','guide_layout':'sketch-fit-v1','light_background':light_background,'line_strength_percent':line_strength_percent}
+    src,_,bound=validate(root,s)
+    sketch_guide(guard.exact(src,bound,guard.MAX_INPUT),size,light_background,line_strength_percent)
     return s
 
 def positive_prompt(s):
@@ -335,8 +367,8 @@ def diffuse_mask(model,raw,mask_raw,s):
 def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     src,dst,bound=validate(root,s)
     raw=guard.exact(src,bound,guard.MAX_INPUT)
-    pose=s.get('guide_kind')=='pose';depth=s.get('guide_kind')=='depth'
-    raster=pose_guide(raw,s['size']) if pose else (depth_guide(raw,s['size'],s['near_is_white'],s['relief_percent']) if depth else raw)
+    pose=s.get('guide_kind')=='pose';depth=s.get('guide_kind')=='depth';sketch=s.get('guide_kind')=='sketch'
+    raster=pose_guide(raw,s['size']) if pose else (depth_guide(raw,s['size'],s['near_is_white'],s['relief_percent']) if depth else (sketch_guide(raw,s['size'],s['light_background'],s['line_strength_percent']) if sketch else raw))
     w,h,_,_=decode(raster,('RGB',))
     ref_path,ref_bound=reference_input(root,s,src,bound)
     initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raster
@@ -394,7 +426,10 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
                 'pose_conditioning':'joint_raster_initialisation','pose_fidelity_verified':False,'controlnet_used':False} if pose else {}),
             **({'guide_kind':'depth','guide_layout':s['guide_layout'],'guide_raster_sha256':hashlib.sha256(raster).hexdigest(),
                 'near_is_white':s['near_is_white'],'relief_percent':s['relief_percent'],
-                'depth_conditioning':'relative_depth_raster_initialisation','depth_fidelity_verified':False,'controlnet_used':False} if depth else {})}
+                'depth_conditioning':'relative_depth_raster_initialisation','depth_fidelity_verified':False,'controlnet_used':False} if depth else {}),
+            **({'guide_kind':'sketch','guide_layout':s['guide_layout'],'guide_raster_sha256':hashlib.sha256(raster).hexdigest(),
+                'line_strength_percent':s['line_strength_percent'],'aspect_preserving_fit':True,
+                'sketch_fidelity_verified':False,'controlnet_used':False} if sketch else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
