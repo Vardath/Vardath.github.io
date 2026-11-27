@@ -247,3 +247,11 @@ Uses plain triangulated OBJ only. Distances are in source model units. Determini
 ```
 
 Plain triangulated OBJ with optional complete unit-square UVs. Produces self-contained glTF 2.0 binary geometry with indexed positions and UVs (OBJ V origin flipped for glTF), no axis transform. Explicit Euclidean float32 position tolerance in model units, verified decoded accessors and winding. UV seams duplicate vertices where required. Other file formats, materials, normals, groups and animation are not silently discarded; unsupported statements are refused. Native Blender/Godot import and render still require verification.
+
+## Compose multiple PNG images
+
+```json
+{"width":640,"height":480,"background":[20,20,20],"layers":[{"image":"base.png","x":0,"y":0,"width":640,"height":480,"opacity":255},{"image":"overlay.png","x":120,"y":80,"width":320,"height":240,"opacity":180}]}
+```
+
+Two to six distinct PNG sources, bottom-to-top order; explicit in-canvas position, size and 1–255 opacity. Single-frame 8-bit L/RGB/LA/RGBA PNG only, maximum 2048 pixels per side, no keyed transparency. Lanczos resizing and source alpha multiplied by layer opacity on an opaque RGB canvas. All source hashes are reviewed; generated pixels are decoded and verified, with no overwrite. This does not establish visual quality or ICC color fidelity.
