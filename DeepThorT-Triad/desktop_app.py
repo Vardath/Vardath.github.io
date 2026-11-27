@@ -848,6 +848,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(texture_review_actions,text='Map texture…',command=lambda:self._review_typed_tool('automatic_texture_mapping','.glb','Mesh: reviewed texture mapping')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate tileable texture…',command=lambda:self._review_typed_tool('texture_generation','.png','Texture: reviewed procedural generation')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate PBR maps…',command=lambda:self._review_typed_tool('pbr_material','.zip','Texture: reviewed PBR material')).pack(side='left',padx=3)
+        rig_review_actions=ttk.Frame(media_tab);rig_review_actions.pack(fill='x',pady=2)
+        ttk.Button(rig_review_actions,text='Skin character mesh…',command=lambda:self._review_typed_tool('character_rigging','.glb','Mesh: reviewed character skinning')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Convert OBJ to GLB…',command=lambda:self._review_typed_tool('mesh_conversion','.glb','Mesh: reviewed conversion')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
@@ -1586,6 +1588,7 @@ class DeepThorTDesktop(tk.Tk):
                  'automatic_texture_mapping':('.glb','Mesh: reviewed texture mapping'),
                  'texture_generation':('.png','Texture: reviewed procedural generation'),
                  'pbr_material':('.zip','Texture: reviewed PBR material'),
+                 'character_rigging':('.glb','Mesh: reviewed character skinning'),
                  'mesh_conversion':('.glb','Mesh: reviewed conversion'),
                  'image_composition':('.png','Image: reviewed composition'),
                  'image_enhancement':('.png','Image: reviewed enhancement'),
