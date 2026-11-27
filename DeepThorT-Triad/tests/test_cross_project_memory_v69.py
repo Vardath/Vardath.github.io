@@ -77,7 +77,7 @@ class CrossProjectMemoryTests(unittest.TestCase):
     def test_general_and_non_planning_scope_not_expanded(self):
         from deepthort_local.conversation_memory import _candidates,_scope
         for project,mode in [('(general)','draft_plan'),('new','chat')]:
-            ident=self.chats.submit(project,'different-chat',mode,'serialized vessel ownership regression')
+            ident=self.chats.submit('different-chat',project,mode,'serialized vessel ownership regression')
             self.assertFalse(any(x['id'].startswith('X') for x in _candidates(self.jobs,_scope(self.jobs,ident))))
 if __name__=='__main__':unittest.main()
 
