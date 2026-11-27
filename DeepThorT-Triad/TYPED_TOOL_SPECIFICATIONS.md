@@ -1077,3 +1077,7 @@ Dub silent video accepts `{"video":"clip.mp4","audio":"dub.wav","start_frame":0,
 ## Reviewed multilingual dubbing (Pass 242)
 
 Multilingual dub accepts `video`, `start_frame`, `end_frame`, and `cues` (1–4 ordered nonoverlapping rows with clip-relative `start_frame`, `end_frame`, `voice` containing exact `id`, `name`, `culture`, `gender` from installed Windows speech inventory, and reviewed `text`). Use silent H.264 MP4 and 2–120 selected frames. Capped local speech synthesis, linear PCM conversion from 22050 to 48000 Hz, silence padding and verified lossless mux; reject speech that exceeds its allotted cue. No translation, automatic alignment, voice cloning, existing soundtrack replacement or native playback verification.
+
+## Reviewed voice effects (Pass 243)
+
+Voice effects accepts `audio` (mono PCM16 WAV, 5–20 seconds), `speed_percent` (75–150), `ring_hz` (0 or 20–120), `ring_depth_percent` (0 when off, otherwise 1–100), and `lowpass_hz` (0 or 600–3000). Local varispeed changes duration and pitch together, optional ring modulation and tone filtering. Exact output PCM roundtrip; no voice identity conversion, independent pitch shift, high-quality resampling or listening claim.

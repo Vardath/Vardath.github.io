@@ -856,6 +856,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Speech to text…',command=self._show_speech_to_text).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Transcribe recording…',command=self._show_audio_transcription).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Neural speech…',command=self._show_neural_speech).pack(side='left',padx=3)
+        ttk.Button(audio_review_actions,text='Voice effects…',command=lambda:self._review_typed_tool('voice_transformation','.wav','Audio: reviewed voice effects')).pack(side='left',padx=3)
         speech_review_actions=ttk.Frame(media_tab);speech_review_actions.pack(fill='x',pady=2)
         ttk.Button(speech_review_actions,text='Multilingual speech…',command=self._show_multilingual_speech).pack(side='left',padx=3)
         ttk.Button(speech_review_actions,text='Podcast generation…',command=self._show_podcast_generation).pack(side='left',padx=3)
@@ -1879,6 +1880,7 @@ class DeepThorTDesktop(tk.Tk):
                  'musical_key':('.json','Audio: reviewed key'),
                  'noise_reduction':('.wav','Audio: reviewed noise reduction'),
                  'audio_restoration':('.wav','Audio: reviewed restoration'),
+                 'voice_transformation':('.wav','Audio: reviewed voice effects'),
                  'audio_source_isolation':('.zip','Audio: reviewed spatial isolation'),
                  'audio_to_midi':('.mid','Audio: reviewed MIDI transcription'),
                  'musical_arrangement':('.mid','Audio: reviewed arrangement'),
