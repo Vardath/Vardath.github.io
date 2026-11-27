@@ -94,7 +94,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 82 | 224 | Automatic relationship discovery | Source extended: automatically discover bounded exact same-line co-occurrence between reviewed entities, supporting-line counts and quote locators, candidate ranking and dense-line limits. Pass 083 Linux/Windows green and merged. Semantic entity/predicate discovery, broader corpora, autonomous review and native acceptance outstanding. |
 | 83 | 225 | Large document ingestion | Source extended: explicit UTF-8 text enrollment up to 2 MiB with separate bounded fragment/posting budgets, cancellation during indexing, exact locator retrieval and compatible portable manifests. Pass 084 Linux/Windows green and merged. Streaming/indexing beyond this bound, larger DOCX/PDF and native acceptance outstanding. |
 | 84 | 271 | Interpret PDF diagrams | Source extended: reviewed PDF vector diagram candidates with labelled rectangular nodes, unambiguous straight connectors, exact geometry and source hash. Pass 085 CI pending. Raster/complex diagram, direction and semantic Gemma interpretation outstanding. |
-| 85 | 74 | Document layout inspection | Not started in this programme |
+| 85 | 74 | Document layout inspection | Source implemented: selected PDF page geometry, text segments with font names/sizes, image bounds, estimated margins and rotation. Pass 086 CI pending. Non-PDF, semantic reading order and visual interpretation outstanding. |
 | 86 | 278 | Contract and policy analysis | Existing partial; completion not started in this programme |
 | 87 | 75 | Automated visual document quality verification | Not started in this programme |
 | 88 | 79 | Predictive modelling | Not started in this programme |
@@ -666,3 +666,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 085 — 27 November 2026
 - Passes 080–084 both CI jobs green and merged sequentially (PRs 146–150). Reuse pinned PDF tools and supervised typed operation for 1–8 selected PDF pages: detect labelled vector rectangles and straight connectors with unique endpoints, preserve geometry and report unexamined curves/images. Three regression cases. No semantic or visual verification claim. Next rank 85 / ID 74 layout inspection. No installer.
+
+## Pass 086 — 27 November 2026
+- Reuse Pass 085 bounded PDF inspection for layout evidence: text segmentation by line and horizontal gap, exact geometry, font size/name range, image bounds, rotation and estimated text/image margins. Empty page handling, source identity and non-overwriting JSON; two regression cases in both CI jobs. No visual or semantic reading-order claim. Next rank 86 / ID 278 contract and policy analysis. No installer.

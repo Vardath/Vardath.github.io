@@ -423,3 +423,7 @@ Use Train local semantic vectors with `documents` (4–32 distinct objects with 
 ## PDF diagram geometry (Pass 085)
 
 Files & Images → Interpret PDF diagram geometry. JSON: `{"document":"diagram.pdf","pages":[1]}`. Existing pinned PDF production tools required. Up to eight distinct pages of a supported 4 MiB PDF. Results identify labelled rectangular vector nodes and straight-line connector candidates, with no inferred direction, semantic conclusion or raster diagram interpretation.
+
+## PDF layout inspection (Pass 086)
+
+Files & Images → Inspect PDF layout. JSON: `{"document":"manual.pdf","pages":[1,2]}`. Reuse pinned PDF production tools. Reports page boxes, text segments, fonts and sizes, image boxes, rotation and text/image margin estimates, with top-origin point coordinates. Segments are geometric candidates, not a verified reading order; vector drawings are counted but excluded from text/image margin estimates.
