@@ -447,3 +447,7 @@ Files & Images → Scientific calculation. Either `{"operation":"solve_linear_sy
 ## Numeric anomaly candidates (Pass 091)
 
 Files & Images → Flag numeric anomalies. JSON: `{"csv":"data.csv","delimiter":",","column":"value","baseline_rows":4,"missing_tokens":["NA"],"iqr_multiplier":"1.5"}`. Derive exact quartile fences from the specified baseline prefix, flag values in the separate monitoring suffix, preserve row identities and missing counts. Constant/zero-IQR baselines can be oversensitive. No data is removed or modified.
+
+## Time-series forecasting (Pass 092)
+
+Files & Images → Forecast time series. JSON: `{"csv":"series.csv","delimiter":",","date_column":"day","value_column":"v","train_rows":4,"horizon":2,"season_length":2}`. Exact increasing ISO dates at constant day intervals, complete numeric values, explicit training prefix. Compare last-value, seasonal-naive and drift on the held-out suffix; select by MAE and refit on all observed values. No independent final accuracy estimate or uncertainty intervals.
