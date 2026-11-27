@@ -174,7 +174,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 162 | 89 | Image object replacement | Partial: distinct original and replacement object descriptions, scene context, mask-bound local diffusion with original masked content discarded, positive and negative guidance and exact outside pixels. Pass 163 CI pending. Semantic identity and native visual verification outstanding. |
 | 163 | 97 | Pose-controlled image generation | Partial: reviewed 14-joint normalized JSON rendered as a deterministic mannequin image, then existing local image-to-image diffusion. Pass 164 CI pending. Dedicated pose conditioning, detection and pose-fidelity verification outstanding. |
 | 164 | 98 | Depth-controlled image generation | Partial: reviewed relative-depth grayscale map, explicit near/far polarity and optional deterministic relief shading, feeding existing offline diffusion. Pass 165 CI pending. Dedicated depth conditioning and geometry fidelity verification outstanding. |
-| 165 | 99 | Sketch-to-image conversion | Not started in this programme |
+| 165 | 99 | Sketch-to-image conversion | Partial: hash-bound RGB/grayscale sketch, configurable line polarity and strength, aspect-preserving letterbox, existing local diffusion and reviewed output. Pass 166 CI pending. Dedicated sketch conditioning and native fidelity outstanding. |
 | 166 | 102 | Layer-aware image editing | Not started in this programme |
 | 167 | 296 | Editable graphic design | Existing partial; completion not started in this programme |
 | 168 | 103 | Visual multimedia generation workflow graphs | Not started in this programme |
@@ -931,3 +931,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 165 — 27 November 2026
 - Add exact reviewed relative-depth PNG guidance, polarity and bounded relief lighting cue. Render a deterministic RGB raster for the existing local image-to-image backend, reject uniform/mismatched depth maps, preserve source and validate output. Two mocked fixtures; no metric depth, depth estimator, ControlNet or geometry fidelity claim. Next rank 165 / ID 99 sketch-to-image. No installer.
+
+## Pass 166 — 27 November 2026
+- Add reviewed sketch-to-image with normalized line contrast, explicit polarity, aspect-preserving centered fit, independent line and diffusion strengths and protected source. Reuse existing offline image model. Regression fixtures verify letterbox and polarity, stale source, uniform rejection. Next rank 166 / ID 102 layer-aware image editing. No installer.
