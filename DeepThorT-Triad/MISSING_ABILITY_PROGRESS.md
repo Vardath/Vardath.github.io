@@ -215,7 +215,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 203 | 36 | Operation of authenticated browser sessions | Partial: separate visible disposable Chromium profile, user-operated sign-in and explicit confirmation, exact page and expected heading observation, no credential or cookie extraction. Pass 204 CI pending. Real login/native acceptance and reusable authenticated workflows outstanding. |
 | 204 | 26 | Research using authenticated websites | Partial: manually authenticated disposable browser, exact page and unique approved heading section, isolated-world bounded visible text collection, local untrusted evidence receipt. Pass 205 CI pending. Native execution, multi-page research and model synthesis outstanding. |
 | 205 | 333 | Prompt injection resistance | Partial: normalized host-side authority-override indicators, adjacent evidence screening, automatic local/public excerpt and repository observation withholding; original evidence remains intact. Pass 206 CI pending. Native adversarial evaluation and comprehensive boundary coverage outstanding. |
-| 206 | 28 | Mouse control | Not started in this programme |
+| 206 | 28 | Mouse control | Partial: bounded native Windows client-coordinate move and click messages to a hidden owned window, exact event oracle, no global input. Pass 207 CI pending. External application input and physical pointer control outstanding. |
 | 207 | 29 | Keyboard control | Not started in this programme |
 | 208 | 27 | Graphical application operation | Not started in this programme |
 | 209 | 237 | Background desktop execution | Existing partial; completion not started in this programme |
@@ -1057,3 +1057,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 206 — 27 November 2026
 - Extend existing untrusted evidence boundaries with heuristic Unicode-normalized authority override/control-marker indicators and adjacent-boundary screening. Integrate local references, document index/retrieval, fixed public documentation excerpts, conversational reference quoting and automatic repository observation withholding; preserve raw sealed tool receipts, never grant authority. Two regressions for obfuscation, multiline and actual tool-selection withholding. Not a comprehensive injection defense; legitimate discussions may be withheld and adaptive attacks may evade detection. Native adversarial acceptance outstanding. Next rank 206 / ID 28 mouse control. No installer.
+
+## Pass 207 — 27 November 2026
+- Implement bounded Windows mouse message delivery with exact owned-window identity, client coordinates and move/down/up event readback. Hidden native fixture avoids physical cursor or foreground changes. Add typed review UI, cross-platform specification tests and real Windows event test in CI. External application input remains outstanding. Next rank 207 / ID 29 keyboard control. No installer.

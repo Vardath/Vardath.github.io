@@ -933,3 +933,7 @@ Research signed-in section accepts `{"browser":"chrome","url":"https://example.o
 ## Untrusted evidence screening (Pass 206)
 
 Automatic local reference and indexed document retrieval, fixed public documentation excerpts and repository observations now screen common normalized role markers and authority override patterns, including some adjacent split phrases. Suspicious observations are withheld from automatic model context; original files and sealed evidence are not rewritten. Existing authority and approval enforcement remain mandatory. This is conservative heuristic screening, not a sandbox or proof of resistance; benign material can be withheld and adaptive attacks can evade it. No new user command.
+
+## Reviewed owned-window mouse fixture (Pass 207)
+
+Test owned-window mouse accepts `{"actions":[{"kind":"move","x":2,"y":3},{"kind":"click","x":5,"y":6}]}`. Maximum 16 actions, coordinates 0–63 in a hidden JANUS-owned native Windows client area. Actual synchronous Win32 move and left-button messages are checked against the received event sequence. No global cursor, foreground changes, other applications or gameplay claim. Native Windows CI required.

@@ -185,6 +185,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_scientific_citations_ability.py -v
       - run: python -m unittest discover -s tests -p test_academic_discovery_ability.py -v
       - run: python -m unittest discover -s tests -p test_website_crawling_ability.py -v
+      - run: python -m unittest discover -s tests -p test_owned_window_input.py -v
       - run: python -m unittest discover -s tests -p test_multi_source_research_ability.py -v
       - run: python -m unittest discover -s tests -p test_source_credibility_ability.py -v
       - run: python -m unittest discover -s tests -p test_source_contradictions_ability.py -v
@@ -591,6 +592,8 @@ jobs:
           python -m unittest discover -s tests -p test_scientific_citations_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_academic_discovery_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_owned_window_input.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_website_crawling_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
