@@ -749,6 +749,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(api_actions,text='Create GitHub draft release…',command=self._show_github_release).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Generate installer project…',command=lambda:self._review_typed_tool('installer_project','.iss','Development: reviewed installer source')).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Inspect GitHub PR…',command=self._show_github_pr_review).pack(side='left',padx=3)
+        git_extra_actions=ttk.Frame(media_tab);git_extra_actions.pack(fill='x',pady=2)
+        ttk.Button(git_extra_actions,text='Propose clean merge…',command=lambda:self._review_typed_tool('merge_conflict','.txt','Git: reviewed conflict proposal')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1493,7 +1495,8 @@ class DeepThorTDesktop(tk.Tk):
                  'language_server':('.json','Development: reviewed language server'),
                  'interface_learning':('.json','Development: reviewed interface evidence'),
                  'code_refactoring':('.py','Development: reviewed local refactor'),
-                 'installer_project':('.iss','Development: reviewed installer source')}
+                 'installer_project':('.iss','Development: reviewed installer source'),
+                 'merge_conflict':('.txt','Git: reviewed conflict proposal')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
