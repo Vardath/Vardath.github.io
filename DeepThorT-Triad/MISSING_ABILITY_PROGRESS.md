@@ -109,7 +109,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 97 | 54 | Database migration management | Source implemented: exact standalone SQLite snapshot migration, incremental user_version, typed nullable-column/nonunique-index changes, integrity, foreign-key and row-count checks, new DB output and untouched original. Pass 098 CI pending. Live deployment, destructive changes and multi-engine migrations outstanding. |
 | 98 | 41 | Language-server integration | Source implemented: bounded real LSP stdio lifecycle, bundled Python AST server, syntax diagnostics and nested direct document symbols, UTF-16 positions and exact source guard. Pass 099 CI pending. External servers, type checking, completion, references and persistent sessions outstanding. |
 | 99 | 235 | Learn application interfaces | Source extended: local OpenAPI 3.0/3.1 evidence extraction, routes, inherited/overridden parameters, primitive JSON field declarations, response status and exact JSON pointers. Pass 100 CI pending. External refs, GUI learning and autonomous use of learned API contracts outstanding. |
-| 100 | 240 | Code refactoring | Existing partial; completion not started in this programme |
+| 100 | 240 | Code refactoring | Source extended: exact scoped Python local-name rename into a new file, UTF-8 AST byte spans, collision and dynamic-scope refusal, complete module AST comparison. Pass 101 CI pending. Project-wide renames, broader refactors and runtime verification outstanding. |
 | 101 | 241 | Automated debugging | Existing partial; completion not started in this programme |
 | 102 | 48 | Pull request creation | Not started in this programme |
 | 103 | 250 | Release management | Existing partial; completion not started in this programme |
@@ -714,3 +714,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 100 — 27 November 2026
 - Extend the existing CLI application learning capability with documented HTTP interface learning from exact local OpenAPI JSON. Read operation paths, methods, parameter metadata, JSON object field declarations, declared response statuses and security presence. Preserve source hash and exact JSON pointers, mark unresolved refs, never call endpoints or follow external refs. Three regressions. Next rank 100 / ID 240 code refactoring. No installer.
+
+## Pass 101 — 27 November 2026
+- Add reviewed Python local-variable rename in one unique top-level function. Reject parameters, collisions, nested/dynamic scopes and reflective access; exact byte spans preserve comments, strings and unrelated source. Compare complete parsed module AST against only the intended Name changes; publish new file, source retained. Three regressions. Next rank 101 / ID 241 automated debugging. No installer.
