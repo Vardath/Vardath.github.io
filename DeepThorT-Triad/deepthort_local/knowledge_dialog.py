@@ -54,6 +54,13 @@ class KnowledgeDialog:
             button = ttk.Button(bar, text=label, command=action)
             button.pack(side='left', padx=2)
             self.buttons.append(button)
+        transferbar = ttk.Frame(self.window)
+        transferbar.pack(fill='x', padx=8, pady=3)
+        for label, action in (('Export selected enrollment…', self.export_transfer),
+                              ('Import enrollment manifest…', self.import_transfer)):
+            button = ttk.Button(transferbar, text=label, command=action)
+            button.pack(side='left', padx=2)
+            self.buttons.append(button)
         frame = ttk.Frame(self.window)
         frame.pack(fill='both', expand=True, padx=8, pady=6)
         self.tree = ttk.Treeview(frame, columns=('status', 'origin', 'count', 'path'),
@@ -212,6 +219,48 @@ class KnowledgeDialog:
                 removed += self.index.remove(self.root, path)
             return self.rows(), f'Forgot {removed} indexed documents. Original files remain unchanged.'
         self.start('Removing index entries…', work)
+
+    def export_transfer(self):
+        paths = self.selected()
+        if not paths or len(paths) > 12:
+            self.status.set('Select 1–12 current enrolled documents.')
+            return
+        chosen = filedialog.asksaveasfilename(parent=self.window, initialdir=str(self.root),
+            defaultextension='.json', filetypes=[('Knowledge manifest','*.json')])
+        if not chosen:return
+        try:relative=Path(chosen).relative_to(self.root).as_posix()
+        except ValueError:
+            self.status.set('Choose a new manifest inside the workspace.');return
+        from .knowledge_transfer import export_manifest
+        ex=self.exclusions()
+        if not messagebox.askyesno('Export enrollment manifest',
+                'Export selected relative paths and hashes only? Document bodies are not included.',parent=self.window):return
+        def work():
+            result=export_manifest(self.index,self.root,paths,relative,ex,
+                cancelled=lambda:self.stopped() or self.exclusions()!=ex)
+            return self.rows(),str(result)
+        self.start('Exporting reviewed enrollment manifest…',work)
+
+    def import_transfer(self):
+        chosen=filedialog.askopenfilename(parent=self.window,initialdir=str(self.root),
+            filetypes=[('Knowledge manifest','*.json')])
+        if not chosen:return
+        from .knowledge_transfer import read_manifest,import_manifest
+        ex=self.exclusions()
+        try:
+            relative=Path(chosen).relative_to(self.root).as_posix()
+            manifest,sha=read_manifest(self.root,relative,ex)
+        except (OSError,ValueError) as exc:
+            self.status.set(str(exc));return
+        names='\n'.join(r['path'] for r in manifest['documents'])
+        if not messagebox.askyesno('Import exact enrollment manifest',
+                'Rebuild the local index for these exact matching workspace files?\n\n'+names+
+                '\n\nNo document files are copied or overwritten.',parent=self.window):return
+        def work():
+            result=import_manifest(self.index,self.root,relative,sha,ex,
+                cancelled=lambda:self.stopped() or self.exclusions()!=ex)
+            return self.rows(),str(result)
+        self.start('Rebuilding reviewed knowledge enrollment…',work)
 
     def search(self):
         query = self.query.get().strip()
