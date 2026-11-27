@@ -46,7 +46,6 @@ def parse(conn,event,key,cancelled,deadline):
         headers[name]=value
     if 'transfer-encoding' in headers or headers.get('content-encoding','identity')!='identity' or headers.get('content-type','').split(';',1)[0].lower()!='application/json':
         raise ValueError('Only uncompressed length-delimited JSON accepted')
-    if headers.get('x-github-event')!=event:raise ValueError('Unexpected event')
     delivery=headers.get('x-github-delivery','')
     if str(uuid.UUID(delivery))!=delivery.lower():raise ValueError('Expected UUID delivery identifier')
     length=headers.get('content-length','')
@@ -59,6 +58,9 @@ def parse(conn,event,key,cancelled,deadline):
         if not chunk:raise ValueError('Incomplete body')
         body.extend(chunk)
         if len(body)>length:raise ValueError('Unexpected trailing bytes')
+    # Consume the complete bounded request body before rejecting a wrong event.
+    # Closing a socket with unread bytes can reset the connection on Windows.
+    if headers.get('x-github-event')!=event:raise ValueError('Unexpected event')
     signature=headers.get('x-hub-signature-256','')
     expected='sha256='+hmac.new(key,body,hashlib.sha256).hexdigest()
     if not re.fullmatch(r'sha256=[a-f0-9]{64}',signature) or not hmac.compare_digest(expected,signature):
