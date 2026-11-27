@@ -703,3 +703,7 @@ Files & Images → Restore image. JSON keys: `image` (opaque PNG, at most 1 mega
 ## Reviewed image colourisation (Pass 156)
 
 Files & Images → Colourise image. JSON keys: `image` (opaque grayscale PNG, max one megapixel), `regions` (1–4 objects containing `mask` same-size nonempty binary grayscale PNG, `rgb` chromatic integer triplet, `strength_percent` 1–100). Masks cannot overlap; unmasked pixels stay gray. Output RGB PNG preserves encoded Rec.709 luma within half a byte through gamut-limited chroma. Explicit choices, not semantic or historical inference.
+
+## Reviewed reference palette transfer (Pass 157)
+
+Files & Images → Transfer palette. JSON keys: `image` and `reference` (distinct opaque 8-bit RGB PNG files, each max one megapixel), `strength_percent` (integer 1–100). Maps each source RGB channel's empirical midrank to a reference quantile and blends with original values; output dimensions and pixel locations unchanged. Exact guarded input/output and decoded pixel verification. Independent channel palette transfer only, not neural artistic texture or semantic style synthesis.
