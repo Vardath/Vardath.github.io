@@ -703,6 +703,7 @@ class DeepThorTDesktop(tk.Tk):
         writing_actions=ttk.Frame(media_tab);writing_actions.pack(fill='x',pady=2)
         ttk.Button(writing_actions,text='Assemble manuscript…',command=lambda:self._review_typed_tool('long_form_writing','.txt','Document: reviewed manuscript')).pack(side='left',padx=3)
         ttk.Button(writing_actions,text='Create Word document…',command=lambda:self._review_typed_tool('word_document','.docx','Document: reviewed Word production')).pack(side='left',padx=3)
+        ttk.Button(writing_actions,text='Resolve citations…',command=lambda:self._review_typed_tool('bibliography','.txt','Document: reviewed bibliography')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1294,7 +1295,8 @@ class DeepThorTDesktop(tk.Tk):
                  'presentation_create':('.pptx','Presentation: reviewed creation'),
                  'presentation_template':('.pptx','Presentation: reviewed template'),
                  'long_form_writing':('.txt','Document: reviewed manuscript'),
-                 'word_document':('.docx','Document: reviewed Word production')}
+                 'word_document':('.docx','Document: reviewed Word production'),
+                 'bibliography':('.txt','Document: reviewed bibliography')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

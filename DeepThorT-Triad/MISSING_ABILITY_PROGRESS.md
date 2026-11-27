@@ -42,7 +42,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 30 | 73 | Presentation template application | Source extended: reviewed whole-run placeholder population in existing PPTX templates, preserving untouched parts and original. Pass 031 CI pending; arbitrary theme transfer and visual validation outstanding. |
 | 31 | 212 | Long-form writing | Source extended: reviewed ordered multi-section manuscript assembly with outline coverage, per-section word minima and exact text receipts. Pass 032 CI pending; iterative native authoring, semantic quality and continuity review outstanding. |
 | 32 | 268 | Create formatted Word documents | Source extended: native editable DOCX with named styles, headings, lists and tables, themes/page sizes and reopened OOXML checks. Pass 033 CI pending; visual render, advanced layouts and native model integration outstanding. |
-| 33 | 279 | Citation and bibliography management | Existing partial; completion not started in this programme |
+| 33 | 279 | Citation and bibliography management | Source extended: reviewed numeric or author-year citation resolution and bibliography creation with exact source, explicit metadata and marker checks. Pass 034 CI pending; independent source verification, standard-specific formatting and model integration outstanding. |
 | 34 | 77 | Interactive data tables | Not started in this programme |
 | 35 | 274 | Create charts | Existing partial; completion not started in this programme |
 | 36 | 78 | Interactive charts and visualisations | Not started in this programme |
@@ -464,3 +464,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 033 — 27 November 2026
 
 - Add dependency-free formatted DOCX production from reviewed typed blocks: title/subtitle, three heading levels, body text, native numbered bullet lists and editable rectangular tables, three colour themes and A4/Letter geometry. Emit explicit OOXML styles, numbering and relationships; reopen the package and check text order, style references, bullet counts, table counts and page size. Exact spec guard, no source mutation or overwrite. Four actual fixture regressions. No visual rendering, font-fit, advanced layout or semantic verification claim. Next rank 33 / ID 279 citation and bibliography management. No installer.
+
+## Pass 034 — 27 November 2026
+
+- Add reviewed bibliography and citation resolution for existing UTF-8 TXT manuscripts. Explicit [[cite:ID]] markers, stable reference IDs, supplied authors/year/title/publication/locator, numeric first-use order or simple author-year labels, ambiguity/unused/missing/malformed marker refusal. Preview full resolved text and receipt; bind exact manuscript and metadata, preserve source and publish new TXT. Four actual fixture regressions. No lookup, fabricated metadata, source-claim verification or formal APA/MLA compliance. Next rank 34 / ID 77 interactive data tables. No installer.
