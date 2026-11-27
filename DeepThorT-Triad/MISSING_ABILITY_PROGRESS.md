@@ -137,7 +137,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 125 | 307 | Podcast generation | Source extended: reviewed scripted intro/body/outro, stable installed voices per named speaker, offline WAV plus timestamped transcript and verified episode ZIP. Pass 126 CI pending. Autonomous topic/script generation, full-length episodes, music mixing and native listening acceptance outstanding. |
 | 126 | 308 | Audiobook generation | Source extended: reviewed short manuscript, exact narrator, chapter WAVs, global chapter timing index and manuscript in verified ZIP; bounded to 300 seconds. Pass 127 CI pending. Long-form book ingestion, resumable production and native listening acceptance outstanding. |
 | 127 | 309 | Multi-speaker dialogue production | Source extended: reviewed 2–8 scripted turns, 2–4 distinct stable installed voices, combined WAV, exact script and measured cue timings in a verified new ZIP. Pass 128 CI pending. Autonomous script writing, overlapping dialogue, long scenes and native listening acceptance outstanding. |
-| 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Not started in this programme |
+| 128 | 143 | Anonymous speaker separation / diarisation (no individual identification) | Source extended: optional reviewed installed sherpa-onnx offline diarisation CLI, exact recording/engine/model hashes, bounded timed anonymous labels, new JSON report. Pass 129 CI pending. Native engine/model acceptance, accuracy and isolated audio tracks outstanding. No identity or cross-recording matching. |
 | 129 | 152 | Audio restoration | Not started in this programme |
 | 130 | 154 | Audio source isolation | Not started in this programme |
 | 131 | 131 | Musical stem separation | Not started in this programme |
@@ -801,3 +801,12 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 128 — 27 November 2026
 - Extend reviewed offline narration to general scripted multi-speaker scenes, without podcast section requirements. Two to eight turns, two to four distinct installed voices, reject ambiguous speaker labels or voice rebinding, reuse capped speech synthesis and exact source/voice checks. Publish a new verified ZIP with dialogue WAV, timing/voice manifest and transcript; no individual identification, automatic script generation, upload or listening claim. Fixture regressions for timing, voice assignments, cancellation and non-overwrite. Pass 109 green after merge; Pass 110 merged, post-merge CI pending. Next rank 128 / ID 143 anonymous speaker separation. No installer.
+
+## Pass 129 — 27 November 2026
+- Add separately reviewed local sherpa-onnx offline diarisation CLI integration using its documented segmentation and embedding models and anonymous cluster output. Exact local model/engine hashes, mono 16 kHz PCM16 up to 120 seconds, one CPU thread per component, existing Windows cap and 512 MiB auxiliary limit, cancellation and bounded time/log. Validate sorted timings and map labels within one recording only. No identity, enrollment, persistent embeddings or audio source separation; publish new JSON report, not isolated tracks. Three fixture regressions, no real native engine installed or exercised. Optional ONNX multimedia tool only; five-model OpenVINO unchanged. Next rank 129 / ID 152 audio restoration. No installer.
+
+### Pass 129 auxiliary cap repair
+- Inspection of the actual Windows child_server implementation found a rejected 1 GiB auxiliary memory request. Match its fixed 512 MiB ordinary-child maximum; retain shared root cap, foreground reserve and all recording-local anonymity guarantees. Add regression for the exact limit. Real engine admission/quality still unverified; if the installed models exceed this budget, fail closed. Re-run Linux and Windows CI before merging.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
