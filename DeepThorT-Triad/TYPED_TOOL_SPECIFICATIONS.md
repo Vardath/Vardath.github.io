@@ -575,3 +575,7 @@ Files & Images → Transcribe recording. Approve an exact project WAV (1–120 s
 ## Optional neural speech (Pass 124)
 
 Files & Images → Neural speech. Select a trusted separately installed Piper 1.3+ piper.exe and matching single-speaker ONNX voice/config outside the project. Review exact hashes, text, length/noise/noise-width controls and new WAV output. Runs only under existing Windows resource cap and a nested 512 MiB child. No download, fallback or voice cloning. Review engine/voice licenses. Job Object limits are not a security sandbox. Native compatibility and listening quality unverified. CLI reference: https://github.com/OHF-Voice/piper1-gpl/blob/main/src/piper/__main__.py .
+
+## Multilingual speech (Pass 125)
+
+Files & Images → Multilingual speech. Discover installed offline voices, then select a project JSON with `segments` (1–8 rows, each `culture`, exact `voice_id`, `text`) and `pause_ms` (0–2000). Review exact source/voice identities and new WAV output. Per-segment capped Windows synthesis, verified WAVs, combined 22050 Hz mono PCM16 output with timing receipts. Text is supplied by the owner; no translation, fallback language, voice cloning or claimed neural synthesis. Native pronunciation requires listening.
