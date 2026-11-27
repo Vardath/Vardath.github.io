@@ -91,19 +91,30 @@ def execute(root,plan):
     return {'status':'restricted_syntax_check_completed','output':plan['output'],'sha256':digest,**result}
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root');p.add_argument('--plan');p.add_argument('--native-ci',action='store_true');p.add_argument('--inside',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--root');p.add_argument('--plan');p.add_argument('--native-ci',action='store_true');p.add_argument('--inside',action='store_true');p.add_argument('--ci-receipt');a=p.parse_args()
+    def report(value):
+        encoded=json.dumps(value,sort_keys=True)
+        if a.inside and a.ci_receipt:
+            with Path(a.ci_receipt).open('a',encoding='utf8') as out:out.write(encoded+'\n')
+        print(encoded,flush=True)
     try:
         if a.native_ci:
             from deepthort_local.win_cpu_cap import run_capped
-            return run_capped([sys.executable,str(Path(__file__).resolve()),'--inside'],cwd=str(Path(__file__).resolve().parents[1]))
+            with tempfile.TemporaryDirectory(prefix='deepthortriad-native-ci-') as temp:
+                receipt=Path(temp)/'diagnostic.jsonl'
+                code=run_capped([sys.executable,str(Path(__file__).resolve()),'--inside','--ci-receipt',str(receipt)],cwd=str(Path(__file__).resolve().parents[1]))
+                if receipt.is_file():
+                    print(guard.read_bound(receipt,16384).decode('utf8'),flush=True)
+                else:print('Native fixture produced no diagnostic receipt; exit code '+str(code),flush=True)
+                return code
         if a.inside:
             for raw,wanted in ((b'raise RuntimeError("must not execute")\n',True),(b'def broken(:\n',False)):
                 with tempfile.TemporaryDirectory(prefix='janus-native-restricted-') as tmp:
                     result=run(raw,Path(tmp))
                     if result['syntax_valid'] is not wanted:raise ValueError('Native syntax verdict mismatch')
-                    print(json.dumps(result,sort_keys=True),flush=True)
+                    report(result)
         else:print(json.dumps(execute(a.root,json.loads(a.plan)),sort_keys=True),flush=True)
         return 0
     except Exception as e:
-        print(json.dumps({'status':'blocked_or_failed','error_type':type(e).__name__,'reason':str(e)[:180]}),flush=True);return 1
+        report({'status':'blocked_or_failed','error_type':type(e).__name__,'reason':str(e)[:180]});return 1
 if __name__=='__main__':sys.exit(main())
