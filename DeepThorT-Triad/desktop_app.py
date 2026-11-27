@@ -806,6 +806,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(dialogue_review_actions,text='Anonymous speaker diarisation…',command=self._show_speaker_diarisation).pack(side='left',padx=3)
         ttk.Button(dialogue_review_actions,text='Restore audio…',command=lambda:self._review_typed_tool('audio_restoration','.wav','Audio: reviewed restoration')).pack(side='left',padx=3)
         ttk.Button(dialogue_review_actions,text='Isolate stereo component…',command=lambda:self._review_typed_tool('audio_source_isolation','.zip','Audio: reviewed spatial isolation')).pack(side='left',padx=3)
+        stems_review_actions=ttk.Frame(media_tab);stems_review_actions.pack(fill='x',pady=2)
+        ttk.Button(stems_review_actions,text='Separate musical stems…',command=self._show_musical_stems).pack(side='left',padx=3)
         texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
@@ -1434,6 +1436,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_musical_stems(self):
+        from deepthort_local.musical_stems_dialog import show
         show(self)
 
     def _show_speaker_diarisation(self):
