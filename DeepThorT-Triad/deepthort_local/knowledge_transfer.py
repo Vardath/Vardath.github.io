@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 from . import typed_project_tool as guard
 from .document_knowledge import (_key,_name,_read,_digest,_extract,_fragments,SUFFIXES,
-    MAX_DOCUMENTS,MAX_PROJECT_POSTINGS)
+    MAX_DOCUMENTS,MAX_PROJECT_POSTINGS,MAX_BYTES,TEXT_SUFFIXES)
 from .source_security import exclusions
 from .structured_source import strict_json
 
@@ -34,7 +34,7 @@ def source(root,row,exclude):
     path=guard.path_for(root,row['path'],exclude,SUFFIXES,exists=True)
     rel,target=_name(root,row['path'])
     if rel!=row['path'] or target!=path:raise ValueError('Document path identity differs')
-    raw=_read(path)
+    raw=_read(path,large_text=True)
     if _digest(raw)!=row['sha256']:raise ValueError('Document differs from transfer manifest: '+rel)
     return path,raw
 
@@ -77,7 +77,8 @@ def import_manifest(index,root,relative,expected_sha256,exclude=(),cancelled=Non
     for row in m['documents']:
         stop(cancelled)
         path,raw=source(root,row,ex)
-        locator,lines=_extract(raw,path.suffix.casefold());fragments=_fragments(lines)
+        locator,lines=_extract(raw,path.suffix.casefold());fragments=_fragments(lines,
+            large_text=path.suffix.casefold() in TEXT_SUFFIXES and len(raw)>MAX_BYTES,cancelled=cancelled)
         if not fragments:raise ValueError('No supported searchable text: '+row['path'])
         prepared.append((row,locator,fragments))
     # One transaction: no partial batch enrollment, no imported posting data.
