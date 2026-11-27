@@ -147,7 +147,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 135 | 303 | Instrumental audio synthesis | Partial: bounded reviewed MIDI-to-stereo-WAV additive synthesis, five synthetic timbres, per-part gain/pan, envelopes, velocity and peak ceiling; canonical score and PCM verification. Pass 136 CI pending. Realistic sampled/neural instruments and aesthetic/native acceptance outstanding. |
 | 136 | 133 | Automated audio mixing | Partial: reviewed 2–6 track automatic RMS gain balancing, explicit trim/pan/offset, common-rate stereo summation, peak protection and verified WAV. Pass 137 CI pending. Perceptual balancing, EQ/compression automation and listening acceptance outstanding. |
 | 137 | 134 | Automated audio mastering | Partial: reviewed linked peak-envelope compression with attack/release and ratio, bounded RMS makeup, shared sample-peak ceiling, verified PCM. Pass 138 CI pending. LUFS, true-peak measurement, EQ and listening acceptance outstanding. |
-| 138 | 160 | Automatic mesh retopology | Not started in this programme |
+| 138 | 160 | Automatic mesh retopology | Partial: automatic planar local edge flips with measured triangle quality improvement, manifold fan/winding checks, preserved vertices and boundary, verified OBJ. Pass 139 CI pending. General quad/curved remeshing, animation topology and native visual acceptance outstanding. |
 | 139 | 311 | Blender tool workflows | Existing partial; completion not started in this programme |
 | 140 | 312 | Automatic mesh repair | Existing partial; completion not started in this programme |
 | 141 | 319 | CAD design through code | Existing partial; completion not started in this programme |
@@ -842,3 +842,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 138 — 27 November 2026
 - Resume register after owner-directed queue priority. Add reviewed 3–30 second mono/stereo PCM16 mastering with linked envelope compression, explicit threshold/ratio/attack/release, bounded RMS makeup and shared attenuation to sample-peak ceiling. Exact source guard, verified PCM roundtrip, no overwrite; three regressions including channel ratio, dynamics, ceiling and stale source. Not LUFS/true-peak or listening verified. Next rank 138 / ID 160 automatic mesh retopology. No installer.
+
+## Pass 139 — 27 November 2026
+- Add bounded planar triangle connectivity improvement using deterministic quality-increasing interior edge flips, require consistently wound manifold edges and connected vertex fans, preserve vertex coordinates, edge count and exact boundaries; reject nonplanar or nonconvex candidate flips. Verify output geometry and minimum triangle quality, report no eligible changes honestly. 10k faces and at most five sweeps. Three regression cases for planar improvement, unsafe topology/curved pairs and stale input. No general quad or animation topology claim. Next rank 139 / ID 311 Blender tool workflows. No installer.
