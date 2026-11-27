@@ -228,6 +228,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_headless_client_ability.py -v
       - run: python -m unittest discover -s tests -p test_task_submission_ability.py -v
       - run: python -m unittest discover -s tests -p test_cross_device_notification_ability.py -v
+      - run: python -m unittest discover -s tests -p test_microphone_input_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -629,6 +630,7 @@ jobs:
           python -m unittest discover -s tests -p test_headless_client_ability.py -v
           python -m unittest discover -s tests -p test_task_submission_ability.py -v
           python -m unittest discover -s tests -p test_cross_device_notification_ability.py -v
+          python -m unittest discover -s tests -p test_microphone_input_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
