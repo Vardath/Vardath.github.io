@@ -32,7 +32,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 20 | 71 | Editing existing spreadsheets | Source extended: reviewed literal XLSX cell updates to separate file, preserved values/formulas/styles checked on reopen. Pass 021 CI pending; advanced workbook structures, formula recalculation and native integration outstanding. |
 | 21 | 246 | Database schema generation | Source extended: typed SQLite DDL generation with primary, unique and foreign keys, disposable schema execution and metadata verification. Pass 022 CI pending; other dialects, migrations and native model integration outstanding. |
 | 22 | 272 | Create spreadsheets | Source extended: typed multi-sheet XLSX production, styled headers, filters, freeze panes, literal cells and number formats with reopen verification. Pass 023 CI pending; charts, richer layouts and native model integration outstanding. |
-| 23 | 273 | Spreadsheet formula generation | Existing partial; completion not started in this programme |
+| 23 | 273 | Spreadsheet formula generation | Source extended: typed allowlisted same-sheet formulas with exact generated preview, explicit replacement, new-formula cycle checks and verified XLSX output. Pass 024 CI pending; calculation and existing dependency analysis outstanding. |
 | 24 | 280 | CSV processing | Existing partial; completion not started in this programme |
 | 25 | 281 | SQL querying | Existing partial; completion not started in this programme |
 | 26 | 283 | Data cleaning | Existing partial; completion not started in this programme |
@@ -420,3 +420,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 023 — 27 November 2026
 
 - Create new bounded XLSX workbooks from typed sheet/header/row/format definitions, reusing the guarded spreadsheet producer. Multi-sheet layout, styled headers, alternating row fills, widths, freeze panes, filters and five explicit number formats. All text remains literal, including equals-prefixed strings. Verify reopened values, types, styles, sheet order and selected layout metadata. No formula evaluation, charts, full render verification or existing-file overwrite. Four workbook fixture regressions. Add a specification guide for the typed document/data tools. Next rank 23 / ID 273 spreadsheet formula generation. No installer.
+
+## Pass 024 — 27 November 2026
+
+- Generate same-sheet Excel formula text from typed expressions: arithmetic/comparisons, SUM/AVERAGE/MIN/MAX/COUNT/COUNTA, ROUND/ABS/IF, cell/range references and escaped literals. Bounds, explicit overwrite of occupied cells, reject new-formula dependency cycles and external/unknown functions. Preview exact generated expressions, hash-bind reviewed source and workbook, reopen output to verify formula strings and other populated cells/styles. No formula execution, calculation, existing formula dependency analysis or complete Excel compatibility claim. Four actual workbook regression cases. Update typed-tool specification guide. Next rank 24 / ID 280 CSV processing. No installer.
