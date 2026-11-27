@@ -159,7 +159,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 147 | 314 | Texture generation | Partial: reviewed deterministic tileable multi-octave smooth value-noise RGB textures, seed and explicit palette, periodic field and decoded pixel checks. Pass 148 CI pending. Semantic/prompt-driven material generation and native visual acceptance outstanding. |
 | 148 | 315 | PBR material generation | Partial: reviewed height-derived sRGB base color, OpenGL tangent normal and linear packed roughness/metallic maps, original height and hashed material manifest in verified ZIP. Pass 149 CI pending. Physical property inference, AO baking, integrated native rendering and visual acceptance outstanding. |
 | 149 | 164 | Automatic character rigging | Partial: reviewed explicit rest joint hierarchy, automatic spatial nearest-two joint weights, verified GLB joint/weight accessors and inverse binds. Pass 150 CI pending. Automatic skeleton discovery, anatomical/geodesic weights, pose deformation and native engine acceptance outstanding. |
-| 150 | 317 | Skeletal animation through scripts | Existing partial; completion not started in this programme |
+| 150 | 317 | Skeletal animation through scripts | Partial: reviewed declarative local quaternion rotation keyframes and actual glTF animation tracks, verified float32 times, normalized shortest-path signs and preserved rest skin. Pass 151 CI pending. IK, motion capture, root motion, native playback and motion quality outstanding. |
 | 151 | 166 | Animation retargeting | Not started in this programme |
 | 152 | 318 | Physics simulation | Existing partial; completion not started in this programme |
 | 153 | 95 | Image super-resolution and upscaling | Not started in this programme |
@@ -878,3 +878,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 150 — 27 November 2026
 - Add automatic spatial skinning of existing triangular OBJ with supplied 2–32 joint rest hierarchy, bounded inverse-distance weights, glTF JOINTS_0/WEIGHTS_0 and inverse bind matrices, normalized weights, exact geometry and checked rest hierarchy. Guard source and export; three fixtures. No automatic skeleton discovery, anatomical or deformation quality, animation or native import claim. Next rank 150 / ID 317 skeletal animation through scripts. No installer.
+
+## Pass 151 — 27 November 2026
+- Produce actual GLB skeletal animation from explicit reviewed local rotation tracks on Pass 150 rig, bounded 2048 keys/300 seconds, float32 times and quaternion sign continuity, verified channel/accessor bytes and unchanged rest skin. Three fixtures. Fixed implementation, not arbitrary script execution; no IK, capture, root motion or native playback claim. Next rank 151 / ID 166 animation retargeting. No installer.
