@@ -965,3 +965,7 @@ Test rendered grid game accepts the same JSON as Generate grid game. Launches a 
 ## Reviewed autonomous grid gameplay (Pass 214)
 
 Autoplay grid game accepts the same JSON as Generate grid game. Selects a nearest reachable remaining collectible, then the goal, with at most 512 input steps. Fresh native headless Godot fixture sends synthetic in-engine key press/release events and compares every ordered observed state to the independently calculated trace, including victory. New JSON receipt only. Requires installed native Godot and shared Windows cap; no global input, external games, general game agent or native acceptance claim.
+
+## Reviewed automated grid balancing (Pass 215)
+
+Balance grid game accepts `{"level": <Generate grid game JSON>, "target_steps": 20}` with up to eight collectibles and 1–512 target input steps. Evaluates at most 32 one-tile collectible relocations, preserving geometry and objective count. The new JSON report includes the original metric, improved candidate level (or unchanged baseline), achieved metric and target attainment. `candidate_level` is reusable as a grid game specification. No original modification or native/human difficulty certification.
