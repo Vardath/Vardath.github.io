@@ -108,7 +108,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 96 | 252 | Live application monitoring | Source extended: finite live local endpoint health samples, timestamped status/JSON checks, latency limits, partial deadline handling and measured summaries. Pass 097 CI pending. Persistent monitoring, process metrics, alerts and recovery outstanding. |
 | 97 | 54 | Database migration management | Source implemented: exact standalone SQLite snapshot migration, incremental user_version, typed nullable-column/nonunique-index changes, integrity, foreign-key and row-count checks, new DB output and untouched original. Pass 098 CI pending. Live deployment, destructive changes and multi-engine migrations outstanding. |
 | 98 | 41 | Language-server integration | Source implemented: bounded real LSP stdio lifecycle, bundled Python AST server, syntax diagnostics and nested direct document symbols, UTF-16 positions and exact source guard. Pass 099 CI pending. External servers, type checking, completion, references and persistent sessions outstanding. |
-| 99 | 235 | Learn application interfaces | Existing partial; completion not started in this programme |
+| 99 | 235 | Learn application interfaces | Source extended: local OpenAPI 3.0/3.1 evidence extraction, routes, inherited/overridden parameters, primitive JSON field declarations, response status and exact JSON pointers. Pass 100 CI pending. External refs, GUI learning and autonomous use of learned API contracts outstanding. |
 | 100 | 240 | Code refactoring | Existing partial; completion not started in this programme |
 | 101 | 241 | Automated debugging | Existing partial; completion not started in this programme |
 | 102 | 48 | Pull request creation | Not started in this programme |
@@ -711,3 +711,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 099 — 27 November 2026
 - Add fixed local LSP stdio client/server with initialize, didOpen, diagnostics, documentSymbol, shutdown and exit; isolated child parses exact source only, no import/execution. UTF-16 positions, bounded framing and timeout. Three regressions. Pass 096 both CI jobs green but held behind 094 and 095. Next rank 99 / ID 235 learn application interfaces. No installer.
+
+## Pass 100 — 27 November 2026
+- Extend the existing CLI application learning capability with documented HTTP interface learning from exact local OpenAPI JSON. Read operation paths, methods, parameter metadata, JSON object field declarations, declared response statuses and security presence. Preserve source hash and exact JSON pointers, mark unresolved refs, never call endpoints or follow external refs. Three regressions. Next rank 100 / ID 240 code refactoring. No installer.
