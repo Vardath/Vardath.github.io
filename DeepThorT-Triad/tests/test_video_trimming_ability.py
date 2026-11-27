@@ -219,3 +219,28 @@ class VideoTrimmingTests(unittest.TestCase):
         (self.root/'a.mp4').write_bytes(b'changed')
         with self.assertRaises(ValueError):execute(self.root,plan)
         self.assertFalse((self.root/'timeline.mp4').exists())
+
+
+    def test_highlights_rank_and_actual_output(self):
+        from deepthort_local.video_highlights import highlights,review,execute
+        colors=[(0,0,0),(0,0,0),(255,255,255),(255,255,255),(255,255,255),(0,0,0)]
+        raw=self.fixture('activity',colors)
+        s={'video':'activity.mp4','start_frame':0,'end_frame':6,'segment_frames':2,'max_segments':2,'min_change':20}
+        rows=highlights(raw,(16,16),s)
+        self.assertEqual([(r['start_frame'],r['end_frame']) for r in rows],[(1,3),(4,6)])
+        (self.root/'highlights.json').write_text(json.dumps(s))
+        plan,_=review(self.root,'highlights.json','highlights.mp4');r=execute(self.root,plan)
+        stride=16*16*3
+        self.assertEqual(decode(self.ff,self.root/'highlights.mp4',0,4,16,16),raw[stride:3*stride]+raw[4*stride:])
+        self.assertFalse(r['semantic_importance_verified']);self.assertTrue(r['decoded_rgb_sequence_verified'])
+    def test_highlights_static_and_invalid_bounds(self):
+        from deepthort_local.video_highlights import highlights,checked,review,execute
+        raw=self.fixture('still',[(8,8,8)]*3)
+        s={'video':'still.mp4','start_frame':0,'end_frame':3,'segment_frames':2,'max_segments':1,'min_change':1}
+        self.assertEqual(highlights(raw,(16,16),s),[])
+        (self.root/'highlights.json').write_text(json.dumps(s))
+        plan,_=review(self.root,'highlights.json','highlights.mp4')
+        with self.assertRaises(ValueError):execute(self.root,plan)
+        self.assertFalse((self.root/'highlights.mp4').exists())
+        s['segment_frames']=31
+        with self.assertRaises(ValueError):checked(s)

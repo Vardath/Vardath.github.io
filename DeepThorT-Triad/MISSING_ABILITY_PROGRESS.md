@@ -186,7 +186,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 174 | 113 | Video frame interpolation | Partial: reviewed 2x midpoint RGB frame blending inside each clip, duration-preserving final frame, doubled overlap lengths and lossless decoded output verification. Pass 175 CI pending. Motion-compensated/neural interpolation and native playback outstanding. |
 | 175 | 114 | Video upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos video enlargement with shared RGB budget, up to 1280x960, existing edits and transitions/interpolation integration, exact decoded output verification. Pass 176 CI pending. Neural detail recovery and native playback outstanding. |
 | 176 | 120 | Multitrack video editing timelines | Partial: reviewed 1–3 bottom-to-top visual tracks, up to four clips, timeline offsets, gaps, position and opacity, bounded compositing and exact lossless output verification. Pass 177 CI pending. Audio tracks and interactive timeline editor outstanding. |
-| 177 | 121 | Automatic video highlight extraction | Not started in this programme |
+| 177 | 121 | Automatic video highlight extraction | Partial: reviewed automatic visual activity ranking of nonoverlapping frame windows, chronological montage, threshold-based no-output behavior and exact RGB verification. Pass 178 CI pending. Semantic, audio and narrative highlight selection outstanding. |
 | 178 | 62 | Android emulator operation | Not started in this programme |
 | 179 | 253 | Game project generation | Existing partial; completion not started in this programme |
 | 180 | 255 | X4 asset and XML processing | Existing partial; completion not started in this programme |
@@ -967,3 +967,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 177 — 27 November 2026
 - Add reviewed multitrack visual timeline compositing with explicit clip intervals/offsets, track order, overlay placement, opacity and gaps. Share the existing verified RGB H.264 encoder with the sequence editor, retain exact source guards and no overwrite. Fixture tests cover actual compositing and stale source. Audio tracks and interactive editor remain outstanding. Next rank 177 / ID 121 automatic video highlight extraction. No installer.
+
+## Pass 178 — 27 November 2026
+- Implement reviewed automatic visual activity highlight montage using bounded downsampled consecutive-frame RGB change, explicit minimum threshold and nonoverlapping chronological windows. Actual source frames are extracted and losslessly rendered, with segment timestamps in the result. Static footage produces no artifact. Two regression tests exercise actual FFmpeg montage and no-match behavior. No semantic/audio ranking or native playback claim. Next rank 178 / ID 62 Android emulator operation. No installer.
