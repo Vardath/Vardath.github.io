@@ -28,33 +28,7 @@ LOG_BYTES = 3 * 1024 * 1024
 LOG_COPIES = 3
 _lock = threading.RLock()
 _loggers = {}
-_SECRET_PATTERNS = (
-    (re.compile(r'(?i)\b(bearer\s+)[a-z0-9._~+/-]+'), r'\1[REDACTED]'),
-    (re.compile(r'(?i)\b((?:password|secret|token|api[-_]?key|authorization|cookie)\s*[:=]\s*)[^\s,;]+'), r'\1[REDACTED]'),
-    (re.compile(r'(?i)(https?://)[^/@\s]+:[^/@\s]+@'), r'\1[REDACTED]@'),
-    (re.compile(r'(?i)\bsk-[a-z0-9_-]{12,}\b'), '[REDACTED_API_KEY]'),
-)
-
-
-def scrub(value):
-    """Keep diagnostic descriptions usable while reducing credential exposure."""
-    if isinstance(value, str):
-        out = value[:8000]
-        for regex, replacement in _SECRET_PATTERNS:
-            out = regex.sub(replacement, out)
-        return out
-    if value is None or isinstance(value, (bool, float, int)):
-        return value
-    if isinstance(value, dict):
-        def sensitive(k):
-            key=str(k)
-            if re.search(r'(?i)(?:_characters|_length|_bytes|_count|_tokens)$',key):
-                return False  # A numeric metric is not message content.
-            return bool(re.search(r'(?i)secret|password|token|credential|api.?key|cookie|content|prompt|reply|message_body',key))
-        return {str(k)[:100]: ('[REDACTED]' if sensitive(k) else scrub(v)) for k,v in list(value.items())[:80]}
-    if isinstance(value, (tuple, list)):
-        return [scrub(x) for x in value[:60]]
-    return scrub(str(value))
+from .secret_redaction import scrub, jsonl as redacted_jsonl, tail as redacted_tail
 
 
 class _JSONFormatter(logging.Formatter):
@@ -236,7 +210,7 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
         'generated_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
         'diagnostics_format': 1, 'operating_system': platform.platform(),
         'python_version': platform.python_version(),
-        'privacy': 'No raw chat prompts, conversation databases, model weights or environment values copied. Short process-output tails may contain code or private project fragments; review ZIP before sharing.',
+        'privacy': 'No raw chat prompts, conversation databases, model weights or environment values copied. Structured logs and bounded process-output tails are re-scrubbed; unknown secrets, code and private project fragments may remain. Review ZIP before sharing.',
         'application_state': scrub(app_state or {}),
         'storage': {},
         'installation_checks': {},
@@ -276,25 +250,21 @@ def export_diagnostics(state, destination, *, app_root=None, app_state=None):
             if logs.is_dir():
                 for item in sorted(logs.glob('*.jsonl*')):
                     if item.is_file() and item.stat().st_size <= LOG_BYTES+5000:
-                        z.write(item,arcname='logs/'+item.name)
+                        with item.open('rb') as handle:raw=handle.read(LOG_BYTES+5001)
+                        if len(raw)<=LOG_BYTES+5000:
+                            z.writestr('logs/'+item.name,redacted_jsonl(raw))
             # Native worker logs are essential when a process exits before
             # reporting an HTTP error; include only bounded scrubbed tails.
             for item in sorted(logs.glob('triad-*.log'))[:24]:
                 if item.is_file():
                     try:
-                        with item.open('rb') as handle:
-                            handle.seek(max(0,item.stat().st_size-8192))
-                            tail=handle.read(8192).decode('utf-8',errors='replace')
-                        z.writestr('native-log-tails/'+item.name+'.txt',scrub(tail))
+                        z.writestr('native-log-tails/'+item.name+'.txt',redacted_tail(item,8192))
                     except OSError:pass
             # Preserve existing action output logs only as short redacted tails; arbitrary tools
             # can output credentials or entire file contents, so NEVER include raw files.
             for item in sorted((state/'janus-process-logs').glob('action-*.log'))[-20:]:
                 if item.is_file():
-                    with item.open('rb') as handle:
-                        if item.stat().st_size>4096:handle.seek(-4096,2)
-                        tail=handle.read().decode('utf-8',errors='replace')
-                    z.writestr('action-output-tails/'+item.name+'.redacted.txt', scrub(tail))
+                    z.writestr('action-output-tails/'+item.name+'.redacted.txt',redacted_tail(item,4096))
         verify_diagnostics_archive(temp_path)
         # Windows scanners may hold a newly written archive briefly.
         import time

@@ -121,7 +121,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 109 | 264 | General-purpose REST API integration | Source extended: explicit public HTTPS GET/POST JSON requests, exact reviewed query/body, bounded response receipts, no redirects/retries, public IP pin and TLS. Pass 110 CI pending. Authentication, additional methods, connector schemas and real external acceptance outstanding. |
 | 110 | 265 | Secure credential management | Source extended: explicit Windows Credential Manager storage, retrieval and removal for exact GitHub repository/purpose; separate user approval, no plaintext fallback or model access. Pass 111 CI pending. Wider provider integration, expiry/rotation and native desktop acceptance outstanding. |
 | 111 | 266 | Automatic tool creation | Source extended: reviewed declarative JSON mapping tool factory, independent reference fixture check, standalone bounded stdin/stdout Python source, compile and native fixture execution tests. Pass 112 CI pending. General tool synthesis, automatic registration and agent selection outstanding. |
-| 112 | 334 | Secrets redaction | Existing partial; completion not started in this programme |
+| 112 | 334 | Secrets redaction | Source extended: central diagnostic scrubber, known token patterns, structured credential fields, private key blocks, legacy JSONL re-scrub and partial-tail refusal. Pass 113 CI pending. Unknown secrets, filenames and broader DLP remain outside guarantees. |
 | 113 | 182 | GitHub account integration | Not started in this programme |
 | 114 | 67 | Webhook integration | Not started in this programme |
 | 115 | 203 | OpenAI-compatible external developer API | Not started in this programme |
@@ -753,3 +753,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 112 — 27 November 2026
 - Reuse reviewed typed project tool and queue guard for automatic generation of standalone bounded JSON transformation tools from exact mappings and independent expected fixtures. Fixed source generator, scalar-only copy/trim/lower/upper, no arbitrary code/paths, no automatic execution or registration. CI runs actual generated fixture tool and stale/invalid contracts. Next rank 112 / ID 334 secrets redaction. No installer.
+
+## Pass 113 — 27 November 2026
+- Extend the existing flight recorder and diagnostic ZIP, not a new logging pipeline. Scrub known provider tokens, auth headers, structured keys and private-key blocks; exempt only actual numeric metrics. Reparse and scrub legacy JSONL, omit malformed rows, drop possibly truncated initial lines from process tails. No raw structured-log copy. Three regression cases including actual exported ZIP. Best-effort only; review export before sharing. Next rank 113 / ID 182 GitHub account integration. No installer.
