@@ -6982,7 +6982,11 @@ class DeepThorTDesktop(tk.Tk):
         if self.tool_workflows.busy():return
         if self.install_process and self.install_process.poll() is None:return
         if self.tool_process and self.tool_process.poll() is None:return
-        plan=self._auto_tool_queue.pop(0)
+        view=self._queue_view()
+        eligible=[(i,p) for i,p in enumerate(self._auto_tool_queue) if view.allowed(p)]
+        if not eligible:return
+        index,_=min(eligible,key=lambda item:view.key(item[1]))
+        plan=self._auto_tool_queue.pop(index)
         try:
             origin=self.__dict__.get('_workflow_install_origins',{}).get(plan['plan_sha256'])
             if origin:

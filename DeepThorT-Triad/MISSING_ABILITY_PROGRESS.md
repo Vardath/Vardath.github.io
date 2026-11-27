@@ -908,3 +908,5 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ### Owner-directed queue removal
 - Add persistent removal tombstone and explicit restore-at-tail, initially paused. Removed projects are excluded from active queue display and existing priority-gated dispatch even after rediscovery or restart. Retain files, chats, pending prompts, job records and approval evidence. Existing running atomic operations may settle. Registered empty projects remain visible and removable. Two migration/persistence fixtures. This is queue removal, not filesystem deletion; no installer.
+
+- Close native worker dispatch bypass: approved subprocess claiming consults persisted project/task policy, including existing job and workflow/asset-probe bindings; held/removed Git actions no longer block unrelated desktop work, while actually running actions still hold the gate. Routine automatic installation selection skips held projects. Add native claim regression (without launching a process).

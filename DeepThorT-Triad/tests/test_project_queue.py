@@ -69,3 +69,19 @@ class ProjectQueueTests(unittest.TestCase):
                 db.execute("INSERT INTO project_priority VALUES('old',1,0)")
             q=QueuePolicy(path);self.assertTrue(q.snapshot().allowed({'project':'old'}))
             q.remove('old');self.assertFalse(q.snapshot().allowed({'project':'old'}))
+
+    def test_native_worker_claim_respects_removed_project(self):
+        import sys
+        from deepthort_local.janus_engine import JanusStore
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);a=root/'a';b=root/'b';a.mkdir();b.mkdir()
+            q=QueuePolicy(root/'project-task-priority.sqlite3')
+            q.sync([(str(a),'x'),(str(b),'y')]);q.remove(str(a))
+            s=JanusStore(root/'janus.sqlite3')
+            first=s.add_approved_action(argv=[sys.executable,'-V'],cwd=a,label='Git: reviewed test',kind='tool',user_approved=True)
+            self.assertFalse(s.pending_git_action())
+            second=s.add_approved_action(argv=[sys.executable,'-V'],cwd=b,label='Queue test',kind='tool',user_approved=True)
+            self.assertEqual(s.claim_next_action()['id'],second)
+            self.assertEqual(s.action(first)['status'],'approved')
+            q.restore(str(a));self.assertIsNone(s.claim_next_action())
+            q.hold(str(a),held=False);self.assertEqual(s.claim_next_action()['id'],first)

@@ -124,3 +124,30 @@ def grouped(rows,view):
     for r in sorted(rows,key=view.key):
         if r['project'] not in view.removed:projects.setdefault(r['project'],{}).setdefault(r['chat_id'],[]).append(r)
     return projects
+
+def existing_view(state):
+    """The native worker may run before the GUI's queue database exists."""
+    path=Path(state)/'project-task-priority.sqlite3'
+    return QueuePolicy(path).snapshot() if path.is_file() else View({},{})
+
+def action_scope(row,state,db):
+    """Recover the strongest existing scope without inventing authority."""
+    project=row['cwd'];chat=''
+    if row['job_id'] is not None:
+        path=Path(state)/'jobs.sqlite3'
+        if path.is_file():
+            with closing(sqlite3.connect(path,timeout=2)) as jobs:
+                found=jobs.execute('SELECT project,chat_id FROM jobs WHERE id=?',(row['job_id'],)).fetchone()
+                if found:project,chat=found
+    for table,query in (
+        ('tool_workflow_stages','SELECT w.manifest FROM tool_workflow_stages s JOIN tool_workflows w ON w.id=s.workflow_id WHERE s.action_id=?'),
+        ('asset_probe_runs','SELECT plan FROM asset_probe_runs WHERE action_id=?')):
+        if not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",(table,)).fetchone():continue
+        found=db.execute(query,(row['id'],)).fetchone()
+        if found:
+            import json
+            manifest=json.loads(found[0]);binding=manifest.get('specification') or {}
+            project=binding.get('project') or manifest.get('project') or project
+            chat=binding.get('chat_id') or chat
+            break
+    return {'project':project,'chat_id':chat,'id':row['id']}
