@@ -754,6 +754,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(git_extra_actions,text='Connect GitHub account…',command=self._show_github_oauth).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Discover remote MCP…',command=lambda:self._review_typed_tool('remote_mcp','.json','Integration: reviewed remote MCP')).pack(side='left',padx=3)
         ttk.Button(git_extra_actions,text='Reviewed REST request…',command=lambda:self._review_typed_tool('rest_api','.json','Integration: reviewed REST request')).pack(side='left',padx=3)
+        ttk.Button(git_extra_actions,text='Generate JSON tool…',command=lambda:self._review_typed_tool('tool_factory','.py','Development: reviewed tool source')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1505,7 +1506,8 @@ class DeepThorTDesktop(tk.Tk):
                  'installer_project':('.iss','Development: reviewed installer source'),
                  'merge_conflict':('.txt','Git: reviewed conflict proposal'),
                  'remote_mcp':('.json','Integration: reviewed remote MCP'),
-                 'rest_api':('.json','Integration: reviewed REST request')}
+                 'rest_api':('.json','Integration: reviewed REST request'),
+                 'tool_factory':('.py','Development: reviewed tool source')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

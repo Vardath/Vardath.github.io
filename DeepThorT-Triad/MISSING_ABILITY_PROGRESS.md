@@ -120,7 +120,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 108 | 263 | Remote MCP integration | Source extended: reviewed public HTTPS Streamable HTTP JSON discovery, pinned public IPv4/TLS, negotiated protocol, session checks and typed tool schema evidence. Pass 109 CI pending. SSE, authenticated endpoints, remote tool execution and persistent integration outstanding. |
 | 109 | 264 | General-purpose REST API integration | Source extended: explicit public HTTPS GET/POST JSON requests, exact reviewed query/body, bounded response receipts, no redirects/retries, public IP pin and TLS. Pass 110 CI pending. Authentication, additional methods, connector schemas and real external acceptance outstanding. |
 | 110 | 265 | Secure credential management | Source extended: explicit Windows Credential Manager storage, retrieval and removal for exact GitHub repository/purpose; separate user approval, no plaintext fallback or model access. Pass 111 CI pending. Wider provider integration, expiry/rotation and native desktop acceptance outstanding. |
-| 111 | 266 | Automatic tool creation | Existing partial; completion not started in this programme |
+| 111 | 266 | Automatic tool creation | Source extended: reviewed declarative JSON mapping tool factory, independent reference fixture check, standalone bounded stdin/stdout Python source, compile and native fixture execution tests. Pass 112 CI pending. General tool synthesis, automatic registration and agent selection outstanding. |
 | 112 | 334 | Secrets redaction | Existing partial; completion not started in this programme |
 | 113 | 182 | GitHub account integration | Not started in this programme |
 | 114 | 67 | Webhook integration | Not started in this programme |
@@ -750,3 +750,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 111 — 27 November 2026
 - Extend the existing GitHub dialog with separately approved, exact repository/operation-scoped Windows Credential Manager save/replace, retrieval and deletion. No enumeration, plaintext storage, automatic use, model interface or OAuth persistence. Native fixture-only roundtrip, scope and approval regressions in both CI jobs; Windows user-account boundary, not a sandbox. Next rank 111 / ID 266 automatic tool creation. No installer.
+
+## Pass 112 — 27 November 2026
+- Reuse reviewed typed project tool and queue guard for automatic generation of standalone bounded JSON transformation tools from exact mappings and independent expected fixtures. Fixed source generator, scalar-only copy/trim/lower/upper, no arbitrary code/paths, no automatic execution or registration. CI runs actual generated fixture tool and stale/invalid contracts. Next rank 112 / ID 334 secrets redaction. No installer.
