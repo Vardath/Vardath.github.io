@@ -663,3 +663,7 @@ Files & Images → Render 3D preview. Pass 144 lighting specification plus `elev
 ## Reviewed game asset optimisation (Pass 146)
 
 Files & Images → Optimise game asset. JSON keys: `mesh` (plain triangular OBJ), `triangle_budget` (1–10,000), `vertex_budget` (3–20,000), `cell_sizes` (1–8 distinct sizes 1e-6–1e6), `max_displacement` (1e-6–1e6), `max_position_error` (1e-12–1), `preserve_boundary` (boolean). Produces new GLB only if budgets, precision, manifold checks and any requested exact boundary preservation pass. Not a surface-distance, engine performance, material, UV, rig, LOD or collider guarantee.
+
+## Reviewed automatic texture mapping (Pass 147)
+
+Files & Images → Map texture. JSON keys: `mesh` (plain triangulated OBJ, up to 10,000 faces), `texture` (opaque 8-bit RGB or grayscale PNG, up to 2048×2048), `max_position_error` (1e-12–1). Produces new self-contained GLB with dominant-axis box-projected UVs and embedded base-color PNG. Exact source guards, geometry and PNG roundtrip checks. UV overlap and seams are possible; no baking, painting or native rendering acceptance.
