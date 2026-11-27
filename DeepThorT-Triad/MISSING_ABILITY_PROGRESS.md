@@ -62,7 +62,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 50 | 313 | Mesh simplification | Source extended: bounded static OBJ vertex-cluster reduction with explicit displacement limit, collapsed/duplicate face reconciliation and surviving winding checks. Pass 051 CI pending; topology/attribute-aware decimation and native acceptance outstanding. |
 | 51 | 324 | General 3D format conversion | Source extended: static triangular OBJ to embedded GLB with indexed float32 geometry, complete unit-square UVs, explicit precision bound and decoded accessor checks. Pass 052 CI pending; other formats, rigging, materials and native acceptance outstanding. |
 | 52 | 100 | Multi-image composition | Source implemented: reviewed ordered PNG layers with explicit placement, resizing, opacity and alpha on opaque RGB canvas; exact source guards and decoded pixel verification. Pass 053 CI pending; visual quality and native model integration outstanding. |
-| 53 | 293 | Image enhancement | Existing partial; completion not started in this programme |
+| 53 | 293 | Image enhancement | Source extended: explicit brightness, contrast, saturation and sharpness with exact alpha preservation and decoded PNG verification; Pass 054 CI pending. Native visual and model-directed acceptance outstanding. |
 | 54 | 294 | Logo generation | Existing partial; completion not started in this programme |
 | 55 | 295 | Infographic generation | Existing partial; completion not started in this programme |
 | 56 | 297 | Batch image processing | Existing partial; completion not started in this programme |
@@ -544,3 +544,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 053 — 27 November 2026
 
 - Add bounded PNG composition of two to six distinct source images, explicit canvas/background, in-bounds layer placement and sizing, source-alpha-aware opacity and verified decoded RGB output. Review actual source dimensions and all source hashes; use existing typed approval and non-overwriting publication. Four fixture regressions cover placement, overlap, alpha, invalid inputs and stale second source. Native visual acceptance, broader formats, color-managed and model-directed workflows remain outstanding. Next rank 53 / ID 293 image enhancement. No installer.
+
+## Pass 054 — 27 November 2026
+
+- Add reviewed fixed-order brightness, contrast, saturation and sharpness adjustment for bounded PNG inputs. Preserve alpha, verify actual output pixels and count changed pixels; reject invalid parameters and stale inputs. Four regressions; no automatic aesthetic, inferred detail or native visual acceptance claim. Next rank 54 / ID 294 logo generation. No installer.

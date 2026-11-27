@@ -255,3 +255,11 @@ Plain triangulated OBJ with optional complete unit-square UVs. Produces self-con
 ```
 
 Two to six distinct PNG sources, bottom-to-top order; explicit in-canvas position, size and 1–255 opacity. Single-frame 8-bit L/RGB/LA/RGBA PNG only, maximum 2048 pixels per side, no keyed transparency. Lanczos resizing and source alpha multiplied by layer opacity on an opaque RGB canvas. All source hashes are reviewed; generated pixels are decoded and verified, with no overwrite. This does not establish visual quality or ICC color fidelity.
+
+## Enhance an image
+
+```json
+{"image":"source.png","brightness":110,"contrast":120,"saturation":100,"sharpness":130}
+```
+
+Explicit integer percentages 0–300; 100 is identity. Fixed order brightness, contrast, saturation, sharpness on encoded RGB; source alpha preserved in RGBA PNG, no ICC conversion. Same bounded PNG inputs as composition. Reviewed source identity, exact decoded output and changed pixel count. This is parameter-driven enhancement, not automatic aesthetic judgment, AI upscaling or restoration.
