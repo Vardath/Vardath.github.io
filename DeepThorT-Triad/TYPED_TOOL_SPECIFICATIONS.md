@@ -707,3 +707,7 @@ Files & Images → Colourise image. JSON keys: `image` (opaque grayscale PNG, ma
 ## Reviewed reference palette transfer (Pass 157)
 
 Files & Images → Transfer palette. JSON keys: `image` and `reference` (distinct opaque 8-bit RGB PNG files, each max one megapixel), `strength_percent` (integer 1–100). Maps each source RGB channel's empirical midrank to a reference quantile and blends with original values; output dimensions and pixel locations unchanged. Exact guarded input/output and decoded pixel verification. Independent channel palette transfer only, not neural artistic texture or semantic style synthesis.
+
+## Explicit queued image-to-image generation (Pass 158)
+
+Files & Images → Transform image. Select a project-local opaque RGB PNG, enter a transformation description and strength (30–90%); review exact source and new project-root output, 384×384, 15 steps and seed. Existing local SD1.5 Diffusers model is required. Source SHA-256 is checked before generation and before exclusive output publication. Source resized to square; no automatic model installation or download. Uses the existing capped media process. Model quality and actual native generation unverified.
