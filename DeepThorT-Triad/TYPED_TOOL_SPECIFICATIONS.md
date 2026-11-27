@@ -647,3 +647,7 @@ Files & Images → Repair mesh. JSON specification contains only `mesh` (project
 ## Reviewed parametric CAD (Pass 142)
 
 Files & Images → Parametric CAD. JSON keys: `polygon` (3–128 distinct strictly convex counterclockwise `[x,y]` millimetre coordinates, absolute value ≤10,000), `height_mm` (0.01–10,000). Produces new ZIP with editable `design.scad`, independently generated `design.obj` and `receipt.json`; closed manifold and analytical volume checked. No arbitrary code, native OpenSCAD or FreeCAD execution, CSG, complex surfaces, manufacturing or STEP acceptance.
+
+## Reviewed 3D scene composition (Pass 143)
+
+Files & Images → Compose 3D scene. JSON keys: `objects` (1–6 entries, each with distinct ASCII `name`, project-relative `mesh` OBJ, three-number `translation` within ±10,000, normalized `rotation_xyzw` quaternion, positive three-number `scale` 0.001–1000), `max_position_error` (1e-12–1 local units). Reuse existing OBJ conversion, retain local UVs when complete, emit one self-contained GLB with separate mesh nodes and independently checked local geometry segments. No materials, lights, collision, animation or rendering verification.

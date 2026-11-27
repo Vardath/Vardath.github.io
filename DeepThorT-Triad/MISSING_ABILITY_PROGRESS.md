@@ -151,7 +151,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 139 | 311 | Blender tool workflows | Partial: reviewed installed Blender executable and fixed bundled script, plain OBJ to editable single-mesh .blend, private save/reload and exact quantized geometry receipt, capped local process. Pass 140 CI pending. Real installed Blender acceptance, richer scene operations and visual quality outstanding. |
 | 140 | 312 | Automatic mesh repair | Partial: reviewed exact-coordinate welding, degenerate/duplicate face removal, unreferenced vertex removal, consistent relative winding and manifold fan verification. Pass 141 CI pending. Holes, self-intersections, outward orientation, rich attributes and native visual acceptance outstanding. |
 | 141 | 319 | CAD design through code | Partial: reviewed convex parametric extrusion, editable numeric OpenSCAD source and independently generated closed OBJ with volume/geometry checks in ZIP. Pass 142 CI pending. Native CAD import/execution, CSG, complex solids and manufacturing acceptance outstanding. |
-| 142 | 320 | 3D scene composition | Existing partial; completion not started in this programme |
+| 142 | 320 | 3D scene composition | Partial: reviewed 1–6 separate static GLB nodes from existing OBJ conversion, explicit translation/rotation/scale and verified embedded geometry/accessor segments. Pass 143 CI pending. Materials, lighting, hierarchy, collisions, animation and native visual acceptance outstanding. |
 | 143 | 321 | Automated lighting | Existing partial; completion not started in this programme |
 | 144 | 322 | Automated rendering | Existing partial; completion not started in this programme |
 | 145 | 323 | Game-ready asset optimisation | Existing partial; completion not started in this programme |
@@ -854,3 +854,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 142 — 27 November 2026
 - Extend existing FreeCAD discovery and geometry tools with a reviewed parametric CAD producer for convex counterclockwise polygon extrusion (3–128 points, millimetres). Export editable numeric-only OpenSCAD source and independently generated triangular OBJ; verify closed oriented manifold, Euler characteristic and analytic volume, exact bundle readback and guarded new publication. Three fixtures. No native CAD execution, general CSG, STEP export or manufacturing assurance. Next rank 142 / ID 320 3D scene composition. No installer.
+
+## Pass 143 — 27 November 2026
+- Reuse reviewed OBJ→GLB conversion for 1–6 individually named mesh nodes with explicit translation, normalized XYZW quaternion and positive scale. Preserve local UVs and float32 precision receipts, merge self-contained geometry buffers with adjusted accessor/view offsets, verify exact scene document and each binary segment, guard every source and publish a new GLB. Three fixtures including stale second source. No rendering, collision, material, parent hierarchy or animation claim. Next rank 143 / ID 321 automated lighting. No installer.
