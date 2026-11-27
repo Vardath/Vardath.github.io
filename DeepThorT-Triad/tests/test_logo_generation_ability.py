@@ -39,3 +39,38 @@ class LogoTests(unittest.TestCase):
             with self.assertRaises(ValueError):execute(root,plan)
             (root/'brand.svg').unlink();s=spec();s['title']='Changed';p.write_text(json.dumps(s))
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+class EditableGraphicTests(unittest.TestCase):
+    def design(self):
+        s=spec();elements=s.pop('elements')
+        s['groups']=[{'name':'Brand & shape','visible':True,'opacity':75,'elements':elements[:2]},
+                     {'name':'Text <draft>','visible':False,'opacity':100,'elements':elements[2:]}]
+        return s
+    def test_editable_group_structure(self):
+        from deepthort_local.editable_graphic import generate
+        raw,r=generate(self.design());root=ET.fromstring(raw);groups=root.findall(SVG+'g')
+        self.assertEqual(len(groups),2)
+        self.assertEqual(groups[0].get('opacity'),'0.75')
+        self.assertEqual(groups[1].get('display'),'none')
+        self.assertEqual(groups[1][0].text,'Text <draft>')
+        self.assertEqual(groups[1][-1].text,'Example & Co')
+        self.assertEqual(groups[1][-1].get('id'),'group-2-element-2')
+        self.assertEqual(r['elements'],4);self.assertTrue(r['editable_groups_verified'])
+        self.assertFalse(r['external_editor_acceptance_verified'])
+    def test_reject_invalid_and_stale_design(self):
+        from deepthort_local.editable_graphic import checked,review,execute
+        s=self.design();s['groups'][1]['name']=s['groups'][0]['name'].upper()
+        with self.assertRaises(ValueError):checked(s)
+        s=self.design();s['groups'][0]['opacity']=True
+        with self.assertRaises(ValueError):checked(s)
+        s=self.design();s['groups'][0]['elements'][0]['onclick']='bad'
+        with self.assertRaises(ValueError):checked(s)
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();p=root/'spec.json';p.write_text(json.dumps(self.design()))
+            plan,_=review(root,'spec.json','design.svg');r=execute(root,plan)
+            self.assertTrue(r['editable_groups_verified'])
+            with self.assertRaises(ValueError):execute(root,plan)
+            (root/'design.svg').unlink();s=self.design();s['title']='Changed';p.write_text(json.dumps(s))
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'design.svg').exists())
