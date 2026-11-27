@@ -463,3 +463,7 @@ Files & Images → Query live SQLite. Same JSON fields as the immutable SQLite q
 ## API contract development (Pass 095)
 
 Files & Images → Create API contract. Source JSON has `title`, `version`, `endpoints`: each endpoint includes `path`, lowercase `method`, `id`, `summary`, `request`, `response`, integer `status`. Request/response are arrays of `{name,type,required}` fields (`string`, `integer`, `number`, `boolean`). Creates an OpenAPI 3.1 JSON contract with no running server, authentication, network request or implied implementation.
+
+## Local API testing (Pass 096)
+
+Files & Images → Test local API. JSON: `{"port":8080,"cases":[{"id":"health","path":"/health","status":200,"json_fields":{"ready":true}}]}`. Sends one GET per reviewed case to a running service on 127.0.0.1 only. No redirects, credentials, external network or JANUS control port. Tests status and exact typed JSON scalar fields. Records body hash and timing, not raw response bodies. GET endpoints should be read-only; review the target service before approving.

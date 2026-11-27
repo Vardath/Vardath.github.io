@@ -738,6 +738,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(notebook_actions,text='Query live SQLite…',command=lambda:self._review_typed_tool('live_sqlite','.json','Database: reviewed live read')).pack(side='left',padx=3)
         api_actions=ttk.Frame(media_tab);api_actions.pack(fill='x',pady=2)
         ttk.Button(api_actions,text='Create API contract…',command=lambda:self._review_typed_tool('api_contract','.json','Development: reviewed API contract')).pack(side='left',padx=3)
+        ttk.Button(api_actions,text='Test local API…',command=lambda:self._review_typed_tool('api_testing','.json','Development: reviewed API tests')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1463,7 +1464,8 @@ class DeepThorTDesktop(tk.Tk):
                  'time_series_forecast':('.json','Data: reviewed time-series forecast'),
                  'jupyter_notebook':('.ipynb','Data: reviewed notebook export'),
                  'live_sqlite':('.json','Database: reviewed live read'),
-                 'api_contract':('.json','Development: reviewed API contract')}
+                 'api_contract':('.json','Development: reviewed API contract'),
+                 'api_testing':('.json','Development: reviewed API tests')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
