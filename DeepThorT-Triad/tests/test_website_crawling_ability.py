@@ -136,3 +136,34 @@ class UploadTests(unittest.TestCase):
                       {'filename':'../source.txt'},{'filename':'a.exe'},{'field':'password'},{'file':'source.exe'}):
             with self.assertRaises(ValueError):checked(dict(s,**patch))
         with self.assertRaises(PermissionError):send(s,b'hello',approved=False)
+
+class FormCompletionTests(unittest.TestCase):
+    def fixture(self):
+        from deepthort_local.webpage_elements import extract_elements
+        report=extract_elements(HOST+'/docs/form',b'<form method="post"><input name="title" type="text" required><input name="quantity" type="number" required><input name="password" type="password"><input name="hidden" type="hidden"><input name="disabled" disabled></form>','text/html','utf-8')
+        form=next(x for x in report['elements'] if x['tag']=='form')
+        title=next(x for x in report['elements'] if x.get('name')=='title')
+        spec={'inspection':'inspection.json','form_locator':form['locator'],'path_prefix':'/docs/',
+              'fields':[{'locator':title['locator'],'name':'title','value':'A & B'}]}
+        return spec,report
+    def test_static_form_preparation(self):
+        from deepthort_local.website_form_completion import review,execute
+        spec,report=self.fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            (root/'spec.json').write_text(json.dumps(spec));(root/'inspection.json').write_text(json.dumps(report))
+            plan,preview=review(root,'spec.json','form.json')
+            self.assertEqual(preview['urlencoded_preview'],'title=A+%26+B')
+            self.assertEqual(preview['required_controls_unmapped'][0]['name'],'quantity')
+            self.assertFalse(preview['submitted'])
+            execute(root,plan);self.assertEqual(json.loads((root/'form.json').read_text()),preview)
+            with self.assertRaises(ValueError):execute(root,plan)
+    def test_static_form_rejects_wrong_controls(self):
+        from deepthort_local.website_form_completion import prepare
+        s,report=self.fixture()
+        with self.assertRaises(ValueError):prepare(dict(s,fields=[dict(s['fields'][0],value='')]),report)
+        with self.assertRaises(ValueError):prepare(dict(s,fields=[dict(s['fields'][0],name='mismatch')]),report)
+        for name in ('password','disabled'):
+            row=next(x for x in report['elements'] if x.get('name')==name)
+            with self.assertRaises(ValueError):prepare(dict(s,fields=[{'locator':row['locator'],'name':name,'value':'x'}]),report)
+        with self.assertRaises(ValueError):prepare(s,dict(report,elements_truncated=True))

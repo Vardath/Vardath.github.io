@@ -731,6 +731,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(academic_actions,text='Discover academic literature…',command=lambda:self._review_typed_tool('academic_discovery','.json','Research: reviewed academic discovery')).pack(side='left',padx=3)
         crawl_actions=ttk.Frame(media_tab);crawl_actions.pack(fill='x',pady=2)
         ttk.Button(crawl_actions,text='Crawl website…',command=lambda:self._review_typed_tool('website_crawling','.json','Research: reviewed website crawl')).pack(side='left',padx=3)
+        ttk.Button(crawl_actions,text='Prepare form values…',command=lambda:self._review_typed_tool('website_form_completion','.json','Research: reviewed form values')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Upload reviewed file…',command=lambda:self._review_typed_tool('website_file_upload','.json','Research: reviewed file upload')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Download reviewed link…',command=lambda:self._review_typed_tool('website_file_download','.zip','Research: reviewed file download')).pack(side='left',padx=3)
         ttk.Button(crawl_actions,text='Select webpage control…',command=lambda:self._review_typed_tool('website_control_selection','.json','Research: reviewed webpage control')).pack(side='left',padx=3)
@@ -1853,6 +1854,7 @@ class DeepThorTDesktop(tk.Tk):
                  'website_control_selection':('.json','Research: reviewed webpage control'),
                  'website_file_download':('.zip','Research: reviewed file download'),
                  'website_file_upload':('.json','Research: reviewed file upload'),
+                 'website_form_completion':('.json','Research: reviewed form values'),
                  'image_discovery':('.json','Research: reviewed image discovery'),
                  'scientific_citations':('.json','Research: reviewed citation check'),
                  'academic_discovery':('.json','Research: reviewed academic discovery'),
