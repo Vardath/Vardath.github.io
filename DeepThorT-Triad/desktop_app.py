@@ -707,6 +707,7 @@ class DeepThorTDesktop(tk.Tk):
         visual_data_actions=ttk.Frame(media_tab);visual_data_actions.pack(fill='x',pady=2)
         ttk.Button(visual_data_actions,text='Interactive table…',command=lambda:self._review_typed_tool('interactive_table','.html','Data: reviewed interactive table')).pack(side='left',padx=3)
         ttk.Button(visual_data_actions,text='Create chart…',command=lambda:self._review_typed_tool('chart_creation','.svg','Data: reviewed chart')).pack(side='left',padx=3)
+        ttk.Button(visual_data_actions,text='Interactive chart…',command=lambda:self._review_typed_tool('interactive_chart','.html','Data: reviewed interactive chart')).pack(side='left',padx=3)
         media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
@@ -1301,7 +1302,8 @@ class DeepThorTDesktop(tk.Tk):
                  'word_document':('.docx','Document: reviewed Word production'),
                  'bibliography':('.txt','Document: reviewed bibliography'),
                  'interactive_table':('.html','Data: reviewed interactive table'),
-                 'chart_creation':('.svg','Data: reviewed chart')}
+                 'chart_creation':('.svg','Data: reviewed chart'),
+                 'interactive_chart':('.html','Data: reviewed interactive chart')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return

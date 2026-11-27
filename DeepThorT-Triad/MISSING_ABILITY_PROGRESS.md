@@ -45,7 +45,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 33 | 279 | Citation and bibliography management | Source extended: reviewed numeric or author-year citation resolution and bibliography creation with exact source, explicit metadata and marker checks. Pass 034 CI pending; independent source verification, standard-specific formatting and model integration outstanding. |
 | 34 | 77 | Interactive data tables | Source implemented: offline standalone CSV snapshot with bounded text search, stable sorting and pagination, literal safe HTML and fixed JavaScript. Pass 035 CI pending; actual browser UI and native model integration outstanding. |
 | 35 | 274 | Create charts | Source extended: standalone SVG bar, line and scatter charts from exact selected CSV data, bounded decimal scale and verified marks. Pass 036 CI pending; visual render and native model integration outstanding. |
-| 36 | 78 | Interactive charts and visualisations | Not started in this programme |
+| 36 | 78 | Interactive charts and visualisations | Source implemented: standalone offline HTML chart with series visibility, point selection, literal readout and fixed scale. Pass 037 CI pending; browser UI, richer drilldown and native model integration outstanding. |
 | 37 | 211 | Mathematical reasoning | Existing partial; completion not started in this programme |
 | 38 | 215 | Persistent personal preferences | Existing partial; completion not started in this programme |
 | 39 | 282 | Statistical analysis | Existing partial; completion not started in this programme |
@@ -476,3 +476,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 036 — 27 November 2026
 
 - Add local vector chart creation for explicit CSV columns: grouped bar (zero baseline), categorical line and numeric scatter, up to four series, decimal arithmetic for geometry, exact literal mark values and escaped SVG text. Review exact selected dataset; refuse missing/nondecimal values, ambiguous duplicate category labels and excess rows. Reopen and verify every series/row/value mark, publish new editable SVG without overwriting. Four fixture regressions. Visual rendering, dense labels and native model integration remain separate checks. Reconcile Passes 021–031 ledger entries: exact branch source and Windows CI green, PRs 87–97 merged sequentially (025–031 in current session). Next rank 36 / ID 78 interactive charts and visualisations. No installer.
+
+## Pass 037 — 27 November 2026
+
+- Reuse verified SVG chart production in standalone offline interactive HTML. Explicit series visibility, fixed axes, source row/series point inspection, mark click selection, keyboard-operable native controls, reset and exact literal point readouts. Embedded data is inert escaped JSON; fixed script and style hashes in CSP, no network or arbitrary script input. Static chart remains accessible without JS. Four actual regression cases including execution of point-selection JavaScript in Node. Browser rendering and richer chart interactions remain outstanding. Next rank 37 / ID 211 mathematical reasoning. No installer.
