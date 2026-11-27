@@ -471,3 +471,7 @@ Files & Images → Test local API. JSON: `{"port":8080,"cases":[{"id":"health","
 ## Live application health sampling (Pass 097)
 
 Files & Images → Sample application health. JSON: `{"port":8080,"path":"/health","expected_status":200,"json_fields":{"ready":true},"samples":3,"interval_seconds":1,"max_latency_ms":100}`. Two to eight sequential local GET observations with timestamps, status, typed JSON checks and latency threshold. Reports partial observations if the sampling deadline is reached. No persistent monitor, alerts, automatic recovery or service startup.
+
+## Additive SQLite migrations (Pass 098)
+
+Files & Images → Migrate SQLite snapshot. JSON: `{"database":"old.db","from_version":0,"to_version":1,"steps":[{"operation":"add_nullable_column","table":"items","column":"notes","type":"TEXT"},{"operation":"create_index","table":"items","name":"items_notes","columns":["notes"]}]}`. New `.db` only; exact standalone snapshot with no WAL/journal, increment by one, bounded additive operations, schema/integrity/foreign-key and row-count checks. Source retained as rollback copy; no live migration or application compatibility guarantee.
