@@ -14,7 +14,7 @@ from .neural_speech import exact_file
 
 MAX_FILE=128*1024**2
 MAX_LOG=1024*1024
-MEMORY_LIMIT=1024**3
+MEMORY_LIMIT=512*1024**2
 EXE='sherpa-onnx-offline-speaker-diarization.exe'
 ROW=re.compile(r'(\d{1,3}\.\d{3}) -- (\d{1,3}\.\d{3}) speaker_(\d{1,3})')
 
