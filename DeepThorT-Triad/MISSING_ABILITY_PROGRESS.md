@@ -268,7 +268,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 256 | 209 | Complete application rollback and restoration | Extended partial: explicit reviewed rollback of exact installed V71 diagnostic source, bound to original package, ledger, live source and verified baseline; pre-write receipt and retained candidate. Pass 257 CI pending. Whole-application version/state/runtime restoration and native acceptance outstanding. |
 | 257 | 332 | Network permission controls | Extended partial: persistent owner-reviewed shared pinned HTTPS restriction (existing approvals, deny all, exact host allowlist), rechecked before DNS, request and TLS connection. Pass 258 CI pending. Other stacks, subprocesses and OS network isolation remain outside this scope. |
 | 258 | 96 | Consistent character generation across images | Partial: reviewed fixed reference character and mask, repeated offline diffusion of surrounding scene with exact protected pixel/position identity; reject stale region and no-op. Pass 259 CI pending. New-pose/viewpoint identity generation and native visual acceptance outstanding. |
-| 259 | 104 | Neural text-to-video generation | Not started in this programme |
+| 259 | 104 | Neural text-to-video generation | Partial: reviewed optional local SD1.5 + AnimateDiff adapter, fixed CPU profile and seeded frame generation, model inventory/codec guards, lossless RGB roundtrip verification. Pass 260 CI pending; adapter acquisition and live neural generation/quality acceptance outstanding. |
 | 260 | 301 | Full cinematic production | Existing partial; completion not started in this programme |
 | 261 | 106 | Video-to-video generation | Not started in this programme |
 | 262 | 118 | Consistent animated character generation | Not started in this programme |
@@ -1223,3 +1223,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 259 — 28 November 2026
 - Extend existing offline masked image generation with reusable character reference identity across distinct generated scene variants. Bind exact character label, source, mask and position/pixel digest; preserve protected pixels exactly, reject no-op and tiny regions; use existing local diffusion backend, not a new model. Desktop action and three fixtures with scripted image backend. No face recognition, independent character identity inference, new pose, viewpoint or native quality claim. Next rank 259 / ID 104 neural text-to-video generation. No installer.
+
+
+## Pass 260 — 28 November 2026
+- Add bounded retry of native Windows isolation fixture only for observed transient host pressure, with fresh complete probes and no pressure-limit change or false acceptance; earlier failing Pass 247 and 252 branches repaired separately. Add optional local AnimateDiff text-to-video using existing SD1.5, separately provisioned trusted motion adapter and existing shared Windows job cap. 256x256, 8–16 frames at 24 fps, seed, exact reviewed model inventory and codecs; verified RGB frame sequence and non-overwriting MP4. Three fixture regressions; no live neural run or motion quality claim, no model download/installer. Next rank 260 / ID 301 full cinematic production.
