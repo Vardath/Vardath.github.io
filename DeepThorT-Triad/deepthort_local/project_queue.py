@@ -3,11 +3,25 @@ Task identity is the project and chat, so approved builds and later amendments
 remain associated with the original task. No grant or job state is modified.
 """
 from contextlib import closing
+import os
 import sqlite3
 from pathlib import Path
 
 GENERAL='(general)'
 LIMIT=512
+
+def project_identity(project):
+    """Match resolved workspace paths across Windows case/short-name aliases.
+
+    Keep opaque names and the general chat marker unchanged. Never resolve
+    relative identifiers against the worker's potentially different cwd.
+    """
+    if not project or project==GENERAL:return project
+    path=Path(project)
+    if not path.is_absolute():return project
+    try:return os.path.normcase(str(path.resolve(strict=False)))
+    except (OSError,RuntimeError):return os.path.normcase(os.path.normpath(str(path)))
+
 class QueuePolicy:
     def __init__(self,path):
         self.path=Path(path);self.path.parent.mkdir(parents=True,exist_ok=True)
@@ -25,8 +39,11 @@ class QueuePolicy:
         if not scopes:return
         with closing(self.connect()) as db,db:
             db.execute('BEGIN IMMEDIATE')
+            known={project_identity(r[0]):r[0] for r in db.execute('SELECT project FROM project_priority ORDER BY position DESC')}
             for project,chat in scopes:
                 if not project or project==GENERAL or not chat:continue
+                key=project_identity(project)
+                project=known.setdefault(key,project)
                 db.execute('INSERT OR IGNORE INTO project_priority(project,position) SELECT ?,COALESCE(MAX(position),0)+1 FROM project_priority',(project,))
                 db.execute('INSERT OR IGNORE INTO task_priority(project,chat_id,position) SELECT ?,?,COALESCE(MAX(position),0)+1 FROM task_priority WHERE project=?',(project,chat,project))
     def snapshot(self):
@@ -82,15 +99,27 @@ class QueuePolicy:
             return True
 
 class View:
-    def __init__(self,projects,tasks,removed=()):self.projects=projects;self.tasks=tasks;self.removed=frozenset(removed)
+    def __init__(self,projects,tasks,removed=()):
+        self.projects=projects;self.tasks=tasks;self.removed=frozenset(removed)
+        self._aliases={}
+        self._project_policy={};self._task_policy={};self._removed_keys={project_identity(p) for p in removed}
+        for p,(pos,held) in sorted(projects.items(),key=lambda x:x[1][0]):
+            k=project_identity(p);self._aliases.setdefault(k,p)
+            old=self._project_policy.get(k,(pos,False))
+            self._project_policy[k]=(min(pos,old[0]),held or old[1])
+        for (p,c),(pos,held) in tasks.items():
+            k=(project_identity(p),c);old=self._task_policy.get(k,(pos,False))
+            self._task_policy[k]=(min(pos,old[0]),held or old[1])
+    def representative(self,p):return self._aliases.get(project_identity(p),p)
+    def is_removed(self,p):return project_identity(p) in self._removed_keys
     def allowed(self,row):
-        p=row['project'];c=row.get('chat_id') or ''
-        return p not in self.removed and not (self.projects.get(p,(0,False))[1] or self.tasks.get((p,c),(0,False))[1])
+        p=project_identity(row['project']);c=row.get('chat_id') or ''
+        return p not in self._removed_keys and not (self._project_policy.get(p,(0,False))[1] or self._task_policy.get((p,c),(0,False))[1])
     def key(self,row):
-        p=row['project'];c=row.get('chat_id') or ''
+        p=project_identity(row['project']);c=row.get('chat_id') or ''
         if p==GENERAL:return (-1,0,row.get('id',row.get('request_id',0)))
-        return (self.projects.get(p,(10**12,False))[0],
-                self.tasks.get((p,c),(10**12,False))[0],row.get('id',row.get('request_id',0)))
+        return (self._project_policy.get(p,(10**12,False))[0],
+                self._task_policy.get((p,c),(10**12,False))[0],row.get('id',row.get('request_id',0)))
     def scope_key(self,row):return self.key(row)[:2]
 
 def inventory(conversations,jobs,roadmaps=()):
@@ -120,15 +149,22 @@ def inventory(conversations,jobs,roadmaps=()):
 def grouped(rows,view):
     projects={}
     for p in sorted(view.projects,key=lambda p:view.projects[p][0]):
-        if p not in view.removed:projects[p]={}
+        if not view.is_removed(p):projects.setdefault(view.representative(p),{})
     for r in sorted(rows,key=view.key):
-        if r['project'] not in view.removed:projects.setdefault(r['project'],{}).setdefault(r['chat_id'],[]).append(r)
+        if not view.is_removed(r['project']):projects.setdefault(view.representative(r['project']),{}).setdefault(r['chat_id'],[]).append(r)
     return projects
 
 def existing_view(state):
     """The native worker may run before the GUI's queue database exists."""
     path=Path(state)/'project-task-priority.sqlite3'
-    return QueuePolicy(path).snapshot() if path.is_file() else View({},{})
+    if not path.is_file():return View({},{})
+    # Worker reads only: do not race GUI schema writes on each claim.
+    with closing(sqlite3.connect(path,timeout=2)) as db:
+        db.row_factory=sqlite3.Row
+        columns={r[1] for r in db.execute('PRAGMA table_info(project_priority)')}
+        return View({r['project']:(r['position'],bool(r['held'])) for r in db.execute('SELECT * FROM project_priority')},
+                    {(r['project'],r['chat_id']):(r['position'],bool(r['held'])) for r in db.execute('SELECT * FROM task_priority')},
+                    {r['project'] for r in db.execute('SELECT project FROM project_priority WHERE removed=1')} if 'removed' in columns else ())
 
 def action_scope(row,state,db):
     """Recover the strongest existing scope without inventing authority."""
