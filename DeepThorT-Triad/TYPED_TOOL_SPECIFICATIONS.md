@@ -655,3 +655,7 @@ Files & Images → Compose 3D scene. JSON keys: `objects` (1–6 entries, each w
 ## Reviewed automatic lighting (Pass 144)
 
 Files & Images → Auto-light 3D scene. Use Pass 143 scene specification plus `view_azimuth_deg` (−180–180, relative to +Z around +Y), `key_lux` (1–20,000) and `preset` (`neutral`, `warm`, `cool`). Adds deterministic key/fill/rim directional lights to self-contained GLB using KHR_lights_punctual. Preserves original scene geometry; light orientations and exact metadata checked. Compatible importer must support the extension. No actual render, exposure/shadow or visual-quality acceptance.
+
+## Reviewed automated 3D preview rendering (Pass 145)
+
+Files & Images → Render 3D preview. Pass 144 lighting specification plus `elevation_deg` (−80–80), `width` and `height` (64–512 integer pixels), `colors` (one RGB integer triplet per object), `background` (RGB integer triplet). Produces actual auto-framed orthographic flat-shaded PNG with depth-buffer occlusion. Eight-million candidate-pixel budget, exact source guards and decoded pixels. Approximate lighting, not physical photometry, textures, shadows, PBR or native production render.

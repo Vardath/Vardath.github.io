@@ -153,7 +153,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 141 | 319 | CAD design through code | Partial: reviewed convex parametric extrusion, editable numeric OpenSCAD source and independently generated closed OBJ with volume/geometry checks in ZIP. Pass 142 CI pending. Native CAD import/execution, CSG, complex solids and manufacturing acceptance outstanding. |
 | 142 | 320 | 3D scene composition | Partial: reviewed 1–6 separate static GLB nodes from existing OBJ conversion, explicit translation/rotation/scale and verified embedded geometry/accessor segments. Pass 143 CI pending. Materials, lighting, hierarchy, collisions, animation and native visual acceptance outstanding. |
 | 143 | 321 | Automated lighting | Partial: reviewed automatic view-relative three-point directional light rig, neutral/warm/cool presets and intensity, KHR_lights_punctual metadata with verified geometry preservation. Pass 144 CI pending. Native renderer, exposure, shadows and visual quality outstanding. |
-| 144 | 322 | Automated rendering | Existing partial; completion not started in this programme |
+| 144 | 322 | Automated rendering | Partial: reviewed actual bounded CPU orthographic PNG preview of composed meshes, depth occlusion, flat directional lighting, auto-framing and decoded pixel checks. Pass 145 CI pending. Native Blender/production rendering, textures, shadows, PBR and visual acceptance outstanding. |
 | 145 | 323 | Game-ready asset optimisation | Existing partial; completion not started in this programme |
 | 146 | 162 | Automatic texture mapping | Not started in this programme |
 | 147 | 314 | Texture generation | Existing partial; completion not started in this programme |
@@ -860,3 +860,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 144 — 27 November 2026
 - Extend reviewed scene composition with deterministic view-relative directional key/fill/rim lighting, explicit view azimuth and bounded key lux, preset neutral/warm/cool RGB values, normalized quaternions checked against direction, valid glTF punctual-light extension and exact geometry/document roundtrip. Three fixtures including stale source, no overwrite and orientation. No arbitrary code, rendered exposure/shadow or visual quality claim. Next rank 144 / ID 322 automated rendering. No installer.
+
+## Pass 145 — 27 November 2026
+- Extend reviewed static scene and lighting tools with actual bounded software rasterization, transformed triangles, auto-fit orthographic camera, depth buffer, two-sided flat approximate directional lighting and explicit RGB colors. Output 64–512 px PNG, verify decoded pixels and exact reviewed input guards, enforce eight-million candidate-sample budget. Three fixtures including occlusion/order, bounds and stale source. No native engine, texture, shadows, PBR, photorealism or visual-quality claim. Next rank 145 / ID 323 game-ready asset optimisation. No installer.
