@@ -150,6 +150,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_music_metadata_ability.py -v
       - run: python -m unittest discover -s tests -p test_musical_key_ability.py -v
       - run: python -m unittest discover -s tests -p test_noise_reduction_ability.py -v
+      - run: python -m unittest discover -s tests -p test_audio_conversion_ability.py -v
   native-windows:
     runs-on: windows-latest
     timeout-minutes: 15
@@ -408,6 +409,8 @@ jobs:
           python -m unittest discover -s tests -p test_musical_key_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_noise_reduction_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_audio_conversion_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_triad_native_memory.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
