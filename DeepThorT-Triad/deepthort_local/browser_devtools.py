@@ -131,7 +131,7 @@ def native_connection(plan,directory):
     with tempfile.TemporaryDirectory(prefix='.janus-cdp-',dir=directory) as tmp:
         stage=Path(tmp);profile=stage/'profile';profile.mkdir();log=stage/'browser.log'
         verify_guards(plan['guards'])
-        with child_server(command(plan['guards'][1]['path'],profile),stage,log) as (pid,alive):
+        with child_server(command(plan['guards'][-1]['path'],profile),stage,log) as (pid,alive):
             if not alive.member(pid):raise ValueError('Browser outside cleanup job')
             deadline=time.monotonic()+30;endpoint=profile/'DevToolsActivePort'
             while not endpoint.is_file():
