@@ -706,6 +706,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Compare documents…',command=self._review_document_comparison).pack(side='left',padx=3)
         research_actions=ttk.Frame(media_tab);research_actions.pack(fill='x',pady=2)
         ttk.Button(research_actions,text='Interpret search results…',command=lambda:self._review_typed_tool('search_interpretation','.json','Research: reviewed search evidence')).pack(side='left',padx=3)
+        ttk.Button(research_actions,text='Search internet…',command=self._web_research_dialog).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1361,6 +1362,10 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(bar,text='Reset fields',command=reset).pack(side='left',padx=5)
         ttk.Button(bar,text='Cancel',command=dialog.destroy).pack(side='right')
         dialog.grab_set();self.wait_window(dialog)
+
+    def _web_research_dialog(self):
+        from deepthort_local.web_research_dialog import show
+        show(self)
 
     def _review_typed_tool(self,module,suffix,label):
         # Fixed internal registry; no model-provided module or command.

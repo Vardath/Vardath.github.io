@@ -77,7 +77,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 65 | 9 | Continuous monitoring of user-defined conditions | Source implemented: finite persistent project-file predicate watches, scoped exclusions, actual metadata/hash checks and durable transition history; Pass 066 CI pending. Wider conditions, OS service and native acceptance outstanding. |
 | 66 | 8 | Event-triggered workflows | Source implemented: explicit monitor-event rules releasing finite ordinary conversation follow-ups with durable receipts, no replay or overlapping admission; Pass 067 CI pending. Automatic execution grants and native acceptance outstanding. |
 | 67 | 17 | Search-engine result interpretation | Source implemented: bounded supplied search-result lexical ranking, deduplication, query coverage and explicit unverified provenance; Pass 068 CI pending. Model-directed semantic synthesis and independent source verification outstanding. |
-| 68 | 16 | General internet search | Not started in this programme |
+| 68 | 16 | General internet search | Source implemented: explicit user-approved Brave Search API adapter, transient key, bounded structured results and lexical interpretation; Pass 069 CI pending. Live provider account, model integration and native GUI acceptance outstanding. |
 | 69 | 227 | Arbitrary webpage retrieval | Existing partial; completion not started in this programme |
 | 70 | 233 | Online image discovery | Existing partial; completion not started in this programme |
 | 71 | 21 | Scientific citation verification | Not started in this programme |
@@ -604,3 +604,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 068 — 27 November 2026
 
 - Add reviewed offline interpretation of up to 20 supplied web-result rows. Retain exact titles, URLs, snippets and original ranks; deduplicate repeated URLs, compute literal query-term coverage and hostname counts, and flag uncovered terms. No source is opened, no provider snippet is treated as verified, and no commands or new authority are derived. Four regressions. Pass 065 green and merged (PR 131); 066–067 green awaiting sequential merge. Next rank 68 / ID 16 general internet search. No installer.
+
+## Pass 069 — 27 November 2026
+
+- Add general web search via the documented fixed Brave Search API endpoint, with user-approved exact query, finite result count and masked one-request token (no persistence or model exposure). Reuse pinned public IPv4 TLS, reject redirects/compression/oversize, validate provider JSON, strip snippet markup and rank bounded unverified results. Read-only desktop dialog and explicit clipboard export, no silent provider calls or project uploads. Four deterministic transport regressions. Live search needs a provider key/account and separate acceptance; no cloud inference. Pass 066 green and merged (PR 132). Next rank 69 / ID 227 webpage retrieval. No installer.
