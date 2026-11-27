@@ -28,14 +28,14 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 16 | 269 | Create professionally formatted PDFs | Source extended: reviewed typed document production with styled headings, paragraphs, bullets, tables, pagination and reopened text/geometry verification. Pass 017 Linux/Windows green and merged; richer layout, Unicode fonts, visual validation and model integration outstanding. |
 | 17 | 270 | Extract PDF tables | Source extended: bounded local ruled-table extraction, page coordinates, exact source hash, null cells and JSON candidate receipts. Pass 018 Linux/Windows green and merged; borderless/scanned tables, visual validation and autonomous integration outstanding. |
 | 18 | 276 | Document conversion | Source extended: reviewed local TXT/Markdown/DOCX/PDF text-content conversion to TXT/DOCX/PDF, exact source guards and format-specific verification. Pass 019 Linux/Windows green and merged; layout-preserving conversion and model integration outstanding. |
-| 19 | 277 | Document comparison | Source extended: reviewed cross-format extracted-text change reports, source hashes, exact line/paragraph differences and reconstruction checks. Pass 020 CI pending; visual/formatting and semantic comparison outstanding. |
+| 19 | 277 | Document comparison | Source extended: reviewed cross-format extracted-text change reports, source hashes, exact line/paragraph differences and reconstruction checks. Pass 020 Linux/Windows green and merged; visual/formatting and semantic comparison outstanding. |
 | 20 | 71 | Editing existing spreadsheets | Source extended: reviewed literal XLSX cell updates to separate file, preserved values/formulas/styles checked on reopen. Pass 021 CI pending; advanced workbook structures, formula recalculation and native integration outstanding. |
 | 21 | 246 | Database schema generation | Source extended: typed SQLite DDL generation with primary, unique and foreign keys, disposable schema execution and metadata verification. Pass 022 CI pending; other dialects, migrations and native model integration outstanding. |
 | 22 | 272 | Create spreadsheets | Source extended: typed multi-sheet XLSX production, styled headers, filters, freeze panes, literal cells and number formats with reopen verification. Pass 023 CI pending; charts, richer layouts and native model integration outstanding. |
 | 23 | 273 | Spreadsheet formula generation | Source extended: typed allowlisted same-sheet formulas with exact generated preview, explicit replacement, new-formula cycle checks and verified XLSX output. Pass 024 CI pending; calculation and existing dependency analysis outstanding. |
 | 24 | 280 | CSV processing | Source extended: bounded UTF-8 CSV column projection/reorder, row windows and delimiter conversion with exact roundtrip checks. Pass 025 CI pending; richer transforms and model integration outstanding. |
 | 25 | 281 | SQL querying | Source extended: reviewed parameterized SELECT against exact standalone SQLite snapshot, authorizer and execution/result bounds, structured JSON. Pass 026 CI pending; other dialects/live connections and richer analysis outstanding. |
-| 26 | 283 | Data cleaning | Existing partial; completion not started in this programme |
+| 26 | 283 | Data cleaning | Source extended: reviewed CSV trimming, literal missing-value handling and stable deduplication, reconciled row counts. Pass 027 CI pending; wider formats and model integration outstanding. |
 | 27 | 284 | Data transformation | Existing partial; completion not started in this programme |
 | 28 | 72 | Editing existing presentations | Not started in this programme |
 | 29 | 275 | Create presentations | Existing partial; completion not started in this programme |
@@ -436,3 +436,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ### Pass 026 CI repair
 
 - Run 45935971877 source failed before regression execution at FFmpeg provisioning: rolling Ubuntu 26.04 image's unrelated Microsoft apt repository returned HTTP 403. Pin Ubuntu 24.04 instead of the moving ubuntu-latest label. Keep both actual FFmpeg checks, all tests and native Windows CI. Replacement exact-head CI required.
+
+## Pass 027 — 27 November 2026
+
+- Reviewed deterministic CSV cleaning with explicitly selected trim and missing-value columns, literal missing tokens, keep/drop/fill actions, stable first-occurrence deduplication by selected keys, formula-like output policy and exact row reconciliation. Verify reopened CSV; preserve source; report counts without guessing missing data. Four fixtures. Next rank 27 / ID 284 data transformation. No installer.
