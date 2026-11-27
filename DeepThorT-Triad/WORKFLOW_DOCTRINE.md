@@ -289,3 +289,7 @@ Queued parallel preparation ranks currently admitted permanent roles by task voc
 ## Pass 255 — exact owner-authorised diagnostic self-installation
 
 Review self-update is a narrowly bounded installation path for the existing V71 independently reviewed, isolated-tested diagnostic wording correction. Owner pauses the queue and allows work to finish, reviews exact before/after text and hash, and confirms. The host revalidates exact source, cap constants, package and review, retains a durable baseline and pre-write receipt and atomically replaces only diagnostics.py. Normal restart required; no generated logic execution, installer creation, automatic reboot or authority change. General application updates and restoration remain outstanding.
+
+## Pass 256 — bounded autonomous self-development regression
+
+The existing investigation lane can advance a reviewed correction of conversation_memory._cross_allowed to a fixed host-owned eight-case behavioral oracle. A restricted AST expression interpreter operates only on fixture rows; it does not execute generated Python, grant authority, or install a candidate. A pass requires all candidate cases to pass and at least one baseline failure. Other functions remain staged; arbitrary isolated runtime testing and native acceptance remain outstanding.

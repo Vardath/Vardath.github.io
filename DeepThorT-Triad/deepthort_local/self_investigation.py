@@ -76,7 +76,7 @@ def _current(root,state,case):
     return next((x for x in observations(root,state) if x['key']==case['key']),None)
 
 def _history(db,case):
-    rows=db.execute("SELECT key FROM self_development_v70 WHERE state IN ('investigation_staged','investigation_rejected','investigation_declined') ORDER BY updated DESC LIMIT 24").fetchall()
+    rows=db.execute("SELECT key FROM self_development_v70 WHERE state IN ('investigation_staged','investigation_regression_checked','investigation_rejected','investigation_declined') ORDER BY updated DESC LIMIT 24").fetchall()
     result=[]
     for (key,) in rows:
         body=_load(db,key)
@@ -171,6 +171,14 @@ def run_once(root,state,client,stopped,*,available=lambda role:True):
         with closing(_db(state)) as db,db:
             _ensure(db);prior=_load(db,case['key']);history=_recall(db,case)
         phase=prior['state'] if prior else 'observed'
+        if phase=='investigation_staged':
+            from .self_regression import verify
+            regression=verify(root,state,case,prior)
+            if regression is None:continue
+            if stopped() or not _current(root,state,case):return None
+            body={**prior,'state':'investigation_regression_checked','regression':regression}
+            with closing(_db(state)) as db,db:_save(db,body,prior)
+            return body
         roles={'observed':'janus','investigation_planned':'implementation','investigation_candidate':'sentinel'}
         if phase not in roles:continue
         role=roles[phase]
