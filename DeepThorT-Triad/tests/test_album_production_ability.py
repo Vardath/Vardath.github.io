@@ -3,10 +3,10 @@ from pathlib import Path
 from deepthort_local import album_production as m
 from deepthort_local.music_metadata import parse
 
-def wav(rate=44100):
+def wav(rate=8000):
     b=io.BytesIO()
     with wave.open(b,'wb') as w:
-        w.setnchannels(1);w.setsampwidth(2);w.setframerate(rate);w.writeframes(b'\x00\x10\x00\xf0'*100)
+        w.setnchannels(1);w.setsampwidth(2);w.setframerate(rate);w.writeframes(b'\x00\x10\x00\xf0'*(3*rate//2))
     return b.getvalue()
 
 class AlbumTests(unittest.TestCase):
@@ -33,14 +33,14 @@ class AlbumTests(unittest.TestCase):
         with self.assertRaises(ValueError):m.execute(self.root,plan)
     def test_stale_source(self):
         plan,_=m.review(self.root,'album.json','album.zip')
-        (self.root/'b.wav').write_bytes(wav(48000))
+        (self.root/'b.wav').write_bytes(wav(16000))
         with self.assertRaises(ValueError):m.execute(self.root,plan)
         self.assertFalse((self.root/'album.zip').exists())
     def test_invalid_track_and_format(self):
         self.spec['tracks'][1]['audio']='a.wav'
         with self.assertRaises(ValueError):m.checked(self.spec)
         self.spec['tracks'][1]['audio']='b.wav';self.write()
-        (self.root/'b.wav').write_bytes(wav(48000))
+        (self.root/'b.wav').write_bytes(wav(16000))
         with self.assertRaises(ValueError):m.review(self.root,'album.json','album.zip')
 
 if __name__=='__main__':unittest.main()
