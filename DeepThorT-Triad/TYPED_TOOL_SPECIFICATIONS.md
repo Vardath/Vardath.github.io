@@ -419,3 +419,7 @@ Use Generate research report with `research` (multi-source evidence JSON path), 
 ## Train local latent semantic vectors
 
 Use Train local semantic vectors with `documents` (4–32 distinct objects with `id` and `text`, up to 4000 characters each), `query`, `dimensions` (2–16, less than corpus size) and `top_k`. Fit a local TF-IDF corpus matrix and truncated SVD using a bounded symmetric Gram eigensolver, verifying eigenpair residuals and basis orthogonality. Export vocabulary, IDF, fitted basis, normalized document/query vectors and cosine-ranked IDs, with corpus and text hashes. Unknown query terms are flagged; unprojectable queries fail rather than inventing matches. This is corpus-trained latent semantic analysis, not a pretrained contextual model or proven general semantic relevance. No network or new permanent AI model; memory integration/native acceptance pending.
+
+## PDF diagram geometry (Pass 085)
+
+Files & Images → Interpret PDF diagram geometry. JSON: `{"document":"diagram.pdf","pages":[1]}`. Existing pinned PDF production tools required. Up to eight distinct pages of a supported 4 MiB PDF. Results identify labelled rectangular vector nodes and straight-line connector candidates, with no inferred direction, semantic conclusion or raster diagram interpretation.
