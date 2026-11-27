@@ -555,3 +555,7 @@ After approving a temporary developer session in the desktop, run `python janus_
 ## External task review inbox (Pass 119)
 
 Optionally enable POST /janus/v1/tasks on the temporary local developer gateway. Body: `{"submission_id":"canonical-lowercase-uuid","prompt":"exact requested task"}`. A 202 receipt means awaiting local owner review, not a queued job. At most two distinct items per session; review the exact prompt in the desktop before creating an ordinary conversation in the selected project/chat. No automatic build, attachment, tools, remote bind or persistent replay ledger. Unreviewed items are discarded on close or scope change.
+
+## Cross-device status notification (Pass 120)
+
+Files & Images → Status notification. Select one existing job or conversation ID in the current project/chat. Provide a dedicated private ntfy.sh topic and access token, explicitly approve the possible generic terminal-state messages. A finite five-minute watch sends at most one HTTPS JSON POST when a terminal state is observed. The message excludes ID, paths, prompts and results; token is not persisted. Configure topic access and receiving-device subscription independently. Provider caching may apply. Provider acceptance is not device-delivery proof. Protocol: https://docs.ntfy.sh/publish/ .
