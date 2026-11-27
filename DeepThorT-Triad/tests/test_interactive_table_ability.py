@@ -47,7 +47,8 @@ assert.deepEqual(selectRows(data,'',0,false,9,2).rows,[['Beta','2'],['Gamma','2'
 assert.equal(selectRows(data,'missing',0,false,9,2).page,1);
 assert.equal(data.rows[0][0],'Beta');
 '''
-        result=subprocess.run(['node','-e',program],capture_output=True,text=True,timeout=20)
+        # Allow hosted Windows process-start and scheduling delays; never skip assertions.
+        result=subprocess.run(['node','-e',program],capture_output=True,text=True,timeout=90)
         self.assertEqual(result.returncode,0,result.stderr)
     def test_missing_column_and_bad_page(self):
         self.data['columns']=['missing'];self.save()

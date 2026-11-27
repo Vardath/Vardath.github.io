@@ -819,3 +819,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 133 — 27 November 2026
 - Add optional owner-installed demucs.cpp single-model six-source driver, exact executable and weights review, select drums/bass/guitar/piano for 3–8 second 44.1 kHz stereo PCM16 clip. Validate all six finite float32 WAV outputs, produce selected instrument and remaining model stems as stereo PCM16 with shared headroom and reconstruction error, new ZIP and hashes. Three fixture regressions. Existing 512 MiB ordinary-child cap retained; engine may not fit and must fail closed. No upstream weights digest claimed; trust and hash exact owner-installed file. Native inference, quality and additional instruments outstanding. Next rank 133 / ID 135 audio-to-MIDI. No installer.
+
+### Pass 129 historical Windows fixture timeout
+- Superseded push CI 45981072761 failed because the existing interactive-table Node.js assertion subprocess exceeded 20 seconds on hosted Windows; equivalent PR succeeded. Extend this specific fixture deadline to 90 seconds (still bounded; original assertions and exit-code checks retained). Require fresh green CI. No production timeout, model or resource cap changed.
