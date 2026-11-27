@@ -169,7 +169,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 157 | 85 | Image-to-image generation | Partial: explicit queued offline SD1.5 image-to-image producer using the existing optional model, bounded seed/strength and verified guarded PNG publication. Pass 158 CI pending. Actual native model execution, quality and autonomous use outstanding. |
 | 158 | 292 | Reference-guided generation | Partial: distinct reviewed reference palette transferred into the init image before existing local image-to-image diffusion, separate strengths, exact dual-input guards and receipt. Pass 159 CI pending. Semantic conditioning, subject consistency and native quality outstanding. |
 | 159 | 86 | Image inpainting | Partial: explicitly masked offline diffusion using existing local model, square RGB source and binary grayscale mask, exact unmasked pixels and dual source guards. Pass 160 CI pending. Native model compatibility and visual acceptance outstanding. |
-| 160 | 87 | Image outpainting | Not started in this programme |
+| 160 | 87 | Image outpainting | Partial: explicit source offset within a larger 256/384/512 square canvas, generated outside-region mask, existing offline diffusion and exact original source pixels. Pass 161 CI pending. Native compatibility, seams and visual acceptance outstanding. |
 | 161 | 88 | Image object removal | Not started in this programme |
 | 162 | 89 | Image object replacement | Not started in this programme |
 | 163 | 97 | Pose-controlled image generation | Not started in this programme |
@@ -916,3 +916,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 160 — 27 November 2026
 - Add local masked diffusion inpainting with the existing optional SD1.5 pipeline, exact source/mask hashes, source-size preservation and hard compositing of original unmasked RGB pixels. Reject full/empty/nonbinary masks, dimensions outside 256/384/512 and stale inputs. Two mock-backend fixtures in existing CI. Native compatibility and quality unverified. Next rank 160 / ID 87 outpainting. No installer.
+
+## Pass 161 — 27 November 2026
+- Extend masked local generation to outpainting: deterministic edge-extended initialization and binary outside mask, bounded larger square canvas and reviewed offsets, original source pixels copied exactly and protected source hash. Two mock-backend fixtures, no new models or installer. Next rank 161 / ID 88 image object removal.

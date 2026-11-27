@@ -78,3 +78,25 @@ class ImageToImageTests(unittest.TestCase):
             for invalid in (encode(256,256,'L',bytes(256*256)),encode(256,256,'L',bytes([128])*(256*256)),encode(256,256,'L',bytes([255])*(256*256))):
                 (root/'mask.png').write_bytes(invalid)
                 with self.assertRaises(ValueError):m.review_mask(root,'source.png','mask.png','out.png','repair',256)
+
+    def test_outpainting_preserves_source_at_offset(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(RAW)
+            s=m.review_outpaint(root,'source.png','out.png','extend landscape',256,10,20,15,90,5)
+            def backend(model,raw,mask,plan):
+                w,h,_,mp=decode(mask,('L',));self.assertEqual((w,h),(256,256))
+                self.assertEqual(mp[20*256+10:20*256+12],bytes(2))
+                self.assertEqual(mp.count(0),2);return OUT
+            r=m.execute(root,'unused',s,mask_backend=backend)
+            pixels=decode((root/'out.png').read_bytes(),('RGB',))[3]
+            start=(20*256+10)*3
+            self.assertEqual(pixels[start:start+6],decode(RAW,('RGB',))[3])
+            self.assertEqual(pixels[:3],bytes([30,60,90]))
+            self.assertEqual(r['source_offset'],[10,20]);self.assertTrue(r['source_pixels_preserved'])
+    def test_outpainting_rejects_invalid_canvas(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();(root/'source.png').write_bytes(RAW)
+            for x,y in ((255,0),(-1,0),(0,256)):
+                with self.assertRaises(ValueError):m.review_outpaint(root,'source.png','out.png','extend',256,x,y)
+            (root/'source.png').write_bytes(OUT)
+            with self.assertRaises(ValueError):m.review_outpaint(root,'source.png','out.png','extend',256,0,0)
