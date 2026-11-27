@@ -5431,7 +5431,7 @@ class DeepThorTDesktop(tk.Tk):
         early=bool(candidate)
         if not candidate:
             candidate=ready_independent(self.roadmap_runs,self.conversations,self.hierarchies,self.specifications,
-                self.jobs,self.mixed_roadmaps,self.tool_workflows,self.project_midi,exclude_project=active['project'])
+                self.jobs,self.mixed_roadmaps,self.tool_workflows,self.project_midi,exclude_project=active['project'],priority=self._queue_view())
         if not candidate or not self._queue_view().allowed(candidate[3]):return False
         try:return self._start_project_midi(*candidate,overlap=True,early_job=active if early else None)
         except (ValueError,OSError,KeyError,RuntimeError) as exc:
@@ -5822,7 +5822,7 @@ class DeepThorTDesktop(tk.Tk):
         return report['ready']
 
     def _queued_prompt_preparation_tick(self,now):
-        # Existing broker, one advisory worker at a time, never a second dispatcher.
+        # Existing broker, at most two independent advisory workers, never a second dispatcher.
         if (self._quitting or self.queue_paused or self._explicit_model_stop or self.disk_gate.gaming()
                 or self.janus.status().get('paused') or self._model_transport_waiting
                 or not self.node_ready or not self.node or self.node.poll() is not None
@@ -5851,13 +5851,11 @@ class DeepThorTDesktop(tk.Tk):
                     or (self._latest_test_thread and self._latest_test_thread.is_alive()))
         def work():
             try:
-                from deepthort_local.queued_prompt_preparation import run_once
-                health=local_server_status(timeout=1.0)
-                admitted=tuple(r for r in roles if r in available_roles(health,primary.pid))
-                if not admitted or stopped():return
-                client=LocalModelClient(STATE/'sessions.sqlite3',timeout=3600)
-                item=run_once(self.conversations.path,client,admitted,stopped,exclude=excluded,priority=self._queue_view())
-                if item:self.events.put(('log','Queued prompt: '+item['role']+' prepared scoped advisory notes.'))
+                from deepthort_local.parallel_project_preparation import run
+                items=run(self.conversations.path,lambda:LocalModelClient(STATE/'sessions.sqlite3',timeout=3600),
+                          roles,stopped,lambda:local_server_status(timeout=1.0),primary.pid,self._queue_view,
+                          exclude=excluded,on_error=lambda exc:record(STATE,'desktop','queued_prompt_preparation_deferred',error_type=type(exc).__name__))
+                for item in items:self.events.put(('log','Queued prompt: '+item['role']+' prepared scoped advisory notes.'))
             except Exception as exc:
                 record(STATE,'desktop','queued_prompt_preparation_deferred',error_type=type(exc).__name__)
         self._queued_prompt_preparation_thread=threading.Thread(target=work,name='Queued-prompt-preparation',daemon=True)

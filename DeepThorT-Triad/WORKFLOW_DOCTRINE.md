@@ -277,3 +277,7 @@ Project removal is a durable exclusion from the active queue, not project-folder
 ## Pass 252 — task-scoped advisory specialist configuration
 
 During existing independent queued preparation JANUS may optionally propose a short named specialist focus and advisory deliverable for Granite or Sentinel. Host code binds the profile to the exact task identity and permanent role fingerprint; the targeted existing operative receives it only if the current pending task and unexpired receipt still match. Treat model-proposed configuration as data, never authority. No new model, process, permanent role, scheduler, tools or execution grant. Foreground advice may include the profile when budget permits. Actual specialist production lifecycle and native acceptance remain outstanding.
+
+## Pass 253 — parallel project preparation
+
+The existing coordinator may prepare at most two independent queued prompts concurrently using distinct available roles and disjoint existing workspace roots, measured broker slots and live owner holds. Each reservation remains exact and advisory; no new execution dispatcher or grant. Existing approved independent Gemma artifact discovery skips held/removed projects and honors owner priority. Full simultaneous software builds and native acceptance remain outstanding.
