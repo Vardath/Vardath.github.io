@@ -156,7 +156,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 144 | 322 | Automated rendering | Partial: reviewed actual bounded CPU orthographic PNG preview of composed meshes, depth occlusion, flat directional lighting, auto-framing and decoded pixel checks. Pass 145 CI pending. Native Blender/production rendering, textures, shadows, PBR and visual acceptance outstanding. |
 | 145 | 323 | Game-ready asset optimisation | Partial: reviewed bounded mesh candidate search with triangle/vertex budgets, displacement and export precision, source/export manifold checks and optional exact boundary preservation. Pass 146 CI pending. UV/material/rig/collider/LOD, engine import, surface error and performance acceptance outstanding. |
 | 146 | 162 | Automatic texture mapping | Partial: reviewed dominant-axis box projection with preserved triangle geometry, complete UVs and embedded opaque PNG GLB base color material. Pass 147 CI pending. Seam optimisation, texture baking, overlap control and native visual acceptance outstanding. |
-| 147 | 314 | Texture generation | Existing partial; completion not started in this programme |
+| 147 | 314 | Texture generation | Partial: reviewed deterministic tileable multi-octave smooth value-noise RGB textures, seed and explicit palette, periodic field and decoded pixel checks. Pass 148 CI pending. Semantic/prompt-driven material generation and native visual acceptance outstanding. |
 | 148 | 315 | PBR material generation | Existing partial; completion not started in this programme |
 | 149 | 164 | Automatic character rigging | Not started in this programme |
 | 150 | 317 | Skeletal animation through scripts | Existing partial; completion not started in this programme |
@@ -869,3 +869,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 147 — 27 November 2026
 - Add automatic box UV projection and embedded base-color PNG on static triangular OBJ, reusing strict geometry, GLB conversion and pixel validation. Guard both inputs; verify UV roundtrip and exact embedded PNG/geometry bytes. Three fixtures. Overlaps/seams possible, no baking or native render claim. Next rank 147 / ID 314 texture generation. No installer.
+
+## Pass 148 — 27 November 2026
+- Add deterministic seeded periodic smooth value-noise textures (64–1024 px), explicit two-color palette, bounded frequency/octaves/persistence, fixed-point interpolation and periodic field checks. Reuse decoded PNG verification and reviewed publication; three fixtures. Existing neural image engine retained, no new model or claim of semantic material synthesis. Next rank 148 / ID 315 PBR material generation. No installer.

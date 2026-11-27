@@ -667,3 +667,7 @@ Files & Images → Optimise game asset. JSON keys: `mesh` (plain triangular OBJ)
 ## Reviewed automatic texture mapping (Pass 147)
 
 Files & Images → Map texture. JSON keys: `mesh` (plain triangulated OBJ, up to 10,000 faces), `texture` (opaque 8-bit RGB or grayscale PNG, up to 2048×2048), `max_position_error` (1e-12–1). Produces new self-contained GLB with dominant-axis box-projected UVs and embedded base-color PNG. Exact source guards, geometry and PNG roundtrip checks. UV overlap and seams are possible; no baking, painting or native rendering acceptance.
+
+## Reviewed procedural texture generation (Pass 148)
+
+Files & Images → Generate tileable texture. JSON keys: `size` (64/128/256/512/1024), `seed` (0–4294967295), `base_cells` (2–16), `octaves` (1–4), `persistence_percent` (1–90), `low_rgb` and `high_rgb` (distinct RGB integer triplets). Highest frequency at most 64 cells and half the pixel size. Generates a seeded periodic value-noise RGB PNG. Verified periodic field and decoded pixels; not neural material inference or visual acceptance.
