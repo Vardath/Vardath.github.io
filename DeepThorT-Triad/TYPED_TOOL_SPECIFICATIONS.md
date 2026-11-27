@@ -599,3 +599,7 @@ Files & Images → Anonymous speaker diarisation. Select a local 1–120 second 
 ## Reviewed audio restoration (Pass 130)
 
 Files & Images → Restore audio. JSON keys: `audio` (project-relative mono/stereo PCM16 WAV, 3–120 seconds), `remove_dc` (boolean), `hum_hz` (0, 50 or 60), and `click_threshold` (0 or 2000–32767 PCM units). At least one operation required. Conservative isolated sample interpolation, mean DC removal and optional Q30 notch; one shared gain only if needed to avoid clipping. Exact reviewed input, new WAV, format/frame roundtrip and repair counts. This may modify wanted audio; does not recover clipped/missing audio or guarantee perceptual improvement. Listening acceptance outstanding.
+
+## Stereo spatial source isolation (Pass 131)
+
+Files & Images → Isolate stereo component. JSON keys: `audio` (project-relative 3–20 second stereo PCM16 WAV, 8–48 kHz), `component` (`center`, `side`, `left`, or `right`). New ZIP with `selected.wav`, `residual.wav` and `manifest.json`. Exact sample reconstruction verified without clipping; spatial extraction only, not semantic separation. Center is not necessarily vocals; side is not necessarily accompaniment. Native listening and general source separation outstanding.
