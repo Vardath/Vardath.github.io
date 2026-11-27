@@ -427,3 +427,7 @@ Files & Images → Interpret PDF diagram geometry. JSON: `{"document":"diagram.p
 ## PDF layout inspection (Pass 086)
 
 Files & Images → Inspect PDF layout. JSON: `{"document":"manual.pdf","pages":[1,2]}`. Reuse pinned PDF production tools. Reports page boxes, text segments, fonts and sizes, image boxes, rotation and text/image margin estimates, with top-origin point coordinates. Segments are geometric candidates, not a verified reading order; vector drawings are counted but excluded from text/image margin estimates.
+
+## Contract and policy evidence (Pass 087)
+
+Files & Images → Review contract or policy. JSON: `{"document":"terms.pdf","topics":["obligations","termination","privacy"],"custom_checks":[{"id":"access","label":"Access review","phrases":["access log"]}]}`. Other topics: prohibitions, payment, renewal, liability, disputes. TXT/MD/DOCX/PDF sources; PDF extracted page/line locators and missing-text pages retained. Literal matches only; not a legal opinion, compliance assessment or proof of absence.
