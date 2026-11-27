@@ -867,6 +867,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Generate image from prompt',command=self._queue_image).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Transform image…',command=self._queue_image_to_image).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Reference-guided image…',command=lambda:self._queue_image_to_image(reference=True)).pack(side='left',padx=3)
+        ttk.Button(media_actions,text='Inpaint image…',command=lambda:self._queue_image_to_image(inpaint=True)).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1413,16 +1414,24 @@ class DeepThorTDesktop(tk.Tk):
             'This is an explicit image-generation task, not an ordinary chat message.',parent=self):return
         self._queue_special('image',description,[])
         self.tabs.select(1)
-    def _queue_image_to_image(self,reference=False):
+    def _queue_image_to_image(self,reference=False,inpaint=False):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
-        from deepthort_local.image_to_image import review,review_reference
+        from deepthort_local.image_to_image import review,review_reference,review_mask
         try:
             root=Path(self._project_key()).resolve(strict=True)
             selected=filedialog.askopenfilename(parent=self,initialdir=str(root),filetypes=[('PNG image','*.png')])
             if not selected:return
             source=Path(selected).absolute().relative_to(root).as_posix()
-            ref=None;palette=None
+            ref=None;palette=None;mask=None;size=384
+            if inpaint:
+                from deepthort_local.texture_pixels import decode
+                w,h,_,_=decode((root/source).read_bytes(),('RGB',))
+                if w!=h or w not in (256,384,512):raise ValueError('Inpaint a square RGB PNG of 256, 384 or 512 pixels')
+                size=w
+                picked=filedialog.askopenfilename(parent=self,title='Select binary grayscale mask (white to regenerate)',initialdir=str(root),filetypes=[('PNG image','*.png')])
+                if not picked:return
+                mask=Path(picked).absolute().relative_to(root).as_posix()
             if reference:
                 picked=filedialog.askopenfilename(parent=self,title='Select distinct palette reference',initialdir=str(root),filetypes=[('PNG image','*.png')])
                 if not picked:return
@@ -1436,14 +1445,17 @@ class DeepThorTDesktop(tk.Tk):
             if strength is None:return
             target=f'janus-img2img-{uuid.uuid4().hex[:12]}.png'
             seed=secrets.randbelow(2**32)
-            s=review_reference(root,source,ref,target,prompt,384,15,strength,seed,palette) if reference else review(root,source,target,prompt,384,15,strength,seed)
+            if inpaint:s=review_mask(root,source,mask,target,prompt,size,15,strength,seed)
+            elif reference:s=review_reference(root,source,ref,target,prompt,size,15,strength,seed,palette)
+            else:s=review(root,source,target,prompt,size,15,strength,seed)
             if not messagebox.askyesno('Confirm offline image transformation',
-                f"Source: {source}\nOutput: {target}\nPrompt: {prompt}\n384 × 384; 15 steps; strength {strength}%; seed {s['seed']}\n"
+                f"Source: {source}\nOutput: {target}\nPrompt: {prompt}\n{size} × {size}; 15 steps; strength {strength}%; seed {s['seed']}\n"
                 + (f'Reference: {ref}; palette strength {palette}% (palette guidance only).\n' if reference else '')
+                + (f'Mask: {mask}; only white pixels will be replaced.\n' if inpaint else '')
                 + 'Inputs are hash-bound and will not be modified. Uses the existing optional offline image model; generation can be slow.',
                 parent=self):return
             ident=self.jobs.submit(self._project_key(),self.current_chat,'image',json.dumps(s),target,
-                attachments=[str(root/source)]+([str(root/ref)] if reference else []))
+                attachments=[str(root/source)]+([str(root/ref)] if reference else [])+([str(root/mask)] if inpaint else []))
             self._log(f'Image-to-image job #{ident} queued; local inference only.')
             self._refresh_jobs();self.tabs.select(1)
         except Exception as e:messagebox.showerror('Cannot queue image transformation',str(e),parent=self)
@@ -5696,11 +5708,12 @@ class DeepThorTDesktop(tk.Tk):
                     output_path=validate_image_output_path(j['project'],target)
                     modeldir=ROOT/'models'/'stable-diffusion-v1-5'
                     if paths:
-                        from deepthort_local.image_to_image import checked,validate,reference_input
+                        from deepthort_local.image_to_image import checked,validate,reference_input,mask_input
                         s=checked(json.loads(prompt))
                         source,dst,bound=validate(j['project'],s)
                         ref,_=reference_input(j['project'],s,source,bound)
-                        expected=[source]+([ref] if ref else [])
+                        mask,_=mask_input(j['project'],s,source)
+                        expected=[source]+([ref] if ref else [])+([mask] if mask else [])
                         if [Path(x) for x in paths]!=expected or s['output']!=target or dst!=output_path:
                             raise ValueError('Image transformation differs from the approved queued request')
                         command=[sys.executable,str(ROOT/'deepthort_local'/'image_to_image.py'),

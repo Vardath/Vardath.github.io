@@ -715,3 +715,7 @@ Files & Images → Transform image. Select a project-local opaque RGB PNG, enter
 ## Reference-guided generation (Pass 159)
 
 Files & Images → Reference-guided image. Choose source RGB PNG and distinct RGB palette reference, both at most one megapixel; specify palette strength and diffusion strength independently. Palette transfer creates the initial image supplied to the existing local SD1.5 image-to-image backend. Exact two-source hash guards and new PNG publication. Not semantic reference conditioning or guaranteed subject consistency.
+
+## Reviewed local image inpainting (Pass 160)
+
+Files & Images → Inpaint image. Select a square opaque RGB PNG (256/384/512) and same-size binary grayscale mask (white to replace, black to preserve). Choose prompt and strength. Existing optional local SD1.5 weights are loaded with StableDiffusionInpaintPipeline; 4/9-channel UNet supported by the backend contract, no automatic download. Output uses exact source pixels outside the mask; source and mask are hash-bound. Actual native model execution and quality are unverified.
