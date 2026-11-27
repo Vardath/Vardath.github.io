@@ -519,3 +519,7 @@ Files & Images → Connect GitHub account. Supply your own registered GitHub OAu
 ## Remote MCP discovery (Pass 109)
 
 Files & Images → Discover remote MCP. JSON: `{"url":"https://mcp.example.com/mcp"}`. Explicit public HTTPS initialize, initialized notification and bounded tools/list JSON requests. Uses existing typed schema summaries and hashes. No credentials, SSE, arbitrary tool calls, prompts or resources. Output is historical discovery evidence, not permission to execute.
+
+## Public REST integration (Pass 110)
+
+Files & Images → Reviewed REST request. JSON: `{"url":"https://api.example.com/items","method":"GET","query":{"q":"example"},"body":null}` or POST with explicit JSON object body. Review all outgoing data: field-name checks are not comprehensive secret detection. Fixed public HTTPS destination, no credentials, redirects, retries or uploaded files. Bounded JSON receipt and HTTP status; POST can change remote state. Inspect remote before repeating an uncertain request. No authenticated acceptance yet.

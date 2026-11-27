@@ -118,7 +118,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 106 | 50 | Automated merge conflict resolution | Source implemented: actual unmerged Git index stages, bounded native three-way clean merge, exact stage and proposal revalidation, non-overwriting output. Pass 107 CI pending. Overlap reasoning, reviewed application/staging and multi-file conflicts outstanding. |
 | 107 | 65 | OAuth authentication and external account connections | Source implemented: approved GitHub device flow with registered user client ID, paced pending/slow-down handling, minimal read:user scope, verified account and transient expiring session reusable for separately approved PR reads. Pass 108 CI pending. Live provider registration/acceptance, revocation, other providers and refresh/storage outstanding. |
 | 108 | 263 | Remote MCP integration | Source extended: reviewed public HTTPS Streamable HTTP JSON discovery, pinned public IPv4/TLS, negotiated protocol, session checks and typed tool schema evidence. Pass 109 CI pending. SSE, authenticated endpoints, remote tool execution and persistent integration outstanding. |
-| 109 | 264 | General-purpose REST API integration | Existing partial; completion not started in this programme |
+| 109 | 264 | General-purpose REST API integration | Source extended: explicit public HTTPS GET/POST JSON requests, exact reviewed query/body, bounded response receipts, no redirects/retries, public IP pin and TLS. Pass 110 CI pending. Authentication, additional methods, connector schemas and real external acceptance outstanding. |
 | 110 | 265 | Secure credential management | Existing partial; completion not started in this programme |
 | 111 | 266 | Automatic tool creation | Existing partial; completion not started in this programme |
 | 112 | 334 | Secrets redaction | Existing partial; completion not started in this programme |
@@ -744,3 +744,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 109 — 27 November 2026
 - Reuse local MCP discovery lifecycle and schema validation over explicitly approved public HTTPS JSON endpoints, fixed public IPv4 pin and TLS host verification, bounded pagination/session/response checks. No credentials, SSE, remote tool execution or server descriptions. Three transport-fixture regressions. Clarify local HTTP approval buttons and add timed clearing of transient OAuth session. Pass 103 green and merged. Next rank 109 / ID 264 REST. No installer.
+
+## Pass 110 — 27 November 2026
+- Add reviewed general public REST GET/POST requests, exact approved query/body, bounded JSON, no credential fields by name, public IPv4/TLS pin, one request only and no redirect or retry. Record status/hash and bounded JSON response, distinguish HTTP success from application success and uncertain POST outcome. User must review values before transmission. Three transport-fixture regressions. Next rank 110 / ID 265 secure credentials. No installer.
