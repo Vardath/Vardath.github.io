@@ -88,7 +88,7 @@ def inspect(raw,s,tools,folder,*,interpret=False,captioner=captions):
             'png_sha256':hashlib.sha256(sample.read_bytes()).hexdigest()})
     values=captioner(paths,tools)
     if not isinstance(values,list) or len(values)!=len(paths) or any(
-        not isinstance(c,str) or not c.strip() or len(c)>2000 or any(ord(x)<32 and x not in '\\n\\t' for x in c)
+        not isinstance(c,str) or not c.strip() or len(c)>2000 or any(ord(x)<32 and x not in '\n\t' for x in c)
         for c in values):raise ValueError('Missing or invalid sampled-frame descriptions')
     for row,p,c in zip(observations,paths,values):
         if hashlib.sha256(p.read_bytes()).hexdigest()!=row['png_sha256']:raise ValueError('Sample changed during interpretation')
@@ -110,10 +110,15 @@ def review(root,source,output,exclude=()):
     plan['guards'].extend(runtime(root))
     return plan,dict(s,observations=operation(root,plan),scope='Sampled silent H.264 video; offline captions after approval, no audio or continuous interpretation.')
 
+def report_bytes(result):
+    payload=(json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
+    if json.loads(payload)!=result:raise ValueError('Video observation report roundtrip failed')
+    return payload
+
 def execute(root,plan,*,captioner=captions):
     _,dst,_=validate(root,plan)
     result=operation(root,plan,True,captioner)
-    payload=(json.dumps(result,ensure_ascii=False,indent=2)+'\\n').encode('utf-8')
+    payload=report_bytes(result)
     sha=guard.publish(payload,dst,lambda:validate(root,plan))
     return {'schema':'janus-video-interpretation-result-v1','status':'sampled_visual_observations',
         'output':plan['output'],'sha256':sha,'source_unchanged':True,

@@ -44,6 +44,13 @@ class VideoTrimmingTests(unittest.TestCase):
         self.assertFalse(out.exists())
 
 
+    def test_video_report_json_roundtrip(self):
+        from deepthort_local.video_interpretation import report_bytes
+        result={'observations':[{'caption':'First line\nSecond line'}]}
+        raw=report_bytes(result)
+        self.assertEqual(json.loads(raw),result)
+        self.assertTrue(raw.endswith(b'\n'))
+
     def test_sampled_video_observations(self):
         from deepthort_local.video_interpretation import inspect,checked
         from deepthort_local.action_guards import snapshot_file
