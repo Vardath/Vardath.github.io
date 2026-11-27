@@ -748,6 +748,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(development_actions,text='Create GitHub draft PR…',command=self._show_github_draft).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Create GitHub draft release…',command=self._show_github_release).pack(side='left',padx=3)
         ttk.Button(api_actions,text='Generate installer project…',command=lambda:self._review_typed_tool('installer_project','.iss','Development: reviewed installer source')).pack(side='left',padx=3)
+        ttk.Button(api_actions,text='Inspect GitHub PR…',command=self._show_github_pr_review).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1407,6 +1408,10 @@ class DeepThorTDesktop(tk.Tk):
     def _web_research_dialog(self):
         from deepthort_local.web_research_dialog import show
         show(self)
+
+    def _show_github_pr_review(self):
+        from deepthort_local.github_draft_dialog import show
+        show(self,mode='review')
 
     def _show_github_release(self):
         from deepthort_local.github_draft_dialog import show

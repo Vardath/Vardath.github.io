@@ -503,3 +503,7 @@ Files & Images → Create GitHub draft release. Enter repository, existing light
 ## Windows installer project source (Pass 105)
 
 Files & Images → Generate installer project. JSON: `{"app_name":"Example App","app_id":"Example","version":"1.2.0","files":["bin/app.exe","data/info.txt"],"entrypoint":"bin/app.exe"}`. Generates a new Inno Setup `.iss` source, explicit exact payload hashes, per-user destination, Start Menu shortcut, no automatic launch or Pascal code. Compiler and separate install/uninstall acceptance remain required; no actual installer is produced by this operation.
+
+## GitHub pull request review evidence (Pass 106)
+
+Files & Images → Inspect GitHub PR. Enter repository, PR number, exact head/base SHAs, and transient pull-request read token after approval. Retrieves up to 30 changed-file records and bounded provider patches, rechecks metadata, labels omitted patches and path-based review cues. No semantic finding, test proof, atomic remote snapshot, approval, comment or merge. Larger changes require a different reviewed workflow.
