@@ -1033,3 +1033,7 @@ Publish Mastodon accepts a mastodon.social local username (without @), literal t
 ## Reviewed REAPER batch conversion (Pass 231)
 
 REAPER audio conversion selects an exact existing project-relative PCM16 WAV (mono/stereo, up to 60 seconds, 22050/44100/48000 Hz), trusted separately installed reaper.exe, different target rate and new project-relative WAV. Uses reviewed fixed batch-converter CLI (documented at https://github.com/ReaTeam/Doc/blob/master/REAPER%20CLI.txt), separate temporary config, capped native child and fixed staging. Rechecks exact source and executable, output sample rate, channels, width and duration; no arbitrary project/script/FX, overwrites or native quality claim. Real REAPER acceptance outstanding.
+
+## Reviewed album production (Pass 232)
+
+Produce album accepts album and artist (printable ASCII), 2–8 ordered tracks with audio (project-relative PCM WAV) and title, and shared mastering settings identical to the reviewed mastering tool except audio. Up to 30 seconds per track, matching channels/rate, total inputs up to 12 MiB. Output a new ZIP of numbered mastered WAVs with exact RIFF title/artist/album/track metadata, PLAYLIST.m3u8 and ALBUM.json with source/output hashes and mastering observations. Original tracks unchanged. No listening, LUFS, full-length release, rights or remote distribution claims.

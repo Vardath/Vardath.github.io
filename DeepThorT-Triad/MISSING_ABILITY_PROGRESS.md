@@ -240,7 +240,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 228 | 175 | Cloud storage integration | Partial: reviewed Google Drive folder inventory and exact bounded binary download with transient account-bound OAuth, metadata recheck and SHA-256 receipt; optional exclusive local save. Pass 229 CI pending; uploads, native Google document export, sync and live provider acceptance outstanding. |
 | 229 | 183 | Social media publishing | Partial: reviewed single text post to mastodon.social, exact account/visibility verification, transient token, one POST and no retry after uncertainty. Pass 230 CI pending; live provider acceptance, other networks, media and scheduling outstanding. |
 | 230 | 138 | Digital audio workstation (DAW) operation | Partial: reviewed fixed installed REAPER single PCM16 WAV resampling via native batch converter, fresh config and capped child process, exact source/executable and output format/duration checks. Pass 231 CI pending; actual native engine, multitrack DAW control and listening acceptance outstanding. |
-| 231 | 304 | Album production automation | Existing partial; completion not started in this programme |
+| 231 | 304 | Album production automation | Partial extended: reviewed ordered 2–8 short PCM WAVs, shared mastering settings, verified per-track RIFF metadata, playlist and deterministic offline archive. Pass 232 CI pending; full songs, listening quality, artwork and distribution outstanding. |
 | 232 | 139 | Audio plugin development | Not started in this programme |
 | 233 | 105 | Image-to-motion-video generation | Not started in this programme |
 | 234 | 109 | Video background replacement | Not started in this programme |
@@ -1135,3 +1135,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 231 — 28 November 2026
 - Add reviewed installed REAPER batch sample-rate conversion for one exact PCM16 WAV, fixed batch list and temporary resource config, capped child with timeout, no script/FX/template, verify output channels/rate/duration and exclusive publication. Three mocked backend regressions on both hosts. Native REAPER execution, broader DAW operations and listening quality outstanding. Next rank 231 / ID 304 album production automation. No installer.
+
+## Pass 232 — 28 November 2026
+- Extend album production with reviewed exact existing tracks, shared mastering settings, ordered RIFF INFO metadata, playlist and hash manifest in a verified non-overwriting offline ZIP. Reuse current mastering and metadata adapters. Three regression fixtures on both hosts. Bounded short tracks; full albums, listening quality and distribution acceptance outstanding. Next rank 232 / ID 139 audio plugin development. No installer.
