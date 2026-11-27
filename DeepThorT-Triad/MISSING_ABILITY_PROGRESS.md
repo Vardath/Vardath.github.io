@@ -34,7 +34,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 22 | 272 | Create spreadsheets | Source extended: typed multi-sheet XLSX production, styled headers, filters, freeze panes, literal cells and number formats with reopen verification. Pass 023 CI pending; charts, richer layouts and native model integration outstanding. |
 | 23 | 273 | Spreadsheet formula generation | Source extended: typed allowlisted same-sheet formulas with exact generated preview, explicit replacement, new-formula cycle checks and verified XLSX output. Pass 024 CI pending; calculation and existing dependency analysis outstanding. |
 | 24 | 280 | CSV processing | Source extended: bounded UTF-8 CSV column projection/reorder, row windows and delimiter conversion with exact roundtrip checks. Pass 025 CI pending; richer transforms and model integration outstanding. |
-| 25 | 281 | SQL querying | Existing partial; completion not started in this programme |
+| 25 | 281 | SQL querying | Source extended: reviewed parameterized SELECT against exact standalone SQLite snapshot, authorizer and execution/result bounds, structured JSON. Pass 026 CI pending; other dialects/live connections and richer analysis outstanding. |
 | 26 | 283 | Data cleaning | Existing partial; completion not started in this programme |
 | 27 | 284 | Data transformation | Existing partial; completion not started in this programme |
 | 28 | 72 | Editing existing presentations | Not started in this programme |
@@ -428,3 +428,11 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 025 — 27 November 2026
 
 - Reviewed local CSV projection, column order, one-based row window and explicit delimiter conversion. Strict UTF-8 parsing with rectangular records, distinct nonblank headers and bounded fields/rows/cells. Retain text including leading zeros and quoted multiline values; reopen output and compare every cell. Explicit reject/preserve policy for formula-like cells; preserve mode carries spreadsheet interpretation risk. Original and exact typed spec remain hash-bound; no overwrite or type inference. Four actual CSV regressions. Next rank 25 / ID 281 SQL querying. No installer.
+
+## Pass 026 — 27 November 2026
+
+- Add reviewed single SELECT/WITH query with positional parameters against exact standalone non-WAL SQLite snapshot in disposable memory, never live DB. Reject journal/sidecar, views, virtual tables, unapproved functions, writes, attachments, extensions and external database access. Require query-only and trusted-schema restrictions plus SQLite authorizer, statement/row/size/step/time bounds. Explicit truncation, typed JSON results with source/query hash and result digest; no result text in process logs. Four actual SQLite regressions for aggregation, truncation, blocked operations and stale source. Reuse typed project review, source guards and new-output publication. Other engines, live connections, richer functions and model integration outstanding. Next rank 26 / ID 283 data cleaning. No installer.
+
+### Pass 026 CI repair
+
+- Run 45935971877 source failed before regression execution at FFmpeg provisioning: rolling Ubuntu 26.04 image's unrelated Microsoft apt repository returned HTTP 403. Pin Ubuntu 24.04 instead of the moving ubuntu-latest label. Keep both actual FFmpeg checks, all tests and native Windows CI. Replacement exact-head CI required.
