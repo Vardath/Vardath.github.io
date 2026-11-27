@@ -112,7 +112,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 100 | 240 | Code refactoring | Source extended: exact scoped Python local-name rename into a new file, UTF-8 AST byte spans, collision and dynamic-scope refusal, complete module AST comparison. Pass 101 CI pending. Project-wide renames, broader refactors and runtime verification outstanding. |
 | 101 | 241 | Automated debugging | Source extended: automatic indexed Python traceback-frame resolution in existing agent diagnostic tool; exact current source hashes, paths, line evidence and revalidation. Pass 102 CI pending. Failure-time identity, runtime instrumentation and broader automated repair outstanding. |
 | 102 | 48 | Pull request creation | Source implemented: explicitly approved GitHub draft creation on existing remote branches, fixed pinned HTTPS, transient masked token, validated receipt and no automatic retry. Pass 103 CI pending. Live authenticated acceptance, branch publication and automated PR generation outstanding. |
-| 103 | 250 | Release management | Existing partial; completion not started in this programme |
+| 103 | 250 | Release management | Source extended: explicitly approved GitHub draft release creation for existing lightweight tag and exact reviewed commit, transient token and provider receipt; no automatic retry or publication. Pass 104 CI pending. Asset upload, tag creation, publication and real remote acceptance outstanding. |
 | 104 | 251 | Installer generation | Existing partial; completion not started in this programme |
 | 105 | 49 | Pull request review | Not started in this programme |
 | 106 | 50 | Automated merge conflict resolution | Not started in this programme |
@@ -723,3 +723,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 103 — 27 November 2026
 - Add explicit GitHub draft PR dialog using a fixed API host and one reviewed POST, existing branch names, title/body, transient masked token and validated remote draft receipt. No push, merge, local file upload, automatic retry or stored token. Uncertain outcome requires inspection. Three transport-fixture regressions; no actual remote mutation in CI. Next rank 103 / ID 250 release management. No installer.
+
+## Pass 104 — 27 November 2026
+- Reuse fixed GitHub HTTPS and transient token approval for draft releases. Verify an existing lightweight tag against exact reviewed commit before sending a single draft creation request, validate remote draft receipt. No tag creation, publication, asset upload or automatic retry. No atomic remote tag lock or CI claim. Three transport-fixture regressions. Next rank 104 / ID 251 installer generation. No JANUS installer.

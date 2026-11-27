@@ -495,3 +495,7 @@ The existing read-only agent diagnostics tool additionally resolves Python trace
 ## GitHub draft pull request (Pass 103)
 
 Files & Images → Create GitHub draft PR. Enter existing remote branches, repository and title/body; approve exact outgoing request and enter a transient GitHub token with pull-request write permission. A successful provider receipt must match repository and refs. No branch push, merge, local source upload or saved token. Remote write may have succeeded despite a lost response; inspect GitHub rather than retry automatically.
+
+## GitHub draft release (Pass 104)
+
+Files & Images → Create GitHub draft release. Enter repository, existing lightweight tag, exact 40-character commit SHA, title and notes. Approve the exact GET tag check and one POST to create a draft. Transient masked token requires contents write permission. No publication, tag creation, asset upload or automatic retries. Tag may change after the check; inspect remote before publishing separately.
