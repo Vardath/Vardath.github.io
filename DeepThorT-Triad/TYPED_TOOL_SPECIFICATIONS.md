@@ -611,3 +611,7 @@ Files & Images → Separate musical stems. Select a 3–15 second stereo PCM16 4
 ## Instrument isolation (Pass 133)
 
 Files & Images → Isolate instrument. Choose a 3–8 second stereo 44.1 kHz PCM16 WAV, trusted installed `demucs.cpp.main.exe`, `ggml-model-htdemucs-6s-f16.bin`, target `drums`, `bass`, `guitar` or `piano`, and new ZIP. The [upstream single-model CLI](https://github.com/sevagh/demucs.cpp) writes six IEEE float32 stems; all must be finite and frame-aligned. Target and sum of other stems share headroom before PCM16 export. Exact executable/weights SHA-256 reviewed, not an independently pinned distribution. Existing 512 MiB ordinary auxiliary cap may reject this engine; native compatibility and isolation quality unverified. No automated downloads or cap increases.
+
+## Reviewed audio-to-MIDI (Pass 134)
+
+Files & Images → Audio to MIDI. JSON keys: `audio` (project-relative mono PCM16 8/16 kHz WAV, 3–20 seconds), `bpm` (40–220), `min_pitch` and `max_pitch` (ordered MIDI notes 36–84), `gate_dbfs` (-65 to -20). Bounded YIN-style pitch estimation produces timed single-track MIDI with rests, exact byte roundtrip and explicit tempo. No automatic tempo inference, chords, polyphonic recognition, articulation reconstruction or claimed real-recording accuracy. Existing model-composed MIDI route unchanged.
