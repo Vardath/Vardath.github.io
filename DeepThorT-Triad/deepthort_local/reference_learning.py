@@ -15,6 +15,7 @@ import sqlite3
 from pathlib import Path
 
 from .workspace import WorkspaceError, list_project_files, safe_target
+from .reference_trust import unsafe_at
 
 MAX_REFERENCE_FILES = 20
 MAX_REFERENCE_BYTES = 48_000
@@ -239,7 +240,7 @@ class ReferenceIndex:
             lines = data[1].splitlines()
             path_words = _terms(relative)
             for i, line in enumerate(lines):
-                if BLOCKED_LINES.search(line) or len(line.strip()) < 8:
+                if unsafe_at(lines,i) or BLOCKED_LINES.search(line) or len(line.strip()) < 8:
                     continue
                 line_words = _terms(line)
                 overlap = tokens & (line_words | path_words)

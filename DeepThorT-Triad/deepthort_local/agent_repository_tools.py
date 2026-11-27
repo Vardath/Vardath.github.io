@@ -13,6 +13,7 @@ from .repository_index import _read, IndexCancelled
 from .reasoning_council import sha
 from .specification_guard import review_source
 from .agent_tool_selection import shortlist,pack
+from .reference_trust import observation_suspicious
 from .document_review import review_documents
 from .debug_evidence import candidates as debug_candidates
 
@@ -223,6 +224,10 @@ def gather(tools,council,client,*,session,original,goal,seed='',budget=1100,stag
         if receipts is not None:
             ident=receipts.record(job_id=job_id,project=tools.root,spec_sha=sha(original),
                 session=session,turn=turn,request=request,result=result)
+        if observation_suspicious(result):
+            feedback='Potential authority override in untrusted evidence; observation withheld'
+            if stage:stage('JANUS withheld suspicious untrusted observation; no new authority')
+            continue
         if request['tool']=='document_search' and result['items']:
             # Do not show unreviewed document excerpts even to the next JANUS
             # selection turn. Review exact complete records as a bounded batch.

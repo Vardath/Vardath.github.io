@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from .reference_learning import BLOCKED_LINES, BLOCKED_NAMES, DOC_FOLDERS, STOP
+from .reference_trust import suspicious
 from .workspace import SKIP_DIRS, safe_target
 from .pdf_knowledge import pdf_lines, MAX_PDF_BYTES
 
@@ -143,6 +144,14 @@ def _extract(raw, suffix):
         raise ValueError('Unsupported or damaged DOCX') from exc
 
 
+
+def _unsafe_row(lines,i):
+    def value(row):return row[2] if isinstance(row,tuple) else row
+    line=value(lines[i])
+    return (suspicious(line) or
+            (i>0 and suspicious(value(lines[i-1])[-400:]+' '+line[:400])) or
+            (i+1<len(lines) and suspicious(line[-400:]+' '+value(lines[i+1])[:400])))
+
 def _fragments(lines, *, large_text=False, cancelled=None):
     fragment_limit=MAX_LARGE_FRAGMENTS if large_text else MAX_FRAGMENTS
     posting_limit=MAX_LARGE_POSTINGS if large_text else MAX_POSTINGS
@@ -153,7 +162,7 @@ def _fragments(lines, *, large_text=False, cancelled=None):
         line = row[2] if isinstance(row, tuple) else row
         # Check the entire original line before splitting, so a blocked phrase
         # cannot evade the filter merely by crossing an excerpt boundary.
-        if len(line) > 4000 or BLOCKED_LINES.search(line) or any(
+        if len(line) > 4000 or _unsafe_row(lines,number-1) or BLOCKED_LINES.search(line) or any(
                 ord(c) < 32 and c != '\t' for c in line):
             continue
         for start in range(0, len(line), FRAGMENT_CHARS):
@@ -495,7 +504,7 @@ class DocumentKnowledge:
                 continue
             row = lines[number - 1]
             line = row[2] if locator == PDF_LOCATOR else row
-            if BLOCKED_LINES.search(line) or not 0 <= start < end <= len(line):
+            if _unsafe_row(lines,number-1) or BLOCKED_LINES.search(line) or not 0 <= start < end <= len(line):
                 continue
             excerpt = line[start:end]
             matched = termset.intersection(_terms(excerpt))

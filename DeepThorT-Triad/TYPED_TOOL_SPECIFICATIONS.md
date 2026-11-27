@@ -929,3 +929,7 @@ Manual browser sign-in accepts `{"browser":"chrome","url":"https://example.org/a
 ## Reviewed authenticated section research (Pass 205)
 
 Research signed-in section accepts `{"browser":"chrome","url":"https://example.org/account","expected_heading":"Orders","seconds":120,"question":"Which orders are shown?","max_blocks":10}`. Manually sign in and open the exact page; then separately confirm collecting local text. Reads bounded rendered text from the unique named heading section, excluding form controls and certain hidden/navigation regions, and verifies the frame/loader identity before and after. Fixed isolated-world browser expression, no arbitrary model script. New JSON includes observed text and provenance hash; may contain private information. No automatic model/memory ingestion, external disclosure, cookie export or claims of completeness or verified facts. Native acceptance pending.
+
+## Untrusted evidence screening (Pass 206)
+
+Automatic local reference and indexed document retrieval, fixed public documentation excerpts and repository observations now screen common normalized role markers and authority override patterns, including some adjacent split phrases. Suspicious observations are withheld from automatic model context; original files and sealed evidence are not rewritten. Existing authority and approval enforcement remain mandatory. This is conservative heuristic screening, not a sandbox or proof of resistance; benign material can be withheld and adaptive attacks can evade it. No new user command.
