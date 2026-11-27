@@ -639,3 +639,7 @@ Files & Images → Improve topology. JSON keys: `mesh` (plain triangular OBJ wit
 ## Blender mesh workflow (Pass 140)
 
 Files & Images → Create editable Blender mesh. Select strict project-relative triangular OBJ (up to 10k vertices/faces), trusted installed `blender.exe` outside project, and new `.blend` path. The exact executable and fixed bundled Python script are reviewed; private geometry JSON is quantized to Blender float32. Factory-startup, disabled autoexecution, one thread, bounded child process; script creates one mesh, saves uncompressed and reopens it to compare exact vertices/faces. No arbitrary scripts or project-supplied blend files. Actual installed Blender compatibility within 512 MiB and visual quality unverified.
+
+## Reviewed automatic mesh repair (Pass 141)
+
+Files & Images → Repair mesh. JSON specification contains only `mesh` (project-relative plain triangular OBJ). Up to 10,000 vertices and faces. Exact-coordinate weld, remove degenerate and duplicate triangles and unused vertices, orient adjacent faces consistently, reject unresolved nonmanifold edges/fans or nonorientable components. Reports remaining boundary edges and verifies geometry. No arbitrary scripts, tolerance welding, hole filling, self-intersection repair, outward orientation or attribute preservation. Native visual acceptance outstanding.
