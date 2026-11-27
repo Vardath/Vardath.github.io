@@ -619,3 +619,7 @@ Files & Images → Audio to MIDI. JSON keys: `audio` (project-relative mono PCM1
 ## Reviewed musical arrangement (Pass 135)
 
 Files & Images → Arrange music. JSON keys: `bpm` (40–220), `parts` (1–8 objects with `name`, `program` 0–127 General MIDI, and `notes` lists of `[start_tick,duration_ticks,pitch,velocity]`, 480 ticks/quarter). At most 512 notes, sorted by start/pitch; overlapping distinct pitches allowed, overlapping same pitch within a part rejected. New `.mid` format 1 with conductor and separate channels; exact decode verification. This is explicit arrangement assembly, not autonomous harmony or aesthetic acceptance. Legacy Gemma MIDI generation unchanged.
+
+## Instrumental audio synthesis (Pass 136)
+
+Files & Images → Synthesize instruments. JSON keys: `midi` (canonical JANUS `.mid`/`.midi`), `voices` (one per part, objects with `timbre` = sine/organ/pluck/strings/bass, `gain_db` -36 to 0, `pan` -1 to 1), `peak_dbfs` -18 to -1. Render up to 30 seconds and 2 million total note samples to new stereo 22.05 kHz PCM16 WAV, respecting timing, rests and velocities. Deterministic synthetic timbres, not General MIDI samples or neural instrument realism. Shared peak attenuation, no boost. Exact decoded PCM verification; listening acceptance outstanding.
