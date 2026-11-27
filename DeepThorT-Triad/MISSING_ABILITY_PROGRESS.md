@@ -124,7 +124,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 112 | 334 | Secrets redaction | Source extended: central diagnostic scrubber, known token patterns, structured credential fields, private key blocks, legacy JSONL re-scrub and partial-tail refusal. Pass 113 CI pending. Unknown secrets, filenames and broader DLP remain outside guarantees. |
 | 113 | 182 | GitHub account integration | Source extended: approved public owned-repository inventory with existing OAuth session, exact account identity recheck, bounded page, repository IDs/default branches and flags. Pass 114 CI pending. Private repositories, broader project integration and live provider acceptance outstanding. |
 | 114 | 67 | Webhook integration | Source extended: one approved finite loopback GitHub-format webhook session with exact event, HMAC-SHA256, bounded JSON/body, metadata-only receipt and cancellation. Pass 115 CI pending. Public HTTPS endpoint, remote delivery, persistent deduplication and event-trigger admission outstanding. |
-| 115 | 203 | OpenAI-compatible external developer API | Not started in this programme |
+| 115 | 203 | OpenAI-compatible external developer API | Source extended: approved ephemeral authenticated loopback models and non-streaming chat-completions gateway to existing Granite broker, no privileged roles or state/tool access. Pass 116 CI pending. Broader SDK compatibility, native model acceptance, streaming and public deployment outstanding. |
 | 116 | 328 | Local developer API | Existing partial; completion not started in this programme |
 | 117 | 329 | Headless agent operation | Existing partial; completion not started in this programme |
 | 118 | 10 | Remote task submission | Not started in this programme |
@@ -762,3 +762,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 115 — 27 November 2026
 - Add a finite explicitly approved loopback-only webhook receiver for one exact GitHub-format event, HMAC-SHA256 verification, duplicate-header/size/deadline checks and metadata-only receipt. Secret transient, no payload retention or task admission. Real loopback tests cover wrong signatures, wrong events, accepted delivery and cancellation. No public service or remote provider acceptance. Next rank 115 / ID 203 OpenAI-compatible external developer API. No installer.
+
+## Pass 116 — 27 November 2026
+- Add explicitly enabled finite OpenAI-compatible loopback text gateway using separate transient client key, bounded models/chat routes and fixed Granite role on existing capped broker. No arbitrary role, tool calls, private state, external binding or fabricated usage. Non-modal desktop session permits existing Stop AI; cancellation stops admissions, not an already admitted broker request. Real local socket/fixture regressions. Next rank 116 / ID 328 local developer API. No installer.
