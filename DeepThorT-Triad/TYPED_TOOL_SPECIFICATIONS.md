@@ -777,3 +777,7 @@ The existing Trim/sequence video tool also accepts an optional `edit` object on 
 ## Reviewed video transitions (Pass 173)
 
 Optionally supply top-level `transitions`, one entry for each pair of adjacent clips: `{"kind":"cut","frames":0}` or `{"kind":"crossfade","frames":4}` (1–12 overlap frames). No field means hard cuts. Crossfade blends the outgoing tail and incoming head with intermediate opacity; output frame count is input frames minus overlaps. Each clip must retain at least one non-transition frame, so adjacent overlaps cannot collide. Applied after per-clip edits. Audio and more elaborate effects remain unsupported.
+
+## Reviewed video motion tracking (Pass 174)
+
+Files & Images → Track video patch. JSON: `{"video":"clip.mp4","start_frame":0,"end_frame":30,"box":[20,20,12,12],"radius":5,"max_error":12}`. Select a nonuniform 4–32 pixel patch, 2–60 source frames, radius 1–12 and mean absolute RGB error limit 0–50. Search is bounded; stop rather than guess at a tied or excessive-error match. JSON contains frame indices, timestamps, bounding boxes and matching error. Translation only, no identity, scale/rotation or occlusion recovery.

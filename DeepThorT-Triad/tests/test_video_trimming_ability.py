@@ -44,6 +44,13 @@ class VideoTrimmingTests(unittest.TestCase):
         self.assertFalse(out.exists())
 
 
+    def test_video_report_json_roundtrip(self):
+        from deepthort_local.video_interpretation import report_bytes
+        result={'observations':[{'caption':'First line\nSecond line'}]}
+        raw=report_bytes(result)
+        self.assertEqual(json.loads(raw),result)
+        self.assertTrue(raw.endswith(b'\n'))
+
     def test_sampled_video_observations(self):
         from deepthort_local.video_interpretation import inspect,checked
         from deepthort_local.action_guards import snapshot_file
@@ -115,3 +122,27 @@ class VideoTrimmingTests(unittest.TestCase):
         with self.assertRaises(ValueError):checked(self.s)
         self.s['transitions']=[{'kind':'cut','frames':0}]
         self.assertEqual(checked(self.s),self.s)
+
+    def test_patch_tracking_translation_and_loss(self):
+        from deepthort_local.video_motion_tracking import track
+        def frame(x,y):
+            data=bytearray(16*16*3)
+            for j in range(4):
+                for i in range(4):
+                    p=((y+j)*16+x+i)*3
+                    data[p:p+3]=bytes([10+i*30,20+j*40,100])
+            return bytes(data)
+        s={'video':'a.mp4','start_frame':0,'end_frame':3,'box':[2,2,4,4],'radius':3,'max_error':0}
+        rows=track(frame(2,2)+frame(4,3)+bytes(16*16*3),(16,16),s)
+        self.assertEqual(rows[1]['box'],[4,3,4,4])
+        self.assertIsNone(rows[2]['box'])
+        self.assertIn(rows[2]['state'],('lost','ambiguous'))
+        with self.assertRaises(ValueError):track(bytes(3*16*16*3),(16,16),s)
+    def test_motion_review_and_stale_source(self):
+        from deepthort_local.video_motion_tracking import review,execute
+        s={'video':'a.mp4','start_frame':0,'end_frame':3,'box':[2,2,4,4],'radius':2,'max_error':10}
+        (self.root/'track.json').write_text(json.dumps(s))
+        plan,_=review(self.root,'track.json','motion.json')
+        (self.root/'a.mp4').write_bytes(b'changed')
+        with self.assertRaises(ValueError):execute(self.root,plan)
+        self.assertFalse((self.root/'motion.json').exists())
