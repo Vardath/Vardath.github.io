@@ -741,3 +741,7 @@ Files & Images → Pose-guided image. Select a JSON file containing one `joints`
 ```
 
 The exact JSON is bound to the queue request, a deterministic mannequin raster becomes the starting image for existing offline SD1.5 image-to-image, and the output is a new PNG. No learned pose detection or ControlNet is used; pose fidelity requires visual review.
+
+## Reviewed relative-depth guided generation (Pass 165)
+
+Files & Images → Depth-guided image. Select a nonuniform square 8-bit grayscale depth PNG of 256, 384 or 512 pixels, choose near-white or near-black convention, relief strength and descriptive prompt. Relative depth tones and optional finite-difference lighting render a deterministic RGB initial image for existing offline diffusion. The guide is hash-bound and unchanged. This is not metric depth estimation or dedicated depth-conditioned neural generation; exact geometry is unverified.

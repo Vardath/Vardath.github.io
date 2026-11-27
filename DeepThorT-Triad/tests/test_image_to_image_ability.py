@@ -174,3 +174,28 @@ class ImageToImageTests(unittest.TestCase):
         coords=dict(zip(m.POSE_JOINTS,[[500,120],[500,230],[390,260],[610,260],[310,420],[690,420],[260,550],[740,550],[440,530],[560,530],[400,710],[600,710],[380,880],[620,880]]))
         for joints in ({},dict(coords,head=[True,100]),dict(coords,head=[1001,100]),dict(coords,head=coords['neck'])):
             with self.assertRaises(ValueError):m.pose_guide(json.dumps({'joints':joints}).encode(),256)
+
+    def test_depth_guidance_polarity_and_exact_input(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve();src=root/'depth.png'
+            pixels=bytes(range(256))*256
+            src.write_bytes(encode(256,256,'L',pixels))
+            near=m.depth_guide(src.read_bytes(),256,True,0)
+            far=m.depth_guide(src.read_bytes(),256,False,0)
+            self.assertEqual(decode(near,('RGB',))[3][:3],bytes([32])*3)
+            self.assertEqual(decode(far,('RGB',))[3][:3],bytes([223])*3)
+            self.assertNotEqual(near,m.depth_guide(src.read_bytes(),256,True,50))
+            s=m.review_depth(root,'depth.png','out.png','metal structures',256,15,60,5,True,0)
+            def backend(model,raw,plan):
+                self.assertEqual(raw,near);self.assertEqual(plan['guide_kind'],'depth');return OUT
+            r=m.execute(root,'unused',s,backend=backend)
+            self.assertEqual(r['depth_conditioning'],'relative_depth_raster_initialisation')
+            self.assertFalse(r['depth_fidelity_verified'])
+            (root/'out.png').unlink()
+            def changed(*_):
+                src.write_bytes(encode(256,256,'L',bytes(reversed(range(256)))*256));return OUT
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=changed)
+            self.assertFalse((root/'out.png').exists())
+    def test_depth_guide_rejects_flat_and_mismatched(self):
+        for raw in (encode(256,256,'L',bytes([55])*(256*256)),encode(128,128,'L',bytes(range(128))*128),OUT):
+            with self.assertRaises(ValueError):m.depth_guide(raw,256,True,35)

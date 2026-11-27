@@ -173,7 +173,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 161 | 88 | Image object removal | Partial: explicit object mask, deterministic boundary-colour initialisation discards selected original pixels, negative object guidance and local masked diffusion with exact outside preservation. Pass 162 CI pending. Automatic segmentation and visual absence verification outstanding. |
 | 162 | 89 | Image object replacement | Partial: distinct original and replacement object descriptions, scene context, mask-bound local diffusion with original masked content discarded, positive and negative guidance and exact outside pixels. Pass 163 CI pending. Semantic identity and native visual verification outstanding. |
 | 163 | 97 | Pose-controlled image generation | Partial: reviewed 14-joint normalized JSON rendered as a deterministic mannequin image, then existing local image-to-image diffusion. Pass 164 CI pending. Dedicated pose conditioning, detection and pose-fidelity verification outstanding. |
-| 164 | 98 | Depth-controlled image generation | Not started in this programme |
+| 164 | 98 | Depth-controlled image generation | Partial: reviewed relative-depth grayscale map, explicit near/far polarity and optional deterministic relief shading, feeding existing offline diffusion. Pass 165 CI pending. Dedicated depth conditioning and geometry fidelity verification outstanding. |
 | 165 | 99 | Sketch-to-image conversion | Not started in this programme |
 | 166 | 102 | Layer-aware image editing | Not started in this programme |
 | 167 | 296 | Editable graphic design | Existing partial; completion not started in this programme |
@@ -928,3 +928,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 164 — 27 November 2026
 - Add hash-bound explicit 14-joint pose guides and deterministic mannequin rasterization feeding the existing offline diffusion backend, desktop queue entry, stale-source protection and malformed/collapsed-joint regression tests. This is pose-guided initialization, not true ControlNet pose conditioning. No additional model or installer. Next rank 164 / ID 98 depth-controlled generation.
+
+## Pass 165 — 27 November 2026
+- Add exact reviewed relative-depth PNG guidance, polarity and bounded relief lighting cue. Render a deterministic RGB raster for the existing local image-to-image backend, reject uniform/mismatched depth maps, preserve source and validate output. Two mocked fixtures; no metric depth, depth estimator, ControlNet or geometry fidelity claim. Next rank 165 / ID 99 sketch-to-image. No installer.
