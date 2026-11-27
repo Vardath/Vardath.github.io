@@ -154,7 +154,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 142 | 320 | 3D scene composition | Partial: reviewed 1–6 separate static GLB nodes from existing OBJ conversion, explicit translation/rotation/scale and verified embedded geometry/accessor segments. Pass 143 CI pending. Materials, lighting, hierarchy, collisions, animation and native visual acceptance outstanding. |
 | 143 | 321 | Automated lighting | Partial: reviewed automatic view-relative three-point directional light rig, neutral/warm/cool presets and intensity, KHR_lights_punctual metadata with verified geometry preservation. Pass 144 CI pending. Native renderer, exposure, shadows and visual quality outstanding. |
 | 144 | 322 | Automated rendering | Partial: reviewed actual bounded CPU orthographic PNG preview of composed meshes, depth occlusion, flat directional lighting, auto-framing and decoded pixel checks. Pass 145 CI pending. Native Blender/production rendering, textures, shadows, PBR and visual acceptance outstanding. |
-| 145 | 323 | Game-ready asset optimisation | Existing partial; completion not started in this programme |
+| 145 | 323 | Game-ready asset optimisation | Partial: reviewed bounded mesh candidate search with triangle/vertex budgets, displacement and export precision, source/export manifold checks and optional exact boundary preservation. Pass 146 CI pending. UV/material/rig/collider/LOD, engine import, surface error and performance acceptance outstanding. |
 | 146 | 162 | Automatic texture mapping | Not started in this programme |
 | 147 | 314 | Texture generation | Existing partial; completion not started in this programme |
 | 148 | 315 | PBR material generation | Existing partial; completion not started in this programme |
@@ -863,3 +863,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 145 — 27 November 2026
 - Extend reviewed static scene and lighting tools with actual bounded software rasterization, transformed triangles, auto-fit orthographic camera, depth buffer, two-sided flat approximate directional lighting and explicit RGB colors. Output 64–512 px PNG, verify decoded pixels and exact reviewed input guards, enforce eight-million candidate-sample budget. Three fixtures including occlusion/order, bounds and stale source. No native engine, texture, shadows, PBR, photorealism or visual-quality claim. Next rank 145 / ID 323 game-ready asset optimisation. No installer.
+
+## Pass 146 — 27 November 2026
+- Reuse mesh simplification and GLB conversion for a reviewed 1–8 candidate search with explicit vertex/triangle limits, representative displacement and export precision. Preserve baseline if already meets requirements; select lowest displacement candidate otherwise, check manifold edges/fans and optional exact source/export boundary; reject impossible budget rather than publish misleading output. Three fixtures. Static plain geometry only, not complete game-ready acceptance. Next rank 146 / ID 162 automatic texture mapping. No installer.
