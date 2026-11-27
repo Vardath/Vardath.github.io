@@ -130,7 +130,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 118 | 10 | Remote task submission | Source extended: optional authenticated loopback task inbox, exact prompt review before ordinary conversation admission, bounded two items and session duplicate refusal. Pass 119 CI pending. Actual cross-device transport, persistent inbox and remote acknowledgement/status outstanding. |
 | 119 | 11 | Cross-device notifications | Source extended: one owner-approved finite status watch for exact local job/request, fixed ntfy HTTPS provider and dedicated transient token, generic terminal-state message only. Pass 120 CI pending. Live device acceptance, persistent notifications and additional providers outstanding. |
 | 120 | 2 | Microphone input | Source extended: explicit finite Windows WinMM default-device PCM capture in capped process, cancellation and separately approved non-overwriting project WAV. Pass 121 CI pending. Actual physical microphone/device permission acceptance outstanding. |
-| 121 | 140 | Speech-to-text conversion | Not started in this programme |
+| 121 | 140 | Speech-to-text conversion | Source extended: exact reviewed short PCM WAV, fixed capped offline Windows System.Speech dictation adapter, exact installed culture, validated timed segments and unverified text preview. Pass 122 CI pending. Installed recognizer and native speech accuracy acceptance outstanding. |
 | 122 | 141 | Audio transcription | Not started in this programme |
 | 123 | 144 | Expressive neural speech synthesis | Not started in this programme |
 | 124 | 306 | Multilingual speech generation | Existing partial; completion not started in this programme |
@@ -780,3 +780,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 121 — 27 November 2026
 - Add Windows default-microphone capture via fixed WinMM waveIn ABI, 1–30 seconds mono 16 kHz PCM16 in memory, inherited cap verification and explicit visible recording/cancellation. Separate owner approval saves a new non-overwriting project WAV; no automatic attachment, network or transcription. Synthetic PCM regressions plus Windows native ABI verification; actual microphone hardware not exercised. Next rank 121 / ID 140 speech-to-text. No installer.
+
+## Pass 122 — 27 November 2026
+- Add bounded speech-to-text from a reviewed 1–30 second 16 kHz mono PCM WAV using fixed local Windows System.Speech desktop dictation under the existing cap. Exact installed culture, no fallback/cloud, canonical staged audio, validated timing/confidence, empty result distinguished from success, visible transcript preview, no automatic submit/save. Fixtures validate source identity and result bounds; native installed recognizer acceptance outstanding. Next rank 122 / ID 141 audio transcription. No installer.

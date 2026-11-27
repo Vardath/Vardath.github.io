@@ -563,3 +563,7 @@ Files & Images → Status notification. Select one existing job or conversation 
 ## Microphone recording (Pass 121)
 
 Files & Images → Record microphone. Select a project, approve a 1–30 second recording of the Windows default input device. Capture is local 16 kHz mono PCM16 with visible recording and cancellation. Afterwards separately approve a new project-relative WAV in an existing folder; cancel discards the recording. Protected, linked and existing targets refused. No automatic upload, playback, transcript or model ingestion. Physical microphone acceptance requires a Windows desktop with an available device.
+
+## Offline short speech-to-text (Pass 122)
+
+Files & Images → Speech to text. Review an exact project-relative 1–30 second mono 16 kHz PCM16 WAV, choose an exact installed desktop recognition culture, approve offline dictation. The fixed System.Speech adapter runs under the capped native process. Preview text is unverified and never automatically submitted or saved. Missing or ambiguous installed recognizer is a blocker; no cloud or substitute language. Native recognition accuracy requires real speech acceptance.
