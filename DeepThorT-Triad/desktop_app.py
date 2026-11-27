@@ -682,6 +682,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Install PDF tools…',command=self._install_pdf_reader).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Edit PDF pages…',command=self._review_pdf_pages).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Create PDF…',command=self._review_pdf_document).pack(side='left',padx=3)
+        ttk.Button(media_actions,text='Extract PDF tables…',command=self._review_pdf_tables).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Generate image from prompt',command=self._queue_image).pack(side='left',padx=3)
@@ -1246,6 +1247,38 @@ class DeepThorTDesktop(tk.Tk):
             old.window.lift();return
         self._knowledge_dialog=KnowledgeDialog(self)
 
+    def _review_pdf_tables(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Table extraction unavailable','Select a project and finish active work.',parent=self);return
+        project=str(self.project)
+        source=filedialog.askopenfilename(parent=self,initialdir=project,title='Select source PDF',filetypes=[('PDF','*.pdf')])
+        if not source:return
+        try:
+            relative=Path(source).relative_to(Path(project)).as_posix()
+            output=simpledialog.askstring('New table data file','Project-relative JSON output (must not exist):',
+                initialvalue=Path(relative).with_name(Path(relative).stem+'-tables.json').as_posix(),parent=self)
+            if not output:return
+            pages=simpledialog.askstring('Select PDF pages','Comma-separated page numbers, e.g. 1,2,5 (up to 32). Ruled text-layer tables only.',parent=self)
+            if not pages:return
+            from deepthort_local.pdf_table_extract import review
+            plan=review(project,relative,output,pages,self.inspection_exclusions.paths(project))
+            if not messagebox.askyesno('Approve table extraction',
+                f"Source: {relative}\nPages: {plan['pages']}\nNew JSON: {output}\n\n"
+                'No OCR or inferred values; table candidates and null cells require visual review. Original preserved. Continue?',parent=self):return
+            if not self._editor_idle(project,proposal=True):return
+            from deepthort_local.source_security import exclusions
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:raise ValueError('Inspection exclusions changed')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/'pdf_table_extract.py';exclusion_file=self.inspection_exclusions.path
+            guards=[snapshot_file(script),plan['source_guard'],snapshot_file(Path(project)/output,kind='absent'),
+                    snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent')]
+            action=self.janus.add_approved_action(argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)],
+                cwd=project,label='Document: reviewed PDF table extraction',kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS PDF table extraction #{action} queued; inspect candidate data and original PDF.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('Table extraction not queued',str(exc),parent=self)
+
     def _review_pdf_document(self):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('PDF production unavailable','Select a project and finish active work.',parent=self);return
@@ -1327,7 +1360,7 @@ class DeepThorTDesktop(tk.Tk):
         if self.disk_gate.gaming():
             messagebox.showinfo('Gaming priority','Close your game before installing packages.');return
         if not messagebox.askyesno('Install optional offline PDF reader',
-            'Install pinned local pypdf and ReportLab packages?\n\nSupports selectable text extraction, reviewed page editing and structured PDF production. '
+            'Install pinned local pypdf, ReportLab and pdfplumber packages?\n\nSupports selectable text extraction, reviewed page editing, structured PDF production and ruled-table extraction. '
             'Scanned PDF images still need OCR and may not be readable.\n\nApprove?',parent=self):return
         self.tabs.select(4)
         self._start_command([sys.executable,'-m','pip','install','--no-input','-r',str(ROOT/'requirements-pdf-production.txt')],
