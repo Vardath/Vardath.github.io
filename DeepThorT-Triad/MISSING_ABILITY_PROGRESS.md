@@ -101,7 +101,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 89 | 286 | Scientific computing | Source extended: bounded exact square linear-system elimination with rank/consistency classification and substitution, polynomial definite integration with independent evaluation and derivative check. Pass 090 CI pending. Numerical simulation, broader algorithms and native integration outstanding. |
 | 90 | 288 | Anomaly detection | Source extended: exact baseline-relative IQR thresholds, separate monitoring suffix, original row identities, missing and flagged counts, zero-IQR warning and bounded candidate evidence. Pass 091 CI pending. Multivariate, temporal and adaptive detection outstanding. |
 | 91 | 80 | Time-series forecasting | Source implemented: exact regular-interval dated numeric forecasting, chronological holdout comparison of last-value, seasonal-naive and drift candidates; refit and future dates. Pass 092 CI pending. Independent final evaluation, uncertainty and richer models outstanding. |
-| 92 | 82 | Jupyter notebook integration | Not started in this programme |
+| 92 | 82 | Jupyter notebook integration | Source implemented: reviewed native .ipynb v4.5 export, ordered markdown/Python cells, syntax checks, exact cell roundtrip and inert code. Pass 093 CI pending. Live kernel, notebook execution, import/edit and output capture outstanding. |
 | 93 | 83 | Live database connections | Not started in this programme |
 | 94 | 247 | API development | Existing partial; completion not started in this programme |
 | 95 | 248 | API testing | Existing partial; completion not started in this programme |
@@ -687,3 +687,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 092 — 27 November 2026
 - Reuse exact rational analytics and reviewed CSV workflow. Validate strict regular dates, complete numeric observations and training prefix; evaluate three bounded candidate forecasts on chronological holdout, select by MAE and refit using all observations. Explicitly label selection holdout as not independent final test. Three regressions. Next rank 92 / ID 82 notebooks. No installer.
+
+## Pass 093 — 27 November 2026
+- Add native portable Jupyter notebook export through existing typed approval. Bounded distinct cells, markdown or syntactically valid Python, exact text roundtrip, standard Python kernel metadata and no fabricated execution outputs. Never start a kernel or execute code on export. Three regressions including inert side-effect code. Next rank 93 / ID 83 live database connections. No installer.

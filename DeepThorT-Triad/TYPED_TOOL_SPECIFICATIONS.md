@@ -451,3 +451,7 @@ Files & Images → Flag numeric anomalies. JSON: `{"csv":"data.csv","delimiter":
 ## Time-series forecasting (Pass 092)
 
 Files & Images → Forecast time series. JSON: `{"csv":"series.csv","delimiter":",","date_column":"day","value_column":"v","train_rows":4,"horizon":2,"season_length":2}`. Exact increasing ISO dates at constant day intervals, complete numeric values, explicit training prefix. Compare last-value, seasonal-naive and drift on the held-out suffix; select by MAE and refit on all observed values. No independent final accuracy estimate or uncertainty intervals.
+
+## Jupyter notebook export (Pass 093)
+
+Files & Images → Export Jupyter notebook. JSON: `{"cells":[{"id":"intro","kind":"markdown","source":"# Experiment"},{"id":"analysis","kind":"code","source":"print(2 + 2)"}]}`. Creates an unexecuted .ipynb v4.5 document for a Python 3 kernel. Python syntax is checked but code is not executed or declared safe. No local kernel required for export; interactive kernel, execution and output capture are outstanding.
