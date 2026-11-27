@@ -100,7 +100,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 88 | 79 | Predictive modelling | Source implemented: exact one-predictor OLS with ordered train/held-out split, complete-case counts, baseline and error metrics, independent normal-equation verification and bounded predictions. Pass 089 CI pending. Multiple predictors, other models, cross-validation and native integration outstanding. |
 | 89 | 286 | Scientific computing | Source extended: bounded exact square linear-system elimination with rank/consistency classification and substitution, polynomial definite integration with independent evaluation and derivative check. Pass 090 CI pending. Numerical simulation, broader algorithms and native integration outstanding. |
 | 90 | 288 | Anomaly detection | Source extended: exact baseline-relative IQR thresholds, separate monitoring suffix, original row identities, missing and flagged counts, zero-IQR warning and bounded candidate evidence. Pass 091 CI pending. Multivariate, temporal and adaptive detection outstanding. |
-| 91 | 80 | Time-series forecasting | Not started in this programme |
+| 91 | 80 | Time-series forecasting | Source implemented: exact regular-interval dated numeric forecasting, chronological holdout comparison of last-value, seasonal-naive and drift candidates; refit and future dates. Pass 092 CI pending. Independent final evaluation, uncertainty and richer models outstanding. |
 | 92 | 82 | Jupyter notebook integration | Not started in this programme |
 | 93 | 83 | Live database connections | Not started in this programme |
 | 94 | 247 | API development | Existing partial; completion not started in this programme |
@@ -684,3 +684,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 091 — 27 November 2026
 - Extend existing descriptive IQR flags into reviewed baseline-relative numeric monitoring. Separate baseline and monitoring rows before calculation, explicit multiplier and missing tokens, exact thresholds and flagged row identities. Zero-IQR caveat and bounded examples; no automatic deletion or verified anomaly claim. Three regression cases. Next rank 91 / ID 80 time-series forecasting. No installer.
+
+## Pass 092 — 27 November 2026
+- Reuse exact rational analytics and reviewed CSV workflow. Validate strict regular dates, complete numeric observations and training prefix; evaluate three bounded candidate forecasts on chronological holdout, select by MAE and refit using all observations. Explicitly label selection holdout as not independent final test. Three regressions. Next rank 92 / ID 82 notebooks. No installer.

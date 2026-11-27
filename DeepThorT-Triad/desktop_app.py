@@ -732,6 +732,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(modelling_actions,text='Fit predictive model…',command=lambda:self._review_typed_tool('predictive_modelling','.json','Data: reviewed predictive model')).pack(side='left',padx=3)
         ttk.Button(modelling_actions,text='Scientific calculation…',command=lambda:self._review_typed_tool('scientific_computing','.json','Data: reviewed scientific calculation')).pack(side='left',padx=3)
         ttk.Button(modelling_actions,text='Flag numeric anomalies…',command=lambda:self._review_typed_tool('anomaly_detection','.json','Data: reviewed anomaly candidates')).pack(side='left',padx=3)
+        ttk.Button(modelling_actions,text='Forecast time series…',command=lambda:self._review_typed_tool('time_series_forecast','.json','Data: reviewed time-series forecast')).pack(side='left',padx=3)
         data_actions=ttk.Frame(media_tab);data_actions.pack(fill='x',pady=2)
         ttk.Button(data_actions,text='Install spreadsheet tools…',command=self._install_spreadsheet_tools).pack(side='left',padx=3)
         ttk.Button(data_actions,text='Edit spreadsheet…',command=lambda:self._review_typed_tool('spreadsheet_edit','.xlsx','Spreadsheet: reviewed cell edit')).pack(side='left',padx=3)
@@ -1453,7 +1454,8 @@ class DeepThorTDesktop(tk.Tk):
                  'pdf_visual_quality':('.json','Document: reviewed raster checks'),
                  'predictive_modelling':('.json','Data: reviewed predictive model'),
                  'scientific_computing':('.json','Data: reviewed scientific calculation'),
-                 'anomaly_detection':('.json','Data: reviewed anomaly candidates')}
+                 'anomaly_detection':('.json','Data: reviewed anomaly candidates'),
+                 'time_series_forecast':('.json','Data: reviewed time-series forecast')}
         if allowed.get(module)!=(suffix,label):raise ValueError('Unknown typed tool')
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
             messagebox.showwarning('Tool unavailable','Select a project and finish active work.',parent=self);return
