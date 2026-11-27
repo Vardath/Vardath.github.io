@@ -5,6 +5,9 @@ arbitrary filter/command execution, rights clearance or cinematic quality claim.
 """
 from __future__ import annotations
 import argparse
+from array import array
+import io
+import wave
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +18,7 @@ from deepthort_local import typed_project_tool as guard
 from deepthort_local import video_trimming as video
 from deepthort_local.action_guards import snapshot_file,verify_guards
 from deepthort_local.audio_conversion import installed
-from deepthort_local.tempo_detection import pcm
+
 from deepthort_local.noise_reduction import encode
 from deepthort_local.disk_gate import require_storage
 
@@ -53,6 +56,22 @@ def validate(root,plan):
     if any(snapshot_file(p)!=g for p,g in zip(pp,plan['guards'][1:-2])):
         raise ValueError('Reviewed cinematic input changed')
     return s,dst,pp
+
+def pcm(raw):
+    # Cinematic shots can be shorter than the tempo estimator's 3-second minimum.
+    if not isinstance(raw,bytes) or not 0<len(raw)<=guard.MAX_INPUT:
+        raise ValueError('Soundtrack exceeds byte bound')
+    try:
+        with wave.open(io.BytesIO(raw),'rb') as f:
+            rate,channels,frames=f.getframerate(),f.getnchannels(),f.getnframes()
+            if rate!=RATE or channels not in (1,2) or f.getsampwidth()!=2 or f.getcomptype()!='NONE' or not 1<=frames<=120*RATE or frames*channels*2>guard.MAX_INPUT:
+                raise ValueError('Expected bounded 48 kHz PCM16 WAV')
+            data=f.readframes(frames)
+            if len(data)!=frames*channels*2:raise ValueError('Truncated soundtrack')
+    except (wave.Error,EOFError) as exc:raise ValueError('Invalid soundtrack WAV') from exc
+    samples=array('h');samples.frombytes(data)
+    if sys.byteorder!='little':samples.byteswap()
+    return samples,rate,channels,frames
 
 def soundtrack(raw,s,frames):
     samples,rate,channels,n=pcm(raw)
