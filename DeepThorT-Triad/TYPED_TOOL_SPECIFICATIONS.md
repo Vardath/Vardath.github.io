@@ -731,3 +731,13 @@ Files & Images → Remove object. Select an opaque square RGB PNG and same-size 
 ## Reviewed image object replacement (Pass 163)
 
 Files & Images → Replace object. Select explicit source and mask as for object removal, describe the existing object, a different replacement object, and scene context. The old masked pixels are discarded, the replacement and context supply positive guidance, and the old-object description supplies negative guidance. Source pixels outside the mask remain exact. Identity, geometry, and visual acceptance require review.
+
+## Reviewed pose-guided generation (Pass 164)
+
+Files & Images → Pose-guided image. Select a JSON file containing one `joints` object with 14 named joints; each is an integer `[x,y]` pair in normalized thousandths of the square canvas (0–1000). Example:
+
+```json
+{"joints":{"head":[500,120],"neck":[500,230],"left_shoulder":[390,260],"right_shoulder":[610,260],"left_elbow":[310,420],"right_elbow":[690,420],"left_wrist":[260,550],"right_wrist":[740,550],"left_hip":[440,530],"right_hip":[560,530],"left_knee":[400,710],"right_knee":[600,710],"left_ankle":[380,880],"right_ankle":[620,880]}}
+```
+
+The exact JSON is bound to the queue request, a deterministic mannequin raster becomes the starting image for existing offline SD1.5 image-to-image, and the output is a new PNG. No learned pose detection or ControlNet is used; pose fidelity requires visual review.

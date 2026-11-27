@@ -149,3 +149,28 @@ class ImageToImageTests(unittest.TestCase):
             s=m.review_replacement(root,'source.png','mask.png','out.png','room','ball','cube',256)
             with self.assertRaises(ValueError):m.execute(root,'unused',s,mask_backend=lambda *_:OUT)
             self.assertFalse((root/'out.png').exists())
+
+    def test_pose_guidance_is_bound_and_rasterized(self):
+        import json
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td).resolve()
+            coords=[[500,120],[500,230],[390,260],[610,260],[310,420],[690,420],[260,550],[740,550],[440,530],[560,530],[400,710],[600,710],[380,880],[620,880]]
+            pose={'joints':dict(zip(m.POSE_JOINTS,coords))};src=root/'pose.json';src.write_text(json.dumps(pose),encoding='utf-8')
+            s=m.review_pose(root,'pose.json','out.png','person in a space suit',256)
+            expected=m.pose_guide(src.read_bytes(),256)
+            def backend(model,raw,plan):
+                self.assertEqual(raw,expected);self.assertEqual(plan['guide_kind'],'pose')
+                self.assertGreater(len(set(decode(raw,('RGB',))[3])),2);return OUT
+            r=m.execute(root,'unused',s,backend=backend)
+            self.assertEqual(r['pose_conditioning'],'joint_raster_initialisation')
+            self.assertFalse(r['pose_fidelity_verified']);self.assertFalse(r['controlnet_used'])
+            (root/'out.png').unlink()
+            def changed(*_):
+                pose['joints']['head']=[510,120];src.write_text(json.dumps(pose),encoding='utf-8');return OUT
+            with self.assertRaises(ValueError):m.execute(root,'unused',s,backend=changed)
+            self.assertFalse((root/'out.png').exists())
+    def test_pose_rejects_invalid_joints(self):
+        import json
+        coords=dict(zip(m.POSE_JOINTS,[[500,120],[500,230],[390,260],[610,260],[310,420],[690,420],[260,550],[740,550],[440,530],[560,530],[400,710],[600,710],[380,880],[620,880]]))
+        for joints in ({},dict(coords,head=[True,100]),dict(coords,head=[1001,100]),dict(coords,head=coords['neck'])):
+            with self.assertRaises(ValueError):m.pose_guide(json.dumps({'joints':joints}).encode(),256)

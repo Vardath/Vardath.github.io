@@ -871,6 +871,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Outpaint image…',command=lambda:self._queue_image_to_image(outpaint=True)).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Remove object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='remove')).pack(side='left',padx=3)
         ttk.Button(image_restore_actions,text='Replace object…',command=lambda:self._queue_image_to_image(inpaint=True,object_edit='replace')).pack(side='left',padx=3)
+        ttk.Button(image_restore_actions,text='Pose-guided image…',command=self._queue_pose_image).pack(side='left',padx=3)
         self.refine_image=tk.BooleanVar(value=True)
         tk.Checkbutton(media_tab,text='Ask local coding model to refine image description before generation',
                        variable=self.refine_image,bg=BG,fg=TEXT,selectcolor=PANEL,
@@ -1417,6 +1418,28 @@ class DeepThorTDesktop(tk.Tk):
             'This is an explicit image-generation task, not an ordinary chat message.',parent=self):return
         self._queue_special('image',description,[])
         self.tabs.select(1)
+    def _queue_pose_image(self):
+        if not self.project:
+            messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return
+        from deepthort_local.image_to_image import review_pose
+        try:
+            root=Path(self._project_key()).resolve(strict=True)
+            chosen=filedialog.askopenfilename(parent=self,title='Select 14-joint pose JSON (see typed tool specifications)',initialdir=str(root),filetypes=[('Pose JSON','*.json')])
+            if not chosen:return
+            source=Path(chosen).absolute().relative_to(root).as_posix()
+            prompt=simpledialog.askstring('Pose-guided image','Describe the subject, clothing, scene and visual style:',parent=self)
+            if not prompt:return
+            strength=simpledialog.askinteger('Generation strength','Strength 30–90% (higher changes the guide more):',minvalue=30,maxvalue=90,initialvalue=75,parent=self)
+            if strength is None:return
+            target=f'janus-pose-{uuid.uuid4().hex[:12]}.png'
+            s=review_pose(root,source,target,prompt,384,15,strength,secrets.randbelow(2**32))
+            if not messagebox.askyesno('Confirm pose-guided image',
+                f'Joint guide: {source}\\nOutput: {target}\\nPrompt: {prompt}\\n384 × 384; strength {strength}%\\n'
+                'The existing local diffusion model uses a rasterized mannequin as its starting image. Exact pose fidelity is not guaranteed. No model download.',parent=self):return
+            ident=self.jobs.submit(self._project_key(),self.current_chat,'image',json.dumps(s),target,attachments=[str(root/source)])
+            self._log(f'Pose-guided image job #{ident} queued.');self._refresh_jobs();self.tabs.select(1)
+        except Exception as e:messagebox.showerror('Cannot queue pose-guided image',str(e),parent=self)
+
     def _queue_image_to_image(self,reference=False,inpaint=False,outpaint=False,object_edit=None):
         if not self.project:
             messagebox.showinfo('Choose project','Select a local project workspace first.',parent=self);return

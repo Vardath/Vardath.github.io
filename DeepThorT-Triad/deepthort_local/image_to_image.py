@@ -24,9 +24,10 @@ MASK_FIELDS={'mask','mask_sha256'}
 OUT_FIELDS={'offset_x','offset_y'}
 REMOVE_FIELDS={'operation','removed_object'}
 REPLACE_FIELDS=REMOVE_FIELDS|{'replacement_object'}
+POSE_FIELDS={'guide_kind','guide_layout'}
 
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS) or s['schema']!=SCHEMA:
+    if not isinstance(s,dict) or set(s) not in (FIELDS,FIELDS|REF_FIELDS,FIELDS|MASK_FIELDS,FIELDS|OUT_FIELDS,FIELDS|MASK_FIELDS|REMOVE_FIELDS,FIELDS|MASK_FIELDS|REPLACE_FIELDS,FIELDS|POSE_FIELDS) or s['schema']!=SCHEMA:
         raise ValueError('Invalid image-to-image request')
     if any(not isinstance(s[k],str) or not s[k] for k in ('image','output','prompt','source_sha256')):
         raise ValueError('Missing image, output, description or digest')
@@ -65,6 +66,54 @@ def checked(s):
                 raise ValueError('Describe the replacement object in 1–300 characters')
             if ' '.join(target.casefold().split())==' '.join(replacement.casefold().split()):raise ValueError('Replacement must differ from unwanted object')
             if len(positive_prompt(s))>2000:raise ValueError('Combined replacement prompt exceeds bound')
+    if 'guide_kind' in s:
+        if s['guide_kind']!='pose':raise ValueError('Unsupported structural guide')
+        if s['guide_layout']!='joint-map-v1':raise ValueError('Invalid pose layout')
+    return s
+
+POSE_JOINTS=('head','neck','left_shoulder','right_shoulder','left_elbow','right_elbow','left_wrist','right_wrist',
+             'left_hip','right_hip','left_knee','right_knee','left_ankle','right_ankle')
+POSE_LINKS=(('head','neck'),('neck','left_shoulder'),('neck','right_shoulder'),
+            ('left_shoulder','left_elbow'),('left_elbow','left_wrist'),('right_shoulder','right_elbow'),('right_elbow','right_wrist'),
+            ('left_shoulder','left_hip'),('right_shoulder','right_hip'),('left_hip','right_hip'),
+            ('left_hip','left_knee'),('left_knee','left_ankle'),('right_hip','right_knee'),('right_knee','right_ankle'))
+
+def pose_guide(raw,size):
+    """Rasterize an explicit human joint layout; not automatic pose detection."""
+    from deepthort_local.structured_source import strict_json
+    if len(raw)>16000:raise ValueError('Pose guide exceeds 16 KB')
+    spec=strict_json(raw.decode('utf-8'))
+    if not isinstance(spec,dict) or set(spec)!={'joints'} or not isinstance(spec['joints'],dict) or set(spec['joints'])!=set(POSE_JOINTS):
+        raise ValueError('Expected one complete named 14-joint pose')
+    coords={}
+    for name,value in spec['joints'].items():
+        if not isinstance(value,list) or len(value)!=2 or any(type(v) is not int or not 0<=v<=1000 for v in value):
+            raise ValueError('Joint coordinates must be integer thousandths of the canvas')
+        coords[name]=tuple(round(v*(size-1)/1000) for v in value)
+    if len(set(coords.values()))!=len(coords) or any(sum((coords[a][i]-coords[b][i])**2 for i in (0,1))<4 for a,b in POSE_LINKS):
+        raise ValueError('Pose contains collapsed joints or limbs')
+    Image=image_module()
+    from PIL import ImageDraw
+    with Image.new('RGB',(size,size),(224,224,224)) as im:
+        draw=ImageDraw.Draw(im)
+        torso=[coords[k] for k in ('left_shoulder','right_shoulder','right_hip','left_hip')]
+        draw.polygon(torso,fill=(112,112,112))
+        for a,b in POSE_LINKS:draw.line((coords[a],coords[b]),fill=(105,105,105),width=max(4,size//23))
+        radius=max(2,size//54)
+        for x,y in coords.values():draw.ellipse((x-radius,y-radius,x+radius,y+radius),fill=(78,78,78))
+        x,y=coords['head'];r=max(6,size//21)
+        draw.ellipse((x-r,y-r,x+r,y+r),fill=(105,105,105))
+        return encode(size,size,'RGB',im.tobytes())
+
+def review_pose(root,image,output,prompt,size=384,steps=15,strength_percent=60,seed=0):
+    root=Path(root).resolve(strict=True)
+    source=guard.path_for(root,image,exclusions(()),{'.json'},exists=True)
+    if source.stat().st_size>16000:raise ValueError('Pose guide exceeds 16 KB')
+    s={'schema':SCHEMA,'image':image,'source_sha256':snapshot_file(source)['expected'],'output':output,
+       'prompt':prompt,'size':size,'steps':steps,'strength_percent':strength_percent,'seed':seed,
+       'guide_kind':'pose','guide_layout':'joint-map-v1'}
+    src,_,bound=validate(root,s)
+    pose_guide(guard.exact(src,bound,16000),size)
     return s
 
 def positive_prompt(s):
@@ -165,7 +214,7 @@ def reference_input(root,s,source,bound):
 
 def validate(root,s):
     checked(s);root=Path(root).resolve(strict=True);exclude=exclusions(())
-    source=guard.path_for(root,s['image'],exclude,{'.png'},exists=True)
+    source=guard.path_for(root,s['image'],exclude,{'.json'} if s.get('guide_kind')=='pose' else {'.png'},exists=True)
     dst=guard.path_for(root,s['output'],exclude,{'.png'},exists=False)
     if source.stat().st_size>guard.MAX_INPUT:raise ValueError('Image exceeds input bound')
     bound=snapshot_file(source)
@@ -248,9 +297,11 @@ def diffuse_mask(model,raw,mask_raw,s):
 def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
     src,dst,bound=validate(root,s)
     raw=guard.exact(src,bound,guard.MAX_INPUT)
-    w,h,_,_=decode(raw,('RGB',))
+    pose=s.get('guide_kind')=='pose'
+    raster=pose_guide(raw,s['size']) if pose else raw
+    w,h,_,_=decode(raster,('RGB',))
     ref_path,ref_bound=reference_input(root,s,src,bound)
-    initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raw
+    initial=guide(raw,guard.exact(ref_path,ref_bound,guard.MAX_INPUT),s) if ref_path else raster
     mask_path,mask_bound=mask_input(root,s,src)
     mask=None
     expanded='offset_x' in s
@@ -300,7 +351,9 @@ def execute(root,model,s,*,backend=diffuse,mask_backend=diffuse_mask):
             **({'operation':'replace_object','removed_object':s['removed_object'],'replacement_object':s['replacement_object'],
                 'positive_prompt_sha256':hashlib.sha256(positive_prompt(s).encode()).hexdigest(),
                 'initialisation_sha256':hashlib.sha256(initial).hexdigest(),'replacement_identity_verified':False,
-                'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='replace_object' else {})}
+                'original_masked_pixels_discarded_before_diffusion':True} if s.get('operation')=='replace_object' else {}),
+            **({'guide_kind':'pose','guide_layout':s['guide_layout'],'guide_raster_sha256':hashlib.sha256(raster).hexdigest(),
+                'pose_conditioning':'joint_raster_initialisation','pose_fidelity_verified':False,'controlnet_used':False} if pose else {})}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--model',required=True)
