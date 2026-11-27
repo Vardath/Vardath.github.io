@@ -73,7 +73,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 61 | 226 | Knowledge import and export | Source extended: reviewed portable exact-source enrollment manifests and transactional local index rebuild; Pass 062 CI pending. Full document bundle and cross-application formats outstanding. |
 | 62 | 7 | Scheduled task execution | Source implemented: user-confirmed durable one-shot scheduled chat requests admitted transactionally to the existing conversation dispatcher; Pass 063 CI pending. Background service and native acceptance outstanding. |
 | 63 | 6 | User-defined recurring tasks | Source implemented: explicit fixed-interval recurring conversation requests, bounded occurrence count, transactional release history, missed-interval coalescing and cancellation; Pass 064 CI pending. Native acceptance and OS service outstanding. |
-| 64 | 25 | Website change monitoring | Not started in this programme |
+| 64 | 25 | Website change monitoring | Source implemented: explicitly approved finite public HTTPS hash monitoring, persistent baseline/change/error history, pinned public IPv4 TLS requests, nonblocking desktop dispatch; Pass 065 CI pending. Live remote and native GUI acceptance outstanding. |
 | 65 | 9 | Continuous monitoring of user-defined conditions | Not started in this programme |
 | 66 | 8 | Event-triggered workflows | Not started in this programme |
 | 67 | 17 | Search-engine result interpretation | Not started in this programme |
@@ -588,3 +588,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 064 — 27 November 2026
 
 - Extend durable scheduled requests with user-approved fixed interval (15 minutes–365 days), 2–1000 occurrences, per-occurrence history and same-transaction admission. Missed intervals coalesce to one request, prior pending requests do not overlap, and failed/cancelled previous replies stop recurrence. No new execution grants. Four regressions for cadence, restart, missed intervals, concurrency, failure and cancellation. Pass 060 green and merged (PR 126). Next rank 64 / ID 25 website change monitoring. No installer.
+
+## Pass 065 — 27 November 2026
+
+- Add explicit finite website monitoring, pinned public IPv4 DNS resolution and verified TLS, no redirects/credentials/query/proxy, bounded uncompressed HTML/plain response, exact raw-byte hash baseline/change/error receipts and persistent per-chat history. A single background network thread runs behind gaming/pause gates; cancellation and changed scope discard late observations. No page text enters model prompts. Four regression cases with deterministic transport fixtures; live remote and native GUI acceptance not yet established. Next rank 65 / ID 9 continuous condition monitoring. No installer.
