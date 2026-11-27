@@ -432,3 +432,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 026 — 27 November 2026
 
 - Add reviewed single SELECT/WITH query with positional parameters against exact standalone non-WAL SQLite snapshot in disposable memory, never live DB. Reject journal/sidecar, views, virtual tables, unapproved functions, writes, attachments, extensions and external database access. Require query-only and trusted-schema restrictions plus SQLite authorizer, statement/row/size/step/time bounds. Explicit truncation, typed JSON results with source/query hash and result digest; no result text in process logs. Four actual SQLite regressions for aggregation, truncation, blocked operations and stale source. Reuse typed project review, source guards and new-output publication. Other engines, live connections, richer functions and model integration outstanding. Next rank 26 / ID 283 data cleaning. No installer.
+
+### Pass 026 CI repair
+
+- Run 45935971877 source failed before regression execution at FFmpeg provisioning: rolling Ubuntu 26.04 image's unrelated Microsoft apt repository returned HTTP 403. Pin Ubuntu 24.04 instead of the moving ubuntu-latest label. Keep both actual FFmpeg checks, all tests and native Windows CI. Replacement exact-head CI required.
