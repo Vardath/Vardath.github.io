@@ -48,7 +48,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 36 | 78 | Interactive charts and visualisations | Source implemented: standalone offline HTML chart with series visibility, point selection, literal readout and fixed scale. Pass 037 CI pending; browser UI, richer drilldown and native model integration outstanding. |
 | 37 | 211 | Mathematical reasoning | Source extended: exact bounded rational arithmetic and single-variable linear equations with independent substitution. Pass 038 CI pending; symbolic nonlinear mathematics and native model-directed reasoning outstanding. |
 | 38 | 215 | Persistent personal preferences | Source extended: explicit local persistent presentation defaults, user editor/reset and bounded advisory chat context. Pass 039 CI pending; project-specific preferences and native acceptance outstanding. |
-| 39 | 282 | Statistical analysis | Existing partial; completion not started in this programme |
+| 39 | 282 | Statistical analysis | Source extended: exact descriptive numeric statistics, explicit missingness, quantile and variance methods, verified JSON report. Pass 040 CI pending; inferential statistics and model-directed workflows outstanding. |
 | 40 | 285 | Exploratory data analysis | Existing partial; completion not started in this programme |
 | 41 | 291 | Reproducible analytical reports | Existing partial; completion not started in this programme |
 | 42 | 136 | Musical tempo detection | Not started in this programme |
@@ -488,3 +488,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 039 — 27 November 2026
 
 - Add explicit local personal defaults for length, response style, measurement units and spelling. Fixed choices only, atomic versioned save with stale-editor checks, reset/cancel, no inferred preferences or new authorization. Ordinary chat consumes bounded defaults after existing memory context; current explicit request takes precedence. No project planning policy, resource setting or permission changes. Four regression cases. Next rank 39 / ID 282 statistical analysis. No installer.
+
+## Pass 040 — 27 November 2026
+
+- Add reviewed numeric descriptive statistics over explicit CSV columns. Exact rational min/max/sum/mean/median/quartiles/variance, 24-digit decimal views and standard deviation, explicit sample/population convention and exact missing tokens. Reconcile row counts; reject invalid numeric data rather than silently omit. Source-hash-bound report and four regression cases. No causal, inferential or imputation claims. Next rank 40 / ID 285 exploratory data analysis. No installer.

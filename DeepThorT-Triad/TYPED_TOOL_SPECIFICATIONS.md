@@ -147,3 +147,11 @@ Use expression for constant arithmetic or left/right for a linear equation in x.
 ## Personal preferences
 
 Chats → Personal preferences opens the local presentation defaults editor. Select response length/style, metric or imperial units and spelling. Save explicitly or reset fields and save. Defaults apply as bounded advisory context to ordinary chats only, not execution authority or the project specification. Current instructions override saved defaults.
+
+## Statistical analysis
+
+```json
+{"csv":"data.csv","delimiter":",","columns":["Quantity","Cost"],"missing_tokens":["","NA"],"variance":"sample"}
+```
+
+Explicit numeric columns, exact missing tokens and sample or population variance. JSON results contain exact fractions, 24-significant-digit decimal views and interpolated quartiles. Empty and insufficient samples produce null where undefined. Invalid nonmissing numeric cells block the report. Descriptive only.
