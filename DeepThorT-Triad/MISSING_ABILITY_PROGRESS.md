@@ -72,7 +72,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 60 | 13 | Optical character recognition (OCR) | Source implemented: reviewed offline English PNG OCR via locally installed Tesseract with word boxes, confidence and pinned source/model; Pass 061 CI pending. Wider languages, documents and native acceptance outstanding. |
 | 61 | 226 | Knowledge import and export | Source extended: reviewed portable exact-source enrollment manifests and transactional local index rebuild; Pass 062 CI pending. Full document bundle and cross-application formats outstanding. |
 | 62 | 7 | Scheduled task execution | Source implemented: user-confirmed durable one-shot scheduled chat requests admitted transactionally to the existing conversation dispatcher; Pass 063 CI pending. Background service and native acceptance outstanding. |
-| 63 | 6 | User-defined recurring tasks | Not started in this programme |
+| 63 | 6 | User-defined recurring tasks | Source implemented: explicit fixed-interval recurring conversation requests, bounded occurrence count, transactional release history, missed-interval coalescing and cancellation; Pass 064 CI pending. Native acceptance and OS service outstanding. |
 | 64 | 25 | Website change monitoring | Not started in this programme |
 | 65 | 9 | Continuous monitoring of user-defined conditions | Not started in this programme |
 | 66 | 8 | Event-triggered workflows | Not started in this programme |
@@ -584,3 +584,7 @@ Added the previously excluded partial capability rows to both documents. Origina
 ## Pass 063 — 27 November 2026
 
 - Add one-time scheduled conversation requests with explicit prompt and due-time confirmation, persistent SQLite state, scoped cancellation and exactly-once transactional admission into the existing conversation queue. App running, open bound chat, selected workspace, storage, model, pause and gaming gates are respected. No scheduled build/tool authority, service or guaranteed execution deadline; overdue requests release when eligible. Four regression cases cover actual queued conversation, concurrent release/restart, cancellation and approval. Passes 053–059 green and merged (PRs 119–125). Next rank 63 / ID 6 user-defined recurring tasks. No installer.
+
+## Pass 064 — 27 November 2026
+
+- Extend durable scheduled requests with user-approved fixed interval (15 minutes–365 days), 2–1000 occurrences, per-occurrence history and same-transaction admission. Missed intervals coalesce to one request, prior pending requests do not overlap, and failed/cancelled previous replies stop recurrence. No new execution grants. Four regressions for cadence, restart, missed intervals, concurrency, failure and cancellation. Pass 060 green and merged (PR 126). Next rank 64 / ID 25 website change monitoring. No installer.
