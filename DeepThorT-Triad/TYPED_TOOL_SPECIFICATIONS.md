@@ -785,3 +785,7 @@ Files & Images → Track video patch. JSON: `{"video":"clip.mp4","start_frame":0
 ## Reviewed video frame interpolation (Pass 175)
 
 The existing editor accepts optional top-level `"interpolation":"blend2x"` (default `none`). Produces 48/50/60 fps from 24/25/30 fps by inserting a 50% RGB midpoint inside each clip and duplicating its last frame to preserve duration. No midpoint crosses a hard cut; explicit crossfade overlaps double in output frames. Maximum 60 selected source frames and 120 generated frames. This classical method can ghost during motion; no optical flow or neural interpolation claim.
+
+## Reviewed video upscaling (Pass 176)
+
+Add optional top-level `"upscale":{"scale":2,"method":"lanczos"}` to the existing video editing specification. Scale 2–4; nearest, bicubic or lanczos. Upscale after geometry editing and optional midpoint interpolation, before transitions. Maximum output 1280×960, with selected output RGB bytes limited to the previous 120×640×480×3 buffer budget. No neural detail recovery; native playback and visual quality unverified.

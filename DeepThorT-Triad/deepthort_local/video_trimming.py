@@ -16,7 +16,7 @@ from deepthort_local.disk_gate import require_storage
 SCHEMA='janus-video-trimming-v1'
 MAX_FRAMES=120
 def checked(s):
-    if not isinstance(s,dict) or not {'clips','fps'}<=set(s)<= {'clips','fps','transitions','interpolation'} or type(s['fps']) is not int or s['fps'] not in (24,25,30):
+    if not isinstance(s,dict) or not {'clips','fps'}<=set(s)<= {'clips','fps','transitions','interpolation','upscale'} or type(s['fps']) is not int or s['fps'] not in (24,25,30):
         raise ValueError('Choose explicit 24, 25 or 30 fps and ordered clips')
     clips=s['clips']
     if not isinstance(clips,list) or not 1<=len(clips)<=4:raise ValueError('Choose 1–4 distinct MP4 clips')
@@ -31,11 +31,39 @@ def checked(s):
         names.add(c['video'].casefold());total+=b-a
     if total>MAX_FRAMES:raise ValueError('Initial sequence supports at most 120 selected input frames')
     checked_transitions(s)
+    checked_upscale(s.get('upscale'))
     if s.get('interpolation','none') not in ('none','blend2x'):
         raise ValueError('Choose none or blend2x interpolation')
     if s.get('interpolation')=='blend2x' and total>MAX_FRAMES//2:
         raise ValueError('Interpolation supports at most 60 selected source frames')
     return s
+
+MAX_RENDER_RGB=120*640*480*3
+
+def checked_upscale(u):
+    if u is None:return None
+    if not isinstance(u,dict) or set(u)!={'scale','method'} or type(u['scale']) is not int or u['scale'] not in (2,3,4) or u['method'] not in ('nearest','bicubic','lanczos'):
+        raise ValueError('Choose 2–4x classical upscale with nearest, bicubic or Lanczos')
+    return u
+
+def upscale_size(size,u):
+    if u is None:return size
+    checked_upscale(u);w,h=(n*u['scale'] for n in size)
+    if not 1<=w<=1280 or not 1<=h<=960:raise ValueError('Upscale exceeds 1280x960 output bound')
+    return w,h
+
+def upscale_frames(raw,size,u):
+    if u is None:return raw
+    from deepthort_local.texture_pixels import image_module
+    Image=image_module();target=upscale_size(size,u);stride=size[0]*size[1]*3
+    if not raw or len(raw)%stride or len(raw)//stride*target[0]*target[1]*3>MAX_RENDER_RGB:
+        raise ValueError('Upscale exceeds bounded frame buffer')
+    method={'nearest':Image.Resampling.NEAREST,'bicubic':Image.Resampling.BICUBIC,'lanczos':Image.Resampling.LANCZOS}[u['method']]
+    result=bytearray()
+    for offset in range(0,len(raw),stride):
+        with Image.frombytes('RGB',size,bytes(raw[offset:offset+stride])) as im:
+            with im.resize(target,method) as enlarged:result.extend(enlarged.tobytes())
+    return result
 
 def checked_transitions(s):
     clips=s['clips'];transitions=s.get('transitions',[{'kind':'cut','frames':0} for _ in clips[1:]])
@@ -131,7 +159,7 @@ def run(exe,args,cwd,limit=65536):
         raise ValueError('Local video operation failed or exceeded result bounds')
     return r.stdout
 
-def probe(exe,path,*,allow_double=False):
+def probe(exe,path,*,allow_double=False,allow_upscaled=False):
     data=json.loads(run(exe,['-v','error','-protocol_whitelist','file','-f','mov',
         '-enable_drefs','0','-use_absolute_path','0','-show_entries',
         'stream=codec_type,codec_name,width,height,avg_frame_rate,r_frame_rate,nb_frames','-of','json',path.name],path.parent))
@@ -139,8 +167,9 @@ def probe(exe,path,*,allow_double=False):
     if len(streams)!=1 or streams[0].get('codec_type')!='video' or streams[0].get('codec_name')!='h264':
         raise ValueError('Initial editor accepts one H.264 video stream only; audio and other streams are refused')
     v=streams[0];w,h=v.get('width'),v.get('height')
-    if type(w) is not int or type(h) is not int or not 1<=w<=640 or not 1<=h<=480:
-        raise ValueError('Source exceeds 640x480 bounds')
+    maxw,maxh=(1280,960) if allow_upscaled else (640,480)
+    if type(w) is not int or type(h) is not int or not 1<=w<=maxw or not 1<=h<=maxh:
+        raise ValueError('Video exceeds reviewed dimension bounds')
     try:n=int(v['nb_frames'])
     except (KeyError,TypeError,ValueError) as exc:raise ValueError('Source frame count unavailable') from exc
     rate=v.get('avg_frame_rate')
@@ -184,27 +213,31 @@ def observe(raws,s,tools,folder,*,render):
     verify_guards(list(tools));ff,fp=(g['path'] for g in tools)
     folder=Path(folder);items=[];dimensions=None;selected=bytearray();transitions=checked_transitions(s)
     interpolation=s.get('interpolation','none');factor=2 if interpolation=='blend2x' else 1
-    output_fps=s['fps']*factor
+    output_fps=s['fps']*factor;upscale=s.get('upscale')
+    selected_count=sum(c['end_frame']-c['start_frame'] for c in s['clips'])*factor
     rendered_transitions=[dict(t,frames=t['frames']*factor) for t in transitions]
     for i,(raw,c) in enumerate(zip(raws,s['clips'])):
         path=folder/f'input-{i}.mp4';path.write_bytes(raw)
         m=probe(fp,path);size=(m['width'],m['height'])
-        edit=c.get('edit');out_size=edited_size(size,edit)
+        edit=c.get('edit');edited_geometry=edited_size(size,edit);out_size=upscale_size(edited_geometry,upscale)
+        if selected_count*out_size[0]*out_size[1]*3>MAX_RENDER_RGB:
+            raise ValueError('Combined frame count and upscaled dimensions exceed existing RGB budget')
         if m['fps']!=s['fps'] or c['end_frame']>m['frames'] or (dimensions is not None and out_size!=dimensions):
             raise ValueError('Source frame range, edited dimensions or rate do not match reviewed sequence')
         dimensions=out_size
-        item=dict(c,source_sha256=hashlib.sha256(raw).hexdigest(),source_format=m,edited_size=list(out_size))
+        item=dict(c,source_sha256=hashlib.sha256(raw).hexdigest(),source_format=m,edited_size=list(edited_geometry),output_size=list(out_size))
         if render:
             frames=decode(ff,path,c['start_frame'],c['end_frame'],*size)
             item['selected_rgb_sha256']=hashlib.sha256(frames).hexdigest()
             edited=edit_frames(frames,size,edit)
             item['edited_rgb_sha256']=hashlib.sha256(edited).hexdigest()
-            if factor==2:edited=interpolate_frames(edited,out_size)
+            if factor==2:edited=interpolate_frames(edited,edited_geometry)
+            edited=upscale_frames(edited,edited_geometry,upscale)
             append_transition(selected,edited,out_size,rendered_transitions[i-1] if i else {'kind':'cut','frames':0})
         items.append(item)
     count=(sum(c['end_frame']-c['start_frame'] for c in s['clips'])-sum(t['frames'] for t in transitions))*factor
     if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':output_fps,
-        'transitions':rendered_transitions,'output_frames':count,'interpolation':interpolation}
+        'transitions':rendered_transitions,'output_frames':count,'interpolation':interpolation,'upscale':upscale}
     w,h=dimensions
     if len(selected)!=count*w*h*3:raise ValueError('Transition sequence length mismatch')
     raw_path=folder/'sequence.rgb';raw_path.write_bytes(selected)
@@ -216,14 +249,14 @@ def observe(raws,s,tools,folder,*,render):
             '-preset','ultrafast','-crf','0','-pix_fmt','rgb24','-map_metadata','-1',
             '-movflags','+faststart',out.name],folder)
     payload=guard.read_bound(out,guard.MAX_OUTPUT)
-    meta=probe(fp,out,allow_double=factor==2)
+    meta=probe(fp,out,allow_double=factor==2,allow_upscaled=upscale is not None)
     if meta!={'width':w,'height':h,'frames':count,'fps':output_fps}:
         raise ValueError('Output video format or frame count mismatch')
     if decode(ff,out,0,count,w,h)!=selected:
         raise ValueError('Output RGB frames differ from selected input sequence')
     verify_guards(list(tools))
     return payload,{'clips':items,'width':w,'height':h,'fps':output_fps,'frames':count,
-                    'duration_seconds':count/output_fps,'transitions':rendered_transitions,'interpolation':interpolation,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
+                    'duration_seconds':count/output_fps,'transitions':rendered_transitions,'interpolation':interpolation,'upscale':upscale,'neural_super_resolution_used':False,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
                     'decoded_rgb_sequence_verified':True,'audio_supported':False,'visual_playback_verified':False,
                     'encoding':'lossless H.264 RGB; playback compatibility may vary'}
 
@@ -255,7 +288,7 @@ def review(root,source,output,exclude=()):
     paths=_paths(Path(plan['root']),s,plan['exclude'])
     plan['guards'].extend(snapshot_file(p) for p in paths);plan['guards'].extend(installed(root))
     _,m=operation(root,plan,False)
-    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; optional crossfade/cut transitions and 2x midpoint blending; no audio or motion-compensated interpolation.')
+    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; optional crossfade/cut transitions and 2x midpoint blending, optional classical upscaling; no audio or motion-compensated interpolation.')
 def execute(root,plan):
     _,dst,_=validate(root,plan);payload,r=operation(root,plan,True)
     sha=guard.publish(payload,dst,lambda:validate(root,plan))
