@@ -684,6 +684,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(media_actions,text='Create PDF…',command=self._review_pdf_document).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Extract PDF tables…',command=self._review_pdf_tables).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Convert document…',command=self._review_document_conversion).pack(side='left',padx=3)
+        ttk.Button(media_actions,text='Compare documents…',command=self._review_document_comparison).pack(side='left',padx=3)
+        media_actions=ttk.Frame(media_tab);media_actions.pack(fill='x',pady=2)
         ttk.Button(media_actions,text='Install Vision Model…',command=self._install_vision).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Install Image Generator…',command=self._install_image_generator).pack(side='left',padx=3)
         ttk.Button(media_actions,text='Generate image from prompt',command=self._queue_image).pack(side='left',padx=3)
@@ -1247,6 +1249,40 @@ class DeepThorTDesktop(tk.Tk):
         if old is not None and old.window.winfo_exists():
             old.window.lift();return
         self._knowledge_dialog=KnowledgeDialog(self)
+
+    def _review_document_comparison(self):
+        if not self.project or not self._editor_idle(str(self.project),proposal=True):
+            messagebox.showwarning('Comparison unavailable','Select a project and finish active work.',parent=self);return
+        project=str(self.project)
+        types=[('Supported documents','*.txt *.md *.docx *.pdf')]
+        before=filedialog.askopenfilename(parent=self,initialdir=project,title='Select original document',filetypes=types)
+        if not before:return
+        after=filedialog.askopenfilename(parent=self,initialdir=project,title='Select revised document',filetypes=types)
+        if not after:return
+        try:
+            a=Path(before).relative_to(Path(project)).as_posix()
+            b=Path(after).relative_to(Path(project)).as_posix()
+            output=simpledialog.askstring('New comparison report','Project-relative JSON output (must not exist):',
+                initialvalue=Path(b).with_name(Path(b).stem+'-comparison.json').as_posix(),parent=self)
+            if not output:return
+            from deepthort_local.document_comparison import review
+            plan=review(project,a,b,output,self.inspection_exclusions.paths(project))
+            if not messagebox.askyesno('Approve document comparison',
+                f"Original: {a}\nRevised: {b}\nNew report: {output}\n\n"
+                'Report contains changed extracted text, not just counts. No visual, formatting or semantic comparison. Both sources preserved. Continue?',parent=self):return
+            if not self._editor_idle(project,proposal=True):return
+            from deepthort_local.source_security import exclusions
+            if exclusions(self.inspection_exclusions.paths(project))!=plan['exclude']:raise ValueError('Inspection exclusions changed')
+            from deepthort_local.action_guards import snapshot_file
+            script=ROOT/'deepthort_local'/'document_comparison.py';exclusion_file=self.inspection_exclusions.path
+            guards=[snapshot_file(script),*plan['guards'],snapshot_file(Path(project)/output,kind='absent'),
+                    snapshot_file(exclusion_file,kind='sha256' if exclusion_file.exists() else 'absent')]
+            action=self.janus.add_approved_action(argv=[sys.executable,'-I','-B',str(script),'--root',project,'--plan',json.dumps(plan,ensure_ascii=True)],
+                cwd=project,label='Document: reviewed comparison',kind='tool',user_approved=True,input_guards=guards)
+            self._log(f'JANUS document comparison #{action} queued; inspect change report and source scope.')
+            self._show_janus_status()
+        except (OSError,ValueError,PermissionError) as exc:
+            messagebox.showwarning('Comparison not queued',str(exc),parent=self)
 
     def _review_document_conversion(self):
         if not self.project or not self._editor_idle(str(self.project),proposal=True):
