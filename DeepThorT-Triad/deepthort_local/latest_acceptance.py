@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Callable
 
 SCHEMA = 'deepthort-latest-test-v1'
-ALLOWED = frozenset({'shared_cap','triad_residency','triad_inference','concurrent_status','janus_core','triad_collaboration','production_review','task_memory','portable_skills','portable_procedures','local_mcp','mcp_calls','task_mcp','mcp_stdio','memory_governance','live_memory','application_workflow','speech_backend','visual_backend','video_render','multimedia_core','memory_core','memory_observer','workflow_doctrine','delegation','team_delegation','project_assignment'})
+ALLOWED = frozenset({'shared_cap','triad_residency','triad_inference','concurrent_status','janus_core','triad_collaboration','production_review','task_memory','portable_skills','portable_procedures','local_mcp','mcp_calls','task_mcp','mcp_stdio','memory_governance','live_memory','application_workflow','speech_backend','visual_backend','video_render','multimedia_core','memory_core','memory_observer','workflow_doctrine','delegation','team_delegation','project_assignment','five_model_acceptance'})
 STATUSES = frozenset({'passed', 'failed', 'blocked', 'inconclusive', 'cancelled'})
 
 
@@ -41,8 +41,8 @@ def load_test(path: str | Path) -> dict:
     if not isinstance(data['title'], str) or not (1 <= len(data['title']) <= 140):
         raise LatestTestError('Invalid latest test title')
     checks = data['checks']
-    if not isinstance(checks, list) or not (1 <= len(checks) <= 23):
-        raise LatestTestError('Latest test needs 1–23 built-in checks')
+    if not isinstance(checks, list) or not (1 <= len(checks) <= 24):
+        raise LatestTestError('Latest test needs 1–24 built-in checks')
     if any(not isinstance(value, str) or value not in ALLOWED for value in checks):
         raise LatestTestError('The test manifest requested an unknown or executable action')
     if len(checks) != len(set(checks)):

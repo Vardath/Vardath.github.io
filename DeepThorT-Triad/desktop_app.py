@@ -1304,7 +1304,25 @@ class DeepThorTDesktop(tk.Tk):
             return exercise(ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
                 health=health,expected_pid=expected_primary,
                 notify=lambda message:self.events.put(('latest_test_progress',message)))
-        probes={'project_assignment':project_assignment_probe,'team_delegation':team_delegation_probe,'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
+        def five_model_acceptance_probe():
+            if not observed['resident']:return {'status':'blocked','detail':'Resident text workers required'}
+            if self.active_job is not None or self.active_conversation is not None or getattr(self,'_verification_preflight',False):
+                return {'status':'inconclusive','detail':'Active project work; integrated probe deferred'}
+            if self.disk_gate.gaming():return {'status':'blocked','detail':'Gaming priority'}
+            with self._council_lock:
+                if self._council_busy:return {'status':'inconclusive','detail':'Council busy'}
+                self._council_busy=True
+            try:
+                from deepthort_local.five_model_acceptance import exercise
+                import tempfile
+                with tempfile.TemporaryDirectory(prefix='triad-five-model-') as temp:
+                    client=LocalModelClient(Path(temp)/'sessions.sqlite3',timeout=180)
+                    return exercise(health,expected_primary,
+                        lambda role,prompt,tokens:client.chat_as(role,'five-model-'+role,prompt,max_tokens=tokens),
+                        ROOT,cancelled=lambda:cancel.is_set() or self.disk_gate.gaming(),
+                        notify=lambda stage:self.events.put(('latest_test_progress','five-model: '+stage)))
+            finally:self._council_busy=False
+        probes={'five_model_acceptance':five_model_acceptance_probe,'project_assignment':project_assignment_probe,'team_delegation':team_delegation_probe,'delegation':delegation_probe,'workflow_doctrine':workflow_doctrine_probe,'memory_observer':memory_observer_probe,'memory_core':memory_core_probe,'multimedia_core':multimedia_core_probe,'video_render':video_render_probe,'visual_backend':visual_backend_probe,'speech_backend':speech_backend_probe,'application_workflow':application_workflow_probe,'shared_cap':supervisor_probe,'triad_residency':residency_probe,
                 'janus_core':janus_core_probe,'triad_inference':triad_inference_probe,
                 'concurrent_status':concurrency_probe,'triad_collaboration':collaboration_probe,'production_review':production_review_probe,'task_memory':task_memory_probe,'portable_skills':portable_skills_probe,'portable_procedures':portable_procedures_probe,'local_mcp':local_mcp_probe,'mcp_calls':mcp_calls_probe,'task_mcp':task_mcp_probe,'mcp_stdio':mcp_stdio_probe,'memory_governance':memory_governance_probe,'live_memory':live_memory_probe}
 
