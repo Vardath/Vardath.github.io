@@ -559,3 +559,7 @@ Optionally enable POST /janus/v1/tasks on the temporary local developer gateway.
 ## Cross-device status notification (Pass 120)
 
 Files & Images → Status notification. Select one existing job or conversation ID in the current project/chat. Provide a dedicated private ntfy.sh topic and access token, explicitly approve the possible generic terminal-state messages. A finite five-minute watch sends at most one HTTPS JSON POST when a terminal state is observed. The message excludes ID, paths, prompts and results; token is not persisted. Configure topic access and receiving-device subscription independently. Provider caching may apply. Provider acceptance is not device-delivery proof. Protocol: https://docs.ntfy.sh/publish/ .
+
+## Microphone recording (Pass 121)
+
+Files & Images → Record microphone. Select a project, approve a 1–30 second recording of the Windows default input device. Capture is local 16 kHz mono PCM16 with visible recording and cancellation. Afterwards separately approve a new project-relative WAV in an existing folder; cancel discards the recording. Protected, linked and existing targets refused. No automatic upload, playback, transcript or model ingestion. Physical microphone acceptance requires a Windows desktop with an available device.

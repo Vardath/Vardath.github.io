@@ -793,6 +793,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(audio_review_actions,text='Estimate musical key…',command=lambda:self._review_typed_tool('musical_key','.json','Audio: reviewed key')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Reduce quiet noise…',command=lambda:self._review_typed_tool('noise_reduction','.wav','Audio: reviewed noise reduction')).pack(side='left',padx=3)
         ttk.Button(audio_review_actions,text='Convert WAV to FLAC/MP3…',command=lambda:self._review_typed_tool('audio_conversion','.flac','Audio: reviewed conversion')).pack(side='left',padx=3)
+        ttk.Button(audio_review_actions,text='Record microphone…',command=self._show_microphone).pack(side='left',padx=3)
         texture_review_actions=ttk.Frame(media_tab);texture_review_actions.pack(fill='x',pady=2)
         ttk.Button(texture_review_actions,text='Generate normal map…',command=lambda:self._review_typed_tool('normal_map','.png','Texture: reviewed normal map')).pack(side='left',padx=3)
         ttk.Button(texture_review_actions,text='Generate height map…',command=lambda:self._review_typed_tool('height_map','.png','Texture: reviewed height map')).pack(side='left',padx=3)
@@ -1421,6 +1422,10 @@ class DeepThorTDesktop(tk.Tk):
 
     def _show_github_oauth(self):
         from deepthort_local.github_oauth_dialog import show
+        show(self)
+
+    def _show_microphone(self):
+        from deepthort_local.microphone_dialog import show
         show(self)
 
     def _show_cross_device_notification(self):
