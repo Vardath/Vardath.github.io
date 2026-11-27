@@ -163,7 +163,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 151 | 166 | Animation retargeting | Partial: reviewed source and target skeletons, one-to-one parent-compatible correspondence, local quaternion basis transfer and verified target GLB rotation tracks. Pass 152 CI pending. Automatic correspondence, IK, contacts, root motion and native playback outstanding. |
 | 152 | 318 | Physics simulation | Partial: reviewed independent sphere trajectories, constant gravity, analytic floor impact/restitution, bounded samples and verified JSON output. Pass 153 CI pending. Mutual collision, angular dynamics, friction, constraints, fluids, engine integration and native acceptance outstanding. |
 | 153 | 95 | Image super-resolution and upscaling | Partial: reviewed 2–4x nearest/bicubic/Lanczos upscaling, alpha-aware resampling, bounded premultiplied sharpening and verified PNG. Pass 154 CI pending. Neural super-resolution, inferred detail and visual acceptance outstanding. |
-| 154 | 94 | Image restoration | Not started in this programme |
+| 154 | 94 | Image restoration | Partial: reviewed thresholded median impulse-noise suppression and optional explicitly masked local scratch interpolation, untouched unmasked pixels and verified PNG. Pass 155 CI pending. Learned restoration, large damage, blur recovery and visual acceptance outstanding. |
 | 155 | 93 | Image colourisation | Not started in this programme |
 | 156 | 92 | Image style transfer | Not started in this programme |
 | 157 | 85 | Image-to-image generation | Not started in this programme |
@@ -890,3 +890,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 154 — 27 November 2026
 - Add actual bounded classical image upscaling (2–4x, max 2048 px), nearest for pixel art, bicubic/Lanczos alpha-aware interpolation, optional premultiplied sharpening and decoded pixel/alpha verification. Exact guarded PNG and output; three fixtures. No neural detail recovery or quality claim. Next rank 154 / ID 94 image restoration. No installer.
+
+## Pass 155 — 27 November 2026
+- Add bounded opaque PNG classical restoration, thresholded 3×3 median impulse suppression or binary reviewed damage-mask local inverse-distance interpolation within 3 px. Max one megapixel and 25% masked area; preserve unmasked bytes and alpha; reject unsupported interiors. Exact source guards and decoded PNG checks; three fixtures. Reconstructed pixels are estimates, no historical detail recovery. Next rank 155 / ID 93 image colourisation. No installer.
