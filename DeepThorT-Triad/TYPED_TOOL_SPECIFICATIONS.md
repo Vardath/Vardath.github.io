@@ -487,3 +487,7 @@ Files & Images → Learn documented API interface. JSON: `{"document":"openapi.j
 ## Python local refactoring (Pass 101)
 
 Files & Images → Refactor Python local name. JSON: `{"document":"source.py","function":"compute","old_name":"total","new_name":"result"}`. One unique top-level undecorated function, locally assigned name only, conservative scope and collision restrictions; UTF-8/LF source without BOM. Exact source offsets and full module AST comparison; new `.py` file, never overwrite or execute original. AST equality under the intended rename is not proof of runtime equivalence.
+
+## Automated debugging evidence (Pass 102)
+
+The existing read-only agent diagnostics tool additionally resolves Python traceback frame paths and line numbers against the current indexed project. Returns exact current source hashes and bounded source lines, not a guessed root cause or failure-time source identity. No external path reads, execution or edits. Agent evidence revalidation rejects stale source.

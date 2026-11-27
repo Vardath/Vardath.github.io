@@ -14,6 +14,7 @@ from .reasoning_council import sha
 from .specification_guard import review_source
 from .agent_tool_selection import shortlist,pack
 from .document_review import review_documents
+from .debug_evidence import candidates as debug_candidates
 
 MAX_CALLS=3
 MAX_RESULT=1100
@@ -87,6 +88,7 @@ class RepositoryTools:
             value=self.diagnostic()
             if not isinstance(value,str) or not value.strip():raise ValueError('No recorded job diagnostic')
             items=[{'diagnostic_sha256':sha(value),'diagnostic':value[-650:]}]
+            items.extend(debug_candidates(self.root,value,self.current(),self.exclude,self.cancelled))
         elif tool=='git_history':
             items=self.git_observation()
         elif tool=='document_search':
