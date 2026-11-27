@@ -126,7 +126,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 114 | 67 | Webhook integration | Source extended: one approved finite loopback GitHub-format webhook session with exact event, HMAC-SHA256, bounded JSON/body, metadata-only receipt and cancellation. Pass 115 CI pending. Public HTTPS endpoint, remote delivery, persistent deduplication and event-trigger admission outstanding. |
 | 115 | 203 | OpenAI-compatible external developer API | Source extended: approved ephemeral authenticated loopback models and non-streaming chat-completions gateway to existing Granite broker, no privileged roles or state/tool access. Pass 116 CI pending. Broader SDK compatibility, native model acceptance, streaming and public deployment outstanding. |
 | 116 | 328 | Local developer API | Source extended: separate approval for read-only current project/chat job and request metadata endpoint on existing ephemeral gateway; exact bound scope, bounded rows and no store recovery. Pass 117 CI pending. Task submission, broader endpoints and native integration acceptance outstanding. |
-| 117 | 329 | Headless agent operation | Existing partial; completion not started in this programme |
+| 117 | 329 | Headless agent operation | Source extended: command-line client for existing explicitly enabled developer session; model discovery, bounded stdin prompt, and approved scoped status, JSON stdout. Pass 118 CI pending. Standalone desktop-free supervisor, persistent autonomous agent dispatch and native acceptance outstanding. |
 | 118 | 10 | Remote task submission | Not started in this programme |
 | 119 | 11 | Cross-device notifications | Not started in this programme |
 | 120 | 2 | Microphone input | Not started in this programme |
@@ -768,3 +768,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 117 — 27 November 2026
 - Extend the existing local developer gateway, not a second server, with optional separately approved GET /janus/v1/status. Bind exact current project/chat, read existing SQLite stores in query-only mode without startup recovery, return only recent IDs, modes and states. No prompt, response, paths, commands or new authority. Three scoped-store and real loopback regressions. Pass 111 both CI jobs green (45974647365); hold behind earlier merges. Next rank 117 / ID 329 headless agent operation. No installer.
+
+## Pass 118 — 27 November 2026
+- Add headless CLI client reusing existing approved loopback developer gateway; no independent model launch, duplicate scheduler, state DB mutation or broker credential. Explicit models/status/chat operations, bounded UTF-8 stdin, transient key via masked input or environment, no automatic retry. Actual loopback client tests and refusal tests. This is headless client operation, not a standalone headless agent host. Next rank 118 / ID 10 remote task submission. No installer.

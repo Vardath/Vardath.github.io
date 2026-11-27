@@ -547,3 +547,7 @@ Files & Images → Local developer API. Explicitly approve temporary loopback se
 ## Local developer status API (Pass 117)
 
 The temporary developer gateway can separately authorize GET /janus/v1/status for the exact selected project/chat. Up to 50 latest jobs and conversation requests per store, IDs/modes/states only, same temporary key. No prompts, files, paths, actions, startup recovery, cross-scope access or atomic cross-store snapshot. Disabled unless explicitly approved; changes of project/chat close admissions.
+
+## Headless client (Pass 118)
+
+After approving a temporary developer session in the desktop, run `python janus_cli.py --port PORT models`, `status` (if separately enabled), or `chat --max-tokens 128` with a bounded UTF-8 prompt on stdin. Supply the temporary client key through masked input or JANUS_DEVELOPER_KEY, never a command-line argument. JSON result on stdout; failures use nonzero status and no automatic retry. Desktop remains the authority and capped model host; this does not start a standalone headless agent.
