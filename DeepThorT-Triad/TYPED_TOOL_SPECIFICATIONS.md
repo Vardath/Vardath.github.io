@@ -623,3 +623,7 @@ Files & Images → Arrange music. JSON keys: `bpm` (40–220), `parts` (1–8 ob
 ## Instrumental audio synthesis (Pass 136)
 
 Files & Images → Synthesize instruments. JSON keys: `midi` (canonical JANUS `.mid`/`.midi`), `voices` (one per part, objects with `timbre` = sine/organ/pluck/strings/bass, `gain_db` -36 to 0, `pan` -1 to 1), `peak_dbfs` -18 to -1. Render up to 30 seconds and 2 million total note samples to new stereo 22.05 kHz PCM16 WAV, respecting timing, rests and velocities. Deterministic synthetic timbres, not General MIDI samples or neural instrument realism. Shared peak attenuation, no boost. Exact decoded PCM verification; listening acceptance outstanding.
+
+## Automated audio mixing (Pass 137)
+
+Files & Images → Auto-balance mix. JSON keys: `tracks` (2–6 distinct project-relative `audio` WAV paths, `offset_ms` 0–10000, `trim_db` -24 to 6, `pan` -1 to 1), `target_rms_dbfs` -36 to -12, `max_boost_db` 0–12, `peak_dbfs` -12 to -1. Mono/stereo PCM16 inputs with matching 8–48 kHz rate, 3 seconds minimum each and 30 seconds maximum output. Whole-track RMS gain auto-balance with explicit trim, stereo balance or mono pan, offset and shared peak ceiling. Near-silent tracks rejected. New verified stereo WAV; no perceptual loudness, automatic EQ/compression or listening acceptance claim.
