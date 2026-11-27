@@ -16,7 +16,7 @@ from deepthort_local.disk_gate import require_storage
 SCHEMA='janus-video-trimming-v1'
 MAX_FRAMES=120
 def checked(s):
-    if not isinstance(s,dict) or set(s) not in ({'clips','fps'},{'clips','fps','transitions'}) or type(s['fps']) is not int or s['fps'] not in (24,25,30):
+    if not isinstance(s,dict) or not {'clips','fps'}<=set(s)<= {'clips','fps','transitions','interpolation'} or type(s['fps']) is not int or s['fps'] not in (24,25,30):
         raise ValueError('Choose explicit 24, 25 or 30 fps and ordered clips')
     clips=s['clips']
     if not isinstance(clips,list) or not 1<=len(clips)<=4:raise ValueError('Choose 1–4 distinct MP4 clips')
@@ -31,6 +31,10 @@ def checked(s):
         names.add(c['video'].casefold());total+=b-a
     if total>MAX_FRAMES:raise ValueError('Initial sequence supports at most 120 selected input frames')
     checked_transitions(s)
+    if s.get('interpolation','none') not in ('none','blend2x'):
+        raise ValueError('Choose none or blend2x interpolation')
+    if s.get('interpolation')=='blend2x' and total>MAX_FRAMES//2:
+        raise ValueError('Interpolation supports at most 60 selected source frames')
     return s
 
 def checked_transitions(s):
@@ -127,7 +131,7 @@ def run(exe,args,cwd,limit=65536):
         raise ValueError('Local video operation failed or exceeded result bounds')
     return r.stdout
 
-def probe(exe,path):
+def probe(exe,path,*,allow_double=False):
     data=json.loads(run(exe,['-v','error','-protocol_whitelist','file','-f','mov',
         '-enable_drefs','0','-use_absolute_path','0','-show_entries',
         'stream=codec_type,codec_name,width,height,avg_frame_rate,r_frame_rate,nb_frames','-of','json',path.name],path.parent))
@@ -140,7 +144,8 @@ def probe(exe,path):
     try:n=int(v['nb_frames'])
     except (KeyError,TypeError,ValueError) as exc:raise ValueError('Source frame count unavailable') from exc
     rate=v.get('avg_frame_rate')
-    if not 1<=n<=300 or rate not in ('24/1','25/1','30/1') or rate!=v.get('r_frame_rate'):
+    allowed_rates=('24/1','25/1','30/1','48/1','50/1','60/1') if allow_double else ('24/1','25/1','30/1')
+    if not 1<=n<=300 or rate not in allowed_rates or rate!=v.get('r_frame_rate'):
         raise ValueError('Expected short constant-rate video metadata')
     return {'width':w,'height':h,'frames':n,'fps':int(rate.split('/')[0])}
 
@@ -156,11 +161,31 @@ def decode(exe,path,first,last,w,h):
     if len(data)!=limit:raise ValueError('Decoded frame count differs from reviewed frame interval')
     return data
 
+def interpolate_frames(raw,size):
+    """Insert a midpoint between neighbors; duplicate final frame to retain duration."""
+    from deepthort_local.texture_pixels import image_module
+    Image=image_module();stride=size[0]*size[1]*3
+    if not raw or len(raw)%stride or len(raw)//stride>MAX_FRAMES//2:
+        raise ValueError('Invalid interpolation frame count')
+    result=bytearray()
+    for offset in range(0,len(raw),stride):
+        a=bytes(raw[offset:offset+stride])
+        result.extend(a)
+        if offset+stride==len(raw):result.extend(a);continue
+        b=bytes(raw[offset+stride:offset+2*stride])
+        with Image.frombytes('RGB',size,a) as left:
+            with Image.frombytes('RGB',size,b) as right:
+                with Image.blend(left,right,.5) as middle:result.extend(middle.tobytes())
+    return result
+
 def observe(raws,s,tools,folder,*,render):
     checked(s)
     if len(raws)!=len(s['clips']):raise ValueError('Clip count mismatch')
     verify_guards(list(tools));ff,fp=(g['path'] for g in tools)
     folder=Path(folder);items=[];dimensions=None;selected=bytearray();transitions=checked_transitions(s)
+    interpolation=s.get('interpolation','none');factor=2 if interpolation=='blend2x' else 1
+    output_fps=s['fps']*factor
+    rendered_transitions=[dict(t,frames=t['frames']*factor) for t in transitions]
     for i,(raw,c) in enumerate(zip(raws,s['clips'])):
         path=folder/f'input-{i}.mp4';path.write_bytes(raw)
         m=probe(fp,path);size=(m['width'],m['height'])
@@ -174,30 +199,31 @@ def observe(raws,s,tools,folder,*,render):
             item['selected_rgb_sha256']=hashlib.sha256(frames).hexdigest()
             edited=edit_frames(frames,size,edit)
             item['edited_rgb_sha256']=hashlib.sha256(edited).hexdigest()
-            append_transition(selected,edited,out_size,transitions[i-1] if i else {'kind':'cut','frames':0})
+            if factor==2:edited=interpolate_frames(edited,out_size)
+            append_transition(selected,edited,out_size,rendered_transitions[i-1] if i else {'kind':'cut','frames':0})
         items.append(item)
-    count=sum(c['end_frame']-c['start_frame'] for c in s['clips'])-sum(t['frames'] for t in transitions)
-    if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':s['fps'],
-        'transitions':transitions,'output_frames':count}
+    count=(sum(c['end_frame']-c['start_frame'] for c in s['clips'])-sum(t['frames'] for t in transitions))*factor
+    if not render:return None,{'clips':items,'width':dimensions[0],'height':dimensions[1],'fps':output_fps,
+        'transitions':rendered_transitions,'output_frames':count,'interpolation':interpolation}
     w,h=dimensions
     if len(selected)!=count*w*h*3:raise ValueError('Transition sequence length mismatch')
     raw_path=folder/'sequence.rgb';raw_path.write_bytes(selected)
     out=folder/'sequence.mp4'
     verify_guards(list(tools))
     run(ff,['-nostdin','-hide_banner','-loglevel','error','-xerror','-n','-protocol_whitelist','file',
-            '-f','rawvideo','-pixel_format','rgb24','-video_size',f'{w}x{h}','-framerate',str(s['fps']),
+            '-f','rawvideo','-pixel_format','rgb24','-video_size',f'{w}x{h}','-framerate',str(output_fps),
             '-i',raw_path.name,'-map','0:v:0','-an','-threads','1','-c:v','libx264rgb',
             '-preset','ultrafast','-crf','0','-pix_fmt','rgb24','-map_metadata','-1',
             '-movflags','+faststart',out.name],folder)
     payload=guard.read_bound(out,guard.MAX_OUTPUT)
-    meta=probe(fp,out)
-    if meta!={'width':w,'height':h,'frames':count,'fps':s['fps']}:
+    meta=probe(fp,out,allow_double=factor==2)
+    if meta!={'width':w,'height':h,'frames':count,'fps':output_fps}:
         raise ValueError('Output video format or frame count mismatch')
     if decode(ff,out,0,count,w,h)!=selected:
         raise ValueError('Output RGB frames differ from selected input sequence')
     verify_guards(list(tools))
-    return payload,{'clips':items,'width':w,'height':h,'fps':s['fps'],'frames':count,
-                    'duration_seconds':count/s['fps'],'transitions':transitions,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
+    return payload,{'clips':items,'width':w,'height':h,'fps':output_fps,'frames':count,
+                    'duration_seconds':count/output_fps,'transitions':rendered_transitions,'interpolation':interpolation,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
                     'decoded_rgb_sequence_verified':True,'audio_supported':False,'visual_playback_verified':False,
                     'encoding':'lossless H.264 RGB; playback compatibility may vary'}
 
@@ -229,7 +255,7 @@ def review(root,source,output,exclude=()):
     paths=_paths(Path(plan['root']),s,plan['exclude'])
     plan['guards'].extend(snapshot_file(p) for p in paths);plan['guards'].extend(installed(root))
     _,m=operation(root,plan,False)
-    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; optional crossfade/cut transitions; no audio or retiming.')
+    return plan,dict(s,observations=m,scope='Short silent H.264 MP4 clips only; frame-index sequence with optional crop, clockwise rotation and flip; optional crossfade/cut transitions and 2x midpoint blending; no audio or motion-compensated interpolation.')
 def execute(root,plan):
     _,dst,_=validate(root,plan);payload,r=operation(root,plan,True)
     sha=guard.publish(payload,dst,lambda:validate(root,plan))

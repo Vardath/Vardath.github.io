@@ -183,7 +183,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 171 | 298 | Video editing | Partial: existing verified frame sequence editor now accepts optional per-clip crop, clockwise discrete rotation and flip, with common output geometry and exact decoded edited RGB verification. Pass 172 CI pending. Audio, retiming, interactive timelines and native playback outstanding. |
 | 172 | 300 | Video transitions | Partial: reviewed explicit cut/crossfade boundaries with 1–12 overlap frames, per-clip non-overlap reserve, exact output frame count and decoded RGB verification. Pass 173 CI pending. Audio transitions, wider effects and native playback outstanding. |
 | 173 | 111 | Video motion tracking | Partial: reviewed fixed-template RGB patch translation with bounded search/error threshold, ambiguity/loss stop, frame/timestamp evidence and guarded JSON output. Pass 174 CI pending. Scale, rotation, occlusion recovery and semantic tracking outstanding. |
-| 174 | 113 | Video frame interpolation | Not started in this programme |
+| 174 | 113 | Video frame interpolation | Partial: reviewed 2x midpoint RGB frame blending inside each clip, duration-preserving final frame, doubled overlap lengths and lossless decoded output verification. Pass 175 CI pending. Motion-compensated/neural interpolation and native playback outstanding. |
 | 175 | 114 | Video upscaling | Not started in this programme |
 | 176 | 120 | Multitrack video editing timelines | Not started in this programme |
 | 177 | 121 | Automatic video highlight extraction | Not started in this programme |
@@ -958,3 +958,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 174 — 27 November 2026
 - Implement explicit patch translation tracking over bounded silent local clips, with a nonuniform initial patch, fixed comparison budget, loss/ambiguity stop and timestamped JSON. Two regressions cover exact translation/loss and stale input. Also incorporate Pass 170 report JSON newline repair and roundtrip regression from PR #238. Native visual quality, semantic tracking and occlusion recovery not verified. Next rank 174 / ID 113 video frame interpolation. No installer.
+
+## Pass 175 — 27 November 2026
+- Add optional 2x midpoint blending to existing reviewed video editor. Generate only within each clip, retain duration using last-frame duplication, preserve hard-cut boundaries, double explicit crossfade overlaps and verify exact decoded output pixels/rate. Two tests use real FFmpeg roundtrip. No neural or motion-compensated interpolation or native playback acceptance. Next rank 175 / ID 114 video upscaling. No installer.

@@ -146,3 +146,26 @@ class VideoTrimmingTests(unittest.TestCase):
         (self.root/'a.mp4').write_bytes(b'changed')
         with self.assertRaises(ValueError):execute(self.root,plan)
         self.assertFalse((self.root/'motion.json').exists())
+
+
+    def test_frame_interpolation_duration_and_exact_pixels(self):
+        from deepthort_local.video_trimming import interpolate_frames,probe
+        self.s={'fps':24,'clips':[{'video':'a.mp4','start_frame':0,'end_frame':3}],
+                'interpolation':'blend2x'}
+        self.save();plan,p=review(self.root,'spec.json','smooth.mp4')
+        r=execute(self.root,plan)
+        self.assertEqual((r['fps'],r['frames'],r['duration_seconds']),(48,6,3/24))
+        expected=b''.join(bytes(c)*256 for c in [(255,0,0),(127,127,0),(0,255,0),(0,127,127),(0,0,255),(0,0,255)])
+        self.assertEqual(interpolate_frames(self.a,(16,16)),expected)
+        self.assertEqual(decode(self.ff,self.root/'smooth.mp4',0,6,16,16),expected)
+        self.assertEqual(probe(self.fp,self.root/'smooth.mp4',allow_double=True)['fps'],48)
+    def test_interpolation_respects_hard_cut_and_bound(self):
+        self.s={'fps':24,'clips':[{'video':'a.mp4','start_frame':0,'end_frame':1},
+                    {'video':'b.mp4','start_frame':0,'end_frame':1}],'interpolation':'blend2x'}
+        self.save();plan,_=review(self.root,'spec.json','cut.mp4')
+        execute(self.root,plan);stride=16*16*3
+        self.assertEqual(decode(self.ff,self.root/'cut.mp4',0,4,16,16),self.a[:stride]*2+self.b[:stride]*2)
+        self.s['clips'][0]['end_frame']=61
+        with self.assertRaises(ValueError):checked(self.s)
+        self.s['interpolation']='neural'
+        with self.assertRaises(ValueError):checked(self.s)
