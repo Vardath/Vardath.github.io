@@ -155,3 +155,44 @@ class IntegratedInterfaceTests(unittest.TestCase):
                 {'project':str(root),'job_id':3,'id':'exact','reason':'artifact_saved','files':{'note.txt':digest}}])
             self.assertEqual(matching_checkpoints(str(root),'note.txt',digest,jobs,checkpoints),
                              [(3,'exact','artifact_saved')])
+
+    def test_assignment_evidence_exact_workspace_and_no_dispatch(self):
+        import json
+        from deepthort_local.agent_contract import canonical_sha
+        from deepthort_local.assignment_inspection import assignment_rows
+        app=self.app
+        project=app._project_key()
+        contract={'job_id':700,'step_id':701,'project':project,'graph_sha256':'test-plan',
+                  'requester':'janus','assignee':'implementation','reviewer':'sentinel','path':'fixture.txt'}
+        with app.graphs._db() as db:
+            db.execute("INSERT INTO graphs(job_id,project,plan_sha256) VALUES(?,?,?)",(700,project,'test-plan'))
+            db.execute("INSERT INTO project_assignments_v43(attempt,job_id,step_id,contract,contract_sha,state) VALUES(?,?,?,?,?,?)",
+                       ('fixture-attempt',700,701,json.dumps(contract),canonical_sha(contract),'assigned'))
+        with patch.object(app,'_start_command') as run:
+            app._refresh_assignment_evidence()
+            run.assert_not_called()
+        self.assertEqual(app.assignment_table.get_children(),('source:fixture-attempt',))
+        self.assertEqual(app.assignment_table.item('source:fixture-attempt','values')[0],'Granite')
+        self.assertFalse(assignment_rows('other',app.graphs.path,app.delegations.path))
+        with app.graphs._db() as db:
+            db.execute("UPDATE project_assignments_v43 SET contract_sha='wrong' WHERE attempt='fixture-attempt'")
+        app._refresh_assignment_evidence()
+        self.assertFalse(app.assignment_table.get_children())
+        self.assertIn('unavailable',app.assignment_notice.get())
+
+    def test_delegation_stage_evidence_is_scoped_to_current_attempt(self):
+        from deepthort_local.assignment_inspection import assignment_rows
+        from deepthort_local.delegation import binding
+        app=self.app
+        project=app._project_key()
+        ident=app.conversations.submit(app.current_chat,project,'chat','fixture request')
+        with app.delegations.db() as db:
+            row=db.execute('SELECT * FROM conversation_requests WHERE id=?',(ident,)).fetchone()
+            db.execute('INSERT INTO agent_batches_v39 VALUES(?,?,?,?)',(ident,binding(row),2,'running'))
+            db.executemany('INSERT INTO agent_stages_v39 VALUES(?,?,?,?,?,?,?)',
+                           [(ident,1,'old','multimedia','interrupted',None,None),
+                            (ident,2,'compose','multimedia','queued',None,None)])
+        rows=assignment_rows(project,app.graphs.path,app.delegations.path)
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0][1][:4],('Gemma','Request #'+str(ident),'compose','queued'))
+        self.assertFalse(assignment_rows('other',app.graphs.path,app.delegations.path))

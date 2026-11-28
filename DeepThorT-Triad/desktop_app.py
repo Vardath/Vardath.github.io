@@ -766,7 +766,8 @@ class DeepThorTDesktop(tk.Tk):
         operative_tabs=ttk.Notebook(janus_tab);operative_tabs.pack(fill='both',expand=True,pady=4)
         workers=ttk.Frame(operative_tabs);societies=ttk.Frame(operative_tabs)
         approved=ttk.Frame(operative_tabs);messages=ttk.Frame(operative_tabs)
-        for page,title in ((workers,'Five operatives'),(societies,'Recursive societies'),(approved,'Approved processes'),(messages,'Interface messages')):
+        assignments=ttk.Frame(operative_tabs)
+        for page,title in ((workers,'Five operatives'),(societies,'Recursive societies'),(approved,'Approved processes'),(messages,'Interface messages'),(assignments,'Assignment evidence')):
             operative_tabs.add(page,text=title)
         ttk.Label(workers,text='Neural worker observations, distinct from the persistent recursive societies.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=5)
         worker_frame=ttk.Frame(workers);worker_frame.pack(fill='both',expand=True)
@@ -778,6 +779,17 @@ class DeepThorTDesktop(tk.Tk):
         self.janus_status_text=self._text(status_frame,readonly=True,height=11)
         scroll_text(status_frame,self.janus_status_text)
         self.society_lattice=SocietyLattice(societies);self.society_lattice.pack(fill='both',expand=True)
+        assignment_bar=ttk.Frame(assignments);assignment_bar.pack(fill='x',pady=4)
+        ttk.Button(assignment_bar,text='Refresh assignment evidence',command=self._refresh_assignment_evidence).pack(side='left')
+        ttk.Button(assignment_bar,text='Memory receipts',command=lambda:self.tabs.select(10)).pack(side='left',padx=4)
+        self.assignment_notice=tk.StringVar(value='Refresh to inspect saved assignment records.')
+        ttk.Label(assignments,textvariable=self.assignment_notice,wraplength=620).pack(anchor='w',pady=4)
+        ttk.Label(assignments,text='Recorded roles, not live inference. A source assignment identifies a contract; a delegated stage identifies a stored stage state. Neither grants authority.',style='Muted.TLabel',wraplength=620).pack(anchor='w',pady=4)
+        assignment_frame=ttk.Frame(assignments);assignment_frame.pack(fill='both',expand=True)
+        self.assignment_table=ttk.Treeview(assignment_frame,columns=('role','origin','target','state','context','attempt'),show='headings',selectmode='browse')
+        for col,title,width in (('role','Role',95),('origin','Record',90),('target','Target / stage',210),('state','Recorded state',100),('context','Context',170),('attempt','Attempt',150)):
+            self.assignment_table.heading(col,text=title);self.assignment_table.column(col,width=width,stretch=col=='target')
+        source_scrollbars(assignment_frame,self.assignment_table)
         ttk.Button(approved,text='Cancel selected approved process',command=self._cancel_janus_action).pack(anchor='w',pady=4)
         approved_frame=ttk.Frame(approved);approved_frame.pack(fill='both',expand=True)
         self.janus_action_tree=ttk.Treeview(approved_frame,columns=('id','state','kind','label'),show='headings',height=7)
@@ -2581,6 +2593,8 @@ class DeepThorTDesktop(tk.Tk):
     def _set_project(self,path):
         self.project=Path(path).resolve()
         self.file_query.set('')
+        sync_table(self.assignment_table,[])
+        self.assignment_notice.set('Workspace changed; refresh assignment evidence.')
         self.job_filter.set('All states');self.job_query.set('')
         self.task_filter.set('All states');self.task_query.set('')
         for table in (self.job_tree,self.task_tree):
@@ -9773,6 +9787,18 @@ class DeepThorTDesktop(tk.Tk):
         payload={'JANUS':main,'SENTINEL':watch.get('cores',{}),
                  'Explanation':'Recorded appraisals and observations, not private neural chain-of-thought'}
         self._show(out,json.dumps(payload,indent=2,ensure_ascii=False)[:250000])
+
+    def _refresh_assignment_evidence(self):
+        import sqlite3
+        from deepthort_local.assignment_inspection import assignment_rows
+        project=self._project_key()
+        try:
+            rows=assignment_rows(project,self.graphs.path,self.delegations.path)
+            sync_table(self.assignment_table,rows)
+            self.assignment_notice.set(f'{project} · {len(rows)} recorded assignments/stages (up to 60 per source). Explicit snapshot.')
+        except (OSError,ValueError,KeyError,TypeError,sqlite3.Error) as exc:
+            sync_table(self.assignment_table,[])
+            self.assignment_notice.set('Assignment evidence unavailable: '+str(exc)[:180])
 
     def _show_janus_status(self):
         try:
