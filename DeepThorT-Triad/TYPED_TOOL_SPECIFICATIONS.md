@@ -985,3 +985,7 @@ Prepare game data mod accepts `{"asset":"data/ships.json","mod_id":"ship_balance
 ## Reviewed IDE integration (Pass 219)
 
 Prepare IDE handoff accepts `{"document":"src/main.py"}`. Set `VSCODE_CLI_EXE` to a separately installed trusted Code.exe that supports the version CLI. The capped probe verifies version, commit and architecture, with temporary profile and disabled extensions. Existing Python LSP analyzes exact source; new ZIP contains JANUS.code-workspace and diagnostic/symbol receipt. Extract workspace into reviewed project root manually if desired. No automatic IDE launch, installed extension, personal settings change or project execution. Native CLI acceptance pending.
+
+## Reviewed CI observation (Pass 220)
+
+Inspect GitHub CI accepts JSON `{"repository":"Owner/Repo","run_id":123,"commit":"<40 lowercase hexadecimal characters>","required_jobs":["source","native-windows"]}`. Requires a transient Actions-read token. Three bounded HTTPS GET requests verify exact repository, commit, run and attempt, complete job page (max 30), and required jobs completed successfully. Snapshot only; no automatic merge, rerun, remote writes or deployment authority. Native network acceptance pending.
