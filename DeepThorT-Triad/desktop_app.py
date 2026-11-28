@@ -937,6 +937,8 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(mesh_review_actions,text='Improve topology…',command=lambda:self._review_typed_tool('mesh_retopology','.obj','Mesh: reviewed planar retopology')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Reconstruct 3D from image…',command=lambda:self._review_typed_tool('neural_image_mesh','.obj','Mesh: reviewed image reconstruction')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Generate 3D from text…',command=lambda:self._review_typed_tool('neural_text_mesh','.obj','Mesh: reviewed neural text generation')).pack(side='left',padx=3)
+        ttk.Button(mesh_review_actions,text='Convert weights to SafeTensors…',command=lambda:self._review_typed_tool('model_format_conversion','.safetensors','AI: reviewed SafeTensors conversion')).pack(side='left',padx=3)
+        ttk.Button(mesh_review_actions,text='Export weights to NPZ…',command=lambda:self._review_typed_tool('model_format_export','.npz','AI: reviewed NPZ conversion')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Experimental GPU text…',command=lambda:self._review_typed_tool('gpu_text_inference','.json','AI: reviewed GPU text inference')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Reconstruct multi-view points…',command=lambda:self._review_typed_tool('multi_view_reconstruction','.json','Mesh: reviewed multi-view reconstruction')).pack(side='left',padx=3)
         ttk.Button(mesh_review_actions,text='Reconstruct stereo points…',command=lambda:self._review_typed_tool('photogrammetry','.json','Mesh: reviewed stereo reconstruction')).pack(side='left',padx=3)
@@ -1942,6 +1944,8 @@ class DeepThorTDesktop(tk.Tk):
                  'photogrammetry':('.json','Mesh: reviewed stereo reconstruction'),
                  'multi_view_reconstruction':('.json','Mesh: reviewed multi-view reconstruction'),
                  'gpu_text_inference':('.json','AI: reviewed GPU text inference'),
+                 'model_format_conversion':('.safetensors','AI: reviewed SafeTensors conversion'),
+                 'model_format_export':('.npz','AI: reviewed NPZ conversion'),
                  'mesh_repair':('.obj','Mesh: reviewed repair'),
                  'parametric_cad':('.zip','CAD: reviewed convex extrusion'),
                  'scene_composition':('.glb','Scene: reviewed composition'),
