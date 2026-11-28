@@ -937,3 +937,7 @@ Automatic local reference and indexed document retrieval, fixed public documenta
 ## Reviewed owned-window mouse fixture (Pass 207)
 
 Test owned-window mouse accepts `{"actions":[{"kind":"move","x":2,"y":3},{"kind":"click","x":5,"y":6}]}`. Maximum 16 actions, coordinates 0–63 in a hidden JANUS-owned native Windows client area. Actual synchronous Win32 move and left-button messages are checked against the received event sequence. No global cursor, foreground changes, other applications or gameplay claim. Native Windows CI required.
+
+## Reviewed owned-window keyboard fixture (Pass 208)
+
+Test owned-window keyboard accepts `{"actions":[{"kind":"text","text":"hello"},{"kind":"key","key":"ENTER"}]}`. Printable ASCII and named LEFT, RIGHT, UP, DOWN, BACKSPACE, ENTER, TAB and ESCAPE only; at most 16 actions and 128 messages. Native Win32 character and key-pair messages are verified in the hidden JANUS-owned fixture. Not physical input or external application control. No clipboard, key chords or credentials.

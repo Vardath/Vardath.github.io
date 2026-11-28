@@ -51,8 +51,8 @@ def owned_window():
     events=[]
     @proc_type
     def proc(hwnd,msg,wp,lp):
-        if msg in (MOVE,DOWN,UP):
-            events.append((int(msg),int(wp),int(lp)))
+        if msg in (MOVE,DOWN,UP,0x100,0x101,0x102):
+            events.append((int(msg),int(wp),int(lp)&0xffffffff))
             return 0
         return default(hwnd,msg,wp,lp)
     class WndClass(ctypes.Structure):
@@ -77,20 +77,27 @@ def owned_window():
         if hwnd:fn(u,'DestroyWindow',[H],w.BOOL)(hwnd)
         unregister(name,instance)
 
-def deliver(u,hwnd,pid,sequence):
+def deliver(u,hwnd,pid,sequence,*,keyboard=False):
     """Recheck ownership and client geometry before each bounded native message."""
     H=w.HWND;L=ctypes.c_ssize_t;U=ctypes.c_size_t
     owner=fn(u,'GetWindowThreadProcessId',[H,ctypes.POINTER(w.DWORD)],w.DWORD)
     rect=fn(u,'GetClientRect',[H,ctypes.POINTER(w.RECT)],w.BOOL)
     send=fn(u,'SendMessageTimeoutW',[H,w.UINT,U,L,w.UINT,w.UINT,ctypes.POINTER(U)],L)
-    if pid!=os.getpid() or not 1<=len(sequence)<=48:raise ValueError('Only current owned fixture allowed')
+    if pid!=os.getpid() or not 1<=len(sequence)<=(128 if keyboard else 48):raise ValueError('Only current owned fixture allowed')
     for msg,wp,lp in sequence:
         actual=w.DWORD();bounds=w.RECT()
         if not owner(hwnd,ctypes.byref(actual)) or actual.value!=pid or not rect(hwnd,ctypes.byref(bounds)):
             raise ValueError('Owned window identity unavailable')
-        x=lp&0xffff;y=(lp>>16)&0xffff
-        if msg not in (MOVE,DOWN,UP) or wp!=(1 if msg==DOWN else 0) or not 0<=x<bounds.right or not 0<=y<bounds.bottom:
-            raise ValueError('Invalid client mouse message')
+        if keyboard:
+            if msg==0x102:
+                valid=32<=wp<=126 and lp==1
+            else:
+                valid=msg in (0x100,0x101) and wp in (8,9,13,27,0x25,0x26,0x27,0x28) and lp==(1 if msg==0x100 else 0xc0000001)
+            if not valid:raise ValueError('Invalid owned-window keyboard message')
+        else:
+            x=lp&0xffff;y=(lp>>16)&0xffff
+            if msg not in (MOVE,DOWN,UP) or wp!=(1 if msg==DOWN else 0) or not 0<=x<bounds.right or not 0<=y<bounds.bottom:
+                raise ValueError('Invalid client mouse message')
         result=U()
         if not send(hwnd,msg,wp,lp,0x0002,1000,ctypes.byref(result)):
             raise ValueError('Window message delivery failed')

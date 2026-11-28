@@ -216,7 +216,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 204 | 26 | Research using authenticated websites | Partial: manually authenticated disposable browser, exact page and unique approved heading section, isolated-world bounded visible text collection, local untrusted evidence receipt. Pass 205 CI pending. Native execution, multi-page research and model synthesis outstanding. |
 | 205 | 333 | Prompt injection resistance | Partial: normalized host-side authority-override indicators, adjacent evidence screening, automatic local/public excerpt and repository observation withholding; original evidence remains intact. Pass 206 CI pending. Native adversarial evaluation and comprehensive boundary coverage outstanding. |
 | 206 | 28 | Mouse control | Partial: bounded native Windows client-coordinate move and click messages to a hidden owned window, exact event oracle, no global input. Pass 207 CI pending. External application input and physical pointer control outstanding. |
-| 207 | 29 | Keyboard control | Not started in this programme |
+| 207 | 29 | Keyboard control | Partial: bounded native literal ASCII and named key down/up messages to hidden owned window, exact sequence readback and no global input. Pass 208 CI pending. External applications, Unicode and physical key input outstanding. |
 | 208 | 27 | Graphical application operation | Not started in this programme |
 | 209 | 237 | Background desktop execution | Existing partial; completion not started in this programme |
 | 210 | 4 | Live screen interpretation | Not started in this programme |
@@ -1060,3 +1060,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 207 — 27 November 2026
 - Implement bounded Windows mouse message delivery with exact owned-window identity, client coordinates and move/down/up event readback. Hidden native fixture avoids physical cursor or foreground changes. Add typed review UI, cross-platform specification tests and real Windows event test in CI. External application input remains outstanding. Next rank 207 / ID 29 keyboard control. No installer.
+
+## Pass 208 — 27 November 2026
+- Extend owned-window native input with literal printable ASCII and fixed navigation/edit key down/up messages, bounded sequences and exact event verification. No global input, clipboard, arbitrary HWND or modifier chords. Typed review UI and native Windows regression test. External application and full keyboard compatibility outstanding. Next rank 208 / ID 27 graphical application operation. No installer.
