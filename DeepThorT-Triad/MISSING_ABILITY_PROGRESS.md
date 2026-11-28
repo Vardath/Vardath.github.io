@@ -242,7 +242,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 230 | 138 | Digital audio workstation (DAW) operation | Partial: reviewed fixed installed REAPER single PCM16 WAV resampling via native batch converter, fresh config and capped child process, exact source/executable and output format/duration checks. Pass 231 CI pending; actual native engine, multitrack DAW control and listening acceptance outstanding. |
 | 231 | 304 | Album production automation | Partial extended: reviewed ordered 2–8 short PCM WAVs, shared mastering settings, verified per-track RIFF metadata, playlist and deterministic offline archive. Pass 232 CI pending; full songs, listening quality, artwork and distribution outstanding. |
 | 232 | 139 | Audio plugin development | Partial: reviewed editable REAPER JSFX stereo gain/balance/hard sample-ceiling source, parameter validation, reference DSP vectors and hash-verified ZIP. Pass 233 CI pending; native compilation/host testing, other plugin formats and general DSP development outstanding. |
-| 233 | 105 | Image-to-motion-video generation | Not started in this programme |
+| 233 | 105 | Image-to-motion-video generation | Partial: reviewed single RGB PNG smooth pan/zoom between explicit crop endpoints; bounded frame generation and reused lossless H.264 pixel-verifying codec pipeline. Pass 234 CI pending; learned subject motion and native visual acceptance outstanding. |
 | 234 | 109 | Video background replacement | Not started in this programme |
 | 235 | 110 | Video style transfer | Not started in this programme |
 | 236 | 108 | Video object removal | Not started in this programme |
@@ -1141,3 +1141,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 233 — 28 November 2026
 - Add reviewed editable REAPER JSFX gain/balance/hard sample-ceiling plugin source, fixed parameter controls, reference DSP vectors, exact output and verified offline ZIP. Three regression fixtures on both hosts. No automatic installation or native host test; broader plugin formats and arbitrary DSP remain outstanding. Next rank 233 / ID 105 image-to-motion-video generation. No installer.
+
+## Pass 234 — 28 November 2026
+- Add reviewed still PNG to motion video with smoothstep pan/zoom, exact source/codec guards, bounded generated frames and reused lossless H.264 decode verification. Three regression fixtures on both hosts; codec execution covered separately by existing video regressions. No neural subject animation or audio. Next rank 234 / ID 109 video background replacement. No installer.
