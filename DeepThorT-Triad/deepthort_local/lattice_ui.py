@@ -830,11 +830,28 @@ class SettingsCentre(ttk.Frame):
             menu=action_menu(menus,label,actions)
             menu.grid(row=i//2,column=i%2,sticky='ew',padx=3,pady=3)
         menus.columnconfigure(0,weight=1);menus.columnconfigure(1,weight=1)
-        frame=ttk.Frame(self);frame.pack(fill='both',expand=True)
+        tabs=ttk.Notebook(self);tabs.pack(fill='both',expand=True)
+        frame=ttk.Frame(tabs);models=ttk.Frame(tabs);integrations=ttk.Frame(tabs)
+        tabs.add(frame,text='Saved policies');tabs.add(models,text='Model readiness');tabs.add(integrations,text='Integration readiness')
         self.table=ttk.Treeview(frame,columns=('policy','value','boundary'),show='headings')
         for key,label,width in (('policy','Saved / configured policy',230),('value','Value',170),('boundary','Scope and limits',300)):
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='boundary')
         source_scrollbars(frame,self.table)
+        ttk.Label(models,text='Existing receipt and file-size checks, not full weight hashes or a new inference test. Observations use the current broker identity.',wraplength=620).pack(anchor='w',pady=4)
+        model_frame=ttk.Frame(models);model_frame.pack(fill='both',expand=True)
+        self.model_table=ttk.Treeview(model_frame,columns=('role','checkpoint','receipt','observed'),show='headings')
+        for key,label,width in (('role','Role',110),('checkpoint','Pinned model / runtime',210),('receipt','Recorded installation',240),('observed','Observed state',180)):
+            self.model_table.heading(key,text=label);self.model_table.column(key,width=width,stretch=key=='receipt')
+        source_scrollbars(model_frame,self.model_table)
+        ttk.Label(integrations,text='Configuration and recorded session metadata only. No credentials, network probes or new connections.',wraplength=620).pack(anchor='w',pady=4)
+        integration_frame=ttk.Frame(integrations);integration_frame.pack(fill='both',expand=True)
+        self.integration_table=ttk.Treeview(integration_frame,columns=('name','status','boundary'),show='headings')
+        for key,label,width in (('name','Integration',145),('status','Observed configuration',245),('boundary','Limit',260)):
+            self.integration_table.heading(key,text=label);self.integration_table.column(key,width=width,stretch=key=='boundary')
+        source_scrollbars(integration_frame,self.integration_table)
+
+    def render_readiness(self,models,integrations):
+        sync_table(self.model_table,models);sync_table(self.integration_table,integrations)
 
     def render(self,rows,model_status,project):
         self.notice.set(model_status+' · '+project+' · policy snapshot, not runtime verification')
