@@ -1069,3 +1069,7 @@ Synchronise mouth cues accepts face PNG, exact-duration mono PCM16 48 kHz audio 
 ## Reviewed audio-driven animation (Pass 240)
 
 Animate from audio accepts background RGB PNG, layer PNG, mono PCM16 48 kHz WAV, fps 24/25/30, frames 2–120, anchor [x,y], travel_px 1–240 and reference_rms 1–32768. Exact-duration audio drives vertical layer displacement by per-frame RMS clipped to travel range. Entire range must fit the canvas; changing visible motion required. Reuses reviewed lossless H.264/ALAC mux with exact decoded stream checks. No neural gestures, beat recognition or native playback claim.
+
+## Reviewed video dubbing (Pass 241)
+
+Dub silent video accepts `{"video":"clip.mp4","audio":"dub.wav","start_frame":0,"end_frame":48}`. Silent H.264 MP4 at 24/25/30 fps, 2–120 selected frames and exact matching mono PCM16 48 kHz WAV. Decoded input RGB frames and speech PCM are verified against the new H.264/ALAC MP4. No automatic speech generation, translation, alignment or removal of existing soundtracks; native mux/playback acceptance pending.
