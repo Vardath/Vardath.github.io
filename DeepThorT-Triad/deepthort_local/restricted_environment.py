@@ -12,6 +12,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from deepthort_local import typed_project_tool as guard
 from deepthort_local.triad_job import child_server,verify_root_cap,isolated_env
 from deepthort_local.disk_gate import require_storage
+from deepthort_local.execution_isolation import HostPressure,retry_native_ci
 
 SCHEMA='janus-restricted-python-check-v1'
 EXTRA=('document','.py')
@@ -57,7 +58,8 @@ def run(raw,stage):
     verify_root_cap()
     from deepthort_local.quiet_playtest import WindowsPressureSampler
     sampler=WindowsPressureSampler();_,free=sampler.read()
-    if free is None or free<15:raise ValueError('Insufficient host RAM reserve')
+    if free is None:raise ValueError('Host RAM reading unavailable')
+    if free<15:raise HostPressure('Host free RAM below 15% admission reserve')
     (stage/'reviewed.py').write_bytes(raw);log=stage/'worker.log'
     expected=isolated_env(stage)
     exe=str(Path(sys._base_executable).resolve(strict=True))
@@ -67,8 +69,11 @@ def run(raw,stage):
         deadline=time.monotonic()+15
         while alive():
             cpu,free=sampler.read()
-            if time.monotonic()>=deadline or free is None or free<10 or (cpu is not None and cpu>=90) or log.stat().st_size>8192:
-                raise ValueError('Restricted worker resource/time/log limit exceeded')
+            if time.monotonic()>=deadline:raise ValueError('Restricted worker timed out')
+            if log.stat().st_size>8192:raise ValueError('Restricted worker log exceeds bound')
+            if free is None:raise ValueError('Host RAM reading unavailable')
+            if free<10 or (cpu is not None and cpu>=90):
+                raise HostPressure(f'Restricted worker stopped: CPU busy={cpu!r}, free RAM={free:.1f}%')
             time.sleep(.1)
         if alive.code()!=0:raise ValueError('Restricted worker failed')
     observed=json.loads(guard.read_bound(log,8192).decode('utf-8'))
@@ -109,10 +114,12 @@ def main():
                 return code
         if a.inside:
             for raw,wanted in ((b'raise RuntimeError("must not execute")\n',True),(b'def broken(:\n',False)):
-                with tempfile.TemporaryDirectory(prefix='janus-native-restricted-') as tmp:
-                    result=run(raw,Path(tmp))
-                    if result['syntax_valid'] is not wanted:raise ValueError('Native syntax verdict mismatch')
-                    report(result)
+                def attempt():
+                    with tempfile.TemporaryDirectory(prefix='janus-native-restricted-') as tmp:
+                        return run(raw,Path(tmp))
+                result=retry_native_ci(attempt) if a.ci_receipt else attempt()
+                if result['syntax_valid'] is not wanted:raise ValueError('Native syntax verdict mismatch')
+                report(result)
         else:print(json.dumps(execute(a.root,json.loads(a.plan)),sort_keys=True),flush=True)
         return 0
     except Exception as e:
