@@ -227,3 +227,88 @@ def sync_table(tree, rows):
             tree.insert('','end',iid=ident,values=values)
         if tree.index(ident)!=position:
             tree.move(ident,'',position)
+
+
+def proposal_code(text):
+    """Match the existing proposal editor convention; never alter ordinary source."""
+    return text.split('\n',2)[-1] if text.startswith('PROPOSED CODE —') else text
+
+
+def source_scrollbars(parent, widget):
+    y = ttk.Scrollbar(parent, command=widget.yview)
+    x = ttk.Scrollbar(parent, orient='horizontal', command=widget.xview)
+    widget.configure(yscrollcommand=y.set,xscrollcommand=x.set)
+    widget.grid(row=0,column=0,sticky='nsew')
+    y.grid(row=0,column=1,sticky='ns')
+    x.grid(row=1,column=0,sticky='ew')
+    parent.grid_rowconfigure(0,weight=1)
+    parent.grid_columnconfigure(0,weight=1)
+    return y,x
+
+
+def highlight_diff(widget):
+    """Colour exact unchanged diff text; no parsing into a writeable payload."""
+    widget.tag_configure('diff_add', foreground=PALETTE['success'])
+    widget.tag_configure('diff_remove', foreground=PALETTE['warning'])
+    widget.tag_configure('diff_header', foreground=PALETTE['accent'])
+    for n,line in enumerate(widget.get('1.0','end-1c').splitlines(),1):
+        tag = ('diff_header' if line.startswith(('+++','---','@@')) else
+               'diff_add' if line.startswith('+') else 'diff_remove' if line.startswith('-') else None)
+        if tag:widget.tag_add(tag,f'{n}.0',f'{n}.end')
+
+
+class SourceNavigator(ttk.Frame):
+    """Read-only navigation over the actual editor buffer."""
+    def __init__(self,parent,widget):
+        super().__init__(parent)
+        self.widget=widget
+        self.term=tk.StringVar(self)
+        self.line=tk.StringVar(self)
+        self.notice=tk.StringVar(self)
+        ttk.Label(self,text='Find').pack(side='left')
+        entry=ttk.Entry(self,textvariable=self.term,width=18)
+        entry.pack(side='left',fill='x',expand=True,padx=3)
+        ttk.Button(self,text='Find next',command=self.find).pack(side='left',padx=3)
+        entry.bind('<Return>',lambda event:(self.find(),'break')[1])
+        ttk.Label(self,text='Line').pack(side='left',padx=(8,2))
+        number=ttk.Entry(self,textvariable=self.line,width=6)
+        number.pack(side='left')
+        ttk.Button(self,text='Go to line',command=self.goto).pack(side='left',padx=3)
+        number.bind('<Return>',lambda event:(self.goto(),'break')[1])
+        ttk.Label(self,textvariable=self.notice,style='Muted.TLabel').pack(side='left',padx=4)
+        widget.tag_configure('source_match',background=PALETTE['selected'],foreground=PALETTE['text'])
+        widget.tag_configure('source_line',background=PALETTE['selected'])
+        self.reset()
+
+    def reset(self):
+        self.widget.tag_remove('source_match','1.0','end')
+        self.widget.tag_remove('source_line','1.0','end')
+        self.widget.mark_set('source_find','1.0')
+        self.notice.set('')
+
+    def find(self):
+        term=self.term.get()
+        if not term:return
+        widget=self.widget
+        widget.tag_remove('source_match','1.0','end')
+        start=widget.index('source_find')
+        hit=widget.search(term,start,stopindex='end',exact=True) or widget.search(term,'1.0',stopindex=start,exact=True)
+        if not hit:self.notice.set('No match');return
+        finish=widget.index(f'{hit}+{len(term)}c')
+        widget.tag_add('source_match',hit,finish)
+        widget.mark_set('source_find',finish)
+        widget.see(hit)
+        self.notice.set('Line '+hit.split('.')[0])
+
+    def goto(self):
+        widget=self.widget
+        try:
+            number=int(self.line.get())
+            last=int(widget.index('end-1c').split('.')[0])
+            if not 1<=number<=last:raise ValueError
+        except ValueError:
+            self.notice.set('Invalid line');return
+        widget.tag_remove('source_line','1.0','end')
+        widget.tag_add('source_line',f'{number}.0',f'{number}.end')
+        widget.see(f'{number}.0')
+        self.notice.set(f'Line {number}')

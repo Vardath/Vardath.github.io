@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -133,3 +133,39 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertEqual(table.get_children(),('1','2','3','4'))
         self.assertEqual(table.selection(),())
         self.assertEqual(filter_status_rows([('a',('Done','task'))],'Planned',''),[])
+
+
+    def test_source_inspection_navigation_is_read_only(self):
+        frame=ttk.Frame(self.root)
+        text=tk.Text(frame,wrap='none')
+        source_scrollbars(frame,text)
+        text.insert('1.0','first\nneedle\nlast needle')
+        text.configure(state='disabled')
+        nav=SourceNavigator(self.root,text)
+        before=text.get('1.0','end-1c')
+        nav.term.set('needle')
+        nav.find()
+        self.assertEqual(nav.notice.get(),'Line 2')
+        nav.find()
+        self.assertEqual(nav.notice.get(),'Line 3')
+        nav.find()
+        self.assertEqual(nav.notice.get(),'Line 2')
+        nav.line.set('1')
+        nav.goto()
+        self.assertEqual(nav.notice.get(),'Line 1')
+        nav.line.set('100')
+        nav.goto()
+        self.assertEqual(nav.notice.get(),'Invalid line')
+        self.assertEqual(text.get('1.0','end-1c'),before)
+        self.assertEqual(text.cget('state'),'disabled')
+
+    def test_diff_colours_preserve_exact_text(self):
+        text=tk.Text(self.root)
+        diff='--- before\n+++ after\n@@ -1 +1 @@\n-old\n+new'
+        text.insert('1.0',diff)
+        highlight_diff(text)
+        self.assertEqual(text.get('1.0','end-1c'),diff)
+        self.assertTrue(text.tag_ranges('diff_add'))
+        self.assertTrue(text.tag_ranges('diff_remove'))
+        self.assertEqual(proposal_code('PROPOSED CODE — edit below before approving\n\nnew'),'new')
+        self.assertEqual(proposal_code('ordinary source'),'ordinary source')

@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -629,11 +629,21 @@ class DeepThorTDesktop(tk.Tk):
         # FILE REVIEW
         fhead=ttk.Frame(files_tab);fhead.pack(fill='x',pady=7)
         self.file_title=tk.StringVar(value='Choose a file or request a new file proposal')
-        ttk.Label(fhead,textvariable=self.file_title).pack(side='left')
-        ttk.Button(fhead,text='Apply approved change',command=self._apply_proposal).pack(side='right')
-        ttk.Button(fhead,text='Edit selected file…',command=self._edit_selected_source).pack(side='right',padx=4)
-        self.file_preview=self._text(files_tab,height=25,wrap='none')
-        self.file_preview.pack(fill='both',expand=True)
+        ttk.Label(fhead,textvariable=self.file_title,wraplength=610).pack(anchor='w')
+        review_actions=ttk.Frame(files_tab);review_actions.pack(fill='x',pady=(0,4))
+        ttk.Button(review_actions,text='Edit selected file…',command=self._edit_selected_source).pack(side='left',padx=3)
+        self.compare_proposal=ttk.Button(review_actions,text='Inspect proposed diff…',command=self._inspect_proposed_diff,state='disabled')
+        self.compare_proposal.pack(side='left',padx=3)
+        self.apply_proposal=ttk.Button(review_actions,text='Apply approved change',command=self._apply_proposal,state='disabled')
+        self.apply_proposal.pack(side='right',padx=3)
+        self.file_review_status=tk.StringVar(value='Read-only inspection · no write authorized')
+        ttk.Label(files_tab,textvariable=self.file_review_status,style='Muted.TLabel',wraplength=610).pack(anchor='w',pady=(0,5))
+        nav_frame=ttk.Frame(files_tab);nav_frame.pack(fill='x')
+        file_frame=ttk.Frame(files_tab);file_frame.pack(fill='both',expand=True)
+        self.file_preview=self._text(file_frame,height=25,wrap='none')
+        source_scrollbars(file_frame,self.file_preview)
+        self.file_navigator=SourceNavigator(nav_frame,self.file_preview)
+        self.file_navigator.pack(fill='x',pady=(0,4))
         self._preview('Select a file on the left.\n\nRequest a proposed edit in Chats.\n'
                       'Approved unattended jobs may save only exact authorized files with backups; '
                        'other changes require individual file review.')
@@ -1059,7 +1069,26 @@ class DeepThorTDesktop(tk.Tk):
     def _show(self,box,text):
         box.config(state='normal');box.delete('1.0','end');box.insert('1.0',text);box.config(state='disabled')
     def _preview(self,text):
+        self.file_preview.configure(state='normal')
         self.file_preview.delete('1.0','end');self.file_preview.insert('1.0',text)
+        editable=bool(self.proposed)
+        self.file_preview.edit_reset()
+        self.file_preview.configure(state='normal' if editable else 'disabled')
+        self.file_review_status.set('Pending proposal · editable draft · exact write review required' if editable else
+                                    'Read-only inspection · no write authorized')
+        self.compare_proposal.configure(state='normal' if editable else 'disabled')
+        self.apply_proposal.configure(state='normal' if editable else 'disabled')
+        self.file_navigator.reset()
+
+    def _inspect_proposed_diff(self):
+        if not self.proposed or not self.project:return
+        try:
+            from deepthort_local.interactive_editor import snapshot,prepare
+            review=prepare(snapshot(str(self.project),self.proposed[0],allow_missing=True),
+                           proposal_code(self.file_preview.get('1.0','end-1c')))
+        except (OSError,ValueError) as exc:
+            messagebox.showwarning('Comparison unavailable',str(exc),parent=self);return
+        self._review_source_diff(review,self,inspection_only=True)
     def _log(self,info):
         if str(info) == self._last_activity_message and time.monotonic()-self._last_activity_at<30:
             return  # Suppress repetitive GUI notices; underlying queue/worker events stay logged.
@@ -2395,6 +2424,8 @@ class DeepThorTDesktop(tk.Tk):
         self.task_filter.set('All states');self.task_query.set('')
         self.file_filter_status.set('Filter by path; Esc clears')
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
+        self.file_title.set('Choose a file in the selected workspace')
+        self._preview('No file selected in this workspace.')
         for row in self.files.get_children():self.files.delete(row)
         self.project_label.config(text=str(self.project))
         self.show_all_project_files.set('x4' not in self.project.name.casefold())
@@ -7010,23 +7041,26 @@ class DeepThorTDesktop(tk.Tk):
             return False
         return proposal or self._branch_switch_allowed(project)
 
-    def _review_source_diff(self,review,parent):
-        dialog=tk.Toplevel(parent);dialog.title('Review exact source change');dialog.geometry('850x620');dialog.transient(parent)
+    def _review_source_diff(self,review,parent,*,inspection_only=False):
+        dialog=tk.Toplevel(parent);dialog.title('Inspect proposed diff' if inspection_only else 'Review exact source change');dialog.geometry('850x620');dialog.transient(parent);dialog.configure(bg=BG)
         base=review['base']
         ttk.Label(dialog,text=base['path']+' — '+('syntax checked (not tested)' if review['syntax_checked'] else 'no built-in syntax checker; not tested')).pack(anchor='w',padx=8,pady=6)
-        ttk.Label(dialog,text='Exact current source to proposed edit. Existing file backed up; nothing executed.').pack(anchor='w',padx=8)
+        ttk.Label(dialog,text='Current source SHA-256: '+(base['sha'] or 'new file'),style='Muted.TLabel',wraplength=760).pack(anchor='w',padx=8)
+        ttk.Label(dialog,text='Candidate SHA-256: '+review['candidate_sha'],style='Muted.TLabel',wraplength=760).pack(anchor='w',padx=8)
+        ttk.Label(dialog,text='Inspection only — no write or approval.' if inspection_only else 'Exact current source to proposed edit. Existing file backed up on save; nothing executed.',wraplength=760).pack(anchor='w',padx=8)
         frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=6)
-        view=tk.Text(frame,wrap='none',font=('Consolas',10))
+        view=self._text(frame,wrap='none',font=('Consolas',10))
         y=ttk.Scrollbar(frame,command=view.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=view.xview)
         view.configure(yscrollcommand=y.set,xscrollcommand=x.set)
         view.grid(row=0,column=0,sticky='nsew');y.grid(row=0,column=1,sticky='ns');x.grid(row=1,column=0,sticky='ew')
         frame.grid_rowconfigure(0,weight=1);frame.grid_columnconfigure(0,weight=1)
-        view.insert('1.0',review['diff']);view.configure(state='disabled')
+        view.insert('1.0',review['diff']);highlight_diff(view);view.configure(state='disabled')
         approved=[False]
         def approve():approved[0]=True;dialog.destroy()
         buttons=ttk.Frame(dialog);buttons.pack(fill='x',padx=8,pady=8)
-        ttk.Button(buttons,text='Approve WRITE ONLY',command=approve).pack(side='right')
-        ttk.Button(buttons,text='Cancel',command=dialog.destroy).pack(side='right',padx=4)
+        if not inspection_only:
+            ttk.Button(buttons,text='Approve WRITE ONLY',command=approve).pack(side='right')
+        ttk.Button(buttons,text='Close' if inspection_only else 'Cancel',command=dialog.destroy).pack(side='right',padx=4)
         dialog.grab_set();self.wait_window(dialog)
         return approved[0]
 
@@ -7045,7 +7079,7 @@ class DeepThorTDesktop(tk.Tk):
             messagebox.showwarning('Edit unavailable',str(exc),parent=self);return
         dialog=tk.Toplevel(self);dialog.title('Edit '+base['path']);dialog.geometry('900x650');dialog.transient(self)
         frame=ttk.Frame(dialog);frame.pack(fill='both',expand=True,padx=8,pady=8)
-        editor=tk.Text(frame,wrap='none',font=('Consolas',11),undo=True)
+        editor=self._text(frame,wrap='none',font=('Consolas',11))
         y=ttk.Scrollbar(frame,command=editor.yview);x=ttk.Scrollbar(frame,orient='horizontal',command=editor.xview)
         editor.configure(yscrollcommand=y.set,xscrollcommand=x.set)
         editor.grid(row=0,column=0,sticky='nsew');y.grid(row=0,column=1,sticky='ns');x.grid(row=1,column=0,sticky='ew')
@@ -7090,8 +7124,7 @@ class DeepThorTDesktop(tk.Tk):
         if not self.proposed or not self.project:
             messagebox.showinfo('Nothing to apply','Generate a proposed file edit and review it first.');return
         target,_=self.proposed
-        code=self.file_preview.get('1.0','end-1c')
-        if code.startswith('PROPOSED CODE —'):code=code.split('\n',2)[-1]
+        code=proposal_code(self.file_preview.get('1.0','end-1c'))
         project=str(self.project);proposal=self.proposed;jobid=self.proposal_job;stepid=self.proposal_step
         try:
             from deepthort_local.interactive_editor import snapshot,prepare,save
@@ -7138,6 +7171,8 @@ class DeepThorTDesktop(tk.Tk):
         self._log('User-approved project file saved: '+str(dest))
         self.proposed=None;self.proposal_job=None;self.proposal_step=None
         self.file_title.set('Saved: '+target)
+        self._preview(code)
+        self.file_review_status.set('Saved with backup · verification not run')
         self.status.set('Saved file, not yet tested. Run an approved project check to verify it.')
         self._refresh_files();self._refresh_jobs()
         messagebox.showinfo('File saved','The approved file was written. Existing contents were backed up.\n\nThis does not verify the code works.')

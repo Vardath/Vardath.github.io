@@ -9,6 +9,8 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Inspect proposed diff…': 'Compare the current file and proposed editor buffer without granting a write or executing anything.',
+    'Go to line': 'Navigate to a numbered source line without changing its contents.',
     'Filter jobs': 'Filter displayed jobs by observed state and text without changing their execution order.',
     'Filter tasks': 'Filter the manual task board without changing task completion or queue state.',
     'Scheduling & monitors': 'Existing scheduling, roadmap, network and monitor controls.',
