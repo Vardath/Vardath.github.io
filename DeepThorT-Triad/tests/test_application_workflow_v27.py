@@ -113,3 +113,36 @@ class ApplicationWorkflowTests(unittest.TestCase):
             r=execute(root,plan);self.assertEqual(r['status'],'x4_diff_locally_replayed')
             self.assertEqual(src.read_bytes(),raw)
             with self.assertRaises(ValueError):execute(root,plan)
+
+
+    def test_seeded_connected_level_generation(self):
+        import json
+        from deepthort_local.level_generation import generate,distances
+        from deepthort_local.game_project_generation import checked
+        s={'title':'Crystal Grid','width':10,'height':8,'cell_size':24,'seed':17,
+           'wall_percent':35,'collectible_count':5,'minimum_goal_distance':16}
+        raw,r=generate(s);level=checked(json.loads(raw))
+        self.assertEqual(raw,generate(s)[0])
+        self.assertNotEqual(raw,generate(dict(s,seed=18))[0])
+        self.assertEqual(len(level['walls']),28);self.assertEqual(len(level['collectibles']),5)
+        open_cells={(x,y) for x in range(10) for y in range(8)}-set(map(tuple,level['walls']))
+        self.assertEqual(len(distances((0,0),open_cells)),len(open_cells))
+        self.assertGreaterEqual(r['goal_shortest_path_steps'],16)
+        self.assertFalse(r['native_playtest_verified'])
+    def test_seeded_level_bounds_and_stale_spec(self):
+        import json,tempfile
+        from pathlib import Path
+        from deepthort_local.level_generation import generate,review,execute
+        s={'title':'Level','width':5,'height':5,'cell_size':24,'seed':1,
+           'wall_percent':25,'collectible_count':3,'minimum_goal_distance':8}
+        with self.assertRaises(ValueError):generate(dict(s,minimum_goal_distance=9))
+        with self.assertRaises(ValueError):generate(dict(s,collectible_count=32))
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();src=root/'spec.json';src.write_text(json.dumps(s))
+            plan,_=review(root,'spec.json','level.json')
+            src.write_text(json.dumps(dict(s,seed=2)))
+            with self.assertRaises(ValueError):execute(root,plan)
+            self.assertFalse((root/'level.json').exists())
+            plan,_=review(root,'spec.json','level.json')
+            self.assertEqual(execute(root,plan)['status'],'connected_level_generated')
+            with self.assertRaises(ValueError):execute(root,plan)

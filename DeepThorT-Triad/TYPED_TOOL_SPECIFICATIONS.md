@@ -813,3 +813,7 @@ Generate X4 XML diff button. JSON: `{"asset":"assets/test.xml","kind":"macro","n
 ## Reviewed game sprite atlas (Pass 182)
 
 Generate sprite atlas button. JSON keys `size` (8/16/24/32), `palette` (1–16 alphanumeric symbols to RGBA arrays, dot is transparent), `sprites` (1–32 objects with lowercase `name`, exact `rows` of pixel symbols, and `pivot` [x,y]), `animations` (up to 16 objects with `name`, named `frames`, integer `fps` 1–30 and boolean `loop`). Produces a ZIP with `atlas.png`, `atlas.json` (frame rectangles, pivots and animation metadata), and `source.json` for editing. PNG pixels and archive roundtrip verified; import/render and visual quality separately tested.
+
+## Reviewed connected level generation (Pass 183)
+
+Generate connected level button. JSON: `{"title":"Crystal Grid","width":10,"height":8,"cell_size":24,"seed":17,"wall_percent":35,"collectible_count":5,"minimum_goal_distance":16}`. Grid and viewport bounds match the game generator. Start is the top-left cell, goal bottom-right. Seed selects obstacle removal and collectibles deterministically; all remaining open cells must remain connected, exact wall count is rounded down, all objectives reachable. Output JSON is directly usable by Generate grid game. Refuses unsatisfied constraints; does not claim native playtesting.
