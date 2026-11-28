@@ -57,3 +57,28 @@ class OriginalWindowLayoutTests(unittest.TestCase):
         self.app.reply_stage=''
         self.app._render_reply_notice()
         self.assertEqual(self.app.chat_connection.get(),'AI READY')
+
+    def test_lattice_tool_shelf_filters_without_invoking_commands(self):
+        self.app.geometry('1138x765')
+        self.app.tabs.select(7)
+        self.app.update()
+        shelf=self.app.media_shelf
+        buttons=[button for _,_,items in shelf._index for button,_ in items]
+        self.assertGreater(len(buttons),100)
+        labels=[button.cget('text') for button in buttons]
+        self.assertIn('Search internet…',labels)
+        self.assertIn('Test OS restricted-token boundary…',labels)
+        shelf.query.set('restricted-token')
+        self.app.update_idletasks()
+        self.assertEqual(shelf.count.get(),f'1 / {len(buttons)} tools')
+        matching=[button.cget('text') for button in buttons if button.winfo_manager()=='pack']
+        self.assertEqual(matching,['Test OS restricted-token boundary…'])
+        shelf.query.set('zzzz-no-such-tool')
+        self.app.update_idletasks()
+        self.assertEqual(shelf.count.get(),f'0 / {len(buttons)} tools')
+        shelf.query.set('')
+        self.app.update_idletasks()
+        self.assertEqual(shelf.count.get(),f'{len(buttons)} / {len(buttons)} tools')
+        self.assertEqual([button.cget('text') for button in buttons if button.winfo_manager()=='pack'],labels)
+        self.assertTrue(shelf.canvas.winfo_ismapped())
+        self.assertTrue(self.app.image_info.winfo_ismapped())
