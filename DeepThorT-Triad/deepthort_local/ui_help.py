@@ -9,6 +9,9 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Recent projects…': 'Choose an existing saved workspace by exact path. Current drafts and attachments must be resolved before switching.',
+    'Filter files': 'Filter the displayed workspace and verified reference paths only; no source changes or new file scan. Escape clears the filter.',
+    'Open selected': 'Open the explicitly selected saved identity, not a matching name alone.',
     'Expand composer': 'Show more of the current draft without changing or submitting its text.',
     'System & maintenance': 'Install, diagnose, test, export diagnostics or review application updates; each action retains its own review.',
     'Specialist project actions': 'Access existing X4 and native draft operations for the selected workspace.',

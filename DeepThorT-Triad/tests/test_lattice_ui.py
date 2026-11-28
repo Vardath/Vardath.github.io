@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -86,3 +86,31 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertEqual(text.get('1.0', 'end-1c'), 'unsent draft')
         self.assertTrue(text.cget('yscrollcommand'))
         self.assertTrue(bar.cget('command'))
+
+
+    def test_picker_does_not_confuse_duplicate_titles_or_auto_open(self):
+        picker = SearchPicker(self.root, 'Search', [('a','Same title'), ('b','Same title'),
+                                                    ('c','Other project')], self.calls.append)
+        picker.query.set('SAME')
+        self.root.update()
+        self.assertEqual(picker.summary.get(), '2 / 3')
+        self.assertEqual(self.calls, [])
+        picker.open_selected()
+        self.assertEqual(self.calls, [])
+        picker.items.selection_set(1)
+        picker.open_selected()
+        self.assertEqual(self.calls, ['b'])
+
+    def test_path_filter_and_recent_project_identity(self):
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        from deepthort_local.job_queue import ChatRegistry
+        self.assertTrue(matches_query('src/Big Ship.xml','ship SRC'))
+        self.assertFalse(matches_query('src/Big Ship.xml','ship png'))
+        with TemporaryDirectory() as tmp:
+            registry = ChatRegistry(Path(tmp)/'chats.db')
+            registry.create('one','chat')
+            registry.create('(general)','chat')
+            registry.create('two','chat')
+            registry.create('one','new chat')
+            self.assertEqual(registry.recent_projects(),['one','two'])

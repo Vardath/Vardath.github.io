@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -450,6 +450,7 @@ class DeepThorTDesktop(tk.Tk):
         body.add(left,weight=1);body.add(right,weight=5)
         tk.Label(left,text='PROJECT WORKSPACE',font=('Segoe UI Semibold',11),fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(15,5))
         ttk.Button(left,text='Choose folder…',command=self._choose_project).pack(fill='x',padx=10,pady=3)
+        ttk.Button(left,text='Recent projects…',command=self._pick_recent_project).pack(fill='x',padx=10,pady=3)
         self.project_label=tk.Label(left,text='General chat — no project selected',font=('Segoe UI',9),
                   bg=PANEL,fg=MUTED,justify='left',wraplength=255)
         self.project_label.pack(anchor='w',padx=11,pady=(5,8))
@@ -464,7 +465,18 @@ class DeepThorTDesktop(tk.Tk):
                        command=self._render_project_files,bg=PANEL,fg=TEXT,selectcolor=PANEL,
                        activebackground=PANEL,activeforeground=TEXT).pack(anchor='w',padx=10)
         tk.Label(left,text='PROJECT FILES',fg=TEXT,bg=PANEL).pack(anchor='w',padx=11,pady=(9,4))
-        self.files=ttk.Treeview(left,show='tree',selectmode='browse');self.files.pack(fill='both',expand=True,padx=9,pady=(0,8))
+        file_filter=ttk.Frame(left,style='Panel.TFrame');file_filter.pack(fill='x',padx=9,pady=(0,4))
+        self.file_query=tk.StringVar(value='')
+        file_entry=ttk.Entry(file_filter,textvariable=self.file_query)
+        file_entry.pack(side='left',fill='x',expand=True)
+        ttk.Button(file_filter,text='Filter files',command=self._render_project_files).pack(side='right')
+        file_entry.bind('<Return>',lambda event:(self._render_project_files(),'break')[1])
+        file_entry.bind('<Escape>',lambda event:(self.file_query.set(''),self._render_project_files(),'break')[2])
+        self.file_filter_status=tk.StringVar(value='Filter by path; Esc clears')
+        ttk.Label(left,textvariable=self.file_filter_status,style='Muted.TLabel').pack(anchor='w',padx=9)
+        file_view=ttk.Frame(left,style='Panel.TFrame');file_view.pack(fill='both',expand=True,padx=9,pady=(0,8))
+        self.files=ttk.Treeview(file_view,show='tree',selectmode='browse')
+        scroll_text(file_view,self.files)
         self.files.bind('<<TreeviewSelect>>',self._on_file)
         self.files.bind('<Button-3>',self._project_file_context_menu)
         # On macOS Ctrl+click is the conventional secondary click.
@@ -481,6 +493,7 @@ class DeepThorTDesktop(tk.Tk):
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
         action_menu(chatbar,'Conversation',[
+            ('Find conversation…',self._pick_conversation),
             ('Rename chat',self._rename_chat),('Close chat',self._close_chat),
             ('Reopen archived chat…',self._open_archived_chat_menu),
         ]).pack(side='left',padx=4)
@@ -1532,7 +1545,7 @@ class DeepThorTDesktop(tk.Tk):
                      +message[:3500]+'\n\n[... DISPLAY ONLY: middle not rendered ...]\n\n'
                      +message[-1200:])
         self.chat_history.config(state='normal')
-        label='You' if role=='user' else 'DeepThorT' if role=='assistant' else 'Notice'
+        label='You' if role=='user' else 'DeepThorTriad' if role=='assistant' else 'Notice'
         self.chat_history.insert('end',f'{label}:\n',role if role in ('user','assistant') else 'warning')
         self.chat_history.insert('end',message+'\n\n')
         self.chat_history.see('end');self.chat_history.config(state='disabled')
@@ -2360,6 +2373,8 @@ class DeepThorTDesktop(tk.Tk):
         if chosen:self._set_project(Path(chosen))
     def _set_project(self,path):
         self.project=Path(path).resolve()
+        self.file_query.set('')
+        self.file_filter_status.set('Filter by path; Esc clears')
         self.current_file=None;self.proposed=None;self.proposal_job=None;self.proposal_step=None
         for row in self.files.get_children():self.files.delete(row)
         self.project_label.config(text=str(self.project))
@@ -2373,6 +2388,29 @@ class DeepThorTDesktop(tk.Tk):
         self._refresh_files();self._refresh_tasks();self._refresh_chats();self._refresh_jobs();self._refresh_inventory()
         if 'x4' in self.project.name.casefold() and not self.disk_gate.gaming():
             self._inspect_x4_sources()  # Read-only, bounded automatic installation/reference lookup.
+    def _pick_recent_project(self):
+        # Existing chat registry is the source of recent project identity.
+        # Never select a workspace merely because its title matches.
+        rows=[(path,path) for path in self.chats.recent_projects()]
+        def open_project(path):
+            if not Path(path).is_dir():
+                messagebox.showwarning('Project unavailable','This saved workspace is no longer available.',parent=self)
+                return
+            if self.project and Path(path).resolve()==self.project:return
+            if self.input.get('1.0','end-1c').strip() or self.attachments or self.imported_spec_source:
+                messagebox.showinfo('Unsent material','Send or clear the current draft and attachments before switching projects.',parent=self)
+                return
+            self._set_project(Path(path))
+        SearchPicker(self,'Recent projects',rows,open_project)
+
+    def _pick_conversation(self):
+        rows=self.chats.list(self._project_key())
+        scope=self._project_key()
+        def open_chat(ident):
+            if self._project_key()!=scope or ident not in self.chat_ids:return
+            self.chat_tabs.select(self.chat_ids.index(ident))
+        SearchPicker(self,'Find conversation',rows,open_chat)
+
     def _refresh_chats(self):
         project=self._project_key()
         threads=self.chats.list(project)
@@ -2587,6 +2625,11 @@ class DeepThorTDesktop(tk.Tk):
         if not self.show_all_project_files.get():
             active=self._current_project_file_scope()
             visible=[path for path in visible if path.casefold() in active]
+        query=self.file_query.get() if hasattr(self,'file_query') else ''
+        total=len(visible)
+        visible=[path for path in visible if matches_query(path,query)]
+        if hasattr(self,'file_filter_status'):
+            self.file_filter_status.set(f'{len(visible)} / {total} workspace files; filter only')
         for path in visible:
             row=self.files.insert('','end',text=path)
             self._file_rows[row]=('project',path)
@@ -2595,7 +2638,8 @@ class DeepThorTDesktop(tk.Tk):
             return
         entries=[item for item in relevant_x4_sources(self.x4_report)
                  if '__reference_x4__/'+item['file'] not in
-                    self.inspection_exclusions.paths(self.project)]
+                    self.inspection_exclusions.paths(self.project)
+                 and matches_query(item['role']+': '+item['file'],query)]
         if entries:
             parent=self.files.insert('','end',text='X4 GAME REFERENCES (read-only)',open=True)
             self._file_rows[parent]=('heading',None)
