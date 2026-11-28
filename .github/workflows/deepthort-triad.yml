@@ -51,8 +51,11 @@ jobs:
       - name: Provision FFmpeg for actual render test
         run: |
           if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
-            sudo apt-get update
-            sudo apt-get install -y --no-install-recommends ffmpeg
+            # Restrict provisioning to the runner's signed Ubuntu sources.
+            test -f /etc/apt/sources.list.d/ubuntu.sources
+            opts=(-o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=-)
+            sudo apt-get "${opts[@]}" update
+            sudo apt-get "${opts[@]}" install -y --no-install-recommends ffmpeg
           fi
           ffmpeg -version
           ffprobe -version
@@ -291,6 +294,7 @@ jobs:
       - run: python -m unittest discover -s tests -p test_image_motion_ability.py -v
       - run: python -m unittest discover -s tests -p test_video_background_ability.py -v
       - run: python -m unittest discover -s tests -p test_video_style_ability.py -v
+      - run: python -m unittest discover -s tests -p test_video_object_removal_ability.py -v
       - run: python -m unittest discover -s tests -p test_project_queue.py -v
   native-windows:
     runs-on: windows-latest
@@ -811,6 +815,8 @@ jobs:
           python -m unittest discover -s tests -p test_video_background_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_video_style_ability.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p test_video_object_removal_ability.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m unittest discover -s tests -p test_project_queue.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
