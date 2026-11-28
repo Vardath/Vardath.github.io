@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import unittest
-from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff
+from deepthort_local.lattice_ui import ToolShelf, PALETTE, dragon_mark, action_menu, scroll_text, composer_rows, SearchPicker, matches_query, sync_table, filter_status_rows, SourceNavigator, source_scrollbars, proposal_code, highlight_diff, measured_process_rows, replace_readonly
 
 
 class LatticeShelfTests(unittest.TestCase):
@@ -169,3 +169,25 @@ class LatticeShelfTests(unittest.TestCase):
         self.assertTrue(text.tag_ranges('diff_remove'))
         self.assertEqual(proposal_code('PROPOSED CODE — edit below before approving\n\nnew'),'new')
         self.assertEqual(proposal_code('ordinary source'),'ordinary source')
+
+
+    def test_process_samples_remain_observed_and_distinct(self):
+        rows=measured_process_rows([{'name':'Granite','pid':42,'system_cpu_percent':3.25,
+                                    'working_set_bytes':2**20*3,'private_bytes':2**20*5}])
+        self.assertEqual(rows,[('42:Granite',('Granite',42,'3.2','3.0','5.0'))])
+        self.assertEqual(measured_process_rows([]),[])
+
+    def test_process_refresh_preserves_readonly_buffer(self):
+        text=tk.Text(self.root,height=3)
+        text.pack()
+        text.configure(state='disabled')
+        first='\n'.join(str(i) for i in range(80))
+        replace_readonly(text,first)
+        self.root.update()
+        text.yview_moveto(.4)
+        before=text.yview()[0]
+        replace_readonly(text,first+'\nnext')
+        self.root.update()
+        self.assertEqual(text.get('1.0','end-1c'),first+'\nnext')
+        self.assertEqual(text.cget('state'),'disabled')
+        self.assertAlmostEqual(text.yview()[0],before,delta=.06)

@@ -312,3 +312,24 @@ class SourceNavigator(ttk.Frame):
         widget.tag_add('source_line',f'{number}.0',f'{number}.end')
         widget.see(f'{number}.0')
         self.notice.set(f'Line {number}')
+
+
+def measured_process_rows(measured):
+    """Render only actual samples; no aggregate claims or inferred percentages."""
+    return [(str(row['pid'])+':'+str(row['name']),
+             (row['name'],row['pid'],f"{row['system_cpu_percent']:.1f}",
+              f"{row['working_set_bytes']/2**20:.1f}",f"{row['private_bytes']/2**20:.1f}"))
+            for row in measured]
+
+
+def replace_readonly(widget,text):
+    """Refresh a read-only evidence panel without snapping its reader to the top."""
+    if widget.get('1.0','end-1c')==text:return
+    y=widget.yview()[0]
+    x=widget.xview()[0]
+    widget.configure(state='normal')
+    widget.delete('1.0','end')
+    widget.insert('1.0',text)
+    widget.configure(state='disabled')
+    widget.yview_moveto(y)
+    widget.xview_moveto(x)

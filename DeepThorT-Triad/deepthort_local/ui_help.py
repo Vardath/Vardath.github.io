@@ -9,6 +9,8 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Diagnostics & tests': 'Existing diagnostics, test and model recovery operations; no operation starts by opening this menu.',
+    'Follow latest activity': 'Scroll to new desktop log entries as they arrive. Disable to read or search older entries.',
     'Inspect proposed diff…': 'Compare the current file and proposed editor buffer without granting a write or executing anything.',
     'Go to line': 'Navigate to a numbered source line without changing its contents.',
     'Filter jobs': 'Filter displayed jobs by observed state and text without changing their execution order.',
