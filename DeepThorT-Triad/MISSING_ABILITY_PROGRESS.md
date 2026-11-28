@@ -208,7 +208,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 196 | 30 | Autonomous website navigation | Partial: reviewed public static goal-directed navigation using link-label/URL ranking, exact target heading stop, bounded frontier and path receipt. Pass 197 CI pending. Live browser navigation and native network acceptance outstanding. |
 | 197 | 32 | Website interaction and control selection | Partial: exact static control selection from guarded inspection, offline identification and approved same-host link read after robots and source/control revalidation. Pass 198 CI pending. Actual browser click, form input and authenticated sessions outstanding. |
 | 198 | 35 | Browser-based file downloads | Partial: reviewed static public same-host anchor download, robots and source recheck, bounded MIME and bytes, optional exact digest, verified inert ZIP. Pass 199 CI pending. Actual browser download events, authenticated sessions and native network acceptance outstanding. |
-| 199 | 34 | Browser-based file uploads | Not started in this programme |
+| 199 | 34 | Browser-based file uploads | Partial: explicitly reviewed single public HTTPS multipart POST with exact project file hash, disclosed name/field, bounded response receipt and no automatic retry. Pass 200 CI pending. Live browser file input, authentication and remote storage/native acceptance outstanding. |
 | 200 | 33 | Automated online form completion | Not started in this programme |
 | 201 | 37 | Browser developer tools integration | Not started in this programme |
 | 202 | 38 | General browser automation | Not started in this programme |
@@ -1033,3 +1033,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 199 — 27 November 2026
 - Add reviewed exact static link file download using existing public HTTPS and robots safeguards, revalidate inspected source and selected anchor, enforce MIME, byte ceiling and optional expected SHA-256, and publish new inert ZIP containing exact payload and receipt. No redirects, automatic extraction, execution, credentials or actual browser. Extend crawl fixtures for digest, scope and non-overwrite. Native network and browser downloads outstanding. Next rank 199 / ID 34 browser-based file uploads. No installer.
+
+## Pass 200 — 27 November 2026
+- Add explicit reviewed single-file multipart upload to exact public HTTPS endpoint, bounded allowed document/media extensions, exact source guard, separate filename/field, explicit disclosure approval and fixed POST with no credentials, redirect or retry. Record bounded HTTP response metadata only; remote success is not established and failures may have transmitted. Two fixtures cover exact payload, stale input, non-overwrite and refusal. Native public network and real browser upload outstanding. Next rank 200 / ID 33 automated online form completion. No installer.
