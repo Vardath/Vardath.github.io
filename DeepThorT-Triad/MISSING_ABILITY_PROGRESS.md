@@ -1,4 +1,4 @@
-# JANUS — Missing Ability Progress
+# DeepThorTriad — Missing Ability Progress
 
 Register: [MISSING_ABILITY_REGISTER.md](MISSING_ABILITY_REGISTER.md). Baseline V72 passed source and Windows CI [45897512810](https://github.com/Vardath/Vardath.github.io/actions/runs/45897512810).
 
@@ -254,7 +254,7 @@ Passes 001 and 002 both passed Linux and Windows CI and are merged into main: [0
 | 242 | 147 | Voice transformation | Partial: reviewed local varispeed pitch/duration, optional ring modulation and low-pass tone on bounded mono PCM16, exact decoded output verification. Pass 243 CI pending; independent pitch/formant control, neural conversion and listening acceptance outstanding. |
 | 243 | 145 | Voice cloning with consent | Partial: optional reviewed owner-installed XTTS CLI, exact consent attestation, reference and engine guards, capped CPU synthesis and verified WAV. Pass 244 CI pending; actual installed engine/model acceptance, consent verification and perceptual voice similarity outstanding. |
 | 244 | 146 | Custom voice design | Partial: reviewed reusable generic installed-voice design with varispeed, modulation and tone, automatic synthesis and verified audition/preset bundle. Pass 245 CI pending; novel neural timbre creation, independent prosody/formant controls and native listening outstanding. |
-| 245 | 150 | Sound-effect generation | Not started in this programme |
+| 245 | 150 | Sound-effect generation | Partial: reviewed deterministic procedural beep, sweep, impact and whoosh synthesis, exact PCM output and bounded seed/timing/tone/peak controls. Pass 246 CI pending; richer sound design, neural text-to-audio and listening acceptance outstanding. |
 | 246 | 151 | Ambient sound generation | Not started in this programme |
 | 247 | 129 | Singing voice generation | Not started in this programme |
 | 248 | 130 | Vocal harmony generation | Not started in this programme |
@@ -1178,3 +1178,6 @@ Added the previously excluded partial capability rows to both documents. Origina
 
 ## Pass 245 — 28 November 2026
 - Compose installed generic local voice synthesis and verified voice effects into a reusable named design JSON and audition WAV ZIP with exact source and voice identity, non-overwrite publication and per-output hashes. Bounded 5–20 second synthesis; three mocked regression fixtures on both hosts. No neural voice training, cloning, independent prosody/formant control or listening claim. Next rank 245 / ID 150 sound-effect generation. No installer.
+
+## Pass 246 — 28 November 2026
+- Owner naming correction: DeepThorTriad is the application; JANUS is the executive operative. Correct window title and capability register/progress headings; preserve historical identifiers, schemas and state. Add bounded procedural game sound effects with exact PCM verification and deterministic seeded noise; three regression fixtures on both hosts. No neural audio or native listening claim. Fix FFmpeg provisioning on Pass 237 and cumulative successor by restricting apt to signed Ubuntu sources after unrelated Microsoft repository HTTP 403; actual render test unchanged. Next rank 246 / ID 151 ambient sound generation. No installer.
