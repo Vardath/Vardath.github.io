@@ -16,6 +16,8 @@ TOOLTIPS = {
     'Production categories': 'Navigate to original production controls filtered by category; no tool runs.',
     'Filter artifacts': 'Filter discovered workspace file formats without opening or executing files.',
     'Inspect artifact metadata': 'Read the selected file metadata within the current inspection scope.',
+    'Choose media…': 'Select one existing workspace media file, including files larger than the source preview limit.',
+    'Media preview / playback…': 'Inspect a bounded image or media header; explicit Windows default player handoff is outside app resource caps.',
     'Inspect artifact / preview': 'Read bounded file metadata, plain text preview and matching historical source checkpoint evidence.',
     'Open exact job in Work queue': 'Navigate to the same job for the existing review and revoke controls; does not approve or revoke.',
     'Refresh assignment evidence': 'Inspect recorded workspace contracts and delegated stages, without starting or changing work.',

@@ -571,7 +571,7 @@ class DeepThorTDesktop(tk.Tk):
         self.approval_centre.pack(fill='both',expand=True)
         self.knowledge_centre=KnowledgeMemoryCentre(memory_tab,self._refresh_knowledge_centre,self._open_project_knowledge)
         self.knowledge_centre.pack(fill='both',expand=True)
-        self.studio_centre=StudioCentre(studio_tab,self._refresh_studio,self._studio_tool_category,self._inspect_studio_artifact)
+        self.studio_centre=StudioCentre(studio_tab,self._refresh_studio,self._studio_tool_category,self._inspect_studio_artifact,self._browse_studio_media,self._preview_studio_media)
         self.studio_centre.pack(fill='both',expand=True)
         self.settings_centre=SettingsCentre(settings_tab,self._refresh_settings_centre,[
             ('Local AI & maintenance',[
@@ -2600,6 +2600,7 @@ class DeepThorTDesktop(tk.Tk):
         if chosen:self._set_project(Path(chosen))
     def _set_project(self,path):
         self.project=Path(path).resolve()
+        self._studio_selected_media=None
         self.file_query.set('')
         sync_table(self.assignment_table,[])
         self.assignment_notice.set('Workspace changed; refresh assignment evidence.')
@@ -3182,13 +3183,95 @@ class DeepThorTDesktop(tk.Tk):
             if not self.show_all_project_files.get():
                 active=self._current_project_file_scope()
                 paths=[p for p in paths if p.casefold() in active]
+        selected=getattr(self,'_studio_selected_media',None)
+        if self.project and selected and selected[0]==project:
+            try:
+                self._studio_media_path(selected[1],require_listed=False)
+                paths=list(dict.fromkeys([*paths,selected[1]]))
+            except (OSError,ValueError):self._studio_selected_media=None
         self.studio_centre.render(project,studio_artifact_rows(paths))
+
+    def _studio_media_path(self,relative,*,require_listed=True):
+        from deepthort_local.studio_media import media_target
+        if not self.project:raise ValueError('Select a workspace first')
+        if require_listed and (getattr(self.studio_centre,'project',None)!=self._project_key()
+                or relative not in {key for key,_ in self.studio_centre.rows}):
+            raise ValueError('Media selection no longer belongs to this Studio snapshot')
+        if not self.inspection_exclusions.filter(self.project,[relative]):
+            raise ValueError('File is excluded from inspection')
+        if not self.show_all_project_files.get() and relative.casefold() not in self._current_project_file_scope():
+            raise ValueError('File is outside the current project inspection scope')
+        return media_target(self.project,relative)
+
+    def _browse_studio_media(self):
+        if not self.project:return
+        project=self._project_key()
+        chosen=filedialog.askopenfilename(parent=self,title='Choose existing workspace media',initialdir=project,
+            filetypes=[('Supported local media','*.png *.jpg *.jpeg *.webp *.gif *.bmp *.tif *.tiff *.wav *.mp3 *.ogg *.flac *.m4a *.mp4 *.webm *.avi *.mov *.mkv')])
+        if not chosen or self._project_key()!=project:return
+        try:
+            relative=Path(chosen).relative_to(Path(project)).as_posix()
+            self._studio_media_path(relative,require_listed=False)
+        except (OSError,ValueError) as exc:
+            self.studio_centre.notice.set('Media selection unavailable: '+str(exc)[:180]);return
+        self._studio_selected_media=(project,relative)
+        self.studio_centre.category.set('All states');self.studio_centre.query.set('')
+        self._refresh_studio()
+        if self.studio_centre.table.exists(relative):
+            self.studio_centre.table.selection_set(relative);self.studio_centre.table.see(relative)
+
+    def _preview_studio_media(self,relative):
+        from deepthort_local.studio_media import inspect_media,playback_target
+        project=self._project_key()
+        try:
+            self._studio_media_path(relative)
+            if self.disk_gate.gaming():raise ValueError('Media decoding deferred while gaming')
+            observed=inspect_media(self.project,relative)
+        except (OSError,ValueError,ImportError) as exc:
+            self.studio_centre.notice.set('Media preview unavailable: '+str(exc)[:180]);return
+        dlg=tk.Toplevel(self);dlg.title('Studio local media inspection');dlg.transient(self)
+        fit_dialog(dlg,800,600)
+        dlg.bind('<Escape>',lambda event:dlg.destroy())
+        bar=ttk.Frame(dlg);bar.pack(fill='x',padx=8,pady=6)
+        ttk.Button(bar,text='Close',command=dlg.destroy).pack(side='right')
+        def play():
+            try:
+                if self._project_key()!=project:raise ValueError('Workspace changed')
+                self._studio_media_path(relative)
+                if self.disk_gate.gaming():raise ValueError('Playback deferred while gaming')
+                target=playback_target(self.project,relative,observed['identity'])
+                if not messagebox.askyesno('Open local media in Windows player',
+                    'Open this exact file in its Windows default media handler? The external player is outside DeepThorTriad resource caps and may remain open. No tool install or automatic playback.',parent=dlg):return
+                if self._project_key()!=project:raise ValueError('Workspace changed')
+                self._studio_media_path(relative)
+                if self.disk_gate.gaming():raise ValueError('Playback deferred while gaming')
+                target=playback_target(self.project,relative,observed['identity'])
+                os.startfile(str(target),'open')
+            except (OSError,ValueError,AttributeError) as exc:
+                messagebox.showwarning('Playback unavailable',str(exc),parent=dlg)
+        if observed['playable'] and os.name=='nt' and hasattr(os,'startfile'):
+            ttk.Button(bar,text='Open in Windows media player…',command=play).pack(side='left')
+        else:
+            observed['lines'].append('External playback unavailable for this format/platform; no new player installed.')
+        frame=ttk.Frame(dlg);frame.pack(fill='both',expand=True,padx=8,pady=4)
+        info=self._text(frame,readonly=True,height=6)
+        scroll_text(frame,info);self._show(info,'\n'.join(observed['lines']))
+        if observed['thumbnail'] is not None:
+            from PIL import ImageTk
+            observed['thumbnail'].thumbnail((max(1,min(720,dlg.winfo_screenwidth()-140)),max(1,min(360,dlg.winfo_screenheight()-340))))
+            photo=ImageTk.PhotoImage(observed['thumbnail'],master=dlg)
+            label=ttk.Label(dlg,image=photo);label.image=photo
+            label.pack(padx=8,pady=6)
 
     def _inspect_studio_artifact(self,relative):
         if not self.project or self.studio_centre.project!=self._project_key():
             return 'Workspace changed; refresh Studio.'
         try:
-            allowed=self.inspection_exclusions.filter(self.project,self._visible_project_paths)
+            candidates=list(self._visible_project_paths)
+            if getattr(self,'_studio_selected_media',None)==(self._project_key(),relative):
+                self._studio_media_path(relative,require_listed=False)
+                candidates.append(relative)
+            allowed=self.inspection_exclusions.filter(self.project,candidates)
             if relative not in allowed or (not self.show_all_project_files.get() and relative.casefold() not in self._current_project_file_scope()):
                 return 'File no longer in the bounded inspection scope.'
             from deepthort_local.studio_inspection import inspect_bytes,matching_checkpoints

@@ -703,7 +703,7 @@ def studio_artifact_rows(paths):
 
 class StudioCentre(ttk.Frame):
     """Category routing to original controls and a bounded read-only workspace file index."""
-    def __init__(self,parent,refresh,tools,inspect):
+    def __init__(self,parent,refresh,tools,inspect,browse=None,preview=None):
         super().__init__(parent)
         self.inspect_callback=inspect
         self.notice=tk.StringVar(self,value='Open or refresh the Studio.')
@@ -725,7 +725,14 @@ class StudioCentre(ttk.Frame):
         for key,label,width in (('category','Type',95),('path','Workspace path',390),('extension','Format',70)):
             self.table.heading(key,text=label);self.table.column(key,width=width,stretch=key=='path')
         source_scrollbars(frame,self.table)
-        ttk.Button(self,text='Inspect artifact / preview',command=self.inspect).pack(anchor='w',pady=4)
+        controls=ttk.Frame(self);controls.pack(fill='x',pady=4,before=frame)
+        ttk.Button(controls,text='Inspect artifact / preview',command=self.inspect).pack(side='left')
+        if browse:ttk.Button(controls,text='Choose media…',command=browse).pack(side='left',padx=4)
+        if preview:
+            def open_preview():
+                selected=self.table.selection()
+                if selected:preview(selected[0])
+            ttk.Button(controls,text='Media preview / playback…',command=open_preview).pack(side='left',padx=4)
         detail_frame=ttk.Frame(self);detail_frame.pack(fill='x')
         self.detail=tk.Text(detail_frame,height=5,state='disabled',wrap='word',bg=PALETTE['input'],fg=PALETTE['text'])
         scroll_text(detail_frame,self.detail)

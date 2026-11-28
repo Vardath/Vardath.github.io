@@ -305,3 +305,37 @@ class IntegratedInterfaceTests(unittest.TestCase):
         self.assertEqual(capture_preview_bounds(860,600),(800,440))
         self.assertEqual(capture_preview_bounds(550,400),(510,240))
         self.assertEqual(capture_preview_bounds(20,20),(1,1))
+
+
+    def test_studio_media_header_and_changed_playback_identity(self):
+        import wave
+        from deepthort_local.studio_media import inspect_media,playback_target
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();audio=root/'large.wav'
+            with wave.open(str(audio),'wb') as writer:
+                writer.setnchannels(1);writer.setsampwidth(2);writer.setframerate(16000)
+                writer.writeframes(b'\x00\x00'*100000)
+            observed=inspect_media(root,'large.wav')
+            self.assertTrue(observed['playable'])
+            self.assertIn('16000 Hz',' '.join(observed['lines']))
+            self.assertEqual(playback_target(root,'large.wav',observed['identity']),audio)
+            audio.write_bytes(b'not audio')
+            with self.assertRaises(ValueError):playback_target(root,'large.wav',observed['identity'])
+            self.assertFalse(inspect_media(root,'large.wav')['playable'])
+            with self.assertRaises(ValueError):inspect_media(root,'../outside.wav')
+
+    def test_studio_explicit_large_media_respects_exclusion(self):
+        app=self.app
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();app.project=root
+            app.show_all_project_files.set(True)
+            media=root/'large.mp4';media.write_bytes(b'\x00\x00\x00\x18ftyp'+b'x'*200000)
+            with patch('desktop_app.filedialog.askopenfilename',return_value=str(media)),patch.object(app,'_start_command') as run:
+                app._browse_studio_media()
+                self.assertTrue(app.studio_centre.table.exists('large.mp4'))
+                self.assertIn('not measured',app._inspect_studio_artifact('large.mp4'))
+                run.assert_not_called()
+            app.inspection_exclusions.exclude(root,'large.mp4')
+            app._refresh_studio()
+            self.assertFalse(app.studio_centre.table.exists('large.mp4'))
+            app.project=None
