@@ -74,7 +74,10 @@ class JanusWorker:
             if time.monotonic()-self._last_self_evaluation>=60:
                 self._last_self_evaluation=time.monotonic()
                 from deepthort_local.self_evaluation import recommend_once
-                try:recommend_once(self.store.path.parent,self.store)
+                try:
+                    recommend_once(self.store.path.parent,self.store)
+                    from deepthort_local.procedure_improvement import stage_once
+                    stage_once(Path(__file__).resolve().parent,self.store.path.parent,self.store)
                 except (OSError,ValueError,TypeError,KeyError) as exc:
                     record(self.store.path.parent,'janus_worker','self_evaluation_deferred',error_type=type(exc).__name__)
             if not self._consider_worker_reports():
