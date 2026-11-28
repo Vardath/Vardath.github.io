@@ -3192,6 +3192,8 @@ class DeepThorTDesktop(tk.Tk):
             self.approval_centre.render(project,approval_job_rows(self.jobs.items(project)),
                                        pc_action_rows(self.janus.actions(limit=100)))
         except (OSError,ValueError,sqlite3.Error) as exc:
+            # Do not retain another workspace's evidence after a failed read.
+            self.approval_centre.render(self._project_key(),[],[])
             self.approval_centre.notice.set('Snapshot unavailable: '+str(exc)[:200])
 
     def _inspect_approval_job(self,ident):
@@ -3223,6 +3225,8 @@ class DeepThorTDesktop(tk.Tk):
             self.command_centre.render(project,command_project_rows(grouped(rows,view),view),
                 command_job_rows(self.jobs.items(project)),self.jobs.count(project))
         except (OSError,ValueError,sqlite3.Error) as exc:
+            # Clear saved-record panels; independent live observations remain intact.
+            self.command_centre.render(self._project_key(),[],[],{})
             self.command_centre.notice.set('Snapshot unavailable: '+str(exc)[:200])
 
     def _open_command_job(self,ident):
@@ -3231,8 +3235,11 @@ class DeepThorTDesktop(tk.Tk):
             self.command_centre.notice.set('Job is no longer in this workspace; refresh the snapshot.')
             return
         if job['mode'] in ('chat','plan','edit'):
+            if job['chat_id'] not in self.chat_ids:
+                self.command_centre.notice.set('Recorded conversation is not open. Use the existing archived conversation controls to reopen it, if available.')
+                return
+            self.chat_tabs.select(self.chat_ids.index(job['chat_id']))
             self.tabs.select(0)
-            if job['chat_id'] in self.chat_ids:self.chat_tabs.select(self.chat_ids.index(job['chat_id']))
             return
         self.job_filter.set('All states');self.job_query.set('')
         self._refresh_jobs()

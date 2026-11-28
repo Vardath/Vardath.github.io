@@ -75,3 +75,53 @@ class IntegratedInterfaceTests(unittest.TestCase):
         self.assertTrue(app.bind('<Control-F6>'))
         self.assertTrue(app.input.bind('<Control-Return>'))
         self.assertTrue(app.input.bind('<Control-Shift-Return>'))
+
+    def test_failed_refresh_clears_previous_workspace_records(self):
+        app=self.app
+        app.command_centre.render('previous',
+            [('old-project',('1','previous','paused','1','1'))],
+            [('7',('7','waiting_approval','build','old target','old evidence'))],
+            {'waiting_approval':1})
+        app.approval_centre.render('previous',
+            [('7',('7','waiting_approval','old target','old evidence'))],
+            [('8',('8','complete','old action','review','old time'))])
+        with patch.object(app,'_project_key',return_value='new'), \
+             patch('deepthort_local.project_queue.inventory',side_effect=OSError('fixture failure')), \
+             patch.object(app.jobs,'items',side_effect=OSError('fixture failure')):
+            app._refresh_command_centre()
+            app._refresh_approval_centre()
+        self.assertEqual(app.command_centre.project,'new')
+        self.assertEqual(app.approval_centre.project,'new')
+        for table in (app.command_centre.projects,app.command_centre.jobs,
+                      app.approval_centre.job_table,app.approval_centre.action_table):
+            self.assertFalse(table.get_children())
+        self.assertIn('Snapshot unavailable',app.command_centre.notice.get())
+        self.assertIn('Snapshot unavailable',app.approval_centre.notice.get())
+
+    def test_unavailable_conversation_does_not_open_wrong_chat(self):
+        app=self.app
+        app.tabs.select(8)
+        app.update()
+        before=app.current_chat
+        with patch.object(app.jobs,'get',return_value={
+                'project':app._project_key(),'mode':'chat','chat_id':'missing-fixture-chat'}):
+            app._open_command_job('7')
+        self.assertEqual(app.tabs.index('current'),8)
+        self.assertEqual(app.current_chat,before)
+        self.assertIn('not open',app.command_centre.notice.get())
+
+    def test_original_primary_chat_actions_within_window(self):
+        app=self.app
+        app.tabs.select(0)
+        for size in ('1320x860','1138x765'):
+            with self.subTest(size=size):
+                app.geometry(size)
+                app.update()
+                buttons=[w for row in app.chat_actions.winfo_children()
+                         for w in row.winfo_children() if w.winfo_class()=='TButton']
+                labels=[b.cget('text') for b in buttons]
+                for label in ('Draft project plan','Approve plan & queue','Revise existing file'):
+                    self.assertIn(label,labels)
+                bottom=app.winfo_rooty()+app.winfo_height()
+                self.assertTrue(all(b.winfo_ismapped() for b in buttons))
+                self.assertLessEqual(max(b.winfo_rooty()+b.winfo_height() for b in buttons),bottom)
