@@ -9,6 +9,12 @@ import tkinter as tk
 from tkinter import ttk
 
 TOOLTIPS = {
+    'Expand composer': 'Show more of the current draft without changing or submitting its text.',
+    'System & maintenance': 'Install, diagnose, test, export diagnostics or review application updates; each action retains its own review.',
+    'Specialist project actions': 'Access existing X4 and native draft operations for the selected workspace.',
+    'Conversation': 'Rename, close or reopen saved conversations in this project.',
+    'Conversation tools': 'Retry, diagnose, edit preferences or explicitly amend the specification.',
+    'Attachments': 'Manage selected local attachments without deleting original files.',
     'Edit selected file…': 'Open a direct UTF-8 editor with undo, redo and search. Review the exact diff before a backed-up save; no code execution.',
     'Review & save…': 'Review exact source changes and check the original file has not changed before saving.',
     'Approve local commit': 'Queue the exact reviewed staged Git tree and message through JANUS. No staging, remote push or claim of test success.',
@@ -259,7 +265,7 @@ def install_tooltips(app):
                 kind = widget.winfo_class()
                 if widget in named:
                     attach(widget, named[widget])
-                elif kind in ('TButton', 'Button', 'Checkbutton', 'TCheckbutton'):
+                elif kind in ('TButton', 'Button', 'Checkbutton', 'TCheckbutton', 'TMenubutton'):
                     attach(widget, TOOLTIPS.get(widget.cget('text'),
                         f'{widget.cget("text")}: review this control before taking action.'))
                 elif isinstance(widget, ttk.Notebook):

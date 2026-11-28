@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / 'state'
 from deepthort_local.triad_profiles import MODEL_ID,ready as triad_ready
 os.environ.setdefault('DEEPTHORT_TRIAD_TOKEN',secrets.token_hex(32))
-from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark
+from deepthort_local.lattice_ui import PALETTE, ToolShelf, dragon_mark, action_menu, scroll_text, composer_rows
 BG, PANEL, INPUT, TEXT, MUTED, ACCENT = (PALETTE[k] for k in ('base','panel','input','text','muted','accent'))
 GREEN, YELLOW = PALETTE['success'], PALETTE['warning']
 MAX_INFERENCE_PROMPT = 7500  # current OpenVINO IR endpoint requires <=8000 / message
@@ -432,18 +432,18 @@ class DeepThorTDesktop(tk.Tk):
         top=ttk.Frame(self);top.pack(fill='x',padx=14,pady=(11,7))
         dragon_mark(top).pack(side='left',padx=(0,6))
         tk.Label(top,text='DeepThorTriad',font=('Segoe UI Semibold',17),bg=BG,fg=ACCENT).pack(side='left')
-        # Persistent local status is already displayed in the footer.
-        ttk.Button(top,text='Install AI',command=self._install_ai).pack(side='right',padx=4)
+        # Keep routine start/stop visible; advanced operations remain individually selectable.
+        action_menu(top,'System & maintenance',[
+            ('Install AI',self._install_ai),('Self-diagnose',self._diagnose),
+            ('Run latest test',self._run_latest_test),('Export diagnostics',self._export_diagnostics),
+            ('Review self-update…',self._review_self_installation),
+            ('Rollback self-update…',self._review_self_rollback),
+        ]).pack(side='right',padx=4)
         ttk.Button(top,text='User guide',command=self._open_user_guide).pack(side='right',padx=4)
-        ttk.Button(top,text='Self-diagnose',command=self._diagnose).pack(side='right',padx=4)
-        ttk.Button(top,text='Review self-update…',command=self._review_self_installation).pack(side='right',padx=4)
-        ttk.Button(top,text='Rollback self-update…',command=self._review_self_rollback).pack(side='right',padx=4)
-        ttk.Button(top,text='Export diagnostics',command=self._export_diagnostics).pack(side='right',padx=4)
-        ttk.Button(top,text='Run latest test',command=self._run_latest_test).pack(side='right',padx=4)
         ttk.Button(top,text='Stop AI',command=self._stop_ai).pack(side='right',padx=4)
         ttk.Button(top,text='Start AI',command=self._start_ai).pack(side='right',padx=4)
         self.model_status=tk.StringVar(value='AI: not started')
-        ttk.Label(top,textvariable=self.model_status,style='Muted.TLabel').pack(side='right',padx=12)
+        ttk.Label(top,textvariable=self.model_status,style='Muted.TLabel').pack(side='right',padx=8)
 
         body=ttk.Panedwindow(self,orient='horizontal');body.pack(fill='both',expand=True,padx=12,pady=(0,9))
         left=ttk.Frame(body,style='Panel.TFrame',width=290);right=ttk.Frame(body)
@@ -454,9 +454,11 @@ class DeepThorTDesktop(tk.Tk):
                   bg=PANEL,fg=MUTED,justify='left',wraplength=255)
         self.project_label.pack(anchor='w',padx=11,pady=(5,8))
         ttk.Button(left,text='Refresh project files',command=self._refresh_files).pack(fill='x',padx=10,pady=3)
-        ttk.Button(left,text='Auto-discover X4 sources',command=self._inspect_x4_sources).pack(fill='x',padx=10,pady=3)
-        ttk.Button(left,text='Export latest draft mesh',command=self._export_draft_mesh).pack(fill='x',padx=10,pady=3)
-        ttk.Button(left,text='Review / materialize native draft',command=self._materialize_native_draft).pack(fill='x',padx=10,pady=3)
+        action_menu(left,'Specialist project actions',[
+            ('Auto-discover X4 sources',self._inspect_x4_sources),
+            ('Export latest draft mesh',self._export_draft_mesh),
+            ('Review / materialize native draft',self._materialize_native_draft),
+        ]).pack(fill='x',padx=10,pady=3)
         self.show_all_project_files=tk.BooleanVar(value=True)
         tk.Checkbutton(left,text='Show all workspace files',variable=self.show_all_project_files,
                        command=self._render_project_files,bg=PANEL,fg=TEXT,selectcolor=PANEL,
@@ -478,10 +480,12 @@ class DeepThorTDesktop(tk.Tk):
         # CHAT: separate persisted sessions and a tall, scrollable prompt editor.
         chatbar=ttk.Frame(chat);chatbar.pack(fill='x',pady=(4,3))
         ttk.Button(chatbar,text='+ New chat',command=self._new_chat).pack(side='left')
-        ttk.Button(chatbar,text='Rename chat',command=self._rename_chat).pack(side='left',padx=5)
-        ttk.Button(chatbar,text='Close chat',command=self._close_chat).pack(side='left',padx=3)
+        action_menu(chatbar,'Conversation',[
+            ('Rename chat',self._rename_chat),('Close chat',self._close_chat),
+            ('Reopen archived chat…',self._open_archived_chat_menu),
+        ]).pack(side='left',padx=4)
         ttk.Button(chatbar,text='Attach files…',command=self._add_attachments).pack(side='left',padx=5)
-        ttk.Button(chatbar,text='Clear attachments',command=self._clear_attachments).pack(side='left',padx=5)
+        action_menu(chatbar,'Attachments', [('Clear attachments',self._clear_attachments)]).pack(side='left',padx=3)
         self.attach_file=tk.BooleanVar(value=False)
         tk.Checkbutton(chatbar,text='Include selected project file',variable=self.attach_file,
                        bg=BG,fg=TEXT,selectcolor=PANEL,activebackground=BG,activeforeground=TEXT).pack(side='right')
@@ -496,14 +500,23 @@ class DeepThorTDesktop(tk.Tk):
         self.chat_tabs=ttk.Notebook(chat);self.chat_tabs.pack(fill='x',pady=4)
         self.chat_tabs.bind('<<NotebookTabChanged>>',self._chat_changed)
         self.chat_tabs.bind('<Button-3>',self._chat_tab_menu)
-        self.chat_history=self._text(chat,readonly=True,height=13,font=('Segoe UI',10))
-        self.chat_history.pack(fill='both',expand=True)
+        history_frame=ttk.Frame(chat)
+        history_frame.pack(fill='both',expand=True)
+        self.chat_history=self._text(history_frame,readonly=True,height=13,font=('Segoe UI',11))
+        scroll_text(history_frame,self.chat_history)
+        self.chat_history.tag_configure('user',spacing1=6)
+        self.chat_history.tag_configure('assistant',spacing1=6)
         for role,color in (('user',ACCENT),('assistant',GREEN),('warning',YELLOW)):
             self.chat_history.tag_configure(role,foreground=color)
-        tk.Label(chat,text='PROMPT / SPECIFICATION — Ctrl+Enter sends chat; only approved plans enter the work queue',
-                 bg=BG,fg=MUTED,font=('Segoe UI',9)).pack(anchor='w',pady=(7,3))
-        self.input=self._text(chat,height=12,font=('Segoe UI',11));self.input.pack(fill='both',expand=False)
-        self.input.bind('<Control-Return>',lambda e:self._send())
+        composer_head=ttk.Frame(chat);composer_head.pack(fill='x',pady=(5,2))
+        ttk.Label(composer_head,text='Message or specification · Ctrl+Enter to send',style='Muted.TLabel').pack(side='left')
+        self.expanded_composer=tk.BooleanVar(value=False)
+        ttk.Checkbutton(composer_head,text='Expand composer',variable=self.expanded_composer,
+                        command=self._resize_composer).pack(side='right')
+        composer_frame=ttk.Frame(chat);composer_frame.pack(fill='x')
+        self.input=self._text(composer_frame,height=5,font=('Segoe UI',11))
+        scroll_text(composer_frame,self.input)
+        self.input.bind('<Control-Return>',lambda e:(self._send(),'break')[1])
         self.input.bind('<Control-Shift-Return>',lambda e:(self._queue_janus_instruction(),'break')[1])
         # Keyboard/context-menu access avoids another button row in the
         # original window geometry, which users need for remote desktop.
@@ -515,16 +528,17 @@ class DeepThorTDesktop(tk.Tk):
         chat_controls=ttk.Frame(ca);chat_controls.pack(fill='x',pady=(0,3))
         plan_controls=ttk.Frame(ca);plan_controls.pack(fill='x')
         ttk.Button(chat_controls,text='Send message',command=self._send).pack(side='left')
-        ttk.Button(chat_controls,text='Diagnose AI',command=self._diagnose).pack(side='left',padx=5)
-        ttk.Button(chat_controls,text='Retry failed reply',command=self._retry_conversation).pack(side='left',padx=5)
-        ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=5)
-        ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=5)
-        ttk.Button(plan_controls,text='Amend specification',command=self._amend_project_specification).pack(side='left',padx=5)
+        ttk.Button(chat_controls,text='Stop reply',command=self._stop_chat_reply).pack(side='left',padx=4)
+        ttk.Button(chat_controls,text='Instruction to JANUS',command=self._queue_janus_instruction).pack(side='left',padx=4)
+        action_menu(chat_controls,'Conversation tools',[
+            ('Retry failed reply',self._retry_conversation),('Diagnose AI',self._diagnose),
+            ('Personal preferences…',self._edit_personal_preferences),
+            ('Amend specification',self._amend_project_specification),
+        ]).pack(side='left',padx=4)
         ttk.Button(plan_controls,text='Draft project plan',command=lambda:self._queue_input('plan')).pack(side='left')
         ttk.Button(plan_controls,text='Queue project task',command=self._queue_independent_prompt).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Approve plan & queue',command=self._approve_conversation_plan).pack(side='left',padx=5)
         ttk.Button(plan_controls,text='Revise existing file',command=lambda:self._queue_input('edit')).pack(side='left',padx=5)
-        ttk.Button(ca,text='Personal preferences…',command=self._edit_personal_preferences).pack(anchor='w',pady=2)
         ttk.Label(ca,text='Conversation first. Only your approved plan becomes an executable job.',style='Muted.TLabel').pack(anchor='w',pady=2)
 
         # REAL PERSISTENT WORK QUEUE
@@ -2401,6 +2415,17 @@ class DeepThorTDesktop(tk.Tk):
         try:menu.tk_popup(event.x_root,event.y_root)
         finally:menu.grab_release()
 
+    def _open_archived_chat_menu(self):
+        archived=self.chats.closed(self._project_key())
+        if not archived:
+            messagebox.showinfo('Archived conversations','No archived chats in this project.',parent=self)
+            return
+        menu=tk.Menu(self,tearoff=False)
+        for ident,title in archived:
+            menu.add_command(label=title[:80],command=lambda ident=ident:self._reopen_chat(ident))
+        try:menu.tk_popup(self.winfo_pointerx(),self.winfo_pointery())
+        finally:menu.grab_release()
+
     def _reopen_chat(self, ident):
         if self.chats.reopen(ident,self._project_key()):
             self.current_chat=ident
@@ -2696,19 +2721,14 @@ class DeepThorTDesktop(tk.Tk):
         self.tabs.select(0);self.input.focus_set()
 
     def _fit_chat_to_window(self, event):
-        """Shrink only the editor's visible rows if the existing controls would clip.
+        if event.widget is self and hasattr(self,'input'):
+            self._resize_composer()
 
-        Both text widgets remain scrollable; tabs, buttons and control order stay
-        unchanged. At the original 860px window height the v10.9 row count (12)
-        is preserved. Keep the two action rows accessible on shorter displays.
-        """
-        if event.widget is not self or not hasattr(self,'input'):
-            return
-        height=max(0,self.winfo_height())
-        if height < 100:
-            return
-        target=max(3, min(12, 12 - max(0,(860-height+19)//20)))
-        if int(self.input.cget('height')) != target:
+    def _resize_composer(self):
+        height=self.winfo_height()
+        if height<100:return
+        target=composer_rows(height,self.expanded_composer.get())
+        if int(self.input.cget('height'))!=target:
             self.input.configure(height=target)
 
     # ----------- truthful, persistent reply-activity notification -----------

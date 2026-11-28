@@ -108,3 +108,29 @@ class ToolShelf(ttk.Frame):
         self.canvas.xview_moveto(0)
         self.canvas.yview_moveto(0)
         self.after_idle(self._region)
+
+
+def action_menu(parent, label, actions):
+    """Expose existing callbacks without invoking any during construction."""
+    control = ttk.Menubutton(parent, text=label)
+    menu = tk.Menu(control, tearoff=False, bg=PALETTE['panel'],
+                   fg=PALETTE['text'], activebackground=PALETTE['selected'],
+                   activeforeground=PALETTE['text'])
+    for title, callback in actions:
+        menu.add_command(label=title, command=callback)
+    control.configure(menu=menu)
+    return control
+
+
+def scroll_text(parent, text):
+    """Keep the original Text widget and its bindings; add a native scrollbar."""
+    scrollbar = ttk.Scrollbar(parent, orient='vertical', command=text.yview)
+    scrollbar.pack(side='right', fill='y')
+    text.configure(yscrollcommand=scrollbar.set)
+    text.pack(side='left', fill='both', expand=True)
+    return scrollbar
+
+
+def composer_rows(height, expanded=False):
+    maximum = 12 if expanded else 5
+    return max(3, min(maximum, maximum - max(0, (860-height+19)//20)))
