@@ -134,3 +134,67 @@ def scroll_text(parent, text):
 def composer_rows(height, expanded=False):
     maximum = 12 if expanded else 5
     return max(3, min(maximum, maximum - max(0, (860-height+19)//20)))
+
+
+def matches_query(label, query):
+    return all(word in str(label).casefold() for word in str(query).casefold().split())
+
+
+class SearchPicker(tk.Toplevel):
+    """Filter display labels, retain exact row IDs, require explicit selection."""
+    def __init__(self, parent, title, rows, callback):
+        super().__init__(parent)
+        self.title(title)
+        self.transient(parent)
+        self.configure(bg=PALETTE['base'])
+        self.geometry('560x390')
+        self.minsize(300, 220)
+        self.rows = tuple(rows)
+        self.visible = []
+        self.callback = callback
+        self.query = tk.StringVar(self)
+        self.summary = tk.StringVar(self)
+        bar = ttk.Frame(self)
+        bar.pack(fill='x', padx=12, pady=10)
+        ttk.Label(bar, text='Search').pack(side='left')
+        self.entry = ttk.Entry(bar, textvariable=self.query)
+        self.entry.pack(side='left', fill='x', expand=True, padx=8)
+        ttk.Label(bar, textvariable=self.summary).pack(side='right')
+        body = ttk.Frame(self)
+        body.pack(fill='both', expand=True, padx=12)
+        self.items = tk.Listbox(body, exportselection=False,
+                                bg=PALETTE['input'], fg=PALETTE['text'],
+                                selectbackground=PALETTE['selected'],
+                                selectforeground=PALETTE['text'])
+        scroll_text(body, self.items)
+        footer = ttk.Frame(self)
+        footer.pack(fill='x', padx=12, pady=10)
+        ttk.Button(footer, text='Cancel', command=self.destroy).pack(side='right')
+        self.open_button = ttk.Button(footer, text='Open selected', command=self.open_selected)
+        self.open_button.pack(side='right', padx=8)
+        self.query.trace_add('write', self.filter)
+        self.items.bind('<<ListboxSelect>>', self.selection_changed)
+        self.items.bind('<Double-1>', lambda event: self.open_selected())
+        self.items.bind('<Return>', lambda event: self.open_selected())
+        self.bind('<Escape>', lambda event: self.destroy())
+        self.filter()
+        self.entry.focus_set()
+
+    def filter(self, *args):
+        self.visible = [(ident,label) for ident,label in self.rows
+                        if matches_query(label,self.query.get())]
+        self.items.delete(0,'end')
+        for _,label in self.visible:
+            self.items.insert('end',label)
+        self.summary.set(f'{len(self.visible)} / {len(self.rows)}')
+        self.selection_changed()
+
+    def selection_changed(self, event=None):
+        self.open_button.configure(state='normal' if self.items.curselection() else 'disabled')
+
+    def open_selected(self):
+        chosen = self.items.curselection()
+        if not chosen:return
+        ident = self.visible[chosen[0]][0]
+        self.destroy()
+        self.callback(ident)

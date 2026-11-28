@@ -396,6 +396,13 @@ class ChatRegistry:
     def list(self, project: str):
         with self._conn() as db:
             return db.execute('SELECT id,title FROM chat_threads WHERE project=? AND closed=0 ORDER BY rowid',(project,)).fetchall()
+    def recent_projects(self, limit: int=100):
+        """Read existing project identities; no new registry or directory scan."""
+        with self._conn() as db:
+            return [row[0] for row in db.execute(
+                "SELECT project FROM chat_threads WHERE project!='(general)' "
+                "GROUP BY project ORDER BY MAX(rowid) DESC LIMIT ?",
+                (max(1,min(100,int(limit))),)).fetchall()]
     def closed(self, project: str):
         with self._conn() as db:
             return db.execute('SELECT id,title FROM chat_threads WHERE project=? AND closed=1 ORDER BY rowid',(project,)).fetchall()
