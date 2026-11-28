@@ -240,6 +240,17 @@ def observe(raws,s,tools,folder,*,render):
         'transitions':rendered_transitions,'output_frames':count,'interpolation':interpolation,'upscale':upscale}
     w,h=dimensions
     if len(selected)!=count*w*h*3:raise ValueError('Transition sequence length mismatch')
+    payload=encode_verified(selected,(w,h),output_fps,count,tools,folder,allow_double=factor==2,allow_upscaled=upscale is not None)
+    return payload,{'clips':items,'width':w,'height':h,'fps':output_fps,'frames':count,
+                    'duration_seconds':count/output_fps,'transitions':rendered_transitions,'interpolation':interpolation,'upscale':upscale,'neural_super_resolution_used':False,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
+                    'decoded_rgb_sequence_verified':True,'audio_supported':False,'visual_playback_verified':False,
+                    'encoding':'lossless H.264 RGB; playback compatibility may vary'}
+
+def encode_verified(selected,size,output_fps,count,tools,folder,*,allow_double=False,allow_upscaled=False):
+    w,h=size;folder=Path(folder)
+    if not 1<=count<=MAX_FRAMES or len(selected)!=count*w*h*3 or len(selected)>MAX_RENDER_RGB:
+        raise ValueError('Invalid verified video frame buffer')
+    ff,fp=(g['path'] for g in tools)
     raw_path=folder/'sequence.rgb';raw_path.write_bytes(selected)
     out=folder/'sequence.mp4'
     verify_guards(list(tools))
@@ -249,16 +260,13 @@ def observe(raws,s,tools,folder,*,render):
             '-preset','ultrafast','-crf','0','-pix_fmt','rgb24','-map_metadata','-1',
             '-movflags','+faststart',out.name],folder)
     payload=guard.read_bound(out,guard.MAX_OUTPUT)
-    meta=probe(fp,out,allow_double=factor==2,allow_upscaled=upscale is not None)
+    meta=probe(fp,out,allow_double=allow_double,allow_upscaled=allow_upscaled)
     if meta!={'width':w,'height':h,'frames':count,'fps':output_fps}:
         raise ValueError('Output video format or frame count mismatch')
     if decode(ff,out,0,count,w,h)!=selected:
         raise ValueError('Output RGB frames differ from selected input sequence')
     verify_guards(list(tools))
-    return payload,{'clips':items,'width':w,'height':h,'fps':output_fps,'frames':count,
-                    'duration_seconds':count/output_fps,'transitions':rendered_transitions,'interpolation':interpolation,'upscale':upscale,'neural_super_resolution_used':False,'selected_rgb_sha256':hashlib.sha256(selected).hexdigest(),
-                    'decoded_rgb_sequence_verified':True,'audio_supported':False,'visual_playback_verified':False,
-                    'encoding':'lossless H.264 RGB; playback compatibility may vary'}
+    return payload
 
 def _paths(root,s,exclude):
     paths=[guard.path_for(root,c['video'],exclude,{'.mp4'},exists=True) for c in s['clips']]

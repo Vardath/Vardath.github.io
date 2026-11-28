@@ -837,6 +837,7 @@ class DeepThorTDesktop(tk.Tk):
         ttk.Button(video_review_actions,text='Capture screen region…',command=self._show_screen_capture).pack(side='left',padx=3)
         ttk.Button(video_review_actions,text='Track video patch…',command=lambda:self._review_typed_tool('video_motion_tracking','.json','Video: reviewed motion tracking')).pack(side='left',padx=3)
         ttk.Button(video_review_actions,text='Interpret video…',command=lambda:self._review_typed_tool('video_interpretation','.json','Video: reviewed interpretation')).pack(side='left',padx=3)
+        ttk.Button(video_review_actions,text='Multitrack video…',command=lambda:self._review_typed_tool('video_timeline','.mp4','Video: reviewed timeline')).pack(side='left',padx=3)
         ttk.Button(video_review_actions,text='Edit/trim video…',command=lambda:self._review_typed_tool('video_trimming','.mp4','Video: reviewed sequence')).pack(side='left',padx=3)
         mesh_review_actions=ttk.Frame(media_tab);mesh_review_actions.pack(fill='x',pady=2)
         ttk.Button(mesh_review_actions,text='Unwrap UV atlas…',command=lambda:self._review_typed_tool('uv_unwrapping','.obj','Mesh: reviewed UV atlas')).pack(side='left',padx=3)
@@ -1782,6 +1783,7 @@ class DeepThorTDesktop(tk.Tk):
                  'infographic_generation':('.svg','Image: reviewed infographic'),
                  'batch_image_processing':('.zip','Image: reviewed batch'),
                  'video_trimming':('.mp4','Video: reviewed sequence'),
+                 'video_timeline':('.mp4','Video: reviewed timeline'),
                  'video_interpretation':('.json','Video: reviewed interpretation'),
                  'video_motion_tracking':('.json','Video: reviewed motion tracking'),
                  'background_removal':('.png','Image: reviewed background removal'),
